@@ -6,10 +6,7 @@
   </CatalogBanner>
 
   <div class="fr-container fr-mt-6v">
-    <div
-      class="fr-grid-row"
-      :class="{ 'fr-grid-row--center': hasSpinner }"
-    >
+    <div class="fr-grid-row fr-grid-row--center">
       <div>
         <div class="fr-col-12 fr-col-justify--left fr-mt-3v">
           <ThemeFilter />
@@ -47,7 +44,7 @@
         <TeeListNoResults
           v-else-if="showNoResultsComponent"
           :has-error="hasError"
-          message="Aucun projet n'a pu être identifiée avec les critères choisis..."
+          message="Aucune idée d'action n'a pu être identifiée avec les critères choisis..."
           :count-items="countProjects"
         />
       </div>

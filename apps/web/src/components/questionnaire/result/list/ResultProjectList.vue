@@ -2,7 +2,7 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow">
     <div
-      v-if="isSpecificGoal && hasRegisteredData"
+      v-if="isSpecificGoal && !showNoResults && hasRegisteredData"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-mb-2v">
@@ -13,7 +13,7 @@
     </div>
 
     <div
-      v-if="hasSpinner"
+      v-if="useNavigationStore().hasSpinner"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
@@ -38,7 +38,7 @@
       </div>
     </div>
     <div
-      v-if="!hasRegisteredData && !hasSpinner"
+      v-if="!hasRegisteredData && !useNavigationStore().hasSpinner"
       class="fr-grid-row fr-grid-row--center"
     >
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
@@ -88,6 +88,7 @@ import OtherProjectForm from '@/components/project/list/OtherProjectForm.vue'
 import Translation from '@/utils/translation'
 import Navigation from '@/utils/navigation'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { useNavigationStore } from '@/stores/navigation'
 
 interface ProjectListProps {
   filteredProjects?: Project[]
@@ -109,10 +110,6 @@ watch(
   }
 )
 const programStore = useProgramStore()
-
-const hasSpinner = computed(() => {
-  return !hasProjects.value && !showNoResults.value
-})
 
 const hasProjects = computed(() => {
   return countProjects.value > 0
@@ -137,7 +134,7 @@ const showNoResults = computed(() => {
 })
 
 const showOtherProjectForm = computed(() => {
-  return !showNoResults.value && hasRegisteredData.value
+  return !showNoResults.value && hasRegisteredData.value && !useNavigationStore().hasSpinner
 })
 
 const isSpecificGoal = computed(() => {

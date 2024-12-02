@@ -170,9 +170,9 @@ function buildHeaders() {
         sentryData?.domain ? sentryData.domain : ''
       } https://embed.typeform.com https://eu.i.posthog.com https://api.typeform.com;` +
       "worker-src 'self' blob:;" +
-      "frame-src 'self' https://conseillers-entreprises.service-public.fr https://form.typeform.com;" +
-      "frame-ancestors 'self' https://conseillers-entreprises.service-public.fr;",
-    'X-Frame-Options': 'ALLOW-FROM https://conseillers-entreprises.service-public.fr',
+      "frame-src 'self' https://form.typeform.com;" +
+      "frame-ancestors 'self';",
+
     'X-Content-Type-Options': 'nosniff'
   }
 
