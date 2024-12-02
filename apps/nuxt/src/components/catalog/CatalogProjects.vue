@@ -76,8 +76,8 @@ useSeoMeta(MetaSeo.get(title, description))
 
 navigationStore.hasSpinner = true
 const projectResult = await projectStore.projects
-if (projectResult.isOk) {
-  projects.value = projectResult.value
+if (projectResult.isOk()) {
+  projects.value = projectResult.data
 } else {
   hasError.value = true
 }

@@ -26,8 +26,8 @@ export const useProjectStore = defineStore('project', () => {
 
   const projects = computed(async () => {
     const result = await getProjects()
-    if (result.isOk) {
-      hasProjects.value = result.value.length > 0
+    if (result.isOk()) {
+      hasProjects.value = result.data.length > 0
     }
 
     return result
@@ -50,8 +50,8 @@ export const useProjectStore = defineStore('project', () => {
     currentProject.value = undefined
     if (hasProjects.value) {
       const result = await projects.value
-      if (result.isOk) {
-        const project = result.value.find((program) => program.slug === slug)
+      if (result.isOk()) {
+        const project = result.data.find((program) => program.slug === slug)
         if (project) {
           currentProject.value = project
           return Result.ok(currentProject.value)
@@ -60,7 +60,7 @@ export const useProjectStore = defineStore('project', () => {
         return Result.err(new Error('Project not found'))
       }
 
-      return Result.err(result.error)
+      return Result.err(new Error(result.error?.message))
     }
 
     const result = await new ProjectApi().getOne(slug)
@@ -74,8 +74,8 @@ export const useProjectStore = defineStore('project', () => {
   async function getLinkedProjectsFromCurrent() {
     const resultProjects = await projects.value
     const project = currentProject.value
-    if (resultProjects.isOk && project) {
-      return resultProjects.value.filter((resultProject) => {
+    if (resultProjects.isOk() && project) {
+      return resultProjects.data.filter((resultProject) => {
         return project.linkedProjects.includes(resultProject.id)
       })
     }
