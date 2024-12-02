@@ -42,9 +42,9 @@
 
             <!-- PROGRAM TYPE -->
             <ul class="fr-badges-group fr-tee-program-detail-img-badge">
-              <p class="fr-badge tee-program-badge-image">
+              <li class="fr-badge fr-badge--info fr-badge--no-icon">
                 {{ program?.["nature de l'aide"] }}
-              </p>
+              </li>
             </ul>
           </div>
 
@@ -187,35 +187,31 @@
             />
           </div>
         </div>
-        <div id="program-details-accordion-group">
-          <DsfrAccordionsGroup>
-            <ProgramAccordion
-              v-if="program && program['conditions d\'éligibilité']"
-              :accordion-id="`${program.id}-eligibility`"
-              :title="Translation.t('program.programAmIEligible')"
-            >
-              <ProgramEligibility :program="program" />
-              <TeeRegisterHighlight
-                v-if="!hasRegisteredData"
-                :text="Translation.t('program.programRegisterHighlightText')"
-              />
-            </ProgramAccordion>
-            <ProgramAccordion
-              v-if="program && linkedProjects && linkedProjects.length > 0"
-              :accordion-id="`${program.id}-linked-projects`"
-              :title="Breakpoint.isMobile() ? Translation.t('program.projectExamplesSM') : Translation.t('program.projectExamples')"
-            >
-              <ProgramProjects :linked-projects="linkedProjects" />
-            </ProgramAccordion>
-            <ProgramAccordion
-              v-if="program && program['description longue']"
-              :accordion-id="`${program.id}-long-description`"
-              :title="Translation.t('program.programKnowMore')"
-            >
-              <ProgramLongDescription :program="program" />
-            </ProgramAccordion>
-          </DsfrAccordionsGroup>
-        </div>
+        <ProgramAccordion
+          v-if="program && program['conditions d\'éligibilité']"
+          :accordion-id="`${program.id}-eligibility`"
+          :title="Translation.t('program.programAmIEligible')"
+        >
+          <ProgramEligibility :program="program" />
+          <TeeRegisterHighlight
+            v-if="!hasRegisteredData"
+            :text="Translation.t('program.programRegisterHighlightText')"
+          />
+        </ProgramAccordion>
+        <ProgramAccordion
+          v-if="program && linkedProjects && linkedProjects.length > 0"
+          :accordion-id="`${program.id}-linked-projects`"
+          :title="Breakpoint.isMobile() ? Translation.t('program.projectExamplesSM') : Translation.t('program.projectExamples')"
+        >
+          <ProgramProjects :linked-projects="linkedProjects" />
+        </ProgramAccordion>
+        <ProgramAccordion
+          v-if="program && program['description longue']"
+          :accordion-id="`${program.id}-long-description`"
+          :title="Translation.t('program.programKnowMore')"
+        >
+          <ProgramLongDescription :program="program" />
+        </ProgramAccordion>
       </div>
     </div>
 

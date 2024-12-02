@@ -245,16 +245,6 @@ button.fr-link:hover, .tee-router-link:hover {
   font-size: .8rem;
   --icon-size: 1rem;
 }
-.tee-program-badge-image {
-  text-transform: inherit;
-  color: white;
-  background-color: #000091;
-  border-radius: 1rem;
-  padding: 0 .7rem;
-}
-/* .tee-badge-image::before {
-} */
-
 /* RESULT DETAILS PAGE */
 .fr-tee-program-detail-img {
   position: relative;
