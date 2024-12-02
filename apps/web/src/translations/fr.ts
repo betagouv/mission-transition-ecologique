@@ -1,5 +1,6 @@
 import programFrDict from '@/translations/fr/program'
 import projectFrDict from '@/translations/fr/project'
+import registerFrDict from '@/translations/fr/register'
 
 export const frDict = {
   next: 'Suivant',
@@ -7,7 +8,7 @@ export const frDict = {
   close: 'Fermer',
   send: 'Envoyer',
   modify: 'modifier',
-  or: 'Ou',
+  or: 'ou',
   footer: {
     thisApplicationAndIts: 'Cette application et son',
     sourceCode: 'code source',
@@ -23,7 +24,6 @@ export const frDict = {
     sent: 'Votre message a bien été envoyé !',
     sorryError: 'Nous sommes désolés, une erreur est survenue.',
     notSent: 'Votre message n’a pas pu être envoyé',
-    contactHelp: 'Merci de nous contacter à',
     nowWhat: 'Et maintenant ?',
     advisors: 'Nous allons identifier le bon conseiller près de chez vous',
     phoneContact:
@@ -48,11 +48,13 @@ export const frDict = {
     alertTitle: 'Merci, voici vos résultats',
     alertTitleNoResults: 'Pas de résultats',
     alertNoResults: "Désolé, nous n'avons pas trouvé de dispositif adapté à votre situation et vos demandes",
+    alertNoDataNoResults: 'Oups ! Il nous manque quelques informations sur votre entreprise pour pouvoir afficher vos résultats.',
     alertDescription: 'Vous pouvez également nous envoyer un mail via le formulaire ci-après pour être mis en contact avec des conseillers',
     yourResults: 'Vos résultats',
     fittingPrograms: 'Les aides correspondant à vos choix',
     filterSelect: 'Filtrer par {fieldLabel}',
-    resetSelect: '(réinitialiser)'
+    resetSelect: '(réinitialiser)',
+    noResultCTA: 'Je complète mon profil'
   },
   errors: {
     error: 'Erreur'
@@ -124,5 +126,6 @@ export const frDict = {
     }
   },
   ...programFrDict,
-  ...projectFrDict
+  ...projectFrDict,
+  ...registerFrDict
 }

@@ -1,8 +1,7 @@
 import posthog, { PostHog } from 'posthog-js'
 import Config from '@/config'
-import Cookie from '@/utils/cookies'
-import { CookieValue } from '@/types/cookies'
 import { RouteLocationNormalized } from 'vue-router'
+import Cookie from '../cookies'
 
 export default class Posthog {
   private static _posthog?: PostHog
@@ -13,6 +12,7 @@ export default class Posthog {
         api_host: 'https://eu.i.posthog.com',
         capture_pageview: false,
         capture_pageleave: false,
+        persistence: 'memory',
         person_profiles: 'always'
       })
     }
@@ -20,22 +20,20 @@ export default class Posthog {
 
   static activatePosthogCookie() {
     if (this._posthog) {
-      this._posthog.opt_in_capturing()
+      this._posthog.set_config({ persistence: 'localStorage+cookie' })
     }
   }
 
   static deactivatePosthogCookie() {
     if (this._posthog) {
-      this._posthog.opt_out_capturing()
+      Cookie.removeCookie('ph_', true)
+      this._posthog.set_config({ persistence: 'memory' })
     }
   }
 
   static capturePageView(to: RouteLocationNormalized) {
     if (this._posthog) {
-      const posthogCookie = Cookie.getCookieByValue(CookieValue.Posthog)
-      if (posthogCookie?.accepted) {
-        this._posthog.capture('$pageview', { path: to.fullPath })
-      }
+      this._posthog.capture('$pageview', { path: to.fullPath })
     }
   }
 
@@ -45,9 +43,9 @@ export default class Posthog {
     }
   }
 
-  static captureEvent(action: string, name: string | null = null, value?: string | number | object | Record<string, string | number>) {
+  static captureEvent(name: string | null = null, value?: object) {
     if (this._posthog) {
-      this._posthog.capture(name ? name : 'unnamed event', { action: action, value: value })
+      this._posthog.capture(name ? name : 'unnamed event', value)
     }
   }
 }

@@ -3,12 +3,26 @@ import ProjectFilter from '@/utils/project/projectFilter'
 import { defineStore } from 'pinia'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
-import { ProgramType, Project, ThemeId } from '@/types'
+import { Project, type ProjectFilterQuery, QuestionnaireData, ThemeId } from '@/types'
 import { Theme } from '@/utils/theme'
+import { useUsedTrackStore } from './usedTrack'
 
 export const useProjectStore = defineStore('project', () => {
   const currentProject = ref<Project>()
   const hasProjects = ref<boolean>(false)
+
+  const eligibleProjects = computed(async () => {
+    return await getFilteredProjects(useUsedTrackStore().getQuestionnaireData())
+  })
+
+  async function getFilteredProjects(questionnaireData: QuestionnaireData = {}) {
+    const { codeNAF1, sector } = questionnaireData
+    const filteredData: ProjectFilterQuery = {
+      ...(codeNAF1 && { codeNAF1 }),
+      ...(sector && { sector })
+    }
+    return await new ProjectApi(filteredData).get()
+  }
 
   const projects = computed(async () => {
     const result = await getProjects()
@@ -23,12 +37,12 @@ export const useProjectStore = defineStore('project', () => {
     return await new ProjectApi().get()
   }
 
-  function getProjectsByThemeAndEligibility(projects: Project[], themeType?: ThemeId, filteredPrograms?: ProgramType[]): Project[] {
+  function getProjectsByTheme(projects: Project[], themeType?: ThemeId): Project[] {
     return projects.filter((project: Project) => {
       const hasTheme = themeType
         ? ProjectFilter.byTheme(project, themeType)
         : project.themes.some((themeId) => Theme.getTags().some(({ id }) => id === themeId))
-      return hasTheme && (filteredPrograms ? ProjectFilter.byPrograms(project, filteredPrograms) : true)
+      return hasTheme
     })
   }
 
@@ -72,7 +86,8 @@ export const useProjectStore = defineStore('project', () => {
   return {
     projects,
     currentProject,
-    getProjectsByThemeAndEligibility,
+    eligibleProjects,
+    getProjectsByTheme,
     getProjectBySlug,
     getLinkedProjectsFromCurrent
   }

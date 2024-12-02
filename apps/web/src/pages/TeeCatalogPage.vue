@@ -5,14 +5,4 @@
   >
     <router-view />
   </div>
-  <ContactHelp v-if="isCatalog" />
 </template>
-
-<script setup lang="ts">
-import { useNavigationStore } from '@/stores/navigation'
-
-const navigationStore = useNavigationStore()
-const isCatalog = computed(() => {
-  return navigationStore.isCatalogList()
-})
-</script>

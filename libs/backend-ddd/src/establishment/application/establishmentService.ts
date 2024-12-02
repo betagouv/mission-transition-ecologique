@@ -19,8 +19,8 @@ export default class EstablishmentService {
     )
   }
 
-  public search(query: string): Promise<Result<EstablishmentSearch, Error>> {
-    return this._establishmentFeatures.search(query)
+  public search(query: string, resultCount: number): Promise<Result<EstablishmentSearch, Error>> {
+    return this._establishmentFeatures.search(query, resultCount)
   }
 
   public getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {

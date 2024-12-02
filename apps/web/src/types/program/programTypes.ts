@@ -1,4 +1,4 @@
-import { ThemeId, ProgramOperatorType, ProgramAidType, FiltersKeys, Dispositif as ProgramWithoutId, Override } from '@/types'
+import { ThemeId, ProgramOperatorType, ProgramAidType, FiltersKeys, Operators, ProgramEligibilityType, Dispositif as ProgramWithoutId, Override } from '@/types'
 
 interface ProgramObjectiveLink {
   lien: string
@@ -31,6 +31,7 @@ interface ProgramObjective {
 //   "durée de l'accompagnement"?: string
 //   'durée du prêt'?: string
 //   url?: string
+//   eligibility: ProgramEligibilityType
 //
 //   "conditions d'éligibilité": {
 //     "taille de l'entreprise": string[]
@@ -41,10 +42,6 @@ interface ProgramObjective {
 //   }
 //
 //   filters: FiltersProgramData
-// }
-//
-// export type FiltersProgramData = {
-//   [FiltersKeys.Theme]?: ThemeId[]
 // }
 
 export type FiltersProgramData = {

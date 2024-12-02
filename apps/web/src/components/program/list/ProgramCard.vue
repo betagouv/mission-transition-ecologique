@@ -2,7 +2,7 @@
   <DsfrCard
     :title="''"
     :description="''"
-    :img-src="`${publicPath}${program.illustration}`"
+    :img-src="`/${program.illustration}`"
     :alt-img="`image / ${program.titre}`"
     :horizontal="true"
     :no-arrow="true"
@@ -40,7 +40,6 @@
 </template>
 
 <script setup lang="ts">
-import Config from '@/config'
 import { ProgramAidType, type ProgramType, RouteName } from '@/types'
 import { consolidateAmounts } from '@/utils/helpers'
 import Translation from '@/utils/translation'
@@ -49,8 +48,6 @@ import type { RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 
 const { program } = defineProps<{ program: ProgramType }>()
-
-const publicPath = Config.publicPath
 
 const getCostInfos = () => {
   let prefix: string = ''
@@ -111,7 +108,7 @@ const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
   return {
     name: getRouteName(),
     params: { programId },
-    query: isCatalog || navigationStore.isCatalogProjectDetail() ? undefined : navigationStore.query
+    query: navigationStore.query
   }
 }
 </script>

@@ -8,38 +8,40 @@
 
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
-import { useProgramStore } from '@/stores/program'
-import { ProgramType, Project as ProjectType } from '@/types'
+import { Project as ProjectType } from '@/types'
 import { Project } from '@/utils/project/project'
-import { computed, onBeforeMount } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/utils/theme'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
-const programStore = useProgramStore()
 const projectStore = useProjectStore()
 const navigationStore = useNavigationStore()
 
-const programs = ref<ProgramType[]>([])
 const projects = ref<ProjectType[]>()
 const hasError = ref<boolean>(false)
 
-const filteredPrograms = computed(() => {
-  return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
-})
+const registeredData = CompanyDataStorage.getData()
 
-const filteredProjects = Project.filter(projects, filteredPrograms, Theme.getThemeFromSelectedOrPriorityTheme())
+const filteredProjects = Project.filter(projects, Theme.getThemeFromSelectedOrPriorityTheme())
 
-onBeforeMount(async () => {
+const getProgramsAndProjects = async () => {
   navigationStore.hasSpinner = true
-  const programResult = await programStore.programsByUsedTracks
-  const projectResult = await projectStore.projects
-  if (programResult.isOk && projectResult.isOk) {
-    programs.value = programResult.value
+  const projectResult = await projectStore.eligibleProjects
+  if (projectResult.isOk) {
     projects.value = projectResult.value
   } else {
     hasError.value = true
   }
-
   navigationStore.hasSpinner = false
-})
+}
+
+watch(
+  registeredData.value,
+  async () => {
+    await getProgramsAndProjects()
+  },
+  {
+    immediate: true
+  }
+)
 </script>
