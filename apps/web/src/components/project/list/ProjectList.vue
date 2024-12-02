@@ -116,7 +116,7 @@ interface ProjectListProps {
 const props = defineProps<ProjectListProps>()
 
 const programStore = useProgramStore()
-
+const isSpecificGoal = UsedTrack.isSpecificGoal()
 const resume: string = Translation.t('project.result.resume', {
   effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyDataStorage.getSize() ?? '')),
   secteur: TrackStructure.getSectorShortLabel() ?? CompanyDataStorage.getCompanyData()?.secteur ?? ''
@@ -140,7 +140,7 @@ const nonPriorityProjects = computed(() => {
 })
 
 const hasThemeCard = computed(() => {
-  return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
+  return programStore.hasThemeTypeSelected() || (isSpecificGoal && UsedTrack.hasPriorityTheme())
 })
 
 const hasThemeSelected = computed(() => {
@@ -156,7 +156,7 @@ const hideMainProjectListComponent = computed(() => {
 })
 
 const isPriorityProject = (project: Project) => {
-  return !UsedTrack.isSpecificGoal() ? priorityProjects.value!.includes(project) : false
+  return !isSpecificGoal ? priorityProjects.value!.includes(project) : false
 }
 
 const getPriorityOrder = (project: Project) => {

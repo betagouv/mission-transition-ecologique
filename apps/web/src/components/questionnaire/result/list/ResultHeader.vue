@@ -3,13 +3,13 @@
     <div class="fr-col-12">
       <h1
         class="fr-mb-md-4v fr-text--blue-france"
-        :class="UsedTrack.isSpecificGoal() ? 'fr-mb-0' : 'fr-mb-2v'"
+        :class="isSpecificGoal ? 'fr-mb-0' : 'fr-mb-2v'"
       >
         Vos résultats
       </h1>
     </div>
     <div
-      v-if="UsedTrack.isSpecificGoal() && hasRegisteredData"
+      v-if="isSpecificGoal && hasRegisteredData"
       class="fr-hidden fr-unhidden-md fr-col-12 fr-px-2v fr-px-md-0 fr-text--blue-france"
     >
       <p
@@ -31,6 +31,6 @@ const resume: string = Translation.t('programResults.resume', {
   secteur: TrackStructure.getSectorShortLabel() ?? CompanyDataStorage.getCompanyData()?.secteur ?? '',
   region: TrackStructure.getRegion() ?? CompanyDataStorage.getCompanyData()?.region ?? ''
 })
-
+const isSpecificGoal = UsedTrack.isSpecificGoal()
 const hasRegisteredData = CompanyDataStorage.hasData()
 </script>
