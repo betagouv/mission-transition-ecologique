@@ -22,7 +22,7 @@
 
   @each $decoration in setting.$text-decorations {
     &--decoration-#{$decoration} {
-      text-decoration: none;
+      text-decoration: $decoration;
     }
   }
 }
