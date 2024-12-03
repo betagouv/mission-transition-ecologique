@@ -1,4 +1,4 @@
-import { CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { CompanyDataStorageKey, CompanyDataType, EstablishmentFront, ManualCompanyData } from '@/types'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
 import { StructureSize } from '@tee/common'
 import { ref, Ref } from 'vue'
@@ -12,7 +12,7 @@ export default class CompanyDataStorage {
   })
 
   private static readonly _hasData: ComputedRef<boolean> = computed(() => {
-    return this._data.value[CompanyDataStorageKey.Company] !== null || this._data.value[CompanyDataStorageKey.Size] !== null
+    return this._data.value[CompanyDataStorageKey.Company] !== null && this._data.value[CompanyDataStorageKey.Size] !== null
   })
 
   public static getData(): Ref<CompanyDataType> {
@@ -27,6 +27,13 @@ export default class CompanyDataStorage {
     return this._data.value[CompanyDataStorageKey.Company] !== null
   }
 
+  public static hasSiret() {
+    return (
+      this.hasCompanyData() &&
+      Object.hasOwn(this._data.value[CompanyDataStorageKey.Company] as EstablishmentFront | ManualCompanyData, 'siret') &&
+      (this._data.value[CompanyDataStorageKey.Company] as EstablishmentFront).siret !== null
+    )
+  }
   public static hasSize() {
     return this._data.value[CompanyDataStorageKey.Size] !== null
   }
