@@ -19,15 +19,26 @@ export default class Posthog {
   }
 
   static activatePosthogCookie() {
-    if (this._posthog) {
-      this._posthog.set_config({ persistence: 'localStorage+cookie' })
-    }
+    this.changePersistance('localStorage+cookie')
   }
 
-  static deactivatePosthogCookie() {
+  static resetPosthog() {
     if (this._posthog) {
-      Cookie.removeCookie('ph_', true)
-      this._posthog.set_config({ persistence: 'memory' })
+      this._posthog.reset()
+    }
+  }
+  static changePersistance(state: 'memory' | 'localStorage' | 'cookie' | 'localStorage+cookie' | 'sessionStorage') {
+    if (this._posthog) {
+      const distinctId = this._posthog.get_distinct_id()
+      this._posthog.set_config({ persistence: state })
+      this._posthog.identify(distinctId)
+    }
+  }
+  static deactivatePosthogCookie() {
+    if (Cookie.areCookiesSet()) {
+      this.changePersistance('memory')
+      Cookie.removeCookie(`ph_${Config.posthogApiKey}`, false)
+      localStorage.removeItem(`ph_${Config.posthogApiKey}`)
     }
   }
 
