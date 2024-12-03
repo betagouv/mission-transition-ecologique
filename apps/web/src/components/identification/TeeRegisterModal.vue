@@ -47,11 +47,10 @@
 import Translation from '@/utils/translation'
 import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import { onClickOutside } from '@vueuse/core'
 import Navigation from '@/utils/navigation'
 import { useNavigationStore } from '@/stores/navigation'
-import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
+import { CompanyDataStorage, CompanyDataStorageHandler } from '@/utils/storage'
 
 const registerModal = ref(null)
 const registeredData = CompanyDataStorage.getData()

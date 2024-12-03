@@ -1,11 +1,13 @@
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorage } from '@/utils/storage/companyDataStorage'
 import { useNavigationStore } from '@/stores/navigation'
 import {
   CompanyDataStorageKey,
   EstablishmentFront,
   LegalCategory,
+  ManualCompanyData,
   type QuestionnaireData,
   QuestionnaireRoute,
+  Sector,
   SiretValue,
   StructureSize,
   TrackId,
@@ -100,6 +102,16 @@ export class CompanyDataStorageHandler {
     if (trackId === TrackId.StructureWorkforce) {
       CompanyDataStorage.setSize(value as StructureSize)
     }
+    if (trackId === TrackId.Sectors) {
+      CompanyDataStorage.setCompanyData({ ...CompanyDataStorage.getCompanyData(), secteur: value as Sector } as ManualCompanyData)
+    }
+    if (trackId === TrackId.StructureRegion) {
+      CompanyDataStorage.setCompanyData({
+        ...CompanyDataStorage.getCompanyData(),
+        region: value,
+        denomination: `Entreprise : ${CompanyDataStorage.getCompanyData()?.secteur} - ${value}`
+      } as ManualCompanyData)
+    }
   }
 
   static getTrackIdFromStorageKey(key: CompanyDataStorageKey): TrackId {
@@ -109,6 +121,10 @@ export class CompanyDataStorageHandler {
       case CompanyDataStorageKey.Size:
         return TrackId.StructureWorkforce
     }
+  }
+
+  static generateDefaultName() {
+    return `Entreprise : ${CompanyDataStorage.getCompanyData()?.secteur} - ${CompanyDataStorage.getCompanyData()?.region}`
   }
 
   static getNextTrackStorage() {

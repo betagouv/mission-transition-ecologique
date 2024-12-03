@@ -255,7 +255,7 @@ import Translation from '@/utils/translation'
 import Breakpoint from '@/utils/breakpoints'
 import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/utils/opportunity'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorage } from '@/utils/storage'
 import { storeToRefs } from 'pinia'
 
 const projectStore = useProjectStore()

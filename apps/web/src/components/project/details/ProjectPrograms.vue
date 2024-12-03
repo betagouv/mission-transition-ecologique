@@ -66,7 +66,7 @@ import Contact from '@/utils/contact'
 import { useNavigationStore } from '@/stores/navigation'
 import Translation from '@/utils/translation'
 import Opportunity from '@/utils/opportunity'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorage } from '@/utils/storage'
 
 interface Props {
   project: Project
