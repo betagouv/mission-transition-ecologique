@@ -26,7 +26,7 @@
 
   &::placeholder {
     font-style: normal !important;
-    color: var(--text-default-grey);
+    color: setting.$text-grey;
   }
 }
 
