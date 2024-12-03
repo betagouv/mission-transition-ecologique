@@ -1,0 +1,7 @@
+@use 'setting';
+
+.fr-badge {
+  &.fr-badge--info {
+    color: setting.$blue-france;
+  }
+}
