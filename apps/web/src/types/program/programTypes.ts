@@ -1,4 +1,4 @@
-import { ThemeId, ProgramOperatorType, ProgramAidType, FiltersKeys, Operators, ProgramEligibilityType, Dispositif as ProgramWithoutId, Override } from '@/types'
+import { ThemeId, ProgramAidType, FiltersKeys, ProgramEligibilityType, Dispositif as ProgramWithoutId, Override } from '@/types'
 
 interface ProgramObjectiveLink {
   lien: string
@@ -53,8 +53,8 @@ export type ProgramType = Override<
   {
     id: string
     "nature de l'aide": ProgramAidType
-    'opérateur de contact': ProgramOperatorType
     objectifs: ProgramObjective[]
+    eligibility: ProgramEligibilityType
     filters: FiltersProgramData
   }
 >
