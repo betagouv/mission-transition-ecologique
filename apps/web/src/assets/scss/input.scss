@@ -1,8 +1,10 @@
 @use "setting";
 
 // override DsfrInput and DsfrInputGroup valid class
-.fr-input-group--valid::before, .fr-valid-text::before {
-  display: none;
+.fr-input-group--valid, .fr-valid-text, .fr-checkbox-group--valid {
+  &::before {
+    display: none;
+  }
 }
 
 .fr-input {

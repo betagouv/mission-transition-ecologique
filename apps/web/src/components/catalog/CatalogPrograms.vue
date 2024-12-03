@@ -9,10 +9,22 @@
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-col-justify--left fr-mt-3v">
+        <div
+          class="fr-col-12 fr-mt-3v"
+          :class="{
+            'fr-col-offset-md-2 fr-col-md-10 fr-col-justify--left': !hasError,
+            'fr-col-md-12 fr-col-justify--center': hasError
+          }"
+        >
           <ThemeFilter />
         </div>
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pr-md-2v">
+        <div
+          class="fr-col-12 fr-pr-md-2v"
+          :class="{
+            'fr-col-offset-md-2 fr-col-md-10': !hasError,
+            'fr-col-md-12': hasError
+          }"
+        >
           <ThemeHeaderCard
             v-if="showThemeCard"
             :theme="theme as ThemeId"
@@ -24,9 +36,14 @@
     </div>
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
-        <div class="fr-grid-row fr-grid-row--center">
+        <div
+          :class="{
+            'fr-grid-row': !hasError,
+            'fr-grid-row--center': !hasError
+          }"
+        >
           <div
-            v-if="!hasSpinner"
+            v-if="!hasSpinner && !hasError"
             class="fr-col-2 fr-col-hidden fr-col-unhidden-md"
           >
             <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
@@ -34,7 +51,13 @@
               <ProgramFiltersAccordion />
             </div>
           </div>
-          <div class="fr-col-12 fr-col-md-10 fr-pr-md-2v fr-col-justify--center">
+          <div
+            class="fr-col-12 fr-pr-md-2v fr-col-justify--center"
+            :class="{
+              'fr-col-md-10': !hasError,
+              'fr-col-md-12': hasError
+            }"
+          >
             <ProgramList :filtered-programs="filteredPrograms" />
             <TeeSpinner
               v-if="hasSpinner"

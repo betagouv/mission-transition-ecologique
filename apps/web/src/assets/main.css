@@ -16,6 +16,9 @@
 .fr-accordion-bg--yellow .fr-collapse--expanded {
   background: #facf35;
 }
+.fr-accordion-bg--deep-red .fr-collapse--expanded {
+  background: #e1000f;
+}
 .fr-accordion-bg--red .fr-collapse--expanded {
   background: #fca081;
 }
@@ -75,12 +78,12 @@
   .fr-bg--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9 !important;
+    background-color: rgb(185.1, 185.1, 185.1) !important;
   }
   .fr-bg--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8 !important;
+    background-color: rgb(231.7, 231.7, 231.7) !important;
   }
 }
 @media (min-width: 0) and (width >= 0) and (width <= 575px) {
@@ -92,12 +95,12 @@
   .fr-bg-xs--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9 !important;
+    background-color: rgb(185.1, 185.1, 185.1) !important;
   }
   .fr-bg-xs--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8 !important;
+    background-color: rgb(231.7, 231.7, 231.7) !important;
   }
 }
 @media (min-width: 0) {
@@ -105,10 +108,10 @@
     background-color: #facf35 !important;
   }
   .fr-bg--yellow--light {
-    background-color: #fef1c2 !important;
+    background-color: rgb(253.5, 240.6, 194.4) !important;
   }
   .fr-bg--yellow--lightness {
-    background-color: #fffaeb !important;
+    background-color: rgb(254.5, 250.2, 234.8) !important;
   }
 }
 @media (min-width: 0) and (width >= 0) and (width <= 575px) {
@@ -116,10 +119,44 @@
     background-color: #facf35 !important;
   }
   .fr-bg-xs--yellow--light {
-    background-color: #fef1c2 !important;
+    background-color: rgb(253.5, 240.6, 194.4) !important;
   }
   .fr-bg-xs--yellow--lightness {
-    background-color: #fffaeb !important;
+    background-color: rgb(254.5, 250.2, 234.8) !important;
+  }
+}
+@media (min-width: 0) {
+  .fr-bg--deep-red {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: #e1000f !important;
+  }
+  .fr-bg--deep-red--light {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 169.5, 175.2) !important;
+  }
+  .fr-bg--deep-red--lightness {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 226.5, 228.4) !important;
+  }
+}
+@media (min-width: 0) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--deep-red {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: #e1000f !important;
+  }
+  .fr-bg-xs--deep-red--light {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 169.5, 175.2) !important;
+  }
+  .fr-bg-xs--deep-red--lightness {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 226.5, 228.4) !important;
   }
 }
 @media (min-width: 0) {
@@ -127,10 +164,10 @@
     background-color: #fca081 !important;
   }
   .fr-bg--red--light {
-    background-color: #fee3d9 !important;
+    background-color: rgb(254.1, 226.5, 217.2) !important;
   }
   .fr-bg--red--lightness {
-    background-color: #fff6f2 !important;
+    background-color: rgb(254.7, 245.5, 242.4) !important;
   }
 }
 @media (min-width: 0) and (width >= 0) and (width <= 575px) {
@@ -138,10 +175,10 @@
     background-color: #fca081 !important;
   }
   .fr-bg-xs--red--light {
-    background-color: #fee3d9 !important;
+    background-color: rgb(254.1, 226.5, 217.2) !important;
   }
   .fr-bg-xs--red--lightness {
-    background-color: #fff6f2 !important;
+    background-color: rgb(254.7, 245.5, 242.4) !important;
   }
 }
 @media (min-width: 0) {
@@ -149,10 +186,10 @@
     background-color: #6a62f4 !important;
   }
   .fr-bg--purple--light {
-    background-color: #d2d0fc !important;
+    background-color: rgb(210.3, 207.9, 251.7) !important;
   }
   .fr-bg--purple--lightness {
-    background-color: #f0effe !important;
+    background-color: rgb(240.1, 239.3, 253.9) !important;
   }
 }
 @media (min-width: 0) and (width >= 0) and (width <= 575px) {
@@ -160,10 +197,10 @@
     background-color: #6a62f4 !important;
   }
   .fr-bg-xs--purple--light {
-    background-color: #d2d0fc !important;
+    background-color: rgb(210.3, 207.9, 251.7) !important;
   }
   .fr-bg-xs--purple--lightness {
-    background-color: #f0effe !important;
+    background-color: rgb(240.1, 239.3, 253.9) !important;
   }
 }
 @media (min-width: 0) {
@@ -171,10 +208,10 @@
     background-color: #1ebe8e !important;
   }
   .fr-bg--green--light {
-    background-color: #b4f3e0 !important;
+    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
   }
   .fr-bg--green--lightness {
-    background-color: #e6fbf5 !important;
+    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
 }
 @media (min-width: 0) and (width >= 0) and (width <= 575px) {
@@ -182,10 +219,10 @@
     background-color: #1ebe8e !important;
   }
   .fr-bg-xs--green--light {
-    background-color: #b4f3e0 !important;
+    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
   }
   .fr-bg-xs--green--lightness {
-    background-color: #e6fbf5 !important;
+    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
 }
 @media (min-width: 0) {
@@ -193,10 +230,10 @@
     background-color: #001891 !important;
   }
   .fr-bg--blue-france--light {
-    background-color: #92a4ff !important;
+    background-color: rgb(145.5, 163.624137931, 255) !important;
   }
   .fr-bg--blue-france--lightness {
-    background-color: #dbe1ff !important;
+    background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
 @media (min-width: 0) and (width >= 0) and (width <= 575px) {
@@ -204,10 +241,10 @@
     background-color: #001891 !important;
   }
   .fr-bg-xs--blue-france--light {
-    background-color: #92a4ff !important;
+    background-color: rgb(145.5, 163.624137931, 255) !important;
   }
   .fr-bg-xs--blue-france--lightness {
-    background-color: #dbe1ff !important;
+    background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
 @media (min-width: 0) {
@@ -215,10 +252,10 @@
     background-color: #777777 !important;
   }
   .fr-bg--grey--light {
-    background-color: #d6d6d6 !important;
+    background-color: rgb(214.2, 214.2, 214.2) !important;
   }
   .fr-bg--grey--lightness {
-    background-color: #f1f1f1 !important;
+    background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
 @media (min-width: 0) and (width >= 0) and (width <= 575px) {
@@ -226,12 +263,19 @@
     background-color: #777777 !important;
   }
   .fr-bg-xs--grey--light {
-    background-color: #d6d6d6 !important;
+    background-color: rgb(214.2, 214.2, 214.2) !important;
   }
   .fr-bg-xs--grey--lightness {
-    background-color: #f1f1f1 !important;
+    background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
+.fr-bg--none {
+  background-image: none !important;
+}
+.fr-bg--none:hover {
+  background-color: transparent !important;
+}
+
 @media (min-width: 36em) {
   .fr-bg-sm--white {
     /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -275,12 +319,12 @@
   .fr-bg-sm--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9 !important;
+    background-color: rgb(185.1, 185.1, 185.1) !important;
   }
   .fr-bg-sm--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8 !important;
+    background-color: rgb(231.7, 231.7, 231.7) !important;
   }
 }
 @media (min-width: 36em) and (width >= 0) and (width <= 575px) {
@@ -292,12 +336,12 @@
   .fr-bg-xs--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9 !important;
+    background-color: rgb(185.1, 185.1, 185.1) !important;
   }
   .fr-bg-xs--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8 !important;
+    background-color: rgb(231.7, 231.7, 231.7) !important;
   }
 }
 @media (min-width: 36em) {
@@ -305,10 +349,10 @@
     background-color: #facf35 !important;
   }
   .fr-bg-sm--yellow--light {
-    background-color: #fef1c2 !important;
+    background-color: rgb(253.5, 240.6, 194.4) !important;
   }
   .fr-bg-sm--yellow--lightness {
-    background-color: #fffaeb !important;
+    background-color: rgb(254.5, 250.2, 234.8) !important;
   }
 }
 @media (min-width: 36em) and (width >= 0) and (width <= 575px) {
@@ -316,10 +360,44 @@
     background-color: #facf35 !important;
   }
   .fr-bg-xs--yellow--light {
-    background-color: #fef1c2 !important;
+    background-color: rgb(253.5, 240.6, 194.4) !important;
   }
   .fr-bg-xs--yellow--lightness {
-    background-color: #fffaeb !important;
+    background-color: rgb(254.5, 250.2, 234.8) !important;
+  }
+}
+@media (min-width: 36em) {
+  .fr-bg-sm--deep-red {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: #e1000f !important;
+  }
+  .fr-bg-sm--deep-red--light {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 169.5, 175.2) !important;
+  }
+  .fr-bg-sm--deep-red--lightness {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 226.5, 228.4) !important;
+  }
+}
+@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--deep-red {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: #e1000f !important;
+  }
+  .fr-bg-xs--deep-red--light {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 169.5, 175.2) !important;
+  }
+  .fr-bg-xs--deep-red--lightness {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 226.5, 228.4) !important;
   }
 }
 @media (min-width: 36em) {
@@ -327,10 +405,10 @@
     background-color: #fca081 !important;
   }
   .fr-bg-sm--red--light {
-    background-color: #fee3d9 !important;
+    background-color: rgb(254.1, 226.5, 217.2) !important;
   }
   .fr-bg-sm--red--lightness {
-    background-color: #fff6f2 !important;
+    background-color: rgb(254.7, 245.5, 242.4) !important;
   }
 }
 @media (min-width: 36em) and (width >= 0) and (width <= 575px) {
@@ -338,10 +416,10 @@
     background-color: #fca081 !important;
   }
   .fr-bg-xs--red--light {
-    background-color: #fee3d9 !important;
+    background-color: rgb(254.1, 226.5, 217.2) !important;
   }
   .fr-bg-xs--red--lightness {
-    background-color: #fff6f2 !important;
+    background-color: rgb(254.7, 245.5, 242.4) !important;
   }
 }
 @media (min-width: 36em) {
@@ -349,10 +427,10 @@
     background-color: #6a62f4 !important;
   }
   .fr-bg-sm--purple--light {
-    background-color: #d2d0fc !important;
+    background-color: rgb(210.3, 207.9, 251.7) !important;
   }
   .fr-bg-sm--purple--lightness {
-    background-color: #f0effe !important;
+    background-color: rgb(240.1, 239.3, 253.9) !important;
   }
 }
 @media (min-width: 36em) and (width >= 0) and (width <= 575px) {
@@ -360,10 +438,10 @@
     background-color: #6a62f4 !important;
   }
   .fr-bg-xs--purple--light {
-    background-color: #d2d0fc !important;
+    background-color: rgb(210.3, 207.9, 251.7) !important;
   }
   .fr-bg-xs--purple--lightness {
-    background-color: #f0effe !important;
+    background-color: rgb(240.1, 239.3, 253.9) !important;
   }
 }
 @media (min-width: 36em) {
@@ -371,10 +449,10 @@
     background-color: #1ebe8e !important;
   }
   .fr-bg-sm--green--light {
-    background-color: #b4f3e0 !important;
+    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
   }
   .fr-bg-sm--green--lightness {
-    background-color: #e6fbf5 !important;
+    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
 }
 @media (min-width: 36em) and (width >= 0) and (width <= 575px) {
@@ -382,10 +460,10 @@
     background-color: #1ebe8e !important;
   }
   .fr-bg-xs--green--light {
-    background-color: #b4f3e0 !important;
+    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
   }
   .fr-bg-xs--green--lightness {
-    background-color: #e6fbf5 !important;
+    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
 }
 @media (min-width: 36em) {
@@ -393,10 +471,10 @@
     background-color: #001891 !important;
   }
   .fr-bg-sm--blue-france--light {
-    background-color: #92a4ff !important;
+    background-color: rgb(145.5, 163.624137931, 255) !important;
   }
   .fr-bg-sm--blue-france--lightness {
-    background-color: #dbe1ff !important;
+    background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
 @media (min-width: 36em) and (width >= 0) and (width <= 575px) {
@@ -404,10 +482,10 @@
     background-color: #001891 !important;
   }
   .fr-bg-xs--blue-france--light {
-    background-color: #92a4ff !important;
+    background-color: rgb(145.5, 163.624137931, 255) !important;
   }
   .fr-bg-xs--blue-france--lightness {
-    background-color: #dbe1ff !important;
+    background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
 @media (min-width: 36em) {
@@ -415,10 +493,10 @@
     background-color: #777777 !important;
   }
   .fr-bg-sm--grey--light {
-    background-color: #d6d6d6 !important;
+    background-color: rgb(214.2, 214.2, 214.2) !important;
   }
   .fr-bg-sm--grey--lightness {
-    background-color: #f1f1f1 !important;
+    background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
 @media (min-width: 36em) and (width >= 0) and (width <= 575px) {
@@ -426,12 +504,19 @@
     background-color: #777777 !important;
   }
   .fr-bg-xs--grey--light {
-    background-color: #d6d6d6 !important;
+    background-color: rgb(214.2, 214.2, 214.2) !important;
   }
   .fr-bg-xs--grey--lightness {
-    background-color: #f1f1f1 !important;
+    background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
+.fr-bg--none {
+  background-image: none !important;
+}
+.fr-bg--none:hover {
+  background-color: transparent !important;
+}
+
 @media (min-width: 48em) {
   .fr-bg-md--white {
     /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -475,12 +560,12 @@
   .fr-bg-md--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9 !important;
+    background-color: rgb(185.1, 185.1, 185.1) !important;
   }
   .fr-bg-md--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8 !important;
+    background-color: rgb(231.7, 231.7, 231.7) !important;
   }
 }
 @media (min-width: 48em) and (width >= 0) and (width <= 575px) {
@@ -492,12 +577,12 @@
   .fr-bg-xs--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9 !important;
+    background-color: rgb(185.1, 185.1, 185.1) !important;
   }
   .fr-bg-xs--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8 !important;
+    background-color: rgb(231.7, 231.7, 231.7) !important;
   }
 }
 @media (min-width: 48em) {
@@ -505,10 +590,10 @@
     background-color: #facf35 !important;
   }
   .fr-bg-md--yellow--light {
-    background-color: #fef1c2 !important;
+    background-color: rgb(253.5, 240.6, 194.4) !important;
   }
   .fr-bg-md--yellow--lightness {
-    background-color: #fffaeb !important;
+    background-color: rgb(254.5, 250.2, 234.8) !important;
   }
 }
 @media (min-width: 48em) and (width >= 0) and (width <= 575px) {
@@ -516,10 +601,44 @@
     background-color: #facf35 !important;
   }
   .fr-bg-xs--yellow--light {
-    background-color: #fef1c2 !important;
+    background-color: rgb(253.5, 240.6, 194.4) !important;
   }
   .fr-bg-xs--yellow--lightness {
-    background-color: #fffaeb !important;
+    background-color: rgb(254.5, 250.2, 234.8) !important;
+  }
+}
+@media (min-width: 48em) {
+  .fr-bg-md--deep-red {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: #e1000f !important;
+  }
+  .fr-bg-md--deep-red--light {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 169.5, 175.2) !important;
+  }
+  .fr-bg-md--deep-red--lightness {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 226.5, 228.4) !important;
+  }
+}
+@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--deep-red {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: #e1000f !important;
+  }
+  .fr-bg-xs--deep-red--light {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 169.5, 175.2) !important;
+  }
+  .fr-bg-xs--deep-red--lightness {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 226.5, 228.4) !important;
   }
 }
 @media (min-width: 48em) {
@@ -527,10 +646,10 @@
     background-color: #fca081 !important;
   }
   .fr-bg-md--red--light {
-    background-color: #fee3d9 !important;
+    background-color: rgb(254.1, 226.5, 217.2) !important;
   }
   .fr-bg-md--red--lightness {
-    background-color: #fff6f2 !important;
+    background-color: rgb(254.7, 245.5, 242.4) !important;
   }
 }
 @media (min-width: 48em) and (width >= 0) and (width <= 575px) {
@@ -538,10 +657,10 @@
     background-color: #fca081 !important;
   }
   .fr-bg-xs--red--light {
-    background-color: #fee3d9 !important;
+    background-color: rgb(254.1, 226.5, 217.2) !important;
   }
   .fr-bg-xs--red--lightness {
-    background-color: #fff6f2 !important;
+    background-color: rgb(254.7, 245.5, 242.4) !important;
   }
 }
 @media (min-width: 48em) {
@@ -549,10 +668,10 @@
     background-color: #6a62f4 !important;
   }
   .fr-bg-md--purple--light {
-    background-color: #d2d0fc !important;
+    background-color: rgb(210.3, 207.9, 251.7) !important;
   }
   .fr-bg-md--purple--lightness {
-    background-color: #f0effe !important;
+    background-color: rgb(240.1, 239.3, 253.9) !important;
   }
 }
 @media (min-width: 48em) and (width >= 0) and (width <= 575px) {
@@ -560,10 +679,10 @@
     background-color: #6a62f4 !important;
   }
   .fr-bg-xs--purple--light {
-    background-color: #d2d0fc !important;
+    background-color: rgb(210.3, 207.9, 251.7) !important;
   }
   .fr-bg-xs--purple--lightness {
-    background-color: #f0effe !important;
+    background-color: rgb(240.1, 239.3, 253.9) !important;
   }
 }
 @media (min-width: 48em) {
@@ -571,10 +690,10 @@
     background-color: #1ebe8e !important;
   }
   .fr-bg-md--green--light {
-    background-color: #b4f3e0 !important;
+    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
   }
   .fr-bg-md--green--lightness {
-    background-color: #e6fbf5 !important;
+    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
 }
 @media (min-width: 48em) and (width >= 0) and (width <= 575px) {
@@ -582,10 +701,10 @@
     background-color: #1ebe8e !important;
   }
   .fr-bg-xs--green--light {
-    background-color: #b4f3e0 !important;
+    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
   }
   .fr-bg-xs--green--lightness {
-    background-color: #e6fbf5 !important;
+    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
 }
 @media (min-width: 48em) {
@@ -593,10 +712,10 @@
     background-color: #001891 !important;
   }
   .fr-bg-md--blue-france--light {
-    background-color: #92a4ff !important;
+    background-color: rgb(145.5, 163.624137931, 255) !important;
   }
   .fr-bg-md--blue-france--lightness {
-    background-color: #dbe1ff !important;
+    background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
 @media (min-width: 48em) and (width >= 0) and (width <= 575px) {
@@ -604,10 +723,10 @@
     background-color: #001891 !important;
   }
   .fr-bg-xs--blue-france--light {
-    background-color: #92a4ff !important;
+    background-color: rgb(145.5, 163.624137931, 255) !important;
   }
   .fr-bg-xs--blue-france--lightness {
-    background-color: #dbe1ff !important;
+    background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
 @media (min-width: 48em) {
@@ -615,10 +734,10 @@
     background-color: #777777 !important;
   }
   .fr-bg-md--grey--light {
-    background-color: #d6d6d6 !important;
+    background-color: rgb(214.2, 214.2, 214.2) !important;
   }
   .fr-bg-md--grey--lightness {
-    background-color: #f1f1f1 !important;
+    background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
 @media (min-width: 48em) and (width >= 0) and (width <= 575px) {
@@ -626,12 +745,19 @@
     background-color: #777777 !important;
   }
   .fr-bg-xs--grey--light {
-    background-color: #d6d6d6 !important;
+    background-color: rgb(214.2, 214.2, 214.2) !important;
   }
   .fr-bg-xs--grey--lightness {
-    background-color: #f1f1f1 !important;
+    background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
+.fr-bg--none {
+  background-image: none !important;
+}
+.fr-bg--none:hover {
+  background-color: transparent !important;
+}
+
 @media (min-width: 62em) {
   .fr-bg-lg--white {
     /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -675,12 +801,12 @@
   .fr-bg-lg--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9 !important;
+    background-color: rgb(185.1, 185.1, 185.1) !important;
   }
   .fr-bg-lg--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8 !important;
+    background-color: rgb(231.7, 231.7, 231.7) !important;
   }
 }
 @media (min-width: 62em) and (width >= 0) and (width <= 575px) {
@@ -692,12 +818,12 @@
   .fr-bg-xs--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9 !important;
+    background-color: rgb(185.1, 185.1, 185.1) !important;
   }
   .fr-bg-xs--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8 !important;
+    background-color: rgb(231.7, 231.7, 231.7) !important;
   }
 }
 @media (min-width: 62em) {
@@ -705,10 +831,10 @@
     background-color: #facf35 !important;
   }
   .fr-bg-lg--yellow--light {
-    background-color: #fef1c2 !important;
+    background-color: rgb(253.5, 240.6, 194.4) !important;
   }
   .fr-bg-lg--yellow--lightness {
-    background-color: #fffaeb !important;
+    background-color: rgb(254.5, 250.2, 234.8) !important;
   }
 }
 @media (min-width: 62em) and (width >= 0) and (width <= 575px) {
@@ -716,10 +842,44 @@
     background-color: #facf35 !important;
   }
   .fr-bg-xs--yellow--light {
-    background-color: #fef1c2 !important;
+    background-color: rgb(253.5, 240.6, 194.4) !important;
   }
   .fr-bg-xs--yellow--lightness {
-    background-color: #fffaeb !important;
+    background-color: rgb(254.5, 250.2, 234.8) !important;
+  }
+}
+@media (min-width: 62em) {
+  .fr-bg-lg--deep-red {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: #e1000f !important;
+  }
+  .fr-bg-lg--deep-red--light {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 169.5, 175.2) !important;
+  }
+  .fr-bg-lg--deep-red--lightness {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 226.5, 228.4) !important;
+  }
+}
+@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--deep-red {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: #e1000f !important;
+  }
+  .fr-bg-xs--deep-red--light {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 169.5, 175.2) !important;
+  }
+  .fr-bg-xs--deep-red--lightness {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 226.5, 228.4) !important;
   }
 }
 @media (min-width: 62em) {
@@ -727,10 +887,10 @@
     background-color: #fca081 !important;
   }
   .fr-bg-lg--red--light {
-    background-color: #fee3d9 !important;
+    background-color: rgb(254.1, 226.5, 217.2) !important;
   }
   .fr-bg-lg--red--lightness {
-    background-color: #fff6f2 !important;
+    background-color: rgb(254.7, 245.5, 242.4) !important;
   }
 }
 @media (min-width: 62em) and (width >= 0) and (width <= 575px) {
@@ -738,10 +898,10 @@
     background-color: #fca081 !important;
   }
   .fr-bg-xs--red--light {
-    background-color: #fee3d9 !important;
+    background-color: rgb(254.1, 226.5, 217.2) !important;
   }
   .fr-bg-xs--red--lightness {
-    background-color: #fff6f2 !important;
+    background-color: rgb(254.7, 245.5, 242.4) !important;
   }
 }
 @media (min-width: 62em) {
@@ -749,10 +909,10 @@
     background-color: #6a62f4 !important;
   }
   .fr-bg-lg--purple--light {
-    background-color: #d2d0fc !important;
+    background-color: rgb(210.3, 207.9, 251.7) !important;
   }
   .fr-bg-lg--purple--lightness {
-    background-color: #f0effe !important;
+    background-color: rgb(240.1, 239.3, 253.9) !important;
   }
 }
 @media (min-width: 62em) and (width >= 0) and (width <= 575px) {
@@ -760,10 +920,10 @@
     background-color: #6a62f4 !important;
   }
   .fr-bg-xs--purple--light {
-    background-color: #d2d0fc !important;
+    background-color: rgb(210.3, 207.9, 251.7) !important;
   }
   .fr-bg-xs--purple--lightness {
-    background-color: #f0effe !important;
+    background-color: rgb(240.1, 239.3, 253.9) !important;
   }
 }
 @media (min-width: 62em) {
@@ -771,10 +931,10 @@
     background-color: #1ebe8e !important;
   }
   .fr-bg-lg--green--light {
-    background-color: #b4f3e0 !important;
+    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
   }
   .fr-bg-lg--green--lightness {
-    background-color: #e6fbf5 !important;
+    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
 }
 @media (min-width: 62em) and (width >= 0) and (width <= 575px) {
@@ -782,10 +942,10 @@
     background-color: #1ebe8e !important;
   }
   .fr-bg-xs--green--light {
-    background-color: #b4f3e0 !important;
+    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
   }
   .fr-bg-xs--green--lightness {
-    background-color: #e6fbf5 !important;
+    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
 }
 @media (min-width: 62em) {
@@ -793,10 +953,10 @@
     background-color: #001891 !important;
   }
   .fr-bg-lg--blue-france--light {
-    background-color: #92a4ff !important;
+    background-color: rgb(145.5, 163.624137931, 255) !important;
   }
   .fr-bg-lg--blue-france--lightness {
-    background-color: #dbe1ff !important;
+    background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
 @media (min-width: 62em) and (width >= 0) and (width <= 575px) {
@@ -804,10 +964,10 @@
     background-color: #001891 !important;
   }
   .fr-bg-xs--blue-france--light {
-    background-color: #92a4ff !important;
+    background-color: rgb(145.5, 163.624137931, 255) !important;
   }
   .fr-bg-xs--blue-france--lightness {
-    background-color: #dbe1ff !important;
+    background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
 @media (min-width: 62em) {
@@ -815,10 +975,10 @@
     background-color: #777777 !important;
   }
   .fr-bg-lg--grey--light {
-    background-color: #d6d6d6 !important;
+    background-color: rgb(214.2, 214.2, 214.2) !important;
   }
   .fr-bg-lg--grey--lightness {
-    background-color: #f1f1f1 !important;
+    background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
 @media (min-width: 62em) and (width >= 0) and (width <= 575px) {
@@ -826,12 +986,19 @@
     background-color: #777777 !important;
   }
   .fr-bg-xs--grey--light {
-    background-color: #d6d6d6 !important;
+    background-color: rgb(214.2, 214.2, 214.2) !important;
   }
   .fr-bg-xs--grey--lightness {
-    background-color: #f1f1f1 !important;
+    background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
+.fr-bg--none {
+  background-image: none !important;
+}
+.fr-bg--none:hover {
+  background-color: transparent !important;
+}
+
 @media (min-width: 78em) {
   .fr-bg-xl--white {
     /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -875,12 +1042,12 @@
   .fr-bg-xl--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9 !important;
+    background-color: rgb(185.1, 185.1, 185.1) !important;
   }
   .fr-bg-xl--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8 !important;
+    background-color: rgb(231.7, 231.7, 231.7) !important;
   }
 }
 @media (min-width: 78em) and (width >= 0) and (width <= 575px) {
@@ -892,12 +1059,12 @@
   .fr-bg-xs--black--light {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #b9b9b9 !important;
+    background-color: rgb(185.1, 185.1, 185.1) !important;
   }
   .fr-bg-xs--black--lightness {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
-    background-color: #e8e8e8 !important;
+    background-color: rgb(231.7, 231.7, 231.7) !important;
   }
 }
 @media (min-width: 78em) {
@@ -905,10 +1072,10 @@
     background-color: #facf35 !important;
   }
   .fr-bg-xl--yellow--light {
-    background-color: #fef1c2 !important;
+    background-color: rgb(253.5, 240.6, 194.4) !important;
   }
   .fr-bg-xl--yellow--lightness {
-    background-color: #fffaeb !important;
+    background-color: rgb(254.5, 250.2, 234.8) !important;
   }
 }
 @media (min-width: 78em) and (width >= 0) and (width <= 575px) {
@@ -916,10 +1083,44 @@
     background-color: #facf35 !important;
   }
   .fr-bg-xs--yellow--light {
-    background-color: #fef1c2 !important;
+    background-color: rgb(253.5, 240.6, 194.4) !important;
   }
   .fr-bg-xs--yellow--lightness {
-    background-color: #fffaeb !important;
+    background-color: rgb(254.5, 250.2, 234.8) !important;
+  }
+}
+@media (min-width: 78em) {
+  .fr-bg-xl--deep-red {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: #e1000f !important;
+  }
+  .fr-bg-xl--deep-red--light {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 169.5, 175.2) !important;
+  }
+  .fr-bg-xl--deep-red--lightness {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 226.5, 228.4) !important;
+  }
+}
+@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
+  .fr-bg-xs--deep-red {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: #e1000f !important;
+  }
+  .fr-bg-xs--deep-red--light {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 169.5, 175.2) !important;
+  }
+  .fr-bg-xs--deep-red--lightness {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(255, 226.5, 228.4) !important;
   }
 }
 @media (min-width: 78em) {
@@ -927,10 +1128,10 @@
     background-color: #fca081 !important;
   }
   .fr-bg-xl--red--light {
-    background-color: #fee3d9 !important;
+    background-color: rgb(254.1, 226.5, 217.2) !important;
   }
   .fr-bg-xl--red--lightness {
-    background-color: #fff6f2 !important;
+    background-color: rgb(254.7, 245.5, 242.4) !important;
   }
 }
 @media (min-width: 78em) and (width >= 0) and (width <= 575px) {
@@ -938,10 +1139,10 @@
     background-color: #fca081 !important;
   }
   .fr-bg-xs--red--light {
-    background-color: #fee3d9 !important;
+    background-color: rgb(254.1, 226.5, 217.2) !important;
   }
   .fr-bg-xs--red--lightness {
-    background-color: #fff6f2 !important;
+    background-color: rgb(254.7, 245.5, 242.4) !important;
   }
 }
 @media (min-width: 78em) {
@@ -949,10 +1150,10 @@
     background-color: #6a62f4 !important;
   }
   .fr-bg-xl--purple--light {
-    background-color: #d2d0fc !important;
+    background-color: rgb(210.3, 207.9, 251.7) !important;
   }
   .fr-bg-xl--purple--lightness {
-    background-color: #f0effe !important;
+    background-color: rgb(240.1, 239.3, 253.9) !important;
   }
 }
 @media (min-width: 78em) and (width >= 0) and (width <= 575px) {
@@ -960,10 +1161,10 @@
     background-color: #6a62f4 !important;
   }
   .fr-bg-xs--purple--light {
-    background-color: #d2d0fc !important;
+    background-color: rgb(210.3, 207.9, 251.7) !important;
   }
   .fr-bg-xs--purple--lightness {
-    background-color: #f0effe !important;
+    background-color: rgb(240.1, 239.3, 253.9) !important;
   }
 }
 @media (min-width: 78em) {
@@ -971,10 +1172,10 @@
     background-color: #1ebe8e !important;
   }
   .fr-bg-xl--green--light {
-    background-color: #b4f3e0 !important;
+    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
   }
   .fr-bg-xl--green--lightness {
-    background-color: #e6fbf5 !important;
+    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
 }
 @media (min-width: 78em) and (width >= 0) and (width <= 575px) {
@@ -982,10 +1183,10 @@
     background-color: #1ebe8e !important;
   }
   .fr-bg-xs--green--light {
-    background-color: #b4f3e0 !important;
+    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
   }
   .fr-bg-xs--green--lightness {
-    background-color: #e6fbf5 !important;
+    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
 }
 @media (min-width: 78em) {
@@ -993,10 +1194,10 @@
     background-color: #001891 !important;
   }
   .fr-bg-xl--blue-france--light {
-    background-color: #92a4ff !important;
+    background-color: rgb(145.5, 163.624137931, 255) !important;
   }
   .fr-bg-xl--blue-france--lightness {
-    background-color: #dbe1ff !important;
+    background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
 @media (min-width: 78em) and (width >= 0) and (width <= 575px) {
@@ -1004,10 +1205,10 @@
     background-color: #001891 !important;
   }
   .fr-bg-xs--blue-france--light {
-    background-color: #92a4ff !important;
+    background-color: rgb(145.5, 163.624137931, 255) !important;
   }
   .fr-bg-xs--blue-france--lightness {
-    background-color: #dbe1ff !important;
+    background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
 @media (min-width: 78em) {
@@ -1015,10 +1216,10 @@
     background-color: #777777 !important;
   }
   .fr-bg-xl--grey--light {
-    background-color: #d6d6d6 !important;
+    background-color: rgb(214.2, 214.2, 214.2) !important;
   }
   .fr-bg-xl--grey--lightness {
-    background-color: #f1f1f1 !important;
+    background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
 @media (min-width: 78em) and (width >= 0) and (width <= 575px) {
@@ -1026,12 +1227,23 @@
     background-color: #777777 !important;
   }
   .fr-bg-xs--grey--light {
-    background-color: #d6d6d6 !important;
+    background-color: rgb(214.2, 214.2, 214.2) !important;
   }
   .fr-bg-xs--grey--lightness {
-    background-color: #f1f1f1 !important;
+    background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
+.fr-badge.fr-badge--info {
+  color: #001891;
+}
+
+.fr-bg--none {
+  background-image: none !important;
+}
+.fr-bg--none:hover {
+  background-color: transparent !important;
+}
+
 .fr-banner {
   position: relative;
 }
@@ -1066,64 +1278,73 @@
   border-top: thin solid #161616;
 }
 .fr-border-t--black--light {
-  border-top: thin solid #b9b9b9;
+  border-top: thin solid rgb(185.1, 185.1, 185.1);
 }
 .fr-border-t--black--lightness {
-  border-top: thin solid #e8e8e8;
+  border-top: thin solid rgb(231.7, 231.7, 231.7);
 }
 .fr-border-t--yellow {
   border-top: thin solid #facf35;
 }
 .fr-border-t--yellow--light {
-  border-top: thin solid #fef1c2;
+  border-top: thin solid rgb(253.5, 240.6, 194.4);
 }
 .fr-border-t--yellow--lightness {
-  border-top: thin solid #fffaeb;
+  border-top: thin solid rgb(254.5, 250.2, 234.8);
+}
+.fr-border-t--deep-red {
+  border-top: thin solid #e1000f;
+}
+.fr-border-t--deep-red--light {
+  border-top: thin solid rgb(255, 169.5, 175.2);
+}
+.fr-border-t--deep-red--lightness {
+  border-top: thin solid rgb(255, 226.5, 228.4);
 }
 .fr-border-t--red {
   border-top: thin solid #fca081;
 }
 .fr-border-t--red--light {
-  border-top: thin solid #fee3d9;
+  border-top: thin solid rgb(254.1, 226.5, 217.2);
 }
 .fr-border-t--red--lightness {
-  border-top: thin solid #fff6f2;
+  border-top: thin solid rgb(254.7, 245.5, 242.4);
 }
 .fr-border-t--purple {
   border-top: thin solid #6a62f4;
 }
 .fr-border-t--purple--light {
-  border-top: thin solid #d2d0fc;
+  border-top: thin solid rgb(210.3, 207.9, 251.7);
 }
 .fr-border-t--purple--lightness {
-  border-top: thin solid #f0effe;
+  border-top: thin solid rgb(240.1, 239.3, 253.9);
 }
 .fr-border-t--green {
   border-top: thin solid #1ebe8e;
 }
 .fr-border-t--green--light {
-  border-top: thin solid #b4f3e0;
+  border-top: thin solid rgb(179.8636363636, 243.1363636364, 224.1545454545);
 }
 .fr-border-t--green--lightness {
-  border-top: thin solid #e6fbf5;
+  border-top: thin solid rgb(229.9545454545, 251.0454545455, 244.7181818182);
 }
 .fr-border-t--blue-france {
   border-top: thin solid #001891;
 }
 .fr-border-t--blue-france--light {
-  border-top: thin solid #92a4ff;
+  border-top: thin solid rgb(145.5, 163.624137931, 255);
 }
 .fr-border-t--blue-france--lightness {
-  border-top: thin solid #dbe1ff;
+  border-top: thin solid rgb(218.5, 224.5413793103, 255);
 }
 .fr-border-t--grey {
   border-top: thin solid #777777;
 }
 .fr-border-t--grey--light {
-  border-top: thin solid #d6d6d6;
+  border-top: thin solid rgb(214.2, 214.2, 214.2);
 }
 .fr-border-t--grey--lightness {
-  border-top: thin solid #f1f1f1;
+  border-top: thin solid rgb(241.4, 241.4, 241.4);
 }
 .fr-border-r {
   border-right: thin solid #161616;
@@ -1141,64 +1362,73 @@
   border-right: thin solid #161616;
 }
 .fr-border-r--black--light {
-  border-right: thin solid #b9b9b9;
+  border-right: thin solid rgb(185.1, 185.1, 185.1);
 }
 .fr-border-r--black--lightness {
-  border-right: thin solid #e8e8e8;
+  border-right: thin solid rgb(231.7, 231.7, 231.7);
 }
 .fr-border-r--yellow {
   border-right: thin solid #facf35;
 }
 .fr-border-r--yellow--light {
-  border-right: thin solid #fef1c2;
+  border-right: thin solid rgb(253.5, 240.6, 194.4);
 }
 .fr-border-r--yellow--lightness {
-  border-right: thin solid #fffaeb;
+  border-right: thin solid rgb(254.5, 250.2, 234.8);
+}
+.fr-border-r--deep-red {
+  border-right: thin solid #e1000f;
+}
+.fr-border-r--deep-red--light {
+  border-right: thin solid rgb(255, 169.5, 175.2);
+}
+.fr-border-r--deep-red--lightness {
+  border-right: thin solid rgb(255, 226.5, 228.4);
 }
 .fr-border-r--red {
   border-right: thin solid #fca081;
 }
 .fr-border-r--red--light {
-  border-right: thin solid #fee3d9;
+  border-right: thin solid rgb(254.1, 226.5, 217.2);
 }
 .fr-border-r--red--lightness {
-  border-right: thin solid #fff6f2;
+  border-right: thin solid rgb(254.7, 245.5, 242.4);
 }
 .fr-border-r--purple {
   border-right: thin solid #6a62f4;
 }
 .fr-border-r--purple--light {
-  border-right: thin solid #d2d0fc;
+  border-right: thin solid rgb(210.3, 207.9, 251.7);
 }
 .fr-border-r--purple--lightness {
-  border-right: thin solid #f0effe;
+  border-right: thin solid rgb(240.1, 239.3, 253.9);
 }
 .fr-border-r--green {
   border-right: thin solid #1ebe8e;
 }
 .fr-border-r--green--light {
-  border-right: thin solid #b4f3e0;
+  border-right: thin solid rgb(179.8636363636, 243.1363636364, 224.1545454545);
 }
 .fr-border-r--green--lightness {
-  border-right: thin solid #e6fbf5;
+  border-right: thin solid rgb(229.9545454545, 251.0454545455, 244.7181818182);
 }
 .fr-border-r--blue-france {
   border-right: thin solid #001891;
 }
 .fr-border-r--blue-france--light {
-  border-right: thin solid #92a4ff;
+  border-right: thin solid rgb(145.5, 163.624137931, 255);
 }
 .fr-border-r--blue-france--lightness {
-  border-right: thin solid #dbe1ff;
+  border-right: thin solid rgb(218.5, 224.5413793103, 255);
 }
 .fr-border-r--grey {
   border-right: thin solid #777777;
 }
 .fr-border-r--grey--light {
-  border-right: thin solid #d6d6d6;
+  border-right: thin solid rgb(214.2, 214.2, 214.2);
 }
 .fr-border-r--grey--lightness {
-  border-right: thin solid #f1f1f1;
+  border-right: thin solid rgb(241.4, 241.4, 241.4);
 }
 .fr-border-b {
   border-bottom: thin solid #161616;
@@ -1216,64 +1446,73 @@
   border-bottom: thin solid #161616;
 }
 .fr-border-b--black--light {
-  border-bottom: thin solid #b9b9b9;
+  border-bottom: thin solid rgb(185.1, 185.1, 185.1);
 }
 .fr-border-b--black--lightness {
-  border-bottom: thin solid #e8e8e8;
+  border-bottom: thin solid rgb(231.7, 231.7, 231.7);
 }
 .fr-border-b--yellow {
   border-bottom: thin solid #facf35;
 }
 .fr-border-b--yellow--light {
-  border-bottom: thin solid #fef1c2;
+  border-bottom: thin solid rgb(253.5, 240.6, 194.4);
 }
 .fr-border-b--yellow--lightness {
-  border-bottom: thin solid #fffaeb;
+  border-bottom: thin solid rgb(254.5, 250.2, 234.8);
+}
+.fr-border-b--deep-red {
+  border-bottom: thin solid #e1000f;
+}
+.fr-border-b--deep-red--light {
+  border-bottom: thin solid rgb(255, 169.5, 175.2);
+}
+.fr-border-b--deep-red--lightness {
+  border-bottom: thin solid rgb(255, 226.5, 228.4);
 }
 .fr-border-b--red {
   border-bottom: thin solid #fca081;
 }
 .fr-border-b--red--light {
-  border-bottom: thin solid #fee3d9;
+  border-bottom: thin solid rgb(254.1, 226.5, 217.2);
 }
 .fr-border-b--red--lightness {
-  border-bottom: thin solid #fff6f2;
+  border-bottom: thin solid rgb(254.7, 245.5, 242.4);
 }
 .fr-border-b--purple {
   border-bottom: thin solid #6a62f4;
 }
 .fr-border-b--purple--light {
-  border-bottom: thin solid #d2d0fc;
+  border-bottom: thin solid rgb(210.3, 207.9, 251.7);
 }
 .fr-border-b--purple--lightness {
-  border-bottom: thin solid #f0effe;
+  border-bottom: thin solid rgb(240.1, 239.3, 253.9);
 }
 .fr-border-b--green {
   border-bottom: thin solid #1ebe8e;
 }
 .fr-border-b--green--light {
-  border-bottom: thin solid #b4f3e0;
+  border-bottom: thin solid rgb(179.8636363636, 243.1363636364, 224.1545454545);
 }
 .fr-border-b--green--lightness {
-  border-bottom: thin solid #e6fbf5;
+  border-bottom: thin solid rgb(229.9545454545, 251.0454545455, 244.7181818182);
 }
 .fr-border-b--blue-france {
   border-bottom: thin solid #001891;
 }
 .fr-border-b--blue-france--light {
-  border-bottom: thin solid #92a4ff;
+  border-bottom: thin solid rgb(145.5, 163.624137931, 255);
 }
 .fr-border-b--blue-france--lightness {
-  border-bottom: thin solid #dbe1ff;
+  border-bottom: thin solid rgb(218.5, 224.5413793103, 255);
 }
 .fr-border-b--grey {
   border-bottom: thin solid #777777;
 }
 .fr-border-b--grey--light {
-  border-bottom: thin solid #d6d6d6;
+  border-bottom: thin solid rgb(214.2, 214.2, 214.2);
 }
 .fr-border-b--grey--lightness {
-  border-bottom: thin solid #f1f1f1;
+  border-bottom: thin solid rgb(241.4, 241.4, 241.4);
 }
 .fr-border-l {
   border-left: thin solid #161616;
@@ -1291,64 +1530,73 @@
   border-left: thin solid #161616;
 }
 .fr-border-l--black--light {
-  border-left: thin solid #b9b9b9;
+  border-left: thin solid rgb(185.1, 185.1, 185.1);
 }
 .fr-border-l--black--lightness {
-  border-left: thin solid #e8e8e8;
+  border-left: thin solid rgb(231.7, 231.7, 231.7);
 }
 .fr-border-l--yellow {
   border-left: thin solid #facf35;
 }
 .fr-border-l--yellow--light {
-  border-left: thin solid #fef1c2;
+  border-left: thin solid rgb(253.5, 240.6, 194.4);
 }
 .fr-border-l--yellow--lightness {
-  border-left: thin solid #fffaeb;
+  border-left: thin solid rgb(254.5, 250.2, 234.8);
+}
+.fr-border-l--deep-red {
+  border-left: thin solid #e1000f;
+}
+.fr-border-l--deep-red--light {
+  border-left: thin solid rgb(255, 169.5, 175.2);
+}
+.fr-border-l--deep-red--lightness {
+  border-left: thin solid rgb(255, 226.5, 228.4);
 }
 .fr-border-l--red {
   border-left: thin solid #fca081;
 }
 .fr-border-l--red--light {
-  border-left: thin solid #fee3d9;
+  border-left: thin solid rgb(254.1, 226.5, 217.2);
 }
 .fr-border-l--red--lightness {
-  border-left: thin solid #fff6f2;
+  border-left: thin solid rgb(254.7, 245.5, 242.4);
 }
 .fr-border-l--purple {
   border-left: thin solid #6a62f4;
 }
 .fr-border-l--purple--light {
-  border-left: thin solid #d2d0fc;
+  border-left: thin solid rgb(210.3, 207.9, 251.7);
 }
 .fr-border-l--purple--lightness {
-  border-left: thin solid #f0effe;
+  border-left: thin solid rgb(240.1, 239.3, 253.9);
 }
 .fr-border-l--green {
   border-left: thin solid #1ebe8e;
 }
 .fr-border-l--green--light {
-  border-left: thin solid #b4f3e0;
+  border-left: thin solid rgb(179.8636363636, 243.1363636364, 224.1545454545);
 }
 .fr-border-l--green--lightness {
-  border-left: thin solid #e6fbf5;
+  border-left: thin solid rgb(229.9545454545, 251.0454545455, 244.7181818182);
 }
 .fr-border-l--blue-france {
   border-left: thin solid #001891;
 }
 .fr-border-l--blue-france--light {
-  border-left: thin solid #92a4ff;
+  border-left: thin solid rgb(145.5, 163.624137931, 255);
 }
 .fr-border-l--blue-france--lightness {
-  border-left: thin solid #dbe1ff;
+  border-left: thin solid rgb(218.5, 224.5413793103, 255);
 }
 .fr-border-l--grey {
   border-left: thin solid #777777;
 }
 .fr-border-l--grey--light {
-  border-left: thin solid #d6d6d6;
+  border-left: thin solid rgb(214.2, 214.2, 214.2);
 }
 .fr-border-l--grey--lightness {
-  border-left: thin solid #f1f1f1;
+  border-left: thin solid rgb(241.4, 241.4, 241.4);
 }
 .fr-border--white {
   border: thin solid white;
@@ -1363,68 +1611,78 @@
   border: thin solid #161616;
 }
 .fr-border--black--light {
-  border: thin solid #b9b9b9;
+  border: thin solid rgb(185.1, 185.1, 185.1);
 }
 .fr-border--black--lightness {
-  border: thin solid #e8e8e8;
+  border: thin solid rgb(231.7, 231.7, 231.7);
 }
 .fr-border--yellow {
   border: thin solid #facf35;
 }
 .fr-border--yellow--light {
-  border: thin solid #fef1c2;
+  border: thin solid rgb(253.5, 240.6, 194.4);
 }
 .fr-border--yellow--lightness {
-  border: thin solid #fffaeb;
+  border: thin solid rgb(254.5, 250.2, 234.8);
+}
+.fr-border--deep-red {
+  border: thin solid #e1000f;
+}
+.fr-border--deep-red--light {
+  border: thin solid rgb(255, 169.5, 175.2);
+}
+.fr-border--deep-red--lightness {
+  border: thin solid rgb(255, 226.5, 228.4);
 }
 .fr-border--red {
   border: thin solid #fca081;
 }
 .fr-border--red--light {
-  border: thin solid #fee3d9;
+  border: thin solid rgb(254.1, 226.5, 217.2);
 }
 .fr-border--red--lightness {
-  border: thin solid #fff6f2;
+  border: thin solid rgb(254.7, 245.5, 242.4);
 }
 .fr-border--purple {
   border: thin solid #6a62f4;
 }
 .fr-border--purple--light {
-  border: thin solid #d2d0fc;
+  border: thin solid rgb(210.3, 207.9, 251.7);
 }
 .fr-border--purple--lightness {
-  border: thin solid #f0effe;
+  border: thin solid rgb(240.1, 239.3, 253.9);
 }
 .fr-border--green {
   border: thin solid #1ebe8e;
 }
 .fr-border--green--light {
-  border: thin solid #b4f3e0;
+  border: thin solid rgb(179.8636363636, 243.1363636364, 224.1545454545);
 }
 .fr-border--green--lightness {
-  border: thin solid #e6fbf5;
+  border: thin solid rgb(229.9545454545, 251.0454545455, 244.7181818182);
 }
 .fr-border--blue-france {
   border: thin solid #001891;
 }
 .fr-border--blue-france--light {
-  border: thin solid #92a4ff;
+  border: thin solid rgb(145.5, 163.624137931, 255);
 }
 .fr-border--blue-france--lightness {
-  border: thin solid #dbe1ff;
+  border: thin solid rgb(218.5, 224.5413793103, 255);
 }
 .fr-border--grey {
   border: thin solid #777777;
 }
 .fr-border--grey--light {
-  border: thin solid #d6d6d6;
+  border: thin solid rgb(214.2, 214.2, 214.2);
 }
 .fr-border--grey--lightness {
-  border: thin solid #f1f1f1;
+  border: thin solid rgb(241.4, 241.4, 241.4);
 }
 
 .fr-btn-bg:hover, .fr-btn-bg:active {
   background-color: rgba(0, 0, 0, 0.05) !important;
+  cursor: pointer;
 }
 .fr-btn-bg--white {
   /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -1449,66 +1707,81 @@
 .fr-btn-bg--black--light:hover, .fr-btn-bg--black--light:active {
   /* Wrong parsing on function name from stylelint, so next line is disable */
   /* stylelint-disable-next-line function-name-case */
-  background-color: #b9b9b9 !important;
+  background-color: rgb(185.1, 185.1, 185.1) !important;
 }
 .fr-btn-bg--black--lightness:hover, .fr-btn-bg--black--lightness:active {
   /* Wrong parsing on function name from stylelint, so next line is disable */
   /* stylelint-disable-next-line function-name-case */
-  background-color: #e8e8e8 !important;
+  background-color: rgb(231.7, 231.7, 231.7) !important;
 }
 .fr-btn-bg--yellow {
   background-color: #facf35 !important;
 }
 .fr-btn-bg--yellow--light:hover, .fr-btn-bg--yellow--light:active {
-  background-color: #fef1c2 !important;
+  background-color: rgb(253.5, 240.6, 194.4) !important;
 }
 .fr-btn-bg--yellow--lightness:hover, .fr-btn-bg--yellow--lightness:active {
-  background-color: #fffaeb !important;
+  background-color: rgb(254.5, 250.2, 234.8) !important;
+}
+.fr-btn-bg--deep-red {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: #e1000f !important;
+}
+.fr-btn-bg--deep-red--light:hover, .fr-btn-bg--deep-red--light:active {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: rgb(255, 169.5, 175.2) !important;
+}
+.fr-btn-bg--deep-red--lightness:hover, .fr-btn-bg--deep-red--lightness:active {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: rgb(255, 226.5, 228.4) !important;
 }
 .fr-btn-bg--red {
   background-color: #fca081 !important;
 }
 .fr-btn-bg--red--light:hover, .fr-btn-bg--red--light:active {
-  background-color: #fee3d9 !important;
+  background-color: rgb(254.1, 226.5, 217.2) !important;
 }
 .fr-btn-bg--red--lightness:hover, .fr-btn-bg--red--lightness:active {
-  background-color: #fff6f2 !important;
+  background-color: rgb(254.7, 245.5, 242.4) !important;
 }
 .fr-btn-bg--purple {
   background-color: #6a62f4 !important;
 }
 .fr-btn-bg--purple--light:hover, .fr-btn-bg--purple--light:active {
-  background-color: #d2d0fc !important;
+  background-color: rgb(210.3, 207.9, 251.7) !important;
 }
 .fr-btn-bg--purple--lightness:hover, .fr-btn-bg--purple--lightness:active {
-  background-color: #f0effe !important;
+  background-color: rgb(240.1, 239.3, 253.9) !important;
 }
 .fr-btn-bg--green {
   background-color: #1ebe8e !important;
 }
 .fr-btn-bg--green--light:hover, .fr-btn-bg--green--light:active {
-  background-color: #b4f3e0 !important;
+  background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
 }
 .fr-btn-bg--green--lightness:hover, .fr-btn-bg--green--lightness:active {
-  background-color: #e6fbf5 !important;
+  background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
 }
 .fr-btn-bg--blue-france {
   background-color: #001891 !important;
 }
 .fr-btn-bg--blue-france--light:hover, .fr-btn-bg--blue-france--light:active {
-  background-color: #92a4ff !important;
+  background-color: rgb(145.5, 163.624137931, 255) !important;
 }
 .fr-btn-bg--blue-france--lightness:hover, .fr-btn-bg--blue-france--lightness:active {
-  background-color: #dbe1ff !important;
+  background-color: rgb(218.5, 224.5413793103, 255) !important;
 }
 .fr-btn-bg--grey {
   background-color: #777777 !important;
 }
 .fr-btn-bg--grey--light:hover, .fr-btn-bg--grey--light:active {
-  background-color: #d6d6d6 !important;
+  background-color: rgb(214.2, 214.2, 214.2) !important;
 }
 .fr-btn-bg--grey--lightness:hover, .fr-btn-bg--grey--lightness:active {
-  background-color: #f1f1f1 !important;
+  background-color: rgb(241.4, 241.4, 241.4) !important;
 }
 .fr-btn--secondary--white {
   box-shadow: inset 0 0 0 1px #fff;
@@ -1518,6 +1791,9 @@
 }
 .fr-btn--secondary--yellow {
   box-shadow: inset 0 0 0 1px #facf35;
+}
+.fr-btn--secondary--deep-red {
+  box-shadow: inset 0 0 0 1px #e1000f;
 }
 .fr-btn--secondary--red {
   box-shadow: inset 0 0 0 1px #fca081;
@@ -1694,6 +1970,9 @@
 }
 .fr-card--yellow .fr-card__title {
   color: #000091;
+}
+.fr-card--deep-red .fr-card__title {
+  color: var(--text-default-grey);
 }
 .fr-card--red {
   background-color: #fca081;
@@ -1881,6 +2160,23 @@
 .fr-footer__content-list {
   justify-content: center;
 }
+.fr-footer__partners-main img {
+  height: 5.625rem;
+  width: 10rem;
+  box-shadow: none !important;
+}
+.fr-footer__partners-sub {
+  justify-content: center;
+}
+.fr-footer__partners-sub ul {
+  align-items: center !important;
+}
+.fr-footer__partners-sub ul img {
+  box-shadow: none !important;
+  width: revert-layer !important;
+  max-height: 5.625rem;
+  max-width: 10rem !important;
+}
 .fr-footer__partners-logos {
   flex-direction: column;
   align-items: center;
@@ -1889,10 +2185,6 @@
   .fr-footer__partners-logos {
     flex-direction: row;
   }
-}
-.fr-footer__partners-sub {
-  justify-content: center;
-  align-items: center !important;
 }
 .fr-footer__body {
   flex-direction: column;
@@ -1922,6 +2214,12 @@
 }
 .fr-gradient--yellow .fr-gradient__title {
   color: #000091;
+}
+.fr-gradient--deep-red {
+  background-image: linear-gradient(to bottom, transparent, #e1000f);
+}
+.fr-gradient--deep-red .fr-gradient__title {
+  color: var(--text-default-grey);
 }
 .fr-gradient--red {
   background-image: linear-gradient(to bottom, transparent, #fca081);
@@ -2185,9 +2483,17 @@
   z-index: 1000;
 }
 
+.fr-header .fr-header__tools {
+  align-items: flex-end;
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-end;
+}
 .fr-header .fr-nav button.fr-nav__btn {
   color: #001891;
   font-weight: 500;
+  min-height: 2rem;
+  padding: 0.5rem 1rem;
 }
 .fr-header .fr-nav .fr-menu {
   position: absolute;
@@ -2205,6 +2511,9 @@
 }
 .fr-highlight-border--yellow {
   background-image: linear-gradient(0deg, #facf35, #facf35);
+}
+.fr-highlight-border--deep-red {
+  background: linear-gradient(0deg, #e1000f, #e1000f);
 }
 .fr-highlight-border--red {
   background-image: linear-gradient(0deg, #fca081, #fca081);
@@ -2244,70 +2553,101 @@
 .fr-highlight-bg--black--light {
   /* Wrong parsing on function name from stylelint, so next line is disable */
   /* stylelint-disable-next-line function-name-case */
-  background-color: #b9b9b9 !important;
+  background-color: rgb(185.1, 185.1, 185.1) !important;
 }
 .fr-highlight-bg--black--lightness {
   /* Wrong parsing on function name from stylelint, so next line is disable */
   /* stylelint-disable-next-line function-name-case */
-  background-color: #e8e8e8 !important;
+  background-color: rgb(231.7, 231.7, 231.7) !important;
 }
 .fr-highlight-bg--yellow {
   background-color: #facf35 !important;
 }
 .fr-highlight-bg--yellow--light {
-  background-color: #fef1c2 !important;
+  background-color: rgb(253.5, 240.6, 194.4) !important;
 }
 .fr-highlight-bg--yellow--lightness {
-  background-color: #fffaeb !important;
+  background-color: rgb(254.5, 250.2, 234.8) !important;
+}
+.fr-highlight-bg--deep-red {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: #e1000f !important;
+}
+.fr-highlight-bg--deep-red--light {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: rgb(255, 169.5, 175.2) !important;
+}
+.fr-highlight-bg--deep-red--lightness {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: rgb(255, 226.5, 228.4) !important;
 }
 .fr-highlight-bg--red {
   background-color: #fca081 !important;
 }
 .fr-highlight-bg--red--light {
-  background-color: #fee3d9 !important;
+  background-color: rgb(254.1, 226.5, 217.2) !important;
 }
 .fr-highlight-bg--red--lightness {
-  background-color: #fff6f2 !important;
+  background-color: rgb(254.7, 245.5, 242.4) !important;
 }
 .fr-highlight-bg--purple {
   background-color: #6a62f4 !important;
 }
 .fr-highlight-bg--purple--light {
-  background-color: #d2d0fc !important;
+  background-color: rgb(210.3, 207.9, 251.7) !important;
 }
 .fr-highlight-bg--purple--lightness {
-  background-color: #f0effe !important;
+  background-color: rgb(240.1, 239.3, 253.9) !important;
 }
 .fr-highlight-bg--green {
   background-color: #1ebe8e !important;
 }
 .fr-highlight-bg--green--light {
-  background-color: #b4f3e0 !important;
+  background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
 }
 .fr-highlight-bg--green--lightness {
-  background-color: #e6fbf5 !important;
+  background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
 }
 .fr-highlight-bg--blue-france {
   background-color: #001891 !important;
 }
 .fr-highlight-bg--blue-france--light {
-  background-color: #92a4ff !important;
+  background-color: rgb(145.5, 163.624137931, 255) !important;
 }
 .fr-highlight-bg--blue-france--lightness {
-  background-color: #dbe1ff !important;
+  background-color: rgb(218.5, 224.5413793103, 255) !important;
 }
 .fr-highlight-bg--grey {
   background-color: #777777 !important;
 }
 .fr-highlight-bg--grey--light {
-  background-color: #d6d6d6 !important;
+  background-color: rgb(214.2, 214.2, 214.2) !important;
 }
 .fr-highlight-bg--grey--lightness {
-  background-color: #f1f1f1 !important;
+  background-color: rgb(241.4, 241.4, 241.4) !important;
 }
 
-.fr-input-group--valid::before, .fr-valid-text::before {
+.fr-input-group--valid::before, .fr-valid-text::before, .fr-checkbox-group--valid::before {
   display: none;
+}
+
+.fr-input {
+  outline-offset: unset;
+  outline-width: unset;
+  outline-color: unset;
+  outline-style: none;
+}
+.fr-input--white {
+  background-color: #fff;
+}
+.fr-input:focus {
+  outline-offset: unset;
+  outline-width: unset;
+  outline-color: unset;
+  outline-style: none;
 }
 
 @media (min-width: 0) {
@@ -3689,20 +4029,74 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   display: none;
 }
 
-.tee-btn-input-clear-btn {
+.search-clear {
   background-color: var(--background-contrast-grey);
-  box-shadow: inset 0 -2px 0 0 var(--border-action-high-blue-france);
+  border-radius: 0;
 }
-.tee-btn-input-clear-btn::before {
+.search-clear::before {
   mask-image: url("@gouvfr/dsfr/dist/icons/system/close-line.svg") !important;
 }
-.tee-btn-input-clear-btn:disabled {
+.search-clear:disabled {
   background-color: var(--background-contrast-grey);
   box-shadow: inset 0 -2px 0 0 var(--border-disabled-grey);
   color: var(--text-disabled-grey);
 }
 
+.fr-search-bar-lg .fr-input, .fr-search-bar-lg .search-button, .fr-search-bar-lg .search-clear {
+  max-height: 3rem !important;
+  line-height: 3rem;
+}
+.fr-search-bar--white .fr-input, .fr-search-bar--white .search-button, .fr-search-bar--white .search-clear {
+  box-shadow: inset 0 -2px 0 0 #fff;
+}
+.fr-search-bar--black .fr-input, .fr-search-bar--black .search-button, .fr-search-bar--black .search-clear {
+  box-shadow: inset 0 -2px 0 0 #161616;
+}
+.fr-search-bar--yellow .fr-input, .fr-search-bar--yellow .search-button, .fr-search-bar--yellow .search-clear {
+  box-shadow: inset 0 -2px 0 0 #facf35;
+}
+.fr-search-bar--deep-red .fr-input, .fr-search-bar--deep-red .search-button, .fr-search-bar--deep-red .search-clear {
+  box-shadow: inset 0 -2px 0 0 #e1000f;
+}
+.fr-search-bar--red .fr-input, .fr-search-bar--red .search-button, .fr-search-bar--red .search-clear {
+  box-shadow: inset 0 -2px 0 0 #fca081;
+}
+.fr-search-bar--purple .fr-input, .fr-search-bar--purple .search-button, .fr-search-bar--purple .search-clear {
+  box-shadow: inset 0 -2px 0 0 #6a62f4;
+}
+.fr-search-bar--green .fr-input, .fr-search-bar--green .search-button, .fr-search-bar--green .search-clear {
+  box-shadow: inset 0 -2px 0 0 #1ebe8e;
+}
+.fr-search-bar--blue-france .fr-input, .fr-search-bar--blue-france .search-button, .fr-search-bar--blue-france .search-clear {
+  box-shadow: inset 0 -2px 0 0 #001891;
+}
+.fr-search-bar--grey .fr-input, .fr-search-bar--grey .search-button, .fr-search-bar--grey .search-clear {
+  box-shadow: inset 0 -2px 0 0 #777;
+}
+.fr-search-bar--loading .search-button {
+  width: 2.5rem;
+}
+.fr-search-bar--loading .search-button::before {
+  content: "";
+  border: 2px solid #001891;
+  border-top-color: transparent;
+  border-radius: 50%;
+  position: absolute;
+  mask-image: none !important;
+  background: none !important;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .fr-select-group select {
+  background-color: #fff;
+}
+
+.fr-select {
   background-color: #fff;
 }
 
@@ -3791,6 +4185,9 @@ a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=
 .fr-text--yellow {
   color: #facf35 !important;
 }
+.fr-text--deep-red {
+  color: #e1000f !important;
+}
 .fr-text--red {
   color: #fca081 !important;
 }
@@ -3817,6 +4214,12 @@ a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=
 }
 .fr-text-line-height--15v {
   line-height: 3.75rem;
+}
+.fr-text--decoration-underline {
+  text-decoration: none;
+}
+.fr-text--decoration-none {
+  text-decoration: none;
 }
 
 .tee-font-style--italic {

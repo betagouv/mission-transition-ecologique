@@ -18,7 +18,7 @@ export type OpportunityRepository = {
     opportunity: OpportunityWithOperatorContactAndContactId,
     opportunityAssociatedObject: OpportunityAssociatedData
   ) => Promise<Result<OpportunityId, Error>>
-  update: (dealId: OpportunityId, attributes: OpportunityUpdateAttributes) => Promise<Maybe<Error>>
+  update: (dealId: OpportunityId, attributes: OpportunityUpdateAttributes) => Promise<Maybe<Error | null>>
   readDates: () => Promise<Result<Date[], Error>>
   getDailyOpportunitiesByContactId: (contactId: number) => Promise<Result<OpportunityDetailsShort[], Error>>
 }

@@ -67,7 +67,7 @@ const requestCreateDeal = async (name: string, attributes: DealAttributes): Prom
 const updateBrevoDeal: OpportunityRepository['update'] = async (
   dealId: OpportunityId,
   updateAttributes: OpportunityUpdateAttributes
-): Promise<Maybe<Error>> => {
+): Promise<Maybe<Error | null>> => {
   const brevoDeal = convertDomainToBrevoDealUpdate(updateAttributes)
 
   return requestUpdateDeal(dealId, brevoDeal)

@@ -1,5 +1,5 @@
 /// <reference types='vitest' />
-import { ohVueIconAutoimportPreset, vueDsfrAutoimportPreset, vueDsfrComponentResolver } from '@gouvminint/vue-dsfr'
+import { vueDsfrAutoimportPreset, vueDsfrComponentResolver } from '@gouvminint/vue-dsfr'
 import { BuildOptions, defineConfig, Plugin, ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -51,7 +51,7 @@ const plugins = async () => {
     nxViteTsPaths(),
     AutoImport({
       include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],
-      imports: ['vue', 'vue-router', vueDsfrAutoimportPreset, ohVueIconAutoimportPreset, unheadVueComposablesImports],
+      imports: ['vue', 'vue-router', vueDsfrAutoimportPreset, unheadVueComposablesImports],
       vueTemplate: true,
       dts: './src/auto-imports.d.ts',
       eslintrc: {
@@ -170,9 +170,9 @@ function buildHeaders() {
         sentryData?.domain ? sentryData.domain : ''
       } https://embed.typeform.com https://eu.i.posthog.com https://api.typeform.com;` +
       "worker-src 'self' blob:;" +
-      "frame-src 'self' https://conseillers-entreprises.service-public.fr https://form.typeform.com;" +
-      "frame-ancestors 'self' https://conseillers-entreprises.service-public.fr;",
-    'X-Frame-Options': 'ALLOW-FROM https://conseillers-entreprises.service-public.fr',
+      "frame-src 'self' https://form.typeform.com;" +
+      "frame-ancestors 'self';",
+
     'X-Content-Type-Options': 'nosniff'
   }
 
