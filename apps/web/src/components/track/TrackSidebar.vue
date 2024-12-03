@@ -8,7 +8,7 @@
         <DsfrSideMenuListItem :active="isCurrentCategory(category)">
           <DsfrSideMenuLink
             :active="isCurrentCategory(category)"
-            :to="getRouteByCategory(category)"
+            :to="getRouteByCategory(category) ?? ''"
             :class="getTextColorClass(category)"
             >&nbsp;
             {{ Translation.t(`categories.${category}`) }}

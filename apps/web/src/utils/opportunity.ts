@@ -10,7 +10,8 @@ import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
-    const selectedTheme = Theme.getById(useProgramStore().getThemeTypeSelected() as ThemeId)
+    const selectedThemeId = useProgramStore().hasThemeTypeSelected() ? useProgramStore().getThemeTypeSelected() : TrackStructure.getTheme()
+    const selectedTheme = Theme.getById(selectedThemeId as ThemeId)
     return {
       theme: {
         required: false,
@@ -47,7 +48,7 @@ export default class Opportunity {
         required: true,
         type: FieldType.Text,
         isValid: undefined,
-        value: TrackStructure.getSiret() ?? (CompanyDataStorage.getCompanyData() as EstablishmentFront).siret ?? '',
+        value: CompanyDataStorage.getCompanyData() ? (CompanyDataStorage.getCompanyData() as EstablishmentFront).siret : '',
         label: 'SIRET de votre entreprise',
         hint: 'Format attendu : 14 chiffres',
         validation: SiretValidator.validate,
@@ -87,7 +88,6 @@ export default class Opportunity {
   static getProjectFormFields(project: Project): FormDataType {
     const baseFields = this.getBaseOpportunityFormFields()
     baseFields.needs.value = Translation.t('project.form.needs', { secteur: TrackStructure.getSectorShortLabel() })
-    baseFields.theme.required = true
     return {
       projectTitle: {
         required: true,

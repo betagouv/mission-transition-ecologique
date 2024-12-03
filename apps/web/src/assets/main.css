@@ -1233,6 +1233,10 @@
     background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
+.fr-badge.fr-badge--info {
+  color: #001891;
+}
+
 .fr-bg--none {
   background-image: none !important;
 }
@@ -2626,7 +2630,7 @@
   background-color: rgb(241.4, 241.4, 241.4) !important;
 }
 
-.fr-input-group--valid::before, .fr-valid-text::before {
+.fr-input-group--valid::before, .fr-valid-text::before, .fr-checkbox-group--valid::before {
   display: none;
 }
 
