@@ -32,7 +32,7 @@
                 >
                   <ConsentElement
                     :cookie="cookie"
-                    @update:model-value="(status) => updateCookieStatus(status, cookie.value)"
+                    @update:model-value="(status: boolean) => updateCookieStatus(status, cookie.value)"
                   />
                 </div>
                 <!-- Bouton de confirmation/fermeture -->
@@ -54,10 +54,10 @@
   </dialog>
 </template>
 <script lang="ts" setup>
-import { Cookies, type CookieValue } from '@/types/cookies'
+import { type CookieValue } from '@/types/cookies'
 import Cookie from '@/utils/cookies'
 
-const cookies = ref<Cookies | undefined>()
+const cookies = Cookie.cookies
 const allStatus = ref<boolean>(false)
 
 const closePersonalize = () => {
@@ -72,10 +72,7 @@ const closeBaseConsent = () => {
     element.classList.add('fr-hidden')
   }
 }
-onMounted(() => {
-  cookies.value = JSON.parse(JSON.stringify(Cookie.cookies.value))
-  console.log(cookies)
-})
+
 const updateCookieStatus = (status: boolean, cookie: CookieValue) => {
   if (cookies.value) {
     cookies.value[cookie].accepted = status
@@ -84,8 +81,7 @@ const updateCookieStatus = (status: boolean, cookie: CookieValue) => {
 }
 
 const saveConsent = () => {
-  const hasChanged = Cookie.hasChanged(cookies.value)
-  if (cookies.value && (hasChanged || !Cookie.areCookiesSet())) {
+  if (cookies.value) {
     Cookie.saveCookies(cookies.value)
   }
   closePersonalize()
