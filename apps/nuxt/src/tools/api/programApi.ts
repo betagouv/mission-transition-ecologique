@@ -1,6 +1,6 @@
 import RequestApi from '@/tools/api/requestApi'
 import { ResultApi } from '@/tools/api/resultApi'
-import type { ProgramData, QuestionnaireData } from '@/types'
+import { ProgramData, QuestionnaireData, QuestionnaireDataEnum } from '@/types'
 
 export default class ProgramApi extends RequestApi {
   protected readonly url = '/api/programs'
@@ -31,6 +31,6 @@ export default class ProgramApi extends RequestApi {
   }
 
   isValidQueryParam(key: string) {
-    return key !== 'priority_objective'
+    return key !== (QuestionnaireDataEnum.priority_objective as string)
   }
 }

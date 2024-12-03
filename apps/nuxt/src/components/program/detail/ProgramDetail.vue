@@ -289,8 +289,8 @@ if (programResult.isOk) {
   } else {
     projectResult = await projectStore.eligibleProjects
   }
-  if (projectResult.isOk) {
-    linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.value)
+  if (projectResult.isOk()) {
+    linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.data)
   }
 
   if (program.value && navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {

@@ -86,7 +86,7 @@
 
 <script setup lang="ts">
 import { Scroll } from '@/tools/scroll'
-import { computed } from 'vue'
+import { computed, HTMLAttributes, ReservedProps } from 'vue'
 import { type ReqResp, TrackId, FormDataType, InputFieldUnionType, Project } from '@/types'
 import Translation from '@/tools/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
@@ -108,7 +108,7 @@ interface Props {
   hintClass?: string
   errorEmailSubject: string
   phoneCallback?: string
-  formContainerRef: HTMLElement | null | undefined
+  formContainerRef: (HTMLAttributes & ReservedProps) | null
 }
 
 const props = withDefaults(defineProps<Props>(), {

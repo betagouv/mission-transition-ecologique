@@ -33,6 +33,26 @@ export default class Navigation {
     return this._route.name === routeName
   }
 
+  isCatalogList() {
+    return this.isByRouteName([RouteName.CatalogPrograms, RouteName.CatalogProjects])
+  }
+
+  isCatalogProjects() {
+    return this.isByRouteName(RouteName.CatalogProjects)
+  }
+
+  isCatalogDetail() {
+    return this.isCatalogProgramDetail() || this.isCatalogProjectDetail()
+  }
+
+  isCatalog() {
+    return this.isCatalogDetail() || this.isCatalogList()
+  }
+
+  isCatalogPrograms() {
+    return this.isByRouteName(RouteName.CatalogPrograms)
+  }
+
   isCatalogProgramDetail() {
     return this.isByRouteName([RouteName.CatalogProgramDetail, RouteName.CatalogProgramFromCatalogProjectDetail])
   }
@@ -41,8 +61,28 @@ export default class Navigation {
     return this.isByRouteName(RouteName.CatalogProjectDetail)
   }
 
+  isCatalogAboutProjects() {
+    return this.isCatalogProjects() || this.isCatalogProjectDetail()
+  }
+
   isProgramFromProject() {
     return this.isByRouteName([RouteName.ProgramFromProjectDetail, RouteName.CatalogProgramFromCatalogProjectDetail])
+  }
+
+  isQuestionnaireResultDetail() {
+    return this.isByRouteName([RouteName.QuestionnaireResultDetail, RouteName.ProgramFromProjectDetail, RouteName.ProjectResultDetail])
+  }
+
+  isQuestionnaireResult() {
+    return this.isByRouteName(RouteName.QuestionnaireResult)
+  }
+
+  isQuestionnaire() {
+    return this.isQuestionnaireResult() || this.isQuestionnaireResultDetail()
+  }
+
+  isStaticPage() {
+    return !this.isQuestionnaire() && !this.isCatalog()
   }
 
   getHrefByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {

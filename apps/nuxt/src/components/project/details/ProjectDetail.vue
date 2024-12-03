@@ -16,10 +16,12 @@
         </div>
         <div class="fr-col-12 fr-col-md-9">
           <ProjectDescription :project="project" />
-          <ProjectPrograms
-            v-if="project"
-            :project="project"
-          />
+          <client-only>
+            <ProjectPrograms
+              v-if="project"
+              :project="project"
+            />
+          </client-only>
           <LinkedProjects
             v-if="project.linkedProjects.length > 0"
             :project="project"
@@ -31,7 +33,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import ProjectApi from '@/tools/api/projectApi'
 import { Project, Color, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { Theme } from '@/tools/theme'
@@ -47,17 +48,18 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const projectResult = await new ProjectApi().getOne(props.projectSlug)
+const projectResult = await useProjectStore().getProjectBySlug(props.projectSlug)
 if (projectResult.isOk) {
   projectStore.currentProject = projectResult.value
   project.value = projectResult.value
 
   useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, project.value?.image))
 
-  const selectedThemeId = Theme.getThemeFromSelectedOrPriorityTheme()
-
   if (project.value) {
-    const themeId = selectedThemeId.value ? project.value?.themes.find((t) => t === selectedThemeId.value) : project.value?.mainTheme
+    const selectedThemeId = Theme.getThemeFromSelectedOrPriorityTheme()
+    const themeId = selectedThemeId.value
+      ? project.value?.themes.find((theme) => theme === selectedThemeId.value)
+      : project.value?.mainTheme
     themeColor.value = Theme.getColorById(themeId as ThemeId)
   }
 }

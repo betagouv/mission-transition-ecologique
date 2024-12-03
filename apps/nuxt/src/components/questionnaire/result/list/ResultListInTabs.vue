@@ -83,9 +83,9 @@ const getProgramsAndProjects = async () => {
   navigationStore.hasSpinner = true
   const programResult = await programStore.programsByUsedTracks
   const projectResult = await projectStore.eligibleProjects
-  if (programResult.isOk() && projectResult.isOk) {
+  if (programResult.isOk() && projectResult.isOk()) {
     programs.value = programResult.data
-    projects.value = projectResult.value
+    projects.value = projectResult.data
   } else {
     hasError.value = true
   }

@@ -7,6 +7,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import Navigation from '@/tools/navigation'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import { useNavigationStore } from '@/stores/navigation'
 import { useUsedTrackStore } from '@/stores/usedTrack'
@@ -20,16 +21,17 @@ interface Props {
 const props = defineProps<Props>()
 const navigationStore = useNavigationStore()
 const usedTrackStore = useUsedTrackStore()
+const navigation = new Navigation()
 
 const getListName = () => {
-  if (navigationStore.isProgramFromProject() || navigationStore.isCatalogAboutProjects()) {
+  if (navigation.isProgramFromProject() || navigation.isCatalogAboutProjects()) {
     return 'projets'
   }
   return 'dispositifs'
 }
 
 const getListText = () => {
-  if (navigationStore.isCatalog()) {
+  if (navigation.isCatalog()) {
     return 'Liste des ' + getListName()
   } else {
     return 'Vos résultats'
@@ -37,29 +39,29 @@ const getListText = () => {
 }
 const getBaseRouteName = () => {
   switch (true) {
-    case navigationStore.isCatalogAboutProjects():
-    case navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail):
+    case navigation.isCatalogAboutProjects():
+    case navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail):
       return RouteName.CatalogProjects
-    case navigationStore.isByRouteName(RouteName.CatalogProgramDetail):
+    case navigation.isByRouteName(RouteName.CatalogProgramDetail):
       return RouteName.CatalogPrograms
-    case navigationStore.isQuestionnaireResultDetail():
+    case navigation.isQuestionnaireResultDetail():
       return RouteName.QuestionnaireResult
     default:
-      return navigationStore.isCatalog() ? RouteName.CatalogPrograms : RouteName.QuestionnaireStart
+      return navigation.isCatalog() ? RouteName.CatalogPrograms : RouteName.QuestionnaireStart
   }
 }
 
 const routeToBaseList: RouteLocationRaw = {
   name: getBaseRouteName(),
-  query: navigationStore.isCatalogDetail() ? undefined : navigationStore.query
+  query: navigation.isCatalogDetail() ? undefined : navigationStore.query
 }
 
 const breadcrumbs = computed(() => {
   const baseLinks: { text: string; to: RouteLocationRaw }[] = [{ text: 'Accueil', to: { name: RouteName.Homepage } }]
-  if (!navigationStore.isStaticPage()) {
+  if (!navigation.isStaticPage()) {
     baseLinks.push({ text: getListText(), to: routeToBaseList })
   }
-  if (navigationStore.isQuestionnaire()) {
+  if (navigation.isQuestionnaire()) {
     const trackId = usedTrackStore.getPreviousCompletedUsedTrackId()
     baseLinks.splice(1, 0, {
       text: 'Questionnaire',

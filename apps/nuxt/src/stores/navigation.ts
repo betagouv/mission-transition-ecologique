@@ -18,7 +18,6 @@ import {
 import { RouteName } from '@/types/routeType'
 
 export const useNavigationStore = defineStore('navigation', () => {
-  const isReady = ref<boolean>(false)
   const router = ref<Router>()
   const route = ref<RouteLocationNormalizedLoaded>()
   const searchParams = ref<URLSearchParams>(new URLSearchParams())
@@ -143,13 +142,8 @@ export const useNavigationStore = defineStore('navigation', () => {
     return route.value?.name === routeName
   }
 
-  function setIsReady(bool: boolean) {
-    isReady.value = bool
-  }
-
   function setRouter(useRouter: Router) {
     router.value = useRouter
-    setIsReady(true)
   }
 
   function setRoute(useRoute: RouteLocationNormalizedLoaded) {
@@ -211,7 +205,6 @@ export const useNavigationStore = defineStore('navigation', () => {
   }
 
   return {
-    isReady,
     router,
     route,
     query,

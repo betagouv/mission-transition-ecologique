@@ -33,6 +33,7 @@
 </template>
 
 <script setup lang="ts">
+import Navigation from '@/tools/navigation'
 import { ProgramAidType, type ProgramData, RouteName } from '@/types'
 import { consolidateAmounts } from '@/tools/helpers'
 import Translation from '@/tools/translation'
@@ -82,21 +83,22 @@ const getCostInfos = () => {
 }
 
 const navigationStore = useNavigationStore()
-
-const isCatalog = navigationStore.isCatalogPrograms()
+const navigation = new Navigation()
+const isCatalog = navigation.isCatalogPrograms()
 
 const getRouteName = () => {
   if (isCatalog) {
     return RouteName.CatalogProgramDetail
-  } else if (navigationStore.isByRouteName(RouteName.ProjectResultDetail)) {
+  } else if (navigation.isByRouteName(RouteName.ProjectResultDetail)) {
     return RouteName.ProgramFromProjectDetail
-  } else if (navigationStore.isCatalogProjectDetail()) {
+  } else if (navigation.isCatalogProjectDetail()) {
     return RouteName.CatalogProgramFromCatalogProjectDetail
   }
   return RouteName.QuestionnaireResultDetail
 }
 
 const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
+  console.log(getRouteName())
   return {
     name: getRouteName(),
     params: { programId },

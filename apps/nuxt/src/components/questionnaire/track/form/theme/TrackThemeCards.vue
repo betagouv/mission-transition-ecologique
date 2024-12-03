@@ -26,10 +26,8 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
 import { Theme } from '@/tools/theme'
-import { ProgramData } from '@/types'
 import { Project } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
-import { useProgramStore } from '@/stores/program'
 import { useNavigationStore } from '@/stores/navigation'
 import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 
@@ -37,8 +35,6 @@ const currentTrack = useTrackStore().current
 const emit = defineEmits(['updateSelection'])
 const projectStore = useProjectStore()
 const projects = ref<Project[]>()
-const programs = ref<ProgramData[]>()
-const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
 const registeredData = CompanyDataStorage.getData()
 
@@ -84,13 +80,11 @@ const selectOption = (opt: string | undefined) => {
 
 const hasError = ref<boolean>(false)
 
-const getProgramsAndProjects = async () => {
+const getProjects = async () => {
   navigationStore.hasSpinner = true
   const projectResult = await projectStore.eligibleProjects
-  const programResult = await programStore.programsByUsedTracks
-  if (programResult.isOk && projectResult.isOk) {
-    projects.value = projectResult.value
-    programs.value = programResult.value
+  if (projectResult.isOk()) {
+    projects.value = projectResult.data
   } else {
     hasError.value = true
   }
@@ -100,7 +94,7 @@ const getProgramsAndProjects = async () => {
 watch(
   registeredData.value,
   async () => {
-    await getProgramsAndProjects()
+    await getProjects()
   },
   { immediate: true }
 )

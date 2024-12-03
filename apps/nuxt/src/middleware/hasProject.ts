@@ -1,4 +1,3 @@
-import ProjectApi from '@/tools/api/projectApi'
 import { RouteName } from '@/types'
 
 export default defineNuxtRouteMiddleware(async (to) => {
@@ -7,9 +6,12 @@ export default defineNuxtRouteMiddleware(async (to) => {
     return navigateTo(redirectTo)
   }
 
-  const projectResult = await new ProjectApi().getOne(to.params.projectSlug as string)
+  const projectResult = await useProjectStore().getProjectBySlug(to.params.projectSlug as string)
+  console.log(projectResult)
+  console.log(projectResult.isOk)
   if (!projectResult.isOk) {
+    console.log('not projectResult.isOk')
     return navigateTo(to.name === RouteName.ProjectResultDetail ? { name: RouteName.QuestionnaireStart } : { name: RouteName.Homepage })
   }
-  useProjectStore().currentProject = projectResult.value
+  console.log(projectResult.value)
 })

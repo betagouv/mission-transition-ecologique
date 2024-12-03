@@ -83,6 +83,8 @@ const hasError = ref<boolean>(false)
 const hasRegisteredData = CompanyDataStorage.hasData()
 const registeredData = CompanyDataStorage.getData()
 
+await getPrograms()
+
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value.length || 0
 })
@@ -103,9 +105,10 @@ const financePrograms = computed(() => {
   )
 })
 
-const getPrograms = async () => {
+async function getPrograms() {
   navigationStore.hasSpinner = true
   const programsResult = await programStore.programsByUsedTracks
+  console.log(programsResult.isOk())
   if (programsResult.isOk()) {
     programs.value = programsResult.data
   } else {
@@ -114,13 +117,7 @@ const getPrograms = async () => {
   navigationStore.hasSpinner = false
 }
 
-watch(
-  registeredData.value,
-  async () => {
-    await getPrograms()
-  },
-  {
-    immediate: true
-  }
-)
+watch(registeredData.value, async () => {
+  await getPrograms()
+})
 </script>

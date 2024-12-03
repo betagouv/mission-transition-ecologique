@@ -64,11 +64,12 @@ export const useProjectStore = defineStore('project', () => {
     }
 
     const result = await new ProjectApi().getOne(slug)
-    if (result.isOk) {
-      currentProject.value = result.value
+    if (result.isOk()) {
+      currentProject.value = result.data
+      return Result.ok(result.data)
     }
 
-    return result
+    return Result.err(new Error(result.error?.message))
   }
 
   async function getLinkedProjectsFromCurrent() {
