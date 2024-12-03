@@ -195,7 +195,6 @@
           <ProgramEligibility :program="program" />
           <TeeRegisterHighlight
             v-if="!hasRegisteredData"
-            class="fr-highlight-border--yellow fr-highlight-bg--yellow--lightness"
             :text="Translation.t('program.programRegisterHighlightText')"
           />
         </ProgramAccordion>

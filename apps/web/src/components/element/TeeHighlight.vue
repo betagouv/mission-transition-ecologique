@@ -1,5 +1,6 @@
 <template>
   <DsfrHighlight
+    :class="`fr-highlight-border--${color} fr-highlight-bg--${color}--lightness`"
     class="fr-m-0 fr-p-0"
     :large="true"
   >
@@ -21,10 +22,13 @@
   </DsfrHighlight>
 </template>
 <script setup lang="ts">
+import { Color } from '@/types'
+
 interface Props {
   large: boolean
   img: string
   text: string
+  color: Color
   altImg: string
 }
 defineProps<Props>()

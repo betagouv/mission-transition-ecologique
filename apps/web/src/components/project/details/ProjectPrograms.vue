@@ -32,7 +32,7 @@
       </div>
       <TeeRegisterHighlight
         v-if="!hasRegisteredData"
-        class="fr-mx-3v fr-highlight-border--yellow fr-highlight-bg--yellow--lightness"
+        class="fr-mx-3v"
         :text="Translation.t('project.projectRegisterHighlightText')"
       />
       <TeeHighlight
@@ -40,7 +40,7 @@
         large
         :text="Translation.t('project.noPrograms.title')"
         alt-img="projet / aucune aide"
-        class="fr-highlight-border--yellow fr-highlight-bg--yellow--lightness"
+        :color="Color.yellow"
         img="/images/tracks/no-programs.svg"
       >
         <p class="fr-mt-n3v fr-mb-0">{{ Translation.t('project.noPrograms.subtitle') }}</p>
@@ -68,7 +68,7 @@
 </template>
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { ProgramAidType, type ProgramData, Project, OpportunityType } from '@/types'
+import { ProgramAidType, type ProgramData, Project, OpportunityType, Color } from '@/types'
 import Contact from '@/utils/contact'
 import { useNavigationStore } from '@/stores/navigation'
 import Translation from '@/utils/translation'

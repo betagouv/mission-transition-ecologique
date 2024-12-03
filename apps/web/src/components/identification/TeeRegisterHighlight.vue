@@ -1,6 +1,6 @@
 <template>
   <TeeHighlight
-    class="fr-highlight-border--yellow fr-highlight-bg--yellow--lightness fr-m-0 fr-p-0"
+    :color="Color.yellow"
     :large="true"
     :text="text"
     img="/images/tracks/ecriture.svg"
@@ -17,6 +17,7 @@
 import Translation from '@/utils/translation'
 
 import Navigation from '@/utils/navigation'
+import { Color } from '@/types'
 
 interface Props {
   text: string
