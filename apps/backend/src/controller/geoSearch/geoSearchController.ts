@@ -1,5 +1,5 @@
 import { Controller, Get, Route, Query, Res, TsoaResponse } from 'tsoa'
-import { ErrorJSON, GeoSearchService } from '@tee/backend-ddd'
+import { ErrorJSON, GeoSearchService, Monitor } from '@tee/backend-ddd'
 import { ConvertedCommune } from '@tee/common'
 
 @Route('geoSearch')
@@ -19,7 +19,7 @@ export class GeoSearchController extends Controller {
     try {
       return this.geoSearchService.searchCity(searchTerm)
     } catch (error) {
-      console.error('Error in searchCities:', error)
+      Monitor.error('Error in searchCities', { error: error })
       return requestFailedResponse(500, { message: 'Failed to fetch search results.' })
     }
   }
