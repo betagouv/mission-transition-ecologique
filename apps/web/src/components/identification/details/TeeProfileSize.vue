@@ -40,8 +40,11 @@ const defaultUnselectedText = computed(() => {
   }
   return props.infos.description
 })
+const hasError = computed<boolean>(() => {
+  return !props.infos.value && props.showError
+})
 const errorMessage = computed<string>(() => {
-  if (props.showError && !props.infos.value) {
+  if (hasError) {
     return "La sélection de l'effectif est nécessaire"
   }
   return ''

@@ -35,10 +35,13 @@ interface Props {
 }
 const selectedActivity = defineModel<Sector>()
 const errorMessage = computed<string>(() => {
-  if (!props.infos.value && props.showError) {
+  if (hasError) {
     return "La sélection de votre secteur d'activité est nécessaire"
   }
   return ''
+})
+const hasError = computed<boolean>(() => {
+  return !props.infos.value && props.showError
 })
 const modifyActivity = () => {
   selectedActivity.value = undefined

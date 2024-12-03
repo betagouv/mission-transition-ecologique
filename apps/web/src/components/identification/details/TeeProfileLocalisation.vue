@@ -93,6 +93,7 @@ const updateModelValue = (value: string) => {
 const localisationResults = ref<ConvertedCommune[]>([])
 const isLoading = ref<boolean>(false)
 const localisationApi = new LocalisationApi()
+
 const errorMsg = computed<string>(() => {
   if (props.showError && !debouncedLocalisationInput.value && !isLoading.value) {
     return 'La sélection de la ville est nécessaire.'
