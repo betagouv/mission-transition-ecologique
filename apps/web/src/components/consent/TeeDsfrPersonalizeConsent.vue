@@ -74,6 +74,7 @@ const closeBaseConsent = () => {
 }
 onMounted(() => {
   cookies.value = JSON.parse(JSON.stringify(Cookie.cookies.value))
+  console.log(cookies)
 })
 const updateCookieStatus = (status: boolean, cookie: CookieValue) => {
   if (cookies.value) {

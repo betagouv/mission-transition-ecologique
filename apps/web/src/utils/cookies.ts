@@ -66,7 +66,6 @@ export default class Cookie {
         }
       })
       document.cookie = 'tee-accept-cookies=true; path=/'
-      window.location.reload()
     }
   }
 
