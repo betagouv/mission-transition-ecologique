@@ -178,7 +178,7 @@ export const tests: FormResultDataType[]  = [
     valid: true,
     manual: true,
     type: 'program',
-    url: 'aides-entreprise/act-pas-a-pas?effectif=TPE',
+    url: 'aides-entreprise/act-pas-a-pas',
     values: {
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
