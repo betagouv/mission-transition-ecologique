@@ -30,6 +30,7 @@
 </template>
 
 <script setup lang="ts">
+import Navigation from '@/tools/navigation'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
 import { Project, RouteName } from '@/types'
 import type { RouteLocationRaw } from 'vue-router'
@@ -50,8 +51,8 @@ withDefaults(defineProps<Props>(), {
 const priorityTag: string = 'A FAIRE EN PRIORITÉ'
 
 const navigationStore = useNavigationStore()
-
-const isCatalog = navigationStore.isCatalogProjects()
+const navigation = new Navigation()
+const isCatalog = navigation.isCatalogProjects()
 
 const getRouteToProjectDetail = (project: Project): RouteLocationRaw => {
   return {

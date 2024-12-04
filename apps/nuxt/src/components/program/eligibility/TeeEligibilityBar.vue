@@ -45,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import { useNavigationStore } from '@/stores/navigation'
+import Navigation from '@/tools/navigation'
 import { Color, RouteName } from '@/types'
 import StickyWithOffset from '@/tools/stickyWithOffset'
 import { Scroll } from '@/tools/scroll'
@@ -85,8 +85,10 @@ const props = defineProps<Props>()
 const eligibilityCriteria = ref<HTMLElement>()
 const stickyWithOffset = ref<StickyWithOffset | null>(null)
 
+const navigation = new Navigation()
+
 function isProgramDetailPage() {
-  return useNavigationStore().isByRouteName([RouteName.CatalogProgramDetail, RouteName.QuestionnaireResultDetail])
+  return navigation.isByRouteName([RouteName.CatalogProgramDetail, RouteName.QuestionnaireResultDetail])
 }
 
 onMounted(async () => {

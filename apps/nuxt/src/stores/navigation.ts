@@ -75,73 +75,6 @@ export const useNavigationStore = defineStore('navigation', () => {
     return route
   }
 
-  function isCatalogPrograms() {
-    return isByRouteName(RouteName.CatalogPrograms)
-  }
-
-  function isCatalogProjects() {
-    return isByRouteName(RouteName.CatalogProjects)
-  }
-
-  function isCatalogProjectDetail() {
-    return isByRouteName(RouteName.CatalogProjectDetail)
-  }
-
-  function isCatalogProgramDetail() {
-    return isByRouteName([RouteName.CatalogProgramDetail, RouteName.CatalogProgramFromCatalogProjectDetail])
-  }
-
-  function isCatalogAboutPrograms() {
-    return isCatalogPrograms() || isCatalogProgramDetail()
-  }
-
-  function isCatalogAboutProjects() {
-    return isCatalogProjects() || isCatalogProjectDetail()
-  }
-
-  function isCatalogList() {
-    return isByRouteName([RouteName.CatalogPrograms, RouteName.CatalogProjects])
-  }
-
-  function isCatalogDetail() {
-    return isCatalogProgramDetail() || isCatalogProjectDetail()
-  }
-
-  function isCatalog() {
-    return isCatalogDetail() || isCatalogList()
-  }
-
-  function isQuestionnaire() {
-    return isQuestionnaireResult() || isQuestionnaireResultDetail()
-  }
-
-  function isQuestionnaireResult() {
-    return isByRouteName(RouteName.QuestionnaireResult)
-  }
-
-  function isQuestionnaireResultDetail() {
-    return isByRouteName([RouteName.QuestionnaireResultDetail, RouteName.ProgramFromProjectDetail, RouteName.ProjectResultDetail])
-  }
-
-  function isProgramDetail() {
-    return isCatalogProgramDetail() || isQuestionnaireResultDetail()
-  }
-
-  function isProgramFromProject() {
-    return isByRouteName([RouteName.ProgramFromProjectDetail, RouteName.CatalogProgramFromCatalogProjectDetail])
-  }
-
-  function isStaticPage() {
-    return !isQuestionnaire() && !isCatalog()
-  }
-
-  function isByRouteName(routeName: string | string[]) {
-    if (Array.isArray(routeName) && route.value?.name) {
-      return new Set(routeName).has(route.value.name as string)
-    }
-    return route.value?.name === routeName
-  }
-
   function setRouter(useRouter: Router) {
     router.value = useRouter
   }
@@ -212,24 +145,8 @@ export const useNavigationStore = defineStore('navigation', () => {
     tabSelectedOnList,
     hasSpinner,
     hasRegisterModal,
-    isCatalog,
-    isCatalogAboutPrograms,
-    isCatalogAboutProjects,
-    isCatalogPrograms,
-    isCatalogProjects,
-    isCatalogProjectDetail,
-    isCatalogProgramDetail,
-    isCatalogList,
-    isCatalogDetail,
-    isProgramDetail,
-    isProgramFromProject,
-    isByRouteName,
     resetSearchParams,
     setRouter,
-    isQuestionnaire,
-    isQuestionnaireResult,
-    isQuestionnaireResultDetail,
-    isStaticPage,
     setRoute,
     setSearchParams,
     updateSearchParam,

@@ -1,60 +1,54 @@
 <template>
-  <Transition
-    name="fade"
-    mode="out-in"
+  <DsfrButton
+    v-if="hasData"
+    class="fr-btn--tertiary-no-outline ignore-modal-click"
+    :title="companyName"
+    @click="openModal"
   >
-    <TeeDsfrButton
-      v-if="hasData"
-      class="fr-btn--tertiary-no-outline ignore-modal-click"
-      :title="companyName"
-      @click="openModal"
+    <span
+      :class="isSmallScreen ? 'fr-icon--lg' : 'fr-pr-2w'"
+      class="fr-icon-account-circle-fill register-icon-profile ignore-modal-click"
     >
       <span
-        v-if="hasData || Breakpoint.isSmallScreen()"
-        :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
-        class="fr-icon-account-circle-fill register-icon-profile ignore-modal-click"
+        :id="isSmallScreen ? 'badge-mobile' : 'base-badge'"
+        :class="badgeIcon"
+        class="fr-text--blue-france fr-radius-a--2v ignore-modal-click register-badge"
       >
-        <span
-          :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
-          :class="badgeIcon"
-          class="fr-text--blue-france fr-radius-a--2v ignore-modal-click register-badge"
-        >
-        </span>
       </span>
+    </span>
 
-      <span
-        v-if="!Breakpoint.isSmallScreen()"
-        id="register-text"
-        >{{ companyName }}
-      </span>
-    </TeeDsfrButton>
-    <TeeDsfrButton
-      v-else
-      class="ignore-modal-click"
-      @click="openModal"
+    <span
+      v-if="!isSmallScreen"
+      id="register-text"
+      >{{ companyName }}
+    </span>
+  </DsfrButton>
+  <DsfrButton
+    v-if="!hasData"
+    class="ignore-modal-click"
+    @click="openModal"
+  >
+    <span
+      v-if="isSmallScreen"
+      :class="isSmallScreen ? 'fr-icon--lg' : 'fr-pr-2w'"
+      class="fr-icon-account-circle-fill register-icon-profile ignore-modal-click"
     >
       <span
-        v-if="Breakpoint.isSmallScreen()"
-        :class="Breakpoint.isSmallScreen() ? 'fr-icon--lg' : 'fr-pr-2w'"
-        class="fr-icon-account-circle-fill register-icon-profile ignore-modal-click"
+        :id="isSmallScreen ? 'badge-mobile' : 'base-badge'"
+        :class="badgeIcon"
+        class="fr-text--blue-france fr-radius-a--2v register-badge ignore-modal-click"
       >
-        <span
-          :id="Breakpoint.isSmallScreen() ? 'badge-mobile' : 'base-badge'"
-          :class="badgeIcon"
-          class="fr-text--blue-france fr-radius-a--2v register-badge ignore-modal-click"
-        >
-        </span>
       </span>
+    </span>
 
-      <span
-        v-if="!Breakpoint.isSmallScreen()"
-        id="register-text"
-        class="fr-text--yellow ignore-modal-click"
-      >
-        {{ Translation.t('register.mainTitle') }}
-      </span>
-    </TeeDsfrButton>
-  </Transition>
+    <span
+      v-if="!isSmallScreen"
+      id="register-text"
+      class="fr-text--yellow ignore-modal-click"
+    >
+      {{ Translation.t('register.mainTitle') }}
+    </span>
+  </DsfrButton>
 </template>
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
@@ -67,20 +61,21 @@ const registeredData = CompanyDataStorage.getData()
 const companyName = computed<string | undefined>(() => {
   return registeredData.value[CompanyDataStorageKey.Company]?.denomination || ''
 })
-const hasData = computed<boolean>(() => {
-  return !!registeredData.value[CompanyDataStorageKey.Company]
+const hasData = CompanyDataStorage.hasData()
+const isSmallScreen = computed(() => {
+  return Breakpoint.isSmallScreen()
 })
-const openModal = () => {
-  Navigation.toggleRegisterModal()
-}
-
 const badgeIcon = computed(() => {
-  if (Breakpoint.isSmallScreen() && !hasData.value) {
+  if (isSmallScreen && !hasData.value) {
     return 'fr-bg--yellow fr-icon-question-mark'
   } else {
     return 'fr-bg--green fr-icon-check-line'
   }
 })
+
+const openModal = () => {
+  Navigation.toggleRegisterModal()
+}
 </script>
 <style lang="scss" scoped>
 .register-icon-profile {

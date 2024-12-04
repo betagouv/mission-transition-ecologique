@@ -20,13 +20,13 @@ export default class Breakpoint {
 
   static isMobile() {
     const currentBreakpoint = this.getCurrentBreakpoint()
-    return !currentBreakpoint.value || currentBreakpoint.value === BreakpointNameType.xs
+    return currentBreakpoint.value && currentBreakpoint.value === BreakpointNameType.xs
   }
 
   static isSmallScreen() {
     const currentBreakpoint = this.getCurrentBreakpoint()
     return (
-      !currentBreakpoint.value ||
+      currentBreakpoint.value &&
       [BreakpointNameType.xs, BreakpointNameType.sm, BreakpointNameType.md].includes(currentBreakpoint.value as BreakpointNameType)
     )
   }

@@ -260,7 +260,6 @@ import { storeToRefs } from 'pinia'
 
 const projectStore = useProjectStore()
 const programsStore = useProgramStore()
-const navigationStore = useNavigationStore()
 
 const { currentProgram: program } = storeToRefs(programsStore)
 const linkedProjects = ref<ProjectType[] | undefined>([])
@@ -360,8 +359,7 @@ const programIsAvailable = computed(() => {
 
 const scrollToProgramForm = () => {
   if (teeProgramFormContainer.value) {
-    navigationStore.isByRouteName(RouteName.CatalogProgramDetail) ||
-    navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)
+    navigation.isByRouteName(RouteName.CatalogProgramDetail) || navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)
       ? Scroll.to(teeProgramFormContainer.value)
       : Scroll.toWithTopBarOffset(teeProgramFormContainer.value)
   }

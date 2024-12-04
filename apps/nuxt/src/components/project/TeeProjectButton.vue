@@ -11,6 +11,7 @@
   </TeeButtonLink>
 </template>
 <script setup lang="ts">
+import Navigation from '@/tools/navigation'
 import { type RouteLocationRaw } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
@@ -29,13 +30,15 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const navigationStore = useNavigationStore()
+const navigation = new Navigation()
 
 const getRouteToProjectDetail = (): RouteLocationRaw => {
   const slug = props.project.slug
+  const isCatalogDetail = navigation.isCatalogDetail()
   return {
-    name: navigationStore.isCatalogDetail() ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
+    name: isCatalogDetail ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
     params: { projectSlug: slug },
-    query: navigationStore.isCatalogDetail() ? undefined : navigationStore.query
+    query: isCatalogDetail ? undefined : navigationStore.query
   }
 }
 </script>

@@ -1,5 +1,6 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
+import Navigation from '@/tools/navigation'
 import {
   CompanyDataStorageKey,
   EstablishmentFront,
@@ -272,8 +273,8 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
         }
       })
     })
-
-    if (!useNavigationStore().isCatalog() && !useNavigationStore().isProgramDetail()) {
+    const navigation = new Navigation()
+    if (!navigation.isCatalog() && !navigation.isProgramDetail()) {
       questionnaireData.onlyEligible = true
     }
 

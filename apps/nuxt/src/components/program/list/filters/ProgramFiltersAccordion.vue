@@ -20,7 +20,7 @@
   </DsfrAccordionsGroup>
 </template>
 <script setup lang="ts">
-import { useNavigationStore } from '@/stores/navigation'
+import Navigation from '@/tools/navigation'
 import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
 import ProgramFilterByOperator from './ProgramFilterByOperator.vue'
 import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
@@ -40,6 +40,7 @@ interface FilterItem {
 }
 
 const activeAccordion = ref<number>()
+const navigation = new Navigation()
 
 const filters: FilterItem[] = [
   {
@@ -53,14 +54,14 @@ const filters: FilterItem[] = [
     id: 'operator-aid',
     component: ProgramFilterByOperator,
     componentClass: 'fr-pl-2v',
-    if: useNavigationStore().isCatalogPrograms()
+    if: navigation.isCatalogPrograms()
   },
   {
     title: 'Régions',
     id: 'region-aid',
     component: ProgramFilterByRegion,
     componentClass: 'fr-pl-2v',
-    if: useNavigationStore().isCatalogPrograms()
+    if: navigation.isCatalogPrograms()
   }
 ]
 </script>

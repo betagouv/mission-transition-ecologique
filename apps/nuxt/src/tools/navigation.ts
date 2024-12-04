@@ -33,12 +33,32 @@ export default class Navigation {
     return this._route.name === routeName
   }
 
-  isCatalogList() {
-    return this.isByRouteName([RouteName.CatalogPrograms, RouteName.CatalogProjects])
+  isCatalogPrograms() {
+    return this.isByRouteName(RouteName.CatalogPrograms)
   }
 
   isCatalogProjects() {
     return this.isByRouteName(RouteName.CatalogProjects)
+  }
+
+  isCatalogProjectDetail() {
+    return this.isByRouteName(RouteName.CatalogProjectDetail)
+  }
+
+  isCatalogProgramDetail() {
+    return this.isByRouteName([RouteName.CatalogProgramDetail, RouteName.CatalogProgramFromCatalogProjectDetail])
+  }
+
+  isCatalogAboutPrograms() {
+    return this.isCatalogPrograms() || this.isCatalogProgramDetail()
+  }
+
+  isCatalogAboutProjects() {
+    return this.isCatalogProjects() || this.isCatalogProjectDetail()
+  }
+
+  isCatalogList() {
+    return this.isCatalogPrograms() || this.isCatalogProjects()
   }
 
   isCatalogDetail() {
@@ -49,36 +69,24 @@ export default class Navigation {
     return this.isCatalogDetail() || this.isCatalogList()
   }
 
-  isCatalogPrograms() {
-    return this.isByRouteName(RouteName.CatalogPrograms)
-  }
-
-  isCatalogProgramDetail() {
-    return this.isByRouteName([RouteName.CatalogProgramDetail, RouteName.CatalogProgramFromCatalogProjectDetail])
-  }
-
-  isCatalogProjectDetail() {
-    return this.isByRouteName(RouteName.CatalogProjectDetail)
-  }
-
-  isCatalogAboutProjects() {
-    return this.isCatalogProjects() || this.isCatalogProjectDetail()
-  }
-
-  isProgramFromProject() {
-    return this.isByRouteName([RouteName.ProgramFromProjectDetail, RouteName.CatalogProgramFromCatalogProjectDetail])
-  }
-
-  isQuestionnaireResultDetail() {
-    return this.isByRouteName([RouteName.QuestionnaireResultDetail, RouteName.ProgramFromProjectDetail, RouteName.ProjectResultDetail])
+  isQuestionnaire() {
+    return this.isQuestionnaireResult() || this.isQuestionnaireResultDetail()
   }
 
   isQuestionnaireResult() {
     return this.isByRouteName(RouteName.QuestionnaireResult)
   }
 
-  isQuestionnaire() {
-    return this.isQuestionnaireResult() || this.isQuestionnaireResultDetail()
+  isQuestionnaireResultDetail() {
+    return this.isByRouteName([RouteName.QuestionnaireResultDetail, RouteName.ProgramFromProjectDetail, RouteName.ProjectResultDetail])
+  }
+
+  isProgramDetail() {
+    return this.isCatalogProgramDetail() || this.isQuestionnaireResultDetail()
+  }
+
+  isProgramFromProject() {
+    return this.isByRouteName([RouteName.ProgramFromProjectDetail, RouteName.CatalogProgramFromCatalogProjectDetail])
   }
 
   isStaticPage() {

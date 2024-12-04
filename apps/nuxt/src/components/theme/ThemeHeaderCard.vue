@@ -12,10 +12,10 @@
 </template>
 
 <script setup lang="ts">
+import Navigation from '@/tools/navigation'
 import { Theme } from '@/tools/theme'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
 import { ThemeId } from '@/types'
-import { useNavigationStore } from '@/stores/navigation'
 import { RouteName } from '@/types/routeType'
 
 interface Props {
@@ -24,8 +24,8 @@ interface Props {
   radiusSize?: '0' | '1v' | '2v' | '2-5v'
 }
 const props = defineProps<Props>()
-const navigationStore = useNavigationStore()
-const isResultPage = navigationStore.isByRouteName(RouteName.QuestionnaireResult)
+const navigation = new Navigation()
+const isResultPage = navigation.isByRouteName(RouteName.QuestionnaireResult)
 
 function getRadiusClass() {
   const { radiusCorner, radiusSize } = props
