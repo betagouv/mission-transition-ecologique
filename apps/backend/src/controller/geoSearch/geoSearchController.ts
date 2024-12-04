@@ -7,19 +7,21 @@ export class GeoSearchController extends Controller {
   private readonly geoSearchService = new GeoSearchService()
 
   /**
-   * Recherche des villes par nom ou code postal.
-   * @param searchTerm - Nom ou code postal de la ville recherchée.
-   * @returns Liste des villes correspondantes.
+   * Search cities by name or postalCode
+   * @param searchTerm : search input
+   * @returns search results
    */
+
   @Get('/search')
   public async searchCities(
     @Query() searchTerm: string,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
   ): Promise<ConvertedCommune[]> {
-    try {
-      return this.geoSearchService.searchCity(searchTerm)
-    } catch (error) {
-      Monitor.error('Error in searchCities', { error: error })
+    const results = this.geoSearchService.searchCities(searchTerm)
+    if (results.isOk) {
+      return results.value
+    } else {
+      Monitor.error('Error in searchCities')
       return requestFailedResponse(500, { message: 'Failed to fetch search results.' })
     }
   }

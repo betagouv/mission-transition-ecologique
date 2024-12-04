@@ -64,7 +64,7 @@ export const regions: Track = {
   title: { fr: 'Ma localisation' },
   label: { fr: 'Où êtes-vous situé ?' },
   interface: {
-    component: TrackComponent.Select
+    component: TrackComponent.CitySearch
   },
   behavior: {
     multipleChoices: false

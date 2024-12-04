@@ -1,52 +1,35 @@
-import { communes } from '@tee/data/references'
-import { ConvertedCommune, Commune } from '@tee/common'
+import { GeoSearchFeatures } from '../domain/geoSearchFeatures'
+import { ConvertedCommune } from '@tee/common'
+import { Result } from 'true-myth'
+import { GeoSearch } from '../domain/spi'
+import { Localisation } from '../infrastructure/json/localisation'
 
 export default class GeoSearchService {
-  private _cities: Commune[]
-  private _citiesByPostalCode: ConvertedCommune[]
+  private geoSearchFeatures: GeoSearchFeatures
+  private localisation: Localisation
 
   constructor() {
-    this._cities = communes as Commune[]
-    this._citiesByPostalCode = this.separateCitiesByPostalCode()
+    this.localisation = new Localisation() // Initialisation unique de Localisation
+    this.geoSearchFeatures = new GeoSearchFeatures(this._getGeoSearchRepository())
   }
 
-  private separateCitiesByPostalCode(): ConvertedCommune[] {
-    return this._cities.flatMap((city: Commune) =>
-      city.codesPostaux.map((postalCode: string) => ({
-        ...city,
-        codePostal: postalCode
-      }))
-    )
-  }
-
-  public searchCity(searchTerm: string): ConvertedCommune[] {
-    // Automatically detect if the search term is a postal code (5 digits) or a name
-    let results = []
-    if (/^\d+$/.test(searchTerm)) {
-      results = this.searchByCityCode(searchTerm)
-    } else {
-      results = this.searchByName(searchTerm)
+  /**
+   * Search cities by name or postalCode
+   * @param searchTerm : search input
+   * @returns search results
+   */
+  public searchCities(searchTerm: string): Result<ConvertedCommune[], Error> {
+    try {
+      return Result.ok(this.geoSearchFeatures.search(searchTerm))
+    } catch (error: unknown) {
+      return Result.err(error as Error)
     }
-
-    return results.sort((a: { nom: string }, b: { nom: string }) => a.nom.localeCompare(b.nom))
-  }
-  public searchByName(searchValue: string): ConvertedCommune[] {
-    const normalizeString = (str: string) =>
-      str
-        .toLowerCase()
-        .normalize('NFD')
-        .replace(/[\u0300-\u036f]/g, '')
-        .replace(/[-\s]/g, '')
-        .trim()
-    const normalizedSearch = normalizeString(searchValue)
-    return this._citiesByPostalCode.filter((pair: { nom: string }) => {
-      const normalizedCity = normalizeString(pair.nom)
-
-      return normalizedCity.startsWith(normalizedSearch)
-    })
   }
 
-  public searchByCityCode(searchValue: string): ConvertedCommune[] {
-    return this._citiesByPostalCode.filter((pair: { codePostal: string }) => pair.codePostal.startsWith(searchValue))
+  private _getGeoSearchRepository(): GeoSearch {
+    return {
+      searchByName: this.localisation.searchByName.bind(this.localisation),
+      searchByCityCode: this.localisation.searchByCityCode.bind(this.localisation)
+    }
   }
 }

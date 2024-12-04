@@ -5,14 +5,20 @@ import { ConvertedCommune } from '@tee/common'
 export default class LocalisationApi extends RequestApi {
   protected readonly url = '/api/geoSearch'
 
+  constructor() {
+    super()
+  }
+  protected buildQuery(baseURL: string, param: string): string {
+    const url = new URL(baseURL, window.location.origin)
+    url.searchParams.set('searchTerm', param)
+    return url.toString()
+  }
+
   async searchCities(searchTerm: string): Promise<Result<ConvertedCommune[], Error>> {
-    const urlWithParams = `${this.url}/search?searchTerm=${encodeURIComponent(searchTerm)}`
+    const urlWithParams = this.buildQuery(`${this.url}/search`, searchTerm)
     try {
-      const response = await fetch(urlWithParams)
-      if (!response.ok) {
-        return Result.err(new Error())
-      }
-      return Result.ok((await response.json()) as ConvertedCommune[])
+      const data = await super.getJson<ConvertedCommune[]>(urlWithParams)
+      return data
     } catch (error: unknown) {
       return Result.err(error as Error)
     }
