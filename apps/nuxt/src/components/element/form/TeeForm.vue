@@ -85,19 +85,19 @@
 </template>
 
 <script setup lang="ts">
+import Navigation from '@/tools/navigation'
 import { Scroll } from '@/tools/scroll'
-import { computed, HTMLAttributes, ReservedProps } from 'vue'
+import { computed } from 'vue'
 import { type ReqResp, TrackId, FormDataType, InputFieldUnionType, Project } from '@/types'
 import Translation from '@/tools/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import Format from '@/tools/format'
 import OpportunityApi from '@/tools/api/opportunityApi'
 import { OpportunityType } from '@tee/common'
-import { useNavigationStore } from '@/stores/navigation'
 import Analytics from '@/tools/analytic/analytics'
 import { ProgramType } from '@tee/data'
 
-const navigation = useNavigationStore()
+const navigation = new Navigation()
 interface Props {
   dataId?: string
   showTitle?: boolean
@@ -108,7 +108,7 @@ interface Props {
   hintClass?: string
   errorEmailSubject: string
   phoneCallback?: string
-  formContainerRef: (HTMLAttributes & ReservedProps) | null
+  formContainerRef: HTMLElement | null | undefined
 }
 
 const props = withDefaults(defineProps<Props>(), {

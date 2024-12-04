@@ -18,9 +18,7 @@ export default class Program {
 
   static getLinkedProjects(program: ProgramType | undefined, projects: ProjectType[]) {
     if (program) {
-      const programId: string = program.id
-      const linkedProjects: ProjectType[] = projects.filter((project: ProjectType) => project.programs.includes(programId))
-      return linkedProjects
+      return projects.filter((project: ProjectType) => project.programs.includes(program.id))
     }
   }
 }

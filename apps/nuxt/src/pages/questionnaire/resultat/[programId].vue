@@ -12,7 +12,7 @@ import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { RouteName } from '@/types/routeType'
 
 definePageMeta({
-  name: RouteName.QuestionnaireResultDetail,
+  name: RouteName.ProgramResultDetail,
   middleware: [MiddlewareName.setUsedTracks, MiddlewareName.hasUsedTracks, MiddlewareName.hasProgram]
 })
 </script>

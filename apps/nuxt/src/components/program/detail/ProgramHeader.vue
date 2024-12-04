@@ -20,7 +20,7 @@
         class="fr-col-12"
       >
         <TeeError
-          :mailto="Contact.email"
+          :mailto="Contact.mailTo"
           :email="Contact.email"
         />
       </div>

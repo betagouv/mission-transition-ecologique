@@ -94,11 +94,11 @@ const getRouteName = () => {
   if (isCatalog) {
     return RouteName.CatalogProgramDetail
   } else if (navigation.isByRouteName(RouteName.ProjectResultDetail)) {
-    return RouteName.ProgramFromProjectDetail
+    return RouteName.ProgramFromProjectResultDetail
   } else if (navigation.isCatalogProjectDetail()) {
     return RouteName.CatalogProgramFromCatalogProjectDetail
   }
-  return RouteName.QuestionnaireResultDetail
+  return RouteName.ProgramResultDetail
 }
 
 const getRouteToProgramDetail = (): RouteLocationRaw => {

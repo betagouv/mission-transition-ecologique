@@ -88,7 +88,7 @@ const stickyWithOffset = ref<StickyWithOffset | null>(null)
 const navigation = new Navigation()
 
 function isProgramDetailPage() {
-  return navigation.isByRouteName([RouteName.CatalogProgramDetail, RouteName.QuestionnaireResultDetail])
+  return navigation.isByRouteName([RouteName.CatalogProgramDetail, RouteName.ProgramResultDetail])
 }
 
 onMounted(async () => {

@@ -12,9 +12,9 @@ export enum RouteName {
   QuestionnaireStart = 'questionnaire-start',
   Questionnaire = 'questionnaire',
   QuestionnaireResult = 'questionnaire-resultat',
-  QuestionnaireResultDetail = 'questionnaire-result-detail',
-  ProgramFromProjectDetail = 'program-from-project-detail',
-  ProjectResultDetail = 'questionnaire-project-result-detail',
+  ProgramResultDetail = 'program-result-detail',
+  ProgramFromProjectResultDetail = 'program-from-project-detail',
+  ProjectResultDetail = 'project-result-detail',
   Statistics = 'statistics',
   Accessibility = 'accessibility'
 }

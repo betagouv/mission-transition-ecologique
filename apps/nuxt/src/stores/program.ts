@@ -21,7 +21,6 @@ export const useProgramStore = defineStore('program', () => {
 
   const programs = computed(async () => {
     const result = await getPrograms()
-
     if (result.isOk()) {
       hasPrograms.value = result.data.length > 0
     }
@@ -54,7 +53,7 @@ export const useProgramStore = defineStore('program', () => {
 
     // if (hasPrograms.value) {
     //   const result = await programs.value
-    //   if (result.isOk) {
+    //   if (result.isOk()) {
     //     const program = result.data.find((program) => program.id === id)
     //     if (program) {
     //       currentProgram.value = program
@@ -64,7 +63,7 @@ export const useProgramStore = defineStore('program', () => {
     //     return Result.err(new Error('Program not found'))
     //   }
     //
-    //   return Result.err(result.error)
+    //   return Result.err(new Error(result.error?.message))
     // }
 
     const result = await new ProgramApi(useUsedTrackStore().getQuestionnaireData()).getOne(id)

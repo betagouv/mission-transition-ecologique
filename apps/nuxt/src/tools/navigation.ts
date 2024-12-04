@@ -7,6 +7,14 @@ export default class Navigation {
     private _router: Router = useRouter()
   ) {}
 
+  private static instance: Navigation
+  static getInstance(route: RouteLocationNormalizedLoaded | undefined = undefined, router: Router | undefined = undefined) {
+    if (!this.instance) {
+      this.instance = new Navigation(route, router)
+    }
+    return this.instance
+  }
+
   static toggleRegisterModal = (forceStatus?: boolean) => {
     if (import.meta.client) {
       const navigationStore = useNavigationStore()
@@ -31,6 +39,10 @@ export default class Navigation {
       return new Set(routeName).has(this._route.name as string)
     }
     return this._route.name === routeName
+  }
+
+  get name() {
+    return this._route.name
   }
 
   isCatalogPrograms() {
@@ -78,7 +90,7 @@ export default class Navigation {
   }
 
   isQuestionnaireResultDetail() {
-    return this.isByRouteName([RouteName.QuestionnaireResultDetail, RouteName.ProgramFromProjectDetail, RouteName.ProjectResultDetail])
+    return this.isByRouteName([RouteName.ProgramResultDetail, RouteName.ProgramFromProjectResultDetail, RouteName.ProjectResultDetail])
   }
 
   isProgramDetail() {
@@ -94,7 +106,7 @@ export default class Navigation {
   }
 
   isProgramFromProject() {
-    return this.isByRouteName([RouteName.ProgramFromProjectDetail, RouteName.CatalogProgramFromCatalogProjectDetail])
+    return this.isByRouteName([RouteName.ProgramFromProjectResultDetail, RouteName.CatalogProgramFromCatalogProjectDetail])
   }
 
   isStaticPage() {

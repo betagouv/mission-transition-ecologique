@@ -218,7 +218,7 @@
     <!-- PROGRAM FORM -->
     <div
       v-if="hasRegisteredData && programIsEligible"
-      ref="teeProgramFormContainer"
+      ref="tee-program-form-container"
       class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
     >
       <TeeForm
@@ -263,7 +263,7 @@ const programsStore = useProgramStore()
 
 const { currentProgram: program } = storeToRefs(programsStore)
 const linkedProjects = ref<ProjectType[] | undefined>([])
-const teeProgramFormContainer = useTemplateRef('teeProgramFormContainer')
+const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
 
 const navigation = new Navigation()
 
@@ -279,9 +279,7 @@ const props = defineProps<Props>()
 useNavigationStore().hasSpinner = true
 const programResult = await useProgramStore().getProgramById(props.programId)
 if (programResult.isOk) {
-  programsStore.currentProgram = programResult.value
   program.value = programResult.value
-
   let projectResult
   if (navigation.isCatalogProgramDetail()) {
     projectResult = await projectStore.projects
@@ -348,7 +346,9 @@ onBeforeRouteLeave(() => {
 })
 
 watch(registeredData.value, async () => {
+  console.log(`TeeProgramDetail > watch > program.value :`, program.value)
   if (program.value) {
+    console.log(`TeeProgramDetail > watch > registeredData.value :`, registeredData.value)
     await programsStore.getProgramById(program.value.id)
   }
 })

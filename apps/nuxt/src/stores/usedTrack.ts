@@ -90,10 +90,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     current.value = track
   }
 
-  function setCurrentById(trackId: TrackId) {
-    setCurrent(getUsedTrack(trackId))
-  }
-
   function setCurrentSelectedOptions(selectedOptions: TrackOptions[]) {
     if (current.value) {
       current.value.selected = selectedOptions
@@ -273,7 +269,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
         }
       })
     })
-    const navigation = new Navigation()
+    const navigation = Navigation.getInstance()
     if (!navigation.isCatalog() && !navigation.isProgramDetail()) {
       questionnaireData.onlyEligible = true
     }
@@ -344,8 +340,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     completedQuestionnaireData,
     usedTracksValuesPairs,
     currentIsCompleted,
-    setCurrent,
-    setCurrentById,
     setCurrentSelectedOptions,
     updateCurrent,
     setCurrentToUncompleted,
