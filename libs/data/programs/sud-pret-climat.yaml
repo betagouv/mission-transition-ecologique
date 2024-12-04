@@ -77,7 +77,7 @@ objectifs:
   - description: Le virement est effectué 48 heures après signature du contrat de prêt.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - TPE, PME
+    - Moins de 250 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
     - Provence-Alpes-Côte d'Azur
