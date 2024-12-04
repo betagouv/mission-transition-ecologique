@@ -6,6 +6,11 @@
     title="💰 Mes aides"
   >
     <template #content>
+      <TeeRegisterHighlight
+        v-if="!hasRegisteredData"
+        class="fr-mx-3v"
+        :text="Translation.t('project.projectRegisterHighlightText')"
+      />
       <div class="fr-container--fluid fr-px-3v">
         <div class="fr-grid-row">
           <div class="fr-col-12 fr-text-center">
@@ -30,11 +35,6 @@
           />
         </div>
       </div>
-      <TeeRegisterHighlight
-        v-if="!hasRegisteredData"
-        class="fr-mx-3v"
-        :text="Translation.t('project.projectRegisterHighlightText')"
-      />
       <TeeHighlight
         v-if="hasRegisteredData && !countFilteredPrograms && !navigationStore.hasSpinner"
         large
