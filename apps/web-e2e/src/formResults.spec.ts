@@ -23,7 +23,6 @@ tests.forEach((singleTest) => {
       await page.goto(singleTest.url, { waitUntil: 'load' })
       await page.waitForLoadState('networkidle');
       await page.evaluate((singleTest) => {
-        localStorage.clear()
         if (singleTest.manual) {
           localStorage.setItem(
             'company',
@@ -51,7 +50,7 @@ tests.forEach((singleTest) => {
             })
           )
         }
-        localStorage.setItem('structure_size', 'TPE')
+        localStorage.setItem('structure_size', JSON.stringify('TPE'))
       }, singleTest)
   
       await page.reload({ waitUntil: 'load' })
@@ -64,8 +63,7 @@ tests.forEach((singleTest) => {
         })
         await page.click('[teste2e-selector="open-custom-project-form"]', { timeout: 3000 })
       }
-      await page.waitForSelector(`form[name="${singleTest.type}"]`, { state: 'attached', timeout: 5000 });
-
+      await expect(page.locator(`form[name="${singleTest.type}"]`)).toHaveCount(1, { timeout: 3000 })
       for (const [fieldKey, value] of Object.entries(singleTest.values)) {
         const selector = `[teste2e-selector="${fieldKey}-${value.type}"]`
   
