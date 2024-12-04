@@ -35,7 +35,7 @@
           />
         </div>
       </div>
-      <TeeHighlight
+      <TeeDsfrHighlight
         v-if="hasRegisteredData && !countFilteredPrograms && !navigationStore.hasSpinner"
         large
         :text="Translation.t('project.noPrograms.title')"
@@ -44,7 +44,7 @@
         img="/images/tracks/no-programs.svg"
       >
         <p class="fr-mt-n3v fr-mb-0">{{ Translation.t('project.noPrograms.subtitle') }}</p>
-      </TeeHighlight>
+      </TeeDsfrHighlight>
       <div
         v-if="hasRegisteredData"
         id="project-contact"

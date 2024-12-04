@@ -1,5 +1,5 @@
 <template>
-  <TeeHighlight
+  <TeeDsfrHighlight
     :color="Color.yellow"
     :large="true"
     :text="text"
@@ -11,7 +11,7 @@
       :label="Translation.t('results.noResultCTA')"
       @click="openModal"
     />
-  </TeeHighlight>
+  </TeeDsfrHighlight>
 </template>
 <script setup lang="ts">
 import Translation from '@/utils/translation'
