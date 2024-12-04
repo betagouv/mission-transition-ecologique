@@ -85,6 +85,14 @@ export default class Navigation {
     return this.isCatalogProgramDetail() || this.isQuestionnaireResultDetail()
   }
 
+  isProjectDetail() {
+    return this.isCatalogProjectDetail() || this.isQuestionnaireProjectDetail()
+  }
+
+  isQuestionnaireProjectDetail() {
+    return this.isByRouteName(RouteName.ProjectResultDetail)
+  }
+
   isProgramFromProject() {
     return this.isByRouteName([RouteName.ProgramFromProjectDetail, RouteName.CatalogProgramFromCatalogProjectDetail])
   }

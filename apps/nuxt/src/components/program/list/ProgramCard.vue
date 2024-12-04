@@ -6,7 +6,7 @@
     :alt-img="`image / ${program.titre}`"
     :horizontal="true"
     :no-arrow="true"
-    :link="getRouteToProgramDetail(program.id)"
+    :link="getRouteToProgramDetail()"
     :badges="[{ label: program['nature de l\'aide'], noIcon: true, small: true }]"
   >
     <template #start-details>
@@ -34,14 +34,18 @@
 
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
-import { ProgramAidType, type ProgramData, RouteName } from '@/types'
+import { ProgramAidType, type ProgramData, Project, RouteName } from '@/types'
 import { consolidateAmounts } from '@/tools/helpers'
 import Translation from '@/tools/translation'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
 import type { RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 
-const { program } = defineProps<{ program: ProgramData }>()
+interface Props {
+  program: ProgramData
+  project?: Project
+}
+const { program, project } = defineProps<Props>()
 
 const getCostInfos = () => {
   let prefix: string = ''
@@ -97,11 +101,11 @@ const getRouteName = () => {
   return RouteName.QuestionnaireResultDetail
 }
 
-const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
-  console.log(getRouteName())
+const getRouteToProgramDetail = (): RouteLocationRaw => {
+  const params = navigation.isProjectDetail() && project ? { programId: program.id, projectSlug: project.slug } : { programId: program.id }
   return {
     name: getRouteName(),
-    params: { programId },
+    params: params,
     query: navigationStore.query
   }
 }

@@ -5,57 +5,59 @@
     title="💰 Mes aides"
   >
     <template #content>
-      <div class="fr-container--fluid fr-px-3v">
-        <div class="fr-grid-row">
-          <div class="fr-col-12 fr-text-center">
-            <TeeSpinner v-if="navigationStore.hasSpinner" />
-            <TeeNoResult
-              v-else-if="!countFilteredPrograms && !hasError && !navigationStore.hasSpinner"
-              message="Aucune aide n'a pu être identifiée avec les critères choisis..."
+      <client-only>
+        <div class="fr-container--fluid fr-px-3v">
+          <div class="fr-grid-row">
+            <div class="fr-col-12 fr-text-center">
+              <TeeSpinner v-if="navigationStore.hasSpinner" />
+              <TeeNoResult
+                v-else-if="!countFilteredPrograms && !hasError && !navigationStore.hasSpinner"
+                message="Aucune aide n'a pu être identifiée avec les critères choisis..."
+              />
+              <TeeError
+                v-else-if="hasError"
+                :mailto="Contact.email"
+                :email="Contact.email"
+              />
+            </div>
+            <ProjectProgramsList
+              v-if="studyPrograms.length > 0"
+              :title="Translation.t('project.studyPrograms')"
+              :programs="studyPrograms"
+              :project="project"
             />
-            <TeeError
-              v-else-if="hasError"
-              :mailto="Contact.email"
-              :email="Contact.email"
+            <ProjectProgramsList
+              v-if="financePrograms.length > 0"
+              :title="Translation.t('project.financePrograms')"
+              :programs="financePrograms"
+              :project="project"
             />
           </div>
-          <ProjectProgramsList
-            v-if="studyPrograms.length > 0"
-            :title="Translation.t('project.studyPrograms')"
-            :programs="studyPrograms"
-            :project="project"
-          />
-          <ProjectProgramsList
-            v-if="financePrograms.length > 0"
-            :title="Translation.t('project.financePrograms')"
-            :programs="financePrograms"
-            :project="project"
+        </div>
+        <TeeRegisterHighlight
+          v-if="!hasRegisteredData"
+          class="fr-mx-3v"
+          :text="Translation.t('project.projectRegisterHighlightText')"
+        />
+        <div
+          v-else
+          id="project-contact"
+          ref="teeProjectFormContainer"
+          class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
+        >
+          <TeeForm
+            v-if="project"
+            :form-container-ref="teeProjectFormContainer"
+            :form-type="OpportunityType.Project"
+            :phone-callback="Translation.t('form.phoneContact', { operator: ' ' })"
+            :form="Opportunity.getProjectFormFields(project)"
+            :data-id="project.id.toString()"
+            :data-slug="project.slug"
+            :hint="Translation.t('project.form.hint')"
+            :error-email-subject="Translation.t('project.form.errorEmail.subject', { titre: props.project.title })"
           />
         </div>
-      </div>
-      <TeeRegisterHighlight
-        v-if="!hasRegisteredData"
-        class="fr-mx-3v"
-        :text="Translation.t('project.projectRegisterHighlightText')"
-      />
-      <div
-        v-else
-        id="project-contact"
-        ref="teeProjectFormContainer"
-        class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
-      >
-        <TeeForm
-          v-if="project"
-          :form-container-ref="teeProjectFormContainer"
-          :form-type="OpportunityType.Project"
-          :phone-callback="Translation.t('form.phoneContact', { operator: ' ' })"
-          :form="Opportunity.getProjectFormFields(project)"
-          :data-id="project.id.toString()"
-          :data-slug="project.slug"
-          :hint="Translation.t('project.form.hint')"
-          :error-email-subject="Translation.t('project.form.errorEmail.subject', { titre: props.project.title })"
-        />
-      </div>
+      </client-only>
     </template>
   </TeeContentBlock>
 </template>
@@ -63,7 +65,6 @@
 import { useProgramStore } from '@/stores/program'
 import { ProgramAidType, type ProgramData, Project, OpportunityType } from '@/types'
 import Contact from '@/tools/contact'
-import { useNavigationStore } from '@/stores/navigation'
 import Translation from '@/tools/translation'
 import Opportunity from '@/tools/opportunity'
 import CompanyDataStorage from '@/tools/storage/companyDataStorage'
@@ -82,8 +83,6 @@ const hasError = ref<boolean>(false)
 
 const hasRegisteredData = CompanyDataStorage.hasData()
 const registeredData = CompanyDataStorage.getData()
-
-await getPrograms()
 
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value.length || 0
@@ -108,7 +107,6 @@ const financePrograms = computed(() => {
 async function getPrograms() {
   navigationStore.hasSpinner = true
   const programsResult = await programStore.programsByUsedTracks
-  console.log(programsResult.isOk())
   if (programsResult.isOk()) {
     programs.value = programsResult.data
   } else {
@@ -117,7 +115,8 @@ async function getPrograms() {
   navigationStore.hasSpinner = false
 }
 
-watch(registeredData.value, async () => {
+watchPostEffect(async () => {
+  registeredData.value
   await getPrograms()
 })
 </script>

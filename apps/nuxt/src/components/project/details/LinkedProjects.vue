@@ -32,8 +32,5 @@ interface Props {
 defineProps<Props>()
 
 const linkedProjectsTags = ref<Project[]>([])
-
-onMounted(async () => {
-  linkedProjectsTags.value = await useProjectStore().getLinkedProjectsFromCurrent()
-})
+linkedProjectsTags.value = await useProjectStore().getLinkedProjectsFromCurrent()
 </script>

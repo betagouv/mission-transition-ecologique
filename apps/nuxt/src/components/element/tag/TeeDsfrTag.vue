@@ -9,7 +9,8 @@
 import { DsfrTag, DsfrTagProps } from '@gouvminint/vue-dsfr'
 
 export interface TeeDsfrTagProps extends DsfrTagProps {
-  ariaPressed?: boolean
+  // eslint-disable-next-line vue/prop-name-casing
+  'aria--pressed'?: boolean
   color?: string
   value?: string | number
 }

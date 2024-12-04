@@ -10,6 +10,7 @@
   >
     <ProgramCard
       :program="program"
+      :project="project"
       class="fr-enlarge-link fr-card--horizontal-tier"
     />
   </div>

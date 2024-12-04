@@ -68,9 +68,6 @@ const routeToProject = {
   params: { projectSlug: props.projectSlug }
 }
 
-console.log(props.projectSlug)
-console.log(routeToProject)
-
 const links = computed<DsfrBreadcrumbProps['links']>(() => {
   const links = []
   if (navigation.isProgramFromProject()) {

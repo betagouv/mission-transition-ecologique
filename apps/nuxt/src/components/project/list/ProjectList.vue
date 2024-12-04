@@ -1,7 +1,4 @@
 <template>
-  <!--  LIST OF PROJECT CARDS-->
-
-  <!--  Project counter -->
   <div
     v-if="programStore.hasThemeTypeSelected()"
     class="fr-grid-row fr-grid-row--center"

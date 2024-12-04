@@ -16,12 +16,10 @@
         </div>
         <div class="fr-col-12 fr-col-md-9">
           <ProjectDescription :project="project" />
-          <client-only>
-            <ProjectPrograms
-              v-if="project"
-              :project="project"
-            />
-          </client-only>
+          <ProjectPrograms
+            v-if="project"
+            :project="project"
+          />
           <LinkedProjects
             v-if="project.linkedProjects.length > 0"
             :project="project"

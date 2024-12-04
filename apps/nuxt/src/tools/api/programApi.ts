@@ -11,11 +11,11 @@ export default class ProgramApi extends RequestApi {
   }
 
   async get(): Promise<ResultApi<ProgramData[]>> {
-    return super.getJson<ProgramData[]>()
+    return await super.getJson<ProgramData[]>()
   }
 
   async getOne(id: string): Promise<ResultApi<ProgramData>> {
-    return super.getJson<ProgramData>(this.url + '/' + id)
+    return await super.getJson<ProgramData>(this.url + '/' + id)
   }
 
   get buildQuery(): string {

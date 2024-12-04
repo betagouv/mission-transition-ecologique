@@ -16,8 +16,16 @@ export class ResultApi<T> {
     return this._data.value
   }
 
+  public get refData(): Ref<T | null> {
+    return this._data
+  }
+
   public get error(): DefaultAsyncDataErrorValue | NuxtError<unknown> {
     return this._error.value
+  }
+
+  public get refError(): Ref<DefaultAsyncDataErrorValue | NuxtError<unknown>> {
+    return this._error
   }
 
   public isOk(): this is { data: T; error: null } {
@@ -44,7 +52,11 @@ export class ResultApi<T> {
     return this._result.status.value
   }
 
-  public get pending(): boolean {
-    return this._result.status.value === 'pending'
+  public get refStatus(): Ref<string> {
+    return this._result.status
+  }
+
+  public get pending(): Ref<boolean> {
+    return ref(this._result.status.value === 'pending')
   }
 }

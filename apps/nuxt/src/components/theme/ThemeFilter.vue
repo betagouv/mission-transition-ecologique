@@ -17,7 +17,7 @@ import { ThemeType, type programFiltersType, TrackId, ThemeId } from '@/types'
 import { Theme } from '@/tools/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 import UsedTrack from '@/tools/track/usedTrack'
-import { computed, onBeforeMount } from 'vue'
+import { computed } from 'vue'
 
 interface Props {
   theme?: ThemeId
@@ -30,12 +30,20 @@ const usedTrackStore = useUsedTrackStore()
 const programFilters: programFiltersType = programStore.programFilters
 let hasAllTag = true
 
+if (props.theme) {
+  programFilters.themeTypeSelected = props.theme
+}
+
+if (UsedTrack.isSpecificGoal()) {
+  hasAllTag = false
+}
+
 const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
   const allTag: TeeDsfrTagProps = {
     label: 'Tous',
     tagName: 'button',
     value: '',
-    ariaPressed: programFilters.themeTypeSelected === ''
+    'aria--pressed': programFilters.themeTypeSelected === ''
   }
 
   const tags: TeeDsfrTagProps[] = []
@@ -44,7 +52,7 @@ const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
     tags.push({
       label: tag.tagLabel,
       tagName: 'button',
-      ariaPressed: isActive(tag),
+      'aria--pressed': isActive(tag),
       color: isActive(tag) && 'color' in tag ? tag.color : undefined,
       value: tag.id
     })
@@ -70,14 +78,4 @@ const updateThemeTypeSelected = async (value: string | number) => {
     useNavigationStore().replaceBrowserHistory()
   }
 }
-
-onBeforeMount(() => {
-  if (props.theme) {
-    programFilters.themeTypeSelected = props.theme
-  }
-
-  if (UsedTrack.isSpecificGoal()) {
-    hasAllTag = false
-  }
-})
 </script>
