@@ -8,13 +8,15 @@
       <div class="fr-container--fluid fr-p-4v">
         <div class="fr-grid-row fr-grid-row--middle">
           <img
-            class="fr-col-2 fr-col-xs-2 fr-hidden fr-unhidden-sm fr-mr-8v"
+            class="fr-col-2 fr-hidden fr-unhidden-sm"
             :src="img"
             :alt="altImg"
           />
-          <div class="fr-col-9 fr-col-xs-12">
-            <p class="fr-mb-4v">{{ text }}</p>
-            <slot />
+          <div class="fr-col-12 fr-col-sm-9">
+            <div class="fr-pl-8v">
+              <p class="fr-mb-4v">{{ text }}</p>
+              <slot />
+            </div>
           </div>
         </div>
       </div>
