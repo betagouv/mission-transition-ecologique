@@ -1,4 +1,4 @@
-import { CompanyDataStorageKey, CompanyDataType, EstablishmentFront, ManualCompanyData } from '@/types'
+import { CompanyDataStorageKey, CompanyDataType, EstablishmentFront } from '@/types'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
 import { StructureSize } from '@tee/common'
 import { ref, Ref } from 'vue'
@@ -28,9 +28,10 @@ export default class CompanyDataStorage {
   }
 
   public static hasSiret() {
+    if (!this._data.value[CompanyDataStorageKey.Company]) return false
+
     return (
-      this.hasCompanyData() &&
-      Object.hasOwn(this._data.value[CompanyDataStorageKey.Company] as EstablishmentFront | ManualCompanyData, 'siret') &&
+      Object.hasOwn(this._data.value[CompanyDataStorageKey.Company], 'siret') &&
       (this._data.value[CompanyDataStorageKey.Company] as EstablishmentFront).siret !== null
     )
   }
