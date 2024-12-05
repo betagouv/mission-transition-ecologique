@@ -1,18 +1,20 @@
 <template>
   <TeeContentBlock
+    v-if="hasRegisteredData || countFilteredPrograms"
     id="project-aids-title"
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
     title="💰 Mes aides"
   >
     <template #content>
+      <TeeRegisterHighlight
+        v-if="!hasRegisteredData"
+        class="fr-mx-3v"
+        :text="Translation.t('project.projectRegisterHighlightText')"
+      />
       <div class="fr-container--fluid fr-px-3v">
         <div class="fr-grid-row">
           <div class="fr-col-12 fr-text-center">
             <TeeSpinner v-if="navigationStore.hasSpinner" />
-            <TeeNoResult
-              v-else-if="!countFilteredPrograms && !hasError && !navigationStore.hasSpinner"
-              message="Aucune aide n'a pu être identifiée avec les critères choisis..."
-            />
             <TeeError
               v-else-if="hasError"
               :mailto="Contact.email"
@@ -33,13 +35,18 @@
           />
         </div>
       </div>
-      <TeeRegisterHighlight
-        v-if="!hasRegisteredData"
-        class="fr-mx-3v"
-        :text="Translation.t('project.projectRegisterHighlightText')"
-      />
+      <TeeDsfrHighlight
+        v-if="hasRegisteredData && !countFilteredPrograms && !navigationStore.hasSpinner"
+        large
+        :text="Translation.t('project.noPrograms.title')"
+        alt-img="projet / aucune aide"
+        :color="Color.yellow"
+        img="/images/tracks/no-programs.svg"
+      >
+        <p class="fr-mt-n3v fr-mb-0">{{ Translation.t('project.noPrograms.subtitle') }}</p>
+      </TeeDsfrHighlight>
       <div
-        v-else
+        v-if="hasRegisteredData"
         id="project-contact"
         ref="teeProjectFormContainer"
         class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
@@ -61,7 +68,7 @@
 </template>
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { ProgramAidType, type ProgramData, Project, OpportunityType } from '@/types'
+import { ProgramAidType, type ProgramData, Project, OpportunityType, Color } from '@/types'
 import Contact from '@/utils/contact'
 import { useNavigationStore } from '@/stores/navigation'
 import Translation from '@/utils/translation'

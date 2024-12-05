@@ -79,6 +79,7 @@ declare module 'vue' {
     TeeDsfrConsent: typeof import('./components/consent/TeeDsfrConsent.vue')['default']
     TeeDsfrHeader: typeof import('./components/element/vueDsfr/dsfrHeader/TeeDsfrHeader.vue')['default']
     TeeDsfrHeaderMenuLinks: typeof import('./components/element/vueDsfr/dsfrHeader/TeeDsfrHeaderMenuLinks.vue')['default']
+    TeeDsfrHighlight: typeof import('./components/element/TeeDsfrHighlight.vue')['default']
     TeeDsfrPersonalizeConsent: typeof import('./components/consent/TeeDsfrPersonalizeConsent.vue')['default']
     TeeDsfrSearchBar: typeof import('./components/element/TeeDsfrSearchBar.vue')['default']
     TeeDsfrTabs: typeof import('./components/element/vueDsfr/dsfrTabs/TeeDsfrTabs.vue')['default']
