@@ -100,20 +100,18 @@ export default defineNuxtConfig({
     ],
     credits: false
   },
-  $production: {
-    scripts: {
-      registry: NuxtScriptsConfig.getRegistry(),
-    },
-    runtimeConfig: {
-      public: {
-        scripts: {
-          matomoAnalytics: {
-            matomoUrl: '',
-            siteId: '',
-            trackPageView: true,
-            enableLinkTracking: true,
-            disableCookies: true
-          }
+  scripts: {
+    registry: NuxtScriptsConfig.getRegistry(),
+  },
+  runtimeConfig: {
+    public: {
+      scripts: {
+        matomoAnalytics: {
+          matomoUrl: '',
+          siteId: '',
+          trackPageView: true,
+          enableLinkTracking: true,
+          disableCookies: true
         }
       }
     }

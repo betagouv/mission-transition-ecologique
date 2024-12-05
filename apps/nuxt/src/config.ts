@@ -5,8 +5,8 @@ import ConfigCommon from '../../../libs/common/src/config/configCommon'
 import { Environment } from '../../../libs/common/src/config/types'
 
 export default class Config extends ConfigCommon {
-  protected static override _sentryDsn = process.env['VITE_SENTRY_DSN']
-  protected static override _sentryEnvironment = process.env['VITE_SENTRY_ENVIRONMENT'] as Environment
+  protected static override _sentryDsn = process.env['CLIENT_SENTRY_DSN']
+  protected static override _sentryEnvironment = process.env['SENTRY_ENVIRONMENT'] as Environment
 
   static get isDevelopment() {
     return process.env['NODE_DEV'] === 'development'

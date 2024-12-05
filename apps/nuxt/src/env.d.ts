@@ -7,9 +7,10 @@ export interface ImportMetaEnv {
   readonly VITE_MATOMO_URL: string
   readonly VITE_MATOMO_APP_ID: number
   readonly VITE_TEE_BACKEND_URL: string
-  readonly VITE_SENTRY_DSN: string | undefined
+  readonly CLIENT_SENTRY_DSN: string | undefined
+  readonly SERVER_SENTRY_DSN: string | undefined
   readonly SENTRY_AUTH_TOKEN: string | undefined
-  VITE_SENTRY_ENVIRONMENT: string
+  SENTRY_ENVIRONMENT: string
   readonly BASE_URL: string
   readonly MODE: string
   readonly DEV: boolean
