@@ -17,7 +17,8 @@ export const useProgramStore = defineStore('program', () => {
     programAidTypesSelected: [],
     regionAidSelected: [],
     operatorAidSelected: [],
-    themeTypeSelected: ''
+    themeTypeSelected: '',
+    companySelected: false
   })
 
   const programs = computed(async () => {
@@ -45,7 +46,8 @@ export const useProgramStore = defineStore('program', () => {
         ProgramFilter.byAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
         ProgramFilter.byTheme(program, programFilters.value.themeTypeSelected as ThemeId) &&
         ProgramFilter.byOperator(program, programFilters.value.operatorAidSelected as OperatorFilter[]) &&
-        ProgramFilter.byRegion(program, programFilters.value.regionAidSelected as Region[])
+        ProgramFilter.byRegion(program, programFilters.value.regionAidSelected as Region[]) &&
+        ProgramFilter.byCompanyData(program, programFilters.value.companySelected)
       )
     })
   }
@@ -93,7 +95,8 @@ export const useProgramStore = defineStore('program', () => {
       programAidTypesSelected: [],
       themeTypeSelected: '',
       regionAidSelected: [],
-      operatorAidSelected: []
+      operatorAidSelected: [],
+      companySelected: false
     }
   }
 

@@ -6,7 +6,9 @@ import {
   type ValueOf,
   ThemeId,
   FiltersKeys,
-  OperatorFilter
+  OperatorFilter,
+  ProgramEligibility,
+  ProgramType
 } from '@/types'
 import { enrichedOperators } from '@tee/data/static'
 
@@ -17,6 +19,14 @@ export default class ProgramFilter {
     }
 
     return programAidTypesSelected.includes(program["nature de l'aide"])
+  }
+
+  static byCompanyData(program: ProgramData, companySelected: boolean) {
+    if (!this.isValidFilterValue(companySelected)) {
+      return true
+    }
+
+    return companySelected ? ProgramEligibility.isEligible(program as unknown as ProgramType) : true
   }
 
   static byRegion(program: ProgramData, regionsSelected: Region[]) {
@@ -74,6 +84,6 @@ export default class ProgramFilter {
   }
 
   static isValidFilterValues(programFilterValue: ValueOf<programFiltersType>) {
-    return programFilterValue.length > 0
+    return typeof programFilterValue !== 'boolean' && programFilterValue.length > 0
   }
 }

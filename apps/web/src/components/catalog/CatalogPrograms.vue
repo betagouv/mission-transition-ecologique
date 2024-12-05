@@ -82,11 +82,14 @@ import { type ProgramData, ThemeId } from '@/types'
 import { MetaSeo } from '@/utils/metaSeo'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 const programStore = useProgramStore()
 
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
+
+const registeredData = CompanyDataStorage.getData()
 
 const title = 'Le catalogue des aides publiques à la transition écologique'
 const description =
@@ -129,15 +132,23 @@ const showThemeCard = computed(() => {
   return hasThemeCard.value && !hasSpinner.value
 })
 
-onBeforeMount(async () => {
-  useSeoMeta(MetaSeo.get(title, description))
-
-  const result = await programStore.programs
+const getPrograms = async () => {
+  const result = await programStore.programsByUsedTracks
   if (result.isOk) {
     programs.value = result.value
   } else {
     hasError.value = true
   }
+}
+
+onBeforeMount(async () => {
+  useSeoMeta(MetaSeo.get(title, description))
+
+  await getPrograms()
+})
+
+watch(registeredData.value, async () => {
+  await getPrograms()
 })
 
 onBeforeRouteLeave(() => {

@@ -52,6 +52,7 @@ import { onClickOutside } from '@vueuse/core'
 import Navigation from '@/utils/navigation'
 import { useNavigationStore } from '@/stores/navigation'
 import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
+import { useProgramStore } from '@/stores/program'
 
 const registerModal = ref(null)
 const registeredData = CompanyDataStorage.getData()
@@ -93,6 +94,7 @@ const resetSiret = () => {
   manualRegistration.value = false
   CompanyDataStorage.removeItem(CompanyDataStorageKey.Company)
   CompanyDataStorage.removeItem(CompanyDataStorageKey.Size)
+  useProgramStore().programFilters.companySelected = false
   CompanyDataStorageHandler.updateRouteFromStorage()
 }
 
