@@ -80,7 +80,7 @@ const teeProjectFormContainer = useTemplateRef('teeProjectFormContainer')
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const hasRegisteredData = CompanyDataStorage.hasData()
+const hasRegisteredData = CompanyDataStorage.isDataFull()
 const registeredData = CompanyDataStorage.getData()
 
 const countFilteredPrograms = computed(() => {
