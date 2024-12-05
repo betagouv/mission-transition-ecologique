@@ -33,10 +33,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { RegisterDetailType, RegisterDetails, CompanyDataStorageKey, CompanyDataType } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import Navigation from '@/utils/navigation'
 import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -70,7 +71,7 @@ const profile = ref<RegisterDetails>({
     title: 'Activité',
     description: "Quel est votre secteur d'activité ?",
     icon: 'fr-icon-briefcase-line',
-    value: props.company?.secteur as Sector,
+    value: props.company ? { secteur: props.company.secteur, codeNAF: props.company.codeNAF, codeNAF1: props.company.codeNAF1 } : undefined,
     type: RegisterDetailType.Activity,
     tagLabel: props.company && props.company && 'siret' in props.company ? `${props.company.secteur} (${props.company.codeNAF})` : ''
   },
@@ -89,16 +90,12 @@ const canBeSaved = computed(() => {
 const saveProfile = () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
-    const company = props.manual
-      ? ({
-          region: profile.value.localisation.value,
-          secteur: profile.value.activity.value,
-          denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`
-        } as CompanyDataType[CompanyDataStorageKey.Company])
-      : props.company
+    const companyData = props.manual
+      ? CompanyDataStorage.getManualCompanyData(profile.value)
+      : CompanyDataStorage.getSiretBasedCompanyData(props.company, profile.value)
 
     CompanyDataStorageHandler.saveAndSetUsedTrackStore({
-      [CompanyDataStorageKey.Company]: company,
+      [CompanyDataStorageKey.Company]: companyData,
       [CompanyDataStorageKey.Size]: profile.value.size.value
     })
     CompanyDataStorageHandler.updateRouteFromStorage()

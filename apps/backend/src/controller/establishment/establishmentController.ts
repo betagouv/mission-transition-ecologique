@@ -1,6 +1,6 @@
 import { Controller, Route, SuccessResponse, TsoaResponse, Res, Example, Get, Path, Query, Tags } from 'tsoa'
 import { ErrorJSON, EstablishmentNotFoundError, EstablishmentService, ValidateErrorJSON, Monitor } from '@tee/backend-ddd'
-import { EstablishmentFront, EstablishmentSearch, StructureSize } from '@tee/common'
+import { EstablishmentFront, EstablishmentSearch, StructureSize, CompanyActivityType } from '@tee/common'
 
 interface EstablishmentNotFoundErrorJSON {
   message: 'Establishment not found'
@@ -29,6 +29,23 @@ const exampleEstablishment = {
 @Route('establishments')
 @Tags('establishments')
 export class SireneController extends Controller {
+  /**
+   * Search NAF infos
+   * @param queryText - sector or naf code
+   * @returns results of naf infos
+   */
+  @Get('/searchNAF')
+  public async searchNAF(
+    @Query() queryText: string,
+    @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
+  ): Promise<CompanyActivityType[]> {
+    try {
+      return new EstablishmentService().searchNAF(queryText)
+    } catch (error) {
+      console.error('Error in searchNAF', error)
+      return requestFailedResponse(500, { message: 'Failed to fetch search results.' })
+    }
+  }
   /**
    * Retrieve establishments informations used in front end
    * for a single establishment using the SIRENE API if search by SIRET
