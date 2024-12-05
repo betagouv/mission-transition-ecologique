@@ -1,9 +1,12 @@
 <template>
-  <div id="register-localisation">
-    <div
-      class="fr-input-group fr-mb-0"
-      :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
-    >
+  <div>
+    <DsfrInputGroup :error-message="errorMsg">
+      <span
+        v-if="option.hint"
+        class="fr-hint-text fr-mb-2v"
+      >
+        {{ option?.hint?.[Translation.lang] }}
+      </span>
       <div
         ref="localisationSearchBar"
         class="fr-search-bar fr-search-bar--yellow"
@@ -13,9 +16,9 @@
         <DsfrInput
           v-model="localisationInput"
           name="manual-register-localisation"
-          class="fr-input--white fr-input"
+          class="fr-input"
           type="search"
-          :placeholder="option.hintLabel[Translation.lang]"
+          :hint="option?.hint?.[Translation.lang]"
           @update:model-value="updateModelValue"
           @keyup.enter="searchLocalisation"
         />
@@ -26,10 +29,10 @@
           @click="searchLocalisation"
         />
       </div>
-    </div>
+    </DsfrInputGroup>
     <div
       v-if="localisationResults.length"
-      id="localisation-response"
+      id="track-localisation-response"
       class="fr-bg--white"
     >
       <div
@@ -45,17 +48,10 @@
         </div>
       </div>
     </div>
-    <div
-      :class="errorMsg ? 'fr-error-text' : ''"
-      class="fr-input--empty-text fr-mt-2v"
-    >
-      {{ errorMsg }}
-    </div>
   </div>
 </template>
 <script lang="ts" setup>
 import { type TrackOptionsInput, ConvertedCommune, CompanyLocalisationType } from '@/types'
-import { onClickOutside } from '@vueuse/core'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import { useDebounce } from '@vueuse/core'
 import type { TrackOptionItem } from '@/types'
@@ -67,7 +63,7 @@ interface Props {
   option: TrackOptionsInput
 }
 const props = defineProps<Props>()
-
+console.log(props.option, props.option?.hint?.[Translation.lang])
 const emit = defineEmits(['updateSelection'])
 
 const selectedLocalisation = defineModel<CompanyLocalisationType>()
@@ -85,9 +81,7 @@ const localisationResults = ref<ConvertedCommune[]>([])
 const isLoading = ref<boolean>(false)
 
 const errorMsg = computed<string>(() => {
-  if (!debouncedLocalisationInput.value && !isLoading.value) {
-    return 'La sélection de la ville est nécessaire.'
-  } else if (
+  if (
     localisationResults.value.length === 0 &&
     debouncedLocalisationInput.value &&
     debouncedLocalisationInput.value.length >= 3 &&
@@ -114,31 +108,20 @@ const searchLocalisation = async () => {
 }
 const selectLocalisation = (localisation: ConvertedCommune) => {
   selectedLocalisation.value = CompanyDataStorage.convertLocalisation(localisation)
+  console.log(selectedLocalisation.value)
   emit('updateSelection', createData())
 }
-const modifyLocalisation = () => {
-  selectedLocalisation.value = undefined
-  localisationInput.value = ''
-  localisationResults.value = []
-}
+
 function createData(): TrackOptionItem {
   return TrackStructure.createData(props.option, selectedLocalisation.value?.region, selectedLocalisation.value)
 }
-
-onClickOutside(localisationSearchBar, () => modifyLocalisation())
 </script>
 <style lang="scss" scoped>
-#localisation-response {
+#track-localisation-response {
   text-align: left;
   width: calc(100% - 40px);
-  max-height: 128px;
+  max-height: 256px;
   z-index: 2000;
-  position: absolute;
   overflow: hidden auto;
-}
-
-#register-localisation {
-  position: relative;
-  margin-bottom: 0;
 }
 </style>

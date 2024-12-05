@@ -59,11 +59,11 @@ export const regions: Track = {
   options: [
     {
       id: 'search-city',
+      hint: { fr: 'Recherchez par code postal ou nom de ville' },
       hasInput: HasInputOptions.Search,
       value: undefined,
       questionnaireData: { ville: '', region: '', codePostal: '' },
       title: { fr: 'LOCALISATION' },
-      hintLabel: { fr: 'Quelle est votre ville ?' },
       next: {
         default: TrackId.StructureWorkforce,
         ruleSet: nextTrackRulesSet
