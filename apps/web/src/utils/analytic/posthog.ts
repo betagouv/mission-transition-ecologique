@@ -17,32 +17,33 @@ export default class Posthog {
       })
     }
   }
-
   static activatePosthogCookie() {
+    this.changePersistance('localStorage+cookie')
+  }
+  static changePersistance(state: 'memory' | 'localStorage' | 'cookie' | 'localStorage+cookie' | 'sessionStorage') {
     if (this._posthog) {
-      this._posthog.set_config({ persistence: 'localStorage+cookie' })
+      const distinctId = this._posthog.get_distinct_id()
+      this._posthog.set_config({ persistence: state })
+      this._posthog.identify(distinctId)
     }
   }
-
   static deactivatePosthogCookie() {
-    if (this._posthog) {
-      Cookie.removeCookie('ph_', true)
-      this._posthog.set_config({ persistence: 'memory' })
+    if (Cookie.areCookiesSet()) {
+      this.changePersistance('memory')
+      Cookie.removeCookie(`ph_${Config.posthogApiKey}`, false)
+      localStorage.removeItem(`ph_${Config.posthogApiKey}`)
     }
   }
-
   static capturePageView(to: RouteLocationNormalized) {
     if (this._posthog) {
       this._posthog.capture('$pageview', { path: to.fullPath })
     }
   }
-
   static capturePageLeave(from: RouteLocationNormalized) {
     if (this._posthog) {
       this._posthog.capture('$pageleave', { $current_url: window.location.host + from.fullPath, path: from.fullPath })
     }
   }
-
   static captureEvent(name: string | null = null, value?: object) {
     if (this._posthog) {
       this._posthog.capture(name ? name : 'unnamed event', value)
