@@ -65,7 +65,7 @@ objectifs:
       l'aide VTE Vert.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - PME et ETI
+    - Moins de 5000 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer

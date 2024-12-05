@@ -48,14 +48,14 @@ export default class Config extends ConfigCommon {
   }
 
   public static get BREVO_API_ENABLED(): boolean {
-    return this.THIRD_PARTY_API_ENABLED && this.getEnvValue('BREVO_API_ENABLED', 'true') !== 'true'
+    return this.THIRD_PARTY_API_ENABLED && this.getEnvValue('BREVO_API_ENABLED', 'true') !== 'false'
   }
 
   public static get PDE_API_ENABLED(): boolean {
-    return this.THIRD_PARTY_API_ENABLED && this.getEnvValue('PDE_API_ENABLED', 'true') !== 'true'
+    return this.THIRD_PARTY_API_ENABLED && this.getEnvValue('PDE_API_ENABLED', 'true') !== 'false'
   }
 
   public static get BPI_API_ENABLED(): boolean {
-    return this.THIRD_PARTY_API_ENABLED && this.getEnvValue('BPI_API_ENABLED', 'true') !== 'true'
+    return this.THIRD_PARTY_API_ENABLED && this.getEnvValue('BPI_API_ENABLED', 'true') !== 'false'
   }
 }

@@ -27,6 +27,12 @@ objectifs:
       A la fin du diagnostic, bénéficiez d'un rapport de synthèse, d'un plan
       d'action, et d'une synthèse communicante pour vos équipes, clients ou
       fournisseurs.
+  - description: >-
+      Victime de son succès, l’ADEME et Bpifrance sont contraints de suspendre
+      l’offre dans l’attente de l’issue des discussions budgétaires avec l'Etat.
+    liens:
+      - lien: https://diag.bpifrance.fr/contactez-nous
+        texte: Laisser vos coordonnées
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 500 salariés
@@ -39,8 +45,8 @@ conditions d'éligibilité:
     - Au moins 1 an d’activité
   autres critères d'éligibilité:
     - >-
-      aucune démarche de bilan GES réalisée dans les 5 dernières années / non
-      soumis à la règlementation BEGES (art.L229-25)
+      Votre entreprise ne doit pas avoir réalisé de bilan GES dans les 5
+      dernières années
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
