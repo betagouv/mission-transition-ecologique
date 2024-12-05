@@ -30,17 +30,17 @@ const exampleEstablishment = {
 @Tags('establishments')
 export class SireneController extends Controller {
   /**
-   * Recherche les informations NAF
-   * @param searchTerm - code naf ou secteur
-   * @returns Liste des informations NAF correspondantes
+   * Search NAF infos
+   * @param queryText - sector or naf code
+   * @returns results of naf infos
    */
   @Get('/searchNAF')
   public async searchNAF(
-    @Query() searchTerm: string,
+    @Query() queryText: string,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
   ): Promise<CompanyActivityType[]> {
     try {
-      return new EstablishmentService().searchNAF(searchTerm)
+      return new EstablishmentService().searchNAF(queryText)
     } catch (error) {
       console.error('Error in searchNAF', error)
       return requestFailedResponse(500, { message: 'Failed to fetch search results.' })
