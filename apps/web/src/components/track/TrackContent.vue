@@ -222,6 +222,8 @@ watch(registeredData.value, async () => {
 
   const next = CompanyDataStorageHandler.getNextTrackStorage()
 
+  if (!next) return
+
   await router.push({
     name: RouteName.Questionnaire,
     hash: Navigation.hashByRouteName(RouteName.Questionnaire),

@@ -130,8 +130,10 @@ export class CompanyDataStorageHandler {
   }
 
   private static _getQuestionnaireGoal() {
-    const questionnaireChoice = useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected[0].value
-    return questionnaireChoice === QuestionnaireRoute.SpecificGoal ? TrackId.Goals : TrackId.BuildingProperty
+    if (useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected.length) {
+      const questionnaireChoice = useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected[0].value
+      return questionnaireChoice === QuestionnaireRoute.SpecificGoal ? TrackId.Goals : TrackId.BuildingProperty
+    }
   }
 
   private static _canAddSizeToStorage(size: StructureSize, questionnaireData: { [k: string]: any }, key: string) {

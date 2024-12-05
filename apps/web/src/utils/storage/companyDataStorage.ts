@@ -25,6 +25,8 @@ export class CompanyDataStorage {
   }
 
   public static isDataFull() {
+    if (this._data.value[CompanyDataStorageKey.Company] === null) return false
+
     return this.isOfCompanyDataType(this._data.value[CompanyDataStorageKey.Company])
       ? Object.values(this._data.value[CompanyDataStorageKey.Company] as object).every((value) => value !== null)
       : false
