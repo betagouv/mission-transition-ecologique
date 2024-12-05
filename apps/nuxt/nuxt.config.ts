@@ -7,6 +7,11 @@ import { ChangeFreq, Priority } from './src/types/sitemapType'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  routeRules: {
+    '/': { prerender: true },
+    '/accessibilite': { prerender: true },
+    '/aides-entreprise': { prerender: true },
+  },
   compatibilityDate: '2024-10-09',
   workspaceDir: '../../',
   srcDir: 'src',
