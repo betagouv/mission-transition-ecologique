@@ -1,9 +1,18 @@
 <template>
   <ThemeFiltersAndCard id="tab-content-header" />
-  <ResultProjectList
-    :filtered-projects="filteredProjects"
-    :has-error="hasError"
-  />
+  <client-only fallback-tag="div">
+    <template #fallback>
+      <div class="fr-container">
+        <div class="fr-col-12 fr-col--middle fr-col-justify--center">
+          <TeeSpinner />
+        </div>
+      </div>
+    </template>
+    <ResultProjectList
+      :filtered-projects="filteredProjects"
+      :has-error="hasError"
+    />
+  </client-only>
 </template>
 
 <script setup lang="ts">
@@ -27,21 +36,16 @@ const filteredProjects = Project.filter(projects, Theme.getThemeFromSelectedOrPr
 const getProgramsAndProjects = async () => {
   navigationStore.hasSpinner = true
   const projectResult = await projectStore.eligibleProjects
-  if (projectResult.isOk) {
-    projects.value = projectResult.value
+  if (projectResult.isOk()) {
+    projects.value = projectResult.data
   } else {
     hasError.value = true
   }
   navigationStore.hasSpinner = false
 }
 
-watch(
-  registeredData.value,
-  async () => {
-    await getProgramsAndProjects()
-  },
-  {
-    immediate: true
-  }
-)
+watchPostEffect(async () => {
+  registeredData.value
+  await getProgramsAndProjects()
+})
 </script>

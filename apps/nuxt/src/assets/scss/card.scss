@@ -135,22 +135,22 @@
   @each $color, $properties in setting.$colors {
     &--#{$color} {
       @if meta.type-of($properties) == map {
-        background-color: map.get($properties, "color");
-        color: map.get($properties, "color-with-background");
+        background-color: map.get($properties, "color") !important;
+        color: map.get($properties, "color-with-background") !important;
       }
 
       .fr-card__title {
         @if meta.type-of($properties) == map {
-          color: map.get($properties, "color-with-background");
+          color: map.get($properties, "color-with-background") !important;
         } @else {
-          color: var(--text-default-grey);
+          color: var(--text-default-grey) !important;
         }
       }
     }
   }
 
   &.theme-card {
-    height: 100%; 
+    height: 100%;
 
     &:active,
     &:hover {
@@ -166,7 +166,7 @@
         @include media-query.respond-from(xs) {
           height: auto;
         }
-      } 
+      }
     }
 
     .fr-card__header {
@@ -177,8 +177,8 @@
 
         img {
           height: 100%
-        } 
-      } 
-    }  
+        }
+      }
+    }
   }
 }
