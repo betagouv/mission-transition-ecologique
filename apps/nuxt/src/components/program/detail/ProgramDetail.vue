@@ -346,9 +346,7 @@ onBeforeRouteLeave(() => {
 })
 
 watch(registeredData.value, async () => {
-  console.log(`TeeProgramDetail > watch > program.value :`, program.value)
   if (program.value) {
-    console.log(`TeeProgramDetail > watch > registeredData.value :`, registeredData.value)
     await programsStore.getProgramById(program.value.id)
   }
 })
