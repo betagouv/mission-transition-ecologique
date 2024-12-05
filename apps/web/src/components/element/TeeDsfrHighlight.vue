@@ -12,11 +12,9 @@
             :src="img"
             :alt="altImg"
           />
-          <div class="fr-col-12 fr-col-sm-9">
-            <div class="fr-pl-8v">
-              <p class="fr-mb-4v">{{ text }}</p>
-              <slot />
-            </div>
+          <div class="fr-col-12 fr-col-sm-10 fr-px-8v">
+            <p class="fr-mb-4v">{{ text }}</p>
+            <slot />
           </div>
         </div>
       </div>
