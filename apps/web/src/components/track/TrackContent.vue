@@ -47,6 +47,12 @@
               :option="option"
               @click="updateAndSave(option, idx)"
             />
+            <TrackLocalisation
+              v-if="TrackComponent.isLocalisation(usedTrack)"
+              :option="option as TrackOptionsInput"
+              @update-selection="updateSelection($event.option, idx, $event.remove, $event.forceKeep)"
+              @go-to-next-track="updateAndSave($event, idx)"
+            />
             <TrackSiret
               v-if="TrackComponent.isSiret(usedTrack, option)"
               :option="option as TrackOptionsInput"
