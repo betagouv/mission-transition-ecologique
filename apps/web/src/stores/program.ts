@@ -7,10 +7,10 @@ import ProgramFilter from '@/utils/program/programFilter'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { type programFiltersType, ProgramAidType, ThemeId, Region, type ProgramData, QuestionnaireData, OperatorFilter } from '@/types'
+import { type programFiltersType, ProgramAidType, ThemeId, Region, type ProgramType, QuestionnaireData, OperatorFilter } from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
-  const currentProgram = ref<ProgramData>()
+  const currentProgram = ref<ProgramType>()
   const hasPrograms = ref<boolean>(false)
 
   const programFilters = ref<programFiltersType>({
@@ -39,8 +39,8 @@ export const useProgramStore = defineStore('program', () => {
     return await new ProgramApi(questionnaireData).get()
   }
 
-  function getProgramsByFilters(programs: ProgramData[]) {
-    return programs.filter((program: ProgramData) => {
+  function getProgramsByFilters(programs: ProgramType[]) {
+    return programs.filter((program: ProgramType) => {
       return (
         ProgramFilter.byAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
         ProgramFilter.byTheme(program, programFilters.value.themeTypeSelected as ThemeId) &&
@@ -50,7 +50,7 @@ export const useProgramStore = defineStore('program', () => {
     })
   }
 
-  async function getProgramById(id: string): Promise<Result<ProgramData, Error>> {
+  async function getProgramById(id: string): Promise<Result<ProgramType, Error>> {
     currentProgram.value = undefined
 
     // if (hasPrograms.value) {

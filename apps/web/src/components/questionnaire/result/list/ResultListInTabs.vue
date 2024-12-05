@@ -37,7 +37,7 @@
 import { TeeDsfrTabsProps } from '@/components/element/vueDsfr/dsfrTabs/TeeDsfrTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { BreakpointNameType, ProgramData, Project } from '@/types'
+import { BreakpointNameType, ProgramType, Project } from '@/types'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'

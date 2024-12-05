@@ -68,7 +68,7 @@
 </template>
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { ProgramAidType, type ProgramData, Project, OpportunityType, Color } from '@/types'
+import { ProgramAidType, type ProgramType, Project, OpportunityType, Color } from '@/types'
 import Contact from '@/utils/contact'
 import { useNavigationStore } from '@/stores/navigation'
 import Translation from '@/utils/translation'
@@ -84,7 +84,7 @@ const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
 const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormContainer')
 
-const programs = ref<ProgramData[]>()
+const programs = ref<ProgramType[]>()
 const hasError = ref<boolean>(false)
 
 const hasRegisteredData = CompanyDataStorage.hasData()
@@ -99,13 +99,13 @@ const filteredPrograms = computed(() => {
 })
 
 const studyPrograms = computed(() => {
-  return filteredPrograms.value.filter((program: ProgramData) =>
+  return filteredPrograms.value.filter((program: ProgramType) =>
     [ProgramAidType.study, ProgramAidType.train].includes(program["nature de l'aide"])
   )
 })
 
 const financePrograms = computed(() => {
-  return filteredPrograms.value.filter((program: ProgramData) =>
+  return filteredPrograms.value.filter((program: ProgramType) =>
     [ProgramAidType.fund, ProgramAidType.loan, ProgramAidType.tax].includes(program["nature de l'aide"])
   )
 })
