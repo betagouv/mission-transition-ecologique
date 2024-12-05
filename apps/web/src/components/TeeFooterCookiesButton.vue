@@ -9,13 +9,10 @@
   </li>
 </template>
 <script setup lang="ts">
-import Cookie from '@/utils/cookies'
-
 const openConsent = () => {
   const modal = document.getElementById('fr-consent-modal')
   if (modal) {
     modal.classList.add('fr-modal--opened')
-    Cookie.setCookies()
   }
 }
 </script>

@@ -26,7 +26,7 @@ export default class Cookie {
     }
   }
 
-  static getCookie(key: string): boolean {
+  static getCookieStatus(key: string): boolean {
     const cookies = document.cookie
     const cookiesArray = cookies.split('; ')
 
@@ -41,9 +41,7 @@ export default class Cookie {
   static getCookies(): Cookies {
     const cookiesStatus = document.cookie.split(';').reduce<Record<string, boolean>>((acc, cookie) => {
       const [key, value] = cookie.trim().split('=')
-      if (key && value) {
-        acc[key] = value === 'true'
-      }
+      acc[key] = value === 'true'
       return acc
     }, {})
     return {
@@ -57,7 +55,7 @@ export default class Cookie {
     }
   }
   static hasCookieChanged(cookie: CookieManager): boolean {
-    return !this.areCookiesSet() || this.getCookie(cookie.value) !== cookie.accepted
+    return !this.areCookiesSet() || this.getCookieStatus(cookie.value) !== cookie.accepted
   }
   static saveCookies(newCookies: Cookies) {
     if (Cookie.cookies.value) {
@@ -73,6 +71,7 @@ export default class Cookie {
       })
       document.cookie = 'tee-accept-cookies=true; path=/'
     }
+    this.setCookies()
   }
 
   static acceptAllCookies() {
