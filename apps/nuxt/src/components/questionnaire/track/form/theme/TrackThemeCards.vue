@@ -91,11 +91,8 @@ const getProjects = async () => {
   navigationStore.hasSpinner = false
 }
 
-watch(
-  registeredData.value,
-  async () => {
-    await getProjects()
-  },
-  { immediate: true }
-)
+watchPostEffect(async () => {
+  registeredData.value
+  await getProjects()
+})
 </script>
