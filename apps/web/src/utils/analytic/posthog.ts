@@ -17,15 +17,8 @@ export default class Posthog {
       })
     }
   }
-
   static activatePosthogCookie() {
     this.changePersistance('localStorage+cookie')
-  }
-
-  static resetPosthog() {
-    if (this._posthog) {
-      this._posthog.reset()
-    }
   }
   static changePersistance(state: 'memory' | 'localStorage' | 'cookie' | 'localStorage+cookie' | 'sessionStorage') {
     if (this._posthog) {
@@ -41,19 +34,16 @@ export default class Posthog {
       localStorage.removeItem(`ph_${Config.posthogApiKey}`)
     }
   }
-
   static capturePageView(to: RouteLocationNormalized) {
     if (this._posthog) {
       this._posthog.capture('$pageview', { path: to.fullPath })
     }
   }
-
   static capturePageLeave(from: RouteLocationNormalized) {
     if (this._posthog) {
       this._posthog.capture('$pageleave', { $current_url: window.location.host + from.fullPath, path: from.fullPath })
     }
   }
-
   static captureEvent(name: string | null = null, value?: object) {
     if (this._posthog) {
       this._posthog.capture(name ? name : 'unnamed event', value)
