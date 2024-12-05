@@ -94,7 +94,7 @@ objectifs:
       CEDRE Premiers pas".
 conditions d'éligibilité:
   taille de l'entreprise:
-    - TPE et PME
+    - Moins de 250 salariés
     - Éligible aux micro-entreprises
   secteur géographique:
     - Provence-Alpes-Côte d'Azur
@@ -103,6 +103,7 @@ conditions d'éligibilité:
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:
+    - Avoir réalisé moins de 50M€ de CA ou moins de 43M€ de bilan total
     - >-
       Avoir bénéficié d'un accompagnement préalable au titre de CEDRE Premier
       Pas ou CEDRE Ambition.
@@ -120,7 +121,11 @@ publicodes:
       - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
+      - a un effectif éligible
       - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 249
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

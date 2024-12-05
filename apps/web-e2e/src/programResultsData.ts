@@ -1,6 +1,6 @@
-import { ResultsDataType } from './resultDataType'
+import { SearchResultsDataType } from './resultDataType'
 
-export const tests: ResultsDataType = [
+export const tests: SearchResultsDataType = [
   {
     id: 0,
     url: 'aides-entreprise',

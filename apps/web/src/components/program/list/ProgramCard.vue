@@ -7,16 +7,9 @@
     :horizontal="true"
     :no-arrow="true"
     :link="getRouteToProgramDetail(program.id)"
+    :badges="[{ label: program['nature de l\'aide'], noIcon: true, small: true }]"
   >
     <template #start-details>
-      <!-- HEADER BADGE -->
-      <div class="fr-mb-1v">
-        <DsfrBadge
-          :label="program['nature de l\'aide']"
-          :no-icon="true"
-          class="tee-program-badge-image"
-        />
-      </div>
       <!-- TITLE -->
       <p class="fr-text--purple fr-h6 fr-text--bold teste2e-program-target">
         {{ program.titre }}
@@ -112,11 +105,3 @@ const getRouteToProgramDetail = (programId: string): RouteLocationRaw => {
   }
 }
 </script>
-<style lang="scss" scoped>
-.tee-program-badge-image {
-  // TODO: supprimer cette classe css et son usage après montée de version du vue-dsfr vers la v 6.0.0.
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-}
-</style>

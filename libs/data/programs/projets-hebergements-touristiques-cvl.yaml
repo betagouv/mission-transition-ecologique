@@ -50,7 +50,7 @@ objectifs:
   - description: Déposez votre demande, qui sera instruite et recevez votre aide.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - '- TPE et PME'
+    - Moins de 250 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
     - Centre-Val de Loire
@@ -66,6 +66,7 @@ conditions d'éligibilité:
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:
+    - Avoir réalisé moins de 50M€ de CA ou moins de 43M€ de bilan total
     - >-
       Le projet pour lequel vous sollicitez l'aide ne doit pas avoir commencé ou
       ne doit pas avoir donné lieu à des engagements fermes (signature de devis,
@@ -91,6 +92,7 @@ publicodes:
   entreprise . a un effectif éligible:
     toutes ces conditions:
       - effectif >= 2
+      - effectif <= 249
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est I

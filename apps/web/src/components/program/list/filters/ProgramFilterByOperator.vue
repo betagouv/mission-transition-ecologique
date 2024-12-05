@@ -21,6 +21,6 @@ const programOperatorOptions: DsfrCheckboxSetProps['options'] = operatorsOptions
   .sort((a, b) => a.label.localeCompare(b.label))
 
 function getItem(programOperator: OperatorFilter) {
-  return { label: programOperator, name: programOperator, id: programOperator }
+  return { label: programOperator, name: programOperator, id: programOperator, value: programOperator, modelValue: [programOperator] }
 }
 </script>
