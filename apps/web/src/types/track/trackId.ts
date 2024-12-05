@@ -10,7 +10,7 @@ export enum TrackId {
   Siret = 'siret',
   StrategyAudits = 'audit',
   StrategyAuditsSelect = 'selection-audit',
-  StructureRegion = 'region',
+  StructureCity = 'city',
   StructureWorkforce = 'effectif',
   WastesMaterials = 'dechets',
   WastesSorting = 'tri-dechets',
