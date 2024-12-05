@@ -11,7 +11,7 @@ export default class CompanyDataStorage {
     [CompanyDataStorageKey.Size]: this.getSize()
   })
 
-  private static readonly _hasData: ComputedRef<boolean> = computed(() => {
+  private static readonly _isDataFull: ComputedRef<boolean> = computed(() => {
     return this._data.value[CompanyDataStorageKey.Company] !== null && this._data.value[CompanyDataStorageKey.Size] !== null
   })
 
@@ -19,8 +19,8 @@ export default class CompanyDataStorage {
     return this._data
   }
 
-  public static hasData() {
-    return this._hasData
+  public static isDataFull() {
+    return this._isDataFull
   }
 
   public static hasCompanyData() {
