@@ -1,43 +1,55 @@
 <template>
-  <TeeDsfrTabs
-    ref="tabs"
-    v-model="tabSelectedOnList"
-    class="fr-col-12"
-    tab-list-name="Liste d’onglet"
-    :tab-titles="titles"
-  >
-    <template #tab-content-header>
-      <ThemeFiltersAndCard id="tab-content-header" />
+  <ClientOnly fallback-tag="div">
+    <template #fallback>
+      <div class="fr-container">
+        <div class="fr-col-12 fr-col--middle fr-col-justify--center">
+          <TeeSpinner />
+        </div>
+      </div>
     </template>
-    <DsfrTabContent
-      class="fr-p-0"
-      :panel-id="titles[0].panelId"
-      :tab-id="titles[0].tabId"
+    <TeeDsfrTabs
+      ref="tabs"
+      v-model="tabSelectedOnList"
+      class="fr-col-12"
+      tab-list-name="Liste d’onglet"
+      :tab-titles="titles"
     >
-      <ResultProjectList
-        :filtered-projects="filteredProjects"
-        :has-error="hasError"
-      />
-    </DsfrTabContent>
+      <template #tab-content-header>
+        <ThemeFiltersAndCard id="tab-content-header" />
+      </template>
+      <DsfrTabContent
+        class="fr-p-0"
+        :panel-id="titles[0].panelId"
+        :tab-id="titles[0].tabId"
+      >
+        <template #fallback>
+          <TeeSpinner />
+        </template>
+        <ResultProjectList
+          :filtered-projects="filteredProjects"
+          :has-error="hasError"
+        />
+      </DsfrTabContent>
 
-    <DsfrTabContent
-      class="fr-p-0"
-      :panel-id="titles[1].panelId"
-      :tab-id="titles[1].tabId"
-    >
-      <ResultProgramList
-        :filtered-programs="filteredPrograms"
-        :has-error="hasError"
-      />
-    </DsfrTabContent>
-  </TeeDsfrTabs>
+      <DsfrTabContent
+        class="fr-p-0"
+        :panel-id="titles[1].panelId"
+        :tab-id="titles[1].tabId"
+      >
+        <ResultProgramList
+          :filtered-programs="filteredPrograms"
+          :has-error="hasError"
+        />
+      </DsfrTabContent>
+    </TeeDsfrTabs>
+  </ClientOnly>
 </template>
 
 <script setup lang="ts">
 import { TeeDsfrTabsProps } from '@/components/element/vueDsfr/dsfrTabs/TeeDsfrTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { BreakpointNameType } from '@/types'
+import { BreakpointNameType, ProgramData, Project } from '@/types'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'
@@ -47,8 +59,8 @@ import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
 const projectStore = useProjectStore()
-const { programs } = storeToRefs(programStore)
-const { projects } = storeToRefs(projectStore)
+const programs = ref<ProgramData[]>()
+const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 const { tabSelectedOnList } = storeToRefs(navigationStore)
 
