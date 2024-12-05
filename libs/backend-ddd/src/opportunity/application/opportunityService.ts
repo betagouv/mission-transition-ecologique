@@ -52,19 +52,16 @@ export default class OpportunityService {
 
   private _getContactRepository(): ContactRepository {
     return {
-      createOrUpdate: Config.BREVO_API_ENABLED ? addBrevoContact : addBrevoContactTest
+      createOrUpdate: addBrevoContact
     }
   }
 
   private _getOpportunityRepository(): OpportunityRepository {
-    return Config.BREVO_API_ENABLED ? brevoRepository : brevoRepositoryTest
+    return brevoRepository
   }
 
   private _getOpportunityHubRepositories(): OpportunityHubRepository[] {
-    return [
-      Config.PDE_API_ENABLED ? new PlaceDesEntreprises() : new PlaceDesEntreprisesTest(),
-      Config.BPI_API_ENABLED ? new BpiFrance() : new BpiFranceTest()
-    ]
+    return [new PlaceDesEntreprises(), new BpiFrance()]
   }
 
   private _getProgramRepository(): ProgramRepository {
@@ -72,6 +69,6 @@ export default class OpportunityService {
   }
 
   private _getMailRepository(): MailerManager {
-    return { sendReturnReceipt: Config.BREVO_API_ENABLED ? new BrevoMail().sendReturnReceipt : new BrevoMailTest().sendReturnReceipt }
+    return { sendReturnReceipt: new BrevoMail().sendReturnReceipt }
   }
 }
