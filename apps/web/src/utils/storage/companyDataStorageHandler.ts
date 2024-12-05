@@ -125,10 +125,6 @@ export class CompanyDataStorageHandler {
     }
   }
 
-  static generateDefaultName() {
-    return `Entreprise : ${CompanyDataStorage.getCompanyData()?.secteur} - ${CompanyDataStorage.getCompanyData()?.region}`
-  }
-
   static getNextTrackStorage() {
     return CompanyDataStorage.hasSize() ? this._getQuestionnaireGoal() : TrackId.StructureWorkforce
   }
