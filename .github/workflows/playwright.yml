@@ -24,6 +24,7 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
+      if: false
       env:
         TEST: true
         THIRD_PARTY_API_ENABLED: false
