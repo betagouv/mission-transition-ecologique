@@ -1,7 +1,8 @@
-import { CompanyDataStorageKey, CompanyDataType, EstablishmentFront, ManualCompanyData } from '@/types'
+import { CompanyDataStorageKey, CompanyDataType, EstablishmentFront, ManualCompanyData, Region, Sector } from '@/types'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
 import { StructureSize } from '@tee/common'
 import { ref, Ref } from 'vue'
+import { TypeValidator } from '@/utils/typeValidator'
 
 export class CompanyDataStorage {
   private static readonly _storageHandler = new LocalStorageHandler()
@@ -23,17 +24,40 @@ export class CompanyDataStorage {
     return this._hasData
   }
 
+  public static isDataFull() {
+    return this.isOfCompanyDataType(this._data.value[CompanyDataStorageKey.Company])
+      ? Object.values(this._data.value[CompanyDataStorageKey.Company] as object).every((value) => value !== null)
+      : false
+  }
+
+  public static isOfCompanyDataType(value: unknown): boolean {
+    const sampleEstablishmentFront: EstablishmentFront = {
+      siret: '',
+      codeNAF: '',
+      codeNAF1: '',
+      ville: '',
+      codePostal: '',
+      legalCategory: '',
+      region: '',
+      denomination: '',
+      secteur: '',
+      structure_size: undefined,
+      creationDate: ''
+    }
+
+    const sampleManualCompanyData: ManualCompanyData = {
+      region: Region.Bretagne,
+      secteur: Sector.Agriculture,
+      denomination: ''
+    }
+
+    return TypeValidator.isOfType(value, sampleEstablishmentFront) || TypeValidator.isOfType(value, sampleManualCompanyData)
+  }
+
   public static hasCompanyData() {
     return this._data.value[CompanyDataStorageKey.Company] !== null
   }
 
-  public static hasSiret() {
-    return (
-      this.hasCompanyData() &&
-      Object.hasOwn(this._data.value[CompanyDataStorageKey.Company] as EstablishmentFront | ManualCompanyData, 'siret') &&
-      (this._data.value[CompanyDataStorageKey.Company] as EstablishmentFront).siret !== null
-    )
-  }
   public static hasSize() {
     return this._data.value[CompanyDataStorageKey.Size] !== null
   }

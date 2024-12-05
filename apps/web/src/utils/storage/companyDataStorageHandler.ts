@@ -102,9 +102,11 @@ export class CompanyDataStorageHandler {
     if (trackId === TrackId.StructureWorkforce) {
       CompanyDataStorage.setSize(value as StructureSize)
     }
+
     if (trackId === TrackId.Sectors) {
       CompanyDataStorage.setCompanyData({ ...CompanyDataStorage.getCompanyData(), secteur: value as Sector } as ManualCompanyData)
     }
+
     if (trackId === TrackId.StructureRegion) {
       CompanyDataStorage.setCompanyData({
         ...CompanyDataStorage.getCompanyData(),
