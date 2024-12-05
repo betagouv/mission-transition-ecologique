@@ -77,3 +77,10 @@ dispositifs*.xlsx
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
