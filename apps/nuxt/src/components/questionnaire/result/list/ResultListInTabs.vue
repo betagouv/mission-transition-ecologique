@@ -37,7 +37,7 @@
 import { TeeDsfrTabsProps } from '@/components/element/vueDsfr/dsfrTabs/TeeDsfrTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { BreakpointNameType, ProgramData, Project } from '@/types'
+import { BreakpointNameType } from '@/types'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'
@@ -47,8 +47,8 @@ import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
 const projectStore = useProjectStore()
-const programs = ref<ProgramData[]>()
-const projects = ref<Project[]>()
+const { programs } = storeToRefs(programStore)
+const { projects } = storeToRefs(projectStore)
 const hasError = ref<boolean>(false)
 const { tabSelectedOnList } = storeToRefs(navigationStore)
 
@@ -91,13 +91,9 @@ const getProgramsAndProjects = async () => {
   }
   navigationStore.hasSpinner = false
 }
-watch(
-  registeredData.value,
-  async () => {
-    await getProgramsAndProjects()
-  },
-  {
-    immediate: true
-  }
-)
+
+watchPostEffect(async () => {
+  registeredData.value
+  await getProgramsAndProjects()
+})
 </script>
