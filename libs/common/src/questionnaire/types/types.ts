@@ -106,6 +106,7 @@ export enum PublicodesKeys {
   CurrentDate = 'date du jour',
   Workforce = 'entreprise . effectif',
   BuildingOwner = 'entreprise . est propriétaire de ses locaux',
+  isMicroEntrepreneur = 'entreprise . microentrepreneur',
   hasObjective = 'entreprise . a un objectif ciblé',
   isTargeted = 'entreprise . est ciblée',
   CodeNAF1 = 'entreprise . code NAF niveau 1 . est ',

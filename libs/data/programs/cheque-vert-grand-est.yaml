@@ -27,7 +27,7 @@ objectifs:
   - description: >-
       Créez votre compte sur la plateforme de la Région Grand-Est (la demande
       d'aide doit être déposée dans les 6 mois suivant l’acquittement de la
-      facture). 
+      facture).
     liens:
       - lien: >-
           https://messervices.grandest.fr/aides/#/crge/connecte/F_TEL0234/depot/simple
@@ -83,10 +83,14 @@ publicodes:
   entreprise . est éligible:
     toutes ces conditions:
       - a un effectif éligible
+      - a une categorie legale eligible
       - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
       - effectif <= 19
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
