@@ -21,7 +21,13 @@
       "visite-energie-cci",
       "visite-energie-cma",
       "cedre-premier-pas",
-      "cedre-ambition"
+      "sud-pret-climat",
+      "cedre-ambition",
+      "perf-crise-energetique-aura",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
     "priority": "40",
@@ -66,7 +72,12 @@
       "fonds-tourisme-durable",
       "visite-energie-cci",
       "visite-energie-cma",
-      "cedre-investissement"
+      "cedre-investissement",
+      "sud-pret-climat",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
     "priority": "220",
@@ -113,9 +124,14 @@
       "fonds-tourisme-durable",
       "pret-action-climat",
       "pret-vert",
+      "sud-pret-climat",
       "solaire-ready",
       "smart-pv",
-      "pret-tourisme"
+      "pret-tourisme",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
     "priority": "340",
@@ -163,7 +179,10 @@
       "ormat-2024",
       "tremplin",
       "cedre-investissement",
-      "charte-zero-dechet-plastique"
+      "sud-pret-climat",
+      "charte-zero-dechet-plastique",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "100",
@@ -199,7 +218,12 @@
       "tremplin",
       "pret-economies-d-energie-pee",
       "pret-vert",
-      "pret-tourisme"
+      "sud-pret-climat",
+      "pret-tourisme",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
     "priority": "400",
@@ -247,7 +271,12 @@
       "investissement-reseaux-de-chaleur-ou-de-froid",
       "pret-economies-d-energie-pee",
       "pret-vert",
-      "pret-tourisme"
+      "sud-pret-climat",
+      "pret-tourisme",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
     "priority": "900",
@@ -293,7 +322,10 @@
       "programme-breizh-fab",
       "tremplin",
       "cedre-premier-pas",
-      "cedre-ambition"
+      "sud-pret-climat",
+      "cedre-ambition",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [
       32,
@@ -345,7 +377,12 @@
       "investissement-pour-l-approvisionnement-de-chaufferies-bois",
       "pret-action-climat",
       "pret-vert",
-      "pret-tourisme"
+      "sud-pret-climat",
+      "pret-tourisme",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
     "priority": "610",
@@ -391,7 +428,12 @@
       "investissement-recuperation-de-chaleur-fatale",
       "pret-economies-d-energie-pee",
       "pret-vert",
-      "pret-tourisme"
+      "sud-pret-climat",
+      "pret-tourisme",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
     "priority": "910",
@@ -438,7 +480,12 @@
       "investissement-pac-solaire",
       "pret-economies-d-energie-pee",
       "pret-vert",
-      "pret-tourisme"
+      "sud-pret-climat",
+      "pret-tourisme",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
     "priority": "320",
@@ -480,7 +527,12 @@
     ],
     "mainTheme": "energy",
     "programs": [
-      "etude-hydroelectricite"
+      "etude-hydroelectricite",
+      "sud-pret-climat",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
     "priority": "980",
@@ -527,7 +579,12 @@
       "fonds-tourisme-durable",
       "investissement-boucle-d-eau-geothermique",
       "investissement-geothermie-de-surface-et-d-aerothermie",
-      "investissement-geothermie-profonde"
+      "investissement-geothermie-profonde",
+      "sud-pret-climat",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
     "priority": "950",
@@ -572,7 +629,11 @@
     "programs": [
       "etude-diagnostic-serres",
       "tremplin",
-      "pret-economies-d-energie-pee"
+      "pret-economies-d-energie-pee",
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
     "priority": "500",
@@ -604,7 +665,13 @@
       "diag-perf-immo",
       "renovation-petit-tertiaire-prive",
       "cedre-premier-pas",
-      "cedre-ambition"
+      "sud-pret-climat",
+      "cedre-ambition",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl",
+      "projets-hebergements-touristiques-cvl"
     ],
     "linkedProjects": [],
     "priority": "140",
@@ -642,10 +709,10 @@
     "longDescription": "L’isolation thermique des bâtiments permet de garantir le confort en été comme en hiver en limitant le recours à la climatisation et au chauffage. Un logement mal isolé génère des pertes conséquentes de chaleur en hiver et de fraîcheur en été par le toit, les murs, les portes, les fenêtres et le sol.\\\nGrâce à des travaux d’isolation, vous diminuez vos factures d’énergie et améliorez votre confort tout au long de l’année.",
     "moreDescription": "- [**Les exigences réglementaires pour les travaux de rénovation**](https://librairie.ademe.fr/ged/8069/fiche-exigences-reglementaires-renovation.pdf), une fiche pratique de l'ADEME.\n- [**Guide pratique de l'ADEME** ](https://librairie.ademe.fr/ged/6488/guide-pratique-isoler-sa-maison.pdf)\"Isoler, la clé d’une rénovation réussie\"\n- [**Quel est le meilleur isolant thermique pour une isolation efficace ?**](https://www.baisseleswatts.fr/actualites/equipement-energetique/quel-est-le-meilleur-isolant-thermique) un article proposé par Baisse les watts\n- [**L'annuaire des professionnels RGE et des architectes,**](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte) trouver un professionnel RGE, compétent pour réaliser des travaux d'isolation thermique.",
     "themes": [
-      "energy",
-      "building"
+      "building",
+      "energy"
     ],
-    "mainTheme": "energy",
+    "mainTheme": "building",
     "programs": [
       "fonds-tourisme-durable",
       "renovation-energetique",
@@ -654,9 +721,16 @@
       "pret-vert",
       "cedre-investissement",
       "investour",
-      "sites-touristiques-exemplaires",
+      "sud-pret-climat",
       "solaire-ready",
-      "pret-tourisme"
+      "pret-tourisme",
+      "perf-crise-energetique-aura",
+      "cheque-vert-grand-est",
+      "aide-travaux-tourisme-aura",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl",
+      "projets-hebergements-touristiques-cvl"
     ],
     "linkedProjects": [],
     "priority": "150",
@@ -701,7 +775,10 @@
       "fresque-de-la-mobilite",
       "plan-de-mobilite",
       "cedre-premier-pas",
-      "cedre-ambition"
+      "sud-pret-climat",
+      "cedre-ambition",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [
       19
@@ -748,7 +825,10 @@
       "pret-action-climat",
       "retrofit-electrique",
       "pret-vert",
-      "pret-tourisme"
+      "sud-pret-climat",
+      "pret-tourisme",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "550",
@@ -798,11 +878,15 @@
       "tremplin",
       "vehicule-lourd-energies-propres",
       "pret-vert",
+      "sud-pret-climat",
       "sites-touristiques-exemplaires",
       "cheque-transition-bioethanol",
       "recharge-vehicule-electrique",
       "vehicules-lourds-electriques",
-      "pret-tourisme"
+      "pret-tourisme",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "190",
@@ -849,7 +933,10 @@
       "fonds-tourisme-durable",
       "pret-action-climat",
       "tremplin",
-      "sites-touristiques-exemplaires"
+      "sud-pret-climat",
+      "sites-touristiques-exemplaires",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "140",
@@ -895,7 +982,10 @@
       "programme-ecod-o",
       "tpe-gagnantes-sur-tous-les-couts",
       "cedre-premier-pas",
-      "cedre-ambition"
+      "sud-pret-climat",
+      "cedre-ambition",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "60",
@@ -941,8 +1031,11 @@
       "ormat-2024",
       "tremplin",
       "cedre-premier-pas",
+      "sud-pret-climat",
       "charte-zero-dechet-plastique",
-      "cedre-ambition"
+      "cedre-ambition",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "90",
@@ -987,7 +1080,10 @@
       "diag-ecoconception",
       "etude-performance-produits",
       "investissement-ecoconception",
-      "tremplin"
+      "tremplin",
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "800",
@@ -1034,7 +1130,10 @@
       "investissement-centre-de-tri",
       "ormat-2024",
       "tremplin",
-      "cedre-investissement"
+      "cedre-investissement",
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "180",
@@ -1084,7 +1183,10 @@
       "pret-action-climat",
       "tremplin",
       "pret-vert",
-      "pret-tourisme"
+      "sud-pret-climat",
+      "pret-tourisme",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "330",
@@ -1128,7 +1230,10 @@
     "programs": [
       "etude-gaspillage-alimentaire",
       "fonds-tourisme-durable",
-      "investissement-contre-le-gaspillage-alimentaire"
+      "investissement-contre-le-gaspillage-alimentaire",
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "440",
@@ -1172,7 +1277,10 @@
     "programs": [
       "formation-engager-entreprise-transition-ecologique",
       "ecogestes-paca",
-      "investour"
+      "investour",
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "20",
@@ -1219,7 +1327,9 @@
       "pret-vert",
       "investour",
       "sud-pret-climat",
-      "pret-tourisme"
+      "pret-tourisme",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "170",
@@ -1268,7 +1378,9 @@
       "ecogestes-paca",
       "investour",
       "sud-pret-climat",
-      "mooc-biodiversite-entreprise"
+      "mooc-biodiversite-entreprise",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "160",
@@ -1310,7 +1422,10 @@
     ],
     "mainTheme": "rh",
     "programs": [
-      "etude-projet-de-recherche"
+      "etude-projet-de-recherche",
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "890",
@@ -1357,7 +1472,10 @@
       "enviroveille",
       "mission-conseil-rse",
       "cedre-premier-pas",
-      "cedre-ambition"
+      "sud-pret-climat",
+      "cedre-ambition",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [
       27,
@@ -1411,7 +1529,10 @@
       "programme-breizh-fab",
       "tpe-gagnantes-sur-tous-les-couts",
       "cedre-premier-pas",
-      "cedre-ambition"
+      "sud-pret-climat",
+      "cedre-ambition",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [
       4,
@@ -1467,7 +1588,9 @@
       "tremplin",
       "cedre-premier-pas",
       "sud-pret-climat",
-      "cedre-ambition"
+      "cedre-ambition",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [
       1,
@@ -1518,7 +1641,10 @@
       "programme-breizh-fab",
       "adaptation-bzh",
       "cedre-premier-pas",
-      "cedre-ambition"
+      "sud-pret-climat",
+      "cedre-ambition",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [
       1,
@@ -1573,8 +1699,11 @@
       "repar-acteurs",
       "tremplin",
       "cedre-premier-pas",
+      "sud-pret-climat",
       "entreprises-engagees-nature",
-      "audit-clef-verte-sud"
+      "audit-clef-verte-sud",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [
       27,
@@ -1627,7 +1756,10 @@
       "tremplin",
       "ecoconception-bzh",
       "cedre-premier-pas",
-      "cedre-investissement"
+      "cedre-investissement",
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [
       3,
@@ -1676,8 +1808,11 @@
       "programme-ecod-o",
       "pret-vert",
       "cedre-investissement",
+      "sud-pret-climat",
       "sites-touristiques-exemplaires",
-      "pret-tourisme"
+      "pret-tourisme",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [
       20,
@@ -1726,7 +1861,10 @@
       "pret-action-climat",
       "programme-ecod-o",
       "pret-vert",
-      "pret-tourisme"
+      "sud-pret-climat",
+      "pret-tourisme",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [
       20,
@@ -1773,7 +1911,12 @@
     "mainTheme": "energy",
     "programs": [
       "fonds-tourisme-durable",
-      "cedre-investissement"
+      "cedre-investissement",
+      "sud-pret-climat",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
     "priority": "190",
@@ -1802,7 +1945,10 @@
       "etude-gaspillage-alimentaire",
       "fonds-tourisme-durable",
       "gestion-des-biodechets",
-      "cedre-investissement"
+      "cedre-investissement",
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "240",
@@ -1831,7 +1977,12 @@
     "mainTheme": "energy",
     "programs": [
       "fonds-tourisme-durable",
-      "cedre-investissement"
+      "cedre-investissement",
+      "sud-pret-climat",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
     "priority": "210",
@@ -1856,7 +2007,10 @@
     "programs": [
       "fonds-tourisme-durable",
       "programme-ecod-o",
-      "cedre-investissement"
+      "cedre-investissement",
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "120",
@@ -1899,7 +2053,10 @@
     "mainTheme": "biodiversite",
     "programs": [
       "fonds-tourisme-durable",
-      "nature-ta-ville"
+      "sud-pret-climat",
+      "nature-ta-ville",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "230",
@@ -1942,7 +2099,12 @@
     "mainTheme": "building",
     "programs": [
       "fonds-tourisme-durable",
-      "cedre-investissement"
+      "cedre-investissement",
+      "sud-pret-climat",
+      "cheque-vert-grand-est",
+      "aide-travaux-tourisme-aura",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "130",
@@ -1986,7 +2148,10 @@
     "programs": [
       "fonds-tourisme-durable",
       "investissement-velotourisme",
-      "sites-touristiques-exemplaires"
+      "sud-pret-climat",
+      "sites-touristiques-exemplaires",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "250",
@@ -2032,10 +2197,13 @@
       "sobriete-et-resilience-des-territoires",
       "certification-agriculture-biologique",
       "cedre-premier-pas",
+      "sud-pret-climat",
       "entreprises-engagees-nature",
       "charte-zero-dechet-plastique",
       "mecenaturel",
-      "mooc-biodiversite-entreprise"
+      "mooc-biodiversite-entreprise",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "200",
@@ -2078,7 +2246,10 @@
     "mainTheme": "waste",
     "programs": [
       "fonds-tourisme-durable",
-      "cedre-investissement"
+      "cedre-investissement",
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france"
     ],
     "linkedProjects": [],
     "priority": "130",
@@ -2129,7 +2300,12 @@
       "tpe-gagnantes-sur-tous-les-couts",
       "visite-energie-cci",
       "visite-energie-cma",
-      "cedre-investissement"
+      "cedre-investissement",
+      "sud-pret-climat",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
     "priority": "130",

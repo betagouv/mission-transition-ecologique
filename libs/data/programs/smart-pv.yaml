@@ -42,7 +42,8 @@ objectifs:
       Faites le dépôt de la demande par voie dématérialisée sur le site de la
       Région Sud. Choisissez la "subvention pour investissement".
     liens:
-      - lien: https://subventionsenligne.maregionsud.fr/
+      - lien: >-
+          https://aidesenligne.maregionsud.fr/aides/#/crsud/connecte/F_S_I_PLANSOL/depot/simple
         texte: Déposer une demande
   - description: Votre dossier est évalué par une commission.
   - description: >-

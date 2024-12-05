@@ -65,7 +65,7 @@ objectifs:
   - description: Planifier et suivre les actions sur trois ans.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - PME
+    - Entre 50 de 500 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
     - Île-de-France
