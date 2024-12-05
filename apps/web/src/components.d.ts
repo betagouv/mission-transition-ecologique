@@ -123,6 +123,7 @@ declare module 'vue' {
     ThemeFiltersAndCard: typeof import('./components/questionnaire/result/list/ThemeFiltersAndCard.vue')['default']
     ThemeHeaderCard: typeof import('./components/theme/ThemeHeaderCard.vue')['default']
     ThemeSelect: typeof import('./components/theme/select/ThemeSelect.vue')['default']
+    TrackActivity: typeof import('./components/track/form/TrackActivity.vuey.vue')['default']
     TrackButton: typeof import('./components/track/form/TrackButton.vue')['default']
     TrackButtonInput: typeof import('./components/track/form/TrackButtonInput.vue')['default']
     TrackCallout: typeof import('./components/track/detail/TrackCallout.vue')['default']
