@@ -112,7 +112,7 @@ watch(
 )
 </script>
 <style lang="scss" scoped>
-:deep(#company-data) {
+:deep(#accordion-company-data) {
   padding: 0 0.25rem;
 }
 </style>
