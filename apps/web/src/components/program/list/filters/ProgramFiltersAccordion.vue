@@ -33,6 +33,7 @@ import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 interface Props {
   accordionClass?: string
 }
+
 const props = defineProps<Props>()
 
 interface FilterItem {
