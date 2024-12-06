@@ -1,13 +1,14 @@
 <template>
   <DsfrAccordionsGroup v-model="activeAccordion">
     <template
-      v-for="filter in filters"
+      v-for="(filter, key) in filters"
       :key="filter.id"
     >
       <DsfrAccordion
-        v-if="shouldDisplayFilter(filter)"
-        :id="filter.id"
-        :class="[props.accordionClass, filter.accordionClass]"
+        v-if="canDisplayFilter(filter)"
+        :id="`accordion-${filter.id}`"
+        :key="key"
+        :class="[props.accordionClass, filter.accordionClass, companyDataFilterVisibilityClass(filter.id)]"
         :title="filter.title"
       >
         <component
@@ -57,8 +58,14 @@ const companySelected = computed(() => programFilters.companySelected)
 const activeAccordion = ref<number>()
 
 const displayRegionFilter = computed(() => {
-  return useNavigationStore().isCatalogPrograms() && CompanyDataStorage.hasData().value === false
+  return useNavigationStore().isCatalogPrograms() && !companySelected.value
 })
+
+const companyDataFilterVisibilityClass = (filterId: FilterItemKeys) => {
+  if (filterId === FilterItemKeys.companyData) {
+    return CompanyDataStorage.hasData().value ? '' : 'fr-hidden'
+  }
+}
 
 const filters: FilterItem[] = [
   {
@@ -66,7 +73,7 @@ const filters: FilterItem[] = [
     id: FilterItemKeys.companyData,
     component: ProgramFilterByCompanyData,
     componentClass: 'fr-pl-2v',
-    display: CompanyDataStorage.hasData()
+    display: true
   },
   {
     title: "Types d'aides",
@@ -91,22 +98,20 @@ const filters: FilterItem[] = [
   }
 ]
 
-const shouldDisplayFilter = (filter: FilterItem) => {
+const canDisplayFilter = (filter: FilterItem) => {
   return typeof filter.display === 'boolean' ? filter.display : filter.display?.value
 }
 
 watch(
   companySelected,
   (value) => {
-    activeAccordion.value = value ? 0 : undefined
+    activeAccordion.value = value ? 0 : -1
   },
-  {
-    immediate: true
-  }
+  { immediate: true }
 )
 </script>
 <style lang="scss" scoped>
-:deep(#accordion-company-data) {
+:deep(#company-data) {
   padding: 0 0.25rem;
 }
 </style>
