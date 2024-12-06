@@ -3,5 +3,6 @@ export type programFiltersType = {
   themeTypeSelected: string
   operatorAidSelected: string[]
   regionAidSelected: string[]
-  [key: string]: string | string[]
+  companySelected: boolean
+  [key: string]: string | string[] | boolean
 }

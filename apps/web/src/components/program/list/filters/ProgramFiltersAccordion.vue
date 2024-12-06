@@ -1,13 +1,14 @@
 <template>
   <DsfrAccordionsGroup v-model="activeAccordion">
     <template
-      v-for="filter in filters"
+      v-for="(filter, key) in filters"
       :key="filter.id"
     >
       <DsfrAccordion
-        v-if="filter.if === undefined || filter.if"
-        :id="filter.id"
-        :class="[props.accordionClass, filter.accordionClass]"
+        v-if="canDisplayFilter(filter)"
+        :id="`accordion-${filter.id}`"
+        :key="key"
+        :class="[props.accordionClass, filter.accordionClass, companyDataFilterVisibilityClass(filter.id)]"
         :title="filter.title"
       >
         <component
@@ -24,43 +25,94 @@ import { useNavigationStore } from '@/stores/navigation'
 import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
 import ProgramFilterByOperator from './ProgramFilterByOperator.vue'
 import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
+import ProgramFilterByCompanyData from '@/components/program/list/filters/ProgramFilterByCompanyData.vue'
+import type { programFiltersType } from '@/types'
+import { useProgramStore } from '@/stores/program'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 interface Props {
   accordionClass?: string
 }
+
 const props = defineProps<Props>()
 
 interface FilterItem {
   title: string
-  id: string
+  id: FilterItemKeys
   accordionClass?: string
   component: unknown
   componentClass?: string
-  if?: boolean
+  display?: boolean | ComputedRef<boolean>
 }
+
+enum FilterItemKeys {
+  companyData = 'company-data',
+  typeAid = 'type-aid',
+  operatorAid = 'operator-aid',
+  regionAid = 'region-aid'
+}
+
+const programFilters: programFiltersType = useProgramStore().programFilters
+
+const companySelected = computed(() => programFilters.companySelected)
 
 const activeAccordion = ref<number>()
 
+const displayRegionFilter = computed(() => {
+  return useNavigationStore().isCatalogPrograms() && !companySelected.value
+})
+
+const companyDataFilterVisibilityClass = (filterId: FilterItemKeys) => {
+  if (filterId === FilterItemKeys.companyData) {
+    return CompanyDataStorage.hasData().value ? '' : 'fr-hidden'
+  }
+}
+
 const filters: FilterItem[] = [
   {
+    title: 'Entreprise',
+    id: FilterItemKeys.companyData,
+    component: ProgramFilterByCompanyData,
+    componentClass: 'fr-pl-2v',
+    display: true
+  },
+  {
     title: "Types d'aides",
-    id: 'type-aid',
+    id: FilterItemKeys.typeAid,
     component: ProgramFilterByAidType,
-    componentClass: 'fr-pl-2v'
+    componentClass: 'fr-pl-2v',
+    display: true
   },
   {
     title: 'Opérateurs',
-    id: 'operator-aid',
+    id: FilterItemKeys.operatorAid,
     component: ProgramFilterByOperator,
     componentClass: 'fr-pl-2v',
-    if: useNavigationStore().isCatalogPrograms()
+    display: useNavigationStore().isCatalogPrograms()
   },
   {
     title: 'Régions',
-    id: 'region-aid',
+    id: FilterItemKeys.regionAid,
     component: ProgramFilterByRegion,
     componentClass: 'fr-pl-2v',
-    if: useNavigationStore().isCatalogPrograms()
+    display: displayRegionFilter
   }
 ]
+
+const canDisplayFilter = (filter: FilterItem) => {
+  return typeof filter.display === 'boolean' ? filter.display : filter.display?.value
+}
+
+watch(
+  companySelected,
+  (value) => {
+    activeAccordion.value = value ? 0 : -1
+  },
+  { immediate: true }
+)
 </script>
+<style lang="scss" scoped>
+:deep(#company-data) {
+  padding: 0 0.25rem;
+}
+</style>

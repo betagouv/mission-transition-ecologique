@@ -24,7 +24,7 @@ const registeredData = CompanyDataStorage.getData()
 
 const filteredProjects = Project.filter(projects, Theme.getThemeFromSelectedOrPriorityTheme())
 
-const getProgramsAndProjects = async () => {
+const getProjects = async () => {
   navigationStore.hasSpinner = true
   const projectResult = await projectStore.eligibleProjects
   if (projectResult.isOk) {
@@ -38,7 +38,7 @@ const getProgramsAndProjects = async () => {
 watch(
   registeredData.value,
   async () => {
-    await getProgramsAndProjects()
+    await getProjects()
   },
   {
     immediate: true

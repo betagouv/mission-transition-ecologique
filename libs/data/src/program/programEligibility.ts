@@ -1,7 +1,12 @@
 import { ProgramType } from './program'
+import { ProgramEligibilityType } from './types/shared'
 
 export class ProgramEligibility {
   public static readonly ELIGIBLE_FOR_ALL = 'Éligible à toutes les entreprises'
+
+  public static isEligible(program: ProgramType) {
+    return program['eligibility'] === ProgramEligibilityType.Eligible || program['eligibility'] === ProgramEligibilityType.PartiallyEligible
+  }
 
   public static isPartiallyEligible(program: ProgramType) {
     return (
