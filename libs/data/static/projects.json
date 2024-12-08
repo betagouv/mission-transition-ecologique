@@ -1682,14 +1682,13 @@
     "nameTag": "🎖 labélisation",
     "shortDescription": "Valoriser votre engagement et vos actions menées en faveur de l’environnement.",
     "image": "/images/projet/com-labelisation.webp",
-    "longDescription": "Les labels environnementaux sont nombreux (Clef Verte, Coq Vert, Imprim Vert...).\n\nAdaptés à votre secteur d'activité, ils vous permettent de valoriser les efforts menés au sein de votre entreprise en faveur de l'environnement auprès de votre clientèle et de fédérer vos équipes autour des valeurs de responsabilité écologique.",
+    "longDescription": "Les labels environnementaux sont nombreux (Ecolabel européen, Coq Vert, Imprim Vert, Clef verte...).\n\nAdaptés à votre secteur d'activité, ils vous permettent de valoriser les efforts menés au sein de votre entreprise en faveur de l'environnement auprès de votre clientèle et de fédérer vos équipes autour des valeurs de responsabilité écologique.\\\nLe saviez-vous ?\n\nL’Ecolabel européen est le seul label écologique public et officiel européen permettant de valoriser des produits et services plus respectueux de l’environnement tout en garantissant des performances identiques à celles des produits et services analogues.\n\nL’Écolabel européen couvre une large gamme de produits utilisés au quotidien par les professionnels et les particuliers, tels que des papiers, détergents, terreaux, oreillers, ainsi que des hébergements touristiques et des entreprises de propreté.",
     "moreDescription": "- [**Les labels environnementaux**](https://agirpourlatransition.ademe.fr/particuliers/labels-environnementaux), passés au crible par l'ADEME. Une analyse de plus de 100 labels, par catégorie de produits.",
     "themes": [
       "environmental"
     ],
     "mainTheme": "environmental",
     "programs": [
-      "audits-clef-verte",
       "communaute-coq-vert",
       "eco-defis-des-artisans-et-des-commercants",
       "fonds-tourisme-durable",
