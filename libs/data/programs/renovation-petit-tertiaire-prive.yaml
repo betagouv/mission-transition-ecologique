@@ -6,6 +6,7 @@ description: >-
   aider à identifier les solutions techniques les plus adaptées (isolation,
   climatisation, eau chaude, ventilation, éclairage…) et rechercher les aides
   financières mobilisables. 
+fin de validité: 01/01/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 autres opérateurs:
@@ -50,6 +51,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
   entreprise . a un effectif éligible:

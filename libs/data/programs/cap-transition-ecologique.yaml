@@ -1,0 +1,120 @@
+titre: CAP Transition Ecologique
+promesse: >-
+  Réalisez un diagnostic de votre impact et financez vos investissements
+  favorisant votre transition écologique.
+description: >-
+  La Région Centre-Val de Loire lance un programme pour accompagner les
+  entreprises et structures de l'ESS dans leur transition écologique. Structuré
+  en deux phases, ce programme permet de financer en partie la réalisation d'un
+  diagnostic environnemental pour élaborer votre plan de transition écologique.
+  Il permet ensuite de bénéficier d'une aide financière pour vos investissements
+  définis dans le cadre de votre plan d'action.
+description longue: >-
+  - Les études peuvent être prises en charge jusqu'à 50% pour une subvention
+  allant de 1 000 € à 20 000 € HT. 
+
+
+  - Les investissements éligibles sont les dépenses d'immobilisation, destinées
+  à rester durablement dans le patrimoine de votre entreprise. Ces dépenses
+  peuvent être prises en charge jusqu'à 30% pour une subvention allant de 20 000
+  € à 200 000 € HT.
+
+  Ils doivent concerner en priorité :
+
+  - la préservation de la biodiversité ;
+
+  - le développement de l’économie circulaire ;
+
+  - l’optimisation de la consommation des matières premières/Ecoconception ;
+
+  - la préservation des ressources en eau ;
+
+  - l’optimisation des énergies produites et utilisées dans une démarche
+  d’efficacité et de sobriété (utilisation de la chaleur fatale, développement
+  de systèmes d’énergies peu émetteurs de GES…)
+
+
+  Pour accéder au financement des investissements, il est impératif de suivre la
+  première étape de diagnostic et l'élaboration du plan d'action ou d’être en
+  mesure de justifier d'un diagnostic déjà réalisé, d'un plan d’action détaillé
+  et argumenté, ou d’avoir bénéficié du suivi et de l’accompagnement de
+  l’Accélérateur des transitions Ecologique et sociales régional.
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Centre-Val de Loire
+url: >-
+  https://www.centre-valdeloire.fr/le-guide-des-aides-de-la-region-centre-val-de-loire/cap-te-transition-ecologique
+nature de l'aide: financement
+montant du financement: Jusqu'à 50% de l'étude et jusqu'à 30% de l'investissement jusqu'à 200 000 € HT
+objectifs:
+  - description: >-
+      Prenez contact par mail avec un conseiller de la Région Centre-Val de
+      Loire en expliquant votre besoin d'accompagnement.
+    liens:
+      - lien: >-
+          https://www.centre-valdeloire.fr/le-guide-des-aides-de-la-region-centre-val-de-loire/cap-te-transition-ecologique
+        texte: Les contacts des conseillers de la Région
+  - description: >-
+      Après vérification de l’éligibilité de votre projet, le chargé de mission
+      vous adressera le lien par lequel vous pourrez déposer une demande de
+      financement au Conseil régional.
+  - description: >-
+      Déposez votre demande de financement et si celui-ci est accepté, recevez
+      votre financement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 250 salariés
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - Centre-Val de Loire
+  secteur d'activité:
+    - Tous secteurs d'activité hors activités libérales et agricoles
+  nombre d'années d'activité:
+    - Au moins 1 an d'activité
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif >= 1
+      - effectif <= 249
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Centre-Val de Loire
