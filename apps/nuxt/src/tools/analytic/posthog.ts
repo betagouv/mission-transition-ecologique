@@ -1,10 +1,12 @@
-import posthog, { PostHog } from 'posthog-js'
+import { CookieValue } from '@/types/cookies'
+import posthog, { PostHog, PostHogConfig } from 'posthog-js'
 import Config from '@/config'
 import { RouteLocationNormalized } from 'vue-router'
 import Cookie from '@/tools/cookies'
 
 export default class Posthog {
   private static _posthog?: PostHog
+  private static _cookieName = `ph_${Config.posthogApiKey}`
 
   static install() {
     if (Config.isProduction()) {
@@ -12,22 +14,28 @@ export default class Posthog {
         api_host: 'https://eu.i.posthog.com',
         capture_pageview: false,
         capture_pageleave: false,
-        persistence: 'memory',
+        persistence: Cookie.getCookieStatus(CookieValue.Posthog) ? 'localStorage+cookie' : 'memory',
         person_profiles: 'always'
       })
     }
   }
-
   static activatePosthogCookie() {
+    this.changePersistance('localStorage+cookie')
+  }
+
+  static changePersistance(state: PostHogConfig['persistence']) {
     if (this._posthog) {
-      this._posthog.set_config({ persistence: 'localStorage+cookie' })
+      const distinctId = this._posthog.get_distinct_id()
+      this._posthog.set_config({ persistence: state })
+      this._posthog.identify(distinctId)
     }
   }
 
   static deactivatePosthogCookie() {
-    if (this._posthog) {
-      Cookie.removeCookie('ph_', true)
-      this._posthog.set_config({ persistence: 'memory' })
+    if (Cookie.areCookiesSet()) {
+      this.changePersistance('memory')
+      Cookie.removeCookie(this._cookieName, false)
+      localStorage.removeItem(this._cookieName)
     }
   }
 

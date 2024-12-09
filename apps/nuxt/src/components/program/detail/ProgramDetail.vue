@@ -263,7 +263,7 @@ const programsStore = useProgramStore()
 
 const { currentProgram: program } = storeToRefs(programsStore)
 const linkedProjects = ref<ProjectType[] | undefined>([])
-const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
+const teeProgramFormContainer = useTemplateRef<HTMLElement>('teeProgramFormContainer')
 
 const navigation = new Navigation()
 

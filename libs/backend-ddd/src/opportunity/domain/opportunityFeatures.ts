@@ -207,7 +207,7 @@ export default class OpportunityFeatures {
 
   private _updateValueInDictionaries(dictionaries: Dictionary[], key: string, val: string): boolean {
     for (const dictionary of dictionaries) {
-      if (key in dictionary) {
+      if (dictionary && key in dictionary) {
         dictionary[key] = val
         return true
       }

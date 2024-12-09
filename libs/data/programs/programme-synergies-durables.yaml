@@ -24,7 +24,7 @@ objectifs:
   - description: Mettre en œuvre un contrat d’alliance et de synergies inter-entreprises.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - PME
+    - Entre 20 de 500 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
