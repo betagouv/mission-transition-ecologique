@@ -268,7 +268,7 @@ const teeProgramFormContainer = useTemplateRef<HTMLElement>('teeProgramFormConta
 
 const publicPath = Config.publicPath
 
-const hasRegisteredData = CompanyDataStorage.hasData()
+const hasRegisteredData = CompanyDataStorage.isDataFull()
 const registeredData = CompanyDataStorage.getData()
 
 interface Props {

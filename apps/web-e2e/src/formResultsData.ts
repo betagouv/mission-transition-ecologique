@@ -55,7 +55,7 @@ export const tests: FormResultDataType[]  = [
     id: 3,
     valid: true,
     type: 'program',
-    url: 'aides-entreprise/act-pas-a-pas',
+    url: 'aides-entreprise/act-pas-a-pas?siret=83014132100034&effectif=TPE',
     values: {
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
@@ -69,7 +69,7 @@ export const tests: FormResultDataType[]  = [
     id: 4,
     valid: true,
     type: 'project',
-    url: 'projets-entreprise/diag-360',
+    url: 'projets-entreprise/diag-360?siret=83014132100034&effectif=TPE',
     values: {
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
@@ -178,7 +178,7 @@ export const tests: FormResultDataType[]  = [
     valid: true,
     manual: true,
     type: 'program',
-    url: 'aides-entreprise/act-pas-a-pas?effectif=TPE',
+    url: 'aides-entreprise/act-pas-a-pas',
     values: {
       name: {value: 'test', type: 'text'},
       surname: {value: 'test', type: 'text'},
