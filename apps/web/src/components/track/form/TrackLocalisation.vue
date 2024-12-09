@@ -1,6 +1,9 @@
 <template>
-  <div>
-    <DsfrInputGroup :error-message="errorMsg">
+  <div id="register-localisation">
+    <DsfrInputGroup
+      class="fr-mb-0"
+      :error-message="errorMsg"
+    >
       <span
         v-if="option.hint"
         class="fr-hint-text fr-mb-2v"
@@ -33,7 +36,7 @@
     <div
       v-if="localisationResults.length"
       id="track-localisation-response"
-      class="fr-bg--white"
+      class="fr-bg--white fr-mt-n3w"
     >
       <div
         v-for="localisation in localisationResults"
@@ -58,16 +61,17 @@ import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
 import Translation from '@/utils/translation'
 import TrackStructure from '@/utils/track/trackStructure'
+import { onClickOutside } from '@vueuse/core'
 
 interface Props {
   option: TrackOptionsInput
 }
 const props = defineProps<Props>()
-console.log(props.option, props.option?.hint?.[Translation.lang])
 const emit = defineEmits(['updateSelection'])
 
 const selectedLocalisation = defineModel<CompanyLocalisationType>()
 const localisationInput = ref<string>('')
+const localisationSearchBar = useTemplateRef('localisationSearchBar')
 const debouncedLocalisationInput = useDebounce(localisationInput, 1000)
 watch(debouncedLocalisationInput, (newValue) => {
   if (newValue) {
@@ -93,7 +97,7 @@ const errorMsg = computed<string>(() => {
   }
   return ''
 })
-const localisationSearchBar = ref(null)
+
 const searchLocalisation = async () => {
   if (localisationInput.value && localisationInput.value.length >= 3) {
     isLoading.value = true
@@ -108,9 +112,14 @@ const searchLocalisation = async () => {
 }
 const selectLocalisation = (localisation: ConvertedCommune) => {
   selectedLocalisation.value = CompanyDataStorage.convertLocalisation(localisation)
-  console.log(selectedLocalisation.value)
   emit('updateSelection', createData())
 }
+const resetSearch = () => {
+  selectedLocalisation.value = undefined
+  localisationInput.value = ''
+  localisationResults.value = []
+}
+onClickOutside(localisationSearchBar, () => resetSearch())
 
 function createData(): TrackOptionItem {
   return TrackStructure.createData(props.option, selectedLocalisation.value?.region, selectedLocalisation.value)
@@ -122,6 +131,12 @@ function createData(): TrackOptionItem {
   width: calc(100% - 40px);
   max-height: 256px;
   z-index: 2000;
+  position: absolute;
   overflow: hidden auto;
+}
+
+#register-localisation {
+  position: relative;
+  margin-bottom: 0;
 }
 </style>

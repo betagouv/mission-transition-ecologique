@@ -51,7 +51,6 @@
               v-if="TrackComponent.isLocalisation(usedTrack)"
               :option="option as TrackOptionsInput"
               @update-selection="updateSelection($event.option, idx, $event.remove, $event.forceKeep)"
-              @go-to-next-track="updateAndSave($event, idx)"
             />
             <TrackSiret
               v-if="TrackComponent.isSiret(usedTrack, option)"
@@ -176,7 +175,7 @@ const updateSelection = async (option: TrackOptionsUnion, index: number, forceRe
   }
 
   // Direct to next track
-  const directToNext: string[] = [TrackComponentType.Cards]
+  const directToNext: string[] = [TrackComponentType.Cards, TrackComponentType.CitySearch]
   if (!allowMultiple && directToNext.includes(trackStore.currentComponent)) {
     await saveSelection(remove)
   }
