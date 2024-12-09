@@ -108,7 +108,7 @@
 </template>
 
 <script setup lang="ts">
-import { type TrackOptionItem, type TrackOptionsInput, TrackId, EstablishmentSearch } from '@/types'
+import { type TrackOptionItem, type TrackOptionsInput, EstablishmentSearch } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Navigation from '@/utils/navigation'
 import TrackSiret from '@/utils/track/TrackSiret'
@@ -200,7 +200,7 @@ function createData(): TrackOptionItem {
   const sector = selection.value >= 0 ? requestResponses.value.establishments[selection.value].secteur : ''
   const hasSelection = selection.value >= 0
   if (selection.value >= 0) {
-    Analytics.sendEvent(TrackId.Siret, 'fill_siret_tracks', {
+    Analytics.sendEvent('register_siret_tracks', 'register_siret_tracks', {
       siret: siretValue,
       secteur: sector
     })

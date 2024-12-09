@@ -104,7 +104,7 @@ const saveProfile = () => {
     })
     CompanyDataStorageHandler.updateRouteFromStorage()
     if (!props.manual) {
-      Analytics.sendEvent('register_modal', 'register_siret_modal', { secteur: company?.secteur, siret: profile.value.siret.value })
+      Analytics.sendEvent('register_siret_modal', 'register_siret_modal', { secteur: company?.secteur, siret: profile.value.siret.value })
     }
     Navigation.toggleRegisterModal(false)
   } else {
