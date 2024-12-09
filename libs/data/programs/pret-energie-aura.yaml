@@ -82,7 +82,7 @@ objectifs:
   - description: Recevez les fonds et réalisez vos investissements.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - TPE et PME
+    - Moins de 250 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
     - Provence-Alpes-Côte d'Azur
