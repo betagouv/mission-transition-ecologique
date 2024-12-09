@@ -17,7 +17,7 @@ import {
 } from '@/types'
 import RequestApi from '@/tools/api/requestApi'
 import Opportunity from '@/tools/opportunity'
-import TrackStructure from '@/tools/track/trackStructure'
+import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import { ThemeId } from '@tee/data'
 
 export default class OpportunityApi extends RequestApi {

@@ -1,9 +1,9 @@
-import { workforce } from '@/questionnaire/trackStructureWorkforce'
+import { workforce } from '@/tools/questionnaire/trackStructureWorkforce'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { LegalCategory, StructureSize, TrackId } from '@/types'
 import Format from '@/tools/format'
-import { sectors } from '@/questionnaire/trackStructureSectors'
-import CompanyDataStorage from '../storage/companyDataStorage'
+import { sectors } from '@/tools/questionnaire/trackStructureSectors'
+import CompanyDataStorage from '../../storage/companyDataStorage'
 
 export default class TrackStructure {
   static getEligibilityCriteria() {

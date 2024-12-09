@@ -99,11 +99,11 @@
 </template>
 
 <script setup lang="ts">
-import TrackStructure from '@/tools/track/trackStructure'
+import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import Translation from '@/tools/translation'
 import { computed } from 'vue'
 import { Project } from '@/types'
-import UsedTrack from '@/tools/track/usedTrack'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 

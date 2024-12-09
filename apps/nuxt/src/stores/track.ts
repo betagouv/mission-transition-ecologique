@@ -1,10 +1,10 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`store.tracks > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { tracks as allTracks } from '@/questionnaire'
+import { tracks as allTracks } from '@/tools/questionnaire'
 import { type Track, TrackComponent, type TrackOptionsUnion, type Translations } from '@/types'
 import { TrackId } from '@/types'
-import TrackSiret from '@/tools/track/TrackSiret'
+import TrackSiret from '@/tools/questionnaire/track/TrackSiret'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 

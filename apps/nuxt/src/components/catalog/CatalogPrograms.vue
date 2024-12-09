@@ -80,7 +80,7 @@
 import { useProgramStore } from '@/stores/program'
 import { type ProgramData, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
-import UsedTrack from '@/tools/track/usedTrack'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { computed } from 'vue'
 
 const programStore = useProgramStore()

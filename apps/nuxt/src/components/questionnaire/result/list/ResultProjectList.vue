@@ -81,7 +81,7 @@
 <script setup lang="ts">
 import { Project } from '@/types'
 import { computed } from 'vue'
-import UsedTrack from '@/tools/track/usedTrack'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import { Project as UtilsProject } from '@/tools/project/project'
 import OtherProjectCta from '@/components/project/list/OtherProjectCta.vue'

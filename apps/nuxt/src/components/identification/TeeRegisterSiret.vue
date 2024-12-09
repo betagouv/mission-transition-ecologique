@@ -73,7 +73,7 @@
 </template>
 
 <script setup lang="ts">
-import TrackSiret from '@/tools/track/TrackSiret'
+import TrackSiret from '@/tools/questionnaire/track/TrackSiret'
 import Translation from '@/tools/translation'
 import { SiretValidator } from '@tee/common'
 import { EstablishmentSearch, EstablishmentFront } from '@/types'

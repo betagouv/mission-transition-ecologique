@@ -27,7 +27,7 @@
 <script setup lang="ts">
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
-import UsedTrack from '@/tools/track/usedTrack'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 
 const hasSpinner = useNavigationStore().hasSpinner
 </script>

@@ -13,9 +13,9 @@
 </template>
 
 <script setup lang="ts">
-import TrackStructure from '@/tools/track/trackStructure'
+import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import Translation from '@/tools/translation'
-import UsedTrack from '@/tools/track/usedTrack'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 
 const resume: string = Translation.t('programResults.resume', {
   effectif: Translation.t('enterprise.structureSize.' + TrackStructure.getSize()),

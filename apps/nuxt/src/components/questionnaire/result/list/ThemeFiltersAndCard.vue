@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import { ThemeId } from '@/types'
 import { computed } from 'vue'
-import UsedTrack from '@/tools/track/usedTrack'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 
 const programStore = useProgramStore()

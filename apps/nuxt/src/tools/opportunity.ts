@@ -1,7 +1,7 @@
 import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType, EstablishmentFront } from '@tee/common'
 import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType, ThemeType, ThemeId } from '@/types'
 import { useProgramStore } from '@/stores/program'
-import TrackStructure from '@/tools/track/trackStructure'
+import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import { CalloutType } from '@/types/elementsPropsTypes'
 import Translation from '@/tools/translation'
 import { Theme } from '@/tools/theme'

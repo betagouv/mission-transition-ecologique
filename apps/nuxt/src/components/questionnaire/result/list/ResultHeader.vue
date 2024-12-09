@@ -21,9 +21,9 @@
 </template>
 
 <script setup lang="ts">
-import TrackStructure from '@/tools/track/trackStructure'
+import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import Translation from '@/tools/translation'
-import UsedTrack from '@/tools/track/usedTrack'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 
 const resume: string = Translation.t('programResults.resume', {

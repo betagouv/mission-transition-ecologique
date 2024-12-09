@@ -16,7 +16,7 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import { ThemeType, type programFiltersType, TrackId, ThemeId } from '@/types'
 import { Theme } from '@/tools/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
-import UsedTrack from '@/tools/track/usedTrack'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { computed } from 'vue'
 
 interface Props {

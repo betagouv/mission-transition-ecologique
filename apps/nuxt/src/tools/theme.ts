@@ -1,5 +1,5 @@
 import { Color, ThemeId, ThemeType } from '@/types'
-import UsedTrack from '@/tools/track/usedTrack'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { Project } from '@tee/data'
 import { useProgramStore } from '@/stores/program'
 import { ComputedRef } from 'vue'

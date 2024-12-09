@@ -111,7 +111,7 @@
 import { type TrackOptionItem, type TrackOptionsInput } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Navigation from '@/tools/navigation'
-import TrackSiret from '@/tools/track/TrackSiret'
+import TrackSiret from '@/tools/questionnaire/track/TrackSiret'
 import Translation from '@/tools/translation'
 import { SiretValidator } from '@tee/common'
 import { ref, computed } from 'vue'

@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import TrackStructure from '@/tools/track/trackStructure'
+import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 
 const criteria = TrackStructure.getEligibilityCriteria()
 </script>
