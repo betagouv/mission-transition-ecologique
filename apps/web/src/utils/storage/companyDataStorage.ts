@@ -1,4 +1,4 @@
-import { CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { CompanyDataStorageKey, CompanyDataType, ConvertedCommune, RegisterDetails, CompanyLocalisationType, Region } from '@/types'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
 import { StructureSize } from '@tee/common'
 import { ref, Ref } from 'vue'
@@ -52,6 +52,14 @@ export default class CompanyDataStorage {
     return this._storageHandler.getItem(key)
   }
 
+  static convertLocalisation(geoInfos: ConvertedCommune): CompanyLocalisationType {
+    return {
+      region: geoInfos.region.nom as Region,
+      ville: geoInfos.nom,
+      codePostal: geoInfos.codePostal
+    }
+  }
+
   public static getCompanyData(): CompanyDataType[CompanyDataStorageKey.Company] | null {
     return (this.getItem(CompanyDataStorageKey.Company) as CompanyDataType[CompanyDataStorageKey.Company]) || null
   }
@@ -70,6 +78,24 @@ export default class CompanyDataStorage {
   public static removeItem(key: CompanyDataStorageKey): void {
     this._storageHandler.removeItem(key)
     this.updateData()
+  }
+
+  static getSiretBasedCompanyData(
+    company: CompanyDataType[CompanyDataStorageKey.Company],
+    profileData: RegisterDetails
+  ): CompanyDataType[CompanyDataStorageKey.Company] {
+    return {
+      ...company,
+      ...profileData.localisation.value
+    } as CompanyDataType[CompanyDataStorageKey.Company]
+  }
+
+  static getManualCompanyData(profileData: RegisterDetails): CompanyDataType[CompanyDataStorageKey.Company] {
+    return {
+      ...profileData.localisation.value,
+      secteur: profileData.activity.value,
+      denomination: `Entreprise : ${profileData.activity.value} - ${profileData.localisation.value?.codePostal}`
+    } as CompanyDataType[CompanyDataStorageKey.Company]
   }
 
   static updateData(): void {

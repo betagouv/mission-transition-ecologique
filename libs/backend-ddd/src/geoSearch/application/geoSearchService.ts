@@ -1,0 +1,35 @@
+import { GeoSearchFeatures } from '../domain/geoSearchFeatures'
+import { ConvertedCommune } from '@tee/common'
+import { Result } from 'true-myth'
+import { GeoSearch } from '../domain/spi'
+import { Localisation } from '../infrastructure/json/localisation'
+
+export default class GeoSearchService {
+  private geoSearchFeatures: GeoSearchFeatures
+  private localisation: Localisation
+
+  constructor() {
+    this.localisation = new Localisation() // Initialisation unique de Localisation
+    this.geoSearchFeatures = new GeoSearchFeatures(this._getGeoSearchRepository())
+  }
+
+  /**
+   * Search cities by name or postalCode
+   * @param searchTerm : search input
+   * @returns search results
+   */
+  public searchCities(searchTerm: string): Result<ConvertedCommune[], Error> {
+    try {
+      return Result.ok(this.geoSearchFeatures.search(searchTerm))
+    } catch (error: unknown) {
+      return Result.err(error as Error)
+    }
+  }
+
+  private _getGeoSearchRepository(): GeoSearch {
+    return {
+      searchByName: this.localisation.searchByName.bind(this.localisation),
+      searchByCityCode: this.localisation.searchByCityCode.bind(this.localisation)
+    }
+  }
+}
