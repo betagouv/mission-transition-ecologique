@@ -34,8 +34,8 @@ export default class Posthog {
   static deactivatePosthogCookie() {
     if (Cookie.areCookiesSet()) {
       this.changePersistance('memory')
-      Cookie.removeCookie(`ph_${Config.posthogApiKey}`, false)
-      localStorage.removeItem(`ph_${Config.posthogApiKey}`)
+      Cookie.removeCookie(this._cookieName, false)
+      localStorage.removeItem(this._cookieName)
     }
   }
 
