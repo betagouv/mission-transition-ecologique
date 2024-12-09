@@ -156,8 +156,8 @@ const saveForm = async () => {
     const opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug || props.dataId, props.formType)
     requestResponse.value = await opportunity.fetch()
     // analytics / send event
-    if (requestResponse.value.id) {
-      Analytics.sendEvent(TrackId.Results, getEventName(), { opportunityId: requestResponse.value.id })
+    if (requestResponse.value.opportunityId) {
+      Analytics.sendEvent(TrackId.Results, getEventName(), { opportunityId: requestResponse.value.opportunityId })
     }
   } finally {
     isLoading.value = false
