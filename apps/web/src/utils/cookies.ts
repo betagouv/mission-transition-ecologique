@@ -57,6 +57,7 @@ export default class Cookie {
   static hasCookieChanged(cookie: CookieManager): boolean {
     return !this.areCookiesSet() || this.getCookieStatus(cookie.value) !== cookie.accepted
   }
+
   static saveCookies(newCookies: Cookies) {
     if (Cookie.cookies.value) {
       Object.values(newCookies).forEach((cookie: CookieManager) => {
@@ -107,6 +108,7 @@ export default class Cookie {
       Cookie.saveCookies(Cookie.cookies.value)
     }
   }
+
   static refuseCookie(cookieValue: CookieValue) {
     if (Cookie.cookies.value) {
       Cookie.cookies.value[cookieValue].accepted = false
@@ -122,6 +124,7 @@ export default class Cookie {
       }
     })
   }
+
   static areCookiesSet() {
     const match = document.cookie.match(new RegExp('(^| )tee-accept-cookies=([^;]+)'))
     const cookieValue = match && match[2]

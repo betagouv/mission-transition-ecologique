@@ -1,10 +1,12 @@
-import posthog, { PostHog } from 'posthog-js'
+import { CookieValue } from '@/types/cookies'
+import posthog, { PostHog, PostHogConfig } from 'posthog-js'
 import Config from '@/config'
 import { RouteLocationNormalized } from 'vue-router'
 import Cookie from '../cookies'
 
 export default class Posthog {
   private static _posthog?: PostHog
+  private static _cookieName = `ph_${Config.posthogApiKey}`
 
   static install() {
     if (Config.isProduction()) {
@@ -12,7 +14,7 @@ export default class Posthog {
         api_host: 'https://eu.i.posthog.com',
         capture_pageview: false,
         capture_pageleave: false,
-        persistence: 'memory',
+        persistence: Cookie.getCookieStatus(CookieValue.Posthog) ? 'localStorage+cookie' : 'memory',
         person_profiles: 'always'
       })
     }
@@ -20,13 +22,15 @@ export default class Posthog {
   static activatePosthogCookie() {
     this.changePersistance('localStorage+cookie')
   }
-  static changePersistance(state: 'memory' | 'localStorage' | 'cookie' | 'localStorage+cookie' | 'sessionStorage') {
+
+  static changePersistance(state: PostHogConfig['persistence']) {
     if (this._posthog) {
       const distinctId = this._posthog.get_distinct_id()
       this._posthog.set_config({ persistence: state })
       this._posthog.identify(distinctId)
     }
   }
+
   static deactivatePosthogCookie() {
     if (Cookie.areCookiesSet()) {
       this.changePersistance('memory')
@@ -34,16 +38,19 @@ export default class Posthog {
       localStorage.removeItem(`ph_${Config.posthogApiKey}`)
     }
   }
+
   static capturePageView(to: RouteLocationNormalized) {
     if (this._posthog) {
       this._posthog.capture('$pageview', { path: to.fullPath })
     }
   }
+
   static capturePageLeave(from: RouteLocationNormalized) {
     if (this._posthog) {
       this._posthog.capture('$pageleave', { $current_url: window.location.host + from.fullPath, path: from.fullPath })
     }
   }
+
   static captureEvent(name: string | null = null, value?: object) {
     if (this._posthog) {
       this._posthog.capture(name ? name : 'unnamed event', value)
