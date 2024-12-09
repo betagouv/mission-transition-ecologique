@@ -199,7 +199,6 @@ function createData(): TrackOptionItem {
   const siretValue = selection.value >= 0 ? requestResponses.value.establishments[selection.value].siret : ''
   const sector = selection.value >= 0 ? requestResponses.value.establishments[selection.value].secteur : ''
   const hasSelection = selection.value >= 0
-  console.log('select')
   if (selection.value >= 0) {
     Analytics.sendEvent(TrackId.Siret, 'fill_siret_tracks', {
       siret: siretValue,
