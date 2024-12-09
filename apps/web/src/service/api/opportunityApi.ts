@@ -53,7 +53,7 @@ export default class OpportunityApi extends RequestApi {
       resp.status = response.status
       resp.statusText = response.statusText
       resp.url = response.url
-      resp.opportunityId = resp.data.id
+      resp.id = resp.data.id
     } catch (error: unknown) {
       resp.ok = false
       resp.status = 500
