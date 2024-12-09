@@ -155,8 +155,6 @@ const saveForm = async () => {
     isLoading.value = true
     const opportunity = new OpportunityApi(localForm.value, props.dataId, props.dataSlug || props.dataId, props.formType)
     requestResponse.value = await opportunity.fetch()
-    // SIRET : envoyer siret + secteur dans posthog
-    Analytics.sendEvent('fill_siret')
     // analytics / send event
     if (requestResponse.value.id) {
       Analytics.sendEvent(TrackId.Results, getEventName(), { opportunityId: requestResponse.value.id })

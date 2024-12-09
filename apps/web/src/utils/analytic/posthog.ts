@@ -7,15 +7,13 @@ export default class Posthog {
   private static _posthog?: PostHog
 
   static install() {
-    if (Config.isProduction()) {
-      this._posthog = posthog.init(Config.posthogApiKey, {
-        api_host: 'https://eu.i.posthog.com',
-        capture_pageview: false,
-        capture_pageleave: false,
-        persistence: 'memory',
-        person_profiles: 'always'
-      })
-    }
+    this._posthog = posthog.init(Config.posthogApiKey, {
+      api_host: 'https://eu.i.posthog.com',
+      capture_pageview: false,
+      capture_pageleave: false,
+      persistence: 'memory',
+      person_profiles: 'always'
+    })
   }
 
   static activatePosthogCookie() {
