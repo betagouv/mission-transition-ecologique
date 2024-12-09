@@ -1,4 +1,4 @@
-import { ProgramData, ThemeId, ThemeType, Project } from '@/types'
+import { ProgramType, ThemeId, ThemeType, Project } from '@/types'
 import { Theme } from '@/utils/theme'
 
 export default class ProjectFilter {
@@ -11,7 +11,7 @@ export default class ProjectFilter {
 
     return false
   }
-  static byPrograms(project: Project, filteredPrograms: ProgramData[]) {
+  static byPrograms(project: Project, filteredPrograms: ProgramType[]) {
     return project.programs.some((programId) => filteredPrograms.some(({ id }) => id === programId))
   }
 }

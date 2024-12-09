@@ -78,14 +78,14 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, ThemeId } from '@/types'
+import { type ProgramType, ThemeId } from '@/types'
 import { MetaSeo } from '@/utils/metaSeo'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
 
 const programStore = useProgramStore()
 
-const programs = ref<ProgramData[]>()
+const programs = ref<ProgramType[]>()
 const hasError = ref<boolean>(false)
 
 const title = 'Le catalogue des aides publiques à la transition écologique'
