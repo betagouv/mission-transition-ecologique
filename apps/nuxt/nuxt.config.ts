@@ -10,8 +10,8 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { prerender: true },
     '/accessibilite': { prerender: true },
-    '/mentions-legales': { prerender: true },
-    '/donnees-personnelles': { prerender: true },
+    // '/mentions-legales': { prerender: true },
+    // '/donnees-personnelles': { prerender: true },
     '/stats': { swr: 86400 }, // cached for 1 day (86400 seconds)
     '/budget': { prerender: true },
     '/ajouter-une-aide-entreprises': { prerender: true },

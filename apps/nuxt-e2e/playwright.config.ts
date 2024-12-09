@@ -31,6 +31,7 @@ export default defineConfig({
   webServer: {
     env: {
       VITE_DATA_TEST: 'true',
+      THIRD_PARTY_API_ENABLED: 'false',
       PORT: '4243'
     },
     command: 'npm run build:start',
