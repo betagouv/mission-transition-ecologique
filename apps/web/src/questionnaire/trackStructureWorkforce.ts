@@ -95,18 +95,29 @@ export const workforce: Track = {
     {
       value: StructureSize.EI,
       questionnaireData: { structure_size: StructureSize.EI },
-      title: { fr: 'Entreprise individuelle' },
-      label: { fr: '‍️🧍Je suis un entrepreneur individuel' },
+      title: { fr: 'micro-entrepreneur' },
+      label: { fr: '‍️🧍Je suis micro-entrepreneur' },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets
       }
     },
     {
+      value: StructureSize.MICRO,
+      questionnaireData: { structure_size: StructureSize.MICRO },
+      title: { fr: 'Moins de 10 employés' },
+      label: { fr: '‍️👫 Moins de 10 employés' },
+      next: {
+        default: TrackId.Sectors,
+        ruleSet: nextTrackRuleSets
+      }
+    },
+
+    {
       value: StructureSize.TPE,
       questionnaireData: { structure_size: StructureSize.TPE },
-      title: { fr: 'Moins de 20 employés' },
-      label: { fr: '‍️👫 Moins de 20 employés' },
+      title: { fr: 'Entre 10 et 19 employés' },
+      label: { fr: '‍️👫👫 Entre 10 et 19 employés' },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets
@@ -116,7 +127,7 @@ export const workforce: Track = {
       value: StructureSize.PE,
       questionnaireData: { structure_size: StructureSize.PE },
       title: { fr: 'Entre 20 et 49 employés' },
-      label: { fr: '‍️👫👫 Entre 20 et 49 employés' },
+      label: { fr: '‍️👫👫👫 Entre 20 et 49 employés' },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets
@@ -125,18 +136,28 @@ export const workforce: Track = {
     {
       value: StructureSize.ME,
       questionnaireData: { structure_size: StructureSize.ME },
-      title: { fr: 'Entre 50 et 250 employés' },
-      label: { fr: '‍️👫👭👫 Entre 50 et 250 employés' },
+      title: { fr: 'Entre 50 et 249 employés' },
+      label: { fr: '‍️👫👭👫👫 Entre 50 et 249 employés' },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets
       }
     },
     {
-      value: StructureSize.ETI_GE,
-      questionnaireData: { structure_size: StructureSize.ETI_GE },
-      title: { fr: 'Plus de 250 employés' },
-      label: { fr: '👫👭👫👫 Plus de 250 employés' },
+      value: StructureSize.ETI,
+      questionnaireData: { structure_size: StructureSize.ETI },
+      title: { fr: 'Entre 250 et 499 employés' },
+      label: { fr: '‍️👫👭👫👫👫 Entre 250 et 499 employés' },
+      next: {
+        default: TrackId.Sectors,
+        ruleSet: nextTrackRuleSets
+      }
+    },
+    {
+      value: StructureSize.GE,
+      questionnaireData: { structure_size: StructureSize.GE },
+      title: { fr: 'Plus de 500 employés' },
+      label: { fr: '👫👭👫👫👫👫 Plus de 500 employés' },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets
