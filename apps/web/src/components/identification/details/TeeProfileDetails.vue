@@ -34,6 +34,7 @@
 </template>
 <script setup lang="ts">
 import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import Analytics from '@/utils/analytic/analytics'
 import Breakpoint from '@/utils/breakpoints'
 import Navigation from '@/utils/navigation'
 import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
@@ -102,7 +103,9 @@ const saveProfile = () => {
       [CompanyDataStorageKey.Size]: profile.value.size.value
     })
     CompanyDataStorageHandler.updateRouteFromStorage()
-
+    if (!props.manual) {
+      Analytics.sendEvent('register_siret_modal', 'register_siret_modal', { secteur: company?.secteur, siret: profile.value.siret.value })
+    }
     Navigation.toggleRegisterModal(false)
   } else {
     showError.value = true
