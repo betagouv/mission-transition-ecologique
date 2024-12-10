@@ -54,7 +54,6 @@ export enum TrackComponent {
   Activity = 'activity',
   Input = 'input',
   Siret = 'siret',
-  CitySearch = 'citySearch',
   Select = 'select',
   Results = 'results'
 }

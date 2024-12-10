@@ -1,7 +1,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`questionnaire.trackStructureRegion > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { Track, TrackCategory, HasInputOptions } from '@/types'
+import { Region, Track, TrackCategory, TrackOptionsUnion } from '@/types'
 import { TrackComponent, TrackId, ConditionOperators, DataMappingFrom } from '@/types'
 import { QuestionnaireRoute } from '@tee/common'
 import type { NextTrackRuleSet } from '@/types'
@@ -45,29 +45,29 @@ const nextTrackRulesSet: NextTrackRuleSet[] = [
   }
 ]
 
+const regionsOptions: TrackOptionsUnion[] = Object.values(Region).map((regionName) => {
+  return {
+    value: regionName,
+    questionnaireData: { region: regionName },
+    title: { fr: regionName },
+    label: { fr: regionName },
+    next: {
+      default: TrackId.Goals,
+      ruleSet: nextTrackRulesSet
+    }
+  }
+})
+
 export const regions: Track = {
-  id: TrackId.StructureCity,
+  id: TrackId.StructureRegion,
   category: TrackCategory.MyEntreprise,
   title: { fr: 'Ma localisation' },
-  label: { fr: 'Quelle est votre ville ?' },
+  label: { fr: 'Où êtes-vous situé ?' },
   interface: {
-    component: TrackComponent.CitySearch
+    component: TrackComponent.Select
   },
   behavior: {
     multipleChoices: false
   },
-  options: [
-    {
-      id: 'search-city',
-      hint: { fr: 'Recherchez par code postal ou nom de ville' },
-      hasInput: HasInputOptions.Search,
-      value: undefined,
-      questionnaireData: { ville: '', region: '', codePostal: '' },
-      title: { fr: 'LOCALISATION' },
-      next: {
-        default: TrackId.StructureWorkforce,
-        ruleSet: nextTrackRulesSet
-      }
-    }
-  ]
+  options: regionsOptions
 }

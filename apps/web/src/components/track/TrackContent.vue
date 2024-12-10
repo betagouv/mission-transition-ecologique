@@ -174,7 +174,7 @@ const updateSelection = async (option: TrackOptionsUnion, index: number, forceRe
   }
 
   // Direct to next track
-  const directToNext: string[] = [TrackComponentType.Cards, TrackComponentType.CitySearch]
+  const directToNext: string[] = [TrackComponentType.Cards, TrackComponentType.Activity]
   if (!allowMultiple && directToNext.includes(trackStore.currentComponent)) {
     await saveSelection(remove)
   }
