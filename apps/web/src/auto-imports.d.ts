@@ -91,6 +91,8 @@ declare module 'vue' {
   interface GlobalComponents {}
   interface ComponentCustomProperties {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly OhVueIcon: UnwrapRef<typeof import('oh-vue-icons')['OhVueIcon']>
+    readonly addIcons: UnwrapRef<typeof import('oh-vue-icons')['addIcons']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>

@@ -1,8 +1,8 @@
 <template>
   <div id="register-activity">
-    <div
-      class="fr-input-group fr-mb-0"
-      :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
+    <DsfrInputGroup
+      class="fr-mb-0"
+      :error-message="errorMsg"
     >
       <div
         ref="activitySearchBar"
@@ -27,7 +27,7 @@
           @click="searchActivity"
         />
       </div>
-    </div>
+    </DsfrInputGroup>
     <div
       v-if="activityResults.length && !infos.value"
       id="activity-response"
@@ -46,38 +46,27 @@
         </div>
       </div>
     </div>
-    <div
-      :class="errorMsg ? 'fr-error-text' : ''"
-      class="fr-input--empty-text fr-mt-2v"
-    >
-      {{ errorMsg }}
-    </div>
   </div>
 </template>
 <script lang="ts" setup>
-import { RegisterDetailActivity, CompanyActivityType } from '@/types'
-import { useDebounce } from '@vueuse/core'
+import { TrackOptionsInput, CompanyActivityType } from '@/types'
 import EstablishmentApi from '@/service/api/establishmentApi'
 import { onClickOutside } from '@vueuse/core'
-//import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import type { TrackOptionItem } from '@/types'
+import TrackStructure from '@/utils/track/trackStructure'
+import { useDebounce } from '@vueuse/core'
 
 interface Props {
-  infos: RegisterDetailActivity
-  manual: boolean
-  showError: boolean
+  option: TrackOptionsInput
 }
 const props = defineProps<Props>()
+const emit = defineEmits(['updateSelection'])
 
 const selectedActivity = defineModel<CompanyActivityType>()
 const activityInput = ref<string>('')
-const isLoading = ref<boolean>(false)
-const activitySearchBar = ref(null)
+const activitySearchBar = useTemplateRef('activitySearchBar')
 const activityResults = ref<CompanyActivityType[]>([])
-const activityLabel = computed<string>(() => {
-  return `${props.infos.value?.secteur} (${props.infos.value?.codeNAF})`
-})
-
-onClickOutside(activitySearchBar, () => modifyActivity())
+const isLoading = ref<boolean>(false)
 
 const debouncedActivityInput = useDebounce(activityInput, 1000)
 watch(debouncedActivityInput, () => {
@@ -85,14 +74,15 @@ watch(debouncedActivityInput, () => {
 })
 
 const errorMsg = computed<string>(() => {
-  if (props.showError && !debouncedActivityInput.value && !isLoading.value) {
+  if (!debouncedActivityInput.value && !isLoading.value) {
     return "La sélection de votre secteur d'activité est nécessaire"
   } else if (activityResults.value.length === 0 && debouncedActivityInput.value && !isLoading.value) {
     return "Aucun secteur d'activité n'a été trouvé."
   }
   return ''
 })
-const modifyActivity = () => {
+
+const resetActivity = () => {
   selectedActivity.value = undefined
   activityInput.value = ''
   activityResults.value = []
@@ -104,7 +94,11 @@ const updateModelValue = (value: string) => {
 
 const selectActivity = (activity: CompanyActivityType) => {
   selectedActivity.value = activity
+  emit('updateSelection', createData())
 }
+
+onClickOutside(activitySearchBar, () => resetActivity())
+
 
 const searchActivity = async () => {
   isLoading.value = true
@@ -114,12 +108,29 @@ const searchActivity = async () => {
   }
   isLoading.value = false
 }
+
+const searchLocalisation = async () => {
+  if (localisationInput.value && localisationInput.value.length >= 3) {
+    isLoading.value = true
+    const results = await TrackStructure.searchLocalisation(localisationInput.value)
+    if (results.isOk) {
+      localisationResults.value = results.value
+    }
+    isLoading.value = false
+  } else {
+    localisationResults.value = []
+  }
+}
+
+function createData(): TrackOptionItem {
+  return TrackStructure.createData(props.option, selectedLocalisation.value?.region, selectedLocalisation.value)
+}
 </script>
 <style lang="scss" scoped>
 #activity-response {
   text-align: left;
   width: calc(100% - 40px);
-  max-height: 128px;
+  max-height: 256px;
   z-index: 2000;
   position: absolute;
   overflow: hidden auto;
