@@ -52,7 +52,7 @@ import { computed } from 'vue'
 import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
 import Translation from '@/utils/translation'
 import Navigation from '@/utils/navigation'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorage } from '@/utils/storage'
 import { useNavigationStore } from '@/stores/navigation'
 
 interface ProgramListProps {
@@ -60,7 +60,7 @@ interface ProgramListProps {
   hasError: boolean
 }
 
-const hasRegisteredData = CompanyDataStorage.hasData()
+const hasRegisteredData = CompanyDataStorage.isDataFull()
 const navigationStore = useNavigationStore()
 
 const props = defineProps<ProgramListProps>()

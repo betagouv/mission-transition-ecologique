@@ -1,9 +1,18 @@
-import { CompanyDataStorageKey, CompanyDataType, RegisterDetails } from '@/types'
+import {
+  CompanyDataStorageKey,
+  CompanyDataType,
+  ManualCompanyData,
+  RegisterDetails,
+  Sector,
+  Region,
+  EstablishmentFront
+} from '@/types'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
 import { StructureSize } from '@tee/common'
 import { ref, Ref } from 'vue'
+import { TypeValidator } from '@/utils/typeValidator'
 
-export default class CompanyDataStorage {
+export class CompanyDataStorage {
   private static readonly _storageHandler = new LocalStorageHandler()
 
   private static readonly _data: Ref<CompanyDataType> = ref({
@@ -12,7 +21,7 @@ export default class CompanyDataStorage {
   })
 
   private static readonly _hasData: ComputedRef<boolean> = computed(() => {
-    return this._data.value[CompanyDataStorageKey.Company] !== null || this._data.value[CompanyDataStorageKey.Size] !== null
+    return this._data.value[CompanyDataStorageKey.Company] !== null && this._data.value[CompanyDataStorageKey.Size] !== null
   })
 
   public static getData(): Ref<CompanyDataType> {
@@ -23,10 +32,52 @@ export default class CompanyDataStorage {
     return this._hasData
   }
 
+  public static isDataFull() {
+    if (this._data.value[CompanyDataStorageKey.Company] === null) return false
+
+    return this.isOfCompanyDataType(this._data.value[CompanyDataStorageKey.Company])
+      ? Object.values(this._data.value[CompanyDataStorageKey.Company] as object).every((value) => value !== null)
+      : false
+  }
+
+  public static isOfCompanyDataType(value: unknown): boolean {
+    const sampleEstablishmentFront: EstablishmentFront = {
+      siret: '',
+      codeNAF: '',
+      codeNAF1: '',
+      ville: '',
+      codePostal: '',
+      legalCategory: '',
+      region: '',
+      denomination: '',
+      secteur: '',
+      structure_size: undefined,
+      creationDate: ''
+    }
+
+    const sampleManualCompanyData: ManualCompanyData = {
+      region: Region.Bretagne,
+      secteur: Sector.Agriculture,
+      codeNAF: '',
+      codeNAF1: '',
+      denomination: ''
+    }
+
+    return TypeValidator.isOfType(value, sampleEstablishmentFront) || TypeValidator.isOfType(value, sampleManualCompanyData)
+  }
+
   public static hasCompanyData() {
     return this._data.value[CompanyDataStorageKey.Company] !== null
   }
 
+  public static hasSiret() {
+    if (!this._data.value[CompanyDataStorageKey.Company]) return false
+
+    return (
+      Object.hasOwn(this._data.value[CompanyDataStorageKey.Company], 'siret') &&
+      (this._data.value[CompanyDataStorageKey.Company] as EstablishmentFront).siret !== null
+    )
+  }
   public static hasSize() {
     return this._data.value[CompanyDataStorageKey.Size] !== null
   }
@@ -90,6 +141,7 @@ export default class CompanyDataStorage {
     this.updateData()
   }
 
+ 
   static updateData(): void {
     this._data.value[CompanyDataStorageKey.Company] = this.getCompanyData()
     this._data.value[CompanyDataStorageKey.Size] = this.getSize()

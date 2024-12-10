@@ -33,11 +33,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RegisterDetailType, RegisterDetails, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType, Region } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import Navigation from '@/utils/navigation'
 import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorage } from '@/utils/storage/companyDataStorage'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -62,10 +62,10 @@ const profile = ref<RegisterDetails>({
   localisation: {
     title: 'Localisation',
     icon: 'fr-icon-map-pin-2-line',
-    description: 'Quelle est votre région ?',
-    value: props.company?.region,
+    description: 'Quelle est votre ville ?',
+    value: props.company?.region as Region,
     type: RegisterDetailType.Localisation,
-    tagLabel: props.manual && props.company && 'siret' in props.company ? `${props.company.codePostal} ${props.company.ville}` : ''
+    tagLabel: props.company && 'siret' in props.company ? `${props.company.codePostal} ${props.company.ville}` : ''
   },
   activity: {
     title: 'Activité',
