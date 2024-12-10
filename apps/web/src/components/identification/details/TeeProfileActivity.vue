@@ -18,7 +18,7 @@
     :default-unselected-text="infos.description"
   />
   <div
-    v-if="!infos.value"
+    v-if="hasError"
     :class="errorMessage ? 'fr-error-text' : ''"
     class="fr-input--empty-text fr-mt-2v"
   >
@@ -33,6 +33,7 @@ interface Props {
   manual: boolean
   showError: boolean
 }
+const props = defineProps<Props>()
 const selectedActivity = defineModel<Sector>()
 const errorMessage = computed<string>(() => {
   if (hasError) {
@@ -46,7 +47,6 @@ const hasError = computed<boolean>(() => {
 const modifyActivity = () => {
   selectedActivity.value = undefined
 }
-const props = defineProps<Props>()
 const sectorOptions = [
   {
     value: Sector.Craftsmanship,

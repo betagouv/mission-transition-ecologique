@@ -16,7 +16,7 @@
     :options="sizeOptions"
   />
   <div
-    v-if="!infos.value"
+    v-if="hasError"
     :class="errorMessage ? 'fr-error-text' : ''"
     class="fr-input--empty-text fr-mt-2v"
   >
@@ -44,7 +44,7 @@ const hasError = computed<boolean>(() => {
   return !props.infos.value && props.showError
 })
 const errorMessage = computed<string>(() => {
-  if (hasError) {
+  if (hasError && props.showError) {
     return "La sélection de l'effectif est nécessaire"
   }
   return ''
