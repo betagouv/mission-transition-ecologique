@@ -51,7 +51,7 @@ const sizeOptions = [
 
   {
     value: StructureSize.TPE,
-    text: '‍️👫👫 Moins de 20 employés'
+    text: '‍️👫👫 Entre 10 et 20 employés'
   },
   {
     value: StructureSize.PE,
