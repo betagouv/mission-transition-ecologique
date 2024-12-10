@@ -19,7 +19,7 @@ import UsedTrack from '@/utils/track/usedTrack'
 
 const resume: string = Translation.t('programResults.resume', {
   effectif: Translation.t('enterprise.structureSize.' + TrackStructure.getSize()),
-  secteur: TrackStructure.getSectorShortLabel(),
+  secteur: TrackStructure.getSector(),
   region: TrackStructure.getRegion()
 })
 </script>

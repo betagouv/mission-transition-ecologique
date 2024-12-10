@@ -1,6 +1,7 @@
 import { CompanyDataStorage } from '@/utils/storage/companyDataStorage'
 import { useNavigationStore } from '@/stores/navigation'
 import {
+  CompanyActivityType,
   CompanyDataStorageKey,
   EstablishmentFront,
   LegalCategory,
@@ -104,10 +105,13 @@ export class CompanyDataStorageHandler {
     }
 
     if (trackId === TrackId.Sectors) {
-      CompanyDataStorage.setCompanyData({ ...CompanyDataStorage.getCompanyData(), secteur: value as Sector } as ManualCompanyData)
+      CompanyDataStorage.setCompanyData({
+        ...CompanyDataStorage.getCompanyData(),
+        ...(selectedOptions[0].questionnaireData as CompanyActivityType)
+      } as ManualCompanyData)
     }
 
-    if (trackId === TrackId.StructureCity) {
+    if (trackId === TrackId.StructureRegion) {
       CompanyDataStorage.setCompanyData({
         ...CompanyDataStorage.getCompanyData(),
         region: value as Region,

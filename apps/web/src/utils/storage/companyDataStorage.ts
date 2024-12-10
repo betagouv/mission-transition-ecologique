@@ -1,12 +1,4 @@
-import {
-  CompanyDataStorageKey,
-  CompanyDataType,
-  ManualCompanyData,
-  RegisterDetails,
-  Sector,
-  Region,
-  EstablishmentFront
-} from '@/types'
+import { CompanyDataStorageKey, CompanyDataType, ManualCompanyData, RegisterDetails, Sector, Region, EstablishmentFront } from '@/types'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
 import { StructureSize } from '@tee/common'
 import { ref, Ref } from 'vue'
@@ -141,7 +133,6 @@ export class CompanyDataStorage {
     this.updateData()
   }
 
- 
   static updateData(): void {
     this._data.value[CompanyDataStorageKey.Company] = this.getCompanyData()
     this._data.value[CompanyDataStorageKey.Size] = this.getSize()

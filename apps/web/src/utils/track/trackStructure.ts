@@ -1,17 +1,16 @@
 import { workforce } from '@/questionnaire/trackStructureWorkforce'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { LegalCategory, StructureSize, TrackId, TrackOptionItem, TrackOptionsUnion, CompanyLocalisationType } from '@/types'
+import { CompanyActivityType, LegalCategory, StructureSize, TrackId, TrackOptionItem, TrackOptionsUnion } from '@/types'
 import Format from '@/utils/format'
-import { sectors } from '@/questionnaire/trackStructureSectors'
 import { CompanyDataStorage } from '../storage'
-import LocalisationApi from '@/service/api/localisationApi'
+import EstablishmentApi from '@/service/api/establishmentApi'
 
 export default class TrackStructure {
-  static async searchLocalisation(query: string) {
-    const localisationApi = new LocalisationApi()
-    return await localisationApi.searchCities(query)
+  static async searchActivity(query: string) {
+    const establishmentApi = new EstablishmentApi()
+    return await establishmentApi.searchActivities(query)
   }
-  static createData(option: TrackOptionsUnion, value?: string, questionnaireData?: CompanyLocalisationType): TrackOptionItem {
+  static createData(option: TrackOptionsUnion, value?: string, questionnaireData?: CompanyActivityType): TrackOptionItem {
     return {
       option: {
         ...option,
@@ -31,7 +30,7 @@ export default class TrackStructure {
     if (this.getSector()) {
       criteria.push({
         icon: 'fr-icon-check-line',
-        text: Format.capitalize(Format.truncate(TrackStructure.getSectorShortLabel(), 30))
+        text: Format.capitalize(Format.truncate(TrackStructure.getSector(), 30))
       })
     }
     if (this.getLocalisation()) {
@@ -69,10 +68,6 @@ export default class TrackStructure {
     return CompanyDataStorage.getCompanyData()?.secteur || ''
   }
 
-  static getSectorShortLabel(): string {
-    return sectors.options?.find((option) => option.value === this.getSector())?.shortLabel?.fr || this.getSector()
-  }
-
   static getSize(): StructureSize {
     const structureSize = useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureWorkforce, 'structure_size')
     if (
@@ -90,19 +85,15 @@ export default class TrackStructure {
   }
 
   static getLocalisation(): string {
-    return `${this.getPostalCode()} ${this.getCity()}`
+    return this.has(TrackId.Siret, 'codePostal') ? `${this.getPostalCode()} ${this.getCity()}` : this.getRegion()
   }
 
   static getPostalCode(): string {
-    return this.has(TrackId.Siret, 'region')
-      ? (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'codePostal') as string)
-      : (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureCity, 'codePostal') as string)
+    return useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'codePostal') as string
   }
 
   static getCity(): string {
-    return this.has(TrackId.Siret, 'region')
-      ? (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'ville') as string)
-      : (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureCity, 'ville') as string)
+    return useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'ville') as string
   }
 
   static getTheme() {
@@ -112,6 +103,6 @@ export default class TrackStructure {
   static getRegion(): string {
     return this.has(TrackId.Siret, 'region')
       ? (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'region') as string)
-      : (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureCity, 'region') as string)
+      : (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureRegion, 'region') as string)
   }
 }

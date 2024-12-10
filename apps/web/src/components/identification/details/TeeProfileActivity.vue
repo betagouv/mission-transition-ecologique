@@ -2,7 +2,6 @@
   <p
     v-if="infos.value"
     class="fr-tag fr-mb-4v fr-bg--blue-france--lightness"
-    class="fr-tag fr-mb-4v fr-bg--blue-france--lightness"
   >
     <span class="fr-pr-4v">{{ activityLabel }}</span>
     <span
@@ -93,7 +92,7 @@ const activityLabel = computed<string>(() => {
 
 onClickOutside(activitySearchBar, () => modifyActivity())
 
-const debouncedActivityInput = useDebounce(activityInput, 1000)
+const debouncedActivityInput = useDebounce(activityInput, 100)
 watch(debouncedActivityInput, () => {
   searchActivity()
 })

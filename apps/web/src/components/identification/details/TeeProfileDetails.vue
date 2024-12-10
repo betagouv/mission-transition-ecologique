@@ -33,7 +33,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType, Region } from '@/types'
+import { RegisterDetailType, RegisterDetails, CompanyDataStorageKey, CompanyDataType, Region } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import Navigation from '@/utils/navigation'
 import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'

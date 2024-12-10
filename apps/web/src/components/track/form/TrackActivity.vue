@@ -4,6 +4,12 @@
       class="fr-mb-0"
       :error-message="errorMsg"
     >
+      <span
+        v-if="option.hint"
+        class="fr-hint-text fr-mb-2v"
+      >
+        {{ option?.hint?.[Translation.lang] }}
+      </span>
       <div
         ref="activitySearchBar"
         class="fr-search-bar fr-search-bar--yellow"
@@ -15,7 +21,7 @@
           name="manual-register-activity"
           class="fr-input--white fr-input"
           type="search"
-          :placeholder="infos.description"
+          :hint="option?.hint?.[Translation.lang]"
           @click="searchActivity"
           @update:model-value="updateModelValue"
           @keyup.enter="searchActivity"
@@ -29,7 +35,7 @@
       </div>
     </DsfrInputGroup>
     <div
-      v-if="activityResults.length && !infos.value"
+      v-if="activityResults.length"
       id="activity-response"
       class="fr-bg--white"
     >
@@ -50,11 +56,11 @@
 </template>
 <script lang="ts" setup>
 import { TrackOptionsInput, CompanyActivityType } from '@/types'
-import EstablishmentApi from '@/service/api/establishmentApi'
 import { onClickOutside } from '@vueuse/core'
 import type { TrackOptionItem } from '@/types'
 import TrackStructure from '@/utils/track/trackStructure'
 import { useDebounce } from '@vueuse/core'
+import Translation from '@/utils/translation'
 
 interface Props {
   option: TrackOptionsInput
@@ -68,7 +74,7 @@ const activitySearchBar = useTemplateRef('activitySearchBar')
 const activityResults = ref<CompanyActivityType[]>([])
 const isLoading = ref<boolean>(false)
 
-const debouncedActivityInput = useDebounce(activityInput, 1000)
+const debouncedActivityInput = useDebounce(activityInput, 100)
 watch(debouncedActivityInput, () => {
   searchActivity()
 })
@@ -99,31 +105,17 @@ const selectActivity = (activity: CompanyActivityType) => {
 
 onClickOutside(activitySearchBar, () => resetActivity())
 
-
 const searchActivity = async () => {
   isLoading.value = true
-  const results = await new EstablishmentApi().searchActivities(activityInput.value)
+  const results = await TrackStructure.searchActivity(activityInput.value)
   if (results.isOk) {
     activityResults.value = results.value
   }
   isLoading.value = false
 }
 
-const searchLocalisation = async () => {
-  if (localisationInput.value && localisationInput.value.length >= 3) {
-    isLoading.value = true
-    const results = await TrackStructure.searchLocalisation(localisationInput.value)
-    if (results.isOk) {
-      localisationResults.value = results.value
-    }
-    isLoading.value = false
-  } else {
-    localisationResults.value = []
-  }
-}
-
 function createData(): TrackOptionItem {
-  return TrackStructure.createData(props.option, selectedLocalisation.value?.region, selectedLocalisation.value)
+  return TrackStructure.createData(props.option, selectedActivity.value?.secteur, selectedActivity.value)
 }
 </script>
 <style lang="scss" scoped>

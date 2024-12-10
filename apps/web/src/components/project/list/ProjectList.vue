@@ -119,7 +119,7 @@ const programStore = useProgramStore()
 const isSpecificGoal = UsedTrack.isSpecificGoal()
 const resume: string = Translation.t('project.result.resume', {
   effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyDataStorage.getSize() ?? '')),
-  secteur: TrackStructure.getSectorShortLabel() ?? CompanyDataStorage.getCompanyData()?.secteur ?? ''
+  secteur: TrackStructure.getSector() ?? CompanyDataStorage.getCompanyData()?.secteur ?? ''
 })
 
 const hasPriorityProjects = computed(() => {
