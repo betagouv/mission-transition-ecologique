@@ -20,20 +20,14 @@ export const evaluateRule = (
   questionnaireData: QuestionnaireData,
   currentDate: string
 ): Result<boolean | undefined, Error> => {
-  console.log('questionnaire data', questionnaireData)
   const preprocessedData = preprocessInputForPublicodes(questionnaireData, programData, currentDate)
 
-  console.log('preprocessedData', preprocessedData)
   const narrowedData = narrowInput(preprocessedData, engine)
-
-  console.log('narrowedData', narrowedData)
 
   engine.setSituation(narrowedData)
 
   const evaluation = engine.evaluate(rule)
-  console.log('evaluation', evaluation)
   const eligibility = evaluation.nodeValue
-  console.log('eligibility', eligibility)
 
   if (typeof eligibility !== 'boolean' && typeof eligibility !== 'undefined') {
     return Result.err(new Error(`"${rule}" is expected to be a boolean or undefined`))
