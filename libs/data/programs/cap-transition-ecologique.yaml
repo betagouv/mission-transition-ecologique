@@ -70,6 +70,12 @@ conditions d'éligibilité:
     - Tous secteurs d'activité hors activités libérales et agricoles
   nombre d'années d'activité:
     - Au moins 1 an d'activité
+  autres critères d'éligibilité:
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -82,7 +88,6 @@ publicodes:
       - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-      - effectif >= 1
       - effectif <= 249
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
