@@ -1,3 +1,3 @@
-// communes source : https://geo.api.gouv.fr/communes?fields=codesPostaux,nom,region,departement
-export { default as communes } from './communes.json'
+// COG2023 on regionMapping
+export { default as regionMapping } from './regionMapping.json'
 export { default as nafMapping } from './nafMapping.json'
