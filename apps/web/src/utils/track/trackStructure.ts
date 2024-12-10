@@ -1,6 +1,6 @@
 import { workforce } from '@/questionnaire/trackStructureWorkforce'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { LegalCategory, StructureSize, TrackId, CompanyLocalisationType, TrackOptionItem, TrackOptionsUnion } from '@/types'
+import { LegalCategory, StructureSize, TrackId, TrackOptionItem, TrackOptionsUnion, CompanyLocalisationType } from '@/types'
 import Format from '@/utils/format'
 import { sectors } from '@/questionnaire/trackStructureSectors'
 import { CompanyDataStorage } from '../storage'

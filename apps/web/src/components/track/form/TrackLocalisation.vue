@@ -55,7 +55,7 @@
 </template>
 <script lang="ts" setup>
 import { type TrackOptionsInput, ConvertedCommune, CompanyLocalisationType } from '@/types'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorage } from '@/utils/storage/companyDataStorage'
 import { useDebounce } from '@vueuse/core'
 import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'

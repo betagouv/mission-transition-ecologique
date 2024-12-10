@@ -37,7 +37,7 @@ import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, Com
 import Breakpoint from '@/utils/breakpoints'
 import Navigation from '@/utils/navigation'
 import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorage } from '@/utils/storage/companyDataStorage'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]

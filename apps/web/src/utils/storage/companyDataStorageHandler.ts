@@ -13,7 +13,7 @@ import {
   TrackId,
   type TrackOptionsUnion
 } from '@/types'
-import { CompanyDataType } from '@/types/companyDataType'
+import { CompanyDataType, CompanyLocalisationType } from '@/types/companyDataType'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 
 export class CompanyDataStorageHandler {
@@ -38,7 +38,7 @@ export class CompanyDataStorageHandler {
   }
 
   static populateQuestionnaireData(questionnaireData: { [k: string]: any }) {
-    if (CompanyDataStorage.isDataFull().value) {
+    if (CompanyDataStorage.hasData().value) {
       const companyData: CompanyDataType = CompanyDataStorage.getData().value
       Object.entries(companyData).forEach(([key, value]) => {
         if (value !== null) {
@@ -107,11 +107,11 @@ export class CompanyDataStorageHandler {
       CompanyDataStorage.setCompanyData({ ...CompanyDataStorage.getCompanyData(), secteur: value as Sector } as ManualCompanyData)
     }
 
-    if (trackId === TrackId.StructureRegion) {
+    if (trackId === TrackId.StructureCity) {
       CompanyDataStorage.setCompanyData({
         ...CompanyDataStorage.getCompanyData(),
-        region: value,
-        denomination: `Entreprise : ${CompanyDataStorage.getCompanyData()?.secteur} - ${value}`
+        ...(selectedOptions[0].questionnaireData as CompanyLocalisationType),
+        denomination: `Entreprise : ${CompanyDataStorage.getCompanyData()?.secteur} - ${(selectedOptions[0].questionnaireData as CompanyLocalisationType).region}`
       } as ManualCompanyData)
     }
   }

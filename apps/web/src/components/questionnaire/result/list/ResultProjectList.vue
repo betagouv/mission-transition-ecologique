@@ -98,7 +98,7 @@ interface ProjectListProps {
 const props = defineProps<ProjectListProps>()
 const otherProjectForm = ref<boolean>(false)
 
-const hasRegisteredData = CompanyDataStorage.isDataFull()
+const hasRegisteredData = CompanyDataStorage.hasData()
 
 const openModal = () => {
   Navigation.toggleRegisterModal()
