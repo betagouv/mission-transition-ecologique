@@ -70,7 +70,7 @@
 import { RegisterDetailLocalisation, ConvertedCommune, CompanyLocalisationType } from '@/types'
 import LocalisationApi from '@/service/api/localisationApi'
 import { onClickOutside } from '@vueuse/core'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorage } from '@/utils/storage/companyDataStorage'
 import { useDebounce } from '@vueuse/core'
 
 interface Props {
