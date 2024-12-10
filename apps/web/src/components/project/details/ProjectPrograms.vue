@@ -82,12 +82,12 @@ const props = defineProps<Props>()
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
-const teeProjectFormContainer = useTemplateRef('teeProjectFormContainer')
+const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormContainer')
 
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const hasRegisteredData = CompanyDataStorage.hasData()
+const hasRegisteredData = CompanyDataStorage.isDataFull()
 const registeredData = CompanyDataStorage.getData()
 
 const countFilteredPrograms = computed(() => {
