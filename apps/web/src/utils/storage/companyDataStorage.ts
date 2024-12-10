@@ -22,7 +22,6 @@ export class CompanyDataStorage {
     [CompanyDataStorageKey.Size]: this.getSize()
   })
 
-
   private static readonly _hasData: ComputedRef<boolean> = computed(() => {
     return this._data.value[CompanyDataStorageKey.Company] !== null && this._data.value[CompanyDataStorageKey.Size] !== null
   })
