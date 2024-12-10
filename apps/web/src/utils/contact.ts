@@ -26,8 +26,4 @@ export default class Contact {
     }
     return url
   }
-
-  static get iframeSrc() {
-    return `https://conseillers-entreprises.service-public.fr/aide-entreprise/france-transition-ecologique/theme/environnement-transition-ecologique`
-  }
 }

@@ -6,6 +6,7 @@
     <DsfrInput
       v-model="model"
       class="fr-bg--white"
+      :teste2e-selector="`${fieldKey}-${field.type}`"
       :type="field.type"
       label-visible
       :is-valid="field.isValid"
@@ -47,6 +48,7 @@ import { StringFieldUnionType } from '@/types'
 
 interface Props {
   field: StringFieldUnionType
+  fieldKey: string
   publicPath: string
   getErrorMessage: () => string
   getValidMessage: () => string

@@ -1,0 +1,65 @@
+titre: Investissements d'économies d'énergie
+promesse: Financez vos investissements d'économies d'énergie
+description: >-
+  Commerçant, artisan, vous avez un projet d’investissement pour réduire votre
+  consommation d’énergie ? La Région Centre-Val de Loire accompagne les petites
+  entreprises de proximité afin de surmonter la crise énergétique. Cette aide
+  finance jusqu’à 50 % de vos investissements liés à des économies d’énergie :
+  renouvellement de matériels vétustes et énergivores, remplacement des
+  éclairages par des LED, rénovation du système de chauffage, etc. Ces actions
+  constituent des leviers essentiels pour engager votre entreprise dans la
+  transition énergétique, réduire immédiatement vos dépenses énergétiques et
+  garantir votre rentabilité sur le long terme.
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Centre-Val de Loire
+url: >-
+  https://www.centre-valdeloire.fr/le-guide-des-aides-de-la-region-centre-val-de-loire/une-aide-pour-depasser-la-crise-energetique
+nature de l'aide: financement
+montant du financement: Jusqu'à 50% des dépenses éligibles, dans un maximum de 20 000 €
+objectifs:
+  - description: >-
+      Prenez contact avec un conseiller de la Région afin de vous accompagner
+      dans votre démarche et obtenir les documents à compléter pour déposer
+      votre demande.
+    liens:
+      - lien: >-
+          https://www.centre-valdeloire.fr/le-guide-des-aides-de-la-region-centre-val-de-loire/une-aide-pour-depasser-la-crise-energetique
+        texte: Contacts des services de proximité de la Région
+  - description: >-
+      Déposez votre demande, elle sera examinée, et vous recevrez votre aide
+      sous un délai de 2 mois.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Centre-Val de Loire
+  secteur d'activité:
+    - Entreprises de proximité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Votre projet d'investissement doit dépasser 10 000 € HT. Si le montant est
+      inférieur, rapprochez-vous de l’agglomération, de la communauté de
+      communes ou de la métropole dont dépend votre établissement.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Centre-Val de Loire

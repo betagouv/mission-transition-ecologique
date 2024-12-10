@@ -1,0 +1,157 @@
+titre: Prêt Energie AURA
+promesse: >-
+  Financez votre projet de transition écologique grâce à un prêt à taux
+  préférentiel
+description: >-
+  Vous avez un projet visant à réduire votre consommation énergétique ou
+  l'impact environnemental de votre entreprise ? Le prêt énergie AURA permet de
+  financer, à taux préférentiel, les investissements matériels et immatériels
+  dans les champs suivants : 
+
+  - l’amélioration de la performance (énergie, eau, matière),
+
+  - l'optimisation des procédés,
+
+  - la mobilité “zéro carbone” pour les salariés, les marchandises et les
+  produits,
+
+  - la création de services et produits permettant de réduire la consommation de
+  ressources,
+
+  - l'intégration d'énergies renouvelables.
+description longue: >-
+  L'aide régionale prend la forme d'un prêt à taux préférentiel octroyé à des
+  conditions plus favorables que les conditions du marché. Ce prêt intervient en
+  qualité de produit de "cofinancement", en complément des financements octroyés
+  par les banques. 
+
+
+  Sont éligibles, les investissements visant à : 
+   • Optimiser les procédés, ou améliorer la performance (énergie, eau, matière) afin de mieux maîtriser ou de diminuer les impacts sur l’environnement, y compris des procédés d’économie circulaire,
+   • Favoriser la mobilité “zéro carbone” pour les salariés, les marchandises et les produits,
+   • Innover pour mettre sur le marché des produits ou des services en matière de protection de l’environnement, d’économie circulaire et/ou permettant une réduction de la consommation de ressources, renouvelables ou non (énergie, matières premières, eau, l’allongement de la durée de vie des produits, l’intégration de recyclé, la recyclabilité, la réutilisation ou le réemploi),
+   • Favoriser un mix énergétique plus vertueux en intégrant davantage d’énergies renouvelables.
+fin de validité: 31/12/2025
+illustration: images/TEE_eolienne.png
+opérateur de contact: Région Auvergne-Rhône-Alpes
+autres opérateurs:
+  - Bpifrance
+url: https://pretregion.auvergnerhonealpes.fr/
+nature de l'aide: prêt
+montant du prêt: De 50 000 € à 500 000 €
+durée du prêt: De 5 à 7 ans (dont 2 ans maximum de différé)
+activable en autonomie: oui
+objectifs:
+  - description: Vérifiez les modalités du prêt.
+    liens:
+      - lien: https://pretregion.auvergnerhonealpes.fr/
+        texte: Détail des modalités.
+  - description: >-
+      Réalisez un diagnostic énergétique ou environnemental et obtenez un plan
+      d'action qui sera à transmettre à votre dossier de candidature. Les
+      livrables fournis par le prestataire du diagnostic seront à joindre au
+      dossier.\
+    liens:
+      - lien: >-
+          https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/diag-ecoconception
+        texte: Le diag Écoconception
+      - lien: >-
+          https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/diag-perf-immo
+        texte: Le diag Perf’immo
+      - lien: >-
+          https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/diag-eco-flux
+        texte: Le diag Éco-Flux
+      - lien: >-
+          https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/tpe-gagnantes-sur-tous-les-couts
+        texte: TPE gagnantes
+      - lien: >-
+          https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/performa-environnement
+        texte: Performa environnement
+      - lien: >-
+          https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/visite-energie-cci
+        texte: Parcours énergie
+      - lien: >-
+          https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/diagnostic-rse
+        texte: Le diagnostic RSE
+  - description: Réalisez votre demande de prêt sur Bpifrance.
+    liens:
+      - lien: >-
+          https://moncompte.bpifrance.fr/redirect?goto=https%3A%2F%2Fmoncompte.bpifrance.fr%3A443%2Fam%2Foauth2%2Frealms%2Froot%2Frealms%2Fmcb%2Fauthorize%3Fresponse_type%3Dcode%26client_id%3Dbrc-spa%26state%3DMkVYaU5USy5MMFJ3VG9sMXd2aTBRZEYtODF-MVhPRTN0UlBwNHlpWmN6RUxS%3B%25252Fsubscribe%25252Fpret-region-energie%26redirect_uri%3Dhttps%3A%2F%2Fapp.bel.bpifrance.fr%2Fsso%2Fcode%26scope%3Dopenid%2520profile%2520email%2520legacy%26code_challenge%3Do1THDwIDenxkz1TUnHkYc2IalSP8nsEOGx42EnDuh7w%26code_challenge_method%3DS256%26nonce%3DMkVYaU5USy5MMFJ3VG9sMXd2aTBRZEYtODF-MVhPRTN0UlBwNHlpWmN6RUxS%26acr%3Dloginsimple%26acr_sig%3DJ6B0YilXw7c0mzIfpmdrR4jbyqImxo29RrztwfEvSLs&realm=/mcb&service=LoginSimple
+        texte: Faire ma demande de prêt
+  - description: Si votre demande est acceptée, signez le contrat de prêt.
+  - description: Recevez les fonds et réalisez vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 250 salariés
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Tous secteurs d'activité
+    - >-
+      Sont exclus les entreprises d'intermédiation financière, les SCI, exerçant
+      des activités auxiliaires de services financiers et d'assurances, de
+      promotion et de location immobilière et les entreprises ayant un code NAF
+      section A01, A02, A03 et code NAF 4638A.
+  nombre d'années d'activité:
+    - >-
+      Au moins 3 ans d'activité ou deux bilans couvrant une durée minimum de 24
+      mois
+  autres critères d'éligibilité:
+    - >-
+      Disposer d'un emprunt bancaire d'une durée de remboursement supérieure à 3
+      ans, pour mettre en place le cofinancement du prêt.
+    - "Être une entreprise financièrement saine et à jour de vos\_obligations fiscales et sociales."
+    - >-
+      Cette aide est éligible au régime de minimis (Cumul d’aides publiques
+      inférieur à 300 000 € sur les 3 dernières années).
+    - >-
+      Ne pas avoir bénéficié de plus de 200 000 € d’aide publique relevant du
+      règlement de minimis sur les 3 dernières années.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - questionnaire . parcours = objectif précis
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif >= 2
+      - effectif <= 249
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur

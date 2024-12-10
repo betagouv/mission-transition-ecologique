@@ -4,15 +4,23 @@
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div class="fr-grid-row fr-grid-row--center">
-          <div class="fr-col-2 fr-col-hidden fr-col-unhidden-md">
+          <div
+            v-if="!navigationStore.hasSpinner"
+            class="fr-col-2 fr-col-hidden fr-col-unhidden-md"
+          >
             <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
               <div class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w">Filtres</div>
               <ProgramFiltersAccordion />
             </div>
           </div>
-          <div class="fr-col-12 fr-col-md-10 fr-pl-md-2v fr-pr-md-6v">
+          <div
+            class="fr-col-12 fr-col-md-10 fr-pl-md-2v fr-pr-md-6v"
+            :class="{
+              'fr-col-offset-md-2': navigationStore.hasSpinner
+            }"
+          >
             <TeeSpinner
-              v-if="hasSpinner"
+              v-if="navigationStore.hasSpinner"
               class="fr-mt-16w"
             />
             <TeeListNoResults
@@ -22,7 +30,7 @@
               :count-items="countPrograms"
             />
             <TeeNoResult
-              v-if="!hasRegisteredData && !hasSpinner"
+              v-if="!hasRegisteredData && !navigationStore.hasSpinner"
               :message="Translation.t('results.alertNoDataNoResults')"
               :cta-label="Translation.t('results.noResultCTA')"
               @cta-click="openModal"
@@ -45,6 +53,7 @@ import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFi
 import Translation from '@/utils/translation'
 import Navigation from '@/utils/navigation'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { useNavigationStore } from '@/stores/navigation'
 
 interface ProgramListProps {
   filteredPrograms?: ProgramData[]
@@ -52,16 +61,13 @@ interface ProgramListProps {
 }
 
 const hasRegisteredData = CompanyDataStorage.hasData()
+const navigationStore = useNavigationStore()
 
 const props = defineProps<ProgramListProps>()
 
 const openModal = () => {
   Navigation.toggleRegisterModal()
 }
-
-const hasSpinner = computed(() => {
-  return !countPrograms.value && !props.hasError
-})
 
 const countPrograms = computed(() => {
   return props.filteredPrograms?.length || 0

@@ -59,7 +59,7 @@ objectifs:
       rénovation engagées.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - TPE et PME
+    - Moins de 250 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
