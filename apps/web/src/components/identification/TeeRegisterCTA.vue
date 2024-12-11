@@ -59,7 +59,7 @@
 <script setup lang="ts">
 import { CompanyDataStorageKey } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorage } from '@/utils/storage'
 import Translation from '@/utils/translation'
 import Navigation from '@/utils/navigation'
 

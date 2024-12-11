@@ -1233,15 +1233,15 @@
     background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
-.fr-badge.fr-badge--info {
-  color: #001891;
-}
-
 .fr-bg--none {
   background-image: none !important;
 }
 .fr-bg--none:hover {
   background-color: transparent !important;
+}
+
+.fr-badge.fr-badge--info {
+  color: #001891;
 }
 
 .fr-banner {
@@ -2634,12 +2634,6 @@
   display: none;
 }
 
-.fr-input {
-  outline-offset: unset;
-  outline-width: unset;
-  outline-color: unset;
-  outline-style: none;
-}
 .fr-input--white {
   background-color: #fff;
 }
@@ -2648,6 +2642,14 @@
   outline-width: unset;
   outline-color: unset;
   outline-style: none;
+}
+.fr-input::placeholder {
+  font-style: normal !important;
+  color: var(--text-default-grey);
+}
+
+.fr-input--empty-text {
+  height: 1.25rem;
 }
 
 @media (min-width: 0) {
@@ -4092,11 +4094,15 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   }
 }
 
+.fr-select-group {
+  margin-bottom: 0 !important;
+}
 .fr-select-group select {
   background-color: #fff;
 }
 
 .fr-select {
+  margin-top: 0 !important;
   background-color: #fff;
 }
 
@@ -4216,7 +4222,7 @@ a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=
   line-height: 3.75rem;
 }
 .fr-text--decoration-underline {
-  text-decoration: none;
+  text-decoration: underline;
 }
 .fr-text--decoration-none {
   text-decoration: none;

@@ -1,11 +1,24 @@
 import { workforce } from '@/questionnaire/trackStructureWorkforce'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { LegalCategory, StructureSize, TrackId } from '@/types'
+import { CompanyActivityType, LegalCategory, StructureSize, TrackId, TrackOptionItem, TrackOptionsUnion } from '@/types'
 import Format from '@/utils/format'
-import { sectors } from '@/questionnaire/trackStructureSectors'
-import CompanyDataStorage from '../storage/companyDataStorage'
+import { CompanyDataStorage } from '../storage'
+import EstablishmentApi from '@/service/api/establishmentApi'
 
 export default class TrackStructure {
+  static async searchActivity(query: string) {
+    const establishmentApi = new EstablishmentApi()
+    return await establishmentApi.searchActivities(query)
+  }
+  static createData(option: TrackOptionsUnion, value?: string, questionnaireData?: CompanyActivityType): TrackOptionItem {
+    return {
+      option: {
+        ...option,
+        value: value,
+        questionnaireData: questionnaireData || option.questionnaireData
+      } as TrackOptionsUnion
+    }
+  }
   static getEligibilityCriteria() {
     const criteria = []
     if (this.getSizeTitle() !== '') {
@@ -17,7 +30,7 @@ export default class TrackStructure {
     if (this.getSector()) {
       criteria.push({
         icon: 'fr-icon-check-line',
-        text: Format.capitalize(Format.truncate(TrackStructure.getSectorShortLabel(), 30))
+        text: Format.capitalize(Format.truncate(TrackStructure.getSector(), 30))
       })
     }
     if (this.getLocalisation()) {
@@ -53,10 +66,6 @@ export default class TrackStructure {
 
   static getSector(): string {
     return CompanyDataStorage.getCompanyData()?.secteur || ''
-  }
-
-  static getSectorShortLabel(): string {
-    return sectors.options?.find((option) => option.value === this.getSector())?.shortLabel?.fr || this.getSector()
   }
 
   static getSize(): StructureSize {

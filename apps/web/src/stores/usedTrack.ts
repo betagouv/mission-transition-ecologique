@@ -21,9 +21,8 @@ import { remapItem } from '@/utils/helpers'
 import Translation from '@/utils/translation'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
-import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import TrackSiret from '@/utils/track/TrackSiret'
+import { CompanyDataStorage, CompanyDataStorageHandler } from '@/utils/storage'
 
 export const useUsedTrackStore = defineStore('usedTrack', () => {
   const current = ref<UsedTrack | undefined>()

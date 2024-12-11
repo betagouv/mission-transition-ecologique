@@ -24,11 +24,11 @@
 import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'
 import UsedTrack from '@/utils/track/usedTrack'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorage } from '@/utils/storage'
 
 const resume: string = Translation.t('programResults.resume', {
   effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyDataStorage.getSize() ?? '')),
-  secteur: TrackStructure.getSectorShortLabel() ?? CompanyDataStorage.getCompanyData()?.secteur ?? '',
+  secteur: TrackStructure.getSector() ?? CompanyDataStorage.getCompanyData()?.secteur ?? '',
   region: TrackStructure.getRegion() ?? CompanyDataStorage.getCompanyData()?.region ?? ''
 })
 const isSpecificGoal = UsedTrack.isSpecificGoal()

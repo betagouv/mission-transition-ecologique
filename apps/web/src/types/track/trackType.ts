@@ -51,6 +51,7 @@ export enum TrackComponent {
   Buttons = 'buttons',
   SimpleButtons = 'simpleButtons',
   Form = 'form',
+  Activity = 'activity',
   Input = 'input',
   Siret = 'siret',
   Select = 'select',
