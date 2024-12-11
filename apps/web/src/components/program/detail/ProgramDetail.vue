@@ -189,6 +189,7 @@
         </div>
         <ProgramAccordion
           v-if="program && program['conditions d\'éligibilité']"
+          id="eligibilite"
           :accordion-id="`${program.id}-eligibility`"
           :title="Translation.t('program.programAmIEligible')"
         >
