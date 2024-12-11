@@ -84,8 +84,6 @@
     "watch": true,
     "watchEffect": true,
     "watchPostEffect": true,
-    "watchSyncEffect": true,
-    "OhVueIcon": true,
-    "addIcons": true
+    "watchSyncEffect": true
   }
 }

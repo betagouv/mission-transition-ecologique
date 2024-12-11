@@ -1,8 +1,9 @@
 import { communes } from '@tee/data/references'
 import { ConvertedCommune, Commune } from '@tee/common'
 import { normalizeString } from '../../../common/string'
+import { GeoSearch } from '../../domain/spi'
 
-export class Localisation {
+export class Localisation implements GeoSearch {
   private _cities: Commune[]
   private _citiesByPostalCode: ConvertedCommune[]
 

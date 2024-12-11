@@ -21,7 +21,8 @@ export class GeoSearchController extends Controller {
     if (results.isOk) {
       return results.value
     } else {
-      Monitor.error('Error in searchCities')
+      const err = results.error
+      Monitor.error('Error in searchCities', { searchTerm, error: err })
       return requestFailedResponse(500, { message: 'Failed to fetch search results.' })
     }
   }
