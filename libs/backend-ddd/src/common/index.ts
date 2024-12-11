@@ -3,3 +3,4 @@ export { default as ServiceNotFoundError } from './domain/api/serviceNotFoundErr
 export { ensureError } from './domain/error/errors'
 export { default as Monitor } from './domain/monitoring/monitor'
 export * from './naf1'
+export * from './string'
