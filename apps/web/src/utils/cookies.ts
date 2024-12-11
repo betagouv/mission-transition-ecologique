@@ -26,6 +26,18 @@ export default class Cookie {
     }
   }
 
+  static getCookieStatus(key: string): boolean {
+    const cookies = document.cookie
+    const cookiesArray = cookies.split('; ')
+
+    for (const cookie of cookiesArray) {
+      const [cookieKey, cookieValue] = cookie.split('=')
+      if (cookieKey === key) {
+        return decodeURIComponent(cookieValue).toLowerCase() === 'true'
+      }
+    }
+    return false
+  }
   static getCookies(): Cookies {
     const cookiesStatus = document.cookie.split(';').reduce<Record<string, boolean>>((acc, cookie) => {
       const [key, value] = cookie.trim().split('=')
@@ -42,32 +54,25 @@ export default class Cookie {
       }
     }
   }
-  static hasChanged(newCookies: Cookies | undefined) {
-    let hasChanged = false
-    if (Cookie.cookies.value && newCookies) {
-      const cookieNames = Object.keys(newCookies)
-      for (const name of cookieNames as CookieValue[]) {
-        if (Cookie.cookies.value[name].accepted !== newCookies[name].accepted) {
-          hasChanged = true
-          break
-        }
-      }
-    }
-    return hasChanged
+  static hasCookieChanged(cookie: CookieManager): boolean {
+    return !this.areCookiesSet() || this.getCookieStatus(cookie.value) !== cookie.accepted
   }
+
   static saveCookies(newCookies: Cookies) {
     if (Cookie.cookies.value) {
       Object.values(newCookies).forEach((cookie: CookieManager) => {
-        document.cookie = `${cookie.value}=${cookie.accepted}; path=/`
-        if (cookie.accepted) {
-          Cookie.activateCookie(cookie.value)
-        } else {
-          Cookie.deactivateCookie(cookie.value)
+        if (this.hasCookieChanged(cookie)) {
+          document.cookie = `${cookie.value}=${cookie.accepted}; path=/`
+          if (cookie.accepted) {
+            Cookie.activateCookie(cookie.value)
+          } else {
+            Cookie.deactivateCookie(cookie.value)
+          }
         }
       })
       document.cookie = 'tee-accept-cookies=true; path=/'
-      window.location.reload()
     }
+    this.setCookies()
   }
 
   static acceptAllCookies() {
@@ -103,6 +108,7 @@ export default class Cookie {
       Cookie.saveCookies(Cookie.cookies.value)
     }
   }
+
   static refuseCookie(cookieValue: CookieValue) {
     if (Cookie.cookies.value) {
       Cookie.cookies.value[cookieValue].accepted = false
@@ -118,6 +124,7 @@ export default class Cookie {
       }
     })
   }
+
   static areCookiesSet() {
     const match = document.cookie.match(new RegExp('(^| )tee-accept-cookies=([^;]+)'))
     const cookieValue = match && match[2]

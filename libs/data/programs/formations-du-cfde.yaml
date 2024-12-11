@@ -34,7 +34,7 @@ objectifs:
   - description: A l'issue du stage, recevez une attestation de formation personnalisée.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Toutes tailles
+    - Moins de 500 salariés
     - Éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer

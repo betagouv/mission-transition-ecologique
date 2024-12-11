@@ -45,7 +45,7 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
   switch (program.value?.eligibility) {
     case ProgramEligibilityType.PartiallyEligible:
       return {
-        hash: 'program-details-accordion-group',
+        hash: 'eligibilite',
         label: 'Voir les autres critères à respecter',
         labelMobile: 'Vérifier les critères'
       }
