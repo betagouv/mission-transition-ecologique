@@ -30,10 +30,7 @@ export default class CompanyDataStorage {
   public static hasSiret() {
     if (!this._data.value[CompanyDataStorageKey.Company]) return false
 
-    return (
-      Object.hasOwn(this._data.value[CompanyDataStorageKey.Company], 'siret') &&
-      (this._data.value[CompanyDataStorageKey.Company] as EstablishmentFront).siret !== null
-    )
+    return !!(this._data.value[CompanyDataStorageKey.Company] as EstablishmentFront)?.siret
   }
   public static hasSize() {
     return this._data.value[CompanyDataStorageKey.Size] !== null
