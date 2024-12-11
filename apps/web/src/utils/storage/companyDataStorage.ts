@@ -1,9 +1,20 @@
-import { CompanyDataStorageKey, CompanyDataType, EstablishmentFront } from '@/types'
+import {
+  CompanyDataStorageKey,
+  CompanyDataType,
+  ConvertedCommune,
+  ManualCompanyData,
+  RegisterDetails,
+  Sector,
+  CompanyLocalisationType,
+  Region,
+  EstablishmentFront
+} from '@/types'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
 import { StructureSize } from '@tee/common'
 import { ref, Ref } from 'vue'
+import { TypeValidator } from '@/utils/typeValidator'
 
-export default class CompanyDataStorage {
+export class CompanyDataStorage {
   private static readonly _storageHandler = new LocalStorageHandler()
 
   private static readonly _data: Ref<CompanyDataType> = ref({
@@ -11,7 +22,7 @@ export default class CompanyDataStorage {
     [CompanyDataStorageKey.Size]: this.getSize()
   })
 
-  private static readonly _isDataFull: ComputedRef<boolean> = computed(() => {
+  private static readonly _hasData: ComputedRef<boolean> = computed(() => {
     return this._data.value[CompanyDataStorageKey.Company] !== null && this._data.value[CompanyDataStorageKey.Size] !== null
   })
 
@@ -20,7 +31,37 @@ export default class CompanyDataStorage {
   }
 
   public static isDataFull() {
-    return this._isDataFull
+    if (this._data.value[CompanyDataStorageKey.Company] === null) return false
+
+    return this.isOfCompanyDataType(this._data.value[CompanyDataStorageKey.Company])
+      ? Object.values(this._data.value[CompanyDataStorageKey.Company] as object).every((value) => value !== null)
+      : false
+  }
+
+  public static isOfCompanyDataType(value: unknown): boolean {
+    const sampleEstablishmentFront: EstablishmentFront = {
+      siret: '',
+      codeNAF: '',
+      codeNAF1: '',
+      ville: '',
+      codePostal: '',
+      legalCategory: '',
+      region: '',
+      denomination: '',
+      secteur: '',
+      structure_size: undefined,
+      creationDate: ''
+    }
+
+    const sampleManualCompanyData: ManualCompanyData = {
+      ville: 'Brest',
+      region: Region.Bretagne,
+      codePostal: '29200',
+      secteur: Sector.Agriculture,
+      denomination: ''
+    }
+
+    return TypeValidator.isOfType(value, sampleEstablishmentFront) || TypeValidator.isOfType(value, sampleManualCompanyData)
   }
 
   public static hasCompanyData() {
@@ -30,7 +71,10 @@ export default class CompanyDataStorage {
   public static hasSiret() {
     if (!this._data.value[CompanyDataStorageKey.Company]) return false
 
-    return !!(this._data.value[CompanyDataStorageKey.Company] as EstablishmentFront)?.siret
+    return (
+      Object.hasOwn(this._data.value[CompanyDataStorageKey.Company], 'siret') &&
+      (this._data.value[CompanyDataStorageKey.Company] as EstablishmentFront).siret !== null
+    )
   }
   public static hasSize() {
     return this._data.value[CompanyDataStorageKey.Size] !== null
@@ -57,6 +101,14 @@ export default class CompanyDataStorage {
     return this._storageHandler.getItem(key)
   }
 
+  static convertLocalisation(geoInfos: ConvertedCommune): CompanyLocalisationType {
+    return {
+      region: geoInfos.region.nom as Region,
+      ville: geoInfos.nom,
+      codePostal: geoInfos.codePostal
+    }
+  }
+
   public static getCompanyData(): CompanyDataType[CompanyDataStorageKey.Company] | null {
     return (this.getItem(CompanyDataStorageKey.Company) as CompanyDataType[CompanyDataStorageKey.Company]) || null
   }
@@ -75,6 +127,24 @@ export default class CompanyDataStorage {
   public static removeItem(key: CompanyDataStorageKey): void {
     this._storageHandler.removeItem(key)
     this.updateData()
+  }
+
+  static getSiretBasedCompanyData(
+    company: CompanyDataType[CompanyDataStorageKey.Company],
+    profileData: RegisterDetails
+  ): CompanyDataType[CompanyDataStorageKey.Company] {
+    return {
+      ...company,
+      ...profileData.localisation.value
+    } as CompanyDataType[CompanyDataStorageKey.Company]
+  }
+
+  static getManualCompanyData(profileData: RegisterDetails): CompanyDataType[CompanyDataStorageKey.Company] {
+    return {
+      ...profileData.localisation.value,
+      secteur: profileData.activity.value,
+      denomination: `Entreprise : ${profileData.activity.value} - ${profileData.localisation.value?.codePostal}`
+    } as CompanyDataType[CompanyDataStorageKey.Company]
   }
 
   static updateData(): void {

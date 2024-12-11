@@ -1,17 +1,19 @@
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorage } from '@/utils/storage/companyDataStorage'
 import { useNavigationStore } from '@/stores/navigation'
 import {
   CompanyDataStorageKey,
   EstablishmentFront,
   LegalCategory,
+  ManualCompanyData,
   type QuestionnaireData,
   QuestionnaireRoute,
+  Sector,
   SiretValue,
   StructureSize,
   TrackId,
   type TrackOptionsUnion
 } from '@/types'
-import { CompanyDataType } from '@/types/companyDataType'
+import { CompanyDataType, CompanyLocalisationType } from '@/types/companyDataType'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 
 export class CompanyDataStorageHandler {
@@ -100,6 +102,18 @@ export class CompanyDataStorageHandler {
     if (trackId === TrackId.StructureWorkforce) {
       CompanyDataStorage.setSize(value as StructureSize)
     }
+
+    if (trackId === TrackId.Sectors) {
+      CompanyDataStorage.setCompanyData({ ...CompanyDataStorage.getCompanyData(), secteur: value as Sector } as ManualCompanyData)
+    }
+
+    if (trackId === TrackId.StructureCity) {
+      CompanyDataStorage.setCompanyData({
+        ...CompanyDataStorage.getCompanyData(),
+        ...(selectedOptions[0].questionnaireData as CompanyLocalisationType),
+        denomination: `Entreprise : ${CompanyDataStorage.getCompanyData()?.secteur} - ${(selectedOptions[0].questionnaireData as CompanyLocalisationType).region}`
+      } as ManualCompanyData)
+    }
   }
 
   static getTrackIdFromStorageKey(key: CompanyDataStorageKey): TrackId {
@@ -116,8 +130,10 @@ export class CompanyDataStorageHandler {
   }
 
   private static _getQuestionnaireGoal() {
-    const questionnaireChoice = useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected[0].value
-    return questionnaireChoice === QuestionnaireRoute.SpecificGoal ? TrackId.Goals : TrackId.BuildingProperty
+    if (useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected.length) {
+      const questionnaireChoice = useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected[0].value
+      return questionnaireChoice === QuestionnaireRoute.SpecificGoal ? TrackId.Goals : TrackId.BuildingProperty
+    }
   }
 
   private static _canAddSizeToStorage(size: StructureSize, questionnaireData: { [k: string]: any }, key: string) {
