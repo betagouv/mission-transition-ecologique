@@ -11,7 +11,7 @@ export const sectors: Track = {
     component: TrackComponent.Activity
   },
   behavior: {
-    multipleChoices: true
+    multipleChoices: false
   },
   options: [
     {
