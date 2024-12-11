@@ -11,7 +11,7 @@ export const sectors: Track = {
     component: TrackComponent.Activity
   },
   behavior: {
-    multipleChoices: false
+    multipleChoices: true
   },
   options: [
     {
@@ -22,7 +22,7 @@ export const sectors: Track = {
       questionnaireData: { codeNAF: '', codeNAF1: '', secteur: '' },
       title: { fr: 'ACTIVITE' },
       next: {
-        default: TrackId.StructureCity
+        default: TrackId.StructureRegion
       }
     }
   ]

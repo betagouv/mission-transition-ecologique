@@ -27,11 +27,11 @@ tests.forEach((singleTest) => {
           localStorage.setItem(
             'company',
             JSON.stringify({
-              denomination: 'Entreprise : tertiaire - Bretagne',
+              denomination: 'Entreprise : Aide par le travail - Bretagne',
               region: 'Bretagne',
-              ville: 'Brest',
-              codePostal: '29200',
-              secteur: 'tertiaire',
+              secteur: 'Aide par le travail',
+              codeNAF: '88.10C',
+              codeNAF1: 'Q'
             })
           )
         } else {

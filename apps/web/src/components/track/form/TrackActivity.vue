@@ -19,7 +19,7 @@
         <DsfrInput
           v-model="activityInput"
           name="manual-register-activity"
-          class="fr-input--white fr-input"
+          class="fr-input"
           type="search"
           :hint="option?.hint?.[Translation.lang]"
           @click="searchActivity"
@@ -37,7 +37,7 @@
     <div
       v-if="activityResults.length"
       id="activity-response"
-      class="fr-bg--white"
+      class="fr-bg--white fr-mt-n3w"
     >
       <div
         v-for="activity in activityResults"
@@ -80,9 +80,7 @@ watch(debouncedActivityInput, () => {
 })
 
 const errorMsg = computed<string>(() => {
-  if (!debouncedActivityInput.value && !isLoading.value) {
-    return "La sélection de votre secteur d'activité est nécessaire"
-  } else if (activityResults.value.length === 0 && debouncedActivityInput.value && !isLoading.value) {
+  if (activityResults.value.length === 0 && debouncedActivityInput.value && !isLoading.value) {
     return "Aucun secteur d'activité n'a été trouvé."
   }
   return ''
