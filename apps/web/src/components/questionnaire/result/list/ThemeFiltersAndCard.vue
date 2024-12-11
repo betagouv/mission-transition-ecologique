@@ -18,7 +18,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ThemeId } from '@/types'
+import { FilterItemKeys, ThemeId } from '@/types'
 import { computed } from 'vue'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
@@ -35,7 +35,7 @@ const theme = computed(() => {
   }
 
   if (programStore.hasThemeTypeSelected()) {
-    return programStore.programFilters.themeTypeSelected
+    return programStore.programFilters[FilterItemKeys.themeType]
   }
 
   return ''

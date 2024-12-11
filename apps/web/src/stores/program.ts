@@ -7,17 +7,27 @@ import ProgramFilter from '@/utils/program/programFilter'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import { type programFiltersType, ProgramAidType, ThemeId, Region, type ProgramData, QuestionnaireData, OperatorFilter } from '@/types'
+import {
+  type programFiltersType,
+  ProgramAidType,
+  ThemeId,
+  Region,
+  type ProgramData,
+  QuestionnaireData,
+  OperatorFilter,
+  FilterItemKeys
+} from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
   const currentProgram = ref<ProgramData>()
   const hasPrograms = ref<boolean>(false)
 
   const programFilters = ref<programFiltersType>({
-    programAidTypesSelected: [],
-    regionAidSelected: [],
-    operatorAidSelected: [],
-    themeTypeSelected: ''
+    [FilterItemKeys.typeAid]: [],
+    [FilterItemKeys.themeType]: '',
+    [FilterItemKeys.regionAid]: [],
+    [FilterItemKeys.operatorAid]: [],
+    [FilterItemKeys.companyData]: false
   })
 
   const programs = computed(async () => {
@@ -42,10 +52,11 @@ export const useProgramStore = defineStore('program', () => {
   function getProgramsByFilters(programs: ProgramData[]) {
     return programs.filter((program: ProgramData) => {
       return (
-        ProgramFilter.byAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
-        ProgramFilter.byTheme(program, programFilters.value.themeTypeSelected as ThemeId) &&
-        ProgramFilter.byOperator(program, programFilters.value.operatorAidSelected as OperatorFilter[]) &&
-        ProgramFilter.byRegion(program, programFilters.value.regionAidSelected as Region[])
+        ProgramFilter.byAidType(program, programFilters.value[FilterItemKeys.typeAid] as ProgramAidType[]) &&
+        ProgramFilter.byTheme(program, programFilters.value[FilterItemKeys.themeType] as ThemeId) &&
+        ProgramFilter.byOperator(program, programFilters.value[FilterItemKeys.operatorAid] as OperatorFilter[]) &&
+        ProgramFilter.byRegion(program, programFilters.value[FilterItemKeys.regionAid] as Region[]) &&
+        ProgramFilter.byCompanyData(program, programFilters.value[FilterItemKeys.companyData])
       )
     })
   }
@@ -77,23 +88,24 @@ export const useProgramStore = defineStore('program', () => {
   }
 
   function hasThemeTypeSelected() {
-    return programFilters.value.themeTypeSelected !== ''
+    return programFilters.value[FilterItemKeys.themeType] !== ''
   }
 
   function setThemeTypeSelected(themeType: string) {
-    programFilters.value.themeTypeSelected = themeType
+    programFilters.value[FilterItemKeys.themeType] = themeType
   }
 
   function getThemeTypeSelected() {
-    return programFilters.value.themeTypeSelected
+    return programFilters.value[FilterItemKeys.themeType]
   }
 
   function resetFilters() {
     programFilters.value = {
-      programAidTypesSelected: [],
-      themeTypeSelected: '',
-      regionAidSelected: [],
-      operatorAidSelected: []
+      [FilterItemKeys.typeAid]: [],
+      [FilterItemKeys.themeType]: '',
+      [FilterItemKeys.regionAid]: [],
+      [FilterItemKeys.operatorAid]: [],
+      [FilterItemKeys.companyData]: false
     }
   }
 
