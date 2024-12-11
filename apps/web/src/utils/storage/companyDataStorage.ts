@@ -1,9 +1,10 @@
-import { CompanyDataStorageKey, CompanyDataType, EstablishmentFront } from '@/types'
+import { CompanyDataStorageKey, CompanyDataType, EstablishmentFront, ManualCompanyData, Region, Sector } from '@/types'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
 import { StructureSize } from '@tee/common'
 import { ref, Ref } from 'vue'
+import { TypeValidator } from '@/utils/typeValidator'
 
-export default class CompanyDataStorage {
+export class CompanyDataStorage {
   private static readonly _storageHandler = new LocalStorageHandler()
 
   private static readonly _data: Ref<CompanyDataType> = ref({
@@ -11,7 +12,7 @@ export default class CompanyDataStorage {
     [CompanyDataStorageKey.Size]: this.getSize()
   })
 
-  private static readonly _isDataFull: ComputedRef<boolean> = computed(() => {
+  private static readonly _hasData: ComputedRef<boolean> = computed(() => {
     return this._data.value[CompanyDataStorageKey.Company] !== null && this._data.value[CompanyDataStorageKey.Size] !== null
   })
 
@@ -20,7 +21,35 @@ export default class CompanyDataStorage {
   }
 
   public static isDataFull() {
-    return this._isDataFull
+    if (this._data.value[CompanyDataStorageKey.Company] === null) return false
+
+    return this.isOfCompanyDataType(this._data.value[CompanyDataStorageKey.Company])
+      ? Object.values(this._data.value[CompanyDataStorageKey.Company] as object).every((value) => value !== null)
+      : false
+  }
+
+  public static isOfCompanyDataType(value: unknown): boolean {
+    const sampleEstablishmentFront: EstablishmentFront = {
+      siret: '',
+      codeNAF: '',
+      codeNAF1: '',
+      ville: '',
+      codePostal: '',
+      legalCategory: '',
+      region: '',
+      denomination: '',
+      secteur: '',
+      structure_size: undefined,
+      creationDate: ''
+    }
+
+    const sampleManualCompanyData: ManualCompanyData = {
+      region: Region.Bretagne,
+      secteur: Sector.Agriculture,
+      denomination: ''
+    }
+
+    return TypeValidator.isOfType(value, sampleEstablishmentFront) || TypeValidator.isOfType(value, sampleManualCompanyData)
   }
 
   public static hasCompanyData() {

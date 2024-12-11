@@ -88,7 +88,7 @@ import OtherProjectCta from '@/components/project/list/OtherProjectCta.vue'
 import OtherProjectForm from '@/components/project/list/OtherProjectForm.vue'
 import Translation from '@/utils/translation'
 import Navigation from '@/utils/navigation'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorage } from '@/utils/storage'
 import { useNavigationStore } from '@/stores/navigation'
 
 interface ProjectListProps {
@@ -135,7 +135,7 @@ const showNoResults = computed(() => {
 })
 
 const showOtherProjectForm = computed(() => {
-  return !showNoResults.value && hasRegisteredData.value && !useNavigationStore().hasSpinner
+  return !showNoResults.value && hasRegisteredData && !useNavigationStore().hasSpinner
 })
 
 const isSpecificGoal = computed(() => {
