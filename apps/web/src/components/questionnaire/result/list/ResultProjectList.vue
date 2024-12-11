@@ -135,7 +135,7 @@ const showNoResults = computed(() => {
 })
 
 const showOtherProjectForm = computed(() => {
-  return !showNoResults.value && hasRegisteredData.value && !useNavigationStore().hasSpinner
+  return !showNoResults.value && hasRegisteredData && !useNavigationStore().hasSpinner
 })
 
 const isSpecificGoal = computed(() => {
