@@ -1,5 +1,6 @@
 <template>
   <TeeContentBlock
+    v-if="hasRegisteredData || countFilteredPrograms"
     id="project-aids-title"
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
     title="💰 Mes aides"
@@ -87,7 +88,7 @@ const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormConta
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const hasRegisteredData = CompanyDataStorage.hasData()
+const hasRegisteredData = CompanyDataStorage.isDataFull()
 const registeredData = CompanyDataStorage.getData()
 
 const countFilteredPrograms = computed(() => {

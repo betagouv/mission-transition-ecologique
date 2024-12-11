@@ -61,7 +61,10 @@ const registeredData = CompanyDataStorage.getData()
 const companyName = computed<string | undefined>(() => {
   return registeredData.value[CompanyDataStorageKey.Company]?.denomination || ''
 })
-const hasData = CompanyDataStorage.hasData()
+const hasData = computed<boolean>(() => {
+  return !!registeredData.value[CompanyDataStorageKey.Company]
+})
+
 const isSmallScreen = computed(() => {
   return Breakpoint.isSmallScreen()
 })

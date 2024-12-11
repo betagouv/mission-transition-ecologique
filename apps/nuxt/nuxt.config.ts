@@ -50,6 +50,13 @@ export default defineNuxtConfig({
   ],
   vite: {
     plugins: [nxViteTsPaths()],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin']
+        }
+      }
+    }
   },
   components: [
     {
