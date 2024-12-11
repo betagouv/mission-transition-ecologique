@@ -49,6 +49,7 @@ input[type="search"] {
   &--loading {
     .search-button {
       width: 2.5rem;
+
       &::before {
         content: "";
         border: 2px solid setting.$blue-france;

@@ -24,7 +24,6 @@ export class CompanyDataStorage {
     return this._isDataFull
   }
 
-
   public static isOfCompanyDataType(value: unknown): boolean {
     const sampleEstablishmentFront: EstablishmentFront = {
       siret: '',
