@@ -30,10 +30,6 @@ export class CompanyDataStorage {
     return this._data
   }
 
-  public static hasData() {
-    return this._hasData
-  }
-
   public static isDataFull() {
     if (this._data.value[CompanyDataStorageKey.Company] === null) return false
 
