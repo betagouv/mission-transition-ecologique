@@ -1,7 +1,7 @@
 <template>
   <ProgramHeader
     :program-id="programId"
-    :program="program"
+    :program="program as unknown as ProgramType"
     :project-slug="projectSlug"
   />
   <!-- ALERT - PROGRAM NOT AVAILABLE ANYMORE -->
@@ -147,7 +147,7 @@
               class="tee-no-hover"
               :title="Translation.t('program.programDuration')"
               :image-path="`${publicPath}images/TEE-duree.svg`"
-              :description="programDuration"
+              :description="`${programDuration}`"
             />
           </div>
           <div
@@ -158,7 +158,7 @@
               class="tee-no-hover"
               :title="Translation.t('program.programLoanDuration')"
               :image-path="`${publicPath}images/TEE-duree.svg`"
-              :description="programLoanDuration"
+              :description="`${programLoanDuration}`"
             />
           </div>
 
@@ -181,7 +181,7 @@
               :image-path="`${publicPath}images/TEE-date-fin.svg`"
               :description="
                 programEndValidity
-                  ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
+                  ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity as string })
                   : Translation.t('program.programAvailable')
               "
             />
@@ -246,7 +246,7 @@ import ProgramLongDescription from '@/components/program/detail/ProgramLongDescr
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import Config from '@/config'
 import { useProgramStore } from '@/stores/program'
-import { OpportunityType, ProgramEligibilityType, Project as ProjectType } from '@/types'
+import { OpportunityType, type ProgramType, ProgramEligibilityType, Project as ProjectType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import { MetaSeo } from '@/utils/metaSeo'
