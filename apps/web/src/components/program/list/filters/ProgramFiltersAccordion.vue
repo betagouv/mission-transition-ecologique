@@ -9,8 +9,20 @@
         :id="`accordion-${filter.id}`"
         :key="key"
         :class="[props.accordionClass, filter.accordionClass, companyDataFilterVisibilityClass(filter.id)]"
-        :title="`${filter.title} ${getFilterCountBadge(filter.id)}`"
+        :title="`${filter.title} ${getFilterCount(filter.id)}`"
       >
+        <template
+          v-if="filter.id !== FilterItemKeys.companyData"
+          #title
+        >
+          <span>{{ filter.title }}</span>
+          <span
+            v-if="getFilterCount(filter.id)"
+            class="fr-filter-count-badge fr-ml-2v"
+          >
+            {{ getFilterCount(filter.id) }}
+          </span>
+        </template>
         <component
           :is="filter.component"
           :class="filter.componentClass"
@@ -96,9 +108,9 @@ const canDisplayFilter = (filter: FilterItem) => {
   return typeof filter.display === 'boolean' ? filter.display : filter.display?.value
 }
 
-const getFilterCountBadge = (filterId: FilterItemKeys) => {
+const getFilterCount = (filterId: FilterItemKeys) => {
   if (filterId !== FilterItemKeys.companyData) {
-    return (programFilters[filterId] as string[]).length ? `(${(programFilters[filterId] as string[]).length})` : ''
+    return (programFilters[filterId] as string[]).length ? `${(programFilters[filterId] as string[]).length}` : ''
   }
 
   return ''
@@ -113,7 +125,18 @@ watch(
 )
 </script>
 <style lang="scss" scoped>
+@use '@/assets/scss/setting';
+
 :deep(#accordion-company-data) {
   padding: 0 0.25rem;
+}
+
+.fr-filter-count-badge {
+  background-color: setting.$blue-france;
+  color: white;
+  border-radius: 1rem;
+  padding: 0 0.35rem;
+  line-height: 1rem;
+  font-size: 0.6rem;
 }
 </style>
