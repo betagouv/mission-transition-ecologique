@@ -63,7 +63,7 @@ objectifs:
   - description: Recevez votre prêt et commencez vos investissements.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - TPE et PME
+    - Moins de 500 salariés
     - Éligible aux micro-entreprises
   secteur géographique:
     - Provence-Alpes-Côte d'Azur
@@ -89,7 +89,11 @@ publicodes:
   entreprise . est éligible:
     applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
+      - a un effectif éligible
       - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 499
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est I
