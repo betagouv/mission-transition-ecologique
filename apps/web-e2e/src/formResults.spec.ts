@@ -79,7 +79,7 @@ tests.forEach((singleTest) => {
             }
           } else if (fieldKey === 'needs') {
             const actualNeedsValue = await page.inputValue(selector)
-            expect(actualNeedsValue).toContain(singleTest.manual ? 'tertiaire' : 'Programmation informatique')
+            expect(actualNeedsValue).toContain(singleTest.manual ? 'Aide par le travail' : 'Programmation informatique')
           } else if (['text', 'email', 'tel'].includes(value.type)) {
             await page.locator(selector).fill(value.value as string, { timeout: 3000 })
           } else if (value.type === 'select' && singleTest.type === 'customProject') {

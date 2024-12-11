@@ -12,7 +12,7 @@
       </span>
       <div
         ref="activitySearchBar"
-        class="fr-search-bar fr-search-bar--yellow"
+        class="fr-search-bar"
         :class="isLoading ? 'fr-search-bar--loading' : ''"
         role="search"
       >
@@ -27,8 +27,7 @@
           @keyup.enter="searchActivity"
         />
         <DsfrButton
-          class="fr-bg--yellow search-button"
-          tertiary
+          class="fr-bg--blue-france search-button--white"
           no-outline
           @click="searchActivity"
         />

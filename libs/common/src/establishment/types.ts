@@ -23,7 +23,7 @@ export interface EstablishmentSearch {
 }
 
 export interface CompanyActivityType {
-  codeNAF: string | undefined
-  codeNAF1: string | undefined
-  secteur: string | undefined
+  codeNAF: string
+  codeNAF1: string
+  secteur: string
 }
