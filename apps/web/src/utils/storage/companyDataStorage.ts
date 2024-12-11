@@ -20,10 +20,6 @@ export class CompanyDataStorage {
     return this._data
   }
 
-  public static hasData() {
-    return this._hasData
-  }
-
   public static isDataFull() {
     if (this._data.value[CompanyDataStorageKey.Company] === null) return false
 
@@ -60,6 +56,11 @@ export class CompanyDataStorage {
     return this._data.value[CompanyDataStorageKey.Company] !== null
   }
 
+  public static hasSiret() {
+    if (!this._data.value[CompanyDataStorageKey.Company]) return false
+
+    return !!(this._data.value[CompanyDataStorageKey.Company] as EstablishmentFront)?.siret
+  }
   public static hasSize() {
     return this._data.value[CompanyDataStorageKey.Size] !== null
   }
