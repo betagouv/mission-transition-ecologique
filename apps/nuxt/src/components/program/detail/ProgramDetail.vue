@@ -189,6 +189,7 @@
         </div>
         <ProgramAccordion
           v-if="program && program['conditions d\'éligibilité']"
+          id="eligibilite"
           :accordion-id="`${program.id}-eligibility`"
           :title="Translation.t('program.programAmIEligible')"
         >
@@ -267,7 +268,7 @@ const teeProgramFormContainer = useTemplateRef<HTMLElement>('teeProgramFormConta
 
 const navigation = new Navigation()
 
-const hasRegisteredData = CompanyDataStorage.hasData()
+const hasRegisteredData = CompanyDataStorage.isDataFull()
 const registeredData = CompanyDataStorage.getData()
 
 interface Props {

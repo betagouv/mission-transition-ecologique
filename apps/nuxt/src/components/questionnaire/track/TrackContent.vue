@@ -219,7 +219,7 @@ const backToPreviousTrack = async () => {
 }
 
 watch(registeredData.value, async () => {
-  if (!CompanyDataStorage.hasData().value) {
+  if (!CompanyDataStorage.hasSiret()) {
     return
   }
 

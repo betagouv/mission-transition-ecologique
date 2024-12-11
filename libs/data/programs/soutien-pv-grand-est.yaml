@@ -1,0 +1,91 @@
+titre: Soutien au photovoltaïque en Grand Est
+promesse: Bénéficiez d'une aide régionale pour vos panneaux photovoltaïque
+description: >-
+  Vous avez un projet d'installation de panneaux photovoltaïques produisant de
+  l’électricité renouvelable en vue d’une autoconsommation individuelle ou
+  collective ? La Région Grand-Est apporte une aide aux études de structure
+  photovoltaïque, aux études de faisabilité ou agrivoltaïque. Cette subvention
+  peut également participer au financement de votre installation de panneaux
+  photovoltaïques.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Région Grand Est
+url: https://www.grandest.fr/vos-aides-regionales/soutien-au-photovoltaique/
+nature de l'aide: financement
+montant du financement: Variable selon projet
+objectifs:
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      la Région Grand Est.
+    liens:
+      - lien: >-
+          https://www.grandest.fr/vos-aides-regionales/soutien-au-photovoltaique/
+        texte: Conditions éligibilité et financement
+  - description: Créez votre compte sur la plateforme de la Région Grand-Est.
+    liens:
+      - lien: >-
+          https://messervices.grandest.fr/aides/#/crge/connecte/F_TEL0234/depot/simple
+        texte: Portail des demandes d'aides de la Région Grand-Est
+  - description: >-
+      Déposez ensuite votre demande en ligne. À ce stade, votre projet ne doit
+      pas avoir commencé !
+    liens:
+      - lien: >-
+          https://messervices.grandest.fr/aides/#/crge/connecte/F_TEL0078/depot/simple
+        texte: Déposer une demande de soutien PV
+  - description: >-
+      Votre dossier est étudié au regard des priorités régionales. Si votre
+      dossier est validé, commencez votre projet et recevez votre aide.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Grand Est
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Grand Est

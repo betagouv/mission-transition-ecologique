@@ -54,7 +54,7 @@ const project = ref<Project | undefined>(projectStore.currentProject)
 
 const isCatalogDetail = navigation.isCatalogProgramDetail()
 
-const hasRegisteredData = CompanyDataStorage.hasData()
+const hasRegisteredData = CompanyDataStorage.isDataFull()
 
 const routeToResults = {
   name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
