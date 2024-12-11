@@ -1,10 +1,10 @@
 <template>
   <div
     class="fr-py-2v"
-    :class="{ 'fr-bg--green--lightness': programFilters.companySelected }"
+    :class="{ 'fr-bg--green--lightness': programFilters[FilterItemKeys.companyData] }"
   >
     <DsfrCheckbox
-      v-model="programFilters.companySelected"
+      v-model="programFilters[FilterItemKeys.companyData]"
       :value="`selected-company-${companyName}`"
       small
       name="companyFilter"
@@ -17,7 +17,7 @@
       <div
         v-for="(detail, key) in filterData.details"
         :key="key"
-        :class="{ 'fr-text--grey': !programFilters.companySelected }"
+        :class="{ 'fr-text--grey': !programFilters[FilterItemKeys.companyData] }"
       >
         <div :class="detail.icon">
           <span class="fr-pl-1v">{{ detail.label }}</span>
@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { CompanyDataStorageKey, type programFiltersType } from '@/types'
+import { CompanyDataStorageKey, FilterItemKeys, type programFiltersType } from '@/types'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 type CompanyFilterProps = {
@@ -49,7 +49,7 @@ type CompanyFilterDetailProps = {
 const programFilters: programFiltersType = useProgramStore().programFilters
 
 const registeredData = CompanyDataStorage.getData()
-const hasRegisteredData = CompanyDataStorage.hasData()
+const hasRegisteredData = CompanyDataStorage.isDataFull()
 const companyName = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.denomination)
 const companySector = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.secteur)
 const companyRegion = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.region)
@@ -67,7 +67,7 @@ const filterData: CompanyFilterProps = {
 watch(
   hasRegisteredData,
   (value) => {
-    programFilters.companySelected = value
+    programFilters[FilterItemKeys.companyData] = value
   },
   { immediate: true }
 )

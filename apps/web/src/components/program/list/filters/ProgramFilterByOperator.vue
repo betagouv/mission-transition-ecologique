@@ -1,6 +1,6 @@
 <template>
   <DsfrCheckboxSet
-    v-model="programFilters.operatorAidSelected"
+    v-model="programFilters[FilterItemKeys.operatorAid]"
     small
     :options="programOperatorOptions"
   />
@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { DsfrCheckboxSetProps } from '@gouvminint/vue-dsfr'
-import { OperatorFilter, type programFiltersType } from '@/types'
+import { FilterItemKeys, OperatorFilter, type programFiltersType } from '@/types'
 
 import { enrichedOperators } from '@tee/data/static'
 

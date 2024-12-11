@@ -1,6 +1,6 @@
 <template>
   <DsfrCheckboxSet
-    v-model="programFilters.programAidTypesSelected"
+    v-model="programFilters[FilterItemKeys.typeAid]"
     small
     :options="programAidTypeOptions"
   />
@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { ProgramAidType, type programFiltersType } from '@/types'
+import { FilterItemKeys, ProgramAidType, type programFiltersType } from '@/types'
 import { DsfrCheckboxSetProps } from '@gouvminint/vue-dsfr'
 
 const programFilters: programFiltersType = useProgramStore().programFilters

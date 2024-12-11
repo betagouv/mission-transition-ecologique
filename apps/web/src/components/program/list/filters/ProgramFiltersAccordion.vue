@@ -9,7 +9,7 @@
         :id="`accordion-${filter.id}`"
         :key="key"
         :class="[props.accordionClass, filter.accordionClass, companyDataFilterVisibilityClass(filter.id)]"
-        :title="filter.title"
+        :title="`${filter.title} ${getFilterCountBadge(filter.id)}`"
       >
         <component
           :is="filter.component"
@@ -26,7 +26,7 @@ import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
 import ProgramFilterByOperator from './ProgramFilterByOperator.vue'
 import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
 import ProgramFilterByCompanyData from '@/components/program/list/filters/ProgramFilterByCompanyData.vue'
-import type { programFiltersType } from '@/types'
+import { FilterItemKeys, programFiltersType } from '@/types'
 import { useProgramStore } from '@/stores/program'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
@@ -45,16 +45,9 @@ interface FilterItem {
   display?: boolean | ComputedRef<boolean>
 }
 
-enum FilterItemKeys {
-  companyData = 'company-data',
-  typeAid = 'type-aid',
-  operatorAid = 'operator-aid',
-  regionAid = 'region-aid'
-}
-
 const programFilters: programFiltersType = useProgramStore().programFilters
 
-const companySelected = computed(() => programFilters.companySelected)
+const companySelected = computed(() => programFilters[FilterItemKeys.companyData])
 
 const activeAccordion = ref<number>()
 
@@ -64,7 +57,7 @@ const displayRegionFilter = computed(() => {
 
 const companyDataFilterVisibilityClass = (filterId: FilterItemKeys) => {
   if (filterId === FilterItemKeys.companyData) {
-    return CompanyDataStorage.hasData().value ? '' : 'fr-hidden'
+    return CompanyDataStorage.isDataFull().value ? '' : 'fr-hidden'
   }
 }
 
@@ -101,6 +94,14 @@ const filters: FilterItem[] = [
 
 const canDisplayFilter = (filter: FilterItem) => {
   return typeof filter.display === 'boolean' ? filter.display : filter.display?.value
+}
+
+const getFilterCountBadge = (filterId: FilterItemKeys) => {
+  if (filterId !== FilterItemKeys.companyData) {
+    return (programFilters[filterId] as string[]).length ? `(${(programFilters[filterId] as string[]).length})` : ''
+  }
+
+  return ''
 }
 
 watch(
