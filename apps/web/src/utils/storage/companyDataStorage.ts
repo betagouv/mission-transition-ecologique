@@ -12,7 +12,7 @@ export class CompanyDataStorage {
     [CompanyDataStorageKey.Size]: this.getSize()
   })
 
-  private static readonly _hasData: ComputedRef<boolean> = computed(() => {
+  private static readonly _isDataFull: ComputedRef<boolean> = computed(() => {
     return this._data.value[CompanyDataStorageKey.Company] !== null && this._data.value[CompanyDataStorageKey.Size] !== null
   })
 
@@ -20,17 +20,10 @@ export class CompanyDataStorage {
     return this._data
   }
 
-  public static hasData() {
-    return this._hasData
-  }
-
   public static isDataFull() {
-    if (this._data.value[CompanyDataStorageKey.Company] === null) return false
-
-    return this.isOfCompanyDataType(this._data.value[CompanyDataStorageKey.Company])
-      ? Object.values(this._data.value[CompanyDataStorageKey.Company] as object).every((value) => value !== null)
-      : false
+    return this._isDataFull
   }
+
 
   public static isOfCompanyDataType(value: unknown): boolean {
     const sampleEstablishmentFront: EstablishmentFront = {

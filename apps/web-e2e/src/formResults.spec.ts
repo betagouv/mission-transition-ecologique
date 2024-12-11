@@ -21,7 +21,7 @@ tests.forEach((singleTest) => {
         }
       })
       await page.goto(singleTest.url, { waitUntil: 'load' })
-      await page.waitForLoadState('networkidle');
+      await page.waitForLoadState('networkidle')
       await page.evaluate((singleTest) => {
         if (singleTest.manual) {
           localStorage.setItem(
@@ -105,5 +105,5 @@ tests.forEach((singleTest) => {
       console.error(`Test failed for Test ID: ${singleTest.id} - ${e.message}`)
       throw e
     }
-  });
+  })
 })
