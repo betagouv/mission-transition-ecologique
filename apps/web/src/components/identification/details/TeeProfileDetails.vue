@@ -33,10 +33,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType, EstablishmentFront } from '@/types'
 import Analytics from '@/utils/analytic/analytics'
 import Breakpoint from '@/utils/breakpoints'
 import Navigation from '@/utils/navigation'
+import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
 
 interface Props {
@@ -104,7 +105,13 @@ const saveProfile = () => {
     })
     CompanyDataStorageHandler.updateRouteFromStorage()
     if (!props.manual) {
-      Analytics.sendEvent('register_siret_modal', 'register_siret_modal', { secteur: company?.secteur, siret: profile.value.siret.value })
+      const companyData = CompanyDataStorage.getCompanyData() as EstablishmentFront
+      if (companyData) {
+        Analytics.sendEvent('register_siret_modal', 'register_siret_modal', {
+          secteur: companyData.secteur,
+          siret: companyData.siret
+        })
+      }
     }
     Navigation.toggleRegisterModal(false)
   } else {
