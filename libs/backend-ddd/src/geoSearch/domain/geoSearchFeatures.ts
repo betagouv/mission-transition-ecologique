@@ -2,10 +2,10 @@ import { GeoSearch } from './spi'
 import { ConvertedCommune } from '@tee/common'
 
 export class GeoSearchFeatures {
-  private geoSearchService: GeoSearch
+  private geoSearchRepository: GeoSearch
 
   constructor(geoSearchService: GeoSearch) {
-    this.geoSearchService = geoSearchService
+    this.geoSearchRepository = geoSearchService
   }
 
   /**
@@ -18,9 +18,9 @@ export class GeoSearchFeatures {
     // Automatically detect if the search term is a postal code (5 digits) or a name
     let results = []
     if (/^\d+$/.test(searchTerm)) {
-      results = this.geoSearchService.searchByCityCode(searchTerm)
+      results = this.geoSearchRepository.searchByCityCode(searchTerm)
     } else {
-      results = this.geoSearchService.searchByName(searchTerm)
+      results = this.geoSearchRepository.searchByName(searchTerm)
     }
     return results.sort((a: { nom: string }, b: { nom: string }) => a.nom.localeCompare(b.nom))
   }

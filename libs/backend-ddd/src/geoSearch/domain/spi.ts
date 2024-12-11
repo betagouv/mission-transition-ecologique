@@ -1,5 +1,3 @@
-// src/domain/geoSearch/spi.ts
-
 import { ConvertedCommune } from '@tee/common'
 
 export interface GeoSearch {

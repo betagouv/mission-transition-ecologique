@@ -41,7 +41,7 @@
       </div>
     </div>
     <div
-      v-if="localisationResults.length && !infos.value"
+      v-if="localisationResults.length && !infos.value && showResults"
       id="localisation-response"
       class="fr-bg--white"
     >
@@ -93,13 +93,14 @@ const updateModelValue = (value: string) => {
 const localisationResults = ref<ConvertedCommune[]>([])
 const isLoading = ref<boolean>(false)
 const localisationApi = new LocalisationApi()
-
+const showResults = ref<boolean>(false)
 const errorMsg = computed<string>(() => {
-  if (props.showError && !debouncedLocalisationInput.value && !isLoading.value) {
+  if (props.showError && !debouncedLocalisationInput.value && !isLoading.value && showResults.value) {
     return 'La sélection de la ville est nécessaire.'
   } else if (
     localisationResults.value.length === 0 &&
     debouncedLocalisationInput.value &&
+    showResults.value &&
     debouncedLocalisationInput.value.length >= 3 &&
     !isLoading.value
   ) {
@@ -115,6 +116,7 @@ const localisationLabel = computed<string>(() => {
   return `${props.infos.value?.codePostal} ${props.infos.value?.ville}`
 })
 const searchLocalisation = async () => {
+  showResults.value = true
   if (localisationInput.value && localisationInput.value.length >= 3) {
     isLoading.value = true
     const results = await localisationApi.searchCities(localisationInput.value)
@@ -133,6 +135,7 @@ const modifyLocalisation = () => {
   selectedLocalisation.value = undefined
   localisationInput.value = ''
   localisationResults.value = []
+  showResults.value = false
 }
 onClickOutside(localisationSearchBar, () => modifyLocalisation())
 </script>

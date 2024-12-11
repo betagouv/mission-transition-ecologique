@@ -6,10 +6,8 @@ import { Localisation } from '../infrastructure/json/localisation'
 
 export default class GeoSearchService {
   private geoSearchFeatures: GeoSearchFeatures
-  private localisation: Localisation
 
   constructor() {
-    this.localisation = new Localisation() // Initialisation unique de Localisation
     this.geoSearchFeatures = new GeoSearchFeatures(this._getGeoSearchRepository())
   }
 
@@ -27,9 +25,6 @@ export default class GeoSearchService {
   }
 
   private _getGeoSearchRepository(): GeoSearch {
-    return {
-      searchByName: this.localisation.searchByName.bind(this.localisation),
-      searchByCityCode: this.localisation.searchByCityCode.bind(this.localisation)
-    }
+    return new Localisation()
   }
 }

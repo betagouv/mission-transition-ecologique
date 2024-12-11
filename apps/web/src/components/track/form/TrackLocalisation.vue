@@ -12,7 +12,7 @@
       </span>
       <div
         ref="localisationSearchBar"
-        class="fr-search-bar fr-search-bar--yellow"
+        class="fr-search-bar"
         :class="isLoading ? 'fr-search-bar--loading' : ''"
         role="search"
       >
@@ -26,21 +26,21 @@
           @keyup.enter="searchLocalisation"
         />
         <DsfrButton
-          class="fr-bg--yellow search-button"
-          tertiary
+          class="search-button"
           no-outline
           @click="searchLocalisation"
         />
       </div>
     </DsfrInputGroup>
     <div
-      v-if="localisationResults.length"
+      v-if="localisationResults.length && showResults"
       id="track-localisation-response"
       class="fr-bg--white fr-mt-n3w"
     >
       <div
         v-for="localisation in localisationResults"
         :key="`resp-input-${localisation.nom}-${localisation.codePostal}`"
+        tabindex="0"
         class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
         @click="selectLocalisation(localisation)"
       >
@@ -83,10 +83,11 @@ const updateModelValue = (value: string) => {
 }
 const localisationResults = ref<ConvertedCommune[]>([])
 const isLoading = ref<boolean>(false)
-
+const showResults = ref<boolean>(true)
 const errorMsg = computed<string>(() => {
   if (
     localisationResults.value.length === 0 &&
+    showResults.value &&
     debouncedLocalisationInput.value &&
     debouncedLocalisationInput.value.length >= 3 &&
     !isLoading.value
@@ -101,6 +102,7 @@ const errorMsg = computed<string>(() => {
 const searchLocalisation = async () => {
   if (localisationInput.value && localisationInput.value.length >= 3) {
     isLoading.value = true
+    showResults.value = true
     const results = await TrackStructure.searchLocalisation(localisationInput.value)
     if (results.isOk) {
       localisationResults.value = results.value
@@ -114,12 +116,10 @@ const selectLocalisation = (localisation: ConvertedCommune) => {
   selectedLocalisation.value = CompanyDataStorage.convertLocalisation(localisation)
   emit('updateSelection', createData())
 }
-const resetSearch = () => {
-  selectedLocalisation.value = undefined
-  localisationInput.value = ''
-  localisationResults.value = []
+const hideResults = () => {
+  showResults.value = false
 }
-onClickOutside(localisationSearchBar, () => resetSearch())
+onClickOutside(localisationSearchBar, () => hideResults())
 
 function createData(): TrackOptionItem {
   return TrackStructure.createData(props.option, selectedLocalisation.value?.region, selectedLocalisation.value)
