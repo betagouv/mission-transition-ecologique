@@ -1,0 +1,141 @@
+titre: Écolabel européen
+promesse: >-
+  Valorisez la qualité environnementale des produits et services de votre
+  entreprise
+description: >-
+  Obtenez l'Écolabel européen, le seul label écologique public et officiel
+  européen permettant de valoriser des produits et services plus respectueux de
+  l’environnement tout en garantissant des performances identiques à celles des
+  produits et services analogues. Valorisez ainsi votre engagement auprès des
+  consommateurs et des acheteurs professionnels grâce à l’Écolabel européen qui
+  garantit un impact limité de vos produits et services sur l’environnement et
+  la santé.
+description longue: >-
+  Les catégories de produits pouvant bénéficier de l'écolabel européen sont les
+  suivantes :
+
+  Produits cosmétiques et de soin pour animaux
+
+  Détergents textiles
+
+  Détergents vaisselles à la main
+
+  Détergents pour lave-vaisselle
+
+  Détergents pour lave-vaisselle industriel ou destinés aux collectivités
+
+  Détergents textiles à usage industriel ou destinés aux collectivités
+
+  Produits de nettoyage pour surfaces dures
+
+  Milieux de culture et amendements pour sols
+
+  Produits de protection hygiénique absorbants et coupes menstruelles
+  réutilisables
+
+  Peintures et vernis d'intérieur ou d'extérieur
+
+  Mouchoirs, papier toilette, serviettes en papier
+
+  Papier graphique
+
+  Produits en papier imprimé, produits de papeterie et sacs en papier
+
+  Les prestations de nettoyage intérieur et les hébergements touristiques
+  (hôtels, campings, etc.) peuvent également bénéficier de l'écolabel européen.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: ADEME
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen
+nature de l'aide: étude
+coût de l'accompagnement: Variable selon l'activité
+durée de l'accompagnement: 7 ans en moyenne
+objectifs:
+  - description: >-
+      Consultez le référentiel des critères en fonction de votre catégorie de
+      produits ou services.
+    liens:
+      - lien: >-
+          https://librairie.ademe.fr/industrie-et-production-durable/2170-fiche-de-presentation-referentiels-ecolabel-europeen.html
+        texte: Fiches de présentation synthétique du référentiel de l'Ecolabel
+      - lien: >-
+          https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel/product-groups-and-criteria_en
+        texte: Référentiel détaillé en fonction des produits et services
+  - description: >-
+      Contactez un organisme certificateur indépendant pour vous renseigner sur
+      la démarche. Plusieurs organismes sont désormais accrédités pour réaliser
+      la labellisation de tous vos produits en France.
+    liens:
+      - lien: >-
+          https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel/community-and-helpdesk_en
+        texte: Liste des organismes certificateurs
+      - lien: mailto:amo.ecolabeleu@ademe.fr
+        texte: Contact direct ADEME
+  - description: >-
+      Vous pouvez nous contacter depuis le formulaire pour être accompagné tout
+      au long de votre certification par l'ADEME tout en bénéficiant d’aides
+      financières.
+  - description: >-
+      Constituez votre dossier et envoyez-le à votre organisme certificateur,
+      pour analyse et audit.
+  - description: >-
+      Créez un compte sur la plateforme E-cat de la Commission européenne, pour
+      être référencé et gagner en visibilité.
+    liens:
+      - lien: https://webgate.ec.europa.eu/cas/eim/external/register.cgi
+        texte: Créer un compte E-cat
+      - lien: >-
+          https://environment.ec.europa.eu/document/8836ae39-5d06-49d7-97f6-8b33219dc658_en
+        texte: Manuel d'instruction (en anglais)
+  - description: >-
+      Enregistrez vos produits et votre dossier en ligne sur la plateforme E-cat
+      de la Commission européenne. Une fois votre dossier approuvée, recevez
+      l'Ecolabel européen et utilisez le logo sur vos produits et services.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Les secteurs éligibles sont : Hébergement touristique
+
+      - Services de nettoyage intérieur
+
+      - Milieux de culture, amendements pour sols
+
+      - Papier tissue et produits tissue, papier graphique, produits en papier
+      imprimé, produits de papeterie et sacs en papier
+
+      - Produits de nettoyage pour surfaces dures, de protection hygiénique
+      absorbants
+
+      - Détergents textiles, détergents pour lave vaisselle, à usage industriel,
+      destinés aux collectivités ou détergents pour vaisselle à la main
+
+      - Produits cosmétiques et produits de soin pour animaux
+
+      - Peintures et vernis d'intérieur ou d'extérieur 
+
+      - Lubrifiants
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception

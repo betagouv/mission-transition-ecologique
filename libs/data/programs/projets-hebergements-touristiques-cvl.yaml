@@ -92,7 +92,6 @@ publicodes:
       - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-      - effectif >= 2
       - effectif <= 249
   entreprise . a une categorie legale eligible:
     toutes ces conditions:

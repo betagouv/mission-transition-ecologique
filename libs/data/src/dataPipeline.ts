@@ -34,8 +34,6 @@ export const readPrograms = (log = false): ProgramType[] => {
   filenames.forEach((file: string) => {
     const id = file.substring(0, file.lastIndexOf('.')) || file
 
-    // if (log) console.log(' 🗎 Reading program', id)
-
     const yamlFilePath = `${dataDirPath}/${file}`
     const yamlFile: string = fs.readFileSync(yamlFilePath, 'utf8')
 

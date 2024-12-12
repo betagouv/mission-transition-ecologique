@@ -17,6 +17,8 @@ description longue: >-
   consommations énergétiques du site.
 illustration: images/TEE_ampoule.png
 opérateur de contact: CMA
+autres opérateurs:
+  - CCI ou CMA
 url: https://www.artisanat.fr/metiers/labels-qualifications/label-imprim-vert
 nature de l'aide: étude
 coût de l'accompagnement: Sur devis, de 150 € à 450 € HT
@@ -39,7 +41,7 @@ objectifs:
       clients et être référencé sur le site Imprim'Vert.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - TPE et PME
+    - Toutes tailles
     - Éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
@@ -54,43 +56,15 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-      - est éligible
+      - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-  entreprise . est éligible:
-    toutes ces conditions:
-      - a un effectif éligible
-      - est dans un secteur d'activité éligible
-  entreprise . a un effectif éligible:
-    toutes ces conditions:
-      - effectif <= 249
-  entreprise . est dans un secteur d'activité éligible:
-    toutes ces conditions:
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
       - code NAF niveau 1 . est C
-      - une de ces conditions:
-          - code NAF = "17.11Z"
-          - code NAF = "17.12Z"
-          - code NAF = "17.21Z"
-          - code NAF = "17.22Z"
-          - code NAF = "17.23Z"
-          - code NAF = "17.24Z"
-          - code NAF = "17.29Z"
-          - code NAF = "18.12A"
-          - code NAF = "18.12B"
-          - code NAF = "18.13A"
-          - code NAF = "18.13B"
-          - code NAF = "18.13C"
-          - code NAF = "18.14Z"
-          - code NAF = "18.20Z"
-          - code NAF = "58.19P"
+      - code NAF niveau 1 . est R
   entreprise . a un objectif ciblé:
     une de ces conditions:
-      - questionnaire . objectif prioritaire . est la gestion des déchets
-      - >-
-        questionnaire . objectif prioritaire . est diminuer ma consommation
-        d'eau
-      - questionnaire . objectif prioritaire . est ma performance énergétique
       - questionnaire . objectif prioritaire . est mon impact environnemental
-      - questionnaire . objectif prioritaire . est l'écoconception
 champs conditionnels:
   - une de ces conditions:
       - région = Nouvelle-Aquitaine

@@ -1,0 +1,86 @@
+titre: Aide à la recherche de financement
+promesse: >-
+  Bénéficiez d'une aide sur le montage financier de votre projet
+  d'investissement durable
+description: >-
+  Vous avez un projet d'investissement durable ? Vous pouvez solliciter un
+  accompagnement pour vous aider à identifier les financements les mieux adaptés
+  à votre besoin, rédiger et constituer votre dossier puis le déposer auprès des
+  financeurs institutionnels.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: CCI
+url: https://www.occitanie.cci.fr/produit/aide-la-recherche-de-financement
+nature de l'aide: étude
+coût de l'accompagnement: Sur devis
+durée de l'accompagnement: 1 à 5 jours
+objectifs:
+  - description: >-
+      Partagez votre projet d'investissement durable et élaborez un plan de
+      financement sur-mesure avec un conseiller expert en financement.
+  - description: >-
+      Identifiez et séléctionnez les financements mobilisables pour votre projet
+      : prêts, crédit-bail, avances remboursables, renforcement des fonds
+      propres, épargne citoyenne, subventions, crédits d’impôt recherche et
+      innovation, etc.
+  - description: >-
+      Obtenez de l'aide dans le montage et le dépôt de votre ou vos dossier(s)
+      de financement.
+  - description: >-
+      Bénéficiez d'un suivi de vos dossiers auprès des financeurs
+      institutionnels.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Occitanie
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Occitanie

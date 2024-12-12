@@ -205,25 +205,3 @@ describe(`
     expect(() => defaultFilterPrograms([makeProgram({ [FILTERING_RULE_NAME]: 'invalid Publicode expression' })], {})).toThrow()
   })
 })
-
-// describe(`
-//   GIVEN  a program where the EI is supported but the supported structure size is above 1.
-//     AND  a company that is an EI
-//   WHEN   filtered
-//   EXPECT eligibility to be true`, () => {
-//   // programme-breizh-fab
-//   // TODO modifier le dataset de test dans les deux cas.
-//   expect(eligibility).toBe(ProgramEligibilityType.PartiallyEligible || ProgramEligibilityType.Eligible)
-// })
-
-// describe(`
-//   GIVEN  a program where all structure size are supported but not EIs
-//     AND  a company that is an EI
-//   WHEN   filtered
-//   EXPECT eligibility to be false`, () => {
-
-//   // diag-decarbon-action
-
-//   //
-//   expect(eligibility).toBe(ProgramEligibilityType.PartiallyEligible || ProgramEligibilityType.Eligible)
-// })

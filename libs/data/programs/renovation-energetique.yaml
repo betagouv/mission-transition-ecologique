@@ -46,7 +46,7 @@ url: https://entreprendre.service-public.fr/vosdroits/F35585
 nature de l'aide: avantage fiscal
 montant de l'avantage fiscal: "30% des dépenses, dans la limite de 25 000\_€"
 objectifs:
-  - description: Vérifiez l'égibilité de vos dépenses de rénovation.
+  - description: Vérifiez l'éligibilité de vos dépenses de rénovation.
     liens:
       - lien: https://entreprendre.service-public.fr/vosdroits/F35585
         texte: Pour quels types de dépenses ?

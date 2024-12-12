@@ -1,4 +1,4 @@
-import { PublicodesKeys, QuestionnaireData, QuestionnaireDataEnum, QuestionnaireRoute, StructureSize } from '@tee/common'
+import { PublicodesKeys, QuestionnaireData, QuestionnaireDataEnum, QuestionnaireRoute } from '@tee/common'
 import { Entry, setObjectProperty } from '../../src/common/objects'
 import { type ProgramType } from '@tee/data'
 import { PublicodesQuestionnaireRoute } from '../../src/program/infrastructure/types'
@@ -289,45 +289,3 @@ EXPECT recovers the data properly`, () => {
   testQuestionnaireRoute(QuestionnaireRoute.NoSpecificGoal, PublicodesQuestionnaireRoute.NoSpecificGoal, true)
   testQuestionnaireRoute(QuestionnaireRoute.SpecificGoal, PublicodesQuestionnaireRoute.NoSpecificGoal, false)
 })
-
-// describe(`
-//   GIVEN  A company that is an EI.
-//     AND  a rule that uses "entreprise . a une categorie legale eligible"
-//    WHEN  the rule is evaluated
-//  EXPECT  the program is properly kept or filtered out
-// `, () => {
-//   const testLegalCategory = (inputStructureSize: StructureSize | undefined, expectedKeep: boolean) => {
-//     testHelperPreprocessing({
-//       title: 'questionnaire "StructureSize.EI" mapped to literal "microentrepreneur = oui"',
-//       inputDataEntry: ['structure_size', inputStructureSize],
-//       inputDataSource: DataSources.Questionnaire,
-//       publicodesKey: 'entreprise . a une categorie legale eligible',
-//       filteringRule: {
-//         'toutes ces conditions': [`microentrepreneur = non`]
-//       },
-//       expectedKeep: expectedKeep
-//     })
-//   }
-//   const testCases = [
-//     {
-//       inputStructureSize: StructureSize.EI,
-//       expectedKeep: true
-//     },
-//     {
-//       inputStructureSize: StructureSize.ETI,
-//       expectedKeep: false
-//     },
-//     {
-//       inputCodeNaf: StructureSize.MICRO,
-//       expectedKeep: false
-//     },
-//     {
-//       inputStructureSize: undefined,
-//       expectedKeep: true
-//     }
-//   ]
-
-//   for (const testCase of testCases) {
-//     testLegalCategory(testCase.inputStructureSize, testCase.expectedKeep)
-//   }
-// })
