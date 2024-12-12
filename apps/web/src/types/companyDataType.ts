@@ -12,6 +12,8 @@ export type ManualCompanyData = {
   denomination: string
 }
 
+export type CompanyDataRegisterType = EstablishmentFront | null | ManualCompanyData
+
 export type CompanyDataType = {
   [CompanyDataStorageKey.Company]: EstablishmentFront | null | ManualCompanyData
   [CompanyDataStorageKey.Size]: StructureSize | null

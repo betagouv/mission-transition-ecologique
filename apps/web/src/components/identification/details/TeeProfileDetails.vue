@@ -104,7 +104,7 @@ const saveProfile = () => {
     })
     CompanyDataStorageHandler.updateRouteFromStorage()
     if (!props.manual) {
-      const companyData = CompanyDataStorage.getCompanyData() as EstablishmentFront
+      const companyData = CompanyDataStorage.getCompanyDataFromStorage() as EstablishmentFront
       if (companyData) {
         Analytics.sendEvent('register_siret_modal', 'register_siret_modal', {
           secteur: companyData.secteur,

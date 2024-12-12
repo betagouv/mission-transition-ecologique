@@ -28,9 +28,9 @@ import { CompanyDataStorage } from '@/utils/storage'
 
 const resume: string = Translation.t('programResults.resume', {
   effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyDataStorage.getSize() ?? '')),
-  secteur: TrackStructure.getSectorShortLabel() ?? CompanyDataStorage.getCompanyData()?.secteur ?? '',
-  region: TrackStructure.getRegion() ?? CompanyDataStorage.getCompanyData()?.region ?? ''
+  secteur: TrackStructure.getSectorShortLabel() ?? CompanyDataStorage.getCompanyDataFromStorage()?.secteur ?? '',
+  region: TrackStructure.getRegion() ?? CompanyDataStorage.getCompanyDataFromStorage()?.region ?? ''
 })
 const isSpecificGoal = UsedTrack.isSpecificGoal()
-const hasRegisteredData = CompanyDataStorage.isDataFull()
+const hasRegisteredData = CompanyDataStorage._isDataFull()
 </script>

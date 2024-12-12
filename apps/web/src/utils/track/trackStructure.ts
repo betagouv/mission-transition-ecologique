@@ -52,7 +52,7 @@ export default class TrackStructure {
   }
 
   static getSector(): string {
-    return CompanyDataStorage.getCompanyData()?.secteur || ''
+    return CompanyDataStorage.getCompanyDataFromStorage()?.secteur || ''
   }
 
   static getSectorShortLabel(): string {

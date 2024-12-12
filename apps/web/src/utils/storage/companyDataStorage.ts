@@ -1,14 +1,13 @@
-import { CompanyDataStorageKey, CompanyDataType, EstablishmentFront, ManualCompanyData, Region, Sector } from '@/types'
+import { CompanyDataRegisterType, CompanyDataStorageKey, CompanyDataType, EstablishmentFront } from '@/types'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
 import { StructureSize } from '@tee/common'
 import { ref, Ref } from 'vue'
-import { TypeValidator } from '@/utils/typeValidator'
 
 export class CompanyDataStorage {
   private static readonly _storageHandler = new LocalStorageHandler()
 
   private static readonly _data: Ref<CompanyDataType> = ref({
-    [CompanyDataStorageKey.Company]: this.getCompanyData(),
+    [CompanyDataStorageKey.Company]: this.getCompanyDataFromStorage(),
     [CompanyDataStorageKey.Size]: this.getSize()
   })
 
@@ -21,35 +20,25 @@ export class CompanyDataStorage {
   }
 
   public static isDataFull() {
-    if (this._data.value[CompanyDataStorageKey.Company] === null) return false
+    return computed(() => {
+      const companyData = this.getCompanyData()
 
-    return this.isOfCompanyDataType(this._data.value[CompanyDataStorageKey.Company])
-      ? Object.values(this._data.value[CompanyDataStorageKey.Company] as object).every((value) => value !== null)
-      : false
+      if (!companyData) {
+        return false
+      }
+
+      return this._isEstablishmentFront(companyData)
+        ? this._isFill<typeof companyData>(companyData, ['denomination'])
+        : this._isFill<typeof companyData>(companyData)
+    })
   }
 
-  public static isOfCompanyDataType(value: unknown): boolean {
-    const sampleEstablishmentFront: EstablishmentFront = {
-      siret: '',
-      codeNAF: '',
-      codeNAF1: '',
-      ville: '',
-      codePostal: '',
-      legalCategory: '',
-      region: '',
-      denomination: '',
-      secteur: '',
-      structure_size: undefined,
-      creationDate: ''
-    }
+  private static _isFill<T extends NonNullable<CompanyDataRegisterType>>(companyData: T, exclude: (keyof T)[] = []): boolean {
+    return Object.entries(companyData).every((value, key) => key in exclude || value !== null)
+  }
 
-    const sampleManualCompanyData: ManualCompanyData = {
-      region: Region.Bretagne,
-      secteur: Sector.Agriculture,
-      denomination: ''
-    }
-
-    return TypeValidator.isOfType(value, sampleEstablishmentFront) || TypeValidator.isOfType(value, sampleManualCompanyData)
+  private static _isEstablishmentFront(value: NonNullable<CompanyDataRegisterType>): value is EstablishmentFront {
+    return 'siret' in value
   }
 
   public static hasCompanyData() {
@@ -86,8 +75,12 @@ export class CompanyDataStorage {
     return this._storageHandler.getItem(key)
   }
 
-  public static getCompanyData(): CompanyDataType[CompanyDataStorageKey.Company] | null {
+  public static getCompanyDataFromStorage(): CompanyDataType[CompanyDataStorageKey.Company] | null {
     return (this.getItem(CompanyDataStorageKey.Company) as CompanyDataType[CompanyDataStorageKey.Company]) || null
+  }
+
+  public static getCompanyData(): CompanyDataType[CompanyDataStorageKey.Company] | null {
+    return this._data.value[CompanyDataStorageKey.Company]
   }
 
   public static getSize(): StructureSize | null {
@@ -107,7 +100,7 @@ export class CompanyDataStorage {
   }
 
   static updateData(): void {
-    this._data.value[CompanyDataStorageKey.Company] = this.getCompanyData()
+    this._data.value[CompanyDataStorageKey.Company] = this.getCompanyDataFromStorage()
     this._data.value[CompanyDataStorageKey.Size] = this.getSize()
   }
 }

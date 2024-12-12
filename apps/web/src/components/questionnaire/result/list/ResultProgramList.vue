@@ -60,7 +60,7 @@ interface ProgramListProps {
   hasError: boolean
 }
 
-const hasRegisteredData = CompanyDataStorage.isDataFull()
+const hasRegisteredData = CompanyDataStorage._isDataFull()
 const navigationStore = useNavigationStore()
 
 const props = defineProps<ProgramListProps>()

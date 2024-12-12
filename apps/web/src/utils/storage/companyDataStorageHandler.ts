@@ -29,7 +29,7 @@ export class CompanyDataStorageHandler {
 
   static populateCompletedQuestionnaire(data: FlatArray<((QuestionnaireData | undefined)[] | undefined)[], 1>[]) {
     if (this.canUseCompanyData(data, CompanyDataStorageKey.Company as keyof QuestionnaireData)) {
-      data.push(CompanyDataStorage.getCompanyData() as QuestionnaireData)
+      data.push(CompanyDataStorage.getCompanyDataFromStorage() as QuestionnaireData)
     }
 
     if (this.canUseCompanyData(data, CompanyDataStorageKey.Size)) {
@@ -38,7 +38,7 @@ export class CompanyDataStorageHandler {
   }
 
   static populateQuestionnaireData(questionnaireData: { [k: string]: any }) {
-    if (CompanyDataStorage.isDataFull()) {
+    if (CompanyDataStorage._isDataFull()) {
       const companyData: CompanyDataType = CompanyDataStorage.getData().value
       Object.entries(companyData).forEach(([key, value]) => {
         if (value !== null) {
@@ -59,7 +59,7 @@ export class CompanyDataStorageHandler {
   static updateSearchParamFromStorage() {
     useNavigationStore().updateSearchParam({
       name: TrackId.Siret,
-      value: (CompanyDataStorage.getCompanyData() as EstablishmentFront)?.siret
+      value: (CompanyDataStorage.getCompanyDataFromStorage() as EstablishmentFront)?.siret
     })
 
     if (CompanyDataStorage.getSize() === StructureSize.EI) {
@@ -104,14 +104,17 @@ export class CompanyDataStorageHandler {
     }
 
     if (trackId === TrackId.Sectors) {
-      CompanyDataStorage.setCompanyData({ ...CompanyDataStorage.getCompanyData(), secteur: value as Sector } as ManualCompanyData)
+      CompanyDataStorage.setCompanyData({
+        ...CompanyDataStorage.getCompanyDataFromStorage(),
+        secteur: value as Sector
+      } as ManualCompanyData)
     }
 
     if (trackId === TrackId.StructureRegion) {
       CompanyDataStorage.setCompanyData({
-        ...CompanyDataStorage.getCompanyData(),
+        ...CompanyDataStorage.getCompanyDataFromStorage(),
         region: value,
-        denomination: `Entreprise : ${CompanyDataStorage.getCompanyData()?.secteur} - ${value}`
+        denomination: `Entreprise : ${CompanyDataStorage.getCompanyDataFromStorage()?.secteur} - ${value}`
       } as ManualCompanyData)
     }
   }
