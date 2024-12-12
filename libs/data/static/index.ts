@@ -5,10 +5,9 @@ import { default as projectsTestsJson } from './projects_tests.json'
 import operatorsJson from './operators.json'
 
 let projects = projectsJson as unknown as Project[]
-const projectsTest = projectsTestsJson as unknown as Project[]
 
-if (process.env['DATA_TEST'] === 'true') {
-  projects = projectsTest
+if (process.env['VITE_DATA_TEST'] === 'true') {
+  projects = projectsTestsJson as unknown as Project[]
 }
 export { projects }
 
