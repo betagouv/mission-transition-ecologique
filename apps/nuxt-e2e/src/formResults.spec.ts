@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/test'
+import { expect, test } from '@nuxt/test-utils/playwright'
 import { tests } from './formResultsData'
 
 tests.forEach((singleTest) => {
-  test(`Test id ${singleTest.id} - Verify form ${singleTest.url}`, async ({ page }) => {
+  test(`Test id ${singleTest.id} - Verify form ${singleTest.url}`, async ({ page, goto }) => {
     try {
       page.on('response', async (response) => {
         if (response.url().includes('/api/opportunities')) {
@@ -19,8 +19,8 @@ tests.forEach((singleTest) => {
           }
         }
       })
-      await page.goto(singleTest.url, { waitUntil: 'load' })
-      await page.waitForLoadState('networkidle')
+      await goto(singleTest.url, { waitUntil: 'hydration' })
+
       await page.evaluate((singleTest) => {
         if (singleTest.manual) {
           localStorage.setItem(
@@ -52,8 +52,8 @@ tests.forEach((singleTest) => {
         localStorage.setItem('structure_size', JSON.stringify('TPE'))
       }, singleTest)
 
-      await page.reload({ waitUntil: 'load' })
-      await page.waitForLoadState('networkidle')
+      // reload the page to apply the localStorages
+      await goto(singleTest.url, { waitUntil: 'hydration' })
 
       if (singleTest.type === 'customProject') {
         await page.waitForSelector('[teste2e-selector="open-custom-project-form"]', {

@@ -1,5 +1,6 @@
 import path from 'path'
 import fs from 'fs'
+import { fileURLToPath } from 'url'
 import { DataProgram, Publicodes } from '../types/domain'
 import { ThemeId } from '../../theme/types/shared'
 
@@ -18,6 +19,7 @@ export class PublicodesGenerator {
   }
 
   private _isSpecialCase(): { [key: string]: unknown } | null {
+    const __dirname = path.dirname(fileURLToPath(import.meta.url))
     const filePath = path.join(__dirname, 'publicodesStaticData.json')
     const staticData = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
 
