@@ -47,7 +47,6 @@ export class ProgramsController extends Controller {
     @Res() notFoundResponse: TsoaResponse<404, ErrorJSON>,
     @Res() requestFailedResponse: TsoaResponse<500, ErrorJSON>
   ): OpenAPISafeProgram | void {
-    console.log('questionnaireData', questionnaireData)
     this.setStatus(200)
     const programService = new ProgramService()
     const program = programService.getOneWithMaybeEligibility(programId, questionnaireData)
