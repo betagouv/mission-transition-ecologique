@@ -100,18 +100,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import Chart from 'chart.js/auto'
 import StatsApi from '@/tools/api/statsApi'
-import { CalloutType, RouteName, StatsData } from '@/types'
+import { CalloutType, RouteName } from '@/types'
 
 definePageMeta({
   path: '/stats',
   name: RouteName.Statistics
 })
-
-const statsData = ref<StatsData | null>(null)
 const chartCanvas = ref<HTMLCanvasElement | null>(null)
+
+const result = await new StatsApi().get()
+const statsData = result.refData
 
 const isSmallScreen = computed(() => {
   return import.meta.client ? window.innerWidth < 768 : false
@@ -150,13 +151,7 @@ const drawChart = () => {
   }
 }
 
-onMounted(async () => {
-  const result = await new StatsApi().get()
-  if (result.isOk) {
-    statsData.value = result.value
-  } else {
-    console.error('Error calling the stat API', result.error)
-  }
+watchPostEffect(() => {
   drawChart()
 })
 </script>
