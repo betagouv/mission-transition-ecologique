@@ -89,13 +89,17 @@ const canBeSaved = computed(() => {
 const saveProfile = () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
-    const company = props.manual
-      ? ({
-          region: profile.value.localisation.value,
-          secteur: profile.value.activity.value,
-          denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`
-        } as CompanyDataType[CompanyDataStorageKey.Company])
-      : props.company
+    let company = props.company
+    if (props.manual) {
+      company = {
+        region: profile.value.localisation.value,
+        secteur: profile.value.activity.value,
+        denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`,
+        structure_size: profile.value.size.value
+      } as CompanyDataType[CompanyDataStorageKey.Company]
+    } else if (company) {
+      company.structure_size = profile.value.size.value
+    }
 
     CompanyDataStorageHandler.saveAndSetUsedTrackStore({
       [CompanyDataStorageKey.Company]: company,

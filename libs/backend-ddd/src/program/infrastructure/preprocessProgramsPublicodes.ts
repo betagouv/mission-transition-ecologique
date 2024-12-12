@@ -55,9 +55,7 @@ const setLegalCategory = (publicodesData: PublicodesInputData, questionnaireData
 
 const setStructureSize = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
   if (questionnaireData.structure_size) {
-    if (questionnaireData.structure_size !== StructureSize.EI) {
-      publicodesData[PublicodesKeys.Workforce] = SizeToWorkforce[questionnaireData.structure_size]
-    }
+    publicodesData[PublicodesKeys.Workforce] = SizeToWorkforce[questionnaireData.structure_size]
   }
 }
 const setCodeNAF = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
@@ -70,7 +68,7 @@ const setSectors = (publicodesData: PublicodesInputData, questionnaireData: Ques
   if (questionnaireData.codeNAF1) {
     codeNAF1s = [questionnaireData.codeNAF1]
   } else {
-    codeNAF1s = SectorToNAFSection[questionnaireData.sector as Sector]
+    codeNAF1s = SectorToNAFSection[questionnaireData.secteur as Sector]
   }
 
   if (!codeNAF1s) {
