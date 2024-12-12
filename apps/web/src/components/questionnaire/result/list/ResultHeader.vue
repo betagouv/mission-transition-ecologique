@@ -32,5 +32,5 @@ const resume: string = Translation.t('programResults.resume', {
   region: TrackStructure.getRegion() ?? CompanyDataStorage.getCompanyDataFromStorage()?.region ?? ''
 })
 const isSpecificGoal = UsedTrack.isSpecificGoal()
-const hasRegisteredData = CompanyDataStorage._isDataFull()
+const hasRegisteredData = CompanyDataStorage.isDataFull()
 </script>

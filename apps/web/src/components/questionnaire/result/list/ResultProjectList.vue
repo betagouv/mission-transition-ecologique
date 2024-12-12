@@ -98,7 +98,7 @@ interface ProjectListProps {
 const props = defineProps<ProjectListProps>()
 const otherProjectForm = ref<boolean>(false)
 
-const hasRegisteredData = CompanyDataStorage._isDataFull()
+const hasRegisteredData = CompanyDataStorage.isDataFull()
 
 const openModal = () => {
   Navigation.toggleRegisterModal()
@@ -135,7 +135,7 @@ const showNoResults = computed(() => {
 })
 
 const showOtherProjectForm = computed(() => {
-  return !showNoResults.value && hasRegisteredData && !useNavigationStore().hasSpinner
+  return !showNoResults.value && hasRegisteredData.value && !useNavigationStore().hasSpinner
 })
 
 const isSpecificGoal = computed(() => {
