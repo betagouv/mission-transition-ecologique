@@ -1,12 +1,12 @@
-import { test, expect } from '@playwright/test'
+import { expect, test } from '@nuxt/test-utils/playwright'
 import { tests } from './programResultsData'
 
 /**
  * Test the number of programs proposed as a result of a list of queries and their order.
  */
 tests.forEach((singleTest) => {
-  test(`Test id ${singleTest.id} - Verify programs number and order for query ${singleTest.url}`, async ({ page }) => {
-    await page.goto(singleTest.url)
+  test(`Test id ${singleTest.id} - Verify programs number and order for query ${singleTest.url}`, async ({ page, goto }) => {
+    await goto(singleTest.url, { waitUntil: 'hydration' })
     try {
       await page.waitForSelector('.teste2e-program-target', { timeout: 3000 })
     } catch (error) {

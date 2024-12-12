@@ -1,4 +1,4 @@
-import { SearchResultsDataType } from './resultDataType'
+import { SearchResultsDataType } from '../resultDataType'
 
 export const tests: SearchResultsDataType = [
   {

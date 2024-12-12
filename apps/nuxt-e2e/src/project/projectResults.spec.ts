@@ -1,9 +1,9 @@
-import { test, expect } from '@playwright/test'
+import { expect, test } from '@nuxt/test-utils/playwright'
 import { tests } from './projectResultsData'
 
 tests.forEach((singleTest) => {
-  test(`Test id ${singleTest.id} - Verify content and elements for query ${singleTest.url}`, async ({ page }) => {
-    await page.goto(singleTest.url)
+  test(`Test id ${singleTest.id} - Verify content and elements for query ${singleTest.url}`, async ({ page, goto }) => {
+    await goto(singleTest.url, { waitUntil: 'hydration' })
     try {
       await page.waitForSelector('.teste2e-project-target', { timeout: 3000 })
     } catch (error) {
@@ -23,11 +23,11 @@ tests.forEach((singleTest) => {
   })
 })
 
-test(`Check projects found while initially selecting different tags`, async ({ page }) => {
+test(`Check projects found while initially selecting different tags`, async ({ page, goto }) => {
   const urlTag1 = 'questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=mobility'
   const urlTag2 = 'questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building'
 
-  await page.goto(urlTag1)
+  await goto(urlTag1, { waitUntil: 'hydration' })
   try {
     await page.waitForSelector('.teste2e-project-target', { timeout: 3000 })
   } catch (error) {
@@ -36,7 +36,7 @@ test(`Check projects found while initially selecting different tags`, async ({ p
     // - in some mobile data browser
   }
   const elementsurlTag1 = await page.$$eval('.teste2e-project-target h3 a', (els) => els.map((el) => el.innerHTML.trim()))
-  await page.goto(urlTag2)
+  await goto(urlTag2, { waitUntil: 'hydration' })
   try {
     await page.waitForSelector('.teste2e-project-target', { timeout: 3000 })
   } catch (error) {

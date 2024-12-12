@@ -1,4 +1,4 @@
-import { FormResultDataType } from './resultDataType'
+import { FormResultDataType } from '../resultDataType'
 
 /*
 ----- cas de formulaire success (1-7):
