@@ -273,7 +273,9 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       })
     })
 
-    questionnaireData.onlyEligible = !useNavigationStore().isCatalog() && !useNavigationStore().isProgramDetail()
+    if (!useNavigationStore().isCatalog() && !useNavigationStore().isProgramDetail()) {
+      questionnaireData.onlyEligible = true
+    }
 
     CompanyDataStorageHandler.populateQuestionnaireData(questionnaireData)
 
