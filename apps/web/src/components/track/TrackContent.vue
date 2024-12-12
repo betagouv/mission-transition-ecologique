@@ -218,7 +218,7 @@ const backToPreviousTrack = async () => {
 }
 
 watch(registeredData.value, async () => {
-  if (!CompanyDataStorage.isDataFull()) return
+  if (!CompanyDataStorage.isDataFull().value) return
 
   const next = CompanyDataStorageHandler.getNextTrackStorage()
 
