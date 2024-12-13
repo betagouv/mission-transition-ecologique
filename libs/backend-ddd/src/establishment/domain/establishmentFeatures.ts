@@ -144,7 +144,7 @@ export default class EstablishmentFeatures {
       case '52': // 2 000 to 4 999 employees
       case '53': // 5 000 to 9 999 employees
       case '54': // 10 000 employees or more
-        return StructureSize.ETI
+        return StructureSize.GE
 
       default:
         return undefined
