@@ -85,7 +85,7 @@ conditions d'éligibilité:
     - Moins de 250 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
-    - Provence-Alpes-Côte d'Azur
+    - Auvergne-Rhône-Alpes
   secteur d'activité:
     - Tous secteurs d'activité
     - >-
@@ -157,4 +157,4 @@ publicodes:
       - questionnaire . objectif prioritaire . est l'écoconception
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-      - région = Provence-Alpes-Côte d'Azur
+      - région = Auvergne-Rhône-Alpes
