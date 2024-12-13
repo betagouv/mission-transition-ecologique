@@ -42,23 +42,32 @@ const sizeText = computed(() => {
 const sizeOptions = [
   {
     value: StructureSize.EI,
-    text: '‍️🧍Je suis un entrepreneur individuel'
+    text: '‍️🧍Je suis un micro-entrepreneur'
   },
   {
+    value: StructureSize.MICRO,
+    text: '‍️👫 Moins de 10 employés'
+  },
+
+  {
     value: StructureSize.TPE,
-    text: '‍️👫 Moins de 20 employés'
+    text: '‍️👫👫 Entre 10 et 20 employés'
   },
   {
     value: StructureSize.PE,
-    text: '‍️👫👫 Entre 20 et 49 employés'
+    text: '‍️👫👫👫 Entre 20 et 49 employés'
   },
   {
     value: StructureSize.ME,
-    text: '‍️👫👭👫 Entre 50 et 250 employés'
+    text: '‍️👫👭👫👫 Entre 50 et 250 employés'
   },
   {
-    value: StructureSize.ETI_GE,
-    text: '👫👭👫👫 Plus de 250 employés'
+    value: StructureSize.ETI,
+    text: '👫👭👫👫👫 Plus de 250 employés'
+  },
+  {
+    value: StructureSize.GE,
+    text: '👫👭👫👫👫👫 Plus de 500 employés'
   }
 ]
 const resetSize = () => {

@@ -62,14 +62,14 @@ export class CompanyDataStorageHandler {
       value: (CompanyDataStorage.getCompanyDataFromStorage() as EstablishmentFront)?.siret
     })
 
-    if (CompanyDataStorage.getSize() === StructureSize.EI) {
-      useNavigationStore().deleteSearchParam(TrackId.StructureWorkforce)
-    } else {
-      useNavigationStore().updateSearchParam({
-        name: TrackId.StructureWorkforce,
-        value: CompanyDataStorage.getSize()
-      })
-    }
+    // if (CompanyDataStorage.getSize() === StructureSize.EI) {
+    //   useNavigationStore().deleteSearchParam(TrackId.StructureWorkforce)
+    // } else {
+    useNavigationStore().updateSearchParam({
+      name: TrackId.StructureWorkforce,
+      value: CompanyDataStorage.getSize()
+    })
+    // }
   }
 
   static updateRouteFromStorage() {

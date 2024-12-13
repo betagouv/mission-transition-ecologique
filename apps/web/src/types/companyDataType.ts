@@ -10,6 +10,7 @@ export type ManualCompanyData = {
   region: Region
   secteur: Sector
   denomination: string
+  structure_size?: StructureSize
 }
 
 export type CompanyDataRegisterType = EstablishmentFront | null | ManualCompanyData
