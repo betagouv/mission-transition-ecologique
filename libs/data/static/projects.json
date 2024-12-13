@@ -27,6 +27,7 @@
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
@@ -72,11 +73,13 @@
       "fonds-tourisme-durable",
       "visite-energie-cci",
       "visite-energie-cma",
+      "aide-financement-occitanie",
       "cedre-investissement",
       "sud-pret-climat",
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
@@ -113,6 +116,7 @@
     "shortDescription": "L’énergie solaire photovoltaïque transforme le rayonnement solaire en électricité.",
     "image": "/images/projet/panneaux-solaires.webp",
     "longDescription": "Les panneaux solaires produisent de l'électricité grâce au rayonnement du soleil.\\\nPosés sur une toiture, au sol ou sur une terrasse, les capteurs peuvent être également intégrés à votre bâtiment, sous forme d'ardoises, de tuiles ou d'éléments de façades.\\\nL’électricité produite peut être utilisée sur place (autoconsommation) ou réinjectée dans le réseau de distribution électrique.\\\nL'installation de panneaux solaires vous permet donc de faire des économies et de réduire l'empreinte écologique de votre entreprise.",
+    "longDescription": "Les panneaux solaires produisent de l'électricité grâce au rayonnement du soleil.\\\nPosés sur une toiture, au sol ou sur une terrasse, les capteurs peuvent être également intégrés à votre bâtiment, sous forme d'ardoises, de tuiles ou d'éléments de façades.\\\nL’électricité produite peut être utilisée sur place (autoconsommation) ou réinjectée dans le réseau de distribution électrique.\\\nL'installation de panneaux solaires vous permet donc de faire des économies et de réduire l'empreinte écologique de votre entreprise.",
     "moreDescription": "- [**Le Centre de ressources Photovoltaïque**](https://www.photovoltaique.info/fr/) : un site ressource sur le Photovoltaïque crée avec le soutient de l’ADEME.\n- [**La marque AQPV**](https://www.aqpv.fr/) (Alliance Qualité Photovoltaïque) : lancée par l'État, cette marque rassemble tous les modules photovoltaïques afin d'assurer une performance et une fiabilité maximale en termes de conception, installation, opération et maintenance.\n- [**Qualit’EnR**](https://www.qualit-enr.org/), un annuaire de professionnels RGE qualifiés pour votre projet de construction ou de rénovation énergétique.",
     "themes": [
       "energy"
@@ -132,6 +136,7 @@
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
@@ -179,11 +184,14 @@
       "fonds-tourisme-durable",
       "ormat-2024",
       "tremplin",
+      "aide-financement-occitanie",
+      "ecoproduction-hdf",
       "cedre-investissement",
       "sud-pret-climat",
       "charte-zero-dechet-plastique",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [],
     "priority": "100",
@@ -225,6 +233,7 @@
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
@@ -279,6 +288,7 @@
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
@@ -324,11 +334,13 @@
       "diag-decarbon-action",
       "programme-breizh-fab",
       "tremplin",
+      "aide-financement-occitanie",
       "cedre-premier-pas",
       "sud-pret-climat",
       "cedre-ambition",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [
       32,
@@ -386,6 +398,7 @@
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
@@ -438,6 +451,7 @@
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
@@ -491,6 +505,7 @@
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
@@ -534,10 +549,12 @@
     "mainTheme": "energy",
     "programs": [
       "etude-hydroelectricite",
+      "aide-financement-occitanie",
       "sud-pret-climat",
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
@@ -586,10 +603,12 @@
       "investissement-boucle-d-eau-geothermique",
       "investissement-geothermie-de-surface-et-d-aerothermie",
       "investissement-geothermie-profonde",
+      "aide-financement-occitanie",
       "sud-pret-climat",
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
@@ -636,9 +655,11 @@
       "etude-diagnostic-serres",
       "tremplin",
       "pret-economies-d-energie-pee",
+      "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
@@ -670,12 +691,14 @@
       "booster-eco-energie-tertiaire",
       "diag-perf-immo",
       "renovation-petit-tertiaire-prive",
+      "aide-financement-occitanie",
       "cedre-premier-pas",
       "sud-pret-climat",
       "cedre-ambition",
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
       "projets-hebergements-touristiques-cvl"
     ],
@@ -736,6 +759,7 @@
       "aide-travaux-tourisme-aura",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
       "projets-hebergements-touristiques-cvl"
     ],
@@ -942,6 +966,7 @@
       "fonds-tourisme-durable",
       "pret-action-climat",
       "tremplin",
+      "aide-financement-occitanie",
       "sud-pret-climat",
       "sites-touristiques-exemplaires",
       "pret-energie-aura",
@@ -994,7 +1019,8 @@
       "sud-pret-climat",
       "cedre-ambition",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [],
     "priority": "60",
@@ -1044,7 +1070,8 @@
       "charte-zero-dechet-plastique",
       "cedre-ambition",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [],
     "priority": "90",
@@ -1090,6 +1117,7 @@
       "etude-performance-produits",
       "investissement-ecoconception",
       "tremplin",
+      "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-energie-aura",
       "pret-ile-de-france"
@@ -1142,7 +1170,8 @@
       "cedre-investissement",
       "sud-pret-climat",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [],
     "priority": "180",
@@ -1196,7 +1225,8 @@
       "sud-pret-climat",
       "pret-tourisme",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [],
     "priority": "330",
@@ -1241,6 +1271,7 @@
       "etude-gaspillage-alimentaire",
       "fonds-tourisme-durable",
       "investissement-contre-le-gaspillage-alimentaire",
+      "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-energie-aura",
       "pret-ile-de-france"
@@ -1434,6 +1465,7 @@
     "mainTheme": "rh",
     "programs": [
       "etude-projet-de-recherche",
+      "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-energie-aura",
       "pret-ile-de-france"
@@ -1482,11 +1514,13 @@
       "diagnostic-rse",
       "enviroveille",
       "mission-conseil-rse",
+      "aide-financement-occitanie",
       "cedre-premier-pas",
       "sud-pret-climat",
       "cedre-ambition",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [
       27,
@@ -1543,7 +1577,8 @@
       "sud-pret-climat",
       "cedre-ambition",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [
       4,
@@ -1597,11 +1632,13 @@
       "programme-breizh-fab",
       "programme-eve",
       "tremplin",
+      "aide-financement-occitanie",
       "cedre-premier-pas",
       "sud-pret-climat",
       "cedre-ambition",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [
       1,
@@ -1651,11 +1688,13 @@
       "performa-environnement",
       "programme-breizh-fab",
       "adaptation-bzh",
+      "aide-financement-occitanie",
       "cedre-premier-pas",
       "sud-pret-climat",
       "cedre-ambition",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [
       1,
@@ -1694,6 +1733,7 @@
     "shortDescription": "Valoriser votre engagement et vos actions menées en faveur de l’environnement.",
     "image": "/images/projet/com-labelisation.webp",
     "longDescription": "Les labels environnementaux sont nombreux (Ecolabel européen, Coq Vert, Imprim Vert, Clef verte...).\n\nAdaptés à votre secteur d'activité, ils vous permettent de valoriser les efforts menés au sein de votre entreprise en faveur de l'environnement auprès de votre clientèle et de fédérer vos équipes autour des valeurs de responsabilité écologique.\\\nLe saviez-vous ?\n\nL’Ecolabel européen est le seul label écologique public et officiel européen permettant de valoriser des produits et services plus respectueux de l’environnement tout en garantissant des performances identiques à celles des produits et services analogues.\n\nL’Écolabel européen couvre une large gamme de produits utilisés au quotidien par les professionnels et les particuliers, tels que des papiers, détergents, terreaux, oreillers, ainsi que des hébergements touristiques et des entreprises de propreté.",
+    "longDescription": "Les labels environnementaux sont nombreux (Ecolabel européen, Coq Vert, Imprim Vert, Clef verte...).\n\nAdaptés à votre secteur d'activité, ils vous permettent de valoriser les efforts menés au sein de votre entreprise en faveur de l'environnement auprès de votre clientèle et de fédérer vos équipes autour des valeurs de responsabilité écologique.\\\nLe saviez-vous ?\n\nL’Ecolabel européen est le seul label écologique public et officiel européen permettant de valoriser des produits et services plus respectueux de l’environnement tout en garantissant des performances identiques à celles des produits et services analogues.\n\nL’Écolabel européen couvre une large gamme de produits utilisés au quotidien par les professionnels et les particuliers, tels que des papiers, détergents, terreaux, oreillers, ainsi que des hébergements touristiques et des entreprises de propreté.",
     "moreDescription": "- [**Les labels environnementaux**](https://agirpourlatransition.ademe.fr/particuliers/labels-environnementaux), passés au crible par l'ADEME. Une analyse de plus de 100 labels, par catégorie de produits.",
     "themes": [
       "environmental"
@@ -1708,12 +1748,15 @@
       "programme-eve",
       "repar-acteurs",
       "tremplin",
+      "aide-financement-occitanie",
       "cedre-premier-pas",
       "sud-pret-climat",
       "entreprises-engagees-nature",
       "audit-clef-verte-sud",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique",
+      "ecolabel"
     ],
     "linkedProjects": [
       27,
@@ -1765,11 +1808,14 @@
       "programme-breizh-fab",
       "tremplin",
       "ecoconception-bzh",
+      "ecoproduction-hdf",
       "cedre-premier-pas",
       "cedre-investissement",
       "sud-pret-climat",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique",
+      "ecolabel"
     ],
     "linkedProjects": [
       3,
@@ -1823,7 +1869,8 @@
       "sites-touristiques-exemplaires",
       "pret-tourisme",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [
       20,
@@ -1876,7 +1923,8 @@
       "sud-pret-climat",
       "pret-tourisme",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [
       20,
@@ -1928,6 +1976,7 @@
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
@@ -1960,7 +2009,8 @@
       "cedre-investissement",
       "sud-pret-climat",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [],
     "priority": "240",
@@ -1994,6 +2044,7 @@
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
@@ -2068,7 +2119,8 @@
       "sud-pret-climat",
       "nature-ta-ville",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [],
     "priority": "230",
@@ -2116,7 +2168,8 @@
       "cheque-vert-grand-est",
       "aide-travaux-tourisme-aura",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [],
     "priority": "130",
@@ -2215,7 +2268,8 @@
       "mecenaturel",
       "mooc-biodiversite-entreprise",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [],
     "priority": "200",
@@ -2317,6 +2371,7 @@
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [],
