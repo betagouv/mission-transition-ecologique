@@ -199,7 +199,7 @@ export class PublicodesGenerator {
   }
 
   private _generateLegalTypeCondition() {
-    if (this._program.microEntreprise === 'non') {
+    if (this._program.microEntrepreneur === 'non') {
       return { [Publicodes.ALL]: ['microentrepreneur = non'] }
     }
     return null

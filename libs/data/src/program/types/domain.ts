@@ -20,7 +20,7 @@ export interface DataProgram extends BaserowSectors {
   'Eligibilité Taille': string
   minEff: number
   maxEff: number
-  microEntreprise: string
+  microEntrepreneur: string
   'Eligibilité Existence': string
   'Eligibilité Naf': string
   'Eligibilité Sectorielle': string
