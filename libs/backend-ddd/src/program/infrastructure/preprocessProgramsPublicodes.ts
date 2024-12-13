@@ -69,7 +69,7 @@ const setSectors = (publicodesData: PublicodesInputData, questionnaireData: Ques
   let codeNAF1s: string[] = []
   if (questionnaireData.codeNAF1) {
     codeNAF1s = [questionnaireData.codeNAF1]
-  } else if (questionnaireData.secteur && questionnaireData.secteur in Sector) {
+  } else {
     codeNAF1s = SectorToNAFSection[questionnaireData.secteur as Sector]
   }
 
