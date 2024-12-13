@@ -1,5 +1,3 @@
-import path from 'path'
-import fs from 'fs'
 import { DataProgram, Publicodes } from '../types/domain'
 import { ThemeId } from '../../theme/types/shared'
 
@@ -7,28 +5,6 @@ export class PublicodesGenerator {
   constructor(private _program: DataProgram) {}
 
   public generatePublicodes(): { [key: string]: unknown } {
-    let publicodes: { [key: string]: unknown }
-    if (this._isSpecialCase()) {
-      publicodes = this._isSpecialCase() as { [key: string]: unknown }
-    } else {
-      publicodes = this._generatePublicodes()
-    }
-
-    return publicodes
-  }
-
-  private _isSpecialCase(): { [key: string]: unknown } | null {
-    const filePath = path.join(__dirname, 'publicodesStaticData.json')
-    const staticData = JSON.parse(fs.readFileSync(filePath, 'utf-8'))
-
-    if (this._program['Id fiche dispositif'] in staticData) {
-      return staticData[this._program['Id fiche dispositif']]
-    }
-
-    return null
-  }
-
-  private _generatePublicodes(): { [key: string]: unknown } {
     const publicodes: { [key: string]: unknown } = {}
     const cibles: string[] = []
     const eligibility: { 'applicable si'?: string | { [Publicodes.ALL]: string[] }; [Publicodes.ALL]?: string[]; valeur?: string } = {}
@@ -50,6 +26,10 @@ export class PublicodesGenerator {
     if (this._generateEffectifConditions()) {
       eligibilityConditions.push('a un effectif éligible')
     }
+    if (this._generateLegalTypeCondition()) {
+      eligibilityConditions.push('a une categorie legale eligible')
+    }
+
     if (this._program['Couverture géographique'].Name != 'National') {
       eligibilityConditions.push(Publicodes.ZONE_GEO)
     }
@@ -67,6 +47,10 @@ export class PublicodesGenerator {
 
     if (this._generateEffectifConditions()) {
       publicodes[Publicodes.EFFECTIF] = this._generateEffectifConditions()
+    }
+
+    if (this._generateLegalTypeCondition()) {
+      publicodes[Publicodes.LEGALCATEGORY] = this._generateLegalTypeCondition()
     }
 
     if (this._generateSectorConditions()) {
@@ -210,6 +194,13 @@ export class PublicodesGenerator {
           [Publicodes.ALL]: constraint
         }
       }
+    }
+    return null
+  }
+
+  private _generateLegalTypeCondition() {
+    if (this._program.microEntrepreneur === 'non') {
+      return { [Publicodes.ALL]: ['microentrepreneur = non'] }
     }
     return null
   }

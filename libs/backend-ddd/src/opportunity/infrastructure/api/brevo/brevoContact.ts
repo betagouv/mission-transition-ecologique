@@ -80,8 +80,10 @@ const convertCompanySize = (companySize: StructureSize): BrevoCompanySize => {
   switch (companySize) {
     case StructureSize.EI:
       return BrevoCompanySize.EI
-    case StructureSize.ETI_GE:
+    case StructureSize.ETI:
+    case StructureSize.GE:
       return BrevoCompanySize.MORE_THAN_250
+    case StructureSize.MICRO:
     case StructureSize.TPE:
       return BrevoCompanySize.LESS_THAN_20
     case StructureSize.PE:
