@@ -11,7 +11,7 @@ autres opérateurs:
   - ORACE en Pays de la Loire
 url: https://www.cci.fr/offre/parcours-energie-pour-reduire-votre-facture-energie
 nature de l'aide: étude
-coût de l'accompagnement: Gratuit (sauf en Bretagne, Ile-de-France et Normandie à partir de 1 500€ HT)
+coût de l'accompagnement: Gratuit (sauf Centre-Val de Loire, Bretagne, Ile-de-France et Normandie)
 durée de l'accompagnement: 2 à 5 jours
 objectifs:
   - description: >-
@@ -85,6 +85,9 @@ champs conditionnels:
       - région = Normandie
     Montant du dispositif: À partir de 1 500€ HT
   - une de ces conditions:
+      - région = Centre-Val de Loire
+    Montant du dispositif: 350€ HT
+  - une de ces conditions:
       - région = Provence-Alpes-Côte d'Azur
       - région = Polynésie française
       - région = Pays de la Loire
@@ -97,7 +100,6 @@ champs conditionnels:
       - région = Guyane
       - région = Guadeloupe
       - région = Grand Est
-      - région = Centre-Val de Loire
       - région = Bourgogne-Franche-Comté
       - région = Auvergne-Rhône-Alpes
       - région = Occitanie
