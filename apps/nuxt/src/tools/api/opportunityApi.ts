@@ -103,7 +103,7 @@ export default class OpportunityApi extends RequestApi {
   }
 
   private _generateLinkToPage(): string {
-    const router = useNavigationStore().router
+    const router = useRouter()
     if (router) {
       const { fullPath } = router.currentRoute.value
       return new URL(fullPath, window.location.origin).href
