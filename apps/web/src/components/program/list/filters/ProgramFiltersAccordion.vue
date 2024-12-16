@@ -78,7 +78,7 @@ const programFilters: programFiltersType = useProgramStore().programFilters
 const companySelected = computed(() => programFilters[FilterItemKeys.companyData])
 
 const activeAccordion = ref<number>()
-const companyDataAccordion = ref(0)
+const companyDataAccordion = 0
 
 const displayRegionFilter = computed(() => {
   return useNavigationStore().isCatalogPrograms() && !companySelected.value
