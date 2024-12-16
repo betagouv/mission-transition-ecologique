@@ -1,7 +1,10 @@
 <template>
   <div
     class="fr-py-2v"
-    :class="{ 'fr-bg--green--lightness': programFilters[FilterItemKeys.companyData] }"
+    :class="{
+      'fr-bg--green--lightness': programFilters[FilterItemKeys.companyData],
+      'fr-bg--grey--lightness': !programFilters[FilterItemKeys.companyData]
+    }"
   >
     <DsfrCheckbox
       v-model="programFilters[FilterItemKeys.companyData]"
@@ -10,17 +13,27 @@
       name="companyFilter"
     >
       <template #label>
-        <span class="fr-text--bold">{{ filterData.title }}</span>
+        <span
+          class="fr-text--bold fr-pl-0-5v"
+          :class="{ 'fr-text--grey': !programFilters[FilterItemKeys.companyData] }"
+          >{{ filterData.title }}</span
+        >
       </template>
     </DsfrCheckbox>
     <div class="fr-pl-1v fr-pb-2v fr-text-left">
       <div
         v-for="(detail, key) in filterData.details"
         :key="key"
+        class="fr-mb-4v"
         :class="{ 'fr-text--grey': !programFilters[FilterItemKeys.companyData] }"
       >
-        <div :class="detail.icon">
-          <span class="fr-pl-1v">{{ detail.label }}</span>
+        <div class="fr-grid-row">
+          <div class="fr-col-1">
+            <span :class="detail.icon" />
+          </div>
+          <div class="fr-col-11 fr-pl-md-4v">
+            <span class="fr-text--md">{{ detail.label }}</span>
+          </div>
         </div>
       </div>
     </div>
