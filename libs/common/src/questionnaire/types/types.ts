@@ -40,6 +40,16 @@ export const SizeToWorkforce: { [key in StructureSize]: number } = {
   [StructureSize.GE]: 600
 }
 
+export const SizeToText: { [key in StructureSize]: string } = {
+  [StructureSize.EI]: 'Micro-entrepreneur',
+  [StructureSize.MICRO]: 'Moins de 10 employés',
+  [StructureSize.TPE]: 'Entre 10 et 19 employés',
+  [StructureSize.PE]: 'Entre 20 et 49 employés',
+  [StructureSize.ME]: 'Entre 50 et 249 employés',
+  [StructureSize.ETI]: 'Entre 250 et 499 employés',
+  [StructureSize.GE]: 'Plus de 500 employés'
+}
+
 export enum LegalCategory {
   EI = '1000'
 }

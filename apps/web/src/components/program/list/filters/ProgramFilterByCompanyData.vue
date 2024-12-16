@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { CompanyDataStorageKey, FilterItemKeys, type programFiltersType } from '@/types'
+import { CompanyDataStorageKey, FilterItemKeys, type programFiltersType, SizeToText, StructureSize } from '@/types'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 
 type CompanyFilterProps = {
@@ -66,7 +66,7 @@ const hasRegisteredData = CompanyDataStorage.isDataFull()
 const companyName = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.denomination)
 const companySector = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.secteur)
 const companyRegion = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.region)
-const companySize = computed(() => registeredData.value[CompanyDataStorageKey.Size])
+const companySize = computed(() => SizeToText[registeredData.value[CompanyDataStorageKey.Size] as StructureSize])
 
 const filterData: CompanyFilterProps = {
   title: companyName,
@@ -76,7 +76,6 @@ const filterData: CompanyFilterProps = {
     size: { label: companySize, icon: 'fr-icon-team-line' }
   }
 }
-
 watch(
   hasRegisteredData,
   (value) => {
