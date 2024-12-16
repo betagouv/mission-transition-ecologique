@@ -1,8 +1,12 @@
 <template>
-  <div class="fr-col-12 fr-col-md-8">
+  <div
+    teste2e-select="callback-contact-form"
+    class="fr-col-12 fr-col-md-8"
+  >
     <!-- MESSAGE IF ERROR-->
     <TeeError
       v-if="!hasValidResponse"
+      teste2e-selector="error-callback-contact-form"
       :mailto="getMailTo()"
       :email="Contact.email"
     >
@@ -14,6 +18,7 @@
     <!-- MESSAGE IF 200 -->
     <div
       v-if="hasValidResponse"
+      teste2e-selector="success-callback-contact-form"
       class="fr-text-center"
     >
       <p class="fr-text--blue-france">

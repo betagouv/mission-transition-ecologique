@@ -1,5 +1,5 @@
 /// <reference types='vitest' />
-import { ohVueIconAutoimportPreset, vueDsfrAutoimportPreset, vueDsfrComponentResolver } from '@gouvminint/vue-dsfr'
+import { vueDsfrAutoimportPreset, vueDsfrComponentResolver } from '@gouvminint/vue-dsfr'
 import { BuildOptions, defineConfig, Plugin, ServerOptions } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -51,7 +51,7 @@ const plugins = async () => {
     nxViteTsPaths(),
     AutoImport({
       include: [/\.[tj]sx?$/, /\.vue$/, /\.vue\?vue/],
-      imports: ['vue', 'vue-router', vueDsfrAutoimportPreset, ohVueIconAutoimportPreset, unheadVueComposablesImports],
+      imports: ['vue', 'vue-router', vueDsfrAutoimportPreset, unheadVueComposablesImports],
       vueTemplate: true,
       dts: './src/auto-imports.d.ts',
       eslintrc: {

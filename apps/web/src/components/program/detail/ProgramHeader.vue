@@ -50,7 +50,7 @@ const navigationStore = useNavigationStore()
 const isCatalogDetail = navigationStore.isCatalogProgramDetail()
 const router = useRouter()
 
-const hasRegisteredData = CompanyDataStorage.hasData()
+const hasRegisteredData = CompanyDataStorage.isDataFull()
 
 const routeToResults = {
   name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,

@@ -21,10 +21,10 @@
   }
 
   @each $decoration in setting.$text-decorations {
-    &--#{$decoration} {
+    &--decoration-#{$decoration} {
       text-decoration: $decoration;
-    }   
-  } 
+    }
+  }
 }
 
 .tee-font {

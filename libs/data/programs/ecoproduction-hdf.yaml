@@ -1,0 +1,79 @@
+titre: Accompagnement écoproduction
+promesse: >-
+  Engagez la transition économique de votre entreprise vers un modèle d’économie
+  circulaire
+description: >-
+  L'accompagnement écoproduction est un outil d'aide à la décision qui propose
+  au chef d'entreprise de repenser son modèle linéaire (extraire, fabriquer,
+  consommer, jeter) vers un modèle économique plus circulaire.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: CCI
+url: https://hautsdefrance.cci.fr/solutions/accompagnement-ecoproduction/
+nature de l'aide: étude
+coût de l'accompagnement: Sur devis, jusqu’à 80% de prise en charge possible
+durée de l'accompagnement: '2 à 12 jours de prestation répartis sur 4 à 6 mois '
+objectifs:
+  - description: >-
+      Faire le point sur le modèle existant (achat d’énergie, usages existants
+      de l’énergie, de l’eau, des déchets produits…)
+  - description: >-
+      Sensibiliser aux enjeux que posent l'économie linéaire actuelle et
+      identifier les opportunités d’un modèle d'économie circulaire sur
+      l'activité de votre entreprise : gestion des flux, bâti, produit/process,
+      gouvernance…
+  - description: >-
+      Co-construire un plan d'action à court, moyen et long termes et apporter
+      une vision prospective de ce que l’entreprise peut devenir avec un « guide
+      » pas à pas.
+  - description: >-
+      Bénéficiez d'un accompagnement sur plusieurs mois dans votre démarche de
+      transition économique.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Hauts-de-France
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Hauts-de-France

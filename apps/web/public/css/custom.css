@@ -70,10 +70,7 @@ WARNING :
 .fr-form-block .fr-input {
   background-color: white;
 }
-.tee-router-link {
-  background-image: none !important;
-}
-button.fr-link:hover, .tee-router-link:hover {
+button.fr-link:hover {
   background-color: transparent !important;
 }
 
@@ -99,21 +96,6 @@ button.fr-link:hover, .tee-router-link:hover {
 }
 .tee-footer-app-logo {
   height: 60px !important;
-}
-.tee-home-step-operator-logo {
-  box-shadow: none !important;
-}
-.tee-footer-operator-main {
-  height: 5.625rem;
-  width: 10rem;
-}
-.tee-footer-operator-img {
-  height: auto;
-  max-height: 5.625rem;
-  max-width: 10rem !important;
-}
-.tee-footer-logo {
-  box-shadow: none !important;
 }
 
 .tee-home-img {
@@ -242,16 +224,6 @@ button.fr-link:hover, .tee-router-link:hover {
   font-size: .8rem;
   --icon-size: 1rem;
 }
-.tee-program-badge-image {
-  text-transform: inherit;
-  color: white;
-  background-color: #000091;
-  border-radius: 1rem;
-  padding: 0 .7rem;
-}
-/* .tee-badge-image::before {
-} */
-
 /* RESULT DETAILS PAGE */
 .fr-tee-program-detail-img {
   position: relative;

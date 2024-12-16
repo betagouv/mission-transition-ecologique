@@ -17,8 +17,8 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeHeader > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import { TeeDsfrHeaderMenuLinkProps } from '@/components/element/vueDsfr/dsfrHeader/TeeDsfrHeaderMenuLinks.vue'
 import { RouteName } from '@/types/routeType'
-import { TeeDsfrHeaderMenuLinkProps } from '@/components/header/TeeDsfrHeaderMenuLinks.vue'
 
 const quickLinks: TeeDsfrHeaderMenuLinkProps[] = [
   {

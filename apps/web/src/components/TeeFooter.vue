@@ -35,32 +35,34 @@
         <div class="fr-footer__partners-logos fr-grid-row">
           <div class="fr-footer__partners-main">
             <a
-              class="footer__partners-link fr-my-4v fr-mr-4v tee-router-link"
+              class="footer__partners-link fr-my-4v fr-mr-4v fr-bg--none"
               target="_blank"
               :href="mainPartner.href"
             >
               <img
-                class="fr-footer__logo tee-home-step-operator-logo tee-footer-operator-main fr-responsive-img"
+                class="fr-footer__logo fr-responsive-img"
                 :src="mainPartner.img"
                 :alt="mainPartner.label"
               />
             </a>
           </div>
           <div class="fr-footer__partners-sub">
-            <ul
-              v-for="operator in operators"
-              :key="operator.label"
-            >
-              <li>
+            <ul>
+              <li
+                v-for="operator in operators"
+                :key="operator.label"
+              >
                 <a
-                  class="footer__partners-link tee-router-link fr-my-4v fr-ml-4v"
+                  class="footer__partners-link fr-bg--none fr-my-4v fr-ml-4v"
                   target="_blank"
                   :href="operator.href"
+                  rel="noopener noreferrer"
                 >
                   <img
-                    class="fr-footer__logo tee-home-step-operator-logo tee-footer-operator-img"
+                    class="fr-footer__logo fr-responsive-img"
                     :src="operator.img"
                     :alt="operator.label"
+                    :width="operator.width ?? undefined"
                   />
                 </a>
               </li>
@@ -126,7 +128,6 @@
 
 import Translation from '@/utils/translation'
 import { RouteName } from '@/types/routeType'
-import operators from '@/utils/operators'
 
 interface Props {
   stickToBottom?: boolean
@@ -192,6 +193,30 @@ const mainLinks = [
   {
     label: 'Ajouter une aide',
     to: { name: RouteName.AddProgram }
+  }
+]
+
+const operators = [
+  {
+    label: 'ADEME',
+    img: '/images/logos/ademe.svg',
+    href: 'https://www.ademe.fr/'
+  },
+  {
+    label: 'Bpifrance',
+    img: '/images/logos/bpi-france.svg',
+    href: 'https://www.bpifrance.fr/'
+  },
+  {
+    label: 'CCI France',
+    img: '/images/logos/cci-france.svg',
+    href: 'https://www.cci.fr/',
+    width: '130px'
+  },
+  {
+    label: 'CMA France',
+    img: '/images/logos/cma-france.png',
+    href: 'https://www.artisanat.fr/'
   }
 ]
 </script>

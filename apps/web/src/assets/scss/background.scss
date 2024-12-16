@@ -1,7 +1,6 @@
 @use 'sass:color';
 @use 'sass:meta';
 @use 'sass:map';
-@use '@gouvfr/dsfr/module/media-query';
 @use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
 @use 'setting';
 @use 'tool';
@@ -9,7 +8,7 @@
 @each $breakpoint, $value in breakpoints.$values {
   $modifier: tool.modifierByBreakpoint($breakpoint);
 
-  @include media-query.respond-from($breakpoint) {
+  @include tool.media-query-respond-from($breakpoint) {
     @each $color, $properties in setting.$colors {
       .fr-bg {
         &#{$modifier} {
@@ -21,6 +20,16 @@
             @include tool.background-color($color, $properties);
           }
         }
+      }
+    }
+  }
+
+  .fr-bg {
+    &--none {
+      background-image: none !important;
+
+      &:hover {
+        background-color: transparent !important;
       }
     }
   }

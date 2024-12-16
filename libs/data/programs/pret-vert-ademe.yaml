@@ -51,7 +51,7 @@ objectifs:
   - description: Bpifrance étudie votre demande de prêt.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - PME
+    - Moins de 250 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer

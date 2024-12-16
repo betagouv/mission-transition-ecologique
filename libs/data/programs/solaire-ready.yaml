@@ -56,7 +56,8 @@ objectifs:
       Faites une demande de subvention en ligne sur le site de la Région en
       joignant les devis ou estimatifs des travaux envisagés.
     liens:
-      - lien: http://subventionsenligne.maregionsud.fr
+      - lien: >-
+          https://aidesenligne.maregionsud.fr/aides/#/crsud/connecte/F_S_I_PLANSOL/depot/simple
         texte: Faire une demande de subvention
   - description: Une fois votre subvention validée, réalisez vos travaux.
 conditions d'éligibilité:

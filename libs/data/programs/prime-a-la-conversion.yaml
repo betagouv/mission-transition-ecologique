@@ -55,7 +55,7 @@ objectifs:
         texte: Adresse postale (page 4)
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Toutes tailles
+    - Moins de 5000 salariés
     - Éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer

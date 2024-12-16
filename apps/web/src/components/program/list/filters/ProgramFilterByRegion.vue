@@ -15,6 +15,8 @@ const programFilters: programFiltersType = useProgramStore().programFilters
 const programRegionsOptions: DsfrCheckboxSetProps['options'] = (Object.keys(Region) as (keyof typeof Region)[]).map((regionTypeKey) => ({
   label: Region[regionTypeKey],
   name: Region[regionTypeKey],
-  id: Region[regionTypeKey]
+  id: Region[regionTypeKey],
+  value: Region[regionTypeKey],
+  modelValue: [Region[regionTypeKey]]
 }))
 </script>

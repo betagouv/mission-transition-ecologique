@@ -43,6 +43,7 @@ const $el = ref<HTMLElement | null>(null)
 
 const onAcceptAll = () => {
   Cookie.acceptAllCookies()
+  closeCustomize()
 }
 const onRefuseAll = () => {
   Cookie.refuseAllCookies()

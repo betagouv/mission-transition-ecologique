@@ -2,11 +2,12 @@
   <DsfrCheckbox
     v-model="model"
     :name="`form-checkbox-${field.label}`"
-    :is-valid="field.isValid"
-    :required="field.required"
+    :value="`form-checkbox-${field.label}`"
+    :valid-message="getValidMessage()"
+    :error-message="getErrorMessage()"
   >
     <template #label>
-      <span> {{ field.label }} <code>*</code></span>
+      <span :teste2e-selector="`${fieldKey}-${field.type}`"> {{ field.label }} <code>*</code></span>
     </template>
   </DsfrCheckbox>
   <!-- CHECKBOX HINT -->
@@ -28,6 +29,7 @@ import { BooleanFieldInputType } from '@/types'
 interface Props {
   field: BooleanFieldInputType
   publicPath: string
+  fieldKey: string
   getErrorMessage: () => string
   getValidMessage: () => string
 }
