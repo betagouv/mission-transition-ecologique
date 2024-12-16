@@ -115,7 +115,7 @@ import TrackSiret from '@/tools/questionnaire/track/TrackSiret'
 import Translation from '@/tools/translation'
 import { SiretValidator } from '@tee/common'
 import { ref, computed } from 'vue'
-import Analytics from '@/utils/analytic/analytics'
+import Analytics from '@/tools/analytic/analytics'
 
 // Functionnal note :
 // We send data update to the parent component each time the data selection change.
