@@ -108,14 +108,14 @@
 </template>
 
 <script setup lang="ts">
-import { type TrackOptionItem, type TrackOptionsInput } from '@/types'
+import { type TrackOptionItem, type TrackOptionsInput, EstablishmentSearch } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Navigation from '@/tools/navigation'
 import TrackSiret from '@/tools/questionnaire/track/TrackSiret'
 import Translation from '@/tools/translation'
 import { SiretValidator } from '@tee/common'
 import { ref, computed } from 'vue'
-import { EstablishmentSearch } from '@/types'
+import Analytics from '@/utils/analytic/analytics'
 
 // Functionnal note :
 // We send data update to the parent component each time the data selection change.
@@ -197,7 +197,14 @@ const goToNextTrack = () => {
 
 function createData(): TrackOptionItem {
   const siretValue = selection.value >= 0 ? requestResponses.value.establishments[selection.value].siret : ''
+  const sector = selection.value >= 0 ? requestResponses.value.establishments[selection.value].secteur : ''
   const hasSelection = selection.value >= 0
+  if (selection.value >= 0) {
+    Analytics.sendEvent('register_siret_tracks', 'register_siret_tracks', {
+      siret: siretValue,
+      secteur: sector
+    })
+  }
   return TrackSiret.createData(
     props.option,
     siretValue,

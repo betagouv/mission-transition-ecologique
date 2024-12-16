@@ -33,9 +33,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import Navigation from '@/tools/navigation'
-import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType, EstablishmentFront } from '@/types'
+import Analytics from '@/tools/analytic/analytics'
 import Breakpoint from '@/tools/breakpoints'
+import Navigation from '@/tools/navigation'
+import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 import { CompanyDataStorageHandler } from '@/tools/storage/companyDataStorageHandler'
 
 interface Props {
@@ -89,20 +91,32 @@ const canBeSaved = computed(() => {
 const saveProfile = () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
-    const company = props.manual
-      ? ({
-          region: profile.value.localisation.value,
-          secteur: profile.value.activity.value,
-          denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`
-        } as CompanyDataType[CompanyDataStorageKey.Company])
-      : props.company
+    let company = props.company
+    if (props.manual) {
+      company = {
+        region: profile.value.localisation.value,
+        secteur: profile.value.activity.value,
+        denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`,
+        structure_size: profile.value.size.value
+      } as CompanyDataType[CompanyDataStorageKey.Company]
+    } else if (company) {
+      company.structure_size = profile.value.size.value
+    }
 
     CompanyDataStorageHandler.saveAndSetUsedTrackStore({
       [CompanyDataStorageKey.Company]: company,
       [CompanyDataStorageKey.Size]: profile.value.size.value
     })
     CompanyDataStorageHandler.updateRouteFromStorage()
-
+    if (!props.manual) {
+      const companyData = CompanyDataStorage.getCompanyData() as EstablishmentFront
+      if (companyData) {
+        Analytics.sendEvent('register_siret_modal', 'register_siret_modal', {
+          secteur: companyData.secteur,
+          siret: companyData.siret
+        })
+      }
+    }
     Navigation.toggleRegisterModal(false)
   } else {
     showError.value = true
