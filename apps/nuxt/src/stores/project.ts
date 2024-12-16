@@ -1,10 +1,10 @@
 import ProjectApi from '@/tools/api/projectApi'
 import ProjectFilter from '@/tools/project/projectFilter'
+import { Theme } from '@/tools/theme'
+import { Project, type ProjectFilterQuery, QuestionnaireData, Sector, ThemeId } from '@/types'
 import { defineStore } from 'pinia'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
-import { Project, type ProjectFilterQuery, QuestionnaireData, Sector, ThemeId } from '@/types'
-import { Theme } from '@/tools/theme'
 import { useUsedTrackStore } from './usedTrack'
 
 export const useProjectStore = defineStore('project', () => {
@@ -39,10 +39,9 @@ export const useProjectStore = defineStore('project', () => {
 
   function getProjectsByTheme(projects: Project[], themeType?: ThemeId): Project[] {
     return projects.filter((project: Project) => {
-      const hasTheme = themeType
+      return themeType
         ? ProjectFilter.byTheme(project, themeType)
         : project.themes.some((themeId) => Theme.getTags().some(({ id }) => id === themeId))
-      return hasTheme
     })
   }
 

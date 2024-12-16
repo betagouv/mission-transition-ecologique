@@ -32,14 +32,6 @@
             {{ option.label?.[Translation.lang] }}
             <!-- </a> -->
           </h3>
-          <div
-            v-if="isActive"
-            class="fr-card__start"
-          >
-            <p class="fr-badge fr-badge--info fr-badge--no-icon fr-mb-4v">
-              {{ Translation.t('selection.selected') }}
-            </p>
-          </div>
         </div>
         <p
           v-if="option.hint"

@@ -118,7 +118,6 @@ export const questionnaireRoute: Track = {
   id: TrackId.QuestionnaireRoute,
   category: TrackCategory.OurHelp,
   title: { fr: 'Par où commencer ?' },
-  label: { fr: 'Comment pouvons-nous vous aider ?' },
   callout: {
     bgColor: Color.yellow,
     title: { fr: 'En avant !' },

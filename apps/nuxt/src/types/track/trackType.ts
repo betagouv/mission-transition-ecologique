@@ -165,7 +165,7 @@ export interface Track {
   category?: TrackCategory
   imageRight?: string
   title: Translations
-  label: Translations
+  label?: Translations
   info?: Translations
   hint?: Translations
   resume?: Translations

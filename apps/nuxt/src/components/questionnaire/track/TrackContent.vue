@@ -15,7 +15,10 @@
 
     <div class="fr-col">
       <div :class="`fr-grid-row ${useUsedTrackStore().currentIsFirst ? 'fr-grid-row--gutters' : ''}`">
-        <TrackLabel :track="track" />
+        <TrackLabel
+          v-if="track.label"
+          :track="track"
+        />
         <TrackInfo :track="track" />
         <TrackHint :track="track" />
         <TrackResume :track="track" />
@@ -127,7 +130,7 @@ const selectedOptions = ref<TrackOptionsUnion[]>([])
 
 const usedTrack = usedTrackStore.current as UsedTrack
 const track: Track | undefined = trackStore.getTrack(usedTrack.id)
-trackStore.setCurrentTrack(track)
+// trackStore.setCurrentTrack(track)
 
 const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
