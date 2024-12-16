@@ -108,7 +108,7 @@ import { computed } from 'vue'
 import { Project } from '@/types'
 import UsedTrack from '@/utils/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { CompanyDataStorage } from '@/utils/storage'
+import { CompanyDataStorage } from '@/utils/companyData'
 
 interface ProjectListProps {
   sortedProjects?: Project[]

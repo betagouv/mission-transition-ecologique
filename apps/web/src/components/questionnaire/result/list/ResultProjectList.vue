@@ -88,7 +88,7 @@ import OtherProjectCta from '@/components/project/list/OtherProjectCta.vue'
 import OtherProjectForm from '@/components/project/list/OtherProjectForm.vue'
 import Translation from '@/utils/translation'
 import Navigation from '@/utils/navigation'
-import { CompanyDataStorage } from '@/utils/storage'
+import { CompanyDataStorage } from '@/utils/companyData'
 import { useNavigationStore } from '@/stores/navigation'
 
 interface ProjectListProps {

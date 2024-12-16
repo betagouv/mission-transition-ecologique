@@ -31,7 +31,7 @@ import { Project } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
 import { useProgramStore } from '@/stores/program'
 import { useNavigationStore } from '@/stores/navigation'
-import { CompanyDataStorage } from '@/utils/storage'
+import { CompanyDataStorage } from '@/utils/companyData'
 
 const currentTrack = useTrackStore().current
 const emit = defineEmits(['updateSelection'])

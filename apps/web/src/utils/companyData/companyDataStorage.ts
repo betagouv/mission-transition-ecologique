@@ -1,7 +1,8 @@
-import { CompanyDataRegisterType, CompanyDataStorageKey, CompanyDataType, EstablishmentFront } from '@/types'
+import { CompanyDataStorageKey, CompanyDataType, EstablishmentFront } from '@/types'
 import { LocalStorageHandler } from '@/utils/storage/localStorageHandler'
 import { StructureSize } from '@tee/common'
 import { ref, Ref } from 'vue'
+import { CompanyDataValidator } from '@/utils/companyData/validator/validator'
 
 export class CompanyDataStorage {
   private static readonly _storageHandler = new LocalStorageHandler()
@@ -27,18 +28,8 @@ export class CompanyDataStorage {
         return false
       }
 
-      return this._isEstablishmentFront(companyData)
-        ? this._isFill<typeof companyData>(companyData, ['denomination'])
-        : this._isFill<typeof companyData>(companyData)
+      return CompanyDataValidator.validate(companyData)
     })
-  }
-
-  private static _isFill<T extends NonNullable<CompanyDataRegisterType>>(companyData: T, exclude: (keyof T)[] = []): boolean {
-    return Object.entries(companyData).every((value, key) => key in exclude || value !== null)
-  }
-
-  private static _isEstablishmentFront(value: NonNullable<CompanyDataRegisterType>): value is EstablishmentFront {
-    return 'siret' in value
   }
 
   public static hasCompanyData() {

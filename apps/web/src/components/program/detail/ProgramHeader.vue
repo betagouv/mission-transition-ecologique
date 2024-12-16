@@ -35,7 +35,7 @@ import { useNavigationStore } from '@/stores/navigation'
 import { useProjectStore } from '@/stores/project'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import Translation from '@/utils/translation'
-import { CompanyDataStorage } from '@/utils/storage'
+import { CompanyDataStorage } from '@/utils/companyData'
 
 interface Props {
   programId: string

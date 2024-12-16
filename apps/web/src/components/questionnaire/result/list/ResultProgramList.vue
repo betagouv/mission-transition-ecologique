@@ -52,7 +52,7 @@ import { computed } from 'vue'
 import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
 import Translation from '@/utils/translation'
 import Navigation from '@/utils/navigation'
-import { CompanyDataStorage } from '@/utils/storage'
+import { CompanyDataStorage } from '@/utils/companyData'
 import { useNavigationStore } from '@/stores/navigation'
 
 interface ProgramListProps {

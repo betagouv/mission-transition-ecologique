@@ -33,7 +33,7 @@ import { useNavigationStore } from './stores/navigation'
 import TeeFooter from './components/TeeFooter.vue'
 import Translation from './utils/translation'
 import Cookie from './utils/cookies'
-import { CompanyDataStorage } from './utils/storage'
+import { CompanyDataStorage } from './utils/companyData'
 
 const navigationStore = useNavigationStore()
 const router = useRouter()

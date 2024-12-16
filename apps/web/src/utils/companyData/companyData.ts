@@ -1,4 +1,4 @@
-import { CompanyDataStorage } from '@/utils/storage/companyDataStorage'
+import { CompanyDataStorage } from '@/utils/companyData/companyDataStorage'
 import { useNavigationStore } from '@/stores/navigation'
 import {
   CompanyDataStorageKey,
@@ -13,10 +13,10 @@ import {
   TrackId,
   type TrackOptionsUnion
 } from '@/types'
-import { CompanyDataType } from '@/types/companyDataType'
+import { CompanyDataType } from '@/utils/companyData/types/companyDataType'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 
-export class CompanyDataStorageHandler {
+export class CompanyData {
   static saveDataToStorage(data: CompanyDataType) {
     CompanyDataStorage.setCompanyData(data[CompanyDataStorageKey.Company])
     CompanyDataStorage.setSize(data[CompanyDataStorageKey.Size] as StructureSize)

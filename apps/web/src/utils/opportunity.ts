@@ -6,7 +6,7 @@ import { CalloutType } from '@/types/elementsPropsTypes'
 import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'
 import { Theme } from '@/utils/theme'
-import { CompanyDataStorage } from '@/utils/storage'
+import { CompanyDataStorage } from '@/utils/companyData'
 
 export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
