@@ -2,6 +2,8 @@ entreprise:
 
 entreprise . effectif:
 
+entreprise . microentrepreneur:
+
 entreprise . secteur d'activité:
   avec:
     est industrie:
