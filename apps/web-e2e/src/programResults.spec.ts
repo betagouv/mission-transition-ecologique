@@ -17,11 +17,20 @@ tests.forEach((singleTest) => {
     }
     const elementsLocal = await page.$$eval('.teste2e-program-target', (els) => els.map((el) => el.innerHTML.trim()))
 
+    // logs to analyse the error and easily reset the test case if needed (volontary filter changes)
+    // console.log(
+    //   'elements trouvés non attendu',
+    //   elementsLocal.filter((el) => !singleTest.values.includes(el))
+    // )
+    // console.log(
+    //   'elements non trouvés attendus',
+    //   singleTest.values.filter((el) => !elementsLocal.includes(el))
+    // )
     // console.warn(singleTest.values)
     // console.warn(elementsLocal)
 
     expect(elementsLocal.length).toBe(singleTest.count ?? singleTest.values.length)
-    if (singleTest.count < 100) {
+    if (!singleTest.count || singleTest.count < 100) {
       for (let i = 0; i < elementsLocal.length; i++) {
         expect(elementsLocal[i]).toBe(singleTest.values[i])
       }
