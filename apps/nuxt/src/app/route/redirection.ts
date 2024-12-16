@@ -19,9 +19,6 @@ export const redirections: RouteRecordRaw[] = [
   },
   {
     path: '/annuaire',
-    redirect: () => {
-      return { name: RouteName.CatalogPrograms }
-    },
     children: [
       {
         path: '',
