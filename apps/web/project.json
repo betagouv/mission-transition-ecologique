@@ -27,12 +27,6 @@
     },
     "generate-seo": {
       "executor": "nx:run-commands",
-      "dependsOn": [
-          {
-            "target": "generate-program",
-            "projects": "@tee/data"
-          }
-      ],
       "options": {
         "cwd": "apps/web",
         "commands": [

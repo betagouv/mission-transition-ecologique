@@ -1,5 +1,5 @@
 import { OperatorFilter } from './generatedShared'
-import { Operators } from '../../generated/program'
+import { Operators } from '../../program/types/program'
 
 export interface EnrichedOperator {
   operator: Operators

@@ -44,7 +44,6 @@ jobs:
           cache: 'npm'
       - run: npm clean-install --foreground-scripts
 
-      - run: npx nx run @tee/data:generate-program
       - run: npx nx run @tee/backend:spec-and-routes
       - run: npm run lint
 

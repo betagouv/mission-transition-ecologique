@@ -1,4 +1,4 @@
-import { ProgramYamlsGenerator } from './program/yamlGenerator/programYamlsGenerator'
+import { ProgramYamlsGenerator } from '../program/yamlGenerator/programYamlsGenerator'
 
 console.log('Start the program Yamls generation')
 
