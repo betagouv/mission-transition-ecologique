@@ -1,4 +1,20 @@
 <template>
+  <DsfrAccordionsGroup
+    v-if="companyDataFilter.display"
+    v-model="companyDataAccordion"
+  >
+    <DsfrAccordion
+      :id="`accordion-${companyDataFilter.id}`"
+      :class="[props.accordionClass, companyDataFilterVisibilityClass(companyDataFilter.id)]"
+      :title="`${companyDataFilter.title} ${getFilterCount(companyDataFilter.id)}`"
+    >
+      <component
+        :is="companyDataFilter.component"
+        :class="companyDataFilter.componentClass"
+        legend=""
+      />
+    </DsfrAccordion>
+  </DsfrAccordionsGroup>
   <DsfrAccordionsGroup v-model="activeAccordion">
     <template
       v-for="(filter, key) in filters"
@@ -62,6 +78,7 @@ const programFilters: programFiltersType = useProgramStore().programFilters
 const companySelected = computed(() => programFilters[FilterItemKeys.companyData])
 
 const activeAccordion = ref<number>()
+const companyDataAccordion = ref(0)
 
 const displayRegionFilter = computed(() => {
   return useNavigationStore().isCatalogPrograms() && !companySelected.value
@@ -73,14 +90,15 @@ const companyDataFilterVisibilityClass = (filterId: FilterItemKeys) => {
   }
 }
 
+const companyDataFilter: FilterItem = {
+  title: 'Entreprise',
+  id: FilterItemKeys.companyData,
+  component: ProgramFilterByCompanyData,
+  componentClass: 'fr-pl-2v',
+  display: true
+}
+
 const filters: FilterItem[] = [
-  {
-    title: 'Entreprise',
-    id: FilterItemKeys.companyData,
-    component: ProgramFilterByCompanyData,
-    componentClass: 'fr-pl-2v',
-    display: true
-  },
   {
     title: "Types d'aides",
     id: FilterItemKeys.typeAid,
@@ -115,14 +133,6 @@ const getFilterCount = (filterId: FilterItemKeys) => {
 
   return ''
 }
-
-watch(
-  companySelected,
-  (value) => {
-    activeAccordion.value = value ? 0 : -1
-  },
-  { immediate: true }
-)
 </script>
 <style lang="scss" scoped>
 @use '@/assets/scss/setting';
