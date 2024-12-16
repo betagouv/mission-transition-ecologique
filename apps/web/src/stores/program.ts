@@ -8,14 +8,14 @@ import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import {
-  type programFiltersType,
-  ProgramAidType,
-  ThemeId,
-  Region,
-  type ProgramData,
-  QuestionnaireData,
+  FilterItemKeys,
   OperatorFilter,
-  FilterItemKeys
+  ProgramAidType,
+  type ProgramData,
+  type programFiltersType,
+  QuestionnaireData,
+  Region,
+  ThemeId
 } from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
@@ -109,6 +109,17 @@ export const useProgramStore = defineStore('program', () => {
     }
   }
 
+  function resetFilter(filterKey: FilterItemKeys) {
+    if (filterKey === FilterItemKeys.themeType) {
+      programFilters.value[filterKey] = ''
+      return
+    } else if (filterKey === FilterItemKeys.companyData) {
+      programFilters.value[filterKey] = false
+      return
+    }
+    programFilters.value[filterKey] = []
+  }
+
   return {
     programs,
     currentProgram,
@@ -119,7 +130,8 @@ export const useProgramStore = defineStore('program', () => {
     hasThemeTypeSelected,
     setThemeTypeSelected,
     getThemeTypeSelected,
-    resetFilters
+    resetFilters,
+    resetFilter
   }
 })
 
