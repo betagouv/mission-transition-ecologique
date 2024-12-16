@@ -50,7 +50,7 @@ export interface ReqResp extends ReqError {
   code?: string
   message?: string
   data?: any
-  opportunityId?: string
+  id?: string
   resultsMapping?: ResultsMapping[]
   url?: string
 }
