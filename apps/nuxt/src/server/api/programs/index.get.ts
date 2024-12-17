@@ -1,15 +1,15 @@
 import { Monitor, ProgramService } from '@tee/backend-ddd'
 import { QuestionnaireData, serverQuestionnaireDataSchema } from '@tee/common'
-import { defineEventHandler } from 'h3'
+import { defineEventHandler, H3Event } from 'h3'
 
 export default defineEventHandler(async (event) => {
   const questionnaireData = await getValidatedQuery(event, serverQuestionnaireDataSchema.parse)
 
-  return await programCached(questionnaireData)
+  return await programsCached(event, questionnaireData)
 })
 
-const programCached = cachedFunction(
-  async (questionnaireData: QuestionnaireData) => {
+const programsCached = cachedFunction(
+  async (event: H3Event, questionnaireData: QuestionnaireData) => {
     const programService = new ProgramService()
     const programsResult = programService.getFilteredPrograms(questionnaireData)
 
@@ -24,7 +24,10 @@ const programCached = cachedFunction(
     return programsResult.value.map((program) => programService.convertDomainToFront(program))
   },
   {
-    getKey: (questionnaireData) => JSON.stringify(questionnaireData),
+    name: 'programs',
+    getKey: (event: H3Event) => {
+      return CacheKeyBuilder.formEvent(event)
+    },
     maxAge: 60 * 60 * 24 // 24 hours
   }
 )

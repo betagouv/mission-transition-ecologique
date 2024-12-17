@@ -17,8 +17,8 @@
 
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
+import ProjectFilter from '@/tools/project/projectFilter'
 import { Project as ProjectType } from '@/types'
-import { Project } from '@/tools/project/project'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/tools/theme'
 import CompanyDataStorage from '@/tools/storage/companyDataStorage'
@@ -31,7 +31,7 @@ const hasError = ref<boolean>(false)
 
 const registeredData = CompanyDataStorage.getData()
 
-const filteredProjects = Project.filter(projects, Theme.getThemeFromSelectedOrPriorityTheme())
+const filteredProjects = ProjectFilter.filter(projects, Theme.getThemeFromSelectedOrPriorityTheme())
 
 const getProgramsAndProjects = async () => {
   navigationStore.hasSpinner = true

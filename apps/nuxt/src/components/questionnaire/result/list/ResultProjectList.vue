@@ -79,11 +79,11 @@
 </template>
 
 <script setup lang="ts">
+import ProjectSorter from '@/tools/project/projectSorter'
 import { Project } from '@/types'
 import { computed } from 'vue'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import { Project as UtilsProject } from '@/tools/project/project'
 import OtherProjectCta from '@/components/project/list/OtherProjectCta.vue'
 import OtherProjectForm from '@/components/project/list/OtherProjectForm.vue'
 import Translation from '@/tools/translation'
@@ -128,7 +128,7 @@ const openOtherProjectForm = () => {
   otherProjectForm.value = true
 }
 
-const sortedProjects = UtilsProject.sort(computed(() => props.filteredProjects))
+const sortedProjects = ProjectSorter.sort(computed(() => props.filteredProjects))
 
 const showNoResults = computed(() => {
   return props.hasError || (!countProjects.value && props.filteredProjects !== undefined)

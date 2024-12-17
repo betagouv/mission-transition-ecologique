@@ -1,4 +1,4 @@
-import { defineEventHandler } from 'h3'
+import { defineEventHandler, H3Event } from 'h3'
 import { EstablishmentService, Monitor, EstablishmentNotFoundError } from '@tee/backend-ddd'
 import { z } from 'zod'
 
@@ -12,24 +12,35 @@ const queriesSchema = z.object({
 export default defineEventHandler(async (event) => {
   const routeParams = await getValidatedRouterParams(event, routeParamsSchema.parse)
   const queries = await getValidatedQuery(event, queriesSchema.parse)
-  const establishmentResult = await new EstablishmentService().search(routeParams.query, queries.count)
 
-  if (establishmentResult.isErr) {
-    const err = establishmentResult.error
-    Monitor.error('Error in getEstablishmentBySiret', { query: routeParams, error: err })
+  return establishmentCached(event, routeParams.query, queries.count)
+})
 
-    if (err instanceof EstablishmentNotFoundError) {
+const establishmentCached = cachedFunction(
+  async (event: H3Event, query: string, count: number) => {
+    const establishmentResult = await new EstablishmentService().search(query, count)
+    if (establishmentResult.isErr) {
+      const err = establishmentResult.error
+      Monitor.error('Error in getEstablishmentBySiret', { query: query, error: err })
+
+      if (err instanceof EstablishmentNotFoundError) {
+        throw createError({
+          statusCode: 404,
+          statusMessage: 'Establishment not found'
+        })
+      }
+
       throw createError({
-        statusCode: 404,
-        statusMessage: 'Establishment not found'
+        statusCode: 500,
+        statusMessage: 'Server internal error'
       })
     }
 
-    throw createError({
-      statusCode: 500,
-      statusMessage: 'Server internal error'
-    })
+    return establishmentResult.value
+  },
+  {
+    name: 'establishment',
+    getKey: (event: H3Event, query: string, count: number) => CacheKeyBuilder.formEvent(event, `${query}-${count}`),
+    maxAge: 60 * 60 * 24 // 24 hours
   }
-
-  return establishmentResult.value
-})
+)

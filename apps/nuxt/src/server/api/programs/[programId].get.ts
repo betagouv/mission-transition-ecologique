@@ -1,5 +1,5 @@
-import { serverQuestionnaireDataSchema } from '@tee/common'
-import { defineEventHandler } from 'h3'
+import { QuestionnaireData, serverQuestionnaireDataSchema } from '@tee/common'
+import { defineEventHandler, H3Event } from 'h3'
 import { EstablishmentNotFoundError, Monitor, ProgramService } from '@tee/backend-ddd'
 import { z } from 'zod'
 
@@ -11,23 +11,34 @@ export default defineEventHandler(async (event) => {
   const params = await getValidatedRouterParams(event, programIdSchema.parse)
   const questionnaireData = await getValidatedQuery(event, serverQuestionnaireDataSchema.parse)
 
-  const programService = new ProgramService()
-  const program = programService.getOneWithMaybeEligibility(params.programId, questionnaireData)
+  return await programCached(event, params.programId, questionnaireData)
+})
 
-  if (program.isErr) {
-    if (program.error instanceof EstablishmentNotFoundError) {
+const programCached = cachedFunction(
+  async (event: H3Event, programId: string, questionnaireData: QuestionnaireData) => {
+    const programService = new ProgramService()
+    const program = programService.getOneWithMaybeEligibility(programId, questionnaireData)
+
+    if (program.isErr) {
+      if (program.error instanceof EstablishmentNotFoundError) {
+        throw createError({
+          statusCode: 404,
+          statusMessage: 'Program not found'
+        })
+      }
+
+      Monitor.error('Error in get Program id', { programId })
       throw createError({
-        statusCode: 404,
-        statusMessage: 'Program not found'
+        statusCode: 500,
+        statusMessage: 'Server internal error'
       })
     }
 
-    Monitor.error('Error in get Program id', { params })
-    throw createError({
-      statusCode: 500,
-      statusMessage: 'Server internal error'
-    })
+    return programService.convertDomainToFront(program.value)
+  },
+  {
+    name: 'program',
+    getKey: (event: H3Event, programId: string) => CacheKeyBuilder.formEvent(event, programId),
+    maxAge: 60 * 60 * 24 // 24 hours
   }
-
-  return programService.convertDomainToFront(program.value)
-})
+)

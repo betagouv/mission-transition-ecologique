@@ -56,9 +56,10 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
+import ProjectFilter from '@/tools/project/projectFilter'
+import ProjectSorter from '@/tools/project/projectSorter'
 import { Project as ProjectType, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
-import { Project } from '@/tools/project/project'
 import { computed } from 'vue'
 import { Theme } from '@/tools/theme'
 
@@ -85,8 +86,8 @@ navigationStore.hasSpinner = false
 
 const theme = Theme.getThemeFromSelectedTheme()
 
-const filteredProjects = Project.filter(projects, theme)
-const sortedProjects = Project.sort(filteredProjects)
+const filteredProjects = ProjectFilter.filter(projects, theme)
+const sortedProjects = ProjectSorter.sort(filteredProjects)
 
 const hasSpinner = computed(() => {
   return navigationStore.hasSpinner
