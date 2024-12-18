@@ -34,7 +34,10 @@
       >
         <div class="fr-grid-row">
           <div class="fr-col-1">
-            <span :class="detail.icon" />
+            <span
+              class="company-filter-icon fr-pl-1v"
+              :class="detail.icon"
+            />
           </div>
           <div class="fr-col-11 fr-pl-md-4v">
             <span class="fr-text--md">{{ detail.label }}</span>
@@ -91,3 +94,10 @@ watch(
   { immediate: true }
 )
 </script>
+<style lang="scss" scoped>
+.company-filter-icon::before {
+  display: inline-block;
+  height: 1.2rem;
+  width: 1.2rem;
+}
+</style>
