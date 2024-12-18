@@ -31,7 +31,7 @@ import { Project } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
 import { useProgramStore } from '@/stores/program'
 import { useNavigationStore } from '@/stores/navigation'
-import { CompanyDataStorage } from '@/utils/companyData'
+import { CompanyData } from '@/utils/companyData'
 
 const currentTrack = useTrackStore().current
 const emit = defineEmits(['updateSelection'])
@@ -40,7 +40,7 @@ const projects = ref<Project[]>()
 const programs = ref<ProgramData[]>()
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
-const registeredData = CompanyDataStorage.getData()
+const registeredData = CompanyData.dataRef
 
 const options = computed<TrackThemeOptionProps[]>(() => {
   const options: TrackThemeOptionProps[] = []

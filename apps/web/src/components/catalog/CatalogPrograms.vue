@@ -82,14 +82,14 @@ import { FilterItemKeys, type ProgramData, ThemeId } from '@/types'
 import { MetaSeo } from '@/utils/metaSeo'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyData } from '@/utils/companyData'
 
 const programStore = useProgramStore()
 
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const registeredData = CompanyDataStorage.getData()
+const registeredData = CompanyData.dataRef
 
 const title = 'Le catalogue des aides publiques à la transition écologique'
 const description =

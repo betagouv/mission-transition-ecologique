@@ -22,7 +22,7 @@ import Translation from '@/utils/translation'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
 import TrackSiret from '@/utils/track/TrackSiret'
-import { CompanyDataStorage, CompanyData } from '@/utils/companyData'
+import { CompanyData } from '@/utils/companyData'
 
 export const useUsedTrackStore = defineStore('usedTrack', () => {
   const current = ref<UsedTrack | undefined>()
@@ -284,7 +284,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
   }
 
   function setFromStorage() {
-    for (const [companyDataStorageKey, value] of Object.entries(CompanyDataStorage.getData().value)) {
+    for (const [companyDataStorageKey, value] of Object.entries(CompanyData.dataRef.value)) {
       if (value) {
         let selectedOption = undefined
         const trackId = CompanyData.getTrackIdFromStorageKey(companyDataStorageKey as CompanyDataStorageKey)

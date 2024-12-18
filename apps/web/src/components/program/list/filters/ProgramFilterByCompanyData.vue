@@ -43,8 +43,8 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { CompanyDataStorageKey, FilterItemKeys, type programFiltersType, SizeToText, StructureSize } from '@/types'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import Breakpoint from '@/utils/breakpoints'
+import { CompanyData } from '@/utils/companyData'
 
 type CompanyFilterProps = {
   title: ComputedRef<string | undefined>
@@ -62,8 +62,8 @@ type CompanyFilterDetailProps = {
 
 const programFilters: programFiltersType = useProgramStore().programFilters
 
-const registeredData = CompanyDataStorage.getData()
-const hasRegisteredData = CompanyDataStorage.isDataFull()
+const registeredData = CompanyData.dataRef
+const hasRegisteredData = CompanyData.isDataFull()
 const companyName = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.denomination)
 const companySector = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.secteur)
 const companyRegion = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.region)

@@ -107,7 +107,7 @@ import TrackColOption from '@/utils/track/TrackColOption'
 import TrackComponent from '@/utils/track/TrackComponent'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { CompanyDataStorage, CompanyData } from '@/utils/companyData'
+import { CompanyData } from '@/utils/companyData'
 
 interface Props {
   trackElement: Element
@@ -119,7 +119,7 @@ const router = useRouter()
 const trackStore = useTrackStore()
 const usedTrackStore = useUsedTrackStore()
 const navigationStore = useNavigationStore()
-const registeredData = CompanyDataStorage.getData()
+const registeredData = CompanyData.dataRef
 
 const selectedOptionsIndexes = ref<number[]>([])
 const selectedOptions = ref<TrackOptionsUnion[]>([])

@@ -12,7 +12,7 @@ import { Project as ProjectType } from '@/types'
 import { Project } from '@/utils/project/project'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/utils/theme'
-import { CompanyDataStorage } from '@/utils/companyData'
+import { CompanyData } from '@/utils/companyData'
 
 const projectStore = useProjectStore()
 const navigationStore = useNavigationStore()
@@ -20,7 +20,7 @@ const navigationStore = useNavigationStore()
 const projects = ref<ProjectType[]>()
 const hasError = ref<boolean>(false)
 
-const registeredData = CompanyDataStorage.getData()
+const registeredData = CompanyData.dataRef
 
 const filteredProjects = Project.filter(projects, Theme.getThemeFromSelectedOrPriorityTheme())
 
