@@ -1,6 +1,10 @@
-export type EnrichedEvent = {
-  event: string
-  properties: Record<string, any>
+export type EventId = {
+  eventId?: string
 }
 
-export type PosthogEvent = {}
+export type PosthogEvent = EventId & {
+  eventName?: string
+  eventDate?: string
+  personId?: string // distinctId
+  sessionId?: string
+}
