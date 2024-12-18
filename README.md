@@ -66,7 +66,7 @@ This repository is a monorepo, based on [npm workspaces](https://docs.npmjs.com/
 - the ["web" workspace](apps/web/README.md) contains the front-end implementations.
 - the ["backend" workspace](./libs/backend-ddd/README.md) contains the back-end implementations.
 - the ["data" workspace](./libs/data/README.md) contains the datasets and common files for datasets builds.
-- the ["web-e2e" workspace](apps/web-e2e/README.md) contains the front-end end to end testing.
+- the ["web-e2e" workspace](apps/nuxt-e2e/README.md) contains the front-end end to end testing.
 
 ## Getting started
 

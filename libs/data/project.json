@@ -18,8 +18,8 @@
       "options": {
         "cwd": "libs/data",
         "commands": [
-          "npx ts-node src/generateProgramType.ts",
-          "npx ts-node src/buildProgramJson.ts"
+          "npx tsx src/generateProgramType.ts",
+          "npx tsx src/buildProgramJson.ts"
         ],
         "parallel": false
       }
@@ -29,7 +29,7 @@
       "options": {
         "cwd": "libs/data",
         "commands": [
-          "npx ts-node src/generateProjectsJson.ts"
+          "npx tsx src/generateProjectsJson.ts"
         ]
       }
     },
@@ -38,8 +38,8 @@
       "options": {
         "cwd": "libs/data",
         "commands": [
-          "npx ts-node src/generateOperatorsJson.ts",
-          "npx ts-node src/generateProgramYaml.ts"
+          "npx tsx src/generateOperatorsJson.ts",
+          "npx tsx src/generateProgramYaml.ts"
         ],
         "parallel": false
       }

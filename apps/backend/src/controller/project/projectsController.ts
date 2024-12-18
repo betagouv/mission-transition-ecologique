@@ -1,7 +1,7 @@
 import { ErrorJSON, Monitor, ProjectService, NAF1Letters } from '@tee/backend-ddd'
 import { Controller, Get, Queries, Res, Route, SuccessResponse, Tags, TsoaResponse } from 'tsoa'
 import { ProjectFilterQuery, Sector } from '@tee/common'
-import { Project } from '@tee/data'
+import { ProjectType } from '@tee/data'
 
 @SuccessResponse('200', 'OK')
 @Route('projects')
@@ -14,7 +14,7 @@ export class ProjectsController extends Controller {
   public async get(
     @Queries() filterData: ProjectFilterQuery,
     @Res() requestFailedResponse: TsoaResponse<400 | 500, ErrorJSON>
-  ): Promise<Project[]> {
+  ): Promise<ProjectType[]> {
     if (!this._validateData(filterData)) {
       return requestFailedResponse(400, { message: 'Invalid filter data provided' })
     }
