@@ -73,7 +73,7 @@ import Contact from '@/utils/contact'
 import { useNavigationStore } from '@/stores/navigation'
 import Translation from '@/utils/translation'
 import Opportunity from '@/utils/opportunity'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyData } from '@/utils/companyData'
 
 interface Props {
   project: Project
@@ -87,8 +87,8 @@ const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormConta
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const hasRegisteredData = CompanyDataStorage.isDataFull()
-const registeredData = CompanyDataStorage.getData()
+const hasRegisteredData = CompanyData.isDataFull()
+const registeredData = CompanyData.dataRef
 
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value.length || 0
