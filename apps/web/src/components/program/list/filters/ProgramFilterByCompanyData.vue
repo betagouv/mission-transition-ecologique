@@ -39,7 +39,7 @@
               :class="detail.icon"
             />
           </div>
-          <div class="fr-col-11 fr-pl-md-4v">
+          <div class="fr-col-11 fr-pl-md-4v fr-pr-1v">
             <span class="fr-text--md">{{ detail.label }}</span>
           </div>
         </div>
