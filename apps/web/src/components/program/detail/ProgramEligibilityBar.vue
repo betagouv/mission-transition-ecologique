@@ -6,7 +6,7 @@
   />
 </template>
 <script setup lang="ts">
-import { Color, ProgramEligibilityType } from '@/types'
+import { Color, ProgramEligibilityType, RouteName } from '@/types'
 import { TeeEligibilityBarLink, TeeEligibilityBarMessage } from '@/components/program/eligibility/TeeEligibilityBar.vue'
 import { useProgramStore } from '@/stores/program'
 import { storeToRefs } from 'pinia'
@@ -50,13 +50,13 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
         labelMobile: 'Vérifier les critères'
       }
     // TODO : uncomment once the company data filter is available on catalogs
-    // return {
-    //   url: RouteName.CatalogPrograms,
-    //   label: 'Voir les aides pour mon entreprise',
-    //   labelMobile: 'Voir les aides éligibles',
-    //   isButtonLink: true
-    // }
     case ProgramEligibilityType.NotEligible:
+      return {
+        url: RouteName.CatalogPrograms,
+        label: 'Voir les aides pour mon entreprise',
+        labelMobile: 'Voir les aides éligibles',
+        isButtonLink: true
+      }
     case ProgramEligibilityType.Eligible:
     default:
       return undefined
