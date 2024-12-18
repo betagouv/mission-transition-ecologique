@@ -5,7 +5,7 @@ import {
   ProgramAidType,
   type ProgramData,
   ProgramEligibility,
-  type programFiltersType,
+  type ProgramFiltersType,
   ProgramType,
   Region,
   ThemeId,
@@ -86,11 +86,11 @@ export default class ProgramFilter {
     return true
   }
 
-  static isValidFilterValue(programFilterValue: ValueOf<programFiltersType>) {
+  static isValidFilterValue(programFilterValue: ValueOf<ProgramFiltersType>) {
     return programFilterValue !== ''
   }
 
-  static isValidFilterValues(programFilterValue: ValueOf<programFiltersType>) {
+  static isValidFilterValues(programFilterValue: ValueOf<ProgramFiltersType>) {
     return typeof programFilterValue !== 'boolean' && programFilterValue.length > 0
   }
 }

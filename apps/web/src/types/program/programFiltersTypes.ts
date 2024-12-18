@@ -1,4 +1,4 @@
-export type programFiltersType = {
+export type ProgramFiltersType = {
   [FilterItemKeys.typeAid]: string[]
   [FilterItemKeys.themeType]: string
   [FilterItemKeys.operatorAid]: string[]

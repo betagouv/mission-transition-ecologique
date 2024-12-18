@@ -8,10 +8,10 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { FilterItemKeys, ProgramAidType, type programFiltersType } from '@/types'
+import { FilterItemKeys, ProgramAidType, type ProgramFiltersType } from '@/types'
 import { DsfrCheckboxSetProps } from '@gouvminint/vue-dsfr'
 
-const programFilters: programFiltersType = useProgramStore().programFilters
+const programFilters: ProgramFiltersType = useProgramStore().programFilters
 const programAidTypeOptions: DsfrCheckboxSetProps['options'] = [
   {
     label: 'Étude',

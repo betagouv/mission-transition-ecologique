@@ -50,7 +50,7 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { CompanyDataStorageKey, FilterItemKeys, type programFiltersType, SizeToText, StructureSize } from '@/types'
+import { CompanyDataStorageKey, FilterItemKeys, type ProgramFiltersType, SizeToText, StructureSize } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import { CompanyData } from '@/utils/companyData'
 import { useNavigationStore } from '@/stores/navigation'
@@ -69,7 +69,7 @@ type CompanyFilterDetailProps = {
   icon?: string
 }
 
-const programFilters: programFiltersType = useProgramStore().programFilters
+const programFilters: ProgramFiltersType = useProgramStore().programFilters
 
 const registeredData = CompanyData.dataRef
 const hasRegisteredData = CompanyData.isDataFull()

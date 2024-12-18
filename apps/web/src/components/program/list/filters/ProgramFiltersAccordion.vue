@@ -54,7 +54,7 @@ import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
 import ProgramFilterByOperator from './ProgramFilterByOperator.vue'
 import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
 import ProgramFilterByCompanyData from '@/components/program/list/filters/ProgramFilterByCompanyData.vue'
-import { FilterItemKeys, programFiltersType } from '@/types'
+import { FilterItemKeys, ProgramFiltersType } from '@/types'
 import { useProgramStore } from '@/stores/program'
 import { CompanyData } from '@/utils/companyData'
 
@@ -73,7 +73,7 @@ interface FilterItem {
   display?: boolean | ComputedRef<boolean>
 }
 
-const programFilters: programFiltersType = useProgramStore().programFilters
+const programFilters: ProgramFiltersType = useProgramStore().programFilters
 
 const companySelected = computed(() => programFilters[FilterItemKeys.companyData])
 

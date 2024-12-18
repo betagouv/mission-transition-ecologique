@@ -9,11 +9,11 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { DsfrCheckboxSetProps } from '@gouvminint/vue-dsfr'
-import { FilterItemKeys, OperatorFilter, type programFiltersType } from '@/types'
+import { FilterItemKeys, OperatorFilter, type ProgramFiltersType } from '@/types'
 
 import { enrichedOperators } from '@tee/data/static'
 
-const programFilters: programFiltersType = useProgramStore().programFilters
+const programFilters: ProgramFiltersType = useProgramStore().programFilters
 
 const operatorsOptions = [...new Set(enrichedOperators.flatMap((enrichedOperators) => enrichedOperators.filterCategories))]
 const programOperatorOptions: DsfrCheckboxSetProps['options'] = operatorsOptions

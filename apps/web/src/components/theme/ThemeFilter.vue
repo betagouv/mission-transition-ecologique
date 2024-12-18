@@ -13,7 +13,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { ThemeType, type programFiltersType, TrackId, ThemeId, FilterItemKeys } from '@/types'
+import { ThemeType, type ProgramFiltersType, TrackId, ThemeId, FilterItemKeys } from '@/types'
 import { Theme } from '@/utils/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 import UsedTrack from '@/utils/track/usedTrack'
@@ -27,7 +27,7 @@ const props = defineProps<Props>()
 const programStore = useProgramStore()
 const usedTrackStore = useUsedTrackStore()
 
-const programFilters: programFiltersType = programStore.programFilters
+const programFilters: ProgramFiltersType = programStore.programFilters
 let hasAllTag = true
 
 const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {

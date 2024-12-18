@@ -12,7 +12,7 @@ import {
   OperatorFilter,
   ProgramAidType,
   type ProgramData,
-  type programFiltersType,
+  type ProgramFiltersType,
   QuestionnaireData,
   Region,
   ThemeId
@@ -22,7 +22,7 @@ export const useProgramStore = defineStore('program', () => {
   const currentProgram = ref<ProgramData>()
   const hasPrograms = ref<boolean>(false)
 
-  const programFilters = ref<programFiltersType>({
+  const programFilters = ref<ProgramFiltersType>({
     [FilterItemKeys.typeAid]: [],
     [FilterItemKeys.themeType]: '',
     [FilterItemKeys.regionAid]: [],
