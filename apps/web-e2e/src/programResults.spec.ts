@@ -9,7 +9,7 @@ tests.forEach((singleTest) => {
   test(`Test id ${singleTest.id} - Verify programs number and order for query ${singleTest.url}`, async ({ page }) => {
     await page.goto(singleTest.url)
     try {
-      await page.waitForSelector('.teste2e-program-target', { timeout: timeOut })
+      await page.locator('.teste2e-program-target').waitFor({ state: 'visible', timeout: timeOut })
     } catch (error) {
       // this is an expected error what can happen
       // - if the number of results is 0

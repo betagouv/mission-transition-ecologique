@@ -37,8 +37,7 @@ import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, Com
 import Analytics from '@/utils/analytic/analytics'
 import Breakpoint from '@/utils/breakpoints'
 import Navigation from '@/utils/navigation'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
-import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
+import { CompanyData } from '@/utils/companyData'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -103,13 +102,13 @@ const saveProfile = () => {
       company.structure_size = profile.value.size.value
     }
 
-    CompanyDataStorageHandler.saveAndSetUsedTrackStore({
+    CompanyData.saveAndSetUsedTrackStore({
       [CompanyDataStorageKey.Company]: company,
       [CompanyDataStorageKey.Size]: profile.value.size.value
     })
-    CompanyDataStorageHandler.updateRouteFromStorage()
+    CompanyData.updateRouteFromStorage()
     if (!props.manual) {
-      const companyData = CompanyDataStorage.getCompanyData() as EstablishmentFront
+      const companyData = CompanyData.company as EstablishmentFront
       if (companyData) {
         Analytics.sendEvent('register_siret_modal', 'register_siret_modal', {
           secteur: companyData.secteur,

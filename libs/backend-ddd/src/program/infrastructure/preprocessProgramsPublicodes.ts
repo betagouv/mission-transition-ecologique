@@ -7,10 +7,10 @@ import {
   PublicodesKeys,
   QuestionnaireData,
   QuestionnaireRoute,
-  Sector,
   SizeToWorkforce,
   YesNo,
-  StructureSize
+  StructureSize,
+  Sector
 } from '@tee/common'
 
 /** preprocesses the data gathered from the questionnaire into variables
@@ -69,6 +69,8 @@ const setSectors = (publicodesData: PublicodesInputData, questionnaireData: Ques
   let codeNAF1s: string[] = []
   if (questionnaireData.codeNAF1) {
     codeNAF1s = [questionnaireData.codeNAF1]
+  } else if (questionnaireData.sector) {
+    codeNAF1s = SectorToNAFSection[questionnaireData.sector]
   } else if (questionnaireData.secteur && questionnaireData.secteur in Sector) {
     codeNAF1s = SectorToNAFSection[questionnaireData.secteur as Sector]
   } else {

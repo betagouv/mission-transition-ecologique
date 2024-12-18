@@ -47,11 +47,10 @@
 import Translation from '@/utils/translation'
 import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType, FilterItemKeys } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import { onClickOutside } from '@vueuse/core'
 import Navigation from '@/utils/navigation'
 import { useNavigationStore } from '@/stores/navigation'
-import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
+import { CompanyDataStorage, CompanyData } from '@/utils/companyData'
 import { useProgramStore } from '@/stores/program'
 
 const registerModal = ref(null)
@@ -92,10 +91,9 @@ const resetSiret = () => {
   company.value = null
   companySize.value = null
   manualRegistration.value = false
-  CompanyDataStorage.removeItem(CompanyDataStorageKey.Company)
-  CompanyDataStorage.removeItem(CompanyDataStorageKey.Size)
+  CompanyData.resetData()
   useProgramStore().programFilters[FilterItemKeys.companyData] = false
-  CompanyDataStorageHandler.updateRouteFromStorage()
+  CompanyData.updateRouteFromStorage()
 }
 
 const imgClass = computed<string>(() => {

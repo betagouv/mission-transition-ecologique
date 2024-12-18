@@ -35,7 +35,7 @@ import { useNavigationStore } from '@/stores/navigation'
 import { useProjectStore } from '@/stores/project'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import Translation from '@/utils/translation'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyData } from '@/utils/companyData'
 
 interface Props {
   programId: string
@@ -50,7 +50,7 @@ const navigationStore = useNavigationStore()
 const isCatalogDetail = navigationStore.isCatalogProgramDetail()
 const router = useRouter()
 
-const hasRegisteredData = CompanyDataStorage.isDataFull()
+const hasRegisteredData = CompanyData.isDataFull()
 
 const routeToResults = {
   name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
