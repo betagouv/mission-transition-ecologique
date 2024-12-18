@@ -45,15 +45,16 @@
 </template>
 <script setup lang="ts">
 import Translation from '@/utils/translation'
-import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType, FilterItemKeys } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import { onClickOutside } from '@vueuse/core'
 import Navigation from '@/utils/navigation'
 import { useNavigationStore } from '@/stores/navigation'
-import { CompanyDataStorage, CompanyData } from '@/utils/companyData'
+import { CompanyData } from '@/utils/companyData'
+import { useProgramStore } from '@/stores/program'
 
 const registerModal = ref(null)
-const registeredData = CompanyDataStorage.getData()
+const registeredData = CompanyData.dataRef
 const company = ref<CompanyDataType[CompanyDataStorageKey.Company]>(registeredData.value[CompanyDataStorageKey.Company])
 const companySize = ref<CompanyDataType[CompanyDataStorageKey.Size]>(registeredData.value[CompanyDataStorageKey.Size])
 const manualRegistration = ref<boolean>(!!(company.value && !('siret' in company.value)))
@@ -91,6 +92,7 @@ const resetSiret = () => {
   companySize.value = null
   manualRegistration.value = false
   CompanyData.resetData()
+  useProgramStore().programFilters[FilterItemKeys.companyData] = false
   CompanyData.updateRouteFromStorage()
 }
 
