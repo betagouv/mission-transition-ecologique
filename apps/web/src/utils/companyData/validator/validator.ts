@@ -1,6 +1,6 @@
 import { z } from 'zod'
 import { CompanyDataRegisterType, EstablishmentFront } from '@/types'
-import { ManualCompanyDataSchema, SiretCompanyDataSchema } from '@/utils/companyData/schema/companyDataSchema'
+import { ManualCompanyDataSchema, SiretCompanyDataSchema } from '@/utils/companyData/validator/companyDataSchema'
 
 export class CompanyDataValidator {
   static validate(data: CompanyDataRegisterType) {

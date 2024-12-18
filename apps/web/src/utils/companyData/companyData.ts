@@ -1,6 +1,7 @@
 import { CompanyDataStorage } from '@/utils/companyData/companyDataStorage'
 import { useNavigationStore } from '@/stores/navigation'
 import {
+  CompanyDataRegisterType,
   CompanyDataStorageKey,
   EstablishmentFront,
   LegalCategory,
@@ -20,6 +21,14 @@ export class CompanyData {
   static saveDataToStorage(data: CompanyDataType) {
     CompanyDataStorage.setCompanyData(data[CompanyDataStorageKey.Company])
     CompanyDataStorage.setSize(data[CompanyDataStorageKey.Size] as StructureSize)
+  }
+
+  static get company(): CompanyDataRegisterType {
+    return CompanyDataStorage.getData().value[CompanyDataStorageKey.Company]
+  }
+
+  static get dataRef() {
+    return CompanyDataStorage.getData()
   }
 
   static saveAndSetUsedTrackStore(data: CompanyDataType) {
