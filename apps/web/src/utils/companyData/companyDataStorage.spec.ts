@@ -1,12 +1,11 @@
-import { describe, expect, it, vi } from 'vitest'
-import { CompanyDataStorage } from './companyDataStorage'
-import { CompanyDataValidator } from './validator/validator'
+import { describe, expect, it } from 'vitest'
+import { CompanyDataValidator } from './schemaValidator'
 import { CompanyDataRegisterType } from '@/utils/companyData/types/companyDataType'
+import { CompanyData } from '@/utils/companyData/companyData'
 
 describe('CompanyDataStorage - isDataFull', () => {
   it('should return false if company data is missing', () => {
-    vi.spyOn(CompanyDataStorage, 'getCompanyData').mockReturnValueOnce(null)
-    const result = CompanyDataStorage.isDataFull().value
+    const result = CompanyData.isDataFull().value
     expect(result).toBe(false)
   })
 
@@ -18,6 +17,17 @@ describe('CompanyDataStorage - isDataFull', () => {
   it('should return false if CompanyDataValidator.validate returns false for partial ManualCompanyData', () => {
     const validCompanyData = {
       region: 'Bretagne',
+      denomination: 'Entreprise : industrie - Bretagne',
+      structure_size: 'ME'
+    }
+    const result = CompanyDataValidator.validate(validCompanyData as CompanyDataRegisterType)
+    expect(result).toBe(false)
+  })
+
+  it('should return true if CompanyDataValidator.validate returns false for ManualCompanyData with undefined param', () => {
+    const validCompanyData = {
+      region: undefined,
+      secteur: 'industrie',
       denomination: 'Entreprise : industrie - Bretagne',
       structure_size: 'ME'
     }

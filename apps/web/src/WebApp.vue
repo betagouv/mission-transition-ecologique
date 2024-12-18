@@ -33,7 +33,7 @@ import { useNavigationStore } from './stores/navigation'
 import TeeFooter from './components/TeeFooter.vue'
 import Translation from './utils/translation'
 import Cookie from './utils/cookies'
-import { CompanyDataStorage } from './utils/companyData'
+import { CompanyData } from '@/utils/companyData'
 
 const navigationStore = useNavigationStore()
 const router = useRouter()
@@ -44,7 +44,7 @@ const isReady = computed<boolean>(() => {
 onBeforeMount(() => {
   Translation.setLocale('fr')
   Cookie.setCookies()
-  CompanyDataStorage.updateData()
+  CompanyData.updateData()
 })
 
 onMounted(async () => {

@@ -218,7 +218,7 @@ const backToPreviousTrack = async () => {
 }
 
 watch(registeredData.value, async () => {
-  const isDataFull = CompanyDataStorage.isDataFull().value
+  const isDataFull = CompanyData.isDataFull().value
 
   if (!isDataFull) return
 

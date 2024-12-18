@@ -6,7 +6,7 @@ import { CalloutType } from '@/types/elementsPropsTypes'
 import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'
 import { Theme } from '@/utils/theme'
-import { CompanyDataStorage } from '@/utils/companyData'
+import { CompanyData } from '@/utils/companyData'
 
 export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
@@ -48,9 +48,7 @@ export default class Opportunity {
         required: true,
         type: FieldType.Text,
         isValid: undefined,
-        value: CompanyDataStorage.getCompanyDataFromStorage()
-          ? (CompanyDataStorage.getCompanyDataFromStorage() as EstablishmentFront).siret
-          : '',
+        value: CompanyData.company ? (CompanyData.company as EstablishmentFront).siret : '',
         label: 'SIRET de votre entreprise',
         hint: 'Format attendu : 14 chiffres',
         validation: SiretValidator.validate,

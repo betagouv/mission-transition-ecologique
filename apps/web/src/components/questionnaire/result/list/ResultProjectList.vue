@@ -88,7 +88,7 @@ import OtherProjectCta from '@/components/project/list/OtherProjectCta.vue'
 import OtherProjectForm from '@/components/project/list/OtherProjectForm.vue'
 import Translation from '@/utils/translation'
 import Navigation from '@/utils/navigation'
-import { CompanyDataStorage } from '@/utils/companyData'
+import { CompanyData } from '@/utils/companyData'
 import { useNavigationStore } from '@/stores/navigation'
 
 interface ProjectListProps {
@@ -98,7 +98,7 @@ interface ProjectListProps {
 const props = defineProps<ProjectListProps>()
 const otherProjectForm = ref<boolean>(false)
 
-const hasRegisteredData = CompanyDataStorage.isDataFull()
+const hasRegisteredData = CompanyData.isDataFull()
 
 const openModal = () => {
   Navigation.toggleRegisterModal()

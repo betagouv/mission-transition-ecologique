@@ -90,8 +90,7 @@ const resetSiret = () => {
   company.value = null
   companySize.value = null
   manualRegistration.value = false
-  CompanyDataStorage.removeItem(CompanyDataStorageKey.Company)
-  CompanyDataStorage.removeItem(CompanyDataStorageKey.Size)
+  CompanyData.resetData()
   CompanyData.updateRouteFromStorage()
 }
 

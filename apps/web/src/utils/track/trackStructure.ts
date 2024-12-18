@@ -3,7 +3,7 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import { LegalCategory, StructureSize, TrackId } from '@/types'
 import Format from '@/utils/format'
 import { sectors } from '@/questionnaire/trackStructureSectors'
-import { CompanyDataStorage } from '../companyData'
+import { CompanyData } from '@/utils/companyData'
 
 export default class TrackStructure {
   static getEligibilityCriteria() {
@@ -52,7 +52,7 @@ export default class TrackStructure {
   }
 
   static getSector(): string {
-    return CompanyDataStorage.getCompanyDataFromStorage()?.secteur || ''
+    return CompanyData.company?.secteur || ''
   }
 
   static getSectorShortLabel(): string {
