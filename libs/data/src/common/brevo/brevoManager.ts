@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Deal, DealsApi, DealsApiApiKeys } from '@getbrevo/brevo'
 import fs from 'fs'
+import { DealStage } from './types'
 
 export default class BrevoManager {
   private _dealsApi = new DealsApi()
@@ -43,5 +44,13 @@ export default class BrevoManager {
     }
 
     return deals
+  }
+
+  public formatDealStage: { [key in DealStage]: string } = {
+    [DealStage.Nouvelle]: 'Nouvelle',
+    [DealStage.Transmise]: 'Transmise',
+    [DealStage.Perdue]: 'Perdue',
+    [DealStage.AideProposee]: 'Aide Proposée',
+    [DealStage.Gagnee]: 'Gagnée'
   }
 }

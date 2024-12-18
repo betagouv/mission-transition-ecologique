@@ -1,4 +1,5 @@
 import BrevoManager from '../common/brevo/brevoManager'
+import PosthogManager from '../common/posthog/posthogManager'
 
 export class PosthogUpdater {
   private static instance: PosthogUpdater
@@ -28,15 +29,22 @@ export class PosthogUpdater {
 
   private async _performUpdate(): Promise<string> {
     // load all posthog events
-
+    const posthogEvents = await new PosthogManager().getEvents()
     // load all brevo deals.
     const dealList = await new BrevoManager().getDeals()
-    console.log(dealList.length)
 
-    // for each posthog event
-    // transmit the all the
-
+    // // for each posthog event
+    const enrichPosthogEventsData = this._enrichPosthogEvents(posthogEvents, dealList)
+    // // transmit the all the updated events to posthog
+    // await new PosthogManager().updateEvents(enrichPosthogEventsData)
+    console.log(enrichPosthogEventsData)
     return 'sucessfullUpdate'
+  }
+
+  private _enrichPosthogEvents(posthogEvents: any, dealList: any) {
+    for
+    console.log(posthogEvents, dealList)
+    return 'TBD'
   }
 }
 
