@@ -1,4 +1,4 @@
-titre: ACT Pas à pas
+titre: Programme Volontaire Française ACT
 promesse: >-
   Développez votre stratégie bas carbone et mettez en œuvre votre plan de
   transition
@@ -15,21 +15,17 @@ description longue: >-
   L'étude ACT Pas à Pas se déroule en 12 à 18 mois selon les entreprises. Les
   grandes étapes de l'étude sont les suivantes :  
 
-
   • Analyser la maturité initiale de l'entreprise sur des bases carbone.
-
 
   • Exposer les enjeux et  réaliser une analyse stratégique de l’entreprise dans
   un contexte de transition bas carbone.
 
-
   • Déterminer une vision d’entreprise et concevoir la feuille de route du plan
   de transition à court, moyen et long terme. 
 
-
   • Elaborer des objectifs de performance carbone et définir une stratégie.
 
-   • Mettre en oeuvre des actions de décarbonation.
+  • Mettre en oeuvre des actions de décarbonation.
 début de validité: 13/11/2023
 fin de validité: 30/06/2026
 illustration: images/TEE_energie_verte.png
@@ -54,12 +50,14 @@ objectifs:
   - description: Réalisez votre étude ACT Pas à Pas.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Toutes tailles
+    - Plus de 250 salariés
     - Éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
-    - Tous secteurs d’activité
+    - >-
+      Tous secteurs d’activité, sauf les industries gérées par le programme
+      PACTE Industrie
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:
@@ -77,7 +75,11 @@ publicodes:
       toutes ces conditions:
         - dispositif . début de validité <= date du jour
         - date du jour <= dispositif . fin de validité
-    valeur: oui
+    toutes ces conditions:
+      - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif >= 250
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
