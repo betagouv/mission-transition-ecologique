@@ -15,7 +15,7 @@
       <template #label>
         <span
           class="fr-text--bold fr-pl-0-5v"
-          :class="{ 'fr-text--grey': !programFilters[FilterItemKeys.companyData] }"
+          :class="{ 'fr-text--grey': !programFilters[FilterItemKeys.companyData], 'fr-text--sm': !Breakpoint.isMobile() }"
           >{{ filterData.title }}</span
         >
       </template>
@@ -44,6 +44,7 @@
 import { useProgramStore } from '@/stores/program'
 import { CompanyDataStorageKey, FilterItemKeys, type programFiltersType, SizeToText, StructureSize } from '@/types'
 import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import Breakpoint from '@/utils/breakpoints'
 
 type CompanyFilterProps = {
   title: ComputedRef<string | undefined>
