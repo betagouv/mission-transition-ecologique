@@ -11,11 +11,16 @@
       :value="`selected-company-${companyName}`"
       small
       name="companyFilter"
+      :disabled="useNavigationStore().isQuestionnaireResult()"
     >
       <template #label>
         <span
           class="fr-text--bold fr-pl-0-5v"
-          :class="{ 'fr-text--grey': !programFilters[FilterItemKeys.companyData], 'fr-text--sm': !Breakpoint.isMobile() }"
+          :class="{
+            'fr-text--grey': !programFilters[FilterItemKeys.companyData],
+            'fr-text--sm': !Breakpoint.isMobile(),
+            'fr-text--black': useNavigationStore().isQuestionnaireResult()
+          }"
           >{{ filterData.title }}</span
         >
       </template>
@@ -45,6 +50,7 @@ import { useProgramStore } from '@/stores/program'
 import { CompanyDataStorageKey, FilterItemKeys, type programFiltersType, SizeToText, StructureSize } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
 import { CompanyData } from '@/utils/companyData'
+import { useNavigationStore } from '@/stores/navigation'
 
 type CompanyFilterProps = {
   title: ComputedRef<string | undefined>

@@ -56,7 +56,7 @@ import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
 import ProgramFilterByCompanyData from '@/components/program/list/filters/ProgramFilterByCompanyData.vue'
 import { FilterItemKeys, programFiltersType } from '@/types'
 import { useProgramStore } from '@/stores/program'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyData } from '@/utils/companyData'
 
 interface Props {
   accordionClass?: string
@@ -86,7 +86,7 @@ const displayRegionFilter = computed(() => {
 
 const companyDataFilterVisibilityClass = (filterId: FilterItemKeys) => {
   if (filterId === FilterItemKeys.companyData) {
-    return CompanyDataStorage.isDataFull().value ? '' : 'fr-hidden'
+    return CompanyData.isDataFull().value ? '' : 'fr-hidden'
   }
 }
 
