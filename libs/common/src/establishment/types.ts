@@ -10,9 +10,9 @@ export interface EstablishmentFront extends EstablishmentId {
   ville: string
   codePostal: string
   legalCategory: LegalCategory | string
-  region: string | undefined
-  structure_size: StructureSize | undefined
-  denomination: string | undefined
+  region?: string | undefined
+  structure_size?: StructureSize | undefined
+  denomination?: string | undefined
   secteur: string
   creationDate: string
 }

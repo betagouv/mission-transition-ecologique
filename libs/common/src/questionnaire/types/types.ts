@@ -22,18 +22,22 @@ export enum SiretValue {
 
 export enum StructureSize {
   EI = 'EI',
+  MICRO = 'MICRO',
   TPE = 'TPE',
   PE = 'PE',
   ME = 'ME',
-  ETI_GE = 'ETI_GE'
+  ETI = 'ETI',
+  GE = 'GE'
 }
 
 export const SizeToWorkforce: { [key in StructureSize]: number } = {
   [StructureSize.EI]: 1,
-  [StructureSize.TPE]: 19,
-  [StructureSize.PE]: 49,
-  [StructureSize.ME]: 249,
-  [StructureSize.ETI_GE]: 251
+  [StructureSize.MICRO]: 5,
+  [StructureSize.TPE]: 15,
+  [StructureSize.PE]: 40,
+  [StructureSize.ME]: 150,
+  [StructureSize.ETI]: 350,
+  [StructureSize.GE]: 600
 }
 
 export enum LegalCategory {
@@ -106,6 +110,7 @@ export enum PublicodesKeys {
   CurrentDate = 'date du jour',
   Workforce = 'entreprise . effectif',
   BuildingOwner = 'entreprise . est propriétaire de ses locaux',
+  isMicroEntrepreneur = 'entreprise . microentrepreneur',
   hasObjective = 'entreprise . a un objectif ciblé',
   isTargeted = 'entreprise . est ciblée',
   CodeNAF1 = 'entreprise . code NAF niveau 1 . est ',

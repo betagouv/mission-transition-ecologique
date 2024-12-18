@@ -20,6 +20,7 @@
       "tpe-gagnantes-sur-tous-les-couts",
       "visite-energie-cci",
       "visite-energie-cma",
+      "fiscalite-energetique-occitanie",
       "cedre-premier-pas",
       "sud-pret-climat",
       "cedre-ambition",
@@ -134,6 +135,7 @@
       "smart-pv",
       "pret-tourisme",
       "cheque-vert-grand-est",
+      "soutien-pv-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
       "cap-transition-ecologique",
@@ -866,6 +868,7 @@
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-tourisme",
+      "deploiement-flottes-hydrogene",
       "pret-energie-aura",
       "pret-ile-de-france"
     ],
@@ -925,6 +928,7 @@
       "recharge-vehicule-electrique",
       "vehicules-lourds-electriques",
       "pret-tourisme",
+      "deploiement-flottes-hydrogene",
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france"

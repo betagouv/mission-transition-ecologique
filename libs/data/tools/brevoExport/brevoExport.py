@@ -219,7 +219,10 @@ def improve_merge_data(data):
         # basic column renaming
         deal["dealId"] = deal.pop("_id")
         deal["nom du dispositif"] = deal.pop("deal_name")
-        deal["opérateur_de_contact"] = deal.pop("oprateur_de_contact")
+        if "oprateur_de_contact" in deal:
+            deal["opérateur_de_contact"] = deal.pop("oprateur_de_contact")
+        else:
+            print(f"Deal {deal.get('dealId')} : PAs d'operateur de contact")
 
         # simple reformatting
         deal["créé le"] = format_date(deal["created_at"])
@@ -247,6 +250,8 @@ def format_deal_stage(deal_stage):
         return "Perdue"
     elif deal_stage == '659d15cff06be7.98275409':
         return "Aide Proposée"
+    elif deal_stage == "1e33531f-0eef-40ea-b97c-35aadc929446":
+        return "Gagnée"
     else:
         print("unexpected deal stage", deal_stage)
         return "Inconnue"
@@ -329,7 +334,8 @@ def flatten_list_of_dicts(data):
     """
     flattened_dict = {}
     for d in data:
-        flattened_dict.update(d)
+        if d:
+            flattened_dict.update(d)
     return flattened_dict
 
 

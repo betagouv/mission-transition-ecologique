@@ -51,6 +51,7 @@ description longue: >-
   achats
 
   • Environnement intérieur, environnement extérieur
+fin de validité: 01/12/2024
 illustration: images/TEE_eolienne.png
 opérateur de contact: Région Sud (PACA)
 nature de l'aide: étude
@@ -97,6 +98,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

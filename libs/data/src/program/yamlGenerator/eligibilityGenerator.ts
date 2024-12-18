@@ -5,7 +5,7 @@ import { ProgramEligibility } from '../programEligibility'
 
 export function setEligibility(generator: CoreGenerator) {
   const eligibility_conditions: { [key: string]: string[] } = {
-    "taille de l'entreprise": [setEligibilitySize(generator.program), setMicroEntreprise(generator.program)],
+    "taille de l'entreprise": [setEligibilitySize(generator.program), setMicroEntrepreneur(generator.program)],
     'secteur géographique': setEligibilityGeography(generator),
     "secteur d'activité": setEligibilitySector(generator),
     "nombre d'années d'activité": setEligibilityYears(generator.program)
@@ -95,8 +95,8 @@ function setEligibilitySize(program: DataProgram): string {
   }
 }
 
-function setMicroEntreprise(program: DataProgram) {
-  if (program.microEntreprise === 'oui') {
+function setMicroEntrepreneur(program: DataProgram) {
+  if (program.microEntrepreneur === 'oui') {
     return 'Éligible aux micro-entreprises'
   }
   return 'Non éligible aux micro-entreprises'

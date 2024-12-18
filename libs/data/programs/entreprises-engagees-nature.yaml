@@ -64,7 +64,7 @@ conditions d'éligibilité:
     - Toutes tailles
     - Éligible aux micro-entreprises
   secteur géographique:
-    - Provence-Alpes-Côte d'Azur
+    - France et territoires d'outre-mer
   secteur d'activité:
     - Tous secteurs d'activité
   nombre d'années d'activité:
@@ -72,12 +72,8 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
-      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-  entreprise . est éligible:
-    toutes ces conditions:
-      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
@@ -103,6 +99,3 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est préserver la biodiversité
-  entreprise . est dans une zone géographique éligible:
-    une de ces conditions:
-      - région = Provence-Alpes-Côte d'Azur

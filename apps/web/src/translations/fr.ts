@@ -77,11 +77,13 @@ export const frDict = {
       'Une erreur est survenue lors de la recherche. Veuillez essayer de nouveau en renseignant les 14 chiffres de votre numéro SIRET.',
     searchTooShort: '3 caractères minimums.',
     structureSize: {
-      EI: 'Entreprise individuelle',
+      EI: 'Micro-entrepreneur',
+      MICRO: 'MICRO',
       TPE: 'TPE',
       PE: 'PME',
       ME: 'PME',
-      ETI_GE: 'ETI ou Grande Entreprise'
+      ETI: 'ETI',
+      GE: 'Grande Entreprise'
     }
   },
   categories: {

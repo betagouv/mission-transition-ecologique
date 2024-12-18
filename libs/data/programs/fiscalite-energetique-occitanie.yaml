@@ -1,0 +1,59 @@
+titre: Fiscalité énergétique
+promesse: >-
+  Entreprise électro-intensive, réduisez votre facture d’électricité en
+  bénéficiant d’un taux réduit de fiscalité énergétique
+description: >-
+  Vous êtes une entreprise électro-intensive ? Vous pouvez bénéficier d'un
+  accompagnement pour vous aider à obtenir un remboursement de votre trop-payé
+  et accéder au taux réduit de fiscalité auquel vous avez droit.
+illustration: images/TEE_ampoule.png
+opérateur de contact: CCI
+url: https://www.occitanie.cci.fr/produit/optimiser-sa-fiscalite-energetique
+nature de l'aide: étude
+coût de l'accompagnement: Sur devis
+durée de l'accompagnement: 1 à 2 jours de prestation répartis sur 3 mois
+objectifs:
+  - description: >-
+      Situer la consommation d’énergie de votre entreprise par rapport à celle
+      de votre secteur d’activité, analyser le procédé industriel de votre
+      entreprise et collecter vos informations déclaratives afin de vérifier
+      votre éligibilité.
+  - description: >-
+      Préparer et déposer le dossier de déclaration auprès du fournisseur
+      d’énergie et du service des douanes.
+  - description: >-
+      Prendre en charge la montée en compétence d’une personne dans l’entreprise
+      qui pourra effectuer chaque année les formalités nécessaires, et
+      pérenniser les exonérations obtenues.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Occitanie
+  secteur d'activité:
+    - >-
+      Entreprises exploitant au moins une installation industrielle et
+      électro-intensive
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Occitanie

@@ -4,8 +4,9 @@ import { Result } from 'true-myth'
 import { ensureError } from '../../common/domain/error/errors'
 import { ProgramType } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
+import { RulesManager } from '../domain/spi'
 
-export class PublicodesService {
+export class PublicodesService implements RulesManager {
   private static instance: PublicodesService
 
   private readonly _publicodeEngines: Record<string, Engine>

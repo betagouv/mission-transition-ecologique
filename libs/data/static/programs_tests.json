@@ -20247,6 +20247,7 @@
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
       "entreprise . secteur d'activité": {
         "avec": {
           "est industrie": null,
@@ -20344,12 +20345,18 @@
       "entreprise . est éligible": {
         "toutes ces conditions": [
           "a un effectif éligible",
-          "est dans un secteur d'activité éligible"
+          "est dans un secteur d'activité éligible",
+          "a une categorie legale eligible"
         ]
       },
       "entreprise . a un effectif éligible": {
         "toutes ces conditions": [
           "effectif <= 49"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
         ]
       },
       "entreprise . est dans un secteur d'activité éligible": "est secteur d'activité exclu = non",
