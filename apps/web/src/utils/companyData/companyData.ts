@@ -67,7 +67,7 @@ export class CompanyData {
   }
 
   static updateData() {
-    CompanyData.updateData()
+    CompanyDataStorage.updateData()
   }
 
   static saveAndSetUsedTrackStore(data: CompanyDataType) {
