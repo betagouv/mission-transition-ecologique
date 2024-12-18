@@ -70,14 +70,14 @@
 </template>
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { ProgramAidType, type ProgramData, Project, OpportunityType, Color } from '@/types'
+import { ProgramAidType, type ProgramData, ProjectType, OpportunityType, Color } from '@/types'
 import Contact from '@/tools/contact'
 import Translation from '@/tools/translation'
 import Opportunity from '@/tools/opportunity'
 import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 
 interface Props {
-  project: Project
+  project: ProjectType
 }
 const props = defineProps<Props>()
 

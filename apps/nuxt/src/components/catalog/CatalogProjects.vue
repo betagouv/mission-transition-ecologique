@@ -56,33 +56,25 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
+import { ProjectManager } from '@/tools/project/projectManager'
 import ProjectFilter from '@/tools/project/projectFilter'
 import ProjectSorter from '@/tools/project/projectSorter'
-import { Project as ProjectType, ThemeId } from '@/types'
+import { ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import { Theme } from '@/tools/theme'
 
-const projectStore = useProjectStore()
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
 
-const projects = ref<ProjectType[]>()
-const hasError = ref<boolean>(false)
+const { projects, hasError } = storeToRefs(useProjectStore())
+
+await new ProjectManager().getProjects()
 
 const title = 'Le catalogue des projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
 
 useSeoMeta(MetaSeo.get(title, description))
-
-navigationStore.hasSpinner = true
-const projectResult = await projectStore.projects
-if (projectResult.isOk()) {
-  projects.value = projectResult.data
-} else {
-  hasError.value = true
-}
-navigationStore.hasSpinner = false
 
 const theme = Theme.getThemeFromSelectedTheme()
 

@@ -1,4 +1,4 @@
-import type { ProgramData as ProgramType, Project as ProjectType } from '@/types'
+import type { ProgramData as ProgramType, ProjectType as ProjectType } from '@/types'
 
 export default class Program {
   static getEndDate(program: ProgramType | undefined): Date | undefined {

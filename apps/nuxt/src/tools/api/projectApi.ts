@@ -1,6 +1,6 @@
 import RequestApi from '@/tools/api/requestApi'
 import { ResultApi } from '@/tools/api/resultApi'
-import type { Project, ProjectFilterQuery } from '@/types'
+import type { ProjectType, ProjectFilterQuery } from '@/types'
 
 export default class ProjectApi extends RequestApi {
   protected override readonly url = '/api/projects'
@@ -17,14 +17,17 @@ export default class ProjectApi extends RequestApi {
         queryString[key] = value.toString()
       }
     })
-    return new URLSearchParams(queryString).toString()
+    const params = new URLSearchParams(queryString)
+    params.sort()
+
+    return params.toString()
   }
 
-  async get(): Promise<ResultApi<Project[]>> {
-    return super.getJson<Project[]>()
+  async get(): Promise<ResultApi<ProjectType[]>> {
+    return super.getJson<ProjectType[]>()
   }
 
-  async getOne(slug: string): Promise<ResultApi<Project>> {
-    return super.getJson<Project>(this.url + '/' + slug)
+  async getOne(slug: string): Promise<ResultApi<ProjectType>> {
+    return super.getJson<ProjectType>(this.url + '/' + slug)
   }
 }

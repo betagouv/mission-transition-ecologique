@@ -23,20 +23,21 @@
 import { TrackThemeOptionProps } from '@/components/questionnaire/track/form/theme/TrackThemeCard.vue'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
+import { ProjectManager } from '@/tools/project/projectManager'
+import ProjectFilter from '@/tools/project/projectFilter'
 import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
 import { Theme } from '@/tools/theme'
-import { Project } from '@tee/data'
+import { ProjectType } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
 import { useNavigationStore } from '@/stores/navigation'
-import CompanyDataStorage from '@/tools/storage/companyDataStorage'
+
+await new ProjectManager().getFilteredProjects()
 
 const currentTrack = useTrackStore().current
 const emit = defineEmits(['updateSelection'])
-const projectStore = useProjectStore()
-const projects = ref<Project[]>()
+const { projects, hasError } = storeToRefs(useProjectStore())
 const navigationStore = useNavigationStore()
-const registeredData = CompanyDataStorage.getData()
 
 const options = computed<TrackThemeOptionProps[]>(() => {
   const options: TrackThemeOptionProps[] = []
@@ -46,8 +47,8 @@ const options = computed<TrackThemeOptionProps[]>(() => {
   for (const option of currentTrack.options) {
     const theme = Theme.getById(option.questionnaireData?.priority_objective)
     if (theme && projects.value) {
-      const themeProjects = projectStore.getProjectsByTheme(projects.value, theme.id)
-      const projectsInfos: { projects: Project[]; moreThanThree: boolean } = Theme.getPriorityProjects(themeProjects)
+      const themeProjects = ProjectFilter.getProjectsByTheme(projects.value, theme.id)
+      const projectsInfos: { projects: ProjectType[]; moreThanThree: boolean } = Theme.getPriorityProjects(themeProjects)
       options.push({
         value: option.questionnaireData?.priority_objective,
         title: theme.title,
@@ -77,22 +78,4 @@ const selectOption = (opt: string | undefined) => {
 
   emit('updateSelection', data)
 }
-
-const hasError = ref<boolean>(false)
-
-const getProjects = async () => {
-  navigationStore.hasSpinner = true
-  const projectResult = await projectStore.eligibleProjects
-  if (projectResult.isOk()) {
-    projects.value = projectResult.data
-  } else {
-    hasError.value = true
-  }
-  navigationStore.hasSpinner = false
-}
-
-watchPostEffect(async () => {
-  registeredData.value
-  await getProjects()
-})
 </script>

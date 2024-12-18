@@ -15,10 +15,10 @@ import Navigation from '@/tools/navigation'
 import { type RouteLocationRaw } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
-import { Color, Project } from '@/types'
+import { Color, ProjectType } from '@/types'
 
 interface Props {
-  project: Project
+  project: ProjectType
   color?: Color
   target?: string
   size?: 'sm' | 'md' | 'lg'

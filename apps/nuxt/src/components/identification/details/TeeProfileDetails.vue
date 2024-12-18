@@ -33,6 +33,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import { ProjectManager } from '@/tools/project/projectManager'
 import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType, EstablishmentFront } from '@/types'
 import Analytics from '@/tools/analytic/analytics'
 import Breakpoint from '@/tools/breakpoints'
@@ -88,7 +89,7 @@ const canBeSaved = computed(() => {
   return props.manual ? profile.value.activity.value && profile.value.localisation.value && profile.value.size : profile.value.size.value
 })
 
-const saveProfile = () => {
+const saveProfile = async () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
     let company = props.company
@@ -117,7 +118,9 @@ const saveProfile = () => {
         })
       }
     }
+
     Navigation.toggleRegisterModal(false)
+    await new ProjectManager().update()
   } else {
     showError.value = true
   }

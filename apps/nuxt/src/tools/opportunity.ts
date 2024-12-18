@@ -1,5 +1,5 @@
 import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType, EstablishmentFront } from '@tee/common'
-import { FieldType, RouteName, type ProgramData as ProgramType, Project, FormDataType, ThemeType, ThemeId } from '@/types'
+import { FieldType, RouteName, type ProgramData as ProgramType, ProjectType, FormDataType, ThemeType, ThemeId } from '@/types'
 import { useProgramStore } from '@/stores/program'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import { CalloutType } from '@/types/elementsPropsTypes'
@@ -84,7 +84,7 @@ export default class Opportunity {
       }
     }
   }
-  static getProjectFormFields(project: Project): FormDataType {
+  static getProjectFormFields(project: ProjectType): FormDataType {
     const baseFields = this.getBaseOpportunityFormFields()
     baseFields.needs.value = Translation.t('project.form.needs', { secteur: TrackStructure.getSectorShortLabel() })
     return {

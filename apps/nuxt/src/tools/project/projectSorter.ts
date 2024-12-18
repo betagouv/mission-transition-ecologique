@@ -1,4 +1,4 @@
-import { Project as ProjectType } from '@/types'
+import { ProjectType as ProjectType } from '@/types'
 import { ComputedRef } from 'vue'
 
 export default class ProjectSorter {

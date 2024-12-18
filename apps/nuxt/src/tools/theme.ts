@@ -1,6 +1,6 @@
 import { Color, ThemeId, ThemeType } from '@/types'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
-import { Project } from '@tee/data'
+import { ProjectType } from '@tee/data'
 import { useProgramStore } from '@/stores/program'
 import { ComputedRef } from 'vue'
 
@@ -112,8 +112,8 @@ export class Theme {
     return theme !== ''
   }
 
-  static getPriorityProjects(projects: Project[] | undefined) {
-    const sortedProjects = (projects as unknown as Project[]).sort((a, b) => a.priority - b.priority)
+  static getPriorityProjects(projects: ProjectType[] | undefined) {
+    const sortedProjects = (projects as unknown as ProjectType[]).sort((a, b) => a.priority - b.priority)
     return { projects: sortedProjects.slice(0, 3), moreThanThree: sortedProjects.length > 3 }
   }
 

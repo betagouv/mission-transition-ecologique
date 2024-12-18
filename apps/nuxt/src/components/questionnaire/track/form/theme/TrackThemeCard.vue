@@ -52,14 +52,14 @@
 <script setup lang="ts">
 import Breakpoint from '@/tools/breakpoints'
 import { Color } from '@/types'
-import { Project } from '@tee/data'
+import { ProjectType } from '@tee/data'
 
 export interface TrackThemeOptionProps {
   value: string | undefined
   title: string
   imgSrc: string
   altImg: string
-  highlightProjects: Project[]
+  highlightProjects: ProjectType[]
   color: Color
   moreThanThree: boolean
 }

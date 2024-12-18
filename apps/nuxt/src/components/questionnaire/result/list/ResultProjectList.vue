@@ -80,7 +80,7 @@
 
 <script setup lang="ts">
 import ProjectSorter from '@/tools/project/projectSorter'
-import { Project } from '@/types'
+import { ProjectType } from '@/types'
 import { computed } from 'vue'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
@@ -92,7 +92,7 @@ import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 import { useNavigationStore } from '@/stores/navigation'
 
 interface ProjectListProps {
-  filteredProjects?: Project[]
+  filteredProjects?: ProjectType[]
   hasError: boolean
 }
 const props = defineProps<ProjectListProps>()
@@ -131,7 +131,7 @@ const openOtherProjectForm = () => {
 const sortedProjects = ProjectSorter.sort(computed(() => props.filteredProjects))
 
 const showNoResults = computed(() => {
-  return props.hasError || (!countProjects.value && props.filteredProjects !== undefined)
+  return (props.hasError || (!countProjects.value && props.filteredProjects !== undefined)) && !useNavigationStore().hasSpinner
 })
 
 const showOtherProjectForm = computed(() => {

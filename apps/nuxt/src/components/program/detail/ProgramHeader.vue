@@ -29,7 +29,7 @@
 </template>
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
-import { Project, type ProgramData as ProgramType } from '@/types'
+import { ProjectType, type ProgramData as ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/tools/contact'
 import { useNavigationStore } from '@/stores/navigation'
@@ -50,7 +50,7 @@ const navigationStore = useNavigationStore()
 const router = useRouter()
 const navigation = new Navigation()
 
-const project = ref<Project | undefined>(projectStore.currentProject)
+const project = ref<ProjectType | undefined>(projectStore.currentProject)
 
 const isCatalogDetail = navigation.isCatalogProgramDetail()
 

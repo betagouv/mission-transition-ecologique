@@ -13,7 +13,7 @@ import {
   RouteName,
   ProgramData,
   isProjectFormDataType,
-  Project
+  ProjectType
 } from '@/types'
 import RequestApi from '@/tools/api/requestApi'
 import Opportunity from '@/tools/opportunity'
@@ -31,8 +31,8 @@ export default class OpportunityApi extends RequestApi {
 
   constructor(
     opportunityForm: FormDataType,
-    private _id: ProgramData['id'] | Project['id'] | undefined,
-    private _slug: ProgramData['id'] | Project['slug'] | undefined,
+    private _id: ProgramData['id'] | ProjectType['id'] | undefined,
+    private _slug: ProgramData['id'] | ProjectType['slug'] | undefined,
     private _opportunityType: OpportunityType
   ) {
     super()
@@ -119,7 +119,7 @@ export default class OpportunityApi extends RequestApi {
     if (this._opportunityType == OpportunityType.Project) {
       return (
         useNavigationStore().getAbsoluteUrlByRouteName(RouteName.CatalogProjectDetail, {
-          projectSlug: this._slug as Project['slug']
+          projectSlug: this._slug as ProjectType['slug']
         }) ?? ''
       )
     }

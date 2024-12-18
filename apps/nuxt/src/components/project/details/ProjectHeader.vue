@@ -16,11 +16,11 @@
   </TeeBanner>
 </template>
 <script setup lang="ts">
-import { Color, Project } from '@/types'
+import { Color, ProjectType } from '@/types'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 
 interface Props {
-  project: Project
+  project: ProjectType
   themeColor?: Color
 }
 const props = defineProps<Props>()

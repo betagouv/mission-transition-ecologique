@@ -31,14 +31,14 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Project, Color, ThemeId } from '@/types'
+import { ProjectManager } from '@/tools/project/projectManager'
+import { Color, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { Theme } from '@/tools/theme'
 import { useProjectStore } from '@/stores/project'
 
-const projectStore = useProjectStore()
+const { currentProject: project } = storeToRefs(useProjectStore())
 
-const project = ref<Project>()
 const themeColor = ref<Color | ''>()
 
 interface Props {
@@ -46,20 +46,14 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const projectResult = await useProjectStore().getProjectBySlug(props.projectSlug)
-if (projectResult.isOk) {
-  projectStore.currentProject = projectResult.value
-  project.value = projectResult.value
+await new ProjectManager().getProjectBySlug(props.projectSlug)
 
-  useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, project.value?.image))
+useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, project.value?.image))
 
-  if (project.value) {
-    const selectedThemeId = Theme.getThemeFromSelectedOrPriorityTheme()
-    const themeId = selectedThemeId.value
-      ? project.value?.themes.find((theme) => theme === selectedThemeId.value)
-      : project.value?.mainTheme
-    themeColor.value = Theme.getColorById(themeId as ThemeId)
-  }
+if (project.value) {
+  const selectedThemeId = Theme.getThemeFromSelectedOrPriorityTheme()
+  const themeId = selectedThemeId.value ? project.value?.themes.find((theme) => theme === selectedThemeId.value) : project.value?.mainTheme
+  themeColor.value = Theme.getColorById(themeId as ThemeId)
 }
 
 onBeforeRouteLeave(() => {

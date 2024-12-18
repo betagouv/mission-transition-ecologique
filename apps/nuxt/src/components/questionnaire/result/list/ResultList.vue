@@ -16,36 +16,15 @@
 </template>
 
 <script setup lang="ts">
-import { useNavigationStore } from '@/stores/navigation'
+import { ProjectManager } from '@/tools/project/projectManager'
 import ProjectFilter from '@/tools/project/projectFilter'
-import { Project as ProjectType } from '@/types'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/tools/theme'
-import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 
-const projectStore = useProjectStore()
-const navigationStore = useNavigationStore()
-
-const projects = ref<ProjectType[]>()
-const hasError = ref<boolean>(false)
-
-const registeredData = CompanyDataStorage.getData()
-
+const { projects, hasError } = storeToRefs(useProjectStore())
 const filteredProjects = ProjectFilter.filter(projects, Theme.getThemeFromSelectedOrPriorityTheme())
 
-const getProgramsAndProjects = async () => {
-  navigationStore.hasSpinner = true
-  const projectResult = await projectStore.eligibleProjects
-  if (projectResult.isOk()) {
-    projects.value = projectResult.data
-  } else {
-    hasError.value = true
-  }
-  navigationStore.hasSpinner = false
-}
-
-watchPostEffect(async () => {
-  registeredData.value
-  await getProgramsAndProjects()
+onNuxtReady(async () => {
+  await new ProjectManager().getFilteredProjects()
 })
 </script>

@@ -246,7 +246,8 @@ import ProgramLongDescription from '@/components/program/detail/ProgramLongDescr
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import { useProgramStore } from '@/stores/program'
 import Navigation from '@/tools/navigation'
-import { OpportunityType, ProgramEligibilityType, Project as ProjectType } from '@/types'
+import { ProjectManager } from '@/tools/project/projectManager'
+import { OpportunityType, ProgramEligibilityType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import { MetaSeo } from '@/tools/metaSeo'
@@ -259,11 +260,10 @@ import Opportunity from '@/tools/opportunity'
 import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 import { storeToRefs } from 'pinia'
 
-const projectStore = useProjectStore()
+const { projects } = storeToRefs(useProjectStore())
 const programsStore = useProgramStore()
 
 const { currentProgram: program } = storeToRefs(programsStore)
-const linkedProjects = ref<ProjectType[] | undefined>([])
 const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
 
 const navigation = new Navigation()
@@ -277,18 +277,18 @@ interface Props {
 }
 const props = defineProps<Props>()
 
+const linkedProjects = computed(() => {
+  return Program.getLinkedProjects(program.value, projects.value)
+})
+
 useNavigationStore().hasSpinner = true
 const programResult = await useProgramStore().getProgramById(props.programId)
 if (programResult.isOk) {
   program.value = programResult.value
-  let projectResult
   if (navigation.isCatalogProgramDetail()) {
-    projectResult = await projectStore.projects
+    await new ProjectManager().getProjects()
   } else {
-    projectResult = await projectStore.eligibleProjects
-  }
-  if (projectResult.isOk()) {
-    linkedProjects.value = Program.getLinkedProjects(program.value, projectResult.data)
+    await new ProjectManager().getFilteredProjects()
   }
 
   if (program.value && navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {

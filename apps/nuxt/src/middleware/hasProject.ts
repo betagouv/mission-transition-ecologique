@@ -1,3 +1,4 @@
+import { ProjectManager } from '@/tools/project/projectManager'
 import { RouteName } from '@/types'
 
 export default defineNuxtRouteMiddleware(async (to) => {
@@ -6,8 +7,9 @@ export default defineNuxtRouteMiddleware(async (to) => {
     return navigateTo(redirectTo)
   }
 
-  const projectResult = await useProjectStore().getProjectBySlug(to.params.projectSlug as string)
-  if (!projectResult.isOk) {
+  const projectStore = useProjectStore()
+  await new ProjectManager().getProjectBySlug(to.params.projectSlug as string)
+  if (!projectStore.currentProject) {
     return navigateTo(to.name === RouteName.ProjectResultDetail ? { name: RouteName.QuestionnaireStart } : { name: RouteName.Homepage })
   }
 })

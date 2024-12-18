@@ -23,14 +23,14 @@
 </template>
 <script setup lang="ts">
 import { useProjectStore } from '@/stores/project'
-import { Color, Project } from '@/types'
+import { Color, ProjectType } from '@/types'
 
 interface Props {
-  project: Project
+  project: ProjectType
   color?: Color
 }
 defineProps<Props>()
 
-const linkedProjectsTags = ref<Project[]>([])
+const linkedProjectsTags = ref<ProjectType[]>([])
 linkedProjectsTags.value = await useProjectStore().getLinkedProjectsFromCurrent()
 </script>

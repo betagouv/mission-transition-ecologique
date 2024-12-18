@@ -14,11 +14,11 @@
   </DsfrSideMenu>
 </template>
 <script setup lang="ts">
-import { Project } from '@/types'
+import { ProjectType } from '@/types'
 import { Scroll } from '@/tools/scroll'
 
 interface Props {
-  project: Project
+  project: ProjectType
 }
 const props = defineProps<Props>()
 

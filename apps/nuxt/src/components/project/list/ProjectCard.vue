@@ -32,12 +32,12 @@
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
-import { Project, RouteName } from '@/types'
+import { ProjectType, RouteName } from '@/types'
 import type { RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 
 interface Props {
-  project: Project
+  project: ProjectType
   isPriorityProject?: boolean
   isUniquePriority?: boolean
   priorityOrder?: number
@@ -54,7 +54,7 @@ const navigationStore = useNavigationStore()
 const navigation = new Navigation()
 const isCatalog = navigation.isCatalogProjects()
 
-const getRouteToProjectDetail = (project: Project): RouteLocationRaw => {
+const getRouteToProjectDetail = (project: ProjectType): RouteLocationRaw => {
   return {
     name: isCatalog ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
     params: { projectSlug: project.slug },

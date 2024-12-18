@@ -88,7 +88,7 @@
 import Navigation from '@/tools/navigation'
 import { Scroll } from '@/tools/scroll'
 import { computed } from 'vue'
-import { type ReqResp, TrackId, FormDataType, InputFieldUnionType, Project } from '@/types'
+import { type ReqResp, TrackId, FormDataType, InputFieldUnionType, ProjectType } from '@/types'
 import Translation from '@/tools/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import Format from '@/tools/format'
@@ -101,7 +101,7 @@ const navigation = new Navigation()
 interface Props {
   dataId?: string
   showTitle?: boolean
-  dataSlug?: ProgramType['id'] | Project['slug']
+  dataSlug?: ProgramType['id'] | ProjectType['slug']
   formType: OpportunityType
   form: FormDataType
   hint: string

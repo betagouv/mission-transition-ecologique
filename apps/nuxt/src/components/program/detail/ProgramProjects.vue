@@ -15,7 +15,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import type { Project as ProjectType } from '@/types'
+import type { ProjectType as ProjectType } from '@/types'
 
 interface Props {
   linkedProjects: ProjectType[]

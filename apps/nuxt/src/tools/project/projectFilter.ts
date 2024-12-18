@@ -1,5 +1,4 @@
-import { useProjectStore } from '@/stores/project'
-import { ProgramData, ThemeId, ThemeType, Project, Project as ProjectType } from '@/types'
+import { ProgramData, ThemeId, ThemeType, ProjectType } from '@/types'
 import { Theme } from '@/tools/theme'
 import { ComputedRef, Ref } from 'vue'
 
@@ -10,11 +9,19 @@ export default class ProjectFilter {
         return undefined
       }
 
-      return useProjectStore().getProjectsByTheme(projects.value, theme.value ?? undefined)
+      return this.getProjectsByTheme(projects.value, theme.value ?? undefined)
     })
   }
 
-  static byTheme(project: Project, themeId: ThemeId) {
+  static getProjectsByTheme(projects: ProjectType[], themeType?: ThemeId): ProjectType[] {
+    return projects.filter((project: ProjectType) => {
+      return themeType
+        ? this.byTheme(project, themeType)
+        : project.themes.some((themeId) => Theme.getTags().some(({ id }) => id === themeId))
+    })
+  }
+
+  static byTheme(project: ProjectType, themeId: ThemeId) {
     const themeSelected: ThemeType | undefined = Theme.getById(themeId)
 
     if (themeSelected) {
@@ -23,7 +30,7 @@ export default class ProjectFilter {
 
     return false
   }
-  static byPrograms(project: Project, filteredPrograms: ProgramData[]) {
+  static byPrograms(project: ProjectType, filteredPrograms: ProgramData[]) {
     return project.programs.some((programId) => filteredPrograms.some(({ id }) => id === programId))
   }
 }

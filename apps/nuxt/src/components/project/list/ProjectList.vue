@@ -102,13 +102,13 @@
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import Translation from '@/tools/translation'
 import { computed } from 'vue'
-import { Project } from '@/types'
+import { ProjectType } from '@/types'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 
 interface ProjectListProps {
-  sortedProjects?: Project[]
+  sortedProjects?: ProjectType[]
 }
 const props = defineProps<ProjectListProps>()
 
@@ -152,11 +152,11 @@ const hideMainProjectListComponent = computed(() => {
   return !hasThemeCard.value && !hasThemeSelected.value
 })
 
-const isPriorityProject = (project: Project) => {
+const isPriorityProject = (project: ProjectType) => {
   return !isSpecificGoal ? priorityProjects.value!.includes(project) : false
 }
 
-const getPriorityOrder = (project: Project) => {
+const getPriorityOrder = (project: ProjectType) => {
   return priorityProjects.value ? priorityProjects.value.indexOf(project) + 1 : undefined
 }
 </script>

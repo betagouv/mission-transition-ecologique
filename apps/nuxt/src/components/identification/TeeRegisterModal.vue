@@ -45,6 +45,7 @@
 </template>
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
+import { ProjectManager } from '@/tools/project/projectManager'
 import Translation from '@/tools/translation'
 import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType } from '@/types'
 import Breakpoint from '@/tools/breakpoints'
@@ -82,20 +83,22 @@ const registerStep = computed<number>(() => {
   }
   return 1
 })
-const updateEstablishment = (selectedEstablishment: EstablishmentFront) => {
+const updateEstablishment = async (selectedEstablishment: EstablishmentFront) => {
   company.value = selectedEstablishment
   if (company.value.structure_size) {
     companySize.value = company.value.structure_size
   }
   manualRegistration.value = false
 }
-const resetSiret = () => {
+const resetSiret = async () => {
   company.value = null
   companySize.value = null
   manualRegistration.value = false
   CompanyDataStorage.removeItem(CompanyDataStorageKey.Company)
   CompanyDataStorage.removeItem(CompanyDataStorageKey.Size)
   CompanyDataStorageHandler.updateRouteFromStorage()
+
+  await new ProjectManager().update()
 }
 
 const imgClass = computed<string>(() => {

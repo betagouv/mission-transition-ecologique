@@ -1,7 +1,7 @@
 import { ThemeId } from '../../theme/types/shared'
 import { projects } from '../../../static'
 
-export interface Project {
+export interface ProjectType {
   id: number
   title: string
   slug: string

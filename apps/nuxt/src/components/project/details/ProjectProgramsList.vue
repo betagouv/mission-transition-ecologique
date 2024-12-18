@@ -17,12 +17,12 @@
 </template>
 
 <script setup lang="ts">
-import { type ProgramData, Project } from '@/types'
+import { type ProgramData, ProjectType } from '@/types'
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
 
 interface Props {
   programs: ProgramData[]
-  project: Project
+  project: ProjectType
   title: string
 }
 defineProps<Props>()
