@@ -31,8 +31,8 @@ export default abstract class RequestApi {
       return new ResultApi<T>(cachedData, null)
     }
 
-    const { data, error } = (await useAsyncData<T>(url, () => {
-      return $fetch(url)
+    const { data, error } = (await useAsyncData<T>(url, async () => {
+      return await $fetch(url)
     })) as _AsyncData<T | null, NuxtError<unknown> | null>
 
     return new ResultApi<T>(data, error)

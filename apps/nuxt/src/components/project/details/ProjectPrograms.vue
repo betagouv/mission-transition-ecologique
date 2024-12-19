@@ -6,7 +6,14 @@
     title="💰 Mes aides"
   >
     <template #content>
-      <client-only>
+      <client-only fallback-tag="div">
+        <template #fallback>
+          <div class="fr-container">
+            <div class="fr-col-12 fr-col--middle fr-col-justify--center">
+              <TeeSpinner />
+            </div>
+          </div>
+        </template>
         <TeeRegisterHighlight
           v-if="!hasRegisteredData"
           class="fr-mx-3v"
@@ -23,13 +30,13 @@
               />
             </div>
             <ProjectProgramsList
-              v-if="studyPrograms.length > 0"
+              v-if="studyPrograms.length > 0 && !navigationStore.hasSpinner"
               :title="Translation.t('project.studyPrograms')"
               :programs="studyPrograms"
               :project="project"
             />
             <ProjectProgramsList
-              v-if="financePrograms.length > 0"
+              v-if="financePrograms.length > 0 && !navigationStore.hasSpinner"
               :title="Translation.t('project.financePrograms')"
               :programs="financePrograms"
               :project="project"
@@ -70,6 +77,7 @@
 </template>
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
+import { ProgramManager } from '@/tools/program/programManager'
 import { ProgramAidType, type ProgramData, ProjectType, OpportunityType, Color } from '@/types'
 import Contact from '@/tools/contact'
 import Translation from '@/tools/translation'
@@ -81,15 +89,19 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
+const { programs, hasError } = storeToRefs(useProgramStore())
 const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormContainer')
 
-const programs = ref<ProgramData[]>()
-const hasError = ref<boolean>(false)
+onServerPrefetch(async () => {
+  await new ProgramManager().getFiltered()
+})
+
+onNuxtReady(async () => {
+  await new ProgramManager().getFiltered()
+})
 
 const hasRegisteredData = CompanyDataStorage.isDataFull()
-const registeredData = CompanyDataStorage.getData()
 
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value.length || 0
@@ -109,21 +121,5 @@ const financePrograms = computed(() => {
   return filteredPrograms.value.filter((program: ProgramData) =>
     [ProgramAidType.fund, ProgramAidType.loan, ProgramAidType.tax].includes(program["nature de l'aide"])
   )
-})
-
-async function getPrograms() {
-  navigationStore.hasSpinner = true
-  const programsResult = await programStore.programsByUsedTracks
-  if (programsResult.isOk()) {
-    programs.value = programsResult.data
-  } else {
-    hasError.value = true
-  }
-  navigationStore.hasSpinner = false
-}
-
-watchPostEffect(async () => {
-  registeredData.value
-  await getPrograms()
 })
 </script>

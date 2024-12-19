@@ -45,6 +45,7 @@
 </template>
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
+import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
 import Translation from '@/tools/translation'
 import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType } from '@/types'
@@ -99,6 +100,7 @@ const resetSiret = async () => {
   CompanyDataStorageHandler.updateRouteFromStorage()
 
   await new ProjectManager().update()
+  await new ProgramManager().update()
 }
 
 const imgClass = computed<string>(() => {

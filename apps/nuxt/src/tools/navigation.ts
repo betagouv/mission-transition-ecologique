@@ -1,4 +1,4 @@
-import { RouteName } from '@/types'
+import { RouteName, TrackId } from '@/types'
 import { RouteLocationNormalizedLoaded, RouteParamsGeneric, Router } from 'vue-router'
 
 export default class Navigation {
@@ -38,7 +38,16 @@ export default class Navigation {
     if (Array.isArray(routeName) && this._route.name) {
       return new Set(routeName).has(this._route.name as string)
     }
+
     return this._route.name === routeName
+  }
+
+  isByRoutePath(routePath: string | string[]) {
+    if (Array.isArray(routePath) && this._route.path) {
+      return new Set(routePath).has(this._route.path as string)
+    }
+
+    return this._route.path === routePath
   }
 
   get name() {
@@ -83,6 +92,10 @@ export default class Navigation {
 
   isQuestionnaire() {
     return this.isQuestionnaireResult() || this.isQuestionnaireResultDetail()
+  }
+
+  isQuestionnaireThemeCards() {
+    return this.isByRoutePath(this._router.resolve({ name: RouteName.Questionnaire, params: { trackId: TrackId.Goals } }).path)
   }
 
   isQuestionnaireResult() {

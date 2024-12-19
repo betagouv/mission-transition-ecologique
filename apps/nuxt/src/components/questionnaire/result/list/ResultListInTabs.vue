@@ -49,23 +49,25 @@
 import { TeeDsfrTabsProps } from '@/components/element/vueDsfr/dsfrTabs/TeeDsfrTabs.vue'
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
-import { ProjectManager } from '@/tools/project/projectManager'
+import { ProgramManager } from '@/tools/program/programManager'
 import ProjectFilter from '@/tools/project/projectFilter'
-import { BreakpointNameType, ProgramData } from '@/types'
+import { ProjectManager } from '@/tools/project/projectManager'
+import { BreakpointNameType } from '@/types'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/tools/theme'
-import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
 const { projects } = storeToRefs(useProjectStore())
-const programs = ref<ProgramData[]>()
-const hasError = ref<boolean>(false)
+const { programs, hasError } = storeToRefs(programStore)
 const { tabSelectedOnList } = storeToRefs(navigationStore)
 
-const registeredData = CompanyDataStorage.getData()
+useRuntimeHook('app:mounted', async () => {
+  await new ProjectManager().getFilteredProjects()
+  await new ProgramManager().getFiltered()
+})
 
 const titles: TeeDsfrTabsProps['tabTitles'] = [
   {
@@ -90,25 +92,5 @@ const filteredProjects = computed(() => {
   }
 
   return ProjectFilter.getProjectsByTheme(projects.value, Theme.getThemeFromSelectedOrPriorityTheme().value)
-})
-
-onNuxtReady(async () => {
-  await new ProjectManager().getFilteredProjects()
-})
-
-const getPrograms = async () => {
-  navigationStore.hasSpinner = true
-  const programResult = await programStore.programsByUsedTracks
-  if (programResult.isOk()) {
-    programs.value = programResult.data
-  } else {
-    hasError.value = true
-  }
-  navigationStore.hasSpinner = false
-}
-
-watchPostEffect(async () => {
-  registeredData.value
-  await getPrograms()
 })
 </script>

@@ -151,7 +151,7 @@ const drawChart = () => {
   }
 }
 
-watchPostEffect(() => {
+useRuntimeHook('app:mounted', async () => {
   drawChart()
 })
 </script>

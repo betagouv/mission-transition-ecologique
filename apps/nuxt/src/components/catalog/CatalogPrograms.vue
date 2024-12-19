@@ -78,15 +78,16 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, ThemeId } from '@/types'
+import { ProgramManager } from '@/tools/program/programManager'
+import { ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { computed } from 'vue'
 
 const programStore = useProgramStore()
 
-const programs = ref<ProgramData[]>()
-const hasError = ref<boolean>(false)
+const { programs, hasError } = storeToRefs(programStore)
+await new ProgramManager().getDependentCompanyData()
 
 const title = 'Le catalogue des aides publiques à la transition écologique'
 const description =
@@ -94,13 +95,6 @@ const description =
   'ADEME, Bpifrance, CCI, CMA, etc.'
 
 useSeoMeta(MetaSeo.get(title, description))
-
-const result = await programStore.programs
-if (result.isOk()) {
-  programs.value = result.data
-} else {
-  hasError.value = true
-}
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined

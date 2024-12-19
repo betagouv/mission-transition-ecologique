@@ -14,6 +14,7 @@ export class ProjectManager {
     if (resultApi.isOk()) {
       this._useProject.projects = resultApi.data
       this._useProject.hasProjects = true
+      this._useProject.hasError = false
     } else {
       this._useProject.hasError = true
       this._useProject.hasProjects = false
@@ -48,9 +49,9 @@ export class ProjectManager {
     const resultApi = await this._getProjectFromApi(slug)
     if (resultApi.isOk()) {
       this._useProject.currentProject = resultApi.data
+      this._useProject.hasError = false
     } else {
       this._useProject.hasError = true
-      this._useProject.hasProjects = false
     }
     this._useNavigation.hasSpinner = false
   }
@@ -60,12 +61,10 @@ export class ProjectManager {
     // if (navigation.isProjectDetail() && this._useProject.currentProject) {
     //   this.getProjectBySlug(this._useProject.currentProject.slug)
     // }
-    if (navigation.isQuestionnaireResult()) {
+    if (navigation.isQuestionnaireResult() || navigation.isProgramDetail() || navigation.isQuestionnaireThemeCards()) {
       await this.getFilteredProjects()
     } else if (navigation.isCatalogProjects()) {
       await this.getProjects()
-    } else if (navigation.isProgramDetail()) {
-      await this.getFilteredProjects()
     } else {
       this._useProject.reset()
     }

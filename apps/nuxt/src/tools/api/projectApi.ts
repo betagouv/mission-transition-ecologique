@@ -24,10 +24,10 @@ export default class ProjectApi extends RequestApi {
   }
 
   async get(): Promise<ResultApi<ProjectType[]>> {
-    return super.getJson<ProjectType[]>()
+    return await super.getJson<ProjectType[]>()
   }
 
   async getOne(slug: string): Promise<ResultApi<ProjectType>> {
-    return super.getJson<ProjectType>(this.url + '/' + slug)
+    return await super.getJson<ProjectType>(this.url + '/' + slug)
   }
 }

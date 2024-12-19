@@ -33,8 +33,8 @@ definePageMeta({
   name: RouteName.Legal
 })
 
-const privacyPolicy = new URL(useRouter().resolve({ name: RouteName.PersonalData }).href, window.location.origin).href
-const siteUrl = new URL(useRouter().resolve({ name: RouteName.Homepage }).href, window.location.origin).href
+const privacyPolicy = useRouter().resolve({ name: RouteName.PersonalData }).href
+const siteUrl = useRouter().resolve({ name: RouteName.Homepage }).href
 
 const thirdParties: LegalNoticePropsThirdParty[] = [
   {

@@ -16,7 +16,7 @@
         />
       </div>
       <div
-        v-if="!program"
+        v-if="!currentProgram"
         class="fr-col-12"
       >
         <TeeError
@@ -29,7 +29,6 @@
 </template>
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
-import { ProjectType, type ProgramData as ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/tools/contact'
 import { useNavigationStore } from '@/stores/navigation'
@@ -38,19 +37,11 @@ import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import Translation from '@/tools/translation'
 import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 
-interface Props {
-  programId: string
-  program: ProgramType | undefined
-  projectSlug: string | undefined
-}
-const props = defineProps<Props>()
-
-const projectStore = useProjectStore()
+const { currentProject } = storeToRefs(useProjectStore())
+const { currentProgram } = storeToRefs(useProgramStore())
 const navigationStore = useNavigationStore()
 const router = useRouter()
 const navigation = new Navigation()
-
-const project = ref<ProjectType | undefined>(projectStore.currentProject)
 
 const isCatalogDetail = navigation.isCatalogProgramDetail()
 
@@ -58,21 +49,21 @@ const hasRegisteredData = CompanyDataStorage.isDataFull()
 
 const routeToResults = {
   name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
-  hash: '#' + props.programId, //TODO get from program
+  hash: '#' + currentProgram.value?.id, //TODO get from program
   query: isCatalogDetail ? undefined : navigationStore.query
 }
 
 const routeToProject = {
   ...routeToResults,
   name: isCatalogDetail ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
-  params: { projectSlug: props.projectSlug }
+  params: { projectSlug: currentProject.value?.slug }
 }
 
 const links = computed<DsfrBreadcrumbProps['links']>(() => {
   const links = []
   if (navigation.isProgramFromProject()) {
-    links.push({ text: project.value?.title || '', to: routeToProject })
+    links.push({ text: currentProject.value?.title || '', to: routeToProject })
   }
-  return [...links, { text: props.program?.titre || '' }]
+  return [...links, { text: currentProgram.value?.titre || '' }]
 })
 </script>

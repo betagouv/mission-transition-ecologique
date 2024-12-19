@@ -65,7 +65,7 @@
           @update-selection="updateSelection($event.option, $event.index, $event.remove)"
         />
 
-        <TrackThemeCards
+        <LazyTrackThemeCards
           v-if="TrackComponent.isThemeInterface(usedTrack)"
           @update-selection="updateAndSave($event.option, $event.index, $event.remove)"
         />

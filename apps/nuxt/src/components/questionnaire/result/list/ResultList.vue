@@ -22,9 +22,10 @@ import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/tools/theme'
 
 const { projects, hasError } = storeToRefs(useProjectStore())
-const filteredProjects = ProjectFilter.filter(projects, Theme.getThemeFromSelectedOrPriorityTheme())
 
 onNuxtReady(async () => {
   await new ProjectManager().getFilteredProjects()
 })
+
+const filteredProjects = ProjectFilter.filter(projects, Theme.getThemeFromSelectedOrPriorityTheme())
 </script>

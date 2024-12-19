@@ -1,9 +1,5 @@
 <template>
-  <ProgramHeader
-    :program-id="programId"
-    :program="program"
-    :project-slug="projectSlug"
-  />
+  <ProgramHeader />
   <!-- ALERT - PROGRAM NOT AVAILABLE ANYMORE -->
   <div
     v-if="!programIsAvailable"
@@ -246,10 +242,10 @@ import ProgramLongDescription from '@/components/program/detail/ProgramLongDescr
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import { useProgramStore } from '@/stores/program'
 import Navigation from '@/tools/navigation'
+import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { OpportunityType, ProgramEligibilityType } from '@/types'
 import { RouteName } from '@/types/routeType'
-import { useNavigationStore } from '@/stores/navigation'
 import { MetaSeo } from '@/tools/metaSeo'
 import Program from '@/tools/program/program'
 import { Scroll } from '@/tools/scroll'
@@ -260,53 +256,44 @@ import Opportunity from '@/tools/opportunity'
 import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 import { storeToRefs } from 'pinia'
 
-const { projects } = storeToRefs(useProjectStore())
 const programsStore = useProgramStore()
-
+const { projects } = storeToRefs(useProjectStore())
 const { currentProgram: program } = storeToRefs(programsStore)
+
 const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
-
 const navigation = new Navigation()
-
 const hasRegisteredData = CompanyDataStorage.isDataFull()
-const registeredData = CompanyDataStorage.getData()
 
-interface Props {
-  programId: string
-  projectSlug?: string
-}
-const props = defineProps<Props>()
+useRuntimeHook('app:mounted', async () => {
+  if (program.value) {
+    await new ProgramManager().update()
+    if (navigation.isCatalogProgramDetail()) {
+      await new ProjectManager().getProjects()
+    } else {
+      await new ProjectManager().getFilteredProjects()
+    }
+  }
+})
 
 const linkedProjects = computed(() => {
   return Program.getLinkedProjects(program.value, projects.value)
 })
 
-useNavigationStore().hasSpinner = true
-const programResult = await useProgramStore().getProgramById(props.programId)
-if (programResult.isOk) {
-  program.value = programResult.value
-  if (navigation.isCatalogProgramDetail()) {
-    await new ProjectManager().getProjects()
-  } else {
-    await new ProjectManager().getFilteredProjects()
-  }
-
-  if (program.value && navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {
-    useHead({
-      link: [
-        {
-          rel: 'canonical',
-          href: navigation.getHrefByRouteName(RouteName.CatalogProgramDetail, {
-            programId: program.value.id
-          })
-        }
-      ]
-    })
-  }
-
-  useSeoMeta(MetaSeo.get(program.value?.titre, program.value?.description, program.value?.illustration))
+if (program.value && navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {
+  useHead({
+    link: [
+      {
+        rel: 'canonical',
+        href: navigation.getHrefByRouteName(RouteName.CatalogProgramDetail, {
+          programId: program.value.id
+        })
+      }
+    ]
+  })
 }
-useNavigationStore().hasSpinner = false
+
+useSeoMeta(MetaSeo.get(program.value?.titre, program.value?.description, program.value?.illustration))
+
 // computed
 const programCost = computed(() => program.value?.[`coût de l'accompagnement`])
 const programAidAmount = computed(() => program.value?.[`montant du financement`])
@@ -344,12 +331,6 @@ const programIsEligible = computed(() => {
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
-})
-
-watch(registeredData.value, async () => {
-  if (program.value) {
-    await programsStore.getProgramById(program.value.id)
-  }
 })
 
 const programIsAvailable = computed(() => {

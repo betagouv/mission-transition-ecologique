@@ -33,6 +33,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType, EstablishmentFront } from '@/types'
 import Analytics from '@/tools/analytic/analytics'
@@ -121,6 +122,7 @@ const saveProfile = async () => {
 
     Navigation.toggleRegisterModal(false)
     await new ProjectManager().update()
+    await new ProgramManager().update()
   } else {
     showError.value = true
   }

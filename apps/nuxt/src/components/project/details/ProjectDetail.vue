@@ -31,22 +31,13 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ProjectManager } from '@/tools/project/projectManager'
 import { Color, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { Theme } from '@/tools/theme'
 import { useProjectStore } from '@/stores/project'
 
 const { currentProject: project } = storeToRefs(useProjectStore())
-
 const themeColor = ref<Color | ''>()
-
-interface Props {
-  projectSlug: string
-}
-const props = defineProps<Props>()
-
-await new ProjectManager().getProjectBySlug(props.projectSlug)
 
 useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, project.value?.image))
 

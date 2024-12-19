@@ -42,4 +42,8 @@ export default class Config extends ConfigCommon {
   static get matomoAppId() {
     return process.env['VITE_MATOMO_APP_ID']
   }
+
+  static get isTestData() {
+    return this.getEnvValue('VITE_DATA_TEST', 'false') === 'true'
+  }
 }

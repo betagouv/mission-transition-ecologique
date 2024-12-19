@@ -27,7 +27,11 @@ export default class ProgramApi extends RequestApi {
         }
       }
     })
-    return new URLSearchParams(queryString).toString()
+
+    const params = new URLSearchParams(queryString)
+    params.sort()
+
+    return params.toString()
   }
 
   isValidQueryParam(key: string) {

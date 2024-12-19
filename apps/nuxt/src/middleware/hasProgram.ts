@@ -1,4 +1,5 @@
 import Navigation from '@/tools/navigation'
+import { ProgramManager } from '@/tools/program/programManager'
 import { RouteName } from '@/types'
 
 export default defineNuxtRouteMiddleware(async (to) => {
@@ -8,9 +9,9 @@ export default defineNuxtRouteMiddleware(async (to) => {
   }
 
   Navigation.getInstance(to)
-  const programResult = await useProgramStore().getProgramById(to.params.programId as string)
 
-  if (!programResult.isOk) {
+  await new ProgramManager().getOneById(to.params.programId as string)
+  if (!useProgramStore().currentProgram) {
     return navigateTo(redirectTo)
   }
 })

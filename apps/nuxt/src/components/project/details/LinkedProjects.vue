@@ -23,6 +23,7 @@
 </template>
 <script setup lang="ts">
 import { useProjectStore } from '@/stores/project'
+import { ProjectManager } from '@/tools/project/projectManager'
 import { Color, ProjectType } from '@/types'
 
 interface Props {
@@ -32,5 +33,9 @@ interface Props {
 defineProps<Props>()
 
 const linkedProjectsTags = ref<ProjectType[]>([])
-linkedProjectsTags.value = await useProjectStore().getLinkedProjectsFromCurrent()
+
+onNuxtReady(async () => {
+  await new ProjectManager().getFilteredProjects()
+  linkedProjectsTags.value = await useProjectStore().getLinkedProjectsFromCurrent()
+})
 </script>
