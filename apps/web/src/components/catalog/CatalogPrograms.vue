@@ -78,15 +78,18 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { type ProgramData, ThemeId } from '@/types'
+import { FilterItemKeys, type ProgramData, ThemeId } from '@/types'
 import { MetaSeo } from '@/utils/metaSeo'
 import UsedTrack from '@/utils/track/usedTrack'
 import { computed, onBeforeMount } from 'vue'
+import { CompanyData } from '@/utils/companyData'
 
 const programStore = useProgramStore()
 
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
+
+const registeredData = CompanyData.dataRef
 
 const title = 'Le catalogue des aides publiques à la transition écologique'
 const description =
@@ -111,7 +114,7 @@ const hasThemeCard = computed(() => {
 
 const theme = computed(() => {
   if (programStore.hasThemeTypeSelected()) {
-    return programStore.programFilters.themeTypeSelected
+    return programStore.programFilters[FilterItemKeys.themeType]
   }
 
   if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {
@@ -129,15 +132,23 @@ const showThemeCard = computed(() => {
   return hasThemeCard.value && !hasSpinner.value
 })
 
-onBeforeMount(async () => {
-  useSeoMeta(MetaSeo.get(title, description))
-
-  const result = await programStore.programs
+const getPrograms = async () => {
+  const result = await programStore.programsByUsedTracks
   if (result.isOk) {
     programs.value = result.value
   } else {
     hasError.value = true
   }
+}
+
+onBeforeMount(async () => {
+  useSeoMeta(MetaSeo.get(title, description))
+
+  await getPrograms()
+})
+
+watch(registeredData.value, async () => {
+  await getPrograms()
 })
 
 onBeforeRouteLeave(() => {
