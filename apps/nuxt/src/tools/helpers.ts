@@ -14,8 +14,8 @@ import {
   ReqResp,
   ResultsMapping
 } from '@/types'
-import CompanyDataStorage from '@/tools/storage/companyDataStorage'
-import { CompanyDataStorageKey } from '@/types/companyDataType'
+import { CompanyDataStorage } from '@/tools/companyData'
+import { CompanyDataStorageKey } from '@/tools/companyData/types/companyDataType'
 
 // GENERIC HELPERS
 

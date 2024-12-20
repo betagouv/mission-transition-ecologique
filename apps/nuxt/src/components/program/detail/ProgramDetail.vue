@@ -253,7 +253,7 @@ import Translation from '@/tools/translation'
 import Breakpoint from '@/tools/breakpoints'
 import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/tools/opportunity'
-import CompanyDataStorage from '@/tools/storage/companyDataStorage'
+import { CompanyData } from '@/tools/companyData'
 import { storeToRefs } from 'pinia'
 
 const programsStore = useProgramStore()
@@ -262,7 +262,7 @@ const { currentProgram: program } = storeToRefs(programsStore)
 
 const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
 const navigation = new Navigation()
-const hasRegisteredData = CompanyDataStorage.isDataFull()
+const hasRegisteredData = CompanyData.isDataFull()
 
 useRuntimeHook('app:mounted', async () => {
   if (program.value) {

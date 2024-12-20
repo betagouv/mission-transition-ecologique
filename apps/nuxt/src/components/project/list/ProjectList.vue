@@ -105,7 +105,7 @@ import { computed } from 'vue'
 import { ProjectType } from '@/types'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import CompanyDataStorage from '@/tools/storage/companyDataStorage'
+import { CompanyData } from '@/tools/companyData'
 
 interface ProjectListProps {
   sortedProjects?: ProjectType[]
@@ -115,8 +115,8 @@ const props = defineProps<ProjectListProps>()
 const programStore = useProgramStore()
 const isSpecificGoal = UsedTrack.isSpecificGoal()
 const resume: string = Translation.t('project.result.resume', {
-  effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyDataStorage.getSize() ?? '')),
-  secteur: TrackStructure.getSectorShortLabel() ?? CompanyDataStorage.getCompanyData()?.secteur ?? ''
+  effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyData.size ?? '')),
+  secteur: TrackStructure.getSectorShortLabel() ?? CompanyData.company?.secteur ?? ''
 })
 
 const hasPriorityProjects = computed(() => {

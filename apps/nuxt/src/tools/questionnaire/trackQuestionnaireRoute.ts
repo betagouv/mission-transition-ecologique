@@ -1,7 +1,7 @@
 import { Color, ConditionOperators, DataMappingFrom, NextTrackRule, type NextTrackRuleSet, Track, TrackCategory } from '@/types'
 import { TrackComponent, TrackId } from '@/types'
 import { QuestionnaireRoute } from '@tee/common'
-import { CompanyDataStorageKey } from '@/types/companyDataType'
+import { CompanyDataStorageKey } from '@/tools/companyData/types/companyDataType'
 
 const commonRules: NextTrackRuleSet[] = [
   {

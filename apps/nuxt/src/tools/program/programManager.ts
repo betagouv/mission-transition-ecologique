@@ -1,9 +1,9 @@
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import ProgramApi from '@/tools/api/programApi'
 import { ResultApi } from '@/tools/api/resultApi'
+import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
-import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 import { ProgramData, QuestionnaireData } from '@/types'
 
 export class ProgramManager {
@@ -53,7 +53,7 @@ export class ProgramManager {
   }
 
   async getDependentCompanyData() {
-    CompanyDataStorage.isDataFull().value ? await this.getFiltered() : await this.get()
+    CompanyData.isDataFull().value ? await this.getFiltered() : await this.get()
   }
 
   async update() {

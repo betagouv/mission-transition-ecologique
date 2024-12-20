@@ -63,7 +63,7 @@ height="75px">
 
 This repository is a monorepo, based on [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces/) composed of two workspaces:
 
-- the ["web" workspace](apps/web/README.md) contains the front-end implementations.
+- the ["web" workspace](apps/nuxt/README.md) contains the front-end implementations.
 - the ["backend" workspace](./libs/backend-ddd/README.md) contains the back-end implementations.
 - the ["data" workspace](./libs/data/README.md) contains the datasets and common files for datasets builds.
 - the ["web-e2e" workspace](apps/nuxt-e2e/README.md) contains the front-end end to end testing.
@@ -191,7 +191,7 @@ More scripts are defined for each workspace: checkout their respective documenta
 
 - backend: [README](./packages/backend/README.md) / [package.json](./packages/backend/package.json)
 - data: [README](./packages/data/README.md) / [package.json](./packages/data/package.json)
-- web: [README](apps/web/README.md) / [package.json](./packages/web/package.json)
+- web: [README](apps/nuxt/README.md) / [package.json](./packages/web/package.json)
 
 Scripts can be triggered with:
 

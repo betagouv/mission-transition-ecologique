@@ -82,7 +82,7 @@ import { ProgramAidType, type ProgramData, ProjectType, OpportunityType, Color }
 import Contact from '@/tools/contact'
 import Translation from '@/tools/translation'
 import Opportunity from '@/tools/opportunity'
-import CompanyDataStorage from '@/tools/storage/companyDataStorage'
+import { CompanyData } from '@/tools/companyData'
 
 interface Props {
   project: ProjectType
@@ -101,7 +101,7 @@ onNuxtReady(async () => {
   await new ProgramManager().getFiltered()
 })
 
-const hasRegisteredData = CompanyDataStorage.isDataFull()
+const hasRegisteredData = CompanyData.isDataFull()
 
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value.length || 0

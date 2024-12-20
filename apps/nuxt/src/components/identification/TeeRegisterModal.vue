@@ -50,10 +50,9 @@ import { ProjectManager } from '@/tools/project/projectManager'
 import Translation from '@/tools/translation'
 import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType } from '@/types'
 import Breakpoint from '@/tools/breakpoints'
-import CompanyDataStorage from '@/tools/storage/companyDataStorage'
 import { onClickOutside } from '@vueuse/core'
 import { useNavigationStore } from '@/stores/navigation'
-import { CompanyDataStorageHandler } from '@/tools/storage/companyDataStorageHandler'
+import { CompanyDataStorage, CompanyData } from '@/tools/companyData'
 
 const registerModal = ref(null)
 const registeredData = CompanyDataStorage.getData()
@@ -95,9 +94,8 @@ const resetSiret = async () => {
   company.value = null
   companySize.value = null
   manualRegistration.value = false
-  CompanyDataStorage.removeItem(CompanyDataStorageKey.Company)
-  CompanyDataStorage.removeItem(CompanyDataStorageKey.Size)
-  CompanyDataStorageHandler.updateRouteFromStorage()
+  CompanyData.resetData()
+  CompanyData.updateRouteFromStorage()
 
   await new ProjectManager().update()
   await new ProgramManager().update()

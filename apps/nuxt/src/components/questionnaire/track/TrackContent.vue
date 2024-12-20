@@ -110,8 +110,7 @@ import TrackColOption from '@/tools/questionnaire/track/TrackColOption'
 import TrackComponent from '@/tools/questionnaire/track/TrackComponent'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import CompanyDataStorage from '@/tools/storage/companyDataStorage'
-import { CompanyDataStorageHandler } from '@/tools/storage/companyDataStorageHandler'
+import { CompanyDataStorage, CompanyData } from '@/tools/companyData'
 
 interface Props {
   trackElement: Element
@@ -130,7 +129,6 @@ const selectedOptions = ref<TrackOptionsUnion[]>([])
 
 const usedTrack = usedTrackStore.current as UsedTrack
 const track: Track | undefined = trackStore.getTrack(usedTrack.id)
-// trackStore.setCurrentTrack(track)
 
 const allowMultiple: boolean = !!track?.behavior?.multipleChoices
 
@@ -222,11 +220,15 @@ const backToPreviousTrack = async () => {
 }
 
 watch(registeredData.value, async () => {
-  if (!CompanyDataStorage.hasSiret()) {
+  const isDataFull = CompanyData.isDataFull().value
+
+  if (!isDataFull) {
     return
   }
 
-  const next = CompanyDataStorageHandler.getNextTrackStorage()
+  const next = CompanyData.getNextTrackStorage()
+
+  if (!next) return
 
   await router.push({
     name: RouteName.Questionnaire,

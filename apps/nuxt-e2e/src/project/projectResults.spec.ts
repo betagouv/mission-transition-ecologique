@@ -1,11 +1,12 @@
 import { expect, test } from '@nuxt/test-utils/playwright'
 import { tests } from './projectResultsData'
+import { timeOut } from '../config'
 
 tests.forEach((singleTest) => {
   test(`Test id ${singleTest.id} - Verify content and elements for query ${singleTest.url}`, async ({ page, goto }) => {
     await goto(singleTest.url, { waitUntil: 'hydration' })
     try {
-      await page.waitForSelector('.teste2e-project-target', { timeout: 3000 })
+      await page.locator('.teste2e-project-target').waitFor({ state: 'visible', timeout: timeOut })
     } catch (error) {
       // this is an expected error that can happen
       // - if the number of results is 0
@@ -29,7 +30,7 @@ test(`Check projects found while initially selecting different tags`, async ({ p
 
   await goto(urlTag1, { waitUntil: 'hydration' })
   try {
-    await page.waitForSelector('.teste2e-project-target', { timeout: 3000 })
+    await page.locator('.teste2e-project-target').waitFor({ state: 'visible', timeout: timeOut })
   } catch (error) {
     // this is an expected error that can happen
     // - if the number of results is 0
@@ -38,7 +39,7 @@ test(`Check projects found while initially selecting different tags`, async ({ p
   const elementsurlTag1 = await page.$$eval('.teste2e-project-target h3 a', (els) => els.map((el) => el.innerHTML.trim()))
   await goto(urlTag2, { waitUntil: 'hydration' })
   try {
-    await page.waitForSelector('.teste2e-project-target', { timeout: 3000 })
+    await page.waitForSelector('.teste2e-project-target', { timeout: timeOut })
   } catch (error) {
     // this is an expected error that can happen
     // - if the number of results is 0

@@ -54,7 +54,7 @@
 import Navigation from '@/tools/navigation'
 import { CompanyDataStorageKey } from '@/types'
 import Breakpoint from '@/tools/breakpoints'
-import CompanyDataStorage from '@/tools/storage/companyDataStorage'
+import { CompanyDataStorage } from '@/tools/companyData'
 import Translation from '@/tools/translation'
 
 const registeredData = CompanyDataStorage.getData()

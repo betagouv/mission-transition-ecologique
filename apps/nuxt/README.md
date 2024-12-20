@@ -14,7 +14,7 @@
 
 ## CSS - SCSS
 
-La documentation des styles est disponible dans le fichier [`./style.md`](./style.md).
+La documentation des styles est disponible dans le fichier [`./style.md`](../web/style.md).
 
 ## Environment variables
 
