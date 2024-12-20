@@ -107,8 +107,7 @@ import TrackColOption from '@/utils/track/TrackColOption'
 import TrackComponent from '@/utils/track/TrackComponent'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
-import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
+import { CompanyDataStorage, CompanyData } from '@/utils/companyData'
 
 interface Props {
   trackElement: Element
@@ -219,9 +218,13 @@ const backToPreviousTrack = async () => {
 }
 
 watch(registeredData.value, async () => {
-  if (!CompanyDataStorage.hasSiret()) return
+  const isDataFull = CompanyData.isDataFull().value
 
-  const next = CompanyDataStorageHandler.getNextTrackStorage()
+  if (!isDataFull) return
+
+  const next = CompanyData.getNextTrackStorage()
+
+  if (!next) return
 
   await router.push({
     name: RouteName.Questionnaire,

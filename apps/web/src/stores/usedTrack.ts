@@ -21,9 +21,8 @@ import { remapItem } from '@/utils/helpers'
 import Translation from '@/utils/translation'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
-import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
 import TrackSiret from '@/utils/track/TrackSiret'
+import { CompanyDataStorage, CompanyData } from '@/utils/companyData'
 
 export const useUsedTrackStore = defineStore('usedTrack', () => {
   const current = ref<UsedTrack | undefined>()
@@ -69,7 +68,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       .filter((questionnaireDatum) => questionnaireDatum?.length)
       .flat(1)
 
-    CompanyDataStorageHandler.populateCompletedQuestionnaire(data)
+    CompanyData.populateCompletedQuestionnaire(data)
 
     return data
   })
@@ -117,11 +116,11 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       if (value) {
         useNavigationStore().updateSearchParam({ name: current.value.id, value: value })
 
-        CompanyDataStorageHandler.setDataStorageFromTrack(current.value.id, value, selectedOptions)
+        CompanyData.setDataStorageFromTrack(current.value.id, value, selectedOptions)
       }
     }
 
-    CompanyDataStorageHandler.updateSearchParamFromStorage()
+    CompanyData.updateSearchParamFromStorage()
   }
 
   function getNextFromCurrent() {
@@ -277,7 +276,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       questionnaireData.onlyEligible = true
     }
 
-    CompanyDataStorageHandler.populateQuestionnaireData(questionnaireData)
+    CompanyData.populateQuestionnaireData(questionnaireData)
 
     return questionnaireData
   }
@@ -286,7 +285,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     for (const [companyDataStorageKey, value] of Object.entries(CompanyDataStorage.getData().value)) {
       if (value) {
         let selectedOption = undefined
-        const trackId = CompanyDataStorageHandler.getTrackIdFromStorageKey(companyDataStorageKey as CompanyDataStorageKey)
+        const trackId = CompanyData.getTrackIdFromStorageKey(companyDataStorageKey as CompanyDataStorageKey)
         const track = useTrackStore().getTrack(trackId)
 
         if (track === undefined) {
@@ -319,7 +318,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       const value = useNavigationStore().query[trackId] as string | string[]
       const selectedOptions: TrackOptionsUnion[] = await useTrackStore().getSelectedOptionsByTrackAndValue(track, value)
 
-      CompanyDataStorageHandler.setDataStorageFromTrack(trackId as TrackId, value, selectedOptions)
+      CompanyData.setDataStorageFromTrack(trackId as TrackId, value, selectedOptions)
 
       if (selectedOptions.length === 0) {
         useNavigationStore().deleteSearchParam(trackId)
