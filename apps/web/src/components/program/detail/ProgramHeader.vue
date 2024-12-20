@@ -28,7 +28,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Project, type ProgramData as ProgramType } from '@/types'
+import { Project, type ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/utils/contact'
 import { useNavigationStore } from '@/stores/navigation'

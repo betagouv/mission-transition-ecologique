@@ -1,4 +1,4 @@
-import type { ProgramData as ProgramType, Project as ProjectType } from '@/types'
+import type { ProgramType, Project as ProjectType } from '@/types'
 
 export default class Program {
   static getEndDate(program: ProgramType | undefined): Date | undefined {
@@ -6,7 +6,7 @@ export default class Program {
       return undefined
     }
 
-    const dateArr: string[] = program['fin de validité'].split('/')
+    const dateArr: string[] = (program['fin de validité'] as string).split('/')
     return new Date(`${dateArr[2]}/${dateArr[1]}/${dateArr[0]}`)
   }
 
