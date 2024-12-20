@@ -11,6 +11,6 @@ const config: Config = {
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../coverage/libs/backend-ddd',
   roots: ['./tests']
-};o
+};
 
 export default config;
