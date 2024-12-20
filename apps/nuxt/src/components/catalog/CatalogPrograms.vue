@@ -87,7 +87,14 @@ import { computed } from 'vue'
 const programStore = useProgramStore()
 
 const { programs, hasError } = storeToRefs(programStore)
-await new ProgramManager().getDependentCompanyData(false)
+
+onServerPrefetch(async () => {
+  await new ProgramManager().getDependentCompanyData(false)
+})
+
+onNuxtReady(async () => {
+  await new ProgramManager().getDependentCompanyData(false)
+})
 
 const title = 'Le catalogue des aides publiques à la transition écologique'
 const description =
@@ -125,6 +132,7 @@ const theme = computed(() => {
 })
 
 const showNoResultsComponent = computed(() => {
+  console.log('showNoResultsComponent', hasSpinner.value, hasError.value, !countPrograms.value)
   return hasSpinner.value || hasError.value || !countPrograms.value
 })
 
