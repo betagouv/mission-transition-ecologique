@@ -1,18 +1,18 @@
 import { ProjectFilterQuery, Sector } from '@tee/common'
-import { Project } from '@tee/data'
+import { ProjectType } from '@tee/data'
 import { projects } from '@tee/data/static'
 import { SectorToNAFSection } from '../../common/naf1'
 
 export default class ProjectFeatures {
-  public getById(id: number): Project | undefined {
+  public getById(id: number): ProjectType | undefined {
     return projects.find((project) => project.id === +id)
   }
 
-  public getBySlug(slug: string): Project | undefined {
+  public getBySlug(slug: string): ProjectType | undefined {
     return projects.find((project) => project.slug === slug)
   }
 
-  public getFiltered(projectQuery: ProjectFilterQuery): Project[] {
+  public getFiltered(projectQuery: ProjectFilterQuery): ProjectType[] {
     const sectors: string[] = this._getSectorsFromQueryData(projectQuery)
 
     if (sectors.length === 0) {

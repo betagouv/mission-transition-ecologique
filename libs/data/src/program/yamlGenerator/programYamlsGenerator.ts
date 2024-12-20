@@ -1,6 +1,7 @@
 import path from 'path'
 import fs from 'fs'
 import * as yaml from 'js-yaml'
+import { fileURLToPath } from 'url'
 import { DataProgram, Status } from '../types/domain'
 import { ProgramBaserow } from '../../common/baserow/programBaserow'
 import { Logger } from '../../common/logger/logger'
@@ -8,7 +9,8 @@ import { CoreGenerator } from './coreGenerator'
 import { LoggerType } from '../../common/logger/types'
 
 export class ProgramYamlsGenerator {
-  outputDirectory: string = path.join(__dirname, '../../programs/')
+  private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
+  outputDirectory: string = path.join(this.__dirname, '../../programs/')
   private _logger: Logger
 
   constructor() {
