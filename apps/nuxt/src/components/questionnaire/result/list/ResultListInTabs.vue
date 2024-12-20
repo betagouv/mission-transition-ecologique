@@ -64,7 +64,7 @@ const { projects } = storeToRefs(useProjectStore())
 const { programs, hasError } = storeToRefs(programStore)
 const { tabSelectedOnList } = storeToRefs(navigationStore)
 
-useRuntimeHook('app:mounted', async () => {
+onNuxtReady(async () => {
   await new ProjectManager().getFilteredProjects()
   await new ProgramManager().getFiltered()
 })
