@@ -15,10 +15,9 @@
     >
       <template #label>
         <span
-          class="fr-text--bold fr-pl-0-5v"
+          class="fr-text--bold fr-pl-0-5v fr-text--sm"
           :class="{
             'fr-text--grey': !programFilters[FilterItemKeys.companyData],
-            'fr-text--sm': !Breakpoint.isMobile(),
             'fr-text--black': useNavigationStore().isQuestionnaireResult()
           }"
           >{{ filterData.title }}</span
@@ -33,14 +32,14 @@
         :class="{ 'fr-text--grey': !programFilters[FilterItemKeys.companyData] }"
       >
         <div class="fr-grid-row">
-          <div class="fr-col-1">
+          <div class="fr-col-1 fr-col-content--middle">
             <span
               class="company-filter-icon fr-pl-1v"
               :class="detail.icon"
             />
           </div>
           <div class="fr-col-11 fr-pl-md-4v fr-pr-1v">
-            <span class="fr-text--md">{{ detail.label }}</span>
+            <span class="fr-text--sm">{{ detail.label }}</span>
           </div>
         </div>
       </div>
@@ -51,7 +50,6 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { CompanyDataStorageKey, FilterItemKeys, type ProgramFiltersType, SizeToText, StructureSize } from '@/types'
-import Breakpoint from '@/utils/breakpoints'
 import { CompanyData } from '@/utils/companyData'
 import { useNavigationStore } from '@/stores/navigation'
 
@@ -97,7 +95,6 @@ watch(
 <style lang="scss" scoped>
 .company-filter-icon::before {
   display: inline-block;
-  height: 1.2rem;
-  width: 1.2rem;
+  width: 1rem;
 }
 </style>
