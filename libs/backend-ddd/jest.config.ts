@@ -1,5 +1,5 @@
 /* eslint-disable */
-import type {Config} from 'jest';
+import type { Config } from 'jest'
 
 const config: Config = {
   displayName: '@tee/backend-ddd',
@@ -11,6 +11,6 @@ const config: Config = {
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: '../../coverage/libs/backend-ddd',
   roots: ['./tests']
-};
+};o
 
 export default config;

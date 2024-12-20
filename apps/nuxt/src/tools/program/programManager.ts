@@ -24,8 +24,12 @@ export class ProgramManager {
     this._useNavigation.hasSpinner = false
   }
 
-  async getFiltered() {
-    await this.get(useUsedTrackStore().getQuestionnaireData())
+  async getFiltered(onlyEligible: boolean | undefined = undefined) {
+    const questionnaireData = useUsedTrackStore().getQuestionnaireData()
+    if (onlyEligible !== undefined) {
+      questionnaireData.onlyEligible = onlyEligible
+    }
+    await this.get(questionnaireData)
   }
 
   async getOneById(id: string) {
@@ -52,8 +56,8 @@ export class ProgramManager {
     this._useNavigation.hasSpinner = false
   }
 
-  async getDependentCompanyData() {
-    CompanyData.isDataFull().value ? await this.getFiltered() : await this.get()
+  async getDependentCompanyData(onlyEligible: boolean | undefined = undefined) {
+    CompanyData.isDataFull().value ? await this.getFiltered(onlyEligible) : await this.get()
   }
 
   async update() {

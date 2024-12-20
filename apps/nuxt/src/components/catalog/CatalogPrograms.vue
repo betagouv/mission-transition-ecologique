@@ -87,7 +87,7 @@ import { computed } from 'vue'
 const programStore = useProgramStore()
 
 const { programs, hasError } = storeToRefs(programStore)
-await new ProgramManager().getDependentCompanyData()
+await new ProgramManager().getDependentCompanyData(false)
 
 const title = 'Le catalogue des aides publiques à la transition écologique'
 const description =
