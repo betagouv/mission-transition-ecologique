@@ -9,10 +9,13 @@ export enum CompanyDataStorageKey {
 export interface ManualCompanyData extends CompanyLocalisationType {
   secteur: Sector
   denomination: string
+  structure_size?: StructureSize
 }
 
+export type CompanyDataRegisterType = EstablishmentFront | null | ManualCompanyData
+
 export type CompanyDataType = {
-  [CompanyDataStorageKey.Company]: EstablishmentFront | null | ManualCompanyData
+  [CompanyDataStorageKey.Company]: CompanyDataRegisterType
   [CompanyDataStorageKey.Size]: StructureSize | null
 }
 

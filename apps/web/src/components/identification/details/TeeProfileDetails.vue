@@ -33,11 +33,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType, Region } from '@/types'
+import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType, Region, EstablishmentFront } from '@/types'
+import Analytics from '@/utils/analytic/analytics'
 import Breakpoint from '@/utils/breakpoints'
 import Navigation from '@/utils/navigation'
-import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyData } from '@/utils/companyData'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -100,12 +100,32 @@ const saveProfile = () => {
       ? CompanyDataStorage.getManualCompanyData(profile.value)
       : CompanyDataStorage.getSiretBasedCompanyData(props.company, profile.value)
 
-    CompanyDataStorageHandler.saveAndSetUsedTrackStore({
-      [CompanyDataStorageKey.Company]: companyData,
+    let company = props.company
+    if (props.manual) {
+      company = {
+        region: profile.value.localisation.value,
+        secteur: profile.value.activity.value,
+        denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`,
+        structure_size: profile.value.size.value
+      } as CompanyDataType[CompanyDataStorageKey.Company]
+    } else if (company) {
+      company.structure_size = profile.value.size.value
+    }
+
+    CompanyData.saveAndSetUsedTrackStore({
+      [CompanyDataStorageKey.Company]: company,
       [CompanyDataStorageKey.Size]: profile.value.size.value
     })
-    CompanyDataStorageHandler.updateRouteFromStorage()
-
+    CompanyData.updateRouteFromStorage()
+    if (!props.manual) {
+      const companyData = CompanyData.company as EstablishmentFront
+      if (companyData) {
+        Analytics.sendEvent('register_siret_modal', 'register_siret_modal', {
+          secteur: companyData.secteur,
+          siret: companyData.siret
+        })
+      }
+    }
     Navigation.toggleRegisterModal(false)
   } else {
     showError.value = true

@@ -38,6 +38,7 @@ declare module 'vue' {
     ProgramEligibility: typeof import('./components/program/detail/ProgramEligibility.vue')['default']
     ProgramEligibilityBar: typeof import('./components/program/detail/ProgramEligibilityBar.vue')['default']
     ProgramFilterByAidType: typeof import('./components/program/list/filters/ProgramFilterByAidType.vue')['default']
+    ProgramFilterByCompanyData: typeof import('./components/program/list/filters/ProgramFilterByCompanyData.vue')['default']
     ProgramFilterByOperator: typeof import('./components/program/list/filters/ProgramFilterByOperator.vue')['default']
     ProgramFilterByRegion: typeof import('./components/program/list/filters/ProgramFilterByRegion.vue')['default']
     ProgramFiltersAccordion: typeof import('./components/program/list/filters/ProgramFiltersAccordion.vue')['default']

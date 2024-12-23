@@ -12,7 +12,6 @@ import {
 import { ThemeId } from '@tee/data'
 
 export enum QuestionnaireDataEnum {
-  codeNaf = 'codeNaf',
   questionnaire_route = 'questionnaire_route',
   priority_objective = 'priority_objective',
   building_property = 'building_property',
@@ -26,7 +25,6 @@ export enum QuestionnaireDataEnum {
 }
 
 export interface QuestionnaireData {
-  codeNaf?: string
   questionnaire_route?: QuestionnaireRoute
   region?: string
 

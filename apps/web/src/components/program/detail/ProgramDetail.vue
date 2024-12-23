@@ -256,7 +256,7 @@ import Translation from '@/utils/translation'
 import Breakpoint from '@/utils/breakpoints'
 import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/utils/opportunity'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyData } from '@/utils/companyData'
 import { storeToRefs } from 'pinia'
 
 const projectStore = useProjectStore()
@@ -269,8 +269,8 @@ const teeProgramFormContainer = useTemplateRef<HTMLElement>('teeProgramFormConta
 
 const publicPath = Config.publicPath
 
-const hasRegisteredData = CompanyDataStorage.hasData()
-const registeredData = CompanyDataStorage.getData()
+const hasRegisteredData = CompanyData.isDataFull()
+const registeredData = CompanyData.dataRef
 
 interface Props {
   programId: string
