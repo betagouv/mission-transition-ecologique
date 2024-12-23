@@ -1,11 +1,25 @@
 import { workforce } from '@/tools/questionnaire/trackStructureWorkforce'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { LegalCategory, StructureSize, TrackId } from '@/types'
+import { LegalCategory, StructureSize, TrackId, CompanyLocalisationType, TrackOptionItem, TrackOptionsUnion } from '@/types'
 import Format from '@/tools/format'
 import { sectors } from '@/tools/questionnaire/trackStructureSectors'
 import { CompanyData } from '@/tools/companyData'
+import LocalisationApi from '@/service/api/localisationApi'
 
 export default class TrackStructure {
+  static async searchLocalisation(query: string) {
+    const localisationApi = new LocalisationApi()
+    return await localisationApi.searchCities(query)
+  }
+  static createData(option: TrackOptionsUnion, value?: string, questionnaireData?: CompanyLocalisationType): TrackOptionItem {
+    return {
+      option: {
+        ...option,
+        value: value,
+        questionnaireData: questionnaireData || option.questionnaireData
+      } as TrackOptionsUnion
+    }
+  }
   static getEligibilityCriteria() {
     const criteria = []
     if (this.getSizeTitle() !== '') {
@@ -76,15 +90,19 @@ export default class TrackStructure {
   }
 
   static getLocalisation(): string {
-    return this.has(TrackId.Siret, 'codePostal') ? `${this.getPostalCode()} ${this.getCity()}` : this.getRegion()
+    return `${this.getPostalCode()} ${this.getCity()}`
   }
 
   static getPostalCode(): string {
-    return useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'codePostal') as string
+    return this.has(TrackId.Siret, 'region')
+      ? (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'codePostal') as string)
+      : (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureCity, 'codePostal') as string)
   }
 
   static getCity(): string {
-    return useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'ville') as string
+    return this.has(TrackId.Siret, 'region')
+      ? (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'ville') as string)
+      : (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureCity, 'ville') as string)
   }
 
   static getTheme() {
@@ -94,6 +112,6 @@ export default class TrackStructure {
   static getRegion(): string {
     return this.has(TrackId.Siret, 'region')
       ? (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.Siret, 'region') as string)
-      : (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureRegion, 'region') as string)
+      : (useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(TrackId.StructureCity, 'region') as string)
   }
 }
