@@ -1,6 +1,7 @@
 <template>
   <div
-    class="fr-py-2v"
+    id="company-data-filter-content"
+    class="fr-pt-2v fr-pb-0-5v"
     :class="{
       'fr-bg--green--lightness': programFilters[FilterItemKeys.companyData],
       'fr-bg--grey--lightness': !programFilters[FilterItemKeys.companyData]
@@ -15,20 +16,22 @@
     >
       <template #label>
         <span
-          class="fr-text--bold fr-pl-0-5v fr-text--sm"
+          class="fr-text--bold fr-text--sm"
           :class="{
             'fr-text--grey': !programFilters[FilterItemKeys.companyData],
-            'fr-text--black': useNavigationStore().isQuestionnaireResult()
+            'fr-text--black': useNavigationStore().isQuestionnaireResult(),
+            'fr-pl-0-5v': !Breakpoint.isSmallScreen(),
+            'fr-pl-2v': Breakpoint.isMobile()
           }"
           >{{ filterData.title }}</span
         >
       </template>
     </DsfrCheckbox>
-    <div class="fr-pl-1v fr-pb-2v fr-text-left">
+    <div class="fr-text-left fr-pl-1v">
       <div
         v-for="(detail, key) in filterData.details"
         :key="key"
-        class="fr-mb-4v"
+        class="fr-mb-2v"
         :class="{ 'fr-text--grey': !programFilters[FilterItemKeys.companyData] }"
       >
         <div class="fr-grid-row">
@@ -38,8 +41,8 @@
               :class="detail.icon"
             />
           </div>
-          <div class="fr-col-11 fr-pl-md-4v fr-pr-1v">
-            <span class="fr-text--sm">{{ detail.label }}</span>
+          <div class="fr-col-11 fr-pl-md-4v fr-pr-1v fr-text-line-height--4v">
+            <span class="fr-text--xs">{{ detail.label }}</span>
           </div>
         </div>
       </div>
@@ -52,6 +55,7 @@ import { useProgramStore } from '@/stores/program'
 import { CompanyDataStorageKey, FilterItemKeys, type ProgramFiltersType, SizeToText, StructureSize } from '@/types'
 import { CompanyData } from '@/utils/companyData'
 import { useNavigationStore } from '@/stores/navigation'
+import Breakpoint from '@/utils/breakpoints'
 
 type CompanyFilterProps = {
   title: ComputedRef<string | undefined>
@@ -93,6 +97,13 @@ watch(
 )
 </script>
 <style lang="scss" scoped>
+#company-data-filter-content {
+  padding-left: 0 !important;
+  .fr-fieldset__element {
+    margin-bottom: 0.5rem !important;
+  }
+}
+
 .company-filter-icon::before {
   display: inline-block;
   width: 1rem;
