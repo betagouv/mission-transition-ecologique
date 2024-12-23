@@ -17,6 +17,8 @@ describe('CompanyDataStorage - isDataFull', () => {
   it('should return false if CompanyDataValidator.validate returns false for partial ManualCompanyData', () => {
     const validCompanyData = {
       region: 'Bretagne',
+      ville: 'Brest',
+      codePostal: '29200',
       denomination: 'Entreprise : industrie - Bretagne',
       structure_size: 'ME'
     }
