@@ -95,7 +95,7 @@ const isLoading = ref<boolean>(false)
 const localisationApi = new LocalisationApi()
 const showResults = ref<boolean>(false)
 const errorMsg = computed<string>(() => {
-  if (props.showError && !debouncedLocalisationInput.value && !isLoading.value && showResults.value) {
+  if (props.showError || (!debouncedLocalisationInput.value && !isLoading.value && showResults.value)) {
     return 'La sélection de la ville est nécessaire.'
   } else if (
     localisationResults.value.length === 0 &&
