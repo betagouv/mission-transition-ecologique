@@ -99,6 +99,7 @@ watch(
 <style lang="scss" scoped>
 #company-data-filter-content {
   padding-left: 0 !important;
+
   .fr-fieldset__element {
     margin-bottom: 0.5rem !important;
   }
