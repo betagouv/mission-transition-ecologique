@@ -97,23 +97,11 @@ const saveProfile = () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
     const companyData = props.manual
-      ? CompanyDataStorage.getManualCompanyData(profile.value)
-      : CompanyDataStorage.getSiretBasedCompanyData(props.company, profile.value)
-
-    let company = props.company
-    if (props.manual) {
-      company = {
-        region: profile.value.localisation.value,
-        secteur: profile.value.activity.value,
-        denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`,
-        structure_size: profile.value.size.value
-      } as CompanyDataType[CompanyDataStorageKey.Company]
-    } else if (company) {
-      company.structure_size = profile.value.size.value
-    }
+      ? CompanyData.getManualCompanyData(profile.value)
+      : CompanyData.getSiretBasedCompanyData(props.company, profile.value)
 
     CompanyData.saveAndSetUsedTrackStore({
-      [CompanyDataStorageKey.Company]: company,
+      [CompanyDataStorageKey.Company]: companyData,
       [CompanyDataStorageKey.Size]: profile.value.size.value
     })
     CompanyData.updateRouteFromStorage()

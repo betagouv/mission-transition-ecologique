@@ -55,7 +55,7 @@
 </template>
 <script lang="ts" setup>
 import { type TrackOptionsInput, ConvertedCommune, CompanyLocalisationType } from '@/types'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyData } from '@/utils/companyData'
 import { useDebounce } from '@vueuse/core'
 import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
@@ -113,7 +113,7 @@ const searchLocalisation = async () => {
   }
 }
 const selectLocalisation = (localisation: ConvertedCommune) => {
-  selectedLocalisation.value = CompanyDataStorage.convertLocalisation(localisation)
+  selectedLocalisation.value = CompanyData.convertLocalisation(localisation)
   emit('updateSelection', createData())
 }
 const hideResults = () => {

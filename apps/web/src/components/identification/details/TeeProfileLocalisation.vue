@@ -70,7 +70,7 @@
 import { RegisterDetailLocalisation, ConvertedCommune, CompanyLocalisationType } from '@/types'
 import LocalisationApi from '@/service/api/localisationApi'
 import { onClickOutside } from '@vueuse/core'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyData } from '@/utils/companyData'
 import { useDebounce } from '@vueuse/core'
 
 interface Props {
@@ -129,7 +129,7 @@ const searchLocalisation = async () => {
   }
 }
 const selectLocalisation = (localisation: ConvertedCommune) => {
-  selectedLocalisation.value = CompanyDataStorage.convertLocalisation(localisation)
+  selectedLocalisation.value = CompanyData.convertLocalisation(localisation)
 }
 const modifyLocalisation = () => {
   selectedLocalisation.value = undefined
