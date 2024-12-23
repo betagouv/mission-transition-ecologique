@@ -4,7 +4,7 @@ import { LegalCategory, StructureSize, TrackId, CompanyLocalisationType, TrackOp
 import Format from '@/tools/format'
 import { sectors } from '@/tools/questionnaire/trackStructureSectors'
 import { CompanyData } from '@/tools/companyData'
-import LocalisationApi from '@/service/api/localisationApi'
+import LocalisationApi from '@/tools/api/localisationApi'
 
 export default class TrackStructure {
   static async searchLocalisation(query: string) {

@@ -68,9 +68,9 @@
 </template>
 <script lang="ts" setup>
 import { RegisterDetailLocalisation, ConvertedCommune, CompanyLocalisationType } from '@/types'
-import LocalisationApi from '@/service/api/localisationApi'
+import LocalisationApi from '@/tools/api/localisationApi'
 import { onClickOutside } from '@vueuse/core'
-import { CompanyData } from '@/utils/companyData'
+import { CompanyData } from '@/tools/companyData'
 import { useDebounce } from '@vueuse/core'
 
 interface Props {
@@ -120,8 +120,8 @@ const searchLocalisation = async () => {
   if (localisationInput.value && localisationInput.value.length >= 3) {
     isLoading.value = true
     const results = await localisationApi.searchCities(localisationInput.value)
-    if (results.isOk) {
-      localisationResults.value = results.value
+    if (results.isOk()) {
+      localisationResults.value = results.data
     }
     isLoading.value = false
   } else {

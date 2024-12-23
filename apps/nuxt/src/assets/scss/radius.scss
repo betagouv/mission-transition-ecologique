@@ -1,7 +1,7 @@
 @use 'setting';
 @use 'tool';
-@use '@gouvfr/dsfr/module/media-query';
-@use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
+@use '@gouvfr/dsfr/src/module/media-query';
+@use '@gouvfr/dsfr/src/module/media-query/variable/breakpoints';
 
 
 // class for border-radius with important like .fr-radius--tr--sm (small, top , right)

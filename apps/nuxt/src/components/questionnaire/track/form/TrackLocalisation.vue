@@ -55,12 +55,12 @@
 </template>
 <script lang="ts" setup>
 import { type TrackOptionsInput, ConvertedCommune, CompanyLocalisationType } from '@/types'
-import { CompanyData } from '@/utils/companyData'
+import { CompanyData } from '@/tools/companyData'
 import { useDebounce } from '@vueuse/core'
 import type { TrackOptionItem } from '@/types'
 import { computed } from 'vue'
-import Translation from '@/utils/translation'
-import TrackStructure from '@/utils/track/trackStructure'
+import Translation from '@/tools/translation'
+import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import { onClickOutside } from '@vueuse/core'
 
 interface Props {
@@ -104,8 +104,8 @@ const searchLocalisation = async () => {
     isLoading.value = true
     showResults.value = true
     const results = await TrackStructure.searchLocalisation(localisationInput.value)
-    if (results.isOk) {
-      localisationResults.value = results.value
+    if (results.isOk()) {
+      localisationResults.value = results.data
     }
     isLoading.value = false
   } else {

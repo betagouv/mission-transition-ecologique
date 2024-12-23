@@ -1,6 +1,7 @@
-import RequestApi from '@/service/api/requestApi'
+import RequestApi from './requestApi'
 import { Result } from 'true-myth'
 import { ConvertedCommune } from '@tee/common'
+import { ResultApi } from './resultApi'
 
 export default class LocalisationApi extends RequestApi {
   protected readonly url = '/api/geoSearch'
@@ -14,13 +15,8 @@ export default class LocalisationApi extends RequestApi {
     return url.toString()
   }
 
-  async searchCities(searchTerm: string): Promise<Result<ConvertedCommune[], Error>> {
+  async searchCities(searchTerm: string): Promise<ResultApi<ConvertedCommune[]>> {
     const urlWithParams = this.buildQuery(`${this.url}/search`, searchTerm)
-    try {
-      const data = await super.getJson<ConvertedCommune[]>(urlWithParams)
-      return data
-    } catch (error: unknown) {
-      return Result.err(error as Error)
-    }
+    return super.getJson<ConvertedCommune[]>(urlWithParams)
   }
 }
