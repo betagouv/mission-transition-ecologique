@@ -29,6 +29,8 @@ describe('CompanyDataStorage - isDataFull', () => {
   it('should return true if CompanyDataValidator.validate returns false for ManualCompanyData with undefined param', () => {
     const validCompanyData = {
       region: undefined,
+      ville: undefined,
+      codePostal: undefined,
       secteur: 'industrie',
       denomination: 'Entreprise : industrie - Bretagne',
       structure_size: 'ME'
@@ -40,6 +42,8 @@ describe('CompanyDataStorage - isDataFull', () => {
   it('should return true if CompanyDataValidator.validate returns true for ManualCompanyData', () => {
     const validCompanyData = {
       region: 'Bretagne',
+      ville: 'Brest',
+      codePostal: '29200',
       secteur: 'industrie',
       denomination: 'Entreprise : industrie - Bretagne',
       structure_size: 'ME'
