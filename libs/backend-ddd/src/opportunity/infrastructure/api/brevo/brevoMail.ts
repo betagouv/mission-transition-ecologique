@@ -3,7 +3,7 @@ import { Maybe } from 'true-myth'
 import { OpportunityAssociatedData } from '../../../domain/opportunityAssociatedData'
 import Config from '../../../../config'
 import { MailerManager } from '../../../domain/spi'
-import { ProgramType, Program, Project } from '@tee/data'
+import { ProgramType, Program, ProjectType } from '@tee/data'
 import { Opportunity } from '@tee/common'
 import Monitor from '../../../../common/domain/monitoring/monitor'
 import { ensureError } from '../../../../common/domain/error/errors'
@@ -67,7 +67,7 @@ export default class BrevoMail {
     }
   }
 
-  private _paramsProject(opportunity: Opportunity, data: Project | CustomProject) {
+  private _paramsProject(opportunity: Opportunity, data: ProjectType | CustomProject) {
     return {
       projectName: data.title,
       needs: opportunity.message,
