@@ -50,6 +50,7 @@ publicodes:
       - a une categorie legale eligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
+      - effectif >= 5
       - effectif <= 499
   entreprise . a une categorie legale eligible:
     toutes ces conditions:
