@@ -1,4 +1,5 @@
 import path from 'path'
+import { fileURLToPath } from 'url'
 import { ProjectBaserow } from '../common/baserow/projectBaserow'
 import { DataProject } from './types/domain'
 import { jsonPrograms } from '../../generated/index'
@@ -11,8 +12,9 @@ import { LoggerType, LogLevel } from '../common/logger/types'
 import { FileManager } from '../common/fileManager'
 
 export class ProjectFeatures {
-  private readonly _outputFilePath: string = path.join(__dirname, '../../static/projects.json')
-  private readonly _outputImageDirectory: string = path.join(__dirname, '../../../../apps/web/public/images/projet')
+  private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
+  private readonly _outputFilePath: string = path.join(this.__dirname, '../../static/projects.json')
+  private readonly _outputImageDirectory: string = path.join(this.__dirname, '../../../../apps/web/public/images/projet')
   private _programs: ProgramType[] = []
   private _logger: Logger
 

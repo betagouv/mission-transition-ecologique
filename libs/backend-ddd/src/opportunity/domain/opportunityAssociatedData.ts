@@ -1,5 +1,5 @@
 import { OpportunityType } from '@tee/common'
-import { ProgramType, Project } from '@tee/data'
+import { ProgramType, ProjectType } from '@tee/data'
 import { CustomProject, OpportunityObjectDetails } from './types'
 
 export class OpportunityAssociatedData {
@@ -12,7 +12,7 @@ export class OpportunityAssociatedData {
     return this._opportunityType === OpportunityType.Program
   }
 
-  public isProject(): this is { data: Project } {
+  public isProject(): this is { data: ProjectType } {
     return this._opportunityType === OpportunityType.Project
   }
 
