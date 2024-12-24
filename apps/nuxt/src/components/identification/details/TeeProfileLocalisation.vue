@@ -120,8 +120,8 @@ const searchLocalisation = async () => {
   if (localisationInput.value && localisationInput.value.length >= 3) {
     isLoading.value = true
     const results = await localisationApi.searchCities(localisationInput.value)
-    if (results.isOk()) {
-      localisationResults.value = results.data
+    if (!results.isErr) {
+      localisationResults.value = results.value
     }
     isLoading.value = false
   } else {
