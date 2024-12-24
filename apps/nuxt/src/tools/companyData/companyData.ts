@@ -187,9 +187,10 @@ export class CompanyData {
     }
 
     if (trackId === TrackId.StructureCity) {
+      const localisationData = (selectedOptions[0]?.questionnaireData as CompanyLocalisationType) || {}
       CompanyDataStorage.setCompany({
         ...this.company,
-        ...(selectedOptions[0].questionnaireData as CompanyLocalisationType),
+        ...localisationData,
         denomination: `Entreprise : ${this.company?.secteur} - ${value}`
       } as ManualCompanyData)
     }

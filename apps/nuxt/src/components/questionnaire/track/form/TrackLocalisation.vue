@@ -104,8 +104,8 @@ const searchLocalisation = async () => {
     isLoading.value = true
     showResults.value = true
     const results = await TrackStructure.searchLocalisation(localisationInput.value)
-    if (results.isOk()) {
-      localisationResults.value = results.data
+    if (results.isOk) {
+      localisationResults.value = results.value
     }
     isLoading.value = false
   } else {

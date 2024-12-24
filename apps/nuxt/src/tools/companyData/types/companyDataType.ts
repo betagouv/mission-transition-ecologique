@@ -19,9 +19,9 @@ export type CompanyDataType = {
 }
 
 export type CompanyLocalisationType = {
-  region: Region | undefined
-  ville: string | undefined
-  codePostal: string | undefined
+  region?: Region | undefined
+  ville?: string | undefined
+  codePostal?: string | undefined
 }
 
 export enum RegisterDetailType {
