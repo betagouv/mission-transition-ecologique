@@ -31,7 +31,7 @@ tests.forEach((singleTest) => {
               region: 'Bretagne',
               ville: 'Brest',
               codePostal: '29200',
-              secteur: 'tertiaire',
+              secteur: 'tertiaire'
             })
           )
         } else {
