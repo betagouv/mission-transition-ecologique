@@ -41,7 +41,7 @@
               :class="detail.icon"
             />
           </div>
-          <div class="fr-col-11 fr-pl-md-4v fr-pr-1v fr-text-line-height--4v">
+          <div class="fr-col-11 fr-pl-md-4v fr-pr-1v fr-text-line-height--4v fr-col-content--middle">
             <span class="fr-text--xs">{{ detail.label }}</span>
           </div>
         </div>
