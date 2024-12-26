@@ -28,7 +28,6 @@ export default class TrackStructure {
     value?: string,
     questionnaireData?: CompanyActivityType | CompanyLocalisationType
   ): TrackOptionItem {
-    console.log(questionnaireData, option.questionnaireData)
     return {
       option: {
         ...option,
