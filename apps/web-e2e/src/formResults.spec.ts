@@ -30,6 +30,8 @@ tests.forEach((singleTest) => {
             JSON.stringify({
               denomination: 'Entreprise : tertiaire - Bretagne',
               region: 'Bretagne',
+              ville: 'Brest',
+              codePostal: '29200',
               secteur: 'tertiaire',
             })
           )

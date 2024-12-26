@@ -7,6 +7,8 @@ const StructureSizeEnum = z.nativeEnum(StructureSize)
 
 const ManualCompanyDataSchema: z.ZodType<ManualCompanyData> = z.object({
   region: RegionEnum,
+  ville: z.string(),
+  codePostal: z.string(),
   secteur: SectorEnum,
   denomination: z.string(),
   structure_size: StructureSizeEnum.optional()
