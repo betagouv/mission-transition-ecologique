@@ -271,7 +271,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     const navigation = Navigation.getInstance()
     if (!navigation.isCatalog() && !navigation.isCatalogProgramDetail()) {
       questionnaireData.onlyEligible = true
-    } else if (useNavigationStore().isCatalog()) {
+    } else if (navigation.isCatalog()) {
       questionnaireData.onlyEligible = false
     }
 
