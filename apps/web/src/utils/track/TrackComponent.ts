@@ -6,6 +6,10 @@ export default class TrackComponent {
     return usedTrack.component === TrackComponentType.Siret && isTrackOptionsInput(option) && option.hasInput === HasInputOptions.Search
   }
 
+  static isLocalisation(usedTrack: UsedTrack) {
+    return usedTrack.component === TrackComponentType.CitySearch
+  }
+
   static isSelect(usedTrack: UsedTrack) {
     return usedTrack.component === TrackComponentType.Select
   }

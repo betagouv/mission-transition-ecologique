@@ -128,6 +128,7 @@ declare module 'vue' {
     TrackHint: typeof import('./components/track/detail/TrackHint.vue')['default']
     TrackInfo: typeof import('./components/track/detail/TrackInfo.vue')['default']
     TrackLabel: typeof import('./components/track/detail/TrackLabel.vue')['default']
+    TrackLocalisation: typeof import('./components/track/form/TrackLocalisation.vue')['default']
     TrackRadioButtonRich: typeof import('./components/track/form/TrackRadioButtonRich.vue')['default']
     TrackResume: typeof import('./components/track/detail/TrackResume.vue')['default']
     TrackSelect: typeof import('./components/track/form/TrackSelect.vue')['default']

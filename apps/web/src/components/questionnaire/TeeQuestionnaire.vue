@@ -2,7 +2,7 @@
   <!-- QUESTIONNAIRE -->
   <div
     ref="trackElement"
-    class="fr-container--fluid"
+    class="fr-px-0"
   >
     <div
       :id="RouteName.Questionnaire"

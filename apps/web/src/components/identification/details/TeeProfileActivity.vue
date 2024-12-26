@@ -1,7 +1,7 @@
 <template>
   <p
     v-if="infos.value"
-    class="fr-tag fr-bg--blue-france--lightness"
+    class="fr-tag fr-mb-4v fr-bg--blue-france--lightness"
   >
     <span class="fr-pr-4v">{{ infos.tagLabel || activityText }}</span>
     <span
@@ -13,10 +13,17 @@
   <DsfrSelect
     v-else-if="manual"
     v-model="selectedActivity"
+    class="fr-mb-0"
     :options="sectorOptions"
-    :error-message="showError ? errorMessage : ''"
     :default-unselected-text="infos.description"
   />
+  <div
+    v-if="hasError"
+    :class="errorMessage ? 'fr-error-text' : ''"
+    class="fr-input--empty-text fr-mt-2v"
+  >
+    {{ errorMessage }}
+  </div>
 </template>
 <script lang="ts" setup>
 import { RegisterDetailActivity, Sector } from '@/types'
@@ -26,12 +33,20 @@ interface Props {
   manual: boolean
   showError: boolean
 }
+const props = defineProps<Props>()
 const selectedActivity = defineModel<Sector>()
-const errorMessage = "La sélection de votre secteur d'activité est nécessaire"
+const errorMessage = computed<string>(() => {
+  if (hasError) {
+    return "La sélection de votre secteur d'activité est nécessaire"
+  }
+  return ''
+})
+const hasError = computed<boolean>(() => {
+  return !props.infos.value && props.showError
+})
 const modifyActivity = () => {
   selectedActivity.value = undefined
 }
-const props = defineProps<Props>()
 const sectorOptions = [
   {
     value: Sector.Craftsmanship,

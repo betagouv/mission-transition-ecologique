@@ -16,7 +16,7 @@
         @if meta.type-of($properties) == map {
           color: map.get($properties, "color-with-background");
         } @else {
-          color: var(--text-default-grey);
+          color: setting.$text-grey;
         }
       }
     }
