@@ -1,0 +1,102 @@
+titre: Pass Transition
+promesse: Entreprise du secteur audiovisuel, financez votre transition environnementale
+description: >-
+  La Région Bretagne soutient financièrement la transition environnementale des
+  petites entreprises du secteur audiovisuel via le "Pass Transition".
+
+  Le Pass Transition finance des études pour accélérer votre transition sur
+  l'eau, l'énergie, économie circulaire, les déchets, la biodiversité, RSE,
+  mobilité, numérique responsable. 
+
+  Il participe aussi au financement d'équipements pour le suivi et la réduction
+  de vos déchets, consommations en eau et en énergie.
+
+  Enfin, il peut contribuer au financement d'un recrutement d’une personne à
+  temps partagé occupant un poste stratégique en matière de transitions (ex :
+  responsable RSE, management de l’énergie)
+description longue: "Le PASS Transitions finance 50 % des dépenses éligibles. Il comporte 3 volets :\n- Volet 1. Investissements : \nFinancement d'équipements pour le suivi et la réduction des consommations en énergie, eau et déchets et la production d’énergie photovoltaïque.\nL'aide aux investissements est comprise entre 20 000 € et 50 000 €, pour un mininum de 40 000 € de dépenses. \n\r\n- Volet 2. Conseil : \nFinancement d’une formation, participation à une fresque, étude, audit, diagnostic...relevant des transitions sur les thématique énergétique, eau, économie circulaire, déchets, biodiversité, RSE, mobilité, numérique. \nL'aide au conseil est comprise entre 4 000 € et 10 000 €, pour un mininum de 8 000 € de dépenses.\n\n- Volet 3. Ressources Humaines \nFinancement d'un recrutement d’une personne à temps partagé occupant un poste stratégique en matière de transitions (ex : responsable RSE, management de l’énergie).\nL'aide aux Ressources Humaines est comprise entre 4 000 € et 10 000 €, pour un minimum de 8 000 € de dépenses."
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Région Bretagne
+url: https://www.bretagne.bzh/aides/fiches/pass-transitions/
+nature de l'aide: financement
+montant du financement: Jusqu'à 50 % des dépenses éligibles, dans un maximum de 50 000 €
+objectifs:
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation du
+      Pass Transition ou en contactant un conseiller.
+    liens:
+      - lien: >-
+          https://www.bretagne.bzh/app/uploads/annexe_liste_investissements_eligibles_26_04_2024.pdf
+        texte: Les investissements éligibles au Pass Transition
+  - description: >-
+      Créez votre compte sur le site de la Région Bretagne, puis déposez votre
+      lettre d'intention en ligne.
+    liens:
+      - lien: >-
+          https://aides.bretagne.bzh/aides/#/crbr/connecte/F_SPE_LI_TRANS/depot/simple
+        texte: Déposer votre demande
+  - description: >-
+      Votre demande est étudiée par la Région. Si votre demande est éligible,
+      recevez une confirmation par mail avec le lien vers le dossier à
+      compléter.
+  - description: >-
+      Si votre dossier est accepté, vous recevez un versement en deux tranches :
+      60 % de l’aide dès 40 % des dépenses éligibles réalisées puis un versement
+      du solde lorsque l'ensemble des dépenses éligibles sont réalisées.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 50 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Bretagne
+  secteur d'activité:
+    - >-
+      Production de films cinématographiques, de vidéo et de programmes de
+      télévision : enregistrement sonore et édition musicale (entreprises de
+      production ou prestataires)
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Avoir un chiffre d’affaires ou un bilan n’excédant pas 10 millions
+      d’euros.
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
+    - Ne pas avoir plus de 2 aides en cours au sein du PASS Transitions.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 49
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Bretagne

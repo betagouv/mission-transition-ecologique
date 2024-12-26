@@ -123,6 +123,8 @@ export default class EstablishmentFeatures {
       case '01': // 1 to 2 employees
       case '02': // 3 to 5 employees
       case '03': // 6 to 9 employees
+        return StructureSize.MICRO
+
       case '11': // 10 to 19 employees
         return StructureSize.TPE
 
@@ -135,12 +137,14 @@ export default class EstablishmentFeatures {
         return StructureSize.ME
 
       case '32': // 250 to 499 employees
+        return StructureSize.ETI
+
       case '41': // 500 to 999 employees
       case '51': // 1 000 to 1 999 employees
       case '52': // 2 000 to 4 999 employees
       case '53': // 5 000 to 9 999 employees
       case '54': // 10 000 employees or more
-        return StructureSize.ETI_GE
+        return StructureSize.GE
 
       default:
         return undefined

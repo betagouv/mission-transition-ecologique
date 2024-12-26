@@ -1,4 +1,5 @@
 export * from './common'
+export * from './geoSearch'
 export * from './establishment'
 export * from './opportunity'
 export * from './program'

@@ -12,7 +12,7 @@ import { Project as ProjectType } from '@/types'
 import { Project } from '@/utils/project/project'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/utils/theme'
-import { CompanyDataStorage } from '@/utils/storage'
+import { CompanyDataStorage } from '@/utils/companyData'
 
 const projectStore = useProjectStore()
 const navigationStore = useNavigationStore()

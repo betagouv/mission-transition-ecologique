@@ -20,7 +20,7 @@ export interface DataProgram extends BaserowSectors {
   'Eligibilité Taille': string
   minEff: number
   maxEff: number
-  microEntreprise: string
+  microEntrepreneur: string
   'Eligibilité Existence': string
   'Eligibilité Naf': string
   'Eligibilité Sectorielle': string
@@ -48,6 +48,7 @@ export enum Publicodes {
   SECTEUR = "entreprise . est dans un secteur d'activité ciblé",
   ZONE_GEO = 'entreprise . est dans une zone géographique éligible',
   EFFECTIF = 'entreprise . a un effectif éligible',
+  LEGALCATEGORY = 'entreprise . a une categorie legale eligible',
   PARCOURS_OBJ_PRECIS = 'questionnaire . parcours = objectif précis',
   PROPRIO = 'entreprise . est propriétaire de ses locaux',
   ALL = 'toutes ces conditions',

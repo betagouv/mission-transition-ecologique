@@ -47,6 +47,11 @@
               :option="option"
               @click="updateAndSave(option, idx)"
             />
+            <TrackLocalisation
+              v-if="TrackComponent.isLocalisation(usedTrack)"
+              :option="option as TrackOptionsInput"
+              @update-selection="updateSelection($event.option, idx, $event.remove, $event.forceKeep)"
+            />
             <TrackActivity
               v-if="TrackComponent.isNAFSearch(usedTrack, option)"
               :option="option as TrackOptionsInput"
@@ -112,7 +117,7 @@ import TrackColOption from '@/utils/track/TrackColOption'
 import TrackComponent from '@/utils/track/TrackComponent'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { CompanyDataStorage, CompanyDataStorageHandler } from '@/utils/storage'
+import { CompanyDataStorage, CompanyData } from '@/utils/companyData'
 
 interface Props {
   trackElement: Element
@@ -174,7 +179,7 @@ const updateSelection = async (option: TrackOptionsUnion, index: number, forceRe
   }
 
   // Direct to next track
-  const directToNext: string[] = [TrackComponentType.Cards, TrackComponentType.Activity]
+  const directToNext: string[] = [TrackComponentType.Cards, TrackComponentType.CitySearch, TrackComponentType.Activity]
   if (!allowMultiple && directToNext.includes(trackStore.currentComponent)) {
     await saveSelection(remove)
   }
@@ -223,9 +228,11 @@ const backToPreviousTrack = async () => {
 }
 
 watch(registeredData.value, async () => {
-  if (!CompanyDataStorage.hasSiret()) return
+  const isDataFull = CompanyData.isDataFull().value
 
-  const next = CompanyDataStorageHandler.getNextTrackStorage()
+  if (!isDataFull) return
+
+  const next = CompanyData.getNextTrackStorage()
 
   if (!next) return
 

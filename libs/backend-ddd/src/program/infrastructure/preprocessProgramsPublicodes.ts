@@ -7,9 +7,10 @@ import {
   PublicodesKeys,
   QuestionnaireData,
   QuestionnaireRoute,
-  Sector,
   SizeToWorkforce,
-  YesNo
+  YesNo,
+  StructureSize,
+  Sector
 } from '@tee/common'
 
 /** preprocesses the data gathered from the questionnaire into variables
@@ -25,6 +26,7 @@ export const preprocessInputForPublicodes = (
   }
 
   setRegion(publicodesData, questionnaireData)
+  setLegalCategory(publicodesData, questionnaireData)
   setStructureSize(publicodesData, questionnaireData)
   setCodeNAF(publicodesData, questionnaireData)
   setSectors(publicodesData, questionnaireData)
@@ -40,9 +42,22 @@ const setRegion = (publicodesData: PublicodesInputData, questionnaireData: Quest
     publicodesData['région'] = questionnaireData.region
   }
 }
+
+const setLegalCategory = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
+  if (questionnaireData.structure_size) {
+    if (questionnaireData.structure_size === StructureSize.EI) {
+      publicodesData[PublicodesKeys.isMicroEntrepreneur] = YesNo.Yes
+    } else {
+      publicodesData[PublicodesKeys.isMicroEntrepreneur] = YesNo.No
+    }
+  }
+}
+
 const setStructureSize = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
   if (questionnaireData.structure_size) {
-    publicodesData[PublicodesKeys.Workforce] = SizeToWorkforce[questionnaireData.structure_size]
+    if (questionnaireData.structure_size !== StructureSize.EI) {
+      publicodesData[PublicodesKeys.Workforce] = SizeToWorkforce[questionnaireData.structure_size]
+    }
   }
 }
 const setCodeNAF = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
@@ -54,8 +69,12 @@ const setSectors = (publicodesData: PublicodesInputData, questionnaireData: Ques
   let codeNAF1s: string[] = []
   if (questionnaireData.codeNAF1) {
     codeNAF1s = [questionnaireData.codeNAF1]
+  } else if (questionnaireData.sector) {
+    codeNAF1s = SectorToNAFSection[questionnaireData.sector]
+  } else if (questionnaireData.secteur && questionnaireData.secteur in Sector) {
+    codeNAF1s = SectorToNAFSection[questionnaireData.secteur as Sector]
   } else {
-    codeNAF1s = SectorToNAFSection[questionnaireData.sector as Sector]
+    codeNAF1s = [...NAF1Letters]
   }
 
   if (!codeNAF1s) {

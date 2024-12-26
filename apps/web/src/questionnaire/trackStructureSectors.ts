@@ -22,7 +22,7 @@ export const sectors: Track = {
       questionnaireData: { codeNAF: '', codeNAF1: '', secteur: '' },
       title: { fr: 'ACTIVITE' },
       next: {
-        default: TrackId.StructureRegion
+        default: TrackId.StructureCity
       }
     }
   ]

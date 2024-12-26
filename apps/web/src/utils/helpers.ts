@@ -16,8 +16,8 @@ import {
 } from '@/types'
 import type { ImportMetaEnv } from '../env'
 import Config from '@/config'
-import { CompanyDataStorage } from '@/utils/storage'
-import { CompanyDataStorageKey } from '@/types/companyDataType'
+import { CompanyDataStorage } from '@/utils/companyData'
+import { CompanyDataStorageKey } from '@/utils/companyData/types/companyDataType'
 
 // GENERIC HELPERS
 

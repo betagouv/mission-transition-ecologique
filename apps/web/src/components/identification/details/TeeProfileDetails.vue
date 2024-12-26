@@ -33,11 +33,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RegisterDetailType, RegisterDetails, CompanyDataStorageKey, CompanyDataType, Region } from '@/types'
+import { RegisterDetailType, RegisterDetails, CompanyDataStorageKey, CompanyDataType, EstablishmentFront, Region } from '@/types'
+import Analytics from '@/utils/analytic/analytics'
 import Breakpoint from '@/utils/breakpoints'
 import Navigation from '@/utils/navigation'
-import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
-import { CompanyDataStorage } from '@/utils/storage/companyDataStorage'
+import { CompanyData } from '@/utils/companyData'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -63,7 +63,13 @@ const profile = ref<RegisterDetails>({
     title: 'Localisation',
     icon: 'fr-icon-map-pin-2-line',
     description: 'Quelle est votre ville ?',
-    value: props.company?.region as Region,
+    value: props.company
+      ? {
+          ville: props.company.ville,
+          region: props.company.region as Region,
+          codePostal: props.company.codePostal
+        }
+      : undefined,
     type: RegisterDetailType.Localisation,
     tagLabel: props.company && 'siret' in props.company ? `${props.company.codePostal} ${props.company.ville}` : ''
   },
@@ -91,15 +97,23 @@ const saveProfile = () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
     const companyData = props.manual
-      ? CompanyDataStorage.getManualCompanyData(profile.value)
-      : CompanyDataStorage.getSiretBasedCompanyData(props.company, profile.value)
+      ? CompanyData.getManualCompanyData(profile.value)
+      : CompanyData.getSiretBasedCompanyData(props.company, profile.value)
 
-    CompanyDataStorageHandler.saveAndSetUsedTrackStore({
+    CompanyData.saveAndSetUsedTrackStore({
       [CompanyDataStorageKey.Company]: companyData,
       [CompanyDataStorageKey.Size]: profile.value.size.value
     })
-    CompanyDataStorageHandler.updateRouteFromStorage()
-
+    CompanyData.updateRouteFromStorage()
+    if (!props.manual) {
+      const companyData = CompanyData.company as EstablishmentFront
+      if (companyData) {
+        Analytics.sendEvent('register_siret_modal', 'register_siret_modal', {
+          secteur: companyData.secteur,
+          siret: companyData.siret
+        })
+      }
+    }
     Navigation.toggleRegisterModal(false)
   } else {
     showError.value = true
