@@ -13,7 +13,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { ThemeType, type programFiltersType, TrackId, ThemeId, FilterItemKeys } from '@/types'
+import { ThemeType, type ProgramFiltersType, TrackId, ThemeId, FilterItemKeys } from '@/types'
 import { Theme } from '@/tools/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'

@@ -68,10 +68,9 @@
 </template>
 <script lang="ts" setup>
 import { RegisterDetailLocalisation, ConvertedCommune, CompanyLocalisationType } from '@/types'
-import LocalisationApi from '@/service/api/localisationApi'
-import { onClickOutside } from '@vueuse/core'
-import { CompanyData } from '@/utils/companyData'
-import { useDebounce } from '@vueuse/core'
+import LocalisationApi from '@/tools/api/localisationApi'
+import { onClickOutside, useDebounce } from '@vueuse/core'
+import { CompanyData } from '@/tools/companyData'
 
 interface Props {
   infos: RegisterDetailLocalisation

@@ -56,7 +56,7 @@ import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
 import ProgramFilterByCompanyData from '@/components/program/list/filters/ProgramFilterByCompanyData.vue'
 import { FilterItemKeys, ProgramFiltersType } from '@/types'
 import { useProgramStore } from '@/stores/program'
-import { CompanyData } from '@/utils/companyData'
+import { CompanyData } from '@/tools/companyData'
 
 interface Props {
   accordionClass?: string
@@ -112,14 +112,13 @@ const filters: FilterItem[] = [
     id: FilterItemKeys.operatorAid,
     component: ProgramFilterByOperator,
     componentClass: 'fr-pl-2v',
-    if: navigation.isCatalogPrograms()
+    display: navigation.isCatalogPrograms()
   },
   {
     title: 'Régions',
     id: FilterItemKeys.regionAid,
     component: ProgramFilterByRegion,
     componentClass: 'fr-pl-2v',
-    if: navigation.isCatalogPrograms()
     display: displayRegionFilter
   }
 ]

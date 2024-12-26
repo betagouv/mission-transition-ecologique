@@ -3,7 +3,7 @@
 
 import ProgramFilter from '@/tools/program/programFilter'
 import { ref } from 'vue'
-import { type programFiltersType, ProgramAidType, ThemeId, Region, type ProgramData, OperatorFilter } from '@/types'
+import { type ProgramFiltersType, ProgramAidType, ThemeId, Region, type ProgramData, OperatorFilter, FilterItemKeys } from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
   const currentProgram = ref<ProgramData>()

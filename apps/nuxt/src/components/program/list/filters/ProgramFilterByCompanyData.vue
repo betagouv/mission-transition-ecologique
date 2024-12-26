@@ -12,14 +12,14 @@
       :value="`selected-company-${companyName}`"
       small
       name="companyFilter"
-      :disabled="useNavigationStore().isQuestionnaireResult()"
+      :disabled="navigation.isQuestionnaireResult()"
     >
       <template #label>
         <span
           class="fr-text--bold fr-text--sm"
           :class="{
             'fr-text--grey': !programFilters[FilterItemKeys.companyData],
-            'fr-text--black': useNavigationStore().isQuestionnaireResult(),
+            'fr-text--black': navigation.isQuestionnaireResult(),
             'fr-pl-0-5v': !Breakpoint.isSmallScreen(),
             'fr-pl-2v': Breakpoint.isMobile()
           }"
@@ -53,9 +53,9 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { CompanyDataStorageKey, FilterItemKeys, type ProgramFiltersType, SizeToText, StructureSize } from '@/types'
-import { CompanyData } from '@/utils/companyData'
-import { useNavigationStore } from '@/stores/navigation'
-import Breakpoint from '@/utils/breakpoints'
+import { CompanyData } from '@/tools/companyData'
+import Breakpoint from '@/tools/breakpoints'
+import Navigation from '@/tools/navigation'
 
 type CompanyFilterProps = {
   title: ComputedRef<string | undefined>
@@ -70,7 +70,7 @@ type CompanyFilterDetailProps = {
   label: ComputedRef<string | undefined | null>
   icon?: string
 }
-
+const navigation = new Navigation()
 const programFilters: ProgramFiltersType = useProgramStore().programFilters
 
 const registeredData = CompanyData.dataRef
