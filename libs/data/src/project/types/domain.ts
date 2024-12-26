@@ -1,6 +1,6 @@
-import { Project } from './shared'
+import { ProjectType } from './shared'
 
-export interface DataProject extends Omit<Project, 'themes' | 'mainTheme' | 'linkedProjects' | 'programs'> {
+export interface DataProject extends Omit<ProjectType, 'themes' | 'mainTheme' | 'linkedProjects' | 'programs'> {
   themes: string[]
   mainTheme: string
   linkedProjects: number[]

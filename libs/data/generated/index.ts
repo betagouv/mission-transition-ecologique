@@ -4,7 +4,7 @@ import { default as jsonProgramsTests } from './dataset_tests.json'
 
 let jsonPrograms = jsonProgramsProd as unknown as ProgramType[]
 
-if (process.env['TEST'] === 'true') {
+if (process.env['VITE_DATA_TEST'] === 'true') {
   jsonPrograms = jsonProgramsTests as unknown as ProgramType[]
 }
 

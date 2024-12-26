@@ -1,10 +1,13 @@
 import axios from 'axios'
 import dotenv from 'dotenv'
+import path from 'path'
+import { fileURLToPath } from 'url'
 import { Id, LinkObject } from './types'
 
 dotenv.config()
 
 export abstract class AbstractBaserow {
+  protected readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
   private readonly _apiToken = this._setBaserowToken()
   private readonly _baseUrl = 'https://api.baserow.io/api'
   protected readonly _themeTableId = 305258

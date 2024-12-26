@@ -1,8 +1,8 @@
 import { Environment } from './types'
 
 export default abstract class ConfigCommon {
-  protected static _sentryEnvironments: Environment[] = [Environment.Prod, Environment.Preprod]
-  protected static _sentryDefaultEnvironment = Environment.Preprod
+  protected static _sentryEnvironments: Environment[] = [Environment.Prod, Environment.Preprod, Environment.Dev]
+  protected static _sentryDefaultEnvironment = Environment.Dev
 
   protected static _sentryDsn: string | undefined
   protected static _sentryEnvironment: Environment | undefined
