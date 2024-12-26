@@ -1,12 +1,11 @@
-titre: Audit label Clef Verte
+titre: Label Clef Verte
 promesse: >-
   Restaurateurs & hébergeurs, obtenez un label pour valoriser l'engagement
   environnemental de votre entreprise
 description: >-
-  Réalisez un audit pour vous aider à obtenir le Label Clef verte, le premier
-  ecolabel de tourisme durable destiné aux hébergements touristiques et
-  restaurants. Ce label certifie l'engagement de votre établissement en faveur
-  d'un tourisme plus durable.
+  Obtenez le Label Clef verte, le premier ecolabel de tourisme durable destiné
+  aux hébergements touristiques et restaurants. Ce label certifie l'engagement
+  de votre établissement en faveur d'un tourisme plus durable.
 description longue: >-
   Le label Clef Verte atteste que la démarche environnementale de l'hébergement
   touristique ou du restaurant répond à plus d'une centaine de critères dans
@@ -39,13 +38,13 @@ description longue: >-
   • Environnement intérieur, environnement extérieur
 début de validité: 01/05/2023
 fin de validité: 31/12/2026
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_ampoule.png
 opérateur de contact: CCI
 url: >-
   https://www.cci.fr/offre/valorisez-les-demarches-environnementales-de-votre-entreprise
 nature de l'aide: étude
-coût de l'accompagnement: De 350 à 450 € HT selon votre activité
-durée de l'accompagnement: 1 jour dont 1/2 journée sur site
+coût de l'accompagnement: Entre 160 € et 2300 €, en fonction de votre activité
+durée de l'accompagnement: À renouveler chaque année
 activable en autonomie: oui
 objectifs:
   - description: >-
@@ -55,7 +54,10 @@ objectifs:
     liens:
       - lien: https://pro.laclefverte.org/
         texte: Créez un compte
-  - description: Définissez votre plan d'action et validez votre candidature en ligne.
+  - description: >-
+      Définissez votre plan d'action et validez votre candidature en ligne.
+      L'envoi des dossiers de candidatures se fait à partir de janvier et se
+      termine mi-avril.
   - description: >-
       Recevez la visite d'un auditeur Clef Verte dans votre établissement.
       Obtenez un compte-rendu des pistes d'améliorations à mettre en œuvre.
@@ -64,10 +66,10 @@ objectifs:
       progresser votre démarche et présenter un dossier le plus qualitatif
       possible au Jury de fin d'année (rapport d'audit, actions engagées et
       pièces justificatives, synthèse du suivi, etc.)
-  - description: Attribution du label par un jury indépendant pour une durée d'un an.
+  - description: Le label vous est attribué par un jury indépendant pour une durée d'un an.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - TPE et PME
+    - Moins de 500 salariés
     - Éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer

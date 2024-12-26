@@ -9,10 +9,15 @@
           <div class="fr-header__brand fr-enlarge-link">
             <div class="fr-header__brand-top">
               <div class="fr-header__logo">
-                <DsfrLogo
-                  :logo-text="logoText"
-                  data-testid="header-logo"
-                />
+                <RouterLink
+                  :to="homeTo"
+                  :title="`${homeLabel} - ${serviceTitle}`"
+                >
+                  <DsfrLogo
+                    :logo-text="logoText"
+                    data-testid="header-logo"
+                  />
+                </RouterLink>
               </div>
               <div
                 v-if="isWithSlotOperator"
@@ -187,30 +192,30 @@
             </div>
           </div>
         </div>
-        <div
-          v-if="isWithSlotNav && !modalOpened"
-          class="fr-hidden fr-unhidden-lg"
-        >
-          <!-- @slot Slot nommé mainnav pour le menu de navigation principal -->
-          <slot
-            name="mainnav"
-            :hidemodal="hideModal"
-          />
-        </div>
         <!-- @slot Slot par défaut pour le contenu du fieldset (sera dans `<div class="fr-header__body-row">`) -->
         <slot />
+      </div>
+    </div>
+    <div class="fr-header__menu fr-modal">
+      <div
+        v-if="isWithSlotNav && !modalOpened"
+        class="fr-container"
+      >
+        <!-- @slot Slot nommé mainnav pour le menu de navigation principal -->
+        <slot
+          name="mainnav"
+          :hidemodal="hideModal"
+        />
       </div>
     </div>
   </header>
 </template>
 <script lang="ts" setup>
 import { computed, onMounted, onUnmounted, ref, toRef, useSlots } from 'vue'
-import { DsfrLanguageSelector, DsfrLogo, DsfrSearchBar } from '@gouvminint/vue-dsfr'
+import { DsfrLanguageSelector, DsfrLogo, DsfrSearchBar, registerNavigationLinkKey } from '@gouvminint/vue-dsfr'
 
 import type { DsfrLanguageSelectorElement } from '@gouvminint/vue-dsfr/types/components/DsfrLanguageSelector/DsfrLanguageSelector.vue'
 import type { DsfrHeaderProps } from '@gouvminint/vue-dsfr/types/components/DsfrHeader/DsfrHeader.vue'
-
-export type { DsfrHeaderProps }
 
 const props = withDefaults(defineProps<DsfrHeaderProps>(), {
   searchbarId: 'searchbar-header',
@@ -282,4 +287,7 @@ const onQuickLinkClick = hideModal
 const slots = useSlots()
 const isWithSlotOperator = computed(() => Boolean(slots.operator?.().length) || !!props.operatorImgSrc)
 const isWithSlotNav = computed(() => Boolean(slots.mainnav))
+provide(registerNavigationLinkKey, () => {
+  return hideModal
+})
 </script>

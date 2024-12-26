@@ -67,7 +67,7 @@ const requestCreateDeal = async (name: string, attributes: DealAttributes): Prom
 const updateBrevoDeal: OpportunityRepository['update'] = async (
   dealId: OpportunityId,
   updateAttributes: OpportunityUpdateAttributes
-): Promise<Maybe<Error>> => {
+): Promise<Maybe<Error | null>> => {
   const brevoDeal = convertDomainToBrevoDealUpdate(updateAttributes)
 
   return requestUpdateDeal(dealId, brevoDeal)
@@ -146,6 +146,9 @@ const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
     }
     const dateList: Date[] = []
     for (const deal of brevoDealResponse.items) {
+      if (deal.attributes.pipeline != Config.BREVO_DEAL_PIPELINE) {
+        continue
+      }
       const dealDate: Date = new Date(deal.attributes.created_at)
       dateList.push(dealDate)
     }

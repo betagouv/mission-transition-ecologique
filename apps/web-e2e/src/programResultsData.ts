@@ -1,6 +1,6 @@
-import { ResultsDataType } from './resultDataType'
+import { SearchResultsDataType } from './resultDataType'
 
-export const tests: ResultsDataType = [
+export const tests: SearchResultsDataType = [
   {
     id: 0,
     url: 'aides-entreprise',
@@ -64,13 +64,17 @@ export const tests: ResultsDataType = [
       'TPE gagnantes sur tous les coûts',
       'Diagnostic Transition Ecologique',
       'Formations Transition Écologique et Énergétique',
+      'Visite Énergie CCI',
+      'Accélérateur décarbonation',
       'Programme Volontaire Français ACT',
       'Diag Ecoconception',
+      'Diagnostic RSE',
       'Étude "Économie de la fonctionnalité"',
       'Étude "Éco-conception"',
       'Étude "réemploi réutilisation réparation"',
       'Étude "Solaire thermique"',
       'Mission de Conseil RSE',
+      'Mission Stratégie Environnement',
       'Aides au réemploi des emballages',
       'Bonus écologique',
       'Coup de pouce Chauffage',
@@ -81,7 +85,6 @@ export const tests: ResultsDataType = [
       'Sobriété et Résilience des Territoires',
       'Tremplin',
       'Prêt Action Climat',
-      'Prêt Économies d’Énergie (PEE)',
       'Prêt Vert',
       'Flotte de vélos à disposition',
       "Crédit d'Impôt Rénovation Énergétique (CIRE)"

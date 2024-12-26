@@ -3,7 +3,7 @@ import ProjectFilter from '@/utils/project/projectFilter'
 import { defineStore } from 'pinia'
 import { Result } from 'true-myth'
 import { computed, ref } from 'vue'
-import { Project, type ProjectFilterQuery, QuestionnaireData, ThemeId } from '@/types'
+import { Project, type ProjectFilterQuery, QuestionnaireData, Sector, ThemeId } from '@/types'
 import { Theme } from '@/utils/theme'
 import { useUsedTrackStore } from './usedTrack'
 
@@ -16,10 +16,10 @@ export const useProjectStore = defineStore('project', () => {
   })
 
   async function getFilteredProjects(questionnaireData: QuestionnaireData = {}) {
-    const { codeNAF1, sector } = questionnaireData
+    const { codeNAF1, sector, secteur } = questionnaireData
     const filteredData: ProjectFilterQuery = {
       ...(codeNAF1 && { codeNAF1 }),
-      ...(sector && { sector })
+      sector: !codeNAF1 ? sector || (secteur as Sector) : undefined
     }
     return await new ProjectApi(filteredData).get()
   }

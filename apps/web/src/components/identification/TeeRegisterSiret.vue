@@ -51,7 +51,7 @@
             <span>Votre entreprise n'est pas affichée ?</span>
             <a
               href="https://annuaire-entreprises.data.gouv.fr/"
-              class="no-outline fr-text--underline"
+              class="no-outline fr-text--decoration-underline"
               target="_blank"
             >
               trouver mon SIRET
@@ -66,7 +66,7 @@
         @click="doManualRegister"
       >
         {{ Translation.t('or') }}
-        <span class="fr-text--underline">je complète les informations manuellement</span>
+        <span class="fr-text--decoration-underline">je complète les informations manuellement</span>
       </TeeDsfrButton>
     </div>
   </div>

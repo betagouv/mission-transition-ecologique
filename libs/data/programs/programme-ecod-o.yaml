@@ -51,7 +51,11 @@ publicodes:
       - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
+      - a une categorie legale eligible
       - entreprise . est dans une zone géographique éligible
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est C

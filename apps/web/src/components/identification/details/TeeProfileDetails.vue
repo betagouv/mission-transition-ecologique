@@ -5,7 +5,7 @@
   >
     <TeeDsfrButton
       size="small"
-      class="fr-btn--tertiary-no-outline fr-text-left fr-p-0 fr-text--white fr-btn-bg fr-text--sm fr-text--underline"
+      class="fr-btn--tertiary-no-outline fr-text-left fr-p-0 fr-text--white fr-btn-bg fr-text--sm fr-text--decoration-underline"
       @click="openSiretStep"
     >
       <span class="fr-pr-2v fr-icon-arrow-left-line" /><span>je renseigne mon SIRET</span>
@@ -33,10 +33,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType, EstablishmentFront } from '@/types'
+import Analytics from '@/utils/analytic/analytics'
 import Breakpoint from '@/utils/breakpoints'
 import Navigation from '@/utils/navigation'
-import { CompanyDataStorageHandler } from '@/utils/storage/companyDataStorageHandler'
+import { CompanyData } from '@/utils/companyData'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -89,20 +90,32 @@ const canBeSaved = computed(() => {
 const saveProfile = () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
-    const company = props.manual
-      ? ({
-          region: profile.value.localisation.value,
-          secteur: profile.value.activity.value,
-          denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`
-        } as CompanyDataType[CompanyDataStorageKey.Company])
-      : props.company
+    let company = props.company
+    if (props.manual) {
+      company = {
+        region: profile.value.localisation.value,
+        secteur: profile.value.activity.value,
+        denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`,
+        structure_size: profile.value.size.value
+      } as CompanyDataType[CompanyDataStorageKey.Company]
+    } else if (company) {
+      company.structure_size = profile.value.size.value
+    }
 
-    CompanyDataStorageHandler.saveAndSetUsedTrackStore({
+    CompanyData.saveAndSetUsedTrackStore({
       [CompanyDataStorageKey.Company]: company,
       [CompanyDataStorageKey.Size]: profile.value.size.value
     })
-    CompanyDataStorageHandler.updateRouteFromStorage()
-
+    CompanyData.updateRouteFromStorage()
+    if (!props.manual) {
+      const companyData = CompanyData.company as EstablishmentFront
+      if (companyData) {
+        Analytics.sendEvent('register_siret_modal', 'register_siret_modal', {
+          secteur: companyData.secteur,
+          siret: companyData.siret
+        })
+      }
+    }
     Navigation.toggleRegisterModal(false)
   } else {
     showError.value = true

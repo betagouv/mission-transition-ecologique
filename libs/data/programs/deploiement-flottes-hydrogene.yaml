@@ -1,0 +1,129 @@
+titre: Aide au déploiement de flottes hydrogène
+promesse: Financez l'acquisition de véhicules hydrogènes utilitaires légers ou lourds
+description: >-
+  Vous avez un projet d'acquisition ou de location de véhicules hydrogènes
+  utilitaires ? 
+
+  La Région Bourgogne-Franche-Comté soutient le déploiement d'écosystèmes de
+  mobilités sur le territoire et finance l’acquisition, la location ou la mise à
+  niveau de véhicules hydrogènes utilitaires légers et lourds.
+description longue: >-
+  Les coûts admissibles sont les suivants :
+
+  a) en ce qui concerne les investissements consistant en l’achat de véhicules
+  propres ou de véhicules à émission nulle, les coûts supplémentaires liés à
+  l’achat du véhicule propre ou du véhicule à émission nulle. Ils sont calculés
+  comme étant la différence entre les coûts d’investissement liés à l’achat du
+  véhicule propre ou du véhicule à émission nulle et les coûts d’investissement
+  liés à l’achat d’un véhicule de la même catégorie qui est conforme aux normes
+  de l’Union applicables déjà en vigueur et qui aurait été acquis sans l’aide ;
+
+  b) en ce qui concerne les investissements consistant en la location de
+  véhicules propres ou de véhicules à émission nulle, les coûts supplémentaires
+  liés à la location du véhicule propre ou du véhicule à émission nulle. Ils
+  sont calculés comme étant la différence entre la valeur actuelle nette liée à
+  la location du véhicule propre ou du véhicule à émission nulle et la valeur
+  actuelle nette liée à la
+
+  location d’un véhicule de la même catégorie qui est conforme aux normes de
+  l’Union applicables déjà en vigueur et qui aurait été loué sans l’aide. Aux
+  fins de la détermination des coûts admissibles, les coûts d’exploitation liés
+  à l’exploitation du véhicule, y compris les coûts de l’énergie, les coûts
+  d’assurance et les coûts d’entretien, ne sont pas pris en considération,
+  qu’ils soient ou non inclus dans
+
+  le contrat de location;
+
+  c) en ce qui concerne les investissements consistant en la mise à niveau de
+  véhicules leur permettant d’être considérés comme des véhicules propres ou des
+  véhicules à émission nulle, les coûts de l’investissement dans la mise à
+  niveau.
+fin de validité: 31/12/2026
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Région Bourgogne-Franche-Comté
+url: https://www.bourgognefranchecomte.fr/node/3833
+nature de l'aide: financement
+montant du financement: Jusqu'à 50% du coût, dans un maximum de 350 000 € HT
+activable en autonomie: oui
+objectifs:
+  - description: Prenez connaissance des conditions et des règles liées à cette subvention
+    liens:
+      - lien: https://www.bourgognefranchecomte.fr/file-download?fid=15353
+        texte: Règlement d'intervention
+  - description: >-
+      Prenez contact avec le service de la Région au préalable pour vérifier
+      votre éligibilité
+    liens:
+      - lien: >-
+          https://subventions.bourgognefranchecomte.fr/sub/tiers/aides/details/?sigle=ECO-VLH2
+        texte: Contact des services de la Région
+  - description: >-
+      Créez votre compte et déposez votre dossier. Attention à cette étape là,
+      votre projet ne doit pas avoir commencé.
+    liens:
+      - lien: >-
+          https://subventions.bourgognefranchecomte.fr/sub/tiers/aides/details/?sigle=ECO-VLH2
+        texte: Déposer votre dossier
+  - description: >-
+      Suite à l'instruction du dossier, si le comité le valide, recevez votre
+      aide.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 5000 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Bourgogne-Franche-Comté
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Vous devrez avoir identifié à proximité soit une station existante de
+      distribution d’hydrogène renouvelable ou bas carbone, soit une station en
+      projet (sous réserve de validation par les services instructeurs). La
+      subvention s’adresse uniquement à des véhicules déployés en lien avec des
+      stations de recharge hydrogène régionales.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 4999
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Bourgogne-Franche-Comté

@@ -1,4 +1,4 @@
-@use '@gouvfr/dsfr/module/media-query';
+@use 'tool';
 
 .fr-footer {
   &__content {
@@ -11,25 +11,43 @@
   }
 
   &__partners {
-    &-logos {
-      flex-direction: column;
-      align-items: center;
-
-      @include media-query.respond-from('xl') {
-        flex-direction: row;
+    &-main {
+      img {
+        height: 5.625rem;
+        width: 10rem;
+        box-shadow: none !important;
       }
     }
 
     &-sub {
       justify-content: center;
-      align-items: center !important;
+
+      ul {
+        align-items: center !important;
+
+        img {
+          box-shadow: none !important;
+          width: revert-layer !important;
+          max-height: 5.625rem;
+          max-width: 10rem !important;
+        }
+      }
+    }
+
+    &-logos {
+      flex-direction: column;
+      align-items: center;
+
+      @include tool.media-query-respond-from('xl') {
+        flex-direction: row;
+      }
     }
   }
 
   &__body {
     flex-direction: column;
 
-    @include media-query.respond-from('lg') {
+    @include tool.media-query-respond-from('lg') {
       flex-direction: row;
       justify-content: space-between;
     }

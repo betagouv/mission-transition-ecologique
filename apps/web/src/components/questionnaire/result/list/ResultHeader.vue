@@ -1,10 +1,15 @@
 <template>
   <div class="fr-grid-row fr-text-center fr-text-left-md">
     <div class="fr-col-12">
-      <h1 class="fr-mb-4v fr-text--blue-france">Vos résultats</h1>
+      <h1
+        class="fr-mb-md-4v fr-text--blue-france"
+        :class="isSpecificGoal ? 'fr-mb-0' : 'fr-mb-2v'"
+      >
+        Vos résultats
+      </h1>
     </div>
     <div
-      v-if="UsedTrack.isSpecificGoal() && hasRegisteredData"
+      v-if="isSpecificGoal && hasRegisteredData"
       class="fr-hidden fr-unhidden-md fr-col-12 fr-px-2v fr-px-md-0 fr-text--blue-france"
     >
       <p
@@ -19,13 +24,13 @@
 import TrackStructure from '@/utils/track/trackStructure'
 import Translation from '@/utils/translation'
 import UsedTrack from '@/utils/track/usedTrack'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyData } from '@/utils/companyData'
 
 const resume: string = Translation.t('programResults.resume', {
-  effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyDataStorage.getSize() ?? '')),
-  secteur: TrackStructure.getSectorShortLabel() ?? CompanyDataStorage.getCompanyData()?.secteur ?? '',
-  region: TrackStructure.getRegion() ?? CompanyDataStorage.getCompanyData()?.region ?? ''
+  effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyData.size ?? '')),
+  secteur: TrackStructure.getSectorShortLabel() ?? CompanyData.company?.secteur ?? '',
+  region: TrackStructure.getRegion() ?? CompanyData.company?.region ?? ''
 })
-
-const hasRegisteredData = CompanyDataStorage.hasData()
+const isSpecificGoal = UsedTrack.isSpecificGoal()
+const hasRegisteredData = CompanyData.isDataFull()
 </script>

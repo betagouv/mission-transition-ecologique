@@ -29,7 +29,7 @@ objectifs:
   - description: Identifiez des financements possibles.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - PME
+    - Entre 20 et 500 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
     - Bourgogne-Franche-Comté
@@ -50,11 +50,15 @@ publicodes:
         - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
+      - a une categorie legale eligible
       - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
       - effectif >= 20
       - effectif <= 499
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est B

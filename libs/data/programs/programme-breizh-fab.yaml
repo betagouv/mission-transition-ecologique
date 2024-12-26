@@ -34,7 +34,7 @@ objectifs:
       (webinaires, ateliers, visites d'entreprise, rencontres...)
 conditions d'éligibilité:
   taille de l'entreprise:
-    - PMI
+    - Moins de 250 salariés
     - Éligible aux micro-entreprises
   secteur géographique:
     - Bretagne
@@ -42,6 +42,8 @@ conditions d'éligibilité:
     - Industrie
   nombre d'années d'activité:
     - Au moins 3 ans d’activité
+  autres critères d'éligibilité:
+    - Donc l'effectif est supérieur à 5 personnes.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -54,7 +56,6 @@ publicodes:
       - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-      - effectif >= 6
       - effectif <= 249
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:

@@ -86,7 +86,7 @@ objectifs:
   - description: Recevez les fonds sous 10 jours en moyenne et commencez votre projet.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - TPE et PME
+    - Moins de 250 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
     - Île-de-France
@@ -115,11 +115,14 @@ publicodes:
   entreprise . est éligible:
     toutes ces conditions:
       - a un effectif éligible
+      - a une categorie legale eligible
       - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-      - effectif >= 2
       - effectif <= 249
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

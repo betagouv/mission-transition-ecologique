@@ -7,7 +7,7 @@
     >
       <div class="fr-container fr-mb-2v">
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
-          <h2 class="fr-text--bold fr-mb-0">Quel est votre projet ?</h2>
+          <h2 class="fr-text--bold fr-mt-3v fr-mb-0">Quel est votre projet ?</h2>
         </div>
       </div>
     </div>
@@ -66,10 +66,11 @@
             name="fade"
             mode="out-in"
           >
-            <component
-              :is="otherProjectComponent"
+            <OtherProjectCta
+              v-if="!otherProjectForm && !showNoResults"
               @click="openOtherProjectForm"
             />
+            <OtherProjectForm v-else />
           </Transition>
         </div>
       </div>
@@ -87,7 +88,7 @@ import OtherProjectCta from '@/components/project/list/OtherProjectCta.vue'
 import OtherProjectForm from '@/components/project/list/OtherProjectForm.vue'
 import Translation from '@/utils/translation'
 import Navigation from '@/utils/navigation'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyData } from '@/utils/companyData'
 import { useNavigationStore } from '@/stores/navigation'
 
 interface ProjectListProps {
@@ -97,7 +98,7 @@ interface ProjectListProps {
 const props = defineProps<ProjectListProps>()
 const otherProjectForm = ref<boolean>(false)
 
-const hasRegisteredData = CompanyDataStorage.hasData()
+const hasRegisteredData = CompanyData.isDataFull()
 
 const openModal = () => {
   Navigation.toggleRegisterModal()
@@ -139,12 +140,5 @@ const showOtherProjectForm = computed(() => {
 
 const isSpecificGoal = computed(() => {
   return hasThemeCard.value && UsedTrack.isSpecificGoal() && hasProjects.value
-})
-const otherProjectComponent = computed(() => {
-  if (!otherProjectForm.value && !showNoResults.value) {
-    return OtherProjectCta
-  } else {
-    return OtherProjectForm
-  }
 })
 </script>

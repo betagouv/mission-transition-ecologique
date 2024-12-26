@@ -46,7 +46,7 @@ url: https://entreprendre.service-public.fr/vosdroits/F35585
 nature de l'aide: avantage fiscal
 montant de l'avantage fiscal: "30% des dépenses, dans la limite de 25 000\_€"
 objectifs:
-  - description: Vérifiez l'égibilité de vos dépenses de rénovation.
+  - description: Vérifiez l'éligibilité de vos dépenses de rénovation.
     liens:
       - lien: https://entreprendre.service-public.fr/vosdroits/F35585
         texte: Pour quels types de dépenses ?
@@ -59,7 +59,7 @@ objectifs:
       rénovation engagées.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - TPE et PME
+    - Moins de 250 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
@@ -80,9 +80,13 @@ publicodes:
         - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
+      - a une categorie legale eligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
       - effectif <= 249
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est C

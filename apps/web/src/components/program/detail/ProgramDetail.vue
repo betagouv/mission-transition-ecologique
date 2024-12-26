@@ -42,9 +42,9 @@
 
             <!-- PROGRAM TYPE -->
             <ul class="fr-badges-group fr-tee-program-detail-img-badge">
-              <p class="fr-badge tee-program-badge-image">
+              <li class="fr-badge fr-badge--info fr-badge--no-icon">
                 {{ program?.["nature de l'aide"] }}
-              </p>
+              </li>
             </ul>
           </div>
 
@@ -187,47 +187,44 @@
             />
           </div>
         </div>
-        <div id="program-details-accordion-group">
-          <DsfrAccordionsGroup>
-            <ProgramAccordion
-              v-if="program && program['conditions d\'éligibilité']"
-              :accordion-id="`${program.id}-eligibility`"
-              :title="Translation.t('program.programAmIEligible')"
-            >
-              <ProgramEligibility :program="program" />
-              <TeeRegisterHighlight
-                v-if="!hasRegisteredData"
-                :text="Translation.t('program.programRegisterHighlightText')"
-              />
-            </ProgramAccordion>
-            <ProgramAccordion
-              v-if="program && linkedProjects && linkedProjects.length > 0"
-              :accordion-id="`${program.id}-linked-projects`"
-              :title="Breakpoint.isMobile() ? Translation.t('program.projectExamplesSM') : Translation.t('program.projectExamples')"
-            >
-              <ProgramProjects :linked-projects="linkedProjects" />
-            </ProgramAccordion>
-            <ProgramAccordion
-              v-if="program && program['description longue']"
-              :accordion-id="`${program.id}-long-description`"
-              :title="Translation.t('program.programKnowMore')"
-            >
-              <ProgramLongDescription :program="program" />
-            </ProgramAccordion>
-          </DsfrAccordionsGroup>
-        </div>
+        <ProgramAccordion
+          v-if="program && program['conditions d\'éligibilité']"
+          id="eligibilite"
+          :accordion-id="`${program.id}-eligibility`"
+          :title="Translation.t('program.programAmIEligible')"
+        >
+          <ProgramEligibility :program="program" />
+          <TeeRegisterHighlight
+            v-if="!hasRegisteredData"
+            :text="Translation.t('program.programRegisterHighlightText')"
+          />
+        </ProgramAccordion>
+        <ProgramAccordion
+          v-if="program && linkedProjects && linkedProjects.length > 0"
+          :accordion-id="`${program.id}-linked-projects`"
+          :title="Breakpoint.isMobile() ? Translation.t('program.projectExamplesSM') : Translation.t('program.projectExamples')"
+        >
+          <ProgramProjects :linked-projects="linkedProjects" />
+        </ProgramAccordion>
+        <ProgramAccordion
+          v-if="program && program['description longue']"
+          :accordion-id="`${program.id}-long-description`"
+          :title="Translation.t('program.programKnowMore')"
+        >
+          <ProgramLongDescription :program="program" />
+        </ProgramAccordion>
       </div>
     </div>
 
     <!-- PROGRAM FORM -->
     <div
       v-if="hasRegisteredData && programIsEligible"
-      ref="TeeProgramFormContainer"
+      ref="teeProgramFormContainer"
       class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
     >
       <TeeForm
         v-if="program"
-        :form-container-ref="TeeProgramFormContainer"
+        :form-container-ref="teeProgramFormContainer"
         :data-id="program.id"
         :phone-callback="Translation.t('form.phoneContact', { operator: program['opérateur de contact'] })"
         :form="Opportunity.getProgramFormFields(program)"
@@ -257,10 +254,9 @@ import Program from '@/utils/program/program'
 import { Scroll } from '@/utils/scroll'
 import Translation from '@/utils/translation'
 import Breakpoint from '@/utils/breakpoints'
-import { computed, onBeforeMount, ref } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/utils/opportunity'
-import CompanyDataStorage from '@/utils/storage/companyDataStorage'
+import { CompanyData } from '@/utils/companyData'
 import { storeToRefs } from 'pinia'
 
 const projectStore = useProjectStore()
@@ -269,12 +265,12 @@ const navigationStore = useNavigationStore()
 
 const { currentProgram: program } = storeToRefs(programsStore)
 const linkedProjects = ref<ProjectType[] | undefined>([])
-const TeeProgramFormContainer = ref<HTMLElement | null | undefined>(null)
+const teeProgramFormContainer = useTemplateRef<HTMLElement>('teeProgramFormContainer')
 
 const publicPath = Config.publicPath
 
-const hasRegisteredData = CompanyDataStorage.hasData()
-const registeredData = CompanyDataStorage.getData()
+const hasRegisteredData = CompanyData.isDataFull()
+const registeredData = CompanyData.dataRef
 
 interface Props {
   programId: string
@@ -363,11 +359,11 @@ const programIsAvailable = computed(() => {
 })
 
 const scrollToProgramForm = () => {
-  if (TeeProgramFormContainer.value) {
+  if (teeProgramFormContainer.value) {
     navigationStore.isByRouteName(RouteName.CatalogProgramDetail) ||
     navigationStore.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)
-      ? Scroll.to(TeeProgramFormContainer.value)
-      : Scroll.toWithTopBarOffset(TeeProgramFormContainer.value)
+      ? Scroll.to(teeProgramFormContainer.value)
+      : Scroll.toWithTopBarOffset(teeProgramFormContainer.value)
   }
 }
 </script>
