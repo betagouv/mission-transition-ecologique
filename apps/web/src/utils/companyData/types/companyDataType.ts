@@ -7,7 +7,7 @@ export enum CompanyDataStorageKey {
 }
 
 export interface ManualCompanyData extends CompanyLocalisationType, CompanyActivityType {
-  denomination: string
+  denomination?: string
   structure_size?: StructureSize
 }
 
@@ -19,9 +19,9 @@ export type CompanyDataType = {
 }
 
 export type CompanyLocalisationType = {
-  region: Region | undefined
-  ville: string | undefined
-  codePostal: string | undefined
+  region?: Region
+  ville?: string
+  codePostal?: string
 }
 
 export enum RegisterDetailType {

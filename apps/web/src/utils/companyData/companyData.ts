@@ -180,14 +180,14 @@ export class CompanyData {
       CompanyDataStorage.setSize(value as StructureSize)
     }
 
-    if (trackId === TrackId.Sectors) {
+    if (trackId === TrackId.Sectors && selectedOptions.length > 0) {
       CompanyDataStorage.setCompany({
         ...this.company,
         ...(selectedOptions[0].questionnaireData as CompanyActivityType)
       } as ManualCompanyData)
     }
 
-    if (trackId === TrackId.StructureCity) {
+    if (trackId === TrackId.StructureCity && selectedOptions.length > 0) {
       CompanyDataStorage.setCompany({
         ...this.company,
         ...(selectedOptions[0].questionnaireData as CompanyLocalisationType),
