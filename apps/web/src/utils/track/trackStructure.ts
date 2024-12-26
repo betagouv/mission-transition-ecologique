@@ -1,6 +1,14 @@
 import { workforce } from '@/questionnaire/trackStructureWorkforce'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { CompanyActivityType, LegalCategory, StructureSize, TrackId, CompanyLocalisationType, TrackOptionItem, TrackOptionsUnion, TrackOptionItem, TrackOptionsUnion } from '@/types'
+import {
+  CompanyActivityType,
+  LegalCategory,
+  StructureSize,
+  TrackId,
+  CompanyLocalisationType,
+  TrackOptionItem,
+  TrackOptionsUnion
+} from '@/types'
 import Format from '@/utils/format'
 import { CompanyData } from '@/utils/companyData'
 import LocalisationApi from '@/service/api/localisationApi'
@@ -15,7 +23,12 @@ export default class TrackStructure {
     const establishmentApi = new EstablishmentApi()
     return await establishmentApi.searchActivities(query)
   }
-  static createData(option: TrackOptionsUnion, value?: string, questionnaireData?: CompanyActivityType | CompanyLocalisationType ): TrackOptionItem {
+  static createData(
+    option: TrackOptionsUnion,
+    value?: string,
+    questionnaireData?: CompanyActivityType | CompanyLocalisationType
+  ): TrackOptionItem {
+    console.log(questionnaireData, option.questionnaireData)
     return {
       option: {
         ...option,

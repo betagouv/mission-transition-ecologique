@@ -31,8 +31,10 @@ describe('CompanyDataStorage - isDataFull', () => {
       region: undefined,
       ville: undefined,
       codePostal: undefined,
-      secteur: 'industrie',
-      denomination: 'Entreprise : industrie - Bretagne',
+      secteur: 'Aide par le travail',
+      codeNAF: '88.10C',
+      codeNAF1: 'Q',
+      denomination: 'Entreprise : Aide par le travail - Bretagne',
       structure_size: 'ME'
     }
     const result = CompanyDataValidator.validate(validCompanyData as CompanyDataRegisterType)
@@ -44,8 +46,10 @@ describe('CompanyDataStorage - isDataFull', () => {
       region: 'Bretagne',
       ville: 'Brest',
       codePostal: '29200',
-      secteur: 'industrie',
-      denomination: 'Entreprise : industrie - Bretagne',
+      secteur: 'Aide par le travail',
+      codeNAF: '88.10C',
+      codeNAF1: 'Q',
+      denomination: 'Entreprise : Aide par le travail - Bretagne',
       structure_size: 'ME'
     }
     const result = CompanyDataValidator.validate(validCompanyData as CompanyDataRegisterType)
