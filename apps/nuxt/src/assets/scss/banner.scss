@@ -1,7 +1,7 @@
 @use 'sass:meta';
 @use 'sass:map';
-@use '@gouvfr/dsfr/src/module/media-query';
-@use '@gouvfr/dsfr/src/module/media-query/variable/breakpoints';
+@use '@gouvfr/dsfr/module/media-query';
+@use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
 @use 'tool';
 @use 'setting';
 
