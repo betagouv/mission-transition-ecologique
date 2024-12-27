@@ -356,7 +356,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "bilan-carbone"
     ],
     "linkedProjects": [
       32,
@@ -1365,6 +1366,7 @@
     "mainTheme": "rh",
     "programs": [
       "formation-engager-entreprise-transition-ecologique",
+      "nos-gestes-climat",
       "ecogestes-paca",
       "investour",
       "sud-pret-climat",
