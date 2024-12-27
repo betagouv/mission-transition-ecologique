@@ -1,6 +1,5 @@
 import { type ProgramType, ThemeId } from '@tee/data'
 import { type PublicodesInputData, PublicodesQuestionnaireRoute } from './types'
-import { SectorToNAFSection, NAF1Letters } from '../../common/naf1'
 import {
   QuestionnaireChecker,
   PublicodeObjective,
@@ -10,7 +9,9 @@ import {
   SizeToWorkforce,
   YesNo,
   StructureSize,
-  Sector
+  Sector,
+  SectorToNAFSection,
+  NAF1Letters
 } from '@tee/common'
 
 /** preprocesses the data gathered from the questionnaire into variables

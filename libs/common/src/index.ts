@@ -1,6 +1,7 @@
 export { default as ConfigCommon } from './config/configCommon'
 export * from './config/types'
 export * from './establishment/types'
+export * from './establishment/naf1'
 export * from './establishment/validator/siretValidator'
 export * from './establishment/validator/emailValidator'
 export * from './establishment/validator/phoneValidator'

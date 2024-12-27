@@ -1,7 +1,6 @@
-import { ProjectFilterQuery, Sector } from '@tee/common'
+import { ProjectFilterQuery, Sector, SectorToNAFSection } from '@tee/common'
 import { ProjectType } from '@tee/data'
 import { projects } from '@tee/data/static'
-import { SectorToNAFSection } from '../../common/naf1'
 
 export default class ProjectFeatures {
   public getById(id: number): ProjectType | undefined {

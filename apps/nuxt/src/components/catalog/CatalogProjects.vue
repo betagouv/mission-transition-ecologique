@@ -1,97 +1,91 @@
 <template>
-  <TeeDsfrBreadcrumb />
-  <CatalogBanner>
-    <template #title> {{ title }} </template>
-    <template #description> {{ description }} </template>
-  </CatalogBanner>
-
-  <div class="fr-container fr-mt-6v">
-    <div class="fr-grid-row fr-grid-row--center">
-      <div>
-        <div class="fr-col-12 fr-col-justify--left fr-mt-3v">
-          <ThemeFilter />
+  <CatalogLayout
+    :title="title"
+    :description="description"
+    :has-error="hasError"
+    :count-items="countProjects"
+    :has-side-bar="hasFullRegisteredData"
+  >
+    <template
+      v-if="hasFilteredProjects"
+      #catalog-content
+    >
+      <div
+        v-if="hasFullRegisteredData"
+        class="fr-col-2 fr-col-hidden fr-col-unhidden-md"
+      >
+        <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
+          <div class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w">Filtres</div>
+          <ProjectFiltersAccordion />
         </div>
-        <ThemeHeaderCard
-          v-if="hasThemeCard"
-          class="fr-col-12"
-          :theme="theme as ThemeId"
-          radius-corner="tr"
-          radius-size="2-5v"
-        />
-        <div v-if="hasFilteredProjects">
-          <div class="fr-col-12 fr-text--blue-france tee-font-style--italic fr-mt-3v">
-            <TeeCounterResult :to-count="filteredProjects" />
-          </div>
-          <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-mt-0">
-            <div
-              v-for="project in sortedProjects"
-              :key="project.id"
-              class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-lg-4 no-outline"
-            >
-              <ProjectCard
-                :project="project"
-                class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
-              />
+      </div>
+      <div
+        class="fr-col-12 fr-col-justify--center fr-pr-md-2v"
+        :class="{
+          'fr-col-md-10': hasFullRegisteredData,
+          'fr-col-md-12': !hasFullRegisteredData
+        }"
+      >
+        <div class="fr-container--fluid fr-mt-2v fr-mt-md-3v">
+          <div class="fr-grid-row fr-grid-row--center">
+            <div class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-md-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic">
+              <TeeCounterResult :to-count="filteredProjects" />
+            </div>
+            <div class="fr-col-9 fr-col-hidden-md fr-text-right">
+              <ProgramModalFilter />
+            </div>
+            <div class="fr-col-12 fr-mt-2v">
+              <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-lg--left">
+                <div
+                  v-for="project in sortedProjects"
+                  :key="project.id"
+                  class="fr-col-12 fr-col-sm-6 fr-col-lg-4 no-outline"
+                >
+                  <ProjectCard
+                    :project="project"
+                    class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div
-          v-if="hasSpinner"
-          class="fr-col-12 fr-col-justify--center fr-col-content--middle"
-        >
-          <TeeSpinner class="fr-mt-16w" />
-        </div>
-        <TeeListNoResults
-          v-else-if="showNoResultsComponent"
-          :has-error="hasError"
-          message="Aucune idée d'action n'a pu être identifiée avec les critères choisis..."
-          :count-items="countProjects"
-        />
       </div>
-    </div>
-  </div>
+    </template>
+  </CatalogLayout>
 </template>
 
 <script setup lang="ts">
-import { useNavigationStore } from '@/stores/navigation'
-import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
 import { ProjectManager } from '@/tools/project/projectManager'
-import ProjectFilter from '@/tools/project/projectFilter'
 import ProjectSorter from '@/tools/project/projectSorter'
-import { ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
-import { Theme } from '@/tools/theme'
+import { CompanyData } from '@/tools/companyData'
 
-const programStore = useProgramStore()
-const navigationStore = useNavigationStore()
+const projectStore = useProjectStore()
 
-const { projects, hasError } = storeToRefs(useProjectStore())
+const { projects, hasError } = storeToRefs(projectStore)
 
-await new ProjectManager().getProjects()
+onServerPrefetch(async () => {
+  await new ProjectManager().getProjects()
+})
+
+onNuxtReady(async () => {
+  await new ProjectManager().getProjects()
+})
 
 const title = 'Le catalogue des projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
 
 useSeoMeta(MetaSeo.get(title, description))
 
-const theme = Theme.getThemeFromSelectedTheme()
-
-const filteredProjects = ProjectFilter.filter(projects, theme)
+const filteredProjects = computed(() => {
+  return projects.value ? projectStore.getProjectsByFilters(projects.value) : undefined
+})
 const sortedProjects = ProjectSorter.sort(filteredProjects)
 
-const hasSpinner = computed(() => {
-  return navigationStore.hasSpinner
-})
-
-const hasThemeCard = computed(() => {
-  return programStore.hasThemeTypeSelected() && !hasSpinner.value
-})
-
-const showNoResultsComponent = computed(() => {
-  return hasSpinner.value || hasError.value || !countProjects.value
-})
+const hasFullRegisteredData = CompanyData.isDataFull()
 
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0

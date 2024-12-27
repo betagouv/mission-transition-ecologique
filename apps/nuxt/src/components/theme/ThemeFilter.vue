@@ -11,9 +11,8 @@
 
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
-import { useProgramStore } from '@/stores/program'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { ThemeType, type ProgramFiltersType, TrackId, ThemeId, FilterItemKeys } from '@/types'
+import { ThemeType, TrackId, ThemeId, FilterItemKeys, FiltersType } from '@/types'
 import { Theme } from '@/tools/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
@@ -24,14 +23,14 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const programStore = useProgramStore()
+const filtersStore = useFiltersStore()
 const usedTrackStore = useUsedTrackStore()
 
-const programFilters: ProgramFiltersType = programStore.programFilters
+const filters: FiltersType = filtersStore.filters
 let hasAllTag = true
 
 if (props.theme) {
-  programFilters.themeTypeSelected = props.theme
+  filters.themeTypeSelected = props.theme
 }
 
 if (UsedTrack.isSpecificGoal()) {
@@ -43,7 +42,7 @@ const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
     label: 'Tous',
     tagName: 'button',
     value: '',
-    'aria--pressed': programFilters[FilterItemKeys.themeType] === ''
+    'aria--pressed': filters[FilterItemKeys.themeType] === ''
   }
 
   const tags: TeeDsfrTagProps[] = []
@@ -59,7 +58,7 @@ const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
   }
 
   if (tags.length === 1) {
-    programStore.setThemeTypeSelected((tags.shift() as TeeDsfrTagProps).value as string)
+    filtersStore.setThemeTypeSelected((tags.shift() as TeeDsfrTagProps).value as string)
   } else if (tags.length > 1 && hasAllTag) {
     tags.unshift(allTag)
   }
@@ -68,11 +67,11 @@ const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
 })
 
 function isActive(tag: ThemeType) {
-  return Theme.getTags().length === 1 || programFilters[FilterItemKeys.themeType] === (tag.id as string)
+  return Theme.getTags().length === 1 || filters[FilterItemKeys.themeType] === (tag.id as string)
 }
 
 const updateThemeTypeSelected = async (value: string | number) => {
-  programStore.setThemeTypeSelected(value as string)
+  filtersStore.setThemeTypeSelected(value as string)
   if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {
     await usedTrackStore.updateByTrackIdAndValue(TrackId.Goals, value as string)
     useNavigationStore().replaceBrowserHistory()

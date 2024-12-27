@@ -1,8 +1,8 @@
 import { Color, ThemeId, ThemeType } from '@/types'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { ProjectType } from '@tee/data'
-import { useProgramStore } from '@/stores/program'
 import { ComputedRef } from 'vue'
+import { useFiltersStore } from '@/stores/filters'
 
 export class Theme {
   static themes: ThemeType[] = [
@@ -119,14 +119,14 @@ export class Theme {
 
   static getThemeFromSelectedTheme(): ComputedRef<ThemeId | undefined> {
     return computed(() => {
-      return useProgramStore().hasThemeTypeSelected() ? (useProgramStore().getThemeTypeSelected() as ThemeId) : undefined
+      return useFiltersStore().hasThemeTypeSelected() ? (useFiltersStore().getThemeTypeSelected() as ThemeId) : undefined
     })
   }
 
   static getThemeFromSelectedOrPriorityTheme(): ComputedRef<ThemeId | undefined> {
     return computed(() => {
-      return useProgramStore().hasThemeTypeSelected()
-        ? (useProgramStore().getThemeTypeSelected() as ThemeId)
+      return useFiltersStore().hasThemeTypeSelected()
+        ? (useFiltersStore().getThemeTypeSelected() as ThemeId)
         : (UsedTrack.getPriorityTheme() ?? undefined)
     })
   }

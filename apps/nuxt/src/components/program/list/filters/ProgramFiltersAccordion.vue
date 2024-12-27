@@ -1,52 +1,9 @@
 <template>
-  <DsfrAccordionsGroup
-    v-if="companyDataFilter.display"
-    v-model="companyDataAccordion"
-  >
-    <DsfrAccordion
-      :id="`accordion-${companyDataFilter.id}`"
-      :class="[props.accordionClass, companyDataFilterVisibilityClass(companyDataFilter.id)]"
-      :title="`${companyDataFilter.title} ${getFilterCount(companyDataFilter.id)}`"
-    >
-      <component
-        :is="companyDataFilter.component"
-        :class="companyDataFilter.componentClass"
-        legend=""
-      />
-    </DsfrAccordion>
-  </DsfrAccordionsGroup>
-  <DsfrAccordionsGroup v-model="activeAccordion">
-    <template
-      v-for="(filter, key) in filters"
-      :key="filter.id"
-    >
-      <DsfrAccordion
-        v-if="canDisplayFilter(filter)"
-        :id="`accordion-${filter.id}`"
-        :key="key"
-        :class="[props.accordionClass, filter.accordionClass, companyDataFilterVisibilityClass(filter.id)]"
-        :title="`${filter.title} ${getFilterCount(filter.id)}`"
-      >
-        <template
-          v-if="filter.id !== FilterItemKeys.companyData"
-          #title
-        >
-          <span>{{ filter.title }}</span>
-          <span
-            v-if="getFilterCount(filter.id)"
-            class="fr-filter-count-badge fr-ml-2v"
-          >
-            {{ getFilterCount(filter.id) }}
-          </span>
-        </template>
-        <component
-          :is="filter.component"
-          :class="filter.componentClass"
-          legend=""
-        />
-      </DsfrAccordion>
-    </template>
-  </DsfrAccordionsGroup>
+  <FiltersAccordion
+    :accordion-class="props.accordionClass"
+    :company-data-filter="companyDataFilter"
+    :filters="filtersItem"
+  />
 </template>
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
@@ -54,9 +11,9 @@ import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
 import ProgramFilterByOperator from './ProgramFilterByOperator.vue'
 import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
 import ProgramFilterByCompanyData from '@/components/program/list/filters/ProgramFilterByCompanyData.vue'
-import { FilterItemKeys, ProgramFiltersType } from '@/types'
-import { useProgramStore } from '@/stores/program'
-import { CompanyData } from '@/tools/companyData'
+import { FilterItemKeys, FiltersType } from '@/types'
+import { FilterItem } from '@/components/filters/FiltersAccordion.vue'
+import { useFiltersStore } from '@/stores/filters'
 
 interface Props {
   accordionClass?: string
@@ -64,32 +21,15 @@ interface Props {
 
 const props = defineProps<Props>()
 
-interface FilterItem {
-  title: string
-  id: FilterItemKeys
-  accordionClass?: string
-  component: unknown
-  componentClass?: string
-  display?: boolean | ComputedRef<boolean>
-}
+const filters: FiltersType = useFiltersStore().filters
 
-const programFilters: ProgramFiltersType = useProgramStore().programFilters
+const companySelected = computed(() => filters[FilterItemKeys.companyData])
 
-const companySelected = computed(() => programFilters[FilterItemKeys.companyData])
-
-const activeAccordion = ref<number>()
 const navigation = new Navigation()
-const companyDataAccordion = 0
 
 const displayRegionFilter = computed(() => {
   return navigation.isCatalogPrograms() && !companySelected.value
 })
-
-const companyDataFilterVisibilityClass = (filterId: FilterItemKeys) => {
-  if (filterId === FilterItemKeys.companyData) {
-    return CompanyData.isDataFull().value ? '' : 'fr-hidden'
-  }
-}
 
 const companyDataFilter: FilterItem = {
   title: 'Entreprise',
@@ -99,7 +39,7 @@ const companyDataFilter: FilterItem = {
   display: true
 }
 
-const filters: FilterItem[] = [
+const filtersItem: FilterItem[] = [
   {
     title: "Types d'aides",
     id: FilterItemKeys.typeAid,
@@ -122,32 +62,4 @@ const filters: FilterItem[] = [
     display: displayRegionFilter
   }
 ]
-
-const canDisplayFilter = (filter: FilterItem) => {
-  return typeof filter.display === 'boolean' ? filter.display : filter.display?.value
-}
-
-const getFilterCount = (filterId: FilterItemKeys) => {
-  if (filterId !== FilterItemKeys.companyData) {
-    return (programFilters[filterId] as string[]).length ? `${(programFilters[filterId] as string[]).length}` : ''
-  }
-
-  return ''
-}
 </script>
-<style lang="scss" scoped>
-@use '@/assets/scss/setting';
-
-:deep(#accordion-company-data) {
-  padding: 0 0.25rem;
-}
-
-.fr-filter-count-badge {
-  background-color: setting.$blue-france;
-  color: white;
-  border-radius: 1rem;
-  padding: 0 0.35rem;
-  line-height: 1rem;
-  font-size: 0.6rem;
-}
-</style>

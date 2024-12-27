@@ -1,6 +1,7 @@
-import { ProjectType } from '@/types'
+import { FilterItemKeys, ProjectType, ThemeId } from '@/types'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+import ProjectFilter from '@/tools/project/projectFilter'
 
 export const useProjectStore = defineStore('project', () => {
   const currentProject = ref<ProjectType>()
@@ -8,10 +9,21 @@ export const useProjectStore = defineStore('project', () => {
   const hasProjects = ref<boolean>(false)
   const hasError = ref<boolean>(false)
 
+  const filtersStore = useFiltersStore()
+
   function reset() {
     projects.value = []
     hasProjects.value = false
     hasError.value = false
+  }
+
+  function getProjectsByFilters(projects: ProjectType[]) {
+    return projects.filter((project: ProjectType) => {
+      return (
+        ProjectFilter.byTheme(project, filtersStore.filters[FilterItemKeys.themeType] as ThemeId) &&
+        ProjectFilter.byCompanyData(project, filtersStore.filters[FilterItemKeys.companyData])
+      )
+    })
   }
 
   async function getLinkedProjectsFromCurrent() {
@@ -31,6 +43,7 @@ export const useProjectStore = defineStore('project', () => {
     reset,
     hasError,
     currentProject,
-    getLinkedProjectsFromCurrent
+    getLinkedProjectsFromCurrent,
+    getProjectsByFilters
   }
 })

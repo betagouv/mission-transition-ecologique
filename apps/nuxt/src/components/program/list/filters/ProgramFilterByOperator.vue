@@ -1,19 +1,19 @@
 <template>
   <DsfrCheckboxSet
-    v-model="programFilters[FilterItemKeys.operatorAid]"
+    v-model="filters[FilterItemKeys.operatorAid]"
     small
     :options="programOperatorOptions"
   />
 </template>
 
 <script setup lang="ts">
-import { useProgramStore } from '@/stores/program'
 import { DsfrCheckboxSetProps } from '@gouvminint/vue-dsfr'
-import { FilterItemKeys, OperatorFilter, type ProgramFiltersType } from '@/types'
+import { FilterItemKeys, FiltersType, OperatorFilter } from '@/types'
 
 import { enrichedOperators } from '@tee/data/static'
+import { useFiltersStore } from '@/stores/filters'
 
-const programFilters: ProgramFiltersType = useProgramStore().programFilters
+const filters: FiltersType = useFiltersStore().filters
 
 const operatorsOptions = [...new Set(enrichedOperators.flatMap((enrichedOperators) => enrichedOperators.filterCategories))]
 const programOperatorOptions: DsfrCheckboxSetProps['options'] = operatorsOptions

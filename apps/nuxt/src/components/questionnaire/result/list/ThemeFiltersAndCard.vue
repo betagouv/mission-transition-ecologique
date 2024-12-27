@@ -21,12 +21,12 @@
 import { FilterItemKeys, ThemeId } from '@/types'
 import { computed } from 'vue'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
-import { useProgramStore } from '@/stores/program'
+import { useFiltersStore } from '@/stores/filters'
 
-const programStore = useProgramStore()
+const filtersStore = useFiltersStore()
 
 const hasThemeCard = computed(() => {
-  return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
+  return filtersStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
 
 const theme = computed(() => {
@@ -34,8 +34,8 @@ const theme = computed(() => {
     return UsedTrack.getPriorityTheme()
   }
 
-  if (programStore.hasThemeTypeSelected()) {
-    return programStore.programFilters[FilterItemKeys.themeType]
+  if (filtersStore.hasThemeTypeSelected()) {
+    return filtersStore.filters[FilterItemKeys.themeType]
   }
 
   return ''

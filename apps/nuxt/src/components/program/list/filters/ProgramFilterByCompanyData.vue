@@ -3,12 +3,12 @@
     id="company-data-filter-content"
     class="fr-pt-2v fr-pb-0-5v"
     :class="{
-      'fr-bg--green--lightness': programFilters[FilterItemKeys.companyData],
-      'fr-bg--grey--lightness': !programFilters[FilterItemKeys.companyData]
+      'fr-bg--green--lightness': filters[FilterItemKeys.companyData],
+      'fr-bg--grey--lightness': !filters[FilterItemKeys.companyData]
     }"
   >
     <DsfrCheckbox
-      v-model="programFilters[FilterItemKeys.companyData]"
+      v-model="filters[FilterItemKeys.companyData]"
       :value="`selected-company-${companyName}`"
       small
       name="companyFilter"
@@ -18,7 +18,7 @@
         <span
           class="fr-text--bold fr-text--sm"
           :class="{
-            'fr-text--grey': !programFilters[FilterItemKeys.companyData],
+            'fr-text--grey': !filters[FilterItemKeys.companyData],
             'fr-text--black': navigation.isQuestionnaireResult(),
             'fr-pl-0-5v': !Breakpoint.isSmallScreen(),
             'fr-pl-2v': Breakpoint.isMobile()
@@ -32,7 +32,7 @@
         v-for="(detail, key) in filterData.details"
         :key="key"
         class="fr-mb-2v"
-        :class="{ 'fr-text--grey': !programFilters[FilterItemKeys.companyData] }"
+        :class="{ 'fr-text--grey': !filters[FilterItemKeys.companyData] }"
       >
         <div class="fr-grid-row">
           <div class="fr-col-1 fr-col-content--middle">
@@ -51,11 +51,11 @@
 </template>
 
 <script setup lang="ts">
-import { useProgramStore } from '@/stores/program'
-import { CompanyDataStorageKey, FilterItemKeys, type ProgramFiltersType, SizeToText, StructureSize } from '@/types'
+import { CompanyDataStorageKey, FilterItemKeys, FiltersType, SizeToText, StructureSize } from '@/types'
 import { CompanyData } from '@/tools/companyData'
 import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
+import { useFiltersStore } from '@/stores/filters'
 
 type CompanyFilterProps = {
   title: ComputedRef<string | undefined>
@@ -71,7 +71,7 @@ type CompanyFilterDetailProps = {
   icon?: string
 }
 const navigation = new Navigation()
-const programFilters: ProgramFiltersType = useProgramStore().programFilters
+const filters: FiltersType = useFiltersStore().filters
 
 const registeredData = CompanyData.dataRef
 const hasRegisteredData = CompanyData.isDataFull()
@@ -91,7 +91,7 @@ const filterData: CompanyFilterProps = {
 watch(
   hasRegisteredData,
   (value) => {
-    programFilters[FilterItemKeys.companyData] = value
+    filters[FilterItemKeys.companyData] = value
   },
   { immediate: true }
 )
