@@ -57,9 +57,7 @@ export default class ProjectFilter {
       return true
     }
 
-    console.log('Is company selected', companySelected)
     if (companySelected) {
-      console.log('CompanyData.company:', CompanyData.company)
       if ((CompanyData.company as EstablishmentFront)?.codeNAF1) {
         return project.sectors.includes((CompanyData.company as EstablishmentFront)?.codeNAF1)
       } else if (CompanyData.company?.secteur) {

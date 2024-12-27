@@ -35,7 +35,7 @@
               <ProgramModalFilter />
             </div>
             <div class="fr-col-12 fr-mt-2v">
-              <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-lg--left">
+              <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-lg--left project-cards-container">
                 <div
                   v-for="project in sortedProjects"
                   :key="project.id"
@@ -83,6 +83,7 @@ useSeoMeta(MetaSeo.get(title, description))
 const filteredProjects = computed(() => {
   return projects.value ? projectStore.getProjectsByFilters(projects.value) : undefined
 })
+
 const sortedProjects = ProjectSorter.sort(filteredProjects)
 
 const hasFullRegisteredData = CompanyData.isDataFull()
@@ -99,3 +100,8 @@ onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
 })
 </script>
+<style lang="scss" scoped>
+.project-cards-container {
+  padding: 0.2rem;
+}
+</style>
