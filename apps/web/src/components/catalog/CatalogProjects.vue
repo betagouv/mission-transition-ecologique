@@ -1,6 +1,6 @@
 <template>
-  <TeeDsfrBreadcrumb />
-  <CatalogBanner>
+  <TeeDsfrBreadcrumb v-if="showBreadcrumbs" />
+  <CatalogBanner v-if="showTitle">
     <template #title> {{ title }} </template>
     <template #description> {{ description }} </template>
   </CatalogBanner>
@@ -65,7 +65,14 @@ import { Theme } from '@/utils/theme'
 const projectStore = useProjectStore()
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
-
+interface Props {
+  showTitle: boolean
+  showBreadcrumbs: boolean
+}
+withDefaults(defineProps<Props>(), {
+  showTitle: true,
+  showBreadcrumbs: true
+})
 const projects = ref<ProjectType[]>()
 const hasError = ref<boolean>(false)
 
