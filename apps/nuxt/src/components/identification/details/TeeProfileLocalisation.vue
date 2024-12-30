@@ -1,6 +1,6 @@
 <template>
   <p
-    v-if="infos.value"
+    v-if="hasData"
     class="fr-tag fr-mb-4v fr-bg--blue-france--lightness"
   >
     <span class="fr-pr-4v">{{ localisationLabel }}</span>
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div
-      v-if="localisationResults.length && !infos.value && showResults"
+      v-if="localisationResults.length && showResults"
       id="localisation-response"
       class="fr-bg--white"
     >
@@ -82,6 +82,9 @@ const props = defineProps<Props>()
 const selectedLocalisation = defineModel<CompanyLocalisationType>()
 const localisationInput = ref<string>('')
 const debouncedLocalisationInput = useDebounce(localisationInput, 1000)
+const hasData = computed(() => {
+  return props.infos.value?.codePostal && props.infos.value.region && props.infos.value.ville
+})
 watch(debouncedLocalisationInput, (newValue) => {
   if (newValue) {
     searchLocalisation()
@@ -97,7 +100,7 @@ const showResults = ref<boolean>(false)
 const hasInput = computed<boolean>(() => debouncedLocalisationInput.value.length >= 3 && !!debouncedLocalisationInput.value)
 const noResults = computed<boolean>(() => localisationResults.value.length === 0 && hasInput.value && showResults.value && !isLoading.value)
 const errorMsg = computed<string>(() => {
-  if (props.showError || (hasInput.value && !isLoading.value && showResults.value)) {
+  if (props.showError) {
     return Translation.t('register.localisation.mandatory')
   } else if (noResults.value) {
     return Translation.t('register.localisation.noResults')
