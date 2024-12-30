@@ -69,9 +69,9 @@
 <script lang="ts" setup>
 import { RegisterDetailLocalisation, ConvertedCommune, CompanyLocalisationType } from '@/types'
 import LocalisationApi from '@/tools/api/localisationApi'
-import { onClickOutside } from '@vueuse/core'
+import { onClickOutside, useDebounce } from '@vueuse/core'
 import { CompanyData } from '@/tools/companyData'
-import { useDebounce } from '@vueuse/core'
+import Translation from '@/tools/translation'
 
 interface Props {
   infos: RegisterDetailLocalisation
@@ -94,19 +94,15 @@ const localisationResults = ref<ConvertedCommune[]>([])
 const isLoading = ref<boolean>(false)
 const localisationApi = new LocalisationApi()
 const showResults = ref<boolean>(false)
+const hasInput = computed<boolean>(() => debouncedLocalisationInput.value.length >= 3 && !!debouncedLocalisationInput.value)
+const noResults = computed<boolean>(() => localisationResults.value.length === 0 && hasInput.value && showResults.value && !isLoading.value)
 const errorMsg = computed<string>(() => {
-  if (props.showError || (!debouncedLocalisationInput.value && !isLoading.value && showResults.value)) {
-    return 'La sélection de la ville est nécessaire.'
-  } else if (
-    localisationResults.value.length === 0 &&
-    debouncedLocalisationInput.value &&
-    showResults.value &&
-    debouncedLocalisationInput.value.length >= 3 &&
-    !isLoading.value
-  ) {
-    return "Aucune ville n'a été trouvée."
-  } else if (debouncedLocalisationInput.value && debouncedLocalisationInput.value.length < 3) {
-    return '3 caractères minimums.'
+  if (props.showError || (hasInput.value && !isLoading.value && showResults.value)) {
+    return Translation.t('register.localisation.mandatory')
+  } else if (noResults.value) {
+    return Translation.t('register.localisation.noResults')
+  } else if (!hasInput.value) {
+    return Translation.t('register.localisation.tooShort')
   }
   return ''
 })

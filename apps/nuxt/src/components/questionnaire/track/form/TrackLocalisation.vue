@@ -54,14 +54,11 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { type TrackOptionsInput, ConvertedCommune, CompanyLocalisationType } from '@/types'
+import { type TrackOptionsInput, ConvertedCommune, CompanyLocalisationType, TrackOptionItem } from '@/types'
 import { CompanyData } from '@/tools/companyData'
-import { useDebounce } from '@vueuse/core'
-import type { TrackOptionItem } from '@/types'
-import { computed } from 'vue'
+import { useDebounce, onClickOutside } from '@vueuse/core'
 import Translation from '@/tools/translation'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
-import { onClickOutside } from '@vueuse/core'
 
 interface Props {
   option: TrackOptionsInput
@@ -84,17 +81,13 @@ const updateModelValue = (value: string) => {
 const localisationResults = ref<ConvertedCommune[]>([])
 const isLoading = ref<boolean>(false)
 const showResults = ref<boolean>(true)
+const hasInput = computed<boolean>(() => !!debouncedLocalisationInput.value && debouncedLocalisationInput.value.length >= 3)
+const noResults = computed<boolean>(() => localisationResults.value.length === 0 && hasInput.value && !isLoading.value)
 const errorMsg = computed<string>(() => {
-  if (
-    localisationResults.value.length === 0 &&
-    showResults.value &&
-    debouncedLocalisationInput.value &&
-    debouncedLocalisationInput.value.length >= 3 &&
-    !isLoading.value
-  ) {
-    return "Aucune ville n'a été trouvée."
-  } else if (debouncedLocalisationInput.value && debouncedLocalisationInput.value.length < 3) {
-    return '3 caractères minimums.'
+  if (noResults.value && showResults.value) {
+    return Translation.t('register.localisation.noResults')
+  } else if (!hasInput.value) {
+    return Translation.t('register.localisation.tooShort')
   }
   return ''
 })
