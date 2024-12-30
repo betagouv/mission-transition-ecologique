@@ -6,11 +6,11 @@ const SectorEnum = z.nativeEnum(Sector)
 const StructureSizeEnum = z.nativeEnum(StructureSize)
 
 const ManualCompanyDataSchema: z.ZodType<ManualCompanyData> = z.object({
-  region: RegionEnum.optional(),
-  ville: z.string().optional(),
-  codePostal: z.string().optional(),
+  region: RegionEnum,
+  ville: z.string(),
+  codePostal: z.string(),
   secteur: SectorEnum,
-  denomination: z.string(),
+  denomination: z.string().optional(),
   structure_size: StructureSizeEnum.optional()
 })
 
@@ -23,7 +23,7 @@ const SiretCompanyDataSchema: z.ZodType<EstablishmentFront> = z.object({
   ville: z.string(),
   codePostal: z.string(),
   legalCategory: LegalCategoryEnum.or(z.string()),
-  region: RegionEnum.optional(),
+  region: RegionEnum,
   structure_size: StructureSizeEnum.optional(),
   denomination: z.string().optional(),
   secteur: z.string(),
@@ -41,7 +41,7 @@ export class CompanyDataValidator {
       return true
     } catch (error) {
       if (error instanceof z.ZodError) {
-        console.error('Missing required field in Company Data', error.issues[0])
+        console.warn('Missing required field in Company Data', error.issues[0])
       } else {
         console.error('Error validating Company Data', error)
       }

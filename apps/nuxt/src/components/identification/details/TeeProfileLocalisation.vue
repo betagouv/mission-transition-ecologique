@@ -101,7 +101,7 @@ const errorMsg = computed<string>(() => {
     return Translation.t('register.localisation.mandatory')
   } else if (noResults.value) {
     return Translation.t('register.localisation.noResults')
-  } else if (!hasInput.value) {
+  } else if (!hasInput.value && debouncedLocalisationInput.value.length > 0) {
     return Translation.t('register.localisation.tooShort')
   }
   return ''
