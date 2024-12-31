@@ -5,6 +5,7 @@
       <TeeCta />
     </div>
   </div>
+  <h1 class="fr-container fr-text--blue-france fr-py-8v">Quel est votre projet ?</h1>
   <CatalogProjects
     :show-breadcrumbs="false"
     :show-title="false"

@@ -2,9 +2,6 @@
   <TeeDsfrBreadcrumb v-if="!hasSpinner" />
   <CatalogBanner>
     <template #title> {{ title }} </template>
-    <template #description>
-      {{ description }}
-    </template>
   </CatalogBanner>
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
@@ -88,10 +85,7 @@ const programStore = useProgramStore()
 const programs = ref<ProgramData[]>()
 const hasError = ref<boolean>(false)
 
-const title = 'Le catalogue des aides publiques à la transition écologique'
-const description =
-  'Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :' +
-  'ADEME, Bpifrance, CCI, CMA, etc.'
+const title = 'Les aides à la transition écologique'
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
@@ -130,7 +124,7 @@ const showThemeCard = computed(() => {
 })
 
 onBeforeMount(async () => {
-  useSeoMeta(MetaSeo.get(title, description))
+  useSeoMeta(MetaSeo.get(title))
 
   const result = await programStore.programs
   if (result.isOk) {

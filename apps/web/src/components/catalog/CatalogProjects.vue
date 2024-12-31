@@ -2,7 +2,6 @@
   <TeeDsfrBreadcrumb v-if="showBreadcrumbs" />
   <CatalogBanner v-if="showTitle">
     <template #title> {{ title }} </template>
-    <template #description> {{ description }} </template>
   </CatalogBanner>
 
   <div class="fr-container fr-mt-6v">
@@ -76,8 +75,7 @@ withDefaults(defineProps<Props>(), {
 const projects = ref<ProjectType[]>()
 const hasError = ref<boolean>(false)
 
-const title = 'Le catalogue des projets de transition écologique'
-const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
+const title = 'Les projets de transition écologique'
 
 const theme = Theme.getThemeFromSelectedTheme()
 
@@ -105,7 +103,7 @@ const hasFilteredProjects = computed(() => {
 })
 
 onBeforeMount(async () => {
-  useSeoMeta(MetaSeo.get(title, description))
+  useSeoMeta(MetaSeo.get(title))
 
   navigationStore.hasSpinner = true
   const projectResult = await projectStore.projects
