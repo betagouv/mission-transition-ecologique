@@ -106,12 +106,12 @@ const operators = [
 const otherOperators = [
   {
     label: 'République française',
-    img: '/images/logos/republique_francaise_rvb-1536x1392.webp',
+    img: '/images/logos/republique-francaise-logo.png',
     width: '80px'
   },
   {
     label: 'Conseiller entreprise',
-    img: '/images/logos/logo-conseillers-entreprises.png',
+    img: '/images/logos/conseillers-entreprises.service-public.fr.svg',
     width: '260px'
   }
 ]
