@@ -39,7 +39,7 @@
           :key="operator.label"
           :src="operator.img"
           :alt="operator.label"
-          width="60px"
+          width="70px"
           class="fr-m-2v"
         />
       </div>
