@@ -1,11 +1,17 @@
 <template>
   <TeeDsfrBreadcrumb v-if="!hasSpinner" />
-  <CatalogBanner>
-    <template #title> {{ title }} </template>
-  </CatalogBanner>
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+        <div
+          class="fr-col-12 fr-mt-3v"
+          :class="{
+            'fr-col-offset-md-2 fr-col-md-10 fr-col-justify--left': !hasError,
+            'fr-col-md-12 fr-col-justify--center': hasError
+          }"
+        >
+          <h1 class="fr-text--blue-france">{{ title }}</h1>
+        </div>
         <div
           class="fr-col-12 fr-mt-3v"
           :class="{

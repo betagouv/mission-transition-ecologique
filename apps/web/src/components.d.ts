@@ -7,7 +7,6 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    CatalogBanner: typeof import('./components/catalog/element/CatalogBanner.vue')['default']
     CatalogPrograms: typeof import('./components/catalog/CatalogPrograms.vue')['default']
     CatalogProjects: typeof import('./components/catalog/CatalogProjects.vue')['default']
     ConsentElement: typeof import('./components/consent/ConsentElement.vue')['default']

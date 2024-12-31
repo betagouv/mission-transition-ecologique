@@ -1,10 +1,12 @@
 <template>
   <TeeDsfrBreadcrumb v-if="showBreadcrumbs" />
-  <CatalogBanner v-if="showTitle">
-    <template #title> {{ title }} </template>
-  </CatalogBanner>
-
   <div class="fr-container fr-mt-6v">
+    <div
+      v-if="showTitle"
+      class="fr-col-10 fr-col-lg-8"
+    >
+      <h1 class="fr-text--blue-france">{{ title }}</h1>
+    </div>
     <div class="fr-grid-row fr-grid-row--center">
       <div>
         <div class="fr-col-12 fr-col-justify--left fr-mt-3v">
