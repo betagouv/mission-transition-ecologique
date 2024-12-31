@@ -18,7 +18,10 @@
           radius-size="2-5v"
         />
         <div v-if="hasFilteredProjects">
-          <div class="fr-col-12 fr-text--blue-france tee-font-style--italic fr-mt-3v">
+          <div
+            v-if="showCounter"
+            class="fr-col-12 fr-text--blue-france tee-font-style--italic fr-mt-3v"
+          >
             <TeeCounterResult :to-count="filteredProjects" />
           </div>
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-mt-0">
@@ -65,11 +68,15 @@ const projectStore = useProjectStore()
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
 interface Props {
-  showTitle: boolean
-  showBreadcrumbs: boolean
+  showTitle?: boolean
+  showLimit?: number
+  showCounter?: boolean
+  showBreadcrumbs?: boolean
 }
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   showTitle: true,
+  showLimit: -1,
+  showCounter: true,
   showBreadcrumbs: true
 })
 const projects = ref<ProjectType[]>()
@@ -108,7 +115,7 @@ onBeforeMount(async () => {
   navigationStore.hasSpinner = true
   const projectResult = await projectStore.projects
   if (projectResult.isOk) {
-    projects.value = projectResult.value
+    projects.value = projectResult.value.slice(0, props.showLimit)
   } else {
     hasError.value = true
   }
