@@ -5,13 +5,13 @@ const RegionEnum = z.nativeEnum(Region)
 const StructureSizeEnum = z.nativeEnum(StructureSize)
 
 const ManualCompanyDataSchema: z.ZodType<ManualCompanyData> = z.object({
-  region: RegionEnum.optional(),
-  ville: z.string().optional(),
-  codePostal: z.string().optional(),
-  secteur: z.string().optional(),
-  codeNAF: z.string().optional(),
-  codeNAF1: z.string().optional(),
-  denomination: z.string().optional(),
+  region: RegionEnum,
+  ville: z.string(),
+  codePostal: z.string(),
+  secteur: z.string(),
+  codeNAF: z.string(),
+  codeNAF1: z.string(),
+  denomination: z.string(),
   structure_size: StructureSizeEnum.optional()
 })
 
