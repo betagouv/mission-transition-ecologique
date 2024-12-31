@@ -1,14 +1,17 @@
 <template>
   <TeeDsfrBreadcrumb v-if="!hasSpinner" />
-  <CatalogBanner>
-    <template #title> {{ title }} </template>
-    <template #description>
-      {{ description }}
-    </template>
-  </CatalogBanner>
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+        <div
+          class="fr-col-12 fr-mt-3v"
+          :class="{
+            'fr-col-offset-md-2 fr-col-md-10 fr-col-justify--left': !hasError,
+            'fr-col-md-12 fr-col-justify--center': hasError
+          }"
+        >
+          <h1 class="fr-text--blue-france">{{ title }}</h1>
+        </div>
         <div
           class="fr-col-12 fr-mt-3v"
           :class="{
@@ -96,12 +99,9 @@ onNuxtReady(async () => {
   await new ProgramManager().getDependentCompanyData(false)
 })
 
-const title = 'Le catalogue des aides publiques à la transition écologique'
-const description =
-  'Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :' +
-  'ADEME, Bpifrance, CCI, CMA, etc.'
+const title = 'Les aides à la transition écologique'
 
-useSeoMeta(MetaSeo.get(title, description))
+useSeoMeta(MetaSeo.get(title))
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
