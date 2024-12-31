@@ -117,7 +117,7 @@ onBeforeMount(async () => {
   navigationStore.hasSpinner = true
   const projectResult = await projectStore.projects
   if (projectResult.isOk) {
-    projects.value = projectResult.value.slice(0, props.showLimit)
+    projects.value = props.showLimit !== -1 ? projectResult.value.slice(0, props.showLimit) : projectResult.value
   } else {
     hasError.value = true
   }
