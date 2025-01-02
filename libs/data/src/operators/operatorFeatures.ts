@@ -1,15 +1,14 @@
 import path from 'path'
 import fs from 'fs'
-import { fileURLToPath } from 'url'
 import { OperatorBaserow } from '../common/baserow/operatorBaserow'
 import { RawOperator } from './types/domain'
 import { FileManager } from '../common/fileManager'
 
 export class OperatorFeatures {
-  private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
-  private readonly _outputFilePath: string = path.join(this.__dirname, '../../static/operators.json')
-  private readonly _outputTypeFilePath: string = path.join(this.__dirname, './types/generatedShared.ts')
-  private readonly _schemaFilePath = path.join(this.__dirname, '../../schemas/program-with-publicodes-schema.json')
+  private readonly __dirname = process.cwd()
+  private readonly _outputFilePath: string = path.join(this.__dirname, './static/operators.json')
+  private readonly _outputTypeFilePath: string = path.join(this.__dirname, './src/operators/types/generatedShared.ts')
+  private readonly _schemaFilePath = path.join(this.__dirname, './schemas/program-with-publicodes-schema.json')
   async updateOperatorsData() {
     const operators = await new OperatorBaserow().getAll()
     FileManager.writeJson(this._outputFilePath, operators, 'operator.json updated')
