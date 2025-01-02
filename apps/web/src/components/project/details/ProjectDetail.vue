@@ -55,10 +55,8 @@ onBeforeMount(async () => {
 
   project.value = projectStore.currentProject
 
-  const selectedThemeId = Theme.getThemeFromSelectedOrPriorityTheme()
-
   if (project.value) {
-    const themeId = selectedThemeId.value ? project.value?.themes.find((t) => t === selectedThemeId.value) : project.value?.mainTheme
+    const themeId = project.value?.mainTheme
 
     themeColor.value = Theme.getColorById(themeId as ThemeId)
   }
