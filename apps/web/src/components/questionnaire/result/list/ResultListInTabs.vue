@@ -42,7 +42,7 @@ import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/utils/theme'
-import { CompanyDataStorage } from '@/utils/companyData'
+import { CompanyData } from '@/utils/companyData'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -52,7 +52,7 @@ const projects = ref<Project[]>()
 const hasError = ref<boolean>(false)
 const { tabSelectedOnList } = storeToRefs(navigationStore)
 
-const registeredData = CompanyDataStorage.getData()
+const registeredData = CompanyData.dataRef
 
 const titles: TeeDsfrTabsProps['tabTitles'] = [
   {
