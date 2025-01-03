@@ -103,8 +103,12 @@ export const useNavigationStore = defineStore('navigation', () => {
   }
 
   function deleteSearchParam(name: string) {
-    searchParams.value.delete(name)
-    setStringOfSearchParams()
+    const params = new URLSearchParams(searchParams.value.toString())
+    if (params.has(name)) {
+      params.delete(name)
+      searchParams.value = params
+      setStringOfSearchParams()
+    }
   }
 
   function setSearchParam(name: string, value: string | string[]) {
@@ -112,7 +116,9 @@ export const useNavigationStore = defineStore('navigation', () => {
       deleteSearchParam(name)
       value.forEach((value) => searchParams.value.append(name, value))
     } else {
-      searchParams.value.set(name, value)
+      const params = new URLSearchParams(searchParams.value.toString())
+      params.set(name, value)
+      searchParams.value = params
     }
 
     setStringOfSearchParams()

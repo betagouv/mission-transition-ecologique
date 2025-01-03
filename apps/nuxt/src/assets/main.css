@@ -1233,15 +1233,15 @@
     background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
-.fr-badge.fr-badge--info {
-  color: #001891;
-}
-
 .fr-bg--none {
   background-image: none !important;
 }
 .fr-bg--none:hover {
   background-color: transparent !important;
+}
+
+.fr-badge.fr-badge--info {
+  color: #001891;
 }
 
 .fr-banner {
@@ -1965,49 +1965,49 @@
   color: var(--text-default-grey);
 }
 .fr-card--yellow {
-  background-color: #facf35;
-  color: #000091;
+  background-color: #facf35 !important;
+  color: #000091 !important;
 }
 .fr-card--yellow .fr-card__title {
-  color: #000091;
+  color: #000091 !important;
 }
 .fr-card--deep-red .fr-card__title {
   color: var(--text-default-grey);
 }
 .fr-card--red {
-  background-color: #fca081;
-  color: #000091;
+  background-color: #fca081 !important;
+  color: #000091 !important;
 }
 .fr-card--red .fr-card__title {
-  color: #000091;
+  color: #000091 !important;
 }
 .fr-card--purple {
-  background-color: #6a62f4;
-  color: var(--text-inverted-blue-france);
+  background-color: #6a62f4 !important;
+  color: var(--text-inverted-blue-france) !important;
 }
 .fr-card--purple .fr-card__title {
-  color: var(--text-inverted-blue-france);
+  color: var(--text-inverted-blue-france) !important;
 }
 .fr-card--green {
-  background-color: #1ebe8e;
-  color: var(--text-inverted-blue-france);
+  background-color: #1ebe8e !important;
+  color: var(--text-inverted-blue-france) !important;
 }
 .fr-card--green .fr-card__title {
-  color: var(--text-inverted-blue-france);
+  color: var(--text-inverted-blue-france) !important;
 }
 .fr-card--blue-france {
-  background-color: #001891;
-  color: var(--text-inverted-blue-france);
+  background-color: #001891 !important;
+  color: var(--text-inverted-blue-france) !important;
 }
 .fr-card--blue-france .fr-card__title {
-  color: var(--text-inverted-blue-france);
+  color: var(--text-inverted-blue-france) !important;
 }
 .fr-card--grey {
-  background-color: #777;
-  color: #000091;
+  background-color: #777 !important;
+  color: #000091 !important;
 }
 .fr-card--grey .fr-card__title {
-  color: #000091;
+  color: #000091 !important;
 }
 .fr-card.theme-card {
   height: 100%;
@@ -2648,6 +2648,14 @@
   outline-width: unset;
   outline-color: unset;
   outline-style: none;
+}
+.fr-input::placeholder {
+  font-style: normal !important;
+  color: var(--text-default-grey);
+}
+
+.fr-input--empty-text {
+  height: 1.25rem;
 }
 
 @media (min-width: 0) {
@@ -4092,11 +4100,15 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   }
 }
 
+.fr-select-group {
+  margin-bottom: 0 !important;
+}
 .fr-select-group select {
   background-color: #fff;
 }
 
 .fr-select {
+  margin-top: 0 !important;
   background-color: #fff;
 }
 
@@ -4125,42 +4137,42 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
 
 a.fr-tag[aria-pressed=true].fr-tag--yellow, button.fr-tag[aria-pressed=true].fr-tag--yellow {
   background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #facf35 0.625rem) !important;
-  color: #000091;
+  color: #000091 !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--yellow.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--yellow.fr-tag--sm {
   background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #facf35 0.5rem) !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--red, button.fr-tag[aria-pressed=true].fr-tag--red {
   background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #fca081 0.625rem) !important;
-  color: #000091;
+  color: #000091 !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm {
   background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #fca081 0.5rem) !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--purple, button.fr-tag[aria-pressed=true].fr-tag--purple {
   background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #6a62f4 0.625rem) !important;
-  color: var(--text-inverted-blue-france);
+  color: var(--text-inverted-blue-france) !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--purple.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--purple.fr-tag--sm {
   background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #6a62f4 0.5rem) !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--green, button.fr-tag[aria-pressed=true].fr-tag--green {
   background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #1ebe8e 0.625rem) !important;
-  color: var(--text-inverted-blue-france);
+  color: var(--text-inverted-blue-france) !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--green.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--green.fr-tag--sm {
   background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #1ebe8e 0.5rem) !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--blue-france, button.fr-tag[aria-pressed=true].fr-tag--blue-france {
   background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #001891 0.625rem) !important;
-  color: var(--text-inverted-blue-france);
+  color: var(--text-inverted-blue-france) !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--blue-france.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--blue-france.fr-tag--sm {
   background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #001891 0.5rem) !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--grey, button.fr-tag[aria-pressed=true].fr-tag--grey {
   background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #777 0.625rem) !important;
-  color: #000091;
+  color: #000091 !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm {
   background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #777 0.5rem) !important;
@@ -4216,7 +4228,7 @@ a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=
   line-height: 3.75rem;
 }
 .fr-text--decoration-underline {
-  text-decoration: none;
+  text-decoration: underline;
 }
 .fr-text--decoration-none {
   text-decoration: none;
