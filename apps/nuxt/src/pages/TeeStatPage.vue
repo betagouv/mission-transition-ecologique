@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TeeDsfrBreadcrumb :links="[{ text: 'Statistiques', to: RouteName.Statistics }]" />
+    <TeeDsfrBreadcrumb :links="[{ text: 'Statistiques', to: { name: RouteName.Statistics } }]" />
     <div class="fr-container fr-mb-8w">
       <div class="fr-mb-5w">
         <h1 class="fr-mb-3w">Statistiques d'usage</h1>
@@ -41,7 +41,7 @@
       <div class="fr-col-12 fr-mt-3w fr-mt-md-4w fr-mb-md-8w">
         <h4>Demandes cumulées ces derniers mois</h4>
         <canvas
-          ref="chartCanvas"
+          ref="chart-canvas"
           width="1200"
           :height="isSmallScreen ? 700 : 450"
         />
@@ -100,8 +100,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import Chart from 'chart.js/auto'
 import StatsApi from '@/tools/api/statsApi'
 import { CalloutType, RouteName } from '@/types'
 
@@ -109,7 +107,7 @@ definePageMeta({
   path: '/stats',
   name: RouteName.Statistics
 })
-const chartCanvas = ref<HTMLCanvasElement | null>(null)
+const chartCanvas = useTemplateRef<HTMLCanvasElement>('chart-canvas')
 
 const result = await new StatsApi().get()
 const statsData = result.refData
@@ -118,14 +116,16 @@ const isSmallScreen = computed(() => {
   return import.meta.client ? window.innerWidth < 768 : false
 })
 
-const drawChart = () => {
+const drawChart = async () => {
   if (statsData.value && statsData.value.demandsTimeSeries) {
     const labels = statsData.value.demandsTimeSeries.map((item) => `${item.month}/${item.year}`)
     const data = statsData.value.demandsTimeSeries.map((item) => item.nDemands)
 
-    if (!chartCanvas.value) return
-    const chartContext = chartCanvas.value.getContext('2d')
-    if (!chartContext) return
+    const chartContext = chartCanvas.value?.getContext('2d')
+    if (!chartContext) {
+      return
+    }
+    const Chart = (await import('chart.js/auto')).default
     new Chart(chartContext, {
       type: 'line',
       data: {
@@ -151,8 +151,8 @@ const drawChart = () => {
   }
 }
 
-useRuntimeHook('app:mounted', async () => {
-  drawChart()
+onNuxtReady(async () => {
+  await drawChart()
 })
 </script>
 
