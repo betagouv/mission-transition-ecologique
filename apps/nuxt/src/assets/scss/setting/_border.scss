@@ -1,5 +1,5 @@
-@use '@gouvfr/dsfr/module/color/variable/static' as color;
-@forward '@gouvfr/dsfr/module/color/variable/static';
+@use '@gouvfr/dsfr/src/module/color/variable/static' as color;
+@forward '@gouvfr/dsfr/src/module/color/variable/static';
 
 $border-styles: (
   solid,

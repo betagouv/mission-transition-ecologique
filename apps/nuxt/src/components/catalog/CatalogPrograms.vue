@@ -132,7 +132,6 @@ const theme = computed(() => {
 })
 
 const showNoResultsComponent = computed(() => {
-  console.log('showNoResultsComponent', hasSpinner.value, hasError.value, !countPrograms.value)
   return hasSpinner.value || hasError.value || !countPrograms.value
 })
 
