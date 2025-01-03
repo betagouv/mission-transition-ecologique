@@ -13,13 +13,13 @@
         id="register-modal-content"
         class="fr-container fr-grid-row fr-grid-row--left fr-grid-row--top"
       >
-        <div class="fr-col-12 fr-col-md-7 fr-col-offset-md-2 fr-pb-md-4v fr-pt-8v fr-mb-4v fr-text--yellow">
+        <div class="fr-col-12 fr-col-md-12 fr-col-offset-md-2 fr-pb-md-4v fr-pt-8v fr-text--yellow">
           <div>
-            <div class="fr-h1 fr-mb-0 fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
+            <div class="fr-h2 fr-mb-0 fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
             <TeeDsfrButton
               id="close-register-modal"
               size="sm"
-              class="fr-btn-bg--blue-france--light fr-bg--blue-france--lightness fr-mr-4v fr-mt-8v fr-p-0 fr-text--blue-france fr-radius-a--2v"
+              class="fr-btn-bg--blue-france--light fr-bg--blue-france--lightness fr-mr-4v fr-mt-4v fr-p-0 fr-text--blue-france fr-radius-a--2v"
               @click="closeModal"
             >
               <span class="fr-icon-close-line fr-icon--lg"></span>
