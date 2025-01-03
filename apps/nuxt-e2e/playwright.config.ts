@@ -29,11 +29,11 @@ import { fileURLToPath } from 'node:url'
  */
 export default defineConfig<ConfigOptions>({
   use: {
-    baseURL: 'http://localhost:4242',
+    baseURL: 'http://localhost:4243',
     trace: 'on-first-retry',
     nuxt: {
       rootDir: fileURLToPath(new URL('../nuxt', import.meta.url)),
-      host: 'http://localhost:4242'
+      host: 'http://localhost:4243'
     }
   },
   // use: {
@@ -50,20 +50,21 @@ export default defineConfig<ConfigOptions>({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 1 : 4,
   reporter: [['html', { open: 'never' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   env: {
-  //     VITE_DATA_TEST: 'true',
-  //     THIRD_PARTY_API_ENABLED: 'false',
-  //     PORT: '4243'
-  //   },
-  //   // command: 'npm run build:start',
-  //   url: 'http://localhost:4242',
-  //   reuseExistingServer: !process.env.CI
-  // },
+  webServer: {
+    timeout: 120000,
+    env: {
+      VITE_DATA_TEST: 'true',
+      THIRD_PARTY_API_ENABLED: 'false',
+      PORT: '4243'
+    },
+    command: 'npm run build:start',
+    url: 'http://localhost:4243',
+    reuseExistingServer: !process.env.CI
+  },
   /* Configure projects for major browsers */
   projects: [
     {
