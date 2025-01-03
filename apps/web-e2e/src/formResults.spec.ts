@@ -22,17 +22,19 @@ tests.forEach((singleTest) => {
         }
       })
       await page.goto(singleTest.url, { waitUntil: 'load' })
-      await page.waitForLoadState('networkidle');
+      await page.waitForLoadState('networkidle')
       await page.evaluate((singleTest) => {
         if (singleTest.manual) {
           localStorage.setItem(
             'company',
             JSON.stringify({
-              denomination: 'Entreprise : tertiaire - Bretagne',
+              denomination: 'Entreprise : Aide par le travail - Bretagne',
               region: 'Bretagne',
               ville: 'Brest',
               codePostal: '29200',
-              secteur: 'tertiaire',
+              secteur: 'Aide par le travail',
+              codeNAF: '88.10C',
+              codeNAF1: 'Q'
             })
           )
         } else {
@@ -80,7 +82,7 @@ tests.forEach((singleTest) => {
             }
           } else if (fieldKey === 'needs') {
             const actualNeedsValue = await page.inputValue(selector)
-            expect(actualNeedsValue).toContain(singleTest.manual ? 'tertiaire' : 'Programmation informatique')
+            expect(actualNeedsValue).toContain(singleTest.manual ? 'Aide par le travail' : 'Programmation informatique')
           } else if (['text', 'email', 'tel'].includes(value.type)) {
             await page.locator(selector).fill(value.value as string, { timeout: timeOut })
           } else if (value.type === 'select' && singleTest.type === 'customProject') {
@@ -106,5 +108,5 @@ tests.forEach((singleTest) => {
       console.error(`Test failed for Test ID: ${singleTest.id} - ${e.message}`)
       throw e
     }
-  });
+  })
 })

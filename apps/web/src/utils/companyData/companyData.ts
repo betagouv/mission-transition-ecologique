@@ -9,7 +9,7 @@ import {
   type QuestionnaireData,
   RegisterDetails,
   QuestionnaireRoute,
-  Sector,
+  CompanyActivityType,
   Region,
   ConvertedCommune,
   CompanyLocalisationType,
@@ -51,16 +51,17 @@ export class CompanyData {
     return {
       ...company,
       structure_size: profileData.size.value,
-      ...profileData.localisation.value
+      ...profileData.localisation.value,
+      ...profileData.activity.value
     } as CompanyDataType[CompanyDataStorageKey.Company]
   }
 
   static getManualCompanyData(profileData: RegisterDetails): CompanyDataType[CompanyDataStorageKey.Company] {
     return {
+      ...profileData.activity.value,
       ...profileData.localisation.value,
-      secteur: profileData.activity.value,
       structure_size: profileData.size.value,
-      denomination: `Entreprise : ${profileData.activity.value} - ${profileData.localisation.value?.region}`
+      denomination: `Entreprise : ${profileData.activity.value?.secteur} - ${profileData.localisation.value?.region}`
     } as CompanyDataType[CompanyDataStorageKey.Company]
   }
 
@@ -179,14 +180,14 @@ export class CompanyData {
       CompanyDataStorage.setSize(value as StructureSize)
     }
 
-    if (trackId === TrackId.Sectors) {
+    if (trackId === TrackId.Sectors && selectedOptions.length > 0) {
       CompanyDataStorage.setCompany({
         ...this.company,
-        secteur: value as Sector
+        ...(selectedOptions[0].questionnaireData as CompanyActivityType)
       } as ManualCompanyData)
     }
 
-    if (trackId === TrackId.StructureCity) {
+    if (trackId === TrackId.StructureCity && selectedOptions.length > 0) {
       CompanyDataStorage.setCompany({
         ...this.company,
         ...(selectedOptions[0].questionnaireData as CompanyLocalisationType),

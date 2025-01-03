@@ -10,6 +10,10 @@ export default class TrackComponent {
     return usedTrack.component === TrackComponentType.CitySearch
   }
 
+  static isNAFSearch(usedTrack: UsedTrack, option: TrackOptionsUnion) {
+    return usedTrack.component === TrackComponentType.Activity && isTrackOptionsInput(option) && option.hasInput === HasInputOptions.Search
+  }
+
   static isSelect(usedTrack: UsedTrack) {
     return usedTrack.component === TrackComponentType.Select
   }

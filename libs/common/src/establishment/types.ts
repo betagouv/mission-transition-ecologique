@@ -21,3 +21,9 @@ export interface EstablishmentSearch {
   establishments: EstablishmentFront[]
   resultCount: number
 }
+
+export interface CompanyActivityType {
+  codeNAF: string
+  codeNAF1: string
+  secteur: string
+}

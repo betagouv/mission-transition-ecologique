@@ -1,17 +1,33 @@
 import { workforce } from '@/questionnaire/trackStructureWorkforce'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { LegalCategory, StructureSize, TrackId, CompanyLocalisationType, TrackOptionItem, TrackOptionsUnion } from '@/types'
+import {
+  CompanyActivityType,
+  LegalCategory,
+  StructureSize,
+  TrackId,
+  CompanyLocalisationType,
+  TrackOptionItem,
+  TrackOptionsUnion
+} from '@/types'
 import Format from '@/utils/format'
-import { sectors } from '@/questionnaire/trackStructureSectors'
 import { CompanyData } from '@/utils/companyData'
 import LocalisationApi from '@/service/api/localisationApi'
+import EstablishmentApi from '@/service/api/establishmentApi'
 
 export default class TrackStructure {
   static async searchLocalisation(query: string) {
     const localisationApi = new LocalisationApi()
     return await localisationApi.searchCities(query)
   }
-  static createData(option: TrackOptionsUnion, value?: string, questionnaireData?: CompanyLocalisationType): TrackOptionItem {
+  static async searchActivity(query: string) {
+    const establishmentApi = new EstablishmentApi()
+    return await establishmentApi.searchActivities(query)
+  }
+  static createData(
+    option: TrackOptionsUnion,
+    value?: string,
+    questionnaireData?: CompanyActivityType | CompanyLocalisationType
+  ): TrackOptionItem {
     return {
       option: {
         ...option,
@@ -31,7 +47,7 @@ export default class TrackStructure {
     if (this.getSector()) {
       criteria.push({
         icon: 'fr-icon-check-line',
-        text: Format.capitalize(Format.truncate(TrackStructure.getSectorShortLabel(), 30))
+        text: Format.capitalize(Format.truncate(TrackStructure.getSector(), 30))
       })
     }
     if (this.getLocalisation()) {
@@ -67,10 +83,6 @@ export default class TrackStructure {
 
   static getSector(): string {
     return CompanyData.company?.secteur || ''
-  }
-
-  static getSectorShortLabel(): string {
-    return sectors.options?.find((option) => option.value === this.getSector())?.shortLabel?.fr || this.getSector()
   }
 
   static getSize(): StructureSize {
