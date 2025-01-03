@@ -197,6 +197,7 @@
         </ProgramAccordion>
         <ProgramAccordion
           v-if="program && linkedProjects && linkedProjects.length > 0"
+          id="linked-projects"
           :accordion-id="`${program.id}-linked-projects`"
           :title="Breakpoint.isMobile() ? Translation.t('program.projectExamplesSM') : Translation.t('program.projectExamples')"
         >
@@ -204,6 +205,7 @@
         </ProgramAccordion>
         <ProgramAccordion
           v-if="program && program['description longue']"
+          id="long-description"
           :accordion-id="`${program.id}-long-description`"
           :title="Translation.t('program.programKnowMore')"
         >
@@ -236,11 +238,9 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeProgramDetail > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import ProgramAccordion from '@/components/program/detail/ProgramAccordion.vue'
-import ProgramEligibility from '@/components/program/detail/ProgramEligibility.vue'
-import ProgramLongDescription from '@/components/program/detail/ProgramLongDescription.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
 import { useProgramStore } from '@/stores/program'
+import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
@@ -250,7 +250,6 @@ import { MetaSeo } from '@/tools/metaSeo'
 import Program from '@/tools/program/program'
 import { Scroll } from '@/tools/scroll'
 import Translation from '@/tools/translation'
-import Breakpoint from '@/tools/breakpoints'
 import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/tools/opportunity'
 import { CompanyData } from '@/tools/companyData'
