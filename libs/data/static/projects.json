@@ -232,7 +232,6 @@
       "etude-solaire-thermique",
       "investissement-solaire-thermique",
       "investissement-solaire-thermique-outre-mer",
-      "tremplin",
       "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-vert-ademe",
@@ -679,7 +678,6 @@
     "mainTheme": "energy",
     "programs": [
       "etude-diagnostic-serres",
-      "tremplin",
       "pret-economies-d-energie-pee",
       "aide-financement-occitanie",
       "sud-pret-climat",
@@ -1258,6 +1256,7 @@
     ],
     "mainTheme": "waste",
     "programs": [
+      "etude-alimentation-durable",
       "etude-biodechets",
       "fonds-tourisme-durable",
       "gestion-des-biodechets",
@@ -1316,6 +1315,7 @@
     ],
     "mainTheme": "waste",
     "programs": [
+      "etude-alimentation-durable",
       "etude-gaspillage-alimentaire",
       "fonds-tourisme-durable",
       "investissement-contre-le-gaspillage-alimentaire",
