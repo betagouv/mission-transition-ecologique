@@ -1,11 +1,12 @@
 <template>
-  <TeeDsfrBreadcrumb />
-  <CatalogBanner>
-    <template #title> {{ title }} </template>
-    <template #description> {{ description }} </template>
-  </CatalogBanner>
-
+  <TeeDsfrBreadcrumb v-if="showBreadcrumbs" />
   <div class="fr-container fr-mt-6v">
+    <div
+      v-if="showTitle"
+      class="fr-col-10 fr-col-lg-8"
+    >
+      <h1 class="fr-text--blue-france">{{ title }}</h1>
+    </div>
     <div class="fr-grid-row fr-grid-row--center">
       <div>
         <div class="fr-col-12 fr-col-justify--left fr-mt-3v">
@@ -19,7 +20,10 @@
           radius-size="2-5v"
         />
         <div v-if="hasFilteredProjects">
-          <div class="fr-col-12 fr-text--blue-france tee-font-style--italic fr-mt-3v">
+          <div
+            v-if="showCounter"
+            class="fr-col-12 fr-text--blue-france tee-font-style--italic fr-mt-3v"
+          >
             <TeeCounterResult :to-count="filteredProjects" />
           </div>
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-mt-0">
@@ -65,12 +69,22 @@ import { Theme } from '@/utils/theme'
 const projectStore = useProjectStore()
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
-
+interface Props {
+  showTitle?: boolean
+  showLimit?: number
+  showCounter?: boolean
+  showBreadcrumbs?: boolean
+}
+const props = withDefaults(defineProps<Props>(), {
+  showTitle: true,
+  showLimit: -1,
+  showCounter: true,
+  showBreadcrumbs: true
+})
 const projects = ref<ProjectType[]>()
 const hasError = ref<boolean>(false)
 
-const title = 'Le catalogue des projets de transition écologique'
-const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
+const title = 'Les projets de transition écologique'
 
 const theme = Theme.getThemeFromSelectedTheme()
 
@@ -98,12 +112,12 @@ const hasFilteredProjects = computed(() => {
 })
 
 onBeforeMount(async () => {
-  useSeoMeta(MetaSeo.get(title, description))
+  useSeoMeta(MetaSeo.get(title))
 
   navigationStore.hasSpinner = true
   const projectResult = await projectStore.projects
   if (projectResult.isOk) {
-    projects.value = projectResult.value
+    projects.value = props.showLimit !== -1 ? projectResult.value.slice(0, props.showLimit) : projectResult.value
   } else {
     hasError.value = true
   }
