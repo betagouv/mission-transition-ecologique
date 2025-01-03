@@ -1,5 +1,5 @@
 import RequestApi from '@/service/api/requestApi'
-import type { ProgramData, QuestionnaireData } from '@/types'
+import type { ProgramType, QuestionnaireData } from '@/types'
 import { Result } from 'true-myth'
 
 export default class ProgramApi extends RequestApi {
@@ -10,12 +10,12 @@ export default class ProgramApi extends RequestApi {
     this.query = this.buildQuery
   }
 
-  async get(): Promise<Result<ProgramData[], Error>> {
-    return super.getJson<ProgramData[]>()
+  async get(): Promise<Result<ProgramType[], Error>> {
+    return super.getJson<ProgramType[]>()
   }
 
   async getOne(id: string): Promise<Result<ProgramData, Error>> {
-    return super.getJson<ProgramData>(this.url + '/' + id)
+    return super.getJson<ProgramType>(this.url + '/' + id)
   }
 
   get buildQuery(): string {
