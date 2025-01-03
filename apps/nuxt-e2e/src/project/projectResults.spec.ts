@@ -39,7 +39,7 @@ test(`Check projects found while initially selecting different tags`, async ({ p
   const elementsurlTag1 = await page.$$eval('.teste2e-project-target h3 a', (els) => els.map((el) => el.innerHTML.trim()))
   await goto(urlTag2, { waitUntil: 'hydration' })
   try {
-    await page.waitForSelector('.teste2e-project-target', { timeout: timeOut })
+    await page.locator('.teste2e-project-target').waitFor({ state: 'visible', timeout: timeOut })
   } catch (error) {
     // this is an expected error that can happen
     // - if the number of results is 0

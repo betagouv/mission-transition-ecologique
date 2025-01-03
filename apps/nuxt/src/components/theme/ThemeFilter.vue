@@ -13,7 +13,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { ThemeType, type programFiltersType, TrackId, ThemeId } from '@/types'
+import { ThemeType, type ProgramFiltersType, TrackId, ThemeId, FilterItemKeys } from '@/types'
 import { Theme } from '@/tools/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
@@ -27,7 +27,7 @@ const props = defineProps<Props>()
 const programStore = useProgramStore()
 const usedTrackStore = useUsedTrackStore()
 
-const programFilters: programFiltersType = programStore.programFilters
+const programFilters: ProgramFiltersType = programStore.programFilters
 let hasAllTag = true
 
 if (props.theme) {
@@ -43,7 +43,7 @@ const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
     label: 'Tous',
     tagName: 'button',
     value: '',
-    'aria--pressed': programFilters.themeTypeSelected === ''
+    'aria--pressed': programFilters[FilterItemKeys.themeType] === ''
   }
 
   const tags: TeeDsfrTagProps[] = []
@@ -68,7 +68,7 @@ const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
 })
 
 function isActive(tag: ThemeType) {
-  return Theme.getTags().length === 1 || programFilters.themeTypeSelected === (tag.id as string)
+  return Theme.getTags().length === 1 || programFilters[FilterItemKeys.themeType] === (tag.id as string)
 }
 
 const updateThemeTypeSelected = async (value: string | number) => {

@@ -1,0 +1,124 @@
+titre: Impulsion Environnement
+promesse: >-
+  Financez vos investissements favorisant votre transition écologique et
+  énergétique.
+description: "La Région Normandie apporte un soutien financier sous forme de subvention ou d'un prêt à taux zéro aux entreprises souhaitant investir pour améliorer leur impact écologique. Le dispositif \"Impulsion Environnement\" finance les investissements pour les projets suivants : photovoltaïques en autoconsommation, méthanisation, hydrogène, mobilité, process industriels et chauffage des bâtiments. Il permet de financer également les études liées à l’opportunité, la faisabilité, au choix technologique et au dimensionnement des\_investissements à réaliser."
+description longue: >-
+  L'aide de la région Normandie "Impulsion Environnement" appuie les entreprises
+  dans leur transition écologique et énergétique, en particulier dans les
+  domaines suivants : 
+
+  - Aides à l’investissement en faveur de la protection de l’environnement, y
+  compris la décarbonation ;
+
+  - Aides à l’investissement en faveur des infrastructures de recharge ou de
+  ravitaillement ;
+
+  - Aides à l’investissement en faveur de l’acquisition de véhicules propres ou
+  de véhicules à émission nulle et de la mise à niveau de véhicules ;
+
+  - Aides à l'investissement en faveur des mesures d'efficacité énergétiques et
+  d’économie d’énergie concernant le process et utilités industrielles (hors
+  investissements liés au bâtiment) ;
+
+  - Aides à l'investissement en faveur de la cogénération à haut rendement ;
+
+  - Aides à l'investissement en faveur de la production d’énergie renouvelables
+  et de l’hydrogène renouvelable ;
+
+  - Aides à l’investissement en faveur de l’utilisation efficace des ressources
+  et du soutien à la transition vers une économie circulaire ;
+
+  - Aides aux études liées à l’opportunité, la faisabilité, au choix
+  technologique et au dimensionnement des investissements. (ces études pourront
+  entrer dans le calcul du montant des dépenses éligibles du dossier lié à
+  l’investissement)
+
+  - Aides aux études environnementales inclues dans un projet d’investissement
+  (hors certifications et obligations réglementaires ) 
+
+
+  Les prestations externes d'études environnementales sont éligibles à une
+  subvention pouvant représenter jusqu’à 50 % du montant éligible, jusqu'à 100
+  000 € HT.
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Normandie
+url: https://www.normandie.fr/impulsion-environnement
+nature de l'aide: financement
+montant du financement: Variable selon le projet
+objectifs:
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant le règlement du
+      dispositif "Impulsion environnement"
+    liens:
+      - lien: >-
+          https://www.normandie.fr/sites/default/files/2024-11/reglement_impulsion_environnement_fev_2024.docx
+        texte: Règlement Impulsion environnement
+  - description: >-
+      Prenez contact avec un conseiller de l'Agence de Développement pour la
+      Normandie afin de vous accompagner dans votre démarche et obtenir les
+      documents à compléter pour déposer votre demande.
+    liens:
+      - lien: https://adnormandie.fr/dispositif/impulsion-environnement/
+        texte: Les interlocuteurs en fonction de votre secteur
+  - description: >-
+      Déposez votre dossier de financement. Attention, à ce stade votre
+      investissement ou étude ne doit pas avoir commencé.
+  - description: >-
+      Votre dossier est ensuite instruit et soumis à la Région Normandie pour
+      approbation.
+  - description: >-
+      Si votre demande est acceptée, le prêt et/ou la subvention seront versés
+      en une ou plusieurs fois.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Normandie
+  secteur d'activité:
+    - >-
+      Ne sont pas éligibles à l’aide, les exploitations agricoles, les
+      associations à but non commercial, les organismes publics, les sociétés
+      d’économies mixtes et les promoteurs immobilier.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Normandie

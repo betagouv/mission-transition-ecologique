@@ -79,12 +79,14 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { ProgramManager } from '@/tools/program/programManager'
-import { ThemeId } from '@/types'
+import { FilterItemKeys, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { computed } from 'vue'
+import { useNavigationStore } from '@/stores/navigation'
 
 const programStore = useProgramStore()
+const navigationStore = useNavigationStore()
 
 const { programs, hasError } = storeToRefs(programStore)
 
@@ -112,7 +114,7 @@ const countPrograms = computed(() => {
 })
 
 const hasSpinner = computed(() => {
-  return programs.value === undefined && !hasError.value
+  return navigationStore.hasSpinner
 })
 
 const hasThemeCard = computed(() => {
@@ -121,7 +123,7 @@ const hasThemeCard = computed(() => {
 
 const theme = computed(() => {
   if (programStore.hasThemeTypeSelected()) {
-    return programStore.programFilters.themeTypeSelected
+    return programStore.programFilters[FilterItemKeys.themeType]
   }
 
   if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {
@@ -132,7 +134,6 @@ const theme = computed(() => {
 })
 
 const showNoResultsComponent = computed(() => {
-  console.log('showNoResultsComponent', hasSpinner.value, hasError.value, !countPrograms.value)
   return hasSpinner.value || hasError.value || !countPrograms.value
 })
 
