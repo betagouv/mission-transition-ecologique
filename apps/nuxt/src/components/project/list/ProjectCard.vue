@@ -53,10 +53,10 @@ const priorityTag: string = 'A FAIRE EN PRIORITÉ'
 const navigationStore = useNavigationStore()
 const navigation = new Navigation()
 const isCatalog = navigation.isCatalogProjects()
-
+const isHomePage = navigation.isByRouteName(RouteName.Homepage)
 const getRouteToProjectDetail = (project: ProjectType): RouteLocationRaw => {
   return {
-    name: isCatalog ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
+    name: isCatalog || isHomePage ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
     params: { projectSlug: project.slug },
     query: navigationStore.query
   }
