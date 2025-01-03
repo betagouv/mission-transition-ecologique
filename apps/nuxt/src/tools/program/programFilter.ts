@@ -1,14 +1,19 @@
 import {
-  ProgramAidType,
-  Region,
-  type ProgramData,
-  type programFiltersType,
-  type ValueOf,
-  ThemeId,
+  FilterItemKeys,
   FiltersKeys,
-  OperatorFilter
+  FiltersType,
+  OperatorFilter,
+  ProgramAidType,
+  type ProgramData,
+  ProgramEligibility,
+  ProgramType,
+  Region,
+  ThemeId,
+  type ValueOf
 } from '@/types'
 import { enrichedOperators } from '@tee/data/static'
+import { useFiltersStore } from '@/stores/filters'
+import { isArray } from 'chart.js/helpers'
 
 export default class ProgramFilter {
   static byAidType(program: ProgramData, programAidTypesSelected: ProgramAidType[]) {
@@ -17,6 +22,19 @@ export default class ProgramFilter {
     }
 
     return programAidTypesSelected.includes(program["nature de l'aide"])
+  }
+
+  static byCompanyData(program: ProgramData, companySelected: boolean) {
+    if (!this.isValidFilterValue(companySelected)) {
+      return true
+    }
+
+    if (companySelected) {
+      useFiltersStore().resetFilter(FilterItemKeys.regionAid)
+      return ProgramEligibility.isEligible(program as unknown as ProgramType)
+    }
+
+    return true
   }
 
   static byRegion(program: ProgramData, regionsSelected: Region[]) {
@@ -69,11 +87,11 @@ export default class ProgramFilter {
     return true
   }
 
-  static isValidFilterValue(programFilterValue: ValueOf<programFiltersType>) {
-    return programFilterValue !== ''
+  static isValidFilterValue(filterValue: ValueOf<FiltersType>) {
+    return filterValue !== ''
   }
 
-  static isValidFilterValues(programFilterValue: ValueOf<programFiltersType>) {
-    return programFilterValue.length > 0
+  static isValidFilterValues(filterValue: ValueOf<FiltersType>) {
+    return typeof filterValue !== 'boolean' && isArray(filterValue) && filterValue.length > 0
   }
 }

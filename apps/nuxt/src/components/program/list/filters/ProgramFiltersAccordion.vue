@@ -1,67 +1,65 @@
 <template>
-  <DsfrAccordionsGroup v-model="activeAccordion">
-    <template
-      v-for="filter in filters"
-      :key="filter.id"
-    >
-      <DsfrAccordion
-        v-if="filter.if === undefined || filter.if"
-        :id="filter.id"
-        :class="[props.accordionClass, filter.accordionClass]"
-        :title="filter.title"
-      >
-        <component
-          :is="filter.component"
-          :class="filter.componentClass"
-          legend=""
-        />
-      </DsfrAccordion>
-    </template>
-  </DsfrAccordionsGroup>
+  <FiltersAccordion
+    :accordion-class="props.accordionClass"
+    :company-data-filter="companyDataFilter"
+    :filters="filtersItem"
+  />
 </template>
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
 import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
 import ProgramFilterByOperator from './ProgramFilterByOperator.vue'
 import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
+import ProgramFilterByCompanyData from '@/components/program/list/filters/ProgramFilterByCompanyData.vue'
+import { FilterItemKeys, FiltersType } from '@/types'
+import { FilterItem } from '@/components/filters/FiltersAccordion.vue'
+import { useFiltersStore } from '@/stores/filters'
 
 interface Props {
   accordionClass?: string
 }
+
 const props = defineProps<Props>()
 
-interface FilterItem {
-  title: string
-  id: string
-  accordionClass?: string
-  component: unknown
-  componentClass?: string
-  if?: boolean
-}
+const filters: FiltersType = useFiltersStore().filters
 
-const activeAccordion = ref<number>()
+const companySelected = computed(() => filters[FilterItemKeys.companyData])
+
 const navigation = new Navigation()
 
-const filters: FilterItem[] = [
+const displayRegionFilter = computed(() => {
+  return navigation.isCatalogPrograms() && !companySelected.value
+})
+
+const companyDataFilter: FilterItem = {
+  title: 'Entreprise',
+  id: FilterItemKeys.companyData,
+  component: ProgramFilterByCompanyData,
+  componentClass: 'fr-pl-2v',
+  display: true
+}
+
+const filtersItem: FilterItem[] = [
   {
     title: "Types d'aides",
-    id: 'type-aid',
+    id: FilterItemKeys.typeAid,
     component: ProgramFilterByAidType,
-    componentClass: 'fr-pl-2v'
+    componentClass: 'fr-pl-2v',
+    display: true
   },
   {
     title: 'Opérateurs',
-    id: 'operator-aid',
+    id: FilterItemKeys.operatorAid,
     component: ProgramFilterByOperator,
     componentClass: 'fr-pl-2v',
-    if: navigation.isCatalogPrograms()
+    display: navigation.isCatalogPrograms()
   },
   {
     title: 'Régions',
-    id: 'region-aid',
+    id: FilterItemKeys.regionAid,
     component: ProgramFilterByRegion,
     componentClass: 'fr-pl-2v',
-    if: navigation.isCatalogPrograms()
+    display: displayRegionFilter
   }
 ]
 </script>

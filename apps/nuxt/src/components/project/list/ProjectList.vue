@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="programStore.hasThemeTypeSelected()"
+    v-if="filtersStore.hasThemeTypeSelected()"
     class="fr-grid-row fr-grid-row--center"
   >
     <div class="fr-container">
@@ -104,15 +104,15 @@ import Translation from '@/tools/translation'
 import { computed } from 'vue'
 import { ProjectType } from '@/types'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
-import { useProgramStore } from '@/stores/program'
 import { CompanyData } from '@/tools/companyData'
+import { useFiltersStore } from '@/stores/filters'
 
 interface ProjectListProps {
   sortedProjects?: ProjectType[]
 }
 const props = defineProps<ProjectListProps>()
 
-const programStore = useProgramStore()
+const filtersStore = useFiltersStore()
 const isSpecificGoal = UsedTrack.isSpecificGoal()
 const resume: string = Translation.t('project.result.resume', {
   effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyData.size ?? '')),
@@ -137,11 +137,11 @@ const nonPriorityProjects = computed(() => {
 })
 
 const hasThemeCard = computed(() => {
-  return programStore.hasThemeTypeSelected() || (isSpecificGoal && UsedTrack.hasPriorityTheme())
+  return filtersStore.hasThemeTypeSelected() || (isSpecificGoal && UsedTrack.hasPriorityTheme())
 })
 
 const hasThemeSelected = computed(() => {
-  return programStore.hasThemeTypeSelected()
+  return filtersStore.hasThemeTypeSelected()
 })
 
 const showPriorityProjectListComponent = computed(() => {

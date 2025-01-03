@@ -1,0 +1,76 @@
+titre: Nos Gestes Climat
+promesse: >-
+  Obtenez votre empreinte carbone et empreinte eau pour vous et vos parties
+  prenantes
+description: >-
+  Sensibilisez et fédérez vos collaborateurs et vos partenaires autour des
+  enjeux climatiques en calculant leur empreinte carbone et leur empreinte eau,
+  individuel, en seulement 10 minutes.
+illustration: images/TEE_ampoule.png
+opérateur de contact: ADEME
+url: https://nosgestesclimat.fr/
+nature de l'aide: formation
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 10min
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Comme **2 millions de personnes** obtenez votre empreinte carbone et
+      empreinte eau, grâce au calculateur "Nos Gestes Climat"
+    liens:
+      - lien: https://nosgestesclimat.fr/
+        texte: Passer le test
+  - description: >-
+      Lancez une campagne dans votre organisation et **engagez une démarche
+      durable** avec ce calculateur en ligne
+    liens:
+      - lien: https://nosgestesclimat.fr/organisations
+        texte: Tester Nos Gestes Climat pour votre organisation
+  - description: >-
+      Explorez, analysez et téléchargez des données anonymisées pour faire des
+      choix éclairés et améliorer continuellement votre démarche écologique
+  - description: >-
+      Permettez à vos parties prenantes (collaborateurs, partenaires,
+      clients...) de calculer et réduire leur empreinte carbone et eau
+      directement depuis vos outils en ligne
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental

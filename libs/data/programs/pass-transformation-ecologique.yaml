@@ -1,0 +1,176 @@
+titre: Pass Transformation Ecologique
+promesse: >-
+  Financez vos investissements matériels visant à améliorer l’impact écologique
+  de votre entreprise.
+description: >-
+  La Région Occitanie soutient les travaux visant à améliorer l’impact
+  écologique des entreprises locales situées en dehors des métropoles. Le "Pass
+  Transformation Ecologique" peut participer au financement de vos
+  investissement matériels pour la production de chaleur ou de froid
+  renouvelable (géothermie, pompe à chaleur, solaire thermique, biomasse...),
+  vos équipements d'économies d’eau, des gestions des déchets, d'économies
+  d'énergie et de digitalisation de vos processus.
+description longue: >-
+  • Les dépenses éligibles doivent s’inscrire dans un programme d’investissement
+  de 10 000 € minimum. 
+
+  • Les dépenses éligibles peuvent être des investissements en matériel neuf ou
+  d’occasion, garantis 6 mois min. avec un montant unitaire de chaque dépense de
+  1 000 € HT minimum.
+
+
+  Les investissements matériels éligibles sont les suivants :
+
+  Production de chaleur et de froid :
+
+  • Géothermie sur champ de sondes et géo structures énergétiques
+
+  • Géothermie sur eau de nappe, sur eau de mer et sur eaux usées
+
+  • Géocooling
+
+  • Pompe à chaleur
+
+  • Solaire thermique
+
+  • Chaudière biomasse
+
+
+  Economie circulaire et gestion des déchets :
+
+  • Système de récupération des eaux de pluie
+
+  • Système de réutilisation des eaux usées
+
+  • Compacteurs mécanique (cartons, plastiques, textiles et toutes autres
+  matières valorisables…) et/ou broyeurs de végétaux
+
+  • Equipements de tri et systèmes de recyclage
+
+  Sobriété énergétique / optimisation/accessibilité :
+
+  • Systèmes de management et de stockage de l’énergie/ Système domotique pour
+  le suivi, la gestion ou la régulation de la consommation
+
+  • Capteurs/ éclairage de détection automatique
+
+  • Isolation thermique des réseaux de chaleur
+
+  • Étanchéité des réseaux
+
+  • Exosquelette
+
+  • Investissements spécifiques sur l’accessibilité pour les personnes en
+  situation de handicap ne relevant pas des obligations règlementaires
+
+
+  Digitalisation :
+
+  • Acquisition d’un système global de gestion ERP, GPAO (système de gestion de
+  la production d’assistée par ordinateur) ou de système de cybersécurité.
+
+
+  Dépenses éligibles complémentaires uniquement pour les entreprises relevant du
+  tourisme :
+
+  • Dépenses de végétalisation et des-imperméabilisation des sols
+
+  • Création du 1er outil de visite interactive
+
+  • Acquisition de systèmes de transport collectif électrique gratuits pour les
+  touristes
+fin de validité: 31/12/2025
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Occitanie
+url: https://hubentreprendre.laregion.fr/financement/pass-transformation-ecologique
+nature de l'aide: financement
+montant du financement: Jusqu'à 50 % des dépenses éligibles, dans un maximum de 10 000 €
+objectifs:
+  - description: >-
+      Créez votre compte ou connectez-vous sur la plateforme de la Région
+      Occitanie dédiée aux entreprises.
+    liens:
+      - lien: >-
+          https://auth.mon-entreprise.laregion.fr/auth/realms/gdi-entreprise/protocol/openid-connect/auth?client_id=gdi-entreprise&redirect_uri=https%3A%2F%2Fmon-entreprise.laregion.fr%2F%3Fservice%3Dhubentreprendre%26redirect_uri%3Dhttps%3A%2F%2Fhubentreprendre.laregion.fr%2F&state=ddc3e361-10a4-4225-ba00-337659d8b2cc&response_mode=fragment&response_type=code&scope=openid&nonce=c3c64875-0527-4c6a-9a97-54c4b2fb11da
+        texte: Créer un compte HubEntreprendre
+  - description: >-
+      Prenez contact avec un conseiller de l'agence de développement économique
+      Ad'Occ sur HubEntreprendre afin de vérifier l'éligibilité de votre projet.
+  - description: >-
+      A l'issu de cet échange, recevez une fiche pour compléter votre dossier. A
+      ce stade vos investissements ne doivent pas être engagés.
+  - description: >-
+      Complétez votre dossier et intégrez le score de votre autodiagnostic
+      ImpactScore aux pièces justificatives. Déposez votre dossier de
+      candidature sur HubEntreprendre.
+    liens:
+      - lien: https://www.impactscore.fr/
+        texte: Réaliser votre autodiagnostic gratuitement
+      - lien: >-
+          https://auth.mon-entreprise.laregion.fr/auth/realms/gdi-entreprise/protocol/openid-connect/auth?client_id=gdi-entreprise&redirect_uri=https%3A%2F%2Fmon-entreprise.laregion.fr%2F%3Fservice%3Dhubentreprendre%26redirect_uri%3Dhttps%3A%2F%2Fhubentreprendre.laregion.fr%2F&state=5d56b16f-3ad5-40c0-85f9-a6904cab9a35&response_mode=fragment&response_type=code&scope=openid&nonce=d04f76a7-7193-4eec-8590-6d37f256816f
+        texte: Déposer son dossier sur HubEntreprendre
+  - description: >-
+      Les demandes de financement sont soumises à une expertise technique et
+      examinées en fonction des crédits disponibles.
+  - description: >-
+      Si votre candidature est validée, recevez votre subvention en un paiement
+      unique sur présentation des factures acquittées.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 20 salariés
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - Occitanie
+  secteur d'activité:
+    - Industrie, service aux entreprises, artisanat, tourisme, agro-alimentaire
+  nombre d'années d'activité:
+    - Au moins un an d'activité
+  autres critères d'éligibilité:
+    - >-
+      Destiné aux entreprises implantées dans des Communautés de Communes,
+      d’Agglomération ou Urbaines. Sont exclues les métropoles : Toulouse,
+      Montpellier et Perpignan.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a un effectif éligible
+      - a une categorie legale eligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 20
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Occitanie

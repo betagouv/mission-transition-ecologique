@@ -1,0 +1,107 @@
+<template>
+  <TeeDsfrBreadcrumb />
+  <CatalogBanner>
+    <template #title> {{ title }}</template>
+    <template #description> {{ description }}</template>
+  </CatalogBanner>
+
+  <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
+    <div class="fr-grid-row fr-grid-row--center">
+      <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+        <div
+          class="fr-col-12 fr-mt-3v fr-col-justify--left"
+          :class="{
+            'fr-col-offset-md-2 fr-col-md-10': !hasError && hasSideBar,
+            'fr-col-md-12': hasError || !hasSideBar
+          }"
+        >
+          <ThemeFilter />
+        </div>
+        <div
+          class="fr-col-12 fr-pr-md-2v"
+          :class="{
+            'fr-col-offset-md-2 fr-col-md-10': !hasError && hasSideBar,
+            'fr-col-md-12': hasError || !hasSideBar
+          }"
+        >
+          <ThemeHeaderCard
+            v-if="hasThemeCard"
+            class="fr-col-12"
+            :theme="theme as ThemeId"
+            radius-corner="tr"
+            radius-size="2-5v"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="fr-grid-row fr-grid-row--center">
+      <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+        <div
+          :class="{
+            'fr-grid-row': !hasError && hasSideBar,
+            'fr-grid-row--center': !hasError || !hasSideBar
+          }"
+        >
+          <slot name="catalog-content" />
+
+          <TeeSpinner
+            v-if="hasSpinner"
+            class="fr-mt-16w"
+          />
+          <TeeListNoResults
+            v-else-if="showNoResultsComponent"
+            :has-error="hasError"
+            message="Aucune idée d'action n'a pu être identifiée avec les critères choisis..."
+            :count-items="countItems"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { useNavigationStore } from '@/stores/navigation'
+import { ThemeId } from '@/types'
+import { MetaSeo } from '@/tools/metaSeo'
+import { computed } from 'vue'
+import { Theme } from '@/tools/theme'
+import { useFiltersStore } from '@/stores/filters'
+
+const filtersStore = useFiltersStore()
+const navigationStore = useNavigationStore()
+
+export interface CatalogProps {
+  title: string
+  description: string
+  hasError: boolean
+  countItems: number
+  hasSideBar: boolean
+}
+
+const props = defineProps<CatalogProps>()
+
+useSeoMeta(MetaSeo.get(props.title, props.description))
+
+const theme = Theme.getThemeFromSelectedTheme()
+
+const hasError = ref(props.hasError)
+
+const countItems = ref(props.countItems)
+
+const hasSpinner = computed(() => {
+  return navigationStore.hasSpinner
+})
+
+const hasThemeCard = computed(() => {
+  return filtersStore.hasThemeTypeSelected() && !hasSpinner.value
+})
+
+const showNoResultsComponent = computed(() => {
+  return hasSpinner.value || hasError.value || !countItems.value
+})
+
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
+})
+</script>
