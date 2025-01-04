@@ -1,5 +1,7 @@
 titre: Investissement "Contrat Chaleur Renouvelable"
-promesse: Financez vos projets d'énergies renouvelables thermiques sur votre territoire
+promesse: >-
+  Financez un groupe de projets d'énergies renouvelables thermiques sur votre
+  territoire
 description: >-
   Vous avez plusieurs projets ayant recours à de la chaleur d'origine
   renouvelable et de récupération (ENR&R) pour votre territoire ? L’ADEME peut
@@ -14,11 +16,11 @@ description longue: >-
   différentes avec un minimum de 20% d’installations EnR&R autres que le
   bois-énergie.
 début de validité: 01/01/2023
-fin de validité: 31/12/2024
+fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/contrat-chaleur-renouvelable
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/contrat-chaleur-renouvelable
 nature de l'aide: financement
 montant du financement: Selon le type d'investissement
 objectifs:
@@ -27,7 +29,7 @@ objectifs:
       l’ADEME ou en contactant un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Contrat%20Chaleur%20Renouvelable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Contrat%20Chaleur%20Renouvelable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
         texte: Conditions éligibilité et financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
@@ -39,7 +41,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/contrat-chaleur-renouvelable
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/contrat-chaleur-renouvelable
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -62,6 +64,7 @@ conditions d'éligibilité:
       avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
       (sous quelque forme que ce soit : marché signé, commande signée, devis
       accepté…)
+    - Avoir minimum 3 projets d'installations de chaleur renouvelables
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

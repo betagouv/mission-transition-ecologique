@@ -13,20 +13,20 @@ description: >-
   faiblesses, les perspectives et les menaces qu'il suppose, et les ressources
   nécessaires pour le mener à bien.
 début de validité: 01/01/2023
-fin de validité: 31/12/2024
+fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-lautoconsommation-electrique-photovoltaique
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-faisabilite-lautoconsommation-electrique-photovoltaique
 nature de l'aide: étude
-montant du financement: jusqu'à 70% du coût de l'étude
+montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 € HT
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
       l’ADEME ou en contactant un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20faisabilit%C3%A9%20autoconsommation%20photovolta%C3%AFque%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement.pdf
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tude%20autoconsommation%20photovolta%C3%AFque%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez le bureau d'étude énergétique qui va vous accompagner pour
@@ -41,7 +41,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-faisabilite-lautoconsommation-electrique-photovoltaique
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-faisabilite-lautoconsommation-electrique-photovoltaique
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -54,8 +54,9 @@ conditions d'éligibilité:
     - Éligible aux micro-entreprises
   secteur géographique:
     - >-
-      Corse, Guadeloupe, Guyane, Martinique, Mayotte, Polynésie française,
-      Saint-Pierre-Et-Miquelon
+      Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Guadeloupe,
+      Guyane, La Réunion, Martinique, Nouvelle-Aquitaine, Polynésie française,
+      Provence-Alpes-Côte d'Azur, Saint-Pierre-Et-Miquelon
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -111,10 +112,14 @@ publicodes:
       - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-      - région = Corse
+      - région = Auvergne-Rhône-Alpes
+      - région = Bourgogne-Franche-Comté
+      - région = Bretagne
       - région = Guadeloupe
       - région = Guyane
+      - région = La Réunion
       - région = Martinique
-      - région = Mayotte
+      - région = Nouvelle-Aquitaine
       - région = Polynésie française
+      - région = Provence-Alpes-Côte d'Azur
       - région = Saint-Pierre-Et-Miquelon

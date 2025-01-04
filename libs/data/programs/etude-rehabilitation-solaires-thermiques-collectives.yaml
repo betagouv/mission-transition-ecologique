@@ -43,11 +43,11 @@ description longue: >-
   consortiums/groupements de prestataire d’ingénierie, d’installateur et
   d’exploitant.
 début de validité: 03/06/2019
-fin de validité: 31/12/2024
+fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/audit-rehabilitation-dinstallations-solaires-thermiques-collectives
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/audit-rehabilitation-dinstallations-solaires-thermiques-collectives
 nature de l'aide: étude
 montant du financement: >-
   Selon la surface et l'ancienneté de l’installation solaire, dans un maximum de
@@ -58,7 +58,7 @@ objectifs:
       l’ADEME ou en contactant un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%20R%C3%A9habilitation%20Solaire%20thermique%202024.pdf
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9habilitation%20installations%20solaires%20thermiques%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez un prestataire "Reconnu Garant de l'Environnement" (RGE) ou
@@ -74,14 +74,14 @@ objectifs:
   - description: >-
       Déposez votre demande d'aide : informations administratives, description
       du projet, détails techniques et financiers, étude de faisabilité, etc. A
-      ce stade, votre investissement ne doit pas avoir été realisé !
+      ce stade, votre investissement ne doit pas avoir été réalisé !
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
       recevez un contrat de financement précisant le montant d’aide maximum, les
       conditions et les modalités de versement.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/audit-rehabilitation-dinstallations-solaires-thermiques-collectives
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/audit-rehabilitation-dinstallations-solaires-thermiques-collectives
         texte: Déposer mon dossier
 conditions d'éligibilité:
   taille de l'entreprise:
@@ -89,9 +89,10 @@ conditions d'éligibilité:
     - Éligible aux micro-entreprises
   secteur géographique:
     - >-
-      Auvergne-Rhône-Alpes, Bretagne, Centre-Val de Loire, Corse, Guadeloupe,
-      Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte,
-      Nouvelle-Aquitaine, Occitanie, Pays de la Loire
+      Auvergne-Rhône-Alpes, Bretagne, Centre-Val de Loire, Corse, Grand Est,
+      Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion,
+      Martinique, Mayotte, Nouvelle-Aquitaine, Occitanie, Pays de la Loire,
+      Provence-Alpes-Côte d'Azur
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -100,6 +101,7 @@ conditions d'éligibilité:
     - >-
       La surface de capteurs solaires thermiques installée doit être supérieure
       ou égale à 25 m² en métropole et 10 m² dans les DOM-TOM
+    - "Installation solaire thermique à l'arrêt total ou ayant une très faible productivité (en deçà de 50\_% de la productivité attendue), ou présentant de graves défauts de fonctionnement."
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -118,7 +120,9 @@ publicodes:
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est N
       - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est S
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est ma performance énergétique
@@ -128,6 +132,7 @@ publicodes:
       - région = Bretagne
       - région = Centre-Val de Loire
       - région = Corse
+      - région = Grand Est
       - région = Guadeloupe
       - région = Guyane
       - région = Hauts-de-France
@@ -138,3 +143,4 @@ publicodes:
       - région = Nouvelle-Aquitaine
       - région = Occitanie
       - région = Pays de la Loire
+      - région = Provence-Alpes-Côte d'Azur
