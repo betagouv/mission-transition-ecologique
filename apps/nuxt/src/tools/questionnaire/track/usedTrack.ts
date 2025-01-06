@@ -54,7 +54,6 @@ export default class UsedTrack {
     const next = CompanyData.getNextTrackStorage()
 
     if (!next) return
-
     await useRouter().push({
       name: RouteName.Questionnaire,
       hash: Navigation.hashByRouteName(RouteName.Questionnaire),
