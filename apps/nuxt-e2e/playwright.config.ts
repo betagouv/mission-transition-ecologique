@@ -2,6 +2,7 @@ import { ConfigOptions } from '@nuxt/test-utils/playwright'
 import { defineConfig, devices } from '@playwright/test'
 import { nxE2EPreset } from '@nx/playwright/preset'
 import { fileURLToPath } from 'node:url'
+import { timeOut } from './src/config'
 
 /**
  * Read environment variables from file.
@@ -50,10 +51,11 @@ export default defineConfig<ConfigOptions>({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : 4,
+  workers: process.env.CI ? 1 : 3,
   reporter: [['html', { open: 'never' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   /* Run your local dev server before starting the tests */
+  timeout: timeOut * 2,
   webServer: {
     timeout: 120000,
     env: {
@@ -71,15 +73,14 @@ export default defineConfig<ConfigOptions>({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] }
     },
-    //
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] }
-    // },
     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] }
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] }
     },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] }
+    // },
 
     /* Test against mobile viewports. */
     {
