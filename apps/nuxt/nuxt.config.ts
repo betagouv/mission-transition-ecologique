@@ -93,6 +93,7 @@ export default defineNuxtConfig({
   // - @nuxtjs/critters
   security: {
     headers: NuxtSecurityConfig.getHeaderConfig(),
+    rateLimiter: NuxtSecurityConfig.getRateLimiterConfig()
   },
   sentry: NuxtSentryConfig.getConfig(),
   sitemap: {
