@@ -24,7 +24,7 @@
 <script setup lang="ts">
 import { defineRouteRules } from '#imports'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
-import { RouteName, ChangeFreq, Priority } from '@/types'
+import { RouteName } from '@/types'
 
 definePageMeta({
   path: '/',
@@ -34,8 +34,8 @@ definePageMeta({
 
 defineRouteRules({
   sitemap: {
-    priority: Priority.Highest,
-    changefreq: ChangeFreq.Weekly
+    priority: 1.0,
+    changefreq: 'weekly'
   }
 })
 </script>
