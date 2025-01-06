@@ -1,10 +1,11 @@
-titre: Étude "Performance énergétique" en industrie
+titre: Étude "Performance énergétique" ou de "décarbonation" en industrie
 promesse: >-
-  Réalisez une étude de faisabilité pour votre projet d’optimisation de la
-  performance énergétique de votre site de production
+  Réalisez une étude de faisabilité pour votre projet de la performance
+  énergétique ou de décarbonation de votre site de production
 description: >-
   Vous avez réalisé un audit énergétique et vous avez identifié un projet pour
-  optimiser la performance énergétique de vos processus de production ?
+  optimiser la performance énergétique ou de décarbonation de vos processus de
+  production ?
 
   L'ADEME peut vous aider à financer votre étude de faisabilité pour vérifier la
   faisabilité technique et économique de votre projet et étudier les solutions
@@ -44,11 +45,11 @@ description longue: >-
 
   5. Captage du CO₂ à la source
 début de validité: 01/01/2023
-fin de validité: 31/12/2024
+fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-faisabilite-performance-energetique-decarbonation-dentreprises
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-faisabilite-performance-energetique-decarbonation-dentreprises
 nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
@@ -57,7 +58,7 @@ objectifs:
       l’ADEME ou en contactant un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20transition%20%C3%A9cologique%20industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener cette étude
@@ -72,7 +73,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-faisabilite-performance-energetique-decarbonation-dentreprises
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-faisabilite-performance-energetique-decarbonation-dentreprises
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -83,7 +84,7 @@ objectifs:
       site de production.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Moins de 250 salariés
+    - Toutes tailles
     - Éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
@@ -98,9 +99,8 @@ conditions d'éligibilité:
       (sous quelque forme que ce soit : marché signé, commande signée, devis
       accepté…)
     - >-
-      Eligible pour les sites de moins de 250 salariés des grandes entreprises,
-      dès lors que l’entreprise est à jour de ses obligations vis-à-vis de
-      l’audit énergétique réglementaire
+      Être à jour de ses obligations vis-à-vis de l’audit énergétique
+      réglementaire
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -112,11 +112,7 @@ publicodes:
       toutes ces conditions:
         - dispositif . début de validité <= date du jour
         - date du jour <= dispositif . fin de validité
-    toutes ces conditions:
-      - a un effectif éligible
-  entreprise . a un effectif éligible:
-    toutes ces conditions:
-      - effectif <= 249
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est B
