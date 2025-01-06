@@ -1,6 +1,17 @@
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { MobilityStatus, ThemeId, QuestionnaireDataEnum, QuestionnaireRoute, TrackId, WasteManagementStatus, YesNo } from '@/types'
+import {
+  MobilityStatus,
+  ThemeId,
+  QuestionnaireDataEnum,
+  QuestionnaireRoute,
+  TrackId,
+  WasteManagementStatus,
+  YesNo,
+  RouteName
+} from '@/types'
 import { QuestionnaireChecker, BuildingProperty } from '@tee/common'
+import { CompanyData } from '@/tools/companyData'
+import Navigation from '@/tools/navigation'
 
 type QuestionnaireDataReturnType = {
   [QuestionnaireDataEnum.questionnaire_route]: QuestionnaireRoute
@@ -31,6 +42,25 @@ export default class UsedTrack {
       this.findInQuestionnaireData(TrackId.QuestionnaireRoute, QuestionnaireDataEnum.questionnaire_route) ===
       QuestionnaireRoute.SpecificGoal
     )
+  }
+
+  static async updateQuestionnaireStep() {
+    const isDataFull = CompanyData.isDataFull().value
+
+    if (!isDataFull) {
+      return
+    }
+
+    const next = CompanyData.getNextTrackStorage()
+
+    if (!next) return
+
+    await useRouter().push({
+      name: RouteName.Questionnaire,
+      hash: Navigation.hashByRouteName(RouteName.Questionnaire),
+      params: { trackId: next },
+      query: useNavigationStore().query
+    })
   }
 
   static checkBuildingPropertyStatus(propertyStatus: BuildingProperty): boolean {

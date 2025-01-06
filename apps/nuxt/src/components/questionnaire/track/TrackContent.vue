@@ -115,7 +115,7 @@ import TrackColOption from '@/tools/questionnaire/track/TrackColOption'
 import TrackComponent from '@/tools/questionnaire/track/TrackComponent'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { CompanyDataStorage, CompanyData } from '@/tools/companyData'
+import { CompanyDataStorage } from '@/tools/companyData'
 
 interface Props {
   trackElement: Element
@@ -223,23 +223,4 @@ const backToPreviousTrack = async () => {
     return await router.push(navigationStore.routeByTrackId(trackId))
   }
 }
-
-watch(registeredData.value, async () => {
-  const isDataFull = CompanyData.isDataFull().value
-
-  if (!isDataFull) {
-    return
-  }
-
-  const next = CompanyData.getNextTrackStorage()
-
-  if (!next) return
-
-  await router.push({
-    name: RouteName.Questionnaire,
-    hash: Navigation.hashByRouteName(RouteName.Questionnaire),
-    params: { trackId: next },
-    query: navigationStore.query
-  })
-})
 </script>

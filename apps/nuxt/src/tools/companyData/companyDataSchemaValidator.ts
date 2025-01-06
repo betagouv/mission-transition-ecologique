@@ -41,7 +41,7 @@ export class CompanyDataValidator {
       return true
     } catch (error) {
       if (error instanceof z.ZodError) {
-        console.warn('Missing required field in Company Data', error.issues[0])
+        console.error('Missing required field in Company Data', error.issues[0])
       } else {
         console.error('Error validating Company Data', error)
       }
