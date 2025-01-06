@@ -95,7 +95,6 @@ const updateModelValue = (value: string) => {
 }
 const localisationResults = ref<ConvertedCommune[]>([])
 const isLoading = ref<boolean>(false)
-const localisationApi = new LocalisationApi()
 const showResults = ref<boolean>(false)
 const hasInput = computed<boolean>(() => debouncedLocalisationInput.value.length >= 3 && !!debouncedLocalisationInput.value)
 const noResults = computed<boolean>(() => localisationResults.value.length === 0 && hasInput.value && showResults.value && !isLoading.value)
@@ -118,9 +117,9 @@ const searchLocalisation = async () => {
   showResults.value = true
   if (localisationInput.value && localisationInput.value.length >= 3) {
     isLoading.value = true
-    const results = await localisationApi.searchCities(localisationInput.value)
-    if (!results.isErr) {
-      localisationResults.value = results.value
+    const results = await new LocalisationApi().searchCities(localisationInput.value)
+    if (results.isOk()) {
+      localisationResults.value = results.data
     }
     isLoading.value = false
   } else {

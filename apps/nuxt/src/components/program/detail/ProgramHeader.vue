@@ -49,7 +49,7 @@ const hasRegisteredData = CompanyData.isDataFull()
 
 const routeToResults = {
   name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
-  hash: '#' + currentProgram.value?.id, //TODO get from program
+  hash: '#' + currentProgram.value?.id,
   query: isCatalogDetail ? undefined : navigationStore.query
 }
 

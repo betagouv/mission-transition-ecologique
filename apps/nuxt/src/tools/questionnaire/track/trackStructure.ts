@@ -8,9 +8,9 @@ import LocalisationApi from '@/tools/api/localisationApi'
 
 export default class TrackStructure {
   static async searchLocalisation(query: string) {
-    const localisationApi = new LocalisationApi()
-    return await localisationApi.searchCities(query)
+    return await new LocalisationApi().searchCities(query)
   }
+
   static createData(option: TrackOptionsUnion, value?: string, questionnaireData?: CompanyLocalisationType): TrackOptionItem {
     return {
       option: {
@@ -20,6 +20,7 @@ export default class TrackStructure {
       } as TrackOptionsUnion
     }
   }
+
   static getEligibilityCriteria() {
     const criteria = []
     if (this.getSizeTitle() !== '') {
