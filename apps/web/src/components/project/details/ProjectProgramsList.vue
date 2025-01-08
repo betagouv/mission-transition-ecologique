@@ -16,11 +16,11 @@
 </template>
 
 <script setup lang="ts">
-import { type ProgramData, Project } from '@/types'
+import { type ProgramType, Project } from '@/types'
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
 
 interface Props {
-  programs: ProgramData[]
+  programs: ProgramType[]
   project: Project
   title: string
 }

@@ -8,6 +8,8 @@ export type WithoutNullableValueIfRequired<T> = T extends { required: true }
 
 export type ValueOf<T> = T[keyof T]
 
+export type Override<T, NewType> = Omit<T, keyof NewType> & NewType
+
 export enum FieldType {
   Text = 'text',
   Number = 'number',
