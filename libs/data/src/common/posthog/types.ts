@@ -1,10 +1,9 @@
-export type EventId = {
-  eventId?: string
-}
-
-export type PosthogEvent = EventId & {
+export type PosthogEvent = {
+  eventId?: string //only unique Id
   eventName?: string
   eventDate?: string
-  personId?: string // distinctId
+  personId?: string
   sessionId?: string
+  linkedEventId?: string
+  opportunityId?: string
 }

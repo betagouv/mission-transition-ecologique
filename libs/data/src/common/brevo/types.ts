@@ -5,3 +5,13 @@ export enum DealStage {
   AideProposee = '659d15cff06be7.98275409',
   Gagnee = '1e33531f-0eef-40ea-b97c-35aadc929446'
 }
+
+export type BrevoDeal = {
+  creationDate: string
+  status: DealStage
+}
+
+export type RawBrevoDealAttributes = {
+  created_at: string
+  deal_stage: string
+}

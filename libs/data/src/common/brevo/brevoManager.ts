@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Deal, DealsApi, DealsApiApiKeys } from '@getbrevo/brevo'
 import fs from 'fs'
-import { DealStage } from './types'
+import { BrevoDeal, DealStage, RawBrevoDealAttributes } from './types'
 
 export default class BrevoManager {
   private _dealsApi = new DealsApi()
@@ -15,21 +15,22 @@ export default class BrevoManager {
    * @param updatedAfter The date after which deals were updated.
    * @returns A list of deals.
    */
-  public async getDeals(): Promise<Array<Deal>> {
+  public async getDeals(): Promise<BrevoDeal[]> {
     // DEV CODE
     const filePath = 'deals.log'
     if (fs.existsSync(filePath)) {
       try {
         console.log('Reading deals from local file...')
         const data = fs.readFileSync(filePath, 'utf-8')
-        return JSON.parse(data) as Array<Deal>
+        const deals = JSON.parse(data) as Deal[]
+        return this._convertRawDealsToBrevoDeals(deals)
       } catch (error) {
         console.error('Error reading deals from file:', error)
         throw error // Handle or re-throw error if necessary
       }
     }
     // END DEV CODE
-    let deals: Array<Deal> = []
+    let deals: Deal[] = []
     const limit = 100000
 
     try {
@@ -43,14 +44,28 @@ export default class BrevoManager {
       console.error('Error fetching deals:', error)
     }
 
-    return deals
+    return this._convertRawDealsToBrevoDeals(deals)
   }
 
-  public formatDealStage: { [key in DealStage]: string } = {
-    [DealStage.Nouvelle]: 'Nouvelle',
-    [DealStage.Transmise]: 'Transmise',
-    [DealStage.Perdue]: 'Perdue',
-    [DealStage.AideProposee]: 'Aide Proposée',
-    [DealStage.Gagnee]: 'Gagnée'
+  private _convertRawDealsToBrevoDeals(deals: Deal[]): BrevoDeal[] {
+    return deals
+      .map((deal) => {
+        const attributes = deal.attributes as RawBrevoDealAttributes
+
+        const creationDate = attributes['created_at']
+        const dealStageId = attributes['deal_stage']
+
+        const status = Object.entries(DealStage).find(([_, value]) => value === dealStageId)?.[0] as DealStage
+
+        if (!status) {
+          console.log(`Invalid dealStageId: ${dealStageId}`)
+        }
+
+        return {
+          creationDate,
+          status
+        }
+      })
+      .filter((deal) => deal.creationDate && deal.status) as BrevoDeal[]
   }
 }
