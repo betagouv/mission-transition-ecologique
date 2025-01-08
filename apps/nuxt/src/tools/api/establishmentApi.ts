@@ -5,8 +5,8 @@ import { EstablishmentSearch } from '@/types'
 export default class EstablishmentApi extends RequestApi {
   protected readonly url = '/api/establishments/'
 
-  async getByQuery(query: string, resultCount?: number): Promise<Result<EstablishmentSearch, Error>> {
-    const url: string = this.url + query + (resultCount ? `?resultCount=${resultCount}` : '')
+  async getByQuery(query: string, count?: number): Promise<Result<EstablishmentSearch, Error>> {
+    const url: string = this.url + query + (count ? `?count=${count}` : '')
     try {
       const response = await fetch(url)
       if (!response.ok) {
