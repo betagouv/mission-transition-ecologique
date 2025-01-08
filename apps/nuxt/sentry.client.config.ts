@@ -3,10 +3,15 @@ import type { SentryNuxtClientOptions } from '@sentry/nuxt/build/types/common/ty
 import Config from './src/config'
 import type { Options } from '@sentry/types'
 
+const config = useRuntimeConfig()
+
 const options: Options | SentryNuxtClientOptions = {
-  integrations: [Sentry.browserTracingIntegration(), Sentry.piniaIntegration(usePinia())],
+  integrations: [
+    Sentry.browserTracingIntegration()
+    // Sentry.piniaIntegration(usePinia())
+  ],
   normalizeDepth: 10,
-  environment: Config.SENTRY_ENVIRONMENT,
+  environment: config.public.sentry.environment ?? Config.SENTRY_ENVIRONMENT,
   trackComponents: true,
 
   // Set tracesSampleRate to 1.0 to capture 100%
@@ -15,7 +20,7 @@ const options: Options | SentryNuxtClientOptions = {
   tracesSampleRate: 0.5,
 
   // Set `tracePropagationTargets` to control for which URLs distributed tracing should be enabled
-  tracePropagationTargets: ['localhost', /^https:\/\/mission-transition-ecologique\.beta\.gouv\.fr\/api/, /^\/api\//],
+  tracePropagationTargets: ['/^localhost/', /^https:\/\/mission-transition-ecologique\.beta\.gouv\.fr\/api/, /^\/api\//],
 
   // Capture Replay for 10% of all sessions,
   // plus for 100% of sessions with an error
@@ -23,8 +28,8 @@ const options: Options | SentryNuxtClientOptions = {
   replaysOnErrorSampleRate: 1.0
 }
 
-if (Config.SENTRY_DSN) {
-  options.dsn = Config.SENTRY_DSN
+if (config.public.sentry.dsn) {
+  options.dsn = config.public.sentry.dsn
 }
 
 Sentry.init(options)
