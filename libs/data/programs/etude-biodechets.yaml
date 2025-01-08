@@ -43,10 +43,12 @@ description longue: >-
 
   Cette aide est plafonnée à 50 000 € HT pour une étude diagnostic, et 100 000 €
   HT pour une étude de faisabilité préalable à un investissement. 
+début de validité: 01/01/2024
+fin de validité: 31/12/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-gestion-biodechets-acteurs-economiques?cible=79
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-gestion-biodechets-acteurs-economiques?cible=79
 nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
@@ -55,7 +57,7 @@ objectifs:
       l’ADEME ou en contactant un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20gestion%20biod%C3%A9chets%20des%20acteurs%20%C3%A9co%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20investissements%20gestion%20biod%C3%A9chets%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener cette étude
@@ -70,7 +72,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-gestion-biodechets-acteurs-economiques?cible=79
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-gestion-biodechets-acteurs-economiques?cible=79
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -103,8 +105,15 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
