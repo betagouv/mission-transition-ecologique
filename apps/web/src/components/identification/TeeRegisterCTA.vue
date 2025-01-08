@@ -59,11 +59,11 @@
 <script setup lang="ts">
 import { CompanyDataStorageKey } from '@/types'
 import Breakpoint from '@/utils/breakpoints'
-import { CompanyDataStorage } from '@/utils/companyData'
+import { CompanyData } from '@/utils/companyData'
 import Translation from '@/utils/translation'
 import Navigation from '@/utils/navigation'
 
-const registeredData = CompanyDataStorage.getData()
+const registeredData = CompanyData.dataRef
 const companyName = computed<string | undefined>(() => {
   return registeredData.value[CompanyDataStorageKey.Company]?.denomination || ''
 })
