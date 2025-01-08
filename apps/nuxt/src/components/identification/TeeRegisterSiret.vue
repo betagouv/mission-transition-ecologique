@@ -133,13 +133,11 @@ const processInput = async () => {
     clearSearch()
   } else {
     TrackSiret.search(queryValue.value, 9).then((searchResult) => {
-      if (searchResult.isErr) {
-        errorMessage.value = Translation.t('enterprise.apiError')
-      } else if (searchResult.value.resultCount == 0) {
-        errorMessage.value = Translation.t('enterprise.noStructureFound')
+      if (searchResult.isOk()) {
+        requestResponses.value = searchResult.data || defaultSearchValue
+        errorMessage.value = searchResult.data?.resultCount === 0 ? Translation.t('enterprise.noStructureFound') : undefined
       } else {
-        requestResponses.value = searchResult.value
-        selection.value = undefined
+        errorMessage.value = Translation.t('enterprise.apiError')
       }
       isLoading.value = false
     })
