@@ -45,15 +45,19 @@ export default class UsedTrack {
   }
 
   static async updateQuestionnaireStep() {
-    const isDataFull = CompanyData.isDataFull().value
+    if (!new Navigation().isQuestionnaireStep()) {
+      return
+    }
 
-    if (!isDataFull) {
+    if (!CompanyData.isDataFull().value) {
       return
     }
 
     const next = CompanyData.getNextTrackStorage()
 
-    if (!next) return
+    if (!next) {
+      return
+    }
 
     await useRouter().push({
       name: RouteName.Questionnaire,
