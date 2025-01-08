@@ -75,6 +75,6 @@ const parseEstablishment = (establishmentDocument: EstablishmentDocument): Estab
 const makeHeaders = (token: string) => {
   return {
     ...AxiosHeaders.makeJsonHeader(),
-    ...AxiosHeaders.makeBearerHeader(token)
+    ...{ 'X-INSEE-Api-Key-Integration': token }
   }
 }
