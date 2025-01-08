@@ -1,6 +1,6 @@
 import type { RouteLocationNormalized } from 'vue-router'
 
-export default class Hook {
+export default class RouteUtils {
   static readonly hasQuery = (route: RouteLocationNormalized) => {
     return Object.keys(route.query).length
   }
