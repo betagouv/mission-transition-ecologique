@@ -1,4 +1,4 @@
-import { SecurityHeaders } from 'nuxt-security'
+import { SecurityHeaders, RateLimiter } from 'nuxt-security'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import Config from './src/config'
 
@@ -49,5 +49,9 @@ export class NuxtSecurityConfig {
       // 'X-Frame-Options': 'ALLOW-FROM https://conseillers-entreprises.service-public.fr',
       // 'Expect-CT': `default-src 'self' ${this._sentryData?.domain ? this._sentryData.domain : ''}; report-uri ${this._sentryData?.url};`
     }
+  }
+
+  static getRateLimiterConfig(): RateLimiter | undefined | false {
+    return Config.isProduction() ? undefined : false
   }
 }

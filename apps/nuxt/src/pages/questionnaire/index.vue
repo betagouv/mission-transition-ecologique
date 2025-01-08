@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import { defineRouteRules } from '#imports'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
-import { ChangeFreq, Priority, TrackId } from '@/types'
+import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 
 definePageMeta({
@@ -20,8 +20,8 @@ definePageMeta({
 
 defineRouteRules({
   sitemap: {
-    priority: Priority.Null,
-    changefreq: ChangeFreq.Monthly
+    priority: 0,
+    changefreq: 'monthly'
   }
 })
 </script>
