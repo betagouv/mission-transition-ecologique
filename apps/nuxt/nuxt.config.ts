@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   workspaceDir: '../../',
   srcDir: 'src',
   telemetry: false,
-  sourcemap: { client: "hidden", server: true },
+  sourcemap: { client: true, server: true },
   devtools: {
     enabled: true,
     timeline: {
