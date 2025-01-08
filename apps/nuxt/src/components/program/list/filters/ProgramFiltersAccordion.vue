@@ -1,7 +1,7 @@
 <template>
   <DsfrAccordionsGroup
     v-if="companyDataFilter.display"
-    v-model="companyDataAccordion"
+    :model-value="0"
   >
     <DsfrAccordion
       :id="`accordion-${companyDataFilter.id}`"
@@ -79,7 +79,6 @@ const companySelected = computed(() => programFilters[FilterItemKeys.companyData
 
 const activeAccordion = ref<number>()
 const navigation = new Navigation()
-const companyDataAccordion = 0
 
 const displayRegionFilter = computed(() => {
   return navigation.isCatalogPrograms() && !companySelected.value
