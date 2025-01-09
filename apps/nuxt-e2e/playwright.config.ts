@@ -2,6 +2,7 @@ import { ConfigOptions } from '@nuxt/test-utils/playwright'
 import { defineConfig, devices } from '@playwright/test'
 import { nxE2EPreset } from '@nx/playwright/preset'
 import { fileURLToPath } from 'node:url'
+import { timeOut } from './src/config'
 
 /**
  * Read environment variables from file.
@@ -29,11 +30,11 @@ import { fileURLToPath } from 'node:url'
  */
 export default defineConfig<ConfigOptions>({
   use: {
-    baseURL: 'http://localhost:4242',
+    baseURL: 'http://localhost:4243',
     trace: 'on-first-retry',
     nuxt: {
       rootDir: fileURLToPath(new URL('../nuxt', import.meta.url)),
-      host: 'http://localhost:4242'
+      host: 'http://localhost:4243'
     }
   },
   // use: {
@@ -54,31 +55,32 @@ export default defineConfig<ConfigOptions>({
   reporter: [['html', { open: 'never' }]],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   env: {
-  //     VITE_DATA_TEST: 'true',
-  //     THIRD_PARTY_API_ENABLED: 'false',
-  //     PORT: '4243'
-  //   },
-  //   // command: 'npm run build:start',
-  //   url: 'http://localhost:4242',
-  //   reuseExistingServer: !process.env.CI
-  // },
+  timeout: timeOut * 2,
+  webServer: {
+    timeout: 120000,
+    env: {
+      VITE_DATA_TEST: 'true',
+      THIRD_PARTY_API_ENABLED: 'false',
+      PORT: '4243'
+    },
+    command: 'npm run build:start',
+    url: 'http://localhost:4243',
+    reuseExistingServer: !process.env.CI
+  },
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] }
     },
-    //
-    // {
-    //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] }
-    // },
     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] }
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] }
     },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] }
+    // },
 
     /* Test against mobile viewports. */
     {

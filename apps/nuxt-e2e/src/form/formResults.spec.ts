@@ -8,15 +8,14 @@ tests.forEach((singleTest) => {
       page.on('response', async (response) => {
         if (response.url().includes('/api/opportunities')) {
           try {
-            await page.locator('[teste2e-selector="callback-contact-form"]').waitFor({ timeout: timeOut, state: 'visible' })
+            await page.locator('[teste2e-selector="callback-contact-form"]').isVisible({ timeout: timeOut })
             if (response.status() === 200) {
               await expect(page.locator('[teste2e-selector="success-callback-contact-form"]')).toBeVisible({ timeout: timeOut })
             } else {
-              console.log('error during opportunityApiCall')
               await expect(page.locator('[teste2e-selector="error-callback-contact-form"]')).toBeVisible({ timeout: timeOut })
             }
           } catch (e: unknown) {
-            throw new Error(`Error handling API response: ${(e as Error).message}`)
+            throw new Error(`Error handling API response: ${(e as Error).message} - ${(e as Error).stack}`)
           }
         }
       })
@@ -29,6 +28,8 @@ tests.forEach((singleTest) => {
             JSON.stringify({
               denomination: 'Entreprise : tertiaire - Bretagne',
               region: 'Bretagne',
+              ville: 'Brest',
+              codePostal: '29200',
               secteur: 'tertiaire'
             })
           )

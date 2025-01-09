@@ -53,6 +53,7 @@ import Breakpoint from '@/tools/breakpoints'
 import { onClickOutside } from '@vueuse/core'
 import { useNavigationStore } from '@/stores/navigation'
 import { CompanyDataStorage, CompanyData } from '@/tools/companyData'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 
 const registerModal = ref(null)
 const registeredData = CompanyDataStorage.getData()
@@ -97,6 +98,7 @@ const resetSiret = async () => {
   CompanyData.resetData()
   CompanyData.updateRouteFromStorage()
 
+  await UsedTrack.updateQuestionnaireStep()
   await new ProjectManager().update()
   await new ProgramManager().update()
 }

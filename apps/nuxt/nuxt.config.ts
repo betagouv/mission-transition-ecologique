@@ -1,3 +1,4 @@
+import Config from './src/config'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { defineNuxtConfig } from 'nuxt/config'
 import { NuxtScriptsConfig } from './nuxt.scripts.config'
@@ -20,7 +21,7 @@ export default defineNuxtConfig({
   workspaceDir: '../../',
   srcDir: 'src',
   telemetry: false,
-  sourcemap: { client: true, server: true },
+  sourcemap: { client: 'hidden', server: true },
   devtools: {
     enabled: true,
     timeline: {
@@ -93,6 +94,7 @@ export default defineNuxtConfig({
   // - @nuxtjs/critters
   security: {
     headers: NuxtSecurityConfig.getHeaderConfig(),
+    rateLimiter: NuxtSecurityConfig.getRateLimiterConfig()
   },
   sentry: NuxtSentryConfig.getConfig(),
   sitemap: {
@@ -121,6 +123,10 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
+      sentry: {
+        environment: Config.SENTRY_ENVIRONMENT,
+        dsn: Config.SENTRY_DSN,
+      },
       scripts: {
         matomoAnalytics: {
           matomoUrl: '',

@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { defineRouteRules } from '#imports'
-import { ChangeFreq, Priority, RouteName } from '@/types'
+import { RouteName } from '@/types'
 import { onMounted, onBeforeUnmount } from 'vue'
 
 definePageMeta({
@@ -18,8 +18,8 @@ definePageMeta({
 
 defineRouteRules({
   sitemap: {
-    priority: Priority.Null,
-    changefreq: ChangeFreq.Monthly
+    priority: 0,
+    changefreq: 'monthly'
   }
 })
 

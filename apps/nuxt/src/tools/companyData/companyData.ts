@@ -7,8 +7,12 @@ import {
   LegalCategory,
   ManualCompanyData,
   type QuestionnaireData,
+  RegisterDetails,
   QuestionnaireRoute,
   Sector,
+  Region,
+  ConvertedCommune,
+  CompanyLocalisationType,
   SiretValue,
   StructureSize,
   TrackId,
@@ -30,6 +34,34 @@ export class CompanyData {
 
   static get size(): StructureSize | null {
     return CompanyDataStorage.getData().value[CompanyDataStorageKey.Size]
+  }
+
+  static convertLocalisation(geoInfos: ConvertedCommune): CompanyLocalisationType {
+    return {
+      region: geoInfos.region.nom as Region,
+      ville: geoInfos.nom,
+      codePostal: geoInfos.codePostal
+    }
+  }
+
+  static getSiretBasedCompanyData(
+    company: CompanyDataType[CompanyDataStorageKey.Company],
+    profileData: RegisterDetails
+  ): CompanyDataType[CompanyDataStorageKey.Company] {
+    return {
+      ...company,
+      structure_size: profileData.size.value,
+      ...profileData.localisation.value
+    } as CompanyDataType[CompanyDataStorageKey.Company]
+  }
+
+  static getManualCompanyData(profileData: RegisterDetails): CompanyDataType[CompanyDataStorageKey.Company] {
+    return {
+      ...profileData.localisation.value,
+      secteur: profileData.activity.value,
+      structure_size: profileData.size.value,
+      denomination: `Entreprise : ${profileData.activity.value} - ${profileData.localisation.value?.region}`
+    } as CompanyDataType[CompanyDataStorageKey.Company]
   }
 
   static get dataRef() {
@@ -154,10 +186,11 @@ export class CompanyData {
       } as ManualCompanyData)
     }
 
-    if (trackId === TrackId.StructureRegion) {
+    if (trackId === TrackId.StructureCity) {
+      const localisationData = (selectedOptions[0]?.questionnaireData as CompanyLocalisationType) || {}
       CompanyDataStorage.setCompany({
         ...this.company,
-        region: value,
+        ...localisationData,
         denomination: `Entreprise : ${this.company?.secteur} - ${value}`
       } as ManualCompanyData)
     }
