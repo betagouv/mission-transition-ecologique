@@ -52,7 +52,8 @@ import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType, FilterItemK
 import Breakpoint from '@/tools/breakpoints'
 import { onClickOutside } from '@vueuse/core'
 import { useNavigationStore } from '@/stores/navigation'
-import { CompanyData } from '@/tools/companyData'
+import { CompanyDataStorage, CompanyData } from '@/tools/companyData'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 
 const registerModal = ref(null)
@@ -99,6 +100,7 @@ const resetSiret = async () => {
   useProgramStore().programFilters[FilterItemKeys.companyData] = false
   CompanyData.updateRouteFromStorage()
 
+  await UsedTrack.updateQuestionnaireStep()
   await new ProjectManager().update()
   await new ProgramManager().update()
 }

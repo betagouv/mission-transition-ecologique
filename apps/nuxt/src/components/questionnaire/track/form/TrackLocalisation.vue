@@ -1,53 +1,46 @@
 <template>
-  <p
-    v-if="hasData"
-    class="fr-tag fr-mb-4v fr-bg--blue-france--lightness"
-  >
-    <span class="fr-pr-4v">{{ localisationLabel }}</span>
-    <span
-      class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
-      @click="modifyLocalisation"
-    />
-  </p>
-  <div
-    v-else
-    id="register-localisation"
-  >
-    <div
-      class="fr-input-group fr-mb-0"
-      :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
+  <div id="register-localisation">
+    <DsfrInputGroup
+      class="fr-mb-0"
+      :error-message="errorMsg"
     >
+      <span
+        v-if="option.hint"
+        class="fr-hint-text fr-mb-2v"
+      >
+        {{ option?.hint?.[Translation.lang] }}
+      </span>
       <div
         ref="localisationSearchBar"
-        class="fr-search-bar fr-search-bar--yellow"
+        class="fr-search-bar"
         :class="isLoading ? 'fr-search-bar--loading' : ''"
         role="search"
       >
         <DsfrInput
           v-model="localisationInput"
           name="manual-register-localisation"
-          class="fr-input--white fr-input"
+          class="fr-input"
           type="search"
-          :placeholder="infos.description"
+          :hint="option?.hint?.[Translation.lang]"
           @update:model-value="updateModelValue"
           @keyup.enter="searchLocalisation"
         />
         <DsfrButton
-          class="fr-bg--yellow search-button"
-          tertiary
+          class="search-button"
           no-outline
           @click="searchLocalisation"
         />
       </div>
-    </div>
+    </DsfrInputGroup>
     <div
       v-if="localisationResults.length && showResults"
-      id="localisation-response"
-      class="fr-bg--white"
+      id="track-localisation-response"
+      class="fr-bg--white fr-mt-n3w"
     >
       <div
         v-for="localisation in localisationResults"
         :key="`resp-input-${localisation.nom}-${localisation.codePostal}`"
+        tabindex="0"
         class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
         @click="selectLocalisation(localisation)"
       >
@@ -58,33 +51,25 @@
         </div>
       </div>
     </div>
-    <div
-      :class="errorMsg ? 'fr-error-text' : ''"
-      class="fr-input--empty-text fr-mt-2v"
-    >
-      {{ errorMsg }}
-    </div>
   </div>
 </template>
 <script lang="ts" setup>
-import { RegisterDetailLocalisation, ConvertedCommune, CompanyLocalisationType } from '@/types'
-import LocalisationApi from '@/tools/api/localisationApi'
-import { onClickOutside, useDebounce } from '@vueuse/core'
+import { type TrackOptionsInput, ConvertedCommune, CompanyLocalisationType, TrackOptionItem } from '@/types'
 import { CompanyData } from '@/tools/companyData'
+import { useDebounce, onClickOutside } from '@vueuse/core'
 import Translation from '@/tools/translation'
+import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 
 interface Props {
-  infos: RegisterDetailLocalisation
-  manual: boolean
-  showError: boolean
+  option: TrackOptionsInput
 }
 const props = defineProps<Props>()
+const emit = defineEmits(['updateSelection'])
+
 const selectedLocalisation = defineModel<CompanyLocalisationType>()
 const localisationInput = ref<string>('')
+const localisationSearchBar = useTemplateRef('localisationSearchBar')
 const debouncedLocalisationInput = useDebounce(localisationInput, 1000)
-const hasData = computed(() => {
-  return props.infos.value?.codePostal && props.infos.value.region && props.infos.value.ville
-})
 watch(debouncedLocalisationInput, (newValue) => {
   if (newValue) {
     searchLocalisation()
@@ -95,29 +80,23 @@ const updateModelValue = (value: string) => {
 }
 const localisationResults = ref<ConvertedCommune[]>([])
 const isLoading = ref<boolean>(false)
-const showResults = ref<boolean>(false)
-const hasInput = computed<boolean>(() => debouncedLocalisationInput.value.length >= 3 && !!debouncedLocalisationInput.value)
-const noResults = computed<boolean>(() => localisationResults.value.length === 0 && hasInput.value && showResults.value && !isLoading.value)
+const showResults = ref<boolean>(true)
+const hasInput = computed<boolean>(() => !!debouncedLocalisationInput.value && debouncedLocalisationInput.value.length >= 3)
+const noResults = computed<boolean>(() => localisationResults.value.length === 0 && hasInput.value && !isLoading.value)
 const errorMsg = computed<string>(() => {
-  if (props.showError) {
-    return Translation.t('register.localisation.mandatory')
-  } else if (noResults.value) {
+  if (noResults.value && showResults.value) {
     return Translation.t('register.localisation.noResults')
   } else if (!hasInput.value && debouncedLocalisationInput.value.length > 0) {
     return Translation.t('register.localisation.tooShort')
   }
   return ''
 })
-const localisationSearchBar = ref(null)
 
-const localisationLabel = computed<string>(() => {
-  return `${props.infos.value?.codePostal} ${props.infos.value?.ville}`
-})
 const searchLocalisation = async () => {
-  showResults.value = true
   if (localisationInput.value && localisationInput.value.length >= 3) {
     isLoading.value = true
-    const results = await new LocalisationApi().searchCities(localisationInput.value)
+    showResults.value = true
+    const results = await TrackStructure.searchLocalisation(localisationInput.value)
     if (results.isOk()) {
       localisationResults.value = results.data
     }
@@ -128,20 +107,22 @@ const searchLocalisation = async () => {
 }
 const selectLocalisation = (localisation: ConvertedCommune) => {
   selectedLocalisation.value = CompanyData.convertLocalisation(localisation)
+  emit('updateSelection', createData())
 }
-const modifyLocalisation = () => {
-  selectedLocalisation.value = undefined
-  localisationInput.value = ''
-  localisationResults.value = []
+const hideResults = () => {
   showResults.value = false
 }
-onClickOutside(localisationSearchBar, () => modifyLocalisation())
+onClickOutside(localisationSearchBar, () => hideResults())
+
+function createData(): TrackOptionItem {
+  return TrackStructure.createData(props.option, selectedLocalisation.value?.region, selectedLocalisation.value)
+}
 </script>
 <style lang="scss" scoped>
-#localisation-response {
+#track-localisation-response {
   text-align: left;
   width: calc(100% - 40px);
-  max-height: 128px;
+  max-height: 256px;
   z-index: 2000;
   position: absolute;
   overflow: hidden auto;

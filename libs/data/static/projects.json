@@ -15,6 +15,7 @@
     "programs": [
       "baisse-les-watts",
       "fonds-tourisme-durable",
+      "diag-eco-flux",
       "programme-breizh-fab",
       "renovation-petit-tertiaire-prive",
       "tpe-gagnantes-sur-tous-les-couts",
@@ -230,9 +231,10 @@
     "programs": [
       "etude-rehabilitation-solaires-thermiques-collectives",
       "etude-solaire-thermique",
+      "investissement-contrat-chaleur-renouvelable",
+      "investissement-pac-solaire",
       "investissement-solaire-thermique",
       "investissement-solaire-thermique-outre-mer",
-      "tremplin",
       "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-vert-ademe",
@@ -291,6 +293,8 @@
       "coup-de-pouce-chauffage",
       "etude-reseaux-energie-renouvelable",
       "fonds-tourisme-durable",
+      "investissement-boucle-d-eau-geothermique",
+      "investissement-contrat-chaleur-renouvelable",
       "investissement-reseaux-de-chaleur-ou-de-froid",
       "pret-economies-d-energie-pee",
       "pret-vert",
@@ -356,7 +360,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "bilan-carbone"
     ],
     "linkedProjects": [
       32,
@@ -405,6 +410,7 @@
       "etude-chaufferie-biomasse",
       "fonds-tourisme-durable",
       "investissement-chaleur-bois",
+      "investissement-contrat-chaleur-renouvelable",
       "investissement-pour-l-approvisionnement-de-chaufferies-bois",
       "pret-action-climat",
       "pret-vert",
@@ -461,6 +467,7 @@
     "mainTheme": "energy",
     "programs": [
       "etude-recuperation-de-chaleur-fatale",
+      "investissement-contrat-chaleur-renouvelable",
       "investissement-recuperation-de-chaleur-fatale",
       "pret-economies-d-energie-pee",
       "pret-vert",
@@ -517,6 +524,8 @@
     "programs": [
       "etude-geothermie-de-surface-et-d-aerothermie",
       "fonds-tourisme-durable",
+      "investissement-contrat-chaleur-renouvelable",
+      "investissement-geothermie-de-surface-et-d-aerothermie",
       "investissement-pac-solaire",
       "pret-economies-d-energie-pee",
       "pret-vert",
@@ -615,7 +624,7 @@
     "shortDescription": "La géothermie permet de produire différents types d'énergie en fonction de la température de la chaleur puisée dans le sous-sol.",
     "image": "/images/projet/geothermie.webp",
     "longDescription": "La géothermie est une énergie renouvelable qui consiste à exploiter la chaleur du sous-sol pour produire de la chaleur, du froid ou de l'électricité. Cette énergie est disponible localement, 24h/24, 365 jours/an, et est peu dépendante des variations climatiques journalières ou saisonnières.\n\nLa géothermie peut être exploitée à différentes profondeurs et pour de nombreux usages, tels que le chauffage des bâtiments, la climatisation, le rafraîchissement, le stockage d'énergie thermique, etc. La géothermie est une énergie renouvelable locale, permanente et décarbonée. Elle est peu émettrice de gaz à effet de serre et contribue à la décarbonation du chauffage des bâtiments.",
-    "moreDescription": "- [**Géothermie**](https://fondschaleur.ademe.fr/geothermie/) : définition, chiffres clés et domaines d'application",
+    "moreDescription": "- [**Géothermie**](https://www.geothermies.fr/decouvrir-la-geothermie) : définition, chiffres clés et domaines d'application",
     "themes": [
       "energy"
     ],
@@ -625,6 +634,7 @@
       "etude-test-geothermie",
       "fonds-tourisme-durable",
       "investissement-boucle-d-eau-geothermique",
+      "investissement-contrat-chaleur-renouvelable",
       "investissement-geothermie-de-surface-et-d-aerothermie",
       "investissement-geothermie-profonde",
       "aide-financement-occitanie",
@@ -678,7 +688,6 @@
     "mainTheme": "energy",
     "programs": [
       "etude-diagnostic-serres",
-      "tremplin",
       "pret-economies-d-energie-pee",
       "aide-financement-occitanie",
       "sud-pret-climat",
@@ -714,6 +723,7 @@
       "audit-energetique-en-industrie",
       "baisse-les-watts",
       "booster-eco-energie-tertiaire",
+      "etude-performance-energetique-en-industrie",
       "diag-perf-immo",
       "renovation-petit-tertiaire-prive",
       "aide-financement-occitanie",
@@ -1156,7 +1166,6 @@
     "programs": [
       "diag-ecoconception",
       "etude-performance-produits",
-      "investissement-ecoconception",
       "tremplin",
       "aide-financement-occitanie",
       "sud-pret-climat",
@@ -1257,6 +1266,7 @@
     ],
     "mainTheme": "waste",
     "programs": [
+      "etude-alimentation-durable",
       "etude-biodechets",
       "fonds-tourisme-durable",
       "gestion-des-biodechets",
@@ -1315,6 +1325,7 @@
     ],
     "mainTheme": "waste",
     "programs": [
+      "etude-alimentation-durable",
       "etude-gaspillage-alimentaire",
       "fonds-tourisme-durable",
       "investissement-contre-le-gaspillage-alimentaire",
@@ -1365,6 +1376,8 @@
     "mainTheme": "rh",
     "programs": [
       "formation-engager-entreprise-transition-ecologique",
+      "b-a-ba-du-climat-et-biodiversite",
+      "nos-gestes-climat",
       "ecogestes-paca",
       "investour",
       "sud-pret-climat",
@@ -1465,6 +1478,7 @@
     "programs": [
       "fonds-tourisme-durable",
       "formation-engager-entreprise-transition-ecologique",
+      "b-a-ba-du-climat-et-biodiversite",
       "formations-du-cfde",
       "formations-tee",
       "ecogestes-paca",
@@ -1799,6 +1813,7 @@
       "eco-defis-des-artisans-et-des-commercants",
       "fonds-tourisme-durable",
       "imprim-vert",
+      "investissement-ecoconception",
       "programme-breizh-fab",
       "programme-eve",
       "repar-acteurs",
@@ -1860,6 +1875,7 @@
       "diagnostic-eco-conception-ile-de-france",
       "etude-economie-de-la-fonctionnalite",
       "etude-performance-produits",
+      "investissement-ecoconception",
       "programme-breizh-fab",
       "tremplin",
       "ecoconception-bzh",

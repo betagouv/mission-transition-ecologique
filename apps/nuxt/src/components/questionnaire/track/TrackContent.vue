@@ -223,23 +223,4 @@ const backToPreviousTrack = async () => {
     return await router.push(navigationStore.routeByTrackId(trackId))
   }
 }
-
-watch(registeredData.value, async () => {
-  const isDataFull = CompanyData.isDataFull().value
-
-  if (!isDataFull) {
-    return
-  }
-
-  const next = CompanyData.getNextTrackStorage()
-
-  if (!next) return
-
-  await router.push({
-    name: RouteName.Questionnaire,
-    hash: Navigation.hashByRouteName(RouteName.Questionnaire),
-    params: { trackId: next },
-    query: navigationStore.query
-  })
-})
 </script>
