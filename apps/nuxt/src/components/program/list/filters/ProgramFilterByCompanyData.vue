@@ -21,7 +21,7 @@
             'fr-text--grey': !filters[FilterItemKeys.companyData],
             'fr-text--black': navigation.isQuestionnaireResult(),
             'fr-pl-0-5v': !Breakpoint.isSmallScreen(),
-            'fr-pl-2v': Breakpoint.isMobile()
+            'fr-pl-2v fr-text-left fr-mb-1v': Breakpoint.isMobile()
           }"
           >{{ filterData.title }}</span
         >
@@ -35,14 +35,16 @@
         :class="{ 'fr-text--grey': !filters[FilterItemKeys.companyData] }"
       >
         <div class="fr-grid-row">
-          <div class="fr-col-1 fr-col-content--middle">
-            <span
+          <div class="fr-col-12">
+            <div
               class="company-filter-icon fr-pl-1v fr-col-content--middle"
               :class="detail.icon"
-            />
-          </div>
-          <div class="fr-col-11 fr-pl-md-4v fr-pr-1v fr-text-line-height--4v fr-col-content--middle">
-            <span class="fr-text--xs">{{ detail.label }}</span>
+            >
+              <span
+                :class="{ 'fr-text--xs': !Breakpoint.isMobile(), 'fr-pl-2v': !Breakpoint.isMobile(), 'fr-pl-4v': Breakpoint.isMobile() }"
+                >{{ detail.label }}</span
+              >
+            </div>
           </div>
         </div>
       </div>
