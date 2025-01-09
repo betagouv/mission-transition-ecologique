@@ -87,8 +87,6 @@ const theme = Theme.getThemeFromSelectedTheme()
 
 const hasError = ref(props.hasError)
 
-const countItems = ref(props.countItems)
-
 const hasSpinner = computed(() => {
   return navigationStore.hasSpinner
 })
@@ -98,7 +96,7 @@ const hasThemeCard = computed(() => {
 })
 
 const showNoResultsComponent = computed(() => {
-  return hasSpinner.value || hasError.value || !countItems.value
+  return hasSpinner.value || hasError.value || !props.countItems
 })
 
 onBeforeRouteLeave(() => {
