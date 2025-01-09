@@ -26,7 +26,7 @@ export class NuxtSentryConfig {
   }
 
   static getSentryData(): { domain: string; url: string } | undefined {
-    const dsnComponents = dsnFromString(process.env.VITE_SENTRY_DSN ?? '')
+    const dsnComponents = dsnFromString(Config.SENTRY_DSN ?? '')
     if (dsnComponents === undefined) {
       return undefined
     }
