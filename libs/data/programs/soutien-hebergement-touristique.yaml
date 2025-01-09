@@ -1,0 +1,99 @@
+titre: Soutien à l'hébergement touristique
+promesse: >-
+  Financez votre projet environnemental, d'accessibilité, d'accueil des
+  saisonniers ou de montée en gamme de votre hébergement touristique
+description: "Vous exploitez un hébergement touristique ? Le financement «\_Soutien à l'hébergement touristique\_» vous accompagne dans l’amélioration de votre impact environnemental, l'accessibilité des personnes en situation de handicap, l’aménagement des locaux d’accueil des saisonniers, l'accueil de la clientèle vélo ou la montée en gamme de votre établissement touristique."
+description longue: >-
+  Une prime supplémentaire de Développement Durable de 5 000 € à 10 000 € peut
+  être accordée sur justification de l’obtention ou du renouvellement d’un label
+  environnemental.
+
+
+  Pour les établissements réalisant des travaux favorisant une meilleure
+  performance environnementale, l’accessibilité des personnes en situation de
+  handicap, l'aménagement et/ou la création de locaux destinés à l’accueil de
+  saisonniers, sont éligibles, les travaux ayant trait à :  
+
+  • La gestion environnementale et la réduction des consommations de fluides
+  ainsi que les équipements pour l’accueil des clientèles vélo touristiques
+
+  • L’accessibilité des personnes en situation de handicap (le label Tourisme et
+  Handicap est exigé avant ou après travaux).
+
+  • Logement des saisonniers au sein des établissements
+
+
+  Pour la montée en gamme par le changement de classement ou l’adjonction
+  d’équipements de diversification, sont éligibles, les travaux de gros œuvre et
+  de second œuvre contribuant à atteindre : 
+
+  • Un classement national supérieur en étoiles ou de changement d’épis (dans la
+  limite de l’obtention d’un classement maximum de 4 étoiles ou épis après
+  travaux)
+
+  • Une offre d’équipements de diversification contribuant à augmenter
+  l’attractivité de l’établissement et son chiffre d’affaires (équipements de
+  bien-être et de mise en forme, espaces aquatiques et aqualudiques, équipements
+  numériques, etc.)
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Sud (PACA)
+url: https://www.maregionsud.fr/vos-aides/detail/soutien-a-lhebergement-touristique
+nature de l'aide: financement
+montant du financement: Jusqu'à 60% des dépenses éligibles, dans un maximum de 100 000 €
+objectifs:
+  - description: Vérifiez l'éligibilité de votre projet auprès d'un conseiller Région Sud
+    liens:
+      - lien: >-
+          https://entreprises.maregionsud.fr/financement/sud-entreprises/soutien-a-lhebergement-touristique
+        texte: Conditions d'éligibilité et de financement
+      - lien: https://www.maregionsud.fr/contacter-la-region
+        texte: Contacter un conseiller
+  - description: Créez un compte Région Sud pour pouvoir déposer votre dossier.
+    liens:
+      - lien: >-
+          https://sudconnect.maregionsud.fr/auth/realms/citoyen/login-actions/registration?client_id=usager-mgdis-portail&tab_id=fJ6yb7y7MXs
+        texte: Créer mon compte
+  - description: >-
+      Déposez votre dossier. À ce stade, l'opération pour laquelle vous
+      sollicitez une aide financière ne doit pas avoir commencé.
+    liens:
+      - lien: >-
+          https://aidesenligne.maregionsud.fr/aides/#/crsud/connecte/F_S_I_SOUTHEB/depot/simple
+        texte: Déposer un dossier
+  - description: >-
+      Si votre demande est acceptée, recevez un contrat de financement précisant
+      le montant d’aide maximum, les conditions et les modalités de versement.
+  - description: Réalisez vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Hébergement touristique
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est L
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur

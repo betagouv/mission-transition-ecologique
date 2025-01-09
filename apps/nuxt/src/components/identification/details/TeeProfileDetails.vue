@@ -40,6 +40,7 @@ import Analytics from '@/tools/analytic/analytics'
 import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
 import { CompanyData } from '@/tools/companyData'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -118,6 +119,7 @@ const saveProfile = async () => {
     }
 
     Navigation.toggleRegisterModal(false)
+    await UsedTrack.updateQuestionnaireStep()
     await new ProjectManager().update()
     await new ProgramManager().update()
   } else {

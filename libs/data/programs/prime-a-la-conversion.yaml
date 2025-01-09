@@ -13,6 +13,7 @@ description longue: >
 
   La prime peut être majorée si votre entreprise est située au sein d’une zone à
   faibles émissions (ZFE).
+fin de validité: 14/02/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: ASP
 nature de l'aide: financement
@@ -70,6 +71,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
   entreprise . a un effectif éligible:

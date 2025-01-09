@@ -6,7 +6,10 @@ import type { Options } from '@sentry/types'
 const config = useRuntimeConfig()
 
 const options: Options | SentryNuxtClientOptions = {
-  integrations: [Sentry.browserTracingIntegration(), Sentry.piniaIntegration(usePinia())],
+  integrations: [
+    Sentry.browserTracingIntegration()
+    // Sentry.piniaIntegration(usePinia())
+  ],
   normalizeDepth: 10,
   environment: config.public.sentry.environment ?? Config.SENTRY_ENVIRONMENT,
   trackComponents: true,

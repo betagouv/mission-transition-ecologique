@@ -313,6 +313,12 @@
     "filterCategories": []
   },
   {
+    "operator": "Centre national d'enseignement à distance",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
     "operator": "ATEE",
     "filterCategories": []
   },

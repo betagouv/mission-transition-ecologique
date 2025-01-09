@@ -1,0 +1,83 @@
+titre: B.A.-BA du climat et de la biodiversité
+promesse: >-
+  Obtenez les connaissances fondamentales sur le changement climatique et la
+  biodiversité
+description: >-
+  Le B.A.-BA du climat et de la biodiversité est une formation permettant à
+  toutes les personnes qui le souhaitent, d’acquérir les connaissances
+  fondamentales sur le changement climatique et la biodiversité. Proposée par le
+  Cned - Centre national d'enseignement à distance, il est le fruit d’une
+  collaboration entre experts scientifiques reconnus et experts de la pédagogie
+  numérique.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Centre national d'enseignement à distance
+url: https://climat.cned.fr/
+nature de l'aide: formation
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 7h
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Découvrez les cinq chapitres de la formation, réalisés à partir de
+      constats scientifiques, et présentés sous une forme claire et accessible
+    liens:
+      - lien: https://climat.cned.fr/formations/
+        texte: Accéder à la formation
+  - description: >-
+      Inscrivez-vous à la formation gratuite, en ligne, à réaliser en toute
+      autonomie (durée estimé : 7h)
+    liens:
+      - lien: https://climat.cned.fr/
+        texte: climat.cned.fr
+  - description: "Avant de démarrer la formation, testez vos connaissances\_avec 5 questions sur le changement climatique, ses enjeux et les moyens d’agir"
+    liens:
+      - lien: https://climat.cned.fr/le-saviez-vous/
+        texte: Testez vos connaissances
+  - description: >-
+      Validez les connaissances que vous aurez acquises à l’issue de chaque
+      chapitre
+  - description: >-
+      Recevrez un badge numérique valorisant vos connaissances sur le changement
+      climatique, ses enjeux et les moyens d’agir
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental

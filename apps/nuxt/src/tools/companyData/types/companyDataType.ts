@@ -7,7 +7,7 @@ export enum CompanyDataStorageKey {
 
 export interface ManualCompanyData extends CompanyLocalisationType {
   secteur: Sector
-  denomination: string
+  denomination?: string
   structure_size?: StructureSize
 }
 

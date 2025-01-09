@@ -7,7 +7,7 @@ export type EstablishmentRepository = {
 }
 
 export type CityToRegionMappingType = {
-  getRegion: (cityCode: string) => Maybe<string>
+  getRegion: (zipCode: string) => Maybe<string>
 }
 
 export type NafMappingType = {

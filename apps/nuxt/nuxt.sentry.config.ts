@@ -31,10 +31,10 @@ export class NuxtSentryConfig {
       return undefined
     }
 
-    const { host, path, projectId } = dsnComponents
+    const { host, path, projectId, publicKey } = dsnComponents
     return {
       domain: `https://${host}${path}`,
-      url: `https://${host}${path}/api/${projectId}/security/?sentry_key=${dsnComponents.publicKey}`
+      url: `https://${host}${path}/api/${projectId}/security/?sentry_key=${publicKey}`
     }
   }
 }

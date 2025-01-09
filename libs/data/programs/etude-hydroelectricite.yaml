@@ -39,11 +39,11 @@ description longue: >-
   économique de réalisation de l’installation au regard de l’implantation sur le
   site avec des études de sol, des relevés topographiques précis.
 début de validité: 01/01/2023
-fin de validité: 31/12/2024
+fin de validité: 31/12/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-installation-hydroelectrique?cible=79
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-installation-hydroelectrique?cible=79
 nature de l'aide: étude
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
@@ -52,7 +52,7 @@ objectifs:
       l’ADEME ou en contactant un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20pour%20une%20installation%20hydro%C3%A9lectrique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20pour%20une%20installation%20hydro%C3%A9lectrique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
         texte: Conditions éligibilité et financement
   - description: Choisissez le prestataire qui va vous accompagner pour mener votre étude.
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
@@ -65,7 +65,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-installation-hydroelectrique?cible=79
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-installation-hydroelectrique?cible=79
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -78,8 +78,8 @@ conditions d'éligibilité:
     - Éligible aux micro-entreprises
   secteur géographique:
     - >-
-      Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Nouvelle-Aquitaine,
-      Provence-Alpes-Côte d'Azur
+      Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, La Réunion,
+      Nouvelle-Aquitaine, Provence-Alpes-Côte d'Azur
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -126,5 +126,6 @@ publicodes:
     une de ces conditions:
       - région = Auvergne-Rhône-Alpes
       - région = Bourgogne-Franche-Comté
+      - région = La Réunion
       - région = Nouvelle-Aquitaine
       - région = Provence-Alpes-Côte d'Azur

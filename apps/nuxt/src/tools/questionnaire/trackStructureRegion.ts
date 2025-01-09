@@ -65,7 +65,7 @@ export const regions: Track = {
       questionnaireData: { ville: '', region: '', codePostal: '' },
       title: { fr: 'LOCALISATION' },
       next: {
-        default: TrackId.StructureWorkforce,
+        default: TrackId.Goals,
         ruleSet: nextTrackRulesSet
       }
     }
