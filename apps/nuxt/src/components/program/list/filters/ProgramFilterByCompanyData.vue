@@ -37,7 +37,7 @@
         <div class="fr-grid-row">
           <div class="fr-col-1 fr-col-content--middle">
             <span
-              class="company-filter-icon fr-pl-1v"
+              class="company-filter-icon fr-pl-1v fr-col-content--middle"
               :class="detail.icon"
             />
           </div>
@@ -108,5 +108,6 @@ watch(
 .company-filter-icon::before {
   display: inline-block;
   width: 1rem;
+  height: 1rem;
 }
 </style>
