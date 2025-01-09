@@ -23,7 +23,10 @@
           'fr-col-md-12': hasError
         }"
       >
-        <ProgramList :filtered-programs="filteredPrograms" />
+        <ProgramList
+          v-if="!navigationStore.hasSpinner"
+          :filtered-programs="filteredPrograms"
+        />
       </div>
     </template>
   </CatalogLayout>
