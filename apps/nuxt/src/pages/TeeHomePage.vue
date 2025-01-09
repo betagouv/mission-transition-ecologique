@@ -26,7 +26,12 @@
         </TeeButtonLink>
       </div>
       <div class="fr-bg--blue-france--lightness fr-col-12 fr-py-0-5v fr-my-8v"></div>
-      <div class="fr-col-6 fr-px-4v fr-pl-8w fr-text-center">
+      <div class="fr-col-6 fr-px-10w fr-text-center fr-position--relative">
+        <img
+          src="/images/yellow-circle.svg"
+          class="circle-background fr-position--absolute"
+          alt="yellow-circle-background"
+        />
         <h4 class="fr-text--blue-france fr-pb-2v">
           Un point d'entrée unique pour toutes les aides à la transition écologique des entreprises
         </h4>
@@ -45,7 +50,12 @@
           />
         </div>
       </div>
-      <div class="fr-col-6 fr-px-4v fr-pr-8w fr-text-center">
+      <div class="fr-col-6 fr-px-10w fr-text-center fr-position--relative">
+        <img
+          src="/images/green-circle.svg"
+          class="circle-background fr-position--absolute"
+          alt="green-circle-background"
+        />
         <h4 class="fr-text--blue-france fr-pb-2v">Des conseillers pour vous aider sur l'ensemble du territoire</h4>
         <p>
           Conseillers-entreprises vous met en relation avec <b>le conseiller compétent pour votre demande sur votre territoire</b>. Des
@@ -116,3 +126,11 @@ const otherOperators = [
   }
 ]
 </script>
+<style lang="scss">
+.circle-background {
+  position: absolute;
+  z-index: -1;
+  left: 50px;
+  top: -20px;
+}
+</style>
