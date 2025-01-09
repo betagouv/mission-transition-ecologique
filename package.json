@@ -18,7 +18,7 @@
     "dev": "nx run-many -t serve",
     "dev:start": "PORT=4242 npm run start",
     "dev:build:start": "npm run build && npm run dev:start",
-    "build": "nx run-many -t build --max-old-space-size=4096",
+    "build": "export NODE_OPTIONS=--max-old-space-size=4096 && nx run-many -t build",
     "start": "nx run-many -t start --port $PORT",
     "build:start": "npm run build && npm run start",
     "generate:program": "nx run @tee/data:generate-program",
