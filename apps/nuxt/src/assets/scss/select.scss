@@ -1,11 +1,14 @@
 @use 'setting';
 
 .fr-select-group {
+    margin-bottom: 0 !important;
+
     select {
         background-color: setting.$white;
     }
 }  
 
 .fr-select {
+    margin-top: 0 !important;
     background-color: setting.$white;
 }

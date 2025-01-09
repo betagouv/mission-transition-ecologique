@@ -1,4 +1,4 @@
-titre: Audit énergétique en industrie
+titre: Audit énergétique volontaire en industrie
 promesse: >-
   Entreprise industrielle, réalisez un audit énergétique de votre site de
   production
@@ -13,11 +13,11 @@ description: >-
   hiérarchiser en fonction du temps de retour sur investissement et de leur
   facilité de leur mise en œuvre.
 description longue: >-
-  Les audits énergétiques offrent pour bénéfices 15 à 25 % d'économie sur un
+  Les audits énergétiques offrent pour bénéfices 10 à 20 % d'économie sur un
   site en moyenne et des bases solides pour la mise en œuvre d'un Système de
   Management de l'énergie (SMé).
 début de validité: 01/01/2023
-fin de validité: 31/12/2024
+fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: >-
@@ -30,7 +30,7 @@ objectifs:
       l’ADEME ou en contactant un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20transition%20%C3%A9cologique%20industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez un auditeur énergétique "Reconnu Garant de l'Environnement"
@@ -49,7 +49,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/audit-energetique-industrie
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/audit-energetique-volontaire-industrie
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -99,8 +99,11 @@ publicodes:
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
+      - code NAF niveau 1 . est A
       - code NAF niveau 1 . est B
       - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est ma performance énergétique

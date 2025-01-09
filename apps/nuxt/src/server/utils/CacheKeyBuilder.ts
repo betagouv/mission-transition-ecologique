@@ -12,7 +12,12 @@ export class CacheKeyBuilder {
   }
 
   private static _encode = (data: string): string => {
-    return crypto.createHash('sha256').update(data).digest('base64').slice(0, 32).replace(':', '+')
+    return crypto
+      .createHash('sha256')
+      .update(data)
+      .digest('base64')
+      .slice(0, 32)
+      .replace(/[:/]/g, (match) => (match === ':' ? '+' : '_'))
   }
 
   private static _getTestPrefix = (): string => {

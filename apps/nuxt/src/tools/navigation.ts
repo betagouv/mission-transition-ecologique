@@ -98,6 +98,10 @@ export default class Navigation {
     return this.isByRoutePath(this._router.resolve({ name: RouteName.Questionnaire, params: { trackId: TrackId.Goals } }).path)
   }
 
+  isQuestionnaireStep() {
+    return this.isByRouteName([RouteName.Questionnaire]) && !this.isQuestionnaireThemeCards()
+  }
+
   isQuestionnaireResult() {
     return this.isByRouteName(RouteName.QuestionnaireResult)
   }

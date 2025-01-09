@@ -50,6 +50,11 @@
               :option="option"
               @click="updateAndSave(option, idx)"
             />
+            <TrackLocalisation
+              v-if="TrackComponent.isLocalisation(usedTrack)"
+              :option="option as TrackOptionsInput"
+              @update-selection="updateSelection($event.option, idx, $event.remove, $event.forceKeep)"
+            />
             <TrackSiret
               v-if="TrackComponent.isSiret(usedTrack, option)"
               :option="option as TrackOptionsInput"
@@ -110,7 +115,6 @@ import TrackColOption from '@/tools/questionnaire/track/TrackColOption'
 import TrackComponent from '@/tools/questionnaire/track/TrackComponent'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { CompanyDataStorage, CompanyData } from '@/tools/companyData'
 
 interface Props {
   trackElement: Element
@@ -122,7 +126,6 @@ const router = useRouter()
 const trackStore = useTrackStore()
 const usedTrackStore = useUsedTrackStore()
 const navigationStore = useNavigationStore()
-const registeredData = CompanyDataStorage.getData()
 
 const selectedOptionsIndexes = ref<number[]>([])
 const selectedOptions = ref<TrackOptionsUnion[]>([])
@@ -171,7 +174,7 @@ const updateSelection = async (option: TrackOptionsUnion, index: number, forceRe
   }
 
   // Direct to next track
-  const directToNext: string[] = [TrackComponentType.Cards]
+  const directToNext: string[] = [TrackComponentType.Cards, TrackComponentType.CitySearch]
   if (!allowMultiple && directToNext.includes(trackStore.currentComponent)) {
     await saveSelection(remove)
   }
@@ -218,23 +221,4 @@ const backToPreviousTrack = async () => {
     return await router.push(navigationStore.routeByTrackId(trackId))
   }
 }
-
-watch(registeredData.value, async () => {
-  const isDataFull = CompanyData.isDataFull().value
-
-  if (!isDataFull) {
-    return
-  }
-
-  const next = CompanyData.getNextTrackStorage()
-
-  if (!next) return
-
-  await router.push({
-    name: RouteName.Questionnaire,
-    hash: Navigation.hashByRouteName(RouteName.Questionnaire),
-    params: { trackId: next },
-    query: navigationStore.query
-  })
-})
 </script>
