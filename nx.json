@@ -29,6 +29,9 @@
     },
     "start": {
       "dependsOn": []
+    },
+    "e2e-ci--**/*": {
+      "dependsOn": ["^build-static"]
     }
   },
   "plugins": [
@@ -45,7 +48,8 @@
         "testTargetName": "test",
         "serveTargetName": "serve",
         "previewTargetName": "start",
-        "serveStaticTargetName": "serve-static"
+        "serveStaticTargetName": "serve-static",
+        "typecheckTargetName": "type-check"
       }
     },
     {
@@ -62,6 +66,19 @@
         "targetName": "test"
       },
       "exclude": ["apps/backend-e2e/**/*"]
+    },
+    {
+      "plugin": "@nx/nuxt/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve"
+      }
+    },
+    {
+      "plugin": "@nx/playwright/plugin",
+      "options": {
+        "targetName": "e2e"
+      }
     }
   ]
 }

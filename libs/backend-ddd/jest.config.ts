@@ -1,7 +1,9 @@
 /* eslint-disable */
-export default {
+import type { Config } from 'jest'
+
+const config: Config = {
   displayName: '@tee/backend-ddd',
-  preset: '../../jest.preset.js',
+  preset: '../../jest.preset.ts',
   testEnvironment: 'node',
   transform: {
     '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
@@ -10,3 +12,5 @@ export default {
   coverageDirectory: '../../coverage/libs/backend-ddd',
   roots: ['./tests']
 };
+
+export default config;

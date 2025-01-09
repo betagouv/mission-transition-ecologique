@@ -45,7 +45,6 @@ jobs:
       - run: npm clean-install --foreground-scripts
 
       - run: npx nx run @tee/data:generate-program
-      - run: npx nx run @tee/backend:spec-and-routes
       - run: npm run lint
 
   lint-css:
@@ -64,7 +63,7 @@ jobs:
           cache: 'npm'
       - run: npm clean-install --foreground-scripts
 
-      - run: npx nx run @tee/web:sass-lint -f github
+      - run: npx nx run @tee/nuxt:sass-lint -f github
 
 
   type-check:
