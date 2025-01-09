@@ -52,7 +52,7 @@ import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType, FilterItemK
 import Breakpoint from '@/tools/breakpoints'
 import { onClickOutside } from '@vueuse/core'
 import { useNavigationStore } from '@/stores/navigation'
-import { CompanyDataStorage, CompanyData } from '@/tools/companyData'
+import { CompanyData } from '@/tools/companyData'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
 
