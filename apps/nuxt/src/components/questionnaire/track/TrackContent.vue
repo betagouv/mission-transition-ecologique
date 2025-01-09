@@ -115,7 +115,6 @@ import TrackColOption from '@/tools/questionnaire/track/TrackColOption'
 import TrackComponent from '@/tools/questionnaire/track/TrackComponent'
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { CompanyData } from '@/tools/companyData'
 
 interface Props {
   trackElement: Element
@@ -127,7 +126,6 @@ const router = useRouter()
 const trackStore = useTrackStore()
 const usedTrackStore = useUsedTrackStore()
 const navigationStore = useNavigationStore()
-const registeredData = CompanyData.dataRef
 
 const selectedOptionsIndexes = ref<number[]>([])
 const selectedOptions = ref<TrackOptionsUnion[]>([])
