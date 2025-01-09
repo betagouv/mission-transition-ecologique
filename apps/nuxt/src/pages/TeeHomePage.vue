@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="fr-container fr-py-2v fr-px-5v fr-px-sm-8v fr-px-md-20v">
-      <h1 class="fr-text--blue-france fr-py-8v">Quel est votre projet ?</h1>
+      <h1 class="fr-text--blue-france fr-container fr-pt-2v">Quel est votre projet ?</h1>
       <CatalogProjects
         :show-breadcrumbs="false"
         :show-title="false"
