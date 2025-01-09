@@ -15,6 +15,7 @@
     "programs": [
       "baisse-les-watts",
       "fonds-tourisme-durable",
+      "diag-eco-flux",
       "programme-breizh-fab",
       "renovation-petit-tertiaire-prive",
       "tpe-gagnantes-sur-tous-les-couts",
@@ -623,7 +624,7 @@
     "shortDescription": "La géothermie permet de produire différents types d'énergie en fonction de la température de la chaleur puisée dans le sous-sol.",
     "image": "/images/projet/geothermie.webp",
     "longDescription": "La géothermie est une énergie renouvelable qui consiste à exploiter la chaleur du sous-sol pour produire de la chaleur, du froid ou de l'électricité. Cette énergie est disponible localement, 24h/24, 365 jours/an, et est peu dépendante des variations climatiques journalières ou saisonnières.\n\nLa géothermie peut être exploitée à différentes profondeurs et pour de nombreux usages, tels que le chauffage des bâtiments, la climatisation, le rafraîchissement, le stockage d'énergie thermique, etc. La géothermie est une énergie renouvelable locale, permanente et décarbonée. Elle est peu émettrice de gaz à effet de serre et contribue à la décarbonation du chauffage des bâtiments.",
-    "moreDescription": "- [**Géothermie**](https://fondschaleur.ademe.fr/geothermie/) : définition, chiffres clés et domaines d'application",
+    "moreDescription": "- [**Géothermie**](https://www.geothermies.fr/decouvrir-la-geothermie) : définition, chiffres clés et domaines d'application",
     "themes": [
       "energy"
     ],
