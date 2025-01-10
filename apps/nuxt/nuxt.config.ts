@@ -82,9 +82,9 @@ export default defineNuxtConfig({
 
   modules: [
     '@pinia/nuxt',
+    'nuxt-security',
     'vue-dsfr-nuxt-module',
     '@sentry/nuxt/module',
-    'nuxt-security',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@nuxt/scripts'
@@ -93,6 +93,9 @@ export default defineNuxtConfig({
   // - nuxt-purgecss
   // - @nuxtjs/critters
   security: {
+    ssg: {
+      hashScripts: true
+    },
     headers: NuxtSecurityConfig.getHeaderConfig(),
     rateLimiter: NuxtSecurityConfig.getRateLimiterConfig()
   },
@@ -123,9 +126,12 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
+      environment: Config.SERVER_ENVIRONMENT,
       sentry: {
-        environment: Config.SENTRY_ENVIRONMENT,
         dsn: Config.SENTRY_DSN,
+      },
+      posthog: {
+        apiKey: Config.posthogApiKey,
       },
       scripts: {
         matomoAnalytics: {
