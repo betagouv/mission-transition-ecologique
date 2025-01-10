@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="fr-container fr-py-2v fr-px-5v fr-px-sm-8v fr-px-md-20v">
-      <h1 class="fr-text--blue-france fr-container fr-pt-2v">Quel est votre projet ?</h1>
+      <h2 class="fr-text--blue-france fr-container fr-pt-6v">Quel est votre projet ?</h2>
       <CatalogProjects
         :show-breadcrumbs="false"
         :show-title="false"
@@ -21,9 +21,9 @@
             size="sm"
             icon="fr-icon-arrow-right-line"
             icon-right
-            class="no-outline fr-text--decoration-underline fr-mb-8v"
+            class="no-outline fr-border-b--blue-france fr-p-0 fr-mb-8v"
           >
-            Voir tout les projets
+            Voir tous les projets
           </TeeButtonLink>
         </div>
         <div class="fr-bg--blue-france--lightness fr-col-12 fr-py-0-5v fr-my-8v"></div>

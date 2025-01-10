@@ -100,8 +100,11 @@ onNuxtReady(async () => {
 })
 
 const title = 'Les aides à la transition écologique'
+const description =
+  'Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :' +
+  'ADEME, Bpifrance, CCI, CMA, etc.'
 
-useSeoMeta(MetaSeo.get(title))
+useSeoMeta(MetaSeo.get(title, description))
 
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined

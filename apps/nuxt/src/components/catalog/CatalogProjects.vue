@@ -83,9 +83,10 @@ const props = withDefaults(defineProps<Props>(), {
   showBreadcrumbs: true
 })
 const { projects, hasError } = storeToRefs(useProjectStore())
-projects.value = props.showLimit !== -1 ? projects.value.slice(0, props.showLimit) : projects.value
 
 await new ProjectManager().getProjects()
+
+projects.value = props.showLimit !== -1 ? projects.value.slice(0, props.showLimit) : projects.value
 
 const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
