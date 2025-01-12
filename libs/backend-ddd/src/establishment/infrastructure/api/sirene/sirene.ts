@@ -12,7 +12,7 @@ import Monitor from '../../../../common/domain/monitoring/monitor'
  * variable and get an Établissement by its siret from the Sirene API
  */
 export const getEstablishment: EstablishmentRepository['get'] = async (siret) => {
-  const token = process.env['SIRENE_API_TOKEN'] || ''
+  const token = process.env['SIRENE_API_311_TOKEN'] || ''
   return requestSireneAPI(token, siret)
 }
 
