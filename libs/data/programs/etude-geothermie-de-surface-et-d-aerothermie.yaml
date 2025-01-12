@@ -120,5 +120,5 @@ champs conditionnels:
     Montant du dispositif: Jusqu'à 60% du coût de l'étude, dans un maximum de 100 000 €
   - toutes ces conditions:
       - effectif >= 250
-      - effectif <= 4999
+      - effectif <= null
     Montant du dispositif: Jusqu'à 50% du coût de l'étude, dans un maximum de 100 000 €
