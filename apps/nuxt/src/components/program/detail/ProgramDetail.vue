@@ -176,9 +176,11 @@
               :title="Translation.t('program.programEndValidity')"
               image-path="/images/TEE-date-fin.svg"
               :description="
-                programEndValidity
-                  ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
-                  : Translation.t('program.programAvailable')
+                temporaryUnavailable
+                  ? 'Aide temporairement indisponible'
+                  : programEndValidity
+                    ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
+                    : Translation.t('program.programAvailable')
               "
             />
           </div>
@@ -214,7 +216,7 @@
 
     <!-- PROGRAM FORM -->
     <div
-      v-if="hasRegisteredData && programIsEligible"
+      v-if="hasRegisteredData && programIsEligible && !temporaryUnavailable"
       ref="tee-program-form-container"
       class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
     >
@@ -327,6 +329,10 @@ const programIsEligible = computed(() => {
     program.value?.eligibility === ProgramEligibilityType.Eligible ||
     program.value?.eligibility === ProgramEligibilityType.PartiallyEligible
   )
+})
+
+const temporaryUnavailable = computed(() => {
+  return programEndValidity.value == '14/04/2043'
 })
 
 onBeforeRouteLeave(() => {
