@@ -72,7 +72,7 @@
               :program="program"
             />
             <DsfrButton
-              v-if="!isProgramAutonomous && programIsEligible"
+              v-if="!isProgramAutonomous && programIsEligible && !temporaryUnavailable"
               size="lg"
               icon="fr-icon-mail-line"
               class="fr-ml-md-3v"
@@ -305,6 +305,9 @@ const programDuration = computed(() => program.value?.[`durée de l'accompagneme
 const programLoanDuration = computed(() => program.value?.[`durée du prêt`])
 const programProvider = computed(() => program.value?.['opérateur de contact'])
 const programEndValidity = computed(() => program.value?.[`fin de validité`])
+const temporaryUnavailable = computed(() => {
+  return program.value?.[`aide temporairement indisponible`] === 'oui'
+})
 
 const columnTiles = computed(() => {
   const infoBlocks = [
@@ -329,10 +332,6 @@ const programIsEligible = computed(() => {
     program.value?.eligibility === ProgramEligibilityType.Eligible ||
     program.value?.eligibility === ProgramEligibilityType.PartiallyEligible
   )
-})
-
-const temporaryUnavailable = computed(() => {
-  return programEndValidity.value == '14/04/2043'
 })
 
 onBeforeRouteLeave(() => {
