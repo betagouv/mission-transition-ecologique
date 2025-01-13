@@ -1,4 +1,5 @@
 export * from './types'
+export * from './naf1'
 export * from './validator/siretValidator'
 export * from './validator/emailValidator'
 export * from './validator/phoneValidator'

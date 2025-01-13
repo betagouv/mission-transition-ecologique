@@ -1,15 +1,15 @@
 import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType, EstablishmentFront } from '@tee/common'
 import { FieldType, RouteName, type ProgramData as ProgramType, ProjectType, FormDataType, ThemeType, ThemeId } from '@/types'
-import { useProgramStore } from '@/stores/program'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import { CalloutType } from '@/types/elementsPropsTypes'
 import Translation from '@/tools/translation'
 import { Theme } from '@/tools/theme'
 import { CompanyData } from '@/tools/companyData'
+import { useFiltersStore } from '@/stores/filters'
 
 export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
-    const selectedThemeId = useProgramStore().hasThemeTypeSelected() ? useProgramStore().getThemeTypeSelected() : TrackStructure.getTheme()
+    const selectedThemeId = useFiltersStore().hasThemeTypeSelected() ? useFiltersStore().getThemeTypeSelected() : TrackStructure.getTheme()
     const selectedTheme = Theme.getById(selectedThemeId as ThemeId)
     return {
       theme: {

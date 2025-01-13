@@ -1,3 +1,3 @@
 export default defineNuxtRouteMiddleware(() => {
-  useProgramStore().resetFilters()
+  useFiltersStore().resetFilters()
 })
