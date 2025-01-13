@@ -90,7 +90,7 @@ const content: HomeTipsContent[] = [
   {
     badge: '⚡️ Gestion énergétique',
     badgeColor: Color.yellow,
-    title: ' Diminuer votre facture d’éléctricité',
+    title: ' Diminuer votre facture d’électricité',
     img: '/images/home/electric.svg',
     imgSolo: '/images/home/electric-solo.svg',
     imgRight: false,
