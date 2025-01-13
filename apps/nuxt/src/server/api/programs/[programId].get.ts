@@ -29,7 +29,7 @@ const programCached = cachedFunction(
 
       throw createError({
         statusCode: 500,
-        statusMessage: 'Server internal error in get Program id'
+        statusMessage: 'Server internal error in get Program by id'
       })
     }
 
