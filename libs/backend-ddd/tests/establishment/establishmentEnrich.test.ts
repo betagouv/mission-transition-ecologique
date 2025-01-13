@@ -1,4 +1,4 @@
-import { Maybe } from 'true-myth'
+import { Maybe, Result } from 'true-myth'
 import { NafSearchType } from '../../src/establishment/domain/spi'
 import EstablishmentFeatures from '../../src/establishment/domain/establishmentFeatures'
 import { expectToBeOk } from '../testing'
@@ -18,7 +18,7 @@ EXPECT the result to have Naf label information derived from the provided NafMap
   const dummyNafMapping: NafSearchType = {
     getLabel: () => Maybe.of(DUMMY_NAF_LABEL),
     getSectionCode: () => Maybe.of(DUMMY_SECTION_CODE),
-    searchNAF: () => []
+    searchNAF: () => Result.ok([])
   }
   test('Valid naf labels and codes', async () => {
     const testFeatures = new EstablishmentFeatures(dummyEstablishmentRepository, nothingRegionMapping, dummyNafMapping)
