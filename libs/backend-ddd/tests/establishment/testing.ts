@@ -38,5 +38,5 @@ export const nothingRegionMapping: CityToRegionMapping = {
 export const nothingNafMapping: NafSearchType = {
   getLabel: () => Maybe.nothing<string>(),
   getSectionCode: () => Maybe.nothing<string>(),
-  searchNAF: () => []
+  searchNAF: () => Result.ok([])
 }
