@@ -94,14 +94,7 @@ const content: HomeTipsContent[] = [
     img: '/images/home/electric.svg',
     imgSolo: '/images/home/electric-solo.svg',
     imgRight: false,
-    text: 'Le prix de l’énergie ne cesse d’augmenter. \
-        L’efficacité énergétique est un axe à court terme \
-        vous permettant de générer des économies d’énergie, \
-        d’optimiser vos consommations énergétiques, \
-        de réduire vos émissions carbones et surtout d’assurer \
-        votre rentabilité. Des dizaines d’actions rapides \
-        peuvent être mises en place dès à présent pour \
-        réduire la consommation d’électricité ou de gaz d’une entreprise. '
+    text: 'Les factures de gaz et d’électricité pèsent parfois lourd sur le budget d’une entreprise. En limitant la consommation de certains de vos équipements et en mettant en place quelques actions rapides, vous pouvez réaliser d’importantes économies d’énergie et voir baisser votre facture énergétique à court terme.'
   },
   {
     badge: '👷‍♀️ Bâtiment durable',
