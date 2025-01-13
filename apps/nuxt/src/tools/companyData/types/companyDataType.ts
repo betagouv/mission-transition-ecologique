@@ -1,12 +1,11 @@
-import { Region, Sector, EstablishmentFront, StructureSize } from '@/types'
+import { Region, CompanyActivityType, EstablishmentFront, StructureSize } from '@/types'
 
 export enum CompanyDataStorageKey {
   Company = 'company',
   Size = 'structure_size'
 }
 
-export interface ManualCompanyData extends CompanyLocalisationType {
-  secteur: Sector
+export interface ManualCompanyData extends CompanyLocalisationType, CompanyActivityType {
   denomination?: string
   structure_size?: StructureSize
 }
@@ -55,5 +54,5 @@ export type RegisterDetailSize = Omit<RegisterDetail, 'value'> & {
 export type RegisterDetailLocalisation = Omit<RegisterDetail, 'value'> & {
   value: CompanyLocalisationType | undefined
 }
-export type RegisterDetailActivity = Omit<RegisterDetail, 'value'> & { value: Sector | undefined }
+export type RegisterDetailActivity = Omit<RegisterDetail, 'value'> & { value: CompanyActivityType | undefined }
 export type RegisterDetailUnion = RegisterDetail | RegisterDetailSize | RegisterDetailActivity | RegisterDetailLocalisation

@@ -1,50 +1,42 @@
 <template>
-  <p
-    v-if="infos.value"
-    class="fr-tag fr-mb-4v fr-bg--blue-france--lightness"
-  >
-    <span class="fr-pr-4v">{{ activityLabel }}</span>
-    <span
-      class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
-      @click="modifyActivity"
-    />
-  </p>
-  <div
-    v-else
-    id="register-activity"
-  >
-    <div
-      class="fr-input-group fr-mb-0"
-      :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
+  <div id="register-activity">
+    <DsfrInputGroup
+      class="fr-mb-0"
+      :error-message="errorMsg"
     >
+      <span
+        v-if="option.hint"
+        class="fr-hint-text fr-mb-2v"
+      >
+        {{ option?.hint?.[Translation.lang] }}
+      </span>
       <div
         ref="activitySearchBar"
-        class="fr-search-bar fr-search-bar--yellow"
+        class="fr-search-bar"
         :class="isLoading ? 'fr-search-bar--loading' : ''"
         role="search"
       >
         <DsfrInput
           v-model="activityInput"
           name="manual-register-activity"
-          class="fr-input--white fr-input"
+          class="fr-input"
           type="search"
-          :placeholder="infos.description"
+          :hint="option?.hint?.[Translation.lang]"
           @click="searchActivity"
           @update:model-value="updateModelValue"
           @keyup.enter="searchActivity"
         />
         <DsfrButton
-          class="fr-bg--yellow search-button"
-          tertiary
+          class="fr-bg--blue-france search-button--white"
           no-outline
           @click="searchActivity"
         />
       </div>
-    </div>
+    </DsfrInputGroup>
     <div
-      v-if="activityResults.length && !infos.value"
+      v-if="activityResults.length"
       id="activity-response"
-      class="fr-bg--white"
+      class="fr-bg--white fr-mt-n3w"
     >
       <div
         v-for="activity in activityResults"
@@ -59,55 +51,35 @@
         </div>
       </div>
     </div>
-    <div
-      :class="errorMsg ? 'fr-error-text' : ''"
-      class="fr-input--empty-text fr-mt-2v"
-    >
-      {{ errorMsg }}
-    </div>
   </div>
 </template>
 <script lang="ts" setup>
-import { RegisterDetailActivity, CompanyActivityType } from '@/types'
-import { useDebounce } from '@vueuse/core'
-import EstablishmentApi from '@/tools/api/establishmentApi'
-import { onClickOutside } from '@vueuse/core'
+import { TrackOptionsInput, CompanyActivityType, TrackOptionItem } from '@/types'
+import { onClickOutside, useDebounce } from '@vueuse/core'
+import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import Translation from '@/tools/translation'
 
 interface Props {
-  infos: RegisterDetailActivity
-  manual: boolean
-  showError: boolean
+  option: TrackOptionsInput
 }
 const props = defineProps<Props>()
-
+const emit = defineEmits(['updateSelection'])
 const selectedActivity = defineModel<CompanyActivityType>()
-
 const activityInput = ref<string>('')
-const isLoading = ref<boolean>(false)
-const activitySearchBar = ref(null)
+const activitySearchBar = useTemplateRef('activitySearchBar')
 const activityResults = ref<CompanyActivityType[]>([])
-const activityLabel = computed<string>(() => {
-  return `${props.infos.value?.secteur} (${props.infos.value?.codeNAF})`
-})
-
-onClickOutside(activitySearchBar, () => modifyActivity())
-
+const isLoading = ref<boolean>(false)
 const debouncedActivityInput = useDebounce(activityInput, 100)
 watch(debouncedActivityInput, () => {
   searchActivity()
 })
-
 const errorMsg = computed<string>(() => {
-  if (props.showError && !debouncedActivityInput.value && !isLoading.value) {
-    return Translation.t('register.activity.mandatory')
-  } else if (activityResults.value.length === 0 && debouncedActivityInput.value && !isLoading.value) {
+  if (activityResults.value.length === 0 && debouncedActivityInput.value && !isLoading.value) {
     return Translation.t('register.activity.noResults')
   }
   return ''
 })
-
-const modifyActivity = () => {
+const resetActivity = () => {
   selectedActivity.value = undefined
   activityInput.value = ''
   activityResults.value = []
@@ -115,25 +87,28 @@ const modifyActivity = () => {
 const updateModelValue = (value: string) => {
   activityInput.value = value
 }
-
 const selectActivity = (activity: CompanyActivityType) => {
   selectedActivity.value = activity
+  emit('updateSelection', createData())
 }
-
+onClickOutside(activitySearchBar, () => resetActivity())
 const searchActivity = async () => {
   isLoading.value = true
-  const results = await new EstablishmentApi().searchActivities(activityInput.value)
+  const results = await TrackStructure.searchActivity(activityInput.value)
   if (results.isOk()) {
     activityResults.value = results.data
   }
   isLoading.value = false
+}
+function createData(): TrackOptionItem {
+  return TrackStructure.createData(props.option, selectedActivity.value?.secteur, selectedActivity.value)
 }
 </script>
 <style lang="scss" scoped>
 #activity-response {
   text-align: left;
   width: calc(100% - 40px);
-  max-height: 128px;
+  max-height: 256px;
   z-index: 2000;
   position: absolute;
   overflow: hidden auto;

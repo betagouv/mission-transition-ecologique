@@ -86,7 +86,7 @@ export default class Opportunity {
   }
   static getProjectFormFields(project: ProjectType): FormDataType {
     const baseFields = this.getBaseOpportunityFormFields()
-    baseFields.needs.value = Translation.t('project.form.needs', { secteur: TrackStructure.getSectorShortLabel() })
+    baseFields.needs.value = Translation.t('project.form.needs', { secteur: TrackStructure.getSector() })
     return {
       projectTitle: {
         required: true,
@@ -101,7 +101,7 @@ export default class Opportunity {
   static getOtherProjectFormFields(): FormDataType {
     const baseFields = this.getBaseOpportunityFormFields()
     baseFields.needs.label = 'Quel est votre projet ?'
-    baseFields.needs.value = Translation.t('otherProject.form.needs', { secteur: TrackStructure.getSectorShortLabel() })
+    baseFields.needs.value = Translation.t('otherProject.form.needs', { secteur: TrackStructure.getSector() })
     baseFields.theme = { ...baseFields.theme, hidden: false, required: true }
     return {
       projectTitle: {
@@ -117,7 +117,7 @@ export default class Opportunity {
   static getProgramFormFields(program: ProgramType): FormDataType {
     const baseFields = this.getBaseOpportunityFormFields()
     baseFields.needs.value = Translation.t('program.form.needs', {
-      secteur: TrackStructure.getSectorShortLabel(),
+      secteur: TrackStructure.getSector(),
       titreAide: program.titre
     })
     return baseFields

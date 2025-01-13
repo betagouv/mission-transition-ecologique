@@ -45,3 +45,9 @@ export enum NAF1 {
   T = 'T',
   U = 'U'
 }
+
+export interface CompanyActivityType {
+  codeNAF: string
+  codeNAF1: NAF1
+  secteur: string
+}
