@@ -72,7 +72,7 @@
               :program="program"
             />
             <DsfrButton
-              v-if="!isProgramAutonomous && programIsEligible"
+              v-if="!isProgramAutonomous && programIsEligible && !temporaryUnavailable"
               size="lg"
               icon="fr-icon-mail-line"
               class="fr-ml-md-3v"
@@ -176,9 +176,11 @@
               :title="Translation.t('program.programEndValidity')"
               image-path="/images/TEE-date-fin.svg"
               :description="
-                programEndValidity
-                  ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
-                  : Translation.t('program.programAvailable')
+                temporaryUnavailable
+                  ? 'Aide temporairement indisponible'
+                  : programEndValidity
+                    ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
+                    : Translation.t('program.programAvailable')
               "
             />
           </div>
@@ -214,7 +216,7 @@
 
     <!-- PROGRAM FORM -->
     <div
-      v-if="hasRegisteredData && programIsEligible"
+      v-if="hasRegisteredData && programIsEligible && !temporaryUnavailable"
       ref="tee-program-form-container"
       class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
     >
@@ -303,6 +305,9 @@ const programDuration = computed(() => program.value?.[`durée de l'accompagneme
 const programLoanDuration = computed(() => program.value?.[`durée du prêt`])
 const programProvider = computed(() => program.value?.['opérateur de contact'])
 const programEndValidity = computed(() => program.value?.[`fin de validité`])
+const temporaryUnavailable = computed(() => {
+  return program.value?.[`aide temporairement indisponible`] === 'oui'
+})
 
 const columnTiles = computed(() => {
   const infoBlocks = [

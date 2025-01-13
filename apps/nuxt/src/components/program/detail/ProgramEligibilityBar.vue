@@ -14,6 +14,13 @@ import { storeToRefs } from 'pinia'
 const { currentProgram: program } = storeToRefs(useProgramStore())
 
 const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(() => {
+  if (program.value?.[`aide temporairement indisponible`] === 'oui') {
+    return {
+      default: 'Cette aide est temporairement indisponible.',
+      mobile: 'Cette aide est temporairement indisponible.',
+      icon: 'fr-icon-close-circle-fill'
+    }
+  }
   switch (program.value?.eligibility) {
     case ProgramEligibilityType.Eligible:
       return {
@@ -38,10 +45,17 @@ const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(()
 })
 
 const getEligibilityColor: ComputedRef<Color> = computed(() => {
-  return program.value?.eligibility === ProgramEligibilityType.NotEligible ? Color.red : Color.greenLightnessed
+  return program.value?.[`aide temporairement indisponible`] === 'oui'
+    ? Color.red
+    : program.value?.eligibility === ProgramEligibilityType.NotEligible
+      ? Color.red
+      : Color.greenLightnessed
 })
 
 const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = computed(() => {
+  if (program.value?.[`aide temporairement indisponible`] === 'oui') {
+    return undefined
+  }
   switch (program.value?.eligibility) {
     case ProgramEligibilityType.PartiallyEligible:
       return {

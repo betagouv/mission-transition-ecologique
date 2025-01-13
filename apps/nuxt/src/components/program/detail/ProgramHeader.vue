@@ -1,5 +1,5 @@
 <template>
-  <ProgramEligibilityBar v-if="hasRegisteredData" />
+  <ProgramEligibilityBar v-if="hasRegisteredData || programTemporaryUnavailable" />
   <TeeDsfrBreadcrumb :links="links" />
   <div class="fr-container fr-mt-0 fr-mt-md-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
@@ -46,6 +46,9 @@ const navigation = new Navigation()
 const isCatalogDetail = navigation.isCatalogProgramDetail()
 
 const hasRegisteredData = CompanyData.isDataFull()
+const programTemporaryUnavailable = computed(() => {
+  return currentProgram.value?.[`aide temporairement indisponible`] === 'oui'
+})
 
 const routeToResults = {
   name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
