@@ -3,14 +3,6 @@ import { ConfigCommon } from '@tee/common'
 export default class Config extends ConfigCommon {
   protected static override _sentryDsn = process.env['SENTRY_SERVER_DSN']
 
-  public static get BPI_FRANCE_CLIENT_ID(): string {
-    return this.getEnvValue('BPI_FRANCE_CLIENT_ID')
-  }
-
-  public static get BPI_FRANCE_CLIENT_SECRET(): string {
-    return this.getEnvValue('BPI_FRANCE_CLIENT_SECRET')
-  }
-
   public static get BREVO_API_TOKEN(): string {
     return this.getEnvValue('BREVO_API_TOKEN')
   }
@@ -52,9 +44,5 @@ export default class Config extends ConfigCommon {
 
   public static get PDE_API_ENABLED(): boolean {
     return this.THIRD_PARTY_API_ENABLED && this.getEnvValue('PDE_API_ENABLED', 'true') !== 'false'
-  }
-
-  public static get BPI_API_ENABLED(): boolean {
-    return this.THIRD_PARTY_API_ENABLED && this.getEnvValue('BPI_API_ENABLED', 'true') !== 'false'
   }
 }
