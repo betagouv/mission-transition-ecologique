@@ -220,7 +220,7 @@ const operators = [
   },
   {
     label: 'Office français de la biodiversité',
-    img: '/images/logos/logo-ofb.png',
+    img: '/images/logos/logo-ofb.webp',
     href: ' https://ofb.gouv.fr'
   }
 ]
