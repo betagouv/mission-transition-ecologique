@@ -138,6 +138,7 @@ const searchActivity = async () => {
   position: absolute;
   overflow: hidden auto;
 }
+
 #register-activity {
   position: relative;
   margin-bottom: 0;

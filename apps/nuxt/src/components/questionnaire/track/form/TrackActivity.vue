@@ -113,6 +113,7 @@ function createData(): TrackOptionItem {
   position: absolute;
   overflow: hidden auto;
 }
+
 #register-activity {
   position: relative;
   margin-bottom: 0;
