@@ -13,7 +13,7 @@
         id="register-modal-content"
         class="fr-container fr-grid-row fr-grid-row--left fr-grid-row--top"
       >
-        <div class="fr-col-12 fr-col-md-12 fr-col-offset-md-2 fr-pb-md-4v fr-pt-8v fr-text--yellow">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pb-md-1v fr-pt-7v fr-text--yellow">
           <div>
             <div class="fr-h2 fr-mb-0 fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
             <TeeDsfrButton
