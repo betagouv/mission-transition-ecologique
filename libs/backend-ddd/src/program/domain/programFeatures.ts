@@ -4,7 +4,6 @@ import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
 import { ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { Objective, QuestionnaireData } from '@tee/common'
-import { Monitor } from '../../common'
 import ProgramCustomizer from './programCustomizer'
 import { ProgramNotFoundError } from './types'
 
@@ -30,7 +29,6 @@ export default class ProgramFeatures {
   public getOneWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
     let program = this.getById(id)
     if (!program) {
-      Monitor.warning('Requested Program Id unknown', { id })
       return Result.err(new ProgramNotFoundError())
     }
     if (new ProgramCustomizer().shouldRewritePrograms(questionnaireData)) {
