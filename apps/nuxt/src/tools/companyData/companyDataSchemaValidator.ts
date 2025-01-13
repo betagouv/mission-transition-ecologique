@@ -1,15 +1,17 @@
 import { z } from 'zod'
-import { CompanyDataRegisterType, EstablishmentFront, LegalCategory, ManualCompanyData, Region, Sector, StructureSize } from '@/types'
+import { CompanyDataRegisterType, EstablishmentFront, LegalCategory, ManualCompanyData, NAF1, Region, StructureSize } from '@/types'
 
 const RegionEnum = z.nativeEnum(Region)
-const SectorEnum = z.nativeEnum(Sector)
 const StructureSizeEnum = z.nativeEnum(StructureSize)
+const codeNAF1Enum = z.nativeEnum(NAF1)
 
 const ManualCompanyDataSchema: z.ZodType<ManualCompanyData> = z.object({
   region: RegionEnum,
+  secteur: z.string(),
+  codeNAF: z.string(),
+  codeNAF1: codeNAF1Enum,
   ville: z.string(),
   codePostal: z.string(),
-  secteur: SectorEnum,
   denomination: z.string().optional(),
   structure_size: StructureSizeEnum.optional()
 })

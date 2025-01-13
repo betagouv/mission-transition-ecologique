@@ -1,12 +1,12 @@
 import EstablishmentFeatures from '../domain/establishmentFeatures'
 import { getEstablishment } from '../infrastructure/api/sirene/sirene'
-import { CityToRegionMappingType, EstablishmentRepository, NafMappingType } from '../domain/spi'
+import { CityToRegionMappingType, EstablishmentRepository, NafSearchType } from '../domain/spi'
 import type { Establishment, Siret } from '../domain/types'
 import { Result } from 'true-myth'
 import { CityToRegionMapping } from '../infrastructure/json/cityToRegionMapping'
-import { NafJsonMapping } from '../infrastructure/json/nafJsonMapping'
+import { NafSearch } from '../infrastructure/json/nafJsonSearch'
 import { RechercheEntreprise } from '../infrastructure/api/recherche-entreprise/recherche-entreprise'
-import { EstablishmentSearch } from '@tee/common'
+import { CompanyActivityType, EstablishmentSearch } from '@tee/common'
 
 export default class EstablishmentService {
   private _establishmentFeatures: EstablishmentFeatures
@@ -15,7 +15,7 @@ export default class EstablishmentService {
     this._establishmentFeatures = new EstablishmentFeatures(
       this._getEstablishmentRepository(),
       this._getCityToRegionMapping(),
-      this._getNafMapping()
+      this._getNafSearch()
     )
   }
 
@@ -27,6 +27,14 @@ export default class EstablishmentService {
     return this._establishmentFeatures.getBySiret(siret)
   }
 
+  public searchNAF(query: string): Result<CompanyActivityType[], Error> {
+    try {
+      return new NafSearch().searchNAF(query)
+    } catch (error: unknown) {
+      return Result.err(error as Error)
+    }
+  }
+
   private _getEstablishmentRepository(): EstablishmentRepository {
     const rechercheEntreprise = new RechercheEntreprise()
     return { get: getEstablishment, search: rechercheEntreprise.searchEstablishment }
@@ -36,7 +44,7 @@ export default class EstablishmentService {
     return new CityToRegionMapping()
   }
 
-  private _getNafMapping(): NafMappingType {
-    return new NafJsonMapping()
+  private _getNafSearch(): NafSearchType {
+    return new NafSearch()
   }
 }

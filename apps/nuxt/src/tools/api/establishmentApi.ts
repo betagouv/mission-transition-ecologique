@@ -1,6 +1,7 @@
 import RequestApi from '@/tools/api/requestApi'
 import { Result } from 'true-myth'
-import { EstablishmentSearch } from '@/types'
+import { EstablishmentSearch, CompanyActivityType } from '@/types'
+import { ResultApi } from '@/tools/api/resultApi'
 
 export default class EstablishmentApi extends RequestApi {
   protected readonly url = '/api/establishments/'
@@ -17,5 +18,9 @@ export default class EstablishmentApi extends RequestApi {
     } catch (error: unknown) {
       return Result.err(error as Error)
     }
+  }
+
+  async searchActivities(searchTerm: string): Promise<ResultApi<CompanyActivityType[]>> {
+    return await super.getJson<CompanyActivityType[]>(`${this.url}searchNAF?searchTerm=${searchTerm}`)
   }
 }
