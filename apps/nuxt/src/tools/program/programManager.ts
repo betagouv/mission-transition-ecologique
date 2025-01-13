@@ -65,6 +65,7 @@ export class ProgramManager {
     if (
       (navigation.isQuestionnaireResult() && UsedTrack.isNoSpecificGoal()) ||
       navigation.isQuestionnaireProjectDetail() ||
+      navigation.isCatalogProjectDetail() ||
       navigation.isCatalogPrograms()
     ) {
       await this.getDependentCompanyData(navigation.isCatalogPrograms() ? false : undefined)
