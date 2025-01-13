@@ -4,7 +4,7 @@ import type { Options } from '@sentry/types'
 import { Config } from '@tee/backend-ddd'
 
 const options: Options | SentryNuxtServerOptions = {
-  environment: Config.SENTRY_ENVIRONMENT,
+  environment: Config.SERVER_ENVIRONMENT,
 
   // Set tracesSampleRate to 1.0 to capture 100%
   // of transactions for performance monitoring.
