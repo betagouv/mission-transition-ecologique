@@ -54,7 +54,8 @@ export const frDict = {
     fittingPrograms: 'Les aides correspondant à vos choix',
     filterSelect: 'Filtrer par {fieldLabel}',
     resetSelect: '(réinitialiser)',
-    noResultCTA: 'Je complète mon profil'
+    noResultCTA: 'Je complète mon profil',
+    eligibilityCheckCTA: 'Vérifier mon éligibilité'
   },
   errors: {
     error: 'Erreur'
