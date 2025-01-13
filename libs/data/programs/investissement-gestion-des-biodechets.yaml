@@ -8,7 +8,8 @@ description: >-
   mise en place d’une collecte par mobilité douce, les investissements visant à
   déconditionner des produits ainsi que les investissements pour la valorisation
   des "Sous-Produits Animaux". 
-description longue: "Les investissements éligibles sont :\n\n• La création de nouvelles plateformes de compostage ou l’adaptation de plateformes de compostage de déchets verts existantes à l’accueil de déchets alimentaires.\n\n• Les investissements dans des équipements pour la mise en place d’une collecte par mobilité douce des déchets alimentaires (par vélo, vélo à assistance électrique ou autre équipement similaire). Les dépenses éligibles sont les contenants\_: bioseaux/bacs, surcoût de bennes, vélos et remorques. \n\n• Les installations ou les ateliers visant à déconditionner des produits (par exemple les biodéchets de la distribution alimentaire et de la restauration).\n\n• La création de nouvelles plateformes  ou l'adaptation d'une installation existante de valorisation des biodéchets, pour recevoir des biodéchets classés Sous-Produits Animaux (SPAN) de catégorie 3 ou 2. L'Ademe soutient également les investissements d’hygiénisation des SPAN, sur une installation dédiée, hors site de compostage ou de méthanisation, dans le cadre d’un schéma de gestion territorial de la matière organique."
+description longue: "Les investissements éligibles sont :\n\n• La création de nouvelles plateformes de compostage ou l’adaptation de plateformes de compostage de déchets verts existantes à l’accueil de déchets alimentaires.\n\n• Les investissements dans des équipements pour la mise en place d’une collecte par mobilité douce des déchets alimentaires (par vélo, vélo à assistance électrique ou autre équipement similaire). Les dépenses éligibles sont les contenants\_: bioseaux/bacs, surcoût de bennes, vélos et remorques. \n\n• Les installations ou les ateliers visant à déconditionner des produits (par exemple les biodéchets de la distribution alimentaire et de la restauration).\n\n• La création de nouvelles plateformes ou l'adaptation d'une installation existante de valorisation des biodéchets, pour recevoir des biodéchets classés Sous-Produits Animaux (SPAN) de catégorie 3 ou 2. L'Ademe soutient également les investissements d’hygiénisation des SPAN, sur une installation dédiée, hors site de compostage ou de méthanisation, dans le cadre d’un schéma de gestion territorial de la matière organique."
+fin de validité: 31/12/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: >-
@@ -21,7 +22,7 @@ objectifs:
       l’ADEME ou en contactant un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Gestion%20des%20biod%C3%A9chets%20des%20acteurs%20%C3%A9conomiques%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Investissements%20gestion%20biod%C3%A9chets%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
         texte: Conditions éligibilité et financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
@@ -33,7 +34,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/gestion-biodechets-acteurs-economiques
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/gestion-biodechets-acteurs-economiques
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -74,6 +75,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
