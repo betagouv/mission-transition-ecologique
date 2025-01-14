@@ -28,7 +28,7 @@
           </div>
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-mt-0">
             <div
-              v-for="project in sortedProjects"
+              v-for="project in projectList"
               :key="project.id"
               class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-lg-4 no-outline"
             >
@@ -86,8 +86,6 @@ const { projects, hasError } = storeToRefs(useProjectStore())
 
 await new ProjectManager().getProjects()
 
-projects.value = props.showLimit !== -1 ? projects.value.slice(0, props.showLimit) : projects.value
-
 const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
 
@@ -102,6 +100,9 @@ const hasSpinner = computed(() => {
   return navigationStore.hasSpinner
 })
 
+const projectList = computed(() => {
+  return props.showLimit !== -1 ? sortedProjects.value.slice(0, props.showLimit) : sortedProjects.value
+})
 const hasThemeCard = computed(() => {
   return programStore.hasThemeTypeSelected() && !hasSpinner.value
 })
