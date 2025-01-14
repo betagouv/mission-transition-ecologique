@@ -5,7 +5,6 @@ import {
   BuildingProperty,
   MobilityStatus,
   QuestionnaireRoute,
-  Sector,
   StructureSize,
   WasteManagementStatus,
   WasteSortingStatus,
@@ -14,7 +13,6 @@ import {
 
 export const questionnaireRouteSchema = z.nativeEnum(QuestionnaireRoute)
 export const structureSizeSchema = z.nativeEnum(StructureSize)
-export const sectorSchema = z.nativeEnum(Sector)
 export const themeIdSchema = z.nativeEnum(ThemeId)
 export const buildingPropertySchema = z.nativeEnum(BuildingProperty)
 export const mobilityStatusSchema = z.nativeEnum(MobilityStatus)
@@ -27,7 +25,6 @@ export const questionnaireDataSchema = z.object({
   questionnaire_route: questionnaireRouteSchema.optional(),
   region: z.string().optional(),
   structure_size: structureSizeSchema.optional(),
-  sector: sectorSchema.optional(),
   priority_objective: themeIdSchema.optional(),
   building_property: buildingPropertySchema.optional(),
   sustainable_mobility_objective: mobilityStatusSchema.optional(),

@@ -4,7 +4,6 @@ import {
   BuildingProperty,
   WasteSortingStatus,
   WasteManagementStatus,
-  Sector,
   YesNo,
   MobilityStatus
 } from './types'
@@ -29,7 +28,6 @@ export interface QuestionnaireData {
   region?: string
 
   structure_size?: StructureSize // optional for testing !
-  sector?: Sector
   priority_objective?: ThemeId
 
   building_property?: BuildingProperty
@@ -44,13 +42,13 @@ export interface QuestionnaireData {
   recent_audits?: string
   legalCategory?: string
   siret?: string
-  // below is data extracted from the SIREN database
   codeNAF?: string
   codeNAF1?: string
   ville?: string
   codePostal?: string
   denomination?: string
   secteur?: string
+  // below is data extracted from the SIREN database
   creationDate?: string
   onlyEligible?: boolean
 }

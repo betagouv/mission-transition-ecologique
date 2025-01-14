@@ -1,7 +1,6 @@
-import { ProjectFilterQuery, Sector } from '@tee/common'
+import { ProjectFilterQuery } from '@tee/common'
 import { ProjectType } from '@tee/data'
 import { projects } from '@tee/data/static'
-import { SectorToNAFSection } from '../../common/naf1'
 
 export default class ProjectFeatures {
   public getById(id: number): ProjectType | undefined {
@@ -13,21 +12,19 @@ export default class ProjectFeatures {
   }
 
   public getFiltered(projectQuery: ProjectFilterQuery): ProjectType[] {
-    const sectors: string[] = this._getSectorsFromQueryData(projectQuery)
+    const naf1s: string[] = this._getNaf1FromQueryData(projectQuery)
 
-    if (sectors.length === 0) {
+    if (naf1s.length === 0) {
       return projects
     }
 
-    return projects.filter((project) => sectors.some((sector) => project.sectors.includes(sector)))
+    return projects.filter((project) => naf1s.some((naf1) => project.sectors.includes(naf1)))
   }
 
-  private _getSectorsFromQueryData(projectQuery: ProjectFilterQuery): string[] {
+  private _getNaf1FromQueryData(projectQuery: ProjectFilterQuery): string[] {
     let codeNAF1s: string[] = []
     if (projectQuery.codeNAF1) {
       codeNAF1s = [projectQuery.codeNAF1]
-    } else if (projectQuery.sector) {
-      codeNAF1s = SectorToNAFSection[projectQuery.sector as Sector]
     }
     return codeNAF1s
   }
