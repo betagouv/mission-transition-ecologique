@@ -5,7 +5,6 @@ import {
   CompanyDataStorageKey,
   EstablishmentFront,
   LegalCategory,
-  ManualCompanyData,
   type QuestionnaireData,
   RegisterDetails,
   QuestionnaireRoute,
@@ -185,7 +184,7 @@ export class CompanyData {
       CompanyDataStorage.setCompany({
         ...this.company,
         ...activityData
-      } as ManualCompanyData)
+      } as CompanyDataType[CompanyDataStorageKey.Company])
     }
 
     if (trackId === TrackId.StructureCity) {
@@ -194,7 +193,7 @@ export class CompanyData {
         ...this.company,
         ...localisationData,
         denomination: `Entreprise : ${this.company?.secteur} - ${value}`
-      } as ManualCompanyData)
+      } as CompanyDataType[CompanyDataStorageKey.Company])
     }
   }
 

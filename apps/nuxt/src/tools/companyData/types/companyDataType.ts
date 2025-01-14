@@ -5,12 +5,7 @@ export enum CompanyDataStorageKey {
   Size = 'structure_size'
 }
 
-export interface ManualCompanyData extends CompanyLocalisationType, CompanyActivityType {
-  denomination?: string
-  structure_size?: StructureSize
-}
-
-export type CompanyDataRegisterType = EstablishmentFront | null | ManualCompanyData
+export type CompanyDataRegisterType = EstablishmentFront | null
 
 export type CompanyDataType = {
   [CompanyDataStorageKey.Company]: CompanyDataRegisterType
