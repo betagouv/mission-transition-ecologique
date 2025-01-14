@@ -32,7 +32,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
-      "impulsion-environnement"
+      "impulsion-environnement",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "40",
@@ -146,7 +147,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
-      "impulsion-environnement"
+      "impulsion-environnement",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "340",
@@ -248,7 +250,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
-      "impulsion-environnement"
+      "impulsion-environnement",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "400",
@@ -308,7 +311,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
-      "impulsion-environnement"
+      "impulsion-environnement",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "900",
@@ -424,7 +428,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
-      "impulsion-environnement"
+      "impulsion-environnement",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "610",
@@ -480,7 +485,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
-      "impulsion-environnement"
+      "impulsion-environnement",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "910",
@@ -539,7 +545,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
-      "impulsion-environnement"
+      "impulsion-environnement",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "320",
@@ -1019,7 +1026,8 @@
       "sites-touristiques-exemplaires",
       "pret-energie-aura",
       "pass-transformation-ecologique",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "140",
@@ -1070,7 +1078,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "60",
@@ -1887,7 +1896,8 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "cap-transition-ecologique",
-      "ecolabel"
+      "ecolabel",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [
       3,
@@ -1944,7 +1954,8 @@
       "pass-transition-bzh",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [
       20,
@@ -1999,7 +2010,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [
       20,
@@ -2052,7 +2064,8 @@
       "pret-energie-aura",
       "pret-ile-de-france",
       "cap-transition-ecologique",
-      "perf-crise-energetique-cvl"
+      "perf-crise-energetique-cvl",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "190",
@@ -2081,6 +2094,7 @@
       "etude-gaspillage-alimentaire",
       "fonds-tourisme-durable",
       "gestion-des-biodechets",
+      "cci-business-optimizer",
       "cedre-investissement",
       "sud-pret-climat",
       "pret-energie-aura",
@@ -2149,7 +2163,8 @@
       "sud-pret-climat",
       "pret-energie-aura",
       "pass-transition-bzh",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "120",
@@ -2197,7 +2212,8 @@
       "pret-energie-aura",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "230",
@@ -2247,7 +2263,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "130",
@@ -2294,7 +2311,8 @@
       "sud-pret-climat",
       "sites-touristiques-exemplaires",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "250",
@@ -2454,7 +2472,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
-      "impulsion-environnement"
+      "impulsion-environnement",
+      "soutien-hebergement-touristique"
     ],
     "linkedProjects": [],
     "priority": "130",

@@ -1,8 +1,7 @@
-import { ConfigCommon, Environment } from '@tee/common'
+import { ConfigCommon } from '@tee/common'
 
 export default class Config extends ConfigCommon {
   protected static override _sentryDsn = process.env['SENTRY_SERVER_DSN']
-  protected static override _sentryEnvironment = process.env['SENTRY_ENVIRONMENT'] as Environment
 
   public static get BPI_FRANCE_CLIENT_ID(): string {
     return this.getEnvValue('BPI_FRANCE_CLIENT_ID')

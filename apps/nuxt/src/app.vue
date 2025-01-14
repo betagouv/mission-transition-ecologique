@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useNavigationStore } from './stores/navigation'
-
 import TeeFooter from './components/TeeFooter.vue'
 import Translation from '@/tools/translation'
 import Cookie from '@/tools/cookies'
@@ -27,7 +26,7 @@ navigationStore.setRoute(route)
       <TeeRegisterModal v-if="navigationStore.hasRegisterModal" />
     </ClientOnly>
     <TeeHeader />
-    <!--      <TeeMatomo />-->
+
     <NuxtPage />
 
     <div class="fr-mt-0v">
