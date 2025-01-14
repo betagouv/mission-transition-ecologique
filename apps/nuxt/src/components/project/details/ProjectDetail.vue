@@ -42,7 +42,8 @@ const themeColor = ref<Color | ''>()
 useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, project.value?.image))
 
 if (project.value) {
-  const themeId = project.value?.mainTheme
+  const selectedThemeId = Theme.getThemeFromSelectedOrPriorityTheme()
+  const themeId = project.value?.themes.find((theme) => theme === selectedThemeId.value) || project.value?.mainTheme
   themeColor.value = Theme.getColorById(themeId as ThemeId)
 }
 
