@@ -27,15 +27,13 @@ export class NafSearch implements NafSearchType {
     } else {
       const normalizedSearch = normalizeString(searchTerm)
       const regex = /^\d{1,2}(\.?(\d{1,2}[A-Z]?)?)?$/
-      const isNAFCodeSearch = regex.test(searchTerm)
-      if (isNAFCodeSearch) {
+      const isSearchByNAfCode = regex.test(searchTerm)
+      if (isSearchByNAfCode) {
         results = nafMapping.filter((pair: { NIV5: string }) => normalizeString(pair.NIV5).startsWith(normalizedSearch))
+      } else if (searchTerm.length === 1) {
+        results = nafMapping.filter((pair: { NIV1: string }) => normalizeString(pair.NIV1) === normalizedSearch)
       } else {
-        if (searchTerm.length === 1) {
-          results = nafMapping.filter((pair: { NIV1: string }) => normalizeString(pair.NIV1) === normalizedSearch)
-        } else {
-          results = nafMapping.filter((pair: { label_vf: string }) => normalizeString(pair.label_vf).includes(normalizedSearch))
-        }
+        results = nafMapping.filter((pair: { label_vf: string }) => normalizeString(pair.label_vf).includes(normalizedSearch))
       }
     }
     return Result.ok(
