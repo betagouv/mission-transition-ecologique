@@ -72,7 +72,7 @@
               :program="program"
             />
             <DsfrButton
-              v-if="!isProgramAutonomous && programIsEligible && !temporaryUnavailable"
+              v-if="showForm"
               size="lg"
               icon="fr-icon-mail-line"
               class="fr-ml-md-3v"
@@ -216,7 +216,7 @@
 
     <!-- PROGRAM FORM -->
     <div
-      v-if="hasRegisteredData && programIsEligible && !temporaryUnavailable"
+      v-if="showForm"
       ref="tee-program-form-container"
       class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
     >
@@ -332,6 +332,10 @@ const programIsEligible = computed(() => {
     program.value?.eligibility === ProgramEligibilityType.Eligible ||
     program.value?.eligibility === ProgramEligibilityType.PartiallyEligible
   )
+})
+
+const showForm = computed(() => {
+  return !isProgramAutonomous.value && programIsEligible.value && !temporaryUnavailable.value
 })
 
 onBeforeRouteLeave(() => {
