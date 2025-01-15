@@ -137,7 +137,7 @@ const searchActivity = async () => {
   z-index: 2000;
   position: absolute;
   overflow: hidden auto;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
 }
 
 #register-activity {
