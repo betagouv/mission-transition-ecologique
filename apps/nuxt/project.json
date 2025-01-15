@@ -44,6 +44,12 @@
           "stylelint \"**/*.{scss,vue}\""
         ]
       }
+    },
+    "cleanup": {
+      "command": "nuxi cleanup",
+      "options": {
+        "cwd": "apps/nuxt"
+      }
     }
   }
 }

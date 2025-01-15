@@ -12,7 +12,7 @@ import Monitor from '../../../../common/domain/monitoring/monitor'
  * variable and get an Établissement by its siret from the Sirene API
  */
 export const getEstablishment: EstablishmentRepository['get'] = async (siret) => {
-  const token = process.env['SIRENE_API_TOKEN'] || ''
+  const token = process.env['SIRENE_API_311_TOKEN'] || ''
   return requestSireneAPI(token, siret)
 }
 
@@ -23,7 +23,7 @@ export const getEstablishment: EstablishmentRepository['get'] = async (siret) =>
  * @arg siret - siret number of the company to fetch
  */
 export const requestSireneAPI = async (token: string, siret: string): Promise<Result<EstablishmentDetails, Error>> => {
-  const api_sirene_url = `https://api.insee.fr/entreprises/sirene/V3.11/siret/${siret}`
+  const api_sirene_url = `https://api.insee.fr/api-sirene/3.11/siret/${siret}`
 
   try {
     const response: AxiosResponse<EstablishmentDocument> = await axios.get(api_sirene_url, {
@@ -75,6 +75,6 @@ const parseEstablishment = (establishmentDocument: EstablishmentDocument): Estab
 const makeHeaders = (token: string) => {
   return {
     ...AxiosHeaders.makeJsonHeader(),
-    ...AxiosHeaders.makeBearerHeader(token)
+    ...{ 'X-INSEE-Api-Key-Integration': token }
   }
 }

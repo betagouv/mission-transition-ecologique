@@ -15,16 +15,15 @@ export class NuxtSecurityConfig {
     return {
       contentSecurityPolicy: {
         'form-action': ["'self'"],
-        // 'script-src-elem': [
-        //   "'self'",
-        //   "'unsafe-inline'",
-        //   "'nonce-{{nonce}}'",
-        //   "'strict-dynamic'",
-        //   this._statsBetaGouvFrUrl,
-        //   this._posthogUrl,
-        //   this._posthogAssetsUrl,
-        //   this._typeformUrl
-        // ],
+        'script-src-elem': [
+          "'self'",
+          "'unsafe-inline'",
+          "'nonce-{{nonce}}'",
+          this._statsBetaGouvFrUrl,
+          this._posthogUrl,
+          this._posthogAssetsUrl,
+          this._typeformUrl
+        ],
         'script-src': ["'self'", "'nonce-{{nonce}}'", "'strict-dynamic'", Config.isProduction() ? '' : "'unsafe-eval'"],
         'worker-src': ["'self'", 'blob:'],
         'style-src': ["'self'", "'unsafe-inline'", this._typeformUrl],
