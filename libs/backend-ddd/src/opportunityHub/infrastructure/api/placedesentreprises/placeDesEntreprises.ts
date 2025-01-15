@@ -34,9 +34,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
 
   override support = (opportunityData: OpportunityAssociatedData) => {
     if (opportunityData.isProgram()) {
-      const validOperator = (opportunityData.data['opérateur de contact'] as Operators) !== 'Bpifrance'
-      const notAutonomous = !opportunityData.data['activable en autonomie']
-      return validOperator && notAutonomous
+      return !opportunityData.data['activable en autonomie']
     }
     return true
   }

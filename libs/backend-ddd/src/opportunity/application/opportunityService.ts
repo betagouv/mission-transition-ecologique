@@ -1,7 +1,6 @@
 import { addBrevoContactTest } from '../../../tests/opportunity/infrastructure/api/brevo/mock/brevoContact'
 import { brevoRepositoryTest } from '../../../tests/opportunity/infrastructure/api/brevo/mock/brevoDeal'
 import BrevoMailTest from '../../../tests/opportunity/infrastructure/api/brevo/mock/brevoMail'
-import { BpiFranceTest } from '../../../tests/opportunityHub/infrastructure/api/mock/bpiFrance'
 import { PlaceDesEntreprisesTest } from '../../../tests/opportunityHub/infrastructure/api/mock/placeDesEntreprises'
 import Config from '../../config'
 import { OpportunityDetailsShort, OpportunityId } from '../domain/types'
@@ -10,7 +9,6 @@ import { Result } from 'true-myth'
 import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
 import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
-import { BpiFrance } from '../../opportunityHub/infrastructure/api/bpi/bpiFrance'
 import { ContactRepository, MailerManager, OpportunityRepository } from '../domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramsJson from '../../program/infrastructure/programsJson'
@@ -54,10 +52,7 @@ export default class OpportunityService {
   }
 
   private _getOpportunityHubRepositories(): OpportunityHubRepository[] {
-    return [
-      Config.PDE_API_ENABLED ? new PlaceDesEntreprises() : new PlaceDesEntreprisesTest(),
-      Config.BPI_API_ENABLED ? new BpiFrance() : new BpiFranceTest()
-    ]
+    return [Config.PDE_API_ENABLED ? new PlaceDesEntreprises() : new PlaceDesEntreprisesTest()]
   }
 
   private _getProgramRepository(): ProgramRepository {
