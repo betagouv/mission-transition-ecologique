@@ -29,6 +29,7 @@ tests.forEach((singleTest) => {
               denomination: 'Entreprise : Aide par le travail - Bretagne',
               region: 'Bretagne',
               ville: 'Brest',
+              structure_size: 'TPE',
               codePostal: '29200',
               secteur: 'Aide par le travail',
               codeNAF: '88.10C',
