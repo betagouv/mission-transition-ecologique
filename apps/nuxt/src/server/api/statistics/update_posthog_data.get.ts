@@ -1,6 +1,6 @@
 import { defineEventHandler } from 'h3'
 import { Monitor } from '@tee/backend-ddd'
-import { PosthogUpdater } from '@tee/data'
+import { PosthogUpdater } from '@tee/data/server'
 
 export default defineEventHandler(async () => {
   try {

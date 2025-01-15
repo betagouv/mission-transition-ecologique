@@ -16,6 +16,7 @@
       "@tee/common": ["libs/common/src/index.ts"],
       "@tee/data": ["libs/data/src/index.ts"],
       "@tee/data/references": ["libs/data/references/index.ts"],
+      "@tee/data/server": ["libs/data/src/server.ts"],
       "@tee/data/static": ["libs/data/static/index.ts"],
       "#imports": ["apps/nuxt/.nuxt/imports"], // this is to fix the module "@nuxtjs/sitemap"
       "#nuxt-scripts": ["node_modules/@nuxt/scripts/dist/runtime/types"]
