@@ -10,14 +10,20 @@ description: >-
   valeur.
 illustration: images/TEE_eolienne.png
 opérateur de contact: CCI
-url: https://www.cci.fr/offre/evaluez-votre-maturite-aux-enjeux-de-la-rse?&cp=75013
+url: https://www.cci.fr/offre/evaluez-votre-maturite-aux-enjeux-de-la-rse
 nature de l'aide: étude
 coût de l'accompagnement: Selon les territoires
 durée de l'accompagnement: 1 journée
 objectifs:
   - description: >-
+      Évaluer en amont, et en autonomie votre maturité RSE, afin d'obtenir un
+      premier résultat (10min)
+    liens:
+      - lien: https://www.cci.fr/offre/evaluez-votre-maturite-aux-enjeux-de-la-rse
+        texte: Tester en autonomie votre démarche RSE
+  - description: >-
       Recueillir vos données sur l'ensemble des champs de la RSE (gouvernance,
-      social, sociétal, environnemental, économique)
+      social, sociétal, environnemental, économique) avec l'aide d'un conseiller
   - description: Dresser l’état des lieux des forces et faiblesses de votre entreprise
   - description: >-
       Obtenez un plan d’action adapté à vos enjeux et à vos ressources pour vous
