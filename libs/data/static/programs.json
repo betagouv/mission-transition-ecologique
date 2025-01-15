@@ -3134,8 +3134,8 @@
   },
   {
     "titre": "CCI Business Optimizer",
-    "promesse": "Restaurateurs & hébergeurs, découvrez les économies réalisables dans votre établissement.",
-    "description": "CCI Business Optimizer est une site destiné aux entreprises du tourisme. Il vous propose de découvrir les économies que vous pouvez réaliser grâce à des éco-gestes à mettre en place pièce par pièce dans votre établissement.",
+    "promesse": "Découvrez les éco-gestes à réaliser dans votre établissement de tourisme",
+    "description": "CCI Business Optimizer est un site dédié aux entreprises du secteur du tourisme. Son objectif est de proposer des idées de bonnes pratiques environnementales ainsi que des suggestions pour améliorer la performance de vos équipements. Le site fournit également une estimation moyenne des économies réalisables en eau et en énergie, ainsi qu'une évaluation des bénéfices financiers associés à leur mise en œuvre.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "CCI",
     "url": "https://www.ccibusinessoptimizer.fr/",
@@ -3145,7 +3145,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Connectez-vous au service \"CCI Business Optimizer\" ",
+        "description": "Connectez-vous au service \"CCI Business Optimizer\"",
         "liens": [
           {
             "lien": "https://www.ccibusinessoptimizer.fr/",
@@ -3154,16 +3154,13 @@
         ]
       },
       {
-        "description": "Cibler les enjeux écologiques et économiques de votre entreprise."
+        "description": "Découvrez les économies que vous pouvez réaliser grâce à des éco-gestes à mettre en place pièce par pièce dans votre établissement."
       },
       {
-        "description": "Découvrir les économies potentielles liées à la mise en place d’éco-gestes déjà éprouvés et s’en inspirer pour construire votre propre projet."
+        "description": "Simuler les économies potentielles liées à la mise en place des ces éco-gestes."
       },
       {
-        "description": "Simuler les économies potentielles liées à la performance environnementale de votre établissement (hors investissements)."
-      },
-      {
-        "description": "Obtenir un bilan d’actions à mener et le contact d’un conseiller CCI pour aller plus loin."
+        "description": "Obteniez un bilan d’actions à mener et le contact d’un conseiller CCI pour aller plus loin."
       }
     ],
     "conditions d'éligibilité": {
@@ -5519,7 +5516,6 @@
     "titre": "Diag Décarbon'Action",
     "promesse": "Réalisez un bilan de gaz à effet de serre et réduisez l’empreinte carbone de votre entreprise",
     "description": "Victime de son succès, l’ADEME et Bpifrance sont contraints de suspendre l’offre dans l’attente de l’issue des discussions budgétaires avec l'Etat. Nous œuvrons tous ensemble pour une réouverture début 2025. Pour nous contacter ou être informé dès que l'offre sera de nouveau disponible, veuillez laisser vos coordonnées ci-dessous. Nous vous contacterons dès que possible. Merci de votre compréhension et de votre patience.\n\n\n\nCe Bilan vous permet en 12 jours de mesurer les émissions directes et indirectes de GES de votre entreprise puis d’élaborer votre plan d’actions pour réduire l’empreinte carbone de votre entreprise. Les experts qui réalisent le Diag Décarbon'Action sont certifiés « Bilan Carbone ® » ou autre méthode de comptabilité carbone conforme à la réglementation, et sont habilités par l’ADEME, l’Association Bilan Carbone et Bpifrance, ce qui garantit un niveau de qualité élevé.",
-    "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Bpifrance",
     "autres opérateurs": [
@@ -5703,7 +5699,6 @@
     "titre": "Diag Eco-Flux",
     "promesse": "Bénéficiez d’un état des lieux sur vos flux pour vous aider à faire des économies",
     "description": "Victime de son succès, l’ADEME et Bpifrance sont contraints de suspendre l’offre dans l’attente de l’issue des discussions budgétaires avec l'Etat. Nous œuvrons tous ensemble pour une réouverture début 2025. Pour nous contacter ou être informé dès que l'offre sera de nouveau disponible, veuillez laisser vos coordonnées ci-dessous. Nous vous contacterons dès que possible. Merci de votre compréhension et de votre patience.\n---\nBénéficiez des conseils d'un expert environnement référencé par Bpifrance pour réaliser rapidement des économies durables en suivant une méthodologie élaborée avec l'ADEME.",
-    "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Bpifrance",
     "autres opérateurs": [
@@ -5906,7 +5901,6 @@
     "titre": "Diag Ecoconception",
     "promesse": "Évaluez la performance environnementale de vos produits, procédés et services",
     "description": "Victime de son succès, l’ADEME et Bpifrance sont contraints de suspendre l’offre dans l’attente de l’issue des discussions budgétaires avec l'Etat. Nous œuvrons tous ensemble pour une réouverture début 2025. Pour nous contacter ou être informé dès que l'offre sera de nouveau disponible, veuillez laisser vos coordonnées ci-dessous. Nous vous contacterons dès que possible. Merci de votre compréhension et de votre patience.\n---\nBénéficiez des conseils d'un expert écoconception référencé par Bpifrance pour évaluer la performance environnementale de vos produits, services et procédés ou d'un accompagnement en vue de l'obtention de l'Ecolabel européen.",
-    "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Bpifrance",
     "autres opérateurs": [
@@ -6124,7 +6118,6 @@
     "promesse": "Réduisez la consommation énergétique de vos bâtiments",
     "description": "Victime de son succès, l’ADEME et Bpifrance sont contraints de suspendre l’offre dans l’attente de l’issue des discussions budgétaires avec l'Etat. Nous œuvrons tous ensemble pour une réouverture début 2025. Pour nous contacter ou être informé dès que l'offre sera de nouveau disponible, veuillez laisser vos coordonnées ci-dessous. Nous vous contacterons dès que possible. Merci de votre compréhension et de votre patience.\n---\nBénéficiez des conseils d'un expert environnement référencé par Bpifrance pour réduire les consommations énergétiques de vos bâtiments et établir une trajectoire conforme au Décret Tertiaire.",
     "description longue": "L’obligation réglementaire du Dispositif Éco Énergie Tertiaire (DEET), plus communément appelé « décret tertiaire », impose aux entreprises de réduire la consommation d’énergie de leurs bâtiments abritant des activités tertiaires. Cette obligation traduit la volonté du gouvernement d’améliorer la performance énergétique du parc français de bâtiments existants.\n\nLe décret tertiaire est officiellement entré en vigueur en octobre 2019.",
-    "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Bpifrance",
     "autres opérateurs": [
@@ -10799,7 +10792,7 @@
       {
         "toutes ces conditions": [
           "effectif >= 250",
-          "effectif <= null"
+          "effectif <= 4999"
         ],
         "Montant du dispositif": "Jusqu'à 50% du coût de l'étude, dans un maximum de 100 000 €"
       }
@@ -14060,7 +14053,7 @@
         ]
       },
       {
-        "description": "Créez un compte avec FranceConnect pour pouvoir déposer votre dossier.",
+        "description": "Créez un compte ou identifiez-vous avec FranceConnect pour pouvoir déposer votre dossier.",
         "liens": [
           {
             "lien": "https://www.demarches-simplifiees.fr/commencer/fonds-vert-3-territoires-industrie",
@@ -18185,7 +18178,8 @@
     "titre": "Investissement \"Gestion des biodéchets\"",
     "promesse": "Entreprise spécialisée dans les biodéchets, financez vos équipements de traitement, de valorisation et de collecte",
     "description": "Vous êtes un acteur privé dans la collecte et le traitement des biodéchets ? L’ADEME soutient financièrement la création de plateformes de compostage, la mise en place d’une collecte par mobilité douce, les investissements visant à déconditionner des produits ainsi que les investissements pour la valorisation des \"Sous-Produits Animaux\". ",
-    "description longue": "Les investissements éligibles sont :\n\n• La création de nouvelles plateformes de compostage ou l’adaptation de plateformes de compostage de déchets verts existantes à l’accueil de déchets alimentaires.\n\n• Les investissements dans des équipements pour la mise en place d’une collecte par mobilité douce des déchets alimentaires (par vélo, vélo à assistance électrique ou autre équipement similaire). Les dépenses éligibles sont les contenants : bioseaux/bacs, surcoût de bennes, vélos et remorques. \n\n• Les installations ou les ateliers visant à déconditionner des produits (par exemple les biodéchets de la distribution alimentaire et de la restauration).\n\n• La création de nouvelles plateformes  ou l'adaptation d'une installation existante de valorisation des biodéchets, pour recevoir des biodéchets classés Sous-Produits Animaux (SPAN) de catégorie 3 ou 2. L'Ademe soutient également les investissements d’hygiénisation des SPAN, sur une installation dédiée, hors site de compostage ou de méthanisation, dans le cadre d’un schéma de gestion territorial de la matière organique.",
+    "description longue": "Les investissements éligibles sont :\n\n• La création de nouvelles plateformes de compostage ou l’adaptation de plateformes de compostage de déchets verts existantes à l’accueil de déchets alimentaires.\n\n• Les investissements dans des équipements pour la mise en place d’une collecte par mobilité douce des déchets alimentaires (par vélo, vélo à assistance électrique ou autre équipement similaire). Les dépenses éligibles sont les contenants : bioseaux/bacs, surcoût de bennes, vélos et remorques. \n\n• Les installations ou les ateliers visant à déconditionner des produits (par exemple les biodéchets de la distribution alimentaire et de la restauration).\n\n• La création de nouvelles plateformes ou l'adaptation d'une installation existante de valorisation des biodéchets, pour recevoir des biodéchets classés Sous-Produits Animaux (SPAN) de catégorie 3 ou 2. L'Ademe soutient également les investissements d’hygiénisation des SPAN, sur une installation dédiée, hors site de compostage ou de méthanisation, dans le cadre d’un schéma de gestion territorial de la matière organique.",
+    "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/gestion-biodechets-acteurs-economiques",
@@ -18196,7 +18190,7 @@
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Gestion%20des%20biod%C3%A9chets%20des%20acteurs%20%C3%A9conomiques%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Investissements%20gestion%20biod%C3%A9chets%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -18214,7 +18208,7 @@
         "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/gestion-biodechets-acteurs-economiques",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/gestion-biodechets-acteurs-economiques",
             "texte": "Déposer mon dossier"
           }
         ]
@@ -18346,6 +18340,7 @@
         ]
       },
       "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
         "toutes ces conditions": [
           "entreprise . est dans une zone géographique éligible"
         ]
@@ -18809,10 +18804,10 @@
     "description": "Vous avez un projet d'investissement dans des équipements permettant la préparation et le stockage des combustibles de chaufferies bois ? L’ADEME soutient financièrement votre investissement.",
     "description longue": "L’ADEME peut soutenir :\n- la création ou l’aménagement de plateformes d’approvisionnement ;\n- les équipements assurant la production d’un combustible de qualité \n- La création ou l’aménagement de hangar bois bûche de plus de 500m2\n- Les équipements assurant le séchage artificiel du bois bûche.\n\nPour être éligible, vous devez avoir réalisé au préalable un diagnostic du territoire. Pour les investissements relatifs à la création ou l’aménagement de plateformes, le\nnombre et la surface des plateformes de stockage ainsi qu’une estimation de la\nquantité de bois transitant par les équipements.",
     "début de validité": "01/01/2023",
-    "fin de validité": "31/12/2024",
+    "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/equipements-lapprovisionnement-chaufferies-bois-fonds-chaleur",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/equipements-lapprovisionnement-chaufferies-bois-fonds-chaleur-plan-relance",
     "nature de l'aide": "financement",
     "montant du financement": "Entre 20 à 55% selon investissement",
     "objectifs": [
@@ -18820,7 +18815,7 @@
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Approvisionnement%20biomasse%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Approvisionnement%20biomasse%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -18838,7 +18833,7 @@
         "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/equipements-lapprovisionnement-chaufferies-bois-fonds-chaleur",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/equipements-lapprovisionnement-chaufferies-bois-fonds-chaleur-plan-relance",
             "texte": "Déposer mon dossier"
           }
         ]
@@ -19356,10 +19351,10 @@
     "description": "Vous disposez d’une étude pour votre projet dans le domaine du réemploi-réutilisation et réparation, et vous souhaitez investir pour le mettre en œuvre ? Cette aide est destinée à subventionner les équipements permettant la collecte préservante, le stockage, la traçabilité des flux, la réparation et la remise en état des objets.",
     "description longue": "Pour bénéficier de cette aide, votre projet d'investissement doit être cohérent avec la stratégie territoriale d’économie circulaire et de prévention des déchets.\nLa collecte préservante en amont et toute l’opération de remise en état puis de remise sur le marché doit pouvoir démontrer son efficacité :\n• Par un gisement significatif de déchets évités ;\n• Par un tonnage réemployé-réutilisé-réparé performant et significatif ;\n• Par un système de suivi, de comptage et de traçabilité des flux ;\n• Par des actions de communication et de sensibilisation à une consommation responsable et à la réduction des déchets accompagnant les investissements.\nLa réalisation préalable d'une étude de faisabilité est une condition d'éligibilité.",
     "début de validité": "01/01/2023",
-    "fin de validité": "31/12/2024",
+    "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/soutien-investissements-reemploi-reutilisation-reparation-hors-emballages",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-investissements-reemploi-reutilisation-reparation-hors-emballages",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 60% des coûts, dans un maximum de 200 000 €",
     "objectifs": [
@@ -19367,7 +19362,7 @@
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/RRR%20hors%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/RRR%20hors%20emballages%20-%20Investissement%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -19388,7 +19383,7 @@
         "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/soutien-investissements-reemploi-reutilisation-reparation-hors-emballages",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-investissements-reemploi-reutilisation-reparation-hors-emballages",
             "texte": "Déposer mon dossier"
           }
         ]
@@ -19403,7 +19398,7 @@
         "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
-        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française, Provence-Alpes-Côte d'Azur"
+        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française"
       ],
       "secteur d'activité": [
         "Tous secteurs d’activité"
@@ -19511,8 +19506,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -19560,8 +19554,7 @@
           "région = Nouvelle-Calédonie",
           "région = Occitanie",
           "région = Pays de la Loire",
-          "région = Polynésie française",
-          "région = Provence-Alpes-Côte d'Azur"
+          "région = Polynésie française"
         ]
       }
     },
@@ -22815,7 +22808,7 @@
     "fin de validité": "30/06/2026",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/pacte-industrie-parcours-accompagnement-competences-transition-energetique-0",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/pacte-industrie-parcours-accompagnement-competences-transition-energetique#:~:text=Le%20programme%20PACTE%20Industrie%20vise,transition%20%C3%A9nerg%C3%A9tique%20et%20bas%20carbone.",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude selon la taille de l'entreprise",
     "objectifs": [
@@ -22823,7 +22816,7 @@
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Pacte%20Industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PACTE%20Industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -22832,7 +22825,7 @@
         "description": "Choisissez un bureau d'étude parmi les prestataires référencés dans le cadre du programme PACTE Industrie.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PACTE%20Industrie%20-%20Annuaire%20prestataires%20-%202023-12-07.xlsx",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PACTE%20Industrie%20-%20Annuaire%20prestataires.xlsx",
             "texte": "Annuaire des prestataires"
           }
         ]
@@ -22850,7 +22843,7 @@
         "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/pacte-industrie-parcours-accompagnement-competences-transition-energetique-0",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/pacte-industrie-parcours-accompagnement-competences-transition-energetique",
             "texte": "Déposer mon dossier"
           }
         ]
@@ -26450,6 +26443,203 @@
       }
     },
     "id": "programme-eve"
+  },
+  {
+    "titre": "Programme Res'Eau",
+    "promesse": "Bénéficiez d'un diagnostic et d'un accompagnement pour économiser l'eau dans votre entreprise",
+    "description": "Le dérèglement climatique et l’augmentation des épisodes de sécheresse constituent un véritable défi pour la Région Provence-Alpes-Côte d'Azur et pour le secteur touristique.\nLe programme Res’Eau vise à promouvoir la conservation et l’utilisation responsable de l’eau grâce à un diagnostic, un accompagnement et l’activation de leviers d’économies d’eau.",
+    "description longue": "Au programme :\n- Un diagnostic personnalisé sur site des consommations et usages dans votre entreprise réalisé par un conseiller spécialisé de votre Chambre de Commerce et d’Industrie ;\n- L’identification des potentiels d’économies d’eau et des pistes d’amélioration potentielles (récupération, réutilisation…) ;\n- Un plan d’action personnalisé pour votre entreprise ;\n- Un appui dans la recherche de solutions et de financements potentiels de vos projets ;\n- Des conseils, fiches de bonnes pratiques ;\n- Un suivi de votre plan d’action.",
+    "fin de validité": "30/04/2026",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "CCI",
+    "autres opérateurs": [
+      "Agence de l'Eau Rhône-Méditerranée-Corse"
+    ],
+    "url": "https://www.cote-azur.cci.fr/beneficiez-de-laccompagnement-reseau-pour-economiser-leau-dans-votre-entreprise/",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "Gratuit",
+    "durée de l'accompagnement": "Variable",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Vérifiez votre éligibilité en parcourant la documentation du programme.",
+        "liens": [
+          {
+            "lien": "https://www.cote-azur.cci.fr/app/uploads/2024/11/Reglement-Appel-a-candidatures-ReSEau.pdf",
+            "texte": "Programme Res'Eau"
+          }
+        ]
+      },
+      {
+        "description": "Complétez la demande de candidature. Les campings et centres de lavage doivent attester sur l'honneur qu'ils ne participent pas, par ailleurs, à un projet financé ou à un Appel à Manifestation d’Intérêt (AMI) sur la sobriété hydrique.",
+        "liens": [
+          {
+            "lien": "https://www.cote-azur.cci.fr/app/uploads/2024/11/Dossier-candidature-ReSEau.pdf",
+            "texte": "La demande de candidature"
+          },
+          {
+            "lien": "https://www.cote-azur.cci.fr/app/uploads/2024/11/Attestation_sur_honneur_campings-ReSEau.pdf",
+            "texte": "L'attestation sur l'honneur pour les campings et centres de lavage"
+          }
+        ]
+      },
+      {
+        "description": "Envoyez votre candidature par mail aux contacts mentionnés à la dernière page de la demande de candidature en précisant dans l’objet du mail « Appel à candidatures ReS’Eau ».",
+        "liens": [
+          {
+            "lien": "https://www.cote-azur.cci.fr/app/uploads/2024/11/Dossier-candidature-ReSEau.pdf",
+            "texte": "La demande de candidature"
+          }
+        ]
+      },
+      {
+        "description": "À l’issue de la sélection, la CCI de votre territoire prend contact avec vous afin de vous informer des suites données à votre dossier."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "secteur d'activité": [
+        "Secteur touristique"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Être implanté dans les Alpes-Maritimes, le Var, les Bouches du Rhône (hors Pays d'Arles) ;",
+        "Exercer ses principales activités dans le secteur du tourisme (exemple : hébergement, restauration, parc de loisirs, services, spa, location de courte durée de véhicule…) ou industriel lié au domaine du tourisme (maintenance et réparation navale, activités de lavage, blanchisserie…) ;",
+        "Pour les campings et les stations de lavage : ne pas bénéficier ni participer à un projet financé ou à un Appel à Manifestation d’Intérêt (AMI) sur la sobriété hydrique."
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est S"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Provence-Alpes-Côte d'Azur"
+        ]
+      }
+    },
+    "id": "programme-reseau"
   },
   {
     "titre": "Programme Synergies durables",
@@ -30154,9 +30344,6 @@
     "description": "Faites vous accompagner par un conseiller en transition énergétique et écologique pour faire le point sur vos contrats et factures d’énergie, identifier vos postes énergivores et découvrir les bonnes pratiques à mettre en place pour réaliser des économies d'énergie.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "CCI",
-    "autres opérateurs": [
-      "ORACE en Pays de la Loire"
-    ],
     "url": "https://www.cci.fr/offre/parcours-energie-pour-reduire-votre-facture-energie",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit (sauf Centre-Val de Loire, Bretagne, Ile-de-France et Normandie)",
