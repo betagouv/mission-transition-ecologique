@@ -53,6 +53,7 @@ export enum TrackComponent {
   Form = 'form',
   Input = 'input',
   Siret = 'siret',
+  Activity = 'activity',
   CitySearch = 'citySearch',
   Select = 'select',
   Results = 'results'

@@ -5,18 +5,17 @@ import {
   CompanyDataStorageKey,
   EstablishmentFront,
   LegalCategory,
-  ManualCompanyData,
   type QuestionnaireData,
   RegisterDetails,
   QuestionnaireRoute,
-  Sector,
   Region,
   ConvertedCommune,
   CompanyLocalisationType,
   SiretValue,
   StructureSize,
   TrackId,
-  type TrackOptionsUnion
+  type TrackOptionsUnion,
+  CompanyActivityType
 } from '@/types'
 import { CompanyDataType } from '@/tools/companyData/types/companyDataType'
 import { useUsedTrackStore } from '@/stores/usedTrack'
@@ -51,16 +50,17 @@ export class CompanyData {
     return {
       ...company,
       structure_size: profileData.size.value,
-      ...profileData.localisation.value
+      ...profileData.localisation.value,
+      ...profileData.activity.value
     } as CompanyDataType[CompanyDataStorageKey.Company]
   }
 
   static getManualCompanyData(profileData: RegisterDetails): CompanyDataType[CompanyDataStorageKey.Company] {
     return {
       ...profileData.localisation.value,
-      secteur: profileData.activity.value,
+      ...profileData.activity.value,
       structure_size: profileData.size.value,
-      denomination: `Entreprise : ${profileData.activity.value} - ${profileData.localisation.value?.region}`
+      denomination: `Entreprise : ${profileData.activity.value?.secteur} - ${profileData.localisation.value?.region}`
     } as CompanyDataType[CompanyDataStorageKey.Company]
   }
 
@@ -178,12 +178,13 @@ export class CompanyData {
     if (trackId === TrackId.StructureWorkforce) {
       CompanyDataStorage.setSize(value as StructureSize)
     }
-
     if (trackId === TrackId.Sectors) {
+      const activityData = (selectedOptions[0]?.questionnaireData as CompanyActivityType) || {}
+
       CompanyDataStorage.setCompany({
         ...this.company,
-        secteur: value as Sector
-      } as ManualCompanyData)
+        ...activityData
+      } as CompanyDataType[CompanyDataStorageKey.Company])
     }
 
     if (trackId === TrackId.StructureCity) {
@@ -192,7 +193,7 @@ export class CompanyData {
         ...this.company,
         ...localisationData,
         denomination: `Entreprise : ${this.company?.secteur} - ${value}`
-      } as ManualCompanyData)
+      } as CompanyDataType[CompanyDataStorageKey.Company])
     }
   }
 

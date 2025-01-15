@@ -35,7 +35,7 @@
 <script setup lang="ts">
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
-import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType, Region, EstablishmentFront } from '@/types'
+import { RegisterDetailType, RegisterDetails, CompanyDataStorageKey, CompanyDataType, Region, EstablishmentFront, NAF1 } from '@/types'
 import Analytics from '@/tools/analytic/analytics'
 import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
@@ -80,9 +80,11 @@ const profile = ref<RegisterDetails>({
     title: 'Activité',
     description: "Quel est votre secteur d'activité ?",
     icon: 'fr-icon-briefcase-line',
-    value: props.company?.secteur as Sector,
+    value: props.company
+      ? { secteur: props.company.secteur, codeNAF: props.company.codeNAF, codeNAF1: props.company.codeNAF1 as NAF1 }
+      : undefined,
     type: RegisterDetailType.Activity,
-    tagLabel: props.company && props.company && 'siret' in props.company ? `${props.company.secteur} (${props.company.codeNAF})` : ''
+    tagLabel: props.company ? `${props.company.secteur} (${props.company.codeNAF})` : ''
   },
   size: {
     title: 'Effectif',

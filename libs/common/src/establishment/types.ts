@@ -1,20 +1,17 @@
 import { StructureSize, LegalCategory } from '../questionnaire/types/types'
 
-export interface EstablishmentId {
-  siret: string
-}
-
-export interface EstablishmentFront extends EstablishmentId {
+export interface EstablishmentFront {
   codeNAF: string
   codeNAF1: string
   ville: string
   codePostal: string
-  legalCategory: LegalCategory | string
+  siret?: string
+  legalCategory?: LegalCategory | string
   region?: string | undefined
   structure_size?: StructureSize | undefined
   denomination?: string | undefined
   secteur: string
-  creationDate: string
+  creationDate?: string
 }
 
 export interface EstablishmentSearch {
@@ -44,4 +41,10 @@ export enum NAF1 {
   S = 'S',
   T = 'T',
   U = 'U'
+}
+
+export interface CompanyActivityType {
+  codeNAF: string
+  codeNAF1: NAF1
+  secteur: string
 }
