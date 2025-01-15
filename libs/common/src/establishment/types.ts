@@ -1,14 +1,11 @@
 import { StructureSize, LegalCategory } from '../questionnaire/types/types'
 
-export interface EstablishmentId {
-  siret?: string
-}
-
-export interface EstablishmentFront extends EstablishmentId {
+export interface EstablishmentFront {
   codeNAF: string
   codeNAF1: string
   ville: string
   codePostal: string
+  siret?: string
   legalCategory?: LegalCategory | string
   region?: string | undefined
   structure_size?: StructureSize | undefined

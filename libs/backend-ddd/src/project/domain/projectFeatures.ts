@@ -12,20 +12,9 @@ export default class ProjectFeatures {
   }
 
   public getFiltered(projectQuery: ProjectFilterQuery): ProjectType[] {
-    const naf1s: string[] = this._getNaf1FromQueryData(projectQuery)
-
-    if (naf1s.length === 0) {
+    if (!projectQuery.codeNAF1) {
       return projects
     }
-
-    return projects.filter((project) => naf1s.some((naf1) => project.sectors.includes(naf1)))
-  }
-
-  private _getNaf1FromQueryData(projectQuery: ProjectFilterQuery): string[] {
-    let codeNAF1s: string[] = []
-    if (projectQuery.codeNAF1) {
-      codeNAF1s = [projectQuery.codeNAF1]
-    }
-    return codeNAF1s
+    return projects.filter((project) => project.sectors.includes(projectQuery.codeNAF1 as string))
   }
 }

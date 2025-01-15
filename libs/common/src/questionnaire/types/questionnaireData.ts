@@ -48,7 +48,6 @@ export interface QuestionnaireData {
   codePostal?: string
   denomination?: string
   secteur?: string
-  // below is data extracted from the SIREN database
   creationDate?: string
   onlyEligible?: boolean
 }
