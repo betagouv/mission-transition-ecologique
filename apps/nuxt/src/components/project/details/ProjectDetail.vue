@@ -43,7 +43,7 @@ useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, pr
 
 if (project.value) {
   const selectedThemeId = Theme.getThemeFromSelectedOrPriorityTheme()
-  const themeId = selectedThemeId.value ? project.value?.themes.find((theme) => theme === selectedThemeId.value) : project.value?.mainTheme
+  const themeId = project.value?.themes.find((theme) => theme === selectedThemeId.value) || project.value?.mainTheme
   themeColor.value = Theme.getColorById(themeId as ThemeId)
 }
 
