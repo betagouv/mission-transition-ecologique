@@ -64,7 +64,8 @@ export const useProgramStore = defineStore('program', () => {
     if (filterKey === FilterItemKeys.themeType) {
       programFilters.value[filterKey] = ''
       return
-    } else if (filterKey === FilterItemKeys.companyData) {
+    }
+    if (filterKey === FilterItemKeys.companyData) {
       programFilters.value[filterKey] = false
       return
     }

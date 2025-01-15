@@ -86,8 +86,8 @@ import { computed } from 'vue'
 import { useNavigationStore } from '@/stores/navigation'
 
 const programStore = useProgramStore()
-const navigationStore = useNavigationStore()
 
+const { hasSpinner } = storeToRefs(useNavigationStore())
 const { programs, hasError } = storeToRefs(programStore)
 
 onServerPrefetch(async () => {
@@ -111,10 +111,6 @@ const filteredPrograms = computed(() => {
 
 const countPrograms = computed(() => {
   return filteredPrograms.value?.length || 0
-})
-
-const hasSpinner = computed(() => {
-  return navigationStore.hasSpinner
 })
 
 const hasThemeCard = computed(() => {

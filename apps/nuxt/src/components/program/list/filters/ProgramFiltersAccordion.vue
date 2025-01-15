@@ -5,7 +5,7 @@
   >
     <DsfrAccordion
       :id="`accordion-${companyDataFilter.id}`"
-      :class="[props.accordionClass, companyDataFilterVisibilityClass(companyDataFilter.id)]"
+      :class="[props.accordionClass]"
       :title="`${companyDataFilter.title} ${getFilterCount(companyDataFilter.id)}`"
     >
       <component
@@ -24,7 +24,7 @@
         v-if="canDisplayFilter(filter)"
         :id="`accordion-${filter.id}`"
         :key="key"
-        :class="[props.accordionClass, filter.accordionClass, companyDataFilterVisibilityClass(filter.id)]"
+        :class="[props.accordionClass, filter.accordionClass]"
         :title="`${filter.title} ${getFilterCount(filter.id)}`"
       >
         <template
@@ -84,18 +84,12 @@ const displayRegionFilter = computed(() => {
   return navigation.isCatalogPrograms() && !companySelected.value
 })
 
-const companyDataFilterVisibilityClass = (filterId: FilterItemKeys) => {
-  if (filterId === FilterItemKeys.companyData) {
-    return CompanyData.isDataFull().value ? '' : 'fr-hidden'
-  }
-}
-
 const companyDataFilter: FilterItem = {
   title: 'Entreprise',
   id: FilterItemKeys.companyData,
   component: ProgramFilterByCompanyData,
   componentClass: 'fr-pl-2v',
-  display: true
+  display: CompanyData.isDataFull().value
 }
 
 const filters: FilterItem[] = [

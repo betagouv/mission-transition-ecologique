@@ -20,8 +20,7 @@
           :class="{
             'fr-text--grey': !programFilters[FilterItemKeys.companyData],
             'fr-text--black': navigation.isQuestionnaireResult(),
-            'fr-pl-0-5v': !Breakpoint.isSmallScreen(),
-            'fr-pl-2v': Breakpoint.isMobile()
+            'fr-pl-md-0-5v fr-pl-2v': Breakpoint.isMobile()
           }"
           >{{ filterData.title }}</span
         >
@@ -78,7 +77,7 @@ const hasRegisteredData = CompanyData.isDataFull()
 const companyName = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.denomination)
 const companySector = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.secteur)
 const companyRegion = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.region)
-const companySize = computed(() => SizeToText[registeredData.value[CompanyDataStorageKey.Size] as StructureSize])
+const companySize = computed(() => SizeToText[registeredData.value[CompanyDataStorageKey.Size] as StructureSize]?.title)
 
 const filterData: CompanyFilterProps = {
   title: companyName,
