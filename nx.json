@@ -42,30 +42,10 @@
       }
     },
     {
-      "plugin": "@nx/vite/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "testTargetName": "test",
-        "serveTargetName": "serve",
-        "previewTargetName": "start",
-        "serveStaticTargetName": "serve-static",
-        "typecheckTargetName": "type-check"
-      }
-    },
-    {
-      "plugin": "@nx/webpack/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "serveTargetName": "serve",
-        "previewTargetName": "preview"
-      }
-    },
-    {
       "plugin": "@nx/jest/plugin",
       "options": {
         "targetName": "test"
-      },
-      "exclude": ["apps/backend-e2e/**/*"]
+      }
     },
     {
       "plugin": "@nx/nuxt/plugin",

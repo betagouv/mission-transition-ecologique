@@ -1,11 +1,12 @@
 titre: CCI Business Optimizer
-promesse: >-
-  Restaurateurs & hébergeurs, découvrez les économies réalisables dans votre
-  établissement.
+promesse: Découvrez les éco-gestes à réaliser dans votre établissement de tourisme
 description: >-
-  CCI Business Optimizer est une site destiné aux entreprises du tourisme. Il
-  vous propose de découvrir les économies que vous pouvez réaliser grâce à des
-  éco-gestes à mettre en place pièce par pièce dans votre établissement.
+  CCI Business Optimizer est un site dédié aux entreprises du secteur du
+  tourisme. Son objectif est de proposer des idées de bonnes pratiques
+  environnementales ainsi que des suggestions pour améliorer la performance de
+  vos équipements. Le site fournit également une estimation moyenne des
+  économies réalisables en eau et en énergie, ainsi qu'une évaluation des
+  bénéfices financiers associés à leur mise en œuvre.
 illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI
 url: https://www.ccibusinessoptimizer.fr/
@@ -14,19 +15,18 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 10 minutes
 activable en autonomie: oui
 objectifs:
-  - description: 'Connectez-vous au service "CCI Business Optimizer" '
+  - description: Connectez-vous au service "CCI Business Optimizer"
     liens:
       - lien: https://www.ccibusinessoptimizer.fr/
         texte: ccibusinessoptimizer.fr
-  - description: Cibler les enjeux écologiques et économiques de votre entreprise.
   - description: >-
-      Découvrir les économies potentielles liées à la mise en place d’éco-gestes
-      déjà éprouvés et s’en inspirer pour construire votre propre projet.
+      Découvrez les économies que vous pouvez réaliser grâce à des éco-gestes à
+      mettre en place pièce par pièce dans votre établissement.
   - description: >-
-      Simuler les économies potentielles liées à la performance environnementale
-      de votre établissement (hors investissements).
+      Simuler les économies potentielles liées à la mise en place des ces
+      éco-gestes.
   - description: >-
-      Obtenir un bilan d’actions à mener et le contact d’un conseiller CCI pour
+      Obteniez un bilan d’actions à mener et le contact d’un conseiller CCI pour
       aller plus loin.
 conditions d'éligibilité:
   taille de l'entreprise:

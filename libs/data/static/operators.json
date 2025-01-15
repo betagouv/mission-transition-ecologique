@@ -7,7 +7,9 @@
   },
   {
     "operator": "ASP",
-    "filterCategories": []
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
   },
   {
     "operator": "Agence de l'Eau Adour-Garonne",
@@ -252,7 +254,9 @@
   },
   {
     "operator": "EcoCO2",
-    "filterCategories": []
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
   },
   {
     "operator": "France Rénov'",
@@ -275,10 +279,6 @@
     "filterCategories": [
       "État"
     ]
-  },
-  {
-    "operator": "ORACE en Pays de la Loire",
-    "filterCategories": []
   },
   {
     "operator": "Organisations professionnelles",
@@ -354,7 +354,9 @@
   },
   {
     "operator": "ORACE",
-    "filterCategories": []
+    "filterCategories": [
+      "Opérateurs territoriaux"
+    ]
   },
   {
     "operator": "PROREFEI",
@@ -453,5 +455,9 @@
     "filterCategories": [
       "Opérateurs nationaux"
     ]
+  },
+  {
+    "operator": "La Fresque du Climat",
+    "filterCategories": []
   }
 ]
