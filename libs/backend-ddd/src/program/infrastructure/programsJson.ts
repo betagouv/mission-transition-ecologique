@@ -1,5 +1,5 @@
 import { ProgramRepository } from '../domain/spi'
-import { jsonPrograms } from '@tee/data/generated'
+import { jsonPrograms } from '@tee/data/static'
 import { ProgramType } from '@tee/data'
 
 export default class ProgramsJson implements ProgramRepository {
