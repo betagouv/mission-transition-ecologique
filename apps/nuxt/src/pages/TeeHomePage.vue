@@ -18,15 +18,14 @@
         <div class="fr-col-12 fr-col-justify--center">
           <TeeButtonLink
             :to="{ name: RouteName.CatalogProjects }"
-            size="sm"
             icon="fr-icon-arrow-right-line"
             icon-right
-            class="no-outline fr-border-b--blue-france fr-p-0 fr-mb-8v"
+            class="no-outline fr-border-b--blue-france fr-py-0 fr-pc-4v fr-mb-8v"
           >
             Voir tous les projets
           </TeeButtonLink>
         </div>
-        <div class="fr-bg--blue-france--lightness fr-col-12 fr-py-0-5v fr-my-8v"></div>
+        <div class="fr-bg--blue-france--lightness fr-col-12 fr-py-0-5v fr-mt-8v fr-mb-16v"></div>
         <div class="fr-col-6 fr-px-10w fr-text-center fr-position--relative">
           <img
             src="/images/yellow-circle.svg"
@@ -37,8 +36,8 @@
             Un point d'entrée unique pour toutes les aides à la transition écologique des entreprises
           </h4>
           <p>
-            Transition écologique des entreprises rassemble plus de <b>150 aides</b> nationales, régionales et territoriales
-            <b>mises à jour quotidiennement</b> issues de l'ensemble des <b>partenaires publiques</b>: ADEME, Bpifrance, CCI, CMA, etc.
+            Transition écologique des entreprises des entreprises vous aide à <b>identifier la bonne aide</b> pour votre entreprise parmi
+            les aides publiques nationales, régionales et territoriales issues de <b>l'ensemble des partenaires publiques.</b>
           </p>
           <div class="fr-col-justify--center fr-col-content--middle">
             <img
@@ -59,9 +58,9 @@
           />
           <h4 class="fr-text--blue-france fr-pb-2v">Des conseillers pour vous aider sur l'ensemble du territoire</h4>
           <p>
-            Conseillers-entreprises vous met en relation avec <b>le conseiller compétent pour votre demande sur votre territoire</b>. Des
-            spécialistes pour vous accompagner dans vos réflexions, et vos recherches pour mener à bien votre projet de transition
-            écologique.
+            Pour vous accompagner dans vos réflexions et répondre à vos questions, nous vous mettons en relation avec
+            <b>le conseiller compétent pour votre demande sur votre territoire.</b> Ce conseiller est référencé via le service public
+            conseillers-entreprises.
           </p>
           <div class="fr-col-justify--center fr-col-content--middle">
             <img
@@ -69,7 +68,7 @@
               :key="operator.label"
               :src="operator.img"
               :alt="operator.label"
-              :width="operator.width"
+              width="70px"
               class="fr-m-2v"
             />
           </div>
@@ -118,14 +117,8 @@ const operators = [
 
 const otherOperators = [
   {
-    label: 'République française',
-    img: '/images/logos/republique-francaise-logo.png',
-    width: '80px'
-  },
-  {
     label: 'Conseiller entreprise',
-    img: '/images/logos/conseillers-entreprises.service-public.fr.svg',
-    width: '260px'
+    img: '/images/logos/ce-logo.webp'
   }
 ]
 </script>
