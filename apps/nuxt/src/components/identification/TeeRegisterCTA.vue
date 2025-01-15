@@ -106,6 +106,7 @@ const openModal = () => {
 
 .register-badge::before {
   width: 0.8rem;
+  height: 0.8rem;
 }
 
 #badge-mobile {
