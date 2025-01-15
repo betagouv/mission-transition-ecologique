@@ -18,7 +18,7 @@ const CompanyDataSchema: z.ZodType<EstablishmentFront> = z.object({
   structure_size: StructureSizeEnum.optional(),
   denomination: z.string().optional(),
   secteur: z.string(),
-  creationDate: z.string()
+  creationDate: z.string().optional()
 })
 
 export class CompanyDataValidator {

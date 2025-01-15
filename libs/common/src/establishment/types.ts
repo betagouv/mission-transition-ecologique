@@ -14,7 +14,7 @@ export interface EstablishmentFront extends EstablishmentId {
   structure_size?: StructureSize | undefined
   denomination?: string | undefined
   secteur: string
-  creationDate: string
+  creationDate?: string
 }
 
 export interface EstablishmentSearch {
