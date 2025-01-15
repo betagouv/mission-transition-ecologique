@@ -34,7 +34,7 @@ opérateur de contact: ADEME
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-investissements-reemploi-reutilisation-reparation-hors-emballages
 nature de l'aide: financement
-montant du financement: Jusqu'à 60% des coûts, dans un maximum de 200 000 €
+montant du financement: Jusqu'à 75% des coûts, dans un maximum de 200 000 €
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
@@ -80,6 +80,9 @@ conditions d'éligibilité:
       avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
       (sous quelque forme que ce soit : marché signé, commande signée, devis
       accepté…)
+    - >-
+      Une étude de pertinence et de faisabilité doit être obligatoirement
+      réalisée en amont de tout investissement.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
