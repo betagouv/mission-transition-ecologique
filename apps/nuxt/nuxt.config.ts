@@ -69,6 +69,11 @@ export default defineNuxtConfig({
     experimental: {
       openAPI: true,
     },
+    devStorage: {
+      cache: {
+        driver: 'null'
+      }
+    }
   },
   features: {
     inlineStyles: false,
