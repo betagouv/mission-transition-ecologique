@@ -13,17 +13,6 @@
         "test"
       ]
     },
-    "generate-program": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "libs/data",
-        "commands": [
-          "npx tsx src/scripts/generateProgramType.ts",
-          "npx tsx src/scripts/buildProgramJson.ts"
-        ],
-        "parallel": false
-      }
-    },
     "generate-projects": {
       "executor": "nx:run-commands",
       "options": {
@@ -33,14 +22,15 @@
         ]
       }
     },
-    "generate-program-yaml": {
+    "generate-programs": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/data",
         "commands": [
           "npx tsx src/scripts/generateOperatorsJson.ts",
           "npx tsx src/scripts/generateProgramYaml.ts",
-          "npm run generate-program"
+          "npx tsx src/scripts/generateProgramType.ts",
+          "npx tsx src/scripts/buildProgramJson.ts"
         ],
         "parallel": false
       }
