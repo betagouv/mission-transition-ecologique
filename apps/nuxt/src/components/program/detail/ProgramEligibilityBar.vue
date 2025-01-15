@@ -10,15 +10,12 @@ import { Color, ProgramEligibilityType } from '@/types'
 import { TeeEligibilityBarLink, TeeEligibilityBarMessage } from '@/components/program/eligibility/TeeEligibilityBar.vue'
 import { useProgramStore } from '@/stores/program'
 import { storeToRefs } from 'pinia'
+import Program from '@/tools/program/program'
 
 const { currentProgram: program } = storeToRefs(useProgramStore())
 
-const programTemporaryUnavailable = computed(() => {
-  return program.value?.[`aide temporairement indisponible`] === 'oui'
-})
-
 const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(() => {
-  if (programTemporaryUnavailable.value) {
+  if (Program.isTemporaryUnavailable(program.value)) {
     return {
       default: 'Cette aide est temporairement indisponible.',
       mobile: 'Cette aide est temporairement indisponible.',
@@ -49,7 +46,7 @@ const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(()
 })
 
 const getEligibilityColor: ComputedRef<Color> = computed(() => {
-  return programTemporaryUnavailable.value
+  return Program.isTemporaryUnavailable(program.value)
     ? Color.red
     : program.value?.eligibility === ProgramEligibilityType.NotEligible
       ? Color.red
@@ -57,7 +54,7 @@ const getEligibilityColor: ComputedRef<Color> = computed(() => {
 })
 
 const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = computed(() => {
-  if (programTemporaryUnavailable.value) {
+  if (Program.isTemporaryUnavailable(program.value)) {
     return undefined
   }
   switch (program.value?.eligibility) {

@@ -30,7 +30,9 @@ export class CoreGenerator {
     this._addSimpleField('description longue', this.program['Description longue'])
     this._addSimpleField('début de validité', this.program.DISPOSITIF_DATE_DEBUT)
     this._addSimpleField('fin de validité', this.program.DISPOSITIF_DATE_FIN)
-    if (this.program.Statuts.includes(Status.InProdNotAvailable)) this._addSimpleField('aide temporairement indisponible', 'oui')
+    if (this.program.Statuts.includes(Status.InProdNotAvailable)) {
+      this._addSimpleField('aide temporairement indisponible', 'oui')
+    }
     this._addSimpleField('illustration', this._setIllustration())
     setOperators(this)
     if (await validateExternalUrlLink(this)) {
