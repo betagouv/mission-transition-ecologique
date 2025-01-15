@@ -1,17 +1,16 @@
 <template>
   <DsfrCheckboxSet
-    v-model="programFilters.programAidTypesSelected"
+    v-model="filters[FilterItemKeys.typeAid]"
     small
     :options="programAidTypeOptions"
   />
 </template>
 
 <script setup lang="ts">
-import { useProgramStore } from '@/stores/program'
-import { ProgramAidType, type programFiltersType } from '@/types'
+import { FilterItemKeys, FiltersType, ProgramAidType } from '@/types'
 import { DsfrCheckboxSetProps } from '@gouvminint/vue-dsfr'
 
-const programFilters: programFiltersType = useProgramStore().programFilters
+const filters: FiltersType = useFiltersStore().filters
 const programAidTypeOptions: DsfrCheckboxSetProps['options'] = [
   {
     label: 'Étude',

@@ -1,6 +1,6 @@
 export enum MiddlewareName {
   resetUsedTrackStore = 'reset-used-track-store',
-  resetProgramFilters = 'reset-program-filters',
+  resetFilters = 'reset-filters',
   resetQueries = 'reset-queries',
   hasUsedTracks = 'has-used-tracks',
   setUsedTracks = 'set-used-tracks',

@@ -3,7 +3,7 @@
 
 import ProgramFilter from '@/tools/program/programFilter'
 import { ref } from 'vue'
-import { type programFiltersType, ProgramAidType, ThemeId, Region, type ProgramData, OperatorFilter } from '@/types'
+import { ProgramAidType, ThemeId, Region, type ProgramData, OperatorFilter, FilterItemKeys } from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
   const currentProgram = ref<ProgramData>()
@@ -11,12 +11,7 @@ export const useProgramStore = defineStore('program', () => {
   const hasPrograms = ref<boolean>(false)
   const hasError = ref<boolean>(false)
 
-  const programFilters = ref<programFiltersType>({
-    programAidTypesSelected: [],
-    regionAidSelected: [],
-    operatorAidSelected: [],
-    themeTypeSelected: ''
-  })
+  const filtersStore = useFiltersStore()
 
   function reset() {
     programs.value = []
@@ -28,46 +23,21 @@ export const useProgramStore = defineStore('program', () => {
   function getProgramsByFilters(programs: ProgramData[]) {
     return programs.filter((program: ProgramData) => {
       return (
-        ProgramFilter.byAidType(program, programFilters.value.programAidTypesSelected as ProgramAidType[]) &&
-        ProgramFilter.byTheme(program, programFilters.value.themeTypeSelected as ThemeId) &&
-        ProgramFilter.byOperator(program, programFilters.value.operatorAidSelected as OperatorFilter[]) &&
-        ProgramFilter.byRegion(program, programFilters.value.regionAidSelected as Region[])
+        ProgramFilter.byAidType(program, filtersStore.filters[FilterItemKeys.typeAid] as ProgramAidType[]) &&
+        ProgramFilter.byTheme(program, filtersStore.filters[FilterItemKeys.themeType] as ThemeId) &&
+        ProgramFilter.byOperator(program, filtersStore.filters[FilterItemKeys.operatorAid] as OperatorFilter[]) &&
+        ProgramFilter.byRegion(program, filtersStore.filters[FilterItemKeys.regionAid] as Region[]) &&
+        ProgramFilter.byCompanyData(program, filtersStore.filters[FilterItemKeys.companyData])
       )
     })
-  }
-
-  function hasThemeTypeSelected() {
-    return programFilters.value.themeTypeSelected !== ''
-  }
-
-  function setThemeTypeSelected(themeType: string) {
-    programFilters.value.themeTypeSelected = themeType
-  }
-
-  function getThemeTypeSelected() {
-    return programFilters.value.themeTypeSelected
-  }
-
-  function resetFilters() {
-    programFilters.value = {
-      programAidTypesSelected: [],
-      themeTypeSelected: '',
-      regionAidSelected: [],
-      operatorAidSelected: []
-    }
   }
 
   return {
     programs,
     currentProgram,
-    programFilters,
     hasPrograms,
     hasError,
     getProgramsByFilters,
-    hasThemeTypeSelected,
-    setThemeTypeSelected,
-    getThemeTypeSelected,
-    resetFilters,
     reset
   }
 })

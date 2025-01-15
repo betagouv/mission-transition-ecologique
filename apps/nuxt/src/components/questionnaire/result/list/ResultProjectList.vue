@@ -83,13 +83,13 @@ import ProjectSorter from '@/tools/project/projectSorter'
 import { ProjectType } from '@/types'
 import { computed } from 'vue'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
-import { useProgramStore } from '@/stores/program'
 import OtherProjectCta from '@/components/project/list/OtherProjectCta.vue'
 import OtherProjectForm from '@/components/project/list/OtherProjectForm.vue'
 import Translation from '@/tools/translation'
 import Navigation from '@/tools/navigation'
 import { CompanyData } from '@/tools/companyData'
 import { useNavigationStore } from '@/stores/navigation'
+import { useFiltersStore } from '@/stores/filters'
 
 interface ProjectListProps {
   filteredProjects?: ProjectType[]
@@ -110,7 +110,8 @@ watch(
     otherProjectForm.value = false
   }
 )
-const programStore = useProgramStore()
+
+const filtersStore = useFiltersStore()
 
 const hasProjects = computed(() => {
   return countProjects.value > 0
@@ -121,7 +122,7 @@ const countProjects = computed(() => {
 })
 
 const hasThemeCard = computed(() => {
-  return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
+  return filtersStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
 
 const openOtherProjectForm = () => {

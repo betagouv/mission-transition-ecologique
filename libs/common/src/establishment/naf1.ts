@@ -1,4 +1,4 @@
-import { Sector } from '@tee/common'
+import { Sector } from '../questionnaire/types/types'
 
 export const SectorToNAFSection: Record<Sector, string[]> = {
   [Sector.Craftsmanship]: ['C', 'F', 'G'],
