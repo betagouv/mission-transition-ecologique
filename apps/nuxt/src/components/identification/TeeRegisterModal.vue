@@ -48,15 +48,16 @@ import Navigation from '@/tools/navigation'
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
 import Translation from '@/tools/translation'
-import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType, FilterItemKeys } from '@/types'
 import Breakpoint from '@/tools/breakpoints'
 import { onClickOutside } from '@vueuse/core'
 import { useNavigationStore } from '@/stores/navigation'
-import { CompanyDataStorage, CompanyData } from '@/tools/companyData'
+import { CompanyData } from '@/tools/companyData'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
+import { useProgramStore } from '@/stores/program'
 
 const registerModal = ref(null)
-const registeredData = CompanyDataStorage.getData()
+const registeredData = CompanyData.dataRef
 const company = ref<CompanyDataType[CompanyDataStorageKey.Company]>(registeredData.value[CompanyDataStorageKey.Company])
 const companySize = ref<CompanyDataType[CompanyDataStorageKey.Size]>(registeredData.value[CompanyDataStorageKey.Size])
 const manualRegistration = ref<boolean>(!!(company.value && !('siret' in company.value)))
@@ -96,6 +97,7 @@ const resetSiret = async () => {
   companySize.value = null
   manualRegistration.value = false
   CompanyData.resetData()
+  useProgramStore().programFilters[FilterItemKeys.companyData] = false
   CompanyData.updateRouteFromStorage()
 
   await UsedTrack.updateQuestionnaireStep()

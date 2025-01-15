@@ -1,4 +1,4 @@
-import { NextTrackRuleSet, Track, TrackCategory } from '@/types'
+import { NextTrackRuleSet, SizeToText, Track, TrackCategory } from '@/types'
 import { ConditionOperators, DataMappingFrom, TrackComponent, TrackId, StructureSize } from '@/types'
 import { QuestionnaireRoute } from '@tee/common'
 
@@ -95,8 +95,8 @@ export const workforce: Track = {
     {
       value: StructureSize.EI,
       questionnaireData: { structure_size: StructureSize.EI },
-      title: { fr: 'micro-entrepreneur' },
-      label: { fr: '‍️🧍Je suis micro-entrepreneur' },
+      title: { fr: SizeToText[StructureSize.EI].title },
+      label: { fr: SizeToText[StructureSize.EI].label },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets
@@ -105,8 +105,8 @@ export const workforce: Track = {
     {
       value: StructureSize.MICRO,
       questionnaireData: { structure_size: StructureSize.MICRO },
-      title: { fr: 'Moins de 10 employés' },
-      label: { fr: '‍️👫 Moins de 10 employés' },
+      title: { fr: SizeToText[StructureSize.MICRO].title },
+      label: { fr: SizeToText[StructureSize.MICRO].label },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets
@@ -116,8 +116,8 @@ export const workforce: Track = {
     {
       value: StructureSize.TPE,
       questionnaireData: { structure_size: StructureSize.TPE },
-      title: { fr: 'Entre 10 et 19 employés' },
-      label: { fr: '‍️👫👫 Entre 10 et 19 employés' },
+      title: { fr: SizeToText[StructureSize.TPE].title },
+      label: { fr: SizeToText[StructureSize.TPE].label },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets
@@ -126,8 +126,8 @@ export const workforce: Track = {
     {
       value: StructureSize.PE,
       questionnaireData: { structure_size: StructureSize.PE },
-      title: { fr: 'Entre 20 et 49 employés' },
-      label: { fr: '‍️👫👫👫 Entre 20 et 49 employés' },
+      title: { fr: SizeToText[StructureSize.PE].title },
+      label: { fr: SizeToText[StructureSize.PE].label },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets
@@ -136,8 +136,8 @@ export const workforce: Track = {
     {
       value: StructureSize.ME,
       questionnaireData: { structure_size: StructureSize.ME },
-      title: { fr: 'Entre 50 et 249 employés' },
-      label: { fr: '‍️👫👭👫👫 Entre 50 et 249 employés' },
+      title: { fr: SizeToText[StructureSize.ME].title },
+      label: { fr: SizeToText[StructureSize.ME].label },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets
@@ -146,8 +146,8 @@ export const workforce: Track = {
     {
       value: StructureSize.ETI,
       questionnaireData: { structure_size: StructureSize.ETI },
-      title: { fr: 'Entre 250 et 499 employés' },
-      label: { fr: '‍️👫👭👫👫👫 Entre 250 et 499 employés' },
+      title: { fr: SizeToText[StructureSize.ETI].title },
+      label: { fr: SizeToText[StructureSize.ETI].label },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets
@@ -156,8 +156,8 @@ export const workforce: Track = {
     {
       value: StructureSize.GE,
       questionnaireData: { structure_size: StructureSize.GE },
-      title: { fr: 'Plus de 500 employés' },
-      label: { fr: '👫👭👫👫👫👫 Plus de 500 employés' },
+      title: { fr: SizeToText[StructureSize.GE].title },
+      label: { fr: SizeToText[StructureSize.GE].label },
       next: {
         default: TrackId.Sectors,
         ruleSet: nextTrackRuleSets

@@ -24,7 +24,7 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { RegisterDetailSize, StructureSize } from '@/types'
+import { RegisterDetailSize, SizeToText, StructureSize } from '@/types'
 import Breakpoint from '@/tools/breakpoints'
 
 interface Props {
@@ -50,40 +50,16 @@ const errorMessage = computed<string>(() => {
   return ''
 })
 const sizeText = computed(() => {
-  const sizeOption = sizeOptions.find((el: { value: StructureSize; text: string }) => el.value === props.infos.value)
-  return sizeOption?.text
+  return SizeToText[props.infos.value as StructureSize]?.label
 })
-const sizeOptions = [
-  {
-    value: StructureSize.EI,
-    text: '‍️🧍Je suis un micro-entrepreneur'
-  },
-  {
-    value: StructureSize.MICRO,
-    text: '‍️👫 Moins de 10 employés'
-  },
 
-  {
-    value: StructureSize.TPE,
-    text: '‍️👫👫 Entre 10 et 20 employés'
-  },
-  {
-    value: StructureSize.PE,
-    text: '‍️👫👫👫 Entre 20 et 49 employés'
-  },
-  {
-    value: StructureSize.ME,
-    text: '‍️👫👭👫👫 Entre 50 et 250 employés'
-  },
-  {
-    value: StructureSize.ETI,
-    text: '👫👭👫👫👫 Plus de 250 employés'
-  },
-  {
-    value: StructureSize.GE,
-    text: '👫👭👫👫👫👫 Plus de 500 employés'
+const sizeOptions = Object.keys(SizeToText).map((key) => {
+  return {
+    value: key,
+    text: SizeToText[key as StructureSize].label
   }
-]
+})
+
 const resetSize = () => {
   selectedSize.value = undefined
 }
