@@ -1,6 +1,6 @@
 import { QuestionnaireData, serverQuestionnaireDataSchema } from '@tee/common'
 import { defineEventHandler, H3Event } from 'h3'
-import { EstablishmentNotFoundError, Monitor, ProgramService } from '@tee/backend-ddd'
+import { ProgramNotFoundError, ProgramService } from '@tee/backend-ddd'
 import { z } from 'zod'
 
 const programIdSchema = z.object({
@@ -20,17 +20,16 @@ const programCached = cachedFunction(
     const program = programService.getOneWithMaybeEligibility(programId, questionnaireData)
 
     if (program.isErr) {
-      if (program.error instanceof EstablishmentNotFoundError) {
+      if (program.error instanceof ProgramNotFoundError) {
         throw createError({
           statusCode: 404,
           statusMessage: 'Program not found'
         })
       }
 
-      Monitor.error('Error in get Program id', { programId })
       throw createError({
         statusCode: 500,
-        statusMessage: 'Server internal error'
+        statusMessage: 'Server internal error in get Program by id'
       })
     }
 

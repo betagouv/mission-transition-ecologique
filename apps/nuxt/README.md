@@ -21,21 +21,12 @@ La documentation des styles est disponible dans le fichier [`./style.md`](../web
 The `env` variables you can use for deployment are listed in the `.env.example` file.
 
 ```env
-# To indicate built source while copying the widget
-VITE_DEPLOY_URL = https://tee-frontend.osc-fr1.scalingo.io
-
 # To set up global contact email
 VITE_CONTACT_EMAIL = contact@mission-transition-ecologique.beta.gouv.fr
 
 # To set up PostHog analytics
 # create a posthog account and use the corresponding API key
 VITE_POSTHOG_API_KEY = your_key
-# To set up Matomo analytics
-# Note : if VITE_MATOMO_DEACTIVATE is set to 'true' it prohibits the tracking
-# even if VITE_MATOMO_URL and VITE_MATOMO_APP_ID are correctly set
-VITE_MATOMO_DEACTIVATE = true
-VITE_MATOMO_URL = https://stats.beta.gouv.fr
-VITE_MATOMO_APP_ID = 42
 ```
 
 ---

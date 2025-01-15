@@ -217,6 +217,11 @@ const operators = [
     label: 'CMA France',
     img: '/images/logos/cma-france.png',
     href: 'https://www.artisanat.fr/'
+  },
+  {
+    label: 'Office français de la biodiversité',
+    img: '/images/logos/logo-ofb.webp',
+    href: ' https://ofb.gouv.fr'
   }
 ]
 </script>

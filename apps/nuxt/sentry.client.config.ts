@@ -11,7 +11,7 @@ const options: Options | SentryNuxtClientOptions = {
     // Sentry.piniaIntegration(usePinia())
   ],
   normalizeDepth: 10,
-  environment: config.public.sentry.environment ?? Config.SENTRY_ENVIRONMENT,
+  environment: config.public.environment ?? Config.SERVER_ENVIRONMENT,
   trackComponents: true,
 
   // Set tracesSampleRate to 1.0 to capture 100%
