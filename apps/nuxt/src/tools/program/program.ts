@@ -16,6 +16,10 @@ export default class Program {
     return endDate !== undefined ? endDate >= new Date() : true
   }
 
+  public static isTemporaryUnavailable(program: ProgramType | undefined) {
+    return program?.[`aide temporairement indisponible`] === 'oui'
+  }
+
   static getLinkedProjects(program: ProgramType | undefined, projects: ProjectType[]) {
     if (program) {
       return projects.filter((project: ProjectType) => project.programs.includes(program.id))
