@@ -40,7 +40,7 @@ export const tests: FormResultDataType[] = [
     id: 2,
     valid: true,
     type: 'program',
-    url: 'questionnaire/resultat/projet/isolation-thermique/renovation-petit-tertiaire-prive?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
+    url: 'questionnaire/resultat/projet/isolation-thermique/pret-vert?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
     values: {
       name: { value: 'test', type: 'text' },
       surname: { value: 'test', type: 'text' },
@@ -55,7 +55,7 @@ export const tests: FormResultDataType[] = [
     id: 3,
     valid: true,
     type: 'program',
-    url: 'aides-entreprise/act-pas-a-pas?siret=83014132100034&effectif=TPE',
+    url: 'aides-entreprise/bilan-carbone?siret=83014132100034&effectif=TPE',
     values: {
       name: { value: 'test', type: 'text' },
       surname: { value: 'test', type: 'text' },
@@ -178,7 +178,7 @@ export const tests: FormResultDataType[] = [
     valid: true,
     manual: true,
     type: 'program',
-    url: 'aides-entreprise/act-pas-a-pas',
+    url: 'aides-entreprise/baisse-les-watts',
     values: {
       name: { value: 'test', type: 'text' },
       surname: { value: 'test', type: 'text' },
