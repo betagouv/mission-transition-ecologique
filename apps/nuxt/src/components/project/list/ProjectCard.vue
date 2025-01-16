@@ -5,6 +5,12 @@
     :img-src="project.image"
     :alt-img="`image / ${project.title}`"
     :no-arrow="true"
+    :badges="[
+      {
+        label: `${project.availablePrograms}`,
+        type: 'info'
+      }
+    ]"
     :link="getRouteToProjectDetail(project)"
     class="teste2e-project-target"
   >

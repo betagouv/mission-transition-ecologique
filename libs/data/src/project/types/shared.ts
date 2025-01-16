@@ -6,6 +6,7 @@ export interface ProjectType {
   title: string
   slug: string
   nameTag: string
+  availablePrograms: number
   shortDescription: string
   image: string
   longDescription: string
