@@ -34,35 +34,39 @@
         :class="{ 'fr-text--grey': !programFilters[FilterItemKeys.companyData] }"
       >
         <div class="fr-grid-row">
-          <div class="fr-col-12 fr-col-hidden-lg">
-            <div
-              class="company-filter-icon fr-pl-1v"
-              :class="detail.icon"
-            >
-              <span
-                class="fr-pl-2v"
-                :class="{ 'fr-pl-4v': Breakpoint.isMobile() }"
+          <div class="fr-col-hidden-lg">
+            <div class="fr-col-12">
+              <div
+                class="company-filter-icon fr-pl-1v"
+                :class="detail.icon"
               >
+                <span
+                  class="fr-pl-2v"
+                  :class="{ 'fr-pl-4v': Breakpoint.isMobile() }"
+                >
+                  {{ detail.label }}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="fr-hidden fr-unhidden-lg">
+            <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pt-1v">
+              <div
+                class="company-filter-icon-large fr-pl-1v"
+                :class="detail.icon"
+              />
+            </div>
+            <div
+              class="fr-col-9 fr-col-hidden fr-col-unhidden-lg"
+              :class="{
+                'fr-ml-0-5v': Breakpoint.isLargerOrEqual(BreakpointNameType.md) && Breakpoint.isSmallerOrEqual(BreakpointNameType.lg),
+                'fr-ml-1v': Breakpoint.isSmallerOrEqual(BreakpointNameType.md)
+              }"
+            >
+              <span class="fr-text--xs">
                 {{ detail.label }}
               </span>
             </div>
-          </div>
-          <div class="fr-col-1 fr-mr-3v fr-col-hidden fr-col-unhidden-lg">
-            <div
-              class="company-filter-icon fr-pl-1v"
-              :class="detail.icon"
-            />
-          </div>
-          <div
-            class="fr-col-9 fr-col-hidden fr-col-unhidden-lg"
-            :class="{
-              'fr-ml-0-5v': Breakpoint.isLargerOrEqual(BreakpointNameType.md) && Breakpoint.isSmallerOrEqual(BreakpointNameType.lg),
-              'fr-ml-1v': Breakpoint.isSmallerOrEqual(BreakpointNameType.md)
-            }"
-          >
-            <span class="fr-text--xs">
-              {{ detail.label }}
-            </span>
           </div>
         </div>
       </div>
@@ -125,8 +129,15 @@ watch(
   }
 }
 
-.company-filter-icon::before {
-  display: inline-block;
-  width: 1rem;
+.company-filter-icon {
+  &::before {
+    display: inline-block;
+    width: 1rem;
+  }
+  &-large::before {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+  }
 }
 </style>
