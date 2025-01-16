@@ -1,24 +1,28 @@
 import axios from 'axios'
-import posthog, { PostHog } from 'posthog-js'
+import { posthog, PostHog } from 'posthog-js'
 import { PosthogEvent } from './types'
 import { DealStage } from '../brevo/types'
 
 export default class PosthogManager {
   private projectId: string
   private apiKey: string
-  private _posthogCaptureEvent?: PostHog
+  private _posthogCaptureHandler?: PostHog
 
   constructor() {
     this.projectId = process.env['POSTHOG_PROJECT_ID'] || ''
-    this.apiKey = process.env['POSTHOG_API_KEY'] || ''
+    this.apiKey = process.env['POSTHOG_BACKEND_API_KEY'] || ''
 
     if (!this.projectId || !this.apiKey) {
-      throw new Error('Missing PostHog configuration. Ensure POSTHOG_PROJECT_ID and POSTHOG_API_KEY are set in the environment.')
+      throw new Error('Missing PostHog configuration. Ensure POSTHOG_PROJECT_ID and POSTHOG_BACKEND_API_KEY are set in the environment.')
     }
 
-    this._posthogCaptureEvent = posthog.init(this.apiKey, {
-      api_host: 'https://eu.i.posthog.com'
-    })
+    try {
+      this._posthogCaptureHandler = posthog.init(this.apiKey, {
+        api_host: 'https://eu.i.posthog.com'
+      })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   public async getFormEvents(): Promise<PosthogEvent[]> {
@@ -68,6 +72,7 @@ export default class PosthogManager {
       SELECT *
       FROM events
       WHERE event IN (${eventTypes.map((event) => `'${event}'`).join(', ')})
+      LIMIT 10000
     `
     const payload = {
       query: {
@@ -83,7 +88,6 @@ export default class PosthogManager {
     try {
       const response = await axios.post(apiUrl, payload, { headers })
       const data = response.data
-      // TODO : je recois 100 results ce qui est la limit de la requete, il faut soit que je boucle soit que j'augmente la limite.
       return data.results.map((event: string[]) => this._convertRawEventsToPosthogEvents(event))
     } catch (error) {
       console.error('Error fetching events from PostHog:', error)
@@ -93,8 +97,8 @@ export default class PosthogManager {
   }
 
   public createLinkedEvent(eventName: string, linkedEventId: string): void {
-    if (this._posthogCaptureEvent) {
-      this._posthogCaptureEvent.capture(eventName, {
+    if (this._posthogCaptureHandler) {
+      this._posthogCaptureHandler.capture(eventName, {
         linked_event_id: linkedEventId
       })
     }

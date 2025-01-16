@@ -58,7 +58,7 @@ export class PosthogUpdater {
 
       await this._handleStatusUpdate(currentDealStatus, linkedStatusEvents, eventId)
     }
-    return 'sucessfullUpdate'
+    return 'sucessfull Update'
   }
 
   private async _handleStatusUpdate(initialStatus: DealStage, linkedStatusEvents: PosthogEvent[], eventId: string): Promise<void> {
