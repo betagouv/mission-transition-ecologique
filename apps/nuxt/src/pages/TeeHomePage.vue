@@ -40,14 +40,14 @@
               Transition écologique des entreprises des entreprises vous aide à <b>identifier la bonne aide</b> pour votre entreprise parmi
               les aides publiques nationales, régionales et territoriales issues de <b>l'ensemble des partenaires publiques.</b>
             </p>
-            <div class="fr-col-justify--center fr-col-content--middle">
+            <div class="fr-grid-row fr-col-justify--center fr-col-content--middle">
               <img
                 v-for="operator in operators"
                 :key="operator.label"
+                class="fr-responsive-img fr-m-2v operator-logo"
                 :src="operator.img"
+                :width="operator.width ?? undefined"
                 :alt="operator.label"
-                width="70px"
-                class="fr-m-2v"
               />
             </div>
           </div>
@@ -63,13 +63,11 @@
               <b>le conseiller compétent pour votre demande sur votre territoire.</b> Ce conseiller est référencé via le service public
               Conseillers-Entreprises.
             </p>
-            <div class="fr-col-justify--center fr-col-content--middle">
+            <div class="fr-col-justify--center fr-grid-row fr-col-content--middle">
               <img
-                v-for="operator in otherOperators"
-                :key="operator.label"
-                :src="operator.img"
-                :alt="operator.label"
-                width="70px"
+                class="fr-responsive-img fr-m-2v operator-logo"
+                :src="otherOperator.img"
+                :alt="otherOperator.label"
               />
             </div>
           </div>
@@ -87,7 +85,7 @@ import { RouteName } from '@/types'
 definePageMeta({
   path: '/',
   name: RouteName.Homepage,
-  middleware: [MiddlewareName.resetUsedTrackStore]
+  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetProgramFilters]
 })
 
 defineRouteRules({
@@ -100,28 +98,36 @@ defineRouteRules({
 const operators = [
   {
     label: 'ADEME',
-    img: '/images/logos/ademe.svg'
+    img: '/images/logos/ademe.svg',
+    href: 'https://www.ademe.fr/'
   },
   {
     label: 'Bpifrance',
-    img: '/images/logos/bpi-france.svg'
+    img: '/images/logos/bpi-france.svg',
+    href: 'https://www.bpifrance.fr/'
   },
   {
     label: 'CCI France',
-    img: '/images/logos/cci-france.svg'
+    img: '/images/logos/cci-france.svg',
+    href: 'https://www.cci.fr/',
+    width: '130px'
   },
   {
     label: 'CMA France',
-    img: '/images/logos/cma-france.png'
+    img: '/images/logos/cma-france.png',
+    href: 'https://www.artisanat.fr/'
+  },
+  {
+    label: 'Office français de la biodiversité',
+    img: '/images/logos/logo-ofb.webp',
+    href: ' https://ofb.gouv.fr'
   }
 ]
 
-const otherOperators = [
-  {
-    label: 'Conseiller entreprise',
-    img: '/images/logos/ce-logo.webp'
-  }
-]
+const otherOperator = {
+  label: 'Conseiller entreprise',
+  img: '/images/logos/ce-logo.webp'
+}
 </script>
 <style lang="scss">
 .circle-background {
@@ -129,5 +135,10 @@ const otherOperators = [
   z-index: -1;
   left: 50px;
   top: -20px;
+}
+.operator-logo {
+  max-height: 3.625rem;
+  max-width: 10rem !important;
+  width: revert-layer !important;
 }
 </style>
