@@ -10,7 +10,7 @@
     ref="modal"
     :opened="opened"
     title=""
-    size="sm"
+    size="xl"
     @close="close()"
   >
     <template #default>
@@ -33,3 +33,12 @@ const open = () => {
   opened.value = true
 }
 </script>
+<style lang="scss" scoped>
+.fr-modal::after {
+  content: none !important;
+}
+
+:deep(.fr-container-md) {
+  padding: 0 !important;
+}
+</style>

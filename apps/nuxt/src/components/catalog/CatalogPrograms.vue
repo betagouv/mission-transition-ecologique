@@ -12,8 +12,8 @@
         <div
           class="fr-col-12 fr-mt-3v"
           :class="{
-            'fr-col-offset-md-2 fr-col-md-10 fr-col-justify--left': !hasError,
-            'fr-col-md-12 fr-col-justify--center': hasError
+            'fr-col-offset-md-1 fr-col-offset-lg-2 fr-col-md-10 fr-col-justify--left': !hasError,
+            'fr-col-lg-12 fr-col-justify--center': hasError
           }"
         >
           <ThemeFilter />
@@ -21,8 +21,8 @@
         <div
           class="fr-col-12 fr-pr-md-2v"
           :class="{
-            'fr-col-offset-md-2 fr-col-md-10': !hasError,
-            'fr-col-md-12': hasError
+            'fr-col-offset-md-1 fr-col-offset-lg-2 fr-col-md-10': !hasError,
+            'fr-col-lg-12': hasError
           }"
         >
           <ThemeHeaderCard
@@ -44,7 +44,7 @@
         >
           <div
             v-if="!hasSpinner && !hasError"
-            class="fr-col-2 fr-col-hidden fr-col-unhidden-md"
+            class="fr-col-2 fr-col-hidden fr-col-unhidden-lg"
           >
             <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
               <div class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w">Filtres</div>

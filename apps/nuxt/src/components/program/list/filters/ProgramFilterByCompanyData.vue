@@ -20,7 +20,7 @@
           :class="{
             'fr-text--grey': !programFilters[FilterItemKeys.companyData],
             'fr-text--black': navigation.isQuestionnaireResult(),
-            'fr-pl-md-0-5v fr-pl-2v': Breakpoint.isMobile()
+            'fr-pl-0-5v fr-pl-2v fr-text-left fr-mb-1v': Breakpoint.isMobile()
           }"
           >{{ filterData.title }}</span
         >
@@ -34,14 +34,35 @@
         :class="{ 'fr-text--grey': !programFilters[FilterItemKeys.companyData] }"
       >
         <div class="fr-grid-row">
-          <div class="fr-col-1 fr-col-content--middle">
-            <span
+          <div class="fr-col-12 fr-col-hidden-lg">
+            <div
+              class="company-filter-icon fr-pl-1v"
+              :class="detail.icon"
+            >
+              <span
+                class="fr-pl-2v"
+                :class="{ 'fr-pl-4v': Breakpoint.isMobile() }"
+              >
+                {{ detail.label }}
+              </span>
+            </div>
+          </div>
+          <div class="fr-col-1 fr-mr-3v fr-col-hidden fr-col-unhidden-lg">
+            <div
               class="company-filter-icon fr-pl-1v"
               :class="detail.icon"
             />
           </div>
-          <div class="fr-col-11 fr-pl-md-4v fr-pr-1v fr-text-line-height--4v fr-col-content--middle">
-            <span class="fr-text--xs">{{ detail.label }}</span>
+          <div
+            class="fr-col-9 fr-col-hidden fr-col-unhidden-lg"
+            :class="{
+              'fr-ml-0-5v': Breakpoint.isLargerOrEqual(BreakpointNameType.md) && Breakpoint.isSmallerOrEqual(BreakpointNameType.lg),
+              'fr-ml-1v': Breakpoint.isSmallerOrEqual(BreakpointNameType.md)
+            }"
+          >
+            <span class="fr-text--xs">
+              {{ detail.label }}
+            </span>
           </div>
         </div>
       </div>
@@ -51,7 +72,7 @@
 
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
-import { CompanyDataStorageKey, FilterItemKeys, type ProgramFiltersType, SizeToText, StructureSize } from '@/types'
+import { BreakpointNameType, CompanyDataStorageKey, FilterItemKeys, type ProgramFiltersType, SizeToText, StructureSize } from '@/types'
 import { CompanyData } from '@/tools/companyData'
 import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
