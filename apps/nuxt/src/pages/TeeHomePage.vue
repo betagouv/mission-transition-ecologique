@@ -136,6 +136,7 @@ const otherOperator = {
   left: 50px;
   top: -20px;
 }
+
 .operator-logo {
   max-height: 3.625rem;
   max-width: 10rem !important;
