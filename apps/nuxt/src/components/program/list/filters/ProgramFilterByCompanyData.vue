@@ -134,6 +134,7 @@ watch(
     display: inline-block;
     width: 1rem;
   }
+
   &-large::before {
     display: block;
     width: 1rem;
