@@ -27,7 +27,7 @@
         </div>
         <div class="fr-bg--blue-france--lightness fr-hidden fr-unhidden-sm fr-col-12 fr-py-0-5v fr-mt-8v fr-mb-16v"></div>
         <div class="fr-grid-row fr-hidden fr-unhidden-sm">
-          <div class="fr-col-6 fr-px-10w fr-text-center fr-position--relative">
+          <div class="fr-col-6 fr-col-sm-12 fr-col-lg-6 fr-px-10w fr-text-center fr-position--relative">
             <img
               src="/images/yellow-circle.svg"
               class="circle-background fr-position--absolute"
@@ -51,7 +51,7 @@
               />
             </div>
           </div>
-          <div class="fr-col-6 fr-px-10w fr-text-center fr-position--relative">
+          <div class="fr-col-6 fr-col-sm-12 fr-col-lg-6 fr-px-10w fr-text-center fr-position--relative">
             <img
               src="/images/green-circle.svg"
               class="circle-background fr-position--absolute"
