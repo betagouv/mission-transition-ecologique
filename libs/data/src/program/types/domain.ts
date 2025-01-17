@@ -96,7 +96,8 @@ export enum Status {
   UxWritingValid = 'UX writing valid',
   TaxAdvantage = 'Data valid',
   ReadyForProd = 'Prêt pour la prod',
-  InProd = 'En prod'
+  InProd = 'En prod',
+  InProdNotAvailable = 'Temporairement indispo'
 }
 
 export type ConditionalValues = CompanySizeCondition | RegionCondition

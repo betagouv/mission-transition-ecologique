@@ -74,6 +74,11 @@ conditions d'éligibilité:
     - Hébergement touristique
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - "Sont éligibles les Établissements Recevant du Public\_à savoir : L’hôtellerie traditionnelle indépendante, l’hôtellerie de plein air, les gîtes de groupe, les villages et centres de vacances à statut privé non associatif et associatif, les sociétés Civiles Immobilières (SCI), les associations, les mutuelles, les coopératives, les fondations engagées dans le cadre du Contrat d’engagement républicain ou d’un agrément de l’État en application du décret n° 2021-1947 du 31 décembre 2021"
+    - >-
+      Sont exclus les chambres d’hôte, les meublés de tourisme, les gîtes ruraux
+      et les particuliers
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -30,6 +30,10 @@
       "type": "string",
       "pattern": "^[0-3][0-9]/[0-1][0-9]/[0-9]{4}$"
     },
+    "aide temporairement indisponible": {
+      "description": "champ présent si le programme est temporairement désactivé",
+      "type": "string"
+    },
     "url": {
       "description": "TODO",
       "type": "string"
@@ -343,7 +347,6 @@
         "InvestEU",
         "La Poste",
         "Ministère de la Transition Écologique",
-        "ORACE en Pays de la Loire",
         "Organisations professionnelles",
         "Région Bretagne",
         "Région Grand Est",
@@ -375,7 +378,8 @@
         "TEE",
         "Région Bourgogne-Franche-Comté",
         "Région Auvergne-Rhône-Alpes",
-        "Association pour la transition Bas Carbone"
+        "Association pour la transition Bas Carbone",
+        "La Fresque du Climat"
       ]
     }
   }

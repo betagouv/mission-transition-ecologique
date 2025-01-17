@@ -86,7 +86,9 @@ objectifs:
       - lien: >-
           https://agence-cohesion-territoires.gouv.fr/sites/default/files/inline-images/perimetre_des_territoires_dindustrie_2023-2027_high_0.png
         texte: Territoires d'industrie 2023-2027
-  - description: Créez un compte avec FranceConnect pour pouvoir déposer votre dossier.
+  - description: >-
+      Créez un compte ou identifiez-vous avec FranceConnect pour pouvoir déposer
+      votre dossier.
     liens:
       - lien: >-
           https://www.demarches-simplifiees.fr/commencer/fonds-vert-3-territoires-industrie
