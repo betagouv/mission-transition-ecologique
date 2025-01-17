@@ -20,8 +20,7 @@
           :class="{
             'fr-text--grey': !filters[FilterItemKeys.companyData],
             'fr-text--black': navigation.isQuestionnaireResult(),
-            'fr-pl-0-5v': !Breakpoint.isSmallScreen(),
-            'fr-pl-2v fr-text-left fr-mb-1v': Breakpoint.isMobile()
+            'fr-pl-0-5v fr-pl-2v fr-text-left fr-mb-1v': Breakpoint.isMobile()
           }"
           >{{ filterData.title }}</span
         >
@@ -35,15 +34,38 @@
         :class="{ 'fr-text--grey': !filters[FilterItemKeys.companyData] }"
       >
         <div class="fr-grid-row">
-          <div class="fr-col-12">
-            <div
-              class="company-filter-icon fr-pl-1v fr-col-content--middle"
-              :class="detail.icon"
-            >
-              <span
-                :class="{ 'fr-text--xs': !Breakpoint.isMobile(), 'fr-pl-2v': !Breakpoint.isMobile(), 'fr-pl-4v': Breakpoint.isMobile() }"
-                >{{ detail.label }}</span
+          <div class="fr-col-hidden-lg">
+            <div class="fr-col-12">
+              <div
+                class="company-filter-icon fr-pl-1v"
+                :class="detail.icon"
               >
+                <span
+                  class="fr-pl-2v"
+                  :class="{ 'fr-pl-4v': Breakpoint.isMobile() }"
+                >
+                  {{ detail.label }}
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="fr-hidden fr-unhidden-lg">
+            <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pt-1v">
+              <div
+                class="company-filter-icon-large fr-pl-1v"
+                :class="detail.icon"
+              />
+            </div>
+            <div
+              class="fr-col-9 fr-col-hidden fr-col-unhidden-lg"
+              :class="{
+                'fr-ml-0-5v': Breakpoint.isLargerOrEqual(BreakpointNameType.md) && Breakpoint.isSmallerOrEqual(BreakpointNameType.lg),
+                'fr-ml-1v': Breakpoint.isSmallerOrEqual(BreakpointNameType.md)
+              }"
+            >
+              <span class="fr-text--xs">
+                {{ detail.label }}
+              </span>
             </div>
           </div>
         </div>
@@ -80,7 +102,7 @@ const hasRegisteredData = CompanyData.isDataFull()
 const companyName = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.denomination)
 const companySector = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.secteur)
 const companyRegion = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.region)
-const companySize = computed(() => SizeToText[registeredData.value[CompanyDataStorageKey.Size] as StructureSize])
+const companySize = computed(() => SizeToText[registeredData.value[CompanyDataStorageKey.Size] as StructureSize]?.title)
 
 const filterData: CompanyFilterProps = {
   title: companyName,
@@ -107,9 +129,20 @@ watch(
   }
 }
 
-.company-filter-icon::before {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
+.company-filter-icon {
+  &::before {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: top;
+    position: relative;
+    top: 0.3rem;
+  }
+
+  &-large::before {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+  }
 }
 </style>

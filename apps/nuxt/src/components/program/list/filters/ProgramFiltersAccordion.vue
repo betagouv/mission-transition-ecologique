@@ -14,6 +14,7 @@ import ProgramFilterByCompanyData from '@/components/program/list/filters/Progra
 import { FilterItemKeys, FiltersType } from '@/types'
 import { FilterItem } from '@/components/filters/FiltersAccordion.vue'
 import { useFiltersStore } from '@/stores/filters'
+import { CompanyData } from '@/tools/companyData'
 
 interface Props {
   accordionClass?: string
@@ -36,10 +37,10 @@ const companyDataFilter: FilterItem = {
   id: FilterItemKeys.companyData,
   component: ProgramFilterByCompanyData,
   componentClass: 'fr-pl-2v',
-  display: true
+  display: CompanyData.isDataFull().value
 }
 
-const filtersItem: FilterItem[] = [
+const filters: FilterItem[] = [
   {
     title: "Types d'aides",
     id: FilterItemKeys.typeAid,

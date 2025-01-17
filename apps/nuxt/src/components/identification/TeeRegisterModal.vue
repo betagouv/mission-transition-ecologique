@@ -13,9 +13,9 @@
         id="register-modal-content"
         class="fr-container fr-grid-row fr-grid-row--left fr-grid-row--top"
       >
-        <div class="fr-col-12 fr-col-md-7 fr-col-offset-md-2 fr-pb-md-4v fr-pt-8v fr-mb-4v fr-text--yellow">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pb-md-1v fr-pt-7v fr-text--yellow">
           <div>
-            <div class="fr-h1 fr-mb-0 fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
+            <div class="fr-h2 fr-mb-0 fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
             <TeeDsfrButton
               id="close-register-modal"
               size="sm"
@@ -52,8 +52,8 @@ import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType, FilterItemK
 import Breakpoint from '@/tools/breakpoints'
 import { onClickOutside } from '@vueuse/core'
 import { useNavigationStore } from '@/stores/navigation'
-import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { CompanyData } from '@/tools/companyData'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 
 const registerModal = ref(null)
 const registeredData = CompanyData.dataRef
