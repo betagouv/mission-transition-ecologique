@@ -23,9 +23,7 @@
           'fr-col-md-12': hasError
         }"
       >
-        <ProgramList
-          :filtered-programs="filteredPrograms"
-        />
+        <ProgramList :filtered-programs="filteredPrograms" />
       </div>
     </template>
   </CatalogLayout>
