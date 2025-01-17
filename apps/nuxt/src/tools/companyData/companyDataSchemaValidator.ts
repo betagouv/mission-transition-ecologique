@@ -10,7 +10,7 @@ const ManualCompanyDataSchema: z.ZodType<ManualCompanyData> = z.object({
   ville: z.string(),
   codePostal: z.string(),
   secteur: SectorEnum,
-  denomination: z.string().optional(),
+  denomination: z.string().or(z.null()),
   structure_size: StructureSizeEnum.optional()
 })
 
@@ -25,7 +25,7 @@ const SiretCompanyDataSchema: z.ZodType<EstablishmentFront> = z.object({
   legalCategory: LegalCategoryEnum.or(z.string()),
   region: RegionEnum,
   structure_size: StructureSizeEnum.optional(),
-  denomination: z.string().optional(),
+  denomination: z.string().or(z.null()),
   secteur: z.string(),
   creationDate: z.string()
 })

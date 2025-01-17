@@ -75,14 +75,14 @@
 </template>
 
 <script setup lang="ts">
-import { CompanyDataStorageKey, FilterItemKeys, FiltersType, SizeToText, StructureSize } from '@/types'
+import { BreakpointNameType, CompanyDataStorageKey, FilterItemKeys, FiltersType, SizeToText, StructureSize } from '@/types'
 import { CompanyData } from '@/tools/companyData'
 import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
 import { useFiltersStore } from '@/stores/filters'
 
 type CompanyFilterProps = {
-  title: ComputedRef<string | undefined>
+  title: ComputedRef<string | undefined | null>
   details: {
     sector: CompanyFilterDetailProps
     region: CompanyFilterDetailProps
