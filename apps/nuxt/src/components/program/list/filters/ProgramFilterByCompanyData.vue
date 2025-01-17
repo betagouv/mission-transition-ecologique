@@ -133,6 +133,10 @@ watch(
   &::before {
     display: inline-block;
     width: 1rem;
+    height: 1rem;
+    vertical-align: top;
+    position: relative;
+    top: 0.3rem;
   }
 
   &-large::before {
