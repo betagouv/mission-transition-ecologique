@@ -33,8 +33,8 @@
 <script setup lang="ts">
 import { DsfrModal } from '@gouvminint/vue-dsfr'
 import { ref } from 'vue'
-import { ProgramFiltersType } from '@/types'
-import { useProgramStore } from '@/stores/program'
+import { FiltersType } from '@/types'
+import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
 
 const close = () => {
   opened.value = false
@@ -46,10 +46,10 @@ const open = () => {
   opened.value = true
 }
 
-const programFilters: ProgramFiltersType = useProgramStore().programFilters
+const filters: FiltersType = useFiltersStore().filters
 
 const getFiltersCount = computed(() => {
-  return Object.values(programFilters).reduce((acc, filter) => {
+  return Object.values(filters).reduce((acc, filter) => {
     if (Array.isArray(filter)) {
       acc += filter.length
     }

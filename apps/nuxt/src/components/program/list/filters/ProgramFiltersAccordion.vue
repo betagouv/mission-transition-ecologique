@@ -40,7 +40,7 @@ const companyDataFilter: FilterItem = {
   display: CompanyData.isDataFull().value
 }
 
-const filters: FilterItem[] = [
+const filtersItem: FilterItem[] = [
   {
     title: "Types d'aides",
     id: FilterItemKeys.typeAid,
@@ -60,7 +60,7 @@ const filters: FilterItem[] = [
     id: FilterItemKeys.regionAid,
     component: ProgramFilterByRegion,
     componentClass: 'fr-pl-2v',
-    display: displayRegionFilter
+    display: displayRegionFilter.value
   }
 ]
 </script>
