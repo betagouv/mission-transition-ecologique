@@ -2,6 +2,7 @@ import axios from 'axios'
 import { posthog, PostHog } from 'posthog-js'
 import { PosthogEvent } from './types'
 import { DealStage } from '../brevo/types'
+import fs from 'fs'
 
 export default class PosthogManager {
   private projectId: string
@@ -26,6 +27,21 @@ export default class PosthogManager {
   }
 
   public async getFormEvents(): Promise<PosthogEvent[]> {
+    // DEV CODE
+    const filePath = 'formEvents.log'
+    if (fs.existsSync(filePath)) {
+      try {
+        console.log('Reading form events from local file...')
+        const filedata = fs.readFileSync(filePath, 'utf-8')
+        const data = JSON.parse(filedata) as PosthogEvent[]
+        return data
+      } catch (error) {
+        console.error('Error reading deals from file:', error)
+        throw error // Handle or re-throw error if necessary
+      }
+    }
+    // END DEV CODE
+
     const eventTypes = [
       'send_program_form',
       'send_project_form',
@@ -33,13 +49,33 @@ export default class PosthogManager {
       'send_project_form_catalog',
       'send_customProject_form'
     ]
-    return this.getEvents(eventTypes)
+    const temp = await this.getEvents(eventTypes)
+    fs.writeFileSync(filePath, JSON.stringify(temp, null, 2), 'utf-8') // TODO DEV CODE TO DELETE
+    return temp
   }
 
   public async getStatusEvent(): Promise<PosthogEvent[]> {
+    // DEV CODE
+    const filePath = 'statusEvents.log'
+    if (fs.existsSync(filePath)) {
+      try {
+        console.log('Reading status events from local file...')
+        const filedata = fs.readFileSync(filePath, 'utf-8')
+        const data = JSON.parse(filedata) as PosthogEvent[]
+        return data
+      } catch (error) {
+        console.error('Error reading deals from file:', error)
+        throw error // Handle or re-throw error if necessary
+      }
+    }
+    // END DEV CODE
+
     const dealStageKeys = Object.keys(DealStage) as (keyof typeof DealStage)[]
     const eventTypes = dealStageKeys.map((key) => `brevo_status_set_to_${key}`)
-    return this.getEvents(eventTypes)
+
+    const temp = await this.getEvents(eventTypes)
+    fs.writeFileSync('statusEvents.log', JSON.stringify(temp, null, 2), 'utf-8') // TODO DEV CODE TO DELETE
+    return temp
   }
 
   private _convertRawEventsToPosthogEvents(event: string[]): PosthogEvent {

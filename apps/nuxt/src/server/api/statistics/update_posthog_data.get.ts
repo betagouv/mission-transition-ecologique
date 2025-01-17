@@ -5,8 +5,8 @@ import { PosthogUpdater } from '@tee/data/server'
 export default defineEventHandler(async () => {
   try {
     const updater = PosthogUpdater.getInstance()
-    await updater.updatePosthogData()
-    return { message: 'PostHog data updated successfully' }
+    const res = await updater.updatePosthogData()
+    return { message: res }
   } catch (error) {
     Monitor.error('Error during the PostHog data update', { error })
     throw createError({

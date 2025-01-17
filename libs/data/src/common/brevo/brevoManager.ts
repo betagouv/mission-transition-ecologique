@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Deal, DealsApi, DealsApiApiKeys } from '@getbrevo/brevo'
 import fs from 'fs'
-import { BrevoDeal, DealStage, RawBrevoDealAttributes } from './types'
+import { BrevoDeal, DealStageIdToStage, RawBrevoDealAttributes } from './types'
 
 export default class BrevoManager {
   private _dealsApi = new DealsApi()
@@ -55,17 +55,18 @@ export default class BrevoManager {
         const creationDate = attributes['created_at']
         const dealStageId = attributes['deal_stage']
 
-        const status = Object.entries(DealStage).find(([_, value]) => value === dealStageId)?.[0] as DealStage
-
+        const status = DealStageIdToStage[dealStageId]
         if (!status) {
           console.log(`Invalid dealStageId: ${dealStageId}`)
+          return {}
         }
 
         return {
+          dealId: deal['id'],
           creationDate,
           status
         }
       })
-      .filter((deal) => deal.creationDate && deal.status) as BrevoDeal[]
+      .filter((deal) => deal.dealId && deal.creationDate && deal.status) as BrevoDeal[]
   }
 }

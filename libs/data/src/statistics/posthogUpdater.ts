@@ -1,5 +1,5 @@
 import BrevoManager from '../common/brevo/brevoManager'
-import { DealStage } from '../common/brevo/types'
+import { BrevoDeal, DealStage } from '../common/brevo/types'
 import PosthogManager from '../common/posthog/posthogManager'
 import { PosthogEvent } from '../common/posthog/types'
 
@@ -33,36 +33,66 @@ export class PosthogUpdater {
   private async _performUpdate(): Promise<string> {
     const posthogFormEvents = await new PosthogManager().getFormEvents()
     const deals = await new BrevoManager().getDeals()
-    const posthogStatusEvents = await new PosthogManager().getStatusEvent()
+    const posthogStatusEvents: PosthogEvent[] = [] // await new PosthogManager().getStatusEvent()
+
+    console.log('All data properly loaded')
+
+    let skipCount = 0
 
     for (const formEvent of posthogFormEvents) {
-      const { eventDate, eventId } = formEvent
-
-      if (!eventDate || !eventId) {
-        console.log(`Skipping event due to missing eventDate or eventId: ${JSON.stringify(formEvent)}`)
+      const eventId = formEvent.eventId
+      if (!eventId) {
+        console.log(`Skipping an event poorly defined (no eventId)`)
         continue
       }
-      const eventDateTime = new Date(eventDate).getTime()
-      const matchingDeals = deals.filter((deal) => {
-        const creationDate = new Date(deal.creationDate).getTime()
-        const timeDifference = Math.abs(eventDateTime - creationDate)
-        return timeDifference <= 60000 // 1 minute in milliseconds
-      })
+      const matchingDeal = this._findDealMatch(formEvent, deals)
 
-      if (matchingDeals.length !== 1) {
-        console.log(`Skipping event ${eventId}: Expected 1 matching deal, found ${matchingDeals.length}`)
+      if (!matchingDeal) {
+        console.log(`Skipping event ${eventId}: Expected 1 matching deal, found 0 or more than 1 possible match`)
+        skipCount += 1
         continue
       }
-      const currentDealStatus = matchingDeals[0].status
+      const currentDealStatus = matchingDeal.status
+
       const linkedStatusEvents = posthogStatusEvents.filter((statusEvent) => statusEvent.linkedEventId === eventId)
-
       await this._handleStatusUpdate(currentDealStatus, linkedStatusEvents, eventId)
     }
+    console.log('Recap')
+    console.log("nombre d'events : ", posthogFormEvents.length)
+    console.log('nombre de skip : ', skipCount)
     return 'sucessfull Update'
   }
 
+  private _findDealMatch(formEvent: PosthogEvent, deals: BrevoDeal[]): BrevoDeal | undefined {
+    if (!formEvent.eventId) {
+      return undefined
+    }
+
+    if (formEvent.opportunityId) {
+      const matchingDeals = deals.filter((deal) => deal.dealId === formEvent.opportunityId)
+      if (matchingDeals.length == 1) {
+        return matchingDeals[0]
+      }
+    }
+
+    if (!formEvent.eventDate) {
+      return undefined
+    }
+    const eventDateTime = new Date(formEvent.eventDate).getTime()
+    const matchingDeals = deals.filter((deal) => {
+      const creationDate = new Date(deal.creationDate).getTime()
+      const timeDifference = Math.abs(eventDateTime - creationDate)
+      return timeDifference <= 60000 // 1 minute in milliseconds
+    })
+
+    if (matchingDeals.length == 1) {
+      return matchingDeals[0]
+    }
+    return undefined
+  }
+
   private async _handleStatusUpdate(initialStatus: DealStage, linkedStatusEvents: PosthogEvent[], eventId: string): Promise<void> {
-    const statusMap: Record<DealStage, DealStage | null> = {
+    const dealDependencyMap: Record<DealStage, DealStage | null> = {
       [DealStage.Gagnee]: DealStage.AideProposee,
       [DealStage.AideProposee]: DealStage.Transmise,
       [DealStage.Perdue]: DealStage.Transmise,
@@ -70,17 +100,18 @@ export class PosthogUpdater {
       [DealStage.Nouvelle]: null
     }
 
-    let currentStatus: DealStage | null = initialStatus
+    let currentStatus: keyof typeof DealStage | null = initialStatus
+
     while (currentStatus) {
       const eventName = `brevo_status_set_to_${currentStatus}`
       const existingEvent = linkedStatusEvents.find((e) => e.eventName === eventName)
 
       if (!existingEvent) {
         console.log(`Creating event: ${eventName} for eventId: ${eventId}`)
-        // await new PosthogManager().createLinkedEvent(eventName, eventId)
+        // await new PosthogManager().createLinkedEvent(eventName, eventId);
+        // await new Promise((resolve) => setTimeout(resolve, 100))
       }
-
-      currentStatus = statusMap[currentStatus]
+      currentStatus = dealDependencyMap[currentStatus]
     }
   }
 }
