@@ -11,7 +11,8 @@ const projectFrDict = {
       resume: 'Voici les actions par lesquelles commencer pour votre {effectif} du secteur {secteur} :'
     },
     form: {
-      hint: '👋 Expliquez nous votre projet, nous vous mettrons en relation avec un conseiller compétent pour votre demande sur votre territoire.',
+      title: 'Vous avez une question sur ce projet ?',
+      hint: '👋 Des experts de la transition écologique des entreprises sont là pour répondre à vos questions et vous orienter.',
       errorEmail: {
         subject: "[france-transition] Demande d'informations concernant le projet {titre}"
       },
@@ -27,7 +28,8 @@ Merci d'avance pour votre appel`
   },
   otherProject: {
     form: {
-      hint: '👋 Expliquez nous votre projet, nous vous mettrons en relation avec un conseiller compétent pour votre demande sur votre territoire.',
+      title: 'Vous avez une question sur ce projet ?',
+      hint: '👋 Des experts de la transition écologique des entreprises sont là pour répondre à vos questions et vous orienter.',
       errorEmail: {
         subject: "[france-transition] Demande d'informations concernant le projet {titre}"
       },

@@ -72,7 +72,7 @@
               :program="program"
             />
             <DsfrButton
-              v-if="!isProgramAutonomous && programIsEligible"
+              v-if="!isProgramAutonomous && programIsEligible && hasRegisteredData && !Program.isTemporaryUnavailable(program)"
               size="lg"
               icon="fr-icon-mail-line"
               class="fr-ml-md-3v"
@@ -176,9 +176,11 @@
               :title="Translation.t('program.programEndValidity')"
               image-path="/images/TEE-date-fin.svg"
               :description="
-                programEndValidity
-                  ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
-                  : Translation.t('program.programAvailable')
+                Program.isTemporaryUnavailable(program)
+                  ? 'Aide temporairement indisponible'
+                  : programEndValidity
+                    ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
+                    : Translation.t('program.programAvailable')
               "
             />
           </div>
@@ -214,7 +216,7 @@
 
     <!-- PROGRAM FORM -->
     <div
-      v-if="hasRegisteredData && programIsEligible"
+      v-if="hasRegisteredData && programIsEligible && !Program.isTemporaryUnavailable(program)"
       ref="tee-program-form-container"
       class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
     >

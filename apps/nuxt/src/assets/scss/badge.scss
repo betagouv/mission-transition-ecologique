@@ -5,3 +5,13 @@
     color: setting.$blue-france;
   }
 }
+
+.fr-filter-count-badge {
+  background-color: setting.$blue-france;
+  color: white;
+  border-radius: 1rem;
+  padding: 0 .35rem;
+  line-height: 1.1rem;
+  font-size: 0.66rem;
+  font-weight: bold;
+}

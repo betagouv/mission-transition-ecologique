@@ -6,14 +6,22 @@
   />
 </template>
 <script setup lang="ts">
-import { Color, ProgramEligibilityType } from '@/types'
+import { Color, ProgramEligibilityType, RouteName } from '@/types'
 import { TeeEligibilityBarLink, TeeEligibilityBarMessage } from '@/components/program/eligibility/TeeEligibilityBar.vue'
 import { useProgramStore } from '@/stores/program'
 import { storeToRefs } from 'pinia'
+import Program from '@/tools/program/program'
 
 const { currentProgram: program } = storeToRefs(useProgramStore())
 
 const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(() => {
+  if (Program.isTemporaryUnavailable(program.value)) {
+    return {
+      default: 'Cette aide est temporairement indisponible.',
+      mobile: 'Cette aide est temporairement indisponible.',
+      icon: 'fr-icon-close-circle-fill'
+    }
+  }
   switch (program.value?.eligibility) {
     case ProgramEligibilityType.Eligible:
       return {
@@ -38,10 +46,17 @@ const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(()
 })
 
 const getEligibilityColor: ComputedRef<Color> = computed(() => {
-  return program.value?.eligibility === ProgramEligibilityType.NotEligible ? Color.red : Color.greenLightnessed
+  return Program.isTemporaryUnavailable(program.value)
+    ? Color.red
+    : program.value?.eligibility === ProgramEligibilityType.NotEligible
+      ? Color.red
+      : Color.greenLightnessed
 })
 
 const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = computed(() => {
+  if (Program.isTemporaryUnavailable(program.value)) {
+    return undefined
+  }
   switch (program.value?.eligibility) {
     case ProgramEligibilityType.PartiallyEligible:
       return {
@@ -50,13 +65,13 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
         labelMobile: 'Vérifier les critères'
       }
     // TODO : uncomment once the company data filter is available on catalogs
-    // return {
-    //   url: RouteName.CatalogPrograms,
-    //   label: 'Voir les aides pour mon entreprise',
-    //   labelMobile: 'Voir les aides éligibles',
-    //   isButtonLink: true
-    // }
     case ProgramEligibilityType.NotEligible:
+      return {
+        url: RouteName.CatalogPrograms,
+        label: 'Voir les aides pour mon entreprise',
+        labelMobile: 'Voir les aides éligibles',
+        isButtonLink: true
+      }
     case ProgramEligibilityType.Eligible:
     default:
       return undefined
