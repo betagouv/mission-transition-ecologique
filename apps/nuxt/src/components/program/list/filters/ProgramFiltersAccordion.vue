@@ -6,7 +6,7 @@
     <DsfrAccordion
       :id="`accordion-${companyDataFilter.id}`"
       :class="[props.accordionClass]"
-      :title="`${companyDataFilter.title} ${getFilterCount(companyDataFilter.id)}`"
+      :title="companyDataFilter.title"
     >
       <component
         :is="companyDataFilter.component"
@@ -25,19 +25,21 @@
         :id="`accordion-${filter.id}`"
         :key="key"
         :class="[props.accordionClass, filter.accordionClass]"
-        :title="`${filter.title} ${getFilterCount(filter.id)}`"
+        :title="filter.title"
       >
         <template
           v-if="filter.id !== FilterItemKeys.companyData"
           #title
         >
-          <span>{{ filter.title }}</span>
-          <span
-            v-if="getFilterCount(filter.id)"
-            class="fr-filter-count-badge fr-ml-2v"
-          >
-            {{ getFilterCount(filter.id) }}
-          </span>
+          <div class="fr-grid-row fr-grid-row--middle">
+            <span>{{ filter.title }}</span>
+            <span
+              v-if="getFilterCount(filter.id)"
+              class="fr-filter-count-badge fr-ml-1v"
+            >
+              {{ getFilterCount(filter.id) }}
+            </span>
+          </div>
         </template>
         <component
           :is="filter.component"
@@ -129,18 +131,7 @@ const getFilterCount = (filterId: FilterItemKeys) => {
 }
 </script>
 <style lang="scss" scoped>
-@use '@/assets/scss/setting';
-
 :deep(#accordion-company-data) {
   padding: 0 0.25rem;
-}
-
-.fr-filter-count-badge {
-  background-color: setting.$blue-france;
-  color: white;
-  border-radius: 1rem;
-  padding: 0 0.35rem;
-  line-height: 1rem;
-  font-size: 0.6rem;
 }
 </style>
