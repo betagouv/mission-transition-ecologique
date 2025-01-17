@@ -15,6 +15,7 @@ export interface ProjectType {
   programs: string[]
   linkedProjects: ProjectId[]
   priority: number
+  homepagePriority: number | null
   sectors: string[]
 }
 

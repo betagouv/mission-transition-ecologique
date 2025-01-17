@@ -130,6 +130,10 @@ export default class Navigation {
     return !this.isQuestionnaire() && !this.isCatalog()
   }
 
+  isHomePage() {
+    return this.isByRouteName(RouteName.Homepage)
+  }
+
   getHrefByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {
     if (this._router) {
       return this._router.resolve({ name: routeName, params: params }).href

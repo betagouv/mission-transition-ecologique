@@ -19,6 +19,7 @@ export interface BaserowProject extends Id, BaserowSectors {
   'Thématiques secondaires': LinkObject[]
   Dispositifs: LinkObject[]
   Prio: number
+  'Mise En Avant': number | null
 }
 
 export interface LinkObject extends Id {

@@ -67,9 +67,11 @@ import { ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import { Theme } from '@/tools/theme'
+import Navigation from '@/tools/navigation'
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
+const navigation = new Navigation()
 interface Props {
   showTitle?: boolean
   showLimit?: number
@@ -94,7 +96,13 @@ useSeoMeta(MetaSeo.get(title, description))
 const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
-const sortedProjects = ProjectSorter.sort(filteredProjects)
+
+const sortedProjects = computed(() => {
+  if (navigation.isHomePage() && (!theme.value || theme.value.length === 0)) {
+    return ProjectSorter.homepageSort(filteredProjects).value
+  }
+  return ProjectSorter.sort(filteredProjects).value
+})
 
 const hasSpinner = computed(() => {
   return navigationStore.hasSpinner
