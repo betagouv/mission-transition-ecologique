@@ -47,12 +47,11 @@ export const requestSireneAPI = async (token: string, siret: string): Promise<Re
 
 const parseEstablishment = (establishmentDocument: EstablishmentDocument): EstablishmentDetails => {
   const rawEstablishment = establishmentDocument.etablissement
-  return {
+  const result: EstablishmentDetails = {
     siren: rawEstablishment.siren,
     nic: rawEstablishment.nic,
     siret: rawEstablishment.siret,
     creationDate: rawEstablishment.uniteLegale.dateCreationUniteLegale,
-    denomination: rawEstablishment.uniteLegale.denominationUniteLegale,
     nafCode: rawEstablishment.uniteLegale.activitePrincipaleUniteLegale,
     legalCategory: rawEstablishment.uniteLegale.categorieJuridiqueUniteLegale,
     address: {
@@ -65,6 +64,11 @@ const parseEstablishment = (establishmentDocument: EstablishmentDocument): Estab
     },
     workforceRange: rawEstablishment.trancheEffectifsEtablissement
   }
+
+  if (rawEstablishment.uniteLegale.denominationUniteLegale) {
+    result.denomination = rawEstablishment.uniteLegale.denominationUniteLegale
+  }
+  return result
 }
 
 /**

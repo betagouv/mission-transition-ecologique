@@ -60,7 +60,7 @@ const profile = ref<RegisterDetails>({
     icon: 'fr-icon-account-pin-circle-line',
     value: props.company && 'siret' in props.company ? props.company.siret : undefined,
     type: RegisterDetailType.Siret,
-    tagLabel: props.company?.denomination
+    tagLabel: props.company?.denomination || 'Entreprise'
   },
   localisation: {
     title: 'Localisation',

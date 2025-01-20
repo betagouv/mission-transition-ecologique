@@ -8,7 +8,7 @@ export interface EstablishmentDetails {
   nic: string
   siret: string
   creationDate: string
-  denomination: string
+  denomination?: string
   legalCategory: string
   nafCode: string
   address: {
