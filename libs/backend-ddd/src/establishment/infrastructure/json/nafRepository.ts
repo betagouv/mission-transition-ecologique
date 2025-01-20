@@ -1,11 +1,11 @@
 import { nafMapping } from '@tee/data/references'
 import { Maybe } from 'true-myth'
-import { NafSearchType } from '../../domain/spi'
+import { NafRepository } from '../../domain/spi'
 import { CompanyActivityType, NAF1 } from '@tee/common'
 import { Result } from 'true-myth'
 import { normalizeString } from '../../../common/string'
 
-export class NafSearch implements NafSearchType {
+export class NafTools implements NafRepository {
   private _lastNafCode = ''
   private _lastNafData: NafData | undefined
 
@@ -21,11 +21,10 @@ export class NafSearch implements NafSearchType {
 
   public searchNAF(searchTerm: string): Result<CompanyActivityType[], Error> {
     let results = []
-
-    if (searchTerm === ' ') {
+    const normalizedSearch = normalizeString(searchTerm)
+    if (normalizedSearch === '') {
       results = nafMapping
     } else {
-      const normalizedSearch = normalizeString(searchTerm)
       const regex = /^\d{1,2}(\.?(\d{1,2}[A-Z]?)?)?$/
       const isSearchByNAfCode = regex.test(searchTerm)
       if (isSearchByNAfCode) {

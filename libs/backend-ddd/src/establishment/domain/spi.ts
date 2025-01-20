@@ -11,7 +11,7 @@ export type CityToRegionMappingType = {
   getRegion: (zipCode: string) => Maybe<string>
 }
 
-export type NafSearchType = {
+export type NafRepository = {
   getLabel: (nafCode: string) => Maybe<string>
   getSectionCode: (nafCode: string) => Maybe<string>
   searchNAF: (searchTerm: string) => Result<CompanyActivityType[], Error>
