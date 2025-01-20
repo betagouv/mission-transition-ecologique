@@ -1,10 +1,10 @@
 import EstablishmentFeatures from '../domain/establishmentFeatures'
 import { getEstablishment } from '../infrastructure/api/sirene/sirene'
-import { CityToRegionMappingType, EstablishmentRepository, NafRepository } from '../domain/spi'
+import { CityToRegionMappingType, EstablishmentRepository, NafRepository as NafRepositoryType } from '../domain/spi'
 import type { Establishment, Siret } from '../domain/types'
 import { Result } from 'true-myth'
 import { CityToRegionMapping } from '../infrastructure/json/cityToRegionMapping'
-import { NafTools } from '../infrastructure/json/nafRepository'
+import { NafRepository } from '../infrastructure/json/nafRepository'
 import { RechercheEntreprise } from '../infrastructure/api/recherche-entreprise/recherche-entreprise'
 import { CompanyActivityType, EstablishmentSearch } from '@tee/common'
 
@@ -15,7 +15,7 @@ export default class EstablishmentService {
     this._establishmentFeatures = new EstablishmentFeatures(
       this._getEstablishmentRepository(),
       this._getCityToRegionMapping(),
-      this._getNafTools()
+      this._getNafRepository()
     )
   }
 
@@ -29,7 +29,7 @@ export default class EstablishmentService {
 
   public searchNAF(query: string): Result<CompanyActivityType[], Error> {
     try {
-      return new NafTools().searchNAF(query)
+      return new NafRepository().searchNAF(query)
     } catch (error: unknown) {
       return Result.err(error as Error)
     }
@@ -44,7 +44,7 @@ export default class EstablishmentService {
     return new CityToRegionMapping()
   }
 
-  private _getNafTools(): NafRepository {
-    return new NafTools()
+  private _getNafRepository(): NafRepositoryType {
+    return new NafRepository()
   }
 }
