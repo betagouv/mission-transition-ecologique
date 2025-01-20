@@ -82,7 +82,7 @@ import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
 
 type CompanyFilterProps = {
-  title: ComputedRef<string | undefined>
+  title: ComputedRef<string | undefined | null>
   details: {
     sector: CompanyFilterDetailProps
     region: CompanyFilterDetailProps
@@ -99,7 +99,7 @@ const programFilters: ProgramFiltersType = useProgramStore().programFilters
 
 const registeredData = CompanyData.dataRef
 const hasRegisteredData = CompanyData.isDataFull()
-const companyName = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.denomination)
+const companyName = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.denomination ?? 'N/A')
 const companySector = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.secteur)
 const companyRegion = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.region)
 const companySize = computed(() => SizeToText[registeredData.value[CompanyDataStorageKey.Size] as StructureSize]?.title)
