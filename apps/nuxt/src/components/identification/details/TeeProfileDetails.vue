@@ -95,7 +95,7 @@ const profile = ref<RegisterDetails>({
   }
 })
 const canBeSaved = computed(() => {
-  return props.manual ? profile.value.activity.value && profile.value.localisation.value && profile.value.size : profile.value.size.value
+  return profile.value.activity.value && profile.value.localisation.value && profile.value.size.value
 })
 
 const saveProfile = async () => {
