@@ -1,17 +1,17 @@
 import { Result } from 'true-myth'
-import type { CityToRegionMappingType, EstablishmentRepository, NafMappingType } from './spi'
+import type { CityToRegionMappingType, EstablishmentRepository, NafRepository } from './spi'
 import { Establishment, EstablishmentDetails, SearchResult, Siret } from './types'
 import { EstablishmentFront, EstablishmentSearch, LegalCategory, SiretValidator, StructureSize } from '@tee/common'
 
 export default class EstablishmentFeatures {
   private readonly _establishmentRepository: EstablishmentRepository
   private readonly _cityToRegionMapping: CityToRegionMappingType
-  private readonly _nafMapping: NafMappingType
+  private readonly _nafRepository: NafRepository
 
-  constructor(establishmentRepository: EstablishmentRepository, cityToRegionMapping: CityToRegionMappingType, nafMapping: NafMappingType) {
+  constructor(establishmentRepository: EstablishmentRepository, cityToRegionMapping: CityToRegionMappingType, nafSearch: NafRepository) {
     this._establishmentRepository = establishmentRepository
     this._cityToRegionMapping = cityToRegionMapping
-    this._nafMapping = nafMapping
+    this._nafRepository = nafSearch
   }
 
   public async search(query: string, resultCount: number): Promise<Result<EstablishmentSearch, Error>> {
@@ -67,8 +67,8 @@ export default class EstablishmentFeatures {
 
   private _addSectorDetailsToEstablishment(establishment: Establishment): Establishment {
     const code = establishment.nafCode
-    const maybeLabel = this._nafMapping.getLabel(code)
-    const maybeSectionCode = this._nafMapping.getSectionCode(code)
+    const maybeLabel = this._nafRepository.getLabel(code)
+    const maybeSectionCode = this._nafRepository.getSectionCode(code)
 
     if (maybeLabel.isNothing || maybeSectionCode.isNothing) {
       return establishment

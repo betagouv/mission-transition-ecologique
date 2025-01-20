@@ -12,7 +12,6 @@ const queriesSchema = z.object({
 export default defineEventHandler(async (event) => {
   const routeParams = await getValidatedRouterParams(event, routeParamsSchema.parse)
   const queries = await getValidatedQuery(event, queriesSchema.parse)
-  console.log(queries.count)
   return establishmentCached(event, routeParams.query, queries.count)
 })
 
