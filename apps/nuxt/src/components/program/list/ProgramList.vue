@@ -1,10 +1,10 @@
 <template>
   <div class="fr-container--fluid fr-mt-2v fr-mt-md-3v">
     <div class="fr-grid-row fr-grid-row--center">
-      <div class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-md-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic">
+      <div class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-lg-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic">
         <TeeCounterResult :to-count="filteredPrograms" />
       </div>
-      <div class="fr-col-9 fr-col-hidden-md fr-text-right">
+      <div class="fr-col-9 fr-col-hidden-lg fr-text-right">
         <ProgramModalFilter />
       </div>
       <div class="fr-col-12 fr-mt-2v">

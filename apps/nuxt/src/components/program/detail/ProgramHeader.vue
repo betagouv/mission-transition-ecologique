@@ -1,5 +1,5 @@
 <template>
-  <ProgramEligibilityBar v-if="hasRegisteredData" />
+  <ProgramEligibilityBar v-if="hasRegisteredData || Program.isTemporaryUnavailable(currentProgram)" />
   <TeeDsfrBreadcrumb :links="links" />
   <div class="fr-container fr-mt-0 fr-mt-md-3v">
     <div class="fr-grid-row fr-grid-row-gutters">
@@ -36,6 +36,7 @@ import { useProjectStore } from '@/stores/project'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import Translation from '@/tools/translation'
 import { CompanyData } from '@/tools/companyData'
+import Program from '@/tools/program/program'
 
 const { currentProject } = storeToRefs(useProjectStore())
 const { currentProgram } = storeToRefs(useProgramStore())
