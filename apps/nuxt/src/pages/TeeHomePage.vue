@@ -138,8 +138,8 @@ const otherOperator = {
 }
 
 .operator-logo {
-  max-height: 3.625rem;
-  max-width: 10rem !important;
+  max-height: 2.5rem;
+  max-width: 3.8rem !important;
   width: revert-layer !important;
 }
 </style>
