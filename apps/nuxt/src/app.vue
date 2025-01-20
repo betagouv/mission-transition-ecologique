@@ -30,7 +30,7 @@ navigationStore.setRoute(route)
     <NuxtPage />
 
     <div class="fr-mt-0v">
-      <TeeFooter class="fr-hidden-sm" />
+      <TeeFooter />
     </div>
   </div>
 </template>

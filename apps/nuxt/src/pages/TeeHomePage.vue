@@ -72,6 +72,7 @@
             </div>
           </div>
         </div>
+        <div class="fr-bg--blue-france--lightness fr-hidden-sm fr-col-12 fr-py-0-5v fr-mt-8v fr-mb-16v"></div>
       </div>
     </div>
   </div>
@@ -138,8 +139,8 @@ const otherOperator = {
 }
 
 .operator-logo {
-  max-height: 3.625rem;
-  max-width: 10rem !important;
+  max-height: 2.5rem;
+  max-width: 3.8rem !important;
   width: revert-layer !important;
 }
 </style>

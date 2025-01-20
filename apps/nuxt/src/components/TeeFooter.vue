@@ -1,9 +1,9 @@
 <template>
   <!-- FOOTER -->
-  <div :class="`fr-footer ${stickToBottom ? 'tee-footer-bottom' : ''}`">
+  <div :class="`fr-footer fr-pt-md-0 ${stickToBottom ? 'tee-footer-bottom' : ''}`">
     <div class="fr-container--fluid fr-mx-md-20v fr-mx-8v">
       <!-- FOOTER BODY -->
-      <div class="fr-footer__body fr-grid-row">
+      <div class="fr-footer__body fr-hidden-sm fr-grid-row">
         <div class="fr-footer__brand fr-col-lg-3">
           <p class="fr-logo">
             République
@@ -30,7 +30,7 @@
       </div>
 
       <!-- FOOTER PARTNERS -->
-      <div class="fr-footer__partners">
+      <div class="fr-footer__partners fr-hidden-sm">
         <h4 class="fr-footer__partners-title">Nos partenaires</h4>
         <div class="fr-footer__partners-logos fr-grid-row">
           <div class="fr-footer__partners-main">
