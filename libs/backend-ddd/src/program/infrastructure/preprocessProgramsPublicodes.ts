@@ -1,6 +1,6 @@
 import { type ProgramType, ThemeId } from '@tee/data'
 import { type PublicodesInputData, PublicodesQuestionnaireRoute } from './types'
-import { SectorToNAFSection, NAF1Letters } from '../../common/naf1'
+import { NAF1Letters } from '../../common/naf1'
 import {
   QuestionnaireChecker,
   PublicodeObjective,
@@ -9,8 +9,7 @@ import {
   QuestionnaireRoute,
   SizeToWorkforce,
   YesNo,
-  StructureSize,
-  Sector
+  StructureSize
 } from '@tee/common'
 
 /** preprocesses the data gathered from the questionnaire into variables
@@ -29,7 +28,7 @@ export const preprocessInputForPublicodes = (
   setLegalCategory(publicodesData, questionnaireData)
   setStructureSize(publicodesData, questionnaireData)
   setCodeNAF(publicodesData, questionnaireData)
-  setSectors(publicodesData, questionnaireData)
+  setCodeNaf1(publicodesData, questionnaireData)
   setObjectives(publicodesData, questionnaireData)
   setQuestionnaireRoute(publicodesData, questionnaireData)
   setDateValidity(publicodesData, programData)
@@ -65,14 +64,10 @@ const setCodeNAF = (publicodesData: PublicodesInputData, questionnaireData: Ques
     publicodesData[PublicodesKeys.CodeNAF] = enquotePublicodesLiteralString(questionnaireData.codeNAF)
   }
 }
-const setSectors = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
+const setCodeNaf1 = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
   let codeNAF1s: string[] = []
   if (questionnaireData.codeNAF1) {
     codeNAF1s = [questionnaireData.codeNAF1]
-  } else if (questionnaireData.sector) {
-    codeNAF1s = SectorToNAFSection[questionnaireData.sector]
-  } else if (questionnaireData.secteur && questionnaireData.secteur in Sector) {
-    codeNAF1s = SectorToNAFSection[questionnaireData.secteur as Sector]
   } else {
     codeNAF1s = [...NAF1Letters]
   }

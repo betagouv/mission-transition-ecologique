@@ -22,7 +22,7 @@ import { remapItem } from '@/tools/helpers'
 import Translation from '@/tools/translation'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref, toRaw } from 'vue'
-import { CompanyDataStorage, CompanyData } from '@/tools/companyData'
+import { CompanyData } from '@/tools/companyData'
 import TrackSiret from '@/tools/questionnaire/track/TrackSiret'
 
 export const useUsedTrackStore = defineStore('usedTrack', () => {
@@ -271,6 +271,8 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     const navigation = Navigation.getInstance()
     if (!navigation.isCatalog() && !navigation.isCatalogProgramDetail()) {
       questionnaireData.onlyEligible = true
+    } else if (navigation.isCatalog()) {
+      questionnaireData.onlyEligible = false
     }
 
     CompanyData.populateQuestionnaireData(questionnaireData)
@@ -279,7 +281,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
   }
 
   function setFromStorage() {
-    for (const [companyDataStorageKey, value] of Object.entries(CompanyDataStorage.getData().value)) {
+    for (const [companyDataStorageKey, value] of Object.entries(CompanyData.dataRef.value)) {
       if (value) {
         let selectedOption = undefined
         const trackId = CompanyData.getTrackIdFromStorageKey(companyDataStorageKey as CompanyDataStorageKey)
