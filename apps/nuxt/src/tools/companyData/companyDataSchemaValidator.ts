@@ -1,33 +1,24 @@
 import { z } from 'zod'
-import { CompanyDataRegisterType, EstablishmentFront, LegalCategory, ManualCompanyData, Region, Sector, StructureSize } from '@/types'
+import { CompanyDataRegisterType, EstablishmentFront, LegalCategory, NAF1, Region, StructureSize } from '@/types'
 
 const RegionEnum = z.nativeEnum(Region)
-const SectorEnum = z.nativeEnum(Sector)
 const StructureSizeEnum = z.nativeEnum(StructureSize)
-
-const ManualCompanyDataSchema: z.ZodType<ManualCompanyData> = z.object({
-  region: RegionEnum,
-  ville: z.string(),
-  codePostal: z.string(),
-  secteur: SectorEnum,
-  denomination: z.string().or(z.null()),
-  structure_size: StructureSizeEnum.optional()
-})
+const codeNAF1Enum = z.nativeEnum(NAF1)
 
 const LegalCategoryEnum = z.nativeEnum(LegalCategory)
 
-const SiretCompanyDataSchema: z.ZodType<EstablishmentFront> = z.object({
-  siret: z.string(),
+const CompanyDataSchema: z.ZodType<EstablishmentFront> = z.object({
+  siret: z.string().optional(),
   codeNAF: z.string(),
-  codeNAF1: z.string(),
+  codeNAF1: codeNAF1Enum,
   ville: z.string(),
   codePostal: z.string(),
-  legalCategory: LegalCategoryEnum.or(z.string()),
+  legalCategory: LegalCategoryEnum.or(z.string()).optional(),
   region: RegionEnum,
   structure_size: StructureSizeEnum.optional(),
-  denomination: z.string().or(z.null()),
+  denomination: z.string().optional(),
   secteur: z.string(),
-  creationDate: z.string()
+  creationDate: z.string().optional()
 })
 
 export class CompanyDataValidator {
@@ -37,7 +28,7 @@ export class CompanyDataValidator {
     }
 
     try {
-      this._isEstablishmentFront(data) ? SiretCompanyDataSchema.parse(data) : ManualCompanyDataSchema.parse(data)
+      CompanyDataSchema.parse(data)
       return true
     } catch (error) {
       if (error instanceof z.ZodError) {
@@ -47,9 +38,5 @@ export class CompanyDataValidator {
       }
       return false
     }
-  }
-
-  private static _isEstablishmentFront(value: NonNullable<CompanyDataRegisterType>): value is EstablishmentFront {
-    return 'siret' in value
   }
 }

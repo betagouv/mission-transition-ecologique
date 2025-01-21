@@ -459,5 +459,11 @@
   {
     "operator": "La Fresque du Climat",
     "filterCategories": []
+  },
+  {
+    "operator": "SGAR",
+    "filterCategories": [
+      "État"
+    ]
   }
 ]
