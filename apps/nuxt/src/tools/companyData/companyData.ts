@@ -23,7 +23,7 @@ import { CompanyDataValidator } from '@/tools/companyData/companyDataSchemaValid
 
 export class CompanyData {
   static saveDataToStorage(data: CompanyDataType) {
-    CompanyDataStorage.setCompany(data[CompanyDataStorageKey.Company])
+    CompanyDataStorage.setCompany(data[CompanyDataStorageKey.Company] as CompanyDataRegisterType)
     CompanyDataStorage.setSize(data[CompanyDataStorageKey.Size] as StructureSize)
   }
 
@@ -35,6 +35,16 @@ export class CompanyData {
     return CompanyDataStorage.getData().value[CompanyDataStorageKey.Size]
   }
 
+  static patchCompanyData(company: CompanyDataRegisterType, profileData?: RegisterDetails) {
+    const denomination =
+      company?.denomination !== ''
+        ? company?.denomination
+        : `Entreprise : ${profileData?.activity?.value?.secteur || company.secteur} - ${profileData?.localisation?.value?.region || company.region}`
+    return {
+      ...company,
+      denomination
+    }
+  }
   static convertLocalisation(geoInfos: ConvertedCommune): CompanyLocalisationType {
     return {
       region: geoInfos.region.nom as Region,
@@ -48,12 +58,10 @@ export class CompanyData {
     profileData: RegisterDetails
   ): CompanyDataType[CompanyDataStorageKey.Company] {
     return {
-      ...company,
+      ...this.patchCompanyData(company, profileData),
       structure_size: profileData.size.value,
       ...profileData.localisation.value,
-      ...profileData.activity.value,
-      denomination:
-        company?.denomination || `Entreprise : ${profileData.activity.value?.secteur} - ${profileData.localisation.value?.region}`
+      ...profileData.activity.value
     } as CompanyDataType[CompanyDataStorageKey.Company]
   }
 
@@ -170,9 +178,9 @@ export class CompanyData {
 
   static setDataStorageFromTrack(trackId: TrackId, value: string | string[], selectedOptions: TrackOptionsUnion[]) {
     if (trackId === TrackId.Siret && value !== SiretValue.Wildcard && selectedOptions.length > 0) {
-      const questionnaireData = selectedOptions[0].questionnaireData as EstablishmentFront
-      CompanyDataStorage.setCompany(questionnaireData)
-      if (questionnaireData.legalCategory === LegalCategory.EI) {
+      const questionnaireData = selectedOptions[0].questionnaireData as CompanyDataRegisterType
+      CompanyDataStorage.setCompany(this.patchCompanyData(questionnaireData) as CompanyDataRegisterType)
+      if (questionnaireData?.legalCategory === LegalCategory.EI) {
         CompanyDataStorage.setSize(StructureSize.EI)
       }
     }
