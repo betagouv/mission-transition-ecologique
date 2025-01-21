@@ -5,12 +5,7 @@
     :img-src="project.image"
     :alt-img="`image / ${project.title}`"
     :no-arrow="true"
-    :badges="[
-      {
-        label: `${project.availablePrograms}`,
-        type: 'info'
-      }
-    ]"
+    :end-detail="`${project.countAvailablePrograms} AIDES`"
     :link="getRouteToProjectDetail(project)"
     class="teste2e-project-target"
   >
@@ -53,7 +48,6 @@ withDefaults(defineProps<Props>(), {
   isPriorityProject: false,
   priorityOrder: undefined
 })
-
 const priorityTag: string = 'A FAIRE EN PRIORITÉ'
 
 const navigationStore = useNavigationStore()

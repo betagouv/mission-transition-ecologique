@@ -1,18 +1,16 @@
-import { ProjectFilterQuery, projectFilterQuerySchema, QuestionnaireData, serverQuestionnaireDataSchema } from '@tee/common'
+import { QuestionnaireData, serverQuestionnaireDataSchema } from '@tee/common'
 import { defineEventHandler, H3Event } from 'h3'
 import { Monitor, ProgramService, ProjectService } from '@tee/backend-ddd'
 
 export default defineEventHandler(async (event) => {
-  const queries = await getValidatedQuery(event, projectFilterQuerySchema.parse)
   const questionnaireData = await getValidatedQuery(event, serverQuestionnaireDataSchema.parse)
-  console.log(questionnaireData)
-  return projectsCached(event, queries, questionnaireData)
+  return projectsCached(event, questionnaireData)
 })
 
 const projectsCached = cachedFunction(
-  async (event: H3Event, queries: ProjectFilterQuery, questionnaireData: QuestionnaireData) => {
+  async (event: H3Event, questionnaireData: QuestionnaireData) => {
+    const projectService = new ProjectService()
     const programsResults = new ProgramService().getFilteredPrograms(questionnaireData)
-    console.log(programsResults)
     if (programsResults.isErr) {
       const err = programsResults.error
       Monitor.error('Error in ProgramFilters', { error: err })
@@ -21,7 +19,7 @@ const projectsCached = cachedFunction(
         statusMessage: programsResults.error.message
       })
     }
-    const projectResults = new ProjectService().getFiltered(queries, programsResults.value)
+    const projectResults = projectService.getFiltered(questionnaireData)
     if (projectResults.isErr) {
       const err = projectResults.error
       Monitor.error('Error in ProjetFilter', { error: err })
@@ -30,8 +28,16 @@ const projectsCached = cachedFunction(
         statusMessage: projectResults.error.message
       })
     }
-
-    return projectResults.value
+    const enrichedProjectResults = projectService.addAvailablePrograms(projectResults.value, programsResults.value)
+    if (enrichedProjectResults.isErr) {
+      const err = enrichedProjectResults.error
+      Monitor.error('Error in adding availablePrograms', { error: err })
+      throw createError({
+        statusCode: 500,
+        statusMessage: enrichedProjectResults.error.message
+      })
+    }
+    return enrichedProjectResults.value
   },
   {
     name: 'projects',
