@@ -37,9 +37,8 @@ export class CompanyData {
 
   static patchCompanyData(company: CompanyDataRegisterType, profileData?: RegisterDetails) {
     const denomination =
-      company?.denomination !== ''
-        ? company?.denomination
-        : `Entreprise : ${profileData?.activity?.value?.secteur || company.secteur} - ${profileData?.localisation?.value?.region || company.region}`
+      company?.denomination ||
+      `Entreprise : ${profileData?.activity?.value?.secteur || company?.secteur} - ${profileData?.localisation?.value?.region || company?.region}`
     return {
       ...company,
       denomination
