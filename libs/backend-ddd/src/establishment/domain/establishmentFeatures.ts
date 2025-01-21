@@ -82,19 +82,21 @@ export default class EstablishmentFeatures {
   }
 
   private _convertEstablishmentToFront(establishment: Establishment): EstablishmentFront {
-    return {
+    const result: EstablishmentFront = {
       siret: establishment.siret,
       codeNAF: establishment.nafCode,
       codeNAF1: establishment.nafSectionCode || '',
       ville: establishment.address.cityLabel,
+      denomination: establishment.denomination || '',
       codePostal: establishment.address.zipCode,
       region: establishment.region || '',
       legalCategory: establishment.legalCategory,
       structure_size: this._computeBestStructureSizeGuess(establishment),
-      denomination: establishment.denomination,
       secteur: establishment.nafLabel || '',
       creationDate: establishment.creationDate
     }
+
+    return result
   }
 
   private _convertEstablishmentToSearch(establishment: Establishment): EstablishmentSearch {
