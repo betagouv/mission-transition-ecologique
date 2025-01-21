@@ -1,15 +1,4 @@
-import {
-  ProgramData,
-  ThemeId,
-  ThemeType,
-  ProjectType,
-  EstablishmentFront,
-  Sector,
-  SectorToNAFSection,
-  FilterItemKeys,
-  type ValueOf,
-  FiltersType
-} from '@/types'
+import { ProgramData, ThemeId, ThemeType, ProjectType, EstablishmentFront, FilterItemKeys, type ValueOf, FiltersType } from '@/types'
 import { Theme } from '@/tools/theme'
 import { ComputedRef, Ref } from 'vue'
 import { CompanyData } from '@/tools/companyData'
@@ -58,12 +47,7 @@ export default class ProjectFilter {
     }
 
     if (companySelected) {
-      if ((CompanyData.company as EstablishmentFront)?.codeNAF1) {
-        return project.sectors.includes((CompanyData.company as EstablishmentFront)?.codeNAF1)
-      } else if (CompanyData.company?.secteur) {
-        const sectors = SectorToNAFSection[CompanyData.company?.secteur as Sector]
-        return sectors.some((sector) => project.sectors.includes(sector))
-      }
+      return project.sectors.includes((CompanyData.company as EstablishmentFront)?.codeNAF1)
     }
     return true
   }
