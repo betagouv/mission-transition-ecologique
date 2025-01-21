@@ -74,15 +74,6 @@ export enum MobilityStatus {
   NoMax = 'non-max'
 }
 
-export enum Sector {
-  Craftsmanship = 'artisanat',
-  Industry = 'industrie',
-  Tourism = 'tourisme',
-  Tertiary = 'tertiaire',
-  Agriculture = 'agriculture',
-  Other = 'autre secteur'
-}
-
 export enum Objective {
   EnvironmentalImpact = 'mon impact environnemental',
   EnergyPerformance = 'ma performance énergétique',
@@ -124,8 +115,7 @@ export enum PublicodesKeys {
   hasObjective = 'entreprise . a un objectif ciblé',
   isTargeted = 'entreprise . est ciblée',
   CodeNAF1 = 'entreprise . code NAF niveau 1 . est ',
-  Goal = 'questionnaire . objectif prioritaire . est ',
-  SectorActivity = "entreprise . secteur d'activité . est "
+  Goal = 'questionnaire . objectif prioritaire . est '
 }
 
 export enum FiltersKeys {
