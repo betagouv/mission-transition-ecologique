@@ -87,16 +87,13 @@ export default class EstablishmentFeatures {
       codeNAF: establishment.nafCode,
       codeNAF1: establishment.nafSectionCode || '',
       ville: establishment.address.cityLabel,
+      denomination: establishment.denomination || '',
       codePostal: establishment.address.zipCode,
       region: establishment.region || '',
       legalCategory: establishment.legalCategory,
       structure_size: this._computeBestStructureSizeGuess(establishment),
       secteur: establishment.nafLabel || '',
       creationDate: establishment.creationDate
-    }
-
-    if (establishment?.denomination) {
-      result.denomination = establishment.denomination
     }
 
     return result

@@ -51,6 +51,7 @@ const parseEstablishment = (establishmentDocument: EstablishmentDocument): Estab
     siren: rawEstablishment.siren,
     nic: rawEstablishment.nic,
     siret: rawEstablishment.siret,
+    denomination: rawEstablishment.uniteLegale.denominationUniteLegale,
     creationDate: rawEstablishment.uniteLegale.dateCreationUniteLegale,
     nafCode: rawEstablishment.uniteLegale.activitePrincipaleUniteLegale,
     legalCategory: rawEstablishment.uniteLegale.categorieJuridiqueUniteLegale,
@@ -65,9 +66,6 @@ const parseEstablishment = (establishmentDocument: EstablishmentDocument): Estab
     workforceRange: rawEstablishment.trancheEffectifsEtablissement
   }
 
-  if (rawEstablishment.uniteLegale.denominationUniteLegale) {
-    result.denomination = rawEstablishment.uniteLegale.denominationUniteLegale
-  }
   return result
 }
 
