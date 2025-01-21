@@ -1,12 +1,12 @@
 <template>
   <DsfrAccordionsGroup
     v-if="companyDataFilter?.display"
-    v-model="companyDataAccordion"
+    :model-value="0"
   >
     <DsfrAccordion
       :id="`accordion-${companyDataFilter.id}`"
-      :class="[props.accordionClass, companyDataFilterVisibilityClass(companyDataFilter.id)]"
-      :title="`${companyDataFilter.title} ${getFilterCount(companyDataFilter.id)}`"
+      :class="[props.accordionClass]"
+      :title="companyDataFilter.title"
     >
       <component
         :is="companyDataFilter.component"
@@ -50,7 +50,7 @@
 </template>
 <script setup lang="ts">
 import { FilterItemKeys } from '@/types'
-import { CompanyData } from '@/tools/companyData'
+import { ComputedRef } from 'vue'
 
 export interface FiltersAccordionProps {
   accordionClass?: string
@@ -64,13 +64,12 @@ export interface FilterItem {
   accordionClass?: string
   component: unknown
   componentClass?: string
-  display?: boolean
+  display?: boolean | ComputedRef<boolean>
 }
 
 const props = defineProps<FiltersAccordionProps>()
 
 const activeAccordion = ref<number>()
-const companyDataAccordion = 0
 
 const getFilterCount = (filterId: FilterItemKeys) => {
   if (filterId !== FilterItemKeys.companyData) {
@@ -82,12 +81,6 @@ const getFilterCount = (filterId: FilterItemKeys) => {
 
 const canDisplayFilter = (filter: FilterItem) => {
   return typeof filter.display === 'boolean' ? filter.display : filter.display?.value
-}
-
-const companyDataFilterVisibilityClass = (filterId: FilterItemKeys) => {
-  if (filterId === FilterItemKeys.companyData) {
-    return CompanyData.isDataFull().value ? '' : 'fr-hidden'
-  }
 }
 </script>
 <style scoped lang="scss">
