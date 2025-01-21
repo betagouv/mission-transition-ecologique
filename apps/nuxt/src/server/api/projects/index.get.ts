@@ -1,17 +1,27 @@
-import { ProjectFilterQuery, projectFilterQuerySchema } from '@tee/common'
+import { ProjectFilterQuery, projectFilterQuerySchema, QuestionnaireData, serverQuestionnaireDataSchema } from '@tee/common'
 import { defineEventHandler, H3Event } from 'h3'
-import { Monitor, ProjectService } from '@tee/backend-ddd'
+import { Monitor, ProgramService, ProjectService } from '@tee/backend-ddd'
 
 export default defineEventHandler(async (event) => {
   const queries = await getValidatedQuery(event, projectFilterQuerySchema.parse)
-
-  return projectsCached(event, queries)
+  const questionnaireData = await getValidatedQuery(event, serverQuestionnaireDataSchema.parse)
+  console.log(questionnaireData)
+  return projectsCached(event, queries, questionnaireData)
 })
 
 const projectsCached = cachedFunction(
-  async (event: H3Event, queries: ProjectFilterQuery) => {
-    const projectResults = new ProjectService().getFiltered(queries)
-
+  async (event: H3Event, queries: ProjectFilterQuery, questionnaireData: QuestionnaireData) => {
+    const programsResults = new ProgramService().getFilteredPrograms(questionnaireData)
+    console.log(programsResults)
+    if (programsResults.isErr) {
+      const err = programsResults.error
+      Monitor.error('Error in ProgramFilters', { error: err })
+      throw createError({
+        statusCode: 500,
+        statusMessage: programsResults.error.message
+      })
+    }
+    const projectResults = new ProjectService().getFiltered(queries, programsResults.value)
     if (projectResults.isErr) {
       const err = projectResults.error
       Monitor.error('Error in ProjetFilter', { error: err })

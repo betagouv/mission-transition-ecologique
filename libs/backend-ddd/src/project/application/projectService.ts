@@ -1,4 +1,4 @@
-import { ProjectType } from '@tee/data'
+import { ProgramType, ProjectType } from '@tee/data'
 import ProjectFeatures from '../domain/projectFeatures'
 import { ProjectFilterQuery } from '@tee/common'
 import { Result } from 'true-myth'
@@ -10,7 +10,7 @@ export class ProjectService {
     this._project = new ProjectFeatures()
   }
 
-  public getFiltered(projectQuery: ProjectFilterQuery): Result<ProjectType[], Error> {
+  public getFiltered(projectQuery: ProjectFilterQuery, availablePrograms: ProgramType[]): Result<ProjectType[], Error> {
     try {
       return Result.ok(this._project.getFiltered(projectQuery))
     } catch (error: unknown) {
