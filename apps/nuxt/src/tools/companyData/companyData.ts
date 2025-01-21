@@ -52,7 +52,8 @@ export class CompanyData {
       structure_size: profileData.size.value,
       ...profileData.localisation.value,
       ...profileData.activity.value,
-      denomination: company?.denomination || `Entreprise : ${profileData.activity.value} - ${profileData.localisation.value?.region}`
+      denomination:
+        company?.denomination || `Entreprise : ${profileData.activity.value?.secteur} - ${profileData.localisation.value?.region}`
     } as CompanyDataType[CompanyDataStorageKey.Company]
   }
 
