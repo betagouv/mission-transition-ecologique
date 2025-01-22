@@ -61,7 +61,10 @@
               'fr-col-md-12': hasError
             }"
           >
-            <ProgramList :filtered-programs="filteredPrograms" />
+            <ProgramList
+              v-if="!hasError"
+              :filtered-programs="filteredPrograms"
+            />
             <TeeSpinner
               v-if="hasSpinner"
               class="fr-mt-16w"
@@ -90,7 +93,6 @@ import { computed } from 'vue'
 const programStore = useProgramStore()
 
 const { programs, hasError } = storeToRefs(programStore)
-
 onServerPrefetch(async () => {
   await new ProgramManager().getDependentCompanyData(false)
 })

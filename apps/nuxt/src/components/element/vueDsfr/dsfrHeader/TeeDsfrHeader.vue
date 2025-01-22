@@ -2,7 +2,7 @@
   <header
     role="banner"
     class="fr-header"
-    :class="navigation.isByRouteName(RouteName.Homepage) ? 'fr-sticky' : ''"
+    :class="navigation.isHomepage() ? 'fr-sticky' : ''"
   >
     <div class="fr-header__body">
       <div class="fr-container width-inherit">
@@ -214,13 +214,9 @@
 <script lang="ts" setup>
 import { computed, onMounted, onUnmounted, ref, toRef, useSlots } from 'vue'
 import { DsfrLanguageSelector, DsfrLogo, DsfrSearchBar, registerNavigationLinkKey } from '@gouvminint/vue-dsfr'
-
 import type { DsfrLanguageSelectorElement } from '@gouvminint/vue-dsfr/types/components/DsfrLanguageSelector/DsfrLanguageSelector.vue'
 import type { DsfrHeaderProps } from '@gouvminint/vue-dsfr/types/components/DsfrHeader/DsfrHeader.vue'
 import Navigation from '@/tools/navigation'
-import { RouteName } from '@/types'
-
-const navigation = new Navigation()
 
 const props = withDefaults(defineProps<DsfrHeaderProps>(), {
   searchbarId: 'searchbar-header',
@@ -251,6 +247,7 @@ const emit = defineEmits<{
   (e: 'openRegister'): void
 }>()
 
+const navigation = new Navigation()
 const languageSelector = toRef(props, 'languageSelector')
 
 const menuOpened = ref(false)
