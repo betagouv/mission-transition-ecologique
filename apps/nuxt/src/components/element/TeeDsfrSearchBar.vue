@@ -1,99 +1,64 @@
 <template>
-  <DsfrInputGroup :error-message="errorMessage">
-    <label
-      v-if="option.label"
-      class="fr-label fr-mb-2v"
-      :for="`input-${option.id}`"
-    >
-      {{ option.label[Translation.lang] }}
-    </label>
-    <span
-      v-if="option.hintLabel"
-      class="fr-hint-text fr-mb-2v"
-    >
-      {{ option?.hintLabel?.[Translation.lang] }}
-    </span>
+  <div>
     <div
-      v-if="option?.placeholder"
-      class="fr-mb-1v fr-bg--grey tee-font-style--italic"
+      class="fr-input-group fr-mb-0"
+      :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
     >
-      {{ option?.placeholder?.[Translation.lang] }}
+      <div
+        ref="localisationSearchBar"
+        class="fr-search-bar fr-search-bar--yellow"
+        :class="isLoading ? 'fr-search-bar--loading' : ''"
+        role="search"
+      >
+        <DsfrInput
+          v-model="localisationInput"
+          :name="`manual-register-${name}`"
+          class="fr-input--white fr-input"
+          type="search"
+          :placeholder="infos.description"
+          @update:model-value="updateModelValue"
+          @keyup.enter="searchLocalisation"
+        />
+        <DsfrButton
+          class="fr-bg--yellow search-button"
+          tertiary
+          no-outline
+          @click="searchLocalisation"
+        />
+      </div>
     </div>
     <div
-      id="header-search"
-      :class="isLoading ? 'fr-search-bar--loading' : ''"
-      class="fr-search-bar fr-search-bar--blue-france fr-search-bar-lg"
-      role="search"
+      v-if="localisationResults.length && showResults"
+      id="localisation-response"
+      class="fr-bg--white"
     >
-      <DsfrInput
-        :id="`input-${option.id}`"
-        v-model="model"
-        :name="`input-${option.id}`"
-        :disabled="isLoading"
-        :hint="option?.placeholder?.[Translation.lang]"
-        type="search"
-        @keyup.enter="onClick"
-      />
-      <DsfrButton
-        v-if="model"
-        class="search-clear"
-        icon="fr-icon-close-line"
-        icon-only
-        no-outline
-        tertiary
-        :disabled="isLoading"
-        @click="onClear"
-      />
-      <DsfrButton
-        class="search-button"
-        :disabled="isLoading"
-        :title="Translation.t('input.search')"
-        @click="onClick"
-      />
+      <div
+        v-for="localisation in localisationResults"
+        :key="`resp-input-${localisation.nom}-${localisation.codePostal}`"
+        class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
+        @click="selectLocalisation(localisation)"
+      >
+        <div class="fr-card__body">
+          <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
+            <div class="fr-text--blue-france">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
+          </div>
+        </div>
+      </div>
     </div>
     <div
-      v-if="hasHint && option.hint"
-      class="tee-input-hint fr-mt-4v"
+      :class="errorMsg ? 'fr-error-text' : ''"
+      class="fr-input--empty-text fr-mt-2v"
     >
-      <span v-html="option.hint[Translation.lang]" />
+      {{ errorMsg }}
     </div>
-  </DsfrInputGroup>
+  </div>
 </template>
-
-<script setup lang="ts">
-// CONSOLE LOG TEMPLATE
-// console.log(`TeeDsfrSearchBar > FUNCTION_NAME > MSG_OR_VALUE :`)
-
-import { type TrackOptionsInput } from '@/types'
-import Translation from '@/tools/translation'
-import { DsfrInputGroup, DsfrInput, DsfrButton } from '@gouvminint/vue-dsfr'
-
+<script lang="ts" setup>
 interface Props {
-  option: TrackOptionsInput
-  isLoading?: boolean
-  errorMessage?: string
-  hasHint?: boolean
+  errorMsg: string
+  name: string
 }
-withDefaults(defineProps<Props>(), {
-  isLoading: false,
-  errorMessage: undefined,
-  hasHint: false
-})
+defineProps<Props>()
 
-const model = defineModel<string | undefined>()
-
-const emit = defineEmits<{
-  onClick: []
-  onClear: []
-}>()
-
-const onClick = () => {
-  emit('onClick')
-}
-
-// functions
-const onClear = () => {
-  model.value = undefined
-  emit('onClear')
-}
+const isLoading = ref<boolean>(false)
 </script>

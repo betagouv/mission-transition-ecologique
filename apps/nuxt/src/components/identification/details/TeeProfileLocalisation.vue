@@ -9,6 +9,12 @@
       @click="modifyLocalisation"
     />
   </p>
+  <TeeDsfrSearchBar
+    v-else
+    id="register-localisation"
+    name="localisation"
+    :error-msg="errorMsg"
+  />
   <div
     v-else
     id="register-localisation"
@@ -72,6 +78,7 @@ import LocalisationApi from '@/tools/api/localisationApi'
 import { onClickOutside, useDebounce } from '@vueuse/core'
 import { CompanyData } from '@/tools/companyData'
 import Translation from '@/tools/translation'
+import TeeDsfrSearchBar from '@/components/element/TeeDsfrSearchBar.vue'
 
 interface Props {
   infos: RegisterDetailLocalisation

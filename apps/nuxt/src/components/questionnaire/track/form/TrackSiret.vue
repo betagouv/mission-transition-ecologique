@@ -1,5 +1,5 @@
 <template>
-  <TeeDsfrSearchBar
+  <TeeDsfrSiretBar
     v-model.trim="queryValue"
     :option="props.option"
     :is-loading="isLoading"
@@ -70,7 +70,7 @@
                 class="fr-icon-time-line fr-mr-8v"
                 aria-hidden="true"
               />
-              <span>Création le {{ new Date(response.creationDate).toLocaleDateString('fr') }}</span>
+              <span>Création le {{ new Date(response.creationDate as string).toLocaleDateString('fr') }}</span>
             </div>
           </div>
         </div>
