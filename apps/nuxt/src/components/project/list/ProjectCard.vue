@@ -5,9 +5,8 @@
     :img-src="project.image"
     :alt-img="`image / ${project.title}`"
     :no-arrow="true"
-    :end-detail="`${project.countAvailablePrograms} AIDES`"
     :link="getRouteToProjectDetail(project)"
-    class="teste2e-project-target"
+    class="teste2e-project-target project-list-card"
   >
     <template
       v-if="isPriorityProject"
@@ -24,6 +23,18 @@
           :label="priorityTag"
           :no-icon="true"
           class="fr-badge--success"
+        />
+      </div>
+    </template>
+    <template
+      v-if="project.countAvailablePrograms"
+      #end-details
+    >
+      <div class="fr-mb-8v">
+        <DsfrBadge
+          :label="`${project.countAvailablePrograms} AIDES`"
+          :no-icon="true"
+          class="fr-bg--green--lightness fr-text--black"
         />
       </div>
     </template>

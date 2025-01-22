@@ -2,15 +2,15 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import ProjectApi from '@/tools/api/projectApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import Navigation from '@/tools/navigation'
-import { type ProjectFilterQuery, ProjectType } from '@/types'
+import { type ProjectType, QuestionnaireData } from '@/types'
 
 export class ProjectManager {
   _useProject = useProjectStore()
   _useNavigation = useNavigationStore()
 
-  async getProjects(filteredData: ProjectFilterQuery = {}) {
+  async getProjects(questionnaireData: QuestionnaireData = {}) {
     this._useNavigation.hasSpinner = true
-    const resultApi = await this._getProjectsFromApi(filteredData)
+    const resultApi = await this._getProjectsFromApi(questionnaireData)
     if (resultApi.isOk()) {
       this._useProject.projects = resultApi.data
       this._useProject.hasProjects = true
@@ -23,12 +23,9 @@ export class ProjectManager {
   }
 
   async getFilteredProjects() {
-    const { codeNAF1 } = useUsedTrackStore().getQuestionnaireData()
-    const filteredData: ProjectFilterQuery = {
-      ...(codeNAF1 && { codeNAF1 })
-    }
+    const questionnaireData = useUsedTrackStore().getQuestionnaireData()
 
-    await this.getProjects(filteredData)
+    await this.getProjects(questionnaireData)
   }
 
   async getProjectBySlug(slug: string) {
@@ -69,8 +66,8 @@ export class ProjectManager {
     }
   }
 
-  private async _getProjectsFromApi(projectFilterQuery: ProjectFilterQuery = {}): Promise<ResultApi<ProjectType[]>> {
-    return await new ProjectApi(projectFilterQuery).get()
+  private async _getProjectsFromApi(questionnaireData: QuestionnaireData = {}): Promise<ResultApi<ProjectType[]>> {
+    return await new ProjectApi(questionnaireData).get()
   }
 
   private async _getProjectFromApi(slug: string): Promise<ResultApi<ProjectType>> {

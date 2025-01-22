@@ -1,18 +1,18 @@
 import RequestApi from '@/tools/api/requestApi'
 import { ResultApi } from '@/tools/api/resultApi'
-import type { ProjectType, ProjectFilterQuery } from '@/types'
+import type { ProjectType, QuestionnaireData } from '@/types'
 
 export default class ProjectApi extends RequestApi {
   protected override readonly url = '/api/projects'
 
-  constructor(private _projectFilterQuery: ProjectFilterQuery = {}) {
+  constructor(private _questionnaireData: QuestionnaireData = {}) {
     super()
     this.query = this.buildQuery
   }
 
   get buildQuery(): string {
     const queryString: { [key: string]: string } = {}
-    Object.entries(this._projectFilterQuery).forEach(([key, value]: [string, string | string[] | undefined | null]) => {
+    Object.entries(this._questionnaireData).forEach(([key, value]: [string, string | string[] | undefined | null]) => {
       if (value !== undefined && value !== null) {
         queryString[key] = value.toString()
       }

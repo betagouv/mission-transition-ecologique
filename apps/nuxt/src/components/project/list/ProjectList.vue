@@ -81,7 +81,7 @@
           <div
             v-for="project in sortedProjects"
             :key="project.id"
-            class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-lg-4 no-outline project-list-card"
+            class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-lg-4 no-outline"
           >
             <ProjectCard
               :project="project"
@@ -160,20 +160,3 @@ const getPriorityOrder = (project: ProjectType) => {
   return priorityProjects.value ? priorityProjects.value.indexOf(project) + 1 : undefined
 }
 </script>
-<style lang="scss" scoped>
-.project-list-card {
-  background: blue;
-  .fr-card__end {
-    margin-bottom: 0 !important;
-    .fr-card__body {
-      .fr-card__detail {
-        font-weight: bold;
-        color: black;
-      }
-      .fr-card__detail ::before {
-        background: beige;
-      }
-    }
-  }
-}
-</style>

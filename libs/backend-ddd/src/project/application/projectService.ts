@@ -25,7 +25,6 @@ export class ProjectService {
   public addAvailablePrograms(projects: ProjectType[], programs: ProgramType[]): Result<ProjectType[], Error> {
     try {
       const availableProgramsSet = new Set(programs.map((program) => program.id))
-
       const projectList = projects.map((project: ProjectType) => {
         const countAvailablePrograms = project.programs.reduce(
           (count, programId: string) => count + (availableProgramsSet.has(programId) ? 1 : 0),
@@ -36,7 +35,6 @@ export class ProjectService {
           countAvailablePrograms
         }
       })
-
       return Result.ok(projectList)
     } catch (error: unknown) {
       if (error instanceof Error) {
