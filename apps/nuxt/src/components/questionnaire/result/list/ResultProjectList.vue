@@ -60,18 +60,9 @@
       v-if="showOtherProjectForm"
       class="fr-grid-row fr-grid-row--center"
     >
-      <div class="fr-container">
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2">
-          <Transition
-            name="fade"
-            mode="out-in"
-          >
-            <OtherProjectCta
-              v-if="!otherProjectForm && !showNoResults"
-              @click="openOtherProjectForm"
-            />
-            <OtherProjectForm v-else />
-          </Transition>
+      <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+        <div class="fr-col-12 fr-col-offset-md-2 fr-col-md-10 fr-pl-md-2v fr-pr-md-6v">
+          <OtherProject />
         </div>
       </div>
     </div>
@@ -84,8 +75,6 @@ import { ProjectType } from '@/types'
 import { computed } from 'vue'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { useProgramStore } from '@/stores/program'
-import OtherProjectCta from '@/components/project/list/OtherProjectCta.vue'
-import OtherProjectForm from '@/components/project/list/OtherProjectForm.vue'
 import Translation from '@/tools/translation'
 import Navigation from '@/tools/navigation'
 import { CompanyData } from '@/tools/companyData'
@@ -96,7 +85,6 @@ interface ProjectListProps {
   hasError: boolean
 }
 const props = defineProps<ProjectListProps>()
-const otherProjectForm = ref<boolean>(false)
 
 const hasRegisteredData = CompanyData.isDataFull()
 
@@ -104,12 +92,6 @@ const openModal = () => {
   Navigation.toggleRegisterModal()
 }
 
-watch(
-  () => props.filteredProjects,
-  () => {
-    otherProjectForm.value = false
-  }
-)
 const programStore = useProgramStore()
 
 const hasProjects = computed(() => {
@@ -123,10 +105,6 @@ const countProjects = computed(() => {
 const hasThemeCard = computed(() => {
   return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
-
-const openOtherProjectForm = () => {
-  otherProjectForm.value = true
-}
 
 const sortedProjects = ProjectSorter.sort(computed(() => props.filteredProjects))
 

@@ -35,6 +35,9 @@
             </div>
           </div>
         </div>
+        <div class="fr-col-12 fr-col-justify--left fr-mt-3v">
+          <OtherProject />
+        </div>
         <div
           v-if="hasSpinner"
           class="fr-col-12 fr-col-justify--center fr-col-content--middle"
