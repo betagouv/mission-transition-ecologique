@@ -11,7 +11,13 @@
   </Transition>
 </template>
 <script setup lang="ts">
-const otherProjectForm = ref<boolean>(false)
+interface OtherProjectProps {
+  form?: boolean
+}
+
+const props = defineProps<OtherProjectProps>()
+
+const otherProjectForm = ref<boolean>(props.form)
 
 const openOtherProjectForm = () => {
   otherProjectForm.value = true
