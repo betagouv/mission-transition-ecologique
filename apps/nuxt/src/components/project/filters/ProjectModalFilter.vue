@@ -5,3 +5,4 @@
     </template>
   </ModalFilter>
 </template>
+<script setup lang="ts"></script>
