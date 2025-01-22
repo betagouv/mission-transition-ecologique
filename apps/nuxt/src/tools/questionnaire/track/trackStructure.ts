@@ -1,17 +1,33 @@
 import { workforce } from '@/tools/questionnaire/trackStructureWorkforce'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { LegalCategory, StructureSize, TrackId, CompanyLocalisationType, TrackOptionItem, TrackOptionsUnion } from '@/types'
+import {
+  CompanyActivityType,
+  LegalCategory,
+  StructureSize,
+  TrackId,
+  CompanyLocalisationType,
+  TrackOptionItem,
+  TrackOptionsUnion
+} from '@/types'
 import Format from '@/tools/format'
-import { sectors } from '@/tools/questionnaire/trackStructureSectors'
 import { CompanyData } from '@/tools/companyData'
 import LocalisationApi from '@/tools/api/localisationApi'
+import EstablishmentApi from '@/tools/api/establishmentApi'
 
 export default class TrackStructure {
   static async searchLocalisation(query: string) {
     return await new LocalisationApi().searchCities(query)
   }
 
-  static createData(option: TrackOptionsUnion, value?: string, questionnaireData?: CompanyLocalisationType): TrackOptionItem {
+  static async searchActivity(query: string) {
+    return await new EstablishmentApi().searchActivities(query)
+  }
+
+  static createData(
+    option: TrackOptionsUnion,
+    value?: string,
+    questionnaireData?: CompanyLocalisationType | CompanyActivityType
+  ): TrackOptionItem {
     return {
       option: {
         ...option,
@@ -32,7 +48,7 @@ export default class TrackStructure {
     if (this.getSector()) {
       criteria.push({
         icon: 'fr-icon-check-line',
-        text: Format.capitalize(Format.truncate(TrackStructure.getSectorShortLabel(), 30))
+        text: Format.capitalize(Format.truncate(TrackStructure.getSector(), 30))
       })
     }
     if (this.getLocalisation()) {
@@ -68,10 +84,6 @@ export default class TrackStructure {
 
   static getSector(): string {
     return CompanyData.company?.secteur || ''
-  }
-
-  static getSectorShortLabel(): string {
-    return sectors.options?.find((option) => option.value === this.getSector())?.shortLabel?.fr || this.getSector()
   }
 
   static getSize(): StructureSize {
