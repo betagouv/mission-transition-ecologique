@@ -1,7 +1,7 @@
 <template>
   <ModalFilter>
     <template #filters-accordion>
-      <ProgramFiltersAccordion accordion-class="fr-accordion-bg--blue" />
+      <ProjectFiltersAccordion accordion-class="fr-accordion-bg--blue" />
     </template>
   </ModalFilter>
 </template>

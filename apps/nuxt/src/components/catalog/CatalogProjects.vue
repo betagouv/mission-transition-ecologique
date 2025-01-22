@@ -12,7 +12,7 @@
     >
       <div
         v-if="hasFullRegisteredData"
-        class="fr-col-2 fr-col-hidden fr-col-unhidden-md"
+        class="fr-col-2 fr-col-hidden fr-col-unhidden-lg"
       >
         <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
           <div class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w">Filtres</div>
@@ -28,11 +28,11 @@
       >
         <div class="fr-container--fluid fr-mt-2v fr-mt-md-3v">
           <div class="fr-grid-row fr-grid-row--center">
-            <div class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-md-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic">
+            <div class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-lg-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic">
               <TeeCounterResult :to-count="filteredProjects" />
             </div>
-            <div class="fr-col-9 fr-col-hidden-md fr-text-right">
-              <ProgramModalFilter />
+            <div class="fr-col-9 fr-col-hidden-lg fr-text-right">
+              <ProjectModalFilter />
             </div>
             <div class="fr-col-12 fr-mt-2v">
               <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-lg--left project-cards-container">

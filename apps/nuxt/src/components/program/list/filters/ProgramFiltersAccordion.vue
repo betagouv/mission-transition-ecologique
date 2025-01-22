@@ -10,7 +10,7 @@ import Navigation from '@/tools/navigation'
 import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
 import ProgramFilterByOperator from './ProgramFilterByOperator.vue'
 import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
-import ProgramFilterByCompanyData from '@/components/program/list/filters/ProgramFilterByCompanyData.vue'
+import FilterByCompanyData from '@/components/filters/FilterByCompanyData.vue'
 import { FilterItemKeys, FiltersType } from '@/types'
 import { FilterItem } from '@/components/filters/FiltersAccordion.vue'
 import { useFiltersStore } from '@/stores/filters'
@@ -35,7 +35,7 @@ const displayRegionFilter = computed(() => {
 const companyDataFilter: FilterItem = {
   title: 'Entreprise',
   id: FilterItemKeys.companyData,
-  component: ProgramFilterByCompanyData,
+  component: FilterByCompanyData,
   componentClass: 'fr-pl-2v',
   display: CompanyData.isDataFull().value
 }

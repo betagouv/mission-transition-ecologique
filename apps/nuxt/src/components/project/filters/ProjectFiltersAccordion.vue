@@ -5,9 +5,10 @@
   />
 </template>
 <script setup lang="ts">
-import ProgramFilterByCompanyData from '@/components/program/list/filters/ProgramFilterByCompanyData.vue'
+import FilterByCompanyData from '@/components/filters/FilterByCompanyData.vue'
 import { FilterItemKeys } from '@/types'
 import { FilterItem } from '@/components/filters/FiltersAccordion.vue'
+import { CompanyData } from '@/tools/companyData'
 
 interface Props {
   accordionClass?: string
@@ -18,8 +19,8 @@ const props = defineProps<Props>()
 const companyDataFilter: FilterItem = {
   title: 'Entreprise',
   id: FilterItemKeys.companyData,
-  component: ProgramFilterByCompanyData,
+  component: FilterByCompanyData,
   componentClass: 'fr-pl-2v',
-  display: true
+  display: CompanyData.isDataFull().value
 }
 </script>

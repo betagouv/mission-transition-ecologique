@@ -50,19 +50,13 @@
             </div>
           </div>
           <div class="fr-hidden fr-unhidden-lg">
-            <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pt-1v">
+            <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pt-1v fr-pl-1v fr-pr-3v">
               <div
-                class="company-filter-icon-large fr-pl-1v"
+                class="company-filter-icon-large"
                 :class="detail.icon"
               />
             </div>
-            <div
-              class="fr-col-9 fr-col-hidden fr-col-unhidden-lg"
-              :class="{
-                'fr-ml-0-5v': Breakpoint.isLargerOrEqual(BreakpointNameType.md) && Breakpoint.isSmallerOrEqual(BreakpointNameType.lg),
-                'fr-ml-1v': Breakpoint.isSmallerOrEqual(BreakpointNameType.md)
-              }"
-            >
+            <div class="fr-col-9 fr-text-left">
               <span class="fr-text--xs">
                 {{ detail.label }}
               </span>
@@ -75,7 +69,7 @@
 </template>
 
 <script setup lang="ts">
-import { BreakpointNameType, CompanyDataStorageKey, FilterItemKeys, FiltersType, SizeToText, StructureSize } from '@/types'
+import { CompanyDataStorageKey, FilterItemKeys, FiltersType, SizeToText, StructureSize } from '@/types'
 import { CompanyData } from '@/tools/companyData'
 import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'

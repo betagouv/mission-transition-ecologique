@@ -9,10 +9,10 @@
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div
-          class="fr-col-12 fr-mt-3v fr-col-justify--left"
+          class="fr-col-12 fr-mt-3v"
           :class="{
-            'fr-col-offset-md-2 fr-col-md-10': !hasError && hasSideBar,
-            'fr-col-md-12': hasError || !hasSideBar
+            'fr-col-offset-md-1 fr-col-offset-lg-2 fr-col-md-10 fr-col-justify--left': !hasError && hasSideBar,
+            'fr-col-lg-12 fr-col-justify--center': hasError || !hasSideBar
           }"
         >
           <ThemeFilter />
@@ -20,13 +20,12 @@
         <div
           class="fr-col-12 fr-pr-md-2v"
           :class="{
-            'fr-col-offset-md-2 fr-col-md-10': !hasError && hasSideBar,
+            'fr-col-offset-md-1 fr-col-offset-lg-2 fr-col-md-10': !hasError && hasSideBar,
             'fr-col-md-12': hasError || !hasSideBar
           }"
         >
           <ThemeHeaderCard
             v-if="hasThemeCard"
-            class="fr-col-12"
             :theme="theme as ThemeId"
             radius-corner="tr"
             radius-size="2-5v"
