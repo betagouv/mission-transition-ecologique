@@ -31,13 +31,15 @@
           v-if="filter.id !== FilterItemKeys.companyData"
           #title
         >
-          <span>{{ filter.title }}</span>
-          <span
-            v-if="getFilterCount(filter.id)"
-            class="fr-filter-count-badge fr-ml-2v"
-          >
-            {{ getFilterCount(filter.id) }}
-          </span>
+          <div class="fr-grid-row fr-grid-row--middle">
+            <span>{{ filter.title }}</span>
+            <span
+              v-if="getFilterCount(filter.id)"
+              class="fr-filter-count-badge fr-ml-1v"
+            >
+              {{ getFilterCount(filter.id) }}
+            </span>
+          </div>
         </template>
         <component
           :is="filter.component"
@@ -49,7 +51,7 @@
   </DsfrAccordionsGroup>
 </template>
 <script setup lang="ts">
-import { FilterItemKeys } from '@/types'
+import { FilterItemKeys, FiltersType } from '@/types'
 import { ComputedRef } from 'vue'
 
 export interface FiltersAccordionProps {
@@ -71,9 +73,11 @@ const props = defineProps<FiltersAccordionProps>()
 
 const activeAccordion = ref<number>()
 
+const selectedFilters: FiltersType = useFiltersStore().filters
+
 const getFilterCount = (filterId: FilterItemKeys) => {
   if (filterId !== FilterItemKeys.companyData) {
-    // return (programFilters[filterId] as string[]).length ? `${(programFilters[filterId] as string[]).length}` : ''
+    return (selectedFilters[filterId] as string[]).length ? `${(selectedFilters[filterId] as string[]).length}` : ''
   }
 
   return ''
