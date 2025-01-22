@@ -208,7 +208,7 @@
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
     "nature de l'aide": "étude",
-    "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 15 000 €",
+    "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 18 000 €",
     "objectifs": [
       {
         "description": "Choisissez le prestataire qui va vous accompagner pour mener l'étude méthodologie ACT.",
@@ -594,6 +594,189 @@
       }
     },
     "id": "adaptation-bzh"
+  },
+  {
+    "titre": "Agir Pays de la Loire",
+    "promesse": "Financez votre projet de transition écologique dans le secteur du tourisme",
+    "description": "Bénéficiez d’un prêt participatif « Agir Pays de la Loire ». Ce prêt est destiné à accompagner les innovations incluant une démarche de transition écologique, portées par les entreprises du tourisme. Grâce à ce prêt, financez, par exemple, votre isolation thermique, vos équipements d’économies d’eau et d’énergie.",
+    "illustration": "images/TEE_ampoule.png",
+    "opérateur de contact": "Région Pays de la Loire",
+    "url": "https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-agir-tourisme",
+    "nature de l'aide": "prêt",
+    "montant du prêt": "Variable selon projet, à 3,3% TEG",
+    "durée du prêt": "De 2 à 10 ans (dont 3 ans maximum de différé)",
+    "objectifs": [
+      {
+        "description": "Vérifiez l'éligibilité de votre projet.",
+        "liens": [
+          {
+            "lien": "https://www.paysdelaloire.fr/sites/default/files/aides/2ae4eace-0470-11ee-baf5-23743e123976/subvention%2Cpret_reglement-dintervention-maj-janvier-2024_2ae4eace_ri.pdf",
+            "texte": "Conditions d'éligibilité et de financement"
+          }
+        ]
+      },
+      {
+        "description": "Réalisez une étude de faisabilité économique intégrant diagnostic et réflexion stratégique, soit par un cabinet d'étude spécialisé soit par vous-même ou votre comptable."
+      },
+      {
+        "description": "Déposez votre dossier sur le site de la Région avec les pièces nécessaires. À ce stade, les investissements pour lesquels vous sollicitez une aide financière ne doivent pas avoir commencé.",
+        "liens": [
+          {
+            "lien": "https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/F_AGIR_TOURISME/depot/simple",
+            "texte": "Déposer un dossier"
+          },
+          {
+            "lien": "https://www.paysdelaloire.fr/sites/default/files/aides/2ae4eace-0470-11ee-baf5-23743e123976/subvention%2Cpret_liste-des-pieces-a-fournir_2ae4eace_annexe-1.pdf",
+            "texte": "Liste des pièces pour votre dossier AGIR"
+          }
+        ]
+      },
+      {
+        "description": "Si votre demande est acceptée, signez le contrat de prêt."
+      },
+      {
+        "description": "Recevez les fonds et commencez votre projet."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Pays de la Loire"
+      ],
+      "secteur d'activité": [
+        "Secteur touristique"
+      ],
+      "nombre d'années d'activité": [
+        "Au moins 2 ans d'activité"
+      ],
+      "autres critères d'éligibilité": [
+        "Vous êtes en phase de création ou de développement (extension, modernisation, repositionnement…)",
+        "Vous relevez d'un des secteurs suivants : hôtellerie, hôtellerie de plein air, sites de visites, tourisme fluvial et nautique, gastronomie d’excellence, centres et villages vacances, autres projets d’investissements touristiques innovants et créateurs d’emplois, tourisme équestre, agritourisme, œnotourisme, services aux cyclotouristes, tourisme de nature et logement des saisonniers des entreprises touristiques (à titre expérimental)."
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est L"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": []
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Pays de la Loire"
+        ]
+      }
+    },
+    "id": "agir-pdl"
   },
   {
     "titre": "Aide à la recherche de financement",
@@ -2931,6 +3114,195 @@
     "id": "booster-eco-energie-tertiaire"
   },
   {
+    "titre": "Aide aux campings indépendants",
+    "promesse": "Développez durablement votre camping",
+    "description": "Vous avez un camping indépendant ? Cette aide soutient vos projets de création, de modernisation ou d’extension. Financez des investissements durables tels que les blocs sanitaires, les cheminements, les bâtiments d’accueil, l’aménagement paysager ou les aires de camping-car.",
+    "description longue": "Si votre camping est implanté sur une commune du littoral, les dépenses éligibles sont les suivantes : \n- Travaux de gros œuvre, de second œuvre et d'équipements portant sur les blocs-sanitaire, cheminements, travaux paysager, emplacements nus, bâtiment d’accueil, VRD (hors assainissement) et aire de camping-car.\n- Investissements \"durables\".\n\nSi votre camping est implanté sur une commune hors littoral, voici la liste des dépenses éligibles :\n- Travaux de gros œuvre, de second œuvre, équipements avec une priorité sur les investissements durables et à performance énergétique.\n- Équipements pour les services aux camping-cars, l’accueil de vélos ou ceux permettant un allongement de la saison d’ouverture de l’établissement.\n- Espace aquatique (modernisation et création uniquement pour les établissements n'en possédant pas, dépenses plafonnées à 200 000 € HT). \n- Acquisition de 5 unités maximum de locatifs durables dans le cadre d'une diversification de l'offre de type chalet, (hors mobile-home), uniquement pour les campings n'ayant aucun locatif.\n- Travaux et équipements permettant la création de logements saisonniers au sein du camping (9 lits maximum).",
+    "illustration": "images/TEE_energie_verte.png",
+    "opérateur de contact": "Région Nouvelle-Aquitaine",
+    "url": "https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/campings-de-tourisme-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 25% des dépenses, dans la limite de 400 000 € HT",
+    "objectifs": [
+      {
+        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation.",
+        "liens": [
+          {
+            "lien": "https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/campings-de-tourisme-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1",
+            "texte": "Conditions et critères d'éligibilité"
+          }
+        ]
+      },
+      {
+        "description": "Prenez contact avec la Direction du Tourisme par mail à l'adresse tourisme@nouvelle-aquitaine.fr. Présentez votre projet et laissez vos coordonnées."
+      },
+      {
+        "description": "La Direction du Tourisme vous recontacte et vérifie avec vous l’éligibilité de votre projet, avant tout dépôt de demande de subvention."
+      },
+      {
+        "description": "Si votre projet est éligible, déposez votre demande de subvention. Votre dossier est alors instruit et soumis pour approbation."
+      },
+      {
+        "description": "Une fois votre demande acceptée, recevez votre subvention et réalisez vos travaux."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Nouvelle-Aquitaine"
+      ],
+      "secteur d'activité": [
+        "Camping indépendant",
+        "Les Parcs Résidentiels de Loisirs, les campings de loisirs, les franchisés, les aires naturelles sont inéligibles"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Vous êtes un camping de tourisme indépendant ou engagé dans une chaîne volontaire qui dispose à minima de 10% d’emplacements nus, plafonné à 10 emplacements.",
+        "L'établissement devra répondre à un classement entre 3 et 5 étoiles après travaux.",
+        "Le capital social de la structure portant le projet devra être de 5 000 € minimum.",
+        "L'activité est maintenue pendant 5 ans.",
+        "Les devis inférieurs à 500 € HT ne sont pas éligibles."
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "a une categorie legale eligible",
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est I"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est la mobilité durable",
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est l'écoconception"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Nouvelle-Aquitaine"
+        ]
+      }
+    },
+    "id": "camping-independant-na"
+  },
+  {
     "titre": "CAP Transition Ecologique",
     "promesse": "Réalisez un diagnostic de votre impact et financez vos investissements favorisant votre transition écologique.",
     "description": "La Région Centre-Val de Loire lance un programme pour accompagner les entreprises et structures de l'ESS dans leur transition écologique. Structuré en deux phases, ce programme permet de financer en partie la réalisation d'un diagnostic environnemental pour élaborer votre plan de transition écologique. Il permet ensuite de bénéficier d'une aide financière pour vos investissements définis dans le cadre de votre plan d'action.",
@@ -3522,7 +3894,7 @@
   {
     "titre": "CEDRE Investissement",
     "promesse": "Entreprises de la communauté CEDRE, bénéficiez d'une subvention pour vos investissements",
-    "description": "Vous avez bénéficié d'un accompagnement dans le cadre du dispositif CEDRE premier pas ? Vous pouvez maintenant faire une demande de subvention pour financer vos investissements. Cette subvention concerne les dépenses matérielles ou immatérielles liées aux actions de transition écologique identifiées lors de votre accompagnement CEDRE.",
+    "description": "Vous avez bénéficié d'un accompagnement dans le cadre du dispositif CEDRE premier pas ou CEDRE Ambition ? Vous pouvez maintenant faire une demande de subvention pour financer vos investissements. Cette subvention concerne les dépenses matérielles ou immatérielles liées aux actions de transition écologique identifiées lors de votre accompagnement CEDRE.",
     "description longue": "Sont éligibles : \n• Les dépenses liées au déploiement, à la mise en œuvre et à la continuité du plan d’actions défini lors des parcours.\n• Les dépenses portant sur des projets d’investissements liés à des dépenses matérielles et/ou immatérielles prenant en compte les enjeux de la transition écologique et énergétique et de la décarbonation.\n• Le matériel d’occasion s’il est au prix du marché de l’occasion et sur présentation d'une attestation d’achat accompagnée de la facture initiale.\n\nÀ titre d'exemple (non exhaustif) : \n• Équipements économes en ressources.\n• Équipements permettant un meilleur tri des déchets ou de l’incorporation de matières premières secondaires.\n• Équipements de vrac.\n• Équipements favorisant l'efficacité énergétique (machines moins énergivores, éclairage plus performant, isolation).\n• Récupérateurs d’eau.\n• Études préalables à des investissements.\n\nSont exclus : \n• Travaux de construction de bâtiments, extensions, voirie.\n• Travaux d’aménagement sauf ceux favorisant explicitement les économies d’énergie avec des précisions sur les économies attendues.\n• Climatisations.\n• Acquisition de terrains ou de bâtiments.\n• Équipements informatiques.\n• Acquisitions effectuées par crédit-bail.\n• Dépenses de R&D ou développement expérimental.\n• Toutes dépenses de fonctionnement, y compris les dépenses de personnel ou d’abonnements pouvant être liées au projet d’investissement.\n\n• Les investissements portant sur l'installation de panneaux photovoltaïques, pompes à chaleur géothermiques et le solaire thermique collectif sont également exclus. Des dispositifs spécifiques sont mobilisables.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Région Sud (PACA)",
@@ -3552,7 +3924,7 @@
         "description": "Joignez les pièces justificatives à votre dossier en ligne et précisez dans quelle mesure l’investissement est en lien avec le déploiement des actions mises en œuvre lors de votre accompagnement avec l'accompagnateur-expert."
       },
       {
-        "description": "Pour finaliser votre demande de subvention, envoyez une copie de votre dossier par mail à cedre@maregionsud.fr avec pour objet \"Investissement CEDRE Premiers pas\"."
+        "description": "Pour finaliser votre demande de subvention, envoyez une copie de votre dossier par mail à cedre@maregionsud.fr avec pour objet \"Investissement CEDRE Premiers pas\" ou \"Investissement CEDRE Ambition\" selon l'accompagnement dont vous avez bénéficié en amont."
       }
     ],
     "conditions d'éligibilité": {
@@ -5516,6 +5888,7 @@
     "titre": "Diag Décarbon'Action",
     "promesse": "Réalisez un bilan de gaz à effet de serre et réduisez l’empreinte carbone de votre entreprise",
     "description": "Victime de son succès, l’ADEME et Bpifrance sont contraints de suspendre l’offre dans l’attente de l’issue des discussions budgétaires avec l'Etat. Nous œuvrons tous ensemble pour une réouverture début 2025. Pour nous contacter ou être informé dès que l'offre sera de nouveau disponible, veuillez laisser vos coordonnées ci-dessous. Nous vous contacterons dès que possible. Merci de votre compréhension et de votre patience.\n\n\n\nCe Bilan vous permet en 12 jours de mesurer les émissions directes et indirectes de GES de votre entreprise puis d’élaborer votre plan d’actions pour réduire l’empreinte carbone de votre entreprise. Les experts qui réalisent le Diag Décarbon'Action sont certifiés « Bilan Carbone ® » ou autre méthode de comptabilité carbone conforme à la réglementation, et sont habilités par l’ADEME, l’Association Bilan Carbone et Bpifrance, ce qui garantit un niveau de qualité élevé.",
+    "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Bpifrance",
     "autres opérateurs": [
@@ -5699,6 +6072,7 @@
     "titre": "Diag Eco-Flux",
     "promesse": "Bénéficiez d’un état des lieux sur vos flux pour vous aider à faire des économies",
     "description": "Victime de son succès, l’ADEME et Bpifrance sont contraints de suspendre l’offre dans l’attente de l’issue des discussions budgétaires avec l'Etat. Nous œuvrons tous ensemble pour une réouverture début 2025. Pour nous contacter ou être informé dès que l'offre sera de nouveau disponible, veuillez laisser vos coordonnées ci-dessous. Nous vous contacterons dès que possible. Merci de votre compréhension et de votre patience.\n---\nBénéficiez des conseils d'un expert environnement référencé par Bpifrance pour réaliser rapidement des économies durables en suivant une méthodologie élaborée avec l'ADEME.",
+    "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Bpifrance",
     "autres opérateurs": [
@@ -5901,6 +6275,7 @@
     "titre": "Diag Ecoconception",
     "promesse": "Évaluez la performance environnementale de vos produits, procédés et services",
     "description": "Victime de son succès, l’ADEME et Bpifrance sont contraints de suspendre l’offre dans l’attente de l’issue des discussions budgétaires avec l'Etat. Nous œuvrons tous ensemble pour une réouverture début 2025. Pour nous contacter ou être informé dès que l'offre sera de nouveau disponible, veuillez laisser vos coordonnées ci-dessous. Nous vous contacterons dès que possible. Merci de votre compréhension et de votre patience.\n---\nBénéficiez des conseils d'un expert écoconception référencé par Bpifrance pour évaluer la performance environnementale de vos produits, services et procédés ou d'un accompagnement en vue de l'obtention de l'Ecolabel européen.",
+    "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Bpifrance",
     "autres opérateurs": [
@@ -6118,6 +6493,7 @@
     "promesse": "Réduisez la consommation énergétique de vos bâtiments",
     "description": "Victime de son succès, l’ADEME et Bpifrance sont contraints de suspendre l’offre dans l’attente de l’issue des discussions budgétaires avec l'Etat. Nous œuvrons tous ensemble pour une réouverture début 2025. Pour nous contacter ou être informé dès que l'offre sera de nouveau disponible, veuillez laisser vos coordonnées ci-dessous. Nous vous contacterons dès que possible. Merci de votre compréhension et de votre patience.\n---\nBénéficiez des conseils d'un expert environnement référencé par Bpifrance pour réduire les consommations énergétiques de vos bâtiments et établir une trajectoire conforme au Décret Tertiaire.",
     "description longue": "L’obligation réglementaire du Dispositif Éco Énergie Tertiaire (DEET), plus communément appelé « décret tertiaire », impose aux entreprises de réduire la consommation d’énergie de leurs bâtiments abritant des activités tertiaires. Cette obligation traduit la volonté du gouvernement d’améliorer la performance énergétique du parc français de bâtiments existants.\n\nLe décret tertiaire est officiellement entré en vigueur en octobre 2019.",
+    "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Bpifrance",
     "autres opérateurs": [
@@ -6848,13 +7224,22 @@
     "description": "Réalisez avec votre conseiller CCI un diagnostic RSE en abordant les 3 aspects de la responsabilité sociétale de l’entreprise : la performance économique, la performance sociale et la performance environnementale. Repensez votre stratégie RSE comme un levier d'innovation et un vecteur de création de valeur.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "CCI",
-    "url": "https://www.cci.fr/offre/evaluez-votre-maturite-aux-enjeux-de-la-rse?&cp=75013",
+    "url": "https://www.cci.fr/offre/evaluez-votre-maturite-aux-enjeux-de-la-rse",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Selon les territoires",
     "durée de l'accompagnement": "1 journée",
     "objectifs": [
       {
-        "description": "Recueillir vos données sur l'ensemble des champs de la RSE (gouvernance, social, sociétal, environnemental, économique)"
+        "description": "Évaluer en amont, et en autonomie votre maturité RSE, afin d'obtenir un premier résultat (10min)",
+        "liens": [
+          {
+            "lien": "https://www.cci.fr/offre/evaluez-votre-maturite-aux-enjeux-de-la-rse",
+            "texte": "Tester en autonomie votre démarche RSE"
+          }
+        ]
+      },
+      {
+        "description": "Recueillir vos données sur l'ensemble des champs de la RSE (gouvernance, social, sociétal, environnemental, économique) avec l'aide d'un conseiller"
       },
       {
         "description": "Dresser l’état des lieux des forces et faiblesses de votre entreprise"
@@ -7695,7 +8080,7 @@
     "titre": "Écolabel européen",
     "promesse": "Valorisez la qualité environnementale des produits et services de votre entreprise",
     "description": "Obtenez l'Écolabel européen, le seul label écologique public et officiel européen permettant de valoriser des produits et services plus respectueux de l’environnement tout en garantissant des performances identiques à celles des produits et services analogues. Valorisez ainsi votre engagement auprès des consommateurs et des acheteurs professionnels grâce à l’Écolabel européen qui garantit un impact limité de vos produits et services sur l’environnement et la santé.",
-    "description longue": "Les catégories de produits pouvant bénéficier de l'écolabel européen sont les suivantes :\nProduits cosmétiques et de soin pour animaux\nDétergents textiles\nDétergents vaisselles à la main\nDétergents pour lave-vaisselle\nDétergents pour lave-vaisselle industriel ou destinés aux collectivités\nDétergents textiles à usage industriel ou destinés aux collectivités\nProduits de nettoyage pour surfaces dures\nMilieux de culture et amendements pour sols\nProduits de protection hygiénique absorbants et coupes menstruelles réutilisables\nPeintures et vernis d'intérieur ou d'extérieur\nMouchoirs, papier toilette, serviettes en papier\nPapier graphique\nProduits en papier imprimé, produits de papeterie et sacs en papier\nLes prestations de nettoyage intérieur et les hébergements touristiques (hôtels, campings, etc.) peuvent également bénéficier de l'écolabel européen.",
+    "description longue": "Les catégories de produits pouvant bénéficier de l'écolabel européen sont les suivantes :\n- Produits cosmétiques et de soin pour animaux\n- Détergents textiles\n- Détergents vaisselles à la main\n- Détergents pour lave-vaisselle\n- Détergents pour lave-vaisselle industriel ou destinés aux collectivités\n- Détergents textiles à usage industriel ou destinés aux collectivités\n- Produits de nettoyage pour surfaces dures\n- Milieux de culture et amendements pour sols\n- Produits de protection hygiénique absorbants et coupes menstruelles réutilisables\n- Peintures et vernis d'intérieur ou d'extérieur\n- Mouchoirs, papier toilette, serviettes en papier\n- Papier graphique\n- Produits en papier imprimé, produits de papeterie et sacs en papier\n- Les prestations de nettoyage intérieur et les hébergements touristiques (hôtels, campings, etc.) peuvent également bénéficier de l'écolabel européen.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen",
@@ -11418,20 +11803,20 @@
   {
     "titre": "Étude \"Éco-conception\"",
     "promesse": "Évaluez la performance environnementale de vos produits, procédés et services ",
-    "description": "L’ADEME propose une aide pour financer vos études d'éco-conception. Une approche qui conduit à l'amélioration environnementale de votre produit ou service tout au long de sa chaine de valeur. ",
+    "description": "L’ADEME propose une aide pour financer vos études d'éco-conception. Au delà d'un diagnostic standard, cette aide appuie votre démarche pour conduire à l'amélioration environnementale de votre produit ou service tout au long de sa chaine de valeur.",
     "début de validité": "01/01/2023",
-    "fin de validité": "31/12/2024",
+    "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-decoconception-produits-services",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-decoconception-produits-services",
     "nature de l'aide": "étude",
-    "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
+    "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 150 000 €",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20%C3%A9coconception%20produits%20et%20services%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20%C3%A9coconception%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -11452,7 +11837,7 @@
         "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-decoconception-produits-services",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-decoconception-produits-services",
             "texte": "Déposer mon dossier"
           }
         ]
@@ -11595,8 +11980,25 @@
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
           "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
           "code NAF niveau 1 . est C",
-          "code NAF niveau 1 . est J"
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T"
         ]
       },
       "entreprise . a un objectif ciblé": {
@@ -15356,6 +15758,196 @@
       }
     },
     "id": "gestion-des-biodechets"
+  },
+  {
+    "titre": "Aide à l'hôtellerie indépendante",
+    "promesse": "Accélérez le développement et l'adaptation environnementale de votre hôtel",
+    "description": "Vous êtes un hôtelier indépendant ? Cette aide soutient vos projets de création, de modernisation ou d'extension des chambres et des espaces communs dans une approche respectueuse de l’environnement. Financez, par exemple, vos travaux d’isolation et d'amélioration énergétique de votre établissement.",
+    "description longue": "Les dépenses éligibles sont les suivantes : \n- Travaux de gros œuvre (huisseries, planchers entre étages, isolation par l’extérieur et isolation de toiture) sous condition de performance énergétique du bâti ou de réhabilitation d’une friche immobilière ; dépenses de gros œuvre pour les projets d'extension.\n- Travaux de second œuvre.\n- Équipements, matériels et mobilier et/ ou d'occasion (devis de plus de 500 €).\n- Travaux de second œuvre et équipement permettant la création de 9 lits saisonniers maximum au sein de l'établissement hôtelier.",
+    "illustration": "images/TEE_energie_verte.png",
+    "opérateur de contact": "Région Nouvelle-Aquitaine",
+    "url": "https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 25% des dépenses, dans la limite de 400 000 € HT",
+    "objectifs": [
+      {
+        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation.",
+        "liens": [
+          {
+            "lien": "https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1",
+            "texte": "Conditions et critères d'éligibilité"
+          }
+        ]
+      },
+      {
+        "description": "Prenez contact avec la Direction du Tourisme par mail à l'adresse tourisme@nouvelle-aquitaine.fr. Présentez votre projet et laissez vos coordonnées."
+      },
+      {
+        "description": "La Direction du Tourisme vous recontacte et vérifie avec vous l’éligibilité de votre projet, avant tout dépôt de demande de subvention."
+      },
+      {
+        "description": "Si votre projet est éligible, déposez votre demande de subvention. Votre dossier est alors instruit et soumis pour approbation."
+      },
+      {
+        "description": "Une fois votre demande acceptée, recevez votre subvention et réalisez vos travaux."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Nouvelle-Aquitaine"
+      ],
+      "secteur d'activité": [
+        "Hôtellerie indépendante",
+        "Sont exclus les franchises et chaines intégrées"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Vous êtes un hôtel indépendant (dont les chaines volontaires), hors franchises et chaines intégrées.",
+        "Vous avez une période d'ouverture d'au moins 6 mois par an.",
+        "Vous devrez répondre à un classement entre 2 et 5 étoiles après travaux.",
+        "Les travaux sur les chambres devront représenter à minima 50% de la dépense totale éligible.",
+        "Le capital social de votre entreprise devra être de 5 000 € minimum.",
+        "Vous devez maintenir l'activité pendant 5 ans.",
+        "Les devis doivent être supérieurs à 500 € HT."
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "a une categorie legale eligible",
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est I"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est l'écoconception"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Nouvelle-Aquitaine"
+        ]
+      }
+    },
+    "id": "hotellerie-independante-na"
   },
   {
     "titre": "Imprim'vert",
@@ -19356,7 +19948,7 @@
     "opérateur de contact": "ADEME",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-investissements-reemploi-reutilisation-reparation-hors-emballages",
     "nature de l'aide": "financement",
-    "montant du financement": "Jusqu'à 60% des coûts, dans un maximum de 200 000 €",
+    "montant du financement": "Jusqu'à 75% des coûts, dans un maximum de 200 000 €",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -19407,7 +19999,8 @@
         "Éligible à toutes les entreprises"
       ],
       "autres critères d'éligibilité": [
-        "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)"
+        "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)",
+        "Une étude de pertinence et de faisabilité doit être obligatoirement réalisée en amont de tout investissement."
       ]
     },
     "publicodes": {
@@ -26448,7 +27041,7 @@
     "titre": "Programme Res'Eau",
     "promesse": "Bénéficiez d'un diagnostic et d'un accompagnement pour économiser l'eau dans votre entreprise",
     "description": "Le dérèglement climatique et l’augmentation des épisodes de sécheresse constituent un véritable défi pour la Région Provence-Alpes-Côte d'Azur et pour le secteur touristique.\nLe programme Res’Eau vise à promouvoir la conservation et l’utilisation responsable de l’eau grâce à un diagnostic, un accompagnement et l’activation de leviers d’économies d’eau.",
-    "description longue": "Au programme :\n- Un diagnostic personnalisé sur site des consommations et usages dans votre entreprise réalisé par un conseiller spécialisé de votre Chambre de Commerce et d’Industrie ;\n- L’identification des potentiels d’économies d’eau et des pistes d’amélioration potentielles (récupération, réutilisation…) ;\n- Un plan d’action personnalisé pour votre entreprise ;\n- Un appui dans la recherche de solutions et de financements potentiels de vos projets ;\n- Des conseils, fiches de bonnes pratiques ;\n- Un suivi de votre plan d’action.",
+    "description longue": "Au programme : \n- Un diagnostic personnalisé sur site des consommations et usages dans votre entreprise réalisé par un conseiller spécialisé de votre Chambre de Commerce et d’Industrie ;\n- L’identification des potentiels d’économies d’eau et des pistes d’amélioration potentielles (récupération, réutilisation…) ;\n- Un plan d’action personnalisé pour votre entreprise ;\n- Un appui dans la recherche de solutions et de financements potentiels de vos projets ;\n- Des conseils, fiches de bonnes pratiques ;\n- Un suivi de votre plan d’action.",
     "fin de validité": "30/04/2026",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "CCI",
@@ -28698,6 +29291,10 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Sont éligibles les Établissements Recevant du Public à savoir : L’hôtellerie traditionnelle indépendante, l’hôtellerie de plein air, les gîtes de groupe, les villages et centres de vacances à statut privé non associatif et associatif, les sociétés Civiles Immobilières (SCI), les associations, les mutuelles, les coopératives, les fondations engagées dans le cadre du Contrat d’engagement républicain ou d’un agrément de l’État en application du décret n° 2021-1947 du 31 décembre 2021",
+        "Sont exclus les chambres d’hôte, les meublés de tourisme, les gîtes ruraux et les particuliers"
       ]
     },
     "publicodes": {

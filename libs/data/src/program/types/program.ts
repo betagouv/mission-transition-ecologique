@@ -34,6 +34,10 @@ export type Dispositif = {
    */
   "fin de validité"?: string;
   /**
+   * champ présent si le programme est temporairement désactivé
+   */
+  "aide temporairement indisponible"?: string;
+  /**
    * TODO
    */
   url?: string;
@@ -145,7 +149,9 @@ export type Dispositif = {
     | "Région Bourgogne-Franche-Comté"
     | "Région Auvergne-Rhône-Alpes"
     | "Association pour la transition Bas Carbone"
-    | "La Fresque du Climat";
+    | "La Fresque du Climat"
+    | "SGAR"
+    | "Région Nouvelle-Aquitaine";
   /**
    * Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.
    */
@@ -338,4 +344,6 @@ export type Operators =
   | "Région Bourgogne-Franche-Comté"
   | "Région Auvergne-Rhône-Alpes"
   | "Association pour la transition Bas Carbone"
-  | "La Fresque du Climat";
+  | "La Fresque du Climat"
+  | "SGAR"
+  | "Région Nouvelle-Aquitaine";

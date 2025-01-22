@@ -1,0 +1,114 @@
+titre: Aide aux campings indépendants
+promesse: Développez durablement votre camping
+description: >-
+  Vous avez un camping indépendant ? Cette aide soutient vos projets de
+  création, de modernisation ou d’extension. Financez des investissements
+  durables tels que les blocs sanitaires, les cheminements, les bâtiments
+  d’accueil, l’aménagement paysager ou les aires de camping-car.
+description longue: >-
+  Si votre camping est implanté sur une commune du littoral, les dépenses
+  éligibles sont les suivantes : 
+
+  - Travaux de gros œuvre, de second œuvre et d'équipements portant sur les
+  blocs-sanitaire, cheminements, travaux paysager, emplacements nus, bâtiment
+  d’accueil, VRD (hors assainissement) et aire de camping-car.
+
+  - Investissements "durables".
+
+
+  Si votre camping est implanté sur une commune hors littoral, voici la liste
+  des dépenses éligibles :
+
+  - Travaux de gros œuvre, de second œuvre, équipements avec une priorité sur
+  les investissements durables et à performance énergétique.
+
+  - Équipements pour les services aux camping-cars, l’accueil de vélos ou ceux
+  permettant un allongement de la saison d’ouverture de l’établissement.
+
+  - Espace aquatique (modernisation et création uniquement pour les
+  établissements n'en possédant pas, dépenses plafonnées à 200 000 € HT). 
+
+  - Acquisition de 5 unités maximum de locatifs durables dans le cadre d'une
+  diversification de l'offre de type chalet, (hors mobile-home), uniquement pour
+  les campings n'ayant aucun locatif.
+
+  - Travaux et équipements permettant la création de logements saisonniers au
+  sein du camping (9 lits maximum).
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Région Nouvelle-Aquitaine
+url: >-
+  https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/campings-de-tourisme-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1
+nature de l'aide: financement
+montant du financement: Jusqu'à 25% des dépenses, dans la limite de 400 000 € HT
+objectifs:
+  - description: Vérifiez l’éligibilité de votre projet en parcourant la documentation.
+    liens:
+      - lien: >-
+          https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/campings-de-tourisme-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1
+        texte: Conditions et critères d'éligibilité
+  - description: >-
+      Prenez contact avec la Direction du Tourisme par mail à l'adresse
+      tourisme@nouvelle-aquitaine.fr. Présentez votre projet et laissez vos
+      coordonnées.
+  - description: "La Direction du Tourisme vous recontacte et vérifie avec vous l’éligibilité\_de votre projet, avant tout dépôt de demande de subvention."
+  - description: >-
+      Si votre projet est éligible, déposez votre demande de subvention. Votre
+      dossier est alors instruit et soumis pour approbation.
+  - description: >-
+      Une fois votre demande acceptée, recevez votre subvention et réalisez vos
+      travaux.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - Nouvelle-Aquitaine
+  secteur d'activité:
+    - Camping indépendant
+    - >-
+      Les Parcs Résidentiels de Loisirs, les campings de loisirs, les
+      franchisés, les aires naturelles sont inéligibles
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Vous êtes un camping de tourisme indépendant ou engagé dans une chaîne
+      volontaire qui dispose à minima de 10% d’emplacements nus, plafonné à 10
+      emplacements.
+    - >-
+      L'établissement devra répondre à un classement entre 3 et 5 étoiles après
+      travaux.
+    - >-
+      Le capital social de la structure portant le projet devra être de 5 000 €
+      minimum.
+    - L'activité est maintenue pendant 5 ans.
+    - Les devis inférieurs à 500 € HT ne sont pas éligibles.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a une categorie legale eligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Nouvelle-Aquitaine

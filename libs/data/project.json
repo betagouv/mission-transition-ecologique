@@ -34,6 +34,13 @@
         ],
         "parallel": false
       }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "command": "npx vitest run"
+      }
     }
   }
 }
