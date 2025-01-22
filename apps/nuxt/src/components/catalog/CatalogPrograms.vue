@@ -6,8 +6,8 @@
         <div
           class="fr-col-12 fr-mt-3v"
           :class="{
-            'fr-col-offset-md-2 fr-col-md-10 fr-col-justify--left': !hasError,
-            'fr-col-md-12 fr-col-justify--center': hasError
+            'fr-col-offset-md-1 fr-col-offset-lg-2 fr-col-md-10 fr-col-justify--left': !hasError,
+            'fr-col-lg-12 fr-col-justify--center': hasError
           }"
         >
           <h1 class="fr-text--blue-france">{{ title }}</h1>
@@ -24,8 +24,8 @@
         <div
           class="fr-col-12 fr-pr-md-2v"
           :class="{
-            'fr-col-offset-md-2 fr-col-md-10': !hasError,
-            'fr-col-md-12': hasError
+            'fr-col-offset-md-1 fr-col-offset-lg-2 fr-col-md-10': !hasError,
+            'fr-col-lg-12': hasError
           }"
         >
           <ThemeHeaderCard
@@ -47,7 +47,7 @@
         >
           <div
             v-if="!hasSpinner && !hasError"
-            class="fr-col-2 fr-col-hidden fr-col-unhidden-md"
+            class="fr-col-2 fr-col-hidden fr-col-unhidden-lg"
           >
             <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
               <div class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w">Filtres</div>
@@ -85,13 +85,15 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { ProgramManager } from '@/tools/program/programManager'
-import { ThemeId } from '@/types'
+import { FilterItemKeys, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { computed } from 'vue'
+import { useNavigationStore } from '@/stores/navigation'
 
 const programStore = useProgramStore()
 
+const { hasSpinner } = storeToRefs(useNavigationStore())
 const { programs, hasError } = storeToRefs(programStore)
 onServerPrefetch(async () => {
   await new ProgramManager().getDependentCompanyData(false)
@@ -116,17 +118,13 @@ const countPrograms = computed(() => {
   return filteredPrograms.value?.length || 0
 })
 
-const hasSpinner = computed(() => {
-  return programs.value === undefined && !hasError.value
-})
-
 const hasThemeCard = computed(() => {
   return programStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
 
 const theme = computed(() => {
   if (programStore.hasThemeTypeSelected()) {
-    return programStore.programFilters.themeTypeSelected
+    return programStore.programFilters[FilterItemKeys.themeType]
   }
 
   if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {

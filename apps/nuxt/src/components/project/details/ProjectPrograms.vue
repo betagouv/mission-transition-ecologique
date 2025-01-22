@@ -95,11 +95,11 @@ const { programs, hasError } = storeToRefs(useProgramStore())
 const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormContainer')
 
 onServerPrefetch(async () => {
-  await new ProgramManager().getFiltered()
+  await new ProgramManager().getDependentCompanyData()
 })
 
 onNuxtReady(async () => {
-  await new ProgramManager().getFiltered()
+  await new ProgramManager().getDependentCompanyData(true)
 })
 
 const hasRegisteredData = CompanyData.isDataFull()

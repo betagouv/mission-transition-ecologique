@@ -18,6 +18,11 @@ export default class Breakpoint {
     return currentBreakpoint.value && (currentBreakpoint.value === size || this._breakpoints.isGreater(size))
   }
 
+  static isSmallerOrEqual(size: BreakpointNameType) {
+    const currentBreakpoint = this.getCurrentBreakpoint()
+    return currentBreakpoint.value && (currentBreakpoint.value === size || this._breakpoints.isSmaller(size))
+  }
+
   static isMobile() {
     const currentBreakpoint = this.getCurrentBreakpoint()
     return currentBreakpoint.value && currentBreakpoint.value === BreakpointNameType.xs
