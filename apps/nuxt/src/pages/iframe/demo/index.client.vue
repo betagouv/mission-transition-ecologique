@@ -2,7 +2,7 @@
   <div>
     <Script
       id="transition-ecologique-entreprise"
-      :src="scriptUrl"
+      :src="`${domain}/scripts/iframe.js`"
       data-type="projet"
       data-id="diag-360"
     ></Script>
@@ -14,8 +14,5 @@ definePageMeta({
   layout: 'iframe'
 })
 
-import { Iframe } from '@/tools/iframe/iframe'
-
-const scriptUrl = Iframe.getScript()
-console.log('script', scriptUrl)
+const domain = window.location.origin
 </script>

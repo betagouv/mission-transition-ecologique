@@ -4,10 +4,10 @@ setupIframe(script)
 
 function setupIframe(element) {
   element['loaded'] = 'true'
-
+  const url = new URL(element.src).origin
   const type = element.dataset.type || ''
   const id = element.dataset.id || ''
-  const src = `http://localhost:4242/iframe/${type}/${id}`
+  const src = `${url}/iframe/${type}/${id}`
 
   const iframe = document.createElement('iframe')
 
