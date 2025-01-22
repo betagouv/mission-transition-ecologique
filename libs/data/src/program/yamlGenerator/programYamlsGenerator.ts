@@ -23,7 +23,7 @@ export class ProgramYamlsGenerator {
     const programs = await new ProgramBaserow().getPrograms(false)
 
     for (const program of programs) {
-      if (!program.Statuts.includes(Status.InProd)) {
+      if (!program.Statuts.includes(Status.InProd) && !program.Statuts.includes(Status.InProdNotAvailable)) {
         continue
       }
       await this._createProgramYaml(program)

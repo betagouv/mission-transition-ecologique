@@ -1,24 +1,25 @@
 titre: Étude "Éco-conception"
 promesse: 'Évaluez la performance environnementale de vos produits, procédés et services '
 description: >-
-  L’ADEME propose une aide pour financer vos études d'éco-conception. Une
-  approche qui conduit à l'amélioration environnementale de votre produit ou
-  service tout au long de sa chaine de valeur. 
+  L’ADEME propose une aide pour financer vos études d'éco-conception. Au delà
+  d'un diagnostic standard, cette aide appuie votre démarche pour conduire à
+  l'amélioration environnementale de votre produit ou service tout au long de sa
+  chaine de valeur.
 début de validité: 01/01/2023
-fin de validité: 31/12/2024
+fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-decoconception-produits-services
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-decoconception-produits-services
 nature de l'aide: étude
-montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
+montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 150 000 €
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
       l’ADEME ou en contactant un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20%C3%A9coconception%20produits%20et%20services%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.docx
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20%C3%A9coconception%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener cette étude
@@ -33,7 +34,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-decoconception-produits-services
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-decoconception-produits-services
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -77,8 +78,25 @@ publicodes:
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
       - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
       - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est l'écoconception

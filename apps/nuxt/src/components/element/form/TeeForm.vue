@@ -22,7 +22,7 @@
         id="form-title"
         class="fr-h3 fr-col-12 fr-text-center"
       >
-        {{ Format.capitalize(Translation.t('form.label') || '') }}
+        {{ title }}
       </div>
       <!-- FORM HINT -->
       <p
@@ -105,6 +105,7 @@ interface Props {
   formType: OpportunityType
   form: FormDataType
   hint: string
+  title?: string
   hintClass?: string
   errorEmailSubject: string
   phoneCallback?: string
@@ -115,6 +116,7 @@ const props = withDefaults(defineProps<Props>(), {
   dataId: undefined,
   dataSlug: undefined,
   showTitle: true,
+  title: Format.capitalize(Translation.t('form.label') || ''),
   hintClass: '',
   phoneCallback: undefined
 })
