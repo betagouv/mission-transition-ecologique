@@ -11,15 +11,20 @@
   </Transition>
 </template>
 <script setup lang="ts">
-interface OtherProjectProps {
-  form?: boolean
-}
+import { Theme } from '@/tools/theme'
 
-const props = defineProps<OtherProjectProps>()
+const theme = Theme.getThemeFromSelectedTheme()
 
-const otherProjectForm = ref<boolean>(props.form)
+const otherProjectForm = ref<boolean>(false)
 
 const openOtherProjectForm = () => {
   otherProjectForm.value = true
 }
+
+watch(
+  () => theme.value,
+  () => {
+    otherProjectForm.value = false
+  }
+)
 </script>

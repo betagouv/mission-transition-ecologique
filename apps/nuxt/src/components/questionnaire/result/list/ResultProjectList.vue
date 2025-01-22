@@ -62,7 +62,7 @@
     >
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
         <div class="fr-col-12 fr-col-offset-md-2 fr-col-md-10 fr-pl-md-2v fr-pr-md-6v">
-          <OtherProject :form="otherProjectForm" />
+          <OtherProject />
         </div>
       </div>
     </div>
@@ -86,20 +86,11 @@ interface ProjectListProps {
 }
 const props = defineProps<ProjectListProps>()
 
-const otherProjectForm = ref<boolean>(false)
-
 const hasRegisteredData = CompanyData.isDataFull()
 
 const openModal = () => {
   Navigation.toggleRegisterModal()
 }
-
-watch(
-  () => props.filteredProjects,
-  () => {
-    otherProjectForm.value = false
-  }
-)
 
 const programStore = useProgramStore()
 
