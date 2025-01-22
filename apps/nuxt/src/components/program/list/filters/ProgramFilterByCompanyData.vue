@@ -82,7 +82,7 @@ import Navigation from '@/tools/navigation'
 import { useFiltersStore } from '@/stores/filters'
 
 type CompanyFilterProps = {
-  title: ComputedRef<string | undefined | null>
+  title: ComputedRef<string | undefined>
   details: {
     sector: CompanyFilterDetailProps
     region: CompanyFilterDetailProps
