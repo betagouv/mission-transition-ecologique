@@ -75,11 +75,17 @@
     class="fr-mt-5v fr-mx-auto fr-grid-row fr-grid-row--center fr-grid-row--middle"
   >
     <template #phoneContact>
-      <p class="fr-mb-15v">
+      <p class="fr-mb-10v">
         <span>
           {{ phoneCallback }}
         </span>
       </p>
+      <img
+        v-if="showCELogo"
+        src="/images/logos/ce-logo.webp"
+        :alt="`image / logo-conseillers-entreprise`"
+        width="70px"
+      />
     </template>
   </TeeFormCallback>
 </template>
@@ -105,6 +111,7 @@ interface Props {
   formType: OpportunityType
   form: FormDataType
   hint: string
+  showCELogo?: boolean
   title?: string
   hintClass?: string
   errorEmailSubject: string
@@ -118,6 +125,7 @@ const props = withDefaults(defineProps<Props>(), {
   showTitle: true,
   title: Format.capitalize(Translation.t('form.label') || ''),
   hintClass: '',
+  showCELogo: false,
   phoneCallback: undefined
 })
 

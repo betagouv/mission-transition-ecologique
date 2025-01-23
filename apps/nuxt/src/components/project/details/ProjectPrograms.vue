@@ -64,10 +64,11 @@
             :form-container-ref="teeProjectFormContainer"
             :form-type="OpportunityType.Project"
             :title="Translation.t('project.form.title')"
-            :phone-callback="Translation.t('form.phoneContact', { operator: ' ' })"
+            :phone-callback="Translation.t('form.phoneContactCE')"
             :form="Opportunity.getProjectFormFields(project)"
             :data-id="project.id.toString()"
             :data-slug="project.slug"
+            :show-c-e-logo="true"
             :hint="Translation.t('project.form.hint')"
             :error-email-subject="Translation.t('project.form.errorEmail.subject', { titre: props.project.title })"
           />
