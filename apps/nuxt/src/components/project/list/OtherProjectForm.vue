@@ -8,7 +8,6 @@
       :form-container-ref="teeOtherProjectFormContainer"
       hint-class="fr-col-lg-9 fr-text--bold fr-h6 fr-pt-4v"
       :show-title="false"
-      :show-c-e-logo="true"
       :title="Translation.t('otherProject.form.title')"
       :phone-callback="Translation.t('form.phoneContactAutonomy', { operator: ' ' })"
       :form-type="OpportunityType.CustomProject"
