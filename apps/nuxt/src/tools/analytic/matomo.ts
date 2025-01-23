@@ -1,3 +1,5 @@
+import Config from '@/config'
+
 export default class Matomo {
   static sendEvent(action: string, name: string | null = null, value?: string | number | undefined) {
     this.trackEvent('from_domain', location.hostname)
@@ -13,9 +15,11 @@ export default class Matomo {
     evName: string | number | undefined = undefined,
     EvValue: number | undefined = undefined
   ) => {
-    const { proxy } = useScriptMatomoAnalytics()
-    if (proxy._paq) {
-      proxy._paq.push(['trackEvent', evCategory, evAction, evName, EvValue])
+    if (Config.hasMatomo()) {
+      const { proxy } = useScriptMatomoAnalytics()
+      if (proxy._paq) {
+        proxy._paq.push(['trackEvent', evCategory, evAction, evName, EvValue])
+      }
     }
   }
 }

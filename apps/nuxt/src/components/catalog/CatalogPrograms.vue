@@ -23,7 +23,7 @@
           'fr-col-md-12': hasError
         }"
       >
-        <ProgramList :filtered-programs="filteredPrograms" />
+        <ProgramList v-if="!hasError" :filtered-programs="filteredPrograms" />
       </div>
     </template>
   </CatalogLayout>
@@ -49,7 +49,7 @@ onNuxtReady(async () => {
   await new ProgramManager().getDependentCompanyData(false)
 })
 
-const title = 'Le catalogue des aides publiques à la transition écologique'
+const title = 'Les aides à la transition écologique'
 const description =
   'Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :' +
   'ADEME, Bpifrance, CCI, CMA, etc.'

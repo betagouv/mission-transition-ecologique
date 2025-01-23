@@ -26,9 +26,15 @@
           'fr-col-md-12': !hasFullRegisteredData
         }"
       >
-        <div class="fr-container--fluid fr-mt-2v fr-mt-md-3v">
+        <div
+          v-if="hasFilteredProjects"
+          class="fr-container--fluid fr-mt-2v fr-mt-md-3v"
+        >
           <div class="fr-grid-row fr-grid-row--center">
-            <div class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-lg-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic">
+            <div
+              v-if="showCounter"
+              class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-lg-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic"
+            >
               <TeeCounterResult :to-count="filteredProjects" />
             </div>
             <div class="fr-col-9 fr-col-hidden-lg fr-text-right">
@@ -37,7 +43,7 @@
             <div class="fr-col-12 fr-mt-2v">
               <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-lg--left project-cards-container">
                 <div
-                  v-for="project in sortedProjects"
+                  v-for="project in projectList"
                   :key="project.id"
                   class="fr-col-12 fr-col-sm-6 fr-col-lg-4 no-outline"
                 >
@@ -57,6 +63,7 @@
 
 <script setup lang="ts">
 import { useProjectStore } from '@/stores/project'
+import Navigation from '@/tools/navigation'
 import { ProjectManager } from '@/tools/project/projectManager'
 import ProjectSorter from '@/tools/project/projectSorter'
 import { MetaSeo } from '@/tools/metaSeo'
@@ -65,23 +72,39 @@ import { CompanyData } from '@/tools/companyData'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
 
-const projectStore = useProjectStore()
+interface Props {
+  showTitle?: boolean
+  showLimit?: number
+  showCounter?: boolean
+  showBreadcrumbs?: boolean
+}
+const props = withDefaults(defineProps<Props>(), {
+  showTitle: true,
+  showLimit: undefined,
+  showCounter: true,
+  showBreadcrumbs: true
+})
 
-const { projects, hasError } = storeToRefs(projectStore)
+const { projects, hasError } = storeToRefs(useProjectStore())
 
 onServerPrefetch(async () => {
   await new ProjectManager().getProjects()
 })
 
-const title = 'Le catalogue des projets de transition écologique'
+const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
 
-useSeoMeta(MetaSeo.get(title, description))
+if (!new Navigation().isHomepage()) {
+  useSeoMeta(MetaSeo.get(title, description))
+}
 
 const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
 const sortedProjects = ProjectSorter.sort(filteredProjects)
+const projectList = computed(() => {
+  return props.showLimit !== undefined ? sortedProjects.value.slice(0, props.showLimit) : sortedProjects.value
+})
 
 const hasFullRegisteredData = CompanyData.isDataFull()
 
