@@ -35,10 +35,6 @@ const theme = Theme.getThemeFromSelectedTheme()
 const { projects, hasError } = storeToRefs(useProjectStore())
 const { hasSpinner } = storeToRefs(useNavigationStore())
 
-const hasThemeCard = computed(() => {
-  return useFiltersStore().hasThemeTypeSelected() && !hasSpinner.value
-})
-
 const filteredProjects = ProjectFilter.filter(projects, theme)
 const sortedProjects = ProjectSorter.sort(filteredProjects)
 const projectList = computed(() => {
