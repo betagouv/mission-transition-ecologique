@@ -62,6 +62,8 @@ import ProjectSorter from '@/tools/project/projectSorter'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import { CompanyData } from '@/tools/companyData'
+import ProjectFilter from '@/tools/project/projectFilter'
+import { Theme } from '@/tools/theme'
 
 const projectStore = useProjectStore()
 
@@ -80,10 +82,9 @@ const description = 'Accédez à la liste des projets de transition écologique 
 
 useSeoMeta(MetaSeo.get(title, description))
 
-const filteredProjects = computed(() => {
-  return projects.value ? projectStore.getProjectsByFilters(projects.value) : undefined
-})
+const theme = Theme.getThemeFromSelectedTheme()
 
+const filteredProjects = ProjectFilter.filter(projects, theme)
 const sortedProjects = ProjectSorter.sort(filteredProjects)
 
 const hasFullRegisteredData = CompanyData.isDataFull()
