@@ -19,7 +19,7 @@
             <TeeDsfrButton
               id="close-register-modal"
               size="sm"
-              class="fr-btn-bg--blue-france--light fr-bg--blue-france--lightness fr-mr-4v fr-mt-8v fr-p-0 fr-text--blue-france fr-radius-a--2v"
+              class="fr-btn-bg--blue--light fr-bg--blue--lightness fr-mr-4v fr-mt-8v fr-p-0 fr-text--blue-france fr-radius-a--2v"
               @click="closeModal"
             >
               <span class="fr-icon-close-line fr-icon--lg"></span>
