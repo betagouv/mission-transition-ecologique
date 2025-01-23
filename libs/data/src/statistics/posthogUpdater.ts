@@ -48,7 +48,7 @@ export class PosthogUpdater {
       const currentDealStatus = matchingDeal.status
 
       const linkedStatusEvents = posthogStatusEvents.filter((statusEvent) => statusEvent.linkedEventId === eventId)
-      this._createStatusUpdateEvents(posthogManager, currentDealStatus, linkedStatusEvents, eventId, formEvent.personId || 'null')
+      this._createStatusUpdateEvents(posthogManager, currentDealStatus, linkedStatusEvents, eventId, formEvent.distinctId || 'null')
     }
     await posthogManager.createEvents()
     return 'sucessfull Update'
