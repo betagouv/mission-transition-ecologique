@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
 import TeeFooter from '@/components/TeeFooter.vue'
+import { MetaSeo } from '@/tools/metaSeo'
 import Translation from '@/tools/translation'
 import Cookie from '@/tools/cookies'
 
