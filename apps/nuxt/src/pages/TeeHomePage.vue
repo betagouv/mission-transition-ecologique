@@ -41,7 +41,7 @@ import { RouteName } from '@/types'
 definePageMeta({
   path: '/',
   name: RouteName.Homepage,
-  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetProgramFilters]
+  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetFilters]
 })
 
 defineRouteRules({
