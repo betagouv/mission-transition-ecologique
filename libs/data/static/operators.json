@@ -465,5 +465,11 @@
     "filterCategories": [
       "État"
     ]
+  },
+  {
+    "operator": "Région Nouvelle-Aquitaine",
+    "filterCategories": [
+      "Régions"
+    ]
   }
 ]

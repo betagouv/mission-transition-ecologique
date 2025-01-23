@@ -54,6 +54,10 @@ export default class Navigation {
     return this._route.name
   }
 
+  isHomepage() {
+    return this.isByRouteName(RouteName.Homepage)
+  }
+
   isCatalogPrograms() {
     return this.isByRouteName(RouteName.CatalogPrograms)
   }
