@@ -268,13 +268,10 @@ const hasRegisteredData = CompanyData.isDataFull()
 useRuntimeHook('app:mounted', async () => {
   if (program.value) {
     await new ProgramManager().update()
-    if (navigation.isCatalogProgramDetail()) {
-      await new ProjectManager().getProjects()
-    } else {
-      await new ProjectManager().getFilteredProjects()
-    }
   }
 })
+
+await new ProjectManager().getFilteredProjects()
 
 const linkedProjects = computed(() => {
   return Program.getLinkedProjects(program.value, projects.value)
