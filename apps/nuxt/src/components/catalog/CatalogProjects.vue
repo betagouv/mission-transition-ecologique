@@ -1,11 +1,12 @@
 <template>
-  <TeeDsfrBreadcrumb />
-  <CatalogBanner>
-    <template #title> {{ title }} </template>
-    <template #description> {{ description }} </template>
-  </CatalogBanner>
-
+  <TeeDsfrBreadcrumb v-if="showBreadcrumbs" />
   <div class="fr-container fr-mt-6v">
+    <div
+      v-if="showTitle"
+      class="fr-col-10 fr-col-lg-8"
+    >
+      <h1 class="fr-text--blue-france">{{ title }}</h1>
+    </div>
     <div class="fr-grid-row fr-grid-row--center">
       <div>
         <div class="fr-col-12 fr-col-justify--left fr-mt-3v">
@@ -19,12 +20,15 @@
           radius-size="2-5v"
         />
         <div v-if="hasFilteredProjects">
-          <div class="fr-col-12 fr-text--blue-france tee-font-style--italic fr-mt-3v">
+          <div
+            v-if="showCounter"
+            class="fr-col-12 fr-text--blue-france tee-font-style--italic fr-mt-3v"
+          >
             <TeeCounterResult :to-count="filteredProjects" />
           </div>
           <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-mt-0">
             <div
-              v-for="project in sortedProjects"
+              v-for="project in projectList"
               :key="project.id"
               class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-lg-4 no-outline"
             >
@@ -56,6 +60,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
+import Navigation from '@/tools/navigation'
 import { ProjectManager } from '@/tools/project/projectManager'
 import ProjectFilter from '@/tools/project/projectFilter'
 import ProjectSorter from '@/tools/project/projectSorter'
@@ -66,15 +71,28 @@ import { Theme } from '@/tools/theme'
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
-
+interface Props {
+  showTitle?: boolean
+  showLimit?: number
+  showCounter?: boolean
+  showBreadcrumbs?: boolean
+}
+const props = withDefaults(defineProps<Props>(), {
+  showTitle: true,
+  showLimit: undefined,
+  showCounter: true,
+  showBreadcrumbs: true
+})
 const { projects, hasError } = storeToRefs(useProjectStore())
 
 await new ProjectManager().getProjects()
 
-const title = 'Le catalogue des projets de transition écologique'
+const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
 
-useSeoMeta(MetaSeo.get(title, description))
+if (!new Navigation().isHomepage()) {
+  useSeoMeta(MetaSeo.get(title, description))
+}
 
 const theme = Theme.getThemeFromSelectedTheme()
 
@@ -85,6 +103,9 @@ const hasSpinner = computed(() => {
   return navigationStore.hasSpinner
 })
 
+const projectList = computed(() => {
+  return props.showLimit !== undefined ? sortedProjects.value.slice(0, props.showLimit) : sortedProjects.value
+})
 const hasThemeCard = computed(() => {
   return programStore.hasThemeTypeSelected() && !hasSpinner.value
 })

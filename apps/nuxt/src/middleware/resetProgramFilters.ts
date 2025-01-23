@@ -1,3 +1,7 @@
-export default defineNuxtRouteMiddleware(() => {
-  useProgramStore().resetFilters()
+import { RouteName } from '@/types'
+
+export default defineNuxtRouteMiddleware((to, from) => {
+  if (from.name !== RouteName.Homepage) {
+    useProgramStore().resetFilters()
+  }
 })
