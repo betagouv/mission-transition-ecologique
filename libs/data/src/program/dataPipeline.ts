@@ -11,7 +11,7 @@ dotenv.config()
 const OUTPUT_FOLDER_PATH = '../../static'
 const OUTPUT_FILENAME = 'programs.json'
 const PROGRAMS_FOLDER_PATH = '../../programs'
-const INTERFACE_PATH = './../../common/interface.yaml'
+const INTERFACE_PATH = 'interface.yaml'
 
 /**
  * Build programs dataset from folder and yaml files
