@@ -15,7 +15,7 @@
       :tab-titles="titles"
     >
       <template #tab-content-header>
-        <ThemeFiltersAndCard id="tab-content-header" />
+        <ResultThemeFiltersAndCard id="tab-content-header" />
       </template>
       <DsfrTabContent
         class="fr-p-0"

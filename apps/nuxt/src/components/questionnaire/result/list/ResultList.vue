@@ -1,5 +1,5 @@
 <template>
-  <ThemeFiltersAndCard id="tab-content-header" />
+  <ResultThemeFiltersAndCard id="tab-content-header" />
   <client-only fallback-tag="div">
     <template #fallback>
       <div class="fr-container">

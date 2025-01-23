@@ -11,7 +11,7 @@
       #catalog-content
     >
       <div
-        v-if="hasFullRegisteredData"
+        v-if="hasFullRegisteredData && props.showCompanyFilter"
         class="fr-col-2 fr-col-hidden fr-col-unhidden-lg"
       >
         <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
@@ -37,23 +37,13 @@
             >
               <TeeCounterResult :to-count="filteredProjects" />
             </div>
-            <div class="fr-col-9 fr-col-hidden-lg fr-text-right">
+            <div
+              v-if="hasFullRegisteredData && props.showCompanyFilter"
+              class="fr-col-9 fr-col-hidden-lg fr-text-right"
+            >
               <ProjectModalFilter />
             </div>
-            <div class="fr-col-12 fr-mt-2v">
-              <div class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-lg--left project-cards-container">
-                <div
-                  v-for="project in projectList"
-                  :key="project.id"
-                  class="fr-col-12 fr-col-sm-6 fr-col-lg-4 no-outline"
-                >
-                  <ProjectCard
-                    :project="project"
-                    class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
-                  />
-                </div>
-              </div>
-            </div>
+            <SimpleProjectList :project-list="projectList" />
           </div>
         </div>
       </div>
@@ -63,7 +53,6 @@
 
 <script setup lang="ts">
 import { useProjectStore } from '@/stores/project'
-import Navigation from '@/tools/navigation'
 import { ProjectManager } from '@/tools/project/projectManager'
 import ProjectSorter from '@/tools/project/projectSorter'
 import { MetaSeo } from '@/tools/metaSeo'
@@ -73,16 +62,18 @@ import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
 
 interface Props {
-  showTitle?: boolean
+  showTitleBanner?: boolean
   showLimit?: number
   showCounter?: boolean
   showBreadcrumbs?: boolean
+  showCompanyFilter?: boolean
 }
 const props = withDefaults(defineProps<Props>(), {
-  showTitle: true,
+  showTitleBanner: true,
   showLimit: undefined,
   showCounter: true,
-  showBreadcrumbs: true
+  showBreadcrumbs: true,
+  showCompanyFilter: true
 })
 
 const { projects, hasError } = storeToRefs(useProjectStore())
@@ -93,10 +84,6 @@ onServerPrefetch(async () => {
 
 const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
-
-if (!new Navigation().isHomepage()) {
-  useSeoMeta(MetaSeo.get(title, description))
-}
 
 const theme = Theme.getThemeFromSelectedTheme()
 

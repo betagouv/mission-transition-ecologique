@@ -23,7 +23,10 @@
           'fr-col-md-12': hasError
         }"
       >
-        <ProgramList v-if="!hasError" :filtered-programs="filteredPrograms" />
+        <ProgramList
+          v-if="!hasError"
+          :filtered-programs="filteredPrograms"
+        />
       </div>
     </template>
   </CatalogLayout>
