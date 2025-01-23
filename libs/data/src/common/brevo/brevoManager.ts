@@ -25,7 +25,6 @@ export default class BrevoManager {
     } catch (error) {
       console.error('Error fetching deals:', error)
     }
-    console.log(deals.length)
     return this._convertRawDealsToBrevoDeals(deals)
   }
 
