@@ -1,5 +1,5 @@
 import { ProjectFilterQuery } from '@tee/common'
-import { ProjectType } from '@tee/data'
+import { ProjectEligibility, ProjectType } from '@tee/data'
 import { projects } from '@tee/data/static'
 
 export default class ProjectFeatures {
@@ -15,6 +15,6 @@ export default class ProjectFeatures {
     if (!projectQuery.codeNAF1) {
       return projects
     }
-    return projects.filter((project) => project.sectors.includes(projectQuery.codeNAF1 as string))
+    return projects.filter((project) => ProjectEligibility.isEligible(project, projectQuery.codeNAF1 as string))
   }
 }

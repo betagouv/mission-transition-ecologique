@@ -73,10 +73,6 @@ onServerPrefetch(async () => {
   await new ProjectManager().getProjects()
 })
 
-onNuxtReady(async () => {
-  await new ProjectManager().getProjects()
-})
-
 const title = 'Le catalogue des projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
 
