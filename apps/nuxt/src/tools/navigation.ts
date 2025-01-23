@@ -54,6 +54,10 @@ export default class Navigation {
     return this._route.name
   }
 
+  isHomepage() {
+    return this.isByRouteName(RouteName.Homepage)
+  }
+
   isCatalogPrograms() {
     return this.isByRouteName(RouteName.CatalogPrograms)
   }
@@ -96,6 +100,10 @@ export default class Navigation {
 
   isQuestionnaireThemeCards() {
     return this.isByRoutePath(this._router.resolve({ name: RouteName.Questionnaire, params: { trackId: TrackId.Goals } }).path)
+  }
+
+  isQuestionnaireStep() {
+    return this.isByRouteName([RouteName.Questionnaire]) && !this.isQuestionnaireThemeCards()
   }
 
   isQuestionnaireResult() {

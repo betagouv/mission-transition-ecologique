@@ -67,7 +67,9 @@ export class ProgramManager {
       navigation.isQuestionnaireProjectDetail() ||
       navigation.isCatalogPrograms()
     ) {
-      await this.getDependentCompanyData()
+      await this.getDependentCompanyData(navigation.isCatalogPrograms() ? false : undefined)
+    } else if (navigation.isCatalogProjectDetail()) {
+      await this.getDependentCompanyData(true)
     } else if (navigation.isProgramDetail() && this._useProgram.currentProgram) {
       const currentId = this._useProgram.currentProgram.id
       this._useProgram.reset()

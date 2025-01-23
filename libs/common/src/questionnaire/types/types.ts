@@ -40,6 +40,16 @@ export const SizeToWorkforce: { [key in StructureSize]: number } = {
   [StructureSize.GE]: 600
 }
 
+export const SizeToText: { [key in StructureSize]: { title: string; label: string } } = {
+  [StructureSize.EI]: { title: 'Micro-entrepreneur', label: '‍️🧍Je suis un micro-entrepreneur' },
+  [StructureSize.MICRO]: { title: 'Moins de 10 employés', label: '‍️👫 Moins de 10 employés' },
+  [StructureSize.TPE]: { title: 'Entre 10 et 19 employés', label: '‍️👫👫 Entre 10 et 20 employés' },
+  [StructureSize.PE]: { title: 'Entre 20 et 49 employés', label: '‍️👫👫👫 Entre 20 et 49 employés' },
+  [StructureSize.ME]: { title: 'Entre 50 et 249 employés', label: '‍️👫👭👫👫 Entre 50 et 250 employés' },
+  [StructureSize.ETI]: { title: 'Entre 250 et 499 employés', label: '👫👭👫👫👫 Plus de 250 employés' },
+  [StructureSize.GE]: { title: 'Plus de 500 employés', label: '👫👭👫👫👫👫 Plus de 500 employés' }
+}
+
 export enum LegalCategory {
   EI = '1000'
 }
@@ -62,15 +72,6 @@ export enum MobilityStatus {
   No = 'non',
   Unknown = 'je-ne-sais-pas',
   NoMax = 'non-max'
-}
-
-export enum Sector {
-  Craftsmanship = 'artisanat',
-  Industry = 'industrie',
-  Tourism = 'tourisme',
-  Tertiary = 'tertiaire',
-  Agriculture = 'agriculture',
-  Other = 'autre secteur'
 }
 
 export enum Objective {
@@ -114,8 +115,7 @@ export enum PublicodesKeys {
   hasObjective = 'entreprise . a un objectif ciblé',
   isTargeted = 'entreprise . est ciblée',
   CodeNAF1 = 'entreprise . code NAF niveau 1 . est ',
-  Goal = 'questionnaire . objectif prioritaire . est ',
-  SectorActivity = "entreprise . secteur d'activité . est "
+  Goal = 'questionnaire . objectif prioritaire . est '
 }
 
 export enum FiltersKeys {

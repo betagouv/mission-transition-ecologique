@@ -2649,6 +2649,14 @@
   outline-color: unset;
   outline-style: none;
 }
+.fr-input::placeholder {
+  font-style: normal !important;
+  color: var(--text-default-grey);
+}
+
+.fr-input--empty-text {
+  height: 1.25rem;
+}
 
 @media (min-width: 0) {
   .fr-radius-tl {
@@ -4092,11 +4100,15 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   }
 }
 
+.fr-select-group {
+  margin-bottom: 0 !important;
+}
 .fr-select-group select {
   background-color: #fff;
 }
 
 .fr-select {
+  margin-top: 0 !important;
   background-color: #fff;
 }
 

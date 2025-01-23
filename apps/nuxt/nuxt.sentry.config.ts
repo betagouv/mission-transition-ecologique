@@ -26,15 +26,15 @@ export class NuxtSentryConfig {
   }
 
   static getSentryData(): { domain: string; url: string } | undefined {
-    const dsnComponents = dsnFromString(process.env.VITE_SENTRY_DSN ?? '')
+    const dsnComponents = dsnFromString(Config.SENTRY_DSN ?? '')
     if (dsnComponents === undefined) {
       return undefined
     }
 
-    const { host, path, projectId } = dsnComponents
+    const { host, path, projectId, publicKey } = dsnComponents
     return {
       domain: `https://${host}${path}`,
-      url: `https://${host}${path}/api/${projectId}/security/?sentry_key=${dsnComponents.publicKey}`
+      url: `https://${host}${path}/api/${projectId}/security/?sentry_key=${publicKey}`
     }
   }
 }

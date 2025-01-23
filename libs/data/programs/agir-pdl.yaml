@@ -1,0 +1,72 @@
+titre: Agir Pays de la Loire
+promesse: Financez votre projet de transition écologique dans le secteur du tourisme
+description: "Bénéficiez d’un prêt participatif «\_Agir Pays de la Loire\_». Ce prêt est destiné à accompagner les innovations incluant une démarche de transition écologique, portées par les entreprises du tourisme. Grâce à ce prêt, financez, par exemple, votre isolation thermique, vos équipements d’économies d’eau et d’énergie."
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Pays de la Loire
+url: https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-agir-tourisme
+nature de l'aide: prêt
+montant du prêt: Variable selon projet, à 3,3% TEG
+durée du prêt: De 2 à 10 ans (dont 3 ans maximum de différé)
+objectifs:
+  - description: Vérifiez l'éligibilité de votre projet.
+    liens:
+      - lien: >-
+          https://www.paysdelaloire.fr/sites/default/files/aides/2ae4eace-0470-11ee-baf5-23743e123976/subvention%2Cpret_reglement-dintervention-maj-janvier-2024_2ae4eace_ri.pdf
+        texte: Conditions d'éligibilité et de financement
+  - description: >-
+      Réalisez une étude de faisabilité économique intégrant diagnostic et
+      réflexion stratégique, soit par un cabinet d'étude spécialisé soit par
+      vous-même ou votre comptable.
+  - description: >-
+      Déposez votre dossier sur le site de la Région avec les pièces
+      nécessaires. À ce stade, les investissements pour lesquels vous sollicitez
+      une aide financière ne doivent pas avoir commencé.
+    liens:
+      - lien: >-
+          https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/F_AGIR_TOURISME/depot/simple
+        texte: Déposer un dossier
+      - lien: >-
+          https://www.paysdelaloire.fr/sites/default/files/aides/2ae4eace-0470-11ee-baf5-23743e123976/subvention%2Cpret_liste-des-pieces-a-fournir_2ae4eace_annexe-1.pdf
+        texte: Liste des pièces pour votre dossier AGIR
+  - description: Si votre demande est acceptée, signez le contrat de prêt.
+  - description: Recevez les fonds et commencez votre projet.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Pays de la Loire
+  secteur d'activité:
+    - Secteur touristique
+  nombre d'années d'activité:
+    - Au moins 2 ans d'activité
+  autres critères d'éligibilité:
+    - >-
+      Vous êtes en phase de création ou de développement (extension,
+      modernisation, repositionnement…)
+    - >-
+      Vous relevez d'un des secteurs suivants : hôtellerie, hôtellerie de plein
+      air, sites de visites, tourisme fluvial et nautique, gastronomie
+      d’excellence, centres et villages vacances, autres projets
+      d’investissements touristiques innovants et créateurs d’emplois, tourisme
+      équestre, agritourisme, œnotourisme, services aux cyclotouristes, tourisme
+      de nature et logement des saisonniers des entreprises touristiques (à
+      titre expérimental).
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est L
+  entreprise . a un objectif ciblé:
+    une de ces conditions: []
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Pays de la Loire

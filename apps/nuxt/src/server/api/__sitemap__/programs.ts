@@ -13,11 +13,11 @@ export default defineSitemapEventHandler(async () => {
 
   const urls: SitemapUrlInput[] = []
   for (const programId of programsIds) {
-    const isInclude = activeProgramsIds.includes(programId)
+    const isActive = activeProgramsIds.includes(programId)
     const url = UrlBuilder.params(RoutePath.CatalogProgramDetail, { programId: programId })
     urls.push({
       loc: url,
-      priority: isInclude ? Priority.MidHigh : Priority.Null,
+      priority: isActive ? Priority.MidHigh : Priority.Null,
       changefreq: ChangeFreq.Monthly
     })
   }

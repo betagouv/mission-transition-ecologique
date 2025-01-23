@@ -6,13 +6,12 @@ const routeParamsSchema = z.object({
   query: z.string()
 })
 const queriesSchema = z.object({
-  count: z.number().optional().default(3)
+  count: z.coerce.number().optional().default(3)
 })
 
 export default defineEventHandler(async (event) => {
   const routeParams = await getValidatedRouterParams(event, routeParamsSchema.parse)
   const queries = await getValidatedQuery(event, queriesSchema.parse)
-
   return establishmentCached(event, routeParams.query, queries.count)
 })
 

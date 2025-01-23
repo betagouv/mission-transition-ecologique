@@ -13,9 +13,9 @@
         id="register-modal-content"
         class="fr-container fr-grid-row fr-grid-row--left fr-grid-row--top"
       >
-        <div class="fr-col-12 fr-col-md-7 fr-col-offset-md-2 fr-pb-md-4v fr-pt-8v fr-mb-4v fr-text--yellow">
+        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pb-md-1v fr-pt-7v fr-text--yellow">
           <div>
-            <div class="fr-h1 fr-mb-0 fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
+            <div class="fr-h2 fr-mb-0 fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
             <TeeDsfrButton
               id="close-register-modal"
               size="sm"
@@ -48,14 +48,16 @@ import Navigation from '@/tools/navigation'
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
 import Translation from '@/tools/translation'
-import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType } from '@/types'
+import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType, FilterItemKeys } from '@/types'
 import Breakpoint from '@/tools/breakpoints'
 import { onClickOutside } from '@vueuse/core'
 import { useNavigationStore } from '@/stores/navigation'
-import { CompanyDataStorage, CompanyData } from '@/tools/companyData'
+import { CompanyData } from '@/tools/companyData'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
+import { useProgramStore } from '@/stores/program'
 
 const registerModal = ref(null)
-const registeredData = CompanyDataStorage.getData()
+const registeredData = CompanyData.dataRef
 const company = ref<CompanyDataType[CompanyDataStorageKey.Company]>(registeredData.value[CompanyDataStorageKey.Company])
 const companySize = ref<CompanyDataType[CompanyDataStorageKey.Size]>(registeredData.value[CompanyDataStorageKey.Size])
 const manualRegistration = ref<boolean>(!!(company.value && !('siret' in company.value)))
@@ -95,8 +97,10 @@ const resetSiret = async () => {
   companySize.value = null
   manualRegistration.value = false
   CompanyData.resetData()
+  useProgramStore().programFilters[FilterItemKeys.companyData] = false
   CompanyData.updateRouteFromStorage()
 
+  await UsedTrack.updateQuestionnaireStep()
   await new ProjectManager().update()
   await new ProgramManager().update()
 }

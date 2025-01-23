@@ -18,7 +18,7 @@
     "dev": "nx run-many -t serve",
     "dev:start": "PORT=4242 npm run start",
     "dev:build:start": "npm run build && npm run dev:start",
-    "build": "nx run-many -t build",
+    "build": "export NODE_OPTIONS=--max-old-space-size=4096 && nx run-many -t build",
     "start": "nx run-many -t start --port $PORT",
     "build:start": "npm run build && npm run start",
     "generate:program": "nx run @tee/data:generate-program",
@@ -30,10 +30,11 @@
     "lint:sass": "nx run @tee/nuxt:sass-lint",
     "lint:sass:fix": "nx run @tee/nuxt:sass-lint --fix",
     "type:check": "nx run-many -t type-check --verbose --parallel=false",
-    "type:check:vue": "nx run @tee/web:type-check --verbose",
     "ci": "nx run-many -t ci --verbose --parallel=false",
     "sass:watch": "nx run @tee/nuxt:sass-watch",
-    "e2e": "VITE_DATA_TEST=true PLAYWRIGHT_HTML_OPEN=never nx run @tee/nuxt-e2e:e2e"
+    "e2e": "VITE_DATA_TEST=true nx run @tee/nuxt-e2e:e2e",
+    "e2e-ui": "VITE_DATA_TEST=true nx run @tee/nuxt-e2e:e2e --ui",
+    "cleanup": "nx run @tee/nuxt:cleanup"
   },
   "engines": {
     "node": "20.x",

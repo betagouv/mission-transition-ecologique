@@ -8,7 +8,7 @@
   >
     <TeeDsfrButton
       class="fr-text--yellow fr-text--bold"
-      :label="Translation.t('results.noResultCTA')"
+      :label="Translation.t('results.eligibilityCheckCTA')"
       @click="openModal"
     />
   </TeeDsfrHighlight>

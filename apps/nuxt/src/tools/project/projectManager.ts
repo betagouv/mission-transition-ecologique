@@ -2,7 +2,7 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import ProjectApi from '@/tools/api/projectApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import Navigation from '@/tools/navigation'
-import { type ProjectFilterQuery, ProjectType, Sector } from '@/types'
+import { type ProjectFilterQuery, ProjectType } from '@/types'
 
 export class ProjectManager {
   _useProject = useProjectStore()
@@ -23,10 +23,9 @@ export class ProjectManager {
   }
 
   async getFilteredProjects() {
-    const { codeNAF1, sector, secteur } = useUsedTrackStore().getQuestionnaireData()
+    const { codeNAF1 } = useUsedTrackStore().getQuestionnaireData()
     const filteredData: ProjectFilterQuery = {
-      ...(codeNAF1 && { codeNAF1 }),
-      sector: !codeNAF1 ? sector || (secteur as Sector) : undefined
+      ...(codeNAF1 && { codeNAF1 })
     }
 
     await this.getProjects(filteredData)
@@ -61,7 +60,12 @@ export class ProjectManager {
     // if (navigation.isProjectDetail() && this._useProject.currentProject) {
     //   this.getProjectBySlug(this._useProject.currentProject.slug)
     // }
-    if (navigation.isQuestionnaireResult() || navigation.isProgramDetail() || navigation.isQuestionnaireThemeCards()) {
+    if (
+      navigation.isQuestionnaireResult() ||
+      navigation.isProgramDetail() ||
+      navigation.isQuestionnaireThemeCards() ||
+      navigation.isHomepage()
+    ) {
       await this.getFilteredProjects()
     } else if (navigation.isCatalogProjects()) {
       await this.getProjects()

@@ -1,0 +1,65 @@
+titre: CCI Business Optimizer
+promesse: Découvrez les éco-gestes à réaliser dans votre établissement de tourisme
+description: >-
+  CCI Business Optimizer est un site dédié aux entreprises du secteur du
+  tourisme. Son objectif est de proposer des idées de bonnes pratiques
+  environnementales ainsi que des suggestions pour améliorer la performance de
+  vos équipements. Le site fournit également une estimation moyenne des
+  économies réalisables en eau et en énergie, ainsi qu'une évaluation des
+  bénéfices financiers associés à leur mise en œuvre.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: CCI
+url: https://www.ccibusinessoptimizer.fr/
+nature de l'aide: formation
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 10 minutes
+activable en autonomie: oui
+objectifs:
+  - description: Connectez-vous au service "CCI Business Optimizer"
+    liens:
+      - lien: https://www.ccibusinessoptimizer.fr/
+        texte: ccibusinessoptimizer.fr
+  - description: >-
+      Découvrez les économies que vous pouvez réaliser grâce à des éco-gestes à
+      mettre en place pièce par pièce dans votre établissement.
+  - description: >-
+      Simuler les économies potentielles liées à la mise en place des ces
+      éco-gestes.
+  - description: >-
+      Obteniez un bilan d’actions à mener et le contact d’un conseiller CCI pour
+      aller plus loin.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 250 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Hôtellerie & restauration
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 249
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception

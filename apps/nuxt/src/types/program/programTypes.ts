@@ -18,6 +18,7 @@ export interface ProgramData {
   'description longue'?: string
   'début de validité'?: string
   'fin de validité'?: string
+  'aide temporairement indisponible'?: string
   illustration: string
   objectifs: ProgramObjective[]
   'opérateur de contact': Operators

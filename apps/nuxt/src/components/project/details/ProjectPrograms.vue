@@ -63,6 +63,7 @@
             v-if="project"
             :form-container-ref="teeProjectFormContainer"
             :form-type="OpportunityType.Project"
+            :title="Translation.t('project.form.title')"
             :phone-callback="Translation.t('form.phoneContact', { operator: ' ' })"
             :form="Opportunity.getProjectFormFields(project)"
             :data-id="project.id.toString()"
@@ -94,11 +95,11 @@ const { programs, hasError } = storeToRefs(useProgramStore())
 const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormContainer')
 
 onServerPrefetch(async () => {
-  await new ProgramManager().getFiltered()
+  await new ProgramManager().getDependentCompanyData()
 })
 
 onNuxtReady(async () => {
-  await new ProgramManager().getFiltered()
+  await new ProgramManager().getDependentCompanyData(true)
 })
 
 const hasRegisteredData = CompanyData.isDataFull()

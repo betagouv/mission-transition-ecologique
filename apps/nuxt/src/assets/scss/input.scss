@@ -8,11 +8,6 @@
 }
 
 .fr-input {
-  outline-offset: unset;
-  outline-width: unset;
-  outline-color: unset;
-  outline-style: none;
-
   &--white {
     background-color: setting.$white;
   }
@@ -23,4 +18,13 @@
     outline-color: unset;
     outline-style: none;
   }
+
+  &::placeholder {
+    font-style: normal !important;
+    color: setting.$text-grey;
+  }
+}
+
+.fr-input--empty-text {
+  height: 1.25rem;
 }

@@ -16,14 +16,14 @@
     v-for="detailKey in Object.keys(profile).filter((detailK) => profile[detailK].if !== false)"
     :key="profile[detailKey].title"
     v-model="profile[detailKey]"
-    class="fr-pb-4v fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
+    class="fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
     :manual="manual"
     :show-error="showError"
     :detail-infos="profile[detailKey]"
     @update:model-value="updateValue"
     @update:siret="openSiretStep"
   />
-  <div class="fr-col-sm-8 fr-pt-4v fr-mt-4v fr-col-md-7 fr-col-offset-md-2 fr-col-12">
+  <div class="fr-col-sm-8 fr-pt-4v fr-col-md-7 fr-col-offset-md-2 fr-col-12">
     <TeeDsfrButton
       :class="Breakpoint.isMobile() ? 'fr-btn-fullwidth' : ''"
       class="fr-bg--yellow fr-text--blue-france fr-col-justify--center"
@@ -35,11 +35,12 @@
 <script setup lang="ts">
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
-import { RegisterDetailType, RegisterDetails, Sector, CompanyDataStorageKey, CompanyDataType, EstablishmentFront } from '@/types'
+import { RegisterDetailType, RegisterDetails, CompanyDataStorageKey, CompanyDataType, Region, EstablishmentFront, NAF1 } from '@/types'
 import Analytics from '@/tools/analytic/analytics'
 import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
 import { CompanyData } from '@/tools/companyData'
+import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -59,23 +60,31 @@ const profile = ref<RegisterDetails>({
     icon: 'fr-icon-account-pin-circle-line',
     value: props.company && 'siret' in props.company ? props.company.siret : undefined,
     type: RegisterDetailType.Siret,
-    tagLabel: props.company?.denomination
+    tagLabel: props.company?.denomination || 'Entreprise'
   },
   localisation: {
     title: 'Localisation',
     icon: 'fr-icon-map-pin-2-line',
-    description: 'Quelle est votre région ?',
-    value: props.company?.region,
+    description: 'Quelle est votre ville ?',
+    value: props.company
+      ? {
+          ville: props.company.ville,
+          region: props.company.region as Region,
+          codePostal: props.company.codePostal
+        }
+      : undefined,
     type: RegisterDetailType.Localisation,
-    tagLabel: props.manual && props.company && 'siret' in props.company ? `${props.company.codePostal} ${props.company.ville}` : ''
+    tagLabel: props.company && 'siret' in props.company ? `${props.company.codePostal} ${props.company.ville}` : ''
   },
   activity: {
     title: 'Activité',
     description: "Quel est votre secteur d'activité ?",
     icon: 'fr-icon-briefcase-line',
-    value: props.company?.secteur as Sector,
+    value: props.company
+      ? { secteur: props.company.secteur, codeNAF: props.company.codeNAF, codeNAF1: props.company.codeNAF1 as NAF1 }
+      : undefined,
     type: RegisterDetailType.Activity,
-    tagLabel: props.company && props.company && 'siret' in props.company ? `${props.company.secteur} (${props.company.codeNAF})` : ''
+    tagLabel: props.company ? `${props.company.secteur} (${props.company.codeNAF})` : ''
   },
   size: {
     title: 'Effectif',
@@ -86,26 +95,18 @@ const profile = ref<RegisterDetails>({
   }
 })
 const canBeSaved = computed(() => {
-  return props.manual ? profile.value.activity.value && profile.value.localisation.value && profile.value.size : profile.value.size.value
+  return profile.value.activity.value && profile.value.localisation.value && profile.value.size.value
 })
 
 const saveProfile = async () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
-    let company = props.company
-    if (props.manual) {
-      company = {
-        region: profile.value.localisation.value,
-        secteur: profile.value.activity.value,
-        denomination: `Entreprise : ${profile.value.activity.value} - ${profile.value.localisation.value}`,
-        structure_size: profile.value.size.value
-      } as CompanyDataType[CompanyDataStorageKey.Company]
-    } else if (company) {
-      company.structure_size = profile.value.size.value
-    }
+    const companyData = props.manual
+      ? CompanyData.getManualCompanyData(profile.value)
+      : CompanyData.getSiretBasedCompanyData(props.company, profile.value)
 
     CompanyData.saveAndSetUsedTrackStore({
-      [CompanyDataStorageKey.Company]: company,
+      [CompanyDataStorageKey.Company]: companyData,
       [CompanyDataStorageKey.Size]: profile.value.size.value
     })
     CompanyData.updateRouteFromStorage()
@@ -120,6 +121,7 @@ const saveProfile = async () => {
     }
 
     Navigation.toggleRegisterModal(false)
+    await UsedTrack.updateQuestionnaireStep()
     await new ProjectManager().update()
     await new ProgramManager().update()
   } else {

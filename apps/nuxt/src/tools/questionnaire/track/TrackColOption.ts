@@ -3,6 +3,8 @@ import { type ColsOptions, TrackComponent } from '@/types'
 export default class TrackColOption {
   static default: ColsOptions = {
     [TrackComponent.Buttons]: 12,
+    [TrackComponent.Activity]: 12,
+    [TrackComponent.CitySearch]: 12,
     [TrackComponent.SimpleButtons]: 10,
     [TrackComponent.Input]: 12,
     [TrackComponent.Siret]: 12,
@@ -15,6 +17,8 @@ export default class TrackColOption {
 
   static large: ColsOptions = {
     [TrackComponent.Buttons]: 12,
+    [TrackComponent.CitySearch]: 12,
+    [TrackComponent.Activity]: 12,
     [TrackComponent.SimpleButtons]: 8,
     [TrackComponent.Input]: 12,
     [TrackComponent.Siret]: 12,
