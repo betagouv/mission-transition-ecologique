@@ -2,7 +2,7 @@
   <div>
     <Script
       id="transition-ecologique-entreprise"
-      :src="`${domain}/scripts/iframe.js`"
+      :src="Iframe.getScript()"
       data-type="projet"
       data-id="diag-360"
     ></Script>
@@ -10,9 +10,9 @@
 </template>
 
 <script setup lang="ts">
+import { Iframe } from '@/tools/iframe/iframe.js'
+
 definePageMeta({
   layout: 'iframe'
 })
-
-const domain = window.location.origin
 </script>

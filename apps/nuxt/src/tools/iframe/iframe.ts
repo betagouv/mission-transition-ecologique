@@ -1,8 +1,9 @@
 export class Iframe {
+  private static readonly _iframeScriptPath = '/scripts/iframe.js'
+
   static getScript() {
-    const deployUrl = useRuntimeConfig().public.deployUrl
-    if (deployUrl) {
-      return deployUrl + '/scripts/iframe.js'
+    if (import.meta.client) {
+      return window.location.origin + this._iframeScriptPath
     }
   }
 

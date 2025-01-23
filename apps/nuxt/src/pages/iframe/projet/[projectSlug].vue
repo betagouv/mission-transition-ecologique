@@ -14,7 +14,7 @@ const href = router.resolve({ name: RouteName.CatalogProjectDetail, params: { pr
 </script>
 
 <template>
-  <div class="fr-container--fluid">
+  <div class="fr-container fr-px-0">
     <div class="fr-grid-row">
       <div class="fr-col-12">
         <div class="fr-card fr-enlarge-link fr-card--horizontal fr-card--grey fr-p-4v">
@@ -25,8 +25,9 @@ const href = router.resolve({ name: RouteName.CatalogProjectDetail, params: { pr
                   :href="href"
                   target="_blank"
                   rel="noopener external"
-                  >Accédez aux aides publiques pour votre projet de {{ title }}"</a
                 >
+                  Accédez aux aides publiques pour votre projet de {{ title }}
+                </a>
               </h4>
               <p class="fr-card__desc">
                 Le service public Transition écologique des entreprises vous permet de trouver les aides, accompagnements et ressources
@@ -40,10 +41,9 @@ const href = router.resolve({ name: RouteName.CatalogProjectDetail, params: { pr
             <div class="fr-card__img">
               <img
                 class="fr-responsive-img"
-                :src="`http://localhost:4242` + currentProject?.image"
+                :src="currentProject?.image"
                 :alt="`image / ${currentProject?.title}`"
               />
-              <!-- L’alternative de l’image (attribut alt) doit toujours être présente, sa valeur peut-être vide (image n’apportant pas de sens supplémentaire au contexte) ou non (porteuse de texte ou apportant du sens) selon votre contexte -->
             </div>
           </div>
         </div>

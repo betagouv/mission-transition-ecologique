@@ -6,10 +6,6 @@ import ConfigCommon from '../../../libs/common/src/config/configCommon'
 export default class Config extends ConfigCommon {
   protected static override _sentryDsn = process.env['SENTRY_CLIENT_DSN']
 
-  static get deployUrl() {
-    return process.env['VITE_DEPLOY_URL']
-  }
-
   static get contactEmail() {
     return process.env['VITE_CONTACT_EMAIL'] ?? 'contact@mission-transition-ecologique.beta.gouv.fr'
   }

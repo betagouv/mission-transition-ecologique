@@ -131,7 +131,6 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      deployUrl: Config.deployUrl,
       environment: Config.SERVER_ENVIRONMENT,
       sentry: {
         dsn: Config.SENTRY_DSN,
