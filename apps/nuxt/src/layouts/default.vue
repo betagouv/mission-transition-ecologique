@@ -16,6 +16,8 @@ onBeforeMount(() => {
 // cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
 navigationStore.setRouter(router)
 navigationStore.setRoute(route)
+
+useSeoMeta(MetaSeo.default())
 </script>
 
 <template>
