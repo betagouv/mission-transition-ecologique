@@ -1,25 +1,28 @@
 import axios from 'axios'
-import { posthog, PostHog } from 'posthog-js'
-import { PosthogEvent } from './types'
+import { PostHog } from 'posthog-node'
+import { EventCreation, PosthogEvent } from './types'
 import { DealStage } from '../brevo/types'
-import fs from 'fs'
 
 export default class PosthogManager {
   private projectId: string
   private apiKey: string
-  private _posthogCaptureHandler?: PostHog
+  private projectApiKey: string
+  private _posthogClient?: PostHog
+  private _eventsToCreate: EventCreation[]
 
   constructor() {
     this.projectId = process.env['POSTHOG_PROJECT_ID'] || ''
     this.apiKey = process.env['POSTHOG_BACKEND_API_KEY'] || ''
+    this.projectApiKey = process.env['POSTHOG_BACKEND_PROJECT_API_KEY'] || ''
+    this._eventsToCreate = []
 
-    if (!this.projectId || !this.apiKey) {
+    if (!this.projectId || !this.projectApiKey || !this.apiKey) {
       throw new Error('Missing PostHog configuration. Ensure POSTHOG_PROJECT_ID and POSTHOG_BACKEND_API_KEY are set in the environment.')
     }
 
     try {
-      this._posthogCaptureHandler = posthog.init(this.apiKey, {
-        api_host: 'https://eu.i.posthog.com'
+      this._posthogClient = new PostHog(this.projectApiKey, {
+        host: 'https://eu.i.posthog.com'
       })
     } catch (error) {
       console.log(error)
@@ -27,21 +30,6 @@ export default class PosthogManager {
   }
 
   public async getFormEvents(): Promise<PosthogEvent[]> {
-    // DEV CODE
-    const filePath = 'formEvents.log'
-    if (fs.existsSync(filePath)) {
-      try {
-        console.log('Reading form events from local file...')
-        const filedata = fs.readFileSync(filePath, 'utf-8')
-        const data = JSON.parse(filedata) as PosthogEvent[]
-        return data
-      } catch (error) {
-        console.error('Error reading deals from file:', error)
-        throw error // Handle or re-throw error if necessary
-      }
-    }
-    // END DEV CODE
-
     const eventTypes = [
       'send_program_form',
       'send_project_form',
@@ -49,33 +37,14 @@ export default class PosthogManager {
       'send_project_form_catalog',
       'send_customProject_form'
     ]
-    const temp = await this.getEvents(eventTypes)
-    fs.writeFileSync(filePath, JSON.stringify(temp, null, 2), 'utf-8') // TODO DEV CODE TO DELETE
-    return temp
+    return await this.getEvents(eventTypes)
   }
 
   public async getStatusEvent(): Promise<PosthogEvent[]> {
-    // DEV CODE
-    const filePath = 'statusEvents.log'
-    if (fs.existsSync(filePath)) {
-      try {
-        console.log('Reading status events from local file...')
-        const filedata = fs.readFileSync(filePath, 'utf-8')
-        const data = JSON.parse(filedata) as PosthogEvent[]
-        return data
-      } catch (error) {
-        console.error('Error reading deals from file:', error)
-        throw error // Handle or re-throw error if necessary
-      }
-    }
-    // END DEV CODE
-
     const dealStageKeys = Object.keys(DealStage) as (keyof typeof DealStage)[]
     const eventTypes = dealStageKeys.map((key) => `brevo_status_set_to_${key}`)
 
-    const temp = await this.getEvents(eventTypes)
-    fs.writeFileSync('statusEvents.log', JSON.stringify(temp, null, 2), 'utf-8') // TODO DEV CODE TO DELETE
-    return temp
+    return await this.getEvents(eventTypes)
   }
 
   private _convertRawEventsToPosthogEvents(event: string[]): PosthogEvent {
@@ -94,8 +63,9 @@ export default class PosthogManager {
       eventId: event[0],
       eventName: event[1],
       eventDate: event[3],
-      personId: event[4],
+      distinctId: event[4],
       sessionId: event[7],
+      personId: event[9],
       linkedEventId: linkedEventId,
       opportunityId: opportunityId
     }
@@ -132,11 +102,34 @@ export default class PosthogManager {
     return []
   }
 
-  public createLinkedEvent(eventName: string, linkedEventId: string): void {
-    if (this._posthogCaptureHandler) {
-      this._posthogCaptureHandler.capture(eventName, {
-        linked_event_id: linkedEventId
-      })
+  public addToEventsToCreate(eventName: string, linkedEventId: string, personId: string): void {
+    this._eventsToCreate.push({
+      linkedEventId,
+      personId,
+      eventName
+    })
+  }
+
+  public async createEvents() {
+    if (!this._posthogClient) {
+      throw new Error('PostHog client is not initialized')
+    }
+
+    try {
+      for (const event of this._eventsToCreate) {
+        this._posthogClient.capture({
+          distinctId: event.personId,
+          event: event.eventName,
+          properties: {
+            linkedEventId: event.linkedEventId
+          }
+        })
+      }
+      this._eventsToCreate = []
+    } catch (error) {
+      console.error('Failed to send events:', error)
+    } finally {
+      await this._posthogClient.shutdown()
     }
   }
 }

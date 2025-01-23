@@ -20,8 +20,7 @@ export class PosthogUpdater {
 
   public async updatePosthogData(): Promise<string> {
     const timeDifference = (new Date().getTime() - this.lastUpdateTime.getTime()) / (1000 * 60)
-    if (timeDifference >= 2) {
-      // TODO 2minutes should be 60minute when in prod.
+    if (timeDifference >= 60) {
       this.lastUpdateTime = new Date()
       return await this._performUpdate()
     } else {
@@ -31,35 +30,27 @@ export class PosthogUpdater {
   }
 
   private async _performUpdate(): Promise<string> {
-    const posthogFormEvents = await new PosthogManager().getFormEvents()
+    const posthogManager = new PosthogManager()
+    const posthogFormEvents = await posthogManager.getFormEvents()
     const deals = await new BrevoManager().getDeals()
-    const posthogStatusEvents: PosthogEvent[] = [] // await new PosthogManager().getStatusEvent()
-
-    console.log('All data properly loaded')
-
-    let skipCount = 0
+    const posthogStatusEvents = await posthogManager.getStatusEvent()
 
     for (const formEvent of posthogFormEvents) {
       const eventId = formEvent.eventId
       if (!eventId) {
-        console.log(`Skipping an event poorly defined (no eventId)`)
         continue
       }
       const matchingDeal = this._findDealMatch(formEvent, deals)
 
       if (!matchingDeal) {
-        console.log(`Skipping event ${eventId}: Expected 1 matching deal, found 0 or more than 1 possible match`)
-        skipCount += 1
         continue
       }
       const currentDealStatus = matchingDeal.status
 
       const linkedStatusEvents = posthogStatusEvents.filter((statusEvent) => statusEvent.linkedEventId === eventId)
-      await this._handleStatusUpdate(currentDealStatus, linkedStatusEvents, eventId)
+      this._createStatusUpdateEvents(posthogManager, currentDealStatus, linkedStatusEvents, eventId, formEvent.personId || 'null')
     }
-    console.log('Recap')
-    console.log("nombre d'events : ", posthogFormEvents.length)
-    console.log('nombre de skip : ', skipCount)
+    await posthogManager.createEvents()
     return 'sucessfull Update'
   }
 
@@ -91,7 +82,13 @@ export class PosthogUpdater {
     return undefined
   }
 
-  private async _handleStatusUpdate(initialStatus: DealStage, linkedStatusEvents: PosthogEvent[], eventId: string): Promise<void> {
+  private _createStatusUpdateEvents(
+    posthogManager: PosthogManager,
+    initialStatus: DealStage,
+    linkedStatusEvents: PosthogEvent[],
+    eventId: string,
+    personId: string
+  ): void {
     const dealDependencyMap: Record<DealStage, DealStage | null> = {
       [DealStage.Gagnee]: DealStage.AideProposee,
       [DealStage.AideProposee]: DealStage.Transmise,
@@ -107,9 +104,7 @@ export class PosthogUpdater {
       const existingEvent = linkedStatusEvents.find((e) => e.eventName === eventName)
 
       if (!existingEvent) {
-        console.log(`Creating event: ${eventName} for eventId: ${eventId}`)
-        // await new PosthogManager().createLinkedEvent(eventName, eventId);
-        // await new Promise((resolve) => setTimeout(resolve, 100))
+        posthogManager.addToEventsToCreate(eventName, eventId, personId)
       }
       currentStatus = dealDependencyMap[currentStatus]
     }

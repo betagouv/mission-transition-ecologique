@@ -3,7 +3,14 @@ export type PosthogEvent = {
   eventName?: string
   eventDate?: string
   personId?: string
+  distinctId?: string
   sessionId?: string
   linkedEventId?: string
   opportunityId?: string
+}
+
+export type EventCreation = {
+  linkedEventId: string
+  personId: string
+  eventName: string
 }

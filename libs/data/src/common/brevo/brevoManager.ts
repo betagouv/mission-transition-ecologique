@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Deal, DealsApi, DealsApiApiKeys } from '@getbrevo/brevo'
-import fs from 'fs'
 import { BrevoDeal, DealStageIdToStage, RawBrevoDealAttributes } from './types'
 
 export default class BrevoManager {
@@ -16,34 +15,17 @@ export default class BrevoManager {
    * @returns A list of deals.
    */
   public async getDeals(): Promise<BrevoDeal[]> {
-    // DEV CODE
-    const filePath = 'deals.log'
-    if (fs.existsSync(filePath)) {
-      try {
-        console.log('Reading deals from local file...')
-        const data = fs.readFileSync(filePath, 'utf-8')
-        const deals = JSON.parse(data) as Deal[]
-        return this._convertRawDealsToBrevoDeals(deals)
-      } catch (error) {
-        console.error('Error reading deals from file:', error)
-        throw error // Handle or re-throw error if necessary
-      }
-    }
-    // END DEV CODE
     let deals: Deal[] = []
-    const limit = 100000
-
     try {
+      const limit = 3000
       const response = await this._dealsApi.crmDealsGet(undefined, undefined, undefined, undefined, limit)
       if (response.body.items) {
         deals = response.body.items
       }
-      console.log(deals.length)
-      fs.writeFileSync(filePath, JSON.stringify(deals, null, 2), 'utf-8') // TODO DEV CODE TO DELETE
     } catch (error) {
       console.error('Error fetching deals:', error)
     }
-
+    console.log(deals.length)
     return this._convertRawDealsToBrevoDeals(deals)
   }
 
@@ -57,7 +39,6 @@ export default class BrevoManager {
 
         const status = DealStageIdToStage[dealStageId]
         if (!status) {
-          console.log(`Invalid dealStageId: ${dealStageId}`)
           return {}
         }
 
