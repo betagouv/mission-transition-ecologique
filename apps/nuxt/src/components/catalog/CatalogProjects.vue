@@ -79,12 +79,12 @@ onServerPrefetch(async () => {
   await new ProjectManager().getProjects()
 })
 
+const hasFullRegisteredData = ref(false)
+
 onNuxtReady(async () => {
   hasFullRegisteredData.value = CompanyData.isDataFull().value
-  await new ProjectManager().getProjects()
+  await new ProjectManager().getFilteredProjects()
 })
-
-const hasFullRegisteredData = ref(false)
 
 const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'

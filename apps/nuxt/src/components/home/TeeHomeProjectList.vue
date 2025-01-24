@@ -1,6 +1,6 @@
 <template>
   <div class="fr-px-6v">
-    <ThemeFiltersAndCard />
+    <ThemeFiltersAndCard :has-error="hasError" />
     <SimpleProjectList :project-list="projectList" />
     <TeeSpinner
       v-if="hasSpinner"
