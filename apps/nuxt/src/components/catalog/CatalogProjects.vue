@@ -21,10 +21,7 @@
       </div>
       <div
         class="fr-col-12 fr-col-justify--center fr-pr-md-2v"
-        :class="{
-          'fr-col-md-10': hasFullRegisteredData,
-          'fr-col-md-12': !hasFullRegisteredData
-        }"
+        :class="hasFullRegisteredData ? 'fr-col-md-10' : 'fr-col-md-12'"
       >
         <div
           v-if="hasFilteredProjects"
@@ -82,6 +79,12 @@ onServerPrefetch(async () => {
   await new ProjectManager().getProjects()
 })
 
+const hasFullRegisteredData = ref(false)
+
+onNuxtReady(() => {
+  hasFullRegisteredData.value = CompanyData.isDataFull().value
+})
+
 const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
 
@@ -92,8 +95,6 @@ const sortedProjects = ProjectSorter.sort(filteredProjects)
 const projectList = computed(() => {
   return props.showLimit !== undefined ? sortedProjects.value.slice(0, props.showLimit) : sortedProjects.value
 })
-
-const hasFullRegisteredData = CompanyData.isDataFull()
 
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0
