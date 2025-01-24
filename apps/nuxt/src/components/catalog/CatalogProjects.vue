@@ -40,7 +40,7 @@
             >
               <ProjectModalFilter />
             </div>
-            <SimpleProjectList :project-list="projectList" />
+            <SimpleProjectList :project-list="sortedProjects" />
           </div>
         </div>
       </div>
@@ -79,11 +79,12 @@ onServerPrefetch(async () => {
   await new ProjectManager().getProjects()
 })
 
-const hasFullRegisteredData = ref(false)
-
-onNuxtReady(() => {
+onNuxtReady(async () => {
   hasFullRegisteredData.value = CompanyData.isDataFull().value
+  await new ProjectManager().getProjects()
 })
+
+const hasFullRegisteredData = ref(false)
 
 const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
@@ -92,9 +93,6 @@ const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
 const sortedProjects = ProjectSorter.sort(filteredProjects)
-const projectList = computed(() => {
-  return props.showLimit !== undefined ? sortedProjects.value.slice(0, props.showLimit) : sortedProjects.value
-})
 
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0

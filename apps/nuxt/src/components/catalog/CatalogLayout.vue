@@ -1,13 +1,17 @@
 <template>
   <TeeDsfrBreadcrumb />
-  <CatalogBanner>
-    <template #title> {{ title }}</template>
-    <template #description> {{ description }}</template>
-  </CatalogBanner>
-
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+        <div
+          class="fr-col-12 fr-mt-3v"
+          :class="{
+            'fr-col-offset-md-1 fr-col-offset-lg-2 fr-col-md-10 fr-col-justify--left': !hasError,
+            'fr-col-lg-12 fr-col-justify--center': hasError
+          }"
+        >
+          <h1 class="fr-text--blue-france">{{ title }}</h1>
+        </div>
         <div
           class="fr-col-12 fr-mt-3v"
           :class="{
@@ -44,7 +48,7 @@
           <slot name="catalog-content" />
 
           <TeeSpinner
-            v-if="hasSpinner"
+            v-if="true"
             class="fr-mt-16w"
           />
           <TeeListNoResults
@@ -68,7 +72,6 @@ import { Theme } from '@/tools/theme'
 import { useFiltersStore } from '@/stores/filters'
 
 const filtersStore = useFiltersStore()
-const navigationStore = useNavigationStore()
 
 export interface CatalogProps {
   title: string
@@ -86,9 +89,7 @@ const theme = Theme.getThemeFromSelectedTheme()
 
 const hasError = ref(props.hasError)
 
-const hasSpinner = computed(() => {
-  return navigationStore.hasSpinner
-})
+const { hasSpinner } = storeToRefs(useNavigationStore())
 
 const hasThemeCard = computed(() => {
   return filtersStore.hasThemeTypeSelected() && !hasSpinner.value
