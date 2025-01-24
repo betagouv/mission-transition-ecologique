@@ -1,12 +1,10 @@
-@use '@gouvfr/dsfr/module/media-query';
-@use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
 @use 'setting';
 @use 'tool';
 
-@each $breakpoint, $value in breakpoints.$values {
+@each $breakpoint, $value in setting.$breakpoints-values {
   $modifier: tool.modifierByBreakpoint($breakpoint);
 
-  @include media-query.respond-from($breakpoint) {
+  @include tool.media-query-respond-from($breakpoint) {
     .fr-col {
       @each $align-name, $align in setting.$vertical-flex-aligns {
         &-content#{$modifier}--#{$align-name} {
