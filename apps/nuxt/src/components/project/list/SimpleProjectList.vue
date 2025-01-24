@@ -24,3 +24,9 @@ interface Props {
 
 defineProps<Props>()
 </script>
+
+<style lang="scss" scoped>
+.project-cards-container {
+  padding: 0.2rem;
+}
+</style>

@@ -108,8 +108,3 @@ onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
 })
 </script>
-<style lang="scss" scoped>
-.project-cards-container {
-  padding: 0.2rem;
-}
-</style>
