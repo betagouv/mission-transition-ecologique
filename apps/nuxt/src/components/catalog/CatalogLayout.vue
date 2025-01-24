@@ -41,7 +41,10 @@
             'fr-grid-row--center': !hasError || !hasSideBar
           }"
         >
-          <slot name="catalog-content" />
+          <slot
+            v-if="!hasSpinner && !hasError"
+            name="catalog-content"
+          />
 
           <TeeSpinner
             v-if="hasSpinner"

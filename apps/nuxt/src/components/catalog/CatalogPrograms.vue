@@ -8,7 +8,6 @@
   >
     <template #catalog-content>
       <div
-        v-if="!hasSpinner && !hasError"
         class="fr-col-2 fr-col-hidden fr-col-unhidden-lg"
       >
         <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
@@ -24,7 +23,6 @@
         }"
       >
         <ProgramList
-          v-if="!hasError"
           :filtered-programs="filteredPrograms"
         />
       </div>
