@@ -45,20 +45,21 @@
             'fr-grid-row--center': !hasError || !hasSideBar
           }"
         >
+          <div
+            v-if="hasSpinner"
+            class="fr-col-12 fr-col-justify--center"
+          >
+            <TeeSpinner class="fr-mt-16w" />
+          </div>
+          <TeeListNoResults
+            v-else-if="showNoResultsComponent"
+            :has-error="hasError && !hasSpinner"
+            message="Aucune idée d'action n'a pu être identifiée avec les critères choisis..."
+            :count-items="countItems"
+          />
           <slot
             v-if="!hasSpinner && !hasError"
             name="catalog-content"
-          />
-
-          <TeeSpinner
-            v-if="true"
-            class="fr-mt-16w"
-          />
-          <TeeListNoResults
-            v-else-if="showNoResultsComponent"
-            :has-error="hasError"
-            message="Aucune idée d'action n'a pu être identifiée avec les critères choisis..."
-            :count-items="countItems"
           />
         </div>
       </div>

@@ -7,9 +7,7 @@
     :has-side-bar="true"
   >
     <template #catalog-content>
-      <div
-        class="fr-col-2 fr-col-hidden fr-col-unhidden-lg"
-      >
+      <div class="fr-col-2 fr-col-hidden fr-col-unhidden-lg">
         <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
           <div class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w">Filtres</div>
           <ProgramFiltersAccordion />
@@ -22,9 +20,7 @@
           'fr-col-md-12': hasError
         }"
       >
-        <ProgramList
-          :filtered-programs="filteredPrograms"
-        />
+        <ProgramList :filtered-programs="filteredPrograms" />
       </div>
     </template>
   </CatalogLayout>
@@ -35,11 +31,9 @@ import { useProgramStore } from '@/stores/program'
 import { ProgramManager } from '@/tools/program/programManager'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
-import { useNavigationStore } from '@/stores/navigation'
 
 const programStore = useProgramStore()
 
-const { hasSpinner } = storeToRefs(useNavigationStore())
 const { programs, hasError } = storeToRefs(programStore)
 
 onServerPrefetch(async () => {
