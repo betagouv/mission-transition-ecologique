@@ -2,6 +2,7 @@
   <header
     role="banner"
     class="fr-header"
+    :class="navigation.isHomepage() ? 'fr-sticky' : ''"
   >
     <div class="fr-header__body">
       <div class="fr-container width-inherit">
@@ -11,7 +12,7 @@
               <div class="fr-header__logo">
                 <RouterLink
                   :to="homeTo"
-                  :title="`${homeLabel} - ${serviceTitle}`"
+                  :title
                 >
                   <DsfrLogo
                     :logo-text="logoText"
@@ -56,7 +57,7 @@
                   class="fr-btn--menu fr-btn"
                   :data-fr-opened="showMenu"
                   aria-controls="header-navigation"
-                  aria-haspopup="menu"
+                  aria-haspopup="dialog"
                   :aria-label="menuLabel"
                   :title="menuLabel"
                   data-testid="open-menu-btn"
@@ -70,7 +71,7 @@
             >
               <RouterLink
                 :to="homeTo"
-                :title="`${homeLabel} - ${serviceTitle}`"
+                :title
                 v-bind="$attrs"
               >
                 <p class="fr-header__service-title">
@@ -104,15 +105,17 @@
               v-if="quickLinks?.length || languageSelector"
               class="fr-header__tools-links"
             >
+              <slot name="before-quick-links" />
               <TeeDsfrHeaderMenuLinks
                 v-if="!menuOpened"
                 :links="quickLinks"
                 :nav-aria-label="quickLinksAriaLabel"
               />
+              <slot name="after-quick-links" />
               <template v-if="languageSelector">
                 <DsfrLanguageSelector
                   v-bind="languageSelector"
-                  @select="emit('language-select', $event)"
+                  @select="emit('languageSelect', $event)"
                 />
               </template>
             </div>
@@ -124,7 +127,7 @@
               class="fr-header__search fr-modal"
             >
               <DsfrSearchBar
-                :searchbar-id="searchbarId"
+                :id="searchbarId"
                 :label="searchLabel"
                 :model-value="modelValue"
                 :placeholder="placeholder"
@@ -161,6 +164,7 @@
                   @select="languageSelector.currentLanguage = $event.codeIso"
                 />
               </template>
+              <slot name="before-quick-links" />
               <nav role="navigation">
                 <TeeDsfrHeaderMenuLinks
                   v-if="menuOpened"
@@ -170,6 +174,7 @@
                   @link-click="onQuickLinkClick"
                 />
               </nav>
+              <slot name="after-quick-links" />
             </div>
 
             <template v-if="modalOpened">
@@ -213,9 +218,9 @@
 <script lang="ts" setup>
 import { computed, onMounted, onUnmounted, ref, toRef, useSlots } from 'vue'
 import { DsfrLanguageSelector, DsfrLogo, DsfrSearchBar, registerNavigationLinkKey } from '@gouvminint/vue-dsfr'
-
 import type { DsfrLanguageSelectorElement } from '@gouvminint/vue-dsfr/types/components/DsfrLanguageSelector/DsfrLanguageSelector.vue'
 import type { DsfrHeaderProps } from '@gouvminint/vue-dsfr/types/components/DsfrHeader/DsfrHeader.vue'
+import Navigation from '@/tools/navigation'
 
 const props = withDefaults(defineProps<DsfrHeaderProps>(), {
   searchbarId: 'searchbar-header',
@@ -234,7 +239,7 @@ const props = withDefaults(defineProps<DsfrHeaderProps>(), {
   quickLinksAriaLabel: 'Menu secondaire',
   showSearchLabel: 'Recherche',
   menuLabel: 'Menu',
-  menuModalLabel: 'Menu modal',
+  menuModalLabel: 'Menu',
   closeMenuModalLabel: 'Fermer',
   homeLabel: 'Accueil'
 })
@@ -242,10 +247,10 @@ const props = withDefaults(defineProps<DsfrHeaderProps>(), {
 const emit = defineEmits<{
   (e: 'update:modelValue', payload: string): void
   (e: 'search', payload: string): void
-  (e: 'language-select', payload: DsfrLanguageSelectorElement): void
-  (e: 'openRegister'): void
+  (e: 'languageSelect', payload: DsfrLanguageSelectorElement): void
 }>()
 
+const navigation = new Navigation()
 const languageSelector = toRef(props, 'languageSelector')
 
 const menuOpened = ref(false)
@@ -275,7 +280,10 @@ const showMenu = () => {
   modalOpened.value = true
   menuOpened.value = true
   searchModalOpened.value = false
-  document.getElementById('close-button')?.focus()
+  // Sans le setTimeout, le focus n'est pas fait
+  setTimeout(() => {
+    document.getElementById('close-button')?.focus()
+  })
 }
 const showSearchModal = () => {
   modalOpened.value = true
@@ -283,6 +291,8 @@ const showSearchModal = () => {
   searchModalOpened.value = true
 }
 const onQuickLinkClick = hideModal
+
+const title = computed(() => [props.homeLabel, props.serviceTitle].filter((x) => x).join(' - '))
 
 const slots = useSlots()
 const isWithSlotOperator = computed(() => Boolean(slots.operator?.().length) || !!props.operatorImgSrc)

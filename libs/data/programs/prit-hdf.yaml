@@ -1,0 +1,80 @@
+titre: Priorités régionales d'interventions touristiques
+promesse: >-
+  Développez votre offre touristique autour du "slow tourism", du patrimoine, de
+  la Mémoire ou du tourisme d’affaires
+description: >-
+  Vous portez un projet touristique (activité, hébergement, service...) en
+  Hauts-de-France ? Ce dispositif régional soutient vos études et
+  investissements pour créer des lieux touristiques innovants, durables et
+  écoresponsables, autour du "slow tourism" (nature, bien-être, itinérance), du
+  patrimoine, de la Mémoire ou du tourisme d’affaires.
+description longue: >-
+  Vous avez un projet d'étude ? Les dépenses éligibles sont les suivantes : 
+
+  - Les prestations d’études d’opportunité, de définition, de faisabilité, de
+  programmation, de conception, préalables à la réalisation d’investissements et
+  réalisées par un prestataire externe.
+
+
+  Vous avez un projet d'investissement ? Les dépenses éligibles sont les
+  suivantes :  
+
+  - Missions de maîtrise d’œuvre relatives à l’investissement concerné
+
+  - Travaux de second œuvre 
+
+  - Investissements matériels relatifs à l’exploitation de l’activité, du site,
+  ou de l’équipement concerné (sont exclus notamment les travaux de gros œuvre
+  et les acquisitions foncières).
+illustration: images/TEE_eolienne.png
+opérateur de contact: Région Haut-de-France
+url: https://guide-aides.hautsdefrance.fr/dispositif729
+nature de l'aide: financement
+montant du financement: >-
+  Jusqu'à 50 % du coût de l'investissement, dans la limite de 100 000 €.
+  Variable selon les projets.
+objectifs:
+  - description: Vérifiez l’éligibilité de votre projet en parcourant la documentation.
+    liens:
+      - lien: https://aides.hautsdefrance.fr/sub/tiers/aides/details/?sigle=PRIT
+        texte: Conditions et critères d'éligibilité
+  - description: >-
+      Créez votre compte sur le site de la Région Hauts de France et déposez
+      votre demande. La liste des pièces à joindre à votre dossier vous sera
+      transmise ensuite par la Région.
+    liens:
+      - lien: https://aides.hautsdefrance.fr/sub/tiers/inscription
+        texte: Créer mon compte
+  - description: Si votre projet est sélectionné, recevez votre subvention.
+  - description: Réalisez votre étude ou vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Hauts-de-France
+  secteur d'activité:
+    - Secteur du tourisme
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Vous avez un projet en phase de maturation : aide à l'ingénierie ou en
+      phase de réalisation : aide à l'investissement et à la pérennisation.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions: []
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Hauts-de-France
