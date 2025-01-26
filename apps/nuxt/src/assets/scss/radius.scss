@@ -1,14 +1,12 @@
 @use 'setting';
 @use 'tool';
-@use '@gouvfr/dsfr/module/media-query';
-@use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
 
 
 // class for border-radius with important like .fr-radius--tr--sm (small, top , right)
 // or .fr-radius-md-bl--lg (from md screen size, large, bottom, left)
 .fr-radius {
-  @each $breakpoint, $value in breakpoints.$values {
-    @include media-query.respond-from($breakpoint) {
+  @each $breakpoint, $value in setting.$breakpoints-values {
+    @include tool.media-query-respond-from($breakpoint) {
       $modifier: tool.modifierByBreakpoint($breakpoint);
       &#{$modifier} {
         @each $corner, $corner-name in setting.$corner {

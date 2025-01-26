@@ -1,7 +1,10 @@
 <template>
   <!-- FOOTER -->
-  <div :class="`fr-footer fr-pt-md-0 ${stickToBottom ? 'tee-footer-bottom' : ''}`">
-    <div class="fr-container--fluid fr-mx-md-20v fr-mx-8v">
+  <div
+    class="fr-footer"
+    role="contentinfo"
+  >
+    <div class="fr-container">
       <!-- FOOTER BODY -->
       <div class="fr-footer__body fr-hidden-sm fr-grid-row">
         <div class="fr-footer__brand fr-col-lg-3">
@@ -139,16 +142,16 @@ const licenceHref = 'https://github.com/betagouv/transition-ecologique-entrepris
 const licenceName = 'GNU AGPL v.3'
 const gouvLinks = [
   {
-    label: 'ecologie.gouv.fr',
-    href: 'https://ecologie.gouv.fr'
+    label: 'info.gouv.fr',
+    href: 'https://info.gouv.fr'
   },
   {
-    label: 'economie.gouv.fr',
-    href: 'https://economie.gouv.fr'
+    label: 'service-public.fr',
+    href: 'https://service-public.fr'
   },
   {
-    label: 'gouvernement.fr',
-    href: 'https://gouvernement.fr'
+    label: 'legifrance.gouv.fr',
+    href: 'https://legifrance.gouv.fr'
   },
   {
     label: 'data.gouv.fr',
@@ -166,7 +169,7 @@ const mainLinks = [
   {
     // router ok
     label: 'Accessibilité : Non conforme',
-    to: '/accessibilite'
+    to: { name: RouteName.Accessibility }
   },
   {
     // router ok

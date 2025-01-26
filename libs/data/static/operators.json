@@ -459,5 +459,17 @@
   {
     "operator": "La Fresque du Climat",
     "filterCategories": []
+  },
+  {
+    "operator": "SGAR",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "Région Nouvelle-Aquitaine",
+    "filterCategories": [
+      "Régions"
+    ]
   }
 ]

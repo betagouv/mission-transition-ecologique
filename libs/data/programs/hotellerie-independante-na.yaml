@@ -1,0 +1,96 @@
+titre: Aide à l'hôtellerie indépendante
+promesse: Accélérez le développement et l'adaptation environnementale de votre hôtel
+description: >-
+  Vous êtes un hôtelier indépendant ? Cette aide soutient vos projets de
+  création, de modernisation ou d'extension des chambres et des espaces communs
+  dans une approche respectueuse de l’environnement. Financez, par exemple, vos
+  travaux d’isolation et d'amélioration énergétique de votre établissement.
+description longue: >-
+  Les dépenses éligibles sont les suivantes : 
+
+  - Travaux de gros œuvre (huisseries, planchers entre étages, isolation par
+  l’extérieur et isolation de toiture) sous condition de performance énergétique
+  du bâti ou de réhabilitation d’une friche immobilière ; dépenses de gros œuvre
+  pour les projets d'extension.
+
+  - Travaux de second œuvre.
+
+  - Équipements, matériels et mobilier et/ ou d'occasion (devis de plus de 500
+  €).
+
+  - Travaux de second œuvre et équipement permettant la création de 9 lits
+  saisonniers maximum au sein de l'établissement hôtelier.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Région Nouvelle-Aquitaine
+url: >-
+  https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1
+nature de l'aide: financement
+montant du financement: Jusqu'à 25% des dépenses, dans la limite de 400 000 € HT
+objectifs:
+  - description: Vérifiez l’éligibilité de votre projet en parcourant la documentation.
+    liens:
+      - lien: >-
+          https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1
+        texte: Conditions et critères d'éligibilité
+  - description: >-
+      Prenez contact avec la Direction du Tourisme par mail à l'adresse
+      tourisme@nouvelle-aquitaine.fr. Présentez votre projet et laissez vos
+      coordonnées.
+  - description: "La Direction du Tourisme vous recontacte et vérifie avec vous l’éligibilité\_de votre projet, avant tout dépôt de demande de subvention."
+  - description: >-
+      Si votre projet est éligible, déposez votre demande de subvention. Votre
+      dossier est alors instruit et soumis pour approbation.
+  - description: >-
+      Une fois votre demande acceptée, recevez votre subvention et réalisez vos
+      travaux.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - Nouvelle-Aquitaine
+  secteur d'activité:
+    - Hôtellerie indépendante
+    - Sont exclus les franchises et chaines intégrées
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Vous êtes un hôtel indépendant (dont les chaines volontaires), hors
+      franchises et chaines intégrées.
+    - Vous avez une période d'ouverture d'au moins 6 mois par an.
+    - Vous devrez répondre à un classement entre 2 et 5 étoiles après travaux.
+    - >-
+      Les travaux sur les chambres devront représenter à minima 50% de la
+      dépense totale éligible.
+    - Le capital social de votre entreprise devra être de 5 000 € minimum.
+    - Vous devez maintenir l'activité pendant 5 ans.
+    - Les devis doivent être supérieurs à 500 € HT.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a une categorie legale eligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Nouvelle-Aquitaine

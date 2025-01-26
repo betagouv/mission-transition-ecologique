@@ -50,6 +50,11 @@
               :option="option"
               @click="updateAndSave(option, idx)"
             />
+            <TrackActivity
+              v-if="TrackComponent.isNAFSearch(usedTrack, option)"
+              :option="option as TrackOptionsInput"
+              @update-selection="updateSelection($event.option, idx, $event.remove, $event.forceKeep)"
+            />
             <TrackLocalisation
               v-if="TrackComponent.isLocalisation(usedTrack)"
               :option="option as TrackOptionsInput"
@@ -174,7 +179,7 @@ const updateSelection = async (option: TrackOptionsUnion, index: number, forceRe
   }
 
   // Direct to next track
-  const directToNext: string[] = [TrackComponentType.Cards, TrackComponentType.CitySearch]
+  const directToNext: string[] = [TrackComponentType.Cards, TrackComponentType.CitySearch, TrackComponentType.Activity]
   if (!allowMultiple && directToNext.includes(trackStore.currentComponent)) {
     await saveSelection(remove)
   }

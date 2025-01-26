@@ -60,6 +60,7 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
+import Navigation from '@/tools/navigation'
 import { ProjectManager } from '@/tools/project/projectManager'
 import ProjectFilter from '@/tools/project/projectFilter'
 import ProjectSorter from '@/tools/project/projectSorter'
@@ -71,7 +72,6 @@ import Navigation from '@/tools/navigation'
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
-const navigation = new Navigation()
 interface Props {
   showTitle?: boolean
   showLimit?: number
@@ -80,7 +80,7 @@ interface Props {
 }
 const props = withDefaults(defineProps<Props>(), {
   showTitle: true,
-  showLimit: -1,
+  showLimit: undefined,
   showCounter: true,
   showBreadcrumbs: true
 })
@@ -91,7 +91,9 @@ await new ProjectManager().getProjects()
 const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
 
-useSeoMeta(MetaSeo.get(title, description))
+if (!new Navigation().isHomepage()) {
+  useSeoMeta(MetaSeo.get(title, description))
+}
 
 const theme = Theme.getThemeFromSelectedTheme()
 
@@ -109,7 +111,7 @@ const hasSpinner = computed(() => {
 })
 
 const projectList = computed(() => {
-  return props.showLimit !== -1 ? sortedProjects.value.slice(0, props.showLimit) : sortedProjects.value
+  return props.showLimit !== undefined ? sortedProjects.value.slice(0, props.showLimit) : sortedProjects.value
 })
 const hasThemeCard = computed(() => {
   return programStore.hasThemeTypeSelected() && !hasSpinner.value
