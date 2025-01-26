@@ -2,8 +2,8 @@ import Ajv from 'ajv/dist/2020'
 import { ValidateFunction } from 'ajv'
 import programSchema from '../schemas/program-with-publicodes-schema.json'
 import regionSchema from '../schemas/region-data-schema.json'
-import communes from '../references/communes.json'
-import { prependInterface, readPrograms } from '../src/dataPipeline'
+import communes from '../static/communes.json'
+import { prependInterface, readPrograms } from '../src/program/dataPipeline'
 import Engine from 'publicodes'
 
 test('JSON Schema is valid', () => {

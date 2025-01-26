@@ -19,7 +19,7 @@ export default class Config extends ConfigCommon {
   }
 
   static get posthogApiKey() {
-    return process.env['VITE_POSTHOG_API_KEY'] || 'fake token'
+    return process.env['POSTHOG_API_KEY'] || 'fake token'
   }
 
   static get isTestData() {

@@ -1,4 +1,4 @@
-import { communes } from '@tee/data/references'
+import { communes } from '@tee/data/static'
 import { ConvertedCommune, Commune } from '@tee/common'
 import { normalizeString } from '../../../common/string'
 import { GeoSearch } from '../../domain/spi'

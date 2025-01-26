@@ -26,7 +26,7 @@ VITE_CONTACT_EMAIL = contact@mission-transition-ecologique.beta.gouv.fr
 
 # To set up PostHog analytics
 # create a posthog account and use the corresponding API key
-VITE_POSTHOG_API_KEY = your_key
+POSTHOG_API_KEY = your_key
 ```
 
 ---

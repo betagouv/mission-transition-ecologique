@@ -16,16 +16,16 @@
   },
   "targetDefaults": {
     "serve": {
-      "dependsOn": ["@tee/data:generate-program"]
+      "dependsOn": []
     },
     "build": {
-      "dependsOn": ["@tee/data:generate-program"]
+      "dependsOn": []
     },
     "test": {
-      "dependsOn": ["@tee/data:generate-program"]
+      "dependsOn": []
     },
     "type-check": {
-      "dependsOn": ["@tee/data:generate-program"]
+      "dependsOn": []
     },
     "start": {
       "dependsOn": []
