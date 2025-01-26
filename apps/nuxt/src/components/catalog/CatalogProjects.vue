@@ -68,7 +68,6 @@ import { ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import { Theme } from '@/tools/theme'
-import Navigation from '@/tools/navigation'
 
 const programStore = useProgramStore()
 const navigationStore = useNavigationStore()
@@ -90,8 +89,9 @@ await new ProjectManager().getProjects()
 
 const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
+const navigation = new Navigation()
 
-if (!new Navigation().isHomepage()) {
+if (!navigation.isHomepage()) {
   useSeoMeta(MetaSeo.get(title, description))
 }
 

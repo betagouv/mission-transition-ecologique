@@ -40,7 +40,7 @@
       31
     ],
     "priority": "40",
-    "homepagePriority": null,
+    "homepagePriority": "5",
     "sectors": [
       "A",
       "B",
@@ -91,13 +91,15 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
-      "impulsion-environnement"
+      "impulsion-environnement",
+      "hotellerie-independante-na",
+      "camping-independant-na"
     ],
     "linkedProjects": [
       4
     ],
     "priority": "220",
-    "homepagePriority": null,
+    "homepagePriority": "2",
     "sectors": [
       "A",
       "B",
@@ -156,13 +158,15 @@
       "perf-crise-energetique-cvl",
       "impulsion-environnement",
       "soutien-hebergement-touristique",
-      "agir-pdl"
+      "agir-pdl",
+      "hotellerie-independante-na",
+      "camping-independant-na"
     ],
     "linkedProjects": [
       4
     ],
     "priority": "340",
-    "homepagePriority": null,
+    "homepagePriority": "3",
     "sectors": [
       "A",
       "B",
@@ -219,7 +223,7 @@
       21
     ],
     "priority": "100",
-    "homepagePriority": null,
+    "homepagePriority": "6",
     "sectors": [
       "A",
       "C",
@@ -266,13 +270,15 @@
       "perf-crise-energetique-cvl",
       "impulsion-environnement",
       "soutien-hebergement-touristique",
-      "agir-pdl"
+      "agir-pdl",
+      "hotellerie-independante-na",
+      "camping-independant-na"
     ],
     "linkedProjects": [
       4
     ],
     "priority": "400",
-    "homepagePriority": null,
+    "homepagePriority": "7",
     "sectors": [
       "A",
       "B",
@@ -454,7 +460,9 @@
       "perf-crise-energetique-cvl",
       "impulsion-environnement",
       "soutien-hebergement-touristique",
-      "agir-pdl"
+      "agir-pdl",
+      "hotellerie-independante-na",
+      "camping-independant-na"
     ],
     "linkedProjects": [
       4
@@ -515,7 +523,9 @@
       "perf-crise-energetique-cvl",
       "impulsion-environnement",
       "soutien-hebergement-touristique",
-      "agir-pdl"
+      "agir-pdl",
+      "hotellerie-independante-na",
+      "camping-independant-na"
     ],
     "linkedProjects": [
       4
@@ -579,13 +589,15 @@
       "perf-crise-energetique-cvl",
       "impulsion-environnement",
       "soutien-hebergement-touristique",
-      "agir-pdl"
+      "agir-pdl",
+      "hotellerie-independante-na",
+      "camping-independant-na"
     ],
     "linkedProjects": [
       4
     ],
     "priority": "320",
-    "homepagePriority": null,
+    "homepagePriority": "8",
     "sectors": [
       "A",
       "B",
@@ -855,13 +867,16 @@
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
       "projets-hebergements-touristiques-cvl",
-      "agir-pdl"
+      "agir-pdl",
+      "hotellerie-independante-na",
+      "camping-independant-na",
+      "prit-hdf"
     ],
     "linkedProjects": [
       4
     ],
     "priority": "150",
-    "homepagePriority": null,
+    "homepagePriority": "1",
     "sectors": [
       "A",
       "B",
@@ -1035,7 +1050,7 @@
       16
     ],
     "priority": "190",
-    "homepagePriority": "3",
+    "homepagePriority": "4",
     "sectors": [
       "A",
       "B",
@@ -1085,13 +1100,15 @@
       "pret-energie-aura",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
-      "soutien-hebergement-touristique"
+      "soutien-hebergement-touristique",
+      "camping-independant-na",
+      "prit-hdf"
     ],
     "linkedProjects": [
       16
     ],
     "priority": "140",
-    "homepagePriority": "2",
+    "homepagePriority": null,
     "sectors": [
       "A",
       "B",
@@ -1203,7 +1220,7 @@
       31
     ],
     "priority": "90",
-    "homepagePriority": "7",
+    "homepagePriority": "9",
     "sectors": [
       "A",
       "B",
@@ -1283,7 +1300,7 @@
   {
     "id": 23,
     "slug": "tri-dechets",
-    "title": "Tri des déchets",
+    "title": "Tri sélectif",
     "nameTag": "♻️ tri",
     "shortDescription": "Le tri sélectif consiste à séparer les déchets en différentes catégories en fonction de leur composition.",
     "image": "/images/projet/tri-dechets.webp",
@@ -1305,13 +1322,15 @@
       "pass-transition-bzh",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "hotellerie-independante-na",
+      "camping-independant-na"
     ],
     "linkedProjects": [
       21
     ],
     "priority": "180",
-    "homepagePriority": "4",
+    "homepagePriority": null,
     "sectors": [
       "A",
       "B",
@@ -1344,7 +1363,7 @@
     "shortDescription": "Définir la méthode de gestion des déchets verts la plus adaptée à votre entreprise.",
     "image": "/images/projet/gestion-biodechets.webp",
     "longDescription": "Les biodéchets sont les déchets alimentaires (restes de repas, épluchures, produits périmés non consommés), ainsi que les déchets issus de l’entretien des parcs et jardins (feuilles mortes, tonte, taille).\n\nA partir du 1er janvier 2024, l’obligation de tri à la source des biodéchets s’applique à toutes les entreprises, quels que soient les volumes et l’activité des producteurs / détenteurs. Les entreprises peuvent opter pour une solution de compostage sur site pour transformer les biodéchets en compost utilisable localement ou pour une collecte des biodéchets en faisant appel à des prestataires extérieurs.\n\nL'objectif de cette mesure est de lutter contre le gaspillage alimentaire et de limiter les impacts environnementaux liés au traitement de nos ordures.\n\nEn effet, l’incinération des biodéchets est énergivore et polluante : pour chaque tonne de déchets incinérée, au moins une tonne de CO2 est émise.\n\nUne fois triés, les biodéchets peuvent être utilisés en engrais organiques pour une agriculture plus durable et respectueuse de l'environnement. Ils peuvent aussi être revalorisé pour produire du biogaz destiné à un usage local ou réinjecté dans le réseau de gaz naturel.",
-    "moreDescription": "- [**Trier et valoriser les déchets alimentaires : comment et à quel coût ?** ](https://librairie.ademe.fr/dechets-economie-circulaire/5635-dechets-des-professionnels-etablissements-publics-guide.html)Un guide destiné aux producteurs de déchets alimentaires pour aider à la mise en œuvre du tri à la source dans leurs établissements.",
+    "moreDescription": "- [**Trier et valoriser les déchets alimentaires : comment et à quel coût ?** ](https://librairie.ademe.fr/dechets-economie-circulaire/5635-dechets-des-professionnels-etablissements-publics-guide.html)Un guide destiné aux producteurs de déchets alimentaires pour aider à la mise en œuvre du tri à la source dans leurs établissements.\n- [**Comment réussir son compost**](https://librairie.ademe.fr/7447-comment-reussir-son-compost-.html), un guide de l'ADEME.",
     "themes": [
       "waste"
     ],
@@ -1368,7 +1387,9 @@
       "pass-transformation-ecologique",
       "pret-ile-de-france",
       "cap-transition-ecologique",
-      "agir-pdl"
+      "agir-pdl",
+      "hotellerie-independante-na",
+      "camping-independant-na"
     ],
     "linkedProjects": [
       21
@@ -1588,7 +1609,7 @@
       26
     ],
     "priority": "160",
-    "homepagePriority": "1",
+    "homepagePriority": null,
     "sectors": [
       "A",
       "B",
@@ -1743,7 +1764,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "prit-hdf"
     ],
     "linkedProjects": [
       26,
@@ -1803,7 +1825,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "prit-hdf"
     ],
     "linkedProjects": [
       1
@@ -1860,7 +1883,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "prit-hdf"
     ],
     "linkedProjects": [
       26,
@@ -1987,7 +2011,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "ecolabel",
-      "soutien-hebergement-touristique"
+      "soutien-hebergement-touristique",
+      "prit-hdf"
     ],
     "linkedProjects": [
       31
@@ -2046,7 +2071,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "soutien-hebergement-touristique",
-      "agir-pdl"
+      "agir-pdl",
+      "prit-hdf"
     ],
     "linkedProjects": [
       20
@@ -2103,7 +2129,10 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "soutien-hebergement-touristique",
-      "agir-pdl"
+      "agir-pdl",
+      "hotellerie-independante-na",
+      "camping-independant-na",
+      "prit-hdf"
     ],
     "linkedProjects": [
       20
@@ -2135,79 +2164,6 @@
     ]
   },
   {
-    "id": 137,
-    "slug": "seche-linge",
-    "title": "Sèche-linge basse consommation",
-    "nameTag": "🌬 sèche-linge",
-    "shortDescription": "Un sèche-linge professionnel de grande efficacité énergétique vous permet de réduire votre consommation d'énergie.",
-    "image": "/images/projet/seche-linge.webp",
-    "longDescription": "Un sèche-linge professionnel de grande efficacité énergétique est un sèche-linge dont l'énergie de séchage est inférieure à 0,3 kWh/kg de linge et dont le cycle de séchage ne dépasse pas 90 minutes. Cela concerne les sèche-linge à condensation et équipés d’une pompe à chaleur. Mettez au rebut vos anciens appareils à évacuation au profit d'un sèche-linge économe en énergie, et réduisez votre consommation électrique.",
-    "moreDescription": "- [Les critères de sélection d'un sèche-linge pro](https://www.guidetopten.fr/grand-public/selection-criteria/criteres-de-selection-seche-linge-professionnels), proposé par Guide Topten, un comparateur soutenu par l'ADEME.\n- [Une sélection des sèche-linge les plus performants](https://www.guidetopten.fr/grand-public/selection-criteria/criteres-de-selection-seche-linge-professionnels) proposé par Guide Topten, un comparateur soutenu par l'ADEME.",
-    "themes": [
-      "energy"
-    ],
-    "mainTheme": "energy",
-    "programs": [
-      "fonds-tourisme-durable",
-      "cedre-investissement",
-      "sud-pret-climat",
-      "cheque-vert-grand-est",
-      "pret-energie-aura",
-      "pret-ile-de-france",
-      "cap-transition-ecologique",
-      "perf-crise-energetique-cvl",
-      "soutien-hebergement-touristique",
-      "agir-pdl"
-    ],
-    "linkedProjects": [
-      4
-    ],
-    "priority": "190",
-    "homepagePriority": null,
-    "sectors": [
-      "I",
-      "Q",
-      "T"
-    ]
-  },
-  {
-    "id": 138,
-    "slug": "restauration-durable",
-    "title": "Restauration durable",
-    "nameTag": "🍽 restauration",
-    "shortDescription": "Élaborer des menus préparés avec des produits sains, locaux et à faible impact écologique.",
-    "image": "/images/projet/alimentation-durable.webp",
-    "longDescription": "Équilibrer et diversifier les menus, ajouter des plats végétariens à la carte, favoriser les circuits d’approvisionnement courts ainsi que les produits de qualité, locaux et de saison... ces leviers d'actions vous permettent d’instaurer une restauration saine et durable attractive pour vos clients.",
-    "moreDescription": "- [**Restaurant Engagé : éco-responsabilité en restauration**](https://librairie.ademe.fr/7385-restaurant-engage-eco-responsabilite-en-restauration.html), un guide de l'ADEME.\n- [**Acteurs de la restauration : devenez un maillon engagé de l’alimentation durable**](https://agirpourlatransition.ademe.fr/entreprises/restauration-durable)",
-    "themes": [
-      "eco-design"
-    ],
-    "mainTheme": "eco-design",
-    "programs": [
-      "etude-alimentation-durable",
-      "etude-biodechets",
-      "etude-gaspillage-alimentaire",
-      "fonds-tourisme-durable",
-      "gestion-des-biodechets",
-      "cedre-investissement",
-      "sud-pret-climat",
-      "pret-energie-aura",
-      "pret-ile-de-france",
-      "cap-transition-ecologique",
-      "agir-pdl"
-    ],
-    "linkedProjects": [],
-    "priority": "240",
-    "homepagePriority": null,
-    "sectors": [
-      "A",
-      "G",
-      "I",
-      "Q",
-      "S"
-    ]
-  },
-  {
     "id": 139,
     "slug": "petite-refrigeration",
     "title": "Frigo basse consommation",
@@ -2229,7 +2185,10 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
-      "agir-pdl"
+      "agir-pdl",
+      "hotellerie-independante-na",
+      "camping-independant-na",
+      "prit-hdf"
     ],
     "linkedProjects": [
       4
@@ -2263,13 +2222,14 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "soutien-hebergement-touristique",
-      "agir-pdl"
+      "agir-pdl",
+      "prit-hdf"
     ],
     "linkedProjects": [
       20
     ],
     "priority": "120",
-    "homepagePriority": "8",
+    "homepagePriority": null,
     "sectors": [
       "A",
       "B",
@@ -2315,7 +2275,8 @@
       "pass-transformation-ecologique",
       "pret-ile-de-france",
       "cap-transition-ecologique",
-      "soutien-hebergement-touristique"
+      "soutien-hebergement-touristique",
+      "prit-hdf"
     ],
     "linkedProjects": [
       33
@@ -2354,7 +2315,7 @@
     "shortDescription": "L'installation d'ouvrants et de structures d'ombrages permet de limiter le rayonnement solaire direct, et de conserver la fraîcheur en été.",
     "image": "/images/projet/ombrage.webp",
     "longDescription": "Volets, stores, films solaires, rideaux occultant, pergolas, voiles d'ombrages... ces dispositifs améliorent le confort thermique de vos bâtiments, que ce soit pour vos collaborateurs ou pour votre clientèle. Ainsi, vous conservez la fraîcheur tout en limitant l'usage de la climatisation. Du même coup, vous allégez votre facture et vous réduisez votre empreinte carbone.",
-    "moreDescription": "- [**Les différentes structures d'ombrage**](https://plusfraichemaville.fr/fiche-solution/structure-ombrage), les matériaux et les coûts, par Plus fraîche ma ville.\n- [**Les structures d'ombrage de façade**](https://plusfraichemaville.fr/fiche-solution/facade-structure-ombrage) (volets, stores, auvents...), par Plus fraîche ma ville.",
+    "moreDescription": "- [**Les différentes structures d'ombrage**](https://plusfraichemaville.fr/fiche-solution/structure-ombrage), les matériaux et les coûts, par Plus fraîche ma ville.\n- [**Les structures d'ombrage de façade**](https://plusfraichemaville.fr/fiche-solution/facade-structure-ombrage) (volets, stores, film de protection...), par Plus fraîche ma ville.",
     "themes": [
       "building"
     ],
@@ -2370,13 +2331,14 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "soutien-hebergement-touristique",
-      "agir-pdl"
+      "agir-pdl",
+      "prit-hdf"
     ],
     "linkedProjects": [
       33
     ],
     "priority": "130",
-    "homepagePriority": "9",
+    "homepagePriority": null,
     "sectors": [
       "A",
       "B",
@@ -2421,7 +2383,8 @@
       "sites-touristiques-exemplaires",
       "pret-energie-aura",
       "pret-ile-de-france",
-      "soutien-hebergement-touristique"
+      "soutien-hebergement-touristique",
+      "prit-hdf"
     ],
     "linkedProjects": [
       16
@@ -2478,63 +2441,14 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "prit-hdf"
     ],
     "linkedProjects": [
       33
     ],
     "priority": "200",
     "homepagePriority": null,
-    "sectors": [
-      "A",
-      "B",
-      "C",
-      "D",
-      "E",
-      "F",
-      "G",
-      "H",
-      "I",
-      "J",
-      "K",
-      "L",
-      "M",
-      "N",
-      "O",
-      "P",
-      "Q",
-      "R",
-      "S",
-      "T",
-      "U"
-    ]
-  },
-  {
-    "id": 145,
-    "slug": "composteur",
-    "title": "Composteur",
-    "nameTag": "🥬 composteur",
-    "shortDescription": "Le composteur transforme vos déchets verts en un engrais naturel.",
-    "image": "/images/projet/composteur.webp",
-    "longDescription": "Depuis le 1er janvier 2024, il est obligatoire pour tous, particuliers entreprises, de trier ses biodéchets, quel que soient les volumes produits.\n\nLes entreprises et les restaurateurs peuvent opter pour une solution de compostage sur site (bokashi, lombricomposteur, tambour rotatif...) pour transformer les biodéchets en compost utilisable localement. L'objectif de cette mesure est de lutter contre le gaspillage alimentaire et de limiter les impacts environnementaux liés au traitement de nos ordures.\n\nUne fois triés et compostés, les biodéchets peuvent être utilisés en engrais organiques pour une agriculture respectueuse de l'environnement.",
-    "moreDescription": "- [**Comment réussir son compost**](https://librairie.ademe.fr/7447-comment-reussir-son-compost-.html), un guide de l'ADEME.\n- [**Trier et valoriser les déchets alimentaires : comment et à quel coût ?** ](https://librairie.ademe.fr/dechets-economie-circulaire/5635-dechets-des-professionnels-etablissements-publics-guide.html)Un guide destiné aux producteurs de déchets alimentaires.",
-    "themes": [
-      "waste"
-    ],
-    "mainTheme": "waste",
-    "programs": [
-      "fonds-tourisme-durable",
-      "cedre-investissement",
-      "sud-pret-climat",
-      "pret-energie-aura",
-      "pass-transition-bzh",
-      "pret-ile-de-france"
-    ],
-    "linkedProjects": [
-      21
-    ],
-    "priority": "130",
-    "homepagePriority": "5",
     "sectors": [
       "A",
       "B",
@@ -2590,7 +2504,10 @@
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
       "impulsion-environnement",
-      "soutien-hebergement-touristique"
+      "soutien-hebergement-touristique",
+      "hotellerie-independante-na",
+      "camping-independant-na",
+      "prit-hdf"
     ],
     "linkedProjects": [
       4
