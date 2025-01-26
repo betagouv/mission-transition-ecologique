@@ -19,15 +19,6 @@
             'fr-col-md-12 fr-col-justify--center': hasError
           }"
         >
-          <h1 class="fr-text--blue-france">{{ title }}</h1>
-        </div>
-        <div
-          class="fr-col-12 fr-mt-3v"
-          :class="{
-            'fr-col-offset-md-2 fr-col-md-10 fr-col-justify--left': !hasError,
-            'fr-col-md-12 fr-col-justify--center': hasError
-          }"
-        >
           <ThemeFilter />
         </div>
         <div

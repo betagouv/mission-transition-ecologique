@@ -6,7 +6,7 @@
   >
     <div class="fr-container">
       <!-- FOOTER BODY -->
-      <div class="fr-footer__body fr-hidden-sm fr-grid-row">
+      <div class="fr-footer__body fr-grid-row">
         <div class="fr-footer__brand fr-col-lg-3">
           <p class="fr-logo">
             République
