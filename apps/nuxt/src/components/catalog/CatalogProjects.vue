@@ -64,7 +64,7 @@ import Navigation from '@/tools/navigation'
 import { ProjectManager } from '@/tools/project/projectManager'
 import ProjectFilter from '@/tools/project/projectFilter'
 import ProjectSorter from '@/tools/project/projectSorter'
-import { RouteName, ThemeId } from '@/types'
+import { ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import { Theme } from '@/tools/theme'
@@ -100,7 +100,7 @@ const theme = Theme.getThemeFromSelectedTheme()
 const filteredProjects = ProjectFilter.filter(projects, theme)
 
 const sortedProjects = computed(() => {
-  if (navigation.isByRouteName(RouteName.Homepage) && (!theme.value || theme.value.length === 0)) {
+  if (navigation.isHomepage() && (!theme.value || theme.value.length === 0)) {
     return ProjectSorter.homepageSort(filteredProjects).value
   }
   return ProjectSorter.sort(filteredProjects).value
