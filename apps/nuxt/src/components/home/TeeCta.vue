@@ -20,7 +20,7 @@
           <TeeDsfrButton
             label="Je trouve les aides pour mon projet"
             size="lg"
-            class="inline-flex fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center"
+            class="inline-flex fr-text--yellow fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center"
             @click="toQuestionnaire()"
           />
         </div>
