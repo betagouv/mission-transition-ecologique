@@ -8,6 +8,13 @@ import { ChangeFreq, Priority } from './src/types/sitemapType'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'fr'
+      }
+    }
+  },
   routeRules: {
     '/': { prerender: true },
     '/accessibilite': { prerender: true },

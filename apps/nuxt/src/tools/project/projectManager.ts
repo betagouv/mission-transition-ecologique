@@ -57,7 +57,12 @@ export class ProjectManager {
     // if (navigation.isProjectDetail() && this._useProject.currentProject) {
     //   this.getProjectBySlug(this._useProject.currentProject.slug)
     // }
-    if (navigation.isQuestionnaireResult() || navigation.isProgramDetail() || navigation.isQuestionnaireThemeCards()) {
+    if (
+      navigation.isQuestionnaireResult() ||
+      navigation.isProgramDetail() ||
+      navigation.isQuestionnaireThemeCards() ||
+      navigation.isHomepage()
+    ) {
       await this.getFilteredProjects()
     } else if (navigation.isCatalogProjects()) {
       await this.getProjects()

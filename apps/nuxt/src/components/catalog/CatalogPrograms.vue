@@ -1,11 +1,5 @@
 <template>
   <TeeDsfrBreadcrumb v-if="!hasSpinner" />
-  <CatalogBanner>
-    <template #title> {{ title }} </template>
-    <template #description>
-      {{ description }}
-    </template>
-  </CatalogBanner>
   <div class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-6v">
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
@@ -14,6 +8,15 @@
           :class="{
             'fr-col-offset-md-1 fr-col-offset-lg-2 fr-col-md-10 fr-col-justify--left': !hasError,
             'fr-col-lg-12 fr-col-justify--center': hasError
+          }"
+        >
+          <h1 class="fr-text--blue-france">{{ title }}</h1>
+        </div>
+        <div
+          class="fr-col-12 fr-mt-3v"
+          :class="{
+            'fr-col-offset-md-2 fr-col-md-10 fr-col-justify--left': !hasError,
+            'fr-col-md-12 fr-col-justify--center': hasError
           }"
         >
           <ThemeFilter />
@@ -58,7 +61,10 @@
               'fr-col-md-12': hasError
             }"
           >
-            <ProgramList :filtered-programs="filteredPrograms" />
+            <ProgramList
+              v-if="!hasError"
+              :filtered-programs="filteredPrograms"
+            />
             <TeeSpinner
               v-if="hasSpinner"
               class="fr-mt-16w"
@@ -89,7 +95,6 @@ const programStore = useProgramStore()
 
 const { hasSpinner } = storeToRefs(useNavigationStore())
 const { programs, hasError } = storeToRefs(programStore)
-
 onServerPrefetch(async () => {
   await new ProgramManager().getDependentCompanyData(false)
 })
@@ -98,7 +103,7 @@ onNuxtReady(async () => {
   await new ProgramManager().getDependentCompanyData(false)
 })
 
-const title = 'Le catalogue des aides publiques à la transition écologique'
+const title = 'Les aides à la transition écologique'
 const description =
   'Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :' +
   'ADEME, Bpifrance, CCI, CMA, etc.'
