@@ -1,4 +1,4 @@
-import { communes } from '@tee/data/references'
+import { communes } from '@tee/data/static'
 import { Maybe } from 'true-myth'
 import { CityToRegionMappingType } from '../../domain/spi'
 import { Commune } from '@tee/common'
