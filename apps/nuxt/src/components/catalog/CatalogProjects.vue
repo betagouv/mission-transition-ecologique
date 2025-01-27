@@ -85,6 +85,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 const { projects, hasError } = storeToRefs(useProjectStore())
 const questionnaireData = useUsedTrackStore().getQuestionnaireData()
+
 await new ProjectManager().getProjects(questionnaireData)
 
 const title = 'Les projets de transition écologique'
@@ -106,6 +107,7 @@ const hasSpinner = computed(() => {
 const projectList = computed(() => {
   return props.showLimit !== undefined ? sortedProjects.value.slice(0, props.showLimit) : sortedProjects.value
 })
+console.log(projectList.value)
 const hasThemeCard = computed(() => {
   return programStore.hasThemeTypeSelected() && !hasSpinner.value
 })

@@ -25,8 +25,8 @@ const programsCached = cachedFunction(
   },
   {
     name: 'programs',
-    getKey: (event: H3Event) => {
-      return CacheKeyBuilder.formEvent(event)
+    getKey: (event: H3Event, questionnaireData: QuestionnaireData) => {
+      return CacheKeyBuilder.formEvent(event, JSON.stringify(questionnaireData))
     },
     maxAge: 60 * 60 * 24 // 24 hours
   }
