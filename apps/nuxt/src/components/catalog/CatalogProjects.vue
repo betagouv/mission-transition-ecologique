@@ -84,8 +84,8 @@ const props = withDefaults(defineProps<Props>(), {
   showBreadcrumbs: true
 })
 const { projects, hasError } = storeToRefs(useProjectStore())
-
-await new ProjectManager().getProjects()
+const questionnaireData = useUsedTrackStore().getQuestionnaireData()
+await new ProjectManager().getProjects(questionnaireData)
 
 const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
