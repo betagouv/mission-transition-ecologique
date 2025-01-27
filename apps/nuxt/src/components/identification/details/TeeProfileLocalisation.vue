@@ -12,9 +12,34 @@
   <TeeDsfrSearchBar
     v-else
     id="register-localisation"
+    v-model="localisationInput"
+    :placeholder="infos.description"
     name="localisation"
     :error-msg="errorMsg"
-  />
+    :results="localisationResults"
+    @update:model-value="updateModelValue"
+  >
+    <template #results>
+      <div
+        v-if="localisationResults.length && showResults"
+        id="localisation-response"
+        class="fr-bg--white"
+      >
+        <div
+          v-for="localisation in localisationResults"
+          :key="`resp-input-${localisation.nom}-${localisation.codePostal}`"
+          class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
+          @click="selectLocalisation(localisation)"
+        >
+          <div class="fr-card__body">
+            <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
+              <div class="fr-text--blue-france">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+  </TeeDsfrSearchBar>
   <div
     v-else
     id="register-localisation"
@@ -45,30 +70,6 @@
           @click="searchLocalisation"
         />
       </div>
-    </div>
-    <div
-      v-if="localisationResults.length && showResults"
-      id="localisation-response"
-      class="fr-bg--white"
-    >
-      <div
-        v-for="localisation in localisationResults"
-        :key="`resp-input-${localisation.nom}-${localisation.codePostal}`"
-        class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
-        @click="selectLocalisation(localisation)"
-      >
-        <div class="fr-card__body">
-          <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-            <div class="fr-text--blue-france">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div
-      :class="errorMsg ? 'fr-error-text' : ''"
-      class="fr-input--empty-text fr-mt-2v"
-    >
-      {{ errorMsg }}
     </div>
   </div>
 </template>

@@ -5,13 +5,13 @@
       :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
     >
       <div
-        ref="localisationSearchBar"
+        ref="teeSearchBar"
         class="fr-search-bar fr-search-bar--yellow"
         :class="isLoading ? 'fr-search-bar--loading' : ''"
         role="search"
       >
         <DsfrInput
-          v-model="localisationInput"
+          v-model="model"
           :name="`manual-register-${name}`"
           class="fr-input--white fr-input"
           type="search"
@@ -27,24 +27,7 @@
         />
       </div>
     </div>
-    <div
-      v-if="localisationResults.length && showResults"
-      id="localisation-response"
-      class="fr-bg--white"
-    >
-      <div
-        v-for="localisation in localisationResults"
-        :key="`resp-input-${localisation.nom}-${localisation.codePostal}`"
-        class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
-        @click="selectLocalisation(localisation)"
-      >
-        <div class="fr-card__body">
-          <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-            <div class="fr-text--blue-france">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <slot name="results"></slot>
     <div
       :class="errorMsg ? 'fr-error-text' : ''"
       class="fr-input--empty-text fr-mt-2v"
@@ -54,11 +37,33 @@
   </div>
 </template>
 <script lang="ts" setup>
+import { onClickOutside, useDebounce } from '@vueuse/core'
+
 interface Props {
   errorMsg: string
   name: string
+  placeholder: string
 }
+
 defineProps<Props>()
 
 const isLoading = ref<boolean>(false)
+const inputModel = defineModel<string>()
+const debouncedInputModel = useDebounce(inputModel, 1000)
+const teeSearchBar = ref(null)
+
+const resetSearch = () => {
+  selectedLocalisation.value = undefined
+  localisationInput.value = ''
+  localisationResults.value = []
+  showResults.value = false
+}
+
+watch(debouncedInputModel, (newValue) => {
+  if (newValue) {
+    searchLocalisation()
+  }
+})
+
+onClickOutside(teeSearchBar, () => resetSearch())
 </script>
