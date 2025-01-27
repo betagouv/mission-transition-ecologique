@@ -1,9 +1,12 @@
 <template>
   <!-- TYPEFORM WIDGET  -->
-  <div
-    data-tf-live="01HNJQ5V7EYXZTQAY755QPMA4R"
-    class="tee-typeform-widget"
-  />
+  <div>
+    <iframe
+      src="https://baserow.io/form/oZMzNirPXLXP8RpR2pQ553jFMVURknX_xVUl7B1bdl8"
+      title="Formulaire Baserow"
+      allowFullScreen
+    ></iframe>
+  </div>
 </template>
 
 <script setup lang="ts">
