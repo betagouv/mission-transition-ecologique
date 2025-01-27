@@ -6,15 +6,15 @@ import { RouteName } from '@/types/routeType'
 
 export const redirections: RouteRecordRaw[] = [
   {
-    path: '/comprendre',
+    path: '/comprendre:after(.*)',
     redirect: () => {
-      return { name: RouteName.Homepage }
+      return { name: RouteName.Homepage, query: undefined }
     }
   },
   {
-    path: '/recherche:afterSearch(.*)',
+    path: '/recherche:after(.*)',
     redirect: () => {
-      return { name: RouteName.Homepage, query: null }
+      return { name: RouteName.Homepage, query: undefined }
     }
   },
   {

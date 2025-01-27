@@ -1,0 +1,89 @@
+titre: Aide à l’hôtellerie indépendante en Bourgogne-Franche-Comté
+promesse: Développez durablement votre hôtel
+description: >-
+  Vous gérez un hôtel indépendant en milieu rural ? Bénéficiez d’une aide au
+  conseil et à l'investissement pour rénover, monter en gamme et diversifier vos
+  services, avec un focus sur la transition énergétique et des investissements
+  responsables en énergie, déchets et eau.
+description longue: |-
+  Bénéficiez de ce dispositif pour financer deux volets :
+   - Le recours à un conseil extérieur pour des études portant sur un projet d’hôtellerie,
+   - Un programme de rénovation et de requalification d’hôtel ; un programme de développement intégrant la montée en gamme, la création de chambres et/ou de service et d’équipement de diversification ayant un impact sur les nuitées et la durée de séjour.
+début de validité: 22/03/2024
+fin de validité: 31/12/2028
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Bourgogne-Franche-Comté
+url: https://www.bourgognefranchecomte.fr/node/3856
+nature de l'aide: financement
+montant du financement: Jusqu'à 50% des dépenses, dans la limite de 180 000 €
+objectifs:
+  - description: Vérifiez l’éligibilité de votre projet en parcourant la documentation.
+    liens:
+      - lien: https://www.bourgognefranchecomte.fr/file-download?fid=15543
+        texte: Conditions et critères d'éligibilité
+  - description: >-
+      Prenez contact avec un conseiller de la Direction du Tourisme en
+      expliquant votre besoin d'accompagnement.
+    liens:
+      - lien: https://www.bourgognefranchecomte.eu/ProjetTourisme
+        texte: Formulaire de contact
+  - description: >-
+      Créez votre compte sur le site de la Région Bourgogne-Franche-Comté et
+      déposez votre demande. Attention à ce stade, votre projet ne doit pas
+      avoir commencé.
+    liens:
+      - lien: >-
+          https://subventions.bourgognefranchecomte.fr/sub/tiers/aides/details/?sigle=TO-HOTEL2%2B
+        texte: Créer mon compte
+  - description: Si votre projet est sélectionné, recevez votre subvention.
+  - description: Réalisez votre étude ou vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Effectif inférieur à 249 employés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Bourgogne-Franche-Comté
+  secteur d'activité:
+    - Hôtellerie ou hôtellerie-restauration
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - Votre hôtel est situé dans une commune de moins de 40 000 habitants,
+    - Classé 2 étoiles et comportant au moins 10 chambres au dépôt du dossier,
+    - Classé 3 étoiles minimum ou visant ce classement après travaux,
+    - >-
+      Votre hôtel doit s'engager dans un processus de labellisation Qualité
+      tourisme.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 249
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Bourgogne-Franche-Comté
