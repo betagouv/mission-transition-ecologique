@@ -84,3 +84,5 @@ dispositifs*.xlsx
 .nuxt
 .nitro
 .cache
+vite.config.*.timestamp*
+vitest.config.*.timestamp*
