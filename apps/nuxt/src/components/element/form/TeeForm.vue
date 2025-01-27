@@ -82,7 +82,7 @@
       </p>
       <img
         v-if="showCELogo"
-        src="/images/logos/ce-logo.webp"
+        src="/images/logos/ce-logo.svg"
         :alt="`image / logo-conseillers-entreprise`"
         width="70px"
       />

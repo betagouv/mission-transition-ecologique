@@ -30,7 +30,7 @@ const operators = [
 
 const otherOperator = {
   label: 'Conseiller entreprise',
-  img: '/images/logos/ce-logo.webp'
+  img: '/images/logos/ce-logo.svg'
 }
 </script>
 
