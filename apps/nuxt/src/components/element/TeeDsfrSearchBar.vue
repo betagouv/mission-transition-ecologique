@@ -11,11 +11,11 @@
         role="search"
       >
         <DsfrInput
-          v-model="model"
+          v-model="inputModel"
           :name="`manual-register-${name}`"
           class="fr-input--white fr-input"
           type="search"
-          :placeholder="infos.description"
+          :placeholder="placeholder"
           @update:model-value="updateModelValue"
           @keyup.enter="searchLocalisation"
         />
@@ -42,7 +42,8 @@ import { onClickOutside, useDebounce } from '@vueuse/core'
 interface Props {
   errorMsg: string
   name: string
-  placeholder: string
+  placeholder: string | undefined
+  search: Function
 }
 
 defineProps<Props>()
@@ -51,14 +52,15 @@ const isLoading = ref<boolean>(false)
 const inputModel = defineModel<string>()
 const debouncedInputModel = useDebounce(inputModel, 1000)
 const teeSearchBar = ref(null)
+const emit = defineEmits(['resetSearch'])
 
 const resetSearch = () => {
-  selectedLocalisation.value = undefined
-  localisationInput.value = ''
-  localisationResults.value = []
-  showResults.value = false
+  inputModel.value = ''
+  emit('resetSearch')
 }
-
+const updateModelValue = (value: string) => {
+  inputModel.value = value
+}
 watch(debouncedInputModel, (newValue) => {
   if (newValue) {
     searchLocalisation()

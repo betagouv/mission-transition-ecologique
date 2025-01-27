@@ -6,18 +6,20 @@
     <span class="fr-pr-4v">{{ localisationLabel }}</span>
     <span
       class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
-      @click="modifyLocalisation"
+      @click="resetLocalisation"
     />
   </p>
   <TeeDsfrSearchBar
     v-else
     id="register-localisation"
+    ref="localisationSearchBar"
     v-model="localisationInput"
     :placeholder="infos.description"
     name="localisation"
     :error-msg="errorMsg"
     :results="localisationResults"
     @update:model-value="updateModelValue"
+    @reset-search="resetLocalisation"
   >
     <template #results>
       <div
@@ -40,38 +42,6 @@
       </div>
     </template>
   </TeeDsfrSearchBar>
-  <div
-    v-else
-    id="register-localisation"
-  >
-    <div
-      class="fr-input-group fr-mb-0"
-      :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
-    >
-      <div
-        ref="localisationSearchBar"
-        class="fr-search-bar fr-search-bar--yellow"
-        :class="isLoading ? 'fr-search-bar--loading' : ''"
-        role="search"
-      >
-        <DsfrInput
-          v-model="localisationInput"
-          name="manual-register-localisation"
-          class="fr-input--white fr-input"
-          type="search"
-          :placeholder="infos.description"
-          @update:model-value="updateModelValue"
-          @keyup.enter="searchLocalisation"
-        />
-        <DsfrButton
-          class="fr-bg--yellow search-button"
-          tertiary
-          no-outline
-          @click="searchLocalisation"
-        />
-      </div>
-    </div>
-  </div>
 </template>
 <script lang="ts" setup>
 import { RegisterDetailLocalisation, ConvertedCommune, CompanyLocalisationType } from '@/types'
@@ -137,13 +107,13 @@ const searchLocalisation = async () => {
 const selectLocalisation = (localisation: ConvertedCommune) => {
   selectedLocalisation.value = CompanyData.convertLocalisation(localisation)
 }
-const modifyLocalisation = () => {
+const resetLocalisation = () => {
   selectedLocalisation.value = undefined
   localisationInput.value = ''
   localisationResults.value = []
   showResults.value = false
 }
-onClickOutside(localisationSearchBar, () => modifyLocalisation())
+onClickOutside(localisationSearchBar, () => resetLocalisation())
 </script>
 <style lang="scss" scoped>
 #localisation-response {
