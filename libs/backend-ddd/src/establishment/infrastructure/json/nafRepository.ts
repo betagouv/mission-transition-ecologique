@@ -1,4 +1,4 @@
-import { nafMapping } from '@tee/data/references'
+import { nafMapping } from '@tee/data/static'
 import { Maybe } from 'true-myth'
 import { NafRepository as NafRepositoryType } from '../../domain/spi'
 import { CompanyActivityType, NAF1 } from '@tee/common'
