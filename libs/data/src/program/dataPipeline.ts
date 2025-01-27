@@ -2,15 +2,16 @@ import * as dotenv from 'dotenv'
 import path from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
-import { ProgramType, ProgramWithoutId } from './program/program'
-import { FileManager } from './common/fileManager'
+import { ProgramType, ProgramWithoutId } from '../program/program'
+import { FileManager } from '../common/fileManager'
+import { fileURLToPath } from 'url'
 
 dotenv.config()
 
-const OUTPUT_FOLDER_PATH = 'generated'
-const OUTPUT_FILENAME = 'dataset_out.json'
-const PROGRAMS_FOLDER_PATH = 'programs'
-const INTERFACE_PATH = 'common/interface.yaml'
+const OUTPUT_FOLDER_PATH = '../../static'
+const OUTPUT_FILENAME = 'programs.json'
+const PROGRAMS_FOLDER_PATH = '../../programs'
+const INTERFACE_PATH = 'interface.yaml'
 
 /**
  * Build programs dataset from folder and yaml files
@@ -23,7 +24,7 @@ const INTERFACE_PATH = 'common/interface.yaml'
  */
 export const readPrograms = (log = false): ProgramType[] => {
   const programs: ProgramType[] = []
-  const __dirname = process.cwd()
+  const __dirname = path.dirname(fileURLToPath(import.meta.url))
   const dataDirPath: string = path.join(__dirname, PROGRAMS_FOLDER_PATH)
 
   if (log) console.log('📂 Reading data at', dataDirPath, '\n')
@@ -48,7 +49,7 @@ export const readPrograms = (log = false): ProgramType[] => {
  * "packages/data/common/interface.yaml")
  */
 export const prependInterface = (programs: ProgramType[], log = false): ProgramType[] => {
-  const __dirname = process.cwd()
+  const __dirname = path.dirname(fileURLToPath(import.meta.url))
   const fullPath: string = path.join(__dirname, INTERFACE_PATH)
 
   if (log) console.log('🗎 reading constants at', fullPath)
@@ -68,7 +69,7 @@ export const prependInterface = (programs: ProgramType[], log = false): ProgramT
  */
 export const buildProgramJson = (programs: ProgramType[]): void => {
   console.log('♺ Converting data to JSON')
-  const __dirname = process.cwd()
+  const __dirname = path.dirname(fileURLToPath(import.meta.url))
   const dataAsJson: string = JSON.stringify(programs, null, 2)
 
   const dataBuiltOutputDir: string = path.join(__dirname, OUTPUT_FOLDER_PATH)

@@ -13,7 +13,11 @@
           v-if="!quickLink.links"
           class="fr-py-2v fr-px-4v"
           v-bind="quickLink"
-          @click="handleClick($event, quickLink)"
+          :on-click="
+            ($event) => {
+              handleClick($event, quickLink)
+            }
+          "
         />
         <template v-else>
           <!-- DROPDOWN MENU ITEM - DISPLAY WIDER THAN MD -->
@@ -33,7 +37,11 @@
               <DsfrHeaderMenuLink
                 class="fr-p-md-2w"
                 v-bind="link"
-                @click="handleClick($event, link)"
+                :on-click="
+                  ($event) => {
+                    handleClick($event, link)
+                  }
+                "
               />
             </li>
           </ul>
