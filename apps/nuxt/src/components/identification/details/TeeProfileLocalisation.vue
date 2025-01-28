@@ -11,8 +11,6 @@
   </p>
   <TeeDsfrSearchBar
     v-else
-    id="register-localisation"
-    ref="localisationSearchBar"
     v-model="localisationInput"
     :placeholder="infos.description"
     name="localisation"
@@ -20,6 +18,7 @@
     :results="localisationResults"
     @update:model-value="updateModelValue"
     @reset-search="resetLocalisation"
+    @search="searchLocalisation"
   >
     <template #results>
       <div
@@ -46,7 +45,7 @@
 <script lang="ts" setup>
 import { RegisterDetailLocalisation, ConvertedCommune, CompanyLocalisationType } from '@/types'
 import LocalisationApi from '@/tools/api/localisationApi'
-import { onClickOutside, useDebounce } from '@vueuse/core'
+import { useDebounce } from '@vueuse/core'
 import { CompanyData } from '@/tools/companyData'
 import Translation from '@/tools/translation'
 import TeeDsfrSearchBar from '@/components/element/TeeDsfrSearchBar.vue'
@@ -86,7 +85,6 @@ const errorMsg = computed<string>(() => {
   }
   return ''
 })
-const localisationSearchBar = ref(null)
 
 const localisationLabel = computed<string>(() => {
   return `${props.infos.value?.codePostal} ${props.infos.value?.ville}`
@@ -113,7 +111,6 @@ const resetLocalisation = () => {
   localisationResults.value = []
   showResults.value = false
 }
-onClickOutside(localisationSearchBar, () => resetLocalisation())
 </script>
 <style lang="scss" scoped>
 #localisation-response {
@@ -123,10 +120,5 @@ onClickOutside(localisationSearchBar, () => resetLocalisation())
   z-index: 2000;
   position: absolute;
   overflow: hidden auto;
-}
-
-#register-localisation {
-  position: relative;
-  margin-bottom: 0;
 }
 </style>

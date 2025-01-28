@@ -6,72 +6,46 @@
     <span class="fr-pr-4v">{{ activityLabel }}</span>
     <span
       class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
-      @click="modifyActivity"
+      @click="resetActivity"
     />
   </p>
-  <div
+  <TeeDsfrSearchBar
     v-else
-    id="register-activity"
+    v-model="activityInput"
+    :placeholder="infos.description"
+    name="activity"
+    :error-msg="errorMsg"
+    :results="activityResults"
+    @update:model-value="updateModelValue"
+    @reset-search="resetActivity"
+    @search="searchLocalisation"
   >
-    <div
-      class="fr-input-group fr-mb-0"
-      :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
-    >
+    <template #results>
       <div
-        ref="activitySearchBar"
-        class="fr-search-bar fr-search-bar--yellow"
-        :class="isLoading ? 'fr-search-bar--loading' : ''"
-        role="search"
+        v-if="activityResults.length && showResults"
+        id="activity-response"
+        class="fr-bg--white"
       >
-        <DsfrInput
-          v-model="activityInput"
-          name="manual-register-activity"
-          class="fr-input--white fr-input"
-          type="search"
-          :placeholder="infos.description"
-          @click="searchActivity"
-          @update:model-value="updateModelValue"
-          @keyup.enter="searchActivity"
-        />
-        <DsfrButton
-          class="fr-bg--yellow search-button"
-          tertiary
-          no-outline
-          @click="searchActivity"
-        />
-      </div>
-    </div>
-    <div
-      v-if="activityResults.length && !infos.value"
-      id="activity-response"
-      class="fr-bg--white"
-    >
-      <div
-        v-for="activity in activityResults"
-        :key="`resp-input-${activity.codeNAF}-${activity.codeNAF1}`"
-        class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
-        @click="selectActivity(activity)"
-      >
-        <div class="fr-card__body">
-          <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-            <div class="fr-text--blue-france">{{ `${activity.secteur} (${activity.codeNAF})` }}</div>
+        <div
+          v-for="localisation in activityResults"
+          :key="`resp-input-${localisation.nom}-${localisation.codePostal}`"
+          class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
+          @click="selectLocalisation(localisation)"
+        >
+          <div class="fr-card__body">
+            <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
+              <div class="fr-text--blue-france">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div
-      :class="errorMsg ? 'fr-error-text' : ''"
-      class="fr-input--empty-text fr-mt-2v"
-    >
-      {{ errorMsg }}
-    </div>
-  </div>
+    </template>
+  </TeeDsfrSearchBar>
 </template>
 <script lang="ts" setup>
 import { RegisterDetailActivity, CompanyActivityType } from '@/types'
 import { useDebounce } from '@vueuse/core'
 import EstablishmentApi from '@/tools/api/establishmentApi'
-import { onClickOutside } from '@vueuse/core'
 import Translation from '@/tools/translation'
 
 interface Props {
@@ -85,13 +59,10 @@ const selectedActivity = defineModel<CompanyActivityType>()
 
 const activityInput = ref<string>('')
 const isLoading = ref<boolean>(false)
-const activitySearchBar = ref(null)
 const activityResults = ref<CompanyActivityType[]>([])
 const activityLabel = computed<string>(() => {
   return `${props.infos.value?.secteur} (${props.infos.value?.codeNAF})`
 })
-
-onClickOutside(activitySearchBar, () => modifyActivity())
 
 const debouncedActivityInput = useDebounce(activityInput, 100)
 watch(debouncedActivityInput, () => {
@@ -107,7 +78,7 @@ const errorMsg = computed<string>(() => {
   return ''
 })
 
-const modifyActivity = () => {
+const resetActivity = () => {
   selectedActivity.value = undefined
   activityInput.value = ''
   activityResults.value = []
@@ -138,10 +109,5 @@ const searchActivity = async () => {
   position: absolute;
   overflow: hidden auto;
   box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
-}
-
-#register-activity {
-  position: relative;
-  margin-bottom: 0;
 }
 </style>

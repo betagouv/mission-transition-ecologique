@@ -1,11 +1,13 @@
 <template>
-  <div>
+  <div
+    ref="teeSearchBar"
+    class="search-bar"
+  >
     <div
       class="fr-input-group fr-mb-0"
       :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
     >
       <div
-        ref="teeSearchBar"
         class="fr-search-bar fr-search-bar--yellow"
         :class="isLoading ? 'fr-search-bar--loading' : ''"
         role="search"
@@ -17,13 +19,13 @@
           type="search"
           :placeholder="placeholder"
           @update:model-value="updateModelValue"
-          @keyup.enter="searchLocalisation"
+          @keyup.enter="emit('search')"
         />
         <DsfrButton
           class="fr-bg--yellow search-button"
           tertiary
           no-outline
-          @click="searchLocalisation"
+          @click="emit('search')"
         />
       </div>
     </div>
@@ -43,7 +45,6 @@ interface Props {
   errorMsg: string
   name: string
   placeholder: string | undefined
-  search: Function
 }
 
 defineProps<Props>()
@@ -52,7 +53,7 @@ const isLoading = ref<boolean>(false)
 const inputModel = defineModel<string>()
 const debouncedInputModel = useDebounce(inputModel, 1000)
 const teeSearchBar = ref(null)
-const emit = defineEmits(['resetSearch'])
+const emit = defineEmits(['resetSearch', 'search'])
 
 const resetSearch = () => {
   inputModel.value = ''
@@ -63,9 +64,15 @@ const updateModelValue = (value: string) => {
 }
 watch(debouncedInputModel, (newValue) => {
   if (newValue) {
-    searchLocalisation()
+    emit('search')
   }
 })
 
 onClickOutside(teeSearchBar, () => resetSearch())
 </script>
+<style lang="scss" scoped>
+.search-bar {
+  position: relative;
+  margin-bottom: 0;
+}
+</style>
