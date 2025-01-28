@@ -100,6 +100,7 @@ export class CompanyData {
 
     return !!(this.company as EstablishmentFront)?.siret
   }
+
   static hasSize() {
     return this.dataRef.value[CompanyDataStorageKey.Size] !== null
   }

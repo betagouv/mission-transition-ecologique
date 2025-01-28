@@ -1,7 +1,13 @@
 <template>
   <div class="fr-px-6v">
-    <ThemeFiltersAndCard :has-error="hasError" />
-    <SimpleProjectList :project-list="projectList" />
+    <ThemeFiltersAndCard
+      v-if="!hasSpinner"
+      :has-error="hasError"
+    />
+    <SimpleProjectList
+      v-if="!hasSpinner"
+      :project-list="projectList"
+    />
     <TeeSpinner
       v-if="hasSpinner"
       class="fr-mt-16w"
@@ -29,6 +35,10 @@ const props = defineProps<Props>()
 
 onServerPrefetch(async () => {
   await new ProjectManager().getProjects()
+})
+
+onNuxtReady(async () => {
+  await new ProjectManager().getFilteredProjects()
 })
 
 const theme = Theme.getThemeFromSelectedTheme()
