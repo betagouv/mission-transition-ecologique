@@ -44,8 +44,7 @@ export const tests: SearchResultsDataType = [
   {
     id: 2,
     url: 'questionnaire/resultat/projet/isolation-thermique?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
-    values: ['Diagnostic SARE', 'Prêt Économies d’Énergie (PEE)', "Crédit d'Impôt Rénovation Énergétique (CIRE)", 'Prêt Vert']
-    // values: ['Prêt Économies d’Énergie (PEE)', 'Prêt Vert', 'Prêt transition écologique Île-de-France']
+    values: ['Diagnostic SARE', "Crédit d'Impôt Rénovation Énergétique (CIRE)", 'Prêt Économies d’Énergie (PEE)', 'Prêt Vert']
   },
   {
     id: 3,
