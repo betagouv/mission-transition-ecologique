@@ -27,7 +27,7 @@ export const frDict = {
     nowWhat: 'Et maintenant ?',
     advisors: 'Nous allons identifier le bon conseiller près de chez vous',
     phoneContactCE:
-      'Votre demande à été transmise au service public Conseillers-Entreprises. Un conseiller vous contactera par téléphone dans les 5 jours pour échanger sur votre besoin et répondre à vos questions',
+      'Votre demande à été transmise au service public Conseillers-Entreprises.<br> Un conseiller vous contactera par téléphone dans les 5 jours pour échanger sur votre besoin et répondre à vos questions',
     phoneContactAutonomy:
       'Un conseiller {operator} vous contactera prochainement par mail ou par téléphone pour échanger sur votre besoin et répondre à vos questions',
     errorMsg: 'Vous avez la possibilité de nous transmettre votre demande par mail à <a target="_blank" href="{mailto}">{email}</a>.'

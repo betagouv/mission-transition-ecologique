@@ -75,16 +75,14 @@
     class="fr-mt-5v fr-mx-auto fr-grid-row fr-grid-row--center fr-grid-row--middle"
   >
     <template #phoneContact>
-      <p class="fr-mb-10v">
-        <span>
-          {{ phoneCallback }}
-        </span>
+      <p class="fr-mb-5v">
+        <span v-html="phoneCallback"></span>
       </p>
       <img
         v-if="showCELogo"
-        src="/images/logos/ce-logo.svg"
+        src="/images/logos/ce-logo-horizontal.svg"
         :alt="`image / logo-conseillers-entreprise`"
-        width="70px"
+        width="220px"
       />
     </template>
   </TeeFormCallback>
