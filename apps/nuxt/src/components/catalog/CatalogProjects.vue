@@ -83,7 +83,7 @@ const hasFullRegisteredData = ref(false)
 
 onNuxtReady(async () => {
   hasFullRegisteredData.value = CompanyData.isDataFull().value
-  await new ProjectManager().getFilteredProjects()
+  await new ProjectManager().getProjects()
 })
 
 const title = 'Les projets de transition écologique'
