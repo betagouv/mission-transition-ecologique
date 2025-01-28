@@ -119,8 +119,10 @@ const studyPrograms = computed(() => {
 })
 
 const financePrograms = computed(() => {
-  return filteredPrograms.value
-    .filter((program: ProgramData) => [ProgramAidType.fund, ProgramAidType.loan, ProgramAidType.tax].includes(program["nature de l'aide"]))
-    .sort((a, b) => a["nature de l'aide"].localeCompare(b["nature de l'aide"]))
+  const filteredFinance = filteredPrograms.value.filter((program: ProgramData) =>
+    [ProgramAidType.fund, ProgramAidType.loan, ProgramAidType.tax].includes(program["nature de l'aide"])
+  )
+
+  return filteredFinance.sort((a, b) => a["nature de l'aide"].localeCompare(b["nature de l'aide"]))
 })
 </script>
