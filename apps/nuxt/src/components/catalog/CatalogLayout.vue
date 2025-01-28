@@ -84,7 +84,6 @@ export interface CatalogProps {
   countItems: number
   hasSideBar: boolean
 }
-
 const props = defineProps<CatalogProps>()
 
 useSeoMeta(MetaSeo.get(props.title, props.description))

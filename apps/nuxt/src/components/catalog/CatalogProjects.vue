@@ -49,12 +49,13 @@
 </template>
 
 <script setup lang="ts">
+import { useCompanyData } from '@/stores/companyData'
 import { useProjectStore } from '@/stores/project'
+import { CompanyData } from '@/tools/companyData'
 import { ProjectManager } from '@/tools/project/projectManager'
 import ProjectSorter from '@/tools/project/projectSorter'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
-import { CompanyData } from '@/tools/companyData'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
 
@@ -74,15 +75,14 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { projects, hasError } = storeToRefs(useProjectStore())
+const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyData())
 
 onServerPrefetch(async () => {
   await new ProjectManager().getProjects()
 })
 
-const hasFullRegisteredData = ref(false)
-
 onNuxtReady(async () => {
-  hasFullRegisteredData.value = CompanyData.isDataFull().value
+  CompanyData.isDataFull().value // call to initialize computed reactivity variable
   await new ProjectManager().getProjects()
 })
 

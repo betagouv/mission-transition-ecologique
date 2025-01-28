@@ -1,3 +1,4 @@
+import { useCompanyData } from '@/stores/companyData'
 import { CompanyDataStorage } from '@/tools/companyData/companyDataStorage'
 import { useNavigationStore } from '@/stores/navigation'
 import {
@@ -79,12 +80,14 @@ export class CompanyData {
 
   static isDataFull() {
     return computed(() => {
-      const companyData = this.company
-
+      const data = this.dataRef
+      const companyData = data.value[CompanyDataStorageKey.Company]
+      console.trace('Company data isDataFull')
       if (!companyData) {
+        useCompanyData().isDataFull = false
         return false
       }
-
+      useCompanyData().isDataFull = CompanyDataValidator.validate(companyData)
       return CompanyDataValidator.validate(companyData)
     })
   }
