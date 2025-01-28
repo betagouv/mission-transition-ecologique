@@ -35,7 +35,7 @@
             </div>
           </div>
         </div>
-        <div class="fr-col-12 fr-col-justify--left fr-mt-3v fr-mb-10v">
+        <div class="fr-col-12 fr-mt-3v fr-mb-10v">
           <OtherProject />
         </div>
         <div
