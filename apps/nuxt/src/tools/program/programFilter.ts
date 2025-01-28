@@ -13,7 +13,6 @@ import {
 } from '@/types'
 import { enrichedOperators } from '@tee/data/static'
 import { useFiltersStore } from '@/stores/filters'
-import { isArray } from 'chart.js/helpers'
 
 export default class ProgramFilter {
   static byAidType(program: ProgramData, programAidTypesSelected: ProgramAidType[]) {
@@ -92,6 +91,6 @@ export default class ProgramFilter {
   }
 
   static isValidFilterValues(filterValue: ValueOf<FiltersType>) {
-    return typeof filterValue !== 'boolean' && isArray(filterValue) && filterValue.length > 0
+    return Array.isArray(filterValue) && filterValue.length > 0
   }
 }
