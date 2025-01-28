@@ -39,6 +39,9 @@
             </div>
             <SimpleProjectList :project-list="sortedProjects" />
           </div>
+          <div class="fr-col-12 fr-mt-3v fr-mb-10v">
+            <OtherProject />
+          </div>
         </div>
       </div>
     </template>
