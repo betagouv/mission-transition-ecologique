@@ -82,7 +82,6 @@ export class CompanyData {
     return computed(() => {
       const data = this.dataRef
       const companyData = data.value[CompanyDataStorageKey.Company]
-      console.trace('Company data isDataFull')
       if (!companyData) {
         useCompanyData().isDataFull = false
         return false
