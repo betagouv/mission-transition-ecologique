@@ -53,11 +53,11 @@ import { useCompanyData } from '@/stores/companyData'
 import { useProjectStore } from '@/stores/project'
 import { CompanyData } from '@/tools/companyData'
 import { ProjectManager } from '@/tools/project/projectManager'
+import ProjectSorter from '@/tools/project/projectSorter'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
-import ProjectSorter from '@/tools/project/projectSorter'
 
 interface Props {
   showTitleBanner?: boolean
