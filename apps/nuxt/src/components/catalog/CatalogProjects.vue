@@ -93,12 +93,6 @@ const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
 const sortedProjects = ProjectSorter.sort(filteredProjects)
-//   computed(() => {
-//   if (hasFullRegisteredData.value && useFiltersStore().isCompanyDataSelected()) {
-//     return ProjectSorter.bySector(filteredProjects, CompanyData.dataRef.value[CompanyDataStorageKey.Company]?.codeNAF1).value
-//   }
-//   return ProjectSorter.sort(filteredProjects).value
-// })
 
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0
