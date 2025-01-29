@@ -5,7 +5,6 @@ import { NuxtScriptsConfig } from './nuxt.scripts.config'
 import { NuxtSecurityConfig } from './nuxt.security.config'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import { ChangeFreq, Priority } from './src/types/sitemapType'
-import path from 'path';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
