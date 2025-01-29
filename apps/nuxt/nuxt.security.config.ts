@@ -37,7 +37,7 @@ export class NuxtSecurityConfig {
           this._sentryData?.domain ? this._sentryData.domain : ''
         ],
         'base-uri': ["'self'"],
-        'frame-ancestors': ["'self'"],
+        'frame-ancestors': ["'self'", this._baserowFormUrl],
         'frame-src': ["'self'", this._baserowFormUrl],
         'default-src': ["'none'"]
       }
