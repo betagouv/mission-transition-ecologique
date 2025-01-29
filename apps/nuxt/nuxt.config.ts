@@ -132,6 +132,7 @@ export default defineNuxtConfig({
     disallow:[
       '/questionnaire/',
       '/ajouter-une-aide-entreprises',
+      '/iframe/projet/'
     ],
     credits: false
   },
