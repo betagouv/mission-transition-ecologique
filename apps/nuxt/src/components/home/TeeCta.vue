@@ -22,19 +22,12 @@
             </div>
           </div>
         </div>
-        <div class="fr-col-xl-8 fr-col-lg-10 fr-col-md-10 fr-col-sm-6 fr-col-xs-12 tee-home-cta-btn">
+        <div class="fr-col-xl-8 fr-col-lg-10 fr-col-md-10 fr-col-sm-12 fr-col-xs-12 tee-home-cta-btn">
           <TeeDsfrButton
             label="Je trouve les aides pour mon projet"
             size="lg"
             class="inline-flex fr-text--yellow fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center"
             @click="toQuestionnaire()"
-          />
-        </div>
-        <div class="tee-home-cta-sm-image-container fr-md-hide">
-          <img
-            class="fr-responsive-img tee-home-cta-sm-image"
-            src="/images/TEE_eolienne-mini.svg"
-            alt="image / callout"
           />
         </div>
       </div>
