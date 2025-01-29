@@ -10,9 +10,12 @@ export class ProjectManager {
 
   async getProjects(questionnaireData: QuestionnaireData = {}) {
     this._useNavigation.hasSpinner = true
+    console.log('getProjects', questionnaireData)
     const resultApi = await this._getProjectsFromApi(questionnaireData)
+    console.log(resultApi, resultApi.isOk())
     if (resultApi.isOk()) {
       this._useProject.projects = resultApi.data
+      console.log('get projects', this._useProject.projects[0])
       this._useProject.hasProjects = true
       this._useProject.hasError = false
     } else {
@@ -65,13 +68,15 @@ export class ProjectManager {
     ) {
       await this.getFilteredProjects()
     } else if (navigation.isCatalogProjects()) {
-      await this.getProjects()
+      const questionnaireData = useUsedTrackStore().getQuestionnaireData()
+      await this.getProjects(questionnaireData)
     } else {
       this._useProject.reset()
     }
   }
 
   private async _getProjectsFromApi(questionnaireData: QuestionnaireData = {}): Promise<ResultApi<ProjectType[]>> {
+    console.log('getProjectsFromApi')
     return await new ProjectApi(questionnaireData).get()
   }
 

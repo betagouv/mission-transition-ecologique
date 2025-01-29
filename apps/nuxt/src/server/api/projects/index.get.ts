@@ -4,11 +4,13 @@ import { Monitor, ProgramService, ProjectService } from '@tee/backend-ddd'
 
 export default defineEventHandler(async (event) => {
   const questionnaireData = await getValidatedQuery(event, serverQuestionnaireDataSchema.parse)
+  console.log('EVENT HANDLER')
   return projectsCached(event, questionnaireData)
 })
 
 const projectsCached = cachedFunction(
   async (event: H3Event, questionnaireData: QuestionnaireData) => {
+    console.log('CACHED')
     const projectService = new ProjectService()
     const programsResults = new ProgramService().getFilteredPrograms(questionnaireData)
     if (programsResults.isErr) {
@@ -37,12 +39,13 @@ const projectsCached = cachedFunction(
         statusMessage: enrichedProjectResults.error.message
       })
     }
+    console.log('enriched', enrichedProjectResults.value[0])
     return enrichedProjectResults.value
   },
   {
     name: 'projects',
-    getKey: (event: H3Event, questionnaireData: QuestionnaireData) => {
-      return CacheKeyBuilder.formEvent(event, JSON.stringify(questionnaireData))
+    getKey: (event: H3Event) => {
+      return CacheKeyBuilder.formEvent(event)
     },
     maxAge: 60 * 60 * 24 // 24 hours
   }

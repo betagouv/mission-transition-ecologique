@@ -9,6 +9,7 @@
     <div class="fr-container fr-py-2v fr-px-5v fr-px-sm-8v fr-px-md-20v">
       <h2 class="fr-text--blue-france fr-container fr-pt-6v">Quel est votre projet ?</h2>
       <CatalogProjects
+        :key="JSON.stringify(companyData)"
         :show-breadcrumbs="false"
         :show-title="false"
         :show-limit="9"
@@ -37,12 +38,14 @@
 import { defineRouteRules } from '#imports'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { RouteName } from '@/types'
+import { CompanyDataStorage } from '@/tools/companyData'
 
 definePageMeta({
   path: '/',
   name: RouteName.Homepage,
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetProgramFilters]
 })
+const companyData = CompanyDataStorage.getCompany()
 
 defineRouteRules({
   sitemap: {

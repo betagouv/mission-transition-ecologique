@@ -64,7 +64,7 @@ import Navigation from '@/tools/navigation'
 import { ProjectManager } from '@/tools/project/projectManager'
 import ProjectFilter from '@/tools/project/projectFilter'
 import ProjectSorter from '@/tools/project/projectSorter'
-import { ThemeId } from '@/types'
+import { QuestionnaireData, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import { Theme } from '@/tools/theme'
@@ -86,11 +86,9 @@ const props = withDefaults(defineProps<Props>(), {
 const { projects, hasError } = storeToRefs(useProjectStore())
 const questionnaireData = useUsedTrackStore().getQuestionnaireData()
 
-await new ProjectManager().getProjects(questionnaireData)
-
+await new ProjectManager().getProjects(questionnaireData as QuestionnaireData)
 const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
-
 if (!new Navigation().isHomepage()) {
   useSeoMeta(MetaSeo.get(title, description))
 }
@@ -107,7 +105,6 @@ const hasSpinner = computed(() => {
 const projectList = computed(() => {
   return props.showLimit !== undefined ? sortedProjects.value.slice(0, props.showLimit) : sortedProjects.value
 })
-console.log(projectList.value)
 const hasThemeCard = computed(() => {
   return programStore.hasThemeTypeSelected() && !hasSpinner.value
 })
