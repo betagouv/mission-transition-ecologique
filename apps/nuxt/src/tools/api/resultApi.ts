@@ -32,7 +32,6 @@ export class ResultApi<T> {
   }
 
   public isOk(): this is { data: T; error: null } {
-    console.log(this._data.value !== null, this._error === null, this._error?.value === null)
     return this._data.value !== null && (this._error === null || this._error.value === null)
   }
 

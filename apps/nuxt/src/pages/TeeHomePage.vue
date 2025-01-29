@@ -32,14 +32,12 @@
 import { defineRouteRules } from '#imports'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { RouteName } from '@/types'
-import { CompanyDataStorage } from '@/tools/companyData'
 
 definePageMeta({
   path: '/',
   name: RouteName.Homepage,
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetFilters]
 })
-const companyData = CompanyDataStorage.getCompany()
 
 defineRouteRules({
   sitemap: {

@@ -4,13 +4,11 @@ import { Monitor, ProgramService, ProjectService } from '@tee/backend-ddd'
 
 export default defineEventHandler(async (event) => {
   const questionnaireData = await getValidatedQuery(event, serverQuestionnaireDataSchema.parse)
-  console.log('EVENT HANDLER')
   return projectsCached(event, questionnaireData)
 })
 
 const projectsCached = cachedFunction(
   async (event: H3Event, questionnaireData: QuestionnaireData) => {
-    console.log('CACHED')
     const projectService = new ProjectService()
     const programsResults = new ProgramService().getFilteredPrograms(questionnaireData)
     if (programsResults.isErr) {

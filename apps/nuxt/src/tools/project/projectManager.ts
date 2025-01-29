@@ -1,4 +1,3 @@
-import { useUsedTrackStore } from '@/stores/usedTrack'
 import ProjectApi from '@/tools/api/projectApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import { CompanyData } from '@/tools/companyData'
@@ -9,14 +8,12 @@ export class ProjectManager {
   _useProject = useProjectStore()
   _useNavigation = useNavigationStore()
 
-  async getProjects(questionnaireData: QuestionnaireData = {}) {
+  async getProjects() {
     this._useNavigation.hasSpinner = true
-    console.log('getProjects', questionnaireData)
-    const resultApi = await this._getProjectsFromApi(questionnaireData)
-    console.log(resultApi, resultApi.isOk())
+    CompanyData.isDataFull().value // call to initialize computed reactivity variable
+    const resultApi = await this._getProjectsFromApi((CompanyData.company || {}) as QuestionnaireData)
     if (resultApi.isOk()) {
       this._useProject.projects = resultApi.data
-      console.log('get projects', this._useProject.projects[0])
       this._useProject.hasProjects = true
       this._useProject.hasError = false
     } else {
@@ -27,9 +24,7 @@ export class ProjectManager {
   }
 
   async getFilteredProjects() {
-    const questionnaireData = useUsedTrackStore().getQuestionnaireData()
-
-    await this.getProjects(questionnaireData)
+    await this.getProjects()
   }
 
   async getProjectBySlug(slug: string) {
@@ -70,14 +65,13 @@ export class ProjectManager {
       await this.getFilteredProjects()
     } else if (navigation.isCatalogProjects()) {
       CompanyData.isDataFull().value // Force computed reactivity
-      await this.getProjects(CompanyData.company as QuestionnaireData)
+      await this.getProjects()
     } else {
       this._useProject.reset()
     }
   }
 
   private async _getProjectsFromApi(questionnaireData: QuestionnaireData = {}): Promise<ResultApi<ProjectType[]>> {
-    console.log('getProjectsFromApi')
     return await new ProjectApi(questionnaireData).get()
   }
 

@@ -51,10 +51,8 @@
 <script setup lang="ts">
 import { useCompanyData } from '@/stores/companyData'
 import { useProjectStore } from '@/stores/project'
-import { CompanyData } from '@/tools/companyData'
 import { ProjectManager } from '@/tools/project/projectManager'
 import ProjectSorter from '@/tools/project/projectSorter'
-import { QuestionnaireData, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import ProjectFilter from '@/tools/project/projectFilter'
@@ -79,14 +77,11 @@ const { projects, hasError } = storeToRefs(useProjectStore())
 const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyData())
 
 onServerPrefetch(async () => {
-  const questionnaireData = useUsedTrackStore().getQuestionnaireData()
-  await new ProjectManager(questionnaireData).getProjects()
+  await new ProjectManager().getProjects()
 })
 
 onNuxtReady(async () => {
-  const questionnaireData = useUsedTrackStore().getQuestionnaireData()
-  CompanyData.isDataFull().value // call to initialize computed reactivity variable
-  await new ProjectManager(questionnaireData).getProjects()
+  await new ProjectManager().getProjects()
 })
 
 const title = 'Les projets de transition écologique'
