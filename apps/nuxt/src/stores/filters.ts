@@ -24,6 +24,10 @@ export const useFiltersStore = defineStore('filters', () => {
     return filters.value[FilterItemKeys.themeType]
   }
 
+  function isCompanyDataSelected() {
+    return filters.value[FilterItemKeys.companyData]
+  }
+
   function resetFilters() {
     filters.value = {
       [FilterItemKeys.typeAid]: [],
@@ -50,6 +54,7 @@ export const useFiltersStore = defineStore('filters', () => {
     hasThemeTypeSelected,
     getThemeTypeSelected,
     setThemeTypeSelected,
+    isCompanyDataSelected,
     resetFilters,
     resetFilter
   }

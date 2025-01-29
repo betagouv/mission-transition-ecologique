@@ -53,11 +53,11 @@ import { useCompanyData } from '@/stores/companyData'
 import { useProjectStore } from '@/stores/project'
 import { CompanyData } from '@/tools/companyData'
 import { ProjectManager } from '@/tools/project/projectManager'
-import ProjectSorter from '@/tools/project/projectSorter'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
+import ProjectSorter from '@/tools/project/projectSorter'
 
 interface Props {
   showTitleBanner?: boolean
@@ -93,6 +93,12 @@ const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
 const sortedProjects = ProjectSorter.sort(filteredProjects)
+//   computed(() => {
+//   if (hasFullRegisteredData.value && useFiltersStore().isCompanyDataSelected()) {
+//     return ProjectSorter.bySector(filteredProjects, CompanyData.dataRef.value[CompanyDataStorageKey.Company]?.codeNAF1).value
+//   }
+//   return ProjectSorter.sort(filteredProjects).value
+// })
 
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0
