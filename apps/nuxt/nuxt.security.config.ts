@@ -15,7 +15,7 @@ export class NuxtSecurityConfig {
     return {
       contentSecurityPolicy: {
         ...this._getDefaultContentSecurityPolicy(),
-        'frame-ancestors': ["'self'"]
+        'frame-ancestors': false
       }
       // Missing headers:
       // 'X-Frame-Options': 'ALLOW-FROM https://conseillers-entreprises.service-public.fr',
@@ -25,7 +25,11 @@ export class NuxtSecurityConfig {
 
   static getIframePageHeadersConfig(): SecurityHeaders {
     return {
-      contentSecurityPolicy: this._getDefaultContentSecurityPolicy()
+      contentSecurityPolicy: {
+        ...this._getDefaultContentSecurityPolicy(),
+        'frame-ancestors': false
+      },
+      xFrameOptions: false
     }
   }
 
