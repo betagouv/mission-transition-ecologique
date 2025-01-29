@@ -1,5 +1,8 @@
 <template>
-  <ThemeFiltersAndCard id="tab-content-header" />
+  <ResultThemeFiltersAndCard
+    id="tab-content-header"
+    :has-error="hasError"
+  />
   <client-only fallback-tag="div">
     <template #fallback>
       <div class="fr-container">

@@ -6,15 +6,9 @@
         <TeeCta />
       </div>
     </div>
-    <div class="fr-container fr-py-2v fr-px-5v fr-px-sm-8v fr-px-md-20v">
+    <div class="fr-container fr-py-2v fr-px-8v fr-px-sm-8v fr-px-md-20v">
       <h2 class="fr-text--blue-france fr-container fr-pt-6v">Quel est votre projet ?</h2>
-      <CatalogProjects
-        :key="JSON.stringify(companyData)"
-        :show-breadcrumbs="false"
-        :show-title="false"
-        :show-limit="9"
-        :show-counter="false"
-      />
+      <TeeHomeProjectList :limit="9" />
       <div class="fr-container fr-grid-row fr-grid-row--center fr-pt-8v">
         <div class="fr-col-12 fr-col-justify--center">
           <TeeButtonLink
@@ -43,7 +37,7 @@ import { CompanyDataStorage } from '@/tools/companyData'
 definePageMeta({
   path: '/',
   name: RouteName.Homepage,
-  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetProgramFilters]
+  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetFilters]
 })
 const companyData = CompanyDataStorage.getCompany()
 

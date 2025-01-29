@@ -1,6 +1,7 @@
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import ProjectApi from '@/tools/api/projectApi'
 import { ResultApi } from '@/tools/api/resultApi'
+import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
 import { type ProjectType, QuestionnaireData } from '@/types'
 
@@ -68,8 +69,8 @@ export class ProjectManager {
     ) {
       await this.getFilteredProjects()
     } else if (navigation.isCatalogProjects()) {
-      const questionnaireData = useUsedTrackStore().getQuestionnaireData()
-      await this.getProjects(questionnaireData)
+      CompanyData.isDataFull().value // Force computed reactivity
+      await this.getProjects(CompanyData.company as QuestionnaireData)
     } else {
       this._useProject.reset()
     }
