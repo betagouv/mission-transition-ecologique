@@ -19,11 +19,12 @@ export class NuxtSecurityConfig {
           "'nonce-{{nonce}}'",
           this._statsBetaGouvFrUrl,
           this._posthogUrl,
-          this._posthogAssetsUrl
+          this._posthogAssetsUrl,
+          this._baserowFormUrl
         ],
         'script-src': ["'self'", "'nonce-{{nonce}}'", "'strict-dynamic'", Config.isProduction() ? '' : "'unsafe-eval'"],
         'worker-src': ["'self'", 'blob:'],
-        'style-src': ["'self'", "'unsafe-inline'"],
+        'style-src': ["'self'", "'unsafe-inline'", this._baserowFormUrl],
         'font-src': ["'self'"],
         'object-src': ["'self'"],
         'img-src': ["'self'", 'data:'],
@@ -31,6 +32,7 @@ export class NuxtSecurityConfig {
           "'self'",
           this._statsBetaGouvFrUrl,
           this._posthogUrl,
+          this._baserowFormUrl,
           this._posthogAssetsUrl,
           this._sentryData?.domain ? this._sentryData.domain : ''
         ],
