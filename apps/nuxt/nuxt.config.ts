@@ -5,6 +5,7 @@ import { NuxtScriptsConfig } from './nuxt.scripts.config'
 import { NuxtSecurityConfig } from './nuxt.security.config'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import { ChangeFreq, Priority } from './src/types/sitemapType'
+import path from 'path';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -23,6 +24,7 @@ export default defineNuxtConfig({
     '/stats': { swr: 86400 }, // cached for 1 day (86400 seconds)
     '/budget': { prerender: true },
     '/ajouter-une-aide-entreprises': { prerender: true },
+    '/iframe/projet/**': { swr: true }
   },
   compatibilityDate: '2024-10-09',
   workspaceDir: '../../',

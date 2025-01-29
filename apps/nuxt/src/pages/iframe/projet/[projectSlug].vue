@@ -7,6 +7,9 @@ definePageMeta({
   middleware: [MiddlewareName.hasProject]
 })
 
+const imageResizerChild = () => import('@iframe-resizer/child')
+imageResizerChild()
+
 const { currentProject } = storeToRefs(useProjectStore())
 const title = currentProject.value?.title?.toLowerCase() || ''
 const router = useRouter()
@@ -17,10 +20,10 @@ const href = router.resolve({ name: RouteName.CatalogProjectDetail, params: { pr
   <div class="fr-container fr-px-0">
     <div class="fr-grid-row">
       <div class="fr-col-12">
-        <div class="fr-card fr-enlarge-link fr-card--horizontal fr-card--grey fr-p-4v">
+        <div class="fr-card fr-enlarge-link fr-card--horizontal fr-card--icon-link fr-card--grey fr-p-4v fr-card--no-border">
           <div class="fr-card__body">
             <div class="fr-card__content">
-              <h4 class="fr-card__title">
+              <h3 class="fr-card__title">
                 <a
                   :href="href"
                   target="_blank"
@@ -28,7 +31,7 @@ const href = router.resolve({ name: RouteName.CatalogProjectDetail, params: { pr
                 >
                   Accédez aux aides publiques pour votre projet de {{ title }}
                 </a>
-              </h4>
+              </h3>
               <p class="fr-card__desc">
                 Le service public Transition écologique des entreprises vous permet de trouver les aides, accompagnements et ressources
                 issues de l'ensemble des acteurs publics pour vous aider à réaliser votre projet de transition écologique (ADEME, CCI, CMA,

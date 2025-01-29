@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { Iframe } from '@/tools/iframe/iframe.js'
+import { Iframe } from '@/tools/iframe/iframe'
 
 definePageMeta({
   layout: 'iframe'
