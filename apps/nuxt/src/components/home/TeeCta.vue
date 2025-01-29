@@ -9,7 +9,13 @@
           <div class="fr-grid-row fr-grid-row--gutters">
             <div class="fr-col">
               <h3 class="fr-text--purple fr-text--bold fr-mb-6v">TPE, PME</h3>
-              <h1 class="fr-mb-3v">Trouvez les solutions pour la transition écologique de votre entreprise</h1>
+              <h1 class="fr-mb-3v">
+                Trouvez les solutions pour
+                <br />
+                la transition écologique
+                <br />
+                de votre entreprise
+              </h1>
               <p class="fr-text--lead fr-col-12 fr-col-lg-9 fr-pr-2v">
                 Identifiez facilement les aides publiques adaptées à votre entreprise pour concrétiser vos projets de transition écologique.
               </p>
