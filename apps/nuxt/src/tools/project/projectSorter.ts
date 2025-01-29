@@ -12,7 +12,7 @@ export default class ProjectSorter {
         return b.priority - a.priority
       })
 
-      return useCompanyData().isDataFull
+      return useFiltersStore().isCompanyDataSelected()
         ? sortByPriority.slice().sort((a, b) => {
             return a.sectors.length <= 5 && a.sectors.length < b.sectors.length ? -1 : 1
           })
