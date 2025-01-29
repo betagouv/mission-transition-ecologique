@@ -23,7 +23,12 @@ export default defineNuxtConfig({
     '/stats': { swr: 86400 }, // cached for 1 day (86400 seconds)
     '/budget': { prerender: true },
     '/ajouter-une-aide-entreprises': { prerender: true },
-    '/iframe/projet/**': { swr: true }
+    '/iframe/projet/**': {
+      swr: true,
+      security: {
+        headers: NuxtSecurityConfig.getIframePageHeadersConfig(),
+      }
+    }
   },
   compatibilityDate: '2024-10-09',
   workspaceDir: '../../',
@@ -109,7 +114,7 @@ export default defineNuxtConfig({
     ssg: {
       hashScripts: true
     },
-    headers: NuxtSecurityConfig.getHeaderConfig(),
+    headers: NuxtSecurityConfig.getHeadersConfig(),
     rateLimiter: NuxtSecurityConfig.getRateLimiterConfig()
   },
   sentry: NuxtSentryConfig.getConfig(),
