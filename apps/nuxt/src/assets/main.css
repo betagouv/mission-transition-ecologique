@@ -1959,10 +1959,10 @@
   color: #fff;
 }
 .fr-card--white .fr-card__title {
-  color: var(--text-default-grey);
+  color: var(--text-default-grey) !important;
 }
 .fr-card--black .fr-card__title {
-  color: var(--text-default-grey);
+  color: var(--text-default-grey) !important;
 }
 .fr-card--yellow {
   background-color: #facf35 !important;
@@ -1972,7 +1972,7 @@
   color: #000091 !important;
 }
 .fr-card--deep-red .fr-card__title {
-  color: var(--text-default-grey);
+  color: var(--text-default-grey) !important;
 }
 .fr-card--red {
   background-color: #fca081 !important;

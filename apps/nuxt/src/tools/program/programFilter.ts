@@ -1,18 +1,18 @@
 import {
   FilterItemKeys,
   FiltersKeys,
+  FiltersType,
   OperatorFilter,
   ProgramAidType,
   type ProgramData,
   ProgramEligibility,
-  type ProgramFiltersType,
   ProgramType,
   Region,
   ThemeId,
   type ValueOf
 } from '@/types'
 import { enrichedOperators } from '@tee/data/static'
-import { useProgramStore } from '@/stores/program'
+import { useFiltersStore } from '@/stores/filters'
 
 export default class ProgramFilter {
   static byAidType(program: ProgramData, programAidTypesSelected: ProgramAidType[]) {
@@ -29,7 +29,7 @@ export default class ProgramFilter {
     }
 
     if (companySelected) {
-      useProgramStore().resetFilter(FilterItemKeys.regionAid)
+      useFiltersStore().resetFilter(FilterItemKeys.regionAid)
       return ProgramEligibility.isEligible(program as unknown as ProgramType)
     }
 
@@ -86,11 +86,11 @@ export default class ProgramFilter {
     return true
   }
 
-  static isValidFilterValue(programFilterValue: ValueOf<ProgramFiltersType>) {
-    return programFilterValue !== ''
+  static isValidFilterValue(filterValue: ValueOf<FiltersType>) {
+    return filterValue !== ''
   }
 
-  static isValidFilterValues(programFilterValue: ValueOf<ProgramFiltersType>) {
-    return typeof programFilterValue !== 'boolean' && programFilterValue.length > 0
+  static isValidFilterValues(filterValue: ValueOf<FiltersType>) {
+    return Array.isArray(filterValue) && filterValue.length > 0
   }
 }

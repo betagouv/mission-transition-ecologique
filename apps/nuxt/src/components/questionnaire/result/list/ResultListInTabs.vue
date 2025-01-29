@@ -15,7 +15,10 @@
       :tab-titles="titles"
     >
       <template #tab-content-header>
-        <ThemeFiltersAndCard id="tab-content-header" />
+        <ResultThemeFiltersAndCard
+          id="tab-content-header"
+          :has-error="hasErrorProjects && hasErrorPrograms"
+        />
       </template>
       <DsfrTabContent
         class="fr-p-0"
@@ -27,7 +30,7 @@
         </template>
         <ResultProjectList
           :filtered-projects="filteredProjects"
-          :has-error="hasError"
+          :has-error="hasErrorProjects"
         />
       </DsfrTabContent>
 
@@ -38,7 +41,7 @@
       >
         <ResultProgramList
           :filtered-programs="filteredPrograms"
-          :has-error="hasError"
+          :has-error="hasErrorPrograms"
         />
       </DsfrTabContent>
     </TeeDsfrTabs>
@@ -60,8 +63,8 @@ import { Theme } from '@/tools/theme'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
-const { projects } = storeToRefs(useProjectStore())
-const { programs, hasError } = storeToRefs(programStore)
+const { projects, hasError: hasErrorProjects } = storeToRefs(useProjectStore())
+const { programs, hasError: hasErrorPrograms } = storeToRefs(programStore)
 const { tabSelectedOnList } = storeToRefs(navigationStore)
 
 onNuxtReady(async () => {

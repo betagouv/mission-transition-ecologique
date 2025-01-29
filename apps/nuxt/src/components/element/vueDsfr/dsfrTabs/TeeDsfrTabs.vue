@@ -49,7 +49,7 @@
 <script lang="ts" setup>
 import { BreakpointNameType } from '@/types'
 import Breakpoint from '@/tools/breakpoints'
-import { DsfrTabItem, DsfrTabContent, type DsfrTabsProps, getRandomId, DsfrTabs, registerTabKey } from '@gouvminint/vue-dsfr'
+import { DsfrTabItem, DsfrTabContent, type DsfrTabsProps, DsfrTabs, registerTabKey, useRandomId } from '@gouvminint/vue-dsfr'
 import { DsfrTabItemProps } from '@gouvminint/vue-dsfr/types/components/DsfrTabs/DsfrTabs.types'
 
 interface TitleTab {
@@ -112,7 +112,7 @@ const getIdFromIndex = (idx: number) => {
   if (generatedIds[idx]) {
     return generatedIds[idx]
   }
-  const id = getRandomId('tab')
+  const id = useRandomId('tab')
   generatedIds[idx] = id
   return id
 }
@@ -134,6 +134,7 @@ const selectLast = async () => {
   activeTab.value = props.tabTitles.length - 1
 }
 
+const dsfrTabs = ref<InstanceType<typeof DsfrTabs> | null>(null)
 /*
  * Use metgods from DsfrTabs component to render tabs which are exposed
  */
@@ -141,7 +142,6 @@ const renderTabs = () => {
   dsfrTabs.value?.renderTabs()
 }
 
-const dsfrTabs = ref<InstanceType<typeof DsfrTabs> | null>(null)
 const resizeObserver = ref<ResizeObserver | null>(null)
 
 const titles = computed(() => {
@@ -188,8 +188,6 @@ onUnmounted(() => {
 defineExpose({
   renderTabs,
   selectFirst,
-  selectLast,
-  selectNext,
-  selectPrevious
+  selectLast
 })
 </script>

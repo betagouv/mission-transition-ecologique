@@ -19,7 +19,7 @@ Most of those scripts can be executed from root using npm run commands (see the 
 
 ## Running unit tests
 
-Run `nx run @tee/data:test` to execute the unit tests via [Jest](https://jestjs.io).
+Run `nx run @tee/data:test` to execute the unit tests via [vitest](https://vitest.dev/).
 
 ### Test data
 

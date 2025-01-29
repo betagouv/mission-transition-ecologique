@@ -118,6 +118,8 @@ const saveProfile = async () => {
           siret: companyData.siret
         })
       }
+    } else {
+      Analytics.sendEvent('register_manual_modal', 'register_manual_modal')
     }
 
     Navigation.toggleRegisterModal(false)

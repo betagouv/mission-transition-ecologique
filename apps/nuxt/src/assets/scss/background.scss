@@ -1,11 +1,10 @@
 @use 'sass:color';
 @use 'sass:meta';
 @use 'sass:map';
-@use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
 @use 'setting';
 @use 'tool';
 
-@each $breakpoint, $value in breakpoints.$values {
+@each $breakpoint, $value in setting.$breakpoints-values {
   $modifier: tool.modifierByBreakpoint($breakpoint);
 
   @include tool.media-query-respond-from($breakpoint) {

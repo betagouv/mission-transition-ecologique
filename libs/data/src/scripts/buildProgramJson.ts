@@ -1,4 +1,4 @@
-import { readPrograms, prependInterface, buildProgramJson } from './dataPipeline'
+import { readPrograms, prependInterface, buildProgramJson } from '../program/dataPipeline'
 
 console.log('▶ Starting data consolidation (buildJsonOutput.ts)\n')
 
