@@ -4,9 +4,7 @@ import Config from './src/config'
 
 export class NuxtSecurityConfig {
   static _statsBetaGouvFrUrl = 'https://stats.beta.gouv.fr'
-  static _typeformUrl = 'https://embed.typeform.com'
-  static _typeformApiUrl = 'https://api.typeform.com'
-  static _typeformFormUrl = 'https://form.typeform.com'
+  static _baserowFormUrl = 'https://baserow.io/'
   static _posthogUrl = 'https://eu.i.posthog.com'
   static _posthogAssetsUrl = 'https://eu-assets.i.posthog.com'
   static _sentryData = NuxtSentryConfig.getSentryData()
@@ -21,27 +19,24 @@ export class NuxtSecurityConfig {
           "'nonce-{{nonce}}'",
           this._statsBetaGouvFrUrl,
           this._posthogUrl,
-          this._posthogAssetsUrl,
-          this._typeformUrl
+          this._posthogAssetsUrl
         ],
         'script-src': ["'self'", "'nonce-{{nonce}}'", "'strict-dynamic'", Config.isProduction() ? '' : "'unsafe-eval'"],
         'worker-src': ["'self'", 'blob:'],
-        'style-src': ["'self'", "'unsafe-inline'", this._typeformUrl],
+        'style-src': ["'self'", "'unsafe-inline'"],
         'font-src': ["'self'"],
         'object-src': ["'self'"],
         'img-src': ["'self'", 'data:'],
         'connect-src': [
           "'self'",
           this._statsBetaGouvFrUrl,
-          this._typeformUrl,
-          this._typeformApiUrl,
           this._posthogUrl,
           this._posthogAssetsUrl,
           this._sentryData?.domain ? this._sentryData.domain : ''
         ],
         'base-uri': ["'self'"],
         'frame-ancestors': ["'self'"],
-        'frame-src': ["'self'", this._typeformFormUrl],
+        'frame-src': ["'self'", this._baserowFormUrl],
         'default-src': ["'none'"]
       }
       // Missing headers:

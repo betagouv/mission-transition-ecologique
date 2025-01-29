@@ -3,8 +3,8 @@
   <div>
     <iframe
       src="https://baserow.io/form/oZMzNirPXLXP8RpR2pQ553jFMVURknX_xVUl7B1bdl8"
-      title="Formulaire Baserow"
-      allowFullScreen
+      title="Formulaire Baserow d'ajout de dispositif"
+      class="tee-baserow-form"
     ></iframe>
   </div>
 </template>
@@ -45,3 +45,9 @@ if (import.meta.client) {
   })
 }
 </script>
+<style lang="scss" scoped>
+.tee-baserow-form {
+  width: 100%;
+  height: 100vh;
+}
+</style>
