@@ -23,10 +23,6 @@ export class ProjectManager {
     this._useNavigation.hasSpinner = false
   }
 
-  async getFilteredProjects() {
-    await this.getProjects()
-  }
-
   async getProjectBySlug(slug: string) {
     if (this._useProject.currentProject && this._useProject.currentProject.slug === slug) {
       return
@@ -60,11 +56,9 @@ export class ProjectManager {
       navigation.isQuestionnaireResult() ||
       navigation.isProgramDetail() ||
       navigation.isQuestionnaireThemeCards() ||
-      navigation.isHomepage()
+      navigation.isHomepage() ||
+      navigation.isCatalogProjects()
     ) {
-      await this.getFilteredProjects()
-    } else if (navigation.isCatalogProjects()) {
-      CompanyData.isDataFull().value // Force computed reactivity
       await this.getProjects()
     } else {
       this._useProject.reset()

@@ -37,7 +37,6 @@ const projectsCached = cachedFunction(
         statusMessage: enrichedProjectResults.error.message
       })
     }
-    console.log('enriched', enrichedProjectResults.value[0])
     return enrichedProjectResults.value
   },
   {

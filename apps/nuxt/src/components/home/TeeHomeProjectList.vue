@@ -38,7 +38,7 @@ onServerPrefetch(async () => {
 })
 
 onNuxtReady(async () => {
-  await new ProjectManager().getFilteredProjects()
+  await new ProjectManager().getProjects()
 })
 
 const theme = Theme.getThemeFromSelectedTheme()
