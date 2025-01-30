@@ -5,33 +5,27 @@
   >
     <div class="fr-col fr-col-md-8 fr-col-lg-8">
       <div class="fr-grid-row fr-grid-row--gutters fr-p-5v fr-p-sm-8v fr-p-md-20v">
-        <div class="fr-col-12 fr-mb-4v fr-mx-0 fr-px-2v tee-home-cta-text">
-          <div class="fr-px-2v">
-            <div class="tee-track-callout fr-grid-row fr-grid-row--gutters">
-              <div class="fr-col">
-                <h2 class="tee-track-callout-header">TPE, PME</h2>
-                <h1 class="fr-mb-3 tee-track-callout-big-title">Trouvez comment allier écologie avec économies</h1>
-                <p class="fr-callout__text tee-track-callout-description">
-                  Je complète mon profil en moins de 2 minutes, et j’accède à des propositions d’actions et de financements pour m'aider à
-                  réduire mon impact environnemental.
-                </p>
-              </div>
+        <div class="fr-col-12 fr-mb-4v fr-mx-0 fr-px-4v">
+          <div class="fr-grid-row fr-grid-row--gutters">
+            <div class="fr-col">
+              <h3 class="fr-text--purple fr-text--bold fr-mb-6v">TPE, PME</h3>
+              <h1 class="fr-mb-3v">
+                Trouvez les solutions pour
+                <span class="fr-display-sm--block">la transition écologique </span>
+                <span class="fr-display-sm--block">de votre entreprise</span>
+              </h1>
+              <p class="fr-text--lead fr-col-12 fr-col-lg-9 fr-pr-2v">
+                Identifiez facilement les aides publiques adaptées à votre entreprise pour concrétiser vos projets de transition écologique.
+              </p>
             </div>
           </div>
         </div>
-        <div class="fr-col-xl-8 fr-col-lg-10 fr-col-md-10 fr-col-sm-6 fr-col-xs-12 tee-home-cta-btn">
+        <div class="fr-col-xl-8 fr-col-lg-10 fr-col-md-10 fr-col-sm-12 fr-col-xs-12 tee-home-cta-btn">
           <TeeDsfrButton
-            label="Je me lance !"
+            label="Je trouve les aides pour mon projet"
             size="lg"
-            class="inline-flex fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center"
+            class="inline-flex fr-text--yellow fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center"
             @click="toQuestionnaire()"
-          />
-        </div>
-        <div class="tee-home-cta-sm-image-container fr-md-hide">
-          <img
-            class="fr-responsive-img tee-home-cta-sm-image"
-            src="/images/TEE_eolienne-mini.svg"
-            alt="image / callout"
           />
         </div>
       </div>

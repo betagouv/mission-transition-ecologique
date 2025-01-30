@@ -2303,6 +2303,9 @@
   .fr-container--fluid--no-overflow {
     overflow: unset;
   }
+  .fr-display--block {
+    display: block;
+  }
 }
 @media (min-width: 36em) {
   .fr-col-content-sm--top {
@@ -2346,6 +2349,9 @@
   }
   .fr-container-sm--fluid--no-overflow {
     overflow: unset;
+  }
+  .fr-display-sm--block {
+    display: block;
   }
 }
 @media (min-width: 48em) {
@@ -2391,6 +2397,9 @@
   .fr-container-md--fluid--no-overflow {
     overflow: unset;
   }
+  .fr-display-md--block {
+    display: block;
+  }
 }
 @media (min-width: 62em) {
   .fr-col-content-lg--top {
@@ -2435,6 +2444,9 @@
   .fr-container-lg--fluid--no-overflow {
     overflow: unset;
   }
+  .fr-display-lg--block {
+    display: block;
+  }
 }
 @media (min-width: 78em) {
   .fr-col-content-xl--top {
@@ -2478,6 +2490,9 @@
   }
   .fr-container-xl--fluid--no-overflow {
     overflow: unset;
+  }
+  .fr-display-xl--block {
+    display: block;
   }
 }
 .fr-sticky {
