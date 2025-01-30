@@ -82,7 +82,7 @@
         v-if="showCELogo"
         src="/images/logos/ce-logo-horizontal.svg"
         :alt="`image / logo-conseillers-entreprise`"
-        width="220px"
+        width="280px"
       />
     </template>
   </TeeFormCallback>
