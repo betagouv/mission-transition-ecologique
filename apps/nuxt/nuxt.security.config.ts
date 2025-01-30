@@ -38,10 +38,10 @@ export class NuxtSecurityConfig {
         ],
         'base-uri': ["'self'"],
         'frame-src': ["'self'", this._baserowFormUrl],
+        'frame-ancestors': ["'self'", this._baserowFormUrl],
         'default-src': ["'none'"]
       }
       // Missing headers:
-      // 'X-Frame-Options': 'ALLOW-FROM https://conseillers-entreprises.service-public.fr',
       // 'Expect-CT': `default-src 'self' ${this._sentryData?.domain ? this._sentryData.domain : ''}; report-uri ${this._sentryData?.url};`
     }
   }
