@@ -22,17 +22,17 @@ export class ProjectService {
     }
   }
 
-  public addAvailablePrograms(projects: ProjectType[], programs: ProgramType[]): Result<ProjectType[], Error> {
+  public addEligibleProgramsCount(projects: ProjectType[], programs: ProgramType[]): Result<ProjectType[], Error> {
     try {
-      const availableProgramsSet = new Set(programs.map((program) => program.id))
+      const eligibleProgramsSet = new Set(programs.map((program) => program.id))
       const projectList = projects.map((project: ProjectType) => {
-        const countAvailablePrograms = project.programs.reduce(
-          (count, programId: string) => count + (availableProgramsSet.has(programId) ? 1 : 0),
+        const countEligiblePrograms = project.programs.reduce(
+          (count, programId: string) => count + (eligibleProgramsSet.has(programId) ? 1 : 0),
           0
         )
         return {
           ...project,
-          countAvailablePrograms
+          countEligiblePrograms
         }
       })
       return Result.ok(projectList)

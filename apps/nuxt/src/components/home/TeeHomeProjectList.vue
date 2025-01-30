@@ -26,6 +26,7 @@ import ProjectFilter from '@/tools/project/projectFilter'
 import ProjectSorter from '@/tools/project/projectSorter'
 import { useProjectStore } from '@/stores/project'
 import { ProjectManager } from '@/tools/project/projectManager'
+import { CompanyData } from '@/tools/companyData'
 
 interface Props {
   limit: number
@@ -38,6 +39,7 @@ onServerPrefetch(async () => {
 })
 
 onNuxtReady(async () => {
+  CompanyData.isDataFull().value // call to initialize computed reactivity variable
   await new ProjectManager().getProjects()
 })
 

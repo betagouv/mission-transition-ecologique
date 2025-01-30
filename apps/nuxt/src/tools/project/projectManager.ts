@@ -1,6 +1,5 @@
 import ProjectApi from '@/tools/api/projectApi'
 import { ResultApi } from '@/tools/api/resultApi'
-import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
 import { type ProjectType, QuestionnaireData } from '@/types'
 
@@ -10,8 +9,8 @@ export class ProjectManager {
 
   async getProjects() {
     this._useNavigation.hasSpinner = true
-    CompanyData.isDataFull().value // call to initialize computed reactivity variable
-    const resultApi = await this._getProjectsFromApi((CompanyData.company || {}) as QuestionnaireData)
+    const questionnaireData = useUsedTrackStore().getQuestionnaireData()
+    const resultApi = await this._getProjectsFromApi(questionnaireData as QuestionnaireData)
     if (resultApi.isOk()) {
       this._useProject.projects = resultApi.data
       this._useProject.hasProjects = true

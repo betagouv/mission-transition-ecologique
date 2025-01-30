@@ -12,7 +12,7 @@ export default class ProjectFeatures {
   }
 
   public getFiltered(questionnaireData: QuestionnaireData): ProjectType[] {
-    if (!questionnaireData.codeNAF1) {
+    if (!questionnaireData.codeNAF1 || !questionnaireData.onlyEligible) {
       return projects
     }
     return projects.filter((project) => ProjectEligibility.isEligible(project, questionnaireData.codeNAF1 as string))

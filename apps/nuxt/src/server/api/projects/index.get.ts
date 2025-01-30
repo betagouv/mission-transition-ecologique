@@ -9,7 +9,6 @@ export default defineEventHandler(async (event) => {
 
 const projectsCached = cachedFunction(
   async (event: H3Event, questionnaireData: QuestionnaireData) => {
-    const projectService = new ProjectService()
     const programsResults = new ProgramService().getFilteredPrograms(questionnaireData)
     if (programsResults.isErr) {
       const err = programsResults.error
@@ -19,6 +18,7 @@ const projectsCached = cachedFunction(
         statusMessage: programsResults.error.message
       })
     }
+    const projectService = new ProjectService()
     const projectResults = projectService.getFiltered(questionnaireData)
     if (projectResults.isErr) {
       const err = projectResults.error
@@ -28,7 +28,7 @@ const projectsCached = cachedFunction(
         statusMessage: projectResults.error.message
       })
     }
-    const enrichedProjectResults = projectService.addAvailablePrograms(projectResults.value, programsResults.value)
+    const enrichedProjectResults = projectService.addEligibleProgramsCount(projectResults.value, programsResults.value)
     if (enrichedProjectResults.isErr) {
       const err = enrichedProjectResults.error
       Monitor.error('Error in adding availablePrograms', { error: err })

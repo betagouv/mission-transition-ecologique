@@ -1,6 +1,6 @@
 import RequestApi from '@/tools/api/requestApi'
 import { ResultApi } from '@/tools/api/resultApi'
-import type { ProjectType, QuestionnaireData } from '@/types'
+import { type ProjectType, type QuestionnaireData, QuestionnaireDataEnum } from '@/types'
 
 export default class ProjectApi extends RequestApi {
   protected override readonly url = '/api/projects'
@@ -14,7 +14,9 @@ export default class ProjectApi extends RequestApi {
     const queryString: { [key: string]: string } = {}
     Object.entries(this._questionnaireData).forEach(([key, value]: [string, string | string[] | undefined | null]) => {
       if (value !== undefined && value !== null) {
-        queryString[key] = value.toString()
+        if (this.isValidQueryParam(key)) {
+          queryString[key] = value.toString()
+        }
       }
     })
     const params = new URLSearchParams(queryString)
@@ -29,5 +31,9 @@ export default class ProjectApi extends RequestApi {
 
   async getOne(slug: string): Promise<ResultApi<ProjectType>> {
     return await super.getJson<ProjectType>(this.url + '/' + slug)
+  }
+
+  isValidQueryParam(key: string) {
+    return key !== (QuestionnaireDataEnum.priority_objective as string)
   }
 }

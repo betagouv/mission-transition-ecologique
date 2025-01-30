@@ -27,12 +27,12 @@
       </div>
     </template>
     <template
-      v-if="project.countAvailablePrograms"
+      v-if="project.countEligiblePrograms"
       #end-details
     >
       <div class="fr-mb-8v">
         <DsfrBadge
-          :label="`${project.countAvailablePrograms} AIDES`"
+          :label="`${project.countEligiblePrograms} AIDE${project.countEligiblePrograms > 1 ? 'S' : ''}`"
           :no-icon="true"
           class="fr-bg--green--lightness fr-text--black"
         />

@@ -57,6 +57,7 @@ import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
+import { CompanyData } from '@/tools/companyData'
 
 interface Props {
   showTitleBanner?: boolean
@@ -81,6 +82,7 @@ onServerPrefetch(async () => {
 })
 
 onNuxtReady(async () => {
+  CompanyData.isDataFull().value // call to initialize computed reactivity variable
   await new ProjectManager().getProjects()
 })
 
