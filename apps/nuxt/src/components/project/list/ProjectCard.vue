@@ -8,18 +8,6 @@
     :link="getRouteToProjectDetail(project)"
     class="teste2e-project-target"
   >
-    <template #start-details>
-      <DsfrBadge
-        :label="project.sectors.length"
-        :no-icon="true"
-        class="fr-badge--success"
-      />
-      <DsfrBadge
-        :label="project.priority"
-        :no-icon="true"
-        class="fr-badge--success"
-      />
-    </template>
     <template
       v-if="isPriorityProject"
       #start-details
