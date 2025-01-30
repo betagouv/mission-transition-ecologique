@@ -3,6 +3,7 @@
     v-model="localisationInput"
     :placeholder="option?.hint?.[Translation.lang]"
     name="localisation"
+    :color="Color.blueFrance"
     :error-msg="errorMsg"
     :results="localisationResults"
     @update:model-value="updateModelValue"
@@ -32,7 +33,7 @@
   </TeeDsfrSearchBar>
 </template>
 <script lang="ts" setup>
-import { type TrackOptionsInput, ConvertedCommune, CompanyLocalisationType, TrackOptionItem } from '@/types'
+import { type TrackOptionsInput, ConvertedCommune, CompanyLocalisationType, TrackOptionItem, Color } from '@/types'
 import { CompanyData } from '@/tools/companyData'
 import { useDebounce } from '@vueuse/core'
 import Translation from '@/tools/translation'

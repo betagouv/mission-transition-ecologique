@@ -8,8 +8,8 @@
       :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
     >
       <div
-        class="fr-search-bar fr-search-bar--yellow"
-        :class="isLoading ? 'fr-search-bar--loading' : ''"
+        class="fr-search-bar"
+        :class="`${isLoading ? 'fr-search-bar--loading' : ''} fr-search-bar--${color}`"
         role="search"
       >
         <DsfrInput
@@ -22,7 +22,8 @@
           @keyup.enter="emit('search')"
         />
         <DsfrButton
-          class="fr-bg--yellow search-button"
+          :class="`fr-bg--${color}`"
+          class="search-button"
           tertiary
           no-outline
           @click="emit('search')"
@@ -40,10 +41,12 @@
 </template>
 <script lang="ts" setup>
 import { onClickOutside, useDebounce } from '@vueuse/core'
+import { Color } from '@/types'
 
 interface Props {
   errorMsg: string
   name: string
+  color: Color
   placeholder: string | undefined
 }
 
