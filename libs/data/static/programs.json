@@ -3118,7 +3118,7 @@
     "promesse": "Développez durablement votre camping",
     "description": "Vous avez un camping indépendant ? Cette aide soutient vos projets de création, de modernisation ou d’extension. Financez des investissements durables tels que les blocs sanitaires, les cheminements, les bâtiments d’accueil, l’aménagement paysager ou les aires de camping-car.",
     "description longue": "Si votre camping est implanté sur une commune du littoral, les dépenses éligibles sont les suivantes : \n- Travaux de gros œuvre, de second œuvre et d'équipements portant sur les blocs-sanitaire, cheminements, travaux paysager, emplacements nus, bâtiment d’accueil, VRD (hors assainissement) et aire de camping-car.\n- Investissements \"durables\".\n\nSi votre camping est implanté sur une commune hors littoral, voici la liste des dépenses éligibles :\n- Travaux de gros œuvre, de second œuvre, équipements avec une priorité sur les investissements durables et à performance énergétique.\n- Équipements pour les services aux camping-cars, l’accueil de vélos ou ceux permettant un allongement de la saison d’ouverture de l’établissement.\n- Espace aquatique (modernisation et création uniquement pour les établissements n'en possédant pas, dépenses plafonnées à 200 000 € HT). \n- Acquisition de 5 unités maximum de locatifs durables dans le cadre d'une diversification de l'offre de type chalet, (hors mobile-home), uniquement pour les campings n'ayant aucun locatif.\n- Travaux et équipements permettant la création de logements saisonniers au sein du camping (9 lits maximum).",
-    "illustration": "images/TEE_energie_verte.png",
+    "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Région Nouvelle-Aquitaine",
     "url": "https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/campings-de-tourisme-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1",
     "nature de l'aide": "financement",
@@ -5887,7 +5887,7 @@
   {
     "titre": "Diag Décarbon'Action",
     "promesse": "Réalisez un bilan de gaz à effet de serre et réduisez l’empreinte carbone de votre entreprise",
-    "description": "Victime de son succès, l’ADEME et Bpifrance sont contraints de suspendre l’offre dans l’attente de l’issue des discussions budgétaires avec l'Etat. Nous œuvrons tous ensemble pour une réouverture début 2025. Pour nous contacter ou être informé dès que l'offre sera de nouveau disponible, veuillez laisser vos coordonnées ci-dessous. Nous vous contacterons dès que possible. Merci de votre compréhension et de votre patience.\n\n\n\nCe Bilan vous permet en 12 jours de mesurer les émissions directes et indirectes de GES de votre entreprise puis d’élaborer votre plan d’actions pour réduire l’empreinte carbone de votre entreprise. Les experts qui réalisent le Diag Décarbon'Action sont certifiés « Bilan Carbone ® » ou autre méthode de comptabilité carbone conforme à la réglementation, et sont habilités par l’ADEME, l’Association Bilan Carbone et Bpifrance, ce qui garantit un niveau de qualité élevé.",
+    "description": "Ce Bilan vous permet en 12 jours de mesurer les émissions directes et indirectes de GES de votre entreprise puis d’élaborer votre plan d’actions pour réduire l’empreinte carbone de votre entreprise. Les experts qui réalisent le Diag Décarbon'Action sont certifiés « Bilan Carbone ® » ou autre méthode de comptabilité carbone conforme à la réglementation, et sont habilités par l’ADEME, l’Association Bilan Carbone et Bpifrance, ce qui garantit un niveau de qualité élevé.",
     "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Bpifrance",
@@ -6071,7 +6071,7 @@
   {
     "titre": "Diag Eco-Flux",
     "promesse": "Bénéficiez d’un état des lieux sur vos flux pour vous aider à faire des économies",
-    "description": "Victime de son succès, l’ADEME et Bpifrance sont contraints de suspendre l’offre dans l’attente de l’issue des discussions budgétaires avec l'Etat. Nous œuvrons tous ensemble pour une réouverture début 2025. Pour nous contacter ou être informé dès que l'offre sera de nouveau disponible, veuillez laisser vos coordonnées ci-dessous. Nous vous contacterons dès que possible. Merci de votre compréhension et de votre patience.\n---\nBénéficiez des conseils d'un expert environnement référencé par Bpifrance pour réaliser rapidement des économies durables en suivant une méthodologie élaborée avec l'ADEME.",
+    "description": "Bénéficiez des conseils d'un expert environnement référencé par Bpifrance pour réaliser rapidement des économies durables en suivant une méthodologie élaborée avec l'ADEME.",
     "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Bpifrance",
@@ -6274,7 +6274,7 @@
   {
     "titre": "Diag Ecoconception",
     "promesse": "Évaluez la performance environnementale de vos produits, procédés et services",
-    "description": "Victime de son succès, l’ADEME et Bpifrance sont contraints de suspendre l’offre dans l’attente de l’issue des discussions budgétaires avec l'Etat. Nous œuvrons tous ensemble pour une réouverture début 2025. Pour nous contacter ou être informé dès que l'offre sera de nouveau disponible, veuillez laisser vos coordonnées ci-dessous. Nous vous contacterons dès que possible. Merci de votre compréhension et de votre patience.\n---\nBénéficiez des conseils d'un expert écoconception référencé par Bpifrance pour évaluer la performance environnementale de vos produits, services et procédés ou d'un accompagnement en vue de l'obtention de l'Ecolabel européen.",
+    "description": "Bénéficiez des conseils d'un expert écoconception référencé par Bpifrance pour évaluer la performance environnementale de vos produits, services et procédés ou d'un accompagnement en vue de l'obtention de l'Ecolabel européen.",
     "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Bpifrance",
@@ -6491,7 +6491,7 @@
   {
     "titre": "Diag Perf'Immo",
     "promesse": "Réduisez la consommation énergétique de vos bâtiments",
-    "description": "Victime de son succès, l’ADEME et Bpifrance sont contraints de suspendre l’offre dans l’attente de l’issue des discussions budgétaires avec l'Etat. Nous œuvrons tous ensemble pour une réouverture début 2025. Pour nous contacter ou être informé dès que l'offre sera de nouveau disponible, veuillez laisser vos coordonnées ci-dessous. Nous vous contacterons dès que possible. Merci de votre compréhension et de votre patience.\n---\nBénéficiez des conseils d'un expert environnement référencé par Bpifrance pour réduire les consommations énergétiques de vos bâtiments et établir une trajectoire conforme au Décret Tertiaire.",
+    "description": "Bénéficiez des conseils d'un expert environnement référencé par Bpifrance pour réduire les consommations énergétiques de vos bâtiments et établir une trajectoire conforme au Décret Tertiaire.",
     "description longue": "L’obligation réglementaire du Dispositif Éco Énergie Tertiaire (DEET), plus communément appelé « décret tertiaire », impose aux entreprises de réduire la consommation d’énergie de leurs bâtiments abritant des activités tertiaires. Cette obligation traduit la volonté du gouvernement d’améliorer la performance énergétique du parc français de bâtiments existants.\n\nLe décret tertiaire est officiellement entré en vigueur en octobre 2019.",
     "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_ampoule.png",
@@ -8077,7 +8077,7 @@
     "id": "ecogestes-paca"
   },
   {
-    "titre": "Écolabel européen",
+    "titre": "Accompagnement à l'Écolabel européen",
     "promesse": "Valorisez la qualité environnementale des produits et services de votre entreprise",
     "description": "Obtenez l'Écolabel européen, le seul label écologique public et officiel européen permettant de valoriser des produits et services plus respectueux de l’environnement tout en garantissant des performances identiques à celles des produits et services analogues. Valorisez ainsi votre engagement auprès des consommateurs et des acheteurs professionnels grâce à l’Écolabel européen qui garantit un impact limité de vos produits et services sur l’environnement et la santé.",
     "description longue": "Les catégories de produits pouvant bénéficier de l'écolabel européen sont les suivantes :\n- Produits cosmétiques et de soin pour animaux\n- Détergents textiles\n- Détergents vaisselles à la main\n- Détergents pour lave-vaisselle\n- Détergents pour lave-vaisselle industriel ou destinés aux collectivités\n- Détergents textiles à usage industriel ou destinés aux collectivités\n- Produits de nettoyage pour surfaces dures\n- Milieux de culture et amendements pour sols\n- Produits de protection hygiénique absorbants et coupes menstruelles réutilisables\n- Peintures et vernis d'intérieur ou d'extérieur\n- Mouchoirs, papier toilette, serviettes en papier\n- Papier graphique\n- Produits en papier imprimé, produits de papeterie et sacs en papier\n- Les prestations de nettoyage intérieur et les hébergements touristiques (hôtels, campings, etc.) peuvent également bénéficier de l'écolabel européen.",
@@ -8086,7 +8086,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Variable selon l'activité",
-    "durée de l'accompagnement": "7 ans en moyenne",
+    "durée de l'accompagnement": "6 mois",
     "objectifs": [
       {
         "description": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services.",
@@ -15758,6 +15758,213 @@
       }
     },
     "id": "gestion-des-biodechets"
+  },
+  {
+    "titre": "Aide à l’hôtellerie indépendante en Bourgogne-Franche-Comté",
+    "promesse": "Développez durablement votre hôtel",
+    "description": "Vous gérez un hôtel indépendant en milieu rural ? Bénéficiez d’une aide au conseil et à l'investissement pour rénover, monter en gamme et diversifier vos services, avec un focus sur la transition énergétique et des investissements responsables en énergie, déchets et eau.",
+    "description longue": "Bénéficiez de ce dispositif pour financer deux volets :\n - Le recours à un conseil extérieur pour des études portant sur un projet d’hôtellerie,\n - Un programme de rénovation et de requalification d’hôtel ; un programme de développement intégrant la montée en gamme, la création de chambres et/ou de service et d’équipement de diversification ayant un impact sur les nuitées et la durée de séjour.",
+    "début de validité": "22/03/2024",
+    "fin de validité": "31/12/2028",
+    "illustration": "images/TEE_ampoule.png",
+    "opérateur de contact": "Région Bourgogne-Franche-Comté",
+    "url": "https://www.bourgognefranchecomte.fr/node/3856",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 50% des dépenses, dans la limite de 180 000 €",
+    "objectifs": [
+      {
+        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation.",
+        "liens": [
+          {
+            "lien": "https://www.bourgognefranchecomte.fr/file-download?fid=15543",
+            "texte": "Conditions et critères d'éligibilité"
+          }
+        ]
+      },
+      {
+        "description": "Prenez contact avec un conseiller de la Direction du Tourisme en expliquant votre besoin d'accompagnement.",
+        "liens": [
+          {
+            "lien": "https://www.bourgognefranchecomte.eu/ProjetTourisme",
+            "texte": "Formulaire de contact"
+          }
+        ]
+      },
+      {
+        "description": "Créez votre compte sur le site de la Région Bourgogne-Franche-Comté et déposez votre demande. Attention à ce stade, votre projet ne doit pas avoir commencé.",
+        "liens": [
+          {
+            "lien": "https://subventions.bourgognefranchecomte.fr/sub/tiers/aides/details/?sigle=TO-HOTEL2%2B",
+            "texte": "Créer mon compte"
+          }
+        ]
+      },
+      {
+        "description": "Si votre projet est sélectionné, recevez votre subvention."
+      },
+      {
+        "description": "Réalisez votre étude ou vos investissements."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Effectif inférieur à 249 employés",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Bourgogne-Franche-Comté"
+      ],
+      "secteur d'activité": [
+        "Hôtellerie ou hôtellerie-restauration"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Votre hôtel est situé dans une commune de moins de 40 000 habitants,",
+        "Classé 2 étoiles et comportant au moins 10 chambres au dépôt du dossier,",
+        "Classé 3 étoiles minimum ou visant ce classement après travaux,",
+        "Votre hôtel doit s'engager dans un processus de labellisation Qualité tourisme."
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "a un effectif éligible",
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . a un effectif éligible": {
+        "toutes ces conditions": [
+          "effectif <= 249"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est I"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est l'écoconception",
+          "questionnaire . objectif prioritaire . est préserver la biodiversité"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Bourgogne-Franche-Comté"
+        ]
+      }
+    },
+    "id": "hotellerie-independante-bfc"
   },
   {
     "titre": "Aide à l'hôtellerie indépendante",
@@ -26512,6 +26719,180 @@
       }
     },
     "id": "prime-a-la-conversion"
+  },
+  {
+    "titre": "Priorités régionales d'interventions touristiques",
+    "promesse": "Développez votre offre touristique autour du \"slow tourism\", du patrimoine, de la Mémoire ou du tourisme d’affaires",
+    "description": "Vous portez un projet touristique (activité, hébergement, service...) en Hauts-de-France ? Ce dispositif régional soutient vos études et investissements pour créer des lieux touristiques innovants, durables et écoresponsables, autour du \"slow tourism\" (nature, bien-être, itinérance), du patrimoine, de la Mémoire ou du tourisme d’affaires.",
+    "description longue": "Vous avez un projet d'étude ? Les dépenses éligibles sont les suivantes : \n- Les prestations d’études d’opportunité, de définition, de faisabilité, de programmation, de conception, préalables à la réalisation d’investissements et réalisées par un prestataire externe.\n\nVous avez un projet d'investissement ? Les dépenses éligibles sont les suivantes :  \n- Missions de maîtrise d’œuvre relatives à l’investissement concerné\n- Travaux de second œuvre \n- Investissements matériels relatifs à l’exploitation de l’activité, du site, ou de l’équipement concerné (sont exclus notamment les travaux de gros œuvre et les acquisitions foncières).",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "Région Haut-de-France",
+    "url": "https://guide-aides.hautsdefrance.fr/dispositif729",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 50 % du coût de l'investissement, dans la limite de 100 000 €. Variable selon les projets.",
+    "objectifs": [
+      {
+        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation.",
+        "liens": [
+          {
+            "lien": "https://aides.hautsdefrance.fr/sub/tiers/aides/details/?sigle=PRIT",
+            "texte": "Conditions et critères d'éligibilité"
+          }
+        ]
+      },
+      {
+        "description": "Créez votre compte sur le site de la Région Hauts de France et déposez votre demande. La liste des pièces à joindre à votre dossier vous sera transmise ensuite par la Région.",
+        "liens": [
+          {
+            "lien": "https://aides.hautsdefrance.fr/sub/tiers/inscription",
+            "texte": "Créer mon compte"
+          }
+        ]
+      },
+      {
+        "description": "Si votre projet est sélectionné, recevez votre subvention."
+      },
+      {
+        "description": "Réalisez votre étude ou vos investissements."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Hauts-de-France"
+      ],
+      "secteur d'activité": [
+        "Secteur du tourisme"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Vous avez un projet en phase de maturation : aide à l'ingénierie ou en phase de réalisation : aide à l'investissement et à la pérennisation."
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est I"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": []
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Hauts-de-France"
+        ]
+      }
+    },
+    "id": "prit-hdf"
   },
   {
     "titre": "Programme Breizh Fab",

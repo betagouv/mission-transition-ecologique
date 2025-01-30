@@ -44,7 +44,7 @@ class FrontConverter {
   public convertDomainToFront(program: ProgramTypeWithEligibility) {
     const { publicodes, ...frontProgram } = program
     if (publicodes) {
-      const programFilters = Object.keys(publicodes).reduce<{ [key in FiltersKeys]?: string[] }>((acc, publicodeKey) => {
+      const filters = Object.keys(publicodes).reduce<{ [key in FiltersKeys]?: string[] }>((acc, publicodeKey) => {
         const filterKey = this._getFilterKey(publicodeKey)
         if (filterKey) {
           const convertedData = this._getFilterData(publicodes[publicodeKey])
@@ -54,7 +54,7 @@ class FrontConverter {
         }
         return acc
       }, {})
-      return { ...frontProgram, filters: programFilters }
+      return { ...frontProgram, filters: filters }
     }
     return program
   }
