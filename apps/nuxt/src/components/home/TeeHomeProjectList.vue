@@ -48,7 +48,7 @@ const { hasSpinner } = storeToRefs(useNavigationStore())
 const filteredProjects = ProjectFilter.filter(projects, theme)
 const sortedProjects = computed(() => {
   if (!theme.value || theme.value.length === 0) {
-    return ProjectSorter.homepageSort(filteredProjects).value
+    return ProjectSorter.highlightSort(filteredProjects).value
   }
   return ProjectSorter.sort(filteredProjects).value
 })

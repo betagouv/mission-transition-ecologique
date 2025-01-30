@@ -14,20 +14,20 @@ export default class ProjectSorter {
     })
   }
 
-  static readonly homepageSort = (projects: ComputedRef<ProjectType[] | undefined>): ComputedRef<ProjectType[]> => {
+  static readonly highlightSort = (projects: ComputedRef<ProjectType[] | undefined>): ComputedRef<ProjectType[]> => {
     return computed(() => {
       if (!projects.value) {
         return []
       }
 
       return projects.value.slice().sort((a, b) => {
-        if (!a.homepagePriority) {
+        if (!a.highlightPriority) {
           return 1
         }
-        if (!b.homepagePriority) {
+        if (!b.highlightPriority) {
           return -1
         }
-        return a.homepagePriority - b.homepagePriority
+        return a.highlightPriority - b.highlightPriority
       })
     })
   }
