@@ -58,7 +58,6 @@ import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
-import Navigation from '@/tools/navigation'
 
 interface Props {
   showTitleBanner?: boolean
@@ -89,18 +88,11 @@ onNuxtReady(async () => {
 
 const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
-const navigation = new Navigation()
 
 const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
-
-const sortedProjects = computed(() => {
-  if (navigation.isHomepage() && (!theme.value || theme.value.length === 0)) {
-    return ProjectSorter.homepageSort(filteredProjects).value
-  }
-  return ProjectSorter.sort(filteredProjects).value
-})
+const sortedProjects = ProjectSorter.sort(filteredProjects)
 
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0

@@ -46,7 +46,12 @@ const { projects, hasError } = storeToRefs(useProjectStore())
 const { hasSpinner } = storeToRefs(useNavigationStore())
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
-const sortedProjects = ProjectSorter.sort(filteredProjects)
+const sortedProjects = computed(() => {
+  if (!theme.value || theme.value.length === 0) {
+    return ProjectSorter.homepageSort(filteredProjects).value
+  }
+  return ProjectSorter.sort(filteredProjects).value
+})
 const projectList = computed(() => {
   return props.limit ? sortedProjects.value.slice(0, props.limit) : sortedProjects.value
 })
