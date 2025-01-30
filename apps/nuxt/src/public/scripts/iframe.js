@@ -32,20 +32,10 @@ The \x1B[removeListeners()</> method has been renamed to \x1B[disconnect()</>.
       #iframe-tee {
         border: none;
         display: block;
-        margin: 10px auto;
+        margin: 0 auto;
         width: 100%;
       }
-
-      #iframe-tee:fullscreen {
-        width: 100%;
-        height: 100%;
-        max-height: 100%;
-        max-width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-    </style>`);let x={src:k,style:"border: none; width: 100%; display: block; margin: 0 auto;",allowfullscreen:!0,webkitallowfullscreen:!0,mozallowfullscreen:!0,allow:"fullscreen",id:"iframe-tee"};for(let N in x)$.setAttribute(N,x[N]);p.parentNode&&p.parentNode.insertBefore($,p),$.onload=()=>{(0,he.default)({license:"GPLv3",checkOrigin:!1},$)}}
+    </style>`);let x={src:k,style:"border: none; width: 100%; display: block; margin: 0 auto;",allow:"fullscreen",id:"iframe-tee"};for(let N in x)$.setAttribute(N,x[N]);p.parentNode&&p.parentNode.insertBefore($,p),$.onload=()=>{(0,he.default)({license:"GPLv3",checkOrigin:!1},$)}}
 /*! Bundled license information:
 
 @iframe-resizer/parent/index.umd.js:
