@@ -4,7 +4,7 @@ import Config from './src/config'
 
 export class NuxtSecurityConfig {
   static _statsBetaGouvFrUrl = 'https://stats.beta.gouv.fr'
-  static _baserowFormUrl = 'https://baserow.io/'
+  static _baserowFormUrl = 'https://baserow.io'
   static _posthogUrl = 'https://eu.i.posthog.com'
   static _posthogAssetsUrl = 'https://eu-assets.i.posthog.com'
   static _sentryData = NuxtSentryConfig.getSentryData()
@@ -12,7 +12,7 @@ export class NuxtSecurityConfig {
   static getHeaderConfig(): SecurityHeaders {
     return {
       contentSecurityPolicy: {
-        'form-action': ["'self'"],
+        'form-action': ["'self'", this._baserowFormUrl],
         'script-src-elem': [
           "'self'",
           "'unsafe-inline'",
