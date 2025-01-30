@@ -21,7 +21,7 @@ export class Program {
   }
 }
 
-import type { Dispositif as ProgramWithoutId } from '../generated/program'
+import type { Dispositif as ProgramWithoutId } from './types/program'
 
 export type { ProgramWithoutId }
 export type ProgramType = ProgramWithoutId & {

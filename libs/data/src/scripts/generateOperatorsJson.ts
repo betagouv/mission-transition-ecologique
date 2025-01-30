@@ -1,4 +1,4 @@
-import { OperatorFeatures } from './operators/operatorFeatures'
+import { OperatorFeatures } from '../operators/operatorFeatures'
 
 console.log('Start the Operator generation')
 
