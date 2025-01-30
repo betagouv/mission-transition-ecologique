@@ -1949,7 +1949,7 @@
   width: 0;
   z-index: 50;
 }
-.fr-card__title a::after {
+.fr-card:not(.fr-card--icon-link) .fr-card__title a::after {
   display: none !important;
 }
 .fr-card__header--priority {
@@ -2011,13 +2011,6 @@
 }
 .fr-card--blue-france .fr-card__title {
   color: var(--text-inverted-blue-france) !important;
-}
-.fr-card--grey {
-  background-color: #777 !important;
-  color: #000091 !important;
-}
-.fr-card--grey .fr-card__title {
-  color: #000091 !important;
 }
 .fr-card.theme-card {
   height: 100%;
