@@ -12,11 +12,16 @@ export default class ProjectFeatures {
   }
 
   public getFiltered(projectQuery: ProjectFilterQuery): ProjectType[] {
+    this._sort(projects)
     if (!projectQuery.codeNAF1) {
       return projects
     }
-    const filteredProjects = projects.filter((project) => ProjectEligibility.isEligible(project, projectQuery.codeNAF1 as string))
-    return filteredProjects.sort((a, b) => {
+
+    return projects.filter((project) => ProjectEligibility.isEligible(project, projectQuery.codeNAF1 as string))
+  }
+
+  private _sort(projects: ProjectType[]) {
+    projects.sort((a, b) => {
       return a.priority - b.priority
     })
   }

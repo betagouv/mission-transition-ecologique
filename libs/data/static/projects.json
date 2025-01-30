@@ -40,7 +40,7 @@
       31
     ],
     "priority": "40",
-    "homepagePriority": "5",
+    "highlightPriority": "5",
     "sectors": [
       "A",
       "B",
@@ -99,7 +99,7 @@
       4
     ],
     "priority": "220",
-    "homepagePriority": "2",
+    "highlightPriority": "2",
     "sectors": [
       "A",
       "B",
@@ -166,7 +166,7 @@
       4
     ],
     "priority": "340",
-    "homepagePriority": "3",
+    "highlightPriority": "3",
     "sectors": [
       "A",
       "B",
@@ -223,7 +223,7 @@
       21
     ],
     "priority": "100",
-    "homepagePriority": "6",
+    "highlightPriority": "6",
     "sectors": [
       "A",
       "C",
@@ -278,7 +278,7 @@
       4
     ],
     "priority": "400",
-    "homepagePriority": "7",
+    "highlightPriority": "7",
     "sectors": [
       "A",
       "B",
@@ -343,7 +343,7 @@
       4
     ],
     "priority": "900",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -401,7 +401,7 @@
       31
     ],
     "priority": "110",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -468,7 +468,7 @@
       4
     ],
     "priority": "610",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -531,7 +531,7 @@
       4
     ],
     "priority": "910",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -597,7 +597,7 @@
       4
     ],
     "priority": "320",
-    "homepagePriority": "8",
+    "highlightPriority": "8",
     "sectors": [
       "A",
       "B",
@@ -649,7 +649,7 @@
       4
     ],
     "priority": "980",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -709,7 +709,7 @@
       4
     ],
     "priority": "950",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -760,7 +760,7 @@
     ],
     "linkedProjects": [],
     "priority": "500",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "C",
@@ -806,7 +806,7 @@
       31
     ],
     "priority": "140",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -876,7 +876,7 @@
       4
     ],
     "priority": "150",
-    "homepagePriority": "1",
+    "highlightPriority": "1",
     "sectors": [
       "A",
       "B",
@@ -929,7 +929,7 @@
       31
     ],
     "priority": "50",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -984,7 +984,7 @@
       16
     ],
     "priority": "550",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1050,7 +1050,7 @@
       16
     ],
     "priority": "190",
-    "homepagePriority": "4",
+    "highlightPriority": "4",
     "sectors": [
       "A",
       "B",
@@ -1108,7 +1108,7 @@
       16
     ],
     "priority": "140",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1165,7 +1165,7 @@
       31
     ],
     "priority": "60",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1220,7 +1220,7 @@
       31
     ],
     "priority": "90",
-    "homepagePriority": "9",
+    "highlightPriority": "9",
     "sectors": [
       "A",
       "B",
@@ -1272,7 +1272,7 @@
       36
     ],
     "priority": "800",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1330,7 +1330,7 @@
       21
     ],
     "priority": "180",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1395,7 +1395,7 @@
       21
     ],
     "priority": "330",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1448,7 +1448,7 @@
       21
     ],
     "priority": "440",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1499,7 +1499,7 @@
     ],
     "linkedProjects": [],
     "priority": "20",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1553,7 +1553,7 @@
       30
     ],
     "priority": "170",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1609,7 +1609,7 @@
       26
     ],
     "priority": "160",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1656,7 +1656,7 @@
     ],
     "linkedProjects": [],
     "priority": "890",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1712,7 +1712,7 @@
       31
     ],
     "priority": "770",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1772,7 +1772,7 @@
       28
     ],
     "priority": "10",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1832,7 +1832,7 @@
       1
     ],
     "priority": "660",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1891,7 +1891,7 @@
       144
     ],
     "priority": "310",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -1954,7 +1954,7 @@
       31
     ],
     "priority": "380",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -2018,7 +2018,7 @@
       31
     ],
     "priority": "150",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "B",
       "C",
@@ -2078,7 +2078,7 @@
       20
     ],
     "priority": "290",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -2138,7 +2138,7 @@
       20
     ],
     "priority": "120",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -2194,7 +2194,7 @@
       4
     ],
     "priority": "210",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "G",
       "I"
@@ -2229,7 +2229,7 @@
       20
     ],
     "priority": "120",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -2282,7 +2282,7 @@
       33
     ],
     "priority": "230",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -2338,7 +2338,7 @@
       33
     ],
     "priority": "130",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -2390,7 +2390,7 @@
       16
     ],
     "priority": "250",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -2448,7 +2448,7 @@
       33
     ],
     "priority": "200",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -2513,7 +2513,7 @@
       4
     ],
     "priority": "130",
-    "homepagePriority": null,
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",

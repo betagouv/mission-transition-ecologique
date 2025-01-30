@@ -74,7 +74,7 @@ export class ProjectBaserow extends AbstractBaserow {
       programs: this._generateProgramList(baserowProject.Dispositifs),
       linkedProjects: this._generateLinkedProjectList(baserowProject['Projets complémentaires']),
       priority: baserowProject.Prio,
-      homepagePriority: baserowProject['Mise En Avant'],
+      highlightPriority: baserowProject['Mise En Avant'],
       sectors: this._generateSectors(baserowProject as BaserowSectors)
     }
   }
