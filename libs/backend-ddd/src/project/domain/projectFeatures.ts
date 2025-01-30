@@ -15,6 +15,9 @@ export default class ProjectFeatures {
     if (!projectQuery.codeNAF1) {
       return projects
     }
-    return projects.filter((project) => ProjectEligibility.isEligible(project, projectQuery.codeNAF1 as string))
+    const filteredProjects = projects.filter((project) => ProjectEligibility.isEligible(project, projectQuery.codeNAF1 as string))
+    return filteredProjects.sort((a, b) => {
+      return a.priority - b.priority
+    })
   }
 }

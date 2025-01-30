@@ -50,7 +50,7 @@ const sortedProjects = computed(() => {
   if (!theme.value || theme.value.length === 0) {
     return ProjectSorter.highlightSort(filteredProjects).value
   }
-  return ProjectSorter.sort(filteredProjects).value
+  return filteredProjects.value ?? []
 })
 const projectList = computed(() => {
   return props.limit ? sortedProjects.value.slice(0, props.limit) : sortedProjects.value
