@@ -58,6 +58,7 @@ import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
+import Navigation from '@/tools/navigation'
 
 interface Props {
   showTitleBanner?: boolean
@@ -90,10 +91,6 @@ const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
 const navigation = new Navigation()
 
-if (!navigation.isHomepage()) {
-  useSeoMeta(MetaSeo.get(title, description))
-}
-
 const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
@@ -103,21 +100,6 @@ const sortedProjects = computed(() => {
     return ProjectSorter.homepageSort(filteredProjects).value
   }
   return ProjectSorter.sort(filteredProjects).value
-})
-
-const hasSpinner = computed(() => {
-  return navigationStore.hasSpinner
-})
-
-const projectList = computed(() => {
-  return props.showLimit !== undefined ? sortedProjects.value.slice(0, props.showLimit) : sortedProjects.value
-})
-const hasThemeCard = computed(() => {
-  return programStore.hasThemeTypeSelected() && !hasSpinner.value
-})
-
-const showNoResultsComponent = computed(() => {
-  return hasSpinner.value || hasError.value || !countProjects.value
 })
 
 const countProjects = computed(() => {
