@@ -51,7 +51,7 @@ const sortedProjects = computed(() => {
     return []
   }
 
-  if (!theme.value || theme.value.length === 0) {
+  if (!theme.value || !Theme.isTheme(theme.value)) {
     return ProjectSorter.highlightSort(filteredProjects.value)
   }
 
