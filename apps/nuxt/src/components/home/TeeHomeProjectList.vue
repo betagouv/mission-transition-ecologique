@@ -26,6 +26,7 @@ import ProjectFilter from '@/tools/project/projectFilter'
 import ProjectSorter from '@/tools/project/projectSorter'
 import { useProjectStore } from '@/stores/project'
 import { ProjectManager } from '@/tools/project/projectManager'
+import { CompanyData } from '@/tools/companyData'
 
 interface Props {
   limit: number
@@ -38,6 +39,7 @@ onServerPrefetch(async () => {
 })
 
 onNuxtReady(async () => {
+  CompanyData.isDataFull().value
   await new ProjectManager().getFilteredProjects()
 })
 
@@ -46,8 +48,8 @@ const { projects, hasError } = storeToRefs(useProjectStore())
 const { hasSpinner } = storeToRefs(useNavigationStore())
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
-const sortedProjects = ProjectSorter.sort(filteredProjects)
 const projectList = computed(() => {
+  const sortedProjects = useCompanyData().isDataFull ? ProjectSorter.sortBySector(filteredProjects) : ProjectSorter.sort(filteredProjects)
   return props.limit ? sortedProjects.value.slice(0, props.limit) : sortedProjects.value
 })
 

@@ -58,6 +58,8 @@ import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
+import { useFiltersStore } from '@/stores/filters'
+import { FilterItemKeys } from '@/types'
 
 interface Props {
   showTitleBanner?: boolean
@@ -92,7 +94,11 @@ const description = 'Accédez à la liste des projets de transition écologique 
 const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
-const sortedProjects = ProjectSorter.sort(filteredProjects)
+const sortedProjects = computed(() => {
+  return useFiltersStore().filters[FilterItemKeys.companyData]
+    ? ProjectSorter.sortBySector(filteredProjects).value
+    : ProjectSorter.sort(filteredProjects).value
+})
 
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0

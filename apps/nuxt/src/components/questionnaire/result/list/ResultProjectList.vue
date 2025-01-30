@@ -106,7 +106,7 @@ const hasThemeCard = computed(() => {
   return filtersStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
 
-const sortedProjects = ProjectSorter.sort(computed(() => props.filteredProjects))
+const sortedProjects = ProjectSorter.sortBySector(computed(() => props.filteredProjects))
 
 const showNoResults = computed(() => {
   return (props.hasError || (!countProjects.value && props.filteredProjects !== undefined)) && !useNavigationStore().hasSpinner
