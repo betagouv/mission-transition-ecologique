@@ -11,10 +11,8 @@
               <h3 class="fr-text--purple fr-text--bold fr-mb-6v">TPE, PME</h3>
               <h1 class="fr-mb-3v">
                 Trouvez les solutions pour
-                <br v-if="!Breakpoint.isSmallScreen()" />
-                la transition écologique
-                <br v-if="!Breakpoint.isSmallScreen()" />
-                de votre entreprise
+                <span class="fr-display-sm--block">la transition écologique </span>
+                <span class="fr-display-sm--block">de votre entreprise</span>
               </h1>
               <p class="fr-text--lead fr-col-12 fr-col-lg-9 fr-pr-2v">
                 Identifiez facilement les aides publiques adaptées à votre entreprise pour concrétiser vos projets de transition écologique.
@@ -42,7 +40,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import Breakpoint from '@/tools/breakpoints'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationAsRelativeGeneric } from 'vue-router'
 
