@@ -11,6 +11,7 @@ export class NuxtSecurityConfig {
 
   static getHeaderConfig(): SecurityHeaders {
     return {
+      crossOriginEmbedderPolicy: 'credentialless',
       contentSecurityPolicy: {
         'form-action': ["'self'"],
         'script-src-elem': [
