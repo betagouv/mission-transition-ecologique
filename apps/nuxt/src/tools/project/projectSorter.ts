@@ -9,7 +9,9 @@ export default class ProjectSorter {
         return []
       }
 
-      return this.sortByPriority(projects.value)
+      return projects.value.slice().sort((a, b) => {
+        return a.priority - b.priority
+      })
     })
   }
 
@@ -20,20 +22,13 @@ export default class ProjectSorter {
         return []
       }
 
-      const sortedProjects = this.sortByPriority(projects.value)
+      return projects.value.slice().sort((a, b) => {
+        if (a.sectors.length === b.sectors.length) {
+          return a.priority - b.priority
+        }
 
-      return sortedProjects
-        .toReversed()
-        .slice()
-        .sort((a, b) => {
-          return a.sectors.length <= 5 && a.sectors.length < b.sectors.length ? -1 : 1
-        })
-    })
-  }
-
-  private static sortByPriority(projects: ProjectType[]): ProjectType[] {
-    return projects.slice().sort((a, b) => {
-      return a.priority - b.priority
+        return a.sectors.length <= 5 && a.sectors.length < b.sectors.length ? -1 : 1
+      })
     })
   }
 }

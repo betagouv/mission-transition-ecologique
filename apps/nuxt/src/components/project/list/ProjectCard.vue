@@ -8,29 +8,41 @@
     :link="getRouteToProjectDetail(project)"
     class="teste2e-project-target"
   >
-    <template
-      v-if="isPriorityProject"
-      #start-details
-    >
+    <template #start-details>
       <DsfrBadge
         :label="project.sectors.length"
         :no-icon="true"
         class="fr-badge--success"
       />
-      <div
-        v-if="!isUniquePriority"
-        class="fr-card__header--priority fr-hidden fr-unhidden-lg"
-      >
-        {{ priorityOrder }}
-      </div>
-      <div class="fr-mb-1v">
-        <DsfrBadge
-          :label="priorityTag"
-          :no-icon="true"
-          class="fr-badge--success"
-        />
-      </div>
+      <DsfrBadge
+        :label="project.priority"
+        :no-icon="true"
+        class="fr-badge--success"
+      />
     </template>
+    <!--    <template-->
+    <!--      v-if="isPriorityProject"-->
+    <!--      #start-details-->
+    <!--    >-->
+    <!--      <DsfrBadge-->
+    <!--        :label="project.sectors.length"-->
+    <!--        :no-icon="true"-->
+    <!--        class="fr-badge&#45;&#45;success"-->
+    <!--      />-->
+    <!--      <div-->
+    <!--        v-if="!isUniquePriority"-->
+    <!--        class="fr-card__header&#45;&#45;priority fr-hidden fr-unhidden-lg"-->
+    <!--      >-->
+    <!--        {{ priorityOrder }}-->
+    <!--      </div>-->
+    <!--      <div class="fr-mb-1v">-->
+    <!--        <DsfrBadge-->
+    <!--          :label="priorityTag"-->
+    <!--          :no-icon="true"-->
+    <!--          class="fr-badge&#45;&#45;success"-->
+    <!--        />-->
+    <!--      </div>-->
+    <!--    </template>-->
   </DsfrCard>
 </template>
 
