@@ -34,7 +34,8 @@
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
       "impulsion-environnement",
-      "soutien-hebergement-touristique"
+      "soutien-hebergement-touristique",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       31
@@ -93,7 +94,8 @@
       "perf-crise-energetique-cvl",
       "impulsion-environnement",
       "hotellerie-independante-na",
-      "camping-independant-na"
+      "camping-independant-na",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       4
@@ -160,7 +162,8 @@
       "soutien-hebergement-touristique",
       "agir-pdl",
       "hotellerie-independante-na",
-      "camping-independant-na"
+      "camping-independant-na",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       4
@@ -272,7 +275,8 @@
       "soutien-hebergement-touristique",
       "agir-pdl",
       "hotellerie-independante-na",
-      "camping-independant-na"
+      "camping-independant-na",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       4
@@ -337,7 +341,8 @@
       "perf-crise-energetique-cvl",
       "impulsion-environnement",
       "soutien-hebergement-touristique",
-      "agir-pdl"
+      "agir-pdl",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       4
@@ -462,7 +467,8 @@
       "soutien-hebergement-touristique",
       "agir-pdl",
       "hotellerie-independante-na",
-      "camping-independant-na"
+      "camping-independant-na",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       4
@@ -525,7 +531,8 @@
       "soutien-hebergement-touristique",
       "agir-pdl",
       "hotellerie-independante-na",
-      "camping-independant-na"
+      "camping-independant-na",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       4
@@ -591,7 +598,8 @@
       "soutien-hebergement-touristique",
       "agir-pdl",
       "hotellerie-independante-na",
-      "camping-independant-na"
+      "camping-independant-na",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       4
@@ -643,7 +651,8 @@
       "pret-energie-aura",
       "pret-ile-de-france",
       "cap-transition-ecologique",
-      "perf-crise-energetique-cvl"
+      "perf-crise-energetique-cvl",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       4
@@ -800,7 +809,8 @@
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
       "projets-hebergements-touristiques-cvl",
-      "impulsion-environnement"
+      "impulsion-environnement",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       31
@@ -870,7 +880,8 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "prit-hdf"
+      "prit-hdf",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       4
@@ -1159,7 +1170,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "soutien-hebergement-touristique",
-      "programme-reseau"
+      "programme-reseau",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       31
@@ -2072,7 +2084,8 @@
       "cap-transition-ecologique",
       "soutien-hebergement-touristique",
       "agir-pdl",
-      "prit-hdf"
+      "prit-hdf",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       20
@@ -2132,7 +2145,8 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "prit-hdf"
+      "prit-hdf",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       20
@@ -2223,7 +2237,8 @@
       "pret-ile-de-france",
       "soutien-hebergement-touristique",
       "agir-pdl",
-      "prit-hdf"
+      "prit-hdf",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       20
@@ -2276,7 +2291,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "soutien-hebergement-touristique",
-      "prit-hdf"
+      "prit-hdf",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       33
@@ -2442,7 +2458,8 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "cap-transition-ecologique",
-      "prit-hdf"
+      "prit-hdf",
+      "hotellerie-independante-bfc"
     ],
     "linkedProjects": [
       33
