@@ -53,7 +53,7 @@
     </div>
     <ProjectList
       v-else
-      :sorted-projects="sortedProjects"
+      :sorted-projects="filteredProjects"
     />
 
     <div
@@ -70,7 +70,6 @@
 </template>
 
 <script setup lang="ts">
-import ProjectSorter from '@/tools/project/projectSorter'
 import { ProjectType } from '@/types'
 import { computed } from 'vue'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
@@ -105,8 +104,6 @@ const countProjects = computed(() => {
 const hasThemeCard = computed(() => {
   return filtersStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())
 })
-
-const sortedProjects = ProjectSorter.sort(computed(() => props.filteredProjects))
 
 const showNoResults = computed(() => {
   return (props.hasError || (!countProjects.value && props.filteredProjects !== undefined)) && !useNavigationStore().hasSpinner
