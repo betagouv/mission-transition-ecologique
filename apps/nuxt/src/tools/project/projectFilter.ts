@@ -1,4 +1,4 @@
-import { ThemeId, ThemeType, ProjectType, EstablishmentFront, FilterItemKeys, type ValueOf, FiltersType, ProjectEligibility } from '@/types'
+import { ThemeId, ThemeType, ProjectType, EstablishmentFront, type ValueOf, FiltersType, ProjectEligibility } from '@/types'
 import { Theme } from '@/tools/theme'
 import { ComputedRef, Ref } from 'vue'
 import { CompanyData } from '@/tools/companyData'
@@ -14,7 +14,7 @@ export default class ProjectFilter {
       const results = this.getProjectsByTheme(projects.value, theme.value ?? undefined)
 
       return results.filter((project: ProjectType) => {
-        return this.byCompanyData(project, useFiltersStore().filters[FilterItemKeys.companyData])
+        return this.byCompanyData(project, useFiltersStore().isCompanyDataSelected())
       })
     })
   }
@@ -42,6 +42,7 @@ export default class ProjectFilter {
   }
 
   static byCompanyData(project: ProjectType, companySelected: boolean) {
+    console.log('Filter by company data')
     if (!this.isValidFilterValue(companySelected)) {
       return true
     }
