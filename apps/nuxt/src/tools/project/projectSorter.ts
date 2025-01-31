@@ -2,7 +2,7 @@ import { ProjectType as ProjectType } from '@/types'
 
 export default class ProjectSorter {
   static readonly highlightSort = (projects: ProjectType[]): ProjectType[] => {
-    return projects.toSorted((a, b) => {
+    return projects.slice().sort((a, b) => {
       if (!a.highlightPriority) {
         return 1
       }
