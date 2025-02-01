@@ -199,7 +199,7 @@
     "id": "accelerateur-decarbonation"
   },
   {
-    "titre": "Programme Volontaire Français ACT",
+    "titre": "ACT - Programme Volontaire Français",
     "promesse": "Développez votre stratégie bas carbone et mettez en œuvre votre plan de transition",
     "description": "L’ADEME soutient financièrement les entreprises qui souhaitent questionner leur modèle économique pour identifier un nouveau modèle compatible avec une trajectoire bas carbone. \nVous serez accompagné avec la méthode ACT Pas à Pas (Assessing Low Carbon Transition), une méthode structurante, progressive et sur le long terme qui aide les entreprises à réduire significativement leurs émissions de gaz à effet de serre.",
     "description longue": "L'étude ACT Pas à Pas se déroule en 12 à 18 mois selon les entreprises. Les grandes étapes de l'étude sont les suivantes :  \n• Analyser la maturité initiale de l'entreprise sur des bases carbone.\n• Exposer les enjeux et  réaliser une analyse stratégique de l’entreprise dans un contexte de transition bas carbone.\n• Déterminer une vision d’entreprise et concevoir la feuille de route du plan de transition à court, moyen et long terme. \n• Elaborer des objectifs de performance carbone et définir une stratégie.\n• Mettre en oeuvre des actions de décarbonation.",
@@ -396,7 +396,7 @@
     "id": "act-pas-a-pas"
   },
   {
-    "titre": "Parcours Adaptation au changement climatique",
+    "titre": "Adaptation au changement climatique en Bretagne",
     "promesse": "Évaluez la vulnérabilité climatique de votre entreprise",
     "description": "Bénéficiez d'un accompagnement en trois modules pour vous aider à évaluer la vulnérabilité climatique de votre entreprise, adapter votre organisation face aux catastrophes naturelles et aux risques industriels liés au changement climatique et découvrir comment limiter les coûts imprévus de canicule, inondation, sécheresse, etc.",
     "illustration": "images/TEE_eolienne.png",
@@ -596,7 +596,7 @@
     "id": "adaptation-bzh"
   },
   {
-    "titre": "Agir Pays de la Loire",
+    "titre": "Agir en Pays de la Loire",
     "promesse": "Financez votre projet de transition écologique dans le secteur du tourisme",
     "description": "Bénéficiez d’un prêt participatif « Agir Pays de la Loire ». Ce prêt est destiné à accompagner les innovations incluant une démarche de transition écologique, portées par les entreprises du tourisme. Grâce à ce prêt, financez, par exemple, votre isolation thermique, vos équipements d’économies d’eau et d’énergie.",
     "illustration": "images/TEE_ampoule.png",
@@ -779,7 +779,7 @@
     "id": "agir-pdl"
   },
   {
-    "titre": "Aide à la recherche de financement",
+    "titre": "Aide aux financement en Occitanie",
     "promesse": "Bénéficiez d'une aide sur le montage financier de votre projet d'investissement durable",
     "description": "Vous avez un projet d'investissement durable ? Vous pouvez solliciter un accompagnement pour vous aider à identifier les financements les mieux adaptés à votre besoin, rédiger et constituer votre dossier puis le déposer auprès des financeurs institutionnels.",
     "illustration": "images/TEE_ampoule.png",
@@ -966,7 +966,7 @@
     "id": "aide-financement-occitanie"
   },
   {
-    "titre": "Travaux hébergements touristiques",
+    "titre": "Aide travaux hébergements touristiques",
     "promesse": "Financez vos travaux de création, renovation, modernisation de votre hébergement touristique",
     "description": "Vous avez un projet de création, modernisation ou rénovation de votre hébergement touristique ? La Région Auvergne-Rhône-Alpes vous accompagne avec une aide financière pour soutenir vos travaux. Que vous souhaitiez concevoir un hébergement éco-responsable ou entreprendre des rénovations énergétiques, cette aide peut financer des améliorations telles que l’isolation thermique, l’installation d’un chauffage performant ou le recours aux énergies renouvelables. Ces travaux vous permettent de réduire vos charges mais aussi de renforcer l’attractivité et la durabilité de votre établissement.",
     "illustration": "images/TEE_eolienne.png",
@@ -1375,7 +1375,7 @@
     "id": "aides-au-reemploi-des-emballages"
   },
   {
-    "titre": "AMO chaufferie biomasse ",
+    "titre": "AMO chaufferie biomasse",
     "promesse": "Financez une prestation d’assistance à maîtrise d’ouvrage pour la mise en place d'une chaufferie biomasse",
     "description": "Vous avez pour projet de mettre en place une chaufferie biomasse dans votre entreprise? Afin de garantir la bonne exécution de votre projet, l’ADEME vous aide à financer des prestations d’assistance à maîtrise d’ouvrage (AMO).",
     "description longue": "Les missions d’assistance à maitrise d’ouvrage vous permettront :\n• d’assurer la qualité du projet à travers une vision globale et en coordination avec les différents acteurs du projet ;\n• de mettre en œuvre les différentes étapes du projet et de rédiger les cahiers des charges si nécessaire (bureau d’études, maîtrise d’œuvre) ;\n• de s’assurer de la conformité réglementaire et technique de l’installation ;\n• de s’assurer du bon fonctionnement de l’installation et des modalités de maintenance.",
