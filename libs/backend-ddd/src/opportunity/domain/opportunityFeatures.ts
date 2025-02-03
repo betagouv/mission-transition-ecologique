@@ -166,8 +166,8 @@ export default class OpportunityFeatures {
     return new ProgramFeatures(this._programRepository).getById(id)
   }
 
-  private _sendReturnReceipt(opportunity: OpportunityWithContactId, associatedData: OpportunityAssociatedData) {
-    if (!new OpportunityHubFeatures(this._opportunityHubRepositories).shouldTransmitToPDE(opportunity, associatedData)) {
+  private async _sendReturnReceipt(opportunity: OpportunityWithContactId, associatedData: OpportunityAssociatedData) {
+    if (!(await new OpportunityHubFeatures(this._opportunityHubRepositories).shouldTransmitToPDE(opportunity, associatedData))) {
       void this._mailRepository.sendReturnReceipt(opportunity, associatedData).then((hasError) => {
         if (hasError) {
           Monitor.warning('Error while sending a return receipt', { error: hasError })
