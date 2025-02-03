@@ -11,7 +11,6 @@ import { ContactDetails, Opportunity, OpportunityType, SiretValidator } from '@t
 import EstablishmentService from '../../establishment/application/establishmentService'
 import Monitor from '../../common/domain/monitoring/monitor'
 import { ProjectService } from '../../project/application/projectService'
-import { PlaceDesEntreprises } from '../../opportunityHub/infrastructure/api/placedesentreprises/placeDesEntreprises'
 
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
@@ -168,7 +167,7 @@ export default class OpportunityFeatures {
   }
 
   private _sendReturnReceipt(opportunity: OpportunityWithContactId, associatedData: OpportunityAssociatedData) {
-    if (!new PlaceDesEntreprises().shouldTransmit(opportunity, associatedData)) {
+    if (!new OpportunityHubFeatures(this._opportunityHubRepositories).shouldTransmitToPDE(opportunity, associatedData)) {
       void this._mailRepository.sendReturnReceipt(opportunity, associatedData).then((hasError) => {
         if (hasError) {
           Monitor.warning('Error while sending a return receipt', { error: hasError })
