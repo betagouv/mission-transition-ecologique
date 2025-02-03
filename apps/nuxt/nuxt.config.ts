@@ -22,14 +22,7 @@ export default defineNuxtConfig({
     // '/donnees-personnelles': { prerender: true },
     '/stats': { swr: 86400 }, // cached for 1 day (86400 seconds)
     '/budget': { prerender: true },
-    '/ajouter-une-aide-entreprises': { 
-      prerender: true,
-      security: {
-        headers: {
-          crossOriginEmbedderPolicy: 'unsafe-none'
-        }
-      }
-    },
+    '/ajouter-une-aide-entreprises': { prerender: true },
     '/iframe/projet/**': {
       swr: true,
       security: {

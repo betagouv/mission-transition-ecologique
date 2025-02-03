@@ -17,9 +17,6 @@ definePageMeta({
   path: '/ajouter-une-aide-entreprises',
   name: RouteName.AddProgram
 })
-useHead({
-  meta: [{ 'http-equiv': 'Cross-Origin-Embedder-Policy', content: 'unsafe-none' }]
-})
 
 defineRouteRules({
   sitemap: {
