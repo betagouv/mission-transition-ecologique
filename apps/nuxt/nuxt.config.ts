@@ -26,8 +26,7 @@ export default defineNuxtConfig({
       prerender: true,
       security: {
         headers: {
-          crossOriginResourcePolicy: 'cross-origin',
-          crossOriginEmbedderPolicy: 'credentialless'
+          crossOriginEmbedderPolicy: 'unsafe-none'
         }
       }
     },
