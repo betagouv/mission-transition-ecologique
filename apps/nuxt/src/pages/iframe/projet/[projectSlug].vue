@@ -75,7 +75,9 @@ const href = router.resolve({ name: RouteName.CatalogProjectDetail, params: { pr
   }
 
   .fr-card__img {
-    max-height: 250px;
+    img {
+      max-height: 250px;
+    }
 
     div {
       height: 100%;
