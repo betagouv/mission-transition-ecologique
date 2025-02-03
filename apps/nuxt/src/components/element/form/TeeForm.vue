@@ -78,12 +78,13 @@
       <p class="fr-mb-5v">
         <span v-html="phoneCallback"></span>
       </p>
-      <img
+      <div
         v-if="showCELogo"
-        src="/images/logos/ce-logo-horizontal.svg"
-        :alt="`image / logo-conseillers-entreprise`"
-        width="280px"
-      />
+        class="fr-header__service"
+      >
+        <p class="fr-header__service-title fr-mb-0"><span class="fr-text--deep-red">Conseillers-Entreprises</span>.Service-Public.fr</p>
+        <p class="fr-header__service-tagline">Le service public d’accompagnement des entreprises</p>
+      </div>
     </template>
   </TeeFormCallback>
 </template>
