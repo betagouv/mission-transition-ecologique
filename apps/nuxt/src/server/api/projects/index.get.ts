@@ -1,9 +1,9 @@
-import { ProjectFilterQuery, projectFilterQuerySchema } from '@tee/common'
+import { ProjectFilterQuery, serverProjectFilterQuerySchema } from '@tee/common'
 import { defineEventHandler, H3Event } from 'h3'
 import { Monitor, ProjectService } from '@tee/backend-ddd'
 
 export default defineEventHandler(async (event) => {
-  const queries = await getValidatedQuery(event, projectFilterQuerySchema.parse)
+  const queries = await getValidatedQuery(event, serverProjectFilterQuerySchema.parse)
 
   return projectsCached(event, queries)
 })

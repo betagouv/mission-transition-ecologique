@@ -25,7 +25,6 @@ export const useFiltersStore = defineStore('filters', () => {
   }
 
   function isCompanyDataSelected() {
-    console.log('Is company data selected:', filters.value[FilterItemKeys.companyData])
     return filters.value[FilterItemKeys.companyData]
   }
 

@@ -3,7 +3,7 @@ import ProjectApi from '@/tools/api/projectApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
-import { type ProjectFilterQuery, ProjectType } from '@/types'
+import { type ProjectFilterQuery, ProjectSortBy, ProjectType } from '@/types'
 
 export class ProjectManager {
   _useProject = useProjectStore()
@@ -23,10 +23,12 @@ export class ProjectManager {
     this._useNavigation.hasSpinner = false
   }
 
-  async getFilteredProjects() {
+  async getFilteredProjects(onlyEligible: boolean | undefined = undefined, sortBy: ProjectSortBy | undefined = undefined) {
     const { codeNAF1 } = useUsedTrackStore().getQuestionnaireData()
     const filteredData: ProjectFilterQuery = {
-      ...(codeNAF1 && { codeNAF1 })
+      ...(codeNAF1 && { codeNAF1 }),
+      onlyEligible: onlyEligible,
+      sortBy: sortBy
     }
 
     await this.getProjects(filteredData)

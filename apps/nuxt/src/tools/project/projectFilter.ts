@@ -42,13 +42,12 @@ export default class ProjectFilter {
   }
 
   static byCompanyData(project: ProjectType, companySelected: boolean) {
-    console.log('Filter by company data')
     if (!this.isValidFilterValue(companySelected)) {
       return true
     }
 
     if (companySelected) {
-      return ProjectEligibility.isEligible(project, (CompanyData.company as EstablishmentFront)?.codeNAF1)
+      return new ProjectEligibility().isEligible(project, (CompanyData.company as EstablishmentFront)?.codeNAF1)
     }
     return true
   }

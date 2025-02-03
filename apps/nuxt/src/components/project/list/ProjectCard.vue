@@ -8,15 +8,17 @@
     :link="getRouteToProjectDetail(project)"
     class="teste2e-project-target"
   >
+    <template #end-details>
+      <DsfrBadge
+        :label="`${project.sectors.length} / ${project.priority}`"
+        :no-icon="true"
+        class="fr-badge--info fr-mb-2w"
+      />
+    </template>
     <template
       v-if="isPriorityProject"
       #start-details
     >
-      <DsfrBadge
-        :label="project.sectors.length"
-        :no-icon="true"
-        class="fr-badge--success"
-      />
       <div
         v-if="!isUniquePriority"
         class="fr-card__header--priority fr-hidden fr-unhidden-lg"
