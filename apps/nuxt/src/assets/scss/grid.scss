@@ -46,6 +46,14 @@
         }
       }
     }
+
+    .fr-display {
+      &#{$modifier} {
+        &--block {
+          display: block
+        } 
+      } 
+    } 
   }
 }
 

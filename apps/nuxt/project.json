@@ -50,6 +50,15 @@
       "options": {
         "cwd": "apps/nuxt"
       }
+    },
+    "generate-iframe-script": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt",
+        "commands": [
+          "npx esbuild --bundle ./scripts/iframe.ts --outfile=./src/public/scripts/iframe.js --target=node20 --format=cjs --minify"
+        ]
+      }
     }
   }
 }
