@@ -24,10 +24,12 @@ export default defineNuxtConfig({
     '/budget': { prerender: true },
     '/ajouter-une-aide-entreprises': { 
       prerender: true,
-      headers: {
-        crossOriginResourcePolicy: 'unsafe-none',
-        crossOriginEmbedderPolicy: 'unsafe-none'
-      } 
+      security: {
+        headers: {
+          crossOriginResourcePolicy: 'cross-origin',
+          crossOriginEmbedderPolicy: 'credentialless'
+        }
+      }
     },
     '/iframe/projet/**': {
       swr: true,
