@@ -21,11 +21,11 @@
   </div>
 </template>
 <script setup lang="ts">
-import { Theme } from '@/tools/theme'
-import ProjectFilter from '@/tools/project/projectFilter'
-import ProjectSorter from '@/tools/project/projectSorter'
 import { useProjectStore } from '@/stores/project'
+import ProjectFilter from '@/tools/project/projectFilter'
 import { ProjectManager } from '@/tools/project/projectManager'
+import ProjectSorter from '@/tools/project/projectSorter'
+import { Theme } from '@/tools/theme'
 import { CompanyData } from '@/tools/companyData'
 
 interface Props {
@@ -48,7 +48,17 @@ const { projects, hasError } = storeToRefs(useProjectStore())
 const { hasSpinner } = storeToRefs(useNavigationStore())
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
-const sortedProjects = ProjectSorter.sort(filteredProjects)
+const sortedProjects = computed(() => {
+  if (!filteredProjects.value) {
+    return []
+  }
+
+  if (!theme.value || !Theme.isTheme(theme.value)) {
+    return ProjectSorter.highlightSort(filteredProjects.value)
+  }
+
+  return filteredProjects.value
+})
 const projectList = computed(() => {
   return props.limit ? sortedProjects.value.slice(0, props.limit) : sortedProjects.value
 })

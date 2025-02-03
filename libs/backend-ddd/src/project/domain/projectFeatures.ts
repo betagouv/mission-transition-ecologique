@@ -12,9 +12,16 @@ export default class ProjectFeatures {
   }
 
   public getFiltered(questionnaireData: QuestionnaireData): ProjectType[] {
+    this._sort(projects)
     if (!questionnaireData.codeNAF1 || !questionnaireData.onlyEligible) {
       return projects
     }
     return projects.filter((project) => ProjectEligibility.isEligible(project, questionnaireData.codeNAF1 as string))
+  }
+
+  private _sort(projects: ProjectType[]) {
+    projects.sort((a, b) => {
+      return a.priority - b.priority
+    })
   }
 }

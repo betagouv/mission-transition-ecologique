@@ -37,7 +37,7 @@
             >
               <ProjectModalFilter />
             </div>
-            <SimpleProjectList :project-list="sortedProjects" />
+            <SimpleProjectList :project-list="filteredProjects" />
           </div>
           <div class="fr-col-12 fr-mt-3v fr-mb-10v">
             <OtherProject />
@@ -52,7 +52,6 @@
 import { useCompanyData } from '@/stores/companyData'
 import { useProjectStore } from '@/stores/project'
 import { ProjectManager } from '@/tools/project/projectManager'
-import ProjectSorter from '@/tools/project/projectSorter'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import ProjectFilter from '@/tools/project/projectFilter'
@@ -92,7 +91,6 @@ const description = 'Accédez à la liste des projets de transition écologique 
 const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
-const sortedProjects = ProjectSorter.sort(filteredProjects)
 
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0

@@ -105,8 +105,12 @@
     }
   }
 
-  &__title a::after {
-    display: none !important;
+  &:not(.fr-card--icon-link) {
+    .fr-card__title {
+      a::after {
+        display: none !important;
+      }
+    }
   }
 
   &__header--priority {
@@ -138,16 +142,18 @@
 
   @each $color, $properties in setting.$colors {
     &--#{$color} {
-      @if meta.type-of($properties) == map {
-        background-color: map.get($properties, "color") !important;
-        color: map.get($properties, "color-with-background") !important;
-      }
-
-      .fr-card__title {
+      @if $color != "grey" {
         @if meta.type-of($properties) == map {
+          background-color: map.get($properties, "color") !important;
           color: map.get($properties, "color-with-background") !important;
-        } @else {
-          color: setting.$text-grey;
+        }
+
+        .fr-card__title {
+          @if meta.type-of($properties) == map {
+            color: map.get($properties, "color-with-background") !important;
+          } @else {
+            color: setting.$text-grey;
+          }
         }
       }
     }
