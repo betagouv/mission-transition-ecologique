@@ -21,7 +21,7 @@ export const useProjectStore = defineStore('project', () => {
     return projects.filter((project: ProjectType) => {
       return (
         ProjectFilter.byTheme(project, filtersStore.filters[FilterItemKeys.themeType] as ThemeId) &&
-        ProjectFilter.byCompanyData(project, filtersStore.filters[FilterItemKeys.companyData])
+        ProjectFilter.byCompanyData(project, filtersStore.getCompanyDataSelected().value)
       )
     })
   }
