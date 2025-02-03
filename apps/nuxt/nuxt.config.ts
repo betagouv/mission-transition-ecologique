@@ -25,8 +25,8 @@ export default defineNuxtConfig({
     '/ajouter-une-aide-entreprises': { 
       prerender: true,
       headers: {
-        crossOriginResourcePolicy: 'cross-origin',
-        crossOriginEmbedderPolicy: 'credentialless'
+        crossOriginResourcePolicy: 'unsafe-none',
+        crossOriginEmbedderPolicy: 'unsafe-none'
       } 
     },
     '/iframe/projet/**': {
