@@ -14,27 +14,28 @@
     v-model="activityInput"
     :placeholder="infos.description"
     name="activity"
+    :color="Color.yellow"
     :error-msg="errorMsg"
     :results="activityResults"
     @update:model-value="updateModelValue"
     @reset-search="resetActivity"
-    @search="searchLocalisation"
+    @search="searchActivity"
   >
     <template #results>
       <div
-        v-if="activityResults.length && showResults"
+        v-if="activityResults.length"
         id="activity-response"
         class="fr-bg--white"
       >
         <div
-          v-for="localisation in activityResults"
-          :key="`resp-input-${localisation.nom}-${localisation.codePostal}`"
+          v-for="activity in activityResults"
+          :key="`resp-input-${activity.codeNAF}-${activity.codeNAF1}`"
           class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
-          @click="selectLocalisation(localisation)"
+          @click="selectActivity(activity)"
         >
           <div class="fr-card__body">
             <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-              <div class="fr-text--blue-france">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
+              <div class="fr-text--blue-france">{{ `${activity.secteur} (${activity.codeNAF})` }}</div>
             </div>
           </div>
         </div>
@@ -43,7 +44,7 @@
   </TeeDsfrSearchBar>
 </template>
 <script lang="ts" setup>
-import { RegisterDetailActivity, CompanyActivityType } from '@/types'
+import { RegisterDetailActivity, CompanyActivityType, Color } from '@/types'
 import { useDebounce } from '@vueuse/core'
 import EstablishmentApi from '@/tools/api/establishmentApi'
 import Translation from '@/tools/translation'

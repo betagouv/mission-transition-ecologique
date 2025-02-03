@@ -12,6 +12,7 @@
   <TeeDsfrSearchBar
     v-else
     v-model="localisationInput"
+    :color="Color.yellow"
     :placeholder="infos.description"
     name="localisation"
     :error-msg="errorMsg"
@@ -43,7 +44,7 @@
   </TeeDsfrSearchBar>
 </template>
 <script lang="ts" setup>
-import { RegisterDetailLocalisation, ConvertedCommune, CompanyLocalisationType } from '@/types'
+import { RegisterDetailLocalisation, ConvertedCommune, CompanyLocalisationType, Color } from '@/types'
 import LocalisationApi from '@/tools/api/localisationApi'
 import { useDebounce } from '@vueuse/core'
 import { CompanyData } from '@/tools/companyData'
