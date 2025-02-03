@@ -11,6 +11,7 @@ import { ContactDetails, Opportunity, OpportunityType, SiretValidator } from '@t
 import EstablishmentService from '../../establishment/application/establishmentService'
 import Monitor from '../../common/domain/monitoring/monitor'
 import { ProjectService } from '../../project/application/projectService'
+import { PlaceDesEntreprises } from '../../opportunityHub/infrastructure/api/placedesentreprises/placeDesEntreprises'
 
 export default class OpportunityFeatures {
   private readonly _contactRepository: ContactRepository
@@ -65,7 +66,7 @@ export default class OpportunityFeatures {
       return opportunityResult
     }
 
-    this._sendReturnReceipt(opportunity, opportunityAssociatedObject.value)
+    this._sendReturnReceipt(opportunityWithContactId, opportunityAssociatedObject.value)
     this._transmitOpportunityToHubs(opportunityResult.value, opportunityWithOperatorAndContact, opportunityAssociatedObject.value)
 
     return opportunityResult
@@ -166,12 +167,14 @@ export default class OpportunityFeatures {
     return new ProgramFeatures(this._programRepository).getById(id)
   }
 
-  private _sendReturnReceipt(opportunity: Opportunity, associatedData: OpportunityAssociatedData) {
-    void this._mailRepository.sendReturnReceipt(opportunity, associatedData).then((hasError) => {
-      if (hasError) {
-        Monitor.warning('Error while sending a return receipt', { error: hasError })
-      }
-    })
+  private _sendReturnReceipt(opportunity: OpportunityWithContactId, associatedData: OpportunityAssociatedData) {
+    if (!new PlaceDesEntreprises().shouldTransmit(opportunity, associatedData)) {
+      void this._mailRepository.sendReturnReceipt(opportunity, associatedData).then((hasError) => {
+        if (hasError) {
+          Monitor.warning('Error while sending a return receipt', { error: hasError })
+        }
+      })
+    }
   }
 
   private async _verifyAndAddEstablishmentData(opportunity: Opportunity): Promise<Result<Opportunity, Error>> {
