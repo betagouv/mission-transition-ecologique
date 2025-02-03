@@ -37,4 +37,14 @@ export default class OpportunityHubFeatures {
         return false
     }
   }
+
+  public async shouldTransmitToPDE(opportunity: OpportunityWithContactId, opportunityObject: OpportunityAssociatedData): Promise<boolean> {
+    for (const opportunityHubRepository of this._opportunityHubRepositories) {
+      if (opportunityHubRepository instanceof PlaceDesEntreprises) {
+        return await opportunityHubRepository.shouldTransmit(opportunity, opportunityObject)
+      }
+    }
+
+    return false
+  }
 }
