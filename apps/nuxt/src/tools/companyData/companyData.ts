@@ -8,7 +8,6 @@ import {
   LegalCategory,
   type QuestionnaireData,
   RegisterDetails,
-  QuestionnaireRoute,
   Region,
   ConvertedCommune,
   CompanyLocalisationType,
@@ -223,10 +222,7 @@ export class CompanyData {
   }
 
   private static _getQuestionnaireGoal() {
-    if (useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected.length) {
-      const questionnaireChoice = useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected[0].value
-      return questionnaireChoice === QuestionnaireRoute.SpecificGoal ? TrackId.Goals : TrackId.BuildingProperty
-    }
+    return TrackId.BuildingProperty
   }
 
   private static _canAddSizeToStorage(size: StructureSize, questionnaireData: { [k: string]: any }, key: string) {

@@ -40,15 +40,19 @@
   </div>
 </template>
 <script setup lang="ts">
+import { CompanyData } from '@/tools/companyData'
 import { RouteName } from '@/types/routeType'
-import { type RouteLocationAsRelativeGeneric } from 'vue-router'
+import Navigation from '@/tools/navigation'
 
 const router = useRouter()
 
-const routeToBaseList: RouteLocationAsRelativeGeneric = {
-  name: RouteName.QuestionnaireStart
-}
 const toQuestionnaire = async () => {
-  await router.push(routeToBaseList)
+  if (CompanyData.hasCompanyData()) {
+    await router.push({
+      name: RouteName.CatalogProjects
+    })
+  } else {
+    Navigation.toggleRegisterModal()
+  }
 }
 </script>

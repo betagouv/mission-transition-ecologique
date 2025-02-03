@@ -10,7 +10,6 @@ import {
   type LocationQuery,
   type LocationQueryValue,
   type RouteLocationNormalizedLoaded,
-  type RouteLocationRaw,
   type RouteLocationAsRelativeGeneric,
   type Router,
   RouteParamsGeneric
@@ -56,23 +55,12 @@ export const useNavigationStore = defineStore('navigation', () => {
   }
 
   function routeByTrackId(trackId: TrackId): RouteLocationAsRelativeGeneric {
-    let route: RouteLocationRaw = {
+    return {
       name: RouteName.Questionnaire,
       params: { trackId: trackId },
       hash: Navigation.hashByRouteName(RouteName.Questionnaire),
       query: queryByUsedTrackId(trackId)
     }
-
-    if (TrackId.QuestionnaireRoute === trackId) {
-      route = {
-        ...route,
-        name: RouteName.QuestionnaireStart,
-        query: undefined,
-        params: {}
-      }
-    }
-
-    return route
   }
 
   function setRouter(useRouter: Router) {

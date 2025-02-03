@@ -1,11 +1,10 @@
 import { type ProgramType, ThemeId } from '@tee/data'
-import { type PublicodesInputData, PublicodesQuestionnaireRoute } from './types'
+import { type PublicodesInputData } from './types'
 import {
   QuestionnaireChecker,
   PublicodeObjective,
   PublicodesKeys,
   QuestionnaireData,
-  QuestionnaireRoute,
   SizeToWorkforce,
   YesNo,
   StructureSize,
@@ -30,7 +29,6 @@ export const preprocessInputForPublicodes = (
   setCodeNAF(publicodesData, questionnaireData)
   setCodeNaf1(publicodesData, questionnaireData)
   setObjectives(publicodesData, questionnaireData)
-  setQuestionnaireRoute(publicodesData, questionnaireData)
   setDateValidity(publicodesData, programData)
 
   return publicodesData
@@ -130,27 +128,13 @@ const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: Q
       : YesNo.No
   }
 }
-const setQuestionnaireRoute = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
-  if (questionnaireData.questionnaire_route) {
-    const route = questionnaireData.questionnaire_route
-    publicodesData[PublicodesKeys.QuestionnaireRoute] = convertQuestionnaireRoute(route)
-  }
-}
+
 const setDateValidity = (publicodesData: PublicodesInputData, programData: ProgramType) => {
   if (programData['début de validité']) {
     publicodesData['dispositif . début de validité'] = programData['début de validité']
   }
   if (programData['fin de validité']) {
     publicodesData['dispositif . fin de validité'] = programData['fin de validité']
-  }
-}
-
-const convertQuestionnaireRoute = (route: QuestionnaireRoute): PublicodesQuestionnaireRoute => {
-  switch (route) {
-    case QuestionnaireRoute.NoSpecificGoal:
-      return PublicodesQuestionnaireRoute.NoSpecificGoal
-    case QuestionnaireRoute.SpecificGoal:
-      return PublicodesQuestionnaireRoute.SpecificGoal
   }
 }
 

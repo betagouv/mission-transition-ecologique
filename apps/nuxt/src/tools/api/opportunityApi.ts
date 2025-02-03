@@ -1,8 +1,6 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import {
-  QuestionnaireDataEnum,
-  QuestionnaireRoute,
   TrackId,
   OpportunityBody,
   ReqResp,
@@ -77,10 +75,6 @@ export default class OpportunityApi extends RequestApi {
       companySector: TrackStructure.getSector(),
       companySize: TrackStructure.getSize() ?? undefined,
       message: this._opportunityForm.needs.value,
-      questionnaireRoute: this.getFromUsedTrack(
-        TrackId.QuestionnaireRoute,
-        QuestionnaireDataEnum.questionnaire_route as string
-      ) as QuestionnaireRoute, // get from usedTrack
       otherData: this.getAllValuesFromUsedTrack(),
       linkToPage: this._generateLinkToPage(),
       linkToCatalog: this._generateCatalogLink()
