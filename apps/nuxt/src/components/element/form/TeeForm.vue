@@ -75,11 +75,16 @@
     class="fr-mt-5v fr-mx-auto fr-grid-row fr-grid-row--center fr-grid-row--middle"
   >
     <template #phoneContact>
-      <p class="fr-mb-15v">
-        <span>
-          {{ phoneCallback }}
-        </span>
+      <p class="fr-mb-5v">
+        <span v-html="phoneCallback"></span>
       </p>
+      <div
+        v-if="showCELogo"
+        class="fr-header__service"
+      >
+        <p class="fr-header__service-title fr-mb-0"><span class="fr-text--deep-red">Conseillers-Entreprises</span>.Service-Public.fr</p>
+        <p class="fr-header__service-tagline">Le service public d’accompagnement des entreprises</p>
+      </div>
     </template>
   </TeeFormCallback>
 </template>
@@ -105,6 +110,7 @@ interface Props {
   formType: OpportunityType
   form: FormDataType
   hint: string
+  showCELogo?: boolean
   title?: string
   hintClass?: string
   errorEmailSubject: string
@@ -118,6 +124,7 @@ const props = withDefaults(defineProps<Props>(), {
   showTitle: true,
   title: Format.capitalize(Translation.t('form.label') || ''),
   hintClass: '',
+  showCELogo: false,
   phoneCallback: undefined
 })
 
