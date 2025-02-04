@@ -14,7 +14,6 @@ export class ProjectManager {
     const resultApi = await this._getProjectsFromApi(filteredData)
     if (resultApi.isOk()) {
       this._useProject.projects = resultApi.data
-      console.log('PROJECTS', resultApi.data)
       this._useProject.hasProjects = true
       this._useProject.hasError = false
     } else {

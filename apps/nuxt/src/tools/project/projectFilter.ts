@@ -20,8 +20,10 @@ export default class ProjectFilter {
       if (!projects.value) {
         return undefined
       }
-
-      const results = this.getProjectsByTheme(projects.value, theme.value ?? undefined)
+      let results = projects.value
+      if (theme.value) {
+        results = this.getProjectsByTheme(projects.value, theme.value)
+      }
       return results.filter((project: ProjectType) => {
         return this.byCompanyData(project, useFiltersStore().filters[FilterItemKeys.companyData])
       })
@@ -30,7 +32,9 @@ export default class ProjectFilter {
 
   static getProjectsByTheme(projects: ProjectType[], themeType?: ThemeId): ProjectType[] {
     return projects.filter((project: ProjectType) => {
-      return themeType ? this.byTheme(project, themeType) : project.themes
+      return themeType
+        ? this.byTheme(project, themeType)
+        : project.themes.some((themeId) => Theme.getTags().some(({ id }) => id === themeId))
     })
   }
 
