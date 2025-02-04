@@ -102,6 +102,7 @@ export enum PublicodesKeys {
   CodeNAF = 'entreprise . code NAF',
   ValidityStart = 'dispositif . début de validité',
   ValidityEnd = 'dispositif . fin de validité',
+  QuestionnaireRoute = 'questionnaire . parcours',
   CurrentDate = 'date du jour',
   Workforce = 'entreprise . effectif',
   BuildingOwner = 'entreprise . est propriétaire de ses locaux',

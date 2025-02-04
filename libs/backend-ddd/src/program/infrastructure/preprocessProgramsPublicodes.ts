@@ -1,5 +1,5 @@
 import { type ProgramType, ThemeId } from '@tee/data'
-import { type PublicodesInputData } from './types'
+import { type PublicodesInputData, PublicodesQuestionnaireRoute } from './types'
 import {
   QuestionnaireChecker,
   PublicodeObjective,
@@ -29,6 +29,7 @@ export const preprocessInputForPublicodes = (
   setCodeNAF(publicodesData, questionnaireData)
   setCodeNaf1(publicodesData, questionnaireData)
   setObjectives(publicodesData, questionnaireData)
+  setQuestionnaireRoute(publicodesData)
   setDateValidity(publicodesData, programData)
 
   return publicodesData
@@ -128,7 +129,9 @@ const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: Q
       : YesNo.No
   }
 }
-
+const setQuestionnaireRoute = (publicodesData: PublicodesInputData) => {
+  publicodesData[PublicodesKeys.QuestionnaireRoute] = PublicodesQuestionnaireRoute.NoSpecificGoal
+}
 const setDateValidity = (publicodesData: PublicodesInputData, programData: ProgramType) => {
   if (programData['début de validité']) {
     publicodesData['dispositif . début de validité'] = programData['début de validité']
