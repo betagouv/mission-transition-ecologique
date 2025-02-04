@@ -29,7 +29,7 @@ export const preprocessInputForPublicodes = (
   setCodeNAF(publicodesData, questionnaireData)
   setCodeNaf1(publicodesData, questionnaireData)
   setObjectives(publicodesData, questionnaireData)
-  setQuestionnaireRoute(publicodesData)
+  setQuestionnaireRoute(publicodesData, questionnaireData)
   setDateValidity(publicodesData, programData)
 
   return publicodesData
@@ -129,8 +129,10 @@ const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: Q
       : YesNo.No
   }
 }
-const setQuestionnaireRoute = (publicodesData: PublicodesInputData) => {
-  publicodesData[PublicodesKeys.QuestionnaireRoute] = PublicodesQuestionnaireRoute.NoSpecificGoal
+const setQuestionnaireRoute = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
+  if (questionnaireData.questionnaire_route) {
+    publicodesData[PublicodesKeys.QuestionnaireRoute] = PublicodesQuestionnaireRoute.NoSpecificGoal
+  }
 }
 const setDateValidity = (publicodesData: PublicodesInputData, programData: ProgramType) => {
   if (programData['début de validité']) {

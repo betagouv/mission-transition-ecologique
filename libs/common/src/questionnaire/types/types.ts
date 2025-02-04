@@ -4,6 +4,10 @@ export enum YesNo {
   Unknown = 'je-ne-sais-pas'
 }
 
+export enum QuestionnaireRoute {
+  NoSpecificGoal = 'je-ne-sais-pas-par-ou-commencer'
+}
+
 export enum BuildingProperty {
   Owns = 'proprietaire',
   Rents = 'locataire',

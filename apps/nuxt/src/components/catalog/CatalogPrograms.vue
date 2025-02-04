@@ -54,7 +54,7 @@ useSeoMeta(MetaSeo.get(title, description))
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })
-
+console.log(programs.value, filteredPrograms.value)
 const countPrograms = computed(() => {
   return filteredPrograms.value?.length || 0
 })
