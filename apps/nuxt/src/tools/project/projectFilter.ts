@@ -22,7 +22,6 @@ export default class ProjectFilter {
       }
 
       const results = this.getProjectsByTheme(projects.value, theme.value ?? undefined)
-
       return results.filter((project: ProjectType) => {
         return this.byCompanyData(project, useFiltersStore().filters[FilterItemKeys.companyData])
       })
@@ -31,15 +30,12 @@ export default class ProjectFilter {
 
   static getProjectsByTheme(projects: ProjectType[], themeType?: ThemeId): ProjectType[] {
     return projects.filter((project: ProjectType) => {
-      return themeType
-        ? this.byTheme(project, themeType)
-        : project.themes.some((themeId) => Theme.getTags().some(({ id }) => id === themeId))
+      return themeType ? this.byTheme(project, themeType) : project.themes
     })
   }
 
   static byTheme(project: ProjectType, themeId: ThemeId) {
     const themeSelected: ThemeType | undefined = Theme.getById(themeId)
-
     if (!this.isValidFilterValue(themeSelected)) {
       return true
     }
