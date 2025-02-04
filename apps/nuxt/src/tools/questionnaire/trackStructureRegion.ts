@@ -3,15 +3,6 @@
 
 import { Track, TrackCategory, HasInputOptions } from '@/types'
 import { TrackComponent, TrackId } from '@/types'
-import type { NextTrackRuleSet } from '@/types'
-
-const nextTrackRulesSet: NextTrackRuleSet[] = [
-  {
-    help: "Goes to track_structure_building_property if : questionnaire_route == 'no_specific_goal' (newbie)",
-    rules: [],
-    next: { default: TrackId.BuildingProperty }
-  }
-]
 
 export const regions: Track = {
   id: TrackId.StructureCity,
@@ -33,8 +24,7 @@ export const regions: Track = {
       questionnaireData: { ville: '', region: '', codePostal: '' },
       title: { fr: 'LOCALISATION' },
       next: {
-        default: TrackId.Goals,
-        ruleSet: nextTrackRulesSet
+        default: TrackId.BuildingProperty
       }
     }
   ]

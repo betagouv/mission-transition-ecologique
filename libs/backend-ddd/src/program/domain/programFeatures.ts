@@ -72,10 +72,7 @@ export default class ProgramFeatures {
     }
 
     let filteredPrograms = filterPrograms(allPrograms, questionnaireData, this._currentDateService.get(), this._rulesService)
-    const route = questionnaireData.questionnaire_route
-    if (route) {
-      filteredPrograms = filteredPrograms.map((programs) => sortPrograms(programs, route))
-    }
+    filteredPrograms = filteredPrograms.map((programs) => sortPrograms(programs))
     return filteredPrograms
   }
 
