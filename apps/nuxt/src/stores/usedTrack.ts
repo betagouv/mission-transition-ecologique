@@ -45,6 +45,10 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     return current.value?.completed ?? false
   })
 
+  const currentIsFirst = computed<boolean>(() => {
+    return current.value?.id === TrackId.Siret
+  })
+
   const usedTracksIds = computed<TrackId[]>(() => {
     return usedTracks.value.map((usedTrack: UsedTrack) => usedTrack.id)
   })
@@ -340,6 +344,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     setCurrentSelectedOptions,
     updateCurrent,
     setCurrentToUncompleted,
+    currentIsFirst,
     getUsedTrack,
     getPreviousCompletedUsedTrackId,
     hasUsedTrack,
