@@ -9,7 +9,7 @@ export const tests: SearchResultsDataType = [
   },
   {
     id: 1,
-    url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non#questionnaire-resultat',
+    url: 'questionnaire/resultat?siret=83014132100034&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non#questionnaire-resultat',
     values: [
       'Communauté du Coq Vert',
       'Entreprises engagées pour la nature',
@@ -43,17 +43,12 @@ export const tests: SearchResultsDataType = [
   },
   {
     id: 2,
-    url: 'questionnaire/resultat/projet/isolation-thermique?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
-    values: ['Diagnostic SARE', 'Prêt Économies d’Énergie (PEE)', "Crédit d'Impôt Rénovation Énergétique (CIRE)", 'Prêt Vert']
-  },
-  {
-    id: 3,
-    url: 'questionnaire/resultat/projet/sensibilisation-equipes?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non',
+    url: 'questionnaire/resultat/projet/sensibilisation-equipes?siret=83014132100034&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non',
     values: ['Formation ADEME']
   },
   {
-    id: 4,
-    url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=78893947800020&locaux=locataire&mobilite=oui&matieres-premieres=oui&tri-dechets=oui&dechets=oui&gestion-eau=oui&energie=oui&audit=non#questionnaire-resultat',
+    id: 3,
+    url: 'questionnaire/resultat?siret=78893947800020&locaux=locataire&mobilite=oui&matieres-premieres=oui&tri-dechets=oui&dechets=oui&gestion-eau=oui&energie=oui&audit=non#questionnaire-resultat',
     values: [
       'Baisse Les Watts',
       'Communauté du Coq Vert',
@@ -91,8 +86,8 @@ export const tests: SearchResultsDataType = [
     ]
   },
   {
-    id: 5,
-    url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=82141193100016&effectif=ME&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=oui&audit=oui&selection-audit=consommation-energie&selection-audit=eau&selection-audit=performance-energetique&selection-audit=bilan-carbone&selection-audit=certification&selection-audit=matieres-premieres&selection-audit=dechets#questionnaire-resultat',
+    id: 3,
+    url: 'questionnaire/resultat?siret=82141193100016&effectif=ME&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=oui&audit=oui&selection-audit=consommation-energie&selection-audit=eau&selection-audit=performance-energetique&selection-audit=bilan-carbone&selection-audit=certification&selection-audit=matieres-premieres&selection-audit=dechets#questionnaire-resultat',
     values: [
       'Baisse Les Watts',
       'Charte "zéro déchet plastique"',
@@ -133,8 +128,8 @@ export const tests: SearchResultsDataType = [
     ]
   },
   {
-    id: 6,
-    url: 'questionnaire/resultat?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non#questionnaire-resultat',
+    id: 4,
+    url: 'questionnaire/resultat?siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non#questionnaire-resultat',
     values: [
       'Entreprises engagées pour la nature',
       'Formation ADEME',
