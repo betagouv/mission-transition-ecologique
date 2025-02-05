@@ -226,7 +226,12 @@
         v-if="program"
         :form-container-ref="teeProgramFormContainer"
         :data-id="program.id"
-        :phone-callback="Translation.t('form.phoneContact', { operator: program['opérateur de contact'] })"
+        :show-c-e-logo="!isProgramAutonomous"
+        :phone-callback="
+          isProgramAutonomous
+            ? Translation.t('form.phoneContactAutonomy', { operator: program['opérateur de contact'] })
+            : Translation.t('form.phoneContactCE')
+        "
         :form="Opportunity.getProgramFormFields(program)"
         :form-type="OpportunityType.Program"
         :error-email-subject="Translation.t('program.form.errorEmail.subject', { program: program.titre })"

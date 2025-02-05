@@ -65,7 +65,7 @@ export default class OpportunityFeatures {
       return opportunityResult
     }
 
-    this._sendReturnReceipt(opportunity, opportunityAssociatedObject.value)
+    this._sendReturnReceipt(opportunityWithContactId, opportunityAssociatedObject.value)
     this._transmitOpportunityToHubs(opportunityResult.value, opportunityWithOperatorAndContact, opportunityAssociatedObject.value)
 
     return opportunityResult
@@ -166,12 +166,14 @@ export default class OpportunityFeatures {
     return new ProgramFeatures(this._programRepository).getById(id)
   }
 
-  private _sendReturnReceipt(opportunity: Opportunity, associatedData: OpportunityAssociatedData) {
-    void this._mailRepository.sendReturnReceipt(opportunity, associatedData).then((hasError) => {
-      if (hasError) {
-        Monitor.warning('Error while sending a return receipt', { error: hasError })
-      }
-    })
+  private async _sendReturnReceipt(opportunity: OpportunityWithContactId, associatedData: OpportunityAssociatedData) {
+    if (!(await new OpportunityHubFeatures(this._opportunityHubRepositories).shouldTransmitToPDE(opportunity, associatedData))) {
+      void this._mailRepository.sendReturnReceipt(opportunity, associatedData).then((hasError) => {
+        if (hasError) {
+          Monitor.warning('Error while sending a return receipt', { error: hasError })
+        }
+      })
+    }
   }
 
   private async _verifyAndAddEstablishmentData(opportunity: Opportunity): Promise<Result<Opportunity, Error>> {

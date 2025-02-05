@@ -471,5 +471,23 @@
     "filterCategories": [
       "Régions"
     ]
+  },
+  {
+    "operator": "Agence de Développement Economique de Corse",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Agence de Tourisme de la Corse",
+    "filterCategories": [
+      "Opérateurs territoriaux"
+    ]
+  },
+  {
+    "operator": "Région Guadeloupe",
+    "filterCategories": [
+      "Régions"
+    ]
   }
 ]
