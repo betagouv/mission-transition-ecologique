@@ -12,7 +12,6 @@
       :error-msg="errorMessage"
       :hint="hint"
       :results="requestResponses.establishments"
-      @update:model-value="handleUpdateModelValue"
       @reset-search="clearSearch"
       @search="processInput"
     >
@@ -20,7 +19,7 @@
         <!-- RESPONSES -->
         <div
           id="siret-response"
-          class="fr-bg--white fr-mt-n6v"
+          class="fr-bg--white"
         >
           <div
             v-for="(response, i) in requestResponses.establishments"
@@ -79,11 +78,10 @@
 </template>
 
 <script setup lang="ts">
-import TrackSiret from '@/tools/questionnaire/track/TrackSiret'
 import Translation from '@/tools/translation'
-import { SiretValidator } from '@tee/common'
 import { EstablishmentSearch, EstablishmentFront, Color } from '@/types'
 import { useDebounce } from '@vueuse/core'
+import Siret from '@/tools/siret'
 
 const defaultSearchValue = {
   establishments: [],
@@ -125,32 +123,21 @@ const selectItem = (establishment: EstablishmentFront) => {
 const doManualRegister = () => {
   emit('manualRegister')
 }
-const handleUpdateModelValue = (value: string | undefined) => {
-  queryValue.value = value
-}
 const processInput = async () => {
   isLoading.value = true
   errorMessage.value = undefined
   resetSelection()
-  if (!queryValue.value || queryValue.value.length < 3) {
-    errorMessage.value = Translation.t('enterprise.searchTooShort')
-    clearSearch()
-  } else if (SiretValidator.isValidSiretFormat(queryValue.value) && !SiretValidator.isValidSiretNumber(queryValue.value)) {
-    errorMessage.value = "Le numéro SIRET n'est pas valide"
-    clearSearch()
-  } else {
-    TrackSiret.search(queryValue.value, 9).then((searchResult) => {
-      if (searchResult.isErr) {
-        errorMessage.value = Translation.t('enterprise.apiError')
-      } else if (searchResult.value.resultCount == 0) {
-        errorMessage.value = Translation.t('enterprise.noStructureFound')
-      } else {
-        requestResponses.value = searchResult.value
-        selection.value = undefined
-      }
-      isLoading.value = false
-    })
-  }
+  Siret.processInput(queryValue.value, 9).then((response) => {
+    if ((response as { error: boolean; errorMsg: string }).error) {
+      errorMessage.value = (response as { error: boolean; errorMsg: string }).errorMsg
+      clearSearch()
+    } else {
+      requestResponses.value = response as EstablishmentSearch
+      selection.value = undefined
+    }
+    isLoading.value = false
+  })
+  resetSelection()
 }
 </script>
 

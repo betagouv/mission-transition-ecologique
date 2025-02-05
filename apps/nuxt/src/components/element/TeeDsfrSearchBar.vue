@@ -21,7 +21,8 @@
         <DsfrInput
           v-model="inputModel"
           :name="`manual-register-${name}`"
-          class="fr-input--white fr-input"
+          :class="`${backgroundColor ? `fr-input--${backgroundColor}` : ''}`"
+          class="fr-input"
           type="search"
           :placeholder="placeholder"
           @click="emit('click')"
@@ -29,7 +30,7 @@
           @keyup.enter="emit('search')"
         />
         <DsfrButton
-          :class="`fr-bg--${color}`"
+          :class="`fr-bg--${color} fr-text--${searchColor}`"
           class="search-button"
           tertiary
           no-outline
@@ -55,11 +56,17 @@ interface Props {
   hint?: string
   isLoading: boolean
   name: string
+  backgroundColor?: Color
+  searchColor?: Color
   color: Color
   placeholder?: string | undefined
 }
-
-defineProps<Props>()
+withDefaults(defineProps<Props>(), {
+  hint: '',
+  backgroundColor: Color.white,
+  searchColor: Color.blueFrance,
+  placeholder: ''
+})
 
 const inputModel = defineModel<string>()
 const debouncedInputModel = useDebounce(inputModel, 1000)

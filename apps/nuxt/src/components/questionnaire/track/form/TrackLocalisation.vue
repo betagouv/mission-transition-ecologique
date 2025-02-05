@@ -39,6 +39,7 @@ import { CompanyData } from '@/tools/companyData'
 import { useDebounce } from '@vueuse/core'
 import Translation from '@/tools/translation'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
+import LocalisationApi from '@/tools/api/localisationApi'
 
 interface Props {
   option: TrackOptionsInput
@@ -75,7 +76,7 @@ const searchLocalisation = async () => {
   if (localisationInput.value && localisationInput.value.length >= 3) {
     isLoading.value = true
     showResults.value = true
-    const results = await TrackStructure.searchLocalisation(localisationInput.value)
+    const results = await new LocalisationApi().searchCities(localisationInput.value)
     if (results.isOk()) {
       localisationResults.value = results.data
     }

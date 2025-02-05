@@ -38,6 +38,7 @@ import { TrackOptionsInput, CompanyActivityType, TrackOptionItem, Color } from '
 import { useDebounce } from '@vueuse/core'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import Translation from '@/tools/translation'
+import EstablishmentApi from '@/tools/api/establishmentApi'
 
 interface Props {
   option: TrackOptionsInput
@@ -72,7 +73,7 @@ const selectActivity = (activity: CompanyActivityType) => {
 }
 const searchActivity = async () => {
   isLoading.value = true
-  const results = await TrackStructure.searchActivity(activityInput.value)
+  const results = await new EstablishmentApi().searchActivities(activityInput.value)
   if (results.isOk()) {
     activityResults.value = results.data
   }
