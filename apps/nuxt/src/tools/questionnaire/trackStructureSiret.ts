@@ -1,8 +1,8 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`questionnaire.trackSiret > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { HasInputOptions, SiretValue, TrackCategory, TrackComponent, TrackId, QuestionnaireRoute } from '@/types'
-import type { Track, NextTrackRuleSet, QuestionnaireData } from '@/types'
+import { HasInputOptions, SiretValue, TrackCategory, TrackComponent, TrackId } from '@/types'
+import type { Track, NextTrackRuleSet, EstablishmentFront } from '@/types'
 import { ConditionOperators, DataMappingFrom } from '@/types'
 import { LegalCategory } from '@/types'
 import { SiretValidator } from '@tee/common'
@@ -29,7 +29,7 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
   }
 ]
 
-const defaultQuestionnaireData: QuestionnaireData = {
+const defaultQuestionnaireData: EstablishmentFront = {
   siret: '',
   codeNAF: '',
   codeNAF1: '',
@@ -40,8 +40,7 @@ const defaultQuestionnaireData: QuestionnaireData = {
   structure_size: undefined,
   denomination: '',
   secteur: '',
-  creationDate: '',
-  questionnaire_route: QuestionnaireRoute.NoSpecificGoal
+  creationDate: ''
 }
 
 export const siret: Track = {

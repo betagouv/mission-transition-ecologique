@@ -1,17 +1,8 @@
-import {
-  QuestionnaireRoute,
-  StructureSize,
-  BuildingProperty,
-  WasteSortingStatus,
-  WasteManagementStatus,
-  YesNo,
-  MobilityStatus
-} from './types'
+import { StructureSize, BuildingProperty, WasteSortingStatus, WasteManagementStatus, YesNo, MobilityStatus } from './types'
 
 import { ThemeId } from '@tee/data'
 
 export enum QuestionnaireDataEnum {
-  questionnaire_route = 'questionnaire_route',
   priority_objective = 'priority_objective',
   building_property = 'building_property',
   energy_reduction_objective = 'energy_reduction_objective',
@@ -24,7 +15,6 @@ export enum QuestionnaireDataEnum {
 }
 
 export interface QuestionnaireData {
-  questionnaire_route?: QuestionnaireRoute
   region?: string
 
   structure_size?: StructureSize // optional for testing !

@@ -12,10 +12,6 @@ export interface PublicodesInputData {
   [key: string]: any
 }
 
-export enum PublicodesQuestionnaireRoute {
-  NoSpecificGoal = '"je ne sais pas par où commencer"'
-}
-
 export type ObjectivePublicodeData = {
   [key in PublicodesCondition]: PublicodeObjective[]
 }
