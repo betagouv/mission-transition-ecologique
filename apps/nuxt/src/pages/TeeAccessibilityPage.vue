@@ -7,7 +7,7 @@
     >
       <div class="fr-grid-row">
         <div class="fr-grid-col">
-          <h1>Politique d’accessibilité - RGAA</h1>
+          <h1>Déclaration d'accessibilité</h1>
           <p>
             Cette page n’est pas une page d’aide. Elle vise à présenter la politique d’accessibilité du site
             <a
@@ -36,11 +36,28 @@
             <a href="/">mission-transition-ecologique.beta.gouv.fr</a>
           </h4>
           <p>
-            Le Commissariat général au développement durable (CGDD) accorde un soin tout particulier à la qualité de réalisation de ses
-            sites internet. Elle est ainsi engagée depuis plusieurs années dans une démarche visant à respecter le RGAA (Référentiel général
-            d’accessibilité pour les administrations), la Charte internet de l’Etat, le Référentiel général d’interopérabilité et le
-            référentiel Opquast Website. Le CGDD accorde également une grande importance à l’expérience utilisateur et à l’ergonomie.
+            Le service numérique est porté par l'ADEME. L’ADEME s’engage à rendre ses sites internet, intranet, extranets accessibles
+            conformément à l’article 47 de la loi n° 2005-102 du 11 février 2005. À cette fin, il met en œuvre la stratégie et les actions
+            suivantes :
           </p>
+          <ul>
+            <li>
+              <a
+                href="https://librairie.ademe.fr/institutionnel/6794-schema-pluriannuel-de-mise-en-accessibilite-des-sites-web-de-l-ademe.html"
+                target="_blank"
+              >
+                Schéma pluriannuel de mise en accessibilité des actifs numériques de l’ADEME pour 2021-2023
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://librairie.ademe.fr/institutionnel/6823-plan-annuel-de-mise-en-accessibilite-des-sites-web-de-l-ademe.html"
+                target="_blank"
+              >
+                Plan d’action de l’année en cours(ouvre un nouvel onglet).
+              </a>
+            </li>
+          </ul>
           <p>
             Afin d’obtenir le meilleur résultat possible, l’accessibilité est prise en compte par l’ensemble des équipes impliquées dans le
             développement du site. Nos équipes sont également accompagnées par des experts tiers, notamment pour l’audit, les arbitrages et
@@ -68,10 +85,13 @@
 
           <h4 class="fr-mt-3w">Nous contacter</h4>
           <p>
-            Nous nous engageons à mettre ce site à la disposition de tout internaute, indépendamment de ses dispositions physiques,
-            cognitives, matérielles ou géographiques. Si vous constatez qu’une page ne correspond à ce critère, merci de nous contacter par
-            mail à : <a :href="Contact.mailTo">{{ Contact.email }}</a>
+            Si vous n’arrivez pas à accéder à un contenu ou à un service, vous pouvez contacter le responsable du site internet pour être
+            orienté vers une alternative accessible ou obtenir le contenu sous une autre forme.
           </p>
+          <p>
+            Contacter l'équipe <a :href="Contact.mailTo">{{ Contact.email }}par mail</a>
+          </p>
+          <p>Contacter Estelle Ribot, ADEME, DEMTE — 20 avenue du Grésillé BP 90 406 – 49 004 Angers Cedex 01</p>
 
           <h4 class="fr-mt-3w">Défenseur des droits</h4>
           <p>
