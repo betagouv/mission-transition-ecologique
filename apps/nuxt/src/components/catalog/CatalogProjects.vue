@@ -91,7 +91,6 @@ const description = 'Accédez à la liste des projets de transition écologique 
 const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
-
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0
 })

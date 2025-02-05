@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
 
 const projectsCached = cachedFunction(
   async (event: H3Event, questionnaireData: QuestionnaireData) => {
-    const programsResults = new ProgramService().getFilteredPrograms(questionnaireData)
+    const programsResults = new ProgramService().getFilteredPrograms({ ...questionnaireData, onlyEligible: true })
     if (programsResults.isErr) {
       const err = programsResults.error
       Monitor.error('Error in ProgramFilters', { error: err })

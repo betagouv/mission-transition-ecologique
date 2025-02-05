@@ -32,7 +32,7 @@
     >
       <div class="fr-mb-8v">
         <DsfrBadge
-          :label="`${project.countEligiblePrograms} AIDE${project.countEligiblePrograms > 1 ? 'S' : ''}`"
+          :label="eligibleProgramsTag"
           :no-icon="true"
           class="fr-bg--green--lightness fr-text--black"
         />
@@ -44,9 +44,10 @@
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
-import { ProjectType, RouteName } from '@/types'
+import { ProjectType, RouteName, FilterItemKeys } from '@/types'
 import type { RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
+import { useFiltersStore } from '@/stores/filters'
 
 interface Props {
   project: ProjectType
@@ -55,12 +56,14 @@ interface Props {
   priorityOrder?: number
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   isPriorityProject: false,
   priorityOrder: undefined
 })
 const priorityTag: string = 'A FAIRE EN PRIORITÉ'
-
+const eligibleProgramsTag = computed(() => {
+  return `${useFiltersStore().filters[FilterItemKeys.companyData] ? props.project.countEligiblePrograms : props.project.programs.length} AIDE${props.project.countEligiblePrograms > 1 ? 'S' : ''}`
+})
 const navigationStore = useNavigationStore()
 const navigation = new Navigation()
 const getRouteToProjectDetail = (project: ProjectType): RouteLocationRaw => {
