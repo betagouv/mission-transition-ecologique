@@ -12,7 +12,6 @@ $red: #fca081;
 $purple: #6a62f4;
 $green: #1ebe8e;
 $blue: #001891;
-$blue-france: color.$blue-france;
 $grey: #777;
 $text-grey: var(--text-default-grey);
 $blue-france-inverted: var(--text-inverted-blue-france);
@@ -42,7 +41,7 @@ $colors: (
     "color-with-background": $blue-france-inverted,
   ),
   "blue-france": (
-    "color": $blue-france,
+    "color": color.$blue-france,
     "color-with-background": $blue-france-inverted,
   ),
   "grey": (
