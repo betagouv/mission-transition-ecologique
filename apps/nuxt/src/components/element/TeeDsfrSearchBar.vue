@@ -27,14 +27,14 @@
           :placeholder="placeholder"
           @click="emit('click')"
           @update:model-value="updateModelValue"
-          @keyup.enter="emit('search')"
+          @keyup.enter="triggerSearch"
         />
         <DsfrButton
           :class="`fr-bg--${color} fr-text--${searchColor}`"
           class="search-button"
           tertiary
           no-outline
-          @click="emit('search')"
+          @click="triggerSearch"
         />
       </div>
     </div>
@@ -72,16 +72,26 @@ const inputModel = defineModel<string>()
 const debouncedInputModel = useDebounce(inputModel, 1000)
 const teeSearchBar = ref(null)
 const emit = defineEmits(['resetSearch', 'search', 'click'])
+let isSearchTriggered = false
 
 const resetSearch = () => {
   inputModel.value = ''
   emit('resetSearch')
+  isSearchTriggered = false
 }
 const updateModelValue = (value: string) => {
   inputModel.value = value
+  isSearchTriggered = false
 }
+const triggerSearch = () => {
+  if (!isSearchTriggered) {
+    emit('search')
+    isSearchTriggered = true
+  }
+}
+
 watch(debouncedInputModel, (newValue) => {
-  if (newValue) {
+  if (newValue && !isSearchTriggered) {
     emit('search')
   }
 })

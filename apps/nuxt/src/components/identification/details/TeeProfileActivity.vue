@@ -11,7 +11,7 @@
   </p>
   <TeeDsfrSearchBar
     v-else
-    v-model="activityInput"
+    v-model.trim="activityInput"
     :placeholder="infos.description"
     name="activity"
     :color="Color.yellow"
@@ -47,7 +47,6 @@
 </template>
 <script lang="ts" setup>
 import { RegisterDetailActivity, CompanyActivityType, Color } from '@/types'
-import { useDebounce } from '@vueuse/core'
 import EstablishmentApi from '@/tools/api/establishmentApi'
 import Translation from '@/tools/translation'
 
@@ -67,15 +66,10 @@ const activityLabel = computed<string>(() => {
   return `${props.infos.value?.secteur} (${props.infos.value?.codeNAF})`
 })
 
-const debouncedActivityInput = useDebounce(activityInput, 100)
-watch(debouncedActivityInput, () => {
-  searchActivity()
-})
-
 const errorMsg = computed<string>(() => {
-  if (props.showError && !debouncedActivityInput.value && !isLoading.value) {
+  if (props.showError && !activityInput.value && !isLoading.value) {
     return Translation.t('register.activity.mandatory')
-  } else if (activityResults.value.length === 0 && debouncedActivityInput.value && !isLoading.value) {
+  } else if (activityResults.value.length === 0 && activityInput.value && !isLoading.value) {
     return Translation.t('register.activity.noResults')
   }
   return ''

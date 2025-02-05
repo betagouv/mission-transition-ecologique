@@ -80,7 +80,6 @@
 <script setup lang="ts">
 import Translation from '@/tools/translation'
 import { EstablishmentSearch, EstablishmentFront, Color } from '@/types'
-import { useDebounce } from '@vueuse/core'
 import Siret from '@/tools/siret'
 
 const defaultSearchValue = {
@@ -90,12 +89,7 @@ const defaultSearchValue = {
 
 const queryValue = ref<string | undefined>()
 const hint = `ex : "Fromagerie Sanzot Angers" ou N° SIRET "130 025 265 00013"`
-const debouncedQueryValue = useDebounce(queryValue, 2000)
-watch(debouncedQueryValue, (newValue, oldValue) => {
-  if (newValue && newValue !== oldValue && !isLoading.value) {
-    processInput()
-  }
-})
+
 const isLoading = ref<boolean>(false)
 const requestResponses = ref<EstablishmentSearch>(defaultSearchValue)
 const selection = ref<EstablishmentFront>()

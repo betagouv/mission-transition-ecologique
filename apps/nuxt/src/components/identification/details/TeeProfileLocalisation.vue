@@ -11,14 +11,13 @@
   </p>
   <TeeDsfrSearchBar
     v-else
-    v-model="localisationInput"
+    v-model.trim="localisationInput"
     :color="Color.yellow"
     :placeholder="infos.description"
     :is-loading="isLoading"
     name="localisation"
     :error-msg="errorMsg"
     :results="localisationResults"
-    @update:model-value="updateModelValue"
     @reset-search="resetLocalisation"
     @search="searchLocalisation"
   >
@@ -47,7 +46,6 @@
 <script lang="ts" setup>
 import { RegisterDetailLocalisation, ConvertedCommune, CompanyLocalisationType, Color } from '@/types'
 import LocalisationApi from '@/tools/api/localisationApi'
-import { useDebounce } from '@vueuse/core'
 import { CompanyData } from '@/tools/companyData'
 import Translation from '@/tools/translation'
 import TeeDsfrSearchBar from '@/components/element/TeeDsfrSearchBar.vue'
@@ -60,29 +58,21 @@ interface Props {
 const props = defineProps<Props>()
 const selectedLocalisation = defineModel<CompanyLocalisationType>()
 const localisationInput = ref<string>('')
-const debouncedLocalisationInput = useDebounce(localisationInput, 1000)
 const hasData = computed(() => {
   return props.infos.value?.codePostal && props.infos.value.region && props.infos.value.ville
 })
-watch(debouncedLocalisationInput, (newValue) => {
-  if (newValue) {
-    searchLocalisation()
-  }
-})
-const updateModelValue = (value: string) => {
-  localisationInput.value = value
-}
+
 const localisationResults = ref<ConvertedCommune[]>([])
 const isLoading = ref<boolean>(false)
 const showResults = ref<boolean>(false)
-const hasInput = computed<boolean>(() => debouncedLocalisationInput.value.length >= 3 && !!debouncedLocalisationInput.value)
+const hasInput = computed<boolean>(() => localisationInput.value.length >= 3 && !!localisationInput.value)
 const noResults = computed<boolean>(() => localisationResults.value.length === 0 && hasInput.value && showResults.value && !isLoading.value)
 const errorMsg = computed<string>(() => {
   if (props.showError) {
     return Translation.t('register.localisation.mandatory')
   } else if (noResults.value) {
     return Translation.t('register.localisation.noResults')
-  } else if (!hasInput.value && debouncedLocalisationInput.value.length > 0) {
+  } else if (!hasInput.value && localisationInput.value.length > 0) {
     return Translation.t('register.localisation.tooShort')
   }
   return ''
