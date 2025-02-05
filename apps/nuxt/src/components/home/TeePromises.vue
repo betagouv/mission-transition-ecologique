@@ -82,7 +82,7 @@ const otherOperator = {
         </div>
       </div>
     </div>
-    <div class="fr-bg--blue-france--lightness fr-hidden-sm fr-col-12 fr-py-0-5v fr-mt-8v fr-mb-16v"></div>
+    <div class="fr-bg--blue--lightness fr-hidden-sm fr-col-12 fr-py-0-5v fr-mt-8v fr-mb-16v"></div>
   </div>
 </template>
 
