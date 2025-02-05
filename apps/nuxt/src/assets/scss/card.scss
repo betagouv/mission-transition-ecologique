@@ -105,12 +105,8 @@
     }
   }
 
-  &:not(.fr-card--icon-link) {
-    .fr-card__title {
-      a::after {
-        display: none !important;
-      }
-    }
+  &__title a::after {
+    display: none !important;
   }
 
   &__header--priority {
