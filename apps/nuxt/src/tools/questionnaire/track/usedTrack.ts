@@ -1,5 +1,5 @@
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { MobilityStatus, ThemeId, QuestionnaireDataEnum, TrackId, WasteManagementStatus, YesNo, RouteName } from '@/types'
+import { MobilityStatus, QuestionnaireDataEnum, TrackId, WasteManagementStatus, YesNo, RouteName } from '@/types'
 import { QuestionnaireChecker, BuildingProperty } from '@tee/common'
 import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
