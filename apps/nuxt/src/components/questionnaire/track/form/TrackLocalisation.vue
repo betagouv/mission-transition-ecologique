@@ -3,6 +3,7 @@
     v-model="localisationInput"
     :placeholder="option?.hint?.[Translation.lang]"
     name="localisation"
+    :is-loading="isLoading"
     :color="Color.blueFrance"
     :error-msg="errorMsg"
     :results="localisationResults"

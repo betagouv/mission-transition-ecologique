@@ -14,6 +14,7 @@
     v-model="localisationInput"
     :color="Color.yellow"
     :placeholder="infos.description"
+    :is-loading="isLoading"
     name="localisation"
     :error-msg="errorMsg"
     :results="localisationResults"

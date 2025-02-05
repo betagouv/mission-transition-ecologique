@@ -7,6 +7,12 @@
       class="fr-input-group fr-mb-0"
       :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
     >
+      <span
+        v-if="hint"
+        class="fr-hint-text fr-text--white fr-col-justify--left fr-mb-2v"
+      >
+        {{ hint }}
+      </span>
       <div
         class="fr-search-bar"
         :class="`${isLoading ? 'fr-search-bar--loading' : ''} fr-search-bar--${color}`"
@@ -18,6 +24,7 @@
           class="fr-input--white fr-input"
           type="search"
           :placeholder="placeholder"
+          @click="emit('click')"
           @update:model-value="updateModelValue"
           @keyup.enter="emit('search')"
         />
@@ -44,19 +51,20 @@ import { onClickOutside, useDebounce } from '@vueuse/core'
 import { Color } from '@/types'
 
 interface Props {
-  errorMsg: string
+  errorMsg: string | undefined
+  hint?: string
+  isLoading: boolean
   name: string
   color: Color
-  placeholder: string | undefined
+  placeholder?: string | undefined
 }
 
 defineProps<Props>()
 
-const isLoading = ref<boolean>(false)
 const inputModel = defineModel<string>()
 const debouncedInputModel = useDebounce(inputModel, 1000)
 const teeSearchBar = ref(null)
-const emit = defineEmits(['resetSearch', 'search'])
+const emit = defineEmits(['resetSearch', 'search', 'click'])
 
 const resetSearch = () => {
   inputModel.value = ''

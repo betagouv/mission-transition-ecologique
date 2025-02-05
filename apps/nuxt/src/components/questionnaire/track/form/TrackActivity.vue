@@ -2,7 +2,8 @@
   <TeeDsfrSearchBar
     v-model="activityInput"
     :placeholder="option?.hint?.[Translation.lang]"
-    name="localisation"
+    name="activity"
+    :is-loading="isLoading"
     :color="Color.blueFrance"
     :error-msg="errorMsg"
     :results="activityResults"

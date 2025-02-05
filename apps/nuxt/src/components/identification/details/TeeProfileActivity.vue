@@ -15,11 +15,13 @@
     :placeholder="infos.description"
     name="activity"
     :color="Color.yellow"
+    :is-loading="isLoading"
     :error-msg="errorMsg"
     :results="activityResults"
     @update:model-value="updateModelValue"
     @reset-search="resetActivity"
     @search="searchActivity"
+    @click="searchActivity"
   >
     <template #results>
       <div
