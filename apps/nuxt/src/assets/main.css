@@ -1244,6 +1244,16 @@
   color: #001891;
 }
 
+.fr-filter-count-badge {
+  background-color: #001891;
+  color: white;
+  border-radius: 1rem;
+  padding: 0 0.35rem;
+  line-height: 1.1rem;
+  font-size: 0.66rem;
+  font-weight: bold;
+}
+
 .fr-banner {
   position: relative;
 }
@@ -2002,13 +2012,6 @@
 .fr-card--blue-france .fr-card__title {
   color: var(--text-inverted-blue-france) !important;
 }
-.fr-card--grey {
-  background-color: #777 !important;
-  color: #000091 !important;
-}
-.fr-card--grey .fr-card__title {
-  color: #000091 !important;
-}
 .fr-card.theme-card {
   height: 100%;
 }
@@ -2300,6 +2303,9 @@
   .fr-container--fluid--no-overflow {
     overflow: unset;
   }
+  .fr-display--block {
+    display: block;
+  }
 }
 @media (min-width: 36em) {
   .fr-col-content-sm--top {
@@ -2343,6 +2349,9 @@
   }
   .fr-container-sm--fluid--no-overflow {
     overflow: unset;
+  }
+  .fr-display-sm--block {
+    display: block;
   }
 }
 @media (min-width: 48em) {
@@ -2388,6 +2397,9 @@
   .fr-container-md--fluid--no-overflow {
     overflow: unset;
   }
+  .fr-display-md--block {
+    display: block;
+  }
 }
 @media (min-width: 62em) {
   .fr-col-content-lg--top {
@@ -2431,6 +2443,9 @@
   }
   .fr-container-lg--fluid--no-overflow {
     overflow: unset;
+  }
+  .fr-display-lg--block {
+    display: block;
   }
 }
 @media (min-width: 78em) {
@@ -2476,11 +2491,18 @@
   .fr-container-xl--fluid--no-overflow {
     overflow: unset;
   }
+  .fr-display-xl--block {
+    display: block;
+  }
 }
 .fr-sticky {
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.fr-position--relative {
+  position: relative;
 }
 
 .fr-header .fr-header__tools {
@@ -2634,12 +2656,6 @@
   display: none;
 }
 
-.fr-input {
-  outline-offset: unset;
-  outline-width: unset;
-  outline-color: unset;
-  outline-style: none;
-}
 .fr-input--white {
   background-color: #fff;
 }

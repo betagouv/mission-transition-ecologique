@@ -1,16 +1,15 @@
 import { ProjectType as ProjectType } from '@/types'
-import { ComputedRef } from 'vue'
 
 export default class ProjectSorter {
-  static readonly sort = (projects: ComputedRef<ProjectType[] | undefined>): ComputedRef<ProjectType[]> => {
-    return computed(() => {
-      if (!projects.value) {
-        return []
+  static readonly highlightSort = (projects: ProjectType[]): ProjectType[] => {
+    return projects.slice().sort((a, b) => {
+      if (!a.highlightPriority) {
+        return 1
       }
-
-      return projects.value.slice().sort((a, b) => {
-        return a.priority - b.priority
-      })
+      if (!b.highlightPriority) {
+        return -1
+      }
+      return a.highlightPriority - b.highlightPriority
     })
   }
 }

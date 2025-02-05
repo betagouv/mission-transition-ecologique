@@ -13,35 +13,33 @@
         "test"
       ]
     },
-    "generate-program": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "libs/data",
-        "commands": [
-          "npx tsx src/generateProgramType.ts",
-          "npx tsx src/buildProgramJson.ts"
-        ],
-        "parallel": false
-      }
-    },
     "generate-projects": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/data",
         "commands": [
-          "npx tsx src/generateProjectsJson.ts"
+          "npx tsx src/scripts/generateProjectsJson.ts"
         ]
       }
     },
-    "generate-program-yaml": {
+    "generate-programs": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/data",
         "commands": [
-          "npx tsx src/generateOperatorsJson.ts",
-          "npx tsx src/generateProgramYaml.ts"
+          "npx tsx src/scripts/generateOperatorsJson.ts",
+          "npx tsx src/scripts/generateProgramYaml.ts",
+          "npx tsx src/scripts/generateProgramType.ts",
+          "npx tsx src/scripts/buildProgramJson.ts"
         ],
         "parallel": false
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "command": "npx vitest run"
       }
     }
   }

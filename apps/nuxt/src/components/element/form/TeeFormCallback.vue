@@ -1,7 +1,7 @@
 <template>
   <div
     teste2e-select="callback-contact-form"
-    class="fr-col-12 fr-col-md-8"
+    class="fr-col-12 fr-col-md-9"
   >
     <!-- MESSAGE IF ERROR-->
     <TeeError

@@ -1,7 +1,5 @@
 @use 'sass:meta';
 @use 'sass:map';
-@use '@gouvfr/dsfr/module/media-query';
-@use '@gouvfr/dsfr/module/media-query/variable/breakpoints';
 @use 'tool';
 @use 'setting';
 
@@ -21,11 +19,11 @@
   &-banner {
     flex-direction: row;
 
-    @include media-query.respond-from(xs) {
+    @include tool.media-query-respond-from(xs) {
       height: 100px !important;
     }
 
-    @include media-query.respond-from(sm) {
+    @include tool.media-query-respond-from(sm) {
       max-height: 200px;
       height: 100% !important;
     }
@@ -66,11 +64,11 @@
       font-size: 0.75rem;
       line-height: 1.25rem;
 
-      @include media-query.respond-from(xs) {
+      @include tool.media-query-respond-from(xs) {
         display: none;
       }
 
-      @include media-query.respond-from(sm) {
+      @include tool.media-query-respond-from(sm) {
         display: inherit;
       }
     }
@@ -78,12 +76,12 @@
     .fr-card__desc {
       font-weight: 700;
 
-      @include media-query.respond-from(xs) {
+      @include tool.media-query-respond-from(xs) {
         font-size: 1.25rem;
         line-height: 1.5rem;
       }
 
-      @include media-query.respond-from(sm) {
+      @include tool.media-query-respond-from(sm) {
         font-size: 2.5rem;
         line-height: 2.5rem;
       }
@@ -134,16 +132,18 @@
 
   @each $color, $properties in setting.$colors {
     &--#{$color} {
-      @if meta.type-of($properties) == map {
-        background-color: map.get($properties, "color") !important;
-        color: map.get($properties, "color-with-background") !important;
-      }
-
-      .fr-card__title {
+      @if $color != "grey" {
         @if meta.type-of($properties) == map {
+          background-color: map.get($properties, "color") !important;
           color: map.get($properties, "color-with-background") !important;
-        } @else {
-          color: setting.$text-grey;
+        }
+
+        .fr-card__title {
+          @if meta.type-of($properties) == map {
+            color: map.get($properties, "color-with-background") !important;
+          } @else {
+            color: setting.$text-grey;
+          }
         }
       }
     }
@@ -163,7 +163,7 @@
       .fr-card__title {
         height: 80px;
 
-        @include media-query.respond-from(xs) {
+        @include tool.media-query-respond-from(xs) {
           height: auto;
         }
       }
