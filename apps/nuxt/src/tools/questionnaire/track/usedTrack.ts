@@ -47,6 +47,10 @@ export default class UsedTrack {
     return this.findInQuestionnaireData(TrackId.BuildingProperty, QuestionnaireDataEnum.building_property) === propertyStatus
   }
 
+  static getPriorityTheme(): ThemeId {
+    return this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.priority_objective)
+  }
+
   static hasBuildingProperty(): boolean {
     return QuestionnaireChecker.isBuildingProperty(
       this.findInQuestionnaireData(TrackId.BuildingProperty, QuestionnaireDataEnum.building_property)
