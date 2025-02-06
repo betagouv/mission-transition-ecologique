@@ -58,6 +58,7 @@
               </a>
             </li>
           </ul>
+
           <p>
             Afin d’obtenir le meilleur résultat possible, l’accessibilité est prise en compte par l’ensemble des équipes impliquées dans le
             développement du site. Nos équipes sont également accompagnées par des experts tiers, notamment pour l’audit, les arbitrages et
@@ -88,24 +89,24 @@
             Si vous n’arrivez pas à accéder à un contenu ou à un service, vous pouvez contacter le responsable du site internet pour être
             orienté vers une alternative accessible ou obtenir le contenu sous une autre forme.
           </p>
-          <p>
-            Contacter l'équipe <a :href="Contact.mailTo">{{ Contact.email }}par mail</a>
-          </p>
+          <p>Contacter l'équipe <a :href="Contact.mailTo">par mail</a></p>
           <p>Contacter Estelle Ribot, ADEME, DEMTE — 20 avenue du Grésillé BP 90 406 – 49 004 Angers Cedex 01</p>
 
-          <h4 class="fr-mt-3w">Défenseur des droits</h4>
+          <h4 class="fr-mt-3w">Voies de recours</h4>
           <p>
-            Si vous constatez un défaut d’accessibilité vous empêchant d’accéder à un contenu ou une fonctionnalité du site, que vous nous
-            le signalez et que vous ne parvenez pas à obtenir une réponse rapide de notre part, vous êtes en droit de faire parvenir vos
-            doléances ou une demande de saisine au Défenseur des droits.
+            Cette procédure est à utiliser dans le cas suivant. Vous avez signalé au responsable du site internet un défaut d’accessibilité
+            qui vous empêche d’accéder à un contenu ou à un des services du portail et vous n’avez pas obtenu de réponse satisfaisante.
           </p>
-
-          <p>Plusieurs moyens sont à votre disposition :</p>
           <ul>
-            <li>un formulaire de contact ;</li>
-            <li>la liste des délégués de votre région avec leurs informations de contact directs ;</li>
-            <li>un numéro de téléphone : le 09 69 39 00 00 du lundi au vendredi de 8h00 à 20h00 (coût d’un appel local) ;</li>
-            <li>une adresse postale dans l’annuaire de l’administration</li>
+            <li>
+              Écrire un message au Défenseur des droits (via le formulaire de contact(ouvre un nouvel onglet)) ; Contacter le délégué du
+              Défenseur des droits dans votre région (https://www.defenseurdesdroits.fr/saisir/delegues(ouvre un nouvel onglet)) ;
+            </li>
+            <li>
+              Envoyer un courrier par la poste (gratuit, ne pas mettre de timbre) Défenseur des droits Libre réponse 71120 75342 Paris CEDEX
+              07 ;
+            </li>
+            <li>Contacter le Défenseur des droits par téléphone : 09 69 39 00 00.</li>
           </ul>
 
           <h4 class="fr-mt-3w">Contenu du portail</h4>
