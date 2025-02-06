@@ -477,5 +477,17 @@
     "filterCategories": [
       "Régions"
     ]
+  },
+  {
+    "operator": "Agence de Tourisme de la Corse",
+    "filterCategories": [
+      "Opérateurs territoriaux"
+    ]
+  },
+  {
+    "operator": "Région Guadeloupe",
+    "filterCategories": [
+      "Régions"
+    ]
   }
 ]

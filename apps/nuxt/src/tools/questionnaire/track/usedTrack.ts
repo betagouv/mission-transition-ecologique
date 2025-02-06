@@ -1,5 +1,5 @@
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import { MobilityStatus, QuestionnaireDataEnum, TrackId, WasteManagementStatus, YesNo, RouteName } from '@/types'
+import { MobilityStatus, ThemeId, QuestionnaireDataEnum, TrackId, WasteManagementStatus, YesNo, RouteName } from '@/types'
 import { QuestionnaireChecker, BuildingProperty } from '@tee/common'
 import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
@@ -47,18 +47,10 @@ export default class UsedTrack {
     return this.findInQuestionnaireData(TrackId.BuildingProperty, QuestionnaireDataEnum.building_property) === propertyStatus
   }
 
-  static getPriorityTheme(): ThemeId {
-    return this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.priority_objective)
-  }
-
   static hasBuildingProperty(): boolean {
     return QuestionnaireChecker.isBuildingProperty(
       this.findInQuestionnaireData(TrackId.BuildingProperty, QuestionnaireDataEnum.building_property)
     )
-  }
-
-  static hasPriorityTheme(): boolean {
-    return this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.priority_objective) !== undefined
   }
 
   static hasMobilityTheme(): boolean {

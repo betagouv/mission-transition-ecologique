@@ -1,0 +1,131 @@
+titre: Aide aux campings indépendants
+promesse: Développez durablement votre camping indépendant
+description: >-
+  Vous gérez un petit camping indépendant en Bourgogne-Franche-Comté ? La Région
+  vous propose une aide pour financer une étude économique, financière ou
+  stratégique ou soutenir vos investissements en vue de la modernisation et du
+  développement de votre camping. Ce financement accompagne les campings qui
+  s'engagent dans un projet global de modernisation, visant à favoriser leur
+  différenciation, leur adaptation aux évolutions de la demande touristique et à
+  relever les défis environnementaux.
+description longue: >-
+  Volet 1 : aides au conseil 
+
+  - études préalables à la définition et la mise en place de projet de camping :
+  étude de marché, positionnement, opportunité, faisabilité, diagnostic
+  (expertises techniques, commerciales, organisationnelles), audit de démarche
+  qualité, etc.
+
+  - étude de potentiel et de marché relative à l’hôtellerie de plein air à
+  l’échelle du territoire.
+
+  - étude économique et financière de camping avec préconisation de gestion ou
+  d’investissement.
+
+  Sont éligibles uniquement les services fournis par des conseils extérieurs,
+  indépendants et spécialisés. 
+
+  La subvention aux aides au conseil peut couvrir jusqu'à 50% des dépenses, avec
+  une enveloppe maximum de 15 000 € HT.
+
+
+  Volet 2 : aides à l'investissement 
+
+  - travaux de rénovation, requalification et mise en conformité (sécurité et
+  accessibilité),
+
+  - montée en gamme ou développement d’un nouveau service, équipement de
+  diversification, contribuant à l’amélioration de la qualité des prestations
+  offertes à la clientèle,
+
+  - implantation d’habitation légère de loisirs (HLL), résidences mobiles de
+  loisirs (RML) ou d’hébergements novateurs dans le périmètre du camping
+  contribuant à la diversification et la durée de séjour.
+
+  La subvention aux aides à l'investissement peut couvrir jusqu'à 30% des
+  dépenses, avec une enveloppe maximum de 90 000 € HT.
+début de validité: 01/05/2024
+fin de validité: 31/12/2028
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Bourgogne-Franche-Comté
+url: https://www.bourgognefranchecomte.fr/node/3854
+nature de l'aide: financement
+montant du financement: Jusqu'à 50% des dépenses, dans la limite de 90 000 €
+activable en autonomie: oui
+objectifs:
+  - description: Vérifiez l’éligibilité de votre projet en parcourant la documentation.
+    liens:
+      - lien: https://www.bourgognefranchecomte.fr/file-download?fid=15544
+        texte: Conditions et critères d'éligibilité
+  - description: >-
+      Prenez contact avec un conseiller de la Direction du Tourisme en
+      expliquant votre besoin d'accompagnement.
+    liens:
+      - lien: https://www.bourgognefranchecomte.eu/ProjetTourisme
+        texte: Formulaire de contact
+  - description: >-
+      Créez votre compte sur le site de la Région Bourgogne-Franche-Comté et
+      déposez votre demande. Attention à ce stade, votre projet ne doit pas
+      avoir commencé.
+    liens:
+      - lien: >-
+          https://subventions.bourgognefranchecomte.fr/sub/tiers/aides/details/?sigle=TO-CAMP2%2B
+        texte: Créer mon compte
+  - description: Si votre projet est sélectionné, recevez votre subvention.
+  - description: Réalisez votre étude ou vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 50 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Bourgogne-Franche-Comté
+  secteur d'activité:
+    - Campings
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - Votre camping indépendant propose 80 emplacements maximum,
+    - Vous êtes ouvert au moins 5 mois par an,
+    - Classé 2 étoiles au dépôt du dossier,
+    - Classé 3 étoiles minimum ou visant ce classement après travaux,
+    - >-
+      Votre camping doit s'engager dans un processus de labellisation Qualité
+      tourisme ou une démarche qualité équivalente.
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 49
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Bourgogne-Franche-Comté
