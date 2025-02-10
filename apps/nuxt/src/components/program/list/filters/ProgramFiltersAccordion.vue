@@ -11,7 +11,7 @@ import ProgramFilterByAidType from './ProgramFilterByAidType.vue'
 import ProgramFilterByOperator from './ProgramFilterByOperator.vue'
 import ProgramFilterByRegion from './ProgramFilterByRegion.vue'
 import FilterByCompanyData from '@/components/filters/FilterByCompanyData.vue'
-import { FilterItemKeys, FiltersType } from '@/types'
+import { FilterItemKeys } from '@/types'
 import { FilterItem } from '@/components/filters/FiltersAccordion.vue'
 import { useFiltersStore } from '@/stores/filters'
 import { CompanyData } from '@/tools/companyData'
@@ -22,14 +22,12 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const filters: FiltersType = useFiltersStore().filters
-
-const companySelected = computed(() => filters[FilterItemKeys.companyData])
+const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
 
 const navigation = new Navigation()
 
 const displayRegionFilter = computed(() => {
-  return navigation.isCatalogPrograms() && !companySelected.value
+  return navigation.isCatalogPrograms() && !isCompanyDataSelected.value
 })
 
 const companyDataFilter: FilterItem = {
@@ -60,7 +58,7 @@ const filtersItem: FilterItem[] = [
     id: FilterItemKeys.regionAid,
     component: ProgramFilterByRegion,
     componentClass: 'fr-pl-2v',
-    display: displayRegionFilter.value
+    display: displayRegionFilter
   }
 ]
 </script>

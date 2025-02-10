@@ -35,7 +35,8 @@
       "perf-crise-energetique-cvl",
       "impulsion-environnement",
       "soutien-hebergement-touristique",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "camping-independant-bfc"
     ],
     "linkedProjects": [
       31
@@ -163,7 +164,8 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       4
@@ -220,7 +222,8 @@
       "charte-zero-dechet-plastique",
       "pret-energie-aura",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       21
@@ -276,7 +279,8 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       4
@@ -342,7 +346,8 @@
       "impulsion-environnement",
       "soutien-hebergement-touristique",
       "agir-pdl",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       4
@@ -468,7 +473,8 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       4
@@ -532,7 +538,8 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       4
@@ -599,7 +606,8 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       4
@@ -810,7 +818,8 @@
       "perf-crise-energetique-cvl",
       "projets-hebergements-touristiques-cvl",
       "impulsion-environnement",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       31
@@ -881,7 +890,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "prit-hdf",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       4
@@ -1055,7 +1065,8 @@
       "pret-energie-aura",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
-      "impulsion-environnement"
+      "impulsion-environnement",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       16
@@ -1278,7 +1289,8 @@
       "sud-pret-climat",
       "pret-energie-aura",
       "pass-transition-bzh",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       36
@@ -1336,7 +1348,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "hotellerie-independante-na",
-      "camping-independant-na"
+      "camping-independant-na",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       21
@@ -1401,7 +1414,8 @@
       "cap-transition-ecologique",
       "agir-pdl",
       "hotellerie-independante-na",
-      "camping-independant-na"
+      "camping-independant-na",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       21
@@ -1615,7 +1629,8 @@
       "mooc-biodiversite-entreprise",
       "pret-energie-aura",
       "pass-transition-bzh",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       26
@@ -1718,7 +1733,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "camping-independant-bfc"
     ],
     "linkedProjects": [
       31
@@ -1777,7 +1793,8 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "cap-transition-ecologique",
-      "prit-hdf"
+      "prit-hdf",
+      "camping-independant-bfc"
     ],
     "linkedProjects": [
       26,
@@ -2024,7 +2041,9 @@
       "cap-transition-ecologique",
       "ecolabel",
       "soutien-hebergement-touristique",
-      "prit-hdf"
+      "prit-hdf",
+      "camping-independant-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       31
@@ -2085,7 +2104,8 @@
       "soutien-hebergement-touristique",
       "agir-pdl",
       "prit-hdf",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       20
@@ -2146,7 +2166,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "prit-hdf",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       20
@@ -2175,6 +2196,82 @@
       "S",
       "T",
       "U"
+    ]
+  },
+  {
+    "id": 137,
+    "slug": "electromenager-basse-consommation",
+    "title": "Électroménager basse consommation",
+    "nameTag": "🌬 sèche-linge",
+    "shortDescription": "L'électroménager professionnel à haute efficacité énergétique vous permet de réduire votre consommation d'énergie.",
+    "image": "/images/projet/seche-linge.webp",
+    "longDescription": "Investir dans des équipements électroménagers professionnels à haute efficacité énergétique est une opportunité pour votre entreprise de réduire considérablement sa consommation d'énergie tout en optimisant ses performances. Qu’il s’agisse de réfrigérateurs, de lave-vaisselle ou de fours, ces équipements offrent des fonctionnalités avancées, comme la régulation intelligente de la température ou l’utilisation optimisée des ressources. Par exemple, un sèche-linge professionnel doté d’une pompe à chaleur peut réduire sa consommation énergétique jusqu’à 50 % par rapport à un modèle classique ! En intégrant ces solutions, vous pouvez réaliser des économies significatives sur vos factures énergétiques tout en augmentant la durabilité de vos équipements.",
+    "moreDescription": "- [Les critères de sélection d'un sèche-linge pro](https://www.guidetopten.fr/grand-public/selection-criteria/criteres-de-selection-seche-linge-professionnels), proposé par Guide Topten, un comparateur soutenu par l'ADEME.\n- [L'étiquette énergie :  ](https://www.economie.gouv.fr/particuliers/etiquette-energie-electromenager)Bien choisir ses appareils électroménagers grâce à l'étiquette énergie.",
+    "themes": [
+      "energy"
+    ],
+    "mainTheme": "energy",
+    "programs": [
+      "fonds-tourisme-durable",
+      "cedre-investissement",
+      "sud-pret-climat",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "cap-transition-ecologique",
+      "perf-crise-energetique-cvl",
+      "soutien-hebergement-touristique",
+      "agir-pdl",
+      "hotellerie-independante-na",
+      "camping-independant-na",
+      "prit-hdf"
+    ],
+    "linkedProjects": [
+      4
+    ],
+    "priority": "190",
+    "highlightPriority": null,
+    "sectors": [
+      "I",
+      "Q",
+      "T"
+    ]
+  },
+  {
+    "id": 138,
+    "slug": "menus-circuits-courts",
+    "title": "Menus en circuits courts",
+    "nameTag": "🍽 restauration",
+    "shortDescription": "Élaborer des menus préparés avec des produits sains, locaux et à faible impact écologique.",
+    "image": "/images/projet/menus-circuits-courts.webp",
+    "longDescription": "Favoriser les circuits courts et proposer des produits locaux et de saison sont des choix stratégiques pour les restaurateurs, qui permettent de soutenir l’économie locale tout en réduisant l'empreinte carbone. En minimisant les distances de transport, vous garantissez des produits plus frais et de meilleure qualité, tout en participant à la préservation de l’environnement.\n\nIntégrer des plats végétariens à la carte est également un levier essentiel. La production de viande ayant un impact écologique plus important, offrir des options végétariennes permet de réduire la consommation de ressources naturelles et les émissions de gaz à effet de serre. Ces choix répondent à une demande croissante de consommateurs soucieux de leur bien-être et de l’environnement.",
+    "moreDescription": "- [**Restaurant Engagé : éco-responsabilité en restauration**](https://librairie.ademe.fr/7385-restaurant-engage-eco-responsabilite-en-restauration.html), un guide de l'ADEME.\n- [**Acteurs de la restauration : devenez un maillon engagé de l’alimentation durable**](https://agirpourlatransition.ademe.fr/entreprises/restauration-durable)",
+    "themes": [
+      "eco-design"
+    ],
+    "mainTheme": "eco-design",
+    "programs": [
+      "etude-alimentation-durable",
+      "etude-biodechets",
+      "etude-gaspillage-alimentaire",
+      "fonds-tourisme-durable",
+      "gestion-des-biodechets",
+      "cedre-investissement",
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "cap-transition-ecologique",
+      "agir-pdl",
+      "prit-hdf"
+    ],
+    "linkedProjects": [],
+    "priority": "240",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "I",
+      "Q",
+      "S"
     ]
   },
   {
@@ -2238,7 +2335,8 @@
       "soutien-hebergement-touristique",
       "agir-pdl",
       "prit-hdf",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       20
@@ -2292,7 +2390,8 @@
       "cap-transition-ecologique",
       "soutien-hebergement-touristique",
       "prit-hdf",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       33
@@ -2348,7 +2447,8 @@
       "cap-transition-ecologique",
       "soutien-hebergement-touristique",
       "agir-pdl",
-      "prit-hdf"
+      "prit-hdf",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       33
@@ -2459,7 +2559,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "prit-hdf",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       33

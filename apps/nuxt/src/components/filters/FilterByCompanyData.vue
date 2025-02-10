@@ -3,12 +3,12 @@
     id="company-data-filter-content"
     class="fr-pt-2v fr-pb-0-5v"
     :class="{
-      'fr-bg--green--lightness': filters[FilterItemKeys.companyData],
-      'fr-bg--grey--lightness': !filters[FilterItemKeys.companyData]
+      'fr-bg--green--lightness': isCompanyDataSelected,
+      'fr-bg--grey--lightness': !isCompanyDataSelected
     }"
   >
     <DsfrCheckbox
-      v-model="filters[FilterItemKeys.companyData]"
+      v-model="isCompanyDataSelected"
       :value="`selected-company-${companyName}`"
       small
       name="companyFilter"
@@ -18,7 +18,7 @@
         <span
           class="fr-text--bold fr-text--sm"
           :class="{
-            'fr-text--grey': !filters[FilterItemKeys.companyData],
+            'fr-text--grey': !isCompanyDataSelected,
             'fr-text--black': navigation.isQuestionnaireResult(),
             'fr-pl-0-5v fr-pl-2v fr-text-left fr-mb-1v': Breakpoint.isMobile()
           }"
@@ -31,7 +31,7 @@
         v-for="(detail, key) in filterData.details"
         :key="key"
         class="fr-mb-2v"
-        :class="{ 'fr-text--grey': !filters[FilterItemKeys.companyData] }"
+        :class="{ 'fr-text--grey': !isCompanyDataSelected }"
       >
         <div class="fr-grid-row">
           <div class="fr-col-hidden-lg">
@@ -69,7 +69,8 @@
 </template>
 
 <script setup lang="ts">
-import { CompanyDataStorageKey, FilterItemKeys, FiltersType, SizeToText, StructureSize } from '@/types'
+import { ProjectManager } from '@/tools/project/projectManager'
+import { CompanyDataStorageKey, SizeToText, StructureSize } from '@/types'
 import { CompanyData } from '@/tools/companyData'
 import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
@@ -89,10 +90,17 @@ type CompanyFilterDetailProps = {
   icon?: string
 }
 const navigation = new Navigation()
-const filters: FiltersType = useFiltersStore().filters
+const isCompanyDataSelected = computed({
+  get: () => useFiltersStore().getCompanyDataSelected().value,
+  set: (value: boolean) => {
+    useFiltersStore().setCompanyDataSelected(value)
+    if (new Navigation().isCatalogProjects()) {
+      new ProjectManager().getProjects()
+    }
+  }
+})
 
 const registeredData = CompanyData.dataRef
-const hasRegisteredData = CompanyData.isDataFull()
 const companyName = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.denomination)
 const companySector = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.secteur)
 const companyRegion = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.region)
@@ -106,13 +114,6 @@ const filterData: CompanyFilterProps = {
     size: { label: companySize, icon: 'fr-icon-team-line' }
   }
 }
-watch(
-  hasRegisteredData,
-  (value) => {
-    filters[FilterItemKeys.companyData] = value
-  },
-  { immediate: true }
-)
 </script>
 <style lang="scss" scoped>
 #company-data-filter-content {

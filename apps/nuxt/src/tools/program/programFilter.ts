@@ -24,10 +24,6 @@ export default class ProgramFilter {
   }
 
   static byCompanyData(program: ProgramData, companySelected: boolean) {
-    if (!this.isValidFilterValue(companySelected)) {
-      return true
-    }
-
     if (companySelected) {
       useFiltersStore().resetFilter(FilterItemKeys.regionAid)
       return ProgramEligibility.isEligible(program as unknown as ProgramType)

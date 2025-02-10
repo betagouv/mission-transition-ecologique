@@ -220,7 +220,7 @@
     <div
       v-if="hasRegisteredData && programIsEligible && !Program.isTemporaryUnavailable(program)"
       ref="tee-program-form-container"
-      class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
+      class="fr-bg--blue--lightness fr-grid-row fr-p-2w"
     >
       <TeeForm
         v-if="program"

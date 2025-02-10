@@ -8,10 +8,12 @@
       v-if="!hasSpinner"
       :project-list="projectList"
     />
-    <TeeSpinner
+    <div
       v-if="hasSpinner"
-      class="fr-mt-16w"
-    />
+      class="fr-col-justify--center fr-col-12"
+    >
+      <TeeSpinner class="fr-mt-16w" />
+    </div>
     <TeeListNoResults
       v-else-if="hasNoResults"
       :has-error="hasError"
@@ -68,6 +70,6 @@ const countProjects = computed(() => {
 })
 
 const hasNoResults = computed(() => {
-  return hasSpinner.value || hasError.value || !countProjects.value
+  return !hasSpinner.value && (hasError.value || !countProjects.value)
 })
 </script>
