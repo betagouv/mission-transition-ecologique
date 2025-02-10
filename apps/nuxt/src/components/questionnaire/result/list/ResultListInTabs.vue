@@ -88,6 +88,7 @@ const titles: TeeDsfrTabsProps['tabTitles'] = [
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })
+
 const filteredProjects = computed(() => {
   if (!projects.value) {
     return undefined
