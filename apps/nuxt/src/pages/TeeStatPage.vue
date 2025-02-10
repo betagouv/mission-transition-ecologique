@@ -16,16 +16,45 @@
         height="1900px"
         :style="{ border: 'none' }"
       />
+      <h2>Seconde iframe</h2>
+      <iframe
+        v-if="iframeUrl"
+        :src="iframeUrl"
+        width="100%"
+        height="1900px"
+        frameborder="0"
+        allowtransparency
+      ></iframe>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { RouteName } from '@/types'
+import { ref, onMounted } from 'vue'
+import StatsApi from '@/tools/api/statsApi'
 
 definePageMeta({
   path: '/stats',
   name: RouteName.Statistics
+})
+
+const iframeUrl = ref<string | null>(null)
+
+onMounted(async () => {
+  console.log('la je vois mon smessage youhouhou')
+  try {
+    const result = await new StatsApi().getIframeUrl()
+    const iframeUrlObject = result.refData
+    console.log(iframeUrlObject.value)
+
+    if (iframeUrlObject.value) {
+      iframeUrl.value = iframeUrlObject.value?.iframeUrl
+      console.log(iframeUrl.value)
+    }
+  } catch (error) {
+    console.error('Failed to fetch Metabase iframe URL:', error)
+  }
 })
 </script>
 

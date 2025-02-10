@@ -27,6 +27,14 @@ export default class Config extends ConfigCommon {
     return this.getEnvValue('DEBUG', 'false') === 'true'
   }
 
+  public static get METABASE_SECRET_KEY(): string {
+    return this.getEnvValue('METABASE_SECRET_KEY')
+  }
+
+  public static get METABASE_SITE_URL(): string {
+    return this.getEnvValue('METABASE_SITE_URL')
+  }
+
   public static get BREVO_DEAL_PIPELINE(): string | undefined {
     try {
       return this.getEnvValue('BREVO_DEAL_PIPELINE')

@@ -8,4 +8,8 @@ export class StatisticsService {
   public async get(): Promise<Result<StatsData, Error>> {
     return await new StatisticsFeatures(brevoRepository, new ProgramService()).computeStatistics()
   }
+
+  public generateIframeUrl(): string {
+    return new StatisticsFeatures(brevoRepository, new ProgramService()).generateDashboardUrl()
+  }
 }

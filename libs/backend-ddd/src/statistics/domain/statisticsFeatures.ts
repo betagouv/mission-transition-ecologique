@@ -4,6 +4,8 @@ import { Result } from 'true-myth'
 import { OpportunityRepository } from '../../opportunity/domain/spi'
 import StatisticsCache from './statisticsCache'
 import Monitor from '../../common/domain/monitoring/monitor'
+import Config from '../../config'
+import jwt from 'jsonwebtoken'
 
 export default class StatisticsFeatures {
   private readonly _opportunityRepository: OpportunityRepository
@@ -110,5 +112,16 @@ export default class StatisticsFeatures {
     }
     Monitor.error('Error generating Opportunities dates ', { error: opportunitiesDates.error })
     return null
+  }
+
+  generateDashboardUrl(): string {
+    const payload = {
+      resource: { dashboard: 5 },
+      params: {},
+      exp: Math.round(Date.now() / 1000) + 10 * 60 // Token expires in 10 minutes
+    }
+    const token = jwt.sign(payload, Config.METABASE_SECRET_KEY)
+
+    return `${Config.METABASE_SITE_URL}/embed/dashboard/${token}#bordered=false&titled=false&background=false`
   }
 }
