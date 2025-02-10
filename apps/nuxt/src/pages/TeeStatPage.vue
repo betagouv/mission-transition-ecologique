@@ -16,7 +16,7 @@
         height="1900px"
         :style="{ border: 'none' }"
       />
-      <h2>Seconde iframe</h2>
+      <h2>Seconde iframe, via jwt</h2>
       <iframe
         v-if="iframeUrl"
         :src="iframeUrl"
@@ -31,7 +31,7 @@
 
 <script setup lang="ts">
 import { RouteName } from '@/types'
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 import StatsApi from '@/tools/api/statsApi'
 
 definePageMeta({
@@ -40,22 +40,13 @@ definePageMeta({
 })
 
 const iframeUrl = ref<string | null>(null)
+const result = await new StatsApi().getIframeUrl()
+const iframeUrlObject = result.refData
 
-onMounted(async () => {
-  console.log('la je vois mon smessage youhouhou')
-  try {
-    const result = await new StatsApi().getIframeUrl()
-    const iframeUrlObject = result.refData
-    console.log(iframeUrlObject.value)
-
-    if (iframeUrlObject.value) {
-      iframeUrl.value = iframeUrlObject.value?.iframeUrl
-      console.log(iframeUrl.value)
-    }
-  } catch (error) {
-    console.error('Failed to fetch Metabase iframe URL:', error)
-  }
-})
+if (iframeUrlObject.value) {
+  iframeUrl.value = iframeUrlObject.value?.iframeUrl
+  console.log(iframeUrl.value)
+}
 </script>
 
 <style scoped>
