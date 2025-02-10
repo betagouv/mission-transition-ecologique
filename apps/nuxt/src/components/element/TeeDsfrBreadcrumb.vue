@@ -10,6 +10,8 @@
 import Navigation from '@/tools/navigation'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import { useNavigationStore } from '@/stores/navigation'
+import { useUsedTrackStore } from '@/stores/usedTrack'
+import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
 
@@ -18,6 +20,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 const navigationStore = useNavigationStore()
+const usedTrackStore = useUsedTrackStore()
 const navigation = new Navigation()
 
 const getListName = () => {
@@ -57,6 +60,13 @@ const breadcrumbs = computed(() => {
   const baseLinks: { text: string; to: RouteLocationRaw }[] = [{ text: 'Accueil', to: { name: RouteName.Homepage } }]
   if (!navigation.isStaticPage()) {
     baseLinks.push({ text: getListText(), to: routeToBaseList })
+  }
+  if (navigation.isQuestionnaire()) {
+    const trackId = usedTrackStore.getPreviousCompletedUsedTrackId()
+    baseLinks.splice(1, 0, {
+      text: 'Questionnaire',
+      to: navigationStore.routeByTrackId(trackId || TrackId.Siret)
+    })
   }
   if (props.links) {
     return [...baseLinks, ...props.links]
