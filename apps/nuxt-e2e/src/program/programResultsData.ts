@@ -23,6 +23,7 @@ export const tests: SearchResultsDataType = [
       'Diag Ecoconception',
       'Étude "Économie de la fonctionnalité"',
       'Étude "Éco-conception"',
+      'Étude "projet de recherche"',
       'Étude "réemploi réutilisation réparation"',
       'Mission de Conseil RSE',
       'Mission Stratégie Environnement',
@@ -36,6 +37,7 @@ export const tests: SearchResultsDataType = [
       'Sobriété et Résilience des Territoires',
       'Tremplin',
       'Prêt Action Climat',
+      'Prêt Vert - Ademe',
       'Prêt Vert',
       'Flotte de vélos à disposition',
       "Crédit d'Impôt Rénovation Énergétique (CIRE)"
@@ -66,6 +68,7 @@ export const tests: SearchResultsDataType = [
       'Diagnostic RSE',
       'Étude "Économie de la fonctionnalité"',
       'Étude "Éco-conception"',
+      'Étude "projet de recherche"',
       'Étude "réemploi réutilisation réparation"',
       'Étude "Solaire thermique"',
       'Mission de Conseil RSE',
@@ -73,20 +76,28 @@ export const tests: SearchResultsDataType = [
       'Aides au réemploi des emballages',
       'Bonus écologique',
       'Coup de pouce Chauffage',
+      'Investissement "Boucle d’eau géothermique"',
+      'Investissement "Contrat Chaleur Renouvelable"',
       'Investissement "Ecoconception"',
+      'Investissement "Géothermie de surface et d\'aérothermie"',
+      'Investissement "Géothermie profonde"',
+      'Investissement "PAC solaire"',
+      'Investissement "Solaire thermique"',
+      'Investissement "Systèmes Solaires Combinés"',
       'Investissement "VTE Vert"',
       'Prime à la conversion',
       'Rétrofit électrique',
       'Sobriété et Résilience des Territoires',
       'Tremplin',
       'Prêt Action Climat',
+      'Prêt Vert - Ademe',
       'Prêt Vert',
       'Flotte de vélos à disposition',
       "Crédit d'Impôt Rénovation Énergétique (CIRE)"
     ]
   },
   {
-    id: 3,
+    id: 4,
     url: 'questionnaire/resultat?siret=82141193100016&effectif=ME&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=oui&audit=oui&selection-audit=consommation-energie&selection-audit=eau&selection-audit=performance-energetique&selection-audit=bilan-carbone&selection-audit=certification&selection-audit=matieres-premieres&selection-audit=dechets#questionnaire-resultat',
     values: [
       'Baisse Les Watts',
@@ -128,7 +139,7 @@ export const tests: SearchResultsDataType = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     url: 'questionnaire/resultat?siret=21490007800012&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non#questionnaire-resultat',
     values: [
       'Entreprises engagées pour la nature',
