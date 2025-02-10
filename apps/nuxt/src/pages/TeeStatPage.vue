@@ -9,150 +9,23 @@
           suivre les évolutions d'usage de la plateforme dans le temps mais également de mieux comprendre vos besoins et d'orienter nos
           actions pour améliorer ce service.
         </p>
-        <p>
-          Ces données étant en cours de construction, elles peuvent, dans certains cas, être incomplètes. Nous vous remercions de votre
-          compréhension.
-        </p>
       </div>
-
-      <h2>Nombre de mises en relation</h2>
-      <div class="fr-grid-row fr-grid-row--center">
-        <div class="fr-col-md-6">
-          <h4>Depuis le lancement</h4>
-          <TeeCallout
-            :title="statsData ? statsData.countOpportunitiesTotal || undefined : undefined"
-            class="fr-mr-md-3v"
-          >
-            Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique depuis le lancement
-            (été 2023).
-          </TeeCallout>
-        </div>
-        <div class="fr-col-md-6 fr-mt-3w fr-mt-md-0 extend-shorter-content-container">
-          <h4 class="fr-ml-md-3v">Sur les 30 derniers jours</h4>
-          <TeeCallout
-            :title="statsData ? statsData.countOpportunities30Days || undefined : undefined"
-            class="fr-ml-md-3v extend-vertically"
-          >
-            Demandes d'entreprises mises en relations avec un opérateur public sur un sujet de transition écologique sur les 30 derniers
-            jours.
-          </TeeCallout>
-        </div>
-      </div>
-      <div class="fr-col-12 fr-mt-3w fr-mt-md-4w fr-mb-md-8w">
-        <h4>Demandes cumulées ces derniers mois</h4>
-        <canvas
-          ref="chart-canvas"
-          width="1200"
-          :height="isSmallScreen ? 700 : 450"
-        />
-      </div>
-      <div class="fr-mt-5w fr-mt-md-0 fr-mb-5w">
-        <h2>Nombre de dispositifs d'aide activés</h2>
-        <div class="fr-col-md-6">
-          <TeeCallout
-            :type="CalloutType.Warning"
-            img="/images/TEE-missingData.svg"
-            class="fr-mr-md-3v"
-          >
-            Nous travaillons actuellement sur cette mesure.<br /><br />
-            Cette information sera disponible prochainement.
-          </TeeCallout>
-        </div>
-      </div>
-      <div class="fr-mb-5w">
-        <h2>Nombre de dispositifs d'aide listés sur la plateforme</h2>
-        <div class="fr-grid-row fr-grid-row--center fr-mb-5w">
-          <div class="fr-col-md-6">
-            <h4>Depuis le lancement</h4>
-            <TeeCallout
-              :title="statsData ? statsData.countProgramsTotal || undefined : undefined"
-              class="fr-mr-md-3v"
-            >
-              Dispositifs d’aides référencés sur la plateforme depuis le lancement (été 2023).
-            </TeeCallout>
-          </div>
-          <div class="fr-col-12 fr-col-md-6 fr-mt-3w fr-mt-md-0 extend-shorter-content-container">
-            <h4 class="fr-ml-md-3v">Actifs</h4>
-            <TeeCallout
-              :title="statsData ? statsData.countProgramsNow || undefined : undefined"
-              class="fr-ml-md-3v extend-vertically extend-hor"
-            >
-              Dispositifs d’aides actuellement référencés sur la plateforme.
-            </TeeCallout>
-          </div>
-        </div>
-      </div>
-      <div class="fr-mb-5w">
-        <h2>Trafic web</h2>
-        <div class="fr-col-md-6">
-          <TeeCallout
-            class="fr-mr-md-3v"
-            link="https://stats.beta.gouv.fr/index.php?module=CoreHome&action=index&idSite=23&period=day&date=yesterday#?period=day&date=yesterday&category=Dashboard_Dashboard&subcategory=1&idSite=23"
-            link-text="Tableau de bord Matomo"
-          >
-            Consultez toutes les statistiques de notre site sur le tableau de bord de notre outil de suivi Matomo.
-          </TeeCallout>
-        </div>
-      </div>
+      <iframe
+        src="http://tee-metabase.osc-fr1.scalingo.io/public/dashboard/43b192d5-087a-40d6-8f3e-382318768bd9"
+        width="100%"
+        height="1900px"
+        :style="{ border: 'none' }"
+      />
     </div>
-    <ContactMail />
   </div>
 </template>
 
 <script setup lang="ts">
-import StatsApi from '@/tools/api/statsApi'
-import { CalloutType, RouteName } from '@/types'
+import { RouteName } from '@/types'
 
 definePageMeta({
   path: '/stats',
   name: RouteName.Statistics
-})
-const chartCanvas = useTemplateRef<HTMLCanvasElement>('chart-canvas')
-
-const result = await new StatsApi().get()
-const statsData = result.refData
-
-const isSmallScreen = computed(() => {
-  return import.meta.client ? window.innerWidth < 768 : false
-})
-
-const drawChart = async () => {
-  if (statsData.value && statsData.value.demandsTimeSeries) {
-    const labels = statsData.value.demandsTimeSeries.map((item) => `${item.month}/${item.year}`)
-    const data = statsData.value.demandsTimeSeries.map((item) => item.nDemands)
-
-    const chartContext = chartCanvas.value?.getContext('2d')
-    if (!chartContext) {
-      return
-    }
-    const Chart = (await import('chart.js/auto')).default
-    new Chart(chartContext, {
-      type: 'line',
-      data: {
-        labels: labels,
-        datasets: [
-          {
-            label: 'Nombre de mises en relation',
-            data: data,
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
-            borderWidth: 3
-          }
-        ]
-      },
-      options: {
-        plugins: {
-          legend: {
-            display: false
-          }
-        }
-      }
-    })
-  }
-}
-
-onNuxtReady(async () => {
-  await drawChart()
 })
 </script>
 
@@ -170,34 +43,5 @@ p {
   font-style: normal;
   font-weight: 400;
   line-height: 1.5rem; /* 150% */
-}
-
-h2 {
-  color: var(--light-text-title-grey, #161616);
-  font-style: normal;
-  margin-bottom: 1rem;
-}
-
-h4 {
-  color: #6a6af4;
-  font-size: 1.25rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 2rem; /* 160% */
-  margin-bottom: 0.75rem;
-}
-
-.extend-shorter-content-container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch; /* Make flex items stretch vertically */
-}
-
-.extend-vertically {
-  flex: 1;
-}
-
-.extend-hor {
-  width: 100%;
 }
 </style>

@@ -5,6 +5,7 @@ import Config from './src/config'
 export class NuxtSecurityConfig {
   static _statsBetaGouvFrUrl = 'https://stats.beta.gouv.fr'
   static _typeformUrl = 'https://embed.typeform.com'
+  static _metabaseUrl = 'https://tee-metabase.osc-fr1.scalingo.io'
   static _typeformApiUrl = 'https://api.typeform.com'
   static _typeformFormUrl = 'https://form.typeform.com'
   static _posthogUrl = 'https://eu.i.posthog.com'
@@ -43,11 +44,12 @@ export class NuxtSecurityConfig {
         this._statsBetaGouvFrUrl,
         this._posthogUrl,
         this._posthogAssetsUrl,
-        this._typeformUrl
+        this._typeformUrl,
+        this._metabaseUrl
       ],
       'script-src': ["'self'", "'nonce-{{nonce}}'", "'strict-dynamic'", Config.isProduction() ? '' : "'unsafe-eval'"],
       'worker-src': ["'self'", 'blob:'],
-      'style-src': ["'self'", "'unsafe-inline'", this._typeformUrl],
+      'style-src': ["'self'", "'unsafe-inline'", this._typeformUrl, this._metabaseUrl],
       'font-src': ["'self'"],
       'object-src': ["'self'"],
       'img-src': ["'self'", 'data:'],
@@ -55,13 +57,14 @@ export class NuxtSecurityConfig {
         "'self'",
         this._statsBetaGouvFrUrl,
         this._typeformUrl,
+        this._metabaseUrl,
         this._typeformApiUrl,
         this._posthogUrl,
         this._posthogAssetsUrl,
         this._sentryData?.domain ? this._sentryData.domain : ''
       ],
       'base-uri': ["'self'"],
-      'frame-src': ["'self'", this._typeformFormUrl],
+      'frame-src': ["'self'", this._typeformFormUrl, this._metabaseUrl],
       'default-src': ["'none'"]
     }
   }
