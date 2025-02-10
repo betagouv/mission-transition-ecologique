@@ -44,6 +44,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import { useFiltersStore } from '@/stores/filters'
 import Navigation from '@/tools/navigation'
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
@@ -98,7 +99,6 @@ const resetSiret = async () => {
   CompanyData.resetData()
   useFiltersStore().setCompanyDataSelected(false)
   CompanyData.updateRouteFromStorage()
-
   await UsedTrack.updateQuestionnaireStep()
   await new ProjectManager().update()
   await new ProgramManager().update()

@@ -11,7 +11,7 @@
       #catalog-content
     >
       <div
-        v-if="hasFullRegisteredData && props.showCompanyFilter"
+        v-if="hasFullRegisteredData"
         class="fr-col-2 fr-col-hidden fr-col-unhidden-lg"
       >
         <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
@@ -25,14 +25,11 @@
       >
         <div class="fr-container--fluid fr-mt-2v fr-mt-md-3v">
           <div class="fr-grid-row fr-grid-row--center">
-            <div
-              v-if="showCounter"
-              class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-lg-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic"
-            >
+            <div class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-lg-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic">
               <TeeCounterResult :to-count="filteredProjects" />
             </div>
             <div
-              v-if="hasFullRegisteredData && props.showCompanyFilter"
+              v-if="hasFullRegisteredData"
               class="fr-col-9 fr-col-hidden-lg fr-text-right"
             >
               <ProjectModalFilter />
@@ -49,7 +46,7 @@
 </template>
 
 <script setup lang="ts">
-import { useCompanyData } from '@/stores/companyData'
+import { useCompanyDataStore } from '@/stores/companyData'
 import { useProjectStore } from '@/stores/project'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { MetaSeo } from '@/tools/metaSeo'
@@ -58,23 +55,8 @@ import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
 import { CompanyData } from '@/tools/companyData'
 
-interface Props {
-  showTitleBanner?: boolean
-  showLimit?: number
-  showCounter?: boolean
-  showBreadcrumbs?: boolean
-  showCompanyFilter?: boolean
-}
-const props = withDefaults(defineProps<Props>(), {
-  showTitleBanner: true,
-  showLimit: undefined,
-  showCounter: true,
-  showBreadcrumbs: true,
-  showCompanyFilter: true
-})
-
 const { projects, hasError } = storeToRefs(useProjectStore())
-const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyData())
+const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyDataStore())
 
 onServerPrefetch(async () => {
   await new ProjectManager().getProjects()

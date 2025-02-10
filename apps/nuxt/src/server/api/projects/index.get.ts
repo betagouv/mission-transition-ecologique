@@ -1,6 +1,7 @@
 import { QuestionnaireData, serverQuestionnaireDataSchema } from '@tee/common'
+import { ProgramType } from '@tee/data'
 import { defineEventHandler, H3Event } from 'h3'
-import { Monitor, ProgramService, ProjectService } from '@tee/backend-ddd'
+import { Monitor, ProjectService } from '@tee/backend-ddd'
 
 export default defineEventHandler(async (event) => {
   const questionnaireData = await getValidatedQuery(event, serverQuestionnaireDataSchema.parse)
@@ -9,15 +10,22 @@ export default defineEventHandler(async (event) => {
 
 const projectsCached = cachedFunction(
   async (event: H3Event, questionnaireData: QuestionnaireData) => {
-    const programsResults = new ProgramService().getFilteredPrograms({ ...questionnaireData, onlyEligible: true })
-    if (programsResults.isErr) {
-      const err = programsResults.error
-      Monitor.error('Error in ProgramFilters', { error: err })
+    let programs: ProgramType[]
+    try {
+      const params = new URLSearchParams(questionnaireData as Record<string, string>)
+      params.sort()
+      const queryString = params.size === 0 ? '' : '?' + params.toString()
+      console.log('queryString', queryString)
+      programs = await $fetch<ProgramType[]>('/api/programs' + queryString)
+      console.log('programs: ', programs.length)
+    } catch (error: unknown) {
+      Monitor.error('Error in fetching programs', { error: error })
       throw createError({
         statusCode: 500,
-        statusMessage: programsResults.error.message
+        statusMessage: 'Error in fetching programs'
       })
     }
+
     const projectService = new ProjectService()
     const projectResults = projectService.getFiltered(questionnaireData)
     if (projectResults.isErr) {
@@ -28,7 +36,7 @@ const projectsCached = cachedFunction(
         statusMessage: projectResults.error.message
       })
     }
-    const enrichedProjectResults = projectService.addEligibleProgramsCount(projectResults.value, programsResults.value)
+    const enrichedProjectResults = projectService.addEligibleProgramsCount(projectResults.value, programs)
     if (enrichedProjectResults.isErr) {
       const err = enrichedProjectResults.error
       Monitor.error('Error in adding availablePrograms', { error: err })
