@@ -49,7 +49,7 @@
 </template>
 
 <script setup lang="ts">
-import { useCompanyData } from '@/stores/companyData'
+import { useCompanyDataStore } from '@/stores/companyData'
 import { useProjectStore } from '@/stores/project'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { MetaSeo } from '@/tools/metaSeo'
@@ -74,7 +74,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { projects, hasError } = storeToRefs(useProjectStore())
-const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyData())
+const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyDataStore())
 
 onServerPrefetch(async () => {
   await new ProjectManager().getProjects()
