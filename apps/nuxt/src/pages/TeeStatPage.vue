@@ -11,7 +11,7 @@
         </p>
       </div>
       <iframe
-        src="http://tee-metabase.osc-fr1.scalingo.io/public/dashboard/43b192d5-087a-40d6-8f3e-382318768bd9"
+        src="https://tee-metabase.osc-fr1.scalingo.io/public/dashboard/43b192d5-087a-40d6-8f3e-382318768bd9"
         width="100%"
         height="1900px"
         :style="{ border: 'none' }"
