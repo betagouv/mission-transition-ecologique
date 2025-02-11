@@ -49,14 +49,14 @@
 </template>
 
 <script setup lang="ts">
-import { useCompanyData } from '@/stores/companyData'
+import { useCompanyDataStore } from '@/stores/companyData'
 import { useProjectStore } from '@/stores/project'
-import { CompanyData } from '@/tools/companyData'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
+import { CompanyData } from '@/tools/companyData'
 
 interface Props {
   showTitleBanner?: boolean
@@ -74,7 +74,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { projects, hasError } = storeToRefs(useProjectStore())
-const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyData())
+const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyDataStore())
 
 onServerPrefetch(async () => {
   await new ProjectManager().getProjects()
@@ -91,7 +91,6 @@ const description = 'Accédez à la liste des projets de transition écologique 
 const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
-
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0
 })

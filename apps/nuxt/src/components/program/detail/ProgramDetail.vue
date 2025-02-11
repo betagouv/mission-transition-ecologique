@@ -276,7 +276,7 @@ useRuntimeHook('app:mounted', async () => {
   }
 })
 
-await new ProjectManager().getFilteredProjects()
+await new ProjectManager().getProjects()
 
 const linkedProjects = computed(() => {
   return Program.getLinkedProjects(program.value, projects.value)
