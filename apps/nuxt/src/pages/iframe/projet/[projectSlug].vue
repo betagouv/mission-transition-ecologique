@@ -32,20 +32,27 @@ const href = router.resolve({ name: RouteName.CatalogProjectDetail, params: { pr
                   Accédez aux aides publiques pour votre projet de {{ title }}
                 </a>
               </h3>
-              <p class="fr-card__desc">
-                Le service public Transition écologique des entreprises vous permet de trouver les aides, accompagnements et ressources
-                issues de l'ensemble des acteurs publics pour vous aider à réaliser votre projet de transition écologique (ADEME, CCI, CMA,
-                Bpifrance, DGFiP, etc.)
+              <p class="fr-card__desc fr-text--md">
+                Le service public <strong>Transition écologique des entreprises</strong> vous permet de trouver les aides, accompagnements
+                et ressources issues de l'ensemble des acteurs publics pour vous aider à réaliser votre projet de transition écologique
+                (ADEME, CCI, CMA, Bpifrance, DGFiP, etc.)
               </p>
               <div class="fr-card__start"></div>
             </div>
           </div>
           <div class="fr-card__header">
             <div class="fr-card__img">
+              <div>
+                <img
+                  class="fr-responsive-img image-with-gradient"
+                  :src="currentProject?.image"
+                  :alt="`image / ${currentProject?.title}`"
+                />
+              </div>
               <img
-                class="fr-responsive-img"
-                :src="currentProject?.image"
-                :alt="`image / ${currentProject?.title}`"
+                class="fr-card__logo"
+                src="/images/logos/mission-transition-logo-alone.png"
+                alt="Transition Ecologique des Entreprises - ADEME"
               />
             </div>
           </div>
@@ -56,7 +63,43 @@ const href = router.resolve({ name: RouteName.CatalogProjectDetail, params: { pr
 </template>
 
 <style scoped lang="scss">
-.fr-card__img img {
-  max-height: 250px;
+.fr-card {
+  .fr-card__title {
+    a::after {
+      display: inline-block !important;
+    }
+  }
+
+  .fr-card__header {
+    flex-basis: 25%;
+  }
+
+  .fr-card__img {
+    img {
+      max-height: 250px;
+    }
+
+    div {
+      height: 100%;
+
+      &:first-child::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to bottom right, rgb(255 255 255 / 0%) 70%, rgb(255 255 255 / 100%) 95%) !important;
+      }
+    }
+  }
+
+  .fr-card__logo {
+    position: absolute;
+    width: 50px;
+    bottom: 0;
+    height: 50px;
+    right: 0;
+  }
 }
 </style>

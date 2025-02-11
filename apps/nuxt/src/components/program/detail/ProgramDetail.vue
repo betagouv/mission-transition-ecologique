@@ -220,13 +220,18 @@
     <div
       v-if="hasRegisteredData && programIsEligible && !Program.isTemporaryUnavailable(program)"
       ref="tee-program-form-container"
-      class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
+      class="fr-bg--blue--lightness fr-grid-row fr-p-2w"
     >
       <TeeForm
         v-if="program"
         :form-container-ref="teeProgramFormContainer"
         :data-id="program.id"
-        :phone-callback="Translation.t('form.phoneContact', { operator: program['opérateur de contact'] })"
+        :show-c-e-logo="!isProgramAutonomous"
+        :phone-callback="
+          isProgramAutonomous
+            ? Translation.t('form.phoneContactAutonomy', { operator: program['opérateur de contact'] })
+            : Translation.t('form.phoneContactCE')
+        "
         :form="Opportunity.getProgramFormFields(program)"
         :form-type="OpportunityType.Program"
         :error-email-subject="Translation.t('program.form.errorEmail.subject', { program: program.titre })"

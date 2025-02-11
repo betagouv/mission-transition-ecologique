@@ -151,7 +151,10 @@ export type Dispositif = {
     | "Association pour la transition Bas Carbone"
     | "La Fresque du Climat"
     | "SGAR"
-    | "Région Nouvelle-Aquitaine";
+    | "Région Nouvelle-Aquitaine"
+    | "Agence de Développement Economique de Corse"
+    | "Agence de Tourisme de la Corse"
+    | "Région Guadeloupe";
   /**
    * Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.
    */
@@ -346,4 +349,7 @@ export type Operators =
   | "Association pour la transition Bas Carbone"
   | "La Fresque du Climat"
   | "SGAR"
-  | "Région Nouvelle-Aquitaine";
+  | "Région Nouvelle-Aquitaine"
+  | "Agence de Développement Economique de Corse"
+  | "Agence de Tourisme de la Corse"
+  | "Région Guadeloupe";

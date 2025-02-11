@@ -19,7 +19,7 @@
             <TeeDsfrButton
               id="close-register-modal"
               size="sm"
-              class="fr-btn-bg--blue-france--light fr-bg--blue-france--lightness fr-mr-4v fr-mt-8v fr-p-0 fr-text--blue-france fr-radius-a--2v"
+              class="fr-btn-bg--blue--light fr-bg--blue--lightness fr-mr-4v fr-mt-8v fr-p-0 fr-text--blue-france fr-radius-a--2v"
               @click="closeModal"
             >
               <span class="fr-icon-close-line fr-icon--lg"></span>
@@ -48,7 +48,7 @@ import Navigation from '@/tools/navigation'
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
 import Translation from '@/tools/translation'
-import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType, FilterItemKeys } from '@/types'
+import { EstablishmentFront, CompanyDataStorageKey, CompanyDataType } from '@/types'
 import Breakpoint from '@/tools/breakpoints'
 import { onClickOutside } from '@vueuse/core'
 import { useNavigationStore } from '@/stores/navigation'
@@ -96,7 +96,7 @@ const resetSiret = async () => {
   companySize.value = null
   manualRegistration.value = false
   CompanyData.resetData()
-  useFiltersStore().filters[FilterItemKeys.companyData] = false
+  useFiltersStore().setCompanyDataSelected(false)
   CompanyData.updateRouteFromStorage()
 
   await UsedTrack.updateQuestionnaireStep()

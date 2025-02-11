@@ -57,17 +57,18 @@
           v-if="hasRegisteredData"
           id="project-contact"
           ref="teeProjectFormContainer"
-          class="fr-bg--blue-france--lightness fr-grid-row fr-p-2w"
+          class="fr-bg--blue--lightness fr-grid-row fr-p-2w"
         >
           <TeeForm
             v-if="project"
             :form-container-ref="teeProjectFormContainer"
             :form-type="OpportunityType.Project"
             :title="Translation.t('project.form.title')"
-            :phone-callback="Translation.t('form.phoneContact', { operator: ' ' })"
+            :phone-callback="Translation.t('form.phoneContactCE')"
             :form="Opportunity.getProjectFormFields(project)"
             :data-id="project.id.toString()"
             :data-slug="project.slug"
+            :show-c-e-logo="true"
             :hint="Translation.t('project.form.hint')"
             :error-email-subject="Translation.t('project.form.errorEmail.subject', { titre: props.project.title })"
           />

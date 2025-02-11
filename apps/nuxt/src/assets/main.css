@@ -229,10 +229,10 @@
   .fr-bg--blue-france {
     background-color: #001891 !important;
   }
-  .fr-bg--blue-france--light {
+  .fr-bg--blue--light {
     background-color: rgb(145.5, 163.624137931, 255) !important;
   }
-  .fr-bg--blue-france--lightness {
+  .fr-bg--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
@@ -240,10 +240,10 @@
   .fr-bg-xs--blue-france {
     background-color: #001891 !important;
   }
-  .fr-bg-xs--blue-france--light {
+  .fr-bg-xs--blue--light {
     background-color: rgb(145.5, 163.624137931, 255) !important;
   }
-  .fr-bg-xs--blue-france--lightness {
+  .fr-bg-xs--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
@@ -470,10 +470,10 @@
   .fr-bg-sm--blue-france {
     background-color: #001891 !important;
   }
-  .fr-bg-sm--blue-france--light {
+  .fr-bg-sm--blue--light {
     background-color: rgb(145.5, 163.624137931, 255) !important;
   }
-  .fr-bg-sm--blue-france--lightness {
+  .fr-bg-sm--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
@@ -481,10 +481,10 @@
   .fr-bg-xs--blue-france {
     background-color: #001891 !important;
   }
-  .fr-bg-xs--blue-france--light {
+  .fr-bg-xs--blue--light {
     background-color: rgb(145.5, 163.624137931, 255) !important;
   }
-  .fr-bg-xs--blue-france--lightness {
+  .fr-bg-xs--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
@@ -711,10 +711,10 @@
   .fr-bg-md--blue-france {
     background-color: #001891 !important;
   }
-  .fr-bg-md--blue-france--light {
+  .fr-bg-md--blue--light {
     background-color: rgb(145.5, 163.624137931, 255) !important;
   }
-  .fr-bg-md--blue-france--lightness {
+  .fr-bg-md--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
@@ -722,10 +722,10 @@
   .fr-bg-xs--blue-france {
     background-color: #001891 !important;
   }
-  .fr-bg-xs--blue-france--light {
+  .fr-bg-xs--blue--light {
     background-color: rgb(145.5, 163.624137931, 255) !important;
   }
-  .fr-bg-xs--blue-france--lightness {
+  .fr-bg-xs--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
@@ -952,10 +952,10 @@
   .fr-bg-lg--blue-france {
     background-color: #001891 !important;
   }
-  .fr-bg-lg--blue-france--light {
+  .fr-bg-lg--blue--light {
     background-color: rgb(145.5, 163.624137931, 255) !important;
   }
-  .fr-bg-lg--blue-france--lightness {
+  .fr-bg-lg--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
@@ -963,10 +963,10 @@
   .fr-bg-xs--blue-france {
     background-color: #001891 !important;
   }
-  .fr-bg-xs--blue-france--light {
+  .fr-bg-xs--blue--light {
     background-color: rgb(145.5, 163.624137931, 255) !important;
   }
-  .fr-bg-xs--blue-france--lightness {
+  .fr-bg-xs--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
@@ -1193,10 +1193,10 @@
   .fr-bg-xl--blue-france {
     background-color: #001891 !important;
   }
-  .fr-bg-xl--blue-france--light {
+  .fr-bg-xl--blue--light {
     background-color: rgb(145.5, 163.624137931, 255) !important;
   }
-  .fr-bg-xl--blue-france--lightness {
+  .fr-bg-xl--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
@@ -1204,10 +1204,10 @@
   .fr-bg-xs--blue-france {
     background-color: #001891 !important;
   }
-  .fr-bg-xs--blue-france--light {
+  .fr-bg-xs--blue--light {
     background-color: rgb(145.5, 163.624137931, 255) !important;
   }
-  .fr-bg-xs--blue-france--lightness {
+  .fr-bg-xs--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
 }
@@ -1341,10 +1341,10 @@
 .fr-border-t--blue-france {
   border-top: thin solid #001891;
 }
-.fr-border-t--blue-france--light {
+.fr-border-t--blue--light {
   border-top: thin solid rgb(145.5, 163.624137931, 255);
 }
-.fr-border-t--blue-france--lightness {
+.fr-border-t--blue--lightness {
   border-top: thin solid rgb(218.5, 224.5413793103, 255);
 }
 .fr-border-t--grey {
@@ -1425,10 +1425,10 @@
 .fr-border-r--blue-france {
   border-right: thin solid #001891;
 }
-.fr-border-r--blue-france--light {
+.fr-border-r--blue--light {
   border-right: thin solid rgb(145.5, 163.624137931, 255);
 }
-.fr-border-r--blue-france--lightness {
+.fr-border-r--blue--lightness {
   border-right: thin solid rgb(218.5, 224.5413793103, 255);
 }
 .fr-border-r--grey {
@@ -1509,10 +1509,10 @@
 .fr-border-b--blue-france {
   border-bottom: thin solid #001891;
 }
-.fr-border-b--blue-france--light {
+.fr-border-b--blue--light {
   border-bottom: thin solid rgb(145.5, 163.624137931, 255);
 }
-.fr-border-b--blue-france--lightness {
+.fr-border-b--blue--lightness {
   border-bottom: thin solid rgb(218.5, 224.5413793103, 255);
 }
 .fr-border-b--grey {
@@ -1593,10 +1593,10 @@
 .fr-border-l--blue-france {
   border-left: thin solid #001891;
 }
-.fr-border-l--blue-france--light {
+.fr-border-l--blue--light {
   border-left: thin solid rgb(145.5, 163.624137931, 255);
 }
-.fr-border-l--blue-france--lightness {
+.fr-border-l--blue--lightness {
   border-left: thin solid rgb(218.5, 224.5413793103, 255);
 }
 .fr-border-l--grey {
@@ -1674,10 +1674,10 @@
 .fr-border--blue-france {
   border: thin solid #001891;
 }
-.fr-border--blue-france--light {
+.fr-border--blue--light {
   border: thin solid rgb(145.5, 163.624137931, 255);
 }
-.fr-border--blue-france--lightness {
+.fr-border--blue--lightness {
   border: thin solid rgb(218.5, 224.5413793103, 255);
 }
 .fr-border--grey {
@@ -1778,10 +1778,10 @@
 .fr-btn-bg--blue-france {
   background-color: #001891 !important;
 }
-.fr-btn-bg--blue-france--light:hover, .fr-btn-bg--blue-france--light:active {
+.fr-btn-bg--blue--light:hover, .fr-btn-bg--blue--light:active {
   background-color: rgb(145.5, 163.624137931, 255) !important;
 }
-.fr-btn-bg--blue-france--lightness:hover, .fr-btn-bg--blue-france--lightness:active {
+.fr-btn-bg--blue--lightness:hover, .fr-btn-bg--blue--lightness:active {
   background-color: rgb(218.5, 224.5413793103, 255) !important;
 }
 .fr-btn-bg--grey {
@@ -1949,7 +1949,7 @@
   width: 0;
   z-index: 50;
 }
-.fr-card:not(.fr-card--icon-link) .fr-card__title a::after {
+.fr-card__title a::after {
   display: none !important;
 }
 .fr-card__header--priority {
@@ -2636,10 +2636,10 @@
 .fr-highlight-bg--blue-france {
   background-color: #001891 !important;
 }
-.fr-highlight-bg--blue-france--light {
+.fr-highlight-bg--blue--light {
   background-color: rgb(145.5, 163.624137931, 255) !important;
 }
-.fr-highlight-bg--blue-france--lightness {
+.fr-highlight-bg--blue--lightness {
   background-color: rgb(218.5, 224.5413793103, 255) !important;
 }
 .fr-highlight-bg--grey {

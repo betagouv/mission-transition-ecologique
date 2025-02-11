@@ -8,9 +8,10 @@ export const useFiltersStore = defineStore('filters', () => {
     [FilterItemKeys.typeAid]: [],
     [FilterItemKeys.themeType]: '',
     [FilterItemKeys.regionAid]: [],
-    [FilterItemKeys.operatorAid]: [],
-    [FilterItemKeys.companyData]: false
+    [FilterItemKeys.operatorAid]: []
   })
+
+  const companyDataSelected = ref<boolean>(false)
 
   function hasThemeTypeSelected() {
     return filters.value[FilterItemKeys.themeType] !== ''
@@ -24,6 +25,14 @@ export const useFiltersStore = defineStore('filters', () => {
     return filters.value[FilterItemKeys.themeType]
   }
 
+  function setCompanyDataSelected(value: boolean) {
+    companyDataSelected.value = value
+  }
+
+  function getCompanyDataSelected() {
+    return companyDataSelected
+  }
+
   function isCompanyDataSelected() {
     return filters.value[FilterItemKeys.companyData]
   }
@@ -33,19 +42,17 @@ export const useFiltersStore = defineStore('filters', () => {
       [FilterItemKeys.typeAid]: [],
       [FilterItemKeys.themeType]: '',
       [FilterItemKeys.regionAid]: [],
-      [FilterItemKeys.operatorAid]: [],
-      [FilterItemKeys.companyData]: false
+      [FilterItemKeys.operatorAid]: []
     }
+    setCompanyDataSelected(false)
   }
 
   function resetFilter(filterKey: FilterItemKeys) {
     if (filterKey === FilterItemKeys.themeType) {
       filters.value[filterKey] = ''
       return
-    } else if (filterKey === FilterItemKeys.companyData) {
-      filters.value[filterKey] = false
-      return
     }
+
     filters.value[filterKey] = []
   }
 
@@ -54,6 +61,9 @@ export const useFiltersStore = defineStore('filters', () => {
     hasThemeTypeSelected,
     getThemeTypeSelected,
     setThemeTypeSelected,
+    companyDataSelected,
+    setCompanyDataSelected,
+    getCompanyDataSelected,
     isCompanyDataSelected,
     resetFilters,
     resetFilter
