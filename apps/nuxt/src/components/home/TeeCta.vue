@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <div class="fr-col-2 fr-col-md-4 fr-col-lg-4 tee-track-image-right fr-sm-hide">
+    <div class="fr-col-2 fr-col-md-4 fr-col--middle fr-col-lg-4 tee-track-image-right fr-sm-hide">
       <img
         class="fr-responsive-img"
         src="/images/TEE-illustrationHP.png"
@@ -56,7 +56,5 @@ const toQuestionnaire = async () => {
 .tee-track-image-right > .fr-responsive-img {
   max-height: 400px;
   width: auto;
-  height: auto;
-  max-width: 100%;
 }
 </style>
