@@ -1,6 +1,6 @@
 import { defineEventHandler, H3Event } from 'h3'
-import { Monitor, ProjectService } from '@tee/backend-ddd'
 import { z } from 'zod'
+import { Monitor, ProjectService } from '@tee/backend-ddd'
 
 const projectSlugSchema = z.object({
   slug: z.string()
