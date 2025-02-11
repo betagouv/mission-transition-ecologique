@@ -57,7 +57,7 @@ import { computed } from 'vue'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
 import { ProjectSortBy } from '@tee/common'
-import { ProjectSorter } from '@tee/data'
+import { ProjectSorter, ProjectType } from '@tee/data'
 
 interface Props {
   showTitleBanner?: boolean
@@ -92,7 +92,9 @@ const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
 const sortedProjects = computed(() => {
-  return useFiltersStore().isCompanyDataSelected() ? new ProjectSorter().sortBySector(filteredProjects.value) : filteredProjects.value
+  return useFiltersStore().getCompanyDataSelected()
+    ? new ProjectSorter().sortBySector(filteredProjects.value as ProjectType[])
+    : filteredProjects.value
 })
 
 const countProjects = computed(() => {
