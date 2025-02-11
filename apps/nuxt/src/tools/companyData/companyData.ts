@@ -120,6 +120,7 @@ export class CompanyData {
 
   static saveAndSetUsedTrackStore(data: CompanyDataType) {
     this.saveDataToStorage(data)
+    useFiltersStore().companyDataSelected = true
     useUsedTrackStore().setFromStorage()
   }
 

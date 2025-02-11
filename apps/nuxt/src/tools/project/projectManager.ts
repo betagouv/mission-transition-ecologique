@@ -12,7 +12,6 @@ export class ProjectManager {
 
   withCompanyData() {
     if (new Navigation().isCatalogProjects()) {
-      console.log(CompanyData.isCompanySelected())
       return CompanyData.isCompanySelected()
     }
 
