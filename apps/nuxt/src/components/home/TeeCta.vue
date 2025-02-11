@@ -4,17 +4,17 @@
     class="fr-grid-row"
   >
     <div class="fr-col fr-col-md-8 fr-col-lg-8">
-      <div class="fr-grid-row fr-grid-row--gutters fr-p-5v fr-p-sm-8v fr-p-md-20v">
-        <div class="fr-col-12 fr-mb-4v fr-mx-0 fr-px-4v">
+      <div class="fr-grid-row fr-grid-row--gutters fr-p-5v fr-p-sm-8v">
+        <div class="fr-col-12 fr-mx-0 fr-px-4v">
           <div class="fr-grid-row fr-grid-row--gutters">
             <div class="fr-col">
-              <h3 class="fr-text--purple fr-text--bold fr-mb-6v">TPE, PME</h3>
+              <span class="fr-text--purple fr-h3 fr-text--bold fr-mb-6v">TPE, PME</span>
               <h1 class="fr-mb-3v">
                 Trouvez les solutions pour
                 <span class="fr-display-sm--block">la transition écologique </span>
                 <span class="fr-display-sm--block">de votre entreprise</span>
               </h1>
-              <p class="fr-text--lead fr-col-12 fr-col-lg-9 fr-pr-2v">
+              <p class="fr-text--lead fr-mb-0 fr-col-12 fr-col-lg-9 fr-pr-2v">
                 Identifiez facilement les aides publiques adaptées à votre entreprise pour concrétiser vos projets de transition écologique.
               </p>
             </div>
@@ -52,3 +52,11 @@ const toQuestionnaire = async () => {
   await router.push(routeToBaseList)
 }
 </script>
+<style scoped lang="scss">
+.tee-track-image-right > .fr-responsive-img {
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
+</style>
