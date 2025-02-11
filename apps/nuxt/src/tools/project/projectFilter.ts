@@ -1,14 +1,4 @@
-import {
-  ProgramData,
-  ThemeId,
-  ThemeType,
-  ProjectType,
-  EstablishmentFront,
-  FilterItemKeys,
-  type ValueOf,
-  FiltersType,
-  ProjectEligibility
-} from '@/types'
+import { ProgramData, ThemeId, ThemeType, ProjectType, EstablishmentFront, type ValueOf, FiltersType, ProjectEligibility } from '@/types'
 import { Theme } from '@/tools/theme'
 import { ComputedRef, Ref } from 'vue'
 import { CompanyData } from '@/tools/companyData'
@@ -25,7 +15,7 @@ export default class ProjectFilter {
         results = this.getProjectsByTheme(projects.value, theme.value)
       }
       return results.filter((project: ProjectType) => {
-        return this.byCompanyData(project, useFiltersStore().filters[FilterItemKeys.companyData])
+        return this.byCompanyData(project, useFiltersStore().getCompanyDataSelected().value)
       })
     })
   }

@@ -27,7 +27,7 @@ export const useProgramStore = defineStore('program', () => {
         ProgramFilter.byTheme(program, filtersStore.filters[FilterItemKeys.themeType] as ThemeId) &&
         ProgramFilter.byOperator(program, filtersStore.filters[FilterItemKeys.operatorAid] as OperatorFilter[]) &&
         ProgramFilter.byRegion(program, filtersStore.filters[FilterItemKeys.regionAid] as Region[]) &&
-        ProgramFilter.byCompanyData(program, filtersStore.filters[FilterItemKeys.companyData])
+        ProgramFilter.byCompanyData(program, filtersStore.getCompanyDataSelected().value)
       )
     })
   }

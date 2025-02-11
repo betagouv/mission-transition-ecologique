@@ -27,10 +27,7 @@
         :class="[props.accordionClass, filter.accordionClass]"
         :title="`${filter.title} ${getFilterCount(filter.id)}`"
       >
-        <template
-          v-if="filter.id !== FilterItemKeys.companyData"
-          #title
-        >
+        <template #title>
           <div class="fr-grid-row fr-grid-row--middle">
             <span>{{ filter.title }}</span>
             <span
@@ -76,11 +73,7 @@ const activeAccordion = ref<number>()
 const selectedFilters: FiltersType = useFiltersStore().filters
 
 const getFilterCount = (filterId: FilterItemKeys) => {
-  if (filterId !== FilterItemKeys.companyData) {
-    return (selectedFilters[filterId] as string[]).length ? `${(selectedFilters[filterId] as string[]).length}` : ''
-  }
-
-  return ''
+  return (selectedFilters[filterId] as string[]).length ? `${(selectedFilters[filterId] as string[]).length}` : ''
 }
 
 const canDisplayFilter = (filter: FilterItem) => {
