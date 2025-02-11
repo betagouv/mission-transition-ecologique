@@ -1,4 +1,4 @@
-import { useCompanyData } from '@/stores/companyData'
+import { useCompanyDataStore } from '@/stores/companyData'
 import { CompanyDataStorage } from '@/tools/companyData/companyDataStorage'
 import { useNavigationStore } from '@/stores/navigation'
 import {
@@ -83,12 +83,16 @@ export class CompanyData {
       const data = this.dataRef
       const companyData = data.value[CompanyDataStorageKey.Company]
       if (!companyData) {
-        useCompanyData().isDataFull = false
+        useCompanyDataStore().isDataFull = false
         return false
       }
-      useCompanyData().isDataFull = CompanyDataValidator.validate(companyData)
+      useCompanyDataStore().isDataFull = CompanyDataValidator.validate(companyData)
       return CompanyDataValidator.validate(companyData)
     })
+  }
+
+  static isCompanySelected() {
+    return useFiltersStore().companyDataSelected && useCompanyDataStore().isDataFull
   }
 
   static hasCompanyData() {

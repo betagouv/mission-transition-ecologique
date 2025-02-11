@@ -1,16 +1,28 @@
 import ProjectApi from '@/tools/api/projectApi'
 import { ResultApi } from '@/tools/api/resultApi'
+import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
 import { type ProjectType, QuestionnaireData } from '@/types'
 
 export class ProjectManager {
   _useProject = useProjectStore()
   _useNavigation = useNavigationStore()
+  _filtersStore = useFiltersStore()
+  _companyDateStore = useCompanyDataStore()
+
+  withCompanyData() {
+    if (new Navigation().isCatalogProjects()) {
+      console.log(CompanyData.isCompanySelected())
+      return CompanyData.isCompanySelected()
+    }
+
+    return this._companyDateStore.isDataFull
+  }
 
   async getProjects() {
     this._useNavigation.hasSpinner = true
     const questionnaireData = useUsedTrackStore().getQuestionnaireData()
-    const resultApi = await this._getProjectsFromApi(questionnaireData as QuestionnaireData)
+    const resultApi = await this._getProjectsFromApi(this.withCompanyData() ? (questionnaireData as QuestionnaireData) : {})
     if (resultApi.isOk()) {
       this._useProject.projects = resultApi.data
       this._useProject.hasProjects = true
