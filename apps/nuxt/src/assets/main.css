@@ -5,36 +5,6 @@
   grid-template-rows: auto 1fr auto;
 }
 
-@media (min-width: 0) {
-  .fr-container-no {
-    padding-left: unset;
-    padding-right: unset;
-  }
-}
-@media (min-width: 36em) {
-  .fr-container-no-sm {
-    padding-left: unset;
-    padding-right: unset;
-  }
-}
-@media (min-width: 48em) {
-  .fr-container-no-md {
-    padding-left: unset;
-    padding-right: unset;
-  }
-}
-@media (min-width: 62em) {
-  .fr-container-no-lg {
-    padding-left: unset;
-    padding-right: unset;
-  }
-}
-@media (min-width: 78em) {
-  .fr-container-no-xl {
-    padding-left: unset;
-    padding-right: unset;
-  }
-}
 .fr-accordion__btn {
   color: var(--text-title-grey);
 }
