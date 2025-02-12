@@ -9,7 +9,7 @@ export class ProgramSorter {
         case a[aidKey] === ProgramAidType.loan && b[aidKey] !== ProgramAidType.fund:
           return -1
         case a[aidKey] === b[aidKey]:
-          return 0
+          return a.titre.localeCompare(b.titre)
         default:
           return 1
       }
