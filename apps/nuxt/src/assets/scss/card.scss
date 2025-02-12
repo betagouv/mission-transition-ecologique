@@ -125,6 +125,12 @@
     }
   }
 
+  &.project-card {
+    .fr-card__content {
+      padding-top: 1rem !important;
+    } 
+  } 
+
   .fr-badge--success {
     background-color: setting.$green;
     color: setting.$white

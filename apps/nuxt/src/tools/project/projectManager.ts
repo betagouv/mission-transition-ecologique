@@ -1,17 +1,28 @@
-import { useUsedTrackStore } from '@/stores/usedTrack'
 import ProjectApi from '@/tools/api/projectApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
-import { type ProjectFilterQuery, ProjectSortBy, ProjectType } from '@/types'
+import { type ProjectType, QuestionnaireData } from '@/types'
+// import { type ProjectFilterQuery, ProjectSortBy, ProjectType } from '@/types'
 
 export class ProjectManager {
   _useProject = useProjectStore()
   _useNavigation = useNavigationStore()
+  _filtersStore = useFiltersStore()
+  _companyDateStore = useCompanyDataStore()
 
-  async getProjects(filteredData: ProjectFilterQuery = {}) {
+  withCompanyData() {
+    if (new Navigation().isCatalogProjects()) {
+      return CompanyData.isCompanySelected()
+    }
+
+    return this._companyDateStore.isDataFull
+  }
+
+  async getProjects() {
     this._useNavigation.hasSpinner = true
-    const resultApi = await this._getProjectsFromApi(filteredData)
+    const questionnaireData = useUsedTrackStore().getQuestionnaireData()
+    const resultApi = await this._getProjectsFromApi(this.withCompanyData() ? (questionnaireData as QuestionnaireData) : {})
     if (resultApi.isOk()) {
       this._useProject.projects = resultApi.data
       this._useProject.hasProjects = true
@@ -23,16 +34,16 @@ export class ProjectManager {
     this._useNavigation.hasSpinner = false
   }
 
-  async getFilteredProjects(onlyEligible: boolean | undefined = undefined, sortBy: ProjectSortBy | undefined = undefined) {
-    const { codeNAF1 } = useUsedTrackStore().getQuestionnaireData()
-    const filteredData: ProjectFilterQuery = {
-      ...(codeNAF1 && { codeNAF1 }),
-      onlyEligible: onlyEligible,
-      sortBy: sortBy
-    }
-
-    await this.getProjects(filteredData)
-  }
+  // async getFilteredProjects(onlyEligible: boolean | undefined = undefined, sortBy: ProjectSortBy | undefined = undefined) {
+  //   const { codeNAF1 } = useUsedTrackStore().getQuestionnaireData()
+  //   const filteredData: ProjectFilterQuery = {
+  //     ...(codeNAF1 && { codeNAF1 }),
+  //     onlyEligible: onlyEligible,
+  //     sortBy: sortBy
+  //   }
+  //
+  //   await this.getProjects(filteredData)
+  // }
 
   async getProjectBySlug(slug: string) {
     if (this._useProject.currentProject && this._useProject.currentProject.slug === slug) {
@@ -67,19 +78,17 @@ export class ProjectManager {
       navigation.isQuestionnaireResult() ||
       navigation.isProgramDetail() ||
       navigation.isQuestionnaireThemeCards() ||
-      navigation.isHomepage()
+      navigation.isHomepage() ||
+      navigation.isCatalogProjects()
     ) {
-      await this.getFilteredProjects()
-    } else if (navigation.isCatalogProjects()) {
-      CompanyData.isDataFull().value // Force computed reactivity
       await this.getProjects()
     } else {
       this._useProject.reset()
     }
   }
 
-  private async _getProjectsFromApi(projectFilterQuery: ProjectFilterQuery = {}): Promise<ResultApi<ProjectType[]>> {
-    return await new ProjectApi(projectFilterQuery).get()
+  private async _getProjectsFromApi(questionnaireData: QuestionnaireData = {}): Promise<ResultApi<ProjectType[]>> {
+    return await new ProjectApi(questionnaireData).get()
   }
 
   private async _getProjectFromApi(slug: string): Promise<ResultApi<ProjectType>> {

@@ -11,7 +11,7 @@ export const useFiltersStore = defineStore('filters', () => {
     [FilterItemKeys.operatorAid]: []
   })
 
-  const companyDataSelected = ref<boolean>(false)
+  const companyDataSelected = ref<boolean>(true)
 
   function hasThemeTypeSelected() {
     return filters.value[FilterItemKeys.themeType] !== ''
@@ -44,7 +44,7 @@ export const useFiltersStore = defineStore('filters', () => {
       [FilterItemKeys.regionAid]: [],
       [FilterItemKeys.operatorAid]: []
     }
-    setCompanyDataSelected(false)
+    setCompanyDataSelected(true)
   }
 
   function resetFilter(filterKey: FilterItemKeys) {
