@@ -21,7 +21,7 @@ export const tests: FormResultDataType[] = [
     id: 1,
     valid: true,
     type: 'program',
-    url: 'aides-entreprise/act-pas-a-pas?siret=83014132100034&effectif=TPE',
+    url: 'aides-entreprise/baisse-les-watts?siret=83014132100034&effectif=TPE',
     values: {
       name: { value: 'test', type: 'text' },
       surname: { value: 'test', type: 'text' },
@@ -128,7 +128,7 @@ export const tests: FormResultDataType[] = [
     valid: true,
     manual: true,
     type: 'program',
-    url: 'aides-entreprise/act-pas-a-pas',
+    url: 'aides-entreprise/baisse-les-watts',
     values: {
       name: { value: 'test', type: 'text' },
       surname: { value: 'test', type: 'text' },
