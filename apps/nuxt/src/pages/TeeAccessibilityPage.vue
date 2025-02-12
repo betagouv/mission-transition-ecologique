@@ -111,24 +111,15 @@
 
           <h4 class="fr-mt-3w">Contenu du portail</h4>
           <p>
-            Le Commissariat Général au Développement Durable ne saurait être tenue pour responsable de tout dommage, quelle qu’en soit la
-            nature, des erreurs typographiques ou des inexactitudes techniques du portail qui pourrait survenir malgré tout le soin apporté
-            par les équipes à la rédaction et la mise en ligne des informations et des documents.<br /><br />
-            Les informations et les documents contenus sur le portail sont susceptibles de faire l’objet d’une mise à jour à tout moment. Le
-            Commissariat Général au Développement Durable ne saurait être tenue pour responsable de tout dommage, quelle qu’en soit la
-            nature, résultant de la mise à jour du site.<br /><br />
-            Le Commissariat Général au Développement Durable s’efforce de permettre aux usagers d’avoir accès en continu au portail.
-            Néanmoins, le Commissariat Général au Développement Durable ne garantit pas l’accessibilité à son site notamment en cas de panne
-            et de maintenance ou de force majeure. Le Commissariat Général au Développement Durable ne saurait être tenue pour responsable
-            de tout dommage, quelle qu’en soit la nature, résultant de l’indisponibilité du site.
-          </p>
-
-          <h4 class="fr-mt-3w">Data for Good</h4>
-          <p>
-            Mobilisation de data scientists bénévoles du programme Data for Good sur le off season 2021 et saison 10 qui ont accompagné
-            pendant plusieurs mois l'équipe projet sur divers chantiers liés à une meilleure mobilisation et valorisation de la donnée (par
-            exemple catégorisation automatique des aides publiques, extraction des critères d'éligibilité, structuration des informations
-            des PDFs liés aux aides etc.).
+            L'ADEME ne saurait être tenue pour responsable de tout dommage, quelle qu’en soit la nature, des erreurs typographiques ou des
+            inexactitudes techniques du portail qui pourrait survenir malgré tout le soin apporté par les équipes à la rédaction et la mise
+            en ligne des informations et des documents.<br /><br />
+            Les informations et les documents contenus sur le portail sont susceptibles de faire l’objet d’une mise à jour à tout moment.
+            L'ADEME ne saurait être tenue pour responsable de tout dommage, quelle qu’en soit la nature, résultant de la mise à jour du
+            site.<br /><br />
+            L'ADEME s’efforce de permettre aux usagers d’avoir accès en continu au portail. Néanmoins, l'ADEME ne garantit pas
+            l’accessibilité à son site notamment en cas de panne et de maintenance ou de force majeure. L'ADEME ne saurait être tenue pour
+            responsable de tout dommage, quelle qu’en soit la nature, résultant de l’indisponibilité du site.
           </p>
         </div>
       </div>
