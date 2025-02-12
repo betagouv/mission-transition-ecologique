@@ -68,7 +68,7 @@ const { programs, hasError: hasErrorPrograms } = storeToRefs(programStore)
 const { tabSelectedOnList } = storeToRefs(navigationStore)
 
 onNuxtReady(async () => {
-  await new ProjectManager().getFilteredProjects()
+  await new ProjectManager().getProjects()
   await new ProgramManager().getFiltered()
 })
 

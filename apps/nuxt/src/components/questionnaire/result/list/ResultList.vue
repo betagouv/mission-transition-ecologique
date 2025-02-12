@@ -27,7 +27,7 @@ import { Theme } from '@/tools/theme'
 const { projects, hasError } = storeToRefs(useProjectStore())
 
 onNuxtReady(async () => {
-  await new ProjectManager().getFilteredProjects()
+  await new ProjectManager().getProjects()
 })
 
 const filteredProjects = ProjectFilter.filter(projects, Theme.getThemeFromSelectedOrPriorityTheme())
