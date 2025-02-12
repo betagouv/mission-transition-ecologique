@@ -20,7 +20,7 @@
             </div>
           </div>
         </div>
-        <div class="fr-col-xl-8 fr-col-lg-8 fr-col-md-10 fr-col-sm-12 fr-col-xs-12 tee-home-cta-btn">
+        <div class="fr-col-xl-7 fr-col-lg-8 fr-col-md-10 fr-col-sm-12 fr-col-xs-12 tee-home-cta-btn">
           <TeeDsfrButton
             label="Je trouve les aides pour mon projet"
             size="lg"
