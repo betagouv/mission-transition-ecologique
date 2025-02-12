@@ -1,0 +1,21 @@
+@use 'setting';
+@use 'tool';
+
+#tee > div:first-of-type {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+@each $breakpoint, $value in setting.$breakpoints-values {
+  $modifier: tool.modifierByBreakpoint($breakpoint);
+
+  @include tool.media-query-respond-from($breakpoint) {
+    .fr-container-no#{$modifier} {
+      padding-left: unset;
+      padding-right: unset;
+    }
+  }
+
+}
