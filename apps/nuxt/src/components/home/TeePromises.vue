@@ -36,7 +36,7 @@ const otherOperator = {
 
 <template>
   <div class="fr-container fr-grid-row fr-grid-row--center fr-pt-8v fr-hidden fr-unhidden-sm">
-    <div class="fr-grid-row">
+    <div class="fr-grid-row fr-mb-8v">
       <div class="fr-col-6 fr-col-sm-12 fr-col-lg-6 fr-px-10w fr-text-center fr-position--relative">
         <img
           :src="`/images/yellow-circle.svg`"
@@ -95,8 +95,8 @@ const otherOperator = {
 }
 
 .operator-logo {
-  max-height: 2.5rem;
-  max-width: 3.8rem !important;
+  max-height: 3.5rem;
+  max-width: 5.8rem !important;
   width: revert-layer !important;
 }
 </style>
