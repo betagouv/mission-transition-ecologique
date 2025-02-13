@@ -7,14 +7,12 @@
           <p class="fr-text--sm fr-mb-3w">{{ `Erreur ${error.statusCode}` }}</p>
           <p class="fr-text--lead fr-mb-3w">{{ leadText }}</p>
           <p class="fr-text--sm fr-mb-5w">{{ errorText }}</p>
-          <ul class="fr-btns-group fr-btns-group--inline-md">
-            <TeeDsfrButton
-              v-if="error.statusCode === 404"
-              label="Page d'accueil"
-              @click="toHomePage"
-            />
-            <ContactButton v-else />
-          </ul>
+          <TeeDsfrButton
+            v-if="error.statusCode === 404"
+            label="Page d'accueil"
+            @click="toHomePage"
+          />
+          <ContactButton />
         </div>
         <div class="fr-col-12 fr-col-md-3 fr-col-offset-md-1 fr-px-6w fr-px-md-0 fr-py-0">
           <img
@@ -47,7 +45,7 @@ const toHomePage = async () => {
 }
 const error404Text =
   "Si vous avez tapé l'adresse web dans le navigateur, vérifiez qu'elle est correcte. La page n’est peut-être plus disponible. Dans ce cas, pour continuer votre visite vous pouvez consulter notre page d’accueil, ou effectuer une recherche avec notre moteur de recherche en haut de page. Sinon contactez-nous pour que l’on puisse vous rediriger vers la bonne information."
-const error500Text = 'Essayez de rafraîchir la page ou bien ressayez plus tard.'
+const error500Text = 'Essayez de rafraîchir la page ou bien réessayez plus tard.'
 
 const leadText = computed<string>(() => {
   if (props.error.statusCode === 404) {
