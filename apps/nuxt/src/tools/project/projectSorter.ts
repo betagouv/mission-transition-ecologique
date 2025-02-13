@@ -15,7 +15,16 @@ export default class ProjectSorter {
 
   static readonly sortBySector = (projects: ProjectType[]) => {
     return projects.sort((a, b) => {
-      return a.sectors.length <= 5 && a.sectors.length < b.sectors.length ? -1 : 1
+      switch (true) {
+        case a.sectors.length === b.sectors.length:
+          return 0
+        case a.sectors.length <= 5 && a.sectors.length < b.sectors.length:
+          return -1
+        case b.sectors.length <= 5 && b.sectors.length < a.sectors.length:
+          return 1
+        default:
+          return 0
+      }
     })
   }
 
