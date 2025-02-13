@@ -1,4 +1,5 @@
-import { ProgramType, ProjectType } from '@tee/data'
+import { ProgramType, ProjectEligibility, ProjectSorter, ProjectType } from '@tee/data'
+// import { ProjectEligibility, ProjectSorter, ProjectType } from '@tee/data'
 import ProjectFeatures from '../domain/projectFeatures'
 import { QuestionnaireData } from '@tee/common'
 import { Result } from 'true-myth'
@@ -7,7 +8,9 @@ export class ProjectService {
   private _project: ProjectFeatures
 
   public constructor() {
-    this._project = new ProjectFeatures()
+    const projectEligibility = new ProjectEligibility()
+    const projectSorter = new ProjectSorter()
+    this._project = new ProjectFeatures(projectEligibility, projectSorter)
   }
 
   public getFiltered(questionnaireData: QuestionnaireData): Result<ProjectType[], Error> {

@@ -8,6 +8,13 @@
     :link="getRouteToProjectDetail(project)"
     class="teste2e-project-target project-card"
   >
+    <template #end-details>
+      <DsfrBadge
+        :label="`${project.sectors.length} / ${project.priority}`"
+        :no-icon="true"
+        class="fr-badge--info fr-mb-2w"
+      />
+    </template>
     <template
       v-if="isPriorityProject"
       #start-details
@@ -23,18 +30,6 @@
           :label="priorityTag"
           :no-icon="true"
           class="fr-badge--success"
-        />
-      </div>
-    </template>
-    <template
-      v-if="project.countEligiblePrograms"
-      #end-details
-    >
-      <div class="fr-mb-8v">
-        <DsfrBadge
-          :label="eligibleProgramsTag"
-          :no-icon="true"
-          class="fr-bg--green--lightness fr-text--black"
         />
       </div>
     </template>

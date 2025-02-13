@@ -55,7 +55,7 @@ const sortedProjects = computed(() => {
     return []
   }
 
-  if (!theme.value || !Theme.isTheme(theme.value)) {
+  if ((!theme.value || !Theme.isTheme(theme.value)) && !useCompanyDataStore().isDataFull) {
     return ProjectSorter.highlightSort(filteredProjects.value)
   }
 
