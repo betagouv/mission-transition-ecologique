@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="!useUsedTrackStore().currentIsFirst && track?.info"
+    v-if="track?.info"
     class="fr-px-4v fr-px-md-0v fr-col-12"
   >
     <p class="fr-mb-2v">
@@ -14,7 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import { useUsedTrackStore } from '@/stores/usedTrack'
 import type { Track } from '@/types'
 import Translation from '@/tools/translation'
 

@@ -50,16 +50,9 @@ export interface ContactAttributes {
   TAILLE?: BrevoCompanySize
 }
 
-export enum BrevoQuestionnaireRoute {
-  DIRECTORY = 'annuaire',
-  SPECIFIC_GOAL = 'jai_un_objectif_prcis',
-  NO_SPECIFIC_GOAL = 'je_ne_sais_pas_par_o_commencer'
-}
-
 export interface DealAttributes {
   message: string
   type: string
-  parcours: BrevoQuestionnaireRoute
   objectifs_renseigns?: string
   oprateur_de_contact?: Operators
   autres_donnes?: string
