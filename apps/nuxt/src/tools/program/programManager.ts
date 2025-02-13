@@ -32,10 +32,6 @@ export class ProgramManager {
   }
 
   async getOneById(id: string) {
-    if (this._useProgram.currentProgram && this._useProgram.currentProgram.id === id) {
-      return
-    }
-
     if (this._useProgram.hasPrograms) {
       const program = this._useProgram.programs.find((program) => program.id === id)
       if (program) {
