@@ -1,7 +1,7 @@
 import { ProjectType as ProjectType } from '@/types'
 
 export default class ProjectSorter {
-  static readonly highlightSort = (projects: ProjectType[]): ProjectType[] => {
+  static readonly byHighlight = (projects: ProjectType[]): ProjectType[] => {
     return projects.slice().sort((a, b) => {
       if (!a.highlightPriority) {
         return 1
@@ -13,7 +13,7 @@ export default class ProjectSorter {
     })
   }
 
-  static readonly sortBySector = (projects: ProjectType[]) => {
+  static readonly bySector = (projects: ProjectType[]) => {
     return projects.sort((a, b) => {
       switch (true) {
         case a.sectors.length === b.sectors.length:
@@ -28,9 +28,9 @@ export default class ProjectSorter {
     })
   }
 
-  static readonly highlightAndSectorSort = (projects: ProjectType[]): ProjectType[] => {
+  static readonly byHighlightAndSector = (projects: ProjectType[]): ProjectType[] => {
     const sectorProjects = projects.filter((project) => project.sectors.length <= 5).sort((a, b) => a.sectors.length - b.sectors.length)
-    const highlightSorted = ProjectSorter.highlightSort(projects.filter((project) => project.sectors.length > 5))
+    const highlightSorted = ProjectSorter.byHighlight(projects.filter((project) => project.sectors.length > 5))
 
     return [...sectorProjects, ...highlightSorted]
   }

@@ -98,9 +98,7 @@ const sortedProjects = computed(() => {
     return []
   }
 
-  return useCompanyDataStore().isDataFull && useFiltersStore().getCompanyDataSelected().value
-    ? ProjectSorter.sortBySector(filteredProjects.value)
-    : filteredProjects.value
+  return CompanyData.isCompanySelected() ? ProjectSorter.bySector(filteredProjects.value) : filteredProjects.value
 })
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0

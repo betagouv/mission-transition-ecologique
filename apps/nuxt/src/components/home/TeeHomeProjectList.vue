@@ -57,11 +57,11 @@ const sortedProjects = computed(() => {
 
   if (!theme.value || !Theme.isTheme(theme.value)) {
     return useCompanyDataStore().isDataFull
-      ? ProjectSorter.highlightAndSectorSort(filteredProjects.value)
-      : ProjectSorter.highlightSort(filteredProjects.value)
+      ? ProjectSorter.byHighlightAndSector(filteredProjects.value)
+      : ProjectSorter.byHighlight(filteredProjects.value)
   }
 
-  return useCompanyDataStore().isDataFull ? ProjectSorter.sortBySector(filteredProjects.value) : filteredProjects.value
+  return useCompanyDataStore().isDataFull ? ProjectSorter.bySector(filteredProjects.value) : filteredProjects.value
 })
 const projectList = computed(() => {
   return props.limit ? sortedProjects.value.slice(0, props.limit) : sortedProjects.value

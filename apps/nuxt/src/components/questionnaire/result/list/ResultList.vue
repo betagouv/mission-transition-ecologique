@@ -38,6 +38,6 @@ const sortedProjects = computed(() => {
     return []
   }
 
-  return ProjectSorter.sortBySector(filteredProjects.value)
+  return ProjectSorter.bySector(filteredProjects.value)
 })
 </script>
