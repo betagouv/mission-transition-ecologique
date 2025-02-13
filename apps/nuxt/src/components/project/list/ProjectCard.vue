@@ -8,13 +8,6 @@
     :link="getRouteToProjectDetail(project)"
     class="teste2e-project-target project-card"
   >
-    <template #end-details>
-      <DsfrBadge
-        :label="`${project.sectors.length} / ${project.priority}`"
-        :no-icon="true"
-        class="fr-badge--info fr-mb-2w"
-      />
-    </template>
     <template
       v-if="isPriorityProject"
       #start-details
@@ -30,6 +23,18 @@
           :label="priorityTag"
           :no-icon="true"
           class="fr-badge--success"
+        />
+      </div>
+    </template>
+    <template
+      v-if="project.countEligiblePrograms"
+      #end-details
+    >
+      <div class="fr-mb-8v">
+        <DsfrBadge
+          :label="eligibleProgramsTag"
+          :no-icon="true"
+          class="fr-bg--green--lightness fr-text--black"
         />
       </div>
     </template>
@@ -50,12 +55,15 @@ interface Props {
   priorityOrder?: number
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   isPriorityProject: false,
   priorityOrder: undefined
 })
 const priorityTag: string = 'A FAIRE EN PRIORITÉ'
 
+const eligibleProgramsTag = computed(() => {
+  return `${props.project.countEligiblePrograms} AIDE${props.project.countEligiblePrograms > 1 ? 'S' : ''}`
+})
 const navigationStore = useNavigationStore()
 const navigation = new Navigation()
 const getRouteToProjectDetail = (project: ProjectType): RouteLocationRaw => {
