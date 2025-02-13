@@ -35,7 +35,7 @@ defineProps<Props>()
 const linkedProjectsTags = ref<ProjectType[]>([])
 
 onNuxtReady(async () => {
-  await new ProjectManager().getFilteredProjects()
+  await new ProjectManager().getProjects()
   linkedProjectsTags.value = await useProjectStore().getLinkedProjectsFromCurrent()
 })
 </script>

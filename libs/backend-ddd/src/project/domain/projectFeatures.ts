@@ -1,4 +1,4 @@
-import { ProjectFilterQuery } from '@tee/common'
+import { QuestionnaireData } from '@tee/common'
 import { ProjectEligibility, ProjectType } from '@tee/data'
 import { projects } from '@tee/data/static'
 
@@ -11,13 +11,12 @@ export default class ProjectFeatures {
     return projects.find((project) => project.slug === slug)
   }
 
-  public getFiltered(projectQuery: ProjectFilterQuery): ProjectType[] {
+  public getFiltered(questionnaireData: QuestionnaireData): ProjectType[] {
     this._sort(projects)
-    if (!projectQuery.codeNAF1) {
+    if (!questionnaireData.codeNAF1 || !questionnaireData.onlyEligible) {
       return projects
     }
-
-    return projects.filter((project) => ProjectEligibility.isEligible(project, projectQuery.codeNAF1 as string))
+    return projects.filter((project) => ProjectEligibility.isEligible(project, questionnaireData.codeNAF1 as string))
   }
 
   private _sort(projects: ProjectType[]) {

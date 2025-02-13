@@ -1,3 +1,4 @@
+import { CompanyData } from '@/tools/companyData'
 import { FilterItemKeys, ProjectType, ThemeId } from '@/types'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
@@ -19,9 +20,10 @@ export const useProjectStore = defineStore('project', () => {
 
   function getProjectsByFilters(projects: ProjectType[]) {
     return projects.filter((project: ProjectType) => {
+      const companySelected = CompanyData.isCompanySelected()
       return (
         ProjectFilter.byTheme(project, filtersStore.filters[FilterItemKeys.themeType] as ThemeId) &&
-        ProjectFilter.byCompanyData(project, filtersStore.filters[FilterItemKeys.companyData])
+        ProjectFilter.byCompanyData(project, companySelected)
       )
     })
   }

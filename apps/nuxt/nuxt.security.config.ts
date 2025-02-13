@@ -4,9 +4,8 @@ import Config from './src/config'
 
 export class NuxtSecurityConfig {
   static _statsBetaGouvFrUrl = 'https://stats.beta.gouv.fr'
-  static _typeformUrl = 'https://embed.typeform.com'
-  static _typeformApiUrl = 'https://api.typeform.com'
-  static _typeformFormUrl = 'https://form.typeform.com'
+  static _baserowFormUrl = 'https://baserow.io'
+  static _metabaseUrl = 'https://tee-metabase.osc-fr1.scalingo.io'
   static _posthogUrl = 'https://eu.i.posthog.com'
   static _posthogAssetsUrl = 'https://eu-assets.i.posthog.com'
   static _sentryData = NuxtSentryConfig.getSentryData()
@@ -16,7 +15,8 @@ export class NuxtSecurityConfig {
       contentSecurityPolicy: {
         ...this._getDefaultContentSecurityPolicy(),
         'frame-ancestors': ["'self'"]
-      }
+      },
+      crossOriginEmbedderPolicy: false
       // Missing headers:
       // 'X-Frame-Options': 'ALLOW-FROM https://conseillers-entreprises.service-public.fr',
       // 'Expect-CT': `default-src 'self' ${this._sentryData?.domain ? this._sentryData.domain : ''}; report-uri ${this._sentryData?.url};`
@@ -43,25 +43,26 @@ export class NuxtSecurityConfig {
         this._statsBetaGouvFrUrl,
         this._posthogUrl,
         this._posthogAssetsUrl,
-        this._typeformUrl
+        this._baserowFormUrl,
+        this._metabaseUrl
       ],
       'script-src': ["'self'", "'nonce-{{nonce}}'", "'strict-dynamic'", Config.isProduction() ? '' : "'unsafe-eval'"],
       'worker-src': ["'self'", 'blob:'],
-      'style-src': ["'self'", "'unsafe-inline'", this._typeformUrl],
+      'style-src': ["'self'", "'unsafe-inline'", this._baserowFormUrl, this._metabaseUrl],
       'font-src': ["'self'"],
       'object-src': ["'self'"],
       'img-src': ["'self'", 'data:'],
       'connect-src': [
         "'self'",
         this._statsBetaGouvFrUrl,
-        this._typeformUrl,
-        this._typeformApiUrl,
+        this._baserowFormUrl,
+        this._metabaseUrl,
         this._posthogUrl,
         this._posthogAssetsUrl,
         this._sentryData?.domain ? this._sentryData.domain : ''
       ],
       'base-uri': ["'self'"],
-      'frame-src': ["'self'", this._typeformFormUrl],
+      'frame-src': ["'self'", this._baserowFormUrl, this._metabaseUrl],
       'default-src': ["'none'"]
     }
   }

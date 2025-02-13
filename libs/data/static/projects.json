@@ -35,7 +35,8 @@
       "perf-crise-energetique-cvl",
       "impulsion-environnement",
       "soutien-hebergement-touristique",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "camping-independant-bfc"
     ],
     "linkedProjects": [
       31
@@ -163,7 +164,8 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       4
@@ -220,7 +222,8 @@
       "charte-zero-dechet-plastique",
       "pret-energie-aura",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       21
@@ -276,7 +279,8 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       4
@@ -342,7 +346,8 @@
       "impulsion-environnement",
       "soutien-hebergement-touristique",
       "agir-pdl",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       4
@@ -468,7 +473,8 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       4
@@ -532,7 +538,8 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       4
@@ -599,10 +606,12 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
-      4
+      4,
+      14
     ],
     "priority": "320",
     "highlightPriority": "8",
@@ -767,7 +776,9 @@
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl"
     ],
-    "linkedProjects": [],
+    "linkedProjects": [
+      4
+    ],
     "priority": "500",
     "highlightPriority": null,
     "sectors": [
@@ -810,10 +821,11 @@
       "perf-crise-energetique-cvl",
       "projets-hebergements-touristiques-cvl",
       "impulsion-environnement",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
-      31
+      4
     ],
     "priority": "140",
     "highlightPriority": null,
@@ -881,10 +893,12 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "prit-hdf",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
-      4
+      4,
+      14
     ],
     "priority": "150",
     "highlightPriority": "1",
@@ -1055,7 +1069,8 @@
       "pret-energie-aura",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
-      "impulsion-environnement"
+      "impulsion-environnement",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       16
@@ -1278,7 +1293,8 @@
       "sud-pret-climat",
       "pret-energie-aura",
       "pass-transition-bzh",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       36
@@ -1336,7 +1352,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "hotellerie-independante-na",
-      "camping-independant-na"
+      "camping-independant-na",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       21
@@ -1401,7 +1418,8 @@
       "cap-transition-ecologique",
       "agir-pdl",
       "hotellerie-independante-na",
-      "camping-independant-na"
+      "camping-independant-na",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       21
@@ -1615,7 +1633,8 @@
       "mooc-biodiversite-entreprise",
       "pret-energie-aura",
       "pass-transition-bzh",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       26
@@ -1718,7 +1737,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "cap-transition-ecologique",
+      "camping-independant-bfc"
     ],
     "linkedProjects": [
       31
@@ -1754,7 +1774,7 @@
     "slug": "diag-360",
     "title": "Diagnostic à 360° sur la transition écologique",
     "nameTag": "🔎️ diagnostic 360°",
-    "shortDescription": "Réalisez un diagnostic de votre entreprise au prisme de l’environnement.",
+    "shortDescription": "Réaliser un diagnostic de votre entreprise au prisme de l’environnement.",
     "image": "/images/projet/diag-360.webp",
     "longDescription": "Un diagnostic à 360° est une excellente première étape pour engager la transition écologique de votre entreprise en réalisant un état des lieux transverse : déchets, énergie, eau, transport, matières, etc... Ces études peuvent vous permettre d'identifier vos enjeux prioritaires, de se mettre en mouvement par des écogestes, d'obtenir un plan d'action jusqu'à repenser votre modèle d’affaires.",
     "moreDescription": "- [**Les modèles d'affaires à l'aune de la sobriété,**](https://www.cci-paris-idf.fr/fr/prospective/sobriete-modeles-affaires) une étude de la CCI sur les implications de la sobriété sur le modèle d’affaires des entreprises.",
@@ -1777,12 +1797,10 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "cap-transition-ecologique",
-      "prit-hdf"
+      "prit-hdf",
+      "camping-independant-bfc"
     ],
-    "linkedProjects": [
-      26,
-      28
-    ],
+    "linkedProjects": [],
     "priority": "10",
     "highlightPriority": null,
     "sectors": [
@@ -2024,7 +2042,9 @@
       "cap-transition-ecologique",
       "ecolabel",
       "soutien-hebergement-touristique",
-      "prit-hdf"
+      "prit-hdf",
+      "camping-independant-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       31
@@ -2085,7 +2105,8 @@
       "soutien-hebergement-touristique",
       "agir-pdl",
       "prit-hdf",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       20
@@ -2146,7 +2167,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "prit-hdf",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       20
@@ -2175,6 +2197,84 @@
       "S",
       "T",
       "U"
+    ]
+  },
+  {
+    "id": 137,
+    "slug": "electromenager-basse-consommation",
+    "title": "Électroménager basse consommation",
+    "nameTag": "🌬 sèche-linge",
+    "shortDescription": "L'électroménager professionnel à haute efficacité énergétique vous permet de réduire votre consommation d'énergie.",
+    "image": "/images/projet/seche-linge.webp",
+    "longDescription": "Investir dans des équipements électroménagers professionnels à haute efficacité énergétique est une opportunité pour votre entreprise de réduire considérablement sa consommation d'énergie tout en optimisant ses performances. Qu’il s’agisse de réfrigérateurs, de lave-vaisselle ou de fours, ces équipements offrent des fonctionnalités avancées, comme la régulation intelligente de la température ou l’utilisation optimisée des ressources. Par exemple, un sèche-linge professionnel doté d’une pompe à chaleur peut réduire sa consommation énergétique jusqu’à 50 % par rapport à un modèle classique ! En intégrant ces solutions, vous pouvez réaliser des économies significatives sur vos factures énergétiques tout en augmentant la durabilité de vos équipements.",
+    "moreDescription": "- [Les critères de sélection d'un sèche-linge pro](https://www.guidetopten.fr/grand-public/selection-criteria/criteres-de-selection-seche-linge-professionnels), proposé par Guide Topten, un comparateur soutenu par l'ADEME.\n- [L'étiquette énergie :  ](https://www.economie.gouv.fr/particuliers/etiquette-energie-electromenager)Bien choisir ses appareils électroménagers grâce à l'étiquette énergie.",
+    "themes": [
+      "energy"
+    ],
+    "mainTheme": "energy",
+    "programs": [
+      "fonds-tourisme-durable",
+      "cedre-investissement",
+      "sud-pret-climat",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "cap-transition-ecologique",
+      "perf-crise-energetique-cvl",
+      "soutien-hebergement-touristique",
+      "agir-pdl",
+      "hotellerie-independante-na",
+      "camping-independant-na",
+      "prit-hdf"
+    ],
+    "linkedProjects": [
+      4
+    ],
+    "priority": "190",
+    "highlightPriority": null,
+    "sectors": [
+      "I",
+      "Q",
+      "T"
+    ]
+  },
+  {
+    "id": 138,
+    "slug": "menus-circuits-courts",
+    "title": "Menus en circuits courts",
+    "nameTag": "🍽 circuits-courts",
+    "shortDescription": "Élaborer des menus préparés avec des produits sains, locaux et à faible impact écologique.",
+    "image": "/images/projet/menus-circuits-courts.webp",
+    "longDescription": "Favoriser les circuits courts et proposer des produits locaux et de saison sont des choix stratégiques pour les restaurateurs, qui permettent de soutenir l’économie locale tout en réduisant l'empreinte carbone. En minimisant les distances de transport, vous garantissez des produits plus frais et de meilleure qualité, tout en participant à la préservation de l’environnement.\n\nIntégrer des plats végétariens à la carte est également un levier essentiel. La production de viande ayant un impact écologique plus important, offrir des options végétariennes permet de réduire la consommation de ressources naturelles et les émissions de gaz à effet de serre. Ces choix répondent à une demande croissante de consommateurs soucieux de leur bien-être et de l’environnement.",
+    "moreDescription": "- [**Restaurant Engagé : éco-responsabilité en restauration**](https://librairie.ademe.fr/7385-restaurant-engage-eco-responsabilite-en-restauration.html), un guide de l'ADEME.\n- [**Acteurs de la restauration : devenez un maillon engagé de l’alimentation durable**](https://agirpourlatransition.ademe.fr/entreprises/restauration-durable)",
+    "themes": [
+      "eco-design"
+    ],
+    "mainTheme": "eco-design",
+    "programs": [
+      "etude-alimentation-durable",
+      "etude-biodechets",
+      "etude-gaspillage-alimentaire",
+      "fonds-tourisme-durable",
+      "gestion-des-biodechets",
+      "cedre-investissement",
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "cap-transition-ecologique",
+      "agir-pdl",
+      "prit-hdf"
+    ],
+    "linkedProjects": [
+      31
+    ],
+    "priority": "240",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "I",
+      "Q",
+      "S"
     ]
   },
   {
@@ -2238,7 +2338,8 @@
       "soutien-hebergement-touristique",
       "agir-pdl",
       "prit-hdf",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       20
@@ -2292,7 +2393,8 @@
       "cap-transition-ecologique",
       "soutien-hebergement-touristique",
       "prit-hdf",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       33
@@ -2348,9 +2450,11 @@
       "cap-transition-ecologique",
       "soutien-hebergement-touristique",
       "agir-pdl",
-      "prit-hdf"
+      "prit-hdf",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
+      14,
       33
     ],
     "priority": "130",
@@ -2459,7 +2563,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "prit-hdf",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       33
@@ -2527,9 +2632,106 @@
       "prit-hdf"
     ],
     "linkedProjects": [
-      4
+      4,
+      14
     ],
     "priority": "130",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
+  },
+  {
+    "id": 337,
+    "slug": "sensibilisation-eco-gestes",
+    "title": "Sensibilisation aux éco-gestes",
+    "nameTag": "📜 écogestes",
+    "shortDescription": "Une sensibilisation pour inciter vos clients à adopter des comportements responsables.",
+    "image": "/images/projet/sensibilisation-ecogestes.webp",
+    "longDescription": "Pour appuyer vos efforts visant à réduire la consommation de ressources et la production de déchets de votre établissement, il est important de sensibiliser vos clients aux éco-gestes à adopter.  Dans un hébergement touristique, par exemple, l’affichage de messages pédagogiques dans les chambres peut encourager vos clients à réutiliser les serviettes, limiter l’utilisation des équipements de chauffage ou de climatisation, ou à éteindre les lumières et les appareils électriques lorsqu’ils ne sont pas utilisés. Pour leurs sorties, invitez vos clients à ne laisser aucun déchet derrière eux (emballages, mégots, chewing-gums…).\n\nPour faciliter la mise en place de ces bonnes pratiques, sensibilisez également vos équipes afin qu'elles puissent promouvoir ces comportements vertueux auprès des clients.",
+    "moreDescription": "- [Le kit écogestes ](https://pronormandietourisme.fr/2024/05/31/kit-ecogestes-ademe/)destiné aux établissements touristiques[,](https://pronormandietourisme.fr/2024/05/31/kit-ecogestes-ademe/) proposé par l’ADEME\n- [Éco-gestes : sensibiliser les touristes](https://www.ardeche.cci.fr/actualite/eco-gestes-sensibiliser-les-touristes), **par la CCI Ardèche**\n- [Le kit « Vive les vacances »](https://librairie.ademe.fr/consommer-autrement/232-vive-les-vacances--9791029715457.html#/44-type_de_produit-format_electronique), réalisé par l’ADEME",
+    "themes": [
+      "energy",
+      "water"
+    ],
+    "mainTheme": "energy",
+    "programs": [
+      "formation-engager-entreprise-transition-ecologique",
+      "cci-business-optimizer"
+    ],
+    "linkedProjects": [
+      26
+    ],
+    "priority": "1000",
+    "highlightPriority": null,
+    "sectors": [
+      "I"
+    ]
+  },
+  {
+    "id": 666,
+    "slug": "tourisme-zero-dechet",
+    "title": "Tourisme zéro déchet",
+    "nameTag": "🍶 Tourisme 0 déchet",
+    "shortDescription": "Limiter la production de déchets et le gaspillage en adoptant des alternatives durables.",
+    "image": "/images/projet/Tourisme zéro déchet.webp",
+    "longDescription": "Les entreprises du tourisme ont un rôle important à jouer en réduisant significativement leurs déchets. \\\nDans un restaurant, l’utilisation de contenants consignés et des boîtes apportées par le client pour la vente à emporter, la réduction des emballages inutiles, le libre-service et la réduction des portions de nourriture, l’achat en vrac et en grand conditionnement auprès de vos fournisseurs permettent d'adopter une démarche zéro déchet.\n\nDans un hébergement, la mise en place des distributeurs de savon et de shampoing rechargeables, le remplacement des mini-produits par des alternatives durables, la suppression des emballages individuels au petit-déjeuner et la réutilisation du linge (serviettes changées sur demande) sont autant de solutions efficaces. Privilégier les fournisseurs locaux et les produits écoresponsables permet aussi de réduire l’empreinte écologique.\n\nChaque action, même minime, contribue à un tourisme plus respectueux de l’environnement.",
+    "moreDescription": "- [Actions antigaspi dans la restauration collective et l'hôtellerie](https://librairie.ademe.fr/consommer-autrement/6318-actions-antigaspi-dans-la-restauration-collective-et-l-hotellerie.html), un guide de l'ADEME\n- [L’hébergement touristique à l’heure du Zero Waste](https://www.zerowastefrance.org/wp-content/uploads/2018/03/lhebergement-touristique-a-lheure-du-zero-waste_dossier-du-mois-mars-2016.pdf), par l'association Zero Waste France",
+    "themes": [
+      "waste"
+    ],
+    "mainTheme": "waste",
+    "programs": [
+      "formation-engager-entreprise-transition-ecologique",
+      "cci-business-optimizer"
+    ],
+    "linkedProjects": [
+      21
+    ],
+    "priority": "240",
+    "highlightPriority": null,
+    "sectors": [
+      "I"
+    ]
+  },
+  {
+    "id": 667,
+    "slug": "materiaux-de-reemploi",
+    "title": "Matériaux de réemploi",
+    "nameTag": "🔃 réemploi",
+    "shortDescription": "Réutiliser des matériaux dans le bâtiment permet de réduire les déchets et de préserver les ressources.",
+    "image": "/images/projet/materiaux-de-reemploi.webp",
+    "longDescription": "Le réemploi dans la rénovation consiste à réutiliser des matériaux et équipements issus de la déconstruction ou de la rénovation de bâtiments. Briques, tuiles, carrelage, parquets, cloisons, sanitaires, mobilier, menuiseries, robinetterie, luminaires… Tous ces éléments peuvent être récupérés et intégrés à un nouveau projet, évitant ainsi la production de déchets de chantier, tout en limitant les émissions de CO₂ liées à l’extraction et à la fabrication de nouveaux matériaux.\n\nAu-delà de son impact environnemental positif, le réemploi permet de réduire significativement les coûts d’achat des matériaux. Pour s’approvisionner en matériaux de réemploi, il existe aujourd’hui des plateformes spécialisées qui collectent, trient et revendent ces éléments à des prix souvent plus avantageux que le neuf.\n\nEn intégrant le réemploi dans votre projet de rénovation, vous faites le choix d’un aménagement à la fois durable et économique, contribuant efficacement à la transition écologique.",
+    "moreDescription": "- [Économie circulaire : comment ça marche ?](https://librairie.ademe.fr/dechets-economie-circulaire/925-economie-circulaire-comment-ca-marche-.html) Une infographie proposée par l'ADEME.\n- [Réemploi des matériaux et produits de construction dans le bâtiment](https://www.ffbatiment.fr/techniques-batiment/performance-environnementale-batiments/reduction-carbone/dossier/reemploi-materiaux-produits-construction-dans-batiment), par la Fédération Française du Bâtiment",
+    "themes": [
+      "building"
+    ],
+    "mainTheme": "building",
+    "programs": [
+      "renovation-energetique"
+    ],
+    "linkedProjects": [],
+    "priority": "330",
     "highlightPriority": null,
     "sectors": [
       "A",

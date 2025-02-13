@@ -1,18 +1,7 @@
-import {
-  ProgramData,
-  ThemeId,
-  ThemeType,
-  ProjectType,
-  EstablishmentFront,
-  FilterItemKeys,
-  type ValueOf,
-  FiltersType,
-  ProjectEligibility
-} from '@/types'
+import { ProgramData, ThemeId, ThemeType, ProjectType, EstablishmentFront, type ValueOf, FiltersType, ProjectEligibility } from '@/types'
 import { Theme } from '@/tools/theme'
 import { ComputedRef, Ref } from 'vue'
 import { CompanyData } from '@/tools/companyData'
-import { useFiltersStore } from '@/stores/filters'
 
 export default class ProjectFilter {
   static readonly filter = (projects: Ref<ProjectType[] | undefined>, theme: ComputedRef<ThemeId | undefined>) => {
@@ -20,12 +9,17 @@ export default class ProjectFilter {
       if (!projects.value) {
         return undefined
       }
-      let results = projects.value
-      if (theme.value) {
-        results = this.getProjectsByTheme(projects.value, theme.value)
-      }
+
+      const results = this.getProjectsByTheme(projects.value, theme.value ?? undefined)
+
+      const companySelected = CompanyData.isCompanySelected()
+
+      // let results = projects.value
+      // if (theme.value) {
+      //   results = this.getProjectsByTheme(projects.value, theme.value)
+      // }
       return results.filter((project: ProjectType) => {
-        return this.byCompanyData(project, useFiltersStore().filters[FilterItemKeys.companyData])
+        return this.byCompanyData(project, companySelected)
       })
     })
   }
@@ -52,10 +46,6 @@ export default class ProjectFilter {
   }
 
   static byCompanyData(project: ProjectType, companySelected: boolean) {
-    if (!this.isValidFilterValue(companySelected)) {
-      return true
-    }
-
     if (companySelected) {
       return ProjectEligibility.isEligible(project, (CompanyData.company as EstablishmentFront)?.codeNAF1)
     }
