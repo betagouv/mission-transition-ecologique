@@ -29,7 +29,7 @@
               v-if="showCounter"
               class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-lg-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic"
             >
-              <TeeCounterResult :to-count="filteredProjects" />
+              <TeeCounterResult :to-count="sortedProjects" />
             </div>
             <div
               v-if="hasFullRegisteredData && props.showCompanyFilter"
@@ -37,7 +37,7 @@
             >
               <ProjectModalFilter />
             </div>
-            <SimpleProjectList :project-list="filteredProjects" />
+            <SimpleProjectList :project-list="sortedProjects" />
           </div>
           <div class="fr-col-12 fr-mt-3v fr-mb-10v">
             <OtherProject />
@@ -57,6 +57,7 @@ import { computed } from 'vue'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
 import { CompanyData } from '@/tools/companyData'
+import ProjectSorter from '@/tools/project/projectSorter'
 
 interface Props {
   showTitleBanner?: boolean
@@ -91,6 +92,13 @@ const description = 'Accédez à la liste des projets de transition écologique 
 const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
+
+const sortedProjects = computed(() => {
+  if (!filteredProjects.value) {
+    return []
+  }
+  return useFiltersStore().getCompanyDataSelected().value ? ProjectSorter.sortBySector(filteredProjects.value) : filteredProjects.value
+})
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0
 })
