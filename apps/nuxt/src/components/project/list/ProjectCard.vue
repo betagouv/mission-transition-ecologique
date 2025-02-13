@@ -33,18 +33,6 @@
         />
       </div>
     </template>
-    <template
-      v-if="project.countEligiblePrograms"
-      #end-details
-    >
-      <div class="fr-mb-8v">
-        <DsfrBadge
-          :label="eligibleProgramsTag"
-          :no-icon="true"
-          class="fr-bg--green--lightness fr-text--black"
-        />
-      </div>
-    </template>
   </DsfrCard>
 </template>
 

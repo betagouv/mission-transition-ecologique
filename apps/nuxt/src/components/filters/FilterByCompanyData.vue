@@ -8,7 +8,7 @@
     }"
   >
     <DsfrCheckbox
-      v-model="isCompanyDataSelected"
+      v-model="companyDataSelected"
       :value="`selected-company-${companyName}`"
       small
       name="companyFilter"
@@ -90,6 +90,10 @@ type CompanyFilterDetailProps = {
 }
 const navigation = new Navigation()
 const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
+const companyDataSelected = computed<boolean>({
+  get: () => useFiltersStore().companyDataSelected,
+  set: (value: boolean) => useFiltersStore().setCompanyDataSelected(value)
+})
 
 const registeredData = CompanyData.dataRef
 const hasRegisteredData = CompanyData.isDataFull()

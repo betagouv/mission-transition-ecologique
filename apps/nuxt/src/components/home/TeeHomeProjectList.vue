@@ -43,7 +43,6 @@ onServerPrefetch(async () => {
 onNuxtReady(async () => {
   CompanyData.isDataFull().value // call to initialize computed reactivity variable
   await new ProjectManager().getProjects()
-  // await new ProjectManager().getFilteredProjects()
 })
 
 const theme = Theme.getThemeFromSelectedTheme()
@@ -56,17 +55,12 @@ const sortedProjects = computed(() => {
     return []
   }
 
-  if ((!theme.value || !Theme.isTheme(theme.value)) && !useCompanyData().isDataFull) {
+  if ((!theme.value || !Theme.isTheme(theme.value)) && !useCompanyDataStore().isDataFull) {
     return ProjectSorter.highlightSort(filteredProjects.value)
   }
 
   return filteredProjects.value
 })
-// const projectList = computed(() => {
-//   const sortedProjects = useCompanyData().isDataFull ? ProjectSorter.sortBySector(filteredProjects) : ProjectSorter.sort(filteredProjects)
-//   return props.limit ? sortedProjects.value.slice(0, props.limit) : sortedProjects.value
-// })
-
 const projectList = computed(() => {
   return props.limit ? sortedProjects.value.slice(0, props.limit) : sortedProjects.value
 })

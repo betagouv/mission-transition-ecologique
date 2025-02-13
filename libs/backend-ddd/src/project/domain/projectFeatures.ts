@@ -1,5 +1,5 @@
 import { QuestionnaireData } from '@tee/common'
-import { ProjectEligibility, ProjectType } from '@tee/data'
+import { ProjectType } from '@tee/data'
 import { projects } from '@tee/data/static'
 import { ProjectEligibilityInterface, ProjectSorterInterface } from './spi'
 
@@ -21,42 +21,16 @@ export default class ProjectFeatures {
   }
 
   public getFiltered(questionnaireData: QuestionnaireData): ProjectType[] {
-    this._sort(projects)
-    if (!questionnaireData.codeNAF1 || !questionnaireData.onlyEligible) {
+    this._projectSorter.sortByPriority(projects)
+    if (!questionnaireData.codeNAF1 || questionnaireData.onlyEligible === false) {
+      console.log('Return raw projects')
       return projects
     }
-    return projects.filter((project) => ProjectEligibility.isEligible(project, questionnaireData.codeNAF1 as string))
-  }
-
-  public getFiltered(projectQuery: ProjectFilterQuery): ProjectType[] {
-  //   if (projectQuery.sortBy === ProjectSortBy.PRIORITY || !projectQuery.sortBy) {
-  //     this._sortByPriority(projects)
-  //   }
-  //
-  //   if (!projectQuery.codeNAF1) {
-  //     return projects
-  //   }
-  //
-  //   const filteredProjects = projects.filter((project) => {
-  //     return projectQuery.onlyEligible === false ? true : this._projectEligibility.isEligible(project, projectQuery.codeNAF1 as string)
-  //   })
-  //
-  //   if (projectQuery.sortBy === ProjectSortBy.SECTOR || !projectQuery.sortBy) {
-  //     return this._projectSorter.sortBySector(filteredProjects)
-  //   }
-  //
-  //   return filteredProjects
-  // }
-
-  // private _sortByPriority(projects: ProjectType[]) {
-  //   projects.sort((a, b) => {
-  //     return a.priority - b.priority
-  //   })
-  // }
-
-  private _sort(projects: ProjectType[]) {
-    projects.sort((a, b) => {
-      return a.priority - b.priority
+    const eligibleProjects = projects.filter((project) => {
+      return this._projectEligibility.isEligible(project, questionnaireData.codeNAF1 as string)
     })
+
+    console.log('Return sorted projects')
+    return this._projectSorter.sortBySector(eligibleProjects)
   }
 }

@@ -1,4 +1,4 @@
-import { ProgramData, ThemeId, ThemeType, ProjectType, EstablishmentFront, type ValueOf, FiltersType, ProjectEligibility } from '@/types'
+import { ThemeId, ThemeType, ProjectType, EstablishmentFront, type ValueOf, FiltersType, ProjectEligibility } from '@/types'
 import { Theme } from '@/tools/theme'
 import { ComputedRef, Ref } from 'vue'
 import { CompanyData } from '@/tools/companyData'

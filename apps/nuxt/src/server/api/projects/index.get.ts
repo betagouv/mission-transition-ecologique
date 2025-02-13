@@ -1,15 +1,11 @@
 import { QuestionnaireData, serverQuestionnaireDataSchema } from '@tee/common'
 import { ProgramType } from '@tee/data/server'
-// import { ProjectFilterQuery, serverProjectFilterQuerySchema } from '@tee/common'
 import { defineEventHandler, H3Event } from 'h3'
 import { Monitor, ProjectService } from '@tee/backend-ddd'
 
 export default defineEventHandler(async (event) => {
   const questionnaireData = await getValidatedQuery(event, serverQuestionnaireDataSchema.parse)
   return projectsCached(event, questionnaireData)
-  // const queries = await getValidatedQuery(event, serverProjectFilterQuerySchema.parse)
-  //
-  // return projectsCached(event, queries)
 })
 
 const projectsCached = cachedFunction(

@@ -33,10 +33,6 @@ export const useFiltersStore = defineStore('filters', () => {
     return companyDataSelected
   }
 
-  function isCompanyDataSelected() {
-    return filters.value[FilterItemKeys.companyData]
-  }
-
   function resetFilters() {
     filters.value = {
       [FilterItemKeys.typeAid]: [],
@@ -64,7 +60,6 @@ export const useFiltersStore = defineStore('filters', () => {
     companyDataSelected,
     setCompanyDataSelected,
     getCompanyDataSelected,
-    isCompanyDataSelected,
     resetFilters,
     resetFilter
   }

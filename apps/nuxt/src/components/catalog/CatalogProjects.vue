@@ -37,7 +37,7 @@
             >
               <ProjectModalFilter />
             </div>
-            <SimpleProjectList :project-list="sortedProjects" />
+            <SimpleProjectList :project-list="filteredProjects" />
           </div>
           <div class="fr-col-12 fr-mt-3v fr-mb-10v">
             <OtherProject />
@@ -57,8 +57,6 @@ import { computed } from 'vue'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
 import { CompanyData } from '@/tools/companyData'
-import { ProjectSortBy } from '@tee/common'
-import { ProjectSorter, ProjectType } from '@tee/data'
 
 interface Props {
   showTitleBanner?: boolean
@@ -79,11 +77,12 @@ const { projects, hasError } = storeToRefs(useProjectStore())
 const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyDataStore())
 
 onServerPrefetch(async () => {
-  await new ProjectManager().getFilteredProjects(false)
+  await new ProjectManager().getProjects()
 })
 
 onNuxtReady(async () => {
-  await new ProjectManager().getFilteredProjects(false, ProjectSortBy.PRIORITY)
+  CompanyData.isDataFull().value // call to initialize computed reactivity variable
+  await new ProjectManager().getProjects()
 })
 
 const title = 'Les projets de transition écologique'
@@ -92,11 +91,6 @@ const description = 'Accédez à la liste des projets de transition écologique 
 const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
-const sortedProjects = computed(() => {
-  return useFiltersStore().getCompanyDataSelected()
-    ? new ProjectSorter().sortBySector(filteredProjects.value as ProjectType[])
-    : filteredProjects.value
-})
 
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0

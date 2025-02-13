@@ -1,4 +1,4 @@
-import { ProgramType, ProjectType } from '@tee/data'
+import { ProgramType, ProjectEligibility, ProjectSorter, ProjectType } from '@tee/data'
 // import { ProjectEligibility, ProjectSorter, ProjectType } from '@tee/data'
 import ProjectFeatures from '../domain/projectFeatures'
 import { QuestionnaireData } from '@tee/common'

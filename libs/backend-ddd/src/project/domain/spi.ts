@@ -5,5 +5,7 @@ export interface ProjectEligibilityInterface {
 }
 
 export interface ProjectSorterInterface {
+  sortByPriority(projects: ProjectType[]): ProjectType[]
+
   sortBySector(projects: ProjectType[]): ProjectType[]
 }
