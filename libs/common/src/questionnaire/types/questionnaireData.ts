@@ -1,5 +1,4 @@
 import { StructureSize, BuildingProperty, WasteSortingStatus, WasteManagementStatus, YesNo, MobilityStatus } from './types'
-
 import { ThemeId } from '@tee/data'
 
 export enum QuestionnaireDataEnum {

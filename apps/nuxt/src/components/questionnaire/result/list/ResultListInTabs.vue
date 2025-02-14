@@ -66,7 +66,6 @@ const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
 const { projects, hasError: hasErrorProjects } = storeToRefs(useProjectStore())
 const { programs, hasError: hasErrorPrograms } = storeToRefs(programStore)
-console.log(programs.value)
 const { tabSelectedOnList } = storeToRefs(navigationStore)
 
 onNuxtReady(async () => {
@@ -90,7 +89,7 @@ const titles: TeeDsfrTabsProps['tabTitles'] = [
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })
-console.log(filteredPrograms.value)
+
 const filteredProjects = computed(() => {
   if (!projects.value) {
     return undefined

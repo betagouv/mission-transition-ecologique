@@ -9,15 +9,13 @@ export default class ProjectFilter {
       if (!projects.value) {
         return undefined
       }
-
-      const results = this.getProjectsByTheme(projects.value, theme.value ?? undefined)
-
+      let results = projects.value
       const companySelected = CompanyData.isCompanySelected()
 
-      // let results = projects.value
-      // if (theme.value) {
-      //   results = this.getProjectsByTheme(projects.value, theme.value)
-      // }
+      if (theme.value) {
+        results = this.getProjectsByTheme(projects.value, theme.value)
+      }
+
       return results.filter((project: ProjectType) => {
         return this.byCompanyData(project, companySelected)
       })

@@ -57,10 +57,6 @@ export default class UsedTrack {
     )
   }
 
-  static hasPriorityTheme(): boolean {
-    return this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.priority_objective) !== undefined
-  }
-
   static hasMobilityTheme(): boolean {
     return QuestionnaireChecker.isSustainableMobility(
       this.findInQuestionnaireData(TrackId.MobilityWishes, QuestionnaireDataEnum.sustainable_mobility_objective)
