@@ -46,7 +46,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
   })
 
   const currentIsFirst = computed<boolean>(() => {
-    return current.value?.id === TrackId.Siret
+    return current.value?.id === TrackId.Questionnaire
   })
 
   const usedTracksIds = computed<TrackId[]>(() => {

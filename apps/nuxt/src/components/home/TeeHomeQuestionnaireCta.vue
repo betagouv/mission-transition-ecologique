@@ -3,7 +3,7 @@
     :title="title"
     :description="description"
     :no-arrow="true"
-    :buttons="[action]"
+    :buttons="buttons"
     class="fr-bg--blue-france--lightness fr-radius-a--1v fr-card--shadow fr-text-center"
   >
   </DsfrCard>
@@ -11,20 +11,24 @@
 <script setup lang="ts">
 import { DsfrCard } from '@gouvminint/vue-dsfr'
 import { RouteName } from '@/types'
-import { useRouter } from 'vue-router'
+import { DsfrButtonProps } from '@gouvminint/vue-dsfr/types/components/DsfrButton/DsfrButton.vue'
 interface Props {
   title: string
   description: string
 }
 
-const action = {
-  label: "J'identifie mes projets prioritaires",
-  secondary: true,
-  onClick: (event: MouseEvent) => {
-    event.preventDefault()
-    getRouteToQuestionnaire()
+const buttons: DsfrButtonProps[] = [
+  {
+    label: "J'identifie mes projets prioritaires",
+    secondary: true,
+    onClick: (event: MouseEvent) => {
+      event.preventDefault()
+      toQuestionnaire()
+    }
   }
-}
+]
+
+const router = useRouter()
 
 withDefaults(defineProps<Props>(), {
   title: 'Vous ne savez pas par où commencer ?',
@@ -33,11 +37,17 @@ withDefaults(defineProps<Props>(), {
     ' et accédez à des propositions d’actions et de financements pour vous aider à réduire votre impact environnemental.'
 })
 
-const getRouteToQuestionnaire = async () => {
-  return await useRouter().push({
+const toQuestionnaire = async () => {
+  return await router.push({
     name: RouteName.QuestionnaireStart
   })
 }
+
+// const launchQuestionnaire = async () => {
+//   usedTrackStore.resetUsedTracks()
+//   await usedTrackStore.updateByTrackIdAndValue(TrackId.QuestionnaireRoute, QuestionnaireRoute.SpecificGoal)
+//   await router.push(navigationStore.routeByTrackId(TrackId.Siret))
+// }
 </script>
 <style scoped lang="scss">
 @use '@/assets/scss/setting';

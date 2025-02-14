@@ -4,6 +4,7 @@ export enum TrackId {
   EnergyReductionPriority = 'energie',
   Goals = 'objectifs',
   MobilityWishes = 'mobilite',
+  Questionnaire = 'questionnaire',
   Results = 'resultats',
   Sectors = 'activite',
   Siret = 'siret',
