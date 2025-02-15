@@ -1,10 +1,12 @@
 import os
 import psycopg2
 from psycopg2 import pool
+from dotenv import load_dotenv
 
 
 class DBManager:
     def __init__(self):
+        load_dotenv()
         self.pool = psycopg2.pool.SimpleConnectionPool(
             1,  # Min connections in the pool
             20,  # Max connections in the pool
