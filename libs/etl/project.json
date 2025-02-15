@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "projects": {
+    "etl": {
+      "root": "libs/etl",
+      "targets": {
+        "install": {
+          "executor": "nx:run-commands",
+          "options": {
+            "command": "pip install -r requirements.txt"
+          }
+        },
+        "run": {
+          "executor": "nx:run-commands",
+          "options": {
+            "command": "python -m etl"
+          }
+        }
+      }
+    }
+  }
+}
