@@ -23,15 +23,15 @@ useSeoMeta(MetaSeo.default())
 
 <template>
   <div>
+    <TeeHeader />
+    <div>
+      <slot />
+    </div>
+    <TeeFooter />
     <ClientOnly>
       <TeeDsfrConsent />
       <TeeDsfrPersonalizeConsent />
       <TeeRegisterModal v-if="navigationStore.hasRegisterModal" />
     </ClientOnly>
-    <TeeHeader />
-
-    <slot />
-
-    <TeeFooter />
   </div>
 </template>

@@ -9,8 +9,7 @@
     <template #catalog-content>
       <div class="fr-col-2 fr-col-hidden fr-col-unhidden-lg">
         <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
-          <div class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w">Filtres</div>
-          <ProgramFiltersAccordion />
+          <ProgramFiltersAccordion with-title />
         </div>
       </div>
       <div
