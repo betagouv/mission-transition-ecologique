@@ -8869,6 +8869,7 @@
     "titre": "Entreprises engagées pour la nature",
     "promesse": "Initiez un plan d'action pour la biodiversité",
     "description": "Le programme \"Entreprises engagées pour la nature\" de l'Office français de la biodiversité vous accompagne pour mettre faire émerger et valoriser des plans d'actions en faveur de la biodiversité. Grâce à un parcours en trois étapes – adhésion, engagement, et évaluation – vous pourrez mesurer l'impact de votre activité sur la nature et mettre en œuvre des actions concrètes, mesurables et ayant un effet positif sur la biodiversité. Les entreprises engagées pour la nature peuvent valoriser leur \"tampon\" auprès du grand public et bénéficient d'une mise en lumière par l'Office français de la biodiversité lors de salons dédiés au monde de l'entreprise et de la biodiversité.",
+    "début de validité": "15/09/2019",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Office français de la biodiversité",
     "url": "https://engagespourlanature.ofb.fr/entreprises",
@@ -9028,9 +9029,14 @@
       "date du jour": null,
       "entreprise . est ciblée": {
         "toutes ces conditions": [
+          "est éligible",
           "est dans un secteur d'activité ciblé",
           "a un objectif ciblé"
         ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "dispositif . début de validité <= date du jour",
+        "valeur": "oui"
       },
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [

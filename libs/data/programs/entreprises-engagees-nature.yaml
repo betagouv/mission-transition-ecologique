@@ -10,6 +10,7 @@ description: >-
   nature peuvent valoriser leur "tampon" auprès du grand public et bénéficient
   d'une mise en lumière par l'Office français de la biodiversité lors de salons
   dédiés au monde de l'entreprise et de la biodiversité.
+début de validité: 15/09/2019
 illustration: images/TEE_ampoule.png
 opérateur de contact: Office français de la biodiversité
 url: https://engagespourlanature.ofb.fr/entreprises
@@ -72,8 +73,12 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: dispositif . début de validité <= date du jour
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
