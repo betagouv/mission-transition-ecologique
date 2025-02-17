@@ -57,6 +57,7 @@
           />
           <TeeListNoResults
             v-if="showNoResultsComponent"
+            class="fr-col-10 fr-col--middle"
             :has-error="hasError && !hasSpinner"
             message="Aucune idée d'action n'a pu être identifiée avec les critères choisis..."
             :count-items="countItems"

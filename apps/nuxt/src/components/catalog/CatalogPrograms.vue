@@ -18,7 +18,7 @@
         :class="{
           'fr-col-md-10': !hasError,
           'fr-col-md-12': hasError,
-          'fr-hidden': hasError || countPrograms === 0
+          'fr-hidden-lg': hasError || countPrograms === 0
         }"
       >
         <ProgramList :filtered-programs="filteredPrograms" />
