@@ -9,13 +9,14 @@
     >
       <span
         v-if="hint"
-        class="fr-hint-text fr-text--white fr-col-justify--left fr-mb-2v"
+        :class="`${backgroundColor === Color.white ? 'fr-text--white' : ''}`"
+        class="fr-hint-text fr-col-justify--left fr-mb-2v"
       >
         {{ hint }}
       </span>
       <div
         class="fr-search-bar"
-        :class="`${isLoading ? 'fr-search-bar--loading' : ''} fr-search-bar--${color}`"
+        :class="`${isLoading ? 'fr-search-bar--loading' : ''} fr-search-bar--${color} ${isLarge ? 'fr-search-bar-lg' : ''}`"
         role="search"
       >
         <DsfrInput
@@ -54,16 +55,20 @@ import { Color } from '@/types'
 interface Props {
   errorMsg: string | undefined
   hint?: string
+  deactivateClickOutside?: boolean
   isLoading: boolean
+  isLarge?: boolean
   name: string
   backgroundColor?: Color
   searchColor?: Color
   color: Color
   placeholder?: string | undefined
 }
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   hint: '',
   backgroundColor: Color.white,
+  isLarge: false,
+  deactivateClickOutside: false,
   searchColor: Color.blueFrance,
   placeholder: ''
 })
@@ -96,7 +101,11 @@ watch(debouncedInputModel, (newValue) => {
   }
 })
 
-onClickOutside(teeSearchBar, () => resetSearch())
+onClickOutside(teeSearchBar, () => {
+  if (!props.deactivateClickOutside) {
+    resetSearch()
+  }
+})
 </script>
 <style lang="scss" scoped>
 .search-bar {

@@ -7,6 +7,8 @@
     :is-loading="isLoading"
     name="siret-questionnaire"
     :error-msg="errorMessage"
+    :deactivate-click-outside="true"
+    :is-large="true"
     :hint="hint"
     :results="requestResponses.establishments"
     @reset-search="resetSelection"
