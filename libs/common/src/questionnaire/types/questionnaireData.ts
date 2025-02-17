@@ -18,7 +18,7 @@ export interface QuestionnaireData {
 
   structure_size?: StructureSize // optional for testing !
   priority_objective?: ThemeId
-
+  is_questionnaire?: boolean
   building_property?: BuildingProperty
   sustainable_mobility_objective?: MobilityStatus
   wastes_management_objective?: WasteManagementStatus
