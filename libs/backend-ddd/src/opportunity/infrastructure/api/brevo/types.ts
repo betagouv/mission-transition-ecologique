@@ -80,7 +80,6 @@ export interface BrevoDealItem {
     deal_stage: string
     message: string
     operateur_de_contact: string
-    parcours: string
     pipeline: string
     stage_updated_at: string
   }
@@ -100,7 +99,6 @@ export interface BrevoDealItem {
     deal_stage: string
     message: string
     operateur_de_contact: string
-    parcours: string
     pipeline: string
     stage_updated_at: string
   }
