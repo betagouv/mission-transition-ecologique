@@ -40,14 +40,15 @@
   </div>
 </template>
 <script setup lang="ts">
-import { CompanyData } from '@/tools/companyData'
+import { useCompanyDataStore } from '@/stores/companyData'
 import { RouteName } from '@/types/routeType'
 import Navigation from '@/tools/navigation'
 
 const router = useRouter()
+const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const toQuestionnaire = async () => {
-  if (CompanyData.hasCompanyData()) {
+  if (isDataFull.value) {
     await router.push({
       name: RouteName.CatalogProjects
     })
