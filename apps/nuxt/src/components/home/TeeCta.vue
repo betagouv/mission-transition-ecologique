@@ -15,18 +15,21 @@
                 <span class="fr-display-sm--block">de votre entreprise</span>
               </h1>
               <p class="fr-text--lg fr-mb-0 fr-col-12 fr-col-lg-9 fr-pr-2v">
-                Identifiez facilement les aides publiques adaptées à votre entreprise pour concrétiser vos projets de transition écologique.
+                Identifiez facilement les aides publiques adaptées
+                <span class="fr-display-lg--block">à votre entreprise pour concrétiser vos projets</span>
+                <span class="fr-display-lg--block"> de transition écologique.</span>
               </p>
             </div>
           </div>
         </div>
-        <div class="fr-col-xl-7 fr-col-lg-8 fr-col-md-10 fr-col-sm-12 fr-col-xs-12 tee-home-cta-btn">
+        <div class="fr-col-8 fr-col-xs-12 tee-home-cta-btn">
           <TeeDsfrButton
-            label="Je trouve les aides pour mon projet"
             size="lg"
-            class="inline-flex fr-px-20v fr-px-md-8v fr-text--yellow fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center"
+            class="inline-flex fr-px-md-8v fr-text--yellow fr-text--bold fr-text-line-height--6v fr-text-xl fr-btn-align-center"
             @click="toQuestionnaire()"
-          />
+          >
+            <template #default> Je trouve les aides <span class="fr-display--block fr-display-lg--inline">pour mon projet</span> </template>
+          </TeeDsfrButton>
         </div>
       </div>
     </div>

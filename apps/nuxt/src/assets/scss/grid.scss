@@ -50,8 +50,11 @@
     .fr-display {
       &#{$modifier} {
         &--block {
-          display: block
-        } 
+          display: block;
+        }
+        &--inline {
+          display: inline;
+        }
       } 
     } 
   }
