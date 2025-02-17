@@ -1,16 +1,37 @@
 import { ProjectType as ProjectType } from '@/types'
-import { ComputedRef } from 'vue'
 
 export default class ProjectSorter {
-  static readonly sort = (projects: ComputedRef<ProjectType[] | undefined>): ComputedRef<ProjectType[]> => {
-    return computed(() => {
-      if (!projects.value) {
-        return []
+  static readonly byHighlight = (projects: ProjectType[]): ProjectType[] => {
+    return projects.slice().sort((a, b) => {
+      if (!a.highlightPriority) {
+        return 1
       }
-
-      return projects.value.slice().sort((a, b) => {
-        return a.priority - b.priority
-      })
+      if (!b.highlightPriority) {
+        return -1
+      }
+      return a.highlightPriority - b.highlightPriority
     })
+  }
+
+  static readonly bySector = (projects: ProjectType[]) => {
+    return projects.sort((a, b) => {
+      switch (true) {
+        case a.sectors.length === b.sectors.length:
+          return 0
+        case a.sectors.length <= 5 && a.sectors.length < b.sectors.length:
+          return -1
+        case b.sectors.length <= 5 && b.sectors.length < a.sectors.length:
+          return 1
+        default:
+          return 0
+      }
+    })
+  }
+
+  static readonly byHighlightAndSector = (projects: ProjectType[]): ProjectType[] => {
+    const sectorProjects = projects.filter((project) => project.sectors.length <= 5).sort((a, b) => a.sectors.length - b.sectors.length)
+    const highlightSorted = ProjectSorter.byHighlight(projects.filter((project) => project.sectors.length > 5))
+
+    return [...sectorProjects, ...highlightSorted]
   }
 }

@@ -1,10 +1,11 @@
-export type ProgramFiltersType = {
+import { ThemeType } from '@/types'
+
+export type FiltersType = {
+  [FilterItemKeys.themeType]: string | ThemeType
   [FilterItemKeys.typeAid]: string[]
-  [FilterItemKeys.themeType]: string
   [FilterItemKeys.operatorAid]: string[]
   [FilterItemKeys.regionAid]: string[]
-  [FilterItemKeys.companyData]: boolean
-  [key: string]: string | string[] | boolean
+  [key: string]: string | string[] | ThemeType
 }
 
 export enum FilterItemKeys {

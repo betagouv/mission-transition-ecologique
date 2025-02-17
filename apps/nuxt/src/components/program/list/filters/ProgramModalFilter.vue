@@ -1,70 +1,8 @@
 <template>
-  <DsfrButton
-    tertiary
-    no-outline
-    size="sm"
-    @click="open()"
-  >
-    <template #default>
-      <div class="fr-grid-row fr-grid-row--middle">
-        <span>Filtres</span>
-        <span
-          v-if="getFiltersCount"
-          class="fr-filter-count-badge fr-ml-2v"
-        >
-          {{ getFiltersCount }}
-        </span>
-      </div>
-    </template>
-  </DsfrButton>
-  <DsfrModal
-    ref="modal"
-    :opened="opened"
-    title=""
-    size="xl"
-    @close="close()"
-  >
-    <template #default>
-      <div class="fr-h5 fr-text--blue-france fr-text-center">Filtres</div>
+  <ModalFilter>
+    <template #filters-accordion>
       <ProgramFiltersAccordion accordion-class="fr-accordion-bg--blue" />
     </template>
-  </DsfrModal>
+  </ModalFilter>
 </template>
-<script setup lang="ts">
-import { DsfrModal } from '@gouvminint/vue-dsfr'
-import { ref } from 'vue'
-import { ProgramFiltersType } from '@/types'
-import { useProgramStore } from '@/stores/program'
-
-const close = () => {
-  opened.value = false
-}
-
-const opened = ref<boolean>(false)
-
-const open = () => {
-  opened.value = true
-}
-
-const programFilters: ProgramFiltersType = useProgramStore().programFilters
-
-const getFiltersCount = computed(() => {
-  return Object.values(programFilters).reduce((acc, filter) => {
-    if (Array.isArray(filter)) {
-      acc += filter.length
-    }
-    return acc
-  }, 0)
-})
-
-// return (programFilters[filterId] as string[]).length ? `${(programFilters[filterId] as string[]).length}` : ''
-</script>
-<style lang="scss" scoped>
-.fr-modal::after {
-  content: none !important;
-}
-
-:deep(.fr-container-md) {
-  padding: 0 !important;
-}
-</style>
+<script setup lang="ts"></script>

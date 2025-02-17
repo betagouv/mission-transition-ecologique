@@ -3,12 +3,12 @@
     id="company-data-filter-content"
     class="fr-pt-2v fr-pb-0-5v"
     :class="{
-      'fr-bg--green--lightness': programFilters[FilterItemKeys.companyData],
-      'fr-bg--grey--lightness': !programFilters[FilterItemKeys.companyData]
+      'fr-bg--green--lightness': isCompanyDataSelected,
+      'fr-bg--grey--lightness': !isCompanyDataSelected
     }"
   >
     <DsfrCheckbox
-      v-model="programFilters[FilterItemKeys.companyData]"
+      v-model="isCompanyDataSelected"
       :value="`selected-company-${companyName}`"
       small
       name="companyFilter"
@@ -18,7 +18,7 @@
         <span
           class="fr-text--bold fr-text--sm"
           :class="{
-            'fr-text--grey': !programFilters[FilterItemKeys.companyData],
+            'fr-text--grey': !isCompanyDataSelected,
             'fr-text--black': navigation.isQuestionnaireResult(),
             'fr-pl-0-5v fr-pl-2v fr-text-left fr-mb-1v': Breakpoint.isMobile()
           }"
@@ -31,7 +31,7 @@
         v-for="(detail, key) in filterData.details"
         :key="key"
         class="fr-mb-2v"
-        :class="{ 'fr-text--grey': !programFilters[FilterItemKeys.companyData] }"
+        :class="{ 'fr-text--grey': !isCompanyDataSelected }"
       >
         <div class="fr-grid-row">
           <div class="fr-col-hidden-lg">
@@ -50,19 +50,13 @@
             </div>
           </div>
           <div class="fr-hidden fr-unhidden-lg">
-            <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pt-1v">
+            <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pt-1v fr-pl-1v fr-pr-3v">
               <div
-                class="company-filter-icon-large fr-pl-1v"
+                class="company-filter-icon-large"
                 :class="detail.icon"
               />
             </div>
-            <div
-              class="fr-col-9 fr-col-hidden fr-col-unhidden-lg"
-              :class="{
-                'fr-ml-0-5v': Breakpoint.isLargerOrEqual(BreakpointNameType.md) && Breakpoint.isSmallerOrEqual(BreakpointNameType.lg),
-                'fr-ml-1v': Breakpoint.isSmallerOrEqual(BreakpointNameType.md)
-              }"
-            >
+            <div class="fr-col-9 fr-text-left">
               <span class="fr-text--xs">
                 {{ detail.label }}
               </span>
@@ -75,11 +69,11 @@
 </template>
 
 <script setup lang="ts">
-import { useProgramStore } from '@/stores/program'
-import { BreakpointNameType, CompanyDataStorageKey, FilterItemKeys, type ProgramFiltersType, SizeToText, StructureSize } from '@/types'
+import { CompanyDataStorageKey, SizeToText, StructureSize } from '@/types'
 import { CompanyData } from '@/tools/companyData'
 import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
+import { useFiltersStore } from '@/stores/filters'
 
 type CompanyFilterProps = {
   title: ComputedRef<string | undefined>
@@ -95,7 +89,7 @@ type CompanyFilterDetailProps = {
   icon?: string
 }
 const navigation = new Navigation()
-const programFilters: ProgramFiltersType = useProgramStore().programFilters
+const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
 
 const registeredData = CompanyData.dataRef
 const hasRegisteredData = CompanyData.isDataFull()
@@ -115,7 +109,7 @@ const filterData: CompanyFilterProps = {
 watch(
   hasRegisteredData,
   (value) => {
-    programFilters[FilterItemKeys.companyData] = value
+    useFiltersStore().setCompanyDataSelected(value)
   },
   { immediate: true }
 )

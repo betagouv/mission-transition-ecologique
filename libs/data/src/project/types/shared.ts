@@ -6,6 +6,7 @@ export interface ProjectType {
   title: string
   slug: string
   nameTag: string
+  countEligiblePrograms: number
   shortDescription: string
   image: string
   longDescription: string
@@ -15,6 +16,7 @@ export interface ProjectType {
   programs: string[]
   linkedProjects: ProjectId[]
   priority: number
+  highlightPriority: number | null
   sectors: string[]
 }
 

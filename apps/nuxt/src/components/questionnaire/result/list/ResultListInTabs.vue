@@ -15,7 +15,10 @@
       :tab-titles="titles"
     >
       <template #tab-content-header>
-        <ThemeFiltersAndCard id="tab-content-header" />
+        <ResultThemeFiltersAndCard
+          id="tab-content-header"
+          :has-error="hasErrorProjects && hasErrorPrograms"
+        />
       </template>
       <DsfrTabContent
         class="fr-p-0"
@@ -26,8 +29,8 @@
           <TeeSpinner />
         </template>
         <ResultProjectList
-          :filtered-projects="filteredProjects"
-          :has-error="hasError"
+          :filtered-projects="sortedProjects"
+          :has-error="hasErrorProjects"
         />
       </DsfrTabContent>
 
@@ -38,7 +41,7 @@
       >
         <ResultProgramList
           :filtered-programs="filteredPrograms"
-          :has-error="hasError"
+          :has-error="hasErrorPrograms"
         />
       </DsfrTabContent>
     </TeeDsfrTabs>
@@ -57,15 +60,16 @@ import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/tools/theme'
+import ProjectSorter from '@/tools/project/projectSorter'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
-const { projects } = storeToRefs(useProjectStore())
-const { programs, hasError } = storeToRefs(programStore)
+const { projects, hasError: hasErrorProjects } = storeToRefs(useProjectStore())
+const { programs, hasError: hasErrorPrograms } = storeToRefs(programStore)
 const { tabSelectedOnList } = storeToRefs(navigationStore)
 
 onNuxtReady(async () => {
-  await new ProjectManager().getFilteredProjects()
+  await new ProjectManager().getProjects()
   await new ProgramManager().getFiltered()
 })
 
@@ -92,5 +96,13 @@ const filteredProjects = computed(() => {
   }
 
   return ProjectFilter.getProjectsByTheme(projects.value, Theme.getThemeFromSelectedOrPriorityTheme().value)
+})
+
+const sortedProjects = computed(() => {
+  if (!filteredProjects.value) {
+    return []
+  }
+
+  return ProjectSorter.bySector(filteredProjects.value)
 })
 </script>

@@ -15,7 +15,7 @@ import { RouteName } from '@/types/routeType'
 
 definePageMeta({
   name: RouteName.QuestionnaireStart,
-  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetProgramFilters]
+  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
 })
 
 defineRouteRules({

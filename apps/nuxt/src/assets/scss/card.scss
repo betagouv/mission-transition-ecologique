@@ -125,6 +125,12 @@
     }
   }
 
+  &.project-card {
+    .fr-card__content {
+      padding-top: 1rem !important;
+    } 
+  } 
+
   .fr-badge--success {
     background-color: setting.$green;
     color: setting.$white
@@ -132,16 +138,18 @@
 
   @each $color, $properties in setting.$colors {
     &--#{$color} {
-      @if meta.type-of($properties) == map {
-        background-color: map.get($properties, "color") !important;
-        color: map.get($properties, "color-with-background") !important;
-      }
-
-      .fr-card__title {
+      @if $color != "grey" {
         @if meta.type-of($properties) == map {
+          background-color: map.get($properties, "color") !important;
           color: map.get($properties, "color-with-background") !important;
-        } @else {
-          color: setting.$text-grey;
+        }
+
+        .fr-card__title {
+          @if meta.type-of($properties) == map {
+            color: map.get($properties, "color-with-background") !important;
+          } @else {
+            color: setting.$text-grey;
+          }
         }
       }
     }
