@@ -3,6 +3,7 @@ import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { ProjectType } from '@tee/data'
 import { ComputedRef } from 'vue'
 import { useFiltersStore } from '@/stores/filters'
+import Navigation from './navigation'
 
 export class Theme {
   static themes: ThemeType[] = [
@@ -89,7 +90,7 @@ export class Theme {
 
   static getTags(): ThemeType[] {
     const tags = []
-
+    const navigation = new Navigation()
     UsedTrack.hasEnergyTheme() ? tags.push(this.getById(ThemeId.Energy) as ThemeType) : undefined
     UsedTrack.hasBuildingProperty() ? tags.push(this.getById(ThemeId.Building) as ThemeType) : undefined
     UsedTrack.hasMobilityTheme() ? tags.push(this.getById(ThemeId.Mobility) as ThemeType) : undefined
@@ -99,6 +100,9 @@ export class Theme {
     tags.push(this.getById(ThemeId.RH) as ThemeType)
     UsedTrack.hasEnvironmentalImpactTheme() ? tags.push(this.getById(ThemeId.Environmental) as ThemeType) : undefined
 
+    if (navigation.isCatalog() || navigation.isHomepage()) {
+      tags.push(this.getById(ThemeId.Biodiversity) as ThemeType)
+    }
     return tags
   }
 
