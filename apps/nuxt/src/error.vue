@@ -14,7 +14,7 @@
           />
           <ContactButton v-else />
         </div>
-        <div class="fr-col-12 fr-col-md-3 fr-col-offset-md-1 fr-px-6w fr-px-md-0 fr-py-0">
+        <div class="fr-col-12 fr-col-sm-6 fr-col-md-3 fr-col-offset-md-1 fr-px-6w fr-px-md-0 fr-py-0">
           <img
             class="fr-footer__logo fr-responsive-img"
             src="/images/tracks/no-results.png"
