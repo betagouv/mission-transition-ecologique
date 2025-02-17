@@ -12,8 +12,25 @@
             République
             <br />Française
           </p>
+          <a
+            class="fr-footer__brand-link"
+            href="/"
+            title="ADEME"
+          >
+            <img
+              class="fr-footer__logo"
+              src="/images/logos/ademe.svg"
+              alt="logo de l'ADEME - Agence de de la Transition Écologique"
+            />
+            <!-- L'alternative de l'image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l'image -->
+          </a>
         </div>
         <div class="fr-footer__content fr-col-lg-9">
+          <p class="fr-footer__content-desc">
+            Notre mission : accompagner les TPE et PME dans leur transition écologique en leur donnant les moyens d’identifier leurs projets
+            prioritaires, d’accéder aux aides publiques adaptées à leur entreprise et de mobiliser les conseillers pour concrétiser leurs
+            démarches.
+          </p>
           <ul class="fr-footer__content-list">
             <li
               v-for="link in gouvLinks"
@@ -49,6 +66,7 @@
               />
             </a>
           </div>
+
           <div class="fr-footer__partners-sub">
             <ul>
               <li
