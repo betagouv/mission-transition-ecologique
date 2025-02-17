@@ -32,7 +32,7 @@ import { ProjectType } from '@tee/data'
 import { useProjectStore } from '@/stores/project'
 import { useNavigationStore } from '@/stores/navigation'
 
-await new ProjectManager().getFilteredProjects()
+await new ProjectManager().getProjects()
 
 const currentTrack = useTrackStore().current
 const emit = defineEmits(['updateSelection'])

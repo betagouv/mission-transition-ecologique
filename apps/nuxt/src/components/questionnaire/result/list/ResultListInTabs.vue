@@ -29,7 +29,7 @@
           <TeeSpinner />
         </template>
         <ResultProjectList
-          :filtered-projects="filteredProjects"
+          :filtered-projects="sortedProjects"
           :has-error="hasErrorProjects"
         />
       </DsfrTabContent>
@@ -60,6 +60,7 @@ import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/tools/theme'
+import ProjectSorter from '@/tools/project/projectSorter'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -68,7 +69,7 @@ const { programs, hasError: hasErrorPrograms } = storeToRefs(programStore)
 const { tabSelectedOnList } = storeToRefs(navigationStore)
 
 onNuxtReady(async () => {
-  await new ProjectManager().getFilteredProjects()
+  await new ProjectManager().getProjects()
   await new ProgramManager().getFiltered()
 })
 
@@ -95,5 +96,13 @@ const filteredProjects = computed(() => {
   }
 
   return ProjectFilter.getProjectsByTheme(projects.value, Theme.getThemeFromSelectedOrPriorityTheme().value)
+})
+
+const sortedProjects = computed(() => {
+  if (!filteredProjects.value) {
+    return []
+  }
+
+  return ProjectSorter.bySector(filteredProjects.value)
 })
 </script>

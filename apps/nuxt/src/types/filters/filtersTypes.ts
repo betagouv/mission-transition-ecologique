@@ -5,8 +5,7 @@ export type FiltersType = {
   [FilterItemKeys.typeAid]: string[]
   [FilterItemKeys.operatorAid]: string[]
   [FilterItemKeys.regionAid]: string[]
-  [FilterItemKeys.companyData]: boolean
-  [key: string]: string | string[] | boolean | ThemeType
+  [key: string]: string | string[] | ThemeType
 }
 
 export enum FilterItemKeys {
