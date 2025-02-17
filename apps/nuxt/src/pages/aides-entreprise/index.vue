@@ -5,7 +5,7 @@
         <div class="fr-container fr-grid-row fr-px-md-0">
           <div
             class="fr-col-12 fr-mt-3v fr-text-center fr-text-left-md"
-            :class="lineClassByError"
+            :class="lineClassBySideMenu"
           >
             <h1 class="fr-text--blue-france">{{ title }}</h1>
           </div>
@@ -13,7 +13,7 @@
         <div
           v-if="!hasError"
           class="fr-col-12 fr-mt-3v"
-          :class="lineClassByError"
+          :class="lineClassBySideMenu"
         >
           <ThemeFilter />
         </div>
@@ -24,7 +24,7 @@
       >
         <div
           class="fr-col-12"
-          :class="lineClassByError"
+          :class="lineClassBySideMenu"
         >
           <ThemeHeaderCard
             v-if="hasThemeCard"
@@ -49,7 +49,7 @@
       <TeeSpinner class="fr-my-16w" />
     </div>
     <TeeListNoResults
-      v-else-if="showNoResultsComponent"
+      v-else-if="hasNoResultsOrError"
       :has-error="hasError && !hasSpinner"
       message="Aucune idée d'action n'a pu être identifiée avec les critères choisis..."
       :count-items="countPrograms"
@@ -100,8 +100,12 @@ onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
 })
 
-const lineClassByError = computed(() => {
+const hasSideMenu = computed(() => {
   return hasError.value
+})
+
+const lineClassBySideMenu = computed(() => {
+  return hasSideMenu.value
     ? ''
     : 'fr-col-offset-md-3 fr-col-md-9 fr-col-justify-md--left fr-col-offset-lg-2 fr-col-lg-10 fr-col-justify--center'
 })
@@ -118,7 +122,7 @@ const countPrograms = computed(() => {
   return filteredPrograms.value?.length || 0
 })
 
-const showNoResultsComponent = computed(() => {
-  return hasSpinner.value || hasError.value || !countPrograms.value
+const hasNoResultsOrError = computed(() => {
+  return !hasSpinner.value && (hasError.value || !countPrograms.value)
 })
 </script>

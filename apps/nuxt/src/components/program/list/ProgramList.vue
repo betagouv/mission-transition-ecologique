@@ -1,13 +1,11 @@
 <template>
-  <div class="fr-grid-row fr-grid-row--center fr-mt-2v fr-mt-md-3v">
-    <div class="fr-pl-md-0 fr-col-3 fr-col-md-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic">
+  <LayoutList>
+    <template #counter>
       <TeeCounterResult :to-count="filteredPrograms" />
-    </div>
-    <div class="fr-col-9 fr-col-hidden-md fr-text-right">
+    </template>
+    <template #modalFilter>
       <ProgramModalFilter />
-    </div>
-  </div>
-  <ul class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-lg--left fr-mt-2v fr-raw-list">
+    </template>
     <li
       v-for="program in filteredPrograms"
       :key="program.id"
@@ -18,7 +16,7 @@
         class="fr-enlarge-link fr-card--horizontal-tier"
       />
     </li>
-  </ul>
+  </LayoutList>
 </template>
 
 <script setup lang="ts">
