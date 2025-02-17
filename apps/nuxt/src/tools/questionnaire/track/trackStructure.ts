@@ -11,18 +11,8 @@ import {
 } from '@/types'
 import Format from '@/tools/format'
 import { CompanyData } from '@/tools/companyData'
-import LocalisationApi from '@/tools/api/localisationApi'
-import EstablishmentApi from '@/tools/api/establishmentApi'
 
 export default class TrackStructure {
-  static async searchLocalisation(query: string) {
-    return await new LocalisationApi().searchCities(query)
-  }
-
-  static async searchActivity(query: string) {
-    return await new EstablishmentApi().searchActivities(query)
-  }
-
   static createData(
     option: TrackOptionsUnion,
     value?: string,
