@@ -72,7 +72,6 @@ export default class ProgramFeatures {
     }
 
     let filteredPrograms = filterPrograms(allPrograms, questionnaireData, this._currentDateService.get(), this._rulesService)
-    console.log(questionnaireData.is_questionnaire)
     if (questionnaireData.is_questionnaire) {
       filteredPrograms = filteredPrograms.map((programs) => sortPrograms(programs))
     }

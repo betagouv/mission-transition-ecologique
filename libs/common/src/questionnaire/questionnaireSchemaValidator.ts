@@ -15,6 +15,7 @@ export const questionnaireDataSchema = z.object({
   codeNaf: z.string().optional(),
   region: z.string().optional(),
   structure_size: structureSizeSchema.optional(),
+  is_questionnaire: z.string().optional(),
   priority_objective: themeIdSchema.optional(),
   building_property: buildingPropertySchema.optional(),
   sustainable_mobility_objective: mobilityStatusSchema.optional(),

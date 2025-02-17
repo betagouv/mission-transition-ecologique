@@ -22,6 +22,7 @@ export default class ProgramApi extends RequestApi {
   get buildQuery(): string {
     const navigation = new Navigation()
     const queryString: { [key: string]: string } = {}
+    this.questionnaireData.is_questionnaire = navigation.isQuestionnaire()
     Object.entries(this.questionnaireData).forEach(([key, value]: [string, string | string[] | undefined | null]) => {
       if (value !== undefined && value !== null) {
         if (this.isValidQueryParam(key)) {
@@ -29,7 +30,6 @@ export default class ProgramApi extends RequestApi {
         }
       }
     })
-    queryString.is_questionnaire = navigation.isQuestionnaire().toString()
     const params = new URLSearchParams(queryString)
     params.sort()
 
