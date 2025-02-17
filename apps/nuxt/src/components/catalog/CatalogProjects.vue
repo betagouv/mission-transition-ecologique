@@ -29,7 +29,7 @@
               v-if="showCounter"
               class="fr-pl-2v fr-pl-md-0 fr-col-3 fr-col-lg-12 fr-col-content--middle fr-text--blue-france tee-font-style--italic"
             >
-              <TeeCounterResult :to-count="filteredProjects" />
+              <TeeCounterResult :to-count="sortedProjects" />
             </div>
             <div
               v-if="hasFullRegisteredData && props.showCompanyFilter"
@@ -37,7 +37,7 @@
             >
               <ProjectModalFilter />
             </div>
-            <SimpleProjectList :project-list="filteredProjects" />
+            <SimpleProjectList :project-list="sortedProjects" />
           </div>
           <div class="fr-col-12 fr-mt-3v fr-mb-10v">
             <OtherProject />
@@ -49,14 +49,15 @@
 </template>
 
 <script setup lang="ts">
-import { useCompanyData } from '@/stores/companyData'
+import { useCompanyDataStore } from '@/stores/companyData'
 import { useProjectStore } from '@/stores/project'
-import { CompanyData } from '@/tools/companyData'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { Theme } from '@/tools/theme'
+import { CompanyData } from '@/tools/companyData'
+import ProjectSorter from '@/tools/project/projectSorter'
 
 interface Props {
   showTitleBanner?: boolean
@@ -74,7 +75,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { projects, hasError } = storeToRefs(useProjectStore())
-const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyData())
+const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyDataStore())
 
 onServerPrefetch(async () => {
   await new ProjectManager().getProjects()
@@ -92,6 +93,13 @@ const theme = Theme.getThemeFromSelectedTheme()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
 
+const sortedProjects = computed(() => {
+  if (!filteredProjects.value) {
+    return []
+  }
+
+  return CompanyData.isCompanySelected() ? ProjectSorter.bySector(filteredProjects.value) : filteredProjects.value
+})
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0
 })
