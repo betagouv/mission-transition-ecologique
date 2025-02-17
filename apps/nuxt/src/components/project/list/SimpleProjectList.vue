@@ -10,7 +10,7 @@
       v-if="withCounterAndModalFilter"
       #modalFilter
     >
-      <ProgramModalFilter />
+      <ProjectModalFilter />
     </template>
     <li
       v-for="project in projectList"
