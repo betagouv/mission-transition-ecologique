@@ -4,6 +4,8 @@
     :placeholder="option?.hint?.[Translation.lang]"
     name="activity"
     :is-loading="isLoading"
+    :search-color="Color.white"
+    :background-color="Color.greyLighted"
     :color="Color.blueFrance"
     :error-msg="errorMsg"
     :results="activityResults"
@@ -15,7 +17,7 @@
       <div
         v-if="activityResults.length"
         id="activity-response"
-        class="fr-bg--white fr-mt-n3w"
+        class="fr-bg--white"
       >
         <div
           v-for="activity in activityResults"
