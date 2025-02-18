@@ -26,6 +26,7 @@ export const useFiltersStore = defineStore('filters', () => {
   }
 
   function setCompanyDataSelected(value: boolean) {
+    console.trace('setCompanyDataSelected', value)
     companyDataSelected.value = value
   }
 
@@ -40,7 +41,6 @@ export const useFiltersStore = defineStore('filters', () => {
       [FilterItemKeys.regionAid]: [],
       [FilterItemKeys.operatorAid]: []
     }
-    setCompanyDataSelected(true)
   }
 
   function resetFilter(filterKey: FilterItemKeys) {
