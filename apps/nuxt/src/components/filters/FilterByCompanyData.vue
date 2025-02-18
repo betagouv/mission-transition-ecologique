@@ -106,13 +106,9 @@ const filterData: CompanyFilterProps = {
     size: { label: companySize, icon: 'fr-icon-team-line' }
   }
 }
-watch(
-  hasRegisteredData,
-  (value) => {
-    useFiltersStore().setCompanyDataSelected(value)
-  },
-  { immediate: true }
-)
+watch(hasRegisteredData, (value) => {
+  useFiltersStore().setCompanyDataSelected(value)
+})
 </script>
 <style lang="scss" scoped>
 #company-data-filter-content {

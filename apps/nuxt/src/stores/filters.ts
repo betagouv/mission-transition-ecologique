@@ -40,7 +40,6 @@ export const useFiltersStore = defineStore('filters', () => {
       [FilterItemKeys.regionAid]: [],
       [FilterItemKeys.operatorAid]: []
     }
-    setCompanyDataSelected(true)
   }
 
   function resetFilter(filterKey: FilterItemKeys) {
