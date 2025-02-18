@@ -10,10 +10,10 @@ import {
   type LocationQuery,
   type LocationQueryValue,
   type RouteLocationNormalizedLoaded,
-  type RouteLocationRaw,
   type RouteLocationAsRelativeGeneric,
   type Router,
-  RouteParamsGeneric
+  RouteParamsGeneric,
+  RouteLocationRaw
 } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 
@@ -63,7 +63,7 @@ export const useNavigationStore = defineStore('navigation', () => {
       query: queryByUsedTrackId(trackId)
     }
 
-    if (TrackId.QuestionnaireRoute === trackId) {
+    if (TrackId.Questionnaire === trackId) {
       route = {
         ...route,
         name: RouteName.QuestionnaireStart,

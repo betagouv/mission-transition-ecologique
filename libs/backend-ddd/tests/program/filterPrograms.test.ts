@@ -5,13 +5,12 @@ import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { type Result } from 'true-myth'
 import { PublicodesService } from '../../src/program/infrastructure/publicodesService'
-import { QuestionnaireRoute, QuestionnaireData } from '@tee/common'
+import { QuestionnaireData } from '@tee/common'
 
 const defaultFilterPrograms = (programs: ProgramType[], inputData: Record<string, number>): Result<ProgramTypeWithEligibility[], Error> => {
   PublicodesService.init(programs)
   const programService = new ProgramFeatures(makeProgramsRepository(programs), mockCurrentDateService, PublicodesService.getInstance())
   const questionnaireData: QuestionnaireData = {
-    questionnaire_route: QuestionnaireRoute.NoSpecificGoal,
     region: 'Corse',
     codeNAF1: 'J',
     ...inputData

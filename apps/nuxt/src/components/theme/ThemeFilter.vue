@@ -10,12 +10,9 @@
 </template>
 
 <script setup lang="ts">
-import { useNavigationStore } from '@/stores/navigation'
-import { useUsedTrackStore } from '@/stores/usedTrack'
-import { ThemeType, TrackId, ThemeId, FilterItemKeys, FiltersType } from '@/types'
+import { ThemeType, ThemeId, FilterItemKeys, FiltersType } from '@/types'
 import { Theme } from '@/tools/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
-import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { computed } from 'vue'
 
 interface Props {
@@ -24,17 +21,12 @@ interface Props {
 const props = defineProps<Props>()
 
 const filtersStore = useFiltersStore()
-const usedTrackStore = useUsedTrackStore()
 
 const filters: FiltersType = filtersStore.filters
-let hasAllTag = true
+const hasAllTag = true
 
 if (props.theme) {
   filters.themeTypeSelected = props.theme
-}
-
-if (UsedTrack.isSpecificGoal()) {
-  hasAllTag = false
 }
 
 const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
@@ -72,9 +64,5 @@ function isActive(tag: ThemeType) {
 
 const updateThemeTypeSelected = async (value: string | number) => {
   filtersStore.setThemeTypeSelected(value as string)
-  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {
-    await usedTrackStore.updateByTrackIdAndValue(TrackId.Goals, value as string)
-    useNavigationStore().replaceBrowserHistory()
-  }
 }
 </script>

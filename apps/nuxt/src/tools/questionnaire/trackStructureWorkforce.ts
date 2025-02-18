@@ -1,6 +1,5 @@
 import { NextTrackRuleSet, SizeToText, Track, TrackCategory } from '@/types'
 import { ConditionOperators, DataMappingFrom, TrackComponent, TrackId, StructureSize } from '@/types'
-import { QuestionnaireRoute } from '@tee/common'
 
 const nextTrackRuleSets: NextTrackRuleSet[] = [
   {
@@ -21,7 +20,7 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
     next: { default: TrackId.Sectors }
   },
   {
-    help: "Goes to track_structure_building_property if : has infos about codeNaf AND questionnaire_route == 'no_specific_goal' (newbie)",
+    help: 'Goes to track_structure_building_property if : has infos about codeNaf',
     rules: [
       {
         from: DataMappingFrom.UsedTracks,
@@ -31,52 +30,11 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
           {
             type: 'codeNAF',
             operator: ConditionOperators.exists
-          }
-        ]
-      },
-      {
-        from: DataMappingFrom.UsedTracks,
-        id: 'questionnaire_route',
-        dataField: 'questionnaire_route',
-        conditions: [
-          {
-            type: 'questionnaire_route',
-            operator: ConditionOperators.is,
-            value: QuestionnaireRoute.NoSpecificGoal
           }
         ]
       }
     ],
     next: { default: TrackId.BuildingProperty }
-  },
-  {
-    help: "Goes to track_goals if : have infos about sector AND questionnaire_route == 'specific_goal' (pro)",
-    rules: [
-      {
-        from: DataMappingFrom.UsedTracks,
-        id: 'codeNAF',
-        dataField: 'codeNAF',
-        conditions: [
-          {
-            type: 'codeNAF',
-            operator: ConditionOperators.exists
-          }
-        ]
-      },
-      {
-        from: DataMappingFrom.UsedTracks,
-        id: 'questionnaire_route',
-        dataField: 'questionnaire_route',
-        conditions: [
-          {
-            type: 'questionnaire_route',
-            operator: ConditionOperators.is,
-            value: QuestionnaireRoute.SpecificGoal
-          }
-        ]
-      }
-    ],
-    next: { default: TrackId.Goals }
   }
 ]
 

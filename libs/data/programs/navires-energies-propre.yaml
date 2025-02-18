@@ -74,7 +74,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si: date du jour <= dispositif . fin de validité
     valeur: oui
