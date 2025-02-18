@@ -26,7 +26,6 @@ export const useFiltersStore = defineStore('filters', () => {
   }
 
   function setCompanyDataSelected(value: boolean) {
-    console.trace('setCompanyDataSelected', value)
     companyDataSelected.value = value
   }
 
