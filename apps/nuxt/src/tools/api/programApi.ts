@@ -1,7 +1,6 @@
 import RequestApi from '@/tools/api/requestApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import { ProgramData, QuestionnaireData, QuestionnaireDataEnum } from '@/types'
-import Navigation from '../navigation'
 
 export default class ProgramApi extends RequestApi {
   protected readonly url = '/api/programs'
@@ -20,9 +19,7 @@ export default class ProgramApi extends RequestApi {
   }
 
   get buildQuery(): string {
-    const navigation = new Navigation()
     const queryString: { [key: string]: string } = {}
-    this.questionnaireData.is_questionnaire = navigation.isQuestionnaire()
     Object.entries(this.questionnaireData).forEach(([key, value]: [string, string | string[] | undefined | null]) => {
       if (value !== undefined && value !== null) {
         if (this.isValidQueryParam(key)) {

@@ -271,6 +271,8 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       questionnaireData.onlyEligible = false
     }
 
+    questionnaireData.is_questionnaire = navigation.isQuestionnaire()
+
     CompanyData.populateQuestionnaireData(questionnaireData)
 
     return questionnaireData
