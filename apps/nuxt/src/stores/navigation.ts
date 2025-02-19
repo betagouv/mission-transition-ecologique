@@ -24,6 +24,7 @@ export const useNavigationStore = defineStore('navigation', () => {
   const tabSelectedOnList = ref<number>(0)
   const hasSpinner = ref<boolean>(false)
   const hasRegisterModal = ref<boolean>(false)
+  const isFromCtaRegisterModal = ref<boolean>(false)
   const query = computed<Record<string, LocationQueryValue | LocationQueryValue[]>>(() => {
     const query: LocationQuery = {}
     for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
@@ -139,6 +140,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     tabSelectedOnList,
     hasSpinner,
     hasRegisterModal,
+    isFromCtaRegisterModal,
     resetSearchParams,
     setRouter,
     setRoute,
