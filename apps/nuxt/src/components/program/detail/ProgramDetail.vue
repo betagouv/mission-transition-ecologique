@@ -1,23 +1,13 @@
 <template>
-  <ProgramHeader />
-  <!-- ALERT - PROGRAM NOT AVAILABLE ANYMORE -->
-  <div
-    v-if="!programIsAvailable"
-    class="fr-notice fr-tee-program-notice-alert fr-mb-0"
-  >
-    <div class="fr-container">
-      <div class="fr-notice__body fr-text-center">
-        <p class="fr-notice__title">
-          <span
-            class="fr-icon-information-line"
-            aria-hidden="true"
-          />
-          {{ Translation.t('program.programNotAvailable') }}
-        </p>
-        <p class="fr-notice__subtitle">{{ Translation.t('program.programEndValidity') }} : {{ program?.[`fin de validité`] }}</p>
-      </div>
-    </div>
-  </div>
+  <Layout :links="links">
+    <template
+      v-if="isDataFull || Program.isTemporaryUnavailable(currentProgram) || Program.isAvailable(program)"
+      #top
+    >
+      <ProgramEligibilityBar />
+    </template>
+    <ProgramHeader />
+  </Layout>
 
   <!-- PROGRAM INFOS -->
   <div
@@ -245,7 +235,9 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeProgramDetail > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import { TeeDsfrBreadcrumbProps } from '@/components/element/TeeDsfrBreadcrumb.vue'
 import ProgramTile from '@/components/program/detail/ProgramTile.vue'
+import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
@@ -277,6 +269,33 @@ onNuxtReady(async () => {
 })
 
 await new ProjectManager().getProjects()
+
+const { currentProgram } = storeToRefs(useProgramStore())
+const { currentProject } = storeToRefs(useProjectStore())
+const { query } = storeToRefs(useNavigationStore())
+const { isDataFull } = storeToRefs(useCompanyDataStore())
+
+const isCatalogDetail = navigation.isCatalogProgramDetail()
+
+const routeToResults = {
+  name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
+  hash: '#' + currentProgram.value?.id,
+  query: isCatalogDetail ? undefined : query
+}
+
+const routeToProject = {
+  ...routeToResults,
+  name: isCatalogDetail ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
+  params: { projectSlug: currentProject.value?.slug }
+}
+
+const links = computed<TeeDsfrBreadcrumbProps['links']>(() => {
+  const links = []
+  if (navigation.isProgramFromProject()) {
+    links.push({ text: currentProject.value?.title || '', to: routeToProject })
+  }
+  return [...links, { text: currentProgram.value?.titre || '' }]
+})
 
 const linkedProjects = computed(() => {
   return Program.getLinkedProjects(program.value, projects.value)
