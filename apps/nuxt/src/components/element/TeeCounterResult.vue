@@ -7,11 +7,11 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { ProgramTypeWithFilters, ProjectType } from '@/types'
+import { ProgramType, ProjectType } from '@/types'
 import Translation from '@/tools/translation'
 
 interface Props {
-  toCount?: ProjectType[] | ProgramTypeWithFilters[]
+  toCount?: ProjectType[] | ProgramType[]
 }
 
 const props = defineProps<Props>()
