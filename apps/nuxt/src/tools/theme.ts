@@ -3,6 +3,7 @@ import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { ProjectType } from '@tee/data'
 import { ComputedRef } from 'vue'
 import { useFiltersStore } from '@/stores/filters'
+import Navigation from './navigation'
 
 export class Theme {
   static themes: ThemeType[] = [
@@ -89,21 +90,21 @@ export class Theme {
 
   static getTags(): ThemeType[] {
     const tags = []
-
-    if (UsedTrack.isNoSpecificGoal()) {
-      UsedTrack.hasEnergyTheme() ? tags.push(this.getById(ThemeId.Energy) as ThemeType) : undefined
-      UsedTrack.hasBuildingProperty() ? tags.push(this.getById(ThemeId.Building) as ThemeType) : undefined
-      UsedTrack.hasMobilityTheme() ? tags.push(this.getById(ThemeId.Mobility) as ThemeType) : undefined
-      UsedTrack.hasWaterTheme() ? tags.push(this.getById(ThemeId.Water) as ThemeType) : undefined
-      UsedTrack.hasEcoDesignTheme() ? tags.push(this.getById(ThemeId.EcoDesign) as ThemeType) : undefined
-      UsedTrack.hasWasteTheme() ? tags.push(this.getById(ThemeId.Waste) as ThemeType) : undefined
-      tags.push(this.getById(ThemeId.RH) as ThemeType)
-      UsedTrack.hasEnvironmentalImpactTheme() ? tags.push(this.getById(ThemeId.Environmental) as ThemeType) : undefined
+    const navigation = new Navigation()
+    if (navigation.isCatalog() || navigation.isHomepage()) {
+      tags.push(...this.themes)
 
       return tags
     }
 
-    tags.push(...this.themes)
+    UsedTrack.hasEnergyTheme() ? tags.push(this.getById(ThemeId.Energy) as ThemeType) : undefined
+    UsedTrack.hasBuildingProperty() ? tags.push(this.getById(ThemeId.Building) as ThemeType) : undefined
+    UsedTrack.hasMobilityTheme() ? tags.push(this.getById(ThemeId.Mobility) as ThemeType) : undefined
+    UsedTrack.hasWaterTheme() ? tags.push(this.getById(ThemeId.Water) as ThemeType) : undefined
+    UsedTrack.hasEcoDesignTheme() ? tags.push(this.getById(ThemeId.EcoDesign) as ThemeType) : undefined
+    UsedTrack.hasWasteTheme() ? tags.push(this.getById(ThemeId.Waste) as ThemeType) : undefined
+    tags.push(this.getById(ThemeId.RH) as ThemeType)
+    UsedTrack.hasEnvironmentalImpactTheme() ? tags.push(this.getById(ThemeId.Environmental) as ThemeType) : undefined
 
     return tags
   }
