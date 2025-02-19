@@ -1,11 +1,14 @@
 <template>
   <TeeEligibilityBar
+    :color="color"
     :bg-color="getEligibilityColor"
     :message="getEligibilityMessage"
     :link="getEligibilityLink"
+    :message-detail="messageDetail"
   />
 </template>
 <script setup lang="ts">
+import Translation from '@/tools/translation'
 import { Color, ProgramEligibilityType, RouteName } from '@/types'
 import { TeeEligibilityBarLink, TeeEligibilityBarMessage } from '@/components/program/eligibility/TeeEligibilityBar.vue'
 import { useProgramStore } from '@/stores/program'
@@ -14,7 +17,31 @@ import Program from '@/tools/program/program'
 
 const { currentProgram: program } = storeToRefs(useProgramStore())
 
+const isAvailable = Program.isAvailable(program.value)
+
+const messageDetail = computed(() => {
+  if (!isAvailable) {
+    return Translation.t('program.programEndValidity') + ' : ' + program.value?.[`fin de validité`]
+  }
+  return undefined
+})
+
+const color = computed(() => {
+  if (!isAvailable) {
+    return Color.black
+  }
+
+  return undefined
+})
+
 const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(() => {
+  if (!isAvailable) {
+    return {
+      default: Translation.t('program.programNotAvailable'),
+      mobile: Translation.t('program.programNotAvailable'),
+      icon: 'fr-icon-information-line'
+    }
+  }
   if (Program.isTemporaryUnavailable(program.value)) {
     return {
       default: 'Cette aide est temporairement indisponible.',
@@ -46,6 +73,9 @@ const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(()
 })
 
 const getEligibilityColor: ComputedRef<Color> = computed(() => {
+  if (!isAvailable) {
+    return Color.red
+  }
   return Program.isTemporaryUnavailable(program.value)
     ? Color.red
     : program.value?.eligibility === ProgramEligibilityType.NotEligible
@@ -64,7 +94,6 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
         label: 'Voir les autres critères à respecter',
         labelMobile: 'Vérifier les critères'
       }
-    // TODO : uncomment once the company data filter is available on catalogs
     case ProgramEligibilityType.NotEligible:
       return {
         url: RouteName.CatalogPrograms,
