@@ -36,7 +36,6 @@ import { computed } from 'vue'
 const trackStore = useTrackStore()
 const navigationStore = useNavigationStore()
 const usedTrackStore = useUsedTrackStore()
-const router = useRouter()
 
 const usedTracksRegrouped = computed(() => {
   const usedTracksByCategory = groupBy(usedTrackStore.usedTracks, 'category')
@@ -70,7 +69,7 @@ const getRouteByCategory = (category: TrackCategory) => {
   if (usedTracksRegrouped.value[category].length) {
     const trackId = usedTracksRegrouped.value[category].find(() => true)?.id
     if (trackId) {
-      return router.resolve(navigationStore.routeByTrackId(trackId)).path
+      return navigationStore.resolveUrl(navigationStore.routeByTrackId(trackId)).path
     }
   }
 }
