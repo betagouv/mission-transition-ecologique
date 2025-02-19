@@ -82,6 +82,28 @@ export const useNavigationStore = defineStore('navigation', () => {
   function setRoute(useRoute: RouteLocationNormalizedLoaded) {
     route.value = useRoute
   }
+  function resolveUrl(routeName: RouteLocationAsRelativeGeneric, params?: RouteParamsGeneric) {
+    const fallbackPath = '/'
+
+    try {
+      if (router.value) {
+        const resolvedRoute = router.value.resolve({ ...routeName, params })
+
+        if (resolvedRoute) {
+          return resolvedRoute
+        }
+        console.error(`Error during route resolution : ${routeName}`)
+      }
+    } catch (error) {
+      console.error(`Error during URL resolution for ${routeName}`, error)
+    }
+
+    // En cas d'erreur, on retourne un fallback propre
+    return {
+      href: fallbackPath,
+      path: fallbackPath
+    }
+  }
 
   function updateSearchParams(query: LocationQuery) {
     Object.entries(query).forEach(([key, value]) => {
@@ -139,7 +161,7 @@ export const useNavigationStore = defineStore('navigation', () => {
 
   function getAbsoluteUrlByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {
     if (router.value) {
-      return new URL(router.value.resolve({ name: routeName, params: params }).href, window.location.origin).href
+      return new URL(resolveUrl({ name: routeName, params: params }).href, window.location.origin).href
     }
   }
 
@@ -152,6 +174,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     hasSpinner,
     hasRegisterModal,
     resetSearchParams,
+    resolveUrl,
     setRouter,
     setRoute,
     setSearchParams,

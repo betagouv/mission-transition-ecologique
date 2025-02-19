@@ -32,9 +32,9 @@ definePageMeta({
   path: '/mentions-legales',
   name: RouteName.Legal
 })
-
-const privacyPolicy = useRouter().resolve({ name: RouteName.PersonalData }).href
-const siteUrl = useRouter().resolve({ name: RouteName.Homepage }).href
+const navigationStore = useNavigationStore()
+const privacyPolicy = navigationStore.resolveUrl({ name: RouteName.PersonalData }).href
+const siteUrl = navigationStore.resolveUrl({ name: RouteName.Homepage }).href
 
 const thirdParties: LegalNoticePropsThirdParty[] = [
   {
