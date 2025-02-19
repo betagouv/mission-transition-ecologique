@@ -15,15 +15,15 @@
 // console.log(`ProgramLongdescription > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed } from 'vue'
-import type { ProgramData } from '@/types'
+import type { ProgramType } from '@tee/data'
 
 interface Props {
-  program: ProgramData
+  program: ProgramType
 }
 const props = defineProps<Props>()
 
 const descriptionParagraphs = computed(() => {
   const textRaw = props.program['description longue']
-  return textRaw?.split('\n') || []
+  return textRaw ? textRaw.split('\n') : []
 })
 </script>
