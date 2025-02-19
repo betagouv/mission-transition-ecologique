@@ -12,6 +12,8 @@
 import { DsfrCard } from '@gouvminint/vue-dsfr'
 import { RouteName } from '@/types'
 import { DsfrButtonProps } from '@gouvminint/vue-dsfr/types/components/DsfrButton/DsfrButton.vue'
+import Navigation from '@/tools/navigation'
+import { useCompanyDataStore } from '@/stores/companyData'
 interface Props {
   title: string
   description: string
@@ -29,6 +31,7 @@ const buttons: DsfrButtonProps[] = [
 ]
 
 const router = useRouter()
+const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 withDefaults(defineProps<Props>(), {
   title: 'Vous ne savez pas par où commencer ?',
@@ -38,16 +41,15 @@ withDefaults(defineProps<Props>(), {
 })
 
 const toQuestionnaire = async () => {
-  return await router.push({
-    name: RouteName.QuestionnaireStart
-  })
+  if (isDataFull.value) {
+    await router.push({
+      name: RouteName.QuestionnaireStart
+    })
+  } else {
+    useNavigationStore().isFromQuestionnaireCtaRegisterModal = true
+    Navigation.toggleRegisterModal()
+  }
 }
-
-// const launchQuestionnaire = async () => {
-//   usedTrackStore.resetUsedTracks()
-//   await usedTrackStore.updateByTrackIdAndValue(TrackId.QuestionnaireRoute, QuestionnaireRoute.SpecificGoal)
-//   await router.push(navigationStore.routeByTrackId(TrackId.Siret))
-// }
 </script>
 <style scoped lang="scss">
 @use '@/assets/scss/setting';

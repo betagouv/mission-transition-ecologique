@@ -65,7 +65,7 @@ const breadcrumbs = computed(() => {
     const trackId = usedTrackStore.getPreviousCompletedUsedTrackId()
     baseLinks.splice(1, 0, {
       text: 'Questionnaire',
-      to: navigationStore.routeByTrackId(trackId || TrackId.Questionnaire)
+      to: navigationStore.routeByTrackId(trackId || TrackId.Siret)
     })
   }
   if (props.links) {

@@ -3,7 +3,7 @@
     class="fr-container--fluid fr-container--fluid--no-overflow fr-px-0v fr-mt-0 fr-mb-10v"
     style="min-height: 800px"
   >
-    <TeeQuestionnaire :track-id="TrackId.Questionnaire" />
+    <TeeQuestionnaire :track-id="TrackId.BuildingProperty" />
   </div>
 </template>
 
