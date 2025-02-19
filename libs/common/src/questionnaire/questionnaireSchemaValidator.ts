@@ -15,7 +15,7 @@ export const questionnaireDataSchema = z.object({
   codeNaf: z.string().optional(),
   region: z.string().optional(),
   structure_size: structureSizeSchema.optional(),
-  is_questionnaire: z.string().optional(),
+  is_questionnaire: z.boolean().optional(),
   priority_objective: themeIdSchema.optional(),
   building_property: buildingPropertySchema.optional(),
   sustainable_mobility_objective: mobilityStatusSchema.optional(),
@@ -38,4 +38,6 @@ export const questionnaireDataSchema = z.object({
   onlyEligible: z.boolean().optional()
 })
 
-export const serverQuestionnaireDataSchema = questionnaireDataSchema.setKey('onlyEligible', stringBoolean.optional())
+export const serverQuestionnaireDataSchema = questionnaireDataSchema
+  .setKey('onlyEligible', stringBoolean.optional())
+  .setKey('is_questionnaire', stringBoolean.optional())
