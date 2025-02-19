@@ -23,7 +23,6 @@ const props = defineProps<Props>()
 const filtersStore = useFiltersStore()
 
 const filters: FiltersType = filtersStore.filters
-const hasAllTag = true
 
 if (props.theme) {
   filters.themeTypeSelected = props.theme
@@ -51,7 +50,7 @@ const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
 
   if (tags.length === 1) {
     filtersStore.setThemeTypeSelected((tags.shift() as TeeDsfrTagProps).value as string)
-  } else if (tags.length > 1 && hasAllTag) {
+  } else if (tags.length > 1) {
     tags.unshift(allTag)
   }
 

@@ -139,7 +139,8 @@ const saveProfile = async () => {
     await new ProjectManager().update()
     await new ProgramManager().update()
 
-    if (navigation.isByRouteName(RouteName.Homepage)) {
+    if (navigation.isByRouteName(RouteName.Homepage) && useNavigationStore().isFromCtaRegisterModal) {
+      useNavigationStore().isFromCtaRegisterModal = false
       await router.push({
         name: RouteName.CatalogProjects
       })

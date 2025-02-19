@@ -73,6 +73,7 @@ publicodes:
     toutes ces conditions:
       - est éligible
       - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
@@ -91,3 +92,6 @@ publicodes:
       - code NAF niveau 1 . est H
       - code NAF niveau 1 . est I
       - code NAF niveau 1 . est L
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
