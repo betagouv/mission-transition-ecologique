@@ -1,4 +1,7 @@
-def _convert_raw_events_to_posthog_events(self, event):
+import json
+
+
+def convert_raw_events_to_posthog_events(self, event):
     linked_event_id = ""
     opportunity_id = ""
     siret = ""
@@ -21,3 +24,23 @@ def _convert_raw_events_to_posthog_events(self, event):
         "opportunity_id": opportunity_id,
         "siret": siret,
     }
+
+
+def convert_raw_response_to_siret_events(posthog_response):
+    events = posthog_response["results"]
+    domain_events = []
+    for event in events:
+        siret = ""
+        try:
+            parsed_object = json.loads(event[2])
+            siret = parsed_object.get("siret", "")
+        except Exception as error:
+            pass
+
+        domain_events.append(
+            {
+                "event_date": event[3],
+                "siret": siret,
+            }
+        )
+    return domain_events

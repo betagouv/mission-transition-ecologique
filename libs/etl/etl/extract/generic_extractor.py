@@ -4,7 +4,7 @@ from etl.extract.brevo_extractor import BrevoExtractor
 from etl.extract.posthog_extractor import PosthogManager
 
 
-class DataProvider:
+class GenericExtractor:
     def __init__(self, cache_dir="cache"):
         self.cache_dir = cache_dir
         os.makedirs(self.cache_dir, exist_ok=True)

@@ -26,8 +26,11 @@ class PosthogManager:
         return self.get_events(event_types)
 
     def get_siret_events(self, start_date, end_date):
+        """Get siret events between 2 Dates()"""
         return self.get_events(
-            ["register_siret_modal", "register_siret_tracks"], start_date, end_date
+            ["register_siret_modal", "register_siret_tracks"],
+            start_date.strftime("%Y-%m-%d %H:%M:%S"),
+            end_date.strftime("%Y-%m-%d %H:%M:%S"),
         )
 
     def get_events(self, event_types, start_date=None, end_date=None):

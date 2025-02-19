@@ -7,7 +7,7 @@ class OpportunityManager:
         deals = await BrevoManager().get_deals()
         db_deals = await DBManager.query(
             """
-            SELECT brevo_id FROM statistics.opportunities
+            SELECT brevo_id FROM __SCHEMA_NAME__.opportunities
         """
         )
         brevo_id_set = set(item["brevo_id"] for item in db_deals)
@@ -28,7 +28,7 @@ class OpportunityManager:
                 )
 
                 query = f"""
-                    INSERT INTO statistics.opportunities (
+                    INSERT INTO __SCHEMA_NAME__.opportunities (
                         brevo_id, opportunity_date, company_siret, status, opportunity_type, opportunity_title
                     ) VALUES {values}
                     ON CONFLICT (brevo_id) DO NOTHING;

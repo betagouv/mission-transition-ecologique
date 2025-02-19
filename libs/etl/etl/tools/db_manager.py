@@ -27,7 +27,7 @@ class DBManager:
         try:
             connection = self.pool.getconn()
             cursor = connection.cursor()
-            cursor.execute(query_text, params)
+            cursor.execute(self._replace_schema_name(query_text), params)
             result = cursor.fetchall()
             return result
         except Exception as e:
@@ -38,3 +38,25 @@ class DBManager:
                 cursor.close()
             if connection:
                 self.pool.putconn(connection)
+
+    def execute_script(self, sql_script):
+        """Executes a full SQL script (for schema creation, migrations, etc.)."""
+        connection = None
+        cursor = None
+        try:
+            connection = self.pool.getconn()
+            cursor = connection.cursor()
+            cursor.execute(self._replace_schema_name(sql_script))
+            connection.commit()
+        except Exception as e:
+            print(f"❌ Error executing script: {e}")
+            raise e
+        finally:
+            if cursor:
+                cursor.close()
+            if connection:
+                self.pool.putconn(connection)
+
+    def _replace_schema_name(self, string_data):
+        schema_name = "statistics_test" if os.getenv("TEST") == "True" else "statistics"
+        return string_data.replace("__SCHEMA_NAME__", schema_name)

@@ -3,7 +3,6 @@ import time
 import sib_api_v3_sdk
 from dotenv import load_dotenv
 
-
 class BrevoExtractor:
     def __init__(self):
         load_dotenv()

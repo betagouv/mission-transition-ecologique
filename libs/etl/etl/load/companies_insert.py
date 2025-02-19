@@ -15,7 +15,7 @@ def batch_insert_companies(companies):
     )
 
     query = f"""
-        INSERT INTO statistics.companies (
+        INSERT INTO __SCHEMA_NAME__.companies (
             siret, naf_section, naf_division, naf_group, naf_class,
             naf_code, city_code, department, region, workforce_category,
             workforce_min, workforce_max
@@ -24,7 +24,9 @@ def batch_insert_companies(companies):
     """
 
     try:
-        DBManager().query(query)
+        # TODO uncomment
+        print(query)
+        # DBManager().query(query)
         print(f"Inserted {len(companies)} new companies.")
     except Exception as e:
         print(f"Error inserting companies: {e}")
