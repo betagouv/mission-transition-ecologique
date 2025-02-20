@@ -1,4 +1,10 @@
 <template>
+  <div
+    v-if="$slots.beforeBreadcrumb"
+    class="fr-container--fluid"
+  >
+    <slot name="beforeBreadcrumb" />
+  </div>
   <slot
     v-if="breadcrumb"
     name="breadcrumb"
@@ -17,7 +23,10 @@
   >
     <slot name="beforeDefault"> </slot>
   </div>
-  <div :class="`fr-container${fluid ? '--fluid' : ''}`">
+  <div
+    :class="`fr-container${fluid ? '--fluid' : ''}`"
+    class="fr-mb-8v"
+  >
     <div class="fr-grid-row">
       <div
         v-if="$slots.sidemenu"
@@ -27,12 +36,12 @@
           <slot name="sidemenu"> </slot>
         </div>
       </div>
-      <div
+      <main
         class="fr-col-12"
         :class="$slots.sidemenu ? 'fr-col-md-9 fr-col-lg-10' : ''"
       >
         <slot> </slot>
-      </div>
+      </main>
     </div>
   </div>
   <div
