@@ -12,6 +12,7 @@
         <div
           v-if="message"
           class="fr-ml-sm-2v fr-text--bold"
+          :role="message.role ?? undefined"
         >
           <span
             v-if="message.icon"
@@ -66,6 +67,7 @@ export interface TeeEligibilityBarMessage {
   default: string
   mobile?: string
   icon?: string
+  role?: 'alert' | 'status'
 }
 
 export type TeeEligibilityBarLink = TeeEligibilityBarLinkButton | TeeEligibilityBarLinkHash
