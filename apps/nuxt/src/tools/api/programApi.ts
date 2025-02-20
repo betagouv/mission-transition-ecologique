@@ -27,7 +27,6 @@ export default class ProgramApi extends RequestApi {
         }
       }
     })
-
     const params = new URLSearchParams(queryString)
     params.sort()
 
