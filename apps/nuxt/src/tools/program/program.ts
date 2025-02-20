@@ -28,6 +28,10 @@ export default class Program {
     }
   }
 
+  static isProgramAutonomous(program: ProgramType | undefined) {
+    return program?.['activable en autonomie'] === 'oui'
+  }
+
   static getBackLink(program: ProgramType | undefined, currentProject?: ProjectType | undefined): RouteLocationRaw | undefined {
     if (!program) {
       return undefined

@@ -39,14 +39,16 @@ const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(()
     return {
       default: Translation.t('program.programNotAvailable'),
       mobile: Translation.t('program.programNotAvailable'),
-      icon: 'fr-icon-information-line'
+      icon: 'fr-icon-information-line',
+      role: 'alert'
     }
   }
   if (Program.isTemporaryUnavailable(program.value)) {
     return {
       default: 'Cette aide est temporairement indisponible.',
       mobile: 'Cette aide est temporairement indisponible.',
-      icon: 'fr-icon-close-circle-fill'
+      icon: 'fr-icon-close-circle-fill',
+      role: 'status'
     }
   }
   switch (program.value?.eligibility) {
@@ -54,20 +56,23 @@ const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(()
       return {
         default: 'Votre entreprise remplit les critères pour bénéficier de cette aide.',
         mobile: 'Vous entreprise peut prétendre à cette aide.',
-        icon: 'fr-icon-checkbox-circle-fill'
+        icon: 'fr-icon-checkbox-circle-fill',
+        role: 'status'
       }
     case ProgramEligibilityType.PartiallyEligible:
       return {
         default: 'Votre entreprise semble éligible à cette aide.',
         mobile: 'Votre pouvez être éligible.',
-        icon: 'fr-icon-checkbox-circle-fill'
+        icon: 'fr-icon-checkbox-circle-fill',
+        role: 'status'
       }
     case ProgramEligibilityType.NotEligible:
     default:
       return {
         default: "Oups, votre entreprise n'est pas éligible à cette aide.",
         mobile: "Vous n'êtes pas éligible",
-        icon: 'fr-icon-close-circle-fill'
+        icon: 'fr-icon-close-circle-fill',
+        role: 'alert'
       }
   }
 })
@@ -76,9 +81,10 @@ const getEligibilityColor: ComputedRef<Color> = computed(() => {
   if (!isAvailable) {
     return Color.red
   }
+
   return Program.isTemporaryUnavailable(program.value)
     ? Color.red
-    : program.value?.eligibility === ProgramEligibilityType.NotEligible
+    : program.value && [ProgramEligibilityType.NotEligible, ProgramEligibilityType.Unknown].includes(program.value.eligibility)
       ? Color.red
       : Color.greenLightnessed
 })
@@ -95,6 +101,7 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
         labelMobile: 'Vérifier les critères'
       }
     case ProgramEligibilityType.NotEligible:
+    case ProgramEligibilityType.Unknown:
       return {
         url: RouteName.CatalogPrograms,
         label: 'Voir les aides pour mon entreprise',

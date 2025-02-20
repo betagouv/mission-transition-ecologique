@@ -1,13 +1,11 @@
 <template>
-  <div class="fr-container">
-    <p
-      v-for="(paragraph, idx) in descriptionParagraphs"
-      :key="`long-description-paragraph-${idx}`"
-      :class="`fr-mb-0 fr-pb-${descriptionParagraphs.length - 1 === idx ? '3v' : '0'}`"
-    >
-      {{ paragraph || '&nbsp;' }}
-    </p>
-  </div>
+  <p
+    v-for="(paragraph, idx) in descriptionParagraphs"
+    :key="`long-description-paragraph-${idx}`"
+    :class="`fr-mb-0 fr-pb-${descriptionParagraphs.length - 1 === idx ? '3v' : '0'}`"
+  >
+    {{ paragraph || '&nbsp;' }}
+  </p>
 </template>
 
 <script setup lang="ts">

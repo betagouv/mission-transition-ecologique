@@ -1,9 +1,9 @@
 <template>
-  <div class="fr-grid-row fr-grid-row-gutters fr-mt-0 fr-mt-md-3v">
-    <div
-      v-if="isCatalogDetail"
-      class="fr-col"
-    >
+  <div
+    v-if="isCatalogDetail"
+    class="fr-grid-row fr-mt-0 fr-mt-md-3v"
+  >
+    <div class="fr-col-12">
       <TeeButtonLink
         v-if="backLink"
         icon="fr-icon-arrow-left-line"
@@ -13,20 +13,10 @@
         >{{ Translation.t('results.back') }}</TeeButtonLink
       >
     </div>
-    <div
-      v-if="!currentProgram"
-      class="fr-col-12"
-    >
-      <TeeError
-        :mailto="Contact.mailTo"
-        :email="Contact.email"
-      />
-    </div>
   </div>
 </template>
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
-import Contact from '@/tools/contact'
 import Program from '@/tools/program/program'
 import Translation from '@/tools/translation'
 
