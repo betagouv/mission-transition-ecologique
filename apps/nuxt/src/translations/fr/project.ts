@@ -10,6 +10,11 @@ const projectFrDict = {
     result: {
       resume: 'Voici les actions par lesquelles commencer pour votre {effectif} du secteur {secteur} :'
     },
+    linkedProjects: {
+      title: 'En pré-requis à ce projet :',
+      description:
+        "Afin de réaliser ce projet, nous vous conseillons de vérifier le prérequis suivant. Une étape souvent obligatoire ou, au mieux, importante pour garantir la pertinence, l'efficacité et la durabilité du projet de transition écologique de votre entreprise."
+    },
     form: {
       title: 'Vous avez une question sur ce projet ?',
       hint: '👋 Des experts de la transition écologique des entreprises sont là pour répondre à vos questions et vous orienter.',
