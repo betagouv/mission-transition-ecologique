@@ -2,9 +2,10 @@
   <TeeContentBlock
     id="project-linked-projects-title"
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
-    title="Projets complémentaires"
+    :title="Translation.t('project.linkedProjects.title')"
   >
     <template #content>
+      <div class="fr-my-4v">{{ Translation.t('project.linkedProjects.description') }}</div>
       <div class="fr-grid-row fr-grid-row--center fr-grid-row-md--left">
         <template
           v-for="linkedProject in linkedProjectsTags"
@@ -25,6 +26,7 @@
 import { useProjectStore } from '@/stores/project'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { Color, ProjectType } from '@/types'
+import Translation from '@/tools/translation'
 
 interface Props {
   project: ProjectType
