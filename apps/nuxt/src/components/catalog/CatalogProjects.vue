@@ -23,7 +23,7 @@
         class="fr-col-12 fr-col-justify--center fr-pr-md-2v"
         :class="hasFullRegisteredData ? 'fr-col-md-10' : 'fr-col-md-12'"
       >
-        <div class="fr-container--fluid fr-mt-2v fr-mt-md-3v">
+        <div class="fr-mt-2v fr-mt-md-3v">
           <div class="fr-grid-row fr-grid-row--center">
             <div
               v-if="showCounter"

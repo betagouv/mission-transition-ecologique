@@ -35,7 +35,7 @@ const otherOperator = {
 </script>
 
 <template>
-  <div class="fr-container fr-grid-row fr-grid-row--center fr-pt-8v fr-hidden fr-unhidden-sm">
+  <div class="fr-container fr-grid-row fr-grid-row--center fr-p-8v fr-hidden fr-unhidden-sm">
     <div class="fr-grid-row">
       <div class="fr-col-6 fr-col-sm-12 fr-col-lg-6 fr-px-10w fr-text-center fr-position--relative">
         <img
