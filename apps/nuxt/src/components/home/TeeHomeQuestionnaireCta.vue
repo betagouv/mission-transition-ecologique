@@ -53,12 +53,15 @@ const toQuestionnaire = async () => {
 </script>
 <style scoped lang="scss">
 @use '@/assets/scss/setting';
+
 :deep(.fr-card__title) {
   color: setting.$blue-france;
 }
+
 :deep(.fr-card__content) {
   padding: 3rem 1rem;
 }
+
 :deep(.fr-card__footer button span) {
   font-weight: bold;
 }
