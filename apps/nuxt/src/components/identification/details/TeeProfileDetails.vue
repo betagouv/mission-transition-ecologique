@@ -35,23 +35,13 @@
 <script setup lang="ts">
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
-import {
-  RegisterDetailType,
-  RegisterDetails,
-  CompanyDataStorageKey,
-  CompanyDataType,
-  Region,
-  EstablishmentFront,
-  NAF1,
-  RouteName
-} from '@/types'
+import { RegisterDetailType, RegisterDetails, CompanyDataStorageKey, CompanyDataType, Region, EstablishmentFront, NAF1 } from '@/types'
 import Analytics from '@/tools/analytic/analytics'
 import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
 import { CompanyData } from '@/tools/companyData'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 
-const router = useRouter()
 const navigation = new Navigation()
 
 interface Props {
@@ -139,12 +129,7 @@ const saveProfile = async () => {
     await new ProjectManager().update()
     await new ProgramManager().update()
 
-    if (navigation.isByRouteName(RouteName.Homepage) && useNavigationStore().isFromCtaRegisterModal) {
-      useNavigationStore().isFromCtaRegisterModal = false
-      await router.push({
-        name: RouteName.CatalogProjects
-      })
-    }
+    await navigation.redirectAfterModal()
   } else {
     showError.value = true
   }

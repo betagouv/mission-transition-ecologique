@@ -143,4 +143,23 @@ export default class Navigation {
   static hashByRouteName = (routeName: string) => {
     return `#${routeName}`
   }
+
+  async redirectAfterModal() {
+    const navigationStore = useNavigationStore()
+    if (this.isByRouteName(RouteName.Homepage)) {
+      if (navigationStore.isFromCtaRegisterModal) {
+        useNavigationStore().isFromCtaRegisterModal = false
+        await this._router.push({
+          name: RouteName.CatalogProjects
+        })
+      }
+
+      if (navigationStore.isFromQuestionnaireCtaRegisterModal) {
+        useNavigationStore().isFromQuestionnaireCtaRegisterModal = false
+        await this._router.push({
+          name: RouteName.QuestionnaireStart
+        })
+      }
+    }
+  }
 }
