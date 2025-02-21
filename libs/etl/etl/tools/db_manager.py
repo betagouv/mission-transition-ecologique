@@ -27,9 +27,18 @@ class DBManager:
         try:
             connection = self.pool.getconn()
             cursor = connection.cursor()
-            cursor.execute(self._replace_schema_name(query_text), params)
-            result = cursor.fetchall()
-            return result
+            if query_text.strip().lower().startswith("select"):
+                cursor.execute(self._replace_schema_name(query_text), params)
+                result = cursor.fetchall()
+                return result
+            elif query_text.strip().lower().startswith("insert"):
+                cursor.executemany(self._replace_schema_name(query_text), params)
+                connection.commit()
+                return None
+            else:
+                cursor.execute(self._replace_schema_name(query_text), params)
+                connection.commit()
+                return None
         except Exception as e:
             print(f"Database Query Error: {e}")
             raise e
@@ -49,7 +58,7 @@ class DBManager:
             cursor.execute(self._replace_schema_name(sql_script))
             connection.commit()
         except Exception as e:
-            print(f"❌ Error executing script: {e}")
+            print(f"❌ Error executing the SQL script: {e}")
             raise e
         finally:
             if cursor:

@@ -7,7 +7,6 @@ class SireneAPIClient:
     def __init__(self):
         self.api_url = "https://api.insee.fr/api-sirene/3.11/siret/"
         self.token = os.getenv("SIRENE_API_311_TOKEN", "")
-        print(self.token)
 
     def get_establishment_sirene(self, siret):
         """Fetch establishment details for a given SIRET."""
@@ -21,7 +20,6 @@ class SireneAPIClient:
                 },
                 timeout=3,
             )
-            print(response)
             response.raise_for_status()
             return response.json()
         except Exception as err:

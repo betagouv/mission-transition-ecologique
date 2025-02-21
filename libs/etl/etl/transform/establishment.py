@@ -13,7 +13,7 @@ with naf_mapping_json_path.open("r", encoding="utf-8") as file:
 def keep_valid_sirets(sirets):
     invalid_sirets = [
         None
-    ]  # TOIMPROV possible improvements, store and then read the invalid sirets in a db table.
+    ]  # possible improvements, store and then read the invalid sirets in a db table.
     return [siret for siret in sirets if siret not in invalid_sirets]
 
 

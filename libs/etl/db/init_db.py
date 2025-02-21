@@ -13,5 +13,9 @@ def init_db():
         print(f"❌ Error initializing database: {e}")
 
 
+def reset_test_db():
+    DBManager().query("DROP SCHEMA statistics_test CASCADE;")
+
+
 if __name__ == "__main__":
     init_db()

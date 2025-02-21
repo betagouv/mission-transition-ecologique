@@ -41,13 +41,11 @@ class BrevoExtractor:
         limit = 100000  # Allowed value largely > to our number of deals.
         try:
             api_response = api_instance.crm_deals_get(limit=limit)
-            print(api_response)
             deal_list.extend(api_response.items)
-            print(deal_list)
             deal_list = [self.serialize_deal(deal) for deal in deal_list]
-            print(f"Importé {len(deal_list)} Brevo deals")
+            print(f"Import de {len(deal_list)} Brevo deals via l'API brevo")
         except Exception as e:
-            print("Exception when calling DealApi->crm_deals_get: %s\n" % e)
+            print("Exception using the brevo deal api: %s\n" % e)
 
         return deal_list
 

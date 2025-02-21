@@ -26,7 +26,7 @@ class PosthogManager:
         return self.get_events(event_types)
 
     def get_siret_events(self, start_date, end_date):
-        """Get siret events between 2 Dates()"""
+        """Get siret events between 2 Datetime()"""
         return self.get_events(
             ["register_siret_modal", "register_siret_tracks"],
             start_date.strftime("%Y-%m-%d %H:%M:%S"),
@@ -69,6 +69,9 @@ class PosthogManager:
             return []
 
     def get_unique_visitors_by_date_range(self, start_date, end_date):
+        start_date_str = start_date.strftime("%Y-%m-%d")
+        end_date_str = end_date.strftime("%Y-%m-%d")
+
         api_url = f"https://eu.posthog.com/api/projects/{self.project_id}/query/"
 
         hogql_query = ""

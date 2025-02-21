@@ -24,7 +24,7 @@ def get_last_webstat_date():
     result = DBManager().query(
         "SELECT stat_date FROM __SCHEMA_NAME__.daily_web_stats ORDER BY stat_date DESC LIMIT 1"
     )
-    return result[0].get("stat_date") if result else None
+    return result[0][0] if result else None
 
 
 def get_last_siret_event_date():

@@ -1,32 +1,24 @@
 from etl.pipelines.companies_pipeline import CompaniesPipeline
 from etl.pipelines.web_stats_pipeline import WebStatsPipeline
+from etl.pipelines.opportunity_pipeline import OpportunityPipeline
 
 
 def update_database():
-    update_web_sirets = True
-    update_web_visits = True
-    update_opportunities = True
-    update_company_data = True
+    print("▶ Starting the database updates")
 
-    print("▶ Starting the database updates\n")
+    print("\n▶ Update the web registration siret events")
+    WebStatsPipeline().update_web_registered_siret_table()
 
-    if update_web_sirets:
-        print("▶ Update the web registration siret events")
-        WebStatsPipeline().update_web_registered_siret_table()
+    print("\n▶ Update the web visitor statistics")
+    WebStatsPipeline().update_website_daily_visit_stats()
 
-    if update_web_visits:
-        print("▶ Update the web visitor statistics")
-        WebStatsPipeline().update_website_daily_visit_stats()
+    print("\n▶ Update the opportunities")
+    OpportunityPipeline().update_opportunity_table()
 
-    # if update_opportunities:
-    #     print("▶ Update the opportunities")
-    #     OpportunityManager().update_opportunity_table()
+    print("\n▶ Add new sirets in the company table")
+    CompaniesPipeline().process_new_sirets()
 
-    if update_company_data:
-        print("▶ Add new sirets in the company table")
-        CompaniesPipeline().process_new_sirets()
-
-    print("End of the database update")
+    print("\nEnd of the database update")
 
 
 if __name__ == "__main__":

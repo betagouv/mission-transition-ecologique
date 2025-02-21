@@ -4,7 +4,9 @@ from etl.transform.establishment import (
     siren_establishment_to_db_establishment,
 )
 from etl.extract.siren import SireneAPIClient
-from etl.load.companies_insert import batch_insert_companies
+from etl.load.companies_insert import insert_companies
+from dotenv import load_dotenv
+import os
 
 class CompaniesPipeline:
     def process_new_sirets(self):
@@ -13,8 +15,9 @@ class CompaniesPipeline:
         if not valid_sirets:
             print("No new SIRETs to process.")
             return
-
-        # TODO : put get_establishement out of the batch.
+        load_dotenv()
+        if os.getenv("TEST") == "True":
+            valid_sirets = valid_sirets[:10]
 
         batch_size = 5
         for i in range(0, len(valid_sirets), batch_size):
@@ -25,7 +28,7 @@ class CompaniesPipeline:
                     siren_establishment_to_db_establishment(est)
                     for est in establishments
                 ]
-                batch_insert_companies(companies)
+                insert_companies(companies)
                 print(f"Successfully processed batch {i // batch_size + 1}")
             except Exception as e:
                 print(f"Failed to process batch {i // batch_size + 1}: {e}")
