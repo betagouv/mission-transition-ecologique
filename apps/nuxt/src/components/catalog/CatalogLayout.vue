@@ -51,15 +51,16 @@
           >
             <TeeSpinner class="fr-mt-16w" />
           </div>
-          <TeeListNoResults
-            v-else-if="showNoResultsComponent"
-            :has-error="hasError && !hasSpinner"
-            message="Aucune idée d'action n'a pu être identifiée avec les critères choisis..."
-            :count-items="countItems"
-          />
           <slot
             v-if="!hasSpinner && !hasError"
             name="catalog-content"
+          />
+          <TeeListNoResults
+            v-if="showNoResultsComponent"
+            class="fr-col-10 fr-col--middle"
+            :has-error="hasError && !hasSpinner"
+            message="Aucune idée d'action n'a pu être identifiée avec les critères choisis..."
+            :count-items="countItems"
           />
         </div>
       </div>
