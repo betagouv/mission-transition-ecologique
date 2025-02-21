@@ -22,7 +22,6 @@
               src="/images/logos/ademe.svg"
               alt="logo de l'ADEME - Agence de de la Transition Écologique"
             />
-            <!-- L'alternative de l'image (attribut alt) doit impérativement être renseignée et reprendre le texte visible dans l'image -->
           </a>
         </div>
         <div class="fr-footer__content fr-col-lg-9">
@@ -66,7 +65,6 @@
               />
             </a>
           </div>
-
           <div class="fr-footer__partners-sub">
             <ul>
               <li
