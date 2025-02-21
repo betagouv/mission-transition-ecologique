@@ -136,9 +136,4 @@ const getRouteToUrl = (routeName: RouteName): RouteLocationRaw => {
     query: undefined
   }
 }
-
-const callback = (routeName) => {
-  console.log('reset company data selected')
-  useFiltersStore().setCompanyDataSelected(routeName === RouteName.CatalogPrograms)
-}
 </script>
