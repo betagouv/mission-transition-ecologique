@@ -2,11 +2,11 @@ import re
 from datetime import datetime
 
 
-def deal_from_brevo(deal, data):
-    attributes = data["_attributes"]
-    deal.brevo_id = data["_id"]
+def deal_from_brevo(deal, raw_data, raw_contacts):
+    attributes = raw_data["_attributes"]
+    deal.brevo_id = raw_data["_id"]
     deal.opportunity_date = set_date(attributes["created_at"])
-    deal.company_siret = get_siret(attributes.get("autres_donnes"))
+    deal.company_siret = get_siret(raw_data, raw_contacts)
     deal.status = set_status(attributes["deal_stage"])
     deal.operator = attributes.get("oprateur_de_contact")
     deal.opportunity_type = set_opportunity_type(attributes.get("type"))
@@ -20,11 +20,30 @@ def set_environment(pipeline):
     return "production" if pipeline == "65719d9023acb4f05e56e7eb" else "test"
 
 
-def get_siret(data):
-    if not data:
+def get_siret(raw_data, raw_contacts):
+    if len(raw_data["_linked_contacts_ids"]) > 0:
+        matched_contact = next(
+            (
+                contact
+                for contact_id in raw_data["_linked_contacts_ids"]
+                for contact in raw_contacts
+                if str(contact["id"]) == str(contact_id)
+            ),
+            None,
+        )
+
+        if matched_contact:
+            siret = (
+                matched_contact.get("attributes", "").get("SIRET", "").replace(" ", "")
+            )
+            if len(siret) == 14:
+                return siret
+
+    other_data = raw_data["_attributes"].get("autres_donnes", "")
+    if not other_data:
         return ""
-    match = re.search(r'"siret":"(\d+)"', data)
-    return match.group(1) if match else ""
+    match = re.search(r'"siret":"(\d+)"', other_data)
+    return match.group(1).replace(" ", "") if match else ""
 
 
 def set_status(deal_stage):

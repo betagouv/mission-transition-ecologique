@@ -1,3 +1,5 @@
+from etl.tools.db_manager import DBManager
+
 def update_deals(deals):
     if not len(deals):
         return
@@ -25,7 +27,7 @@ def update_deals(deals):
             deal.opportunity_title,
             deal.operator,
         )
-        for deal in prod_deals
+        for deal in deals
     ]
 
     try:

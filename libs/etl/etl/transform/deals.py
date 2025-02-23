@@ -2,7 +2,8 @@ from etl.transform.dto.brevo import deal_from_brevo
 
 
 class Deal:
-    def __init__(self, src, data):
+
+    def __init__(self, src, *args):
         self.brevo_id = ""
         self.opportunity_date = ""
         self.company_siret = ""
@@ -20,7 +21,7 @@ class Deal:
         self.partner_matchquality_opale = ""
 
         if src == "brevo":
-            deal_from_brevo(self, data)
+            deal_from_brevo(self, args[0], args[1])
         else:
             raise ValueError("Unknown data source")
 
