@@ -58,21 +58,21 @@ export const useNavigationStore = defineStore('navigation', () => {
   }
 
   function routeByTrackId(trackId: TrackId): RouteLocationAsRelativeGeneric {
-    let route: RouteLocationRaw = {
+    const route: RouteLocationRaw = {
       name: RouteName.Questionnaire,
       params: { trackId: trackId },
       hash: Navigation.hashByRouteName(RouteName.Questionnaire),
       query: queryByUsedTrackId(trackId)
     }
 
-    if (TrackId.Siret === trackId) {
-      route = {
-        ...route,
-        name: RouteName.QuestionnaireStart,
-        query: undefined,
-        params: {}
-      }
-    }
+    // if (TrackId.BuildingProperty === trackId) {
+    //   route = {
+    //     ...route,
+    //     name: RouteName.QuestionnaireStart,
+    //     query: undefined,
+    //     params: {}
+    //   }
+    // }
 
     return route
   }
