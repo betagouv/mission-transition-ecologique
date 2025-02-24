@@ -1,5 +1,5 @@
 <template>
-  <ul class="fr-ml-3v">
+  <ul>
     <li class="fr-mb-2v fr-text--purple fr-text--bold">{{ title }}</li>
   </ul>
 
