@@ -196,8 +196,8 @@ const goToNextTrack = () => {
 }
 
 function createData(): TrackOptionItem {
-  const siretValue = selection.value >= 0 ? requestResponses.value.establishments[selection.value].siret : ''
-  const sector = selection.value >= 0 ? requestResponses.value.establishments[selection.value].secteur : ''
+  const siretValue = selection.value >= 0 ? requestResponses.value.establishments[selection.value]?.siret : ''
+  const sector = selection.value >= 0 ? requestResponses.value.establishments[selection.value]?.secteur : ''
   const hasSelection = selection.value >= 0
   if (selection.value >= 0) {
     Analytics.sendEvent('register_siret_tracks', 'register_siret_tracks', {
