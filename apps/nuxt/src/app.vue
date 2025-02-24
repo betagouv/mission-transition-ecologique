@@ -1,9 +1,7 @@
-<script setup lang="ts">
-import DefaultLayout from '@/layouts/default.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <DefaultLayout>
+  <NuxtLayout>
     <NuxtPage />
-  </DefaultLayout>
+  </NuxtLayout>
 </template>
