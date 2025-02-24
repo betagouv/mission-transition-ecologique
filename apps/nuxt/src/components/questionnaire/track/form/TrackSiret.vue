@@ -119,7 +119,7 @@ import Navigation from '@/tools/navigation'
 import TrackSiret from '@/tools/questionnaire/track/TrackSiret'
 import Translation from '@/tools/translation'
 import Analytics from '@/tools/analytic/analytics'
-import Siret from '@/tools/siret'
+import CompanySearch from '@/tools/companySearch'
 
 // Functionnal note :
 // We send data update to the parent component each time the data selection change.
@@ -167,7 +167,7 @@ const processInput = async () => {
   isLoading.value = true
   errorMessage.value = undefined
   resetSelection()
-  Siret.processInput(queryValue.value, 3).then((response) => {
+  CompanySearch.processInput(queryValue.value, 3).then((response) => {
     if ((response as { error: boolean; errorMsg: string }).error) {
       errorMessage.value = (response as { error: boolean; errorMsg: string }).errorMsg
       resetSelection()

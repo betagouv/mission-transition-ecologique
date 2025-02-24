@@ -2,7 +2,7 @@ import Translation from '@/tools/translation'
 import { EstablishmentSearch, SiretValidator } from '@tee/common'
 import TrackSiret from '@/tools/questionnaire/track/TrackSiret'
 
-export default class Siret {
+export default class CompanySearch {
   static async processInput(
     queryValue: string | undefined,
     numberOfResults: number

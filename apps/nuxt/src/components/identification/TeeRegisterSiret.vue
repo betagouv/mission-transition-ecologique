@@ -80,7 +80,7 @@
 <script setup lang="ts">
 import Translation from '@/tools/translation'
 import { EstablishmentSearch, EstablishmentFront, Color } from '@/types'
-import Siret from '@/tools/siret'
+import CompanySearch from '@/tools/companySearch'
 
 const defaultSearchValue = {
   establishments: [],
@@ -121,7 +121,7 @@ const processInput = async () => {
   isLoading.value = true
   errorMessage.value = undefined
   resetSelection()
-  Siret.processInput(queryValue.value, 9).then((response) => {
+  CompanySearch.processInput(queryValue.value, 9).then((response) => {
     if ((response as { error: boolean; errorMsg: string }).error) {
       errorMessage.value = (response as { error: boolean; errorMsg: string }).errorMsg
       clearSearch()
