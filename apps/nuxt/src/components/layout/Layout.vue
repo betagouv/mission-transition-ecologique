@@ -13,7 +13,7 @@
   </div>
   <div
     v-if="$slots.beforeDefault"
-    class="fr-container"
+    :class="`${beforeDefaultClass ?? 'fr-container'}`"
   >
     <slot name="beforeDefault"> </slot>
   </div>
@@ -21,15 +21,15 @@
     <div class="fr-grid-row">
       <div
         v-if="$slots.sidemenu"
-        class="fr-col-2 fr-col-hidden fr-col-unhidden-md"
+        class="fr-col-2 fr-col-hidden fr-col-md-3 fr-col-lg-2 fr-col-unhidden-md"
       >
-        <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
+        <div class="fr-sidemenu fr-pr-3v">
           <slot name="sidemenu"> </slot>
         </div>
       </div>
       <div
         class="fr-col-12"
-        :class="$slots.sidemenu ? 'fr-col-md-10 fr-pr-md-2v' : ''"
+        :class="$slots.sidemenu ? 'fr-col-md-9 fr-col-lg-10' : ''"
       >
         <slot> </slot>
       </div>
@@ -49,9 +49,11 @@ interface Props {
   breadcrumb?: boolean
   links?: TeeDsfrBreadcrumbProps['links']
   fluid?: boolean
+  beforeDefaultClass?: string
 }
 withDefaults(defineProps<Props>(), {
   breadcrumb: true,
-  links: undefined
+  links: undefined,
+  beforeDefaultClass: undefined
 })
 </script>

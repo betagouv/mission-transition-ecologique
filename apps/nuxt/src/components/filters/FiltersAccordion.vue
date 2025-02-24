@@ -1,6 +1,6 @@
 <template>
   <DsfrAccordionsGroup
-    v-if="companyDataFilter?.display"
+    v-if="companyDataFilter && canDisplayFilter(companyDataFilter)"
     :model-value="0"
   >
     <DsfrAccordion
@@ -63,7 +63,7 @@ export interface FilterItem {
   accordionClass?: string
   component: unknown
   componentClass?: string
-  display?: boolean | ComputedRef<boolean>
+  display?: boolean | ComputedRef<boolean> | Ref<boolean>
 }
 
 const props = defineProps<FiltersAccordionProps>()

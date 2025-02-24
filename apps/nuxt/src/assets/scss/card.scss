@@ -120,16 +120,32 @@
   }
 
   &.fr-enlarge-link {
+    &:active {
+      @include tool.media-query-respond-from(xs) {
+        background-color: var(--background-default-grey-active);
+        border: thin solid setting.$purple;
+        border-radius: 8px;
+      }
+
+      @include tool.media-query-respond-from(md) {
+        border: unset;
+        border-radius: 0;
+      }
+    }
+
+
     .fr-card__content {
-      padding-bottom: 2rem !important;
+      .fr-card__end p {
+        font-size: .8rem;
+      }
     }
   }
 
   &.project-card {
     .fr-card__content {
       padding-top: 1rem !important;
-    } 
-  } 
+    }
+  }
 
   .fr-badge--success {
     background-color: setting.$green;
