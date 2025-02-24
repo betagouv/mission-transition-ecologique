@@ -9,7 +9,7 @@
       <ProjectFiltersAccordion with-title />
     </template>
     <SimpleProjectList
-      :project-list="filteredProjects"
+      :project-list="sortedProjects"
       with-counter-and-modal-filter
     />
     <div class="fr-col-12 fr-mt-3v fr-mb-10v">
@@ -29,6 +29,7 @@ import { ProjectManager } from '@/tools/project/projectManager'
 import { Theme } from '@/tools/theme'
 import { RouteName } from '@/types'
 import { computed } from 'vue'
+import ProjectSorter from '@/tools/project/projectSorter'
 
 definePageMeta({
   name: RouteName.CatalogProjects,
@@ -50,6 +51,14 @@ onServerPrefetch(async () => {
 onNuxtReady(async () => {
   CompanyData.isDataFull().value // call to initialize computed reactivity variable
   await new ProjectManager().getProjects()
+})
+
+const sortedProjects = computed(() => {
+  if (!filteredProjects.value) {
+    return []
+  }
+
+  return CompanyData.isCompanySelected() ? ProjectSorter.bySector(filteredProjects.value) : filteredProjects.value
 })
 
 useSeoMeta(MetaSeo.get(title, description))
