@@ -3,7 +3,7 @@
     v-if="$slots.beforeBreadcrumb"
     class="fr-container--fluid"
   >
-    <slot name="beforeBreadcrumb" />
+    <slot name="beforeBreadcrumb"> </slot>
   </div>
   <slot
     v-if="breadcrumb"

@@ -106,7 +106,7 @@ const eligibilityCriteria = ref<HTMLElement>()
 const stickyWithOffset = ref<StickyWithOffset | null>(null)
 
 const fontColor = computed(() => {
-  return props.color ? `fr-text--${props.color}` : ''
+  return props.color ? `fr-text--${props.color}` : undefined
 })
 
 const navigation = new Navigation()
@@ -131,10 +131,10 @@ onUnmounted(() => {
 
 const bgClass = computed(() => {
   if (props.bgColor) {
-    return [`fr-bg--${props.bgColor}`]
+    return `fr-bg--${props.bgColor}`
   }
 
-  return []
+  return undefined
 })
 
 const scrollTo = (id: string) => {

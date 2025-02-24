@@ -4,7 +4,9 @@
       v-if="isDataFull || Program.isTemporaryUnavailable(currentProgram) || Program.isAvailable(currentProgram)"
       #beforeBreadcrumb
     >
-      <ProgramEligibilityBar />
+      <ClientOnly>
+        <ProgramEligibilityBar />
+      </ClientOnly>
     </template>
     <ProgramBackLink />
     <article v-if="currentProgram">
@@ -18,7 +20,7 @@
         <!-- TITLE & RESUME -->
         <div class="fr-col">
           <ProgramTitle />
-          <ProgramResume />
+          <ProgramResume :form-container-ref="teeProgramFormContainer" />
         </div>
       </div>
       <ProgramTiles />
@@ -86,21 +88,16 @@ await new ProjectManager().getProjects()
 const isCatalogDetail = navigation.isCatalogProgramDetail()
 
 const routeToResults = {
-  name: isCatalogDetail ? RouteName.CatalogPrograms : RouteName.QuestionnaireResult,
-  hash: '#' + currentProgram.value?.id,
-  query: isCatalogDetail ? undefined : query
-}
-
-const routeToProject = {
-  ...routeToResults,
   name: isCatalogDetail ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
-  params: { projectSlug: currentProject.value?.slug }
+  params: { projectSlug: currentProject.value?.slug },
+  query: isCatalogDetail ? undefined : query,
+  hash: '#' + currentProgram.value?.id
 }
 
 const links = computed<TeeDsfrBreadcrumbProps['links']>(() => {
   const links = []
   if (navigation.isProgramFromProject()) {
-    links.push({ text: currentProject.value?.title || '', to: routeToProject })
+    links.push({ text: currentProject.value?.title || '', to: routeToResults })
   }
   return [...links, { text: currentProgram.value?.titre || '' }]
 })
@@ -120,15 +117,15 @@ if (currentProgram.value && navigation.isByRouteName(RouteName.CatalogProgramFro
 
 useSeoMeta(MetaSeo.get(currentProgram.value?.titre, currentProgram.value?.description, currentProgram.value?.illustration))
 
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
+})
+
 const isProgramAutonomous = computed(() => {
   return Program.isProgramAutonomous(currentProgram.value)
 })
 
 const programIsEligible = computed(() => {
   return currentProgram.value ? ProgramEligibility.isEligible(currentProgram.value as unknown as ProgramType) : false
-})
-
-onBeforeRouteLeave(() => {
-  useSeoMeta(MetaSeo.default())
 })
 </script>
