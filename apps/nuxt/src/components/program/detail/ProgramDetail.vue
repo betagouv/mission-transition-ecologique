@@ -75,9 +75,9 @@ const navigation = new Navigation()
 const hasRegisteredData = CompanyData.isDataFull()
 const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
 
-useRuntimeHook('app:mounted', async () => {
+onNuxtReady(async () => {
   if (currentProgram.value) {
-    await new ProgramManager().update()
+    await new ProgramManager().getOneById(currentProgram.value.id)
   }
 })
 

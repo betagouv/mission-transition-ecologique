@@ -85,6 +85,8 @@ import Contact from '@/tools/contact'
 import Translation from '@/tools/translation'
 import Opportunity from '@/tools/opportunity'
 import { CompanyData } from '@/tools/companyData'
+import ProgramFilter from '@/tools/program/programFilter'
+import { ProgramSorter } from '@/tools/program/programSorter'
 
 interface Props {
   project: ProjectType
@@ -120,8 +122,10 @@ const studyPrograms = computed(() => {
 })
 
 const financePrograms = computed(() => {
-  return filteredPrograms.value.filter((program: ProgramData) =>
-    [ProgramAidType.fund, ProgramAidType.loan, ProgramAidType.tax].includes(program["nature de l'aide"])
-  )
+  const filteredByAidType = filteredPrograms.value.filter((program) => {
+    return ProgramFilter.byAidType(program, [ProgramAidType.fund, ProgramAidType.loan, ProgramAidType.tax])
+  })
+
+  return ProgramSorter.byFinanceAidType(filteredByAidType)
 })
 </script>
