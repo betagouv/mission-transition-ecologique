@@ -13,7 +13,7 @@ export default class Breakpoint {
     try {
       return this._breakpoints.active()
     } catch {
-      return ref(BreakpointSizeTypes.md)
+      return computed(() => BreakpointSizeTypes.md)
     }
   }
 
