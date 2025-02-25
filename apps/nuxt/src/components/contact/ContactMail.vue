@@ -5,10 +5,10 @@
         <div class="fr-col-12">
           <div class="fr-follow__newsletter">
             <div>
-              <h5 class="fr-h5 fr-follow__title">Nous avons besoin de vous !</h5>
+              <h5 class="fr-h5 fr-follow__title">Une question sur notre service ?</h5>
               <p class="fr-text--sm fr-follow__desc">
-                Une aide financière qui manque sur la plateforme ? Des bugs que vous aimeriez remonter ? Faites-nous vos retours pour nous
-                aider à améliorer notre outil.
+                Vous êtes un acteur public ou un média et souhaitez en savoir plus sur notre service ? Notre équipe est à votre disposition
+                pour répondre à toutes vos questions.
               </p>
             </div>
             <div>
