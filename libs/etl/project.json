@@ -1,0 +1,36 @@
+{
+  "name": "@tee/etl",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/etl/etl",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/etl",
+        "command": "docker build -t etl-img ."
+      }
+    },
+    "update-database": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/etl",
+        "command": "docker run -it --rm --name etl-job etl-img"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    },
+    "update-database-ci": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/etl",
+        "command": "docker run -it --rm --name --env-file .env etl-job etl-img"
+      },
+      "dependsOn": [
+        "build"
+      ]
+    }
+
+  }
+}

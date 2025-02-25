@@ -25,6 +25,7 @@
     "generate:projects": "nx run @tee/data:generate-projects",
     "generate:iframe-script": "nx run @tee/nuxt:generate-iframe-script",
     "generate:iframe-script:watch": "nx run @tee/nuxt:generate-iframe-script --watch",
+    "update:database": "nx run @tee/etl:update-database",
     "test": "nx run-many -t test -p @tee/data @tee/backend-ddd --verbose",
     "lint": "nx run-many -t lint --verbose",
     "lint:fix": "nx run-many -t lint --fix --verbose",
