@@ -1,6 +1,11 @@
 import iframeResize from '@iframe-resizer/parent'
 
-const script = document.getElementById('transition-ecologique-entreprise') as HTMLScriptElement | null
+let script = document.currentScript as HTMLScriptElement | null
+
+if (!script) {
+  const scripts = document.getElementsByTagName('script')
+  script = scripts[scripts.length - 1] as HTMLScriptElement | null
+}
 
 if (script) {
   setupIframe(script)
