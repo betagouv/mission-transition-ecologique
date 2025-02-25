@@ -4,11 +4,6 @@ export enum YesNo {
   Unknown = 'je-ne-sais-pas'
 }
 
-export enum QuestionnaireRoute {
-  NoSpecificGoal = 'je-ne-sais-pas-par-ou-commencer',
-  SpecificGoal = 'j-ai-un-projet'
-}
-
 export enum BuildingProperty {
   Owns = 'proprietaire',
   Rents = 'locataire',
@@ -107,7 +102,6 @@ export enum PublicodesKeys {
   CodeNAF = 'entreprise . code NAF',
   ValidityStart = 'dispositif . début de validité',
   ValidityEnd = 'dispositif . fin de validité',
-  QuestionnaireRoute = 'questionnaire . parcours',
   CurrentDate = 'date du jour',
   Workforce = 'entreprise . effectif',
   BuildingOwner = 'entreprise . est propriétaire de ses locaux',

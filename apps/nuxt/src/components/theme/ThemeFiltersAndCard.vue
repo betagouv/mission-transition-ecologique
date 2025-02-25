@@ -13,7 +13,6 @@
 <script setup lang="ts">
 import { ThemeId } from '@tee/data'
 import { computed } from 'vue'
-import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { FilterItemKeys } from '@/types'
 import { useFiltersStore } from '@/stores/filters'
 interface Props {
@@ -22,15 +21,9 @@ interface Props {
 
 defineProps<Props>()
 
-const { hasSpinner } = storeToRefs(useNavigationStore())
-
 const filtersStore = useFiltersStore()
 
 const theme = computed(() => {
-  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {
-    return UsedTrack.getPriorityTheme()
-  }
-
   if (filtersStore.hasThemeTypeSelected()) {
     return filtersStore.filters[FilterItemKeys.themeType]
   }
@@ -39,6 +32,6 @@ const theme = computed(() => {
 })
 
 const hasThemeCard = computed(() => {
-  return (filtersStore.hasThemeTypeSelected() || (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme())) && !hasSpinner.value
+  return filtersStore.hasThemeTypeSelected()
 })
 </script>
