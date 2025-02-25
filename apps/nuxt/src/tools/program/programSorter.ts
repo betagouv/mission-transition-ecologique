@@ -1,7 +1,7 @@
-import { ProgramAidType, ProgramData } from '@/types'
+import { ProgramAidType, ProgramType } from '@/types'
 
 export class ProgramSorter {
-  static byFinanceAidType(programs: ProgramData[]) {
+  static byFinanceAidType(programs: ProgramType[]) {
     return programs.slice().sort((a, b) => {
       const aidKey = "nature de l'aide"
       switch (true) {
