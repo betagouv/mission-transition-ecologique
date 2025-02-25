@@ -154,6 +154,7 @@ import Chart from 'chart.js/auto'
 
 definePageMeta({
   path: '/budget',
+  layout: 'default',
   name: RouteName.Budget
 })
 

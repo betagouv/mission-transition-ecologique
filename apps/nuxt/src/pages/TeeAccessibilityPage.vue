@@ -135,6 +135,7 @@ import Contact from '@/tools/contact'
 
 definePageMeta({
   path: '/accessibilite',
+  layout: 'default',
   name: RouteName.Accessibility
 })
 </script>

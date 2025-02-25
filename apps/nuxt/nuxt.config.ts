@@ -95,6 +95,9 @@ export default defineNuxtConfig({
   experimental: {
     renderJsonPayloads: false,
     inlineRouteRules: true,
+    defaults: {
+      prefetch: false
+    }
     // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 
