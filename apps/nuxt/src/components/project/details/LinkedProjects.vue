@@ -6,7 +6,7 @@
   >
     <template #content>
       <div class="fr-my-4v">{{ Translation.t('project.linkedProjects.description') }}</div>
-      <div class="fr-grid-row fr-grid-row--center fr-grid-row-md--left">
+      <div class="fr-grid-row fr-grid-row--left">
         <template
           v-for="linkedProject in linkedProjectsTags"
           :key="linkedProject.id"
