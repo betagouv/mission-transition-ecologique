@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout>
     <div class="fr-container">
-      <div class="fr-my-7w fr-mt-md-12w fr-mb-md-10w fr-grid-row fr-grid-row--gutters fr-grid-row--middle fr-grid-row--center">
+      <div class="fr-my-7w fr-mt-md-12w fr-mb-md-10w fr-grid-row fr-grid-row--gutters fr-grid-row--middle fr-grid-row--left">
         <div class="fr-py-0 fr-col-12 fr-col-md-6">
           <h1>Page non trouvée</h1>
           <p class="fr-text--sm fr-mb-3w">{{ `Erreur ${error.statusCode}` }}</p>
@@ -14,7 +14,7 @@
           />
           <ContactButton v-else />
         </div>
-        <div class="fr-col-12 fr-col-sm-6 fr-col-md-3 fr-col-offset-md-1 fr-px-6w fr-px-md-0 fr-py-0">
+        <div class="fr-col-8 fr-col-justify--left fr-col-sm-6 fr-col-md-3 fr-col-offset-md-1 fr-px-6w fr-px-md-0 fr-pt-4v fr-py-md-0">
           <img
             class="fr-footer__logo fr-responsive-img"
             src="/images/tracks/no-results.png"
@@ -36,7 +36,6 @@ export interface Props {
 const props = defineProps<Props>()
 
 const router = useRouter()
-
 const routeToBaseList: RouteLocationAsRelativeGeneric = {
   name: RouteName.Homepage
 }
@@ -44,7 +43,7 @@ const toHomePage = async () => {
   await router.push(routeToBaseList)
 }
 const error404Text =
-  "Si vous avez tapé l'adresse web dans le navigateur, vérifiez qu'elle est correcte. La page n’est peut-être plus disponible. Dans ce cas, pour continuer votre visite vous pouvez consulter notre page d’accueil, ou effectuer une recherche avec notre moteur de recherche en haut de page. Sinon contactez-nous pour que l’on puisse vous rediriger vers la bonne information."
+  "Si vous avez tapé l'adresse web dans le navigateur, vérifiez qu'elle est correcte. La page n’est peut-être plus disponible. Dans ce cas, pour continuer votre visite vous pouvez consulter notre page d’accueil. Sinon contactez-nous pour que l’on puisse vous rediriger vers la bonne information."
 const error500Text = 'Essayez de rafraîchir la page ou bien réessayez plus tard.'
 
 const leadText = computed<string>(() => {
