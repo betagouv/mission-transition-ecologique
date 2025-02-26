@@ -27,7 +27,9 @@
     <TeeDsfrButton
       :class="Breakpoint.isMobile() ? 'fr-btn-fullwidth' : ''"
       class="fr-bg--yellow fr-text--blue-france fr-col-justify--center"
-      label="Enregistrer et fermer"
+      :label="getSaveProfileButtonLabel"
+      :icon="getSaveProfileButtonIcon"
+      icon-right
       @click="saveProfile"
     />
   </div>
@@ -43,6 +45,7 @@ import { CompanyData } from '@/tools/companyData'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 
 const navigation = new Navigation()
+const navigationStore = useNavigationStore()
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -98,6 +101,14 @@ const profile = ref<RegisterDetails>({
 })
 const canBeSaved = computed(() => {
   return profile.value.activity.value && profile.value.localisation.value && profile.value.size.value
+})
+
+const getSaveProfileButtonLabel = computed(() => {
+  return navigationStore.isFromQuestionnaireCtaRegisterModal ? 'suivant' : 'Enregistrer et fermer'
+})
+
+const getSaveProfileButtonIcon = computed(() => {
+  return navigationStore.isFromQuestionnaireCtaRegisterModal ? 'fr-icon-arrow-right-line' : ''
 })
 
 const saveProfile = async () => {

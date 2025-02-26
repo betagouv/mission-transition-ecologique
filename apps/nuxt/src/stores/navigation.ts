@@ -145,6 +145,21 @@ export const useNavigationStore = defineStore('navigation', () => {
     }
   }
 
+  function setFromCtaRegisterModal(value: boolean) {
+    isFromQuestionnaireCtaRegisterModal.value = false
+    isFromCtaRegisterModal.value = value
+  }
+
+  function setFromQuestionnaireCtaRegisterModal(value: boolean) {
+    isFromCtaRegisterModal.value = false
+    isFromQuestionnaireCtaRegisterModal.value = value
+  }
+
+  function resetFromCtaRegisterModal() {
+    isFromCtaRegisterModal.value = false
+    isFromQuestionnaireCtaRegisterModal.value = false
+  }
+
   return {
     router,
     route,
@@ -163,7 +178,10 @@ export const useNavigationStore = defineStore('navigation', () => {
     deleteSearchParam,
     routeByTrackId,
     replaceBrowserHistory,
-    getAbsoluteUrlByRouteName
+    getAbsoluteUrlByRouteName,
+    setFromCtaRegisterModal,
+    setFromQuestionnaireCtaRegisterModal,
+    resetFromCtaRegisterModal
   }
 })
 

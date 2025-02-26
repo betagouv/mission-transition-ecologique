@@ -1,52 +1,63 @@
 <template>
-  <DsfrCard
-    :title="title"
-    :description="description"
-    :no-arrow="true"
-    :buttons="buttons"
-    class="fr-bg--blue-france--lightness fr-radius-a--1v fr-card--shadow fr-text-center"
+  <TeeContentBlock
+    class="fr-bg--blue-france--lightness fr-radius-a--1v fr-card--shadow fr-text-center fr-pt-7w fr-pb-2w fr-px-3w fr-div-fixed-height"
   >
-  </DsfrCard>
+    <template #title>
+      <span
+        class="title fr-text--bold fr-text--blue-france"
+        v-html="htmlTitle"
+      />
+    </template>
+    <template #content>
+      <p
+        class="fr-text--sm fr-pt-4w fr-pb-2w"
+        v-html="htmlDescription"
+      />
+      <DsfrButton
+        :key="button.label"
+        :label="button.label"
+        :secondary="button.secondary"
+        class="fr-btn--tertiary-no-outlines fr-mx-1w fr-text--bold button"
+        @click="toQuestionnaire"
+      ></DsfrButton>
+    </template>
+  </TeeContentBlock>
 </template>
 <script setup lang="ts">
-import { DsfrCard } from '@gouvminint/vue-dsfr'
 import { RouteName } from '@/types'
 import { DsfrButtonProps } from '@gouvminint/vue-dsfr/types/components/DsfrButton/DsfrButton.vue'
 import Navigation from '@/tools/navigation'
 import { useCompanyDataStore } from '@/stores/companyData'
 interface Props {
-  title: string
-  description: string
+  htmlTitle: string
+  htmlDescription: string
 }
 
-const buttons: DsfrButtonProps[] = [
-  {
-    label: "J'identifie mes projets prioritaires",
-    secondary: true,
-    onClick: (event: MouseEvent) => {
-      event.preventDefault()
-      toQuestionnaire()
-    }
+const button: DsfrButtonProps = {
+  label: "J'identifie mes projets prioritaires",
+  secondary: true,
+  onClick: (event: MouseEvent) => {
+    event.preventDefault()
+    toQuestionnaire()
   }
-]
+}
 
 const router = useRouter()
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 withDefaults(defineProps<Props>(), {
-  title: 'Vous ne savez pas par où commencer ?',
-  description:
-    'Complétez le profil de votre entreprise\n' +
-    ' et accédez à des propositions d’actions et de financements pour vous aider à réduire votre impact environnemental.'
+  htmlTitle: 'Vous ne savez pas</br> par où commencer ?',
+  htmlDescription:
+    'En moins de 2 minutes, répondez à quelques questions pour identifier vos <strong>projets prioritaires</strong>' +
+    ' et les <strong>financements</strong> disponibles pour votre entreprise'
 })
-
 const toQuestionnaire = async () => {
   if (isDataFull.value) {
     await router.push({
       name: RouteName.QuestionnaireStart
     })
   } else {
-    useNavigationStore().isFromQuestionnaireCtaRegisterModal = true
+    useNavigationStore().setFromQuestionnaireCtaRegisterModal(true)
     Navigation.toggleRegisterModal()
   }
 }
@@ -54,16 +65,9 @@ const toQuestionnaire = async () => {
 <style scoped lang="scss">
 @use '@/assets/scss/setting';
 
-:deep(.fr-card__title) {
-  color: setting.$blue-france;
-}
-
-:deep(.fr-card__content) {
-  padding: 3rem 1rem;
-}
-
-:deep(.fr-card__footer button span) {
-  font-weight: bold;
+.title {
+  font-size: 1.375rem;
+  line-height: 1.75rem;
 }
 </style>
 n

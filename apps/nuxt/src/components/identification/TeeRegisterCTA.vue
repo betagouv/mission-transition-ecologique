@@ -77,6 +77,7 @@ const badgeIcon = computed(() => {
 })
 
 const openModal = () => {
+  useNavigationStore().resetFromCtaRegisterModal()
   Navigation.toggleRegisterModal()
 }
 </script>

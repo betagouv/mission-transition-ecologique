@@ -148,14 +148,14 @@ export default class Navigation {
     const navigationStore = useNavigationStore()
     if (this.isByRouteName(RouteName.Homepage)) {
       if (navigationStore.isFromCtaRegisterModal) {
-        useNavigationStore().isFromCtaRegisterModal = false
+        useNavigationStore().setFromCtaRegisterModal(false)
         await this._router.push({
           name: RouteName.CatalogProjects
         })
       }
 
       if (navigationStore.isFromQuestionnaireCtaRegisterModal) {
-        useNavigationStore().isFromQuestionnaireCtaRegisterModal = false
+        useNavigationStore().setFromQuestionnaireCtaRegisterModal(false)
         await this._router.push({
           name: RouteName.QuestionnaireStart
         })
