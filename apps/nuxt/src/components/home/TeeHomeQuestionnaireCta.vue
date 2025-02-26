@@ -17,7 +17,10 @@
         :key="button.label"
         :label="button.label"
         :secondary="button.secondary"
-        class="fr-btn--tertiary-no-outlines fr-mx-1w fr-text--bold button"
+        class="fr-btn--tertiary-no-outline fr-mx-1w fr-text--bold"
+        :class="{ 'fr-bg--blue-france--light': button.isHovering.value }"
+        @mouseover="button.isHovering.value = true"
+        @mouseleave="button.isHovering.value = false"
         @click="toQuestionnaire"
       ></DsfrButton>
     </template>
@@ -33,13 +36,10 @@ interface Props {
   htmlDescription: string
 }
 
-const button: DsfrButtonProps = {
+const button: DsfrButtonProps & { isHovering: Ref<boolean> } = {
   label: "J'identifie mes projets prioritaires",
   secondary: true,
-  onClick: (event: MouseEvent) => {
-    event.preventDefault()
-    toQuestionnaire()
-  }
+  isHovering: ref(false)
 }
 
 const router = useRouter()
@@ -63,8 +63,6 @@ const toQuestionnaire = async () => {
 }
 </script>
 <style scoped lang="scss">
-@use '@/assets/scss/setting';
-
 .title {
   font-size: 1.375rem;
   line-height: 1.75rem;
