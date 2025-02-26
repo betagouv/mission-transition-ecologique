@@ -54,15 +54,13 @@
 import Navigation from '@/tools/navigation'
 import { CompanyDataStorageKey } from '@/types'
 import Breakpoint from '@/tools/breakpoints'
-import { CompanyDataStorage } from '@/tools/companyData'
+import { CompanyData, CompanyDataStorage } from '@/tools/companyData'
 import Translation from '@/tools/translation'
 
 const registeredData = CompanyDataStorage.getData()
+const hasData = CompanyData.isDataFull()
 const companyName = computed<string | undefined>(() => {
   return registeredData.value[CompanyDataStorageKey.Company]?.denomination || ''
-})
-const hasData = computed<boolean>(() => {
-  return !!registeredData.value[CompanyDataStorageKey.Company]
 })
 
 const isSmallScreen = computed(() => {

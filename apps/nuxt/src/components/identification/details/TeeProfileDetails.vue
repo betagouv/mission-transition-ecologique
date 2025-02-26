@@ -137,10 +137,9 @@ const saveProfile = async () => {
 
     Navigation.toggleRegisterModal(false)
     await UsedTrack.updateQuestionnaireStep()
+    await navigation.redirectAfterModal()
     await new ProjectManager().update()
     await new ProgramManager().update()
-
-    await navigation.redirectAfterModal()
   } else {
     showError.value = true
   }
