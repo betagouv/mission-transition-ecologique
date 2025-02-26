@@ -1,70 +1,68 @@
 <template>
-  <div id="register-localisation-field">
-    <p
-      v-if="hasData"
-      class="fr-tag fr-mb-4v fr-bg--blue--lightness"
-    >
-      <span class="fr-pr-4v">{{ localisationLabel }}</span>
-      <span
-        class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
-        @click="modifyLocalisation"
-      />
-    </p>
+  <p
+    v-if="hasData"
+    class="fr-tag fr-mb-4v fr-bg--blue--lightness"
+  >
+    <span class="fr-pr-4v">{{ localisationLabel }}</span>
+    <span
+      class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
+      @click="modifyLocalisation"
+    />
+  </p>
+  <div
+    v-else
+    id="register-localisation"
+  >
     <div
-      v-else
-      id="register-localisation"
+      class="fr-input-group fr-mb-0"
+      :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
     >
       <div
-        class="fr-input-group fr-mb-0"
-        :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
+        ref="localisationSearchBar"
+        class="fr-search-bar fr-search-bar--yellow"
+        :class="isLoading ? 'fr-search-bar--loading' : ''"
+        role="search"
       >
-        <div
-          ref="localisationSearchBar"
-          class="fr-search-bar fr-search-bar--yellow"
-          :class="isLoading ? 'fr-search-bar--loading' : ''"
-          role="search"
-        >
-          <DsfrInput
-            v-model="localisationInput"
-            name="manual-register-localisation"
-            class="fr-input--white fr-input"
-            type="search"
-            :placeholder="infos.description"
-            @update:model-value="updateModelValue"
-            @keyup.enter="searchLocalisation"
-          />
-          <DsfrButton
-            class="fr-bg--yellow search-button"
-            tertiary
-            no-outline
-            @click="searchLocalisation"
-          />
-        </div>
+        <DsfrInput
+          v-model="localisationInput"
+          name="manual-register-localisation"
+          class="fr-input--white fr-input"
+          type="search"
+          :placeholder="infos.description"
+          @update:model-value="updateModelValue"
+          @keyup.enter="searchLocalisation"
+        />
+        <DsfrButton
+          class="fr-bg--yellow search-button"
+          tertiary
+          no-outline
+          @click="searchLocalisation"
+        />
       </div>
+    </div>
+    <div
+      v-if="localisationResults.length && showResults"
+      id="localisation-response"
+      class="fr-bg--white"
+    >
       <div
-        v-if="localisationResults.length && showResults"
-        id="localisation-response"
-        class="fr-bg--white"
+        v-for="localisation in localisationResults"
+        :key="`resp-input-${localisation.nom}-${localisation.codePostal}`"
+        class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
+        @click="selectLocalisation(localisation)"
       >
-        <div
-          v-for="localisation in localisationResults"
-          :key="`resp-input-${localisation.nom}-${localisation.codePostal}`"
-          class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
-          @click="selectLocalisation(localisation)"
-        >
-          <div class="fr-card__body">
-            <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-              <div class="fr-text--blue-france">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
-            </div>
+        <div class="fr-card__body">
+          <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
+            <div class="fr-text--blue-france">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
           </div>
         </div>
       </div>
-      <div
-        :class="errorMsg ? 'fr-error-text' : ''"
-        class="fr-input--empty-text fr-mt-2v"
-      >
-        {{ errorMsg }}
-      </div>
+    </div>
+    <div
+      :class="errorMsg ? 'fr-error-text' : ''"
+      class="fr-input--empty-text fr-mt-2v"
+    >
+      {{ errorMsg }}
     </div>
   </div>
 </template>
@@ -152,9 +150,5 @@ onClickOutside(localisationSearchBar, () => modifyLocalisation())
 #register-localisation {
   position: relative;
   margin-bottom: 0;
-}
-
-#register-localisation-field {
-  height: 70px;
 }
 </style>

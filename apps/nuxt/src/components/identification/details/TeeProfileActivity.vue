@@ -1,71 +1,69 @@
 <template>
-  <div id="register-activity-field">
-    <p
-      v-if="infos.value"
-      class="fr-tag fr-mb-4v fr-bg--blue--lightness"
-    >
-      <span class="fr-pr-4v">{{ activityLabel }}</span>
-      <span
-        class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
-        @click="modifyActivity"
-      />
-    </p>
+  <p
+    v-if="infos.value"
+    class="fr-tag fr-mb-4v fr-bg--blue--lightness"
+  >
+    <span class="fr-pr-4v">{{ activityLabel }}</span>
+    <span
+      class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
+      @click="modifyActivity"
+    />
+  </p>
+  <div
+    v-else
+    id="register-activity"
+  >
     <div
-      v-else
-      id="register-activity"
+      class="fr-input-group fr-mb-0"
+      :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
     >
       <div
-        class="fr-input-group fr-mb-0"
-        :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
+        ref="activitySearchBar"
+        class="fr-search-bar fr-search-bar--yellow"
+        :class="isLoading ? 'fr-search-bar--loading' : ''"
+        role="search"
       >
-        <div
-          ref="activitySearchBar"
-          class="fr-search-bar fr-search-bar--yellow"
-          :class="isLoading ? 'fr-search-bar--loading' : ''"
-          role="search"
-        >
-          <DsfrInput
-            v-model="activityInput"
-            name="manual-register-activity"
-            class="fr-input--white fr-input"
-            type="search"
-            :placeholder="infos.description"
-            @click="searchActivity"
-            @update:model-value="updateModelValue"
-            @keyup.enter="searchActivity"
-          />
-          <DsfrButton
-            class="fr-bg--yellow search-button"
-            tertiary
-            no-outline
-            @click="searchActivity"
-          />
-        </div>
+        <DsfrInput
+          v-model="activityInput"
+          name="manual-register-activity"
+          class="fr-input--white fr-input"
+          type="search"
+          :placeholder="infos.description"
+          @click="searchActivity"
+          @update:model-value="updateModelValue"
+          @keyup.enter="searchActivity"
+        />
+        <DsfrButton
+          class="fr-bg--yellow search-button"
+          tertiary
+          no-outline
+          @click="searchActivity"
+        />
       </div>
+    </div>
+    <div
+      v-if="activityResults.length && !infos.value"
+      id="activity-response"
+      class="fr-bg--white"
+    >
       <div
-        v-if="activityResults.length && !infos.value"
-        id="activity-response"
-        class="fr-bg--white"
+        v-for="activity in activityResults"
+        :key="`resp-input-${activity.codeNAF}-${activity.codeNAF1}`"
+        class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
+        @click="selectActivity(activity)"
       >
-        <div
-          v-for="activity in activityResults"
-          :key="`resp-input-${activity.codeNAF}-${activity.codeNAF1}`"
-          class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
-          @click="selectActivity(activity)"
-        >
-          <div class="fr-card__body">
-            <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-              <div class="fr-text--blue-france">{{ `${activity.secteur} (${activity.codeNAF})` }}</div>
-            </div>
+        <div class="fr-card__body">
+          <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
+            <div class="fr-text--blue-france">{{ `${activity.secteur} (${activity.codeNAF})` }}</div>
           </div>
         </div>
       </div>
-      <div
-        :class="errorMsg ? 'fr-error-text' : ''"
-        class="fr-input--empty-text fr-mt-2v"
-      >
-        {{ errorMsg }}
-      </div>
+    </div>
+    <div
+      :class="errorMsg ? 'fr-error-text' : ''"
+      class="fr-input--empty-text fr-mt-2v"
+    >
+      {{ errorMsg }}
     </div>
   </div>
 </template>
@@ -145,9 +143,5 @@ const searchActivity = async () => {
 #register-activity {
   position: relative;
   margin-bottom: 0;
-}
-
-#register-activity-field {
-  height: 70px;
 }
 </style>

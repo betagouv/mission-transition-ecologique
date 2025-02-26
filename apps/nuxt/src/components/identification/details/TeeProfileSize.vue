@@ -2,7 +2,7 @@
   <div id="register-size-field">
     <p
       v-if="infos.value"
-      class="fr-tag fr-mb-4v fr-bg--blue--lightness"
+      class="fr-tag fr-bg--blue--lightness"
     >
       <span class="fr-pr-4v">{{ sizeText }}</span>
       <span
