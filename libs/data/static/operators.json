@@ -489,5 +489,11 @@
     "filterCategories": [
       "Régions"
     ]
+  },
+  {
+    "operator": "Startup d'Etat",
+    "filterCategories": [
+      "État"
+    ]
   }
 ]
