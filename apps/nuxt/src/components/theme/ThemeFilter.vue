@@ -30,7 +30,7 @@ const filters: FiltersType = filtersStore.filters
 let hasAllTag = true
 
 if (props.theme) {
-  filters.themeTypeSelected = props.theme
+  filters[FilterItemKeys.themeType] = props.theme
 }
 
 if (UsedTrack.isSpecificGoal()) {
