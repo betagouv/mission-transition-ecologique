@@ -12,7 +12,7 @@
           :key="linkedProject.id"
         >
           <TeeProjectButton
-            class="fr-my-1-5v fr-mx-2v"
+            class="fr-my-1-5v fr-mr-2v"
             target="_blank"
             :project="linkedProject"
             :color="color"
