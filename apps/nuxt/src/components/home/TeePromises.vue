@@ -95,7 +95,7 @@ const otherOperator = {
 }
 
 .operator-logo {
-  max-height: 3.5rem;
+  max-height: 5.5rem;
   max-width: 5.8rem !important;
   width: revert-layer !important;
 }

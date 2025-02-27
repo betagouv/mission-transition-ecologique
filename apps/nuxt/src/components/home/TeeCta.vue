@@ -4,7 +4,7 @@
     class="fr-grid-row"
   >
     <div class="fr-col fr-col-md-8 fr-col-lg-8">
-      <div class="fr-grid-row fr-grid-row--gutters fr-p-5v fr-p-sm-8v">
+      <div class="fr-grid-row fr-grid-row--gutters fr-p-5v fr-p-sm-8v fr-pl-md-20v">
         <div class="fr-col-12 fr-mx-0 fr-px-4v">
           <div class="fr-grid-row fr-grid-row--gutters">
             <div class="fr-col">
