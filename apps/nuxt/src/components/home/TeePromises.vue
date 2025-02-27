@@ -43,12 +43,10 @@ const otherOperator = {
           class="circle-background"
           alt="yellow-circle-background"
         />
-        <h4 class="fr-text--blue-france fr-pb-2v">
-          Un point d'entrée unique pour toutes les aides à la transition écologique des entreprises
-        </h4>
+        <h4 class="fr-text--blue-france fr-pb-2v">Le point d'entrée vers toutes les aides à la transition écologique des entreprises</h4>
         <p>
-          Transition écologique des entreprises des entreprises vous aide à <b>identifier la bonne aide</b> pour votre entreprise parmi les
-          aides publiques nationales, régionales et territoriales issues de <b>l'ensemble des partenaires publiques.</b>
+          Transition écologique des entreprises vous permet <b>d'identifier la bonne aide</b> pour votre entreprise parmi les aides
+          publiques nationales, régionales et territoriales issues de <b>l’ensemble des partenaires publics.</b>
         </p>
         <div class="fr-grid-row fr-col-justify--center fr-col-content--middle">
           <img
