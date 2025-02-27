@@ -73,7 +73,7 @@ export interface TeeEligibilityBarLinkButton {
   label: string
   labelMobile?: string
   isButtonLink: true
-  callback?: () => void
+  callback?: CallableFunction
 }
 
 export interface TeeEligibilityBarLinkHash {
