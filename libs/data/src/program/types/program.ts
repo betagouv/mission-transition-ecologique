@@ -154,7 +154,8 @@ export type Dispositif = {
     | "Région Nouvelle-Aquitaine"
     | "Agence de Développement Economique de Corse"
     | "Agence de Tourisme de la Corse"
-    | "Région Guadeloupe";
+    | "Région Guadeloupe"
+    | "Startup d'Etat";
   /**
    * Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.
    */
@@ -352,4 +353,5 @@ export type Operators =
   | "Région Nouvelle-Aquitaine"
   | "Agence de Développement Economique de Corse"
   | "Agence de Tourisme de la Corse"
-  | "Région Guadeloupe";
+  | "Région Guadeloupe"
+  | "Startup d'Etat";
