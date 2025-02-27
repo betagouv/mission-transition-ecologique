@@ -134,7 +134,6 @@ const saveProfile = async () => {
       Analytics.sendEvent('register_manual_modal', 'register_manual_modal')
     }
 
-    Navigation.toggleRegisterModal(false)
     await UsedTrack.updateQuestionnaireStep()
     await new ProjectManager().update()
     await new ProgramManager().update()
@@ -145,6 +144,7 @@ const saveProfile = async () => {
         name: RouteName.CatalogProjects
       })
     }
+    Navigation.toggleRegisterModal(false)
   } else {
     showError.value = true
   }
