@@ -26,6 +26,7 @@ export const useNavigationStore = defineStore('navigation', () => {
   const hasSpinner = ref<boolean>(false)
   const hasRegisterModal = ref<boolean>(false)
   const isFromCtaRegisterModal = ref<boolean>(false)
+  const isFromQuestionnaireCtaRegisterModal = ref<boolean>(false)
   const query = computed<Record<string, LocationQueryValue | LocationQueryValue[]>>(() => {
     const query: LocationQuery = {}
     for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
@@ -64,7 +65,7 @@ export const useNavigationStore = defineStore('navigation', () => {
       query: queryByUsedTrackId(trackId)
     }
 
-    if (TrackId.Siret === trackId) {
+    if (TrackId.BuildingProperty === trackId) {
       route = {
         ...route,
         name: RouteName.QuestionnaireStart,
@@ -144,6 +145,21 @@ export const useNavigationStore = defineStore('navigation', () => {
     }
   }
 
+  function setFromCtaRegisterModal(value: boolean) {
+    isFromQuestionnaireCtaRegisterModal.value = false
+    isFromCtaRegisterModal.value = value
+  }
+
+  function setFromQuestionnaireCtaRegisterModal(value: boolean) {
+    isFromCtaRegisterModal.value = false
+    isFromQuestionnaireCtaRegisterModal.value = value
+  }
+
+  function resetFromCtaRegisterModal() {
+    isFromCtaRegisterModal.value = false
+    isFromQuestionnaireCtaRegisterModal.value = false
+  }
+
   return {
     router,
     route,
@@ -153,6 +169,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     hasSpinner,
     hasRegisterModal,
     isFromCtaRegisterModal,
+    isFromQuestionnaireCtaRegisterModal,
     resetSearchParams,
     setRouter,
     setRoute,
@@ -161,7 +178,10 @@ export const useNavigationStore = defineStore('navigation', () => {
     deleteSearchParam,
     routeByTrackId,
     replaceBrowserHistory,
-    getAbsoluteUrlByRouteName
+    getAbsoluteUrlByRouteName,
+    setFromCtaRegisterModal,
+    setFromQuestionnaireCtaRegisterModal,
+    resetFromCtaRegisterModal
   }
 })
 
