@@ -40,15 +40,21 @@
   </div>
 </template>
 <script setup lang="ts">
+import { useCompanyDataStore } from '@/stores/companyData'
 import { RouteName } from '@/types/routeType'
-import { type RouteLocationAsRelativeGeneric } from 'vue-router'
+import Navigation from '@/tools/navigation'
 
 const router = useRouter()
+const { isDataFull } = storeToRefs(useCompanyDataStore())
 
-const routeToBaseList: RouteLocationAsRelativeGeneric = {
-  name: RouteName.QuestionnaireStart
-}
 const toQuestionnaire = async () => {
-  await router.push(routeToBaseList)
+  if (isDataFull.value) {
+    await router.push({
+      name: RouteName.CatalogProjects
+    })
+  } else {
+    useNavigationStore().isFromCtaRegisterModal = true
+    Navigation.toggleRegisterModal()
+  }
 }
 </script>
