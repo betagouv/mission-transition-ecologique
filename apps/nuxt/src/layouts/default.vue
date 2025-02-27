@@ -5,6 +5,10 @@ import { MetaSeo } from '@/tools/metaSeo'
 import Translation from '@/tools/translation'
 import Cookie from '@/tools/cookies'
 
+defineOptions({
+  // eslint-disable-next-line vue/component-definition-name-casing
+  name: 'default'
+})
 const navigationStore = useNavigationStore()
 const router = useRouter()
 const route = useRoute()

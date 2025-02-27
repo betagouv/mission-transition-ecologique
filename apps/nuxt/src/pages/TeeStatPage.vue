@@ -25,6 +25,7 @@ import { RouteName } from '@/types'
 
 definePageMeta({
   path: '/stats',
+  layout: 'default',
   name: RouteName.Statistics
 })
 </script>

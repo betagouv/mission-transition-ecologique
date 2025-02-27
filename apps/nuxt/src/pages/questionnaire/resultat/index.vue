@@ -13,6 +13,7 @@ import { RouteName } from '@/types/routeType'
 
 definePageMeta({
   name: RouteName.QuestionnaireResult,
+  layout: 'default',
   middleware: [MiddlewareName.setUsedTracks, MiddlewareName.hasUsedTracks]
 })
 

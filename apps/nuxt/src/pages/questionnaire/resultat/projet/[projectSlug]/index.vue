@@ -14,6 +14,7 @@ import { RouteName } from '@/types/routeType'
 
 definePageMeta({
   name: RouteName.ProjectResultDetail,
+  layout: 'default',
   middleware: [MiddlewareName.hasProject, MiddlewareName.setUsedTracks, MiddlewareName.hasUsedTracks]
 })
 </script>

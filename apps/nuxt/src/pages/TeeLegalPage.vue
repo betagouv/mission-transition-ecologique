@@ -30,6 +30,7 @@ import { LegalNoticePropsThirdParty, LegalNotice } from '@incubateur-ademe/legal
 
 definePageMeta({
   path: '/mentions-legales',
+  layout: 'default',
   name: RouteName.Legal
 })
 

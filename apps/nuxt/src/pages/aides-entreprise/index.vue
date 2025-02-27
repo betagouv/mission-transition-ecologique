@@ -15,6 +15,7 @@ import { RouteName } from '@/types'
 
 definePageMeta({
   name: RouteName.CatalogPrograms,
+  layout: 'default',
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries]
 })
 </script>
