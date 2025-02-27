@@ -18,7 +18,7 @@
         :label="button.label"
         :secondary="button.secondary"
         class="fr-btn--tertiary-no-outline fr-mx-1w fr-text--bold"
-        :class="{ 'fr-bg--blue-france--light': button.isHovering.value }"
+        :class="{ 'fr-bg--purple--light': button.isHovering.value }"
         @mouseover="button.isHovering.value = true"
         @mouseleave="button.isHovering.value = false"
         @click="toQuestionnaire"
