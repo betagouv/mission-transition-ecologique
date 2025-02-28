@@ -11,10 +11,22 @@
 
 <script setup lang="ts">
 import { MiddlewareName } from '@/middleware/type/middlewareName'
+import { CompanyData } from '@/tools/companyData'
+import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 
 definePageMeta({
   name: RouteName.CatalogProjects,
-  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.openModal, MiddlewareName.resetFilters]
+  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
 })
+
+const route = useRoute()
+
+if (route.query.modal === 'true' && !CompanyData.hasCompanyData()) {
+  Navigation.toggleRegisterModal()
+  if (import.meta.client) {
+    const urlWithoutQuery = route.path
+    window.history.replaceState({}, '', urlWithoutQuery)
+  }
+}
 </script>
