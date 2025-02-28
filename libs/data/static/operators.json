@@ -281,8 +281,10 @@
     ]
   },
   {
-    "operator": "Organisations professionnelles",
-    "filterCategories": []
+    "operator": "CAPEB - Confédération de l'Artisanat et des Petites Entreprises du Bâtiment",
+    "filterCategories": [
+      "OP"
+    ]
   },
   {
     "operator": "Région Bretagne",
@@ -305,8 +307,10 @@
     "filterCategories": []
   },
   {
-    "operator": "UIMM",
-    "filterCategories": []
+    "operator": "UIMM - Union des industries et métiers de la métallurgie",
+    "filterCategories": [
+      "OP"
+    ]
   },
   {
     "operator": "Véolia Eau",
@@ -489,5 +493,27 @@
     "filterCategories": [
       "Régions"
     ]
+  },
+  {
+    "operator": "Startup d'Etat",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "CPME",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Prefecture Eure (27)",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "CRESS",
+    "filterCategories": []
   }
 ]

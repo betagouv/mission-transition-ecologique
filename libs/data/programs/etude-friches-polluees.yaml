@@ -1,57 +1,79 @@
-titre: Étude "friches polluées"
+titre: Étude et travaux de dépollution d'une friche
 promesse: Réalisez une étude pour votre projet de reconversion de friches polluées
 description: >-
-  Pour faciliter la reconversion des friches, l’ADEME soutient le financement
-  d'études pour évaluer le risque de pollution, interroger les intentions
-  d'usages et définir des stratégies de gestion de la pollution et de
-  dépollution adaptées au projet prévu.
+  Vous avez un projet de reconversion de friche ? L’ADEME vous soutient en
+  finançant des études pour évaluer les risques de pollution, définir les usages
+  futurs et élaborer des stratégies de dépollution adaptées. Profitez également
+  d’une aide pour les travaux de dépollution, de déconstruction, de désamiantage
+  et de restauration écologique des sols.
 description longue: >-
   Les prestations d’études éligibles sont principalement  :
 
   • Les études de diagnostic permettant d’accompagner à l’échelle du site et en
-  amont de la reconversion, des prestations élémentaires référencées dans le
-  cadre des prestations normalisées NF X31 620 de type LEVE et INFO pour
-  caractériser les potentiels de changement d’usage et de mutabilité.
+  amont de la reconversion, pour caractériser les potentiels de changement
+  d’usage et de mutabilité.
 
   • Les études d’accompagnement de projets regroupant les différentes missions
   de conseil et d’accompagnement dans la réalisation opérationnelle de la
   reconversion à savoir : 
 
-  • Les prestations Plan de gestion [PG (NF X31-620-2)] et les investigations
-  associées [DIAG (NF X31-620-2)] et le cas échéant les
+  • Les prestations Plan de gestion et les investigations associées et le cas
+  échéant les
 
-  prestations Interprétations des milieux [IEM (NF X31-620-2)],
+  prestations Interprétations des milieux ;
 
-  • Les prestations Plan de conception de travaux [PCT (NF X31-620-3) y compris
-  les essais laboratoires (B111 réf. NF X31-620-3) et les essais terrains (B112
-  réf. NF X31-620-3) (afin de déterminer les techniques de dépollution les plus
-  adaptées et obtenir les éléments de dimensionnement),
+  • Les prestations Plan de conception de travaux y compris les essais
+  laboratoires et les essais terrains (afin de déterminer les techniques de
+  dépollution les plus adaptées et obtenir les éléments de dimensionnement) ;
 
-  • Les prestations d’assistance à maitrise d’ouvrage (AMO, réf. NF X31-620-2).
-début de validité: 01/01/2023
-fin de validité: 31/12/2023
+  • Les prestations d’assistance à maitrise d’ouvrage.
+
+
+  L’ADEME soutient également la mise en œuvre des mesures de gestion
+  (dépollution, mise en place de dispositions constructives, etc.) retenues à
+  l’issue des phases d’étude décrites ci-dessus.
+
+
+  Ce soutien s’inscrit dans le cadre du fonds vert et concerne uniquement les
+  friches issues d’anciens sites ICPE (Installations classées pour la protection
+  de l'environnement) ou relevant du Code minier. Selon les besoins
+  opérationnels, les travaux de déconstruction et désamiantage de bâtiments, et
+  de restauration écologique des sols peuvent également être soutenus.
+début de validité: 01/01/2025
+fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-prealables-a-reconversion-friches-a-risque-pollution-polluees?cible=79
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-travaux-depollution-dune-friche-fonds-vert
 nature de l'aide: étude
-montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
+montant du financement: Variable selon projet
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
       l’ADEME.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20reconversion%20friches%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf
+        texte: Conditions d'éligibilité et financement
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener cette étude
-      et obtenez un devis.
+      sur la base du cahier des charges et obtenez un devis.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20et%20travaux%20de%20d%C3%A9pollution%20d%27une%20friche%20-%20Recommandations%20-%20%C3%89tudes%20de%20pollution%20des%20sols.xlsx
+        texte: Cahier des charges
   - description: >-
       Déposez votre demande d'aide : informations administratives, description
       du projet, détails techniques et financiers, etc. A ce stade, votre projet
       ne doit pas avoir commencé !
+    liens:
+      - lien: https://www.demarches-simplifiees.fr/commencer/fonds-vert-3-friches
+        texte: Déposer votre demande
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
       recevez un contrat de financement précisant le montant d’aide maximum, les
       conditions et les modalités de versement.
-  - description: Réalisez votre étude de diagnostic ou d'accompagnement.
+  - description: Réalisez votre étude de diagnostic ou d'accompagnement et vos travaux.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
@@ -68,13 +90,16 @@ conditions d'éligibilité:
       avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
       (sous quelque forme que ce soit : marché signé, commande signée, devis
       accepté…)
+    - >-
+      Ce soutien s’inscrit dans le cadre du fonds vert et **concerne uniquement
+      les friches issues d’anciens sites ICPE** (Installations classées pour la
+      protection de l'environnement) **ou relevant du Code minier.**
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
