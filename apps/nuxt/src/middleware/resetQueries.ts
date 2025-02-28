@@ -1,8 +1,10 @@
-import RouteUtils from '@/middleware/utils/routeUtils'
-
 export default defineNuxtRouteMiddleware((to) => {
   useNavigationStore().resetSearchParams()
-  if (RouteUtils.hasQuery(to)) {
-    return navigateTo({ ...to, query: undefined })
+  const currentQuery = { ...to.query }
+  const shouldKeepModal = currentQuery.modal === 'true'
+  const newQuery = shouldKeepModal ? { modal: 'true' } : {}
+
+  if (JSON.stringify(currentQuery) !== JSON.stringify(newQuery)) {
+    return navigateTo({ ...to, query: newQuery })
   }
 })
