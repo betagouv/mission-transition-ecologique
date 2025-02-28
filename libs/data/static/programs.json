@@ -1570,6 +1570,229 @@
     "id": "aides-au-reemploi-des-emballages"
   },
   {
+    "titre": "Amélioration de la qualité de l’air dans les zones couvertes par un PPA",
+    "promesse": "Bénéficiez d'un financement pour vos projets visant à améliorer la qualité de l'air",
+    "description": "Vous travaillez dans une zone couverte par un Plan de Protection de l'Atmosphère (PPA) ou dans un territoire présentant des dépassements de seuils réglementaires en dioxyde d'azote (NO₂), particules ou ozone (O₃) et vous souhaitez réduire durablement vos émissions de polluants atmosphériques ? L’ADEME peut accompagner financièrement vos actions.",
+    "description longue": "L’ADEME peut vous accompagner pour :\n   - Des études permettant d’aboutir à une mise en place opérationnelle d’actions permettant de réduire les émissions de polluants atmosphériques réglementés pour les zones concernées.\n   - De la communication, animation, sensibilisation intégrant les changements pérennes de pratiques.\n   - Certains investissements comme ceux relatifs au renouvellement de véhicules, au branchement à quai des navires, aux alternatives au brûlage des déchets verts.\n\nLes projets pourront concerner notamment (liste non exhaustive) :\n-  la mobilité (active, partagée, report modal) ;\n-  les transports (réduction des émissions de véhicules, logistique, maritime et fluvial) ;\n-  les alternatives au brûlage des déchets verts ;\n- l'accompagnement des professionnels impactés par la mise en œuvre de la zone à faibles émissions mobilité (ZFE-m) ;\n- l’urbanisme intégrant une moindre exposition aux émissions de polluants ;\n- organisation ou faisabilité d’un report modal marchandises/voyageurs vers un mode ayant un plus faible impact environnemental (covoiturage, autopartage, mobilités actives, transport fluvial/maritime/ferroviaire/routier, cyclologistique, développement de tiers-lieux...) ;\n- sensibilisation et accompagnement au changement de comportement des particuliers, des scolaires, des salariés, etc., vers des mobilités moins impactantes d’un point de vue environnemental ;\n- électrification de navires/bateaux de transport de marchandises ou voyageurs pour un branchement électrique à quai ;\n- électrification des postes de stationnement des avions ;\n- accompagnement des professionnels impactés par la mise en œuvre des ZFE-m hors aides au renouvellement des véhicules.\n- BTP /carrières : optimisation d’un chantier et de sa logistique, dans l’objectif de réduire les émissions de polluants réglementés.",
+    "début de validité": "01/01/2025",
+    "fin de validité": "31/12/2025",
+    "illustration": "images/TEE_ampoule.png",
+    "opérateur de contact": "ADEME",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/amelioration-qualite-lair-territoires-ppa-depassements-recents?cible=79&region=35",
+    "nature de l'aide": "étude",
+    "montant du financement": "Variable selon projet",
+    "objectifs": [
+      {
+        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Am%C3%A9lioration%20de%20la%20qualit%C3%A9%20de%20l%27air%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "texte": "Conditions d'éligibilité et de financement"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/amelioration-qualite-lair-territoires-ppa-depassements-recents",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez vos études ou vos investissements."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Auvergne-Rhône-Alpes, Grand Est, Île-de-France, Martinique, Normandie, Occitanie, Provence-Alpes-Côte d'Azur"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d’activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Zones éligibles : Île-de-France, Normandie, Grand Est, Occitanie, Auvergne-Rhône-Alpes, Provence-Alpes-Côte d'Azur, Martinique",
+        "Etre dans une zone couverte par un Plan de Protection de l'Atmosphère (PPA) ou dans un territoire présentant des dépassements de seuils réglementaires en NO₂, particules ou O₃",
+        "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)",
+        "Vous ne devez pas avoir reçu d'aide sur un autre dispositif de l'ADEME",
+        "Les projets de R&D ne sont pas éligibles"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la mobilité durable"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Auvergne-Rhône-Alpes",
+          "région = Grand Est",
+          "région = Île-de-France",
+          "région = Martinique",
+          "région = Normandie",
+          "région = Occitanie",
+          "région = Provence-Alpes-Côte d'Azur"
+        ]
+      }
+    },
+    "id": "amelioration-qualite-de-l-air"
+  },
+  {
     "titre": "AMO chaufferie biomasse",
     "promesse": "Financez une prestation d’assistance à maîtrise d’ouvrage pour la mise en place d'une chaufferie biomasse",
     "description": "Vous avez pour projet de mettre en place une chaufferie biomasse dans votre entreprise? Afin de garantir la bonne exécution de votre projet, l’ADEME vous aide à financer des prestations d’assistance à maîtrise d’ouvrage (AMO).",
@@ -10994,32 +11217,50 @@
     "id": "etude-faisabilite-hydrogene"
   },
   {
-    "titre": "Étude \"friches polluées\"",
+    "titre": "Étude et travaux de dépollution d'une friche",
     "promesse": "Réalisez une étude pour votre projet de reconversion de friches polluées",
-    "description": "Pour faciliter la reconversion des friches, l’ADEME soutient le financement d'études pour évaluer le risque de pollution, interroger les intentions d'usages et définir des stratégies de gestion de la pollution et de dépollution adaptées au projet prévu.",
-    "description longue": "Les prestations d’études éligibles sont principalement  :\n• Les études de diagnostic permettant d’accompagner à l’échelle du site et en amont de la reconversion, des prestations élémentaires référencées dans le cadre des prestations normalisées NF X31 620 de type LEVE et INFO pour caractériser les potentiels de changement d’usage et de mutabilité.\n• Les études d’accompagnement de projets regroupant les différentes missions de conseil et d’accompagnement dans la réalisation opérationnelle de la reconversion à savoir : \n• Les prestations Plan de gestion [PG (NF X31-620-2)] et les investigations associées [DIAG (NF X31-620-2)] et le cas échéant les\nprestations Interprétations des milieux [IEM (NF X31-620-2)],\n• Les prestations Plan de conception de travaux [PCT (NF X31-620-3) y compris les essais laboratoires (B111 réf. NF X31-620-3) et les essais terrains (B112 réf. NF X31-620-3) (afin de déterminer les techniques de dépollution les plus adaptées et obtenir les éléments de dimensionnement),\n• Les prestations d’assistance à maitrise d’ouvrage (AMO, réf. NF X31-620-2).",
-    "début de validité": "01/01/2023",
-    "fin de validité": "31/12/2023",
+    "description": "Vous avez un projet de reconversion de friche ? L’ADEME vous soutient en finançant des études pour évaluer les risques de pollution, définir les usages futurs et élaborer des stratégies de dépollution adaptées. Profitez également d’une aide pour les travaux de dépollution, de déconstruction, de désamiantage et de restauration écologique des sols.",
+    "description longue": "Les prestations d’études éligibles sont principalement  :\n• Les études de diagnostic permettant d’accompagner à l’échelle du site et en amont de la reconversion, pour caractériser les potentiels de changement d’usage et de mutabilité.\n• Les études d’accompagnement de projets regroupant les différentes missions de conseil et d’accompagnement dans la réalisation opérationnelle de la reconversion à savoir : \n• Les prestations Plan de gestion et les investigations associées et le cas échéant les\nprestations Interprétations des milieux ;\n• Les prestations Plan de conception de travaux y compris les essais laboratoires et les essais terrains (afin de déterminer les techniques de dépollution les plus adaptées et obtenir les éléments de dimensionnement) ;\n• Les prestations d’assistance à maitrise d’ouvrage.\n\nL’ADEME soutient également la mise en œuvre des mesures de gestion (dépollution, mise en place de dispositions constructives, etc.) retenues à l’issue des phases d’étude décrites ci-dessus.\n\nCe soutien s’inscrit dans le cadre du fonds vert et concerne uniquement les friches issues d’anciens sites ICPE (Installations classées pour la protection de l'environnement) ou relevant du Code minier. Selon les besoins opérationnels, les travaux de déconstruction et désamiantage de bâtiments, et de restauration écologique des sols peuvent également être soutenus.",
+    "début de validité": "01/01/2025",
+    "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/etudes-prealables-a-reconversion-friches-a-risque-pollution-polluees?cible=79",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-travaux-depollution-dune-friche-fonds-vert",
     "nature de l'aide": "étude",
-    "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "montant du financement": "Variable selon projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
+        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20reconversion%20friches%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf",
+            "texte": "Conditions d'éligibilité et financement"
+          }
+        ]
       },
       {
-        "description": "Choisissez le prestataire qui va vous accompagner pour mener cette étude et obtenez un devis."
+        "description": "Choisissez le prestataire qui va vous accompagner pour mener cette étude sur la base du cahier des charges et obtenez un devis.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20et%20travaux%20de%20d%C3%A9pollution%20d%27une%20friche%20-%20Recommandations%20-%20%C3%89tudes%20de%20pollution%20des%20sols.xlsx",
+            "texte": "Cahier des charges"
+          }
+        ]
       },
       {
-        "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir commencé !"
+        "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://www.demarches-simplifiees.fr/commencer/fonds-vert-3-friches",
+            "texte": "Déposer votre demande"
+          }
+        ]
       },
       {
         "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
       },
       {
-        "description": "Réalisez votre étude de diagnostic ou d'accompagnement."
+        "description": "Réalisez votre étude de diagnostic ou d'accompagnement et vos travaux."
       }
     ],
     "conditions d'éligibilité": {
@@ -11037,7 +11278,8 @@
         "Éligible à toutes les entreprises"
       ],
       "autres critères d'éligibilité": [
-        "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)"
+        "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)",
+        "Ce soutien s’inscrit dans le cadre du fonds vert et **concerne uniquement les friches issues d’anciens sites ICPE** (Installations classées pour la protection de l'environnement) **ou relevant du Code minier.**"
       ]
     },
     "publicodes": {
@@ -11136,8 +11378,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -11600,6 +11841,211 @@
       }
     ],
     "id": "etude-geothermie-de-surface-et-d-aerothermie"
+  },
+  {
+    "titre": "Étude \"Géothermie profonde\"",
+    "promesse": "Réalisez une étude pour votre projet d'installation de géothermie profonde",
+    "description": "L’ADEME vous accompagne dans le financement d’une étude de faisabilité avant d'investir dans une installation de géothermie profonde. Cette étude vous aidera a identifier les techniques adaptées aux possibilités du site d’implantation, ainsi que des solutions pour le montage financier, administratif et juridique de votre investissement.",
+    "description longue": "La géothermie profonde consiste à récupérer la chaleur de l’eau contenue dans le sous-sol, situé à plus de 200 mètres de profondeur.\nLe principe est de capter, par forage, l’eau des aquifères profonds et de la transférer à des réseaux de chaleur à des fins de chauffage. Le forages peuvent aller jusqu'à 2 500 mètres de profondeur.\nOn estime que 30 % du territoire français pourrait exploiter cette ressource pour le chauffage urbain, étant une énergie très faiblement carbonée (10g de CO2/ KWh).",
+    "début de validité": "01/01/2023",
+    "fin de validité": "31/12/2025",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "ADEME",
+    "url": "https://agirpourlatransition.ademe.fr/collectivites/aides-financieres/2025/etude-daide-a-decision-projets-geothermie-profonde",
+    "nature de l'aide": "étude",
+    "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "objectifs": [
+      {
+        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/collectivites/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Choisissez un auditeur énergétique \"Reconnu Garant de l'Environnement\" (RGE) ou équivalent, et obtenez un devis.",
+        "liens": [
+          {
+            "lien": "https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte",
+            "texte": "Annuaire des professionnels RGE"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/collectivites/aides-financieres/2025/etude-daide-a-decision-projets-geothermie-profonde",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez votre étude pour vérifier la faisabilité technique et économique de votre projet d'implantation d’une installation de géothermie de surface et aérothermie."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d’activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est Q"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      }
+    },
+    "id": "etude-geothermie-profonde"
   },
   {
     "titre": "Étude \"Hydroélectricité\"",
@@ -21752,10 +22198,10 @@
     "description": "Vous aimeriez que votre établissement devienne Accueil Vélo© pour développer le vélotourisme et gagner en visibilité ? L'ADEME vous aide à financer les équipements nécessaires pour être référencé auprès de la marque. Ainsi, mettez en place des emplacements de stationnement vélo, des bornes de recharges pour vélos à assistance électrique, des bornes de gonflage et de réparation, ainsi que des consignes à bagages sécurisées.",
     "description longue": "Accueil Vélo© est une marque nationale qui garantit un accueil,\ndes services et des équipements spécifiques adaptés aux besoins des touristes à vélo le long des itinéraires cyclables en France.\n\nLe volet 1 du programme \"Développer le vélotourisme\" de l'ADEME a pour objectif de faciliter l'obtention de la Marque 'Accueil Vélo©' pour les hébergements touristiques classés et restaurateurs.\n\nL'ADEME vous finance les équipements et services attendus au sein du référentiel de la marque Accueil Vélo :\n- des emplacements de stationnement vélo (à minima 5 pour être Accueil Vélo)\n- des bornes de recharge VAE\n- des bornes de gonflage\n- des bornes de réparation\n- des bornes multifonction\n- des consignes à bagages sécurisées\n\nLe projet devra présenter une demande d’aide totale minimum de 400€ pour être recevable.",
     "début de validité": "01/09/2024",
-    "fin de validité": "31/01/2025",
+    "fin de validité": "31/03/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/developper-velotourisme",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20241115/developper-velotourisme",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu’à 55 % des coûts d'investissement",
     "objectifs": [
@@ -24427,7 +24873,7 @@
     "id": "pass-transformation-ecologique"
   },
   {
-    "titre": "Pass Transition",
+    "titre": "PASS Transitions",
     "promesse": "Entreprise du secteur audiovisuel, financez votre transition environnementale",
     "description": "La Région Bretagne soutient financièrement la transition environnementale des petites entreprises du secteur audiovisuel via le \"Pass Transition\".\nLe Pass Transition finance des études pour accélérer votre transition sur l'eau, l'énergie, économie circulaire, les déchets, la biodiversité, RSE, mobilité, numérique responsable. \nIl participe aussi au financement d'équipements pour le suivi et la réduction de vos déchets, consommations en eau et en énergie.\nEnfin, il peut contribuer au financement d'un recrutement d’une personne à temps partagé occupant un poste stratégique en matière de transitions (ex : responsable RSE, management de l’énergie)",
     "description longue": "Le PASS Transitions finance 50 % des dépenses éligibles. Il comporte 3 volets :\n- Volet 1. Investissements : \nFinancement d'équipements pour le suivi et la réduction des consommations en énergie, eau et déchets et la production d’énergie photovoltaïque.\nL'aide aux investissements est comprise entre 20 000 € et 50 000 €, pour un mininum de 40 000 € de dépenses. \n\r\n- Volet 2. Conseil : \nFinancement d’une formation, participation à une fresque, étude, audit, diagnostic...relevant des transitions sur les thématique énergétique, eau, économie circulaire, déchets, biodiversité, RSE, mobilité, numérique. \nL'aide au conseil est comprise entre 4 000 € et 10 000 €, pour un mininum de 8 000 € de dépenses.\n\n- Volet 3. Ressources Humaines \nFinancement d'un recrutement d’une personne à temps partagé occupant un poste stratégique en matière de transitions (ex : responsable RSE, management de l’énergie).\nL'aide aux Ressources Humaines est comprise entre 4 000 € et 10 000 €, pour un minimum de 8 000 € de dépenses.",
@@ -27322,7 +27768,7 @@
       "CCI Bretagne",
       "CETIM",
       "Région Bretagne",
-      "UIMM"
+      "UIMM - Union des industries et métiers de la métallurgie"
     ],
     "url": "https://www.breizhfab.bzh/nos-solutions-daccompagnement/",
     "nature de l'aide": "étude",
@@ -27679,7 +28125,7 @@
     "autres opérateurs": [
       "ADEME",
       "CEE",
-      "Organisations professionnelles"
+      "CAPEB - Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
     ],
     "url": "https://www.eve-transport-logistique.fr/",
     "nature de l'aide": "étude",
@@ -30426,7 +30872,7 @@
     "promesse": "Obtenez un prêt à taux préférentiel pour financer votre projet de transition écologique",
     "description": "La Région Sud en partenariat avec Bpifrance soutient les investissements matériels et immatériels nécessaires à la transition énergétique et écologique des entreprises en proposant un prêt à taux préférentiel. Il permet de financer les projets de transition écologique sur les champs suivants : la lutte contre le changement climatique, l'adaptation au changement climatique, les économies d'eau, l'économie circulaire, la prévention et le contrôle des pollutions, la préservation ou la restauration de la biodiversité et des écosystèmes.",
     "description longue": "L'aide régionale prend la forme d'un prêt à taux préférentiel octroyé à des conditions plus favorables que les conditions du marché. Ce prêt intervient en qualité de produit de \"cofinancement\", en complément des financements octroyés par les banques.\n\nSont éligibles : \n\n• Les besoins en fonds de roulement liés à un projet de développement de l'entreprise en relation avec la transition énergétique, écologique et/ou l’économie circulaire.\n• Les investissements immatériels, les coûts de mise aux normes (environnement, sécurité), de recrutement, de formation, de frais de prospection, les dépenses de publicité, etc.\n\nSont exclus : \n\n• Les opérations relatives au financement de la création (entreprises de moins d’un an d’ancienneté).\n• Les investissements immobiliers et mobiliers, les acquisitions de titres ou de fonds de commerce.\n• Les programmes de transmission (y compris croissance externe) et de restructuration financière.\n• Les opérations purement patrimoniales (cash out, vente à soi-même, etc.).\n• La substitution de dettes et remboursement d’encours existants ou comptes courants.",
-    "fin de validité": "31/12/2025",
+    "fin de validité": "31/12/2024",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Région Sud (PACA)",
     "autres opérateurs": [

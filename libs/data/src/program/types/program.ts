@@ -117,12 +117,12 @@ export type Dispositif = {
     | "InvestEU"
     | "La Poste"
     | "Ministère de la Transition Écologique"
-    | "Organisations professionnelles"
+    | "CAPEB - Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
     | "Région Bretagne"
     | "Région Grand Est"
     | "Saur"
     | "Suez"
-    | "UIMM"
+    | "UIMM - Union des industries et métiers de la métallurgie"
     | "Véolia Eau"
     | "Centre national d'enseignement à distance"
     | "ATEE"
@@ -154,7 +154,11 @@ export type Dispositif = {
     | "Région Nouvelle-Aquitaine"
     | "Agence de Développement Economique de Corse"
     | "Agence de Tourisme de la Corse"
-    | "Région Guadeloupe";
+    | "Région Guadeloupe"
+    | "Startup d'Etat"
+    | "CPME"
+    | "Prefecture Eure (27)"
+    | "CRESS";
   /**
    * Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.
    */
@@ -315,12 +319,12 @@ export type Operators =
   | "InvestEU"
   | "La Poste"
   | "Ministère de la Transition Écologique"
-  | "Organisations professionnelles"
+  | "CAPEB - Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
   | "Région Bretagne"
   | "Région Grand Est"
   | "Saur"
   | "Suez"
-  | "UIMM"
+  | "UIMM - Union des industries et métiers de la métallurgie"
   | "Véolia Eau"
   | "Centre national d'enseignement à distance"
   | "ATEE"
@@ -352,4 +356,8 @@ export type Operators =
   | "Région Nouvelle-Aquitaine"
   | "Agence de Développement Economique de Corse"
   | "Agence de Tourisme de la Corse"
-  | "Région Guadeloupe";
+  | "Région Guadeloupe"
+  | "Startup d'Etat"
+  | "CPME"
+  | "Prefecture Eure (27)"
+  | "CRESS";
