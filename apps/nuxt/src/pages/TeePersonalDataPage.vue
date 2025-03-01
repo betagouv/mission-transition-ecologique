@@ -21,6 +21,7 @@ import { PrivacyPolicyPropsCookie, PrivacyPolicyPropsThirdParty, PrivacyPolicy }
 
 definePageMeta({
   path: '/donnees-personnelles',
+  layout: 'default',
   name: RouteName.PersonalData
 })
 

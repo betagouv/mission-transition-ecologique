@@ -21,6 +21,7 @@ import { RouteName } from '@/types'
 
 definePageMeta({
   path: '/ajouter-une-aide-entreprises',
+  layout: 'default',
   name: RouteName.AddProgram
 })
 
