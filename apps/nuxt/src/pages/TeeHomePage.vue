@@ -36,6 +36,7 @@ import { RouteName } from '@/types'
 definePageMeta({
   path: '/',
   name: RouteName.Homepage,
+  layout: 'default',
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetFilters]
 })
 

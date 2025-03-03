@@ -13,6 +13,7 @@ import { RouteName } from '@/types/routeType'
 
 definePageMeta({
   name: RouteName.ProgramFromProjectResultDetail,
+  layout: 'default',
   middleware: [MiddlewareName.hasProject, MiddlewareName.setUsedTracks, MiddlewareName.hasUsedTracks, MiddlewareName.hasProgram]
 })
 </script>
