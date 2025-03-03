@@ -54,6 +54,7 @@ import TrackContent from '@/components/questionnaire/track/TrackContent.vue'
 import TrackSidebar from '@/components/questionnaire/track/TrackSidebar.vue'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
+import { MetaSeo } from '@/tools/metaSeo'
 import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { computed, onBeforeMount, ref } from 'vue'
@@ -75,4 +76,11 @@ const needSidebar = computed(() => {
 onBeforeMount(() => {
   usedTrackStore.add(props.trackId, props.trackId)
 })
+
+useSeoMeta(
+  MetaSeo.get(
+    'Transition écologique - Aides et financements TPE & PME',
+    'Service public pour les entreprises : Vous avez un projet de transition écologique ? Découvrez en quelques questions simples les aides dédiées auxquelles vous êtes éligible !'
+  )
+)
 </script>
