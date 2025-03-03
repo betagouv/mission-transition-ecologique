@@ -35,7 +35,7 @@ The \x1B[removeListeners()</> method has been renamed to \x1B[disconnect()</>.
         margin: 0 auto;
         width: 100%;
       }
-    </style>`);let x={src:k,style:"border: none; width: 100%; display: block; margin: 0 auto;",allow:"fullscreen",class:"iframe-tee"};for(let N in x)$.setAttribute(N,x[N]);p.parentNode&&p.parentNode.insertBefore($,p),$.onload=()=>{console.log("iframe loaded"),(0,he.default)({license:"GPLv3",checkOrigin:!1},$)}}
+    </style>`);let x={src:k,style:"border: none; width: 100%; display: block; margin: 0 auto;",allow:"fullscreen",class:"iframe-tee"};for(let N in x)$.setAttribute(N,x[N]);p.parentNode&&p.parentNode.insertBefore($,p),$.onload=()=>{(0,he.default)({license:"GPLv3",checkOrigin:!1},$)}}
 /*! Bundled license information:
 
 @iframe-resizer/parent/index.umd.js:
