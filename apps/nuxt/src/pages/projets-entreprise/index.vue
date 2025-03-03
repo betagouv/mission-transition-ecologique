@@ -22,11 +22,7 @@ definePageMeta({
 
 const route = useRoute()
 
-if (route.query.modal === 'true' && !CompanyData.hasCompanyData()) {
+if (route.query['profil-entreprise'] === 'oui' && !CompanyData.hasCompanyData()) {
   Navigation.toggleRegisterModal()
-  if (import.meta.client) {
-    const urlWithoutQuery = route.path
-    window.history.replaceState({}, '', urlWithoutQuery)
-  }
 }
 </script>
