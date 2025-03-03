@@ -3,8 +3,9 @@ from etl.transform.establishment import (
     keep_valid_sirets,
     siren_establishment_to_db_establishment,
 )
-from etl.extract.siren import SireneAPIClient
-from etl.load.companies import insert_companies
+from etl.extract.siren_extractor import SireneExtractor
+from etl.load.companies import insert_companies, insert_siren_error
+import time
 
 class CompaniesPipeline:
     def process_new_sirets(self):
@@ -17,8 +18,10 @@ class CompaniesPipeline:
 
         for siret in valid_sirets:
             try:
-                establishment = SireneAPIClient().get_establishment_sirene(siret)
+                establishment = SireneExtractor().get_establishment_sirene(siret)
                 company = siren_establishment_to_db_establishment(establishment)
                 insert_companies([company])
             except Exception as e:
                 print(f"Failed to process siret {siret}: {e}")
+                insert_siren_error(siret)
+            time.sleep(3)

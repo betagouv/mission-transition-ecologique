@@ -1,7 +1,7 @@
 import os
 import json
 from etl.extract.brevo_extractor import BrevoExtractor
-from etl.extract.posthog_extractor import PosthogManager
+from etl.extract.posthog_extractor import PosthogExtractor
 
 
 class GenericExtractor:
@@ -49,13 +49,13 @@ class GenericExtractor:
 
     def get_form_events(self, force_refresh=False):
         return self._get_data(
-            "form_events", PosthogManager().get_form_events, force_refresh
+            "form_events", PosthogExtractor().get_form_events, force_refresh
         )
 
     def get_siret_events(self, start_date, end_date, force_refresh=False):
         return self._get_data(
             "siret_events",
-            lambda: PosthogManager().get_siret_events(start_date, end_date),
+            lambda: PosthogExtractor().get_siret_events(start_date, end_date),
             force_refresh,
         )
 
@@ -64,7 +64,7 @@ class GenericExtractor:
     ):
         return self._get_data(
             "unique_visitors_by_date_range",
-            lambda: PosthogManager().get_unique_visitors_by_date_range(
+            lambda: PosthogExtractor().get_unique_visitors_by_date_range(
                 start_date, end_date
             ),
             force_refresh,

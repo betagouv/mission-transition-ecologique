@@ -3,7 +3,7 @@ import os
 import time
 
 
-class SireneAPIClient:
+class SireneExtractor:
     def __init__(self):
         self.api_url = "https://api.insee.fr/api-sirene/3.11/siret/"
         self.token = os.getenv("SIRENE_API_311_TOKEN", "")

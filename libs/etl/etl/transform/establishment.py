@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from etl.extract.db_queries import get_invalid_sirets
 
 communes_json_path = Path(__file__).parent.parent / "static" / "communes.json"
 with communes_json_path.open("r", encoding="utf-8") as file:
@@ -11,9 +12,8 @@ with naf_mapping_json_path.open("r", encoding="utf-8") as file:
 
 
 def keep_valid_sirets(sirets):
-    invalid_sirets = [
-        None
-    ]  # possible improvements, store and then read the invalid sirets in a db table.
+    invalid_sirets = get_invalid_sirets()
+    invalid_sirets.append(None)
     return [siret for siret in sirets if siret not in invalid_sirets]
 
 

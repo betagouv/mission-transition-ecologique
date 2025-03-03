@@ -48,6 +48,12 @@ CREATE TABLE IF NOT EXISTS __SCHEMA_NAME__.web_registered_siret (
     siret TEXT
 );
 
+CREATE TABLE IF NOT EXISTS __SCHEMA_NAME__.siret_search_error (
+    siret TEXT PRIMARY KEY,
+    fail_count INT
+);
+
+
 -- Ensuring there are no duplicates entry in web_registered_siret--
 ALTER TABLE __SCHEMA_NAME__.web_registered_siret
 ADD CONSTRAINT unique_date_siret UNIQUE (date, siret);

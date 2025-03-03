@@ -33,3 +33,11 @@ def get_last_siret_event_date():
         "SELECT MAX(date) AS last_date FROM __SCHEMA_NAME__.web_registered_siret;"
     )
     return result[0][0]
+
+
+def get_invalid_sirets():
+    result = DBManager().query(
+        """SELECT siret FROM __SCHEMA_NAME__.siret_search_error
+        WHERE fail_count >=5;"""
+    )
+    return [row[0] for row in result]

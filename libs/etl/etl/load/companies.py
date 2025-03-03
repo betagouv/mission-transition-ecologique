@@ -35,3 +35,15 @@ def insert_companies(companies):
         DBManager().query(query, values)
     except Exception as e:
         print(f"Error inserting companies: {e}")
+
+
+def insert_siren_error(siret):
+    query = """INSERT INTO __SCHEMA_NAME__.siret_search_error (siret, fail_count)
+        VALUES (%s, 1)
+        ON CONFLICT (siret)
+        DO UPDATE SET fail_count = siret_search_error.fail_count + 1;
+        """
+    try:
+        DBManager().query(query, [(siret,)])
+    except Exception as e:
+        print(f"Error while reporting a siren error in our database: {e}")
