@@ -5,9 +5,11 @@
       :title="title"
     >
       <template #title>
-        <h4 class="fr-my-2v">{{ title }}</h4>
+        <span class="fr-my-2v fr-h4">{{ title }}</span>
       </template>
-      <slot />
+      <div class="fr-container">
+        <slot />
+      </div>
     </DsfrAccordion>
   </DsfrAccordionsGroup>
 </template>

@@ -5,19 +5,20 @@
     title="Projets complémentaires"
   >
     <template #content>
-      <div class="fr-grid-row fr-grid-row--center fr-grid-row-md--left">
-        <template
-          v-for="linkedProject in linkedProjectsTags"
+      <ul class="fr-grid-row fr-grid-row--center fr-grid-row-md--left fr-raw-list">
+        <li
+          v-for="(linkedProject, index) in linkedProjectsTags"
           :key="linkedProject.id"
+          :class="index === 0 ? `fr-mr-2v` : index === linkedProjectsTags.length - 1 ? `fr-ml-2v` : `fr-mx-2v`"
         >
           <TeeProjectButton
-            class="fr-my-1-5v fr-mx-2v"
+            class="fr-my-1-5v"
             target="_blank"
             :project="linkedProject"
             :color="color"
           />
-        </template>
-      </div>
+        </li>
+      </ul>
     </template>
   </TeeContentBlock>
 </template>

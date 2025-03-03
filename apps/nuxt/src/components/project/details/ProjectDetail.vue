@@ -1,40 +1,37 @@
 <template>
-  <ProjectHeader
-    v-if="project"
-    :project="project"
-    :theme-color="themeColor as Color"
-  />
-  <div
-    v-if="project"
-    class="fr-col-12"
+  <Layout
+    :links="links"
+    sticky-menu
   >
-    <div class="fr-container">
-      <div class="fr-grid-row">
-        <div class="fr-col-3 fr-col-hidden fr-col-unhidden-md fr-mt-4v">
-          <TeeCopyLinkButton class="fr-mx-4v" />
-          <ProjectSideNav :project="project" />
-        </div>
-        <div class="fr-col-12 fr-col-md-9">
-          <ProjectDescription :project="project" />
-          <ProjectPrograms
-            v-if="project"
-            :project="project"
-          />
-          <LinkedProjects
-            v-if="project.linkedProjects.length > 0"
-            :project="project"
-            :color="themeColor as Color"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
+    <template #top>
+      <ProjectHeader
+        v-if="project"
+        :project="project"
+        :theme-color="themeColor as Color"
+      />
+    </template>
+    <template #sidemenu>
+      <TeeCopyLinkButton class="fr-m-4v" />
+      <ProjectSideNav :project="project" />
+    </template>
+    <ProjectDescription :project="project" />
+    <ProjectPrograms
+      v-if="project"
+      :project="project"
+    />
+    <LinkedProjects
+      v-if="project?.linkedProjects.length"
+      :project="project"
+      :color="themeColor as Color"
+    />
+  </Layout>
 </template>
 <script setup lang="ts">
 import { Color, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { Theme } from '@/tools/theme'
 import { useProjectStore } from '@/stores/project'
+import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 
 const { currentProject: project } = storeToRefs(useProjectStore())
 const themeColor = ref<Color | ''>()
@@ -50,4 +47,6 @@ if (project.value) {
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
 })
+
+const links = computed<DsfrBreadcrumbProps['links']>(() => [{ text: project.value?.title || '' }])
 </script>
