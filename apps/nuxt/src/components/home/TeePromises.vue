@@ -43,9 +43,12 @@ const otherOperator = {
           class="circle-background"
           alt="yellow-circle-background"
         />
-        <h4 class="fr-text--blue-france fr-pb-2v">Le point d'entrée vers les aides à la transition écologique des entreprises</h4>
+        <h4
+          class="fr-text--blue-france fr-pb-2v"
+          v-html="`Le point d'entrée vers les aides à la transition écologique <br/> des entreprises`"
+        ></h4>
         <p>
-          Transition écologique des entreprises vous permet <b>d'identifier la bonne aide</b> pour votre entreprise parmi les aides
+          <i>Transition écologique des entreprises</i> vous permet <b>d'identifier la bonne aide</b> pour votre entreprise parmi les aides
           publiques nationales, régionales et territoriales issues de <b>l’ensemble des partenaires publics.</b>
         </p>
         <div class="fr-grid-row fr-col-justify--center fr-col-content--middle">
@@ -65,11 +68,14 @@ const otherOperator = {
           class="circle-background"
           alt="green-circle-background"
         />
-        <h4 class="fr-text--blue-france fr-pb-2v">Des conseillers pour vous aider sur l'ensemble du territoire</h4>
+        <h4
+          class="fr-text--blue-france fr-pb-2v"
+          v-html="`Des conseillers pour <br/> vous aider sur l'ensemble <br/> du territoire`"
+        ></h4>
         <p>
           Pour vous accompagner dans vos réflexions et répondre à vos questions, nous vous mettons en relation avec
           <b>le conseiller compétent pour votre demande sur votre territoire.</b> Ce conseiller est référencé via le service public
-          Conseillers-Entreprises.
+          <i>Conseillers-Entreprises</i>.
         </p>
         <div class="fr-col-justify--center fr-grid-row fr-col-content--middle">
           <img
