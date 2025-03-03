@@ -32,7 +32,10 @@
         v-if="$slots.sidemenu"
         class="fr-col-2 fr-col-hidden fr-col-md-3 fr-col-lg-2 fr-col-unhidden-md"
       >
-        <div class="fr-sidemenu fr-pr-3v">
+        <div
+          class="fr-sidemenu fr-pr-3v"
+          :class="`${stickyMenu ? 'fr-sidemenu--sticky' : ''}`"
+        >
           <slot name="sidemenu"> </slot>
         </div>
       </div>
@@ -59,6 +62,7 @@ interface Props {
   links?: TeeDsfrBreadcrumbProps['links']
   fluid?: boolean
   beforeDefaultClass?: string
+  stickyMenu?: boolean
 }
 withDefaults(defineProps<Props>(), {
   breadcrumb: true,
