@@ -11,18 +11,10 @@
 
 <script setup lang="ts">
 import { MiddlewareName } from '@/middleware/type/middlewareName'
-import { CompanyData } from '@/tools/companyData'
-import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 
 definePageMeta({
   name: RouteName.CatalogProjects,
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
 })
-
-const route = useRoute()
-
-if (route.query['profil-entreprise'] === 'oui' && !CompanyData.hasCompanyData()) {
-  Navigation.toggleRegisterModal()
-}
 </script>
