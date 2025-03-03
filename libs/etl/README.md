@@ -5,37 +5,21 @@
 Docker has been setup to easily use the package.
 It's been integrated with NX to have a very simple experience.
 
-From the root project directory or the etl directory, you can
-nx run update:database
+From the root project directory or the etl directory, you can 
+`npm run etl:build`
+`npm run update:database`
 
 You can check the full list of commands from the libs/etl/project.json file
 
 # How to contribute
 
-Docker has been setup only to ensure a controlled deployment.
-Right now, you must rebuild the docker image each time your code change to test it.
+The docker setup is usable in a development settings. 
+After running `npm run etl:build`, you can simply modify the python file and execute them inside the docker environement using `npm run update:database`
 
-Instead, we recommend, setting up a local python virtual environment :
+If you are proposing an unrequested contribution, please start by opening an issue in the following [github repository](https://github.com/betagouv/mission-transition-ecologique).
+If your contribution is answering an issue of the repository, feel free to directly open a pull request which will be reviewed by a member of the project.
 
-All the commands below should be executed in libs/etl
 
-To create your virtual environment :
-python -m venv .venv
+### To test locally or to work on the scripts
 
-To use it :
-. ./.venv/bin/activate
-
-To install the packages :
-pip install -r requirements.txt
-
-After a package update, and after a verification that it does not break anything, to ensure that everyone is using the same packages :
-pip freeze > requirements.txt
-
-## To test locally or to work on the scripts
-
-- in your environnement, variable set TEST=true
-
-Possible improvements :
-
-- setup a fixed python version for all devs
-- use a docker test database instead of a test schema in the production database.
+- in the .env file, set the variable `TEST=True`

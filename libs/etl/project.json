@@ -15,17 +15,14 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/etl",
-        "command": "docker run -it --rm --name etl-job etl-img"
-      },
-      "dependsOn": [
-        "build"
-      ]
+        "command": "docker run -it --rm -v $(pwd):/usr/src --name etl-job etl-img python -m etl.pipelines.database_update"
+      }
     },
     "update-database-ci": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/etl",
-        "command": "docker run -it --rm --name --env-file .env etl-job etl-img"
+        "command": "docker run -it --rm --name etl-job --env-file .env etl-img"
       },
       "dependsOn": [
         "build"
