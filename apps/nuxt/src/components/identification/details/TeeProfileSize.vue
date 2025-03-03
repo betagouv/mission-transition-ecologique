@@ -1,5 +1,5 @@
 <template>
-  <div id="register-size-field">
+  <div>
     <p
       v-if="infos.value"
       class="fr-tag fr-bg--blue--lightness"
@@ -66,8 +66,3 @@ const resetSize = () => {
   selectedSize.value = undefined
 }
 </script>
-<style lang="scss" scoped>
-#register-size-field {
-  height: 40px;
-}
-</style>
