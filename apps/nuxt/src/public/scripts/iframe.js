@@ -29,13 +29,13 @@ The <b>sizeWidth</>, <b>sizeHeight</> and <b>autoResize</> options have been rep
 
 The \x1B[removeListeners()</> method has been renamed to \x1B[disconnect()</>.
 `),this.disconnect()},resize:R.bind(null,"Window resize","resize",n),moveToAnchor(g){R("Move to anchor",`moveToAnchor:${g}`,n)},sendMessage(g){R("Send Message",`message:${g=JSON.stringify(g)}`,n)}};a.iframeResizer=u,a.iFrameResizer=u}}()),e?.iFrameResizer};function ze(){document.hidden===!1&&function(i,e){let r=s=>t[s]?.autoResize&&!t[s]?.firstRun;Object.keys(t).forEach(function(s){r(s)&&R(i,e,s)})}("Tab Visible","resize")}let je=(i=>{let e=!1;return function(){return e?void 0:(e=!0,Reflect.apply(i,this,arguments))}})(()=>{L(window,"message",Y),L(document,"visibilitychange",ze),window.iframeParentListener=i=>setTimeout(()=>Y({data:i,sameDomain:!0}))}),W="[iframeResizer] ",ae=function(){function i(s){switch(!0){case!s:throw new TypeError(`${W}iframe is not defined`);case!s.tagName:throw new TypeError(`${W}Not a valid DOM element`);case s.tagName.toUpperCase()!=="IFRAME":throw new TypeError(`${W}Expected <IFRAME> tag, found <${s.tagName}>`);default:e(s),r.push(s)}}let e,r;return function(s,n){if(typeof window>"u")return[];switch(e=ve(s),r=[],typeof n){case"undefined":case"string":document.querySelectorAll(n||"iframe").forEach(i);break;case"object":i(n);break;default:throw new TypeError(`${W}Unexpected data type (${typeof n})`)}return Object.freeze(r)}}();return typeof window<"u"&&(window.iFrameResize=window.iFrameResize||function(...i){v("","Deprecated: iFrameResize(), please use iframeResize()"),ae(...i)}),ae})});var he=Le(me(),1),H=document.currentScript;if(!H){let p=document.getElementsByTagName("script");H=p[p.length-1]}H&&Fe(H);function Fe(p){let y=new URL(p.src).origin,b=p.dataset.type||"",v=p.dataset.id||"",k=`${y}/iframe/${b}/${v}`,$=document.createElement("iframe");document.head.insertAdjacentHTML("beforeend",`<style>
-      #iframe-tee {
+      .iframe-tee {
         border: none;
         display: block;
         margin: 0 auto;
         width: 100%;
       }
-    </style>`);let x={src:k,style:"border: none; width: 100%; display: block; margin: 0 auto;",allow:"fullscreen",id:"iframe-tee"};for(let N in x)$.setAttribute(N,x[N]);p.parentNode&&p.parentNode.insertBefore($,p),$.onload=()=>{(0,he.default)({license:"GPLv3",checkOrigin:!1},$)}}
+    </style>`);let x={src:k,style:"border: none; width: 100%; display: block; margin: 0 auto;",allow:"fullscreen",class:"iframe-tee"};for(let N in x)$.setAttribute(N,x[N]);p.parentNode&&p.parentNode.insertBefore($,p),$.onload=()=>{console.log("iframe loaded"),(0,he.default)({license:"GPLv3",checkOrigin:!1},$)}}
 /*! Bundled license information:
 
 @iframe-resizer/parent/index.umd.js:

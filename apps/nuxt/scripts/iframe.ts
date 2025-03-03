@@ -22,7 +22,7 @@ function setupIframe(element: HTMLScriptElement) {
   document.head.insertAdjacentHTML(
     'beforeend',
     `<style>
-      #iframe-tee {
+      .iframe-tee {
         border: none;
         display: block;
         margin: 0 auto;
@@ -35,7 +35,7 @@ function setupIframe(element: HTMLScriptElement) {
     src,
     style: 'border: none; width: 100%; display: block; margin: 0 auto;',
     allow: 'fullscreen',
-    id: 'iframe-tee'
+    class: 'iframe-tee'
   }
 
   for (const key in iframeAttributes) {
@@ -47,6 +47,7 @@ function setupIframe(element: HTMLScriptElement) {
   }
 
   iframe.onload = () => {
+    console.log('iframe loaded')
     iframeResize({ license: 'GPLv3', checkOrigin: false }, iframe)
   }
 }
