@@ -47,7 +47,6 @@ function setupIframe(element: HTMLScriptElement) {
   }
 
   iframe.onload = () => {
-    console.log('iframe loaded')
     iframeResize({ license: 'GPLv3', checkOrigin: false }, iframe)
   }
 }
