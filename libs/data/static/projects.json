@@ -327,6 +327,7 @@
     "programs": [
       "coup-de-pouce-chauffage",
       "etude-reseaux-energie-renouvelable",
+      "etude-geothermie-profonde",
       "fonds-tourisme-durable",
       "investissement-boucle-d-eau-geothermique",
       "investissement-contrat-chaleur-renouvelable",
@@ -452,6 +453,7 @@
     "programs": [
       "amo-chaufferie-biomasse",
       "etude-chaufferie-biomasse",
+      "amelioration-qualite-de-l-air",
       "fonds-tourisme-durable",
       "investissement-chaleur-bois",
       "investissement-contrat-chaleur-renouvelable",
@@ -707,6 +709,7 @@
     "mainTheme": "energy",
     "programs": [
       "etude-geothermie-de-surface-et-d-aerothermie",
+      "etude-geothermie-profonde",
       "etude-test-geothermie",
       "fonds-tourisme-durable",
       "investissement-boucle-d-eau-geothermique",
@@ -784,7 +787,6 @@
     "sectors": [
       "A",
       "C",
-      "G",
       "L"
     ]
   },
@@ -940,6 +942,7 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "amelioration-qualite-de-l-air",
       "fresque-de-la-mobilite",
       "plan-de-mobilite",
       "cedre-premier-pas",
@@ -993,6 +996,7 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "amelioration-qualite-de-l-air",
       "pret-action-climat",
       "retrofit-electrique",
       "pret-vert",
@@ -1050,6 +1054,7 @@
     "programs": [
       "bonus-ecologique",
       "engins-moins-polluants",
+      "amelioration-qualite-de-l-air",
       "fonds-tourisme-durable",
       "pret-action-climat",
       "prime-a-la-conversion",
