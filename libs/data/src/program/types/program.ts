@@ -156,9 +156,17 @@ export type Dispositif = {
     | "Agence de Tourisme de la Corse"
     | "Région Guadeloupe"
     | "Startup d'Etat"
-    | "CPME"
+    | "Confédération des petites et moyennes entreprises"
     | "Prefecture Eure (27)"
-    | "CRESS";
+    | "CRESS"
+    | "Mouvement des entreprises de France"
+    | "Fédération National des Habitats de Plein Air"
+    | "Association pour l'Emploi des Cadres"
+    | "Visible en prod dans les fiches dispositifs"
+    | "Réseau Entreprendre"
+    | "Avere-France"
+    | "Commissariat Général au Développement Durable"
+    | "Secrétariat Général à la Planification Ecologique";
   /**
    * Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.
    */
@@ -358,6 +366,14 @@ export type Operators =
   | "Agence de Tourisme de la Corse"
   | "Région Guadeloupe"
   | "Startup d'Etat"
-  | "CPME"
+  | "Confédération des petites et moyennes entreprises"
   | "Prefecture Eure (27)"
-  | "CRESS";
+  | "CRESS"
+  | "Mouvement des entreprises de France"
+  | "Fédération National des Habitats de Plein Air"
+  | "Association pour l'Emploi des Cadres"
+  | "Visible en prod dans les fiches dispositifs"
+  | "Réseau Entreprendre"
+  | "Avere-France"
+  | "Commissariat Général au Développement Durable"
+  | "Secrétariat Général à la Planification Ecologique";
