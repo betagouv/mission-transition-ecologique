@@ -261,6 +261,7 @@ import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/tools/opportunity'
 import { CompanyData } from '@/tools/companyData'
 import { storeToRefs } from 'pinia'
+import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 
 const programsStore = useProgramStore()
 const { projects } = storeToRefs(useProjectStore())
@@ -347,4 +348,6 @@ const scrollToProgramForm = () => {
       : Scroll.toWithTopBarOffset(teeProgramFormContainer.value)
   }
 }
+
+useExternalLinkTracker('program_external_link_clicked')
 </script>
