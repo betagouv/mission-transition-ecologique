@@ -22,6 +22,7 @@
   <!-- PROGRAM INFOS -->
   <div
     v-if="program"
+    id="externalLinksTracking"
     class="fr-container fr-mt-0 fr-mt-md-3v"
   >
     <div class="fr-grid-row fr-grid-row-gutters">

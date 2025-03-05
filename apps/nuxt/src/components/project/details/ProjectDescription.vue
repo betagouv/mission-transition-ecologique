@@ -14,7 +14,6 @@
 <script setup lang="ts">
 import { ProjectType } from '@/types'
 import { Marked } from '@/tools/marked'
-import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 
 interface Props {
   project: ProjectType
@@ -50,6 +49,4 @@ const markdownToHtml = (text: string | undefined) => {
   }
   return ''
 }
-
-useExternalLinkTracker('project_external_link_clicked')
 </script>
