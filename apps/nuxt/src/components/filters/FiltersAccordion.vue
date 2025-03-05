@@ -1,20 +1,17 @@
 <template>
-  <DsfrAccordionsGroup
+  <TeeContentBlock
     v-if="companyDataFilter && canDisplayFilter(companyDataFilter)"
-    :model-value="0"
+    class="fr-p-0 fr-border-t--grey--light"
   >
-    <DsfrAccordion
-      :id="`accordion-${companyDataFilter.id}`"
-      :class="[props.accordionClass]"
-      :title="companyDataFilter.title"
-    >
-      <component
-        :is="companyDataFilter.component"
-        :class="companyDataFilter.componentClass"
-        legend=""
-      />
-    </DsfrAccordion>
-  </DsfrAccordionsGroup>
+    <template #title>
+      <div class="fr-p-3v">
+        {{ companyDataFilter.title }}
+      </div>
+    </template>
+    <template #content>
+      <FilterByCompanyData />
+    </template>
+  </TeeContentBlock>
   <DsfrAccordionsGroup v-model="activeAccordion">
     <template
       v-for="(filter, key) in filters"
