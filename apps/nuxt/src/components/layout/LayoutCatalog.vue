@@ -82,7 +82,7 @@ const theme = Theme.getThemeFromSelectedTheme()
 const lineClassBySideMenu = computed(() => {
   return props.hasSideMenu
     ? ''
-    : 'fr-col-offset-md-3 fr-col-md-9 fr-col-justify-md--left fr-col-offset-lg-2 fr-col-lg-10 fr-col-justify--center'
+    : 'fr-col-offset-md-3 fr-col-md-9 fr-col-justify-md--left fr-col-offset-xl-2 fr-col-xl-10 fr-col-justify--center'
 })
 
 const hasThemeCard = computed(() => {
