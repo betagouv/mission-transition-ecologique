@@ -6,6 +6,7 @@
   />
   <div
     v-if="project"
+    id="externalLinksTracking"
     class="fr-col-12"
   >
     <div class="fr-container">
@@ -35,6 +36,7 @@ import { Color, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { Theme } from '@/tools/theme'
 import { useProjectStore } from '@/stores/project'
+import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 
 const { currentProject: project } = storeToRefs(useProjectStore())
 const themeColor = ref<Color | ''>()
@@ -50,4 +52,5 @@ if (project.value) {
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
 })
+useExternalLinkTracker('project_external_link_clicked')
 </script>
