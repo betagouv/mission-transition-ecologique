@@ -11,7 +11,7 @@
       />
     </template>
     <template #sidemenu>
-      <TeeCopyLinkButton class="fr-m-4v" />
+      <TeeCopyLinkButton class="fr-mt-6v" />
       <ProjectSideNav :project="project" />
     </template>
     <ProjectDescription :project="project" />
