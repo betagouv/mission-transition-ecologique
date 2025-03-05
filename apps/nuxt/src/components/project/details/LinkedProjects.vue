@@ -2,14 +2,15 @@
   <TeeContentBlock
     id="project-linked-projects-title"
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
-    title="Projets complémentaires"
+    :title="Translation.t('project.linkedProjects.title')"
   >
     <template #content>
-      <ul class="fr-grid-row fr-grid-row--center fr-grid-row-md--left fr-raw-list">
+      <div class="fr-my-4v">{{ Translation.t('project.linkedProjects.description') }}</div>
+      <ul class="fr-grid-row fr-grid-row--left fr-raw-list">
         <li
           v-for="(linkedProject, index) in linkedProjectsTags"
           :key="linkedProject.id"
-          :class="index === 0 ? `fr-mr-2v` : index === linkedProjectsTags.length - 1 ? `fr-ml-2v` : `fr-mx-2v`"
+          :class="index === 0 ? `fr-mr-1v` : index === linkedProjectsTags.length - 1 ? `fr-ml-1v` : `fr-mx-1v`"
         >
           <TeeProjectButton
             class="fr-my-1-5v"
@@ -26,6 +27,7 @@
 import { useProjectStore } from '@/stores/project'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { Color, ProjectType } from '@/types'
+import Translation from '@/tools/translation'
 
 interface Props {
   project: ProjectType

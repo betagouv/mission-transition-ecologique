@@ -141,6 +141,41 @@
     }
   }
 
+  &.fr-card--program-detail {
+    .fr-card__title {
+      margin-bottom: 0.75rem;
+
+      a {
+        color: setting.$purple;
+
+        @include tool.media-query-respond-from(xs) {
+          line-height: 1.5rem;
+          font-size: 1.125rem;
+        }
+
+        @include tool.media-query-respond-from(md) {
+          line-height: 1.75rem;
+          font-size: 1.25rem;
+        }
+      }
+    }
+
+    p.fr-card__desc {
+      color: setting.$blue-france;
+      font-weight: 700;
+
+      @include tool.media-query-respond-from(xs) {
+        line-height: 2rem;
+        font-size: 1.5rem;
+      }
+
+      @include tool.media-query-respond-from(md) {
+        line-height: 2.25rem;
+        font-size: 1.75rem;
+      }
+    }
+  }
+
   &.project-card {
     .fr-card__content {
       padding-top: 1rem !important;

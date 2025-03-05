@@ -106,7 +106,10 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
         url: RouteName.CatalogPrograms,
         label: 'Voir les aides pour mon entreprise',
         labelMobile: 'Voir les aides éligibles',
-        isButtonLink: true
+        isButtonLink: true,
+        callback: () => {
+          useFiltersStore().setCompanyDataSelected(useCompanyDataStore().isDataFull)
+        }
       }
     case ProgramEligibilityType.Eligible:
     default:

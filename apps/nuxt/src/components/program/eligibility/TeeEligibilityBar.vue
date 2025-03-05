@@ -31,6 +31,7 @@
               size="sm"
               secondary
               class="fr-ml-sm-2v"
+              @click="link.callback"
             >
               {{ getLinkLabel() }}
             </TeeButtonLink>
@@ -77,6 +78,7 @@ export interface TeeEligibilityBarLinkButton {
   label: string
   labelMobile?: string
   isButtonLink: true
+  callback?: CallableFunction
 }
 
 export interface TeeEligibilityBarLinkHash {
@@ -155,7 +157,7 @@ const getLinkLabel = () => {
 const getRouteToUrl = (routeName: RouteName): RouteLocationRaw => {
   return {
     name: routeName,
-    query: undefined //TODO: redirect vers catalog filtré
+    query: undefined
   }
 }
 </script>

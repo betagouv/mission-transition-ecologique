@@ -52,7 +52,7 @@ const allMenuItems = [
   {
     id: 'linked-project',
     to: `project-linked-projects-title`,
-    text: 'Projets complémentaires',
+    text: 'Prérequis',
     condition: props.project.linkedProjects.length > 0
   }
 ]
