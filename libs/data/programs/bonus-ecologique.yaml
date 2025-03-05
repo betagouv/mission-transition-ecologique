@@ -4,6 +4,7 @@ description: >-
   Bénéficiez d'une aide pour louer ou acheter un véhicule peu polluant, neuf ou
   d'occasion : vélo, voiture, camionnette, 2 ou 3 roues motorisé, quadricycle
   (électrique, hydrogène ou combinaison des deux).
+fin de validité: 14/02/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ASP
 url: https://www.primealaconversion.gouv.fr/dboneco/accueil/access.html
@@ -55,8 +56,12 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

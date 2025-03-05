@@ -327,6 +327,7 @@
     "programs": [
       "coup-de-pouce-chauffage",
       "etude-reseaux-energie-renouvelable",
+      "etude-geothermie-profonde",
       "fonds-tourisme-durable",
       "investissement-boucle-d-eau-geothermique",
       "investissement-contrat-chaleur-renouvelable",
@@ -452,6 +453,7 @@
     "programs": [
       "amo-chaufferie-biomasse",
       "etude-chaufferie-biomasse",
+      "amelioration-qualite-de-l-air",
       "fonds-tourisme-durable",
       "investissement-chaleur-bois",
       "investissement-contrat-chaleur-renouvelable",
@@ -707,6 +709,7 @@
     "mainTheme": "energy",
     "programs": [
       "etude-geothermie-de-surface-et-d-aerothermie",
+      "etude-geothermie-profonde",
       "etude-test-geothermie",
       "fonds-tourisme-durable",
       "investissement-boucle-d-eau-geothermique",
@@ -784,7 +787,6 @@
     "sectors": [
       "A",
       "C",
-      "G",
       "L"
     ]
   },
@@ -940,6 +942,7 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "amelioration-qualite-de-l-air",
       "fresque-de-la-mobilite",
       "plan-de-mobilite",
       "cedre-premier-pas",
@@ -993,6 +996,7 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "amelioration-qualite-de-l-air",
       "pret-action-climat",
       "retrofit-electrique",
       "pret-vert",
@@ -1050,6 +1054,7 @@
     "programs": [
       "bonus-ecologique",
       "engins-moins-polluants",
+      "amelioration-qualite-de-l-air",
       "fonds-tourisme-durable",
       "pret-action-climat",
       "prime-a-la-conversion",
@@ -2145,7 +2150,7 @@
     "shortDescription": "Des équipements ou rénovations de vos installations pour vous permettre de faire des économies d'eau.",
     "image": "/images/projet/economiseurs-eau-sanitaires.webp",
     "longDescription": "La mise en place d'équipements ou de travaux de rénovation de vos installations sanitaires peuvent vous permettre de réaliser des économies d'eau non négligeables. Vous pouvez opter par exemple pour :\n\n- des économiseurs d'eau ou de robinets mitigeurs à installer sur vos lavabos,\n- des chasses d’eau à double commande et de plaquettes à mettre dans le réservoir des toilettes,\n- des urinoirs avec écoulement déclenché en fonction de la présence ou d'urinoirs sans eau,\n- des toilettes sèches, qui ne requièrent aucune utilisation d'eau.\n- un équipement de suivi de vos consommations d'eau.\n\nEn complément de ces installations, pensez à sensibiliser vos équipes et vos clients aux bonnes pratiques d'économies d’eau !",
-    "moreDescription": "- [**Cycle de l'eau : attention aux fuites**](https://multimedia.ademe.fr/infographies/infographie-eau-douce-ademe/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Quels équipements permettent d'économiser l'eau au quotidien ?**](https://www.cieau.com/le-metier-de-leau/usages-consommation-conseils/quels-equipements-permettent-deconomiser-leau-au-quotidien/) Une fiche pratique proposée par le centre d'information sur l'eau",
+    "moreDescription": "- [**Eau secours : demain tous à sec**](https://www.qqf.fr/infographie/eau-secours-demain-tous-a-sec/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Quels équipements permettent d'économiser l'eau au quotidien ?**](https://www.cieau.com/le-metier-de-leau/usages-consommation-conseils/quels-equipements-permettent-deconomiser-leau-au-quotidien/) Une fiche pratique proposée par le centre d'information sur l'eau",
     "themes": [
       "water"
     ],
@@ -2271,7 +2276,6 @@
     "priority": "240",
     "highlightPriority": null,
     "sectors": [
-      "A",
       "I",
       "Q",
       "S"
@@ -2669,7 +2673,7 @@
     "shortDescription": "Une sensibilisation pour inciter vos clients à adopter des comportements responsables.",
     "image": "/images/projet/sensibilisation-ecogestes.webp",
     "longDescription": "Pour appuyer vos efforts visant à réduire la consommation de ressources et la production de déchets de votre établissement, il est important de sensibiliser vos clients aux éco-gestes à adopter.  Dans un hébergement touristique, par exemple, l’affichage de messages pédagogiques dans les chambres peut encourager vos clients à réutiliser les serviettes, limiter l’utilisation des équipements de chauffage ou de climatisation, ou à éteindre les lumières et les appareils électriques lorsqu’ils ne sont pas utilisés. Pour leurs sorties, invitez vos clients à ne laisser aucun déchet derrière eux (emballages, mégots, chewing-gums…).\n\nPour faciliter la mise en place de ces bonnes pratiques, sensibilisez également vos équipes afin qu'elles puissent promouvoir ces comportements vertueux auprès des clients.",
-    "moreDescription": "- [Le kit écogestes ](https://pronormandietourisme.fr/2024/05/31/kit-ecogestes-ademe/)destiné aux établissements touristiques[,](https://pronormandietourisme.fr/2024/05/31/kit-ecogestes-ademe/) proposé par l’ADEME\n- [Éco-gestes : sensibiliser les touristes](https://www.ardeche.cci.fr/actualite/eco-gestes-sensibiliser-les-touristes), **par la CCI Ardèche**\n- [Le kit « Vive les vacances »](https://librairie.ademe.fr/consommer-autrement/232-vive-les-vacances--9791029715457.html#/44-type_de_produit-format_electronique), réalisé par l’ADEME",
+    "moreDescription": "- [**Le kit écogestes**](https://pronormandietourisme.fr/2024/05/31/kit-ecogestes-ademe/) destiné aux établissements touristiques, proposé par l’ADEME\n- [**Éco-gestes : sensibiliser les touristes**](https://www.ardeche.cci.fr/actualite/eco-gestes-sensibiliser-les-touristes), par la CCI Ardèche\n- [**Le kit « Vive les vacances »**](https://librairie.ademe.fr/consommer-autrement/232-vive-les-vacances--9791029715457.html#/44-type_de_produit-format_electronique), réalisé par l’ADEME",
     "themes": [
       "energy",
       "water"
@@ -2682,7 +2686,7 @@
     "linkedProjects": [
       26
     ],
-    "priority": "1000",
+    "priority": "70",
     "highlightPriority": null,
     "sectors": [
       "I"
@@ -2694,9 +2698,9 @@
     "title": "Tourisme zéro déchet",
     "nameTag": "🍶 Tourisme 0 déchet",
     "shortDescription": "Limiter la production de déchets et le gaspillage en adoptant des alternatives durables.",
-    "image": "/images/projet/Tourisme zéro déchet.webp",
+    "image": "/images/projet/tourisme-zero-dechet.webp",
     "longDescription": "Les entreprises du tourisme ont un rôle important à jouer en réduisant significativement leurs déchets. \\\nDans un restaurant, l’utilisation de contenants consignés et des boîtes apportées par le client pour la vente à emporter, la réduction des emballages inutiles, le libre-service et la réduction des portions de nourriture, l’achat en vrac et en grand conditionnement auprès de vos fournisseurs permettent d'adopter une démarche zéro déchet.\n\nDans un hébergement, la mise en place des distributeurs de savon et de shampoing rechargeables, le remplacement des mini-produits par des alternatives durables, la suppression des emballages individuels au petit-déjeuner et la réutilisation du linge (serviettes changées sur demande) sont autant de solutions efficaces. Privilégier les fournisseurs locaux et les produits écoresponsables permet aussi de réduire l’empreinte écologique.\n\nChaque action, même minime, contribue à un tourisme plus respectueux de l’environnement.",
-    "moreDescription": "- [Actions antigaspi dans la restauration collective et l'hôtellerie](https://librairie.ademe.fr/consommer-autrement/6318-actions-antigaspi-dans-la-restauration-collective-et-l-hotellerie.html), un guide de l'ADEME\n- [L’hébergement touristique à l’heure du Zero Waste](https://www.zerowastefrance.org/wp-content/uploads/2018/03/lhebergement-touristique-a-lheure-du-zero-waste_dossier-du-mois-mars-2016.pdf), par l'association Zero Waste France",
+    "moreDescription": "- [**Actions antigaspi dans la restauration collective et l'hôtellerie**](https://librairie.ademe.fr/consommer-autrement/6318-actions-antigaspi-dans-la-restauration-collective-et-l-hotellerie.html), un guide de l'ADEME\n- [**L’hébergement touristique à l’heure du Zero Waste**](https://www.zerowastefrance.org/wp-content/uploads/2018/03/lhebergement-touristique-a-lheure-du-zero-waste_dossier-du-mois-mars-2016.pdf), par l'association Zero Waste France",
     "themes": [
       "waste"
     ],
@@ -2722,14 +2726,12 @@
     "shortDescription": "Réutiliser des matériaux dans le bâtiment permet de réduire les déchets et de préserver les ressources.",
     "image": "/images/projet/materiaux-de-reemploi.webp",
     "longDescription": "Le réemploi dans la rénovation consiste à réutiliser des matériaux et équipements issus de la déconstruction ou de la rénovation de bâtiments. Briques, tuiles, carrelage, parquets, cloisons, sanitaires, mobilier, menuiseries, robinetterie, luminaires… Tous ces éléments peuvent être récupérés et intégrés à un nouveau projet, évitant ainsi la production de déchets de chantier, tout en limitant les émissions de CO₂ liées à l’extraction et à la fabrication de nouveaux matériaux.\n\nAu-delà de son impact environnemental positif, le réemploi permet de réduire significativement les coûts d’achat des matériaux. Pour s’approvisionner en matériaux de réemploi, il existe aujourd’hui des plateformes spécialisées qui collectent, trient et revendent ces éléments à des prix souvent plus avantageux que le neuf.\n\nEn intégrant le réemploi dans votre projet de rénovation, vous faites le choix d’un aménagement à la fois durable et économique, contribuant efficacement à la transition écologique.",
-    "moreDescription": "- [Économie circulaire : comment ça marche ?](https://librairie.ademe.fr/dechets-economie-circulaire/925-economie-circulaire-comment-ca-marche-.html) Une infographie proposée par l'ADEME.\n- [Réemploi des matériaux et produits de construction dans le bâtiment](https://www.ffbatiment.fr/techniques-batiment/performance-environnementale-batiments/reduction-carbone/dossier/reemploi-materiaux-produits-construction-dans-batiment), par la Fédération Française du Bâtiment",
+    "moreDescription": "- [**Économie circulaire : comment ça marche ?**](https://librairie.ademe.fr/ged/928/infographie-economie-circulaire-comment-ca-marche.pdf) Une infographie proposée par l'ADEME.\n- [**Réemploi des matériaux et produits de construction dans le bâtiment**](https://www.ffbatiment.fr/techniques-batiment/performance-environnementale-batiments/reduction-carbone/dossier/reemploi-materiaux-produits-construction-dans-batiment), par la Fédération Française du Bâtiment",
     "themes": [
       "building"
     ],
     "mainTheme": "building",
-    "programs": [
-      "renovation-energetique"
-    ],
+    "programs": [],
     "linkedProjects": [],
     "priority": "330",
     "highlightPriority": null,
