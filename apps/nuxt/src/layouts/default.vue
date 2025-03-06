@@ -32,8 +32,6 @@ useSeoMeta(MetaSeo.default())
 
     <slot />
 
-    <div class="fr-mt-0v">
-      <TeeFooter />
-    </div>
+    <TeeFooter />
   </div>
 </template>
