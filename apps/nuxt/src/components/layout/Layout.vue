@@ -30,7 +30,7 @@
     <div class="fr-grid-row">
       <div
         v-if="$slots.sidemenu"
-        class="fr-col-2 fr-col-hidden fr-col-md-3 fr-col-lg-2 fr-col-unhidden-md"
+        class="fr-col-2 fr-col-hidden fr-col-md-3 fr-col-lg-3 fr-col-xl-2 fr-col-unhidden-md"
       >
         <div
           class="fr-sidemenu fr-pr-3v"
@@ -41,7 +41,7 @@
       </div>
       <main
         class="fr-col-12"
-        :class="$slots.sidemenu ? 'fr-col-md-9 fr-col-lg-10' : ''"
+        :class="$slots.sidemenu ? 'fr-col-md-9 fr-col-lg-9 fr-col-xl-10' : ''"
       >
         <slot> </slot>
       </main>
