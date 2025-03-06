@@ -35,9 +35,9 @@ const otherOperator = {
 </script>
 
 <template>
-  <div class="fr-container fr-grid-row fr-grid-row--center fr-p-8v fr-hidden fr-unhidden-sm">
-    <div class="fr-grid-row">
-      <div class="fr-col-12 fr-col-md-6 fr-px-10w fr-text-center fr-position--relative fr-mb-6w fr-mb-md-0">
+  <div class="fr-container fr-hidden fr-unhidden-sm">
+    <div class="fr-grid-row fr-grid-row--center fr-py-8v">
+      <div class="fr-col-12 fr-col-md-5 fr-text-center fr-position--relative fr-mb-6w fr-mb-md-0">
         <img
           :src="`/images/yellow-circle.svg`"
           class="circle-background"
@@ -45,7 +45,7 @@ const otherOperator = {
         />
         <h4
           class="fr-text--blue-france fr-pb-2v"
-          v-html="`Le point d'entrée vers les aides à la transition écologique <br/> des entreprises`"
+          v-html="`Le point d'entrée vers les aides à la transition écologique des entreprises`"
         ></h4>
         <p>
           <i>Transition écologique des entreprises</i> vous permet <b>d'identifier la bonne aide</b> pour votre entreprise parmi les aides
@@ -62,7 +62,7 @@ const otherOperator = {
           />
         </div>
       </div>
-      <div class="fr-col-12 fr-col-md-6 fr-px-10w fr-text-center fr-position--relative">
+      <div class="fr-col-12 fr-col-offset-md-1 fr-col-md-5 fr-text-center fr-position--relative">
         <img
           :src="`/images/green-circle.svg`"
           class="circle-background"
@@ -70,7 +70,7 @@ const otherOperator = {
         />
         <h4
           class="fr-text--blue-france fr-pb-2v"
-          v-html="`Des conseillers pour <br/> vous aider sur l'ensemble <br/> du territoire`"
+          v-html="`Des conseillers pour vous aider sur l'ensemble du territoire`"
         ></h4>
         <p>
           Pour vous accompagner dans vos réflexions et répondre à vos questions, nous vous mettons en relation avec
@@ -94,7 +94,7 @@ const otherOperator = {
 .circle-background {
   position: absolute;
   z-index: -1;
-  left: 50px;
+  left: -10px;
   top: -20px;
 }
 
