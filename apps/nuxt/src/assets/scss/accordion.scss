@@ -1,6 +1,7 @@
 @use 'sass:meta';
 @use 'sass:map';
 @use 'setting';
+@use 'tool';
 
 .fr-accordion {
   &__btn {
@@ -19,10 +20,14 @@
     @each $color, $properties in setting.$colors {
       &--#{$color} {
         .fr-collapse--expanded{
-          @if meta.type-of($properties) == map {
-            background: map.get($properties, "color");
-          } @else {
-            background: $properties;
+          @include tool.get-background-color-by-opacity($properties);
+        }
+
+        @each $name, $opacity in setting.$opacities {
+          &#{$name} {
+            .fr-collapse--expanded{
+              @include tool.get-background-color-by-opacity($properties, $opacity);
+            }
           }
         }
       }
