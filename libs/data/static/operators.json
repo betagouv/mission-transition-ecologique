@@ -281,8 +281,10 @@
     ]
   },
   {
-    "operator": "Organisations professionnelles",
-    "filterCategories": []
+    "operator": "CAPEB - Confédération de l'Artisanat et des Petites Entreprises du Bâtiment",
+    "filterCategories": [
+      "OP"
+    ]
   },
   {
     "operator": "Région Bretagne",
@@ -305,8 +307,10 @@
     "filterCategories": []
   },
   {
-    "operator": "UIMM",
-    "filterCategories": []
+    "operator": "UIMM - Union des industries et métiers de la métallurgie",
+    "filterCategories": [
+      "OP"
+    ]
   },
   {
     "operator": "Véolia Eau",
@@ -488,6 +492,104 @@
     "operator": "Région Guadeloupe",
     "filterCategories": [
       "Régions"
+    ]
+  },
+  {
+    "operator": "Startup d'Etat",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "Confédération des petites et moyennes entreprises",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Prefecture Eure (27)",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "CRESS",
+    "filterCategories": []
+  },
+  {
+    "operator": "Mouvement des entreprises de France",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Fédération National des Habitats de Plein Air",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Association pour l'Emploi des Cadres",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Visible en prod dans les fiches dispositifs",
+    "filterCategories": []
+  },
+  {
+    "operator": "Réseau Entreprendre",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Avere-France",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Commissariat Général au Développement Durable",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "Secrétariat Général à la Planification Ecologique",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "Visible en prod dans les fiches dispositifs",
+    "filterCategories": []
+  },
+  {
+    "operator": "Visible en prod dans les fiches dispositifs",
+    "filterCategories": []
+  },
+  {
+    "operator": "Fondation Solar Impulse",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Service Éconmique de l'État en Région",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "Visible en prod dans les fiches dispositifs",
+    "filterCategories": []
+  },
+  {
+    "operator": "Les Entreprises S'engagent",
+    "filterCategories": [
+      "Opérateurs nationaux"
     ]
   }
 ]
