@@ -530,7 +530,9 @@
   },
   {
     "operator": "Association pour l'Emploi des Cadres",
-    "filterCategories": []
+    "filterCategories": [
+      "OP"
+    ]
   },
   {
     "operator": "Visible en prod dans les fiches dispositifs",
@@ -558,6 +560,36 @@
     "operator": "Secrétariat Général à la Planification Ecologique",
     "filterCategories": [
       "État"
+    ]
+  },
+  {
+    "operator": "Visible en prod dans les fiches dispositifs",
+    "filterCategories": []
+  },
+  {
+    "operator": "Visible en prod dans les fiches dispositifs",
+    "filterCategories": []
+  },
+  {
+    "operator": "Fondation Solar Impulse",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Service Éconmique de l'État en Région",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "Visible en prod dans les fiches dispositifs",
+    "filterCategories": []
+  },
+  {
+    "operator": "Les Entreprises S'engagent",
+    "filterCategories": [
+      "Opérateurs nationaux"
     ]
   }
 ]

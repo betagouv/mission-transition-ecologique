@@ -1161,6 +1161,587 @@
     "id": "aide-investissement-corse"
   },
   {
+    "titre": "Soutien à la labellisation touristique",
+    "promesse": "Obtenez un soutien pour votre labellisation touristique",
+    "description": "Vous êtes un professionnel du tourisme en Corse et souhaitez valoriser votre engagement avec un label reconnu ? Que ce soit l’Écolabel Européen, Tourisme & Handicap ou Accueil Vélo, l’Agence du Tourisme de la Corse vous accompagne dans vos démarches de labellisation. Vous pouvez bénéficier d’un soutien financier pour couvrir l’accompagnement, les études nécessaires et les investissements indispensables à votre mise en conformité.",
+    "description longue": "Cette aide offre un soutien dans les démarches et critères d'obtention des labels suivants : \n- L’Ecolabel européen, label officiel de la Commission européenne, est un système volontaire traduisant la qualité environnementale de produits et services. Les critères du référentiel de l’Ecolabel européen pour l’hébergement touristique garantissent une réduction de l’impact environnemental sur l’ensemble de la structure touristique : lingerie, nettoyage, restauration, maintenance, spa, piscine, espaces verts… La labellisation des hébergements touristiques est régie par un cahier des charges comprenant 67 critères dont 22 sont obligatoires et 61 optionnels.\n- La marque nationale Tourisme & Handicap incite les professionnels du tourisme gestionnaires à développer une offre touristique adaptée, réellement ouverte à tous en donnant le choix à la personne en situation de handicap (handicap auditif, mental, moteur ou visuel) de partir en autonomie, seule ou en famille.\n- La marque nationale « Accueil vélo » est le référentiel de qualité au service des vélotouristes. Il garantit un accueil et des services de qualité le long des itinéraires cyclables pour les cyclistes en itinérance. Un Accueil Vélo peut être : un hébergement, un loueur de cycles, un réparateur de cycles, un restaurateur, un Office de Tourisme, un site de visite.\n\nLes frais d’études et d’accompagnement peuvent être pris en charge jusqu’à 80 %, dans la limite de 10 000 € de dépenses éligibles. Pour les investissements, l’aide couvre jusqu’à 50 % des dépenses, avec un plafond de 30 000 €.",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "Agence de Tourisme de la Corse",
+    "url": "https://www.atc.corsica/wp-content/uploads/telechargements/mesure-22-le-soutien-a-lhebergement-en-toutes-zones-la-labellisation.pdf",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 50% des dépenses, dans un maximum de 30 000 €",
+    "objectifs": [
+      {
+        "description": "Créez compte sur le site de l'Agence du Tourisme de la Corse.",
+        "liens": [
+          {
+            "lien": "https://annuaire.atc.corsica/realms/atc-prod/login-actions/registration?execution=62d93361-e72e-4207-a2f6-8371562141ec&client_id=atc-prod&tab_id=0xzxSpZYJRg",
+            "texte": "Créer votre compte"
+          }
+        ]
+      },
+      {
+        "description": "Transmettez votre déclaration d'intention à l'Agence du Tourisme de la Corse",
+        "liens": [
+          {
+            "lien": "https://aiuti.atc.corsica/catalogue/soutien-a-lhebergement-lecolabel-europeen/",
+            "texte": "Transmettre votre déclaration d'intention"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier de candidature auprès de l'Agence du Tourisme de la Corse.",
+        "liens": [
+          {
+            "lien": "https://aiuti.atc.corsica/dossier-creation/?id_dispositif=e57c1a05-2c8e-4de4-8484-632ad32ca65d&origin=ts",
+            "texte": "Transmettre votre dossier de candidature"
+          }
+        ]
+      },
+      {
+        "description": "Vous serez informé par mail de l’avancement de votre dossier. Après examen et validation de votre dossier, recevez votre aide."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Corse"
+      ],
+      "secteur d'activité": [
+        "- Pour l’Ecolabel européen : Hôtels classés, hôtellerie de plein air classée, résidences de tourisme classées, meublés classés, chambre d’hôtes,\n- Pour la marque Accueil Vélo : Hôtels classés, hôtellerie de plein air classée, résidences de tourisme classées, meublés classés, chambre d’hôtes, loueurs et réparateurs de vélos, restaurateurs, Offices de Tourisme, sites touristiques.\n- Pour la marque Tourisme et Handicap : Hôtels classés, hôtellerie de plein air classée, résidences de tourisme classées, meublés classés, chambre d’hôtes, restaurateurs, Offices de Tourisme, sites touristiques, acteurs intervenants dans les activités de loisirs."
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est I"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la mobilité durable",
+          "questionnaire . objectif prioritaire . est l'écoconception"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Corse"
+        ]
+      }
+    },
+    "id": "aide-labellisation-corse"
+  },
+  {
+    "titre": "Aide régionale au développement de produits touristiques",
+    "promesse": "Développez des projets touristiques durables",
+    "description": "Vous avez une idée innovante pour un tourisme durable et responsable en Guadeloupe ? Ce dispositif vous accompagne dans la création, la modernisation et la valorisation d'offres attractives, respectueuses de l’environnement et ancrées dans l’identité locale.\nQue votre projet concerne l’écotourisme terrestre (randonnées, agrotourisme, hébergements en pleine nature) ou l’écotourisme maritime et côtier (activités nautiques durables, découverte des écosystèmes marins), ainsi que la mise en valeur du patrimoine et de la culture, vous pouvez bénéficier d’un accompagnement et d’un soutien financier pour vos études, aménagements et investissements.",
+    "description longue": "Les dépenses éligibles sont : \n- Pré-études de faisabilité technique et économique ;\n- Investissements matériels et immatériels favorisant l’attractivité de la destination et à la valorisation des espaces touristiques, la découverte du milieu naturel et patrimonial (aménagement, préservation et entretien, animation) ;\n- Supports de communication;\n- Matériels navigants immatriculés exclusivement nécessaires à la pratique de l’activité touristique;\n- Equipements pour les navires neufs.",
+    "début de validité": "01/01/2025",
+    "fin de validité": "15/09/2025",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "Région Guadeloupe",
+    "url": "https://www.regionguadeloupe.fr/les-aides-les-services/guide-des-aides/detail/actualites/aide-regionale-au-developpement-des-produits-touristiques/categorie/tourisme/#_",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 35% des dépenses éligibles, dans un maximum de 175 000 € HT",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Constituez votre dossier de demande d'aide",
+        "liens": [
+          {
+            "lien": "https://www.regionguadeloupe.fr/les-aides-les-services/guide-des-aides/detail/actualites/aide-regionale-au-developpement-des-produits-touristiques/categorie/tourisme/#_",
+            "texte": "liste des documents à fournir"
+          }
+        ]
+      },
+      {
+        "description": "Faites réaliser des devis pro forma maximum 3 mois avant le dépôt de votre dossier."
+      },
+      {
+        "description": "Envoyez votre dossier de demande d'aide complet en deux exemplaires à l'adresse suivante : Direction du Tourisme, Hôtel de région, Avenue Paul Lacavé, 97110 Basse-Terre."
+      },
+      {
+        "description": "Si votre projet est sélectionné, recevez votre subvention."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Guadeloupe"
+      ],
+      "secteur d'activité": [
+        "Sont exclus les SCI, les agriculteurs et pêcheurs"
+      ],
+      "nombre d'années d'activité": [
+        "Au moins 3 ans d'activité"
+      ],
+      "autres critères d'éligibilité": [
+        "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)",
+        "Pour les hébergements touristiques, votre entreprise ne doit pas avoir bénéficié d’un autre dispositif d’aide durant les 5 dernières années.",
+        "Les entreprises en difficulté ou en restructuration ne sont pas éligibles."
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est la mobilité durable",
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est mon impact environnemental",
+          "questionnaire . objectif prioritaire . est l'écoconception",
+          "questionnaire . objectif prioritaire . est préserver la biodiversité"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Guadeloupe"
+        ]
+      }
+    },
+    "id": "aide-tourisme-guadeloupe"
+  },
+  {
+    "titre": "Aide à l'investissement des transitions",
+    "promesse": "Financez les projets de transition écologique de votre petite entreprise",
+    "description": "La Région Nouvelle-Aquitaine accompagne les petites entreprises dans leur transition en soutenant financièrement leurs projets de développement. Cette aide vise à renforcer leur stabilité économique tout en encourageant les circuits courts et l’approvisionnement local. Elle favorise également l’économie circulaire en limitant les déchets, en valorisant les ressources et en encourageant le réemploi pour les équipements et outils de production.",
+    "description longue": "Cette aide couvre les investissements matériels et immatériels, ainsi que les dépenses de conseil et de recrutement liées au projet de transition écologique, dans la limite de 50 % des dépenses éligibles pour ces dernières.\n\nLa Région souhaite soutenir financièrement les projets de développement permettant aux petites entreprises locales d'engager des projets de transition écologique. Par exemple : \n- Transformation et commercialisation de produits locaux pour renforcer les circuits courts.\n- Développement de solutions de logistique et de distribution en approvisionnement local.\n- Mise en place d’initiatives favorisant la réduction et la valorisation des déchets.\n- Développement de solutions de réemploi et de réparation d’équipements ou de matériaux.\n- Modernisation des outils de production basse consommation, issus du réemploi. \n- Écoconception et innovation autour d’emballages réutilisables ou biodégradables.\n- Déploiement de plateformes numériques facilitant la mutualisation des ressources.\n- Accompagnement et formation des équipes à des pratiques plus durables.\n- Intégration de nouveaux outils ou procédés pour réduire l’empreinte écologique d’une activité.\n- etc.",
+    "illustration": "images/TEE_ampoule.png",
+    "opérateur de contact": "Région Nouvelle-Aquitaine",
+    "url": "https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/aide-linvestissement-des-transitions-tpe?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 35% des dépenses, dans un maximum de 50 000 €",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Contactez un conseiller pour échanger sur votre projet de transition écologique et être mis en relation avec un référent de la CCI, Chambre des Métiers, ou de l'ADI pour vous accompagner dans votre démarche."
+      },
+      {
+        "description": "Déposez un dossier de demande de subvention à la Région."
+      },
+      {
+        "description": "Votre dossier est alors instruit et soumis pour approbation."
+      },
+      {
+        "description": "Une fois votre demande acceptée, recevez votre subvention et réalisez votre projet."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Moins de 10 salariés",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Nouvelle-Aquitaine"
+      ],
+      "secteur d'activité": [
+        "Secteurs du commerce, de l'artisanat, de l'industrie, des services. (hébergements touristiques exclus)"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Avoir réalisé un accompagnement préalable pour définir un plan d'action (auprès de la CCI, Chambre des Métiers, ADI, cabinet spécialisé...),",
+        "Avoir un chiffre d'affaires ou un bilan inférieur à 2 millions d'euros,",
+        "Les investissements doivent être minimum de 10 000 € HT,",
+        "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)."
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "a un effectif éligible",
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . a un effectif éligible": {
+        "toutes ces conditions": [
+          "effectif <= 9"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est l'écoconception"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Nouvelle-Aquitaine"
+        ]
+      }
+    },
+    "id": "aide-tpe-transition-na"
+  },
+  {
     "titre": "Aide travaux hébergements touristiques",
     "promesse": "Financez vos travaux de création, renovation, modernisation de votre hébergement touristique",
     "description": "Vous avez un projet de création, modernisation ou rénovation de votre hébergement touristique ? La Région Auvergne-Rhône-Alpes vous accompagne avec une aide financière pour soutenir vos travaux. Que vous souhaitiez concevoir un hébergement éco-responsable ou entreprendre des rénovations énergétiques, cette aide peut financer des améliorations telles que l’isolation thermique, l’installation d’un chauffage performant ou le recours aux énergies renouvelables. Ces travaux vous permettent de réduire vos charges mais aussi de renforcer l’attractivité et la durabilité de votre établissement.",
@@ -2565,7 +3146,7 @@
     "description": "Le programme Baisse les Watts vous accompagne dans la maîtrise de votre consommation d’énergie, à l'aide de trois dispositifs : le Carnet de bord Énergie, un accompagnement téléphonique et un parcours de formations collectives et individuelles.",
     "description longue": "Baisse les Watts vous aide à réduire votre consommation en :\n- Électricité,\n- Gaz,\n- Fioul,\n- GPL,\n- RCU (Réseau de chaleur urbain) – hors carburants.",
     "début de validité": "01/01/2023",
-    "fin de validité": "31/12/2025",
+    "fin de validité": "01/05/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "La Poste",
     "autres opérateurs": [
@@ -11827,17 +12408,27 @@
     "champs conditionnels": [
       {
         "toutes ces conditions": [
+          "effectif >= null",
+          "effectif <= 49"
+        ],
+        "Montant du dispositif": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+        "Eligibilité taille": "Pour une petite entreprise ou dans le cadre d’une activité non économique"
+      },
+      {
+        "toutes ces conditions": [
           "effectif >= 50",
           "effectif <= 249"
         ],
-        "Montant du dispositif": "Jusqu'à 60% du coût de l'étude, dans un maximum de 100 000 €"
+        "Montant du dispositif": "Jusqu'à 60% du coût de l'étude, dans un maximum de 100 000 €",
+        "Eligibilité taille": "Pour une moyenne entreprise"
       },
       {
         "toutes ces conditions": [
           "effectif >= 250",
           "effectif <= 4999"
         ],
-        "Montant du dispositif": "Jusqu'à 50% du coût de l'étude, dans un maximum de 100 000 €"
+        "Montant du dispositif": "Jusqu'à 50% du coût de l'étude, dans un maximum de 100 000 €",
+        "Eligibilité taille": "Pour une grande entreprise"
       }
     ],
     "id": "etude-geothermie-de-surface-et-d-aerothermie"
