@@ -37,7 +37,7 @@ const otherOperator = {
 <template>
   <div class="fr-container fr-grid-row fr-grid-row--center fr-p-8v fr-hidden fr-unhidden-sm">
     <div class="fr-grid-row">
-      <div class="fr-col-6 fr-col-sm-12 fr-col-lg-6 fr-px-10w fr-text-center fr-position--relative">
+      <div class="fr-col-12 fr-col-md-6 fr-px-10w fr-text-center fr-position--relative fr-mb-6w fr-mb-md-0">
         <img
           :src="`/images/yellow-circle.svg`"
           class="circle-background"
@@ -62,7 +62,7 @@ const otherOperator = {
           />
         </div>
       </div>
-      <div class="fr-col-6 fr-col-sm-12 fr-col-lg-6 fr-px-10w fr-text-center fr-position--relative">
+      <div class="fr-col-12 fr-col-md-6 fr-px-10w fr-text-center fr-position--relative">
         <img
           :src="`/images/green-circle.svg`"
           class="circle-background"
