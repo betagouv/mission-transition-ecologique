@@ -207,6 +207,7 @@
     "fin de validité": "30/06/2026",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
+    "url": "https://actinitiative.org/fr/act-in-france/",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 18 000 €",
     "objectifs": [
@@ -2151,7 +2152,7 @@
     "id": "aides-au-reemploi-des-emballages"
   },
   {
-    "titre": "Amélioration de la qualité de l’air dans les zones couvertes par un PPA",
+    "titre": "Amélioration de la qualité de l’air",
     "promesse": "Bénéficiez d'un financement pour vos projets visant à améliorer la qualité de l'air",
     "description": "Vous travaillez dans une zone couverte par un Plan de Protection de l'Atmosphère (PPA) ou dans un territoire présentant des dépassements de seuils réglementaires en dioxyde d'azote (NO₂), particules ou ozone (O₃) et vous souhaitez réduire durablement vos émissions de polluants atmosphériques ? L’ADEME peut accompagner financièrement vos actions.",
     "description longue": "L’ADEME peut vous accompagner pour :\n   - Des études permettant d’aboutir à une mise en place opérationnelle d’actions permettant de réduire les émissions de polluants atmosphériques réglementés pour les zones concernées.\n   - De la communication, animation, sensibilisation intégrant les changements pérennes de pratiques.\n   - Certains investissements comme ceux relatifs au renouvellement de véhicules, au branchement à quai des navires, aux alternatives au brûlage des déchets verts.\n\nLes projets pourront concerner notamment (liste non exhaustive) :\n-  la mobilité (active, partagée, report modal) ;\n-  les transports (réduction des émissions de véhicules, logistique, maritime et fluvial) ;\n-  les alternatives au brûlage des déchets verts ;\n- l'accompagnement des professionnels impactés par la mise en œuvre de la zone à faibles émissions mobilité (ZFE-m) ;\n- l’urbanisme intégrant une moindre exposition aux émissions de polluants ;\n- organisation ou faisabilité d’un report modal marchandises/voyageurs vers un mode ayant un plus faible impact environnemental (covoiturage, autopartage, mobilités actives, transport fluvial/maritime/ferroviaire/routier, cyclologistique, développement de tiers-lieux...) ;\n- sensibilisation et accompagnement au changement de comportement des particuliers, des scolaires, des salariés, etc., vers des mobilités moins impactantes d’un point de vue environnemental ;\n- électrification de navires/bateaux de transport de marchandises ou voyageurs pour un branchement électrique à quai ;\n- électrification des postes de stationnement des avions ;\n- accompagnement des professionnels impactés par la mise en œuvre des ZFE-m hors aides au renouvellement des véhicules.\n- BTP /carrières : optimisation d’un chantier et de sa logistique, dans l’objectif de réduire les émissions de polluants réglementés.",
@@ -2212,11 +2213,10 @@
         "Éligible à toutes les entreprises"
       ],
       "autres critères d'éligibilité": [
-        "Zones éligibles : Île-de-France, Normandie, Grand Est, Occitanie, Auvergne-Rhône-Alpes, Provence-Alpes-Côte d'Azur, Martinique",
-        "Etre dans une zone couverte par un Plan de Protection de l'Atmosphère (PPA) ou dans un territoire présentant des dépassements de seuils réglementaires en NO₂, particules ou O₃",
         "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)",
         "Vous ne devez pas avoir reçu d'aide sur un autre dispositif de l'ADEME",
-        "Les projets de R&D ne sont pas éligibles"
+        "Les projets de R&D ne sont pas éligibles",
+        "Etre dans une zone couverte par un Plan de Protection de l'Atmosphère (PPA) ou dans un territoire présentant des dépassements de seuils réglementaires en NO₂, particules ou O₃"
       ]
     },
     "publicodes": {
