@@ -169,7 +169,8 @@ export type Dispositif = {
     | "Secrétariat Général à la Planification Ecologique"
     | "Fondation Solar Impulse"
     | "Service Éconmique de l'État en Région"
-    | "Les Entreprises S'engagent";
+    | "Les Entreprises S'engagent"
+    | "Chambres Regionales de l'Economie Sociale et Solidaire";
   /**
    * Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.
    */
@@ -382,4 +383,5 @@ export type Operators =
   | "Secrétariat Général à la Planification Ecologique"
   | "Fondation Solar Impulse"
   | "Service Éconmique de l'État en Région"
-  | "Les Entreprises S'engagent";
+  | "Les Entreprises S'engagent"
+  | "Chambres Regionales de l'Economie Sociale et Solidaire";
