@@ -47,7 +47,7 @@ export const SizeToText: { [key in StructureSize]: { title: string; label: strin
   [StructureSize.PE]: { title: 'Entre 20 et 49 employés', label: '‍️👫👫👫 Entre 20 et 49 employés' },
   [StructureSize.ME]: { title: 'Entre 50 et 249 employés', label: '‍️👫👭👫👫 Entre 50 et 249 employés' },
   [StructureSize.ETI]: { title: 'Entre 250 et 499 employés', label: '👫👭👫👫👫 Entre 250 et 499 employés' },
-  [StructureSize.GE]: { title: 'Plus de 500 employés', label: '👫👭👫👫👫👫 Plus de 499 employés' }
+  [StructureSize.GE]: { title: '500 employés et plus', label: '👫👭👫👫👫👫 500 employés et plus' }
 }
 
 export enum LegalCategory {
