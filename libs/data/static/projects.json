@@ -788,9 +788,7 @@
     "priority": "500",
     "highlightPriority": null,
     "sectors": [
-      "A",
-      "C",
-      "L"
+      "A"
     ]
   },
   {
@@ -2297,9 +2295,7 @@
     "priority": "240",
     "highlightPriority": null,
     "sectors": [
-      "I",
-      "Q",
-      "S"
+      "I"
     ]
   },
   {
