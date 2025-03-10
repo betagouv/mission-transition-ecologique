@@ -1,5 +1,5 @@
 import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType, EstablishmentFront } from '@tee/common'
-import { FieldType, RouteName, type ProgramData as ProgramType, ProjectType, FormDataType, ThemeType, ThemeId } from '@/types'
+import { FieldType, RouteName, ProgramType, ProjectType, FormDataType, ThemeType, ThemeId } from '@/types'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import { CalloutType } from '@/types/elementsPropsTypes'
 import Translation from '@/tools/translation'
