@@ -17,7 +17,7 @@ def init_db():
     if os.getenv("TEST") == "True":
         DBManager().query("GRANT USAGE ON SCHEMA statistics_test TO PUBLIC;")
         DBManager().query(
-            "GRANT SELECT ON ALL TABLES IN SCHEMA statistics_test TO PUBLIC;"
+            "GRANT INSERT, DELETE, UPDATE, TRUNCATE, REFERENCES, TRIGGER, SELECT ON ALL TABLES IN SCHEMA statistics_test TO PUBLIC;"
         )
 
 
