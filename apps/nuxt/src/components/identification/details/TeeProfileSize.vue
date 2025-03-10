@@ -1,26 +1,28 @@
-<template id="select-company-size">
-  <p
-    v-if="infos.value"
-    class="fr-tag fr-mb-4v fr-bg--blue--lightness"
-  >
-    <span class="fr-pr-4v">{{ sizeText }}</span>
-    <span
-      class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
-      @click="resetSize"
+<template>
+  <div>
+    <p
+      v-if="infos.value"
+      class="fr-tag fr-bg--blue--lightness"
+    >
+      <span class="fr-pr-4v">{{ sizeText }}</span>
+      <span
+        class="fr-icon-close-line fr-radius-a--2v fr-btn-bg"
+        @click="resetSize"
+      />
+    </p>
+    <DsfrSelect
+      v-else
+      v-model="selectedSize"
+      :default-unselected-text="defaultUnselectedText"
+      :options="sizeOptions"
     />
-  </p>
-  <DsfrSelect
-    v-else
-    v-model="selectedSize"
-    :default-unselected-text="defaultUnselectedText"
-    :options="sizeOptions"
-  />
-  <div
-    v-if="hasError"
-    :class="errorMessage ? 'fr-error-text' : ''"
-    class="fr-input--empty-text fr-mt-2v"
-  >
-    {{ errorMessage }}
+    <div
+      v-if="hasError"
+      :class="errorMessage ? 'fr-error-text' : ''"
+      class="fr-input--empty-text fr-mt-2v"
+    >
+      {{ errorMessage }}
+    </div>
   </div>
 </template>
 <script lang="ts" setup>

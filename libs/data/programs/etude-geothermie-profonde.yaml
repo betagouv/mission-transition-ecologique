@@ -1,42 +1,45 @@
-titre: Étude "Économie de la fonctionnalité"
-promesse: >-
-  Réalisez une étude sur le modèle de l'économie de la fonctionnalité pour votre
-  produit
+titre: Étude "Géothermie profonde"
+promesse: Réalisez une étude pour votre projet d'installation de géothermie profonde
 description: >-
-  Vous souhaitez développer un service innovant en alternative à la fourniture
-  d’un produit ? L’ADEME peut vous aider à financer une étude pour vous aider à
-  définir votre nouvelle offre de services. Une phase de sensibilisation vous
-  permettra de découvrir les différentes dimensions du modèle de l'économie de
-  la fonctionnalité et de la coopération. Une phase pratique vous invitera a
-  questionner l’organisation de votre entreprise, vos relations partenariales,
-  ainsi que votre modèle de revenus, dans le but d'élaborer une nouvelle offre
-  de service.
+  L’ADEME vous accompagne dans le financement d’une étude de faisabilité avant
+  d'investir dans une installation de géothermie profonde. Cette étude vous
+  aidera a identifier les techniques adaptées aux possibilités du site
+  d’implantation, ainsi que des solutions pour le montage financier,
+  administratif et juridique de votre investissement.
 description longue: >-
-  L’économie de la fonctionnalité est une démarche économique de transformation
-  progressive des entreprises, des collectivités et des citoyens. Elle s’appuie
-  sur la coopération entre les acteurs du territoire pour les accompagner vers
-  une transition écologique et sociale ambitieuse. Les offres développées
-  répondent aux besoins réels des usagers tout en limitant la production de
-  biens matériels.
+  La géothermie profonde consiste à récupérer la chaleur de l’eau contenue dans
+  le sous-sol, situé à plus de 200 mètres de profondeur.
+
+  Le principe est de capter, par forage, l’eau des aquifères profonds et de la
+  transférer à des réseaux de chaleur à des fins de chauffage. Le forages
+  peuvent aller jusqu'à 2 500 mètres de profondeur.
+
+  On estime que 30 % du territoire français pourrait exploiter cette ressource
+  pour le chauffage urbain, étant une énergie très faiblement carbonée (10g de
+  CO2/ KWh).
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-a-leconomie-fonctionnalite-cooperation?cible=79
+  https://agirpourlatransition.ademe.fr/collectivites/aides-financieres/2025/etude-daide-a-decision-projets-geothermie-profonde
 nature de l'aide: étude
-montant du financement: Jusqu'à 80% du coût de l'étude
+montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
       l’ADEME ou en contactant un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Soutien%20EFC%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
+          https://agirpourlatransition.ademe.fr/collectivites/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
         texte: Conditions éligibilité et financement
   - description: >-
-      Choisissez le prestataire qui va vous accompagner pour mener votre étude
-      et obtenez un devis.
+      Choisissez un auditeur énergétique "Reconnu Garant de l'Environnement"
+      (RGE) ou équivalent, et obtenez un devis.
+    liens:
+      - lien: >-
+          https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte
+        texte: Annuaire des professionnels RGE
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
       - lien: https://agirpourlatransition.ademe.fr/user/register
@@ -47,13 +50,16 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-a-leconomie-fonctionnalite-cooperation?cible=79
+          https://agirpourlatransition.ademe.fr/collectivites/aides-financieres/2025/etude-daide-a-decision-projets-geothermie-profonde
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
       recevez un contrat de financement précisant le montant d’aide maximum, les
       conditions et les modalités de versement.
-  - description: Réalisez votre étude de diagnostic ou d'accompagnement.
+  - description: >-
+      Réalisez votre étude pour vérifier la faisabilité technique et économique
+      de votre projet d'implantation d’une installation de géothermie de surface
+      et aérothermie.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
@@ -92,18 +98,9 @@ publicodes:
       - code NAF niveau 1 . est F
       - code NAF niveau 1 . est G
       - code NAF niveau 1 . est H
-      - code NAF niveau 1 . est J
-      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est I
       - code NAF niveau 1 . est L
-      - code NAF niveau 1 . est M
-      - code NAF niveau 1 . est N
-      - code NAF niveau 1 . est O
-      - code NAF niveau 1 . est P
       - code NAF niveau 1 . est Q
-      - code NAF niveau 1 . est R
-      - code NAF niveau 1 . est S
-      - code NAF niveau 1 . est T
-      - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-      - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est ma performance énergétique
