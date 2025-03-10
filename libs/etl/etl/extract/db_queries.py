@@ -1,6 +1,4 @@
 from etl.tools.db_manager import DBManager
-from dotenv import load_dotenv
-
 
 def get_new_sirets():
     query = """
