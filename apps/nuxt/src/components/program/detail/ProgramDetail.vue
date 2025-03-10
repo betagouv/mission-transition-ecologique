@@ -350,5 +350,5 @@ const scrollToProgramForm = () => {
   }
 }
 
-useExternalLinkTracker('program_external_link_clicked')
+useExternalLinkTracker('program_external_link_clicked_v2')
 </script>

@@ -52,5 +52,5 @@ if (project.value) {
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
 })
-useExternalLinkTracker('project_external_link_clicked')
+useExternalLinkTracker('project_external_link_clicked_v2')
 </script>
