@@ -12,8 +12,8 @@ imageResizerChild()
 
 const { currentProject } = storeToRefs(useProjectStore())
 const title = currentProject.value?.title?.toLowerCase() || ''
-const router = useRouter()
-const href = router.resolve({ name: RouteName.CatalogProjectDetail, params: { projectSlug: currentProject.value?.slug } }).href
+const navigationStore = useNavigationStore()
+const href = navigationStore.resolveUrl({ name: RouteName.CatalogProjectDetail }, { projectSlug: currentProject.value?.slug || '' }).href
 </script>
 
 <template>
