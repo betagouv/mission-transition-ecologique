@@ -6,15 +6,15 @@ Docker has been setup to easily use the package.
 It's been integrated with NX to have a very simple experience.
 
 From the root project directory or the etl directory, you can 
-`npm run etl:build`
-`npm run update:database`
+`npm run build:etl`
+`npm run database:update`
 
 You can check the full list of commands from the libs/etl/project.json file
 
 # How to contribute
 
 The docker setup is usable in a development settings. 
-After running `npm run etl:build`, you can simply modify the python file and execute them inside the docker environement using `npm run update:database`
+After running `npm run build:etl`, you can simply modify the python file and execute them inside the docker environement using `npm run database:update`
 
 If you are proposing an unrequested contribution, please start by opening an issue in the following [github repository](https://github.com/betagouv/mission-transition-ecologique).
 If your contribution is answering an issue of the repository, feel free to directly open a pull request which will be reviewed by a member of the project.

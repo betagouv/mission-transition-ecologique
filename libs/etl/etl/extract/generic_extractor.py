@@ -8,7 +8,7 @@ class GenericExtractor:
     def __init__(self, cache_dir="cache"):
         self.cache_dir = cache_dir
         os.makedirs(self.cache_dir, exist_ok=True)
-        self.brevoExtractor = BrevoExtractor()
+        self.brevo_extractor = BrevoExtractor()
 
     def _get_cache_path(self, data_type):
         """Returns the cache file path for the given data type"""
@@ -41,11 +41,11 @@ class GenericExtractor:
 
     def get_contacts(self, force_refresh=False):
         return self._get_data(
-            "contacts", self.brevoExtractor.get_contacts, force_refresh
+            "contacts", self.brevo_extractor.get_contacts, force_refresh
         )
 
     def get_deals(self, force_refresh=False):
-        return self._get_data("deals", self.brevoExtractor.get_deals, force_refresh)
+        return self._get_data("deals", self.brevo_extractor.get_deals, force_refresh)
 
     def get_form_events(self, force_refresh=False):
         return self._get_data(

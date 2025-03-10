@@ -35,25 +35,17 @@ class PosthogExtractor:
         )
 
     def get_events(self, event_types, start_date=None, end_date=None):
-        hogql_query = f"""
-            SELECT *
-            FROM events
-            WHERE event IN ({", ".join([f"'{event}'" for event in event_types])})
-            LIMIT 10000
-        """
-
+        event_list = ", ".join([f"'{event}'" for event in event_types])
+        hogql_query = f"SELECT * FROM events WHERE event IN ({event_list})"
         if start_date and end_date:
-            hogql_query = f"""
-                SELECT *
-                FROM events
-                WHERE event IN ({", ".join([f"'{event}'" for event in event_types])})
-                AND timestamp > '{start_date}'
-                AND timestamp <= '{end_date}'
-                LIMIT 10000
-            """
+            hogql_query += (
+                f" AND timestamp > '{start_date}' AND timestamp <= '{end_date}'"
+            )
+        hogql_query += " LIMIT 10000"
         return self.execute_hogql_query(hogql_query)
 
     def get_unique_visitors_by_date_range(self, start_date, end_date):
+        print(start_date, end_date)
         hogql_query = f"""
             SELECT
                 toStartOfDay(timestamp) AS event_date,
@@ -81,9 +73,3 @@ class PosthogExtractor:
         except Exception as error:
             print("Error fetching events from PostHog:", error)
             return []
-
-    # def get_status_event(self):
-    #     event_types = [
-    #         f"brevo_status_set_to_{key}" for key in DealStage.__dict__.keys()
-    #     ]
-    #     return self.get_events(event_types)

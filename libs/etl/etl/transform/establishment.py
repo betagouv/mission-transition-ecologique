@@ -82,16 +82,6 @@ def siren_establishment_to_db_establishment(siren_data):
     return db_establishement
 
 
-def convert_to_db_company(establishment):
-    naf = get_naf_details(establishment["nafCode"])
-    return DBCompany(
-        naf_section=naf["section"],
-        naf_division=naf["division"],
-        naf_group=naf["groupe"],
-        naf_class=naf["classe"],
-    )
-
-
 def get_workforce_range(tranche):
     salary_ranges = {
         "00": [0, 0],
