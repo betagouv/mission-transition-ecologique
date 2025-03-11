@@ -210,6 +210,7 @@
     "url": "https://actinitiative.org/fr/act-in-france/",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 18 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Choisissez le prestataire qui va vous accompagner pour mener l'étude méthodologie ACT.",
@@ -221,7 +222,13 @@
         ]
       },
       {
-        "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir commencé !"
+        "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://actinitiative.org/fr/act-in-france-soutien-financier/",
+            "texte": "Soutien financier"
+          }
+        ]
       },
       {
         "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
@@ -1932,6 +1939,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/aides-reemploi-emballages-contenants?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 80% du coût de l'étude ou 60% de l'investissement",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -2163,6 +2171,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/amelioration-qualite-lair-territoires-ppa-depassements-recents?cible=79&region=35",
     "nature de l'aide": "étude",
     "montant du financement": "Variable selon projet",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
@@ -2385,6 +2394,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/assistance-a-maitrise-douvrage-mise-place-dune-chaufferie-biomasse",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -2758,6 +2768,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/audit-energetique-industrie",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -3896,6 +3907,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/booster-entreprises-reduire-facture-energetique-gagner-valeur-verte",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -10220,6 +10232,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/subvention-etudes-dalimentation-durable",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -10441,6 +10454,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-gestion-biodechets-acteurs-economiques?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -10635,6 +10649,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/realisation-detudes-creation-lextension-modernisation-centres-tri-dechets",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 50 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -10826,6 +10841,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-projets-chaufferie-biomasse?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -11022,6 +11038,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/diagnostic-energetique-etude-dopportunite-multi-enr-serres",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 50 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -11213,6 +11230,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-a-leconomie-fonctionnalite-cooperation?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -11421,6 +11439,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/actions-qualite-lair-territoires-contentieux",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% pour une étude et 55% pour un investissement",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
@@ -11636,6 +11655,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Opportunit%C3%A9%20et%20faisabilit%C3%A9%20d%C3%A9ploiement%20hydrog%C3%A8ne%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202023.pdf",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
@@ -11809,6 +11829,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-travaux-depollution-dune-friche-fonds-vert",
     "nature de l'aide": "étude",
     "montant du financement": "Variable selon projet",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
@@ -12005,6 +12026,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-lutte-contre-gaspillage-alimentaire",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -12214,6 +12236,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etude-daide-a-decision-projets-geothermie-surface-daerothermie",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -12445,6 +12468,7 @@
     "url": "https://agirpourlatransition.ademe.fr/collectivites/aides-financieres/2025/etude-daide-a-decision-projets-geothermie-profonde",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -12650,6 +12674,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-installation-hydroelectrique?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -12858,6 +12883,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/entreprises/aides-financieres/2025/etudes-prealables-a-construction-dune-installation-methanisation",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -13074,6 +13100,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-faisabilite-performance-energetique-decarbonation-dentreprises",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -13265,6 +13292,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-decoconception-produits-services",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 150 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -13497,6 +13525,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-faisabilite-lautoconsommation-electrique-photovoltaique",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 € HT",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -13908,6 +13937,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/projets-recherche-developpement?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Selon projet",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
@@ -14109,6 +14139,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-faisabilite-linstallation-recuperation-chaleur-fatale",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -14304,9 +14335,10 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/soutien-etudes-diagnostics-reemploi-reutilisation-reparation-hors-emballages?cible=79",
+    "url": "https://agir.ademe.fr/aides-financieres/2025/soutien-aux-etudes-et-diagnostics-pour-le-reemploi-reutilisation-et-la?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -14526,6 +14558,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/audit-rehabilitation-dinstallations-solaires-thermiques-collectives",
     "nature de l'aide": "étude",
     "montant du financement": "Selon la surface et l'ancienneté de l’installation solaire, dans un maximum de 30 000€ HT",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -14745,6 +14778,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-reseaux-chaleur-froid-alimentes-enr-enrr",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -14944,6 +14978,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etude-faisabilite-dinstallation-solaire-thermique",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -15185,6 +15220,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/test-reponse-thermique-terrain-geothermie",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -15889,6 +15925,7 @@
     "url": "https://www.demarches-simplifiees.fr/commencer/fonds-vert-3-territoires-industrie",
     "nature de l'aide": "financement",
     "montant du financement": "Variable selon le projet",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -16090,6 +16127,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/fonds-tourisme-durable-restaurateurs-hebergeurs-accelerez-transition",
     "nature de l'aide": "financement",
     "montant du financement": "de 5 000 € HT à 200 000 € HT",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -16865,7 +16903,7 @@
   {
     "titre": "Fresque de la Mobilité",
     "promesse": "Participez à une Fresque de la mobilité dédiée aux entreprises",
-    "description": "Vous réfléchissez à votre Plan de Mobilité employeur et avez besoin d'un outil pour embarquer votre équipe ou votre direction ? La fresque de la mobilité est l'atelier qu'il vous faut pour bien démarrer le projet.",
+    "description": "Vous voulez sensibiliser vos salarié.e.s sur la mobilité et avez besoin d'un outil pour embarquer votre équipe ou votre direction ? La fresque de la mobilité est l'atelier qu'il vous faut pour bien démarrer le projet.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "CCI",
     "nature de l'aide": "étude",
@@ -16879,7 +16917,7 @@
         "description": "Découvrir les leviers d’actions à votre disposition pour s’engager à tous les niveaux vers une mobilité décarbonée."
       },
       {
-        "description": "Engager l’entreprise dans un processus de décarbonation de la mobilité avant de lancer une plan de mobilité employeur."
+        "description": "Engager l’entreprise dans un processus de décarbonation de la mobilité."
       },
       {
         "description": "Fédérer les équipes à travers une animation collaborative et apprendre à travers un jeu éducatif, ludique et pédagogique."
@@ -16891,7 +16929,7 @@
         "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
-        "Vaucluse"
+        "Jura, Seine-et-Marne"
       ],
       "secteur d'activité": [
         "Tous secteurs d’activité"
@@ -17042,7 +17080,7 @@
       },
       "entreprise . est dans une zone géographique éligible": {
         "une de ces conditions": [
-          "région = Provence-Alpes-Côte d'Azur"
+          "région = null"
         ]
       }
     },
@@ -17652,6 +17690,9 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Être un artisan"
       ]
     },
     "publicodes": {
@@ -18342,6 +18383,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installations-production-chaleur-froid-a-partir-boucle-deau-temperee",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -18549,6 +18591,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/creation-extension-modernisation-dun-centre-tri-dechets-valorisation-matiere?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Selon le type de projet",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -18759,9 +18802,10 @@
     "fin de validité": "31/12/2024",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/realisation-dinstallations-production-chaleur-biomasse-bois?cible=79",
+    "url": "https://agir.ademe.fr/aides-financieres/2025/realisation-dinstallations-de-production-de-chaleur-biomassebois?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Selon projet",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -18970,9 +19014,10 @@
     "fin de validité": "15/01/2024",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230119/developpement-construction-renovation-hors-site-crhos?cible=79",
+    "url": "https://agir.ademe.fr/aides-financieres/aap/developpement-de-la-construction-et-de-la-renovation-hors-site-crhos?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Selon la taille de l'entreprise et la zone géographique",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller."
@@ -19156,6 +19201,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/contrat-chaleur-renouvelable",
     "nature de l'aide": "financement",
     "montant du financement": "Selon le type d'investissement",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -19364,6 +19410,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20220328/contrat-patrimonial-developpement-chaleur-renouvelable-occitanie?cible=79&region=41",
     "nature de l'aide": "financement",
     "montant du financement": "Selon les types d'investissement",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -19578,6 +19625,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installation-dequipements-lutte-contre-gaspillage",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu’à 60 % des coûts d'investissement, 65% pour la Corse et 75% pour les DOM",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -19796,6 +19844,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/investissements-decoconception-ameliorer-performance-environnementale?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Entre 15 % à 60 % selon le projet, dans un maximum de 300 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -20025,6 +20074,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installations-production-chaleur-froid-renouvelable-a-partir-geothermie",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -20232,6 +20282,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installations-production-chaleur-a-partir-geothermie-profonde",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -20435,9 +20486,10 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/gestion-biodechets-acteurs-economiques",
+    "url": "https://agir.ademe.fr/aides-financieres/2025/gestion-des-biodechets-des-acteurs-economiques",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 60 % selon la taille de l'entreprise et son territoire",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -20645,6 +20697,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/realisation-dinstallations-methanisation-injection-cogeneration-chaleur",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée selon le type d'installation",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -20856,6 +20909,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installation-pompes-a-chaleur-solaire-production-deau-chaude",
     "nature de l'aide": "financement",
     "montant du financement": "Aide forfaitaire de 38 à 25 €/MWh",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -21063,6 +21117,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/equipements-lapprovisionnement-chaufferies-bois-fonds-chaleur-plan-relance",
     "nature de l'aide": "financement",
     "montant du financement": "Entre 20 à 55% selon investissement",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -21245,12 +21300,13 @@
     "description": "Vous avez pour projet de créer des bornes de recharge pour véhicules électrique au sein de votre station service indépendante ?  L’ADEME peut accompagner financièrement la réalisation de votre installation.",
     "description longue": "Le dispositif concerne les entreprises distribuant du carburant à usage routier, disposant d’un numéro de SIRET, dont les exploitants sont propriétaires de leur fonds de commerce, qui porte le projet d’investissement dans une infrastructure de recharge et vendant moins de 2 500 m³ de carburant (tous les types de carburants confondus pour les véhicules légers) par an et par station-service.\n\nPar station-service, est éligible aux subventions de ce programme, une seule infrastructure de recharge composée au minimum de deux points de recharge avec connecteurs CCS haute puissance (24 kW minimum) en courant continu ainsi que, pour respecter la réglementation en vigueur, d’un connecteur de 22 kW en courant alternatif. Si toutefois un point de recharge de 22 kW en courant alternatif conforme à la réglementation est déjà en place, les coûts associés à ce point de charge ne seront pas éligibles. Au moins un des points de recharge doit être accessible aux personnes à mobilité réduite, sauf en cas d’impossibilités techniques qui devront être justifiées.",
     "début de validité": "01/12/2022",
-    "fin de validité": "31/12/2023",
+    "fin de validité": "31/12/2024",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2022/infrastructures-recharge-vehicules-electriques-stations-service",
+    "url": "https://agir.ademe.fr/aides-financieres/aap/infrastructures-de-recharge-pour-les-vehicules-electriques-dans-les-stations",
     "nature de l'aide": "financement",
     "montant du financement": "Selon la puissance de l’installation",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
@@ -21420,6 +21476,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/realisation-dinstallations-recuperation-chaleur-fatale",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -21610,6 +21667,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-investissements-reemploi-reutilisation-reparation-hors-emballages",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 75% des coûts, dans un maximum de 200 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -21826,6 +21884,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230413/renouvellement-forestier",
     "nature de l'aide": "financement",
     "montant du financement": "Entre 37,5% à 80% selon le projet",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -21995,9 +22054,10 @@
     "fin de validité": "31/12/2024",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/extension-creation-reseaux-chaleur-froid",
+    "url": "https://agir.ademe.fr/aides-financieres/2025/extension-et-creation-de-reseaux-de-chaleur-ou-de-froid",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -22188,6 +22248,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/installations-production-deau-chaude-solaire-thermique-outre-mer",
     "nature de l'aide": "financement",
     "montant du financement": "Aide forfaitaire en fonction du type d’installation",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
@@ -22385,6 +22446,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installation-production-deau-chaude-solaire-thermique",
     "nature de l'aide": "financement",
     "montant du financement": "Forfaitaire en fonction de la zone géographique et de la surface de l’installation",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -22591,6 +22653,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installations-systemes-solaires-combines",
     "nature de l'aide": "financement",
     "montant du financement": "Selon la chaleur produite",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -22789,12 +22852,13 @@
     "description": "Vous aimeriez que votre établissement devienne Accueil Vélo© pour développer le vélotourisme et gagner en visibilité ? L'ADEME vous aide à financer les équipements nécessaires pour être référencé auprès de la marque. Ainsi, mettez en place des emplacements de stationnement vélo, des bornes de recharges pour vélos à assistance électrique, des bornes de gonflage et de réparation, ainsi que des consignes à bagages sécurisées.",
     "description longue": "Accueil Vélo© est une marque nationale qui garantit un accueil,\ndes services et des équipements spécifiques adaptés aux besoins des touristes à vélo le long des itinéraires cyclables en France.\n\nLe volet 1 du programme \"Développer le vélotourisme\" de l'ADEME a pour objectif de faciliter l'obtention de la Marque 'Accueil Vélo©' pour les hébergements touristiques classés et restaurateurs.\n\nL'ADEME vous finance les équipements et services attendus au sein du référentiel de la marque Accueil Vélo :\n- des emplacements de stationnement vélo (à minima 5 pour être Accueil Vélo)\n- des bornes de recharge VAE\n- des bornes de gonflage\n- des bornes de réparation\n- des bornes multifonction\n- des consignes à bagages sécurisées\n\nLe projet devra présenter une demande d’aide totale minimum de 400€ pour être recevable.",
     "début de validité": "01/09/2024",
-    "fin de validité": "31/03/2025",
+    "fin de validité": "31/10/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20241115/developper-velotourisme",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu’à 55 % des coûts d'investissement",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Prenez contact avec le référent Accueil Vélo de votre territoire pour vous assurer de la correspondance entre votre projet d’investissement et les attendus de la marque Accueil Vélo©.",
@@ -24848,6 +24912,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20240115/fonds-economie-circulaire-ormat-2024-objectif-recyclage-matieres?cible=79&region=39",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 100 000 € HT pour une étude",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -25065,6 +25130,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/pacte-industrie-parcours-accompagnement-competences-transition-energetique#:~:text=Le%20programme%20PACTE%20Industrie%20vise,transition%20%C3%A9nerg%C3%A9tique%20et%20bas%20carbone.",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude selon la taille de l'entreprise",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -25471,7 +25537,7 @@
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Région Bretagne",
     "url": "https://www.bretagne.bzh/aides/fiches/pass-transitions/",
-    "nature de l'aide": "financement",
+    "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 50 % des dépenses éligibles, dans un maximum de 50 000 €",
     "objectifs": [
       {
@@ -26032,6 +26098,9 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Être un artisan"
       ]
     },
     "publicodes": {
@@ -26295,9 +26364,9 @@
   },
   {
     "titre": "Plan de mobilité",
-    "promesse": "Améliorer et optimiser les déplacements de vos employés",
+    "promesse": "Améliorer et optimiser l'accessibilité de votre entreprise",
     "description": "Vous souhaitez mettre en place un plan de mobilité pour votre entreprise ? Votre CCI vous propose une prestation d’accompagnement pour vous aider à répondre à vos obligations légales en réalisant votre démarche de plan de mobilité.",
-    "description longue": "Le plan de mobilité (PDM) est un ensemble de mesures visant à optimiser les déplacements liés aux activités professionnelles. Cela  concerne les trajets domicile/travail mais aussi les déplacements professionnels des collaborateurs, des clients et des partenaires.\nLe PDM est une obligation pour les entreprises de plus de 100 travailleurs sur un même site. \n\nExemples de mesures pouvant entrer dans un PDM :\n• La promotion du vélo ; \n• L’amélioration de l’accès des bâtiments par les piétons ; \n• L’encouragement à l’utilisation des transports publics ;\n• L’aménagement des horaires de travail ;\n• L’accompagnement et l’encouragement à habiter à proximité du lieu de travail ou sur le réseau de transport en commun ;\n• La mise en place d’un service d’autopartage ;\n• L’incitation au covoiturage ;\n•  La garantie de la prise en charge du retour au domicile en cas de circonstances exceptionnelles : chèque-taxi, utilisation de voitures de service ou de vélos à assistance électrique...\n\nCette démarche peut également être conduite à l'échelle d'un parc d'activité ou d'un bassin d'emploi pour mutualiser les actions entre plusieurs entreprises et ainsi renforcer l'impact des actions proposées",
+    "description longue": "Le plan de mobilité (PDM) est un ensemble de mesures visant à optimiser les déplacements liés aux activités professionnelles. Cela concerne les trajets domicile/travail mais aussi les déplacements professionnels des collaborateurs, des clients et des partenaires.\nLe PDM est une obligation pour les entreprises de plus de 100 travailleurs sur un même site. \n\nExemples de mesures pouvant entrer dans un PDM :\n• La promotion du vélo ; \n• L’amélioration de l’accès des bâtiments par les piétons ; \n• L’encouragement à l’utilisation des transports publics ;\n• L’aménagement des horaires de travail ;\n• L’accompagnement et l’encouragement à habiter à proximité du lieu de travail ou sur le réseau de transport en commun ;\n• La mise en place d’un service d’autopartage ;\n• L’incitation au covoiturage ;\n•  La garantie de la prise en charge du retour au domicile en cas de circonstances exceptionnelles : chèque-taxi, utilisation de voitures de service ou de vélos à assistance électrique...\n\nCette démarche peut également être conduite à l'échelle d'un parc d'activité ou d'un bassin d'emploi pour mutualiser les actions entre plusieurs entreprises et ainsi renforcer l'impact des actions proposées",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
@@ -30022,6 +30091,9 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Être un artisan"
       ]
     },
     "publicodes": {
@@ -30699,6 +30771,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230418/sobriete-resilience-territoires?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Selon projet",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Rejoignez la communauté de l’Appel à Communs : créez un compte, renseignez votre fiche entreprise, signez la charte, etc."
@@ -31881,6 +31954,9 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Être un artisan"
       ]
     },
     "publicodes": {
@@ -32031,6 +32107,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/tremplin-transition-ecologique-pme",
     "nature de l'aide": "financement",
     "montant du financement": "de 2 500 € HT à 200 000 € HT",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -33036,6 +33113,9 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Être un artisan"
       ]
     },
     "publicodes": {
