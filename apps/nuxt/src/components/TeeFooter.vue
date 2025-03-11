@@ -14,7 +14,8 @@
           </p>
           <a
             class="fr-footer__brand-link"
-            href="/"
+            href="https://www.ademe.fr/"
+            target="_blank"
             title="ADEME"
           >
             <img
