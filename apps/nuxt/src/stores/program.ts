@@ -3,7 +3,7 @@
 
 import ProgramFilter from '@/tools/program/programFilter'
 import { ref } from 'vue'
-import { ProgramAidType, ThemeId, Region, OperatorFilter, FilterItemKeys, ProgramType, ProgramTypeWithFilters } from '@/types'
+import { ProgramAidType, ThemeId, Region, OperatorFilter, FilterItemKeys, ProgramType, ProgramTypeForFront } from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
   const currentProgram = ref<ProgramType>()
@@ -20,8 +20,8 @@ export const useProgramStore = defineStore('program', () => {
     hasError.value = false
   }
 
-  function getProgramsByFilters(programs: ProgramTypeWithFilters[]) {
-    return programs.filter((program: ProgramTypeWithFilters) => {
+  function getProgramsByFilters(programs: ProgramTypeForFront[]) {
+    return programs.filter((program: ProgramTypeForFront) => {
       return (
         ProgramFilter.byAidType(program, filtersStore.filters[FilterItemKeys.typeAid] as ProgramAidType[]) &&
         ProgramFilter.byTheme(program, filtersStore.filters[FilterItemKeys.themeType] as ThemeId) &&

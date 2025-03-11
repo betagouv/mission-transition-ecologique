@@ -17,14 +17,14 @@ export enum ProgramEligibilityType {
   Unknown = 'unknown'
 }
 
-export const enum FilterKeys {
+export const enum FiltersKeys {
   Theme = 'theme'
 }
 
 export type ProgramFiltersType = {
-  [FilterKeys.Theme]?: ThemeId[]
+  [FiltersKeys.Theme]?: ThemeId[]
 }
 
-export type ProgramTypeWithFilters = ProgramTypeWithEligibility & {
+export type ProgramTypeForFront = Omit<ProgramTypeWithEligibility, 'publicodes'> & {
   filters: ProgramFiltersType
 }

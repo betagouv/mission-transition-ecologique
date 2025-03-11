@@ -5,7 +5,7 @@ import {
   OperatorFilter,
   ProgramAidType,
   ProgramEligibility,
-  ProgramTypeWithFilters,
+  ProgramTypeForFront,
   Region,
   ThemeId,
   type ValueOf
@@ -14,7 +14,7 @@ import { enrichedOperators } from '@tee/data/static'
 import { useFiltersStore } from '@/stores/filters'
 
 export default class ProgramFilter {
-  static byAidType(program: ProgramTypeWithFilters, programAidTypesSelected: ProgramAidType[]) {
+  static byAidType(program: ProgramTypeForFront, programAidTypesSelected: ProgramAidType[]) {
     if (!this.isValidFilterValues(programAidTypesSelected)) {
       return true
     }
@@ -22,16 +22,16 @@ export default class ProgramFilter {
     return programAidTypesSelected.includes(program["nature de l'aide"] as ProgramAidType)
   }
 
-  static byCompanyData(program: ProgramTypeWithFilters, companySelected: boolean) {
+  static byCompanyData(program: ProgramTypeForFront, companySelected: boolean) {
     if (companySelected) {
       useFiltersStore().resetFilter(FilterItemKeys.regionAid)
-      return ProgramEligibility.isEligible(program as unknown as ProgramTypeWithFilters)
+      return ProgramEligibility.isEligible(program as unknown as ProgramTypeForFront)
     }
 
     return true
   }
 
-  static byRegion(program: ProgramTypeWithFilters, regionsSelected: Region[]) {
+  static byRegion(program: ProgramTypeForFront, regionsSelected: Region[]) {
     if (!this.isValidFilterValues(regionsSelected)) {
       return true
     }
@@ -47,7 +47,7 @@ export default class ProgramFilter {
     return matchingRegions.length > 0
   }
 
-  static byOperator(program: ProgramTypeWithFilters, programOperatorsSelected: OperatorFilter[]) {
+  static byOperator(program: ProgramTypeForFront, programOperatorsSelected: OperatorFilter[]) {
     if (!this.isValidFilterValues(programOperatorsSelected)) {
       return true
     }
@@ -69,7 +69,7 @@ export default class ProgramFilter {
     return false
   }
 
-  static byTheme(program: ProgramTypeWithFilters, themeTypeSelected: ThemeId) {
+  static byTheme(program: ProgramTypeForFront, themeTypeSelected: ThemeId) {
     if (!this.isValidFilterValue(themeTypeSelected)) {
       return true
     }

@@ -15,7 +15,7 @@
 // console.log(`ProgramLongdescription > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed } from 'vue'
-import type { ProgramType } from '@tee/data'
+import type { ProgramType } from '@/types'
 
 interface Props {
   program: ProgramType

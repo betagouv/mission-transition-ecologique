@@ -34,7 +34,7 @@
 // console.log(`ProgramEligibility > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed } from 'vue'
-import { ProgramType } from '@tee/data'
+import { ProgramType } from '@/types'
 
 type EligibilityCategory = keyof ProgramType["conditions d'éligibilité"]
 
