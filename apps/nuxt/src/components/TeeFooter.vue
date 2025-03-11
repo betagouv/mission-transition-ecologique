@@ -14,9 +14,8 @@
           </p>
           <a
             class="fr-footer__brand-link"
-            href="https://www.ademe.fr/"
-            target="_blank"
-            title="ADEME"
+            href="/"
+            title="Retour à l’accueil du site - Transition écologique des entreprises - République Française"
           >
             <img
               class="fr-footer__logo"
