@@ -4232,16 +4232,16 @@ a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=
   color: #777 !important;
 }
 .fr-text-line-height--4v {
-  line-height: 1rem;
+  line-height: 1rem !important;
 }
 .fr-text-line-height--5v {
-  line-height: 1.25rem;
+  line-height: 1.25rem !important;
 }
 .fr-text-line-height--6v {
-  line-height: 1.5rem;
+  line-height: 1.5rem !important;
 }
 .fr-text-line-height--15v {
-  line-height: 3.75rem;
+  line-height: 3.75rem !important;
 }
 .fr-text--decoration-underline {
   text-decoration: underline;

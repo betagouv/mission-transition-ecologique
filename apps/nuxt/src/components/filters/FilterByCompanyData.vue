@@ -57,7 +57,7 @@
               />
             </div>
             <div class="fr-col-9 fr-text-left">
-              <span class="fr-text--xs">
+              <span class="fr-text--xs fr-text-line-height--4v">
                 {{ detail.label }}
               </span>
             </div>
@@ -111,10 +111,6 @@ watch(hasRegisteredData, (value) => {
 })
 </script>
 <style lang="scss" scoped>
-.fr-text--xs {
-  line-height: 1rem !important;
-}
-
 #company-data-filter-content {
   padding-left: 0 !important;
 
