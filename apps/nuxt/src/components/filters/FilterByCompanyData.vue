@@ -111,6 +111,10 @@ watch(hasRegisteredData, (value) => {
 })
 </script>
 <style lang="scss" scoped>
+.fr-text--xs {
+  line-height: 1rem !important;
+}
+
 #company-data-filter-content {
   padding-left: 0 !important;
 
