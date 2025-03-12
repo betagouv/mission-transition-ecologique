@@ -16,7 +16,6 @@ class PosthogExtractor:
         self.api_url = f"https://eu.posthog.com/api/projects/{self.project_id}/query/"
 
     def get_form_events(self):
-        print("in posthog manager form event")
         event_types = [
             "send_program_form",
             "send_project_form",
@@ -45,7 +44,6 @@ class PosthogExtractor:
         return self.execute_hogql_query(hogql_query)
 
     def get_unique_visitors_by_date_range(self, start_date, end_date):
-        print(start_date, end_date)
         hogql_query = f"""
             SELECT
                 toStartOfDay(timestamp) AS event_date,
