@@ -15,14 +15,14 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/etl",
-        "command": "docker run -it --rm -v $(pwd):/usr/src --name etl-job etl-img python -m etl.pipelines.database_update"
+        "command": "docker run -it --rm -v $(pwd):/usr/src -v $(pwd)/../data/static:/usr/src/etl/static --name etl-job etl-img python -m etl.pipelines.database_update"
       }
     },
     "update-database-ci": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/etl",
-        "command": "docker run -it --rm --name etl-job --env-file .env etl-img"
+        "command": "docker run -it --rm --name etl-job -v $(pwd)/../data/static:/usr/src/etl/static --env-file .env etl-img"
       },
       "dependsOn": [
         "build"
@@ -32,7 +32,7 @@
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/etl",
-        "command": "docker run -it --rm -v $(pwd):/usr/src --name etl-job etl-img python -m"
+        "command": "docker run -it --rm -v $(pwd):/usr/src -v $(pwd)/../data/static:/usr/src/etl/static --name etl-job etl-img python -m"
       }
     }
   }
