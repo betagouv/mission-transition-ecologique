@@ -55,12 +55,14 @@ onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
 })
 
-Analytics.sendEvent('detail_page_view', 'detail_page_view', {
-  type: 'project',
-  title: project.value?.title,
-  url: window.location.href,
-  company: CompanyData.toString()
-})
+if (import.meta.client) {
+  Analytics.sendEvent('detail_page_view', 'detail_page_view', {
+    type: 'project',
+    title: project.value?.title,
+    url: window.location.href,
+    company: CompanyData.toString()
+  })
+}
 
 useExternalLinkTracker('project_external_link_clicked_v2')
 </script>

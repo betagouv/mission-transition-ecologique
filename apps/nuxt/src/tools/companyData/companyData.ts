@@ -228,7 +228,7 @@ export class CompanyData {
   }
 
   static toString() {
-    return JSON.stringify(CompanyData.company)
+    return CompanyData.hasCompanyData() ? JSON.stringify(CompanyData.company) : null
   }
 
   private static _getQuestionnaireGoal() {
