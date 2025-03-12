@@ -50,7 +50,7 @@
             </div>
           </div>
           <div class="fr-hidden fr-unhidden-lg">
-            <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pl-1v fr-pr-3v">
+            <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pt-1v fr-pl-1v fr-pr-3v">
               <div
                 class="company-filter-icon-large"
                 :class="detail.icon"
