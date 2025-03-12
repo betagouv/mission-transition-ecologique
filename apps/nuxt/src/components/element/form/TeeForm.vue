@@ -93,20 +93,19 @@
 import Navigation from '@/tools/navigation'
 import { Scroll } from '@/tools/scroll'
 import { computed } from 'vue'
-import { type ReqResp, TrackId, FormDataType, InputFieldUnionType, ProjectType } from '@/types'
+import { type ReqResp, TrackId, FormDataType, InputFieldUnionType, ProjectType, ProgramTypeForFront } from '@/types'
 import Translation from '@/tools/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import Format from '@/tools/format'
 import OpportunityApi from '@/tools/api/opportunityApi'
 import { OpportunityType } from '@tee/common'
 import Analytics from '@/tools/analytic/analytics'
-import { ProgramType } from '@tee/data'
 
 const navigation = new Navigation()
 interface Props {
   dataId?: string
   showTitle?: boolean
-  dataSlug?: ProgramType['id'] | ProjectType['slug']
+  dataSlug?: ProgramTypeForFront['id'] | ProjectType['slug']
   formType: OpportunityType
   form: FormDataType
   hint: string

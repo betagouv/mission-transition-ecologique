@@ -15,10 +15,10 @@
 // console.log(`ProgramLongdescription > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { computed } from 'vue'
-import type { ProgramType } from '@/types'
+import type { ProgramTypeForFront } from '@/types'
 
 interface Props {
-  program: ProgramType
+  program: ProgramTypeForFront
 }
 const props = defineProps<Props>()
 

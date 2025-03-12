@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
-import { ProgramAidType, ProgramType, ProjectType, RouteName } from '@/types'
+import { ProgramAidType, ProgramTypeForFront, ProjectType, RouteName } from '@/types'
 import { consolidateAmounts } from '@/tools/helpers'
 import Translation from '@/tools/translation'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
@@ -42,7 +42,7 @@ import type { RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 
 interface Props {
-  program: ProgramType
+  program: ProgramTypeForFront
   project?: ProjectType
 }
 const { program, project } = defineProps<Props>()
