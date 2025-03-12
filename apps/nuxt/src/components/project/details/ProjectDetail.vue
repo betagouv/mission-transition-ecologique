@@ -58,8 +58,8 @@ onBeforeRouteLeave(() => {
 Analytics.sendEvent('detail_page_view', 'detail_page_view', {
   type: 'project',
   title: project.value?.title,
-  referrer: window.location.href,
-  company: JSON.stringify(CompanyData.company)
+  url: window.location.href,
+  company: CompanyData.toString()
 })
 
 useExternalLinkTracker('project_external_link_clicked_v2')
