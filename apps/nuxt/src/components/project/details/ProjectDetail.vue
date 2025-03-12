@@ -14,7 +14,7 @@
       <TeeCopyLinkButton class="fr-mt-6v" />
       <ProjectSideNav :project="project" />
     </template>
-    <ProjectDescription :project="project" />
+    <ProjectDescription :project="project" id="externalLinksTracking" />
     <ProjectPrograms
       v-if="project"
       :project="project"
@@ -32,21 +32,23 @@ import { MetaSeo } from '@/tools/metaSeo'
 import { Theme } from '@/tools/theme'
 import { useProjectStore } from '@/stores/project'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
+import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 
 const { currentProject: project } = storeToRefs(useProjectStore())
 const themeColor = ref<Color | ''>()
 
+useExternalLinkTracker('project_external_link_clicked')
 useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, project.value?.image))
+
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
+})
 
 if (project.value) {
   const selectedThemeId = Theme.getThemeFromSelectedOrPriorityTheme()
   const themeId = project.value?.themes.find((theme) => theme === selectedThemeId.value) || project.value?.mainTheme
   themeColor.value = Theme.getColorById(themeId as ThemeId)
 }
-
-onBeforeRouteLeave(() => {
-  useSeoMeta(MetaSeo.default())
-})
 
 const links = computed<DsfrBreadcrumbProps['links']>(() => [{ text: project.value?.title || '' }])
 </script>

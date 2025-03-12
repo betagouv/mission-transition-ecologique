@@ -9,7 +9,7 @@
       </ClientOnly>
     </template>
     <ProgramBackLink />
-    <article v-if="currentProgram">
+    <article v-if="currentProgram" id="externalLinksTracking">
       <!-- PROGRAM DETAILS -->
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-8v">
         <!-- IMAGE -->
@@ -67,6 +67,7 @@ import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/tools/opportunity'
 import { CompanyData } from '@/tools/companyData'
 import { storeToRefs } from 'pinia'
+import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 
 const { currentProgram } = storeToRefs(useProgramStore())
 const { currentProject } = storeToRefs(useProjectStore())
@@ -76,6 +77,8 @@ const { isDataFull } = storeToRefs(useCompanyDataStore())
 const navigation = new Navigation()
 const hasRegisteredData = CompanyData.isDataFull()
 const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
+
+useExternalLinkTracker('program_external_link_clicked')
 
 onNuxtReady(async () => {
   if (currentProgram.value) {

@@ -99,8 +99,8 @@ const otherOperator = {
 }
 
 .operator-logo {
-  max-height: 2.5rem;
-  max-width: 3.8rem !important;
+  max-height: 5.5rem;
+  max-width: 5.8rem !important;
   width: revert-layer !important;
 }
 </style>
