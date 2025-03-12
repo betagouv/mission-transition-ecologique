@@ -50,14 +50,14 @@
             </div>
           </div>
           <div class="fr-hidden fr-unhidden-lg">
-            <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pt-1v fr-pl-1v fr-pr-3v">
+            <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pl-1v fr-pr-3v">
               <div
                 class="company-filter-icon-large"
                 :class="detail.icon"
               />
             </div>
-            <div class="fr-col-9 fr-text-left">
-              <p class="fr-text--xs fr-text-line-height--4v">
+            <div class="fr-col-9 fr-col-content--top fr-text-left">
+              <p class="fr-text--xs fr-text-line-height--3v">
                 {{ detail.label }}
               </p>
             </div>
