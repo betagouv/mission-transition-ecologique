@@ -22,6 +22,7 @@
   <!-- PROGRAM INFOS -->
   <div
     v-if="program"
+    id="externalLinksTracking"
     class="fr-container fr-mt-0 fr-mt-md-3v"
   >
     <div class="fr-grid-row fr-grid-row-gutters">
@@ -261,6 +262,7 @@ import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/tools/opportunity'
 import { CompanyData } from '@/tools/companyData'
 import { storeToRefs } from 'pinia'
+import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 
 const programsStore = useProgramStore()
 const { projects } = storeToRefs(useProjectStore())
@@ -347,4 +349,6 @@ const scrollToProgramForm = () => {
       : Scroll.toWithTopBarOffset(teeProgramFormContainer.value)
   }
 }
+
+useExternalLinkTracker('program_external_link_clicked')
 </script>
