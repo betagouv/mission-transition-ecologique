@@ -2,7 +2,7 @@ name: Database Update
 
 on:
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '12 1 * * *'
   workflow_dispatch:
 
 env:
@@ -23,6 +23,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+      - run: npm clean-install --foreground-scripts
       - run: echo "ENV_FILE_PATH=libs/etl/.env" >> $GITHUB_ENV
       - name: Create .env file
         run: |
