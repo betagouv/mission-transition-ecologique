@@ -1,9 +1,9 @@
 titre: Fresque de la Mobilité
 promesse: Participez à une Fresque de la mobilité dédiée aux entreprises
 description: >-
-  Vous réfléchissez à votre Plan de Mobilité employeur et avez besoin d'un outil
-  pour embarquer votre équipe ou votre direction ? La fresque de la mobilité est
-  l'atelier qu'il vous faut pour bien démarrer le projet.
+  Vous voulez sensibiliser vos salarié.e.s sur la mobilité et avez besoin d'un
+  outil pour embarquer votre équipe ou votre direction ? La fresque de la
+  mobilité est l'atelier qu'il vous faut pour bien démarrer le projet.
 illustration: images/TEE_ampoule.png
 opérateur de contact: CCI
 nature de l'aide: étude
@@ -14,9 +14,7 @@ objectifs:
   - description: >-
       Découvrir les leviers d’actions à votre disposition pour s’engager à tous
       les niveaux vers une mobilité décarbonée.
-  - description: >-
-      Engager l’entreprise dans un processus de décarbonation de la mobilité
-      avant de lancer une plan de mobilité employeur.
+  - description: Engager l’entreprise dans un processus de décarbonation de la mobilité.
   - description: >-
       Fédérer les équipes à travers une animation collaborative et apprendre à
       travers un jeu éducatif, ludique et pédagogique.
@@ -25,7 +23,7 @@ conditions d'éligibilité:
     - Moins de 500 salariés
     - Éligible aux micro-entreprises
   secteur géographique:
-    - Vaucluse
+    - Jura, Seine-et-Marne
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -71,4 +69,5 @@ publicodes:
       - questionnaire . objectif prioritaire . est la mobilité durable
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-      - région = Provence-Alpes-Côte d'Azur
+      - région = Bourgogne-Franche-Comté
+      - région = Île-de-France
