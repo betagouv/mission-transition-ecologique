@@ -57,9 +57,9 @@
               />
             </div>
             <div class="fr-col-9 fr-text-left">
-              <span class="fr-text--xs fr-text-line-height--4v">
+              <p class="fr-text--xs fr-text-line-height--4v">
                 {{ detail.label }}
-              </span>
+              </p>
             </div>
           </div>
         </div>
