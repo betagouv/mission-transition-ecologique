@@ -9,7 +9,7 @@ class DBManager:
         load_dotenv()
         self.pool = psycopg2.pool.SimpleConnectionPool(
             1,  # Min connections in the pool
-            20,  # Max connections in the pool
+            5,  # Max connections in the pool
             user=os.getenv("DB_USER"),
             host=os.getenv("DB_HOST"),
             database=os.getenv("DB_NAME"),

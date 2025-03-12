@@ -24,6 +24,12 @@ If your contribution is answering an issue of the repository, feel free to direc
 
 - in the .env file, set the variable `TEST=True`
 
+### To execute a custom file 
+npm run docker-python -- mydir.myfile
+
+from exemple : 
+npm run docker-python -- db.init_db
+
 ## Notes
 
 In postgreSQL, when UserA creates a schema, only UserA and Superusers have access to the schema. If we recreate the production database from scratch, don't forget to grant the correct rights to every user that needs it (or better, define a 'production' role and attribute the role to the corresponding users)

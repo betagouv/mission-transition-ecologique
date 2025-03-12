@@ -1,7 +1,7 @@
 import psycopg2
 from etl.tools.db_manager import DBManager
 from dotenv import load_dotenv
-
+import os
 
 def init_db():
     """Executes schema.sql to initialize the database."""
@@ -15,7 +15,7 @@ def init_db():
 
     load_dotenv()
     if os.getenv("TEST") == "True":
-        DBManager().query("GRANT USAGE ON SCHEMA statistics_test TO PUBLIC;")
+        DBManager().query("GRANT ALL PRIVILEGES ON SCHEMA statistics_test TO PUBLIC;")
         DBManager().query(
             "GRANT INSERT, DELETE, UPDATE, TRUNCATE, REFERENCES, TRIGGER, SELECT ON ALL TABLES IN SCHEMA statistics_test TO PUBLIC;"
         )

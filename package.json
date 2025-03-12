@@ -37,6 +37,7 @@
     "sass:watch": "nx run @tee/nuxt:sass-watch",
     "e2e": "VITE_DATA_TEST=true nx run @tee/nuxt-e2e:e2e",
     "e2e-ui": "VITE_DATA_TEST=true nx run @tee/nuxt-e2e:e2e --ui",
+    "docker:python": "nx run @tee/etl:docker-python",
     "cleanup": "nx run @tee/nuxt:cleanup"
   },
   "engines": {

@@ -27,7 +27,13 @@
       "dependsOn": [
         "build"
       ]
+    },
+    "docker-python": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/etl",
+        "command": "docker run -it --rm -v $(pwd):/usr/src --name etl-job etl-img python -m"
+      }
     }
-
   }
 }
