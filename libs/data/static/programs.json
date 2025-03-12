@@ -17080,7 +17080,8 @@
       },
       "entreprise . est dans une zone géographique éligible": {
         "une de ces conditions": [
-          "région = null"
+          "région = Bourgogne-Franche-Comté",
+          "région = Île-de-France"
         ]
       }
     },
@@ -18826,7 +18827,7 @@
         ]
       },
       {
-        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "description": "Déposez votre dossier avant le 15 mai 2025 à 15h00 : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/realisation-dinstallations-production-chaleur-biomasse-bois?cible=79",

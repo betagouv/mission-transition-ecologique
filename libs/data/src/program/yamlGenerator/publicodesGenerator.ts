@@ -80,7 +80,13 @@ export class PublicodesGenerator {
 
   private _departToRegionMap: { [key: string]: string } = {
     Vaucluse: "Provence-Alpes-Côte d'Azur",
-    'Bouches-du-Rhône': "Provence-Alpes-Côte d'Azur"
+    'Bouches-du-Rhône': "Provence-Alpes-Côte d'Azur",
+    'Alpes-Maritimes': "Provence-Alpes-Côte d'Azur",
+    'Eure-et-Loir': 'Centre-Val de Loire',
+    Loiret: 'Centre-Val de Loire',
+    Landes: 'Nouvelle-Aquitaine',
+    'Seine-et-Marne': 'Île-de-France',
+    Jura: 'Bourgogne-Franche-Comté'
   }
 
   private _generateGeographicConditions() {
