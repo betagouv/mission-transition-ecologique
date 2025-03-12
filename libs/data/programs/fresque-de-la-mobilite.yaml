@@ -69,4 +69,5 @@ publicodes:
       - questionnaire . objectif prioritaire . est la mobilité durable
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-      - région = null
+      - région = Bourgogne-Franche-Comté
+      - région = Île-de-France
