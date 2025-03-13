@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { MiddlewareName } from '@/middleware/type/middlewareName'
+// import Analytics from '@/tools/analytic/analytics'
 import { RouteName } from '@/types'
 
 definePageMeta({
@@ -14,6 +15,22 @@ const { currentProject } = storeToRefs(useProjectStore())
 const title = currentProject.value?.title?.toLowerCase() || ''
 const router = useRouter()
 const href = router.resolve({ name: RouteName.CatalogProjectDetail, params: { projectSlug: currentProject.value?.slug } }).href
+
+if (import.meta.client) {
+  console.log(window.location.href)
+}
+// console.log({
+//   type: 'project',
+//   title: title,
+//   host_url: window.location.href
+// })
+// if (import.meta.client) {
+//   Analytics.sendEvent('iframe_view', 'iframe_view', {
+//     type: 'project',
+//     title: title,
+//     host_url: window.location.href
+//   })
+// }
 </script>
 
 <template>
