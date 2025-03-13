@@ -16,7 +16,7 @@ import { ThemeType, TrackId, ThemeId, FilterItemKeys, FiltersType } from '@/type
 import { Theme } from '@/tools/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
-import { computed } from 'vue'
+import Navigation from '@/tools/navigation'
 
 interface Props {
   theme?: ThemeId
@@ -25,8 +25,11 @@ const props = defineProps<Props>()
 
 const filtersStore = useFiltersStore()
 const usedTrackStore = useUsedTrackStore()
-
+const route = useRoute()
 const filters: FiltersType = filtersStore.filters
+if (route.query.theme) {
+  filters[FilterItemKeys.themeType] = route.query.theme as ThemeId
+}
 let hasAllTag = true
 
 if (props.theme) {
@@ -74,6 +77,15 @@ const updateThemeTypeSelected = async (value: string | number) => {
   filtersStore.setThemeTypeSelected(value as string)
   if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {
     await usedTrackStore.updateByTrackIdAndValue(TrackId.Goals, value as string)
+    useNavigationStore().replaceBrowserHistory()
+  }
+
+  const navigation = Navigation.getInstance()
+  if (navigation.isCatalog()) {
+    useNavigationStore().updateSearchParam({
+      name: 'theme' as TrackId,
+      value: value as string
+    })
     useNavigationStore().replaceBrowserHistory()
   }
 }
