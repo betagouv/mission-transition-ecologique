@@ -37,12 +37,10 @@ import { useProjectStore } from '@/stores/project'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 import Analytics from '@/tools/analytic/analytics'
-import { CompanyData } from '@/tools/companyData'
 
 const { currentProject: project } = storeToRefs(useProjectStore())
 const themeColor = ref<Color | ''>()
 
-useExternalLinkTracker('project_external_link_clicked')
 useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, project.value?.image))
 
 onBeforeRouteLeave(() => {
@@ -57,12 +55,6 @@ if (project.value) {
 
 const links = computed<DsfrBreadcrumbProps['links']>(() => [{ text: project.value?.title || '' }])
 
-if (import.meta.client) {
-  Analytics.sendEvent('detail_page_view', 'detail_page_view', {
-    type: 'project',
-    title: project.value?.title,
-    url: window.location.href,
-    company: CompanyData.toString()
-  })
-}
+Analytics.sendDetailPageView('project', project.value?.title)
+useExternalLinkTracker('project')
 </script>
