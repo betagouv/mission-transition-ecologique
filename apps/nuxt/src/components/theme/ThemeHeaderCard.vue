@@ -6,6 +6,7 @@
     :description="Theme.getTitleById(theme as ThemeId)"
     :img-src="Theme.getImageById(theme as ThemeId)"
     :class="classes"
+    class="fr-container-md fr-mb-4v"
     size="sm"
     no-arrow
   />
