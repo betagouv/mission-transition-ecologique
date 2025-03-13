@@ -54,6 +54,7 @@ import TrackContent from '@/components/questionnaire/track/TrackContent.vue'
 import TrackSidebar from '@/components/questionnaire/track/TrackSidebar.vue'
 import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
+import { MetaSeo } from '@/tools/metaSeo'
 import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { computed, onBeforeMount, ref } from 'vue'
@@ -74,5 +75,15 @@ const needSidebar = computed(() => {
 
 onBeforeMount(() => {
   usedTrackStore.add(props.trackId, props.trackId)
+})
+
+useSeoMeta(
+  MetaSeo.get(
+    'Aides et financements personnalisés',
+    'Service public pour les entreprises : Accédez simplement aux aides, accompagnements et financements disponible pour les entreprises de votre secteur'
+  )
+)
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 </script>
