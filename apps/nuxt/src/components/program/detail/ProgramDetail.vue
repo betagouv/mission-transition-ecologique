@@ -9,7 +9,10 @@
       </ClientOnly>
     </template>
     <ProgramBackLink />
-    <article v-if="currentProgram" id="externalLinksTracking">
+    <article
+      v-if="currentProgram"
+      id="externalLinksTracking"
+    >
       <!-- PROGRAM DETAILS -->
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-8v">
         <!-- IMAGE -->
@@ -68,6 +71,7 @@ import Opportunity from '@/tools/opportunity'
 import { CompanyData } from '@/tools/companyData'
 import { storeToRefs } from 'pinia'
 import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
+import Analytics from '@/tools/analytic/analytics'
 
 const { currentProgram } = storeToRefs(useProgramStore())
 const { currentProject } = storeToRefs(useProjectStore())
@@ -78,7 +82,7 @@ const navigation = new Navigation()
 const hasRegisteredData = CompanyData.isDataFull()
 const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
 
-useExternalLinkTracker('program_external_link_clicked')
+useExternalLinkTracker('program_external_link_clicked_v2')
 
 onNuxtReady(async () => {
   if (currentProgram.value) {
@@ -131,4 +135,13 @@ const isProgramAutonomous = computed(() => {
 const programIsEligible = computed(() => {
   return currentProgram.value ? ProgramEligibility.isEligible(currentProgram.value as unknown as ProgramType) : false
 })
+
+if (import.meta.client) {
+  Analytics.sendEvent('detail_page_view', 'detail_page_view', {
+    type: 'progam',
+    title: program.value?.titre,
+    url: window.location.href,
+    company: CompanyData.toString()
+  })
+}
 </script>

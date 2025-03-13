@@ -14,7 +14,10 @@
       <TeeCopyLinkButton class="fr-mt-6v" />
       <ProjectSideNav :project="project" />
     </template>
-    <ProjectDescription :project="project" id="externalLinksTracking" />
+    <ProjectDescription
+      id="externalLinksTracking"
+      :project="project"
+    />
     <ProjectPrograms
       v-if="project"
       :project="project"
@@ -33,6 +36,8 @@ import { Theme } from '@/tools/theme'
 import { useProjectStore } from '@/stores/project'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
+import Analytics from '@/tools/analytic/analytics'
+import { CompanyData } from '@/tools/companyData'
 
 const { currentProject: project } = storeToRefs(useProjectStore())
 const themeColor = ref<Color | ''>()
@@ -51,4 +56,13 @@ if (project.value) {
 }
 
 const links = computed<DsfrBreadcrumbProps['links']>(() => [{ text: project.value?.title || '' }])
+
+if (import.meta.client) {
+  Analytics.sendEvent('detail_page_view', 'detail_page_view', {
+    type: 'project',
+    title: project.value?.title,
+    url: window.location.href,
+    company: CompanyData.toString()
+  })
+}
 </script>

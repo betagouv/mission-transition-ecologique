@@ -2252,7 +2252,7 @@
     "linkedProjects": [
       4
     ],
-    "priority": "190",
+    "priority": "191",
     "highlightPriority": null,
     "sectors": [
       "I",
@@ -2268,7 +2268,7 @@
     "shortDescription": "Élaborer des menus préparés avec des produits sains, locaux et à faible impact écologique.",
     "image": "/images/projet/menus-circuits-courts.webp",
     "longDescription": "Favoriser les circuits courts et proposer des produits locaux et de saison sont des choix stratégiques pour les restaurateurs, qui permettent de soutenir l’économie locale tout en réduisant l'empreinte carbone. En minimisant les distances de transport, vous garantissez des produits plus frais et de meilleure qualité, tout en participant à la préservation de l’environnement.\n\nIntégrer des plats végétariens à la carte est également un levier essentiel. La production de viande ayant un impact écologique plus important, offrir des options végétariennes permet de réduire la consommation de ressources naturelles et les émissions de gaz à effet de serre. Ces choix répondent à une demande croissante de consommateurs soucieux de leur bien-être et de l’environnement.",
-    "moreDescription": "- [**Restaurant Engagé : éco-responsabilité en restauration**](https://librairie.ademe.fr/7385-restaurant-engage-eco-responsabilite-en-restauration.html), un guide de l'ADEME.\n- [**Acteurs de la restauration : devenez un maillon engagé de l’alimentation durable**](https://agirpourlatransition.ademe.fr/entreprises/restauration-durable)",
+    "moreDescription": "- [**Restaurant Engagé : éco-responsabilité en restauration**](https://librairie.ademe.fr/7385-restaurant-engage-eco-responsabilite-en-restauration.html), un guide de l'ADEME.\n- [**Acteurs de la restauration : devenez un maillon engagé de l’alimentation durable**](https://agirpourlatransition.ademe.fr/entreprises/restauration-durable)\n- [**Restaurant : Quelles actions mettre en place pour un tourisme durable ?**](https://agirpourlatransition.ademe.fr/entreprises/restauration-durable)",
     "themes": [
       "eco-design"
     ],
@@ -2512,8 +2512,8 @@
     "title": "Abris à vélos",
     "nameTag": "🚲 abris vélos",
     "shortDescription": "Il permet de conserver les vélos de vos collaborateurs et de vos clients à l'abri des vols et des intempéries.",
-    "image": "/images/projet/abris-velos.webp",
-    "longDescription": "La construction ou l’installation d'un abri à vélos muni d'emplacements sécurisés encourage les déplacements à vélo mobilités vertes de vos collaborateurs, et favorise l'accueil des cyclo-touristes.\n\nL’abri doit être sécurisé et comporter des dispositifs fixes permettant de stabiliser et d'attacher les vélos par le cadre et au moins une roue. (Art. R. 113-12 du CCH)\n\nS'il est équipé de panneaux photovoltaïques, l'abri à vélo peut vous permettre de produire l'électricité nécessaire à la recharge des vélos à assistance électrique.\n\nUn abris à vélos peut être équipé :\n\n- de bornes de recharge pour vélo à assistance électrique (VAE)\n\n- de bornes de gonflage\n\n- de bornes de réparation\n\n- de bornes multifonction\n\n- de consignes à bagages sécurisées",
+    "image": "/images/projet/parking-a-velos.webp",
+    "longDescription": "La construction ou l’installation d'un abri à vélos sécurisés encourage les déplacements à vélo de vos collaborateurs, et favorise l'accueil des cyclo-touristes.\n\nL’abri doit être sécurisé et comporter des dispositifs fixes permettant de stabiliser et d'attacher les vélos par le cadre et au moins une roue. (Art. R. 113-12 du CCH)\n\nS'il est équipé de panneaux photovoltaïques, l'abri à vélo peut vous permettre de produire l'électricité nécessaire à la recharge des vélos à assistance électrique.\n\nUn abris à vélos peut être équipé :\n\n- de bornes de recharge pour vélo à assistance électrique (VAE)\n\n- de bornes de gonflage\n\n- de bornes de réparation\n\n- de bornes multifonction\n\n- de consignes à bagages sécurisées",
     "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé.",
     "themes": [
       "mobility"
@@ -2712,7 +2712,7 @@
     "linkedProjects": [
       16
     ],
-    "priority": "790",
+    "priority": "345",
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2772,8 +2772,8 @@
     "nameTag": "🍶 Tourisme 0 déchet",
     "shortDescription": "Limiter la production de déchets et le gaspillage en adoptant des alternatives durables.",
     "image": "/images/projet/tourisme-zero-dechet.webp",
-    "longDescription": "Les entreprises du tourisme ont un rôle important à jouer en réduisant significativement leurs déchets. \\\nDans un restaurant, l’utilisation de contenants consignés et des boîtes apportées par le client pour la vente à emporter, la réduction des emballages inutiles, le libre-service et la réduction des portions de nourriture, l’achat en vrac et en grand conditionnement auprès de vos fournisseurs permettent d'adopter une démarche zéro déchet.\n\nDans un hébergement, la mise en place des distributeurs de savon et de shampoing rechargeables, le remplacement des mini-produits par des alternatives durables, la suppression des emballages individuels au petit-déjeuner et la réutilisation du linge (serviettes changées sur demande) sont autant de solutions efficaces. Privilégier les fournisseurs locaux et les produits écoresponsables permet aussi de réduire l’empreinte écologique.\n\nChaque action, même minime, contribue à un tourisme plus respectueux de l’environnement.",
-    "moreDescription": "- [**Actions antigaspi dans la restauration collective et l'hôtellerie**](https://librairie.ademe.fr/consommer-autrement/6318-actions-antigaspi-dans-la-restauration-collective-et-l-hotellerie.html), un guide de l'ADEME\n- [**L’hébergement touristique à l’heure du Zero Waste**](https://www.zerowastefrance.org/wp-content/uploads/2018/03/lhebergement-touristique-a-lheure-du-zero-waste_dossier-du-mois-mars-2016.pdf), par l'association Zero Waste France",
+    "longDescription": "Les entreprises du tourisme ont un rôle important à jouer en réduisant significativement leurs déchets. \\\nDans un restaurant, l’utilisation de contenants consignés et des boîtes apportées par le client pour la vente à emporter, la réduction des emballages inutiles, le libre-service et la réduction des portions de nourriture, l’achat en vrac et en grand conditionnement auprès de vos fournisseurs permettent d'adopter une démarche zéro déchet et de réduire le gaspillage alimentaire.\n\nDans un hébergement, la mise en place des distributeurs de savon et de shampoing rechargeables, le remplacement des mini-produits par des alternatives durables, la suppression des emballages individuels au petit-déjeuner et la réutilisation du linge (serviettes changées sur demande) sont autant de solutions efficaces. Privilégier les fournisseurs locaux et les produits écoresponsables permet aussi de réduire l’empreinte écologique.\n\nChaque action, même minime, contribue à un tourisme plus respectueux de l’environnement.",
+    "moreDescription": "- [**Actions antigaspi dans la restauration collective et l'hôtellerie**](https://librairie.ademe.fr/consommer-autrement/6318-actions-antigaspi-dans-la-restauration-collective-et-l-hotellerie.html), un guide de l'ADEME\n- [**L’hébergement touristique à l’heure du Zero Waste**](https://www.zerowastefrance.org/wp-content/uploads/2018/03/lhebergement-touristique-a-lheure-du-zero-waste_dossier-du-mois-mars-2016.pdf), par l'association Zero Waste France\n- [**Le guide zéro déchets campings**](https://xrm.eudonet.com/xrm/at?tok=A9F448AD&cs=SEZCpsM48jgTHWP5emNUROM2jfb2JLfQxJv8Zn4Q8GzupqCQtgwsMmvqQb1xsaogdpobAHnvBwM%3d&p=26qteH2RHB75Srxr9exCyZtuQapRPQymr7apV-BBwo72rTj7VYzAyvA-PCFClMtjSR1An0IGAxQ%3d)**,** par la Fédération nationale de l'hôtellerie de plein air",
     "themes": [
       "waste"
     ],
@@ -2912,7 +2912,7 @@
     "linkedProjects": [
       16
     ],
-    "priority": "1000",
+    "priority": "880",
     "highlightPriority": null,
     "sectors": [
       "A",
