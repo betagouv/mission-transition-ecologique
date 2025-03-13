@@ -1,4 +1,3 @@
-import { QuestionnaireRoute } from '@tee/common'
 import { Operators } from '@tee/data'
 import { Maybe, Result } from 'true-myth'
 import Monitor from '../../../../common/domain/monitoring/monitor'
@@ -13,14 +12,7 @@ import {
   OpportunityWithOperatorContactAndContactId
 } from '../../../domain/types'
 import BrevoAPI from './brevoAPI'
-import {
-  BrevoDealItem,
-  BrevoDealResponse,
-  BrevoPostDealPayload,
-  BrevoQuestionnaireRoute,
-  DealAttributes,
-  DealUpdateAttributes
-} from './types'
+import { BrevoDealItem, BrevoDealResponse, BrevoPostDealPayload, DealAttributes, DealUpdateAttributes } from './types'
 
 // "Opportunities" are called "Deals" in Brevo
 
@@ -105,7 +97,6 @@ const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorConta
   return {
     // Brevo does not handle newlines in attributes
     message: replaceNewlinesWithSpaces(domainAttributes.message),
-    parcours: convertQuestionnaireRoute(domainAttributes.questionnaireRoute),
     ...(domainAttributes.priorityObjectives && { objectifs_renseigns: domainAttributes.priorityObjectives.join(', ') }),
     ...(domainAttributes.programContactOperator && { oprateur_de_contact: domainAttributes.programContactOperator }),
     ...(domainAttributes.otherData && { autres_donnes: domainAttributes.otherData }),
@@ -116,17 +107,6 @@ const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorConta
 const convertDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdateAttributes): DealUpdateAttributes => {
   return {
     envoy: domainUpdateAttributes.sentToOpportunityHub
-  }
-}
-
-const convertQuestionnaireRoute = (questionnaireRoute: QuestionnaireRoute | undefined): BrevoQuestionnaireRoute => {
-  switch (questionnaireRoute) {
-    case undefined:
-      return BrevoQuestionnaireRoute.DIRECTORY
-    case QuestionnaireRoute.SpecificGoal:
-      return BrevoQuestionnaireRoute.SPECIFIC_GOAL
-    case QuestionnaireRoute.NoSpecificGoal:
-      return BrevoQuestionnaireRoute.NO_SPECIFIC_GOAL
   }
 }
 

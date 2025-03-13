@@ -440,7 +440,6 @@ def export_merge(merged_data, to_json, to_csv):
             "nom du dispositif",
             "lien du dispositif",
             "opérateur_de_contact",
-            "parcours",
         ]
 
         for objectif in OBJECTIFS:
