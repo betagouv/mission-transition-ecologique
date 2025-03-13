@@ -501,7 +501,7 @@
     ]
   },
   {
-    "operator": "CPME",
+    "operator": "Confédération des petites et moyennes entreprises",
     "filterCategories": [
       "OP"
     ]
@@ -515,5 +515,87 @@
   {
     "operator": "CRESS",
     "filterCategories": []
+  },
+  {
+    "operator": "Mouvement des entreprises de France",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Fédération National des Habitats de Plein Air",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Association pour l'Emploi des Cadres",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Visible en prod dans les fiches dispositifs",
+    "filterCategories": []
+  },
+  {
+    "operator": "Réseau Entreprendre",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Avere-France",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Commissariat Général au Développement Durable",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "Secrétariat Général à la Planification Ecologique",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "Visible en prod dans les fiches dispositifs",
+    "filterCategories": []
+  },
+  {
+    "operator": "Visible en prod dans les fiches dispositifs",
+    "filterCategories": []
+  },
+  {
+    "operator": "Fondation Solar Impulse",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Service Éconmique de l'État en Région",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "Visible en prod dans les fiches dispositifs",
+    "filterCategories": []
+  },
+  {
+    "operator": "Les Entreprises S'engagent",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Chambres Regionales de l'Economie Sociale et Solidaire",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
   }
 ]

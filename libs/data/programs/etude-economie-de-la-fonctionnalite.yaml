@@ -12,12 +12,12 @@ description: >-
   ainsi que votre modèle de revenus, dans le but d'élaborer une nouvelle offre
   de service.
 description longue: >-
-  L’économie de la fonctionnalité s’inscrit pleinement dans la démarche de
-  transition vers une économie verte. Elle consiste à remplacer la notion de
-  vente du bien par celle de la vente de l’usage du bien. Ainsi, l’échange
-  économique ne repose plus sur le transfert de propriété de biens, qui restent
-  la propriété du producteur tout au long de son cycle de vie, mais sur le
-  consentement des usagers à payer une valeur d’usage.
+  L’économie de la fonctionnalité est une démarche économique de transformation
+  progressive des entreprises, des collectivités et des citoyens. Elle s’appuie
+  sur la coopération entre les acteurs du territoire pour les accompagner vers
+  une transition écologique et sociale ambitieuse. Les offres développées
+  répondent aux besoins réels des usagers tout en limitant la production de
+  biens matériels.
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
@@ -26,6 +26,7 @@ url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-a-leconomie-fonctionnalite-cooperation?cible=79
 nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude
+activable en autonomie: oui
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
