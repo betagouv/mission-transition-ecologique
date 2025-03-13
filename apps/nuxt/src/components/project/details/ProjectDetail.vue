@@ -37,6 +37,8 @@ import { MetaSeo } from '@/tools/metaSeo'
 import { Theme } from '@/tools/theme'
 import { useProjectStore } from '@/stores/project'
 import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
+import Analytics from '@/tools/analytic/analytics'
+import { CompanyData } from '@/tools/companyData'
 
 const { currentProject: project } = storeToRefs(useProjectStore())
 const themeColor = ref<Color | ''>()
@@ -52,5 +54,15 @@ if (project.value) {
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
 })
-useExternalLinkTracker('project_external_link_clicked')
+
+if (import.meta.client) {
+  Analytics.sendEvent('detail_page_view', 'detail_page_view', {
+    type: 'project',
+    title: project.value?.title,
+    url: window.location.href,
+    company: CompanyData.toString()
+  })
+}
+
+useExternalLinkTracker('project_external_link_clicked_v2')
 </script>

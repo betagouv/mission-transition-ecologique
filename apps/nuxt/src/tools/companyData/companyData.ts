@@ -227,6 +227,10 @@ export class CompanyData {
     return this.hasSize() ? this._getQuestionnaireGoal() : TrackId.StructureWorkforce
   }
 
+  static toString() {
+    return CompanyData.hasCompanyData() ? JSON.stringify(CompanyData.company) : null
+  }
+
   private static _getQuestionnaireGoal() {
     if (useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected.length) {
       const questionnaireChoice = useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected[0].value
