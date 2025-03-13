@@ -4,7 +4,7 @@
   "sourceRoot": "libs/etl/etl",
   "projectType": "library",
   "targets": {
-    "build": {
+    "build-docker": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/etl",
@@ -25,7 +25,7 @@
         "command": "docker run --rm --name etl-job -v $(pwd)/../data/static:/usr/src/etl/static --env-file .env etl-img"
       },
       "dependsOn": [
-        "build"
+        "build-docker"
       ]
     },
     "docker-python": {
