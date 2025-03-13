@@ -4,11 +4,12 @@
       v-if="!hasSpinner"
       :has-error="hasError"
     />
-    <SimpleProjectList
-      v-if="!hasSpinner"
-      :project-list="projectList"
-      class="fr-container fr-px-md-0"
-    />
+    <div class="fr-container fr-px-md-0">
+      <SimpleProjectList
+        v-if="!hasSpinner"
+        :project-list="projectList"
+      />
+    </div>
     <div
       v-if="hasSpinner"
       class="fr-col-justify--center fr-col-12"
