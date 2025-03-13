@@ -1,4 +1,4 @@
-titre: Amélioration de la qualité de l’air dans les zones couvertes par un PPA
+titre: Amélioration de la qualité de l’air
 promesse: >-
   Bénéficiez d'un financement pour vos projets visant à améliorer la qualité de
   l'air
@@ -55,6 +55,7 @@ url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/amelioration-qualite-lair-territoires-ppa-depassements-recents?cible=79&region=35
 nature de l'aide: étude
 montant du financement: Variable selon projet
+activable en autonomie: oui
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
@@ -94,19 +95,16 @@ conditions d'éligibilité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:
     - >-
-      Zones éligibles : Île-de-France, Normandie, Grand Est, Occitanie,
-      Auvergne-Rhône-Alpes, Provence-Alpes-Côte d'Azur, Martinique
-    - >-
-      Etre dans une zone couverte par un Plan de Protection de l'Atmosphère
-      (PPA) ou dans un territoire présentant des dépassements de seuils
-      réglementaires en NO₂, particules ou O₃
-    - >-
       L'opération pour laquelle vous sollicitez une aide financière ne doit pas
       avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
       (sous quelque forme que ce soit : marché signé, commande signée, devis
       accepté…)
     - Vous ne devez pas avoir reçu d'aide sur un autre dispositif de l'ADEME
     - Les projets de R&D ne sont pas éligibles
+    - >-
+      Etre dans une zone couverte par un Plan de Protection de l'Atmosphère
+      (PPA) ou dans un territoire présentant des dépassements de seuils
+      réglementaires en NO₂, particules ou O₃
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
