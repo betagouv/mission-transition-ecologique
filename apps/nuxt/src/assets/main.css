@@ -2163,11 +2163,6 @@
 .fr-footer__content-list {
   justify-content: center;
 }
-.fr-footer__partners-main img {
-  height: 5.625rem;
-  width: 10rem;
-  box-shadow: none !important;
-}
 .fr-footer__partners-sub {
   justify-content: center;
 }
