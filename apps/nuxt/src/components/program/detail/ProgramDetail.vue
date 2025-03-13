@@ -134,6 +134,6 @@ const programIsEligible = computed(() => {
   return currentProgram.value ? ProgramEligibility.isEligible(currentProgram.value as unknown as ProgramType) : false
 })
 
-Analytics.sendDetailPageView('program', program.value?.titre)
+Analytics.sendDetailPageView('program', currentProgram.value?.titre)
 useExternalLinkTracker('program')
 </script>
