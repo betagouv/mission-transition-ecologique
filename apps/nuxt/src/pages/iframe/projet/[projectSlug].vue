@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import Analytics from '@/tools/analytic/analytics'
-// import Analytics from '@/tools/analytic/analytics'
 import { RouteName } from '@/types'
 
 definePageMeta({
