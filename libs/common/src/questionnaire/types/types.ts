@@ -38,11 +38,11 @@ export const SizeToWorkforce: { [key in StructureSize]: number } = {
 export const SizeToText: { [key in StructureSize]: { title: string; label: string } } = {
   [StructureSize.EI]: { title: 'Micro-entrepreneur', label: '‍️🧍Je suis un micro-entrepreneur' },
   [StructureSize.MICRO]: { title: 'Moins de 10 employés', label: '‍️👫 Moins de 10 employés' },
-  [StructureSize.TPE]: { title: 'Entre 10 et 19 employés', label: '‍️👫👫 Entre 10 et 20 employés' },
+  [StructureSize.TPE]: { title: 'Entre 10 et 19 employés', label: '‍️👫👫 Entre 10 et 19 employés' },
   [StructureSize.PE]: { title: 'Entre 20 et 49 employés', label: '‍️👫👫👫 Entre 20 et 49 employés' },
-  [StructureSize.ME]: { title: 'Entre 50 et 249 employés', label: '‍️👫👭👫👫 Entre 50 et 250 employés' },
-  [StructureSize.ETI]: { title: 'Entre 250 et 499 employés', label: '👫👭👫👫👫 Plus de 250 employés' },
-  [StructureSize.GE]: { title: 'Plus de 500 employés', label: '👫👭👫👫👫👫 Plus de 500 employés' }
+  [StructureSize.ME]: { title: 'Entre 50 et 249 employés', label: '‍️👫👭👫👫 Entre 50 et 249 employés' },
+  [StructureSize.ETI]: { title: 'Entre 250 et 499 employés', label: '👫👭👫👫👫 Entre 250 et 499 employés' },
+  [StructureSize.GE]: { title: '500 employés et plus', label: '👫👭👫👫👫👫 500 employés et plus' }
 }
 
 export enum LegalCategory {

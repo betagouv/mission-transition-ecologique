@@ -30,8 +30,10 @@ début de validité: 13/11/2023
 fin de validité: 30/06/2026
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
+url: https://actinitiative.org/fr/act-in-france/
 nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 18 000 €
+activable en autonomie: oui
 objectifs:
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener l'étude
@@ -43,6 +45,9 @@ objectifs:
       Déposez votre demande d'aide : informations administratives, description
       du projet, détails techniques et financiers, etc. A ce stade, votre projet
       ne doit pas avoir commencé !
+    liens:
+      - lien: https://actinitiative.org/fr/act-in-france-soutien-financier/
+        texte: Soutien financier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
       recevez un contrat de financement précisant le montant d’aide maximum, les

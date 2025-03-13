@@ -4,33 +4,36 @@
     class="fr-grid-row"
   >
     <div class="fr-col fr-col-md-8 fr-col-lg-8">
-      <div class="fr-grid-row fr-grid-row--gutters fr-p-5v fr-p-sm-8v fr-p-md-20v">
-        <div class="fr-col-12 fr-mb-4v fr-mx-0 fr-px-4v">
+      <div class="fr-grid-row fr-grid-row--gutters fr-p-5v fr-p-sm-8v fr-pl-md-20v">
+        <div class="fr-col-12 fr-mx-0 fr-px-4v">
           <div class="fr-grid-row fr-grid-row--gutters">
             <div class="fr-col">
-              <h3 class="fr-text--purple fr-text--bold fr-mb-6v">TPE, PME</h3>
+              <span class="fr-text--purple fr-h4 fr-text--bold fr-mb-6v">TPE, PME</span>
               <h1 class="fr-mb-3v">
                 Trouvez les solutions pour
                 <span class="fr-display-sm--block">la transition écologique </span>
                 <span class="fr-display-sm--block">de votre entreprise</span>
               </h1>
-              <p class="fr-text--lead fr-col-12 fr-col-lg-9 fr-pr-2v">
-                Identifiez facilement les aides publiques adaptées à votre entreprise pour concrétiser vos projets de transition écologique.
+              <p class="fr-text--lg fr-mb-0 fr-col-12 fr-col-lg-9 fr-pr-2v">
+                Identifiez facilement les aides publiques adaptées
+                <span class="fr-display-lg--block">à votre entreprise pour concrétiser vos projets</span>
+                <span class="fr-display-lg--block"> de transition écologique.</span>
               </p>
             </div>
           </div>
         </div>
-        <div class="fr-col-xl-8 fr-col-lg-10 fr-col-md-10 fr-col-sm-12 fr-col-xs-12 tee-home-cta-btn">
+        <div class="fr-col-8 fr-col-xs-12 tee-home-cta-btn">
           <TeeDsfrButton
-            label="Je trouve les aides pour mon projet"
             size="lg"
-            class="inline-flex fr-text--yellow fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center"
+            class="inline-flex fr-px-md-8v fr-text--yellow fr-text--bold fr-text-line-height--6v fr-text-xl fr-btn-align-center"
             @click="toQuestionnaire()"
-          />
+          >
+            <template #default> Je trouve les aides <span class="fr-display--block fr-display-lg--inline">pour mon projet</span> </template>
+          </TeeDsfrButton>
         </div>
       </div>
     </div>
-    <div class="fr-col-2 fr-col-md-4 fr-col-lg-4 tee-track-image-right fr-sm-hide">
+    <div class="fr-col-2 fr-col-md-4 fr-col--middle fr-col-lg-4 tee-track-image-right fr-sm-hide">
       <img
         class="fr-responsive-img"
         src="/images/TEE-illustrationHP.png"
@@ -58,3 +61,9 @@ const toQuestionnaire = async () => {
   }
 }
 </script>
+<style scoped lang="scss">
+.tee-track-image-right > .fr-responsive-img {
+  max-height: 400px;
+  width: auto;
+}
+</style>

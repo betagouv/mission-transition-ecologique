@@ -1,0 +1,115 @@
+titre: Soutien à la labellisation touristique
+promesse: Obtenez un soutien pour votre labellisation touristique
+description: >-
+  Vous êtes un professionnel du tourisme en Corse et souhaitez valoriser votre
+  engagement avec un label reconnu ? Que ce soit l’Écolabel Européen, Tourisme &
+  Handicap ou Accueil Vélo, l’Agence du Tourisme de la Corse vous accompagne
+  dans vos démarches de labellisation. Vous pouvez bénéficier d’un soutien
+  financier pour couvrir l’accompagnement, les études nécessaires et les
+  investissements indispensables à votre mise en conformité.
+description longue: >-
+  Cette aide offre un soutien dans les démarches et critères d'obtention des
+  labels suivants : 
+
+  - L’Ecolabel européen, label officiel de la Commission européenne, est un
+  système volontaire traduisant la qualité environnementale de produits et
+  services. Les critères du référentiel de l’Ecolabel européen pour
+  l’hébergement touristique garantissent une réduction de l’impact
+  environnemental sur l’ensemble de la structure touristique : lingerie,
+  nettoyage, restauration, maintenance, spa, piscine, espaces verts… La
+  labellisation des hébergements touristiques est régie par un cahier des
+  charges comprenant 67 critères dont 22 sont obligatoires et 61 optionnels.
+
+  - La marque nationale Tourisme & Handicap incite les professionnels du
+  tourisme gestionnaires à développer une offre touristique adaptée, réellement
+  ouverte à tous en donnant le choix à la personne en situation de handicap
+  (handicap auditif, mental, moteur ou visuel) de partir en autonomie, seule ou
+  en famille.
+
+  - La marque nationale « Accueil vélo » est le référentiel de qualité au
+  service des vélotouristes. Il garantit un accueil et des services de qualité
+  le long des itinéraires cyclables pour les cyclistes en itinérance. Un Accueil
+  Vélo peut être : un hébergement, un loueur de cycles, un réparateur de cycles,
+  un restaurateur, un Office de Tourisme, un site de visite.
+
+
+  Les frais d’études et d’accompagnement peuvent être pris en charge jusqu’à 80
+  %, dans la limite de 10 000 € de dépenses éligibles. Pour les investissements,
+  l’aide couvre jusqu’à 50 % des dépenses, avec un plafond de 30 000 €.
+illustration: images/TEE_eolienne.png
+opérateur de contact: Agence de Tourisme de la Corse
+url: >-
+  https://www.atc.corsica/wp-content/uploads/telechargements/mesure-22-le-soutien-a-lhebergement-en-toutes-zones-la-labellisation.pdf
+nature de l'aide: financement
+montant du financement: Jusqu'à 50% des dépenses, dans un maximum de 30 000 €
+objectifs:
+  - description: Créez compte sur le site de l'Agence du Tourisme de la Corse.
+    liens:
+      - lien: >-
+          https://annuaire.atc.corsica/realms/atc-prod/login-actions/registration?execution=62d93361-e72e-4207-a2f6-8371562141ec&client_id=atc-prod&tab_id=0xzxSpZYJRg
+        texte: Créer votre compte
+  - description: >-
+      Transmettez votre déclaration d'intention à l'Agence du Tourisme de la
+      Corse
+    liens:
+      - lien: >-
+          https://aiuti.atc.corsica/catalogue/soutien-a-lhebergement-lecolabel-europeen/
+        texte: Transmettre votre déclaration d'intention
+  - description: >-
+      Déposez votre dossier de candidature auprès de l'Agence du Tourisme de la
+      Corse.
+    liens:
+      - lien: >-
+          https://aiuti.atc.corsica/dossier-creation/?id_dispositif=e57c1a05-2c8e-4de4-8484-632ad32ca65d&origin=ts
+        texte: Transmettre votre dossier de candidature
+  - description: >-
+      Vous serez informé par mail de l’avancement de votre dossier. Après examen
+      et validation de votre dossier, recevez votre aide.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Corse
+  secteur d'activité:
+    - >-
+      - Pour l’Ecolabel européen : Hôtels classés, hôtellerie de plein air
+      classée, résidences de tourisme classées, meublés classés, chambre
+      d’hôtes,
+
+      - Pour la marque Accueil Vélo : Hôtels classés, hôtellerie de plein air
+      classée, résidences de tourisme classées, meublés classés, chambre
+      d’hôtes, loueurs et réparateurs de vélos, restaurateurs, Offices de
+      Tourisme, sites touristiques.
+
+      - Pour la marque Tourisme et Handicap : Hôtels classés, hôtellerie de
+      plein air classée, résidences de tourisme classées, meublés classés,
+      chambre d’hôtes, restaurateurs, Offices de Tourisme, sites touristiques,
+      acteurs intervenants dans les activités de loisirs.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Corse
