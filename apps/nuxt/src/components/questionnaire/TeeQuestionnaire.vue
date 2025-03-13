@@ -79,8 +79,11 @@ onBeforeMount(() => {
 
 useSeoMeta(
   MetaSeo.get(
-    'Transition écologique - Aides et financements TPE & PME',
-    'Service public pour les entreprises : Vous avez un projet de transition écologique ? Découvrez en quelques questions simples les aides dédiées auxquelles vous êtes éligible !'
+    'Aides et financements personnalisés',
+    'Service public pour les entreprises : Accédez simplement aux aides, accompagnements et financements disponible pour les entreprises de votre secteur'
   )
 )
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
+})
 </script>
