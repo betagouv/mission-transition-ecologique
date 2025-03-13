@@ -351,14 +351,6 @@ const scrollToProgramForm = () => {
   }
 }
 
-if (import.meta.client) {
-  Analytics.sendEvent('detail_page_view', 'detail_page_view', {
-    type: 'progam',
-    title: program.value?.titre,
-    url: window.location.href,
-    company: CompanyData.toString()
-  })
-}
-
-useExternalLinkTracker('program_external_link_clicked_v2')
+Analytics.sendDetailPageView('program', program.value?.titre)
+useExternalLinkTracker('program')
 </script>
