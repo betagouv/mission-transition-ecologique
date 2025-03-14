@@ -56,10 +56,10 @@
                 :class="detail.icon"
               />
             </div>
-            <div class="fr-col-9 fr-text-left">
-              <span class="fr-text--xs">
+            <div class="fr-col-9 fr-col-content--top fr-text-left">
+              <p class="fr-text--xs fr-text-line-height--3v">
                 {{ detail.label }}
-              </span>
+              </p>
             </div>
           </div>
         </div>
