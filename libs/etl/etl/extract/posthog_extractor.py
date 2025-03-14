@@ -72,12 +72,6 @@ class PosthogExtractor:
             print("Error fetching events from PostHog:", error)
             return []
 
-    # def get_status_event(self):
-    #     event_types = [
-    #         f"brevo_status_set_to_{key}" for key in DealStage.__dict__.keys()
-    #     ]
-    #     return self.get_events(event_types)
-
     def get_clicks_event(self):
         return self.get_events(
             ["program_external_link_clicked", "project_external_link_clicked"]

@@ -1,7 +1,8 @@
+from etl.transform.deals import Deal
 from etl.tools.db_manager import DBManager
 
 
-def update_deals(deals):
+def update_deals(deals: list[Deal]):
     if not len(deals):
         return
 
