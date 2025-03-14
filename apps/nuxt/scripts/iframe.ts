@@ -1,6 +1,11 @@
 import iframeResize from '@iframe-resizer/parent'
 
-const script = document.getElementById('transition-ecologique-entreprise') as HTMLScriptElement | null
+let script = document.currentScript as HTMLScriptElement | null
+
+if (!script) {
+  const scripts = document.getElementsByTagName('script')
+  script = scripts[scripts.length - 1] as HTMLScriptElement | null
+}
 
 if (script) {
   setupIframe(script)
@@ -17,7 +22,7 @@ function setupIframe(element: HTMLScriptElement) {
   document.head.insertAdjacentHTML(
     'beforeend',
     `<style>
-      #iframe-tee {
+      .iframe-tee {
         border: none;
         display: block;
         margin: 0 auto;
@@ -30,7 +35,7 @@ function setupIframe(element: HTMLScriptElement) {
     src,
     style: 'border: none; width: 100%; display: block; margin: 0 auto;',
     allow: 'fullscreen',
-    id: 'iframe-tee'
+    class: 'iframe-tee'
   }
 
   for (const key in iframeAttributes) {

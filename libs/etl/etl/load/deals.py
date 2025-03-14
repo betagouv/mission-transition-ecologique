@@ -1,5 +1,6 @@
 from etl.tools.db_manager import DBManager
 
+
 def update_deals(deals):
     if not len(deals):
         return

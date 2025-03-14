@@ -2,7 +2,7 @@ from etl.transform.daily_web_stat import DailyWebStat
 from etl.tools.db_manager import DBManager
 
 
-def insert_daily_web_stats(web_stats):
+def insert_daily_web_stats(web_stats: list[DailyWebStat]):
     if not len(web_stats):
         return
 

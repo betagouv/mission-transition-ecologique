@@ -53,6 +53,8 @@ conditions d'éligibilité:
       1813ZC| 1820ZZ
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - Être un artisan
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

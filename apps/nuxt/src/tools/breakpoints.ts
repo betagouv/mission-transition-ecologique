@@ -10,7 +10,11 @@ export default class Breakpoint {
   })
 
   static getCurrentBreakpoint() {
-    return this._breakpoints.active()
+    try {
+      return this._breakpoints.active()
+    } catch {
+      return computed(() => BreakpointSizeTypes.md)
+    }
   }
 
   static isLargerOrEqual(size: BreakpointNameType) {

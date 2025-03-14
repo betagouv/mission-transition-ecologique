@@ -3,6 +3,7 @@ import time
 import sib_api_v3_sdk
 from dotenv import load_dotenv
 
+
 class BrevoExtractor:
     def __init__(self):
         load_dotenv()
@@ -26,7 +27,7 @@ class BrevoExtractor:
                 api_response = api_instance.get_contacts(limit=limit, offset=offset)
                 offset += limit
                 contact_list.extend(api_response.contacts)
-            print(f"Import de {len(contact_list)} contacts Brevo")
+            print(f"Import de {len(contact_list)} contacts Brevo via l'API brevo")
         except ApiException as e:
             print("Exception when calling ContactsApi->get_contacts: %s\n" % e)
 

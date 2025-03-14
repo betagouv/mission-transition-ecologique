@@ -22,7 +22,8 @@ class WebStatsPipeline:
             last_stat_date = datetime.now() - timedelta(days=30)
 
         raw_visits_data = PosthogExtractor().get_unique_visitors_by_date_range(
-            last_stat_date + timedelta(days=1), datetime.now() - timedelta(days=1)
+            last_stat_date + timedelta(days=1),
+            datetime.now().replace(hour=23, minute=59, second=59) - timedelta(days=1),
         )
         return PosthogDTO().convert_raw_response_to_daily_web_stats(raw_visits_data)
 

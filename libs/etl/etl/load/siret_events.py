@@ -2,7 +2,7 @@ from etl.transform.siret_event import SiretEvent
 from etl.tools.db_manager import DBManager
 
 
-def insert_siret_events(events):
+def insert_siret_events(events: list[SiretEvent]):
     if not len(events):
         return
 
