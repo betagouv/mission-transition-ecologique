@@ -1,3 +1,6 @@
+import { ThemeId } from '../../theme/types/shared'
+import type { ProgramTypeWithEligibility } from '../program'
+
 export enum ProgramAidType {
   study = 'étude',
   train = 'formation',
@@ -12,4 +15,16 @@ export enum ProgramEligibilityType {
   NotEligible = 'not-eligible',
   ProgramEol = 'program-end-of-life',
   Unknown = 'unknown'
+}
+
+export const enum FiltersKeys {
+  Theme = 'theme'
+}
+
+export type ProgramFiltersType = {
+  [FiltersKeys.Theme]?: ThemeId[]
+}
+
+export type ProgramTypeForFront = Omit<ProgramTypeWithEligibility, 'publicodes'> & {
+  filters: ProgramFiltersType
 }
