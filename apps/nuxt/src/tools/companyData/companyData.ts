@@ -38,8 +38,7 @@ export class CompanyData {
 
   static patchCompanyData(company: CompanyDataRegisterType, profileData?: RegisterDetails) {
     const denomination =
-      company?.denomination ||
-      `Entreprise : ${profileData?.activity?.value?.secteur || company?.secteur} - ${profileData?.localisation?.value?.region || company?.region}`
+      company?.denomination ?? company?.siret ?? `Entreprise : ${profileData?.activity?.value?.secteur ?? company?.secteur}`
     return {
       ...company,
       denomination
@@ -70,7 +69,7 @@ export class CompanyData {
       ...profileData.localisation.value,
       ...profileData.activity.value,
       structure_size: profileData.size.value,
-      denomination: `Entreprise : ${profileData.activity.value?.secteur} - ${profileData.localisation.value?.region}`
+      denomination: `Entreprise : ${profileData.activity.value?.secteur}`
     } as CompanyDataType[CompanyDataStorageKey.Company]
   }
 
@@ -209,7 +208,7 @@ export class CompanyData {
       CompanyDataStorage.setCompany({
         ...this.company,
         ...localisationData,
-        denomination: `Entreprise : ${this.company?.secteur} - ${value}`
+        denomination: `Entreprise : ${this.company?.secteur}`
       } as CompanyDataType[CompanyDataStorageKey.Company])
     }
   }
