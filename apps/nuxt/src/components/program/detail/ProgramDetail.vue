@@ -263,6 +263,7 @@ import Opportunity from '@/tools/opportunity'
 import { CompanyData } from '@/tools/companyData'
 import { storeToRefs } from 'pinia'
 import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
+import Analytics from '@/tools/analytic/analytics'
 
 const programsStore = useProgramStore()
 const { projects } = storeToRefs(useProjectStore())
@@ -350,5 +351,6 @@ const scrollToProgramForm = () => {
   }
 }
 
-useExternalLinkTracker('program_external_link_clicked')
+Analytics.sendDetailPageView('program', program.value?.titre)
+useExternalLinkTracker('program')
 </script>
