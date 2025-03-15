@@ -116,7 +116,7 @@ publicodes:
       - questionnaire . objectif prioritaire . est ma performance énergétique
 champs conditionnels:
   - toutes ces conditions:
-      - effectif >= null
+      - effectif >= 0
       - effectif <= 49
     Montant du dispositif: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
     Eligibilité taille: Pour une petite entreprise ou dans le cadre d’une activité non économique
