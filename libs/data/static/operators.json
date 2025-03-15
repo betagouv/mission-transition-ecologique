@@ -597,5 +597,13 @@
     "filterCategories": [
       "Opérateurs nationaux"
     ]
+  },
+  {
+    "operator": "Visible en prod dans les fiches dispositifs",
+    "filterCategories": []
+  },
+  {
+    "operator": "Visible en prod dans les fiches dispositifs",
+    "filterCategories": []
   }
 ]
