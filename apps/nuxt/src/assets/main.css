@@ -2225,8 +2225,66 @@
 .fr-card.fr-enlarge-link .fr-card__content .fr-card__end p {
   font-size: 0.8rem;
 }
+.fr-card.fr-card--program-detail .fr-card__content {
+  padding: 1rem 1.5rem 4rem !important;
+}
+.fr-card.fr-card--program-detail .fr-card__content .fr-card__title {
+  margin-bottom: 0.75rem;
+}
+.fr-card.fr-card--program-detail .fr-card__content .fr-card__title a {
+  color: #6a62f4;
+}
+@media (min-width: 0) {
+  .fr-card.fr-card--program-detail .fr-card__content .fr-card__title a {
+    line-height: 1.5rem;
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 48em) {
+  .fr-card.fr-card--program-detail .fr-card__content .fr-card__title a {
+    line-height: 1.75rem;
+    font-size: 1.25rem;
+  }
+}
+.fr-card.fr-card--program-detail .fr-card__content p.fr-card__desc {
+  color: #000091;
+  font-weight: 700;
+}
+@media (min-width: 0) {
+  .fr-card.fr-card--program-detail .fr-card__content p.fr-card__desc {
+    line-height: 2rem;
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 48em) {
+  .fr-card.fr-card--program-detail .fr-card__content p.fr-card__desc {
+    line-height: 2.25rem;
+    font-size: 1.75rem;
+  }
+}
+@media (min-width: 0) {
+  .fr-card.fr-card--program-detail .fr-card__header .fr-card__img img {
+    aspect-ratio: 2.5;
+  }
+}
+@media (min-width: 36em) {
+  .fr-card.fr-card--program-detail .fr-card__header .fr-card__img img {
+    aspect-ratio: 1.777778;
+  }
+}
 .fr-card.project-card .fr-card__content {
-  padding-top: 1rem !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 2rem !important;
+}
+@media (min-width: 0) {
+  .fr-card.project-card .fr-card__header .fr-card__img img {
+    aspect-ratio: 2.5;
+  }
+}
+@media (min-width: 36em) {
+  .fr-card.project-card .fr-card__header .fr-card__img img {
+    aspect-ratio: 1.777778;
+  }
 }
 .fr-card .fr-badge--success {
   background-color: #1ebe8e;
