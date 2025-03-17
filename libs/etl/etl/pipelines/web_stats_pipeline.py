@@ -4,7 +4,7 @@ from etl.extract.posthog_extractor import PosthogExtractor
 from etl.transform.dto.posthog import PosthogDTO
 from etl.load.siret_events import insert_siret_events
 from etl.load.daily_web_stats import insert_daily_web_stats
-
+from etl.transform.daily_web_stat import arrays_to_DailyWebStats
 
 class WebStatsPipeline:
 
@@ -14,6 +14,7 @@ class WebStatsPipeline:
 
     def update_website_daily_visit_stats(self):
         visits_data = self._get_new_daily_web_stats()
+        print(visits_data)
         insert_daily_web_stats(visits_data)
 
     def _get_new_daily_web_stats(self):
@@ -25,7 +26,19 @@ class WebStatsPipeline:
             last_stat_date + timedelta(days=1),
             datetime.now().replace(hour=23, minute=59, second=59) - timedelta(days=1),
         )
-        return PosthogDTO().convert_raw_response_to_daily_web_stats(raw_visits_data)
+        visits_data = PosthogDTO().convert_raw_response_to_array(raw_visits_data)
+        raw_detail_page_data = (
+            PosthogExtractor().get_unique_visitors_detail_page_view_by_date_range(
+                last_stat_date + timedelta(days=1),
+                datetime.now().replace(hour=23, minute=59, second=59)
+                - timedelta(days=1),
+            )
+        )
+        detail_page_data = PosthogDTO().convert_raw_response_to_array(
+            raw_detail_page_data
+        )
+
+        return arrays_to_DailyWebStats(visits_data, detail_page_data)
 
     def _get_new_siret_events(self):
         start_date = get_last_siret_event_date()

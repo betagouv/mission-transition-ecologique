@@ -64,14 +64,8 @@ class PosthogDTO:
             domain_events.append(SiretEvent(date, siret))
         return domain_events
 
-    def convert_raw_response_to_daily_web_stats(self, posthog_response):
-        stats = posthog_response["results"]
-
-        daily_web_stats = [
-            DailyWebStat(daily_stat[0], daily_stat[1]) for daily_stat in stats
-        ]
-
-        return daily_web_stats
+    def convert_raw_response_to_array(self, posthog_response):
+        return posthog_response["results"]
 
     def generate_company_id(self, raw_company_data):
         if not raw_company_data:
