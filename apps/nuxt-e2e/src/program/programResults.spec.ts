@@ -9,13 +9,13 @@ tests.forEach((singleTest) => {
   test(`Test id ${singleTest.id} - Verify programs number and order for query ${singleTest.url}`, async ({ page, goto }) => {
     await goto(singleTest.url, { waitUntil: 'hydration' })
     try {
-      await page.locator('.teste2e-program-target').waitFor({ state: 'visible', timeout: timeOut })
+      await page.locator('.fr-card--program-detail .fr-card__title a').waitFor({ state: 'visible', timeout: timeOut })
     } catch (error) {
       // this is an expected error what can happen
       // - if the number of results is 0
       // - in some mobile data browser
     }
-    const elementsLocal = await page.$$eval('.teste2e-program-target', (els) => els.map((el) => el.innerHTML.trim()))
+    const elementsLocal = await page.$$eval('.fr-card--program-detail .fr-card__title a', (els) => els.map((el) => el.innerHTML.trim()))
 
     // logs to analyse the error and easily reset the test case if needed (volontary filter changes)
     // console.log(
