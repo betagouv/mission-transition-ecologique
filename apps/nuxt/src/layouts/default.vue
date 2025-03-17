@@ -35,3 +35,12 @@ useSeoMeta(MetaSeo.default())
     </ClientOnly>
   </div>
 </template>
+
+<style scoped lang="scss">
+#tee > div:first-of-type {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+</style>
