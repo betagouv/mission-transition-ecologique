@@ -1,13 +1,13 @@
 import Config from './src/config'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
-import { defineNuxtConfig } from 'nuxt/config'
+import { DefineNuxtConfig, defineNuxtConfig } from 'nuxt/config'
 import { NuxtScriptsConfig } from './nuxt.scripts.config'
 import { NuxtSecurityConfig } from './nuxt.security.config'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import { ChangeFreq, Priority } from './src/types/sitemapType'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
-export default defineNuxtConfig({
+export default<DefineNuxtConfig> defineNuxtConfig({
   app: {
     rootId: 'tee',
     head: {
