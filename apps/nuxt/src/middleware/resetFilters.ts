@@ -1,15 +1,7 @@
-import { RouteName } from '@/types'
+import Navigation from '@/tools/navigation'
 
-export default defineNuxtRouteMiddleware((to, from) => {
-  if (
-    [
-      RouteName.Questionnaire,
-      RouteName.QuestionnaireResult,
-      RouteName.ProgramResultDetail,
-      RouteName.ProjectResultDetail,
-      RouteName.ProgramFromProjectResultDetail
-    ].includes(from.name as RouteName)
-  ) {
+export default defineNuxtRouteMiddleware(() => {
+  if (new Navigation().isQuestionnaire()) {
     useFiltersStore().resetFilters()
   }
 })
