@@ -1,64 +1,47 @@
 <template>
-  <div id="register-localisation">
-    <DsfrInputGroup
-      class="fr-mb-0"
-      :error-message="errorMsg"
-    >
-      <span
-        v-if="option.hint"
-        class="fr-hint-text fr-mb-2v"
-      >
-        {{ option?.hint?.[Translation.lang] }}
-      </span>
+  <TeeDsfrSearchBar
+    v-model="localisationInput"
+    :placeholder="option?.hint?.[Translation.lang]"
+    name="localisation"
+    :is-loading="isLoading"
+    :background-color="Color.greyLighted"
+    :color="Color.blueFrance"
+    :search-color="Color.white"
+    :error-msg="errorMsg"
+    :results="localisationResults"
+    @update:model-value="updateModelValue"
+    @reset-search="hideResults"
+    @search="searchLocalisation"
+  >
+    <template #results>
       <div
-        ref="localisationSearchBar"
-        class="fr-search-bar"
-        :class="isLoading ? 'fr-search-bar--loading' : ''"
-        role="search"
+        v-if="localisationResults.length && showResults"
+        id="track-localisation-response"
+        class="fr-bg--white"
       >
-        <DsfrInput
-          v-model="localisationInput"
-          name="manual-register-localisation"
-          class="fr-input"
-          type="search"
-          :hint="option?.hint?.[Translation.lang]"
-          @update:model-value="updateModelValue"
-          @keyup.enter="searchLocalisation"
-        />
-        <DsfrButton
-          class="search-button"
-          no-outline
-          @click="searchLocalisation"
-        />
-      </div>
-    </DsfrInputGroup>
-    <div
-      v-if="localisationResults.length && showResults"
-      id="track-localisation-response"
-      class="fr-bg--white fr-mt-n3w"
-    >
-      <div
-        v-for="localisation in localisationResults"
-        :key="`resp-input-${localisation.nom}-${localisation.codePostal}`"
-        tabindex="0"
-        class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
-        @click="selectLocalisation(localisation)"
-      >
-        <div class="fr-card__body">
-          <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-            <div class="fr-text--blue-france">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
+        <div
+          v-for="localisation in localisationResults"
+          :key="`resp-input-${localisation.nom}-${localisation.codePostal}`"
+          class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow"
+          @click="selectLocalisation(localisation)"
+        >
+          <div class="fr-card__body">
+            <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
+              <div class="fr-text--blue-france">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </template>
+  </TeeDsfrSearchBar>
 </template>
 <script lang="ts" setup>
-import { type TrackOptionsInput, ConvertedCommune, CompanyLocalisationType, TrackOptionItem } from '@/types'
+import { type TrackOptionsInput, ConvertedCommune, CompanyLocalisationType, TrackOptionItem, Color } from '@/types'
 import { CompanyData } from '@/tools/companyData'
-import { useDebounce, onClickOutside } from '@vueuse/core'
+import { useDebounce } from '@vueuse/core'
 import Translation from '@/tools/translation'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
+import LocalisationApi from '@/tools/api/localisationApi'
 
 interface Props {
   option: TrackOptionsInput
@@ -68,7 +51,6 @@ const emit = defineEmits(['updateSelection'])
 
 const selectedLocalisation = defineModel<CompanyLocalisationType>()
 const localisationInput = ref<string>('')
-const localisationSearchBar = useTemplateRef('localisationSearchBar')
 const debouncedLocalisationInput = useDebounce(localisationInput, 1000)
 watch(debouncedLocalisationInput, (newValue) => {
   if (newValue) {
@@ -96,7 +78,7 @@ const searchLocalisation = async () => {
   if (localisationInput.value && localisationInput.value.length >= 3) {
     isLoading.value = true
     showResults.value = true
-    const results = await TrackStructure.searchLocalisation(localisationInput.value)
+    const results = await new LocalisationApi().searchCities(localisationInput.value)
     if (results.isOk()) {
       localisationResults.value = results.data
     }
@@ -112,8 +94,6 @@ const selectLocalisation = (localisation: ConvertedCommune) => {
 const hideResults = () => {
   showResults.value = false
 }
-onClickOutside(localisationSearchBar, () => hideResults())
-
 function createData(): TrackOptionItem {
   return TrackStructure.createData(props.option, selectedLocalisation.value?.region, selectedLocalisation.value)
 }
