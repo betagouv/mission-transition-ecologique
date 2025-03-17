@@ -9,7 +9,7 @@
     >
       <span
         v-if="hint"
-        :class="`${backgroundColor === Color.white ? 'fr-text--white' : ''}`"
+        :class="`${backgroundColor ? `fr-text--${backgroundColor}` : ''}`"
         class="fr-hint-text fr-col-justify--left fr-mb-2v"
       >
         {{ hint }}
@@ -22,13 +22,24 @@
         <DsfrInput
           v-model="inputModel"
           :name="`manual-register-${name}`"
-          :class="`${backgroundColor ? `fr-input--${backgroundColor}` : ''}`"
+          :class="`${backgroundColor ? `fr-input-bg--${backgroundColor}` : ''}`"
           class="fr-input"
           type="search"
           :placeholder="placeholder"
           @click="emit('click')"
           @update:model-value="updateModelValue"
           @keyup.enter="triggerSearch"
+        />
+        <DsfrButton
+          v-if="inputModel"
+          :class="`${backgroundColor ? `fr-bg--${backgroundColor}` : ''}`"
+          class="search-clear fr-radius-a--0"
+          icon="fr-icon-close-line"
+          icon-only
+          no-outline
+          tertiary
+          :disabled="isLoading"
+          @click="resetSearch"
         />
         <DsfrButton
           :class="`fr-bg--${color} fr-text--${searchColor}`"
@@ -38,14 +49,11 @@
           @click="triggerSearch"
         />
       </div>
+      <div :class="errorMsg ? 'fr-error-text ' : ''">
+        {{ errorMsg }}
+      </div>
     </div>
     <slot name="results"></slot>
-    <div
-      :class="errorMsg ? 'fr-error-text' : ''"
-      class="fr-input--empty-text fr-mt-2v"
-    >
-      {{ errorMsg }}
-    </div>
   </div>
 </template>
 <script lang="ts" setup>

@@ -65,7 +65,7 @@
         </div>
       </template>
     </TeeDsfrSearchBar>
-    <div :class="requestResponses.establishments.length ? '' : 'fr-mt-n4v'">
+    <div>
       <TeeDsfrButton
         class="fr-btn--tertiary-no-outline fr-text-left fr-p-0 fr-btn-bg fr-text--white fr-text--sm"
         @click="doManualRegister"

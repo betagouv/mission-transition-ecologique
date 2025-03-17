@@ -16,7 +16,7 @@
     <template #results>
       <div
         v-if="activityResults.length"
-        id="activity-response"
+        id="track-activity-response"
         class="fr-bg--white"
       >
         <div
@@ -86,7 +86,7 @@ function createData(): TrackOptionItem {
 }
 </script>
 <style lang="scss" scoped>
-#activity-response {
+#track-activity-response {
   text-align: left;
   width: calc(100% - 40px);
   max-height: 256px;
