@@ -4,7 +4,7 @@
     ref="eligibilityCriteria"
     :class="bgClass"
   >
-    <div class="fr-container fr-grid-row fr-grid-row--center fr-grid-row--middle fr-p-0 fr-py-3v">
+    <div class="fr-container fr-grid-row fr-grid-row--center fr-grid-row--middle fr-py-3v">
       <div
         class="fr-px-sm-2v fr-my-auto fr-col-12 fr-px-0 fr-text-center"
         :class="fontColor"
