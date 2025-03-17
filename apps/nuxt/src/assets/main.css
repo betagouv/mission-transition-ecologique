@@ -1,10 +1,3 @@
-#tee > div:first-of-type {
-  min-height: 100vh;
-  margin: 0;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-}
-
 .fr-accordion__btn {
   color: var(--text-title-grey);
 }
@@ -2591,6 +2584,9 @@
   .fr-display--block {
     display: block;
   }
+  .fr-display--inline {
+    display: inline;
+  }
 }
 @media (min-width: 36em) {
   .fr-col-content-sm--top {
@@ -2637,6 +2633,9 @@
   }
   .fr-display-sm--block {
     display: block;
+  }
+  .fr-display-sm--inline {
+    display: inline;
   }
 }
 @media (min-width: 48em) {
@@ -2685,6 +2684,9 @@
   .fr-display-md--block {
     display: block;
   }
+  .fr-display-md--inline {
+    display: inline;
+  }
 }
 @media (min-width: 62em) {
   .fr-col-content-lg--top {
@@ -2732,6 +2734,9 @@
   .fr-display-lg--block {
     display: block;
   }
+  .fr-display-lg--inline {
+    display: inline;
+  }
 }
 @media (min-width: 78em) {
   .fr-col-content-xl--top {
@@ -2778,6 +2783,9 @@
   }
   .fr-display-xl--block {
     display: block;
+  }
+  .fr-display-xl--inline {
+    display: inline;
   }
 }
 .fr-sticky {
@@ -4540,6 +4548,9 @@ a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=
 }
 .fr-text--grey {
   color: #777 !important;
+}
+.fr-text-line-height--3v {
+  line-height: 0.75rem;
 }
 .fr-text-line-height--4v {
   line-height: 1rem;
