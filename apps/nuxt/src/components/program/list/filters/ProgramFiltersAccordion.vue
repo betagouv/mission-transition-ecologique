@@ -22,7 +22,7 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
+const { companyDataSelected } = storeToRefs(useFiltersStore())
 
 const navigation = new Navigation()
 
