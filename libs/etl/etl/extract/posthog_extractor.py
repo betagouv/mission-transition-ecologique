@@ -72,7 +72,22 @@ class PosthogExtractor:
             print("Error fetching events from PostHog:", error)
             return []
 
-    def get_clicks_event(self):
-        return self.get_events(
-            ["program_external_link_clicked", "project_external_link_clicked"]
-        )
+    def get_external_link_click_events(self, start_date, end_date):
+        return self.get_events(["external_link_clicked_v2"], start_date, end_date)
+
+    def get_detail_page_view_events(self, start_date, end_date):
+        return self.get_events(["detail_page_view"], start_date, end_date)
+
+    def get_unique_visitors_detail_page_view_by_date_range(self, start_date, end_date):
+        hogql_query = f"""
+            SELECT
+                toStartOfDay(timestamp) AS event_date,
+                COUNT(DISTINCT person_id) AS unique_visitors
+            FROM events
+            WHERE timestamp > '{start_date}'
+            AND timestamp <= '{end_date}'
+            AND event = 'detail_page_view'
+            GROUP BY event_date
+            ORDER BY event_date ASC
+        """
+        return self.execute_hogql_query(hogql_query)
