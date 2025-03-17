@@ -3037,6 +3037,15 @@
   height: 1.25rem;
 }
 
+ol.fr-order-list {
+  --ol-content: counters(li-counter,".") " | ";
+  --ol-start: 2.5rem;
+}
+ol.fr-order-list > li::marker {
+  color: #6a62f4;
+  font-size: 1.5rem;
+}
+
 @media (min-width: 0) {
   .fr-radius-tl {
     border-top-left-radius: 0 !important;
@@ -4494,8 +4503,9 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   background-color: #fff;
 }
 
-.fr-sidemenu--sticky {
-  top: 50%;
+.fr-sidemenu #project-sidemenu a.fr-sidemenu__link {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .fr-tabs {
