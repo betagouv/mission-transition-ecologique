@@ -67,10 +67,6 @@ export class PublicodesGenerator {
       publicodes[Publicodes.ZONE_GEO] = this._generateGeographicConditions()
     }
 
-    if (!this._program['Parcours "Je ne sais pas par où commencer"']) {
-      cibles.push('questionnaire . parcours = objectif précis')
-    }
-
     if (this._program.Propriétaire && this._program.Propriétaire != '*') {
       cibles.push(Publicodes.PROPRIO)
     }

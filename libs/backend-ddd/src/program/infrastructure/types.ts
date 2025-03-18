@@ -6,16 +6,10 @@ export interface PublicodesInputData {
   [PublicodesKeys.ValidityStart]?: string
   [PublicodesKeys.ValidityEnd]?: string
   [PublicodesKeys.CurrentDate]: string
-  [PublicodesKeys.QuestionnaireRoute]?: PublicodesQuestionnaireRoute
   [PublicodesKeys.Workforce]?: number
   région?: string
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any
-}
-
-export enum PublicodesQuestionnaireRoute {
-  NoSpecificGoal = '"je ne sais pas par où commencer"',
-  SpecificGoal = '"objectif précis"'
 }
 
 export type ObjectivePublicodeData = {

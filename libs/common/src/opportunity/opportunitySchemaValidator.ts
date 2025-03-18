@@ -1,10 +1,9 @@
-import { PublicodeObjective, QuestionnaireRoute, StructureSize } from '../questionnaire'
+import { PublicodeObjective, StructureSize } from '../questionnaire'
 import { OpportunityType } from './opportunityTypes'
 import { z } from 'zod'
 
 const opportunityTypeSchema = z.nativeEnum(OpportunityType)
 const publicodeObjectiveSchema = z.nativeEnum(PublicodeObjective)
-const questionnaireRouteSchema = z.nativeEnum(QuestionnaireRoute)
 const structureSizeSchema = z.nativeEnum(StructureSize)
 
 export const contactDetailsSchema = z.object({
@@ -24,7 +23,6 @@ export const opportunityDetailsBaseSchema = z.object({
   titleMessage: z.string().optional(),
   linkToCatalog: z.string().optional(),
   message: z.string(),
-  questionnaireRoute: questionnaireRouteSchema.optional(),
   priorityObjectives: z.array(publicodeObjectiveSchema).optional(),
   otherData: z.string().optional(),
   theme: z.string().optional()
