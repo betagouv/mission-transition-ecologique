@@ -1,5 +1,8 @@
 <template>
-  <div class="fr-card fr-bg--blue-france--lightness fr-enlarge-link fr-radius-a--1v fr-card--shadow fr-text-center fr-pt-7v">
+  <div
+    class="fr-card fr-bg--blue-france--lightness fr-radius-a--1v fr-card--shadow fr-text-center fr-pt-7v"
+    @click="toQuestionnaire"
+  >
     <div class="fr-card__body">
       <div class="fr-card__content">
         <h4 class="fr-card__title fr-text--blue-france fr-my-0">
