@@ -20,7 +20,7 @@
             Voir tous les projets
           </TeeButtonLink>
         </div>
-        <div class="fr-bg--blue--lightness fr-hidden fr-unhidden-sm fr-col-12 fr-py-0-5v fr-mt-8v fr-mb-16v"></div>
+        <div class="fr-bg--blue--lightness fr-hidden fr-unhidden-sm fr-col-12 fr-py-0-5v fr-my-8v"></div>
       </div>
 
       <TeePromises />

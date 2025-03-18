@@ -1,0 +1,120 @@
+titre: Aide régionale au développement de produits touristiques
+promesse: Développez des projets touristiques durables
+description: >-
+  Vous avez une idée innovante pour un tourisme durable et responsable en
+  Guadeloupe ? Ce dispositif vous accompagne dans la création, la modernisation
+  et la valorisation d'offres attractives, respectueuses de l’environnement et
+  ancrées dans l’identité locale.
+
+  Que votre projet concerne l’écotourisme terrestre (randonnées, agrotourisme,
+  hébergements en pleine nature) ou l’écotourisme maritime et côtier (activités
+  nautiques durables, découverte des écosystèmes marins), ainsi que la mise en
+  valeur du patrimoine et de la culture, vous pouvez bénéficier d’un
+  accompagnement et d’un soutien financier pour vos études, aménagements et
+  investissements.
+description longue: >-
+  Les dépenses éligibles sont : 
+
+  - Pré-études de faisabilité technique et économique ;
+
+  - Investissements matériels et immatériels favorisant l’attractivité de la
+  destination et à la valorisation des espaces touristiques, la découverte du
+  milieu naturel et patrimonial (aménagement, préservation et entretien,
+  animation) ;
+
+  - Supports de communication;
+
+  - Matériels navigants immatriculés exclusivement nécessaires à la pratique de
+  l’activité touristique;
+
+  - Equipements pour les navires neufs.
+début de validité: 01/01/2025
+fin de validité: 15/09/2025
+illustration: images/TEE_eolienne.png
+opérateur de contact: Région Guadeloupe
+url: >-
+  https://www.regionguadeloupe.fr/les-aides-les-services/guide-des-aides/detail/actualites/aide-regionale-au-developpement-des-produits-touristiques/categorie/tourisme/#_
+nature de l'aide: financement
+montant du financement: Jusqu'à 35% des dépenses éligibles, dans un maximum de 175 000 € HT
+activable en autonomie: oui
+objectifs:
+  - description: Constituez votre dossier de demande d'aide
+    liens:
+      - lien: >-
+          https://www.regionguadeloupe.fr/les-aides-les-services/guide-des-aides/detail/actualites/aide-regionale-au-developpement-des-produits-touristiques/categorie/tourisme/#_
+        texte: liste des documents à fournir
+  - description: >-
+      Faites réaliser des devis pro forma maximum 3 mois avant le dépôt de votre
+      dossier.
+  - description: >-
+      Envoyez votre dossier de demande d'aide complet en deux exemplaires à
+      l'adresse suivante : Direction du Tourisme, Hôtel de région, Avenue Paul
+      Lacavé, 97110 Basse-Terre.
+  - description: Si votre projet est sélectionné, recevez votre subvention.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Guadeloupe
+  secteur d'activité:
+    - Sont exclus les SCI, les agriculteurs et pêcheurs
+  nombre d'années d'activité:
+    - Au moins 3 ans d'activité
+  autres critères d'éligibilité:
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
+    - >-
+      Pour les hébergements touristiques, votre entreprise ne doit pas avoir
+      bénéficié d’un autre dispositif d’aide durant les 5 dernières années.
+    - Les entreprises en difficulté ou en restructuration ne sont pas éligibles.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Guadeloupe
