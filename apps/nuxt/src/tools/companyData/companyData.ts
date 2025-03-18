@@ -231,9 +231,15 @@ export class CompanyData {
   }
 
   private static _getCompanyDenomination(company: CompanyDataRegisterType, profileData?: RegisterDetails) {
-    return company?.denomination && company.denomination.trim() !== ''
-      ? company.denomination
-      : (company?.siret ?? `Entreprise : ${profileData?.activity?.value?.secteur ?? company?.secteur}`)
+    if (company?.denomination && company.denomination.trim() !== '') {
+      return company.denomination
+    }
+
+    if (company?.siret) {
+      return 'SIRET : ' + company.siret
+    }
+
+    return `Entreprise : ${profileData?.activity?.value?.secteur ?? company?.secteur}`
   }
 
   private static _getQuestionnaireGoal() {
