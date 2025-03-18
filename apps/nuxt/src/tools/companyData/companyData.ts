@@ -36,16 +36,6 @@ export class CompanyData {
     return CompanyDataStorage.getData().value[CompanyDataStorageKey.Size]
   }
 
-  static patchCompanyData(company: CompanyDataRegisterType, profileData?: RegisterDetails) {
-    const denomination =
-      company?.denomination && company.denomination.trim() !== ''
-        ? company.denomination
-        : (company?.siret ?? `Entreprise : ${profileData?.activity?.value?.secteur ?? company?.secteur}`)
-    return {
-      ...company,
-      denomination
-    }
-  }
   static convertLocalisation(geoInfos: ConvertedCommune): CompanyLocalisationType {
     return {
       region: geoInfos.region.nom as Region,
@@ -59,7 +49,7 @@ export class CompanyData {
     profileData: RegisterDetails
   ): CompanyDataType[CompanyDataStorageKey.Company] {
     return {
-      ...this.patchCompanyData(company, profileData),
+      ...this._patchCompanyData(company, profileData),
       structure_size: profileData.size.value,
       ...profileData.localisation.value,
       ...profileData.activity.value
@@ -187,7 +177,7 @@ export class CompanyData {
   static setDataStorageFromTrack(trackId: TrackId, value: string | string[], selectedOptions: TrackOptionsUnion[]) {
     if (trackId === TrackId.Siret && value !== SiretValue.Wildcard && selectedOptions.length > 0) {
       const questionnaireData = selectedOptions[0].questionnaireData as CompanyDataRegisterType
-      CompanyDataStorage.setCompany(this.patchCompanyData(questionnaireData) as CompanyDataRegisterType)
+      CompanyDataStorage.setCompany(this._patchCompanyData(questionnaireData) as CompanyDataRegisterType)
       if (questionnaireData?.legalCategory === LegalCategory.EI) {
         CompanyDataStorage.setSize(StructureSize.EI)
       }
@@ -230,6 +220,20 @@ export class CompanyData {
 
   static toString() {
     return CompanyData.hasCompanyData() ? JSON.stringify(CompanyData.company) : null
+  }
+
+  static _patchCompanyData(company: CompanyDataRegisterType, profileData?: RegisterDetails) {
+    const denomination = this._getCompanyDenomination(company, profileData)
+    return {
+      ...company,
+      denomination
+    }
+  }
+
+  private static _getCompanyDenomination(company: CompanyDataRegisterType, profileData?: RegisterDetails) {
+    return company?.denomination && company.denomination.trim() !== ''
+      ? company.denomination
+      : (company?.siret ?? `Entreprise : ${profileData?.activity?.value?.secteur ?? company?.secteur}`)
   }
 
   private static _getQuestionnaireGoal() {
