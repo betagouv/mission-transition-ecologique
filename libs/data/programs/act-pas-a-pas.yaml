@@ -56,7 +56,7 @@ objectifs:
 conditions d'éligibilité:
   taille de l'entreprise:
     - Plus de 250 salariés
-    - Éligible aux micro-entreprises
+    - Non éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
@@ -82,9 +82,13 @@ publicodes:
         - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
+      - a une categorie legale eligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
       - effectif >= 250
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
