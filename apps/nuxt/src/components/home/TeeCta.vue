@@ -56,7 +56,7 @@ const toQuestionnaire = async () => {
       name: RouteName.CatalogProjects
     })
   } else {
-    useNavigationStore().isFromCtaRegisterModal = true
+    useNavigationStore().setFromCtaRegisterModal(true)
     Navigation.toggleRegisterModal()
   }
 }
