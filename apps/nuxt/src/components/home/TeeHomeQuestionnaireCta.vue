@@ -1,30 +1,27 @@
 <template>
-  <TeeContentBlock
-    class="fr-bg--blue-france--lightness fr-radius-a--1v fr-card--shadow fr-text-center fr-pt-7w fr-pb-2w fr-px-3w fr-div-fixed-height"
-  >
-    <template #title>
-      <span
-        class="title fr-text--bold fr-text--blue-france"
-        v-html="htmlTitle"
-      />
-    </template>
-    <template #content>
-      <p
-        class="fr-text--sm fr-pt-4w fr-pb-2w"
-        v-html="htmlDescription"
-      />
-      <DsfrButton
-        :key="button.label"
-        :label="button.label"
-        :secondary="button.secondary"
-        class="fr-btn--tertiary-no-outline fr-mx-1w fr-text--bold"
-        :class="{ 'fr-bg--purple--light': button.isHovering.value }"
-        @mouseover="button.isHovering.value = true"
-        @mouseleave="button.isHovering.value = false"
-        @click="toQuestionnaire"
-      ></DsfrButton>
-    </template>
-  </TeeContentBlock>
+  <div class="fr-card fr-bg--blue-france--lightness fr-enlarge-link fr-radius-a--1v fr-card--shadow fr-text-center fr-pt-7v">
+    <div class="fr-card__body">
+      <div class="fr-card__content">
+        <h4 class="fr-card__title fr-text--blue-france fr-my-0">
+          Vous ne savez pas<span class="fr-display--block">par où commencer ?</span>
+        </h4>
+        <p
+          class="fr-card__desc fr-text--sm fr-pt-4w fr-pb-2w fr-mt-0"
+          v-html="htmlDescription"
+        />
+        <DsfrButton
+          :key="button.label"
+          :label="button.label"
+          :secondary="button.secondary"
+          class="fr-card__desc fr-btn--tertiary-no-outline fr-text--bold fr-text--md"
+          :class="{ 'fr-bg--purple--light': button.isHovering.value }"
+          @mouseover="button.isHovering.value = true"
+          @mouseleave="button.isHovering.value = false"
+          @click="toQuestionnaire"
+        ></DsfrButton>
+      </div>
+    </div>
+  </div>
 </template>
 <script setup lang="ts">
 import { RouteName } from '@/types'
@@ -32,7 +29,6 @@ import { DsfrButtonProps } from '@gouvminint/vue-dsfr/types/components/DsfrButto
 import Navigation from '@/tools/navigation'
 import { useCompanyDataStore } from '@/stores/companyData'
 interface Props {
-  htmlTitle: string
   htmlDescription: string
 }
 
@@ -46,7 +42,6 @@ const router = useRouter()
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 withDefaults(defineProps<Props>(), {
-  htmlTitle: 'Vous ne savez pas</br> par où commencer ?',
   htmlDescription:
     'En moins de 2 minutes, répondez à quelques questions pour identifier vos <strong>projets prioritaires</strong>' +
     ' et les <strong>financements</strong> disponibles pour votre entreprise'
@@ -62,10 +57,3 @@ const toQuestionnaire = async () => {
   }
 }
 </script>
-<style scoped lang="scss">
-.title {
-  font-size: 1.375rem;
-  line-height: 1.75rem;
-}
-</style>
-n
