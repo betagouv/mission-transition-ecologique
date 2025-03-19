@@ -3,6 +3,7 @@
     id="project-linked-projects-title"
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
     :title="Translation.t('project.linkedProjects.title')"
+    container-from="md"
   >
     <template #content>
       <div class="fr-my-4v">{{ Translation.t('project.linkedProjects.description') }}</div>

@@ -5,6 +5,7 @@
     :key="`project-${index}-details-title`"
     class="fr-py-6v fr-border-b--grey--light"
     :title="description.title"
+    container-from="md"
   >
     <template #content>
       <div v-html="markdownToHtml(description.details)" />

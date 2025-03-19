@@ -8,11 +8,9 @@
     class="project-header"
   >
     <template #title>
-      <div class="fr-container">
-        <div class="fr-grid-row">
-          <div class="fr-col-12 fr-col-md-9 fr-col-lg-10 fr-col-offset-md-3 fr-col-offset-lg-2 fr-text-left fr-pb-8v">
-            <h1 class="fr-gradient__title">{{ project.title }}</h1>
-          </div>
+      <div class="fr-col-12 fr-col-md-9 fr-col-xl-10 fr-col-offset-md-3 fr-col-offset-xl-2 fr-text-left fr-pb-8v">
+        <div class="fr-container-md">
+          <h1 class="fr-gradient__title">{{ project.title }}</h1>
         </div>
       </div>
     </template>

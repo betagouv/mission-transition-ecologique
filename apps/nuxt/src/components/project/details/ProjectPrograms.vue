@@ -4,6 +4,7 @@
     id="project-aids-title"
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
     title="💰 Mes aides"
+    container-from="md"
   >
     <template #content>
       <client-only fallback-tag="div">
