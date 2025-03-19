@@ -1,99 +1,123 @@
 <template>
-  <DsfrInputGroup :error-message="errorMessage">
-    <label
-      v-if="option.label"
-      class="fr-label fr-mb-2v"
-      :for="`input-${option.id}`"
-    >
-      {{ option.label[Translation.lang] }}
-    </label>
-    <span
-      v-if="option.hintLabel"
-      class="fr-hint-text fr-mb-2v"
-    >
-      {{ option?.hintLabel?.[Translation.lang] }}
-    </span>
+  <div
+    ref="teeSearchBar"
+    class="search-bar"
+  >
     <div
-      v-if="option?.placeholder"
-      class="fr-mb-1v fr-bg--grey tee-font-style--italic"
+      class="fr-input-group fr-mb-0"
+      :class="errorMsg ? 'fr-input-group--error' : 'fr-input-group--valid'"
     >
-      {{ option?.placeholder?.[Translation.lang] }}
+      <span
+        v-if="hint"
+        :class="`${backgroundColor ? `fr-text--${backgroundColor}` : ''}`"
+        class="fr-hint-text fr-col-justify--left fr-mb-2v"
+      >
+        {{ hint }}
+      </span>
+      <div
+        class="fr-search-bar"
+        :class="`${isLoading ? 'fr-search-bar--loading' : ''} fr-search-bar--${color} ${isLarge ? 'fr-search-bar-lg' : ''}`"
+        role="search"
+      >
+        <DsfrInput
+          v-model="inputModel"
+          :name="`manual-register-${name}`"
+          :class="`${backgroundColor ? `fr-input-bg--${backgroundColor}` : ''}`"
+          class="fr-input"
+          type="search"
+          :placeholder="placeholder"
+          @click="emit('click')"
+          @update:model-value="updateModelValue"
+          @keyup.enter="triggerSearch"
+        />
+        <DsfrButton
+          v-if="inputModel"
+          :class="`${backgroundColor ? `fr-bg--${backgroundColor}` : ''}`"
+          class="search-clear fr-radius-a--0"
+          icon="fr-icon-close-line"
+          icon-only
+          no-outline
+          tertiary
+          :disabled="isLoading"
+          @click="resetSearch"
+        />
+        <DsfrButton
+          :class="`fr-bg--${color} fr-text--${searchColor}`"
+          class="search-button"
+          tertiary
+          no-outline
+          @click="triggerSearch"
+        />
+      </div>
+      <div :class="errorMsg ? 'fr-error-text ' : ''">
+        {{ errorMsg }}
+      </div>
     </div>
-    <div
-      id="header-search"
-      :class="isLoading ? 'fr-search-bar--loading' : ''"
-      class="fr-search-bar fr-search-bar--blue-france fr-search-bar-lg"
-      role="search"
-    >
-      <DsfrInput
-        :id="`input-${option.id}`"
-        v-model="model"
-        :name="`input-${option.id}`"
-        :disabled="isLoading"
-        :hint="option?.placeholder?.[Translation.lang]"
-        type="search"
-        @keyup.enter="onClick"
-      />
-      <DsfrButton
-        v-if="model"
-        class="search-clear"
-        icon="fr-icon-close-line"
-        icon-only
-        no-outline
-        tertiary
-        :disabled="isLoading"
-        @click="onClear"
-      />
-      <DsfrButton
-        class="search-button"
-        :disabled="isLoading"
-        :title="Translation.t('input.search')"
-        @click="onClick"
-      />
-    </div>
-    <div
-      v-if="hasHint && option.hint"
-      class="tee-input-hint fr-mt-4v"
-    >
-      <span v-html="option.hint[Translation.lang]" />
-    </div>
-  </DsfrInputGroup>
+    <slot name="results"></slot>
+  </div>
 </template>
-
-<script setup lang="ts">
-// CONSOLE LOG TEMPLATE
-// console.log(`TeeDsfrSearchBar > FUNCTION_NAME > MSG_OR_VALUE :`)
-
-import { type TrackOptionsInput } from '@/types'
-import Translation from '@/tools/translation'
-import { DsfrInputGroup, DsfrInput, DsfrButton } from '@gouvminint/vue-dsfr'
+<script lang="ts" setup>
+import { onClickOutside, useDebounce } from '@vueuse/core'
+import { Color } from '@/types'
 
 interface Props {
-  option: TrackOptionsInput
-  isLoading?: boolean
-  errorMessage?: string
-  hasHint?: boolean
+  errorMsg: string | undefined
+  hint?: string
+  deactivateClickOutside?: boolean
+  isLoading: boolean
+  isLarge?: boolean
+  name: string
+  backgroundColor?: Color
+  searchColor?: Color
+  color: Color
+  placeholder?: string | undefined
 }
-withDefaults(defineProps<Props>(), {
-  isLoading: false,
-  errorMessage: undefined,
-  hasHint: false
+const props = withDefaults(defineProps<Props>(), {
+  hint: '',
+  backgroundColor: Color.white,
+  isLarge: false,
+  deactivateClickOutside: false,
+  searchColor: Color.blueFrance,
+  placeholder: ''
 })
 
-const model = defineModel<string | undefined>()
+const inputModel = defineModel<string>()
+const debouncedInputModel = useDebounce(inputModel, 1000)
+const teeSearchBar = ref(null)
+const emit = defineEmits(['resetSearch', 'search', 'click'])
+let isSearchTriggered = false
 
-const emit = defineEmits<{
-  onClick: []
-  onClear: []
-}>()
-
-const onClick = () => {
-  emit('onClick')
+const resetSearch = () => {
+  inputModel.value = ''
+  emit('resetSearch')
+  isSearchTriggered = false
+}
+const updateModelValue = (value: string) => {
+  inputModel.value = value
+  isSearchTriggered = false
+}
+const triggerSearch = () => {
+  if (!isSearchTriggered) {
+    emit('search')
+    isSearchTriggered = true
+  }
 }
 
-// functions
-const onClear = () => {
-  model.value = undefined
-  emit('onClear')
-}
+watch(debouncedInputModel, (newValue) => {
+  if (newValue && !isSearchTriggered) {
+    emit('search')
+  }
+})
+
+onClickOutside(teeSearchBar, () => {
+  if (!props.deactivateClickOutside) {
+    resetSearch()
+  }
+})
 </script>
+<style lang="scss" scoped>
+.search-bar {
+  position: relative;
+  margin-bottom: 0;
+}
+</style>
