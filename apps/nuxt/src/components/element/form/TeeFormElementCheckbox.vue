@@ -9,13 +9,6 @@
     <template #label>
       <span :teste2e-selector="`${fieldKey}-${field.type}`">
         {{ field.label }}
-        <router-link
-          v-if="field.labelLink"
-          :to="{ name: field.labelLink.route }"
-          target="_blank"
-        >
-          {{ field.labelLink.text }}
-        </router-link>
         <code>*</code></span
       >
     </template>
