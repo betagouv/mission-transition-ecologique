@@ -34,7 +34,7 @@
         :class="{ 'fr-text--grey': !isCompanyDataSelected }"
       >
         <div class="fr-grid-row">
-          <div class="fr-col-hidden-lg">
+          <div class="fr-col-hidden-md">
             <div class="fr-col-12">
               <div
                 class="company-filter-icon fr-pl-1v"
@@ -49,7 +49,7 @@
               </div>
             </div>
           </div>
-          <div class="fr-hidden fr-unhidden-lg">
+          <div class="fr-hidden fr-unhidden-md">
             <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pt-1v fr-pl-1v fr-pr-3v">
               <div
                 class="company-filter-icon-large"

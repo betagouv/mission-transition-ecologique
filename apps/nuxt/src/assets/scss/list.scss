@@ -1,0 +1,12 @@
+@use 'setting';
+@use 'tool';
+
+ol.fr-order-list {
+  --ol-content: counters(li-counter,".") " | ";
+  --ol-start: 2.5rem;
+
+  & > li::marker {
+    color: setting.$purple;
+    font-size: 1.5rem;
+  }
+}

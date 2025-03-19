@@ -1,13 +1,13 @@
 <template>
   <LayoutList>
     <template
-      v-if="withCounterAndModalFilter"
+      v-if="withCounter"
       #counter
     >
       <TeeCounterResult :to-count="projectList" />
     </template>
     <template
-      v-if="withCounterAndModalFilter"
+      v-if="withModalFilter"
       #modalFilter
     >
       <ProjectModalFilter />
@@ -29,8 +29,8 @@ import { ProjectType } from '@tee/data'
 
 interface Props {
   projectList?: ProjectType[]
-  withCounterAndModalFilter?: boolean
+  withCounter?: boolean
+  withModalFilter?: boolean
 }
-
 defineProps<Props>()
 </script>
