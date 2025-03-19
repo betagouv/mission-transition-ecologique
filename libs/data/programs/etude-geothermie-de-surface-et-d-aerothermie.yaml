@@ -34,6 +34,7 @@ url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etude-daide-a-decision-projets-geothermie-surface-daerothermie
 nature de l'aide: étude
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
+activable en autonomie: oui
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
@@ -115,10 +116,17 @@ publicodes:
       - questionnaire . objectif prioritaire . est ma performance énergétique
 champs conditionnels:
   - toutes ces conditions:
+      - effectif >= 0
+      - effectif <= 49
+    Montant du dispositif: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
+    Eligibilité taille: Pour une petite entreprise ou dans le cadre d’une activité non économique
+  - toutes ces conditions:
       - effectif >= 50
       - effectif <= 249
     Montant du dispositif: Jusqu'à 60% du coût de l'étude, dans un maximum de 100 000 €
+    Eligibilité taille: Pour une moyenne entreprise
   - toutes ces conditions:
       - effectif >= 250
       - effectif <= 4999
     Montant du dispositif: Jusqu'à 50% du coût de l'étude, dans un maximum de 100 000 €
+    Eligibilité taille: Pour une grande entreprise

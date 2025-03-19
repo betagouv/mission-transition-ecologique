@@ -93,7 +93,7 @@
 import Navigation from '@/tools/navigation'
 import { Scroll } from '@/tools/scroll'
 import { computed } from 'vue'
-import { type ReqResp, TrackId, FormDataType, InputFieldUnionType, ProjectType } from '@/types'
+import { type ReqResp, FormDataType, InputFieldUnionType, ProjectType } from '@/types'
 import Translation from '@/tools/translation'
 import TeeDsfrButton from '@/components/element/button/TeeDsfrButton.vue'
 import Format from '@/tools/format'
@@ -166,7 +166,7 @@ const saveForm = async () => {
     requestResponse.value = await opportunity.fetch()
     // analytics / send event
     if (requestResponse.value.id) {
-      Analytics.sendEvent(TrackId.Results, getEventName(), { opportunityId: requestResponse.value.id })
+      Analytics.sendEvent(getEventName(), { opportunityId: requestResponse.value.id })
     }
   } finally {
     isLoading.value = false

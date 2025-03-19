@@ -169,6 +169,6 @@ const closeModal = () => {
 
 .register-modal-lg {
   background-image: url('/images/TEE-modal-bottom.svg');
-  min-height: calc(100vh - var(--header-height));
+  height: calc(100vh - var(--header-height));
 }
 </style>

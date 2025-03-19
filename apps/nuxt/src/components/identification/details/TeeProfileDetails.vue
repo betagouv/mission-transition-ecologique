@@ -126,13 +126,13 @@ const saveProfile = async () => {
     if (!props.manual) {
       const companyData = CompanyData.company as EstablishmentFront
       if (companyData) {
-        Analytics.sendEvent('register_siret_modal', 'register_siret_modal', {
+        Analytics.sendEvent('register_siret_modal', {
           secteur: companyData.secteur,
           siret: companyData.siret
         })
       }
     } else {
-      Analytics.sendEvent('register_manual_modal', 'register_manual_modal')
+      Analytics.sendEvent('register_manual_modal')
     }
 
     Navigation.toggleRegisterModal(false)
