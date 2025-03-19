@@ -29,10 +29,6 @@ export type DefaultFieldFormType = {
     route: RouteName
     text: string
   }
-  labelLink?: {
-    route: RouteName
-    text: string
-  }
   wrapperClass?: string
   rows?: number
   colSize?: number
