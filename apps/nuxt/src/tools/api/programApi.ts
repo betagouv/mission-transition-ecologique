@@ -1,6 +1,6 @@
 import RequestApi from '@/tools/api/requestApi'
 import { ResultApi } from '@/tools/api/resultApi'
-import { ProgramData, QuestionnaireData, QuestionnaireDataEnum } from '@/types'
+import { ProgramTypeForFront, QuestionnaireData, QuestionnaireDataEnum } from '@/types'
 
 export default class ProgramApi extends RequestApi {
   protected readonly url = '/api/programs'
@@ -10,12 +10,12 @@ export default class ProgramApi extends RequestApi {
     this.query = this.buildQuery
   }
 
-  async get(): Promise<ResultApi<ProgramData[]>> {
-    return await super.getJson<ProgramData[]>()
+  async get(): Promise<ResultApi<ProgramTypeForFront[]>> {
+    return await super.getJson<ProgramTypeForFront[]>()
   }
 
-  async getOne(id: string): Promise<ResultApi<ProgramData>> {
-    return await super.getJson<ProgramData>(this.url + '/' + id)
+  async getOne(id: string): Promise<ResultApi<ProgramTypeForFront>> {
+    return await super.getJson<ProgramTypeForFront>(this.url + '/' + id)
   }
 
   get buildQuery(): string {

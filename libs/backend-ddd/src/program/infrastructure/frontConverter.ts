@@ -1,5 +1,5 @@
-import { PublicodesKeys, FiltersKeys, PublicodeObjective } from '@tee/common'
-import { ProgramTypeWithEligibility, PublicodesCondition, ThemeId } from '@tee/data'
+import { PublicodesKeys, PublicodeObjective } from '@tee/common'
+import { FiltersKeys, ProgramTypeWithEligibility, PublicodesCondition, ThemeId } from '@tee/data'
 import type { ObjectivePublicodeData } from './types'
 
 class FrontConverter {
