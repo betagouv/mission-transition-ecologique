@@ -95,7 +95,7 @@ export default class Navigation {
   }
 
   isQuestionnaire() {
-    return this.isQuestionnaireResult() || this.isQuestionnaireResultDetail()
+    return this.isQuestionnaireResult() || this.isQuestionnaireResultDetail() || this.isByRouteName(RouteName.Questionnaire)
   }
 
   isQuestionnaireThemeCards() {

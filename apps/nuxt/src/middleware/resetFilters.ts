@@ -1,7 +1,7 @@
-import { RouteName } from '@/types'
+import Navigation from '@/tools/navigation'
 
-export default defineNuxtRouteMiddleware((to, from) => {
-  if (from.name !== RouteName.Homepage) {
+export default defineNuxtRouteMiddleware(() => {
+  if (new Navigation().isQuestionnaire()) {
     useFiltersStore().resetFilters()
   }
 })
