@@ -6,17 +6,23 @@ from etl.pipelines.opportunity_pipeline import OpportunityPipeline
 def update_database():
     print("▶ Starting the database updates")
 
-    # print("\n▶ Update the web registration siret events")
-    # WebStatsPipeline().update_web_registered_siret_table()
+    print("\n▶ Update the web registration siret events")
+    WebStatsPipeline().update_web_registered_siret_table()
 
     print("\n▶ Update the web visitor statistics")
     WebStatsPipeline().update_website_daily_visit_stats()
 
-    # print("\n▶ Update the opportunities")
-    # OpportunityPipeline().update_opportunity_table()
+    print("\n▶ Update the external link click events")
+    WebStatsPipeline().update_external_link_clicked_table()
 
-    # print("\n▶ Add new sirets in the company table")
-    # CompaniesPipeline().process_new_sirets()
+    print("\n▶ Update the detail pages visit events")
+    WebStatsPipeline().update_detail_page_view_table()
+
+    print("\n▶ Update the opportunities")
+    OpportunityPipeline().update_opportunity_table()
+
+    print("\n▶ Add new sirets in the company table")
+    CompaniesPipeline().process_new_sirets()
 
     print("\nEnd of the database update")
 

@@ -4,11 +4,16 @@ from etl.transform.siret_event import SiretEvent
 from datetime import datetime
 from dateutil import parser
 import hashlib
+from urllib.parse import urlparse
 
 
 class PosthogDTO:
 
-    def convert_raw_event_to_posthog_events(self, event):
+    def convert_raw_response_to_posthog_events(self, posthog_response):
+        events = posthog_response["results"]
+        return [self.convert_raw_event_to_posthog_event(event) for event in events]
+
+    def convert_raw_event_to_posthog_event(self, event):
         linked_event_id = ""
         opportunity_id = ""
         siret = ""
@@ -30,12 +35,16 @@ class PosthogDTO:
         except Exception as error:
             pass
 
-        company_id = self.generate_company_id(company)
+        if not siret:
+            siret = self.get_siret_from_company(company)
+
+        if not title:
+            title = self.get_title_from_url(url)
 
         return {
             "event_id": event[0],
             "event_name": event[1],
-            "event_date": event[3],
+            "event_date": parser.parse(event[3]),
             "distinct_id": event[4],
             "session_id": event[7],
             "person_id": event[9],
@@ -47,35 +56,24 @@ class PosthogDTO:
             "url": url,
             "raw_company": company,
             "link": link,
-            "company_id": company_id,
         }
-
-    def convert_raw_response_to_siret_events(self, posthog_response):
-        events = posthog_response["results"]
-        domain_events = []
-        for event in events:
-            siret = ""
-            try:
-                parsed_object = json.loads(event[2])
-                siret = parsed_object.get("siret", "")
-            except Exception as error:
-                pass
-            date = parser.parse(event[3])
-            domain_events.append(SiretEvent(date, siret))
-        return domain_events
 
     def convert_raw_response_to_array(self, posthog_response):
         return posthog_response["results"]
 
-    def generate_company_id(self, raw_company_data):
+    def get_siret_from_company(self, raw_company_data):
         if not raw_company_data:
-            return None
+            return ""
+        try:
+            parsed_data = json.loads(raw_company_data)
+            return parsed_data.get("siret", "")
+        except:
+            return ""
 
-        parsed_data = json.loads(raw_company_data)
-        combined_data = (
-            parsed_data.get("codeNAF", "")
-            + parsed_data.get("codePostal", "")
-            + parsed_data.get("structure_size", "")
-        )
-        hash_object = hashlib.sha256(combined.encode())
-        return hash_object.hexdigest()
+    def get_title_from_url(self, url):
+        if not url:
+            return ""
+
+        parsed_url = urlparse(url)
+        path = parsed_url.path.rstrip("/")
+        return path.split("/")[-1]

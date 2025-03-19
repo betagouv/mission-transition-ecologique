@@ -34,6 +34,22 @@ def get_last_siret_event_date():
     return result[0][0]
 
 
+def get_last_click_event_date():
+    ### Get the last date in the click event date table. Return a %Y-%m-%d %H:%M:%S STRING ###
+    result = DBManager().query(
+        "SELECT MAX(date) AS last_date FROM __SCHEMA_NAME__.external_link_clicked_events;"
+    )
+    return result[0][0]
+
+
+def get_last_detail_page_view_event_date():
+    ### Get the last date in the click event date table. Return a %Y-%m-%d %H:%M:%S STRING ###
+    result = DBManager().query(
+        "SELECT MAX(date) AS last_date FROM __SCHEMA_NAME__.detail_page_view;"
+    )
+    return result[0][0]
+
+
 def get_invalid_sirets():
     result = DBManager().query(
         """SELECT siret FROM __SCHEMA_NAME__.siret_search_error

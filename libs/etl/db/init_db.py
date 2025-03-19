@@ -27,4 +27,5 @@ def reset_test_db():
 
 
 if __name__ == "__main__":
+    # reset_test_db()
     init_db()

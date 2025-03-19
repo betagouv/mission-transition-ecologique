@@ -53,7 +53,9 @@ now = datetime.now()
 
 raw_response = GenericExtractor().get_detail_page_view_events(start_stat_date, now)
 events = raw_response["results"]
-improv = [PosthogDTO().convert_raw_event_to_posthog_events(event) for event in events]
+improv = [
+    PosthogDTO().convert_raw_response_to_posthog_events(event) for event in events
+]
 print(improv[0])
 print([item["company_id"] for item in improv])
 # print(GenericExtractor().get_detail_page_view_events(start_stat_date, now))
