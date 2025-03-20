@@ -214,7 +214,7 @@
     "programs": [
       "aides-au-reemploi-des-emballages",
       "fonds-tourisme-durable",
-      "ormat-2024",
+      "ormat",
       "tremplin",
       "aide-financement-occitanie",
       "ecoproduction-hdf",
@@ -1042,12 +1042,12 @@
   },
   {
     "id": 18,
-    "slug": "vehicule-propre",
-    "title": "Acquisition d'un véhicule propre",
-    "nameTag": "🚘 véhicule propre",
-    "shortDescription": "Un véhicule propre est un véhicule produisant peu d'émissions polluantes lors de son utilisation.",
+    "slug": "voiture-propre",
+    "title": "Acquisition d'une voiture propre",
+    "nameTag": "🚘 voiture propre",
+    "shortDescription": "Une voiture propre est une voiture rejetant peu de CO2 et d'émissions polluantes, et consommant le moins d'énergie possible lors de son utilisation.",
     "image": "/images/projet/vehicule-propre.webp",
-    "longDescription": "Vélo, véhicule électrique ou hybride, à hydrogène, engin moins polluant… Faites-vous accompagner financièrement dans l'acquisition d'un véhicule propre pour vos déplacements professionnels, vos trajets domicile-travail, la mobilité de vos fournisseurs, ou les engins liés à la production. Ainsi, répondez à vos obligations légales, et pratiquez une mobilité verte.",
+    "longDescription": "Voiture électrique, hybride, à hydrogène… Faites-vous accompagner financièrement dans l'acquisition d'une voiture propre pour vos déplacements professionnels, vos trajets domicile-travail, la mobilité de vos équipes, ainsi que celles de vos fournisseurs. Ainsi, répondez à vos obligations légales, et pratiquez une mobilité verte !",
     "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé\n- [**Voitures électriques et bornes de recharge**](https://librairie.ademe.fr/mobilite-et-transport/5877-avis-de-l-ademe-voitures-electriques-et-bornes-de-recharges.html), l'avis de l'ADEME\n- [**Car labelling**](https://carlabelling.ademe.fr/), une fiche de l'ADEME pour comparer l'impact environnemental des véhicules neufs.",
     "themes": [
       "mobility"
@@ -1055,13 +1055,11 @@
     "mainTheme": "mobility",
     "programs": [
       "bonus-ecologique",
-      "engins-moins-polluants",
       "amelioration-qualite-de-l-air",
       "fonds-tourisme-durable",
       "pret-action-climat",
       "prime-a-la-conversion",
       "tremplin",
-      "vehicule-lourd-energies-propres",
       "pret-vert",
       "pret-vert-ademe",
       "aide-financement-occitanie",
@@ -1069,7 +1067,6 @@
       "sites-touristiques-exemplaires",
       "cheque-transition-bioethanol",
       "recharge-vehicule-electrique",
-      "vehicules-lourds-electriques",
       "pret-tourisme",
       "deploiement-flottes-hydrogene",
       "cheque-vert-grand-est",
@@ -1116,8 +1113,8 @@
     "nameTag": "🚲 vélo",
     "shortDescription": "La mise à disposition de vélos est un moyen efficace de favoriser la mobilité active en entreprise.",
     "image": "/images/projet/velo.webp",
-    "longDescription": "Les trajets domicile-travail et professionnels sont le premier poste d’émission de gaz à effet de serre des activités de bureau ! Et pour cause : les ¾ de ces déplacements se font encore seul en voiture, avec d’importants impacts environnementaux.\n\nBon pour la santé, économique et écologique, le vélo et le VAE sont d’excellentes alternatives à la voiture solo pour les déplacements domicile-travail et les déplacements professionnels courts.\n\nPour favoriser l’adoption du vélo, les entreprises peuvent proposer à leurs employés une aide à l'achat, des vélos de fonction, des vélos en libre service et installer un parking à vélos sécurisé. Des douches, vestiaires et casiers peuvent également faciliter la vie des cyclistes du quotidien.",
-    "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé.\n- [**Le forfait mobilités durables (FMD)**](https://www.ecologie.gouv.fr/politiques-publiques/faq-forfait-mobilites-durables-fmd#scroll-nav__2), réponses à toutes vos questions.",
+    "longDescription": "Les trajets domicile-travail et professionnels sont le premier poste d’émission de gaz à effet de serre des activités de bureau ! Et pour cause : les ¾ de ces déplacements se font encore seul en voiture, avec d’importants impacts environnementaux.\n\nBon pour la santé, économique et écologique, le vélo et le vélo à assistance électrique (VAE) sont d’excellentes alternatives à la voiture solo pour les déplacements domicile-travail et les déplacements professionnels courts.\n\nPour favoriser l’adoption du vélo, les entreprises peuvent proposer à leurs employés une aide à l'achat, des vélos de fonction, des vélos en libre service et installer un parking à vélos sécurisé. Des douches, vestiaires et casiers peuvent également faciliter la vie des cyclistes du quotidien.",
+    "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé.\n- [**Le forfait mobilités durables (FMD)**](https://www.ecologie.gouv.fr/politiques-publiques/faq-forfait-mobilites-durables-fmd#scroll-nav__2), réponses à toutes vos questions.\n- [**Les services vélos proposés par les employeurs**](https://librairie.ademe.fr/mobilite-et-transports/5028-les-services-velos-proposes-par-les-employeurs.html), un guide de l'ADEME.",
     "themes": [
       "mobility"
     ],
@@ -1241,7 +1238,7 @@
     "mainTheme": "waste",
     "programs": [
       "diagnostic-dechets",
-      "ormat-2024",
+      "ormat",
       "tremplin",
       "cedre-premier-pas",
       "sud-pret-climat",
@@ -1352,7 +1349,7 @@
       "etude-centres-de-tri",
       "fonds-tourisme-durable",
       "investissement-centre-de-tri",
-      "ormat-2024",
+      "ormat",
       "tremplin",
       "cedre-investissement",
       "sud-pret-climat",
@@ -1871,6 +1868,7 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "cap-transition-ecologique",
+      "decarb-ind-25",
       "prit-hdf"
     ],
     "linkedProjects": [
@@ -2343,7 +2341,7 @@
     "shortDescription": "Un système d'irrigation performant peut vous faire économiser l'eau.",
     "image": "/images/projet/arrosage.webp",
     "longDescription": "Terrasses, jardins et potagers sont gourmands en arrosage. Certains équipements limiteront votre consommation d'eau, comme par exemple :\n\n- un arrosage au goutte-à-goutte\n- un système de récupération d'eau de pluie\n- le paillage (qui limite l'évaporation)\n- la culture d’espèces peu gourmandes en eau et adaptées au climat local\n- le raccordement à un puits existant.",
-    "moreDescription": "- [**Un jardin au naturel**](https://agirpourlatransition.ademe.fr/particuliers/entreprises/maison/jardin-naturel), un guide de l'ADEME\n- [**Comment bien pailler au jardin**](https://librairie.ademe.fr/dechets-economie-circulaire/5486-comment-bien-pailler-au-jardin-.html), une fiche technique.",
+    "moreDescription": "- [**Un jardin au naturel**](https://agirpourlatransition.ademe.fr/particuliers/maison/jardinage/jardin-naturel), un guide de l'ADEME\n- [**Comment bien pailler au jardin**](https://librairie.ademe.fr/dechets-economie-circulaire/5486-comment-bien-pailler-au-jardin-.html), une fiche technique.",
     "themes": [
       "water"
     ],
@@ -2746,7 +2744,7 @@
     "shortDescription": "Une sensibilisation pour inciter vos clients à adopter des comportements responsables.",
     "image": "/images/projet/sensibilisation-ecogestes.webp",
     "longDescription": "Pour appuyer vos efforts visant à réduire la consommation de ressources et la production de déchets de votre établissement, il est important de sensibiliser vos clients aux éco-gestes à adopter.  Dans un hébergement touristique, par exemple, l’affichage de messages pédagogiques dans les chambres peut encourager vos clients à réutiliser les serviettes, limiter l’utilisation des équipements de chauffage ou de climatisation, ou à éteindre les lumières et les appareils électriques lorsqu’ils ne sont pas utilisés. Pour leurs sorties, invitez vos clients à ne laisser aucun déchet derrière eux (emballages, mégots, chewing-gums…).\n\nPour faciliter la mise en place de ces bonnes pratiques, sensibilisez également vos équipes afin qu'elles puissent promouvoir ces comportements vertueux auprès des clients.",
-    "moreDescription": "- [**Le kit écogestes**](https://pronormandietourisme.fr/2024/05/31/kit-ecogestes-ademe/) destiné aux établissements touristiques, proposé par l’ADEME\n- [**Éco-gestes : sensibiliser les touristes**](https://www.ardeche.cci.fr/actualite/eco-gestes-sensibiliser-les-touristes), par la CCI Ardèche\n- [**Le kit « Vive les vacances »**](https://librairie.ademe.fr/consommer-autrement/232-vive-les-vacances--9791029715457.html#/44-type_de_produit-format_electronique), réalisé par l’ADEME",
+    "moreDescription": "- [**Le kit écogestes**](https://pronormandietourisme.fr/2024/05/31/kit-ecogestes-ademe/) destiné aux établissements touristiques, proposé par l’ADEME\n- [**Éco-gestes : sensibiliser les touristes**](https://www.ardeche.cci.fr/actualite/eco-gestes-sensibiliser-les-touristes), par la CCI Ardèche",
     "themes": [
       "energy",
       "water"
@@ -2899,8 +2897,7 @@
     "moreDescription": "- [**Comment réduire la pollution des transports maritimes ?**](https://www.dispositif-reponses.org/cles-pour-comprendre/boite-a-outils/comment-reduire-la-pollution-des-transports-maritimes-) par la Direction Interrégionale de la Mer Méditerranée.\n- **Comment [réduire les émissions de gaz à effet de serre provenant des navires](https://www.imo.org/fr/MediaCentre/HotTopics/pages/reducing-greenhouse-gas-emissions-from-ships.aspx),** par l'Organisation Maritime Internationale (OMI).\n- [**Bilan thématique Navire**](https://librairie.ademe.fr/mobilite-et-transports/708-bilan-thematique-navire-edition-2020.html), un panorama des projets de navire propre à la recherche de solutions moins polluantes, par l'ADEME.",
     "themes": [
       "mobility",
-      "energy",
-      "environmental"
+      "energy"
     ],
     "mainTheme": "mobility",
     "programs": [
