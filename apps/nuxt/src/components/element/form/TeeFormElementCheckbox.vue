@@ -1,13 +1,14 @@
 <template>
   <DsfrCheckbox
     v-model="model"
+    :teste2e-selector="`${fieldKey}-${field.type}`"
     :name="`form-checkbox-${field.label}`"
     :value="`form-checkbox-${field.label}`"
     :valid-message="getValidMessage()"
     :error-message="getErrorMessage()"
   >
     <template #label>
-      <span :teste2e-selector="`${fieldKey}-${field.type}`">
+      <span>
         {{ field.label }}
         <router-link
           v-if="field.hintLink"
