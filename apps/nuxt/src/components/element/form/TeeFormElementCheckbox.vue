@@ -1,27 +1,28 @@
 <template>
-  <DsfrCheckbox
-    v-model="model"
-    :teste2e-selector="`${fieldKey}-${field.type}`"
-    :name="`form-checkbox-${field.label}`"
-    :value="`form-checkbox-${field.label}`"
-    :valid-message="getValidMessage()"
-    :error-message="getErrorMessage()"
-  >
-    <template #label>
-      <span>
-        {{ field.label }}
-        <router-link
-          v-if="field.hintLink"
-          :to="{ name: field.hintLink.route }"
-          target="_blank"
-        >
-          {{ field.hintLink.text }}
-        </router-link>
-        .
-        <code>*</code>
-      </span>
-    </template>
-  </DsfrCheckbox>
+  <div :teste2e-selector="`${fieldKey}-${field.type}`">
+    <DsfrCheckbox
+      v-model="model"
+      :name="`form-checkbox-${field.label}`"
+      :value="`form-checkbox-${field.label}`"
+      :valid-message="getValidMessage()"
+      :error-message="getErrorMessage()"
+    >
+      <template #label>
+        <span>
+          {{ field.label }}
+          <router-link
+            v-if="field.hintLink"
+            :to="{ name: field.hintLink.route }"
+            target="_blank"
+          >
+            {{ field.hintLink.text }}
+          </router-link>
+          .
+          <code>*</code>
+        </span>
+      </template>
+    </DsfrCheckbox>
+  </div>
 </template>
 <script lang="ts" setup>
 import { BooleanFieldInputType } from '@/types'
