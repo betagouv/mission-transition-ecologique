@@ -9,22 +9,18 @@
     <template #label>
       <span :teste2e-selector="`${fieldKey}-${field.type}`">
         {{ field.label }}
-        <code>*</code></span
-      >
+        <router-link
+          v-if="field.hintLink"
+          :to="{ name: field.hintLink.route }"
+          target="_blank"
+        >
+          {{ field.hintLink.text }}
+        </router-link>
+        .
+        <code>*</code>
+      </span>
     </template>
   </DsfrCheckbox>
-  <!-- CHECKBOX HINT -->
-  <span class="fr-hint-text fr-mt-5v">
-    {{ field.hint }}
-    <router-link
-      v-if="field.hintLink"
-      :to="{ name: field.hintLink.route }"
-      target="_blank"
-    >
-      {{ field.hintLink.text }}
-    </router-link>
-    .
-  </span>
 </template>
 <script lang="ts" setup>
 import { BooleanFieldInputType } from '@/types'
