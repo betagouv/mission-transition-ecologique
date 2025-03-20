@@ -85,7 +85,7 @@ tests.forEach((singleTest) => {
           } else if (value.type === 'select' && singleTest.type === 'customProject') {
             await page.locator(selector).selectOption({ label: value.value as string })
           } else if (value.type === 'checkbox' && value.value) {
-            await page.locator(selector).check({ timeout: timeOut })
+            await page.locator(selector).setChecked(true)
           }
         } catch (e) {
           throw new Error(`Error processing field ${fieldKey}: ${(e as Error).message}`)
