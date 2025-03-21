@@ -1,5 +1,4 @@
 import { CoreGenerator } from './coreGenerator'
-import * as schema from '../../../schemas/program-with-publicodes-schema.json'
 import { LogLevel } from '../../common/logger/types'
 import { Operator } from '../types/domain'
 
@@ -14,17 +13,19 @@ export function setOperators(generator: CoreGenerator) {
       program['Opérateur de contact']
     )
     generator.valid = false
+    return
   }
 
-  if (!validateOperator(program['Opérateur de contact'][0].Nom)) {
+  if (!program['Opérateur de contact'][0].Nom) {
     logger.log(
       LogLevel.Critic,
-      'Opérateur de contact inconnu, nécessite intervention manuelle sur le code dispositif non créé ou mis à jour',
+      "L'opérateur de contact n'a pas de nom. A modifier dans la table opérateur de baserow. Programme non généré dans l'attente de la modification",
       program['Id fiche dispositif'],
       program.id,
       program['Opérateur de contact'][0]
     )
     generator.valid = false
+    return
   }
   generator.yamlContent['opérateur de contact'] = program['Opérateur de contact'][0].Nom
 
@@ -36,21 +37,16 @@ export function setOperators(generator: CoreGenerator) {
 
 function filterValidOperators(generator: CoreGenerator): Operator[] {
   return generator.program['Autres opérateurs'].filter((operator) => {
-    const isValid = validateOperator(operator.Nom)
-    if (!isValid) {
+    const hasName = operator.Nom
+    if (!hasName) {
       generator.logger.log(
         LogLevel.Minor,
-        'Un des "autres opérateurs" est invalide. Valeur ignorée. sa prise en compte nécessite une intervention mannuelle sur le code',
+        "Un des 'autres opérateurs' n'a pas de nom, sa valeur est ignorée. Sa prise en compte nécessite l'ajout de son nom dans la colonne baserow correspondante",
         generator.program['Id fiche dispositif'],
         generator.program.id,
         operator.Nom
       )
     }
-    return isValid
+    return hasName
   })
-}
-
-function validateOperator(operator: string): boolean {
-  const operatorEnum = schema.$defs.operators.enum
-  return operatorEnum.includes(operator)
 }
