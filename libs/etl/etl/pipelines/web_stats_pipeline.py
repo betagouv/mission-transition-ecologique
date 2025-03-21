@@ -18,6 +18,7 @@ from etl.load.click_events import insert_click_events
 from etl.load.detail_page_view import insert_detail_page_view_events
 from etl.load.daily_web_stats import insert_daily_web_stats
 
+
 class WebStatsPipeline:
 
     def update_web_registered_siret_table(self):

@@ -9,7 +9,6 @@ def get_new_sirets():
             EXCEPT
             SELECT DISTINCT siret FROM __SCHEMA_NAME__.companies;
         """
-    # TODO create an "unknown SIRET table" to avoid requerying all the time the SIRET not found in the siren api.
     try:
         result = DBManager().query(query)
         return [row[0] for row in result]
@@ -18,36 +17,31 @@ def get_new_sirets():
         return []
 
 
+def get_max(table, column):
+    result = DBManager().query(
+        "SELECT MAX(" + column + ") FROM __SCHEMA_NAME__." + table + ";"
+    )
+    return result[0][0]
+
+
 def get_last_webstat_date():
     ### Get the last date in the daily web stats format. Return a YYYY-MM-DD STRING ###
-    result = DBManager().query(
-        "SELECT stat_date FROM __SCHEMA_NAME__.daily_web_stats ORDER BY stat_date DESC LIMIT 1"
-    )
-    return result[0][0] if result else None
+    return get_max("daily_web_stats", "stat_date")
 
 
 def get_last_siret_event_date():
     ### Get the last date in the daily web stats format. Return a %Y-%m-%d %H:%M:%S STRING ###
-    result = DBManager().query(
-        "SELECT MAX(date) AS last_date FROM __SCHEMA_NAME__.web_registered_siret;"
-    )
-    return result[0][0]
+    return get_max("web_registered_siret", "date")
 
 
 def get_last_click_event_date():
     ### Get the last date in the click event date table. Return a %Y-%m-%d %H:%M:%S STRING ###
-    result = DBManager().query(
-        "SELECT MAX(date) AS last_date FROM __SCHEMA_NAME__.external_link_clicked_events;"
-    )
-    return result[0][0]
+    return get_max("external_link_clicked_events", "date")
 
 
 def get_last_detail_page_view_event_date():
     ### Get the last date in the click event date table. Return a %Y-%m-%d %H:%M:%S STRING ###
-    result = DBManager().query(
-        "SELECT MAX(date) AS last_date FROM __SCHEMA_NAME__.detail_page_view;"
-    )
-    return result[0][0]
+    return get_max("detail_page_view", "date")
 
 
 def get_invalid_sirets():

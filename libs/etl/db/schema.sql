@@ -39,7 +39,8 @@ CREATE TABLE IF NOT EXISTS __SCHEMA_NAME__.companies (
 -- Table daily_web_stats
 CREATE TABLE IF NOT EXISTS __SCHEMA_NAME__.daily_web_stats (
     stat_date DATE PRIMARY KEY,
-    unique_visitors INTEGER
+    unique_visitors INTEGER,
+    detail_page_unique_visitors INTEGER
 );
 
 -- Table web_registered_siret
@@ -53,16 +54,9 @@ CREATE TABLE IF NOT EXISTS __SCHEMA_NAME__.siret_search_error (
     fail_count INT
 );
 
-
 -- Ensuring there are no duplicates entry in web_registered_siret--
 ALTER TABLE __SCHEMA_NAME__.web_registered_siret
 ADD CONSTRAINT unique_date_siret UNIQUE (date, siret);
-
-
-ALTER TABLE statistics_test.daily_web_stats
-ADD COLUMN detail_page_unique_visitors INTEGER;
-
-
 
 CREATE TABLE IF NOT EXISTS statistics_test.external_link_clicked_events (
     siret text,
@@ -76,7 +70,6 @@ CREATE TABLE IF NOT EXISTS statistics_test.external_link_clicked_events (
     event_id UUID PRIMARY KEY,
     web_user_id UUID
 );
-
 
 CREATE TABLE IF NOT EXISTS statistics_test.detail_page_view (
     siret text,
