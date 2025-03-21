@@ -7,11 +7,18 @@ def insert_daily_web_stats(web_stats: list[DailyWebStat]):
         return
 
     query = f"""
-        INSERT INTO __SCHEMA_NAME__.daily_web_stats (stat_date, unique_visitors)
-        VALUES (%s, %s)
+        INSERT INTO __SCHEMA_NAME__.daily_web_stats (stat_date, unique_visitors, detail_page_unique_visitors)
+        VALUES (%s, %s, %s)
         ON CONFLICT (stat_date) DO NOTHING;
     """
-    values = [(daily_data.date, daily_data.visit_count) for daily_data in web_stats]
+    values = [
+        (
+            daily_data.date,
+            daily_data.visit_count,
+            daily_data.detail_page_visit_count,
+        )
+        for daily_data in web_stats
+    ]
 
     try:
         DBManager().query(query, values)
