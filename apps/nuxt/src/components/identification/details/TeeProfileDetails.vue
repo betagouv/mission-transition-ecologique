@@ -27,7 +27,9 @@
     <TeeDsfrButton
       :class="Breakpoint.isMobile() ? 'fr-btn-fullwidth' : ''"
       class="fr-bg--yellow fr-text--blue-france fr-col-justify--center"
-      label="Enregistrer et fermer"
+      :label="getSaveProfileButtonLabel"
+      :icon="getSaveProfileButtonIcon"
+      icon-right
       @click="saveProfile"
     />
   </div>
@@ -35,24 +37,15 @@
 <script setup lang="ts">
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
-import {
-  RegisterDetailType,
-  RegisterDetails,
-  CompanyDataStorageKey,
-  CompanyDataType,
-  Region,
-  EstablishmentFront,
-  NAF1,
-  RouteName
-} from '@/types'
+import { RegisterDetailType, RegisterDetails, CompanyDataStorageKey, CompanyDataType, Region, EstablishmentFront, NAF1 } from '@/types'
 import Analytics from '@/tools/analytic/analytics'
 import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
 import { CompanyData } from '@/tools/companyData'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 
-const router = useRouter()
 const navigation = new Navigation()
+const navigationStore = useNavigationStore()
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -110,6 +103,14 @@ const canBeSaved = computed(() => {
   return profile.value.activity.value && profile.value.localisation.value && profile.value.size.value
 })
 
+const getSaveProfileButtonLabel = computed(() => {
+  return navigationStore.isFromQuestionnaireCtaRegisterModal ? 'suivant' : 'Enregistrer et fermer'
+})
+
+const getSaveProfileButtonIcon = computed(() => {
+  return navigationStore.isFromQuestionnaireCtaRegisterModal ? 'fr-icon-arrow-right-line' : ''
+})
+
 const saveProfile = async () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
@@ -135,14 +136,10 @@ const saveProfile = async () => {
     }
 
     await UsedTrack.updateQuestionnaireStep()
-    await new ProjectManager().update()
-    await new ProgramManager().update()
-
-    if (navigation.isByRouteName(RouteName.Homepage) && useNavigationStore().isFromCtaRegisterModal) {
-      useNavigationStore().isFromCtaRegisterModal = false
-      await router.push({
-        name: RouteName.CatalogProjects
-      })
+    await navigation.redirectAfterModal()
+    if (!navigationStore.isFromQuestionnaireCtaRegisterModal) {
+      await new ProjectManager().update()
+      await new ProgramManager().update()
     }
     Navigation.toggleRegisterModal(false)
   } else {
