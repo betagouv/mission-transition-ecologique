@@ -1,7 +1,7 @@
 <template>
   <div
     class="fr-card fr-bg--blue-france--lightness fr-radius-a--1v fr-card--shadow fr-text-center fr-pt-7v"
-    @click="toQuestionnaire"
+    @click="toQuestionnaire()"
   >
     <div class="fr-card__body">
       <div class="fr-card__content">
@@ -20,7 +20,6 @@
           :class="{ 'fr-bg--purple--light': button.isHovering.value }"
           @mouseover="button.isHovering.value = true"
           @mouseleave="button.isHovering.value = false"
-          @click="toQuestionnaire"
         ></DsfrButton>
       </div>
     </div>
@@ -50,6 +49,7 @@ withDefaults(defineProps<Props>(), {
     ' et les <strong>financements</strong> disponibles pour votre entreprise'
 })
 const toQuestionnaire = async () => {
+  console.log('click to questionnaire')
   if (isDataFull.value) {
     await router.push({
       name: RouteName.QuestionnaireStart
