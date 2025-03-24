@@ -38,5 +38,5 @@ jobs:
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> $ENV_PATH
           echo "DB_PORT=${{ secrets.DB_PORT }}" >> $ENV_PATH
 
-      - run: npx nx run @tee/etl:build
+      - run: npx nx run @tee/etl:build-docker
       - run: npx nx run @tee/etl:update-database-ci

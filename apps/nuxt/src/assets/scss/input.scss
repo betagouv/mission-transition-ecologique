@@ -8,7 +8,7 @@
 }
 
 .fr-input {
-  &--white {
+  &-bg--white {
     background-color: setting.$white;
   }
 
@@ -23,8 +23,4 @@
     font-style: normal !important;
     color: setting.$text-grey;
   }
-}
-
-.fr-input--empty-text {
-  height: 1.25rem;
 }

@@ -52,19 +52,6 @@
       <div class="fr-footer__partners fr-hidden-sm">
         <h4 class="fr-footer__partners-title">Nos partenaires</h4>
         <div class="fr-footer__partners-logos fr-grid-row">
-          <div class="fr-footer__partners-main">
-            <a
-              class="footer__partners-link fr-my-4v fr-mr-4v fr-bg--none"
-              target="_blank"
-              :href="mainPartner.href"
-            >
-              <img
-                class="fr-footer__logo fr-responsive-img"
-                :src="mainPartner.img"
-                :alt="mainPartner.label"
-              />
-            </a>
-          </div>
           <div class="fr-footer__partners-sub">
             <ul>
               <li
@@ -175,12 +162,6 @@ const gouvLinks = [
   }
 ]
 
-const mainPartner = {
-  label: 'Service public',
-  img: '/images/logos/service-public.fr.svg',
-  href: 'https://conseillers-entreprises.service-public.fr/'
-}
-
 const mainLinks = [
   {
     // router ok
@@ -216,6 +197,11 @@ const mainLinks = [
 ]
 
 const operators = [
+  {
+    label: 'Conseiller Entreprise',
+    img: '/images/logos/ce-logo.svg',
+    href: 'https://conseillers-entreprises.service-public.fr/'
+  },
   {
     label: 'ADEME',
     img: '/images/logos/ademe.svg',
