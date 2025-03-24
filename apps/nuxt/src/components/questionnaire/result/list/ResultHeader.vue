@@ -26,11 +26,13 @@ import Translation from '@/tools/translation'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { CompanyData } from '@/tools/companyData'
 
-const resume: string = Translation.t('programResults.resume', {
-  effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyData.size ?? '')),
-  secteur: TrackStructure.getSector() ?? CompanyData.company?.secteur ?? '',
-  region: TrackStructure.getRegion() ?? CompanyData.company?.region ?? ''
-})
+const resume = computed<string>(() =>
+  Translation.t('programResults.resume', {
+    effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyData.size ?? '')),
+    secteur: TrackStructure.getSector() ?? CompanyData.company?.secteur ?? '',
+    region: TrackStructure.getRegion() ?? CompanyData.company?.region ?? ''
+  })
+)
 const isSpecificGoal = UsedTrack.isSpecificGoal()
 const hasRegisteredData = CompanyData.isDataFull()
 </script>
