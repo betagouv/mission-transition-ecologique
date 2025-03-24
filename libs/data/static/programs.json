@@ -237,7 +237,7 @@
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
         "Plus de 250 salariés",
-        "Éligible aux micro-entreprises"
+        "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
         "France et territoires d'outre-mer"
@@ -356,12 +356,18 @@
           ]
         },
         "toutes ces conditions": [
-          "a un effectif éligible"
+          "a un effectif éligible",
+          "a une categorie legale eligible"
         ]
       },
       "entreprise . a un effectif éligible": {
         "toutes ces conditions": [
           "effectif >= 250"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
         ]
       },
       "entreprise . est dans un secteur d'activité ciblé": {
@@ -6807,6 +6813,203 @@
     "id": "coup-de-pouce-chauffage"
   },
   {
+    "titre": "Décarbonation de l'industrie",
+    "promesse": "Financez la décarbonation de votre industrie",
+    "description": "Vous êtes un site industriel ? L'ADEME vous accompagne pour réduire vos émissions de gaz à effet de serre. Bénéficiez d’un soutien pour optimiser votre efficacité énergétique, changer vos sources d’énergie ou matières premières, et capturer le carbone. Contribuez ainsi à atteindre vos objectifs environnementaux tout en respectant les normes climatiques.",
+    "description longue": "Les dépenses d’investissement éligibles correspondent notamment aux :\n- Equipements de production (outil productif) ;\n- Equipements nécessaires à l'outil productif telles que les utilités (vapeur, air comprimé, etc.) ;\n- Equipements périphériques tels que : raccordement/armoire électrique, tuyauterie,\nautomatisme, etc. ;\n- Equipements de mesure, comptage, suivi et reporting des consommations d'énergie ou des émissions de GES ;\n- Les travaux d'installation des équipements listés ci-dessus, y compris le génie civil,\nterrassement, VRD ;\n- Les études d'ingénierie ainsi que les études de suivi de réalisation et la coordination des travaux. Pour les études réalisées en interne, les dépenses seront limitées à 10% de l'ensemble des autres dépenses éligibles ; le pourcentage de ces coûts au regard des dépenses éligibles totales devra être validé par un commissaire aux comptes ou un expert-comptable externe ;\n- Les dépenses externes de formation du personnel, dans la limite de 5% des autres dépenses éligibles.\n\nQuatre thématiques sont éligibles :\n1- Efficacité énergétique\n- Remplacement d'un équipement par un équipement énergétiquement plus performant\n- Mise en place d’équipements de récupération de chaleur \n- Valorisation de combustible fatal sous forme 100 % thermique\n\n2- Modification du mix énergétique\n- Electrification des procédés et des utilités : (four électrique, compression mécanique de vapeur, pompe à chaleur, séparation membranaire ...) ;\n- Intégration d’énergies thermiques renouvelables ou de récupération \n\n3- Modification du mix matières\n- Procédés de recyclage ou utilisation de matière recyclée conduisant à une réduction des émissions de GES ;\n- Procédés d'efficacité matière ;\n- Utilisation de matières premières alternatives conduisant à une réduction des émissions de GES ;\n- Réduction d’autres GES que le CO2 (exemples : le méthane (CH4), le protoxyde d’azote ((N2O),\netc.).\n\n4-Captage, stockage et utilisation du CO2\n- Captage et séquestration du carbone.\n- Captage et utilisation de carbone, uniquement pour des projets de minéralisation.",
+    "début de validité": "09/12/2024",
+    "fin de validité": "15/05/2025",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "ADEME",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20240530/decarbonation-lindustrie-decarb-ind-25",
+    "nature de l'aide": "financement",
+    "montant du financement": "Selon projet",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/sites/default/files/DECARB%20IND%2025%20-%20Foire%20aux%20questions%20-%202025.pdf",
+            "texte": "Conditions d'éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/aides-financieres/aap/decarbonation-de-lindustrie-decarb-ind-25",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME instruit votre dossier. Cette phase dure 4 à 6 mois à partir de la date de clôture de l'appel à projets. Si votre dossier est sélectionné, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez vos investissements."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "- Les industries et activités inéligibles sont\n  - Activités tertiaires ;\n  - Activités agricoles (sauf industrie agro-alimentaire) ;\n  - Activités du secteur BTP sur chantier ;\n  - Unités de Valorisation Energétiques des déchets (UVE) ;\n  - Industries de production et mise sur le marché d'énergie sur le réseau.",
+        "Les codes NAF éligibles sont compris entre 10.11Z et 33.20D."
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé",
+          "questionnaire . parcours = objectif précis"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "a une categorie legale eligible"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": []
+      }
+    },
+    "id": "decarb-ind-25"
+  },
+  {
     "titre": "Aide au déploiement de flottes hydrogène",
     "promesse": "Financez l'acquisition de véhicules hydrogènes utilitaires légers ou lourds",
     "description": "Vous avez un projet d'acquisition ou de location de véhicules hydrogènes utilitaires ? \nLa Région Bourgogne-Franche-Comté soutient le déploiement d'écosystèmes de mobilités sur le territoire et finance l’acquisition, la location ou la mise à niveau de véhicules hydrogènes utilitaires légers et lourds.",
@@ -12239,7 +12442,7 @@
     "champs conditionnels": [
       {
         "toutes ces conditions": [
-          "effectif >= null",
+          "effectif >= 0",
           "effectif <= 49"
         ],
         "Montant du dispositif": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
@@ -24709,6 +24912,223 @@
       }
     },
     "id": "ormat-2024"
+  },
+  {
+    "titre": "ORMAT",
+    "promesse": "Valorisez vos déchets en Matières Premières de Recyclage",
+    "description": "L'appel à projets \"Objectif Recyclage MATières\" vise à soutenir les projets qui favorisent la production locale de Matières Premières de Recyclage, leur utilisation efficace et leur reconditionnement  pour produire des batteries. L'ADEME peut soutenir financièrement les diagnostics, études, tests de performance, expérimentations ainsi que les investissements sur l’outil productif de Matières Premières de Recyclage (MPR).",
+    "description longue": "Cet appel à projets s'adresse à vous si : \n• Vous êtes préparateur en charge du surtri et de la préparation des déchets, étapes en aval de leur collecte et de leur premier tri, en vue de leur transformation en Matière Première de Recyclage (MPR). Vous souhaitez améliorer la performance de vos process ou développer de nouvelles capacités.\n\n• Vous êtes régénérateur ou recycleur et vous produisez de la Matière Première de Recyclage en vue de son utilisation industrielle. Vous souhaitez améliorer la performance de vos process ou développer de nouvelles capacités.\n\n• Vous êtes transformateur et souhaitez incorporer de la Matière Première de Recyclage dans vos produits (ou en incorporer davantage).\n\n• Vous êtes un transformateur qui reconditionne ou remanufacture des batteries ou leurs composants déjà utilisés, au\nlieu de s’approvisionner en matières vierges et composants neufs pour produire des batteries\nneuves. \n\n• Vous êtes un donneur d'ordre qui s’appuie sur les procédés de\nfabrication de transformateurs sous-traitants. \n\n6 familles de matériaux sont concernées : plastiques, textiles, métaux et batteries, bois, papier – carton, verre et matériaux minéraux.",
+    "début de validité": "17/01/2024",
+    "fin de validité": "06/10/2025",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "ADEME",
+    "url": "https://agir.ademe.fr/aides-financieres/aap/fonds-economie-circulaire-ormat-2025-objectif-recyclage-matieres",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 80% d'aide, dans un maximum selon le projet",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/sites/default/files/AAP%20ORMAT%202025%20-%20Cahier%20des%20charges%20-%202025.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Choisissez le prestataire qui va vous accompagner pour mener l'étude (si vous sollicitez une aide aux diagnostics, études de faisabilité et essais / expérimentation)."
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/aides-financieres/aap/fonds-economie-circulaire-ormat-2025-objectif-recyclage-matieres?backtosearch=true#eligibility",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez votre étude ou votre investissement."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Corse, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d’activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé",
+          "questionnaire . parcours = objectif précis"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la gestion des déchets"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Auvergne-Rhône-Alpes",
+          "région = Bourgogne-Franche-Comté",
+          "région = Bretagne",
+          "région = Centre-Val de Loire",
+          "région = Corse",
+          "région = Grand Est",
+          "région = Guadeloupe",
+          "région = Guyane",
+          "région = Hauts-de-France",
+          "région = Île-de-France",
+          "région = La Réunion",
+          "région = Martinique",
+          "région = Mayotte",
+          "région = Normandie",
+          "région = Nouvelle-Aquitaine",
+          "région = Nouvelle-Calédonie",
+          "région = Occitanie",
+          "région = Pays de la Loire",
+          "région = Polynésie française"
+        ]
+      }
+    },
+    "id": "ormat"
   },
   {
     "titre": "PACTE Industrie",
