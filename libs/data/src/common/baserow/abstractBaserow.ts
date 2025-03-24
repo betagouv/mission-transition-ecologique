@@ -12,6 +12,8 @@ export abstract class AbstractBaserow {
   private readonly _baseUrl = 'https://api.baserow.io/api'
   protected readonly _themeTableId = 305258
   protected readonly _operatorTableId = 314410
+  protected readonly _programTableId = 314437
+  protected readonly _projectTableId = 305253
 
   private readonly _axiosHeader = {
     headers: {

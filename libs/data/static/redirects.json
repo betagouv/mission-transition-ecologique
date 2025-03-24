@@ -1,0 +1,24 @@
+{
+  "project_redirects": [
+    {
+      "from": [
+        "a",
+        "b",
+        "c"
+      ],
+      "to": "project"
+    }
+  ],
+  "program_redirects": [
+    {
+      "from": [
+        "a",
+        "b",
+        "c"
+      ],
+      "to": "project"
+    }
+  ],
+  "project_rowid_to_url_mapping": [],
+  "program_rowid_to_url_mapping": []
+}

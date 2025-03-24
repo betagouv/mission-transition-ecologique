@@ -27,3 +27,4 @@ export { jsonPrograms }
 
 export { default as communes } from './communes.json'
 export { default as nafMapping } from './nafMapping.json'
+export { default as redirects } from './redirects.json'

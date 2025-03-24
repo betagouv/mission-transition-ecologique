@@ -112,3 +112,10 @@ export type Sectors = {
 export type BaserowSectors = {
   [K in keyof typeof SectorKeys]: boolean
 }
+
+export interface Redirect {
+  'Nouveau dispositif': LinkObject[]
+  'Dispositifs à remplacer': LinkObject[]
+  'Nouveau Projet': LinkObject[]
+  'Projets à remplacer': LinkObject[]
+}

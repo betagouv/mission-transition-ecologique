@@ -8,7 +8,6 @@ import { Logger } from '../logger/logger'
 import { LogLevel } from '../logger/types'
 
 export class ProjectBaserow extends AbstractBaserow {
-  private readonly _projectTableId = 305253
   private readonly _imagePath = '/images/projet/'
   private readonly _logPath: string = path.join(this.__dirname, '../../../static/project_images_download_info.json')
   private _imageDownloader: ImageBaserow
@@ -22,12 +21,15 @@ export class ProjectBaserow extends AbstractBaserow {
     this._imageDownloader = new ImageBaserow(imageDirectory, this._logPath)
   }
 
-  async getValidProjects(): Promise<DataProject[]> {
+  async getRawValidProjects(): Promise<BaserowProject[]> {
     const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
-    const validBaserowProjects = baserowProjects.filter((value) => {
+    return baserowProjects.filter((value) => {
       return value.Publié
     })
+  }
 
+  async getValidProjects(): Promise<DataProject[]> {
+    const validBaserowProjects = await this.getRawValidProjects()
     const baserowThemes = await this._getTableData<Theme>(this._themeTableId)
 
     const projects: DataProject[] = []

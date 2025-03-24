@@ -2,11 +2,12 @@ import path from 'path'
 import fs from 'fs'
 import * as yaml from 'js-yaml'
 import { fileURLToPath } from 'url'
-import { DataProgram, Status } from '../types/domain'
+import { DataProgram } from '../types/domain'
 import { ProgramBaserow } from '../../common/baserow/programBaserow'
 import { Logger } from '../../common/logger/logger'
 import { CoreGenerator } from './coreGenerator'
 import { LoggerType } from '../../common/logger/types'
+import { ProgramDataUtils } from '../programData'
 
 export class ProgramYamlsGenerator {
   private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -23,7 +24,7 @@ export class ProgramYamlsGenerator {
     const programs = await new ProgramBaserow().getPrograms(false)
 
     for (const program of programs) {
-      if (!program.Statuts.includes(Status.InProd) && !program.Statuts.includes(Status.InProdNotAvailable)) {
+      if (!ProgramDataUtils.isInProd(program)) {
         continue
       }
       await this._createProgramYaml(program)
