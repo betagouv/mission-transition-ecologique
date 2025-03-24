@@ -1298,7 +1298,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
       "objectif précis": "\"objectif précis\"",
       "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
@@ -1474,7 +1473,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
       "objectif précis": "\"objectif précis\"",
       "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
@@ -1671,7 +1669,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
       "objectif précis": "\"objectif précis\"",
       "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
@@ -2292,7 +2289,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
       "objectif précis": "\"objectif précis\"",
       "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
@@ -6958,7 +6954,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
       "objectif précis": "\"objectif précis\"",
       "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
@@ -6972,8 +6967,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -12624,7 +12618,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
       "objectif précis": "\"objectif précis\"",
       "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
@@ -25061,7 +25054,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
       "objectif précis": "\"objectif précis\"",
       "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
@@ -25075,8 +25067,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
