@@ -8,7 +8,7 @@
       :error-message="getErrorMessage()"
     >
       <template #label>
-        <span>
+        <span class="fr-text--sm">
           {{ field.label }}
           <router-link
             v-if="field.hintLink"
