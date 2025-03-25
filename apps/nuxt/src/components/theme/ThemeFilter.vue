@@ -80,7 +80,7 @@ const updateThemeTypeSelected = async (value: string | number) => {
     useNavigationStore().replaceBrowserHistory()
   }
 
-  const navigation = Navigation.getInstance()
+  const navigation = new Navigation()
   if (navigation.isCatalog()) {
     useNavigationStore().updateSearchParam({
       name: 'theme' as TrackId,
