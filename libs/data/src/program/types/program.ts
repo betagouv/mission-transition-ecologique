@@ -162,7 +162,6 @@ export type Dispositif = {
     | "Mouvement des entreprises de France"
     | "Fédération National des Habitats de Plein Air"
     | "Association pour l'Emploi des Cadres"
-    | "Visible en prod dans les fiches dispositifs"
     | "Réseau Entreprendre"
     | "Avere-France"
     | "Commissariat Général au Développement Durable"
@@ -170,7 +169,19 @@ export type Dispositif = {
     | "Fondation Solar Impulse"
     | "Service Éconmique de l'État en Région"
     | "Les Entreprises S'engagent"
-    | "Chambres Regionales de l'Economie Sociale et Solidaire";
+    | "Chambres Regionales de l'Economie Sociale et Solidaire"
+    | "Opcommerce"
+    | "Placéco"
+    | "Agir Pour un Environnement Responsable"
+    | "ADN Tourisme"
+    | "ATOUT France"
+    | "Association Tourisme Durable"
+    | "Parcs Naturels Régionaux"
+    | "Grands Sites de France"
+    | "FNHPA"
+    | "UNIMEV"
+    | "SNELAC"
+    | "UMIH";
   /**
    * Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.
    */
@@ -376,7 +387,6 @@ export type Operators =
   | "Mouvement des entreprises de France"
   | "Fédération National des Habitats de Plein Air"
   | "Association pour l'Emploi des Cadres"
-  | "Visible en prod dans les fiches dispositifs"
   | "Réseau Entreprendre"
   | "Avere-France"
   | "Commissariat Général au Développement Durable"
@@ -384,4 +394,16 @@ export type Operators =
   | "Fondation Solar Impulse"
   | "Service Éconmique de l'État en Région"
   | "Les Entreprises S'engagent"
-  | "Chambres Regionales de l'Economie Sociale et Solidaire";
+  | "Chambres Regionales de l'Economie Sociale et Solidaire"
+  | "Opcommerce"
+  | "Placéco"
+  | "Agir Pour un Environnement Responsable"
+  | "ADN Tourisme"
+  | "ATOUT France"
+  | "Association Tourisme Durable"
+  | "Parcs Naturels Régionaux"
+  | "Grands Sites de France"
+  | "FNHPA"
+  | "UNIMEV"
+  | "SNELAC"
+  | "UMIH";
