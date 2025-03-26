@@ -3,7 +3,7 @@
     v-if="hasRegisteredData || countFilteredPrograms"
     id="project-aids-title"
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
-    title="💰 Mes aides"
+    :title="isCompanyDataSelected ? '💰 Mes aides' : '💰 Toutes les aides'"
   >
     <template #content>
       <client-only fallback-tag="div">
@@ -29,6 +29,11 @@
                 :email="Contact.email"
               />
             </div>
+            <p
+              v-if="isCompanyDataSelected && !navigationStore.hasSpinner"
+              class="fr-mb-0"
+              v-html="resume"
+            ></p>
             <ProjectProgramsList
               v-if="studyPrograms.length > 0 && !navigationStore.hasSpinner"
               :title="Translation.t('project.studyPrograms')"
@@ -87,6 +92,7 @@ import Opportunity from '@/tools/opportunity'
 import { CompanyData } from '@/tools/companyData'
 import ProgramFilter from '@/tools/program/programFilter'
 import { ProgramSorter } from '@/tools/program/programSorter'
+import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 
 interface Props {
   project: ProjectType
@@ -96,6 +102,13 @@ const props = defineProps<Props>()
 const navigationStore = useNavigationStore()
 const { programs, hasError } = storeToRefs(useProgramStore())
 const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormContainer')
+const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
+
+const resume: string = Translation.t('project.programsList', {
+  effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyData.size ?? '')),
+  secteur: TrackStructure.getSector() ?? CompanyData.company?.secteur ?? '',
+  region: TrackStructure.getRegion() ?? CompanyData.company?.region ?? ''
+})
 
 onServerPrefetch(async () => {
   await new ProgramManager().getDependentCompanyData()
@@ -112,7 +125,10 @@ const countFilteredPrograms = computed(() => {
 })
 
 const filteredPrograms = computed(() => {
-  return programs.value && props.project ? programs.value.filter((program) => props.project?.programs.includes(program.id)) : []
+  if (isCompanyDataSelected.value) {
+    return programs.value && props.project ? programs.value.filter((program) => props.project?.programs.includes(program.id)) : []
+  }
+  return programs.value
 })
 
 const studyPrograms = computed(() => {
