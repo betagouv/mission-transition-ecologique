@@ -1,0 +1,118 @@
+titre: Programme PAMI
+promesse: Bénéficiez d'un accompagnement pour moderniser et verdir votre flotte fluviale
+description: >-
+  Le Plan d’aides à la modernisation et à l’innovation de la flotte (PAMI) est
+  un dispositif destiné aux propriétaires et exploitants de bateaux fluviaux,
+  qu’il s’agisse de transport de marchandises, de passagers ou de plaisance
+  locative. Ce programme vise à soutenir vos investissements en favorisant
+  l’amélioration de la performance environnementale de votre flotte. Il
+  encourage la réduction de la consommation de carburant ainsi que la diminution
+  des émissions et des rejets polluants. Le PAMI encourage également le recours
+  aux énergies renouvelables et l’optimisation de la gestion des énergies à
+  bord, permettant ainsi une navigation plus durable et respectueuse de
+  l’environnement.
+description longue: >-
+  Le programme PAMI, proposé par Voies Navigables de France (VNF), s’articule en
+  quatre volets d’aides :
+
+  - Volet A : améliorer la performance environnementale de la flotte :
+
+  Réduire la consommation en carburant, les émissions et rejets polluants,
+  encourager le recours à des énergies renouvelables et optimiser la gestion des
+  énergies à bord.
+
+  - Volet B : mieux intégrer le maillon fluvial aux chaînes logistiques :
+
+  Capter de nouveaux trafics, consolider la desserte fluviale des ports
+  maritimes, améliorer la performance logistique de la flotte fluviale ;
+
+  - Volet C : accompagner le renouvellement des acteurs et de la filière.
+
+  - Volet D : favoriser l’émergence des solutions innovantes.
+début de validité: 01/01/2023
+fin de validité: 01/10/2027
+illustration: images/TEE_eolienne.png
+opérateur de contact: Voies Navigables de France
+url: >-
+  https://www.vnf.fr/vnf/accueil/beneficier-de-solutions-en-faveur-de-la-transition-energetique-du-secteur-fluvial/comment-financer-un-projet-de-verdissement-de-la-flotte-fluviale/pami/comment-faire-une-demande-daide-pami/
+nature de l'aide: financement
+montant du financement: De 20 000 € à 500 000 € selon projet
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Vérifiez l'éligibilité de votre projet ou contactez la direction du
+      développement de Voies Navigables de France (VNF) par mail :
+      pami-connect@vnf.fr
+    liens:
+      - lien: >-
+          https://www.vnf.fr/vnf/accueil/beneficier-de-solutions-en-faveur-de-la-transition-energetique-du-secteur-fluvial/comment-financer-un-projet-de-verdissement-de-la-flotte-fluviale/
+        texte: Critères d'éligibilité
+  - description: Créez un compte sur PAMI Connect.
+    liens:
+      - lien: https://portail-pami-connect.vnf.fr/
+        texte: Créer un compte
+  - description: Préparez votre dossier à déposer sur cette plateforme.
+    liens:
+      - lien: >-
+          https://www.vnf.fr/vnf/app/uploads/2024/01/Pieces-a-fournir-pour-toute-demande-daide-PAMI.zip
+        texte: Liste des pièces à fournir
+  - description: Déposez votre dossier de candidature via le site PAMI Connect.
+    liens:
+      - lien: https://portail-pami-connect.vnf.fr/
+        texte: Déposer ma candidature
+  - description: >-
+      Un jury composé de VNF, du Ministère chargé des transports et le cas
+      échéant des co-financeurs, examinera votre candidature.
+    liens:
+      - lien: >-
+          https://www.vnf.fr/vnf/accueil/beneficier-de-solutions-en-faveur-de-la-transition-energetique-du-secteur-fluvial/comment-financer-un-projet-de-verdissement-de-la-flotte-fluviale/pami/comment-faire-une-demande-daide-pami/
+        texte: Voir le calendrier des jurys 2025
+  - description: >-
+      Si votre projet est sélectionné, recevez les modalités et le plan de
+      financement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - questionnaire . parcours = objectif précis
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est mon impact environnemental

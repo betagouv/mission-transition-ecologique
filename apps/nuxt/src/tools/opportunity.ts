@@ -75,12 +75,11 @@ export default class Opportunity {
         type: FieldType.Checkbox,
         isValid: undefined,
         value: false,
-        label: "J'accepte d'être recontacté par l'équipe de Transition Écologique des Entreprises",
+        label: `J’ai lu et j’accepte que l’ADEME et ses partenaires collectent mes données afin de garantir la bonne utilisation des services offerts par Transition écologique des Entreprises, et je reconnais avoir pris connaissance de sa`,
         hintLink: {
           route: RouteName.PersonalData,
-          text: "Conditions Générales d'Utilisation"
-        },
-        hint: "Vos données à caractère personnel seront uniquement utilisées à des fins légitimes et nécessaires par l'équipe de Transition Écologique des Entreprises dans le respect du RGPD, c'est-à-dire pour vous recontacter par email ou par téléphone afin de vous aider à vous orienter et à vous conseiller dans votre recherche d'aides à la transition écologique de votre entreprise. Voir également nos"
+          text: 'politique de protection des données personnelles'
+        }
       }
     }
   }
