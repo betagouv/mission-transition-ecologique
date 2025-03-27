@@ -535,7 +535,7 @@
     ]
   },
   {
-    "operator": "Visible en prod dans les fiches dispositifs",
+    "operator": "Réseau Entreprendre",
     "filterCategories": []
   },
   {
@@ -563,14 +563,6 @@
     ]
   },
   {
-    "operator": "Visible en prod dans les fiches dispositifs",
-    "filterCategories": []
-  },
-  {
-    "operator": "Visible en prod dans les fiches dispositifs",
-    "filterCategories": []
-  },
-  {
     "operator": "Fondation Solar Impulse",
     "filterCategories": [
       "OP"
@@ -583,10 +575,6 @@
     ]
   },
   {
-    "operator": "Visible en prod dans les fiches dispositifs",
-    "filterCategories": []
-  },
-  {
     "operator": "Les Entreprises S'engagent",
     "filterCategories": [
       "Opérateurs nationaux"
@@ -594,6 +582,86 @@
   },
   {
     "operator": "Chambres Regionales de l'Economie Sociale et Solidaire",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Opcommerce",
+    "filterCategories": []
+  },
+  {
+    "operator": "Placéco",
+    "filterCategories": []
+  },
+  {
+    "operator": "Agir Pour un Environnement Responsable",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "ADN Tourisme",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "ATOUT France",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Association Tourisme Durable",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Parcs Naturels Régionaux",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Grands Sites de France",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "ADN Tourisme",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "ADN Tourisme",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "FNHPA",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "UNIMEV",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "SNELAC",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "UMIH",
     "filterCategories": [
       "Opérateurs nationaux"
     ]
