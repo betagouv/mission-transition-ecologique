@@ -10,12 +10,21 @@
       >
         {{ item.text }}
       </a>
+      <div
+        v-if="hasFullRegisteredData && !Breakpoint.isMobile()"
+        class="fr-pt-18v fr-pl-4v"
+      >
+        <span class="fr-text--bold">Filtres</span>
+        <div class="fr-py-2v fr-text--sm fr-border-b--grey fr-text--bold">Votre entreprise</div>
+        <FilterByCompanyData />
+      </div>
     </template>
   </DsfrSideMenu>
 </template>
 <script setup lang="ts">
 import { ProjectType } from '@/types'
 import { Scroll } from '@/tools/scroll'
+import Breakpoint from '@/tools/breakpoints'
 
 interface Props {
   project: ProjectType
@@ -23,6 +32,7 @@ interface Props {
 const props = defineProps<Props>()
 
 const menuItems = computed(() => allMenuItems.filter((item) => item.condition !== false))
+const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyDataStore())
 
 const scrollTo = (id: string) => {
   const element = document.getElementById(id)
