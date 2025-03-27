@@ -1,4 +1,4 @@
-import { ProgramType } from './program'
+import { ProgramType } from './types/shared'
 import { ProgramEligibilityType } from './types/shared'
 
 export class ProgramEligibility {

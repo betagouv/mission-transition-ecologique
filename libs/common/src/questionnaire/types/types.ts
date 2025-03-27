@@ -112,10 +112,6 @@ export enum PublicodesKeys {
   Goal = 'questionnaire . objectif prioritaire . est '
 }
 
-export enum FiltersKeys {
-  Theme = 'theme'
-}
-
 export enum PublicodeObjective {
   EnvironmentalImpact = PublicodesKeys.Goal + Objective.EnvironmentalImpact,
   EnergyPerformance = PublicodesKeys.Goal + Objective.EnergyPerformance,

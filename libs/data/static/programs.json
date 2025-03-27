@@ -601,6 +601,185 @@
     "id": "adaptation-bzh"
   },
   {
+    "titre": "ADVENIR",
+    "promesse": "Financez vos bornes de recharge pour véhicule électrique",
+    "description": "Vous disposez d'une flotte de véhicule lourds ou vous êtes un professionnel des services de l'automobile ? Le programme Advenir finance l’installation de bornes de recharge pour véhicules électriques. Ainsi, faites bénéficier vos équipes, vos clients et vos fournisseurs d'un accès facile à des solutions de recharge.",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "Avere-France",
+    "autres opérateurs": [
+      "ADEME"
+    ],
+    "url": "https://advenir.mobi/",
+    "nature de l'aide": "financement",
+    "montant du financement": "Selon le projet",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Vérifiez l’éligibilité de votre projet en réalisant votre simulation.",
+        "liens": [
+          {
+            "lien": "https://advenir.mobi/je-definis-mon-projet/",
+            "texte": "Simulateur de projet"
+          }
+        ]
+      },
+      {
+        "description": "Prenez contact avec un installateur référencé Advenir près de votre entreprise, en consultant l'annuaire installateurs.",
+        "liens": [
+          {
+            "lien": "https://advenir.mobi/trouver-un-installateur/",
+            "texte": "Annuaire installateurs"
+          }
+        ]
+      },
+      {
+        "description": "Faites remplir le formulaire de demande de prime par votre installateur référencé. Une offre de prime correspondant au projet est ensuite proposée et signée."
+      },
+      {
+        "description": "Réalisez vos travaux dans un délai de 6 mois après la signature de l'offre de prime."
+      },
+      {
+        "description": "La prime est ensuite versée sous 45 jours après envoi des justificatifs par l'installateur. Le versement à l'installateur est conditionné à la déduction de la prime sur la facture finale."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "- Entreprises dotés d'une flotte de véhicules lourds\n- Professionnels des services automobiles."
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Le programme Advenir propose des modalités spécifiques pour l’installation de bornes de recharge sur les territoires situés en Corse, en Outre-Mer et sur les îles du Ponant. [Voir les conditions.](https://advenir.mobi/zni/)"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé",
+          "questionnaire . parcours = objectif précis"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la mobilité durable"
+        ]
+      }
+    },
+    "id": "advenir"
+  },
+  {
     "titre": "Agir en Pays de la Loire",
     "promesse": "Financez votre projet de transition écologique dans le secteur du tourisme",
     "description": "Bénéficiez d’un prêt participatif « Agir Pays de la Loire ». Ce prêt est destiné à accompagner les innovations incluant une démarche de transition écologique, portées par les entreprises du tourisme. Grâce à ce prêt, financez, par exemple, votre isolation thermique, vos équipements d’économies d’eau et d’énergie.",
@@ -6862,6 +7041,11 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Vos projets doivent représenter un investissement de plus de 3 millions d’euros sur un même site industriel identifié par un numéro SIRET. Il peut inclure plusieurs opérations sur ce site, tant qu’elles contribuent à la baisse des émissions de GES.",
+        "Votre demande d'aide doit être inférieure à 30 millions d’euros.",
+        "Vos investissements doivent permettre de réduire les émissions d’au moins 1 000 tonnes de CO₂e par an, en comparant la situation avant et après le projet, sans modifier le niveau de production."
       ]
     },
     "publicodes": {
@@ -18103,6 +18287,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Stations%20bioGNV%20agricole%20et%20territorial%20-%20Cahier%20des%20charges%20.pdf",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 70% des coûts, dans un maximum de 200 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
@@ -25306,6 +25491,220 @@
     "id": "pacte-industrie"
   },
   {
+    "titre": "Programme PAMI",
+    "promesse": "Bénéficiez d'un accompagnement pour moderniser et verdir votre flotte fluviale",
+    "description": "Le Plan d’aides à la modernisation et à l’innovation de la flotte (PAMI) est un dispositif destiné aux propriétaires et exploitants de bateaux fluviaux, qu’il s’agisse de transport de marchandises, de passagers ou de plaisance locative. Ce programme vise à soutenir vos investissements en favorisant l’amélioration de la performance environnementale de votre flotte. Il encourage la réduction de la consommation de carburant ainsi que la diminution des émissions et des rejets polluants. Le PAMI encourage également le recours aux énergies renouvelables et l’optimisation de la gestion des énergies à bord, permettant ainsi une navigation plus durable et respectueuse de l’environnement.",
+    "description longue": "Le programme PAMI, proposé par Voies Navigables de France (VNF), s’articule en quatre volets d’aides :\n- Volet A : améliorer la performance environnementale de la flotte :\nRéduire la consommation en carburant, les émissions et rejets polluants, encourager le recours à des énergies renouvelables et optimiser la gestion des énergies à bord.\n- Volet B : mieux intégrer le maillon fluvial aux chaînes logistiques :\nCapter de nouveaux trafics, consolider la desserte fluviale des ports maritimes, améliorer la performance logistique de la flotte fluviale ;\n- Volet C : accompagner le renouvellement des acteurs et de la filière.\n- Volet D : favoriser l’émergence des solutions innovantes.",
+    "début de validité": "01/01/2023",
+    "fin de validité": "01/10/2027",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "Voies Navigables de France",
+    "url": "https://www.vnf.fr/vnf/accueil/beneficier-de-solutions-en-faveur-de-la-transition-energetique-du-secteur-fluvial/comment-financer-un-projet-de-verdissement-de-la-flotte-fluviale/pami/comment-faire-une-demande-daide-pami/",
+    "nature de l'aide": "financement",
+    "montant du financement": "De 20 000 € à 500 000 € selon projet",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Vérifiez l'éligibilité de votre projet ou contactez la direction du développement de Voies Navigables de France (VNF) par mail : pami-connect@vnf.fr",
+        "liens": [
+          {
+            "lien": "https://www.vnf.fr/vnf/accueil/beneficier-de-solutions-en-faveur-de-la-transition-energetique-du-secteur-fluvial/comment-financer-un-projet-de-verdissement-de-la-flotte-fluviale/",
+            "texte": "Critères d'éligibilité"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte sur PAMI Connect.",
+        "liens": [
+          {
+            "lien": "https://portail-pami-connect.vnf.fr/",
+            "texte": "Créer un compte"
+          }
+        ]
+      },
+      {
+        "description": "Préparez votre dossier à déposer sur cette plateforme.",
+        "liens": [
+          {
+            "lien": "https://www.vnf.fr/vnf/app/uploads/2024/01/Pieces-a-fournir-pour-toute-demande-daide-PAMI.zip",
+            "texte": "Liste des pièces à fournir"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier de candidature via le site PAMI Connect.",
+        "liens": [
+          {
+            "lien": "https://portail-pami-connect.vnf.fr/",
+            "texte": "Déposer ma candidature"
+          }
+        ]
+      },
+      {
+        "description": "Un jury composé de VNF, du Ministère chargé des transports et le cas échéant des co-financeurs, examinera votre candidature.",
+        "liens": [
+          {
+            "lien": "https://www.vnf.fr/vnf/accueil/beneficier-de-solutions-en-faveur-de-la-transition-energetique-du-secteur-fluvial/comment-financer-un-projet-de-verdissement-de-la-flotte-fluviale/pami/comment-faire-une-demande-daide-pami/",
+            "texte": "Voir le calendrier des jurys 2025"
+          }
+        ]
+      },
+      {
+        "description": "Si votre projet est sélectionné, recevez les modalités et le plan de financement."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "questionnaire . parcours": null,
+      "objectif précis": "\"objectif précis\"",
+      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé",
+          "questionnaire . parcours = objectif précis"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la mobilité durable",
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "pami"
+  },
+  {
     "titre": "Pass Transformation Ecologique",
     "promesse": "Financez vos investissements matériels visant à améliorer l’impact écologique de votre entreprise.",
     "description": "La Région Occitanie soutient les travaux visant à améliorer l’impact écologique des entreprises locales situées en dehors des métropoles. Le \"Pass Transformation Ecologique\" peut participer au financement de vos investissement matériels pour la production de chaleur ou de froid renouvelable (géothermie, pompe à chaleur, solaire thermique, biomasse...), vos équipements d'économies d’eau, des gestions des déchets, d'économies d'énergie et de digitalisation de vos processus.",
@@ -29799,6 +30198,7 @@
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "2h",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Réalisez un premier rendez-vous par téléphone avec un expert en transition énergétique référencé par l'ADEME pour échanger sur votre projet de rénovation de vos locaux."
