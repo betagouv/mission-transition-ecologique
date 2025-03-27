@@ -3,11 +3,11 @@
 
 import ProgramFilter from '@/tools/program/programFilter'
 import { ref } from 'vue'
-import { ProgramAidType, ThemeId, Region, type ProgramData, OperatorFilter, FilterItemKeys } from '@/types'
+import { ProgramAidType, ThemeId, Region, OperatorFilter, FilterItemKeys, ProgramTypeForFront } from '@/types'
 
 export const useProgramStore = defineStore('program', () => {
-  const currentProgram = ref<ProgramData>()
-  const programs = ref<ProgramData[]>([])
+  const currentProgram = ref<ProgramTypeForFront>()
+  const programs = ref<ProgramTypeForFront[]>([])
   const hasPrograms = ref<boolean>(false)
   const hasError = ref<boolean>(false)
 
@@ -20,8 +20,8 @@ export const useProgramStore = defineStore('program', () => {
     hasError.value = false
   }
 
-  function getProgramsByFilters(programs: ProgramData[]) {
-    return programs.filter((program: ProgramData) => {
+  function getProgramsByFilters(programs: ProgramTypeForFront[]) {
+    return programs.filter((program: ProgramTypeForFront) => {
       return (
         ProgramFilter.byAidType(program, filtersStore.filters[FilterItemKeys.typeAid] as ProgramAidType[]) &&
         ProgramFilter.byTheme(program, filtersStore.filters[FilterItemKeys.themeType] as ThemeId) &&

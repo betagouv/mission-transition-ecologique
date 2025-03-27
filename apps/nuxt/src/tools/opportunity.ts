@@ -1,5 +1,5 @@
 import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType, EstablishmentFront } from '@tee/common'
-import { FieldType, RouteName, type ProgramData as ProgramType, ProjectType, FormDataType, ThemeType, ThemeId } from '@/types'
+import { FieldType, RouteName, ProjectType, FormDataType, ThemeType, ThemeId, ProgramTypeForFront } from '@/types'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import { CalloutType } from '@/types/elementsPropsTypes'
 import Translation from '@/tools/translation'
@@ -113,7 +113,7 @@ export default class Opportunity {
       ...baseFields
     }
   }
-  static getProgramFormFields(program: ProgramType): FormDataType {
+  static getProgramFormFields(program: ProgramTypeForFront): FormDataType {
     const baseFields = this.getBaseOpportunityFormFields()
     baseFields.needs.value = Translation.t('program.form.needs', {
       secteur: TrackStructure.getSector(),
