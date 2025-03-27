@@ -114,10 +114,12 @@ const props = defineProps<ProjectListProps>()
 
 const filtersStore = useFiltersStore()
 const isSpecificGoal = UsedTrack.isSpecificGoal()
-const resume: string = Translation.t('project.result.resume', {
-  effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyData.size ?? '')),
-  secteur: TrackStructure.getSector() ?? CompanyData.company?.secteur ?? ''
-})
+const resume = computed<string>(() =>
+  Translation.t('project.result.resume', {
+    effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyData.size ?? '')),
+    secteur: TrackStructure.getSector() ?? CompanyData.company?.secteur ?? ''
+  })
+)
 
 const hasPriorityProjects = computed(() => {
   return priorityProjects.value ? priorityProjects.value?.length > 0 : false
