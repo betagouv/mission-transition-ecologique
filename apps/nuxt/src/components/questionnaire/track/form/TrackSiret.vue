@@ -1,14 +1,19 @@
 <template>
   <TeeDsfrSearchBar
     v-model.trim="queryValue"
-    :option="props.option"
+    :color="Color.blueFrance"
+    :background-color="Color.greyLighted"
+    :search-color="Color.white"
     :is-loading="isLoading"
-    :error-message="errorMessage"
-    :has-hint="hasHint"
-    @on-click="processInput"
-    @on-clear="resetSelection"
+    name="siret-questionnaire"
+    :error-msg="errorMessage"
+    :deactivate-click-outside="true"
+    :is-large="true"
+    :hint="hint"
+    :results="requestResponses.establishments"
+    @reset-search="resetSelection"
+    @search="processInput"
   />
-
   <!-- RESPONSES -->
   <div
     v-show="requestResponses.establishments.length > 1"
@@ -70,7 +75,7 @@
                 class="fr-icon-time-line fr-mr-8v"
                 aria-hidden="true"
               />
-              <span>Création le {{ new Date(response.creationDate).toLocaleDateString('fr') }}</span>
+              <span>Création le {{ new Date(response.creationDate as string).toLocaleDateString('fr') }}</span>
             </div>
           </div>
         </div>
@@ -108,14 +113,13 @@
 </template>
 
 <script setup lang="ts">
-import { type TrackOptionItem, type TrackOptionsInput, EstablishmentSearch } from '@/types'
+import { type TrackOptionItem, type TrackOptionsInput, EstablishmentSearch, Color } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Navigation from '@/tools/navigation'
 import TrackSiret from '@/tools/questionnaire/track/TrackSiret'
 import Translation from '@/tools/translation'
-import { SiretValidator } from '@tee/common'
-import { ref, computed } from 'vue'
 import Analytics from '@/tools/analytic/analytics'
+import CompanySearch from '@/tools/companySearch'
 
 // Functionnal note :
 // We send data update to the parent component each time the data selection change.
@@ -126,6 +130,7 @@ interface Props {
   option: TrackOptionsInput
 }
 const props = defineProps<Props>()
+const hint = `ex : "Fromagerie Sanzot Angers" ou N° SIRET "130 025 265 00013"`
 
 const defaultSearchValue = {
   establishments: [],
@@ -142,10 +147,6 @@ const emit = defineEmits<{
   updateSelection: [TrackOptionItem]
   goToNextTrack: [TrackOptionsInput]
 }>()
-
-const hasHint = computed(() => {
-  return Boolean(props.option.hint) && requestResponses.value.resultCount != defaultSearchValue.resultCount
-})
 
 const isSelected = (id: number) => {
   return Boolean(id === selection.value)
@@ -166,24 +167,17 @@ const processInput = async () => {
   isLoading.value = true
   errorMessage.value = undefined
   resetSelection()
-
-  if (!queryValue.value || queryValue.value.length < 3) {
-    errorMessage.value = Translation.t('enterprise.searchTooShort')
-  } else if (SiretValidator.isValidSiretFormat(queryValue.value) && !SiretValidator.isValidSiretNumber(queryValue.value)) {
-    errorMessage.value = "Le numéro SIRET n'est pas valide"
-  } else {
-    const searchResult = await TrackSiret.search(queryValue.value)
-    if (searchResult.isErr) {
-      errorMessage.value = Translation.t('enterprise.apiError')
-    } else if (searchResult.value.resultCount == 0) {
-      errorMessage.value = Translation.t('enterprise.noStructureFound')
+  CompanySearch.processInput(queryValue.value, 3).then((response) => {
+    if ((response as { error: boolean; errorMsg: string }).error) {
+      errorMessage.value = (response as { error: boolean; errorMsg: string }).errorMsg
+      resetSelection()
     } else {
-      requestResponses.value = searchResult.value
+      requestResponses.value = response as EstablishmentSearch
       selection.value = 0
       emit('updateSelection', createData())
     }
-  }
-  isLoading.value = false
+    isLoading.value = false
+  })
 }
 
 const goToNextTrack = () => {
