@@ -92,7 +92,6 @@ import Opportunity from '@/tools/opportunity'
 import { CompanyData } from '@/tools/companyData'
 import ProgramFilter from '@/tools/program/programFilter'
 import { ProgramSorter } from '@/tools/program/programSorter'
-import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 
 interface Props {
   project: ProjectType
@@ -105,11 +104,13 @@ const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormConta
 const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
 const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyDataStore())
 
-const resume: string = Translation.t('project.programsList', {
-  effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyData.size ?? '')),
-  secteur: TrackStructure.getSector() ?? CompanyData.company?.secteur ?? '',
-  region: TrackStructure.getRegion() ?? CompanyData.company?.region ?? ''
-})
+const resume = computed<string>(() =>
+  Translation.t('project.programsList', {
+    effectif: Translation.t('enterprise.structureSize.' + CompanyData.size),
+    secteur: CompanyData.company?.secteur,
+    region: CompanyData.company?.region
+  })
+)
 
 onServerPrefetch(async () => {
   await new ProgramManager().getDependentCompanyData()
