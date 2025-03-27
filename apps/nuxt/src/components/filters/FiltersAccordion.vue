@@ -4,7 +4,7 @@
     class="fr-p-0 fr-border-t--grey--light"
   >
     <template #title
-      ><div class="fr-p-3v">{{ companyDataFilter.title }}</div></template
+      ><div class="fr-p-3v fr-text--bold">{{ companyDataFilter.title }}</div></template
     >
     <template #content>
       <FilterByCompanyData />
