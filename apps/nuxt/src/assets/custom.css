@@ -279,15 +279,6 @@ button.fr-link:hover {
 .fr-tee-description-paragraph-content {
   display: inline;
 }
-.fr-tee-eligigility {
-  color: #6266EF;
-}
-.fr-tee-eligigility-title {
-  font-weight: bold;
-}
-.fr-tee-eligigility-list {
-  padding-left: 2em;
-}
 .fr-tee-eligigility-list-check {
   list-style-type: none;
 }

@@ -1,5 +1,4 @@
 <template>
-  <TeeDsfrBreadcrumb :links="links" />
   <TeeBanner
     :bg-color="themeColor"
     :has-gradient="true"
@@ -9,23 +8,22 @@
     class="project-header"
   >
     <template #title>
-      <div class="fr-col-12 fr-col-sm-9 fr-col-offset-sm-3 fr-text-left fr-pb-8v">
-        <h1 class="fr-gradient__title">{{ project.title }}</h1>
+      <div class="fr-col-12 fr-col-md-9 fr-col-xl-10 fr-col-offset-md-3 fr-col-offset-xl-2 fr-text-left fr-pb-8v">
+        <div class="fr-container-md">
+          <h1 class="fr-gradient__title">{{ project.title }}</h1>
+        </div>
       </div>
     </template>
   </TeeBanner>
 </template>
 <script setup lang="ts">
 import { Color, ProjectType } from '@/types'
-import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 
 interface Props {
   project: ProjectType
   themeColor?: Color
 }
-const props = defineProps<Props>()
-
-const links = ref<DsfrBreadcrumbProps['links']>([{ text: props.project.title }])
+defineProps<Props>()
 </script>
 
 <style scoped lang="scss">

@@ -4,6 +4,7 @@
     id="project-aids-title"
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
     title="💰 Mes aides"
+    container-from="md"
   >
     <template #content>
       <client-only fallback-tag="div">
@@ -19,29 +20,27 @@
           class="fr-mx-3v"
           :text="Translation.t('project.projectRegisterHighlightText')"
         />
-        <div class="fr-container--fluid fr-px-3v">
-          <div class="fr-grid-row">
-            <div class="fr-col-12 fr-text-center">
-              <TeeSpinner v-if="navigationStore.hasSpinner" />
-              <TeeError
-                v-else-if="hasError"
-                :mailto="Contact.mailTo"
-                :email="Contact.email"
-              />
-            </div>
-            <ProjectProgramsList
-              v-if="studyPrograms.length > 0 && !navigationStore.hasSpinner"
-              :title="Translation.t('project.studyPrograms')"
-              :programs="studyPrograms"
-              :project="project"
-            />
-            <ProjectProgramsList
-              v-if="financePrograms.length > 0 && !navigationStore.hasSpinner"
-              :title="Translation.t('project.financePrograms')"
-              :programs="financePrograms"
-              :project="project"
+        <div class="fr-grid-row">
+          <div class="fr-col-12 fr-text-center">
+            <TeeSpinner v-if="navigationStore.hasSpinner" />
+            <TeeError
+              v-else-if="hasError"
+              :mailto="Contact.mailTo"
+              :email="Contact.email"
             />
           </div>
+          <ProjectProgramsList
+            v-if="studyPrograms.length > 0 && !navigationStore.hasSpinner"
+            :title="Translation.t('project.studyPrograms')"
+            :programs="studyPrograms"
+            :project="project"
+          />
+          <ProjectProgramsList
+            v-if="financePrograms.length > 0 && !navigationStore.hasSpinner"
+            :title="Translation.t('project.financePrograms')"
+            :programs="financePrograms"
+            :project="project"
+          />
         </div>
         <TeeDsfrHighlight
           v-if="hasRegisteredData && !countFilteredPrograms && !navigationStore.hasSpinner"

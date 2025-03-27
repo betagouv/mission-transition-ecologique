@@ -35,7 +35,7 @@
               :key="indexLink"
             >
               <DsfrHeaderMenuLink
-                class="fr-p-md-2w"
+                class="fr-p-2w"
                 v-bind="link"
                 :on-click="
                   ($event) => {

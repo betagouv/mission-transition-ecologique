@@ -48,7 +48,7 @@ onBeforeRouteLeave(() => {
 })
 
 const hasSideMenu = computed(() => {
-  return hasError.value
+  return !hasError.value
 })
 
 const filteredPrograms = computed(() => {
