@@ -1,0 +1,172 @@
+titre: Décarbonation de l'industrie
+promesse: Financez la décarbonation de votre industrie
+description: >-
+  Vous êtes un site industriel ? L'ADEME vous accompagne pour réduire vos
+  émissions de gaz à effet de serre. Bénéficiez d’un soutien pour optimiser
+  votre efficacité énergétique, changer vos sources d’énergie ou matières
+  premières, et capturer le carbone. Contribuez ainsi à atteindre vos objectifs
+  environnementaux tout en respectant les normes climatiques.
+description longue: >-
+  Les dépenses d’investissement éligibles correspondent notamment aux :
+
+  - Equipements de production (outil productif) ;
+
+  - Equipements nécessaires à l'outil productif telles que les utilités (vapeur,
+  air comprimé, etc.) ;
+
+  - Equipements périphériques tels que : raccordement/armoire électrique,
+  tuyauterie,
+
+  automatisme, etc. ;
+
+  - Equipements de mesure, comptage, suivi et reporting des consommations
+  d'énergie ou des émissions de GES ;
+
+  - Les travaux d'installation des équipements listés ci-dessus, y compris le
+  génie civil,
+
+  terrassement, VRD ;
+
+  - Les études d'ingénierie ainsi que les études de suivi de réalisation et la
+  coordination des travaux. Pour les études réalisées en interne, les dépenses
+  seront limitées à 10% de l'ensemble des autres dépenses éligibles ; le
+  pourcentage de ces coûts au regard des dépenses éligibles totales devra être
+  validé par un commissaire aux comptes ou un expert-comptable externe ;
+
+  - Les dépenses externes de formation du personnel, dans la limite de 5% des
+  autres dépenses éligibles.
+
+
+  Quatre thématiques sont éligibles :
+
+  1- Efficacité énergétique
+
+  - Remplacement d'un équipement par un équipement énergétiquement plus
+  performant
+
+  - Mise en place d’équipements de récupération de chaleur 
+
+  - Valorisation de combustible fatal sous forme 100 % thermique
+
+
+  2- Modification du mix énergétique
+
+  - Electrification des procédés et des utilités : (four électrique, compression
+  mécanique de vapeur, pompe à chaleur, séparation membranaire ...) ;
+
+  - Intégration d’énergies thermiques renouvelables ou de récupération 
+
+
+  3- Modification du mix matières
+
+  - Procédés de recyclage ou utilisation de matière recyclée conduisant à une
+  réduction des émissions de GES ;
+
+  - Procédés d'efficacité matière ;
+
+  - Utilisation de matières premières alternatives conduisant à une réduction
+  des émissions de GES ;
+
+  - Réduction d’autres GES que le CO2 (exemples : le méthane (CH4), le protoxyde
+  d’azote ((N2O),
+
+  etc.).
+
+
+  4-Captage, stockage et utilisation du CO2
+
+  - Captage et séquestration du carbone.
+
+  - Captage et utilisation de carbone, uniquement pour des projets de
+  minéralisation.
+début de validité: 09/12/2024
+fin de validité: 15/05/2025
+illustration: images/TEE_eolienne.png
+opérateur de contact: ADEME
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20240530/decarbonation-lindustrie-decarb-ind-25
+nature de l'aide: financement
+montant du financement: Selon projet
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME.
+    liens:
+      - lien: >-
+          https://agir.ademe.fr/sites/default/files/DECARB%20IND%2025%20-%20Foire%20aux%20questions%20-%202025.pdf
+        texte: Conditions d'éligibilité et financement
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: >-
+          https://agir.ademe.fr/aides-financieres/aap/decarbonation-de-lindustrie-decarb-ind-25
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME instruit votre dossier. Cette phase dure 4 à 6 mois à partir de la
+      date de clôture de l'appel à projets. Si votre dossier est sélectionné,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - |-
+      - Les industries et activités inéligibles sont
+        - Activités tertiaires ;
+        - Activités agricoles (sauf industrie agro-alimentaire) ;
+        - Activités du secteur BTP sur chantier ;
+        - Unités de Valorisation Energétiques des déchets (UVE) ;
+        - Industries de production et mise sur le marché d'énergie sur le réseau.
+    - Les codes NAF éligibles sont compris entre 10.11Z et 33.20D.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Vos projets doivent représenter un investissement de plus de 3 millions
+      d’euros sur un même site industriel identifié par un numéro SIRET. Il peut
+      inclure plusieurs opérations sur ce site, tant qu’elles contribuent à la
+      baisse des émissions de GES.
+    - Votre demande d'aide doit être inférieure à 30 millions d’euros.
+    - >-
+      Vos investissements doivent permettre de réduire les émissions d’au moins
+      1 000 tonnes de CO₂e par an, en comparant la situation avant et après le
+      projet, sans modifier le niveau de production.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - questionnaire . parcours = objectif précis
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a une categorie legale eligible
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+  entreprise . a un objectif ciblé:
+    une de ces conditions: []

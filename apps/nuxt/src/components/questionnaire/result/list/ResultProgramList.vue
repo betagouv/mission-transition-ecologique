@@ -46,7 +46,7 @@
 </template>
 
 <script setup lang="ts">
-import { type ProgramData } from '@/types'
+import { ProgramTypeForFront } from '@/types'
 import { computed } from 'vue'
 import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
 import Translation from '@/tools/translation'
@@ -55,7 +55,7 @@ import { useNavigationStore } from '@/stores/navigation'
 import { CompanyData } from '@/tools/companyData'
 
 interface ProgramListProps {
-  filteredPrograms?: ProgramData[]
+  filteredPrograms?: ProgramTypeForFront[]
   hasError: boolean
 }
 

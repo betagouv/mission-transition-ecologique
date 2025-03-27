@@ -1,5 +1,7 @@
 import { SitemapUrlInput } from '#sitemap/types'
-import { RoutePath, ChangeFreq, Priority, ProgramType } from '@/types'
+import { ProgramType } from '@tee/data/server'
+import { ChangeFreq, Priority } from '@/types/sitemapType'
+import { RoutePath } from '@/types/routeType'
 import { ProgramService } from '@tee/backend-ddd'
 import { UrlBuilder } from '~/server/utils/UrlBuilder'
 

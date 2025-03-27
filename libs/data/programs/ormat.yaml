@@ -1,0 +1,141 @@
+titre: ORMAT
+promesse: Valorisez vos déchets en Matières Premières de Recyclage
+description: >-
+  L'appel à projets "Objectif Recyclage MATières" vise à soutenir les projets
+  qui favorisent la production locale de Matières Premières de Recyclage, leur
+  utilisation efficace et leur reconditionnement  pour produire des batteries.
+  L'ADEME peut soutenir financièrement les diagnostics, études, tests de
+  performance, expérimentations ainsi que les investissements sur l’outil
+  productif de Matières Premières de Recyclage (MPR).
+description longue: >-
+  Cet appel à projets s'adresse à vous si : 
+
+  • Vous êtes préparateur en charge du surtri et de la préparation des déchets,
+  étapes en aval de leur collecte et de leur premier tri, en vue de leur
+  transformation en Matière Première de Recyclage (MPR). Vous souhaitez
+  améliorer la performance de vos process ou développer de nouvelles capacités.
+
+
+  • Vous êtes régénérateur ou recycleur et vous produisez de la Matière Première
+  de Recyclage en vue de son utilisation industrielle. Vous souhaitez améliorer
+  la performance de vos process ou développer de nouvelles capacités.
+
+
+  • Vous êtes transformateur et souhaitez incorporer de la Matière Première de
+  Recyclage dans vos produits (ou en incorporer davantage).
+
+
+  • Vous êtes un transformateur qui reconditionne ou remanufacture des batteries
+  ou leurs composants déjà utilisés, au
+
+  lieu de s’approvisionner en matières vierges et composants neufs pour produire
+  des batteries
+
+  neuves. 
+
+
+  • Vous êtes un donneur d'ordre qui s’appuie sur les procédés de
+
+  fabrication de transformateurs sous-traitants. 
+
+
+  6 familles de matériaux sont concernées : plastiques, textiles, métaux et
+  batteries, bois, papier – carton, verre et matériaux minéraux.
+début de validité: 17/01/2024
+fin de validité: 06/10/2025
+illustration: images/TEE_eolienne.png
+opérateur de contact: ADEME
+url: >-
+  https://agir.ademe.fr/aides-financieres/aap/fonds-economie-circulaire-ormat-2025-objectif-recyclage-matieres
+nature de l'aide: financement
+montant du financement: Jusqu'à 80% d'aide, dans un maximum selon le projet
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME ou en contactant un conseiller.
+    liens:
+      - lien: >-
+          https://agir.ademe.fr/sites/default/files/AAP%20ORMAT%202025%20-%20Cahier%20des%20charges%20-%202025.pdf
+        texte: Conditions éligibilité et financement
+  - description: >-
+      Choisissez le prestataire qui va vous accompagner pour mener l'étude (si
+      vous sollicitez une aide aux diagnostics, études de faisabilité et essais
+      / expérimentation).
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre demande d'aide : informations administratives, description
+      du projet, détails techniques et financiers, etc. A ce stade, votre projet
+      ne doit pas avoir commencé !
+    liens:
+      - lien: >-
+          https://agir.ademe.fr/aides-financieres/aap/fonds-economie-circulaire-ormat-2025-objectif-recyclage-matieres?backtosearch=true#eligibility
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez votre étude ou votre investissement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - >-
+      Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
+      Loire, Corse, Grand Est, Guadeloupe, Guyane, Hauts-de-France,
+      Île-de-France, La Réunion, Martinique, Mayotte, Normandie,
+      Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire,
+      Polynésie française
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+      - questionnaire . parcours = objectif précis
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Auvergne-Rhône-Alpes
+      - région = Bourgogne-Franche-Comté
+      - région = Bretagne
+      - région = Centre-Val de Loire
+      - région = Corse
+      - région = Grand Est
+      - région = Guadeloupe
+      - région = Guyane
+      - région = Hauts-de-France
+      - région = Île-de-France
+      - région = La Réunion
+      - région = Martinique
+      - région = Mayotte
+      - région = Normandie
+      - région = Nouvelle-Aquitaine
+      - région = Nouvelle-Calédonie
+      - région = Occitanie
+      - région = Pays de la Loire
+      - région = Polynésie française

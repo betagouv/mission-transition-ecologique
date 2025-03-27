@@ -21,10 +21,10 @@
 
 <script setup lang="ts">
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
-import { type ProgramData } from '@/types'
+import { ProgramTypeForFront } from '@/types'
 
 interface Props {
-  filteredPrograms?: ProgramData[]
+  filteredPrograms?: ProgramTypeForFront[]
 }
 defineProps<Props>()
 </script>
