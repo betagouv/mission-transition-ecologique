@@ -11,7 +11,7 @@ export const useFiltersStore = defineStore('filters', () => {
     [FilterItemKeys.operatorAid]: []
   })
 
-  const companyDataSelected = ref<boolean>(true)
+  const companyDataSelected = ref<boolean>(false)
 
   function hasThemeTypeSelected() {
     return filters.value[FilterItemKeys.themeType] !== ''
