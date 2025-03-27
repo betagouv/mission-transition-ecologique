@@ -12,10 +12,10 @@
       </a>
       <div
         v-if="hasFullRegisteredData && !Breakpoint.isMobile()"
-        class="fr-pt-4v fr-pl-4v"
+        class="fr-pt-18v fr-pl-4v"
       >
         <span class="fr-text--bold">Filtres</span>
-        <div class="fr-py-2v fr-text--sm fr-border-b--grey">Entreprise</div>
+        <div class="fr-py-2v fr-text--sm fr-border-b--grey fr-text--bold">Votre entreprise</div>
         <FilterByCompanyData />
       </div>
     </template>

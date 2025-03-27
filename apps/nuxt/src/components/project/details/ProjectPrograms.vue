@@ -3,7 +3,7 @@
     v-if="hasRegisteredData || countFilteredPrograms"
     id="project-aids-title"
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
-    :title="isCompanyDataSelected ? '💰 Mes aides' : '💰 Toutes les aides'"
+    :title="isCompanyDataSelected ? '💰 Vos aides' : '💰 Toutes les aides'"
   >
     <template #content>
       <client-only fallback-tag="div">
