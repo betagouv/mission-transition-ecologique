@@ -30,7 +30,7 @@
               />
             </div>
             <p
-              v-if="isCompanyDataSelected && !navigationStore.hasSpinner"
+              v-if="isCompanyDataSelected && hasFullRegisteredData && !navigationStore.hasSpinner"
               class="fr-mb-0"
               v-html="resume"
             ></p>
@@ -103,6 +103,7 @@ const navigationStore = useNavigationStore()
 const { programs, hasError } = storeToRefs(useProgramStore())
 const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormContainer')
 const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
+const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyDataStore())
 
 const resume: string = Translation.t('project.programsList', {
   effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyData.size ?? '')),
