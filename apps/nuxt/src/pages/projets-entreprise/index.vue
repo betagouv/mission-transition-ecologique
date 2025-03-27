@@ -12,9 +12,17 @@
 <script setup lang="ts">
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { RouteName } from '@/types'
+import { useCompanyDataStore } from '@/stores/companyData'
+import { useFiltersStore } from '@/stores/filters'
 
 definePageMeta({
   name: RouteName.CatalogProjects,
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
+})
+
+const { isDataFull } = storeToRefs(useCompanyDataStore())
+
+watch(isDataFull, (value) => {
+  useFiltersStore().setCompanyDataSelected(value)
 })
 </script>
