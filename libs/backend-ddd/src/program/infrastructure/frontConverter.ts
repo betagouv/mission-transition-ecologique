@@ -1,5 +1,5 @@
-import { PublicodesKeys, FiltersKeys, PublicodeObjective } from '@tee/common'
-import { ProgramTypeWithEligibility, PublicodesCondition, ThemeId } from '@tee/data'
+import { PublicodesKeys, PublicodeObjective } from '@tee/common'
+import { FiltersKeys, ProgramTypeForFront, ProgramTypeWithEligibility, PublicodesCondition, ThemeId } from '@tee/data'
 import type { ObjectivePublicodeData } from './types'
 
 class FrontConverter {
@@ -41,7 +41,7 @@ class FrontConverter {
     return null
   }
 
-  public convertDomainToFront(program: ProgramTypeWithEligibility) {
+  public convertDomainToFront(program: ProgramTypeWithEligibility): ProgramTypeForFront {
     const { publicodes, ...frontProgram } = program
     if (publicodes) {
       const filters = Object.keys(publicodes).reduce<{ [key in FiltersKeys]?: string[] }>((acc, publicodeKey) => {
@@ -54,9 +54,9 @@ class FrontConverter {
         }
         return acc
       }, {})
-      return { ...frontProgram, filters: filters }
+      return { ...frontProgram, filters: filters } as ProgramTypeForFront
     }
-    return program
+    return frontProgram as ProgramTypeForFront
   }
 }
 
