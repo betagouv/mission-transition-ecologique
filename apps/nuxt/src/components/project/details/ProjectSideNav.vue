@@ -16,14 +16,13 @@
 <script setup lang="ts">
 import { ProjectType } from '@/types'
 import { Scroll } from '@/tools/scroll'
-import { CompanyData } from '@/tools/companyData'
 
 interface Props {
   project: ProjectType
 }
 const props = defineProps<Props>()
 
-const menuItems = computed(() => allMenuItems.filter((item) => item.condition !== false))
+const menuItems = computed(() => allMenuItems.value.filter((item) => item.condition !== false))
 
 const scrollTo = (id: string) => {
   const element = document.getElementById(id)
@@ -31,9 +30,9 @@ const scrollTo = (id: string) => {
     Scroll.to(element)
   }
 }
-const hasRegisteredData = CompanyData.isDataFull()
+const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyDataStore())
 
-const allMenuItems = [
+const allMenuItems = computed(() => [
   {
     id: 'project',
     to: `project-description-details-title`,
@@ -46,13 +45,13 @@ const allMenuItems = [
     text: 'Pour aller plus loin',
     condition: props.project.moreDescription.length > 0
   },
-  { id: 'aids', to: `project-aids-title`, text: 'Mes aides', condition: hasRegisteredData.value },
-  { id: 'contact', to: `form-title`, text: 'Contact', condition: hasRegisteredData.value },
+  { id: 'aids', to: `project-aids-title`, text: 'Mes aides', condition: hasFullRegisteredData.value },
+  { id: 'contact', to: `form-title`, text: 'Contact', condition: hasFullRegisteredData.value },
   {
     id: 'linked-project',
     to: `project-linked-projects-title`,
     text: 'Prérequis',
     condition: props.project.linkedProjects.length > 0
   }
-]
+])
 </script>
