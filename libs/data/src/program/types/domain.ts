@@ -1,3 +1,4 @@
+import { ProgramType } from './shared'
 import { BaserowSectors } from '../../common/baserow/types'
 import { Theme } from '../../theme/types/domain'
 
@@ -63,6 +64,8 @@ export interface YamlObjective {
   description: string
   liens?: { lien: string; texte: string }[]
 }
+
+export type ConditionalYaml = Required<ProgramType['champs conditionnels'][]>[number][number]
 
 export interface Operator {
   id: number

@@ -22,7 +22,7 @@ import { computed } from 'vue'
 
 definePageMeta({
   name: RouteName.CatalogPrograms,
-  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries]
+  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
 })
 
 const programStore = useProgramStore()

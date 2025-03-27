@@ -1,9 +1,9 @@
 import Navigation from '@/tools/navigation'
-import { ProgramData as ProgramType, ProjectType as ProjectType, RouteName } from '@/types'
+import { ProgramTypeForFront, ProjectType, RouteName } from '@/types'
 import type { RouteLocationRaw } from 'vue-router'
 
 export default class Program {
-  static getEndDate(program: ProgramType | undefined): Date | undefined {
+  static getEndDate(program: ProgramTypeForFront | undefined): Date | undefined {
     if (program === undefined || program['fin de validité'] === undefined) {
       return undefined
     }
@@ -12,27 +12,27 @@ export default class Program {
     return new Date(`${dateArr[2]}/${dateArr[1]}/${dateArr[0]}`)
   }
 
-  static isAvailable(program: ProgramType | undefined) {
+  static isAvailable(program: ProgramTypeForFront | undefined) {
     const endDate = this.getEndDate(program)
 
     return endDate !== undefined ? endDate >= new Date() : true
   }
 
-  public static isTemporaryUnavailable(program: ProgramType | undefined) {
+  public static isTemporaryUnavailable(program: ProgramTypeForFront | undefined) {
     return program?.[`aide temporairement indisponible`] === 'oui'
   }
 
-  static getLinkedProjects(program: ProgramType | undefined, projects: ProjectType[]) {
+  static getLinkedProjects(program: ProgramTypeForFront | undefined, projects: ProjectType[]) {
     if (program) {
       return projects.filter((project: ProjectType) => project.programs.includes(program.id))
     }
   }
 
-  static isProgramAutonomous(program: ProgramType | undefined) {
+  static isProgramAutonomous(program: ProgramTypeForFront | undefined) {
     return program?.['activable en autonomie'] === 'oui'
   }
 
-  static getBackLink(program: ProgramType | undefined, currentProject?: ProjectType | undefined): RouteLocationRaw | undefined {
+  static getBackLink(program: ProgramTypeForFront | undefined, currentProject?: ProjectType | undefined): RouteLocationRaw | undefined {
     if (!program) {
       return undefined
     }

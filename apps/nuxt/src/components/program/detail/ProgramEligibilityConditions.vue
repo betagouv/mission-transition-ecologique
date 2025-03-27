@@ -29,9 +29,9 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { ProgramData } from '@/types'
+import { ProgramTypeForFront } from '@/types'
 
-type EligibilityCategory = keyof ProgramData["conditions d'éligibilité"]
+type EligibilityCategory = keyof ProgramTypeForFront["conditions d'éligibilité"]
 
 type Emojis = Record<EligibilityCategory, string>
 
@@ -62,7 +62,7 @@ const getFieldsForColumn = (columnNumber: number): EligibilityCategory[] => {
 }
 
 interface Props {
-  program: ProgramData
+  program: ProgramTypeForFront
 }
 const props = defineProps<Props>()
 

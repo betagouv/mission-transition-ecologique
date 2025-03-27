@@ -79,7 +79,7 @@
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
 import { ProgramManager } from '@/tools/program/programManager'
-import { ProgramAidType, type ProgramData, ProjectType, OpportunityType, Color } from '@/types'
+import { ProgramAidType, ProjectType, OpportunityType, Color, ProgramTypeForFront } from '@/types'
 import Contact from '@/tools/contact'
 import Translation from '@/tools/translation'
 import Opportunity from '@/tools/opportunity'
@@ -115,7 +115,7 @@ const filteredPrograms = computed(() => {
 })
 
 const studyPrograms = computed(() => {
-  return filteredPrograms.value.filter((program: ProgramData) =>
+  return filteredPrograms.value.filter((program: ProgramTypeForFront) =>
     [ProgramAidType.study, ProgramAidType.train].includes(program["nature de l'aide"])
   )
 })
