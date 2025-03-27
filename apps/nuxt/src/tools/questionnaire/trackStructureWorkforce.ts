@@ -1,84 +1,5 @@
-import { NextTrackRuleSet, SizeToText, Track, TrackCategory } from '@/types'
-import { ConditionOperators, DataMappingFrom, TrackComponent, TrackId, StructureSize } from '@/types'
-import { QuestionnaireRoute } from '@tee/common'
-
-const nextTrackRuleSets: NextTrackRuleSet[] = [
-  {
-    help: "Goes to track_sectors if : doesn't have infos about sector",
-    rules: [
-      {
-        from: DataMappingFrom.UsedTracks,
-        id: 'siret',
-        dataField: 'siret',
-        conditions: [
-          {
-            type: 'siret',
-            operator: ConditionOperators.isMissing
-          }
-        ]
-      }
-    ],
-    next: { default: TrackId.Sectors }
-  },
-  {
-    help: "Goes to track_structure_building_property if : has infos about codeNaf AND questionnaire_route == 'no_specific_goal' (newbie)",
-    rules: [
-      {
-        from: DataMappingFrom.UsedTracks,
-        id: 'codeNAF',
-        dataField: 'codeNAF',
-        conditions: [
-          {
-            type: 'codeNAF',
-            operator: ConditionOperators.exists
-          }
-        ]
-      },
-      {
-        from: DataMappingFrom.UsedTracks,
-        id: 'questionnaire_route',
-        dataField: 'questionnaire_route',
-        conditions: [
-          {
-            type: 'questionnaire_route',
-            operator: ConditionOperators.is,
-            value: QuestionnaireRoute.NoSpecificGoal
-          }
-        ]
-      }
-    ],
-    next: { default: TrackId.BuildingProperty }
-  },
-  {
-    help: "Goes to track_goals if : have infos about sector AND questionnaire_route == 'specific_goal' (pro)",
-    rules: [
-      {
-        from: DataMappingFrom.UsedTracks,
-        id: 'codeNAF',
-        dataField: 'codeNAF',
-        conditions: [
-          {
-            type: 'codeNAF',
-            operator: ConditionOperators.exists
-          }
-        ]
-      },
-      {
-        from: DataMappingFrom.UsedTracks,
-        id: 'questionnaire_route',
-        dataField: 'questionnaire_route',
-        conditions: [
-          {
-            type: 'questionnaire_route',
-            operator: ConditionOperators.is,
-            value: QuestionnaireRoute.SpecificGoal
-          }
-        ]
-      }
-    ],
-    next: { default: TrackId.Goals }
-  }
-]
+import { SizeToText, Track, TrackCategory } from '@/types'
+import { TrackComponent, TrackId, StructureSize } from '@/types'
 
 export const workforce: Track = {
   id: TrackId.StructureWorkforce,
@@ -98,8 +19,7 @@ export const workforce: Track = {
       title: { fr: SizeToText[StructureSize.EI].title },
       label: { fr: SizeToText[StructureSize.EI].label },
       next: {
-        default: TrackId.Sectors,
-        ruleSet: nextTrackRuleSets
+        default: TrackId.Sectors
       }
     },
     {
@@ -108,8 +28,7 @@ export const workforce: Track = {
       title: { fr: SizeToText[StructureSize.MICRO].title },
       label: { fr: SizeToText[StructureSize.MICRO].label },
       next: {
-        default: TrackId.Sectors,
-        ruleSet: nextTrackRuleSets
+        default: TrackId.Sectors
       }
     },
 
@@ -119,8 +38,7 @@ export const workforce: Track = {
       title: { fr: SizeToText[StructureSize.TPE].title },
       label: { fr: SizeToText[StructureSize.TPE].label },
       next: {
-        default: TrackId.Sectors,
-        ruleSet: nextTrackRuleSets
+        default: TrackId.Sectors
       }
     },
     {
@@ -129,8 +47,7 @@ export const workforce: Track = {
       title: { fr: SizeToText[StructureSize.PE].title },
       label: { fr: SizeToText[StructureSize.PE].label },
       next: {
-        default: TrackId.Sectors,
-        ruleSet: nextTrackRuleSets
+        default: TrackId.Sectors
       }
     },
     {
@@ -139,8 +56,7 @@ export const workforce: Track = {
       title: { fr: SizeToText[StructureSize.ME].title },
       label: { fr: SizeToText[StructureSize.ME].label },
       next: {
-        default: TrackId.Sectors,
-        ruleSet: nextTrackRuleSets
+        default: TrackId.Sectors
       }
     },
     {
@@ -149,8 +65,7 @@ export const workforce: Track = {
       title: { fr: SizeToText[StructureSize.ETI].title },
       label: { fr: SizeToText[StructureSize.ETI].label },
       next: {
-        default: TrackId.Sectors,
-        ruleSet: nextTrackRuleSets
+        default: TrackId.Sectors
       }
     },
     {
@@ -159,8 +74,7 @@ export const workforce: Track = {
       title: { fr: SizeToText[StructureSize.GE].title },
       label: { fr: SizeToText[StructureSize.GE].label },
       next: {
-        default: TrackId.Sectors,
-        ruleSet: nextTrackRuleSets
+        default: TrackId.Sectors
       }
     }
   ]

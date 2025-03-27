@@ -1,6 +1,6 @@
 <template>
   <div
-    v-if="!useUsedTrackStore().currentIsFirst"
+    v-if="track?.label"
     class="fr-col-12 fr-pb-2v fr-mt-6v"
   >
     <h3 :class="`${track?.info ? 'fr-mb-0' : 'fr-mb-2v'}`">
@@ -10,7 +10,6 @@
 </template>
 
 <script setup lang="ts">
-import { useUsedTrackStore } from '@/stores/usedTrack'
 import type { Track } from '@/types'
 import Translation from '@/tools/translation'
 

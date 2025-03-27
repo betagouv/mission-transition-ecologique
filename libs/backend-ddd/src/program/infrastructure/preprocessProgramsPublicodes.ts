@@ -1,11 +1,10 @@
-import { type ProgramType, ThemeId } from '@tee/data'
-import { type PublicodesInputData, PublicodesQuestionnaireRoute } from './types'
+import { type ProgramType } from '@tee/data'
+import { type PublicodesInputData } from './types'
 import {
   QuestionnaireChecker,
   PublicodeObjective,
   PublicodesKeys,
   QuestionnaireData,
-  QuestionnaireRoute,
   SizeToWorkforce,
   YesNo,
   StructureSize,
@@ -30,7 +29,6 @@ export const preprocessInputForPublicodes = (
   setCodeNAF(publicodesData, questionnaireData)
   setCodeNaf1(publicodesData, questionnaireData)
   setObjectives(publicodesData, questionnaireData)
-  setQuestionnaireRoute(publicodesData, questionnaireData)
   setDateValidity(publicodesData, programData)
 
   return publicodesData
@@ -83,58 +81,39 @@ const setCodeNaf1 = (publicodesData: PublicodesInputData, questionnaireData: Que
 }
 
 const setObjectives = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
-  if (questionnaireData.priority_objective) {
-    // "J'ai un objectif précis en tête"
-    for (const objective of Object.values(ThemeId)) {
-      const publicodeObjectiveKey = 'questionnaire . objectif prioritaire . est ' + objective
-      publicodesData[publicodeObjectiveKey] = objective === questionnaireData.priority_objective ? YesNo.Yes : YesNo.No
-    }
-  } else {
-    // "Je ne sais pas par où commencer"
-    publicodesData[PublicodeObjective.EnvironmentalImpact] = QuestionnaireChecker.isEnvironmentalImpact(questionnaireData.recently_audited)
-      ? YesNo.Yes
-      : YesNo.No
+  publicodesData[PublicodeObjective.EnvironmentalImpact] = QuestionnaireChecker.isEnvironmentalImpact(questionnaireData.recently_audited)
+    ? YesNo.Yes
+    : YesNo.No
 
-    publicodesData[PublicodeObjective.EcoDesign] = QuestionnaireChecker.isEcoDesign(questionnaireData.wastes_materials_objective)
-      ? YesNo.Yes
-      : YesNo.No
+  publicodesData[PublicodeObjective.EcoDesign] = QuestionnaireChecker.isEcoDesign(questionnaireData.wastes_materials_objective)
+    ? YesNo.Yes
+    : YesNo.No
 
-    publicodesData[PublicodeObjective.WasteManagement] = QuestionnaireChecker.isWasteManagement(
-      questionnaireData.wastes_management_objective
-    )
-      ? YesNo.Yes
-      : YesNo.No
+  publicodesData[PublicodeObjective.WasteManagement] = QuestionnaireChecker.isWasteManagement(questionnaireData.wastes_management_objective)
+    ? YesNo.Yes
+    : YesNo.No
 
-    publicodesData[PublicodeObjective.WaterConsumption] = QuestionnaireChecker.isWaterConsumption(
-      questionnaireData.water_reduction_objective
-    )
-      ? YesNo.Yes
-      : YesNo.No
+  publicodesData[PublicodeObjective.WaterConsumption] = QuestionnaireChecker.isWaterConsumption(questionnaireData.water_reduction_objective)
+    ? YesNo.Yes
+    : YesNo.No
 
-    publicodesData[PublicodeObjective.SustainableMobility] = QuestionnaireChecker.isSustainableMobility(
-      questionnaireData.sustainable_mobility_objective
-    )
-      ? YesNo.Yes
-      : YesNo.No
+  publicodesData[PublicodeObjective.SustainableMobility] = QuestionnaireChecker.isSustainableMobility(
+    questionnaireData.sustainable_mobility_objective
+  )
+    ? YesNo.Yes
+    : YesNo.No
 
-    publicodesData[PublicodeObjective.EnergyPerformance] = QuestionnaireChecker.isEnergyPerformance(
-      questionnaireData.energy_reduction_objective
-    )
-      ? YesNo.Yes
-      : YesNo.No
+  publicodesData[PublicodeObjective.EnergyPerformance] = QuestionnaireChecker.isEnergyPerformance(
+    questionnaireData.energy_reduction_objective
+  )
+    ? YesNo.Yes
+    : YesNo.No
 
-    publicodesData[PublicodeObjective.Biodiversity] = YesNo.Yes
+  publicodesData[PublicodeObjective.Biodiversity] = YesNo.Yes
 
-    publicodesData[PublicodesKeys.BuildingOwner] = QuestionnaireChecker.isBuildingProperty(questionnaireData.building_property)
-      ? YesNo.Yes
-      : YesNo.No
-  }
-}
-const setQuestionnaireRoute = (publicodesData: PublicodesInputData, questionnaireData: QuestionnaireData) => {
-  if (questionnaireData.questionnaire_route) {
-    const route = questionnaireData.questionnaire_route
-    publicodesData[PublicodesKeys.QuestionnaireRoute] = convertQuestionnaireRoute(route)
-  }
+  publicodesData[PublicodesKeys.BuildingOwner] = QuestionnaireChecker.isBuildingProperty(questionnaireData.building_property)
+    ? YesNo.Yes
+    : YesNo.No
 }
 const setDateValidity = (publicodesData: PublicodesInputData, programData: ProgramType) => {
   if (programData['début de validité']) {
@@ -142,15 +121,6 @@ const setDateValidity = (publicodesData: PublicodesInputData, programData: Progr
   }
   if (programData['fin de validité']) {
     publicodesData['dispositif . fin de validité'] = programData['fin de validité']
-  }
-}
-
-const convertQuestionnaireRoute = (route: QuestionnaireRoute): PublicodesQuestionnaireRoute => {
-  switch (route) {
-    case QuestionnaireRoute.NoSpecificGoal:
-      return PublicodesQuestionnaireRoute.NoSpecificGoal
-    case QuestionnaireRoute.SpecificGoal:
-      return PublicodesQuestionnaireRoute.SpecificGoal
   }
 }
 
