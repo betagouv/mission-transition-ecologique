@@ -11,7 +11,7 @@
       #catalog-content
     >
       <div
-        v-if="hasFullRegisteredData && props.showCompanyFilter"
+        v-if="hasFullRegisteredData"
         class="fr-col-2 fr-col-hidden fr-col-unhidden-lg"
       >
         <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
@@ -32,7 +32,7 @@
               <TeeCounterResult :to-count="sortedProjects" />
             </div>
             <div
-              v-if="hasFullRegisteredData && props.showCompanyFilter"
+              v-if="hasFullRegisteredData"
               class="fr-col-9 fr-col-hidden-lg fr-text-right"
             >
               <ProjectModalFilter />

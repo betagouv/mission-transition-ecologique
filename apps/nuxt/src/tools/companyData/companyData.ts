@@ -1,4 +1,5 @@
 import { useCompanyDataStore } from '@/stores/companyData'
+import { useFiltersStore } from '@/stores/filters'
 import { CompanyDataStorage } from '@/tools/companyData/companyDataStorage'
 import { useNavigationStore } from '@/stores/navigation'
 import {
@@ -78,6 +79,20 @@ export class CompanyData {
     return CompanyDataStorage.getData()
   }
 
+  static hasDataFull() {
+    const data = this.dataRef
+    const companyData = data.value[CompanyDataStorageKey.Company]
+    if (!companyData) {
+      return false
+    }
+    return CompanyDataValidator.validate(companyData)
+  }
+
+  static setDataFull() {
+    useCompanyDataStore().isDataFull = this.hasDataFull()
+    console.log('setDataFull', useCompanyDataStore().isDataFull)
+  }
+
   static isDataFull() {
     return computed(() => {
       const data = this.dataRef
@@ -112,6 +127,7 @@ export class CompanyData {
   static resetData() {
     CompanyDataStorage.removeItem(CompanyDataStorageKey.Company)
     CompanyDataStorage.removeItem(CompanyDataStorageKey.Size)
+    this.setDataFull()
   }
 
   static updateData() {
@@ -120,7 +136,7 @@ export class CompanyData {
 
   static saveAndSetUsedTrackStore(data: CompanyDataType) {
     this.saveDataToStorage(data)
-    useFiltersStore().companyDataSelected = true
+    this.setDataFull()
     useUsedTrackStore().setFromStorage()
   }
 
@@ -135,7 +151,7 @@ export class CompanyData {
   }
 
   static populateQuestionnaireData(questionnaireData: { [k: string]: any }) {
-    if (this.isDataFull().value) {
+    if (useCompanyDataStore().isDataFull) {
       const companyData: CompanyDataType = this.dataRef.value
       Object.entries(companyData).forEach(([key, value]) => {
         if (value !== null) {

@@ -33,6 +33,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import { useFiltersStore } from '@/stores/filters'
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { RegisterDetailType, RegisterDetails, CompanyDataStorageKey, CompanyDataType, Region, EstablishmentFront, NAF1 } from '@/types'
@@ -124,6 +125,7 @@ const saveProfile = async () => {
 
     Navigation.toggleRegisterModal(false)
     await UsedTrack.updateQuestionnaireStep()
+    useFiltersStore().setCompanyDataSelected(true)
     await new ProjectManager().update()
     await new ProgramManager().update()
   } else {
