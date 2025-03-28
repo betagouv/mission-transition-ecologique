@@ -136,7 +136,7 @@
     "shortDescription": "L’énergie solaire photovoltaïque transforme le rayonnement solaire en électricité.",
     "image": "/images/projet/panneaux-solaires.webp",
     "longDescription": "Les panneaux solaires produisent de l'électricité grâce au rayonnement du soleil.\\\nPosés sur une toiture, au sol ou sur une terrasse, les capteurs peuvent être également intégrés à votre bâtiment, sous forme d'ardoises, de tuiles ou d'éléments de façades.\\\nL’électricité produite peut être utilisée sur place (autoconsommation) ou réinjectée dans le réseau de distribution électrique.\\\nL'installation de panneaux solaires vous permet donc de faire des économies et de réduire l'empreinte écologique de votre entreprise.",
-    "moreDescription": "- [**Le Centre de ressources Photovoltaïque**](https://www.photovoltaique.info/fr/) : un site ressource sur le Photovoltaïque crée avec le soutient de l’ADEME.\n- [**La marque AQPV**](https://www.aqpv.fr/) (Alliance Qualité Photovoltaïque) : lancée par l'État, cette marque rassemble tous les modules photovoltaïques afin d'assurer une performance et une fiabilité maximale en termes de conception, installation, opération et maintenance.\n- [**Qualit’EnR**](https://www.qualit-enr.org/), un annuaire de professionnels RGE qualifiés pour votre projet de construction ou de rénovation énergétique.",
+    "moreDescription": "- [**Le Centre de ressources Photovoltaïque**](https://www.photovoltaique.info/fr/) : un site ressource sur le Photovoltaïque crée avec le soutient de l’ADEME.\n- [**La marque AQPV**](https://www.aqpv.fr/) (Alliance Qualité Photovoltaïque) : lancée par l'État, cette marque rassemble tous les modules photovoltaïques afin d'assurer une performance et une fiabilité maximale en termes de conception, installation, opération et maintenance.\n- **L'électricité photovoltaïque en 10 questions,** un livret proposé par l'ADEME.\n- [**Qualit’EnR**](https://www.qualit-enr.org/), un annuaire de professionnels RGE qualifiés pour votre projet de construction ou de rénovation énergétique.",
     "themes": [
       "energy"
     ],
@@ -389,7 +389,7 @@
     "shortDescription": "Quantifier vos émissions de Gaz à effet de serre émise ou captée par les activités de votre entreprise.",
     "image": "/images/projet/bilan-ges.webp",
     "longDescription": "Le bilan des émissions de gaz à effet de serre (GES) permet de comptabiliser les émissions de gaz à effet de serre générées, directement ou indirectement, par les activités d’une entreprise. Cette méthode est utilisée pour concevoir et mettre en place un plan de réduction des émissions à l’échelle d’une entreprise. \\\nLa grande majorité des bilans GES réalisés en France utilisent la méthode Bilan Carbone®, élaborée par l’ADEME. \\\nSi la loi oblige certaines à réaliser leur Bilan GES, toutes les entreprises peuvent réaliser un Bilan GES, même lorsqu’elles n’y sont pas contraintes. À la clé, de nombreux avantages : respect des enjeux RSE, économies d’énergie, anticipation des lois, marque employeur...",
-    "moreDescription": "- [**Réglementation bilan GES,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) Un portail pour connaitre les obligations de votre entreprise.\n- [**Bilans GES ADEME,**](https://bilans-ges.ademe.fr/) la plateforme nationale pour la publication des bilans d'émission de gaz à effet.",
+    "moreDescription": "- [**Réglementation bilan GES,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) Un portail pour connaitre les obligations de votre entreprise.\n- [**L'annuaire des prestataires Bilan Carbone®**](https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/)**,** par l'Association pour la transition Bas Carbone (ABC)\n- [**Bilans GES ADEME,**](https://bilans-ges.ademe.fr/) la plateforme nationale pour la publication des bilans d'émission de gaz à effet.",
     "themes": [
       "environmental"
     ],
@@ -2219,6 +2219,55 @@
     ]
   },
   {
+    "id": 104,
+    "slug": "covoiturage",
+    "title": "Covoiturage",
+    "nameTag": "🚗 covoiturage",
+    "shortDescription": "Le covoiturage consiste à partager un véhicule entre plusieurs personnes pour réduire les coûts et l'impact environnemental.",
+    "image": "/images/projet/covoiturage.webp",
+    "longDescription": "Le covoiturage est une mise en relation d'un conducteur avec un ou plusieurs passagers dans le but de réaliser un trajet. Le covoiturage permet d'économiser 2 000 € par an pour un.e salarié.e résident à 30 km de son lieu de travail.\n\nSelon l’ADEME, 70% des déplacements domicile-travail sont réalisés avec des véhicules individuels et la part du covoiturage quotidien est estimée à seulement 3%. \\\nEnfin, rappelons que le transport en voiture représente 15% des émissions de gaz à effet de serre en France. C'est le premier facteur d'émission de CO2e.",
+    "moreDescription": "- [**Les étapes pour mettre en place une stratégie covoiturage au sein de votre entreprise**](https://employeursprocovoiturage.ademe.fr/strategie-covoiturage/)**,** issu du plan national covoiturage du quotidien, proposé par l'ADEME.\n- [**La charte d’engagement en faveur du covoiturage des salarié.es**](https://employeursprocovoiturage.ademe.fr/)**,** proposée par l'ADEME.",
+    "themes": [
+      "mobility"
+    ],
+    "mainTheme": "mobility",
+    "programs": [
+      "performa-environnement",
+      "plan-de-mobilite"
+    ],
+    "linkedProjects": [
+      16,
+      26,
+      30,
+      31
+    ],
+    "priority": "80",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
+  },
+  {
     "id": 137,
     "slug": "electromenager-basse-consommation",
     "title": "Électroménager basse consommation",
@@ -2705,7 +2754,8 @@
       "pret-energie-aura",
       "pret-ile-de-france",
       "impulsion-environnement",
-      "prit-hdf"
+      "prit-hdf",
+      "advenir"
     ],
     "linkedProjects": [
       16
@@ -2905,6 +2955,7 @@
       "prime-a-la-conversion",
       "retrofit-electrique",
       "vehicule-lourd-energies-propres",
+      "pami",
       "cheque-transition-bioethanol"
     ],
     "linkedProjects": [
@@ -2954,6 +3005,7 @@
       "amelioration-qualite-de-l-air",
       "navires-energies-propre",
       "agir-pdl",
+      "pami",
       "aide-tourisme-guadeloupe"
     ],
     "linkedProjects": [
