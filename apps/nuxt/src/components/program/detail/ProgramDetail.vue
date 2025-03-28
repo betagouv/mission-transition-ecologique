@@ -219,7 +219,7 @@
 
     <!-- PROGRAM FORM -->
     <div
-      v-if="hasRegisteredData && programIsEligible && !Program.isTemporaryUnavailable(program)"
+      v-if="displayForm"
       ref="tee-program-form-container"
       class="fr-bg--blue--lightness fr-grid-row fr-p-2w"
     >
@@ -341,6 +341,10 @@ onBeforeRouteLeave(() => {
 
 const programIsAvailable = computed(() => {
   return Program.isAvailable(programsStore.currentProgram)
+})
+
+const displayForm = computed(() => {
+  return hasRegisteredData.value && programIsEligible.value && !isProgramAutonomous.value && !Program.isTemporaryUnavailable(program.value)
 })
 
 const scrollToProgramForm = () => {
