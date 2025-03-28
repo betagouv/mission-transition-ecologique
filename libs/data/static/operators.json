@@ -54,7 +54,7 @@
     ]
   },
   {
-    "operator": "Bpifrance",
+    "operator": "Banque Publique d'Investissement France",
     "filterCategories": [
       "Bpifrance"
     ]
@@ -139,7 +139,7 @@
     ]
   },
   {
-    "operator": "CCI",
+    "operator": "Chambre de Commerce et de l'Industrie",
     "filterCategories": [
       "CCI"
     ]
@@ -151,7 +151,7 @@
     ]
   },
   {
-    "operator": "CETIM",
+    "operator": "Centre Technique des Industries Mécaniques",
     "filterCategories": [
       "Opérateurs territoriaux"
     ]
@@ -235,7 +235,7 @@
     ]
   },
   {
-    "operator": "CMA",
+    "operator": "Chambre des Métiers et de l'Artisanat",
     "filterCategories": [
       "CMA"
     ]
@@ -281,7 +281,7 @@
     ]
   },
   {
-    "operator": "CAPEB - Confédération de l'Artisanat et des Petites Entreprises du Bâtiment",
+    "operator": "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment",
     "filterCategories": [
       "OP"
     ]
@@ -307,7 +307,7 @@
     "filterCategories": []
   },
   {
-    "operator": "UIMM - Union des industries et métiers de la métallurgie",
+    "operator": "Union des industries et métiers de la métallurgie",
     "filterCategories": [
       "OP"
     ]
@@ -323,8 +323,10 @@
     ]
   },
   {
-    "operator": "ATEE",
-    "filterCategories": []
+    "operator": "Association Technique Énergie Environnement",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
   },
   {
     "operator": "CMA Corse",
@@ -351,7 +353,7 @@
     ]
   },
   {
-    "operator": "DGE",
+    "operator": "Direction Génération des Entreprises",
     "filterCategories": [
       "État"
     ]
@@ -462,10 +464,12 @@
   },
   {
     "operator": "La Fresque du Climat",
-    "filterCategories": []
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
   },
   {
-    "operator": "SGAR",
+    "operator": "Secrétaire général pour les Affaires régionales",
     "filterCategories": [
       "État"
     ]
@@ -513,10 +517,6 @@
     ]
   },
   {
-    "operator": "CRESS",
-    "filterCategories": []
-  },
-  {
     "operator": "Mouvement des entreprises de France",
     "filterCategories": [
       "OP"
@@ -533,10 +533,6 @@
     "filterCategories": [
       "OP"
     ]
-  },
-  {
-    "operator": "Réseau Entreprendre",
-    "filterCategories": []
   },
   {
     "operator": "Réseau Entreprendre",
@@ -588,11 +584,15 @@
   },
   {
     "operator": "Opcommerce",
-    "filterCategories": []
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
   },
   {
     "operator": "Placéco",
-    "filterCategories": []
+    "filterCategories": [
+      "Média"
+    ]
   },
   {
     "operator": "Agir Pour un Environnement Responsable",
@@ -631,37 +631,19 @@
     ]
   },
   {
-    "operator": "ADN Tourisme",
-    "filterCategories": [
-      "OP"
-    ]
-  },
-  {
-    "operator": "ADN Tourisme",
-    "filterCategories": [
-      "OP"
-    ]
-  },
-  {
-    "operator": "FNHPA",
+    "operator": "Union Française des Métiers de l'Événement",
     "filterCategories": [
       "Opérateurs nationaux"
     ]
   },
   {
-    "operator": "UNIMEV",
+    "operator": "Syndicat national des espaces de loisirs, d'attractions et culturels",
     "filterCategories": [
       "Opérateurs nationaux"
     ]
   },
   {
-    "operator": "SNELAC",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
-    "operator": "UMIH",
+    "operator": "Union des métiers et des industries de l'hôtellerie",
     "filterCategories": [
       "Opérateurs nationaux"
     ]

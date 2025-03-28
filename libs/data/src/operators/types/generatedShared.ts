@@ -9,5 +9,6 @@ export enum OperatorFilter {
   Etat = 'État',
   OP = 'OP',
   Regions = 'Régions',
-  OFBARB = 'OFB/ARB'
+  OFBARB = 'OFB/ARB',
+  Media = 'Média'
 }
