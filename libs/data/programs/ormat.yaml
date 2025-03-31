@@ -8,7 +8,7 @@ description: >-
   performance, expérimentations ainsi que les investissements sur l’outil
   productif de Matières Premières de Recyclage (MPR).
 description longue: >-
-  Cet appel à projets s'adresse à vous si : 
+  Cet appel à projets s'adresse à vous si :
 
   • Vous êtes préparateur en charge du surtri et de la préparation des déchets,
   étapes en aval de leur collecte et de leur premier tri, en vue de leur
@@ -31,12 +31,12 @@ description longue: >-
   lieu de s’approvisionner en matières vierges et composants neufs pour produire
   des batteries
 
-  neuves. 
+  neuves.
 
 
   • Vous êtes un donneur d'ordre qui s’appuie sur les procédés de
 
-  fabrication de transformateurs sous-traitants. 
+  fabrication de transformateurs sous-traitants.
 
 
   6 familles de matériaux sont concernées : plastiques, textiles, métaux et
@@ -100,7 +100,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
