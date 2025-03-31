@@ -66,7 +66,7 @@ interface Props {
   showBreadcrumbs?: boolean
   showCompanyFilter?: boolean
 }
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
   showTitleBanner: true,
   showLimit: undefined,
   showCounter: true,
