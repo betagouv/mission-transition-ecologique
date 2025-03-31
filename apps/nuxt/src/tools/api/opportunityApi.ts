@@ -1,8 +1,6 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import {
-  QuestionnaireDataEnum,
-  QuestionnaireRoute,
   TrackId,
   OpportunityBody,
   ReqResp,
@@ -11,9 +9,9 @@ import {
   OpportunityType,
   Opportunity as OpportunityFormType,
   RouteName,
-  ProgramData,
   isProjectFormDataType,
-  ProjectType
+  ProjectType,
+  ProgramTypeForFront
 } from '@/types'
 import RequestApi from '@/tools/api/requestApi'
 import Opportunity from '@/tools/opportunity'
@@ -31,8 +29,8 @@ export default class OpportunityApi extends RequestApi {
 
   constructor(
     opportunityForm: FormDataType,
-    private _id: ProgramData['id'] | ProjectType['id'] | undefined,
-    private _slug: ProgramData['id'] | ProjectType['slug'] | undefined,
+    private _id: ProgramTypeForFront['id'] | ProjectType['id'] | undefined,
+    private _slug: ProgramTypeForFront['id'] | ProjectType['slug'] | undefined,
     private _opportunityType: OpportunityType
   ) {
     super()
@@ -77,10 +75,6 @@ export default class OpportunityApi extends RequestApi {
       companySector: TrackStructure.getSector(),
       companySize: TrackStructure.getSize() ?? undefined,
       message: this._opportunityForm.needs.value,
-      questionnaireRoute: this.getFromUsedTrack(
-        TrackId.QuestionnaireRoute,
-        QuestionnaireDataEnum.questionnaire_route as string
-      ) as QuestionnaireRoute, // get from usedTrack
       otherData: this.getAllValuesFromUsedTrack(),
       linkToPage: this._generateLinkToPage(),
       linkToCatalog: this._generateCatalogLink()
@@ -112,7 +106,7 @@ export default class OpportunityApi extends RequestApi {
     if (this._opportunityType == OpportunityType.Program) {
       return (
         useNavigationStore().getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
-          programId: this._slug as ProgramData['id']
+          programId: this._slug as ProgramTypeForFront['id']
         }) ?? ''
       )
     }

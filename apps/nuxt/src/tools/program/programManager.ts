@@ -3,8 +3,7 @@ import ProgramApi from '@/tools/api/programApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
-import UsedTrack from '@/tools/questionnaire/track/usedTrack'
-import { ProgramData, QuestionnaireData } from '@/types'
+import { ProgramTypeForFront, QuestionnaireData } from '@/types'
 
 export class ProgramManager {
   _useProgram = useProgramStore()
@@ -58,11 +57,7 @@ export class ProgramManager {
 
   async update() {
     const navigation = new Navigation()
-    if (
-      (navigation.isQuestionnaireResult() && UsedTrack.isNoSpecificGoal()) ||
-      navigation.isQuestionnaireProjectDetail() ||
-      navigation.isCatalogPrograms()
-    ) {
+    if (navigation.isQuestionnaireResult() || navigation.isQuestionnaireProjectDetail() || navigation.isCatalogPrograms()) {
       await this.getDependentCompanyData(navigation.isCatalogPrograms() ? false : undefined)
     } else if (navigation.isCatalogProjectDetail()) {
       await this.getDependentCompanyData(true)
@@ -75,11 +70,11 @@ export class ProgramManager {
     }
   }
 
-  private async _getFromApi(questionnaireData: QuestionnaireData = {}): Promise<ResultApi<ProgramData[]>> {
+  private async _getFromApi(questionnaireData: QuestionnaireData = {}): Promise<ResultApi<ProgramTypeForFront[]>> {
     return await new ProgramApi(questionnaireData).get()
   }
 
-  private async _getOneFromApi(id: string): Promise<ResultApi<ProgramData>> {
+  private async _getOneFromApi(id: string): Promise<ResultApi<ProgramTypeForFront>> {
     return await new ProgramApi(useUsedTrackStore().getQuestionnaireData()).getOne(id)
   }
 }

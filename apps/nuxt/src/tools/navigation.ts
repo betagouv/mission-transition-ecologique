@@ -95,7 +95,7 @@ export default class Navigation {
   }
 
   isQuestionnaire() {
-    return this.isQuestionnaireResult() || this.isQuestionnaireResultDetail()
+    return this.isQuestionnaireResult() || this.isQuestionnaireResultDetail() || this.isByRouteName(RouteName.Questionnaire)
   }
 
   isQuestionnaireThemeCards() {
@@ -142,5 +142,24 @@ export default class Navigation {
 
   static hashByRouteName = (routeName: string) => {
     return `#${routeName}`
+  }
+
+  async redirectAfterModal() {
+    const navigationStore = useNavigationStore()
+    if (this.isByRouteName(RouteName.Homepage)) {
+      if (navigationStore.isFromCtaRegisterModal) {
+        useNavigationStore().setFromCtaRegisterModal(false)
+        await this._router.push({
+          name: RouteName.CatalogProjects
+        })
+      }
+
+      if (navigationStore.isFromQuestionnaireCtaRegisterModal) {
+        useNavigationStore().setFromQuestionnaireCtaRegisterModal(false)
+        await this._router.push({
+          name: RouteName.QuestionnaireStart
+        })
+      }
+    }
   }
 }

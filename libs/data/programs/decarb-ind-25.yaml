@@ -44,7 +44,7 @@ description longue: >-
   - Remplacement d'un équipement par un équipement énergétiquement plus
   performant
 
-  - Mise en place d’équipements de récupération de chaleur 
+  - Mise en place d’équipements de récupération de chaleur
 
   - Valorisation de combustible fatal sous forme 100 % thermique
 
@@ -54,7 +54,7 @@ description longue: >-
   - Electrification des procédés et des utilités : (four électrique, compression
   mécanique de vapeur, pompe à chaleur, séparation membranaire ...) ;
 
-  - Intégration d’énergies thermiques renouvelables ou de récupération 
+  - Intégration d’énergies thermiques renouvelables ou de récupération
 
 
   3- Modification du mix matières
@@ -131,13 +131,23 @@ conditions d'éligibilité:
     - Les codes NAF éligibles sont compris entre 10.11Z et 33.20D.
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Vos projets doivent représenter un investissement de plus de 3 millions
+      d’euros sur un même site industriel identifié par un numéro SIRET. Il peut
+      inclure plusieurs opérations sur ce site, tant qu’elles contribuent à la
+      baisse des émissions de GES.
+    - Votre demande d'aide doit être inférieure à 30 millions d’euros.
+    - >-
+      Vos investissements doivent permettre de réduire les émissions d’au moins
+      1 000 tonnes de CO₂e par an, en comparant la situation avant et après le
+      projet, sans modifier le niveau de production.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:

@@ -1,4 +1,3 @@
-import { questionnaireRoute } from './trackQuestionnaireRoute'
 import { siret } from './trackStructureSiret'
 import { workforce } from './trackStructureWorkforce'
 import { sectors } from './trackStructureSectors'
@@ -16,7 +15,6 @@ import { strategyAuditsSelect } from './trackStrategyAuditsSelect'
 import type { Track } from '@/types'
 
 export const tracks: Track[] = [
-  questionnaireRoute,
   siret,
   workforce,
   sectors,

@@ -1,3 +1,4 @@
+import { ProgramType } from './shared'
 import { BaserowSectors } from '../../common/baserow/types'
 import { Theme } from '../../theme/types/domain'
 
@@ -10,7 +11,6 @@ export interface DataProgram extends BaserowSectors {
   'Description longue': string
   'Opérateur de contact': Operator[]
   'Dispositif activable en autonomie': boolean
-  'Parcours "Je ne sais pas par où commencer"': boolean
   'URL externe': string
   "Montant de l'aide ou coût": string
   "Durée de l'aide": string
@@ -49,7 +49,6 @@ export enum Publicodes {
   ZONE_GEO = 'entreprise . est dans une zone géographique éligible',
   EFFECTIF = 'entreprise . a un effectif éligible',
   LEGALCATEGORY = 'entreprise . a une categorie legale eligible',
-  PARCOURS_OBJ_PRECIS = 'questionnaire . parcours = objectif précis',
   PROPRIO = 'entreprise . est propriétaire de ses locaux',
   ALL = 'toutes ces conditions',
   ANY = 'une de ces conditions'
@@ -63,6 +62,8 @@ export interface YamlObjective {
   description: string
   liens?: { lien: string; texte: string }[]
 }
+
+export type ConditionalYaml = Required<ProgramType['champs conditionnels'][]>[number][number]
 
 export interface Operator {
   id: number
