@@ -3019,7 +3019,7 @@
   display: none;
 }
 
-.fr-input--white {
+.fr-input-bg--white {
   background-color: #fff;
 }
 .fr-input:focus {
@@ -3031,10 +3031,6 @@
 .fr-input::placeholder {
   font-style: normal !important;
   color: var(--text-default-grey);
-}
-
-.fr-input--empty-text {
-  height: 1.25rem;
 }
 
 @media (min-width: 0) {

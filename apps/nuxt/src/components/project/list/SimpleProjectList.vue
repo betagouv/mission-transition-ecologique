@@ -21,7 +21,12 @@
         :project="project"
         class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
       />
-      <TeeHomeQuestionnaireCta v-if="filters[FilterItemKeys.themeType] === ''"/>
+    </li>
+    <li
+      v-if="filters[FilterItemKeys.themeType] === ''"
+      class="fr-col-12 fr-col-sm-6 fr-col-lg-4"
+    >
+      <TeeHomeQuestionnaireCta />
     </li>
   </LayoutList>
 </template>
