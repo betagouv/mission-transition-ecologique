@@ -135,9 +135,9 @@ const saveProfile = async () => {
       Analytics.sendEvent('register_manual_modal')
     }
 
-    Navigation.toggleRegisterModal(false)
     await UsedTrack.updateQuestionnaireStep()
     await navigation.redirectAfterModal()
+    Navigation.toggleRegisterModal(false)
     if (!navigationStore.isFromQuestionnaireCtaRegisterModal) {
       await new ProjectManager().update()
       await new ProgramManager().update()
