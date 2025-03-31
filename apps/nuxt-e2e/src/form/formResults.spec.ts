@@ -66,40 +66,46 @@ tests.forEach((singleTest) => {
         })
         await page.click('[teste2e-selector="open-custom-project-form"]', { timeout: timeOut })
       }
-      await expect(page.locator(`form[name="${singleTest.type}"]`)).toHaveCount(1, { timeout: timeOut })
-      for (const [fieldKey, value] of Object.entries(singleTest.values)) {
-        const selector = `[teste2e-selector="${fieldKey}-${value.type}"]`
 
-        try {
-          if (fieldKey === 'siret') {
-            if (singleTest.manual) {
-              await page.locator(selector).fill(value.value as string, { timeout: timeOut })
-            } else if (value.value) {
-              await expect(page.locator(selector)).toHaveValue(value.value as string)
-            }
-          } else if (fieldKey === 'needs') {
-            const actualNeedsValue = await page.inputValue(selector)
-            expect(actualNeedsValue).toContain(singleTest.manual ? 'Aide par le travail' : 'Programmation informatique')
-          } else if (['text', 'email', 'tel'].includes(value.type)) {
-            await page.locator(selector).fill(value.value as string, { timeout: timeOut })
-          } else if (value.type === 'select' && singleTest.type === 'customProject') {
-            await page.locator(selector).selectOption({ label: value.value as string })
-          } else if (value.type === 'checkbox' && value.value) {
-            const checkbox = page.locator(`${selector} input[type="checkbox"]`)
-            await checkbox.check({ force: true, timeout: timeOut })
-          }
-        } catch (e) {
-          throw new Error(`Error processing field ${fieldKey}: ${(e as Error).message}`)
-        }
-      }
-
-      const submitButton = page.locator('button[type="submit"]')
-      await expect(submitButton).toHaveCount(1, { timeout: timeOut })
-      if (singleTest.valid) {
-        await expect(submitButton).toBeEnabled({ timeout: timeOut })
-        await submitButton.click({ force: true, timeout: timeOut })
+      if (singleTest.autonomousActivation === true) {
+        await expect(page.locator('[teste2e-selector="callback-contact-form"]')).toHaveCount(0, { timeout: timeOut })
       } else {
-        await expect(submitButton).toBeDisabled({ timeout: timeOut })
+        await expect(page.locator(`form[name="${singleTest.type}"]`)).toHaveCount(1, { timeout: timeOut })
+
+        for (const [fieldKey, value] of Object.entries(singleTest.values)) {
+          const selector = `[teste2e-selector="${fieldKey}-${value.type}"]`
+
+          try {
+            if (fieldKey === 'siret') {
+              if (singleTest.manual) {
+                await page.locator(selector).fill(value.value as string, { timeout: timeOut })
+              } else if (value.value) {
+                await expect(page.locator(selector)).toHaveValue(value.value as string)
+              }
+            } else if (fieldKey === 'needs') {
+              const actualNeedsValue = await page.inputValue(selector)
+              expect(actualNeedsValue).toContain(singleTest.manual ? 'Aide par le travail' : 'Programmation informatique')
+            } else if (['text', 'email', 'tel'].includes(value.type)) {
+              await page.locator(selector).fill(value.value as string, { timeout: timeOut })
+            } else if (value.type === 'select' && singleTest.type === 'customProject') {
+              await page.locator(selector).selectOption({ label: value.value as string })
+            } else if (value.type === 'checkbox' && value.value) {
+              const checkbox = page.locator(`${selector} input[type="checkbox"]`)
+              await checkbox.check({ force: true, timeout: timeOut })
+            }
+          } catch (e) {
+            throw new Error(`Error processing field ${fieldKey}: ${(e as Error).message}`)
+          }
+        }
+
+        const submitButton = page.locator('button[type="submit"]')
+        await expect(submitButton).toHaveCount(1, { timeout: timeOut })
+        if (singleTest.valid) {
+          await expect(submitButton).toBeEnabled({ timeout: timeOut })
+          await submitButton.click({ force: true, timeout: timeOut })
+        } else {
+          await expect(submitButton).toBeDisabled({ timeout: timeOut })
+        }
       }
     } catch (e) {
       console.error(`Test failed for Test ID: ${singleTest.id} - ${(e as Error).message}`)

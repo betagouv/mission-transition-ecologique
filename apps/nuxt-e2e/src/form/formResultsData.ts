@@ -55,6 +55,7 @@ export const tests: FormResultDataType[] = [
     id: 3,
     valid: true,
     type: 'program',
+    autonomousActivation: true,
     url: 'aides-entreprise/act-pas-a-pas?siret=83014132100034&effectif=TPE',
     values: {
       name: { value: 'test', type: 'text' },
@@ -95,25 +96,18 @@ export const tests: FormResultDataType[] = [
     }
   },
   {
-    id: 6,
+    id: 6, //activable en autonomie -> pas de form
     valid: true,
     type: 'program',
+    autonomousActivation: true,
     url: 'questionnaire/resultat/formation-engager-entreprise-transition-ecologique?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
-    values: {
-      name: { value: 'test', type: 'text' },
-      surname: { value: 'test', type: 'text' },
-      tel: { value: '0123456789', type: 'tel' },
-      needs: { value: '', type: 'textarea' },
-      email: { value: 'test@test.fr', type: 'email' },
-      siret: { value: '83014132100034', type: 'text' },
-      cgu: { value: true, type: 'checkbox' }
-    }
+    values: {}
   },
   {
     id: 7,
     valid: true,
     type: 'program',
-    url: 'questionnaire/resultat/projet/sensibilisation-equipes/formation-engager-entreprise-transition-ecologique?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
+    url: 'questionnaire/resultat/projet/strategie-rse/mission-conseil-rse?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
       name: { value: 'test', type: 'text' },
       surname: { value: 'test', type: 'text' },
@@ -141,7 +135,7 @@ export const tests: FormResultDataType[] = [
     }
   },
   {
-    id: 9,
+    id: 9, //OK
     valid: true,
     type: 'customProject',
     url: 'questionnaire/resultat?choix-du-parcours=j-ai-un-projet&siret=83014132100034&effectif=TPE&objectifs=building',
@@ -191,20 +185,6 @@ export const tests: FormResultDataType[] = [
   },
   {
     id: 12,
-    type: 'program',
-    valid: false,
-    url: 'questionnaire/resultat/formation-engager-entreprise-transition-ecologique?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
-    values: {
-      name: { value: 'test', type: 'text' },
-      surname: { value: 'test', type: 'text' },
-      tel: { value: '0123456789', type: 'tel' },
-      email: { value: 'test@test.fr', type: 'email' },
-      siret: { value: '83014132100034', type: 'text' },
-      cgu: { value: false, type: 'checkbox' }
-    }
-  },
-  {
-    id: 13,
     valid: false,
     type: 'project',
     url: 'questionnaire/resultat/projet/sensibilisation-equipes?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
