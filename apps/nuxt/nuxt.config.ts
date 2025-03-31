@@ -106,7 +106,8 @@ export default<DefineNuxtConfig> defineNuxtConfig({
     '@sentry/nuxt/module',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
-    '@nuxt/scripts'
+    '@nuxt/scripts',
+    '@nuxt/image'
   ],
   // Modules who need to have a look:
   // - nuxt-purgecss
@@ -143,6 +144,15 @@ export default<DefineNuxtConfig> defineNuxtConfig({
   },
   scripts: {
     registry: NuxtScriptsConfig.getRegistry(),
+  },
+  image: {
+    format: ['webp'],
+    screen: {
+      xs: 576,
+      sm: 768,
+      md: 992,
+      lg: 1248
+    }
   },
   runtimeConfig: {
     public: {

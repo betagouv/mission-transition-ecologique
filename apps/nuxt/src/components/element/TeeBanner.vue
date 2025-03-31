@@ -8,6 +8,14 @@
       :src="props.bgImage"
       :alt="props.imgAlt"
     />
+    <NuxtPicture
+      v-if="props.bgImage"
+      :src="props.bgImage"
+      :alt="props.imgAlt"
+      quality="70"
+      sizes="576px sm:768px md:992px lg:1248px"
+      densities="1"
+    />
     <div :class="[styleClass]">
       <div class="fr-container">
         <div class="fr-grid-row fr-grid-row--center fr-grid-row--middle">
