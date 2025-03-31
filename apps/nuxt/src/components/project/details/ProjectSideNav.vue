@@ -30,7 +30,6 @@ const scrollTo = (id: string) => {
     Scroll.to(element)
   }
 }
-const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyDataStore())
 
 const allMenuItems = computed(() => [
   {
@@ -45,8 +44,8 @@ const allMenuItems = computed(() => [
     text: 'Pour aller plus loin',
     condition: props.project.moreDescription.length > 0
   },
-  { id: 'aids', to: `project-aids-title`, text: 'Mes aides', condition: hasFullRegisteredData.value },
-  { id: 'contact', to: `form-title`, text: 'Contact', condition: hasFullRegisteredData.value },
+  { id: 'aids', to: `project-aids-title`, text: 'Mes aides', condition: props.project.programs.length > 0 },
+  { id: 'contact', to: `form-title`, text: 'Contact', condition: props.project.programs.length > 0 },
   {
     id: 'linked-project',
     to: `project-linked-projects-title`,
