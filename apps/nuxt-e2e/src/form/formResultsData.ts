@@ -138,7 +138,7 @@ export const tests: FormResultDataType[] = [
     valid: true,
     manual: true,
     type: 'program',
-    url: 'aides-entreprise/diag-ecoconception',
+    url: 'aides-entreprise/diagnostic-transition-ecologique',
     values: {
       name: { value: 'test', type: 'text' },
       surname: { value: 'test', type: 'text' },
