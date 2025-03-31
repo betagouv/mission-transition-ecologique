@@ -138,7 +138,7 @@ export const tests: FormResultDataType[] = [
     valid: true,
     manual: true,
     type: 'program',
-    url: 'aides-entreprise/baisse-les-watts',
+    url: 'aides-entreprise/diag-ecoconception',
     values: {
       name: { value: 'test', type: 'text' },
       surname: { value: 'test', type: 'text' },
@@ -153,7 +153,7 @@ export const tests: FormResultDataType[] = [
     id: 10,
     type: 'program',
     valid: false,
-    url: 'questionnaire/resultat/formation-engager-entreprise-transition-ecologique?siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
+    url: 'questionnaire/resultat/diagnostic-rse?siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
       name: { value: 'test', type: 'text' },
       surname: { value: 'test', type: 'text' },
