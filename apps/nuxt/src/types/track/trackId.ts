@@ -3,7 +3,6 @@ export enum TrackId {
   ContactForm = 'contact',
   EnergyReductionPriority = 'energie',
   Goals = 'objectifs',
-  QuestionnaireRoute = 'choix-du-parcours',
   MobilityWishes = 'mobilite',
   Results = 'resultats',
   Sectors = 'activite',

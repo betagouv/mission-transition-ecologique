@@ -126,9 +126,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -337,9 +334,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -544,9 +538,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -751,7 +742,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
       "objectif précis": "\"objectif précis\"",
       "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
@@ -764,8 +754,7 @@
       "entreprise . est ciblée": {
         "toutes ces conditions": [
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est dans un secteur d'activité ciblé": {
@@ -932,9 +921,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -1092,9 +1078,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -1163,7 +1146,7 @@
     "promesse": "Financez vos investissements pour la transition écologique de votre entreprise",
     "description": "L'Agence de Développement Économique de la Corse propose l'aide 'Impresa Sì', dédiée aux projets d'investissement des PME. Cette aide soutient les dépenses visant à réduire l'empreinte carbone de votre entreprise, en favorisant une production plus respectueuse de l'environnement : réduction des déchets, gestion de l'énergie, traitement des eaux, éco-construction, acquisition d'équipements professionnels basse consommation et travaux d'aménagement pour la mise aux normes environnementales.",
     "description longue": "Ce dispositif peut financer :\n- les frais généraux et achats consommés ou incorporés,\n- les prestations externes (études, propriété industrielle…),\n- les investissements matériels et immatériels affectés au programme,\n- les frais de formation pour l’acquisition d’une compétence ou d’un brevet permettant la pratique de l’activité,\n- les dépenses visant à réduire l’empreinte carbone et destinés à une production respectueuse de l’environnement (réduction des déchets, maîtrise de l’énergie, traitement des eaux, éco-construction…),\n- les acquisitions d’équipements et matériels professionnels performants répondant à des normes environnementales, dans un but d’amélioration de la qualité des produits et des services & travaux d’aménagement au titre des mises aux normes environnementales.",
-    "illustration": "images/TEE_ampoule.png",
+    "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Agence de Développement Economique de Corse",
     "url": "https://www.adec.corsica/attachment/2439000/",
     "nature de l'aide": "financement",
@@ -1284,9 +1267,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -1495,9 +1475,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -1671,9 +1648,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -1868,9 +1842,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -2072,9 +2043,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -2263,9 +2231,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -2495,9 +2460,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -2724,9 +2686,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -2738,8 +2697,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -2900,9 +2858,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -3100,9 +3055,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -3286,9 +3238,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -3477,9 +3426,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -3668,9 +3614,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -3867,9 +3810,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -4049,9 +3989,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -4232,9 +4169,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -4468,9 +4402,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -4663,9 +4594,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -4841,9 +4769,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -5044,9 +4969,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -5233,9 +5155,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -5442,9 +5361,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -5660,9 +5576,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -5852,9 +5765,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -6024,9 +5934,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -6231,9 +6138,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -6440,9 +6344,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -6641,9 +6542,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -6843,9 +6741,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -7042,9 +6937,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -7089,7 +6981,7 @@
     "titre": "Décarbonation de l'industrie",
     "promesse": "Financez la décarbonation de votre industrie",
     "description": "Vous êtes un site industriel ? L'ADEME vous accompagne pour réduire vos émissions de gaz à effet de serre. Bénéficiez d’un soutien pour optimiser votre efficacité énergétique, changer vos sources d’énergie ou matières premières, et capturer le carbone. Contribuez ainsi à atteindre vos objectifs environnementaux tout en respectant les normes climatiques.",
-    "description longue": "Les dépenses d’investissement éligibles correspondent notamment aux :\n- Equipements de production (outil productif) ;\n- Equipements nécessaires à l'outil productif telles que les utilités (vapeur, air comprimé, etc.) ;\n- Equipements périphériques tels que : raccordement/armoire électrique, tuyauterie,\nautomatisme, etc. ;\n- Equipements de mesure, comptage, suivi et reporting des consommations d'énergie ou des émissions de GES ;\n- Les travaux d'installation des équipements listés ci-dessus, y compris le génie civil,\nterrassement, VRD ;\n- Les études d'ingénierie ainsi que les études de suivi de réalisation et la coordination des travaux. Pour les études réalisées en interne, les dépenses seront limitées à 10% de l'ensemble des autres dépenses éligibles ; le pourcentage de ces coûts au regard des dépenses éligibles totales devra être validé par un commissaire aux comptes ou un expert-comptable externe ;\n- Les dépenses externes de formation du personnel, dans la limite de 5% des autres dépenses éligibles.\n\nQuatre thématiques sont éligibles :\n1- Efficacité énergétique\n- Remplacement d'un équipement par un équipement énergétiquement plus performant\n- Mise en place d’équipements de récupération de chaleur \n- Valorisation de combustible fatal sous forme 100 % thermique\n\n2- Modification du mix énergétique\n- Electrification des procédés et des utilités : (four électrique, compression mécanique de vapeur, pompe à chaleur, séparation membranaire ...) ;\n- Intégration d’énergies thermiques renouvelables ou de récupération \n\n3- Modification du mix matières\n- Procédés de recyclage ou utilisation de matière recyclée conduisant à une réduction des émissions de GES ;\n- Procédés d'efficacité matière ;\n- Utilisation de matières premières alternatives conduisant à une réduction des émissions de GES ;\n- Réduction d’autres GES que le CO2 (exemples : le méthane (CH4), le protoxyde d’azote ((N2O),\netc.).\n\n4-Captage, stockage et utilisation du CO2\n- Captage et séquestration du carbone.\n- Captage et utilisation de carbone, uniquement pour des projets de minéralisation.",
+    "description longue": "Les dépenses d’investissement éligibles correspondent notamment aux :\n- Equipements de production (outil productif) ;\n- Equipements nécessaires à l'outil productif telles que les utilités (vapeur, air comprimé, etc.) ;\n- Equipements périphériques tels que : raccordement/armoire électrique, tuyauterie,\nautomatisme, etc. ;\n- Equipements de mesure, comptage, suivi et reporting des consommations d'énergie ou des émissions de GES ;\n- Les travaux d'installation des équipements listés ci-dessus, y compris le génie civil,\nterrassement, VRD ;\n- Les études d'ingénierie ainsi que les études de suivi de réalisation et la coordination des travaux. Pour les études réalisées en interne, les dépenses seront limitées à 10% de l'ensemble des autres dépenses éligibles ; le pourcentage de ces coûts au regard des dépenses éligibles totales devra être validé par un commissaire aux comptes ou un expert-comptable externe ;\n- Les dépenses externes de formation du personnel, dans la limite de 5% des autres dépenses éligibles.\n\nQuatre thématiques sont éligibles :\n1- Efficacité énergétique\n- Remplacement d'un équipement par un équipement énergétiquement plus performant\n- Mise en place d’équipements de récupération de chaleur\n- Valorisation de combustible fatal sous forme 100 % thermique\n\n2- Modification du mix énergétique\n- Electrification des procédés et des utilités : (four électrique, compression mécanique de vapeur, pompe à chaleur, séparation membranaire ...) ;\n- Intégration d’énergies thermiques renouvelables ou de récupération\n\n3- Modification du mix matières\n- Procédés de recyclage ou utilisation de matière recyclée conduisant à une réduction des émissions de GES ;\n- Procédés d'efficacité matière ;\n- Utilisation de matières premières alternatives conduisant à une réduction des émissions de GES ;\n- Réduction d’autres GES que le CO2 (exemples : le méthane (CH4), le protoxyde d’azote ((N2O),\netc.).\n\n4-Captage, stockage et utilisation du CO2\n- Captage et séquestration du carbone.\n- Captage et utilisation de carbone, uniquement pour des projets de minéralisation.",
     "début de validité": "09/12/2024",
     "fin de validité": "15/05/2025",
     "illustration": "images/TEE_eolienne.png",
@@ -7236,9 +7128,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -7250,8 +7139,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -7431,9 +7319,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -7626,9 +7511,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -7807,9 +7689,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8016,9 +7895,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8234,9 +8110,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8415,9 +8288,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8588,9 +8458,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8778,9 +8645,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8959,9 +8823,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9139,9 +9000,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9313,9 +9171,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9480,9 +9335,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9653,9 +9505,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9848,9 +9697,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10005,9 +9851,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10185,9 +10028,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10371,9 +10211,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10555,9 +10392,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10569,8 +10403,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -10758,9 +10591,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10772,8 +10602,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -10981,9 +10810,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11175,9 +11001,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11189,8 +11012,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -11367,9 +11189,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11381,8 +11200,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -11564,9 +11382,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11756,9 +11571,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11957,9 +11769,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11971,8 +11780,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -12163,9 +11971,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -12177,8 +11982,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -12353,9 +12157,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -12552,9 +12353,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -12768,9 +12566,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13000,9 +12795,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13201,9 +12993,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13215,8 +13004,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -13409,9 +13197,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13423,8 +13208,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -13627,9 +13411,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13818,9 +13599,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -14052,9 +13830,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -14252,9 +14027,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -14466,9 +14238,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -14480,8 +14249,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -14665,9 +14433,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -14679,8 +14444,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -14864,9 +14628,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15088,9 +14849,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15103,7 +14861,6 @@
           "est éligible",
           "est dans un secteur d'activité ciblé",
           "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis",
           "entreprise . est propriétaire de ses locaux"
         ]
       },
@@ -15310,9 +15067,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15324,8 +15078,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -15510,9 +15263,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15746,9 +15496,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15761,7 +15508,6 @@
           "est éligible",
           "est dans un secteur d'activité ciblé",
           "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis",
           "entreprise . est propriétaire de ses locaux"
         ]
       },
@@ -15939,9 +15685,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16088,9 +15831,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16251,9 +15991,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16453,9 +16190,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16666,9 +16400,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16878,9 +16609,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17058,9 +16786,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17238,9 +16963,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17407,9 +17129,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17596,9 +17315,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17789,9 +17505,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17986,9 +17699,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18165,9 +17875,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18358,9 +18065,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18540,9 +18244,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18553,8 +18254,7 @@
       "entreprise . est ciblée": {
         "toutes ces conditions": [
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est dans un secteur d'activité ciblé": {
@@ -18700,9 +18400,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18714,8 +18411,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -18908,9 +18604,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18922,8 +18615,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -19116,9 +18808,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19130,8 +18819,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -19334,9 +19022,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19536,9 +19221,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19550,8 +19232,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -19727,9 +19408,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19741,8 +19419,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -19935,9 +19612,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19949,8 +19623,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -20153,9 +19826,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -20167,8 +19837,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -20370,9 +20039,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -20599,9 +20265,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -20613,8 +20276,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -20807,9 +20469,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -20821,8 +20480,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -21016,9 +20674,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -21222,9 +20877,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -21236,8 +20888,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -21434,9 +21085,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -21448,8 +21096,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -21643,9 +21290,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -21657,8 +21301,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -21812,9 +21455,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22001,9 +21641,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22015,8 +21652,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -22193,9 +21829,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22394,9 +22027,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22408,8 +22038,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -22582,9 +22211,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22596,8 +22222,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -22752,9 +22377,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22766,8 +22388,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -22971,9 +22592,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22985,8 +22603,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -23178,9 +22795,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -23192,8 +22806,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -23397,9 +23010,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -23585,9 +23195,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -23777,9 +23384,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -23960,9 +23564,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -24133,9 +23734,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -24318,9 +23916,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -24510,9 +24105,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -24707,9 +24299,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -24882,9 +24471,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -25066,9 +24652,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -25080,8 +24663,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -25240,9 +24822,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -25437,9 +25016,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -25451,8 +25027,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -25511,7 +25086,7 @@
     "titre": "ORMAT",
     "promesse": "Valorisez vos déchets en Matières Premières de Recyclage",
     "description": "L'appel à projets \"Objectif Recyclage MATières\" vise à soutenir les projets qui favorisent la production locale de Matières Premières de Recyclage, leur utilisation efficace et leur reconditionnement  pour produire des batteries. L'ADEME peut soutenir financièrement les diagnostics, études, tests de performance, expérimentations ainsi que les investissements sur l’outil productif de Matières Premières de Recyclage (MPR).",
-    "description longue": "Cet appel à projets s'adresse à vous si : \n• Vous êtes préparateur en charge du surtri et de la préparation des déchets, étapes en aval de leur collecte et de leur premier tri, en vue de leur transformation en Matière Première de Recyclage (MPR). Vous souhaitez améliorer la performance de vos process ou développer de nouvelles capacités.\n\n• Vous êtes régénérateur ou recycleur et vous produisez de la Matière Première de Recyclage en vue de son utilisation industrielle. Vous souhaitez améliorer la performance de vos process ou développer de nouvelles capacités.\n\n• Vous êtes transformateur et souhaitez incorporer de la Matière Première de Recyclage dans vos produits (ou en incorporer davantage).\n\n• Vous êtes un transformateur qui reconditionne ou remanufacture des batteries ou leurs composants déjà utilisés, au\nlieu de s’approvisionner en matières vierges et composants neufs pour produire des batteries\nneuves. \n\n• Vous êtes un donneur d'ordre qui s’appuie sur les procédés de\nfabrication de transformateurs sous-traitants. \n\n6 familles de matériaux sont concernées : plastiques, textiles, métaux et batteries, bois, papier – carton, verre et matériaux minéraux.",
+    "description longue": "Cet appel à projets s'adresse à vous si :\n• Vous êtes préparateur en charge du surtri et de la préparation des déchets, étapes en aval de leur collecte et de leur premier tri, en vue de leur transformation en Matière Première de Recyclage (MPR). Vous souhaitez améliorer la performance de vos process ou développer de nouvelles capacités.\n\n• Vous êtes régénérateur ou recycleur et vous produisez de la Matière Première de Recyclage en vue de son utilisation industrielle. Vous souhaitez améliorer la performance de vos process ou développer de nouvelles capacités.\n\n• Vous êtes transformateur et souhaitez incorporer de la Matière Première de Recyclage dans vos produits (ou en incorporer davantage).\n\n• Vous êtes un transformateur qui reconditionne ou remanufacture des batteries ou leurs composants déjà utilisés, au\nlieu de s’approvisionner en matières vierges et composants neufs pour produire des batteries\nneuves.\n\n• Vous êtes un donneur d'ordre qui s’appuie sur les procédés de\nfabrication de transformateurs sous-traitants.\n\n6 familles de matériaux sont concernées : plastiques, textiles, métaux et batteries, bois, papier – carton, verre et matériaux minéraux.",
     "début de validité": "17/01/2024",
     "fin de validité": "06/10/2025",
     "illustration": "images/TEE_eolienne.png",
@@ -25655,9 +25230,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -25669,8 +25241,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -25878,9 +25449,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -26083,7 +25651,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
       "objectif précis": "\"objectif précis\"",
       "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
@@ -26097,8 +25664,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -26281,9 +25847,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -26487,9 +26050,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -26675,9 +26235,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -26839,9 +26396,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -27005,9 +26559,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -27309,9 +26860,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -27509,9 +27057,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -27695,9 +27240,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -27940,9 +27482,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -27954,8 +27493,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -28195,9 +27733,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -28209,8 +27744,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -28400,9 +27934,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -28576,9 +28107,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -28590,8 +28118,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -28774,9 +28301,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -29002,9 +28526,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -29199,9 +28720,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -29365,9 +28883,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -29546,9 +29061,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -29725,9 +29237,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -29915,9 +29424,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -30079,9 +29585,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -30268,9 +29771,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -30442,9 +29942,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -30617,9 +30114,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -30812,9 +30306,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -30999,9 +30490,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -31158,9 +30646,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -31332,9 +30817,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -31520,9 +31002,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -31707,9 +31186,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -31897,9 +31373,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -32108,9 +31581,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -32292,9 +31762,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -32507,9 +31974,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -32698,9 +32162,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -32862,9 +32323,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -33067,9 +32525,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -33271,9 +32726,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -33450,9 +32902,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -33628,9 +33077,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -33642,8 +33088,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -33792,9 +33237,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -34021,9 +33463,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,

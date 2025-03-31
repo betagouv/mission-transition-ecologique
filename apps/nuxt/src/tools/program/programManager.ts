@@ -3,7 +3,6 @@ import ProgramApi from '@/tools/api/programApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
-import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { ProgramTypeForFront, QuestionnaireData } from '@/types'
 
 export class ProgramManager {
@@ -58,11 +57,7 @@ export class ProgramManager {
 
   async update() {
     const navigation = new Navigation()
-    if (
-      (navigation.isQuestionnaireResult() && UsedTrack.isNoSpecificGoal()) ||
-      navigation.isQuestionnaireProjectDetail() ||
-      navigation.isCatalogPrograms()
-    ) {
+    if (navigation.isQuestionnaireResult() || navigation.isQuestionnaireProjectDetail() || navigation.isCatalogPrograms()) {
       await this.getDependentCompanyData(navigation.isCatalogPrograms() ? false : undefined)
     } else if (navigation.isCatalogProjectDetail()) {
       await this.getDependentCompanyData(true)
