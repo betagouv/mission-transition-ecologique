@@ -6,15 +6,15 @@ import { FormResultDataType } from '../resultDataType'
 - 2: catalogue > projet
 - 3: questionnaire > projet
 - 4: questionnaire > aide
-- 15: questionnaire > aide activable en autonomie
-- 5: questionnaire > projet > aide
-- 6: catalogue > projet custom
-- 7: questionnaire > projet sans titre
-- 8: catalogue > aide avec infos manuelles
+- 5: questionnaire > aide activable en autonomie
+- 6: questionnaire > projet > aide
+- 7: catalogue > projet custom
+- 8: questionnaire > projet sans titre
+- 9: catalogue > aide avec infos manuelles
 
 ----- cas de formulaire fail:
-- 9: questionnaire > projet > aide cgu pas sélectionné
-- 10: questionnaire > projet mail invalide
+- 10: questionnaire > projet > aide cgu pas sélectionné
+- 11: questionnaire > projet mail invalide
 
 */
 export const tests: FormResultDataType[] = [
@@ -66,7 +66,7 @@ export const tests: FormResultDataType[] = [
     id: 4,
     valid: true,
     type: 'program',
-    url: 'questionnaire/resultat/formation-engager-entreprise-transition-ecologique?siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
+    url: 'questionnaire/resultat/diagnostic-rse?siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {
       name: { value: 'test', type: 'text' },
       surname: { value: 'test', type: 'text' },
@@ -78,11 +78,11 @@ export const tests: FormResultDataType[] = [
     }
   },
   {
-    id: 15, //activable en autonomie -> pas de form
+    id: 6, //activable en autonomie -> pas de form
     valid: true,
     type: 'program',
     autonomousActivation: true,
-    url: 'questionnaire/resultat/formation-engager-entreprise-transition-ecologique?choix-du-parcours=je-ne-sais-pas-par-ou-commencer&siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
+    url: 'questionnaire/resultat/formation-engager-entreprise-transition-ecologique?siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
     values: {}
   },
   {
@@ -101,7 +101,7 @@ export const tests: FormResultDataType[] = [
     }
   },
   {
-    id: 6, //OK
+    id: 7,
     valid: true,
     type: 'customProject',
     url: 'projets-entreprise',
@@ -118,7 +118,7 @@ export const tests: FormResultDataType[] = [
     }
   },
   {
-    id: 7,
+    id: 8,
     valid: false,
     type: 'project',
     url: 'questionnaire/resultat/projet/isolation-thermique?siret=83014132100034&effectif=TPE&objectifs=building',
@@ -134,7 +134,7 @@ export const tests: FormResultDataType[] = [
     }
   },
   {
-    id: 8,
+    id: 9,
     valid: true,
     manual: true,
     type: 'program',
@@ -150,7 +150,7 @@ export const tests: FormResultDataType[] = [
     }
   },
   {
-    id: 9,
+    id: 10,
     type: 'program',
     valid: false,
     url: 'questionnaire/resultat/formation-engager-entreprise-transition-ecologique?siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
@@ -164,7 +164,7 @@ export const tests: FormResultDataType[] = [
     }
   },
   {
-    id: 10,
+    id: 11,
     valid: false,
     type: 'project',
     url: 'questionnaire/resultat/projet/sensibilisation-equipes?siret=83014132100034&effectif=PE&locaux=proprietaire-et-locataire&mobilite=maximum&matieres-premieres=maximum&tri-dechets=oui&dechets=non&gestion-eau=non&energie=non&audit=non',
