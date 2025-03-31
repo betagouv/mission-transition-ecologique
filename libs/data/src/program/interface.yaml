@@ -92,12 +92,6 @@ questionnaire . objectif prioritaire:
     est former ou recruter:
     est préserver la biodiversité:
 
-questionnaire . parcours:
-
-# Enum des valeurs possibles pour questionnaire . parcours
-objectif précis: '"objectif précis"'
-je ne sais pas par où commencer: '"je ne sais pas par où commencer"'
-
 dispositif:
   avec:
     début de validité:

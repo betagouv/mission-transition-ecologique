@@ -12,7 +12,7 @@
   </div>
   <ul
     v-if="$slots.default"
-    class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-grid-row-sm--left fr-my-2v fr-raw-list"
+    class="fr-grid-row fr-grid-row--gutters fr-grid-row--center fr-my-2v fr-raw-list"
   >
     <slot />
   </ul>

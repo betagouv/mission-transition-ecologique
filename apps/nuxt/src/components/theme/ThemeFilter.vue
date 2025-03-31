@@ -10,12 +10,9 @@
 </template>
 
 <script setup lang="ts">
-import { useNavigationStore } from '@/stores/navigation'
-import { useUsedTrackStore } from '@/stores/usedTrack'
-import { ThemeType, TrackId, ThemeId, FilterItemKeys, FiltersType } from '@/types'
+import { ThemeType, ThemeId, FilterItemKeys, FiltersType, TrackId } from '@/types'
 import { Theme } from '@/tools/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
-import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import Navigation from '@/tools/navigation'
 
 interface Props {
@@ -24,20 +21,14 @@ interface Props {
 const props = defineProps<Props>()
 
 const filtersStore = useFiltersStore()
-const usedTrackStore = useUsedTrackStore()
 const route = useRoute()
 const filters: FiltersType = filtersStore.filters
 if (route.query.theme) {
   filters[FilterItemKeys.themeType] = route.query.theme as ThemeId
 }
-let hasAllTag = true
 
 if (props.theme) {
   filters[FilterItemKeys.themeType] = props.theme
-}
-
-if (UsedTrack.isSpecificGoal()) {
-  hasAllTag = false
 }
 
 const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
@@ -62,7 +53,7 @@ const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
 
   if (tags.length === 1) {
     filtersStore.setThemeTypeSelected((tags.shift() as TeeDsfrTagProps).value as string)
-  } else if (tags.length > 1 && hasAllTag) {
+  } else if (tags.length > 1) {
     tags.unshift(allTag)
   }
 
@@ -75,10 +66,6 @@ function isActive(tag: ThemeType) {
 
 const updateThemeTypeSelected = async (value: string | number) => {
   filtersStore.setThemeTypeSelected(value as string)
-  if (UsedTrack.isSpecificGoal() && UsedTrack.hasPriorityTheme()) {
-    await usedTrackStore.updateByTrackIdAndValue(TrackId.Goals, value as string)
-    useNavigationStore().replaceBrowserHistory()
-  }
 
   const navigation = new Navigation()
   if (navigation.isCatalog()) {
