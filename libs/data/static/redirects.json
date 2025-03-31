@@ -1,13 +1,10 @@
 {
   "project_redirects": [
-    {
-      "from": [
-        "a",
-        "b",
-        "c"
-      ],
+    { from:to
+      "from": "a",
       "to": "project"
-    }
+    } prepend(projet/)[id
+    ]
   ],
   "program_redirects": [
     {
@@ -21,4 +18,38 @@
   ],
   "project_rowid_to_url_mapping": [],
   "program_rowid_to_url_mapping": []
+}
+
+
+=> dispositifA remplacé par dispositifB.
+=> modifie le slug d'un même dispositif.
+
+
+=> Conflits ?!?
+=> si plusieurs from du même url ?
+=> abc => abcd => abcde => GEstion de l'historique "profond"
+
+abcde (=> abcd) => abc
+
+=> Warning +
+DispositifA => B
+DispostiifA => C
+
+
+
+=> Comment j'identifie des modifs déjà prises en compte.
+
+A->B
+
+UPDATE : redirection à jour
+
+B renomme B2
+
+a la lecture de la table redirection
+J'ai pas A->B
+dans la table j'ai A->B2
+Comment ej sais que c'est déjà traité. parce que j'ai dans mes donénes ;
+A->B et B->B2
+
+from: {to,date
 }
