@@ -304,12 +304,13 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
   }
 
   async function setFromNavigation() {
+    console.log(useNavigationStore().query)
     for (const trackId of Object.keys(useNavigationStore().query)) {
       const track = useTrackStore().getTrack(trackId as TrackId)
 
       if (track === undefined) {
         useNavigationStore().deleteSearchParam(trackId)
-        return
+        continue
       }
 
       const value = useNavigationStore().query[trackId] as string | string[]
