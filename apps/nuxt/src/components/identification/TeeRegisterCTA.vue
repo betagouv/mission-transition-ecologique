@@ -24,7 +24,7 @@
     </span>
   </DsfrButton>
   <DsfrButton
-    v-if="!isDataFull"
+    v-else
     class="ignore-modal-click"
     @click="openModal"
   >
@@ -40,7 +40,6 @@
       >
       </span>
     </span>
-
     <span
       v-if="!isSmallScreen"
       id="register-text"
@@ -54,11 +53,11 @@
 import Navigation from '@/tools/navigation'
 import { CompanyDataStorageKey } from '@/types'
 import Breakpoint from '@/tools/breakpoints'
-import { CompanyDataStorage } from '@/tools/companyData'
+import { CompanyData, CompanyDataStorage } from '@/tools/companyData'
 import Translation from '@/tools/translation'
 
 const registeredData = CompanyDataStorage.getData()
-const { isDataFull } = storeToRefs(useCompanyDataStore())
+const isDataFull = CompanyData.isDataFullComputed()
 const companyName = computed<string | undefined>(() => {
   return registeredData.value[CompanyDataStorageKey.Company]?.denomination || ''
 })

@@ -1,6 +1,6 @@
 <template>
   <TeeContentBlock
-    v-if="hasRegisteredData || countFilteredPrograms"
+    v-if="isDataFull || countFilteredPrograms"
     id="project-aids-title"
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
     title="💰 Mes aides"
@@ -16,7 +16,7 @@
           </div>
         </template>
         <TeeRegisterHighlight
-          v-if="!hasRegisteredData"
+          v-if="!isDataFull"
           class="fr-mx-3v"
           :text="Translation.t('project.projectRegisterHighlightText')"
         />
@@ -43,7 +43,7 @@
           />
         </div>
         <TeeDsfrHighlight
-          v-if="hasRegisteredData && !countFilteredPrograms && !navigationStore.hasSpinner"
+          v-if="isDataFull && !countFilteredPrograms && !navigationStore.hasSpinner"
           large
           :text="Translation.t('project.noPrograms.title')"
           alt-img="projet / aucune aide"
@@ -53,7 +53,7 @@
           <p class="fr-mt-n3v fr-mb-0">{{ Translation.t('project.noPrograms.subtitle') }}</p>
         </TeeDsfrHighlight>
         <div
-          v-if="hasRegisteredData"
+          v-if="isDataFull"
           id="project-contact"
           ref="teeProjectFormContainer"
           class="fr-bg--blue--lightness fr-grid-row fr-p-2w"
@@ -83,7 +83,6 @@ import { ProgramAidType, ProjectType, OpportunityType, Color, ProgramTypeForFron
 import Contact from '@/tools/contact'
 import Translation from '@/tools/translation'
 import Opportunity from '@/tools/opportunity'
-import { CompanyData } from '@/tools/companyData'
 import ProgramFilter from '@/tools/program/programFilter'
 import { ProgramSorter } from '@/tools/program/programSorter'
 
@@ -94,6 +93,7 @@ const props = defineProps<Props>()
 
 const navigationStore = useNavigationStore()
 const { programs, hasError } = storeToRefs(useProgramStore())
+const { isDataFull } = storeToRefs(useCompanyDataStore())
 const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormContainer')
 
 onServerPrefetch(async () => {
@@ -103,8 +103,6 @@ onServerPrefetch(async () => {
 onNuxtReady(async () => {
   await new ProgramManager().getDependentCompanyData(true)
 })
-
-const hasRegisteredData = CompanyData.isDataFull()
 
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value.length || 0

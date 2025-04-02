@@ -79,7 +79,7 @@ const { query } = storeToRefs(useNavigationStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const navigation = new Navigation()
-const hasRegisteredData = CompanyData.isDataFull()
+const hasRegisteredData = CompanyData.isDataFullComputed()
 const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
 
 onNuxtReady(async () => {

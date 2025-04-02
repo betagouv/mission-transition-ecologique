@@ -92,7 +92,7 @@ const navigation = new Navigation()
 const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
 
 const registeredData = CompanyData.dataRef
-const hasRegisteredData = CompanyData.isDataFull()
+const hasRegisteredData = CompanyData.isDataFullComputed()
 const companyName = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.denomination)
 const companySector = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.secteur)
 const companyRegion = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.region)
