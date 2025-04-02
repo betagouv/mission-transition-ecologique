@@ -218,8 +218,5 @@ const backToPreviousTrack = async () => {
 
     return await router.push(navigationStore.routeByTrackId(trackId))
   }
-  return await router.push({
-    name: RouteName.Homepage
-  })
 }
 </script>
