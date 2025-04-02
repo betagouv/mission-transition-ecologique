@@ -44,7 +44,8 @@ objectifs:
       Déposez votre demande de subvention tout au long de l’année sur le portail
       Région dédié. À ce stade, votre projet ne doit pas avoir commencé !
     liens:
-      - lien: https://subventionsenligne.maregionsud.fr/
+      - lien: >-
+          https://aidesenligne.maregionsud.fr/aides/#/crsud/connecte/F_S_I_NATUREVIL/depot/simple
         texte: Déposer votre demande de subvention
   - description: >-
       Recevez votre réponse concernant votre demande. Si celle-ci est validée,
