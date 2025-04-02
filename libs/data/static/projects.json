@@ -1529,6 +1529,7 @@
     "programs": [
       "formation-engager-entreprise-transition-ecologique",
       "b-a-ba-du-climat-et-biodiversite",
+      "formation-artisan-developpement-durable",
       "nos-gestes-climat",
       "ecogestes-paca",
       "investour",
@@ -1637,6 +1638,7 @@
       "formation-engager-entreprise-transition-ecologique",
       "b-a-ba-du-climat-et-biodiversite",
       "formations-du-cfde",
+      "formation-artisan-developpement-durable",
       "formations-tee",
       "ecogestes-paca",
       "investour",
@@ -1741,6 +1743,7 @@
     "programs": [
       "diagnostic-rse",
       "enviroveille",
+      "formation-artisan-developpement-durable",
       "mission-conseil-rse",
       "aide-financement-occitanie",
       "cedre-premier-pas",
@@ -1800,6 +1803,7 @@
       "diagnostic-transition-ecologique",
       "fonds-tourisme-durable",
       "diag-eco-flux",
+      "formation-artisan-developpement-durable",
       "performa-environnement",
       "programme-breizh-fab",
       "tpe-gagnantes-sur-tous-les-couts",
@@ -1916,6 +1920,7 @@
     "mainTheme": "environmental",
     "programs": [
       "climadiag-expert",
+      "diag-adaptation",
       "diagnostic-changement-climatique",
       "performa-environnement",
       "programme-breizh-fab",
@@ -2805,6 +2810,7 @@
     "mainTheme": "energy",
     "programs": [
       "formation-engager-entreprise-transition-ecologique",
+      "formation-artisan-developpement-durable",
       "cci-business-optimizer"
     ],
     "linkedProjects": [
