@@ -650,7 +650,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "- Entreprises dotés d'une flotte de véhicules lourds\n- Professionnels des services automobiles."
+        "- Entreprises dotées d'une flotte de véhicules lourds\n- Professionnels des services automobiles."
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -1340,6 +1340,7 @@
     "url": "https://www.atc.corsica/wp-content/uploads/telechargements/mesure-22-le-soutien-a-lhebergement-en-toutes-zones-la-labellisation.pdf",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 50% des dépenses, dans un maximum de 30 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Créez compte sur le site de l'Agence du Tourisme de la Corse.",
@@ -5987,6 +5988,7 @@
     "promesse": "Bénéficiez d'une aide à la conversion au bioéthanol de vos véhicules",
     "description": "Vous avez un véhicule de société ou de fonction à motorisation essence ? Vous pouvez bénéficiez d'une prime pour le convertir en véhicule modulable essence et bioéthanol (E85). Cette prime concerne la fourniture et la pose d'un dispositif de conversion homologué par un installateur habilité. Cette mesure vise à réduire les émissions de CO2 et de particules fines générées par les véhicules à motorisation essence, contribuant ainsi à la lutte contre le réchauffement climatique.",
     "description longue": "Cette aide est valable pour :\n- les entreprises et les indépendants propriétaires d’une voiture particulière (VP) de société ou de fonction et dont le siège social ou l’établissement de rattachement du véhicule est situé sur le territoire régional.\n- la conversion d'un véhicule à motorisation essence en motorisation modulable essence et superéthanol E85 (85% de bioéthanol dans le carburant contre 5 à 10 % pour l'essence SP98-E5 et le SP95-E10).\n- la fourniture et la pose, par un installateur habilité, d'un dispositif de conversion homologué au sens de l'arrêté du 30 novembre 2017. Les prestations de type décalaminage, bougies, filtres, pré-visite, frais de dossiers ou d’immatriculation, révisions, carburant... ne sont pas prises en charge.\n- la conversion de 10 véhicules maximum.",
+    "fin de validité": "24/03/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Région Sud (PACA)",
     "url": "https://www.maregionsud.fr/vos-aides/detail/le-cheque-transition-bioethanol",
@@ -6143,6 +6145,7 @@
         ]
       },
       "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
         "toutes ces conditions": [
           "entreprise . est dans une zone géographique éligible"
         ]
@@ -24640,7 +24643,7 @@
         "description": "Déposez votre demande de subvention tout au long de l’année sur le portail Région dédié. À ce stade, votre projet ne doit pas avoir commencé !",
         "liens": [
           {
-            "lien": "https://subventionsenligne.maregionsud.fr/",
+            "lien": "https://aidesenligne.maregionsud.fr/aides/#/crsud/connecte/F_S_I_NATUREVIL/depot/simple",
             "texte": "Déposer votre demande de subvention"
           }
         ]
