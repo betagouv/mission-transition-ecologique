@@ -1,1 +1,1 @@
-export const timeOut = 20000 // 10 seconds
+export const timeOut = 10000 // 10 seconds
