@@ -304,7 +304,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
   }
 
   async function setFromNavigation() {
-    console.log(useNavigationStore().query)
     for (const trackId of Object.keys(useNavigationStore().query)) {
       const track = useTrackStore().getTrack(trackId as TrackId)
 
