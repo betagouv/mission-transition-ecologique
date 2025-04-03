@@ -103,8 +103,8 @@ const resetSiret = async () => {
   company.value = null
   companySize.value = null
   manualRegistration.value = false
-  CompanyData.resetData()
   useFiltersStore().setCompanyDataSelected(false)
+  CompanyData.resetData()
   CompanyData.updateRouteFromStorage()
 
   await UsedTrack.updateQuestionnaireStep()

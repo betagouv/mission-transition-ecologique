@@ -22,12 +22,12 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
+const { companyDataSelected } = storeToRefs(useFiltersStore())
 
 const navigation = new Navigation()
 
 const displayRegionFilter = computed(() => {
-  return navigation.isCatalogPrograms() && !isCompanyDataSelected.value
+  return navigation.isCatalogPrograms() && !companyDataSelected.value
 })
 
 const companyDataFilter: FilterItem = {
