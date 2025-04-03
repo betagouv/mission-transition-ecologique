@@ -1,11 +1,12 @@
 <template>
   <DsfrButton
-    v-if="isDataFull"
-    class="fr-btn--tertiary-no-outline ignore-modal-click"
-    :title="companyName"
+    :class="isDataFull ? `fr-btn--tertiary-no-outline` : ``"
+    class="ignore-modal-click"
+    :title="isDataFull ? companyName : undefined"
     @click="openModal"
   >
     <span
+      v-if="(!isDataFull && isSmallScreen) || isDataFull"
       :class="isSmallScreen ? 'fr-icon--lg' : 'fr-pr-2w'"
       class="fr-icon-account-circle-fill register-icon-profile ignore-modal-click"
     >
@@ -20,32 +21,9 @@
     <span
       v-if="!isSmallScreen"
       id="register-text"
-      >{{ companyName }}
-    </span>
-  </DsfrButton>
-  <DsfrButton
-    v-else
-    class="ignore-modal-click"
-    @click="openModal"
-  >
-    <span
-      v-if="isSmallScreen"
-      :class="isSmallScreen ? 'fr-icon--lg' : 'fr-pr-2w'"
-      class="fr-icon-account-circle-fill register-icon-profile ignore-modal-click"
+      :class="isDataFull ? `` : `fr-text--yellow ignore-modal-click`"
     >
-      <span
-        :id="isSmallScreen ? 'badge-mobile' : 'base-badge'"
-        :class="badgeIcon"
-        class="fr-text--blue-france fr-radius-a--2v register-badge ignore-modal-click"
-      >
-      </span>
-    </span>
-    <span
-      v-if="!isSmallScreen"
-      id="register-text"
-      class="fr-text--yellow ignore-modal-click"
-    >
-      {{ Translation.t('register.mainTitle') }}
+      {{ isDataFull ? companyName : Translation.t('register.mainTitle') }}
     </span>
   </DsfrButton>
 </template>
@@ -53,11 +31,11 @@
 import Navigation from '@/tools/navigation'
 import { CompanyDataStorageKey } from '@/types'
 import Breakpoint from '@/tools/breakpoints'
-import { CompanyData, CompanyDataStorage } from '@/tools/companyData'
+import { CompanyDataStorage } from '@/tools/companyData'
 import Translation from '@/tools/translation'
 
 const registeredData = CompanyDataStorage.getData()
-const isDataFull = CompanyData.isDataFullComputed()
+const { isDataFull } = storeToRefs(useCompanyDataStore())
 const companyName = computed<string | undefined>(() => {
   return registeredData.value[CompanyDataStorageKey.Company]?.denomination || ''
 })
