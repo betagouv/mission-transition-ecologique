@@ -15,10 +15,10 @@ import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
 
-interface Props {
+export interface TeeDsfrBreadcrumbProps {
   links?: DsfrBreadcrumbProps['links']
 }
-const props = defineProps<Props>()
+const props = defineProps<TeeDsfrBreadcrumbProps>()
 const navigationStore = useNavigationStore()
 const usedTrackStore = useUsedTrackStore()
 const navigation = new Navigation()

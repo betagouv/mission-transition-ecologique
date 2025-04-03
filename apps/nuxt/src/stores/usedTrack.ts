@@ -309,13 +309,14 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
       if (track === undefined) {
         useNavigationStore().deleteSearchParam(trackId)
-        return
+        continue
       }
 
       const value = useNavigationStore().query[trackId] as string | string[]
       const selectedOptions: TrackOptionsUnion[] = await useTrackStore().getSelectedOptionsByTrackAndValue(track, value)
-
-      CompanyData.setDataStorageFromTrack(trackId as TrackId, value, selectedOptions)
+      if (import.meta.client) {
+        CompanyData.setDataStorageFromTrack(trackId as TrackId, value, selectedOptions)
+      }
 
       if (selectedOptions.length === 0) {
         useNavigationStore().deleteSearchParam(trackId)
