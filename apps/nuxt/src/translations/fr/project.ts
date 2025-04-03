@@ -6,6 +6,7 @@ const projectFrDict = {
       subtitle: "Contactez nous pour nous expliquer votre projet, nous pourrons sans doute vous aider à agir par d'autres moyens !"
     },
     projectRegisterHighlightText: 'Vous voulez voir uniquement les aides éligibles pour votre entreprise ?',
+    programsList: 'Voici les études et aides financières pour votre {effectif} du secteur {secteur} en Région {region}.',
     financePrograms: 'Pour financer votre investissement :',
     result: {
       resume: 'Voici les actions par lesquelles commencer pour votre {effectif} du secteur {secteur} :'
