@@ -35,6 +35,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import { useFiltersStore } from '@/stores/filters'
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { RegisterDetailType, RegisterDetails, CompanyDataStorageKey, CompanyDataType, Region, EstablishmentFront, NAF1 } from '@/types'
@@ -136,6 +137,7 @@ const saveProfile = async () => {
     }
 
     await UsedTrack.updateQuestionnaireStep()
+    useFiltersStore().setCompanyDataSelected(true)
     await navigation.redirectAfterModal()
     Navigation.toggleRegisterModal(false)
     if (!navigationStore.isFromQuestionnaireCtaRegisterModal) {
