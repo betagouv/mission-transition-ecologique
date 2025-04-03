@@ -1,4 +1,10 @@
 <template>
+  <div
+    v-if="$slots.beforeBreadcrumb"
+    class="fr-container--fluid"
+  >
+    <slot name="beforeBreadcrumb"> </slot>
+  </div>
   <slot
     v-if="breadcrumb"
     name="breadcrumb"
@@ -13,26 +19,32 @@
   </div>
   <div
     v-if="$slots.beforeDefault"
-    class="fr-container"
+    :class="`${beforeDefaultClass ?? 'fr-container'}`"
   >
     <slot name="beforeDefault"> </slot>
   </div>
-  <div :class="`fr-container${fluid ? '--fluid' : ''}`">
+  <div
+    :class="`fr-container${fluid ? '--fluid' : ''}`"
+    class="fr-mb-8v"
+  >
     <div class="fr-grid-row">
       <div
         v-if="$slots.sidemenu"
-        class="fr-col-2 fr-col-hidden fr-col-unhidden-md"
+        class="fr-col-2 fr-col-hidden fr-col-md-3 fr-col-lg-3 fr-col-xl-2 fr-col-unhidden-md"
       >
-        <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
+        <div
+          class="fr-sidemenu fr-pr-3v"
+          :class="`${stickyMenu ? 'fr-sidemenu--sticky' : ''}`"
+        >
           <slot name="sidemenu"> </slot>
         </div>
       </div>
-      <div
+      <main
         class="fr-col-12"
-        :class="$slots.sidemenu ? 'fr-col-md-10 fr-pr-md-2v' : ''"
+        :class="$slots.sidemenu ? 'fr-col-md-9 fr-col-lg-9 fr-col-xl-10' : ''"
       >
         <slot> </slot>
-      </div>
+      </main>
     </div>
   </div>
   <div
@@ -49,9 +61,12 @@ interface Props {
   breadcrumb?: boolean
   links?: TeeDsfrBreadcrumbProps['links']
   fluid?: boolean
+  beforeDefaultClass?: string
+  stickyMenu?: boolean
 }
 withDefaults(defineProps<Props>(), {
   breadcrumb: true,
-  links: undefined
+  links: undefined,
+  beforeDefaultClass: undefined
 })
 </script>
