@@ -112,12 +112,12 @@ interface ProjectListProps {
 const props = defineProps<ProjectListProps>()
 
 const filtersStore = useFiltersStore()
-const resume = computed<string>(() =>
-  Translation.t('project.result.resume', {
-    effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyData.size ?? '')),
-    secteur: TrackStructure.getSector() ?? CompanyData.company?.secteur ?? ''
+const resume = computed<string>(() => {
+  return Translation.t('project.result.resume', {
+    effectif: Translation.t('enterprise.structureSize.' + (CompanyData.size ?? TrackStructure.getSize() ?? '')),
+    secteur: CompanyData.company?.secteur ?? TrackStructure.getSector() ?? ''
   })
-)
+})
 
 const hasPriorityProjects = computed(() => {
   return priorityProjects.value ? priorityProjects.value?.length > 0 : false
