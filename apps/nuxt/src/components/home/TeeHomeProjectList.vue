@@ -54,7 +54,7 @@ onServerPrefetch(async () => {
 })
 
 onNuxtReady(async () => {
-  CompanyData.isDataFull().value // call to initialize computed reactivity variable
+  CompanyData.isDataFullComputed().value // call to initialize computed reactivity variable
   await new ProjectManager().getProjects()
 })
 

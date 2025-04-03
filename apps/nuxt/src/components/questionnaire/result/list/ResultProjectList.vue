@@ -72,7 +72,7 @@ interface ProjectListProps {
 }
 const props = defineProps<ProjectListProps>()
 
-const hasRegisteredData = CompanyData.isDataFull()
+const hasRegisteredData = CompanyData.isDataFullComputed()
 
 const openModal = () => {
   Navigation.toggleRegisterModal()

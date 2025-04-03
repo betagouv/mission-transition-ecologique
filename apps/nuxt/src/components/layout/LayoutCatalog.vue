@@ -38,7 +38,7 @@
       </slot>
     </template>
     <template
-      v-if="!hasSideMenu && $slots.sidemenu"
+      v-if="hasSideMenu && $slots.sidemenu"
       #sidemenu
     >
       <slot name="sidemenu"> </slot>
@@ -78,11 +78,18 @@ const props = defineProps<Props>()
 const filtersStore = useFiltersStore()
 const { hasSpinner } = storeToRefs(useNavigationStore())
 const theme = Theme.getThemeFromSelectedTheme()
+const route = useRoute()
+
+useHead(() => {
+  return {
+    meta: [{ name: 'robots', content: route.fullPath.includes('?') ? 'noindex, follow' : 'index, follow' }]
+  }
+})
 
 const lineClassBySideMenu = computed(() => {
   return props.hasSideMenu
-    ? ''
-    : 'fr-col-offset-md-3 fr-col-md-9 fr-col-justify-md--left fr-col-offset-xl-2 fr-col-xl-10 fr-col-justify--center'
+    ? 'fr-col-offset-md-3 fr-col-md-9 fr-col-justify-md--left fr-col-offset-xl-2 fr-col-xl-10 fr-col-justify--center'
+    : ''
 })
 
 const hasThemeCard = computed(() => {

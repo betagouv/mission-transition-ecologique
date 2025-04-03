@@ -10,7 +10,8 @@
     </template>
     <SimpleProjectList
       :project-list="sortedProjects"
-      with-counter-and-modal-filter
+      with-counter
+      :with-modal-filter="hasSideMenu"
     />
     <div class="fr-col-12 fr-mt-3v fr-mb-10v">
       <OtherProject />
@@ -49,7 +50,7 @@ onServerPrefetch(async () => {
 })
 
 onNuxtReady(async () => {
-  CompanyData.isDataFull().value // call to initialize computed reactivity variable
+  CompanyData.isDataFullComputed().value // call to initialize computed reactivity variable
   await new ProjectManager().getProjects()
 })
 
@@ -68,7 +69,7 @@ onBeforeRouteLeave(() => {
 })
 
 const hasSideMenu = computed(() => {
-  return hasError.value || !isDataFull.value
+  return !hasError.value && isDataFull.value
 })
 
 const countProjects = computed(() => {

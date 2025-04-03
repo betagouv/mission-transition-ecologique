@@ -25,7 +25,7 @@ export default class UsedTrack {
       return
     }
 
-    if (!CompanyData.isDataFull().value) {
+    if (!CompanyData.isDataFull()) {
       return
     }
 

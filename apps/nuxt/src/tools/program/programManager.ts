@@ -52,7 +52,7 @@ export class ProgramManager {
   }
 
   async getDependentCompanyData(onlyEligible: boolean | undefined = undefined) {
-    CompanyData.isDataFull().value ? await this.getFiltered(onlyEligible) : await this.get()
+    CompanyData.isDataFull() ? await this.getFiltered(onlyEligible) : await this.get()
   }
 
   async update() {

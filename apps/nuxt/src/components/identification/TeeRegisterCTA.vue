@@ -1,6 +1,6 @@
 <template>
   <DsfrButton
-    v-if="hasData"
+    v-if="isDataFull"
     class="fr-btn--tertiary-no-outline ignore-modal-click"
     :title="companyName"
     @click="openModal"
@@ -24,7 +24,7 @@
     </span>
   </DsfrButton>
   <DsfrButton
-    v-if="!hasData"
+    v-else
     class="ignore-modal-click"
     @click="openModal"
   >
@@ -40,7 +40,6 @@
       >
       </span>
     </span>
-
     <span
       v-if="!isSmallScreen"
       id="register-text"
@@ -58,7 +57,7 @@ import { CompanyData, CompanyDataStorage } from '@/tools/companyData'
 import Translation from '@/tools/translation'
 
 const registeredData = CompanyDataStorage.getData()
-const hasData = CompanyData.isDataFull()
+const isDataFull = CompanyData.isDataFullComputed()
 const companyName = computed<string | undefined>(() => {
   return registeredData.value[CompanyDataStorageKey.Company]?.denomination || ''
 })
@@ -67,7 +66,7 @@ const isSmallScreen = computed(() => {
   return Breakpoint.isSmallScreen()
 })
 const badgeIcon = computed(() => {
-  if (isSmallScreen && !hasData.value) {
+  if (isSmallScreen && !isDataFull.value) {
     return 'fr-bg--yellow fr-icon-question-mark'
   } else {
     return 'fr-bg--green fr-icon-check-line'
