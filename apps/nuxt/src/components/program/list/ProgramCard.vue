@@ -1,34 +1,18 @@
 <template>
   <DsfrCard
-    :title="''"
-    :description="''"
+    class="fr-card--program-detail"
+    :title="program.titre"
+    :end-detail="getCostInfos()"
+    end-detail-icon="fr-icon-money-euro-circle-line fr-text--blue"
+    :description="program.promesse"
     :img-src="`/${program.illustration}`"
     :alt-img="`image / ${program.titre}`"
     :horizontal="true"
     :no-arrow="true"
     :link="getRouteToProgramDetail()"
     :badges="[{ label: program['nature de l\'aide'], noIcon: true, small: true }]"
+    title-tag="h2"
   >
-    <template #start-details>
-      <!-- TITLE -->
-      <p class="fr-text--purple fr-h6 fr-text--bold teste2e-program-target">
-        {{ program.titre }}
-      </p>
-      <!-- CONTENT -->
-      <div class="fr-card__title">
-        <h2 class="fr-text--blue-france fr-h3">
-          {{ program.promesse }}
-        </h2>
-      </div>
-      <!-- END -->
-      <p class="fr-mb-0 tee-program-info">
-        <span
-          class="fr-icon-money-euro-circle-line"
-          aria-hidden="true"
-        />
-        {{ getCostInfos() }}
-      </p>
-    </template>
   </DsfrCard>
 </template>
 

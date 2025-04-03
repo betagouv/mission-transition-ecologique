@@ -1529,6 +1529,7 @@
     "programs": [
       "formation-engager-entreprise-transition-ecologique",
       "b-a-ba-du-climat-et-biodiversite",
+      "formation-artisan-developpement-durable",
       "nos-gestes-climat",
       "ecogestes-paca",
       "investour",
@@ -1637,6 +1638,7 @@
       "formation-engager-entreprise-transition-ecologique",
       "b-a-ba-du-climat-et-biodiversite",
       "formations-du-cfde",
+      "formation-artisan-developpement-durable",
       "formations-tee",
       "ecogestes-paca",
       "investour",
@@ -1741,6 +1743,7 @@
     "programs": [
       "diagnostic-rse",
       "enviroveille",
+      "formation-artisan-developpement-durable",
       "mission-conseil-rse",
       "aide-financement-occitanie",
       "cedre-premier-pas",
@@ -1800,6 +1803,7 @@
       "diagnostic-transition-ecologique",
       "fonds-tourisme-durable",
       "diag-eco-flux",
+      "formation-artisan-developpement-durable",
       "performa-environnement",
       "programme-breizh-fab",
       "tpe-gagnantes-sur-tous-les-couts",
@@ -1916,6 +1920,7 @@
     "mainTheme": "environmental",
     "programs": [
       "climadiag-expert",
+      "diag-adaptation",
       "diagnostic-changement-climatique",
       "performa-environnement",
       "programme-breizh-fab",
@@ -2049,6 +2054,7 @@
       "tremplin",
       "ecoconception-bzh",
       "ecoproduction-hdf",
+      "industries-vertes",
       "cedre-premier-pas",
       "cedre-investissement",
       "sud-pret-climat",
@@ -2804,6 +2810,7 @@
     "mainTheme": "energy",
     "programs": [
       "formation-engager-entreprise-transition-ecologique",
+      "formation-artisan-developpement-durable",
       "cci-business-optimizer"
     ],
     "linkedProjects": [
@@ -2998,8 +3005,7 @@
     "longDescription": "Qu'il s'agisse de bateaux de transport de marchandises ou de bateaux de plaisance, la flotte fluviale et maritime est souvent énergivore et à l'origine d'importants rejets polluants. Verdir votre flotte est une solution pour réduire cet impact tout en optimisant vos coûts. Pour ce faire, plusieurs actions concrètes peuvent être mises en place :\n\n- Adopter des navires plus économes en énergie en intégrant des technologies qui optimisent leur vitesse, leur itinéraire et l'entretien des moteurs, afin de réduire la consommation de carburant et d'améliorer la rentabilité des opérations ;\n\n- Opter pour des navires éco-conçus permettant de réduire les émissions de gaz à effet de serre grâce à des moteurs et technologies plus propres, l'utilisation de matériaux durables et légers, des systèmes de gestion de l'énergie plus efficaces, et une meilleure gestion du recyclage des matériaux en fin de vie ;\n\n- Mettre en place une gestion optimisée des déchets et intégrer des énergies renouvelables pour rendre votre flotte plus propre, durable et respectueuse de l'environnement.\n\nUne flotte décarbonée, alimentée par des énergies renouvelables et peu polluante, constitue une excellente alternative au fret routier et au transport aérien.",
     "moreDescription": "- [**Comment réduire la pollution des transports maritimes ?**](https://www.dispositif-reponses.org/cles-pour-comprendre/boite-a-outils/comment-reduire-la-pollution-des-transports-maritimes-) par la Direction Interrégionale de la Mer Méditerranée.\n- **Comment [réduire les émissions de gaz à effet de serre provenant des navires](https://www.imo.org/fr/MediaCentre/HotTopics/pages/reducing-greenhouse-gas-emissions-from-ships.aspx),** par l'Organisation Maritime Internationale (OMI).\n- [**Bilan thématique Navire**](https://librairie.ademe.fr/mobilite-et-transports/708-bilan-thematique-navire-edition-2020.html), un panorama des projets de navire propre à la recherche de solutions moins polluantes, par l'ADEME.",
     "themes": [
-      "mobility",
-      "energy"
+      "mobility"
     ],
     "mainTheme": "mobility",
     "programs": [
