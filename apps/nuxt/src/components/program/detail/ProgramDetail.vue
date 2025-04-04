@@ -1,7 +1,7 @@
 <template>
   <Layout :links="links">
     <template
-      v-if="isDataFull || Program.isTemporaryUnavailable(currentProgram) || Program.isAvailable(currentProgram)"
+      v-if="isDataFull || Program.isTemporaryUnavailable(currentProgram)"
       #beforeBreadcrumb
     >
       <ClientOnly>
