@@ -55,12 +55,6 @@
     ]
   },
   {
-    "operator": "CCI Île-de-France",
-    "filterCategories": [
-      "CCI"
-    ]
-  },
-  {
     "operator": "Chambre de Commerce et de l'Industrie",
     "filterCategories": [
       "CCI"
@@ -76,84 +70,6 @@
     "operator": "Centre Technique des Industries Mécaniques",
     "filterCategories": [
       "Opérateurs territoriaux"
-    ]
-  },
-  {
-    "operator": "CMA Auvergne-Rhône-Alpes",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Bourgogne-Franche-Comté",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Bretagne",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Centre-Val de Loire",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Grand-Est",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Hauts-de-France",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA La Réunion",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Loiret",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Normandie",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Nouvelle-Aquitaine",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Provence-Alpes-Côte-D'Azur",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Rhône",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Île-de-France",
-    "filterCategories": [
-      "CMA"
     ]
   },
   {
@@ -245,68 +161,8 @@
     ]
   },
   {
-    "operator": "Association Technique Énergie Environnement",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
-    "operator": "CMA Corse",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Ile-de-France",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Occitanie",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Pays-de-la-Loire",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "Direction Génération des Entreprises",
-    "filterCategories": [
-      "État"
-    ]
-  },
-  {
-    "operator": "ORACE",
-    "filterCategories": [
-      "Opérateurs territoriaux"
-    ]
-  },
-  {
-    "operator": "PROREFEI",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
-    "operator": "PRO-SMEn",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
     "operator": "Voies Navigables de France",
     "filterCategories": []
-  },
-  {
-    "operator": "CCI PdL",
-    "filterCategories": [
-      "CCI"
-    ]
   },
   {
     "operator": "Région Centre-Val de Loire",
@@ -381,18 +237,6 @@
     ]
   },
   {
-    "operator": "La Fresque du Climat",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
-    "operator": "Secrétaire général pour les Affaires régionales",
-    "filterCategories": [
-      "État"
-    ]
-  },
-  {
     "operator": "Région Nouvelle-Aquitaine",
     "filterCategories": [
       "Régions"
@@ -417,151 +261,7 @@
     ]
   },
   {
-    "operator": "Startup d'Etat",
-    "filterCategories": [
-      "État"
-    ]
-  },
-  {
-    "operator": "Confédération des petites et moyennes entreprises",
-    "filterCategories": [
-      "OP"
-    ]
-  },
-  {
-    "operator": "Prefecture Eure (27)",
-    "filterCategories": [
-      "État"
-    ]
-  },
-  {
-    "operator": "Mouvement des entreprises de France",
-    "filterCategories": [
-      "OP"
-    ]
-  },
-  {
-    "operator": "Fédération National des Habitats de Plein Air",
-    "filterCategories": [
-      "OP"
-    ]
-  },
-  {
-    "operator": "Association pour l'Emploi des Cadres",
-    "filterCategories": [
-      "OP"
-    ]
-  },
-  {
-    "operator": "Réseau Entreprendre",
-    "filterCategories": [
-      "OP"
-    ]
-  },
-  {
     "operator": "Avere-France",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
-    "operator": "Commissariat Général au Développement Durable",
-    "filterCategories": [
-      "État"
-    ]
-  },
-  {
-    "operator": "Secrétariat Général à la Planification Ecologique",
-    "filterCategories": [
-      "État"
-    ]
-  },
-  {
-    "operator": "Fondation Solar Impulse",
-    "filterCategories": [
-      "OP"
-    ]
-  },
-  {
-    "operator": "Service Éconmique de l'État en Région",
-    "filterCategories": [
-      "État"
-    ]
-  },
-  {
-    "operator": "Les Entreprises S'engagent",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
-    "operator": "Chambres Regionales de l'Economie Sociale et Solidaire",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
-    "operator": "Opcommerce",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
-    "operator": "Placéco",
-    "filterCategories": [
-      "Média"
-    ]
-  },
-  {
-    "operator": "Agir Pour un Environnement Responsable",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
-    "operator": "ADN Tourisme",
-    "filterCategories": [
-      "OP"
-    ]
-  },
-  {
-    "operator": "ATOUT France",
-    "filterCategories": [
-      "OP"
-    ]
-  },
-  {
-    "operator": "Association Tourisme Durable",
-    "filterCategories": [
-      "OP"
-    ]
-  },
-  {
-    "operator": "Parcs Naturels Régionaux",
-    "filterCategories": [
-      "OP"
-    ]
-  },
-  {
-    "operator": "Grands Sites de France",
-    "filterCategories": [
-      "OP"
-    ]
-  },
-  {
-    "operator": "Union Française des Métiers de l'Événement",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
-    "operator": "Syndicat national des espaces de loisirs, d'attractions et culturels",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
-    "operator": "Union des métiers et des industries de l'hôtellerie",
     "filterCategories": [
       "Opérateurs nationaux"
     ]
