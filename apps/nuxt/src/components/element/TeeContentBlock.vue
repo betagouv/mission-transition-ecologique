@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-container">
+  <div :class="`fr-container${containerFrom ? `-${containerFrom}` : ''}`">
     <slot name="title">
       <h3>{{ title }}</h3>
     </slot>
@@ -12,6 +12,7 @@
 interface Props {
   title: string
   content?: string
+  containerFrom?: 'sm' | 'md' | 'lg' | 'xl'
 }
 
 defineProps<Props>()

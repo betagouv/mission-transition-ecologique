@@ -1,5 +1,8 @@
 .fr-sidemenu {
-  &--sticky {
-    top: 50%
+  #project-sidemenu {
+    a.fr-sidemenu__link {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }

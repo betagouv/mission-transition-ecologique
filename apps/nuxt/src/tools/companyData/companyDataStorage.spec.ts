@@ -5,7 +5,7 @@ import { CompanyData } from '@/tools/companyData/companyData'
 
 describe('CompanyDataStorage - isDataFull', () => {
   it('should return false if company data is missing', () => {
-    const result = CompanyData.isDataFull().value
+    const result = CompanyData.isDataFullComputed().value
     expect(result).toBe(false)
   })
 

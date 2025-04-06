@@ -1,13 +1,15 @@
 <template>
-  <div class="fr-px-6v">
+  <div>
     <ThemeFiltersAndCard
       v-if="!hasSpinner"
       :has-error="hasError"
     />
-    <SimpleProjectList
-      v-if="!hasSpinner"
-      :project-list="projectList"
-    />
+    <div class="fr-container fr-px-md-0">
+      <SimpleProjectList
+        v-if="!hasSpinner"
+        :project-list="projectList"
+      />
+    </div>
     <div
       v-if="hasSpinner"
       class="fr-col-justify--center fr-col-12"
@@ -20,6 +22,16 @@
       message="Aucune idée d'action n'a pu être identifiée avec les critères choisis..."
       :count-items="countProjects"
     />
+    <div class="fr-col-12 fr-col-justify--center fr-py-8v">
+      <TeeButtonLink
+        :to="{ name: RouteName.CatalogProjects }"
+        icon="fr-icon-arrow-right-line"
+        icon-right
+        class="fr-border-b--blue-france fr-py-0"
+      >
+        Voir tous les projets
+      </TeeButtonLink>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -29,6 +41,7 @@ import { ProjectManager } from '@/tools/project/projectManager'
 import ProjectSorter from '@/tools/project/projectSorter'
 import { Theme } from '@/tools/theme'
 import { CompanyData } from '@/tools/companyData'
+import { RouteName } from '@/types'
 
 interface Props {
   limit: number
@@ -41,7 +54,7 @@ onServerPrefetch(async () => {
 })
 
 onNuxtReady(async () => {
-  CompanyData.isDataFull().value // call to initialize computed reactivity variable
+  CompanyData.isDataFullComputed().value // call to initialize computed reactivity variable
   await new ProjectManager().getProjects()
 })
 

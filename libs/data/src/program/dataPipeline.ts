@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv'
 import path from 'path'
 import * as fs from 'fs'
 import * as yaml from 'js-yaml'
-import { ProgramType, ProgramWithoutId } from '../program/program'
+import { ProgramType, ProgramWithoutId } from '../program/types/shared'
 import { FileManager } from '../common/fileManager'
 import { fileURLToPath } from 'url'
 

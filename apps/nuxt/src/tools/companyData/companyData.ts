@@ -8,7 +8,6 @@ import {
   LegalCategory,
   type QuestionnaireData,
   RegisterDetails,
-  QuestionnaireRoute,
   Region,
   ConvertedCommune,
   CompanyLocalisationType,
@@ -78,7 +77,7 @@ export class CompanyData {
     return CompanyDataStorage.getData()
   }
 
-  static isDataFull() {
+  static isDataFullComputed() {
     return computed(() => {
       const data = this.dataRef
       const companyData = data.value[CompanyDataStorageKey.Company]
@@ -86,9 +85,24 @@ export class CompanyData {
         useCompanyDataStore().isDataFull = false
         return false
       }
-      useCompanyDataStore().isDataFull = CompanyDataValidator.validate(companyData)
-      return CompanyDataValidator.validate(companyData)
+
+      const isValid = CompanyDataValidator.validate(companyData)
+      useCompanyDataStore().isDataFull = isValid
+      return isValid
     })
+  }
+
+  static isDataFull() {
+    const data = this.dataRef
+    const companyData = data.value[CompanyDataStorageKey.Company]
+    if (!companyData) {
+      useCompanyDataStore().isDataFull = false
+      return false
+    }
+
+    const isValid = CompanyDataValidator.validate(companyData)
+    useCompanyDataStore().isDataFull = isValid
+    return isValid
   }
 
   static isCompanySelected() {
@@ -135,7 +149,7 @@ export class CompanyData {
   }
 
   static populateQuestionnaireData(questionnaireData: { [k: string]: any }) {
-    if (this.isDataFull().value) {
+    if (this.isDataFull()) {
       const companyData: CompanyDataType = this.dataRef.value
       Object.entries(companyData).forEach(([key, value]) => {
         if (value !== null) {
@@ -232,10 +246,7 @@ export class CompanyData {
   }
 
   private static _getQuestionnaireGoal() {
-    if (useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected.length) {
-      const questionnaireChoice = useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected[0].value
-      return questionnaireChoice === QuestionnaireRoute.SpecificGoal ? TrackId.Goals : TrackId.BuildingProperty
-    }
+    return TrackId.BuildingProperty
   }
 
   private static _canAddSizeToStorage(size: StructureSize, questionnaireData: { [k: string]: any }, key: string) {

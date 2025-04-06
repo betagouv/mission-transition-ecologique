@@ -29,7 +29,6 @@ url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/realisation-dinstallations-methanisation-injection-cogeneration-chaleur
 nature de l'aide: financement
 montant du financement: Aide calculée selon le type d'installation
-activable en autonomie: oui
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
@@ -80,7 +79,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:

@@ -87,7 +87,6 @@ url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20240530/decarbonation-lindustrie-decarb-ind-25
 nature de l'aide: financement
 montant du financement: Selon projet
-activable en autonomie: oui
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
@@ -131,13 +130,23 @@ conditions d'éligibilité:
     - Les codes NAF éligibles sont compris entre 10.11Z et 33.20D.
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Vos projets doivent représenter un investissement de plus de 3 millions
+      d’euros sur un même site industriel identifié par un numéro SIRET. Il peut
+      inclure plusieurs opérations sur ce site, tant qu’elles contribuent à la
+      baisse des émissions de GES.
+    - Votre demande d'aide doit être inférieure à 30 millions d’euros.
+    - >-
+      Vos investissements doivent permettre de réduire les émissions d’au moins
+      1 000 tonnes de CO₂e par an, en comparant la situation avant et après le
+      projet, sans modifier le niveau de production.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
