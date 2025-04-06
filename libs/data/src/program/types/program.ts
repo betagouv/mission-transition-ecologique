@@ -72,41 +72,16 @@ export type Dispositif = {
   'opérateur de contact':
     | 'ADEME'
     | 'ASP'
-    | "Agence de l'Eau Adour-Garonne"
-    | "Agence de l'Eau Artois-Picardie"
     | "Agence de l'Eau Loire-Bretagne"
     | "Agence de l'Eau Rhône-Méditerranée-Corse"
     | "Agence de l'Eau"
     | "Banque Publique d'Investissement France"
     | 'Breizh Fab'
-    | 'CCI Auvergne-Rhône-Alpes'
     | 'CCI Bretagne'
-    | 'CCI Centre-Val de Loire'
-    | 'CCI Grand-Est'
-    | 'CCI Hauts-de-France'
-    | 'CCI Loir-et-Cher'
-    | 'CCI Loiret'
-    | 'CCI Morbihan'
-    | 'CCI Normandie'
-    | 'CCI Occitanie'
     | 'CCI ou CMA'
-    | 'CCI Île-de-France'
     | "Chambre de Commerce et de l'Industrie"
     | 'CEE'
     | 'Centre Technique des Industries Mécaniques'
-    | 'CMA Auvergne-Rhône-Alpes'
-    | 'CMA Bourgogne-Franche-Comté'
-    | 'CMA Bretagne'
-    | 'CMA Centre-Val de Loire'
-    | 'CMA Grand-Est'
-    | 'CMA Hauts-de-France'
-    | 'CMA La Réunion'
-    | 'CMA Loiret'
-    | 'CMA Normandie'
-    | 'CMA Nouvelle-Aquitaine'
-    | "CMA Provence-Alpes-Côte-D'Azur"
-    | 'CMA Rhône'
-    | 'CMA Île-de-France'
     | "Chambre des Métiers et de l'Artisanat"
     | 'DDFIP'
     | 'DREAL Bretagne'
@@ -123,17 +98,7 @@ export type Dispositif = {
     | 'Union des industries et métiers de la métallurgie'
     | 'Véolia Eau'
     | "Centre national d'enseignement à distance"
-    | 'Association Technique Énergie Environnement'
-    | 'CMA Corse'
-    | 'CMA Ile-de-France'
-    | 'CMA Occitanie'
-    | 'CMA Pays-de-la-Loire'
-    | 'Direction Génération des Entreprises'
-    | 'ORACE'
-    | 'PROREFEI'
-    | 'PRO-SMEn'
     | 'Voies Navigables de France'
-    | 'CCI PdL'
     | 'Région Centre-Val de Loire'
     | 'Région Occitanie'
     | 'Région Haut-de-France'
@@ -143,41 +108,14 @@ export type Dispositif = {
     | 'Région Sud (PACA)'
     | 'Agence Régionale Biodiversité et Environnement'
     | 'Office français de la biodiversité'
-    | 'TEE'
     | 'Région Bourgogne-Franche-Comté'
     | 'Région Auvergne-Rhône-Alpes'
     | 'Association pour la transition Bas Carbone'
-    | 'La Fresque du Climat'
-    | 'Secrétaire général pour les Affaires régionales'
     | 'Région Nouvelle-Aquitaine'
     | 'Agence de Développement Economique de Corse'
     | 'Agence de Tourisme de la Corse'
     | 'Région Guadeloupe'
-    | "Startup d'Etat"
-    | 'Confédération des petites et moyennes entreprises'
-    | 'Prefecture Eure (27)'
-    | 'Mouvement des entreprises de France'
-    | 'Fédération National des Habitats de Plein Air'
-    | "Association pour l'Emploi des Cadres"
-    | 'Réseau Entreprendre'
     | 'Avere-France'
-    | 'Commissariat Général au Développement Durable'
-    | 'Secrétariat Général à la Planification Ecologique'
-    | 'Fondation Solar Impulse'
-    | "Service Éconmique de l'État en Région"
-    | "Les Entreprises S'engagent"
-    | "Chambres Regionales de l'Economie Sociale et Solidaire"
-    | 'Opcommerce'
-    | 'Placéco'
-    | 'Agir Pour un Environnement Responsable'
-    | 'ADN Tourisme'
-    | 'ATOUT France'
-    | 'Association Tourisme Durable'
-    | 'Parcs Naturels Régionaux'
-    | 'Grands Sites de France'
-    | "Union Française des Métiers de l'Événement"
-    | "Syndicat national des espaces de loisirs, d'attractions et culturels"
-    | "Union des métiers et des industries de l'hôtellerie"
   /**
    * Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.
    */
@@ -293,41 +231,16 @@ export type Dispositif = {
 export type Operators =
   | 'ADEME'
   | 'ASP'
-  | "Agence de l'Eau Adour-Garonne"
-  | "Agence de l'Eau Artois-Picardie"
   | "Agence de l'Eau Loire-Bretagne"
   | "Agence de l'Eau Rhône-Méditerranée-Corse"
   | "Agence de l'Eau"
   | "Banque Publique d'Investissement France"
   | 'Breizh Fab'
-  | 'CCI Auvergne-Rhône-Alpes'
   | 'CCI Bretagne'
-  | 'CCI Centre-Val de Loire'
-  | 'CCI Grand-Est'
-  | 'CCI Hauts-de-France'
-  | 'CCI Loir-et-Cher'
-  | 'CCI Loiret'
-  | 'CCI Morbihan'
-  | 'CCI Normandie'
-  | 'CCI Occitanie'
   | 'CCI ou CMA'
-  | 'CCI Île-de-France'
   | "Chambre de Commerce et de l'Industrie"
   | 'CEE'
   | 'Centre Technique des Industries Mécaniques'
-  | 'CMA Auvergne-Rhône-Alpes'
-  | 'CMA Bourgogne-Franche-Comté'
-  | 'CMA Bretagne'
-  | 'CMA Centre-Val de Loire'
-  | 'CMA Grand-Est'
-  | 'CMA Hauts-de-France'
-  | 'CMA La Réunion'
-  | 'CMA Loiret'
-  | 'CMA Normandie'
-  | 'CMA Nouvelle-Aquitaine'
-  | "CMA Provence-Alpes-Côte-D'Azur"
-  | 'CMA Rhône'
-  | 'CMA Île-de-France'
   | "Chambre des Métiers et de l'Artisanat"
   | 'DDFIP'
   | 'DREAL Bretagne'
@@ -344,17 +257,7 @@ export type Operators =
   | 'Union des industries et métiers de la métallurgie'
   | 'Véolia Eau'
   | "Centre national d'enseignement à distance"
-  | 'Association Technique Énergie Environnement'
-  | 'CMA Corse'
-  | 'CMA Ile-de-France'
-  | 'CMA Occitanie'
-  | 'CMA Pays-de-la-Loire'
-  | 'Direction Génération des Entreprises'
-  | 'ORACE'
-  | 'PROREFEI'
-  | 'PRO-SMEn'
   | 'Voies Navigables de France'
-  | 'CCI PdL'
   | 'Région Centre-Val de Loire'
   | 'Région Occitanie'
   | 'Région Haut-de-France'
@@ -364,38 +267,11 @@ export type Operators =
   | 'Région Sud (PACA)'
   | 'Agence Régionale Biodiversité et Environnement'
   | 'Office français de la biodiversité'
-  | 'TEE'
   | 'Région Bourgogne-Franche-Comté'
   | 'Région Auvergne-Rhône-Alpes'
   | 'Association pour la transition Bas Carbone'
-  | 'La Fresque du Climat'
-  | 'Secrétaire général pour les Affaires régionales'
   | 'Région Nouvelle-Aquitaine'
   | 'Agence de Développement Economique de Corse'
   | 'Agence de Tourisme de la Corse'
   | 'Région Guadeloupe'
-  | "Startup d'Etat"
-  | 'Confédération des petites et moyennes entreprises'
-  | 'Prefecture Eure (27)'
-  | 'Mouvement des entreprises de France'
-  | 'Fédération National des Habitats de Plein Air'
-  | "Association pour l'Emploi des Cadres"
-  | 'Réseau Entreprendre'
   | 'Avere-France'
-  | 'Commissariat Général au Développement Durable'
-  | 'Secrétariat Général à la Planification Ecologique'
-  | 'Fondation Solar Impulse'
-  | "Service Éconmique de l'État en Région"
-  | "Les Entreprises S'engagent"
-  | "Chambres Regionales de l'Economie Sociale et Solidaire"
-  | 'Opcommerce'
-  | 'Placéco'
-  | 'Agir Pour un Environnement Responsable'
-  | 'ADN Tourisme'
-  | 'ATOUT France'
-  | 'Association Tourisme Durable'
-  | 'Parcs Naturels Régionaux'
-  | 'Grands Sites de France'
-  | "Union Française des Métiers de l'Événement"
-  | "Syndicat national des espaces de loisirs, d'attractions et culturels"
-  | "Union des métiers et des industries de l'hôtellerie"
