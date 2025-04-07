@@ -1,7 +1,7 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { ProjectBaserow } from '../common/baserow/projectBaserow'
-import { DataProject } from './types/domain'
+import { DataProject, ProjectStatuts } from './types/domain'
 import { jsonPrograms } from '../../static'
 import { ProgramType } from '../index'
 import { ThemeId } from '../theme/types/shared'
@@ -26,11 +26,12 @@ export class ProjectFeatures {
 
   async generateProjectsJson(): Promise<void> {
     console.log(`Start loading Baserow data and creating the project images`)
-    const projects = await new ProjectBaserow(this._outputImageDirectory, this._logger).getValidProjects()
+    const projects = await new ProjectBaserow(this._outputImageDirectory, this._logger).getProdAndArchivedProjects()
 
     console.log(`Baserow Data sucessfully downloaded.\n\nStarting to validate the project data and generating the project JSON.`)
-    const validProjects = await this._validateData(projects)
     new Redirect(this._logger).updateProjectsRedirects(projects)
+
+    const validProjects = await this._validateData(projects)
     FileManager.writeJson(this._outputFilePath, validProjects, 'projects.json updated')
     this._logger.write('projectGeneration.log')
 
@@ -40,6 +41,9 @@ export class ProjectFeatures {
   private async _validateData(rawProjects: DataProject[]) {
     const validProjects: DataProject[] = []
     for (const project of rawProjects) {
+      if (project.statut != ProjectStatuts.InProd) {
+        continue
+      }
       this._validateThemes(project)
       this._validateLinkedProjects(project, rawProjects)
       this._validatePrograms(project, this._programs)

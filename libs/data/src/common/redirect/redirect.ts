@@ -1,13 +1,9 @@
 import { fileURLToPath } from 'url'
 import { redirects } from '../../../static/index'
-import { ProgramDataUtils } from '../../program/programData'
-import { DataProject } from '../../project/types/domain'
-import { ProgramBaserow } from '../baserow/programBaserow'
-import { ProjectBaserow } from '../baserow/projectBaserow'
-import { RedirectsBaserow } from '../baserow/redirectBaserow'
+import { DataProject, ProjectStatuts } from '../../project/types/domain'
 import { FileManager } from '../fileManager'
 import { Logger } from '../logger/logger'
-import { LoggerType, LogLevel } from '../logger/types'
+import { LogLevel } from '../logger/types'
 import { RedirectJson } from './types'
 import path from 'path'
 
@@ -56,11 +52,13 @@ export default class Redirect {
   handleProjectReplacements(projects: DataProject[]) {
     projects.forEach((project) => {
       if (project.redirectTo) {
-        console.log('jsuis bine la, ', project.title, project.redirectTo)
+        if (project.statut == ProjectStatuts.InProd) {
+          this._logger.log(LogLevel.Major, 'Conflit : en prod / redirection active', project['title'], project.id)
+        }
+
         const newSlug = this.newRedirectData.project_rowid_to_url_mapping[project.redirectTo]
         const redirectInProd = projects.some((proj) => proj.id === project.redirectTo)
         if (!newSlug || !redirectInProd) {
-          console.log('jdevrais pas etre la')
           this._logger.log(LogLevel.Critic, "Redirection vers un projet non valide, risque d'erreur 404", project['title'], project.id)
         } else {
           // Add or update the redirection for this project's slug
@@ -71,38 +69,5 @@ export default class Redirect {
         delete this.newRedirectData.project_redirects[project.slug]
       }
     })
-  }
-
-  async generateRedirectJson() {
-    const currentJsonData = redirects as unknown as RedirectJson
-    console.log(currentJsonData)
-
-    //program renaming redirects
-    const programs = await new ProgramBaserow().getPrograms(false)
-
-    const test: Record<number, string> = {}
-    for (const program of programs) {
-      if (!ProgramDataUtils.isInProd(program)) {
-        continue
-      }
-      test[program.id] = program['Id fiche dispositif']
-    }
-    console.log(test)
-
-    // project renaming redirects
-    const projects = await new ProjectBaserow('unused', new Logger(LoggerType.Project)).getRawValidProjects()
-
-    const test2: Record<number, string> = {}
-    for (const project of projects) {
-      test2[project.id] = project.Nom
-    }
-    console.log(test2)
-
-    // redirect table
-    const temp = await new RedirectsBaserow().getAll()
-    // Pas convaincu par le format.
-    // peut être juste old id; new id ?
-    // et un mapping par id : current_url, old_urls
-    console.log(temp)
   }
 }

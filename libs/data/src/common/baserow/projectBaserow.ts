@@ -1,6 +1,6 @@
 import path from 'path'
 import { AbstractBaserow } from './abstractBaserow'
-import { DataProject } from '../../project/types/domain'
+import { DataProject, ProjectStatuts } from '../../project/types/domain'
 import { LinkObject, BaserowProject, BaserowSectors, SectorKeys } from './types'
 import { Theme } from '../../theme/types/domain'
 import { ImageBaserow } from './imageBaserow'
@@ -21,19 +21,31 @@ export class ProjectBaserow extends AbstractBaserow {
     this._imageDownloader = new ImageBaserow(imageDirectory, this._logPath)
   }
 
-  async getRawValidProjects(): Promise<BaserowProject[]> {
+  async getInProdProjects(): Promise<DataProject[]> {
     const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
-    return baserowProjects.filter((value) => {
-      return value.Publié
+
+    const validBaserowProjects = baserowProjects.filter((value) => {
+      const statut = value.Publié_new ? (value.Publié_new.value as ProjectStatuts) : ProjectStatuts.Others
+      return statut == ProjectStatuts.InProd
     })
+    return await this._convertProjectList(validBaserowProjects)
   }
 
-  async getValidProjects(): Promise<DataProject[]> {
-    const validBaserowProjects = await this.getRawValidProjects()
+  async getProdAndArchivedProjects(): Promise<DataProject[]> {
+    const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
+
+    const validBaserowProjects = baserowProjects.filter((value) => {
+      const statut = value.Publié_new ? (value.Publié_new.value as ProjectStatuts) : ProjectStatuts.Others
+      return statut == ProjectStatuts.InProd || statut == ProjectStatuts.Archived
+    })
+    return await this._convertProjectList(validBaserowProjects)
+  }
+
+  private async _convertProjectList(projectList: BaserowProject[]): Promise<DataProject[]> {
     const baserowThemes = await this._getTableData<Theme>(this._themeTableId)
 
     const projects: DataProject[] = []
-    for (const project of validBaserowProjects) {
+    for (const project of projectList) {
       try {
         const result = await this._convertToDataProjectType(project, baserowThemes)
         projects.push(result)
@@ -80,6 +92,7 @@ export class ProjectBaserow extends AbstractBaserow {
       priority: baserowProject.Prio,
       highlightPriority: baserowProject['Mise En Avant'],
       sectors: this._generateSectors(baserowProject as BaserowSectors),
+      statut: baserowProject.Publié_new ? (baserowProject.Publié_new.value as ProjectStatuts) : ProjectStatuts.Others,
       ...(redirection !== undefined && { redirectTo: redirection })
     }
   }
