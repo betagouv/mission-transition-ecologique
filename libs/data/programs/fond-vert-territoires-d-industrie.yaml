@@ -59,12 +59,11 @@ description longue: >-
   etc.) 
 
 
-  À titre exceptionnel, un soutien spécifique et renforcé peut être donné aux
-  projets qui contribuent à la redynamisation de territoires « rebond industriel
-  » (territoires confrontés à de fortes difficultés industrielles ou des
-  restructurations importantes de chaînes de valeur)
-début de validité: 01/01/2024
-fin de validité: 31/12/2024
+  A titre auxiliaire, la mesure peut soutenir des projets d’investissements
+  contribuant au développement des compétences nécessaires à la
+  réindustrialisation de ces chaînes de valeur industrielles.
+début de validité: 12/03/2025
+fin de validité: 31/12/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
 url: >-
@@ -77,14 +76,14 @@ objectifs:
       l’ADEME ou en contactant un conseiller.
     liens:
       - lien: >-
-          https://www.demarches-simplifiees.fr/commencer/fonds-vert-3-territoires-industrie
+          https://static.demarches-simplifiees.fr/v1/AUTH_db3cbfc79c914f87b192ff7c6bb176f0/ds_activestorage_backup/2025/03/12/FW/FWfFecay7ZqKitr9nb8MUTC6TYyS?temp_url_sig=09006c98ec617b788fc091c9dd53c0219ad65e39&temp_url_expires=1744023670&filename=FV_Cahier_Axe3_Territoires%20industrie_v3.1.pdf&inline
         texte: Conditions d'éligibilité et de financement
   - description: >-
       Vérifiez votre éligibilité géographique. Cette aide s'adresse aux
       entreprises situées dans le périmètre d’un "Territoire d’industrie".
     liens:
       - lien: >-
-          https://agence-cohesion-territoires.gouv.fr/sites/default/files/inline-images/perimetre_des_territoires_dindustrie_2023-2027_high_0.png
+          https://www.observatoire-des-territoires.gouv.fr/outils/cartographie-interactive/#c=indicator&i=_zon_.ti2&view=map72
         texte: Territoires d'industrie 2023-2027
   - description: >-
       Créez un compte ou identifiez-vous avec FranceConnect pour pouvoir déposer
@@ -118,7 +117,7 @@ conditions d'éligibilité:
       d'industrie 2023-2027
     - >-
       Les projets doivent présenter une assiette minimale de dépenses de 400 000
-      €
+      € (excepté Corse et Outre-Mer)
     - >-
       L'opération pour laquelle vous sollicitez une aide financière ne doit pas
       avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes

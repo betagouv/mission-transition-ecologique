@@ -63,7 +63,7 @@ export default class Redirect {
           this._logger.log(LogLevel.Critic, "Redirection vers un projet non valide, risque d'erreur 404", project.title, project.id)
         } else {
           // Add or update the redirection for this project's slug
-          this.newRedirectData.project_redirects[project.slug] = newSlug
+          this._updateProjectSlug(project.slug, newSlug)
         }
       } else {
         // Remove the redirection if it existed but doesn't exist anymore
@@ -125,7 +125,7 @@ export default class Redirect {
           this._logger.log(LogLevel.Critic, "Redirection vers un programme non valide, risque d'erreur 404", program.Titre, program.id)
         } else {
           // Add or update the redirection for this program's slug
-          this.newRedirectData.program_redirects[program['Id fiche dispositif']] = newSlug
+          this._updateProgramSlug(program['Id fiche dispositif'], newSlug)
         }
       } else {
         // Remove the redirection if it existed but doesn't exist anymore

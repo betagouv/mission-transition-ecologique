@@ -13,9 +13,7 @@
     "etude-et-investissement-qualite-de-l'air": "etude-et-investissement-qualite-de-l-air",
     "investissement-boucle-d%E2%80%99eau-geothermique": "investissement-boucle-d-eau-geothermique",
     "investissement-boucle-d'eau-geothermique": "investissement-boucle-d-eau-geothermique",
-    "diag-eco-flux-2": "diag-eco-flux",
-    "test-redirect": "test-redirectes",
-    "test-redirectes": "amo-chaufferie-biomasse"
+    "diag-eco-flux-2": "diag-eco-flux"
   },
   "project_rowid_to_url_mapping": {
     "1": "bilan-ges",
@@ -265,7 +263,6 @@
     "826": "diag-adaptation",
     "859": "advenir",
     "863": "cyclologistique",
-    "892": "formation-artisan-developpement-durable",
-    "925": "test-redirectes"
+    "892": "formation-artisan-developpement-durable"
   }
 }
