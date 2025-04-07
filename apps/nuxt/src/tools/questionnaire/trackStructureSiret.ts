@@ -4,13 +4,13 @@
 import { HasInputOptions, SiretValue, TrackCategory, TrackComponent, TrackId } from '@/types'
 import type { Track, NextTrackRuleSet, EstablishmentFront } from '@/types'
 import { ConditionOperators, DataMappingFrom } from '@/types'
-import { QuestionnaireRoute, LegalCategory } from '@/types'
+import { LegalCategory } from '@/types'
 import { SiretValidator } from '@tee/common'
 
 // legalCategory == '1000' means it's an individual compagny
 const nextTrackRuleSets: NextTrackRuleSet[] = [
   {
-    help: "Goes to track_goals if : legalCategory == '1000' AND questionnaire_route == 'specific_goal' (pro)",
+    help: "Goes to track_structure_building_property if : legalCategory == '1000'",
     rules: [
       {
         from: DataMappingFrom.UsedTracks,
@@ -21,48 +21,6 @@ const nextTrackRuleSets: NextTrackRuleSet[] = [
             type: 'legalCategory',
             operator: ConditionOperators.is,
             value: LegalCategory.EI
-          }
-        ]
-      },
-      {
-        from: DataMappingFrom.UsedTracks,
-        id: 'questionnaire_route',
-        dataField: 'questionnaire_route',
-        conditions: [
-          {
-            type: 'questionnaire_route',
-            operator: ConditionOperators.is,
-            value: QuestionnaireRoute.SpecificGoal
-          }
-        ]
-      }
-    ],
-    next: { default: TrackId.Goals }
-  },
-  {
-    help: "Goes to track_structure_building_property if : legalCategory == '1000' AND questionnaire_route == 'no_specific_goal' (newbie)",
-    rules: [
-      {
-        from: DataMappingFrom.UsedTracks,
-        id: 'legalCategory',
-        dataField: 'legalCategory',
-        conditions: [
-          {
-            type: 'legalCategory',
-            operator: ConditionOperators.is,
-            value: LegalCategory.EI
-          }
-        ]
-      },
-      {
-        from: DataMappingFrom.UsedTracks,
-        id: 'questionnaire_route',
-        dataField: 'questionnaire_route',
-        conditions: [
-          {
-            type: 'questionnaire_route',
-            operator: ConditionOperators.is,
-            value: QuestionnaireRoute.NoSpecificGoal
           }
         ]
       }

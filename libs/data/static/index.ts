@@ -3,7 +3,7 @@ import { EnrichedOperator } from '../src/operators/types/shared'
 import { default as projectsJson } from './projects.json'
 import { default as projectsTestsJson } from './projects_tests.json'
 import operatorsJson from './operators.json'
-import { ProgramType } from '../src/program/program'
+import { ProgramType } from '../src/program/types/shared'
 import { default as programsJson } from './programs.json'
 import { default as programsTestJson } from './programs_tests.json'
 

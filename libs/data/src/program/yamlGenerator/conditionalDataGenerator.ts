@@ -1,5 +1,5 @@
-import { ConditionalYaml, ProgramType } from '../program'
-import { CompanySizeCondition, ConditionalValues, DataProgram, RegionCondition } from '../types/domain'
+import { ProgramType } from '../types/shared'
+import { CompanySizeCondition, ConditionalValues, DataProgram, RegionCondition, ConditionalYaml } from '../types/domain'
 
 export class ConditionalDataGenerator {
   constructor(private _program: DataProgram) {}

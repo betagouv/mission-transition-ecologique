@@ -32,7 +32,6 @@ url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/projets-recherche-developpement?cible=79
 nature de l'aide: étude
 montant du financement: Selon projet
-activable en autonomie: oui
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
@@ -88,7 +87,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:

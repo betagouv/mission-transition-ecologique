@@ -9,6 +9,7 @@ import { ChangeFreq, Priority } from './src/types/sitemapType'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default<DefineNuxtConfig> defineNuxtConfig({
   app: {
+    rootId: 'tee',
     head: {
       htmlAttrs: {
         lang: 'fr'
@@ -89,7 +90,6 @@ export default<DefineNuxtConfig> defineNuxtConfig({
     }
   },
   features: {
-    inlineStyles: false,
     devLogs: true,
   },
   experimental: {

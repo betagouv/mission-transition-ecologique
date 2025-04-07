@@ -52,7 +52,6 @@ nature de l'aide: étude
 montant du financement: >-
   Selon la surface et l'ancienneté de l’installation solaire, dans un maximum de
   30 000€ HT
-activable en autonomie: oui
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
@@ -109,7 +108,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
       - entreprise . est propriétaire de ses locaux
   entreprise . est éligible:
     applicable si:

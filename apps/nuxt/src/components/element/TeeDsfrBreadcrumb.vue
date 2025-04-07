@@ -15,10 +15,10 @@ import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationRaw } from 'vue-router'
 
-interface Props {
+export interface TeeDsfrBreadcrumbProps {
   links?: DsfrBreadcrumbProps['links']
 }
-const props = defineProps<Props>()
+const props = defineProps<TeeDsfrBreadcrumbProps>()
 const navigationStore = useNavigationStore()
 const usedTrackStore = useUsedTrackStore()
 const navigation = new Navigation()
@@ -65,7 +65,7 @@ const breadcrumbs = computed(() => {
     const trackId = usedTrackStore.getPreviousCompletedUsedTrackId()
     baseLinks.splice(1, 0, {
       text: 'Questionnaire',
-      to: navigationStore.routeByTrackId(trackId || TrackId.QuestionnaireRoute)
+      to: navigationStore.routeByTrackId(trackId || TrackId.Siret)
     })
   }
   if (props.links) {

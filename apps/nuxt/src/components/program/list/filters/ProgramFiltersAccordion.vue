@@ -1,4 +1,10 @@
 <template>
+  <div
+    v-if="withTitle"
+    class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w"
+  >
+    Filtres
+  </div>
   <FiltersAccordion
     :accordion-class="props.accordionClass"
     :company-data-filter="companyDataFilter"
@@ -14,20 +20,20 @@ import FilterByCompanyData from '@/components/filters/FilterByCompanyData.vue'
 import { FilterItemKeys } from '@/types'
 import { FilterItem } from '@/components/filters/FiltersAccordion.vue'
 import { useFiltersStore } from '@/stores/filters'
-import { CompanyData } from '@/tools/companyData'
 
 interface Props {
   accordionClass?: string
+  withTitle?: boolean
 }
-
 const props = defineProps<Props>()
 
-const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
+const { companyDataSelected } = storeToRefs(useFiltersStore())
+const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const navigation = new Navigation()
 
 const displayRegionFilter = computed(() => {
-  return navigation.isCatalogPrograms() && !isCompanyDataSelected.value
+  return (navigation.isCatalogPrograms() && !companyDataSelected.value) || !isDataFull.value
 })
 
 const companyDataFilter: FilterItem = {
@@ -35,7 +41,7 @@ const companyDataFilter: FilterItem = {
   id: FilterItemKeys.companyData,
   component: FilterByCompanyData,
   componentClass: 'fr-pl-2v',
-  display: CompanyData.isDataFull().value
+  display: isDataFull
 }
 
 const filtersItem: FilterItem[] = [
