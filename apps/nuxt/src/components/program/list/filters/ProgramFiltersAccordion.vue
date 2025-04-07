@@ -27,13 +27,13 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
+const { companyDataSelected } = storeToRefs(useFiltersStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const navigation = new Navigation()
 
 const displayRegionFilter = computed(() => {
-  return navigation.isCatalogPrograms() && !isCompanyDataSelected.value
+  return (navigation.isCatalogPrograms() && !companyDataSelected.value) || !isDataFull.value
 })
 
 const companyDataFilter: FilterItem = {
