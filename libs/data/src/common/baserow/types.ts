@@ -52,6 +52,7 @@ export interface Program
       | 'Couverture géographique'
       | 'Zones géographiques'
       | 'Thèmes Ciblés'
+      | 'redirection-vers'
     >,
     BaserowSectors {
   Statuts: LinkObject[]
@@ -61,6 +62,7 @@ export interface Program
   'Couverture géographique': LinkObject[]
   'Zones géographiques': LinkObject[]
   'Thèmes Ciblés': LinkObject[]
+  'redirection-vers': LinkObject[]
 }
 
 export interface Operator {
@@ -113,11 +115,4 @@ export type Sectors = {
 
 export type BaserowSectors = {
   [K in keyof typeof SectorKeys]: boolean
-}
-
-export interface Redirect {
-  'Nouveau dispositif': LinkObject[]
-  'Dispositifs à remplacer': LinkObject[]
-  'Nouveau Projet': LinkObject[]
-  'Projets à remplacer': LinkObject[]
 }
