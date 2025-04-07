@@ -22,15 +22,6 @@ export class ProjectBaserow extends AbstractBaserow {
     this._imageDownloader = new ImageBaserow(imageDirectory, this._logPath)
   }
 
-  async getInProdProjects(): Promise<DataProject[]> {
-    const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
-
-    const validBaserowProjects = baserowProjects.filter((project) => {
-      return this._convertStatus(project?.Publié_new) == ProjectStatuts.InProd
-    })
-    return await this._convertProjectList(validBaserowProjects)
-  }
-
   async getProdAndArchivedProjects(): Promise<DataProject[]> {
     const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
     const validBaserowProjects = baserowProjects.filter((project) => {
