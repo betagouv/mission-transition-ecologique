@@ -44,7 +44,7 @@ conditions d'éligibilité:
     - France et territoires d'outre-mer
   secteur d'activité:
     - |-
-      - Entreprises dotés d'une flotte de véhicules lourds
+      - Entreprises dotées d'une flotte de véhicules lourds
       - Professionnels des services automobiles.
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
@@ -58,7 +58,6 @@ publicodes:
     toutes ces conditions:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

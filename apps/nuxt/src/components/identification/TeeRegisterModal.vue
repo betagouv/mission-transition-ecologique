@@ -15,7 +15,7 @@
       >
         <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pb-md-1v fr-pt-7v fr-text--yellow">
           <div>
-            <div class="fr-h2 fr-mb-0 fr-text--yellow">{{ Translation.t('register.mainTitle') }}</div>
+            <div class="fr-h2 fr-mb-0 fr-text--yellow">{{ title }}</div>
             <TeeDsfrButton
               id="close-register-modal"
               size="sm"
@@ -25,7 +25,7 @@
               <span class="fr-icon-close-line fr-icon--lg"></span>
             </TeeDsfrButton>
           </div>
-          <div>{{ Translation.t('register.description') }}</div>
+          <div>{{ description }}</div>
         </div>
         <TeeRegisterSiret
           v-if="registerStep === 1"
@@ -55,6 +55,7 @@ import { useNavigationStore } from '@/stores/navigation'
 import { CompanyData } from '@/tools/companyData'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 
+const navigationStore = useNavigationStore()
 const registerModal = ref(null)
 const registeredData = CompanyData.dataRef
 const company = ref<CompanyDataType[CompanyDataStorageKey.Company]>(registeredData.value[CompanyDataStorageKey.Company])
@@ -62,7 +63,6 @@ const companySize = ref<CompanyDataType[CompanyDataStorageKey.Size]>(registeredD
 const manualRegistration = ref<boolean>(!!(company.value && !('siret' in company.value)))
 if (import.meta.client) {
   window.addEventListener('popstate', () => {
-    const navigationStore = useNavigationStore()
     if (navigationStore.hasRegisterModal) {
       window.scrollTo({
         top: 0,
@@ -71,6 +71,14 @@ if (import.meta.client) {
     }
   })
 }
+
+const title = computed<string>(() => {
+  return Translation.t(navigationStore.isFromQuestionnaireCtaRegisterModal ? 'register.trackTitle' : 'register.mainTitle')
+})
+
+const description = computed<string>(() => {
+  return Translation.t(navigationStore.isFromQuestionnaireCtaRegisterModal ? 'register.trackDescription' : 'register.description')
+})
 
 onClickOutside(registerModal, (ev: MouseEvent) => {
   const target = ev.target as HTMLInputElement

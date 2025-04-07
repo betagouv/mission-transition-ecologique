@@ -24,7 +24,6 @@ url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20240703/appel-a-projets-vehicules-lourds-electriques-2024-programme-cee-e-trans
 nature de l'aide: financement
 montant du financement: Jusqu'à 90 000 € HT par véhicule
-activable en autonomie: oui
 objectifs:
   - description: Préparez votre dossier et ses pièces justificatives.
     liens:
@@ -63,7 +62,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:

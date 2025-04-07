@@ -35,7 +35,7 @@ fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: Région Auvergne-Rhône-Alpes
 autres opérateurs:
-  - Bpifrance
+  - Banque Publique d'Investissement France
 url: https://pretregion.auvergnerhonealpes.fr/
 nature de l'aide: prêt
 montant du prêt: De 50 000 € à 500 000 €
@@ -114,7 +114,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:

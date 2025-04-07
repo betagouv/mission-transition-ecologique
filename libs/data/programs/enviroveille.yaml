@@ -7,7 +7,7 @@ description: >-
   l’information réglementaire applicable à votre activité (environnement,
   énergie, santé-sécurité au travail) et suivre son évolution.
 illustration: images/TEE_eolienne.png
-opérateur de contact: CCI
+opérateur de contact: Chambre de Commerce et de l'Industrie
 url: https://www.enviroveille.com/public/tester-gratuitement.html
 nature de l'aide: étude
 coût de l'accompagnement: De 150 à 800 € HT (sur abonnement)
@@ -52,7 +52,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     toutes ces conditions:
       - a un effectif éligible

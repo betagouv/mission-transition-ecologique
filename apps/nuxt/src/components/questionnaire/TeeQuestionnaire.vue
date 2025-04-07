@@ -15,7 +15,7 @@
     >
       <div
         :id="RouteName.Questionnaire"
-        :class="`fr-container ${needSidebar ? 'fr-pt-0v' : ''}`"
+        class="fr-container fr-pt-0v"
       >
         <!-- TRACKS INTERFACES -->
         <div
@@ -24,7 +24,6 @@
         >
           <!-- SIDEBAR MENU (FIL D'ARIANE)-->
           <div
-            v-if="needSidebar"
             class="fr-mt-10v fr-col-md-4 fr-col-lg-3 fr-col-sm-hide"
             style="height: 100%"
           >
@@ -56,7 +55,6 @@ import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
-import { computed, onBeforeMount, ref } from 'vue'
 
 interface Props {
   trackId: TrackId
@@ -67,10 +65,6 @@ const trackElement = ref<HTMLElement | null>(null)
 
 const trackStore = useTrackStore()
 const usedTrackStore = useUsedTrackStore()
-
-const needSidebar = computed(() => {
-  return trackStore.currentId !== TrackId.QuestionnaireRoute
-})
 
 onBeforeMount(() => {
   usedTrackStore.add(props.trackId, props.trackId)

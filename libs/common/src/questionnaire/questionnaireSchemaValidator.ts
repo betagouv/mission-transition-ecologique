@@ -1,17 +1,8 @@
 import { ThemeId } from '@tee/data'
 import { z } from 'zod'
 import { stringBoolean } from '../validator'
-import {
-  BuildingProperty,
-  MobilityStatus,
-  QuestionnaireRoute,
-  StructureSize,
-  WasteManagementStatus,
-  WasteSortingStatus,
-  YesNo
-} from './types/types'
+import { BuildingProperty, MobilityStatus, StructureSize, WasteManagementStatus, WasteSortingStatus, YesNo } from './types/types'
 
-export const questionnaireRouteSchema = z.nativeEnum(QuestionnaireRoute)
 export const structureSizeSchema = z.nativeEnum(StructureSize)
 export const themeIdSchema = z.nativeEnum(ThemeId)
 export const buildingPropertySchema = z.nativeEnum(BuildingProperty)
@@ -22,9 +13,9 @@ export const yesNoSchema = z.nativeEnum(YesNo)
 
 export const questionnaireDataSchema = z.object({
   codeNaf: z.string().optional(),
-  questionnaire_route: questionnaireRouteSchema.optional(),
   region: z.string().optional(),
   structure_size: structureSizeSchema.optional(),
+  is_questionnaire: z.boolean().optional(),
   priority_objective: themeIdSchema.optional(),
   building_property: buildingPropertySchema.optional(),
   sustainable_mobility_objective: mobilityStatusSchema.optional(),
@@ -47,4 +38,6 @@ export const questionnaireDataSchema = z.object({
   onlyEligible: z.boolean().optional()
 })
 
-export const serverQuestionnaireDataSchema = questionnaireDataSchema.setKey('onlyEligible', stringBoolean.optional())
+export const serverQuestionnaireDataSchema = questionnaireDataSchema
+  .setKey('onlyEligible', stringBoolean.optional())
+  .setKey('is_questionnaire', stringBoolean.optional())

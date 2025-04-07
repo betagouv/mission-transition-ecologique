@@ -14,7 +14,7 @@
     </div>
 
     <div class="fr-col">
-      <div :class="`fr-grid-row ${useUsedTrackStore().currentIsFirst ? 'fr-grid-row--gutters' : ''}`">
+      <div class="fr-grid-row">
         <TrackLabel
           v-if="track.label"
           :track="track"
@@ -82,7 +82,6 @@
       </div>
 
       <div
-        v-if="hasSubmitButton"
         class="fr-grid-row fr-grid-row--gutters fr-pt-8v fr-px-md-0v"
         style="justify-content: start"
       >
@@ -118,7 +117,6 @@ import Navigation from '@/tools/navigation'
 import { Scroll } from '@/tools/scroll'
 import TrackColOption from '@/tools/questionnaire/track/TrackColOption'
 import TrackComponent from '@/tools/questionnaire/track/TrackComponent'
-import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 interface Props {
@@ -137,12 +135,7 @@ const selectedOptions = ref<TrackOptionsUnion[]>([])
 
 const usedTrack = usedTrackStore.current as UsedTrack
 const track: Track | undefined = trackStore.getTrack(usedTrack.id)
-
 const allowMultiple: boolean = !!track?.behavior?.multipleChoices
-
-const hasSubmitButton = computed(() => {
-  return !usedTrackStore.currentIsFirst
-})
 
 const currentColumnWidth = () => {
   let divSize: string | number = TrackColOption.default[trackStore.currentComponent]
@@ -225,5 +218,8 @@ const backToPreviousTrack = async () => {
 
     return await router.push(navigationStore.routeByTrackId(trackId))
   }
+  return await router.push({
+    name: RouteName.Homepage
+  })
 }
 </script>

@@ -25,6 +25,7 @@ description longue: >-
   d’immatriculation, révisions, carburant... ne sont pas prises en charge.
 
   - la conversion de 10 véhicules maximum.
+fin de validité: 24/03/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: Région Sud (PACA)
 url: https://www.maregionsud.fr/vos-aides/detail/le-cheque-transition-bioethanol
@@ -77,6 +78,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

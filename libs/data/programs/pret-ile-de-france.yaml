@@ -34,7 +34,7 @@ description longue: >-
 illustration: images/TEE_eolienne.png
 opérateur de contact: Région Île-de-France
 autres opérateurs:
-  - Bpifrance
+  - Banque Publique d'Investissement France
 url: https://pret-transition-ecologique.iledefrance.fr/
 nature de l'aide: prêt
 montant du prêt: De 10 000 € à 500 000 €
@@ -111,7 +111,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     toutes ces conditions:
       - a un effectif éligible
