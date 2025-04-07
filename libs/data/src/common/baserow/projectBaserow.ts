@@ -1,6 +1,6 @@
 import path from 'path'
 import { AbstractBaserow } from './abstractBaserow'
-import { DataProject, ProjectStatuts } from '../../project/types/domain'
+import { DataProject, ProjectStatus } from '../../project/types/domain'
 import { LinkObject, BaserowProject, BaserowSectors, SectorKeys } from './types'
 import { Theme } from '../../theme/types/domain'
 import { ImageBaserow } from './imageBaserow'
@@ -26,15 +26,14 @@ export class ProjectBaserow extends AbstractBaserow {
     const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
     const validBaserowProjects = baserowProjects.filter((project) => {
       return (
-        this._convertStatus(project?.Publié_new) == ProjectStatuts.InProd ||
-        this._convertStatus(project?.Publié_new) == ProjectStatuts.Archived
+        this._convertStatus(project?.Publié_new) == ProjectStatus.InProd ||
+        this._convertStatus(project?.Publié_new) == ProjectStatus.Archived
       )
     })
     return await this._convertProjectList(validBaserowProjects)
   }
 
   private async _convertProjectList(projectList: BaserowProject[]): Promise<DataProject[]> {
-    console.log('in project when updating programs')
     const baserowThemes = await this._getTableData<Theme>(this._themeTableId)
 
     const projects: DataProject[] = []
@@ -67,7 +66,7 @@ export class ProjectBaserow extends AbstractBaserow {
       imageName = maybeImageName.value
     }
 
-    const redirection = this._generateRedirection(baserowProject)
+    const redirect = this._generateRedirect(baserowProject)
 
     return {
       id: baserowProject.id,
@@ -86,7 +85,7 @@ export class ProjectBaserow extends AbstractBaserow {
       highlightPriority: baserowProject['Mise En Avant'],
       sectors: this._generateSectors(baserowProject as BaserowSectors),
       status: this._convertStatus(baserowProject?.Publié_new),
-      ...(redirection !== undefined && { redirectTo: redirection })
+      ...(redirect !== undefined && { redirectTo: redirect })
     }
   }
 
@@ -144,7 +143,7 @@ export class ProjectBaserow extends AbstractBaserow {
     return result
   }
 
-  private _generateRedirection(project: BaserowProject): number | undefined {
+  private _generateRedirect(project: BaserowProject): number | undefined {
     if (project['redirection-vers'].length > 1) {
       this._logger.log(LogLevel.Major, 'Redirection invalide: multiples redirections en conflit', project.Titre, project.id)
       return undefined
@@ -155,10 +154,10 @@ export class ProjectBaserow extends AbstractBaserow {
     return project['redirection-vers'][0].id
   }
 
-  private _convertStatus(status: LinkObject | undefined): ProjectStatuts {
+  private _convertStatus(status: LinkObject | undefined): ProjectStatus {
     if (!status) {
-      return ProjectStatuts.Others
+      return ProjectStatus.Others
     }
-    return Object.values(ProjectStatuts).includes(status.value as ProjectStatuts) ? (status.value as ProjectStatuts) : ProjectStatuts.Others
+    return Object.values(ProjectStatus).includes(status.value as ProjectStatus) ? (status.value as ProjectStatus) : ProjectStatus.Others
   }
 }

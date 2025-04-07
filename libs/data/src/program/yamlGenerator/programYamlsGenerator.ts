@@ -7,7 +7,7 @@ import { ProgramBaserow } from '../../common/baserow/programBaserow'
 import { Logger } from '../../common/logger/logger'
 import { CoreGenerator } from './coreGenerator'
 import { LoggerType } from '../../common/logger/types'
-import { ProgramDataUtils } from '../programData'
+import { ProgramUtils } from '../programUtils'
 import Redirect from '../../common/redirect/redirect'
 
 export class ProgramYamlsGenerator {
@@ -24,13 +24,13 @@ export class ProgramYamlsGenerator {
     // on the first run use getPrograms(false) then for all following call use getPrograms(true)
     const programs = await new ProgramBaserow().getPrograms(false)
     for (const program of programs) {
-      if (ProgramDataUtils.isInProd(program)) {
+      if (ProgramUtils.isInProd(program)) {
         await this._createProgramYaml(program)
       }
     }
 
     const redirectWatchedPrograms = programs.filter((program) => {
-      return ProgramDataUtils.isInProd(program) || program.Statuts.includes(Status.Replaced)
+      return ProgramUtils.isInProd(program) || program.Statuts.includes(Status.Replaced)
     })
     new Redirect(this._logger).updateProgramRedirects(redirectWatchedPrograms)
 

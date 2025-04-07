@@ -10,10 +10,10 @@ export interface DataProject
   linkedProjects: number[]
   programs: string[]
   redirectTo?: number
-  status: ProjectStatuts
+  status: ProjectStatus
 }
 
-export enum ProjectStatuts {
+export enum ProjectStatus {
   InProd = 'publié',
   Archived = 'archivé',
   Others = 'autre'

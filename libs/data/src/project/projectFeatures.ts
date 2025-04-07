@@ -1,7 +1,7 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { ProjectBaserow } from '../common/baserow/projectBaserow'
-import { DataProject, ProjectStatuts } from './types/domain'
+import { DataProject, ProjectStatus } from './types/domain'
 import { jsonPrograms } from '../../static'
 import { ProgramType } from '../program/types/shared'
 import { ThemeId } from '../theme/types/shared'
@@ -41,7 +41,7 @@ export class ProjectFeatures {
   private async _validateData(rawProjects: DataProject[]) {
     const validProjects: DataProject[] = []
     for (const project of rawProjects) {
-      if (project.status != ProjectStatuts.InProd) {
+      if (project.status != ProjectStatus.InProd) {
         continue
       }
       this._validateThemes(project)

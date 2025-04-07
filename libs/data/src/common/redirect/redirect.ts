@@ -1,6 +1,6 @@
 import { fileURLToPath } from 'url'
 import { redirects } from '../../../static/index'
-import { DataProject, ProjectStatuts } from '../../project/types/domain'
+import { DataProject, ProjectStatus } from '../../project/types/domain'
 import { FileManager } from '../fileManager'
 import { Logger } from '../logger/logger'
 import { LogLevel } from '../logger/types'
@@ -53,7 +53,7 @@ export default class Redirect {
   handleProjectReplacements(projects: DataProject[]) {
     projects.forEach((project) => {
       if (project.redirectTo) {
-        if (project.status == ProjectStatuts.InProd) {
+        if (project.status == ProjectStatus.InProd) {
           this._logger.log(LogLevel.Major, 'Conflit : en prod / redirection active', project.title, project.id)
         }
 
