@@ -33,7 +33,7 @@ description longue: >-
   • produire des énergies nouvelles.
 fin de validité: 16/06/2024
 illustration: images/TEE_ampoule.png
-opérateur de contact: Bpifrance
+opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - ADEME
 url: >-
@@ -82,7 +82,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:

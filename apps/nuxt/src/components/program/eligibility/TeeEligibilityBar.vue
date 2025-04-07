@@ -4,11 +4,15 @@
     ref="eligibilityCriteria"
     :class="bgClass"
   >
-    <div class="fr-container fr-grid-row fr-grid-row--center fr-grid-row--middle fr-p-0 fr-py-3v">
-      <div class="fr-px-sm-2v fr-my-auto fr-col-12 fr-px-0 fr-text-center">
+    <div class="fr-container fr-grid-row fr-grid-row--center fr-grid-row--middle fr-py-3v">
+      <div
+        class="fr-px-sm-2v fr-my-auto fr-col-12 fr-px-0 fr-text-center"
+        :class="fontColor"
+      >
         <div
           v-if="message"
-          class="fr-ml-sm-2v fr-text--blue-france fr-text--bold"
+          class="fr-ml-sm-2v fr-text--bold"
+          :role="message.role ?? undefined"
         >
           <span
             v-if="message.icon"
@@ -42,28 +46,29 @@
         </div>
       </div>
     </div>
+    <div
+      v-if="messageDetail"
+      class="fr-px-sm-2v fr-my-auto fr-col-12 fr-px-0 fr-text-center fr-pb-3v"
+      :class="fontColor"
+    >
+      {{ messageDetail }}
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Navigation from '@/tools/navigation'
-import { Color, RouteName } from '@/types'
-import StickyWithOffset from '@/tools/stickyWithOffset'
-import { Scroll } from '@/tools/scroll'
-import type { RouteLocationRaw } from 'vue-router'
 import Breakpoint from '@/tools/breakpoints'
-
-interface Props {
-  bgColor?: Color
-  message?: TeeEligibilityBarMessage
-  messageIcon?: string
-  link?: TeeEligibilityBarLink
-}
+import Navigation from '@/tools/navigation'
+import { Scroll } from '@/tools/scroll'
+import StickyWithOffset from '@/tools/stickyWithOffset'
+import { Color, RouteName } from '@/types'
+import type { RouteLocationRaw } from 'vue-router'
 
 export interface TeeEligibilityBarMessage {
   default: string
   mobile?: string
   icon?: string
+  role?: 'alert' | 'status'
 }
 
 export type TeeEligibilityBarLink = TeeEligibilityBarLinkButton | TeeEligibilityBarLinkHash
@@ -83,9 +88,28 @@ export interface TeeEligibilityBarLinkHash {
   isButtonLink?: false
 }
 
-const props = defineProps<Props>()
+interface Props {
+  bgColor?: Color
+  color?: Color
+  message?: TeeEligibilityBarMessage
+  messageIcon?: string
+  link?: TeeEligibilityBarLink
+  messageDetail?: string
+}
+const props = withDefaults(defineProps<Props>(), {
+  bgColor: undefined,
+  color: Color.blueFrance,
+  message: undefined,
+  messageIcon: undefined,
+  link: undefined,
+  messageDetail: undefined
+})
 const eligibilityCriteria = ref<HTMLElement>()
 const stickyWithOffset = ref<StickyWithOffset | null>(null)
+
+const fontColor = computed(() => {
+  return props.color ? `fr-text--${props.color}` : undefined
+})
 
 const navigation = new Navigation()
 
@@ -109,10 +133,10 @@ onUnmounted(() => {
 
 const bgClass = computed(() => {
   if (props.bgColor) {
-    return [`fr-bg--${props.bgColor}`]
+    return `fr-bg--${props.bgColor}`
   }
 
-  return []
+  return undefined
 })
 
 const scrollTo = (id: string) => {

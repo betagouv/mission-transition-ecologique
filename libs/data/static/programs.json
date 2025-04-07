@@ -6,7 +6,7 @@
     "début de validité": "06/02/2023",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-3e-promotion-de-laccelerateur-decarbonation ",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "29 000 € HT",
@@ -126,9 +126,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -210,7 +207,6 @@
     "url": "https://actinitiative.org/fr/act-in-france/",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 18 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Choisissez le prestataire qui va vous accompagner pour mener l'étude méthodologie ACT.",
@@ -337,9 +333,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -414,7 +407,7 @@
     "promesse": "Évaluez la vulnérabilité climatique de votre entreprise",
     "description": "Bénéficiez d'un accompagnement en trois modules pour vous aider à évaluer la vulnérabilité climatique de votre entreprise, adapter votre organisation face aux catastrophes naturelles et aux risques industriels liés au changement climatique et découvrir comment limiter les coûts imprévus de canicule, inondation, sécheresse, etc.",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "autres opérateurs": [
       "ADEME",
       "Région Bretagne"
@@ -544,9 +537,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -660,7 +650,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "- Entreprises dotés d'une flotte de véhicules lourds\n- Professionnels des services automobiles."
+        "- Entreprises dotées d'une flotte de véhicules lourds\n- Professionnels des services automobiles."
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -751,9 +741,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -764,8 +751,7 @@
       "entreprise . est ciblée": {
         "toutes ces conditions": [
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est dans un secteur d'activité ciblé": {
@@ -932,9 +918,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -976,7 +959,7 @@
     "promesse": "Bénéficiez d'une aide sur le montage financier de votre projet d'investissement durable",
     "description": "Vous avez un projet d'investissement durable ? Vous pouvez solliciter un accompagnement pour vous aider à identifier les financements les mieux adaptés à votre besoin, rédiger et constituer votre dossier puis le déposer auprès des financeurs institutionnels.",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.occitanie.cci.fr/produit/aide-la-recherche-de-financement",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Sur devis",
@@ -1092,9 +1075,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -1163,7 +1143,7 @@
     "promesse": "Financez vos investissements pour la transition écologique de votre entreprise",
     "description": "L'Agence de Développement Économique de la Corse propose l'aide 'Impresa Sì', dédiée aux projets d'investissement des PME. Cette aide soutient les dépenses visant à réduire l'empreinte carbone de votre entreprise, en favorisant une production plus respectueuse de l'environnement : réduction des déchets, gestion de l'énergie, traitement des eaux, éco-construction, acquisition d'équipements professionnels basse consommation et travaux d'aménagement pour la mise aux normes environnementales.",
     "description longue": "Ce dispositif peut financer :\n- les frais généraux et achats consommés ou incorporés,\n- les prestations externes (études, propriété industrielle…),\n- les investissements matériels et immatériels affectés au programme,\n- les frais de formation pour l’acquisition d’une compétence ou d’un brevet permettant la pratique de l’activité,\n- les dépenses visant à réduire l’empreinte carbone et destinés à une production respectueuse de l’environnement (réduction des déchets, maîtrise de l’énergie, traitement des eaux, éco-construction…),\n- les acquisitions d’équipements et matériels professionnels performants répondant à des normes environnementales, dans un but d’amélioration de la qualité des produits et des services & travaux d’aménagement au titre des mises aux normes environnementales.",
-    "illustration": "images/TEE_ampoule.png",
+    "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Agence de Développement Economique de Corse",
     "url": "https://www.adec.corsica/attachment/2439000/",
     "nature de l'aide": "financement",
@@ -1284,9 +1264,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -1363,6 +1340,7 @@
     "url": "https://www.atc.corsica/wp-content/uploads/telechargements/mesure-22-le-soutien-a-lhebergement-en-toutes-zones-la-labellisation.pdf",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 50% des dépenses, dans un maximum de 30 000 €",
+    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Créez compte sur le site de l'Agence du Tourisme de la Corse.",
@@ -1495,9 +1473,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -1671,9 +1646,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -1750,7 +1722,6 @@
     "url": "https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/aide-linvestissement-des-transitions-tpe?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 35% des dépenses, dans un maximum de 50 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Contactez un conseiller pour échanger sur votre projet de transition écologique et être mis en relation avec un référent de la CCI, Chambre des Métiers, ou de l'ADI pour vous accompagner dans votre démarche."
@@ -1868,9 +1839,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -1945,7 +1913,7 @@
     "montant du financement": "Jusqu'à 30 % du coût de l'investissement",
     "objectifs": [
       {
-        "description": "Contacter la direction du tourisme de la région afin de vérifier l'éligibilité de votre projet. Pour cela, complétez la \"fiche premier contact\" et transmettez-la par mail à : [pda.hebergement@auvergnerhonealpes.fr](mailto:pda.hebergement@auvergnerhonealpes.fr)",
+        "description": "Contacter la direction du tourisme de la région afin de vérifier l'éligibilité de votre projet. Pour cela, complétez la \"fiche premier contact\" et transmettez-la par mail à : pda.hebergement@auvergnerhonealpes.fr",
         "liens": [
           {
             "lien": "https://www.auvergnerhonealpes.fr/media/3118/download?inline",
@@ -2072,9 +2040,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -2124,7 +2089,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/aides-reemploi-emballages-contenants?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 80% du coût de l'étude ou 60% de l'investissement",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -2263,9 +2227,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -2356,7 +2317,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/amelioration-qualite-lair-territoires-ppa-depassements-recents?cible=79&region=35",
     "nature de l'aide": "étude",
     "montant du financement": "Variable selon projet",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
@@ -2495,9 +2455,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -2579,7 +2536,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/assistance-a-maitrise-douvrage-mise-place-dune-chaufferie-biomasse",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -2724,9 +2680,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -2738,8 +2691,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -2900,9 +2852,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -2953,7 +2902,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/audit-energetique-industrie",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -3100,9 +3048,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -3286,9 +3231,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -3346,8 +3288,8 @@
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "La Poste",
     "autres opérateurs": [
-      "CCI",
-      "CMA"
+      "Chambre de Commerce et de l'Industrie",
+      "Chambre des Métiers et de l'Artisanat"
     ],
     "url": "https://www.baisseleswatts.fr/?mtm_campaign=missiontransitionecologique&mtm_source=missiontransitionecologique&mtm_medium=missiontransitionecologique&mtm_content=missiontransitionecologique",
     "nature de l'aide": "étude",
@@ -3477,9 +3419,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -3668,9 +3607,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -3867,9 +3803,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -3931,7 +3864,6 @@
     "url": "https://entreprendre.service-public.fr/vosdroits/F37980",
     "nature de l'aide": "financement",
     "montant du financement": "à partir de 10 % des coûts de la réparation du produit",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Repérez l’éco-organisme lié à votre activité et faites-vous labelliser auprès de lui, pour pouvoir proposer le \"bonus réparation\".",
@@ -4049,9 +3981,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -4092,7 +4021,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/booster-entreprises-reduire-facture-energetique-gagner-valeur-verte",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -4232,9 +4160,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -4468,9 +4393,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -4663,9 +4585,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -4841,9 +4760,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -4921,7 +4837,7 @@
     "promesse": "Découvrez les éco-gestes à réaliser dans votre établissement de tourisme",
     "description": "CCI Business Optimizer est un site dédié aux entreprises du secteur du tourisme. Son objectif est de proposer des idées de bonnes pratiques environnementales ainsi que des suggestions pour améliorer la performance de vos équipements. Le site fournit également une estimation moyenne des économies réalisables en eau et en énergie, ainsi qu'une évaluation des bénéfices financiers associés à leur mise en œuvre.",
     "illustration": "images/TEE_energie_verte.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.ccibusinessoptimizer.fr/",
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "Gratuit",
@@ -5044,9 +4960,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -5233,9 +5146,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -5442,9 +5352,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -5660,9 +5567,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -5852,9 +5756,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -5900,7 +5801,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Prenez connaissance et signez la charte « zéro déchet plastique » pour engager votre entreprise dans cette démarche. Une fois signée, transmettez-la à l'ARBE par mail à l'adresse : c.poulin@arbe-regionsud.org.",
+        "description": "Prenez connaissance et signez la charte « zéro déchet plastique » pour engager votre entreprise dans cette démarche. Une fois signée, transmettez-la à l'ARBE par mail à l'adresse : c.poulin@arbe-regionsud.org",
         "liens": [
           {
             "lien": "https://www.arbe-regionsud.org/Block/download/?id=236629&filename=Entreprises-et-Associations-Demarche-ecoexemplaire-Charte-052024.pdf",
@@ -6024,9 +5925,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -6090,6 +5988,7 @@
     "promesse": "Bénéficiez d'une aide à la conversion au bioéthanol de vos véhicules",
     "description": "Vous avez un véhicule de société ou de fonction à motorisation essence ? Vous pouvez bénéficiez d'une prime pour le convertir en véhicule modulable essence et bioéthanol (E85). Cette prime concerne la fourniture et la pose d'un dispositif de conversion homologué par un installateur habilité. Cette mesure vise à réduire les émissions de CO2 et de particules fines générées par les véhicules à motorisation essence, contribuant ainsi à la lutte contre le réchauffement climatique.",
     "description longue": "Cette aide est valable pour :\n- les entreprises et les indépendants propriétaires d’une voiture particulière (VP) de société ou de fonction et dont le siège social ou l’établissement de rattachement du véhicule est situé sur le territoire régional.\n- la conversion d'un véhicule à motorisation essence en motorisation modulable essence et superéthanol E85 (85% de bioéthanol dans le carburant contre 5 à 10 % pour l'essence SP98-E5 et le SP95-E10).\n- la fourniture et la pose, par un installateur habilité, d'un dispositif de conversion homologué au sens de l'arrêté du 30 novembre 2017. Les prestations de type décalaminage, bougies, filtres, pré-visite, frais de dossiers ou d’immatriculation, révisions, carburant... ne sont pas prises en charge.\n- la conversion de 10 véhicules maximum.",
+    "fin de validité": "24/03/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Région Sud (PACA)",
     "url": "https://www.maregionsud.fr/vos-aides/detail/le-cheque-transition-bioethanol",
@@ -6231,9 +6130,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -6249,6 +6145,7 @@
         ]
       },
       "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
         "toutes ces conditions": [
           "entreprise . est dans une zone géographique éligible"
         ]
@@ -6440,9 +6337,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -6521,7 +6415,7 @@
     "début de validité": "01/10/2023",
     "fin de validité": "01/08/2026",
     "illustration": "images/TEE_energie_verte.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "autres opérateurs": [
       "ADEME",
       "Agence de l'Eau"
@@ -6641,9 +6535,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -6711,7 +6602,7 @@
     "description": "La Communauté du Coq Vert est une communauté de dirigeants et de dirigeantes convaincus de la nécessité d’agir et déjà engagés dans la transition écologique et énergétique. Lancée par Bpifrance, en partenariat avec l'ADEME et le ministère de la Transition écologique, cette Communauté a vocation à favoriser le partage d’expertise entre entrepreneurs engagés.",
     "début de validité": "01/06/2020",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
       "ADEME"
     ],
@@ -6843,9 +6734,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -7042,9 +6930,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -7097,7 +6982,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20240530/decarbonation-lindustrie-decarb-ind-25",
     "nature de l'aide": "financement",
     "montant du financement": "Selon projet",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
@@ -7236,9 +7120,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -7250,8 +7131,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -7431,9 +7311,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -7499,12 +7376,206 @@
     "id": "deploiement-flottes-hydrogene"
   },
   {
+    "titre": "Diag Adaptation",
+    "promesse": "Évaluez la vulnérabilité climatique de votre entreprise",
+    "description": "Bénéficiez d'un accompagnement pour vous aider à évaluer la vulnérabilité climatique de votre entreprise, adapter votre organisation face aux catastrophes naturelles et aux risques industriels liés au changement climatique et découvrir comment limiter les coûts imprévus de canicule, inondation, sécheresse, etc.",
+    "description longue": "Le Diag Adaptation permet d’étudier la vulnérabilité de votre activité au changement climatique afin d’anticiper les risques physiques actuels et futurs pour votre site d’exploitation (chaîne de valeur de l’activité et processus de l’entreprise, réseaux de distribution, approvisionnements, aléas climatiques récurrents…).\nL’intervention pour chaque Diag Adaptation est limitée à 1 site d’exploitation de votre entreprise. Il est possible de bénéficier de plusieurs diagnostics pour couvrir les différents sites de votre entreprise.",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "Banque Publique d'Investissement France",
+    "autres opérateurs": [
+      "ADEME"
+    ],
+    "url": "https://diag.bpifrance.fr/produit/diag-adaptation",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "De 2 000 € HT à 3 000 € HT après subvention de 50%",
+    "durée de l'accompagnement": "7 jours de prestation répartis sur 3 à 6 mois",
+    "objectifs": [
+      {
+        "description": "Réalisez votre demande de souscription du \"Diag Adaptation\" sur le site Bpifrance.",
+        "liens": [
+          {
+            "lien": "https://diag.bpifrance.fr/eligibilite/informations-entreprise?from=header",
+            "texte": "Demande de souscription"
+          }
+        ]
+      },
+      {
+        "description": "Si vous êtes éligible, recevez un contrat de Bpifrance. Dès signature de ce contrat de prestation, les équipes Bpifrance sélectionnent un bureau d’études pour vous accompagner."
+      },
+      {
+        "description": "Définissez avec le bureau d'études les modalités pratiques du diagnostic (calendrier, méthode, jalons, livrables) et planifiez la visite de votre entreprise."
+      },
+      {
+        "description": "Bénéficiez d'une visite sur site durant laquelle un expert analyser et identifier les impacts du changement climatique sur votre chaîne de valeur dès aujourd’hui et d’ici 2035 et 2055."
+      },
+      {
+        "description": "Obtenez une restitution de l’ensemble des livrables du diagnostic (rapport de synthèse et feuille de route)."
+      },
+      {
+        "description": "Construisez ensemble un plan d’action chiffré et priorisé afin de réduire les risques et améliorer la résilience de votre entreprise face au changement climatique à court et moyen terme."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Moins de 500 salariés",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d’activité"
+      ],
+      "nombre d'années d'activité": [
+        "Au moins 1 an d’activité"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "a un effectif éligible"
+        ]
+      },
+      "entreprise . a un effectif éligible": {
+        "toutes ces conditions": [
+          "effectif <= 499"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "diag-adaptation"
+  },
+  {
     "titre": "Diag Décarbon'Action",
     "promesse": "Réalisez un bilan de gaz à effet de serre et réduisez l’empreinte carbone de votre entreprise",
     "description": "Ce Bilan vous permet en 12 jours de mesurer les émissions directes et indirectes de GES de votre entreprise puis d’élaborer votre plan d’actions pour réduire l’empreinte carbone de votre entreprise. Les experts qui réalisent le Diag Décarbon'Action sont certifiés « Bilan Carbone ® » ou autre méthode de comptabilité carbone conforme à la réglementation, et sont habilités par l’ADEME, l’Association Bilan Carbone et Bpifrance, ce qui garantit un niveau de qualité élevé.",
     "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
       "ADEME"
     ],
@@ -7626,9 +7697,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -7688,7 +7756,7 @@
     "description": "Bénéficiez des conseils d'un expert environnement référencé par Bpifrance pour réaliser rapidement des économies durables en suivant une méthodologie élaborée avec l'ADEME.",
     "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_energie_verte.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
       "ADEME"
     ],
@@ -7807,9 +7875,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -7891,7 +7956,7 @@
     "description": "Bénéficiez des conseils d'un expert écoconception référencé par Bpifrance pour évaluer la performance environnementale de vos produits, services et procédés ou d'un accompagnement en vue de l'obtention de l'Ecolabel européen.",
     "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
       "ADEME"
     ],
@@ -8016,9 +8081,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8109,7 +8171,7 @@
     "description longue": "L’obligation réglementaire du Dispositif Éco Énergie Tertiaire (DEET), plus communément appelé « décret tertiaire », impose aux entreprises de réduire la consommation d’énergie de leurs bâtiments abritant des activités tertiaires. Cette obligation traduit la volonté du gouvernement d’améliorer la performance énergétique du parc français de bâtiments existants.\n\nLe décret tertiaire est officiellement entré en vigueur en octobre 2019.",
     "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
       "ADEME"
     ],
@@ -8234,9 +8296,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8297,7 +8356,7 @@
     "promesse": "Adaptez l'organisation de votre entreprise aux conséquences du changement climatique",
     "description": "Votre CCI vous accompagne dans l'élaboration d'un plan d'adaptation aux phénomènes liés aux conséquences du changement climatique (canicules, sécheresses, innondations,…)afin de vous permettre de poursuivre votre activité en limitant les impacts économiques et en saisissant les éventuelles opportunités.",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "autres opérateurs": [
       "ADEME"
     ],
@@ -8415,9 +8474,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8470,7 +8526,7 @@
     "promesse": "Réduisez et valorisez les déchets de votre entreprise",
     "description": "Ce diagnostic permet d’établir une vision globale de la gestion des déchets dans votre entreprise pour optimiser les coûts associés et développer le recyclage des déchets.",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit selon les territoires ou reste à charge maximum de 1500 € HT",
     "durée de l'accompagnement": "3 jours dont 0,5 avec l'entreprise",
@@ -8588,9 +8644,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8658,10 +8711,10 @@
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "autres opérateurs": [
       "ADEME",
-      "Bpifrance"
+      "Banque Publique d'Investissement France"
     ],
     "url": "https://www.cci-paris-idf.fr/fr/entreprises/actualites/accompagnement-eco-conception-performance-environnementale",
     "nature de l'aide": "étude",
@@ -8778,9 +8831,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8837,7 +8887,7 @@
     "promesse": "Intégrez la RSE (Responsabilité Sociétale des Entreprises) dans le fonctionnement quotidien de votre entreprise",
     "description": "Réalisez avec votre conseiller CCI un diagnostic RSE en abordant les 3 aspects de la responsabilité sociétale de l’entreprise : la performance économique, la performance sociale et la performance environnementale. Repensez votre stratégie RSE comme un levier d'innovation et un vecteur de création de valeur.",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.cci.fr/offre/evaluez-votre-maturite-aux-enjeux-de-la-rse",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Selon les territoires",
@@ -8959,9 +9009,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9027,7 +9074,7 @@
     "promesse": "Intégrez la transition écologique dans le fonctionnement quotidien de votre entreprise",
     "description": "Réalisez un diagnostic de transition écologique avec votre conseiller CCI. Vous pourrez évoquer ces enjeux à travers le prisme du pilotage de votre activité : la gestion de vos locaux, vos consommations d'énergie, la gestion de vos déchets, vos achats et vos mobilités.",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit (sauf en PACA à partir de 650€ HT)",
     "durée de l'accompagnement": "1 jour dont 1/2 journée avec l'entreprise",
@@ -9139,9 +9186,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9313,9 +9357,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9361,7 +9402,7 @@
     "description": "Vous souhaitez faire connaître la notion d’éco-conception? au sein de votre entreprise et impulser l'envie collective d’améliorer la performance environnementale de vos produits et services ? Votre CCI vous accompagne dans cette démarche.",
     "description longue": "L’éco-conception vise à prendre en compte et réduire les impacts environnementaux dans toutes les étapes du cycle de vie d’un produit ou service : extraction de matières premières, fabrication, transport, usage, traitement en fin de vie, etc.\nL’éco-conception s’applique aux produits matériels mais également aux services.",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.bretagne.cci.fr/developpement-durable/initier-une-demarche-deco-conception/bretagne",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Selon le nombre de participants",
@@ -9480,9 +9521,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9536,7 +9574,7 @@
     "promesse": "Restaurateurs & hébergeurs, construisez une charte d’écogestes adaptée à votre établissement.",
     "description": "Cette formation permet à un établissement du secteur CHR et du tourisme d'identifier ses postes principaux de consommation d’énergie, d'eau et de production de déchets, et de co-construire une charte d’écogestes répondant aux nouveaux critères obligatoires de classement hôtelier. ",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.cciamp.com/produit/ecogestes-chr",
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "à partir de 200 € HT par participant (ou financement OPCO)",
@@ -9653,9 +9691,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9848,9 +9883,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9889,7 +9921,7 @@
     "promesse": "Engagez la transition économique de votre entreprise vers un modèle d’économie circulaire",
     "description": "L'accompagnement écoproduction est un outil d'aide à la décision qui propose au chef d'entreprise de repenser son modèle linéaire (extraire, fabriquer, consommer, jeter) vers un modèle économique plus circulaire.",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://hautsdefrance.cci.fr/solutions/accompagnement-ecoproduction/",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Sur devis, jusqu’à 80% de prise en charge possible",
@@ -10005,9 +10037,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10185,9 +10214,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10371,9 +10397,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10429,7 +10452,7 @@
     "promesse": "Accédez à toute l’information réglementaire en matière d'environnement, énergie et santé-sécurité au travail",
     "description": "Abonnez vous au service de veille \"Enviroveille\" de la CCI pour avoir accès à l’information réglementaire applicable à votre activité (environnement, énergie, santé-sécurité au travail) et suivre son évolution.",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.enviroveille.com/public/tester-gratuitement.html",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "De 150 à 800 € HT (sur abonnement)",
@@ -10555,9 +10578,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10569,8 +10589,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -10619,7 +10638,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/subvention-etudes-dalimentation-durable",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -10758,9 +10776,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10772,8 +10787,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -10841,7 +10855,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-gestion-biodechets-acteurs-economiques?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -10981,9 +10994,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11036,7 +11046,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/realisation-detudes-creation-lextension-modernisation-centres-tri-dechets",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 50 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -11175,9 +11184,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11189,8 +11195,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -11228,7 +11233,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-projets-chaufferie-biomasse?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -11367,9 +11371,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11381,8 +11382,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -11425,7 +11425,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/diagnostic-energetique-etude-dopportunite-multi-enr-serres",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 50 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -11564,9 +11563,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11617,7 +11613,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-a-leconomie-fonctionnalite-cooperation?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -11756,9 +11751,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11826,7 +11818,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/actions-qualite-lair-territoires-contentieux",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% pour une étude et 55% pour un investissement",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
@@ -11957,9 +11948,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11971,8 +11959,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -12042,7 +12029,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Opportunit%C3%A9%20et%20faisabilit%C3%A9%20d%C3%A9ploiement%20hydrog%C3%A8ne%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202023.pdf",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
@@ -12163,9 +12149,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -12177,8 +12160,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -12216,7 +12198,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-travaux-depollution-dune-friche-fonds-vert",
     "nature de l'aide": "étude",
     "montant du financement": "Variable selon projet",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
@@ -12353,9 +12334,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -12413,7 +12391,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-lutte-contre-gaspillage-alimentaire",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -12552,9 +12529,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -12623,7 +12597,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etude-daide-a-decision-projets-geothermie-surface-daerothermie",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -12768,9 +12741,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -12855,7 +12825,6 @@
     "url": "https://agirpourlatransition.ademe.fr/collectivites/aides-financieres/2025/etude-daide-a-decision-projets-geothermie-profonde",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -13000,9 +12969,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13061,7 +13027,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-installation-hydroelectrique?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -13201,9 +13166,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13215,8 +13177,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -13270,7 +13231,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/entreprises/aides-financieres/2025/etudes-prealables-a-construction-dune-installation-methanisation",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -13409,9 +13369,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13423,8 +13380,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -13487,7 +13443,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-faisabilite-performance-energetique-decarbonation-dentreprises",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -13627,9 +13582,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13679,7 +13631,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-decoconception-produits-services",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 150 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -13818,9 +13769,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13912,7 +13860,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-faisabilite-lautoconsommation-electrique-photovoltaique",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 € HT",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -14052,9 +13999,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -14136,7 +14080,7 @@
     "début de validité": "01/10/2023",
     "fin de validité": "01/06/2026",
     "illustration": "images/TEE_energie_verte.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "autres opérateurs": [
       "ADEME"
     ],
@@ -14252,9 +14196,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -14324,7 +14265,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/projets-recherche-developpement?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Selon projet",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
@@ -14466,9 +14406,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -14480,8 +14417,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -14526,7 +14462,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-faisabilite-linstallation-recuperation-chaleur-fatale",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -14665,9 +14600,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -14679,8 +14611,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -14725,7 +14656,6 @@
     "url": "https://agir.ademe.fr/aides-financieres/2025/soutien-aux-etudes-et-diagnostics-pour-le-reemploi-reutilisation-et-la?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -14864,9 +14794,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -14945,7 +14872,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/audit-rehabilitation-dinstallations-solaires-thermiques-collectives",
     "nature de l'aide": "étude",
     "montant du financement": "Selon la surface et l'ancienneté de l’installation solaire, dans un maximum de 30 000€ HT",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -15088,9 +15014,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15103,7 +15026,6 @@
           "est éligible",
           "est dans un secteur d'activité ciblé",
           "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis",
           "entreprise . est propriétaire de ses locaux"
         ]
       },
@@ -15165,7 +15087,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-reseaux-chaleur-froid-alimentes-enr-enrr",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -15310,9 +15231,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15324,8 +15242,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -15365,7 +15282,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etude-faisabilite-dinstallation-solaire-thermique",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -15510,9 +15426,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15607,7 +15520,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/test-reponse-thermique-terrain-geothermie",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -15746,9 +15658,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15761,7 +15670,6 @@
           "est éligible",
           "est dans un secteur d'activité ciblé",
           "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis",
           "entreprise . est propriétaire de ses locaux"
         ]
       },
@@ -15818,7 +15726,6 @@
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "Jusqu'à 3 ans d'accompagnement",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Participez à des sessions de créativité pour faire émerger de nouveaux concepts d'objets roulants."
@@ -15939,9 +15846,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15975,7 +15879,7 @@
     "promesse": "Entreprise électro-intensive, réduisez votre facture d’électricité en bénéficiant d’un taux réduit de fiscalité énergétique",
     "description": "Vous êtes une entreprise électro-intensive ? Vous pouvez bénéficier d'un accompagnement pour vous aider à obtenir un remboursement de votre trop-payé et accéder au taux réduit de fiscalité auquel vous avez droit.",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.occitanie.cci.fr/produit/optimiser-sa-fiscalite-energetique",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Sur devis",
@@ -16088,9 +15992,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16251,9 +16152,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16312,7 +16210,6 @@
     "url": "https://www.demarches-simplifiees.fr/commencer/fonds-vert-3-territoires-industrie",
     "nature de l'aide": "financement",
     "montant du financement": "Variable selon le projet",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -16453,9 +16350,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16514,7 +16408,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/fonds-tourisme-durable-restaurateurs-hebergeurs-accelerez-transition",
     "nature de l'aide": "financement",
     "montant du financement": "de 5 000 € HT à 200 000 € HT",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -16666,9 +16559,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16748,6 +16638,153 @@
     "id": "fonds-tourisme-durable"
   },
   {
+    "titre": "Formation développement durable",
+    "promesse": "Formez-vous au développement durable de votre entreprise",
+    "description": "Vous souhaitez engager votre entreprise dans une démarche responsable ? Cette formation 100 % numérique vous guide pas à pas : découvrez les enjeux du développement durable et de la RSE, réalisez un autodiagnostic pour évaluer vos pratiques, définissez vos axes d’amélioration et apprenez à les valoriser. Cette formation courte permet d'embarquer rapidement vos équipes, clients et fournisseurs dans la mise en place d'une une démarche complète d’entreprise responsable.",
+    "illustration": "images/TEE_energie_verte.png",
+    "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
+    "url": "https://www.artisanat.fr/integrer-developpement-durable",
+    "nature de l'aide": "formation",
+    "coût de l'accompagnement": "150€ TTC avec possibilité de prise en charge selon votre statut",
+    "durée de l'accompagnement": "5h",
+    "objectifs": [
+      {
+        "description": "Contactez un conseiller pour vérifier votre éligibilité et vous inscrire à cette formation."
+      },
+      {
+        "description": "Une fois inscrit, recevez un lien pour accéder au contenu de la formation."
+      },
+      {
+        "description": "Vous disposez de 30 jours pour consulter les modules et suivre le programme pas à pas."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Réservée aux artisans"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est I"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "formation-artisan-developpement-durable"
+  },
+  {
     "titre": "Formation ADEME",
     "promesse": "Réalisez une initiation aux enjeux de la transition écologique",
     "description": "Suivez une formation en ligne pour initier la transition écologique de votre entreprise. Vous découvrirez les principales transformations de la société, de l'économie, des territoires et les enjeux de la transition écologique pour les entreprises. Puis en seconde partie, vous serez invité à identifier les risques et les opportunités pour votre entreprise ainsi que les premiers leviers d’action pour se mettre en mouvement.",
@@ -16757,7 +16794,6 @@
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "2h15",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Prenez connaissance du programme de la formation",
@@ -16878,9 +16914,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16932,7 +16965,7 @@
     "promesse": "Trouvez des formations pour vos collaborateurs sur des thématiques de la transition écologique",
     "description": "Le Centre de Formation Durable et de l'Environnement (CFDE) propose des formations sur des thématiques réglementaires et techniques dans les grands domaines de la transition écologique et énergétique : eau, déchets, énergie, air et climat, sites et sols pollués, risques naturels et technologiques, santé environnement.",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.cci.fr/ressources/developpement-durable/cfde",
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "Sur devis, selon la formation choisie",
@@ -17058,9 +17091,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17115,7 +17145,7 @@
     "description": "Bpifrance Université met en ligne gratuitement un catalogue de formations animées par des experts de la transition écologique et énergétique. Ces formations abordent de nombreux sujets relatifs aux enjeux de la responsabilité sociétale des entreprises (RSE) : environnement, enjeux sociaux, achats responsables… ",
     "description longue": "Ce cursus Transition Écologique et Énergétique vous permettra de :\n- mesurer l’impact de votre activité sur l’environnement à l’aide de l’autodiagnostic \"Mon Climatomètre\"\n- Comprendre ce qu’est la transition écologique et énergétique (TEE) et ses enjeux dans votre entreprise\n- Opérer une TEE au sein de votre entreprise\n- Cerner la TEE au sein de votre secteur d’activité",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "url": "https://universite.bpifrance.fr/ ",
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "Gratuit ",
@@ -17238,9 +17268,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17292,7 +17319,7 @@
     "promesse": "Participez à une Fresque de la mobilité dédiée aux entreprises",
     "description": "Vous voulez sensibiliser vos salarié.e.s sur la mobilité et avez besoin d'un outil pour embarquer votre équipe ou votre direction ? La fresque de la mobilité est l'atelier qu'il vous faut pour bien démarrer le projet.",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Sur devis",
     "durée de l'accompagnement": "1/2 journée",
@@ -17407,9 +17434,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17480,7 +17504,7 @@
     "description": "Vous produisez des biodéchets et vous aimeriez trouver des solutions pour les réduire ou les valoriser ? la CCI Hauts-de-France vous propose un accompagnement à la gestion des biodéchets.",
     "description longue": "Qu’est-ce qu’un biodéchet ?\nL’article L. 541-1-1 du code de l’environnement définit les biodéchets comme : « Les déchets non dangereux biodégradables de jardin ou de parc, les déchets alimentaires ou de cuisine provenant des ménages, des bureaux, des restaurants, du commerce de gros, des cantines, des traiteurs ou des magasins de vente au détail, ainsi que les déchets comparables provenant des usines de transformation de denrées alimentaires. ».\n\nEn pratique, les biodéchets à traiter sont :\n \nDéchets verts : tontes de pelouse et fauchage, feuilles mortes, tailles d’arbustes, haies et brindilles ou encore déchets ligneux issus de l’élagage et de l’abattage d’arbres et de haies.\nDéchets alimentaires : restes de repas ou de préparation de repas ou produits périmés non consommés.",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://hautsdefrance.cci.fr/solutions/accompagnement-gestion-biodechets/",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "De 750 à 3 500 € HT",
@@ -17596,9 +17620,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17789,9 +17810,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17986,9 +18004,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18042,7 +18057,7 @@
     "description": "Vous souhaitez réduire l'impact de votre activité du secteur de l’imprimerie en faisant des choix stratégiques, écologiques et made in France ? Valoriser votre engagement environnemental auprès de vos clients par l’obtention du label Imprim’Vert®.",
     "description longue": "La marque Imprim'vert® a pour objectif de favoriser la mise en place par les entreprises exerçant les activités d'impression, d'actions concrètes conduisant à une diminution des impacts de l'activité sur l'environnement.\nLe cahier des charges Imprim’Vert® est fondé sur cinq critères simples : la bonne gestion des déchets dangereux, la sécurisation de stockage des liquides dangereux, la non utilisation de certains produits CMR, la sensibilisation environnementale des salariés et de la clientèle, et le suivi des consommations énergétiques du site.",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "CMA",
+    "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "autres opérateurs": [
       "CCI ou CMA"
     ],
@@ -18165,9 +18180,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18206,7 +18218,7 @@
         "une de ces conditions": [
           "région = Occitanie"
         ],
-        "opérateur de contact": "CCI",
+        "opérateur de contact": "Chambre de Commerce et de l'Industrie",
         "url": "https://www.occitanie.cci.fr/produit/obtenir-ou-renouveler-sa-labellisation-imprimvert",
         "Montant du dispositif": "Sur devis, de 250 à 750 € HT",
         "Durée du dispositif": "1 à 2 jours"
@@ -18358,9 +18370,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18540,9 +18549,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18553,8 +18559,7 @@
       "entreprise . est ciblée": {
         "toutes ces conditions": [
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est dans un secteur d'activité ciblé": {
@@ -18585,7 +18590,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Stations%20bioGNV%20agricole%20et%20territorial%20-%20Cahier%20des%20charges%20.pdf",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 70% des coûts, dans un maximum de 200 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
@@ -18700,9 +18704,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18714,8 +18715,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -18772,7 +18772,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installations-production-chaleur-froid-a-partir-boucle-deau-temperee",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -18908,9 +18907,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18922,8 +18918,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -18980,7 +18975,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/creation-extension-modernisation-dun-centre-tri-dechets-valorisation-matiere?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Selon le type de projet",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -19116,9 +19110,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19130,8 +19121,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -19194,7 +19184,6 @@
     "url": "https://agir.ademe.fr/aides-financieres/2025/realisation-dinstallations-de-production-de-chaleur-biomassebois?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Selon projet",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -19334,9 +19323,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19406,7 +19392,6 @@
     "url": "https://agir.ademe.fr/aides-financieres/aap/developpement-de-la-construction-et-de-la-renovation-hors-site-crhos?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Selon la taille de l'entreprise et la zone géographique",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller."
@@ -19536,9 +19521,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19550,8 +19532,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -19590,7 +19571,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/contrat-chaleur-renouvelable",
     "nature de l'aide": "financement",
     "montant du financement": "Selon le type d'investissement",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -19727,9 +19707,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19741,8 +19718,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -19799,7 +19775,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20220328/contrat-patrimonial-developpement-chaleur-renouvelable-occitanie?cible=79&region=41",
     "nature de l'aide": "financement",
     "montant du financement": "Selon les types d'investissement",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -19935,9 +19910,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19949,8 +19921,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -20014,7 +19985,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installation-dequipements-lutte-contre-gaspillage",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu’à 60 % des coûts d'investissement, 65% pour la Corse et 75% pour les DOM",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -20153,9 +20123,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -20167,8 +20134,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -20233,7 +20199,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/investissements-decoconception-ameliorer-performance-environnementale?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Entre 15 % à 60 % selon le projet, dans un maximum de 300 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -20370,9 +20335,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -20463,7 +20425,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installations-production-chaleur-froid-renouvelable-a-partir-geothermie",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -20599,9 +20560,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -20613,8 +20571,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -20671,7 +20628,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installations-production-chaleur-a-partir-geothermie-profonde",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -20807,9 +20763,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -20821,8 +20774,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -20878,7 +20830,6 @@
     "url": "https://agir.ademe.fr/aides-financieres/2025/gestion-des-biodechets-des-acteurs-economiques",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 60 % selon la taille de l'entreprise et son territoire",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -21016,9 +20967,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -21086,7 +21034,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/realisation-dinstallations-methanisation-injection-cogeneration-chaleur",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée selon le type d'installation",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -21222,9 +21169,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -21236,8 +21180,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -21298,7 +21241,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installation-pompes-a-chaleur-solaire-production-deau-chaude",
     "nature de l'aide": "financement",
     "montant du financement": "Aide forfaitaire de 38 à 25 €/MWh",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -21434,9 +21376,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -21448,8 +21387,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -21506,7 +21444,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/equipements-lapprovisionnement-chaufferies-bois-fonds-chaleur-plan-relance",
     "nature de l'aide": "financement",
     "montant du financement": "Entre 20 à 55% selon investissement",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -21643,9 +21580,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -21657,8 +21591,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -21695,7 +21628,6 @@
     "url": "https://agir.ademe.fr/aides-financieres/aap/infrastructures-de-recharge-pour-les-vehicules-electriques-dans-les-stations",
     "nature de l'aide": "financement",
     "montant du financement": "Selon la puissance de l’installation",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
@@ -21812,9 +21744,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -21865,7 +21794,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/realisation-dinstallations-recuperation-chaleur-fatale",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -22001,9 +21929,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22015,8 +21940,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -22056,7 +21980,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-investissements-reemploi-reutilisation-reparation-hors-emballages",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 75% des coûts, dans un maximum de 200 000 €",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -22193,9 +22116,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22273,7 +22193,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230413/renouvellement-forestier",
     "nature de l'aide": "financement",
     "montant du financement": "Entre 37,5% à 80% selon le projet",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -22394,9 +22313,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22408,8 +22324,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -22446,7 +22361,6 @@
     "url": "https://agir.ademe.fr/aides-financieres/2025/extension-et-creation-de-reseaux-de-chaleur-ou-de-froid",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -22582,9 +22496,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22596,8 +22507,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -22637,7 +22547,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/installations-production-deau-chaude-solaire-thermique-outre-mer",
     "nature de l'aide": "financement",
     "montant du financement": "Aide forfaitaire en fonction du type d’installation",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
@@ -22752,9 +22661,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22766,8 +22672,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -22835,7 +22740,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installation-production-deau-chaude-solaire-thermique",
     "nature de l'aide": "financement",
     "montant du financement": "Forfaitaire en fonction de la zone géographique et de la surface de l’installation",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -22971,9 +22875,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22985,8 +22886,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -23042,7 +22942,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installations-systemes-solaires-combines",
     "nature de l'aide": "financement",
     "montant du financement": "Selon la chaleur produite",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -23178,9 +23077,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -23192,8 +23088,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -23247,7 +23142,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20241115/developper-velotourisme",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu’à 55 % des coûts d'investissement",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Prenez contact avec le référent Accueil Vélo de votre territoire pour vous assurer de la correspondance entre votre projet d’investissement et les attendus de la marque Accueil Vélo©.",
@@ -23397,9 +23291,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -23445,7 +23336,7 @@
     "description": "Le Volontariat Territorial en Entreprise (VTE) \"Vert\" permet d’accompagner financièrement les entreprises dans leur recrutement d’un jeune talent sur des missions de transition énergétique et écologique.",
     "description longue": "L’Aide VTE Vert est destinée à contribuer au financement de frais internes (rémunération) et/ou de frais externes (frais de scolarité, achat de matériel ou logiciel, etc.) directement liés à la mission du jeune en VTE Vert. \n\nLe programme VTE Vert entend par jeune talent : \n• un jeune diplômé depuis moins de 2 ans\n• un étudiant ou diplômé à partir du niveau bac+3\n\nLa mission d’un VTE doit durer au moins un an, soit en alternance longue (contrat d’apprentissage ou de professionnalisation), soit sur la base d’un CDD d’au moins un an, ou d’un CDI.\n\nLe VTE prend la forme d’un contrat d’apprentissage ou de travail classique. Il est rémunéré sur la base d’un accord entre l’entreprise et le Volontaire, aux conditions du marché. ",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
       "ADEME"
     ],
@@ -23585,9 +23476,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -23777,9 +23665,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -23834,7 +23719,7 @@
     "début de validité": "01/05/2023",
     "fin de validité": "31/12/2026",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.cci.fr/offre/valorisez-les-demarches-environnementales-de-votre-entreprise",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Entre 160 € et 2300 €, en fonction de votre activité",
@@ -23960,9 +23845,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -24133,9 +24015,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -24199,7 +24078,7 @@
     "description": "La Mission de Conseil RSE permet de bénéficier de 13 jours d'accompagnement d'un consultant expert pour définir une ambition globale RSE et la traduire en plan d'action.",
     "début de validité": "01/01/2018",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "url": "https://www.bpifrance.fr/catalogue-offres/mission-de-conseil-rse",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "13 000 € HT après subvention de 50%",
@@ -24318,9 +24197,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -24385,7 +24261,7 @@
     "promesse": "Définissez la feuille de route pour la transition énergétique et écologique de votre entreprise",
     "description": "Bénéficiez d'une mission de conseil ciblée sur 13 jours d'un expert environnement référencé par Bpifrance. Un accompagnement pour vous aider à enclencher votre transition énergétique et écologique, l’inscrire dans la stratégie de votre entreprise et construire votre feuille de route jusqu’à 2030.",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
       "InvestEU"
     ],
@@ -24510,9 +24386,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -24707,9 +24580,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -24773,7 +24643,7 @@
         "description": "Déposez votre demande de subvention tout au long de l’année sur le portail Région dédié. À ce stade, votre projet ne doit pas avoir commencé !",
         "liens": [
           {
-            "lien": "https://subventionsenligne.maregionsud.fr/",
+            "lien": "https://aidesenligne.maregionsud.fr/aides/#/crsud/connecte/F_S_I_NATUREVIL/depot/simple",
             "texte": "Déposer votre demande de subvention"
           }
         ]
@@ -24882,9 +24752,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -25066,9 +24933,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -25080,8 +24944,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -25240,9 +25103,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -25437,9 +25297,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -25451,8 +25308,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -25519,7 +25375,6 @@
     "url": "https://agir.ademe.fr/aides-financieres/aap/fonds-economie-circulaire-ormat-2025-objectif-recyclage-matieres",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 80% d'aide, dans un maximum selon le projet",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -25655,9 +25510,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -25669,8 +25521,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -25736,7 +25587,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/pacte-industrie-parcours-accompagnement-competences-transition-energetique#:~:text=Le%20programme%20PACTE%20Industrie%20vise,transition%20%C3%A9nerg%C3%A9tique%20et%20bas%20carbone.",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude selon la taille de l'entreprise",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -25878,9 +25728,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -26083,9 +25930,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -26097,8 +25941,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -26281,9 +26124,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -26353,7 +26193,7 @@
     "titre": "PASS Transitions",
     "promesse": "Entreprise du secteur audiovisuel, financez votre transition environnementale",
     "description": "La Région Bretagne soutient financièrement la transition environnementale des petites entreprises du secteur audiovisuel via le \"Pass Transition\".\nLe Pass Transition finance des études pour accélérer votre transition sur l'eau, l'énergie, économie circulaire, les déchets, la biodiversité, RSE, mobilité, numérique responsable. \nIl participe aussi au financement d'équipements pour le suivi et la réduction de vos déchets, consommations en eau et en énergie.\nEnfin, il peut contribuer au financement d'un recrutement d’une personne à temps partagé occupant un poste stratégique en matière de transitions (ex : responsable RSE, management de l’énergie)",
-    "description longue": "Le PASS Transitions finance 50 % des dépenses éligibles. Il comporte 3 volets :\n- Volet 1. Investissements : \nFinancement d'équipements pour le suivi et la réduction des consommations en énergie, eau et déchets et la production d’énergie photovoltaïque.\nL'aide aux investissements est comprise entre 20 000 € et 50 000 €, pour un mininum de 40 000 € de dépenses. \n\r\n- Volet 2. Conseil : \nFinancement d’une formation, participation à une fresque, étude, audit, diagnostic...relevant des transitions sur les thématique énergétique, eau, économie circulaire, déchets, biodiversité, RSE, mobilité, numérique. \nL'aide au conseil est comprise entre 4 000 € et 10 000 €, pour un mininum de 8 000 € de dépenses.\n\n- Volet 3. Ressources Humaines \nFinancement d'un recrutement d’une personne à temps partagé occupant un poste stratégique en matière de transitions (ex : responsable RSE, management de l’énergie).\nL'aide aux Ressources Humaines est comprise entre 4 000 € et 10 000 €, pour un minimum de 8 000 € de dépenses.",
+    "description longue": "Le PASS Transitions finance 50 % des dépenses éligibles. Il comporte 3 volets :\n- Volet 1. Investissements : \nFinancement d'équipements pour le suivi et la réduction des consommations en énergie, eau et déchets et la production d’énergie photovoltaïque.\nL'aide aux investissements est comprise entre 20 000 € et 50 000 €, pour un mininum de 40 000 € de dépenses. \n\n- Volet 2. Conseil : \nFinancement d’une formation, participation à une fresque, étude, audit, diagnostic...relevant des transitions sur les thématique énergétique, eau, économie circulaire, déchets, biodiversité, RSE, mobilité, numérique. \nL'aide au conseil est comprise entre 4 000 € et 10 000 €, pour un mininum de 8 000 € de dépenses.\n\n- Volet 3. Ressources Humaines \nFinancement d'un recrutement d’une personne à temps partagé occupant un poste stratégique en matière de transitions (ex : responsable RSE, management de l’énergie).\nL'aide aux Ressources Humaines est comprise entre 4 000 € et 10 000 €, pour un minimum de 8 000 € de dépenses.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Région Bretagne",
     "url": "https://www.bretagne.bzh/aides/fiches/pass-transitions/",
@@ -26487,9 +26327,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -26675,9 +26512,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -26839,9 +26673,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -26886,7 +26717,7 @@
     "promesse": "Mesurez votre maturité écologique et créez un plan d’action personnalisé avec un conseiller",
     "description": "Réalisez un état des lieux à 360° pour évaluer l'impact de votre activité sur l'environnement et réalisez des économies. Différents sujets sont abordés : économie d’énergie, isolation des locaux, consommations d’eau, déchets, matières premières, achats, mobilité, etc.",
     "illustration": "images/TEE_energie_verte.png",
-    "opérateur de contact": "CMA",
+    "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "url": "https://www.artisanat.fr/nous-connaitre/vous-accompagner/performa-environnement",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
@@ -27005,9 +26836,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -27190,7 +27018,7 @@
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.entreprises.cci-paris-idf.fr/web/transition-ecologique/plan-de-mobilite-entreprise-ameliorez-l-accessibilite-de-votre-etablissement",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "de 3 000 € à 10 000 € en fonction de la taille de l'entreprise",
@@ -27309,9 +27137,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -27393,7 +27218,7 @@
     "promesse": "Financez votre projet de transition écologique et énergétique",
     "description": "Bénéficiez du prêt sans garantie \"Action Climat\" proposé par Bpifrance. Ce prêt est destiné à accompagner les projets de transition écologique et énergétique portés par des TPE et PME de moins de 50 salariés. Il est adossé à la garantie verte mise en place avec l’Etat.",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "url": "https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-action-climat",
     "nature de l'aide": "prêt",
     "montant du prêt": "De 10 000 € à 75 000 €",
@@ -27509,9 +27334,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -27581,7 +27403,7 @@
     "promesse": "Financez vos équipements pour améliorer votre efficacité énergétique",
     "description": "Le Prêt Économies d’Énergie permet de financer le matériel éligible aux certificats d'économies d'énergie (CEE), et les dépenses liées au projet d’efficience énergétique. ",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "url": "https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-economies-denergie-pee",
     "nature de l'aide": "prêt",
     "montant du prêt": "De 10 000 € à 500 000 €",
@@ -27695,9 +27517,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -27770,7 +27589,7 @@
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Région Auvergne-Rhône-Alpes",
     "autres opérateurs": [
-      "Bpifrance"
+      "Banque Publique d'Investissement France"
     ],
     "url": "https://pretregion.auvergnerhonealpes.fr/",
     "nature de l'aide": "prêt",
@@ -27940,9 +27759,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -27954,8 +27770,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -28022,7 +27837,7 @@
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Région Île-de-France",
     "autres opérateurs": [
-      "Bpifrance"
+      "Banque Publique d'Investissement France"
     ],
     "url": "https://pret-transition-ecologique.iledefrance.fr/",
     "nature de l'aide": "prêt",
@@ -28195,9 +28010,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -28209,8 +28021,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -28283,7 +28094,7 @@
     "description longue": "Ce Prêt finance :\n• des investissements immatériels\n• des investissements corporels à faible valeur de gage\n• l'augmentation du Besoin en Fonds de Roulement\n• des opérations de transmission (y compris croissance externe) par achat de titres ou de fonds de commerce permettant d’être au moins majoritaire à l’issue de l’opération",
     "fin de validité": "07/11/2024",
     "illustration": "images/TEE_energie_verte.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "url": "https://www.bpifrance.fr/catalogue-offres/pret-tourisme",
     "nature de l'aide": "prêt",
     "montant du prêt": "De 50 000 € à 5 000 000 €",
@@ -28400,9 +28211,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -28454,7 +28262,7 @@
     "description longue": "Le prêt Vert Ademe est destiné aux entreprises ayant bénéficié : \n• du diagnostic « Diag Eco-Flux » \nou\n• d'une aide financière de l’ADEME au cours de 3 dernières années \n\nLes investissements doivent viser à :\n\n• optimiser les procédés, ou améliorer la performance (énergie, eau, matière,) afin de mieux maîtriser ou de diminuer les impacts sur l’environnement,\n• favoriser la mobilité “zéro carbone” pour les salariés, les marchandises et les produits,\n• innover pour mettre sur le marché des produits ou des services en matière de protection de l’environnement, d’économie circulaire et/ou permettant une réduction de la consommation de ressources, renouvelables ou non, (énergie, matières premières, eau, … ; en ce compris la dédieselisation, l’allongement de la durée de vie des produits, l’intégration de recyclé, la recyclabilité, la réutilisation ou le réemploi),\n• produire des énergies nouvelles.",
     "fin de validité": "16/06/2024",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
       "ADEME"
     ],
@@ -28576,9 +28384,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -28590,8 +28395,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -28656,7 +28460,7 @@
     "description": "Le \"Prêt Vert\" est destiné à accompagner les projets sur différents champs de la transition écologique : mobilité douce, économie circulaire, énergies renouvelables, etc.",
     "description longue": "En co-financement avec une banque privée, le prêt Vert soutient les projets visant à : \n• optimiser les procédés, ou améliorer la performance (énergie, eau, matière,) afin de mieux maîtriser ou de diminuer les impacts sur l’environnement, en ce compris des procédés d’économie circulaire ;\n• favoriser la mobilité “zéro carbone” pour les salariés, les marchandises et les produits ;\n• innover pour mettre sur le marché des produits ou des services en matière de protection de l’environnement, d’économie circulaire et/ou permettant une réduction de la consommation de ressources, renouvelables ou non, (énergie, matières premières, eau, etc. ; en ce compris la dédieselisation, l’allongement de la durée de vie des produits, l’intégration de recyclé, la recyclabilité, la réutilisation ou le réemploi) ;\n• favoriser un mix énergétique plus vertueux en intégrant davantage d’énergies renouvelables.",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "Bpifrance",
+    "opérateur de contact": "Banque Publique d'Investissement France",
     "url": "https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-vert",
     "nature de l'aide": "prêt",
     "montant du prêt": "De 50 000 € à 5 000 000 €",
@@ -28774,9 +28578,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -29002,9 +28803,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -29199,9 +28997,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -29246,9 +29041,9 @@
     "autres opérateurs": [
       "ADEME",
       "CCI Bretagne",
-      "CETIM",
+      "Centre Technique des Industries Mécaniques",
       "Région Bretagne",
-      "UIMM - Union des industries et métiers de la métallurgie"
+      "Union des industries et métiers de la métallurgie"
     ],
     "url": "https://www.breizhfab.bzh/nos-solutions-daccompagnement/",
     "nature de l'aide": "étude",
@@ -29365,9 +29160,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -29419,7 +29211,7 @@
     "promesse": "Réalisez des économies sur vos consommations d’eau ",
     "description": "Le programme ECOD’O accompagne les acteurs industriels et du secteur du tourisme et de la restauration dans la réduction de leur consommation d’eau. Le soutien intervient sur les aspects techniques mais aussi financiers et réglementaires.",
     "illustration": "images/TEE_energie_verte.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "autres opérateurs": [
       "Agence de l'Eau Loire-Bretagne",
       "DREAL Bretagne",
@@ -29546,9 +29338,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -29605,7 +29394,7 @@
     "autres opérateurs": [
       "ADEME",
       "CEE",
-      "CAPEB - Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
+      "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
     ],
     "url": "https://www.eve-transport-logistique.fr/",
     "nature de l'aide": "étude",
@@ -29725,9 +29514,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -29768,7 +29554,7 @@
     "description longue": "Au programme : \n- Un diagnostic personnalisé sur site des consommations et usages dans votre entreprise réalisé par un conseiller spécialisé de votre Chambre de Commerce et d’Industrie ;\n- L’identification des potentiels d’économies d’eau et des pistes d’amélioration potentielles (récupération, réutilisation…) ;\n- Un plan d’action personnalisé pour votre entreprise ;\n- Un appui dans la recherche de solutions et de financements potentiels de vos projets ;\n- Des conseils, fiches de bonnes pratiques ;\n- Un suivi de votre plan d’action.",
     "fin de validité": "30/04/2026",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "autres opérateurs": [
       "Agence de l'Eau Rhône-Méditerranée-Corse"
     ],
@@ -29915,9 +29701,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -29963,7 +29746,7 @@
     "promesse": "Identifiez les opportunités d'économie circulaire avec les entreprises de votre territoire ",
     "description": "Votre conseiller CCI vous ouvre de nouvelles opportunités pour trouver des partenaires au sein de votre territoire et vous permettre de mutualiser des moyens, ressources et services (gestion collective des déchets, équipements, infrastructures, matières premières non utilisées...)",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.cci.fr/offre/demarche-synergies-durables",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit sauf en Hauts-de-France et en Pays de la Loire (250 € HT)",
@@ -30079,9 +29862,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -30268,9 +30048,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -30442,9 +30219,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -30617,9 +30391,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -30692,15 +30463,14 @@
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
     "autres opérateurs": [
-      "CCI",
-      "CMA",
+      "Chambre de Commerce et de l'Industrie",
+      "Chambre des Métiers et de l'Artisanat",
       "France Rénov'"
     ],
     "url": "https://www.ecologie.gouv.fr/sites/default/files/211130_guide_METRO_COPIL_VF2.pdf",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "2h",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Réalisez un premier rendez-vous par téléphone avec un expert en transition énergétique référencé par l'ADEME pour échanger sur votre projet de rénovation de vos locaux."
@@ -30812,9 +30582,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -30872,7 +30639,7 @@
     "description": "Les Répar’acteurs référencent les professionnels de la réparation et du dépannage partout en France. Rejoignez  le réseau et devenez un ambassadeur de l’économie circulaire auprès de vos clients et au sein de votre territoire.",
     "description longue": "Le label Répar’acteurs est un label des Chambres de métiers de l’artisanat à destination des artisans réparateurs. Seules les entreprises du secteur des métiers et de l’artisanat enregistrées comme telles au registre national des entreprises (RNE) sont éligibles à la marque répar’acteurs.\n\nPour être éligible, votre entreprise doit remplir l'une de ces conditions  : \n• Détenir la qualité Artisan ou le titre de Maître Artisan, \n• Bénéficier d'un diplôme ou un titre certifié dans l’activité de réparation,\n• Exercer depuis 3 années d’expérience professionnelle. \n\nLes activités éligibles à la marque répar’acteurs sont toutes celles impliquant la réparation des objets domestiques du quotidien détenus par les particuliers participant ainsi à l’économie circulaire.\n\nSont exclues, les activités de réparation automobile, moto, les travaux du bâtiment (plomberie, électricité, chauffage, menuiserie, etc), les activités du bâtiment (portails, volets roulants, portes) et les réparations des objets exclusivement professionnels.",
     "illustration": "images/TEE_ampoule.png",
-    "opérateur de contact": "CMA",
+    "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "url": "https://www.artisanat.fr/nous-connaitre/vous-accompagner/reparacteurs",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
@@ -30999,9 +30766,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -31158,9 +30922,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -31332,9 +31093,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -31520,9 +31278,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -31592,7 +31347,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230418/sobriete-resilience-territoires?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Selon projet",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Rejoignez la communauté de l’Appel à Communs : créez un compte, renseignez votre fiche entreprise, signez la charte, etc."
@@ -31707,9 +31461,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -31897,9 +31648,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -32108,9 +31856,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -32292,9 +32037,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -32361,7 +32103,7 @@
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Région Sud (PACA)",
     "autres opérateurs": [
-      "Bpifrance"
+      "Banque Publique d'Investissement France"
     ],
     "url": "https://entreprises.maregionsud.fr/financement/sud-entreprises/soutien-a-lhebergement-touristique/sud-pret-climat",
     "nature de l'aide": "prêt",
@@ -32507,9 +32249,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -32585,7 +32324,7 @@
     "promesse": "Restaurateurs & hébergeurs, réalisez une formation pour initier une démarche de tourisme durable.",
     "description": "Vous êtes directeur, manager d’établissement ou référent environnement et vous souhaitez initier une démarche de tourisme durable ? La formation \"référent tourisme durable\" vous permet d'acquérir les connaissances et les outils nécessaires pour mettre en œuvre une gestion durable dans votre établissement. Par ailleurs, elle répond aux critères de formation des référents environnement dans le cadre de la labellisation Clef Verte.",
     "illustration": "images/TEE_energie_verte.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.cciamp.com/produit/tourisme-durable-atelier-RSE",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "à partir de 450 € HT par participant (ou financement OPCO)",
@@ -32698,9 +32437,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -32743,7 +32479,7 @@
     "promesse": "Réalisez des économies durables en réduisant vos déchets et vos pertes en énergie, matière et eau.",
     "description": "Bénéficier d’un état des lieux sur vos flux pour vous aider à faire des économies (énergie, eau, matières, déchets) ",
     "illustration": "images/TEE_energie_verte.png",
-    "opérateur de contact": "CMA",
+    "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "url": "https://www.artisanat.fr/magazine/series-podcasts/tpe-pme-gagnantes-sur-tous-couts",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
@@ -32862,9 +32598,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -32928,7 +32661,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/tremplin-transition-ecologique-pme",
     "nature de l'aide": "financement",
     "montant du financement": "de 2 500 € HT à 200 000 € HT",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
@@ -33067,9 +32799,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -33139,7 +32868,7 @@
     "description": "Crisalide Eco-Activités est un appel à projets créé pour soutenir les entreprises de l'ouest dans leurs projets éco-innovants. ",
     "description longue": "Pour être éligible, votre projet doit répondre à l'un des défis suivants : \n• DEFI 1 : Reconcevoir des offres allégées en\nressources naturelles\n• DEFI 2 : Réussir la transition énergétique\n• DEFI 3 : Cohabiter avec notre capital naturel\n• DEFI 4 : Imaginer des solutions sans impact\nsur notre environnement et notre santé\n• DEFI 5 : Prendre en compte les consom’acteurs\n• DEFI 6 : Construire la résilience écologique",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.crisalide-ecoactivites.fr/",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
@@ -33271,9 +33000,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -33450,9 +33176,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -33498,7 +33221,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20240703/appel-a-projets-vehicules-lourds-electriques-2024-programme-cee-e-trans",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 90 000 € HT par véhicule",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Préparez votre dossier et ses pièces justificatives.",
@@ -33628,9 +33350,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -33642,8 +33361,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "questionnaire . parcours = objectif précis"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -33673,7 +33391,7 @@
     "promesse": "Optimisez les consommations d'énergie de votre entreprise",
     "description": "Faites vous accompagner par un conseiller en transition énergétique et écologique pour faire le point sur vos contrats et factures d’énergie, identifier vos postes énergivores et découvrir les bonnes pratiques à mettre en place pour réaliser des économies d'énergie.",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "CCI",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.cci.fr/offre/parcours-energie-pour-reduire-votre-facture-energie",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit (sauf Centre-Val de Loire, Bretagne, Ile-de-France et Normandie)",
@@ -33792,9 +33510,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -33900,7 +33615,7 @@
     "promesse": "Optimisez les consommations d'énergie de votre entreprise",
     "description": "Faites vous accompagner par un conseiller en transition énergétique et écologique pour faire le point sur vos contrats et factures d’énergie, identifier vos postes énergivores et découvrir les bonnes pratiques à mettre en place pour réaliser des économies d'énergie.",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "CMA",
+    "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "1 journée",
@@ -34021,9 +33736,6 @@
           "est préserver la biodiversité": null
         }
       },
-      "questionnaire . parcours": null,
-      "objectif précis": "\"objectif précis\"",
-      "je ne sais pas par où commencer": "\"je ne sais pas par où commencer\"",
       "dispositif": {
         "avec": {
           "début de validité": null,

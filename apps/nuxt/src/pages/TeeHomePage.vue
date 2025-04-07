@@ -1,37 +1,31 @@
 <template>
   <!-- MAIN APP COMPONENT  -->
-  <div>
-    <div class="fr-container--fluid fr-bg--blue--lightness">
-      <div class="fr-container fr-py-2v">
+  <Layout
+    :breadcrumb="false"
+    fluid
+  >
+    <template #top>
+      <div class="fr-bg--blue--lightness">
         <TeeCta />
       </div>
-    </div>
-    <div class="fr-container fr-py-2v fr-px-8v fr-px-sm-8v fr-px-md-20v">
-      <h2 class="fr-text--blue-france fr-container fr-pt-6v">Quel est votre projet ?</h2>
-      <TeeHomeProjectList :limit="9" />
-      <div class="fr-container fr-grid-row fr-grid-row--center fr-pt-8v">
-        <div class="fr-col-12 fr-col-justify--center">
-          <TeeButtonLink
-            :to="{ name: RouteName.CatalogProjects }"
-            icon="fr-icon-arrow-right-line"
-            icon-right
-            class="no-outline fr-border-b--blue-france fr-py-0 fr-pc-4v fr-mb-8v"
-          >
-            Voir tous les projets
-          </TeeButtonLink>
-        </div>
+    </template>
+    <div class="fr-container--fluid fr-container-md">
+      <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-pt-6v">Quel est votre projet ?</h2>
+      <TeeHomeProjectList :limit="filters[FilterItemKeys.themeType] === '' ? 8 : 9" />
+      <div class="fr-grid-row fr-grid-row--center">
         <div class="fr-bg--blue--lightness fr-hidden fr-unhidden-sm fr-col-12 fr-py-0-5v fr-my-8v"></div>
       </div>
-
       <TeePromises />
     </div>
-  </div>
+  </Layout>
 </template>
 
 <script setup lang="ts">
 import { defineRouteRules } from '#imports'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
-import { RouteName } from '@/types'
+import { FilterItemKeys, RouteName } from '@/types'
+
+const { filters } = storeToRefs(useFiltersStore())
 
 definePageMeta({
   path: '/',

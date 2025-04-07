@@ -9,8 +9,7 @@
             class="fr-col-2 fr-col-hidden fr-col-unhidden-md"
           >
             <div class="fr-sidemenu fr-pr-0 fr-mx-3v">
-              <div class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w">Filtres</div>
-              <ProgramFiltersAccordion />
+              <ProgramFiltersAccordion with-title />
             </div>
           </div>
           <div
@@ -47,7 +46,7 @@
 </template>
 
 <script setup lang="ts">
-import { type ProgramData } from '@/types'
+import { ProgramTypeForFront } from '@/types'
 import { computed } from 'vue'
 import ProgramFiltersAccordion from '@/components/program/list/filters/ProgramFiltersAccordion.vue'
 import Translation from '@/tools/translation'
@@ -56,11 +55,11 @@ import { useNavigationStore } from '@/stores/navigation'
 import { CompanyData } from '@/tools/companyData'
 
 interface ProgramListProps {
-  filteredPrograms?: ProgramData[]
+  filteredPrograms?: ProgramTypeForFront[]
   hasError: boolean
 }
 
-const hasRegisteredData = CompanyData.isDataFull()
+const hasRegisteredData = CompanyData.isDataFullComputed()
 const navigationStore = useNavigationStore()
 
 const props = defineProps<ProgramListProps>()

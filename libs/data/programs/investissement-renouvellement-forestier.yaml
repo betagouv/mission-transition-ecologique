@@ -17,7 +17,6 @@ url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230413/renouvellement-forestier
 nature de l'aide: financement
 montant du financement: Entre 37,5% à 80% selon le projet
-activable en autonomie: oui
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
@@ -57,7 +56,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:

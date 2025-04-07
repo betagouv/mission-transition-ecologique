@@ -8,34 +8,112 @@
   background-color: inherit;
 }
 .fr-accordion-bg--white .fr-collapse--expanded {
-  background: #fff;
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: white !important;
+}
+.fr-accordion-bg--white--light .fr-collapse--expanded {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: white !important;
+}
+.fr-accordion-bg--white--lightness .fr-collapse--expanded {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: white !important;
 }
 .fr-accordion-bg--black .fr-collapse--expanded {
-  background: #161616;
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: #161616 !important;
+}
+.fr-accordion-bg--black--light .fr-collapse--expanded {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: rgb(185.1, 185.1, 185.1) !important;
+}
+.fr-accordion-bg--black--lightness .fr-collapse--expanded {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: rgb(231.7, 231.7, 231.7) !important;
 }
 .fr-accordion-bg--yellow .fr-collapse--expanded {
-  background: #facf35;
+  background-color: #facf35 !important;
+}
+.fr-accordion-bg--yellow--light .fr-collapse--expanded {
+  background-color: rgb(253.5, 240.6, 194.4) !important;
+}
+.fr-accordion-bg--yellow--lightness .fr-collapse--expanded {
+  background-color: rgb(254.5, 250.2, 234.8) !important;
 }
 .fr-accordion-bg--deep-red .fr-collapse--expanded {
-  background: #e1000f;
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: #e1000f !important;
+}
+.fr-accordion-bg--deep-red--light .fr-collapse--expanded {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: rgb(255, 169.5, 175.2) !important;
+}
+.fr-accordion-bg--deep-red--lightness .fr-collapse--expanded {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: rgb(255, 226.5, 228.4) !important;
 }
 .fr-accordion-bg--red .fr-collapse--expanded {
-  background: #fca081;
+  background-color: #fca081 !important;
+}
+.fr-accordion-bg--red--light .fr-collapse--expanded {
+  background-color: rgb(254.1, 226.5, 217.2) !important;
+}
+.fr-accordion-bg--red--lightness .fr-collapse--expanded {
+  background-color: rgb(254.7, 245.5, 242.4) !important;
 }
 .fr-accordion-bg--purple .fr-collapse--expanded {
-  background: #6a62f4;
+  background-color: #6a62f4 !important;
+}
+.fr-accordion-bg--purple--light .fr-collapse--expanded {
+  background-color: rgb(210.3, 207.9, 251.7) !important;
+}
+.fr-accordion-bg--purple--lightness .fr-collapse--expanded {
+  background-color: rgb(240.1, 239.3, 253.9) !important;
 }
 .fr-accordion-bg--green .fr-collapse--expanded {
-  background: #1ebe8e;
+  background-color: #1ebe8e !important;
+}
+.fr-accordion-bg--green--light .fr-collapse--expanded {
+  background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
+}
+.fr-accordion-bg--green--lightness .fr-collapse--expanded {
+  background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
 }
 .fr-accordion-bg--blue .fr-collapse--expanded {
-  background: #001891;
+  background-color: #001891 !important;
+}
+.fr-accordion-bg--blue--light .fr-collapse--expanded {
+  background-color: rgb(145.5, 163.624137931, 255) !important;
+}
+.fr-accordion-bg--blue--lightness .fr-collapse--expanded {
+  background-color: rgb(218.5, 224.5413793103, 255) !important;
 }
 .fr-accordion-bg--blue-france .fr-collapse--expanded {
-  background: #000091;
+  background-color: #000091 !important;
+}
+.fr-accordion-bg--blue-france--light .fr-collapse--expanded {
+  background-color: rgb(145.5, 145.5, 255) !important;
+}
+.fr-accordion-bg--blue-france--lightness .fr-collapse--expanded {
+  background-color: rgb(218.5, 218.5, 255) !important;
 }
 .fr-accordion-bg--grey .fr-collapse--expanded {
-  background: #777;
+  background-color: #777777 !important;
+}
+.fr-accordion-bg--grey--light .fr-collapse--expanded {
+  background-color: rgb(214.2, 214.2, 214.2) !important;
+}
+.fr-accordion-bg--grey--lightness .fr-collapse--expanded {
+  background-color: rgb(241.4, 241.4, 241.4) !important;
 }
 
 @media (min-width: 0) {
@@ -2131,11 +2209,82 @@
   font-weight: bold;
   z-index: 100;
 }
-.fr-card.fr-enlarge-link .fr-card__content {
-  padding-bottom: 2rem !important;
+@media (min-width: 0) {
+  .fr-card.fr-enlarge-link:active {
+    background-color: var(--background-default-grey-active);
+    border: thin solid #6a62f4;
+    border-radius: 8px;
+  }
+}
+@media (min-width: 48em) {
+  .fr-card.fr-enlarge-link:active {
+    border: unset;
+    border-radius: 0;
+  }
+}
+.fr-card.fr-enlarge-link .fr-card__content .fr-card__end p {
+  font-size: 0.8rem;
+}
+.fr-card.fr-card--program-detail .fr-card__content {
+  padding: 1rem 1.5rem 4rem !important;
+}
+.fr-card.fr-card--program-detail .fr-card__content .fr-card__title {
+  margin-bottom: 0.75rem;
+}
+.fr-card.fr-card--program-detail .fr-card__content .fr-card__title a {
+  color: #6a62f4;
+}
+@media (min-width: 0) {
+  .fr-card.fr-card--program-detail .fr-card__content .fr-card__title a {
+    line-height: 1.5rem;
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 48em) {
+  .fr-card.fr-card--program-detail .fr-card__content .fr-card__title a {
+    line-height: 1.75rem;
+    font-size: 1.25rem;
+  }
+}
+.fr-card.fr-card--program-detail .fr-card__content p.fr-card__desc {
+  color: #000091;
+  font-weight: 700;
+}
+@media (min-width: 0) {
+  .fr-card.fr-card--program-detail .fr-card__content p.fr-card__desc {
+    line-height: 2rem;
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 48em) {
+  .fr-card.fr-card--program-detail .fr-card__content p.fr-card__desc {
+    line-height: 2.25rem;
+    font-size: 1.75rem;
+  }
+}
+@media (min-width: 0) {
+  .fr-card.fr-card--program-detail .fr-card__header .fr-card__img img {
+    aspect-ratio: 2.5;
+  }
+}
+@media (min-width: 36em) {
+  .fr-card.fr-card--program-detail .fr-card__header .fr-card__img img {
+    aspect-ratio: 1.777778;
+  }
 }
 .fr-card.project-card .fr-card__content {
-  padding-top: 1rem !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 2rem !important;
+}
+@media (min-width: 0) {
+  .fr-card.project-card .fr-card__header .fr-card__img img {
+    aspect-ratio: 2.5;
+  }
+}
+@media (min-width: 36em) {
+  .fr-card.project-card .fr-card__header .fr-card__img img {
+    aspect-ratio: 1.777778;
+  }
 }
 .fr-card .fr-badge--success {
   background-color: #1ebe8e;
@@ -2342,6 +2491,11 @@
 }
 .fr-footer__content-list {
   justify-content: center;
+}
+.fr-footer__partners-main img {
+  height: 5.625rem;
+  width: 10rem;
+  box-shadow: none !important;
 }
 .fr-footer__partners-sub {
   justify-content: center;
@@ -2865,7 +3019,7 @@
   display: none;
 }
 
-.fr-input--white {
+.fr-input-bg--white {
   background-color: #fff;
 }
 .fr-input:focus {
@@ -2879,8 +3033,13 @@
   color: var(--text-default-grey);
 }
 
-.fr-input--empty-text {
-  height: 1.25rem;
+ol.fr-order-list {
+  --ol-content: counters(li-counter,".") " | ";
+  --ol-start: 2.5rem;
+}
+ol.fr-order-list > li::marker {
+  color: #6a62f4;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 0) {
@@ -4340,8 +4499,9 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   background-color: #fff;
 }
 
-.fr-sidemenu--sticky {
-  top: 50%;
+.fr-sidemenu #project-sidemenu a.fr-sidemenu__link {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .fr-tabs {
