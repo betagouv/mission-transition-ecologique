@@ -2,7 +2,6 @@ import { FilterItemKeys } from '@/types'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { FiltersType } from '@/types/filters/filtersTypes'
-import { useCompanyDataStore } from '@/stores/companyData'
 
 export const useFiltersStore = defineStore('filters', () => {
   const filters = ref<FiltersType>({
@@ -12,12 +11,7 @@ export const useFiltersStore = defineStore('filters', () => {
     [FilterItemKeys.operatorAid]: []
   })
 
-  const companyDataSelected = ref<boolean>(false)
-
-  function initializeStore() {
-    const companyDataStore = useCompanyDataStore()
-    companyDataSelected.value = companyDataStore.isDataFull
-  }
+  const companyDataSelected = ref<boolean>(true)
 
   function hasThemeTypeSelected() {
     return filters.value[FilterItemKeys.themeType] !== ''
@@ -58,7 +52,6 @@ export const useFiltersStore = defineStore('filters', () => {
   }
 
   return {
-    initializeStore,
     filters,
     hasThemeTypeSelected,
     getThemeTypeSelected,

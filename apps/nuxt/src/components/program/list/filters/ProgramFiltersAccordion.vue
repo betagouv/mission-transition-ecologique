@@ -33,7 +33,7 @@ const { isDataFull } = storeToRefs(useCompanyDataStore())
 const navigation = new Navigation()
 
 const displayRegionFilter = computed(() => {
-  return navigation.isCatalogPrograms() && !companyDataSelected.value
+  return (navigation.isCatalogPrograms() && !companyDataSelected.value) || !isDataFull.value
 })
 
 const companyDataFilter: FilterItem = {
