@@ -39,6 +39,7 @@ export interface DataProgram extends BaserowSectors {
   "Nature de l'aide": DataProgramType
   Statuts: Status[]
   conditionalData?: ConditionalValues[]
+  'redirection-vers': number
 }
 
 export enum Publicodes {

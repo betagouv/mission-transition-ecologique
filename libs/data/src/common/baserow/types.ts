@@ -20,6 +20,7 @@ export interface BaserowProject extends Id, BaserowSectors {
   Dispositifs: LinkObject[]
   Prio: number
   'Mise En Avant': number | null
+  'redirection-vers': LinkObject[]
 }
 
 export interface LinkObject extends Id {

@@ -10,6 +10,7 @@ import { LinkValidator } from '../common/validators/linkValidator'
 import { Logger } from '../common/logger/logger'
 import { LoggerType, LogLevel } from '../common/logger/types'
 import { FileManager } from '../common/fileManager'
+import Redirect from '../common/redirect/redirect'
 
 export class ProjectFeatures {
   private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -29,6 +30,7 @@ export class ProjectFeatures {
 
     console.log(`Baserow Data sucessfully downloaded.\n\nStarting to validate the project data and generating the project JSON.`)
     const validProjects = await this._validateData(projects)
+    new Redirect(this._logger).updateProjectsRedirects(projects)
     FileManager.writeJson(this._outputFilePath, validProjects, 'projects.json updated')
     this._logger.write('projectGeneration.log')
 

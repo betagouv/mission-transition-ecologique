@@ -1,55 +1,122 @@
 {
-  "project_redirects": [
-    { from:to
-      "from": "a",
-      "to": "project"
-    } prepend(projet/)[id
-    ]
-  ],
-  "program_redirects": [
-    {
-      "from": [
-        "a",
-        "b",
-        "c"
-      ],
-      "to": "project"
-    }
-  ],
-  "project_rowid_to_url_mapping": [],
-  "program_rowid_to_url_mapping": []
-}
-
-
-=> dispositifA remplacé par dispositifB.
-=> modifie le slug d'un même dispositif.
-
-
-=> Conflits ?!?
-=> si plusieurs from du même url ?
-=> abc => abcd => abcde => GEstion de l'historique "profond"
-
-abcde (=> abcd) => abc
-
-=> Warning +
-DispositifA => B
-DispostiifA => C
-
-
-
-=> Comment j'identifie des modifs déjà prises en compte.
-
-A->B
-
-UPDATE : redirection à jour
-
-B renomme B2
-
-a la lecture de la table redirection
-J'ai pas A->B
-dans la table j'ai A->B2
-Comment ej sais que c'est déjà traité. parce que j'ai dans mes donénes ;
-A->B et B->B2
-
-from: {to,date
+  "project_redirects": {
+    "vehicule-propre": "voiture-propre"
+  },
+  "program_redirects": {
+    "ancien_slug": "nouveau_slug"
+  },
+  "project_rowid_to_url_mapping": {
+    "1": "bilan-ges",
+    "2": "eclairage-led",
+    "3": "reduction-emballages",
+    "4": "plan-action-eco-energie",
+    "5": "panneaux-solaires",
+    "6": "chauffe-eau-solaire",
+    "7": "reseau-chaleur",
+    "8": "chauffage-bois",
+    "9": "chaleur-recup",
+    "10": "pac",
+    "11": "energie-hydraulique",
+    "12": "geothermie",
+    "13": "serres-agricoles",
+    "14": "audit-energetique",
+    "15": "isolation-thermique",
+    "16": "plan-mobilite",
+    "17": "retrofit",
+    "18": "voiture-propre",
+    "19": "velo",
+    "20": "plan-action-eau",
+    "21": "plan-action-dechets",
+    "22": "numerique-responsable",
+    "23": "tri-dechets",
+    "24": "gestion-biodechets",
+    "25": "lutte-gaspillage-alimentaire",
+    "26": "sensibilisation-equipes",
+    "27": "recrutement",
+    "28": "formation",
+    "29": "projet-recherche",
+    "30": "strategie-rse",
+    "31": "diag-360",
+    "32": "plan-transition-bas-carbone",
+    "33": "plan-adaptation-climat",
+    "35": "com-labelisation",
+    "36": "ecoconception",
+    "71": "recuperateur-eau-pluie",
+    "72": "economiseurs-eau-sanitaires",
+    "104": "covoiturage",
+    "137": "electromenager-basse-consommation",
+    "138": "menus-circuits-courts",
+    "139": "petite-refrigeration",
+    "140": "economies-d-eau-exterieur",
+    "141": "vegetalisation",
+    "142": "ouvrants-ombrages",
+    "143": "abris-velos",
+    "144": "biodiversite",
+    "146": "maitrise-besoins-chauffage",
+    "147": "borne-recharge-ve",
+    "337": "sensibilisation-eco-gestes",
+    "401": "utilitaire-camion-propre",
+    "666": "tourisme-zero-dechet",
+    "667": "materiaux-de-reemploi",
+    "731": "transition-mobilites",
+    "764": "navires-propres",
+    "863": "cyclologistique"
+  },
+  "program_rowid_to_url_mapping": {
+    "1": "bilan-ges",
+    "2": "eclairage-led",
+    "3": "reduction-emballages",
+    "4": "plan-action-eco-energie",
+    "5": "panneaux-solaires",
+    "6": "chauffe-eau-solaire",
+    "7": "reseau-chaleur",
+    "8": "chauffage-bois",
+    "9": "chaleur-recup",
+    "10": "pac",
+    "11": "energie-hydraulique",
+    "12": "geothermie",
+    "13": "serres-agricoles",
+    "14": "audit-energetique",
+    "15": "isolation-thermique",
+    "16": "plan-mobilite",
+    "17": "retrofit",
+    "18": "voiture-propre",
+    "19": "velo",
+    "20": "plan-action-eau",
+    "21": "plan-action-dechets",
+    "22": "numerique-responsable",
+    "23": "tri-dechets",
+    "24": "gestion-biodechets",
+    "25": "lutte-gaspillage-alimentaire",
+    "26": "sensibilisation-equipes",
+    "27": "recrutement",
+    "28": "formation",
+    "29": "projet-recherche",
+    "30": "strategie-rse",
+    "31": "diag-360",
+    "32": "plan-transition-bas-carbone",
+    "33": "plan-adaptation-climat",
+    "35": "com-labelisation",
+    "36": "ecoconception",
+    "71": "recuperateur-eau-pluie",
+    "72": "economiseurs-eau-sanitaires",
+    "104": "covoiturage",
+    "137": "electromenager-basse-consommation",
+    "138": "menus-circuits-courts",
+    "139": "petite-refrigeration",
+    "140": "economies-d-eau-exterieur",
+    "141": "vegetalisation",
+    "142": "ouvrants-ombrages",
+    "143": "abris-velos",
+    "144": "biodiversite",
+    "146": "maitrise-besoins-chauffage",
+    "147": "borne-recharge-ve",
+    "337": "sensibilisation-eco-gestes",
+    "401": "utilitaire-camion-propre",
+    "666": "tourisme-zero-dechet",
+    "667": "materiaux-de-reemploi",
+    "731": "transition-mobilites",
+    "764": "navires-propres",
+    "863": "cyclologistique"
+  }
 }

@@ -62,6 +62,8 @@ export class ProjectBaserow extends AbstractBaserow {
       imageName = maybeImageName.value
     }
 
+    const redirection = this._generateRedirection(baserowProject)
+
     return {
       id: baserowProject.id,
       slug: baserowProject.Nom,
@@ -77,7 +79,8 @@ export class ProjectBaserow extends AbstractBaserow {
       linkedProjects: this._generateLinkedProjectList(baserowProject['Projets complémentaires']),
       priority: baserowProject.Prio,
       highlightPriority: baserowProject['Mise En Avant'],
-      sectors: this._generateSectors(baserowProject as BaserowSectors)
+      sectors: this._generateSectors(baserowProject as BaserowSectors),
+      ...(redirection !== undefined && { redirectTo: redirection })
     }
   }
 
@@ -133,5 +136,16 @@ export class ProjectBaserow extends AbstractBaserow {
     })
 
     return result
+  }
+
+  private _generateRedirection(project: BaserowProject): number | undefined {
+    if (project['redirection-vers'].length > 1) {
+      this._logger.log(LogLevel.Major, 'Redirection invalide: multiples redirections en conflit', project.Titre, project.id)
+      return undefined
+    }
+    if (!project['redirection-vers'].length) {
+      return undefined
+    }
+    return project['redirection-vers'][0].id
   }
 }
