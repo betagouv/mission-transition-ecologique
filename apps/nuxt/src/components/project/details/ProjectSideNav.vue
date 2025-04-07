@@ -25,7 +25,9 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const menuItems = computed(() => allMenuItems.value.filter((item) => item.condition !== false))
+const { isDataFull } = storeToRefs(useCompanyDataStore())
+
+const menuItems = computed(() => allMenuItems.value.filter((item) => item.condition))
 
 const scrollTo = (id: string) => {
   const element = document.getElementById(id)
@@ -47,8 +49,8 @@ const allMenuItems = computed(() => [
     text: 'Pour aller plus loin',
     condition: props.project.moreDescription.length > 0
   },
-  { id: 'aids', to: `project-aids-title`, text: 'Mes aides', condition: props.project.programs.length > 0 },
-  { id: 'contact', to: `form-title`, text: 'Contact', condition: props.project.programs.length > 0 },
+  { id: 'aids', to: `project-aids-title`, text: 'Mes aides', condition: props.project.programs.length > 0 || isDataFull.value },
+  { id: 'contact', to: `form-title`, text: 'Contact', condition: props.project.programs.length > 0 || isDataFull.value },
   {
     id: 'linked-project',
     to: `project-linked-projects-title`,
