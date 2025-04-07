@@ -75,7 +75,7 @@ export class ProgramBaserow extends AbstractBaserow {
       ...nonModifiedFields
     } = program
 
-    const rawStatuts = Statuts.map((linkedObj) => (linkedObj.value as Status) || Status.Other)
+    const rawStatuts = Statuts.map(({ value }) => (Object.values(Status).includes(value as Status) ? (value as Status) : Status.Other))
     const domainContactOperator = this._replaceLinkObjectByTableData<Operator>(contactOperator, this._operators)
     const domainOtherOperator = this._replaceLinkObjectByTableData<Operator>(otherOperator, this._operators)
     const domainGeographicCoverage = this._replaceLinkObjectByTableData<GeographicCoverage>(geographicCoverage, geographicCoverages)

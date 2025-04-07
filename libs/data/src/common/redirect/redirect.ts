@@ -53,7 +53,7 @@ export default class Redirect {
   handleProjectReplacements(projects: DataProject[]) {
     projects.forEach((project) => {
       if (project.redirectTo) {
-        if (project.statut == ProjectStatuts.InProd) {
+        if (project.status == ProjectStatuts.InProd) {
           this._logger.log(LogLevel.Major, 'Conflit : en prod / redirection active', project.title, project.id)
         }
 

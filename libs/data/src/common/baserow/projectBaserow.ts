@@ -25,19 +25,19 @@ export class ProjectBaserow extends AbstractBaserow {
   async getInProdProjects(): Promise<DataProject[]> {
     const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
 
-    const validBaserowProjects = baserowProjects.filter((value) => {
-      const statut = value.Publié_new ? (value.Publié_new.value as ProjectStatuts) : ProjectStatuts.Others
-      return statut == ProjectStatuts.InProd
+    const validBaserowProjects = baserowProjects.filter((project) => {
+      return this._convertStatus(project?.Publié_new) == ProjectStatuts.InProd
     })
     return await this._convertProjectList(validBaserowProjects)
   }
 
   async getProdAndArchivedProjects(): Promise<DataProject[]> {
     const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
-
-    const validBaserowProjects = baserowProjects.filter((value) => {
-      const statut = value.Publié_new ? (value.Publié_new.value as ProjectStatuts) : ProjectStatuts.Others
-      return statut == ProjectStatuts.InProd || statut == ProjectStatuts.Archived
+    const validBaserowProjects = baserowProjects.filter((project) => {
+      return (
+        this._convertStatus(project?.Publié_new) == ProjectStatuts.InProd ||
+        this._convertStatus(project?.Publié_new) == ProjectStatuts.Archived
+      )
     })
     return await this._convertProjectList(validBaserowProjects)
   }
@@ -94,7 +94,7 @@ export class ProjectBaserow extends AbstractBaserow {
       priority: baserowProject.Prio,
       highlightPriority: baserowProject['Mise En Avant'],
       sectors: this._generateSectors(baserowProject as BaserowSectors),
-      statut: baserowProject.Publié_new ? (baserowProject.Publié_new.value as ProjectStatuts) : ProjectStatuts.Others,
+      status: this._convertStatus(baserowProject?.Publié_new),
       ...(redirection !== undefined && { redirectTo: redirection })
     }
   }
@@ -162,5 +162,12 @@ export class ProjectBaserow extends AbstractBaserow {
       return undefined
     }
     return project['redirection-vers'][0].id
+  }
+
+  private _convertStatus(status: LinkObject | undefined): ProjectStatuts {
+    if (!status) {
+      return ProjectStatuts.Others
+    }
+    return Object.values(ProjectStatuts).includes(status.value as ProjectStatuts) ? (status.value as ProjectStatuts) : ProjectStatuts.Others
   }
 }

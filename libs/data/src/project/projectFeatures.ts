@@ -41,7 +41,7 @@ export class ProjectFeatures {
   private async _validateData(rawProjects: DataProject[]) {
     const validProjects: DataProject[] = []
     for (const project of rawProjects) {
-      if (project.statut != ProjectStatuts.InProd) {
+      if (project.status != ProjectStatuts.InProd) {
         continue
       }
       this._validateThemes(project)
