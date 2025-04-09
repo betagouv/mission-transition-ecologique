@@ -22,6 +22,7 @@ defineRouteRules({
   sitemap: {
     priority: 0,
     changefreq: 'monthly'
-  }
+  },
+  robots: 'noindex, nofollow'
 })
 </script>
