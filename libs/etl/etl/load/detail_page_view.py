@@ -7,9 +7,19 @@ def insert_detail_page_view_events(events: list[DetailPageViewEvent]):
         return
 
     query = f"""
-        INSERT INTO __SCHEMA_NAME__.detail_page_view (siret, hybrid_company_id, custom_company_id, date, type, title, current_url, event_id, web_user_id)
+        INSERT INTO __SCHEMA_NAME__.detail_page_view (
+            {DetailPageViewEvent.SIRET},
+            {DetailPageViewEvent.HYBRID_COMPANY_ID},
+            {DetailPageViewEvent.CUSTOM_COMPANY_ID},
+            {DetailPageViewEvent.DATE},
+            {DetailPageViewEvent.TYPE},
+            {DetailPageViewEvent.TITLE},
+            {DetailPageViewEvent.CURRENT_URL},
+            {DetailPageViewEvent.EVENT_ID},
+            {DetailPageViewEvent.WEB_USER_ID}
+        )
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
-        ON CONFLICT (event_id) DO NOTHING
+        ON CONFLICT ({DetailPageViewEvent.EVENT_ID}) DO NOTHING
     """
     values = [
         (

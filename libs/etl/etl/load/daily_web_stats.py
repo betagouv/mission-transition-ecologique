@@ -7,9 +7,13 @@ def insert_daily_web_stats(web_stats: list[DailyWebStat]):
         return
 
     query = f"""
-        INSERT INTO __SCHEMA_NAME__.daily_web_stats (stat_date, unique_visitors, detail_page_unique_visitors)
+        INSERT INTO __SCHEMA_NAME__.daily_web_stats (
+            {DailyWebStat.STAT_DATE},
+            {DailyWebStat.UNIQUE_VISITORS},
+            {DailyWebStat.DETAIL_PAGE_UNIQUE_VISITORS}
+        )
         VALUES (%s, %s, %s)
-        ON CONFLICT (stat_date) DO NOTHING;
+        ON CONFLICT ({DailyWebStat.STAT_DATE}) DO NOTHING;
     """
     values = [
         (

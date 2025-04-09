@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS __SCHEMA_NAME__.siret_search_error (
 ALTER TABLE __SCHEMA_NAME__.web_registered_siret
 ADD CONSTRAINT unique_date_siret UNIQUE (date, siret);
 
-CREATE TABLE IF NOT EXISTS statistics_test.external_link_clicked_events (
+CREATE TABLE IF NOT EXISTS __SCHEMA_NAME__.external_link_clicked_events (
     siret text,
     hybrid_company_id text,
     custom_company_id text,
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS statistics_test.external_link_clicked_events (
     web_user_id UUID
 );
 
-CREATE TABLE IF NOT EXISTS statistics_test.detail_page_view (
+CREATE TABLE IF NOT EXISTS __SCHEMA_NAME__.detail_page_view (
     siret text,
     hybrid_company_id text,
     custom_company_id text,

@@ -2,6 +2,13 @@ from etl.transform.dto.brevo import deal_from_brevo
 
 
 class Deal:
+    BREVO_ID = "brevo_id"
+    OPPORTUNITY_DATE = "opportunity_date"
+    COMPANY_SIRET = "company_siret"
+    STATUS = "status"
+    OPPORTUNITY_TYPE = "opportunity_type"
+    OPPORTUNITY_TITLE = "opportunity_title"
+    OPPORTUNITY_OPERATOR = "opportunity_operator"
 
     def __init__(self, src, *args):
         self.brevo_id = ""

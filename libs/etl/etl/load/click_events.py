@@ -7,9 +7,20 @@ def insert_click_events(events: list[ClickEvent]):
         return
 
     query = f"""
-        INSERT INTO __SCHEMA_NAME__.external_link_clicked_events (siret, hybrid_company_id, custom_company_id, date, type, title, current_url, link, event_id, web_user_id)
+        INSERT INTO __SCHEMA_NAME__.external_link_clicked_events (
+            {ClickEvent.SIRET},
+            {ClickEvent.HYBRID_COMPANY_ID},
+            {ClickEvent.CUSTOM_COMPANY_ID},
+            {ClickEvent.DATE},
+            {ClickEvent.TYPE},
+            {ClickEvent.TITLE},
+            {ClickEvent.CURRENT_URL},
+            {ClickEvent.LINK},
+            {ClickEvent.EVENT_ID},
+            {ClickEvent.WEB_USER_ID}
+        )
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-        ON CONFLICT (event_id) DO NOTHING
+        ON CONFLICT ({ClickEvent.EVENT_ID}) DO NOTHING
     """
     values = [
         (
@@ -29,4 +40,4 @@ def insert_click_events(events: list[ClickEvent]):
     try:
         DBManager().query(query, values)
     except Exception as error:
-        print("SIRET event insertion error:", error)
+        print("Click event insertion error:", error)

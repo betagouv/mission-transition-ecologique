@@ -7,9 +7,12 @@ def insert_siret_events(events: list[SiretEvent]):
         return
 
     query = f"""
-        INSERT INTO __SCHEMA_NAME__.web_registered_siret (date, siret)
+        INSERT INTO __SCHEMA_NAME__.web_registered_siret (
+            {SiretEvent.DATE},
+            {SiretEvent.SIRET}
+        )
         VALUES (%s, %s)
-        ON CONFLICT (date, siret) DO NOTHING;
+        ON CONFLICT ({SiretEvent.DATE}, {SiretEvent.SIRET}) DO NOTHING;
     """
     values = [(event.date, event.siret) for event in events]
 

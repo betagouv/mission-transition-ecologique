@@ -7,12 +7,10 @@ from etl.extract.db_queries import (
 )
 from etl.extract.posthog_extractor import PosthogExtractor
 from etl.transform.dto.posthog import PosthogDTO
-from etl.transform.siret_event import convert_posthog_events_to_siret_events
-from etl.transform.click_event import convert_posthog_events_to_click_events
-from etl.transform.detail_page_view_event import (
-    convert_posthog_events_to_detail_page_view_events,
-)
-from etl.transform.daily_web_stat import arrays_to_DailyWebStats
+from etl.transform.siret_event import SiretEvent
+from etl.transform.click_event import ClickEvent
+from etl.transform.detail_page_view_event import DetailPageViewEvent
+from etl.transform.daily_web_stat import DailyWebStat
 from etl.load.siret_events import insert_siret_events
 from etl.load.click_events import insert_click_events
 from etl.load.detail_page_view import insert_detail_page_view_events
@@ -23,7 +21,7 @@ class WebStatsPipeline:
 
     def update_web_registered_siret_table(self):
         new_events = self._get_new_siret_events()
-        formatted_events = convert_posthog_events_to_siret_events(new_events)
+        formatted_events = SiretEvent.from_posthog_events(new_events)
         insert_siret_events(formatted_events)
 
     def update_website_daily_visit_stats(self):
@@ -51,7 +49,7 @@ class WebStatsPipeline:
             raw_detail_page_data
         )
 
-        return arrays_to_DailyWebStats(visits_data, detail_page_data)
+        return DailyWebStat.from_arrays(visits_data, detail_page_data)
 
     def _get_new_siret_events(self):
         start_date = get_last_siret_event_date()
@@ -65,7 +63,7 @@ class WebStatsPipeline:
 
     def update_external_link_clicked_table(self):
         new_events = self._get_new_click_events()
-        formatted_events = convert_posthog_events_to_click_events(new_events)
+        formatted_events = ClickEvent.from_posthog_events(new_events)
         insert_click_events(formatted_events)
 
     def _get_new_click_events(self):
@@ -82,7 +80,7 @@ class WebStatsPipeline:
 
     def update_detail_page_view_table(self):
         new_events = self._get_new_detail_page_events()
-        formatted_events = convert_posthog_events_to_detail_page_view_events(new_events)
+        formatted_events = DetailPageViewEvent.from_posthog_events(new_events)
         insert_detail_page_view_events(formatted_events)
 
     def _get_new_detail_page_events(self):
