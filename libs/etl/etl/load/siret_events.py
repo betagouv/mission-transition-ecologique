@@ -1,5 +1,6 @@
 from etl.transform.siret_event import SiretEvent
 from etl.tools.db_manager import DBManager
+from etl.tools.db_structure import TableName
 
 
 def insert_siret_events(events: list[SiretEvent]):
@@ -7,9 +8,12 @@ def insert_siret_events(events: list[SiretEvent]):
         return
 
     query = f"""
-        INSERT INTO __SCHEMA_NAME__.web_registered_siret (date, siret)
+        INSERT INTO __SCHEMA_NAME__.{TableName.WEB_REGISTERED_SIRET} (
+            {SiretEvent.DATE},
+            {SiretEvent.SIRET}
+        )
         VALUES (%s, %s)
-        ON CONFLICT (date, siret) DO NOTHING;
+        ON CONFLICT ({SiretEvent.DATE}, {SiretEvent.SIRET}) DO NOTHING;
     """
     values = [(event.date, event.siret) for event in events]
 
