@@ -1,5 +1,6 @@
 from etl.tools.db_manager import DBManager
-from etl.tools.db_structure import TableName, CompaniesColumn, SiretSearchErrorColumn
+from etl.tools.db_structure import TableName, CompaniesColumn
+from etl.transform.siret_search_error import SiretSearchError
 
 
 def insert_companies(companies):
@@ -39,10 +40,10 @@ def insert_companies(companies):
 
 
 def insert_siren_error(siret):
-    query = f"""INSERT INTO __SCHEMA_NAME__.{TableName.SIRET_SEARCH_ERROR} ({SiretSearchErrorColumn.SIRET}, {SiretSearchErrorColumn.FAIL_COUNT})
+    query = f"""INSERT INTO __SCHEMA_NAME__.{TableName.SIRET_SEARCH_ERROR} ({SiretSearchError.SIRET}, {SiretSearchError.FAIL_COUNT})
         VALUES (%s, 1)
-        ON CONFLICT ({SiretSearchErrorColumn.SIRET})
-        DO UPDATE SET {SiretSearchErrorColumn.FAIL_COUNT} = {TableName.SIRET_SEARCH_ERROR}.{SiretSearchErrorColumn.FAIL_COUNT} + 1;
+        ON CONFLICT ({SiretSearchError.SIRET})
+        DO UPDATE SET {SiretSearchError.FAIL_COUNT} = {TableName.SIRET_SEARCH_ERROR}.{SiretSearchError.FAIL_COUNT} + 1;
     """
     try:
         DBManager().query(query, [(siret,)])

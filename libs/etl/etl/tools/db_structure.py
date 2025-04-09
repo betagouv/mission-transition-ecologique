@@ -21,8 +21,3 @@ class CompaniesColumn:
     WORKFORCE_CATEGORY = "workforce_category"
     WORKFORCE_MIN = "workforce_min"
     WORKFORCE_MAX = "workforce_max"
-
-
-class SiretSearchErrorColumn:
-    SIRET = "siret"
-    FAIL_COUNT = "fail_count"

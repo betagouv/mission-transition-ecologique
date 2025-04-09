@@ -1,6 +1,5 @@
 import json
 from pathlib import Path
-from etl.extract.db_queries import get_invalid_sirets
 import hashlib
 
 
@@ -11,13 +10,6 @@ with communes_json_path.open("r", encoding="utf-8") as file:
 naf_mapping_json_path = Path(__file__).parent.parent / "static" / "nafMapping.json"
 with naf_mapping_json_path.open("r", encoding="utf-8") as file:
     naf_mapping = json.load(file)
-
-
-def keep_valid_sirets(sirets):
-    invalid_sirets = get_invalid_sirets()
-    invalid_sirets.append(None)
-    return [siret for siret in sirets if siret not in invalid_sirets]
-
 
 def siren_establishment_to_db_establishment(siren_data):
     """Extracts relevant establishment details from API response."""

@@ -1,13 +1,13 @@
 from etl.tools.db_manager import DBManager
 from etl.transform.click_event import ClickEvent
-
+from etl.tools.db_structure import TableName
 
 def insert_click_events(events: list[ClickEvent]):
     if not len(events):
         return
 
     query = f"""
-        INSERT INTO __SCHEMA_NAME__.external_link_clicked_events (
+        INSERT INTO __SCHEMA_NAME__.{TableName.EXTERNAL_LINK_CLICKED_EVENTS} (
             {ClickEvent.SIRET},
             {ClickEvent.HYBRID_COMPANY_ID},
             {ClickEvent.CUSTOM_COMPANY_ID},

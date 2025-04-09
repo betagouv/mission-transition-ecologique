@@ -1,5 +1,6 @@
 from etl.transform.deals import Deal
 from etl.tools.db_manager import DBManager
+from etl.tools.db_structure import TableName
 
 
 def update_deals(deals: list[Deal]):
@@ -7,7 +8,7 @@ def update_deals(deals: list[Deal]):
         return
 
     query = f"""
-        INSERT INTO __SCHEMA_NAME__.opportunities (
+        INSERT INTO __SCHEMA_NAME__.{TableName.OPPORTUNITIES} (
             {Deal.BREVO_ID},
             {Deal.OPPORTUNITY_DATE},
             {Deal.COMPANY_SIRET},

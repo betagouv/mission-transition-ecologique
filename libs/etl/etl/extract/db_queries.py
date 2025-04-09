@@ -4,7 +4,9 @@ from etl.transform.deals import Deal
 from etl.transform.daily_web_stat import DailyWebStat
 from etl.transform.click_event import ClickEvent
 from etl.transform.detail_page_view_event import DetailPageViewEvent
-from etl.tools.db_structure import TableName, CompaniesColumn, SiretSearchErrorColumn
+from etl.transform.siret_search_error import SiretSearchError
+from etl.tools.db_structure import TableName, CompaniesColumn
+
 
 def get_new_sirets():
     query = f"""
@@ -51,7 +53,7 @@ def get_last_detail_page_view_event_date():
 
 def get_invalid_sirets():
     result = DBManager().query(
-        f"""SELECT {SiretSearchErrorColumn.SIRET} FROM __SCHEMA_NAME__.{TableName.SIRET_SEARCH_ERROR}
+        f"""SELECT {SiretSearchError.SIRET} FROM __SCHEMA_NAME__.{TableName.SIRET_SEARCH_ERROR}
         WHERE fail_count >=5;"""
     )
     return [row[0] for row in result]

@@ -1,5 +1,6 @@
 from etl.tools.db_manager import DBManager
 from etl.transform.detail_page_view_event import DetailPageViewEvent
+from etl.tools.db_structure import TableName
 
 
 def insert_detail_page_view_events(events: list[DetailPageViewEvent]):
@@ -7,7 +8,7 @@ def insert_detail_page_view_events(events: list[DetailPageViewEvent]):
         return
 
     query = f"""
-        INSERT INTO __SCHEMA_NAME__.detail_page_view (
+        INSERT INTO __SCHEMA_NAME__.{TableName.DETAIL_PAGE_VIEW} (
             {DetailPageViewEvent.SIRET},
             {DetailPageViewEvent.HYBRID_COMPANY_ID},
             {DetailPageViewEvent.CUSTOM_COMPANY_ID},
