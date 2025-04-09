@@ -16,7 +16,7 @@
           :key="button.label"
           :label="button.label"
           :secondary="button.secondary"
-          class="fr-card__desc fr-btn--tertiary-no-outline fr-text--bold fr-text--md"
+          class="fr-card__desc fr-btn--tertiary-no-outline fr-text--bold fr-text--md fr-btn-fullwidth fr-grid-row--center"
           :class="{ 'fr-bg--purple--light': button.isHovering.value }"
           @mouseover="button.isHovering.value = true"
           @mouseleave="button.isHovering.value = false"
@@ -49,7 +49,6 @@ withDefaults(defineProps<Props>(), {
     ' et les <strong>financements</strong> disponibles pour votre entreprise'
 })
 const toQuestionnaire = async () => {
-  console.log('click to questionnaire')
   if (isDataFull.value) {
     await router.push({
       name: RouteName.QuestionnaireStart

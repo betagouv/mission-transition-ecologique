@@ -11,32 +11,32 @@ export default class Breakpoint {
 
   static getCurrentBreakpoint() {
     try {
-      return this._breakpoints.active()
+      return this._breakpoints.active().value
     } catch {
-      return computed(() => BreakpointSizeTypes.md)
+      return BreakpointSizeTypes.md
     }
   }
 
   static isLargerOrEqual(size: BreakpointNameType) {
     const currentBreakpoint = this.getCurrentBreakpoint()
-    return currentBreakpoint.value && (currentBreakpoint.value === size || this._breakpoints.isGreater(size))
+    return currentBreakpoint && (currentBreakpoint === size || this._breakpoints.isGreater(size))
   }
 
   static isSmallerOrEqual(size: BreakpointNameType) {
     const currentBreakpoint = this.getCurrentBreakpoint()
-    return currentBreakpoint.value && (currentBreakpoint.value === size || this._breakpoints.isSmaller(size))
+    return currentBreakpoint && (currentBreakpoint === size || this._breakpoints.isSmaller(size))
   }
 
   static isMobile() {
     const currentBreakpoint = this.getCurrentBreakpoint()
-    return currentBreakpoint.value && currentBreakpoint.value === BreakpointNameType.xs
+    return currentBreakpoint && currentBreakpoint === BreakpointNameType.xs
   }
 
   static isSmallScreen() {
     const currentBreakpoint = this.getCurrentBreakpoint()
     return (
-      currentBreakpoint.value &&
-      [BreakpointNameType.xs, BreakpointNameType.sm, BreakpointNameType.md].includes(currentBreakpoint.value as BreakpointNameType)
+      currentBreakpoint &&
+      [BreakpointNameType.xs, BreakpointNameType.sm, BreakpointNameType.md].includes(currentBreakpoint as BreakpointNameType)
     )
   }
 }

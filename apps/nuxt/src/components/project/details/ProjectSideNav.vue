@@ -1,5 +1,8 @@
 <template>
-  <DsfrSideMenu class="fr-mr-2v fr-pr-0 fr-sticky">
+  <DsfrSideMenu
+    id="project-sidemenu"
+    class="fr-pr-0"
+  >
     <template #default>
       <a
         v-for="item in menuItems"
@@ -11,7 +14,7 @@
         {{ item.text }}
       </a>
       <div
-        v-if="hasFullRegisteredData && !Breakpoint.isMobile()"
+        v-if="isDataFull && !Breakpoint.isMobile()"
         class="fr-pt-18v fr-pl-4v"
       >
         <span class="fr-text--bold">Filtres</span>
@@ -31,8 +34,9 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const menuItems = computed(() => allMenuItems.filter((item) => item.condition !== false))
-const { isDataFull: hasFullRegisteredData } = storeToRefs(useCompanyDataStore())
+const { isDataFull } = storeToRefs(useCompanyDataStore())
+
+const menuItems = computed(() => allMenuItems.value.filter((item) => item.condition))
 
 const scrollTo = (id: string) => {
   const element = document.getElementById(id)
@@ -41,7 +45,7 @@ const scrollTo = (id: string) => {
   }
 }
 
-const allMenuItems = [
+const allMenuItems = computed(() => [
   {
     id: 'project',
     to: `project-description-details-title`,
@@ -54,13 +58,13 @@ const allMenuItems = [
     text: 'Pour aller plus loin',
     condition: props.project.moreDescription.length > 0
   },
-  { id: 'aids', to: `project-aids-title`, text: 'Mes aides' },
-  { id: 'contact', to: `form-title`, text: 'Contact' },
+  { id: 'aids', to: `project-aids-title`, text: 'Mes aides', condition: props.project.programs.length > 0 || isDataFull.value },
+  { id: 'contact', to: `form-title`, text: 'Contact', condition: props.project.programs.length > 0 || isDataFull.value },
   {
     id: 'linked-project',
     to: `project-linked-projects-title`,
     text: 'Prérequis',
     condition: props.project.linkedProjects.length > 0
   }
-]
+])
 </script>

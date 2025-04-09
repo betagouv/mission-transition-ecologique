@@ -12,39 +12,39 @@ export type Dispositif = {
   /**
    * Titre commercial du dispositif. Si pas de titre commercial clairement identifé, un titre générique du type "Dispositif { opérateur de contact }" peut être utilisé.
    */
-  titre: string;
+  titre: string
   /**
    * TODO
    */
-  promesse: string;
+  promesse: string
   /**
    * La description donne les principales informations du dispositif en quelques lignes
    */
-  description?: string;
+  description?: string
   /**
    * La description longue La description longue est facultative. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple pour définir un terme technique, pour détailler une loi à laquelle un dispositif fait référence ou pour détailler les projets concernés par un financement
    */
-  "description longue"?: string;
+  'description longue'?: string
   /**
    * Premier jour de validité de l'offre. Date au format JJ/MM/AAAA
    */
-  "début de validité"?: string;
+  'début de validité'?: string
   /**
    * Dernier jour de validité de l'offre. Date au format JJ/MM/AAAA
    */
-  "fin de validité"?: string;
+  'fin de validité'?: string
   /**
    * champ présent si le programme est temporairement désactivé
    */
-  "aide temporairement indisponible"?: string;
+  'aide temporairement indisponible'?: string
   /**
    * TODO
    */
-  url?: string;
+  url?: string
   /**
    * TODO
    */
-  illustration: string;
+  illustration: string
   /**
    * Objectifs intermédiaires à réaliser pour mettre en place le dispositif
    */
@@ -52,172 +52,106 @@ export type Dispositif = {
     /**
      * Explication de l'objectif intermédiaire à réaliser
      */
-    description?: string;
+    description?: string
     liens?: {
       /**
        * TODO
        */
-      lien?: string;
+      lien?: string
       /**
        * TODO
        */
-      texte?: string;
-      [k: string]: unknown;
-    }[];
-    [k: string]: unknown;
-  }[];
+      texte?: string
+      [k: string]: unknown
+    }[]
+    [k: string]: unknown
+  }[]
   /**
    * L'opérateur de contact est l'opérateur à contacter pour obtenir des informations supplémentaires sur le dispositif.
    */
-  "opérateur de contact":
-    | "ADEME"
-    | "ASP"
-    | "Agence de l'Eau Adour-Garonne"
-    | "Agence de l'Eau Artois-Picardie"
+  'opérateur de contact':
+    | 'ADEME'
+    | 'ASP'
     | "Agence de l'Eau Loire-Bretagne"
-    | "Agence de l'Eau Rhin-Meuse"
     | "Agence de l'Eau Rhône-Méditerranée-Corse"
-    | "Agence de l'Eau Seine-Normandie"
     | "Agence de l'Eau"
-    | "Bpifrance"
-    | "Breizh Fab"
-    | "CCI Auvergne-Rhône-Alpes"
-    | "CCI Bretagne"
-    | "CCI Centre-Val de Loire"
-    | "CCI Grand-Est"
-    | "CCI Hauts-de-France"
-    | "CCI Loir-et-Cher"
-    | "CCI Loiret"
-    | "CCI Morbihan"
-    | "CCI Normandie"
-    | "CCI Occitanie"
-    | "CCI ou CMA"
-    | "CCI Île-de-France"
-    | "CCI"
-    | "CEE"
-    | "CETIM"
-    | "CMA Auvergne-Rhône-Alpes"
-    | "CMA Bourgogne-Franche-Comté"
-    | "CMA Bretagne"
-    | "CMA Centre-Val de Loire"
-    | "CMA Grand-Est"
-    | "CMA Hauts-de-France"
-    | "CMA La Réunion"
-    | "CMA Loiret"
-    | "CMA Normandie"
-    | "CMA Nouvelle-Aquitaine"
-    | "CMA Provence-Alpes-Côte-D'Azur"
-    | "CMA Rhône"
-    | "CMA Île-de-France"
-    | "CMA"
-    | "DDFIP"
-    | "DREAL Bretagne"
-    | "EcoCO2"
+    | "Banque Publique d'Investissement France"
+    | 'Breizh Fab'
+    | 'CCI Bretagne'
+    | 'CCI ou CMA'
+    | "Chambre de Commerce et de l'Industrie"
+    | 'CEE'
+    | 'Centre Technique des Industries Mécaniques'
+    | "Chambre des Métiers et de l'Artisanat"
+    | 'DDFIP'
+    | 'DREAL Bretagne'
+    | 'EcoCO2'
     | "France Rénov'"
-    | "InvestEU"
-    | "La Poste"
-    | "Ministère de la Transition Écologique"
-    | "CAPEB - Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
-    | "Région Bretagne"
-    | "Région Grand Est"
-    | "Saur"
-    | "Suez"
-    | "UIMM - Union des industries et métiers de la métallurgie"
-    | "Véolia Eau"
+    | 'InvestEU'
+    | 'La Poste'
+    | 'Ministère de la Transition Écologique'
+    | "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
+    | 'Région Bretagne'
+    | 'Région Grand Est'
+    | 'Saur'
+    | 'Suez'
+    | 'Union des industries et métiers de la métallurgie'
+    | 'Véolia Eau'
     | "Centre national d'enseignement à distance"
-    | "ATEE"
-    | "CMA Corse"
-    | "CMA Ile-de-France"
-    | "CMA Occitanie"
-    | "CMA Pays-de-la-Loire"
-    | "DGE"
-    | "ORACE"
-    | "PROREFEI"
-    | "PRO-SMEn"
-    | "Voies Navigables de France"
-    | "CCI PdL"
-    | "Région Centre-Val de Loire"
-    | "Région Occitanie"
-    | "Région Haut-de-France"
-    | "Région Île-de-France"
-    | "Région Normandie"
-    | "Région Pays de la Loire"
-    | "Région Sud (PACA)"
-    | "Agence Régionale Biodiversité et Environnement"
-    | "Office français de la biodiversité"
-    | "TEE"
-    | "Région Bourgogne-Franche-Comté"
-    | "Région Auvergne-Rhône-Alpes"
-    | "Association pour la transition Bas Carbone"
-    | "La Fresque du Climat"
-    | "SGAR"
-    | "Région Nouvelle-Aquitaine"
-    | "Agence de Développement Economique de Corse"
-    | "Agence de Tourisme de la Corse"
-    | "Région Guadeloupe"
-    | "Startup d'Etat"
-    | "Confédération des petites et moyennes entreprises"
-    | "Prefecture Eure (27)"
-    | "CRESS"
-    | "Mouvement des entreprises de France"
-    | "Fédération National des Habitats de Plein Air"
-    | "Association pour l'Emploi des Cadres"
-    | "Réseau Entreprendre"
-    | "Avere-France"
-    | "Commissariat Général au Développement Durable"
-    | "Secrétariat Général à la Planification Ecologique"
-    | "Fondation Solar Impulse"
-    | "Service Éconmique de l'État en Région"
-    | "Les Entreprises S'engagent"
-    | "Chambres Regionales de l'Economie Sociale et Solidaire"
-    | "Opcommerce"
-    | "Placéco"
-    | "Agir Pour un Environnement Responsable"
-    | "ADN Tourisme"
-    | "ATOUT France"
-    | "Association Tourisme Durable"
-    | "Parcs Naturels Régionaux"
-    | "Grands Sites de France"
-    | "FNHPA"
-    | "UNIMEV"
-    | "SNELAC"
-    | "UMIH";
+    | 'Voies Navigables de France'
+    | 'Région Centre-Val de Loire'
+    | 'Région Occitanie'
+    | 'Région Haut-de-France'
+    | 'Région Île-de-France'
+    | 'Région Normandie'
+    | 'Région Pays de la Loire'
+    | 'Région Sud (PACA)'
+    | 'Agence Régionale Biodiversité et Environnement'
+    | 'Office français de la biodiversité'
+    | 'Région Bourgogne-Franche-Comté'
+    | 'Région Auvergne-Rhône-Alpes'
+    | 'Association pour la transition Bas Carbone'
+    | 'Région Nouvelle-Aquitaine'
+    | 'Agence de Développement Economique de Corse'
+    | 'Agence de Tourisme de la Corse'
+    | 'Région Guadeloupe'
+    | 'Avere-France'
   /**
    * Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.
    */
-  "autres opérateurs"?: Operators[];
+  'autres opérateurs'?: Operators[]
   /**
    * Précise s'il s'agit d'une aide financière, d'une étude, ou d'un prêt.
    */
-  "nature de l'aide": "étude" | "formation" | "financement" | "avantage fiscal" | "prêt";
+  "nature de l'aide": 'étude' | 'formation' | 'financement' | 'avantage fiscal' | 'prêt'
   /**
    * Précise s'il s'agit d'un dispositif en autonomie ou s'il y aura des interactions avec l'opérateur.
    */
-  "activable en autonomie"?: string;
+  'activable en autonomie'?: string
   /**
    * Uniquement pour les accompagnements. Ce champ est utile et requis uniquement si l'aide est de nature "accompagnement". Elle précise le coût reste à charge de l'utilisateur pour bénéficier de l'accompagnement. Il s'agit d'un champ texte, à des fins d'affichage.
    */
-  "coût de l'accompagnement"?: string;
+  "coût de l'accompagnement"?: string
   /**
    * Uniquement pour les accompagnements. Nombre de jours d'accompagnement du prestataire, suivi de l'étalement de son intervention le cas échéant. Par exemple : "12 jours de prestation répartis sur 6 à 8 mois"
    */
-  "durée de l'accompagnement"?: string;
+  "durée de l'accompagnement"?: string
   /**
    * Ce champ est utile et requis uniquement si l'aide est de nature "financement". Elle précise le montant du financement, de préférence en €, à défaut en %. Il s'agit d'un champ texte, à des fins d'affichage.
    */
-  "montant du financement"?: string;
+  'montant du financement'?: string
   /**
    * Ce champ est utile et requis uniquement si l'aide est de nature "avantage fiscal". Elle précise le montant de l'avantage fiscal, en %. Il s'agit d'un champ texte, à des fins d'affichage.
    */
-  "montant de l'avantage fiscal"?: string;
+  "montant de l'avantage fiscal"?: string
   /**
    * Ce champ est utile et requis uniquement si l'aide est de nature "prêt". Il s'agit d'un champ texte, à des fins d'affichage.
    */
-  "montant du prêt"?: string;
+  'montant du prêt'?: string
   /**
    * Ce champ est utile et requis uniquement si l'aide est de nature "prêt". Il s'agit d'un champ texte, à des fins d'affichage.
    */
-  "durée du prêt"?: string;
+  'durée du prêt'?: string
   /**
    * Les conditions d'éligibilité, écrites en langage naturel, pour affichage sur la fiche de résultat
    */
@@ -225,25 +159,25 @@ export type Dispositif = {
     /**
      * @minItems 1
      */
-    "secteur d'activité": [string, ...string[]];
+    "secteur d'activité": [string, ...string[]]
     /**
      * @minItems 1
      */
-    "secteur géographique": [string, ...string[]];
+    'secteur géographique': [string, ...string[]]
     /**
      * @minItems 2
      */
-    "taille de l'entreprise": [string, string, ...string[]];
+    "taille de l'entreprise": [string, string, ...string[]]
     /**
      * @minItems 1
      */
-    "nombre d'années d'activité": [string, ...string[]];
+    "nombre d'années d'activité": [string, ...string[]]
     /**
      * @minItems 1
      */
-    "autres critères d'éligibilité"?: [string, ...string[]];
-    [k: string]: unknown;
-  };
+    "autres critères d'éligibilité"?: [string, ...string[]]
+    [k: string]: unknown
+  }
   /**
    * Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.
    */
@@ -251,159 +185,93 @@ export type Dispositif = {
     /**
      * Mécanisme pour évaluer si un dispositif doit être affiché à un utilisateur ou non. Est souvent plus restrictive que les mécanismes d'éligibilité
      */
-    "entreprise . est ciblée":
+    'entreprise . est ciblée':
       | {
-          [k: string]: unknown;
+          [k: string]: unknown
         }
-      | string;
+      | string
     /**
      * Le nombre d'objectifs prioritaires auquel répond le dispositif.
      */
-    "entreprise . a un objectif ciblé"?: {
-      "une de ces conditions"?: string[];
-      [k: string]: unknown;
-    };
-    [k: string]: unknown;
-  };
+    'entreprise . a un objectif ciblé'?: {
+      'une de ces conditions'?: string[]
+      [k: string]: unknown
+    }
+    [k: string]: unknown
+  }
   /**
    * Certains programmes ont des caractéristiques différentes en fonction de différents paramètres tel que la région ou le domaine d'activité. Ces champs conditionnels permettent de gérer ces modifications par rapport au cas le plus commun.
    */
-  "champs conditionnels"?: {
-    "une de ces conditions"?: string[];
-    "toutes ces conditions"?: string[];
-    [k: string]: unknown;
-  }[];
+  'champs conditionnels'?: {
+    'une de ces conditions'?: string[]
+    'toutes ces conditions'?: string[]
+    [k: string]: unknown
+  }[]
 } & (
   | {
-      "nature de l'aide"?: "formation";
-      [k: string]: unknown;
+      "nature de l'aide"?: 'formation'
+      [k: string]: unknown
     }
   | {
-      "nature de l'aide"?: "financement";
-      [k: string]: unknown;
+      "nature de l'aide"?: 'financement'
+      [k: string]: unknown
     }
   | {
-      "nature de l'aide"?: "avantage fiscal";
-      [k: string]: unknown;
+      "nature de l'aide"?: 'avantage fiscal'
+      [k: string]: unknown
     }
   | {
-      "nature de l'aide"?: "prêt";
-      [k: string]: unknown;
+      "nature de l'aide"?: 'prêt'
+      [k: string]: unknown
     }
   | {
-      [k: string]: unknown;
+      [k: string]: unknown
     }
-);
+)
 export type Operators =
-  | "ADEME"
-  | "ASP"
-  | "Agence de l'Eau Adour-Garonne"
-  | "Agence de l'Eau Artois-Picardie"
+  | 'ADEME'
+  | 'ASP'
   | "Agence de l'Eau Loire-Bretagne"
-  | "Agence de l'Eau Rhin-Meuse"
   | "Agence de l'Eau Rhône-Méditerranée-Corse"
-  | "Agence de l'Eau Seine-Normandie"
   | "Agence de l'Eau"
-  | "Bpifrance"
-  | "Breizh Fab"
-  | "CCI Auvergne-Rhône-Alpes"
-  | "CCI Bretagne"
-  | "CCI Centre-Val de Loire"
-  | "CCI Grand-Est"
-  | "CCI Hauts-de-France"
-  | "CCI Loir-et-Cher"
-  | "CCI Loiret"
-  | "CCI Morbihan"
-  | "CCI Normandie"
-  | "CCI Occitanie"
-  | "CCI ou CMA"
-  | "CCI Île-de-France"
-  | "CCI"
-  | "CEE"
-  | "CETIM"
-  | "CMA Auvergne-Rhône-Alpes"
-  | "CMA Bourgogne-Franche-Comté"
-  | "CMA Bretagne"
-  | "CMA Centre-Val de Loire"
-  | "CMA Grand-Est"
-  | "CMA Hauts-de-France"
-  | "CMA La Réunion"
-  | "CMA Loiret"
-  | "CMA Normandie"
-  | "CMA Nouvelle-Aquitaine"
-  | "CMA Provence-Alpes-Côte-D'Azur"
-  | "CMA Rhône"
-  | "CMA Île-de-France"
-  | "CMA"
-  | "DDFIP"
-  | "DREAL Bretagne"
-  | "EcoCO2"
+  | "Banque Publique d'Investissement France"
+  | 'Breizh Fab'
+  | 'CCI Bretagne'
+  | 'CCI ou CMA'
+  | "Chambre de Commerce et de l'Industrie"
+  | 'CEE'
+  | 'Centre Technique des Industries Mécaniques'
+  | "Chambre des Métiers et de l'Artisanat"
+  | 'DDFIP'
+  | 'DREAL Bretagne'
+  | 'EcoCO2'
   | "France Rénov'"
-  | "InvestEU"
-  | "La Poste"
-  | "Ministère de la Transition Écologique"
-  | "CAPEB - Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
-  | "Région Bretagne"
-  | "Région Grand Est"
-  | "Saur"
-  | "Suez"
-  | "UIMM - Union des industries et métiers de la métallurgie"
-  | "Véolia Eau"
+  | 'InvestEU'
+  | 'La Poste'
+  | 'Ministère de la Transition Écologique'
+  | "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
+  | 'Région Bretagne'
+  | 'Région Grand Est'
+  | 'Saur'
+  | 'Suez'
+  | 'Union des industries et métiers de la métallurgie'
+  | 'Véolia Eau'
   | "Centre national d'enseignement à distance"
-  | "ATEE"
-  | "CMA Corse"
-  | "CMA Ile-de-France"
-  | "CMA Occitanie"
-  | "CMA Pays-de-la-Loire"
-  | "DGE"
-  | "ORACE"
-  | "PROREFEI"
-  | "PRO-SMEn"
-  | "Voies Navigables de France"
-  | "CCI PdL"
-  | "Région Centre-Val de Loire"
-  | "Région Occitanie"
-  | "Région Haut-de-France"
-  | "Région Île-de-France"
-  | "Région Normandie"
-  | "Région Pays de la Loire"
-  | "Région Sud (PACA)"
-  | "Agence Régionale Biodiversité et Environnement"
-  | "Office français de la biodiversité"
-  | "TEE"
-  | "Région Bourgogne-Franche-Comté"
-  | "Région Auvergne-Rhône-Alpes"
-  | "Association pour la transition Bas Carbone"
-  | "La Fresque du Climat"
-  | "SGAR"
-  | "Région Nouvelle-Aquitaine"
-  | "Agence de Développement Economique de Corse"
-  | "Agence de Tourisme de la Corse"
-  | "Région Guadeloupe"
-  | "Startup d'Etat"
-  | "Confédération des petites et moyennes entreprises"
-  | "Prefecture Eure (27)"
-  | "CRESS"
-  | "Mouvement des entreprises de France"
-  | "Fédération National des Habitats de Plein Air"
-  | "Association pour l'Emploi des Cadres"
-  | "Réseau Entreprendre"
-  | "Avere-France"
-  | "Commissariat Général au Développement Durable"
-  | "Secrétariat Général à la Planification Ecologique"
-  | "Fondation Solar Impulse"
-  | "Service Éconmique de l'État en Région"
-  | "Les Entreprises S'engagent"
-  | "Chambres Regionales de l'Economie Sociale et Solidaire"
-  | "Opcommerce"
-  | "Placéco"
-  | "Agir Pour un Environnement Responsable"
-  | "ADN Tourisme"
-  | "ATOUT France"
-  | "Association Tourisme Durable"
-  | "Parcs Naturels Régionaux"
-  | "Grands Sites de France"
-  | "FNHPA"
-  | "UNIMEV"
-  | "SNELAC"
-  | "UMIH";
+  | 'Voies Navigables de France'
+  | 'Région Centre-Val de Loire'
+  | 'Région Occitanie'
+  | 'Région Haut-de-France'
+  | 'Région Île-de-France'
+  | 'Région Normandie'
+  | 'Région Pays de la Loire'
+  | 'Région Sud (PACA)'
+  | 'Agence Régionale Biodiversité et Environnement'
+  | 'Office français de la biodiversité'
+  | 'Région Bourgogne-Franche-Comté'
+  | 'Région Auvergne-Rhône-Alpes'
+  | 'Association pour la transition Bas Carbone'
+  | 'Région Nouvelle-Aquitaine'
+  | 'Agence de Développement Economique de Corse'
+  | 'Agence de Tourisme de la Corse'
+  | 'Région Guadeloupe'
+  | 'Avere-France'

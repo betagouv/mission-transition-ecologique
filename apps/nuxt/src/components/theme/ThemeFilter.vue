@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-grid-row fr-grid-row--gutters">
+  <div class="fr-container fr-grid-row fr-px-md-0">
     <div class="fr-col-12">
       <TeeDsfrTags
         :tags="themeTypeTags"
