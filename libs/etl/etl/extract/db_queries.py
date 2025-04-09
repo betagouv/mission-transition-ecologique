@@ -1,13 +1,18 @@
 from etl.tools.db_manager import DBManager
-
+from etl.transform.siret_event import SiretEvent
+from etl.transform.deals import Deal
+from etl.transform.daily_web_stat import DailyWebStat
+from etl.transform.click_event import ClickEvent
+from etl.transform.detail_page_view_event import DetailPageViewEvent
+from etl.tools.db_structure import TableName, CompaniesColumn, SiretSearchErrorColumn
 
 def get_new_sirets():
-    query = """
-            SELECT DISTINCT siret FROM __SCHEMA_NAME__.web_registered_siret
+    query = f"""
+            SELECT DISTINCT {SiretEvent.SIRET} FROM __SCHEMA_NAME__.{TableName.WEB_REGISTERED_SIRET}
             UNION
-            SELECT DISTINCT company_siret FROM __SCHEMA_NAME__.opportunities
+            SELECT DISTINCT {Deal.COMPANY_SIRET} FROM __SCHEMA_NAME__.{TableName.OPPORTUNITIES}
             EXCEPT
-            SELECT DISTINCT siret FROM __SCHEMA_NAME__.companies;
+            SELECT DISTINCT {CompaniesColumn.SIRET} FROM __SCHEMA_NAME__.{TableName.COMPANIES};
         """
     try:
         result = DBManager().query(query)
@@ -26,27 +31,27 @@ def get_max(table, column):
 
 def get_last_webstat_date():
     ### Get the last date in the daily web stats format. Return a YYYY-MM-DD STRING ###
-    return get_max("daily_web_stats", "stat_date")
+    return get_max(TableName.DAILY_WEB_STATS, DailyWebStat.STAT_DATE)
 
 
 def get_last_siret_event_date():
     ### Get the last date in the daily web stats format. Return a %Y-%m-%d %H:%M:%S STRING ###
-    return get_max("web_registered_siret", "date")
+    return get_max(TableName.WEB_REGISTERED_SIRET, SiretEvent.DATE)
 
 
 def get_last_click_event_date():
     ### Get the last date in the click event date table. Return a %Y-%m-%d %H:%M:%S STRING ###
-    return get_max("external_link_clicked_events", "date")
+    return get_max(TableName.EXTERNAL_LINK_CLICKED_EVENTS, ClickEvent.DATE)
 
 
 def get_last_detail_page_view_event_date():
     ### Get the last date in the click event date table. Return a %Y-%m-%d %H:%M:%S STRING ###
-    return get_max("detail_page_view", "date")
+    return get_max(TableName.DETAIL_PAGE_VIEW, DetailPageViewEvent.DATE)
 
 
 def get_invalid_sirets():
     result = DBManager().query(
-        """SELECT siret FROM __SCHEMA_NAME__.siret_search_error
+        f"""SELECT {SiretSearchErrorColumn.SIRET} FROM __SCHEMA_NAME__.{TableName.SIRET_SEARCH_ERROR}
         WHERE fail_count >=5;"""
     )
     return [row[0] for row in result]

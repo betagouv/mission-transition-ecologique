@@ -1,17 +1,18 @@
 from etl.tools.db_manager import DBManager
+from etl.tools.db_structure import TableName, CompaniesColumn, SiretSearchErrorColumn
 
 
 def insert_companies(companies):
     if not companies:
         return
 
-    query = """
-        INSERT INTO __SCHEMA_NAME__.companies (
-            siret, naf_section, naf_division, naf_group, naf_class,
-            naf_code, city_code, department, region, workforce_category,
-            workforce_min, workforce_max
+    query = f"""
+        INSERT INTO __SCHEMA_NAME__.{TableName.COMPANIES} (
+            {CompaniesColumn.SIRET}, {CompaniesColumn.NAF_SECTION}, {CompaniesColumn.NAF_DIVISION}, {CompaniesColumn.NAF_GROUP}, {CompaniesColumn.NAF_CLASS},
+            {CompaniesColumn.NAF_CODE}, {CompaniesColumn.CITY_CODE}, {CompaniesColumn.DEPARTMENT}, {CompaniesColumn.REGION}, {CompaniesColumn.WORKFORCE_CATEGORY},
+            {CompaniesColumn.WORKFORCE_MIN}, {CompaniesColumn.WORKFORCE_MAX}
         ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-        ON CONFLICT (siret) DO NOTHING;
+        ON CONFLICT ({CompaniesColumn.SIRET}) DO NOTHING;
     """
     values = [
         (
@@ -38,11 +39,11 @@ def insert_companies(companies):
 
 
 def insert_siren_error(siret):
-    query = """INSERT INTO __SCHEMA_NAME__.siret_search_error (siret, fail_count)
+    query = f"""INSERT INTO __SCHEMA_NAME__.{TableName.SIRET_SEARCH_ERROR} ({SiretSearchErrorColumn.SIRET}, {SiretSearchErrorColumn.FAIL_COUNT})
         VALUES (%s, 1)
-        ON CONFLICT (siret)
-        DO UPDATE SET fail_count = siret_search_error.fail_count + 1;
-        """
+        ON CONFLICT ({SiretSearchErrorColumn.SIRET})
+        DO UPDATE SET {SiretSearchErrorColumn.FAIL_COUNT} = {TableName.SIRET_SEARCH_ERROR}.{SiretSearchErrorColumn.FAIL_COUNT} + 1;
+    """
     try:
         DBManager().query(query, [(siret,)])
     except Exception as e:
