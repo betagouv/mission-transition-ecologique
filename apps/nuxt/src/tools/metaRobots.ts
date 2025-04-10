@@ -1,53 +1,36 @@
 import Config from '@/config'
 
 export class MetaRobots {
-  static enforceProdOnly(original: string): string {
-    return true ? original : 'noindex, nofollow'
-  }
-
   static indexFollow() {
-    return {
-      meta: [
-        {
-          name: 'robots',
-          content: this.enforceProdOnly('index, follow')
-        }
-      ]
-    }
+    return this._setMetaRobots('index, follow')
   }
 
   static noIndexFollow() {
-    return {
-      meta: [
-        {
-          name: 'robots',
-          content: this.enforceProdOnly('noindex, follow')
-        }
-      ]
-    }
+    return this._setMetaRobots('noindex, follow')
   }
 
   static noIndexNoFollow() {
-    return {
-      meta: [
-        {
-          name: 'robots',
-          content: this.enforceProdOnly('noindex, nofollow')
-        }
-      ]
-    }
+    return this._setMetaRobots('noindex, nofollow')
   }
 
   static noIndexOnQueries(fullPath: string) {
     const shouldNoIndex = fullPath.includes('?')
     const content = shouldNoIndex ? 'noindex, follow' : 'index, follow'
+    return this._setMetaRobots(content)
+  }
+
+  private static _setMetaRobots(value: string) {
     return {
       meta: [
         {
           name: 'robots',
-          content: this.enforceProdOnly(content)
+          content: this._enforceProdOnly(value)
         }
       ]
     }
+  }
+
+  private static _enforceProdOnly(original: string): string {
+    return Config.isProduction() ? original : 'noindex, nofollow'
   }
 }
