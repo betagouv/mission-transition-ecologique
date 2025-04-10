@@ -19,6 +19,10 @@ export class ProgramService {
     this._program = new ProgramFeatures(programsService, currentDateService, PublicodesService.getInstance())
   }
 
+  public getRedirect(id: string): string | undefined {
+    return this._program.getRedirect(id)
+  }
+
   public getById(id: string): ProgramType | undefined {
     return this._program.getById(id)
   }

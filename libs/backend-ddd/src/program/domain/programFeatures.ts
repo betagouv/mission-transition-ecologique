@@ -100,4 +100,8 @@ export default class ProgramFeatures {
     })
     return objectivesArray
   }
+
+  public getRedirect(id: string): string | undefined {
+    throw new Error('Method not implemented.')
+  }
 }
