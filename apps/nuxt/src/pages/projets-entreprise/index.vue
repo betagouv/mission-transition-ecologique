@@ -34,7 +34,7 @@ import ProjectSorter from '@/tools/project/projectSorter'
 
 definePageMeta({
   name: RouteName.CatalogProjects,
-  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
+  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries]
 })
 
 const { projects, hasError } = storeToRefs(useProjectStore())

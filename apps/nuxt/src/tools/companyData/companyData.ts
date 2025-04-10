@@ -1,4 +1,5 @@
 import { useCompanyDataStore } from '@/stores/companyData'
+import { useFiltersStore } from '@/stores/filters'
 import { CompanyDataStorage } from '@/tools/companyData/companyDataStorage'
 import { useNavigationStore } from '@/stores/navigation'
 import {
@@ -96,6 +97,20 @@ export class CompanyData {
     return isValid
   }
 
+  static hasDataFull() {
+    const data = this.dataRef
+    const companyData = data.value[CompanyDataStorageKey.Company]
+    if (!companyData) {
+      return false
+    }
+    return CompanyDataValidator.validate(companyData)
+  }
+
+  static setDataFull() {
+    useCompanyDataStore().isDataFull = this.hasDataFull()
+    console.log('setDataFull', useCompanyDataStore().isDataFull)
+  }
+
   static isCompanySelected() {
     return useFiltersStore().companyDataSelected && useCompanyDataStore().isDataFull
   }
@@ -117,6 +132,7 @@ export class CompanyData {
   static resetData() {
     CompanyDataStorage.removeItem(CompanyDataStorageKey.Company)
     CompanyDataStorage.removeItem(CompanyDataStorageKey.Size)
+    this.setDataFull()
   }
 
   static updateData() {
@@ -126,6 +142,7 @@ export class CompanyData {
   static saveAndSetUsedTrackStore(data: CompanyDataType) {
     this.saveDataToStorage(data)
     useFiltersStore().setCompanyDataSelected(true)
+    // this.setDataFull()
     useUsedTrackStore().setFromStorage()
   }
 

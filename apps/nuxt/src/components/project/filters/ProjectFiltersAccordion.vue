@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="withTitle"
-    class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w"
+    class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6v"
   >
     Filtres
   </div>

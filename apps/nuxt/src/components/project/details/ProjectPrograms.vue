@@ -3,7 +3,7 @@
     v-if="isDataFull || countFilteredPrograms"
     id="project-aids-title"
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
-    title="💰 Mes aides"
+    :title="isCompanyDataSelected ? '💰 Vos aides' : '💰 Toutes les aides'"
     container-from="md"
   >
     <template #content>
@@ -29,6 +29,11 @@
               :email="Contact.email"
             />
           </div>
+          <p
+            v-if="isCompanyDataSelected && isDataFull && !navigationStore.hasSpinner && countFilteredPrograms"
+            class="fr-mb-0"
+            v-html="resume"
+          ></p>
           <ProjectProgramsList
             v-if="studyPrograms.length > 0 && !navigationStore.hasSpinner"
             :title="Translation.t('project.studyPrograms')"
@@ -78,6 +83,7 @@
 </template>
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
+import { CompanyData } from '@/tools/companyData'
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProgramAidType, ProjectType, OpportunityType, Color, ProgramTypeForFront } from '@/types'
 import Contact from '@/tools/contact'
@@ -95,6 +101,15 @@ const navigationStore = useNavigationStore()
 const { programs, hasError } = storeToRefs(useProgramStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormContainer')
+const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
+
+const resume = computed<string>(() =>
+  Translation.t('project.programsList', {
+    effectif: Translation.t('enterprise.structureSize.' + CompanyData.size),
+    secteur: CompanyData.company?.secteur,
+    region: CompanyData.company?.region
+  })
+)
 
 onServerPrefetch(async () => {
   await new ProgramManager().getDependentCompanyData()
