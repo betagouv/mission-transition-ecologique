@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import { MetaRobots } from '@/tools/metaRobots';
+import { MetaRobots } from '@/tools/metaRobots'
 import { RouteName } from '@/types'
 
 definePageMeta({

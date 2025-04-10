@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { Iframe } from '@/tools/iframe/iframe'
-import { MetaRobots } from '@/tools/metaRobots';
+import { MetaRobots } from '@/tools/metaRobots'
 
 definePageMeta({
   layout: 'iframe'
