@@ -69,6 +69,7 @@
 </template>
 
 <script setup lang="ts">
+import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { CompanyDataStorageKey, SizeToText, StructureSize } from '@/types'
 import { CompanyData } from '@/tools/companyData'
@@ -93,9 +94,12 @@ const navigation = new Navigation()
 const isCompanyDataSelected = computed({
   get: () => useFiltersStore().getCompanyDataSelected().value,
   set: (value: boolean) => {
-    useFiltersStore().setCompanyDataSelected(value)
+    useFiltersStore().companyDataSelected = value
     if (new Navigation().isCatalogProjects()) {
       new ProjectManager().getProjects()
+    }
+    if (new Navigation().isCatalogProjectDetail() || new Navigation().isCatalogPrograms()) {
+      new ProgramManager().getDependentCompanyData(true)
     }
   }
 })

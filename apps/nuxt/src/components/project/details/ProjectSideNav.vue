@@ -13,21 +13,16 @@
       >
         {{ item.text }}
       </a>
-      <div
-        v-if="isDataFull && !Breakpoint.isMobile()"
-        class="fr-pt-18v fr-pl-4v"
-      >
-        <span class="fr-text--bold">Filtres</span>
-        <div class="fr-py-2v fr-text--sm fr-border-b--grey fr-text--bold">Votre entreprise</div>
-        <FilterByCompanyData />
-      </div>
+      <ProjectFiltersAccordion
+        v-if="isDataFull"
+        with-title
+      />
     </template>
   </DsfrSideMenu>
 </template>
 <script setup lang="ts">
 import { ProjectType } from '@/types'
 import { Scroll } from '@/tools/scroll'
-import Breakpoint from '@/tools/breakpoints'
 
 interface Props {
   project: ProjectType

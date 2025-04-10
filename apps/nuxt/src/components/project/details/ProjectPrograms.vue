@@ -83,6 +83,7 @@
 </template>
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
+import { CompanyData } from '@/tools/companyData'
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProgramAidType, ProjectType, OpportunityType, Color, ProgramTypeForFront } from '@/types'
 import Contact from '@/tools/contact'
@@ -123,10 +124,7 @@ const countFilteredPrograms = computed(() => {
 })
 
 const filteredPrograms = computed(() => {
-  if (isCompanyDataSelected.value) {
-    return programs.value && props.project ? programs.value.filter((program) => props.project?.programs.includes(program.id)) : []
-  }
-  return programs.value
+  return programs.value && props.project ? programs.value.filter((program) => props.project?.programs.includes(program.id)) : []
 })
 
 const studyPrograms = computed(() => {
