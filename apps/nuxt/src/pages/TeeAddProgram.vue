@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineRouteRules } from '#imports'
+import { MetaRobots } from '@/tools/metaRobots'
 import { RouteName } from '@/types'
 
 definePageMeta({
@@ -24,12 +24,7 @@ definePageMeta({
   name: RouteName.AddProgram
 })
 
-defineRouteRules({
-  sitemap: {
-    priority: 0,
-    changefreq: 'monthly'
-  }
-})
+useHead(MetaRobots.noIndexNoFollow())
 </script>
 <style lang="scss" scoped>
 .tee-baserow-form {

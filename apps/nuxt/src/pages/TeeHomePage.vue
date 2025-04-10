@@ -23,6 +23,7 @@
 <script setup lang="ts">
 import { defineRouteRules } from '#imports'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
+import { MetaRobots } from '@/tools/metaRobots'
 import { FilterItemKeys, RouteName } from '@/types'
 
 const { filters } = storeToRefs(useFiltersStore())
@@ -39,4 +40,6 @@ defineRouteRules({
     changefreq: 'weekly'
   }
 })
+
+useHead(MetaRobots.indexFollow())
 </script>

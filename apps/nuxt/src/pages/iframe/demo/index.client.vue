@@ -11,8 +11,11 @@
 
 <script setup lang="ts">
 import { Iframe } from '@/tools/iframe/iframe'
+import { MetaRobots } from '@/tools/metaRobots';
 
 definePageMeta({
   layout: 'iframe'
 })
+
+useHead(MetaRobots.noIndexFollow())
 </script>

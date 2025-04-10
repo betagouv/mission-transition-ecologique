@@ -86,13 +86,7 @@ export interface CatalogProps {
   hasSideBar: boolean
 }
 const props = defineProps<CatalogProps>()
-const route = useRoute()
 
-useHead(() => {
-  return {
-    meta: [{ name: 'robots', content: route.fullPath.includes('?') ? 'noindex, follow' : 'index, follow' }]
-  }
-})
 useSeoMeta(MetaSeo.get(props.title, props.description))
 
 const theme = Theme.getThemeFromSelectedTheme()
