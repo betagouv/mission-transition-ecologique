@@ -7,6 +7,8 @@ import { ProgramBaserow } from '../../common/baserow/programBaserow'
 import { Logger } from '../../common/logger/logger'
 import { CoreGenerator } from './coreGenerator'
 import { LoggerType } from '../../common/logger/types'
+import { ProgramUtils } from '../programUtils'
+import Redirect from '../../common/redirect/redirect'
 
 export class ProgramYamlsGenerator {
   private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -17,17 +19,20 @@ export class ProgramYamlsGenerator {
     this._logger = new Logger(LoggerType.Program)
   }
 
-  async createProgramYamls(): Promise<void> {
+  async updatePrograms(): Promise<void> {
     // while working on the script, to avoid hitting Baserow API limits and to decrease our global impact, please cache locally the data :
     // on the first run use getPrograms(false) then for all following call use getPrograms(true)
     const programs = await new ProgramBaserow().getPrograms(false)
-
     for (const program of programs) {
-      if (!program.Statuts.includes(Status.InProd) && !program.Statuts.includes(Status.InProdNotAvailable)) {
-        continue
+      if (ProgramUtils.isInProd(program)) {
+        await this._createProgramYaml(program)
       }
-      await this._createProgramYaml(program)
     }
+
+    const redirectWatchedPrograms = programs.filter((program) => {
+      return ProgramUtils.isInProd(program) || program.Statuts.includes(Status.Replaced)
+    })
+    new Redirect(this._logger).updateProgramRedirects(redirectWatchedPrograms)
 
     this._logger.write('programYaml.log')
     return

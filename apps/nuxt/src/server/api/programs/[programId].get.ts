@@ -17,6 +17,14 @@ export default defineEventHandler(async (event) => {
 const programCached = cachedFunction(
   async (event: H3Event, programId: string, questionnaireData: QuestionnaireData) => {
     const programService = new ProgramService()
+    const redirect = programService.getRedirect(programId)
+    if (redirect) {
+      setResponseStatus(event, 202)
+      return {
+        newProgramId: redirect,
+        newApiUrl: `/api/programs/${redirect}`
+      }
+    }
     const program = programService.getOneWithMaybeEligibility(programId, questionnaireData)
 
     if (program.isErr) {

@@ -9727,8 +9727,8 @@
   },
   {
     "titre": "Accompagnement à l'Écolabel européen",
-    "promesse": "Valorisez la qualité environnementale des produits et services de votre entreprise",
-    "description": "Obtenez l'Écolabel européen, le seul label écologique public et officiel européen permettant de valoriser des produits et services plus respectueux de l’environnement tout en garantissant des performances identiques à celles des produits et services analogues. Valorisez ainsi votre engagement auprès des consommateurs et des acheteurs professionnels grâce à l’Écolabel européen qui garantit un impact limité de vos produits et services sur l’environnement et la santé.",
+    "promesse": "Valorisez votre engagement environnemental grâce à l’Écolabel européen",
+    "description": "L’Ecolabel européen est le seul label écologique officiel de l’Union européenne, qui récompense les produits et services ayant un faible impact environnemental et sanitaire. Il est un excellent moyen pour une entreprise de valoriser son engagement auprès des consommateurs et des acheteurs professionnels. \nVous souhaitez réaliser les démarches pour obtenir l’Écolabel européen sur un produit ou un service ? Suivez les étapes suivantes :",
     "description longue": "Les catégories de produits pouvant bénéficier de l'écolabel européen sont les suivantes :\n- Produits cosmétiques et de soin pour animaux\n- Détergents textiles\n- Détergents vaisselles à la main\n- Détergents pour lave-vaisselle\n- Détergents pour lave-vaisselle industriel ou destinés aux collectivités\n- Détergents textiles à usage industriel ou destinés aux collectivités\n- Produits de nettoyage pour surfaces dures\n- Milieux de culture et amendements pour sols\n- Produits de protection hygiénique absorbants et coupes menstruelles réutilisables\n- Peintures et vernis d'intérieur ou d'extérieur\n- Mouchoirs, papier toilette, serviettes en papier\n- Papier graphique\n- Produits en papier imprimé, produits de papeterie et sacs en papier\n- Les prestations de nettoyage intérieur et les hébergements touristiques (hôtels, campings, etc.) peuvent également bénéficier de l'écolabel européen.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
@@ -9764,13 +9764,13 @@
         ]
       },
       {
-        "description": "Vous pouvez nous contacter depuis le formulaire pour être accompagné tout au long de votre certification par l'ADEME tout en bénéficiant d’aides financières."
+        "description": "Contactez les conseillers de l'ADEME depuis le formulaire pour être accompagné tout au long de votre certification tout en bénéficiant d’aides financières."
       },
       {
         "description": "Constituez votre dossier et envoyez-le à votre organisme certificateur, pour analyse et audit."
       },
       {
-        "description": "Créez un compte sur la plateforme E-cat de la Commission européenne, pour être référencé et gagner en visibilité.",
+        "description": "Créez un compte sur la plateforme E-cat de la Commission européenne.",
         "liens": [
           {
             "lien": "https://webgate.ec.europa.eu/cas/eim/external/register.cgi",
@@ -16202,9 +16202,9 @@
     "titre": "Fond Vert - Territoires d'Industrie",
     "promesse": "Financez votre projet industriel d'intérêt général en matière de transition écologique ",
     "description": "Vous portez un projet de développement industriel présentant un intérêt général manifeste en termes de revitalisation économique et de transition écologique ?  Le programme \"Territoires d’industrie\" soutient les entreprises porteuses de projets d’investissements industriels ambitieux et exemplaires sur le\nplan environnemental, socio-économique et territorial. ",
-    "description longue": "Les projets éligibles sont des projets d’investissements industriels exemplaires sur le plan environnemental qui contribuent à l’émergence, au renforcement ou à la réindustrialisation de chaînes de valeur industrielles clés pour la transition écologique.\nAfin d’être éligibles, les projets doivent être suffisamment matures. \n\nPar exemple :\n• Bioéconomie pour le développement de produits biosourcés (chanvre, lin, laine, bois, paille, bioéconomie marine, chimie, etc.) ;\n• Nouvelles mobilités durables (vélos, vélos-cargos, véhicules intermédiaires, etc.) ;\n• Souveraineté alimentaire et relocalisation des filières agroalimentaires (unités de\ntransformation locale de production, par exemple en lien avec un projet alimentaire\nterritorial, etc.) ;\n• Relocalisation de biens de consommation courants (habillement, mobilier, etc.) avec un\nprocess significativement plus respectueux de l’environnement que les standards ;\n• Productions industrielles contribuant au recyclage de matériaux ou matières premières, à l’économie circulaire et au réemploi, ou à la valorisation de déchets et co-produits\n(équipements de la transition énergétique, de la rénovation du bâti, etc.) ; \n• Projets qui s’inscrivent dans une stratégie de diversification pour des territoires fragiles dont\nl’économie est impactée par le changement climatique (notamment territoires de montagne). \n• Projets d’investissements contribuant au développement des\ncompétences (école de production, centre de formation, plateau technique, etc.) \n\nÀ titre exceptionnel, un soutien spécifique et renforcé peut être donné aux projets qui contribuent à la redynamisation de territoires « rebond industriel » (territoires confrontés à de fortes difficultés industrielles ou des restructurations importantes de chaînes de valeur)",
-    "début de validité": "01/01/2024",
-    "fin de validité": "31/12/2024",
+    "description longue": "Les projets éligibles sont des projets d’investissements industriels exemplaires sur le plan environnemental qui contribuent à l’émergence, au renforcement ou à la réindustrialisation de chaînes de valeur industrielles clés pour la transition écologique.\nAfin d’être éligibles, les projets doivent être suffisamment matures. \n\nPar exemple :\n• Bioéconomie pour le développement de produits biosourcés (chanvre, lin, laine, bois, paille, bioéconomie marine, chimie, etc.) ;\n• Nouvelles mobilités durables (vélos, vélos-cargos, véhicules intermédiaires, etc.) ;\n• Souveraineté alimentaire et relocalisation des filières agroalimentaires (unités de\ntransformation locale de production, par exemple en lien avec un projet alimentaire\nterritorial, etc.) ;\n• Relocalisation de biens de consommation courants (habillement, mobilier, etc.) avec un\nprocess significativement plus respectueux de l’environnement que les standards ;\n• Productions industrielles contribuant au recyclage de matériaux ou matières premières, à l’économie circulaire et au réemploi, ou à la valorisation de déchets et co-produits\n(équipements de la transition énergétique, de la rénovation du bâti, etc.) ; \n• Projets qui s’inscrivent dans une stratégie de diversification pour des territoires fragiles dont\nl’économie est impactée par le changement climatique (notamment territoires de montagne). \n• Projets d’investissements contribuant au développement des\ncompétences (école de production, centre de formation, plateau technique, etc.) \n\nA titre auxiliaire, la mesure peut soutenir des projets d’investissements contribuant au développement des compétences nécessaires à la réindustrialisation de ces chaînes de valeur industrielles.",
+    "début de validité": "12/03/2025",
+    "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
     "url": "https://www.demarches-simplifiees.fr/commencer/fonds-vert-3-territoires-industrie",
@@ -16215,7 +16215,7 @@
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
         "liens": [
           {
-            "lien": "https://www.demarches-simplifiees.fr/commencer/fonds-vert-3-territoires-industrie",
+            "lien": "https://static.demarches-simplifiees.fr/v1/AUTH_db3cbfc79c914f87b192ff7c6bb176f0/ds_activestorage_backup/2025/03/12/FW/FWfFecay7ZqKitr9nb8MUTC6TYyS?temp_url_sig=09006c98ec617b788fc091c9dd53c0219ad65e39&temp_url_expires=1744023670&filename=FV_Cahier_Axe3_Territoires%20industrie_v3.1.pdf&inline",
             "texte": "Conditions d'éligibilité et de financement"
           }
         ]
@@ -16224,7 +16224,7 @@
         "description": "Vérifiez votre éligibilité géographique. Cette aide s'adresse aux entreprises situées dans le périmètre d’un \"Territoire d’industrie\".",
         "liens": [
           {
-            "lien": "https://agence-cohesion-territoires.gouv.fr/sites/default/files/inline-images/perimetre_des_territoires_dindustrie_2023-2027_high_0.png",
+            "lien": "https://www.observatoire-des-territoires.gouv.fr/outils/cartographie-interactive/#c=indicator&i=_zon_.ti2&view=map72",
             "texte": "Territoires d'industrie 2023-2027"
           }
         ]
@@ -16264,7 +16264,7 @@
       ],
       "autres critères d'éligibilité": [
         "Cette aide est destinée aux entreprises situées sur les territoires d'industrie 2023-2027",
-        "Les projets doivent présenter une assiette minimale de dépenses de 400 000 €",
+        "Les projets doivent présenter une assiette minimale de dépenses de 400 000 € (excepté Corse et Outre-Mer)",
         "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)"
       ]
     },

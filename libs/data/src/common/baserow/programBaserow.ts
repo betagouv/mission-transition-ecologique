@@ -71,15 +71,17 @@ export class ProgramBaserow extends AbstractBaserow {
       'Couverture géographique': geographicCoverage,
       'Zones géographiques': programGeographicAreas,
       'Thèmes Ciblés': programThemes,
+      'redirection-vers': redirectProgram,
       ...nonModifiedFields
     } = program
 
-    const rawStatuts = Statuts.map((linkedObj) => linkedObj.value as Status)
+    const rawStatuts = Statuts.map(({ value }) => (Object.values(Status).includes(value as Status) ? (value as Status) : Status.Other))
     const domainContactOperator = this._replaceLinkObjectByTableData<Operator>(contactOperator, this._operators)
     const domainOtherOperator = this._replaceLinkObjectByTableData<Operator>(otherOperator, this._operators)
     const domainGeographicCoverage = this._replaceLinkObjectByTableData<GeographicCoverage>(geographicCoverage, geographicCoverages)
     const domainProgramGeographicAreas = this._replaceLinkObjectByTableData<GeographicAreas>(programGeographicAreas, this._geographicAreas)
     const domainProgramThemes = this._replaceLinkObjectByTableData<Theme>(programThemes, themes)
+    const redirectsIds = redirectProgram.map((linkedObj) => linkedObj.id)
 
     const rawProgram: DataProgram = {
       ...nonModifiedFields,
@@ -89,7 +91,8 @@ export class ProgramBaserow extends AbstractBaserow {
       "Nature de l'aide": aidTypes ? (aidTypes.value as DataProgramType) : DataProgramType.Undefined,
       'Zones géographiques': domainProgramGeographicAreas,
       'Couverture géographique': domainGeographicCoverage[0],
-      'Thèmes Ciblés': domainProgramThemes
+      'Thèmes Ciblés': domainProgramThemes,
+      'redirection-vers': redirectsIds
     }
 
     return rawProgram

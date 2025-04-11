@@ -52,4 +52,8 @@ export class ProjectService {
   public getBySlug(id: string): ProjectType | undefined {
     return this._project.getBySlug(id)
   }
+
+  public getRedirect(id: string): string | undefined {
+    return this._project.getRedirect(id)
+  }
 }

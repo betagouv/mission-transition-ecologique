@@ -27,3 +27,8 @@ export { jsonPrograms }
 
 export { default as communes } from './communes.json'
 export { default as nafMapping } from './nafMapping.json'
+
+import { default as untypedRedirects } from './redirects.json'
+import { RedirectJson } from '../src/common/redirect/types'
+const redirects: RedirectJson = untypedRedirects as unknown as RedirectJson
+export { redirects }
