@@ -1,6 +1,7 @@
 import { QuestionnaireData } from '@tee/common'
 import { ProjectEligibility, ProjectType } from '@tee/data'
 import { projects } from '@tee/data/static'
+import { RedirectService } from '../../common/application/redirectService'
 
 export default class ProjectFeatures {
   public getById(id: number): ProjectType | undefined {
@@ -23,5 +24,9 @@ export default class ProjectFeatures {
     projects.sort((a, b) => {
       return a.priority - b.priority
     })
+  }
+
+  public getRedirect(id: string): string | undefined {
+    return new RedirectService().getProjectRedirect(id)
   }
 }

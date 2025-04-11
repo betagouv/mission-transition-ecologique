@@ -1,5 +1,5 @@
 import { QuestionnaireData, serverQuestionnaireDataSchema } from '@tee/common'
-import { defineEventHandler, H3Event, sendRedirect } from 'h3'
+import { defineEventHandler, H3Event } from 'h3'
 import { ProgramNotFoundError, ProgramService } from '@tee/backend-ddd'
 import { z } from 'zod'
 
@@ -19,7 +19,8 @@ const programCached = cachedFunction(
     const programService = new ProgramService()
     const redirect = programService.getRedirect(programId)
     if (redirect) {
-      return sendRedirect(event, redirect, 301)
+      console.log('/api/programs/' + redirect)
+      return sendRedirect(event, '/api/programs/' + redirect, 301)
     }
     const program = programService.getOneWithMaybeEligibility(programId, questionnaireData)
 
