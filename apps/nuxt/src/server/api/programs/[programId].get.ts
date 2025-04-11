@@ -19,8 +19,11 @@ const programCached = cachedFunction(
     const programService = new ProgramService()
     const redirect = programService.getRedirect(programId)
     if (redirect) {
-      console.log('/api/programs/' + redirect)
-      return sendRedirect(event, '/api/programs/' + redirect, 301)
+      setResponseStatus(event, 202)
+      return {
+        newProgramId: redirect,
+        newApiUrl: `/api/programs/${redirect}`
+      }
     }
     const program = programService.getOneWithMaybeEligibility(programId, questionnaireData)
 
