@@ -21,12 +21,15 @@
 </template>
 
 <script setup lang="ts">
+import { MetaRobots } from '@/tools/metaRobots'
 import { RouteName } from '@/types'
 
 definePageMeta({
   path: '/stats',
   name: RouteName.Statistics
 })
+
+useHead(MetaRobots.indexFollow())
 </script>
 
 <style scoped>

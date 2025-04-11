@@ -120,7 +120,7 @@ if (currentProgram.value && navigation.isByRouteName(RouteName.CatalogProgramFro
   })
 }
 
-useSeoMeta(MetaSeo.get(currentProgram.value?.titre, currentProgram.value?.description, currentProgram.value?.illustration))
+useSeoMeta(MetaSeo.get(currentProgram.value?.titre, currentProgram.value?.description))
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())

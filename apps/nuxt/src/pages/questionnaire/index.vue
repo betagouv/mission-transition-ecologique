@@ -8,8 +8,8 @@
 </template>
 
 <script setup lang="ts">
-import { defineRouteRules } from '#imports'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
+import { MetaRobots } from '@/tools/metaRobots'
 import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 
@@ -18,10 +18,5 @@ definePageMeta({
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
 })
 
-defineRouteRules({
-  sitemap: {
-    priority: 0,
-    changefreq: 'monthly'
-  }
-})
+useHead(MetaRobots.noIndexNoFollow())
 </script>
