@@ -2329,10 +2329,7 @@
     "mainTheme": "eco-design",
     "programs": [
       "etude-alimentation-durable",
-      "etude-biodechets",
-      "etude-gaspillage-alimentaire",
       "fonds-tourisme-durable",
-      "gestion-des-biodechets",
       "cedre-investissement",
       "sud-pret-climat",
       "pret-energie-aura",
@@ -2872,6 +2869,53 @@
     ]
   },
   {
+    "id": 566,
+    "slug": "trajet-ferroviaire-train-metro",
+    "title": "Déplacements en train",
+    "nameTag": "🚃 train",
+    "shortDescription": "Le train, un mode de transport à haute efficacité énergétique",
+    "image": "/images/projet/train.webp",
+    "longDescription": "Réduire l’empreinte carbone liée aux déplacements professionnels est un levier essentiel pour les entreprises qui engagent leur transition écologique. Parmi les solutions les plus efficaces et accessibles, le train se distingue par son excellent bilan environnemental. En remplaçant les trajets professionnels effectués en voiture ou en avion par des voyages en train, votre entreprise réduit considérablement ses émissions tout en conservant confort, rapidité et praticité.\n\nPrenons l’exemple concret d’un trajet Nantes-Paris. Les émissions sont les suivantes :\n\n- Train : 1,2 kg de CO₂\n\n- Voiture thermique : 84 kg de CO₂\n\n- Avion : 88,5 kg de CO₂\n\nAinsi, choisir le train pour ce trajet réduit les émissions de CO₂ d’environ 98 % par rapport à la voiture ou l’avion.\\\nEn intégrant le train dans votre politique de mobilité, votre entreprise peut réaliser des réductions significatives d'émissions de CO₂, contribuant ainsi activement à la lutte contre le changement climatique.",
+    "moreDescription": "- [**Calculer l'impact carbone de vos trajets**](https://impactco2.fr/outils/transport) en fonction du moyen de transport, avec l'outil Impact CO2.\n- [**Faire essayer pour faire adopter : l'opération \"Allez-vous préférer le train ?\"**](https://librairie.ademe.fr/societe-et-politiques-publiques/6517-faire-essayer-pour-faire-adopter-l-operation-allez-vous-preferer-le-train-.html), par l'ADEME.",
+    "themes": [
+      "mobility"
+    ],
+    "mainTheme": "mobility",
+    "programs": [
+      "amelioration-qualite-de-l-air",
+      "fresque-de-la-mobilite",
+      "plan-de-mobilite"
+    ],
+    "linkedProjects": [
+      16
+    ],
+    "priority": "1000",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
+  },
+  {
     "id": 666,
     "slug": "tourisme-zero-dechet",
     "title": "Tourisme zéro déchet",
@@ -3027,6 +3071,51 @@
       "D",
       "F",
       "H",
+      "U"
+    ]
+  },
+  {
+    "id": 863,
+    "slug": "cyclologistique",
+    "title": "Cyclologistique",
+    "nameTag": "🚴‍♀️ cyclologistique",
+    "shortDescription": "La cyclologistique est le transport de marchandises à l'aide d'un vélo.",
+    "image": "/images/projet/cyclologistique.webp",
+    "longDescription": "En ville, le transport et la livraison de marchandises est polluant, bruyant et consommateur d'espace public (stationnement, embouteillages...). La cyclologistique vous permet de reporter une partie de ces flux sur le vélo, un mode de transport écologique et doux.\n\nEn favorisant des fournisseurs qui utilisent la cyclologistique ou en faisant vous-même l'acquisition de vélo-cargos ou de cycles à assistance électrique, vous contribuez à réduire l'émission des gaz à effet de serre et à désencombrer les rues des utilitaires. Vous affichez également les ambitions écologiques et responsables de votre entreprise !",
+    "moreDescription": "- [**Les vélos cargos pour optimiser la logistique décarbonée du dernier kilomètre**](https://librairie.ademe.fr/mobilite-et-transports/5903-les-velos-cargos-pour-optimiser-la-logistique-decarbonee-du-dernier-kilometre.html), par l'ADEME.\n- [**Panorama de la cyclologistique en France**](https://lesboitesavelo.org/panorama-cyclologistique-france2023/), état des lieux, enjeux et recommandations pour la filière cyclologistique par L’association Boîtes à Vélo.",
+    "themes": [
+      "mobility"
+    ],
+    "mainTheme": "mobility",
+    "programs": [
+      "plan-de-mobilite"
+    ],
+    "linkedProjects": [
+      16
+    ],
+    "priority": "230",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
       "U"
     ]
   }
