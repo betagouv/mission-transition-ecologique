@@ -37,8 +37,3 @@ export type ProgramTypeWithEligibility = ProgramType & {
 export type ProgramTypeForFront = Exclude<ProgramTypeWithEligibility, 'publicodes'> & {
   filters?: ProgramFiltersType
 }
-
-export type ProgramRedirect = {
-  newProgramId: string
-  newApiUrl: string
-}

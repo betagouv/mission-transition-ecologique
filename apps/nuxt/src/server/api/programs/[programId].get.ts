@@ -19,8 +19,7 @@ const programCached = cachedFunction(
     const programService = new ProgramService()
     const redirect = programService.getRedirect(programId)
     if (redirect) {
-      const originalUrl = getRequestURL(event)
-      const queryString = originalUrl.search
+      const queryString = getRequestURL(event).search
       const newUrl = `/api/programs/${redirect}${queryString}`
       return sendRedirect(event, newUrl, 301)
     }

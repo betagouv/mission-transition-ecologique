@@ -23,6 +23,17 @@ export default class Redirect {
     this.handleProjectRenaming(projects)
     this.handleProjectReplacements(projects)
 
+    this._updateJsonFile()
+  }
+
+  updateProgramRedirects(programs: DataProgram[]) {
+    this.handleProgramRenaming(programs)
+    this.handleProgramReplacements(programs)
+
+    this._updateJsonFile()
+  }
+
+  private _updateJsonFile() {
     const dirname = path.dirname(fileURLToPath(import.meta.url))
     const outputFilePath: string = path.join(dirname, this._jsonPath)
     FileManager.writeJson(outputFilePath, this.newRedirectData, 'Project redirections updated')
@@ -30,10 +41,11 @@ export default class Redirect {
 
   handleProjectRenaming(projects: DataProject[]) {
     projects.forEach((project) => {
-      if (this.newRedirectData.project_rowid_to_url_mapping[project.id]) {
-        if (this.newRedirectData.project_rowid_to_url_mapping[project.id] != project.slug) {
-          this._updateProjectSlug(this.newRedirectData.project_rowid_to_url_mapping[project.id], project.slug)
-        }
+      if (
+        this.newRedirectData.project_rowid_to_url_mapping[project.id] &&
+        this.newRedirectData.project_rowid_to_url_mapping[project.id] != project.slug
+      ) {
+        this._updateProjectSlug(this.newRedirectData.project_rowid_to_url_mapping[project.id], project.slug)
       }
 
       this.newRedirectData.project_rowid_to_url_mapping[project.id] = project.slug
@@ -58,11 +70,10 @@ export default class Redirect {
         }
 
         const newSlug = this.newRedirectData.project_rowid_to_url_mapping[project.redirectTo]
-        const redirectInProd = projects.some((proj) => proj.id === project.redirectTo)
-        if (!newSlug || !redirectInProd) {
+        const redirectValid = projects.some((proj) => proj.id === project.redirectTo)
+        if (!newSlug || !redirectValid) {
           this._logger.log(LogLevel.Critic, "Redirection vers un projet non valide, risque d'erreur 404", project.title, project.id)
         } else {
-          // Add or update the redirection for this project's slug
           this._updateProjectSlug(project.slug, newSlug)
         }
       } else {
@@ -72,21 +83,13 @@ export default class Redirect {
     })
   }
 
-  updateProgramRedirects(programs: DataProgram[]) {
-    this.handleProgramRenaming(programs)
-    this.handleProgramReplacements(programs)
-
-    const dirname = path.dirname(fileURLToPath(import.meta.url))
-    const outputFilePath: string = path.join(dirname, this._jsonPath)
-    FileManager.writeJson(outputFilePath, this.newRedirectData, 'Program redirections updated')
-  }
-
   handleProgramRenaming(programs: DataProgram[]) {
     programs.forEach((program) => {
-      if (this.newRedirectData.program_rowid_to_url_mapping[program.id]) {
-        if (this.newRedirectData.program_rowid_to_url_mapping[program.id] != program['Id fiche dispositif']) {
-          this._updateProgramSlug(this.newRedirectData.program_rowid_to_url_mapping[program.id], program['Id fiche dispositif'])
-        }
+      if (
+        this.newRedirectData.program_rowid_to_url_mapping[program.id] &&
+        this.newRedirectData.program_rowid_to_url_mapping[program.id] != program['Id fiche dispositif']
+      ) {
+        this._updateProgramSlug(this.newRedirectData.program_rowid_to_url_mapping[program.id], program['Id fiche dispositif'])
       }
 
       this.newRedirectData.program_rowid_to_url_mapping[program.id] = program['Id fiche dispositif']
@@ -120,11 +123,10 @@ export default class Redirect {
         }
 
         const newSlug = this.newRedirectData.program_rowid_to_url_mapping[program['redirection-vers'][0]]
-        const redirectInProd = programs.some((progr) => progr.id === program['redirection-vers'][0])
-        if (!newSlug || !redirectInProd) {
+        const redirectValid = programs.some((progr) => progr.id === program['redirection-vers'][0])
+        if (!newSlug || !redirectValid) {
           this._logger.log(LogLevel.Critic, "Redirection vers un programme non valide, risque d'erreur 404", program.Titre, program.id)
         } else {
-          // Add or update the redirection for this program's slug
           this._updateProgramSlug(program['Id fiche dispositif'], newSlug)
         }
       } else {
