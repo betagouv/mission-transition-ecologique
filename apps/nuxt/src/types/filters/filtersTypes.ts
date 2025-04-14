@@ -4,7 +4,6 @@ export type FiltersType = {
   [FilterItemKeys.themeType]: string | ThemeType
   [FilterItemKeys.typeAid]: string[]
   [FilterItemKeys.operatorAid]: string[]
-  [FilterItemKeys.regionAid]: string[]
   [key: string]: string | string[] | ThemeType
 }
 

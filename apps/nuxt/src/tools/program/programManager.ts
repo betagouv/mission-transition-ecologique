@@ -57,9 +57,9 @@ export class ProgramManager {
 
   async update() {
     const navigation = new Navigation()
-    if (navigation.isQuestionnaireResult() || navigation.isQuestionnaireProjectDetail() || navigation.isCatalogPrograms()) {
-      await this.getDependentCompanyData(navigation.isCatalogPrograms() ? false : undefined)
-    } else if (navigation.isCatalogProjectDetail()) {
+    if (navigation.isQuestionnaireResult() || navigation.isQuestionnaireProjectDetail()) {
+      await this.getDependentCompanyData(undefined)
+    } else if (navigation.isCatalogProjectDetail() || navigation.isCatalogPrograms()) {
       await this.getDependentCompanyData(true)
     } else if (navigation.isProgramDetail() && this._useProgram.currentProgram) {
       const currentId = this._useProgram.currentProgram.id

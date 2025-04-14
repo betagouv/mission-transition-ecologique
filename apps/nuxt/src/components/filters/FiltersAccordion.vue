@@ -70,6 +70,9 @@ const activeAccordion = ref<number>()
 const selectedFilters: FiltersType = useFiltersStore().filters
 
 const getFilterCount = (filterId: FilterItemKeys) => {
+  if (filterId === FilterItemKeys.regionAid) {
+    return useFiltersStore().regions.length ?? ''
+  }
   return (selectedFilters[filterId] as string[]).length ? `${(selectedFilters[filterId] as string[]).length}` : ''
 }
 

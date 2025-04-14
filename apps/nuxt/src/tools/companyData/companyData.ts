@@ -108,7 +108,6 @@ export class CompanyData {
 
   static setDataFull() {
     useCompanyDataStore().isDataFull = this.hasDataFull()
-    console.log('setDataFull', useCompanyDataStore().isDataFull)
   }
 
   static isCompanySelected() {
