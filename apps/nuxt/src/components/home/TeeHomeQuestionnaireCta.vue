@@ -31,7 +31,7 @@ import { DsfrButtonProps } from '@gouvminint/vue-dsfr/types/components/DsfrButto
 import Navigation from '@/tools/navigation'
 import { useCompanyDataStore } from '@/stores/companyData'
 interface Props {
-  htmlDescription: string
+  htmlDescription?: string
 }
 
 const button: DsfrButtonProps & { isHovering: Ref<boolean> } = {

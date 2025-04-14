@@ -35,7 +35,7 @@ import { MetaRobots } from '@/tools/metaRobots'
 
 definePageMeta({
   name: RouteName.CatalogProjects,
-  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries]
+  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
 })
 
 const { projects, hasError } = storeToRefs(useProjectStore())

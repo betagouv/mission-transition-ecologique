@@ -84,19 +84,6 @@ export class CompanyData {
     })
   }
 
-  static isDataFull() {
-    const data = this.dataRef
-    const companyData = data.value[CompanyDataStorageKey.Company]
-    if (!companyData) {
-      useCompanyDataStore().isDataFull = false
-      return false
-    }
-
-    const isValid = CompanyDataValidator.validate(companyData)
-    useCompanyDataStore().isDataFull = isValid
-    return isValid
-  }
-
   static hasDataFull() {
     const data = this.dataRef
     const companyData = data.value[CompanyDataStorageKey.Company]
@@ -104,6 +91,11 @@ export class CompanyData {
       return false
     }
     return CompanyDataValidator.validate(companyData)
+  }
+
+  static isDataFull() {
+    this.setDataFull()
+    return useCompanyDataStore().isDataFull
   }
 
   static setDataFull() {
