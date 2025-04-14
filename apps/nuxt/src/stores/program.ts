@@ -31,7 +31,7 @@ export const useProgramStore = defineStore('program', () => {
         ProgramFilter.byAidType(program, filtersStore.filters[FilterItemKeys.typeAid] as ProgramAidType[]) &&
         ProgramFilter.byTheme(program, filtersStore.filters[FilterItemKeys.themeType] as ThemeId) &&
         ProgramFilter.byOperator(program, filtersStore.filters[FilterItemKeys.operatorAid] as OperatorFilter[]) &&
-        ProgramFilter.byRegion(program, filtersStore.regions as Region[]) &&
+        ProgramFilter.byRegion(program, filtersStore.filters[FilterItemKeys.regionAid] as Region[]) &&
         ProgramFilter.byCompanyData(program, isCompanySelected)
       )
     })

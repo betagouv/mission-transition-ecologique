@@ -7,10 +7,9 @@ export const useFiltersStore = defineStore('filters', () => {
   const filters = ref<FiltersType>({
     [FilterItemKeys.typeAid]: [],
     [FilterItemKeys.themeType]: '',
+    [FilterItemKeys.regionAid]: [],
     [FilterItemKeys.operatorAid]: []
   })
-
-  const regions = ref<string[]>([])
 
   const companyDataSelected = ref<boolean>(true)
 
@@ -20,10 +19,6 @@ export const useFiltersStore = defineStore('filters', () => {
 
   function setThemeTypeSelected(themeType: string) {
     filters.value[FilterItemKeys.themeType] = themeType
-  }
-
-  function setRegionSelected(regionsSelected: string[]) {
-    regions.value = regionsSelected
   }
 
   function getThemeTypeSelected() {
@@ -42,20 +37,15 @@ export const useFiltersStore = defineStore('filters', () => {
     filters.value = {
       [FilterItemKeys.typeAid]: [],
       [FilterItemKeys.themeType]: '',
+      [FilterItemKeys.regionAid]: [],
       [FilterItemKeys.operatorAid]: []
     }
-    regions.value = []
     setCompanyDataSelected(true)
   }
 
   function resetFilter(filterKey: FilterItemKeys) {
     if (filterKey === FilterItemKeys.themeType) {
       filters.value[filterKey] = ''
-      return
-    }
-
-    if (filterKey === FilterItemKeys.regionAid) {
-      regions.value = []
       return
     }
 
@@ -67,8 +57,6 @@ export const useFiltersStore = defineStore('filters', () => {
     hasThemeTypeSelected,
     getThemeTypeSelected,
     setThemeTypeSelected,
-    regions,
-    setRegionSelected,
     companyDataSelected,
     setCompanyDataSelected,
     getCompanyDataSelected,

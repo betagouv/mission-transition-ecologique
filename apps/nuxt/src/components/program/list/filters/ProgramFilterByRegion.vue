@@ -1,13 +1,13 @@
 <template>
   <DsfrCheckboxSet
-    v-model="useFiltersStore().regions"
+    v-model="useFiltersStore().filters[FilterItemKeys.regionAid]"
     small
     :options="programRegionsOptions"
   />
 </template>
 
 <script setup lang="ts">
-import { Region } from '@/types'
+import { FilterItemKeys, Region } from '@/types'
 import { DsfrCheckboxSetProps } from '@gouvminint/vue-dsfr'
 import { useFiltersStore } from '@/stores/filters'
 
