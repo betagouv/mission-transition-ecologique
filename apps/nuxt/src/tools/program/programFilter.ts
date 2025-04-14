@@ -1,38 +1,34 @@
 import {
-  FilterItemKeys,
   FiltersKeys,
   FiltersType,
   OperatorFilter,
   ProgramAidType,
-  type ProgramData,
   ProgramEligibility,
-  ProgramType,
+  ProgramTypeForFront,
   Region,
   ThemeId,
   type ValueOf
 } from '@/types'
 import { enrichedOperators } from '@tee/data/static'
-import { useFiltersStore } from '@/stores/filters'
 
 export default class ProgramFilter {
-  static byAidType(program: ProgramData, programAidTypesSelected: ProgramAidType[]) {
+  static byAidType(program: ProgramTypeForFront, programAidTypesSelected: ProgramAidType[]) {
     if (!this.isValidFilterValues(programAidTypesSelected)) {
       return true
     }
 
-    return programAidTypesSelected.includes(program["nature de l'aide"])
+    return programAidTypesSelected.includes(program["nature de l'aide"] as ProgramAidType)
   }
 
-  static byCompanyData(program: ProgramData, companySelected: boolean) {
+  static byCompanyData(program: ProgramTypeForFront, companySelected: boolean) {
     if (companySelected) {
-      useFiltersStore().resetFilter(FilterItemKeys.regionAid)
-      return ProgramEligibility.isEligible(program as unknown as ProgramType)
+      return ProgramEligibility.isEligible(program as unknown as ProgramTypeForFront)
     }
 
     return true
   }
 
-  static byRegion(program: ProgramData, regionsSelected: Region[]) {
+  static byRegion(program: ProgramTypeForFront, regionsSelected: Region[]) {
     if (!this.isValidFilterValues(regionsSelected)) {
       return true
     }
@@ -48,7 +44,7 @@ export default class ProgramFilter {
     return matchingRegions.length > 0
   }
 
-  static byOperator(program: ProgramData, programOperatorsSelected: OperatorFilter[]) {
+  static byOperator(program: ProgramTypeForFront, programOperatorsSelected: OperatorFilter[]) {
     if (!this.isValidFilterValues(programOperatorsSelected)) {
       return true
     }
@@ -70,12 +66,12 @@ export default class ProgramFilter {
     return false
   }
 
-  static byTheme(program: ProgramData, themeTypeSelected: ThemeId) {
+  static byTheme(program: ProgramTypeForFront, themeTypeSelected: ThemeId) {
     if (!this.isValidFilterValue(themeTypeSelected)) {
       return true
     }
 
-    if (program.filters[FiltersKeys.Theme]) {
+    if (program.filters && program.filters[FiltersKeys.Theme]) {
       return program.filters[FiltersKeys.Theme].includes(themeTypeSelected)
     }
 

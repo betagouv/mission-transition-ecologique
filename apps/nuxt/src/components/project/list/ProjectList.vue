@@ -103,7 +103,6 @@ import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import Translation from '@/tools/translation'
 import { computed } from 'vue'
 import { ProjectType } from '@/types'
-import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { CompanyData } from '@/tools/companyData'
 import { useFiltersStore } from '@/stores/filters'
 
@@ -113,10 +112,11 @@ interface ProjectListProps {
 const props = defineProps<ProjectListProps>()
 
 const filtersStore = useFiltersStore()
-const isSpecificGoal = UsedTrack.isSpecificGoal()
-const resume: string = Translation.t('project.result.resume', {
-  effectif: Translation.t('enterprise.structureSize.' + (TrackStructure.getSize() ?? CompanyData.size ?? '')),
-  secteur: TrackStructure.getSector() ?? CompanyData.company?.secteur ?? ''
+const resume = computed<string>(() => {
+  return Translation.t('project.result.resume', {
+    effectif: Translation.t('enterprise.structureSize.' + (CompanyData.size ?? TrackStructure.getSize() ?? '')),
+    secteur: CompanyData.company?.secteur ?? TrackStructure.getSector() ?? ''
+  })
 })
 
 const hasPriorityProjects = computed(() => {
@@ -136,24 +136,20 @@ const nonPriorityProjects = computed(() => {
   return props.sortedProjects ? props.sortedProjects.slice(3) : undefined
 })
 
-const hasThemeCard = computed(() => {
-  return filtersStore.hasThemeTypeSelected() || (isSpecificGoal && UsedTrack.hasPriorityTheme())
-})
-
 const hasThemeSelected = computed(() => {
   return filtersStore.hasThemeTypeSelected()
 })
 
 const showPriorityProjectListComponent = computed(() => {
-  return hasPriorityProjects.value && !hasThemeCard.value && !hasThemeSelected.value
+  return hasPriorityProjects.value && !hasThemeSelected.value
 })
 
 const hideMainProjectListComponent = computed(() => {
-  return !hasThemeCard.value && !hasThemeSelected.value
+  return !hasThemeSelected.value
 })
 
 const isPriorityProject = (project: ProjectType) => {
-  return !isSpecificGoal ? priorityProjects.value!.includes(project) : false
+  return priorityProjects.value!.includes(project)
 }
 
 const getPriorityOrder = (project: ProjectType) => {

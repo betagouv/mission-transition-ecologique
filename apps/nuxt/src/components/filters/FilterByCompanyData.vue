@@ -8,7 +8,7 @@
     }"
   >
     <DsfrCheckbox
-      v-model="companyDataSelected"
+      v-model="isCompanyDataSelected"
       :value="`selected-company-${companyName}`"
       small
       name="companyFilter"
@@ -34,7 +34,7 @@
         :class="{ 'fr-text--grey': !isCompanyDataSelected }"
       >
         <div class="fr-grid-row">
-          <div class="fr-col-hidden-lg">
+          <div class="fr-col-hidden-md">
             <div class="fr-col-12">
               <div
                 class="company-filter-icon fr-pl-1v"
@@ -49,17 +49,17 @@
               </div>
             </div>
           </div>
-          <div class="fr-hidden fr-unhidden-lg">
+          <div class="fr-hidden fr-unhidden-md">
             <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pt-1v fr-pl-1v fr-pr-3v">
               <div
                 class="company-filter-icon-large"
                 :class="detail.icon"
               />
             </div>
-            <div class="fr-col-9 fr-text-left">
-              <span class="fr-text--xs">
+            <div class="fr-col-9 fr-col-content--top fr-text-left">
+              <p class="fr-text--xs fr-text-line-height--3v">
                 {{ detail.label }}
-              </span>
+              </p>
             </div>
           </div>
         </div>
@@ -69,6 +69,8 @@
 </template>
 
 <script setup lang="ts">
+import { ProgramManager } from '@/tools/program/programManager'
+import { ProjectManager } from '@/tools/project/projectManager'
 import { CompanyDataStorageKey, SizeToText, StructureSize } from '@/types'
 import { CompanyData } from '@/tools/companyData'
 import Breakpoint from '@/tools/breakpoints'
@@ -89,14 +91,21 @@ type CompanyFilterDetailProps = {
   icon?: string
 }
 const navigation = new Navigation()
-const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
-const companyDataSelected = computed<boolean>({
-  get: () => useFiltersStore().companyDataSelected,
-  set: (value: boolean) => useFiltersStore().setCompanyDataSelected(value)
+const isCompanyDataSelected = computed({
+  get: () => useFiltersStore().getCompanyDataSelected().value,
+  set: (value: boolean) => {
+    useFiltersStore().companyDataSelected = value
+    if (navigation.isCatalogProjects()) {
+      new ProjectManager().getProjects()
+    }
+    if (navigation.isCatalogProjectDetail() || navigation.isCatalogPrograms()) {
+      new ProgramManager().getDependentCompanyData(true)
+    }
+  }
 })
 
 const registeredData = CompanyData.dataRef
-const hasRegisteredData = CompanyData.isDataFull()
+const hasRegisteredData = CompanyData.isDataFullComputed()
 const companyName = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.denomination)
 const companySector = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.secteur)
 const companyRegion = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.region)
@@ -110,13 +119,9 @@ const filterData: CompanyFilterProps = {
     size: { label: companySize, icon: 'fr-icon-team-line' }
   }
 }
-watch(
-  hasRegisteredData,
-  (value) => {
-    useFiltersStore().setCompanyDataSelected(value)
-  },
-  { immediate: true }
-)
+watch(hasRegisteredData, (value) => {
+  useFiltersStore().setCompanyDataSelected(value)
+})
 </script>
 <style lang="scss" scoped>
 #company-data-filter-content {

@@ -12,8 +12,24 @@
             République
             <br />Française
           </p>
+          <a
+            class="fr-footer__brand-link"
+            href="/"
+            title="Retour à l’accueil du site - Transition écologique des entreprises - République Française"
+          >
+            <img
+              class="fr-footer__logo"
+              src="/images/logos/ademe.svg"
+              alt="logo de l'ADEME - Agence de de la Transition Écologique"
+            />
+          </a>
         </div>
         <div class="fr-footer__content fr-col-lg-9">
+          <p class="fr-footer__content-desc">
+            Notre mission : accompagner les TPE et PME dans leur transition écologique en leur donnant les moyens d’identifier leurs projets
+            prioritaires, d’accéder aux aides publiques adaptées à leur entreprise et de mobiliser les conseillers pour concrétiser leurs
+            démarches.
+          </p>
           <ul class="fr-footer__content-list">
             <li
               v-for="link in gouvLinks"
@@ -36,19 +52,6 @@
       <div class="fr-footer__partners fr-hidden-sm">
         <h4 class="fr-footer__partners-title">Nos partenaires</h4>
         <div class="fr-footer__partners-logos fr-grid-row">
-          <div class="fr-footer__partners-main">
-            <a
-              class="footer__partners-link fr-my-4v fr-mr-4v fr-bg--none"
-              target="_blank"
-              :href="mainPartner.href"
-            >
-              <img
-                class="fr-footer__logo fr-responsive-img"
-                :src="mainPartner.img"
-                :alt="mainPartner.label"
-              />
-            </a>
-          </div>
           <div class="fr-footer__partners-sub">
             <ul>
               <li
@@ -159,12 +162,6 @@ const gouvLinks = [
   }
 ]
 
-const mainPartner = {
-  label: 'Service public',
-  img: '/images/logos/service-public.fr.svg',
-  href: 'https://conseillers-entreprises.service-public.fr/'
-}
-
 const mainLinks = [
   {
     // router ok
@@ -200,6 +197,11 @@ const mainLinks = [
 ]
 
 const operators = [
+  {
+    label: 'Conseiller Entreprise',
+    img: '/images/logos/ce-logo.svg',
+    href: 'https://conseillers-entreprises.service-public.fr/'
+  },
   {
     label: 'ADEME',
     img: '/images/logos/ademe.svg',

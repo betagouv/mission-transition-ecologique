@@ -1,20 +1,17 @@
 <template>
-  <DsfrAccordionsGroup
-    v-if="companyDataFilter?.display"
-    :model-value="0"
+  <TeeContentBlock
+    v-if="companyDataFilter && canDisplayFilter(companyDataFilter)"
+    class="fr-p-0 fr-border-t--grey--light fr-text-left"
   >
-    <DsfrAccordion
-      :id="`accordion-${companyDataFilter.id}`"
-      :class="[props.accordionClass]"
-      :title="companyDataFilter.title"
-    >
-      <component
-        :is="companyDataFilter.component"
-        :class="companyDataFilter.componentClass"
-        legend=""
-      />
-    </DsfrAccordion>
-  </DsfrAccordionsGroup>
+    <template #title>
+      <div class="fr-p-3v fr-text--bold">
+        {{ companyDataFilter.title }}
+      </div>
+    </template>
+    <template #content>
+      <FilterByCompanyData />
+    </template>
+  </TeeContentBlock>
   <DsfrAccordionsGroup v-model="activeAccordion">
     <template
       v-for="(filter, key) in filters"
@@ -63,7 +60,7 @@ export interface FilterItem {
   accordionClass?: string
   component: unknown
   componentClass?: string
-  display?: boolean | ComputedRef<boolean>
+  display?: boolean | ComputedRef<boolean> | Ref<boolean>
 }
 
 const props = defineProps<FiltersAccordionProps>()

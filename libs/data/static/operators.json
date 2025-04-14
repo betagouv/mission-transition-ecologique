@@ -12,25 +12,7 @@
     ]
   },
   {
-    "operator": "Agence de l'Eau Adour-Garonne",
-    "filterCategories": [
-      "Agence de l'eau"
-    ]
-  },
-  {
-    "operator": "Agence de l'Eau Artois-Picardie",
-    "filterCategories": [
-      "Agence de l'eau"
-    ]
-  },
-  {
     "operator": "Agence de l'Eau Loire-Bretagne",
-    "filterCategories": [
-      "Agence de l'eau"
-    ]
-  },
-  {
-    "operator": "Agence de l'Eau Rhin-Meuse",
     "filterCategories": [
       "Agence de l'eau"
     ]
@@ -42,19 +24,13 @@
     ]
   },
   {
-    "operator": "Agence de l'Eau Seine-Normandie",
-    "filterCategories": [
-      "Agence de l'eau"
-    ]
-  },
-  {
     "operator": "Agence de l'Eau",
     "filterCategories": [
       "Agence de l'eau"
     ]
   },
   {
-    "operator": "Bpifrance",
+    "operator": "Banque Publique d'Investissement France",
     "filterCategories": [
       "Bpifrance"
     ]
@@ -66,61 +42,7 @@
     ]
   },
   {
-    "operator": "CCI Auvergne-Rhône-Alpes",
-    "filterCategories": [
-      "CCI"
-    ]
-  },
-  {
     "operator": "CCI Bretagne",
-    "filterCategories": [
-      "CCI"
-    ]
-  },
-  {
-    "operator": "CCI Centre-Val de Loire",
-    "filterCategories": [
-      "CCI"
-    ]
-  },
-  {
-    "operator": "CCI Grand-Est",
-    "filterCategories": [
-      "CCI"
-    ]
-  },
-  {
-    "operator": "CCI Hauts-de-France",
-    "filterCategories": [
-      "CCI"
-    ]
-  },
-  {
-    "operator": "CCI Loir-et-Cher",
-    "filterCategories": [
-      "CCI"
-    ]
-  },
-  {
-    "operator": "CCI Loiret",
-    "filterCategories": [
-      "CCI"
-    ]
-  },
-  {
-    "operator": "CCI Morbihan",
-    "filterCategories": [
-      "CCI"
-    ]
-  },
-  {
-    "operator": "CCI Normandie",
-    "filterCategories": [
-      "CCI"
-    ]
-  },
-  {
-    "operator": "CCI Occitanie",
     "filterCategories": [
       "CCI"
     ]
@@ -133,13 +55,7 @@
     ]
   },
   {
-    "operator": "CCI Île-de-France",
-    "filterCategories": [
-      "CCI"
-    ]
-  },
-  {
-    "operator": "CCI",
+    "operator": "Chambre de Commerce et de l'Industrie",
     "filterCategories": [
       "CCI"
     ]
@@ -151,91 +67,13 @@
     ]
   },
   {
-    "operator": "CETIM",
+    "operator": "Centre Technique des Industries Mécaniques",
     "filterCategories": [
       "Opérateurs territoriaux"
     ]
   },
   {
-    "operator": "CMA Auvergne-Rhône-Alpes",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Bourgogne-Franche-Comté",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Bretagne",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Centre-Val de Loire",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Grand-Est",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Hauts-de-France",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA La Réunion",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Loiret",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Normandie",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Nouvelle-Aquitaine",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Provence-Alpes-Côte-D'Azur",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Rhône",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Île-de-France",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA",
+    "operator": "Chambre des Métiers et de l'Artisanat",
     "filterCategories": [
       "CMA"
     ]
@@ -281,8 +119,10 @@
     ]
   },
   {
-    "operator": "Organisations professionnelles",
-    "filterCategories": []
+    "operator": "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment",
+    "filterCategories": [
+      "OP"
+    ]
   },
   {
     "operator": "Région Bretagne",
@@ -305,8 +145,10 @@
     "filterCategories": []
   },
   {
-    "operator": "UIMM",
-    "filterCategories": []
+    "operator": "Union des industries et métiers de la métallurgie",
+    "filterCategories": [
+      "OP"
+    ]
   },
   {
     "operator": "Véolia Eau",
@@ -319,66 +161,8 @@
     ]
   },
   {
-    "operator": "ATEE",
-    "filterCategories": []
-  },
-  {
-    "operator": "CMA Corse",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Ile-de-France",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Occitanie",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "CMA Pays-de-la-Loire",
-    "filterCategories": [
-      "CMA"
-    ]
-  },
-  {
-    "operator": "DGE",
-    "filterCategories": [
-      "État"
-    ]
-  },
-  {
-    "operator": "ORACE",
-    "filterCategories": [
-      "Opérateurs territoriaux"
-    ]
-  },
-  {
-    "operator": "PROREFEI",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
-    "operator": "PRO-SMEn",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
     "operator": "Voies Navigables de France",
     "filterCategories": []
-  },
-  {
-    "operator": "CCI PdL",
-    "filterCategories": [
-      "CCI"
-    ]
   },
   {
     "operator": "Région Centre-Val de Loire",
@@ -435,10 +219,6 @@
     ]
   },
   {
-    "operator": "TEE",
-    "filterCategories": []
-  },
-  {
     "operator": "Région Bourgogne-Franche-Comté",
     "filterCategories": [
       "Régions"
@@ -454,16 +234,6 @@
     "operator": "Association pour la transition Bas Carbone",
     "filterCategories": [
       "Opérateurs nationaux"
-    ]
-  },
-  {
-    "operator": "La Fresque du Climat",
-    "filterCategories": []
-  },
-  {
-    "operator": "SGAR",
-    "filterCategories": [
-      "État"
     ]
   },
   {
@@ -488,6 +258,12 @@
     "operator": "Région Guadeloupe",
     "filterCategories": [
       "Régions"
+    ]
+  },
+  {
+    "operator": "Avere-France",
+    "filterCategories": [
+      "Opérateurs nationaux"
     ]
   }
 ]

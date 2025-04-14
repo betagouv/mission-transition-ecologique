@@ -14,12 +14,15 @@
       <div class="fr-container">
         <div class="fr-grid-row">
           <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-text-center-md">
-            <ResultHeader />
+            <div class="fr-grid-row fr-text-center fr-text-left-md">
+              <div class="fr-col-12">
+                <h1 class="fr-mb-md-4v fr-mb-2v fr-text--blue-france">Vos résultats</h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <ResultListInTabs v-if="UsedTrack.isNoSpecificGoal()" />
-      <ResultList v-else />
+      <ResultListInTabs />
     </div>
   </div>
 </template>
@@ -27,7 +30,22 @@
 <script setup lang="ts">
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
-import UsedTrack from '@/tools/questionnaire/track/usedTrack'
+import { MetaSeo } from '@/tools/metaSeo'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const siret = route.query.siret
+const siretText = siret ? `pour l'entreprise (SIRET ${siret})` : 'pour votre entreprise'
+
+useSeoMeta(
+  MetaSeo.get(
+    'Les actions prioritaires pour mon entreprise',
+    'Je vous invite à découvrir les propositions de projets et les financements éligibles ' + siretText
+  )
+)
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
+})
 
 const hasSpinner = useNavigationStore().hasSpinner
 </script>

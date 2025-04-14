@@ -1,0 +1,73 @@
+titre: ADVENIR
+promesse: Financez vos bornes de recharge pour véhicule électrique
+description: >-
+  Vous disposez d'une flotte de véhicule lourds ou vous êtes un professionnel
+  des services de l'automobile ? Le programme Advenir finance l’installation de
+  bornes de recharge pour véhicules électriques. Ainsi, faites bénéficier vos
+  équipes, vos clients et vos fournisseurs d'un accès facile à des solutions de
+  recharge.
+illustration: images/TEE_eolienne.png
+opérateur de contact: Avere-France
+autres opérateurs:
+  - ADEME
+url: https://advenir.mobi/
+nature de l'aide: financement
+montant du financement: Selon le projet
+activable en autonomie: oui
+objectifs:
+  - description: Vérifiez l’éligibilité de votre projet en réalisant votre simulation.
+    liens:
+      - lien: https://advenir.mobi/je-definis-mon-projet/
+        texte: Simulateur de projet
+  - description: >-
+      Prenez contact avec un installateur référencé Advenir près de votre
+      entreprise, en consultant l'annuaire installateurs.
+    liens:
+      - lien: https://advenir.mobi/trouver-un-installateur/
+        texte: Annuaire installateurs
+  - description: >-
+      Faites remplir le formulaire de demande de prime par votre installateur
+      référencé. Une offre de prime correspondant au projet est ensuite proposée
+      et signée.
+  - description: >-
+      Réalisez vos travaux dans un délai de 6 mois après la signature de l'offre
+      de prime.
+  - description: >-
+      La prime est ensuite versée sous 45 jours après envoi des justificatifs
+      par l'installateur. Le versement à l'installateur est conditionné à la
+      déduction de la prime sur la facture finale.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - |-
+      - Entreprises dotées d'une flotte de véhicules lourds
+      - Professionnels des services automobiles.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Le programme Advenir propose des modalités spécifiques pour l’installation
+      de bornes de recharge sur les territoires situés en Corse, en Outre-Mer et
+      sur les îles du Ponant. [Voir les conditions.](https://advenir.mobi/zni/)
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable

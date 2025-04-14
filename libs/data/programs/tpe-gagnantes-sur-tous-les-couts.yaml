@@ -6,7 +6,7 @@ description: >-
   Bénéficier d’un état des lieux sur vos flux pour vous aider à faire des
   économies (énergie, eau, matières, déchets) 
 illustration: images/TEE_energie_verte.png
-opérateur de contact: CMA
+opérateur de contact: Chambre des Métiers et de l'Artisanat
 url: >-
   https://www.artisanat.fr/magazine/series-podcasts/tpe-pme-gagnantes-sur-tous-couts
 nature de l'aide: étude
@@ -36,6 +36,8 @@ conditions d'éligibilité:
     - Artisan
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - Être un artisan
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

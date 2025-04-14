@@ -16,7 +16,7 @@ description longue: >-
   environnementale des salariés et de la clientèle, et le suivi des
   consommations énergétiques du site.
 illustration: images/TEE_ampoule.png
-opérateur de contact: CMA
+opérateur de contact: Chambre des Métiers et de l'Artisanat
 autres opérateurs:
   - CCI ou CMA
 url: https://www.artisanat.fr/metiers/labels-qualifications/label-imprim-vert
@@ -53,6 +53,8 @@ conditions d'éligibilité:
       1813ZC| 1820ZZ
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - Être un artisan
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -73,7 +75,7 @@ champs conditionnels:
     Durée du dispositif: 1,5 à 2,5 jours
   - une de ces conditions:
       - région = Occitanie
-    opérateur de contact: CCI
+    opérateur de contact: Chambre de Commerce et de l'Industrie
     url: >-
       https://www.occitanie.cci.fr/produit/obtenir-ou-renouveler-sa-labellisation-imprimvert
     Montant du dispositif: Sur devis, de 250 à 750 € HT

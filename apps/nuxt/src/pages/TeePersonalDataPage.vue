@@ -16,6 +16,7 @@
 
 <script setup lang="ts">
 import TeeFooterCookiesButton from '@/components/TeeFooterCookiesButton.vue'
+import { MetaRobots } from '@/tools/metaRobots'
 import { RouteName } from '@/types'
 import { PrivacyPolicyPropsCookie, PrivacyPolicyPropsThirdParty, PrivacyPolicy } from '@incubateur-ademe/legal-pages-vue3'
 
@@ -31,6 +32,27 @@ const thirdParties: PrivacyPolicyPropsThirdParty[] = [
     hostingCountry: 'France',
     serviceType: 'Hébergement',
     policyUrl: 'https://scalingo.com/data-processing-agreement'
+  },
+  {
+    name: 'Brevo',
+    country: 'France',
+    hostingCountry: 'France',
+    serviceType: 'Gestion et diffusion des demandes',
+    policyUrl: 'https://www.brevo.com/fr/legal/termsofuse/#accord-sur-le-traitement-des-donnees-a-caractere-personnel-dpa'
+  },
+  {
+    name: 'Baserow',
+    country: 'France',
+    hostingCountry: 'Allemagne',
+    serviceType: "Listing des référents internes aux dispositifs d'aides publiques et aux projets",
+    policyUrl: 'https://baserow.io/privacy-policy'
+  },
+  {
+    name: 'Conseillers-Entreprises',
+    country: 'France',
+    hostingCountry: 'France',
+    serviceType: 'Traitement des demandes par les conseillers',
+    policyUrl: 'https://conseillers-entreprises.service-public.fr/mentions_d_information'
   }
 ]
 
@@ -44,4 +66,6 @@ const cookies: PrivacyPolicyPropsCookie[] = [
     destination: 'Europe'
   }
 ]
+
+useHead(MetaRobots.indexFollow())
 </script>

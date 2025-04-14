@@ -8,7 +8,7 @@ description: >-
   économie d’énergie, isolation des locaux, consommations d’eau, déchets,
   matières premières, achats, mobilité, etc.
 illustration: images/TEE_energie_verte.png
-opérateur de contact: CMA
+opérateur de contact: Chambre des Métiers et de l'Artisanat
 url: >-
   https://www.artisanat.fr/nous-connaitre/vous-accompagner/performa-environnement
 nature de l'aide: étude
@@ -38,6 +38,8 @@ conditions d'éligibilité:
     - Artisan
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - Être un artisan
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

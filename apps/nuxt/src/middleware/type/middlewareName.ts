@@ -5,5 +5,6 @@ export enum MiddlewareName {
   hasUsedTracks = 'has-used-tracks',
   setUsedTracks = 'set-used-tracks',
   hasProgram = 'has-program',
-  hasProject = 'has-project'
+  hasProject = 'has-project',
+  hasTrack = 'has-track'
 }

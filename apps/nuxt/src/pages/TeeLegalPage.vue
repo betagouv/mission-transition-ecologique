@@ -27,6 +27,7 @@
 import { RouteName } from '@/types/routeType'
 import Contact from '@/tools/contact'
 import { LegalNoticePropsThirdParty, LegalNotice } from '@incubateur-ademe/legal-pages-vue3'
+import { MetaRobots } from '@/tools/metaRobots'
 
 definePageMeta({
   path: '/mentions-legales',
@@ -48,4 +49,6 @@ const thirdParties: LegalNoticePropsThirdParty[] = [
     text: "Les données sont ensuite précisées via l'"
   }
 ]
+
+useHead(MetaRobots.indexFollow())
 </script>

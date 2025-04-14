@@ -1,0 +1,48 @@
+titre: Formation développement durable
+promesse: Formez-vous au développement durable de votre entreprise
+description: >-
+  Vous souhaitez engager votre entreprise dans une démarche responsable ? Cette
+  formation 100 % numérique vous guide pas à pas : découvrez les enjeux du
+  développement durable et de la RSE, réalisez un autodiagnostic pour évaluer
+  vos pratiques, définissez vos axes d’amélioration et apprenez à les valoriser.
+  Cette formation courte permet d'embarquer rapidement vos équipes, clients et
+  fournisseurs dans la mise en place d'une une démarche complète d’entreprise
+  responsable.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Chambre des Métiers et de l'Artisanat
+url: https://www.artisanat.fr/integrer-developpement-durable
+nature de l'aide: formation
+coût de l'accompagnement: 150€ TTC avec possibilité de prise en charge selon votre statut
+durée de l'accompagnement: 5h
+objectifs:
+  - description: >-
+      Contactez un conseiller pour vérifier votre éligibilité et vous inscrire à
+      cette formation.
+  - description: Une fois inscrit, recevez un lien pour accéder au contenu de la formation.
+  - description: >-
+      Vous disposez de 30 jours pour consulter les modules et suivre le
+      programme pas à pas.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Réservée aux artisans
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental

@@ -1,20 +1,11 @@
+import { useCompanyDataStore } from '@/stores/companyData'
 import { useUsedTrackStore } from '@/stores/usedTrack'
-import {
-  MobilityStatus,
-  ThemeId,
-  QuestionnaireDataEnum,
-  QuestionnaireRoute,
-  TrackId,
-  WasteManagementStatus,
-  YesNo,
-  RouteName
-} from '@/types'
+import { MobilityStatus, ThemeId, QuestionnaireDataEnum, TrackId, WasteManagementStatus, YesNo, RouteName } from '@/types'
 import { QuestionnaireChecker, BuildingProperty } from '@tee/common'
 import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
 
 type QuestionnaireDataReturnType = {
-  [QuestionnaireDataEnum.questionnaire_route]: QuestionnaireRoute
   [QuestionnaireDataEnum.priority_objective]: ThemeId
   [QuestionnaireDataEnum.sustainable_mobility_objective]: MobilityStatus | undefined
   [QuestionnaireDataEnum.energy_reduction_objective]: YesNo | undefined
@@ -30,26 +21,12 @@ export default class UsedTrack {
     return useUsedTrackStore().findInQuestionnaireDataByTrackIdAndKey(trackId, key) as QuestionnaireDataReturnType[K]
   }
 
-  static isNoSpecificGoal(): boolean {
-    return (
-      this.findInQuestionnaireData(TrackId.QuestionnaireRoute, QuestionnaireDataEnum.questionnaire_route) ===
-      QuestionnaireRoute.NoSpecificGoal
-    )
-  }
-
-  static isSpecificGoal(): boolean {
-    return (
-      this.findInQuestionnaireData(TrackId.QuestionnaireRoute, QuestionnaireDataEnum.questionnaire_route) ===
-      QuestionnaireRoute.SpecificGoal
-    )
-  }
-
   static async updateQuestionnaireStep() {
     if (!new Navigation().isQuestionnaireStep()) {
       return
     }
 
-    if (!CompanyData.isDataFull().value) {
+    if (!useCompanyDataStore().isDataFull) {
       return
     }
 
@@ -79,10 +56,6 @@ export default class UsedTrack {
     return QuestionnaireChecker.isBuildingProperty(
       this.findInQuestionnaireData(TrackId.BuildingProperty, QuestionnaireDataEnum.building_property)
     )
-  }
-
-  static hasPriorityTheme(): boolean {
-    return this.findInQuestionnaireData(TrackId.Goals, QuestionnaireDataEnum.priority_objective) !== undefined
   }
 
   static hasMobilityTheme(): boolean {

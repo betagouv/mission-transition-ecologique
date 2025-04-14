@@ -1,0 +1,127 @@
+titre: Aide à l'investissement des transitions
+promesse: Financez les projets de transition écologique de votre petite entreprise
+description: >-
+  La Région Nouvelle-Aquitaine accompagne les petites entreprises dans leur
+  transition en soutenant financièrement leurs projets de développement. Cette
+  aide vise à renforcer leur stabilité économique tout en encourageant les
+  circuits courts et l’approvisionnement local. Elle favorise également
+  l’économie circulaire en limitant les déchets, en valorisant les ressources et
+  en encourageant le réemploi pour les équipements et outils de production.
+description longue: >-
+  Cette aide couvre les investissements matériels et immatériels, ainsi que les
+  dépenses de conseil et de recrutement liées au projet de transition
+  écologique, dans la limite de 50 % des dépenses éligibles pour ces dernières.
+
+
+  La Région souhaite soutenir financièrement les projets de développement
+  permettant aux petites entreprises locales d'engager des projets de transition
+  écologique. Par exemple : 
+
+  - Transformation et commercialisation de produits locaux pour renforcer les
+  circuits courts.
+
+  - Développement de solutions de logistique et de distribution en
+  approvisionnement local.
+
+  - Mise en place d’initiatives favorisant la réduction et la valorisation des
+  déchets.
+
+  - Développement de solutions de réemploi et de réparation d’équipements ou de
+  matériaux.
+
+  - Modernisation des outils de production basse consommation, issus du
+  réemploi. 
+
+  - Écoconception et innovation autour d’emballages réutilisables ou
+  biodégradables.
+
+  - Déploiement de plateformes numériques facilitant la mutualisation des
+  ressources.
+
+  - Accompagnement et formation des équipes à des pratiques plus durables.
+
+  - Intégration de nouveaux outils ou procédés pour réduire l’empreinte
+  écologique d’une activité.
+
+  - etc.
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Nouvelle-Aquitaine
+url: >-
+  https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/aide-linvestissement-des-transitions-tpe?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1
+nature de l'aide: financement
+montant du financement: Jusqu'à 35% des dépenses, dans un maximum de 50 000 €
+objectifs:
+  - description: >-
+      Contactez un conseiller pour échanger sur votre projet de transition
+      écologique et être mis en relation avec un référent de la CCI, Chambre des
+      Métiers, ou de l'ADI pour vous accompagner dans votre démarche.
+  - description: Déposez un dossier de demande de subvention à la Région.
+  - description: Votre dossier est alors instruit et soumis pour approbation.
+  - description: >-
+      Une fois votre demande acceptée, recevez votre subvention et réalisez
+      votre projet.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 10 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Nouvelle-Aquitaine
+  secteur d'activité:
+    - >-
+      Secteurs du commerce, de l'artisanat, de l'industrie, des services.
+      (hébergements touristiques exclus)
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Avoir réalisé un accompagnement préalable pour définir un plan d'action
+      (auprès de la CCI, Chambre des Métiers, ADI, cabinet spécialisé...),
+    - Avoir un chiffre d'affaires ou un bilan inférieur à 2 millions d'euros,
+    - Les investissements doivent être minimum de 10 000 € HT,
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…).
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 9
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Nouvelle-Aquitaine

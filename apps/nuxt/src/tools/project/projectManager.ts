@@ -1,3 +1,5 @@
+import { useCompanyDataStore } from '@/stores/companyData'
+import { useFiltersStore } from '@/stores/filters'
 import ProjectApi from '@/tools/api/projectApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import { CompanyData } from '@/tools/companyData'
@@ -13,6 +15,7 @@ export class ProjectManager {
   withCompanyData() {
     if (new Navigation().isCatalogProjects()) {
       return CompanyData.isCompanySelected()
+      // return this._filtersStore.getCompanyDataSelected().value && this._companyDateStore.isDataFull
     }
 
     return this._companyDateStore.isDataFull

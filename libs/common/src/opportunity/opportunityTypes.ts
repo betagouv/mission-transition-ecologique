@@ -1,4 +1,4 @@
-import { PublicodeObjective, QuestionnaireRoute, StructureSize } from '../questionnaire/types/types'
+import { PublicodeObjective, StructureSize } from '../questionnaire/types/types'
 
 export type Opportunity = ContactDetails & OpportunityDetails
 
@@ -22,7 +22,6 @@ export interface OpportunityDetailsBase {
   titleMessage?: string
   linkToCatalog?: string
   message: string
-  questionnaireRoute?: QuestionnaireRoute
   priorityObjectives?: PublicodeObjective[]
   otherData?: string
   theme?: string
