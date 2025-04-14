@@ -42,7 +42,7 @@ const { currentProject: project } = storeToRefs(useProjectStore())
 
 const themeColor = ref<Color | ''>()
 
-useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription, project.value?.image))
+useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription))
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())

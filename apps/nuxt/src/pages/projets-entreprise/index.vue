@@ -31,6 +31,7 @@ import { Theme } from '@/tools/theme'
 import { RouteName } from '@/types'
 import { computed } from 'vue'
 import ProjectSorter from '@/tools/project/projectSorter'
+import { MetaRobots } from '@/tools/metaRobots'
 
 definePageMeta({
   name: RouteName.CatalogProjects,
@@ -75,4 +76,6 @@ const hasSideMenu = computed(() => {
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0
 })
+
+useHead(MetaRobots.noIndexOnQueries(useRoute().fullPath))
 </script>

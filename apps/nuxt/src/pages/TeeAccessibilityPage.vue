@@ -132,9 +132,12 @@
 import ContactMail from '@/components/contact/ContactMail.vue'
 import { RouteName } from '@/types'
 import Contact from '@/tools/contact'
+import { MetaRobots } from '@/tools/metaRobots'
 
 definePageMeta({
   path: '/accessibilite',
   name: RouteName.Accessibility
 })
+
+useHead(MetaRobots.indexFollow())
 </script>

@@ -55,6 +55,7 @@ import { useTrackStore } from '@/stores/track'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
+import { MetaSeo } from '@/tools/metaSeo'
 
 interface Props {
   trackId: TrackId
@@ -68,5 +69,15 @@ const usedTrackStore = useUsedTrackStore()
 
 onBeforeMount(() => {
   usedTrackStore.add(props.trackId, props.trackId)
+})
+
+useSeoMeta(
+  MetaSeo.get(
+    'Identifiez vos projets prioritaires',
+    'Vous ne savez pas par où commencer ? En moins de 2 minutes, répondez à quelques questions pour identifier vos projets prioritaires et découvrir les financements disponibles pour votre entreprise.'
+  )
+)
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
 })
 </script>

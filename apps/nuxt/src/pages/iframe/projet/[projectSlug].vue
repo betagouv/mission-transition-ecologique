@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import Analytics from '@/tools/analytic/analytics'
+import { MetaRobots } from '@/tools/metaRobots'
 import { RouteName } from '@/types'
 
 definePageMeta({
@@ -25,6 +26,8 @@ if (import.meta.client) {
     referrer_url: parentUrl
   })
 }
+
+useHead(MetaRobots.noIndexFollow())
 </script>
 
 <template>

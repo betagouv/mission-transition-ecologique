@@ -151,6 +151,7 @@
 import { RouteName } from '@/types'
 import { onMounted, ref } from 'vue'
 import Chart from 'chart.js/auto'
+import { MetaRobots } from '@/tools/metaRobots'
 
 definePageMeta({
   path: '/budget',
@@ -238,6 +239,8 @@ const drawBudgetChart = () => {
 onMounted(() => {
   drawBudgetChart()
 })
+
+useHead(MetaRobots.indexFollow())
 </script>
 
 <style scoped>

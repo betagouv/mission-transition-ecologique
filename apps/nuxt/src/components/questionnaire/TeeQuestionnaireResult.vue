@@ -30,6 +30,22 @@
 <script setup lang="ts">
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
+import { MetaSeo } from '@/tools/metaSeo'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+const siret = route.query.siret
+const siretText = siret ? `pour l'entreprise (SIRET ${siret})` : 'pour votre entreprise'
+
+useSeoMeta(
+  MetaSeo.get(
+    'Les actions prioritaires pour mon entreprise',
+    'Je vous invite à découvrir les propositions de projets et les financements éligibles ' + siretText
+  )
+)
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
+})
 
 const hasSpinner = useNavigationStore().hasSpinner
 </script>
