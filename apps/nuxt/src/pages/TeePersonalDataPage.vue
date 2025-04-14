@@ -16,6 +16,7 @@
 
 <script setup lang="ts">
 import TeeFooterCookiesButton from '@/components/TeeFooterCookiesButton.vue'
+import { MetaRobots } from '@/tools/metaRobots'
 import { RouteName } from '@/types'
 import { PrivacyPolicyPropsCookie, PrivacyPolicyPropsThirdParty, PrivacyPolicy } from '@incubateur-ademe/legal-pages-vue3'
 
@@ -65,4 +66,6 @@ const cookies: PrivacyPolicyPropsCookie[] = [
     destination: 'Europe'
   }
 ]
+
+useHead(MetaRobots.indexFollow())
 </script>

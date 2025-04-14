@@ -78,13 +78,6 @@ const props = defineProps<Props>()
 const filtersStore = useFiltersStore()
 const { hasSpinner } = storeToRefs(useNavigationStore())
 const theme = Theme.getThemeFromSelectedTheme()
-const route = useRoute()
-
-useHead(() => {
-  return {
-    meta: [{ name: 'robots', content: route.fullPath.includes('?') ? 'noindex, follow' : 'index, follow' }]
-  }
-})
 
 const lineClassBySideMenu = computed(() => {
   return props.hasSideMenu
