@@ -17,9 +17,11 @@ const projectCached = cachedFunction(
     const projectService = new ProjectService()
     const redirect = projectService.getRedirect(slug)
     if (redirect) {
-      return sendRedirect(event, '/api/projects/' + redirect, 301)
+      const originalUrl = getRequestURL(event)
+      const queryString = originalUrl.search
+      const newUrl = `/api/projects/${redirect}${queryString}`
+      return sendRedirect(event, newUrl, 301)
     }
-    //TODO redirect with arguements
     const project = projectService.getBySlug(slug)
 
     if (project === undefined) {
