@@ -95,10 +95,10 @@ const isCompanyDataSelected = computed({
   get: () => useFiltersStore().getCompanyDataSelected().value,
   set: (value: boolean) => {
     useFiltersStore().companyDataSelected = value
-    if (new Navigation().isCatalogProjects()) {
+    if (navigation.isCatalogProjects()) {
       new ProjectManager().getProjects()
     }
-    if (new Navigation().isCatalogProjectDetail() || new Navigation().isCatalogPrograms()) {
+    if (navigation.isCatalogProjectDetail() || navigation.isCatalogPrograms()) {
       new ProgramManager().getDependentCompanyData(true)
     }
   }
