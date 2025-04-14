@@ -30,7 +30,7 @@
             />
           </div>
           <p
-            v-if="isCompanyDataSelected && isDataFull && !navigationStore.hasSpinner && countFilteredPrograms"
+            v-if="companyDataSelected && isDataFull && !navigationStore.hasSpinner && countFilteredPrograms"
             class="fr-mb-0"
             v-html="resume"
           ></p>
@@ -100,8 +100,8 @@ const props = defineProps<Props>()
 const navigationStore = useNavigationStore()
 const { programs, hasError } = storeToRefs(useProgramStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
+const { companyDataSelected } = storeToRefs(useFiltersStore())
 const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormContainer')
-const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
 
 const resume = computed<string>(() =>
   Translation.t('project.programsList', {
