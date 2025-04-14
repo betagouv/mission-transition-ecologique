@@ -30,7 +30,6 @@ import { ProjectManager } from '@/tools/project/projectManager'
 import { Theme } from '@/tools/theme'
 import { RouteName } from '@/types'
 import { computed } from 'vue'
-import ProjectSorter from '@/tools/project/projectSorter'
 import { MetaRobots } from '@/tools/metaRobots'
 
 definePageMeta({
@@ -60,7 +59,7 @@ const sortedProjects = computed(() => {
     return []
   }
 
-  return CompanyData.isCompanySelected() ? ProjectSorter.bySector(filteredProjects.value) : filteredProjects.value
+  return filteredProjects.value
 })
 
 useSeoMeta(MetaSeo.get(title, description))

@@ -60,7 +60,6 @@ import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/tools/theme'
-import ProjectSorter from '@/tools/project/projectSorter'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -98,6 +97,6 @@ const sortedProjects = computed(() => {
     return []
   }
 
-  return ProjectSorter.bySector(filteredProjects.value)
+  return filteredProjects.value
 })
 </script>

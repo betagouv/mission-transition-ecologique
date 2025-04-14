@@ -10,15 +10,12 @@ export default class ProjectFilter {
         return undefined
       }
       let results = projects.value
-      const companySelected = CompanyData.isCompanySelected()
 
       if (theme.value) {
         results = this.getProjectsByTheme(projects.value, theme.value)
       }
 
-      return results.filter((project: ProjectType) => {
-        return this.byCompanyData(project, companySelected)
-      })
+      return results
     })
   }
 

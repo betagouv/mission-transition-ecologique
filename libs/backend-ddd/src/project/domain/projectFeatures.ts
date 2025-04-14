@@ -1,27 +1,32 @@
 import { QuestionnaireData } from '@tee/common'
 import { ProjectType } from '@tee/data'
-import { projects } from '@tee/data/static'
-import { ProjectEligibilityInterface, ProjectSorterInterface } from './spi'
+import { ProjectEligibilityInterface, ProjectRepository, ProjectSorterInterface } from './spi'
 
 export default class ProjectFeatures {
   private readonly _projectEligibility: ProjectEligibilityInterface
   private readonly _projectSorter: ProjectSorterInterface
 
-  constructor(projectEligibility: ProjectEligibilityInterface, projectSorter: ProjectSorterInterface) {
+  constructor(
+    private readonly _projectRepository: ProjectRepository,
+    projectEligibility: ProjectEligibilityInterface,
+    projectSorter: ProjectSorterInterface
+  ) {
     this._projectEligibility = projectEligibility
     this._projectSorter = projectSorter
   }
 
   public getById(id: number): ProjectType | undefined {
-    return projects.find((project) => project.id === +id)
+    return this._projectRepository.getOneById(id)
   }
 
   public getBySlug(slug: string): ProjectType | undefined {
-    return projects.find((project) => project.slug === slug)
+    return this._projectRepository.getOneBySlug(slug)
   }
 
   public getFiltered(questionnaireData: QuestionnaireData): ProjectType[] {
-    this._projectSorter.sortByPriority(projects)
+    const projects = this._projectRepository.get()
+    this._projectSorter.byPriority(projects)
+    console.log(questionnaireData.onlyEligible === false)
     if (!questionnaireData.codeNAF1 || questionnaireData.onlyEligible === false) {
       console.log('Return raw projects')
       return projects
@@ -31,6 +36,6 @@ export default class ProjectFeatures {
     })
 
     console.log('Return sorted projects')
-    return this._projectSorter.sortBySector(eligibleProjects)
+    return this._projectSorter.bySector(eligibleProjects)
   }
 }

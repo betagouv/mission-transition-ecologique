@@ -38,7 +38,7 @@
 import { useProjectStore } from '@/stores/project'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { ProjectManager } from '@/tools/project/projectManager'
-import ProjectSorter from '@/tools/project/projectSorter'
+import { ProjectSorter } from '@tee/data'
 import { Theme } from '@/tools/theme'
 import { CompanyData } from '@/tools/companyData'
 import { RouteName } from '@/types'
@@ -61,6 +61,8 @@ onNuxtReady(async () => {
 const theme = Theme.getThemeFromSelectedTheme()
 const { projects, hasError } = storeToRefs(useProjectStore())
 const { hasSpinner } = storeToRefs(useNavigationStore())
+const { isDataFull } = storeToRefs(useCompanyDataStore())
+const projectSorter = new ProjectSorter()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
 const sortedProjects = computed(() => {
@@ -68,13 +70,11 @@ const sortedProjects = computed(() => {
     return []
   }
 
-  if ((!theme.value || !Theme.isTheme(theme.value)) && !useCompanyDataStore().isDataFull) {
-    return useCompanyDataStore().isDataFull
-      ? ProjectSorter.byHighlightAndSector(filteredProjects.value)
-      : ProjectSorter.byHighlight(filteredProjects.value)
+  if (!theme.value || !Theme.isTheme(theme.value)) {
+    return isDataFull.value ? projectSorter.byHighlightAndSector(filteredProjects.value) : projectSorter.byHighlight(filteredProjects.value)
   }
 
-  return useCompanyDataStore().isDataFull ? ProjectSorter.bySector(filteredProjects.value) : filteredProjects.value
+  return filteredProjects.value
 })
 const projectList = computed(() => {
   return props.limit ? sortedProjects.value.slice(0, props.limit) : sortedProjects.value

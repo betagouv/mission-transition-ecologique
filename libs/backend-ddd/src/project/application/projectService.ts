@@ -1,16 +1,17 @@
-import { ProgramType, ProjectEligibility, ProjectSorter, ProjectType } from '@tee/data'
+import { ProgramType, ProjectType } from '@tee/data'
 // import { ProjectEligibility, ProjectSorter, ProjectType } from '@tee/data'
 import ProjectFeatures from '../domain/projectFeatures'
 import { QuestionnaireData } from '@tee/common'
 import { Result } from 'true-myth'
+import { ProjectEligibility } from '../infrastructure/projectEligibility'
+import ProjectsJson from '../infrastructure/projectsJson'
+import { ProjectSorter } from '../infrastructure/projectSorter'
 
 export class ProjectService {
   private _project: ProjectFeatures
 
   public constructor() {
-    const projectEligibility = new ProjectEligibility()
-    const projectSorter = new ProjectSorter()
-    this._project = new ProjectFeatures(projectEligibility, projectSorter)
+    this._project = new ProjectFeatures(ProjectsJson.getInstance(), new ProjectEligibility(), new ProjectSorter())
   }
 
   public getFiltered(questionnaireData: QuestionnaireData): Result<ProjectType[], Error> {
