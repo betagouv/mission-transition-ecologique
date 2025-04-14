@@ -32,7 +32,8 @@ export class ProjectFeatures {
     new Redirect(this._logger).updateProjectsRedirects(projects)
 
     const validProjects = await this._validateData(projects)
-    FileManager.writeJson(this._outputFilePath, validProjects, 'projects.json updated')
+    const sanitizedProjects = validProjects.map(({ status: _status, ...rest }) => rest)
+    FileManager.writeJson(this._outputFilePath, sanitizedProjects, 'projects.json updated')
     this._logger.write('projectGeneration.log')
 
     return
