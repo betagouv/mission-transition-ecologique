@@ -1,7 +1,7 @@
 <template>
   <TeeContentBlock
     v-if="companyDataFilter && canDisplayFilter(companyDataFilter)"
-    class="fr-p-0 fr-border-t--grey--light"
+    class="fr-p-0 fr-border-t--grey--light fr-text-left"
   >
     <template #title>
       <div class="fr-p-3v fr-text--bold">

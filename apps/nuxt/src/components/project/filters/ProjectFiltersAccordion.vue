@@ -24,7 +24,7 @@ const props = defineProps<Props>()
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const companyDataFilter: FilterItem = {
-  title: 'Entreprise',
+  title: 'Votre entreprise',
   id: FilterItemKeys.companyData,
   component: FilterByCompanyData,
   componentClass: 'fr-pl-2v',
