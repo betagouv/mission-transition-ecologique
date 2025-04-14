@@ -16,7 +16,10 @@ function setupIframe(element: HTMLScriptElement) {
   const type = element.dataset.type || ''
   const id = element.dataset.id || ''
   const parentUrl = encodeURIComponent(window.location.href)
-  const src = `${url}/iframe/${type}/${id}?parent_url=${parentUrl}&utm_campaign=iframe`
+  let src = `${url}/iframe?parent_url=${parentUrl}&utm_campaign=iframe`
+  if (type && id) {
+    src = `${url}/iframe/${type}/${id}?parent_url=${parentUrl}&utm_campaign=iframe`
+  }
 
   const iframe = document.createElement('iframe')
 
