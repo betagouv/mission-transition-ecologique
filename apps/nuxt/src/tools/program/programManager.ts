@@ -3,7 +3,7 @@ import ProgramApi from '@/tools/api/programApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
-import { ProgramRedirect, ProgramTypeForFront, QuestionnaireData } from '@/types'
+import { ProgramTypeForFront, QuestionnaireData } from '@/types'
 
 export class ProgramManager {
   _useProgram = useProgramStore()
@@ -43,17 +43,7 @@ export class ProgramManager {
     this._useNavigation.hasSpinner = true
     const resultApi = await this._getOneFromApi(id)
     if (resultApi.isOk()) {
-      // console.log('isOK')
-      // navigateTo('/aides-entreprise/amelioration-qualite-de-l-air')
-      if (resultApi.data.newProgramId) {
-        const route = useRoute()
-        const newPath = route.fullPath.replace(route.params.programId as string, resultApi.data.newProgramId as string)
-        console.log('ici', newPath)
-        setTimeout(() => {
-          navigateTo(newPath)
-        }, 0)
-      }
-      this._useProgram.currentProgram = resultApi.data as ProgramTypeForFront
+      this._useProgram.currentProgram = resultApi.data
       this._useProgram.hasError = false
     } else {
       this._useProgram.hasError = true
@@ -84,7 +74,7 @@ export class ProgramManager {
     return await new ProgramApi(questionnaireData).get()
   }
 
-  private async _getOneFromApi(id: string): Promise<ResultApi<ProgramTypeForFront | ProgramRedirect>> {
+  private async _getOneFromApi(id: string): Promise<ResultApi<ProgramTypeForFront>> {
     return await new ProgramApi(useUsedTrackStore().getQuestionnaireData()).getOne(id)
   }
 }
