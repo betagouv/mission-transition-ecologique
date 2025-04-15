@@ -1,15 +1,14 @@
 titre: Accompagnement à l'Écolabel européen
-promesse: >-
-  Valorisez la qualité environnementale des produits et services de votre
-  entreprise
+promesse: Valorisez votre engagement environnemental grâce à l’Écolabel européen
 description: >-
-  Obtenez l'Écolabel européen, le seul label écologique public et officiel
-  européen permettant de valoriser des produits et services plus respectueux de
-  l’environnement tout en garantissant des performances identiques à celles des
-  produits et services analogues. Valorisez ainsi votre engagement auprès des
-  consommateurs et des acheteurs professionnels grâce à l’Écolabel européen qui
-  garantit un impact limité de vos produits et services sur l’environnement et
-  la santé.
+  L’Ecolabel européen est le seul label écologique officiel de l’Union
+  européenne, qui récompense les produits et services ayant un faible impact
+  environnemental et sanitaire. Il est un excellent moyen pour une entreprise de
+  valoriser son engagement auprès des consommateurs et des acheteurs
+  professionnels. 
+
+  Vous souhaitez réaliser les démarches pour obtenir l’Écolabel européen sur un
+  produit ou un service ? Suivez les étapes suivantes :
 description longue: >-
   Les catégories de produits pouvant bénéficier de l'écolabel européen sont les
   suivantes :
@@ -72,15 +71,13 @@ objectifs:
       - lien: mailto:amo.ecolabeleu@ademe.fr
         texte: Contact direct ADEME
   - description: >-
-      Vous pouvez nous contacter depuis le formulaire pour être accompagné tout
-      au long de votre certification par l'ADEME tout en bénéficiant d’aides
+      Contactez les conseillers de l'ADEME depuis le formulaire pour être
+      accompagné tout au long de votre certification tout en bénéficiant d’aides
       financières.
   - description: >-
       Constituez votre dossier et envoyez-le à votre organisme certificateur,
       pour analyse et audit.
-  - description: >-
-      Créez un compte sur la plateforme E-cat de la Commission européenne, pour
-      être référencé et gagner en visibilité.
+  - description: Créez un compte sur la plateforme E-cat de la Commission européenne.
     liens:
       - lien: https://webgate.ec.europa.eu/cas/eim/external/register.cgi
         texte: Créer un compte E-cat
