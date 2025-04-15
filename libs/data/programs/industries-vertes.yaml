@@ -1,10 +1,12 @@
-titre: Industries vertes
+titre: Industries vertes (CI3V)
 promesse: Investissez dans les industries vertes et bénéficiez d'un crédit d'impôt
 description: >-
-  Vous êtes une entreprise industrielle et vous avez un projet sur l'une des
-  filières clés de la transition écologique : le photovoltaïque, les batteries,
-  l’éolien ou encore les pompes à chaleur ? Bénéficiez d'un crédit d'impôt pour
-  l'industrie verte (C3IV).
+  Vous êtes une entreprise industrielle et vous avez un projet de production
+  dans l’une des filières clés de la transition écologique : photovoltaïque,
+  batteries, éolien ou pompes à chaleur ? Le crédit d’impôt au titre des
+  investissements dans l’industrie verte (C3IV) peut vous accompagner. Il permet
+  de réduire vos coûts en finançant une partie de vos investissements pour
+  fabriquer ces équipements ou leurs composants.
 description longue: >-
   Les dépenses éligibles au C3IV des entreprises seront relatives à :
 
@@ -18,23 +20,42 @@ description longue: >-
   • La production ou la valorisation des matières premières critiques
   nécessaires à la production des équipements et des composants définis
   précédemment.
+
+
+  NB : L’entreprise porteuse d’un projet de production de composants essentiels
+  ou de matières premières critiques devra justifier qu’au moins 50 % de son
+  chiffre d’affaires sera réalisé avec des entreprises exerçant des activités de
+  production en aval de la chaîne de production de ces quatre filières : les
+  batteries, l’éolien, les panneaux solaires, les pompes à chaleur.
+début de validité: 14/03/2024
 illustration: images/TEE_ampoule.png
 opérateur de contact: DDFIP
 url: https://www.entreprises.gouv.fr/fr/credit-impot-industrie-verte-C3IV-agrement
 nature de l'aide: avantage fiscal
-montant de l'avantage fiscal: Le montant des aides est variable selon le projet
+montant de l'avantage fiscal: Variable selon le projet
 activable en autonomie: oui
 objectifs:
+  - description: Vérifiez l'éligibilité de votre projet.
+    liens:
+      - lien: >-
+          https://www.impots.gouv.fr/professionnel/questions/puis-je-pretendre-au-credit-dimpot-au-titre-des-investissements-en-faveur
+        texte: Conditions d'éligibilité
   - description: >-
-      Consultez la rubrique "en savoir plus" pour vérifier l'éligibilité de
-      votre projet.
+      Préparez votre dossier pour votre demande d'agrément pour le crédit
+      d’impôt C3IV.
+    liens:
+      - lien: >-
+          https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/220_rembousement/industrie_verte_c3iv/demande_agrement_c3iv.pdf
+        texte: Informations et pièces à joindre à votre demande
   - description: >-
-      Contactez la Direction générale des Finances publiques par mail à
-      l'adresse c3iv@dgfip.finances.gouv.fr pour présenter votre projet et
-      réaliser votre demande d'agrément du crédit d'impôt "C3IV".
+      Adressez votre demande par mail à la Direction générale des Finances
+      publiques : c3iv@dgfip.finances.gouv.fr
   - description: >-
-      Les dossiers seront examinés par la Direction générale des Entreprises
+      Les dossiers sont examinés par la Direction générale des Entreprises
       (DGE), la Direction générale des Finances publiques (DGFIP) et l'ADEME.
+  - description: >-
+      Dans un délai de trois mois, recevez la lettre de décision concernant
+      votre demande d'agrément pour le crédit d’impôt C3IV.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
@@ -46,22 +67,31 @@ conditions d'éligibilité:
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-    - La demande d'agrément doit être soumise avant le commencement des travaux.
     - >-
-      Les entreprises qui envisagent de produire des composants essentiels ou
-      des matières premières critiques devront justifier que 50% de leur chiffre
-      d'affaires provient d'entreprises engagées dans des activités de
-      production en aval des quatre filières, à savoir les batteries, l’éolien,
-      les panneaux solaires, les pompes à chaleur.
+      L'opération pour laquelle vous sollicitez ce crédit d'impôt ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: dispositif . début de validité <= date du jour
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est B
       - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est S
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est rénover mon bâtiment
