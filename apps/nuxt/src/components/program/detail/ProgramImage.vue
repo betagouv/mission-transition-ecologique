@@ -1,7 +1,8 @@
 <template>
-  <img
+  <NuxtImg
     class="fr-responsive-img"
     :src="`/${currentProgram?.illustration}`"
+    quality="70"
     :alt="`image / ${currentProgram?.titre}`"
   />
 

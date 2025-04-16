@@ -18,6 +18,10 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   },
   routeRules: {
     '/': { prerender: true },
+    '/aides-entreprise': { prerender: true },
+    '/aides-entreprise/**': { swr: true },
+    '/projets-entreprise': { prerender: true },
+    '/projets-entreprise/**': { swr: true },
     '/accessibilite': { prerender: true },
     // '/mentions-legales': { prerender: true },
     // '/donnees-personnelles': { prerender: true },
@@ -144,6 +148,9 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       sm: 768,
       md: 992,
       lg: 1248
+    },
+    ipx: {
+      maxAge: 86400 * 365
     }
   },
   runtimeConfig: {

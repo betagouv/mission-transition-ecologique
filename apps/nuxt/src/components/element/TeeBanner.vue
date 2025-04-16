@@ -3,11 +3,6 @@
     class="fr-container--fluid fr-banner"
     :class="bgClass"
   >
-    <img
-      v-if="props.bgImage"
-      :src="props.bgImage"
-      :alt="props.imgAlt"
-    />
     <NuxtPicture
       v-if="props.bgImage"
       :src="props.bgImage"
