@@ -8,11 +8,11 @@ export class RedirectService {
     this._redirect = new RedirectFeatures(new RedirectRepository())
   }
 
-  public getProgramRedirect(slug: string): string | undefined {
-    return this._redirect.getProgramRedirect(slug)
+  public getByProgramSlug(slug: string): string | undefined {
+    return this._redirect.getByProgramSlug(slug)
   }
 
-  public getProjectRedirect(slug: string): string | undefined {
-    return this._redirect.getProjectRedirect(slug)
+  public getByProjectSlug(slug: string): string | undefined {
+    return this._redirect.getByProjectSlug(slug)
   }
 }

@@ -7,11 +7,11 @@ export default class RedirectFeatures {
     this._redirectRepository = redirectRepository
   }
 
-  public getProgramRedirect(slug: string): string | undefined {
-    return this._redirectRepository.getProgramRedirect(slug)
+  public getByProgramSlug(slug: string): string | undefined {
+    return this._redirectRepository.getByProgramSlug(slug)
   }
 
-  public getProjectRedirect(slug: string): string | undefined {
-    return this._redirectRepository.getProjectRedirect(slug)
+  public getByProjectSlug(slug: string): string | undefined {
+    return this._redirectRepository.getByProjectSlug(slug)
   }
 }

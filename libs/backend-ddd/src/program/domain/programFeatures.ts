@@ -7,7 +7,6 @@ import { Objective, QuestionnaireData } from '@tee/common'
 import { Monitor } from '../../common'
 import ProgramCustomizer from './programCustomizer'
 import { ProgramNotFoundError } from './types'
-import { RedirectService } from '../../common/application/redirectService'
 
 export default class ProgramFeatures {
   private _programRepository: ProgramRepository
@@ -100,9 +99,5 @@ export default class ProgramFeatures {
       }
     })
     return objectivesArray
-  }
-
-  public getRedirect(id: string): string | undefined {
-    return new RedirectService().getProgramRedirect(id)
   }
 }

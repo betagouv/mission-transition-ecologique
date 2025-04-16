@@ -1,4 +1,4 @@
 export type RedirectRepositoryType = {
-  getProgramRedirect: (slug: string) => string | undefined
-  getProjectRedirect: (slug: string) => string | undefined
+  getByProgramSlug: (slug: string) => string | undefined
+  getByProjectSlug: (slug: string) => string | undefined
 }
