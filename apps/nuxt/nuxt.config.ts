@@ -7,8 +7,9 @@ import { NuxtSentryConfig } from './nuxt.sentry.config'
 import { ChangeFreq, Priority } from './src/types/sitemapType'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
-export default<DefineNuxtConfig> defineNuxtConfig({
+export default <DefineNuxtConfig>defineNuxtConfig({
   app: {
+    rootId: 'tee',
     head: {
       htmlAttrs: {
         lang: 'fr'
@@ -26,7 +27,7 @@ export default<DefineNuxtConfig> defineNuxtConfig({
     '/iframe/projet/**': {
       swr: true,
       security: {
-        headers: NuxtSecurityConfig.getIframePageHeadersConfig(),
+        headers: NuxtSecurityConfig.getIframePageHeadersConfig()
       }
     }
   },
@@ -38,9 +39,9 @@ export default<DefineNuxtConfig> defineNuxtConfig({
   devtools: {
     enabled: true,
     timeline: {
-      enabled: true,
+      enabled: true
     },
-    telemetry: false,
+    telemetry: false
   },
   devServer: {
     host: 'localhost',
@@ -49,18 +50,18 @@ export default<DefineNuxtConfig> defineNuxtConfig({
   typescript: {
     typeCheck: true,
     tsConfig: {
-      extends: '../tsconfig.app.json', // Nuxt copies this string as-is to the `./.nuxt/tsconfig.json`, therefore it needs to be relative to that directory
+      extends: '../tsconfig.app.json' // Nuxt copies this string as-is to the `./.nuxt/tsconfig.json`, therefore it needs to be relative to that directory
     }
   },
   imports: {
     autoImport: true
   },
   css: [
-    '@gouvfr/dsfr/dist/dsfr.min.css',                // Le CSS minimal du DSFR
+    '@gouvfr/dsfr/dist/dsfr.min.css', // Le CSS minimal du DSFR
     '@gouvfr/dsfr/dist/utility/icons/icons.min.css', // Styles de tous les composants du DSFR
-    '@gouvminint/vue-dsfr/styles',                   // Styles des composants VueDsfr
+    '@gouvminint/vue-dsfr/styles', // Styles des composants VueDsfr
     '~/assets/custom.css',
-    '~/assets/main.scss',
+    '~/assets/main.scss'
   ],
   vite: {
     plugins: [nxViteTsPaths()],
@@ -75,12 +76,12 @@ export default<DefineNuxtConfig> defineNuxtConfig({
   components: [
     {
       path: '~/components',
-      pathPrefix: false,
-    },
+      pathPrefix: false
+    }
   ],
   nitro: {
     experimental: {
-      openAPI: true,
+      openAPI: true
     },
     devStorage: {
       cache: {
@@ -89,12 +90,11 @@ export default<DefineNuxtConfig> defineNuxtConfig({
     }
   },
   features: {
-    inlineStyles: false,
-    devLogs: true,
+    devLogs: true
   },
   experimental: {
     renderJsonPayloads: false,
-    inlineRouteRules: true,
+    inlineRouteRules: true
     // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 
@@ -120,37 +120,30 @@ export default<DefineNuxtConfig> defineNuxtConfig({
   sentry: NuxtSentryConfig.getConfig(),
   sitemap: {
     cacheMaxAgeSeconds: 2678400, // 31 days
-    credits:false,
+    credits: false,
     autoLastmod: true,
     experimentalWarmUp: true,
     defaults: {
       changefreq: ChangeFreq.Monthly,
       priority: Priority.Low
     },
-    sources: [
-      '/api/__sitemap__/programs',
-      '/api/__sitemap__/projects',
-    ]
+    sources: ['/api/__sitemap__/programs', '/api/__sitemap__/projects']
   },
   robots: {
-    disallow:[
-      '/questionnaire/',
-      '/ajouter-une-aide-entreprises',
-      '/iframe/projet/'
-    ],
+    disallow: ['/ajouter-une-aide-entreprises', '/iframe/projet/'],
     credits: false
   },
   scripts: {
-    registry: NuxtScriptsConfig.getRegistry(),
+    registry: NuxtScriptsConfig.getRegistry()
   },
   runtimeConfig: {
     public: {
       environment: Config.SERVER_ENVIRONMENT,
       sentry: {
-        dsn: Config.SENTRY_DSN,
+        dsn: Config.SENTRY_DSN
       },
       posthog: {
-        apiKey: Config.posthogApiKey,
+        apiKey: Config.posthogApiKey
       },
       scripts: {
         matomoAnalytics: {

@@ -3,6 +3,7 @@ from etl.tools.db_manager import DBManager
 from dotenv import load_dotenv
 import os
 
+
 def init_db():
     """Executes schema.sql to initialize the database."""
     try:
@@ -26,4 +27,5 @@ def reset_test_db():
 
 
 if __name__ == "__main__":
+    # reset_test_db()
     init_db()

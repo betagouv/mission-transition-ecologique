@@ -23,17 +23,24 @@ useSeoMeta(MetaSeo.default())
 
 <template>
   <div>
+    <TeeHeader />
+    <div>
+      <slot />
+    </div>
+    <TeeFooter />
     <ClientOnly>
       <TeeDsfrConsent />
       <TeeDsfrPersonalizeConsent />
       <TeeRegisterModal v-if="navigationStore.hasRegisterModal" />
     </ClientOnly>
-    <TeeHeader />
-
-    <slot />
-
-    <div class="fr-mt-0v">
-      <TeeFooter />
-    </div>
   </div>
 </template>
+
+<style scoped lang="scss">
+#tee > div:first-of-type {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+</style>

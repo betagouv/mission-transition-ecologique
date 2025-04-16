@@ -1,4 +1,5 @@
 import { useCompanyDataStore } from '@/stores/companyData'
+import { useFiltersStore } from '@/stores/filters'
 import { CompanyDataStorage } from '@/tools/companyData/companyDataStorage'
 import { useNavigationStore } from '@/stores/navigation'
 import {
@@ -8,7 +9,6 @@ import {
   LegalCategory,
   type QuestionnaireData,
   RegisterDetails,
-  QuestionnaireRoute,
   Region,
   ConvertedCommune,
   CompanyLocalisationType,
@@ -36,15 +36,6 @@ export class CompanyData {
     return CompanyDataStorage.getData().value[CompanyDataStorageKey.Size]
   }
 
-  static patchCompanyData(company: CompanyDataRegisterType, profileData?: RegisterDetails) {
-    const denomination =
-      company?.denomination ||
-      `Entreprise : ${profileData?.activity?.value?.secteur || company?.secteur} - ${profileData?.localisation?.value?.region || company?.region}`
-    return {
-      ...company,
-      denomination
-    }
-  }
   static convertLocalisation(geoInfos: ConvertedCommune): CompanyLocalisationType {
     return {
       region: geoInfos.region.nom as Region,
@@ -58,7 +49,7 @@ export class CompanyData {
     profileData: RegisterDetails
   ): CompanyDataType[CompanyDataStorageKey.Company] {
     return {
-      ...this.patchCompanyData(company, profileData),
+      ...this._patchCompanyData(company, profileData),
       structure_size: profileData.size.value,
       ...profileData.localisation.value,
       ...profileData.activity.value
@@ -70,7 +61,7 @@ export class CompanyData {
       ...profileData.localisation.value,
       ...profileData.activity.value,
       structure_size: profileData.size.value,
-      denomination: `Entreprise : ${profileData.activity.value?.secteur} - ${profileData.localisation.value?.region}`
+      denomination: `Entreprise : ${profileData.activity.value?.secteur}`
     } as CompanyDataType[CompanyDataStorageKey.Company]
   }
 
@@ -78,7 +69,7 @@ export class CompanyData {
     return CompanyDataStorage.getData()
   }
 
-  static isDataFull() {
+  static isDataFullComputed() {
     return computed(() => {
       const data = this.dataRef
       const companyData = data.value[CompanyDataStorageKey.Company]
@@ -86,9 +77,29 @@ export class CompanyData {
         useCompanyDataStore().isDataFull = false
         return false
       }
-      useCompanyDataStore().isDataFull = CompanyDataValidator.validate(companyData)
-      return CompanyDataValidator.validate(companyData)
+
+      const isValid = CompanyDataValidator.validate(companyData)
+      useCompanyDataStore().isDataFull = isValid
+      return isValid
     })
+  }
+
+  static hasDataFull() {
+    const data = this.dataRef
+    const companyData = data.value[CompanyDataStorageKey.Company]
+    if (!companyData) {
+      return false
+    }
+    return CompanyDataValidator.validate(companyData)
+  }
+
+  static isDataFull() {
+    this.setDataFull()
+    return useCompanyDataStore().isDataFull
+  }
+
+  static setDataFull() {
+    useCompanyDataStore().isDataFull = this.hasDataFull()
   }
 
   static isCompanySelected() {
@@ -112,6 +123,7 @@ export class CompanyData {
   static resetData() {
     CompanyDataStorage.removeItem(CompanyDataStorageKey.Company)
     CompanyDataStorage.removeItem(CompanyDataStorageKey.Size)
+    this.setDataFull()
   }
 
   static updateData() {
@@ -120,7 +132,7 @@ export class CompanyData {
 
   static saveAndSetUsedTrackStore(data: CompanyDataType) {
     this.saveDataToStorage(data)
-    useFiltersStore().companyDataSelected = true
+    useFiltersStore().setCompanyDataSelected(true)
     useUsedTrackStore().setFromStorage()
   }
 
@@ -135,7 +147,7 @@ export class CompanyData {
   }
 
   static populateQuestionnaireData(questionnaireData: { [k: string]: any }) {
-    if (this.isDataFull().value) {
+    if (this.isDataFull()) {
       const companyData: CompanyDataType = this.dataRef.value
       Object.entries(companyData).forEach(([key, value]) => {
         if (value !== null) {
@@ -186,7 +198,7 @@ export class CompanyData {
   static setDataStorageFromTrack(trackId: TrackId, value: string | string[], selectedOptions: TrackOptionsUnion[]) {
     if (trackId === TrackId.Siret && value !== SiretValue.Wildcard && selectedOptions.length > 0) {
       const questionnaireData = selectedOptions[0].questionnaireData as CompanyDataRegisterType
-      CompanyDataStorage.setCompany(this.patchCompanyData(questionnaireData) as CompanyDataRegisterType)
+      CompanyDataStorage.setCompany(this._patchCompanyData(questionnaireData) as CompanyDataRegisterType)
       if (questionnaireData?.legalCategory === LegalCategory.EI) {
         CompanyDataStorage.setSize(StructureSize.EI)
       }
@@ -209,7 +221,7 @@ export class CompanyData {
       CompanyDataStorage.setCompany({
         ...this.company,
         ...localisationData,
-        denomination: `Entreprise : ${this.company?.secteur} - ${value}`
+        denomination: `Entreprise : ${this.company?.secteur}`
       } as CompanyDataType[CompanyDataStorageKey.Company])
     }
   }
@@ -231,11 +243,28 @@ export class CompanyData {
     return CompanyData.hasCompanyData() ? JSON.stringify(CompanyData.company) : null
   }
 
-  private static _getQuestionnaireGoal() {
-    if (useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected.length) {
-      const questionnaireChoice = useUsedTrackStore().getUsedTrack(TrackId.QuestionnaireRoute)?.selected[0].value
-      return questionnaireChoice === QuestionnaireRoute.SpecificGoal ? TrackId.Goals : TrackId.BuildingProperty
+  static _patchCompanyData(company: CompanyDataRegisterType, profileData?: RegisterDetails) {
+    const denomination = this._getCompanyDenomination(company, profileData)
+    return {
+      ...company,
+      denomination
     }
+  }
+
+  private static _getCompanyDenomination(company: CompanyDataRegisterType, profileData?: RegisterDetails) {
+    if (company?.denomination && company.denomination.trim() !== '') {
+      return company.denomination
+    }
+
+    if (company?.siret) {
+      return 'SIRET : ' + company.siret
+    }
+
+    return `Entreprise : ${profileData?.activity?.value?.secteur ?? company?.secteur}`
+  }
+
+  private static _getQuestionnaireGoal() {
+    return TrackId.BuildingProperty
   }
 
   private static _canAddSizeToStorage(size: StructureSize, questionnaireData: { [k: string]: any }, key: string) {

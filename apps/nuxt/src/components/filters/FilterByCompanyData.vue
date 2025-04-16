@@ -34,7 +34,7 @@
         :class="{ 'fr-text--grey': !isCompanyDataSelected }"
       >
         <div class="fr-grid-row">
-          <div class="fr-col-hidden-lg">
+          <div class="fr-col-hidden-md">
             <div class="fr-col-12">
               <div
                 class="company-filter-icon fr-pl-1v"
@@ -49,7 +49,7 @@
               </div>
             </div>
           </div>
-          <div class="fr-hidden fr-unhidden-lg">
+          <div class="fr-hidden fr-unhidden-md">
             <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pt-1v fr-pl-1v fr-pr-3v">
               <div
                 class="company-filter-icon-large"
@@ -69,6 +69,8 @@
 </template>
 
 <script setup lang="ts">
+import { ProgramManager } from '@/tools/program/programManager'
+import { ProjectManager } from '@/tools/project/projectManager'
 import { CompanyDataStorageKey, SizeToText, StructureSize } from '@/types'
 import { CompanyData } from '@/tools/companyData'
 import Breakpoint from '@/tools/breakpoints'
@@ -89,10 +91,21 @@ type CompanyFilterDetailProps = {
   icon?: string
 }
 const navigation = new Navigation()
-const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
+const isCompanyDataSelected = computed({
+  get: () => useFiltersStore().getCompanyDataSelected().value,
+  set: (value: boolean) => {
+    useFiltersStore().companyDataSelected = value
+    if (navigation.isCatalogProjects()) {
+      new ProjectManager().getProjects()
+    }
+    if (navigation.isCatalogProjectDetail() || navigation.isCatalogPrograms()) {
+      new ProgramManager().getDependentCompanyData(true)
+    }
+  }
+})
 
 const registeredData = CompanyData.dataRef
-const hasRegisteredData = CompanyData.isDataFull()
+const hasRegisteredData = CompanyData.isDataFullComputed()
 const companyName = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.denomination)
 const companySector = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.secteur)
 const companyRegion = computed(() => registeredData.value[CompanyDataStorageKey.Company]?.region)

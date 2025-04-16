@@ -1,5 +1,15 @@
+@use 'setting';
+
 .fr-sidemenu {
-  &--sticky {
-    top: 50%
+  &.fr-sidemenu--sticky {
+    box-shadow: inset -1px 0 0 0 var(--border-default-grey) !important;
+    margin-top: 1px !important;
+  }
+
+  #project-sidemenu {
+    a.fr-sidemenu__link {
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
 }

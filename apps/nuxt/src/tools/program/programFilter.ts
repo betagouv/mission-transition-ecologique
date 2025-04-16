@@ -1,5 +1,4 @@
 import {
-  FilterItemKeys,
   FiltersKeys,
   FiltersType,
   OperatorFilter,
@@ -11,7 +10,6 @@ import {
   type ValueOf
 } from '@/types'
 import { enrichedOperators } from '@tee/data/static'
-import { useFiltersStore } from '@/stores/filters'
 
 export default class ProgramFilter {
   static byAidType(program: ProgramTypeForFront, programAidTypesSelected: ProgramAidType[]) {
@@ -24,7 +22,6 @@ export default class ProgramFilter {
 
   static byCompanyData(program: ProgramTypeForFront, companySelected: boolean) {
     if (companySelected) {
-      useFiltersStore().resetFilter(FilterItemKeys.regionAid)
       return ProgramEligibility.isEligible(program as unknown as ProgramTypeForFront)
     }
 
@@ -74,7 +71,7 @@ export default class ProgramFilter {
       return true
     }
 
-    if (program.filters[FiltersKeys.Theme]) {
+    if (program.filters && program.filters[FiltersKeys.Theme]) {
       return program.filters[FiltersKeys.Theme].includes(themeTypeSelected)
     }
 

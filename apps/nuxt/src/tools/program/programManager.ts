@@ -3,7 +3,6 @@ import ProgramApi from '@/tools/api/programApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
-import UsedTrack from '@/tools/questionnaire/track/usedTrack'
 import { ProgramTypeForFront, QuestionnaireData } from '@/types'
 
 export class ProgramManager {
@@ -53,18 +52,14 @@ export class ProgramManager {
   }
 
   async getDependentCompanyData(onlyEligible: boolean | undefined = undefined) {
-    CompanyData.isDataFull().value ? await this.getFiltered(onlyEligible) : await this.get()
+    CompanyData.isDataFull() && useFiltersStore().companyDataSelected ? await this.getFiltered(onlyEligible) : await this.get()
   }
 
   async update() {
     const navigation = new Navigation()
-    if (
-      (navigation.isQuestionnaireResult() && UsedTrack.isNoSpecificGoal()) ||
-      navigation.isQuestionnaireProjectDetail() ||
-      navigation.isCatalogPrograms()
-    ) {
-      await this.getDependentCompanyData(navigation.isCatalogPrograms() ? false : undefined)
-    } else if (navigation.isCatalogProjectDetail()) {
+    if (navigation.isQuestionnaireResult() || navigation.isQuestionnaireProjectDetail()) {
+      await this.getDependentCompanyData(undefined)
+    } else if (navigation.isCatalogProjectDetail() || navigation.isCatalogPrograms()) {
       await this.getDependentCompanyData(true)
     } else if (navigation.isProgramDetail() && this._useProgram.currentProgram) {
       const currentId = this._useProgram.currentProgram.id

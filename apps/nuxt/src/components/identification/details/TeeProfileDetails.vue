@@ -27,7 +27,9 @@
     <TeeDsfrButton
       :class="Breakpoint.isMobile() ? 'fr-btn-fullwidth' : ''"
       class="fr-bg--yellow fr-text--blue-france fr-col-justify--center"
-      label="Enregistrer et fermer"
+      :label="getSaveProfileButtonLabel"
+      :icon="getSaveProfileButtonIcon"
+      icon-right
       @click="saveProfile"
     />
   </div>
@@ -41,6 +43,9 @@ import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
 import { CompanyData } from '@/tools/companyData'
 import UsedTrack from '@/tools/questionnaire/track/usedTrack'
+
+const navigation = new Navigation()
+const navigationStore = useNavigationStore()
 
 interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
@@ -98,6 +103,14 @@ const canBeSaved = computed(() => {
   return profile.value.activity.value && profile.value.localisation.value && profile.value.size.value
 })
 
+const getSaveProfileButtonLabel = computed(() => {
+  return navigationStore.isFromQuestionnaireCtaRegisterModal ? 'suivant' : 'Enregistrer et fermer'
+})
+
+const getSaveProfileButtonIcon = computed(() => {
+  return navigationStore.isFromQuestionnaireCtaRegisterModal ? 'fr-icon-arrow-right-line' : ''
+})
+
 const saveProfile = async () => {
   showError.value = false
   if (canBeSaved.value && profile.value.size.value) {
@@ -109,6 +122,7 @@ const saveProfile = async () => {
       [CompanyDataStorageKey.Company]: companyData,
       [CompanyDataStorageKey.Size]: profile.value.size.value
     })
+    CompanyData.setDataFull()
     CompanyData.updateRouteFromStorage()
     if (!props.manual) {
       const companyData = CompanyData.company as EstablishmentFront
@@ -122,10 +136,13 @@ const saveProfile = async () => {
       Analytics.sendEvent('register_manual_modal')
     }
 
-    Navigation.toggleRegisterModal(false)
     await UsedTrack.updateQuestionnaireStep()
-    await new ProjectManager().update()
-    await new ProgramManager().update()
+    await navigation.redirectAfterModal()
+    Navigation.toggleRegisterModal(false)
+    if (!navigationStore.isFromQuestionnaireCtaRegisterModal) {
+      await new ProjectManager().update()
+      await new ProgramManager().update()
+    }
   } else {
     showError.value = true
   }

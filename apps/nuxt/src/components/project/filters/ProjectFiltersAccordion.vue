@@ -1,4 +1,10 @@
 <template>
+  <div
+    v-if="withTitle"
+    class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6v"
+  >
+    Filtres
+  </div>
   <FiltersAccordion
     :accordion-class="props.accordionClass"
     :company-data-filter="companyDataFilter"
@@ -8,19 +14,20 @@
 import FilterByCompanyData from '@/components/filters/FilterByCompanyData.vue'
 import { FilterItemKeys } from '@/types'
 import { FilterItem } from '@/components/filters/FiltersAccordion.vue'
-import { CompanyData } from '@/tools/companyData'
 
 interface Props {
   accordionClass?: string
+  withTitle?: boolean
 }
 
 const props = defineProps<Props>()
+const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const companyDataFilter: FilterItem = {
-  title: 'Entreprise',
+  title: 'Votre entreprise',
   id: FilterItemKeys.companyData,
   component: FilterByCompanyData,
   componentClass: 'fr-pl-2v',
-  display: CompanyData.isDataFull().value
+  display: isDataFull
 }
 </script>

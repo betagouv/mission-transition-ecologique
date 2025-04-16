@@ -1,19 +1,22 @@
 <template>
-  <ul class="fr-ml-3v">
-    <li class="fr-mb-2v fr-text--purple fr-text--bold">{{ title }}</li>
+  <ul>
+    <li class="fr-text--purple">
+      <h4 class="fr-mb-2v fr-text--purple fr-text--bold fr-text--md">{{ title }}</h4>
+      <ul class="fr-raw-list fr-ml-n2w fr-grid-row fr-grid-row--gutters">
+        <li
+          v-for="program in programs"
+          :key="program.id"
+          class="fr-col-12 fr-col-sm-6 fr-col-md-12"
+        >
+          <ProgramCard
+            :program="program"
+            :project="project"
+            class="fr-enlarge-link fr-card--horizontal-tier"
+          />
+        </li>
+      </ul>
+    </li>
   </ul>
-
-  <div
-    v-for="program in programs"
-    :key="program.id"
-    class="fr-col-12 no-outline fr-mb-6v"
-  >
-    <ProgramCard
-      :program="program"
-      :project="project"
-      class="fr-enlarge-link fr-card--horizontal-tier"
-    />
-  </div>
 </template>
 
 <script setup lang="ts">

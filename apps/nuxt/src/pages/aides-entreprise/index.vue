@@ -1,20 +1,64 @@
 <template>
-  <div>
-    <div
-      class="fr-container--fluid fr-container--fluid--no-overflow fr-mt-0 fr-mb-12v"
-      style="min-height: 800px"
-    >
-      <CatalogPrograms />
-    </div>
-  </div>
+  <LayoutCatalog
+    :has-side-menu="hasSideMenu"
+    :title="title"
+    :has-error="hasError"
+    :count-items="countPrograms"
+  >
+    <template #sidemenu>
+      <ProgramFiltersAccordion with-title />
+    </template>
+    <ProgramList :filtered-programs="filteredPrograms" />
+  </LayoutCatalog>
 </template>
 
 <script setup lang="ts">
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { RouteName } from '@/types'
+import { useProgramStore } from '@/stores/program'
+import { ProgramManager } from '@/tools/program/programManager'
+import { MetaSeo } from '@/tools/metaSeo'
+import { computed } from 'vue'
+import { MetaRobots } from '@/tools/metaRobots'
 
 definePageMeta({
   name: RouteName.CatalogPrograms,
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
 })
+
+const programStore = useProgramStore()
+const { programs, hasError } = storeToRefs(useProgramStore())
+
+const title = 'Les aides à la transition écologique'
+const description =
+  'Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :' +
+  'ADEME, Bpifrance, CCI, CMA, etc.'
+
+onServerPrefetch(async () => {
+  await new ProgramManager().getDependentCompanyData(false)
+})
+
+onNuxtReady(async () => {
+  await new ProgramManager().getDependentCompanyData(true)
+})
+
+useSeoMeta(MetaSeo.get(title, description))
+
+onBeforeRouteLeave(() => {
+  useSeoMeta(MetaSeo.default())
+})
+
+const hasSideMenu = computed(() => {
+  return !hasError.value
+})
+
+const filteredPrograms = computed(() => {
+  return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
+})
+
+const countPrograms = computed(() => {
+  return filteredPrograms.value?.length || 0
+})
+
+useHead(MetaRobots.noIndexOnQueries(useRoute().fullPath))
 </script>

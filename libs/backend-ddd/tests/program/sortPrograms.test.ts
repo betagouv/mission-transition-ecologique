@@ -1,5 +1,4 @@
 import { sortPrograms } from '../../src/program/domain/sortPrograms'
-import { QuestionnaireRoute } from '@tee/common'
 import { ProgramType, ProgramAidType, ProgramEligibilityType, ProgramTypeWithEligibility } from '@tee/data'
 import { makeProgramHelper } from './testing'
 
@@ -25,22 +24,12 @@ type TestCase = {
   expectedIdOrder: string[]
 }
 
-type TestCaseWithQuestionnaireRoute = TestCase & { questionnaireRoute: QuestionnaireRoute }
-
 describe(`
  GIVEN a list of programs
   WHEN sorting the programs
 EXPECT that the programs respect a set of given rules
 `, () => {
-  // test helper
-  const addQuestionnaireRoute = (questionnaireRoute: QuestionnaireRoute, testCases: TestCase[]): TestCaseWithQuestionnaireRoute[] => {
-    return testCases.map((testCase) => {
-      return { questionnaireRoute: questionnaireRoute, ...testCase } as TestCaseWithQuestionnaireRoute
-    })
-  }
-
-  // test cases independent from questionnaire route
-  const testCasesCommon: TestCase[] = [
+  const allTestCases: TestCase[] = [
     {
       name: 'empty',
       programs: [],
@@ -60,11 +49,7 @@ EXPECT that the programs respect a set of given rules
       name: 'no reordering of coaching/training 2',
       programs: [makeProgram('1', ProgramAidType.study), makeProgram('2', ProgramAidType.train)],
       expectedIdOrder: ['1', '2']
-    }
-  ]
-
-  // test cases for questionnaire route "Je ne sais pas par où commencer"
-  const testCasesNoSpecificGoal: TestCase[] = [
+    },
     {
       name: 'free coaching first 1',
       programs: [makeProgram('1', ProgramAidType.study), makeProgram('2', ProgramAidType.study, 'gratuit')],
@@ -108,61 +93,9 @@ EXPECT that the programs respect a set of given rules
     }
   ]
 
-  // test cases for the questionnaire route "j'ai un objectif précis"
-  const testCasesSpecificGoal: TestCase[] = [
-    {
-      name: 'free coaching last 1',
-      programs: [makeProgram('1', ProgramAidType.study, 'gratuit'), makeProgram('2', ProgramAidType.study)],
-      expectedIdOrder: ['2', '1']
-    },
-    {
-      name: 'free coaching last 2 (case insensitive)',
-      programs: [makeProgram('1', ProgramAidType.study, 'Gratuit'), makeProgram('2', ProgramAidType.study)],
-      expectedIdOrder: ['2', '1']
-    },
-    {
-      name: 'possible free coaching second last 1',
-      programs: [
-        makeProgram('1', ProgramAidType.study, 'gratuit'),
-        makeProgram('2', ProgramAidType.study, 'Sur devis (gratuit en bretagne)'),
-        makeProgram('3', ProgramAidType.study)
-      ],
-      expectedIdOrder: ['3', '2', '1']
-    },
-    {
-      name: 'possible free coaching second last 2 (case insensitive)',
-      programs: [
-        makeProgram('1', ProgramAidType.study, 'gratuit'),
-        makeProgram('2', ProgramAidType.study, 'Sur devis (Gratuit en bretagne)'),
-        makeProgram('3', ProgramAidType.study)
-      ],
-      expectedIdOrder: ['3', '2', '1']
-    },
-    {
-      name: 'correct ordering of types',
-      programs: [
-        makeProgram('1', ProgramAidType.study, 'gratuit'),
-        makeProgram('2', ProgramAidType.study, 'Sur devis (Gratuit en bretagne)'),
-        makeProgram('3', ProgramAidType.study),
-        makeProgram('4', ProgramAidType.train),
-        makeProgram('5', ProgramAidType.tax),
-        makeProgram('6', ProgramAidType.loan),
-        makeProgram('7', ProgramAidType.fund)
-      ],
-      expectedIdOrder: ['7', '6', '5', '3', '4', '2', '1']
-    }
-  ]
-
-  const allTestCases = [
-    ...addQuestionnaireRoute(QuestionnaireRoute.NoSpecificGoal, testCasesCommon),
-    ...addQuestionnaireRoute(QuestionnaireRoute.SpecificGoal, testCasesCommon),
-    ...addQuestionnaireRoute(QuestionnaireRoute.NoSpecificGoal, testCasesNoSpecificGoal),
-    ...addQuestionnaireRoute(QuestionnaireRoute.SpecificGoal, testCasesSpecificGoal)
-  ]
-
   allTestCases.map((tc) => {
-    test(`${tc.questionnaireRoute}: ${tc.name}`, () => {
-      const sortedPrograms = sortPrograms(addEligibility(tc.programs), tc.questionnaireRoute)
+    test(tc.name, () => {
+      const sortedPrograms = sortPrograms(addEligibility(tc.programs))
       expect(sortedPrograms).toHaveLength(tc.expectedIdOrder.length)
 
       const expectedSortedPrograms = tc.expectedIdOrder.map((id) => {

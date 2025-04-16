@@ -1,11 +1,13 @@
 <template>
   <TeeContentBlock
-    v-if="companyDataFilter?.display"
-    class="fr-p-0 fr-border-t--grey--light"
+    v-if="companyDataFilter && canDisplayFilter(companyDataFilter)"
+    class="fr-p-0 fr-border-t--grey--light fr-text-left"
   >
-    <template #title
-      ><div class="fr-p-3v">{{ companyDataFilter.title }}</div></template
-    >
+    <template #title>
+      <div class="fr-p-3v fr-text--bold">
+        {{ companyDataFilter.title }}
+      </div>
+    </template>
     <template #content>
       <FilterByCompanyData />
     </template>
@@ -58,7 +60,7 @@ export interface FilterItem {
   accordionClass?: string
   component: unknown
   componentClass?: string
-  display?: boolean | ComputedRef<boolean>
+  display?: boolean | ComputedRef<boolean> | Ref<boolean>
 }
 
 const props = defineProps<FiltersAccordionProps>()
