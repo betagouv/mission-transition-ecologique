@@ -1,0 +1,161 @@
+titre: Crédit d'impôt innovation (CII)
+promesse: >-
+  Bénéficiez d'une réduction d'impôt pour vos dépenses liées à l'innovation et
+  au prototypage.
+description: >-
+  Le Crédit d'Impôt Innovation (CII) permet aux entreprises de bénéficier d'un
+  avantage financier sous forme de réduction d'impôt pour les dépenses liées à
+  l'innovation. Il est destiné à encourager les PME à investir dans la recherche
+  et le développement de nouveaux produits ou procédés innovants. Il s'applique
+  aux dépenses engagées pour la création de prototypes ou d'installations
+  pilotes de nouveaux produits (frais de personnel, achat de matériel et
+  d'équipement spécifique pour la création de prototypes,  frais externes pour
+  des services de conseil...)
+description longue: >-
+  Le CII s'applique à des projets de réalisation d'opérations de conception d'un
+  prototype ou d'installation pilote d'un nouveau produit. Pour être éligible,
+  votre nouveau produit doit se distinguer clairement de ceux déjà présents sur
+  le marché par des performances supérieures, notamment sur le plan technique,
+  de l’éco-conception, de l’ergonomie ou des fonctionnalités.
+
+
+  Les dépenses pouvant bénéficier du CII concernent :
+
+  - L'amortissement des biens ou bâtiments neufs utilisés pour la recherche ou
+  la création de prototypes.
+
+  - La différence entre l'indemnisation d'assurance et le coût de reconstruction
+  en cas de perte ou dommage sur un bien.
+
+  - Les dépenses liées au personnel impliqué dans la recherche et développement
+  : chercheurs, techniciens, et personnel avec un doctorat ou équivalent. Les
+  dépenses pour ce personnel peuvent être doublées pendant les 2 premières
+  années de CDI.
+
+  - La rémunération supplémentaire pour les salariés ayant inventé quelque chose
+  pendant des opérations de recherche.
+
+  - L'amortissement des brevets et certificats d'obtention végétale.
+
+  - Les frais pour défendre des brevets, certificats d'obtention végétale,
+  dessins ou modèles.
+
+  - Les frais pour le dépôt de dessins et modèles.
+
+  - Les dépenses pour la recherche réalisée par des entreprises ou bureaux
+  d’études agréés.
+
+  Ces dépenses peuvent être internes ou liées à de la sous-traitance.
+fin de validité: 31/12/2027
+illustration: images/TEE_ampoule.png
+opérateur de contact: DDFIP
+url: https://entreprendre.service-public.fr/vosdroits/F35494
+nature de l'aide: avantage fiscal
+montant de l'avantage fiscal: Crédit d'impôt entre 20 à 60% selon localisation
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Déclarez vos dépenses sur le formulaire "crédits d'impôts pour les
+      dépenses de recherche" n° 2069-A-SD
+    liens:
+      - lien: https://entreprendre.service-public.fr/vosdroits/R14269
+        texte: Remplir le formulaire Cerfa
+  - description: Joignez ce formulaire Cerfa à votre déclaration de résultats.
+    liens:
+      - lien: >-
+          https://cfspro-idp.impots.gouv.fr/oauth2/authorize?response_type=code&redirect_uri=https%3A%2F%2Fcfspro.impots.gouv.fr%2F%3Fopenidconnectcallback%3D1&nonce=1744116792_18530&client_id=id_cfspro_prod&display=&state=1744116792_61200&scope=openid%20profile%20email%20info
+        texte: impôt.gouv.fr
+  - description: >-
+      Bénéficiez de la déduction de votre crédit d'impôt innovation sur le
+      montant de l'impôt dont vous êtes redevable. La déduction se fait au
+      moment où vous payez le solde de l'impôt au titre de l'année au cours de
+      laquelle les dépenses ont été effectuées.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Effectif compris entre 20 et 249 employés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Secteur industriel, commercial ou agricole
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      L'opération pour laquelle vous sollicitez ce crédit d'impôt ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
+    - >-
+      Vos dépenses ne doivent pas déjà être comptabilisées dans le Crédit
+      d’Impôt Recherche (CIR).
+    - >-
+      Votre entreprise doit être soumise à l'impôt (sur les sociétés ou sur le
+      revenu), OU être exonéré d'impôt et correspondre à l'une des catégories
+      suivantes :
+    - Jeune entreprise innovante (JEI)
+    - Entreprise créée pour la reprise d'une entreprise en difficulté
+    - 'Entreprise située dans une des zones suivantes :'
+    - Zone d'aide à finalité régionale (AFR)
+    - Zone franche-urbaine / territoire entrepreneur (ZFU_TE)
+    - Bassin d'emploi à redynamiser (BER)
+    - Zone de restructuration de la défense (ZRD)
+    - Zone franche d'activité des départements d'Outre-mer
+    - >-
+      Zone de revitalisation rurale (ZRR) ou zone France ruralités
+      revitalisations (FRR)
+    - Bassin urbain à dynamiser (BUD)
+    - Zone de développement prioritaire (ZDP)
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif >= 20
+      - effectif <= 249
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est l'écoconception
+champs conditionnels:
+  - une de ces conditions:
+      - région = Corse
+    Montant du dispositif: Crédit d'impôt de 35% à 40%
+  - une de ces conditions:
+      - région = Mayotte
+      - région = Martinique
+      - région = La Réunion
+      - région = Guyane
+      - région = Guadeloupe
+    Montant du dispositif: Crédit d'impôt de 60%
+  - une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur
+      - région = Pays de la Loire
+      - région = Nouvelle-Aquitaine
+      - région = Île-de-France
+      - région = Hauts-de-France
+      - région = Grand Est
+      - région = Centre-Val de Loire
+      - région = Bretagne
+      - région = Bourgogne-Franche-Comté
+      - région = Auvergne-Rhône-Alpes
+      - région = Occitanie
+      - région = Normandie
+    Montant du dispositif: Crédit d'impôt de 20%
