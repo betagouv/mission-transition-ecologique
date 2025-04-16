@@ -30,11 +30,6 @@
       v-if="project.countEligiblePrograms"
       #end-details
     >
-      <DsfrBadge
-        :label="`${project.sectors.length} / ${project.priority}`"
-        :no-icon="true"
-        class="fr-badge--info fr-mb-2w"
-      />
       <div class="fr-mb-8v">
         <DsfrBadge
           :label="eligibleProgramsTag"
