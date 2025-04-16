@@ -15,7 +15,6 @@ export class ProjectManager {
   withCompanyData() {
     if (new Navigation().isCatalogProjects()) {
       return CompanyData.isCompanySelected()
-      // return this._filtersStore.getCompanyDataSelected().value && this._companyDateStore.isDataFull
     }
 
     return this._companyDateStore.isDataFull
