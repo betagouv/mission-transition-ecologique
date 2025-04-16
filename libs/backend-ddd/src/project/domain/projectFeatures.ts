@@ -26,16 +26,13 @@ export default class ProjectFeatures {
   public getFiltered(questionnaireData: QuestionnaireData): ProjectType[] {
     const projects = this._projectRepository.get()
     this._projectSorter.byPriority(projects)
-    console.log(questionnaireData.onlyEligible === false)
     if (!questionnaireData.codeNAF1 || questionnaireData.onlyEligible === false) {
-      console.log('Return raw projects')
       return projects
     }
     const eligibleProjects = projects.filter((project) => {
       return this._projectEligibility.isEligible(project, questionnaireData.codeNAF1 as string)
     })
 
-    console.log('Return sorted projects')
     return this._projectSorter.bySector(eligibleProjects)
   }
 }
