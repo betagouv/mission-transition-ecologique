@@ -1,20 +1,22 @@
 <template>
-  <DsfrSideMenu
+  <div
     id="project-sidemenu"
-    class="fr-pr-0"
+    class="fr-pr-0 fr-mt-6v"
   >
-    <template #default>
-      <a
-        v-for="item in menuItems"
-        :key="item.id"
-        :href="`#${item.to}`"
-        class="fr-sidemenu__link"
-        @click.prevent="scrollTo(item.to)"
-      >
-        {{ item.text }}
-      </a>
-    </template>
-  </DsfrSideMenu>
+    <a
+      v-for="item in menuItems"
+      :key="item.id"
+      :href="`#${item.to}`"
+      class="fr-sidemenu__link"
+      @click.prevent="scrollTo(item.to)"
+    >
+      {{ item.text }}
+    </a>
+    <ProjectFiltersAccordion
+      v-if="isDataFull"
+      with-title
+    />
+  </div>
 </template>
 <script setup lang="ts">
 import { ProjectType } from '@/types'

@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="withTitle"
-    class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6w"
+    class="fr-text--bold fr-text-left fr-mb-3v fr-mt-6v"
   >
     Filtres
   </div>
@@ -24,7 +24,7 @@ const props = defineProps<Props>()
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const companyDataFilter: FilterItem = {
-  title: 'Entreprise',
+  title: 'Votre entreprise',
   id: FilterItemKeys.companyData,
   component: FilterByCompanyData,
   componentClass: 'fr-pl-2v',

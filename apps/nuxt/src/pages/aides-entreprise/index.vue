@@ -39,7 +39,7 @@ onServerPrefetch(async () => {
 })
 
 onNuxtReady(async () => {
-  await new ProgramManager().getDependentCompanyData(false)
+  await new ProgramManager().getDependentCompanyData(true)
 })
 
 useSeoMeta(MetaSeo.get(title, description))

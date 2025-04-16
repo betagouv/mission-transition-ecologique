@@ -1,3 +1,4 @@
+import { useCompanyDataStore } from '@/stores/companyData'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { MobilityStatus, ThemeId, QuestionnaireDataEnum, TrackId, WasteManagementStatus, YesNo, RouteName } from '@/types'
 import { QuestionnaireChecker, BuildingProperty } from '@tee/common'
@@ -25,7 +26,7 @@ export default class UsedTrack {
       return
     }
 
-    if (!CompanyData.isDataFull()) {
+    if (!useCompanyDataStore().isDataFull) {
       return
     }
 
