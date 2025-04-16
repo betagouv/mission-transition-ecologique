@@ -19,6 +19,7 @@ import { useProgramStore } from '@/stores/program'
 import { ProgramManager } from '@/tools/program/programManager'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
+import { MetaRobots } from '@/tools/metaRobots'
 
 definePageMeta({
   name: RouteName.CatalogPrograms,
@@ -38,7 +39,7 @@ onServerPrefetch(async () => {
 })
 
 onNuxtReady(async () => {
-  await new ProgramManager().getDependentCompanyData(false)
+  await new ProgramManager().getDependentCompanyData(true)
 })
 
 useSeoMeta(MetaSeo.get(title, description))
@@ -58,4 +59,6 @@ const filteredPrograms = computed(() => {
 const countPrograms = computed(() => {
   return filteredPrograms.value?.length || 0
 })
+
+useHead(MetaRobots.noIndexOnQueries(useRoute().fullPath))
 </script>

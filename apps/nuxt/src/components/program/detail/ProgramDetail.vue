@@ -1,7 +1,7 @@
 <template>
   <Layout :links="links">
     <template
-      v-if="isDataFull || Program.isTemporaryUnavailable(currentProgram) || Program.isAvailable(currentProgram)"
+      v-if="isDataFull || Program.isTemporaryUnavailable(currentProgram) || !Program.isAvailable(currentProgram)"
       #beforeBreadcrumb
     >
       <ClientOnly>
@@ -79,7 +79,8 @@ const { query } = storeToRefs(useNavigationStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const navigation = new Navigation()
-const hasRegisteredData = CompanyData.isDataFull()
+const hasRegisteredData = CompanyData.isDataFullComputed()
+const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
 const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
 
 onNuxtReady(async () => {
@@ -120,7 +121,7 @@ if (currentProgram.value && navigation.isByRouteName(RouteName.CatalogProgramFro
   })
 }
 
-useSeoMeta(MetaSeo.get(currentProgram.value?.titre, currentProgram.value?.description, currentProgram.value?.illustration))
+useSeoMeta(MetaSeo.get(currentProgram.value?.titre, currentProgram.value?.description))
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())

@@ -8,6 +8,12 @@ export default defineNuxtRouteMiddleware((to) => {
   if (currentQuery['profil-entreprise'] === 'oui') {
     newQuery['profil-entreprise'] = 'oui'
   }
+  Object.keys(currentQuery).forEach((key) => {
+    if (key.toLowerCase().startsWith('utm')) {
+      newQuery[key] = currentQuery[key] as string
+    }
+  })
+
   if (JSON.stringify(currentQuery) !== JSON.stringify(newQuery)) {
     return navigateTo({ ...to, query: newQuery })
   }

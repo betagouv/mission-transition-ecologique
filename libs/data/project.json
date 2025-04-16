@@ -27,8 +27,8 @@
       "options": {
         "cwd": "libs/data",
         "commands": [
-          "npx tsx src/scripts/generateOperatorsJson.ts",
           "npx tsx src/scripts/generateProgramYaml.ts",
+          "npx tsx src/scripts/generateOperatorsJson.ts",
           "npx tsx src/scripts/generateProgramType.ts",
           "npx tsx src/scripts/buildProgramJson.ts"
         ],

@@ -1,3 +1,5 @@
+import { useCompanyDataStore } from '@/stores/companyData'
+import { useFiltersStore } from '@/stores/filters'
 import ProjectApi from '@/tools/api/projectApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import { CompanyData } from '@/tools/companyData'

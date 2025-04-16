@@ -31,6 +31,7 @@ import { Theme } from '@/tools/theme'
 import { RouteName } from '@/types'
 import { computed } from 'vue'
 import ProjectSorter from '@/tools/project/projectSorter'
+import { MetaRobots } from '@/tools/metaRobots'
 
 definePageMeta({
   name: RouteName.CatalogProjects,
@@ -50,7 +51,7 @@ onServerPrefetch(async () => {
 })
 
 onNuxtReady(async () => {
-  CompanyData.isDataFull().value // call to initialize computed reactivity variable
+  CompanyData.isDataFullComputed().value // call to initialize computed reactivity variable
   await new ProjectManager().getProjects()
 })
 
@@ -75,4 +76,6 @@ const hasSideMenu = computed(() => {
 const countProjects = computed(() => {
   return filteredProjects.value?.length || 0
 })
+
+useHead(MetaRobots.noIndexOnQueries(useRoute().fullPath))
 </script>

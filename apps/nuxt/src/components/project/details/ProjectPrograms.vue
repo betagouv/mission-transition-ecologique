@@ -1,9 +1,10 @@
 <template>
   <TeeContentBlock
-    v-if="hasRegisteredData || countFilteredPrograms"
+    v-if="isDataFull || countFilteredPrograms"
     id="project-aids-title"
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
-    title="💰 Mes aides"
+    :title="companyDataSelected && isDataFull ? '💰 Vos aides' : '💰 Toutes les aides'"
+    container-from="md"
     container-from="md"
   >
     <template #content>
@@ -16,7 +17,7 @@
           </div>
         </template>
         <TeeRegisterHighlight
-          v-if="!hasRegisteredData"
+          v-if="!isDataFull"
           class="fr-mx-3v"
           :text="Translation.t('project.projectRegisterHighlightText')"
         />
@@ -29,6 +30,11 @@
               :email="Contact.email"
             />
           </div>
+          <p
+            v-if="companyDataSelected && isDataFull && !navigationStore.hasSpinner && countFilteredPrograms"
+            class="fr-mb-0"
+            v-html="resume"
+          ></p>
           <ProjectProgramsList
             v-if="studyPrograms.length > 0 && !navigationStore.hasSpinner"
             :title="Translation.t('project.studyPrograms')"
@@ -43,7 +49,7 @@
           />
         </div>
         <TeeDsfrHighlight
-          v-if="hasRegisteredData && !countFilteredPrograms && !navigationStore.hasSpinner"
+          v-if="isDataFull && !countFilteredPrograms && !navigationStore.hasSpinner"
           large
           :text="Translation.t('project.noPrograms.title')"
           alt-img="projet / aucune aide"
@@ -53,7 +59,7 @@
           <p class="fr-mt-n3v fr-mb-0">{{ Translation.t('project.noPrograms.subtitle') }}</p>
         </TeeDsfrHighlight>
         <div
-          v-if="hasRegisteredData"
+          v-if="isDataFull"
           id="project-contact"
           ref="teeProjectFormContainer"
           class="fr-bg--blue--lightness fr-grid-row fr-p-2w"
@@ -78,12 +84,12 @@
 </template>
 <script setup lang="ts">
 import { useProgramStore } from '@/stores/program'
+import { CompanyData } from '@/tools/companyData'
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProgramAidType, ProjectType, OpportunityType, Color, ProgramTypeForFront } from '@/types'
 import Contact from '@/tools/contact'
 import Translation from '@/tools/translation'
 import Opportunity from '@/tools/opportunity'
-import { CompanyData } from '@/tools/companyData'
 import ProgramFilter from '@/tools/program/programFilter'
 import { ProgramSorter } from '@/tools/program/programSorter'
 
@@ -94,7 +100,17 @@ const props = defineProps<Props>()
 
 const navigationStore = useNavigationStore()
 const { programs, hasError } = storeToRefs(useProgramStore())
+const { isDataFull } = storeToRefs(useCompanyDataStore())
+const { companyDataSelected } = storeToRefs(useFiltersStore())
 const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormContainer')
+
+const resume = computed<string>(() =>
+  Translation.t('project.programsList', {
+    effectif: Translation.t('enterprise.structureSize.' + CompanyData.size),
+    secteur: CompanyData.company?.secteur,
+    region: CompanyData.company?.region
+  })
+)
 
 onServerPrefetch(async () => {
   await new ProgramManager().getDependentCompanyData()
@@ -103,8 +119,6 @@ onServerPrefetch(async () => {
 onNuxtReady(async () => {
   await new ProgramManager().getDependentCompanyData(true)
 })
-
-const hasRegisteredData = CompanyData.isDataFull()
 
 const countFilteredPrograms = computed(() => {
   return filteredPrograms.value.length || 0

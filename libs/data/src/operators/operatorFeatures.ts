@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url'
 import { OperatorBaserow } from '../common/baserow/operatorBaserow'
 import { RawOperator } from './types/domain'
 import { FileManager } from '../common/fileManager'
+import { readPrograms } from '../program/dataPipeline'
 
 export class OperatorFeatures {
   private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -11,11 +12,21 @@ export class OperatorFeatures {
   private readonly _outputTypeFilePath: string = path.join(this.__dirname, './types/generatedShared.ts')
   private readonly _schemaFilePath = path.join(this.__dirname, '../../schemas/program-with-publicodes-schema.json')
   async updateOperatorsData() {
-    const operators = await new OperatorBaserow().getAll()
-    FileManager.writeJson(this._outputFilePath, operators, 'operator.json updated')
+    const allOperators = await new OperatorBaserow().getAll()
+    const programs = readPrograms(true)
+    const programOperatorsNames = new Set<string>(
+      programs.flatMap((program) => [
+        program['opérateur de contact'],
+        ...(Array.isArray(program['autres opérateurs']) ? program['autres opérateurs'] : [])
+      ])
+    )
 
-    this._updateJsonSchema(operators)
-    this._generateOperatorsFiltersCategoryType(operators)
+    const programOperators = allOperators.filter((operator) => programOperatorsNames.has(operator.operator))
+
+    FileManager.writeJson(this._outputFilePath, programOperators, 'operator.json updated')
+
+    this._updateJsonSchema(programOperators)
+    this._generateOperatorsFiltersCategoryType(programOperators)
   }
 
   private _updateJsonSchema(operators: RawOperator[]) {

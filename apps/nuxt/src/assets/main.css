@@ -3019,7 +3019,7 @@
   display: none;
 }
 
-.fr-input--white {
+.fr-input-bg--white {
   background-color: #fff;
 }
 .fr-input:focus {
@@ -3033,8 +3033,13 @@
   color: var(--text-default-grey);
 }
 
-.fr-input--empty-text {
-  height: 1.25rem;
+ol.fr-order-list {
+  --ol-content: counters(li-counter,".") " | ";
+  --ol-start: 2.5rem;
+}
+ol.fr-order-list > li::marker {
+  color: #6a62f4;
+  font-size: 1.5rem;
 }
 
 ol.fr-order-list {

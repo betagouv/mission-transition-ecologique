@@ -27,7 +27,6 @@ url: >-
   https://agir.ademe.fr/aides-financieres/2025/extension-et-creation-de-reseaux-de-chaleur-ou-de-froid
 nature de l'aide: financement
 montant du financement: Aide calculée au cas par cas
-activable en autonomie: oui
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
@@ -75,7 +74,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:

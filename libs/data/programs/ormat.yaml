@@ -49,7 +49,6 @@ url: >-
   https://agir.ademe.fr/aides-financieres/aap/fonds-economie-circulaire-ormat-2025-objectif-recyclage-matieres
 nature de l'aide: financement
 montant du financement: Jusqu'à 80% d'aide, dans un maximum selon le projet
-activable en autonomie: oui
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
@@ -100,7 +99,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:

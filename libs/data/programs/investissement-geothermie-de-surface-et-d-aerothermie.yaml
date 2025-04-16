@@ -29,7 +29,6 @@ url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installations-production-chaleur-froid-renouvelable-a-partir-geothermie
 nature de l'aide: financement
 montant du financement: Aide calculée au cas par cas
-activable en autonomie: oui
 objectifs:
   - description: >-
       Vérifiez l’éligibilité de votre projet en parcourant la documentation de
@@ -43,8 +42,9 @@ objectifs:
       - lien: https://agirpourlatransition.ademe.fr/user/register
         texte: Créer mon compte ADEME
   - description: >-
-      administratives, description du projet, détails techniques et financiers,
-      etc. À ce stade, votre projet ne doit pas avoir commencé !
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
     liens:
       - lien: >-
           https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installations-production-chaleur-froid-renouvelable-a-partir-geothermie
@@ -76,7 +76,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - questionnaire . parcours = objectif précis
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:

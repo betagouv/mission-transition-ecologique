@@ -1,6 +1,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`store.programs > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import { CompanyData } from '@/tools/companyData'
 import ProgramFilter from '@/tools/program/programFilter'
 import { ref } from 'vue'
 import { ProgramAidType, ThemeId, Region, OperatorFilter, FilterItemKeys, ProgramTypeForFront } from '@/types'
@@ -21,13 +22,17 @@ export const useProgramStore = defineStore('program', () => {
   }
 
   function getProgramsByFilters(programs: ProgramTypeForFront[]) {
+    const isCompanySelected = CompanyData.isCompanySelected()
+    if (isCompanySelected) {
+      useFiltersStore().resetFilter(FilterItemKeys.regionAid)
+    }
     return programs.filter((program: ProgramTypeForFront) => {
       return (
         ProgramFilter.byAidType(program, filtersStore.filters[FilterItemKeys.typeAid] as ProgramAidType[]) &&
         ProgramFilter.byTheme(program, filtersStore.filters[FilterItemKeys.themeType] as ThemeId) &&
         ProgramFilter.byOperator(program, filtersStore.filters[FilterItemKeys.operatorAid] as OperatorFilter[]) &&
         ProgramFilter.byRegion(program, filtersStore.filters[FilterItemKeys.regionAid] as Region[]) &&
-        ProgramFilter.byCompanyData(program, filtersStore.getCompanyDataSelected().value)
+        ProgramFilter.byCompanyData(program, isCompanySelected)
       )
     })
   }

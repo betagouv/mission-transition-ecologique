@@ -69,3 +69,21 @@ class GenericExtractor:
             ),
             force_refresh,
         )
+
+    def get_external_link_click_events(self, start_date, end_date, force_refresh=False):
+        return self._get_data(
+            "external_link_click_events",
+            lambda: PosthogExtractor().get_external_link_click_events(
+                start_date, end_date
+            ),
+            force_refresh,
+        )
+
+    def get_detail_page_view_events(self, start_date, end_date, force_refresh=False):
+        return self._get_data(
+            "detail_page_view_events",
+            lambda: PosthogExtractor().get_detail_page_view_events(
+                start_date, end_date
+            ),
+            force_refresh,
+        )

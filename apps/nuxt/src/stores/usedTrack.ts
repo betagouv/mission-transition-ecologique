@@ -45,10 +45,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     return current.value?.completed ?? false
   })
 
-  const currentIsFirst = computed<boolean>(() => {
-    return current.value?.id === TrackId.QuestionnaireRoute
-  })
-
   const usedTracksIds = computed<TrackId[]>(() => {
     return usedTracks.value.map((usedTrack: UsedTrack) => usedTrack.id)
   })
@@ -275,6 +271,8 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
       questionnaireData.onlyEligible = false
     }
 
+    questionnaireData.is_questionnaire = navigation.isQuestionnaire()
+
     CompanyData.populateQuestionnaireData(questionnaireData)
 
     return questionnaireData
@@ -311,7 +309,7 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
 
       if (track === undefined) {
         useNavigationStore().deleteSearchParam(trackId)
-        return
+        continue
       }
 
       const value = useNavigationStore().query[trackId] as string | string[]
@@ -345,7 +343,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     setCurrentSelectedOptions,
     updateCurrent,
     setCurrentToUncompleted,
-    currentIsFirst,
     getUsedTrack,
     getPreviousCompletedUsedTrackId,
     hasUsedTrack,

@@ -1,6 +1,7 @@
 import json
 from pathlib import Path
-from etl.extract.db_queries import get_invalid_sirets
+import hashlib
+
 
 communes_json_path = Path(__file__).parent.parent / "static" / "communes.json"
 with communes_json_path.open("r", encoding="utf-8") as file:
@@ -9,13 +10,6 @@ with communes_json_path.open("r", encoding="utf-8") as file:
 naf_mapping_json_path = Path(__file__).parent.parent / "static" / "nafMapping.json"
 with naf_mapping_json_path.open("r", encoding="utf-8") as file:
     naf_mapping = json.load(file)
-
-
-def keep_valid_sirets(sirets):
-    invalid_sirets = get_invalid_sirets()
-    invalid_sirets.append(None)
-    return [siret for siret in sirets if siret not in invalid_sirets]
-
 
 def siren_establishment_to_db_establishment(siren_data):
     """Extracts relevant establishment details from API response."""
@@ -136,3 +130,17 @@ def get_naf_details(naf_code):
         "groupe": naf_data["NIV3"] if naf_data else "null",
         "classe": naf_data["NIV4"] if naf_data else "null",
     }
+
+
+def generate_company_id(raw_company_data):
+    if not raw_company_data:
+        return None
+
+    parsed_data = json.loads(raw_company_data)
+    combined_data = (
+        parsed_data.get("codeNAF", "")
+        + parsed_data.get("codePostal", "")
+        + parsed_data.get("structure_size", "")
+    )
+    hash_object = hashlib.sha256(combined_data.encode())
+    return hash_object.hexdigest()

@@ -1,7 +1,6 @@
-import { PublicodesKeys, QuestionnaireData, QuestionnaireDataEnum, QuestionnaireRoute } from '@tee/common'
+import { QuestionnaireData } from '@tee/common'
 import { Entry, setObjectProperty } from '../../src/common/objects'
 import { type ProgramType } from '@tee/data'
-import { PublicodesQuestionnaireRoute } from '../../src/program/infrastructure/types'
 import { makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
 import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
 import { expectToBeOk } from '../testing'
@@ -61,7 +60,6 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
     })
 
     const questionnaireData: QuestionnaireData = {
-      questionnaire_route: QuestionnaireRoute.NoSpecificGoal,
       region: 'Corse',
       codeNAF1: 'J'
     }
@@ -262,30 +260,4 @@ EXPECT the program to be kept or filtered out as expected`, () => {
 
   testCurrentDate('31/12/2023', '31/12/2023', true)
   testCurrentDate('01/12/2023', '31/12/2023', false)
-})
-
-describe(`
- GIVEN a questionnaire route
-   AND a program with a rule using 'questionnaire . parcours'
-  WHEN evaluating the rule
-EXPECT recovers the data properly`, () => {
-  const testQuestionnaireRoute = (
-    questionnaireRoute: QuestionnaireRoute,
-    keptQuestionnaireRoute: PublicodesQuestionnaireRoute,
-    expectedKeep: boolean
-  ) => {
-    const rule = `${PublicodesKeys.QuestionnaireRoute} = ${keptQuestionnaireRoute}`
-    testHelperPreprocessing({
-      title: `questionnaireRoute (input: "${questionnaireRoute}", keep if converted to "${keptQuestionnaireRoute}")`,
-      inputDataEntry: [QuestionnaireDataEnum.questionnaire_route, questionnaireRoute],
-      inputDataSource: DataSources.Questionnaire,
-      publicodesKey: PublicodesKeys.QuestionnaireRoute,
-      filteringRule: rule,
-      expectedKeep: expectedKeep
-    })
-  }
-
-  testQuestionnaireRoute(QuestionnaireRoute.SpecificGoal, PublicodesQuestionnaireRoute.SpecificGoal, true)
-  testQuestionnaireRoute(QuestionnaireRoute.NoSpecificGoal, PublicodesQuestionnaireRoute.NoSpecificGoal, true)
-  testQuestionnaireRoute(QuestionnaireRoute.SpecificGoal, PublicodesQuestionnaireRoute.NoSpecificGoal, false)
 })

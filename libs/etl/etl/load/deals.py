@@ -1,5 +1,6 @@
 from etl.transform.deals import Deal
 from etl.tools.db_manager import DBManager
+from etl.tools.db_structure import TableName
 
 
 def update_deals(deals: list[Deal]):
@@ -7,16 +8,22 @@ def update_deals(deals: list[Deal]):
         return
 
     query = f"""
-      INSERT INTO __SCHEMA_NAME__.opportunities (
-          brevo_id, opportunity_date, company_siret, status, opportunity_type, opportunity_title, opportunity_operator
-      ) VALUES (%s, %s, %s, %s, %s, %s, %s)
-      ON CONFLICT (brevo_id)
-      DO UPDATE SET
-          company_siret = CASE WHEN EXCLUDED.company_siret <> '' THEN EXCLUDED.company_siret ELSE opportunities.company_siret END,
-          status = CASE WHEN EXCLUDED.status <> '' THEN EXCLUDED.status ELSE opportunities.status END,
-          opportunity_type = CASE WHEN EXCLUDED.opportunity_type <> '' THEN EXCLUDED.opportunity_type ELSE opportunities.opportunity_type END,
-          opportunity_title = CASE WHEN EXCLUDED.opportunity_title <> '' THEN EXCLUDED.opportunity_title ELSE opportunities.opportunity_title END,
-          opportunity_operator = CASE WHEN EXCLUDED.opportunity_operator <> '' THEN EXCLUDED.opportunity_operator ELSE opportunities.opportunity_operator END;
+        INSERT INTO __SCHEMA_NAME__.{TableName.OPPORTUNITIES} (
+            {Deal.BREVO_ID},
+            {Deal.OPPORTUNITY_DATE},
+            {Deal.COMPANY_SIRET},
+            {Deal.STATUS},
+            {Deal.OPPORTUNITY_TYPE},
+            {Deal.OPPORTUNITY_TITLE},
+            {Deal.OPPORTUNITY_OPERATOR}
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s)
+        ON CONFLICT ({Deal.BREVO_ID})
+        DO UPDATE SET
+            {Deal.COMPANY_SIRET} = CASE WHEN EXCLUDED.{Deal.COMPANY_SIRET} <> '' THEN EXCLUDED.{Deal.COMPANY_SIRET} ELSE opportunities.{Deal.COMPANY_SIRET} END,
+            {Deal.STATUS} = CASE WHEN EXCLUDED.{Deal.STATUS} <> '' THEN EXCLUDED.{Deal.STATUS} ELSE opportunities.{Deal.STATUS} END,
+            {Deal.OPPORTUNITY_TYPE} = CASE WHEN EXCLUDED.{Deal.OPPORTUNITY_TYPE} <> '' THEN EXCLUDED.{Deal.OPPORTUNITY_TYPE} ELSE opportunities.{Deal.OPPORTUNITY_TYPE} END,
+            {Deal.OPPORTUNITY_TITLE} = CASE WHEN EXCLUDED.{Deal.OPPORTUNITY_TITLE} <> '' THEN EXCLUDED.{Deal.OPPORTUNITY_TITLE} ELSE opportunities.{Deal.OPPORTUNITY_TITLE} END,
+            {Deal.OPPORTUNITY_OPERATOR} = CASE WHEN EXCLUDED.{Deal.OPPORTUNITY_OPERATOR} <> '' THEN EXCLUDED.{Deal.OPPORTUNITY_OPERATOR} ELSE opportunities.{Deal.OPPORTUNITY_OPERATOR} END;
     """
 
     values = [

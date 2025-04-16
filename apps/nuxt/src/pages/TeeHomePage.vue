@@ -11,7 +11,7 @@
     </template>
     <div class="fr-container--fluid fr-container-md">
       <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-pt-6v">Quel est votre projet ?</h2>
-      <TeeHomeProjectList :limit="9" />
+      <TeeHomeProjectList :limit="filters[FilterItemKeys.themeType] === '' ? 8 : 9" />
       <div class="fr-grid-row fr-grid-row--center">
         <div class="fr-bg--blue--lightness fr-hidden fr-unhidden-sm fr-col-12 fr-py-0-5v fr-my-8v"></div>
       </div>
@@ -23,7 +23,10 @@
 <script setup lang="ts">
 import { defineRouteRules } from '#imports'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
-import { RouteName } from '@/types'
+import { MetaRobots } from '@/tools/metaRobots'
+import { FilterItemKeys, RouteName } from '@/types'
+
+const { filters } = storeToRefs(useFiltersStore())
 
 definePageMeta({
   path: '/',
@@ -37,4 +40,6 @@ defineRouteRules({
     changefreq: 'weekly'
   }
 })
+
+useHead(MetaRobots.indexFollow())
 </script>
