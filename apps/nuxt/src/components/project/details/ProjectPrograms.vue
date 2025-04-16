@@ -3,7 +3,7 @@
     v-if="isDataFull || countFilteredPrograms"
     id="project-aids-title"
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
-    :title="isCompanyDataSelected ? '💰 Vos aides' : '💰 Toutes les aides'"
+    :title="companyDataSelected && isDataFull ? '💰 Vos aides' : '💰 Toutes les aides'"
     container-from="md"
   >
     <template #content>
