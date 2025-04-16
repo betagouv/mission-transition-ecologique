@@ -4,6 +4,7 @@ export default defineNuxtRouteMiddleware((to) => {
   if (import.meta.client) {
     return
   }
+
   const { projectSlug, programId } = to.params
   if (programId) {
     const normalizedProgram = Array.isArray(programId) ? programId[0] : programId
