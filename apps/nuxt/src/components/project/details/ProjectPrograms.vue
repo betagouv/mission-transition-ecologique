@@ -5,7 +5,6 @@
     class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
     :title="companyDataSelected && isDataFull ? '💰 Vos aides' : '💰 Toutes les aides'"
     container-from="md"
-    container-from="md"
   >
     <template #content>
       <client-only fallback-tag="div">

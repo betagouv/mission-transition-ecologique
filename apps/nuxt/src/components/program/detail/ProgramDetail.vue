@@ -81,7 +81,6 @@ const { isDataFull } = storeToRefs(useCompanyDataStore())
 const navigation = new Navigation()
 const hasRegisteredData = CompanyData.isDataFullComputed()
 const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
-const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
 
 onNuxtReady(async () => {
   if (currentProgram.value) {
