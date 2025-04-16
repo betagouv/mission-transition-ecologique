@@ -17,7 +17,7 @@ const projectCached = cachedFunction(
     const project = new ProjectService().getBySlug(slug)
 
     if (project === undefined) {
-      Monitor.warning('Requested Project slug not in dictionary', { slug })
+      Monitor.warning('Requested Project slug not found', { slug })
       throw createError({
         statusCode: 404,
         statusMessage: 'Project not found'
