@@ -1,4 +1,4 @@
-titre: Plan Solaire Smart PV
+titre: Plan Solaire Sud PV Plus
 promesse: Financez votre projet d'autoconsommation d'énergie photovoltaïque
 description: >-
   La Région Sud soutient financièrement les projets visant l'autoconsommation
@@ -27,15 +27,16 @@ description longue: >-
 
 
   En cas de besoin, pour l’accueil de l’installation photovoltaïque, de travaux
-  annexes nécessaires en toiture, du type « Solaire-ready » (notamment
+  annexes nécessaires en toiture, du type « Paré pour le solaire » (notamment
   désamiantage, renforcement de structure, reprise d’étanchéité, isolation de
-  toiture), vous pouvez solliciter le financement "Plan Solaire Ready".
+  toiture), vous pouvez solliciter le financement "Plan Solaire Paré pour le
+  solaire".
 illustration: images/TEE_ampoule.png
 opérateur de contact: Région Sud (PACA)
 url: >-
-  https://www.maregionsud.fr/vos-aides/detail/plan-solaire-smart-pv-en-soutien-de-lautoconsommation-photovoltaique
+  https://www.maregionsud.fr/vos-aides/detail/plan-solaire-sud-pv-plus-en-soutien-de-lautoconsommation-photovoltaique
 nature de l'aide: financement
-montant du financement: 20 à 25 % de l’assiette éligible du projet, dans un maximum de 100 000 €
+montant du financement: 15 à 25 % de l’assiette éligible du projet, dans un maximum de 100 000 €
 activable en autonomie: oui
 objectifs:
   - description: >-
@@ -56,7 +57,7 @@ objectifs:
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
-    - Éligible aux micro-entreprises
+    - Non éligible aux micro-entreprises
   secteur géographique:
     - Provence-Alpes-Côte d'Azur
   secteur d'activité:
@@ -88,7 +89,11 @@ publicodes:
       - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
+      - a une categorie legale eligible
       - entreprise . est dans une zone géographique éligible
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

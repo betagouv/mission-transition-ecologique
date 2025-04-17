@@ -14,7 +14,14 @@ export default defineEventHandler(async (event) => {
 
 const projectCached = cachedFunction(
   async (event: H3Event, slug: string) => {
-    const project = new ProjectService().getBySlug(slug)
+    const projectService = new ProjectService()
+    const redirect = projectService.getRedirect(slug)
+    if (redirect) {
+      const queryString = getRequestURL(event).search
+      const newUrl = `/api/projects/${redirect}${queryString}`
+      return sendRedirect(event, newUrl, 301)
+    }
+    const project = projectService.getBySlug(slug)
 
     if (project === undefined) {
       Monitor.warning('Requested Project slug not found', { slug })

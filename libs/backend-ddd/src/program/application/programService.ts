@@ -6,6 +6,7 @@ import { currentDateService } from '../infrastructure/currentDate'
 import { PublicodesService } from '../infrastructure/publicodesService'
 import { Objective, QuestionnaireData } from '@tee/common'
 import FrontConverter from '../infrastructure/frontConverter'
+import { RedirectService } from '../../common/application/redirectService'
 
 export class ProgramService {
   private _program: ProgramFeatures
@@ -17,6 +18,10 @@ export class ProgramService {
   public constructor() {
     const programsService = ProgramsJson.getInstance()
     this._program = new ProgramFeatures(programsService, currentDateService, PublicodesService.getInstance())
+  }
+
+  public getRedirect(slug: string): string | undefined {
+    return new RedirectService().getByProgramSlug(slug)
   }
 
   public getById(id: string): ProgramType | undefined {

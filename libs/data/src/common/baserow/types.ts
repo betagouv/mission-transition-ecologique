@@ -8,6 +8,7 @@ export interface BaserowProject extends Id, BaserowSectors {
   order: string
   Nom: string
   'Description courte': string
+  Statut: LinkObject
   Image: LinkObject[]
   'Qu’est-ce que c’est ?': string
   'Pour aller plus loin': string
@@ -15,11 +16,11 @@ export interface BaserowProject extends Id, BaserowSectors {
   'Projets complémentaires': LinkObject[]
   'Thématique principale': LinkObject[]
   NameTag: string
-  Publié: boolean
   'Thématiques secondaires': LinkObject[]
   Dispositifs: LinkObject[]
   Prio: number
   'Mise En Avant': number | null
+  'redirection-vers': LinkObject[]
 }
 
 export interface LinkObject extends Id {
@@ -50,6 +51,7 @@ export interface Program
       | 'Couverture géographique'
       | 'Zones géographiques'
       | 'Thèmes Ciblés'
+      | 'redirection-vers'
     >,
     BaserowSectors {
   Statuts: LinkObject[]
@@ -59,6 +61,7 @@ export interface Program
   'Couverture géographique': LinkObject[]
   'Zones géographiques': LinkObject[]
   'Thèmes Ciblés': LinkObject[]
+  'redirection-vers': LinkObject[]
 }
 
 export interface Operator {

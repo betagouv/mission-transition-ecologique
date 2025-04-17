@@ -39,6 +39,7 @@ export interface DataProgram extends BaserowSectors {
   "Nature de l'aide": DataProgramType
   Statuts: Status[]
   conditionalData?: ConditionalValues[]
+  'redirection-vers': number[]
 }
 
 export enum Publicodes {
@@ -94,11 +95,10 @@ export enum DataProgramType {
 }
 
 export enum Status {
-  UxWritingValid = 'UX writing valid',
-  TaxAdvantage = 'Data valid',
-  ReadyForProd = 'Prêt pour la prod',
   InProd = 'En prod',
-  InProdNotAvailable = 'Temporairement indispo'
+  InProdNotAvailable = 'Temporairement indispo',
+  Replaced = 'Remplacé',
+  Other = 'Autres'
 }
 
 export type ConditionalValues = CompanySizeCondition | RegionCondition
