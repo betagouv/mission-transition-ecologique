@@ -9959,8 +9959,6 @@
     "titre": "Accompagnement à l'Écolabel européen",
     "promesse": "Valorisez votre engagement environnemental grâce à l’Écolabel européen",
     "description": "L’Ecolabel européen est le seul label écologique officiel de l’Union européenne, qui récompense les produits et services ayant un faible impact environnemental et sanitaire. Il est un excellent moyen pour une entreprise de valoriser son engagement auprès des consommateurs et des acheteurs professionnels. \nVous souhaitez réaliser les démarches pour obtenir l’Écolabel européen sur un produit ou un service ? Suivez les étapes suivantes :",
-    "promesse": "Valorisez votre engagement environnemental grâce à l’Écolabel européen",
-    "description": "L’Ecolabel européen est le seul label écologique officiel de l’Union européenne, qui récompense les produits et services ayant un faible impact environnemental et sanitaire. Il est un excellent moyen pour une entreprise de valoriser son engagement auprès des consommateurs et des acheteurs professionnels. \nVous souhaitez réaliser les démarches pour obtenir l’Écolabel européen sur un produit ou un service ? Suivez les étapes suivantes :",
     "description longue": "Les catégories de produits pouvant bénéficier de l'écolabel européen sont les suivantes :\n- Produits cosmétiques et de soin pour animaux\n- Détergents textiles\n- Détergents vaisselles à la main\n- Détergents pour lave-vaisselle\n- Détergents pour lave-vaisselle industriel ou destinés aux collectivités\n- Détergents textiles à usage industriel ou destinés aux collectivités\n- Produits de nettoyage pour surfaces dures\n- Milieux de culture et amendements pour sols\n- Produits de protection hygiénique absorbants et coupes menstruelles réutilisables\n- Peintures et vernis d'intérieur ou d'extérieur\n- Mouchoirs, papier toilette, serviettes en papier\n- Papier graphique\n- Produits en papier imprimé, produits de papeterie et sacs en papier\n- Les prestations de nettoyage intérieur et les hébergements touristiques (hôtels, campings, etc.) peuvent également bénéficier de l'écolabel européen.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
@@ -9996,13 +9994,12 @@
         ]
       },
       {
-        "description": "Contactez les conseillers de l'ADEME depuis le formulaire pour être accompagné tout au long de votre certification tout en bénéficiant d’aides financières.""description": "Contactez les conseillers de l'ADEME depuis le formulaire pour être accompagné tout au long de votre certification tout en bénéficiant d’aides financières."
+        "description": "Contactez les conseillers de l'ADEME depuis le formulaire pour être accompagné tout au long de votre certification tout en bénéficiant d’aides financières."
       },
       {
         "description": "Constituez votre dossier et envoyez-le à votre organisme certificateur, pour analyse et audit."
       },
       {
-        "description": "Créez un compte sur la plateforme E-cat de la Commission européenne.",
         "description": "Créez un compte sur la plateforme E-cat de la Commission européenne.",
         "liens": [
           {
@@ -16438,9 +16435,6 @@
     "description longue": "Les projets éligibles sont des projets d’investissements industriels exemplaires sur le plan environnemental qui contribuent à l’émergence, au renforcement ou à la réindustrialisation de chaînes de valeur industrielles clés pour la transition écologique.\nAfin d’être éligibles, les projets doivent être suffisamment matures. \n\nPar exemple :\n• Bioéconomie pour le développement de produits biosourcés (chanvre, lin, laine, bois, paille, bioéconomie marine, chimie, etc.) ;\n• Nouvelles mobilités durables (vélos, vélos-cargos, véhicules intermédiaires, etc.) ;\n• Souveraineté alimentaire et relocalisation des filières agroalimentaires (unités de\ntransformation locale de production, par exemple en lien avec un projet alimentaire\nterritorial, etc.) ;\n• Relocalisation de biens de consommation courants (habillement, mobilier, etc.) avec un\nprocess significativement plus respectueux de l’environnement que les standards ;\n• Productions industrielles contribuant au recyclage de matériaux ou matières premières, à l’économie circulaire et au réemploi, ou à la valorisation de déchets et co-produits\n(équipements de la transition énergétique, de la rénovation du bâti, etc.) ; \n• Projets qui s’inscrivent dans une stratégie de diversification pour des territoires fragiles dont\nl’économie est impactée par le changement climatique (notamment territoires de montagne). \n• Projets d’investissements contribuant au développement des\ncompétences (école de production, centre de formation, plateau technique, etc.) \n\nA titre auxiliaire, la mesure peut soutenir des projets d’investissements contribuant au développement des compétences nécessaires à la réindustrialisation de ces chaînes de valeur industrielles.",
     "début de validité": "12/03/2025",
     "fin de validité": "31/12/2025",
-    "description longue": "Les projets éligibles sont des projets d’investissements industriels exemplaires sur le plan environnemental qui contribuent à l’émergence, au renforcement ou à la réindustrialisation de chaînes de valeur industrielles clés pour la transition écologique.\nAfin d’être éligibles, les projets doivent être suffisamment matures. \n\nPar exemple :\n• Bioéconomie pour le développement de produits biosourcés (chanvre, lin, laine, bois, paille, bioéconomie marine, chimie, etc.) ;\n• Nouvelles mobilités durables (vélos, vélos-cargos, véhicules intermédiaires, etc.) ;\n• Souveraineté alimentaire et relocalisation des filières agroalimentaires (unités de\ntransformation locale de production, par exemple en lien avec un projet alimentaire\nterritorial, etc.) ;\n• Relocalisation de biens de consommation courants (habillement, mobilier, etc.) avec un\nprocess significativement plus respectueux de l’environnement que les standards ;\n• Productions industrielles contribuant au recyclage de matériaux ou matières premières, à l’économie circulaire et au réemploi, ou à la valorisation de déchets et co-produits\n(équipements de la transition énergétique, de la rénovation du bâti, etc.) ; \n• Projets qui s’inscrivent dans une stratégie de diversification pour des territoires fragiles dont\nl’économie est impactée par le changement climatique (notamment territoires de montagne). \n• Projets d’investissements contribuant au développement des\ncompétences (école de production, centre de formation, plateau technique, etc.) \n\nA titre auxiliaire, la mesure peut soutenir des projets d’investissements contribuant au développement des compétences nécessaires à la réindustrialisation de ces chaînes de valeur industrielles.",
-    "début de validité": "12/03/2025",
-    "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
     "url": "https://www.demarches-simplifiees.fr/commencer/fonds-vert-3-territoires-industrie",
@@ -16451,7 +16445,7 @@
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
         "liens": [
           {
-            "lien": "https://static.demarches-simplifiees.fr/v1/AUTH_db3cbfc79c914f87b192ff7c6bb176f0/ds_activestorage_backup/2025/03/12/FW/FWfFecay7ZqKitr9nb8MUTC6TYyS?temp_url_sig=09006c98ec617b788fc091c9dd53c0219ad65e39&temp_url_expires=1744023670&filename=FV_Cahier_Axe3_Territoires%20industrie_v3.1.pdf&inline",
+            "lien": "https://www.demarches-simplifiees.fr/commencer/fonds-vert-3-territoires-industrie",
             "texte": "Conditions d'éligibilité et de financement"
           }
         ]
@@ -16460,7 +16454,6 @@
         "description": "Vérifiez votre éligibilité géographique. Cette aide s'adresse aux entreprises situées dans le périmètre d’un \"Territoire d’industrie\".",
         "liens": [
           {
-            "lien": "https://www.observatoire-des-territoires.gouv.fr/outils/cartographie-interactive/#c=indicator&i=_zon_.ti2&view=map72",
             "lien": "https://www.observatoire-des-territoires.gouv.fr/outils/cartographie-interactive/#c=indicator&i=_zon_.ti2&view=map72",
             "texte": "Territoires d'industrie 2023-2027"
           }
@@ -16501,7 +16494,6 @@
       ],
       "autres critères d'éligibilité": [
         "Cette aide est destinée aux entreprises situées sur les territoires d'industrie 2023-2027",
-        "Les projets doivent présenter une assiette minimale de dépenses de 400 000 € (excepté Corse et Outre-Mer)",
         "Les projets doivent présenter une assiette minimale de dépenses de 400 000 € (excepté Corse et Outre-Mer)",
         "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)"
       ]
@@ -18665,11 +18657,7 @@
   },
   {
     "titre": "Industries vertes (CI3V)",
-    "titre": "Industries vertes (CI3V)",
     "promesse": "Investissez dans les industries vertes et bénéficiez d'un crédit d'impôt",
-    "description": "Vous êtes une entreprise industrielle et vous avez un projet de production dans l’une des filières clés de la transition écologique : photovoltaïque, batteries, éolien ou pompes à chaleur ? Le crédit d’impôt au titre des investissements dans l’industrie verte (C3IV) peut vous accompagner. Il permet de réduire vos coûts en finançant une partie de vos investissements pour fabriquer ces équipements ou leurs composants.",
-    "description longue": "Les dépenses éligibles au C3IV des entreprises seront relatives à :\n\n• La production de cellules et modules de batteries, la production d'éolien, de panneaux solaires et de pompes à chaleur ;\n• La production de composants essentiels conçus et utilisés principalement pour la production de ces équipements ;\n• La production ou la valorisation des matières premières critiques nécessaires à la production des équipements et des composants définis précédemment.\n\nNB : L’entreprise porteuse d’un projet de production de composants essentiels ou de matières premières critiques devra justifier qu’au moins 50 % de son chiffre d’affaires sera réalisé avec des entreprises exerçant des activités de production en aval de la chaîne de production de ces quatre filières : les batteries, l’éolien, les panneaux solaires, les pompes à chaleur.",
-    "début de validité": "14/03/2024",
     "description": "Vous êtes une entreprise industrielle et vous avez un projet de production dans l’une des filières clés de la transition écologique : photovoltaïque, batteries, éolien ou pompes à chaleur ? Le crédit d’impôt au titre des investissements dans l’industrie verte (C3IV) peut vous accompagner. Il permet de réduire vos coûts en finançant une partie de vos investissements pour fabriquer ces équipements ou leurs composants.",
     "description longue": "Les dépenses éligibles au C3IV des entreprises seront relatives à :\n\n• La production de cellules et modules de batteries, la production d'éolien, de panneaux solaires et de pompes à chaleur ;\n• La production de composants essentiels conçus et utilisés principalement pour la production de ces équipements ;\n• La production ou la valorisation des matières premières critiques nécessaires à la production des équipements et des composants définis précédemment.\n\nNB : L’entreprise porteuse d’un projet de production de composants essentiels ou de matières premières critiques devra justifier qu’au moins 50 % de son chiffre d’affaires sera réalisé avec des entreprises exerçant des activités de production en aval de la chaîne de production de ces quatre filières : les batteries, l’éolien, les panneaux solaires, les pompes à chaleur.",
     "début de validité": "14/03/2024",
@@ -18678,17 +18666,9 @@
     "url": "https://www.entreprises.gouv.fr/fr/credit-impot-industrie-verte-C3IV-agrement",
     "nature de l'aide": "avantage fiscal",
     "montant de l'avantage fiscal": "Variable selon le projet",
-    "montant de l'avantage fiscal": "Variable selon le projet",
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Vérifiez l'éligibilité de votre projet.",
-        "liens": [
-          {
-            "lien": "https://www.impots.gouv.fr/professionnel/questions/puis-je-pretendre-au-credit-dimpot-au-titre-des-investissements-en-faveur",
-            "texte": "Conditions d'éligibilité"
-          }
-        ]
         "description": "Vérifiez l'éligibilité de votre projet.",
         "liens": [
           {
@@ -18707,22 +18687,10 @@
         ]
       },
       {
-        "description": "Adressez votre demande par mail à la Direction générale des Finances publiques : c3iv@dgfip.finances.gouv.fr""description": "Préparez votre dossier pour votre demande d'agrément pour le crédit d’impôt C3IV.",
-        "liens": [
-          {
-            "lien": "https://www.impots.gouv.fr/sites/default/files/media/1_metier/2_professionnel/EV/2_gestion/220_rembousement/industrie_verte_c3iv/demande_agrement_c3iv.pdf",
-            "texte": "Informations et pièces à joindre à votre demande"
-          }
-        ]
-      },
-      {
         "description": "Adressez votre demande par mail à la Direction générale des Finances publiques : c3iv@dgfip.finances.gouv.fr"
       },
       {
         "description": "Les dossiers sont examinés par la Direction générale des Entreprises (DGE), la Direction générale des Finances publiques (DGFIP) et l'ADEME."
-      },
-      {
-        "description": "Dans un délai de trois mois, recevez la lettre de décision concernant votre demande d'agrément pour le crédit d’impôt C3IV.""description": "Les dossiers sont examinés par la Direction générale des Entreprises (DGE), la Direction générale des Finances publiques (DGFIP) et l'ADEME."
       },
       {
         "description": "Dans un délai de trois mois, recevez la lettre de décision concernant votre demande d'agrément pour le crédit d’impôt C3IV."
@@ -18743,7 +18711,7 @@
         "Éligible à toutes les entreprises"
       ],
       "autres critères d'éligibilité": [
-        "L'opération pour laquelle vous sollicitez ce crédit d'impôt ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)""L'opération pour laquelle vous sollicitez ce crédit d'impôt ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)"
+        "L'opération pour laquelle vous sollicitez ce crédit d'impôt ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)"
       ]
     },
     "publicodes": {
@@ -18838,14 +18806,9 @@
       "entreprise . est ciblée": {
         "toutes ces conditions": [
           "est éligible",
-          "est éligible",
           "est dans un secteur d'activité ciblé",
           "a un objectif ciblé"
         ]
-      },
-      "entreprise . est éligible": {
-        "applicable si": "dispositif . début de validité <= date du jour",
-        "valeur": "oui"
       },
       "entreprise . est éligible": {
         "applicable si": "dispositif . début de validité <= date du jour",
@@ -18855,13 +18818,6 @@
         "une de ces conditions": [
           "code NAF niveau 1 . est B",
           "code NAF niveau 1 . est C",
-          "code NAF niveau 1 . est D",
-          "code NAF niveau 1 . est E",
-          "code NAF niveau 1 . est F",
-          "code NAF niveau 1 . est H",
-          "code NAF niveau 1 . est J",
-          "code NAF niveau 1 . est M",
-          "code NAF niveau 1 . est S""code NAF niveau 1 . est C",
           "code NAF niveau 1 . est D",
           "code NAF niveau 1 . est E",
           "code NAF niveau 1 . est F",
@@ -20748,7 +20704,6 @@
         ]
       },
       {
-        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
         "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
         "liens": [
           {
@@ -33682,19 +33637,6 @@
           "code NAF niveau 1 . est F",
           "code NAF niveau 1 . est G",
           "code NAF niveau 1 . est H",
-          "code NAF niveau 1 . est I",
-          "code NAF niveau 1 . est J",
-          "code NAF niveau 1 . est K",
-          "code NAF niveau 1 . est L",
-          "code NAF niveau 1 . est M",
-          "code NAF niveau 1 . est N",
-          "code NAF niveau 1 . est O",
-          "code NAF niveau 1 . est P",
-          "code NAF niveau 1 . est Q",
-          "code NAF niveau 1 . est R",
-          "code NAF niveau 1 . est S",
-          "code NAF niveau 1 . est T",
-          "code NAF niveau 1 . est U""code NAF niveau 1 . est H",
           "code NAF niveau 1 . est I",
           "code NAF niveau 1 . est J",
           "code NAF niveau 1 . est K",

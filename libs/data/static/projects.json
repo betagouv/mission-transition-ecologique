@@ -954,7 +954,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "impulsion-environnement"
+      "impulsion-environnement",
+      "je-change-ma-voiture"
     ],
     "linkedProjects": [
       31
@@ -1078,7 +1079,8 @@
       "pret-ile-de-france",
       "impulsion-environnement",
       "aide-investissement-corse",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "je-change-ma-voiture"
     ],
     "linkedProjects": [
       16
@@ -1137,7 +1139,8 @@
       "pret-ile-de-france",
       "soutien-hebergement-touristique",
       "camping-independant-na",
-      "prit-hdf"
+      "prit-hdf",
+      "je-change-ma-voiture"
     ],
     "linkedProjects": [
       16
@@ -1700,7 +1703,8 @@
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "credit-impot-innovation"
     ],
     "linkedProjects": [],
     "priority": "890",
@@ -1877,7 +1881,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "decarb-ind-25",
-      "prit-hdf"
+      "prit-hdf",
+      "je-change-ma-voiture"
     ],
     "linkedProjects": [
       1
@@ -2071,7 +2076,8 @@
       "prit-hdf",
       "camping-independant-bfc",
       "aide-investissement-corse",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "credit-impot-innovation"
     ],
     "linkedProjects": [
       31
@@ -2999,7 +3005,8 @@
       "retrofit-electrique",
       "vehicule-lourd-energies-propres",
       "cheque-transition-bioethanol",
-      "pass-transition-bzh"
+      "pass-transition-bzh",
+      "je-change-ma-voiture"
     ],
     "linkedProjects": [
       16
