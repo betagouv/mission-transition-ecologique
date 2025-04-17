@@ -8,7 +8,7 @@ export interface BaserowProject extends Id, BaserowSectors {
   order: string
   Nom: string
   'Description courte': string
-  Publié_new: LinkObject
+  Statut: LinkObject
   Image: LinkObject[]
   'Qu’est-ce que c’est ?': string
   'Pour aller plus loin': string
@@ -16,7 +16,6 @@ export interface BaserowProject extends Id, BaserowSectors {
   'Projets complémentaires': LinkObject[]
   'Thématique principale': LinkObject[]
   NameTag: string
-  Publié: boolean
   'Thématiques secondaires': LinkObject[]
   Dispositifs: LinkObject[]
   Prio: number

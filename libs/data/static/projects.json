@@ -1009,6 +1009,7 @@
       "pret-tourisme",
       "deploiement-flottes-hydrogene",
       "pret-energie-aura",
+      "pass-transition-bzh",
       "pret-ile-de-france",
       "impulsion-environnement"
     ],
@@ -1072,6 +1073,7 @@
       "deploiement-flottes-hydrogene",
       "cheque-vert-grand-est",
       "pret-energie-aura",
+      "pass-transition-bzh",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
       "impulsion-environnement",
@@ -1130,6 +1132,7 @@
       "sud-pret-climat",
       "sites-touristiques-exemplaires",
       "pret-energie-aura",
+      "pass-transition-bzh",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
       "soutien-hebergement-touristique",
@@ -2394,7 +2397,7 @@
     "shortDescription": "Un système d'irrigation performant peut vous faire économiser l'eau.",
     "image": "/images/projet/arrosage.webp",
     "longDescription": "Terrasses, jardins et potagers sont gourmands en arrosage. Certains équipements limiteront votre consommation d'eau, comme par exemple :\n\n- un arrosage au goutte-à-goutte\n- un système de récupération d'eau de pluie\n- le paillage (qui limite l'évaporation)\n- la culture d’espèces peu gourmandes en eau et adaptées au climat local\n- le raccordement à un puits existant.",
-    "moreDescription": "- [**Un jardin au naturel**](https://agirpourlatransition.ademe.fr/particuliers/maison/jardinage/jardin-naturel), un guide de l'ADEME\n- [**Comment bien pailler au jardin**](https://librairie.ademe.fr/dechets-economie-circulaire/5486-comment-bien-pailler-au-jardin-.html), une fiche technique.",
+    "moreDescription": "- [**Un jardin au naturel**](https://agirpourlatransition.ademe.fr/particuliers/maison/jardinage/jardin-naturel), un guide de l'ADEME\n- [**Mesures de restrictions des usages de l'eau en période de sécheresse**](https://www.ecologie.gouv.fr/sites/default/files/documents/MM23087_Synthese_usages%20eau%20secheresse_BATweb.pdf), une publication du Ministère de la Transition écologique et de la Cohésion des territoires.\n- [**Eau secours, demain tous à sec**](https://www.qqf.fr/infographie/eau-secours-demain-tous-a-sec/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.",
     "themes": [
       "water"
     ],
@@ -2576,6 +2579,7 @@
       "sud-pret-climat",
       "sites-touristiques-exemplaires",
       "pret-energie-aura",
+      "pass-transition-bzh",
       "pret-ile-de-france",
       "soutien-hebergement-touristique",
       "prit-hdf"
@@ -2752,11 +2756,13 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "pret-vert",
       "aide-financement-occitanie",
       "sud-pret-climat",
       "sites-touristiques-exemplaires",
       "recharge-vehicule-electrique",
       "pret-energie-aura",
+      "pass-transition-bzh",
       "pret-ile-de-france",
       "impulsion-environnement",
       "prit-hdf",
@@ -2837,7 +2843,8 @@
       "prime-a-la-conversion",
       "vehicule-lourd-energies-propres",
       "cheque-transition-bioethanol",
-      "deploiement-flottes-hydrogene"
+      "deploiement-flottes-hydrogene",
+      "pass-transition-bzh"
     ],
     "linkedProjects": [
       16
@@ -2846,26 +2853,10 @@
     "highlightPriority": null,
     "sectors": [
       "A",
-      "B",
-      "C",
-      "D",
       "E",
       "F",
       "G",
-      "H",
-      "I",
-      "J",
-      "K",
-      "L",
-      "M",
-      "N",
-      "O",
-      "P",
-      "Q",
-      "R",
-      "S",
-      "T",
-      "U"
+      "H"
     ]
   },
   {
@@ -2889,7 +2880,7 @@
     "linkedProjects": [
       16
     ],
-    "priority": "1000",
+    "priority": "95",
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3007,8 +2998,8 @@
       "prime-a-la-conversion",
       "retrofit-electrique",
       "vehicule-lourd-energies-propres",
-      "pami",
-      "cheque-transition-bioethanol"
+      "cheque-transition-bioethanol",
+      "pass-transition-bzh"
     ],
     "linkedProjects": [
       16
@@ -3054,7 +3045,9 @@
     "mainTheme": "mobility",
     "programs": [
       "amelioration-qualite-de-l-air",
+      "pret-vert",
       "navires-energies-propre",
+      "pass-transition-bzh",
       "agir-pdl",
       "pami",
       "aide-tourisme-guadeloupe"
@@ -3088,7 +3081,8 @@
     ],
     "mainTheme": "mobility",
     "programs": [
-      "plan-de-mobilite"
+      "plan-de-mobilite",
+      "pass-transition-bzh"
     ],
     "linkedProjects": [
       16
@@ -3097,26 +3091,9 @@
     "highlightPriority": null,
     "sectors": [
       "A",
-      "B",
-      "C",
-      "D",
-      "E",
       "F",
       "G",
-      "H",
-      "I",
-      "J",
-      "K",
-      "L",
-      "M",
-      "N",
-      "O",
-      "P",
-      "Q",
-      "R",
-      "S",
-      "T",
-      "U"
+      "H"
     ]
   }
 ]

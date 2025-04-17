@@ -3,7 +3,7 @@ import { ProjectType } from './shared'
 export interface DataProject
   extends Omit<
     ProjectType,
-    'themes' | 'mainTheme' | 'linkedProjects' | 'programs' | 'countEligiblePrograms' | 'redirection-vers' | 'Publié_new'
+    'themes' | 'mainTheme' | 'linkedProjects' | 'programs' | 'countEligiblePrograms' | 'redirection-vers' | 'Statut'
   > {
   themes: string[]
   mainTheme: string
@@ -14,7 +14,7 @@ export interface DataProject
 }
 
 export enum ProjectStatus {
-  InProd = 'publié',
-  Archived = 'archivé',
+  InProd = 'En prod',
+  Archived = 'Remplacé',
   Others = 'autre'
 }

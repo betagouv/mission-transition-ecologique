@@ -3,8 +3,8 @@
     "vehicule-propre": "voiture-propre",
     "seche-linge": "electromenager-basse-consommation",
     "economisateurs-eau-sanitaires": "economiseurs-eau-sanitaires",
-    "restauration-durable": "",
-    "composteur": ""
+    "restauration-durable": "menus-circuits-courts",
+    "composteur": "gestion-biodechets"
   },
   "program_redirects": {
     "audits-clef-verte": "label-clef-verte",
@@ -66,6 +66,7 @@
     "147": "borne-recharge-ve",
     "337": "sensibilisation-eco-gestes",
     "401": "utilitaire-camion-propre",
+    "566": "trajet-ferroviaire-train-metro",
     "666": "tourisme-zero-dechet",
     "667": "materiaux-de-reemploi",
     "731": "transition-mobilites",
@@ -204,6 +205,7 @@
     "172": "fiscalite-energetique-occitanie",
     "181": "tourisme-durable-paca",
     "212": "certification-agriculture-biologique",
+    "213": "industries-vertes",
     "214": "navires-energies-propre",
     "225": "bonus-reparation",
     "228": "cedre-premier-pas",
@@ -263,6 +265,8 @@
     "826": "diag-adaptation",
     "859": "advenir",
     "863": "cyclologistique",
-    "892": "formation-artisan-developpement-durable"
+    "892": "formation-artisan-developpement-durable",
+    "991": "credit-impot-innovation",
+    "1091": "je-change-ma-voiture"
   }
 }
