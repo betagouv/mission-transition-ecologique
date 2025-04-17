@@ -6197,7 +6197,6 @@
     "url": "https://www.grandest.fr/vos-aides-regionales/cheque-vert/",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 50% du coût, dans une limite de 10 000 € (sauf véhicule propre limité à 5 000 €)",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Vérifiez la liste des dépenses éligibles.",
@@ -7610,6 +7609,7 @@
     "promesse": "Évaluez la vulnérabilité climatique de votre entreprise",
     "description": "Bénéficiez d'un accompagnement pour vous aider à évaluer la vulnérabilité climatique de votre entreprise, adapter votre organisation face aux catastrophes naturelles et aux risques industriels liés au changement climatique et découvrir comment limiter les coûts imprévus de canicule, inondation, sécheresse, etc.",
     "description longue": "Le Diag Adaptation permet d’étudier la vulnérabilité de votre activité au changement climatique afin d’anticiper les risques physiques actuels et futurs pour votre site d’exploitation (chaîne de valeur de l’activité et processus de l’entreprise, réseaux de distribution, approvisionnements, aléas climatiques récurrents…).\nL’intervention pour chaque Diag Adaptation est limitée à 1 site d’exploitation de votre entreprise. Il est possible de bénéficier de plusieurs diagnostics pour couvrir les différents sites de votre entreprise.",
+    "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
@@ -16445,7 +16445,7 @@
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
         "liens": [
           {
-            "lien": "https://static.demarches-simplifiees.fr/v1/AUTH_db3cbfc79c914f87b192ff7c6bb176f0/ds_activestorage_backup/2025/03/12/FW/FWfFecay7ZqKitr9nb8MUTC6TYyS?temp_url_sig=09006c98ec617b788fc091c9dd53c0219ad65e39&temp_url_expires=1744023670&filename=FV_Cahier_Axe3_Territoires%20industrie_v3.1.pdf&inline",
+            "lien": "https://www.demarches-simplifiees.fr/commencer/fonds-vert-3-territoires-industrie",
             "texte": "Conditions d'éligibilité et de financement"
           }
         ]
@@ -18627,7 +18627,6 @@
           "code NAF niveau 1 . est F",
           "code NAF niveau 1 . est G",
           "code NAF niveau 1 . est H",
-          "code NAF niveau 1 . est I",
           "code NAF niveau 1 . est J",
           "code NAF niveau 1 . est K",
           "code NAF niveau 1 . est M",
@@ -19643,7 +19642,7 @@
   {
     "titre": "Investissement \"construction et rénovation hors site\"",
     "promesse": "Développez vos usines, vos ateliers ainsi que vos projets de R&D de construction écologique hors site",
-    "description": "Cet appel à projets  destiné aux entreprises de préfabrication ou d’assemblage, vise à soutenir le développement du mode constructif « Hors Site » pour la construction neuve et la rénovation sur tout le territoire français.",
+    "description": "Cet appel à projets, destiné aux entreprises de préfabrication ou d’assemblage, vise à soutenir le développement du mode constructif « Hors Site » pour la construction neuve et la rénovation sur tout le territoire français.",
     "description longue": "Cet appel à projets à deux objectifs :\n- Le soutien au développement d’usines et d’ateliers de préfabrication ou de lignes de production pouvant permettre des sauts technologiques et s’inscrivant dans un processus de construction hors site.\n- Le soutien aux projets de R&D de construction hors site. Ceux-ci pourront s’appuyer sur des démonstrateurs afin de permettre d’assurer la faisabilité de l’innovation en condition réelle.\n\nDans cet appel à projet, on retiendra la définition suivante de la construction hors site : « Processus de construction ou de rénovation intégrant la conception, la préfabrication, la logistique, le contrôle qualité, la mise en œuvre sur le chantier et la démontabilité en fin de vie, de sous-ensembles de bâtiments produits en dehors du chantier »\n\nLes projets devront intégrer une ou plusieurs thématiques de la construction ou rénovation hors site parmi les sujets liés à la conception, la préfabrication, la logistique, la mise en œuvre, la démontabilité.\n\nDernière clôture de l'appel à projets : le 15/01/2024.",
     "début de validité": "15/02/2023",
     "fin de validité": "15/01/2024",
@@ -23972,6 +23971,180 @@
     "id": "investour"
   },
   {
+    "titre": "Je change ma voiture",
+    "promesse": "Faites le meilleur choix pour acheter un véhicule plus propre et économe",
+    "description": "Vous souhaitez acquérir une voiture électrique, une voiture hybride ou un vélo à assistance électrique (VAE) ? \"Je change ma voiture\" vous permet de trouver rapidement le véhicule propre le plus adapté à vos besoins les aides disponibles dans votre région pour le financer.",
+    "illustration": "images/TEE_energie_verte.png",
+    "opérateur de contact": "Ministère de la Transition Écologique",
+    "url": "https://jechangemavoiture.gouv.fr/jcmv/aide-achat.html?content=aides-locales",
+    "nature de l'aide": "financement",
+    "montant du financement": "",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Rendez-vous sur jechangemavoiture.gouv.fr.",
+        "liens": [
+          {
+            "lien": "https://jechangemavoiture.gouv.fr/jcmv/aide-achat.html",
+            "texte": "Je change ma voiture"
+          }
+        ]
+      },
+      {
+        "description": "Saisissez les critères de votre véhicule actuel, et vos habitudes de déplacement."
+      },
+      {
+        "description": "Comparez les différents types de véhicules qui pourraient vous convenir : coût d'usage, coût de possession, consommations d'énergie, rejets de CO2, polluants réglementés..."
+      },
+      {
+        "description": "Sélectionnez votre région et découvrez les aides locales à l'achat d'un véhicule."
+      },
+      {
+        "description": "Contactez les organismes mentionnés pour bénéficier d'une aide au financement."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": []
+      }
+    },
+    "id": "je-change-ma-voiture"
+  },
+  {
     "titre": "Label Clef Verte",
     "promesse": "Restaurateurs & hébergeurs, obtenez un label pour valoriser l'engagement environnemental de votre entreprise",
     "description": "Obtenez le Label Clef verte, le premier ecolabel de tourisme durable destiné aux hébergements touristiques et restaurants. Ce label certifie l'engagement de votre établissement en faveur d'un tourisme plus durable.",
@@ -26036,6 +26209,9 @@
     "fin de validité": "01/10/2027",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Voies Navigables de France",
+    "autres opérateurs": [
+      "ADEME"
+    ],
     "url": "https://www.vnf.fr/vnf/accueil/beneficier-de-solutions-en-faveur-de-la-transition-energetique-du-secteur-fluvial/comment-financer-un-projet-de-verdissement-de-la-flotte-fluviale/pami/comment-faire-une-demande-daide-pami/",
     "nature de l'aide": "financement",
     "montant du financement": "De 20 000 € à 500 000 € selon projet",
@@ -29128,7 +29304,7 @@
     "description longue": "Vous avez un projet d'étude ? Les dépenses éligibles sont les suivantes : \n- Les prestations d’études d’opportunité, de définition, de faisabilité, de programmation, de conception, préalables à la réalisation d’investissements et réalisées par un prestataire externe.\n\nVous avez un projet d'investissement ? Les dépenses éligibles sont les suivantes :  \n- Missions de maîtrise d’œuvre relatives à l’investissement concerné\n- Travaux de second œuvre \n- Investissements matériels relatifs à l’exploitation de l’activité, du site, ou de l’équipement concerné (sont exclus notamment les travaux de gros œuvre et les acquisitions foncières).",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Région Haut-de-France",
-    "url": "https://guide-aides.hautsdefrance.fr/dispositif729",
+    "url": "https://aides.hautsdefrance.fr/sub/tiers/aides/details/?sigle=PRIT",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 50 % du coût de l'investissement, dans la limite de 100 000 €. Variable selon les projets.",
     "objectifs": [
@@ -31400,15 +31576,15 @@
     "id": "sites-touristiques-exemplaires"
   },
   {
-    "titre": "Plan Solaire Smart PV",
+    "titre": "Plan Solaire Sud PV Plus",
     "promesse": "Financez votre projet d'autoconsommation d'énergie photovoltaïque",
     "description": "La Région Sud soutient financièrement les projets visant l'autoconsommation d'énergie photovoltaïque. Que vous envisagiez un projet individuel, pour consommer l’électricité produite localement ou collectif, en vue de la partager, ce dispositif peut vous aider à concrétiser votre projet. Cette subvention peut participer au financement de vos investissements matériels (panneaux, rails, câblage...) ou à l'aide à la réalisation (pose, montage financier).",
-    "description longue": "Les investissements éligibles comprennent :\n\n•  la fourniture (panneaux, rails, onduleurs, stockage, le cas échéant),\n•  le câblage,\n•  le monitoring,\n•  les fonctions smart grid,\n•  la gestion d’énergie et la pose,\n•  les frais juridiques et administratifs en lien avec le montage de l’opération. Le coût des structures d’ombrières est plafonné à 0,50 €/Wc.\n\nEn cas de besoin, pour l’accueil de l’installation photovoltaïque, de travaux annexes nécessaires en toiture, du type « Solaire-ready » (notamment désamiantage, renforcement de structure, reprise d’étanchéité, isolation de toiture), vous pouvez solliciter le financement \"Plan Solaire Ready\".",
+    "description longue": "Les investissements éligibles comprennent :\n\n•  la fourniture (panneaux, rails, onduleurs, stockage, le cas échéant),\n•  le câblage,\n•  le monitoring,\n•  les fonctions smart grid,\n•  la gestion d’énergie et la pose,\n•  les frais juridiques et administratifs en lien avec le montage de l’opération. Le coût des structures d’ombrières est plafonné à 0,50 €/Wc.\n\nEn cas de besoin, pour l’accueil de l’installation photovoltaïque, de travaux annexes nécessaires en toiture, du type « Paré pour le solaire » (notamment désamiantage, renforcement de structure, reprise d’étanchéité, isolation de toiture), vous pouvez solliciter le financement \"Plan Solaire Paré pour le solaire\".",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Région Sud (PACA)",
-    "url": "https://www.maregionsud.fr/vos-aides/detail/plan-solaire-smart-pv-en-soutien-de-lautoconsommation-photovoltaique",
+    "url": "https://www.maregionsud.fr/vos-aides/detail/plan-solaire-sud-pv-plus-en-soutien-de-lautoconsommation-photovoltaique",
     "nature de l'aide": "financement",
-    "montant du financement": "20 à 25 % de l’assiette éligible du projet, dans un maximum de 100 000 €",
+    "montant du financement": "15 à 25 % de l’assiette éligible du projet, dans un maximum de 100 000 €",
     "activable en autonomie": "oui",
     "objectifs": [
       {
@@ -31436,7 +31612,7 @@
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
         "Toutes tailles",
-        "Éligible aux micro-entreprises"
+        "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
         "Provence-Alpes-Côte d'Azur"
@@ -31554,7 +31730,13 @@
       },
       "entreprise . est éligible": {
         "toutes ces conditions": [
+          "a une categorie legale eligible",
           "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
         ]
       },
       "entreprise . est dans un secteur d'activité ciblé": {
@@ -31778,13 +31960,13 @@
     "id": "sobriete-et-resilience-des-territoires"
   },
   {
-    "titre": "Plan Solaire Ready",
+    "titre": "Plan Solaire : Paré pour le solaire",
     "promesse": "Financez vos travaux de toiture en préparation à l’installation de panneaux solaires",
     "description": "Vous avez pour projet l’installation d’équipements photovoltaïques sur vos toitures mais vos bâtiments ne sont pas encore aptes à recevoir des installations dans le respect des contraintes techniques ? La région Sud soutient financièrement les travaux nécessaires pour rendre vos bâtiments « solarisables » : désamiantage, renforcement de structure, étanchéité, structure de soutien des panneaux, etc.",
     "description longue": "Les dépenses éligibles sont les dépenses d’investissement liées aux travaux, à savoir les coûts suivants : \n\n• Désamiantage de la toiture, y compris diagnostic préalable (sur l’ensemble des pans de toiture)\n• Renforcement de la toiture. \n• Couverture permettant l’installation solaire et/ou reprise de l’étanchéité et/ou de l’isolation (hors coûts de l’installation photovoltaïque). \n• Structure de soutien des panneaux, type ombrière, etc. \n• Coût de raccordement amont au projet : rénovation des colonnes montantes de bâtiment pour le passage de gaines électriques, viabilisation de parcelle, etc. \n• Toutes missions de bureau de contrôles et bureau d’étude (diagnostics préalables, étude sol, étude structure, ERP, EDVV13, etc.). \n• Dispositifs de protection foudre et de sécurisation des toitures. \n\nLes opérations citées ci-dessus ne seront éligibles que si elles ont pour objet l’installation ultérieure d’équipements photovoltaïques. De plus, les projets où le maître d’ouvrage s’engage à porter lui-même le financement de la future installation photovoltaïque seront priorisés.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Région Sud (PACA)",
-    "url": "https://www.maregionsud.fr/vos-aides/detail/plan-solaire-dispositif-solaire-ready",
+    "url": "https://www.maregionsud.fr/vos-aides/detail/plan-solaire-dispositif-pare-pour-le-solaire",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 40% des dépenses éligibles, dans un maximum de 200 000 € HT par site",
     "objectifs": [
@@ -31983,10 +32165,6 @@
           {
             "lien": "https://entreprises.maregionsud.fr/financement/sud-entreprises/soutien-a-lhebergement-touristique",
             "texte": "Conditions d'éligibilité et de financement"
-          },
-          {
-            "lien": "https://www.maregionsud.fr/contacter-la-region",
-            "texte": "Contacter un conseiller"
           }
         ]
       },
@@ -31994,7 +32172,7 @@
         "description": "Créez un compte Région Sud pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://sudconnect.maregionsud.fr/auth/realms/citoyen/login-actions/registration?client_id=usager-mgdis-portail&tab_id=fJ6yb7y7MXs",
+            "lien": "https://aidesenligne.maregionsud.fr/aides/#/crsud/connecte/F_S_I_SOUTHEB/depot/simple",
             "texte": "Créer mon compte"
           }
         ]
