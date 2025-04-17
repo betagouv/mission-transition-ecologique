@@ -2,6 +2,7 @@ import { ProgramType, ProjectType } from '@tee/data'
 import ProjectFeatures from '../domain/projectFeatures'
 import { QuestionnaireData } from '@tee/common'
 import { Result } from 'true-myth'
+import { RedirectService } from '../../common/application/redirectService'
 import { ProjectEligibility } from '../infrastructure/projectEligibility'
 import ProjectsJson from '../infrastructure/projectsJson'
 import { ProjectSorter } from '../infrastructure/projectSorter'
@@ -54,5 +55,9 @@ export class ProjectService {
 
   public getBySlug(id: string): ProjectType | undefined {
     return this._project.getBySlug(id)
+  }
+
+  public getRedirect(slug: string): string | undefined {
+    return new RedirectService().getByProjectSlug(slug)
   }
 }

@@ -46,12 +46,10 @@ objectifs:
       - lien: >-
           https://entreprises.maregionsud.fr/financement/sud-entreprises/soutien-a-lhebergement-touristique
         texte: Conditions d'éligibilité et de financement
-      - lien: https://www.maregionsud.fr/contacter-la-region
-        texte: Contacter un conseiller
   - description: Créez un compte Région Sud pour pouvoir déposer votre dossier.
     liens:
       - lien: >-
-          https://sudconnect.maregionsud.fr/auth/realms/citoyen/login-actions/registration?client_id=usager-mgdis-portail&tab_id=fJ6yb7y7MXs
+          https://aidesenligne.maregionsud.fr/aides/#/crsud/connecte/F_S_I_SOUTHEB/depot/simple
         texte: Créer mon compte
   - description: >-
       Déposez votre dossier. À ce stade, l'opération pour laquelle vous

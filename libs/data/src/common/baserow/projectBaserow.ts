@@ -1,6 +1,6 @@
 import path from 'path'
 import { AbstractBaserow } from './abstractBaserow'
-import { DataProject } from '../../project/types/domain'
+import { DataProject, ProjectStatus } from '../../project/types/domain'
 import { LinkObject, BaserowProject, BaserowSectors, SectorKeys } from './types'
 import { Theme } from '../../theme/types/domain'
 import { ImageBaserow } from './imageBaserow'
@@ -22,16 +22,19 @@ export class ProjectBaserow extends AbstractBaserow {
     this._imageDownloader = new ImageBaserow(imageDirectory, this._logPath)
   }
 
-  async getValidProjects(): Promise<DataProject[]> {
+  async getProdAndArchivedProjects(): Promise<DataProject[]> {
     const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
-    const validBaserowProjects = baserowProjects.filter((value) => {
-      return value.Publié
+    const validBaserowProjects = baserowProjects.filter((project) => {
+      return this._convertStatus(project?.Statut) == ProjectStatus.InProd || this._convertStatus(project?.Statut) == ProjectStatus.Archived
     })
+    return await this._convertProjectList(validBaserowProjects)
+  }
 
+  private async _convertProjectList(projectList: BaserowProject[]): Promise<DataProject[]> {
     const baserowThemes = await this._getTableData<Theme>(this._themeTableId)
 
     const projects: DataProject[] = []
-    for (const project of validBaserowProjects) {
+    for (const project of projectList) {
       try {
         const result = await this._convertToDataProjectType(project, baserowThemes)
         projects.push(result)
@@ -60,6 +63,8 @@ export class ProjectBaserow extends AbstractBaserow {
       imageName = maybeImageName.value
     }
 
+    const redirect = this._generateRedirect(baserowProject)
+
     return {
       id: baserowProject.id,
       slug: baserowProject.Nom,
@@ -75,7 +80,9 @@ export class ProjectBaserow extends AbstractBaserow {
       linkedProjects: this._generateLinkedProjectList(baserowProject['Projets complémentaires']),
       priority: baserowProject.Prio,
       highlightPriority: baserowProject['Mise En Avant'],
-      sectors: this._generateSectors(baserowProject as BaserowSectors)
+      sectors: this._generateSectors(baserowProject as BaserowSectors),
+      status: this._convertStatus(baserowProject?.Statut),
+      ...(redirect !== undefined && { redirectTo: redirect })
     }
   }
 
@@ -131,5 +138,23 @@ export class ProjectBaserow extends AbstractBaserow {
     })
 
     return result
+  }
+
+  private _generateRedirect(project: BaserowProject): number | undefined {
+    if (project['redirection-vers'].length > 1) {
+      this._logger.log(LogLevel.Major, 'Redirection invalide: multiples redirections en conflit', project.Titre, project.id)
+      return undefined
+    }
+    if (!project['redirection-vers'].length) {
+      return undefined
+    }
+    return project['redirection-vers'][0].id
+  }
+
+  private _convertStatus(status: LinkObject | undefined): ProjectStatus {
+    if (!status) {
+      return ProjectStatus.Others
+    }
+    return Object.values(ProjectStatus).includes(status.value as ProjectStatus) ? (status.value as ProjectStatus) : ProjectStatus.Others
   }
 }
