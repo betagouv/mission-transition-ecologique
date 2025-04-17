@@ -3042,15 +3042,6 @@ ol.fr-order-list > li::marker {
   font-size: 1.5rem;
 }
 
-ol.fr-order-list {
-  --ol-content: counters(li-counter,".") " | ";
-  --ol-start: 2.5rem;
-}
-ol.fr-order-list > li::marker {
-  color: #6a62f4;
-  font-size: 1.5rem;
-}
-
 @media (min-width: 0) {
   .fr-radius-tl {
     border-top-left-radius: 0 !important;
@@ -4508,6 +4499,10 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   background-color: #fff;
 }
 
+.fr-sidemenu.fr-sidemenu--sticky {
+  box-shadow: inset -1px 0 0 0 var(--border-default-grey) !important;
+  margin-top: 1px !important;
+}
 .fr-sidemenu #project-sidemenu a.fr-sidemenu__link {
   padding-left: 0;
   padding-right: 0;
