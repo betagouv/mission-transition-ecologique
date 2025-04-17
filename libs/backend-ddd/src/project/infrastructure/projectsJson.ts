@@ -2,7 +2,7 @@ import { ProjectRepository } from '../domain/spi'
 import { projects as jsonProjects } from '@tee/data/static'
 import { ProjectType } from '@tee/data'
 
-export default class ProjectsJson implements ProjectRepository {
+export class ProjectsJson implements ProjectRepository {
   private static instance: ProjectsJson
   private _projects: ProjectType[] = []
 

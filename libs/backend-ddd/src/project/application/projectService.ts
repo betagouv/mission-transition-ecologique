@@ -4,7 +4,7 @@ import { QuestionnaireData } from '@tee/common'
 import { Result } from 'true-myth'
 import { RedirectService } from '../../common/application/redirectService'
 import { ProjectEligibility } from '../infrastructure/projectEligibility'
-import ProjectsJson from '../infrastructure/projectsJson'
+import { ProjectsJson } from '../infrastructure/projectsJson'
 import { ProjectSorter } from '../infrastructure/projectSorter'
 
 export class ProjectService {
