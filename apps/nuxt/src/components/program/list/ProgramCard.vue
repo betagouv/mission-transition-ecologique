@@ -5,7 +5,7 @@
     :end-detail="getCostInfos()"
     end-detail-icon="fr-icon-money-euro-circle-line fr-text--blue"
     :description="program.promesse"
-    :img-src="img(`/${program.illustration}`, { height: 320, quality: 70 })"
+    :img-src="img(`/${program.illustration}`, { height: 320, quality: 70, loading: 'lazy' })"
     :alt-img="`image / ${program.titre}`"
     :horizontal="true"
     :no-arrow="true"

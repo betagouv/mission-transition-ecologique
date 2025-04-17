@@ -13,6 +13,7 @@ import { ChangeFreq, Priority } from './src/types/sitemapType'
  * it can cause issues with the build
  */
 const hasPrerenderOrSwr = !process.env.CI && !Config.isTestData
+const maxAge = 2678400 // 31 days in seconds
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default <DefineNuxtConfig>defineNuxtConfig({
@@ -25,6 +26,16 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     }
   },
   routeRules: {
+    '/_nuxt/**': {
+      headers: {
+        'cache-control': `public, max-age=${maxAge}, s-maxage=${maxAge}`
+      }
+    },
+    '/images/**': {
+      headers: {
+        'cache-control': `public, max-age=${maxAge}, s-maxage=${maxAge}`
+      }
+    },
     '/': { prerender: true },
     '/aides-entreprise': { prerender: hasPrerenderOrSwr },
     '/aides-entreprise/**': { swr: hasPrerenderOrSwr },
@@ -157,8 +168,9 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       md: 992,
       lg: 1248
     },
+    densities: [1],
     ipx: {
-      maxAge: 86400 * 365
+      maxAge: maxAge
     }
   },
   runtimeConfig: {

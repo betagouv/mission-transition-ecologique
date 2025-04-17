@@ -36,7 +36,11 @@
         </div>
       </div>
       <div class="fr-col-2 fr-col-md-4 fr-col--middle fr-col-lg-4 tee-track-image-right fr-col-unhidden-md fr-col-hidden">
-        <img
+        <NuxtImg
+          densities="1"
+          quality="70"
+          format="webp"
+          loading="lazy"
           class="fr-responsive-img"
           src="/images/TEE-illustrationHP.png"
           alt="Illustration de la page d'accueil - Une maison avec une éolienne, une ampoule et une prise électrique"
