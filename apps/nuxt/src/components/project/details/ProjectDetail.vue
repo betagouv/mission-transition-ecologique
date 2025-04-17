@@ -48,10 +48,6 @@ onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
 })
 
-onBeforeRouteLeave(() => {
-  useSeoMeta(MetaSeo.default())
-})
-
 if (project.value) {
   const selectedThemeId = Theme.getThemeFromSelectedOrPriorityTheme()
   const themeId = project.value?.themes.find((theme) => theme === selectedThemeId.value) || project.value?.mainTheme
