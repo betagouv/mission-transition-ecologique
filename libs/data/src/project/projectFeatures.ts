@@ -1,7 +1,7 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { ProjectBaserow } from '../common/baserow/projectBaserow'
-import { DataProject } from './types/domain'
+import { DataProject, ProjectStatus } from './types/domain'
 import { jsonPrograms } from '../../static'
 import { ProgramType } from '../program/types/shared'
 import { ThemeId } from '../theme/types/shared'
@@ -10,6 +10,7 @@ import { LinkValidator } from '../common/validators/linkValidator'
 import { Logger } from '../common/logger/logger'
 import { LoggerType, LogLevel } from '../common/logger/types'
 import { FileManager } from '../common/fileManager'
+import Redirect from '../common/redirect/redirect'
 
 export class ProjectFeatures {
   private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -25,11 +26,14 @@ export class ProjectFeatures {
 
   async generateProjectsJson(): Promise<void> {
     console.log(`Start loading Baserow data and creating the project images`)
-    const projects = await new ProjectBaserow(this._outputImageDirectory, this._logger).getValidProjects()
+    const projects = await new ProjectBaserow(this._outputImageDirectory, this._logger).getProdAndArchivedProjects()
 
     console.log(`Baserow Data sucessfully downloaded.\n\nStarting to validate the project data and generating the project JSON.`)
+    new Redirect(this._logger).updateProjectsRedirects(projects)
+
     const validProjects = await this._validateData(projects)
-    FileManager.writeJson(this._outputFilePath, validProjects, 'projects.json updated')
+    const sanitizedProjects = validProjects.map(({ status: _status, ...rest }) => rest)
+    FileManager.writeJson(this._outputFilePath, sanitizedProjects, 'projects.json updated')
     this._logger.write('projectGeneration.log')
 
     return
@@ -38,6 +42,9 @@ export class ProjectFeatures {
   private async _validateData(rawProjects: DataProject[]) {
     const validProjects: DataProject[] = []
     for (const project of rawProjects) {
+      if (project.status != ProjectStatus.InProd) {
+        continue
+      }
       this._validateThemes(project)
       this._validateLinkedProjects(project, rawProjects)
       this._validatePrograms(project, this._programs)

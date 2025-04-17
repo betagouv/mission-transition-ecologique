@@ -162,7 +162,9 @@
   },
   {
     "operator": "Voies Navigables de France",
-    "filterCategories": []
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
   },
   {
     "operator": "Région Centre-Val de Loire",

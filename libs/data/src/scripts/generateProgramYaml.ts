@@ -3,7 +3,7 @@ import { ProgramYamlsGenerator } from '../program/yamlGenerator/programYamlsGene
 console.log('Start the program Yamls generation')
 
 new ProgramYamlsGenerator()
-  .createProgramYamls()
+  .updatePrograms()
   .then(() => {
     console.log('Program Yamls generated')
   })
