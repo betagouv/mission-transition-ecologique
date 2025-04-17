@@ -1,6 +1,6 @@
 import { defineEventHandler, H3Event } from 'h3'
-import { z } from 'zod'
 import { Monitor, ProjectService } from '@tee/backend-ddd'
+import { z } from 'zod'
 
 const projectSlugSchema = z.object({
   slug: z.string()
@@ -24,14 +24,12 @@ const projectCached = cachedFunction(
     const project = projectService.getBySlug(slug)
 
     if (project === undefined) {
-      const errorMessage = 'Project not found ' + slug
-      Monitor.error('Error in ProjetFilter', { error: errorMessage })
+      Monitor.warning('Requested Project slug not found', { slug })
       throw createError({
-        statusCode: 500,
-        statusMessage: errorMessage
+        statusCode: 404,
+        statusMessage: 'Project not found'
       })
     }
-
     return project
   },
   {

@@ -1,4 +1,5 @@
 import { useCompanyDataStore } from '@/stores/companyData'
+import { useFiltersStore } from '@/stores/filters'
 import { CompanyDataStorage } from '@/tools/companyData/companyDataStorage'
 import { useNavigationStore } from '@/stores/navigation'
 import {
@@ -83,17 +84,22 @@ export class CompanyData {
     })
   }
 
-  static isDataFull() {
+  static hasDataFull() {
     const data = this.dataRef
     const companyData = data.value[CompanyDataStorageKey.Company]
     if (!companyData) {
-      useCompanyDataStore().isDataFull = false
       return false
     }
+    return CompanyDataValidator.validate(companyData)
+  }
 
-    const isValid = CompanyDataValidator.validate(companyData)
-    useCompanyDataStore().isDataFull = isValid
-    return isValid
+  static isDataFull() {
+    this.setDataFull()
+    return useCompanyDataStore().isDataFull
+  }
+
+  static setDataFull() {
+    useCompanyDataStore().isDataFull = this.hasDataFull()
   }
 
   static isCompanySelected() {
@@ -117,6 +123,7 @@ export class CompanyData {
   static resetData() {
     CompanyDataStorage.removeItem(CompanyDataStorageKey.Company)
     CompanyDataStorage.removeItem(CompanyDataStorageKey.Size)
+    this.setDataFull()
   }
 
   static updateData() {

@@ -3,6 +3,10 @@
     <Script
       id="transition-ecologique-entreprise"
       :src="Iframe.getScript()"
+    ></Script>
+    <Script
+      id="transition-ecologique-entreprise"
+      :src="Iframe.getScript()"
       data-type="projet"
       data-id="diag-360"
     ></Script>

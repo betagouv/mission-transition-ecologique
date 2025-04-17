@@ -122,6 +122,7 @@ const saveProfile = async () => {
       [CompanyDataStorageKey.Company]: companyData,
       [CompanyDataStorageKey.Size]: profile.value.size.value
     })
+    CompanyData.setDataFull()
     CompanyData.updateRouteFromStorage()
     if (!props.manual) {
       const companyData = CompanyData.company as EstablishmentFront

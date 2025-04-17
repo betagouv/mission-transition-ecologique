@@ -69,6 +69,8 @@
 </template>
 
 <script setup lang="ts">
+import { ProgramManager } from '@/tools/program/programManager'
+import { ProjectManager } from '@/tools/project/projectManager'
 import { CompanyDataStorageKey, SizeToText, StructureSize } from '@/types'
 import { CompanyData } from '@/tools/companyData'
 import Breakpoint from '@/tools/breakpoints'
@@ -89,7 +91,18 @@ type CompanyFilterDetailProps = {
   icon?: string
 }
 const navigation = new Navigation()
-const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected()
+const isCompanyDataSelected = computed({
+  get: () => useFiltersStore().getCompanyDataSelected().value,
+  set: (value: boolean) => {
+    useFiltersStore().companyDataSelected = value
+    if (navigation.isCatalogProjects()) {
+      new ProjectManager().getProjects()
+    }
+    if (navigation.isCatalogProjectDetail() || navigation.isCatalogPrograms()) {
+      new ProgramManager().getDependentCompanyData(true)
+    }
+  }
+})
 
 const registeredData = CompanyData.dataRef
 const hasRegisteredData = CompanyData.isDataFullComputed()
