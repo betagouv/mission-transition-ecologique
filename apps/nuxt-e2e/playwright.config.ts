@@ -30,11 +30,11 @@ import { timeOut } from './src/config'
  */
 export default defineConfig<ConfigOptions>({
   use: {
-    baseURL: 'http://localhost:4243',
+    baseURL: 'http://localhost:4242',
     trace: 'on-first-retry',
     nuxt: {
       rootDir: fileURLToPath(new URL('../nuxt', import.meta.url)),
-      host: 'http://localhost:4243'
+      host: 'http://localhost:4242'
     }
   },
   // use: {
@@ -61,10 +61,10 @@ export default defineConfig<ConfigOptions>({
     env: {
       VITE_DATA_TEST: 'true',
       THIRD_PARTY_API_ENABLED: 'false',
-      PORT: '4243'
+      PORT: '4242'
     },
     command: 'npm run build:start',
-    url: 'http://localhost:4243',
+    url: 'http://localhost:4242',
     reuseExistingServer: !process.env.CI
   },
   /* Configure projects for major browsers */

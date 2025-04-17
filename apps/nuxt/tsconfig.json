@@ -18,6 +18,7 @@
       "@tee/data/server": ["libs/data/src/server.ts"],
       "@tee/data/static": ["libs/data/static/index.ts"],
       "#imports": ["apps/nuxt/.nuxt/imports"], // this is to fix the module "@nuxtjs/sitemap"
+      "#app/nuxt": ["node_modules/nuxt/dist/app/nuxt"], // this is to fix the module "@nuxt/image"
       "#nuxt-scripts": ["node_modules/@nuxt/scripts/dist/runtime/types"]
     }
   },

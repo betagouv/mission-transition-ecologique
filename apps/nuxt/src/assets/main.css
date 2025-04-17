@@ -4499,6 +4499,10 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   background-color: #fff;
 }
 
+.fr-sidemenu.fr-sidemenu--sticky {
+  box-shadow: inset -1px 0 0 0 var(--border-default-grey) !important;
+  margin-top: 1px !important;
+}
 .fr-sidemenu #project-sidemenu a.fr-sidemenu__link {
   padding-left: 0;
   padding-right: 0;

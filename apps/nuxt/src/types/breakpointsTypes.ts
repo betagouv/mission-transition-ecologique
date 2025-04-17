@@ -11,5 +11,5 @@ export enum BreakpointSizeTypes {
   sm = 576,
   md = 768,
   lg = 992,
-  xl = 1440
+  xl = 1248
 }

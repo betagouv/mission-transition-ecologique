@@ -3,6 +3,7 @@
     <div class="fr-col-5 fr-col-sm-12">
       <img
         class="fr-responsive-img no-result-img"
+        loading="lazy"
         src="/images/tracks/no-results.png"
         alt="pas de résultat"
       />

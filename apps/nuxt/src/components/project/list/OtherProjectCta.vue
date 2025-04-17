@@ -7,6 +7,7 @@
       src="/images/cross.svg"
       height="50px"
       alt="image / autre projet"
+      loading="lazy"
     />
     <div>J'ai un autre projet</div>
   </button>

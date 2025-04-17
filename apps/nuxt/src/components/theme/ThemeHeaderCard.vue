@@ -4,7 +4,7 @@
     horizontal
     title="Thématique"
     :description="Theme.getTitleById(theme as ThemeId)"
-    :img-src="Theme.getImageById(theme as ThemeId)"
+    :img-src="img(Theme.getImageById(theme as ThemeId))"
     :class="classes"
     class="fr-container-md fr-mb-4v"
     size="sm"
@@ -27,6 +27,7 @@ interface Props {
 const props = defineProps<Props>()
 const navigation = new Navigation()
 const isResultPage = navigation.isByRouteName(RouteName.QuestionnaireResult)
+const img = useImage()
 
 function getRadiusClass() {
   const { radiusCorner, radiusSize } = props

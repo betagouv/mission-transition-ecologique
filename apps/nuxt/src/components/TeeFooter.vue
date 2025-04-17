@@ -17,9 +17,11 @@
             href="/"
             title="Retour à l’accueil du site - Transition écologique des entreprises - République Française"
           >
-            <img
+            <NuxtImg
               class="fr-footer__logo"
               src="/images/logos/ademe.svg"
+              quality="70"
+              densities="1"
               alt="logo de l'ADEME - Agence de de la Transition Écologique"
             />
           </a>
@@ -64,10 +66,14 @@
                   :href="operator.href"
                   rel="noopener noreferrer"
                 >
-                  <img
+                  <NuxtImg
                     class="fr-footer__logo fr-responsive-img"
                     :src="operator.img"
+                    quality="70"
+                    densities="1"
                     :alt="operator.label"
+                    :format="operator.format ?? undefined"
+                    loading="lazy"
                     :width="operator.width ?? undefined"
                   />
                 </a>
@@ -132,6 +138,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeAppFooter > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import { operatorsAll } from '@/tools/operator'
 import Translation from '@/tools/translation'
 import { RouteName } from '@/types/routeType'
 
@@ -196,37 +203,5 @@ const mainLinks = [
   }
 ]
 
-const operators = [
-  {
-    label: 'Conseiller Entreprise',
-    img: '/images/logos/ce-logo.svg',
-    href: 'https://conseillers-entreprises.service-public.fr/'
-  },
-  {
-    label: 'ADEME',
-    img: '/images/logos/ademe.svg',
-    href: 'https://www.ademe.fr/'
-  },
-  {
-    label: 'Bpifrance',
-    img: '/images/logos/bpi-france.svg',
-    href: 'https://www.bpifrance.fr/'
-  },
-  {
-    label: 'CCI France',
-    img: '/images/logos/cci-france.svg',
-    href: 'https://www.cci.fr/',
-    width: '130px'
-  },
-  {
-    label: 'CMA France',
-    img: '/images/logos/cma-france.png',
-    href: 'https://www.artisanat.fr/'
-  },
-  {
-    label: 'Office français de la biodiversité',
-    img: '/images/logos/logo-ofb.webp',
-    href: ' https://ofb.gouv.fr'
-  }
-]
+const operators = operatorsAll
 </script>
