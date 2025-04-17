@@ -6,6 +6,14 @@ import { NuxtSecurityConfig } from './nuxt.security.config'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import { ChangeFreq, Priority } from './src/types/sitemapType'
 
+/**
+ * Remove prerender and swr for CI and test data.
+ *
+ * Because it's missing images on projects or programs from data test
+ * it can cause issues with the build
+ */
+const hasPrerenderOrSwr = !process.env.CI && !Config.isTestData
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default <DefineNuxtConfig>defineNuxtConfig({
   app: {
@@ -18,10 +26,10 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   },
   routeRules: {
     '/': { prerender: true },
-    '/aides-entreprise': { prerender: !process.env.CI },
-    '/aides-entreprise/**': { swr: !process.env.CI },
-    '/projets-entreprise': { prerender: !process.env.CI },
-    '/projets-entreprise/**': { swr: !process.env.CI },
+    '/aides-entreprise': { prerender: hasPrerenderOrSwr },
+    '/aides-entreprise/**': { swr: hasPrerenderOrSwr },
+    '/projets-entreprise': { prerender: hasPrerenderOrSwr },
+    '/projets-entreprise/**': { swr: hasPrerenderOrSwr },
     '/accessibilite': { prerender: true },
     // '/mentions-legales': { prerender: true },
     // '/donnees-personnelles': { prerender: true },
