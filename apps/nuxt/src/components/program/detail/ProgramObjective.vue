@@ -56,7 +56,6 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-console.log(props.isCTAToFormVisible)
 
 const getProgramObjectiveTitle = () => {
   switch (props.program["nature de l'aide"]) {
