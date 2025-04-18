@@ -5,14 +5,15 @@
       class="fr-text--blue-france"
       v-html="currentProgram?.promesse"
     />
-    <p
+    <div
       class="fr-mb-12v fr-text--blue-france"
-      v-html="currentProgram?.description"
+      v-html="Marked.toHtml(currentProgram?.description || '')"
     />
     <section>
       <ProgramObjective
         v-if="currentProgram"
         :program="currentProgram"
+        :form-container-ref="props.formContainerRef"
       />
     </section>
     <DsfrButton
@@ -32,6 +33,7 @@ import Program from '@/tools/program/program'
 import { Scroll } from '@/tools/scroll'
 import Translation from '@/tools/translation'
 import { ProgramEligibility, ProgramType, RouteName } from '@/types'
+import { Marked } from '@/tools/marked'
 
 const { currentProgram } = storeToRefs(useProgramStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())

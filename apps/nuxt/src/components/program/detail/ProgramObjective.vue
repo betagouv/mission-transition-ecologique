@@ -7,22 +7,40 @@
         :key="`description-paragraph-${idx}`"
         class="fr-mb-4v fr-mb-md-2v"
       >
-        <p class="fr-mb-0 fr-ml-0">
-          <span class="fr-tee-description-paragraph-content">
-            {{ content.description }}
-          </span>
-        </p>
+        <div class="fr-mb-0 fr-ml-0">
+          <div
+            class="fr-tee-description-paragraph-content markdown-spacing-reset"
+            v-html="markdownToHtml(content.description)"
+          />
+        </div>
         <div v-if="content.liens">
           <template
             v-for="(link, linkId) in content.liens"
             :key="`link-${idx}-${linkId}`"
           >
             <TeeButtonExternalLink
+              v-if="link.lien"
               :href="link.lien"
               class="fr-mb-1v fr-mr-md-2v"
             >
               {{ link.texte }}
             </TeeButtonExternalLink>
+            <DsfrButton
+              v-if="
+                link.formulaire &&
+                !isProgramAutonomous &&
+                programIsEligible &&
+                isDataFull &&
+                !Program.isTemporaryUnavailable(currentProgram)
+              "
+              secondary
+              icon="fr-icon-mail-line"
+              size="md"
+              class="fr-mb-1v fr-mr-md-2v overwrite-button-style"
+              :on-click="scrollToProgramForm"
+            >
+              {{ Translation.t('program.CTAButton') }}
+            </DsfrButton>
           </template>
         </div>
       </li>
@@ -33,10 +51,15 @@
 <script setup lang="ts">
 import TeeButtonExternalLink from '@/components/element/button/TeeButtonExternalLink.vue'
 import Translation from '@/tools/translation'
-import { ProgramAidType, type ProgramTypeForFront } from '@/types'
+import Program from '@/tools/program/program'
+import { Marked } from '@/tools/marked'
+import { ProgramAidType, ProgramEligibility, ProgramType, RouteName, type ProgramTypeForFront } from '@/types'
+import Navigation from '@/tools/navigation'
+import { Scroll } from '@/tools/scroll'
 
 interface Props {
   program: ProgramTypeForFront
+  formContainerRef: HTMLElement | null | undefined
 }
 
 const props = defineProps<Props>()
@@ -52,4 +75,44 @@ const getProgramObjectiveTitle = () => {
       return Translation.t('program.programObjective.title.applicationSteps')
   }
 }
+
+const markdownToHtml = (text: string | undefined) => {
+  return text ? Marked.toHtml(text) : ''
+}
+
+const navigation = new Navigation()
+
+const scrollToProgramForm = () => {
+  if (props.formContainerRef) {
+    navigation.isByRouteName(RouteName.CatalogProgramDetail) || navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)
+      ? Scroll.to(props.formContainerRef)
+      : Scroll.toWithTopBarOffset(props.formContainerRef)
+  }
+}
+
+const { currentProgram } = storeToRefs(useProgramStore())
+const { isDataFull } = storeToRefs(useCompanyDataStore())
+
+const programIsEligible = computed(() => {
+  return currentProgram.value ? ProgramEligibility.isEligible(currentProgram.value as unknown as ProgramType) : false
+})
+
+const isProgramAutonomous = computed(() => {
+  return Program.isProgramAutonomous(currentProgram.value)
+})
 </script>
+
+<style scoped lang="scss">
+@use '@/assets/scss/setting';
+
+.markdown-spacing-reset > * {
+  margin: 0;
+}
+
+.overwrite-button-style {
+  box-shadow: inset 0 0 0 1px setting.$purple;
+  color: setting.$purple !important;
+  text-align: center;
+  font-size: 0.875rem;
+}
+</style>

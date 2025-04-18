@@ -22,6 +22,9 @@ function parseStep(step: string, stepId: number, generator: CoreGenerator): Yaml
   const liens = lines
     .slice(1)
     .map((line) => {
+      if (line.toLocaleLowerCase().includes('#formulaire#')) {
+        return { formulaire: true }
+      }
       const match = line.match(/\[(.*?)\]\((.*?)\)/)
       if (match) {
         validateObjectiveLink(match[2], stepId, generator)
@@ -29,7 +32,7 @@ function parseStep(step: string, stepId: number, generator: CoreGenerator): Yaml
       }
       return null
     })
-    .filter((link) => link !== null) as { lien: string; texte: string }[]
+    .filter((link) => link !== null)
 
   return { description, liens: liens.length > 0 ? liens : undefined }
 }

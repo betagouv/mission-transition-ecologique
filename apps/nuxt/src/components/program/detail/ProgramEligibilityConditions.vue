@@ -18,9 +18,9 @@
           <li
             v-for="(value, i) in programEligibility[field]"
             :key="`elegibility-field-${idx}-value-${i}`"
-          >
-            <p class="fr-mb-0">{{ value }}</p>
-          </li>
+            class="fr-mb-0 markdown-spacing-reset"
+            v-html="Marked.toHtml(value)"
+          ></li>
         </ul>
       </div>
     </div>
@@ -30,6 +30,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { ProgramTypeForFront } from '@/types'
+import { Marked } from '@/tools/marked'
 
 type EligibilityCategory = keyof ProgramTypeForFront["conditions d'éligibilité"]
 
@@ -70,3 +71,9 @@ const programEligibility = computed(() => {
   return props.program["conditions d'éligibilité"]
 })
 </script>
+
+<style>
+.markdown-spacing-reset > * {
+  margin: 0;
+}
+</style>

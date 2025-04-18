@@ -55,6 +55,8 @@
           "liens": {
             "type": "array",
             "items": {
+              "oneOf": [
+                {
               "type": "object",
               "properties": {
                 "lien": {
@@ -66,6 +68,17 @@
                   "type": "string"
                 }
               }
+            },
+            {
+              "type": "object",
+              "properties": {
+                "formulaire": {
+                  "description": "TODO",
+                  "type": "boolean"
+                }
+              }
+            }
+          ]
             }
           }
         }
