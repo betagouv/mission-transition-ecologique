@@ -61,7 +61,15 @@ export interface YamlImage {
 
 export interface YamlObjective {
   description: string
-  liens?: { lien: string; texte: string }[]
+  liens?: (Lien | Formulaire)[]
+}
+
+export interface Lien {
+  lien: string
+  texte: string
+}
+export interface Formulaire {
+  formulaire: boolean
 }
 
 export type ConditionalYaml = Required<ProgramType['champs conditionnels'][]>[number][number]
