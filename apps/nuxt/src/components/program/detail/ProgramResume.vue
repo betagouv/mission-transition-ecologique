@@ -14,10 +14,12 @@
         v-if="currentProgram"
         :program="currentProgram"
         :form-container-ref="props.formContainerRef"
+        :scroll-to-form="scrollToProgramForm"
+        :is-CTA-to-form-visible="isCTAToFormVisible"
       />
     </section>
     <DsfrButton
-      v-if="!isProgramAutonomous && programIsEligible && isDataFull && !Program.isTemporaryUnavailable(currentProgram)"
+      v-if="isCTAToFormVisible"
       size="lg"
       icon="fr-icon-mail-line"
       class="fr-ml-md-3v"
@@ -58,5 +60,9 @@ const programIsEligible = computed(() => {
 
 const isProgramAutonomous = computed(() => {
   return Program.isProgramAutonomous(currentProgram.value)
+})
+
+const isCTAToFormVisible = computed(() => {
+  return !isProgramAutonomous.value && programIsEligible.value && isDataFull.value && !Program.isTemporaryUnavailable(currentProgram.value)
 })
 </script>

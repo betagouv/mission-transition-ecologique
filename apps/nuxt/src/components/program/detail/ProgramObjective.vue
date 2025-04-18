@@ -26,18 +26,12 @@
               {{ link.texte }}
             </TeeButtonExternalLink>
             <DsfrButton
-              v-if="
-                link.formulaire &&
-                !isProgramAutonomous &&
-                programIsEligible &&
-                isDataFull &&
-                !Program.isTemporaryUnavailable(currentProgram)
-              "
+              v-if="link.formulaire && props.isCTAToFormVisible"
               secondary
               icon="fr-icon-mail-line"
               size="md"
               class="fr-mb-1v fr-mr-md-2v overwrite-button-style"
-              :on-click="scrollToProgramForm"
+              :on-click="props.scrollToForm"
             >
               {{ Translation.t('program.CTAButton') }}
             </DsfrButton>
@@ -51,18 +45,18 @@
 <script setup lang="ts">
 import TeeButtonExternalLink from '@/components/element/button/TeeButtonExternalLink.vue'
 import Translation from '@/tools/translation'
-import Program from '@/tools/program/program'
 import { Marked } from '@/tools/marked'
-import { ProgramAidType, ProgramEligibility, ProgramType, RouteName, type ProgramTypeForFront } from '@/types'
-import Navigation from '@/tools/navigation'
-import { Scroll } from '@/tools/scroll'
+import { ProgramAidType, type ProgramTypeForFront } from '@/types'
 
 interface Props {
   program: ProgramTypeForFront
   formContainerRef: HTMLElement | null | undefined
+  scrollToForm: () => void
+  isCTAToFormVisible: boolean
 }
 
 const props = defineProps<Props>()
+console.log(props.isCTAToFormVisible)
 
 const getProgramObjectiveTitle = () => {
   switch (props.program["nature de l'aide"]) {
@@ -79,27 +73,6 @@ const getProgramObjectiveTitle = () => {
 const markdownToHtml = (text: string | undefined) => {
   return text ? Marked.toHtml(text) : ''
 }
-
-const navigation = new Navigation()
-
-const scrollToProgramForm = () => {
-  if (props.formContainerRef) {
-    navigation.isByRouteName(RouteName.CatalogProgramDetail) || navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)
-      ? Scroll.to(props.formContainerRef)
-      : Scroll.toWithTopBarOffset(props.formContainerRef)
-  }
-}
-
-const { currentProgram } = storeToRefs(useProgramStore())
-const { isDataFull } = storeToRefs(useCompanyDataStore())
-
-const programIsEligible = computed(() => {
-  return currentProgram.value ? ProgramEligibility.isEligible(currentProgram.value as unknown as ProgramType) : false
-})
-
-const isProgramAutonomous = computed(() => {
-  return Program.isProgramAutonomous(currentProgram.value)
-})
 </script>
 
 <style scoped lang="scss">
