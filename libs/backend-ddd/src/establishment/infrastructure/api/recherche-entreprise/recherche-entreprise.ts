@@ -36,27 +36,30 @@ export class RechercheEntreprise {
         resultCount: 0
       }
     }
-    const establishmentList = rechercheEntrepriseSearch.results.map((result: RechercheEntrepriseEstablishment) => ({
-      siret: result.siege.siret,
-      siren: result.siege.siret.substring(0, 9),
-      nic: result.siege.siret.substring(9),
-      creationDate: result.date_creation,
-      denomination: result.nom_raison_sociale || result.nom_complet,
-      nafCode: result.activite_principale,
-      legalCategory: result.nature_juridique,
-      address: {
-        streetNumber: result.siege.numero_voie,
-        streetType: result.siege.type_voie,
-        streetLabel: result.siege.libelle_voie,
-        zipCode: result.siege.code_postal,
-        cityLabel: result.siege.libelle_commune,
-        cityCode: result.siege.commune
-      },
-      workforceRange: result.tranche_effectif_salarie
-    }))
+    const establishmentList = rechercheEntrepriseSearch.results
+      .filter((result: RechercheEntrepriseEstablishment) => result.siege?.siret)
+      .map((result: RechercheEntrepriseEstablishment) => ({
+        siret: result.siege.siret,
+        siren: result.siege.siret.substring(0, 9),
+        nic: result.siege.siret.substring(9),
+        creationDate: result.date_creation,
+        denomination: result.nom_raison_sociale || result.nom_complet,
+        nafCode: result.activite_principale,
+        legalCategory: result.nature_juridique,
+        address: {
+          streetNumber: result.siege.numero_voie,
+          streetType: result.siege.type_voie,
+          streetLabel: result.siege.libelle_voie,
+          zipCode: result.siege.code_postal,
+          cityLabel: result.siege.libelle_commune,
+          cityCode: result.siege.commune
+        },
+        workforceRange: result.tranche_effectif_salarie
+      }))
+    const resultCount = establishmentList.length ? rechercheEntrepriseSearch.total_results : 0
     return {
       establishments: establishmentList,
-      resultCount: rechercheEntrepriseSearch.total_results
+      resultCount: resultCount
     }
   }
 }

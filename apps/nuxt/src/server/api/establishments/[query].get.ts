@@ -20,7 +20,7 @@ const establishmentCached = cachedFunction(
     const establishmentResult = await new EstablishmentService().search(query, count)
     if (establishmentResult.isErr) {
       const err = establishmentResult.error
-      Monitor.error('Error in getEstablishmentBySiret', { query: query, error: err })
+      Monitor.error('Error in the establishement search', { query: query, error: err })
 
       if (err instanceof EstablishmentNotFoundError) {
         throw createError({
