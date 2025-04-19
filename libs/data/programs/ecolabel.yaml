@@ -2,7 +2,7 @@ titre: Accompagnement à l'Écolabel européen
 promesse: Valorisez votre engagement environnemental grâce à l’Écolabel européen
 description: >-
   L’Ecolabel européen est le seul label écologique officiel de l’Union
-  européenne, qui récompense les produits et services ayant un faible impact
+  européenne qui récompense les produits et services ayant un faible impact
   environnemental et sanitaire. Il permet aux entreprises de valoriser leur
   engagement auprès des consommateurs et des acheteurs professionnels.
 description longue: >-
@@ -52,20 +52,12 @@ objectifs:
     liens:
       - lien: >-
           https://librairie.ademe.fr/industrie-et-production-durable/2170-fiche-de-presentation-referentiels-ecolabel-europeen.html
-        texte: Fiches de présentation synthétique du référentiel de l'Ecolabel
-      - lien: >-
-          https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel/product-groups-and-criteria_en
-        texte: Référentiel détaillé en fonction des produits et services
-  - description: >-
-      Contactez un organisme certificateur indépendant pour vous renseigner sur
-      la démarche. Plusieurs organismes sont désormais accrédités pour réaliser
-      la labellisation de tous vos produits en France.
+        texte: Référentiel des critères de l'Ecolabel
+  - description: Renseignez-vous auprès d'un organisme certificateur
     liens:
       - lien: >-
           https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel/community-and-helpdesk_en
         texte: Liste des organismes certificateurs
-      - lien: mailto:amo.ecolabeleu@ademe.fr
-        texte: Contact direct ADEME
   - description: >-
       Contactez les conseillers de l'ADEME depuis le formulaire pour être
       accompagné tout au long de votre certification tout en bénéficiant d’aides

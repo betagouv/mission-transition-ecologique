@@ -53,17 +53,24 @@ export type Dispositif = {
      * Explication de l'objectif intermédiaire à réaliser
      */
     description?: string;
-    liens?: {
-      /**
-       * TODO
-       */
-      lien?: string;
-      /**
-       * TODO
-       */
-      texte?: string;
-      [k: string]: unknown;
-    }[];
+    liens?: (
+      | {
+          /**
+           * TODO
+           */
+          lien: string;
+          /**
+           * TODO
+           */
+          texte: string;
+        }
+      | {
+          /**
+           * TODO
+           */
+          formulaire: boolean;
+        }
+    )[];
     [k: string]: unknown;
   }[];
   /**
