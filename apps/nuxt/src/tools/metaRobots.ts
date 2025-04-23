@@ -31,6 +31,7 @@ export class MetaRobots {
   }
 
   private static _enforceProdOnly(original: string): string {
+    return original
     return Config.isProduction() ? original : 'noindex, nofollow'
   }
 }
