@@ -56,10 +56,9 @@ export class RechercheEntreprise {
         },
         workforceRange: result.tranche_effectif_salarie
       }))
-    const resultCount = establishmentList.length ? rechercheEntrepriseSearch.total_results : 0
     return {
       establishments: establishmentList,
-      resultCount: resultCount
+      resultCount: establishmentList.length ? rechercheEntrepriseSearch.total_results : 0
     }
   }
 }
