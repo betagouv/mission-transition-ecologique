@@ -4,11 +4,6 @@
 @use 'setting';
 
 .fr-card {
-  //overflow: hidden; // For focus on card with accessibility // remove overflow and add border-radius
-  //.fr-enlarge-link a:before {
-  // border-radius: 22px;
-  //}
-
   :hover {
     cursor: pointer;
   }
@@ -127,13 +122,17 @@
       @include tool.media-query-respond-from(xs) {
         background-color: var(--background-default-grey-active);
         border: thin solid setting.$purple;
-        border-radius: 8px;
       }
 
       @include tool.media-query-respond-from(md) {
         border: unset;
         border-radius: 0;
       }
+    }
+
+    a::before {
+      outline-color: setting.$purple;
+      outline-offset: 0;
     }
 
 
@@ -144,7 +143,7 @@
     }
   }
 
-  &.fr-card--program-detail {
+  &.fr-card--program {
     .fr-card__content {
       padding: 1rem 1.5rem 4rem !important;
 
@@ -198,6 +197,18 @@
   }
 
   &.project-card {
+    &.fr-enlarge-link  {
+      &:active {
+        @include tool.media-query-respond-from(xs) {
+          border-radius: 1rem !important;
+        }
+      }
+
+      a::before {
+        border-radius: 1rem !important;
+      }
+    }
+
     .fr-card__content {
       padding-top: 1.5rem !important;
       padding-bottom: 2rem !important;
@@ -206,6 +217,9 @@
     .fr-card__header {
       .fr-card__img {
         img {
+          border-top-left-radius: 1rem !important;
+          border-top-right-radius: 1rem !important;
+
           @include tool.media-query-respond-from(xs) {
             aspect-ratio: 2.5;
           }

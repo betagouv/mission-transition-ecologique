@@ -1,6 +1,6 @@
 <template>
   <DsfrCard
-    class="fr-card--program-detail"
+    class="fr-card--program"
     :title="program.titre"
     :end-detail="getCostInfos()"
     end-detail-icon="fr-icon-money-euro-circle-line fr-text--blue"
