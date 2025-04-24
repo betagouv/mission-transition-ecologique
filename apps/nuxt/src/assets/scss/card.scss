@@ -4,7 +4,10 @@
 @use 'setting';
 
 .fr-card {
-  overflow: hidden;
+  //overflow: hidden; // For focus on card with accessibility // remove overflow and add border-radius
+  //.fr-enlarge-link a:before {
+  // border-radius: 22px;
+  //}
 
   :hover {
     cursor: pointer;
@@ -106,7 +109,7 @@
   }
 
   &__title a::after {
-    display: none !important;
+     display: none !important;
   }
 
   &__header--priority {
