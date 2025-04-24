@@ -1,4 +1,4 @@
-export const operators = [
+export const partners = [
   {
     label: 'ADEME',
     img: '/images/logos/ademe.svg',
@@ -29,11 +29,11 @@ export const operators = [
   }
 ]
 
-export const otherOperator = {
+export const otherPartner = {
   label: 'Conseiller Entreprise',
   img: '/images/logos/ce-logo.svg',
   href: 'https://conseillers-entreprises.service-public.fr/',
   format: 'webp'
 }
 
-export const operatorsAll = [otherOperator, ...operators]
+export const partnersAll = [otherPartner, ...partners]

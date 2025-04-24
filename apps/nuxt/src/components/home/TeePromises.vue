@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { operators, otherOperator } from '@/tools/operator'
+import { partners, otherPartner } from '@/tools/operator'
 </script>
 
 <template>
@@ -21,7 +21,7 @@ import { operators, otherOperator } from '@/tools/operator'
         </p>
         <div class="fr-grid-row fr-col-justify--center fr-col-content--middle">
           <NuxtImg
-            v-for="operator in operators"
+            v-for="operator in partners"
             :key="operator.label"
             class="fr-responsive-img fr-m-2v operator-logo"
             :src="operator.img"
@@ -51,13 +51,13 @@ import { operators, otherOperator } from '@/tools/operator'
         </p>
         <div class="fr-col-justify--center fr-grid-row fr-col-content--middle">
           <NuxtImg
-            :key="otherOperator.label"
+            :key="otherPartner.label"
             class="fr-responsive-img fr-m-2v operator-logo"
-            :src="otherOperator.img"
+            :src="otherPartner.img"
             quality="70"
             densities="1"
-            :alt="otherOperator.label"
-            :format="otherOperator.format ?? undefined"
+            :alt="otherPartner.label"
+            :format="otherPartner.format ?? undefined"
             loading="lazy"
           />
         </div>

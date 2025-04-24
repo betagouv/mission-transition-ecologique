@@ -138,7 +138,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeAppFooter > FUNCTION_NAME > MSG_OR_VALUE :`)
 
-import { operatorsAll } from '@/tools/operator'
+import { partnersAll } from '@/tools/operator'
 import Translation from '@/tools/translation'
 import { RouteName } from '@/types/routeType'
 
@@ -203,5 +203,5 @@ const mainLinks = [
   }
 ]
 
-const operators = operatorsAll
+const operators = partnersAll
 </script>
