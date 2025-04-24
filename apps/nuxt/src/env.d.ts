@@ -13,7 +13,6 @@ export interface ImportMetaEnv {
   readonly SSR: boolean
   readonly POSTHOG_API_KEY: string
   readonly VITE_DATA_TEST: string
-  readonly VITE_SERVER_ENV: string
   // more env variables...
 }
 
