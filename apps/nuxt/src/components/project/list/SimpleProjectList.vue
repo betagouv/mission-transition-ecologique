@@ -36,7 +36,7 @@
 <script setup lang="ts">
 import { ProjectType } from '@tee/data'
 import { FilterItemKeys } from '@/types'
-import Navigation from '@/tools/navigation'
+import ProjectPriority from '@/tools/project/projectPriority'
 
 const { filters } = storeToRefs(useFiltersStore())
 
@@ -47,28 +47,11 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const filtersStore = useFiltersStore()
+const priorityProjects = computed(() => ProjectPriority.getPriorityProjects(props.projectList))
 
-const priorityProjects = computed(() => {
-  const isHomePage = new Navigation().isHomepage()
-  const hasThemeSelected = filtersStore.hasThemeTypeSelected()
-  const isCompanyDataSelected = useFiltersStore().getCompanyDataSelected().value
-  if (!isCompanyDataSelected || (isHomePage && !hasThemeSelected)) {
-    return undefined
-  }
-  const projectQty = hasThemeSelected ? 1 : 3
-  return props.projectList ? props.projectList.slice(0, projectQty) : undefined
-})
+const isPriorityProject = (project: ProjectType) => ProjectPriority.isPriorityProject(project, priorityProjects.value)
 
-const isUniquePriority = computed(() => {
-  return priorityProjects.value ? priorityProjects.value.length === 1 : false
-})
+const getPriorityOrder = (project: ProjectType) => ProjectPriority.getPriorityOrder(project, priorityProjects.value)
 
-const isPriorityProject = (project: ProjectType) => {
-  return priorityProjects.value ? priorityProjects.value.includes(project) : false
-}
-
-const getPriorityOrder = (project: ProjectType) => {
-  return priorityProjects.value ? priorityProjects.value.indexOf(project) + 1 : undefined
-}
+const isUniquePriority = computed(() => ProjectPriority.isUniquePriority(priorityProjects.value))
 </script>

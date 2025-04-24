@@ -104,6 +104,7 @@ import { computed } from 'vue'
 import { ProjectType } from '@/types'
 import { CompanyData } from '@/tools/companyData'
 import { useFiltersStore } from '@/stores/filters'
+import ProjectPriority from '@/tools/project/projectPriority'
 
 interface ProjectListProps {
   sortedProjects?: ProjectType[]
@@ -118,22 +119,13 @@ const resume = computed<string>(() => {
   })
 })
 
-const hasPriorityProjects = computed(() => {
-  return priorityProjects.value ? priorityProjects.value?.length > 0 : false
-})
+const priorityProjects = computed(() => ProjectPriority.getPriorityProjects(props.sortedProjects))
 
-const isUniquePriority = computed(() => {
-  return priorityProjects.value ? priorityProjects.value.length === 1 : false
-})
+const hasPriorityProjects = computed(() => ProjectPriority.hasPriorityProjects(priorityProjects.value))
 
-const priorityProjects = computed(() => {
-  const projectQty = hasThemeSelected.value ? 1 : 3
-  return props.sortedProjects ? props.sortedProjects.slice(0, projectQty) : undefined
-})
+const isUniquePriority = computed(() => ProjectPriority.isUniquePriority(priorityProjects.value))
 
-const nonPriorityProjects = computed(() => {
-  return props.sortedProjects ? props.sortedProjects.slice(3) : undefined
-})
+const nonPriorityProjects = computed(() => ProjectPriority.getNonPriorityProjects(props.sortedProjects, priorityProjects.value))
 
 const hasThemeSelected = computed(() => {
   return filtersStore.hasThemeTypeSelected()
@@ -147,11 +139,7 @@ const hideMainProjectListComponent = computed(() => {
   return !hasThemeSelected.value
 })
 
-const isPriorityProject = (project: ProjectType) => {
-  return priorityProjects.value!.includes(project)
-}
+const isPriorityProject = (project: ProjectType) => ProjectPriority.isPriorityProject(project, priorityProjects.value)
 
-const getPriorityOrder = (project: ProjectType) => {
-  return priorityProjects.value ? priorityProjects.value.indexOf(project) + 1 : undefined
-}
+const getPriorityOrder = (project: ProjectType) => ProjectPriority.getPriorityOrder(project, priorityProjects.value)
 </script>
