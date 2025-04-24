@@ -6,7 +6,12 @@
     :alt-img="`image / ${project.title}`"
     :no-arrow="true"
     :link="getRouteToProjectDetail(project)"
-    class="teste2e-project-target project-card"
+    :class="[
+      'teste2e-project-target',
+      'project-card',
+      { 'fr-card-priority': isPriorityProject },
+      { 'fr-card-priority--highlighted': isPriorityProject && !isUniquePriority }
+    ]"
   >
     <template
       v-if="isPriorityProject"

@@ -38,7 +38,7 @@
                 :project="project"
                 :is-priority-project="true"
                 :priority-order="index + 1"
-                class="fr-radius-a--1v fr-card--shadow fr-card-priority fr-card-priority--highlighted fr-enlarge-link"
+                class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
               />
             </div>
           </div>
@@ -89,7 +89,6 @@
               :is-unique-priority="isUniquePriority"
               :priority-order="getPriorityOrder(project)"
               class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
-              :class="{ 'fr-card-priority': isPriorityProject(project) }"
             />
           </div>
         </div>
