@@ -1,20 +1,23 @@
 // @ts-expect-error relative path to import configCommon because of nuxt.config.ts .
 // eslint-disable-next-line @nx/enforce-module-boundaries
-import ConfigCommon from '../../../libs/common/src/config/configCommon'
-import { Environment } from '@tee/common'
+import { Environment } from '../../../libs/common/src/config/types'
 // eslint-disable-next-line @nx/enforce-module-boundaries
+import ConfigCommon from '../../../libs/common/src/config/configCommon'
 
 export default class Config extends ConfigCommon {
   protected static override _sentryDsn = process.env['SENTRY_CLIENT_DSN']
-  protected static override _serverEnvironment: Environment = (() => {
-    if (typeof window === 'undefined') {
-      // Server-side
-      return (process.env['SERVER_ENV'] as Environment) || Environment.Dev
-    } else {
-      // Client-side
-      return (import.meta.env.VITE_SERVER_ENV as Environment) || Environment.Dev
+
+  public static override get SERVER_ENVIRONMENT(): Environment {
+    if (import.meta.client) {
+      const config = useRuntimeConfig()
+      this._serverEnvironment = config.public.environment as Environment
     }
-  })()
+    if (!this.isValidServerEnvironment(this._serverEnvironment)) {
+      throw new Error('SERVER_ENVIRONMENT is not valid')
+    }
+
+    return this._serverEnvironment
+  }
 
   static get contactEmail() {
     return process.env['VITE_CONTACT_EMAIL'] ?? 'contact@mission-transition-ecologique.beta.gouv.fr'
