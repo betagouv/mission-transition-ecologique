@@ -17,6 +17,11 @@ export class NuxtSentryConfig {
             authToken: token,
             org: 'betagouv',
             project: 'tee-frontend-vue'
+          },
+          unstable_sentryBundlerPluginOptions: {
+            errorHandler: (error: Error) => {
+              console.warn(error)
+            }
           }
         }
       }

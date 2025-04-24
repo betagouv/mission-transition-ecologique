@@ -1,5 +1,5 @@
 import { CookieValue } from '@/types/cookies'
-import { Environment } from '@tee/common'
+
 import posthog, { PostHog, PostHogConfig } from 'posthog-js'
 import Config from '@/config'
 import { RouteLocationNormalized } from 'vue-router'
@@ -10,8 +10,8 @@ export default class Posthog {
   private static _cookieName = `ph_${Config.posthogApiKey}`
 
   static install() {
-    const config = useRuntimeConfig()
-    if (Config.isProduction(config.public.environment as Environment)) {
+    if (Config.isProduction()) {
+      const config = useRuntimeConfig()
       this._posthog = posthog.init(config.public.posthog.apiKey || Config.posthogApiKey, {
         api_host: 'https://eu.i.posthog.com',
         capture_pageview: false,
@@ -21,6 +21,7 @@ export default class Posthog {
       })
     }
   }
+
   static activatePosthogCookie() {
     this.changePersistance('localStorage+cookie')
   }
