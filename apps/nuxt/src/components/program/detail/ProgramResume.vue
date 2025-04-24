@@ -5,18 +5,21 @@
       class="fr-text--blue-france"
       v-html="currentProgram?.promesse"
     />
-    <p
+    <div
       class="fr-mb-12v fr-text--blue-france"
-      v-html="currentProgram?.description"
+      v-html="Marked.toHtml(currentProgram?.description || '')"
     />
     <section>
       <ProgramObjective
         v-if="currentProgram"
         :program="currentProgram"
+        :form-container-ref="props.formContainerRef"
+        :scroll-to-form="scrollToProgramForm"
+        :is-CTA-to-form-visible="isCTAToFormVisible"
       />
     </section>
     <DsfrButton
-      v-if="!isProgramAutonomous && programIsEligible && isDataFull && !Program.isTemporaryUnavailable(currentProgram)"
+      v-if="isCTAToFormVisible"
       size="lg"
       icon="fr-icon-mail-line"
       class="fr-ml-md-3v"
@@ -32,6 +35,7 @@ import Program from '@/tools/program/program'
 import { Scroll } from '@/tools/scroll'
 import Translation from '@/tools/translation'
 import { ProgramEligibility, ProgramType, RouteName } from '@/types'
+import { Marked } from '@/tools/marked'
 
 const { currentProgram } = storeToRefs(useProgramStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
@@ -56,5 +60,9 @@ const programIsEligible = computed(() => {
 
 const isProgramAutonomous = computed(() => {
   return Program.isProgramAutonomous(currentProgram.value)
+})
+
+const isCTAToFormVisible = computed(() => {
+  return !isProgramAutonomous.value && programIsEligible.value && isDataFull.value && !Program.isTemporaryUnavailable(currentProgram.value)
 })
 </script>

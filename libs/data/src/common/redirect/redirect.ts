@@ -108,7 +108,7 @@ export default class Redirect {
 
   handleProgramReplacements(programs: DataProgram[]) {
     programs.forEach((program) => {
-      if (program['redirection-vers']) {
+      if (program['redirection-vers'] && program['redirection-vers'].length > 0) {
         if (!program.Statuts.includes(Status.Replaced)) {
           this._logger.log(
             LogLevel.Major,

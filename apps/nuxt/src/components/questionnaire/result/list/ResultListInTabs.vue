@@ -60,7 +60,6 @@ import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import { Theme } from '@/tools/theme'
-import ProjectSorter from '@/tools/project/projectSorter'
 
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
@@ -89,12 +88,7 @@ const titles: TeeDsfrTabsProps['tabTitles'] = [
 const filteredPrograms = computed(() => {
   return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
 })
-
 const filteredProjects = computed(() => {
-  if (!projects.value) {
-    return undefined
-  }
-
   return ProjectFilter.getProjectsByTheme(projects.value, Theme.getThemeFromSelectedOrPriorityTheme().value)
 })
 
@@ -103,6 +97,6 @@ const sortedProjects = computed(() => {
     return []
   }
 
-  return ProjectSorter.bySector(filteredProjects.value)
+  return filteredProjects.value
 })
 </script>

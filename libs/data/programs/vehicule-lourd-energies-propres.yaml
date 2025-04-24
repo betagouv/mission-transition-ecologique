@@ -1,21 +1,42 @@
 titre: Véhicule lourd énergies propres
 promesse: Faites l'acquisition d'un véhicule lourd utilisant des énergies propres
 description: >-
-  Bénéficiez d'une déduction fiscale à l'achat d'un véhicule lourd affecté à
-  l'activité de votre entreprise utilisant des énergies propres.
+  Vous avez besoin d'un véhicule lourd pour votre entreprise ? Bénéficiez d'une
+  déduction fiscale pour financer l'achat d'un véhicule poids lourd utilisant
+  des énergies propres (gaz naturel, biométhane carburant, ED95, hydrogène,
+  énergie électrique....).
 description longue: >-
   Cet avantage fiscal est valable pour l'achat d'un véhicule lourd (de 2,6
   tonnes à 16 tonnes) neuf utilisant des énergies propres (gaz naturel,
-  biométhane, ED95, électricité, hydrogène...).
+  biométhane, ED95, électricité, B100, hydrogène...).
+
+
+  Taux de la déduction :
+
+  - de 20% pour les véhicules dont le poids autorisé en charge est ≥ à 2,6
+  tonnes et < à 3,5 tonnes,
+
+  - de 60% pour les véhicules dont le poids autorisé en charge est ≥ à 3,5
+  tonnes et ≤ à 16 tonnes,
+
+  - de 40% pour ceux dont le poids total autorisé en charge est > à 16 tonnes.
 illustration: images/TEE_ampoule.png
 opérateur de contact: DDFIP
 url: >-
   https://les-aides.fr/aide/QScvGSwMDA4vGRUgJA/ddfip/deduction-exceptionnelle-vehicules-lourds-utilisant-des-energies-propres.html
 nature de l'aide: avantage fiscal
-montant de l'avantage fiscal: 20% à 60% du coût du véhicule
+montant de l'avantage fiscal: 20% à 60% du coût du véhicule, en fonction de sa taille.
 objectifs:
-  - description: Vérifiez l'éligibilité du véhicule lourd que vous souhaitez acquérir.
-  - description: Déduisez l'aide de vos résultats imposables.
+  - description: >-
+      Vérifiez l'éligibilité du véhicule lourd que vous souhaitez acquérir, en
+      consultant le bulletin officiel. 
+    liens:
+      - lien: >-
+          https://bofip.impots.gouv.fr/bofip/10079-PGP.html/identifiant%3DBOI-BIC-BASE-100-20-20240417
+        texte: Véhicules éligibles
+  - description: >-
+      Déduisez l'aide de vos résultats imposables, au titre d'un
+      suramortissement.
   - description: >-
       Bénéficiez d'une déduction exceptionnelle sur votre résultat imposable, de
       20% à 60% de la valeur du véhicule.

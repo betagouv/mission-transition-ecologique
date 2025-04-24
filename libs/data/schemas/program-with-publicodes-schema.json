@@ -55,17 +55,39 @@
           "liens": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "lien": {
-                  "description": "TODO",
-                  "type": "string"
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "lien": {
+                      "description": "TODO",
+                      "type": "string"
+                    },
+                    "texte": {
+                      "description": "TODO",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "lien",
+                    "texte"
+                  ],
+                  "additionalProperties": false
                 },
-                "texte": {
-                  "description": "TODO",
-                  "type": "string"
+                {
+                  "type": "object",
+                  "properties": {
+                    "formulaire": {
+                      "description": "TODO",
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "formulaire"
+                  ],
+                  "additionalProperties": false
                 }
-              }
+              ]
             }
           }
         }

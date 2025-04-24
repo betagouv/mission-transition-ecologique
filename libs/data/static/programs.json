@@ -9958,7 +9958,7 @@
   {
     "titre": "Accompagnement à l'Écolabel européen",
     "promesse": "Valorisez votre engagement environnemental grâce à l’Écolabel européen",
-    "description": "L’Ecolabel européen est le seul label écologique officiel de l’Union européenne, qui récompense les produits et services ayant un faible impact environnemental et sanitaire. Il est un excellent moyen pour une entreprise de valoriser son engagement auprès des consommateurs et des acheteurs professionnels. \nVous souhaitez réaliser les démarches pour obtenir l’Écolabel européen sur un produit ou un service ? Suivez les étapes suivantes :",
+    "description": "L’Ecolabel européen est le seul label écologique officiel de l’Union européenne, qui récompense les produits et services ayant un faible impact environnemental et sanitaire. Il permet aux entreprises de valoriser leur engagement auprès des consommateurs et des acheteurs professionnels.",
     "description longue": "Les catégories de produits pouvant bénéficier de l'écolabel européen sont les suivantes :\n- Produits cosmétiques et de soin pour animaux\n- Détergents textiles\n- Détergents vaisselles à la main\n- Détergents pour lave-vaisselle\n- Détergents pour lave-vaisselle industriel ou destinés aux collectivités\n- Détergents textiles à usage industriel ou destinés aux collectivités\n- Produits de nettoyage pour surfaces dures\n- Milieux de culture et amendements pour sols\n- Produits de protection hygiénique absorbants et coupes menstruelles réutilisables\n- Peintures et vernis d'intérieur ou d'extérieur\n- Mouchoirs, papier toilette, serviettes en papier\n- Papier graphique\n- Produits en papier imprimé, produits de papeterie et sacs en papier\n- Les prestations de nettoyage intérieur et les hébergements touristiques (hôtels, campings, etc.) peuvent également bénéficier de l'écolabel européen.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
@@ -33496,19 +33496,25 @@
   {
     "titre": "Véhicule lourd énergies propres",
     "promesse": "Faites l'acquisition d'un véhicule lourd utilisant des énergies propres",
-    "description": "Bénéficiez d'une déduction fiscale à l'achat d'un véhicule lourd affecté à l'activité de votre entreprise utilisant des énergies propres.",
-    "description longue": "Cet avantage fiscal est valable pour l'achat d'un véhicule lourd (de 2,6 tonnes à 16 tonnes) neuf utilisant des énergies propres (gaz naturel, biométhane, ED95, électricité, hydrogène...).",
+    "description": "Vous avez besoin d'un véhicule lourd pour votre entreprise ? Bénéficiez d'une déduction fiscale pour financer l'achat d'un véhicule poids lourd utilisant des énergies propres (gaz naturel, biométhane carburant, ED95, hydrogène, énergie électrique....).",
+    "description longue": "Cet avantage fiscal est valable pour l'achat d'un véhicule lourd (de 2,6 tonnes à 16 tonnes) neuf utilisant des énergies propres (gaz naturel, biométhane, ED95, électricité, B100, hydrogène...).\n\nTaux de la déduction :\n- de 20% pour les véhicules dont le poids autorisé en charge est ≥ à 2,6 tonnes et < à 3,5 tonnes,\n- de 60% pour les véhicules dont le poids autorisé en charge est ≥ à 3,5 tonnes et ≤ à 16 tonnes,\n- de 40% pour ceux dont le poids total autorisé en charge est > à 16 tonnes.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "DDFIP",
     "url": "https://les-aides.fr/aide/QScvGSwMDA4vGRUgJA/ddfip/deduction-exceptionnelle-vehicules-lourds-utilisant-des-energies-propres.html",
     "nature de l'aide": "avantage fiscal",
-    "montant de l'avantage fiscal": "20% à 60% du coût du véhicule",
+    "montant de l'avantage fiscal": "20% à 60% du coût du véhicule, en fonction de sa taille.",
     "objectifs": [
       {
-        "description": "Vérifiez l'éligibilité du véhicule lourd que vous souhaitez acquérir."
+        "description": "Vérifiez l'éligibilité du véhicule lourd que vous souhaitez acquérir, en consultant le bulletin officiel. ",
+        "liens": [
+          {
+            "lien": "https://bofip.impots.gouv.fr/bofip/10079-PGP.html/identifiant%3DBOI-BIC-BASE-100-20-20240417",
+            "texte": "Véhicules éligibles"
+          }
+        ]
       },
       {
-        "description": "Déduisez l'aide de vos résultats imposables."
+        "description": "Déduisez l'aide de vos résultats imposables, au titre d'un suramortissement."
       },
       {
         "description": "Bénéficiez d'une déduction exceptionnelle sur votre résultat imposable, de 20% à 60% de la valeur du véhicule."
