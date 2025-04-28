@@ -43,9 +43,9 @@ conditions d'éligibilité:
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
-    - |-
-      - Entreprises dotées d'une flotte de véhicules lourds
-      - Professionnels des services automobiles.
+    - >-
+      Entreprises dotées d'une flotte de véhicules lourds et professionnels des
+      services automobiles.
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:

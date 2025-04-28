@@ -53,17 +53,24 @@ export type Dispositif = {
      * Explication de l'objectif intermédiaire à réaliser
      */
     description?: string;
-    liens?: {
-      /**
-       * TODO
-       */
-      lien?: string;
-      /**
-       * TODO
-       */
-      texte?: string;
-      [k: string]: unknown;
-    }[];
+    liens?: (
+      | {
+          /**
+           * TODO
+           */
+          lien: string;
+          /**
+           * TODO
+           */
+          texte: string;
+        }
+      | {
+          /**
+           * TODO
+           */
+          formulaire: boolean;
+        }
+    )[];
     [k: string]: unknown;
   }[];
   /**
@@ -101,7 +108,7 @@ export type Dispositif = {
     | "Voies Navigables de France"
     | "Région Centre-Val de Loire"
     | "Région Occitanie"
-    | "Région Haut-de-France"
+    | "Région Hauts-de-France"
     | "Région Île-de-France"
     | "Région Normandie"
     | "Région Pays de la Loire"
@@ -260,7 +267,7 @@ export type Operators =
   | "Voies Navigables de France"
   | "Région Centre-Val de Loire"
   | "Région Occitanie"
-  | "Région Haut-de-France"
+  | "Région Hauts-de-France"
   | "Région Île-de-France"
   | "Région Normandie"
   | "Région Pays de la Loire"
