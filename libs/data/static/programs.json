@@ -650,7 +650,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "- Entreprises dotées d'une flotte de véhicules lourds\n- Professionnels des services automobiles."
+        "Entreprises dotées d'une flotte de véhicules lourds et professionnels des services automobiles."
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -4468,7 +4468,7 @@
         ]
       },
       {
-        "description": "Prenez contact avec la Direction du Tourisme par mail à l'adresse tourisme@nouvelle-aquitaine.fr. Présentez votre projet et laissez vos coordonnées."
+        "description": "Prenez contact avec la Direction du Tourisme par mail à l'adresse tourisme@nouvelle-aquitaine.fr Présentez votre projet et laissez vos coordonnées."
       },
       {
         "description": "La Direction du Tourisme vous recontacte et vérifie avec vous l’éligibilité de votre projet, avant tout dépôt de demande de subvention."
@@ -5265,7 +5265,7 @@
       ],
       "autres critères d'éligibilité": [
         "Avoir réalisé moins de 50M€ de CA ou moins de 43M€ de bilan total",
-        "Avoir bénéficié d'un accompagnement préalable au titre de CEDRE Premier Pas ou CEDRE Ambition.",
+        "Avoir bénéficié d'un accompagnement préalable au titre de [CEDRE Premier Pas](https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/cedre-premier-pas) ou [CEDRE Ambition](https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/cedre-ambition).",
         "Les dépenses éligibles sont liées au déploiement, à la mise en œuvre et à la continuité du plan d’actions défini lors de l'accompagnement.",
         "L'investissement pour lequel vous sollicitez une aide financière ne doit pas avoir été déjà réalisé."
       ]
@@ -6780,6 +6780,211 @@
     "id": "communaute-coq-vert"
   },
   {
+    "titre": "CORIMER Navires bas carbone",
+    "promesse": "Financez vos innovations bas carbone pour la flotte maritime et fluviale",
+    "description": "Cet appel à projets soutient les innovations pour réduire la consommation d’énergie et les impacts environnementaux du transport maritime et fluvial, sans recours aux énergies fossiles. Il cible l’efficacité énergétique, l’optimisation des performances, l’aide à la conduite (routage, trainée), la réduction ou la capture des émissions de CO₂. Il peut financer vos travaux de R&D ou vos démonstrations en conditions réelles intégrant des technologies bas carbone : propulsion électrique, carburants durables (hors hydrogène), énergies renouvelables, propulsion vélique, systèmes innovants.",
+    "description longue": "Les projets attendus sont :\n- Des projets de recherche et développement (R&D) sur des équipements.\n- Des tests d’équipements en conditions réelles à bord de navires.\n- Des projets de navires démonstrateurs intégrant plusieurs innovations. Dans ce cas, il faudra indiquer le pavillon du navire et le chantier où il sera construit.\n\nÀ la fin du projet, la technologie développée doit être presque prête à être utilisée en conditions réelles. Elle doit avoir été testée dans un environnement proche de la réalité (au moins un niveau TRL 7 sur une échelle de 1 à 9, où 9 correspond à une technologie complètement opérationnelle).\n\nLes projets peuvent être portés seuls ou en groupe (jusqu’à 5 partenaires maximum).\n\nLes projets d’industrialisation ou de déploiement ne sont pas concernés par cet appel à projets.",
+    "début de validité": "27/01/2025",
+    "fin de validité": "15/10/2025",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "ADEME",
+    "url": "https://agir.ademe.fr/aides-financieres/aap/corimer-navires-bas-carbone",
+    "nature de l'aide": "financement",
+    "montant du financement": "60% des dépenses engagées",
+    "objectifs": [
+      {
+        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/sites/default/files/CORIMER%20Navires%20Bas%20Carbone%20-%20France%202030%20-%20Cahier%20des%20charges%20-%202025.docx",
+            "texte": "Conditions d'éligibilité"
+          }
+        ]
+      },
+      {
+        "description": "Rassemblez l’ensemble des documents nécessaires au dépôt de votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/aides-financieres/aap/corimer-navires-bas-carbone",
+            "texte": "Consulter la liste des documents"
+          }
+        ]
+      },
+      {
+        "description": "Planifiez une réunion de prédépôt du dossier (en ayant complété l'Annexe 2 du dossier), au moins un mois avant le dépôt du dossier complet. Contactez l'adresse [aap.navires@ademe.fr](mailto:aap.navires@ademe.fr)"
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier en ligne",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/aides-financieres/aap/corimer-navires-bas-carbone",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier en ligne",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/aides-financieres/aap/corimer-navires-bas-carbone",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "Les candidatures seront examinées après chaque date limite de dépôt : le 16 mai puis le 15 octobre 2025."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "a une categorie legale eligible"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la mobilité durable",
+          "questionnaire . objectif prioritaire . est l'écoconception"
+        ]
+      }
+    },
+    "id": "corimer"
+  },
+  {
     "titre": "Coup de pouce Chauffage",
     "promesse": "Chauffez vos bâtiments grâce à une énergie renouvelable",
     "description": "Bénéficiez d'une prime pour le remplacement de vos anciens équipements à énergie fossile (charbon, fioul ou gaz) au profit d’un système de chauffage ou de production d’eau chaude fonctionnant aux énergies renouvelables.",
@@ -6971,8 +7176,8 @@
   },
   {
     "titre": "Crédit d'impôt innovation (CII)",
-    "promesse": "Bénéficiez d'une réduction d'impôt pour vos dépenses liées à l'innovation et au prototypage.",
-    "description": "Le Crédit d'Impôt Innovation (CII) permet aux entreprises de bénéficier d'un avantage financier sous forme de réduction d'impôt pour les dépenses liées à l'innovation. Il est destiné à encourager les PME à investir dans la recherche et le développement de nouveaux produits ou procédés innovants. Il s'applique aux dépenses engagées pour la création de prototypes ou d'installations pilotes de nouveaux produits (frais de personnel, achat de matériel et d'équipement spécifique pour la création de prototypes,  frais externes pour des services de conseil...)",
+    "promesse": "Bénéficiez d'une réduction d'impôt pour vos dépenses liées à l'innovation et au prototypage",
+    "description": "Le Crédit d'Impôt Innovation (CII) permet aux entreprises de bénéficier d'un avantage financier sous forme de réduction d'impôt pour les dépenses liées à l'innovation. Il s'applique aux dépenses engagées pour la création de prototypes ou d'installations pilotes de nouveaux produits (frais de personnel, achat de matériel et d'équipement spécifique pour la création de prototypes, frais externes pour des services de conseil...)",
     "description longue": "Le CII s'applique à des projets de réalisation d'opérations de conception d'un prototype ou d'installation pilote d'un nouveau produit. Pour être éligible, votre nouveau produit doit se distinguer clairement de ceux déjà présents sur le marché par des performances supérieures, notamment sur le plan technique, de l’éco-conception, de l’ergonomie ou des fonctionnalités.\n\nLes dépenses pouvant bénéficier du CII concernent :\n- L'amortissement des biens ou bâtiments neufs utilisés pour la recherche ou la création de prototypes.\n- La différence entre l'indemnisation d'assurance et le coût de reconstruction en cas de perte ou dommage sur un bien.\n- Les dépenses liées au personnel impliqué dans la recherche et développement : chercheurs, techniciens, et personnel avec un doctorat ou équivalent. Les dépenses pour ce personnel peuvent être doublées pendant les 2 premières années de CDI.\n- La rémunération supplémentaire pour les salariés ayant inventé quelque chose pendant des opérations de recherche.\n- L'amortissement des brevets et certificats d'obtention végétale.\n- Les frais pour défendre des brevets, certificats d'obtention végétale, dessins ou modèles.\n- Les frais pour le dépôt de dessins et modèles.\n- Les dépenses pour la recherche réalisée par des entreprises ou bureaux d’études agréés.\nCes dépenses peuvent être internes ou liées à de la sous-traitance.",
     "fin de validité": "31/12/2027",
     "illustration": "images/TEE_energie_verte.png",
@@ -7198,6 +7403,180 @@
       }
     ],
     "id": "credit-impot-innovation"
+  },
+  {
+    "titre": "Crédit d'Impôt Recherche (CIR)",
+    "promesse": "Financez vos projets de Recherche et Développement avec le CIR",
+    "description": "Le Crédit d'Impôt Recherche (CIR) permet aux entreprises de bénéficier d'un avantage financier sous forme de réduction d'impôt pour les dépenses liées aux activités de R&D. Il est destiné à encourager les PME à innover, créer de nouveaux produits ou améliorer vos procédés tout en allégeant vos charges. Le CIR couvre jusqu’à 30 % de vos dépenses R&D en salaires, matériel, prestations externes, brevets, etc.",
+    "description longue": "Sont éligibles au CIR les activités de recherche fondamentale, appliquée ou de développement expérimental, dès lors qu’elles apportent une réelle innovation scientifique ou technique.\n\nLes dépenses pouvant bénéficier du CIR concernent :\n- Amortissement de biens ou bâtiments dédiés à la R&D, \n- Dépenses de personnel,\n- Salaires et charges sociales,\n- Frais de dépôt et défense de dessins et modèles, \n- Prestations de bureaux d'études agréés ou organismes externes,\n- Autres dépenses de fonctionnement.",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "DDFIP",
+    "url": "https://entreprendre.service-public.fr/vosdroits/F23533",
+    "nature de l'aide": "avantage fiscal",
+    "montant de l'avantage fiscal": "Crédit d'impôt jusqu'à 30% des dépenses de R&D éligibles",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Déclarez vos dépenses sur le formulaire \"crédits d'impôts pour les dépenses de recherche\" n° 2069-A-SD\r",
+        "liens": [
+          {
+            "lien": "https://entreprendre.service-public.fr/vosdroits/R14269",
+            "texte": "Remplir le formulaire Cerfa"
+          }
+        ]
+      },
+      {
+        "description": "Si vous êtes soumis à l'impôt sur le revenu, joignez ce formulaire Cerfa à votre déclaration de résultats.",
+        "liens": [
+          {
+            "lien": "https://cfspro-idp.impots.gouv.fr/oauth2/authorize?response_type=code&redirect_uri=https%3A%2F%2Fcfspro.impots.gouv.fr%2F%3Fopenidconnectcallback%3D1&nonce=1744116792_18530&client_id=id_cfspro_prod&display=&state=1744116792_61200&scope=openid%20profile%20email%20info",
+            "texte": "impôt.gouv.fr"
+          }
+        ]
+      },
+      {
+        "description": "Bénéficiez de la déduction de votre crédit d'impôt recherche sur le montant de l'impôt dont vous êtes redevable. La déduction se fait au moment où vous payez le solde de l'impôt au titre de l'année au cours de laquelle les dépenses ont été effectuées."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Secteur industriel, commercial, agricole ou artisanal"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "a une categorie legale eligible"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est G"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter",
+          "questionnaire . objectif prioritaire . est l'écoconception"
+        ]
+      }
+    },
+    "id": "credit-impot-recherche"
   },
   {
     "titre": "Décarbonation de l'industrie",
@@ -9957,63 +10336,52 @@
   },
   {
     "titre": "Accompagnement à l'Écolabel européen",
-    "promesse": "Valorisez votre engagement environnemental grâce à l’Écolabel européen",
-    "description": "L’Ecolabel européen est le seul label écologique officiel de l’Union européenne, qui récompense les produits et services ayant un faible impact environnemental et sanitaire. Il permet aux entreprises de valoriser leur engagement auprès des consommateurs et des acheteurs professionnels.",
+    "promesse": "Bénéficiez d'un accompagnement financier pour l'obtention de l’Écolabel européen",
+    "description": "L’Ecolabel européen est le seul label écologique officiel de l’Union européenne qui récompense les produits et services ayant un faible impact environnemental et sanitaire. Il permet aux entreprises de valoriser leur engagement auprès des consommateurs et des acheteurs professionnels.\\\nL'ADEME vous accompagne financièrement, via le dispositif Tremplin, pour obtenir l'Écolabel.",
     "description longue": "Les catégories de produits pouvant bénéficier de l'écolabel européen sont les suivantes :\n- Produits cosmétiques et de soin pour animaux\n- Détergents textiles\n- Détergents vaisselles à la main\n- Détergents pour lave-vaisselle\n- Détergents pour lave-vaisselle industriel ou destinés aux collectivités\n- Détergents textiles à usage industriel ou destinés aux collectivités\n- Produits de nettoyage pour surfaces dures\n- Milieux de culture et amendements pour sols\n- Produits de protection hygiénique absorbants et coupes menstruelles réutilisables\n- Peintures et vernis d'intérieur ou d'extérieur\n- Mouchoirs, papier toilette, serviettes en papier\n- Papier graphique\n- Produits en papier imprimé, produits de papeterie et sacs en papier\n- Les prestations de nettoyage intérieur et les hébergements touristiques (hôtels, campings, etc.) peuvent également bénéficier de l'écolabel européen.",
+    "début de validité": "01/01/2025",
+    "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen",
-    "nature de l'aide": "étude",
-    "coût de l'accompagnement": "Variable selon l'activité",
-    "durée de l'accompagnement": "6 mois",
+    "nature de l'aide": "financement",
+    "montant du financement": "2000 €/produit ou service",
     "objectifs": [
       {
         "description": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services.",
         "liens": [
           {
             "lien": "https://librairie.ademe.fr/industrie-et-production-durable/2170-fiche-de-presentation-referentiels-ecolabel-europeen.html",
-            "texte": "Fiches de présentation synthétique du référentiel de l'Ecolabel"
-          },
-          {
-            "lien": "https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel/product-groups-and-criteria_en",
-            "texte": "Référentiel détaillé en fonction des produits et services"
+            "texte": "Référentiel des critères de l'Écolabel"
           }
         ]
       },
       {
-        "description": "Contactez un organisme certificateur indépendant pour vous renseigner sur la démarche. Plusieurs organismes sont désormais accrédités pour réaliser la labellisation de tous vos produits en France.",
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier de demande de financement.",
         "liens": [
           {
-            "lien": "https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel/community-and-helpdesk_en",
-            "texte": "Liste des organismes certificateurs"
-          },
-          {
-            "lien": "mailto:amo.ecolabeleu@ademe.fr",
-            "texte": "Contact direct ADEME"
+            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "texte": "Créer mon compte ADEME"
           }
         ]
       },
       {
-        "description": "Contactez les conseillers de l'ADEME depuis le formulaire pour être accompagné tout au long de votre certification tout en bénéficiant d’aides financières."
-      },
-      {
-        "description": "Constituez votre dossier et envoyez-le à votre organisme certificateur, pour analyse et audit."
-      },
-      {
-        "description": "Créez un compte sur la plateforme E-cat de la Commission européenne.",
+        "description": "Déposez votre dossier de financement de l'Écolabel",
         "liens": [
           {
-            "lien": "https://webgate.ec.europa.eu/cas/eim/external/register.cgi",
-            "texte": "Créer un compte E-cat"
-          },
-          {
-            "lien": "https://environment.ec.europa.eu/document/8836ae39-5d06-49d7-97f6-8b33219dc658_en",
-            "texte": "Manuel d'instruction (en anglais)"
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/tremplin-transition-ecologique-pme",
+            "texte": "Déposer mon dossier"
           }
         ]
       },
       {
-        "description": "Enregistrez vos produits et votre dossier en ligne sur la plateforme E-cat de la Commission européenne. Une fois votre dossier approuvée, recevez l'Ecolabel européen et utilisez le logo sur vos produits et services."
+        "description": "Une fois le financement de l'ADEME obtenu, enregistrez votre dossier en ligne sur la plateforme E-cat de la Commission européenne pour obtenir l'Écolabel européen.",
+        "liens": [
+          {
+            "lien": "https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel-home_en",
+            "texte": "La plateforme E-cat (en anglais)"
+          }
+        ]
       }
     ],
     "conditions d'éligibilité": {
@@ -10025,7 +10393,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "Les secteurs éligibles sont : Hébergement touristique\n- Services de nettoyage intérieur\n- Milieux de culture, amendements pour sols\n- Papier tissue et produits tissue, papier graphique, produits en papier imprimé, produits de papeterie et sacs en papier\n- Produits de nettoyage pour surfaces dures, de protection hygiénique absorbants\n- Détergents textiles, détergents pour lave vaisselle, à usage industriel, destinés aux collectivités ou détergents pour vaisselle à la main\n- Produits cosmétiques et produits de soin pour animaux\n- Peintures et vernis d'intérieur ou d'extérieur \n- Lubrifiants"
+        "Les secteurs éligibles à l'Écolabel sont : \n\n- Hébergement touristique\n\n\n- Services de nettoyage intérieur\n\n\n- Milieux de culture, amendements pour sols\n- Papier tissue et produits tissue, papier graphique, produits en papier imprimé, produits de papeterie et sacs en papier\n- Produits de nettoyage pour surfaces dures, de protection hygiénique absorbants\n- Détergents textiles, détergents pour lave vaisselle, à usage industriel, destinés aux collectivités ou détergents pour vaisselle à la main\n- Produits cosmétiques et produits de soin pour animaux\n- Peintures et vernis d'intérieur ou d'extérieur\n- Lubrifiants"
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -10122,9 +10490,19 @@
       "date du jour": null,
       "entreprise . est ciblée": {
         "toutes ces conditions": [
+          "est éligible",
           "est dans un secteur d'activité ciblé",
           "a un objectif ciblé"
         ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "valeur": "oui"
       },
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
@@ -23982,25 +24360,31 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Rendez-vous sur jechangemavoiture.gouv.fr.",
+        "description": "Rendez-vous sur le service public numérique \"Je change ma voiture\"",
         "liens": [
           {
             "lien": "https://jechangemavoiture.gouv.fr/jcmv/aide-achat.html",
-            "texte": "Je change ma voiture"
+            "texte": "jechangemavoiture.gouv.fr"
           }
         ]
       },
       {
-        "description": "Saisissez les critères de votre véhicule actuel, et vos habitudes de déplacement."
+        "description": "Saisissez les critères de votre véhicule et vos habitudes de déplacement et découvrez les données clés de l'utilisation de votre véhicule actuel."
       },
       {
-        "description": "Comparez les différents types de véhicules qui pourraient vous convenir : coût d'usage, coût de possession, consommations d'énergie, rejets de CO2, polluants réglementés..."
+        "description": "Découvrez et comparez les différents types de véhicules qui pourraient vous convenir : coût d'usage, coût de possession, consommations d'énergie, rejets de CO2, polluants réglementés..."
       },
       {
-        "description": "Sélectionnez votre région et découvrez les aides locales à l'achat d'un véhicule."
+        "description": "Découvrez l'ensemble des aides nationales et locales à l'achat d'un véhicule.",
+        "liens": [
+          {
+            "lien": "https://jechangemavoiture.gouv.fr/jcmv/aide-achat.html",
+            "texte": "Les aides à l'achat"
+          }
+        ]
       },
       {
-        "description": "Contactez les organismes mentionnés pour bénéficier d'une aide au financement."
+        "description": "Contactez directement les collectivités ou organismes mentionnés pour bénéficier d'une aide au financement."
       }
     ],
     "conditions d'éligibilité": {
@@ -29303,7 +29687,7 @@
     "description": "Vous portez un projet touristique (activité, hébergement, service...) en Hauts-de-France ? Ce dispositif régional soutient vos études et investissements pour créer des lieux touristiques innovants, durables et écoresponsables, autour du \"slow tourism\" (nature, bien-être, itinérance), du patrimoine, de la Mémoire ou du tourisme d’affaires.",
     "description longue": "Vous avez un projet d'étude ? Les dépenses éligibles sont les suivantes : \n- Les prestations d’études d’opportunité, de définition, de faisabilité, de programmation, de conception, préalables à la réalisation d’investissements et réalisées par un prestataire externe.\n\nVous avez un projet d'investissement ? Les dépenses éligibles sont les suivantes :  \n- Missions de maîtrise d’œuvre relatives à l’investissement concerné\n- Travaux de second œuvre \n- Investissements matériels relatifs à l’exploitation de l’activité, du site, ou de l’équipement concerné (sont exclus notamment les travaux de gros œuvre et les acquisitions foncières).",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "Région Haut-de-France",
+    "opérateur de contact": "Région Hauts-de-France",
     "url": "https://aides.hautsdefrance.fr/sub/tiers/aides/details/?sigle=PRIT",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 50 % du coût de l'investissement, dans la limite de 100 000 €. Variable selon les projets.",
