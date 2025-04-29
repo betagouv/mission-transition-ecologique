@@ -1704,6 +1704,7 @@
       "sud-pret-climat",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "credit-impot-recherche",
       "credit-impot-innovation"
     ],
     "linkedProjects": [],
@@ -2077,6 +2078,7 @@
       "camping-independant-bfc",
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
+      "credit-impot-recherche",
       "credit-impot-innovation"
     ],
     "linkedProjects": [
@@ -2391,7 +2393,6 @@
     "priority": "210",
     "highlightPriority": null,
     "sectors": [
-      "G",
       "I"
     ]
   },
@@ -3057,7 +3058,8 @@
       "pass-transition-bzh",
       "agir-pdl",
       "pami",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "corimer"
     ],
     "linkedProjects": [
       16
