@@ -31,7 +31,7 @@
 
       <!-- PROGRAM FORM -->
       <div
-        v-if="hasRegisteredData && programIsEligible && !Program.isTemporaryUnavailable(currentProgram)"
+        v-if="programIsEligible && !Program.isTemporaryUnavailable(currentProgram)"
         ref="tee-program-form-container"
         class="fr-bg--blue--lightness fr-grid-row fr-p-2w"
       >
