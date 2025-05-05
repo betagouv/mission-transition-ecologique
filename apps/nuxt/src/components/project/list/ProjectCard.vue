@@ -2,7 +2,7 @@
   <DsfrCard
     :title="project.title"
     :description="project.shortDescription"
-    :img-src="project.image"
+    :img-src="img(project.image, { height: 265, quality: 70, loading: 'lazy' })"
     :alt-img="`image / ${project.title}`"
     :no-arrow="true"
     :link="getRouteToProjectDetail(project)"
@@ -62,10 +62,13 @@ const props = withDefaults(defineProps<Props>(), {
 })
 const priorityTag: string = 'A FAIRE EN PRIORITÉ'
 
+const img = useImage()
+const navigationStore = useNavigationStore()
+
 const eligibleProgramsTag = computed(() => {
   return `${props.project.countEligiblePrograms} AIDE${props.project.countEligiblePrograms > 1 ? 'S' : ''}`
 })
-const navigationStore = useNavigationStore()
+
 const navigation = new Navigation()
 const getRouteToProjectDetail = (project: ProjectType): RouteLocationRaw => {
   return {

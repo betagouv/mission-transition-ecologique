@@ -28,7 +28,7 @@ jobs:
       env:
         VITE_DATA_TEST: true
         THIRD_PARTY_API_ENABLED: false
-      run: npm run build && npm run e2e
+      run: npm run e2e
     - uses: actions/upload-artifact@v4
       if: always()
       with:

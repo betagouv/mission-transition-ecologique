@@ -3,10 +3,13 @@
     class="fr-container--fluid fr-banner"
     :class="bgClass"
   >
-    <img
+    <NuxtPicture
       v-if="props.bgImage"
       :src="props.bgImage"
       :alt="props.imgAlt"
+      quality="70"
+      sizes="576px sm:768px md:992px lg:1248px"
+      densities="1"
     />
     <div :class="[styleClass]">
       <div class="fr-container">
