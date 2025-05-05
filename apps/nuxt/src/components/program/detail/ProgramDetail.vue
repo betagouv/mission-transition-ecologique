@@ -68,7 +68,6 @@ import Program from '@/tools/program/program'
 import Translation from '@/tools/translation'
 import { useProjectStore } from '@/stores/project'
 import Opportunity from '@/tools/opportunity'
-import { CompanyData } from '@/tools/companyData'
 import { storeToRefs } from 'pinia'
 import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 import Analytics from '@/tools/analytic/analytics'
@@ -79,7 +78,6 @@ const { query } = storeToRefs(useNavigationStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const navigation = new Navigation()
-const hasRegisteredData = CompanyData.isDataFullComputed()
 const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
 
 onNuxtReady(async () => {
