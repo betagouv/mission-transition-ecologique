@@ -413,7 +413,7 @@
       28,
       31
     ],
-    "priority": "110",
+    "priority": "90",
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1204,7 +1204,7 @@
     "linkedProjects": [
       31
     ],
-    "priority": "60",
+    "priority": "70",
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1260,7 +1260,7 @@
     "linkedProjects": [
       31
     ],
-    "priority": "90",
+    "priority": "60",
     "highlightPriority": "9",
     "sectors": [
       "A",
@@ -1704,6 +1704,7 @@
       "sud-pret-climat",
       "pret-energie-aura",
       "pret-ile-de-france",
+      "credit-impot-recherche",
       "credit-impot-innovation"
     ],
     "linkedProjects": [],
@@ -2077,6 +2078,7 @@
       "camping-independant-bfc",
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
+      "credit-impot-recherche",
       "credit-impot-innovation"
     ],
     "linkedProjects": [
@@ -2257,7 +2259,7 @@
       30,
       31
     ],
-    "priority": "80",
+    "priority": "85",
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2391,7 +2393,6 @@
     "priority": "210",
     "highlightPriority": null,
     "sectors": [
-      "G",
       "I"
     ]
   },
@@ -2627,7 +2628,7 @@
     "shortDescription": "Comprendre et minimiser les impacts de l'activité de votre entreprise sur la faune et la flore.",
     "image": "/images/projet/biodiversite.webp",
     "longDescription": "La Stratégie nationale biodiversité 2030 promeut les initiatives pour faire progresser la prise en compte de la biodiversité dans les stratégies des entreprises. Il s'agit à la fois de minimiser l'impact des entreprises sur les écosystèmes et de renforcer la résilience de leur activité au changement climatique. \\\nLa préservation ou la restauration d'espèces en danger, de faune et de flore, réduire les pollutions, ramener de la nature en ville... sont autant de propositions qui visent à renforcer les liens avec les écosystèmes.",
-    "moreDescription": "- [**Entreprises engagées pour la nature** **de l'OFB**](https://biodiversite.gouv.fr/sites/default/files/2024-03/OFB_GUIDE_EEN_2023.pdf), un guide gouvernemental.\n- [**9 mesures de la Stratégie nationale biodiversité 2030**](https://biodiversite.gouv.fr/les-mesures-de-la-snb?field_target%5B196%5D=196&op=) pour les entreprises.",
+    "moreDescription": "- [**Entreprises engagées pour la nature** **de l'OFB**](https://biodiversite.gouv.fr/sites/default/files/2024-03/OFB_GUIDE_EEN_2023.pdf), un guide gouvernemental.\n- [**9 mesures de la Stratégie nationale biodiversité 2030**](https://biodiversite.gouv.fr/les-mesures-de-la-snb?field_target%5B196%5D=196&op=) pour les entreprises.\n- [**Le Kit biodiversité**](https://secure.webpublication.fr/534282/.Bpifrance-kit-biodiversit%C3%A9/) un guide pour mettre de la biodiversité partout (notamment les PME/ETI)",
     "themes": [
       "biodiversite"
     ],
@@ -2654,7 +2655,7 @@
     "linkedProjects": [
       33
     ],
-    "priority": "200",
+    "priority": "65",
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2825,7 +2826,7 @@
     "linkedProjects": [
       26
     ],
-    "priority": "70",
+    "priority": "80",
     "highlightPriority": null,
     "sectors": [
       "I"
@@ -3057,7 +3058,8 @@
       "pass-transition-bzh",
       "agir-pdl",
       "pami",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "corimer"
     ],
     "linkedProjects": [
       16

@@ -1,10 +1,15 @@
 titre: Accompagnement à l'Écolabel européen
-promesse: Valorisez votre engagement environnemental grâce à l’Écolabel européen
+promesse: >-
+  Bénéficiez d'un accompagnement financier pour l'obtention de l’Écolabel
+  européen
 description: >-
   L’Ecolabel européen est le seul label écologique officiel de l’Union
-  européenne, qui récompense les produits et services ayant un faible impact
+  européenne qui récompense les produits et services ayant un faible impact
   environnemental et sanitaire. Il permet aux entreprises de valoriser leur
-  engagement auprès des consommateurs et des acheteurs professionnels.
+  engagement auprès des consommateurs et des acheteurs professionnels.\
+
+  L'ADEME vous accompagne financièrement, via le dispositif Tremplin, pour
+  obtenir l'Écolabel.
 description longue: >-
   Les catégories de produits pouvant bénéficier de l'écolabel européen sont les
   suivantes :
@@ -38,13 +43,14 @@ description longue: >-
 
   - Les prestations de nettoyage intérieur et les hébergements touristiques
   (hôtels, campings, etc.) peuvent également bénéficier de l'écolabel européen.
+début de validité: 01/01/2025
+fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen
-nature de l'aide: étude
-coût de l'accompagnement: Variable selon l'activité
-durée de l'accompagnement: 6 mois
+nature de l'aide: financement
+montant du financement: 2000 €/produit ou service
 objectifs:
   - description: >-
       Consultez le référentiel des critères en fonction de votre catégorie de
@@ -52,38 +58,26 @@ objectifs:
     liens:
       - lien: >-
           https://librairie.ademe.fr/industrie-et-production-durable/2170-fiche-de-presentation-referentiels-ecolabel-europeen.html
-        texte: Fiches de présentation synthétique du référentiel de l'Ecolabel
-      - lien: >-
-          https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel/product-groups-and-criteria_en
-        texte: Référentiel détaillé en fonction des produits et services
+        texte: Référentiel des critères de l'Écolabel
   - description: >-
-      Contactez un organisme certificateur indépendant pour vous renseigner sur
-      la démarche. Plusieurs organismes sont désormais accrédités pour réaliser
-      la labellisation de tous vos produits en France.
+      Créez un compte ADEME pour pouvoir déposer votre dossier de demande de
+      financement.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: Déposez votre dossier de financement de l'Écolabel
     liens:
       - lien: >-
-          https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel/community-and-helpdesk_en
-        texte: Liste des organismes certificateurs
-      - lien: mailto:amo.ecolabeleu@ademe.fr
-        texte: Contact direct ADEME
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/tremplin-transition-ecologique-pme
+        texte: Déposer mon dossier
   - description: >-
-      Contactez les conseillers de l'ADEME depuis le formulaire pour être
-      accompagné tout au long de votre certification tout en bénéficiant d’aides
-      financières.
-  - description: >-
-      Constituez votre dossier et envoyez-le à votre organisme certificateur,
-      pour analyse et audit.
-  - description: Créez un compte sur la plateforme E-cat de la Commission européenne.
+      Une fois le financement de l'ADEME obtenu, enregistrez votre dossier en
+      ligne sur la plateforme E-cat de la Commission européenne pour obtenir
+      l'Écolabel européen.
     liens:
-      - lien: https://webgate.ec.europa.eu/cas/eim/external/register.cgi
-        texte: Créer un compte E-cat
       - lien: >-
-          https://environment.ec.europa.eu/document/8836ae39-5d06-49d7-97f6-8b33219dc658_en
-        texte: Manuel d'instruction (en anglais)
-  - description: >-
-      Enregistrez vos produits et votre dossier en ligne sur la plateforme E-cat
-      de la Commission européenne. Une fois votre dossier approuvée, recevez
-      l'Ecolabel européen et utilisez le logo sur vos produits et services.
+          https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel-home_en
+        texte: "La plateforme E-cat (en\_anglais)"
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
@@ -92,9 +86,16 @@ conditions d'éligibilité:
     - France et territoires d'outre-mer
   secteur d'activité:
     - >-
-      Les secteurs éligibles sont : Hébergement touristique
+      Les secteurs éligibles à l'Écolabel sont : 
+
+
+      - Hébergement touristique
+
+
 
       - Services de nettoyage intérieur
+
+
 
       - Milieux de culture, amendements pour sols
 
@@ -109,7 +110,7 @@ conditions d'éligibilité:
 
       - Produits cosmétiques et produits de soin pour animaux
 
-      - Peintures et vernis d'intérieur ou d'extérieur 
+      - Peintures et vernis d'intérieur ou d'extérieur
 
       - Lubrifiants
   nombre d'années d'activité:
@@ -117,8 +118,15 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

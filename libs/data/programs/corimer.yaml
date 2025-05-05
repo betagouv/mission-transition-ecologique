@@ -1,0 +1,113 @@
+titre: CORIMER Navires bas carbone
+promesse: Financez vos innovations bas carbone pour la flotte maritime et fluviale
+description: >-
+  Cet appel à projets soutient les innovations pour réduire la consommation
+  d’énergie et les impacts environnementaux du transport maritime et fluvial,
+  sans recours aux énergies fossiles. Il cible l’efficacité énergétique,
+  l’optimisation des performances, l’aide à la conduite (routage, trainée), la
+  réduction ou la capture des émissions de CO₂. Il peut financer vos travaux de
+  R&D ou vos démonstrations en conditions réelles intégrant des technologies bas
+  carbone : propulsion électrique, carburants durables (hors hydrogène),
+  énergies renouvelables, propulsion vélique, systèmes innovants.
+description longue: >-
+  Les projets attendus sont :
+
+  - Des projets de recherche et développement (R&D) sur des équipements.
+
+  - Des tests d’équipements en conditions réelles à bord de navires.
+
+  - Des projets de navires démonstrateurs intégrant plusieurs innovations. Dans
+  ce cas, il faudra indiquer le pavillon du navire et le chantier où il sera
+  construit.
+
+
+  À la fin du projet, la technologie développée doit être presque prête à être
+  utilisée en conditions réelles. Elle doit avoir été testée dans un
+  environnement proche de la réalité (au moins un niveau TRL 7 sur une échelle
+  de 1 à 9, où 9 correspond à une technologie complètement opérationnelle).
+
+
+  Les projets peuvent être portés seuls ou en groupe (jusqu’à 5 partenaires
+  maximum).
+
+
+  Les projets d’industrialisation ou de déploiement ne sont pas concernés par
+  cet appel à projets.
+début de validité: 27/01/2025
+fin de validité: 15/10/2025
+illustration: images/TEE_eolienne.png
+opérateur de contact: ADEME
+url: https://agir.ademe.fr/aides-financieres/aap/corimer-navires-bas-carbone
+nature de l'aide: financement
+montant du financement: 60% des dépenses engagées
+objectifs:
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME.
+    liens:
+      - lien: >-
+          https://agir.ademe.fr/sites/default/files/CORIMER%20Navires%20Bas%20Carbone%20-%20France%202030%20-%20Cahier%20des%20charges%20-%202025.docx
+        texte: Conditions d'éligibilité
+  - description: Rassemblez l’ensemble des documents nécessaires au dépôt de votre dossier.
+    liens:
+      - lien: >-
+          https://agir.ademe.fr/aides-financieres/aap/corimer-navires-bas-carbone
+        texte: Consulter la liste des documents
+  - description: >-
+      Planifiez une réunion de prédépôt du dossier (en ayant complété l'Annexe 2
+      du dossier), au moins un mois avant le dépôt du dossier complet. Contactez
+      l'adresse [aap.navires@ademe.fr](mailto:aap.navires@ademe.fr)
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier en ligne
+    liens:
+      - lien: >-
+          https://agir.ademe.fr/aides-financieres/aap/corimer-navires-bas-carbone
+        texte: Créer mon compte ADEME
+  - description: Déposez votre dossier en ligne
+    liens:
+      - lien: >-
+          https://agir.ademe.fr/aides-financieres/aap/corimer-navires-bas-carbone
+        texte: Déposer mon dossier
+  - description: >-
+      Les candidatures seront examinées après chaque date limite de dépôt : le
+      16 mai puis le 15 octobre 2025.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a une categorie legale eligible
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est l'écoconception
