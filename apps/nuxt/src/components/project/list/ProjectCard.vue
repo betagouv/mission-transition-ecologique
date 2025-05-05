@@ -7,6 +7,7 @@
     :no-arrow="true"
     :link="getRouteToProjectDetail(project)"
     class="teste2e-project-target project-card"
+    enlarge
   >
     <template
       v-if="isPriorityProject"
