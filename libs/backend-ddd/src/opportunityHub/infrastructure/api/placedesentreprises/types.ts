@@ -51,12 +51,5 @@ export interface Solicitation {
   email: string
   phone_number: string
   siret: string
-  location: string
-  api_calling_url?: string
-  questions_additionnelles: AdditionalQuestion[]
-}
-
-interface AdditionalQuestion {
-  question_id: number
-  answer: boolean
+  origin_url?: string
 }
