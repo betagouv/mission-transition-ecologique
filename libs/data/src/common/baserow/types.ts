@@ -68,6 +68,7 @@ export interface Operator {
   Nom: string
   Tag: string
   Filtre: LinkObject[]
+  siren: string
 }
 
 export interface ConditionalValues

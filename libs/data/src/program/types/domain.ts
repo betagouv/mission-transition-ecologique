@@ -78,6 +78,7 @@ export interface Operator {
   id: number
   Tag: string
   Nom: string
+  siren: string
 }
 
 export interface GeographicCoverage {
