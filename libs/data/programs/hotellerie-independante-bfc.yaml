@@ -39,7 +39,7 @@ objectifs:
   - description: Réalisez votre étude ou vos investissements.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Effectif inférieur à 249 employés
+    - Moins de 250 salariés
     - Éligible aux micro-entreprises
   secteur géographique:
     - Bourgogne-Franche-Comté
