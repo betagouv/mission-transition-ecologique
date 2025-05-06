@@ -2835,12 +2835,12 @@
   {
     "id": 401,
     "slug": "utilitaire-camion-propre",
-    "title": "Acquisition d'un utilitaire propre",
-    "nameTag": "🚛 utilitaire camion propre",
+    "title": "Acquisition d'un petit utilitaire propre",
+    "nameTag": "🚛 petit utilitaire propre",
     "shortDescription": "Un utilitaire propre est un utilitaire qui rejette peu de CO₂ et ne consomme pas ou peu d'énergie fossile.",
     "image": "/images/projet/utilitaire-camion-propre.webp",
-    "longDescription": "Poids lourds, camions, camionnettes, autobus... le secteur du transport routier de marchandises et de voyageurs est le principal émetteur de gaz à effet de serre et de pollution de l'air. Les moteurs diesel génèrent des émissions de CO₂, d'oxydes d'azote (NOx) et de particules fines, contribuant au réchauffement climatique et aux problèmes de santé publique.\n\nEn choisissant un camion électrique, hybride ou en verdissant votre flotte, vous contribuez à décarboner le secteur du transport et à améliorer significativement la qualité de l'air. Les véhicules \"propres\" offrent aussi des avantages économiques. Bien que l'investissement initial soit plus élevé, les coûts de carburant et d'entretien sont réduits. De plus, des aides financières peuvent soutenir l’acquisition de ces véhicules, tout en vous préparant à répondre aux exigences environnementales de plus en plus strictes.",
-    "moreDescription": "- [**Verdir ma flotte**](https://verdirmaflotte.fr/), un outil pour comparer le coût et les émissions des énergies alternatives pour le renouvellement de votre flotte de véhicules.\n- [**Normes d'émissions de CO₂ pour les véhicules utilitaires**](https://ec.europa.eu/commission/presscorner/detail/fr/ip_23_762) : La Commission européenne fournit des informations sur les normes d'émissions pour les véhicules utilitaires lourds, visant à réduire leur empreinte carbone.",
+    "longDescription": "La livraison et le transport de marchandises ont un fort impact sur l'émission de gaz à effet de serre et la pollution aux particules fines.\n\nRemplacer votre camionnette thermique par un utilitaire électrique ou hybride contribue à améliorer la qualité de l'air en milieux urbain, rural et péri-urbain.\n\nDans un contexte où les réglementations environnementales se durcissent et où les zones à faibles émissions (ZFE) se multiplient, acquérir un petit utilitaire propre vous permet aussi de garantir la continuité de votre activité sans restriction.\n\nDes aides financières ou des prêts à taux préférentiels peuvent vous aider à acquérir les utilitaires nécessaire à votre entreprise.",
+    "moreDescription": "- [**Verdir ma flotte**](https://verdirmaflotte.fr/), un outil pour comparer le coût et les émissions des énergies alternatives pour le renouvellement de votre flotte de véhicules.\n- [**Circuler en zone à faible émission mobilité**](https://entreprendre.service-public.fr/vosdroits/F38025), que dit la règlementation ?",
     "themes": [
       "mobility"
     ],
@@ -2848,7 +2848,7 @@
     "programs": [
       "bonus-ecologique",
       "prime-a-la-conversion",
-      "vehicule-lourd-energies-propres",
+      "programme-eve",
       "cheque-transition-bioethanol",
       "deploiement-flottes-hydrogene",
       "pass-transition-bzh"
@@ -2983,12 +2983,12 @@
   {
     "id": 731,
     "slug": "transition-mobilites",
-    "title": "Transition des mobilités",
+    "title": "Changement des modes de transport",
     "nameTag": "🚆 transition mobilités",
-    "shortDescription": "Transférer les déplacements de personnes et de marchandises vers des modes de transport non polluants.",
+    "shortDescription": "Transférer les déplacements de vos collaborateurs vers des modes de transport non polluants.",
     "image": "/images/projet/report-modal.webp",
-    "longDescription": "La transition des mobilités de votre entreprise, appelée aussi \"report modal\", vise à réduire votre empreinte carbone en repensant vos modes de transport. Il s'agit de transférer vos trajets, ainsi que ceux de vos équipes et de vos fournisseurs, depuis des modes polluants (voitures thermiques, camions, avions…) vers des alternatives durables telles que le train, le vélo, le covoiturage, ou encore la voiture électrique. Par exemple, remplacer le véhicule utilitaire par le vélo cargo en ville permet de transporter des marchandises de manière plus respectueuse de l’environnement, sobre en énergie et en matériaux. De même, privilégier les transports en commun pour les trajets professionnels quotidiens permet de réduire les émissions par passager tout en désengorgeant les routes et en diminuant la consommation d’énergie.\\\nPour initier cette transition des mobilités, commencez par identifier les modes de transport les plus fréquents et polluants de vos équipes et fournisseurs, puis explorez des solutions alternatives pour transférer progressivement vos déplacements vers des modes non polluants.",
-    "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables. Comment engager la transition ?**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf), un guide gouvernemental.\n- [**Panorama de la cyclologistique en France**](https://librairie.ademe.fr/mobilite-et-transports/6499-panorama-de-la-cyclologistique-en-france.html), un état des lieux par l'ADEME.",
+    "longDescription": "La transition des mobilités de votre entreprise, appelée aussi \"report modal\", vise à réduire votre empreinte carbone en repensant vos modes de transport. Il s'agit de transférer vos trajets, ainsi que ceux de vos équipes depuis des modes polluants (voitures thermiques, avions…) vers des alternatives durables telles que le train, le vélo, le covoiturage, ou encore la voiture électrique. Par exemple, privilégier les transports en commun pour les trajets professionnels quotidiens permet de réduire les émissions par passager tout en désengorgeant les routes et en diminuant la consommation d’énergie.\\\nPour initier cette transition des mobilités, commencez par identifier les modes de transport les plus fréquents et polluants de vos équipes, puis explorez des solutions alternatives pour transférer progressivement vos déplacements vers des modes non polluants.",
+    "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables. Comment engager la transition ?**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf), un guide gouvernemental.",
     "themes": [
       "mobility"
     ],
@@ -3003,8 +3003,8 @@
       "investissement-velotourisme",
       "plan-de-mobilite",
       "prime-a-la-conversion",
+      "programme-eve",
       "retrofit-electrique",
-      "vehicule-lourd-energies-propres",
       "cheque-transition-bioethanol",
       "pass-transition-bzh",
       "je-change-ma-voiture"
@@ -3090,6 +3090,7 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "extreme-defi-mobilite",
       "plan-de-mobilite",
       "pass-transition-bzh"
     ],
