@@ -71,4 +71,5 @@ publicodes:
       - code NAF niveau 1 . est T
       - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
-    une de ces conditions: []
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable

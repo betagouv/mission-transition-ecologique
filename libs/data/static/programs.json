@@ -2,7 +2,7 @@
   {
     "titre": "Accélérateur décarbonation",
     "promesse": "Définissez une stratégie bas carbone robuste",
-    "description": "L'accélérateur Décarbonation est un programme d'accompagnement pour les dirigeants de PME et ETI animé par des experts environnement référencés par Bpifrance.  L'objectif : définir la trajectoire de décarbonation de votre entreprise en tenant compte de vos enjeux de développement.",
+    "description": "Profitez d’un accompagnement pour structurer une trajectoire de décarbonation ambitieuse, en lien avec vos enjeux de développement. Pendant 24 mois, vous bénéficiez :\n\n- de 8 séminaires thématiques animés avec Mines ParisTech\n\n- de 29 jours de conseil personnalisé par Bpifrance\n\n- une communauté de dirigeants engagés et à un réseau de 3 000 entreprises accélérées.",
     "début de validité": "06/02/2023",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
@@ -13,16 +13,19 @@
     "durée de l'accompagnement": "39 jours de conseil et 8 jours de formation",
     "objectifs": [
       {
-        "description": "Identifiez les leviers et définissez la trajectoire de décarbonation de votre entreprise en tenant compte de vos enjeux de développement."
+        "description": "Complétez le formulaire de candidature en ligne sur le site de Bpifrance.",
+        "liens": [
+          {
+            "lien": "https://evenements.bpifrance.fr/ami-accelerateur-decarbonation-3/registration/register",
+            "texte": "Inscription"
+          }
+        ]
       },
       {
-        "description": "Participez à 8 séminaires thématiques avec les Mines ParisTech (élaborer sa stratégie de décarbonation, la financer, la valoriser, conduite du changement, etc.)"
+        "description": "Échangez avec un chargé d'affaires Bpifrance pour vérifier l’adéquation entre vos enjeux et le programme."
       },
       {
-        "description": "Accédez à la communauté des 3 000 accélérés des précédentes promotions et aux réseaux Bpifrance."
-      },
-      {
-        "description": "Bénéficiez d'un accompagnement premium de la part de Bpifrance pendant toute la durée du programme : 39 jours de suivi séquencés sur les 2 années du programme."
+        "description": "Intégrez le programme à l’issue du processus de validation par Bpifrance."
       }
     ],
     "conditions d'éligibilité": {
@@ -1346,7 +1349,7 @@
         "description": "Créez compte sur le site de l'Agence du Tourisme de la Corse.",
         "liens": [
           {
-            "lien": "https://annuaire.atc.corsica/realms/atc-prod/login-actions/registration?execution=62d93361-e72e-4207-a2f6-8371562141ec&client_id=atc-prod&tab_id=0xzxSpZYJRg",
+            "lien": "https://annuaire.atc.corsica/realms/atc-prod/protocol/openid-connect/auth?response_type=code&scope=openid&client_id=atc-prod&state=fcdbce53456f1916dd9643cbd9163381&redirect_uri=https%3A%2F%2Faiuti.atc.corsica%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize",
             "texte": "Créer votre compte"
           }
         ]
@@ -2080,8 +2083,7 @@
   {
     "titre": "Aides au réemploi des emballages",
     "promesse": "Réalisez une étude pour vous aider à réduire vos emballages plastiques",
-    "description": "Vous réflechissez à des solutions pour diminuer vos emballages plastiques mis en marché et favoriser leur réemploi ? L’ADEME vous apporte une aide financière pour réaliser une étude ou une expérimentation sur le sujet.",
-    "description longue": "Les dépenses éligibles sont :\n•  Les investissements d'équipements et outils pour permettre le passage au réemploi\n•  Les expérimentations : tests à petite échelle préalable à l'investissement.\n•  Les diagnostics et études de faisabilité.",
+    "description": "Réduisez votre production de déchets en mettant en place des solutions concrètes de réemploi des emballages. Cette aide finance les premières étapes de votre projet pour passer à un modèle circulaire. Vous pouvez être soutenu pour :\n\n- des investissements en équipements et outils dédiés au réemploi\n\n- des expérimentations à petite échelle pour tester la solution\n\n- des diagnostics ou études de faisabilité en amont du projet\n\nPassez à l’action et structurez une démarche durable et opérationnelle dans votre filière.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
@@ -5789,6 +5791,188 @@
     "id": "certification-agriculture-biologique"
   },
   {
+    "titre": "Certificats d'économies d'énergie (CEE)",
+    "promesse": "Financez vos initiatives visant à améliorer l'efficacité énergétique",
+    "description": "Les Certificats d’Économies d’Énergie (CEE) sont des aides financières destinées aux entreprises qui réalisent des travaux améliorant leur performance énergétique. Isolation, remplacement de chauffage, optimisation de procédés… de nombreuses actions sont éligibles. Cette aide est versée par les fournisseurs d’énergie (électricité, gaz, fioul, carburant…) dans le cadre d’une obligation légale. Le montant peut prendre la forme d’une prime, d’une réduction directe sur votre devis ou d’un remboursement après travaux, selon le partenaire choisi. Ce dispositif permet de réduire le coût de vos investissements tout en diminuant durablement votre consommation d’énergie.",
+    "description longue": "Tous les fournisseurs d'électricité, de gaz ou GPL, de fioul domestique, de chaleur et de froid peuvent proposer une aide CEE pour la réalisation de travaux d'économies d'énergie.",
+    "illustration": "images/TEE_energie_verte.png",
+    "opérateur de contact": "Ministère de la Transition Écologique",
+    "url": "https://www.service-public.fr/particuliers/vosdroits/F35584",
+    "nature de l'aide": "financement",
+    "montant du financement": "En fonction du projet",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Identifiez une opération éligible correspondant à votre activité, en consultant les fiches par secteur disponibles sur le site du ministère de la Transition écologique.",
+        "liens": [
+          {
+            "lien": "https://www.ecologie.gouv.fr/politiques-publiques/operations-standardisees-deconomies-denergie",
+            "texte": "Accéder à la liste des fiches"
+          }
+        ]
+      },
+      {
+        "description": "Contactez plusieurs fournisseurs d'énergie (délégataire) avant de commencer les travaux afin de comparer leurs offres. Une fois que vous avez choisi un délégataire et accepté son offre, signez une convention CEE."
+      },
+      {
+        "description": "Faites réaliser les travaux par une entreprise certifiée RGE (Reconnu Garant de l'environnement).",
+        "liens": [
+          {
+            "lien": "https://www.service-public.fr/particuliers/vosdroits/R39412",
+            "texte": "Liste des entreprises certifiées RGE"
+          }
+        ]
+      },
+      {
+        "description": "Transmettez les justificatifs (factures, attestations, fiches techniques...) au délégataire avec qui vous avez signé une convention CEE."
+      },
+      {
+        "description": "Recevez la prime CEE (par virement, par chèque, en bons d'achat, ou déduite de votre facture)."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      }
+    },
+    "id": "certificats-economie-energie"
+  },
+  {
     "titre": "Charte \"zéro déchet plastique\"",
     "promesse": "Engagez-vous dans une démarche de diminution des pollutions plastiques",
     "description": "Devenez signataire de la charte « zéro déchet plastique » et engagez votre entreprise sur un plan d'action de réduction de l’usage des plastiques à usage unique, sur l'optimisation de la gestion et du tri des déchets plastiques et l'adoption de solutions de réemploi. En adhérant à la charte \"zéro déchet plastique\" de votre région, vous intégrez la communauté des signataires animée par l’Agence Régionale pour la Biodiversité et l’Environnement (ARBE) et bénéficiez de ressources et retours d'expériences de autres signataires pour vous aider dans la mise en œuvre de vos actions.",
@@ -6410,7 +6594,7 @@
   {
     "titre": "ClimaDiag expert",
     "promesse": "Anticipez l’impact des changements climatiques pour votre entreprise et sécurisez votre activité",
-    "description": "Bénéficiez d'un accompagnement d'un expert CCI pour vous aider à évaluer la vulnérabilité climatique de votre entreprise, prévenir les impacts du dérèglement climatique et vous aider à limiter les coûts imprévus de canicule, inondation, sécheresse, etc.",
+    "description": "Anticipez les effets du changement climatique sur votre activité avec l’accompagnement d’un expert CCI. Grâce à un diagnostic réalisé sur site, évaluez la vulnérabilité de votre entreprise et définissez un plan d’adaptation concret.\\\nL’accompagnement vous permet de :\n\n- Hiérarchiser les risques climatiques (canicule, inondation, sécheresse…)\n\n- Analyser les impacts sur vos clients, fournisseurs et concurrents\n\n- Concevoir un plan d’actions adapté à votre réalité opérationnelle\n\n- Identifier des solutions de financement pour engager les premières actions",
     "début de validité": "01/10/2023",
     "fin de validité": "01/08/2026",
     "illustration": "images/TEE_energie_verte.png",
@@ -6425,16 +6609,13 @@
     "durée de l'accompagnement": "5 à 10 jours selon la taille de l'entreprise",
     "objectifs": [
       {
-        "description": "Réalisez un diagnostic sur site pour évaluer et hierarchiser l'ensemble des risques encourus par votre entreprise."
+        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire."
       },
       {
-        "description": "Identifiez l'impact sur votre écosystème : concurrents & sources d'insatisfaction client liées aux changements climatiques."
+        "description": "Un conseiller CCI vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Concevez un plan d'actions à mettre en oeuvre."
-      },
-      {
-        "description": "Identifiez des financements possibles."
+        "description": "Planifiez le diagnostic sur site avec le chargé d’étude qui vous sera attribué."
       }
     ],
     "conditions d'éligibilité": {
@@ -6848,6 +7029,11 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Les seuils minimaux de coût total des projets sont les suivants :",
+        "1 million d’euros minimum pour les projets, individuels ou en consortium, portés ou coordonnés par une PME",
+        "4 millions d’euros minimum pour les projets, individuels ou en consortium, portés ou coordonnés par une Grande entreprise."
       ]
     },
     "publicodes": {
@@ -6991,6 +7177,7 @@
     "description longue": "Pour être éligible au Coup de pouce Chauffage, votre bâtiment doit :\n- Être dédié à un usage tertiaire (vous devez en être propriétaire ou gestionnaire)\n- Être inférieur à 1000 m2\n- Être construit depuis au moins deux ans à la date d’engagement de l'opération\n- Ne pas avoir été raccordé à un réseau de chaleur (dans un délai de cinq ans précédant la date de l'engagement de l'opération)\n\nLes barèmes\n- Le montant des primes dépend des offres commerciales de chaque signataire de la charte, c’est pour cela qu’il est important de comparer les offres commerciales avant de vous engager.\n- Le montant des primes est établi en fonction de la surface du bâtiment, du type d’équipement installé, du type d’équipement qui est remplacé, et du cours du marché des Certificats d'économies d'énergie (CEE).",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Ministère de la Transition Écologique",
+    "url": "https://www.ecologie.gouv.fr/politiques-publiques/coup-pouce-chauffage",
     "nature de l'aide": "financement",
     "montant du financement": "Variable selon le bâtiment et le type d'équipement",
     "activable en autonomie": "oui",
@@ -7770,7 +7957,9 @@
         ]
       },
       "entreprise . a un objectif ciblé": {
-        "une de ces conditions": []
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
       }
     },
     "id": "decarb-ind-25"
@@ -8179,6 +8368,199 @@
     "id": "diag-adaptation"
   },
   {
+    "titre": "Diag biodiversité",
+    "promesse": "Intégrez la biodiversité dans votre stratégie d’entreprise",
+    "description": "Bpifrance vous aide à intégrer les enjeux de la biodiversité dans votre stratégie d’entreprise. Un expert agréé et sélectionné par Bpifrance et l'OFB vous accompagne pour :\n\n- Sensibiliser vos équipes à l’importance de la biodiversité et aux enjeux environnementaux.\n\n- Diagnostiquer votre impact sur les écosystèmes et vos dépendances aux services écosystémiques.\n\n- Identifier les risques et opportunités liés à la biodiversité pour votre activité.\n\n- Construire un plan d’action concret pour réduire vos impacts et préserver la biodiversité.\n\nÀ l’issue de cet accompagnement, vous recevrez un rapport complet et un plan d’action opérationnel pour intégrer la biodiversité dans vos pratiques.",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "Banque Publique d'Investissement France",
+    "autres opérateurs": [
+      "ADEME"
+    ],
+    "url": "https://diag.bpifrance.fr/diag-biodiversite",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "6 000€ HT, après prise en charge de 40%",
+    "durée de l'accompagnement": "10 jours de prestation, répartis sur 3 à 6 mois",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Réalisez votre demande de souscription via le site Bpifrance.",
+        "liens": [
+          {
+            "lien": "https://diag.bpifrance.fr/diag-biodiversite",
+            "texte": "Souscription au diagnostic"
+          }
+        ]
+      },
+      {
+        "description": "Bpifrance examine votre demande et vous répond sous 20 jours. Si elle est acceptée, vous recevez un contrat par mail."
+      },
+      {
+        "description": "Une fois le contrat signé, les équipes Bpifrance sélectionnent un bureau d’étude pour vous accompagner."
+      },
+      {
+        "description": "L’expert prend contact avec vous pour définir les modalités pratiques du diagnostic (calendrier, méthode, jalons, livrables) et planifier sa visite dans votre entreprise."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Moins de 250 salariés.",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "\"Au moins 1 an d'activité\""
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "a un effectif éligible",
+          "a une categorie legale eligible"
+        ]
+      },
+      "entreprise . a un effectif éligible": {
+        "toutes ces conditions": [
+          "effectif <= 250"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est préserver la biodiversité"
+        ]
+      }
+    },
+    "id": "diag-biodiversite"
+  },
+  {
     "titre": "Diag Décarbon'Action",
     "promesse": "Réalisez un bilan de gaz à effet de serre et réduisez l’empreinte carbone de votre entreprise",
     "description": "Ce Bilan vous permet en 12 jours de mesurer les émissions directes et indirectes de GES de votre entreprise puis d’élaborer votre plan d’actions pour réduire l’empreinte carbone de votre entreprise. Les experts qui réalisent le Diag Décarbon'Action sont certifiés « Bilan Carbone ® » ou autre méthode de comptabilité carbone conforme à la réglementation, et sont habilités par l’ADEME, l’Association Bilan Carbone et Bpifrance, ce qui garantit un niveau de qualité élevé.",
@@ -8194,13 +8576,19 @@
     "durée de l'accompagnement": "12 jours de prestation répartis sur 6 à 8 mois",
     "objectifs": [
       {
-        "description": "Définissez le champ d’étude et les modalités pratiques du diagnostic avec l'expert en charge du diagnostic (périmètre, calendrier, méthode, jalons, livrables)."
+        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire"
       },
       {
-        "description": "Bénéficiez d'une visite d'un expert dans vos locaux pour récolter les données nécessaires à la réalisation du bilan de gaz à effet de serre."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Identifiez des recommandations d'actions et co-construisez un plan d'actions cadencé et chiffré pour réduire l'empreinte carbone de votre entreprise."
+        "description": "Définissez le champ d’étude et les modalités pratiques du diagnostic avec le chargé d'étude (périmètre, calendrier, méthode, jalons, livrables)."
+      },
+      {
+        "description": "Planifiez la visite de l expert dans vos locaux pour récolter les données nécessaires à la réalisation du bilan de gaz à effet de serre."
+      },
+      {
+        "description": "Démarrez votre accompagnement"
       },
       {
         "description": "A la fin du diagnostic, bénéficiez d'un rapport de synthèse, d'un plan d'action, et d'une synthèse communicante pour vos équipes, clients ou fournisseurs."
@@ -8562,7 +8950,7 @@
   {
     "titre": "Diag Ecoconception",
     "promesse": "Évaluez la performance environnementale de vos produits, procédés et services",
-    "description": "Bénéficiez des conseils d'un expert écoconception référencé par Bpifrance pour évaluer la performance environnementale de vos produits, services et procédés ou d'un accompagnement en vue de l'obtention de l'Ecolabel européen.",
+    "description": "Bénéficiez de l'accompagnement d’un expert écoconception référencé par Bpifrance pour améliorer la performance environnementale de vos produits, services et procédés. Vous serez soutenu pour :\n\n- Sensibiliser vos équipes et former un référent en écoconception\n\n- Réaliser une évaluation environnementale (analyse du cycle de vie)\n\n- Identifier et chiffrer des leviers d’amélioration sans transférer de pollution\n\n- Mettre en place un plan d’action technico-économique pour l’éco-conception\n\n- Préparer et accompagner votre démarche vers l’obtention de l’Ecolabel européen",
     "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Banque Publique d'Investissement France",
@@ -8575,19 +8963,19 @@
     "durée de l'accompagnement": "18 jours de prestation répartis sur 6 à 8 mois",
     "objectifs": [
       {
-        "description": "Sensibiliser les équipes internes à l’écoconception et former un référent écoconception dans votre entreprise."
+        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire."
       },
       {
-        "description": "Réaliser une évaluation environnementale basée sur l’analyse du cycle de vie du produit, service ou procédé concerné."
+        "description": "Échangez avec un conseiller pour vérifier votre éligibilité et préparer votre demande."
       },
       {
-        "description": "Identifier, formaliser et chiffrer les leviers d’écoconception, en maîtrisant le risque de transfert de pollution."
+        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
       },
       {
-        "description": "Préparer la mise en œuvre d'un plan d’actions incluant un premier dimensionnement technico-économique."
+        "description": "Formalisez votre demande et validez les modalités de l'accompagnement."
       },
       {
-        "description": "Accompagner à l'obtention de l'Ecolabel européen dans tout le processus de certification."
+        "description": "ncez le diagnostic avec l'expert écoconception sélectionné par bpifrance."
       }
     ],
     "conditions d'éligibilité": {
@@ -9852,6 +10240,7 @@
     "description": "Participez à l’opération « Eco-défis des commerçants et artisans » qui permet de valoriser les actions menées par les entreprises locales en matière d’environnement, énergie, transport, déchets, éco-produits, gestion de l’eau, emballages, responsabilité sociétale.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "CCI ou CMA",
+    "url": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/eco-defis-des-artisans-et-des-commercants",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "2 jours de prestation répartis sur 12 mois",
@@ -10393,7 +10782,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "Les secteurs éligibles à l'Écolabel sont : \n\n- Hébergement touristique\n\n\n- Services de nettoyage intérieur\n\n\n- Milieux de culture, amendements pour sols\n- Papier tissue et produits tissue, papier graphique, produits en papier imprimé, produits de papeterie et sacs en papier\n- Produits de nettoyage pour surfaces dures, de protection hygiénique absorbants\n- Détergents textiles, détergents pour lave vaisselle, à usage industriel, destinés aux collectivités ou détergents pour vaisselle à la main\n- Produits cosmétiques et produits de soin pour animaux\n- Peintures et vernis d'intérieur ou d'extérieur\n- Lubrifiants"
+        "L'Écolabel s'applique à plusieurs secteurs : l’hébergement touristique, les services de nettoyage intérieur, les produits d’entretien (détergents textiles, vaisselle, surfaces dures, usage industriel), les produits d’hygiène (cosmétiques, soins pour animaux, protections hygiéniques), les articles en papier (tissue, graphique, imprimé, papeterie, sacs), les milieux de culture et amendements pour sols, les peintures et vernis, ainsi que les lubrifiants."
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -16324,13 +16713,198 @@
     "id": "etude-test-geothermie"
   },
   {
+    "titre": "Évaluation carbone LISE",
+    "promesse": "Disposez d’une première estimation rapide de votre empreinte carbone",
+    "description": "Le programme LISE – *\"Limitez vos Impacts et Suivez vos Émissions\"* – vous propose un accompagnement de deux jours pour :\n\n- définir le périmètre de votre étude ;\n\n- collecter et traiter vos données d’émissions de CO₂ ;\n\n- identifier vos principaux postes d’émissions avec des résultats détaillés ;\n\n- élaborer un plan d’action personnalisé pour réduire vos consommations et vos émissions ;\n\n- être orienté vers les aides adaptées à vos premières actions de décarbonation.\n\nUn format court, idéal pour obtenir une estimation fiable de votre empreinte carbone sans réaliser un Bilan Carbone complet.",
+    "description longue": "Dans le cadre de la transition écologique, les émissions de gaz à effet de serre sont classées en trois scopes (ou périmètres) définis par le GHG Protocol, une référence internationale. Le programme LISE se concentre principalement sur les deux premiers :\n\nScope 1 : émissions directes\nCe sont les émissions générées directement par l’entreprise, notamment par la combustion de carburants dans les chaudières (gaz, fioul), les véhicules ou les procédés industriels sur site.\n\nScope 2 : émissions indirectes liées à l’énergie\nElles proviennent de la production d’électricité, de chaleur, de vapeur ou de froid achetés et consommés par l’entreprise. Bien que produites ailleurs, elles sont liées à l’activité énergétique de l’entreprise.\n\nLe scope 3, qui regroupe toutes les autres émissions indirectes (achats, transport, usage des produits, etc.), n’est pas traité dans le cadre de l’accompagnement LISE.",
+    "illustration": "images/TEE_energie_verte.png",
+    "opérateur de contact": "Chambre de Commerce et de l'Industrie",
+    "url": "https://www.cci.fr/offre/evaluation-carbone-simplifiee-lise-mesurez-et-reduisez-vos-emissions-de-co2",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "Gratuit",
+    "durée de l'accompagnement": "2 jours d'accompagnement",
+    "objectifs": [
+      {
+        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire"
+      },
+      {
+        "description": "Un conseiller CCI vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
+      },
+      {
+        "description": "Planifiez les deux jours d’accompagnement avec le chargé d’étude qui vous sera attribué."
+      },
+      {
+        "description": "Bénéficiez d’un diagnostic structuré de vos émissions de CO₂ et repartez avec un plan d’action concret pour enclencher votre démarche de décarbonation."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Moins de 250 salariés.",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "a un effectif éligible",
+          "a une categorie legale eligible"
+        ]
+      },
+      "entreprise . a un effectif éligible": {
+        "toutes ces conditions": [
+          "effectif <= 249"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "evaluation-carbone-lise"
+  },
+  {
     "titre": "eXtrême Défi Mobilité",
     "promesse": "Rejoignez l'eXtrême Défi, un programme innovant pour concevoir les véhicules de demain",
     "description": "L' eXtrême Défi Mobilité est un parcours d'innovation dont l'objectif est d’imaginer, prototyper et produire de nouvelles solutions de déplacement du quotidien pour les territoires dépendants de l’automobile : durables, réparables, reconditionnables, légers et économes. ",
     "description longue": "L’eXtrême Défi porte l'ambition de concevoir des véhicules :\n\n• 10 fois moins couteux par rapport à une automobile (0,6 à 0,8 €/km pour 10000 km/an d’après A.C.F.) en intégrant l’ensemble des dépenses grâce à un embarquement de batterie minimaliste, l’utilisation de composant standardisé, mutualisé entre différents véhicules et une conception permettant de garantir une longue durée de vie, donc une faible perte de valeur dans le temps,\n\n• 10 fois plus durable en visant une très haute recyclabilité, capacité à être réparé, reconditionné pour avoir plusieurs vies, plusieurs usages. La durée de vie moyenne d’une voiture est de 13 ans et l’âge moyen du parc automobile est de 11 ans.\n• 10 fois plus léger pour réduire fortement le besoin de batterie, la consommation d’énergie donc les coûts. La masse moyenne des voitures neuves vendues en 2019 est 1240 kg. Ce critère est essentiel pour atteindre la neutralité carbone.\n\n• 10 fois plus simple en travaillant l’écoconception pour réduire le nombre de composant, avoir des assemblages démontables, utiliser au maximum des standards et travailler collectivement sur l’interopérabilité.\n\n• 10 fois moins puissant grâce à un véhicule léger et efficient mais également avec des vitesses maxi adaptées aux besoins et aux territoires entre 25 et 80 km/h.\n",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "url": "https://airtable.com/apprjFOnbLySO8spa/shraH0xKsFZnkZOKw",
+    "url": "https://xd.ademe.fr/participer",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "Jusqu'à 3 ans d'accompagnement",
@@ -16471,7 +17045,8 @@
         "une de ces conditions": [
           "code NAF niveau 1 . est C",
           "code NAF niveau 1 . est G",
-          "code NAF niveau 1 . est H"
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est M"
         ]
       },
       "entreprise . a un objectif ciblé": {
@@ -16807,7 +17382,7 @@
     "id": "flotte-de-velos-a-disposition"
   },
   {
-    "titre": "Fond Vert - Territoires d'Industrie",
+    "titre": "Fonds Vert - Territoires d'Industrie",
     "promesse": "Financez votre projet industriel d'intérêt général en matière de transition écologique ",
     "description": "Vous portez un projet de développement industriel présentant un intérêt général manifeste en termes de revitalisation économique et de transition écologique ?  Le programme \"Territoires d’industrie\" soutient les entreprises porteuses de projets d’investissements industriels ambitieux et exemplaires sur le\nplan environnemental, socio-économique et territorial. ",
     "description longue": "Les projets éligibles sont des projets d’investissements industriels exemplaires sur le plan environnemental qui contribuent à l’émergence, au renforcement ou à la réindustrialisation de chaînes de valeur industrielles clés pour la transition écologique.\nAfin d’être éligibles, les projets doivent être suffisamment matures. \n\nPar exemple :\n• Bioéconomie pour le développement de produits biosourcés (chanvre, lin, laine, bois, paille, bioéconomie marine, chimie, etc.) ;\n• Nouvelles mobilités durables (vélos, vélos-cargos, véhicules intermédiaires, etc.) ;\n• Souveraineté alimentaire et relocalisation des filières agroalimentaires (unités de\ntransformation locale de production, par exemple en lien avec un projet alimentaire\nterritorial, etc.) ;\n• Relocalisation de biens de consommation courants (habillement, mobilier, etc.) avec un\nprocess significativement plus respectueux de l’environnement que les standards ;\n• Productions industrielles contribuant au recyclage de matériaux ou matières premières, à l’économie circulaire et au réemploi, ou à la valorisation de déchets et co-produits\n(équipements de la transition énergétique, de la rénovation du bâti, etc.) ; \n• Projets qui s’inscrivent dans une stratégie de diversification pour des territoires fragiles dont\nl’économie est impactée par le changement climatique (notamment territoires de montagne). \n• Projets d’investissements contribuant au développement des\ncompétences (école de production, centre de formation, plateau technique, etc.) \n\nA titre auxiliaire, la mesure peut soutenir des projets d’investissements contribuant au développement des compétences nécessaires à la réindustrialisation de ces chaînes de valeur industrielles.",
@@ -17928,6 +18503,7 @@
     "description": "Vous voulez sensibiliser vos salarié.e.s sur la mobilité et avez besoin d'un outil pour embarquer votre équipe ou votre direction ? La fresque de la mobilité est l'atelier qu'il vous faut pour bien démarrer le projet.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
+    "url": "https://fresquedelamobilite.org/",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Sur devis",
     "durée de l'accompagnement": "1/2 journée",
@@ -18317,7 +18893,7 @@
     ],
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
-        "Effectif inférieur à 249 employés",
+        "Moins de 250 salariés",
         "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
@@ -24188,7 +24764,13 @@
     "durée du prêt": "8 ans maximum (dont 3 ans maximum de différé)",
     "objectifs": [
       {
-        "description": "Prenez contact avec un conseiller afin de vérifier vos conditions d'éligibilité et pour le montage de votre dossier de candidature. Attention, l'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé."
+        "description": "Prenez contact avec un conseiller afin de vérifier vos conditions d'éligibilité et pour le montage de votre dossier de candidature. Attention, l'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé.",
+        "liens": [
+          {
+            "lien": "https://www.maregionsud.fr/vos-aides/detail/investour",
+            "texte": "Je fais ma demande"
+          }
+        ]
       },
       {
         "description": "Votre dossier fait l’objet d’un examen par un Comité technique de pré-sélection. Les entreprises présélectionnées sont conviés à un comité de sélection qui délibéra des projets retenus. Les comités ont lieu tous les mois."
@@ -24523,7 +25105,9 @@
         ]
       },
       "entreprise . a un objectif ciblé": {
-        "une de ces conditions": []
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la mobilité durable"
+        ]
       }
     },
     "id": "je-change-ma-voiture"
@@ -25273,6 +25857,7 @@
     "description longue": "Ce MOOC est développé par LPO, association d’utilité publique qui a pour objet d'agir ou de favoriser les actions en faveur de la nature et de la biodiversité, en partenariat avec le Mouvement des entreprises de France et le soutien financier de l’Office français de la biodiversité. \n\nProgramme : \n- Séquence 1 - COMPRENDRE : Quels sont les risques pour l’entreprise, pourquoi y a-t-il urgence pour agir face à l’érosion du vivant ?\n- Séquence 2 - IMAGINER DES SOLUTIONS : Comment une entreprise peut-elle agir, que ce soit dans son cœur de métier, sur son site d’activités ou dans son fonctionnement quotidien ?\n- Séquence 3 - AGIR : Comment s’y prendre pour passer à l’action, par quelles étapes faut-il passer pour réussir ?\n\nVous êtes une entreprise de moins de 10 salariés ? En participant au MOOC, vous bénéficiez désormais d’un accès simplifié vers le programme \"Entreprises engagées pour la nature\" de l’OFB. En reprenant vos réponses aux activités proposées en fin de chaque séquence, vous aurez rempli la majeure partie du dossier d'adhésion. Le programme vous permettra ensuite de vous inscrire dans une dynamique reconnue et visible à l’échelle nationale et de créer de nouvelles synergies pour préserver la biodiversité.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Office français de la biodiversité",
+    "url": "https://mooc.formation.lpo.fr/",
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "De 6h à 9h",
@@ -29475,6 +30060,7 @@
     "fin de validité": "14/02/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ASP",
+    "url": "https://www.primealaconversion.gouv.fr/",
     "nature de l'aide": "financement",
     "montant du financement": "jusqu’à 9 000 €, selon le véhicule",
     "activable en autonomie": "oui",
@@ -30207,7 +30793,7 @@
     "titre": "Programme EVE",
     "promesse": "Acteurs du transport et de la logistique, réduisez votre impact énergétique et environnemental",
     "description": "Le programme EVE (Engagements Volontaires pour l’Environnement) accompagne des entreprises dans la réduction de l'impact énergétique et environnemental dans leurs activités de transport et logistique.",
-    "description longue": "Par ses dispositifs dédiés, le programme apporte les solutions adaptées aux besoins\nde chaque acteur (chargeur, commissionnaire de transport, transporteur de marchandises, transporteur de voyageurs, grossiste).\n\n• FRET21 accompagne les entreprises agissant en qualité\nde donneurs d’ordre pour mieux intégrer l’impact des\ntransports dans leur démarche RSE.\n4 axes d’action :\n- Taux de chargement\n- Distance parcourue\n- Moyens de transport\n- Achats responsables\n\n• EVcom donne les outils et l’accompagnement nécessaires\naux commissionnaires pour agir avec leurs partenaires transport\nen faveur de l’environnement.\n4 axes d’action :\n- Flotte propre\n- Achats transport\n- Collaboration clients\n- Démarche RSE\n\n• Objectif CO2 soutient les transporteurs routiers dans leur démarche de réduction\nd’émissions de GES et de polluants atmosphériques.\n4 axes d’action :\n- Véhicules\n- Carburant\n- Conducteurs\n- Organisation des transports",
+    "description longue": "Par ses dispositifs dédiés, le programme apporte les solutions adaptées aux besoins de chaque acteur (chargeur, commissionnaire de transport, transporteur de marchandises, transporteur de voyageurs, grossiste).\n\n• FRET21 accompagne les entreprises agissant en qualité\nde donneurs d’ordre pour mieux intégrer l’impact des\ntransports dans leur démarche RSE.\n4 axes d’action :\n- Taux de chargement\n- Distance parcourue\n- Moyens de transport\n- Achats responsables\n\n• EVcom donne les outils et l’accompagnement nécessaires\naux commissionnaires pour agir avec leurs partenaires transport\nen faveur de l’environnement.\n4 axes d’action :\n- Flotte propre\n- Achats transport\n- Collaboration clients\n- Démarche RSE\n\n• Objectif CO2 soutient les transporteurs routiers dans leur démarche de réduction\nd’émissions de GES et de polluants atmosphériques.\n4 axes d’action :\n- Véhicules\n- Carburant\n- Conducteurs\n- Organisation des transports",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "EcoCO2",
@@ -34457,6 +35043,7 @@
     "description": "Faites vous accompagner par un conseiller en transition énergétique et écologique pour faire le point sur vos contrats et factures d’énergie, identifier vos postes énergivores et découvrir les bonnes pratiques à mettre en place pour réaliser des économies d'énergie.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
+    "url": "https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/maitrise-besoins-chauffage/visite-energie-cma",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "1 journée",

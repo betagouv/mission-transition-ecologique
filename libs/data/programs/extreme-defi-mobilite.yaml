@@ -39,7 +39,7 @@ description longue: >
   km/h.
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
-url: https://airtable.com/apprjFOnbLySO8spa/shraH0xKsFZnkZOKw
+url: https://xd.ademe.fr/participer
 nature de l'aide: étude
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Jusqu'à 3 ans d'accompagnement
@@ -84,6 +84,7 @@ publicodes:
       - code NAF niveau 1 . est C
       - code NAF niveau 1 . est G
       - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est M
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est la mobilité durable

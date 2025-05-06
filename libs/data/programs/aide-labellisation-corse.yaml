@@ -47,7 +47,7 @@ objectifs:
   - description: Créez compte sur le site de l'Agence du Tourisme de la Corse.
     liens:
       - lien: >-
-          https://annuaire.atc.corsica/realms/atc-prod/login-actions/registration?execution=62d93361-e72e-4207-a2f6-8371562141ec&client_id=atc-prod&tab_id=0xzxSpZYJRg
+          https://annuaire.atc.corsica/realms/atc-prod/protocol/openid-connect/auth?response_type=code&scope=openid&client_id=atc-prod&state=fcdbce53456f1916dd9643cbd9163381&redirect_uri=https%3A%2F%2Faiuti.atc.corsica%2Fwp-admin%2Fadmin-ajax.php%3Faction%3Dopenid-connect-authorize
         texte: Créer votre compte
   - description: >-
       Transmettez votre déclaration d'intention à l'Agence du Tourisme de la

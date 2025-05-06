@@ -80,6 +80,14 @@ conditions d'éligibilité:
     - Tous secteurs d'activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - 'Les seuils minimaux de coût total des projets sont les suivants :'
+    - >-
+      1 million d’euros minimum pour les projets, individuels ou en consortium,
+      portés ou coordonnés par une PME
+    - >-
+      4 millions d’euros minimum pour les projets, individuels ou en consortium,
+      portés ou coordonnés par une Grande entreprise.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
