@@ -96,7 +96,7 @@ export default defineNitroPlugin((nitroApp) => {
 })
 
 function formatRequestUrl(path: string): string {
-  return (path || '').replace(/\/_ipx\/|,|http(s?):\/\//g, '').replace('&', '-')
+  return (path || '').replace(/\/_ipx\/|,|http(s?):\/\//g, '').replaceAll('&', '-')
 }
 
 function shouldCheckCache(event: H3Event<EventHandlerRequest>): boolean {
