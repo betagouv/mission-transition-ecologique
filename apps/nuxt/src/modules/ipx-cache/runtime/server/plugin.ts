@@ -1,82 +1,104 @@
-import type { ServerResponse } from 'http'
-import type { ModuleOptions } from '../../index'
-
-import { createCache } from '../utils/cache'
-
-import { CaptureStream } from '../utils/capture-stream'
-import { PassThrough, Readable } from 'node:stream'
-
-import { sendStream, setHeaders, getHeader } from 'h3'
+import { EventHandlerRequest, getHeader, H3Event } from 'h3'
 import { defineNitroPlugin, useRuntimeConfig } from 'nitropack/runtime'
+import type { ModuleOptions } from '../../index'
+import { ResponseHandler } from '../utils/responseHandler'
+import { CacheManager } from '../utils/cache/cacheManager'
+
+// export default defineNitroPlugin((nitroApp) => {
+//   const config = <Required<ModuleOptions>>(<unknown>useRuntimeConfig().ipx)
+//   const cacheStore = createCache(config.cacheDir, config.maxAge)
+//
+//   nitroApp.hooks.hook('request', async function (event) {
+//     if (!event.path.startsWith('/_ipx/')) return
+//
+//     const reqUrl = (event.path || '').replace(/\/_ipx\/|,|http(s?):\/\//g, '').replace('&', '-')
+//     const originalRes = event.node.res
+//
+//     if (!getHeader(event, 'cache-control')?.includes('ipx-purge')) {
+//       /** Load from cache if there is any */
+//       const cached = await cacheStore.get(reqUrl)
+//       if (cached) {
+//         const readable = new Readable()
+//
+//         readable._read = () => void 0
+//         readable.push(cached.buffer), readable.push(null)
+//
+//         setHeaders(event, { ...(<NonNullable<unknown>>cached.meta), 'cache-status': 'HIT' })
+//         originalRes.setHeader = (_key, _val) => originalRes
+//         return sendStream(event, readable)
+//       }
+//     }
+//
+//     const passThrough = new PassThrough()
+//     const captureStream = new CaptureStream()
+//     passThrough.pipe(captureStream)
+//
+//     const originalWrite = originalRes.write.bind(originalRes) as (
+//       chunk: any,
+//       encoding?: BufferEncoding | ((error: Error | null | undefined) => void),
+//       callback?: (error: Error | null | undefined) => void
+//     ) => boolean
+//     const originalEnd = originalRes.end.bind(originalRes) as (
+//       chunk?: any,
+//       encoding?: BufferEncoding | ((error: Error | null | undefined) => void),
+//       callback?: () => void
+//     ) => ServerResponse
+//
+//     originalRes.write = (
+//       chunk: any,
+//       encodingOrCallback?: BufferEncoding | ((error: Error | null | undefined) => void),
+//       callback?: (error: Error | null | undefined) => void
+//     ): boolean => {
+//       passThrough.write(chunk, encodingOrCallback as BufferEncoding, callback)
+//       return originalWrite(chunk, encodingOrCallback as BufferEncoding, callback)
+//     }
+//
+//     originalRes.end = (
+//       chunk?: any,
+//       encodingOrCallback?: BufferEncoding | ((error: Error | null | undefined) => void),
+//       callback?: () => void
+//     ): ServerResponse => {
+//       if (chunk) passThrough.write(chunk, encodingOrCallback as BufferEncoding, callback)
+//       setHeaders(event, { 'cache-status': 'MISS' })
+//       originalEnd(chunk, encodingOrCallback, callback)
+//       if (originalRes.statusCode !== 200) return originalRes
+//
+//       const buffer = captureStream.getBuffer()
+//       const meta = {
+//         ...originalRes.getHeaders(),
+//         'content-length': buffer.byteLength
+//       }
+//       cacheStore.set(reqUrl, { buffer, meta })
+//
+//       return originalRes
+//     }
+//   })
+// })
 
 export default defineNitroPlugin((nitroApp) => {
   const config = <Required<ModuleOptions>>(<unknown>useRuntimeConfig().ipx)
-  console.log('ipx cache config', config)
-  const cacheStore = createCache(config.cacheDir, config.maxAge)
+  const cacheManager = new CacheManager(config.cacheDir, config.maxAge)
 
-  nitroApp.hooks.hook('request', async function (event) {
-    if (!event.path.startsWith('/_ipx/')) return
-
-    const reqUrl = (event.path || '').replace(/\/_ipx\/|,|http(s?):\/\//g, '').replace('&', '-')
-    const originalRes = event.node.res
-
-    if (!getHeader(event, 'cache-control')?.includes('ipx-purge')) {
-      /** Load from cache if there is any */
-      const cached = await cacheStore.get(reqUrl)
-      if (cached) {
-        const readable = new Readable()
-
-        readable._read = () => void 0
-        readable.push(cached.buffer), readable.push(null)
-
-        setHeaders(event, { ...(<NonNullable<unknown>>cached.meta), 'cache-status': 'HIT' })
-        originalRes.setHeader = (_key, _val) => originalRes
-        return sendStream(event, readable)
-      }
+  nitroApp.hooks.hook('request', async function (event: H3Event<EventHandlerRequest>) {
+    if (!event.path.startsWith('/_ipx/')) {
+      return
     }
 
-    const passThrough = new PassThrough()
-    const captureStream = new CaptureStream()
-    passThrough.pipe(captureStream)
+    const requestUrl = formatRequestUrl(event.path)
 
-    const originalWrite = originalRes.write.bind(originalRes) as (
-      chunk: any,
-      encoding?: BufferEncoding | ((error: Error | null | undefined) => void),
-      callback?: (error: Error | null | undefined) => void
-    ) => boolean
-    const originalEnd = originalRes.end.bind(originalRes) as (
-      chunk?: any,
-      encoding?: BufferEncoding | ((error: Error | null | undefined) => void),
-      callback?: () => void
-    ) => ServerResponse
-
-    originalRes.write = (
-      chunk: any,
-      encodingOrCallback?: BufferEncoding | ((error: Error | null | undefined) => void),
-      callback?: (error: Error | null | undefined) => void
-    ): boolean => {
-      passThrough.write(chunk, encodingOrCallback as BufferEncoding, callback)
-      return originalWrite(chunk, encodingOrCallback as BufferEncoding, callback)
+    if (shouldCheckCache(event) && (await cacheManager.tryGetFromCache(requestUrl, event))) {
+      return
     }
 
-    originalRes.end = (
-      chunk?: any,
-      encodingOrCallback?: BufferEncoding | ((error: Error | null | undefined) => void),
-      callback?: () => void
-    ): ServerResponse => {
-      if (chunk) passThrough.write(chunk, encodingOrCallback as BufferEncoding, callback)
-      setHeaders(event, { 'cache-status': 'MISS' })
-      originalEnd(chunk, encodingOrCallback, callback)
-      if (originalRes.statusCode !== 200) return originalRes
-
-      const buffer = captureStream.getBuffer()
-      const meta = {
-        ...originalRes.getHeaders(),
-        'content-length': buffer.byteLength
-      }
-      cacheStore.set(reqUrl, { buffer, meta })
-
-      return originalRes
-    }
+    const responseHandler = new ResponseHandler(event, cacheManager, requestUrl)
+    responseHandler.setupResponseOverrides()
   })
 })
+
+function formatRequestUrl(path: string): string {
+  return (path || '').replace(/\/_ipx\/|,|http(s?):\/\//g, '').replace('&', '-')
+}
+
+function shouldCheckCache(event: H3Event<EventHandlerRequest>): boolean {
+  return !getHeader(event, 'cache-control')?.includes('ipx-purge')
+}
