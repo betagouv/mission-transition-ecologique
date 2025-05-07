@@ -36,7 +36,8 @@
       "impulsion-environnement",
       "soutien-hebergement-touristique",
       "hotellerie-independante-bfc",
-      "camping-independant-bfc"
+      "camping-independant-bfc",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       31
@@ -97,7 +98,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "hotellerie-independante-bfc",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       4
@@ -166,7 +168,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "hotellerie-independante-bfc",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       4
@@ -406,7 +409,8 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "cap-transition-ecologique",
-      "bilan-carbone"
+      "bilan-carbone",
+      "evaluation-carbone-lise"
     ],
     "linkedProjects": [
       26,
@@ -612,7 +616,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "hotellerie-independante-bfc",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       4,
@@ -872,6 +877,7 @@
     ],
     "mainTheme": "building",
     "programs": [
+      "booster-eco-energie-tertiaire",
       "fonds-tourisme-durable",
       "renovation-energetique",
       "renovation-petit-tertiaire-prive",
@@ -899,7 +905,8 @@
       "prit-hdf",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       4,
@@ -1527,7 +1534,7 @@
     "shortDescription": "Sensibiliser votre équipe sur les enjeux environnementaux de votre activité et sur les éco-gestes à mettre en place au quotidien.",
     "image": "/images/projet/sensibilisation-equipes.webp",
     "longDescription": "La sensibilisation à l'environnement en entreprise est indispensable pour une mobilisation globale face aux défis climatiques. Cela peut se traduire par des ateliers collaboratifs et formations sur une thématique environnementale, des retours d'apprentissage d'autres entreprises, ou des défis à relever sous la forme d'un jeu en équipe.\n\nLa participation active des équipes est clé pour que chacun se sente connecté aux objectifs durables de l'entreprise et motivé pour faire évoluer ses pratiques.",
-    "moreDescription": "- [**Écoresponsable au bureau**](https://librairie.ademe.fr/ged/6698/guide-ecoresponsable-bureau-202209.pdf), un guide de bonnes pratiques proposé par l'ADEME.\n- [**Sensibilisation aux écogestes,**](https://www.economie.gouv.fr/mission-innovation/les-actions-vertes/sensibilisation-aux-ecogestes) par l'équipe du BercyLab.",
+    "moreDescription": "- [**Écoresponsable au bureau**](https://www.ecologie.gouv.fr/sites/default/files/documents/ecoresponsable_au_bureau-2.pdf), un guide de bonnes pratiques proposé par l'ADEME.\n- [**Sensibilisation aux écogestes,**](https://www.economie.gouv.fr/mission-innovation/les-actions-vertes/sensibilisation-aux-ecogestes) par l'équipe du BercyLab.",
     "themes": [
       "rh"
     ],
@@ -1542,7 +1549,8 @@
       "sud-pret-climat",
       "pret-energie-aura",
       "pass-transition-bzh",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "diag-biodiversite"
     ],
     "linkedProjects": [],
     "priority": "20",
@@ -1823,7 +1831,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "prit-hdf",
-      "camping-independant-bfc"
+      "camping-independant-bfc",
+      "evaluation-carbone-lise"
     ],
     "linkedProjects": [],
     "priority": "10",
@@ -2312,7 +2321,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "prit-hdf",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       4
@@ -2650,7 +2660,8 @@
       "prit-hdf",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "diag-biodiversite"
     ],
     "linkedProjects": [
       33
@@ -2836,8 +2847,8 @@
     "id": 401,
     "slug": "utilitaire-camion-propre",
     "title": "Acquisition d'un petit utilitaire propre",
-    "nameTag": "🚛 petit utilitaire propre",
-    "shortDescription": "Un utilitaire propre est un utilitaire qui rejette peu de CO₂ et ne consomme pas ou peu d'énergie fossile.",
+    "nameTag": "🚐 petit utilitaire propre",
+    "shortDescription": "Un utilitaire propre émet peu de CO₂ et consomme peu ou pas d’énergie fossile.",
     "image": "/images/projet/utilitaire-camion-propre.webp",
     "longDescription": "La livraison et le transport de marchandises ont un fort impact sur l'émission de gaz à effet de serre et la pollution aux particules fines.\n\nRemplacer votre camionnette thermique par un utilitaire électrique ou hybride contribue à améliorer la qualité de l'air en milieux urbain, rural et péri-urbain.\n\nDans un contexte où les réglementations environnementales se durcissent et où les zones à faibles émissions (ZFE) se multiplient, acquérir un petit utilitaire propre vous permet aussi de garantir la continuité de votre activité sans restriction.\n\nDes aides financières ou des prêts à taux préférentiels peuvent vous aider à acquérir les utilitaires nécessaire à votre entreprise.",
     "moreDescription": "- [**Verdir ma flotte**](https://verdirmaflotte.fr/), un outil pour comparer le coût et les émissions des énergies alternatives pour le renouvellement de votre flotte de véhicules.\n- [**Circuler en zone à faible émission mobilité**](https://entreprendre.service-public.fr/vosdroits/F38025), que dit la règlementation ?",
@@ -2860,10 +2871,26 @@
     "highlightPriority": null,
     "sectors": [
       "A",
+      "B",
+      "C",
+      "D",
       "E",
       "F",
       "G",
-      "H"
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
     ]
   },
   {
@@ -3042,10 +3069,10 @@
     "id": 764,
     "slug": "navires-propres",
     "title": "Navires propres",
-    "nameTag": "⛵flotte verte",
-    "shortDescription": "Verdir une flotte fluviale ou maritime permet de réduire la consommation des bateaux en carburant, ainsi que leurs émissions et rejets polluants.",
+    "nameTag": "⛵ navires propres",
+    "shortDescription": "Verdir une flotte maritime réduit consommation de carburant, émissions atmosphériques et rejets polluants des navires.",
     "image": "/images/projet/navires-propres.webp",
-    "longDescription": "Qu'il s'agisse de bateaux de transport de marchandises ou de bateaux de plaisance, la flotte fluviale et maritime est souvent énergivore et à l'origine d'importants rejets polluants. Verdir votre flotte est une solution pour réduire cet impact tout en optimisant vos coûts. Pour ce faire, plusieurs actions concrètes peuvent être mises en place :\n\n- Adopter des navires plus économes en énergie en intégrant des technologies qui optimisent leur vitesse, leur itinéraire et l'entretien des moteurs, afin de réduire la consommation de carburant et d'améliorer la rentabilité des opérations ;\n\n- Opter pour des navires éco-conçus permettant de réduire les émissions de gaz à effet de serre grâce à des moteurs et technologies plus propres, l'utilisation de matériaux durables et légers, des systèmes de gestion de l'énergie plus efficaces, et une meilleure gestion du recyclage des matériaux en fin de vie ;\n\n- Mettre en place une gestion optimisée des déchets et intégrer des énergies renouvelables pour rendre votre flotte plus propre, durable et respectueuse de l'environnement.\n\nUne flotte décarbonée, alimentée par des énergies renouvelables et peu polluante, constitue une excellente alternative au fret routier et au transport aérien.",
+    "longDescription": "**Qu’il s’agisse de navires de transport de marchandises ou de bateaux de plaisance, la flotte maritime reste souvent énergivore et responsable d’importants rejets polluants.**\\\nVerdir votre flotte permet de réduire cet impact tout en optimisant vos coûts. Pour cela, plusieurs actions concrètes peuvent être mises en œuvre :\n\n- Adopter des navires plus économes en énergie, en intégrant des technologies qui optimisent la vitesse, l’itinéraire et l’entretien des moteurs, afin de limiter la consommation de carburant et d’améliorer la rentabilité des opérations ;\n\n- Choisir des navires éco-conçus, réduisant les émissions de gaz à effet de serre grâce à des moteurs et technologies plus propres, des matériaux durables et légers, des systèmes de gestion de l’énergie performants, et une meilleure prise en compte du recyclage en fin de vie ;\n\n- Optimiser la gestion des déchets et intégrer des énergies renouvelables pour rendre votre flotte plus propre, plus durable et plus respectueuse de l’environnement.\n\nUne flotte décarbonée, alimentée par des énergies renouvelables et peu polluante, constitue une alternative crédible et efficace au fret routier et au transport aérien.",
     "moreDescription": "- [**Comment réduire la pollution des transports maritimes ?**](https://www.dispositif-reponses.org/cles-pour-comprendre/boite-a-outils/comment-reduire-la-pollution-des-transports-maritimes-) par la Direction Interrégionale de la Mer Méditerranée.\n- **Comment [réduire les émissions de gaz à effet de serre provenant des navires](https://www.imo.org/fr/MediaCentre/HotTopics/pages/reducing-greenhouse-gas-emissions-from-ships.aspx),** par l'Organisation Maritime Internationale (OMI).\n- [**Bilan thématique Navire**](https://librairie.ademe.fr/mobilite-et-transports/708-bilan-thematique-navire-edition-2020.html), un panorama des projets de navire propre à la recherche de solutions moins polluantes, par l'ADEME.",
     "themes": [
       "mobility"
@@ -3104,6 +3131,266 @@
       "F",
       "G",
       "H"
+    ]
+  },
+  {
+    "id": 929,
+    "slug": "fournisseurs-locaux",
+    "title": "Fournisseurs locaux",
+    "nameTag": "📍 fournisseurs locaux",
+    "shortDescription": "Réduisez les émissions de transport en choisissant des fournisseurs proches de votre entreprise.",
+    "image": "/images/projet/fournisseurs-locaux.webp",
+    "longDescription": "Privilégier des fournisseurs locaux consiste à intégrer la dimension géographique dans vos décisions d’achat. Cela permet de limiter les distances de transport, de réduire les émissions de gaz à effet de serre et de renforcer les relations économiques locales. En complément, le choix de modes de livraison moins polluants (véhicules électriques, cyclologistique, fret ferroviaire…) permet d’améliorer encore l’empreinte carbone de votre activité. Cette démarche peut s’amorcer par les actions suivantes :\n\n- Identifier vos postes d’achats principaux et leurs impacts environnementaux\n\n- Cartographier vos fournisseurs actuels pour évaluer leur localisation et leurs pratiques\n\n- Rechercher des alternatives locales ou plus responsables dans chaque catégorie d’achat\n\n- Intégrer des clauses durables dans les appels d’offres et contrats (localisation, mode de transport, certification RSE, etc.)\n\n- Sensibiliser vos équipes aux enjeux et aux nouveaux critères d’achat\n\n- Évaluer régulièrement la performance de la démarche (indicateurs CO₂, part de fournisseurs locaux, etc.)",
+    "moreDescription": "- **Achats courants et matières premières : adoptez une stratégie plus responsable** (ADEME)\n- [**Choisir un fournisseur local et durable**](https://bigmedia.bpifrance.fr/nos-dossiers/comment-mettre-en-place-une-politique-dachats-responsables-dans-votre-entreprise). (Bpifrance)\n- [**Fiches-outils \"achats éco-responsables**](https://www.economie.gouv.fr/dae/publications-et-textes/fiches-outils-achats-eco-responsables)\" pour vous aider à structurer vos critères de choix de fournisseurs par typologie d'achat. (DAE)",
+    "themes": [
+      "mobility"
+    ],
+    "mainTheme": "mobility",
+    "programs": [],
+    "linkedProjects": [],
+    "priority": "100",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "T",
+      "U"
+    ]
+  },
+  {
+    "id": 962,
+    "slug": "vehicules-intermediaires",
+    "title": "Achat d'un véhicule intermédiaire",
+    "nameTag": "🛺 vehicules intermediaires",
+    "shortDescription": "Les véhicules intermédiaires, légers, économiques et non polluants peuvent remplacer l'automobile.",
+    "image": "/images/projet/vehicule-intermediaire.webp",
+    "longDescription": "Connaissez-vous les véhicules intermédiaires ou Vélis ? Cette famille de véhicules entre le vélo classique et la voiture comprend tous les modes de transport de moins de 600 kg, allant de 25 à 90 km/h. Il peut s'agir, par exemple, d'un vélo cargo, d'un tricycle protégé, un vélo-taxi ou d'une voiturette électrique.\\\nNon polluants, non bruyants, peu encombrants, et dix fois moins coûteux qu'une automobile, les véhicules intermédiaires constituent une excellente alternative en milieux urbains, péri-urbains et ruraux, qu'il s'agisse :\n\n- des déplacements de vos collaborateurs et de leurs familles,\n- des livraisons,\n- de la mise à disposition de véhicules pour vos clients.",
+    "moreDescription": "- [**Les véhicules intermédiaires : un levier pour décarboner la mobilité ?**](https://fresquedelamobilite.org/les-vehicules-intermediaires-leviers-de-decarbonation/), un article de la Fresque de la mobilité.\n- [**Le potentiel des véhicules intermédiaires**](https://www.cerema.fr/system/files/documents/2023/11/8_durlin_vehicules_intermediaires_0.pdf)**,** un rapport du CEREMA.",
+    "themes": [
+      "mobility"
+    ],
+    "mainTheme": "mobility",
+    "programs": [
+      "extreme-defi-mobilite"
+    ],
+    "linkedProjects": [
+      16
+    ],
+    "priority": "195",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
+  },
+  {
+    "id": 995,
+    "slug": "fret-faible-impact",
+    "title": "Fret à faible impact",
+    "nameTag": "🚢 Fret à faible impact",
+    "shortDescription": "Transférer le transport de marchandises vers le rail, le fluvial ou le maritime, moins polluants.",
+    "image": "/images/projet/fret-faible-impact.webp",
+    "longDescription": "Le secteur du transport et de la logistique, majoritairement fondé sur l’usage de poids lourds, est l’un des principaux émetteurs de gaz à effet de serre et de polluants atmosphériques.\\\nFace à l’urgence climatique et aux contraintes croissantes pesant sur la route (Zones à Faibles Émissions, saturation du réseau, hausse des péages…), le secteur doit évoluer.\\\nChoisir des modes de transport plus propres comme le ferroviaire, le fluvial ou le maritime — qui émettent jusqu’à cinq fois moins de CO₂ que la route — constitue une solution fiable, moins exposée aux aléas routiers.\\\nTravailler avec des chargeurs et partenaires engagés dans une démarche bas carbone devient aussi un levier de différenciation et de compétitivité.",
+    "moreDescription": "- [**Comment limiter la pollution du trafic routier ?**](https://librairie.ademe.fr/air/658-comment-limiter-la-pollution-du-trafic-routier-.html#product-presentation), une infographie de l'ADEME.\n- [**Le transport routier de marchandises**](https://www.statistiques.developpement-durable.gouv.fr/transport-routier-de-marchandises), les données statistiques nationales, par le ministère de la transition écologique.",
+    "themes": [
+      "mobility"
+    ],
+    "mainTheme": "mobility",
+    "programs": [
+      "fresque-de-la-mobilite",
+      "plan-de-mobilite"
+    ],
+    "linkedProjects": [
+      16
+    ],
+    "priority": "253",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ]
+  },
+  {
+    "id": 996,
+    "slug": "bateaux-propres",
+    "title": "Bateaux propres",
+    "nameTag": "🚤 bateaux propres",
+    "shortDescription": "Le verdissement des bateaux réduit énergie consommée et rejets polluants dans rivières, fleuves, bassins, canaux.",
+    "image": "/images/projet/bateaux-propres.webp",
+    "longDescription": "Le transport fluvial offre de nombreux atouts sur le plan écologique et constitue une excellente alternative au fret routier et au transport aérien.\\\nÀ condition, bien sûr, que les bateaux de plaisance et de marchandises ne soient pas eux-mêmes énergivores ni à l’origine de rejets polluants importants.\n\nPour verdir votre flotte fluviale, plusieurs leviers peuvent être activés :\n\n- L’électrification totale ou partielle des moteurs, associée à une infrastructure de recharge adaptée ;\n\n- Le recours à des technologies plus propres (BioGNL, BioGNC, hydrogène, biocarburants), avec ou sans modification lourde de la motorisation ;\n\n- L’adoption d’un logiciel de gestion de flotte (meilleur routage, vitesse optimisée...) pour réduire la consommation énergétique ;\n\n- L’amélioration de la conception des bateaux et l’intégration d’énergies renouvelables (matériaux composites, meilleur tirant d’eau, voiles rigides, panneaux solaires...) ;\n\n- La formation à l’éco-navigation et le développement d’une culture de la sobriété dans les pratiques quotidiennes du personnel de bord.",
+    "moreDescription": "- [**Impact Air Climat du transport fluvial**](https://librairie.ademe.fr/mobilite-et-transports/6473-impact-air-climat-transport-fluvial-etude-bibliographique.html), une étude de l'ADEME.\n- [**La feuille de route de la transition écologique**](https://www.vnf.fr/vnf/dossiers-actualitess/fluent-la-feuille-de-route-de-la-transition-expertisee-par-vnf/) par VNF (Voies Navigables de France).",
+    "themes": [
+      "mobility"
+    ],
+    "mainTheme": "mobility",
+    "programs": [
+      "amelioration-qualite-de-l-air",
+      "agir-pdl",
+      "pami"
+    ],
+    "linkedProjects": [
+      995
+    ],
+    "priority": "865",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "F",
+      "H"
+    ]
+  },
+  {
+    "id": 997,
+    "slug": "plan-action-logistique",
+    "title": "Plan d'action logistique",
+    "nameTag": "📦 plan action logistique",
+    "shortDescription": "Optimiser le transport de vos marchandises réduit votre consommation d'énergie et vos émissions de CO2.",
+    "image": "/images/projet/plan-action-logistique.webp",
+    "longDescription": "Avant de mettre en œuvre des actions logistiques, il est essentiel de partir d’un diagnostic. En analysant vos flux, vos modes de transport, et vos indicateurs actuels, vous identifiez précisément les leviers à activer pour gagner en efficacité et réduire votre empreinte carbone.\n\nSur cette base, vous pouvez construire un plan d’action logistique adapté à votre activité, combinant performance économique et transition écologique.\n\nPlusieurs pistes concrètes peuvent être explorées :\n\n- Améliorer le taux de chargement de vos camions pour éviter les trajets à vide (ex. : mutualisation des flux, réduction du vide dans les colis)\n\n- Optimiser vos tournées grâce au zonage ou à des outils de planification intelligente\n\n- Mutualiser les plateformes logistiques avec d’autres acteurs\n\n- Déployer des solutions de transport urbain bas carbone (cyclologistique, véhicules propres…)\n\n- Reporter une partie du transport routier vers le rail, le fluvial ou le maritime\n\n- Intégrer des indicateurs carbone dans vos objectifs de pilotage",
+    "moreDescription": "- [**Commerce en ligne : Impacts environnementaux de la logistique, des transports et des déplacements**](https://librairie.ademe.fr/societe-et-politiques-publiques/6261-commerce-en-ligne-impacts-environnementaux-de-la-logistique-des-transports-et-des-deplacements.html), une étude de l'ADEME.\n- [**La fabrique de la logistique**](https://www.lafabriquedelalogistique.fr/), des projets d'intérêts généraux portés par les acteurs de la logistique.",
+    "themes": [
+      "mobility"
+    ],
+    "mainTheme": "mobility",
+    "programs": [
+      "programme-eve",
+      "aide-tpe-transition-na"
+    ],
+    "linkedProjects": [],
+    "priority": "750",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ]
+  },
+  {
+    "id": 998,
+    "slug": "vehicules-lourds-propres",
+    "title": "Achat d’un véhicule lourd plus propre",
+    "nameTag": "🚍 poids lourds propres",
+    "shortDescription": "Un véhicule lourd est \"propre\" s’il émet peu de CO₂ et consomme peu d’énergie fossile.",
+    "image": "/images/projet/vehicule-lourd-propre.webp",
+    "longDescription": "Poids lourds, autobus... le secteur du transport routier de marchandises et de voyageurs est le principal émetteur de gaz à effet de serre et de pollution de l'air. Les moteurs diesel génèrent des émissions de CO₂, d'oxydes d'azote (NOx) et de particules fines, contribuant au réchauffement climatique et aux problèmes de santé publique.\n\nEn choisissant un véhicule lourd électrique, hybride ou en verdissant votre flotte de poids lourds, vous contribuez à décarboner le secteur du transport et à améliorer significativement la qualité de l'air. Les véhicules \"propres\" offrent aussi des avantages économiques. Bien que l'investissement initial soit plus élevé, les coûts de carburant et d'entretien sont réduits. De plus, des aides financières peuvent soutenir l’acquisition de ces véhicules lourds, tout en vous préparant à répondre aux exigences environnementales de plus en plus strictes.",
+    "moreDescription": "- [**Verdir ma flotte**](https://verdirmaflotte.fr/), un outil pour comparer le coût et les émissions des énergies alternatives pour le renouvellement de votre flotte de véhicules.\n- [**Normes d'émissions de CO₂ pour les véhicules utilitaires lourds**](https://ec.europa.eu/commission/presscorner/detail/fr/ip_23_762): La Commission européenne fournit des informations sur les normes d'émissions pour les véhicules utilitaires lourds, visant à réduire leur empreinte carbone.",
+    "themes": [
+      "mobility"
+    ],
+    "mainTheme": "mobility",
+    "programs": [
+      "vehicule-lourd-energies-propres"
+    ],
+    "linkedProjects": [
+      16
+    ],
+    "priority": "260",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ]
+  },
+  {
+    "id": 1028,
+    "slug": "achats-responsables",
+    "title": "Achats responsables",
+    "nameTag": "📦 achats responsables",
+    "shortDescription": "Intégrer des critères environnementaux, sociaux et éthiques dans les achats de votre entreprise.",
+    "image": "/images/projet/achats-responsables.webp",
+    "longDescription": "Une politique d’achats responsables vise à limiter les impacts négatifs de vos achats sur l’environnement et la société, tout en garantissant la performance de votre entreprise. Cela signifie choisir vos fournisseurs et produits en fonction de critères durables : impact carbone, conditions sociales de fabrication, durabilité des matériaux, etc. Vous pouvez ainsi privilégier des produits locaux, reconditionnés ou issus de l’économie circulaire, mais aussi intégrer des clauses RSE dans vos contrats. Ces pratiques vous permettent de mieux maîtriser vos risques, d’anticiper les nouvelles réglementations comme la directive CSRD, et de renforcer la crédibilité de votre démarche RSE. C’est une approche progressive, accessible à toutes les entreprises, même petites, avec des gains concrets à la clé : coûts optimisés, image renforcée, conformité assurée.",
+    "moreDescription": "- [**Comment mettre en place une politique d’achats responsables dans votre entreprise ?**](https://bigmedia.bpifrance.fr/nos-dossiers/comment-mettre-en-place-une-politique-dachats-responsables-dans-votre-entreprise?) (Bpifrance)\n\n- [**Comment veiller au respect des droits de l’Homme au travail dans les chaînes d’approvisionnement ?**](https://www.economie.gouv.fr/files/files/directions_services/dae/doc/AR_guide_thematique_DH_VF.pdf?) (DAE)\n\n- [**Découvrez l'ISO 20400**](https://www.iso.org/files/live/sites/isoorg/files/store/fr/ISO%2020400_Sustainable_procur.pdf), la norme internationale sur les achats responsables.\n\n- [**Les fiches-outils \"achats éco-responsables**](https://www.economie.gouv.fr/dae/publications-et-textes/fiches-outils-achats-eco-responsables)\" pour vous aider à structurer vos critères de choix de fournisseurs par typologie d'achat. (DAE)\n\n- [**Toolbox achats responsables**](https://www.woeb.swiss/images/dokumente/PDF/FR/Toolbox_B-Outils_et_methodes_pour_evaluer_limpact_FR_13.09.2021.pdf)**,** un guide qui propose des méthodes pour évaluer l'impact des fournisseurs (OFEV)",
+    "themes": [
+      "rh",
+      "eco-design"
+    ],
+    "mainTheme": "rh",
+    "programs": [
+      "diagnostic-rse",
+      "formations-tee"
+    ],
+    "linkedProjects": [
+      929
+    ],
+    "priority": "100",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
     ]
   }
 ]
