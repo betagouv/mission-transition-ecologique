@@ -78,7 +78,7 @@ export class ProgramExport {
         original['Zones Spécifiques (géographie)']
       ),
       eligibilite_sectorielle: this._concatSectorAndNaf(original['Eligibilité Sectorielle'], original['Eligibilité Naf']),
-      eligibilite_effectif: `${original.minEff || 0} - ${original.maxEff || 'Pas de taille maximale'}`,
+      eligibilite_effectif: this._getEligibiliteEffectif(original.minEff, original.maxEff),
       eligibilite_autre: this._concatSpecificAndExistence(original['Eligibilité Spécifique'], original['Eligibilité Existence']),
       cible: this._getCibleFromSectors(original as BaserowSectors)
     }
@@ -87,27 +87,40 @@ export class ProgramExport {
   }
 
   _getStepString(data: string) {
+    if (!data) return ''
+
     const lines = data.split('\n')
-    return lines[0].substring(2)
+    return lines[0]?.substring(2) ?? ''
   }
 
   _generateStepLinks(data: string, slug: string): string | undefined {
+    if (!data) return ''
     const lines = data.split('\n')
     const links = lines
       .slice(1)
       .map((line) => {
         if (line.toLowerCase().includes('#formulaire#')) {
-          return `https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/${slug}`
+          return `[mission transition écologique](https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/${slug})`
         }
-        const match = line.match(/\[(.*?)\]\((https?:\/\/.*?)\)/)
-        if (match) {
-          return match[2]
-        }
-        return null
+        return line.substring(2) ?? ''
       })
       .filter((l): l is string => l !== null)
 
     return links.length > 0 ? links.join(' ; ') : undefined
+  }
+
+  _getEligibiliteEffectif(min?: number, max?: number): string {
+    const hasMin = typeof min === 'number' && !isNaN(min)
+    const hasMax = typeof max === 'number' && !isNaN(max)
+
+    if (!hasMin && !hasMax) {
+      return 'Toutes tailles'
+    }
+
+    const minStr = hasMin ? min.toString() : '0'
+    const maxStr = hasMax ? max.toString() : 'Pas de taille maximale'
+
+    return `${minStr} - ${maxStr}`
   }
 
   _mergeOperatorNames(operators1: Operator[] = [], operators2: Operator[] = []): string {
@@ -119,13 +132,21 @@ export class ProgramExport {
 
   _mergeOperatorSiren(operators1: Operator[] = [], operators2: Operator[] = []): string {
     return [...operators1, ...operators2]
-      .map((op) => op.siren || 'SIREN A CHERCHER ' + op.Nom)
+      .map((op) => {
+        if (op.siren) {
+          return op.siren
+        }
+        if (process.env['ENV'] == 'DEV') {
+          return 'SIREN A CHERCHER ' + op.Nom
+        }
+        return ''
+      })
       .filter(Boolean)
       .join(' ; ')
   }
 
   _getGeographicCoverage(coverage: GeographicCoverage, geographicAreas: GeographicAreas[] = [], specificZones = ''): string {
-    let result = coverage.Name === 'France' ? 'France' : geographicAreas.map((area) => area.Name).join(' ; ')
+    let result = coverage.Name === 'National' ? 'France entière' : geographicAreas.map((area) => area.Name).join(' ; ')
 
     if (specificZones) {
       result += ` ; ${specificZones}`
@@ -146,6 +167,7 @@ export class ProgramExport {
     const selectedSectors = Object.keys(baserowSectors)
       .filter((key) => baserowSectors[key as keyof BaserowSectors])
       .map((key) => SectorKeys[key as keyof typeof SectorKeys])
+      .filter((value) => value !== undefined)
 
     return `'Secteurs Préférentiels de l'aide' : [${selectedSectors.join(', ')}]`
   }

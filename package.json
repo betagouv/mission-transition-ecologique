@@ -22,6 +22,7 @@
     "start": "node apps/nuxt/.output/server/index.mjs --port $PORT",
     "build:etl": "nx run @tee/etl:build-docker",
     "build:start": "npm run build && npm run start",
+    "export:programs": "nx run @tee/data:export-programs",
     "generate:programs": "nx run @tee/data:generate-programs",
     "generate:projects": "nx run @tee/data:generate-projects",
     "generate:iframe-script": "nx run @tee/nuxt:generate-iframe-script",

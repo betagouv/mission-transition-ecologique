@@ -35,6 +35,15 @@
         "parallel": false
       }
     },
+    "export-programs": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/dataGouvExport.ts"
+        ]
+      }
+    },
     "test": {
       "executor": "nx:run-commands",
       "options": {
