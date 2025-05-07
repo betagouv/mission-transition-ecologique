@@ -169,9 +169,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       lg: 1248
     },
     densities: [1],
-    ipx: {
-      maxAge: maxAge
-    }
+    provider: 'ipx'
   },
   runtimeConfig: {
     public: {
