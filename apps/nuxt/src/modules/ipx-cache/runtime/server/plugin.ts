@@ -84,6 +84,10 @@ export default defineNitroPlugin((nitroApp) => {
       return
     }
 
+    if (import.meta.server && import.meta.prerender) {
+      return
+    }
+
     const requestUrl = formatRequestUrl(event.path)
 
     if (shouldCheckCache(event) && (await cacheManager.tryGetFromCache(requestUrl, event))) {
