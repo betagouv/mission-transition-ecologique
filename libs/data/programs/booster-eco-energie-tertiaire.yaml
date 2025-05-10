@@ -108,6 +108,7 @@ publicodes:
       - microentrepreneur = non
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
+      - code NAF niveau 1 . est F
       - code NAF niveau 1 . est G
       - code NAF niveau 1 . est H
       - code NAF niveau 1 . est I
@@ -116,6 +117,7 @@ publicodes:
       - code NAF niveau 1 . est L
       - code NAF niveau 1 . est M
       - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
       - code NAF niveau 1 . est P
       - code NAF niveau 1 . est Q
       - code NAF niveau 1 . est R
