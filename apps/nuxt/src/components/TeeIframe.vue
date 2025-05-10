@@ -45,6 +45,7 @@
 </template>
 
 <script setup lang="ts">
+import { Image } from '@/tools/image'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { RouteName } from '@/types'
@@ -72,7 +73,7 @@ const resolvedImageSrc = computed(() =>
 )
 const resolvedImageAlt = computed(() => props.imageAlt || defaultImageAlt)
 
-const img = useImage()
+const img = Image.getUrl
 
 const imageResizerChild = () => import('@iframe-resizer/child')
 imageResizerChild()

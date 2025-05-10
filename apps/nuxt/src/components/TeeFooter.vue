@@ -17,11 +17,9 @@
             href="/"
             title="Retour à l’accueil du site - Transition écologique des entreprises - République Française"
           >
-            <NuxtImg
+            <img
               class="fr-footer__logo"
-              src="/images/logos/ademe.svg"
-              quality="70"
-              densities="1"
+              :src="img('/images/logos/ademe.svg', { quality: 70, densities: 1 })"
               alt="logo de l'ADEME - Agence de de la Transition Écologique"
             />
           </a>
@@ -66,14 +64,18 @@
                   :href="operator.href"
                   rel="noopener noreferrer"
                 >
-                  <NuxtImg
+                  <img
                     class="fr-footer__logo fr-responsive-img"
-                    :src="operator.img"
-                    quality="70"
-                    densities="1"
+                    :src="
+                      img(operator.img, {
+                        quality: 70,
+                        densities: 1,
+                        loading: 'lazy',
+                        format: operator.format ?? undefined,
+                        width: operator.width ?? undefined
+                      })
+                    "
                     :alt="operator.label"
-                    :format="operator.format ?? undefined"
-                    loading="lazy"
                     :width="operator.width ?? undefined"
                   />
                 </a>
@@ -138,6 +140,7 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeAppFooter > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import { Image } from '@/tools/image'
 import { partnersAll } from '@/tools/operator'
 import Translation from '@/tools/translation'
 import { RouteName } from '@/types/routeType'
@@ -147,6 +150,7 @@ interface Props {
 }
 defineProps<Props>()
 
+const img = Image.getUrl
 const sourceCodeHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/tree/main'
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'
 const licenceName = 'GNU AGPL v.3'
