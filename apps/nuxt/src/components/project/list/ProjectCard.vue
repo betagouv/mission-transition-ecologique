@@ -43,6 +43,7 @@
 </template>
 
 <script setup lang="ts">
+import { Image } from '@/tools/image'
 import Navigation from '@/tools/navigation'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
 import { ProjectType, RouteName } from '@/types'
@@ -62,7 +63,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 const priorityTag: string = 'A FAIRE EN PRIORITÉ'
 
-const img = useImage()
+const img = Image.getUrl
 const navigationStore = useNavigationStore()
 
 const eligibleProgramsTag = computed(() => {

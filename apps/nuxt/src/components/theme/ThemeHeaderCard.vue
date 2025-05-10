@@ -13,6 +13,7 @@
 </template>
 
 <script setup lang="ts">
+import { Image } from '@/tools/image'
 import Navigation from '@/tools/navigation'
 import { Theme } from '@/tools/theme'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
@@ -27,7 +28,7 @@ interface Props {
 const props = defineProps<Props>()
 const navigation = new Navigation()
 const isResultPage = navigation.isByRouteName(RouteName.QuestionnaireResult)
-const img = useImage()
+const img = Image.getUrl
 
 function getRadiusClass() {
   const { radiusCorner, radiusSize } = props

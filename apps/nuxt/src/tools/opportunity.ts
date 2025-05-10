@@ -1,3 +1,4 @@
+import { Image } from '@/tools/image'
 import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType, EstablishmentFront } from '@tee/common'
 import { FieldType, RouteName, ProjectType, FormDataType, ThemeType, ThemeId, ProgramTypeForFront } from '@/types'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
@@ -11,7 +12,7 @@ export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
     const selectedThemeId = useFiltersStore().hasThemeTypeSelected() ? useFiltersStore().getThemeTypeSelected() : TrackStructure.getTheme()
     const selectedTheme = Theme.getById(selectedThemeId as ThemeId)
-    const img = useImage()
+    const img = Image.getUrl
     return {
       theme: {
         required: false,

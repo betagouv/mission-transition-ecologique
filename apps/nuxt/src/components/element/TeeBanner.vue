@@ -3,13 +3,10 @@
     class="fr-container--fluid fr-banner"
     :class="bgClass"
   >
-    <NuxtPicture
+    <img
       v-if="props.bgImage"
-      :src="props.bgImage"
+      :src="img(props.bgImage, { quality: 70, densities: 1, sizes: '576px sm:768px md:992px lg:1248px' })"
       :alt="props.imgAlt"
-      quality="70"
-      sizes="576px sm:768px md:992px lg:1248px"
-      densities="1"
     />
     <div :class="[styleClass]">
       <div class="fr-container">
@@ -23,6 +20,7 @@
 </template>
 
 <script setup lang="ts">
+import { Image } from '@/tools/image'
 import { Color } from '@/types'
 
 export interface TeeBannerProps {
@@ -44,6 +42,8 @@ const props = withDefaults(defineProps<TeeBannerProps>(), {
   imgAlt: '',
   contentAlignment: undefined
 })
+
+const img = Image.getUrl
 
 const bgClass = computed(() => {
   return {

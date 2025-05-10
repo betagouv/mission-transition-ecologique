@@ -17,6 +17,7 @@
 </template>
 
 <script setup lang="ts">
+import { Image } from '@/tools/image'
 import Navigation from '@/tools/navigation'
 import { ProgramAidType, ProgramTypeForFront, ProjectType, RouteName } from '@/types'
 import { consolidateAmounts } from '@/tools/helpers'
@@ -34,7 +35,7 @@ const { program, project } = defineProps<Props>()
 const navigationStore = useNavigationStore()
 const navigation = new Navigation()
 const isCatalog = navigation.isCatalogPrograms()
-const img = useImage()
+const img = Image.getUrl
 
 const getCostInfos = () => {
   let prefix: string = ''

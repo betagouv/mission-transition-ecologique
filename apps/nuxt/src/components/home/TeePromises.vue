@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { Image } from '@/tools/image'
 import { partners, otherPartner } from '@/tools/operator'
+
+const img = Image.getUrl
 </script>
 
 <template>
@@ -17,17 +20,21 @@ import { partners, otherPartner } from '@/tools/operator'
           publiques nationales, régionales et territoriales issues de <b>l’ensemble des partenaires publics.</b>
         </p>
         <div class="fr-grid-row fr-col-justify--center fr-col-content--middle">
-          <NuxtImg
+          <img
             v-for="operator in partners"
             :key="operator.label"
             class="fr-responsive-img fr-m-2v operator-logo"
-            :src="operator.img"
-            quality="70"
-            densities="1"
-            :alt="operator.label"
-            :format="operator.format ?? undefined"
-            loading="lazy"
+            :src="
+              img(operator.img, {
+                format: operator.format ?? undefined,
+                densities: 1,
+                quality: 70,
+                loading: 'lazy',
+                width: operator.width ?? undefined
+              })
+            "
             :width="operator.width ?? undefined"
+            :alt="operator.label"
           />
         </div>
       </div>
@@ -44,15 +51,11 @@ import { partners, otherPartner } from '@/tools/operator'
           <i>Conseillers-Entreprises</i>.
         </p>
         <div class="fr-col-justify--center fr-grid-row fr-col-content--middle">
-          <NuxtImg
+          <img
             :key="otherPartner.label"
             class="fr-responsive-img fr-m-2v operator-logo"
-            :src="otherPartner.img"
-            quality="70"
-            densities="1"
+            :src="img(otherPartner.img, { format: otherPartner.format ?? undefined, densities: 1, quality: 70, loading: 'lazy' })"
             :alt="otherPartner.label"
-            :format="otherPartner.format ?? undefined"
-            loading="lazy"
           />
         </div>
       </div>
