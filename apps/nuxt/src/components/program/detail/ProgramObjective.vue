@@ -9,7 +9,7 @@
       >
         <div class="fr-mb-0 fr-ml-0">
           <div
-            class="fr-tee-description-paragraph-content markdown-spacing-reset"
+            class="fr-tee-description-paragraph-content"
             v-html="markdownToHtml(content.description)"
           />
         </div>
@@ -76,10 +76,6 @@ const markdownToHtml = (text: string | undefined) => {
 
 <style scoped lang="scss">
 @use '@/assets/scss/setting';
-
-.markdown-spacing-reset > * {
-  margin: 0;
-}
 
 .overwrite-button-style {
   box-shadow: inset 0 0 0 1px setting.$purple;
