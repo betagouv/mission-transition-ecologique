@@ -61,12 +61,6 @@
     ]
   },
   {
-    "operator": "CEE",
-    "filterCategories": [
-      "État"
-    ]
-  },
-  {
     "operator": "Centre Technique des Industries Mécaniques",
     "filterCategories": [
       "Opérateurs territoriaux"
