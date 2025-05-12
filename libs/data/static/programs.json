@@ -4202,6 +4202,7 @@
       },
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
+          "code NAF niveau 1 . est F",
           "code NAF niveau 1 . est G",
           "code NAF niveau 1 . est H",
           "code NAF niveau 1 . est I",
@@ -4210,6 +4211,7 @@
           "code NAF niveau 1 . est L",
           "code NAF niveau 1 . est M",
           "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
           "code NAF niveau 1 . est P",
           "code NAF niveau 1 . est Q",
           "code NAF niveau 1 . est R",
@@ -8975,7 +8977,7 @@
         "description": "Formalisez votre demande et validez les modalités de l'accompagnement."
       },
       {
-        "description": "ncez le diagnostic avec l'expert écoconception sélectionné par bpifrance."
+        "description": "Lancez le diagnostic avec l'expert écoconception sélectionné par bpifrance."
       }
     ],
     "conditions d'éligibilité": {
@@ -24938,7 +24940,7 @@
     "opérateur de contact": "Ministère de la Transition Écologique",
     "url": "https://jechangemavoiture.gouv.fr/jcmv/aide-achat.html?content=aides-locales",
     "nature de l'aide": "financement",
-    "montant du financement": "",
+    "montant du financement": "Selon votre localisation",
     "activable en autonomie": "oui",
     "objectifs": [
       {
@@ -25849,6 +25851,196 @@
       }
     },
     "id": "mission-strategie-environnement"
+  },
+  {
+    "titre": "Mobili'Pro",
+    "promesse": "Optimisez la mobilité de vos collaborateurs",
+    "description": "Le programme Mobili'Pro vous aide à optimiser les déplacements en voiture de vos collaborateurs. Bénéficiez d’un accompagnement sur trois ans, comprenant un diagnostic de votre flotte, l’élaboration d’un plan d’action sur-mesure et un suivi chiffré des résultats. Vous serez guidé dans la mise en place de solutions pour réduire l'impact environnemental de vos trajets professionnels tout en améliorant la gestion de votre flotte de véhicules.",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "ADEME",
+    "url": "https://www.mobilipro.fr/",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "Gratuit pour les structures disposant de moins de 100 véhicules.",
+    "durée de l'accompagnement": "3 jours, répartis sur trois ans",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Créez votre compte sur Mobili’Pro. Vous devrez désigner un référent interne chargé du suivi de votre démarche.",
+        "liens": [
+          {
+            "lien": "https://www.mobilipro.fr/signup",
+            "texte": "Création du compte"
+          }
+        ]
+      },
+      {
+        "description": "Choisissez un conseiller Mobili’Pro référencés par le programme. Les conseillers Mobili’Pro sont des consultants expérimentés en gestion de parcs de véhicules et en analyse des déplacements professionnels.",
+        "liens": [
+          {
+            "lien": "https://mobilipro.s3.fr-par.scw.cloud/ressources/MobiliPro_Liste%20des%20conseillers%20Mobili%27Pro_juin2024.pdf",
+            "texte": "Liste des conseillers Mobili'Pro"
+          }
+        ]
+      },
+      {
+        "description": "Signez le formulaire d'engagement en indiquant le conseiller Mobili'Pro retenu.",
+        "liens": [
+          {
+            "lien": "https://mobilipro.s3.fr-par.scw.cloud/ressources/formulaire-dengagement.pdf",
+            "texte": "formulaire à compléter"
+          }
+        ]
+      },
+      {
+        "description": "Après votre inscription, votre conseiller Mobili’Pro vous contacte pour initier une première réunion de présentation."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Mobili’Pro cible les structures qui disposent d’une flotte entre 10 et 100 véhicules.",
+        "Pour les structures disposant de plus de 100 véhicules, l'accès aux outils Mobili’Pro reste gratuit, mais l'accompagnement par un conseiller Mobili’Pro est à la charge de la structure."
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la mobilité durable"
+        ]
+      }
+    },
+    "id": "mobilipro"
   },
   {
     "titre": "MOOC Entreprise et biodiversité",
@@ -27381,6 +27573,171 @@
       }
     },
     "id": "pami"
+  },
+  {
+    "titre": "Plan d'aide au report modal (PARM)",
+    "promesse": "Optimisez votre logistique grâce au transport fluvial",
+    "description": "Le programme PARM soutient les entreprises souhaitant intégrer le transport fluvial dans leurs chaînes logistiques. Ce dispositif encourage le recours au transport fluvial en finançant des études, des phases d’expérimentation ou des équipements de manutention. Ainsi, le programme aide à réduire l'empreinte carbone du transport de marchandises.",
+    "description longue": "Bénéficiez d'aides financières pour vos :​\n- Études de faisabilité en vue de recourir au transport par voie fluviale (études logistiques, de marché, de construction ou de résistance d’un quai, de bathymétrie, de trajectoire). : jusqu'à 50% des coûts, plafonné à 25 000 € par projet.\n- Expérimentations de transport fluvial : prise en charge jusqu'à 100% des surcoûts, plafonnée à 100 000 € pour 10 voyages sur 6 mois.\n- Expérimentation de distribution urbaine fluviale : aide jusqu'à 100% des surcoûts les six premiers mois, puis 50% les six mois suivants, plafonnée à 200 000 € par projet.\n- Équipements de manutention, sur une infrastructure ou une superstructure de chargement/déchargement : subvention jusqu'à 50% des investissements, dans la limite de 500 000 €.",
+    "fin de validité": "31/12/2027",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "Voies Navigables de France",
+    "url": "https://www.vnf.fr/vnf/accueil/logistique-fluviale/adopter-le-transport-fluvial/aides-et-financements-adopter/aide-parm/",
+    "nature de l'aide": "étude",
+    "montant du financement": "Jusqu'à 500 000 €",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Contactez un conseiller des Voies Navigables de France pour lui faire part de votre projet et de votre demande de bénéficier du Plan d’aide au report modal (PARM).",
+        "liens": [
+          {
+            "lien": "mailto:olivier.dehouck@vnf.fr",
+            "texte": "olivier.dehouck@vnf.fr"
+          }
+        ]
+      },
+      {
+        "description": "Complétez votre demande d'aide auprès de votre conseiller."
+      },
+      {
+        "description": "Si vous êtes éligibles, recevez votre subvention."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Les entreprises souhaitant intégrer la voie d’eau dans leurs chaînes logistiques."
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
+        "toutes ces conditions": [
+          "a une categorie legale eligible"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est H"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la mobilité durable"
+        ]
+      }
+    },
+    "id": "parm-vnf"
   },
   {
     "titre": "Pass Transformation Ecologique",
@@ -30799,7 +31156,6 @@
     "opérateur de contact": "EcoCO2",
     "autres opérateurs": [
       "ADEME",
-      "CEE",
       "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
     ],
     "url": "https://www.eve-transport-logistique.fr/",
