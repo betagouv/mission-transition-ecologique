@@ -1,6 +1,6 @@
 <template>
   <div class="fr-mb-0v fr-mb-md-6v fr-mr-4v fr-mr-md-0">
-    <h3>{{ getProgramObjectiveTitle() }}</h3>
+    <h4 class="fr-my-2v">Pour en bénéficier</h4>
     <ol class="fr-order-list">
       <li
         v-for="(content, idx) in program.objectifs"
@@ -33,7 +33,7 @@
               class="fr-mb-1v fr-mr-md-2v overwrite-button-style"
               :on-click="props.scrollToForm"
             >
-              {{ Translation.t('program.CTAButton') }}
+              {{ Translation.t('program.CTAForm') }}
             </DsfrButton>
           </template>
         </div>
@@ -52,7 +52,7 @@ interface Props {
   program: ProgramTypeForFront
   formContainerRef: HTMLElement | null | undefined
   scrollToForm: () => void
-  isCTAToFormVisible: boolean
+  isCtaToFormVisible: boolean
 }
 
 const props = defineProps<Props>()

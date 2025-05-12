@@ -8,7 +8,10 @@ const programFrDict = {
       }
     },
     programProviders: 'Contact',
-    CTAButton: 'Contactez un conseiller',
+    CTAActivation: 'Pour en bénéficier',
+    activationTitle: 'Pour en bénéficier :',
+    CTAForm: 'Contactez un conseiller',
+    CTAQuestion: "J'ai une question",
     programType: "Nature de l'aide",
     programEndValidity: "Date de fin de l'aide",
     programRegisterHighlightText: "Vous souhaitez vérifier automatiquement l'éligibilité de votre entreprise à l'aide de votre SIRET ?",

@@ -26,10 +26,16 @@
           <ProgramResume :form-container-ref="teeProgramFormContainer" />
         </div>
       </div>
+
+      <!-- <ProgramMainCta
+        :activation-ref="teeActivation"
+        :form-container-ref="teeProgramFormContainer"
+      /> -->
       <ProgramTiles />
       <ProgramAccordions />
 
       <!-- PROGRAM FORM -->
+      <ProgramActivation ref="tee-activation" />
       <div
         v-if="hasRegisteredData && programIsEligible && !Program.isTemporaryUnavailable(currentProgram)"
         ref="tee-program-form-container"
