@@ -7,7 +7,8 @@ export class Marked {
       marked.use(this._extension())
     }
 
-    return marked.parse(markdown) as string
+    const parsed = marked.parse(markdown) as string
+    return `<div class="markdown-spacing-reset">${parsed}</div>`
   }
 
   private static _extension = (): MarkedExtension => {
