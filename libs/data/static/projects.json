@@ -285,7 +285,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "hotellerie-independante-bfc",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       4
@@ -353,7 +354,8 @@
       "soutien-hebergement-touristique",
       "agir-pdl",
       "hotellerie-independante-bfc",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       4
@@ -482,7 +484,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "hotellerie-independante-bfc",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       4
@@ -547,7 +550,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "hotellerie-independante-bfc",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       4
@@ -671,7 +675,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
-      "hotellerie-independante-bfc"
+      "hotellerie-independante-bfc",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       4
@@ -732,7 +737,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
-      "agir-pdl"
+      "agir-pdl",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       4
@@ -962,7 +968,8 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "impulsion-environnement",
-      "je-change-ma-voiture"
+      "je-change-ma-voiture",
+      "mobilipro"
     ],
     "linkedProjects": [
       31
@@ -1019,7 +1026,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "impulsion-environnement"
+      "impulsion-environnement",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       16
@@ -1087,7 +1095,8 @@
       "impulsion-environnement",
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
-      "je-change-ma-voiture"
+      "je-change-ma-voiture",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       16
@@ -1550,6 +1559,7 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
+      "mobilipro",
       "diag-biodiversite"
     ],
     "linkedProjects": [],
@@ -1931,7 +1941,7 @@
     "shortDescription": "Adapter la stratégie et les actions de votre entreprise pour faire face aux évolutions du climat.",
     "image": "/images/projet/plan-adaptation-climat.webp",
     "longDescription": "Le plan d’adaptation au dérèglement climatique est un accompagnement qui vous permet d'évaluer la vulnérabilité climatique de votre entreprise face aux conséquences du changement climatique (canicule, sécheresse, inondations…), et de bâtir sa résilience. Ainsi, vous poursuivez votre activité en limitant les effets néfastes, et vous planifiez la réduction des émissions de gaz à effet de serre de votre entreprise.",
-    "moreDescription": "- [**Stratégie d’adaptation au changement climatique**](https://agirpourlatransition.ademe.fr/entreprises/strategie-adaptation#summaryAnchor_2)**,** pourquoi est-il important d’anticiper les impacts du changement climatique ?\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.\n- [**Comment prendre des décisions pour s'adapter au changement climatique ?** ](https://librairie.ademe.fr/ged/6327/entreprise_comment_prendre_des_decisions.pdf)Un recueil de fiches méthodes et études de cas.",
+    "moreDescription": "- [**Adaptation des entreprises au changement climatique : Agir maintenant !**](https://www.cci-paris-idf.fr/sites/default/files/2025-03/CCI_Adaptation-au-changement-climatique_fev-2025.pdf) Une étude des CCI de France.\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.",
     "themes": [
       "environmental"
     ],
@@ -2784,7 +2794,8 @@
       "pret-ile-de-france",
       "impulsion-environnement",
       "prit-hdf",
-      "advenir"
+      "advenir",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       16
@@ -2862,7 +2873,8 @@
       "programme-eve",
       "cheque-transition-bioethanol",
       "deploiement-flottes-hydrogene",
-      "pass-transition-bzh"
+      "pass-transition-bzh",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       16
@@ -3034,7 +3046,10 @@
       "retrofit-electrique",
       "cheque-transition-bioethanol",
       "pass-transition-bzh",
-      "je-change-ma-voiture"
+      "je-change-ma-voiture",
+      "mobilipro",
+      "certificats-economie-energie",
+      "parm-vnf"
     ],
     "linkedProjects": [
       16
@@ -3086,7 +3101,8 @@
       "agir-pdl",
       "pami",
       "aide-tourisme-guadeloupe",
-      "corimer"
+      "corimer",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       16
@@ -3232,8 +3248,8 @@
     ],
     "mainTheme": "mobility",
     "programs": [
-      "fresque-de-la-mobilite",
-      "plan-de-mobilite"
+      "programme-eve",
+      "parm-vnf"
     ],
     "linkedProjects": [
       16
@@ -3267,7 +3283,8 @@
     "programs": [
       "amelioration-qualite-de-l-air",
       "agir-pdl",
-      "pami"
+      "pami",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       995
@@ -3298,7 +3315,9 @@
     "mainTheme": "mobility",
     "programs": [
       "programme-eve",
-      "aide-tpe-transition-na"
+      "aide-tpe-transition-na",
+      "certificats-economie-energie",
+      "parm-vnf"
     ],
     "linkedProjects": [],
     "priority": "750",
@@ -3328,7 +3347,8 @@
     ],
     "mainTheme": "mobility",
     "programs": [
-      "vehicule-lourd-energies-propres"
+      "vehicule-lourd-energies-propres",
+      "certificats-economie-energie"
     ],
     "linkedProjects": [
       16
