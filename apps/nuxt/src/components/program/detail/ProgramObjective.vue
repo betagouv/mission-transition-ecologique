@@ -25,7 +25,7 @@
             >
               {{ link.texte }}
             </TeeButtonExternalLink>
-            <DsfrButton
+            <!-- <DsfrButton
               v-if="link.formulaire && props.isCTAToFormVisible"
               secondary
               icon="fr-icon-mail-line"
@@ -34,7 +34,7 @@
               :on-click="props.scrollToForm"
             >
               {{ Translation.t('program.CTAButton') }}
-            </DsfrButton>
+            </DsfrButton> -->
           </template>
         </div>
       </li>
