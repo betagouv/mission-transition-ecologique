@@ -101,20 +101,38 @@
       }
     },
     {
-      "name": "nom_aide",
-      "description": "Nom de l'aide. Nom d'origine de l'aide par le porteur",
-      "example": "Soutenir et expérimenter des initiatives de transition citoyenne d’intérêt collectif",
-      "type": "string"
+      "name": "nom",
+      "description": "Titre court, nom commercial du dispositif. Si pas de titre commercial clairement identifé, un titre générique du type \"Dispositif { opérateur de contact }\" peut être utilisé",
+      "example": "Accélérateur décarbonation",
+      "type": "string",
+      "constraints": {
+        "required": true
+      }
     },
     {
-      "name": "nom_aide_normalise",
-      "description": "Nom de l'aide normalisé. Le titre doit commencer par un verbe à l’infinitif pour que l'objectif de l'aide soit explicite. Texte limité à 180 caractères",
-      "example": "Soutenir et expérimenter des initiatives de transition citoyenne d’intérêt collectif",
+      "name": "promesse",
+      "description": "La promesse a pour objectif de :\n- résumer le dispositif de manière claire & simple en quelques mots\n- distinguer les offres les unes des autres.\n\nFormulation :\n- 6 à 12 mots.\n- La promesse commence par un verbe à l'impératif\n- rédigée sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse \"vous\" \"votre entreprise\" \n- pas de point à la fin de la promesse (sauf point d'exclamation cf ex.2)",
+      "example": "Définissez une stratégie bas carbone robuste",
       "type": "string",
       "constraints": {
         "required": true,
         "maxLength": 180
       }
+    },
+    {
+      "name": "description_courte",
+      "description": "Description courte de l'objectif du dispositif. Qu'est-ce que l'entreprise gagne à bénéficier de cette aide ?\n\nFormulation :\n- 15 à 40 mots\n- rédigée sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse \"vous\" \"votre entreprise\"\n- La description courte est ponctuée par un point.",
+      "example": "Dispositif de certificats d'économies d'énergie (CEE). Changer l'attitude et le comportement des citoyens vis-à-vis de leur mobilité, plus particulièrement dans les villes de taille moyenne, en incitant à créer des solutions intelligentes en matière de mobilité afin de réduire les consommations énergétiques dues au transport, à travers la mise en œuvre d'un agrégateur territorial à La Rochelle et d'une coopérative locale permettant d'évaluer, vérifier et garantir les réductions de la consommation énergétique associée via les mesures systémiques suivantes pour réussir le passage à l'acte des citoyens.",
+      "type": "string",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "description_longue",
+      "description": "Description longue du dispositif - facultatif. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple :\n- pour définir un terme technique\n- pour détailler une loi à laquelle un dispositif fait référence\n- pour détailler les projets concernés par un financement\n\nFormulation :\n- 15 à 100 mots",
+      "example": "Dispositif de certificats d'économies d'énergie (CEE). Changer l'attitude et le comportement des citoyens vis-à-vis de leur mobilité, plus particulièrement dans les villes de taille moyenne, en incitant à créer des solutions intelligentes en matière de mobilité afin de réduire les consommations énergétiques dues au transport, à travers la mise en œuvre d'un agrégateur territorial à La Rochelle et d'une coopérative locale permettant d'évaluer, vérifier et garantir les réductions de la consommation énergétique associée via les mesures systémiques suivantes pour réussir le passage à l'acte des citoyens.",
+      "type": "string"
     },
     {
       "name": "programme_aides",
@@ -137,15 +155,9 @@
       "example": "385290309",
       "type": "string",
       "constraints": {
-        "required": true,
+        "required": false,
         "pattern": "^(?:[^,]{9},)*[^,]{9}$"
       }
-    },
-    {
-      "name": "instructeurs_aide",
-      "description": "Instructeurs de l'aide. S'il y a plusieurs instructeurs, mettre une virgule sans espace entre les différents instructeurs.",
-      "example": "Conseil départemental de la Nièvre,ADEME",
-      "type": "string"
     },
     {
       "name": "beneficiaires_aide",
@@ -159,58 +171,26 @@
     },
     {
       "name": "types_aides",
-      "description": "Liste des types d'aides possibles. S'il y a plusieurs types d'aides, mettre une virgule sans espace entre les différents types d'aides. \"Subvention\", \"Prêt\", \"Avance récupérable\", \"Autre\". Si aide en ingénierie : \"Technique\", \"Financière\", \"Administrative\"",
+      "description": "Liste des types d'aides possibles. Par exemple: Si aide financière : \"Subvention\", \"Prêt\", \"Avance récupérable\". Si aide en ingénierie : \"Technique\", \"Financière\", \"Administrative\" ...",
       "example": "Subvention,Autre",
       "type": "string",
       "constraints": {
-        "required": true,
-        "pattern": "(?:(?:^|,)(Subvention|Prêt|Avance récupérable|Autre|Technique|Financière|Administrative))+$"
+        "required": true
       }
     },
     {
-      "name": "taux_subvention_minimum",
-      "description": "Taux de subvention minimum (en pourcentage, nombre entier).",
-      "example": "30",
-      "type": "number",
+      "name": "montant_aide_ou_cout",
+      "description": "Correspond au montant de financement, de prêt auquel l'entreprise peut prétendre pour financer son projet ou son étude; au coût restant à charge poru bénéficier d'un accompagnement ou au montant d'un avanftage fisal. 12 mots maximum.",
+      "example": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 € HT   OU   4 000 € HT après subvention de 60%  OU    30% des dépenses, dans la limite de 25 000 €",
+      "type": "string",
       "constraints": {
-        "minimum": 0,
-        "maximum": 100
+        "required": true
       }
     },
     {
-      "name": "taux_subvention_maximum",
-      "description": "Taux de subvention maximum (en pourcentage, nombre entier).",
-      "example": "70",
-      "type": "number",
-      "constraints": {
-        "minimum": 0,
-        "maximum": 100
-      }
-    },
-    {
-      "name": "taux_subvention_commentaire",
-      "description": "Commentaire sur les taux de subventions.",
-      "example": "Le taux minimum est soumis à condition.",
-      "type": "string"
-    },
-    {
-      "name": "aap_ami",
-      "description": "S'agit-il d'un appel à projets (AAP) ou d'un appel à manifestation d'intérêt (AMI) ? Oui ou Non",
-      "example": "Oui",
-      "type": "boolean",
-      "trueValues": [
-        "Oui",
-        "true"
-      ],
-      "falseValues": [
-        "Non",
-        "false"
-      ]
-    },
-    {
-      "name": "description",
-      "description": "Description complète de l'aide et de ses objectifs.",
-      "example": "Dispositif de certificats d'économies d'énergie (CEE). Changer l'attitude et le comportement des citoyens vis-à-vis de leur mobilité, plus particulièrement dans les villes de taille moyenne, en incitant à créer des solutions intelligentes en matière de mobilité afin de réduire les consommations énergétiques dues au transport, à travers la mise en œuvre d'un agrégateur territorial à La Rochelle et d'une coopérative locale permettant d'évaluer, vérifier et garantir les réductions de la consommation énergétique associée via les mesures systémiques suivantes pour réussir le passage à l'acte des citoyens.",
+      "name": "duree_aide",
+      "description": "Précisez la durée totale dans laquelle s’inscrit cette prestation. 12 mots maximum",
+      "example": "12 jours de prestation répartis sur 6 à 8 mois   OU   De 1 à 5 jours selon la taille de l'entreprise",
       "type": "string",
       "constraints": {
         "required": true
@@ -232,29 +212,8 @@
       }
     },
     {
-      "name": "recurrence_aide",
-      "description": "Liste des récurrences de l'aide. Trois options : \"Permanente\" = sans calendrier de candidature, \"Ponctuelle\" = lancée une seule fois, \"Récurrente\" = ayant vocation à être relancée plusieurs fois. Choix unique.",
-      "example": "Ponctuelle",
-      "type": "string",
-      "constraints": {
-        "required": true,
-        "enum": [
-          "Permanente",
-          "Ponctuelle",
-          "Récurrente"
-        ]
-      }
-    },
-    {
       "name": "date_ouverture",
       "description": "Date d'ouverture de l'aide. Format YYYY-MM-DD (Année-Mois-Jour)",
-      "example": "2022-03-03",
-      "type": "date",
-      "format": "%Y-%m-%d"
-    },
-    {
-      "name": "date_pre_depot",
-      "description": "Date de pré-dépôt de l'aide. Format YYYY-MM-DD (Année-Mois-Jour)",
       "example": "2022-03-03",
       "type": "date",
       "format": "%Y-%m-%d"
@@ -267,62 +226,155 @@
       "format": "%Y-%m-%d"
     },
     {
-      "name": "condition_eligibilite",
-      "description": "Conditions d'éligibilité.",
-      "example": "Réservé aux communes de moins de 2000 habitants.",
-      "type": "string"
-    },
-    {
-      "name": "etat_avancement_projet",
-      "description": "État d'avancement du projet pour bénéficier du dispositif. Trois options : \"Réflexion - conception\", \"Mise en oeuvre - réalisation\", \"Usage - valorisation\". S'il y a plusieurs états d'avancement, mettre une virgule sans espace entre les différents types d'états d'avancement.",
-      "example": "Mise en oeuvre - réalisation,Usage - valorisation",
-      "type": "string",
-      "constraints": {
-        "required": false,
-        "pattern": "(?:(?:^|,)(Réflexion - conception|Mise en oeuvre - réalisation|Usage - valorisation))+$"
-      }
-    },
-    {
-      "name": "type_depense",
-      "description": "Liste des types de dépenses. Deux options : \"Fonctionnement\", \"Investissement\". S'il y a plusieurs types de dépenses, mettre une virgule sans espace entre les différents types de dépense.",
-      "example": "Fonctionnement,Investissement",
-      "type": "string",
-      "constraints": {
-        "required": false,
-        "pattern": "(?:(?:^|,)(Fonctionnement|Investissement))+$"
-      }
-    },
-    {
-      "name": "zone_geographique",
-      "description": "Zone géographique couverte par l'aide.",
-      "example": "Tarn",
-      "type": "string",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "url_descriptif",
-      "description": "Lien vers le descriptif complet.",
+      "name": "url_source",
+      "description": "Lien permettant d'obtenir des informations sur le dispositif.",
       "example": "https://aides-territoires.beta.gouv.fr/aides/7ee8-creer-un-agregateur-territorial-a-la-rochelle",
       "type": "string",
       "format": "uri"
     },
     {
-      "name": "url_demarche",
-      "description": "Lien vers la démarche en ligne.",
-      "example": "https://aides-territoires.beta.gouv.fr/aides/7ee8-creer-un-agregateur-territorial-a-la-rochelle",
-      "type": "string",
-      "format": "uri"
-    },
-    {
-      "name": "contact",
-      "description": "Contact(s) pour candidater.",
+      "name": "contact_question",
+      "description": "Contact(s) pour poser des questions sur le dispositif.",
       "example": "Ecrire un email à aides@programme.gouv.fr",
       "type": "string",
       "constraints": {
         "required": true
       }
+    },
+    {
+      "name": "activation_etape_1",
+      "description": "Première étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
+      "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
+      "type": "string",
+      "constraints": {
+        "required": true
+      }
+    },
+    {
+      "name": "activation_etape_1_liens",
+      "description": "Liens au format Markdown [description](lien) séparé par des virgules",
+      "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+      "type": "string"
+    },
+    {
+      "name": "activation_etape_2",
+      "description": "Première étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
+      "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
+      "type": "string"
+    },
+    {
+      "name": "activation_etape_2_liens",
+      "description": "Liens au format Markdown [description](lien) séparé par des virgules",
+      "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+      "type": "string"
+    },
+    {
+      "name": "activation_etape_3",
+      "description": "Première étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
+      "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
+      "type": "string"
+    },
+    {
+      "name": "activation_etape_3_liens",
+      "description": "Liens au format Markdown [description](lien) séparé par des virgules",
+      "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+      "type": "string"
+    },
+    {
+      "name": "activation_etape_4",
+      "description": "Première étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
+      "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
+      "type": "string"
+    },
+    {
+      "name": "activation_etape_4_liens",
+      "description": "Liens au format Markdown [description](lien) séparé par des virgules",
+      "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+      "type": "string"
+    },
+    {
+      "name": "activation_etape_5",
+      "description": "Première étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
+      "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
+      "type": "string"
+    },
+    {
+      "name": "activation_etape_5_liens",
+      "description": "Liens au format Markdown [description](lien) séparé par des virgules",
+      "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+      "type": "string"
+    },
+    {
+      "name": "activation_etape_6",
+      "description": "Première étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
+      "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
+      "type": "string"
+    },
+    {
+      "name": "activation_etape_6_liens",
+      "description": "Liens au format Markdown [description](lien) séparé par des virgules",
+      "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+      "type": "string"
+    },
+    {
+      "name": "eligibilite_geographique",
+      "description": "Couverture géographique du dispositif. Champs à écrire en utilisant le formalisme du Code Officiel Géographique du COG : https://www.insee.fr/fr/information/5230987. Séparer chaque code COG par des ;",
+      "example": "PAYS-99100 pour la France entière    OU    REG-84;DEP-05 pour la région Auvergne-Rhône-Alpes et le département des Hautes-Alpes",
+      "type": "string"
+    },
+    {
+      "name": "eligibilite_sectorielle",
+      "description": "Couverture sectorielle du dispositif. Identifiés via les codes APE. Peut être n'importe niveau de code APE (section, division, groupe etc.). Séparé par ;",
+      "example": "A;55.20Z",
+      "type": "string"
+    },
+    {
+      "name": "eligibilite_sectorielle_exclusions",
+      "description": "Identifiés via leurs codes APE. Peut être n'importe quel niveau de code APE (section, division, groupe etc.). Cette propriété a précédence sur les \"secteurs spécifiques\" s'il y a recouvrement. Par exemple, si `\"secteurs spécifiques\" = [\"A\"]` et `\"secteurs exclus\" = [\"02\"]`, alors les secteurs éligibles s'entendent comme \"Agriculture, sylviculture et pêche\" hors \"Division 02 : Sylviculture et exploitation forestière\".",
+      "example": "02;09.10Z",
+      "type": "string"
+    },
+    {
+      "name": "eligibilite_effectif_min",
+      "description": "Nombre minimum de salarié pour bénéficier de l'aide. Laisser vide si non applicable. ",
+      "example": "50",
+      "type": "number"
+    },
+    {
+      "name": "eligibilite_effectif_max",
+      "description": "Nombre maximum de salarié pour bénéficier de l'aide. Laisser vide si non applicable",
+      "example": "499",
+      "type": "number"
+    },
+    {
+      "name": "eligibilite_existence_min",
+      "description": "Nombre minimum d'année(s) d'existence de l'entreprise pour bénéficier de l'aide. Laisser vide si non applicable. ",
+      "example": "2",
+      "type": "number"
+    },
+    {
+      "name": "eligibilite_existence_max",
+      "description": "Nombre maximum d'année(s) d'existence de l'entreprise pour bénéficier de l'aide. Laisser vide si non applicable",
+      "example": "7",
+      "type": "number"
+    },
+    {
+      "name": "eligibilite_statuts_specifiques",
+      "description": "Liste des statuts d'entreprise spécifiquement visés. A utiliser si un tel statut est nécéssaire pour obtenir l'aide. Peut contenir des statuts juridiques (ex: SARL, EI), fiscaux (micro-entreprise), ou des qualifications (artisan).",
+      "example": "artisan;SARL",
+      "type": "string"
+    },
+    {
+      "name": "eligibilite_statuts_exclus",
+      "description": "Liste des statuts ou qualifications exclus du dispositif.",
+      "example": "auto-entrepreneur;EI",
+      "type": "string"
+    },
+    {
+      "name": "eligibilite_autre",
+      "description": "Description en langage naturel de toutes les conditions d'égibilité ne trouvant pas leur place dans les champs automatisés précédents.",
+      "example": "Limité aux entreprise ayant réalisées un chiffre d'affaire < 10M€.",
+      "type": "string"
     },
     {
       "name": "date_mise_a_jour",
