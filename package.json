@@ -18,7 +18,7 @@
     "dev": "nx run-many -t serve",
     "dev:start": "PORT=4242 npm run start",
     "dev:build:start": "npm run build && npm run dev:start",
-    "build": "export NODE_OPTIONS=--max-old-space-size=6144 && nx run-many -t build",
+    "build": "export NODE_OPTIONS=--max-old-space-size=8192 && nx run-many -t build",
     "start": "node apps/nuxt/.output/server/index.mjs --port $PORT",
     "build:etl": "nx run @tee/etl:build-docker",
     "build:start": "npm run build && npm run start",
@@ -41,8 +41,8 @@
     "cleanup": "nx run @tee/nuxt:cleanup"
   },
   "engines": {
-    "node": "20.x",
-    "npm": ">=10.0 <11"
+    "node": "22.x",
+    "npm": ">=11.0 <12"
   },
   "dependencies": {
     "@getbrevo/brevo": "^2.2.0",
