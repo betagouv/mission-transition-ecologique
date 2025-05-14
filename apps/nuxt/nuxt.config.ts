@@ -33,7 +33,6 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       }
     }
   },
-  ssr: false,
   compatibilityDate: '2024-10-09',
   workspaceDir: '../../',
   srcDir: 'src',
