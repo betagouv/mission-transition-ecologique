@@ -81,11 +81,11 @@ export const frDict = {
     searchTooShort: '3 caractères minimums.',
     structureSize: {
       EI: 'micro-entreprise',
-      MICRO: 'TPE (0-9 salariés)',
-      TPE: 'TPE (10-19 salariés)',
-      PE: 'PME (20-49 salariés)',
-      ME: 'PME (50-249 salariés)',
-      ETI: 'ETI (250-499 salariés)',
+      MICRO: 'TPE',
+      TPE: 'PME',
+      PE: 'PME',
+      ME: 'PME',
+      ETI: 'ETI',
       GE: 'grande entreprise'
     }
   },
