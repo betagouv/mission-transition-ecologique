@@ -26,6 +26,27 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     }
   },
   routeRules: {
+    '/_nuxt/**': {
+      headers: {
+        'cache-control': `public, max-age=${maxAge}, s-maxage=${maxAge}`
+      }
+    },
+    '/images/**': {
+      headers: {
+        'cache-control': `public, max-age=${maxAge}, s-maxage=${maxAge}`
+      }
+    },
+    '/': { prerender: true },
+    '/aides-entreprise': { prerender: hasPrerenderOrSwr },
+    '/aides-entreprise/**': { swr: hasPrerenderOrSwr },
+    '/projets-entreprise': { prerender: hasPrerenderOrSwr },
+    '/projets-entreprise/**': { swr: hasPrerenderOrSwr },
+    '/accessibilite': { prerender: true },
+    // '/mentions-legales': { prerender: true },
+    // '/donnees-personnelles': { prerender: true },
+    '/stats': { swr: 86400 }, // cached for 1 day (86400 seconds)
+    '/budget': { prerender: true },
+    '/ajouter-une-aide-entreprises': { prerender: true },
     '/iframe/**': {
       swr: true,
       security: {
@@ -97,8 +118,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   },
   experimental: {
     renderJsonPayloads: false,
-    inlineRouteRules: true,
-    respectNoSSRHeader: false
+    inlineRouteRules: true
     // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 
