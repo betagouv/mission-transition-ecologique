@@ -47,11 +47,11 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const priorityProjects = computed(() => ProjectPriority.getPriorityProjects(props.projectList))
+const priorityProjects = computed(() => ProjectPriority.get(props.projectList))
 
-const isPriorityProject = (project: ProjectType) => ProjectPriority.isPriorityProject(project, priorityProjects.value)
+const isPriorityProject = (project: ProjectType) => ProjectPriority.is(project, priorityProjects.value)
 
-const getPriorityOrder = (project: ProjectType) => ProjectPriority.getPriorityOrder(project, priorityProjects.value)
+const getPriorityOrder = (project: ProjectType) => ProjectPriority.getIndex(project, priorityProjects.value)
 
-const isUniquePriority = computed(() => ProjectPriority.isUniquePriority(priorityProjects.value))
+const isUniquePriority = computed(() => ProjectPriority.isUnique(priorityProjects.value))
 </script>

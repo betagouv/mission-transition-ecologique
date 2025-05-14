@@ -119,11 +119,11 @@ const resume = computed<string>(() => {
   })
 })
 
-const priorityProjects = computed(() => ProjectPriority.getPriorityProjects(props.sortedProjects))
+const priorityProjects = computed(() => ProjectPriority.get(props.sortedProjects))
 
-const hasPriorityProjects = computed(() => ProjectPriority.hasPriorityProjects(priorityProjects.value))
+const hasPriorityProjects = computed(() => ProjectPriority.has(priorityProjects.value))
 
-const isUniquePriority = computed(() => ProjectPriority.isUniquePriority(priorityProjects.value))
+const isUniquePriority = computed(() => ProjectPriority.isUnique(priorityProjects.value))
 
 const nonPriorityProjects = computed(() => ProjectPriority.getNonPriorityProjects(props.sortedProjects, priorityProjects.value))
 
@@ -139,7 +139,7 @@ const hideMainProjectListComponent = computed(() => {
   return !hasThemeSelected.value
 })
 
-const isPriorityProject = (project: ProjectType) => ProjectPriority.isPriorityProject(project, priorityProjects.value)
+const isPriorityProject = (project: ProjectType) => ProjectPriority.is(project, priorityProjects.value)
 
-const getPriorityOrder = (project: ProjectType) => ProjectPriority.getPriorityOrder(project, priorityProjects.value)
+const getPriorityOrder = (project: ProjectType) => ProjectPriority.getIndex(project, priorityProjects.value)
 </script>

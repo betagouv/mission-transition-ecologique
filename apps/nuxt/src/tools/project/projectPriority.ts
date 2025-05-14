@@ -3,7 +3,7 @@ import Navigation from '@/tools/navigation'
 import { useFiltersStore } from '@/stores/filters'
 
 export default class ProjectPriority {
-  static getPriorityProjects(projects: ProjectType[] = []): ProjectType[] | undefined {
+  static get(projects: ProjectType[] = []): ProjectType[] | undefined {
     const filtersStore = useFiltersStore()
 
     const hasThemeSelected = filtersStore.hasThemeTypeSelected()
@@ -18,22 +18,22 @@ export default class ProjectPriority {
     return projects.slice(0, projectQty)
   }
 
-  static isPriorityProject(project: ProjectType, priorityProjects: ProjectType[] = []): boolean {
+  static is(project: ProjectType, priorityProjects: ProjectType[] = []): boolean {
     return priorityProjects.includes(project)
   }
 
-  static getPriorityOrder(project: ProjectType, priorityProjects: ProjectType[] = []): number | undefined {
-    if (!ProjectPriority.isPriorityProject(project, priorityProjects)) {
+  static getIndex(project: ProjectType, priorityProjects: ProjectType[] = []): number | undefined {
+    if (!ProjectPriority.is(project, priorityProjects)) {
       return undefined
     }
     return priorityProjects.indexOf(project) + 1
   }
 
-  static isUniquePriority(priorityProjects: ProjectType[] = []): boolean {
+  static isUnique(priorityProjects: ProjectType[] = []): boolean {
     return priorityProjects.length === 1
   }
 
-  static hasPriorityProjects(projects: ProjectType[] = []): boolean {
+  static has(projects: ProjectType[] = []): boolean {
     return projects.length > 0
   }
 
