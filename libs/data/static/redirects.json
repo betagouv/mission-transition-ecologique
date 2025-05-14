@@ -71,7 +71,14 @@
     "667": "materiaux-de-reemploi",
     "731": "transition-mobilites",
     "764": "navires-propres",
-    "863": "cyclologistique"
+    "863": "cyclologistique",
+    "929": "fournisseurs-locaux",
+    "962": "vehicules-intermediaires",
+    "995": "fret-faible-impact",
+    "996": "bateaux-propres",
+    "997": "plan-action-logistique",
+    "998": "vehicules-lourds-propres",
+    "1028": "achats-responsables"
   },
   "program_rowid_to_url_mapping": {
     "1": "accelerateur-decarbonation",
@@ -266,7 +273,14 @@
     "859": "advenir",
     "863": "cyclologistique",
     "892": "formation-artisan-developpement-durable",
+    "958": "credit-impot-recherche",
     "991": "credit-impot-innovation",
-    "1091": "je-change-ma-voiture"
+    "1090": "corimer",
+    "1091": "je-change-ma-voiture",
+    "1092": "mobilipro",
+    "1123": "evaluation-carbone-lise",
+    "1124": "diag-biodiversite",
+    "1156": "certificats-economie-energie",
+    "1189": "parm-vnf"
   }
 }

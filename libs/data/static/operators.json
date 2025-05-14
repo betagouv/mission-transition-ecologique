@@ -61,12 +61,6 @@
     ]
   },
   {
-    "operator": "CEE",
-    "filterCategories": [
-      "État"
-    ]
-  },
-  {
     "operator": "Centre Technique des Industries Mécaniques",
     "filterCategories": [
       "Opérateurs territoriaux"
@@ -179,7 +173,7 @@
     ]
   },
   {
-    "operator": "Région Haut-de-France",
+    "operator": "Région Hauts-de-France",
     "filterCategories": [
       "Régions"
     ]

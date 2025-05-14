@@ -1,7 +1,7 @@
 <template>
   <img
     class="fr-responsive-img"
-    :src="`/${currentProgram?.illustration}`"
+    :src="img(`/${currentProgram?.illustration}`, { quality: 70, loading: 'lazy' })"
     :alt="`image / ${currentProgram?.titre}`"
   />
 
@@ -13,5 +13,9 @@
   </ul>
 </template>
 <script setup lang="ts">
+import { Image } from '@/tools/image'
+
 const { currentProgram } = storeToRefs(useProgramStore())
+
+const img = Image.getUrl
 </script>

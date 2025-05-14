@@ -4,7 +4,7 @@
     horizontal
     title="Thématique"
     :description="Theme.getTitleById(theme as ThemeId)"
-    :img-src="Theme.getImageById(theme as ThemeId)"
+    :img-src="img(Theme.getImageById(theme as ThemeId))"
     :class="classes"
     class="fr-container-md fr-mb-4v"
     size="sm"
@@ -13,6 +13,7 @@
 </template>
 
 <script setup lang="ts">
+import { Image } from '@/tools/image'
 import Navigation from '@/tools/navigation'
 import { Theme } from '@/tools/theme'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
@@ -27,6 +28,7 @@ interface Props {
 const props = defineProps<Props>()
 const navigation = new Navigation()
 const isResultPage = navigation.isByRouteName(RouteName.QuestionnaireResult)
+const img = Image.getUrl
 
 function getRadiusClass() {
   const { radiusCorner, radiusSize } = props

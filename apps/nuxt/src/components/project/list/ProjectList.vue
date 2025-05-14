@@ -81,7 +81,7 @@
           <div
             v-for="project in sortedProjects"
             :key="project.id"
-            class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-lg-4 no-outline"
+            class="fr-col-12 fr-col-sm-6 fr-col-md-6 fr-col-lg-4"
           >
             <ProjectCard
               :project="project"

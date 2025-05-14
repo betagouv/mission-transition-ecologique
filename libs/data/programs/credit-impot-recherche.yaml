@@ -1,0 +1,85 @@
+titre: Crédit d'Impôt Recherche (CIR)
+promesse: Financez vos projets de Recherche et Développement avec le CIR
+description: >-
+  Le Crédit d'Impôt Recherche (CIR) permet aux entreprises de bénéficier d'un
+  avantage financier sous forme de réduction d'impôt pour les dépenses liées aux
+  activités de R&D. Il est destiné à encourager les PME à innover, créer de
+  nouveaux produits ou améliorer vos procédés tout en allégeant vos charges. Le
+  CIR couvre jusqu’à 30 % de vos dépenses R&D en salaires, matériel, prestations
+  externes, brevets, etc.
+description longue: >-
+  Sont éligibles au CIR les activités de recherche fondamentale, appliquée ou de
+  développement expérimental, dès lors qu’elles apportent une réelle innovation
+  scientifique ou technique.
+
+
+  Les dépenses pouvant bénéficier du CIR concernent :
+
+  - Amortissement de biens ou bâtiments dédiés à la R&D, 
+
+  - Dépenses de personnel,
+
+  - Salaires et charges sociales,
+
+  - Frais de dépôt et défense de dessins et modèles, 
+
+  - Prestations de bureaux d'études agréés ou organismes externes,
+
+  - Autres dépenses de fonctionnement.
+illustration: images/TEE_eolienne.png
+opérateur de contact: DDFIP
+url: https://entreprendre.service-public.fr/vosdroits/F23533
+nature de l'aide: avantage fiscal
+montant de l'avantage fiscal: Crédit d'impôt jusqu'à 30% des dépenses de R&D éligibles
+activable en autonomie: oui
+objectifs:
+  - description: "Déclarez vos dépenses sur le formulaire \"crédits d'impôts pour les dépenses de recherche\" n° 2069-A-SD\r"
+    liens:
+      - lien: https://entreprendre.service-public.fr/vosdroits/R14269
+        texte: Remplir le formulaire Cerfa
+  - description: >-
+      Si vous êtes soumis à l'impôt sur le revenu, joignez ce formulaire Cerfa à
+      votre déclaration de résultats.
+    liens:
+      - lien: >-
+          https://cfspro-idp.impots.gouv.fr/oauth2/authorize?response_type=code&redirect_uri=https%3A%2F%2Fcfspro.impots.gouv.fr%2F%3Fopenidconnectcallback%3D1&nonce=1744116792_18530&client_id=id_cfspro_prod&display=&state=1744116792_61200&scope=openid%20profile%20email%20info
+        texte: impôt.gouv.fr
+  - description: >-
+      Bénéficiez de la déduction de votre crédit d'impôt recherche sur le
+      montant de l'impôt dont vous êtes redevable. La déduction se fait au
+      moment où vous payez le solde de l'impôt au titre de l'année au cours de
+      laquelle les dépenses ont été effectuées.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Secteur industriel, commercial, agricole ou artisanal
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a une categorie legale eligible
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est G
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est l'écoconception

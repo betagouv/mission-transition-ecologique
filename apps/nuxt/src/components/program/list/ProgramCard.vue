@@ -1,11 +1,11 @@
 <template>
   <DsfrCard
-    class="fr-card--program-detail"
+    class="fr-card--program"
     :title="program.titre"
     :end-detail="getCostInfos()"
     end-detail-icon="fr-icon-money-euro-circle-line fr-text--blue"
     :description="program.promesse"
-    :img-src="`/${program.illustration}`"
+    :img-src="img(`/${program.illustration}`, { height: 320, quality: 70, loading: 'lazy' })"
     :alt-img="`image / ${program.titre}`"
     :horizontal="true"
     :no-arrow="true"
@@ -17,6 +17,7 @@
 </template>
 
 <script setup lang="ts">
+import { Image } from '@/tools/image'
 import Navigation from '@/tools/navigation'
 import { ProgramAidType, ProgramTypeForFront, ProjectType, RouteName } from '@/types'
 import { consolidateAmounts } from '@/tools/helpers'
@@ -30,6 +31,11 @@ interface Props {
   project?: ProjectType
 }
 const { program, project } = defineProps<Props>()
+
+const navigationStore = useNavigationStore()
+const navigation = new Navigation()
+const isCatalog = navigation.isCatalogPrograms()
+const img = Image.getUrl
 
 const getCostInfos = () => {
   let prefix: string = ''
@@ -69,10 +75,6 @@ const getCostInfos = () => {
 
   return `${prefix} : ${text}`
 }
-
-const navigationStore = useNavigationStore()
-const navigation = new Navigation()
-const isCatalog = navigation.isCatalogPrograms()
 
 const getRouteName = () => {
   if (isCatalog) {

@@ -19,7 +19,7 @@
           >
             <img
               class="fr-footer__logo"
-              src="/images/logos/ademe.svg"
+              :src="img('/images/logos/ademe.svg', { quality: 70, densities: 1 })"
               alt="logo de l'ADEME - Agence de de la Transition Écologique"
             />
           </a>
@@ -66,7 +66,15 @@
                 >
                   <img
                     class="fr-footer__logo fr-responsive-img"
-                    :src="operator.img"
+                    :src="
+                      img(operator.img, {
+                        quality: 70,
+                        densities: 1,
+                        loading: 'lazy',
+                        format: operator.format ?? undefined,
+                        width: operator.width ?? undefined
+                      })
+                    "
                     :alt="operator.label"
                     :width="operator.width ?? undefined"
                   />
@@ -132,6 +140,8 @@
 // CONSOLE LOG TEMPLATE
 // console.log(`TeeAppFooter > FUNCTION_NAME > MSG_OR_VALUE :`)
 
+import { Image } from '@/tools/image'
+import { partnersAll } from '@/tools/operator'
 import Translation from '@/tools/translation'
 import { RouteName } from '@/types/routeType'
 
@@ -140,6 +150,7 @@ interface Props {
 }
 defineProps<Props>()
 
+const img = Image.getUrl
 const sourceCodeHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/tree/main'
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'
 const licenceName = 'GNU AGPL v.3'
@@ -196,37 +207,5 @@ const mainLinks = [
   }
 ]
 
-const operators = [
-  {
-    label: 'Conseiller Entreprise',
-    img: '/images/logos/ce-logo.svg',
-    href: 'https://conseillers-entreprises.service-public.fr/'
-  },
-  {
-    label: 'ADEME',
-    img: '/images/logos/ademe.svg',
-    href: 'https://www.ademe.fr/'
-  },
-  {
-    label: 'Bpifrance',
-    img: '/images/logos/bpi-france.svg',
-    href: 'https://www.bpifrance.fr/'
-  },
-  {
-    label: 'CCI France',
-    img: '/images/logos/cci-france.svg',
-    href: 'https://www.cci.fr/',
-    width: '130px'
-  },
-  {
-    label: 'CMA France',
-    img: '/images/logos/cma-france.png',
-    href: 'https://www.artisanat.fr/'
-  },
-  {
-    label: 'Office français de la biodiversité',
-    img: '/images/logos/logo-ofb.webp',
-    href: ' https://ofb.gouv.fr'
-  }
-]
+const operators = partnersAll
 </script>

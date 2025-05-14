@@ -18,7 +18,7 @@
           <li
             v-for="(value, i) in programEligibility[field]"
             :key="`elegibility-field-${idx}-value-${i}`"
-            class="fr-mb-0 markdown-spacing-reset"
+            class="fr-mb-0"
             v-html="Marked.toHtml(value)"
           ></li>
         </ul>
@@ -71,9 +71,3 @@ const programEligibility = computed(() => {
   return props.program["conditions d'éligibilité"]
 })
 </script>
-
-<style>
-.markdown-spacing-reset > * {
-  margin: 0;
-}
-</style>

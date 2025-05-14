@@ -1,0 +1,101 @@
+titre: Diag biodiversité
+promesse: Intégrez la biodiversité dans votre stratégie d’entreprise
+description: >-
+  Bpifrance vous aide à intégrer les enjeux de la biodiversité dans votre
+  stratégie d’entreprise. Un expert agréé et sélectionné par Bpifrance et l'OFB
+  vous accompagne pour :
+
+
+  - Sensibiliser vos équipes à l’importance de la biodiversité et aux enjeux
+  environnementaux.
+
+
+  - Diagnostiquer votre impact sur les écosystèmes et vos dépendances aux
+  services écosystémiques.
+
+
+  - Identifier les risques et opportunités liés à la biodiversité pour votre
+  activité.
+
+
+  - Construire un plan d’action concret pour réduire vos impacts et préserver la
+  biodiversité.
+
+
+  À l’issue de cet accompagnement, vous recevrez un rapport complet et un plan
+  d’action opérationnel pour intégrer la biodiversité dans vos pratiques.
+illustration: images/TEE_eolienne.png
+opérateur de contact: Banque Publique d'Investissement France
+autres opérateurs:
+  - ADEME
+url: https://diag.bpifrance.fr/diag-biodiversite
+nature de l'aide: étude
+coût de l'accompagnement: 6 000€ HT, après prise en charge de 40%
+durée de l'accompagnement: 10 jours de prestation, répartis sur 3 à 6 mois
+activable en autonomie: oui
+objectifs:
+  - description: Réalisez votre demande de souscription via le site Bpifrance.
+    liens:
+      - lien: https://diag.bpifrance.fr/diag-biodiversite
+        texte: Souscription au diagnostic
+  - description: >-
+      Bpifrance examine votre demande et vous répond sous 20 jours. Si elle est
+      acceptée, vous recevez un contrat par mail.
+  - description: >-
+      Une fois le contrat signé, les équipes Bpifrance sélectionnent un bureau
+      d’étude pour vous accompagner.
+  - description: >-
+      L’expert prend contact avec vous pour définir les modalités pratiques du
+      diagnostic (calendrier, méthode, jalons, livrables) et planifier sa visite
+      dans votre entreprise.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 250 salariés.
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - '"Au moins 1 an d''activité"'
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a un effectif éligible
+      - a une categorie legale eligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 250
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est préserver la biodiversité

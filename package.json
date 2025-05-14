@@ -35,8 +35,8 @@
     "type:check": "nx run-many -t type-check --verbose --parallel=false",
     "ci": "nx run-many -t ci --verbose --parallel=false",
     "sass:watch": "nx run @tee/nuxt:sass-watch",
-    "e2e": "VITE_DATA_TEST=true nx run @tee/nuxt-e2e:e2e",
-    "e2e-ui": "VITE_DATA_TEST=true nx run @tee/nuxt-e2e:e2e --ui",
+    "e2e": "VITE_DATA_TEST=true && THIRD_PARTY_API_ENABLED=false && npm run build && nx run @tee/nuxt-e2e:e2e",
+    "e2e-ui": "npm run e2e -- --ui",
     "docker:python": "nx run @tee/etl:docker-python",
     "cleanup": "nx run @tee/nuxt:cleanup"
   },

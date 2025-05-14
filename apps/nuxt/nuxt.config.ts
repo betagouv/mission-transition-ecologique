@@ -6,6 +6,15 @@ import { NuxtSecurityConfig } from './nuxt.security.config'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import { ChangeFreq, Priority } from './src/types/sitemapType'
 
+/**
+ * Remove prerender and swr for CI and test data.
+ *
+ * Because it's missing images on projects or programs from data test
+ * it can cause issues with the build
+ */
+const hasPrerenderOrSwr = !process.env.CI && !Config.isTestData
+const maxAge = 2678400 // 31 days in seconds
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default <DefineNuxtConfig>defineNuxtConfig({
   app: {
@@ -17,7 +26,21 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     }
   },
   routeRules: {
+    '/_nuxt/**': {
+      headers: {
+        'cache-control': `public, max-age=${maxAge}, s-maxage=${maxAge}`
+      }
+    },
+    '/images/**': {
+      headers: {
+        'cache-control': `public, max-age=${maxAge}, s-maxage=${maxAge}`
+      }
+    },
     '/': { prerender: true },
+    '/aides-entreprise': { prerender: hasPrerenderOrSwr },
+    '/aides-entreprise/**': { swr: hasPrerenderOrSwr },
+    '/projets-entreprise': { prerender: hasPrerenderOrSwr },
+    '/projets-entreprise/**': { swr: hasPrerenderOrSwr },
     '/accessibilite': { prerender: true },
     // '/mentions-legales': { prerender: true },
     // '/donnees-personnelles': { prerender: true },
@@ -90,6 +113,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     }
   },
   features: {
+    inlineStyles: false,
     devLogs: true
   },
   experimental: {
@@ -135,6 +159,19 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   },
   scripts: {
     registry: NuxtScriptsConfig.getRegistry()
+  },
+  image: {
+    format: ['webp'],
+    screen: {
+      xs: 576,
+      sm: 768,
+      md: 992,
+      lg: 1248
+    },
+    densities: [1],
+    ipx: {
+      maxAge: maxAge
+    }
   },
   runtimeConfig: {
     public: {

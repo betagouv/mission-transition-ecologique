@@ -1,3 +1,4 @@
+import { Image } from '@/tools/image'
 import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType, EstablishmentFront } from '@tee/common'
 import { FieldType, RouteName, ProjectType, FormDataType, ThemeType, ThemeId, ProgramTypeForFront } from '@/types'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
@@ -11,6 +12,7 @@ export default class Opportunity {
   static getBaseOpportunityFormFields(): FormDataType {
     const selectedThemeId = useFiltersStore().hasThemeTypeSelected() ? useFiltersStore().getThemeTypeSelected() : TrackStructure.getTheme()
     const selectedTheme = Theme.getById(selectedThemeId as ThemeId)
+    const img = Image.getUrl
     return {
       theme: {
         required: false,
@@ -67,7 +69,7 @@ export default class Opportunity {
           content:
             "Pour vous aider au mieux, nos conseillers ont besoin d'éléments de contexte.\n" +
             'N’hésitez pas à nous détailler votre projet, vos besoins ou vos questionnements.',
-          img: '/images/TEE-conseiller.svg'
+          img: img('/images/TEE-conseiller.svg', { loading: 'lazy' })
         }
       },
       cgu: {

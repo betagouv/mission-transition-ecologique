@@ -9,26 +9,29 @@ illustration: images/TEE_eolienne.png
 opérateur de contact: Ministère de la Transition Écologique
 url: https://jechangemavoiture.gouv.fr/jcmv/aide-achat.html?content=aides-locales
 nature de l'aide: financement
-montant du financement: ''
+montant du financement: Selon votre localisation
 activable en autonomie: oui
 objectifs:
-  - description: Rendez-vous sur jechangemavoiture.gouv.fr.
+  - description: Rendez-vous sur le service public numérique "Je change ma voiture"
     liens:
       - lien: https://jechangemavoiture.gouv.fr/jcmv/aide-achat.html
-        texte: Je change ma voiture
+        texte: jechangemavoiture.gouv.fr
   - description: >-
-      Saisissez les critères de votre véhicule actuel, et vos habitudes de
-      déplacement.
+      Saisissez les critères de votre véhicule et vos habitudes de déplacement
+      et découvrez les données clés de l'utilisation de votre véhicule actuel.
   - description: >-
-      Comparez les différents types de véhicules qui pourraient vous convenir :
-      coût d'usage, coût de possession, consommations d'énergie, rejets de CO2,
-      polluants réglementés...
+      Découvrez et comparez les différents types de véhicules qui pourraient
+      vous convenir : coût d'usage, coût de possession, consommations d'énergie,
+      rejets de CO2, polluants réglementés...
   - description: >-
-      Sélectionnez votre région et découvrez les aides locales à l'achat d'un
+      Découvrez l'ensemble des aides nationales et locales à l'achat d'un
       véhicule.
+    liens:
+      - lien: https://jechangemavoiture.gouv.fr/jcmv/aide-achat.html
+        texte: Les aides à l'achat
   - description: >-
-      Contactez les organismes mentionnés pour bénéficier d'une aide au
-      financement.
+      Contactez directement les collectivités ou organismes mentionnés pour
+      bénéficier d'une aide au financement.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
@@ -68,4 +71,5 @@ publicodes:
       - code NAF niveau 1 . est T
       - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
-    une de ces conditions: []
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable

@@ -33,7 +33,7 @@
               </div>
               <img
                 class="fr-card__logo"
-                src="/images/logos/mission-transition-logo-alone.png"
+                :src="img('/images/logos/mission-transition-logo-alone.png', { height: 50, width: 50, quality: 100, loading: 'lazy' })"
                 alt="Transition Ecologique des Entreprises - ADEME"
               />
             </div>
@@ -45,6 +45,7 @@
 </template>
 
 <script setup lang="ts">
+import { Image } from '@/tools/image'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { RouteName } from '@/types'
@@ -65,8 +66,14 @@ const defaultImageAlt = "Image de la page d'accueil de mission transition écolo
 
 const resolvedLink = computed(() => props.link || defaultLink)
 const resolvedTitle = computed(() => props.title || defaultTitle)
-const resolvedImageSrc = computed(() => props.imageSrc || defaultImageSrc)
+const resolvedImageSrc = computed(() =>
+  props.imageSrc
+    ? img(props.imageSrc, { height: 250, quality: 70, loading: 'lazy' })
+    : img(defaultImageSrc, { height: 350, quality: 100, loading: 'lazy' })
+)
 const resolvedImageAlt = computed(() => props.imageAlt || defaultImageAlt)
+
+const img = Image.getUrl
 
 const imageResizerChild = () => import('@iframe-resizer/child')
 imageResizerChild()
