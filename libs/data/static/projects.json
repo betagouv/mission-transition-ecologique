@@ -19,7 +19,6 @@
       "programme-breizh-fab",
       "renovation-petit-tertiaire-prive",
       "tpe-gagnantes-sur-tous-les-couts",
-      "visite-energie-cci",
       "visite-energie-cma",
       "cci-business-optimizer",
       "fiscalite-energetique-occitanie",
@@ -83,7 +82,6 @@
     "mainTheme": "energy",
     "programs": [
       "fonds-tourisme-durable",
-      "visite-energie-cci",
       "visite-energie-cma",
       "aide-financement-occitanie",
       "cedre-investissement",
@@ -2723,7 +2721,6 @@
       "diag-eco-flux",
       "performa-environnement",
       "tpe-gagnantes-sur-tous-les-couts",
-      "visite-energie-cci",
       "visite-energie-cma",
       "cedre-investissement",
       "sud-pret-climat",
@@ -2843,7 +2840,8 @@
     "programs": [
       "formation-engager-entreprise-transition-ecologique",
       "formation-artisan-developpement-durable",
-      "cci-business-optimizer"
+      "cci-business-optimizer",
+      "ecogestes-paca"
     ],
     "linkedProjects": [
       26
@@ -3024,7 +3022,7 @@
     "slug": "transition-mobilites",
     "title": "Changement des modes de transport",
     "nameTag": "🚆 transition mobilités",
-    "shortDescription": "Transférer les déplacements de vos collaborateurs vers des modes de transport non polluants.",
+    "shortDescription": "Transférer les déplacements de vos collaborateurs et de vos marchandises vers des modes de transport moins polluants.",
     "image": "/images/projet/report-modal.webp",
     "longDescription": "La transition des mobilités de votre entreprise, appelée aussi \"report modal\", vise à réduire votre empreinte carbone en repensant vos modes de transport. Il s'agit de transférer vos trajets, ainsi que ceux de vos équipes depuis des modes polluants (voitures thermiques, avions…) vers des alternatives durables telles que le train, le vélo, le covoiturage, ou encore la voiture électrique. Par exemple, privilégier les transports en commun pour les trajets professionnels quotidiens permet de réduire les émissions par passager tout en désengorgeant les routes et en diminuant la consommation d’énergie.\\\nPour initier cette transition des mobilités, commencez par identifier les modes de transport les plus fréquents et polluants de vos équipes, puis explorez des solutions alternatives pour transférer progressivement vos déplacements vers des modes non polluants.",
     "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables. Comment engager la transition ?**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf), un guide gouvernemental.",
@@ -3110,13 +3108,11 @@
     "priority": "880",
     "highlightPriority": null,
     "sectors": [
-      "A",
       "B",
       "C",
       "D",
       "F",
-      "H",
-      "U"
+      "H"
     ]
   },
   {
@@ -3257,12 +3253,7 @@
     "priority": "253",
     "highlightPriority": null,
     "sectors": [
-      "A",
-      "B",
       "C",
-      "D",
-      "E",
-      "F",
       "G",
       "H"
     ]
@@ -3323,12 +3314,9 @@
     "priority": "750",
     "highlightPriority": null,
     "sectors": [
-      "A",
       "B",
       "C",
-      "D",
       "E",
-      "F",
       "G",
       "H"
     ]
@@ -3356,12 +3344,8 @@
     "priority": "260",
     "highlightPriority": null,
     "sectors": [
-      "A",
-      "B",
       "C",
-      "D",
       "E",
-      "F",
       "G",
       "H"
     ]
