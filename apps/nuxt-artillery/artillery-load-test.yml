@@ -27,10 +27,6 @@ config:
     ensure: {}
     apdex: {}
     metrics-by-endpoint: {}
-    playwright:
-      # Launch options for Playwright browsers
-      launchOptions:
-        headless: true
   apdex:
     threshold: 100
   ensure:

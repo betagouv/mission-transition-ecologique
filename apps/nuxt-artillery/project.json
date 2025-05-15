@@ -19,18 +19,32 @@
         "command": "artillery run -e staging artillery-page.yml"
       }
     },
-    "test:prod": {
+    "test:pages:prod": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "apps/nuxt-artillery",
-        "command": "artillery run -e production artillery.yml"
+        "command": "artillery run -e production artillery-page.yml"
       }
     },
-    "report": {
+    "test:load:dev": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "apps/nuxt-artillery",
-        "command": "open reports/report.html"
+        "command": "artillery run -e development artillery-load-test.yml"
+      }
+    },
+    "test:load:staging": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e staging artillery-load-test.yml"
+      }
+    },
+    "test:load:prod": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e production artillery-load-test.yml"
       }
     }
   }

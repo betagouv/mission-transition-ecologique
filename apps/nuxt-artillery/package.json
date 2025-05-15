@@ -3,17 +3,8 @@
   "version": "1.0.0",
   "description": "Load testing for TEE application using Artillery and Playwright",
   "main": "index.js",
-  "scripts": {
-    "test:dev": "artillery run -e development --scenario-name 'browser-navigation-scenario' artillery-page.yml",
-    "test:prod": "artillery run -e production artillery-page.yml",
-    "test:staging": "artillery run -e staging artillery-page.yml",
-    "report": "open reports/report.html"
-  },
-  "dependencies": {
-    "@artillery/playwright": "^1.0.0",
-    "artillery": "^2.0.0"
-  },
   "devDependencies": {
-    "playwright": "^1.47.0"
+    "artillery": "^2.0.0",
+    "playwright": "^1.47.2"
   }
 }

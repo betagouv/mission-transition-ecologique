@@ -1,6 +1,6 @@
 # Artillery Load Testing with Playwright
 
-Ce projet contient des tests de charge pour l'application TEE (Transition Écologique des Entreprises) utilisant Artillery et Playwright.
+Ce projet contient des tests de charge pour l'application TEE (Transition Écologique des Entreprises) utilisant Artillery et Playwright avec TypeScript.
 
 ## Description
 
@@ -13,22 +13,24 @@ Les tests permettent de parcourir l'ensemble des pages suivantes :
 
 ## Prérequis
 
-- Node.js (v16 ou supérieur)
-- npm ou yarn
+- Node.js (v22.x recommandé)
+- npm (v11.x recommandé)
 
 ## Installation
 
 ```bash
-# Installer les dépendances
+# Installer les dépendances (depuis la racine du projet)
 npm install
-
-# Installer les navigateurs Playwright
-npx playwright install
 ```
 
 ## Configuration
 
-Le fichier `artillery.yml` contient la configuration des tests de charge. Vous pouvez modifier les paramètres suivants :
+Le projet utilise deux fichiers de configuration Artillery :
+
+1. `artillery-page.yml` - Pour les tests de navigation avec Playwright
+2. `artillery-load-test.yml` - Pour les tests de charge HTTP
+
+Vous pouvez modifier les paramètres suivants dans ces fichiers :
 
 - **Environnements** : development, production, staging
 - **Phases** : durée, taux d'arrivée, etc.
@@ -36,54 +38,74 @@ Le fichier `artillery.yml` contient la configuration des tests de charge. Vous p
 
 ## Exécution des tests
 
+Depuis la racine du projet, utilisez les commandes suivantes :
+
 ```bash
-# Exécuter les tests en environnement de développement
-npm run test:dev
+# Tests de navigation avec Playwright
+# Environnement de développement
+npm run artillery:page:dev
 
-# Exécuter les tests en environnement de production
-npm run test:prod
+# Environnement de staging
+npm run artillery:page:staging
 
-# Exécuter les tests en environnement de staging
-npm run test:staging
+# Environnement de production
+npm run artillery:page:prod
+
+# Tests de charge HTTP
+# Environnement de développement
+npm run artillery:load:dev
+
+# Environnement de staging
+npm run artillery:load:staging
+
+# Environnement de production
+npm run artillery:load:prod
 ```
 
-Ou directement avec Artillery :
+Ou directement avec Artillery (depuis le répertoire apps/nuxt-artillery) :
 
 ```bash
+# Tests de navigation avec Playwright
 # Développement
-npx artillery run -e development artillery.yml
+npx artillery run -e development artillery-page.yml
 
 # Production
-npx artillery run -e production artillery.yml
+npx artillery run -e production artillery-page.yml
 
 # Staging
-npx artillery run -e staging artillery.yml
+npx artillery run -e staging artillery-page.yml
+
+# Tests de charge HTTP
+# Développement
+npx artillery run -e development artillery-load-test.yml
+
+# Production
+npx artillery run -e production artillery-load-test.yml
+
+# Staging
+npx artillery run -e staging artillery-load-test.yml
 ```
 
 ## Structure des tests
 
-Les tests sont divisés en deux scénarios :
+Les tests sont organisés selon une architecture orientée objet (OOP) en TypeScript :
 
-1. **HTTP requests scenario** : Effectue des requêtes HTTP simples sur les différentes pages
-2. **Browser navigation scenario** : Utilise Playwright pour naviguer dans le navigateur et interagir avec les pages
+1. **Tests de navigation (artillery-page.yml)** : Utilise Playwright pour naviguer dans le navigateur et interagir avec les pages
+2. **Tests de charge HTTP (artillery-load-test.yml)** : Effectue des requêtes HTTP simples sur les différentes pages
 
-Le script Playwright (`src/browse-pages.js`) effectue les actions suivantes :
-- Visite la page d'accueil
-- Visite la liste des programmes d'aide
-- Visite la liste des projets
-- Visite jusqu'à 3 pages individuelles de programmes d'aide
-- Visite jusqu'à 3 pages individuelles de projets
+### Architecture des classes
 
-## Rapports
+Le script principal `src/browse-pages.ts` utilise les classes suivantes :
 
-Après l'exécution des tests, un rapport HTML est généré dans le répertoire `reports/`.
+- `BasePage` : Classe abstraite de base pour toutes les pages
+- `Homepage` : Gère la navigation sur la page d'accueil
+- `Programs` : Gère la navigation sur la page des programmes d'aide et les pages individuelles
+- `Projects` : Gère la navigation sur la page des projets et les pages individuelles
 
-```bash
-# Ouvrir le dernier rapport généré
-open reports/report.html
-```
+Chaque classe est responsable de sa propre logique de navigation et d'interaction.
 
 ## Références
 
 - [Documentation Artillery](https://www.artillery.io/docs)
 - [Documentation Playwright avec Artillery](https://www.artillery.io/docs/reference/engines/playwright)
+- [Documentation TypeScript](https://www.typescriptlang.org/docs/)
