@@ -8,6 +8,7 @@ export interface DataProgram extends BaserowSectors {
   Titre: string
   Promesse: string
   'Description courte': string
+  'Contact Question': string
   'Description longue': string
   'Opérateur de contact': Operator[]
   'Dispositif activable en autonomie': boolean

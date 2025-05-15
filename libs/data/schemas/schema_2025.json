@@ -196,7 +196,7 @@
     {
       "name": "projet_reference",
       "description": "Lien avec un ou plusieurs projets de références associés à ce dispositif. Mettre un point-virgule sans espace entre les différents projets.",
-      "example": "bilan-ges;reduction-emballages;plan-action-dechets",
+      "example": "Bilan Ges;Réduction des emballages;Plan action dechets",
       "type": "string"
     },
     {
@@ -216,23 +216,23 @@
     },
     {
       "name": "date_ouverture",
-      "description": "Date d'ouverture de l'aide. Format YYYY-MM-DD (Année-Mois-Jour)",
+      "description": "Date d'ouverture de l'aide. Format YYYY-MM-DD-HH-MM (Année-Mois-Jour-heure-minute)",
       "example": "2025-10-15-15-00",
       "type": "date",
-      "format": "%Y-%m-%d-%h-%m"
+      "format": "%Y-%m-%d-%h-%M"
     },
     {
       "name": "date_releve_intermediaire",
-      "description": "Date(s) de relève intermediaire. Format YYYY-MM-DD-HH-MM (Année-Mois-Jour)",
+      "description": "Date(s) de relève intermediaire. Format YYYY-MM-DD-HH-MM (Année-Mois-Jour-heure-minute)",
       "example": "2025-10-15-15-00;2026-03-03-15-00;2026-10-15-15-00",
       "type": "string"
     },
     {
       "name": "date_cloture",
-      "description": "Date de cloture de l'aide. Format YYYY-MM-DD (Année-Mois-Jour)",
-      "example": "2022-03-03",
+      "description": "Date de cloture de l'aide. Format YYYY-MM-DD-HH-MM (Année-Mois-Jour-heure-minute)",
+      "example": "2025-10-15-15-00",
       "type": "date",
-      "format": "%Y-%m-%d"
+      "format": "%Y-%m-%d-%h-%M"
     },
     {
       "name": "url_source",
@@ -399,14 +399,14 @@
     },
     {
       "name": "eligibilite_statuts_specifiques",
-      "description": "Liste des statuts d'entreprise spécifiquement visés. A utiliser si un tel statut est nécéssaire pour obtenir l'aide. Peut contenir des statuts juridiques (ex: SARL, EI), fiscaux (micro-entreprise), ou des qualifications (artisan).",
+      "description": "Liste des statuts d'entreprise spécifiquement visés. A utiliser UNIQUEMENT si un tel statut est NECESSAIRE pour obtenir l'aide. Cela exclu par défaut tous les autres statuts. Peut contenir des statuts juridiques (ex: SARL, EI), fiscaux (micro-entreprise), ou des qualifications (artisan).",
       "example": "artisan;SARL",
       "type": "string"
     },
     {
       "name": "eligibilite_statuts_exclus",
       "description": "Liste des statuts ou qualifications exclus du dispositif.",
-      "example": "auto-entrepreneur;EI",
+      "example": "micro-entrepreneur;EI",
       "type": "string"
     },
     {
@@ -417,10 +417,10 @@
     },
     {
       "name": "date_mise_a_jour",
-      "description": "Date de mise à jour du jeu de données.",
-      "example": "2022-03-03",
+      "description": "Date de mise à jour du jeu de données.Format YYYY-MM-DD-HH-MM (Année-Mois-Jour)",
+      "example": "2025-10-15-15-00",
       "type": "date",
-      "format": "%Y-%m-%d"
+      "format": "%Y-%m-%d-%H-%m"
     }
   ]
 }
