@@ -1,3 +1,5 @@
+import { b as NitroConfig } from 'nitropack/dist/shared/nitro.ZcB8T5yn'
+import { NuxtStorageConfig } from './nuxt.storage.config'
 import Config from './src/config'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { DefineNuxtConfig, defineNuxtConfig } from 'nuxt/config'
@@ -106,6 +108,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     experimental: {
       openAPI: true
     },
+    storage: NuxtStorageConfig.get(),
     devStorage: {
       cache: {
         driver: 'null'
@@ -159,19 +162,6 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   },
   scripts: {
     registry: NuxtScriptsConfig.getRegistry()
-  },
-  image: {
-    format: ['webp'],
-    screen: {
-      xs: 576,
-      sm: 768,
-      md: 992,
-      lg: 1248
-    },
-    densities: [1],
-    ipx: {
-      maxAge: maxAge
-    }
   },
   runtimeConfig: {
     public: {
