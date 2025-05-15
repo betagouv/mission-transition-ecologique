@@ -38,7 +38,9 @@
     "e2e": "VITE_DATA_TEST=true && THIRD_PARTY_API_ENABLED=false && npm run build && nx run @tee/nuxt-e2e:e2e",
     "e2e-ui": "npm run e2e -- --ui",
     "docker:python": "nx run @tee/etl:docker-python",
-    "cleanup": "nx run @tee/nuxt:cleanup"
+    "cleanup": "nx run @tee/nuxt:cleanup",
+    "artillery:page:dev": "nx run @tee/nuxt-artillery:test:pages:dev",
+    "artillery:page:staging": "nx run @tee/nuxt-artillery:test:pages:staging"
   },
   "engines": {
     "node": "22.x",
@@ -83,6 +85,8 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@artilleryio/playwright-reporter": "^1.0.0",
+    "artillery": "^2.0.0",
     "@nuxt/devtools": "^1.5.2",
     "@nuxt/eslint-config": "~0.5.6",
     "@nuxt/kit": "^3.15.4",

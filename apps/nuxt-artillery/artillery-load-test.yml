@@ -1,0 +1,58 @@
+config:
+  # This is a test server run by team Artillery
+  # It's designed to be highly scalable
+  environments:
+    development:
+      target: http://localhost:4242
+    production:
+      target: https://mission-transition-ecologique.beta.gouv.fr
+    staging:
+      target: https://preprod.mission-transition-ecologique.incubateur.net
+  phases:
+    - duration: 300
+      arrivalRate: 1
+      rampTo: 3
+      name: Warm up phase
+    - duration: 300
+      arrivalRate: 2
+      rampTo: 4
+      name: Ramp up load
+    - duration: 300
+      arrivalRate: 3
+      rampTo: 5
+      name: Spike phase
+  # Load & configure a couple of useful plugins
+  # https://docs.art/reference/extensions
+  plugins:
+    ensure: {}
+    apdex: {}
+    metrics-by-endpoint: {}
+    playwright:
+      # Launch options for Playwright browsers
+      launchOptions:
+        headless: true
+  apdex:
+    threshold: 100
+  ensure:
+    thresholds:
+      - http.response_time.p99: 100
+      - http.response_time.p95: 75
+scenarios:
+  # HTTP-based scenario
+  - name: "HTTP requests scenario"
+    flow:
+      - log: 'Current environment is set to: {{ $environment }}'
+      - loop:
+          - get:
+              url: '/'
+          - get:
+              url: '/projets-entreprise'
+          - get:
+              url: '/projets-entreprise/sensibilisation-equipes'
+          - get:
+              url: '/aides-entreprise'
+          - get:
+              url: '/aides-entreprise/accelerateur-decarbonation'
+          - get:
+              url: '/questionnaire/resultat?locaux=non&siret=83014132100034&effectif=MICRO&mobilite=je-ne-sais-pas&matieres-premieres=je-ne-sais-pas&tri-dechets=je-ne-sais-pas&dechets=je-ne-sais-pas&gestion-eau=je-ne-sais-pas&energie=je-ne-sais-pas&audit=je-ne-sais-pas#questionnaire-resultat'
+        count: 1

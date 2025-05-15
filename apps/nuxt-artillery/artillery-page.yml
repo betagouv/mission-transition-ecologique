@@ -1,0 +1,33 @@
+config:
+  # This is a test server run by team Artillery
+  # It's designed to be highly scalable
+  environments:
+    development:
+      target: http://localhost:4242
+    production:
+      target: https://mission-transition-ecologique.beta.gouv.fr
+    staging:
+      target: https://preprod.mission-transition-ecologique.incubateur.net
+  phases:
+    - duration: 1
+      arrivalRate: 1
+      rampTo: 0
+      maxVUs: 1
+      name: Warm up phase - 1 user
+  # Load & configure a couple of useful plugins
+  # https://docs.art/reference/extensions
+  plugins:
+    ensure: {}
+  engines:
+    playwright: {}
+      # Path to our custom Playwright script
+  processor: "./src/browse-pages.ts"
+  ensure:
+    thresholds:
+      - http.response_time.p99: 100
+      - http.response_time.p95: 75
+scenarios:
+  # Playwright-based scenario for browser navigation
+  - name: "browser-navigation-scenario"
+    engine: playwright
+    flowFunction: "browsePages"

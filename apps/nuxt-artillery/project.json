@@ -1,0 +1,37 @@
+{
+  "name": "@tee/nuxt-artillery",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nuxt-artillery/src",
+  "implicitDependencies": ["@tee/nuxt"],
+  "// targets": "to see all targets run: nx show project nuxt-artillery --web",
+  "targets": {
+    "test:pages:dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e development artillery-page.yml"
+      }
+    },
+    "test:pages:staging": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e staging artillery-page.yml"
+      }
+    },
+    "test:prod": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e production artillery.yml"
+      }
+    },
+    "report": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "open reports/report.html"
+      }
+    }
+  }
+}
