@@ -39,6 +39,9 @@ objectifs:
   - description: >-
       Prenez contact avec un conseiller afin de vérifier l'éligibilité de votre
       projet.
+    liens:
+      - lien: mailto:relationentrepriseusager@maregionsud.fr
+        texte: relationentrepriseusager@maregionsud.fr
   - description: >-
       Complétez le dossier et la lettre de candidature disponibles dans les
       "ressources à télécharger" en bas de page.
@@ -47,9 +50,12 @@ objectifs:
           https://entreprises.maregionsud.fr/financement/sud-entreprises/gamme-cedre/cedre-ambition
         texte: Lettre et dossier de candidature CEDRE Ambition
   - description: >-
-      Envoyez votre dossier de candidature par mail à l’adresse
-      cedre@maregionsud.fr avec pour objet "Candidature CEDRE Ambition 2025". La
-      date limite de réception des candidatures est fixée au 13 décembre 2024.
+      Envoyez votre dossier de candidature par mail à l’adresse suivante avec
+      pour objet "Candidature CEDRE Ambition 2025". La date limite de réception
+      des candidatures est fixée au 13 décembre 2024.
+    liens:
+      - lien: 'https://cedre@maregionsud.fr '
+        texte: 'cedre@maregionsud.fr '
   - description: >-
       Votre projet est analysé par un comité technique composé de représentants
       de la Région, des chambres consulaires, et d’autres parties prenantes.

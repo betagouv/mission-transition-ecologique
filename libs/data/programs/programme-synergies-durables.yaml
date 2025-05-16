@@ -3,10 +3,26 @@ promesse: >-
   Identifiez les opportunités d'économie circulaire avec les entreprises de
   votre territoire 
 description: >-
-  Votre conseiller CCI vous ouvre de nouvelles opportunités pour trouver des
-  partenaires au sein de votre territoire et vous permettre de mutualiser des
-  moyens, ressources et services (gestion collective des déchets, équipements,
-  infrastructures, matières premières non utilisées...)
+  Votre conseiller CCI vous accompagne pour identifier des opportunités de
+  mutualisation avec d’autres entreprises de votre territoire. L’objectif :
+  partager des ressources, valoriser les flux inexploités, réduire les coûts et
+  renforcer les coopérations locales.
+
+
+  - Repérez les flux ou ressources à mutualiser (déchets, équipements,
+  infrastructures, matières premières inutilisées…).
+
+
+  - Identifiez les entreprises avec lesquelles partager ou valoriser ces flux de
+  manière stratégique et économiquement avantageuse.
+
+
+  - Bénéficiez de l’appui de votre conseiller pour mobiliser les partenaires et
+  acteurs ressources adaptés à vos besoins.
+
+
+  - Formalisez des synergies concrètes grâce à la mise en œuvre d’un contrat
+  d’alliance inter-entreprises.
 illustration: images/TEE_eolienne.png
 opérateur de contact: Chambre de Commerce et de l'Industrie
 url: https://www.cci.fr/offre/demarche-synergies-durables
@@ -15,13 +31,15 @@ coût de l'accompagnement: Gratuit sauf en Hauts-de-France et en Pays de la Loir
 durée de l'accompagnement: Selon le projet
 objectifs:
   - description: >-
-      Identifier les flux à partager, mutualiser et valoriser auprès des
-      entreprises locales.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Détecter des entreprises cibles, les possibilités de mutualisation et les
-      gains en terme de coûts de production et de fonctionnement.
-  - description: Solliciter et mobiliser les acteurs ressources les plus adaptés.
-  - description: Mettre en œuvre un contrat d’alliance et de synergies inter-entreprises.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
+  - description: Définissez ensemble le périmètre de l'étude, la méthode et le calendrier.
+  - description: Démarrez la prestation de conseil.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Entre 20 et 500 salariés

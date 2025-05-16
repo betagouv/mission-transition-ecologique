@@ -34,6 +34,8 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 5 à 10 jours selon la taille de l'entreprise
 objectifs:
   - description: Exprimez votre intérêt en contactant un conseiller via le formulaire.
+    liens:
+      - formulaire: true
   - description: >-
       Un conseiller CCI vous rappelle pour répondre à vos questions et vous
       guider dans la constitution de votre demande.

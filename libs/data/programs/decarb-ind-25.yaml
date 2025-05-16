@@ -121,12 +121,13 @@ conditions d'éligibilité:
     - France et territoires d'outre-mer
   secteur d'activité:
     - |-
-      - Les industries et activités inéligibles sont
-        - Activités tertiaires ;
-        - Activités agricoles (sauf industrie agro-alimentaire) ;
-        - Activités du secteur BTP sur chantier ;
-        - Unités de Valorisation Energétiques des déchets (UVE) ;
-        - Industries de production et mise sur le marché d'énergie sur le réseau.
+      Les industries et activités inéligibles sont
+
+      - Activités tertiaires ;
+      - Activités agricoles (sauf industrie agro-alimentaire) ;
+      - Activités du secteur BTP sur chantier ;
+      - Unités de Valorisation Energétiques des déchets (UVE) ;
+      - Industries de production et mise sur le marché d'énergie sur le réseau.
     - Les codes NAF éligibles sont compris entre 10.11Z et 33.20D.
   nombre d'années d'activité:
     - Éligible à toutes les entreprises

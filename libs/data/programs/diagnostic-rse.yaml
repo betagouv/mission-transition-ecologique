@@ -1,13 +1,22 @@
 titre: Diagnostic RSE
-promesse: >-
-  Intégrez la RSE (Responsabilité Sociétale des Entreprises) dans le
-  fonctionnement quotidien de votre entreprise
+promesse: Intégrez la RSE dans le fonctionnement quotidien de votre entreprise
 description: >-
-  Réalisez avec votre conseiller CCI un diagnostic RSE en abordant les 3 aspects
-  de la responsabilité sociétale de l’entreprise : la performance économique, la
-  performance sociale et la performance environnementale. Repensez votre
-  stratégie RSE comme un levier d'innovation et un vecteur de création de
-  valeur.
+  Ce diagnostic RSE vous aide à évaluer les trois dimensions clés de la
+  responsabilité sociétale de l’entreprise : économique, sociale et
+  environnementale. Il vous permet de repenser votre stratégie pour mieux
+  répondre aux attentes des parties prenantes, améliorer votre performance
+  globale et saisir de nouvelles opportunités de croissance durable.
+
+
+  - Recueillez vos données sur l'ensemble des domaines de la RSE (gouvernance,
+  social, sociétal, environnemental, économique) avec l'aide d'un conseiller
+
+
+  - Dressez un état des lieux des forces et faiblesses de votre entreprise
+
+
+  - Obtenez un plan d’action personnalisé, adapté à vos enjeux et ressources,
+  pour mettre en œuvre efficacement votre démarche RSE
 illustration: images/TEE_eolienne.png
 opérateur de contact: Chambre de Commerce et de l'Industrie
 url: https://www.cci.fr/offre/evaluez-votre-maturite-aux-enjeux-de-la-rse
@@ -22,13 +31,14 @@ objectifs:
       - lien: https://www.cci.fr/offre/evaluez-votre-maturite-aux-enjeux-de-la-rse
         texte: Tester en autonomie votre démarche RSE
   - description: >-
-      Recueillir vos données sur l'ensemble des champs de la RSE (gouvernance,
-      social, sociétal, environnemental, économique) avec l'aide d'un conseiller
-  - description: Dresser l’état des lieux des forces et faiblesses de votre entreprise
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Obtenez un plan d’action adapté à vos enjeux et à vos ressources pour vous
-      aider à mettre en œuvre efficacement votre démarche RSE au sein de votre
-      entreprise
+      Un conseiller CCI vous recontacte pour répondre à vos questions et
+      clarifier vos besoins d’accompagnement.
+  - description: Lancez le diagnostic RSE avec l'expert proposé par votre CCI.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Entre 20 et 500 salariés

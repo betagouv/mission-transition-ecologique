@@ -1,11 +1,11 @@
 titre: Étude "Performance énergétique" ou de "décarbonation" en industrie
 promesse: >-
-  Réalisez une étude de faisabilité pour votre projet de la performance
-  énergétique ou de décarbonation de votre site de production
+  Vérifiez la faisabilité technique et économique de votre projet de
+  décarbonation
 description: >-
   Vous avez réalisé un audit énergétique et vous avez identifié un projet pour
   optimiser la performance énergétique ou de décarbonation de vos processus de
-  production ?
+  production ?\
 
   L'ADEME peut vous aider à financer votre étude de faisabilité pour vérifier la
   faisabilité technique et économique de votre projet et étudier les solutions
@@ -117,7 +117,6 @@ publicodes:
     une de ces conditions:
       - code NAF niveau 1 . est B
       - code NAF niveau 1 . est C
-      - code NAF niveau 1 . est Q
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est ma performance énergétique

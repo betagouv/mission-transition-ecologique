@@ -17,28 +17,22 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 7h
 activable en autonomie: oui
 objectifs:
-  - description: >-
-      Découvrez les cinq chapitres de la formation, réalisés à partir de
-      constats scientifiques, et présentés sous une forme claire et accessible
-    liens:
-      - lien: https://climat.cned.fr/formations/
-        texte: Accéder à la formation
-  - description: >-
-      Inscrivez-vous à la formation gratuite, en ligne, à réaliser en toute
-      autonomie (durée estimé : 7h)
-    liens:
-      - lien: https://climat.cned.fr/
-        texte: climat.cned.fr
   - description: "Avant de démarrer la formation, testez vos connaissances\_avec 5 questions sur le changement climatique, ses enjeux et les moyens d’agir"
     liens:
       - lien: https://climat.cned.fr/le-saviez-vous/
         texte: Testez vos connaissances
   - description: >-
-      Validez les connaissances que vous aurez acquises à l’issue de chaque
-      chapitre
+      Accédez à la formation gratuite, en ligne, à réaliser en toute autonomie
+      (durée totale estimée : 7h)
+    liens:
+      - lien: https://climat.cned.fr/formations/
+        texte: Accéder à la formation
   - description: >-
-      Recevrez un badge numérique valorisant vos connaissances sur le changement
-      climatique, ses enjeux et les moyens d’agir
+      Validez les connaissances que vous aurez acquises à l’issue de chaque
+      chapitre.
+  - description: >-
+      Pour chaque chapitre de la formation, recevez un badge numérique attestant
+      vos nouveaux acquis.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

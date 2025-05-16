@@ -14,6 +14,8 @@ coût de l'accompagnement: "6 000 €\_HT après subvention de 40%"
 durée de l'accompagnement: 12 jours de prestation répartis sur 6 à 8 mois
 objectifs:
   - description: Exprimez votre intérêt en contactant un conseiller via le formulaire
+    liens:
+      - formulaire: true
   - description: >-
       Un conseiller vous rappelle pour répondre à vos questions et vous guider
       dans la constitution de votre demande.

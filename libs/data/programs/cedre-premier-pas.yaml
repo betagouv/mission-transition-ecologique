@@ -62,6 +62,9 @@ objectifs:
   - description: >-
       Prenez contact avec un conseiller afin de vérifier l'éligibilité de votre
       projet.
+    liens:
+      - lien: mailto:relationentrepriseusager@maregionsud.fr
+        texte: relationentrepriseusager@maregionsud.fr
   - description: >-
       Sélectionnez la thématique sur laquelle vous souhaitez être accompagné :
       impact environnemental, mobilité, consommation d'énergie, empreinte
