@@ -3,11 +3,16 @@ promesse: >-
   Découvrez le potentiel du photovoltaïque pour votre entreprise avec une étude
   d’opportunité
 description: >-
-  Disposez de tous les éléments indispensables à la prise de décision avant
-  l’installation de panneaux photovoltaïques : montant de l’investissement et
-  aides financières, économies réalisées par la vente de l’électricité et/ou par
-  l’auto-consommation, points de vigilance, temps de retour sur investissement
-  et rentabilité.
+  Votre entreprise envisage d’installer des panneaux photovoltaïques sur un
+  bâtiment ou un terrain ? Cette étude d’opportunité vous permet de disposer de
+  tous les éléments clés pour prendre une décision éclairée avant d’investir.
+  Vous bénéficiez d’une analyse rapide de la consommation énergétique de votre
+  site, d’un pré-chiffrage des travaux, ainsi que d’une estimation des gains
+  liés à l’autoconsommation ou à la revente d’électricité. L’étude identifie
+  aussi les points techniques à vérifier (raccordement au réseau, structure de
+  la toiture, étanchéité, charpente…) et vous aide à évaluer la rentabilité de
+  l’investissement en calculant le temps de retour. Vous obtenez également une
+  vue d’ensemble des aides financières mobilisables pour votre projet.
 début de validité: 01/10/2023
 fin de validité: 01/06/2026
 illustration: images/TEE_energie_verte.png
@@ -20,14 +25,16 @@ nature de l'aide: étude
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 1/2 à 1 journée
 objectifs:
-  - description: Réalisez une analyse rapide de la consommation de votre site.
   - description: >-
-      Obtenez une analyse réglementaire ainsi que les points d’attention à
-      prendre en compte (raccordement au réseau, structure de la toiture,
-      étanchéité, charpente, etc.)
+      Contactez un conseiller CCI via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Bénéficiez d'un pré-chiffrage des travaux, calculez le temps de retour sur
-      investissement et identifiez les financements possibles.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
+  - description: Définissez avec l’expert le périmètre de l'étude et le calendrier.
+  - description: Démarrez votre étude d'opportunité avec l'expert proposé par votre CCI.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 500 salariés

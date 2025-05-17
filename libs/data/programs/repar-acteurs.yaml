@@ -3,9 +3,27 @@ promesse: >-
   Rejoignez un réseau de professionnels de la réparation, devenez artisan
   Répar’acteurs !
 description: >-
-  Les Répar’acteurs référencent les professionnels de la réparation et du
-  dépannage partout en France. Rejoignez  le réseau et devenez un ambassadeur de
-  l’économie circulaire auprès de vos clients et au sein de votre territoire.
+  Vous êtes artisan de la réparation ou du dépannage ? Intégrez le réseau
+  national des Répar’acteurs pour promouvoir votre savoir-faire et renforcer
+  votre visibilité auprès des clients engagés dans une consommation plus
+  responsable.
+
+
+  - Bénéficiez d’une inscription sur l’annuaire national des Répar’acteurs
+  consulté par les particuliers.
+
+
+  - Valorisez votre activité de réparation comme un levier fort pour préserver
+  les ressources, soutenir l’emploi local et ancrer votre activité dans une
+  économie durable.
+
+
+  - Rejoignez une dynamique collective portée par les Chambres de Métiers et de
+  l’Artisanat.
+
+
+  - Devenez un ambassadeur de l’économie circulaire en participant à des
+  événements locaux ou en valorisant votre engagement dans votre communication.
 description longue: >-
   Le label Répar’acteurs est un label des Chambres de métiers de l’artisanat à
   destination des artisans réparateurs. Seules les entreprises du secteur des
@@ -17,9 +35,10 @@ description longue: >-
 
   • Détenir la qualité Artisan ou le titre de Maître Artisan, 
 
-  • Bénéficier d'un diplôme ou un titre certifié dans l’activité de réparation,
+  • Ou bénéficier d'un diplôme ou un titre certifié dans l’activité de
+  réparation,
 
-  • Exercer depuis 3 années d’expérience professionnelle. 
+  • Ou exercer depuis 3 années d’expérience professionnelle. 
 
 
   Les activités éligibles à la marque répar’acteurs sont toutes celles
@@ -51,13 +70,16 @@ objectifs:
       Une fois votre entreprise labéllisée, intégrez le réseau Répar'acteurs et
       bénéficiez du référencement géolocalisé gratuit dans l’annuaire national
       de la réparation.
+    liens:
+      - lien: https://www.artisanat.fr/annuaire-repar-acteurs
+        texte: Annuaire des Répar'acteurs
   - description: >-
       Affichez le logo Répar’acteurs dans votre boutique « Je répare … et ça
       repart ! » et mettez à l’honneur le réflexe de la réparation avant tout
       remplacement par un objet neuf.
   - description: >-
       Accédez à la veille d'informations sur l'actualité et aux formations pour
-      développer votre entreprise artisanale
+      développer votre entreprise artisanale.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 250 salariés

@@ -1,14 +1,28 @@
 titre: 'Formation référent tourisme durable '
 promesse: >-
   Restaurateurs & hébergeurs, réalisez une formation pour initier une démarche
-  de tourisme durable.
+  de tourisme durable
 description: >-
-  Vous êtes directeur, manager d’établissement ou référent environnement et vous
-  souhaitez initier une démarche de tourisme durable ? La formation "référent
-  tourisme durable" vous permet d'acquérir les connaissances et les outils
-  nécessaires pour mettre en œuvre une gestion durable dans votre établissement.
-  Par ailleurs, elle répond aux critères de formation des référents
-  environnement dans le cadre de la labellisation Clef Verte.
+  Vous êtes directeur, manager ou référent environnement dans un établissement
+  touristique ? Cette formation vous donne les clés pour engager concrètement
+  votre structure dans une gestion plus responsable. Elle répond également aux
+  exigences de formation des référents environnement dans le cadre de la
+  labellisation Clef Verte.
+
+
+  Au programme :
+
+
+  - Comprendre les enjeux environnementaux du secteur du tourisme et identifier
+  les leviers pour améliorer vos performances environnementales
+
+
+  - Apprendre à structurer une politique RSE ou une stratégie de gestion durable
+  adaptée à votre établissement
+
+
+  - Découvrir le fonctionnement du label Clef Verte et les étapes de mise en
+  œuvre d’une démarche de labellisation réussie
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Chambre de Commerce et de l'Industrie
 url: https://www.cciamp.com/produit/tourisme-durable-atelier-RSE
@@ -17,16 +31,19 @@ coût de l'accompagnement: à partir de 450 € HT par participant (ou financeme
 durée de l'accompagnement: 1 journée
 objectifs:
   - description: >-
-      Découvrez les enjeux environnementaux spécifiques au secteur de
-      l'hôtellerie et du tourisme et identifiez les leviers de performance d’une
-      gestion responsable.
+      Prenez connaissance du programme pédagogique, et des prochaines dates de
+      formation proposées.
+    liens:
+      - lien: https://www.cciamp.com/produit/tourisme-durable-atelier-RSE
+        texte: Fiche formation Référent Tourisme Durable
   - description: >-
-      Découvrez comment mettre en œuvre une politique RSE ou une gestion
-      responsable dans votre établissement.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Assistez à une présentation du label Clef verte, premier label de tourisme
-      durable pour les hébergements touristiques et restaurants en France et
-      découvrez comment piloter votre démarche de labellisation.
+      Un conseiller CCI vous recontacte pour répondre à vos questions et
+      réaliser votre inscription à la formation.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
