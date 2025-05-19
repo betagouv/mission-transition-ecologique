@@ -129,7 +129,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '@sentry/nuxt/module',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
-    '@nuxt/scripts'
+    '@nuxt/scripts',
+    '@nuxt/image'
   ],
   // Modules who need to have a look:
   // - nuxt-purgecss
