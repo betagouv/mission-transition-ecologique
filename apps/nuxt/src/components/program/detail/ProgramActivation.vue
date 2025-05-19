@@ -26,7 +26,7 @@
         <div class="fr-mb-0 fr-ml-0">
           <div
             class="fr-tee-description-paragraph-content"
-            v-html="markdownToHtml(content.description)"
+            v-html="Marked.toHtml(content.description)"
           />
         </div>
         <div v-if="content.liens">
@@ -71,10 +71,6 @@ interface Props {
 }
 
 defineProps<Props>()
-
-const markdownToHtml = (text: string | undefined) => {
-  return text ? Marked.toHtml(text) : ''
-}
 
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 

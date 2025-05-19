@@ -7,7 +7,7 @@
     />
     <div
       class="fr-mb-12v fr-text--blue-france"
-      v-html="Marked.toHtml(currentProgram?.description || '')"
+      v-html="Marked.toHtml(currentProgram?.description)"
     />
   </section>
 </template>
