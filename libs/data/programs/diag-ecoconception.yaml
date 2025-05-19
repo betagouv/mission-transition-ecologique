@@ -21,7 +21,6 @@ description: >-
 
   - Préparer et accompagner votre démarche vers l’obtention de l’Ecolabel
   européen
-aide temporairement indisponible: oui
 illustration: images/TEE_eolienne.png
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
@@ -34,6 +33,8 @@ coût de l'accompagnement: >-
 durée de l'accompagnement: 18 jours de prestation répartis sur 6 à 8 mois
 objectifs:
   - description: Exprimez votre intérêt en contactant un conseiller via le formulaire.
+    liens:
+      - formulaire: true
   - description: >-
       Échangez avec un conseiller pour vérifier votre éligibilité et préparer
       votre demande.
