@@ -30,7 +30,7 @@ export interface schemaProgram {
   activation_etape_4?: string
   activation_etape_4_liens?: string
   activation_etape_5?: string
-  etape_activation_5_liens?: string
+  activation_etape_5_liens?: string
   activation_etape_6?: string
   activation_etape_6_liens?: string
   eligibilite_geographique: string

@@ -1,5 +1,5 @@
 {
-  "$schema": "https://specs.frictionlessdata.io/schemas/table-schema.json",
+  "$schema": "https://specs.frictionlessdata.io/schemas/data-package.json",
   "name": "dispositif-aide",
   "title": "Dispositifs d'aides",
   "description": "Spécification du fichier d'échange relatif aux dispositifs d'aides.",
@@ -17,16 +17,9 @@
       "path": "https://spdx.org/licenses/etalab-2.0.html"
     }
   ],
-  "resources": [
-    {
-      "title": "Fichier valide (CSV)",
-      "name": "exemple-valide-csv",
-      "path": "https://github.com/etalab/schema-dispositif-aide/raw/v0.1.0/exemple-valide.csv"
-    }
-  ],
   "sources": [],
-  "created": "2022-03-14",
-  "lastModified": "2025-05-16",
+  "created": "2022-03-14T00:00:00Z",
+  "lastModified": "2025-05-16T00:00:00Z",
   "version": "0.1.0",
   "contributors": [
     {
@@ -90,337 +83,343 @@
       "role": "contributor"
     }
   ],
-  "fields": [
+  "resources": [
     {
-      "name": "id_aide",
-      "description": "ID de l'aide. Identifiant local de l'aide du porteur (unique pour le porteur). Si vous ne disposez pas d'un identifiant, vous pouvez en générer un sur https://heidi.app.etalab.studio/",
-      "example": "65d5b6c7-102c-4440-ac3b-768f708edc0a",
-      "type": "string",
-      "constraints": {
-        "required": true
+      "title": "Fichier valide (CSV)",
+      "name": "exemple-valide-csv",
+      "path": "https://github.com/etalab/schema-dispositif-aide/raw/v0.1.0/exemple-valide.csv",
+      "schema": {
+        "fields": [
+          {
+            "name": "id_aide",
+            "description": "ID de l'aide. Identifiant local de l'aide du porteur (unique pour le porteur). Si vous ne disposez pas d'un identifiant, vous pouvez en générer un sur https://heidi.app.etalab.studio/",
+            "example": "65d5b6c7-102c-4440-ac3b-768f708edc0a",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "nom",
+            "description": "Titre court, nom commercial du dispositif. Si pas de titre commercial clairement identifé, un titre générique du type \"Dispositif { opérateur de contact }\" peut être utilisé",
+            "example": "Accélérateur décarbonation",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "promesse",
+            "description": "La promesse a pour objectif de :\n- résumer le dispositif de manière claire & simple en quelques mots\n- distinguer les offres les unes des autres.\n\nFormulation :\n- 6 à 15 mots.\n- La promesse commence par un verbe à l'impératif\n- rédigée sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse \"vous\" \"votre entreprise\" \n- pas de point à la fin de la promesse (sauf point d'exclamation cf ex.2)",
+            "example": "Développez votre stratégie bas carbone et mettez en œuvre votre plan de transition",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "maxLength": 180
+            }
+          },
+          {
+            "name": "description_courte",
+            "description": "Description courte de l'objectif du dispositif. Qu'est-ce que l'entreprise gagne à bénéficier de cette aide ?\n\nFormulation :\n- 40 à 60 mots\n- rédigée sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse \"vous\" \"votre entreprise\"\n- La description courte est ponctuée par un point.",
+            "example": "L’ADEME soutient financièrement les entreprises qui souhaitent questionner leur modèle économique pour identifier un nouveau modèle compatible avec une trajectoire bas carbone. Vous serez accompagné avec la méthode ACT Pas à Pas (Assessing Low Carbon Transition), une méthode structurante, progressive et sur le long terme qui aide les entreprises à réduire significativement leurs émissions de gaz à effet de serre.",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "description_longue",
+            "description": "Description longue du dispositif - facultatif, texte enrichi en markdown. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple :\n- pour définir un terme technique\n- pour détailler une loi à laquelle un dispositif fait référence\n- pour détailler les projets concernés par un financement\n\nFormulation :\n- 50 à 200 mots",
+            "example": "L'étude ACT Pas à Pas se déroule en 12 à 18 mois selon les entreprises. Les grandes étapes de l'étude sont les suivantes :\n- Analyser la maturité initiale de l'entreprise sur des bases carbone.\nExposer les enjeux et réaliser une analyse stratégique de l’entreprise dans un contexte de transition bas carbone.\n- Déterminer une vision d’entreprise et concevoir la feuille de route du plan de transition à court, moyen et long terme.\n- Elaborer des objectifs de performance carbone et définir une stratégie.\n- Mettre en oeuvre des actions de décarbonation.",
+            "type": "string"
+          },
+          {
+            "name": "programme_aides",
+            "description": "Programme(s) auquel se réfère l'aide - facultatif. Si aucun programme, ne pas remplir ce champs. S'il y a plusieurs programmes, mettre une virgule sans espace entre les différents programmes.",
+            "example": "France 2030,Fonds social européen (FSE),Fonds Vert",
+            "type": "string"
+          },
+          {
+            "name": "porteur_aide",
+            "description": "Porteur(s) de l'aide. S'il y a plusieurs porteurs, mettre une virgule sans espace entre les différents porteurs. Le premier porteur est considérer le porteur/opérateur principal de l'aide.",
+            "example": "ADEME,Région Grand Est",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "porteur_siren",
+            "description": "Numéro SIREN du/des porteur(s) de l'aide. S'il y a plusieurs porteurs, mettre une virgule sans espace entre les différents porteurs.",
+            "example": "385290309",
+            "type": "string",
+            "constraints": {
+              "required": false,
+              "pattern": "^(?:\\d{9};)*\\d{9}$"
+            }
+          },
+          {
+            "name": "beneficiaires_aide",
+            "description": "Liste des bénéficiaires possibles. S'il y a plusieurs bénéficiaires, mettre une virgule sans espace entre les différents bénéficiaires. Bénéficiaire à sélectionner parmi la liste suivante : \"Communes\", \"EPCI à fiscalité propre\", \"Départements\", \"Régions\", \"Associations\", \"Particuliers\", \"Agriculteurs\", \"Entreprises privées\", \"Entreprises publiques locales (Sem, Spl, SemOp)\", \"Établissements publics - Services de l'État\", \"Recherche\"",
+            "example": "Communes,Départements",
+            "type": "string",
+            "constraints": {
+              "required": true,
+              "pattern": "(?:(?:^|,)(Communes|EPCI à fiscalité propre|Départements|Régions|Associations|Particuliers|Agriculteurs|Entreprises privées|Entreprises publiques locales \\(Sem, Spl, SemOp\\)|Établissements publics - Services de l'État|Recherche))+$"
+            }
+          },
+          {
+            "name": "types_aides",
+            "description": "Liste des types d'aides possibles. Par exemple: Si aide financière : \"Subvention\", \"Prêt\", \"Avance récupérable\". Si aide en ingénierie : \"Technique\", \"Financière\", \"Administrative\" ...",
+            "example": "Subvention,Autre",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "montant_aide_ou_cout",
+            "description": "Correspond au montant de financement (d'une étude ou d'un investissement), au montant du prêt auquel l'entreprise peut prétendre pour financer son projet. A l'inverse, ce monantant correspond au coût restant à charge pour bénéficier d'un accompagnement, d'un diag (pour les études) ou au pourcentage d'un avantage fisal. 12 mots maximum.",
+            "example": "Exemple pour une subvention (financement ou financement-étude) le montant d'aide s'écrit : Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 € HT - Exemple de coût restant à charge pour un diagnostic (étude) : 4 000 € HT après subvention de 60% - Exemple d'un avantage fiscal : Crédit d'impôt entre 20 à 60% selon localisation",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "duree_aide",
+            "description": "Précisez la durée totale dans laquelle s’inscrit cette prestation. 12 mots maximum - champ obligatoire pour les études et formations.",
+            "example": "Exemple 1 : 12 jours de prestation répartis sur 6 à 8 mois - Exemple 2 : De 1 à 5 jours selon la taille de l'entreprise",
+            "type": "string"
+          },
+          {
+            "name": "projet_reference",
+            "description": "Lien avec un ou plusieurs projets de références associés à ce dispositif. Mettre un point-virgule sans espace entre les différents projets.",
+            "example": "Bilan Ges;Réduction des emballages;Plan action dechets",
+            "type": "string"
+          },
+          {
+            "name": "exemple_projet",
+            "description": "Exemples d'applications ou de projets réalisés grâce à cette aide.",
+            "example": "Déploiement de services connectés dans un EHPAD à Auzières.",
+            "type": "string"
+          },
+          {
+            "name": "thematique_aide",
+            "description": "Thématique et sous-thématique de l'aide. S'il y a plusieurs thématiques, mettre un point-virgule sans espace entre les différentes thématiques. Pour décrire les thématiques et sous-thématiques, mettre un signe supérieur > entre les thématiques et sous-thématiques",
+            "example": "Thématique A > Sous-Thématique AA > Sous-Thématique AAA,Thématique B > Sous-Thématique BB",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "date_ouverture",
+            "description": "Date d'ouverture de l'aide. Format YYYY-MM-DD-HH-MM (Année-Mois-Jour-heure-minute)",
+            "example": "2025-10-15T15:00:00Z",
+            "type": "datetime"
+          },
+          {
+            "name": "date_releve_intermediaire",
+            "description": "Date(s) de relève intermediaire. Format YYYY-MM-DD-HH-MM (Année-Mois-Jour-heure-minute)",
+            "example": "2025-10-15-15-00;2026-03-03-15-00;2026-10-15-15-00",
+            "type": "string"
+          },
+          {
+            "name": "date_cloture",
+            "description": "Date de cloture de l'aide. Format YYYY-MM-DD-HH-MM (Année-Mois-Jour-heure-minute)",
+            "example": "2025-10-15T15:00:00Z",
+            "type": "datetime"
+          },
+          {
+            "name": "url_source",
+            "description": "Lien permettant d'obtenir des informations sur le dispositif.",
+            "example": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/act-pas-a-pas",
+            "type": "string",
+            "format": "uri"
+          },
+          {
+            "name": "contact_question",
+            "description": "Contact(s) pour poser des questions sur le dispositif - doit être un mail ou une URL.",
+            "example": "aides@programme.gouv.fr",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "activation_etape_1",
+            "description": "Première étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
+            "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "activation_etape_1_liens",
+            "description": "Liens au format Markdown [description](lien) séparé par des virgules",
+            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+            "type": "string"
+          },
+          {
+            "name": "activation_etape_2",
+            "description": "Deuxième étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
+            "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
+            "type": "string"
+          },
+          {
+            "name": "activation_etape_2_liens",
+            "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 2ème étape",
+            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+            "type": "string"
+          },
+          {
+            "name": "activation_etape_3",
+            "description": "Troisième étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
+            "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
+            "type": "string"
+          },
+          {
+            "name": "activation_etape_3_liens",
+            "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 3ème étape",
+            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+            "type": "string"
+          },
+          {
+            "name": "activation_etape_4",
+            "description": "Quatrième étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
+            "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
+            "type": "string"
+          },
+          {
+            "name": "activation_etape_4_liens",
+            "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 4ème étape",
+            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+            "type": "string"
+          },
+          {
+            "name": "activation_etape_5",
+            "description": "Cinquième étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
+            "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
+            "type": "string"
+          },
+          {
+            "name": "activation_etape_5_liens",
+            "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 5ème étape",
+            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+            "type": "string"
+          },
+          {
+            "name": "activation_etape_6",
+            "description": "Sixième étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
+            "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
+            "type": "string"
+          },
+          {
+            "name": "activation_etape_6_liens",
+            "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 6ème étape",
+            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+            "type": "string"
+          },
+          {
+            "name": "eligibilite_geographique",
+            "description": "Couverture géographique du dispositif. Champs à écrire en utilisant le formalisme du Code Officiel Géographique du COG : https://www.insee.fr/fr/information/5230987. Séparer chaque code COG par des ;",
+            "example": "PAYS-99100 pour la France entière    OU    REG-84;DEP-05 pour la région Auvergne-Rhône-Alpes et le département des Hautes-Alpes",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "eligibilite_geographique_exclusions",
+            "description": "Couverture géographique exclues du dispositif d'aide. Champs à écrire en utilisant le formalisme du Code Officiel Géographique du COG : https://www.insee.fr/fr/information/5230987. Séparer chaque code COG par des ; Cette propriété a précédence sur les \"eligibilite_geographique\" s'il y a recouvrement",
+            "example": "REG-84;DEP-05 pour la région Auvergne-Rhône-Alpes et le département des Hautes-Alpes",
+            "type": "string"
+          },
+          {
+            "name": "eligibilite_sectorielle",
+            "description": "Couverture sectorielle du dispositif en langage naturel.",
+            "example": "Tous secteurs d’activité, sauf les industries gérées par le programme PACTE Industrie",
+            "type": "string"
+          },
+          {
+            "name": "eligibilite_sectorielle_naf",
+            "description": "Couverture sectorielle du dispositif identifiés via les codes NAF - Nomenclature d'Activités Française. Peut être n'importe niveau de code NAF (section, division, groupe etc.). Séparé par ; Par défaut il est possible d'écrire A; B; C; D; E; F; G; H; I; J; K; L; M; N; O; P; Q; R; S; T; U - correspondant à toutes les sections NAF.",
+            "example": "A;55.20Z",
+            "type": "string",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "name": "eligibilite_sectorielle_exclusions",
+            "description": "Identifiés via leurs codes NAF. Peut être n'importe quel niveau de code NAF (section, division, groupe etc.). Cette propriété a précédence sur les \"secteurs spécifiques\" s'il y a recouvrement. Par exemple, si `\"secteurs spécifiques\" = [\"A\"]` et `\"secteurs exclus\" = [\"02\"]`, alors les secteurs éligibles s'entendent comme \"Agriculture, sylviculture et pêche\" hors \"Division 02 : Sylviculture et exploitation forestière\".",
+            "example": "02;09.10Z",
+            "type": "string"
+          },
+          {
+            "name": "eligibilite_effectif",
+            "description": "Mentionner l'éligibilité de l'effectif sous la forme d'un texte. ",
+            "example": "Exemple 1 : Moins de 50 salariés - Exemple 2 : Entre 20 et 500 salariés - Exemple 3 : Toutes tailles",
+            "type": "string"
+          },
+          {
+            "name": "eligibilite_effectif_min",
+            "description": "Nombre minimum de salarié pour bénéficier de l'aide. Laisser vide si non applicable.",
+            "example": "50",
+            "type": "number"
+          },
+          {
+            "name": "eligibilite_effectif_max",
+            "description": "Nombre maximum de salarié pour bénéficier de l'aide. Laisser vide si non applicable",
+            "example": "499",
+            "type": "number"
+          },
+          {
+            "name": "eligibilite_existence",
+            "description": "Nombre minimum d'année(s) d'existence de l'entreprise pour bénéficier de l'aide. Laisser vide si non applicable. ",
+            "example": "Exemple 1 : Au moins 1 an d'existence. - Exemple 2 : Éligible à toutes les entreprises",
+            "type": "string"
+          },
+          {
+            "name": "eligibilite_existence_min",
+            "description": "Nombre minimum d'année(s) d'existence de l'entreprise pour bénéficier de l'aide. Laisser vide si non applicable. ",
+            "example": "2",
+            "type": "number"
+          },
+          {
+            "name": "eligibilite_existence_max",
+            "description": "Nombre maximum d'année(s) d'existence de l'entreprise pour bénéficier de l'aide. Laisser vide si non applicable",
+            "example": "7",
+            "type": "number"
+          },
+          {
+            "name": "eligibilite_statuts_specifiques",
+            "description": "Liste des statuts d'entreprise spécifiquement visés. A utiliser UNIQUEMENT si un tel statut est NECESSAIRE pour obtenir l'aide. Cela exclu par défaut tous les autres statuts. Peut contenir des statuts juridiques (ex: SARL, EI), fiscaux (micro-entreprise), ou des qualifications (artisan).",
+            "example": "artisan;SARL",
+            "type": "string"
+          },
+          {
+            "name": "eligibilite_statuts_exclus",
+            "description": "Liste des statuts ou qualifications exclus du dispositif.",
+            "example": "micro-entrepreneur;EI",
+            "type": "string"
+          },
+          {
+            "name": "eligibilite_autre",
+            "description": "Description en langage naturel de toutes les conditions d'égibilité ne trouvant pas leur place dans les champs automatisés précédents.",
+            "example": "Pour accéder à cette étude, vous devez avoir déjà réalisé un premier bilan de gaz à effet de serre.",
+            "type": "string"
+          },
+          {
+            "name": "date_mise_a_jour",
+            "description": "Date de mise à jour du jeu de données.Format YYYY-MM-DD-HH-MM (Année-Mois-Jour)",
+            "example": "2025-10-15T15:00:00Z",
+            "type": "datetime"
+          }
+        ]
       }
-    },
-    {
-      "name": "nom",
-      "description": "Titre court, nom commercial du dispositif. Si pas de titre commercial clairement identifé, un titre générique du type \"Dispositif { opérateur de contact }\" peut être utilisé",
-      "example": "Accélérateur décarbonation",
-      "type": "string",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "promesse",
-      "description": "La promesse a pour objectif de :\n- résumer le dispositif de manière claire & simple en quelques mots\n- distinguer les offres les unes des autres.\n\nFormulation :\n- 6 à 15 mots.\n- La promesse commence par un verbe à l'impératif\n- rédigée sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse \"vous\" \"votre entreprise\" \n- pas de point à la fin de la promesse (sauf point d'exclamation cf ex.2)",
-      "example": "Développez votre stratégie bas carbone et mettez en œuvre votre plan de transition",
-      "type": "string",
-      "constraints": {
-        "required": true,
-        "maxLength": 180
-      }
-    },
-    {
-      "name": "description_courte",
-      "description": "Description courte de l'objectif du dispositif. Qu'est-ce que l'entreprise gagne à bénéficier de cette aide ?\n\nFormulation :\n- 40 à 60 mots\n- rédigée sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse \"vous\" \"votre entreprise\"\n- La description courte est ponctuée par un point.",
-      "example": "L’ADEME soutient financièrement les entreprises qui souhaitent questionner leur modèle économique pour identifier un nouveau modèle compatible avec une trajectoire bas carbone. Vous serez accompagné avec la méthode ACT Pas à Pas (Assessing Low Carbon Transition), une méthode structurante, progressive et sur le long terme qui aide les entreprises à réduire significativement leurs émissions de gaz à effet de serre.",
-      "type": "string",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "description_longue",
-      "description": "Description longue du dispositif - facultatif, texte enrichi en markdown. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple :\n- pour définir un terme technique\n- pour détailler une loi à laquelle un dispositif fait référence\n- pour détailler les projets concernés par un financement\n\nFormulation :\n- 50 à 200 mots",
-      "example": "L'étude ACT Pas à Pas se déroule en 12 à 18 mois selon les entreprises. Les grandes étapes de l'étude sont les suivantes :\n- Analyser la maturité initiale de l'entreprise sur des bases carbone.\nExposer les enjeux et réaliser une analyse stratégique de l’entreprise dans un contexte de transition bas carbone.\n- Déterminer une vision d’entreprise et concevoir la feuille de route du plan de transition à court, moyen et long terme.\n- Elaborer des objectifs de performance carbone et définir une stratégie.\n- Mettre en oeuvre des actions de décarbonation.",
-      "type": "string"
-    },
-    {
-      "name": "programme_aides",
-      "description": "Programme(s) auquel se réfère l'aide - facultatif. Si aucun programme, ne pas remplir ce champs. S'il y a plusieurs programmes, mettre une virgule sans espace entre les différents programmes.",
-      "example": "France 2030,Fonds social européen (FSE),Fonds Vert",
-      "type": "string"
-    },
-    {
-      "name": "porteur_aide",
-      "description": "Porteur(s) de l'aide. S'il y a plusieurs porteurs, mettre une virgule sans espace entre les différents porteurs. Le premier porteur est considérer le porteur/opérateur principal de l'aide.",
-      "example": "ADEME,Région Grand Est",
-      "type": "string",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "porteur_siren",
-      "description": "Numéro SIREN du/des porteur(s) de l'aide. S'il y a plusieurs porteurs, mettre une virgule sans espace entre les différents porteurs.",
-      "example": "385290309",
-      "type": "string",
-      "constraints": {
-        "required": false,
-        "pattern": "^(?:[^,]{9},)*[^,]{9}$"
-      }
-    },
-    {
-      "name": "beneficiaires_aide",
-      "description": "Liste des bénéficiaires possibles. S'il y a plusieurs bénéficiaires, mettre une virgule sans espace entre les différents bénéficiaires. Bénéficiaire à sélectionner parmi la liste suivante : \"Communes\", \"EPCI à fiscalité propre\", \"Départements\", \"Régions\", \"Associations\", \"Particuliers\", \"Agriculteurs\", \"Entreprises privées\", \"Entreprises publiques locales (Sem, Spl, SemOp)\", \"Établissements publics - Services de l'État\", \"Recherche\"",
-      "example": "Communes,Départements",
-      "type": "string",
-      "constraints": {
-        "required": true,
-        "pattern": "(?:(?:^|,)(Communes|EPCI à fiscalité propre|Départements|Régions|Associations|Particuliers|Agriculteurs|Entreprises privées|Entreprises publiques locales \\(Sem, Spl, SemOp\\)|Établissements publics - Services de l'État|Recherche))+$"
-      }
-    },
-    {
-      "name": "types_aides",
-      "description": "Liste des types d'aides possibles. Par exemple: Si aide financière : \"Subvention\", \"Prêt\", \"Avance récupérable\". Si aide en ingénierie : \"Technique\", \"Financière\", \"Administrative\" ...",
-      "example": "Subvention,Autre",
-      "type": "string",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "montant_aide_ou_cout",
-      "description": "Correspond au montant de financement, de prêt auquel l'entreprise peut prétendre pour financer son projet ou son étude; au coût restant à charge pour bénéficier d'un accompagnement ou au pourcentage d'un avantage fisal. 12 mots maximum.",
-      "example": "Exemple pour une subvention : Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 € HT - Exemple de coût restant à charge pour un diagnostic : 4 000 € HT après subvention de 60% - Exemple d'un avantage fiscal : Crédit d'impôt entre 20 à 60% selon localisation",
-      "type": "string",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "duree_aide",
-      "description": "Précisez la durée totale dans laquelle s’inscrit cette prestation. 12 mots maximum - champ obligatoire pour les études et formations.",
-      "example": "Exemple 1 : 12 jours de prestation répartis sur 6 à 8 mois - Exemple 2 : De 1 à 5 jours selon la taille de l'entreprise",
-      "type": "string"
-    },
-    {
-      "name": "projet_reference",
-      "description": "Lien avec un ou plusieurs projets de références associés à ce dispositif. Mettre un point-virgule sans espace entre les différents projets.",
-      "example": "Bilan Ges;Réduction des emballages;Plan action dechets",
-      "type": "string"
-    },
-    {
-      "name": "exemple_projet",
-      "description": "Exemples d'applications ou de projets réalisés grâce à cette aide.",
-      "example": "Déploiement de services connectés dans un EHPAD à Auzières.",
-      "type": "string"
-    },
-    {
-      "name": "thematique_aide",
-      "description": "Thématique et sous-thématique de l'aide. S'il y a plusieurs thématiques, mettre un point-virgule sans espace entre les différentes thématiques. Pour décrire les thématiques et sous-thématiques, mettre un signe supérieur > entre les thématiques et sous-thématiques",
-      "example": "Thématique A > Sous-Thématique AA > Sous-Thématique AAA,Thématique B > Sous-Thématique BB",
-      "type": "string",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "date_ouverture",
-      "description": "Date d'ouverture de l'aide. Format YYYY-MM-DD-HH-MM (Année-Mois-Jour-heure-minute)",
-      "example": "2025-10-15-15-00",
-      "type": "date",
-      "format": "%Y-%m-%d-%h-%M"
-    },
-    {
-      "name": "date_releve_intermediaire",
-      "description": "Date(s) de relève intermediaire. Format YYYY-MM-DD-HH-MM (Année-Mois-Jour-heure-minute)",
-      "example": "2025-10-15-15-00;2026-03-03-15-00;2026-10-15-15-00",
-      "type": "string"
-    },
-    {
-      "name": "date_cloture",
-      "description": "Date de cloture de l'aide. Format YYYY-MM-DD-HH-MM (Année-Mois-Jour-heure-minute)",
-      "example": "2025-10-15-15-00",
-      "type": "date",
-      "format": "%Y-%m-%d-%h-%M"
-    },
-    {
-      "name": "url_source",
-      "description": "Lien permettant d'obtenir des informations sur le dispositif.",
-      "example": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/act-pas-a-pas",
-      "type": "string",
-      "format": "uri"
-    },
-    {
-      "name": "contact_question",
-      "description": "Contact(s) pour poser des questions sur le dispositif - doit être un mail ou une URL.",
-      "example": "aides@programme.gouv.fr",
-      "type": "string",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "activation_etape_1",
-      "description": "Première étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
-      "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
-      "type": "string",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "activation_etape_1_liens",
-      "description": "Liens au format Markdown [description](lien) séparé par des virgules",
-      "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
-      "type": "string"
-    },
-    {
-      "name": "activation_etape_2",
-      "description": "Deuxième étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
-      "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
-      "type": "string"
-    },
-    {
-      "name": "activation_etape_2_liens",
-      "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 2ème étape",
-      "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
-      "type": "string"
-    },
-    {
-      "name": "activation_etape_3",
-      "description": "Troisième étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
-      "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
-      "type": "string"
-    },
-    {
-      "name": "activation_etape_3_liens",
-      "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 3ème étape",
-      "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
-      "type": "string"
-    },
-    {
-      "name": "activation_etape_4",
-      "description": "Quatrième étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
-      "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
-      "type": "string"
-    },
-    {
-      "name": "activation_etape_4_liens",
-      "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 4ème étape",
-      "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
-      "type": "string"
-    },
-    {
-      "name": "activation_etape_5",
-      "description": "Cinquième étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
-      "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
-      "type": "string"
-    },
-    {
-      "name": "activation_etape_5_liens",
-      "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 5ème étape",
-      "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
-      "type": "string"
-    },
-    {
-      "name": "activation_etape_6",
-      "description": "Sixième étape dans le but d'activer l'aide ou de réaliser une demande auprès de l'opérateur responsable.",
-      "example": "Consultez le référentiel des critères en fonction de votre catégorie de produits ou services",
-      "type": "string"
-    },
-    {
-      "name": "activation_etape_6_liens",
-      "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 6ème étape",
-      "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
-      "type": "string"
-    },
-    {
-      "name": "eligibilite_geographique",
-      "description": "Couverture géographique du dispositif. Champs à écrire en utilisant le formalisme du Code Officiel Géographique du COG : https://www.insee.fr/fr/information/5230987. Séparer chaque code COG par des ;",
-      "example": "PAYS-99100 pour la France entière    OU    REG-84;DEP-05 pour la région Auvergne-Rhône-Alpes et le département des Hautes-Alpes",
-      "type": "string",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "eligibilite_geographique_exclusions",
-      "description": "Couverture géographique exclues du dispositif d'aide. Champs à écrire en utilisant le formalisme du Code Officiel Géographique du COG : https://www.insee.fr/fr/information/5230987. Séparer chaque code COG par des ; Cette propriété a précédence sur les \"eligibilite_geographique\" s'il y a recouvrement",
-      "example": "REG-84;DEP-05 pour la région Auvergne-Rhône-Alpes et le département des Hautes-Alpes",
-      "type": "string"
-    },
-    {
-      "name": "eligibilite_sectorielle",
-      "description": "Couverture sectorielle du dispositif en langage naturel.",
-      "example": "Tous secteurs d’activité, sauf les industries gérées par le programme PACTE Industrie",
-      "type": "string"
-    },
-    {
-      "name": "eligibilite_sectorielle_naf",
-      "description": "Couverture sectorielle du dispositif identifiés via les codes NAF - Nomenclature d'Activités Française. Peut être n'importe niveau de code NAF (section, division, groupe etc.). Séparé par ; Par défaut il est possible d'écrire A; B; C; D; E; F; G; H; I; J; K; L; M; N; O; P; Q; R; S; T; U - correspondant à toutes les sections NAF.",
-      "example": "A;55.20Z",
-      "type": "string",
-      "constraints": {
-        "required": true
-      }
-    },
-    {
-      "name": "eligibilite_sectorielle_exclusions",
-      "description": "Identifiés via leurs codes NAF. Peut être n'importe quel niveau de code NAF (section, division, groupe etc.). Cette propriété a précédence sur les \"secteurs spécifiques\" s'il y a recouvrement. Par exemple, si `\"secteurs spécifiques\" = [\"A\"]` et `\"secteurs exclus\" = [\"02\"]`, alors les secteurs éligibles s'entendent comme \"Agriculture, sylviculture et pêche\" hors \"Division 02 : Sylviculture et exploitation forestière\".",
-      "example": "02;09.10Z",
-      "type": "string"
-    },
-    {
-      "name": "eligibilite_effectif",
-      "description": "Mentionner l'éligibilité de l'effectif sous la forme d'un texte. ",
-      "example": "Exemple 1 : Moins de 50 salariés - Exemple 2 : Entre 20 et 500 salariés - Exemple 3 : Toutes tailles",
-      "type": "string"
-    },
-    {
-      "name": "eligibilite_effectif_min",
-      "description": "Nombre minimum de salarié pour bénéficier de l'aide. Laisser vide si non applicable.",
-      "example": "50",
-      "type": "number"
-    },
-    {
-      "name": "eligibilite_effectif_max",
-      "description": "Nombre maximum de salarié pour bénéficier de l'aide. Laisser vide si non applicable",
-      "example": "499",
-      "type": "number"
-    },
-    {
-      "name": "eligibilite_existence",
-      "description": "Nombre minimum d'année(s) d'existence de l'entreprise pour bénéficier de l'aide. Laisser vide si non applicable. ",
-      "example": "Exemple 1 : Au moins 1 an d'existence. - Exemple 2 : Éligible à toutes les entreprises",
-      "type": "string"
-    },
-    {
-      "name": "eligibilite_existence_min",
-      "description": "Nombre minimum d'année(s) d'existence de l'entreprise pour bénéficier de l'aide. Laisser vide si non applicable. ",
-      "example": "2",
-      "type": "number"
-    },
-    {
-      "name": "eligibilite_existence_max",
-      "description": "Nombre maximum d'année(s) d'existence de l'entreprise pour bénéficier de l'aide. Laisser vide si non applicable",
-      "example": "7",
-      "type": "number"
-    },
-    {
-      "name": "eligibilite_statuts_specifiques",
-      "description": "Liste des statuts d'entreprise spécifiquement visés. A utiliser UNIQUEMENT si un tel statut est NECESSAIRE pour obtenir l'aide. Cela exclu par défaut tous les autres statuts. Peut contenir des statuts juridiques (ex: SARL, EI), fiscaux (micro-entreprise), ou des qualifications (artisan).",
-      "example": "artisan;SARL",
-      "type": "string"
-    },
-    {
-      "name": "eligibilite_statuts_exclus",
-      "description": "Liste des statuts ou qualifications exclus du dispositif.",
-      "example": "micro-entrepreneur;EI",
-      "type": "string"
-    },
-    {
-      "name": "eligibilite_autre",
-      "description": "Description en langage naturel de toutes les conditions d'égibilité ne trouvant pas leur place dans les champs automatisés précédents.",
-      "example": "Pour accéder à cette étude, vous devez avoir déjà réalisé un premier bilan de gaz à effet de serre.",
-      "type": "string"
-    },
-    {
-      "name": "date_mise_a_jour",
-      "description": "Date de mise à jour du jeu de données.Format YYYY-MM-DD-HH-MM (Année-Mois-Jour)",
-      "example": "2025-10-15-15-00",
-      "type": "date",
-      "format": "%Y-%m-%d-%H-%m"
     }
   ]
 }
