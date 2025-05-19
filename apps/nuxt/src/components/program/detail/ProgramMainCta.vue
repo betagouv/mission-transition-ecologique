@@ -3,50 +3,40 @@
     v-if="!isDataFull"
     :text="Translation.t('program.programRegisterHighlightText')"
   />
-  <!-- <div v-if="isDataFull && programIsEligible">
+  <div v-if="isDataFull && isActivationVisible">
     <DsfrButton
       size="lg"
       icon="fr-icon-mail-line"
-      class="fr-ml-md-3v"
-      :on-click="() => scrollToProgramRef(activationRef)"
+      class="fr-ml-3v fr-mb-3v"
+      :on-click="() => scrollToActivation()"
     >
-      {{ Translation.t('program.CTAButton') }}
+      {{ Translation.t('program.CtaActivation') }}
     </DsfrButton>
     <DsfrButton
       secondary
       size="lg"
-      icon="fr-icon-mail-line"
-      class="fr-ml-md-3v"
-      :on-click="() => scrollToProgramRef(activationRef)"
+      icon="fr-icon-chat-3-line"
+      class="fr-ml-3v"
+      :on-click="() => scrollToForm()"
     >
-      TODO Bouton de question
+      {{ Translation.t('program.CtaContact') }}
     </DsfrButton>
-  </div> -->
+  </div>
 </template>
 
-<script lang="ts">
-// import { useProgramStore } from '@/stores/program'
-// import { storeToRefs } from 'pinia'
-// import { ProgramEligibility, ProgramType } from '@/types'
+<script setup lang="ts">
+import Translation from '@/tools/translation'
+import { useCompanyDataStore } from '@/stores/companyData'
+import { storeToRefs } from 'pinia'
 
-// interface Props {
-//   formContainerRef: HTMLElement | null | undefined
-//   activationRef: HTMLElement | null | undefined
-// }
-// const props = defineProps<Props>()
+interface Props {
+  isActivationVisible: Ref<boolean>
+  scrollToForm: () => void
+  scrollToActivation: () => void
+}
+defineProps<Props>()
 
-// const { currentProgram } = storeToRefs(useProgramStore())
-// const { isDataFull } = storeToRefs(useCompanyDataStore())
+//TODO SCROLLS should be just one option depending on the input data.
 
-// const programIsEligible = computed(() => {
-//   return currentProgram.value ? ProgramEligibility.isEligible(currentProgram.value as unknown as ProgramType) : false
-// })
-
-// const scrollToProgramRef = (reference) => {
-//   if (reference) {
-//     navigation.isByRouteName(RouteName.CatalogProgramDetail) || navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)
-//       ? Scroll.to(reference)
-//       : Scroll.toWithTopBarOffset(reference)
-//   }
-// }
+const { isDataFull } = storeToRefs(useCompanyDataStore())
 </script>

@@ -1,15 +1,10 @@
 const programFrDict = {
   program: {
     programResume: 'Le dispositif en deux mots',
-    programObjective: {
-      title: {
-        inProgram: 'Au programme :',
-        applicationSteps: 'Les étapes de votre demande d’aide :'
-      }
-    },
     programProviders: 'Contact',
-    CTAActivation: 'Pour en bénéficier',
-    activationTitle: 'Pour en bénéficier :',
+    CtaActivation: "J'aimerai en bénéficier",
+    CtaContact: "J'ai une question",
+    programActivation: 'Pour en bénéficier :',
     CTAForm: 'Contactez un conseiller',
     CTAQuestion: "J'ai une question",
     programType: "Nature de l'aide",
