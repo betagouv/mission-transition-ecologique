@@ -82,8 +82,6 @@ const openModal = () => {
   useNavigationStore().resetFromCtaRegisterModal()
   Navigation.toggleRegisterModal()
 }
-
-// TODO Append a first step
 </script>
 
 <style scoped lang="scss">
