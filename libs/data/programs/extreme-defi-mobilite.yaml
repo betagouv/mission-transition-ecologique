@@ -3,10 +3,30 @@ promesse: >-
   Rejoignez l'eXtrême Défi, un programme innovant pour concevoir les véhicules
   de demain
 description: >-
-  L' eXtrême Défi Mobilité est un parcours d'innovation dont l'objectif est
-  d’imaginer, prototyper et produire de nouvelles solutions de déplacement du
-  quotidien pour les territoires dépendants de l’automobile : durables,
-  réparables, reconditionnables, légers et économes. 
+  L’eXtrême Défi Mobilité est un parcours d'innovation visant à imaginer et
+  développer des solutions de déplacement durables et adaptées aux territoires
+  dépendants de l’automobile.
+
+
+  - Participez à des sessions de créativité pour concevoir de nouveaux concepts
+  d'objets roulants.
+
+
+  - Prototypez des véhicules, avec des expérimentations continues auprès
+  d'utilisateurs dans les territoires partenaires.
+
+
+  - Passez à la phase d’industrialisation : production, assemblage, réparation,
+  et reconditionnement des véhicules tout en affinant le design.
+
+
+  - Identifiez les sources de financement régionales, nationales ou de l’ADEME
+  pour soutenir les différentes phases de votre projet.
+
+
+  - Bénéficiez des nombreuses expertises du réseau : mécanique, design,
+  électronique, urbanisme, ecoconception, modèles économiques, communication,
+  marketing, etc.
 description longue: >
   L’eXtrême Défi porte l'ambition de concevoir des véhicules :
 
@@ -44,23 +64,15 @@ nature de l'aide: étude
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Jusqu'à 3 ans d'accompagnement
 objectifs:
-  - description: >-
-      Participez à des sessions de créativité pour faire émerger de nouveaux
-      concepts d'objets roulants.
-  - description: >-
-      Prototypez les véhicules et expérimentez en continu auprès d'utilisateurs
-      dans les territoires partenaires du défi.
-  - description: >-
-      Passez en phase d'industrialisation : production, assemblage, réparation,
-      reconditionnement, et affinez le design des véhicules en répétant phases
-      d'idéation et prototypage.
-  - description: >-
-      Identifiez des sources de financement de votre région, de l’ADEME ou au
-      niveau national sur l'ensemble des phases.
-  - description: >-
-      Intégrez la communauté de l'eXtrême Défi et bénéficiez des nombreuses
-      expertises du réseau : mécanique, design, électronique, urbanisme,
-      ecoconception, modèles économiques, communication, marketing, etc.
+  - description: Découvrez le programme eXtrême Défi.
+    liens:
+      - lien: https://xd.ademe.fr/approche-integrale
+        texte: Le site de l’eXtrême Défi
+  - description: Explorez les différentes manières de vous impliquer dans le programme.
+    liens:
+      - lien: https://wikixd.fabmob.io/wiki/Devenir_acteur_de_l'XD
+        texte: Quatre niveaux d'engagement possibles
+  - description: Exprimer votre intérêt pour rejoindre la communauté de l'eXtrême Défi.
     liens:
       - lien: https://airtable.com/apprjFOnbLySO8spa/shraH0xKsFZnkZOKw
         texte: Rejoignez l'extrême Défi

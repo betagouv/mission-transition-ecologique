@@ -3,8 +3,27 @@ promesse: >-
   Réalisez des économies durables en réduisant vos déchets et vos pertes en
   énergie, matière et eau.
 description: >-
-  Bénéficier d’un état des lieux sur vos flux pour vous aider à faire des
-  économies (énergie, eau, matières, déchets) 
+  Profitez d’un accompagnement personnalisé pour mieux maîtriser vos
+  consommations d’énergie, d’eau, de matières premières et vos déchets, avec un
+  retour sur investissement rapide.
+
+
+  - Faites réaliser un état des lieux par un expert de la Chambre de Métiers et
+  de l’Artisanat : identification de vos flux, calcul des pertes et de leurs
+  coûts, comparaison aux moyennes du secteur.
+
+
+  - Recevez un plan d’action simple, concret et immédiatement rentable (en moins
+  de 12 mois), avec un chiffrage des économies potentielles (de 2 000 à 5 000 €
+  par an en moyenne).
+
+
+  - Mettez en œuvre ce plan et bénéficiez d’un accompagnement pendant un an pour
+  suivre vos progrès.
+
+
+  - Évaluez les résultats obtenus et mesurez l’impact financier des actions
+  menées.
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Chambre des Métiers et de l'Artisanat
 url: >-
@@ -14,18 +33,17 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 5 jours de prestation répartis sur 12 mois
 objectifs:
   - description: >-
-      Bénéficiez d'un état des lieux des flux par un expert de la Chambre de
-      Métiers et de l'Artisanat : identification des flux, des pertes cachées,
-      calcul de leurs coûts et comparaison aux moyennes du secteur d’activité.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Obtenez un plan d’action avec une rentabilité immédiate (moins de 12
-      mois), des préconisations simples et opérationnelles en chiffrant les
-      économies réalisables. En moyenne, les plans d’actions proposés
-      aboutissent à des économies allant de 2 000 à 5 000 € par an.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Mettez en oeuvre votre plan d’action et soyez accompagné par un expert sur
-      un an.
-  - description: Evaluez les résultats et les économies financières réalisées.
+      Définissez avec l’expert le périmètre de l'accompagnement, la méthode et
+      le calendrier.
+  - description: Lancez le diagnostic avec l'expert proposé par votre CMA.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 20 salariés

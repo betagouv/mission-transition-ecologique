@@ -1,12 +1,22 @@
 titre: Formation écogestes
 promesse: >-
   Restaurateurs & hébergeurs, construisez une charte d’écogestes adaptée à votre
-  établissement.
+  établissement
 description: >-
-  Cette formation permet à un établissement du secteur CHR et du tourisme
-  d'identifier ses postes principaux de consommation d’énergie, d'eau et de
-  production de déchets, et de co-construire une charte d’écogestes répondant
-  aux nouveaux critères obligatoires de classement hôtelier. 
+  Cet atelier Formation-Action d’une demi-journée s’adresse aux établissements
+  d’hébergement et de restauration qui souhaitent découvrir des pratiques
+  écoresponsables et des gestes concrets pour intégrer le développement durable
+  dans leur activité. Au programme :
+
+
+  - Sensibiliser les collaborateurs aux écogestes en hôtellerie ou restauration.
+
+
+  - Répondre aux critères obligatoires du classement hôtelier (arrêté du 29
+  décembre 2021).
+
+
+  - Co-construire et diffuser efficacement une charte d’écogestes en interne.
 illustration: images/TEE_ampoule.png
 opérateur de contact: Chambre de Commerce et de l'Industrie
 url: https://www.cciamp.com/produit/ecogestes-chr
@@ -16,15 +26,17 @@ durée de l'accompagnement: 1 demi-journée
 activable en autonomie: oui
 objectifs:
   - description: >-
-      Envoyez un mail à florence.colonna@cciamp.com pour faire votre demande
-      d'inscription au parcours de formation "écogestes".
-  - description: Identifiez les enjeux eau, énergie, déchets du secteur CHR et du tourisme.
+      Prenez connaissance du programme pédagogique, et des prochaines dates de
+      formation proposées.
+    liens:
+      - lien: https://www.cciamp.com/produit/ecogestes-chr
+        texte: Fiche formation Ecogestes en CHR
   - description: >-
-      Identifiez les écogestes pour permettre à votre entreprise de réduire ses
-      déchets et ses consommations d’énergie et d'eau.
-  - description: >-
-      Construisez une charte d’écogestes adaptée à votre établissement, et
-      réflechissez à sa mise en place auprès des équipes.
+      Réalisez votre demande d'inscription au parcours de formation "écogestes"
+      par mail au référent de la formation.
+    liens:
+      - lien: https://florence.colonna@cciamp.com
+        texte: florence.colonna@cciamp.com
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
@@ -39,10 +51,14 @@ publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
       - est éligible
+      - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est la gestion des déchets

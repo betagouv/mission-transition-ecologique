@@ -245,7 +245,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "Tous secteurs d’activité, sauf les industries gérées par le programme PACTE Industrie"
+        "Tous secteurs d’activité, sauf les industries gérées par le programme [PACTE Industrie](https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/pacte-industrie)"
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -375,8 +375,6 @@
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
           "code NAF niveau 1 . est A",
-          "code NAF niveau 1 . est B",
-          "code NAF niveau 1 . est C",
           "code NAF niveau 1 . est D",
           "code NAF niveau 1 . est E",
           "code NAF niveau 1 . est F",
@@ -408,7 +406,7 @@
   {
     "titre": "Adaptation au changement climatique en Bretagne",
     "promesse": "Évaluez la vulnérabilité climatique de votre entreprise",
-    "description": "Bénéficiez d'un accompagnement en trois modules pour vous aider à évaluer la vulnérabilité climatique de votre entreprise, adapter votre organisation face aux catastrophes naturelles et aux risques industriels liés au changement climatique et découvrir comment limiter les coûts imprévus de canicule, inondation, sécheresse, etc.",
+    "description": "Participez à un parcours de formation pour mieux comprendre les risques climatiques, évaluer la vulnérabilité de votre activité et identifier des leviers d’adaptation concrets. Un format court, utile et actionnable, pensé pour les PME bretonnes.\n\n- Comprenez les enjeux climatiques à horizon 2050 et leurs impacts économiques lors d’un webinaire ou atelier (1 à 2 h).\n\n- Évaluez la vulnérabilité de votre entreprise face aux aléas climatiques (canicule, inondation, sécheresse...) et identifiez vos priorités stratégiques (2 à 3 h).\n\n- Explorez les leviers d’adaptation pour renforcer la résilience de votre offre, vos process ou vos approvisionnements (1/2 journée).\n\n- Repartez avec votre autoévaluation et un livret de ressources pour aller plus loin.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "autres opérateurs": [
@@ -422,25 +420,19 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Inscrivez-vous au parcours de formation \"Adaptation au Changement Climatique\"",
+        "description": "Contactez un conseiller pour exprimer votre intérêt.",
         "liens": [
           {
-            "lien": "https://www.bretagne-competitivite.fr/adaptation-changement-climatique/",
-            "texte": "inscription"
+            "lien": "https://www.bretagne-competitivite.fr/contactez-nous-pour-en-savoir-plus-et-demander-un-devis/?theme=adaptation",
+            "texte": "Contact Bretagne Compétitivité"
           }
         ]
       },
       {
-        "description": "Participez à un webinaire ou un atelier pour comprendre les enjeux du changement climatique, anticipez les changements à horizon 2050 et identifiez les impacts pour les entreprises Bretonnes. (1 à 2 heures)"
+        "description": "Un conseiller vous recontacte pour répondre à vos questions et clarifier vos besoins d’accompagnement."
       },
       {
-        "description": "Analysez la vulnérabilité de votre entreprise et mettez en évidence vos enjeux stratégiques spécifiques à votre secteur. (2 à 3 heures)"
-      },
-      {
-        "description": "Analysez les leviers pour imaginer de nouvelles offres de produits ou services, renforcer la résilience de votre entreprise. (1/2 journée)"
-      },
-      {
-        "description": "Repartez de ce parcours de formation avec votre autoévaluation et un livret comprenant des contacts et ressources pour aller plus loin."
+        "description": "L’entreprise s’inscrit dans le calendrier et le format définis pour chaque module (inter ou intra-entreprise / webinaire ou présentiel)."
       }
     ],
     "conditions d'éligibilité": {
@@ -947,7 +939,11 @@
         ]
       },
       "entreprise . a un objectif ciblé": {
-        "une de ces conditions": []
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
       },
       "entreprise . est dans une zone géographique éligible": {
         "une de ces conditions": [
@@ -960,7 +956,7 @@
   {
     "titre": "Aide au financement en Occitanie",
     "promesse": "Bénéficiez d'une aide sur le montage financier de votre projet d'investissement durable",
-    "description": "Vous avez un projet d'investissement durable ? Vous pouvez solliciter un accompagnement pour vous aider à identifier les financements les mieux adaptés à votre besoin, rédiger et constituer votre dossier puis le déposer auprès des financeurs institutionnels.",
+    "description": "Vous souhaitez concrétiser un projet d’investissement durable, mais vous avez besoin de soutien pour le financer ? Un conseiller expert vous accompagne à chaque étape pour construire une stratégie de financement adaptée, identifier les dispositifs mobilisables et constituer un dossier solide à présenter aux financeurs.\n\n- Échangez avec un expert pour clarifier votre projet et bâtir un plan de financement sur mesure.\n\n- Identifiez les leviers de financement disponibles : subventions, prêts, avances remboursables, crédits d’impôt, épargne citoyenne, etc.\n\n- Bénéficiez d’un accompagnement dans la rédaction, la constitution et le dépôt de vos dossiers de demande de financement.\n\n- Profitez d’un suivi personnalisé pour faciliter les échanges avec les financeurs institutionnels et optimiser vos chances d’obtenir un soutien.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.occitanie.cci.fr/produit/aide-la-recherche-de-financement",
@@ -969,16 +965,21 @@
     "durée de l'accompagnement": "1 à 5 jours",
     "objectifs": [
       {
-        "description": "Partagez votre projet d'investissement durable et élaborez un plan de financement sur-mesure avec un conseiller expert en financement."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Identifiez et séléctionnez les financements mobilisables pour votre projet : prêts, crédit-bail, avances remboursables, renforcement des fonds propres, épargne citoyenne, subventions, crédits d’impôt recherche et innovation, etc."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Obtenez de l'aide dans le montage et le dépôt de votre ou vos dossier(s) de financement."
+        "description": "Définissez avec l’expert le périmètre de votre accompagnement, la méthode et le calendrier."
       },
       {
-        "description": "Bénéficiez d'un suivi de vos dossiers auprès des financeurs institutionnels."
+        "description": "Bénéficiez de votre accompagnement avec un conseiller expert en financement."
       }
     ],
     "conditions d'éligibilité": {
@@ -2310,7 +2311,7 @@
   {
     "titre": "Amélioration de la qualité de l’air",
     "promesse": "Bénéficiez d'un financement pour vos projets visant à améliorer la qualité de l'air",
-    "description": "Vous travaillez dans une zone couverte par un Plan de Protection de l'Atmosphère (PPA) ou dans un territoire présentant des dépassements de seuils réglementaires en dioxyde d'azote (NO₂), particules ou ozone (O₃) et vous souhaitez réduire durablement vos émissions de polluants atmosphériques ? L’ADEME peut accompagner financièrement vos actions.",
+    "description": "Votre entreprise est implantée dans une zone couverte par un Plan de Protection de l’Atmosphère (PPA) ou un territoire où les seuils de pollution de l’air (NO₂, particules, ozone) sont dépassés ? L’ADEME peut vous aider à financer des études en vue d’un projet opérationnel, des actions de sensibilisation au changement de pratiques ou encore certains investissements. L’accompagnement peut concerner, par exemple, des solutions de mobilité moins polluantes, l’amélioration de la logistique ou de l’organisation des chantiers, ou le raccordement électrique à quai. L’objectif est de réduire durablement les émissions de polluants atmosphériques dans les zones les plus exposées, en soutenant des démarches concrètes, adaptées à votre activité et à votre territoire.",
     "description longue": "L’ADEME peut vous accompagner pour :\n   - Des études permettant d’aboutir à une mise en place opérationnelle d’actions permettant de réduire les émissions de polluants atmosphériques réglementés pour les zones concernées.\n   - De la communication, animation, sensibilisation intégrant les changements pérennes de pratiques.\n   - Certains investissements comme ceux relatifs au renouvellement de véhicules, au branchement à quai des navires, aux alternatives au brûlage des déchets verts.\n\nLes projets pourront concerner notamment (liste non exhaustive) :\n-  la mobilité (active, partagée, report modal) ;\n-  les transports (réduction des émissions de véhicules, logistique, maritime et fluvial) ;\n-  les alternatives au brûlage des déchets verts ;\n- l'accompagnement des professionnels impactés par la mise en œuvre de la zone à faibles émissions mobilité (ZFE-m) ;\n- l’urbanisme intégrant une moindre exposition aux émissions de polluants ;\n- organisation ou faisabilité d’un report modal marchandises/voyageurs vers un mode ayant un plus faible impact environnemental (covoiturage, autopartage, mobilités actives, transport fluvial/maritime/ferroviaire/routier, cyclologistique, développement de tiers-lieux...) ;\n- sensibilisation et accompagnement au changement de comportement des particuliers, des scolaires, des salariés, etc., vers des mobilités moins impactantes d’un point de vue environnemental ;\n- électrification de navires/bateaux de transport de marchandises ou voyageurs pour un branchement électrique à quai ;\n- électrification des postes de stationnement des avions ;\n- accompagnement des professionnels impactés par la mise en œuvre des ZFE-m hors aides au renouvellement des véhicules.\n- BTP /carrières : optimisation d’un chantier et de sa logistique, dans l’objectif de réduire les émissions de polluants réglementés.",
     "début de validité": "01/01/2025",
     "fin de validité": "31/12/2025",
@@ -3103,24 +3104,6 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Découvrez les cinq chapitres de la formation, réalisés à partir de constats scientifiques, et présentés sous une forme claire et accessible",
-        "liens": [
-          {
-            "lien": "https://climat.cned.fr/formations/",
-            "texte": "Accéder à la formation"
-          }
-        ]
-      },
-      {
-        "description": "Inscrivez-vous à la formation gratuite, en ligne, à réaliser en toute autonomie (durée estimé : 7h)",
-        "liens": [
-          {
-            "lien": "https://climat.cned.fr/",
-            "texte": "climat.cned.fr"
-          }
-        ]
-      },
-      {
         "description": "Avant de démarrer la formation, testez vos connaissances avec 5 questions sur le changement climatique, ses enjeux et les moyens d’agir",
         "liens": [
           {
@@ -3130,10 +3113,19 @@
         ]
       },
       {
-        "description": "Validez les connaissances que vous aurez acquises à l’issue de chaque chapitre"
+        "description": "Accédez à la formation gratuite, en ligne, à réaliser en toute autonomie (durée totale estimée : 7h)",
+        "liens": [
+          {
+            "lien": "https://climat.cned.fr/formations/",
+            "texte": "Accéder à la formation"
+          }
+        ]
       },
       {
-        "description": "Recevrez un badge numérique valorisant vos connaissances sur le changement climatique, ses enjeux et les moyens d’agir"
+        "description": "Validez les connaissances que vous aurez acquises à l’issue de chaque chapitre."
+      },
+      {
+        "description": "Pour chaque chapitre de la formation, recevez un badge numérique attestant vos nouveaux acquis."
       }
     ],
     "conditions d'éligibilité": {
@@ -4639,7 +4631,7 @@
   },
   {
     "titre": "CAP Transition Ecologique",
-    "promesse": "Réalisez un diagnostic de votre impact et financez vos investissements favorisant votre transition écologique.",
+    "promesse": "Réalisez un diagnostic de votre impact et financez vos investissements favorisant votre transition écologique",
     "description": "La Région Centre-Val de Loire lance un programme pour accompagner les entreprises et structures de l'ESS dans leur transition écologique. Structuré en deux phases, ce programme permet de financer en partie la réalisation d'un diagnostic environnemental pour élaborer votre plan de transition écologique. Il permet ensuite de bénéficier d'une aide financière pour vos investissements définis dans le cadre de votre plan d'action.",
     "description longue": "- Les études peuvent être prises en charge jusqu'à 50% pour une subvention allant de 1 000 € à 20 000 € HT. \n\n- Les investissements éligibles sont les dépenses d'immobilisation, destinées à rester durablement dans le patrimoine de votre entreprise. Ces dépenses peuvent être prises en charge jusqu'à 30% pour une subvention allant de 20 000 € à 200 000 € HT.\nIls doivent concerner en priorité :\n- la préservation de la biodiversité ;\n- le développement de l’économie circulaire ;\n- l’optimisation de la consommation des matières premières/Ecoconception ;\n- la préservation des ressources en eau ;\n- l’optimisation des énergies produites et utilisées dans une démarche d’efficacité et de sobriété (utilisation de la chaleur fatale, développement de systèmes d’énergies peu émetteurs de GES…)\n\nPour accéder au financement des investissements, il est impératif de suivre la première étape de diagnostic et l'élaboration du plan d'action ou d’être en mesure de justifier d'un diagnostic déjà réalisé, d'un plan d’action détaillé et argumenté, ou d’avoir bénéficié du suivi et de l’accompagnement de l’Accélérateur des transitions Ecologique et sociales régional.",
     "illustration": "images/TEE_ampoule.png",
@@ -4839,7 +4831,7 @@
   {
     "titre": "CCI Business Optimizer",
     "promesse": "Découvrez les éco-gestes à réaliser dans votre établissement de tourisme",
-    "description": "CCI Business Optimizer est un site dédié aux entreprises du secteur du tourisme. Son objectif est de proposer des idées de bonnes pratiques environnementales ainsi que des suggestions pour améliorer la performance de vos équipements. Le site fournit également une estimation moyenne des économies réalisables en eau et en énergie, ainsi qu'une évaluation des bénéfices financiers associés à leur mise en œuvre.",
+    "description": "Vous gérez un établissement touristique et souhaitez réduire vos consommations d’eau et d’énergie tout en améliorant vos performances environnementales ? La plateforme CCI Business Optimizer vous guide pas à pas dans l’identification d’éco-gestes simples et efficaces, adaptés à chaque espace de votre établissement (chambres, cuisine, espaces extérieurs…).\n\n- Explorez des idées concrètes d’améliorations environnementales à mettre en place pièce par pièce.\n\n- Simulez les économies potentielles d’eau, d’énergie et les gains financiers associés.\n\n- Obtenez un bilan personnalisé des actions à engager et les coordonnées d’un conseiller CCI pour aller plus loin dans votre démarche.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.ccibusinessoptimizer.fr/",
@@ -4849,7 +4841,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Connectez-vous au service \"CCI Business Optimizer\"",
+        "description": "Utilisez le service \"CCI Business Optimizer\" en ligne.",
         "liens": [
           {
             "lien": "https://www.ccibusinessoptimizer.fr/",
@@ -4858,13 +4850,7 @@
         ]
       },
       {
-        "description": "Découvrez les économies que vous pouvez réaliser grâce à des éco-gestes à mettre en place pièce par pièce dans votre établissement."
-      },
-      {
-        "description": "Simuler les économies potentielles liées à la mise en place des ces éco-gestes."
-      },
-      {
-        "description": "Obteniez un bilan d’actions à mener et le contact d’un conseiller CCI pour aller plus loin."
+        "description": "Obtenez un bilan personnalisé des actions à engager et les coordonnées d’un conseiller CCI pour aller plus loin dans votre démarche."
       }
     ],
     "conditions d'éligibilité": {
@@ -5019,7 +5005,13 @@
     "montant du financement": "Gratuit",
     "objectifs": [
       {
-        "description": "Prenez contact avec un conseiller afin de vérifier l'éligibilité de votre projet."
+        "description": "Prenez contact avec un conseiller afin de vérifier l'éligibilité de votre projet.",
+        "liens": [
+          {
+            "lien": "mailto:relationentrepriseusager@maregionsud.fr",
+            "texte": "relationentrepriseusager@maregionsud.fr"
+          }
+        ]
       },
       {
         "description": "Complétez le dossier et la lettre de candidature disponibles dans les \"ressources à télécharger\" en bas de page.",
@@ -5031,7 +5023,13 @@
         ]
       },
       {
-        "description": "Envoyez votre dossier de candidature par mail à l’adresse cedre@maregionsud.fr avec pour objet \"Candidature CEDRE Ambition 2025\". La date limite de réception des candidatures est fixée au 13 décembre 2024."
+        "description": "Envoyez votre dossier de candidature par mail à l’adresse suivante avec pour objet \"Candidature CEDRE Ambition 2025\". La date limite de réception des candidatures est fixée au 13 décembre 2024.",
+        "liens": [
+          {
+            "lien": "https://cedre@maregionsud.fr ",
+            "texte": "cedre@maregionsud.fr "
+          }
+        ]
       },
       {
         "description": "Votre projet est analysé par un comité technique composé de représentants de la Région, des chambres consulaires, et d’autres parties prenantes."
@@ -5437,7 +5435,13 @@
     "montant du financement": "Subvention de 3 000 € sur la base d'une facture d'un montant minimum de 3 750 € HT",
     "objectifs": [
       {
-        "description": "Prenez contact avec un conseiller afin de vérifier l'éligibilité de votre projet."
+        "description": "Prenez contact avec un conseiller afin de vérifier l'éligibilité de votre projet.",
+        "liens": [
+          {
+            "lien": "mailto:relationentrepriseusager@maregionsud.fr",
+            "texte": "relationentrepriseusager@maregionsud.fr"
+          }
+        ]
       },
       {
         "description": "Sélectionnez la thématique sur laquelle vous souhaitez être accompagné : impact environnemental, mobilité, consommation d'énergie, empreinte carbone, biodiversité, stratégie RSE, démarches innovantes, ou adaptation au changement climatique."
@@ -5987,7 +5991,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Prenez connaissance et signez la charte « zéro déchet plastique » pour engager votre entreprise dans cette démarche. Une fois signée, transmettez-la à l'ARBE par mail à l'adresse : c.poulin@arbe-regionsud.org",
+        "description": "Prenez connaissance et signez la charte « zéro déchet plastique » pour engager votre entreprise dans cette démarche.",
         "liens": [
           {
             "lien": "https://www.arbe-regionsud.org/Block/download/?id=236629&filename=Entreprises-et-Associations-Demarche-ecoexemplaire-Charte-052024.pdf",
@@ -5996,14 +6000,29 @@
         ]
       },
       {
-        "description": "Mettez en place un groupe de travail interne \"zéro déchet plastique\" dans votre entreprise pour assurer l'élaboration et le suivi d'un plan d'action, et participer à la dynamique de la communauté."
+        "description": "Contactez la référente de la charte \"zéro déchet plastique\" de votre région pour poser vos éventuelles questions et transmettre la charte d'engagement signée.",
+        "liens": [
+          {
+            "lien": "https://c.poulin@arbe-regionsud.org",
+            "texte": "c.poulin@arbe-regionsud.org"
+          }
+        ]
       },
       {
-        "description": "Complétez votre fiche \"plan d'action\" et transmettez-la par mail à l’ARBE dans les 3 mois suivants la signature de la charte.",
+        "description": "Mettez en place un groupe de travail interne \"zéro déchet plastique\" dans votre entreprise pour assurer l'élaboration d'un plan d'action.",
         "liens": [
           {
             "lien": "https://www.arbe-regionsud.org/Block/download/?id=236624&filename=Entreprises-et-Associations-Demarche-eco-exemplaire-Plan-dActions.docx",
             "texte": "Téléchargez le plan d'action à compléter"
+          }
+        ]
+      },
+      {
+        "description": "Finalisez votre fiche \"plan d'action\" et transmettez-la par mail à l’ARBE dans les 3 mois suivants la signature de la charte.",
+        "liens": [
+          {
+            "lien": "https://c.poulin@arbe-regionsud.org",
+            "texte": "c.poulin@arbe-regionsud.org"
           }
         ]
       },
@@ -6611,7 +6630,12 @@
     "durée de l'accompagnement": "5 à 10 jours selon la taille de l'entreprise",
     "objectifs": [
       {
-        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire."
+        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
         "description": "Un conseiller CCI vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
@@ -7400,7 +7424,7 @@
     ],
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
-        "Effectif compris entre 20 et 249 employés",
+        "Entre 20 et 250 salariés",
         "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
@@ -7823,7 +7847,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "- Les industries et activités inéligibles sont\n  - Activités tertiaires ;\n  - Activités agricoles (sauf industrie agro-alimentaire) ;\n  - Activités du secteur BTP sur chantier ;\n  - Unités de Valorisation Energétiques des déchets (UVE) ;\n  - Industries de production et mise sur le marché d'énergie sur le réseau.",
+        "Les industries et activités inéligibles sont\n\n- Activités tertiaires ;\n- Activités agricoles (sauf industrie agro-alimentaire) ;\n- Activités du secteur BTP sur chantier ;\n- Unités de Valorisation Energétiques des déchets (UVE) ;\n- Industries de production et mise sur le marché d'énergie sur le réseau.",
         "Les codes NAF éligibles sont compris entre 10.11Z et 33.20D."
       ],
       "nombre d'années d'activité": [
@@ -8177,27 +8201,28 @@
   {
     "titre": "Diag Adaptation",
     "promesse": "Évaluez la vulnérabilité climatique de votre entreprise",
-    "description": "Bénéficiez d'un accompagnement pour vous aider à évaluer la vulnérabilité climatique de votre entreprise, adapter votre organisation face aux catastrophes naturelles et aux risques industriels liés au changement climatique et découvrir comment limiter les coûts imprévus de canicule, inondation, sécheresse, etc.",
+    "description": "Anticipez les impacts du changement climatique sur votre activité et adaptez votre entreprise pour limiter les risques liés aux aléas climatiques (canicules, inondations, sécheresses…). Cet accompagnement vous aide à évaluer votre vulnérabilité, à sécuriser votre organisation et à construire une trajectoire de résilience.\n\n- Profitez d’une visite sur site par un expert pour identifier les impacts potentiels du changement climatique sur votre chaîne de valeur, à court, moyen et long terme (horizons 2035 et 2055).\n\n- Recevez un diagnostic complet incluant un rapport de synthèse et une feuille de route adaptée à votre activité.\n\n- Co-construisez un plan d’action chiffré, hiérarchisé et concret pour réduire les vulnérabilités identifiées et renforcer la résilience de votre entreprise face aux évolutions climatiques.",
     "description longue": "Le Diag Adaptation permet d’étudier la vulnérabilité de votre activité au changement climatique afin d’anticiper les risques physiques actuels et futurs pour votre site d’exploitation (chaîne de valeur de l’activité et processus de l’entreprise, réseaux de distribution, approvisionnements, aléas climatiques récurrents…).\nL’intervention pour chaque Diag Adaptation est limitée à 1 site d’exploitation de votre entreprise. Il est possible de bénéficier de plusieurs diagnostics pour couvrir les différents sites de votre entreprise.",
-    "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
       "ADEME"
     ],
-    "url": "https://diag.bpifrance.fr/produit/diag-adaptation",
+    "url": "https://diag.bpifrance.fr/diag-adaptation",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "De 2 000 € HT à 3 000 € HT après subvention de 50%",
     "durée de l'accompagnement": "7 jours de prestation répartis sur 3 à 6 mois",
     "objectifs": [
       {
-        "description": "Réalisez votre demande de souscription du \"Diag Adaptation\" sur le site Bpifrance.",
+        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire",
         "liens": [
           {
-            "lien": "https://diag.bpifrance.fr/eligibilite/informations-entreprise?from=header",
-            "texte": "Demande de souscription"
+            "formulaire": true
           }
         ]
+      },
+      {
+        "description": "Un conseiller vous rappelle pour vérifier votre éligibilité et répondre à vos questions."
       },
       {
         "description": "Si vous êtes éligible, recevez un contrat de Bpifrance. Dès signature de ce contrat de prestation, les équipes Bpifrance sélectionnent un bureau d’études pour vous accompagner."
@@ -8206,13 +8231,7 @@
         "description": "Définissez avec le bureau d'études les modalités pratiques du diagnostic (calendrier, méthode, jalons, livrables) et planifiez la visite de votre entreprise."
       },
       {
-        "description": "Bénéficiez d'une visite sur site durant laquelle un expert analyser et identifier les impacts du changement climatique sur votre chaîne de valeur dès aujourd’hui et d’ici 2035 et 2055."
-      },
-      {
-        "description": "Obtenez une restitution de l’ensemble des livrables du diagnostic (rapport de synthèse et feuille de route)."
-      },
-      {
-        "description": "Construisez ensemble un plan d’action chiffré et priorisé afin de réduire les risques et améliorer la résilience de votre entreprise face au changement climatique à court et moyen terme."
+        "description": "Lancez le diagnostic avec le bureau d'études."
       }
     ],
     "conditions d'éligibilité": {
@@ -8405,7 +8424,7 @@
     ],
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
-        "Moins de 250 salariés.",
+        "Moins de 250 salariés",
         "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
@@ -8415,7 +8434,7 @@
         "Tous secteurs d'activité"
       ],
       "nombre d'années d'activité": [
-        "\"Au moins 1 an d'activité\""
+        "Au moins 1 an d'activité"
       ]
     },
     "publicodes": {
@@ -8522,7 +8541,7 @@
       },
       "entreprise . a un effectif éligible": {
         "toutes ces conditions": [
-          "effectif <= 250"
+          "effectif <= 249"
         ]
       },
       "entreprise . a une categorie legale eligible": {
@@ -8566,7 +8585,6 @@
     "titre": "Diag Décarbon'Action",
     "promesse": "Réalisez un bilan de gaz à effet de serre et réduisez l’empreinte carbone de votre entreprise",
     "description": "Ce Bilan vous permet en 12 jours de mesurer les émissions directes et indirectes de GES de votre entreprise puis d’élaborer votre plan d’actions pour réduire l’empreinte carbone de votre entreprise. Les experts qui réalisent le Diag Décarbon'Action sont certifiés « Bilan Carbone ® » ou autre méthode de comptabilité carbone conforme à la réglementation, et sont habilités par l’ADEME, l’Association Bilan Carbone et Bpifrance, ce qui garantit un niveau de qualité élevé.",
-    "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
@@ -8578,7 +8596,12 @@
     "durée de l'accompagnement": "12 jours de prestation répartis sur 6 à 8 mois",
     "objectifs": [
       {
-        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire"
+        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
         "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
@@ -8752,29 +8775,33 @@
   {
     "titre": "Diag Eco-Flux",
     "promesse": "Bénéficiez d’un état des lieux sur vos flux pour vous aider à faire des économies",
-    "description": "Bénéficiez des conseils d'un expert environnement référencé par Bpifrance pour réaliser rapidement des économies durables en suivant une méthodologie élaborée avec l'ADEME.",
-    "aide temporairement indisponible": "oui",
+    "description": "Réduisez rapidement vos coûts tout en améliorant votre performance environnementale grâce au Diag Eco-Flux. Ce diagnostic vous permet d’identifier et d’exploiter des pistes concrètes d’économies sur vos principaux postes de consommation. Vous êtes accompagné par un expert référencé par Bpifrance, selon une méthodologie élaborée avec l’ADEME.\n\n- Analysez vos flux d’énergie, d’eau, de matières premières et de déchets.\n\n- Repérez les pertes et les leviers d’action prioritaires.\n\n- Définissez un plan d’action ciblé, simple à mettre en œuvre.\n\n- Lancez vos premières actions de réduction des pertes.\n\nLes entreprises ayant mené ce diagnostic constatent en moyenne 45 000 € d’économies par an et par site.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
       "ADEME"
     ],
-    "url": "https://diag.bpifrance.fr/produit/diag-eco-flux",
+    "url": "https://diag.bpifrance.fr/diag-eco-flux",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "De 2 000 € HT à 3 000 € HT après subvention de 50%",
     "durée de l'accompagnement": "6 à 8 jours de prestation répartis sur 15 à 18 mois",
     "objectifs": [
       {
-        "description": "Faites un état des lieux de vos flux (déchets et pertes en énergie, matière et eau) et identifiez les axes prioritaires d’économies."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Mettez en place un plan d'action simple pour réduire vos déchets et votre consommation d'énergie, de matières et d'eau."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Lancez vos premières actions."
+        "description": "Définissez ensemble le périmètre du diagnostic, la méthode et le calendrier."
       },
       {
-        "description": "Réalisez en moyenne 45 000 € d'économies par an et par site de production ou établissement (sur la base de 678 missions restituées)."
+        "description": "Lancez le diagnostic avec l'expert, consultant indépendant agréé et sélectionné par Bpifrance."
       }
     ],
     "conditions d'éligibilité": {
@@ -8953,7 +8980,6 @@
     "titre": "Diag Ecoconception",
     "promesse": "Évaluez la performance environnementale de vos produits, procédés et services",
     "description": "Bénéficiez de l'accompagnement d’un expert écoconception référencé par Bpifrance pour améliorer la performance environnementale de vos produits, services et procédés. Vous serez soutenu pour :\n\n- Sensibiliser vos équipes et former un référent en écoconception\n\n- Réaliser une évaluation environnementale (analyse du cycle de vie)\n\n- Identifier et chiffrer des leviers d’amélioration sans transférer de pollution\n\n- Mettre en place un plan d’action technico-économique pour l’éco-conception\n\n- Préparer et accompagner votre démarche vers l’obtention de l’Ecolabel européen",
-    "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
@@ -8965,7 +8991,12 @@
     "durée de l'accompagnement": "18 jours de prestation répartis sur 6 à 8 mois",
     "objectifs": [
       {
-        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire."
+        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
         "description": "Échangez avec un conseiller pour vérifier votre éligibilité et préparer votre demande."
@@ -9166,9 +9197,9 @@
   {
     "titre": "Diag Perf'Immo",
     "promesse": "Réduisez la consommation énergétique de vos bâtiments",
-    "description": "Bénéficiez des conseils d'un expert environnement référencé par Bpifrance pour réduire les consommations énergétiques de vos bâtiments et établir une trajectoire conforme au Décret Tertiaire.",
+    "description": "Bpifrance propose le diagnostic Perf’Immo pour vous aider à améliorer la performance énergétique de vos bâtiments et à répondre aux exigences du Décret Tertiaire. Cet accompagnement se déroule en plusieurs étapes :\n\n- Collecte et analyse des données existantes (plans, équipements, consommations, usages…)\n\n- Visite du site et mesures complémentaires si nécessaire\n\n- Bilan énergétique et définition d’objectifs conformes à la réglementation\n\n- Élaboration de scénarios d’amélioration chiffrés et hiérarchisés\n\n- Aide à la déclaration sur la plateforme OPERAT, si besoin\n\nCe diagnostic vous aide à prioriser vos actions, à planifier vos investissements et à engager une trajectoire d’optimisation énergétique claire et durable.",
     "description longue": "L’obligation réglementaire du Dispositif Éco Énergie Tertiaire (DEET), plus communément appelé « décret tertiaire », impose aux entreprises de réduire la consommation d’énergie de leurs bâtiments abritant des activités tertiaires. Cette obligation traduit la volonté du gouvernement d’améliorer la performance énergétique du parc français de bâtiments existants.\n\nLe décret tertiaire est officiellement entré en vigueur en octobre 2019.",
-    "aide temporairement indisponible": "oui",
+    "fin de validité": "30/04/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
@@ -9180,19 +9211,21 @@
     "durée de l'accompagnement": "variable selon la surface et la complexité du site",
     "objectifs": [
       {
-        "description": "Collecter et analyser des informations clés existantes (plans, équipements techniques, occupation, données de consommation énergétique, etc.)"
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Effectuer des observations sur site et réaliser des mesures complémentaires si nécessaire."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Etablir un bilan énergétique et définir des objectifs de performance énergétique conformes aux exigences du Décret Tertiaire"
+        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
       },
       {
-        "description": "Elaborer des scénarios d’amélioration chiffrés pour l’atteinte de ces objectifs"
-      },
-      {
-        "description": "Être accompagné dans la réalisation de la déclaration sur la plateforme OPERAT le cas échéant"
+        "description": "Lancez le diagnostic avec le bureau d’études spécialisé et référencé par Bpifrance."
       }
     ],
     "conditions d'éligibilité": {
@@ -9311,6 +9344,7 @@
         ]
       },
       "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
         "toutes ces conditions": [
           "a une categorie legale eligible"
         ]
@@ -9353,7 +9387,7 @@
   {
     "titre": "Diagnostic Changement climatique",
     "promesse": "Adaptez l'organisation de votre entreprise aux conséquences du changement climatique",
-    "description": "Votre CCI vous accompagne dans l'élaboration d'un plan d'adaptation aux phénomènes liés aux conséquences du changement climatique (canicules, sécheresses, innondations,…)afin de vous permettre de poursuivre votre activité en limitant les impacts économiques et en saisissant les éventuelles opportunités.",
+    "description": "Le changement climatique expose progressivement votre entreprise à de nouvelles vulnérabilités. Cet accompagnement permet d’en comprendre les enjeux concrets pour votre activité. À partir d’une analyse des aléas passés et des projections à venir, vous identifiez les impacts directs et indirects sur votre entreprise, qu’ils soient économiques, sociaux ou organisationnels. Vous pouvez également repérer des opportunités d’évolution pour vos produits, services ou modes de fonctionnement. L’accompagnement vous guide dans l’élaboration d’un plan d’adaptation sur mesure, en lien avec les spécificités de votre territoire et de votre secteur. Vous renforcez votre capacité à faire face aux aléas climatiques et à pérenniser votre activité.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "autres opérateurs": [
@@ -9364,16 +9398,21 @@
     "durée de l'accompagnement": "3 jours",
     "objectifs": [
       {
-        "description": "Analyser les évènements climatiques passés ayant déjà affecté votre secteur, et les tendances futures sur la base des projections climatiques."
+        "description": "primez votre intérêt en contactant un conseiller via le formulaire.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Identifier les impacts directs sur vos activités ainsi que des impacts indirects (financiers et sociaux) et leurs évolutions à court, moyen et long terme."
+        "description": " conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Mettre en évidence les menaces posées par le changement climatique et les opportunités potentiellement pour vos activités, produits et services."
+        "description": "finissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
       },
       {
-        "description": "Disposer d’un plan d’adaptation pour les risques climatiques au sein de votre entreprise."
+        "description": "ncez le diagnostic avec l'expert proposé par votre CCI."
       }
     ],
     "conditions d'éligibilité": {
@@ -9504,7 +9543,20 @@
           "code NAF niveau 1 . est C",
           "code NAF niveau 1 . est D",
           "code NAF niveau 1 . est E",
-          "code NAF niveau 1 . est F"
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S"
         ]
       },
       "entreprise . a un objectif ciblé": {
@@ -9523,7 +9575,7 @@
   {
     "titre": "Diagnostic déchets",
     "promesse": "Réduisez et valorisez les déchets de votre entreprise",
-    "description": "Ce diagnostic permet d’établir une vision globale de la gestion des déchets dans votre entreprise pour optimiser les coûts associés et développer le recyclage des déchets.",
+    "description": "Ce diagnostic permet d’établir une vision globale de la gestion des déchets dans votre entreprise pour optimiser les coûts associés et développer le recyclage de vos déchets. Il s'agit d'un accompagnement sur 3 jours qui vous permettra de : \n\n- Découvrir les enjeux et bénéfices d’une bonne gestion des déchets en entreprise et vos obligations réglementaires.\n- Dresser un état des lieux de la production et des pratiques de gestion des déchets dans votre entreprise.\n- Identifier les filières de collecte et de valorisation appropriées.\n- Identifier les pistes d'amélioration (tri, collecte, réemploi, mutualisation,etc.) et les possibilités de financement.\n- Réaliser un plan d’action et permettre la mise en conformité réglementaire.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "nature de l'aide": "étude",
@@ -9531,19 +9583,21 @@
     "durée de l'accompagnement": "3 jours dont 0,5 avec l'entreprise",
     "objectifs": [
       {
-        "description": "Découvrez les enjeux et bénéfices d’une bonne gestion des déchets en entreprise et vos obligations réglementaires."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Dresser un état des lieux de la production et des pratiques de gestion des déchets dans votre entreprise."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Identifier les filières de collecte et de valorisation appropriées."
+        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
       },
       {
-        "description": "Identifier les pistes d'amélioration (tri, collecte, réemploi, mutualisation,etc.) et les possibilités de financement."
-      },
-      {
-        "description": "Réaliser un plan d’action et permettre la mise en conformité réglementaire."
+        "description": "Lancez le diagnostic avec l'expert proposé par votre CCI."
       }
     ],
     "conditions d'éligibilité": {
@@ -9704,9 +9758,9 @@
   },
   {
     "titre": "Diagnostic Eco-conception Île-de-France",
-    "promesse": "Développez des produits et services éco-responsables",
-    "description": "Vous souhaitez vous interroger sur l’impact environnemental global de votre produit : choix des matières premières, poids et encombrement, impact énergétique, à tous les niveaux (fabrication, transport, usage, fin de vie, etc.). La CCI vous accompagne dans votre démarche.",
-    "description longue": "L’éco-conception vise à prendre en compte et réduire les impacts environnementaux dans toutes les étapes du cycle de vie d’un produit ou service : extraction de matières premières, fabrication, transport, usage, traitement en fin de vie, etc.\nL’éco-conception s’applique aux produits matériels mais également aux services.",
+    "promesse": "Optimisez l’impact environnemental de vos produits avec un accompagnement en éco-conception",
+    "description": "Vous vous interrogez sur l’impact environnemental de votre produit ou service à chaque étape de son cycle de vie ? Cet accompagnement vous aide à structurer une démarche d’éco-conception en lien avec votre stratégie d’innovation.\n\n- Diagnostic réalisé par un expert pour évaluer les impacts environnementaux (matières premières, fabrication, transport, usage, fin de vie)\n\n- Élaboration et comparaison de scénarios de fabrication, de service ou d’usage\n\n- Possibilité de poursuivre avec une phase de pré-industrialisation selon la maturité du projet (étude de faisabilité, prototypage, essais techniques, recherche de partenaires, appui à la mise en œuvre sur site)\n\nCe programme modulable vous permet d’articuler performance environnementale et développement produit, jusqu’à la mise sur le marché.",
+    "description longue": "Vous pouvez bénéficier de l’une ou des deux phases d’accompagnement : \nPhase 1 : Etude Eco-conception / Eco-innovation\n> Définition du périmètre et de la nature du projet\n> Elaboration de différents scénarii de process de fabrication, services et usages…\n> Quantification de leurs impacts environnementaux\n> Analyse comparative en vue de la stratégie à adopter.\n\nPhase 2 : Pré-industrialisation\n> Etude de faisabilité, essai, prototypage\n> Recherche de partenaires techniques\n> Elaboration des argumentaires\n> Accompagnement à la mise en place sur le site de production\n>  …\n\nChaque accompagnement repose sur une base forfaitaire de 6 jours subventionnés.\nIl est possible d’ajouter des journées supplémentaires si besoin, mais ces journées ne seront pas subventionnées.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
@@ -9717,20 +9771,25 @@
     ],
     "url": "https://www.cci-paris-idf.fr/fr/entreprises/actualites/accompagnement-eco-conception-performance-environnementale",
     "nature de l'aide": "étude",
-    "coût de l'accompagnement": "De 3 000 € à 6 000 € HT en fonction de la taille de l'entreprise, avec prise en charge possible jusqu'à 50%",
+    "coût de l'accompagnement": "2 000 € HT pour 6 jours d'accompagnement",
     "durée de l'accompagnement": "6 à 12 jours de prestation",
     "objectifs": [
       {
-        "description": "Identifiez vos priorités en termes d’accompagnement lors d’un premier entretien avec votre conseiller CCI."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Bénéficiez d'une étude d'éco-conception par un consultant expert (phase 1)"
+        "description": "Un conseiller CCI vous recontacte pour répondre à vos questions et clarifier vos besoins d’accompagnement."
       },
       {
-        "description": "Elaborez différents scénarii de processus de fabrication et quantifier leurs impacts environnementaux."
+        "description": "Définissez ensemble le périmètre du diagnostic, la méthode et le calendrier."
       },
       {
-        "description": "En fonction de la maturité de votre projet, continuez avec une phase de pré-industrialisation : étude de faisabilité, essai, prototypage, recherche de partenaires techniques, etc. (phase 2)"
+        "description": "Lancez le diagnostic avec le consultant spécialisé en éco-innovation et pré-industrialisation sélectionné par votre CCI."
       }
     ],
     "conditions d'éligibilité": {
@@ -9883,8 +9942,8 @@
   },
   {
     "titre": "Diagnostic RSE",
-    "promesse": "Intégrez la RSE (Responsabilité Sociétale des Entreprises) dans le fonctionnement quotidien de votre entreprise",
-    "description": "Réalisez avec votre conseiller CCI un diagnostic RSE en abordant les 3 aspects de la responsabilité sociétale de l’entreprise : la performance économique, la performance sociale et la performance environnementale. Repensez votre stratégie RSE comme un levier d'innovation et un vecteur de création de valeur.",
+    "promesse": "Intégrez la RSE dans le fonctionnement quotidien de votre entreprise",
+    "description": "Ce diagnostic RSE vous aide à évaluer les trois dimensions clés de la responsabilité sociétale de l’entreprise : économique, sociale et environnementale. Il vous permet de repenser votre stratégie pour mieux répondre aux attentes des parties prenantes, améliorer votre performance globale et saisir de nouvelles opportunités de croissance durable.\n\n- Recueillez vos données sur l'ensemble des domaines de la RSE (gouvernance, social, sociétal, environnemental, économique) avec l'aide d'un conseiller\n\n- Dressez un état des lieux des forces et faiblesses de votre entreprise\n\n- Obtenez un plan d’action personnalisé, adapté à vos enjeux et ressources, pour mettre en œuvre efficacement votre démarche RSE",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.cci.fr/offre/evaluez-votre-maturite-aux-enjeux-de-la-rse",
@@ -9902,13 +9961,18 @@
         ]
       },
       {
-        "description": "Recueillir vos données sur l'ensemble des champs de la RSE (gouvernance, social, sociétal, environnemental, économique) avec l'aide d'un conseiller"
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Dresser l’état des lieux des forces et faiblesses de votre entreprise"
+        "description": "Un conseiller CCI vous recontacte pour répondre à vos questions et clarifier vos besoins d’accompagnement."
       },
       {
-        "description": "Obtenez un plan d’action adapté à vos enjeux et à vos ressources pour vous aider à mettre en œuvre efficacement votre démarche RSE au sein de votre entreprise"
+        "description": "Lancez le diagnostic RSE avec l'expert proposé par votre CCI."
       }
     ],
     "conditions d'éligibilité": {
@@ -10071,7 +10135,7 @@
   {
     "titre": "Diagnostic Transition Ecologique",
     "promesse": "Intégrez la transition écologique dans le fonctionnement quotidien de votre entreprise",
-    "description": "Réalisez un diagnostic de transition écologique avec votre conseiller CCI. Vous pourrez évoquer ces enjeux à travers le prisme du pilotage de votre activité : la gestion de vos locaux, vos consommations d'énergie, la gestion de vos déchets, vos achats et vos mobilités.",
+    "description": "Réalisez un diagnostic de transition écologique avec votre conseiller CCI pour analyser et piloter les enjeux environnementaux de votre activité. Ce diagnostic aborde plusieurs aspects clés de votre entreprise : la gestion de vos locaux, vos consommations d'énergie, la gestion des déchets, vos achats responsables et vos pratiques de mobilité. Structuré en trois étapes, il vous aide à mettre en place des actions concrètes pour progresser :\n\n- État des lieux à 360° pour évaluer la maturité écologique de votre entreprise\n\n- Identification des enjeux prioritaires et des leviers d'amélioration\n\n- Élaboration d'un plan d'action personnalisé pour transformer durablement votre entreprise et optimiser vos coûts\n\nCe diagnostic vous permet de mieux comprendre vos impacts environnementaux et de structurer une démarche de transition écologique.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "nature de l'aide": "étude",
@@ -10079,13 +10143,18 @@
     "durée de l'accompagnement": "1 jour dont 1/2 journée avec l'entreprise",
     "objectifs": [
       {
-        "description": "Réalisez un état des lieux à 360° afin d’évaluer la maturité écologique de votre entreprise."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Identifiez les enjeux prioritaires de votre entreprise et élaborez un plan d'action de transformation."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Menez un bouquet d'actions simples ou plus engageantes pour transformer votre entreprise et optimiser vos coûts."
+        "description": "Lancez le diagnostic avec l'expert proposé par votre CCI."
       }
     ],
     "conditions d'éligibilité": {
@@ -10239,7 +10308,7 @@
   {
     "titre": "Eco-Défis des artisans et des commerçants",
     "promesse": "Réalisez des éco-défis et obtenez un label pour valoriser votre engagement",
-    "description": "Participez à l’opération « Eco-défis des commerçants et artisans » qui permet de valoriser les actions menées par les entreprises locales en matière d’environnement, énergie, transport, déchets, éco-produits, gestion de l’eau, emballages, responsabilité sociétale.",
+    "description": "Participez à l’opération « Eco-défis des commerçants et artisans » qui permet de valoriser les actions menées par les entreprises locales en matière d’environnement, énergie, transport, déchets, éco-produits, gestion de l’eau, emballages, responsabilité sociétale. Déployée dans plusieurs régions, elle repose sur une marque nationale, une méthodologie, une liste de défis et des animations.\n\n- Engagez-vous en faveur d’un développement durable de votre entreprise en mettant en place des éco-défis.\n- Bénéficiez de conseils personnalisés pour améliorer vos performances économiques, environnementales et sociétales.\n- Obtenez le label « éco-défis » pour valoriser votre démarche auprès de vos clients.\n- Profiter d’une communication gratuite dans le cadre de cette opération.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "CCI ou CMA",
     "url": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/eco-defis-des-artisans-et-des-commercants",
@@ -10248,16 +10317,21 @@
     "durée de l'accompagnement": "2 jours de prestation répartis sur 12 mois",
     "objectifs": [
       {
-        "description": "Faire le point sur vos pratiques et choisir les 3 éco-défis à relever par votre entreprise."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Mettre en place vos défis et bénéficier de conseils personnalisés pour améliorer vos performances économiques, environnementales et sociétales."
+        "description": "Un conseiller CCI vous recontacte pour faire le point sur vos pratiques et choisir les éco-défis à relever par votre entreprise."
       },
       {
-        "description": "Valoriser l’engagement environnemental de votre entreprise par l’obtention d'un label."
+        "description": "Mettez en œuvre les actions retenues avec un appui personnalisé si besoin."
       },
       {
-        "description": "Profiter d’une communication gratuite dans le cadre de cette opération."
+        "description": "Obtenez le label Éco-Défis et valorisez votre engagement auprès de vos clients."
       }
     ],
     "conditions d'éligibilité": {
@@ -10399,7 +10473,7 @@
   {
     "titre": "Initiation éco-conception",
     "promesse": "Sensibilisez vos équipes à une démarche d'éco-conception",
-    "description": "Vous souhaitez faire connaître la notion d’éco-conception? au sein de votre entreprise et impulser l'envie collective d’améliorer la performance environnementale de vos produits et services ? Votre CCI vous accompagne dans cette démarche.",
+    "description": "La CCI vous aide à lancer une démarche d’éco-conception au sein de votre entreprise.\\\nFaites découvrir à vos équipes les bases de l’éco-conception et initiez une dynamique collective pour améliorer l’impact environnemental de vos produits et services.\n\n- Comprenez les principes de l’éco-conception et l’analyse du cycle de vie (ACV).\n\n- Évaluez votre niveau de maturité et les impacts environnementaux de votre activité.\n\n- Sensibilisez vos collaborateurs aux bénéfices d’une démarche d’éco-conception.\n\n- Lancez une première démarche avec un plan d’action adapté à votre entreprise.\n\n- Repérez les aides et accompagnements disponibles pour aller plus loin.",
     "description longue": "L’éco-conception vise à prendre en compte et réduire les impacts environnementaux dans toutes les étapes du cycle de vie d’un produit ou service : extraction de matières premières, fabrication, transport, usage, traitement en fin de vie, etc.\nL’éco-conception s’applique aux produits matériels mais également aux services.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
@@ -10409,19 +10483,21 @@
     "durée de l'accompagnement": "De 1 à 3 jours de prestation répartis sur 1 à 3 mois",
     "objectifs": [
       {
-        "description": "Appréhender les principes de l’éco-conception et l’Analyse du Cycle de Vie d’un produit ou d’un service."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Identifier votre maturité en matière d'écoconception et les impacts de votre entreprise."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Sensibiliser les collaborateurs aux enjeux d'intégrer cette démarche pour réduire l’impact d’un service ou d’un produit tout en conservant ses qualités, sa fonctionnalité et ses performances."
+        "description": "Définissez ensemble le calendrier pour cet accompagnement."
       },
       {
-        "description": "Mettre en place une première démarche d’écoconception à travers un plan d’action."
-      },
-      {
-        "description": "Identifier les dispositifs d’accompagnement et financiers mobilisables?."
+        "description": "Démarrez l'accompagnement avec l'expert proposé par votre CCI."
       }
     ],
     "conditions d'éligibilité": {
@@ -10571,8 +10647,8 @@
   },
   {
     "titre": "Formation écogestes",
-    "promesse": "Restaurateurs & hébergeurs, construisez une charte d’écogestes adaptée à votre établissement.",
-    "description": "Cette formation permet à un établissement du secteur CHR et du tourisme d'identifier ses postes principaux de consommation d’énergie, d'eau et de production de déchets, et de co-construire une charte d’écogestes répondant aux nouveaux critères obligatoires de classement hôtelier. ",
+    "promesse": "Restaurateurs & hébergeurs, construisez une charte d’écogestes adaptée à votre établissement",
+    "description": "Cet atelier Formation-Action d’une demi-journée s’adresse aux établissements d’hébergement et de restauration qui souhaitent découvrir des pratiques écoresponsables et des gestes concrets pour intégrer le développement durable dans leur activité. Au programme :\n\n- Sensibiliser les collaborateurs aux écogestes en hôtellerie ou restauration.\n\n- Répondre aux critères obligatoires du classement hôtelier (arrêté du 29 décembre 2021).\n\n- Co-construire et diffuser efficacement une charte d’écogestes en interne.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.cciamp.com/produit/ecogestes-chr",
@@ -10582,16 +10658,22 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Envoyez un mail à florence.colonna@cciamp.com pour faire votre demande d'inscription au parcours de formation \"écogestes\"."
+        "description": "Prenez connaissance du programme pédagogique, et des prochaines dates de formation proposées.",
+        "liens": [
+          {
+            "lien": "https://www.cciamp.com/produit/ecogestes-chr",
+            "texte": "Fiche formation Ecogestes en CHR"
+          }
+        ]
       },
       {
-        "description": "Identifiez les enjeux eau, énergie, déchets du secteur CHR et du tourisme."
-      },
-      {
-        "description": "Identifiez les écogestes pour permettre à votre entreprise de réduire ses déchets et ses consommations d’énergie et d'eau."
-      },
-      {
-        "description": "Construisez une charte d’écogestes adaptée à votre établissement, et réflechissez à sa mise en place auprès des équipes."
+        "description": "Réalisez votre demande d'inscription au parcours de formation \"écogestes\" par mail au référent de la formation.",
+        "liens": [
+          {
+            "lien": "https://florence.colonna@cciamp.com",
+            "texte": "florence.colonna@cciamp.com"
+          }
+        ]
       }
     ],
     "conditions d'éligibilité": {
@@ -10701,12 +10783,18 @@
       "entreprise . est ciblée": {
         "toutes ces conditions": [
           "est éligible",
+          "est dans un secteur d'activité ciblé",
           "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
         "toutes ces conditions": [
           "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est I"
         ]
       },
       "entreprise . a un objectif ciblé": {
@@ -10918,7 +11006,7 @@
   {
     "titre": "Accompagnement écoproduction",
     "promesse": "Engagez la transition économique de votre entreprise vers un modèle d’économie circulaire",
-    "description": "L'accompagnement écoproduction est un outil d'aide à la décision qui propose au chef d'entreprise de repenser son modèle linéaire (extraire, fabriquer, consommer, jeter) vers un modèle économique plus circulaire.",
+    "description": "L’accompagnement Écoproduction vous aide à repenser votre modèle économique en intégrant les principes de l’économie circulaire, pour gagner en résilience, réduire vos impacts et identifier de nouvelles opportunités. Cet accompagnement vous permet de : \n\n- Faire le point sur votre fonctionnement actuel (achats d’énergie, usages, consommation d’eau, gestion des déchets, etc.)\n\n- Comprendre les limites du modèle linéaire et identifier les leviers concrets d’un passage vers un modèle plus circulaire : flux de matière, organisation, bâtiment, produits, gouvernance…\n\n- Co-construire un plan d’action adapté à votre activité, avec une vision court, moyen et long terme, et un guide pas à pas\n\n- Être accompagné sur plusieurs mois pour structurer et mettre en œuvre votre démarche de transition économique",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://hautsdefrance.cci.fr/solutions/accompagnement-ecoproduction/",
@@ -10927,16 +11015,21 @@
     "durée de l'accompagnement": "2 à 12 jours de prestation répartis sur 4 à 6 mois ",
     "objectifs": [
       {
-        "description": "Faire le point sur le modèle existant (achat d’énergie, usages existants de l’énergie, de l’eau, des déchets produits…)"
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Sensibiliser aux enjeux que posent l'économie linéaire actuelle et identifier les opportunités d’un modèle d'économie circulaire sur l'activité de votre entreprise : gestion des flux, bâti, produit/process, gouvernance…"
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Co-construire un plan d'action à court, moyen et long termes et apporter une vision prospective de ce que l’entreprise peut devenir avec un « guide » pas à pas."
+        "description": "Définissez avec l’expert le périmètre de l'accompagnement, la méthode et le calendrier."
       },
       {
-        "description": "Bénéficiez d'un accompagnement sur plusieurs mois dans votre démarche de transition économique."
+        "description": "Démarrez l'accompagnement avec l'expert proposé par votre CCI."
       }
     ],
     "conditions d'éligibilité": {
@@ -11097,7 +11190,7 @@
   {
     "titre": "Engins moins polluants",
     "promesse": "Investissez dans des engins non routiers moins polluants",
-    "description": "Vous souhaitez investir dans des engins mobiles non routiers fonctionnant aux énergies alternatives (gaz naturel, énergie électrique, hydrogène, hybride...) ? Bénéficiez d'une déduction fiscale pour votre achat.",
+    "description": "Ce dispositif fiscal soutient l’achat ou la location d’engins non routiers fonctionnant avec des énergies alternatives plus propres (électricité, gaz, hydrogène, hybride…). Grâce à une déduction exceptionnelle sur le résultat fiscal, il vous aide à compenser le surcoût de ces équipements plus respectueux de l’environnement et à engager concrètement votre entreprise dans la transition énergétique.",
     "description longue": "La déduction s’applique :\n• aux entreprises du bâtiment et de travaux publics,\n• aux entreprises produisant des substances minérales solides,\n• aux exploitants aéroportuaires,\n• aux exploitants de remontées mécaniques et de domaines skiables.\n\nSont éligibles :\n•  Les engins \"non routiers\", c'est-à-dire n'ayant pas reçu d'autorisation pour circuler sur la voie publique et n'étant pas immatriculés.\n•  Les engins non routiers inscrits à l'actif immobilisé et fonctionnant au gaz naturel, à l'énergie électrique ou à l'hydrogène, \n• Les engins non routiers combinant l'énergie électrique et une motorisation à l'essence ou au superéthanol E85 et ceux combinant l'essence à du gaz naturel carburant ou du gaz de pétrole liquéfié dont les émissions sont inférieures ou égales à une valeur fixée par décret, qui relèvent de l'une catégories suivantes :\n- matériels et outillages utilisés pour des opérations industrielles,\n- matériels de manutention,\n- moteurs installés dans les matériels des deux précédentes catégories.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "DDFIP",
@@ -11449,7 +11542,7 @@
   {
     "titre": "Enviroveille",
     "promesse": "Accédez à toute l’information réglementaire en matière d'environnement, énergie et santé-sécurité au travail",
-    "description": "Abonnez vous au service de veille \"Enviroveille\" de la CCI pour avoir accès à l’information réglementaire applicable à votre activité (environnement, énergie, santé-sécurité au travail) et suivre son évolution.",
+    "description": "Le service de veille réglementaire Enviroveille vous permet de rester informé des obligations qui s’appliquent à votre activité en matière d’environnement, d’énergie et de santé-sécurité au travail. Il vous aide à anticiper les évolutions réglementaires et à sécuriser votre conformité.\n\n- Recevez tous les 15 jours une alerte pour suivre les dernières actualités réglementaires\n\n- Bénéficiez d’une veille personnalisée selon votre secteur, accompagnée d’un récapitulatif juridique mensuel\n\n- Accédez à une base documentaire complète : textes, jurisprudences, projets en cours\n\n- Consultez un bimestriel numérique synthétisant les textes clés liés à la transition écologique (déchets, énergie, eau, biodiversité, ICPE, etc.)",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.enviroveille.com/public/tester-gratuitement.html",
@@ -11459,23 +11552,20 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Recevez une alerte réglementaire une fois tous les 15 jours, comme premier niveau d'information sur l'actualité réglementaire."
-      },
-      {
-        "description": "Bénéficiez d'une veille personnalisée sur les activités qui vous concernent et recevez une fois par mois l'actualité juridique complète qui s'y rapporte."
-      },
-      {
-        "description": "Accédez à une base de données juridiques : textes réglementaires, jurisprudence, projets de textes européens et nationaux."
-      },
-      {
-        "description": "Recevez un bimestriel dématérialisé qui recense les textes les plus importants sur les différentes thématiques de la transition écologique?: déchets, énergie, eau, biodiversité, air, sites et sols pollués, installations classées pour la protection de l’environnement."
-      },
-      {
-        "description": "Testez gratuitement le service d'alerte réglementaire, la veille personnalisée et la base de données juridiques pendant 2 mois. Puis, abonnez-vous aux services de votre choix.",
+        "description": "Testez gratuitement le service d'alerte réglementaire, la veille personnalisée et la base de données juridiques pendant 2 mois.",
         "liens": [
           {
             "lien": "https://www.enviroveille.com/public/tester-gratuitement.html",
             "texte": "Demander un compte d'accès gratuit"
+          }
+        ]
+      },
+      {
+        "description": "Abonnez-vous aux services de votre choix.",
+        "liens": [
+          {
+            "lien": "https://www.enviroveille.com/public/abonner.html",
+            "texte": "S'abonner"
           }
         ]
       }
@@ -11628,8 +11718,8 @@
   {
     "titre": "Étude \"Alimentation durable\"",
     "promesse": "Réalisez une étude autour de l'alimentation durable",
-    "description": "Vous souhaitez engager une transition alimentaire sur votre territoire ou dans votre entreprise ? L’ADEME soutient le financement d'études pour réduire les impacts environnementaux des produits et pratiques alimentaires.",
-    "description longue": "Face à l’augmentation des besoins à l’échelle de la planète, l’alimentation durable s’impose comme un défi collectif à relever et comme une voie d’avenir pour nos filières alimentaires.\n\nL'ADEME soutient les études autour de l'alimentation durable comportant une dimension environnementale forte, à savoir : \n• contribuer à une chaîne alimentaire durable : mise à disposition des consommateurs des aliments à faible impact environnemental (bio, local, de saison…), écoconception sur l’ensemble de la filière alimentaire (soutien à l’agroécologie, développement de plateforme logistique, réduction des emballages…) ;\n• faire évoluer les pratiques alimentaires : achats responsables en circuits de proximité, affichage environnemental des produits, respect de la saisonnalité des produits, rééquilibrage des régimes alimentaires (intégration des légumineuses et diminution des protéines d’origine animale) ;\n\nD'autres fonds ADEME sont disponibles pour financer les études concernant la lutte contre le gaspillage alimentaire et la gestion des biodéchets. \n\nPlusieurs types d'études peuvent être financées par ce financement : \n• Les études générales visant à acquérir ou approfondir les connaissances sur les systèmes alimentaires, \n• Les diagnostics d'état des lieux techniques ou organisationnel d' opérateur(s) de la filière alimentaire ou d'un territoire. \n• Les études de faisabilité d'une nouvelle démarche, projet ou investissement.",
+    "description": "Vous souhaitez faire évoluer les pratiques alimentaires sur votre territoire ou dans votre entreprise ? L’ADEME vous accompagne en finançant des études pour poser les bases d’une alimentation plus durable. Le dispositif soutient les diagnostics, études de faisabilité ou de connaissance portant sur l’ensemble de la chaîne alimentaire : production, transformation, logistique, consommation. \\\nL’accent est mis sur les approches à faible impact environnemental : développement de l’agroécologie, réduction des emballages, relocalisation de l’offre alimentaire. Il s’agit aussi de faire évoluer les comportements : achats responsables en circuits de proximité, respect de la saisonnalité, affichage environnemental, rééquilibrage des régimes avec plus de légumineuses et moins de protéines animales. \\\nCe soutien vous permet de structurer une démarche cohérente et ancrée dans les enjeux de votre territoire.",
+    "description longue": "Plusieurs types d'études peuvent être financées par ce financement : \n• Les études générales visant à acquérir ou approfondir les connaissances sur les systèmes alimentaires, \n• Les diagnostics d'état des lieux techniques ou organisationnel d' opérateur(s) de la filière alimentaire ou d'un territoire. \n• Les études de faisabilité d'une nouvelle démarche, projet ou investissement.\n\nD'autres fonds ADEME sont disponibles pour financer les études concernant la lutte contre le gaspillage alimentaire et la gestion des biodéchets.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
@@ -11845,7 +11935,7 @@
   {
     "titre": "Etude \"biodéchets\"",
     "promesse": " Réalisez une étude préalable au tri ou à la valorisation de vos biodéchets",
-    "description": "Réalisez une étude de diagnostic ou de faisabilité pour étudier votre projet d'investissement lié aux biodéchets. L'ADEME soutient financièrement les études de diagnostic ou de faisaibilité préalables à la préparation des déchets organiques, au compostage autonome et aux installations de traitement et de valorisation (déconditionnement, hygiénisation ou plateforme de compostage).",
+    "description": "Vous avez un projet de valorisation des biodéchets ? L’ADEME peut financer vos études de diagnostic ou de faisabilité, parmi lesquelles :\n\n- Le diagnostic des besoins en tri et valorisation des biodéchets à l’échelle d’un territoire (quartier, zone d’activité, etc.)\n\n- Les études préalables à la préparation des biodéchets : tri, déconditionnement, hygiénisation\n\n- Les études pour la mise en place d’un compostage autonome en établissement\n\n- Les études en vue de créer ou adapter des plateformes de compostage, des ateliers de déconditionnement ou des installations de traitement de sous-produits animaux (SPAN)\n\nCes études ont pour objectif de structurer en amont des projets solides, adaptés aux besoins locaux, de sécuriser vos investissements et de favoriser une gestion durable des matières organiques.",
     "description longue": "L'ADEME finance les études suivantes : \n\nÀ destination des producteurs de déchets organiques ou des acteurs de la collecte des biodéchets : \n• Les études de diagnostic des besoins en installations de tri et de valorisation des biodéchets. Ces études doivent être réalisée à l’échelle d’une zone de chalandise déterminée (quartier, ZI, ZAC, etc.).\n\nÀ destination des producteurs de déchets organiques : \n• Les études préalables à la préparation des biodéchets.\n• Les études préalables au compostage autonome en établissement.\n\nL'ADEME finance les études suivantes à destination des acteurs privés dans la collecte et le traitement des biodéchets :\n• Les études préalables à la réalisation d'installations ou d'ateliers visant à déconditionner des produits. \n•  Les études préalables à la création de nouvelles plateformes de compostage ou l’adaptation de plateformes de compostage de déchets verts existantes à l’accueil de déchets alimentaires.\n• Les études préalables à la création / adaptation/hygiènisation de plateformes de valorisation des biodéchets classés Sous-Produits Animaux (SPAN). \n\nCette aide est plafonnée à 50 000 € HT pour une étude diagnostic, et 100 000 € HT pour une étude de faisabilité préalable à un investissement. ",
     "début de validité": "01/01/2024",
     "fin de validité": "31/12/2025",
@@ -11901,7 +11991,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "cette aide concerne les entreprises de restauration, de production ou de commerce alimentaire et les opérateurs privés de traitement de biodéchets.",
+        "Ce dispositif s’adresse aux producteurs de biodéchets, aux acteurs de la collecte et aux porteurs de projets privés dans le traitement des déchets organiques.",
         "Section I : Hébergement et restauration / Section E Division 38 : Collecte, traitement et élimination des déchets ; récupération /  Section G classe 47.11 Commerce de détail en magasin non spécialisé à prédominance alimentaire / Section C division 10 Industries alimentaires"
       ],
       "nombre d'années d'activité": [
@@ -12036,7 +12126,7 @@
   {
     "titre": "Étude \"Centres de tri\"",
     "promesse": "Réalisez une étude pour votre projet de centre de tri des déchets",
-    "description": "Vous avez pour projet de créer, étendre ou moderniser un centre de tri et de préparation des déchets ? L'ADEME soutient financièrement la réalisation d’une étude territoriale de faisabilité, prérequis impératif avant toute demande d’aide à l'investissement. ",
+    "description": "Vous envisagez de créer, moderniser ou étendre un centre de tri ou de préparation des déchets ? Avant toute demande d’aide à l’investissement, l’ADEME peut financer une étude de faisabilité à l’échelle de votre territoire. Cette étude permet d’évaluer les besoins locaux en matière de tri et de préparation, d’analyser les flux de déchets et d’identifier les solutions techniques les plus pertinentes. Elle doit aussi prendre en compte les aspects économiques, logistiques et environnementaux du projet. Ce travail en amont est indispensable pour sécuriser les futures étapes de votre projet, adapter les capacités de traitement aux réalités du territoire, et garantir sa cohérence avec les politiques locales de gestion des déchets.",
     "description longue": "Ces études concernent les investissements suivants :\n• Les Centres de tri des déchets non dangereux d’activités économiques (DNDAE),\n• Centres de tri des encombrants,\n• Centres de tri des emballages ménagers et de papiers graphiques (exclusivement pour DROMCOM et Corse)\n\nLe périmètre d’étude doit couvrir, au minimum, les collectivités concernées par le bassin versant du centre de tri.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
@@ -12416,7 +12506,7 @@
   {
     "titre": "Étude \"Diagnostic serres\"",
     "promesse": "Réalisez le diagnostic énergétique de vos serres",
-    "description": "L'ADEME vous aide pour financer un diagnostic énergétique afin d'identifier les solutions de réduction des consommations d’énergie de vos serres et la pertinence d’un investissement dans une solution de production d’énergie renouvelable. Cette démarche peut permettre de réaliser jusqu'à 50 % d'économies sur votre site.",
+    "description": "L’ADEME finance des diagnostics énergétiques pour les serres agricoles afin d’identifier les solutions de réduction des consommations d’énergie et d’évaluer la pertinence d’investir dans des solutions de production d’énergie renouvelable. Ce diagnostic analyse l’ensemble de vos installations (éclairage, ventilation, gestion thermique) et propose des solutions adaptées. Vous pourrez ainsi optimiser vos dépenses énergétiques et réduire vos émissions de CO2. Cette démarche peut permettre de réaliser jusqu'à 50 % d’économies d’énergie sur votre site, tout en vous orientant vers des choix d’investissement plus rentables et écologiques.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
@@ -12603,7 +12693,7 @@
   {
     "titre": "Étude \"Économie de la fonctionnalité\"",
     "promesse": "Réalisez une étude sur le modèle de l'économie de la fonctionnalité pour votre produit",
-    "description": "Vous souhaitez développer un service innovant en alternative à la fourniture d’un produit ? L’ADEME peut vous aider à financer une étude pour vous aider à définir votre nouvelle offre de services. Une phase de sensibilisation vous permettra de découvrir les différentes dimensions du modèle de l'économie de la fonctionnalité et de la coopération. Une phase pratique vous invitera a questionner l’organisation de votre entreprise, vos relations partenariales, ainsi que votre modèle de revenus, dans le but d'élaborer une nouvelle offre de service.",
+    "description": "Vous souhaitez développer une offre de service innovante en alternative à la fourniture d’un produit ? L’ADEME vous soutient dans cette démarche en finançant une étude pour vous aider à définir et structurer votre nouvelle offre. Cette étude se compose de deux phases :\n\n- **Une phase de sensibilisation**, pour vous familiariser avec le modèle de l’économie de la fonctionnalité, qui privilégie l’usage d’un produit plutôt que sa simple possession.\n\n- **Une phase pratique**, pour réfléchir à l’organisation de votre entreprise, vos relations partenariales et votre modèle économique. Vous serez accompagné dans la définition de vos sources de revenus et dans la mise en place de solutions adaptées pour faire évoluer votre modèle vers un service durable et innovant.",
     "description longue": "L’économie de la fonctionnalité est une démarche économique de transformation progressive des entreprises, des collectivités et des citoyens. Elle s’appuie sur la coopération entre les acteurs du territoire pour les accompagner vers une transition écologique et sociale ambitieuse. Les offres développées répondent aux besoins réels des usagers tout en limitant la production de biens matériels.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
@@ -12808,7 +12898,7 @@
   {
     "titre": "Etude et Investissement \"qualité de l’air\"",
     "promesse": "Bénéficiez d'un financement pour vos projets visant à améliorer la qualité de l'air",
-    "description": "Vous travaillez dans une zone polluée et vous souhaitez réduire durablement vos émissions de polluants atmosphériques ? L’ADEME peut accompagner financièrement vos actions. ",
+    "description": "Vous travaillez dans une zone polluée et vous souhaitez réduire durablement vos émissions de polluants atmosphériques ? L’ADEME peut accompagner financièrement vos actions.",
     "description longue": "L’ADEME peut vous accompagner pour :\n   - Des études permettant d’aboutir à une mise en place opérationnelle d’actions permettant de réduire les émissions de polluants atmosphériques réglementés pour les zones concernées.\n   - De la communication, animation, sensibilisation intégrant les changements pérennes de pratiques.\n   - Certains investissements comme ceux relatifs au renouvellement de véhicules, au branchement à quai des navires, aux alternatives au brûlage des déchets verts.\n\nLes projets pourront concerner notamment (liste non exhaustive)\n- la mobilité (active, partagée, report modal) ;\n- les transports (réduction des émissions de véhicules, logistique, maritime et fluvial) ;\n- les alternatives au brûlage des déchets verts ;\n- le soutien dans la mise en place de Zones à Faibles Emissions de mobilité (ZFE-m) hors études réglementaires et l’accompagnement des professionnels impactés par la mise en œuvre de la ZFE-m ;\n- l’urbanisme intégrant une moindre exposition aux émissions de polluants ;\n- la réduction des émissions industrielles ;\n- la réduction des émissions agricoles ;\n- l’accompagnement des changements de pratiques des particuliers ;\n- le chauffage domestique au bois : campagnes d’animation/sensibilisation vers les particuliers et/ou professionnels ou tout autre projet amenant des changements de pratiques à l’exception d’études de préfiguration d’un Fonds Air Bois et de sa mise en place, accompagnées via l’appel à projets dédié.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2023",
@@ -13188,7 +13278,7 @@
   {
     "titre": "Étude et travaux de dépollution d'une friche",
     "promesse": "Réalisez une étude pour votre projet de reconversion de friches polluées",
-    "description": "Vous avez un projet de reconversion de friche ? L’ADEME vous soutient en finançant des études pour évaluer les risques de pollution, définir les usages futurs et élaborer des stratégies de dépollution adaptées. Profitez également d’une aide pour les travaux de dépollution, de déconstruction, de désamiantage et de restauration écologique des sols.",
+    "description": "Vous avez un projet de reconversion de friche et souhaitez en faire un espace viable et durable ? L’ADEME vous soutient financièrement à travers deux volets :\n\n- **Les études préalables**, pour évaluer les risques de pollution, définir les usages futurs et concevoir des stratégies de dépollution adaptées à votre site.\n- **Les travaux de dépollution**, qui peuvent inclure la déconstruction, le désamiantage, ainsi que la restauration écologique des sols pour préparer votre terrain à de nouveaux projets. \n\nCe financement permet de sécuriser la reconversion de friches, en contribuant à la préservation de l’environnement et à la revitalisation des espaces urbains ou industriels.",
     "description longue": "Les prestations d’études éligibles sont principalement  :\n• Les études de diagnostic permettant d’accompagner à l’échelle du site et en amont de la reconversion, pour caractériser les potentiels de changement d’usage et de mutabilité.\n• Les études d’accompagnement de projets regroupant les différentes missions de conseil et d’accompagnement dans la réalisation opérationnelle de la reconversion à savoir : \n• Les prestations Plan de gestion et les investigations associées et le cas échéant les\nprestations Interprétations des milieux ;\n• Les prestations Plan de conception de travaux y compris les essais laboratoires et les essais terrains (afin de déterminer les techniques de dépollution les plus adaptées et obtenir les éléments de dimensionnement) ;\n• Les prestations d’assistance à maitrise d’ouvrage.\n\nL’ADEME soutient également la mise en œuvre des mesures de gestion (dépollution, mise en place de dispositions constructives, etc.) retenues à l’issue des phases d’étude décrites ci-dessus.\n\nCe soutien s’inscrit dans le cadre du fonds vert et concerne uniquement les friches issues d’anciens sites ICPE (Installations classées pour la protection de l'environnement) ou relevant du Code minier. Selon les besoins opérationnels, les travaux de déconstruction et désamiantage de bâtiments, et de restauration écologique des sols peuvent également être soutenus.",
     "début de validité": "01/01/2025",
     "fin de validité": "31/12/2025",
@@ -13381,7 +13471,7 @@
   {
     "titre": "Étude \"Gaspillage alimentaire\"",
     "promesse": "Réalisez une étude pour réduire vos pertes dues au gaspillage alimentaire ou invendus",
-    "description": "Vous souhaitez mettre en œuvre un projet de réduction de vos pertes dues au gaspillage alimentaire à réduire le gaspillage alimentaire ou aux invendus non alimentaires ? L’ADEME finance votre étude de diagnostic ou de faisabilité.",
+    "description": "Votre entreprise souhaite réduire ses pertes liées au gaspillage alimentaire ou aux invendus non alimentaires ? L’ADEME peut financer une étude de diagnostic ou de faisabilité pour identifier les leviers d’action adaptés à votre activité. Cette étude permet d’analyser vos flux de gaspillage, de cibler les étapes critiques de la chaîne (production, transformation, logistique, vente) et de construire un plan d’actions concret. Elle peut aussi intégrer des pistes de réutilisation, de dons ou de valorisation des produits non commercialisables.",
     "description longue": "La loi AGEC, fixe comme objectif de réduire le gaspillage alimentaire de 50 % par rapport à son niveau de 2015 à l’horizon 2025 dans les domaines de la distribution alimentaire et de la restauration collective, et à l’horizon 2030 dans les domaines de la consommation, de la production, de la transformation et de la restauration commerciale. \nConcernant le non alimentaire, cette même Loi AGEC interdit la destruction des invendus. En 2021 l’ADEME a publié une étude sur les 12 principaux secteurs d’activité révélant qu’en moyenne la part des invendus représentent plus de 4 milliards d'euros de valeur marchande. ",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
@@ -13815,7 +13905,7 @@
   {
     "titre": "Étude \"Géothermie profonde\"",
     "promesse": "Réalisez une étude pour votre projet d'installation de géothermie profonde",
-    "description": "L’ADEME vous accompagne dans le financement d’une étude de faisabilité avant d'investir dans une installation de géothermie profonde. Cette étude vous aidera a identifier les techniques adaptées aux possibilités du site d’implantation, ainsi que des solutions pour le montage financier, administratif et juridique de votre investissement.",
+    "description": "L'ADEME vous aide à financer une étude de faisabilité avant d'investir dans une installation de géothermie profonde. Cette étude vous permettra d'identifier les solutions techniques les plus adaptées à votre site, ainsi que les options pour le montage financier, administratif et juridique de votre projet. Vous pourrez ainsi évaluer la viabilité de votre installation de géothermie et vous assurer que votre investissement est bien conçu avant de lancer les travaux.",
     "description longue": "La géothermie profonde consiste à récupérer la chaleur de l’eau contenue dans le sous-sol, situé à plus de 200 mètres de profondeur.\nLe principe est de capter, par forage, l’eau des aquifères profonds et de la transférer à des réseaux de chaleur à des fins de chauffage. Le forages peuvent aller jusqu'à 2 500 mètres de profondeur.\nOn estime que 30 % du territoire français pourrait exploiter cette ressource pour le chauffage urbain, étant une énergie très faiblement carbonée (10g de CO2/ KWh).",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
@@ -14017,7 +14107,7 @@
   {
     "titre": "Étude \"Hydroélectricité\"",
     "promesse": "Étudiez votre projet de mise en place d'une installation hydroélectrique",
-    "description": "Vous avez un projet de projet d'installation hydroélectrique pour produire de l'énergie par la force de l'eau ? Vous souhaitez réhabiliter, rénover, optimiser ou créer une installation sur seuil existant ? L'ADEME vous apporte une aide pour une étude de potentiel, de faisabilité ou d'avant-projet.",
+    "description": "Votre entreprise porte un projet de production d’énergie hydroélectrique ? L’ADEME peut financer une étude de potentiel, de faisabilité ou d’avant-projet pour évaluer les conditions techniques, économiques et réglementaires de votre future installation. Le dispositif s’adresse aux projets de création, de réhabilitation ou d’optimisation d’une centrale sur un seuil ou un barrage existant. L’étude peut inclure l’analyse du débit disponible, des impacts environnementaux, du raccordement au réseau ou encore des contraintes d’autorisation. Elle vous permet de dimensionner votre projet au plus juste et de sécuriser vos choix d’investissement.",
     "description longue": "Les aménagements concernés par cette étude sont les suivants :\n\n• Réalisation d’un aménagement neuf de production d'énergie sur un seuil existant qui n’a jamais été équipé auparavant ;\n• Remise en service d’un équipement n’étant plus en activité, mais bénéficiant ou pas d’un droit d’eau (fondé en titre, autorisation, etc.) et pouvant prouver l’existence de la chute et des organes qui utilisent ou ont utilisés la force hydraulique ;\n• optimisation d’un équipement complémentaire sur un site actuellement exploité ;\n• le turbinage d’eau déjà captée (eau potable ou eaux usées).\n\n3 types d'études peuvent être financées  :\n\n• l’étude de potentiel devra déterminer le potentiel administratif, énergétique, environnemental et économique des seuils/sites potentiels sur un territoire/cours d’eau défini ;\n• l’étude de faisabilité devra démontrer la faisabilité administrative, technique, environnementale et économique d’une centrale hydroélectrique afin de fournir au maître d’ouvrage des éléments clairs, fiables et chiffrés lui permettant d’apprécier l’intérêt de réaliser ce projet ;\n• l’étude d’avant-projet devra préciser les conditions techniques et économique de réalisation de l’installation au regard de l’implantation sur le site avec des études de sol, des relevés topographiques précis.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
@@ -14221,7 +14311,7 @@
   {
     "titre": "Étude \"Méthanisation\"",
     "promesse": "Étudiez votre projet de construction d'une installation de méthanisation",
-    "description": "Vous souhaitez produire une énergie renouvelable, valoriser vos déchets et matières organiques ? Vous avez pour projet de construire une installation de méthanisation ? L'ADEME vous soutient dans le financement de votre étude, étape nécessaire avant tout investissement.",
+    "description": "Votre entreprise a un projet de méthanisation pour produire une énergie renouvelable à partir de déchets ou de matières organiques ? L’ADEME peut financer une étude préalable, indispensable pour évaluer la faisabilité technique, économique et réglementaire de votre future installation. Cette étude permet d’analyser les gisements mobilisables, les technologies adaptées, le montage économique, les possibilités de valorisation du biogaz (électricité, chaleur, injection), ainsi que les contraintes liées au site et à la réglementation. Elle constitue une étape clé pour dimensionner votre projet, sécuriser vos choix d’investissement et préparer un dossier solide en vue de sa réalisation.",
     "description longue": "La méthanisation est un processus naturel biologique de dégradation de la matière organique grâce à l'action de micro-organismes. Chargées dans un digesteur, chauffées et brassées en l’absence d’oxygène pendant plusieurs jours, ces matières produisent une énergie renouvelable, le biogaz et un fertilisant, le digestat. \nLe biogaz produit peut ensuite être valorisé et vendu sous différentes formes (chaleur, électricité, injection dans le réseau de gaz naturel, carburant pour véhicules).\n \nL'ADEME soutient le financement aux : \n• Études de diagnostic et d’accompagnement de projets (dont études de faisabilité) : unités de méthanisation à la ferme, centralisées, en industries agro-alimentaires, biodéchets des collectivités ou station d’épuration urbaines (STEU).\n• Accompagnement au montage projet après étude de faisabilité :\n- Études de raccordement au réseau public de gaz (pour les projets d’injection, voir plus bas en détail, certaines études seulement sont éligibles).\n- Etudes d’Assistance à Maîtrise d’Ouvrage avant construction de l’installation.\n- Etudes pour la concertation locale/ communication/information\n- Etudes agronomiques\n- Appui au montage juridique des projets collectifs\n- Appui au montage du plan de financement.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
@@ -14432,8 +14522,8 @@
   },
   {
     "titre": "Étude \"Performance énergétique\" ou de \"décarbonation\" en industrie",
-    "promesse": "Réalisez une étude de faisabilité pour votre projet de la performance énergétique ou de décarbonation de votre site de production",
-    "description": "Vous avez réalisé un audit énergétique et vous avez identifié un projet pour optimiser la performance énergétique ou de décarbonation de vos processus de production ?\nL'ADEME peut vous aider à financer votre étude de faisabilité pour vérifier la faisabilité technique et économique de votre projet et étudier les solutions de montage financier et juridique.",
+    "promesse": "Vérifiez la faisabilité technique et économique de votre projet de décarbonation",
+    "description": "Vous avez réalisé un audit énergétique et vous avez identifié un projet pour optimiser la performance énergétique ou de décarbonation de vos processus de production ?\\\nL'ADEME peut vous aider à financer votre étude de faisabilité pour vérifier la faisabilité technique et économique de votre projet et étudier les solutions de montage financier et juridique.",
     "description longue": "Cette étude doit s’inscrire dans une démarche cohérente de décarbonation des procédés de votre entreprise. Elle se décline en cinq étapes successives :\n\n1. Sobriété\nLe changement de comportement est le levier le moins coûteux et le plus impactant pour réduire les consommations et baisser les émissions de gaz à effet de serre.\n2. Modification du mix matières\n- Efficacité matière via l’incorporation de Matières Premières Recyclées et valorisation des coproduits.\n- Développement de procédés utilisant moins d’intrants, ou des intrants moins émissifs.\n3. Amélioration de l’efficacité énergétique\n- Performance énergétique des technologies et procédés.\n- Adéquation des températures produites au regard des besoins finaux.\n4. Substitution des énergies fossiles\n- Substitution des combustibles fossiles par des combustibles décarbonés ou bas carbone (chaleur fatale, biomasse, biogaz, hydrogène décarboné, combustibles solides de récupération, géothermie, solaire thermique, etc.).\n- Electrification de la chaleur et des procédés.\n5. Captage du CO₂ à la source",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
@@ -14607,8 +14697,7 @@
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
           "code NAF niveau 1 . est B",
-          "code NAF niveau 1 . est C",
-          "code NAF niveau 1 . est Q"
+          "code NAF niveau 1 . est C"
         ]
       },
       "entreprise . a un objectif ciblé": {
@@ -14622,7 +14711,7 @@
   {
     "titre": "Étude \"Éco-conception\"",
     "promesse": "Évaluez la performance environnementale de vos produits, procédés et services ",
-    "description": "L’ADEME propose une aide pour financer vos études d'éco-conception. Au delà d'un diagnostic standard, cette aide appuie votre démarche pour conduire à l'amélioration environnementale de votre produit ou service tout au long de sa chaine de valeur.",
+    "description": "Votre entreprise souhaite concevoir un produit ou un service avec un impact environnemental réduit sur l’ensemble de son cycle de vie ? L’ADEME peut financer une étude d’éco-conception pour aller au-delà du simple diagnostic et structurer une démarche d’amélioration sur toute la chaîne de valeur. Cette étude permet d’identifier les leviers de réduction des impacts environnementaux à chaque étape du cycle de vie (matières premières, fabrication, distribution, usage, fin de vie) et d’intégrer ces enjeux dans la conception même de vos produits ou services. Elle peut aussi inclure l’analyse des compromis techniques, économiques et environnementaux pour vous guider vers des choix durables et différenciants.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
@@ -15075,7 +15164,7 @@
   {
     "titre": "Étude d'opportunité photovoltaïque",
     "promesse": "Découvrez le potentiel du photovoltaïque pour votre entreprise avec une étude d’opportunité",
-    "description": "Disposez de tous les éléments indispensables à la prise de décision avant l’installation de panneaux photovoltaïques : montant de l’investissement et aides financières, économies réalisées par la vente de l’électricité et/ou par l’auto-consommation, points de vigilance, temps de retour sur investissement et rentabilité.",
+    "description": "Votre entreprise envisage d’installer des panneaux photovoltaïques sur un bâtiment ou un terrain ? Cette étude d’opportunité vous permet de disposer de tous les éléments clés pour prendre une décision éclairée avant d’investir. Vous bénéficiez d’une analyse rapide de la consommation énergétique de votre site, d’un pré-chiffrage des travaux, ainsi que d’une estimation des gains liés à l’autoconsommation ou à la revente d’électricité. L’étude identifie aussi les points techniques à vérifier (raccordement au réseau, structure de la toiture, étanchéité, charpente…) et vous aide à évaluer la rentabilité de l’investissement en calculant le temps de retour. Vous obtenez également une vue d’ensemble des aides financières mobilisables pour votre projet.",
     "début de validité": "01/10/2023",
     "fin de validité": "01/06/2026",
     "illustration": "images/TEE_energie_verte.png",
@@ -15089,13 +15178,21 @@
     "durée de l'accompagnement": "1/2 à 1 journée",
     "objectifs": [
       {
-        "description": "Réalisez une analyse rapide de la consommation de votre site."
+        "description": "Contactez un conseiller CCI via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Obtenez une analyse réglementaire ainsi que les points d’attention à prendre en compte (raccordement au réseau, structure de la toiture, étanchéité, charpente, etc.)"
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Bénéficiez d'un pré-chiffrage des travaux, calculez le temps de retour sur investissement et identifiez les financements possibles."
+        "description": "Définissez avec l’expert le périmètre de l'étude et le calendrier."
+      },
+      {
+        "description": "Démarrez votre étude d'opportunité avec l'expert proposé par votre CCI."
       }
     ],
     "conditions d'éligibilité": {
@@ -15255,7 +15352,7 @@
   {
     "titre": "Étude \"projet de recherche\"",
     "promesse": "Financez votre projet de recherche dans le domaine de la transition énergétique et environnementale ",
-    "description": "Vous avez un projet pour faire avancer la recherche dans l'un des domaines suivants : changement climatique, bioéconomie, économie circulaire, préservation des sols, efficacité énergétique, énergies renouvelables, qualité de l’air. L’ADEME finance des projets de Projets de Recherche, Développement ou Innovation (RDI)",
+    "description": "Vous souhaitez contribuer à la transition écologique à travers un projet de recherche, de développement ou d’innovation (RDI) ? L’ADEME peut cofinancer votre projet s’il vise à faire progresser les connaissances ou les solutions techniques dans des domaines clés comme le changement climatique, la bioéconomie, l’économie circulaire, la préservation des sols, l’efficacité énergétique, les énergies renouvelables ou la qualité de l’air. L’aide concerne aussi bien les phases de recherche amont que les étapes de développement ou d’expérimentation. L’objectif est de soutenir les entreprises qui s’engagent dans des projets à fort impact environnemental, susceptibles de déboucher sur des solutions concrètes, reproductibles ou transférables à d'autres acteurs.",
     "description longue": "L'ADEME renforce son soutien aux recherches permettant :\n• de mieux comprendre les conditions nécessaires aux transformations contribuant à la\ntransition écologique tout en tenant compte de l’imbrication des échelles spatiales,\ngéographiques et temporelles,\n• d’anticiper les conditions de déploiement des solutions/technologies pour en préparer les déploiements à grande échelle,\n• de s’appuyer sur des transformations en cours dans la société et les territoires.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
@@ -15275,7 +15372,7 @@
         ]
       },
       {
-        "description": "Vérifier l’éligibilité de votre projet : pour bénéficier de cette aide, votre thématique de recherche ne doit correspondre à aucun appel à projets de recherche en cours.",
+        "description": "Vérifier l’éligibilité de votre projet : pour bénéficier de cette aide à l'étude, votre thématique de recherche ne doit correspondre à aucun appel à projets de recherche en cours.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/recherche?aap%5B0%5D=types%3A49",
@@ -15646,7 +15743,7 @@
   {
     "titre": "Étude \"réemploi réutilisation réparation\"",
     "promesse": "Réalisez une étude de faisabilité pour votre projet dans le réemploi-réutilisation ou la réparation",
-    "description": "Vous souhaitez mettre en place un projet dans le domaine du réemploi-réutilisation et de la réparation (recyclerie, atelier d'upcycling, repair'café, etc.) ? L’ADEME apporte un soutien à vos études et diagnostics.",
+    "description": "Vous développez une activité de réemploi, réutilisation ou réparation dans votre entreprise ? L’ADEME peut financer jusqu’à 80 % de votre étude préalable ou diagnostic de territoire. Cet accompagnement permet d’évaluer la faisabilité technique, économique et logistique de votre projet : recyclerie, atelier de réparation ou d’upcycling, repair’café, etc. Il vous aide à structurer une offre adaptée à votre territoire, à identifier les partenariats pertinents et à construire un modèle économique solide.\\\nL’objectif est de développer l’offre et la demande de produits réemployés et réparés, contribuant ainsi à une économie circulaire et durable.",
     "description longue": "Ce financement concerne : \n• Les diagnostics de territoire (gisements, acteurs et structures existants, dynamiques locales,\nbesoins d’activités supplémentaires, etc.) ;\n• Les études d’opportunité (prospective sur un gisement) ou de faisabilité d’un projet\nconcernant par exemple :\n- La création d’une nouvelle recyclerie (étude de faisabilité) ;\n- La création d’un fablab dédié à la réparation ;\n- Le développement d’activités spécifiques et de ressources locales favorisant le réemploiréutilisation et la réparation (atelier d’upcycling, repair’café, etc.) ;\n• Les missions d’Assistance à Maîtrise d’Ouvrage (AMO) permettant la mise en œuvre effective sur un chantier de produits et matériaux du bâtiment aptes à une seconde vie.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
@@ -15862,7 +15959,7 @@
   {
     "titre": "Étude \"réhabilitation solaires thermiques collectives\"",
     "promesse": "Réhabilitez votre installation solaire thermique collective défectueuse ou improductive",
-    "description": "Votre installation solaire thermique pour la production d'eau chaude est défécteuse ou à l'arrêt ? L'ADEME vous apporte un soutien financier pour la réalisation d'un audit de votre système d'installation solaire thermique, ainsi que pour les travaux de réhabilitation.",
+    "description": "Votre installation solaire thermique pour la production d’eau chaude est défectueuse ou à l’arrêt ? L’ADEME vous soutient financièrement pour la réalisation d’un audit de votre système, afin d’identifier les causes de défaillance et évaluer les actions correctives nécessaires. En complément, l’ADEME finance également les travaux de réhabilitation pour remettre votre installation en état de fonctionnement. Cette aide est conçue pour permettre aux entreprises de maximiser l'efficacité de leurs installations solaires thermiques et de réduire leur impact environnemental, tout en assurant un retour rapide à une production d’eau chaude économique et durable.",
     "description longue": "Pour être éligible, votre installation doit : \n• être une installation solaire thermique pour la\nproduction d’eau chaude ;\n• avoir recours à l’installation de capteurs solaires thermiques vitrés à\ncirculation de liquide certifiés (CSTBat, SolarKeymark ou équivalents) ; \n• être à destination de logements collectifs, du secteurs tertiaire, industrie ou agriculture. \n• avoir moins de 20 ans depuis sa mise en service à la date de dépôt de la\ndemande d’aide.\n• Avoir une surface de capteurs solaires thermiques installée supérieure ou égale à 25 m² en métropole et 10 m² en DOM-TOM (en une seule installation ou en cumul de surface de plusieurs petites installations).\n• purgée de tous les moyens de recours contre les parties responsables de\nl’installation (Garantie de Parfait Achèvement, Dommage d’Ouvrage, Assurance décennale et autre...). \n\nLes installations prioritaires à ce dispositif sont les installations à l’arrêt ou ayant leur productivité en deçà de 50% de la valeur de référence.\n\nL’ADEME privilégiera les actions groupées d’installations ainsi que les consortiums/groupements de prestataire d’ingénierie, d’installateur et d’exploitant.",
     "début de validité": "03/06/2019",
     "fin de validité": "31/12/2025",
@@ -16078,7 +16175,7 @@
   {
     "titre": "Étude \"Réseaux énergie renouvelable\"",
     "promesse": "Réalisez une étude sur les réseaux de chaleur ou de froid alimentés par des énergies renouvelables et/ou de récupération ",
-    "description": "Vous avez un projet de création ou d’extension de réseaux de chaleur ou de froid entre plusieurs bâtiments alimentés par des énergies renouvelables ou de récupération (EnR&R). L'ADEME vous soutient dans le financement de votre étude.",
+    "description": "Vous avez un projet de création ou d’extension de réseaux de chaleur ou de froid alimentés par des énergies renouvelables ou de récupération ? L'ADEME finance l’étude de faisabilité ou le schéma directeur pour optimiser votre projet. Cette étude est nécessaire pour bénéficier d’une aide à l’investissement. Elle permet de définir un schéma directeur des réseaux ou de vérifier la faisabilité de votre projet. \\\nSelon votre région, l’ADEME peut aussi proposer des conseils ou des pré-études de faisabilité gratuites.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
@@ -16272,7 +16369,7 @@
   {
     "titre": "Étude \"Solaire thermique\"",
     "promesse": "Étudiez la faisabilité d'une installation solaire thermique",
-    "description": "Vous souhaitez mettre en place une installation solaire thermique ? L'ADEME vous apporte une aide pour une étude de faisabilité, étape nécessaire avant tout investissement. Cette étude vous permettra d'identifier les solutions techniques adaptées aux possibilités de votre site d’implantation ainsi que les solutions pour le montage financier, administratif et juridique de votre investissement.",
+    "description": "Vous souhaitez installer un système solaire thermique pour produire de l’eau chaude sur votre site ? L'ADEME vous soutient financièrement pour réaliser une étude de faisabilité, étape préalable essentielle avant tout investissement. Cette étude vous permettra de déterminer les solutions techniques les plus adaptées aux caractéristiques de votre installation. Elle analysera également les aspects financiers, administratifs et juridiques de votre projet, afin de vous orienter sur les meilleures options de montage. Grâce à cette aide, vous serez en mesure d'évaluer la viabilité de votre projet et de prendre des décisions éclairées avant de vous lancer dans les travaux.",
     "description longue": "Cette étude de faisabilité peut être liée à la mise en œuvre :\n•  d’installations dédiées sur bâtiment ou process\n•  d’installations sur réseau de chaleur\n• de systèmes solaires combinés\n\nL’étude de faisabilité vous permettra de :\n• Vérifier la faisabilité technique et économique du projet d’implantation d’une installation solaire.\n• Proposer des solutions techniques adaptées au contexte et aux possibilités du site d’implantation, et assurer le dimensionnement et la pérennité de l’installation.\n• Explorer des solutions pour le financement de l’opération et le montage administratif et juridique.\n",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
@@ -16741,7 +16838,7 @@
     ],
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
-        "Moins de 250 salariés.",
+        "Moins de 250 salariés",
         "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
@@ -16902,7 +16999,7 @@
   {
     "titre": "eXtrême Défi Mobilité",
     "promesse": "Rejoignez l'eXtrême Défi, un programme innovant pour concevoir les véhicules de demain",
-    "description": "L' eXtrême Défi Mobilité est un parcours d'innovation dont l'objectif est d’imaginer, prototyper et produire de nouvelles solutions de déplacement du quotidien pour les territoires dépendants de l’automobile : durables, réparables, reconditionnables, légers et économes. ",
+    "description": "L’eXtrême Défi Mobilité est un parcours d'innovation visant à imaginer et développer des solutions de déplacement durables et adaptées aux territoires dépendants de l’automobile.\n\n- Participez à des sessions de créativité pour concevoir de nouveaux concepts d'objets roulants.\n\n- Prototypez des véhicules, avec des expérimentations continues auprès d'utilisateurs dans les territoires partenaires.\n\n- Passez à la phase d’industrialisation : production, assemblage, réparation, et reconditionnement des véhicules tout en affinant le design.\n\n- Identifiez les sources de financement régionales, nationales ou de l’ADEME pour soutenir les différentes phases de votre projet.\n\n- Bénéficiez des nombreuses expertises du réseau : mécanique, design, électronique, urbanisme, ecoconception, modèles économiques, communication, marketing, etc.",
     "description longue": "L’eXtrême Défi porte l'ambition de concevoir des véhicules :\n\n• 10 fois moins couteux par rapport à une automobile (0,6 à 0,8 €/km pour 10000 km/an d’après A.C.F.) en intégrant l’ensemble des dépenses grâce à un embarquement de batterie minimaliste, l’utilisation de composant standardisé, mutualisé entre différents véhicules et une conception permettant de garantir une longue durée de vie, donc une faible perte de valeur dans le temps,\n\n• 10 fois plus durable en visant une très haute recyclabilité, capacité à être réparé, reconditionné pour avoir plusieurs vies, plusieurs usages. La durée de vie moyenne d’une voiture est de 13 ans et l’âge moyen du parc automobile est de 11 ans.\n• 10 fois plus léger pour réduire fortement le besoin de batterie, la consommation d’énergie donc les coûts. La masse moyenne des voitures neuves vendues en 2019 est 1240 kg. Ce critère est essentiel pour atteindre la neutralité carbone.\n\n• 10 fois plus simple en travaillant l’écoconception pour réduire le nombre de composant, avoir des assemblages démontables, utiliser au maximum des standards et travailler collectivement sur l’interopérabilité.\n\n• 10 fois moins puissant grâce à un véhicule léger et efficient mais également avec des vitesses maxi adaptées aux besoins et aux territoires entre 25 et 80 km/h.\n",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
@@ -16912,19 +17009,25 @@
     "durée de l'accompagnement": "Jusqu'à 3 ans d'accompagnement",
     "objectifs": [
       {
-        "description": "Participez à des sessions de créativité pour faire émerger de nouveaux concepts d'objets roulants."
+        "description": "Découvrez le programme eXtrême Défi.",
+        "liens": [
+          {
+            "lien": "https://xd.ademe.fr/approche-integrale",
+            "texte": "Le site de l’eXtrême Défi"
+          }
+        ]
       },
       {
-        "description": "Prototypez les véhicules et expérimentez en continu auprès d'utilisateurs dans les territoires partenaires du défi."
+        "description": "Explorez les différentes manières de vous impliquer dans le programme.",
+        "liens": [
+          {
+            "lien": "https://wikixd.fabmob.io/wiki/Devenir_acteur_de_l'XD",
+            "texte": "Quatre niveaux d'engagement possibles"
+          }
+        ]
       },
       {
-        "description": "Passez en phase d'industrialisation : production, assemblage, réparation, reconditionnement, et affinez le design des véhicules en répétant phases d'idéation et prototypage."
-      },
-      {
-        "description": "Identifiez des sources de financement de votre région, de l’ADEME ou au niveau national sur l'ensemble des phases."
-      },
-      {
-        "description": "Intégrez la communauté de l'eXtrême Défi et bénéficiez des nombreuses expertises du réseau : mécanique, design, électronique, urbanisme, ecoconception, modèles économiques, communication, marketing, etc.",
+        "description": "Exprimer votre intérêt pour rejoindre la communauté de l'eXtrême Défi.",
         "liens": [
           {
             "lien": "https://airtable.com/apprjFOnbLySO8spa/shraH0xKsFZnkZOKw",
@@ -17062,7 +17165,7 @@
   {
     "titre": "Fiscalité énergétique",
     "promesse": "Entreprise électro-intensive, réduisez votre facture d’électricité en bénéficiant d’un taux réduit de fiscalité énergétique",
-    "description": "Vous êtes une entreprise électro-intensive ? Vous pouvez bénéficier d'un accompagnement pour vous aider à obtenir un remboursement de votre trop-payé et accéder au taux réduit de fiscalité auquel vous avez droit.",
+    "description": "Réduisez durablement votre facture d’électricité grâce à un accompagnement pour obtenir le taux réduit de fiscalité énergétique auquel votre entreprise peut avoir droit.\n\nCet accompagnement permet de :\n\n- vérifier votre éligibilité à la réduction de contribution au service public de l’électricité (CSPE) en analysant votre consommation, votre secteur et votre procédé industriel.\n\n- constituer et déposer le dossier de déclaration auprès de votre fournisseur d’énergie et du service des douanes.\n\n- former un référent en interne pour assurer chaque année les démarches et maintenir les exonérations obtenues.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.occitanie.cci.fr/produit/optimiser-sa-fiscalite-energetique",
@@ -17071,13 +17174,21 @@
     "durée de l'accompagnement": "1 à 2 jours de prestation répartis sur 3 mois",
     "objectifs": [
       {
-        "description": "Situer la consommation d’énergie de votre entreprise par rapport à celle de votre secteur d’activité, analyser le procédé industriel de votre entreprise et collecter vos informations déclaratives afin de vérifier votre éligibilité."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Préparer et déposer le dossier de déclaration auprès du fournisseur d’énergie et du service des douanes."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Prendre en charge la montée en compétence d’une personne dans l’entreprise qui pourra effectuer chaque année les formalités nécessaires, et pérenniser les exonérations obtenues."
+        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
+      },
+      {
+        "description": "Lancez le diagnostic avec l'expert proposé par votre CCI."
       }
     ],
     "conditions d'éligibilité": {
@@ -17825,7 +17936,8 @@
   {
     "titre": "Formation développement durable",
     "promesse": "Formez-vous au développement durable de votre entreprise",
-    "description": "Vous souhaitez engager votre entreprise dans une démarche responsable ? Cette formation 100 % numérique vous guide pas à pas : découvrez les enjeux du développement durable et de la RSE, réalisez un autodiagnostic pour évaluer vos pratiques, définissez vos axes d’amélioration et apprenez à les valoriser. Cette formation courte permet d'embarquer rapidement vos équipes, clients et fournisseurs dans la mise en place d'une une démarche complète d’entreprise responsable.",
+    "description": "Vous souhaitez engager votre entreprise dans une démarche responsable ? Cette formation digitale vous guide pas à pas : découvrez les enjeux du développement durable et de la RSE, réalisez un autodiagnostic pour évaluer vos pratiques, définissez vos axes d’amélioration et apprenez à les valoriser. Cette formation courte permet d'embarquer rapidement vos équipes, clients et fournisseurs dans la mise en place d'une une démarche complète d’entreprise responsable.",
+    "description longue": "Au programme :\n1. Mesurez votre impact sur le développement durable\n- Les principes du développement durable et de la RSE\n- Les enjeux du développement durable dans le monde artisanal\n- L’incidence de la réglementation sur votre activité\n \n2. Identifiez les acteurs de votre démarche\n- Les parties prenantes externes et internes\n- Les besoins et les attentes des parties prenantes\n \n3. Réalisez votre plan d’action\n- La première étape de l’intégration :  l’autodiagnostic\n- Les orientations de développement durable et RSE à privilégier\n- Les actions à mettre en place pour une démarche éco-responsable\n- Les outils de pilotage nécessaires à son intégration\n \n4. Valorisez et communiquez votre engagement\n- Les labels et marques utiles à la valorisation de vos produits et services\n- La valorisation de votre engagement grâce à votre communication",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "url": "https://www.artisanat.fr/integrer-developpement-durable",
@@ -17834,7 +17946,15 @@
     "durée de l'accompagnement": "5h",
     "objectifs": [
       {
-        "description": "Contactez un conseiller pour vérifier votre éligibilité et vous inscrire à cette formation."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
+      },
+      {
+        "description": "Un conseiller vous recontacte pour échanger et compléter votre inscription."
       },
       {
         "description": "Une fois inscrit, recevez un lien pour accéder au contenu de la formation."
@@ -17981,7 +18101,7 @@
     "durée de l'accompagnement": "2h15",
     "objectifs": [
       {
-        "description": "Prenez connaissance du programme de la formation",
+        "description": "Prenez connaissance du programme de la formation.",
         "liens": [
           {
             "lien": "https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_engager-son-entreprise-dans-la-transition-ecologique_s5227.html",
@@ -18327,7 +18447,7 @@
   {
     "titre": "Formations Transition Écologique et Énergétique",
     "promesse": "Accédez à des formations courtes et opérationnelles aux enjeux de la transition écologique et énergétique",
-    "description": "Bpifrance Université met en ligne gratuitement un catalogue de formations animées par des experts de la transition écologique et énergétique. Ces formations abordent de nombreux sujets relatifs aux enjeux de la responsabilité sociétale des entreprises (RSE) : environnement, enjeux sociaux, achats responsables… ",
+    "description": "Bpifrance Université propose un large catalogue de formations gratuites pour accompagner votre transition écologique et renforcer votre stratégie RSE. Animées par des experts, ces formations couvrent les grands enjeux environnementaux, sociaux et économiques : achats responsables, réduction de l’impact environnemental, inclusion, etc.\n\n- Suivez les contenus à votre rythme, en toute autonomie : modules e-learning, webinaires en direct ou en replay, podcasts, guides pratiques, tutos et interviews d’experts.\n\n- Profitez également d’un outil d’autodiagnostic pour évaluer l’impact environnemental de votre activité et identifier des pistes d’action.\n\nUn appui concret et accessible pour faire monter en compétence vos équipes et structurer votre démarche de responsabilité sociétale.",
     "description longue": "Ce cursus Transition Écologique et Énergétique vous permettra de :\n- mesurer l’impact de votre activité sur l’environnement à l’aide de l’autodiagnostic \"Mon Climatomètre\"\n- Comprendre ce qu’est la transition écologique et énergétique (TEE) et ses enjeux dans votre entreprise\n- Opérer une TEE au sein de votre entreprise\n- Cerner la TEE au sein de votre secteur d’activité",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Banque Publique d'Investissement France",
@@ -18348,12 +18468,6 @@
       },
       {
         "description": "Accédez à un catalogue d'une cinquantaine de formations gratuites sur la thématique de la transition écologique et énergétique."
-      },
-      {
-        "description": "Visionnez vos formations à votre rythme et en toute autonomie. Elles peuvent prendre la forme de modules e-learning, webinaires live et replay, podcasts, digital guides, tutos, exercices interactifs, ou interviews réalisés avec des experts."
-      },
-      {
-        "description": "Accédez à un outil d'autodiagnostic en ligne pour mesurer l’impact de votre activité sur l’environnement."
       }
     ],
     "conditions d'éligibilité": {
@@ -18502,7 +18616,7 @@
   {
     "titre": "Fresque de la Mobilité",
     "promesse": "Participez à une Fresque de la mobilité dédiée aux entreprises",
-    "description": "Vous voulez sensibiliser vos salarié.e.s sur la mobilité et avez besoin d'un outil pour embarquer votre équipe ou votre direction ? La fresque de la mobilité est l'atelier qu'il vous faut pour bien démarrer le projet.",
+    "description": "Vous souhaitez engager votre entreprise vers une mobilité plus durable ? La Fresque de la mobilité est un atelier collaboratif qui permet de sensibiliser vos salarié·es et de fédérer autour d’un projet de transformation. Accessible à tous, ce format ludique et pédagogique facilite une prise de conscience collective et donne envie d’agir concrètement.\n\n- Comprenez les enjeux de l’hyper-mobilité actuelle et ses impacts environnementaux.\n\n- Identifiez les leviers d’action pour réduire les émissions liées aux déplacements professionnels et domicile-travail.\n\n- Initiez une démarche collective de décarbonation de la mobilité dans votre entreprise.\n\n- Mobilisez vos équipes grâce à une animation participative qui encourage l’échange et la créativité.\n\nCet atelier est un point de départ efficace pour construire une culture d’entreprise alignée avec les objectifs de transition écologique.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://fresquedelamobilite.org/",
@@ -18511,16 +18625,18 @@
     "durée de l'accompagnement": "1/2 journée",
     "objectifs": [
       {
-        "description": "Sensibiliser aux impacts et aux limites de l'hyper-mobilité actuelle."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Découvrir les leviers d’actions à votre disposition pour s’engager à tous les niveaux vers une mobilité décarbonée."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Engager l’entreprise dans un processus de décarbonation de la mobilité."
-      },
-      {
-        "description": "Fédérer les équipes à travers une animation collaborative et apprendre à travers un jeu éducatif, ludique et pédagogique."
+        "description": "Planifiez l'animation de la Fresque de la mobilité au sein de votre entreprise."
       }
     ],
     "conditions d'éligibilité": {
@@ -18687,8 +18803,8 @@
   {
     "titre": "Gestion des biodéchets",
     "promesse": "Valorisez les biodéchets de votre entreprise",
-    "description": "Vous produisez des biodéchets et vous aimeriez trouver des solutions pour les réduire ou les valoriser ? la CCI Hauts-de-France vous propose un accompagnement à la gestion des biodéchets.",
-    "description longue": "Qu’est-ce qu’un biodéchet ?\nL’article L. 541-1-1 du code de l’environnement définit les biodéchets comme : « Les déchets non dangereux biodégradables de jardin ou de parc, les déchets alimentaires ou de cuisine provenant des ménages, des bureaux, des restaurants, du commerce de gros, des cantines, des traiteurs ou des magasins de vente au détail, ainsi que les déchets comparables provenant des usines de transformation de denrées alimentaires. ».\n\nEn pratique, les biodéchets à traiter sont :\n \nDéchets verts : tontes de pelouse et fauchage, feuilles mortes, tailles d’arbustes, haies et brindilles ou encore déchets ligneux issus de l’élagage et de l’abattage d’arbres et de haies.\nDéchets alimentaires : restes de repas ou de préparation de repas ou produits périmés non consommés.",
+    "description": "Vous cherchez à mieux gérer vos biodéchets et à en faire une ressource ? La CCI Hauts-de-France vous accompagne pour identifier les solutions de réduction et de valorisation adaptées à votre activité. Cet accompagnement vous aide à structurer une démarche concrète et efficace.\n\n- Analysez la nature, le volume et la fréquence de vos biodéchets, ainsi que leur localisation.\n\n- Repérez les solutions de valorisation proches de chez vous : compostage, méthanisation, etc.\n\n- Référencez vos flux sur une plateforme géolocalisée dédiée pour faciliter les synergies locales.\n\n- Bénéficiez d’un outil d’aide à la décision pour choisir les solutions techniques, repérer les dispositifs de financement mobilisables, et entrer en contact avec les bons interlocuteurs.\n\nUne démarche simple et pragmatique pour réduire vos coûts tout en limitant votre impact environnemental.",
+    "description longue": "Qu’est-ce qu’un biodéchet ?\nL’article L. 541-1-1 du code de l’environnement définit les biodéchets comme : « Les déchets non dangereux biodégradables de jardin ou de parc, les déchets alimentaires ou de cuisine provenant des ménages, des bureaux, des restaurants, du commerce de gros, des cantines, des traiteurs ou des magasins de vente au détail, ainsi que les déchets comparables provenant des usines de transformation de denrées alimentaires. ».\n\nEn pratique, les biodéchets à traiter sont :\n - Les déchets verts : tontes de pelouse et fauchage, feuilles mortes, tailles d’arbustes, haies et brindilles ou encore déchets ligneux issus de l’élagage et de l’abattage d’arbres et de haies.\n- Les déchets alimentaires : restes de repas ou de préparation de repas ou produits périmés non consommés.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://hautsdefrance.cci.fr/solutions/accompagnement-gestion-biodechets/",
@@ -18697,16 +18813,21 @@
     "durée de l'accompagnement": "De 1 à 5 jours selon la taille et le secteur d'activité de l'entreprise",
     "objectifs": [
       {
-        "description": "Analyser votre production de biodéchets : volume, fréquence, situation géographique, nature, etc."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Identifier les solutions de valorisation associées, disponibles à proximité (compostage, méthanisation, etc)."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Répertorier les biodéchets sur une plateforme géolocalisée."
+        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
       },
       {
-        "description": "Obtenir un outil d’aide à la décision : solutions techniques, dispositifs de financements, contacts associés."
+        "description": "Lancez le diagnostic avec l'expert proposé par votre CCI."
       }
     ],
     "conditions d'éligibilité": {
@@ -19240,7 +19361,7 @@
   {
     "titre": "Imprim'vert",
     "promesse": "Réduisez l’impact de l’impression et obtenez le label Imprim’Vert®",
-    "description": "Vous souhaitez réduire l'impact de votre activité du secteur de l’imprimerie en faisant des choix stratégiques, écologiques et made in France ? Valoriser votre engagement environnemental auprès de vos clients par l’obtention du label Imprim’Vert®.",
+    "description": "Vous souhaitez réduire l’impact environnemental de votre activité dans le secteur de l’imprimerie en faisant des choix stratégiques, écologiques et Made in France ? Le label Imprim’Vert® valorise votre engagement et renforce la confiance de vos clients.\n\nL’accompagnement de la Chambre de Métiers et de l’Artisanat (CMA) vous aide à réaliser un diagnostic environnemental, première étape essentielle pour obtenir le label. Ce diagnostic vous permettra d’identifier précisément les actions à mettre en place pour respecter les critères du cahier des charges, garantissant un faible impact sur la planète (gestion des déchets dangereux, stockage sécurisé, réduction des produits toxiques, etc.). Une fois les actions définies, vous pourrez constituer un dossier qui répond aux exigences de la marque.",
     "description longue": "La marque Imprim'vert® a pour objectif de favoriser la mise en place par les entreprises exerçant les activités d'impression, d'actions concrètes conduisant à une diminution des impacts de l'activité sur l'environnement.\nLe cahier des charges Imprim’Vert® est fondé sur cinq critères simples : la bonne gestion des déchets dangereux, la sécurisation de stockage des liquides dangereux, la non utilisation de certains produits CMR, la sensibilisation environnementale des salariés et de la clientèle, et le suivi des consommations énergétiques du site.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
@@ -19253,16 +19374,24 @@
     "durée de l'accompagnement": "1 journée",
     "objectifs": [
       {
-        "description": "Réaliser un diagnostic lors d'une visite sur site par un conseiller CMA référent Imprim’Vert®."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Obtenir des préconisations sur votre démarche environnementale dans le but d’être conforme au cahier des charges du label (déchets dangereux, sécurisation des stockages des produits liquides dangereux, non utilisation de produits toxiques, sensibilisation des clients et salariés, consommations énergétiques)."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Bénéficier de l'expertise de votre conseiller pour le montage de votre dossier pour présentation au jury."
+        "description": "Planifiez et réalisez le diagnostic environnemental de votre entreprise avec l’expert CMA."
       },
       {
-        "description": "Mettre en avant votre engagement pour valoriser l’entreprise auprès des clients et être référencé sur le site Imprim'Vert."
+        "description": "Bénéficiez d'une aide pour constituer le dossier de référencement conforme au cahier des charges Imprim’Vert®,"
+      },
+      {
+        "description": "Soumettez votre dossier à un comité d’attribution régional pour l'obtention du label Imprim’Vert®."
       }
     ],
     "conditions d'éligibilité": {
@@ -19281,7 +19410,7 @@
         "Éligible à toutes les entreprises"
       ],
       "autres critères d'éligibilité": [
-        "Être un artisan"
+        "Réservé aux artisans"
       ]
     },
     "publicodes": {
@@ -25478,7 +25607,7 @@
   {
     "titre": "Mission de Conseil RSE",
     "promesse": "Bénéficiez d'un consultant expert pour définir et mettre en place votre feuille de route RSE",
-    "description": "La Mission de Conseil RSE permet de bénéficier de 13 jours d'accompagnement d'un consultant expert pour définir une ambition globale RSE et la traduire en plan d'action.",
+    "description": "Avec la Mission de Conseil RSE, bénéficiez de 13 jours d’accompagnement pour structurer une stratégie RSE adaptée à votre réalité d’entreprise. \n\n- Définissez une ambition RSE adaptée à votre entreprise et traduisez-la en engagements concrets.\n\n- Mobilisez une équipe projet pour porter cette ambition et embarquer vos collaborateurs.\n\n- Co-construisez un plan d’action réaliste pour intégrer la RSE dans vos pratiques au quotidien.\n\n- Appuyez-vous sur des données de marché (études sectorielles, benchmark, veille) pour éclairer vos décisions stratégiques.\n\nCet accompagnement vous permet de passer à l’action de manière structurée, avec des outils concrets et un cadre clair pour faire de la RSE un levier de transformation durable.",
     "début de validité": "01/01/2018",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Banque Publique d'Investissement France",
@@ -25488,16 +25617,21 @@
     "durée de l'accompagnement": "13 jours de prestation répartis sur 6 à 8 semaines",
     "objectifs": [
       {
-        "description": "Définissez une ambition globale RSE pour l'entreprise et traduisez-la en engagements à prendre."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Mobilisez une équipe projet autour de cette ambition pour engager l'ensemble de vos collaborateurs."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Construisez un plan d'action ciblé pour réussir à intégrer la RSE dans l'activité de votre entreprise permettant de concrétiser rapidement les engagements."
+        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
       },
       {
-        "description": "Bénéficiez de données externes et de marché pour vous orienter dans la prise de décision stratégique (ex: étude de marché, analyse de la concurrence...)"
+        "description": "Lancez la mission de conseil avec le bureau d'études sélectionné par Bpifrance."
       }
     ],
     "conditions d'éligibilité": {
@@ -25662,7 +25796,7 @@
   {
     "titre": "Mission Stratégie Environnement",
     "promesse": "Définissez la feuille de route pour la transition énergétique et écologique de votre entreprise",
-    "description": "Bénéficiez d'une mission de conseil ciblée sur 13 jours d'un expert environnement référencé par Bpifrance. Un accompagnement pour vous aider à enclencher votre transition énergétique et écologique, l’inscrire dans la stratégie de votre entreprise et construire votre feuille de route jusqu’à 2030.",
+    "description": "Bénéficiez de 13 jours d’accompagnement par un expert environnement référencé par Bpifrance pour inscrire la transition écologique et énergétique dans la stratégie de votre entreprise. Cette mission vous aide à prendre du recul, structurer votre démarche et construire une feuille de route concrète et adaptée à votre activité.\n\n- Sensibilisez vos équipes et développez leurs compétences sur les enjeux environnementaux.\n\n- Évaluez les impacts environnementaux de votre activité.\n\n- Identifiez les risques et les opportunités liés à la transition écologique.\n\n- Formalisez la raison d’être de votre entreprise si vous le souhaitez.\n\n- Construisez une trajectoire jusqu’à 2030 qui vous guide dans vos actions, selon vos objectifs et vos capacités.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
@@ -25674,19 +25808,21 @@
     "durée de l'accompagnement": "13 jours",
     "objectifs": [
       {
-        "description": "Sensibiliser et renforcer les compétences de vos collaborateurs sur les sujets liés la transition environnementale."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Définir la raison d’être de votre entreprise."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Evaluer les impacts de l’activité de votre entreprise sur l’environnement."
+        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
       },
       {
-        "description": "Etablir les risques et opportunités de la transition environnementale sur l’activité de votre entreprise."
-      },
-      {
-        "description": "Définir la feuille de route jusqu’à 2030 de votre entreprise pour vous guider dans la transition énergétique et écologique."
+        "description": "Lancez le diagnostic avec l'expert environnement référencé par Bpifrance."
       }
     ],
     "conditions d'éligibilité": {
@@ -26065,7 +26201,7 @@
         ]
       },
       {
-        "description": "Une fois connecté, inscrivez-vous à la formation Entreprise et biodiversité",
+        "description": "Une fois connecté, inscrivez-vous à la formation Entreprise et biodiversité.",
         "liens": [
           {
             "lien": "https://mooc.formation.lpo.fr/enrol/synopsis/index.php?id=4",
@@ -26576,7 +26712,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Comme **2 millions de personnes** obtenez votre empreinte carbone et empreinte eau, grâce au calculateur \"Nos Gestes Climat\"",
+        "description": "Obtenez votre empreinte carbone et empreinte eau, grâce au calculateur \"Nos Gestes Climat\".",
         "liens": [
           {
             "lien": "https://nosgestesclimat.fr/",
@@ -26585,7 +26721,7 @@
         ]
       },
       {
-        "description": "Lancez une campagne dans votre organisation et **engagez une démarche durable** avec ce calculateur en ligne",
+        "description": "Lancez une campagne dans votre organisation et engagez une démarche durable avec ce calculateur en ligne.",
         "liens": [
           {
             "lien": "https://nosgestesclimat.fr/organisations",
@@ -26594,7 +26730,7 @@
         ]
       },
       {
-        "description": "Explorez, analysez et téléchargez des données anonymisées pour faire des choix éclairés et améliorer continuellement votre démarche écologique"
+        "description": "Explorez, analysez et téléchargez des données anonymisées pour faire des choix éclairés et améliorer continuellement votre démarche écologique."
       },
       {
         "description": "Permettez à vos parties prenantes (collaborateurs, partenaires, clients...) de calculer et réduire leur empreinte carbone et eau directement depuis vos outils en ligne"
@@ -27172,7 +27308,7 @@
   {
     "titre": "PACTE Industrie",
     "promesse": "Engagez votre industrie dans une démarche de décarbonation",
-    "description": "Le programme PACTE Industrie vise à former et accompagner les industriels dans leur transition énergétique. L'accompagnement peut permettre de réaliser des études d’opportunités du mix énergétique, l'élaboration d'une stratégie de décarbonation et d'une Trajectoire d’Investissements Bas Carbone ou encore de la construction d'un plan de financement.",
+    "description": "Le programme PACTE Industrie accompagne les industriels dans leur transition énergétique, en offrant des études et un coaching sur des thématiques clés. Il permet de réaliser des études d'opportunité sur le mix énergétique, d'élaborer une stratégie de décarbonation, de définir une Trajectoire d’Investissements Bas Carbone (TIBC), et de construire un plan de financement pour les projets.\n\nL’accompagnement couvre plusieurs axes :\n\n- Management de l’énergie : études d’évolution du mix énergétique, audit énergétique, et mise en place de la norme ISO 50 001.\n\n- Stratégie de décarbonation : développement d’une stratégie de décarbonation ambitieuse, chiffrage des investissements bas carbone et analyse des gains d’émissions.\n\n- Financement : accompagnement sur les aspects financiers pour structurer le montage et rechercher les financements adaptés.",
     "description longue": "Plusieurs types d'accompagnement sont proposés :\n• étude des leviers de décarbonation à l’échelle du site industriel : efficacité énergétique, récupération de chaleur fatale, énergies renouvelables, ou encore électrification et hydrogène.\n• élaboration d'une stratégie de décarbonation ambitieuse et le plan de transition associé (ACT pas à pas), à l’échelle du groupe.\n• élaboration d'une Trajectoire d’Investissements Bas Carbone (TIBC) à l’échelle du groupe pour obtenir un chiffrage des gains d’émissions de gaz à effet de serre associés.\n• évaluation de l’ambition d’une stratégie de décarbonation et son alignement au regard des objectifs de l’Accord de Paris (ACT évaluation).\n• accompagnement pour les projets d’investissement bas carbone pour construire leurs plans de financement.",
     "début de validité": "01/06/2023",
     "fin de validité": "30/06/2026",
@@ -27910,7 +28046,7 @@
       },
       "entreprise . a un effectif éligible": {
         "toutes ces conditions": [
-          "effectif <= 20"
+          "effectif <= 19"
         ]
       },
       "entreprise . a une categorie legale eligible": {
@@ -27953,8 +28089,8 @@
   },
   {
     "titre": "PASS Transitions",
-    "promesse": "Entreprise du secteur audiovisuel, financez votre transition environnementale",
-    "description": "La Région Bretagne soutient financièrement la transition environnementale des petites entreprises du secteur audiovisuel via le \"Pass Transition\".\nLe Pass Transition finance des études pour accélérer votre transition sur l'eau, l'énergie, économie circulaire, les déchets, la biodiversité, RSE, mobilité, numérique responsable. \nIl participe aussi au financement d'équipements pour le suivi et la réduction de vos déchets, consommations en eau et en énergie.\nEnfin, il peut contribuer au financement d'un recrutement d’une personne à temps partagé occupant un poste stratégique en matière de transitions (ex : responsable RSE, management de l’énergie)",
+    "promesse": "Financez votre transition environnementale avec une aide de la région Bretagne",
+    "description": "La Région Bretagne soutient financièrement la transition environnementale des petites entreprises via le \"Pass Transition\".\\\nLe Pass Transition finance des études pour accélérer votre transition sur l'eau, l'énergie, économie circulaire, les déchets, la biodiversité, RSE, mobilité, numérique responsable.\\\nIl participe aussi au financement d'équipements pour le suivi et la réduction de vos déchets, consommations en eau et en énergie.\\\nEnfin, il peut contribuer au financement d'un recrutement d’une personne à temps partagé occupant un poste stratégique en matière de transitions (ex : responsable RSE, management de l’énergie)",
     "description longue": "Le PASS Transitions finance 50 % des dépenses éligibles. Il comporte 3 volets :\n- Volet 1. Investissements : \nFinancement d'équipements pour le suivi et la réduction des consommations en énergie, eau et déchets et la production d’énergie photovoltaïque.\nL'aide aux investissements est comprise entre 20 000 € et 50 000 €, pour un mininum de 40 000 € de dépenses. \n\n- Volet 2. Conseil : \nFinancement d’une formation, participation à une fresque, étude, audit, diagnostic...relevant des transitions sur les thématique énergétique, eau, économie circulaire, déchets, biodiversité, RSE, mobilité, numérique. \nL'aide au conseil est comprise entre 4 000 € et 10 000 €, pour un mininum de 8 000 € de dépenses.\n\n- Volet 3. Ressources Humaines \nFinancement d'un recrutement d’une personne à temps partagé occupant un poste stratégique en matière de transitions (ex : responsable RSE, management de l’énergie).\nL'aide aux Ressources Humaines est comprise entre 4 000 € et 10 000 €, pour un minimum de 8 000 € de dépenses.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Région Bretagne",
@@ -27996,7 +28132,7 @@
         "Bretagne"
       ],
       "secteur d'activité": [
-        "Production de films cinématographiques, de vidéo et de programmes de télévision : enregistrement sonore et édition musicale (entreprises de production ou prestataires)"
+        "- Être une entreprise dans la production ou le service aux entreprises de production\n- Être une entreprise dans la filière culturelle : spécifiquement les prestataires travaillant sur des œuvres de création cinématographique et audiovisuelle"
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -28116,7 +28252,16 @@
       },
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
           "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est Q",
           "code NAF niveau 1 . est R",
           "code NAF niveau 1 . est S"
         ]
@@ -28477,7 +28622,7 @@
   {
     "titre": "Performa Environnement",
     "promesse": "Mesurez votre maturité écologique et créez un plan d’action personnalisé avec un conseiller",
-    "description": "Réalisez un état des lieux à 360° pour évaluer l'impact de votre activité sur l'environnement et réalisez des économies. Différents sujets sont abordés : économie d’énergie, isolation des locaux, consommations d’eau, déchets, matières premières, achats, mobilité, etc.",
+    "description": "Améliorez la performance environnementale de votre entreprise artisanale grâce à un diagnostic complet réalisé par un conseiller de la Chambre de Métiers et de l’Artisanat. Cet état des lieux à 360° permet d’identifier vos principaux postes de consommation et de dégager des pistes d’économies concrètes.\n\n- Analyse de votre activité sous plusieurs angles : énergie, isolation, eau, déchets, matières premières, achats, mobilité…\n\n- Remise d’un plan d’action personnalisé pour réduire vos impacts et optimiser vos dépenses.\n\n- Possibilité de valoriser votre démarche par un label environnemental reconnu.\n\n- Appui dans l’identification des aides disponibles (investissements, études, formations) et accompagnement au montage des demandes de financement.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "url": "https://www.artisanat.fr/nous-connaitre/vous-accompagner/performa-environnement",
@@ -28486,16 +28631,21 @@
     "durée de l'accompagnement": "1 journée",
     "objectifs": [
       {
-        "description": "Bénéficiez d'un état des lieux d'un conseiller de la Chambre de Métiers et de l’Artisanat pour évaluer l'empreinte environnementale de votre activité."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Obtenez un diagnostic complet et la proposition d'un plan d'action pour maîtriser votre consommation énergétique et détecter de nouvelles sources d'économies (énergie, isolation des locaux, consommations d’eau, déchets, matières premières, mobilité...)"
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Valorisez votre démarche environnementale par l'obtention d'un label."
+        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
       },
       {
-        "description": "Identifiez une solution d'investissement, d'étude ou de formation, et soyez accompagné dans le montage de votre demande de financement."
+        "description": "Lancez le diagnostic avec l'expert proposé par votre CMA."
       }
     ],
     "conditions d'éligibilité": {
@@ -28774,8 +28924,8 @@
   },
   {
     "titre": "Plan de mobilité",
-    "promesse": "Améliorer et optimiser l'accessibilité de votre entreprise",
-    "description": "Vous souhaitez mettre en place un plan de mobilité pour votre entreprise ? Votre CCI vous propose une prestation d’accompagnement pour vous aider à répondre à vos obligations légales en réalisant votre démarche de plan de mobilité.",
+    "promesse": "Mettez en place un plan de mobilité sur mesure avec l'aide d'un expert",
+    "description": "La Chambre de Commerce et d’Industrie vous accompagne dans la mise en place d’un plan de mobilité adapté à votre entreprise et conforme à vos obligations légales. Cet accompagnement permet d’intégrer la mobilité durable dans votre stratégie tout en fédérant vos équipes.\n\n- Structuration de la démarche et mobilisation des acteurs clés.\n\n- Réalisation d’un diagnostic mobilité (analyse territoriale, enquête salariés…).\n\n- Co-construction d’un plan d’action lors d’un atelier participatif.\n\n- Mise en œuvre des actions en impliquant les collaborateurs à chaque étape.\n\n- Suivi de la démarche et pilotage du plan sur trois ans.\n\nUn accompagnement opérationnel pour réduire l’impact de vos déplacements professionnels, améliorer le bien-être des salariés et répondre aux enjeux environnementaux et réglementaires.",
     "description longue": "Le plan de mobilité (PDM) est un ensemble de mesures visant à optimiser les déplacements liés aux activités professionnelles. Cela concerne les trajets domicile/travail mais aussi les déplacements professionnels des collaborateurs, des clients et des partenaires.\nLe PDM est une obligation pour les entreprises de plus de 100 travailleurs sur un même site. \n\nExemples de mesures pouvant entrer dans un PDM :\n• La promotion du vélo ; \n• L’amélioration de l’accès des bâtiments par les piétons ; \n• L’encouragement à l’utilisation des transports publics ;\n• L’aménagement des horaires de travail ;\n• L’accompagnement et l’encouragement à habiter à proximité du lieu de travail ou sur le réseau de transport en commun ;\n• La mise en place d’un service d’autopartage ;\n• L’incitation au covoiturage ;\n•  La garantie de la prise en charge du retour au domicile en cas de circonstances exceptionnelles : chèque-taxi, utilisation de voitures de service ou de vélos à assistance électrique...\n\nCette démarche peut également être conduite à l'échelle d'un parc d'activité ou d'un bassin d'emploi pour mutualiser les actions entre plusieurs entreprises et ainsi renforcer l'impact des actions proposées",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
@@ -28787,19 +28937,21 @@
     "durée de l'accompagnement": "6 à 12 jours",
     "objectifs": [
       {
-        "description": "Mobiliser les acteurs et planifier, structurer la démarche de plan de mobilité."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Réaliser un diagnostic à l'échelle territoriale et une enquête auprès de vos salariés."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Elaborer un plan d'action sous la forme d'un atelier participatif avec les salariés."
+        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
       },
       {
-        "description": "Mettre en oeuvre les différentes actions et mobiliser les collaborateurs à chaque étape."
-      },
-      {
-        "description": "Planifier et suivre les actions sur trois ans."
+        "description": "Lancez le diagnostic avec l'expert proposé par votre CCI."
       }
     ],
     "conditions d'éligibilité": {
@@ -30785,7 +30937,10 @@
         ]
       },
       "entreprise . a un objectif ciblé": {
-        "une de ces conditions": []
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est mon impact environnemental",
+          "questionnaire . objectif prioritaire . est préserver la biodiversité"
+        ]
       },
       "entreprise . est dans une zone géographique éligible": {
         "une de ces conditions": [
@@ -30798,7 +30953,7 @@
   {
     "titre": "Programme Breizh Fab",
     "promesse": "Bénéficiez d'un accompagnement pour apprendre comment allier compétitivité et transition écologique",
-    "description": "Breizh Fab propose aux industriels de la région Bretagne d’être accompagnés pour développer leurs projets et intégrez les enjeux des mutations environnementales pour gagner en compétitivité.",
+    "description": "Breizh Fab accompagne les industriels bretons pour intégrer les enjeux de transition environnementale dans leurs projets, renforcer leur compétitivité et anticiper les mutations à venir. Ce parcours propose un accompagnement personnalisé et l’accès à une dynamique collective régionale.\n\n- Bénéficiez d’un état des lieux gratuit sur deux jours pour évaluer vos enjeux environnementaux et de décarbonation.\n\n- Définissez les priorités d’action selon vos besoins : stratégie, performance, investissements, transition environnementale, organisationnelle ou numérique.\n\n- Accédez à un accompagnement individuel sur les défis identifiés, avec l’appui de consultants spécialisés.\n\n- Participez tout au long de l’année à des temps d’échange ouverts à tous les industriels bretons : ateliers, webinaires, visites d’entreprise, rencontres…",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Breizh Fab",
     "autres opérateurs": [
@@ -30814,13 +30969,25 @@
     "durée de l'accompagnement": "2 à 12 jours",
     "objectifs": [
       {
-        "description": "Réaliser un état des lieux gratuit de 2 jours sur les enjeux de la transition environnementale et de la décarbonation."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "lien": "mailto:contact@breizhfab.bzh",
+            "texte": "contact@breizhfab.bzh"
+          }
+        ]
       },
       {
-        "description": "Définissez ensuite les \"défis\" prioritaires sur lesquels vous souhaitez bénéficier d'un accompagnement individuel (stratégie, performance, business, investissements, transition environnementale, transition organisationnelle, transition numérique)"
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Tout au long de l’année, participez à différents formats de rencontres ouvertes et gratuites à l’ensemble des industriels bretons pour s’informer, confronter ses idées et densifier son réseau régional. (webinaires, ateliers, visites d'entreprise, rencontres...)"
+        "description": "Recevez les éléments pour compléter votre candidature : votre fiche candidature, le contrat Breizh Fab ainsi qu'un questionnaire \"Transitions\" à compléter en ligne."
+      },
+      {
+        "description": "Dès réception de ces 3 éléments, Breizh Fab instruit votre candidature."
+      },
+      {
+        "description": "L’équipe Breizh Fab missionne un Référent Transition Environnementale Décarbonation pour réaliser l’accompagnement."
       }
     ],
     "conditions d'éligibilité": {
@@ -30972,7 +31139,7 @@
   {
     "titre": "Programme Ecod'o",
     "promesse": "Réalisez des économies sur vos consommations d’eau ",
-    "description": "Le programme ECOD’O accompagne les acteurs industriels et du secteur du tourisme et de la restauration dans la réduction de leur consommation d’eau. Le soutien intervient sur les aspects techniques mais aussi financiers et réglementaires.",
+    "description": "Le programme ECOD’O accompagne les acteurs industriels et du secteur du tourisme et de la restauration dans la réduction de leur consommation d’eau. Le soutien intervient sur les aspects techniques mais aussi financiers et réglementaires.\n\n- Bénéficiez d'un diagnostic personnalisé des consommations et usages dans votre entreprise, réalisé par un expert de la CCI.\n- Identifiez les potentiels d'économie d'eau et de réutilisation des eaux usées traitées (REUSE/REUT).\n- Bénéficiez d'un plan d'action dédié à votre entreprise.\n- Profitez d'un appui dans la recherche de solutions et de financements pour vos projets d'investissement.\n- Mettez en place les préconisations et réduisez vos consommations d'eau d'au moins 10%.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "autres opérateurs": [
@@ -30989,19 +31156,21 @@
     "durée de l'accompagnement": "Selon l'entreprise",
     "objectifs": [
       {
-        "description": "Bénéficiez d'un diagnostic personnalisé des consommations et usages dans votre entreprise, réalisé par un expert de la CCI."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Identifiez les potentiels d'économie d'eau et de réutilisation des eaux usées traitées (REUSE/REUT)."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Bénéficiez d'un plan d'action dédié à votre entreprise."
+        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
       },
       {
-        "description": "Profitez d'un appui dans la recherche de solutions et de financements pour vos projets d'investissement."
-      },
-      {
-        "description": "Mettez en place les préconisations et réduisez vos consommations d'eau d'au moins 10%."
+        "description": "Lancez le diagnostic avec l'expert proposé par votre CCI."
       }
     ],
     "conditions d'éligibilité": {
@@ -31149,7 +31318,7 @@
   {
     "titre": "Programme EVE",
     "promesse": "Acteurs du transport et de la logistique, réduisez votre impact énergétique et environnemental",
-    "description": "Le programme EVE (Engagements Volontaires pour l’Environnement) accompagne des entreprises dans la réduction de l'impact énergétique et environnemental dans leurs activités de transport et logistique.",
+    "description": "Le programme EVE, Engagements Volontaires pour l’Environnement, accompagne les entreprises du secteur transport-logistique dans la réduction de leur impact énergétique et environnemental. En rejoignant ce dispositif national, vous bénéficiez d’un accompagnement personnalisé pour structurer et valoriser votre démarche.\n\n- Engagez-vous dans une trajectoire de progrès environnemental, à l’image des 3 200 entreprises déjà participantes.\n\n- Profitez d’un accompagnement sur-mesure et d’un dispositif adapté à votre activité : FRET21, EVcom ou Objectif CO₂.\n\n- Élaborez un plan d’action concret sur 3 ans pour réduire vos émissions de gaz à effet de serre.\n\n- Accédez à la plateforme EVE pour suivre et évaluer vos émissions.\n\n- Valorisez votre engagement avec une reconnaissance officielle : trophée EVE, label FRET21 ou label Objectif CO₂.",
     "description longue": "Par ses dispositifs dédiés, le programme apporte les solutions adaptées aux besoins de chaque acteur (chargeur, commissionnaire de transport, transporteur de marchandises, transporteur de voyageurs, grossiste).\n\n• FRET21 accompagne les entreprises agissant en qualité\nde donneurs d’ordre pour mieux intégrer l’impact des\ntransports dans leur démarche RSE.\n4 axes d’action :\n- Taux de chargement\n- Distance parcourue\n- Moyens de transport\n- Achats responsables\n\n• EVcom donne les outils et l’accompagnement nécessaires\naux commissionnaires pour agir avec leurs partenaires transport\nen faveur de l’environnement.\n4 axes d’action :\n- Flotte propre\n- Achats transport\n- Collaboration clients\n- Démarche RSE\n\n• Objectif CO2 soutient les transporteurs routiers dans leur démarche de réduction\nd’émissions de GES et de polluants atmosphériques.\n4 axes d’action :\n- Véhicules\n- Carburant\n- Conducteurs\n- Organisation des transports",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
@@ -31164,19 +31333,22 @@
     "durée de l'accompagnement": "Selon les projets",
     "objectifs": [
       {
-        "description": "Intégrez le programme EVE et engagez vous pour l'amélioration de l'environnement dans une démarche volontaire, sur les traces de plus de 3200 entreprises engagées."
+        "description": "Découvrez le programme et ses actualités sur le site dédié.",
+        "liens": [
+          {
+            "lien": "https://www.eve-transport-logistique.fr/programme-eve/",
+            "texte": "Programme EVE"
+          }
+        ]
       },
       {
-        "description": "Bénéficiez d'un accompagnement sur-mesure pour votre activité et des dispositifs dédiés : FRET21, EVcom et Objectif CO2"
-      },
-      {
-        "description": "Obtenez un plan d’actions pour réduire vos émissions de Gaz à effet de serre (GES) sur 3 ans."
-      },
-      {
-        "description": "Bénéficiez d'outils opérationnels pour évaluer vos émissions de GES."
-      },
-      {
-        "description": "Valorisez votre performance en faveur de la transition énergétique et écologique en obtenant le trophée du programme EVE, le label \"Fret21\" ou le label \"Objectif CO2\"."
+        "description": "Réalisez votre demande d'inscription en ligne.",
+        "liens": [
+          {
+            "lien": "https://prod-eve.ademe-dri.fr/inscription",
+            "texte": "Inscription"
+          }
+        ]
       }
     ],
     "conditions d'éligibilité": {
@@ -31506,7 +31678,7 @@
   {
     "titre": "Programme Synergies durables",
     "promesse": "Identifiez les opportunités d'économie circulaire avec les entreprises de votre territoire ",
-    "description": "Votre conseiller CCI vous ouvre de nouvelles opportunités pour trouver des partenaires au sein de votre territoire et vous permettre de mutualiser des moyens, ressources et services (gestion collective des déchets, équipements, infrastructures, matières premières non utilisées...)",
+    "description": "Votre conseiller CCI vous accompagne pour identifier des opportunités de mutualisation avec d’autres entreprises de votre territoire. L’objectif : partager des ressources, valoriser les flux inexploités, réduire les coûts et renforcer les coopérations locales.\n\n- Repérez les flux ou ressources à mutualiser (déchets, équipements, infrastructures, matières premières inutilisées…).\n\n- Identifiez les entreprises avec lesquelles partager ou valoriser ces flux de manière stratégique et économiquement avantageuse.\n\n- Bénéficiez de l’appui de votre conseiller pour mobiliser les partenaires et acteurs ressources adaptés à vos besoins.\n\n- Formalisez des synergies concrètes grâce à la mise en œuvre d’un contrat d’alliance inter-entreprises.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.cci.fr/offre/demarche-synergies-durables",
@@ -31515,16 +31687,21 @@
     "durée de l'accompagnement": "Selon le projet",
     "objectifs": [
       {
-        "description": "Identifier les flux à partager, mutualiser et valoriser auprès des entreprises locales."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Détecter des entreprises cibles, les possibilités de mutualisation et les gains en terme de coûts de production et de fonctionnement."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Solliciter et mobiliser les acteurs ressources les plus adaptés."
+        "description": "Définissez ensemble le périmètre de l'étude, la méthode et le calendrier."
       },
       {
-        "description": "Mettre en œuvre un contrat d’alliance et de synergies inter-entreprises."
+        "description": "Démarrez la prestation de conseil."
       }
     ],
     "conditions d'éligibilité": {
@@ -32220,7 +32397,7 @@
   {
     "titre": "Diagnostic SARE",
     "promesse": "Engagez la rénovation énergétique de votre local professionnel",
-    "description": "Vous souhaitez réaliser des économies d’énergie et améliorer le confort de vos locaux professionnels ? Vous pouvez bénéficier d'un accompagnement pour vous aider à identifier les solutions techniques les plus adaptées (isolation, climatisation, eau chaude, ventilation, éclairage…) et rechercher les aides financières mobilisables. ",
+    "description": "Vous souhaitez réduire vos consommations d’énergie et améliorer le confort de vos bâtiments ? Un accompagnement personnalisé vous aide à identifier les travaux prioritaires (isolation, ventilation, éclairage, chauffage, etc.) et à repérer les aides financières mobilisables.\n\n- Échangez lors d’un premier rendez-vous téléphonique avec un expert en transition énergétique référencé par l’ADEME.\n\n- Accueillez cet expert dans vos locaux pour une visite complète, permettant d’analyser vos usages, vos attentes et les contraintes techniques du bâtiment.\n\n- Recevez un compte-rendu détaillé avec des pistes concrètes de travaux et une première estimation des aides disponibles.",
     "fin de validité": "01/01/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
@@ -32235,13 +32412,21 @@
     "durée de l'accompagnement": "2h",
     "objectifs": [
       {
-        "description": "Réalisez un premier rendez-vous par téléphone avec un expert en transition énergétique référencé par l'ADEME pour échanger sur votre projet de rénovation de vos locaux."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Benéficiez d'un rendez-vous de l'expert en transition énergétique dans vos locaux pour aborder votre projet dans son ensemble : vos besoins et attentes, les travaux d’amélioration du bâtiment et des systèmes envisagés, ainsi que les éventuelles contraintes à prendre en compte."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "A l’issu de ce rendez-vous, obtenez un compte-rendu détaillé vous permettant d’évaluer les travaux à envisager ainsi que les aides financières mobilisables."
+        "description": "Définissez ensemble la date de la visite sur site."
+      },
+      {
+        "description": "Lancez le diagnostic avec l'expert en transition énergétique référencé par l’ADEME."
       }
     ],
     "conditions d'éligibilité": {
@@ -32398,8 +32583,8 @@
   {
     "titre": "Répar'acteurs",
     "promesse": "Rejoignez un réseau de professionnels de la réparation, devenez artisan Répar’acteurs !",
-    "description": "Les Répar’acteurs référencent les professionnels de la réparation et du dépannage partout en France. Rejoignez  le réseau et devenez un ambassadeur de l’économie circulaire auprès de vos clients et au sein de votre territoire.",
-    "description longue": "Le label Répar’acteurs est un label des Chambres de métiers de l’artisanat à destination des artisans réparateurs. Seules les entreprises du secteur des métiers et de l’artisanat enregistrées comme telles au registre national des entreprises (RNE) sont éligibles à la marque répar’acteurs.\n\nPour être éligible, votre entreprise doit remplir l'une de ces conditions  : \n• Détenir la qualité Artisan ou le titre de Maître Artisan, \n• Bénéficier d'un diplôme ou un titre certifié dans l’activité de réparation,\n• Exercer depuis 3 années d’expérience professionnelle. \n\nLes activités éligibles à la marque répar’acteurs sont toutes celles impliquant la réparation des objets domestiques du quotidien détenus par les particuliers participant ainsi à l’économie circulaire.\n\nSont exclues, les activités de réparation automobile, moto, les travaux du bâtiment (plomberie, électricité, chauffage, menuiserie, etc), les activités du bâtiment (portails, volets roulants, portes) et les réparations des objets exclusivement professionnels.",
+    "description": "Vous êtes artisan de la réparation ou du dépannage ? Intégrez le réseau national des Répar’acteurs pour promouvoir votre savoir-faire et renforcer votre visibilité auprès des clients engagés dans une consommation plus responsable.\n\n- Bénéficiez d’une inscription sur l’annuaire national des Répar’acteurs consulté par les particuliers.\n\n- Valorisez votre activité de réparation comme un levier fort pour préserver les ressources, soutenir l’emploi local et ancrer votre activité dans une économie durable.\n\n- Rejoignez une dynamique collective portée par les Chambres de Métiers et de l’Artisanat.\n\n- Devenez un ambassadeur de l’économie circulaire en participant à des événements locaux ou en valorisant votre engagement dans votre communication.",
+    "description longue": "Le label Répar’acteurs est un label des Chambres de métiers de l’artisanat à destination des artisans réparateurs. Seules les entreprises du secteur des métiers et de l’artisanat enregistrées comme telles au registre national des entreprises (RNE) sont éligibles à la marque répar’acteurs.\n\nPour être éligible, votre entreprise doit remplir l'une de ces conditions  : \n• Détenir la qualité Artisan ou le titre de Maître Artisan, \n• Ou bénéficier d'un diplôme ou un titre certifié dans l’activité de réparation,\n• Ou exercer depuis 3 années d’expérience professionnelle. \n\nLes activités éligibles à la marque répar’acteurs sont toutes celles impliquant la réparation des objets domestiques du quotidien détenus par les particuliers participant ainsi à l’économie circulaire.\n\nSont exclues, les activités de réparation automobile, moto, les travaux du bâtiment (plomberie, électricité, chauffage, menuiserie, etc), les activités du bâtiment (portails, volets roulants, portes) et les réparations des objets exclusivement professionnels.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "url": "https://www.artisanat.fr/nous-connaitre/vous-accompagner/reparacteurs",
@@ -32418,13 +32603,19 @@
         ]
       },
       {
-        "description": "Une fois votre entreprise labéllisée, intégrez le réseau Répar'acteurs et bénéficiez du référencement géolocalisé gratuit dans l’annuaire national de la réparation."
+        "description": "Une fois votre entreprise labéllisée, intégrez le réseau Répar'acteurs et bénéficiez du référencement géolocalisé gratuit dans l’annuaire national de la réparation.",
+        "liens": [
+          {
+            "lien": "https://www.artisanat.fr/annuaire-repar-acteurs",
+            "texte": "Annuaire des Répar'acteurs"
+          }
+        ]
       },
       {
         "description": "Affichez le logo Répar’acteurs dans votre boutique « Je répare … et ça repart ! » et mettez à l’honneur le réflexe de la réparation avant tout remplacement par un objet neuf."
       },
       {
-        "description": "Accédez à la veille d'informations sur l'actualité et aux formations pour développer votre entreprise artisanale"
+        "description": "Accédez à la veille d'informations sur l'actualité et aux formations pour développer votre entreprise artisanale."
       }
     ],
     "conditions d'éligibilité": {
@@ -34085,8 +34276,8 @@
   },
   {
     "titre": "Formation référent tourisme durable ",
-    "promesse": "Restaurateurs & hébergeurs, réalisez une formation pour initier une démarche de tourisme durable.",
-    "description": "Vous êtes directeur, manager d’établissement ou référent environnement et vous souhaitez initier une démarche de tourisme durable ? La formation \"référent tourisme durable\" vous permet d'acquérir les connaissances et les outils nécessaires pour mettre en œuvre une gestion durable dans votre établissement. Par ailleurs, elle répond aux critères de formation des référents environnement dans le cadre de la labellisation Clef Verte.",
+    "promesse": "Restaurateurs & hébergeurs, réalisez une formation pour initier une démarche de tourisme durable",
+    "description": "Vous êtes directeur, manager ou référent environnement dans un établissement touristique ? Cette formation vous donne les clés pour engager concrètement votre structure dans une gestion plus responsable. Elle répond également aux exigences de formation des référents environnement dans le cadre de la labellisation Clef Verte.\n\nAu programme :\n\n- Comprendre les enjeux environnementaux du secteur du tourisme et identifier les leviers pour améliorer vos performances environnementales\n\n- Apprendre à structurer une politique RSE ou une stratégie de gestion durable adaptée à votre établissement\n\n- Découvrir le fonctionnement du label Clef Verte et les étapes de mise en œuvre d’une démarche de labellisation réussie",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.cciamp.com/produit/tourisme-durable-atelier-RSE",
@@ -34095,13 +34286,24 @@
     "durée de l'accompagnement": "1 journée",
     "objectifs": [
       {
-        "description": "Découvrez les enjeux environnementaux spécifiques au secteur de l'hôtellerie et du tourisme et identifiez les leviers de performance d’une gestion responsable."
+        "description": "Prenez connaissance du programme pédagogique, et des prochaines dates de formation proposées.",
+        "liens": [
+          {
+            "lien": "https://www.cciamp.com/produit/tourisme-durable-atelier-RSE",
+            "texte": "Fiche formation Référent Tourisme Durable"
+          }
+        ]
       },
       {
-        "description": "Découvrez comment mettre en œuvre une politique RSE ou une gestion responsable dans votre établissement."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Assistez à une présentation du label Clef verte, premier label de tourisme durable pour les hébergements touristiques et restaurants en France et découvrez comment piloter votre démarche de labellisation."
+        "description": "Un conseiller CCI vous recontacte pour répondre à vos questions et réaliser votre inscription à la formation."
       }
     ],
     "conditions d'éligibilité": {
@@ -34241,7 +34443,7 @@
   {
     "titre": "TPE gagnantes sur tous les coûts",
     "promesse": "Réalisez des économies durables en réduisant vos déchets et vos pertes en énergie, matière et eau.",
-    "description": "Bénéficier d’un état des lieux sur vos flux pour vous aider à faire des économies (énergie, eau, matières, déchets) ",
+    "description": "Profitez d’un accompagnement personnalisé pour mieux maîtriser vos consommations d’énergie, d’eau, de matières premières et vos déchets, avec un retour sur investissement rapide.\n\n- Faites réaliser un état des lieux par un expert de la Chambre de Métiers et de l’Artisanat : identification de vos flux, calcul des pertes et de leurs coûts, comparaison aux moyennes du secteur.\n\n- Recevez un plan d’action simple, concret et immédiatement rentable (en moins de 12 mois), avec un chiffrage des économies potentielles (de 2 000 à 5 000 € par an en moyenne).\n\n- Mettez en œuvre ce plan et bénéficiez d’un accompagnement pendant un an pour suivre vos progrès.\n\n- Évaluez les résultats obtenus et mesurez l’impact financier des actions menées.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "url": "https://www.artisanat.fr/magazine/series-podcasts/tpe-pme-gagnantes-sur-tous-couts",
@@ -34250,16 +34452,21 @@
     "durée de l'accompagnement": "5 jours de prestation répartis sur 12 mois",
     "objectifs": [
       {
-        "description": "Bénéficiez d'un état des lieux des flux par un expert de la Chambre de Métiers et de l'Artisanat : identification des flux, des pertes cachées, calcul de leurs coûts et comparaison aux moyennes du secteur d’activité."
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
-        "description": "Obtenez un plan d’action avec une rentabilité immédiate (moins de 12 mois), des préconisations simples et opérationnelles en chiffrant les économies réalisables. En moyenne, les plans d’actions proposés aboutissent à des économies allant de 2 000 à 5 000 € par an."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "Mettez en oeuvre votre plan d’action et soyez accompagné par un expert sur un an."
+        "description": "Définissez avec l’expert le périmètre de l'accompagnement, la méthode et le calendrier."
       },
       {
-        "description": "Evaluez les résultats et les économies financières réalisées."
+        "description": "Lancez le diagnostic avec l'expert proposé par votre CMA."
       }
     ],
     "conditions d'éligibilité": {
@@ -34629,8 +34836,7 @@
   {
     "titre": "Trophées Crisalide Eco-activités",
     "promesse": "Accélérez le développement de vos projets éco-innovants",
-    "description": "Crisalide Eco-Activités est un appel à projets créé pour soutenir les entreprises de l'ouest dans leurs projets éco-innovants. ",
-    "description longue": "Pour être éligible, votre projet doit répondre à l'un des défis suivants : \n• DEFI 1 : Reconcevoir des offres allégées en\nressources naturelles\n• DEFI 2 : Réussir la transition énergétique\n• DEFI 3 : Cohabiter avec notre capital naturel\n• DEFI 4 : Imaginer des solutions sans impact\nsur notre environnement et notre santé\n• DEFI 5 : Prendre en compte les consom’acteurs\n• DEFI 6 : Construire la résilience écologique",
+    "description": "Profitez d’un accompagnement structurant, d’un réseau d’experts et d’une forte visibilité pour concrétiser et valoriser votre solution à impact.\n\n- Intégrez un parcours d’accélération conçu pour booster votre projet éco-innovant dans l’Ouest.\n\n- Challengez votre idée à chaque étape grâce à des ateliers, des échanges ciblés et une session de pitch devant un jury d’experts.\n\n- Accédez à un réseau qualifié pour faire avancer votre projet (experts, financeurs, partenaires…).\n\n- Gagnez en notoriété grâce aux outils de communication du programme : book des solutions, présence web, réseaux sociaux...\n\n- Participez au concours Crisalide et tentez de remporter le Trophée Eco-Activités pour bénéficier d’un coup de projecteur sur votre innovation.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "url": "https://www.crisalide-ecoactivites.fr/",
@@ -34640,28 +34846,16 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Déposez votre candidature à l'appel à projets en complétant un formulaire en ligne.",
+        "description": "Découvrez le programme et tenez-vous informé de la date du prochain appel à candidatures sur le site dédié.",
         "liens": [
           {
             "lien": "https://www.crisalide-ecoactivites.fr/",
-            "texte": "Candidater"
+            "texte": "crisalide-ecoactivites.fr"
           }
         ]
       },
       {
-        "description": "Intégrez le parcours Crisalide et bénéficiez d'un accompagnement pour accélérer votre projet éco-innovant."
-      },
-      {
-        "description": "Challengez votre projet au travers d'ateliers et d'une session de pitch devant  un jury d'experts."
-      },
-      {
-        "description": "Accédez à un réseau de compétences et de savoir-faire (mise en relation qualifiées et adaptées à votre projet - financements, partenariats,...)"
-      },
-      {
-        "description": "Valorisez votre projet et donnez lui de la visibilité : book des solutions, site internet, réseaux sociaux,etc."
-      },
-      {
-        "description": "Concourez pour remporter le Trophée Crisalide Eco-activités et bénéficiez de la promotion liée à la médiatisation du concours."
+        "description": "Une fois l'appel à candidature ouvert, vous pouvez déposer votre candidature en ligne."
       }
     ],
     "conditions d'éligibilité": {
@@ -35623,5 +35817,233 @@
       }
     ],
     "id": "visite-energie-cma"
+  },
+  {
+    "titre": "Visite Énergie CCI/CMA",
+    "promesse": "Optimisez les consommations d'énergie de votre entreprise",
+    "description": "La Visite Énergie est un diagnostic rapide qui vous aide à mieux comprendre votre consommation d’énergie et à identifier les économies possibles.\n\n- Un expert CCI ou CMA réalise une visite sur site pour faire le point sur votre consommation.\n\n- Identification des postes énergivores et des bonnes pratiques à mettre en place.\n\n- Élaboration d’un plan d’action adapté à votre entreprise, avec des solutions concrètes et rapides à mettre en œuvre.\n\n- Optimisation de vos contrats d’énergie et de votre parc d’éclairage.\n\n- Suivi pour vous accompagner dans la mise en place et le pilotage des actions.",
+    "illustration": "images/TEE_energie_verte.png",
+    "opérateur de contact": "CCI ou CMA",
+    "url": "https://www.cci.fr/offre/parcours-energie-pour-reduire-votre-facture-energie",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "Gratuit (sauf pour les CCI Centre-Val de Loire, Bretagne, Ile-de-France et Normandie)",
+    "durée de l'accompagnement": "1 à 5 jours",
+    "objectifs": [
+      {
+        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
+      },
+      {
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
+      },
+      {
+        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
+      },
+      {
+        "description": "Lancez le diagnostic avec l'expert proposé par votre CCI ou votre CMA."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Moins de 500 salariés",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d’activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "a un effectif éligible",
+          "a une categorie legale eligible"
+        ]
+      },
+      "entreprise . a un effectif éligible": {
+        "toutes ces conditions": [
+          "effectif <= 499"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      }
+    },
+    "champs conditionnels": [
+      {
+        "une de ces conditions": [
+          "région = Île-de-France",
+          "région = Bretagne",
+          "région = Normandie"
+        ],
+        "Montant du dispositif": "À partir de 1 500€ HT"
+      },
+      {
+        "une de ces conditions": [
+          "région = Centre-Val de Loire"
+        ],
+        "Montant du dispositif": "350€ HT"
+      },
+      {
+        "une de ces conditions": [
+          "région = Provence-Alpes-Côte d'Azur",
+          "région = Polynésie française",
+          "région = Pays de la Loire",
+          "région = Nouvelle-Calédonie",
+          "région = Nouvelle-Aquitaine",
+          "région = Mayotte",
+          "région = Martinique",
+          "région = La Réunion",
+          "région = Hauts-de-France",
+          "région = Guyane",
+          "région = Guadeloupe",
+          "région = Grand Est",
+          "région = Bourgogne-Franche-Comté",
+          "région = Auvergne-Rhône-Alpes",
+          "région = Occitanie",
+          "région = Corse",
+          "région = Saint-Pierre-Et-Miquelon",
+          "région = Saint-Barthélemy",
+          "région = Saint-Martin"
+        ],
+        "Montant du dispositif": "Gratuit"
+      }
+    ],
+    "id": "visite-energie"
   }
 ]

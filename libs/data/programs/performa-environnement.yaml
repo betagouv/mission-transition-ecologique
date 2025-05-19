@@ -3,10 +3,26 @@ promesse: >-
   Mesurez votre maturité écologique et créez un plan d’action personnalisé avec
   un conseiller
 description: >-
-  Réalisez un état des lieux à 360° pour évaluer l'impact de votre activité sur
-  l'environnement et réalisez des économies. Différents sujets sont abordés :
-  économie d’énergie, isolation des locaux, consommations d’eau, déchets,
-  matières premières, achats, mobilité, etc.
+  Améliorez la performance environnementale de votre entreprise artisanale grâce
+  à un diagnostic complet réalisé par un conseiller de la Chambre de Métiers et
+  de l’Artisanat. Cet état des lieux à 360° permet d’identifier vos principaux
+  postes de consommation et de dégager des pistes d’économies concrètes.
+
+
+  - Analyse de votre activité sous plusieurs angles : énergie, isolation, eau,
+  déchets, matières premières, achats, mobilité…
+
+
+  - Remise d’un plan d’action personnalisé pour réduire vos impacts et optimiser
+  vos dépenses.
+
+
+  - Possibilité de valoriser votre démarche par un label environnemental
+  reconnu.
+
+
+  - Appui dans l’identification des aides disponibles (investissements, études,
+  formations) et accompagnement au montage des demandes de financement.
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Chambre des Métiers et de l'Artisanat
 url: >-
@@ -16,18 +32,17 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 1 journée
 objectifs:
   - description: >-
-      Bénéficiez d'un état des lieux d'un conseiller de la Chambre de Métiers et
-      de l’Artisanat pour évaluer l'empreinte environnementale de votre
-      activité.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Obtenez un diagnostic complet et la proposition d'un plan d'action pour
-      maîtriser votre consommation énergétique et détecter de nouvelles sources
-      d'économies (énergie, isolation des locaux, consommations d’eau, déchets,
-      matières premières, mobilité...)
-  - description: Valorisez votre démarche environnementale par l'obtention d'un label.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Identifiez une solution d'investissement, d'étude ou de formation, et
-      soyez accompagné dans le montage de votre demande de financement.
+      Définissez avec l’expert le périmètre du diagnostic, la méthode et le
+      calendrier.
+  - description: Lancez le diagnostic avec l'expert proposé par votre CMA.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 250 salariés
