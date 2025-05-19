@@ -49,7 +49,7 @@
               class="fr-mb-1v fr-mr-md-2v overwrite-button-style"
               :on-click="scrollToForm()"
             >
-              {{ Translation.t('program.CTAForm') }}
+              {{ Translation.t('program.CtaForm') }}
             </DsfrButton>
           </template>
         </div>
