@@ -1,5 +1,3 @@
-import { b as NitroConfig } from 'nitropack/dist/shared/nitro.ZcB8T5yn'
-import { NuxtStorageConfig } from './nuxt.storage.config'
 import Config from './src/config'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { DefineNuxtConfig, defineNuxtConfig } from 'nuxt/config'
@@ -108,7 +106,6 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     experimental: {
       openAPI: true
     },
-    storage: NuxtStorageConfig.get(),
     devStorage: {
       cache: {
         driver: 'null'
