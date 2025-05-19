@@ -1,11 +1,25 @@
 titre: Diag Adaptation
 promesse: Évaluez la vulnérabilité climatique de votre entreprise
 description: >-
-  Bénéficiez d'un accompagnement pour vous aider à évaluer la vulnérabilité
-  climatique de votre entreprise, adapter votre organisation face aux
-  catastrophes naturelles et aux risques industriels liés au changement
-  climatique et découvrir comment limiter les coûts imprévus de canicule,
-  inondation, sécheresse, etc.
+  Anticipez les impacts du changement climatique sur votre activité et adaptez
+  votre entreprise pour limiter les risques liés aux aléas climatiques
+  (canicules, inondations, sécheresses…). Cet accompagnement vous aide à évaluer
+  votre vulnérabilité, à sécuriser votre organisation et à construire une
+  trajectoire de résilience.
+
+
+  - Profitez d’une visite sur site par un expert pour identifier les impacts
+  potentiels du changement climatique sur votre chaîne de valeur, à court, moyen
+  et long terme (horizons 2035 et 2055).
+
+
+  - Recevez un diagnostic complet incluant un rapport de synthèse et une feuille
+  de route adaptée à votre activité.
+
+
+  - Co-construisez un plan d’action chiffré, hiérarchisé et concret pour réduire
+  les vulnérabilités identifiées et renforcer la résilience de votre entreprise
+  face aux évolutions climatiques.
 description longue: >-
   Le Diag Adaptation permet d’étudier la vulnérabilité de votre activité au
   changement climatique afin d’anticiper les risques physiques actuels et futurs
@@ -16,23 +30,21 @@ description longue: >-
   L’intervention pour chaque Diag Adaptation est limitée à 1 site d’exploitation
   de votre entreprise. Il est possible de bénéficier de plusieurs diagnostics
   pour couvrir les différents sites de votre entreprise.
-aide temporairement indisponible: oui
 illustration: images/TEE_eolienne.png
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - ADEME
-url: https://diag.bpifrance.fr/produit/diag-adaptation
+url: https://diag.bpifrance.fr/diag-adaptation
 nature de l'aide: étude
 coût de l'accompagnement: De 2 000 € HT à 3 000 € HT après subvention de 50%
 durée de l'accompagnement: 7 jours de prestation répartis sur 3 à 6 mois
 objectifs:
-  - description: >-
-      Réalisez votre demande de souscription du "Diag Adaptation" sur le site
-      Bpifrance.
+  - description: Exprimez votre intérêt en contactant un conseiller via le formulaire
     liens:
-      - lien: >-
-          https://diag.bpifrance.fr/eligibilite/informations-entreprise?from=header
-        texte: Demande de souscription
+      - formulaire: true
+  - description: >-
+      Un conseiller vous rappelle pour vérifier votre éligibilité et répondre à
+      vos questions.
   - description: >-
       Si vous êtes éligible, recevez un contrat de Bpifrance. Dès signature de
       ce contrat de prestation, les équipes Bpifrance sélectionnent un bureau
@@ -41,17 +53,7 @@ objectifs:
       Définissez avec le bureau d'études les modalités pratiques du diagnostic
       (calendrier, méthode, jalons, livrables) et planifiez la visite de votre
       entreprise.
-  - description: >-
-      Bénéficiez d'une visite sur site durant laquelle un expert analyser et
-      identifier les impacts du changement climatique sur votre chaîne de valeur
-      dès aujourd’hui et d’ici 2035 et 2055.
-  - description: >-
-      Obtenez une restitution de l’ensemble des livrables du diagnostic (rapport
-      de synthèse et feuille de route).
-  - description: >-
-      Construisez ensemble un plan d’action chiffré et priorisé afin de réduire
-      les risques et améliorer la résilience de votre entreprise face au
-      changement climatique à court et moyen terme.
+  - description: Lancez le diagnostic avec le bureau d'études.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 500 salariés

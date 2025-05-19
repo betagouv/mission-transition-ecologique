@@ -1,18 +1,61 @@
 titre: Diagnostic Eco-conception Île-de-France
-promesse: Développez des produits et services éco-responsables
+promesse: >-
+  Optimisez l’impact environnemental de vos produits avec un accompagnement en
+  éco-conception
 description: >-
-  Vous souhaitez vous interroger sur l’impact environnemental global de votre
-  produit : choix des matières premières, poids et encombrement, impact
-  énergétique, à tous les niveaux (fabrication, transport, usage, fin de vie,
-  etc.). La CCI vous accompagne dans votre démarche.
-description longue: >-
-  L’éco-conception vise à prendre en compte et réduire les impacts
-  environnementaux dans toutes les étapes du cycle de vie d’un produit ou
-  service : extraction de matières premières, fabrication, transport, usage,
-  traitement en fin de vie, etc.
+  Vous vous interrogez sur l’impact environnemental de votre produit ou service
+  à chaque étape de son cycle de vie ? Cet accompagnement vous aide à structurer
+  une démarche d’éco-conception en lien avec votre stratégie d’innovation.
 
-  L’éco-conception s’applique aux produits matériels mais également aux
-  services.
+
+  - Diagnostic réalisé par un expert pour évaluer les impacts environnementaux
+  (matières premières, fabrication, transport, usage, fin de vie)
+
+
+  - Élaboration et comparaison de scénarios de fabrication, de service ou
+  d’usage
+
+
+  - Possibilité de poursuivre avec une phase de pré-industrialisation selon la
+  maturité du projet (étude de faisabilité, prototypage, essais techniques,
+  recherche de partenaires, appui à la mise en œuvre sur site)
+
+
+  Ce programme modulable vous permet d’articuler performance environnementale et
+  développement produit, jusqu’à la mise sur le marché.
+description longue: >-
+  Vous pouvez bénéficier de l’une ou des deux phases d’accompagnement : 
+
+  Phase 1 : Etude Eco-conception / Eco-innovation
+
+  > Définition du périmètre et de la nature du projet
+
+  > Elaboration de différents scénarii de process de fabrication, services et
+  usages…
+
+  > Quantification de leurs impacts environnementaux
+
+  > Analyse comparative en vue de la stratégie à adopter.
+
+
+  Phase 2 : Pré-industrialisation
+
+  > Etude de faisabilité, essai, prototypage
+
+  > Recherche de partenaires techniques
+
+  > Elaboration des argumentaires
+
+  > Accompagnement à la mise en place sur le site de production
+
+  >  …
+
+
+  Chaque accompagnement repose sur une base forfaitaire de 6 jours
+  subventionnés.
+
+  Il est possible d’ajouter des journées supplémentaires si besoin, mais ces
+  journées ne seront pas subventionnées.
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
@@ -23,22 +66,23 @@ autres opérateurs:
 url: >-
   https://www.cci-paris-idf.fr/fr/entreprises/actualites/accompagnement-eco-conception-performance-environnementale
 nature de l'aide: étude
-coût de l'accompagnement: >-
-  De 3 000 € à 6 000 € HT en fonction de la taille de l'entreprise, avec prise
-  en charge possible jusqu'à 50%
+coût de l'accompagnement: 2 000 € HT pour 6 jours d'accompagnement
 durée de l'accompagnement: 6 à 12 jours de prestation
 objectifs:
   - description: >-
-      Identifiez vos priorités en termes d’accompagnement lors d’un premier
-      entretien avec votre conseiller CCI.
-  - description: Bénéficiez d'une étude d'éco-conception par un consultant expert (phase 1)
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Elaborez différents scénarii de processus de fabrication et quantifier
-      leurs impacts environnementaux.
+      Un conseiller CCI vous recontacte pour répondre à vos questions et
+      clarifier vos besoins d’accompagnement.
   - description: >-
-      En fonction de la maturité de votre projet, continuez avec une phase de
-      pré-industrialisation : étude de faisabilité, essai, prototypage,
-      recherche de partenaires techniques, etc. (phase 2)
+      Définissez ensemble le périmètre du diagnostic, la méthode et le
+      calendrier.
+  - description: >-
+      Lancez le diagnostic avec le consultant spécialisé en éco-innovation et
+      pré-industrialisation sélectionné par votre CCI.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 500 salariés

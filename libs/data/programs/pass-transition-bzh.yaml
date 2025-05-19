@@ -1,15 +1,15 @@
 titre: PASS Transitions
-promesse: Entreprise du secteur audiovisuel, financez votre transition environnementale
+promesse: Financez votre transition environnementale avec une aide de la région Bretagne
 description: >-
   La Région Bretagne soutient financièrement la transition environnementale des
-  petites entreprises du secteur audiovisuel via le "Pass Transition".
+  petites entreprises via le "Pass Transition".\
 
   Le Pass Transition finance des études pour accélérer votre transition sur
   l'eau, l'énergie, économie circulaire, les déchets, la biodiversité, RSE,
-  mobilité, numérique responsable. 
+  mobilité, numérique responsable.\
 
   Il participe aussi au financement d'équipements pour le suivi et la réduction
-  de vos déchets, consommations en eau et en énergie.
+  de vos déchets, consommations en eau et en énergie.\
 
   Enfin, il peut contribuer au financement d'un recrutement d’une personne à
   temps partagé occupant un poste stratégique en matière de transitions (ex :
@@ -81,9 +81,12 @@ conditions d'éligibilité:
     - Bretagne
   secteur d'activité:
     - >-
-      Production de films cinématographiques, de vidéo et de programmes de
-      télévision : enregistrement sonore et édition musicale (entreprises de
-      production ou prestataires)
+      - Être une entreprise dans la production ou le service aux entreprises de
+      production
+
+      - Être une entreprise dans la filière culturelle : spécifiquement les
+      prestataires travaillant sur des œuvres de création cinématographique et
+      audiovisuelle
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:
@@ -111,7 +114,16 @@ publicodes:
       - effectif <= 49
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
       - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est Q
       - code NAF niveau 1 . est R
       - code NAF niveau 1 . est S
   entreprise . a un objectif ciblé:

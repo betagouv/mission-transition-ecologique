@@ -3,10 +3,27 @@ promesse: >-
   Bénéficiez d'une aide sur le montage financier de votre projet
   d'investissement durable
 description: >-
-  Vous avez un projet d'investissement durable ? Vous pouvez solliciter un
-  accompagnement pour vous aider à identifier les financements les mieux adaptés
-  à votre besoin, rédiger et constituer votre dossier puis le déposer auprès des
-  financeurs institutionnels.
+  Vous souhaitez concrétiser un projet d’investissement durable, mais vous avez
+  besoin de soutien pour le financer ? Un conseiller expert vous accompagne à
+  chaque étape pour construire une stratégie de financement adaptée, identifier
+  les dispositifs mobilisables et constituer un dossier solide à présenter aux
+  financeurs.
+
+
+  - Échangez avec un expert pour clarifier votre projet et bâtir un plan de
+  financement sur mesure.
+
+
+  - Identifiez les leviers de financement disponibles : subventions, prêts,
+  avances remboursables, crédits d’impôt, épargne citoyenne, etc.
+
+
+  - Bénéficiez d’un accompagnement dans la rédaction, la constitution et le
+  dépôt de vos dossiers de demande de financement.
+
+
+  - Profitez d’un suivi personnalisé pour faciliter les échanges avec les
+  financeurs institutionnels et optimiser vos chances d’obtenir un soutien.
 illustration: images/TEE_ampoule.png
 opérateur de contact: Chambre de Commerce et de l'Industrie
 url: https://www.occitanie.cci.fr/produit/aide-la-recherche-de-financement
@@ -15,19 +32,17 @@ coût de l'accompagnement: Sur devis
 durée de l'accompagnement: 1 à 5 jours
 objectifs:
   - description: >-
-      Partagez votre projet d'investissement durable et élaborez un plan de
-      financement sur-mesure avec un conseiller expert en financement.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Identifiez et séléctionnez les financements mobilisables pour votre projet
-      : prêts, crédit-bail, avances remboursables, renforcement des fonds
-      propres, épargne citoyenne, subventions, crédits d’impôt recherche et
-      innovation, etc.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Obtenez de l'aide dans le montage et le dépôt de votre ou vos dossier(s)
-      de financement.
-  - description: >-
-      Bénéficiez d'un suivi de vos dossiers auprès des financeurs
-      institutionnels.
+      Définissez avec l’expert le périmètre de votre accompagnement, la méthode
+      et le calendrier.
+  - description: "Bénéficiez de votre accompagnement avec un conseiller expert\_en\_financement."
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

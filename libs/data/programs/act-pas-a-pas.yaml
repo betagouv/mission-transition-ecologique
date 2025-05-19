@@ -61,7 +61,8 @@ conditions d'éligibilité:
   secteur d'activité:
     - >-
       Tous secteurs d’activité, sauf les industries gérées par le programme
-      PACTE Industrie
+      [PACTE
+      Industrie](https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/pacte-industrie)
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:
@@ -91,8 +92,6 @@ publicodes:
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
-      - code NAF niveau 1 . est B
-      - code NAF niveau 1 . est C
       - code NAF niveau 1 . est D
       - code NAF niveau 1 . est E
       - code NAF niveau 1 . est F

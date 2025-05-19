@@ -12,23 +12,31 @@ activable en autonomie: oui
 objectifs:
   - description: >-
       Prenez connaissance et signez la charte « zéro déchet plastique » pour
-      engager votre entreprise dans cette démarche. Une fois signée,
-      transmettez-la à l'ARBE par mail à l'adresse : c.poulin@arbe-regionsud.org
+      engager votre entreprise dans cette démarche.
     liens:
       - lien: >-
           https://www.arbe-regionsud.org/Block/download/?id=236629&filename=Entreprises-et-Associations-Demarche-ecoexemplaire-Charte-052024.pdf
         texte: Télécharger la charte
   - description: >-
-      Mettez en place un groupe de travail interne "zéro déchet plastique" dans
-      votre entreprise pour assurer l'élaboration et le suivi d'un plan
-      d'action, et participer à la dynamique de la communauté.
+      Contactez la référente de la charte "zéro déchet plastique" de votre
+      région pour poser vos éventuelles questions et transmettre la charte
+      d'engagement signée.
+    liens:
+      - lien: https://c.poulin@arbe-regionsud.org
+        texte: c.poulin@arbe-regionsud.org
   - description: >-
-      Complétez votre fiche "plan d'action" et transmettez-la par mail à l’ARBE
-      dans les 3 mois suivants la signature de la charte.
+      Mettez en place un groupe de travail interne "zéro déchet plastique" dans
+      votre entreprise pour assurer l'élaboration d'un plan d'action.
     liens:
       - lien: >-
           https://www.arbe-regionsud.org/Block/download/?id=236624&filename=Entreprises-et-Associations-Demarche-eco-exemplaire-Plan-dActions.docx
         texte: Téléchargez le plan d'action à compléter
+  - description: >-
+      Finalisez votre fiche "plan d'action" et transmettez-la par mail à l’ARBE
+      dans les 3 mois suivants la signature de la charte.
+    liens:
+      - lien: https://c.poulin@arbe-regionsud.org
+        texte: c.poulin@arbe-regionsud.org
   - description: L'ARBE se charge ensuite d'analyser votre candidature.
   - description: >-
       Deux ans après la signature de la Charte, évaluez les résultats de votre

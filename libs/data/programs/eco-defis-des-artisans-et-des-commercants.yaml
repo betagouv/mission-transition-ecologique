@@ -4,7 +4,21 @@ description: >-
   Participez à l’opération « Eco-défis des commerçants et artisans » qui permet
   de valoriser les actions menées par les entreprises locales en matière
   d’environnement, énergie, transport, déchets, éco-produits, gestion de l’eau,
-  emballages, responsabilité sociétale.
+  emballages, responsabilité sociétale. Déployée dans plusieurs régions, elle
+  repose sur une marque nationale, une méthodologie, une liste de défis et des
+  animations.
+
+
+  - Engagez-vous en faveur d’un développement durable de votre entreprise en
+  mettant en place des éco-défis.
+
+  - Bénéficiez de conseils personnalisés pour améliorer vos performances
+  économiques, environnementales et sociétales.
+
+  - Obtenez le label « éco-défis » pour valoriser votre démarche auprès de vos
+  clients.
+
+  - Profiter d’une communication gratuite dans le cadre de cette opération.
 illustration: images/TEE_energie_verte.png
 opérateur de contact: CCI ou CMA
 url: >-
@@ -14,15 +28,17 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 2 jours de prestation répartis sur 12 mois
 objectifs:
   - description: >-
-      Faire le point sur vos pratiques et choisir les 3 éco-défis à relever par
-      votre entreprise.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Mettre en place vos défis et bénéficier de conseils personnalisés pour
-      améliorer vos performances économiques, environnementales et sociétales.
+      Un conseiller CCI vous recontacte pour faire le point sur vos pratiques et
+      choisir les éco-défis à relever par votre entreprise.
+  - description: Mettez en œuvre les actions retenues avec un appui personnalisé si besoin.
   - description: >-
-      Valoriser l’engagement environnemental de votre entreprise par l’obtention
-      d'un label.
-  - description: Profiter d’une communication gratuite dans le cadre de cette opération.
+      Obtenez le label Éco-Défis et valorisez votre engagement auprès de vos
+      clients.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 250 salariés
