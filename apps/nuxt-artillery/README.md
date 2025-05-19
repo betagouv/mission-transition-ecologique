@@ -11,30 +11,12 @@ Les tests permettent de parcourir l'ensemble des pages suivantes :
 - Pages individuelles de programmes d'aide
 - Pages individuelles de projets
 
-## Prérequis
-
-- Node.js (v22.x recommandé)
-- npm (v11.x recommandé)
-
-## Installation
-
-```bash
-# Installer les dépendances (depuis la racine du projet)
-npm install
-```
-
 ## Configuration
 
 Le projet utilise deux fichiers de configuration Artillery :
 
-1. `artillery-page.yml` - Pour les tests de navigation avec Playwright
+1. `artillery-page.yml` - Pour les tests de navigation avec Playwright. Parcours, la page d'accueil et l'ensemble des pages dispositifs et projets.
 2. `artillery-load-test.yml` - Pour les tests de charge HTTP
-
-Vous pouvez modifier les paramètres suivants dans ces fichiers :
-
-- **Environnements** : development, production, staging
-- **Phases** : durée, taux d'arrivée, etc.
-- **Options Playwright** : headless, etc.
 
 ## Exécution des tests
 
