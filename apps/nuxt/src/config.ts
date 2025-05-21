@@ -38,8 +38,4 @@ export default class Config extends ConfigCommon {
   static get isTestData() {
     return this.getEnvValue('VITE_DATA_TEST', 'false') === 'true'
   }
-
-  static get redisUrl(): string | undefined {
-    return process.env['REDIS_URL']
-  }
 }
