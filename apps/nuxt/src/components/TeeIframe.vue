@@ -80,6 +80,8 @@ imageResizerChild()
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/scss/tool';
+
 .fr-card {
   .fr-card__title {
     a::after {
@@ -94,6 +96,12 @@ imageResizerChild()
   .fr-card__img {
     img {
       max-height: 250px;
+    }
+
+    @include tool.media-query-respond-from(md) {
+      img {
+        max-height: 350px;
+      }
     }
 
     div {
