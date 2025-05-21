@@ -17,7 +17,7 @@
       size="lg"
       icon="fr-icon-chat-3-line"
       class="fr-ml-3v"
-      :on-click="() => scrollToForm()"
+      :on-click="handleContactClick"
     >
       {{ Translation.t('program.CtaContact') }}
     </DsfrButton>
@@ -28,15 +28,26 @@
 import Translation from '@/tools/translation'
 import { useCompanyDataStore } from '@/stores/companyData'
 import { storeToRefs } from 'pinia'
+import { ProgramTypeForFront } from '@/types'
 
 interface Props {
+  program: ProgramTypeForFront
   isActivationVisible: Ref<boolean>
   scrollToForm: () => void
   scrollToActivation: () => void
 }
-defineProps<Props>()
+const props = defineProps<Props>()
 
-//TODO SCROLLS should be just one option depending on the input data.
+const handleContactClick = () => {
+  const contact = props.program['contact question']
+  if (contact === 'formulaire') {
+    props.scrollToForm()
+  } else if (typeof contact === 'string' && contact.startsWith('http')) {
+    window.open(contact, '_blank')
+  } else {
+    window.location.href = `mailto:${contact}`
+  }
+}
 
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 </script>

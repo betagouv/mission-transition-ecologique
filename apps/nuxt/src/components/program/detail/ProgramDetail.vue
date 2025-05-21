@@ -25,6 +25,7 @@
           <ProgramTitle />
           <ProgramResume />
           <ProgramMainCta
+            :program="currentProgram"
             :is-activation-visible="isActivationVisible"
             :scroll-to-form="scrollToForm"
             :scroll-to-activation="scrollToActivation"
@@ -131,7 +132,27 @@ onBeforeRouteLeave(() => {
 })
 
 const isFormNeeded = computed(() => {
-  return true //TODO That should depend if we find a "formulaire" in a data field.
+  if (!currentProgram.value) {
+    return false
+  }
+  if (currentProgram.value['contact question'] === 'formulaire') {
+    console.log('formulaire ds question')
+
+    return true
+  }
+
+  for (const objectif of currentProgram.value.objectifs) {
+    if (Array.isArray(objectif.liens)) {
+      for (const lien of objectif.liens) {
+        if (lien.formulaire === true) {
+          console.log('formulaire ds liens')
+          return true
+        }
+      }
+    }
+  }
+  console.log('form not needed')
+  return false
 })
 
 const isActivationVisible = computed(() => {
@@ -145,7 +166,7 @@ const isActivationVisible = computed(() => {
 })
 
 const isFormVisible = computed(() => {
-  return isFormNeeded && isActivationVisible
+  return isFormNeeded.value && isActivationVisible.value
 })
 
 Analytics.sendDetailPageView('program', currentProgram.value?.titre)

@@ -47,7 +47,7 @@
               icon="fr-icon-mail-line"
               size="md"
               class="fr-mb-1v fr-mr-md-2v overwrite-button-style"
-              :on-click="scrollToForm()"
+              :on-click="() => scrollToForm()"
             >
               {{ Translation.t('program.CtaForm') }}
             </DsfrButton>
