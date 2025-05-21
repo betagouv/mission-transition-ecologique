@@ -89,6 +89,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@artilleryio/playwright-reporter": "^1.0.0",
     "@nuxt/devtools": "^1.5.2",
     "@nuxt/eslint-config": "~0.5.6",
     "@nuxt/kit": "^3.15.4",
@@ -121,6 +122,7 @@
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/test-utils": "^2.4.1",
+    "artillery": "^2.0.0",
     "eslint": "~8.57.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.29.1",
