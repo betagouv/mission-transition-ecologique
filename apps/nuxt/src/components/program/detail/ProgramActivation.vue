@@ -11,8 +11,8 @@
       >
         <div class="fr-mb-0 fr-ml-0">Vérifiez automatiquement l'éligibilité de votre entreprise à l'aide de votre SIRET</div>
         <DsfrButton
-          secondary
-          class="fr-mt-2v overwrite-button-style"
+          primary
+          class="fr-mt-2v fr-text--yellow"
           @click="openModal"
         >
           Vérifier mon éligibilité

@@ -2,7 +2,7 @@ const programFrDict = {
   program: {
     programResume: 'Le dispositif en deux mots',
     programProviders: 'Contact',
-    CtaActivation: "J'aimerai en bénéficier",
+    CtaActivation: "J'aimerais en bénéficier",
     CtaContact: "J'ai une question",
     programActivation: 'Pour en bénéficier :',
     CtaForm: 'Contactez un conseiller',
