@@ -35,6 +35,7 @@ export class CoreGenerator {
     }
     this._addSimpleField('illustration', this._setIllustration())
     setOperators(this)
+    this._addSimpleField('contact question', this.program['Contact Question'])
     if (await validateExternalUrlLink(this)) {
       this._addSimpleField('url', this.program['URL externe'])
     }

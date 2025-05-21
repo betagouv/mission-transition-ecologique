@@ -9,10 +9,10 @@ description: >-
 description longue: >-
   L’Aide VTE Vert est destinée à contribuer au financement de frais internes
   (rémunération) et/ou de frais externes (frais de scolarité, achat de matériel
-  ou logiciel, etc.) directement liés à la mission du jeune en VTE Vert. 
+  ou logiciel, etc.) directement liés à la mission du jeune en VTE Vert.
 
 
-  Le programme VTE Vert entend par jeune talent : 
+  Le programme VTE Vert entend par jeune talent :
 
   • un jeune diplômé depuis moins de 2 ans
 
@@ -26,11 +26,12 @@ description longue: >-
 
   Le VTE prend la forme d’un contrat d’apprentissage ou de travail classique. Il
   est rémunéré sur la base d’un accord entre l’entreprise et le Volontaire, aux
-  conditions du marché. 
+  conditions du marché.
 illustration: images/TEE_ampoule.png
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - ADEME
+contact question: 'formulaire'
 url: https://www.vte-france.fr/aide-vte-vert/
 nature de l'aide: financement
 montant du financement: 50% des dépenses engagées dans la limite de 8000 €
