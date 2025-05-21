@@ -19,6 +19,7 @@
       "programme-breizh-fab",
       "renovation-petit-tertiaire-prive",
       "tpe-gagnantes-sur-tous-les-couts",
+      "visite-energie",
       "visite-energie-cma",
       "cci-business-optimizer",
       "fiscalite-energetique-occitanie",
@@ -82,6 +83,7 @@
     "mainTheme": "energy",
     "programs": [
       "fonds-tourisme-durable",
+      "visite-energie",
       "visite-energie-cma",
       "aide-financement-occitanie",
       "cedre-investissement",
@@ -2641,7 +2643,7 @@
   {
     "id": 144,
     "slug": "biodiversite",
-    "title": "Empreinte biodiversité",
+    "title": "Plan d'action biodiversité",
     "nameTag": "🦋 biodiversité",
     "shortDescription": "Comprendre et minimiser les impacts de l'activité de votre entreprise sur la faune et la flore.",
     "image": "/images/projet/biodiversite.webp",
@@ -2721,6 +2723,7 @@
       "diag-eco-flux",
       "performa-environnement",
       "tpe-gagnantes-sur-tous-les-couts",
+      "visite-energie",
       "visite-energie-cma",
       "cedre-investissement",
       "sud-pret-climat",
