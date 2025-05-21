@@ -136,22 +136,17 @@ const isFormNeeded = computed(() => {
     return false
   }
   if (currentProgram.value['contact question'] === 'formulaire') {
-    console.log('formulaire ds question')
-
     return true
   }
-
   for (const objectif of currentProgram.value.objectifs) {
     if (Array.isArray(objectif.liens)) {
       for (const lien of objectif.liens) {
         if (lien.formulaire === true) {
-          console.log('formulaire ds liens')
           return true
         }
       }
     }
   }
-  console.log('form not needed')
   return false
 })
 

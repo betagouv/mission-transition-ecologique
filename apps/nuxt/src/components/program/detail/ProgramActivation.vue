@@ -9,13 +9,13 @@
         v-if="!isDataFull"
         class="fr-mb-4v fr-mb-md-2v"
       >
-        <div class="fr-mb-0 fr-ml-0">Vérifiez automatiquement l'éligibilité de votre entreprise à l'aide de votre SIRET</div>
+        <div class="fr-mb-0 fr-ml-0">{{ Translation.t('program.programActivationRegistration') }}</div>
         <DsfrButton
           primary
           class="fr-mt-2v fr-text--yellow"
           @click="openModal"
         >
-          Vérifier mon éligibilité
+          {{ Translation.t('results.eligibilityCheckCTA') }}
         </DsfrButton>
       </li>
       <li
