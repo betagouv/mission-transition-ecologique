@@ -36,15 +36,17 @@
       <ProgramEligibilityConditions :program="currentProgram" />
       <ProgramProjects :program="currentProgram" />
       <ProgramLongDescription :program="currentProgram" />
-      <div ref="activationRef" />
-      <ProgramActivation
-        v-if="isActivationVisible"
-        :program="currentProgram"
-        :is-form-visible="isFormVisible"
-        :scroll-to-form="scrollToForm"
-      />
-      <div ref="formRef" />
-      <ProgramForm v-if="isFormVisible && isActivationVisible" />
+      <div ref="activationRef">
+        <ProgramActivation
+          v-if="isActivationVisible"
+          :program="currentProgram"
+          :is-form-visible="isFormVisible"
+          :scroll-to-form="scrollToForm"
+        />
+      </div>
+      <div ref="formRef">
+        <ProgramForm v-if="isFormVisible && isActivationVisible" />
+      </div>
     </article>
   </Layout>
 </template>

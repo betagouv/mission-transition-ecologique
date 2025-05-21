@@ -13,14 +13,23 @@
       {{ Translation.t('program.CtaActivation') }}
     </DsfrButton>
     <DsfrButton
+      v-if="program['contact question'] === 'formulaire'"
       secondary
       size="lg"
       icon="fr-icon-chat-3-line"
       class="fr-ml-3v"
-      :on-click="handleContactClick"
+      :on-click="() => scrollToForm()"
     >
       {{ Translation.t('program.CtaContact') }}
     </DsfrButton>
+    <TeeButtonExternalLink
+      v-else
+      :href="formattedContactHref"
+      variant="large-question"
+      class="fr-ml-3v"
+    >
+      {{ Translation.t('program.CtaContact') }}
+    </TeeButtonExternalLink>
   </div>
 </template>
 
@@ -32,22 +41,17 @@ import { ProgramTypeForFront } from '@/types'
 
 interface Props {
   program: ProgramTypeForFront
-  isActivationVisible: Ref<boolean>
+  isActivationVisible: boolean
   scrollToForm: () => void
   scrollToActivation: () => void
 }
 const props = defineProps<Props>()
 
-const handleContactClick = () => {
-  const contact = props.program['contact question']
-  if (contact === 'formulaire') {
-    props.scrollToForm()
-  } else if (typeof contact === 'string' && contact.startsWith('http')) {
-    window.open(contact, '_blank')
-  } else {
-    window.location.href = `mailto:${contact}`
-  }
-}
-
 const { isDataFull } = storeToRefs(useCompanyDataStore())
+
+const formattedContactHref = computed(() => {
+  const contact = props.program['contact question']
+  const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact)
+  return isEmail ? `mailto:${contact}` : contact
+})
 </script>

@@ -1,7 +1,7 @@
 <template>
   <a
     :href="props.href"
-    class="fr-btn fr-btn--secondary fr-btn--icon-left fr-icon-external-link-fill"
+    :class="computedClass"
     target="_blank"
   >
     <slot />
@@ -11,9 +11,21 @@
 <script setup lang="ts">
 interface Props {
   href: string
+  variant?: 'small-purple' | 'large-question'
 }
 const props = withDefaults(defineProps<Props>(), {
-  href: ''
+  href: '',
+  variant: 'small-purple'
+})
+
+const computedClass = computed(() => {
+  if (props.variant === 'small-purple') {
+    return 'fr-btn fr-btn--secondary fr-btn--icon-left fr-icon-external-link-fill small-purple'
+  }
+  if (props.variant === 'large-question') {
+    return 'fr-btn fr-btn--secondary fr-btn--icon-left fr-icon-chat-3-line fr-btn--lg'
+  }
+  return ''
 })
 </script>
 
@@ -28,7 +40,7 @@ const props = withDefaults(defineProps<Props>(), {
   content: none;
 }
 
-a {
+a.small-purple {
   box-shadow: inset 0 0 0 1px setting.$purple;
   color: setting.$purple;
   text-align: center;
