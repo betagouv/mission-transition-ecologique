@@ -1,3 +1,51 @@
+@import "@gouvfr/dsfr/dist/component/navigation/navigation.min.css";
+@import "@gouvfr/dsfr/dist/core/core.min.css";
+@import "@gouvfr/dsfr/dist/component/button/button.min.css";
+@import "@gouvfr/dsfr/dist/component/accordion/accordion.min.css";
+@import "@gouvfr/dsfr/dist/component/header/header.min.css";
+@import "@gouvfr/dsfr/dist/component/logo/logo.min.css";
+@import "@gouvfr/dsfr/dist/component/link/link.min.css";
+@import "@gouvfr/dsfr/dist/component/form/form.min.css";
+@import "@gouvfr/dsfr/dist/component/modal/modal.min.css";
+@import "@gouvfr/dsfr/dist/component/input/input.min.css";
+@import "@gouvfr/dsfr/dist/component/search/search.min.css";
+@import '@gouvfr/dsfr/dist/component/footer/footer.min.css';
+@import "@gouvfr/dsfr/dist/component/badge/badge.min.css";
+@import "@gouvfr/dsfr/dist/component/card/card.min.css";
+@import "@gouvfr/dsfr/dist/component/highlight/highlight.min.css";
+@import "@gouvfr/dsfr/dist/component/table/table.min.css";
+@import "@gouvfr/dsfr/dist/component/tab/tab.min.css";
+@import "@gouvfr/dsfr/dist/component/tag/tag.min.css";
+@import "@gouvfr/dsfr/dist/component/tile/tile.min.css";
+.fr-icon-arrow-left-line::before, .fr-icon-arrow-left-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/arrow-left-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/arrow-left-line.svg");
+}
+.fr-icon-arrow-right-line::before, .fr-icon-arrow-right-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/arrow-right-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/arrow-right-line.svg");
+}
+.fr-icon-check-line::before, .fr-icon-check-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/check-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/check-line.svg");
+}
+.fr-icon-close-circle-fill::before, .fr-icon-close-circle-fill::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/close-circle-fill.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/close-circle-fill.svg");
+}
+.fr-icon-close-line::before, .fr-icon-close-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/close-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/close-line.svg");
+}
+.fr-icon-mail-line::before, .fr-icon-mail-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/mail-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/mail-line.svg");
+}
+.fr-icon-link::before, .fr-icon-link::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/editor/link.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/editor/link.svg");
+}
+
 .fr-accordion__btn {
   color: var(--text-title-grey);
 }
@@ -4656,6 +4704,11 @@ a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=
 }
 .tee-font-style--normal {
   font-style: normal;
+}
+
+.markdown-spacing-reset p,
+.markdown-spacing-reset li {
+  margin: 0 !important;
 }
 
 /*# sourceMappingURL=main.css.map */

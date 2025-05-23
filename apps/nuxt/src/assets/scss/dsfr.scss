@@ -1,0 +1,135 @@
+@use 'sass:map';
+@use 'sass:list';
+@use '@gouvfr/dsfr/.config/icon' as dsfr-icons;
+@use '@gouvfr/dsfr/src/dsfr/core/style/icon/setting' as dsfr-icons-setting;
+@use '@gouvfr/dsfr/src/dsfr/core/style/display/tool/mask-image';
+@import "@gouvfr/dsfr/dist/component/navigation/navigation.min.css";
+@import "@gouvfr/dsfr/dist/core/core.min.css";
+@import "@gouvfr/dsfr/dist/component/button/button.min.css";
+@import "@gouvfr/dsfr/dist/component/accordion/accordion.min.css";
+@import "@gouvfr/dsfr/dist/component/header/header.min.css";
+@import "@gouvfr/dsfr/dist/component/logo/logo.min.css";
+@import "@gouvfr/dsfr/dist/component/link/link.min.css";
+@import "@gouvfr/dsfr/dist/component/form/form.min.css";
+@import "@gouvfr/dsfr/dist/component/modal/modal.min.css";
+@import "@gouvfr/dsfr/dist/component/input/input.min.css";
+@import "@gouvfr/dsfr/dist/component/search/search.min.css";
+@import '@gouvfr/dsfr/dist/component/footer/footer.min.css';
+@import "@gouvfr/dsfr/dist/component/badge/badge.min.css";
+@import "@gouvfr/dsfr/dist/component/card/card.min.css";
+@import "@gouvfr/dsfr/dist/component/highlight/highlight.min.css";
+@import "@gouvfr/dsfr/dist/component/table/table.min.css";
+@import "@gouvfr/dsfr/dist/component/tab/tab.min.css";
+@import "@gouvfr/dsfr/dist/component/tag/tag.min.css";
+@import "@gouvfr/dsfr/dist/component/tile/tile.min.css";
+
+
+
+// Custom icon import approach
+// This file implements a custom approach to import only the specific icons we need,
+// rather than importing entire icon categories. This reduces the CSS bundle size.
+
+// To add a new icon:
+// 1. Add the icon configuration to the $custom-icons-config map below
+// 2. Add the icon selector to the list of selectors in the .fr-icon block
+// 3. Add a specific rule for the icon using the get-icon-url function
+
+
+// Define a custom subset of icons
+
+// Define our custom icons list
+$icons-list: (
+  // System icons
+  arrow-left-line,
+  arrow-right-line,
+  check-line,
+  close-circle-fill,
+  close-line,
+    // Business icons
+  mail-line,
+    // Editor icons
+  link,
+);
+
+// Create merged icon configuration map
+$custom-icons-config: ();
+
+@each $icon in $icons-list {
+  $icon-config: map.get(dsfr-icons.$icons-config, $icon);
+
+  @if $icon-config {
+    $custom-icons-config: map.merge($custom-icons-config, ($icon: $icon-config));
+  }
+}
+
+@function getIconPseudo($restrain) {
+  @if $restrain == before or $restrain == after {
+    @return $restrain;
+  }
+
+  @return before after;
+}
+
+@mixin pseudo($type:before, $content:null, $display:null) {
+  @if $type != after and $type != before and $type != marker and $type != (before after) {
+    @error '$type must be before or after element';
+  }
+
+  $selector: ();
+
+  @each $pseudo in $type {
+    $selector: list.append($selector, '&::#{$pseudo}', 'comma');
+  }
+
+  #{$selector} {
+    @if $content {
+      content: $content;
+    }
+
+    @if $display {
+      display: #{$display};
+    }
+
+    @content;
+  }
+}
+
+// Helper functions and mixins for icon generation
+@function getIconUrl($icon, $important: false) {
+  $config: map.get($custom-icons-config, $icon);
+  $url: url('../../../../node_modules/@gouvfr/dsfr/dist/#{map.get($config, path)}');
+
+  @return $url if($important, !important, null);
+}
+
+@mixin icon-pseudo($restrain: null) {
+  @include pseudo(getIconPseudo($restrain)) {
+    @content;
+  }
+}
+
+@mixin icon-image($icon, $restrain: null, $important: false) {
+  $url: getIconUrl($icon, $important);
+
+  @include icon-pseudo($restrain) {
+    @include mask-image.mask-image($url);
+  }
+}
+
+// Generate icon classes
+.fr-icon {
+  @each $icon, $setting in $custom-icons-config {
+    &#{-#{$icon}} {
+      @include icon-image($icon);
+    }
+  }
+}
+
+// List of icons used in the project:
+// 1. `fr-icon-close-circle-fill` (system)
+// 2. `fr-icon-arrow-right-line` (system)
+// 3. `fr-icon-mail-line` (business)
+// 4. `fr-icon-close-line` (system)
+// 5. `fr-icon-link` (editor)
+// 6. `fr-icon-check-line` (system)
+// 7. `fr-icon-arrow-left-line` (system)

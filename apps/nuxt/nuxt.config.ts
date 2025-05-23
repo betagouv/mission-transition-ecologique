@@ -80,8 +80,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     autoImport: true
   },
   css: [
-    '@gouvfr/dsfr/dist/dsfr.min.css', // Le CSS minimal du DSFR
-    '@gouvfr/dsfr/dist/utility/icons/icons.min.css', // Styles de tous les composants du DSFR
+    // '@gouvfr/dsfr/dist/dsfr.min.css', // Le CSS minimal du DSFR
+    // '@gouvfr/dsfr/dist/utility/icons/icons.min.css', // Styles de tous les composants du DSFR
     '@gouvminint/vue-dsfr/styles', // Styles des composants VueDsfr
     '~/assets/custom.css',
     '~/assets/main.scss'

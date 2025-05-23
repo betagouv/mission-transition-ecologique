@@ -5,6 +5,10 @@ import { MetaSeo } from '@/tools/metaSeo'
 import Translation from '@/tools/translation'
 import Cookie from '@/tools/cookies'
 
+if (import.meta.client) {
+  await import('../dsfr')
+}
+
 const navigationStore = useNavigationStore()
 const router = useRouter()
 const route = useRoute()
