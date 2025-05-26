@@ -143,7 +143,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   },
   sentry: NuxtSentryConfig.getConfig(),
   sitemap: {
-    cacheMaxAgeSeconds: 2678400, // 31 days
+    cacheMaxAgeSeconds: maxAge, // 31 days
     credits: false,
     autoLastmod: true,
     experimentalWarmUp: true,
@@ -169,9 +169,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       lg: 1248
     },
     densities: [1],
-    ipx: {
-      maxAge: maxAge
-    }
+    provider: 'ipx'
   },
   runtimeConfig: {
     public: {
