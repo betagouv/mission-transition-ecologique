@@ -160,19 +160,6 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   scripts: {
     registry: NuxtScriptsConfig.getRegistry()
   },
-  image: {
-    format: ['webp'],
-    screen: {
-      xs: 576,
-      sm: 768,
-      md: 992,
-      lg: 1248
-    },
-    densities: [1],
-    ipx: {
-      maxAge: maxAge
-    }
-  },
   runtimeConfig: {
     public: {
       environment: Config.SERVER_ENVIRONMENT,

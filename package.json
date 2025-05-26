@@ -18,7 +18,7 @@
     "dev": "nx run-many -t serve",
     "dev:start": "PORT=4242 npm run start",
     "dev:build:start": "npm run build && npm run dev:start",
-    "build": "export NODE_OPTIONS=--max-old-space-size=6144 && nx run-many -t build",
+    "build": "export NODE_OPTIONS=--max-old-space-size=8192 && nx run-many -t build",
     "start": "node apps/nuxt/.output/server/index.mjs --port $PORT",
     "build:etl": "nx run @tee/etl:build-docker",
     "build:start": "npm run build && npm run start",
@@ -38,11 +38,17 @@
     "e2e": "VITE_DATA_TEST=true && THIRD_PARTY_API_ENABLED=false && npm run build && nx run @tee/nuxt-e2e:e2e",
     "e2e-ui": "npm run e2e -- --ui",
     "docker:python": "nx run @tee/etl:docker-python",
-    "cleanup": "nx run @tee/nuxt:cleanup"
+    "cleanup": "nx run @tee/nuxt:cleanup",
+    "artillery:page:dev": "nx run @tee/nuxt-artillery:test:pages:dev",
+    "artillery:page:staging": "nx run @tee/nuxt-artillery:test:pages:staging",
+    "artillery:page:prod": "nx run @tee/nuxt-artillery:test:pages:prod",
+    "artillery:load:dev": "nx run @tee/nuxt-artillery:test:load:dev",
+    "artillery:load:staging": "nx run @tee/nuxt-artillery:test:load:staging",
+    "artillery:load:prod": "nx run @tee/nuxt-artillery:test:load:prod"
   },
   "engines": {
-    "node": "20.x",
-    "npm": ">=10.0 <11"
+    "node": "22.x",
+    "npm": ">=11.0 <12"
   },
   "dependencies": {
     "@getbrevo/brevo": "^2.2.0",
@@ -83,6 +89,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@artilleryio/playwright-reporter": "^1.0.0",
     "@nuxt/devtools": "^1.5.2",
     "@nuxt/eslint-config": "~0.5.6",
     "@nuxt/kit": "^3.15.4",
@@ -115,6 +122,7 @@
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/test-utils": "^2.4.1",
+    "artillery": "^2.0.0",
     "eslint": "~8.57.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.29.1",
