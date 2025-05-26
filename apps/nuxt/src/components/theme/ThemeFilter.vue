@@ -36,7 +36,8 @@ const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
     label: 'Tous',
     tagName: 'button',
     value: '',
-    'aria--pressed': filters[FilterItemKeys.themeType] === ''
+    selectable: true,
+    selected: filters[FilterItemKeys.themeType] === ''
   }
 
   const tags: TeeDsfrTagProps[] = []
@@ -44,8 +45,8 @@ const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
   for (const tag of Theme.getTags()) {
     tags.push({
       label: tag.tagLabel,
-      tagName: 'button',
-      'aria--pressed': isActive(tag),
+      selected: isActive(tag),
+      selectable: true,
       color: isActive(tag) && 'color' in tag ? tag.color : undefined,
       value: tag.id
     })

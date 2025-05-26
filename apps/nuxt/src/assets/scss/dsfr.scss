@@ -3,25 +3,29 @@
 @use '@gouvfr/dsfr/.config/icon' as dsfr-icons;
 @use '@gouvfr/dsfr/src/dsfr/core/style/icon/setting' as dsfr-icons-setting;
 @use '@gouvfr/dsfr/src/dsfr/core/style/display/tool/mask-image';
-@import "@gouvfr/dsfr/dist/component/navigation/navigation.min.css";
-@import "@gouvfr/dsfr/dist/core/core.min.css";
-@import "@gouvfr/dsfr/dist/component/button/button.min.css";
-@import "@gouvfr/dsfr/dist/component/accordion/accordion.min.css";
-@import "@gouvfr/dsfr/dist/component/header/header.min.css";
-@import "@gouvfr/dsfr/dist/component/logo/logo.min.css";
-@import "@gouvfr/dsfr/dist/component/link/link.min.css";
-@import "@gouvfr/dsfr/dist/component/form/form.min.css";
-@import "@gouvfr/dsfr/dist/component/modal/modal.min.css";
-@import "@gouvfr/dsfr/dist/component/input/input.min.css";
-@import "@gouvfr/dsfr/dist/component/search/search.min.css";
-@import '@gouvfr/dsfr/dist/component/footer/footer.min.css';
-@import "@gouvfr/dsfr/dist/component/badge/badge.min.css";
-@import "@gouvfr/dsfr/dist/component/card/card.min.css";
-@import "@gouvfr/dsfr/dist/component/highlight/highlight.min.css";
-@import "@gouvfr/dsfr/dist/component/table/table.min.css";
-@import "@gouvfr/dsfr/dist/component/tab/tab.min.css";
-@import "@gouvfr/dsfr/dist/component/tag/tag.min.css";
-@import "@gouvfr/dsfr/dist/component/tile/tile.min.css";
+@import "@gouvfr/dsfr/dist/component/navigation/navigation.css";
+@import "@gouvfr/dsfr/dist/core/core.css";
+@import "@gouvfr/dsfr/dist/core/core.legacy.css";
+@import "@gouvfr/dsfr/dist/component/button/button.css";
+@import "@gouvfr/dsfr/dist/component/accordion/accordion.css";
+@import "@gouvfr/dsfr/dist/component/header/header.css";
+@import "@gouvfr/dsfr/dist/component/logo/logo.css";
+@import "@gouvfr/dsfr/dist/component/link/link.css";
+@import "@gouvfr/dsfr/dist/component/form/form.css";
+@import "@gouvfr/dsfr/dist/component/modal/modal.css";
+@import "@gouvfr/dsfr/dist/component/input/input.css";
+@import "@gouvfr/dsfr/dist/component/search/search.css";
+@import '@gouvfr/dsfr/dist/component/footer/footer.css';
+@import "@gouvfr/dsfr/dist/component/badge/badge.css";
+@import "@gouvfr/dsfr/dist/component/card/card.css";
+@import "@gouvfr/dsfr/dist/component/breadcrumb/breadcrumb.css";
+@import "@gouvfr/dsfr/dist/component/highlight/highlight.css";
+@import "@gouvfr/dsfr/dist/component/table/table.css";
+@import "@gouvfr/dsfr/dist/component/tab/tab.css";
+@import "@gouvfr/dsfr/dist/component/sidemenu/sidemenu.css";
+@import "@gouvfr/dsfr/dist/component/tag/tag.css";
+@import "@gouvfr/dsfr/dist/component/tile/tile.css";
+@import "@gouvfr/dsfr/dist/component/select/select.css";
 
 
 
@@ -39,16 +43,27 @@
 
 // Define our custom icons list
 $icons-list: (
+  // Maps icons
+  map-pin-2-line,
   // System icons
   arrow-left-line,
   arrow-right-line,
   check-line,
   close-circle-fill,
   close-line,
-    // Business icons
+  // Business icons
   mail-line,
-    // Editor icons
+  briefcase-line,
+  // Editor icons
   link,
+  // Finance icons
+  money-euro-circle-line,
+  // user icons
+  team-line,
+  account-pin-circle-line,
+  account-circle-fill,
+  // editor icons
+  question-mark
 );
 
 // Create merged icon configuration map
