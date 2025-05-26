@@ -24,13 +24,11 @@
           </div>
           <div class="fr-card__header">
             <div class="fr-card__img">
-              <div>
-                <img
-                  class="fr-responsive-img image-with-gradient"
-                  :src="resolvedImageSrc"
-                  :alt="resolvedImageAlt"
-                />
-              </div>
+              <img
+                class="fr-responsive-img"
+                :src="resolvedImageSrc"
+                :alt="resolvedImageAlt"
+              />
               <img
                 class="fr-card__logo"
                 :src="img('/images/logos/mission-transition-logo-alone.png', { height: 50, width: 50, quality: 100, loading: 'lazy' })"
@@ -80,6 +78,8 @@ imageResizerChild()
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/scss/tool';
+
 .fr-card {
   .fr-card__title {
     a::after {
@@ -92,31 +92,37 @@ imageResizerChild()
   }
 
   .fr-card__img {
+    position: relative;
+
     img {
       max-height: 250px;
     }
 
-    div {
-      height: 100%;
-
-      &:first-child::after {
-        content: '';
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        background: linear-gradient(to bottom right, rgb(255 255 255 / 0%) 70%, rgb(255 255 255 / 100%) 95%) !important;
+    @include tool.media-query-respond-from(md) {
+      img {
+        max-height: 350px;
       }
     }
-  }
 
-  .fr-card__logo {
-    position: absolute;
-    width: 50px;
-    bottom: 0;
-    height: 50px;
-    right: 0;
+    &::after {
+      content: '';
+      position: absolute;
+      z-index: 0; // Lower layer
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(to bottom right, rgb(255 255 255 / 0%) 70%, rgb(255 255 255 / 100%) 95%) !important;
+    }
+
+    .fr-card__logo {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      z-index: 1; // Higher than the gradient
+    }
   }
 }
 </style>
