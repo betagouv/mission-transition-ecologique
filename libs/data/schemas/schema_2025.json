@@ -135,14 +135,14 @@
           },
           {
             "name": "programme_aides",
-            "description": "Programme(s) auquel se réfère l'aide - facultatif. Si aucun programme, ne pas remplir ce champs. S'il y a plusieurs programmes, mettre une virgule sans espace entre les différents programmes.",
-            "example": "France 2030,Fonds social européen (FSE),Fonds Vert",
+            "description": "Programme(s) auquel se réfère l'aide - facultatif. Si aucun programme, ne pas remplir ce champs. S'il y a plusieurs programmes, mettre un point virgule sans espace entre les différents programmes.",
+            "example": "France 2030;Fonds social européen (FSE);Fonds Vert",
             "type": "string"
           },
           {
             "name": "porteur_aide",
-            "description": "Porteur(s) de l'aide. S'il y a plusieurs porteurs, mettre une virgule sans espace entre les différents porteurs. Le premier porteur est considérer le porteur/opérateur principal de l'aide.",
-            "example": "ADEME,Région Grand Est",
+            "description": "Porteur(s) de l'aide. S'il y a plusieurs porteurs, mettre un point virgule sans espace entre les différents porteurs. Le premier porteur est considérer le porteur/opérateur principal de l'aide.",
+            "example": "ADEME;Région Grand Est",
             "type": "string",
             "constraints": {
               "required": true
@@ -150,7 +150,7 @@
           },
           {
             "name": "porteur_siren",
-            "description": "Numéro SIREN du/des porteur(s) de l'aide. S'il y a plusieurs porteurs, mettre une virgule sans espace entre les différents porteurs.",
+            "description": "Numéro SIREN du/des porteur(s) de l'aide. S'il y a plusieurs porteurs, mettre un point virgule sans espace entre les différents porteurs.",
             "example": "385290309",
             "type": "string",
             "constraints": {
@@ -160,12 +160,12 @@
           },
           {
             "name": "beneficiaires_aide",
-            "description": "Liste des bénéficiaires possibles. S'il y a plusieurs bénéficiaires, mettre une virgule sans espace entre les différents bénéficiaires. Bénéficiaire à sélectionner parmi la liste suivante : \"Communes\", \"EPCI à fiscalité propre\", \"Départements\", \"Régions\", \"Associations\", \"Particuliers\", \"Agriculteurs\", \"Entreprises privées\", \"Entreprises publiques locales (Sem, Spl, SemOp)\", \"Établissements publics - Services de l'État\", \"Recherche\"",
+            "description": "Liste des bénéficiaires possibles. S'il y a plusieurs bénéficiaires, mettre un point virgule sans espace entre les différents bénéficiaires. Bénéficiaire à sélectionner parmi la liste suivante : \"Communes\", \"EPCI à fiscalité propre\", \"Départements\", \"Régions\", \"Associations\", \"Particuliers\", \"Agriculteurs\", \"Entreprises privées\", \"Entreprises publiques locales (Sem, Spl, SemOp)\", \"Établissements publics - Services de l'État\", \"Recherche\"",
             "example": "Communes,Départements",
             "type": "string",
             "constraints": {
               "required": true,
-              "pattern": "(?:(?:^|,)(Communes|EPCI à fiscalité propre|Départements|Régions|Associations|Particuliers|Agriculteurs|Entreprises privées|Entreprises publiques locales \\(Sem, Spl, SemOp\\)|Établissements publics - Services de l'État|Recherche))+$"
+              "pattern": "(?:(?:^|;)(Communes|EPCI à fiscalité propre|Départements|Régions|Associations|Particuliers|Agriculteurs|Entreprises privées|Entreprises publiques locales \\(Sem, Spl, SemOp\\)|Établissements publics - Services de l'État|Recherche))+$"
             }
           },
           {
@@ -258,8 +258,8 @@
           },
           {
             "name": "activation_etape_1_liens",
-            "description": "Liens au format Markdown [description](lien) séparé par des virgules",
-            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+            "description": "Liens au format Markdown [description](lien) séparé par des points virgules",
+            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants);[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
             "type": "string"
           },
           {
@@ -270,8 +270,8 @@
           },
           {
             "name": "activation_etape_2_liens",
-            "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 2ème étape",
-            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+            "description": "Liens au format Markdown [description](lien) séparé par des points virgules pour la 2ème étape",
+            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants);[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
             "type": "string"
           },
           {
@@ -282,8 +282,8 @@
           },
           {
             "name": "activation_etape_3_liens",
-            "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 3ème étape",
-            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+            "description": "Liens au format Markdown [description](lien) séparé par des points virgules pour la 3ème étape",
+            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants);[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
             "type": "string"
           },
           {
@@ -294,8 +294,8 @@
           },
           {
             "name": "activation_etape_4_liens",
-            "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 4ème étape",
-            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+            "description": "Liens au format Markdown [description](lien) séparé par des points virgules pour la 4ème étape",
+            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants);[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
             "type": "string"
           },
           {
@@ -306,8 +306,8 @@
           },
           {
             "name": "activation_etape_5_liens",
-            "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 5ème étape",
-            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+            "description": "Liens au format Markdown [description](lien) séparé par des points virgules pour la 5ème étape",
+            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants);[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
             "type": "string"
           },
           {
@@ -318,13 +318,13 @@
           },
           {
             "name": "activation_etape_6_liens",
-            "description": "Liens au format Markdown [description](lien) séparé par des virgules pour la 6ème étape",
-            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants),[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
+            "description": "Liens au format Markdown [description](lien) séparé par des points virgules pour la 6ème étape",
+            "example": "[Conditions et critères d'éligibilité](https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants);[Règlement d'intervention](https://www.bourgognefranchecomte.fr/file-download?fid=15353)",
             "type": "string"
           },
           {
             "name": "eligibilite_geographique",
-            "description": "Couverture géographique du dispositif. Champs à écrire en utilisant le formalisme du Code Officiel Géographique du COG : https://www.insee.fr/fr/information/5230987. Séparer chaque code COG par des ;",
+            "description": "Couverture géographique du dispositif. Champs à écrire en utilisant le formalisme du Code Officiel Géographique du COG : https://www.insee.fr/fr/information/5230987. Séparer chaque code COG par des points virgules",
             "example": "PAYS-99100 pour la France entière    OU    REG-84;DEP-05 pour la région Auvergne-Rhône-Alpes et le département des Hautes-Alpes",
             "type": "string",
             "constraints": {
@@ -333,7 +333,7 @@
           },
           {
             "name": "eligibilite_geographique_exclusions",
-            "description": "Couverture géographique exclues du dispositif d'aide. Champs à écrire en utilisant le formalisme du Code Officiel Géographique du COG : https://www.insee.fr/fr/information/5230987. Séparer chaque code COG par des ; Cette propriété a précédence sur les \"eligibilite_geographique\" s'il y a recouvrement",
+            "description": "Couverture géographique exclues du dispositif d'aide. Champs à écrire en utilisant le formalisme du Code Officiel Géographique du COG : https://www.insee.fr/fr/information/5230987. Séparer chaque code COG par des points virgules. Cette propriété a précédence sur les \"eligibilite_geographique\" s'il y a recouvrement",
             "example": "REG-84;DEP-05 pour la région Auvergne-Rhône-Alpes et le département des Hautes-Alpes",
             "type": "string"
           },
@@ -345,7 +345,7 @@
           },
           {
             "name": "eligibilite_sectorielle_naf",
-            "description": "Couverture sectorielle du dispositif identifiés via les codes NAF - Nomenclature d'Activités Française. Peut être n'importe niveau de code NAF (section, division, groupe etc.). Séparé par ; Par défaut il est possible d'écrire A; B; C; D; E; F; G; H; I; J; K; L; M; N; O; P; Q; R; S; T; U - correspondant à toutes les sections NAF.",
+            "description": "Couverture sectorielle du dispositif identifiés via les codes NAF - Nomenclature d'Activités Française. Peut être n'importe niveau de code NAF (section, division, groupe etc.). Séparér chaque code NAF par des points virgules. Par défaut il est possible d'écrire A; B; C; D; E; F; G; H; I; J; K; L; M; N; O; P; Q; R; S; T; U - correspondant à toutes les sections NAF.",
             "example": "A;55.20Z",
             "type": "string",
             "constraints": {
@@ -354,7 +354,7 @@
           },
           {
             "name": "eligibilite_sectorielle_exclusions",
-            "description": "Identifiés via leurs codes NAF. Peut être n'importe quel niveau de code NAF (section, division, groupe etc.). Cette propriété a précédence sur les \"secteurs spécifiques\" s'il y a recouvrement. Par exemple, si `\"secteurs spécifiques\" = [\"A\"]` et `\"secteurs exclus\" = [\"02\"]`, alors les secteurs éligibles s'entendent comme \"Agriculture, sylviculture et pêche\" hors \"Division 02 : Sylviculture et exploitation forestière\".",
+            "description": "Identifiés via leurs codes NAF. Peut être n'importe quel niveau de code NAF (section, division, groupe etc.). Séparér chaque code NAF par des points virgules. Cette propriété a précédence sur les \"secteurs spécifiques\" s'il y a recouvrement. Par exemple, si `\"secteurs spécifiques\" = [\"A\"]` et `\"secteurs exclus\" = [\"02\"]`, alors les secteurs éligibles s'entendent comme \"Agriculture, sylviculture et pêche\" hors \"Division 02 : Sylviculture et exploitation forestière\".",
             "example": "02;09.10Z",
             "type": "string"
           },
@@ -378,7 +378,7 @@
           },
           {
             "name": "eligibilite_existence",
-            "description": "Nombre minimum d'année(s) d'existence de l'entreprise pour bénéficier de l'aide. Laisser vide si non applicable. ",
+            "description": "Texte décrivant les conditions d'éligibilités relatives à l'existence. ",
             "example": "Exemple 1 : Au moins 1 an d'existence. - Exemple 2 : Éligible à toutes les entreprises",
             "type": "string"
           },
@@ -396,14 +396,14 @@
           },
           {
             "name": "eligibilite_statuts_specifiques",
-            "description": "Liste des statuts d'entreprise spécifiquement visés. A utiliser UNIQUEMENT si un tel statut est NECESSAIRE pour obtenir l'aide. Cela exclu par défaut tous les autres statuts. Peut contenir des statuts juridiques (ex: SARL, EI), fiscaux (micro-entreprise), ou des qualifications (artisan).",
-            "example": "artisan;SARL",
+            "description": "Liste des statuts d'entreprises spécifiquement visés. A utiliser UNIQUEMENT si un tel statut est NECESSAIRE pour obtenir l'aide. L'utilisation de ce champ exclu tous les autres statuts. Séparer les statuts requis par + si une combinaison de statuts est nécessaire, Par | si chacun des statuts ouvre le droit à l'aide. + a précédence sur |. Peut contenir des statuts juridiques (ex: SARL, EI), fiscaux (micro-entreprise), ou des qualifications (artisan).",
+            "example": "artisan+SARL|artisan+micro-entreprise qui représente les artisans SARL et les artisans micro-entreprise.",
             "type": "string"
           },
           {
             "name": "eligibilite_statuts_exclus",
-            "description": "Liste des statuts ou qualifications exclus du dispositif.",
-            "example": "micro-entrepreneur;EI",
+            "description": "Liste des statuts ou qualifications exclus du dispositif. Mêmes règles de construction du champs que pour eligibilite_statuts_specifiques",
+            "example": "micro-entrepreneur",
             "type": "string"
           },
           {
