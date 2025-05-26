@@ -161,7 +161,7 @@
           {
             "name": "beneficiaires_aide",
             "description": "Liste des bénéficiaires possibles. S'il y a plusieurs bénéficiaires, mettre un point virgule sans espace entre les différents bénéficiaires. Bénéficiaire à sélectionner parmi la liste suivante : \"Communes\", \"EPCI à fiscalité propre\", \"Départements\", \"Régions\", \"Associations\", \"Particuliers\", \"Agriculteurs\", \"Entreprises privées\", \"Entreprises publiques locales (Sem, Spl, SemOp)\", \"Établissements publics - Services de l'État\", \"Recherche\"",
-            "example": "Communes,Départements",
+            "example": "Communes;Départements",
             "type": "string",
             "constraints": {
               "required": true,
@@ -171,7 +171,7 @@
           {
             "name": "types_aides",
             "description": "Liste des types d'aides possibles. Par exemple: Si aide financière : \"Subvention\", \"Prêt\", \"Avance récupérable\". Si aide en ingénierie : \"Technique\", \"Financière\", \"Administrative\" ...",
-            "example": "Subvention,Autre",
+            "example": "Subvention;Autre",
             "type": "string",
             "constraints": {
               "required": true
@@ -180,7 +180,7 @@
           {
             "name": "montant_aide_ou_cout",
             "description": "Correspond au montant de financement (d'une étude ou d'un investissement), au montant du prêt auquel l'entreprise peut prétendre pour financer son projet. A l'inverse, ce monantant correspond au coût restant à charge pour bénéficier d'un accompagnement, d'un diag (pour les études) ou au pourcentage d'un avantage fisal. 12 mots maximum.",
-            "example": "Exemple pour une subvention (financement ou financement-étude) le montant d'aide s'écrit : Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 € HT - Exemple de coût restant à charge pour un diagnostic (étude) : 4 000 € HT après subvention de 60% - Exemple d'un avantage fiscal : Crédit d'impôt entre 20 à 60% selon localisation",
+            "example": "Exemple pour une subvention, le montant d'aide s'écrit : Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 € HT - Exemple de coût restant à charge pour un diagnostic : 4 000 € HT après subvention de 60% - Exemple d'un avantage fiscal : Crédit d'impôt entre 20 à 60% selon localisation",
             "type": "string",
             "constraints": {
               "required": true
@@ -188,7 +188,7 @@
           },
           {
             "name": "duree_aide",
-            "description": "Précisez la durée totale dans laquelle s’inscrit cette prestation. 12 mots maximum - champ obligatoire pour les études et formations.",
+            "description": "Précisez la durée totale dans laquelle s’inscrit cette prestation. 12 mots maximum - obligatoire si applicable au type d'aide",
             "example": "Exemple 1 : 12 jours de prestation répartis sur 6 à 8 mois - Exemple 2 : De 1 à 5 jours selon la taille de l'entreprise",
             "type": "string"
           },
@@ -206,8 +206,8 @@
           },
           {
             "name": "thematique_aide",
-            "description": "Thématique et sous-thématique de l'aide. S'il y a plusieurs thématiques, mettre un point-virgule sans espace entre les différentes thématiques. Pour décrire les thématiques et sous-thématiques, mettre un signe supérieur > entre les thématiques et sous-thématiques",
-            "example": "Thématique A > Sous-Thématique AA > Sous-Thématique AAA,Thématique B > Sous-Thématique BB",
+            "description": "Thématique et sous-thématique de l'aide. S'il y a plusieurs thématiques, mettre un point-virgule entre les différentes thématiques. Pour décrire les thématiques et sous-thématiques, mettre un signe supérieur > entre les thématiques et sous-thématiques",
+            "example": "Thématique A > Sous-Thématique AA > Sous-Thématique AAA;Thématique B > Sous-Thématique BB",
             "type": "string",
             "constraints": {
               "required": true
@@ -215,19 +215,19 @@
           },
           {
             "name": "date_ouverture",
-            "description": "Date d'ouverture de l'aide. Format YYYY-MM-DD-HH-MM (Année-Mois-Jour-heure-minute)",
+            "description": "Date d'ouverture de l'aide. Format ISO 8601",
             "example": "2025-10-15T15:00:00Z",
             "type": "datetime"
           },
           {
             "name": "date_releve_intermediaire",
-            "description": "Date(s) de relève intermediaire. Format YYYY-MM-DD-HH-MM (Année-Mois-Jour-heure-minute)",
-            "example": "2025-10-15-15-00;2026-03-03-15-00;2026-10-15-15-00",
+            "description": "Date(s) de relève intermediaire. Format ISO 8601",
+            "example": "2025-10-15T15:00:00Z;2025-10-15T15:00:00Z;2025-10-15T15:00:00Z",
             "type": "string"
           },
           {
             "name": "date_cloture",
-            "description": "Date de cloture de l'aide. Format YYYY-MM-DD-HH-MM (Année-Mois-Jour-heure-minute)",
+            "description": "Date de cloture de l'aide. Format ISO 8601",
             "example": "2025-10-15T15:00:00Z",
             "type": "datetime"
           },
@@ -360,7 +360,7 @@
           },
           {
             "name": "eligibilite_effectif",
-            "description": "Mentionner l'éligibilité de l'effectif sous la forme d'un texte. ",
+            "description": "Description de l'éligibilité de l'effectif en langage naturel.",
             "example": "Exemple 1 : Moins de 50 salariés - Exemple 2 : Entre 20 et 500 salariés - Exemple 3 : Toutes tailles",
             "type": "string"
           },
@@ -372,25 +372,25 @@
           },
           {
             "name": "eligibilite_effectif_max",
-            "description": "Nombre maximum de salarié pour bénéficier de l'aide. Laisser vide si non applicable",
+            "description": "Nombre maximum de salarié pour bénéficier de l'aide. Laisser vide si non applicable.",
             "example": "499",
             "type": "number"
           },
           {
             "name": "eligibilite_existence",
-            "description": "Texte décrivant les conditions d'éligibilités relatives à l'existence. ",
+            "description": "Texte décrivant les conditions d'éligibilités relatives à l'existence.",
             "example": "Exemple 1 : Au moins 1 an d'existence. - Exemple 2 : Éligible à toutes les entreprises",
             "type": "string"
           },
           {
             "name": "eligibilite_existence_min",
-            "description": "Nombre minimum d'année(s) d'existence de l'entreprise pour bénéficier de l'aide. Laisser vide si non applicable. ",
+            "description": "Nombre minimum d'année(s) d'existence de l'entreprise pour bénéficier de l'aide. Laisser vide si non applicable.",
             "example": "2",
             "type": "number"
           },
           {
             "name": "eligibilite_existence_max",
-            "description": "Nombre maximum d'année(s) d'existence de l'entreprise pour bénéficier de l'aide. Laisser vide si non applicable",
+            "description": "Nombre maximum d'année(s) d'existence de l'entreprise pour bénéficier de l'aide. Laisser vide si non applicable.",
             "example": "7",
             "type": "number"
           },
@@ -402,8 +402,8 @@
           },
           {
             "name": "eligibilite_statuts_exclus",
-            "description": "Liste des statuts ou qualifications exclus du dispositif. Mêmes règles de construction du champs que pour eligibilite_statuts_specifiques",
-            "example": "micro-entrepreneur",
+            "description": "Liste des statuts ou qualifications exclus du dispositif. Mêmes règles de construction du champs que pour eligibilite_statuts_specifiques.",
+            "example": "micro-entreprise",
             "type": "string"
           },
           {
@@ -414,7 +414,7 @@
           },
           {
             "name": "date_mise_a_jour",
-            "description": "Date de mise à jour du jeu de données.Format YYYY-MM-DD-HH-MM (Année-Mois-Jour)",
+            "description": "Date de mise à jour du jeu de données. Format ISO 8601",
             "example": "2025-10-15T15:00:00Z",
             "type": "datetime"
           }
