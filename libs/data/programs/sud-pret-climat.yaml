@@ -18,7 +18,7 @@ description longue: >-
   par les banques.
 
 
-  Sont éligibles : 
+  Sont éligibles :
 
 
   • Les besoins en fonds de roulement liés à un projet de développement de
@@ -30,7 +30,7 @@ description longue: >-
   prospection, les dépenses de publicité, etc.
 
 
-  Sont exclus : 
+  Sont exclus :
 
 
   • Les opérations relatives au financement de la création (entreprises de moins
@@ -51,6 +51,7 @@ illustration: images/TEE_ampoule.png
 opérateur de contact: Région Sud (PACA)
 autres opérateurs:
   - Banque Publique d'Investissement France
+contact question: 'formulaire'
 url: >-
   https://entreprises.maregionsud.fr/financement/sud-entreprises/soutien-a-lhebergement-touristique/sud-pret-climat
 nature de l'aide: prêt

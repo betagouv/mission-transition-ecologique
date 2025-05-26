@@ -102,7 +102,7 @@
   </ul>
 </template>
 <script setup lang="ts">
-import ProgramTile from '@/components/program/detail/ProgramTitle/ProgramTile.vue'
+import ProgramTile from '@/components/program/detail/ProgramTile/ProgramTile.vue'
 import Program from '@/tools/program/program'
 import Translation from '@/tools/translation'
 

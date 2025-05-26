@@ -1,14 +1,12 @@
 const programFrDict = {
   program: {
     programResume: 'Le dispositif en deux mots',
-    programObjective: {
-      title: {
-        inProgram: 'Au programme :',
-        applicationSteps: 'Les étapes de votre demande d’aide :'
-      }
-    },
     programProviders: 'Contact',
-    CTAButton: 'Contactez un conseiller',
+    CtaActivation: "J'aimerais en bénéficier",
+    CtaContact: "J'ai une question",
+    programActivation: 'Pour en bénéficier :',
+    CtaForm: 'Contactez un conseiller',
+    CtaQuestion: "J'ai une question",
     programType: "Nature de l'aide",
     programEndValidity: "Date de fin de l'aide",
     programRegisterHighlightText: "Vous souhaitez vérifier automatiquement l'éligibilité de votre entreprise à l'aide de votre SIRET ?",
@@ -21,6 +19,7 @@ const programFrDict = {
     projectExamplesSM: 'Exemples de projets financés',
     projectExamples: 'Quelques exemples de projets financés par cette aide :',
     programAmIEligible: "Conditions d'éligibilité",
+    programActivationRegistration: "Vérifiez automatiquement l'éligibilité de votre entreprise à l'aide de votre SIRET",
     form: {
       hint: '👋 Envoyez votre demande, un conseiller {operator} vous contactera prochainement',
       errorEmail: {

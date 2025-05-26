@@ -1,19 +1,24 @@
 <template>
-  <p
-    v-for="(paragraph, idx) in descriptionParagraphs"
-    :key="`long-description-paragraph-${idx}`"
-    :class="`fr-mb-0 fr-pb-${descriptionParagraphs.length - 1 === idx ? '3v' : '0'}`"
+  <ProgramAccordion
+    v-if="program && program['description longue']"
+    id="long-description"
+    :accordion-id="`${program.id}-long-description`"
+    :title="Translation.t('program.programKnowMore')"
   >
-    {{ paragraph || '&nbsp;' }}
-  </p>
+    <p
+      v-for="(paragraph, idx) in descriptionParagraphs"
+      :key="`long-description-paragraph-${idx}`"
+      :class="`fr-mb-0 fr-pb-${descriptionParagraphs.length - 1 === idx ? '3v' : '0'}`"
+    >
+      {{ paragraph || '&nbsp;' }}
+    </p>
+  </ProgramAccordion>
 </template>
 
 <script setup lang="ts">
-// CONSOLE LOG TEMPLATE
-// console.log(`ProgramLongdescription > FUNCTION_NAME > MSG_OR_VALUE :`)
-
 import { computed } from 'vue'
 import type { ProgramTypeForFront } from '@/types'
+import Translation from '@/tools/translation'
 
 interface Props {
   program: ProgramTypeForFront

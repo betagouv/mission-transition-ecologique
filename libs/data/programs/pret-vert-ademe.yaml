@@ -5,13 +5,13 @@ description: >-
   transition écologique et énergétique, identifiés à l'issue d'un Diag Eco-Flux
   ou d'une aide de l'ADEME.
 description longue: >-
-  Le prêt Vert Ademe est destiné aux entreprises ayant bénéficié : 
+  Le prêt Vert Ademe est destiné aux entreprises ayant bénéficié :
 
-  • du diagnostic « Diag Eco-Flux » 
+  • du diagnostic « Diag Eco-Flux »
 
   ou
 
-  • d'une aide financière de l’ADEME au cours de 3 dernières années 
+  • d'une aide financière de l’ADEME au cours de 3 dernières années
 
 
   Les investissements doivent viser à :
@@ -36,6 +36,7 @@ illustration: images/TEE_ampoule.png
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - ADEME
+contact question: 'formulaire'
 url: >-
   https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-vert-ademe
 nature de l'aide: prêt
@@ -65,7 +66,7 @@ conditions d'éligibilité:
       4638A, 0321Z ; les entreprises des secteurs agricoles identifiées par les
       code NAF section A01, et section A02 dont le chiffre d’affaires est
       inférieur à 750 000 €, à l’exception des codes NAF 02.20Z et 02.40Z
-      (entreprises forestières) 
+      (entreprises forestières)
   nombre d'années d'activité:
     - Au moins 3 ans d’activité
   autres critères d'éligibilité:

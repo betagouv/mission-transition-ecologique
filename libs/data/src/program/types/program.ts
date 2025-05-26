@@ -123,6 +123,10 @@ export type Dispositif = {
     | "Région Guadeloupe"
     | "Avere-France";
   /**
+   * Le contact en cas de question, peut être un lien vers le formulaire, un mail ou une url.
+   */
+  "contact question"?: string;
+  /**
    * Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.
    */
   "autres opérateurs"?: Operators[];

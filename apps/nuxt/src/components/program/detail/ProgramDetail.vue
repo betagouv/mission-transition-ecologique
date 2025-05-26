@@ -23,32 +23,29 @@
         <!-- TITLE & RESUME -->
         <div class="fr-col">
           <ProgramTitle />
-          <ProgramResume :form-container-ref="teeProgramFormContainer" />
+          <ProgramResume />
+          <ProgramMainCta
+            :program="currentProgram"
+            :is-activation-visible="isActivationVisible"
+            :scroll-to-form="scrollToForm"
+            :scroll-to-activation="scrollToActivation"
+          />
         </div>
       </div>
       <ProgramTiles />
-      <ProgramAccordions />
-
-      <!-- PROGRAM FORM -->
-      <div
-        v-if="hasRegisteredData && programIsEligible && !Program.isTemporaryUnavailable(currentProgram)"
-        ref="tee-program-form-container"
-        class="fr-bg--blue--lightness fr-grid-row fr-p-2w"
-      >
-        <TeeForm
-          :form-container-ref="teeProgramFormContainer"
-          :data-id="currentProgram.id"
-          :show-c-e-logo="!isProgramAutonomous"
-          :phone-callback="
-            isProgramAutonomous
-              ? Translation.t('form.phoneContactAutonomy', { operator: currentProgram['opérateur de contact'] })
-              : Translation.t('form.phoneContactCE')
-          "
-          :form="Opportunity.getProgramFormFields(currentProgram)"
-          :form-type="OpportunityType.Program"
-          :error-email-subject="Translation.t('program.form.errorEmail.subject', { program: currentProgram.titre })"
-          :hint="Translation.t('program.form.hint', { operator: currentProgram['opérateur de contact'] })"
+      <ProgramEligibilityConditions :program="currentProgram" />
+      <ProgramProjects :program="currentProgram" />
+      <ProgramLongDescription :program="currentProgram" />
+      <div ref="activationRef">
+        <ProgramActivation
+          v-if="isActivationVisible"
+          :program="currentProgram"
+          :is-form-visible="isFormVisible"
+          :scroll-to-form="scrollToForm"
         />
+      </div>
+      <div ref="formRef">
+        <ProgramForm v-if="isFormVisible && isActivationVisible" />
       </div>
     </article>
   </Layout>
@@ -61,17 +58,16 @@ import { useProgramStore } from '@/stores/program'
 import Navigation from '@/tools/navigation'
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
-import { OpportunityType, ProgramEligibility, ProgramType } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { MetaSeo } from '@/tools/metaSeo'
 import Program from '@/tools/program/program'
-import Translation from '@/tools/translation'
 import { useProjectStore } from '@/stores/project'
-import Opportunity from '@/tools/opportunity'
-import { CompanyData } from '@/tools/companyData'
 import { storeToRefs } from 'pinia'
 import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 import Analytics from '@/tools/analytic/analytics'
+import { Scroll } from '@/tools/scroll'
+import { useCompanyDataStore } from '@/stores/companyData'
+import { ProgramEligibilityType } from '@/types'
 
 const { currentProgram } = storeToRefs(useProgramStore())
 const { currentProject } = storeToRefs(useProjectStore())
@@ -79,8 +75,8 @@ const { query } = storeToRefs(useNavigationStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const navigation = new Navigation()
-const hasRegisteredData = CompanyData.isDataFullComputed()
-const teeProgramFormContainer = useTemplateRef<HTMLElement>('tee-program-form-container')
+const formRef = ref<HTMLElement | null>(null)
+const activationRef = ref<HTMLElement | null>(null)
 
 onNuxtReady(async () => {
   if (currentProgram.value) {
@@ -120,18 +116,54 @@ if (currentProgram.value && navigation.isByRouteName(RouteName.CatalogProgramFro
   })
 }
 
+const scrollToRef = (targetRef: HTMLElement | null | undefined) => {
+  if (!targetRef) return
+  if (targetRef) {
+    navigation.isByRouteName(RouteName.CatalogProgramDetail) || navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)
+      ? Scroll.to(targetRef)
+      : Scroll.toWithTopBarOffset(targetRef)
+  }
+}
+const scrollToForm = () => scrollToRef(formRef.value)
+const scrollToActivation = () => scrollToRef(activationRef.value)
+
 useSeoMeta(MetaSeo.get(currentProgram.value?.titre, currentProgram.value?.description))
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
 })
 
-const isProgramAutonomous = computed(() => {
-  return Program.isProgramAutonomous(currentProgram.value)
+const isFormNeeded = computed(() => {
+  if (!currentProgram.value) {
+    return false
+  }
+  if (currentProgram.value['contact question'] === 'formulaire') {
+    return true
+  }
+  for (const objectif of currentProgram.value.objectifs) {
+    if (Array.isArray(objectif.liens)) {
+      for (const lien of objectif.liens) {
+        if (lien.formulaire === true) {
+          return true
+        }
+      }
+    }
+  }
+  return false
 })
 
-const programIsEligible = computed(() => {
-  return currentProgram.value ? ProgramEligibility.isEligible(currentProgram.value as unknown as ProgramType) : false
+const isActivationVisible = computed(() => {
+  if (!isDataFull) {
+    return false
+  }
+  return (
+    currentProgram.value?.eligibility == ProgramEligibilityType.PartiallyEligible ||
+    currentProgram.value?.eligibility == ProgramEligibilityType.Eligible
+  )
+})
+
+const isFormVisible = computed(() => {
+  return isFormNeeded.value && isActivationVisible.value
 })
 
 Analytics.sendDetailPageView('program', currentProgram.value?.titre)
