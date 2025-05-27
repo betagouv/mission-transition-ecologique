@@ -110,7 +110,6 @@ export default class OpportunityFeatures {
     void new OpportunityHubFeatures(this._opportunityHubRepositories)
       .maybeTransmitOpportunity(opportunity, data)
       .then(async (opportunityHubResult) => {
-        console.log(opportunityHubResult)
         if (opportunityHubResult !== false && opportunityHubResult.isOk) {
           const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, opportunityHubResult.value)
           if (opportunityUpdateErr.isJust) {
@@ -123,9 +122,8 @@ export default class OpportunityFeatures {
       })
   }
 
-  private async _updateOpportunitySentToHub(opportunityId: OpportunityId, parnerId: number): Promise<Maybe<Error | null>> {
-    console.log('updating the brevo opportunity with the CE id : ', parnerId)
-    return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: true, id_ce: parnerId })
+  private async _updateOpportunitySentToHub(opportunityId: OpportunityId, ceId: number): Promise<Maybe<Error | null>> {
+    return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: true, ceId })
   }
 
   private _addContactOperatorToOpportunity(opportunity: OpportunityWithContactId): OpportunityWithOperatorContactAndContactId {

@@ -81,8 +81,6 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
 
         return Result.err(new Error('PDE Api Error ' + status))
       }
-      console.log(status)
-      console.log(response.data)
       const solicitationId = response.data?.data?.solicitation_id
       if (typeof solicitationId === 'number') {
         return Result.ok(solicitationId)
