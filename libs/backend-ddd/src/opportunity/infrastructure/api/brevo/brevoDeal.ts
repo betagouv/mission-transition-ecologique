@@ -69,7 +69,6 @@ const requestUpdateDeal = async (dealId: OpportunityId, attributes: DealUpdateAt
   const responseResult = await new BrevoAPI().PatchDeal(dealId.id, {
     attributes: attributes
   })
-
   if (responseResult.isErr) {
     Monitor.error('Error in Brevo PatchDeal api call', { dealID: dealId.id, attributes, error: responseResult.error })
   }
@@ -106,7 +105,8 @@ const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorConta
 
 const convertDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdateAttributes): DealUpdateAttributes => {
   return {
-    envoy: domainUpdateAttributes.sentToOpportunityHub
+    envoy: domainUpdateAttributes.sentToOpportunityHub,
+    idce: domainUpdateAttributes.id_ce.toString()
   }
 }
 
