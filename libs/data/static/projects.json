@@ -2907,6 +2907,40 @@
     ]
   },
   {
+    "id": 434,
+    "slug": "methanisation",
+    "title": "Méthanisation",
+    "nameTag": "⚡️ méthanisation",
+    "shortDescription": "La méthanisation produit du biogaz à partir de déchets et résidus agricoles.",
+    "image": "/images/projet/methanisation.webp",
+    "longDescription": "La méthanisation est un processus biologique qui consiste à décomposer des matières organiques (déchets agricoles, déchets industriels, déchets ménagers, boues d'épuration...) pour produire du biogaz, un gaz renouvelable, ainsi que du digesta**t**, un résidu organique riche en nutriments.\\\nLe biogaz peut-être alors utilisé comme source d'énergie (chaleur, carburant, source d'électricité) et le digestat comme fertilisant pour les sols, à condition d'en éliminer préalablement les bactéries pathogènes.\n\nLa méthanisation permet ainsi de valoriser les déchets organiques en énergie et en engrais, réduisant ainsi les coûts et les impacts liés à leur traitement. Vous pouvez également utiliser le biogaz produit pour répondre aux besoins énergétiques de votre entreprise ou le vendre à des réseaux de distribution (injection dans le réseau de gaz naturel).",
+    "moreDescription": "- [**Méthanisation**](https://infos.ademe.fr/magazine-fevrier-2022/faits-et-chiffres/les-chiffres-cles-de-la-methanisation/), Définition et chiffres clés par l'ADEME.\n- [**L'élu, la méthanisation et le biogaz**](https://amorce.asso.fr/publications/guide-l-elu-la-methanisation-et-le-biogaz-enp78), un guide de l'association AMORCE, pour saisir les enjeux de la production de biogaz.",
+    "themes": [
+      "energy",
+      "waste"
+    ],
+    "mainTheme": "energy",
+    "programs": [
+      "etude-methanisation",
+      "investissement-methanisation",
+      "aide-tpe-transition-na",
+      "certificats-economie-energie"
+    ],
+    "linkedProjects": [
+      4,
+      21
+    ],
+    "priority": "905",
+    "highlightPriority": "6",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "F"
+    ]
+  },
+  {
     "id": 566,
     "slug": "trajet-ferroviaire-train-metro",
     "title": "Déplacements en train",
