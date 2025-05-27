@@ -1,6 +1,6 @@
 import { Operators } from '@tee/data'
 import { Objective } from '@tee/common'
-import { Maybe } from 'true-myth'
+import { Result } from 'true-myth'
 import { AxiosInstance } from 'axios'
 import { Subject, subjectToIdMapping } from '../../../../../src/opportunityHub/infrastructure/api/placedesentreprises/types'
 import OpportunityHubAbstract from '../../../../../src/opportunityHub/infrastructure/api/opportunityHubAbstract'
@@ -33,8 +33,8 @@ export class PlaceDesEntreprisesTest extends OpportunityHubAbstract {
     return true
   }
 
-  public transmitOpportunity = async (): Promise<Maybe<Error>> => {
-    return Maybe.nothing()
+  public transmitOpportunity = async (): Promise<Result<number, Error>> => {
+    return Result.ok(-1)
   }
 
   async reachedDailyContactTransmissionLimit(): Promise<boolean> {

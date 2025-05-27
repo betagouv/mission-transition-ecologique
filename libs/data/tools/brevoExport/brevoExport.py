@@ -9,7 +9,7 @@ import sib_api_v3_sdk
 from sib_api_v3_sdk.rest import ApiException
 
 # parameters
-BREVO_API_KEY_FILE_PATH = "../../../../apps/backend/.env"
+BREVO_API_KEY_FILE_PATH = "../../../../apps/nuxt/.env"
 REFRESH_CONTACTS = True  # True = use brevo API, False = use local file
 REFRESH_DEALS = True  # True = use brevo API, False = use local file
 EXPORT_TO_JSON = True

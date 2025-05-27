@@ -2,7 +2,7 @@ import { Operators } from '@tee/data'
 import { AxiosInstance } from 'axios'
 import { OpportunityHubRepository } from '../../domain/spi'
 import { OpportunityWithContactId } from '../../../opportunity/domain/types'
-import { Maybe } from 'true-myth'
+import { Result } from 'true-myth'
 import { Opportunity } from '@tee/common'
 import { OpportunityAssociatedData } from '../../../opportunity/domain/opportunityAssociatedData'
 
@@ -30,7 +30,7 @@ export default abstract class OpportunityHubAbstract implements OpportunityHubRe
   public abstract transmitOpportunity: (
     opportunity: Opportunity,
     opportunityAssociatedData: OpportunityAssociatedData
-  ) => Promise<Maybe<Error>>
+  ) => Promise<Result<number, Error>>
 
   get operatorNames(): Operators[] | Error {
     return this._operatorNames
