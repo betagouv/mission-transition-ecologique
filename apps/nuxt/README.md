@@ -18,7 +18,7 @@ La documentation des styles est disponible dans le fichier [`./style.md`](./styl
 
 ### Icônes DSFR
 
-La documentation sur l'ajout de nouvelles icônes DSFR est disponible dans le fichier [`./src/assets/scss/dsfr/README.md`](./src/assets/scss/dsfr/README.md).
+La documentation sur l'ajout de nouvelles icônes DSFR est disponible dans le fichier [`./style.md`](./style.md#icônes).
 
 ## Environment variables
 
