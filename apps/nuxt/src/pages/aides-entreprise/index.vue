@@ -14,6 +14,7 @@
 
 <script setup lang="ts">
 import { MiddlewareName } from '@/middleware/type/middlewareName'
+import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 import { useProgramStore } from '@/stores/program'
 import { ProgramManager } from '@/tools/program/programManager'
@@ -28,6 +29,7 @@ definePageMeta({
 
 const programStore = useProgramStore()
 const { programs, hasError } = storeToRefs(useProgramStore())
+const navigation = new Navigation()
 
 const title = 'Les aides à la transition écologique'
 const description =
@@ -43,6 +45,15 @@ onNuxtReady(async () => {
 })
 
 useSeoMeta(MetaSeo.get(title, description))
+
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.CatalogPrograms)
+    }
+  ]
+})
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
@@ -60,5 +71,13 @@ const countPrograms = computed(() => {
   return filteredPrograms.value?.length || 0
 })
 
-useHead(MetaRobots.noIndexOnQueries(useRoute().fullPath))
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.CatalogPrograms)
+    }
+  ],
+  ...MetaRobots.noIndexOnQueries(useRoute().fullPath)
+})
 </script>

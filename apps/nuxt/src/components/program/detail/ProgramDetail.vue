@@ -107,7 +107,7 @@ const links = computed<TeeDsfrBreadcrumbProps['links']>(() => {
   return [...links, { text: currentProgram.value?.titre || '' }]
 })
 
-if (currentProgram.value && navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)) {
+if (currentProgram.value) {
   useHead({
     link: [
       {

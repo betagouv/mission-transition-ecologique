@@ -24,6 +24,7 @@
 </template>
 
 <script setup lang="ts">
+import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/tools/contact'
 import { LegalNoticePropsThirdParty, LegalNotice } from '@incubateur-ademe/legal-pages-vue3'
@@ -36,6 +37,7 @@ definePageMeta({
 
 const privacyPolicy = useRouter().resolve({ name: RouteName.PersonalData }).href
 const siteUrl = useRouter().resolve({ name: RouteName.Homepage }).href
+const navigation = new Navigation()
 
 const thirdParties: LegalNoticePropsThirdParty[] = [
   {
@@ -50,5 +52,13 @@ const thirdParties: LegalNoticePropsThirdParty[] = [
   }
 ]
 
-useHead(MetaRobots.indexFollow())
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.Legal)
+    }
+  ],
+  ...MetaRobots.indexFollow()
+})
 </script>

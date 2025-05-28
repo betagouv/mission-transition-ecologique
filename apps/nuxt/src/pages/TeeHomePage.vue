@@ -24,9 +24,11 @@
 import { defineRouteRules } from '#imports'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { MetaRobots } from '@/tools/metaRobots'
+import Navigation from '@/tools/navigation'
 import { FilterItemKeys, RouteName } from '@/types'
 
 const { filters } = storeToRefs(useFiltersStore())
+const navigation = new Navigation()
 
 definePageMeta({
   path: '/',
@@ -41,5 +43,13 @@ defineRouteRules({
   }
 })
 
-useHead(MetaRobots.indexFollow())
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.Homepage)
+    }
+  ],
+  ...MetaRobots.indexFollow()
+})
 </script>

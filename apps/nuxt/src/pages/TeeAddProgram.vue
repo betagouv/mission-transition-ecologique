@@ -17,6 +17,7 @@
 
 <script setup lang="ts">
 import { MetaRobots } from '@/tools/metaRobots'
+import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 
 definePageMeta({
@@ -24,7 +25,17 @@ definePageMeta({
   name: RouteName.AddProgram
 })
 
-useHead(MetaRobots.noIndexNoFollow())
+const navigation = new Navigation()
+
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.AddProgram)
+    }
+  ],
+  ...MetaRobots.noIndexNoFollow()
+})
 </script>
 <style lang="scss" scoped>
 .tee-baserow-form {

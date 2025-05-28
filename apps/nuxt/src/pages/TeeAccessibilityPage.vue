@@ -130,6 +130,7 @@
 
 <script setup lang="ts">
 import ContactMail from '@/components/contact/ContactMail.vue'
+import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 import Contact from '@/tools/contact'
 import { MetaRobots } from '@/tools/metaRobots'
@@ -139,5 +140,15 @@ definePageMeta({
   name: RouteName.Accessibility
 })
 
-useHead(MetaRobots.indexFollow())
+const navigation = new Navigation()
+
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.Accessibility)
+    }
+  ],
+  ...MetaRobots.indexFollow()
+})
 </script>

@@ -17,6 +17,7 @@
 <script setup lang="ts">
 import TeeFooterCookiesButton from '@/components/TeeFooterCookiesButton.vue'
 import { MetaRobots } from '@/tools/metaRobots'
+import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 import { PrivacyPolicyPropsCookie, PrivacyPolicyPropsThirdParty, PrivacyPolicy } from '@incubateur-ademe/legal-pages-vue3'
 
@@ -24,6 +25,8 @@ definePageMeta({
   path: '/donnees-personnelles',
   name: RouteName.PersonalData
 })
+
+const navigation = new Navigation()
 
 const thirdParties: PrivacyPolicyPropsThirdParty[] = [
   {
@@ -67,5 +70,13 @@ const cookies: PrivacyPolicyPropsCookie[] = [
   }
 ]
 
-useHead(MetaRobots.indexFollow())
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.PersonalData)
+    }
+  ],
+  ...MetaRobots.indexFollow()
+})
 </script>
