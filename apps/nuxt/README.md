@@ -14,7 +14,11 @@
 
 ## CSS - SCSS
 
-La documentation des styles est disponible dans le fichier [`./style.md`](../web/style.md).
+La documentation des styles est disponible dans le fichier [`./style.md`](./style.md).
+
+### Icônes DSFR
+
+La documentation sur l'ajout de nouvelles icônes DSFR est disponible dans le fichier [`./src/assets/scss/dsfr/README.md`](./src/assets/scss/dsfr/README.md).
 
 ## Environment variables
 
@@ -28,56 +32,6 @@ VITE_CONTACT_EMAIL = contact@mission-transition-ecologique.beta.gouv.fr
 # create a posthog account and use the corresponding API key
 POSTHOG_API_KEY = your_key
 ```
-
----
-
-## Legacy projects
-
-- Aides territoires + Mission transition
-  - http://mission-transition.beta.gouv.fr/
-  - http://mission-transition.beta.gouv.fr/integration
-
-## Projet TEE
-
-- https://www.figma.com/file/tHgzORFkJYTVspsQgR2kg6/TEE-V5
-- https://docs.google.com/presentation/d/1zP32OOaRsVEgPTaIXjWUxq3DccR79m4Zv8blfJa-0vQ/edit#slide=id.g22df2b368bb_0_655
-- https://whimsical.com/offres-aux-entreprises-dans-la-tee-2gHnT3nFgRZs32pa7aYmPL
-
-## Aid programs APIs
-
-- API - Liste des aides Entreprises sur AGIR :
-  - https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/recherche?aap%5B0%5D=vous_etes%3AEntreprise
-  - https://ppd-x-ademe-externe-api.de-c1.eu1.cloudhub.io/api/v1/r2da/listeDispositif (needs client secret token)
-- API - Aides-territoires : https://aides-territoires.beta.gouv.fr/api/swagger/
-  - https://github.com/MTES-MCT/aides-territoires/wiki/Comment-publier-vos-donn%C3%A9es-pour-une-reprise-sur-Aides-territoires
-  - https://aides-territoires.beta.gouv.fr/api/swagger/?version=1.4
-- API - Aides 1 jeune 1 solution :
-  - https://mes-aides.1jeune1solution.beta.gouv.fr/api/benefits
-  - https://github.com/betagouv/aides-jeunes/blob/master/contribuer/public/admin/config.yml
-  - https://github.com/betagouv/aides-jeunes/tree/master/data/benefits/javascript
-  - https://contribuer-aides-jeunes.netlify.app/admin/#/
-  - (contribution w/ Netlify CMS) https://github.com/betagouv/aides-jeunes/tree/master/data/benefits/javascript
-
-## Links and references
-
-- Questionnaires
-  - https://diag.bpifrance.fr/
-  - https://clic-agil.climaxion.fr/
-  - https://entreprendre.service-public.fr/vosdroits/N31906
-- Schemas / aid data models
-  - https://schema.data.gouv.fr/etalab/schema-dispositif-aide/0.0.2/documentation.html#propriete-condition-eligibilite
-  - https://github.com/MTES-MCT/aides-territoires/wiki/Format-des-donn%C3%A9es-publi%C3%A9es-sur-Aides-territoires
-  - https://www.insee.fr/fr/information/2406147
-  - https://publi.codes/
-  - cf "open fisca"
-  - cf "mon entreprise"
-- Others
-  - https://www.entreprises.gouv.fr/files/files/secteurs-d-activite/industrie/decarbonation/transition-ecologique-guidedes-aides-pour-les-tpe-pme.pdf
-  - https://www.gouvernement.fr/france-nation-verte
-  - https://conseillers-entreprises.service-public.fr/aide-entreprise/accueil/theme/environnement-transition-ecologique
-  - https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2022/tremplin-transition-ecologique-pme
-
----
 
 ## Data models - (R&D)
 
