@@ -29,6 +29,14 @@
       {
         "message": "Function names must be in camelCase."
       }
+    ],
+    "function-name-case": [
+      "lower",
+      {
+        "ignoreFunctions": [
+          "getIconUrl"
+        ]
+      }
     ]
   }
 }

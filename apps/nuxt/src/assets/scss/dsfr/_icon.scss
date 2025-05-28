@@ -1,0 +1,107 @@
+@use 'sass:map';
+@use 'sass:list';
+@use '../../../../../../node_modules/@gouvfr/dsfr/.config/icon' as dsfr-icons;
+@use '../../../../../../node_modules/@gouvfr/dsfr/src/dsfr/core/style/display/tool/mask-image';
+
+
+
+// Define our custom icons list
+$icons-list: (
+  // Maps icons
+  map-pin-2-line,
+    // System icons
+  arrow-left-line,
+  arrow-right-line,
+  check-line,
+  close-circle-fill,
+  close-line,
+  external-link-fill,
+  checkbox-circle-fill,
+    // Business icons
+  mail-line,
+  briefcase-line,
+    // Editor icons
+  link,
+    // Finance icons
+  money-euro-circle-line,
+    // user icons
+  team-line,
+  account-pin-circle-line,
+  account-circle-fill,
+    // editor icons
+  question-mark
+);
+
+// Create merged icon configuration map
+$custom-icons-config: ();
+
+@each $icon in $icons-list {
+  $icon-config: map.get(dsfr-icons.$icons-config, $icon);
+
+  @if $icon-config {
+    $custom-icons-config: map.merge($custom-icons-config, ($icon: $icon-config));
+  }
+}
+
+@function getIconPseudo($restrain) {
+  @if $restrain == before or $restrain == after {
+    @return $restrain;
+  }
+
+  @return before after;
+}
+
+@mixin pseudo($type:before, $content:null, $display:null) {
+  @if $type != after and $type != before and $type != marker and $type != (before after) {
+    @error '$type must be before or after element';
+  }
+
+  $selector: ();
+
+  @each $pseudo in $type {
+    $selector: list.append($selector, '&::#{$pseudo}', 'comma');
+  }
+
+  #{$selector} {
+    @if $content {
+      content: $content;
+    }
+
+    @if $display {
+      display: #{$display};
+    }
+
+    @content;
+  }
+}
+
+// Helper functions and mixins for icon generation
+@function getIconUrl($icon, $important: false) {
+  $config: map.get($custom-icons-config, $icon);
+  $url: url('../../../../node_modules/@gouvfr/dsfr/dist/#{map.get($config, path)}');
+
+  @return $url if($important, !important, null);
+}
+
+@mixin icon-pseudo($restrain: null) {
+  @include pseudo(getIconPseudo($restrain)) {
+    @content;
+  }
+}
+
+@mixin icon-image($icon, $restrain: null, $important: false) {
+  $url: getIconUrl($icon, $important);
+
+  @include icon-pseudo($restrain) {
+    @include mask-image.mask-image($url);
+  }
+}
+
+// Generate icon classes
+.fr-icon {
+  @each $icon, $setting in $custom-icons-config {
+    &#{-#{$icon}} {
+      @include icon-image($icon);
+    }
+  }
+}
