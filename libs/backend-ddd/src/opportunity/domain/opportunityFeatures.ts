@@ -115,15 +115,15 @@ export default class OpportunityFeatures {
           if (opportunityUpdateErr.isJust) {
             Monitor.warning('Opportunity status not updated after a transmission to a Hub', {
               error: opportunityUpdateErr.value,
-              ce_id: opportunityHubResult.value
+              idCe: opportunityHubResult.value
             })
           }
         }
       })
   }
 
-  private async _updateOpportunitySentToHub(opportunityId: OpportunityId, ceId: number): Promise<Maybe<Error | null>> {
-    return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: true, ceId })
+  private async _updateOpportunitySentToHub(opportunityId: OpportunityId, idCe: number): Promise<Maybe<Error | null>> {
+    return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: true, idCe })
   }
 
   private _addContactOperatorToOpportunity(opportunity: OpportunityWithContactId): OpportunityWithOperatorContactAndContactId {

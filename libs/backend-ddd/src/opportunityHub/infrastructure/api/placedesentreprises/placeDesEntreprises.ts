@@ -77,7 +77,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       })
       const status = response.status
       if (status != 200) {
-        Monitor.error('Error creating an opportunity at CE during CE API Call', { CeReponse: response })
+        Monitor.error('Error creating an opportunity at CE during CE API Call', { CeReponse: response, payload: payload })
 
         return Result.err(new Error('PDE Api Error ' + status))
       }
@@ -85,6 +85,11 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       if (typeof solicitationId === 'number') {
         return Result.ok(solicitationId)
       } else {
+        Monitor.error('Unable to get the Id from CE while transmitting the opportunity using the API', {
+          CeReponse: response,
+          payload: payload
+        })
+
         return Result.err(new Error('Invalid response format: missing solicitation_id'))
       }
     } catch (exception: unknown) {
