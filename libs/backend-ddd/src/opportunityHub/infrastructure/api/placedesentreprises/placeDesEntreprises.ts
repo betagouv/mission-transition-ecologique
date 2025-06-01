@@ -85,7 +85,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       if (typeof solicitationId === 'number') {
         return Result.ok(solicitationId)
       } else {
-        Monitor.error('Unable to get the Id from CE while transmitting the opportunity using the API', {
+        Monitor.warning('Unable to retrieve the Id from CE while transmitting the opportunity using the API', {
           CeReponse: response,
           payload: payload
         })
