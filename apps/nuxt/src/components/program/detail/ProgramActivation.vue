@@ -12,7 +12,7 @@
         <div class="fr-mb-0 fr-ml-0">{{ Translation.t('program.programActivationRegistration') }}</div>
         <DsfrButton
           primary
-          class="fr-mt-2v fr-text--yellow"
+          class="fr-my-1v fr-text--yellow"
           @click="openModal"
         >
           {{ Translation.t('results.eligibilityCheckCTA') }}
@@ -37,7 +37,7 @@
             <TeeButtonExternalLink
               v-if="link.lien"
               :href="link.lien"
-              class="fr-mb-1v fr-mr-md-2v"
+              class="fr-my-1v fr-mr-md-2v"
             >
               {{ link.texte }}
             </TeeButtonExternalLink>

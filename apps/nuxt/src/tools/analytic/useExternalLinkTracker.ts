@@ -13,13 +13,15 @@ export function useExternalLinkTracker(type: 'program' | 'project') {
       const target = event.target as HTMLElement
       const link = target.closest('a') as HTMLAnchorElement | null
 
-      if (link && trackedContainer.contains(link) && link.href.startsWith('http') && !link.href.includes(window.location.hostname)) {
-        Analytics.sendEvent(eventName, {
-          type: type,
-          link: link.href,
-          url: window.location.href,
-          company: CompanyData.toString()
-        })
+      if (link && trackedContainer.contains(link)) {
+        if ((link.href.startsWith('http') && !link.href.includes(window.location.hostname)) || link.href.startsWith('mailto')) {
+          Analytics.sendEvent(eventName, {
+            type: type,
+            link: link.href,
+            url: window.location.href,
+            company: CompanyData.toString()
+          })
+        }
       }
     }
   }

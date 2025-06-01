@@ -27,6 +27,7 @@
       :href="formattedContactHref"
       variant="large-question"
       class="fr-ml-3v"
+      @click="trackAnalytics"
     >
       {{ Translation.t('program.CtaContact') }}
     </TeeButtonExternalLink>
@@ -54,4 +55,12 @@ const formattedContactHref = computed(() => {
   const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact)
   return isEmail ? `mailto:${contact}` : contact
 })
+
+const trackAnalytics = () => {
+  Analytics.sendEvent('program_external_question_contact', {
+    link: formattedContactHref.value,
+    url: window.location.href,
+    company: CompanyData.toString()
+  })
+}
 </script>
