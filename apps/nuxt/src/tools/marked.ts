@@ -21,7 +21,7 @@ export class Marked {
           }
           // const localLink = token.href.startsWith(`${location.protocol}//${location.hostname}`) // disable because of SSR and not url with mission-transition-ecologique
           const localLink = false
-          const target = localLink ? '' : ' target="_blank" rel="noreferrer noopener nofollow"'
+          const target = localLink ? '' : ' target="_blank" rel="noopener external"'
           return `<a href="${token.href}"${target}>${text}</a>`
         }
       }
