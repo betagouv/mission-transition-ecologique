@@ -34,7 +34,7 @@
       </div>
       <ProgramTiles />
       <ProgramEligibilityConditions :program="currentProgram" />
-      <div ref="activationRef">
+      <div ref="activation-ref">
         <ProgramActivation
           v-if="isActivationVisible"
           :program="currentProgram"
@@ -44,8 +44,13 @@
       </div>
       <ProgramProjects :program="currentProgram" />
       <ProgramLongDescription :program="currentProgram" />
-      <div ref="formRef">
-        <ProgramForm v-if="isFormVisible && isActivationVisible" />
+      <div ref="form-ref">
+        <ClientOnly>
+          <ProgramForm
+            v-if="isFormVisible && isActivationVisible"
+            :form-container-ref="formRef"
+          />
+        </ClientOnly>
       </div>
     </article>
   </Layout>
@@ -75,8 +80,8 @@ const { query } = storeToRefs(useNavigationStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const navigation = new Navigation()
-const formRef = ref<HTMLElement | null>(null)
-const activationRef = ref<HTMLElement | null>(null)
+const formRef = useTemplateRef<HTMLElement>('form-ref')
+const activationRef = useTemplateRef<HTMLElement>('activation-ref')
 
 onNuxtReady(async () => {
   if (currentProgram.value) {

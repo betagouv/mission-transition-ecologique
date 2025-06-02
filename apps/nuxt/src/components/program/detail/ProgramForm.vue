@@ -1,6 +1,10 @@
 <template>
-  <div class="fr-bg--blue--lightness fr-grid-row fr-p-2w">
+  <div
+    v-if="currentProgram"
+    class="fr-bg--blue--lightness fr-grid-row fr-p-2w"
+  >
     <TeeForm
+      v-if="form"
       :data-id="currentProgram.id"
       :show-c-e-logo="!isProgramAutonomous"
       :phone-callback="phoneCallback"
@@ -8,6 +12,7 @@
       :form-type="OpportunityType.Program"
       :error-email-subject="errorEmailSubject"
       :hint="hint"
+      :form-container-ref="formContainerRef"
     />
   </div>
 </template>
@@ -21,13 +26,24 @@ import Program from '@/tools/program/program'
 import Translation from '@/tools/translation'
 import { OpportunityType } from '@/types'
 
+interface Props {
+  formContainerRef: HTMLElement | null | undefined
+}
+defineProps<Props>()
+
 const { currentProgram } = storeToRefs(useProgramStore())
 
 const isProgramAutonomous = computed(() => {
   return Program.isProgramAutonomous(currentProgram.value)
 })
 
-const form = computed(() => Opportunity.getProgramFormFields(currentProgram.value))
+const form = computed(() => {
+  if (!currentProgram.value) {
+    return undefined
+  }
+
+  return Opportunity.getProgramFormFields(currentProgram.value)
+})
 
 const phoneCallback = computed(() =>
   isProgramAutonomous.value
