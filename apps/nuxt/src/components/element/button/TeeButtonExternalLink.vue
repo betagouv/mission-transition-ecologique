@@ -2,6 +2,7 @@
   <a
     :href="props.href"
     :class="computedClass"
+    class="fr-btn fr-btn--secondary fr-btn--icon-left"
     target="_blank"
   >
     <slot />
@@ -19,13 +20,14 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const computedClass = computed(() => {
-  if (props.variant === 'small-purple') {
-    return 'fr-btn fr-btn--secondary fr-btn--icon-left fr-icon-external-link-fill small-purple'
+  switch (props.variant) {
+    case 'small-purple':
+      return 'fr-icon-external-link-fill small-purple'
+    case 'large-question':
+      return 'fr-icon-chat-3-line fr-btn--lg'
+    default:
+      return ''
   }
-  if (props.variant === 'large-question') {
-    return 'fr-btn fr-btn--secondary fr-btn--icon-left fr-icon-chat-3-line fr-btn--lg'
-  }
-  return ''
 })
 </script>
 

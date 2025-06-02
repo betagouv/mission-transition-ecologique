@@ -72,7 +72,7 @@ import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 import Analytics from '@/tools/analytic/analytics'
 import { Scroll } from '@/tools/scroll'
 import { useCompanyDataStore } from '@/stores/companyData'
-import { ProgramEligibilityType } from '@/types'
+import { ProgramEligibility } from '@/types'
 
 const { currentProgram } = storeToRefs(useProgramStore())
 const { currentProject } = storeToRefs(useProjectStore())
@@ -145,26 +145,14 @@ const isFormNeeded = computed(() => {
   if (currentProgram.value['contact question'] === 'formulaire') {
     return true
   }
-  for (const objectif of currentProgram.value.objectifs) {
-    if (Array.isArray(objectif.liens)) {
-      for (const lien of objectif.liens) {
-        if (lien.formulaire === true) {
-          return true
-        }
-      }
-    }
-  }
-  return false
+  return Program.hasFormInObjectives(currentProgram.value)
 })
 
 const isActivationVisible = computed(() => {
-  if (!isDataFull) {
+  if (!isDataFull.value || !currentProgram.value) {
     return false
   }
-  return (
-    currentProgram.value?.eligibility == ProgramEligibilityType.PartiallyEligible ||
-    currentProgram.value?.eligibility == ProgramEligibilityType.Eligible
-  )
+  return ProgramEligibility.isEligible(currentProgram.value)
 })
 
 const isFormVisible = computed(() => {

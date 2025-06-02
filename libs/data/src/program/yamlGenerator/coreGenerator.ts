@@ -12,6 +12,7 @@ import { setObjectives } from './objectiveGenerator'
 import { setEligibility } from './eligibilityGenerator'
 import { ConditionalDataGenerator } from './conditionalDataGenerator'
 import { LinkValidator } from '../../common/validators/linkValidator'
+import { z } from 'zod'
 
 export class CoreGenerator {
   valid = true
@@ -87,23 +88,28 @@ export class CoreGenerator {
   private async _setContactQuestion() {
     const rawData = this.program['Contact Question']
 
-    const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(rawData)
+    const isEmail = z.string().email().safeParse(rawData).success
     const isForm = rawData === '#formulaire#'
-    const isUrl = typeof rawData === 'string' && rawData.startsWith('http')
+    const isUrl = z.string().url().safeParse(rawData).success
     if (isForm) {
       this.yamlContent['contact question'] = 'formulaire'
       return
     }
-    if (isUrl && !(await LinkValidator.isValidLink(rawData))) {
-      this.logger.log(
-        LogLevel.Major,
-        `Lien invalidelors de la vérification automatique dans le champ "Contact Question". A vérifier manuellement avant mise en prod.`,
-        this.program['Id fiche dispositif'],
-        this.program.id
-      )
+    if (isUrl) {
+      if (await LinkValidator.isValidLink(rawData)) {
+        this.yamlContent['contact question'] = LinkValidator.forceHttps(rawData)
+      } else {
+        this.logger.log(
+          LogLevel.Major,
+          `Lien invalidelors de la vérification automatique dans le champ "Contact Question". A vérifier manuellement avant mise en prod.`,
+          this.program['Id fiche dispositif'],
+          this.program.id
+        )
+      }
+      return
     }
-    if (isEmail || isUrl) {
-      this.yamlContent['contact question'] = rawData
+    if (isEmail) {
+      this.yamlContent['contact question'] = 'mailto:' + rawData
       return
     }
     this.logger.log(

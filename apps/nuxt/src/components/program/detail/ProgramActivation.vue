@@ -46,10 +46,10 @@
               secondary
               icon="fr-icon-mail-line"
               size="md"
-              class="fr-mb-1v fr-mr-md-2v overwrite-button-style"
+              class="fr-my-1v fr-mr-md-2v overwrite-button-style"
               :on-click="() => scrollToForm()"
             >
-              {{ Translation.t('program.CtaForm') }}
+              {{ Translation.t('program.ctaForm') }}
             </DsfrButton>
           </template>
         </div>
