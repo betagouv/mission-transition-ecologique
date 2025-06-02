@@ -1,4 +1,4 @@
-# Non technical explaination of the end-to-end tests
+# Non technical explanation of the end-to-end tests
 
 [functional-tests-documentation.md](functional-tests-documentation.md)
 
