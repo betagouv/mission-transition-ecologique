@@ -22,14 +22,25 @@
 
 <script setup lang="ts">
 import { MetaRobots } from '@/tools/metaRobots'
+import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
+
+const navigation = new Navigation()
 
 definePageMeta({
   path: '/stats',
   name: RouteName.Statistics
 })
 
-useHead(MetaRobots.indexFollow())
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.Statistics)
+    }
+  ],
+  ...MetaRobots.indexFollow()
+})
 </script>
 
 <style scoped>
