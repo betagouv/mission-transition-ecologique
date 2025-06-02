@@ -1363,9 +1363,10 @@
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "La Poste",
     "autres opérateurs": [
-      "CCI",
-      "CMA"
+      "Chambre de Commerce et de l'Industrie",
+      "Chambre des Métiers et de l'Artisanat"
     ],
+    "contact question": "formulaire",
     "url": "https://www.baisseleswatts.fr/?mtm_campaign=missiontransitionecologique&mtm_source=missiontransitionecologique&mtm_medium=missiontransitionecologique&mtm_content=missiontransitionecologique",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
@@ -1399,7 +1400,7 @@
     ],
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
-        "TPE et PME",
+        "Moins de 250 salariés",
         "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
@@ -1415,6 +1416,7 @@
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
       "entreprise . secteur d'activité": {
         "avec": {
           "est industrie": null,
@@ -11788,18 +11790,17 @@
     "description": "Suivez une formation en ligne pour initier la transition écologique de votre entreprise. Vous découvrirez les principales transformations de la société, de l'économie, des territoires et les enjeux de la transition écologique pour les entreprises. Puis en seconde partie, vous serez invité à identifier les risques et les opportunités pour votre entreprise ainsi que les premiers leviers d’action pour se mettre en mouvement.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
+    "contact question": "https://formations.ademe.fr/contactez-nous.html",
     "url": "https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_engager-son-entreprise-dans-la-transition-ecologique_s5227.html",
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "2h15",
-    "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Prenez connaissance du programme de la formation",
+        "description": "Ajout d'un formulaire pour test.",
         "liens": [
           {
-            "lien": "https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_engager-son-entreprise-dans-la-transition-ecologique_s5227.html",
-            "texte": "consulter le programme"
+            "formulaire": true
           }
         ]
       },
@@ -11912,7 +11913,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,

@@ -1,8 +1,13 @@
 import { DataProgram, Publicodes } from '../types/domain'
 import { ThemeId } from '../../theme/types/shared'
+import { Logger } from '../../common/logger/logger'
+import { LogLevel } from '../../common/logger/types'
 
 export class PublicodesGenerator {
-  constructor(private _program: DataProgram) {}
+  constructor(
+    private _program: DataProgram,
+    private _logger: Logger
+  ) {}
 
   public generatePublicodes(): { [key: string]: unknown } {
     const publicodes: { [key: string]: unknown } = {}
@@ -134,6 +139,7 @@ export class PublicodesGenerator {
     }
 
     if (!programThemes) {
+      this._logger.log(LogLevel.Major, `Dispositif sans thème`, this._program['Id fiche dispositif'], this._program.id)
       return null
     }
     return {

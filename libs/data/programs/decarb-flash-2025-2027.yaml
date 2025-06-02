@@ -1,0 +1,130 @@
+titre: Decarb Flash 2025-2027
+promesse: Financez la décarbonation de votre industrie
+description: >-
+  Cet appel à projet finance les initiatives devant doivent conduire à une
+  décarbonation des activités industrielles, principalement par en baissant la
+  consommation de combustibles, que ce soit au niveau des procédés industriels,
+  des équipements produisant des utilités industrielles ou de l’isolation des
+  bâtiments industriels.
+description longue: >-
+  Les projets éligibles sont les suivants : 
+
+  - Récupération de chaleur fatale industrielle (sans PAC en réhausse de
+  température)
+
+  - Récupération de chaleur fatale industrielle avec PAC en réhausse de
+  température
+
+  - Installation de purgeurs vapeur sur les circuits vapeur
+
+  - Installation de lignes de retours condensats sur les circuits vapeur
+
+  - Installation de lignes de retours sur les circuits des NEP
+
+  - Isolation thermique des équipements
+
+  - Isolation thermique des tuyauteries et réseaux de fluides caloporteur ou
+  frigoporteur
+
+  - Système de mise sous vide permettant de réduire la consommation d'énergie
+
+  - Ajout de thermocompression sur l'évaporation
+
+  - Ajout d'effets supplémentaires sur les évaporateurs
+
+  - Ajout d'une préconcentration par séparation membranaire ou ultrafiltration
+  ou osmose inverse
+
+  - Fours industriels électriques
+
+  - Chaudière industrielle électrique
+
+  - Systèmes de chauffage électrique de fluides (hors chaudière)
+
+  - Systèmes de séchage électrique de pâtes ou solides
+
+  - Systèmes de distillation électrique (y compris raffinage)
+
+  - Isolation de combles perdus
+
+  - Isolation des rampants de toiture et plafonds de combles
+
+  - Isolation des toitures-terrasses
+
+  - Isolation des murs par l'intérieur
+
+  - Isolation des murs par l'extérieur
+
+  - Isolation des planchers
+
+  - Solaire photovoltaïque en autoconsommation en Corse et en Outre-mer
+
+  - Solaire photovoltaïque autonome pour les activités économiques non
+  raccordées au réseau électrique en Corse et en Outre-mer
+début de validité: 10/04/2025
+fin de validité: 15/02/2027
+illustration: images/TEE_energie_verte.png
+opérateur de contact: ADEME
+contact question: mailto:decarb.flash@ademe.fr
+url: https://agir.ademe.fr/aides-financieres/aap/decarb-flash-2025-2027
+nature de l'aide: financement
+montant du financement: Selon la nature du projet
+objectifs:
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME.
+    liens:
+      - lien: >-
+          https://agir.ademe.fr/sites/default/files/DECARB-FLASH%202025-2027%20-%20Cahier%20des%20charges%20-%202025.docx
+        texte: Vérifier mon éligibilité
+  - description: >-
+      Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au
+      moins un mois avant la date limite de dépôt).
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre demande d'aide : informations administratives, description
+      du projet, détails techniques et financiers, étude de faisabilité, etc. À
+      ce stade, votre investissement ne doit pas avoir été réalisé !
+    liens:
+      - lien: >-
+          https://vosaides.ademe.fr/create-assistant?id_dispo=1f01161b-d6c8-6366-a6cb-ddb404a597e2&id_liste=1f011770-421d-6378-bd74-5f319a8cd4cd&dossier_aide_type=INVES
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est M
+  entreprise . a un objectif ciblé:
+    une de ces conditions: []
