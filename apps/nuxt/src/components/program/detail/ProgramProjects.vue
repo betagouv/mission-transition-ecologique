@@ -7,9 +7,9 @@
   >
     <ul class="fr-grid-row fr-grid-row--center fr-grid-row-md--left fr-raw-list">
       <li
-        v-for="(linkedProject, index) in linkedProjects"
+        v-for="linkedProject in linkedProjects"
         :key="linkedProject.id"
-        :class="index === 0 ? `fr-mr-2v` : index === linkedProjects.length - 1 ? `fr-ml-2v` : `fr-mx-2v`"
+        class="fr-mr-4v"
       >
         <TeeProjectButton
           :project="linkedProject"

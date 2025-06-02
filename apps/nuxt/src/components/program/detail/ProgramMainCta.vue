@@ -7,7 +7,7 @@
     <DsfrButton
       size="lg"
       icon="fr-icon-mail-line"
-      class="fr-ml-3v fr-mb-3v"
+      class="fr-mb-3v"
       :on-click="() => scrollToActivation()"
     >
       {{ Translation.t('program.ctaActivation') }}
