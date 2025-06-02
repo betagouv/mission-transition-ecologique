@@ -1,8 +1,8 @@
 [
   {
     "titre": "Accélérateur décarbonation",
-    "promesse": "Définissez une stratégie bas carbone robuste",
-    "description": "Profitez d’un accompagnement pour structurer une trajectoire de décarbonation ambitieuse, en lien avec vos enjeux de développement. Pendant 24 mois, vous bénéficiez :\n\n- de 8 séminaires thématiques animés avec Mines ParisTech\n\n- de 29 jours de conseil personnalisé par Bpifrance\n\n- une communauté de dirigeants engagés et à un réseau de 3 000 entreprises accélérées.",
+    "promesse": "Définissez une stratégie bas carbone",
+    "description": "Profitez d’un accompagnement pour structurer une trajectoire de décarbonation ambitieuse, en lien avec vos enjeux de développement. Pendant 24 mois, vous bénéficiez :\n\n- de 8 séminaires thématiques animés avec Mines ParisTech\n\n- de 29 jours de conseil personnalisé par Bpifrance\n\n- une communauté de dirigeants engagés et à un réseau de 3 000 entreprises.",
     "début de validité": "06/02/2023",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
@@ -3120,7 +3120,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Avant de démarrer la formation, testez vos connaissances avec 5 questions sur le changement climatique, ses enjeux et les moyens d’agir",
+        "description": "Avant de démarrer la formation, testez vos connaissances avec 5 questions sur le changement climatique, ses enjeux et les moyens d’agir.",
         "liens": [
           {
             "lien": "https://climat.cned.fr/le-saviez-vous/",
@@ -3129,7 +3129,7 @@
         ]
       },
       {
-        "description": "Accédez à la formation gratuite, en ligne, à réaliser en toute autonomie (durée totale estimée : 7h)",
+        "description": "Accédez à la formation gratuite, en ligne, à réaliser en toute autonomie (durée totale estimée : 7h).",
         "liens": [
           {
             "lien": "https://climat.cned.fr/formations/",
@@ -3492,6 +3492,201 @@
       }
     },
     "id": "baisse-les-watts"
+  },
+  {
+    "titre": "BCIAT 2025 - Biomasse chaleur pour l'industrie, l'agriculture et le tertiaire",
+    "promesse": "Financez votre chaudière ou un générateur à air chaud et à partir de biomasse",
+    "description": "Cet appel à projet finance les projets de production de chaleur supérieurs à 12 GWh/an via une chaudière ou un générateur à air chaud et à partir de biomasse (plaquettes forestières, sous-produits de l’industrie de première transformation du bois, bois fin de vie et bois déchets, granulés, sous-produits industriels, sous-produits agricoles).",
+    "description longue": "Dans le contexte actuel d’optimisation de la ressource biomasse et en cohérence avec les objectifs du projet de la Stratégie française pour l’Énergie et le Climat, l’ADEME accordera une attention particulière à ce que le candidat fasse la démonstration d’une approche énergétique respectant la hiérarchie suivante :\n\nsobriété ;\nefficacité énergétique ;\nvalorisation de chaleur fatale ;\nétude des solutions bas carbone alternatives.\n\nPour les études de solutions, la solution biomasse sera priorisée pour les projets pour lesquels aucune alternative bas carbone n’est envisageable dans des conditions technico-économiques acceptables. Le candidat fournira ainsi une étude d'opportunité mix énergétique bas carbone type PACTE Industrie (« étude d’opportunité d’évolution du mix énergétique d’un site industriel »).",
+    "début de validité": "22/04/2025",
+    "fin de validité": "16/10/2025",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "ADEME",
+    "contact question": "boisenergie@ademe.fr",
+    "url": "https://agir.ademe.fr/aides-financieres/aap/bciat-2025-biomasse-chaleur-pour-lindustrie-lagriculture-et-le-tertiaire",
+    "nature de l'aide": "financement",
+    "montant du financement": "Selon la nature du projet",
+    "objectifs": [
+      {
+        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/aides-financieres/aap/bciat-2025-biomasse-chaleur-pour-lindustrie-lagriculture-et-le-tertiaire#eligibility",
+            "texte": "Vérifier mon éligibilité"
+          }
+        ]
+      },
+      {
+        "description": "Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au moins un mois avant la date limite de dépôt)."
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, étude de faisabilité, etc. À ce stade, votre investissement ne doit pas avoir été réalisé !",
+        "liens": [
+          {
+            "lien": "https://vosaides.ademe.fr/create-assistant?id_dispo=1ef2e56b-bc2a-6bec-9fb1-a934ba616ec6&id_liste=1ef2e56b-bc2c-6618-a560-a934ba616ec6&dossier_aide_type=INVES",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez vos investissements."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises d'industries manufacturières"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "a une categorie legale eligible"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      }
+    },
+    "id": "bciat-biomasse-chaleur-industrie-agriculture-tertiaire"
   },
   {
     "titre": "Bilan Carbone®",
@@ -7829,6 +8024,192 @@
     "id": "credit-impot-recherche"
   },
   {
+    "titre": "Decarb Flash 2025-2027",
+    "promesse": "Financez la décarbonation de votre industrie",
+    "description": "Cet appel à projet finance les initiatives devant doivent conduire à une décarbonation des activités industrielles, principalement par en baissant la consommation de combustibles, que ce soit au niveau des procédés industriels, des équipements produisant des utilités industrielles ou de l’isolation des bâtiments industriels.",
+    "description longue": "Les projets éligibles sont les suivants : \n- Récupération de chaleur fatale industrielle (sans PAC en réhausse de température)\n- Récupération de chaleur fatale industrielle avec PAC en réhausse de température\n- Installation de purgeurs vapeur sur les circuits vapeur\n- Installation de lignes de retours condensats sur les circuits vapeur\n- Installation de lignes de retours sur les circuits des NEP\n- Isolation thermique des équipements\n- Isolation thermique des tuyauteries et réseaux de fluides caloporteur ou frigoporteur\n- Système de mise sous vide permettant de réduire la consommation d'énergie\n- Ajout de thermocompression sur l'évaporation\n- Ajout d'effets supplémentaires sur les évaporateurs\n- Ajout d'une préconcentration par séparation membranaire ou ultrafiltration ou osmose inverse\n- Fours industriels électriques\n- Chaudière industrielle électrique\n- Systèmes de chauffage électrique de fluides (hors chaudière)\n- Systèmes de séchage électrique de pâtes ou solides\n- Systèmes de distillation électrique (y compris raffinage)\n- Isolation de combles perdus\n- Isolation des rampants de toiture et plafonds de combles\n- Isolation des toitures-terrasses\n- Isolation des murs par l'intérieur\n- Isolation des murs par l'extérieur\n- Isolation des planchers\n- Solaire photovoltaïque en autoconsommation en Corse et en Outre-mer\n- Solaire photovoltaïque autonome pour les activités économiques non raccordées au réseau électrique en Corse et en Outre-mer",
+    "début de validité": "10/04/2025",
+    "fin de validité": "15/02/2027",
+    "illustration": "images/TEE_energie_verte.png",
+    "opérateur de contact": "ADEME",
+    "contact question": "decarb.flash@ademe.fr",
+    "url": "https://agir.ademe.fr/aides-financieres/aap/decarb-flash-2025-2027",
+    "nature de l'aide": "financement",
+    "montant du financement": "Selon la nature du projet",
+    "objectifs": [
+      {
+        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/sites/default/files/DECARB-FLASH%202025-2027%20-%20Cahier%20des%20charges%20-%202025.docx",
+            "texte": "Vérifier mon éligibilité"
+          }
+        ]
+      },
+      {
+        "description": "Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au moins un mois avant la date limite de dépôt)."
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, étude de faisabilité, etc. À ce stade, votre investissement ne doit pas avoir été réalisé !",
+        "liens": [
+          {
+            "lien": "https://vosaides.ademe.fr/create-assistant?id_dispo=1f01161b-d6c8-6366-a6cb-ddb404a597e2&id_liste=1f011770-421d-6378-bd74-5f319a8cd4cd&dossier_aide_type=INVES",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez vos investissements."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est M"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": []
+      }
+    },
+    "id": "decarb-flash-2025-2027"
+  },
+  {
     "titre": "Décarbonation de l'industrie",
     "promesse": "Financez la décarbonation de votre industrie",
     "description": "Vous êtes un site industriel ? L'ADEME vous accompagne pour réduire vos émissions de gaz à effet de serre. Bénéficiez d’un soutien pour optimiser votre efficacité énergétique, changer vos sources d’énergie ou matières premières, et capturer le carbone. Contribuez ainsi à atteindre vos objectifs environnementaux tout en respectant les normes climatiques.",
@@ -11409,7 +11790,7 @@
         "liens": [
           {
             "lien": "https://engagespourlanature.ofb.fr/sites/default/files/2021-12/EEN_Les%20_10_principes_communs_%C3%A0_signer.pdf",
-            "texte": "Signer la charte"
+            "texte": "Télécharger la charte"
           }
         ]
       },

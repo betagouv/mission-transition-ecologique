@@ -2,8 +2,9 @@ import { LogLevel } from '../../common/logger/types'
 import { DataProgram } from '../types/domain'
 import { CoreGenerator } from './coreGenerator'
 import { ProgramEligibility } from '../programEligibility'
+import { LinkValidator } from '../../common/validators/linkValidator'
 
-export function setEligibility(generator: CoreGenerator) {
+export async function setEligibility(generator: CoreGenerator) {
   const eligibility_conditions: { [key: string]: string[] } = {
     "taille de l'entreprise": [setEligibilitySize(generator.program), setMicroEntrepreneur(generator.program)],
     'secteur géographique': setEligibilityGeography(generator),
@@ -11,7 +12,7 @@ export function setEligibility(generator: CoreGenerator) {
     "nombre d'années d'activité": setEligibilityYears(generator.program)
   }
   if (generator.program['Eligibilité Spécifique']) {
-    const otherEligibilities = setOtherEligibilityCriteria(generator)
+    const otherEligibilities = await setOtherEligibilityCriteria(generator)
     if (otherEligibilities.length) {
       eligibility_conditions["autres critères d'éligibilité"] = otherEligibilities
     }
@@ -19,7 +20,17 @@ export function setEligibility(generator: CoreGenerator) {
   generator.yamlContent["conditions d'éligibilité"] = eligibility_conditions
 }
 
-function setOtherEligibilityCriteria(generator: CoreGenerator): string[] {
+async function setOtherEligibilityCriteria(generator: CoreGenerator): Promise<string[]> {
+  const invalidLinks = await LinkValidator.findAndValidateLinks(generator.program['Eligibilité Spécifique'])
+  for (const link of invalidLinks) {
+    generator.logger.log(
+      LogLevel.Minor,
+      `Lien invalide détecté dans le champ "éligibilité spécifique" : ${link}`,
+      generator.program['Id fiche dispositif'],
+      generator.program.id
+    )
+  }
+
   const criteriaList = generator.program['Eligibilité Spécifique'].split('\n').map((criteria) => criteria.trim())
   if (criteriaList.filter((criteria) => !criteria.startsWith('- ')).length) {
     generator.logger.log(

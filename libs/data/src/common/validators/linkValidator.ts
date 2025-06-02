@@ -4,6 +4,19 @@ import { chromium } from 'playwright'
 import { RequestInit as NodeFetchRequestInit } from 'node-fetch'
 
 export class LinkValidator {
+  public static async findAndValidateLinks(inputText: string): string[] {
+    const urlRegex = /(https?:\/\/[^\s]+)/g
+    const foundLinks = inputText.match(urlRegex) || []
+    const invalidLinks = []
+    for (const link of foundLinks) {
+      const isValid = await LinkValidator.isValidLink(link)
+      if (!isValid) {
+        invalidLinks.push(link)
+      }
+    }
+    return invalidLinks
+  }
+
   static fetch = (url: URL, init?: NodeFetchRequestInit) => import('node-fetch').then(({ default: fetch }) => fetch(url, init))
   public static async isValidLink(link: string) {
     let result = await this._fetchValidation(link)
