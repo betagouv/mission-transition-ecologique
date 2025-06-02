@@ -46,15 +46,6 @@ onNuxtReady(async () => {
 
 useSeoMeta(MetaSeo.get(title, description))
 
-useHead({
-  link: [
-    {
-      rel: 'canonical',
-      href: navigation.getHrefByRouteName(RouteName.CatalogPrograms)
-    }
-  ]
-})
-
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
 })
