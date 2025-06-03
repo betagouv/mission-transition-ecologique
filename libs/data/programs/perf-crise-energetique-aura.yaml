@@ -19,20 +19,24 @@ nature de l'aide: financement
 montant du financement: Jusqu'à 20% des dépenses éligibles
 objectifs:
   - description: >-
-      Contacter la direction du tourisme de la région afin de vérifier
-      l'éligibilité de votre projet. Pour cela, complétez la "fiche premier
-      contact" et transmettez-la par mail à :
-      crise-energie-tourisme@auvergnerhonealpes.fr
+      Complétez la "fiche premier contact" pour décrire votre projet de
+      rénovation. 
     liens:
       - lien: https://www.auvergnerhonealpes.fr/media/3039/download?inline
         texte: Fiche premier contact
+  - description: >-
+      Transmettez cette fiche complétée par mail à la direction du tourisme de
+      la région afin de vérifier l'éligibilité de votre projet. 
+    liens:
+      - lien: mailto:crise-energie-tourisme@auvergnerhonealpes.fr
+        texte: Contacter par mail
   - description: >-
       Si vous êtes éligible, un dossier de demande de subvention à compléter
       vous sera transmis. Il sera à déposer auprès de la direction du tourisme.
   - description: "Votre demande est instruite. Si elle\_est recevable, elle est proposée au vote des élus régionaux en Commission Permanente."
   - description: >-
       Si votre candidature est sélectionnée, signez l'acte attributif et
-      transmettez -le à la direction du tourisme.
+      transmettez-le à la direction du tourisme.
   - description: >-
       Déposez votre demande de paiement, qui sera instruite et recevez votre
       aide.

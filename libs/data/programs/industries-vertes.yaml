@@ -50,7 +50,10 @@ objectifs:
         texte: Informations et pièces à joindre à votre demande
   - description: >-
       Adressez votre demande par mail à la Direction générale des Finances
-      publiques : c3iv@dgfip.finances.gouv.fr
+      publiques.
+    liens:
+      - lien: mailto:c3iv@dgfip.finances.gouv.fr
+        texte: Contacter par mail
   - description: >-
       Les dossiers sont examinés par la Direction générale des Entreprises
       (DGE), la Direction générale des Finances publiques (DGFIP) et l'ADEME.

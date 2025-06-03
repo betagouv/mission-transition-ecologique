@@ -36,8 +36,8 @@ objectifs:
       Finalisez votre fiche "plan d'action" et transmettez-la par mail à l’ARBE
       dans les 3 mois suivants la signature de la charte.
     liens:
-      - lien: https://c.poulin@arbe-regionsud.org
-        texte: c.poulin@arbe-regionsud.org
+      - lien: mailto:c.poulin@arbe-regionsud.org
+        texte: Contacter par mail
   - description: L'ARBE se charge ensuite d'analyser votre candidature.
   - description: >-
       Deux ans après la signature de la Charte, évaluez les résultats de votre

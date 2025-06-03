@@ -34,9 +34,11 @@ objectifs:
           https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1
         texte: Conditions et critères d'éligibilité
   - description: >-
-      Prenez contact avec la Direction du Tourisme par mail à l'adresse
-      tourisme@nouvelle-aquitaine.fr. Présentez votre projet et laissez vos
-      coordonnées.
+      Prenez contact avec la Direction du Tourisme par mail pour présenter votre
+      projet.
+    liens:
+      - lien: mailto:tourisme@nouvelle-aquitaine.fr
+        texte: Contacter par mail
   - description: "La Direction du Tourisme vous recontacte et vérifie avec vous l’éligibilité\_de votre projet, avant tout dépôt de demande de subvention."
   - description: >-
       Si votre projet est éligible, déposez votre demande de subvention. Votre

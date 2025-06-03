@@ -50,6 +50,9 @@ objectifs:
   - description: >-
       Prenez contact avec la Direction du Tourisme par mail. Présentez votre
       projet et laissez vos coordonnées.
+    liens:
+      - lien: mailto:tourisme@nouvelle-aquitaine.fr
+        texte: Contacter par mail
   - description: "La Direction du Tourisme vous recontacte et vérifie avec vous l’éligibilité\_de votre projet, avant tout dépôt de demande de subvention."
   - description: >-
       Si votre projet est éligible, déposez votre demande de subvention. Votre

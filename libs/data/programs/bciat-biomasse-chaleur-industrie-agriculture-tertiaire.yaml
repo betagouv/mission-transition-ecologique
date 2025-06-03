@@ -75,6 +75,13 @@ conditions d'éligibilité:
     - Entreprises d'industries manufacturières
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - "Sont également éligibles\_:"
+    - "les projets de mise en place d’une unité de pyrolyse ou de pyrogazéification auto-consommant du charbon de bois et/ou du gaz de synthèse : ces projets devront démontrer la nécessité du recours à la pyrolyse/pyrogazéification, apporter des garanties quant à leur maturité technique (TRL 9 exigé) et présenter un CAPEX minimum de 3\_M€\_;"
+    - >-
+      les projets de mise en place d'une unité de méthanisation, dont la
+      production thermique est supérieure à 8 GWh/an et auto consommant le
+      biogaz produit.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

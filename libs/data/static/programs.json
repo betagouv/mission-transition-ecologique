@@ -1928,7 +1928,7 @@
     "montant du financement": "Jusqu'à 30 % du coût de l'investissement",
     "objectifs": [
       {
-        "description": "Contacter la direction du tourisme de la région afin de vérifier l'éligibilité de votre projet. Pour cela, complétez la \"fiche premier contact\" et transmettez-la par mail à : pda.hebergement@auvergnerhonealpes.fr",
+        "description": "Complétez la \"fiche premier contact\" pour décrire votre projet. ",
         "liens": [
           {
             "lien": "https://www.auvergnerhonealpes.fr/media/3118/download?inline",
@@ -1937,6 +1937,15 @@
           {
             "lien": "https://www.auvergnerhonealpes.fr/media/1551/download?inline",
             "texte": "Fiche premier contact (autres typologies d'hébergement)"
+          }
+        ]
+      },
+      {
+        "description": "Transmettez cette fiche complétée par mail à la direction du tourisme de la région afin de vérifier l'éligibilité de votre projet. ",
+        "liens": [
+          {
+            "lien": "mailto:pda.hebergement@auvergnerhonealpes.fr",
+            "texte": "Contacter par mail"
           }
         ]
       },
@@ -3557,6 +3566,11 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Sont également éligibles :",
+        "les projets de mise en place d’une unité de pyrolyse ou de pyrogazéification auto-consommant du charbon de bois et/ou du gaz de synthèse : ces projets devront démontrer la nécessité du recours à la pyrolyse/pyrogazéification, apporter des garanties quant à leur maturité technique (TRL 9 exigé) et présenter un CAPEX minimum de 3 M€ ;",
+        "les projets de mise en place d'une unité de méthanisation, dont la production thermique est supérieure à 8 GWh/an et auto consommant le biogaz produit."
       ]
     },
     "publicodes": {
@@ -4681,7 +4695,13 @@
         ]
       },
       {
-        "description": "Prenez contact avec la Direction du Tourisme par mail. Présentez votre projet et laissez vos coordonnées."
+        "description": "Prenez contact avec la Direction du Tourisme par mail. Présentez votre projet et laissez vos coordonnées.",
+        "liens": [
+          {
+            "lien": "mailto:tourisme@nouvelle-aquitaine.fr",
+            "texte": "Contacter par mail"
+          }
+        ]
       },
       {
         "description": "La Direction du Tourisme vous recontacte et vérifie avec vous l’éligibilité de votre projet, avant tout dépôt de demande de subvention."
@@ -5229,7 +5249,7 @@
         "liens": [
           {
             "lien": "mailto:relationentrepriseusager@maregionsud.fr",
-            "texte": "relationentrepriseusager@maregionsud.fr"
+            "texte": "contacter par mail"
           }
         ]
       },
@@ -5243,11 +5263,11 @@
         ]
       },
       {
-        "description": "Envoyez votre dossier de candidature par mail à l’adresse suivante avec pour objet \"Candidature CEDRE Ambition 2025\". La date limite de réception des candidatures est fixée au 13 décembre 2024.",
+        "description": "Envoyez votre dossier de candidature par mail avec pour objet \"Candidature CEDRE Ambition 2025\". La date limite de réception des candidatures est fixée au 13 décembre 2024.",
         "liens": [
           {
-            "lien": "https://cedre@maregionsud.fr ",
-            "texte": "cedre@maregionsud.fr "
+            "lien": "mailto:cedre@maregionsud.fr",
+            "texte": "Envoyer mon dossier par mail"
           }
         ]
       },
@@ -5469,7 +5489,13 @@
         "description": "Joignez les pièces justificatives à votre dossier en ligne et précisez dans quelle mesure l’investissement est en lien avec le déploiement des actions mises en œuvre lors de votre accompagnement avec l'accompagnateur-expert."
       },
       {
-        "description": "Pour finaliser votre demande de subvention, envoyez une copie de votre dossier par mail à cedre@maregionsud.fr avec pour objet \"Investissement CEDRE Premiers pas\" ou \"Investissement CEDRE Ambition\" selon l'accompagnement dont vous avez bénéficié en amont."
+        "description": "Pour finaliser votre demande de subvention, envoyez une copie de votre dossier par mail avec pour objet \"Investissement CEDRE Premiers pas\" ou \"Investissement CEDRE Ambition\" selon l'accompagnement dont vous avez bénéficié en amont.",
+        "liens": [
+          {
+            "lien": "mailto:cedre@maregionsud.fr",
+            "texte": "Contacter par mail"
+          }
+        ]
       }
     ],
     "conditions d'éligibilité": {
@@ -6246,8 +6272,8 @@
         "description": "Finalisez votre fiche \"plan d'action\" et transmettez-la par mail à l’ARBE dans les 3 mois suivants la signature de la charte.",
         "liens": [
           {
-            "lien": "https://c.poulin@arbe-regionsud.org",
-            "texte": "c.poulin@arbe-regionsud.org"
+            "lien": "mailto:c.poulin@arbe-regionsud.org",
+            "texte": "Contacter par mail"
           }
         ]
       },
@@ -7247,7 +7273,13 @@
         ]
       },
       {
-        "description": "Planifiez une réunion de prédépôt du dossier (en ayant complété l'Annexe 2 du dossier), au moins un mois avant le dépôt du dossier complet. Contactez l'adresse [aap.navires@ademe.fr](mailto:aap.navires@ademe.fr)"
+        "description": "Planifiez une réunion de prédépôt du dossier (en ayant complété l'Annexe 2 du dossier), au moins un mois avant le dépôt du dossier complet. ",
+        "liens": [
+          {
+            "lien": "mailto:aap.navires@ademe.fr",
+            "texte": "Contactez par mail"
+          }
+        ]
       },
       {
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier en ligne",
@@ -8087,6 +8119,10 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "L'appel à projets se base sur une liste précise d’opérations éligibles, dont le coût total cumulé doit être compris entre 100 k€ (25 k€ en Corse et Outre-mer) et 3 M€.",
+        "Sont concernés les sites industriels appartenant à des PME (y compris soumises à la directive EU-ETS) ainsi qu’à ceux appartenant à des Grandes Entreprises (au sens communautaire) non soumises à la directive EU-ETS."
       ]
     },
     "publicodes": {
@@ -11104,8 +11140,8 @@
         "description": "Réalisez votre demande d'inscription au parcours de formation \"écogestes\" par mail au référent de la formation.",
         "liens": [
           {
-            "lien": "https://florence.colonna@cciamp.com",
-            "texte": "florence.colonna@cciamp.com"
+            "lien": "mailto:https://florence.colonna@cciamp.com",
+            "texte": "Contacter par mail"
           }
         ]
       }
@@ -19675,7 +19711,13 @@
         ]
       },
       {
-        "description": "Prenez contact avec la Direction du Tourisme par mail à l'adresse tourisme@nouvelle-aquitaine.fr. Présentez votre projet et laissez vos coordonnées."
+        "description": "Prenez contact avec la Direction du Tourisme par mail pour présenter votre projet.",
+        "liens": [
+          {
+            "lien": "mailto:tourisme@nouvelle-aquitaine.fr",
+            "texte": "Contacter par mail"
+          }
+        ]
       },
       {
         "description": "La Direction du Tourisme vous recontacte et vérifie avec vous l’éligibilité de votre projet, avant tout dépôt de demande de subvention."
@@ -20258,7 +20300,13 @@
         ]
       },
       {
-        "description": "Adressez votre demande par mail à la Direction générale des Finances publiques : c3iv@dgfip.finances.gouv.fr"
+        "description": "Adressez votre demande par mail à la Direction générale des Finances publiques.",
+        "liens": [
+          {
+            "lien": "mailto:c3iv@dgfip.finances.gouv.fr",
+            "texte": "Contacter par mail"
+          }
+        ]
       },
       {
         "description": "Les dossiers sont examinés par la Direction générale des Entreprises (DGE), la Direction générale des Finances publiques (DGFIP) et l'ADEME."
@@ -28040,11 +28088,15 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Vérifiez l'éligibilité de votre projet ou contactez la direction du développement de Voies Navigables de France (VNF) par mail : pami-connect@vnf.fr",
+        "description": "Vérifiez l'éligibilité de votre projet ou contactez la direction du développement de Voies Navigables de France (VNF) par mail.",
         "liens": [
           {
             "lien": "https://www.vnf.fr/vnf/accueil/beneficier-de-solutions-en-faveur-de-la-transition-energetique-du-secteur-fluvial/comment-financer-un-projet-de-verdissement-de-la-flotte-fluviale/",
             "texte": "Critères d'éligibilité"
+          },
+          {
+            "lien": "mailto:pami-connect@vnf.fr",
+            "texte": "Contacter par mail"
           }
         ]
       },
@@ -28827,11 +28879,20 @@
     "montant du financement": "Jusqu'à 20% des dépenses éligibles",
     "objectifs": [
       {
-        "description": "Contacter la direction du tourisme de la région afin de vérifier l'éligibilité de votre projet. Pour cela, complétez la \"fiche premier contact\" et transmettez-la par mail à : crise-energie-tourisme@auvergnerhonealpes.fr",
+        "description": "Complétez la \"fiche premier contact\" pour décrire votre projet de rénovation. ",
         "liens": [
           {
             "lien": "https://www.auvergnerhonealpes.fr/media/3039/download?inline",
             "texte": "Fiche premier contact"
+          }
+        ]
+      },
+      {
+        "description": "Transmettez cette fiche complétée par mail à la direction du tourisme de la région afin de vérifier l'éligibilité de votre projet. ",
+        "liens": [
+          {
+            "lien": "mailto:crise-energie-tourisme@auvergnerhonealpes.fr",
+            "texte": "Contacter par mail"
           }
         ]
       },
@@ -28842,7 +28903,7 @@
         "description": "Votre demande est instruite. Si elle est recevable, elle est proposée au vote des élus régionaux en Commission Permanente."
       },
       {
-        "description": "Si votre candidature est sélectionnée, signez l'acte attributif et transmettez -le à la direction du tourisme."
+        "description": "Si votre candidature est sélectionnée, signez l'acte attributif et transmettez-le à la direction du tourisme."
       },
       {
         "description": "Déposez votre demande de paiement, qui sera instruite et recevez votre aide."
