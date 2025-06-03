@@ -36,8 +36,8 @@ objectifs:
       Réalisez votre demande d'inscription au parcours de formation "écogestes"
       par mail au référent de la formation.
     liens:
-      - lien: https://florence.colonna@cciamp.com
-        texte: florence.colonna@cciamp.com
+      - lien: mailto:https://florence.colonna@cciamp.com
+        texte: Contacter par mail
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

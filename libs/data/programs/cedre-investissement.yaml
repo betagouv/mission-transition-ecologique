@@ -91,9 +91,12 @@ objectifs:
       l'accompagnateur-expert.
   - description: >-
       Pour finaliser votre demande de subvention, envoyez une copie de votre
-      dossier par mail à cedre@maregionsud.fr avec pour objet "Investissement
-      CEDRE Premiers pas" ou "Investissement CEDRE Ambition" selon
-      l'accompagnement dont vous avez bénéficié en amont.
+      dossier par mail avec pour objet "Investissement CEDRE Premiers pas" ou
+      "Investissement CEDRE Ambition" selon l'accompagnement dont vous avez
+      bénéficié en amont.
+    liens:
+      - lien: mailto:cedre@maregionsud.fr
+        texte: Contacter par mail
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 250 salariés

@@ -19,16 +19,18 @@ url: >-
 nature de l'aide: financement
 montant du financement: Jusqu'à 30 % du coût de l'investissement
 objectifs:
-  - description: >-
-      Contacter la direction du tourisme de la région afin de vérifier
-      l'éligibilité de votre projet. Pour cela, complétez la "fiche premier
-      contact" et transmettez-la par mail à :
-      pda.hebergement@auvergnerhonealpes.fr
+  - description: 'Complétez la "fiche premier contact" pour décrire votre projet. '
     liens:
       - lien: https://www.auvergnerhonealpes.fr/media/3118/download?inline
         texte: Fiche premier contact (gîtes d'étapes)
       - lien: https://www.auvergnerhonealpes.fr/media/1551/download?inline
         texte: Fiche premier contact (autres typologies d'hébergement)
+  - description: >-
+      Transmettez cette fiche complétée par mail à la direction du tourisme de
+      la région afin de vérifier l'éligibilité de votre projet. 
+    liens:
+      - lien: mailto:pda.hebergement@auvergnerhonealpes.fr
+        texte: Contacter par mail
   - description: >-
       Si vous êtes éligible, un dossier de demande de subvention à compléter
       vous sera transmis. Il sera à déposer auprès de la direction du tourisme.

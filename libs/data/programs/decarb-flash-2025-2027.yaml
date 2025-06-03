@@ -107,6 +107,12 @@ conditions d'éligibilité:
     - Tous secteurs d'activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - "L'appel à projets se base sur une liste précise d’opérations éligibles, dont le coût total cumulé doit être\_compris entre 100\_k€ (25\_k€ en Corse et Outre-mer) et 3\_M€."
+    - >-
+      Sont concernés les sites industriels appartenant à des PME (y compris
+      soumises à la directive EU-ETS) ainsi qu’à ceux appartenant à des Grandes
+      Entreprises (au sens communautaire) non soumises à la directive EU-ETS.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
