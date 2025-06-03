@@ -8240,7 +8240,9 @@
         ]
       },
       "entreprise . a un objectif ciblé": {
-        "une de ces conditions": []
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
       }
     },
     "id": "decarb-flash-2025-2027"
@@ -17668,6 +17670,204 @@
       }
     },
     "id": "extreme-defi-mobilite"
+  },
+  {
+    "titre": "FASEP",
+    "promesse": "Bénéficiez d'un financement pour des études ou projets verts destinés aux pays en développement",
+    "description": "Votre entreprise est tournée vers l'internationalisation ? Vous souhaitez réaliser une étude de faisabilité ou un projet mettant en œuvre des technologies vertes et innovantes, que vous destinez au bénéfice d’autorités publiques étrangères dans les pays en développement ? Le fonds FASEP vous finance et vous accompagne dans la mise en place de ce projet.",
+    "description longue": "Le fonds se décline en trois points :\n- Une subvention ou avance remboursable, versée directement à l’entreprise, qui peut couvrir l’ensemble ou une partie du projet\n- Une instruction rapide directement menée par la DG Trésor\n- Des agents dédiés dans chaque Ambassade de France grâce aux services économiques dont la mission est d’accompagner les entreprises françaises dans leurs démarches auprès des autorités locales, pour suivre et favoriser la mise en œuvre de leurs projets.\n\nLe projet doit susciter l’adhésion auprès des autorités locales et doit favoriser le soutien à l’export pour les entreprises françaises.\n\nLe projet doit avoir un impact positif en termes de :\n- lutte contre le changement climatique et de protection de l’environnement\n- création d’emplois, intégration de l’économie informelle, lutte contre la pauvreté, égalité hommes-femmes, formation, etc",
+    "illustration": "images/TEE_energie_verte.png",
+    "opérateur de contact": "DDFIP",
+    "url": "https://www.tresor.economie.gouv.fr/services-aux-entreprises/le-fasep",
+    "nature de l'aide": "financement",
+    "montant du financement": "de 100 000 à 800 000 €, selon projet",
+    "objectifs": [
+      {
+        "description": "Contactez un conseiller de la DG Trésor en charge de l'instruction des projets.",
+        "liens": [
+          {
+            "lien": "mailto:aide-projet@dgtresor.gouv.fr",
+            "texte": "Contacter un conseiller"
+          }
+        ]
+      },
+      {
+        "description": "Remplissez la demande de prise en considération qui détaille les principales caractéristiques de votre projet.",
+        "liens": [
+          {
+            "lien": "https://www.tresor.economie.gouv.fr/Institutionnel/Niveau2/Pages/3c714fc2-ff65-4dad-bfac-28f1faeca917/files/b48de603-6800-486d-84e8-104d5a67aed4",
+            "texte": "Demande de prise en considération"
+          }
+        ]
+      },
+      {
+        "description": "Si le projet est retenu à ce stade, vous en êtes informé. Vous devez alors constituer le dossier de décision (avec des éléments budgétaires détaillés et une lettre d'intérêt de la part du bénéficiaire public local)."
+      },
+      {
+        "description": "Le comité évalue à nouveau votre projet. Il décide de l'attribution ou non du FASEP et de sa forme (subvention ou avance remboursable)."
+      },
+      {
+        "description": "Une fois l'attribution validée, vous devez contacter Bpifrance Assurance Export pour établir la convention financière permettant de s'accorder sur les modalités du remboursement."
+      },
+      {
+        "description": "Démarrez votre projet."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "a un effectif éligible"
+        ]
+      },
+      "entreprise . a un effectif éligible": {
+        "toutes ces conditions": [
+          "effectif <= 499"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est l'écoconception",
+          "questionnaire . objectif prioritaire . est préserver la biodiversité"
+        ]
+      }
+    },
+    "id": "fasep"
   },
   {
     "titre": "Fiscalité énergétique",
@@ -34475,7 +34675,6 @@
     "description": "Vous avez un projet d'installation de panneaux photovoltaïques produisant de l’électricité renouvelable en vue d’une autoconsommation individuelle ou collective ? La Région Grand-Est apporte une aide aux études de structure photovoltaïque, aux études de faisabilité ou agrivoltaïque. Cette subvention peut également participer au financement de votre installation de panneaux photovoltaïques.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Région Grand Est",
-    "contact question": "https://www.grandest.fr/aides/faq-guide-teleservices/",
     "url": "https://www.grandest.fr/vos-aides-regionales/soutien-au-photovoltaique/",
     "nature de l'aide": "financement",
     "montant du financement": "Variable selon projet",
