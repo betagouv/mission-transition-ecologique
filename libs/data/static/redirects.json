@@ -67,6 +67,7 @@
     "147": "borne-recharge-ve",
     "337": "sensibilisation-eco-gestes",
     "401": "utilitaire-camion-propre",
+    "434": "methanisation",
     "566": "trajet-ferroviaire-train-metro",
     "666": "tourisme-zero-dechet",
     "667": "materiaux-de-reemploi",
@@ -282,6 +283,9 @@
     "1123": "evaluation-carbone-lise",
     "1124": "diag-biodiversite",
     "1156": "certificats-economie-energie",
-    "1189": "parm-vnf"
+    "1189": "parm-vnf",
+    "1224": "decarb-flash-2025-2027",
+    "1255": "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
+    "1354": "fasep"
   }
 }

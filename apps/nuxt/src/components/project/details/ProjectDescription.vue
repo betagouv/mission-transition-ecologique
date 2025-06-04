@@ -8,7 +8,7 @@
     container-from="md"
   >
     <template #content>
-      <div v-html="markdownToHtml(description.details)" />
+      <div v-html="Marked.toHtml(description.details)" />
     </template>
   </TeeContentBlock>
 </template>
@@ -43,11 +43,4 @@ const projectDescription = ref<ContentProps>({
     details: props.project.moreDescription
   }
 })
-
-const markdownToHtml = (text: string | undefined) => {
-  if (text) {
-    return Marked.toHtml(text)
-  }
-  return ''
-}
 </script>

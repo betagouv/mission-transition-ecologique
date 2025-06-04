@@ -148,6 +148,7 @@
 </template>
 
 <script setup lang="ts">
+import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 import { onMounted, ref } from 'vue'
 import { MetaRobots } from '@/tools/metaRobots'
@@ -157,6 +158,7 @@ definePageMeta({
   name: RouteName.Budget
 })
 
+const navigation = new Navigation()
 const budgetChartCanvas = ref<HTMLCanvasElement | null>(null)
 
 const budgetLabels = ['Design', 'Développement et Data engineering', 'Pilotage', 'Coaching', 'BizDev']
@@ -244,7 +246,15 @@ onMounted(() => {
   })
 })
 
-useHead(MetaRobots.indexFollow())
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.Budget)
+    }
+  ],
+  ...MetaRobots.indexFollow()
+})
 </script>
 
 <style scoped>

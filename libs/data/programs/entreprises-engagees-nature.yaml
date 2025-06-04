@@ -13,6 +13,7 @@ description: >-
 début de validité: 15/09/2019
 illustration: images/TEE_ampoule.png
 opérateur de contact: Office français de la biodiversité
+contact question: https://engagespourlanature.ofb.fr/entreprises/contact
 url: https://engagespourlanature.ofb.fr/entreprises
 nature de l'aide: étude
 coût de l'accompagnement: Gratuit
@@ -25,7 +26,7 @@ objectifs:
     liens:
       - lien: >-
           https://engagespourlanature.ofb.fr/sites/default/files/2021-12/EEN_Les%20_10_principes_communs_%C3%A0_signer.pdf
-        texte: Signer la charte
+        texte: Télécharger la charte
   - description: >-
       Créez un compte ou connectez-vous sur Démarches Simplifiées, pour adhérer
       au programme et déposer la charte signée.

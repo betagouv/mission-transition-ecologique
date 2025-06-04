@@ -36,6 +36,7 @@ description longue: >-
   sein du camping (9 lits maximum).
 illustration: images/TEE_eolienne.png
 opérateur de contact: Région Nouvelle-Aquitaine
+contact question: mailto:tourisme@nouvelle-aquitaine.fr
 url: >-
   https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/campings-de-tourisme-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1
 nature de l'aide: financement
@@ -47,9 +48,11 @@ objectifs:
           https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/campings-de-tourisme-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1
         texte: Conditions et critères d'éligibilité
   - description: >-
-      Prenez contact avec la Direction du Tourisme par mail à l'adresse
-      tourisme@nouvelle-aquitaine.fr Présentez votre projet et laissez vos
-      coordonnées.
+      Prenez contact avec la Direction du Tourisme par mail. Présentez votre
+      projet et laissez vos coordonnées.
+    liens:
+      - lien: mailto:tourisme@nouvelle-aquitaine.fr
+        texte: Contacter par mail
   - description: "La Direction du Tourisme vous recontacte et vérifie avec vous l’éligibilité\_de votre projet, avant tout dépôt de demande de subvention."
   - description: >-
       Si votre projet est éligible, déposez votre demande de subvention. Votre

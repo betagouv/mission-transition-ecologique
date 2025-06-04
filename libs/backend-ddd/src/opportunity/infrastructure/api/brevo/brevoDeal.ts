@@ -106,7 +106,8 @@ const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorConta
 
 const convertDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdateAttributes): DealUpdateAttributes => {
   return {
-    envoy: domainUpdateAttributes.sentToOpportunityHub
+    envoy: domainUpdateAttributes.sentToOpportunityHub,
+    idce: domainUpdateAttributes.idCe.toString()
   }
 }
 

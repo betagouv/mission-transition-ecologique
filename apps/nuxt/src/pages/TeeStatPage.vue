@@ -10,7 +10,7 @@
           actions pour améliorer ce service.
         </p>
         <iframe
-          src="https://tee-metabase.osc-fr1.scalingo.io/public/dashboard/43b192d5-087a-40d6-8f3e-382318768bd9"
+          src="https://tee-metabase.osc-fr1.scalingo.io/public/dashboard/5c81eab8-2949-45df-a020-7af231f7ab1e"
           width="100%"
           height="1900px"
         />
@@ -22,14 +22,25 @@
 
 <script setup lang="ts">
 import { MetaRobots } from '@/tools/metaRobots'
+import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
+
+const navigation = new Navigation()
 
 definePageMeta({
   path: '/stats',
   name: RouteName.Statistics
 })
 
-useHead(MetaRobots.indexFollow())
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.Statistics)
+    }
+  ],
+  ...MetaRobots.indexFollow()
+})
 </script>
 
 <style scoped>

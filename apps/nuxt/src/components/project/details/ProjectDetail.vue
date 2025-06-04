@@ -30,7 +30,8 @@
   </Layout>
 </template>
 <script setup lang="ts">
-import { Color, ThemeId } from '@/types'
+import Navigation from '@/tools/navigation'
+import { Color, RouteName, ThemeId } from '@/types'
 import { MetaSeo } from '@/tools/metaSeo'
 import { Theme } from '@/tools/theme'
 import { useProjectStore } from '@/stores/project'
@@ -39,10 +40,24 @@ import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 import Analytics from '@/tools/analytic/analytics'
 
 const { currentProject: project } = storeToRefs(useProjectStore())
+const navigation = new Navigation()
 
 const themeColor = ref<Color | ''>()
 
 useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription))
+
+if (project.value) {
+  useHead({
+    link: [
+      {
+        rel: 'canonical',
+        href: navigation.getHrefByRouteName(RouteName.CatalogProjectDetail, {
+          projectSlug: project.value.slug
+        })
+      }
+    ]
+  })
+}
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
