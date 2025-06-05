@@ -12,7 +12,7 @@
         <iframe
           src="https://tee-metabase.osc-fr1.scalingo.io/public/dashboard/5c81eab8-2949-45df-a020-7af231f7ab1e"
           width="100%"
-          height="1900px"
+          height="3200px"
         />
       </div>
     </div>
