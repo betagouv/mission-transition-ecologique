@@ -39,6 +39,8 @@ import Translation from '@/tools/translation'
 import { useCompanyDataStore } from '@/stores/companyData'
 import { storeToRefs } from 'pinia'
 import { ProgramTypeForFront } from '@/types'
+import Analytics from '@/tools/analytic/analytics'
+import { CompanyData } from '@/tools/companyData'
 
 interface Props {
   program: ProgramTypeForFront
@@ -52,7 +54,7 @@ const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const trackAnalytics = () => {
   Analytics.sendEvent('program_external_question_contact', {
-    link: props.program['contact question'].value,
+    link: props.program['contact question'],
     url: window.location.href,
     company: CompanyData.toString()
   })
