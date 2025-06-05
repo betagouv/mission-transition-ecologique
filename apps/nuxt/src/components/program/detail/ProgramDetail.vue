@@ -149,8 +149,11 @@ const isFormNeeded = computed(() => {
 })
 
 const isActivationVisible = computed(() => {
-  if (!isDataFull.value || !currentProgram.value) {
+  if (!currentProgram.value) {
     return false
+  }
+  if (!isDataFull.value) {
+    return true
   }
   return ProgramEligibility.isEligible(currentProgram.value)
 })

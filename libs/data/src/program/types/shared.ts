@@ -26,9 +26,7 @@ export type ProgramFiltersType = {
 }
 
 export type { ProgramWithoutId }
-export type ProgramType = ProgramWithoutId & {
-  id: string
-}
+export type ProgramType = ProgramWithoutId & { 'contact question': string | 'formulaire'; id: string }
 
 export type ProgramTypeWithEligibility = ProgramType & {
   eligibility: ProgramEligibilityType
