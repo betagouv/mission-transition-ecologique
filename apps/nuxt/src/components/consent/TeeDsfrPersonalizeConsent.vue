@@ -18,12 +18,12 @@
               />
             </div>
             <div class="fr-modal__content">
-              <h1
+              <h3
                 id="fr-consent-modal-title"
-                class="fr-modal__title"
+                class="fr-modal__title fr-mb-2w"
               >
                 Panneau de gestion des cookies
-              </h1>
+              </h3>
               <div class="fr-consent-manager">
                 <div
                   v-for="cookie in Object.values(cookies || {})"
