@@ -8122,7 +8122,8 @@
       ],
       "autres critères d'éligibilité": [
         "L'appel à projets se base sur une liste précise d’opérations éligibles, dont le coût total cumulé doit être compris entre 100 k€ (25 k€ en Corse et Outre-mer) et 3 M€.",
-        "Sont concernés les sites industriels appartenant à des PME (y compris soumises à la directive EU-ETS) ainsi qu’à ceux appartenant à des Grandes Entreprises (au sens communautaire) non soumises à la directive EU-ETS."
+        "Sont concernés les sites industriels appartenant à des PME (y compris soumises à la directive EU-ETS) ainsi qu’à ceux appartenant à des Grandes Entreprises (au sens communautaire) non soumises à la directive EU-ETS.",
+        "Les secteurs suivants sont exclus de cet appel à projets : les activités tertiaires, agricoles (sauf celles relevant de l’industrie agro-alimentaire), de la pêche et de l’aquaculture, les travaux publics pour leurs activités sur chantier mobile, les incinérateurs de tout type de déchets (hors incinérateur intégré à un site de production industrielle) et les entités industrielles dont l’activité est la production et la mise sur le marché d’énergie sur réseaux (électrique, de gaz etc.)."
       ]
     },
     "publicodes": {
@@ -8236,6 +8237,8 @@
           "code NAF niveau 1 . est C",
           "code NAF niveau 1 . est D",
           "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est H",
           "code NAF niveau 1 . est M"
         ]
       },
@@ -8854,7 +8857,7 @@
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
-      "ADEME"
+      "Office français de la biodiversité"
     ],
     "contact question": "formulaire",
     "url": "https://diag.bpifrance.fr/diag-biodiversite",
@@ -34675,6 +34678,7 @@
     "description": "Vous avez un projet d'installation de panneaux photovoltaïques produisant de l’électricité renouvelable en vue d’une autoconsommation individuelle ou collective ? La Région Grand-Est apporte une aide aux études de structure photovoltaïque, aux études de faisabilité ou agrivoltaïque. Cette subvention peut également participer au financement de votre installation de panneaux photovoltaïques.",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Région Grand Est",
+    "contact question": "https://www.grandest.fr/aides/faq-guide-teleservices/",
     "url": "https://www.grandest.fr/vos-aides-regionales/soutien-au-photovoltaique/",
     "nature de l'aide": "financement",
     "montant du financement": "Variable selon projet",
