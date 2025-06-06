@@ -1885,7 +1885,7 @@
     "shortDescription": "Construire la feuille de route de son entreprise pour réduire ses émissions de gaz à effet de serre.",
     "image": "/images/projet/plan-transition-bas-carbone.webp",
     "longDescription": "Le plan de transition d'une entreprise présente l’ensemble des actions et des moyens envisagés pour réduire ses émissions de gaz à effet de serre et les objectifs à atteindre pour le prochain bilan.\n\nAvant de définir ce plan de transition, il est nécessaire de quantifier votre impact via un bilan de gaz à effet de serre (GES). Vous pourrez ensuite définir une trajectoire de réduction réaliste et atteignable pour réduire durablement vos principaux postes émetteurs de GES.\n\nUne stratégie bas carbone efficace doit s'aligner sur la trajectoire cible de la SNBC, Stratégie Nationale Bas Carbone (SNBC), qui est la feuille de route de la France pour lutter contre le changement climatique. Cette stratégie s’appuie sur un scénario d’atteinte de la neutralité carbone à l’horizon 2050 (c’est-à-dire, un équilibre entre l’émission des gaz à effet de serre et leur absorption).\n\nCette objectif de **neutralité carbone** n'est atteignable que si les entreprises se mettent en mouvement !",
-    "moreDescription": "- [**Portail RSE,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) un site qui vous permet de connaitre vos obligations pour la réalisation du bilan GES et du plan de transition.\n- [**Guide pour la construction, la mise en oeuvre et le suivi d'un plan de transition**](https://bilans-ges.ademe.fr/api/medias/d69d82c9-f060-468f-94c8-bc7391bd1b7e/download)**.**\n- [**La Stratégie Nationale Bas Carbone**](https://bigmedia.bpifrance.fr/nos-dossiers/strategie-nationale-bas-carbone-snbc-definition-objectifs-et-application-en-entreprise) : définition, objectifs et application en entreprise.",
+    "moreDescription": "- [**Portail RSE,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) un site qui vous permet de connaitre vos obligations pour la réalisation du bilan GES et du plan de transition.\n- [**Guide pour la construction, la mise en oeuvre et le suivi d'un plan de transition**](https://bilans-ges.ademe.fr/api/medias/d69d82c9-f060-468f-94c8-bc7391bd1b7e/download)**.**\n- [**La Stratégie Nationale Bas Carbone**](https://bigmedia.bpifrance.fr/nos-dossiers/strategie-nationale-bas-carbone-snbc-definition-objectifs-et-application-en-entreprise) : définition, objectifs et application en entreprise.\n- [**L'Association pour la transition Bas Carbone**](https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/) : un annuaire des prestataires pour réaliser un bilan carbone.",
     "themes": [
       "environmental"
     ],
@@ -1968,7 +1968,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "prit-hdf",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "fasep"
     ],
     "linkedProjects": [
       26,
@@ -2104,7 +2105,8 @@
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
       "credit-impot-recherche",
-      "credit-impot-innovation"
+      "credit-impot-innovation",
+      "fasep"
     ],
     "linkedProjects": [
       31
