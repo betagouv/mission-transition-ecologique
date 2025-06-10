@@ -113,6 +113,7 @@ conditions d'éligibilité:
       Sont concernés les sites industriels appartenant à des PME (y compris
       soumises à la directive EU-ETS) ainsi qu’à ceux appartenant à des Grandes
       Entreprises (au sens communautaire) non soumises à la directive EU-ETS.
+    - "Les secteurs suivants sont exclus de cet appel à projets\_: les activités tertiaires, agricoles (sauf celles relevant de l’industrie agro-alimentaire), de la pêche et de l’aquaculture, les travaux publics pour leurs activités sur chantier mobile, les incinérateurs de tout type de déchets (hors incinérateur intégré à un site de production industrielle) et les entités industrielles dont l’activité est la production et la mise sur le marché d’énergie sur réseaux (électrique, de gaz etc.)."
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -131,6 +132,8 @@ publicodes:
       - code NAF niveau 1 . est C
       - code NAF niveau 1 . est D
       - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est H
       - code NAF niveau 1 . est M
   entreprise . a un objectif ciblé:
     une de ces conditions:

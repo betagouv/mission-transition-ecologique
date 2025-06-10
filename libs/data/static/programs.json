@@ -8122,7 +8122,8 @@
       ],
       "autres critères d'éligibilité": [
         "L'appel à projets se base sur une liste précise d’opérations éligibles, dont le coût total cumulé doit être compris entre 100 k€ (25 k€ en Corse et Outre-mer) et 3 M€.",
-        "Sont concernés les sites industriels appartenant à des PME (y compris soumises à la directive EU-ETS) ainsi qu’à ceux appartenant à des Grandes Entreprises (au sens communautaire) non soumises à la directive EU-ETS."
+        "Sont concernés les sites industriels appartenant à des PME (y compris soumises à la directive EU-ETS) ainsi qu’à ceux appartenant à des Grandes Entreprises (au sens communautaire) non soumises à la directive EU-ETS.",
+        "Les secteurs suivants sont exclus de cet appel à projets : les activités tertiaires, agricoles (sauf celles relevant de l’industrie agro-alimentaire), de la pêche et de l’aquaculture, les travaux publics pour leurs activités sur chantier mobile, les incinérateurs de tout type de déchets (hors incinérateur intégré à un site de production industrielle) et les entités industrielles dont l’activité est la production et la mise sur le marché d’énergie sur réseaux (électrique, de gaz etc.)."
       ]
     },
     "publicodes": {
@@ -8236,6 +8237,8 @@
           "code NAF niveau 1 . est C",
           "code NAF niveau 1 . est D",
           "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est H",
           "code NAF niveau 1 . est M"
         ]
       },
@@ -8854,7 +8857,7 @@
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
-      "ADEME"
+      "Office français de la biodiversité"
     ],
     "contact question": "formulaire",
     "url": "https://diag.bpifrance.fr/diag-biodiversite",
@@ -34489,7 +34492,6 @@
     "description longue": "Une prime supplémentaire de Développement Durable de 5 000 € à 10 000 € peut être accordée sur justification de l’obtention ou du renouvellement d’un label environnemental.\n\nPour les établissements réalisant des travaux favorisant une meilleure performance environnementale, l’accessibilité des personnes en situation de handicap, l'aménagement et/ou la création de locaux destinés à l’accueil de saisonniers, sont éligibles, les travaux ayant trait à :  \n• La gestion environnementale et la réduction des consommations de fluides ainsi que les équipements pour l’accueil des clientèles vélo touristiques\n• L’accessibilité des personnes en situation de handicap (le label Tourisme et Handicap est exigé avant ou après travaux).\n• Logement des saisonniers au sein des établissements\n\nPour la montée en gamme par le changement de classement ou l’adjonction d’équipements de diversification, sont éligibles, les travaux de gros œuvre et de second œuvre contribuant à atteindre : \n• Un classement national supérieur en étoiles ou de changement d’épis (dans la limite de l’obtention d’un classement maximum de 4 étoiles ou épis après travaux)\n• Une offre d’équipements de diversification contribuant à augmenter l’attractivité de l’établissement et son chiffre d’affaires (équipements de bien-être et de mise en forme, espaces aquatiques et aqualudiques, équipements numériques, etc.)",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Région Sud (PACA)",
-    "contact question": "https://www.maregionsud.fr/vos-aides/detail/soutien-a-lhebergement-touristique",
     "url": "https://www.maregionsud.fr/vos-aides/detail/soutien-a-lhebergement-touristique",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 60% des dépenses éligibles, dans un maximum de 100 000 €",
