@@ -63,6 +63,7 @@ export class NuxtSecurityConfig {
       ],
       'base-uri': ["'self'"],
       'frame-src': ["'self'", this._baserowFormUrl, this._metabaseUrl],
+      'manifest-src': ["'self'"],
       'default-src': ["'none'"]
     }
   }
