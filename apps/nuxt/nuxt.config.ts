@@ -162,7 +162,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     sources: ['/api/__sitemap__/programs', '/api/__sitemap__/projects']
   },
   robots: {
-    disallow: ['/ajouter-une-aide-entreprises', '/iframe/projet/'],
+    disallow: ['/ajouter-une-aide-entreprises', '/iframe/**', '/iframe', '/demo/**'],
     credits: false
   },
   scripts: {
