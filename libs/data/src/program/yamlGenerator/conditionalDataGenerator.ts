@@ -1,8 +1,13 @@
 import { ProgramType } from '../types/shared'
 import { CompanySizeCondition, ConditionalValues, DataProgram, RegionCondition, ConditionalYaml } from '../types/domain'
+import { Logger } from '../../common/logger/logger'
+import { LogLevel } from '../../common/logger/types'
 
 export class ConditionalDataGenerator {
-  constructor(private _program: DataProgram) {}
+  constructor(
+    private _program: DataProgram,
+    private _logger: Logger
+  ) {}
 
   generate(yamlContent: { [key: string]: unknown }): void {
     if (!this._program.conditionalData || !this._program.conditionalData.length) {
@@ -47,12 +52,31 @@ export class ConditionalDataGenerator {
   }
 
   private _generateCompanySizeCondition(oneConditional: CompanySizeCondition): ConditionalYaml {
-    const conditionalEntry = {
-      'toutes ces conditions': [
-        `effectif >= ${oneConditional['Condition: nb min salaries']}`,
-        `effectif <= ${oneConditional['Condition: nb max salaries']}`
-      ]
+    let min = oneConditional['Condition: nb min salaries']
+    let max = oneConditional['Condition: nb max salaries']
+    if (!min) {
+      min = '0'
+      this._logger.log(
+        LogLevel.Minor,
+        `Dispositif conditionnel sur la taille: nb min salaries manquant, valeur par défaut 0 utilisée.`,
+        this.program['Id fiche dispositif'],
+        this.program.id
+      )
     }
+    if (!max) {
+      max = '999'
+      this.logger.log(
+        LogLevel.Minor,
+        `Dispositif conditionnel sur la taille: nb max salaries manquant, valeur par défaut 999 utilisée.`,
+        this.program['Id fiche dispositif'],
+        this.program.id
+      )
+    }
+
+    const conditionalEntry = {
+      'toutes ces conditions': [`effectif >= ${min}`, `effectif <= ${max}`]
+    }
+
     this._valueReplacement(oneConditional, conditionalEntry)
     return conditionalEntry
   }

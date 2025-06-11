@@ -1,0 +1,110 @@
+titre: BCIAT 2025 - Biomasse chaleur pour l'industrie, l'agriculture et le tertiaire
+promesse: Financez votre chaudière ou un générateur à air chaud et à partir de biomasse
+description: >-
+  Cet appel à projet finance les projets de production de chaleur supérieurs à
+  12 GWh/an via une chaudière ou un générateur à air chaud et à partir de
+  biomasse (plaquettes forestières, sous-produits de l’industrie de première
+  transformation du bois, bois fin de vie et bois déchets, granulés,
+  sous-produits industriels, sous-produits agricoles).
+description longue: >-
+  Dans le contexte actuel d’optimisation de la ressource biomasse et en
+  cohérence avec les objectifs du projet de la Stratégie française pour
+  l’Énergie et le Climat, l’ADEME accordera une attention particulière à ce que
+  le candidat fasse la démonstration d’une approche énergétique respectant la
+  hiérarchie suivante :
+
+
+  sobriété ;
+
+  efficacité énergétique ;
+
+  valorisation de chaleur fatale ;
+
+  étude des solutions bas carbone alternatives.
+
+
+  Pour les études de solutions, la solution biomasse sera priorisée pour les
+  projets pour lesquels aucune alternative bas carbone n’est envisageable dans
+  des conditions technico-économiques acceptables. Le candidat fournira ainsi
+  une étude d'opportunité mix énergétique bas carbone type PACTE Industrie («
+  étude d’opportunité d’évolution du mix énergétique d’un site industriel »).
+début de validité: 22/04/2025
+fin de validité: 16/10/2025
+illustration: images/TEE_eolienne.png
+opérateur de contact: ADEME
+contact question: mailto:boisenergie@ademe.fr
+url: >-
+  https://agir.ademe.fr/aides-financieres/aap/bciat-2025-biomasse-chaleur-pour-lindustrie-lagriculture-et-le-tertiaire
+nature de l'aide: financement
+montant du financement: Selon la nature du projet
+objectifs:
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME.
+    liens:
+      - lien: >-
+          https://agir.ademe.fr/aides-financieres/aap/bciat-2025-biomasse-chaleur-pour-lindustrie-lagriculture-et-le-tertiaire#eligibility
+        texte: Vérifier mon éligibilité
+  - description: >-
+      Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au
+      moins un mois avant la date limite de dépôt).
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre demande d'aide : informations administratives, description
+      du projet, détails techniques et financiers, étude de faisabilité, etc. À
+      ce stade, votre investissement ne doit pas avoir été réalisé !
+    liens:
+      - lien: >-
+          https://vosaides.ademe.fr/create-assistant?id_dispo=1ef2e56b-bc2a-6bec-9fb1-a934ba616ec6&id_liste=1ef2e56b-bc2c-6618-a560-a934ba616ec6&dossier_aide_type=INVES
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Entreprises d'industries manufacturières
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - "Sont également éligibles\_:"
+    - "les projets de mise en place d’une unité de pyrolyse ou de pyrogazéification auto-consommant du charbon de bois et/ou du gaz de synthèse : ces projets devront démontrer la nécessité du recours à la pyrolyse/pyrogazéification, apporter des garanties quant à leur maturité technique (TRL 9 exigé) et présenter un CAPEX minimum de 3\_M€\_;"
+    - >-
+      les projets de mise en place d'une unité de méthanisation, dont la
+      production thermique est supérieure à 8 GWh/an et auto consommant le
+      biogaz produit.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a une categorie legale eligible
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique

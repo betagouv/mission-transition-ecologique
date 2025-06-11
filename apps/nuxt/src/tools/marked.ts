@@ -2,7 +2,10 @@ import { marked, Tokens } from 'marked'
 import { MarkedExtension } from 'marked/lib/marked'
 
 export class Marked {
-  static toHtml(markdown: string, withExtension = true): string {
+  static toHtml(markdown: string | undefined, withExtension = true): string {
+    if (!markdown) {
+      return ''
+    }
     if (withExtension) {
       marked.use(this._extension())
     }

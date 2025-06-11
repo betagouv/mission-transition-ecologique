@@ -87,8 +87,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     autoImport: true
   },
   css: [
-    '@gouvfr/dsfr/dist/dsfr.min.css', // Le CSS minimal du DSFR
-    '@gouvfr/dsfr/dist/utility/icons/icons.min.css', // Styles de tous les composants du DSFR
+    // '@gouvfr/dsfr/dist/dsfr.min.css', // Le CSS minimal du DSFR
+    // '@gouvfr/dsfr/dist/utility/icons/icons.min.css', // Styles de tous les composants du DSFR
     '@gouvminint/vue-dsfr/styles', // Styles des composants VueDsfr
     '~/assets/custom.css',
     '~/assets/main.scss'
@@ -162,7 +162,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     sources: ['/api/__sitemap__/programs', '/api/__sitemap__/projects']
   },
   robots: {
-    disallow: ['/ajouter-une-aide-entreprises', '/iframe/projet/'],
+    disallow: ['/ajouter-une-aide-entreprises', '/iframe/**', '/iframe', '/demo/**'],
     credits: false
   },
   scripts: {
@@ -187,6 +187,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       sentry: {
         dsn: Config.SENTRY_DSN
       },
+      siteUrl: undefined, // Defined on environment variables
       posthog: {
         apiKey: Config.posthogApiKey
       },
