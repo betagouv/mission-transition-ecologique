@@ -6,7 +6,7 @@
   <div v-if="isDataFull && isActivationVisible">
     <DsfrButton
       size="lg"
-      icon="fr-icon-mail-line"
+      icon="fr-icon-check-line"
       class="fr-mb-3v"
       :on-click="() => scrollToActivation()"
     >
@@ -26,7 +26,7 @@
       v-else
       :href="program['contact question']"
       variant="large-question"
-      class="fr-ml-3v"
+      class="fr-ml-3v fr-mb-3v"
       @click="trackAnalytics"
     >
       {{ Translation.t('program.ctaContact') }}
