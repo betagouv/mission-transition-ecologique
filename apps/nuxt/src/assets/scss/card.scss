@@ -87,7 +87,7 @@
   }
 
   &-priority {
-    border: solid 0.20rem setting.$green;
+    outline: solid 0.20rem setting.$green;
 
     &--highlighted {
       .fr-card__header::before {
@@ -99,6 +99,7 @@
         border-top: 5rem solid setting.$green;
         width: 0;
         z-index: 50;
+        border-top-right-radius: 0.9rem;
       }
     }
   }
@@ -109,8 +110,8 @@
 
   &__header--priority {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 0.9rem;
+    right: 0.9rem;
     color: setting.$white;
     font-size: 2rem;
     font-weight: bold;

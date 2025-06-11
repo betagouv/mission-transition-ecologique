@@ -7,7 +7,7 @@
     <DsfrButton
       size="lg"
       icon="fr-icon-check-line"
-      class="fr-mb-3v"
+      class="fr-mb-3v fr-mr-3v"
       :on-click="() => scrollToActivation()"
     >
       {{ Translation.t('program.ctaActivation') }}
@@ -16,8 +16,8 @@
       v-if="program['contact question'] === 'formulaire'"
       secondary
       size="lg"
+      class="fr-mb-3v"
       icon="fr-icon-chat-3-line"
-      class="fr-ml-3v"
       :on-click="() => scrollToForm()"
     >
       {{ Translation.t('program.ctaContact') }}
@@ -26,7 +26,7 @@
       v-else
       :href="program['contact question']"
       variant="large-question"
-      class="fr-ml-3v fr-mb-3v"
+      class="fr-mb-3v"
       @click="trackAnalytics"
     >
       {{ Translation.t('program.ctaContact') }}
