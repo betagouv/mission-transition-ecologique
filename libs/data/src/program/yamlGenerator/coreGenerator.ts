@@ -11,6 +11,8 @@ import { PublicodesGenerator } from './publicodesGenerator'
 import { setObjectives } from './objectiveGenerator'
 import { setEligibility } from './eligibilityGenerator'
 import { ConditionalDataGenerator } from './conditionalDataGenerator'
+import { LinkValidator } from '../../common/validators/linkValidator'
+import { z } from 'zod'
 
 export class CoreGenerator {
   valid = true
@@ -28,13 +30,14 @@ export class CoreGenerator {
     this._addSimpleField('promesse', this.program.Promesse, true)
     this._addSimpleField('description', this.program['Description courte'], true)
     this._addSimpleField('description longue', this.program['Description longue'])
-    this._addSimpleField('début de validité', this.program.DISPOSITIF_DATE_DEBUT)
-    this._addSimpleField('fin de validité', this.program.DISPOSITIF_DATE_FIN)
+    this._addValidatedDateField('début de validité', this.program.DISPOSITIF_DATE_DEBUT)
+    this._addValidatedDateField('fin de validité', this.program.DISPOSITIF_DATE_FIN)
     if (this.program.Statuts.includes(Status.InProdNotAvailable)) {
       this._addSimpleField('aide temporairement indisponible', 'oui')
     }
     this._addSimpleField('illustration', this._setIllustration())
     setOperators(this)
+    await this._setContactQuestion()
     if (await validateExternalUrlLink(this)) {
       this._addSimpleField('url', this.program['URL externe'])
     }
@@ -43,10 +46,10 @@ export class CoreGenerator {
     if (this.program['Dispositif activable en autonomie']) {
       this.yamlContent['activable en autonomie'] = 'oui'
     }
-    setObjectives(this)
-    setEligibility(this)
+    await setObjectives(this)
+    await setEligibility(this)
     this.yamlContent['publicodes'] = new PublicodesGenerator(this.program).generatePublicodes()
-    new ConditionalDataGenerator(this.program).generate(this.yamlContent)
+    new ConditionalDataGenerator(this.program, this.logger).generate(this.yamlContent)
   }
 
   public get generatedData(): { [key: string]: unknown } {
@@ -80,6 +83,41 @@ export class CoreGenerator {
     if (value && (!Array.isArray(value) || value.length > 0)) {
       this.yamlContent[key] = value
     }
+  }
+
+  private async _setContactQuestion() {
+    const rawData = this.program['Contact Question']
+
+    const isEmail = z.string().email().safeParse(rawData).success
+    const isForm = rawData === '#formulaire#'
+    const isUrl = z.string().url().safeParse(rawData).success
+    if (isForm) {
+      this.yamlContent['contact question'] = 'formulaire'
+      return
+    }
+    if (isUrl) {
+      if (await LinkValidator.isValidLink(rawData)) {
+        this.yamlContent['contact question'] = LinkValidator.forceHttps(rawData)
+      } else {
+        this.logger.log(
+          LogLevel.Major,
+          `Lien invalidelors de la vérification automatique dans le champ "Contact Question". A vérifier manuellement avant mise en prod.`,
+          this.program['Id fiche dispositif'],
+          this.program.id
+        )
+      }
+      return
+    }
+    if (isEmail) {
+      this.yamlContent['contact question'] = 'mailto:' + rawData
+      return
+    }
+    this.logger.log(
+      LogLevel.Critic,
+      `Champ obligatoire "Contact Question" invalide ou manquant. Dispositif non mis en ligne ou à jour.`,
+      this.program['Id fiche dispositif'],
+      this.program.id
+    )
   }
 
   private _setIllustration(): string {
@@ -155,5 +193,45 @@ export class CoreGenerator {
         this.valid = false
         return
     }
+  }
+
+  private _addValidatedDateField(key: 'début de validité' | 'fin de validité', value: string | undefined) {
+    const fieldLabel = key
+    const raw = value?.trim()
+    if (!raw) {
+      return
+    }
+
+    // Check format
+    const formatRegex = /^\d{2}\/\d{2}\/\d{4}$/ // Required format: DD/MM/YYYY
+    if (!formatRegex.test(raw)) {
+      this.logger.log(
+        LogLevel.Major,
+        `Le champ "${fieldLabel}" est manquant ou mal formaté (attendu: JJ/MM/AAAA) et ne sera pas pris en compte.`,
+        this.program['Id fiche dispositif'],
+        this.program.id,
+        `Valeur reçue : ${raw}`
+      )
+      return
+    }
+
+    // Check logical validity
+    const [day, month, year] = raw.split('/').map(Number)
+    const dateObj = new Date(year, month - 1, day)
+
+    const isDateValid = dateObj.getFullYear() === year && dateObj.getMonth() === month - 1 && dateObj.getDate() === day
+
+    if (!isDateValid) {
+      this.logger.log(
+        LogLevel.Major,
+        `Le champ "${fieldLabel}" contient une date invalide (n'existe pas dans le calendrier) et ne sera pas pris en compte.`,
+        this.program['Id fiche dispositif'],
+        this.program.id,
+        `Valeur reçue : ${raw}`
+      )
+      return
+    }
+
+    this.yamlContent[key] = raw
   }
 }

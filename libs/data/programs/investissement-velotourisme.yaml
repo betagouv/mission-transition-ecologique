@@ -43,6 +43,7 @@ début de validité: 01/09/2024
 fin de validité: 31/10/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000686
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20241115/developper-velotourisme
 nature de l'aide: financement
@@ -53,7 +54,7 @@ objectifs:
       assurer de la correspondance entre votre projet d’investissement et les
       attendus de la marque Accueil Vélo©.
     liens:
-      - lien: http://www.francevelotourisme.com/contact/devenir_accueil_velo
+      - lien: https://www.francevelotourisme.com/contact/devenir_accueil_velo
         texte: Prendre contact
   - description: >-
       Remplissez une demande d'aide et réaliser le calcul prévisionnel de l'aide

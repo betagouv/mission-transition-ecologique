@@ -15,6 +15,7 @@ export type OpportunityDetailsShort = Omit<OpportunityDetails, 'linkToPage' | 'l
 
 export interface OpportunityUpdateAttributes {
   sentToOpportunityHub: boolean
+  idCe: number
 }
 
 export interface ContactId {

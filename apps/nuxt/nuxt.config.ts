@@ -13,7 +13,8 @@ import { ChangeFreq, Priority } from './src/types/sitemapType'
  * it can cause issues with the build
  */
 const hasPrerenderOrSwr = !process.env.CI && !Config.isTestData
-const maxAge = 2678400 // 31 days in seconds
+const maxAge31Days = 2678400 // 31 days in seconds
+const maxAge7Days = 604800 // 7 days in seconds
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default <DefineNuxtConfig>defineNuxtConfig({
@@ -22,18 +23,24 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     head: {
       htmlAttrs: {
         lang: 'fr'
-      }
+      },
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/manifest.webmanifest' }
+      ]
     }
   },
   routeRules: {
     '/_nuxt/**': {
       headers: {
-        'cache-control': `public, max-age=${maxAge}, s-maxage=${maxAge}`
+        'cache-control': `public, max-age=${maxAge31Days}, s-maxage=${maxAge31Days}`
       }
     },
     '/images/**': {
       headers: {
-        'cache-control': `public, max-age=${maxAge}, s-maxage=${maxAge}`
+        'cache-control': `public, max-age=${maxAge31Days}, s-maxage=${maxAge31Days}`
       }
     },
     '/': { prerender: true },
@@ -80,8 +87,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     autoImport: true
   },
   css: [
-    '@gouvfr/dsfr/dist/dsfr.min.css', // Le CSS minimal du DSFR
-    '@gouvfr/dsfr/dist/utility/icons/icons.min.css', // Styles de tous les composants du DSFR
+    // '@gouvfr/dsfr/dist/dsfr.min.css', // Le CSS minimal du DSFR
+    // '@gouvfr/dsfr/dist/utility/icons/icons.min.css', // Styles de tous les composants du DSFR
     '@gouvminint/vue-dsfr/styles', // Styles des composants VueDsfr
     '~/assets/custom.css',
     '~/assets/main.scss'
@@ -129,7 +136,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '@sentry/nuxt/module',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
-    '@nuxt/scripts'
+    '@nuxt/scripts',
+    '@nuxt/image'
   ],
   // Modules who need to have a look:
   // - nuxt-purgecss
@@ -154,7 +162,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     sources: ['/api/__sitemap__/programs', '/api/__sitemap__/projects']
   },
   robots: {
-    disallow: ['/ajouter-une-aide-entreprises', '/iframe/projet/'],
+    disallow: ['/ajouter-une-aide-entreprises', '/iframe/**', '/iframe', '/demo/**'],
     credits: false
   },
   scripts: {
@@ -170,7 +178,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     },
     densities: [1],
     ipx: {
-      maxAge: maxAge
+      maxAge: maxAge7Days
     }
   },
   runtimeConfig: {
@@ -179,6 +187,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       sentry: {
         dsn: Config.SENTRY_DSN
       },
+      siteUrl: undefined, // Defined on environment variables
       posthog: {
         apiKey: Config.posthogApiKey
       },

@@ -32,6 +32,7 @@ description longue: >-
 fin de validité: 13/12/2024
 illustration: images/TEE_ampoule.png
 opérateur de contact: Région Sud (PACA)
+contact question: mailto:relationentrepriseusager@maregionsud.fr
 url: https://www.maregionsud.fr/vos-aides/detail/cedre-ambition
 nature de l'aide: étude
 montant du financement: Gratuit
@@ -41,7 +42,7 @@ objectifs:
       projet.
     liens:
       - lien: mailto:relationentrepriseusager@maregionsud.fr
-        texte: relationentrepriseusager@maregionsud.fr
+        texte: contacter par mail
   - description: >-
       Complétez le dossier et la lettre de candidature disponibles dans les
       "ressources à télécharger" en bas de page.
@@ -50,12 +51,12 @@ objectifs:
           https://entreprises.maregionsud.fr/financement/sud-entreprises/gamme-cedre/cedre-ambition
         texte: Lettre et dossier de candidature CEDRE Ambition
   - description: >-
-      Envoyez votre dossier de candidature par mail à l’adresse suivante avec
-      pour objet "Candidature CEDRE Ambition 2025". La date limite de réception
-      des candidatures est fixée au 13 décembre 2024.
+      Envoyez votre dossier de candidature par mail avec pour objet "Candidature
+      CEDRE Ambition 2025". La date limite de réception des candidatures est
+      fixée au 13 décembre 2024.
     liens:
-      - lien: 'https://cedre@maregionsud.fr '
-        texte: 'cedre@maregionsud.fr '
+      - lien: mailto:cedre@maregionsud.fr
+        texte: Envoyer mon dossier par mail
   - description: >-
       Votre projet est analysé par un comité technique composé de représentants
       de la Région, des chambres consulaires, et d’autres parties prenantes.

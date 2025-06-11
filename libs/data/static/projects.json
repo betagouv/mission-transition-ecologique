@@ -19,6 +19,7 @@
       "programme-breizh-fab",
       "renovation-petit-tertiaire-prive",
       "tpe-gagnantes-sur-tous-les-couts",
+      "visite-energie",
       "visite-energie-cma",
       "cci-business-optimizer",
       "fiscalite-energetique-occitanie",
@@ -82,6 +83,7 @@
     "mainTheme": "energy",
     "programs": [
       "fonds-tourisme-durable",
+      "visite-energie",
       "visite-energie-cma",
       "aide-financement-occitanie",
       "cedre-investissement",
@@ -167,7 +169,8 @@
       "camping-independant-na",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "decarb-flash-2025-2027"
     ],
     "linkedProjects": [
       4
@@ -284,7 +287,8 @@
       "camping-independant-na",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "decarb-flash-2025-2027"
     ],
     "linkedProjects": [
       4
@@ -353,7 +357,8 @@
       "agir-pdl",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "decarb-flash-2025-2027"
     ],
     "linkedProjects": [
       4
@@ -483,7 +488,8 @@
       "camping-independant-na",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "bciat-biomasse-chaleur-industrie-agriculture-tertiaire"
     ],
     "linkedProjects": [
       4
@@ -549,7 +555,8 @@
       "camping-independant-na",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "decarb-flash-2025-2027"
     ],
     "linkedProjects": [
       4
@@ -619,7 +626,8 @@
       "camping-independant-na",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "decarb-flash-2025-2027"
     ],
     "linkedProjects": [
       4,
@@ -910,7 +918,8 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "decarb-flash-2025-2027"
     ],
     "linkedProjects": [
       4,
@@ -1839,8 +1848,7 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "prit-hdf",
-      "camping-independant-bfc",
-      "evaluation-carbone-lise"
+      "camping-independant-bfc"
     ],
     "linkedProjects": [],
     "priority": "10",
@@ -1877,7 +1885,7 @@
     "shortDescription": "Construire la feuille de route de son entreprise pour réduire ses émissions de gaz à effet de serre.",
     "image": "/images/projet/plan-transition-bas-carbone.webp",
     "longDescription": "Le plan de transition d'une entreprise présente l’ensemble des actions et des moyens envisagés pour réduire ses émissions de gaz à effet de serre et les objectifs à atteindre pour le prochain bilan.\n\nAvant de définir ce plan de transition, il est nécessaire de quantifier votre impact via un bilan de gaz à effet de serre (GES). Vous pourrez ensuite définir une trajectoire de réduction réaliste et atteignable pour réduire durablement vos principaux postes émetteurs de GES.\n\nUne stratégie bas carbone efficace doit s'aligner sur la trajectoire cible de la SNBC, Stratégie Nationale Bas Carbone (SNBC), qui est la feuille de route de la France pour lutter contre le changement climatique. Cette stratégie s’appuie sur un scénario d’atteinte de la neutralité carbone à l’horizon 2050 (c’est-à-dire, un équilibre entre l’émission des gaz à effet de serre et leur absorption).\n\nCette objectif de **neutralité carbone** n'est atteignable que si les entreprises se mettent en mouvement !",
-    "moreDescription": "- [**Portail RSE,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) un site qui vous permet de connaitre vos obligations pour la réalisation du bilan GES et du plan de transition.\n- [**Guide pour la construction, la mise en oeuvre et le suivi d'un plan de transition**](https://bilans-ges.ademe.fr/api/medias/d69d82c9-f060-468f-94c8-bc7391bd1b7e/download)**.**\n- [**La Stratégie Nationale Bas Carbone**](https://bigmedia.bpifrance.fr/nos-dossiers/strategie-nationale-bas-carbone-snbc-definition-objectifs-et-application-en-entreprise) : définition, objectifs et application en entreprise.",
+    "moreDescription": "- [**Portail RSE,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) un site qui vous permet de connaitre vos obligations pour la réalisation du bilan GES et du plan de transition.\n- [**Guide pour la construction, la mise en oeuvre et le suivi d'un plan de transition**](https://bilans-ges.ademe.fr/api/medias/d69d82c9-f060-468f-94c8-bc7391bd1b7e/download)**.**\n- [**La Stratégie Nationale Bas Carbone**](https://bigmedia.bpifrance.fr/nos-dossiers/strategie-nationale-bas-carbone-snbc-definition-objectifs-et-application-en-entreprise) : définition, objectifs et application en entreprise.\n- [**L'Association pour la transition Bas Carbone**](https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/) : un annuaire des prestataires pour réaliser un bilan carbone.",
     "themes": [
       "environmental"
     ],
@@ -1960,7 +1968,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "prit-hdf",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "fasep"
     ],
     "linkedProjects": [
       26,
@@ -2096,7 +2105,8 @@
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
       "credit-impot-recherche",
-      "credit-impot-innovation"
+      "credit-impot-innovation",
+      "fasep"
     ],
     "linkedProjects": [
       31
@@ -2641,7 +2651,7 @@
   {
     "id": 144,
     "slug": "biodiversite",
-    "title": "Empreinte biodiversité",
+    "title": "Plan d'action biodiversité",
     "nameTag": "🦋 biodiversité",
     "shortDescription": "Comprendre et minimiser les impacts de l'activité de votre entreprise sur la faune et la flore.",
     "image": "/images/projet/biodiversite.webp",
@@ -2721,6 +2731,7 @@
       "diag-eco-flux",
       "performa-environnement",
       "tpe-gagnantes-sur-tous-les-couts",
+      "visite-energie",
       "visite-energie-cma",
       "cedre-investissement",
       "sud-pret-climat",
@@ -2901,6 +2912,40 @@
       "S",
       "T",
       "U"
+    ]
+  },
+  {
+    "id": 434,
+    "slug": "methanisation",
+    "title": "Méthanisation",
+    "nameTag": "⚡️ méthanisation",
+    "shortDescription": "La méthanisation produit du biogaz à partir de déchets et résidus agricoles.",
+    "image": "/images/projet/methanisation.webp",
+    "longDescription": "La méthanisation est un processus biologique qui consiste à décomposer des matières organiques (déchets agricoles, déchets industriels, déchets ménagers, boues d'épuration...) pour produire du biogaz, un gaz renouvelable, ainsi que du digesta**t**, un résidu organique riche en nutriments.\\\nLe biogaz peut-être alors utilisé comme source d'énergie (chaleur, carburant, source d'électricité) et le digestat comme fertilisant pour les sols, à condition d'en éliminer préalablement les bactéries pathogènes.\n\nLa méthanisation permet ainsi de valoriser les déchets organiques en énergie et en engrais, réduisant ainsi les coûts et les impacts liés à leur traitement. Vous pouvez également utiliser le biogaz produit pour répondre aux besoins énergétiques de votre entreprise ou le vendre à des réseaux de distribution (injection dans le réseau de gaz naturel).",
+    "moreDescription": "- [**Méthanisation**](https://infos.ademe.fr/magazine-fevrier-2022/faits-et-chiffres/les-chiffres-cles-de-la-methanisation/), Définition et chiffres clés par l'ADEME.\n- [**L'élu, la méthanisation et le biogaz**](https://amorce.asso.fr/publications/guide-l-elu-la-methanisation-et-le-biogaz-enp78), un guide de l'association AMORCE, pour saisir les enjeux de la production de biogaz.",
+    "themes": [
+      "energy",
+      "waste"
+    ],
+    "mainTheme": "energy",
+    "programs": [
+      "etude-methanisation",
+      "investissement-methanisation",
+      "aide-tpe-transition-na",
+      "certificats-economie-energie"
+    ],
+    "linkedProjects": [
+      4,
+      21
+    ],
+    "priority": "905",
+    "highlightPriority": "6",
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "F"
     ]
   },
   {
