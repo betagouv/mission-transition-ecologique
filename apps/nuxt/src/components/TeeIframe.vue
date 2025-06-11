@@ -89,6 +89,13 @@ imageResizerChild()
 
   .fr-card__header {
     flex-basis: 25%;
+    align-content: center;
+  }
+
+  @include tool.media-query-respond-from(md) {
+    .fr-card__img {
+      max-height: 250px;
+    }
   }
 
   .fr-card__img {
@@ -96,12 +103,6 @@ imageResizerChild()
 
     img {
       max-height: 250px;
-    }
-
-    @include tool.media-query-respond-from(md) {
-      img {
-        max-height: 350px;
-      }
     }
 
     &::after {
