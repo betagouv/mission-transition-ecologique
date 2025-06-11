@@ -71,4 +71,17 @@ export default class Program {
       }
     }
   }
+
+  static hasFormInObjectives(program: ProgramTypeForFront) {
+    for (const objectif of program.objectifs) {
+      if (Array.isArray(objectif.liens)) {
+        for (const lien of objectif.liens) {
+          if (lien.formulaire === true) {
+            return true
+          }
+        }
+      }
+    }
+    return false
+  }
 }

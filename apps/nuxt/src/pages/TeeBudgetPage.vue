@@ -148,9 +148,9 @@
 </template>
 
 <script setup lang="ts">
+import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 import { onMounted, ref } from 'vue'
-import Chart from 'chart.js/auto'
 import { MetaRobots } from '@/tools/metaRobots'
 
 definePageMeta({
@@ -158,6 +158,7 @@ definePageMeta({
   name: RouteName.Budget
 })
 
+const navigation = new Navigation()
 const budgetChartCanvas = ref<HTMLCanvasElement | null>(null)
 
 const budgetLabels = ['Design', 'Développement et Data engineering', 'Pilotage', 'Coaching', 'BizDev']
@@ -187,11 +188,14 @@ const formatCurrency = (value: number): string => {
   }).format(value)
 }
 
-const drawBudgetChart = () => {
+const drawBudgetChart = async () => {
   if (!budgetChartCanvas.value) return
 
   const chartContext = budgetChartCanvas.value.getContext('2d')
   if (!chartContext) return
+
+  // Import Chart.js de manière asynchrone
+  const { default: Chart } = await import('chart.js/auto')
 
   const totalByCategory = budgetLabels.map((label, index) => {
     return budgetData[2023][index] + budgetData[2024][index]
@@ -237,10 +241,20 @@ const drawBudgetChart = () => {
 }
 
 onMounted(() => {
-  drawBudgetChart()
+  drawBudgetChart().catch((error) => {
+    console.error('Erreur lors du chargement du graphique:', error)
+  })
 })
 
-useHead(MetaRobots.indexFollow())
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.Budget)
+    }
+  ],
+  ...MetaRobots.indexFollow()
+})
 </script>
 
 <style scoped>

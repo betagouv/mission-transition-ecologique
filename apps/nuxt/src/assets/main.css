@@ -1,3 +1,94 @@
+@import "@gouvfr/dsfr/dist/core/core.css";
+@import "@gouvfr/dsfr/dist/core/core.legacy.css";
+@import "@gouvfr/dsfr/dist/component/accordion/accordion.css";
+@import "@gouvfr/dsfr/dist/component/badge/badge.css";
+@import "@gouvfr/dsfr/dist/component/breadcrumb/breadcrumb.css";
+@import "@gouvfr/dsfr/dist/component/button/button.css";
+@import "@gouvfr/dsfr/dist/component/card/card.css";
+@import "@gouvfr/dsfr/dist/component/checkbox/checkbox.css";
+@import "@gouvfr/dsfr/dist/component/form/form.css";
+@import "@gouvfr/dsfr/dist/component/header/header.css";
+@import "@gouvfr/dsfr/dist/component/highlight/highlight.css";
+@import "@gouvfr/dsfr/dist/component/input/input.css";
+@import "@gouvfr/dsfr/dist/component/link/link.css";
+@import "@gouvfr/dsfr/dist/component/logo/logo.css";
+@import "@gouvfr/dsfr/dist/component/modal/modal.css";
+@import "@gouvfr/dsfr/dist/component/navigation/navigation.css";
+@import "@gouvfr/dsfr/dist/component/radio/radio.css";
+@import "@gouvfr/dsfr/dist/component/search/search.css";
+@import "@gouvfr/dsfr/dist/component/select/select.css";
+@import "@gouvfr/dsfr/dist/component/sidemenu/sidemenu.css";
+@import "@gouvfr/dsfr/dist/component/tab/tab.css";
+@import "@gouvfr/dsfr/dist/component/table/table.css";
+@import "@gouvfr/dsfr/dist/component/tag/tag.css";
+@import "@gouvfr/dsfr/dist/component/tile/tile.css";
+@import '@gouvfr/dsfr/dist/component/footer/footer.css';
+@import '@gouvfr/dsfr/dist/component/follow/follow.css';
+.fr-icon-map-pin-2-line::before, .fr-icon-map-pin-2-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/map/map-pin-2-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/map/map-pin-2-line.svg");
+}
+.fr-icon-arrow-left-line::before, .fr-icon-arrow-left-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/arrow-left-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/arrow-left-line.svg");
+}
+.fr-icon-arrow-right-line::before, .fr-icon-arrow-right-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/arrow-right-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/arrow-right-line.svg");
+}
+.fr-icon-check-line::before, .fr-icon-check-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/check-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/check-line.svg");
+}
+.fr-icon-close-circle-fill::before, .fr-icon-close-circle-fill::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/close-circle-fill.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/close-circle-fill.svg");
+}
+.fr-icon-close-line::before, .fr-icon-close-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/close-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/close-line.svg");
+}
+.fr-icon-external-link-fill::before, .fr-icon-external-link-fill::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/external-link-fill.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/external-link-fill.svg");
+}
+.fr-icon-checkbox-circle-fill::before, .fr-icon-checkbox-circle-fill::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/checkbox-circle-fill.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/checkbox-circle-fill.svg");
+}
+.fr-icon-mail-line::before, .fr-icon-mail-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/mail-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/mail-line.svg");
+}
+.fr-icon-briefcase-line::before, .fr-icon-briefcase-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/briefcase-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/briefcase-line.svg");
+}
+.fr-icon-link::before, .fr-icon-link::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/editor/link.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/editor/link.svg");
+}
+.fr-icon-money-euro-circle-line::before, .fr-icon-money-euro-circle-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/finance/money-euro-circle-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/finance/money-euro-circle-line.svg");
+}
+.fr-icon-team-line::before, .fr-icon-team-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/user/team-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/user/team-line.svg");
+}
+.fr-icon-account-pin-circle-line::before, .fr-icon-account-pin-circle-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/user/account-pin-circle-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/user/account-pin-circle-line.svg");
+}
+.fr-icon-account-circle-fill::before, .fr-icon-account-circle-fill::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/user/account-circle-fill.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/user/account-circle-fill.svg");
+}
+.fr-icon-question-mark::before, .fr-icon-question-mark::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/editor/question-mark.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/editor/question-mark.svg");
+}
+
 .fr-accordion__btn {
   color: var(--text-title-grey);
 }
@@ -4656,6 +4747,11 @@ a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=
 }
 .tee-font-style--normal {
   font-style: normal;
+}
+
+.markdown-spacing-reset p,
+.markdown-spacing-reset li {
+  margin: 0 !important;
 }
 
 /*# sourceMappingURL=main.css.map */

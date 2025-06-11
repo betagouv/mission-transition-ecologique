@@ -1,7 +1,23 @@
 <template>
-  <div class="fr-mb-0v fr-mb-md-6v fr-mr-4v fr-mr-md-0">
-    <h3>{{ getProgramObjectiveTitle() }}</h3>
+  <ProgramAccordion
+    id="activation"
+    :accordion-id="`${program.id}-activation`"
+    :title="Translation.t('program.programActivation')"
+  >
     <ol class="fr-order-list">
+      <li
+        v-if="!isDataFull"
+        class="fr-mb-4v fr-mb-md-2v"
+      >
+        <div class="fr-mb-0 fr-ml-0">{{ Translation.t('program.programActivationRegistration') }}</div>
+        <DsfrButton
+          primary
+          class="fr-my-1v fr-text--yellow"
+          @click="openModal"
+        >
+          {{ Translation.t('results.eligibilityCheckCTA') }}
+        </DsfrButton>
+      </li>
       <li
         v-for="(content, idx) in program.objectifs"
         :key="`description-paragraph-${idx}`"
@@ -10,7 +26,7 @@
         <div class="fr-mb-0 fr-ml-0">
           <div
             class="fr-tee-description-paragraph-content"
-            v-html="markdownToHtml(content.description)"
+            v-html="Marked.toHtml(content.description)"
           />
         </div>
         <div v-if="content.liens">
@@ -21,56 +37,46 @@
             <TeeButtonExternalLink
               v-if="link.lien"
               :href="link.lien"
-              class="fr-mb-1v fr-mr-md-2v"
+              class="fr-my-1v fr-mr-md-2v"
             >
               {{ link.texte }}
             </TeeButtonExternalLink>
-            <!-- <DsfrButton
-              v-if="link.formulaire && props.isCTAToFormVisible"
+            <DsfrButton
+              v-if="link.formulaire && isFormVisible"
               secondary
               icon="fr-icon-mail-line"
               size="md"
-              class="fr-mb-1v fr-mr-md-2v overwrite-button-style"
-              :on-click="props.scrollToForm"
+              class="fr-my-1v fr-mr-md-2v overwrite-button-style"
+              :on-click="() => scrollToForm()"
             >
-              {{ Translation.t('program.CTAButton') }}
-            </DsfrButton> -->
+              {{ Translation.t('program.ctaForm') }}
+            </DsfrButton>
           </template>
         </div>
       </li>
     </ol>
-  </div>
+  </ProgramAccordion>
 </template>
 
 <script setup lang="ts">
-import TeeButtonExternalLink from '@/components/element/button/TeeButtonExternalLink.vue'
 import Translation from '@/tools/translation'
 import { Marked } from '@/tools/marked'
-import { ProgramAidType, type ProgramTypeForFront } from '@/types'
+import { type ProgramTypeForFront } from '@/types'
+import Navigation from '@/tools/navigation'
 
 interface Props {
   program: ProgramTypeForFront
-  formContainerRef: HTMLElement | null | undefined
   scrollToForm: () => void
-  isCTAToFormVisible: boolean
+  isFormVisible: boolean
 }
 
-const props = defineProps<Props>()
+defineProps<Props>()
 
-const getProgramObjectiveTitle = () => {
-  switch (props.program["nature de l'aide"]) {
-    case ProgramAidType.study:
-    case ProgramAidType.train:
-    case ProgramAidType.loan:
-    case ProgramAidType.tax:
-      return Translation.t('program.programObjective.title.inProgram')
-    case ProgramAidType.fund:
-      return Translation.t('program.programObjective.title.applicationSteps')
-  }
-}
+const { isDataFull } = storeToRefs(useCompanyDataStore())
 
-const markdownToHtml = (text: string | undefined) => {
-  return text ? Marked.toHtml(text) : ''
+const openModal = () => {
+  useNavigationStore().resetFromCtaRegisterModal()
+  Navigation.toggleRegisterModal()
 }
 </script>
 

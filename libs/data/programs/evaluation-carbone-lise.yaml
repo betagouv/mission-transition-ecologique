@@ -50,6 +50,7 @@ description longue: >-
   l’accompagnement LISE.
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Chambre de Commerce et de l'Industrie
+contact question: formulaire
 url: >-
   https://www.cci.fr/offre/evaluation-carbone-simplifiee-lise-mesurez-et-reduisez-vos-emissions-de-co2
 nature de l'aide: étude
@@ -57,6 +58,8 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 2 jours d'accompagnement
 objectifs:
   - description: Exprimez votre intérêt en contactant un conseiller via le formulaire
+    liens:
+      - formulaire: true
   - description: >-
       Un conseiller CCI vous rappelle pour répondre à vos questions et vous
       guider dans la constitution de votre demande.

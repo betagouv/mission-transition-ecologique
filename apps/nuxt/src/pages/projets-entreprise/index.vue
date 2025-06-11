@@ -25,6 +25,7 @@ import { useCompanyDataStore } from '@/stores/companyData'
 import { useProjectStore } from '@/stores/project'
 import { CompanyData } from '@/tools/companyData'
 import { MetaSeo } from '@/tools/metaSeo'
+import Navigation from '@/tools/navigation'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { Theme } from '@/tools/theme'
@@ -41,6 +42,7 @@ const { projects, hasError } = storeToRefs(useProjectStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 const theme = Theme.getThemeFromSelectedTheme()
 const filteredProjects = ProjectFilter.filter(projects, theme)
+const navigation = new Navigation()
 
 const title = 'Les projets de transition écologique'
 const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
@@ -76,5 +78,13 @@ const countProjects = computed(() => {
   return filteredProjects.value?.length || 0
 })
 
-useHead(MetaRobots.noIndexOnQueries(useRoute().fullPath))
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.CatalogProjects)
+    }
+  ],
+  ...MetaRobots.noIndexOnQueries(useRoute().fullPath)
+})
 </script>

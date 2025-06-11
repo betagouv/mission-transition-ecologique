@@ -11,19 +11,20 @@ description: >-
   numérique.
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Centre national d'enseignement à distance
+contact question: https://climat.cned.fr/contact/
 url: https://climat.cned.fr/
 nature de l'aide: formation
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 7h
 activable en autonomie: oui
 objectifs:
-  - description: "Avant de démarrer la formation, testez vos connaissances\_avec 5 questions sur le changement climatique, ses enjeux et les moyens d’agir"
+  - description: "Avant de démarrer la formation, testez vos connaissances\_avec 5 questions sur le changement climatique, ses enjeux et les moyens d’agir."
     liens:
       - lien: https://climat.cned.fr/le-saviez-vous/
         texte: Testez vos connaissances
   - description: >-
       Accédez à la formation gratuite, en ligne, à réaliser en toute autonomie
-      (durée totale estimée : 7h)
+      (durée totale estimée : 7h).
     liens:
       - lien: https://climat.cned.fr/formations/
         texte: Accéder à la formation
