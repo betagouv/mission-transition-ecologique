@@ -22,9 +22,10 @@ export class Marked {
           if (token.href === undefined) {
             return `${text}`
           }
-          // const localLink = token.href.startsWith(`${location.protocol}//${location.hostname}`) // disable because of SSR and not url with mission-transition-ecologique
-          const localLink = false
-          const target = localLink ? '' : ' target="_blank" rel="noreferrer noopener nofollow"'
+
+          const config = useRuntimeConfig()
+          const localLink = token.href.startsWith(config.public.siteUrl) // disable because of SSR and not url with mission-transition-ecologique
+          const target = localLink ? ' target="_blank"' : ' target="_blank" rel="noopener external"'
           return `<a href="${token.href}"${target}>${text}</a>`
         }
       }
