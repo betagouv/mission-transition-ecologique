@@ -187,6 +187,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       sentry: {
         dsn: Config.SENTRY_DSN
       },
+      siteUrl: undefined, // Defined on environment variables
       posthog: {
         apiKey: Config.posthogApiKey
       },
