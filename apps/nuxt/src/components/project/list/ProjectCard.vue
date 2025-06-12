@@ -16,7 +16,7 @@
     >
       <div
         v-if="!isUniquePriority"
-        class="fr-card__header--priority fr-hidden fr-unhidden-lg"
+        class="fr-card__header--priority"
       >
         {{ priorityOrder }}
       </div>
