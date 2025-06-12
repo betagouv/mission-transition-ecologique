@@ -103,6 +103,8 @@
             <a
               v-else
               :href="link.href"
+              target="_blank"
+              rel="noopener noreferrer"
               class="fr-footer__bottom-link"
             >
               {{ link.label }}
@@ -152,6 +154,8 @@ defineProps<Props>()
 
 const img = Image.getUrl
 const sourceCodeHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/tree/main'
+const mediaKit =
+  'https://accelerateur-transition-ecologique-ademe.notion.site/M-dia-Kit-Transition-cologique-des-Entreprises-1826523d57d780e8aa40d6e1a4cb528f?pvs=74'
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'
 const licenceName = 'GNU AGPL v.3'
 const gouvLinks = [
@@ -204,6 +208,10 @@ const mainLinks = [
   {
     label: 'Ajouter une aide',
     to: { name: RouteName.AddProgram }
+  },
+  {
+    label: 'Kit média',
+    href: mediaKit
   }
 ]
 
