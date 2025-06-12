@@ -104,6 +104,7 @@
               v-else
               :href="link.href"
               target="_blank"
+              rel="noopener noreferrer"
               class="fr-footer__bottom-link"
             >
               {{ link.label }}
