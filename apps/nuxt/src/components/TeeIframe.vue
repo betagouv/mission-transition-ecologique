@@ -23,7 +23,10 @@
             </div>
           </div>
           <div class="fr-card__header">
-            <div class="fr-card__img">
+            <div
+              class="fr-card__img"
+              :class="[bgColor ? `fr-bg--${bgColor}` : '', objectFit === 'contain' ? 'fr-card__img--contain' : '']"
+            >
               <img
                 class="fr-responsive-img"
                 :src="resolvedImageSrc"
@@ -46,14 +49,25 @@
 import { Image } from '@/tools/image'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
-import { RouteName } from '@/types'
+import { Color, RouteName } from '@/types'
 
-const props = defineProps<{
+interface Props {
   link?: string
   title?: string
   imageSrc?: string
   imageAlt?: string
-}>()
+  objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down'
+  bgColor?: Color
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  link: undefined,
+  title: undefined,
+  imageSrc: undefined,
+  imageAlt: undefined,
+  objectFit: 'cover',
+  bgColor: undefined
+})
 
 const router = useRouter()
 
@@ -87,8 +101,19 @@ imageResizerChild()
     }
   }
 
+  @include tool.media-query-respond-from(md) {
+    .fr-card__header {
+      flex-basis: 30%;
+    }
+  }
+
+  @include tool.media-query-respond-from(lg) {
+    .fr-card__header {
+      flex-basis: 25%;
+    }
+  }
+
   .fr-card__header {
-    flex-basis: 25%;
     align-content: center;
   }
 
