@@ -46,6 +46,7 @@
       .fr-card__img {
         height: 100%;
         align-content: center;
+        max-height: 200px;
 
         img {
           object-fit: fill;
