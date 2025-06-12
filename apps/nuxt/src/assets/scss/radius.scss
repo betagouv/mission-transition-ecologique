@@ -12,8 +12,6 @@
         @each $corner, $corner-name in setting.$corner {
           @each $radius, $radius-value in setting.$rounded {
             &-#{$corner} {
-              @include tool.border-radius($radius-value, $corner-name, true);
-
               @if $radius {
                 &--#{$radius} {
                   @include tool.border-radius($radius-value, $corner-name, true);

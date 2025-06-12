@@ -4,7 +4,7 @@
       v-if="!hasSpinner"
       :has-error="hasError"
     />
-    <div class="fr-container fr-px-md-0">
+    <div class="fr-container fr-px-md-0 fr-pt-1v">
       <SimpleProjectList
         v-if="!hasSpinner"
         :project-list="projectList"
