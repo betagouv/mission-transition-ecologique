@@ -73,7 +73,7 @@ const router = useRouter()
 
 const defaultLink = router.resolve({ name: RouteName.Homepage }).href
 const defaultTitle = 'Accédez aux aides publiques pour votre projet de transition écologique'
-const defaultImageSrc = 'images/TEE_iframe.webp'
+const defaultImageSrc = 'images/TEE_iframe2.webp'
 const defaultImageAlt = "Image de la page d'accueil de mission transition écologique"
 
 const resolvedLink = computed(() => props.link || defaultLink)

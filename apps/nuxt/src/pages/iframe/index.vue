@@ -1,6 +1,6 @@
 <template>
   <TeeIframe
-    :bg-color="Color.purpleLightnessed"
+    :bg-color="Color.purple"
     object-fit="contain"
   ></TeeIframe>
 </template>
