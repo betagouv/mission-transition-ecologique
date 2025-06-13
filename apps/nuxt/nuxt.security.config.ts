@@ -1,4 +1,4 @@
-import { SecurityHeaders, RateLimiter, ContentSecurityPolicyValue } from 'nuxt-security'
+import { SecurityHeaders, RateLimiter, ContentSecurityPolicyValue, XssValidator } from 'nuxt-security'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import Config from './src/config'
 
@@ -70,5 +70,11 @@ export class NuxtSecurityConfig {
 
   static getRateLimiterConfig(): RateLimiter | undefined | false {
     return Config.isProduction() ? undefined : false
+  }
+
+  static getXssValidatorConfig(): XssValidator | undefined | false {
+    return {
+      escapeHtml: false
+    }
   }
 }
