@@ -73,6 +73,18 @@ conditions d'éligibilité:
     - Tous secteurs d'activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      La liste des pays éligibles est actualisée chaque année par la Politique
+      de Financement Export.
+    - "Le projet doit pouvoir générer des retombées économiques clairement identifiées\_:"
+    - "Le **FASEP Etudes**\_doit permettre à une ou plusieurs entreprises françaises de se positionner sur la réalisation du projet étudié ;"
+    - >-
+      Le **FASEP Innovation Verte** doit permettre à une entreprise de répliquer
+      ou de passer à l’échelle son projet dans le pays ou la région voisine ;
+    - >-
+      Le modèle économique du projet doit être soutenable et présenter des
+      chances de financement aval dès la phase amont.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
