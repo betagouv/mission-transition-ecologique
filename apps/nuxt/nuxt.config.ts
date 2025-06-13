@@ -175,13 +175,13 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     credits: false
   },
   site: {
-    title: MetaSeo.baseTitle,
+    name: MetaSeo.title(),
     description: MetaSeo.defaultDescription,
   },
   schemaOrg: {
     debug: true,
     identity: defineOrganization({
-      name: MetaSeo.baseTitle,
+      name: MetaSeo.title(),
       logo: MetaSeo.logoImage,
       description: MetaSeo.defaultDescription,
     })
