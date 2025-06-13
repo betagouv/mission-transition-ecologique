@@ -1,10 +1,11 @@
 import { UseSeoMetaInput } from '@unhead/vue'
 
 export class MetaSeo {
-  private static readonly _baseTitle = 'Transition écologique des TPE & PME'
+  public static readonly baseTitle = 'Transition écologique des TPE & PME'
   private static readonly _defaultTitle = 'Aides et financements personnalisés'
   private static readonly _defaultImage = '/images/TEE-social-network-sharing.webp'
-  private static readonly _defaultDescription =
+  public static readonly logoImage = '/images/logos/mission-transition-logo-alone.png'
+  public static readonly defaultDescription =
     'Service public pour les entreprises : Accédez simplement aux aides, accompagnements et financements disponibles pour les entreprises de votre secteur'
 
   static readonly get = (title?: string, description?: string): UseSeoMetaInput => {
@@ -12,11 +13,11 @@ export class MetaSeo {
   }
 
   static readonly default = () => {
-    return this._buildMeta(this._title(), this._defaultImage, this._defaultDescription)
+    return this._buildMeta(this._title(), this._defaultImage, this.defaultDescription)
   }
 
   private static readonly _title = (title?: string) => {
-    return `${this._baseTitle} - ${title || this._defaultTitle}`
+    return `${this.baseTitle} - ${title || this._defaultTitle}`
   }
 
   private static readonly _description = (description?: string) => {

@@ -68,6 +68,7 @@
     "marked": "^15.0.12",
     "node-fetch": "^3.3.2",
     "nuxt": "^3.17.5",
+    "nuxt-schema-org": "^5.0.5",
     "nuxt-security": "2.2.0",
     "pinia": "^2.2.4",
     "posthog-js": "^1.170.2",
