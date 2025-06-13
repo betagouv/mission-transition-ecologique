@@ -45,6 +45,7 @@ onNuxtReady(async () => {
 })
 
 useSeoMeta(MetaSeo.get(title, description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
