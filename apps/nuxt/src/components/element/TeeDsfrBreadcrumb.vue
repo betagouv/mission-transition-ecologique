@@ -73,22 +73,32 @@ const breadcrumbs = computed(() => {
   }
   return baseLinks
 })
+
 useSchemaOrg(
   defineBreadcrumb({
-    itemListElement: breadcrumbs.value.map((link) => {
-      if (link.to) {
-        const to = link.to as RouteLocationAsRelativeGeneric
-        if (to.name) {
-          return {
-            name: link.text,
-            item: navigation.getHrefByRouteName(to.name as RouteName, (to.params as RouteParamsGeneric) || {})
-          }
-        }
-        return
-      }
-
-      return { name: link.text }
-    })
+    itemListElement: defineBreadcrumbItemList()
   })
 )
+
+function defineBreadcrumbItemList() {
+  const itemListElement = []
+  for (const [breadcrumbIndex, breadcrumb] of breadcrumbs.value.entries()) {
+    const to = breadcrumb.to as RouteLocationAsRelativeGeneric | undefined
+
+    if (!to || breadcrumbIndex === breadcrumbs.value.length - 1) {
+      itemListElement.push({ name: breadcrumb.text })
+    } else {
+      const params = to.params as RouteParamsGeneric | undefined
+
+      if (to.name) {
+        itemListElement.push({
+          name: breadcrumb.text,
+          item: navigation.getHrefByRouteName(to.name as RouteName, params)
+        })
+      }
+    }
+  }
+
+  return itemListElement
+}
 </script>
