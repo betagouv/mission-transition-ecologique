@@ -1,3 +1,7 @@
+# Non technical explanation of the end-to-end tests
+
+[functional-tests-documentation.md](functional-tests-documentation.md)
+
 # Tests web end-to-end
 
 We are using [Playwright](https://playwright.dev/) to handle our frontend end-to-end testing. 
