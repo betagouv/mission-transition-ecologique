@@ -149,7 +149,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     },
     headers: NuxtSecurityConfig.getHeadersConfig(),
     rateLimiter: NuxtSecurityConfig.getRateLimiterConfig(),
-    xssValidator: NuxtSecurityConfig.getXssValidatorConfig()
+    xssValidator: NuxtSecurityConfig.getXssValidatorConfig(),
   },
   sentry: NuxtSentryConfig.getConfig(),
   sitemap: {

@@ -74,6 +74,7 @@ export class NuxtSecurityConfig {
 
   static getXssValidatorConfig(): XssValidator | undefined | false {
     return {
+      // data already escaped on brevo. So no worries to disable escapedHtml on our backend (for now).
       escapeHtml: false
     }
   }
