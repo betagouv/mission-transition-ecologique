@@ -31,7 +31,7 @@ autres opérateurs:
 contact question: formulaire
 url: https://diag.bpifrance.fr/diag-eco-flux
 nature de l'aide: étude
-coût de l'accompagnement: De 2 000 € HT à 3 000 € HT après subvention de 50%
+coût de l'accompagnement: 3 000 € HT après subvention de 50%
 durée de l'accompagnement: 6 à 8 jours de prestation répartis sur 15 à 18 mois
 objectifs:
   - description: >-
@@ -96,14 +96,3 @@ publicodes:
         d'eau
       - questionnaire . objectif prioritaire . est ma performance énergétique
       - questionnaire . objectif prioritaire . est l'écoconception
-champs conditionnels:
-  - toutes ces conditions:
-      - effectif >= 20
-      - effectif <= 49
-    Montant du dispositif: 2 000 € HT après subvention de 50%
-    Eligibilité taille: De 20 à 49 salariés
-  - toutes ces conditions:
-      - effectif >= 50
-      - effectif <= 249
-    Montant du dispositif: 3 000 € HT après subvention de 50%
-    Eligibilité taille: De 50 à 250 salariés

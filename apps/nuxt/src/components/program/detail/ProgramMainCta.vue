@@ -1,9 +1,9 @@
 <template>
-  <TeeRegisterHighlight
-    v-if="!isDataFull"
-    :text="Translation.t('program.programRegisterHighlightText')"
-  />
-  <div v-if="isDataFull && isActivationVisible">
+  <!--  <TeeRegisterHighlight-->
+  <!--    v-if="!isDataFull"-->
+  <!--    :text="Translation.t('program.programRegisterHighlightText')"-->
+  <!--  />-->
+  <div v-if="isActivationVisible">
     <DsfrButton
       size="lg"
       icon="fr-icon-check-line"
@@ -36,8 +36,6 @@
 
 <script setup lang="ts">
 import Translation from '@/tools/translation'
-import { useCompanyDataStore } from '@/stores/companyData'
-import { storeToRefs } from 'pinia'
 import { ProgramTypeForFront } from '@/types'
 import Analytics from '@/tools/analytic/analytics'
 import { CompanyData } from '@/tools/companyData'
@@ -50,7 +48,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const { isDataFull } = storeToRefs(useCompanyDataStore())
+// const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const trackAnalytics = () => {
   Analytics.sendEvent('program_external_question_contact', {

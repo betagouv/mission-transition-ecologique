@@ -1,6 +1,7 @@
 import Config from './src/config'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { DefineNuxtConfig, defineNuxtConfig } from 'nuxt/config'
+import { suppressWarningsPlugin } from './vite.logger.plugin'
 import { NuxtScriptsConfig } from './nuxt.scripts.config'
 import { NuxtSecurityConfig } from './nuxt.security.config'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
@@ -100,7 +101,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '~/assets/main.scss'
   ],
   vite: {
-    plugins: [nxViteTsPaths()],
+    plugins: [nxViteTsPaths(), suppressWarningsPlugin()],
     css: {
       preprocessorOptions: {
         scss: {
@@ -153,7 +154,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       hashScripts: true
     },
     headers: NuxtSecurityConfig.getHeadersConfig(),
-    rateLimiter: NuxtSecurityConfig.getRateLimiterConfig()
+    rateLimiter: NuxtSecurityConfig.getRateLimiterConfig(),
+    xssValidator: NuxtSecurityConfig.getXssValidatorConfig(),
   },
   sentry: NuxtSentryConfig.getConfig(),
   sitemap: {
