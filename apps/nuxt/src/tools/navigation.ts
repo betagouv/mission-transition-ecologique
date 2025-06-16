@@ -146,6 +146,12 @@ export default class Navigation {
     }
   }
 
+  static getClassesBySideMenu(hasSideMenu: boolean) {
+    return hasSideMenu
+      ? 'fr-col-offset-md-3 fr-col-md-9 fr-col-justify-md--left fr-col-offset-xl-2 fr-col-xl-10 fr-col-justify--center'
+      : ''
+  }
+
   static hashByRouteName = (routeName: string) => {
     return `#${routeName}`
   }

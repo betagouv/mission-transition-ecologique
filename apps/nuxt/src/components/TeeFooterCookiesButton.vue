@@ -3,7 +3,7 @@
     <TeeDsfrButton
       label="Gestion des cookies"
       aria-controls="fr-consent-modal"
-      class="fr-footer__bottom-link fr-btn--tertiary-no-outline"
+      class="fr-footer__bottom-link fr-btn--tertiary-no-outline fr-px-0"
       @click="openConsent"
     />
   </li>
