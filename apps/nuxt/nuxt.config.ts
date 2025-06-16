@@ -1,3 +1,5 @@
+import { defineOrganization } from 'nuxt-schema-org/schema'
+import { MetaSeo } from './src/tools/metaSeo'
 import Config from './src/config'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { DefineNuxtConfig, defineNuxtConfig } from 'nuxt/config'
@@ -144,7 +146,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@nuxt/scripts',
-    '@nuxt/image'
+    '@nuxt/image',
+    'nuxt-schema-org'
   ],
   // Modules who need to have a look:
   // - nuxt-purgecss
@@ -172,6 +175,18 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   robots: {
     disallow: ['/ajouter-une-aide-entreprises', '/iframe/**', '/iframe', '/demo/**'],
     credits: false
+  },
+  site: {
+    name: MetaSeo.title(),
+    description: MetaSeo.defaultDescription,
+  },
+  schemaOrg: {
+    debug: true,
+    identity: defineOrganization({
+      name: MetaSeo.title(),
+      logo: MetaSeo.logoImage,
+      description: MetaSeo.defaultDescription,
+    })
   },
   scripts: {
     registry: NuxtScriptsConfig.getRegistry()

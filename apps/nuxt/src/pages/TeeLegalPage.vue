@@ -24,6 +24,7 @@
 </template>
 
 <script setup lang="ts">
+import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/tools/contact'
@@ -51,6 +52,10 @@ const thirdParties: LegalNoticePropsThirdParty[] = [
     text: "Les données sont ensuite précisées via l'"
   }
 ]
+
+const description = 'Informations relatives au mentions légales du site de la Mission Transition Écologique des Entreprises.'
+useSeoMeta(MetaSeo.get('Mentions légales', description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 useHead({
   link: [
