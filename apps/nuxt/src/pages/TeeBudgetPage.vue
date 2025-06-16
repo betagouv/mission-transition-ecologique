@@ -148,6 +148,7 @@
 </template>
 
 <script setup lang="ts">
+import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 import { onMounted, ref } from 'vue'
@@ -245,6 +246,10 @@ onMounted(() => {
     console.error('Erreur lors du chargement du graphique:', error)
   })
 })
+
+const description = 'Informations relatives au budget du site de la Mission Transition Écologique des Entreprises.'
+useSeoMeta(MetaSeo.get('Budget', description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 useHead({
   link: [
