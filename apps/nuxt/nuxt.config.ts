@@ -180,6 +180,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   },
   schemaOrg: {
     identity: defineOrganization({
+      '@type': 'GovernmentOrganization',
       name: MetaSeo.title(),
       logo: MetaSeo.logoImage,
       description: MetaSeo.defaultDescription,
