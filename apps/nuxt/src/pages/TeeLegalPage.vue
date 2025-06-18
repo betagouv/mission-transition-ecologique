@@ -53,7 +53,7 @@ const thirdParties: LegalNoticePropsThirdParty[] = [
   }
 ]
 
-const description = 'Informations relatives au mentions légales du site de la Mission Transition Écologique des Entreprises.'
+const description = 'Informations relatives au mentions légales du site Mission Transition Écologique des Entreprises.'
 useSeoMeta(MetaSeo.get('Mentions légales', description))
 useSchemaOrg(defineWebPage({ description: description }))
 

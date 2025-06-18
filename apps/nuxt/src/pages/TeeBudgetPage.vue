@@ -247,7 +247,7 @@ onMounted(() => {
   })
 })
 
-const description = 'Informations relatives au budget du site de la Mission Transition Écologique des Entreprises.'
+const description = 'Informations relatives au budget du site Mission Transition Écologique des Entreprises.'
 useSeoMeta(MetaSeo.get('Budget', description))
 useSchemaOrg(defineWebPage({ description: description }))
 

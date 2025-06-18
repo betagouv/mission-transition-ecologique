@@ -179,7 +179,6 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     description: MetaSeo.defaultDescription,
   },
   schemaOrg: {
-    debug: true,
     identity: defineOrganization({
       name: MetaSeo.title(),
       logo: MetaSeo.logoImage,
