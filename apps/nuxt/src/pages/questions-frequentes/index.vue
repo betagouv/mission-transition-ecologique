@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import Contact from '@/tools/contact'
-import { FaqJson } from '@/tools/faq/FaqJson'
+
 import { FaqPage } from '@/tools/faq/faqType'
 import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
@@ -9,6 +9,8 @@ import { RouteName } from '@/types'
 definePageMeta({
   name: RouteName.Faq
 })
+
+const { FaqJson } = await import('@/tools/faq/FaqJson')
 
 const title = 'Questions fréquentes'
 
@@ -52,20 +54,3 @@ useSchemaOrg(defineWebPage({ description: description, '@type': 'FAQPage' }))
     <Faq :faq-items="FaqJson.pages[FaqPage.Faq]" />
   </Layout>
 </template>
-
-<style scoped lang="scss">
-h2 {
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 48px;
-    border-top: 3px solid #0072ff; // couleur de la bordure
-    z-index: -1;
-    border-radius: 2px;
-  }
-}
-</style>
