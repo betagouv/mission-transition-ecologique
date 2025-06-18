@@ -1070,7 +1070,7 @@
     "slug": "voiture-propre",
     "title": "Acquisition d'une voiture propre",
     "nameTag": "🚘 voiture propre",
-    "shortDescription": "Une voiture propre émet peu de CO₂ et polluants, tout en consommant un minimum d'énergie.",
+    "shortDescription": "Une voiture à faible émission émet peu de CO₂ et polluants, tout en consommant un minimum d'énergie.",
     "image": "/images/projet/vehicule-propre.webp",
     "longDescription": "L'usage des véhicules thermiques génère des émissions de CO₂, accélérant le changement climatique et contribuant à la pollution de l’air. Dans les grandes agglomérations, les niveaux de pollution de l’air les plus élevés et la plupart des dépassements des valeurs seuils européennes sont observés à proximité du trafic routier, mettant en danger la santé publique. \\\n\\\nEn optant pour une voiture électrique, hybride ou à hydrogène, vous contribuez à décarboner le secteur du transport et à améliorer significativement la qualité de l'air. Les véhicules \"propres\", au-delà de leur impact positif sur l’environnement, offrent également des avantages économiques. Ils permettent de réduire les coûts de fonctionnement à long terme, notamment grâce à une consommation d’énergie moindre et des aides financières pour l’acquisition. \\\n\\\nQue ce soit pour vos déplacements professionnels, vos trajets domicile-travail, la mobilité de vos équipes, ou celle de vos fournisseurs, c'est peut-être le moment de changer de voiture pour un modèle plus économe, plus propre et plus sûr !",
     "moreDescription": "- [**Flotte automobile : pourquoi et comment accélérer son verdissement ?** ](https://bigmedia.bpifrance.fr/nos-dossiers/flotte-automobile-pourquoi-et-comment-accelerer-son-verdissement)un tour d'horizon proposé par Bpifrance\n- [**Voitures électriques et bornes de recharge**](https://librairie.ademe.fr/mobilite-et-transport/5877-avis-de-l-ademe-voitures-electriques-et-bornes-de-recharges.html), l'avis de l'ADEME\n- [**Car labelling**](https://carlabelling.ademe.fr/), un outil de l'ADEME pour comparer l'impact environnemental des véhicules neufs.",
@@ -1080,7 +1080,6 @@
     "mainTheme": "mobility",
     "programs": [
       "bonus-ecologique",
-      "amelioration-qualite-de-l-air",
       "fonds-tourisme-durable",
       "pret-action-climat",
       "prime-a-la-conversion",
@@ -1089,18 +1088,14 @@
       "pret-vert-ademe",
       "aide-financement-occitanie",
       "sud-pret-climat",
-      "sites-touristiques-exemplaires",
       "cheque-transition-bioethanol",
       "recharge-vehicule-electrique",
       "pret-tourisme",
       "deploiement-flottes-hydrogene",
       "cheque-vert-grand-est",
       "pret-energie-aura",
-      "pass-transition-bzh",
-      "pass-transformation-ecologique",
       "pret-ile-de-france",
       "impulsion-environnement",
-      "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
       "je-change-ma-voiture",
       "certificats-economie-energie"
@@ -3175,11 +3170,11 @@
     "mainTheme": "mobility",
     "programs": [
       "extreme-defi-mobilite",
-      "plan-de-mobilite",
       "pass-transition-bzh"
     ],
     "linkedProjects": [
-      16
+      16,
+      997
     ],
     "priority": "230",
     "highlightPriority": null,
