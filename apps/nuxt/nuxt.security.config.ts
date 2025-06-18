@@ -69,7 +69,7 @@ export class NuxtSecurityConfig {
   }
 
   static getRateLimiterConfig(): RateLimiter | undefined | false {
-    return Config.isProduction() ? undefined : false
+    return Config.isProduction() ? false : false
   }
 
   static getXssValidatorConfig(): XssValidator | undefined | false {
