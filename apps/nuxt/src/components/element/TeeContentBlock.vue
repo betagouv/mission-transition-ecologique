@@ -1,7 +1,12 @@
 <template>
   <div :class="`fr-container${containerFrom ? `-${containerFrom}` : ''}`">
     <slot name="title">
-      <h3>{{ title }}</h3>
+      <component
+        :is="tagTitle"
+        :class="classTitle"
+      >
+        {{ title }}
+      </component>
     </slot>
     <slot name="content">
       <div>{{ content }}</div>
@@ -13,7 +18,14 @@ interface Props {
   title: string
   content?: string
   containerFrom?: 'sm' | 'md' | 'lg' | 'xl'
+  tagTitle?: 'h3' | 'h4' | 'h5' | 'h6'
+  classTitle?: string
 }
 
-defineProps<Props>()
+withDefaults(defineProps<Props>(), {
+  content: undefined,
+  containerFrom: 'md',
+  tagTitle: 'h3',
+  classTitle: undefined
+})
 </script>
