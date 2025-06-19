@@ -1,13 +1,13 @@
 <template>
-  <TeeRegisterHighlight
-    v-if="!isDataFull"
-    :text="Translation.t('program.programRegisterHighlightText')"
-  />
-  <div v-if="isDataFull && isActivationVisible">
+  <!--  <TeeRegisterHighlight-->
+  <!--    v-if="!isDataFull"-->
+  <!--    :text="Translation.t('program.programRegisterHighlightText')"-->
+  <!--  />-->
+  <div v-if="isActivationVisible">
     <DsfrButton
       size="lg"
       icon="fr-icon-check-line"
-      class="fr-mb-3v fr-mr-3v"
+      class="fr-mt-3v fr-mr-3v"
       :on-click="() => scrollToActivation()"
     >
       {{ Translation.t('program.ctaActivation') }}
@@ -16,7 +16,7 @@
       v-if="program['contact question'] === 'formulaire'"
       secondary
       size="lg"
-      class="fr-mb-3v"
+      class="fr-mt-3v"
       icon="fr-icon-chat-3-line"
       :on-click="() => scrollToForm()"
     >
@@ -26,7 +26,7 @@
       v-else
       :href="program['contact question']"
       variant="large-question"
-      class="fr-mb-3v"
+      class="fr-mt-3v"
       @click="trackAnalytics"
     >
       {{ Translation.t('program.ctaContact') }}
@@ -36,8 +36,6 @@
 
 <script setup lang="ts">
 import Translation from '@/tools/translation'
-import { useCompanyDataStore } from '@/stores/companyData'
-import { storeToRefs } from 'pinia'
 import { ProgramTypeForFront } from '@/types'
 import Analytics from '@/tools/analytic/analytics'
 import { CompanyData } from '@/tools/companyData'
@@ -50,7 +48,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-const { isDataFull } = storeToRefs(useCompanyDataStore())
+// const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const trackAnalytics = () => {
   Analytics.sendEvent('program_external_question_contact', {

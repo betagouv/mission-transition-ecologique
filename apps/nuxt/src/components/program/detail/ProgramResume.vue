@@ -6,7 +6,7 @@
       v-html="currentProgram?.promesse"
     />
     <div
-      class="fr-mb-12v fr-text--blue-france"
+      class="fr-mb-3v fr-text--blue-france"
       v-html="Marked.toHtml(currentProgram?.description)"
     />
   </section>

@@ -34,7 +34,6 @@ description longue: >-
 
 
   Le décret tertiaire est officiellement entré en vigueur en octobre 2019.
-fin de validité: 30/04/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
@@ -86,7 +85,6 @@ publicodes:
       - a un objectif ciblé
       - entreprise . est propriétaire de ses locaux
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a une categorie legale eligible
   entreprise . a une categorie legale eligible:

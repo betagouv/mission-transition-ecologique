@@ -11,7 +11,7 @@
     :no-arrow="true"
     :link="getRouteToProgramDetail()"
     :badges="[{ label: program['nature de l\'aide'], noIcon: true, small: true }]"
-    title-tag="h2"
+    :title-tag="titleTag"
   >
   </DsfrCard>
 </template>
@@ -29,8 +29,12 @@ import { useNavigationStore } from '@/stores/navigation'
 interface Props {
   program: ProgramTypeForFront
   project?: ProjectType
+  titleTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 }
-const { program, project } = defineProps<Props>()
+const { program, project } = withDefaults(defineProps<Props>(), {
+  project: undefined,
+  titleTag: 'h2'
+})
 
 const navigationStore = useNavigationStore()
 const navigation = new Navigation()

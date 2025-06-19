@@ -1,10 +1,14 @@
 <template>
-  <TeeIframe></TeeIframe>
+  <TeeIframe
+    :bg-color="Color.purple"
+    object-fit="contain"
+  ></TeeIframe>
 </template>
 
 <script setup lang="ts">
 import Analytics from '@/tools/analytic/analytics'
 import { MetaRobots } from '@/tools/metaRobots'
+import { Color } from '@/types'
 definePageMeta({
   layout: 'iframe'
 })
