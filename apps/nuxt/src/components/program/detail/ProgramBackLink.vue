@@ -1,14 +1,14 @@
 <template>
   <div
     v-if="isCatalogDetail"
-    class="fr-grid-row fr-mt-0 fr-mt-md-3v"
+    class="fr-grid-row fr-mt-0"
   >
     <div class="fr-col-12">
       <TeeButtonLink
         v-if="backLink"
         icon="fr-icon-arrow-left-line"
         size="lg"
-        class="fr-btn fr-btn--tertiary-no-outline fr-mb-3v fr-pl-2v"
+        class="fr-btn fr-btn--tertiary-no-outline fr-pl-2v"
         :to="backLink"
         >{{ Translation.t('results.back') }}</TeeButtonLink
       >

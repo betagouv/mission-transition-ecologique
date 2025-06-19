@@ -32,8 +32,6 @@
           />
         </div>
       </div>
-      <ProgramTiles />
-      <ProgramEligibilityConditions :program="currentProgram" />
       <div ref="activation-ref">
         <ProgramActivation
           v-if="isActivationVisible"
@@ -42,6 +40,8 @@
           :scroll-to-form="scrollToForm"
         />
       </div>
+      <ProgramTiles />
+      <ProgramEligibilityConditions :program="currentProgram" />
       <ProgramProjects :program="currentProgram" />
       <ProgramLongDescription :program="currentProgram" />
       <div ref="form-ref">

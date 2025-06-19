@@ -3,9 +3,11 @@
     v-for="(description, index) in projectDescription"
     :id="`project-${index}-details-title`"
     :key="`project-${index}-details-title`"
-    class="fr-py-6v fr-border-b--grey--light"
+    class="fr-py-5v fr-border-b--grey--light"
     :title="description.title"
     container-from="md"
+    title-class="fr-h4"
+    title-tag="h2"
   >
     <template #content>
       <div v-html="Marked.toHtml(description.details)" />
