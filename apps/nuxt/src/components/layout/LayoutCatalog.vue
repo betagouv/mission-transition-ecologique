@@ -63,6 +63,7 @@
 import Layout from '@/components/layout/Layout.vue'
 import { useFiltersStore } from '@/stores/filters'
 import { useNavigationStore } from '@/stores/navigation'
+import Navigation from '@/tools/navigation'
 import { Theme } from '@/tools/theme'
 import { ThemeId } from '@tee/data'
 import { computed } from 'vue'
@@ -80,9 +81,7 @@ const { hasSpinner } = storeToRefs(useNavigationStore())
 const theme = Theme.getThemeFromSelectedTheme()
 
 const lineClassBySideMenu = computed(() => {
-  return props.hasSideMenu
-    ? 'fr-col-offset-md-3 fr-col-md-9 fr-col-justify-md--left fr-col-offset-xl-2 fr-col-xl-10 fr-col-justify--center'
-    : ''
+  return Navigation.getClassesBySideMenu(props.hasSideMenu)
 })
 
 const hasThemeCard = computed(() => {
