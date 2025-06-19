@@ -45,7 +45,7 @@ const navigation = new Navigation()
 const themeColor = ref<Color | ''>()
 
 useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription))
-useSchemaOrg([defineWebPage({ description: project.value?.shortDescription })])
+useSchemaOrg(defineWebPage({ description: project.value?.shortDescription }))
 
 if (project.value) {
   useHead({
