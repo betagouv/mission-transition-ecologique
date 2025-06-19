@@ -2,9 +2,11 @@
   <TeeContentBlock
     v-if="isDataFull || countFilteredPrograms"
     id="project-aids-title"
-    class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
+    class="fr-py-5v fr-border-b--grey--light"
     :title="companyDataSelected && isDataFull ? '💰 Vos aides' : '💰 Toutes les aides'"
     container-from="md"
+    title-class="fr-h4"
+    title-tag="h2"
   >
     <template #content>
       <client-only fallback-tag="div">

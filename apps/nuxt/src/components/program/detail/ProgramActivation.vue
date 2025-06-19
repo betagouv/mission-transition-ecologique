@@ -4,7 +4,7 @@
     :title="Translation.t('program.programActivation')"
     container-from="md"
     class="fr-py-5v fr-border-t--grey--light"
-    class-title="fr-h4"
+    title-class="fr-h4"
   >
     <template #content>
       <ol class="fr-order-list">

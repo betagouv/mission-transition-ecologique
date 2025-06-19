@@ -2,8 +2,8 @@
   <div :class="`fr-container${containerFrom ? `-${containerFrom}` : ''}`">
     <slot name="title">
       <component
-        :is="tagTitle"
-        :class="classTitle"
+        :is="titleTag"
+        :class="titleClass"
       >
         {{ title }}
       </component>
@@ -18,14 +18,14 @@ interface Props {
   title: string
   content?: string
   containerFrom?: 'sm' | 'md' | 'lg' | 'xl'
-  tagTitle?: 'h3' | 'h4' | 'h5' | 'h6'
-  classTitle?: string
+  titleTag?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  titleClass?: string
 }
 
 withDefaults(defineProps<Props>(), {
   content: undefined,
-  containerFrom: 'md',
-  tagTitle: 'h3',
-  classTitle: undefined
+  containerFrom: undefined,
+  titleTag: 'h3',
+  titleClass: undefined
 })
 </script>
