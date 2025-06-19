@@ -28,7 +28,7 @@ useSchemaOrg(defineWebPage({ description: description, '@type': 'FAQPage' }))
       <div class="fr-grid-row fr-mb-4w">
         <div class="fr-container fr-grid-row fr-px-md-0">
           <div
-            class="fr-col-12 fr-mt-3v fr-text-center fr-text-left-md fr-flex-direction--column"
+            class="fr-col-12 fr-mt-3v fr-text-left fr-flex-direction--column"
             :class="Navigation.getClassesBySideMenu(true)"
           >
             <h1 class="fr-text--blue-france">{{ title }}</h1>

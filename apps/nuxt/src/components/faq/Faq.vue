@@ -3,7 +3,7 @@
     v-for="(faqItem, index) in faqItems"
     :key="index"
   >
-    <div class="fr-grid-row fr-mb-10w">
+    <div class="fr-grid-row fr-mb-md-10w fr-mb-5w">
       <FaqSection
         v-if="faqItem"
         :faq-item="faqItem"
