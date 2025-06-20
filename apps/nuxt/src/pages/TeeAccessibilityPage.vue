@@ -130,6 +130,7 @@
 
 <script setup lang="ts">
 import ContactMail from '@/components/contact/ContactMail.vue'
+import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 import Contact from '@/tools/contact'
@@ -141,6 +142,10 @@ definePageMeta({
 })
 
 const navigation = new Navigation()
+
+const description = "Informations relatives à l'accessibilité du site de la Mission Transition Écologique des Entreprises."
+useSeoMeta(MetaSeo.get('Accessibilité', description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 useHead({
   link: [
