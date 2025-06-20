@@ -14,10 +14,9 @@
       <TeeCopyLinkButton class="fr-mt-6v" />
       <ProjectSideNav :project="project" />
     </template>
-    <ProjectDescription
-      id="externalLinksTracking"
-      :project="project"
-    />
+    <div id="externalLinksTracking">
+      <ProjectDescription :project="project" />
+    </div>
     <ProjectPrograms
       v-if="project"
       :project="project"
