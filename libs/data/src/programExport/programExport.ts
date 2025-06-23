@@ -53,19 +53,19 @@ export class ProgramExport {
       promesse: original.Promesse,
       description_courte: original['Description courte'],
       description_longue: original['Description longue'],
-      programme_aides: undefined,
-      porteur_aide: this._mergeOperatorNames(original['Opérateur de contact'], original['Autres opérateurs']),
-      porteur_siren: this._mergeOperatorSiren(original['Opérateur de contact'], original['Autres opérateurs']),
+      programmes_aide: undefined,
+      porteurs_aide: this._mergeOperatorNames(original['Opérateur de contact'], original['Autres opérateurs']),
+      porteurs_siren: this._mergeOperatorSiren(original['Opérateur de contact'], original['Autres opérateurs']),
       beneficiaires_aide: 'Entreprises privées',
       types_aides: original["Nature de l'aide"] || '',
       montant_aide_ou_cout: original["Montant de l'aide ou coût"],
       duree_aide: original["Durée de l'aide"],
-      projet_reference: this._getProjectList(original['Id fiche dispositif'], projects),
+      projets_reference: this._getProjectList(original['Id fiche dispositif'], projects),
       exemple_projet: undefined,
       thematique_aide:
-        original['Thèmes Ciblés'].length > 0 ? original['Thèmes Ciblés'].map((t) => 'écologie > ' + t.Nom).join(';') : 'écologie',
+        original['Thèmes Ciblés'].length > 0 ? original['Thèmes Ciblés'].map((t) => 'écologie > ' + t.Nom).join('|') : 'écologie',
       date_ouverture: this._formatDate(original.DISPOSITIF_DATE_DEBUT),
-      date_releve_intermediaire: undefined,
+      dates_releve_intermediaire: undefined,
       date_cloture: this._formatDate(original.DISPOSITIF_DATE_FIN),
       url_source: programTeeUrl,
       contact_question: this._getContact(original['Contact Question'], programTeeUrl),
@@ -95,7 +95,7 @@ export class ProgramExport {
       eligibilite_statuts_specifiques: this._checkSpecificStatus(original['Eligibilité Sectorielle']),
       eligibilite_statuts_exclus: original.microEntrepreneur === 'non' ? 'micro-entrepreneur' : undefined,
       eligibilite_autre: original['Eligibilité Spécifique'],
-      date_mise_a_jour: this._getCurrentFormattedDate()
+      date_mise_a_jour_aide: this._getCurrentFormattedDate()
     }
 
     return schema
@@ -112,7 +112,7 @@ export class ProgramExport {
     return projects
       .filter((project) => project.programs.includes(programSlug))
       .map((project) => `[${project.title}](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/${project.slug})`)
-      .join(';')
+      .join('|')
   }
 
   _getStepString(data: string) {
@@ -135,7 +135,7 @@ export class ProgramExport {
       })
       .filter((l): l is string => l !== null)
 
-    return links.length > 0 ? links.join(';') : undefined
+    return links.length > 0 ? links.join('|') : undefined
   }
 
   _getEligibiliteEffectif(min?: number, max?: number): string {
@@ -156,7 +156,7 @@ export class ProgramExport {
     return [...operators1, ...operators2]
       .map((op) => op.Nom)
       .filter(Boolean)
-      .join(';')
+      .join('|')
   }
 
   _mergeOperatorSiren(operators1: Operator[] = [], operators2: Operator[] = []): string {
@@ -171,7 +171,7 @@ export class ProgramExport {
         return ''
       })
       .filter(Boolean)
-      .join(';')
+      .join('|')
   }
 
   _getGeographicCoverage(coverage: GeographicCoverage, geographicAreas: GeographicAreas[] = []): string {
@@ -187,7 +187,7 @@ export class ProgramExport {
         return code
       })
       .filter((code): code is string => !!code)
-      .join(';')
+      .join('|')
   }
 
   _getNafCodesFromSectors(baserowSectors: BaserowSectors): string {
@@ -196,7 +196,7 @@ export class ProgramExport {
       .map((key) => SectorKeys[key as keyof typeof SectorKeys])
       .filter((value) => value !== undefined)
 
-    return selectedSectors.join(';')
+    return selectedSectors.join('|')
   }
 
   _formatDate(input?: string): string | undefined {

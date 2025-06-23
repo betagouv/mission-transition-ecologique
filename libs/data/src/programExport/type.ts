@@ -6,18 +6,18 @@ export interface schemaProgram {
   promesse: string
   description_courte: string
   description_longue: string
-  programme_aides?: string
-  porteur_aide: string
-  porteur_siren: string
+  programmes_aide?: string
+  porteurs_aide: string
+  porteurs_siren: string
   beneficiaires_aide?: string
   types_aides: string
   montant_aide_ou_cout: string
   duree_aide?: string
-  projet_reference: string
+  projets_reference: string
   exemple_projet?: string
   thematique_aide: string
   date_ouverture?: string
-  date_releve_intermediaire?: string
+  dates_releve_intermediaire?: string
   date_cloture?: string
   url_source: string
   contact_question: string
@@ -47,7 +47,7 @@ export interface schemaProgram {
   eligibilite_statuts_specifiques?: string
   eligibilite_statuts_exclus?: string
   eligibilite_autre?: string
-  date_mise_a_jour: string
+  date_mise_a_jour_aide: string
 }
 
 export const COG_MAPPING: Record<string, string> = {
