@@ -8,6 +8,7 @@
       <SimpleProjectList
         v-if="!hasSpinner"
         :project-list="projectList"
+        title-project-tag="h4"
       />
     </div>
     <div

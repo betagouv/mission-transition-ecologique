@@ -51,6 +51,37 @@ export class FaqJson {
           }
         ]
       }
+    ],
+    [FaqPage.Home]: [
+      {
+        title: 'Pourquoi ?',
+        color: Color.red,
+        questions: []
+      },
+      {
+        title: 'Comment marche cet outil ?',
+        color: Color.yellow,
+        questions: []
+      }
+    ],
+    [FaqPage.CatalogProgram]: [
+      {
+        title: 'Quelles aides ?',
+        color: Color.red,
+        questions: []
+      }
+    ],
+    [FaqPage.CatalogProject]: [
+      {
+        title: 'Quels projets de transition écologique ?',
+        color: Color.red,
+        questions: []
+      },
+      {
+        title: 'Quelles thématiques environnementales ?',
+        color: Color.yellow,
+        questions: []
+      }
     ]
   }
 }

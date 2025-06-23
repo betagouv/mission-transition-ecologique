@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-col-md-3 fr-col-lg-3 fr-col-xl-2 fr-pr-3v">
+  <div class="fr-col-12 fr-col-md-3 fr-col-lg-3 fr-col-xl-2 fr-pr-3v">
     <h2
       class="fr-h5 fr-pt-3w"
       :class="`fr-faq--${faqItem.color}`"
@@ -7,7 +7,7 @@
       {{ faqItem.title }}
     </h2>
   </div>
-  <div class="fr-col-md-9 fr-col-justify-md--left fr-col-xl-10 fr-col-justify--center">
+  <div class="fr-col-12 fr-col-md-9 fr-col-justify-md--left fr-col-xl-10 fr-col-justify--center">
     <DsfrAccordionsGroup v-model="activeAccordion">
       <DsfrAccordion
         v-for="(item, index) in faqItem.questions"

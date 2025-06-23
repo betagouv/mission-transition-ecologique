@@ -1,15 +1,17 @@
 <template>
-  <template
-    v-for="(faqItem, index) in faqItems"
-    :key="index"
-  >
-    <div class="fr-grid-row fr-mb-md-10w fr-mb-5w">
-      <FaqSection
-        v-if="faqItem"
-        :faq-item="faqItem"
-      />
-    </div>
-  </template>
+  <div>
+    <template
+      v-for="(faqItem, index) in faqItems"
+      :key="index"
+    >
+      <div class="fr-grid-row fr-mb-md-10w fr-mb-5w">
+        <FaqSection
+          v-if="faqItem"
+          :faq-item="faqItem"
+        />
+      </div>
+    </template>
+  </div>
 </template>
 <script lang="ts" setup>
 import FaqSection from '@/components/faq/FaqSection.vue'

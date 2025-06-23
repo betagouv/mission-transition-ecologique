@@ -56,6 +56,22 @@
       message="Aucune idée d'action n'a pu être identifiée avec les critères choisis..."
       :count-items="countItems"
     />
+    <template
+      v-if="$slots.faq || faqPage"
+      #faq
+    >
+      <slot name="faq">
+        <div class="fr-grid-row">
+          <div
+            :class="Navigation.getClassesBySideMenu(hasSideMenu)"
+            class="fr-col-12 fr-text-center fr-text-left-md fr-pt-6v"
+          >
+            <h2 class="fr-text--blue-france">Questions fréquentes</h2>
+          </div>
+        </div>
+        <Faq :faq-items="FaqJson.pages[faqPage]" />
+      </slot>
+    </template>
   </Layout>
 </template>
 
@@ -63,6 +79,8 @@
 import Layout from '@/components/layout/Layout.vue'
 import { useFiltersStore } from '@/stores/filters'
 import { useNavigationStore } from '@/stores/navigation'
+import { FaqJson } from '@/tools/faq/FaqJson'
+import { FaqPage } from '@/tools/faq/faqType'
 import Navigation from '@/tools/navigation'
 import { Theme } from '@/tools/theme'
 import { ThemeId } from '@tee/data'
@@ -73,6 +91,7 @@ interface Props {
   title?: string
   hasError?: boolean
   countItems: number
+  faqPage?: FaqPage
 }
 const props = defineProps<Props>()
 
