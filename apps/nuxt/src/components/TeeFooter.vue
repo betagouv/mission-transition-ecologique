@@ -212,6 +212,10 @@ const mainLinks = [
   {
     label: 'Kit média',
     href: mediaKit
+  },
+  {
+    label: 'Questions fréquentes',
+    to: { name: RouteName.Faq }
   }
 ]
 

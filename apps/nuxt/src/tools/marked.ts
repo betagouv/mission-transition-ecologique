@@ -2,7 +2,7 @@ import { marked, Tokens } from 'marked'
 import { MarkedExtension } from 'marked/lib/marked'
 
 export class Marked {
-  static toHtml(markdown: string | undefined, withExtension = true): string {
+  static toHtml(markdown: string | undefined, withExtension = true, withMarkdownClass = true): string {
     if (!markdown) {
       return ''
     }
@@ -11,7 +11,7 @@ export class Marked {
     }
 
     const parsed = marked.parse(markdown) as string
-    return `<div class="markdown-spacing-reset">${parsed}</div>`
+    return withMarkdownClass ? `<div class="markdown-spacing-reset">${parsed}</div>` : parsed
   }
 
   private static _extension = (): MarkedExtension => {
