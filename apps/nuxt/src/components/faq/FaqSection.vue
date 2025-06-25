@@ -15,7 +15,7 @@
         :key="index"
       >
         <template #title><div v-html="Marked.toHtml(item.question, false, false)" /></template>
-        <div v-html="Marked.toHtml(item.answer)" />
+        <div v-html="Marked.toHtml(item.answer, true, false)" />
       </DsfrAccordion>
     </DsfrAccordionsGroup>
   </div>
