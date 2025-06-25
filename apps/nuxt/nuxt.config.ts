@@ -1,5 +1,4 @@
 import { defineOrganization } from 'nuxt-schema-org/schema'
-import { MetaSeo } from './src/tools/metaSeo'
 import Config from './src/config'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { DefineNuxtConfig, defineNuxtConfig } from 'nuxt/config'
@@ -8,6 +7,8 @@ import { NuxtScriptsConfig } from './nuxt.scripts.config'
 import { NuxtSecurityConfig } from './nuxt.security.config'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import { ChangeFreq, Priority } from './src/types/sitemapType'
+import { Identity } from './src/tools/Identity'
+import { MetaSeo } from './src/tools/metaSeo'
 
 /**
  * Remove prerender and swr for CI and test data.
@@ -178,15 +179,10 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   },
   site: {
     name: MetaSeo.title(),
-    description: MetaSeo.defaultDescription,
+    description: Identity.description,
   },
   schemaOrg: {
-    identity: defineOrganization({
-      '@type': 'GovernmentOrganization',
-      name: MetaSeo.title(),
-      logo: MetaSeo.logoImage,
-      description: MetaSeo.defaultDescription,
-    })
+    defaults: false,
   },
   scripts: {
     registry: NuxtScriptsConfig.getRegistry()
