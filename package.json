@@ -70,6 +70,7 @@
     "nuxt": "^3.17.5",
     "nuxt-schema-org": "^5.0.5",
     "nuxt-security": "2.2.0",
+    "nuxt-site-config": "^3.2.1",
     "pinia": "^2.2.4",
     "posthog-js": "^1.170.2",
     "posthog-node": "^4.4.1",

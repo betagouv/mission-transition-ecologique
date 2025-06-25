@@ -31,7 +31,7 @@ function defineQuestions() {
     for (const question of faqItem.questions) {
       itemListElement.push(
         defineQuestion({
-          name: question.question,
+          name: Marked.toHtml(question.question, false, false),
           acceptedAnswer: Marked.toHtml(question.answer, true, false)
         })
       )
@@ -41,19 +41,3 @@ function defineQuestions() {
   return itemListElement
 }
 </script>
-<style scoped lang="scss">
-h2 {
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 48px;
-    border-top: 3px solid #0072ff; // couleur de la bordure
-    z-index: -1;
-    border-radius: 2px;
-  }
-}
-</style>

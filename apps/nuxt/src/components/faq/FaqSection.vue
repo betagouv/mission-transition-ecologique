@@ -13,8 +13,8 @@
         v-for="(item, index) in faqItem.questions"
         :id="`faq-${index}`"
         :key="index"
-        :title="item.question"
       >
+        <template #title><div v-html="Marked.toHtml(item.question, false, false)" /></template>
         <div v-html="Marked.toHtml(item.answer)" />
       </DsfrAccordion>
     </DsfrAccordionsGroup>
