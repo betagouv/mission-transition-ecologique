@@ -1,5 +1,5 @@
 <template>
-  <figure class="fr-quote fr-quote--column">
+  <figure class="fr-quote fr-quote--column fr-my-4w">
     <blockquote :cite="testimony.externalLink">
       <p>« {{ testimony.verbatim }} »</p>
     </blockquote>
