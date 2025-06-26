@@ -3,7 +3,7 @@ import axios from 'axios'
 import path from 'path'
 import sharp from 'sharp'
 import { AbstractBaserow } from './abstractBaserow'
-import { LinkObject, ImageTable } from './types'
+import { LinkObject, ImageTable, Image } from './types'
 import { Result } from 'true-myth'
 
 interface ImageMetadata {
@@ -29,7 +29,7 @@ export class ImageBaserow extends AbstractBaserow {
    * @param baserowImage - A baserowLink object pointing to the image informations.
    * @returns the name of the image in the local directory or an error
    */
-  async handleImage(baserowImage: LinkObject[]): Promise<Result<string, Error>> {
+  async handleImageFromImageTable(baserowImage: LinkObject[]): Promise<Result<string, Error>> {
     if (baserowImage.length != 1) {
       return Result.err(new Error('A single image should be listed in the image field.'))
     }
@@ -63,6 +63,37 @@ export class ImageBaserow extends AbstractBaserow {
     const filePath = path.join(this._imageDirectory, fileName)
     fs.writeFileSync(filePath, webpBuffer)
     this._metadata[imageName] = imageInfos.Image[0].uploaded_at
+    this._processedImages.add(fileName)
+
+    return Result.ok(fileName)
+  }
+
+  async handleDirectImage(image: Image[]): Promise<Result<string, Error>> {
+    if (image.length != 1) {
+      return Result.err(new Error('A single image should be listed in the image field.'))
+    }
+
+    const imageName = this._slugify(image[0].visible_name)
+    if (this._imageAlreadyDownloaded(imageName, image[0].uploaded_at)) {
+      this._metadata[imageName] = image[0].uploaded_at
+      this._processedImages.add(imageName + '.webp')
+      return Result.ok(imageName + '.webp')
+    }
+
+    let imageDownloadResponse
+    try {
+      imageDownloadResponse = await axios.get(image[0].url, { responseType: 'arraybuffer' })
+    } catch {
+      return Result.err(new Error('Error while trying to download the image ' + imageName))
+    }
+
+    const imageBuffer = Buffer.from(imageDownloadResponse.data, 'binary')
+    const webpBuffer = await this._sharpImage(imageBuffer)
+
+    const fileName = `${imageName}.webp`
+    const filePath = path.join(this._imageDirectory, fileName)
+    fs.writeFileSync(filePath, webpBuffer)
+    this._metadata[imageName] = image[0].uploaded_at
     this._processedImages.add(fileName)
 
     return Result.ok(fileName)

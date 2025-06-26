@@ -2,7 +2,7 @@
   <div class="fr-container--fluid fr-bg--blue--lightness">
     <div class="fr-container--fluid fr-container-md">
       <div class="fr-grid-row fr-py-4w">
-        <div class="fr-col-md-3 fr-col-xl-2 fr-pr-3w">
+        <div class="fr-col-md-3 fr-col-xl-2 fr-pr-2v">
           <h2 class="fr-mt-3w">Elles l'ont fait !</h2>
           <p class="green-tick fr-pt-3w">Ces entreprises sont passées à l'action et en récoltent déjà les bénéfices.</p>
         </div>

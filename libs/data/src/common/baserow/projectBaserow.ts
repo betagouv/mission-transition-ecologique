@@ -48,7 +48,7 @@ export class ProjectBaserow extends AbstractBaserow {
   }
 
   private async _convertToDataProjectType(baserowProject: BaserowProject, baserowThemes: Theme[]): Promise<DataProject> {
-    const maybeImageName = await this._imageDownloader.handleImage(baserowProject.Image)
+    const maybeImageName = await this._imageDownloader.handleImageFromImageTable(baserowProject.Image)
     let imageName
     if (maybeImageName.isErr) {
       this._logger.log(

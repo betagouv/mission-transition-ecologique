@@ -14,7 +14,7 @@
           <cite>{{ testimony.authorFunction }}</cite>
         </li>
       </ul>
-      <div>
+      <div class="fr-ml-12w fr-ml-md-0">
         <ul class="fr-grid-row fr-grid-row--left fr-raw-list">
           <li
             v-for="linkedProject in linkedProjectsTags"
@@ -25,7 +25,7 @@
               class="fr-my-1-5v"
               target="_blank"
               :project="linkedProject"
-              :color="Color.green"
+              :color="Color.blue"
             />
           </li>
         </ul>
@@ -48,7 +48,6 @@
 <script lang="ts" setup>
 import { ProjectManager } from '@/tools/project/projectManager'
 import { ProjectType, Color, Testimony } from '@/types'
-// import ProjectList from '../project/list/ProjectList.vue'
 
 export type TestimonyProps = {
   testimony: Testimony
