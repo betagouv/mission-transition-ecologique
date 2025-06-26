@@ -1,13 +1,19 @@
 <template>
-  <div
-    v-for="(faqItem, index) in faqItems"
-    :key="index"
-    class="fr-grid-row fr-mb-md-10w fr-mb-5w"
-  >
-    <FaqSection
-      v-if="faqItem"
-      :faq-item="faqItem"
-    />
+  <div>
+    <template
+      v-for="(faqItem, index) in faqItems"
+      :key="index"
+    >
+      <div
+        class="fr-grid-row fr-mb-5w"
+        :class="{ 'fr-mb-md-10w': index !== faqItems.length - 1 }"
+      >
+        <FaqSection
+          v-if="faqItem"
+          :faq-item="faqItem"
+        />
+      </div>
+    </template>
   </div>
 </template>
 <script lang="ts" setup>

@@ -4,6 +4,7 @@
     :title="title"
     :has-error="hasError"
     :count-items="countProjects"
+    :faq-page="FaqPage.CatalogProject"
   >
     <template #sidemenu>
       <ProjectFiltersAccordion with-title />
@@ -24,6 +25,7 @@ import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { useCompanyDataStore } from '@/stores/companyData'
 import { useProjectStore } from '@/stores/project'
 import { CompanyData } from '@/tools/companyData'
+import { FaqPage } from '@/tools/faq/faqType'
 import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
 import ProjectFilter from '@/tools/project/projectFilter'

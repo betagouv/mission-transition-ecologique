@@ -22,6 +22,7 @@
         :is-priority-project="isPriorityProject(project)"
         :is-unique-priority="isUniquePriority"
         :priority-order="getPriorityOrder(project)"
+        :title-tag="titleProjectTag"
         class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
       />
     </li>
@@ -44,6 +45,7 @@ interface Props {
   projectList?: ProjectType[]
   withCounter?: boolean
   withModalFilter?: boolean
+  titleProjectTag?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 }
 const props = defineProps<Props>()
 

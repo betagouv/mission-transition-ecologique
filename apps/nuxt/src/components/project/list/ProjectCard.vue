@@ -9,6 +9,7 @@
     class="teste2e-project-target project-card"
     :class="[{ 'fr-card-priority': isPriorityProject }, { 'fr-card-priority--highlighted': isPriorityProject && !isUniquePriority }]"
     enlarge
+    :title-tag="titleTag"
   >
     <template
       v-if="isPriorityProject"
@@ -56,11 +57,13 @@ interface Props {
   isPriorityProject?: boolean
   isUniquePriority?: boolean
   priorityOrder?: number
+  titleTag?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 }
 
 const props = withDefaults(defineProps<Props>(), {
   isPriorityProject: false,
-  priorityOrder: undefined
+  priorityOrder: undefined,
+  titleTag: 'h3'
 })
 const priorityTag: string = 'A FAIRE EN PRIORITÉ'
 

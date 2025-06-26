@@ -11,48 +11,53 @@
   >
     <TeeDsfrBreadcrumb :links="links" />
   </slot>
-  <div
-    v-if="$slots.top"
-    class="fr-container--fluid"
-  >
-    <slot name="top"> </slot>
-  </div>
-  <div
-    v-if="$slots.beforeDefault"
-    :class="`${beforeDefaultClass ?? 'fr-container'}`"
-  >
-    <slot name="beforeDefault"> </slot>
-  </div>
-  <div
-    :class="`fr-container${fluid ? '--fluid' : ''}`"
-    class="fr-mb-8v"
-  >
-    <div class="fr-grid-row">
-      <div
-        v-if="$slots.sidemenu"
-        class="fr-col-2 fr-col-hidden fr-col-md-3 fr-col-lg-3 fr-col-xl-2 fr-col-unhidden-md"
-      >
+  <main>
+    <div
+      v-if="$slots.top"
+      class="fr-container--fluid"
+    >
+      <slot name="top"> </slot>
+    </div>
+    <div
+      v-if="$slots.beforeDefault"
+      :class="`${beforeDefaultClass ?? 'fr-container'}`"
+    >
+      <slot name="beforeDefault"> </slot>
+    </div>
+    <div
+      :class="`fr-container${fluid ? '--fluid' : ''}`"
+      class="fr-mb-8v"
+    >
+      <div class="fr-grid-row">
         <div
-          class="fr-sidemenu fr-pr-3v"
-          :class="`${stickyMenu ? 'fr-sidemenu--sticky' : ''}`"
+          v-if="$slots.sidemenu"
+          class="fr-col-2 fr-col-hidden fr-col-md-3 fr-col-lg-3 fr-col-xl-2 fr-col-unhidden-md"
         >
-          <slot name="sidemenu"> </slot>
+          <div
+            class="fr-sidemenu fr-pr-3v"
+            :class="`${stickyMenu ? 'fr-sidemenu--sticky' : ''}`"
+          >
+            <slot name="sidemenu"> </slot>
+          </div>
+        </div>
+        <div
+          class="fr-col-12"
+          :class="$slots.sidemenu ? 'fr-col-md-9 fr-col-lg-9 fr-col-xl-10' : ''"
+        >
+          <slot> </slot>
         </div>
       </div>
-      <main
-        class="fr-col-12"
-        :class="$slots.sidemenu ? 'fr-col-md-9 fr-col-lg-9 fr-col-xl-10' : ''"
-      >
-        <slot> </slot>
-      </main>
+      <template v-if="$slots.faq">
+        <slot name="faq"> </slot>
+      </template>
     </div>
-  </div>
-  <div
-    v-if="$slots.bottom"
-    class="fr-container--fluid"
-  >
-    <slot name="bottom"> </slot>
-  </div>
+    <div
+      v-if="$slots.bottom"
+      class="fr-container"
+    >
+      <slot name="bottom"> </slot>
+    </div>
+  </main>
 </template>
 
 <script setup lang="ts">
