@@ -17,11 +17,17 @@
         <div class="fr-bg--blue--lightness fr-hidden fr-unhidden-sm fr-col-12 fr-py-0-5v fr-my-8v"></div>
       </div>
       <TeePromises />
+      <div class="fr-bg--blue--lightness fr-col-12 fr-py-0-5v fr-mt-8v fr-mb-8v"></div>
     </div>
 
     <template #faq>
       <div class="fr-container--fluid fr-container-md">
-        <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-pt-6v">Questions fréquentes</h2>
+        <div class="fr-container fr-px-md-0">
+          <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-pt-6v fr-mb-2v">Questions fréquentes</h2>
+          <p class="fr-text--blue-france fr-text-center fr-text-left-md fr-mb-8v">
+            Trouvez ici des réponses concrètes sur les aides, démarches et outils pour réussir votre transition écologique.
+          </p>
+        </div>
         <Faq
           :faq-items="FaqJson.pages[FaqPage.Home]"
           class="fr-container fr-px-md-0"

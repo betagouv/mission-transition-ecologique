@@ -14,8 +14,12 @@
         :id="`faq-${index}`"
         :key="index"
       >
-        <template #title><div v-html="Marked.toHtml(item.question, false, false)" /></template>
-        <div v-html="Marked.toHtml(item.answer, true, false)" />
+        <template #title
+          ><div
+            class="fr-text--bold"
+            v-html="Marked.toHtml(item.question, false, false)"
+        /></template>
+        <div v-html="Marked.toHtml(item.answer)" />
       </DsfrAccordion>
     </DsfrAccordionsGroup>
   </div>
@@ -36,8 +40,14 @@ const activeAccordion = ref<number>()
 @use 'sass:map';
 @use 'sass:meta';
 
+:deep(.fr-accordion .fr-collapse) {
+  --ul-start: 3rem;
+}
+
 h2 {
   position: relative;
+  word-break: break-word;
+  hyphens: manual;
 
   @each $color, $properties in setting.$colors {
     &.fr-faq--#{$color} {

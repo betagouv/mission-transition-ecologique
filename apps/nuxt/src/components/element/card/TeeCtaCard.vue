@@ -2,24 +2,46 @@
   <div class="fr-container fr-px-0">
     <div class="fr-grid-row">
       <div class="fr-col-12">
-        <div class="fr-card fr-enlarge-link fr-card--horizontal fr-card--icon-link fr-card--grey fr-p-4v fr-card--no-border">
+        <div
+          class="fr-card fr-enlarge-link fr-card--horizontal fr-card--grey fr-p-4v fr-card--no-border"
+          :class="{ 'fr-card--no-icon': target === '_self' }"
+        >
           <div class="fr-card__body">
-            <div class="fr-card__content">
-              <h3 class="fr-card__title">
+            <div class="fr-card__content fr-justify-center">
+              <component
+                :is="tittleTag"
+                class="fr-card__title"
+              >
                 <a
+                  v-if="onClick"
+                  href="#"
+                  :target="target"
+                  :rel="target === '_blank' ? 'noopener external' : 'noopener'"
+                  @click.prevent="onClick()"
+                  v-html="resolvedTitle"
+                />
+                <a
+                  v-else
                   :href="resolvedLink"
-                  target="_blank"
-                  rel="noopener external"
-                >
-                  {{ resolvedTitle }}
-                </a>
-              </h3>
-              <p class="fr-card__desc fr-text--md">
-                Le service public <strong>Transition écologique des entreprises</strong> vous permet de trouver les aides, accompagnements
-                et ressources issues de l'ensemble des acteurs publics pour vous aider à réaliser votre projet de transition écologique
-                (ADEME, CCI, CMA, Bpifrance, DGFiP, etc.)
-              </p>
-              <div class="fr-card__start"></div>
+                  :target="target"
+                  :rel="target === '_blank' ? 'noopener external' : 'noopener'"
+                  v-html="resolvedTitle"
+                />
+              </component>
+              <p
+                class="fr-card__desc fr-text--md"
+                v-html="resolvedDescription"
+              />
+              <div
+                v-if="ctaBtnTitle"
+                class="fr-card__end"
+              >
+                <TeeDsfrButton class="inline-flex fr-text--yellow fr-text--bold fr-btn-align-center">
+                  <template #default>
+                    {{ ctaBtnTitle }}
+                  </template>
+                </TeeDsfrButton>
+              </div>
             </div>
           </div>
           <div class="fr-card__header">
@@ -54,10 +76,16 @@ import { Color, RouteName } from '@/types'
 interface Props {
   link?: string
   title?: string
+  description?: string
   imageSrc?: string
   imageAlt?: string
   objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down'
   bgColor?: Color
+  ctaBtnTitle?: string
+  target?: '_blank' | '_self' | '_parent' | '_top'
+  onClick?: CallableFunction
+  tittleTag?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  withIframeResizer?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -66,7 +94,12 @@ const props = withDefaults(defineProps<Props>(), {
   imageSrc: undefined,
   imageAlt: undefined,
   objectFit: 'cover',
-  bgColor: undefined
+  bgColor: undefined,
+  ctaBtnTitle: undefined,
+  target: '_blank',
+  onClick: undefined,
+  tittleTag: 'h3',
+  withIframeResizer: true
 })
 
 const router = useRouter()
@@ -78,6 +111,13 @@ const defaultImageAlt = "Image de la page d'accueil de mission transition écolo
 
 const resolvedLink = computed(() => props.link || defaultLink)
 const resolvedTitle = computed(() => props.title || defaultTitle)
+const resolvedDescription = computed(
+  () =>
+    props.description ||
+    'Le service public <strong>Transition écologique des entreprises</strong> vous permet de trouver les aides, accompagnements' +
+      "et ressources issues de l'ensemble des acteurs publics pour vous aider à réaliser votre projet de transition écologique" +
+      '(ADEME, CCI, CMA, Bpifrance, DGFiP, etc.)'
+)
 const resolvedImageSrc = computed(() =>
   props.imageSrc
     ? img(props.imageSrc, { height: 250, quality: 70, loading: 'lazy' })
@@ -87,17 +127,30 @@ const resolvedImageAlt = computed(() => props.imageAlt || defaultImageAlt)
 
 const img = Image.getUrl
 
-const imageResizerChild = () => import('@iframe-resizer/child')
-imageResizerChild()
+if (props.withIframeResizer) {
+  const imageResizerChild = () => import('@iframe-resizer/child')
+  imageResizerChild()
+}
 </script>
 
 <style scoped lang="scss">
 @use '@/assets/scss/tool';
 
 .fr-card {
-  .fr-card__title {
+  .fr-card--no-icon {
     a::after {
-      display: inline-block !important;
+      display: none !important;
+    }
+  }
+
+  .fr-card__title {
+    a {
+      background-image: none;
+      outline-width: 0;
+
+      &::after {
+        display: inline-block !important;
+      }
     }
   }
 

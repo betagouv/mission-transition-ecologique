@@ -158,7 +158,7 @@ export default class Navigation {
 
   async redirectAfterModal() {
     const navigationStore = useNavigationStore()
-    if (this.isByRouteName(RouteName.Homepage)) {
+    if (this.isByRouteName([RouteName.Homepage])) {
       if (navigationStore.isFromCtaRegisterModal) {
         useNavigationStore().setFromCtaRegisterModal(false)
         await this._router.push({
@@ -170,6 +170,15 @@ export default class Navigation {
         useNavigationStore().setFromQuestionnaireCtaRegisterModal(false)
         await this._router.push({
           name: RouteName.QuestionnaireStart
+        })
+      }
+    }
+
+    if (this.isByRouteName(RouteName.Faq)) {
+      if (navigationStore.isFromCtaRegisterModal) {
+        useNavigationStore().setFromCtaRegisterModal(false)
+        await this._router.push({
+          name: RouteName.CatalogPrograms
         })
       }
     }

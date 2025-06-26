@@ -329,7 +329,7 @@ export class FaqJson {
         ]
       },
       {
-        title: 'Quelles thématiques environnementales ?',
+        title: 'Quelles thématiques environne­mentales ?',
         color: Color.yellow,
         questions: [
           {

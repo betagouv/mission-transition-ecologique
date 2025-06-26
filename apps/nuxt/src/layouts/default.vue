@@ -21,9 +21,10 @@ navigationStore.setRoute(route)
 
 useSeoMeta(MetaSeo.default())
 useSchemaOrg([
+  defineWebPage({ name: MetaSeo.title, description: MetaSeo.defaultDescription }),
   defineWebSite({
     name: MetaSeo.title,
-    description: MetaSeo.defaultDescription
+    description: MetaSeo.descriptionWebsite
   }),
   defineOrganization({
     '@type': 'GovernmentOrganization',

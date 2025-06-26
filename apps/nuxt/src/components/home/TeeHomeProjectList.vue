@@ -47,7 +47,6 @@ import { RouteName } from '@/types'
 interface Props {
   limit: number
 }
-
 const props = defineProps<Props>()
 
 onServerPrefetch(async () => {
