@@ -8,7 +8,6 @@ import { Logger } from '../logger/logger'
 import { LogLevel } from '../logger/types'
 
 export class ProjectBaserow extends AbstractBaserow {
-  private readonly _projectTableId = 305253
   private readonly _imagePath = '/images/projet/'
   private readonly _logPath: string = path.join(this.__dirname, '../../../static/project_images_download_info.json')
   private _imageDownloader: ImageBaserow

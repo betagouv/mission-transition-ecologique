@@ -25,6 +25,7 @@
 @import "@gouvfr/dsfr/dist/component/tile/tile.css";
 @import '@gouvfr/dsfr/dist/component/follow/follow.css';
 @import '@gouvfr/dsfr/dist/component/footer/footer.css';
+@import '@gouvfr/dsfr/dist/component/quote/quote.css';
 .fr-icon-map-pin-2-line::before, .fr-icon-map-pin-2-line::after {
   -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/map/map-pin-2-line.svg");
   mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/map/map-pin-2-line.svg");

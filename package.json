@@ -24,6 +24,7 @@
     "build:start": "npm run build && npm run start",
     "generate:programs": "nx run @tee/data:generate-programs",
     "generate:projects": "nx run @tee/data:generate-projects",
+    "generate:testimonies": "nx run @tee/data:generate-testimonies",
     "generate:iframe-script": "nx run @tee/nuxt:generate-iframe-script",
     "generate:iframe-script:watch": "nx run @tee/nuxt:generate-iframe-script --watch",
     "database:update": "nx run @tee/etl:update-database",
