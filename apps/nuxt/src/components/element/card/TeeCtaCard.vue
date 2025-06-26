@@ -9,7 +9,7 @@
           <div class="fr-card__body">
             <div class="fr-card__content fr-justify-center">
               <component
-                :is="tittleTag"
+                :is="titleTag"
                 class="fr-card__title"
               >
                 <a
@@ -84,7 +84,7 @@ interface Props {
   ctaBtnTitle?: string
   target?: '_blank' | '_self' | '_parent' | '_top'
   onClick?: CallableFunction
-  tittleTag?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+  titleTag?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   withIframeResizer?: boolean
 }
 
@@ -98,7 +98,7 @@ const props = withDefaults(defineProps<Props>(), {
   ctaBtnTitle: undefined,
   target: '_blank',
   onClick: undefined,
-  tittleTag: 'h3',
+  titleTag: 'h3',
   withIframeResizer: true
 })
 

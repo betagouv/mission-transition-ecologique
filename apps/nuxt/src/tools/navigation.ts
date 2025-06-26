@@ -158,7 +158,7 @@ export default class Navigation {
 
   async redirectAfterModal() {
     const navigationStore = useNavigationStore()
-    if (this.isByRouteName([RouteName.Homepage])) {
+    if (this.isByRouteName(RouteName.Homepage)) {
       if (navigationStore.isFromCtaRegisterModal) {
         useNavigationStore().setFromCtaRegisterModal(false)
         await this._router.push({

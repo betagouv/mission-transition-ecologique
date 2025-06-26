@@ -76,7 +76,7 @@ useSchemaOrg(defineWebPage({ description: description, '@type': 'FAQPage' }))
     <div class="fr-bg--blue--lightness fr-col-12 fr-py-0-5v fr-mt-8v fr-mb-8v"></div>
     <TeeCtaCard
       title="Accélérez votre transition avec la plateforme <i>Transition Écologique des Entreprises</i>."
-      tittle-tag="h2"
+      title-tag="h2"
       description="Trouvez les aides adaptées pour financer la transition environnementale de votre entreprise et, en quelques clics, entrez en contact avec les bons interlocuteurs pour mener vos projets au succès."
       cta-btn-title="Trouver les aides pour mon entreprise"
       target="_self"
