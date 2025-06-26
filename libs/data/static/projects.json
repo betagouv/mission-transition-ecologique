@@ -396,7 +396,7 @@
     "shortDescription": "Quantifier vos émissions de Gaz à effet de serre émise ou captée par les activités de votre entreprise.",
     "image": "/images/projet/bilan-ges.webp",
     "longDescription": "Le bilan des émissions de gaz à effet de serre (GES) permet de comptabiliser les émissions de gaz à effet de serre générées, directement ou indirectement, par les activités d’une entreprise. Cette méthode est utilisée pour concevoir et mettre en place un plan de réduction des émissions à l’échelle d’une entreprise. \\\nLa grande majorité des bilans GES réalisés en France utilisent la méthode Bilan Carbone®, élaborée par l’ADEME. \\\nSi la loi oblige certaines à réaliser leur Bilan GES, toutes les entreprises peuvent réaliser un Bilan GES, même lorsqu’elles n’y sont pas contraintes. À la clé, de nombreux avantages : respect des enjeux RSE, économies d’énergie, anticipation des lois, marque employeur...",
-    "moreDescription": "- [**Réglementation bilan GES,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) Un portail pour connaitre les obligations de votre entreprise.\n- [**L'annuaire des prestataires Bilan Carbone®**](https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/)**,** par l'Association pour la transition Bas Carbone (ABC)\n- [**Bilans GES ADEME,**](https://bilans-ges.ademe.fr/) la plateforme nationale pour la publication des bilans d'émission de gaz à effet.",
+    "moreDescription": "- [**Guide** : tout comprendre, le changement climatique](https://librairie.ademe.fr/changement-climatique/7745-tout-comprendre-le-changement-climatique-9791029724589.html) Comment limiter la hausse des températures et limiter le changement climatique ?\n- [**La neutralité carbone**](https://librairie.ademe.fr/industrie-et-production-durable/4524-avis-de-l-ademe-la-neutralite-carbone.html) Des clés pour s’approprier ce sujet et adopter des gestes responsables\n- [**Réglementation bilan GES,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) Un portail pour connaitre les obligations de votre entreprise.\n- [**L'annuaire des prestataires Bilan Carbone®**](https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/)**,** par l'Association pour la transition Bas Carbone (ABC)\n- [**Bilans GES ADEME,**](https://bilans-ges.ademe.fr/) la plateforme nationale pour la publication des bilans d'émission de gaz à effet.",
     "themes": [
       "environmental"
     ],
@@ -1310,7 +1310,7 @@
     "nameTag": "📱 numérique",
     "shortDescription": "Mettre en place une stratégie de consommation ou de conception responsable du numérique.",
     "image": "/images/projet/numerique-responsable.webp",
-    "longDescription": "Si le numérique semble virtuel, son impact est pourtant bien réel : que ce soit sur le plan énergétique, l’utilisation de matières premières nécessaires à la fabrication des équipements ou encore par les déchets électroniques qu’il génère.\n\nLes entreprises doivent mettre en œuvre des stratégies qui permettent de faire évoluer leurs politiques d’achats, d’allonger la durée de vie des équipements ou encore d’adopter une démarche de conception responsable des services numériques.\n\nPour encadrer ces pratiques, la loi AGEC fixe aux entreprises des dispositions pour rallonger la durée de vie des produits numériques et la loi REEN vise à limiter le renouvellement des appareils numériques en interdisant les pratiques d’obsolescence et en favorisant le réemploi et la réutilisation. Elle encourage également l'usage de centres de données et des réseaux moins énergivores.",
+    "longDescription": "Si le numérique est aujourd’hui indispensable au fonctionnement des entreprises, son empreinte écologique est bien réelle : fabrication énergivore, équipements vite obsolètes, consommation de ressources rares, pollution numérique.\\\nLe **numérique responsable** vise à **réduire cet impact tout en maintenant l'efficacité des services numériques**.\n\nPour passer à l’action :\n\n- Mettez en place une politique d’**achats responsables** (matériel durable, labellisé, réemployé).\n\n- **Allongez la durée de vie** de vos équipements (achat reconditionné, maintenance, réparation) et favorisez le réemploi et le recyclage en **fin de vie.**\n\n- Concevez des sites et logiciels **éco-conçus** : légers, sobres en énergie, adaptés aux besoins réels.\n\n- **Formez vos équipes** aux bonnes pratiques : envoi raisonné des emails, stockage maîtrisé, usage responsable du cloud.\n\n- Choisissez des **hébergeurs engagés** (énergie renouvelable, data centers sobres).\n\nPour encadrer ces pratiques, la loi AGEC fixe aux entreprises des dispositions pour rallonger la durée de vie des produits numériques et la loi REEN vise à limiter le renouvellement des appareils numériques en interdisant les pratiques d’obsolescence et en favorisant le réemploi et la réutilisation.",
     "moreDescription": "- [**L'impact des bonnes pratiques numériques écoresponsables au sein de votre organisation**](https://ecoresponsable.numerique.gouv.fr/publications/impact-bonnes-pratiques/)**.**\n\n- [**Pollution numérique**](https://archives.qqf.fr/infographie/69/pollution-numerique-du-clic-au-declic)**, du clic au déclic**, une infographie *\"Qu'est-ce qu'on fait ?!\"*\n\n- [**Le** **numérique responsable**](https://www.ecologie.gouv.fr/politiques-publiques/numerique-responsable)**,** vision d'ensemble du cadre législatif par le ministère de la transition écologique et de la cohésion des territoires.\n\n- [**Le Référentiel général d'écoconception de services numériques (RGESN)**](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/). Il définit les critères de conception durable des services numériques afin d'en réduire l'empreinte environnementale.",
     "themes": [
       "eco-design"
@@ -1598,7 +1598,7 @@
     "shortDescription": "Recruter un profil sur des missions de transition écologique et énergétique.",
     "image": "/images/projet/recrutement.webp",
     "longDescription": "Les bénéfices d'un recrutement d'une personne dédiée aux sujets sociaux et environnementaux sont nombreux. Elle peut vous aider à élaborer et à mettre en œuvre des mesures visant à réduire l'empreinte environnementale dans le respect des obligations légales. A terme, investir dans ce type de poste permet d'améliorer la résilience de votre entreprise aux risques environnementaux, de construire un business plan durable et de renforcer votre rôle d'employeur responsable.",
-    "moreDescription": "- [**Responsable RSE**](https://www.apec.fr/tous-nos-metiers/ressources-humaines/responsable-rse.html), une fiche de poste proposée par l'APEC.\n- [**Les missions du référent énergie**](https://atee.fr/system/files/2019-12/2015-MDE-%20Fiche%20Fonction%20des%20R%C3%A9f%C3%A9rents%20Energie.pdf#:~:text=Le%20r%C3%A9f%C3%A9rent%20%C3%A9nergie%20doit%20%C3%AAtre%20capable%20de%20%3A,prestations%20%C3%A9nerg%C3%A9tiques.%20Suivre%20la%20r%C3%A9alisation%20d%E2%80%99un%20audit%20%C3%A9nerg%C3%A9tique.), une fiche technique des missions et activités du référent énergie en entreprise.",
+    "moreDescription": "- [**Responsable RSE**](https://www.apec.fr/tous-nos-metiers/ressources-humaines/responsable-rse.html), une fiche de poste proposée par l'APEC.",
     "themes": [
       "rh"
     ],
@@ -2067,7 +2067,7 @@
     "shortDescription": "Réduire les impacts de votre produit ou service à toutes les étapes de son cycle de vie.",
     "image": "/images/projet/ecoconception.webp",
     "longDescription": "La démarche d'écoconception (ou conception écologique) est une approche de développement des produits et services respectueuse de l'environnement.\n\nElle consiste à analyser l'ensemble du cycle de vie d'un produit ou d'un service pour identifier comment diminuer son impact environnemental : extraction des matières premières, fabrication, utilisation, rejet dans les milieux naturels en fin de vie, etc.\n\nUne approche d'écoconception est nécessaire pour se questionner sur la fin de vie de vos produits et réorienter judicieusement vos choix de conception. Cela peut passer par exemple par un choix de matières premières plus robustes pour allonger la durée de vie de vos produits, anticiper la réparation ou la revalorisation des matières.\n\nIl s'agit d'une démarche encouragée par la loi anti-gaspillage pour une économie circulaire (AGEC) pour permettre aux entreprises de faire évoluer leur modèle de production.",
-    "moreDescription": "- [**Gagnez en performance avec l’écoconception**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception), une fiche ressource proposée par l’ADEME.\n- [**Les lignes directrices à suivre pour la réalisation d’un diagnostic d’éco-conception**](https://librairie.ademe.fr/dechets-economie-circulaire/4169-lignes-directrices-diagnostic-ecoconception.html)**.**\n- [**Analyse du cycle de vie**](https://bigmedia.bpifrance.fr/nos-dossiers/analyse-du-cycle-de-vie-definition-objectifs-etapes-de-realisation) : définition, objectifs, étapes de réalisation.\n- [**Valorisez votre démarche d'écoconception avec l'Écolabel européen**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen)**.**",
+    "moreDescription": "- [**Comment mettre en pratique l’écoconception en entreprise**](https://economie-circulaire.ademe.fr/ecoconception), une page ressource proposée par l’ADEME.\n- [**Les lignes directrices à suivre pour la réalisation d’un diagnostic d’éco-conception**](https://librairie.ademe.fr/dechets-economie-circulaire/4169-lignes-directrices-diagnostic-ecoconception.html)**.**\n- [**Analyse du cycle de vie**](https://bigmedia.bpifrance.fr/nos-dossiers/analyse-du-cycle-de-vie-definition-objectifs-etapes-de-realisation) : définition, objectifs, étapes de réalisation.\n- [**Valorisez votre démarche d'écoconception avec l'Écolabel européen**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen)**.**",
     "themes": [
       "eco-design"
     ],
@@ -2943,6 +2943,53 @@
     ]
   },
   {
+    "id": 467,
+    "slug": "management-energie",
+    "title": "Management de l’énergie",
+    "nameTag": "📊 Management de l’énergie",
+    "shortDescription": "Mettre en place une démarche structurée afin de piloter en continu l’efficacité énergétique de votre entreprise",
+    "image": "/images/projet/management-energie.webp",
+    "longDescription": "Mettez en place une démarche cohérente et structurée, afin de contrôler, surveiller et améliorer en continu l’efficacité énergétique de votre entreprise, ainsi que vos émissions de carbone.\n\nAu sein de vos équipes, vous pouvez nommer et former un référent énergie qui assurera une veille continue pour éviter le gaspillage et identifiera des gains possibles pour réduire la consommation. \n\nAvec la mise en place d'un système de management de l'énergie certifié ISO 50001, vous pouvez économiser entre 10 % et 25 % de la facture énergétique annuelle de l'entreprise.",
+    "moreDescription": "- [**Mettre en place un système de management de l’énergie**](https://agirpourlatransition.ademe.fr/entreprises/demarche-decarbonation-industrie/systeme-management-energie) par l'ADEME\n- [**Norme ISO 50001**](https://www.iso.org/fr/iso-50001-energy-management.html) **-** La norme internationale conçue pour aider les organisations à améliorer leurs performances énergétiques\n- [**Les missions du référent énergie**](https://atee.fr/system/files/2019-12/2015-MDE-%20Fiche%20Fonction%20des%20R%C3%A9f%C3%A9rents%20Energie.pdf#:~:text=Le%20r%C3%A9f%C3%A9rent%20%C3%A9nergie%20doit%20%C3%AAtre%20capable%20de%20%3A,prestations%20%C3%A9nerg%C3%A9tiques.%20Suivre%20la%20r%C3%A9alisation%20d%E2%80%99un%20audit%20%C3%A9nerg%C3%A9tique.), une fiche technique des missions et activités du référent énergie en entreprise.",
+    "themes": [
+      "energy",
+      "environmental"
+    ],
+    "mainTheme": "energy",
+    "programs": [
+      "pacte-industrie",
+      "certificats-economie-energie"
+    ],
+    "linkedProjects": [
+      4
+    ],
+    "priority": "427",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
+  },
+  {
     "id": 566,
     "slug": "trajet-ferroviaire-train-metro",
     "title": "Déplacements en train",
@@ -3152,6 +3199,39 @@
       "D",
       "F",
       "H"
+    ]
+  },
+  {
+    "id": 797,
+    "slug": "friches",
+    "title": "Friches",
+    "nameTag": "🏗️ friche",
+    "shortDescription": "Reconvertir une friche permet d'investir des espaces inexploités tout en limitant l'étalement urbain.",
+    "image": "/images/projet/friche-industrielle.webp",
+    "longDescription": "Dans le but d'éviter l'artificialisation des sols (avec pour objectif : Zéro Artificialisation Nette à l'horizon 2050), les friches offrent une opportunité intéressante pour bâtir de nouvelles zones (d’habitat, d’espace vert, commerciale, artisanale ou de production d’énergie) sans empiéter sur les espaces naturels, agricoles et forestiers.\n\nRemettre en condition d'exploitation une friche polluée permet, en outre, de contribuer efficacement à rétablir la biodiversité et le fonctionnement biologique des sols.",
+    "moreDescription": "- [**La reconquête des friches**](https://librairie.ademe.fr/urbanisme-territoires-et-sols/5458-la-reconquete-des-friches-l-ademe-vous-accompagne-9791029719462.html#product-presentation), un guide de l'ADEME pour y parvenir. \n- [**Identification de friches polluées éligibles à une reconversion écologique**](https://librairie.ademe.fr/urbanisme-territoires-et-sols/5799-identification-de-friches-polluees-eligibles-a-une-reconversion-ecologique.html#product-presentation), un rapport de l'ADEME.",
+    "themes": [
+      "building",
+      "environmental",
+      "biodiversite"
+    ],
+    "mainTheme": "building",
+    "programs": [
+      "etude-friches-polluees"
+    ],
+    "linkedProjects": [],
+    "priority": "470",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I"
     ]
   },
   {
