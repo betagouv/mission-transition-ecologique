@@ -36,7 +36,7 @@ export interface ImageTable extends Id {
 
 export interface Image {
   url: string
-  name: string
+  visible_name: string
   uploaded_at: string
 }
 
@@ -114,4 +114,21 @@ export type Sectors = {
 
 export type BaserowSectors = {
   [K in keyof typeof SectorKeys]: boolean
+}
+
+export interface BaserowTestimony extends Id, BaserowSectors {
+  'Id fiche témoignage': string
+  Statut: LinkObject
+  Theme: LinkObject
+  Verbatim: string
+  "Fonction + nom de l'entreprise": string
+  'Prénom NOM': string
+  Photo: Image[]
+  "attribut de l'image": string
+  'Lien externe vers le témoignage': string
+  Projets: LinkObject[]
+  Dispositifs: LinkObject[]
+  Région: LinkObject[]
+  'Mise en avant': number
+  'Nom entreprise': string
 }

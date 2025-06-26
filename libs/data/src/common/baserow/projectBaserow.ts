@@ -8,7 +8,6 @@ import { Logger } from '../logger/logger'
 import { LogLevel } from '../logger/types'
 
 export class ProjectBaserow extends AbstractBaserow {
-  private readonly _projectTableId = 305253
   private readonly _imagePath = '/images/projet/'
   private readonly _logPath: string = path.join(this.__dirname, '../../../static/project_images_download_info.json')
   private _imageDownloader: ImageBaserow
@@ -49,7 +48,7 @@ export class ProjectBaserow extends AbstractBaserow {
   }
 
   private async _convertToDataProjectType(baserowProject: BaserowProject, baserowThemes: Theme[]): Promise<DataProject> {
-    const maybeImageName = await this._imageDownloader.handleImage(baserowProject.Image)
+    const maybeImageName = await this._imageDownloader.handleImageFromImageTable(baserowProject.Image)
     let imageName
     if (maybeImageName.isErr) {
       this._logger.log(

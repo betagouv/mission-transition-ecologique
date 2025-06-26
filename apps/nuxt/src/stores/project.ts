@@ -1,5 +1,5 @@
 import { CompanyData } from '@/tools/companyData'
-import { FilterItemKeys, ProjectType, ThemeId } from '@/types'
+import { FilterItemKeys, ProjectId, ProjectType, ThemeId } from '@/types'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import ProjectFilter from '@/tools/project/projectFilter'
@@ -28,6 +28,12 @@ export const useProjectStore = defineStore('project', () => {
     })
   }
 
+  async function getProjectsFromIds(ids: ProjectId[]) {
+    return projects.value.filter((project) => {
+      return ids.includes(project.id)
+    })
+  }
+
   async function getLinkedProjectsFromCurrent() {
     const projectCurrent = currentProject.value
     if (hasProjects.value && projectCurrent) {
@@ -46,6 +52,7 @@ export const useProjectStore = defineStore('project', () => {
     hasError,
     currentProject,
     getLinkedProjectsFromCurrent,
-    getProjectsByFilters
+    getProjectsByFilters,
+    getProjectsFromIds
   }
 })

@@ -15,7 +15,6 @@ import { FileManager } from '../fileManager'
 
 export class ProgramBaserow extends AbstractBaserow {
   private readonly _geographicCoverageTableId = 314470
-  private readonly _geographicAreasTableId = 314474
   private readonly _programTableId = 314437
   private readonly _conditionnalValuesTableId = 351202
   private _operators: Operator[] = []
