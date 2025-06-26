@@ -23,7 +23,6 @@
           >
             <TeeProjectButton
               class="fr-my-1-5v"
-              target="_blank"
               :project="linkedProject"
               :color="Color.blue"
             />
