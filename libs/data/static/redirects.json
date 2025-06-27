@@ -14,7 +14,8 @@
     "investissement-boucle-d’eau-geothermique": "investissement-boucle-d-eau-geothermique",
     "investissement-boucle-d'eau-geothermique": "investissement-boucle-d-eau-geothermique",
     "diag-eco-flux-2": "diag-eco-flux",
-    "visite-energie-cci": "visite-energie"
+    "visite-energie-cci": "visite-energie",
+    "visite-energie-cma": "visite-energie"
   },
   "project_rowid_to_url_mapping": {
     "1": "bilan-ges",
