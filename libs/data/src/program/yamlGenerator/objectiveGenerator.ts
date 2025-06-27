@@ -3,6 +3,7 @@ import { CoreGenerator } from './coreGenerator'
 import { validateObjectiveLink } from './linksValidator'
 import { LinkValidator } from '../../common/validators/linkValidator'
 import { LogLevel } from '../../common/logger/types'
+import z from 'zod'
 
 export async function setObjectives(generator: CoreGenerator) {
   const objectifs: YamlObjective[] = []
@@ -37,7 +38,10 @@ async function parseStep(step: string, stepId: number, generator: CoreGenerator)
       }
       const match = line.match(/\[(.*?)\]\((.*?)\)/)
       if (match) {
-        validateObjectiveLink(match[2], stepId, generator)
+        const isUrl = z.string().url().safeParse(match[2]).success
+        if (isUrl) {
+          validateObjectiveLink(match[2], stepId, generator)
+        }
         return { lien: match[2], texte: match[1] }
       }
       return null
