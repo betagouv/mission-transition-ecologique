@@ -29,7 +29,23 @@ export class CoreGenerator {
     this._addSimpleField('titre', this.program.Titre, true)
     this._addSimpleField('promesse', this.program.Promesse, true)
     this._addSimpleField('description', this.program['Description courte'], true)
+    await LinkValidator.logInvalidLinks(
+      this.program['Description courte'],
+      this.logger,
+      LogLevel.Minor,
+      'Description courte',
+      this.program['Id fiche dispositif'],
+      this.program.id
+    )
     this._addSimpleField('description longue', this.program['Description longue'])
+    await LinkValidator.logInvalidLinks(
+      this.program['Description longue'],
+      this.logger,
+      LogLevel.Minor,
+      'Description longue',
+      this.program['Id fiche dispositif'],
+      this.program.id
+    )
     this._addValidatedDateField('début de validité', this.program.DISPOSITIF_DATE_DEBUT)
     this._addValidatedDateField('fin de validité', this.program.DISPOSITIF_DATE_FIN)
     if (this.program.Statuts.includes(Status.InProdNotAvailable)) {
@@ -48,7 +64,7 @@ export class CoreGenerator {
     }
     await setObjectives(this)
     await setEligibility(this)
-    this.yamlContent['publicodes'] = new PublicodesGenerator(this.program).generatePublicodes()
+    this.yamlContent['publicodes'] = new PublicodesGenerator(this.program, this.logger).generatePublicodes()
     new ConditionalDataGenerator(this.program, this.logger).generate(this.yamlContent)
   }
 
@@ -96,14 +112,14 @@ export class CoreGenerator {
       return
     }
     if (isUrl) {
-      if (await LinkValidator.isValidLink(rawData)) {
-        this.yamlContent['contact question'] = LinkValidator.forceHttps(rawData)
-      } else {
+      this.yamlContent['contact question'] = LinkValidator.forceHttps(rawData)
+      if (!(await LinkValidator.isValidLink(rawData))) {
         this.logger.log(
           LogLevel.Major,
-          `Lien invalidelors de la vérification automatique dans le champ "Contact Question". A vérifier manuellement avant mise en prod.`,
+          `Lien invalide lors de la vérification automatique dans le champ "Contact Question". A vérifier manuellement avant mise en prod.`,
           this.program['Id fiche dispositif'],
-          this.program.id
+          this.program.id,
+          `[Lien cassé](${rawData})`
         )
       }
       return
