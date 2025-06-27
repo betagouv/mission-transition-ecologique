@@ -20,15 +20,14 @@ export async function setObjectives(generator: CoreGenerator) {
 async function parseStep(step: string, stepId: number, generator: CoreGenerator): Promise<YamlObjective> {
   const lines = step.split('\n')
   const description = lines[0].substring(2)
-  const invalidLinks = await LinkValidator.findAndValidateLinks(description)
-  for (const link of invalidLinks) {
-    generator.logger.log(
-      LogLevel.Minor,
-      `Lien invalide détecté dans le champ "Objectif ${stepId}" : ${link}`,
-      generator.program['Id fiche dispositif'],
-      generator.program.id
-    )
-  }
+  await LinkValidator.logInvalidLinks(
+    description,
+    generator.logger,
+    LogLevel.Minor,
+    `"Objectif ${stepId}"`,
+    generator.program['Id fiche dispositif'],
+    generator.program.id
+  )
 
   const liens = lines
     .slice(1)
