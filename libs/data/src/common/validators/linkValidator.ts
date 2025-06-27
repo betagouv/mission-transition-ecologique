@@ -10,14 +10,21 @@ export class LinkValidator {
     return link.replace(/^http:\/\//i, 'https://')
   }
 
-  public static async logInvalidLinks(inputText: string, logger: Logger, logLevel: LogLevel, fieldName: string, id: string, rowId: number) {
-    const invalidLinks = await LinkValidator.findAndValidateLinks(inputText)
+  public static async logInvalidLinks(
+    inputText: string,
+    logger: Logger,
+    logLevel: LogLevel,
+    fieldName: string,
+    id: string,
+    rowId: number
+  ): Promise<void> {
+    const invalidLinks = await LinkValidator.findInvalidLinks(inputText)
     for (const link of invalidLinks) {
       logger.log(logLevel, 'Lien invalide détecté dans le champ ' + fieldName, id, rowId, `[Lien cassé](${link})`)
     }
   }
 
-  public static async findAndValidateLinks(inputText: string): Promise<string[]> {
+  public static async findInvalidLinks(inputText: string): Promise<string[]> {
     const urlRegex = /(https?:\/\/[^\s]+)/g
     const foundLinks = inputText.match(urlRegex) || []
     const invalidLinks = []

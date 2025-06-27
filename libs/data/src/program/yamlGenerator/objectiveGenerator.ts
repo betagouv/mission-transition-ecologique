@@ -39,7 +39,8 @@ async function parseStep(step: string, stepId: number, generator: CoreGenerator)
       const match = line.match(/\[(.*?)\]\((.*?)\)/)
       if (match) {
         const isUrl = z.string().url().safeParse(match[2]).success
-        if (isUrl) {
+        const isEmail = match[2].startsWith('mailto:')
+        if (isUrl && !isEmail) {
           validateObjectiveLink(match[2], stepId, generator)
         }
         return { lien: match[2], texte: match[1] }
