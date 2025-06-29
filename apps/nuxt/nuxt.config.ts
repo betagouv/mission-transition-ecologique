@@ -60,6 +60,12 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       security: {
         headers: NuxtSecurityConfig.getIframePageHeadersConfig()
       }
+    },
+    '/iframe': {
+      swr: true,
+      security: {
+        headers: NuxtSecurityConfig.getIframePageHeadersConfig()
+      }
     }
   },
   compatibilityDate: '2024-10-09',
