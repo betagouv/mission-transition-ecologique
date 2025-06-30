@@ -1166,7 +1166,7 @@
         "description": "Prenez contact avec un conseiller de l'Agence de Développement Economique de la Corse afin de vous accompagner dans votre démarche et obtenir les documents à compléter pour déposer votre demande.",
         "liens": [
           {
-            "lien": "https://www.adec.corsica/Nos-adresses_a22.html",
+            "lien": "https://adec.corsica/contact/",
             "texte": "Contacts de l'ADEC"
           }
         ]
@@ -17662,6 +17662,7 @@
     "description longue": "Le fonds se décline en trois points :\n- Une subvention ou avance remboursable, versée directement à l’entreprise, qui peut couvrir l’ensemble ou une partie du projet\n- Une instruction rapide directement menée par la DG Trésor\n- Des agents dédiés dans chaque Ambassade de France grâce aux services économiques dont la mission est d’accompagner les entreprises françaises dans leurs démarches auprès des autorités locales, pour suivre et favoriser la mise en œuvre de leurs projets.\n\nLe projet doit susciter l’adhésion auprès des autorités locales et doit favoriser le soutien à l’export pour les entreprises françaises.\n\nLe projet doit avoir un impact positif en termes de :\n- lutte contre le changement climatique et de protection de l’environnement\n- création d’emplois, intégration de l’économie informelle, lutte contre la pauvreté, égalité hommes-femmes, formation, etc",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "DDFIP",
+    "contact question": "mailto:aide-projet@dgtresor.gouv.fr",
     "url": "https://www.tresor.economie.gouv.fr/services-aux-entreprises/le-fasep",
     "nature de l'aide": "financement",
     "montant du financement": "de 100 000 à 800 000 €, selon projet",
@@ -26755,7 +26756,7 @@
     "contact question": "mailto:mobilipro@ademe.fr",
     "url": "https://www.mobilipro.fr/",
     "nature de l'aide": "étude",
-    "coût de l'accompagnement": "Gratuit pour les structures disposant de moins de 100 véhicules.",
+    "coût de l'accompagnement": "Selon vos projets",
     "durée de l'accompagnement": "3 jours, répartis sur trois ans",
     "activable en autonomie": "oui",
     "objectifs": [
