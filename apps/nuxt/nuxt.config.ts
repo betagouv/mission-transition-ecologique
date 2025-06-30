@@ -135,7 +135,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   },
   experimental: {
     renderJsonPayloads: false,
-    inlineRouteRules: true
+    inlineRouteRules: true,
+    headNext: true
     // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 

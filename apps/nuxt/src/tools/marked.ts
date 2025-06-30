@@ -2,7 +2,7 @@ import { marked, Tokens } from 'marked'
 import { MarkedExtension } from 'marked/lib/marked'
 
 export class Marked {
-  static toHtml(markdown: string | undefined, withExtension = true): string {
+  static toHtml(markdown: string | undefined, withExtension = true, withMarkdownClass = true): string {
     if (!markdown) {
       return ''
     }
@@ -11,7 +11,7 @@ export class Marked {
     }
 
     const parsed = marked.parse(markdown) as string
-    return `<div class="markdown-spacing-reset">${parsed}</div>`
+    return withMarkdownClass ? `<div class="markdown-spacing-reset">${parsed}</div>` : parsed
   }
 
   private static _extension = (): MarkedExtension => {
@@ -23,12 +23,22 @@ export class Marked {
             return `${text}`
           }
 
-          const config = useRuntimeConfig()
-          const localLink = token.href.startsWith(config.public.siteUrl) // disable because of SSR and not url with mission-transition-ecologique
+          const localLink = Marked.isLocalLink(token)
           const target = localLink ? ' target="_blank"' : ' target="_blank" rel="noopener external"'
           return `<a href="${token.href}"${target}>${text}</a>`
         }
       }
     }
+  }
+
+  public static isLocalLink(token: Tokens.Link): boolean {
+    const config = useRuntimeConfig()
+    return (
+      token.href.startsWith(config.public.siteUrl) ||
+      token.href.startsWith('/') ||
+      token.href.includes('localhost') ||
+      token.href.includes('tee-preprod-pr') ||
+      token.href.includes('preprod.mission-transition-ecologique.incubateur.net')
+    )
   }
 }
