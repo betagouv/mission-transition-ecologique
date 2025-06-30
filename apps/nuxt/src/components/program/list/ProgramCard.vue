@@ -31,10 +31,7 @@ interface Props {
   project?: ProjectType
   titleTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 }
-const { program, project } = withDefaults(defineProps<Props>(), {
-  project: undefined,
-  titleTag: 'h2'
-})
+const { program, project = undefined, titleTag = 'h2' } = defineProps<Props>()
 
 const navigationStore = useNavigationStore()
 const navigation = new Navigation()

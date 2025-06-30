@@ -173,5 +173,14 @@ export default class Navigation {
         })
       }
     }
+
+    if (this.isByRouteName(RouteName.Faq)) {
+      if (navigationStore.isFromCtaRegisterModal) {
+        useNavigationStore().setFromCtaRegisterModal(false)
+        await this._router.push({
+          name: RouteName.CatalogPrograms
+        })
+      }
+    }
   }
 }
