@@ -8,6 +8,7 @@
       <SimpleProjectList
         v-if="!hasSpinner"
         :project-list="projectList"
+        title-project-tag="h4"
       />
     </div>
     <div
@@ -46,7 +47,6 @@ import { RouteName } from '@/types'
 interface Props {
   limit: number
 }
-
 const props = defineProps<Props>()
 
 onServerPrefetch(async () => {

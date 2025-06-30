@@ -22,6 +22,7 @@
 
 <script setup lang="ts">
 import { MetaRobots } from '@/tools/metaRobots'
+import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 
@@ -31,6 +32,10 @@ definePageMeta({
   path: '/stats',
   name: RouteName.Statistics
 })
+
+const description = 'Informations relatives aux statistiques du site Mission Transition Écologique des Entreprises.'
+useSeoMeta(MetaSeo.get('Statistiques', description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 useHead({
   link: [

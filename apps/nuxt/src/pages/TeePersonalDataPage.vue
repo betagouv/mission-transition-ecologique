@@ -17,6 +17,7 @@
 <script setup lang="ts">
 import TeeFooterCookiesButton from '@/components/TeeFooterCookiesButton.vue'
 import { MetaRobots } from '@/tools/metaRobots'
+import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 import { PrivacyPolicyPropsCookie, PrivacyPolicyPropsThirdParty, PrivacyPolicy } from '@incubateur-ademe/legal-pages-vue3'
@@ -69,6 +70,10 @@ const cookies: PrivacyPolicyPropsCookie[] = [
     destination: 'Europe'
   }
 ]
+
+const description = 'Informations relatives à la politique de confidentialité du site Mission Transition Écologique des Entreprises.'
+useSeoMeta(MetaSeo.get('Politique de confidentialité', description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 useHead({
   link: [

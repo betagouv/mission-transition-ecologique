@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TeeDsfrBreadcrumb :links="[{ text: 'Budget', to: RouteName.Budget }]" />
+    <TeeDsfrBreadcrumb :links="[{ text: 'Budget', to: { name: RouteName.Budget } }]" />
     <div class="fr-container fr-mb-8w">
       <div class="fr-mb-6w">
         <h1 class="fr-mb-3w fr-text--blue-france">Budget</h1>
@@ -148,6 +148,7 @@
 </template>
 
 <script setup lang="ts">
+import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 import { onMounted, ref } from 'vue'
@@ -245,6 +246,10 @@ onMounted(() => {
     console.error('Erreur lors du chargement du graphique:', error)
   })
 })
+
+const description = 'Informations relatives au budget du site Mission Transition Écologique des Entreprises.'
+useSeoMeta(MetaSeo.get('Budget', description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 useHead({
   link: [

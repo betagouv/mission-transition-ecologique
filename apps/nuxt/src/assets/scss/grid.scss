@@ -56,8 +56,8 @@
         &--inline {
           display: inline;
         }
-      } 
-    } 
+      }
+    }
   }
 }
 
@@ -69,4 +69,8 @@
 
 .fr-position--relative {
   position: relative;
+}
+
+.fr-flex-direction--column {
+  flex-direction: column;
 }

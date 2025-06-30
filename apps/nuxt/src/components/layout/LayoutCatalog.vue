@@ -56,13 +56,28 @@
       message="Aucune idée d'action n'a pu être identifiée avec les critères choisis..."
       :count-items="countItems"
     />
+    <template
+      v-if="$slots.faq || faqPage"
+      #faq
+    >
+      <slot name="faq">
+        <FaqCatalog
+          v-if="faqPage"
+          :faq-page="faqPage"
+          :has-side-menu="hasSideMenu"
+        />
+      </slot>
+    </template>
   </Layout>
 </template>
 
 <script setup lang="ts">
+import FaqCatalog from '@/components/faq/FaqCatalog.vue'
 import Layout from '@/components/layout/Layout.vue'
 import { useFiltersStore } from '@/stores/filters'
 import { useNavigationStore } from '@/stores/navigation'
+import { FaqPage } from '@/tools/faq/faqType'
+import Navigation from '@/tools/navigation'
 import { Theme } from '@/tools/theme'
 import { ThemeId } from '@tee/data'
 import { computed } from 'vue'
@@ -72,6 +87,7 @@ interface Props {
   title?: string
   hasError?: boolean
   countItems: number
+  faqPage?: FaqPage
 }
 const props = defineProps<Props>()
 
@@ -80,9 +96,7 @@ const { hasSpinner } = storeToRefs(useNavigationStore())
 const theme = Theme.getThemeFromSelectedTheme()
 
 const lineClassBySideMenu = computed(() => {
-  return props.hasSideMenu
-    ? 'fr-col-offset-md-3 fr-col-md-9 fr-col-justify-md--left fr-col-offset-xl-2 fr-col-xl-10 fr-col-justify--center'
-    : ''
+  return Navigation.getClassesBySideMenu(props.hasSideMenu)
 })
 
 const hasThemeCard = computed(() => {

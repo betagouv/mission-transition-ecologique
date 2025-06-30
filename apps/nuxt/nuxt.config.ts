@@ -1,3 +1,4 @@
+import { defineOrganization } from 'nuxt-schema-org/schema'
 import Config from './src/config'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { DefineNuxtConfig, defineNuxtConfig } from 'nuxt/config'
@@ -6,6 +7,8 @@ import { NuxtScriptsConfig } from './nuxt.scripts.config'
 import { NuxtSecurityConfig } from './nuxt.security.config'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import { ChangeFreq, Priority } from './src/types/sitemapType'
+import { Identity } from './src/tools/Identity'
+import { MetaSeo } from './src/tools/metaSeo'
 
 /**
  * Remove prerender and swr for CI and test data.
@@ -56,6 +59,12 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '/budget': { prerender: true },
     '/ajouter-une-aide-entreprises': { prerender: true },
     '/iframe/**': {
+      swr: true,
+      security: {
+        headers: NuxtSecurityConfig.getIframePageHeadersConfig()
+      }
+    },
+    '/iframe': {
       swr: true,
       security: {
         headers: NuxtSecurityConfig.getIframePageHeadersConfig()
@@ -126,7 +135,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   },
   experimental: {
     renderJsonPayloads: false,
-    inlineRouteRules: true
+    inlineRouteRules: true,
+    headNext: true
     // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 
@@ -138,7 +148,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@nuxt/scripts',
-    '@nuxt/image'
+    '@nuxt/image',
+    'nuxt-schema-org'
   ],
   // Modules who need to have a look:
   // - nuxt-purgecss
@@ -166,6 +177,13 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   robots: {
     disallow: ['/ajouter-une-aide-entreprises', '/iframe/**', '/iframe', '/demo/**'],
     credits: false
+  },
+  site: {
+    name: MetaSeo.title(),
+    description: Identity.description,
+  },
+  schemaOrg: {
+    defaults: false,
   },
   scripts: {
     registry: NuxtScriptsConfig.getRegistry()
