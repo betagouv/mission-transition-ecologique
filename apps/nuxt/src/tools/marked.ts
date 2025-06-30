@@ -36,9 +36,9 @@ export class Marked {
     return (
       token.href.startsWith(config.public.siteUrl) ||
       token.href.startsWith('/') ||
-      token.href.includes('localhost') ||
-      token.href.includes('tee-preprod-pr') ||
-      token.href.includes('preprod.mission-transition-ecologique.incubateur.net')
+      token.href.startsWith('http://localhost') ||
+      token.href.startsWith('https://tee-preprod-pr') ||
+      token.href.startsWith('https://preprod.mission-transition-ecologique.incubateur.net')
     )
   }
 }
