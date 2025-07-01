@@ -34,9 +34,12 @@ coût de l'accompagnement: >-
   l'entreprise
 durée de l'accompagnement: 18 jours de prestation répartis sur 6 à 8 mois
 objectifs:
-  - description: Exprimez votre intérêt en contactant un conseiller via le formulaire.
+  - description: >-
+      Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le
+      site de Bpifrance
     liens:
-      - formulaire: true
+      - lien: https://diag.bpifrance.fr/contactez-nous
+        texte: Formulaire de contact
   - description: >-
       Échangez avec un conseiller pour vérifier votre éligibilité et préparer
       votre demande.

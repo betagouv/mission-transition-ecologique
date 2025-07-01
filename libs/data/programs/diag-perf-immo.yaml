@@ -48,10 +48,11 @@ coût de l'accompagnement: >-
 durée de l'accompagnement: variable selon la surface et la complexité du site
 objectifs:
   - description: >-
-      Contactez un conseiller via le formulaire dédié pour exprimer votre
-      intérêt.
+      Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le
+      site de Bpifrance
     liens:
-      - formulaire: true
+      - lien: https://diag.bpifrance.fr/contactez-nous
+        texte: Formulaire de contact
   - description: >-
       Un conseiller vous rappelle pour répondre à vos questions et vous guider
       dans la constitution de votre demande.
