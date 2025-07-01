@@ -1343,6 +1343,203 @@
     "id": "aide-investissement-corse"
   },
   {
+    "titre": "Aide à l’investissement aux librairies françaises",
+    "promesse": "Bénéficiez d'une aide financière pour réaliser des travaux visant à rendre votre librairie plus sobre énergétiquement",
+    "description": "Cette aide, attribuée sous forme de prêt ou de subvention, accompagne les librairies dans leurs projets de rénovation intégrant des dépenses liées à l'isolation, aux équipements de chauffage, de climatisation et d'éclairage.",
+    "description longue": "Les dossiers sont examinés selon les critères suivants :\n-  Intérêt et pertinence du projet présenté (emplacement, configuration et agencement du local, implantation des rayons, positionnement en termes d’offre, pertinence et qualité de l’assortiment, programme d’animation et inscription dans la vie culturelle locale, outils et visibilité sur internet) ;\n- Formation et/ou expérience, compétence du dirigeant et de l’équipe (maitrise de l’assortiment, gestion, vente, conseil, etc.) ;\n- Viabilité financière, économique et commerciale économique du projet :\n       - Charges d’exploitation, pertinence des prévisionnels d’exploitation, coûts et financement de l’opération, apport en fonds propres ou par autofinancement, niveau d’endettement, aides publiques sollicitées et obtenues, notamment au titre de la transition écologique, etc. ;\n       - Situation économique, financière et juridique du demandeur ;\n       - S’il s’agit d’un projet de reprise, prix et conditions de cession, composition et valeur du stock repris, et, le cas échéant, situation financière de l’entreprise reprise ;\n       - S’il s’agit d’un projet de restructuration, de pérennisation, analyse des difficultés internes et externes, mesures opérationnelles et financières de redressement, et, le cas échéant, indemnisations perçues ou à percevoir.\n- Contribution au maillage territorial : concurrence ou absence de concurrence directe, contraintes liées à l'environnement local (isolement accentué, département rural, ultramarin, caractéristiques sociodémographiques défavorables au commerce de livre…), etc.\n- Impacts environnementaux et énergétiques du projet : démarche et engagements pris par le porteur de projet, prise en compte des paramètres environnementaux et énergétiques dans la définition du projet, niveau de consommation énergétique actuelle et attendue, nature des investissements incombant ou non au libraire, contexte immobilier, aides spécifiques mobilisées, de l’Ademe et de la BPI en particulier.",
+    "début de validité": "15/01/2025",
+    "fin de validité": "31/10/2025",
+    "illustration": "images/TEE_ampoule.png",
+    "opérateur de contact": "Centre National du Livre",
+    "contact question": "formulaire",
+    "url": "https://centrenationaldulivre.fr/aides-financement/aide-a-l-investissement-aux-librairies-francaises",
+    "nature de l'aide": "financement",
+    "montant du financement": "financement de 4 000 à 100 000 €, prêt de 8 000 à 300 000 €",
+    "objectifs": [
+      {
+        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation du CNL ou en contactant un conseiller.",
+        "liens": [
+          {
+            "lien": "<https://centrenationaldulivre.fr/aides-financement/aide-a-l-investissement-aux-librairies-francaises>",
+            "texte": "Critères d'éligibilité\\"
+          }
+        ]
+      },
+      {
+        "description": "Réalisez un pré-diagnostic énergétique par un conseiller certifié."
+      },
+      {
+        "description": "Créez votre compte sur le Portail numérique des demandes d'aides (au plus tard 3 jours ouvrés avant la date limite de dépôt des dossiers).",
+        "liens": [
+          {
+            "lien": "https://www.cnl-demandesdaides.fr/appli/",
+            "texte": "Portail numérique"
+          }
+        ]
+      },
+      {
+        "description": "posez votre dossier : informations administratives, description du projet, pré-diagnostic énergétique, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://www.cnl-demandesdaides.fr/appli/",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "Le dossier est examiné par un comité. S'il est accepté, recevez les modalités et le plan de financement."
+      },
+      {
+        "description": "Réalisez vos travaux !"
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Librairies"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "a une categorie legale eligible"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est S"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment"
+        ]
+      }
+    },
+    "id": "aide-investissement-librairie"
+  },
+  {
     "titre": "Soutien à la labellisation touristique",
     "promesse": "Obtenez un soutien pour votre labellisation touristique",
     "description": "Vous êtes un professionnel du tourisme en Corse et souhaitez valoriser votre engagement avec un label reconnu ? Que ce soit l’Écolabel Européen, Tourisme & Handicap ou Accueil Vélo, l’Agence du Tourisme de la Corse vous accompagne dans vos démarches de labellisation. Vous pouvez bénéficier d’un soutien financier pour couvrir l’accompagnement, les études nécessaires et les investissements indispensables à votre mise en conformité.",
@@ -8677,10 +8874,11 @@
     "durée de l'accompagnement": "7 jours de prestation répartis sur 3 à 6 mois",
     "objectifs": [
       {
-        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire",
+        "description": "Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le site de Bpifrance",
         "liens": [
           {
-            "formulaire": true
+            "lien": "https://diag.bpifrance.fr/contactez-nous",
+            "texte": "Formulaire de contact"
           }
         ]
       },
@@ -9062,10 +9260,11 @@
     "durée de l'accompagnement": "12 jours de prestation répartis sur 6 à 8 mois",
     "objectifs": [
       {
-        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire",
+        "description": "Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le site de Bpifrance",
         "liens": [
           {
-            "formulaire": true
+            "lien": "https://diag.bpifrance.fr/contactez-nous",
+            "texte": "Formulaire de contact"
           }
         ]
       },
@@ -9254,10 +9453,11 @@
     "durée de l'accompagnement": "6 à 8 jours de prestation répartis sur 15 à 18 mois",
     "objectifs": [
       {
-        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "description": "Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le site de Bpifrance",
         "liens": [
           {
-            "formulaire": true
+            "lien": "https://diag.bpifrance.fr/contactez-nous",
+            "texte": "Formulaire de contact"
           }
         ]
       },
@@ -9441,10 +9641,11 @@
     "durée de l'accompagnement": "18 jours de prestation répartis sur 6 à 8 mois",
     "objectifs": [
       {
-        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire.",
+        "description": "Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le site de Bpifrance",
         "liens": [
           {
-            "formulaire": true
+            "lien": "https://diag.bpifrance.fr/contactez-nous",
+            "texte": "Formulaire de contact"
           }
         ]
       },
@@ -9661,10 +9862,11 @@
     "durée de l'accompagnement": "variable selon la surface et la complexité du site",
     "objectifs": [
       {
-        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
+        "description": "Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le site de Bpifrance",
         "liens": [
           {
-            "formulaire": true
+            "lien": "https://diag.bpifrance.fr/contactez-nous",
+            "texte": "Formulaire de contact"
           }
         ]
       },
@@ -9848,7 +10050,7 @@
     "durée de l'accompagnement": "3 jours",
     "objectifs": [
       {
-        "description": "primez votre intérêt en contactant un conseiller via le formulaire.",
+        "description": "Exprimez votre intérêt en contactant un conseiller via le formulaire.",
         "liens": [
           {
             "formulaire": true
@@ -9856,13 +10058,13 @@
         ]
       },
       {
-        "description": " conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
+        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
       },
       {
-        "description": "finissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
+        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
       },
       {
-        "description": "ncez le diagnostic avec l'expert proposé par votre CCI."
+        "description": "Lancez le diagnostic avec l'expert proposé par votre CCI."
       }
     ],
     "conditions d'éligibilité": {
@@ -10587,7 +10789,8 @@
   {
     "titre": "Diagnostic Transition Ecologique",
     "promesse": "Intégrez la transition écologique dans le fonctionnement quotidien de votre entreprise",
-    "description": "Réalisez un diagnostic de transition écologique avec votre conseiller CCI pour analyser et piloter les enjeux environnementaux de votre activité. Ce diagnostic aborde plusieurs aspects clés de votre entreprise : la gestion de vos locaux, vos consommations d'énergie, la gestion des déchets, vos achats responsables et vos pratiques de mobilité. Structuré en trois étapes, il vous aide à mettre en place des actions concrètes pour progresser :\n\n- État des lieux à 360° pour évaluer la maturité écologique de votre entreprise\n\n- Identification des enjeux prioritaires et des leviers d'amélioration\n\n- Élaboration d'un plan d'action personnalisé pour transformer durablement votre entreprise et optimiser vos coûts\n\nCe diagnostic vous permet de mieux comprendre vos impacts environnementaux et de structurer une démarche de transition écologique.",
+    "description": "Réalisez un diagnostic de transition écologique avec votre conseiller CCI pour analyser et piloter les enjeux environnementaux de votre activité. Ce diagnostic aborde plusieurs aspects clés de votre entreprise : **la gestion de vos locaux, vos consommations d'énergie, la gestion des déchets, vos achats responsables et vos pratiques de mobilité.** Structuré en trois étapes, il vous aide à mettre en place des actions concrètes pour progresser :\n\n- **État des lieux à 360°** pour évaluer la maturité écologique de votre entreprise\n\n- Identification des **enjeux prioritaires et des leviers d'amélioration**\n\n- Élaboration d'un **plan d'action personnalisé** pour transformer durablement votre entreprise et optimiser vos coûts\n\nCe diagnostic vous permet de mieux comprendre vos impacts environnementaux et de structurer une démarche de transition écologique.",
+    "fin de validité": "31/12/2024",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "contact question": "formulaire",
@@ -10722,6 +10925,7 @@
         ]
       },
       "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
         "toutes ces conditions": [
           "a un effectif éligible"
         ]
@@ -18797,6 +19001,7 @@
     "titre": "Formation ADEME",
     "promesse": "Réalisez une initiation aux enjeux de la transition écologique",
     "description": "Suivez une formation en ligne pour initier la transition écologique de votre entreprise. Vous découvrirez les principales transformations de la société, de l'économie, des territoires et les enjeux de la transition écologique pour les entreprises. Puis en seconde partie, vous serez invité à identifier les risques et les opportunités pour votre entreprise ainsi que les premiers leviers d’action pour se mettre en mouvement.",
+    "fin de validité": "01/06/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
     "contact question": "https://formations.ademe.fr/contactez-nous.html",
@@ -18933,9 +19138,14 @@
       "date du jour": null,
       "entreprise . est ciblée": {
         "toutes ces conditions": [
+          "est éligible",
           "est dans un secteur d'activité ciblé",
           "a un objectif ciblé"
         ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
+        "valeur": "oui"
       },
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
@@ -34486,7 +34696,6 @@
     "description longue": "Une prime supplémentaire de Développement Durable de 5 000 € à 10 000 € peut être accordée sur justification de l’obtention ou du renouvellement d’un label environnemental.\n\nPour les établissements réalisant des travaux favorisant une meilleure performance environnementale, l’accessibilité des personnes en situation de handicap, l'aménagement et/ou la création de locaux destinés à l’accueil de saisonniers, sont éligibles, les travaux ayant trait à :  \n• La gestion environnementale et la réduction des consommations de fluides ainsi que les équipements pour l’accueil des clientèles vélo touristiques\n• L’accessibilité des personnes en situation de handicap (le label Tourisme et Handicap est exigé avant ou après travaux).\n• Logement des saisonniers au sein des établissements\n\nPour la montée en gamme par le changement de classement ou l’adjonction d’équipements de diversification, sont éligibles, les travaux de gros œuvre et de second œuvre contribuant à atteindre : \n• Un classement national supérieur en étoiles ou de changement d’épis (dans la limite de l’obtention d’un classement maximum de 4 étoiles ou épis après travaux)\n• Une offre d’équipements de diversification contribuant à augmenter l’attractivité de l’établissement et son chiffre d’affaires (équipements de bien-être et de mise en forme, espaces aquatiques et aqualudiques, équipements numériques, etc.)",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Région Sud (PACA)",
-    "contact question": "https://www.maregionsud.fr/vos-aides/detail/soutien-a-lhebergement-touristique",
     "url": "https://www.maregionsud.fr/vos-aides/detail/soutien-a-lhebergement-touristique",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 60% des dépenses éligibles, dans un maximum de 100 000 €",

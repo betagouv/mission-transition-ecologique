@@ -40,9 +40,12 @@ nature de l'aide: étude
 coût de l'accompagnement: 3 000 € HT après subvention de 50%
 durée de l'accompagnement: 7 jours de prestation répartis sur 3 à 6 mois
 objectifs:
-  - description: Exprimez votre intérêt en contactant un conseiller via le formulaire
+  - description: >-
+      Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le
+      site de Bpifrance
     liens:
-      - formulaire: true
+      - lien: https://diag.bpifrance.fr/contactez-nous
+        texte: Formulaire de contact
   - description: >-
       Un conseiller vous rappelle pour vérifier votre éligibilité et répondre à
       vos questions.
