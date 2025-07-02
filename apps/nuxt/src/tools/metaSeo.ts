@@ -4,9 +4,10 @@ export class MetaSeo {
   private static readonly _baseTitle = 'Transition écologique des TPE & PME'
   private static readonly _defaultTitle = 'Aides et financements personnalisés'
   private static readonly _defaultImage = '/images/TEE-social-network-sharing.webp'
-  public static readonly logoImage = '/images/logos/mission-transition-logo-alone.png'
   public static readonly defaultDescription =
     'Service public pour les entreprises : Accédez simplement aux aides, accompagnements et financements disponibles pour les entreprises de votre secteur'
+  public static readonly descriptionWebsite =
+    'Service public en ligne pour accompagner les entreprises dans leur transition écologique en facilitant l’accès aux aides, subventions et dispositifs adaptés.'
 
   static readonly get = (title?: string, description?: string): UseSeoMetaInput => {
     return this._buildMeta(this.title(title), this._defaultImage, this._description(description))
@@ -17,7 +18,7 @@ export class MetaSeo {
   }
 
   public static readonly title = (title?: string) => {
-    return `${this._baseTitle} - ${title || this._defaultTitle}`
+    return `${title || this._defaultTitle} - ${this._baseTitle}`
   }
 
   private static readonly _description = (description?: string) => {

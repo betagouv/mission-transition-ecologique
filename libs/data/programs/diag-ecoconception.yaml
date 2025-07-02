@@ -6,21 +6,22 @@ description: >-
   services et procédés. Vous serez soutenu pour :
 
 
-  - Sensibiliser vos équipes et former un référent en écoconception
+  - **Sensibiliser vos équipes** et former un référent en écoconception
 
 
-  - Réaliser une évaluation environnementale (analyse du cycle de vie)
+  - Réaliser une **évaluation environnementale** (analyse du cycle de vie)
 
 
-  - Identifier et chiffrer des leviers d’amélioration sans transférer de
+  - Identifier et chiffrer des l**eviers d’amélioration** sans transférer de
   pollution
 
 
-  - Mettre en place un plan d’action technico-économique pour l’éco-conception
+  - Mettre en place un **plan d’action** technico-économique pour
+  l’éco-conception
 
 
-  - Préparer et accompagner votre démarche vers l’obtention de l’Ecolabel
-  européen
+  - Préparer et accompagner votre démarche vers l’**obtention de l’Ecolabel
+  européen**
 illustration: images/TEE_eolienne.png
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
@@ -33,9 +34,12 @@ coût de l'accompagnement: >-
   l'entreprise
 durée de l'accompagnement: 18 jours de prestation répartis sur 6 à 8 mois
 objectifs:
-  - description: Exprimez votre intérêt en contactant un conseiller via le formulaire.
+  - description: >-
+      Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le
+      site de Bpifrance
     liens:
-      - formulaire: true
+      - lien: https://diag.bpifrance.fr/contactez-nous
+        texte: Formulaire de contact
   - description: >-
       Échangez avec un conseiller pour vérifier votre éligibilité et préparer
       votre demande.

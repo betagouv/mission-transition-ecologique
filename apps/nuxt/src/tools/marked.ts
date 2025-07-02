@@ -23,12 +23,26 @@ export class Marked {
             return `${text}`
           }
 
-          const config = useRuntimeConfig()
-          const localLink = token.href.startsWith(config.public.siteUrl) // disable because of SSR and not url with mission-transition-ecologique
+          const localLink = Marked.isLocalLink(token)
           const target = localLink ? ' target="_blank"' : ' target="_blank" rel="noopener external"'
           return `<a href="${token.href}"${target}>${text}</a>`
         }
       }
     }
+  }
+
+  public static isLocalLink(token: Tokens.Link): boolean {
+    if (URL.canParse(token.href)) {
+      const config = useRuntimeConfig()
+      const url = new URL(token.href)
+
+      return (
+        [config.public.siteUrl, 'https://preprod.mission-transition-ecologique.incubateur.net', 'http://localhost:4242'].includes(
+          url.origin
+        ) || token.href.startsWith('https://tee-preprod-pr')
+      )
+    }
+
+    return token.href.startsWith('/')
   }
 }

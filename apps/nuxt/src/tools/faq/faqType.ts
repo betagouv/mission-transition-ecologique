@@ -18,7 +18,6 @@ interface QuestionItem {
   answer: string
 }
 
-export interface FaqType {
-  [value in FaqPage]?: FaqItem[]
-  [key: string]: FaqItem[] | undefined
+export type FaqType = {
+  [key in FaqPage]?: FaqItem[]
 }

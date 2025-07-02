@@ -2,7 +2,25 @@ titre: Diag Décarbon'Action
 promesse: >-
   Réalisez un bilan de gaz à effet de serre et réduisez l’empreinte carbone de
   votre entreprise
-description: "Ce Bilan vous permet en 12\_jours de mesurer les émissions directes et indirectes de GES de votre entreprise puis d’élaborer votre plan d’actions pour réduire l’empreinte carbone de votre entreprise. Les experts qui réalisent le Diag Décarbon'Action sont certifiés « Bilan Carbone ® » ou autre méthode de comptabilité carbone conforme à la réglementation, et sont habilités par l’ADEME, l’Association Bilan Carbone et Bpifrance, ce qui garantit un niveau de qualité élevé."
+description: >-
+  En 12 jours, le Diag Décarbon'Action vous permet :\
+
+  – de **mesurer vos émissions de gaz à effet de serre**, directes et
+  indirectes, selon une méthode reconnue ;\
+
+  – d’identifier vos **principaux postes d’émissions**, en lien avec votre
+  activité ;\
+
+  – d’élaborer un **plan d’actions concret pour réduire votre empreinte
+  carbone**, adapté à votre entreprise.
+description longue: >-
+  Les experts mandatés sont :
+
+  – **certifiés « Bilan Carbone® » ou équivalent**, selon les méthodes conformes
+  à la réglementation ;\
+
+  – **habilités par l’ADEME, Bpifrance et l’Association Bilan Carbone**,
+  garantissant un accompagnement fiable et de qualité.
 illustration: images/TEE_eolienne.png
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
@@ -13,9 +31,12 @@ nature de l'aide: étude
 coût de l'accompagnement: "6 000 €\_HT après subvention de 40%"
 durée de l'accompagnement: 12 jours de prestation répartis sur 6 à 8 mois
 objectifs:
-  - description: Exprimez votre intérêt en contactant un conseiller via le formulaire
+  - description: >-
+      Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le
+      site de Bpifrance
     liens:
-      - formulaire: true
+      - lien: https://diag.bpifrance.fr/contactez-nous
+        texte: Formulaire de contact
   - description: >-
       Un conseiller vous rappelle pour répondre à vos questions et vous guider
       dans la constitution de votre demande.

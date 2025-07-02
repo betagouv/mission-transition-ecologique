@@ -121,7 +121,8 @@ export type Dispositif = {
     | "Agence de Développement Economique de Corse"
     | "Agence de Tourisme de la Corse"
     | "Région Guadeloupe"
-    | "Avere-France";
+    | "Avere-France"
+    | "Centre National du Livre";
   /**
    * Le contact en cas de question, peut être un lien vers le formulaire, un mail ou une url.
    */
@@ -283,4 +284,5 @@ export type Operators =
   | "Agence de Développement Economique de Corse"
   | "Agence de Tourisme de la Corse"
   | "Région Guadeloupe"
-  | "Avere-France";
+  | "Avere-France"
+  | "Centre National du Livre";

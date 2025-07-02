@@ -14,7 +14,8 @@
     "investissement-boucle-d’eau-geothermique": "investissement-boucle-d-eau-geothermique",
     "investissement-boucle-d'eau-geothermique": "investissement-boucle-d-eau-geothermique",
     "diag-eco-flux-2": "diag-eco-flux",
-    "visite-energie-cci": "visite-energie"
+    "visite-energie-cci": "visite-energie",
+    "visite-energie-cma": "visite-energie"
   },
   "project_rowid_to_url_mapping": {
     "1": "bilan-ges",
@@ -66,14 +67,18 @@
     "146": "maitrise-besoins-chauffage",
     "147": "borne-recharge-ve",
     "337": "sensibilisation-eco-gestes",
+    "378": "revetements-permeables",
     "401": "utilitaire-camion-propre",
     "434": "methanisation",
+    "467": "management-energie",
     "566": "trajet-ferroviaire-train-metro",
     "666": "tourisme-zero-dechet",
     "667": "materiaux-de-reemploi",
     "731": "transition-mobilites",
     "764": "navires-propres",
+    "797": "friches",
     "863": "cyclologistique",
+    "896": "ecoconduite",
     "929": "fournisseurs-locaux",
     "962": "vehicules-intermediaires",
     "995": "fret-faible-impact",
@@ -286,6 +291,7 @@
     "1189": "parm-vnf",
     "1224": "decarb-flash-2025-2027",
     "1255": "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
-    "1354": "fasep"
+    "1354": "fasep",
+    "1420": "aide-investissement-librairie"
   }
 }

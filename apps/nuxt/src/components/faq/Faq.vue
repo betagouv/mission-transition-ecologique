@@ -1,13 +1,19 @@
 <template>
-  <div
-    v-for="(faqItem, index) in faqItems"
-    :key="index"
-    class="fr-grid-row fr-mb-md-10w fr-mb-5w"
-  >
-    <FaqSection
-      v-if="faqItem"
-      :faq-item="faqItem"
-    />
+  <div>
+    <template
+      v-for="(faqItem, index) in faqItems"
+      :key="index"
+    >
+      <div
+        class="fr-grid-row fr-mb-5w"
+        :class="{ 'fr-mb-md-10w': index !== faqItems.length - 1 }"
+      >
+        <FaqSection
+          v-if="faqItem"
+          :faq-item="faqItem"
+        />
+      </div>
+    </template>
   </div>
 </template>
 <script lang="ts" setup>
@@ -28,7 +34,7 @@ function defineQuestions() {
     for (const question of faqItem.questions) {
       itemListElement.push(
         defineQuestion({
-          name: question.question,
+          name: Marked.toHtml(question.question, false, false),
           acceptedAnswer: Marked.toHtml(question.answer, true, false)
         })
       )
@@ -38,19 +44,3 @@ function defineQuestions() {
   return itemListElement
 }
 </script>
-<style scoped lang="scss">
-h2 {
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 48px;
-    border-top: 3px solid #0072ff; // couleur de la bordure
-    z-index: -1;
-    border-radius: 2px;
-  }
-}
-</style>

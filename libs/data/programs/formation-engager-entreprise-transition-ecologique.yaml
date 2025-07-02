@@ -7,6 +7,7 @@ description: >-
   entreprises. Puis en seconde partie, vous serez invité à identifier les
   risques et les opportunités pour votre entreprise ainsi que les premiers
   leviers d’action pour se mettre en mouvement.
+fin de validité: 01/06/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 contact question: https://formations.ademe.fr/contactez-nous.html
@@ -26,7 +27,7 @@ objectifs:
       plusieurs participants.
     liens:
       - lien: >-
-          https://formations.ademe.fr/solutions/beforeregister.php?sessionid=7866
+          https://formations.ademe.fr/solutions/beforeregister.php?sessionid=9456
         texte: formations.ademe.fr
   - description: >-
       Obtenez le lien de la formation à réaliser en ligne en toute autonomie à
@@ -44,8 +45,12 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
