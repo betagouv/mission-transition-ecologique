@@ -1,12 +1,14 @@
 <template>
   <div class="fr-container--fluid fr-bg--blue--lightness">
     <div class="fr-container--fluid fr-container-md">
-      <div class="fr-grid-row fr-py-4w">
-        <div class="fr-col-md-3 fr-col-xl-2 fr-pr-2v">
-          <h2 class="fr-mt-3w">Elles l'ont fait !</h2>
-          <p class="green-tick fr-pt-3w">Ces entreprises sont passées à l'action et en récoltent déjà les bénéfices.</p>
-        </div>
-        <div class="fr-col-md-9 fr-col-xl-10">
+      <div class="fr-container fr-px-md-0">
+        <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-pt-6v fr-mb-2v">Elles l'ont fait !</h2>
+        <p class="fr-text--blue-france fr-text-center fr-text-left-md fr-mb-8v">
+          Ces entreprises sont passées à l'action et en récoltent déjà les bénéfices.
+        </p>
+      </div>
+      <div class="fr-grid-row fr-grid-row--center fr-py-4w">
+        <div class="fr-col-md-10 fr-col-xl-10">
           <Testimony
             v-for="testimony in testimoniesToDisplay"
             :key="testimony.slug"

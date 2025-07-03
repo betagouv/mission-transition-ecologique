@@ -1,7 +1,10 @@
 <template>
   <figure class="fr-quote fr-quote--column fr-my-4w">
     <blockquote :cite="testimony.externalLink">
-      <p>« {{ testimony.verbatim }} »</p>
+      <div
+        class="fr-text-center fr-text-left-md"
+        v-html="Marked.toHtml(`« ${testimony.verbatim} »`, true, false)"
+      />
     </blockquote>
 
     <figcaption>
@@ -14,21 +17,6 @@
           <cite>{{ testimony.authorFunction }}</cite>
         </li>
       </ul>
-      <div class="fr-ml-12w fr-ml-md-0">
-        <ul class="fr-grid-row fr-grid-row--left fr-raw-list">
-          <li
-            v-for="linkedProject in linkedProjectsTags"
-            :key="linkedProject.id"
-            class="fr-mr-2v"
-          >
-            <TeeProjectButton
-              class="fr-my-1-5v"
-              :project="linkedProject"
-              :color="Color.blue"
-            />
-          </li>
-        </ul>
-      </div>
       <div
         v-if="testimony.authorImage"
         class="fr-quote__image"
@@ -41,10 +29,41 @@
         <!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance (DSFR guidance)-->
       </div>
     </figcaption>
+    <div class="fr-hidden fr-unhidden-md">
+      <ul class="fr-grid-row fr-grid-row--left fr-raw-list">
+        <li
+          v-for="linkedProject in linkedProjectsTags"
+          :key="linkedProject.id"
+          class="fr-mr-2v"
+        >
+          <TeeProjectButton
+            class="fr-my-1-5v"
+            :project="linkedProject"
+            :color="Color.blue"
+          />
+        </li>
+      </ul>
+    </div>
+    <div class="fr-hidden-md fr-mt-4v fr-container">
+      <ul class="fr-grid-row fr-grid-row--center fr-raw-list">
+        <li
+          v-for="linkedProject in linkedProjectsTags"
+          :key="linkedProject.id"
+          class="fr-mr-2v"
+        >
+          <TeeProjectButton
+            class="fr-my-1-5v"
+            :project="linkedProject"
+            :color="Color.blue"
+          />
+        </li>
+      </ul>
+    </div>
   </figure>
 </template>
 
 <script lang="ts" setup>
+import { Marked } from '@/tools/marked'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { ProjectType, Color, Testimony } from '@/types'
 
@@ -62,8 +81,12 @@ onNuxtReady(async () => {
 })
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 figure::before {
   content: none !important;
+}
+
+.fr-quote blockquote p {
+  font-weight: 400 !important;
 }
 </style>

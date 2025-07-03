@@ -6,6 +6,9 @@ const img = Image.getUrl
 </script>
 
 <template>
+  <div class="fr-container fr-px-md-0">
+    <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-my-6v">Comprendre notre service</h2>
+  </div>
   <div class="fr-container fr-hidden fr-unhidden-sm">
     <div class="fr-grid-row fr-grid-row--center fr-py-8v">
       <div class="fr-col-12 fr-col-md-5 fr-text-center fr-position--relative fr-mb-6w fr-mb-md-0">
