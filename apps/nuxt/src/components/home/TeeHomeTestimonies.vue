@@ -50,7 +50,7 @@ const testimoniesToDisplay = testimonies
   background-image: linear-gradient(0deg, setting.$blue, setting.$blue);
 }
 
-@media (max-width: 767.98px) {
+@media (width <= 767.98px) {
   .remove-mobile-border {
     background-image: none !important;
   }
