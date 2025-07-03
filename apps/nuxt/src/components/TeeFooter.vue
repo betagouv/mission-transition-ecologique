@@ -139,9 +139,6 @@
 </template>
 
 <script setup lang="ts">
-// CONSOLE LOG TEMPLATE
-// console.log(`TeeAppFooter > FUNCTION_NAME > MSG_OR_VALUE :`)
-
 import { Image } from '@/tools/image'
 import { partnersAll } from '@/tools/operator'
 import Translation from '@/tools/translation'
@@ -158,6 +155,7 @@ const mediaKit =
   'https://accelerateur-transition-ecologique-ademe.notion.site/M-dia-Kit-Transition-cologique-des-Entreprises-1826523d57d780e8aa40d6e1a4cb528f?pvs=74'
 const licenceHref = 'https://github.com/betagouv/transition-ecologique-entreprises-widget/blob/main/LICENSE'
 const licenceName = 'GNU AGPL v.3'
+const openData = 'https://www.data.gouv.fr/fr/datasets/catalogue-des-aides-a-la-transition-ecologique-pour-les-entreprises/'
 const gouvLinks = [
   {
     label: 'info.gouv.fr',
@@ -179,23 +177,24 @@ const gouvLinks = [
 
 const mainLinks = [
   {
-    // router ok
     label: 'Accessibilité : Non conforme',
     to: { name: RouteName.Accessibility }
   },
   {
-    // router ok
     label: 'Mentions légales',
     to: { name: RouteName.Legal }
   },
   {
-    // router ok
     label: 'Données personnelles',
     to: { name: RouteName.PersonalData }
   },
   {
     label: 'Code source',
     href: sourceCodeHref
+  },
+  {
+    label: 'Données ouvertes',
+    href: openData
   },
   {
     label: 'Statistiques',
