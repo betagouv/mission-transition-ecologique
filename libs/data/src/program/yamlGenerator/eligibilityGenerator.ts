@@ -21,16 +21,14 @@ export async function setEligibility(generator: CoreGenerator) {
 }
 
 async function setOtherEligibilityCriteria(generator: CoreGenerator): Promise<string[]> {
-  const invalidLinks = await LinkValidator.findAndValidateLinks(generator.program['Eligibilité Spécifique'])
-  for (const link of invalidLinks) {
-    generator.logger.log(
-      LogLevel.Minor,
-      `Lien invalide détecté dans le champ "éligibilité spécifique" : ${link}`,
-      generator.program['Id fiche dispositif'],
-      generator.program.id
-    )
-  }
-
+  await LinkValidator.logInvalidLinks(
+    generator.program['Eligibilité Spécifique'],
+    generator.logger,
+    LogLevel.Minor,
+    'Eligibilité Spécifique',
+    generator.program['Id fiche dispositif'],
+    generator.program.id
+  )
   const criteriaList = generator.program['Eligibilité Spécifique'].split('\n').map((criteria) => criteria.trim())
   if (criteriaList.filter((criteria) => !criteria.startsWith('- ')).length) {
     generator.logger.log(
