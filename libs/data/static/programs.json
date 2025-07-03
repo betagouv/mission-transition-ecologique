@@ -9846,6 +9846,203 @@
     "id": "diag-ecoconception"
   },
   {
+    "titre": "Diagnostic impact dépendance biodiversité",
+    "promesse": "Diagnostiquez votre impact sur la biodiversité et montez votre plan d’action",
+    "description": "Vous êtes situé à proximité des parcs naturels des Baronnies Provençales, de Brière, de Livradois-Forez, ou de Lorraine : bénéficiez d'un accompagnement au diagnostic des impacts et des dépendances de votre entreprise à la biodiversité.\n\n- Accédez à un outil de diagnostic afin d'établir un bilan et de guider la priorisation des enjeux.\n- Mettez en place les premières pistes d’actions protégeant la biodiversité et la chaîne de valeur de votre entreprise, quel que soit son secteur d'activité.",
+    "description longue": "L'animation des parc naturels régionaux sera complétée selon les spécificités territoriales, notamment par de la mise en réseau d'entreprises et de l'accompagnement vers les partenaires ou programmes pertinents pour alimenter la démarche biodiversité de l'entreprise. \nLes livrables de l'action, à savoir une méthodologie d'accompagnement biodiversité des TPE/PME, les supports des formations et l'outil de diagnostic biodiversité, seront largement diffusés dans le réseau des parcs naturels dans un objectif de démultiplication.",
+    "début de validité": "01/06/2024",
+    "fin de validité": "01/06/2027",
+    "illustration": "images/TEE_energie_verte.png",
+    "opérateur de contact": "Ministère de la Transition Écologique",
+    "contact question": "mailto:msoulet@parcs-naturels-regionaux.fr",
+    "url": "https://www.parcs-naturels-regionaux.fr/les-enjeux/biodiversite/life-biodivfrance-entreprises-biodiversite",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "Gratuite",
+    "durée de l'accompagnement": "Plusieurs jours répartis sur trois ans.",
+    "objectifs": [
+      {
+        "description": "Exprimez votre intérêt en contactant un conseiller par mail.",
+        "liens": [
+          {
+            "lien": "mailto:msoulet@parcs-naturels-regionaux.fr",
+            "texte": "Contacter par mail"
+          }
+        ]
+      },
+      {
+        "description": "Un conseiller vous rappelle pour vérifier votre éligibilité et répondre à vos questions."
+      },
+      {
+        "description": "Si vous êtes éligibles, entamez le diagnostic et définissez un plan d'action."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Moins de 250 salariés",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Auvergne-Rhône-Alpes, Grand Est, Pays de la Loire, Provence-Alpes-Côte d'Azur"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Avoir un ou plusieurs site(s) d’entreprise implanté(s) sur le territoire des Parcs naturels régionaux suivants : Parc naturel régional des Baronnies Provençales, Parc naturel régional de Brière, Parc naturel régional Livradois-Forez, Parc naturel régional de Lorraine (consulter la carte : <https://www.parcs-naturels-regionaux.fr/les-parcs/decouvrir-les-59-parcs>)."
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est préserver la biodiversité"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Auvergne-Rhône-Alpes",
+          "région = Grand Est",
+          "région = Pays de la Loire",
+          "région = Provence-Alpes-Côte d'Azur"
+        ]
+      }
+    },
+    "id": "diag-impact-biodiversite"
+  },
+  {
     "titre": "Diag Perf'Immo",
     "promesse": "Réduisez la consommation énergétique de vos bâtiments",
     "description": "Bpifrance propose le diagnostic Perf’Immo pour vous aider à améliorer la performance énergétique de vos bâtiments et à répondre aux exigences du Décret Tertiaire. Cet accompagnement se déroule en plusieurs étapes :\n\n- Collecte et analyse des données existantes (plans, équipements, consommations, usages…)\n\n- Visite du site et mesures complémentaires si nécessaire\n\n- Bilan énergétique et définition d’objectifs conformes à la réglementation\n\n- Élaboration de scénarios d’amélioration chiffrés et hiérarchisés\n\n- Aide à la déclaration sur la plateforme OPERAT, si besoin\n\nCe diagnostic vous aide à prioriser vos actions, à planifier vos investissements et à engager une trajectoire d’optimisation énergétique claire et durable.",
@@ -19001,14 +19198,14 @@
     "titre": "Formation ADEME",
     "promesse": "Réalisez une initiation aux enjeux de la transition écologique",
     "description": "Suivez une formation en ligne pour initier la transition écologique de votre entreprise. Vous découvrirez les principales transformations de la société, de l'économie, des territoires et les enjeux de la transition écologique pour les entreprises. Puis en seconde partie, vous serez invité à identifier les risques et les opportunités pour votre entreprise ainsi que les premiers leviers d’action pour se mettre en mouvement.",
-    "fin de validité": "01/06/2025",
+    "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
     "contact question": "https://formations.ademe.fr/contactez-nous.html",
-    "url": "https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_engager-son-entreprise-dans-la-transition-ecologique_s5227.html",
+    "url": "https://formations.ademe.fr/formations_changement-climatique_engager-son-entreprise-dans-la-transition-ecologique_s5227.html",
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "Gratuit",
-    "durée de l'accompagnement": "2h15",
+    "durée de l'accompagnement": "3h",
     "objectifs": [
       {
         "description": "Prenez connaissance du programme de la formation.",
@@ -20284,6 +20481,191 @@
       }
     },
     "id": "hotellerie-independante-na"
+  },
+  {
+    "titre": "Impact CO2",
+    "promesse": "Sensibilisez votre équipe et vos clients aux enjeux d'impact carbone",
+    "description": "Sensibilisez vos clients et vos salariés à la transition écologique en intégrant à votre site ou vos applications des outils ludiques qui rendent compréhensible l'impact carbone. Que ce soit pour saisir l'impact environnemental des modes de chauffage, des appareils ménagers, des modes de transport, de la livraison de colis... les outils \"impact CO2\" rendent tangibles les ordres de grandeur liés à la consommation carbone.\n\nCes outils, gratuits et personnalisables s'intègrent en quelques clics à votre environnement numérique (site, appli) ou la communication de votre entreprise.",
+    "description longue": "L'utilisation de l'API est entièrement gratuite. Afin de garantir un fonctionnement efficace, une clé d'API est nécessaire. Vous pouvez en demander une à l’équipe Impact CO2 en écrivant à impactco2@ademe.fr.",
+    "fin de validité": "31/12/2099",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://impactco2.fr/rendez-vous?fromLabel=footer",
+    "url": "https://impactco2.fr/",
+    "nature de l'aide": "formation",
+    "coût de l'accompagnement": "Gratuite",
+    "durée de l'accompagnement": null,
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Cherchez sur le site Impact CO2 le simulateur, la donnée ou l’infographie adaptée à votre contenu puis cliquez et scrollez sur la bannière *Partager / Intégrer / Télécharger*.",
+        "liens": [
+          {
+            "lien": "https://impactco2.fr/outils",
+            "texte": "Liste des outils par thématiques"
+          }
+        ]
+      },
+      {
+        "description": "Si vous avez besoin d'aide, remplissez le formulaire afin de prendre RDV avec un conseiller.",
+        "liens": [
+          {
+            "lien": "https://impactco2.fr/rendez-vous?fromLabel=home",
+            "texte": "Formulaire de contact"
+          }
+        ]
+      },
+      {
+        "description": "Un conseiller de l'ADEME vous recontacte et vous accompagne dans l'intégration des outils à votre environnement numérique."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "impact-co2"
   },
   {
     "titre": "Imprim'vert",
@@ -34696,6 +35078,7 @@
     "description longue": "Une prime supplémentaire de Développement Durable de 5 000 € à 10 000 € peut être accordée sur justification de l’obtention ou du renouvellement d’un label environnemental.\n\nPour les établissements réalisant des travaux favorisant une meilleure performance environnementale, l’accessibilité des personnes en situation de handicap, l'aménagement et/ou la création de locaux destinés à l’accueil de saisonniers, sont éligibles, les travaux ayant trait à :  \n• La gestion environnementale et la réduction des consommations de fluides ainsi que les équipements pour l’accueil des clientèles vélo touristiques\n• L’accessibilité des personnes en situation de handicap (le label Tourisme et Handicap est exigé avant ou après travaux).\n• Logement des saisonniers au sein des établissements\n\nPour la montée en gamme par le changement de classement ou l’adjonction d’équipements de diversification, sont éligibles, les travaux de gros œuvre et de second œuvre contribuant à atteindre : \n• Un classement national supérieur en étoiles ou de changement d’épis (dans la limite de l’obtention d’un classement maximum de 4 étoiles ou épis après travaux)\n• Une offre d’équipements de diversification contribuant à augmenter l’attractivité de l’établissement et son chiffre d’affaires (équipements de bien-être et de mise en forme, espaces aquatiques et aqualudiques, équipements numériques, etc.)",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Région Sud (PACA)",
+    "contact question": "https://www.maregionsud.fr/vos-aides/detail/soutien-a-lhebergement-touristique",
     "url": "https://www.maregionsud.fr/vos-aides/detail/soutien-a-lhebergement-touristique",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 60% des dépenses éligibles, dans un maximum de 100 000 €",
