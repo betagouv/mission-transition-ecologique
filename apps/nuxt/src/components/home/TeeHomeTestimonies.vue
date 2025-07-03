@@ -1,18 +1,18 @@
 <template>
   <div class="fr-container--fluid fr-bg--blue--lightness">
-    <div class="fr-container--fluid fr-container-md">
+    <div class="fr-container">
       <div class="fr-container fr-px-md-0">
-        <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-pt-6v fr-mb-2v">Elles l'ont fait !</h2>
-        <p class="fr-text--blue-france fr-text-center fr-text-left-md fr-mb-8v">
+        <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-mt-5w fr-mb-2v">Elles l'ont fait !</h2>
+        <p class="fr-text--blue-france fr-text-center fr-text-left-md">
           Ces entreprises sont passées à l'action et en récoltent déjà les bénéfices.
         </p>
       </div>
-      <div class="fr-grid-row fr-grid-row--center fr-py-4w">
+      <div class="fr-grid-row fr-grid-row--center fr-mt-4w">
         <div class="fr-col-md-10 fr-col-xl-10">
           <Testimony
-            v-for="testimony in testimoniesToDisplay"
+            v-for="(testimony, index) in testimoniesToDisplay"
             :key="testimony.slug"
-            class="fr-my-4v"
+            :class="[index === testimoniesToDisplay.length - 1 ? 'fr-mb-md-3w remove-mobile-border' : 'fr-mb-6w']"
             :testimony="testimony"
           />
         </div>
@@ -30,6 +30,8 @@ const testimoniesToDisplay = testimonies
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/scss/setting';
+
 .green-tick {
   position: relative;
 
@@ -41,6 +43,16 @@ const testimoniesToDisplay = testimonies
     width: 48px;
     border-top: 3px solid #1ebe8e;
     border-radius: 2px;
+  }
+}
+
+.fr-quote {
+  background-image: linear-gradient(0deg, setting.$blue, setting.$blue);
+}
+
+@media (max-width: 767.98px) {
+  .remove-mobile-border {
+    background-image: none !important;
   }
 }
 </style>

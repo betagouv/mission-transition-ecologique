@@ -1,8 +1,8 @@
 <template>
-  <figure class="fr-quote fr-quote--column fr-my-4w">
+  <figure class="fr-quote fr-quote--column">
     <blockquote :cite="testimony.externalLink">
       <div
-        class="fr-text-center fr-text-left-md"
+        class=""
         v-html="Marked.toHtml(`« ${testimony.verbatim} »`, true, false)"
       />
     </blockquote>
@@ -30,7 +30,7 @@
       </div>
     </figcaption>
     <div class="fr-hidden fr-unhidden-md">
-      <ul class="fr-grid-row fr-grid-row--left fr-raw-list">
+      <ul class="fr-grid-row fr-grid-row--left fr-raw-list fr-mt-2v">
         <li
           v-for="linkedProject in linkedProjectsTags"
           :key="linkedProject.id"
@@ -40,12 +40,13 @@
             class="fr-my-1-5v"
             :project="linkedProject"
             :color="Color.blue"
+            size="sm"
           />
         </li>
       </ul>
     </div>
-    <div class="fr-hidden-md fr-mt-4v fr-container">
-      <ul class="fr-grid-row fr-grid-row--center fr-raw-list">
+    <div class="fr-hidden-md fr-mt-4v fr-container-fluid">
+      <ul class="fr-grid-row fr-raw-list fr-ml-0">
         <li
           v-for="linkedProject in linkedProjectsTags"
           :key="linkedProject.id"
@@ -55,6 +56,7 @@
             class="fr-my-1-5v"
             :project="linkedProject"
             :color="Color.blue"
+            size="sm"
           />
         </li>
       </ul>
@@ -77,7 +79,9 @@ const linkedProjectsTags = ref<ProjectType[]>([])
 
 onNuxtReady(async () => {
   await new ProjectManager().getProjects()
-  linkedProjectsTags.value = await useProjectStore().getProjectsFromIds(props.testimony.projects)
+  const allLinkedProjectsTags = await useProjectStore().getProjectsFromIds(props.testimony.projects)
+  const shuffled = allLinkedProjectsTags.sort(() => 0.5 - Math.random())
+  linkedProjectsTags.value = shuffled.slice(0, 3)
 })
 </script>
 
@@ -87,6 +91,12 @@ figure::before {
 }
 
 .fr-quote blockquote p {
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
   font-weight: 400 !important;
+}
+
+.fr-quote__author {
+  --text-spacing: 0 0 0rem !important;
 }
 </style>

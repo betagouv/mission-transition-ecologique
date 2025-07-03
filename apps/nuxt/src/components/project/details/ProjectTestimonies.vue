@@ -1,18 +1,19 @@
 <template>
   <TeeContentBlock
-    id="project-linked-projects-title"
+    v-if="hasTestimony"
+    id="project-testimonies-title"
     class="fr-py-5v fr-border-b--grey--light"
-    title="Elles l'ont fait !"
+    title="🌟 Elles l'ont fait !"
     container-from="md"
     title-class="fr-h4"
     title-tag="h2"
   >
     <template #content>
-      <p>Ces entreprises sont passées à l'action et en récoltent déjà les bénéfices.</p>
+      <p class="fr-hidden fr-unhidden-md">Ces entreprises sont passées à l'action et en récoltent déjà les bénéfices.</p>
       <Testimony
-        v-for="testimony in testimoniesToDisplay"
+        v-for="(testimony, index) in testimoniesToDisplay"
         :key="testimony.slug"
-        class="fr-my-4v"
+        :class="[index === testimoniesToDisplay.length - 1 ? 'fr-mt-6w remove-mobile-border' : 'fr-my-6w']"
         :testimony="testimony"
       />
     </template>
@@ -31,4 +32,17 @@ const testimoniesToDisplay = computed(() => {
   if (!props.project) return []
   return testimonies.filter((testimony) => testimony.projects?.includes(props.project!.id))
 })
+
+const hasTestimony = computed(() => {
+  if (!props.project) return false
+  return testimonies.some((testimony) => testimony.projects?.includes(props.project!.id))
+})
 </script>
+
+<style scoped lang="scss">
+@media (max-width: 767.98px) {
+  .remove-mobile-border {
+    background-image: none !important;
+  }
+}
+</style>
