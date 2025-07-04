@@ -79,6 +79,23 @@ conditions d'éligibilité:
     - Librairies
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - "Être un projet de création, d’extension, de déménagement, de développement, de pérennisation, de modernisation, de mise aux normes, de reprise et de transmission de librairie\_;"
+    - "Ne pas avoir été engagé avant son examen en comité\_;"
+    - Ne pas avoir déjà fait l’objet d’une aide du CNL pour le même objet ;
+    - >-
+      Être porté par un libraire expérimenté ou dans le cadre d'une reconversion
+      par une personne ayant suivi une formation aux métiers de la librairie et
+      attestant au moins d’une première expérience cohérente par rapport au
+      projet présenté, ou dans ce dernier cas, à défaut, pouvant s'appuyer sur
+      un ou plusieurs libraires en poste ou recrutés ;
+    - "S’il s’agit d’un projet de création de librairie, porter sur une surface de vente d’ouvrages neufs d’au moins 60 m²\_;"
+    - "S’il s’agit d’un projet d’extension de librairie, accroître la surface de vente d’ouvrages neufs d’au moins 25 m²\_;"
+    - "Représenter un coût global d’au moins 40\_000 € hors taxes (10\_000 € en cas de difficultés pour des raisons exceptionnelles et externes à la librairie)."
+    - >-
+      Pour les projets de rénovation intégrant des dépenses liées à l'isolation,
+      aux équipements de chauffage / climatisation, éclairage, avoir réalisé un
+      pré-diagnostic énergétique par un conseiller certifié.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

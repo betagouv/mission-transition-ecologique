@@ -1,0 +1,88 @@
+titre: Impact CO2
+promesse: Sensibilisez votre équipe et vos clients aux enjeux d'impact carbone
+description: >-
+  Sensibilisez vos clients et vos salariés à la transition écologique en
+  intégrant à votre site ou vos applications des outils ludiques qui rendent
+  compréhensible l'impact carbone. Que ce soit pour saisir l'impact
+  environnemental des modes de chauffage, des appareils ménagers, des modes de
+  transport, de la livraison de colis... les outils "impact CO2" rendent
+  tangibles les ordres de grandeur liés à la consommation carbone.
+
+
+  Ces outils, gratuits et personnalisables s'intègrent en quelques clics à votre
+  environnement numérique (site, appli) ou la communication de votre entreprise.
+description longue: >-
+  L'utilisation de l'API est entièrement gratuite. Afin de garantir un
+  fonctionnement efficace, une clé d'API est nécessaire. Vous pouvez en demander
+  une à l’équipe Impact CO2 en écrivant à impactco2@ademe.fr.
+fin de validité: 31/12/2099
+illustration: images/TEE_eolienne.png
+opérateur de contact: ADEME
+contact question: https://impactco2.fr/rendez-vous?fromLabel=footer
+url: https://impactco2.fr/
+nature de l'aide: formation
+coût de l'accompagnement: Gratuite
+durée de l'accompagnement: 10 minutes
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Cherchez sur le site Impact CO2 le simulateur, la donnée ou l’infographie
+      adaptée à votre contenu puis cliquez et scrollez sur la bannière *Partager
+      / Intégrer / Télécharger*.
+    liens:
+      - lien: https://impactco2.fr/outils
+        texte: Liste des outils par thématiques
+  - description: >-
+      Si vous avez besoin d'aide, remplissez le formulaire afin de prendre RDV
+      avec un conseiller.
+    liens:
+      - lien: https://impactco2.fr/rendez-vous?fromLabel=home
+        texte: Formulaire de contact
+  - description: >-
+      Un conseiller de l'ADEME vous recontacte et vous accompagne dans
+      l'intégration des outils à votre environnement numérique.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental
