@@ -118,3 +118,39 @@ jobs:
 
             ${{ env.log_content }}
           draft: false
+
+  update-testimonies:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ['20.x']
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - run: npm clean-install --foreground-scripts
+
+      - name: Generate projects
+        env:
+          BASEROW_TOKEN: '${{secrets.BASEROW_TOKEN}}'
+        run: npm run generate:testimonies
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          base: main
+          branch: chore/update_testimonies
+          commit-message: 'chore: update testimonies'
+          title: 'chore: update testimonies'
+          body: |
+            Cette pull request a été crée automatiquement pour mettre à jour les témoignages.
+
+            ### :warning: Merci de bien vérifier les changements avant de merge. :warning:
+
+          draft: false
+
