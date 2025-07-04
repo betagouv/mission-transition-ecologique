@@ -20,7 +20,7 @@ export class TestimonyBaserow extends AbstractBaserow {
     const baserowTestimonies = await this._getTableData<BaserowTestimony>(this._testimoniesTableId)
     const testimonies = await Promise.all(
       baserowTestimonies
-        .filter((baserowTestimony) => baserowTestimony.Statut.value.includes('valid'))
+        .filter((baserowTestimony) => baserowTestimony.Statut.value.includes('validé'))
         .map((baserowTestimony) => this._convertToDomain(baserowTestimony))
     )
     this._imageDownloader.cleanup()
@@ -28,7 +28,6 @@ export class TestimonyBaserow extends AbstractBaserow {
   }
 
   private async _convertToDomain(baserowTestimony: BaserowTestimony): Promise<Testimony> {
-    console.log(baserowTestimony.Photo)
     const maybeImageName = await this._imageDownloader.handleDirectImage(baserowTestimony.Photo)
     let imageName
     if (maybeImageName.isErr) {

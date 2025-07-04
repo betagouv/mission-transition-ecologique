@@ -1,66 +1,5 @@
 [
   {
-    "slug": "camping-blue-ocean-isolation",
-    "verbatim": "Grâce à la toiture végétalisée et à l’isolation en ouate de cellulose, notre bâtiment d’accueil **consomme 20 % d’énergie en moins**. Un meilleur confort client et une facture énergétique allégée.",
-    "companyName": "Espace Blue Océan",
-    "authorName": "Benjamin SOUVIRAA",
-    "authorFunction": "Directeur du camping Blue Ocean",
-    "authorImage": "/images/testimony/temoignage-benjamin-souviraa-blue-ocean-png.webp",
-    "authorImageAttributes": "Photo de Benjamin SOUVIRAA, directeur du camping Blue Ocean, engagé dans la transition écologique",
-    "externalLink": "https://www.youtube.com/watch?v=-Z381ZC9x_s",
-    "homePageHighlight": null,
-    "projects": [
-      14,
-      15,
-      141
-    ]
-  },
-  {
-    "slug": "camping-blue-ocean-eau",
-    "verbatim": "Nous avons réduit notre consommation d’eau de 18 950 litres grâce à la récupération d’eau de pluie, soit l’équivalent de 524 camions-citernes ! Cela a généré **66 000 € d’économies.**",
-    "companyName": "Espace Blue Océan",
-    "authorName": "Benjamin SOUVIRAA",
-    "authorFunction": "Directeur du camping Blue Ocean",
-    "authorImage": "/images/testimony/temoignage-entreprise-blue-ocean-png.webp",
-    "authorImageAttributes": "Photo de Benjamin SOUVIRAA, directeur du camping Blue Ocean, engagé dans la transition écologique",
-    "externalLink": "https://www.youtube.com/watch?v=-Z381ZC9x_s",
-    "homePageHighlight": null,
-    "projects": [
-      20,
-      71
-    ]
-  },
-  {
-    "slug": "camping-blue-ocean-ecolabel",
-    "verbatim": "Grâce à l’Ecolabel européen, nous avons adopté une énergie 100 % renouvelable, réduit notre consommation d’énergie de 12,5 %, valorisé 60 % de nos déchets, générant **275 000 € d’économies,** ce qui a permis d’embaucher un salarié supplémentaire.",
-    "companyName": "Espace Blue Océan",
-    "authorName": "Benjamin SOUVIRAA",
-    "authorFunction": "Directeur du camping Blue Ocean",
-    "authorImage": "/images/testimony/benjamin-souviraa-blue-ocean-png.webp",
-    "authorImageAttributes": "Photo de Benjamin SOUVIRAA, directeur du camping Blue Ocean, engagé dans la transition écologique",
-    "externalLink": "https://www.youtube.com/watch?v=-Z381ZC9x_s",
-    "homePageHighlight": null,
-    "projects": [
-      35
-    ]
-  },
-  {
-    "slug": "biomasse-lorraine-pellets",
-    "verbatim": "Valoriser nos déchets de scierie était essentiel. Notre chaufferie biomasse **transforme les écorces de bois en énergie et alimente nos procédés industriels.** Ce projet ambitieux n’aurait pas vu le jour sans le Fonds Chaleur de l’ADEME.",
-    "companyName": "Scierie Germain Mougenot / Lorraine Pellets",
-    "authorName": "Hervé OLIVIER",
-    "authorFunction": "Dirigeant de Lorraine Pellets",
-    "authorImage": "/images/testimony/temoignage-herve-olivier-lorraine-pellets-jpg.webp",
-    "authorImageAttributes": "Photo de Hervé OLIVIER, Dirigeant de Lorraine Pellets, engagé dans la transition écologique",
-    "externalLink": "https://fondschaleur.ademe.fr/temoignages/herve-olivier/",
-    "homePageHighlight": null,
-    "projects": [
-      8,
-      21,
-      36
-    ]
-  },
-  {
     "slug": "360-Oustal-Del-Barry",
     "verbatim": "Avec le soutien de l’ADEME et de la CCI, nous avons lancé nos potagers, qui couvrent **20 % des légumes de saison** du restaurant. En travaillant avec des producteurs locaux ou bio et en valorisant nos biodéchets, nous nourrissons un **écosystème durable**, bénéfique jusqu’aux abeilles de nos deux ruches",
     "companyName": "L’Oustal del Barry",
@@ -79,20 +18,6 @@
     ]
   },
   {
-    "slug": "Au-XV-du-demenagement",
-    "verbatim": "**Grâce au Prêt Action Climat** et au suramortissement comptable, nous avons investi 40 000 € dans **un camion GNV en déduisant une partie des frais.** Sur 8 camions, c’est notre premier au gaz. Objectif : convertir progressivement toute la flotte au GNV ou à l’électrique.",
-    "companyName": "Au XV du déménagement",
-    "authorName": "Harry SLAMA",
-    "authorFunction": "Harry SLAMA, co-dirigeant de la société Au XV du déménagement",
-    "authorImage": "/images/logos/mission-transition-logo-alone.png",
-    "authorImageAttributes": "Photo de Harry SLAMA, co-dirigeant de la société Au XV du déménagement, engagé dans la transition écologique",
-    "externalLink": "https://flash.bpifrance.fr/pret-articles-temoignages-tpe-pme/temoignage-xv-du-demenagement-pret-action-climat-transition-energetique-vehicule-vert?utm_source=chatgpt.com",
-    "homePageHighlight": null,
-    "projects": [
-      401
-    ]
-  },
-  {
     "slug": "geothermie-prologis",
     "verbatim": "Notre plateforme logistique de 100 000 m² est alimentée en chauffage et en eau chaude sanitaire grâce à la géothermie. Un choix durable, soutenu par l’ADEME, qui permet d’**éviter 792 tonnes de CO₂ par an.**",
     "companyName": "Prologis",
@@ -104,35 +29,6 @@
     "homePageHighlight": null,
     "projects": [
       12
-    ]
-  },
-  {
-    "slug": "solaire-thermique-lys-services",
-    "verbatim": "Notre installation solaire thermique nous permet de produire localement notre eau chaude, réduire nos consommations énergétiques et notre empreinte carbone. Résultat : **30 % d’économies sur le gaz**, soit une **facture allégée de 200 000 €.**",
-    "companyName": "Lys Services",
-    "authorName": "Denis GODEFROY",
-    "authorFunction": "Dirigeant de Lys Services",
-    "authorImage": "/images/testimony/temoignage-denis-godefroy-lys-services-png.webp",
-    "authorImageAttributes": "Photo de Denis GODEFROY, Dirigeant de Lys Services, engagé dans la transition écologique",
-    "externalLink": "https://fondschaleur.ademe.fr/temoignages/denis-godefroy/",
-    "homePageHighlight": "3",
-    "projects": [
-      6
-    ]
-  },
-  {
-    "slug": "panneaux-solaires-serbe",
-    "verbatim": "L'installation d'une centrale photovoltaïque nous a permis de gagner en autonomie d’énergie avec une **réduction de plus de 30 % sur sa consommation énergétique** annuelle, se traduisant par des économies prévisionnelles de plus de 2 millions d’euros sur 30 ans.",
-    "companyName": "Serbe S.A.S",
-    "authorName": "Jean-Marc COQUEREL",
-    "authorFunction": "Président de SERBE",
-    "authorImage": "/images/testimony/temoignage-jean-marc-coquerel-serbe_sas-jpeg.webp",
-    "authorImageAttributes": "Photo de Jean-Marc COQUEREL, Président de SERBE, engagé dans la transition écologique",
-    "externalLink": "https://www.edf-solutions-solaires.com/accueil-professionnels/temoignages-professionnels/serbe-centrale-photovoltaique-toiture/",
-    "homePageHighlight": null,
-    "projects": [
-      5,
-      14
     ]
   },
   {
@@ -153,7 +49,7 @@
   },
   {
     "slug": "Mas-de-Coulet",
-    "verbatim": "Avec l’aide de la CCI, nous avons structuré un plan d’action environnemental. Ces actions concrètes ont permis de réduire nos consommations : **–30 % d’eau, –16 % d’énergie par nuitée, –25 % de chlore pour la piscine.**",
+    "verbatim": "Avec l’aide de la CCI, nous avons structuré un plan d’action environnemental. Ces actions concrètes ont permis de réduire nos consommations : **-30 % d’eau, -16 % d’énergie par nuitée, -25 % de chlore pour la piscine.**",
     "companyName": "Domaine du Mas de Coulet",
     "authorName": "Yann LECREVISSE",
     "authorFunction": "Président du Domaine du Mas de Coulet",
@@ -175,7 +71,7 @@
     "companyName": "Algoplast",
     "authorName": "Jérôme PICHARD",
     "authorFunction": "Responsable du site Algoplast",
-    "authorImage": "/images/logos/mission-transition-logo-alone.png",
+    "authorImage": "/images/testimony/jeromepichard-algoplast-jpg.webp",
     "authorImageAttributes": "Photo de Jérôme PICHARD, responsable du site Algoplast, engagé dans la transition écologique",
     "externalLink": "https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=5608&preview",
     "homePageHighlight": null,
@@ -184,140 +80,51 @@
     ]
   },
   {
-    "slug": "dechets-vinea-energie",
-    "verbatim": "Avant, nos déchets de vigne étaient brûlés à l’air libre, libérant **particules fines et gaz à effet de serre**. Avec l’appui de l’ADEME, nous avons développé une solution de valorisation locale qui **réduit ces émissions de 62 %.**",
-    "companyName": "Vinea Énergie",
-    "authorName": "Alice SHAW",
-    "authorFunction": "Directrice générale de Vinea Énergie",
-    "authorImage": "/images/testimony/temoignage-alice-shaw-vinea-energie-jpg.webp",
-    "authorImageAttributes": "Photo de Alice SHAW, Directrice générale de Vinea Énergie, engagée dans la transition écologique",
-    "externalLink": "https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=5248&preview",
-    "homePageHighlight": null,
-    "projects": [
-      1,
-      21
-    ]
-  },
-  {
-    "slug": "tremplin-les-delices-de-louison",
-    "verbatim": "Grâce à l'aide de l'ADEME, notre boulangerie a investi pour une production durable : éclairage LED, froid économe, récupération d’eau, tri et compostage des biodéchets, réduction des emballages.… et **visons -50 % d’émissions de CO₂ d’ici 2030.**",
-    "companyName": "Les Délices de Louison",
-    "authorName": "Betty VERGNAUD",
-    "authorFunction": "Dirigeante de la boulangerie Les Délices de Louison",
-    "authorImage": "/images/testimony/temoignage-betty-vergnaud-les-delices-de-louison.webp",
-    "authorImageAttributes": "Photo de Betty VERGNAUD, Dirigeante de la boulangerie Les Délices de Louison, engagée dans la transition écologique",
-    "externalLink": "https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=5479&preview",
-    "homePageHighlight": "2",
-    "projects": [
-      2,
-      3,
-      23,
-      24,
-      31,
-      139
-    ]
-  },
-  {
-    "slug": "adaptation-aluminium-dunkerque",
-    "verbatim": "Nous avons fait appel à un cabinet expert pour évaluer les risques climatiques auxquels Aluminium Dunkerque pourrait être exposé. Ce **diagnostic** a été une étape clé pour amorcer la **planification des adaptations nécessaires** pour sécuriser durablement notre activité.",
-    "companyName": "Aluminium Dunkerque",
-    "authorName": "Adrien BERTHIER",
-    "authorFunction": "chef de projet Décarbonation chez Aluminium Dunkerque",
-    "authorImage": "/images/testimony/adrien-berthier-aluminium-dunkerque-png.webp",
-    "authorImageAttributes": "Photo de Adrien BERTHIER, chef de projet Décarbonation chez Aluminium Dunkerque, engagé dans la transition écologique",
-    "externalLink": "https://www.youtube.com/watch?v=7t0AhJx7BVQ",
-    "homePageHighlight": null,
-    "projects": [
-      33
-    ]
-  },
-  {
     "slug": "adaptation-Everest-Isolation",
     "verbatim": "Face aux canicules, on a tout revu : horaires adaptés, fruits frais, gilets rafraîchissants, prime chaleur… Résultat : **moins de 4 jours d’arrêt maladie par salarié/an**, 80 000 € économisés par an, et une équipe motivée, même en plein été.",
     "companyName": "Everest Isolation",
-    "authorName": "Philippe MILLION",
-    "authorFunction": "Président d’Everest Isolation",
-    "authorImage": "/images/testimony/philippe-million-everest-isolation-jpg.webp",
-    "authorImageAttributes": "Photo de Philippe MILLION, Président d’Everest Isolation, une PME du secteur du bâtiment, basée en PACA, engagée dans la transition écologique",
+    "authorName": "Rose et Philippe MILLION",
+    "authorFunction": "Dirigeants d’Everest Isolation",
+    "authorImage": "/images/testimony/rose-philippe-million-everest-isolation-png.webp",
+    "authorImageAttributes": "Photo de Rose et Philippe MILLION, dirigeants d’Everest Isolation, une PME du secteur du bâtiment, basée en PACA, engagée dans la transition écologique",
     "externalLink": "https://www.youtube.com/watch?v=qy54DMlcBdM",
-    "homePageHighlight": null,
+    "homePageHighlight": "3",
     "projects": [
       30,
       33
     ]
   },
   {
-    "slug": "frigo-epicerie-LS-bonheur",
-    "verbatim": "Avec le diag de la CCI, j'ai compris que mes meubles frigorifiques étaient très énergivores et sources de chaleur. Depuis leur remplacement, la **facture d'électricité a chuté** et le magasin a baissé en température.",
-    "companyName": "Supérette Bonheur",
-    "authorName": "Bettina BONHEUR",
-    "authorFunction": "gérante de la supérette Bonheur",
-    "authorImage": "/images/testimony/bettina-bonheur-png.webp",
-    "authorImageAttributes": "Photo de Bettina Bonheur, gérante de la supérette Bonheur, engagé dans la transition écologique\"",
-    "externalLink": "https://www.youtube.com/watch?v=NbUCiF0ZVOQ",
+    "slug": "friche-reemploi-kaleidoscoop",
+    "verbatim": "Notre tiers-lieu est né d’une **friche industrielle de 3000 m²** que nous avons **réhabilitée** avec soin. **Matériaux locaux, biosourcés, récupération** de sanitaires, parquet, carrelage… Plus de 90 % du mobilier est issu du **réemploi.** Chaque choix traduit notre engagement pour un lieu responsable, ancré dans son histoire.",
+    "companyName": "Kaleidoscoop",
+    "authorName": "Polina MIKHAYLOVA",
+    "authorFunction": "co-directrice de Kaleidoscoop",
+    "authorImage": "/images/testimony/paulina-mikhaylova-kaleidoscoop-jpeg.webp",
+    "authorImageAttributes": "Photo de Polina MIKHAYLOVA, co-directrice de Kaleidoscoop, engagée dans la transition écologique",
+    "externalLink": "https://boma.alsace/reemploi-inter-chantiers-lexemple-du-kaleidoscoop/",
     "homePageHighlight": null,
     "projects": [
-      139
-    ]
-  },
-  {
-    "slug": "ecoconception-lunii",
-    "verbatim": "Relocaliser en France était une priorité pour nous. Cet investissement a permis d’améliorer la **qualité et la durabilité du produit**, avec un design facilitant réparation et démontage. Une démarche éthique reconnue officiellement depuis juillet 2021 avec l'obtention du **label Origine France Garantie.**",
-    "companyName": "",
-    "authorName": "Maëlle Chassard",
-    "authorFunction": "co-Ceo de Lunii",
-    "authorImage": "/images/testimony/maelle-chassard-jpg.webp",
-    "authorImageAttributes": "Photo de Maëlle Chassard, co-Ceo de Lunii, engagée dans la transition écologique",
-    "externalLink": "https://blog.lunii.com/2020/10/06/comment-ma-fabrique-a-histoires-est-elle-devenue-ecoconcue/",
-    "homePageHighlight": null,
-    "projects": [
-      36,
-      929
-    ]
-  },
-  {
-    "slug": "Javoy Plantes",
-    "verbatim": "Avec le **Diag’RSE**, on a **construit avec l’ensemble des salariés** une vision à long terme, ancrée dans nos savoir-faire et nos valeurs : produire mieux, avec moins d’impact. Devenir **société à mission**, c’était une suite logique pour engager pleinement notre pépinière dans la transition écologique.",
-    "companyName": "Javoy Plantes",
-    "authorName": "Marie-Laure Rauline",
-    "authorFunction": "co-gérante de la pépinière Javoy Plantes",
-    "authorImage": "/images/testimony/marie-laure-rauline-png.webp",
-    "authorImageAttributes": "Photo de Marie-Laure Rauline, co-gérante de la pépinière Javoy Plantes, engagée dans la transition écologique\"",
-    "externalLink": "https://www.youtube.com/watch?v=YhLYaJ7QKOA",
-    "homePageHighlight": null,
-    "projects": [
-      30
-    ]
-  },
-  {
-    "slug": "achats-responsables-moore",
-    "verbatim": "Ce qui nous distingue aujourd’hui, c’est notre **exigence en matière d’achats responsables**. Grâce au Diag Décarbon’action, nous avons renforcé nos **critères fournisseurs**. Désormais, seuls les **partenariats éthiques et durables** font sens pour Moore.",
-    "companyName": "Moore Design",
-    "authorName": "Lucie CLAVIER",
-    "authorFunction": "Directrice Générale de MOORE Design",
-    "authorImage": "/images/testimony/lucie-clavier-moore-design-png.webp",
-    "authorImageAttributes": "Photo de Lucie CLAVIER, Directrice Générale de MOORE Design, engagée dans la transition écologique",
-    "externalLink": "https://www.youtube.com/watch?v=wf5vkpRkXFE",
-    "homePageHighlight": null,
-    "projects": [
-      30,
+      667,
+      797,
       1028
     ]
   },
   {
-    "slug": "ecoconception-Resistex",
-    "verbatim": "**–47 % d’émissions de CO₂ en 10 ans** : derrière ce chiffre, un chantier de fond mené avec conviction. Fournisseurs responsables, suppression du plastique dans nos emballages, optimisation de la consommation énergétique de nos produits, amélioration de la réparabilité… Chaque maillon de notre chaîne de valeur a été repensé pour réduire notre impact.",
-    "companyName": "Resistex",
-    "authorName": "Bernard ALFANDARI",
-    "authorFunction": "PDG de Resistex",
-    "authorImage": "/images/testimony/bernard-alfandari-jpg.webp",
-    "authorImageAttributes": "Photo de Bernard ALFANDARI, PDG de Resistex, engagé dans la transition écologique",
-    "externalLink": "https://www.youtube.com/watch?si=i0-lilDFC83yZHhG&v=CsHv3WCb_Hw&feature=youtu.be",
-    "homePageHighlight": null,
+    "slug": "velo-kaleidoscoop",
+    "verbatim": "**Encourager le vélo, c’est dans notre ADN** : abri sécurisé, atelier de réparation, vélo cargo partagé, challenge “Au Boulot à Vélo”… **65 % de nos usagers viennent désormais à vélo.** Une dynamique récompensée par la médaille d’or du label Employeur Pro-Vélo.",
+    "companyName": "Sometal",
+    "authorName": "Clarisse Baron",
+    "authorFunction": "Cheffe de projet du tiers-lieu Kaleidoscoop",
+    "authorImage": "/images/testimony/clarisse-baron-kaleidoscoop-jpeg.webp",
+    "authorImageAttributes": "Photo de Clarisse Baron, Cheffe de projet du tiers-lieu Kaleidoscoop, engagée dans la transition écologique",
+    "externalLink": "",
+    "homePageHighlight": "2",
     "projects": [
-      1,
-      31,
-      36
+      19,
+      26,
+      35,
+      143
     ]
   }
 ]
