@@ -1406,6 +1406,16 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Être un projet de création, d’extension, de déménagement, de développement, de pérennisation, de modernisation, de mise aux normes, de reprise et de transmission de librairie ;",
+        "Ne pas avoir été engagé avant son examen en comité ;",
+        "Ne pas avoir déjà fait l’objet d’une aide du CNL pour le même objet ;",
+        "Être porté par un libraire expérimenté ou dans le cadre d'une reconversion par une personne ayant suivi une formation aux métiers de la librairie et attestant au moins d’une première expérience cohérente par rapport au projet présenté, ou dans ce dernier cas, à défaut, pouvant s'appuyer sur un ou plusieurs libraires en poste ou recrutés ;",
+        "S’il s’agit d’un projet de création de librairie, porter sur une surface de vente d’ouvrages neufs d’au moins 60 m² ;",
+        "S’il s’agit d’un projet d’extension de librairie, accroître la surface de vente d’ouvrages neufs d’au moins 25 m² ;",
+        "Représenter un coût global d’au moins 40 000 € hors taxes (10 000 € en cas de difficultés pour des raisons exceptionnelles et externes à la librairie).",
+        "Pour les projets de rénovation intégrant des dépenses liées à l'isolation, aux équipements de chauffage / climatisation, éclairage, avoir réalisé un pré-diagnostic énergétique par un conseiller certifié."
       ]
     },
     "publicodes": {
@@ -20494,7 +20504,7 @@
     "url": "https://impactco2.fr/",
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "Gratuite",
-    "durée de l'accompagnement": null,
+    "durée de l'accompagnement": "10 minutes",
     "activable en autonomie": "oui",
     "objectifs": [
       {
