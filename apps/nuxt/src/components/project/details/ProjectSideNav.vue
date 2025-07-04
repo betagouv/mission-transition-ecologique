@@ -61,7 +61,7 @@ const allMenuItems = computed(() => [
   { id: 'contact', to: `form-title`, text: 'Contact', condition: props.project.programs.length > 0 || isDataFull.value },
   {
     id: 'linked-testimonies',
-    to: `project-linked-testimonies`,
+    to: `project-testimonies-title`,
     text: "Elles l'ont fait !",
     condition: hasTestimony.value
   },
