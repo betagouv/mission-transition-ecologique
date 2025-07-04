@@ -40,7 +40,7 @@ const hasTestimony = computed(() => {
 </script>
 
 <style scoped lang="scss">
-@media (max-width: 767.98px) {
+@media (width <= 767.98px) {
   .remove-mobile-border {
     background-image: none !important;
   }
