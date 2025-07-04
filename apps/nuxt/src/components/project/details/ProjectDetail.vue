@@ -21,6 +21,7 @@
       v-if="project"
       :project="project"
     />
+    <ProjectTestimonies :project="project" />
     <LinkedProjects
       v-if="project?.linkedProjects.length"
       :project="project"

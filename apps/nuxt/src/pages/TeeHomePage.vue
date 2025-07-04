@@ -13,9 +13,9 @@
     <div class="fr-container--fluid fr-container-md">
       <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-pt-6v">Quel est votre projet ?</h2>
       <TeeHomeProjectList :limit="filters[FilterItemKeys.themeType] === '' ? 8 : 9" />
-      <div class="fr-grid-row fr-grid-row--center">
-        <div class="fr-bg--blue--lightness fr-hidden fr-unhidden-sm fr-col-12 fr-py-0-5v fr-my-8v"></div>
-      </div>
+    </div>
+    <TeeHomeTestimonies />
+    <div class="fr-container--fluid fr-container-md">
       <TeePromises />
       <div class="fr-bg--blue--lightness fr-col-12 fr-py-0-5v fr-mt-8v fr-mb-8v"></div>
     </div>

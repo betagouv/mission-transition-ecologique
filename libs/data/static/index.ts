@@ -2,7 +2,6 @@ import { ProjectType } from '../src/project/types/shared'
 import { EnrichedOperator } from '../src/operators/types/shared'
 import { default as projectsJson } from './projects.json'
 import { default as projectsTestsJson } from './projects_tests.json'
-import operatorsJson from './operators.json'
 import { ProgramType } from '../src/program/types/shared'
 import { default as programsJson } from './programs.json'
 import { default as programsTestJson } from './programs_tests.json'
@@ -16,6 +15,7 @@ if (process.env['VITE_DATA_TEST'] === 'true') {
 }
 export { projects }
 
+import operatorsJson from './operators.json'
 const enrichedOperators: EnrichedOperator[] = operatorsJson as unknown as EnrichedOperator[]
 export { enrichedOperators }
 
@@ -32,3 +32,8 @@ export { default as nafMapping } from './nafMapping.json'
 
 const redirects: RedirectJson = untypedRedirects as unknown as RedirectJson
 export { redirects }
+
+import testimoniesJson from './testimonies.json'
+import { Testimony } from '../src/testimony/types/shared'
+const testimonies = testimoniesJson as unknown as Testimony[]
+export { testimonies }

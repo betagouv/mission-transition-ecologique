@@ -160,7 +160,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     },
     headers: NuxtSecurityConfig.getHeadersConfig(),
     rateLimiter: NuxtSecurityConfig.getRateLimiterConfig(),
-    xssValidator: NuxtSecurityConfig.getXssValidatorConfig(),
+    xssValidator: NuxtSecurityConfig.getXssValidatorConfig()
   },
   sentry: NuxtSentryConfig.getConfig(),
   sitemap: {
@@ -180,10 +180,10 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   },
   site: {
     name: MetaSeo.title(),
-    description: Identity.description,
+    description: Identity.description
   },
   schemaOrg: {
-    defaults: false,
+    defaults: false
   },
   scripts: {
     registry: NuxtScriptsConfig.getRegistry()

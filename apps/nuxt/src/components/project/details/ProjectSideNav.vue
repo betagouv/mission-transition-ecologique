@@ -21,6 +21,7 @@
 <script setup lang="ts">
 import { ProjectType } from '@/types'
 import { Scroll } from '@/tools/scroll'
+import { testimonies } from '@tee/data/static'
 
 interface Props {
   project: ProjectType
@@ -38,6 +39,11 @@ const scrollTo = (id: string) => {
   }
 }
 
+const hasTestimony = computed(() => {
+  if (!props.project) return false
+  return testimonies.some((testimony) => testimony.projects?.includes(props.project!.id))
+})
+
 const allMenuItems = computed(() => [
   {
     id: 'project',
@@ -53,6 +59,12 @@ const allMenuItems = computed(() => [
   },
   { id: 'aids', to: `project-aids-title`, text: 'Mes aides', condition: props.project.programs.length > 0 || isDataFull.value },
   { id: 'contact', to: `form-title`, text: 'Contact', condition: props.project.programs.length > 0 || isDataFull.value },
+  {
+    id: 'linked-testimonies',
+    to: `project-testimonies-title`,
+    text: "Elles l'ont fait !",
+    condition: hasTestimony.value
+  },
   {
     id: 'linked-project',
     to: `project-linked-projects-title`,

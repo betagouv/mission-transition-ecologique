@@ -1,0 +1,130 @@
+[
+  {
+    "slug": "360-Oustal-Del-Barry",
+    "verbatim": "Avec le soutien de l’ADEME et de la CCI, nous avons lancé nos potagers, qui couvrent **20 % des légumes de saison** du restaurant. En travaillant avec des producteurs locaux ou bio et en valorisant nos biodéchets, nous nourrissons un **écosystème durable**, bénéfique jusqu’aux abeilles de nos deux ruches",
+    "companyName": "L’Oustal del Barry",
+    "authorName": "Susannah GIBBON",
+    "authorFunction": "Directrice de l'hôtel-restaurant Oustal Del Barry",
+    "authorImage": "/images/testimony/temoignage-susannah-gibbon-oustal-del-barry-png.webp",
+    "authorImageAttributes": "Photo de Susannah GIBBON, Directrice de l'hôtel-restaurant Oustal Del Barry, engagé dans la transition écologique",
+    "externalLink": "https://www.youtube.com/watch?v=-Z381ZC9x_s",
+    "homePageHighlight": null,
+    "projects": [
+      24,
+      71,
+      138,
+      144,
+      929
+    ]
+  },
+  {
+    "slug": "geothermie-prologis",
+    "verbatim": "Notre plateforme logistique de 100 000 m² est alimentée en chauffage et en eau chaude sanitaire grâce à la géothermie. Un choix durable, soutenu par l’ADEME, qui permet d’**éviter 792 tonnes de CO₂ par an.**",
+    "companyName": "Prologis",
+    "authorName": "Paul JANSSEN",
+    "authorFunction": "Responsable de la construction chez Prologis",
+    "authorImage": "/images/testimony/temoignage-paul-janssen-prologis-png.webp",
+    "authorImageAttributes": "Photo de Paul JANSSEN, Responsable de la construction chez Prologis, engagé dans la transition écologique",
+    "externalLink": "https://fondschaleur.ademe.fr/temoignages/paul-janssen/",
+    "homePageHighlight": null,
+    "projects": [
+      12
+    ]
+  },
+  {
+    "slug": "accompagnement-cci-camboyer",
+    "verbatim": "L’aide de l’ADEME a concrétisé notre ambition environnementale : sentiers botaniques, refuge LPO, gestion raisonnée des déchets et sensibilisation à la faune et la flore locales, pour un **lieu d’accueil pleinement en harmonie avec la nature**.",
+    "companyName": "Domaine de Camboyer",
+    "authorName": "Isabelle DARMAU",
+    "authorFunction": "Propriétaire-exploitante du Domaine de Camboyer",
+    "authorImage": "/images/testimony/temoignage-isabelle-darmau-camboyer-jpg.webp",
+    "authorImageAttributes": "Photo de Isabelle DARMAU, Propriétaire-exploitante du Domaine de Camboyer, engagée dans la transition écologique",
+    "externalLink": "https://www.occitanie.cci.fr/actualite/la-grandeur-retrouvee-du-domaine-de-camboyer",
+    "homePageHighlight": null,
+    "projects": [
+      138,
+      144,
+      929
+    ]
+  },
+  {
+    "slug": "Mas-de-Coulet",
+    "verbatim": "Avec l’aide de la CCI, nous avons structuré un plan d’action environnemental. Ces actions concrètes ont permis de réduire nos consommations : **-30 % d’eau, -16 % d’énergie par nuitée, -25 % de chlore pour la piscine.**",
+    "companyName": "Domaine du Mas de Coulet",
+    "authorName": "Yann LECREVISSE",
+    "authorFunction": "Président du Domaine du Mas de Coulet",
+    "authorImage": "/images/testimony/temoignage-yann-lecrevisse-mas-de-coulet-jpg.webp",
+    "authorImageAttributes": "Photo de Yann LECREVISSE, Président du Domaine du Mas de Coulet, engagé dans la transition écologique",
+    "externalLink": "",
+    "homePageHighlight": "1",
+    "projects": [
+      4,
+      20,
+      31,
+      72,
+      137
+    ]
+  },
+  {
+    "slug": "ormat-algoplast",
+    "verbatim": "Avec l’appui de l’ADEME, nous renforçons notre démarche d’économie circulaire en visant **95 % de plastique recyclé dans notre production.**",
+    "companyName": "Algoplast",
+    "authorName": "Jérôme PICHARD",
+    "authorFunction": "Responsable du site Algoplast",
+    "authorImage": "/images/testimony/jeromepichard-algoplast-jpg.webp",
+    "authorImageAttributes": "Photo de Jérôme PICHARD, responsable du site Algoplast, engagé dans la transition écologique",
+    "externalLink": "https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=5608&preview",
+    "homePageHighlight": null,
+    "projects": [
+      36
+    ]
+  },
+  {
+    "slug": "adaptation-Everest-Isolation",
+    "verbatim": "Face aux canicules, on a tout revu : horaires adaptés, fruits frais, gilets rafraîchissants, prime chaleur… Résultat : **moins de 4 jours d’arrêt maladie par salarié/an**, 80 000 € économisés par an, et une équipe motivée, même en plein été.",
+    "companyName": "Everest Isolation",
+    "authorName": "Rose et Philippe MILLION",
+    "authorFunction": "Dirigeants d’Everest Isolation",
+    "authorImage": "/images/testimony/rose-philippe-million-everest-isolation-png.webp",
+    "authorImageAttributes": "Photo de Rose et Philippe MILLION, dirigeants d’Everest Isolation, une PME du secteur du bâtiment, basée en PACA, engagée dans la transition écologique",
+    "externalLink": "https://www.youtube.com/watch?v=qy54DMlcBdM",
+    "homePageHighlight": "3",
+    "projects": [
+      30,
+      33
+    ]
+  },
+  {
+    "slug": "friche-reemploi-kaleidoscoop",
+    "verbatim": "Notre tiers-lieu est né d’une **friche industrielle de 3000 m²** que nous avons **réhabilitée** avec soin. **Matériaux locaux, biosourcés, récupération** de sanitaires, parquet, carrelage… Plus de 90 % du mobilier est issu du **réemploi.** Chaque choix traduit notre engagement pour un lieu responsable, ancré dans son histoire.",
+    "companyName": "Kaleidoscoop",
+    "authorName": "Polina MIKHAYLOVA",
+    "authorFunction": "co-directrice de Kaleidoscoop",
+    "authorImage": "/images/testimony/paulina-mikhaylova-kaleidoscoop-jpeg.webp",
+    "authorImageAttributes": "Photo de Polina MIKHAYLOVA, co-directrice de Kaleidoscoop, engagée dans la transition écologique",
+    "externalLink": "https://boma.alsace/reemploi-inter-chantiers-lexemple-du-kaleidoscoop/",
+    "homePageHighlight": null,
+    "projects": [
+      667,
+      797,
+      1028
+    ]
+  },
+  {
+    "slug": "velo-kaleidoscoop",
+    "verbatim": "**Encourager le vélo, c’est dans notre ADN** : abri sécurisé, atelier de réparation, vélo cargo partagé, challenge “Au Boulot à Vélo”… **65 % de nos usagers viennent désormais à vélo.** Une dynamique récompensée par la médaille d’or du label Employeur Pro-Vélo.",
+    "companyName": "Sometal",
+    "authorName": "Clarisse Baron",
+    "authorFunction": "Cheffe de projet du tiers-lieu Kaleidoscoop",
+    "authorImage": "/images/testimony/clarisse-baron-kaleidoscoop-jpeg.webp",
+    "authorImageAttributes": "Photo de Clarisse Baron, Cheffe de projet du tiers-lieu Kaleidoscoop, engagée dans la transition écologique",
+    "externalLink": "",
+    "homePageHighlight": "2",
+    "projects": [
+      19,
+      26,
+      35,
+      143
+    ]
+  }
+]

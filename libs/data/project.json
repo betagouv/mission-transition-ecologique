@@ -13,6 +13,15 @@
         "test"
       ]
     },
+    "generate-testimonies": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/generateTestimoniesJson.ts"
+        ]
+      }
+    },
     "generate-projects": {
       "executor": "nx:run-commands",
       "options": {
