@@ -37,7 +37,8 @@
       "soutien-hebergement-touristique",
       "hotellerie-independante-bfc",
       "camping-independant-bfc",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "aide-investissement-librairie"
     ],
     "linkedProjects": [
       31
@@ -414,7 +415,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "bilan-carbone",
-      "evaluation-carbone-lise"
+      "evaluation-carbone-lise",
+      "impact-co2"
     ],
     "linkedProjects": [
       26,
@@ -918,7 +920,8 @@
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
       "certificats-economie-energie",
-      "decarb-flash-2025-2027"
+      "decarb-flash-2025-2027",
+      "aide-investissement-librairie"
     ],
     "linkedProjects": [
       4,
@@ -1659,12 +1662,14 @@
     ],
     "mainTheme": "rh",
     "programs": [
+      "act-pas-a-pas",
       "fonds-tourisme-durable",
       "formation-engager-entreprise-transition-ecologique",
       "b-a-ba-du-climat-et-biodiversite",
       "formations-du-cfde",
       "formation-artisan-developpement-durable",
       "formations-tee",
+      "pacte-industrie",
       "ecogestes-paca",
       "investour",
       "sud-pret-climat",
@@ -1781,7 +1786,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "camping-independant-bfc",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "diag-impact-biodiversite"
     ],
     "linkedProjects": [
       31
@@ -1902,7 +1908,8 @@
       "cap-transition-ecologique",
       "decarb-ind-25",
       "prit-hdf",
-      "je-change-ma-voiture"
+      "je-change-ma-voiture",
+      "impact-co2"
     ],
     "linkedProjects": [
       1
@@ -1963,7 +1970,8 @@
       "cap-transition-ecologique",
       "prit-hdf",
       "aide-tourisme-guadeloupe",
-      "fasep"
+      "fasep",
+      "aide-investissement-librairie"
     ],
     "linkedProjects": [
       26,
@@ -2673,6 +2681,7 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
+      "diag-impact-biodiversite",
       "diag-biodiversite"
     ],
     "linkedProjects": [
