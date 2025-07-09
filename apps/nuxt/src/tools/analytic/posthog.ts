@@ -16,6 +16,7 @@ export default class Posthog {
         api_host: 'https://eu.i.posthog.com',
         capture_pageview: false,
         capture_pageleave: false,
+        cross_subdomain_cookie: false,
         persistence: Cookie.getCookieStatus(CookieValue.Posthog) ? 'localStorage+cookie' : 'memory',
         person_profiles: 'always'
       })
