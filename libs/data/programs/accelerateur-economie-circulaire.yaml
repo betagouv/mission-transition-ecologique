@@ -1,0 +1,118 @@
+titre: Accélérateur Économie Circulaire
+promesse: Bénéficiez d'un accompagnement et adoptez un modèle d'affaires circulaire
+description: >-
+  Un modèle d'affaires circulaire vous permet de limiter le gaspillage des
+  ressources et l’impact environnemental de la fabrication d'un produit. Vous
+  créez ainsi un business model vertueux sur le plan environnemental, social et
+  économique.
+
+
+  Avec ce dispositif, Bpifrance vous propose un accompagnement individuel via
+  une mission de conseil, ainsi qu'un accompagnement collectif avec des sessions
+  de formation et de mise en réseau sur 12 mois. Ainsi, vous pérennisez votre
+  activité, accédez à des nouveaux marchés et adoptez un modèle d'affaires
+  circulaire.
+description longue: >-
+  Modalités :
+
+  - 13 jours de mission de conseil exécutée par un consultant externe habilité
+  par Bpifrance pour travailler en profondeur vos sujets RSE et d’économie
+  circulaire,
+
+  - 5 journées de formation,
+
+  - Un accès aux réseaux Bpifrance et un réel esprit de promotion,
+
+  - Un accompagnement premium de la part de Bpifrance et des partenaires de la
+  filière.
+
+
+  Autres partenaires :
+
+  - La Fédération des IND.E.S (Industriels Engagés et Solidaires)
+
+  - Les FFI (Forces Françaises de l'Industrie)
+début de validité: 25/11/2025
+fin de validité: 25/11/2026
+illustration: images/TEE_ampoule.png
+opérateur de contact: Banque Publique d'Investissement France
+contact question: formulaire
+url: https://www.bpifrance.fr/catalogue-offres/accelerateur-economie-circulaire
+nature de l'aide: étude
+coût de l'accompagnement: Pris en charge à 50%. Coût restant à charge de 13 000 €.
+durée de l'accompagnement: 13 jours de mission de conseil et 5 jours de formation
+objectifs:
+  - description: >-
+      Exprimez votre intérêt pour cet accompagnement en remplissant ce
+      formulaire sur le site de Bpifrance
+    liens:
+      - lien: >-
+          https://evenements.bpifrance.fr/appel-a-manifestation-d-interet-accelerateur-econo/registration/register
+        texte: Formulaire de contact
+  - description: >-
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande, et les modalités de
+      l'accompagnement.
+  - description: Lancez l'accompagnement Bpifrance et suivez les formations.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - PME avec un CA supérieur à 5M€.
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - 3 ans
+  autres critères d'éligibilité:
+    - >-
+      Vous dirigez une PME et avez déjà engagé une réflexion stratégique sur
+      l’économie circulaire, validée en interne ou mise à l’épreuve à travers un
+      projet concret.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a un effectif éligible
+      - a une categorie legale eligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif >= 10
+      - effectif <= 249
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est l'écoconception

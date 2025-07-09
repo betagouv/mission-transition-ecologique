@@ -60,9 +60,10 @@ conditions d'éligibilité:
       Avoir un ou plusieurs site(s) d’entreprise implanté(s) sur le territoire
       des Parcs naturels régionaux suivants : Parc naturel régional des
       Baronnies Provençales, Parc naturel régional de Brière, Parc naturel
-      régional Livradois-Forez, Parc naturel régional de Lorraine (consulter la
-      carte :
-      <https://www.parcs-naturels-regionaux.fr/les-parcs/decouvrir-les-59-parcs>).
+      régional Livradois-Forez, Parc naturel régional de Lorraine
+    - >-
+      Consulter la carte :
+      <https://www.parcs-naturels-regionaux.fr/les-parcs/decouvrir-les-59-parcs>
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

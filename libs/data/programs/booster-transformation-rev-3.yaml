@@ -1,0 +1,83 @@
+titre: Booster Transformation Rev3
+promesse: >-
+  Faites vous accompagner par un expert pour réaliser la transition écologique
+  de votre entreprise.
+description: "Bénéficiez de l’accompagnement d’un expert sur des sujets de transition énergétique et environnementale au sein de votre entreprise. \LIl peut s’agir, par exemple, de sujets tels que l’efficacité énergétique, l’analyse du cycle de vie de vos produits, l’adaptation de votre entreprise au changement climatique, le bilan carbone…\n\nAu cours de l’accompagnement, l’expert vous aidera à établir un diagnostic, un plan d’action et des préconisations adaptées à vos besoin spécifiques. Le dispositif Booster Transformation Rev3 vous permet de financer cet accompagnement à hauteur de 50%."
+illustration: images/TEE_ampoule.png
+opérateur de contact: Région Hauts-de-France
+contact question: mailto:BTR3@hautsdefrance.fr
+url: https://guide-aides.hautsdefrance.fr/dispositif1045
+nature de l'aide: étude
+montant du financement: 50% du coût de l'accompagnement, jusqu'à 10 000 € HT.
+objectifs:
+  - description: "oisissez le prestataire\_rev3 qui vous accompagnera :"
+    liens:
+      - lien: mailto:BTR3@hautsdefrance.fr
+        texte: BTR3@hautsdefrance.fr
+  - description: Créez un compte sur la Plateforme régionale des aides et des subventions.
+    liens:
+      - lien: https://aides.hautsdefrance.fr/sub/tiers/inscription
+        texte: Créer mon compte
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: https://aides.hautsdefrance.fr/sub/tiers/aides/details/?sigle=BTR3
+        texte: Déposer mon dossier
+  - description: >-
+      La région étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - PME
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Hauts-de-France
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 250
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Hauts-de-France
