@@ -39,6 +39,19 @@ conditions d'éligibilité:
     - Tous secteurs d'activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Le dispositif concerne toute PME exerçant une activité en Hauts-de-France
+      :
+    - À jour de ses obligations fiscales et sociales,
+    - Ne répondant pas à la définition d’entreprise en difficulté,
+    - >-
+      Ayant perçu moins de 300 000 € d’aides dites « de minimis » sur 3
+      exercices fiscaux.
+    - >-
+      Le montant de la subvention par bénéficiaire est plafonné à 10 000 € par
+      accompagnement et dans la limite de deux accompagnements différents par
+      an.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

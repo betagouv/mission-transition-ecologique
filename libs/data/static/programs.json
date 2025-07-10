@@ -4929,6 +4929,13 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Le dispositif concerne toute PME exerçant une activité en Hauts-de-France :",
+        "À jour de ses obligations fiscales et sociales,",
+        "Ne répondant pas à la définition d’entreprise en difficulté,",
+        "Ayant perçu moins de 300 000 € d’aides dites « de minimis » sur 3 exercices fiscaux.",
+        "Le montant de la subvention par bénéficiaire est plafonné à 10 000 € par accompagnement et dans la limite de deux accompagnements différents par an."
       ]
     },
     "publicodes": {
@@ -34009,6 +34016,176 @@
       }
     },
     "id": "recharge-vehicule-electrique"
+  },
+  {
+    "titre": "Programme REMOVE",
+    "promesse": "Bénéficiez d'un accompagnement pour développer le transport par modes massifiés comme le ferroviaire, le fluvial et le maritime",
+    "description": "Le programme **REMOVE** propose un accompagnement technique et une expertise aux entreprises du secteur des transports à travers deux dispositifs complémentaires :\n\n- **LOG-te** qui vise à réduire la consommation d’énergie des flottes de transport massifié (trains, bateaux) ainsi que des engins de manutention associés.\n\n- **REMO** qui accompagne les entreprises dans la mise en œuvre de solutions de **report modal** afin de générer des bénéfices énergétiques et environnementaux.",
+    "description longue": "- Le dispositif REMO vous aide et vous accompagne dans la réflexion et la mise en oeuvre de vos projets de report modal.  : Aide à l’identification des flux éligibles,\nAccompagnement méthodologique de sa réflexion à sa réalisation par des\nbureaux d’études,\nÀ destination des chargeurs, commissionnaires et transporteurs - Le dispositif LOG-te s’adresse aux entreprises des secteurs ferroviaire, fluvial et cabotage\nmaritime : Atteinte des objectifs de gains énergétiques sur le matériel utilisé (engins\nde manutention, locomotives, péniches, etc.),\nÀ partir d’un catalogue d’actions élaboré par l’ADEME,\nAccompagnement par des bureaux d’études",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://cee-remove.ademe.fr/contact-2/",
+    "url": "https://cee-remove.ademe.fr/programme-remove/",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "Gratuit",
+    "durée de l'accompagnement": "Entre 15 mois et 3 ans",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Exprimez votre intérêt en créant un compte sur la plateforme REMOVE",
+        "liens": [
+          {
+            "lien": "https://remove.ademe.fr/compte/inscription",
+            "texte": "Inscription"
+          }
+        ]
+      },
+      {
+        "description": "Participez à une sensibilisation au programme REMOVE ainsi qu'aux enjeux du transport massifié."
+      },
+      {
+        "description": "Si vous souhaitez ensuite bénéficier d’un accompagnement, construisez un dossier d’engagement avec le secteur concerné."
+      },
+      {
+        "description": "Une fois ce dossier validé, le secteur vous accompagne dans la mise en œuvre de votre engagement."
+      },
+      {
+        "description": "Co-construisez votre feuille de route et réalisez votre plan et vos actions."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Secteur du transport"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "a une categorie legale eligible"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est H"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la mobilité durable"
+        ]
+      }
+    },
+    "id": "remove"
   },
   {
     "titre": "Crédit d'Impôt Rénovation Énergétique (CIRE)",
