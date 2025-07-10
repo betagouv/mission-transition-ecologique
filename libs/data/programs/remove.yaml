@@ -1,0 +1,91 @@
+titre: Programme REMOVE
+promesse: >-
+  Bénéficiez d'un accompagnement pour développer le transport par modes
+  massifiés comme le ferroviaire, le fluvial et le maritime
+description: >-
+  Le programme **REMOVE** propose un accompagnement technique et une expertise
+  aux entreprises du secteur des transports à travers deux dispositifs
+  complémentaires :
+
+
+  - **LOG-te** qui vise à réduire la consommation d’énergie des flottes de
+  transport massifié (trains, bateaux) ainsi que des engins de manutention
+  associés.
+
+
+  - **REMO** qui accompagne les entreprises dans la mise en œuvre de solutions
+  de **report modal** afin de générer des bénéfices énergétiques et
+  environnementaux.
+description longue: >-
+  - Le dispositif REMO vous aide et vous accompagne dans la réflexion et la mise
+  en oeuvre de vos projets de report modal.  : Aide à l’identification des flux
+  éligibles,
+
+  Accompagnement méthodologique de sa réflexion à sa réalisation par des
+
+  bureaux d’études,
+
+  À destination des chargeurs, commissionnaires et transporteurs - Le dispositif
+  LOG-te s’adresse aux entreprises des secteurs ferroviaire, fluvial et cabotage
+
+  maritime : Atteinte des objectifs de gains énergétiques sur le matériel
+  utilisé (engins
+
+  de manutention, locomotives, péniches, etc.),
+
+  À partir d’un catalogue d’actions élaboré par l’ADEME,
+
+  Accompagnement par des bureaux d’études
+illustration: images/TEE_eolienne.png
+opérateur de contact: ADEME
+contact question: https://cee-remove.ademe.fr/contact-2/
+url: https://cee-remove.ademe.fr/programme-remove/
+nature de l'aide: étude
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: Entre 15 mois et 3 ans
+activable en autonomie: oui
+objectifs:
+  - description: Exprimez votre intérêt en créant un compte sur la plateforme REMOVE
+    liens:
+      - lien: https://remove.ademe.fr/compte/inscription
+        texte: Inscription
+  - description: >-
+      Participez à une sensibilisation au programme REMOVE ainsi qu'aux enjeux
+      du transport massifié.
+  - description: >-
+      Si vous souhaitez ensuite bénéficier d’un accompagnement, construisez un
+      dossier d’engagement avec le secteur concerné.
+  - description: >-
+      Une fois ce dossier validé, le secteur vous accompagne dans la mise en
+      œuvre de votre engagement.
+  - description: >-
+      Co-construisez votre feuille de route et réalisez votre plan et vos
+      actions.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Secteur du transport
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a une categorie legale eligible
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est H
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable
