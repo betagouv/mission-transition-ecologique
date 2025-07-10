@@ -38,7 +38,8 @@
       "hotellerie-independante-bfc",
       "camping-independant-bfc",
       "certificats-economie-energie",
-      "aide-investissement-librairie"
+      "aide-investissement-librairie",
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [
       31
@@ -921,7 +922,8 @@
       "aide-tourisme-guadeloupe",
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
-      "aide-investissement-librairie"
+      "aide-investissement-librairie",
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [
       4,
@@ -978,7 +980,8 @@
       "pret-ile-de-france",
       "impulsion-environnement",
       "je-change-ma-voiture",
-      "mobilipro"
+      "mobilipro",
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [
       31
@@ -1219,7 +1222,8 @@
       "soutien-hebergement-touristique",
       "programme-reseau",
       "hotellerie-independante-bfc",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [
       31
@@ -1275,7 +1279,8 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "cap-transition-ecologique",
-      "aide-tpe-transition-na"
+      "aide-tpe-transition-na",
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [
       31
@@ -1564,7 +1569,8 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "mobilipro",
-      "diag-biodiversite"
+      "diag-biodiversite",
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [],
     "priority": "20",
@@ -1787,7 +1793,8 @@
       "cap-transition-ecologique",
       "camping-independant-bfc",
       "aide-tourisme-guadeloupe",
-      "diag-impact-biodiversite"
+      "diag-impact-biodiversite",
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [
       31
@@ -1909,7 +1916,8 @@
       "decarb-ind-25",
       "prit-hdf",
       "je-change-ma-voiture",
-      "impact-co2"
+      "impact-co2",
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [
       1
@@ -1971,7 +1979,8 @@
       "prit-hdf",
       "aide-tourisme-guadeloupe",
       "fasep",
-      "aide-investissement-librairie"
+      "aide-investissement-librairie",
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [
       26,
@@ -2108,7 +2117,9 @@
       "aide-tourisme-guadeloupe",
       "credit-impot-recherche",
       "credit-impot-innovation",
-      "fasep"
+      "fasep",
+      "accelerateur-economie-circulaire",
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [
       31
@@ -3468,7 +3479,7 @@
     "shortDescription": "Transférer le transport de marchandises vers le rail, le fluvial ou le maritime, moins polluants.",
     "image": "/images/projet/fret-faible-impact.webp",
     "longDescription": "Le secteur du transport et de la logistique, majoritairement fondé sur l’usage de poids lourds, est l’un des principaux émetteurs de gaz à effet de serre et de polluants atmosphériques.\\\nFace à l’urgence climatique et aux contraintes croissantes pesant sur la route (Zones à Faibles Émissions, saturation du réseau, hausse des péages…), le secteur doit évoluer.\\\nChoisir des modes de transport plus propres comme le ferroviaire, le fluvial ou le maritime — qui émettent jusqu’à cinq fois moins de CO₂ que la route — constitue une solution fiable, moins exposée aux aléas routiers.\\\nTravailler avec des chargeurs et partenaires engagés dans une démarche bas carbone devient aussi un levier de différenciation et de compétitivité.",
-    "moreDescription": "- [**Comment limiter la pollution du trafic routier ?**](https://librairie.ademe.fr/air/658-comment-limiter-la-pollution-du-trafic-routier-.html#product-presentation), une infographie de l'ADEME.\n- [**Le transport routier de marchandises**](https://www.statistiques.developpement-durable.gouv.fr/transport-routier-de-marchandises), les données statistiques nationales, par le ministère de la transition écologique.",
+    "moreDescription": "- [**Comment limiter la pollution du trafic routier ?**](https://librairie.ademe.fr/air/658-comment-limiter-la-pollution-du-trafic-routier-.html#product-presentation), une infographie de l'ADEME.\n- [**Le transport routier de marchandises**](https://www.statistiques.developpement-durable.gouv.fr/transport-routier-de-marchandises), les données statistiques nationales, par le ministère de la transition écologique.\n- [**Le guide du transport combiné rail-route**](https://gntc.fr/wp-content/uploads/2025/05/Guide-Transport-combine-GNTC-Digitale-Mai-2025.pdf), par le GNTC en partenariat avec l'ADEME",
     "themes": [
       "mobility"
     ],
@@ -3538,7 +3549,8 @@
       "programme-eve",
       "aide-tpe-transition-na",
       "certificats-economie-energie",
-      "parm-vnf"
+      "parm-vnf",
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [],
     "priority": "750",
@@ -3596,7 +3608,8 @@
     "mainTheme": "rh",
     "programs": [
       "diagnostic-rse",
-      "formations-tee"
+      "formations-tee",
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [
       929
