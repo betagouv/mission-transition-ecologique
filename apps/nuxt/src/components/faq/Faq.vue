@@ -26,7 +26,7 @@ interface Props {
 }
 const props = defineProps<Props>()
 
-useSchemaOrg(defineQuestions())
+useSchemaOrg([{ '@type': 'FAQPage', mainEntity: defineQuestions() }])
 
 function defineQuestions() {
   const itemListElement = []
