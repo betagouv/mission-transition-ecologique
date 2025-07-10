@@ -37,7 +37,7 @@ const onClick = () => {
 }
 
 useSeoMeta(MetaSeo.get('Questions fréquentes', description))
-useSchemaOrg(defineWebPage({ description: description, '@type': 'FAQPage' }))
+useSchemaOrg(defineWebPage({ description: description }))
 </script>
 
 <template>
