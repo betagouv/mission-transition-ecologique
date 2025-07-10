@@ -3639,5 +3639,32 @@
       "T",
       "U"
     ]
+  },
+  {
+    "id": 1127,
+    "slug": "nettoyage-sans-produits-chimiques",
+    "title": "Nettoyage sans produits chimiques",
+    "nameTag": "🧹nettoyage",
+    "shortDescription": "Réduire les risques pour la santé et l’environnement grâce à des pratiques d’hygiène plus sobres.",
+    "image": "/images/projet/nettoyage.webp",
+    "longDescription": "Les produits d’entretien classiques contiennent souvent des composés chimiques irritants et émettent des polluants volatils **nocifs pour la santé**. Selon l’Anses, 91 % des agents d’entretien sont exposés à au moins un produit dangereux, avec un risque accru de troubles respiratoires ou cutanés.\n\nIls ont aussi un **fort impact environnemental** : consommation d’eau, multiplication des emballages plastiques, rejets polluants dans les eaux usées. Adopter des alternatives sans chimie protège les personnes et la planète.\n\n\\\n**Quelques pistes pour agir :**\n\n- Privilégier le **nettoyage courant**, suffisant pour éliminer salissures et microbes. La désinfection doit rester ciblée (épidémies, pathogènes persistants).\n\n- Choisir les produits en équilibrant **efficacité et risques**, en consultant les **Fiches de Données de Sécurité (FDS)**.\n\n- Utiliser la **vapeur**, la **microfibre** ou l’**eau ozonée** pour un nettoyage sans chimie.\n\n- Impliquer les équipes (agents d’entretien, CHSCT, médecine du travail) pour **simplifier les protocoles**.\n\n- Favoriser du **mobilier facile à entretenir** et des **produits écolabellisés**.\n\n- Réduire le nombre de produits, éviter les **prêts à l’emploi** et privilégier les produits **rechargeables**.",
+    "moreDescription": "- [**L'entretien des locaux dans les Établissements Recevant du Public**](https://www.appa.asso.fr/wp-content/uploads/2024/10/DGS-Lentretien-des-ERP-Version-Ultime.pdf?), guide proposé par l'APPA, axé sur les protocoles d’entretien adaptés aux ERP.\n- [**Comment choisir et acheter ses produits d'entretien ?**](https://www.appa.asso.fr/wp-content/uploads/2024/10/DGS-Lentretien-des-ERP-Version-Ultime.pdf), un guide à l'usage des acheteurs publics, par le Centre de gestion du département de l'Isère.\n- [**Éco nettoyage**](https://www.cpias-ile-de-france.fr/docprocom/doc/arsara-econettoyage-mai2021.pdf), guide de l'ARS dédié au secteur des soins, qui détaille les pratiques de nettoyage sans produits chimiques.",
+    "themes": [
+      "water"
+    ],
+    "mainTheme": "water",
+    "programs": [
+      "diag-eco-flux"
+    ],
+    "linkedProjects": [
+      30,
+      1028
+    ],
+    "priority": "120",
+    "highlightPriority": null,
+    "sectors": [
+      "I",
+      "Q"
+    ]
   }
 ]
