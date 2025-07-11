@@ -1,7 +1,7 @@
 [
   {
     "slug": "360-Oustal-Del-Barry",
-    "verbatim": "Avec le soutien de l’ADEME et de la CCI, nous avons lancé nos potagers, qui couvrent **20 % des légumes de saison** du restaurant. En travaillant avec des producteurs locaux ou bio et en valorisant nos biodéchets, nous nourrissons un **écosystème durable**, bénéfique jusqu’aux abeilles de nos deux ruches",
+    "verbatim": "Avec le soutien de l’ADEME et de la CCI, nous avons lancé nos potagers, qui couvrent **20 % des légumes de saison** du restaurant. En travaillant avec des producteurs locaux ou bio et en valorisant nos biodéchets, nous nourrissons un **écosystème durable**, bénéfique jusqu’aux abeilles de nos deux ruches.",
     "companyName": "L’Oustal del Barry",
     "authorName": "Susannah GIBBON",
     "authorFunction": "Directrice de l'hôtel-restaurant Oustal Del Barry",
@@ -92,6 +92,21 @@
     "projects": [
       30,
       33
+    ]
+  },
+  {
+    "slug": "frigo-epicerie-LS-bonheur",
+    "verbatim": "Avec le diag de la CCI, j'ai compris que mes meubles frigorifiques étaient très énergivores et sources de chaleur. Depuis leur remplacement, la **facture d'électricité a chuté** et le magasin a baissé en température.",
+    "companyName": "Supérette Bonheur",
+    "authorName": "Bettina BONHEUR",
+    "authorFunction": "gérante de la supérette Bonheur",
+    "authorImage": "/images/testimony/bettina-bonheur-jpg.webp",
+    "authorImageAttributes": "Photo de Bettina Bonheur, gérante de la supérette Bonheur, engagé dans la transition écologique\"",
+    "externalLink": "https://www.youtube.com/watch?v=NbUCiF0ZVOQ",
+    "homePageHighlight": null,
+    "projects": [
+      4,
+      139
     ]
   },
   {
