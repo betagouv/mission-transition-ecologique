@@ -34021,14 +34021,14 @@
     "titre": "Programme REMOVE",
     "promesse": "Bénéficiez d'un accompagnement pour développer le transport par modes massifiés comme le ferroviaire, le fluvial et le maritime",
     "description": "Le programme **REMOVE** propose un accompagnement technique et une expertise aux entreprises à travers deux dispositifs complémentaires :\n\n- **LOG-te** qui vise à réduire la consommation d’énergie des flottes de transport massifié (trains, bateaux) ainsi que des engins de manutention associés.\n\n- **REMO** qui accompagne les entreprises dans la mise en œuvre de solutions de **report modal** afin de générer des bénéfices énergétiques et environnementaux.",
-    "description longue": "- **Le dispositif REMO**, à destination des chargeurs, commissionnaires et transporteurs, vous aide et vous accompagne dans la réflexion et la mise en oeuvre de vos projets de report modal  : \n\t- Aide à l’identification des flux éligibles,\n\t- Accompagnement méthodologique de sa réflexion à sa réalisation par des bureaux d’études,\n- **Le dispositif LOG-te** s’adresse aux entreprises des secteurs ferroviaire, fluvial et cabotage maritime : \n\t- Atteinte des objectifs de gains énergétiques sur le matériel utilisé (engins de manutention, locomotives, péniches, etc.),\n\t- À partir d’un catalogue d’actions élaboré par l’ADEME,\n\t- Accompagnement par des bureaux d’études.",
+    "description longue": "- Le dispositif REMO, à destination des chargeurs, commissionnaires et transporteurs, vous aide et vous accompagne dans la réflexion et la mise en œuvre de vos projets de report modal  : \n\tAide à l’identification des flux éligibles,\n\tAccompagnement méthodologique de sa réflexion à sa réalisation par des bureaux d’études,\n- Le dispositif LOG-te s’adresse aux entreprises des secteurs ferroviaire, fluvial et cabotage maritime : \n\tAtteinte des objectifs de gains énergétiques sur le matériel utilisé (engins de manutention, locomotives, péniches, etc.),\n\tÀ partir d’un catalogue d’actions élaboré par l’ADEME,\n\tAccompagnement par des bureaux d’études.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
     "contact question": "mailto:aap.remove@ademe.fr",
     "url": "https://cee-remove.ademe.fr/programme-remove/",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
-    "durée de l'accompagnement": "15 mois (REMO) - 3 ans (LOG-te)",
+    "durée de l'accompagnement": "REMO : 15 mois - LOG-te : 3 ans",
     "activable en autonomie": "oui",
     "objectifs": [
       {
@@ -34068,7 +34068,8 @@
         "Éligible à toutes les entreprises"
       ],
       "autres critères d'éligibilité": [
-        "REMO est destiné aux transporteurs routiers, chargeurs et commissionnaires de transport, et LOG-te est destiné aux transporteurs ferroviaire, fluvial et maritime, aux manutentionnaires et aux pilotines"
+        "REMO est destiné aux transporteurs routiers, chargeurs et commissionnaires de transport,",
+        "LOG-te est destiné aux transporteurs ferroviaire, fluvial et maritime, aux manutentionnaires et aux pilotines."
       ]
     },
     "publicodes": {
