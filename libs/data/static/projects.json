@@ -1659,10 +1659,10 @@
     "slug": "formation",
     "title": "Formation environnement",
     "nameTag": "🎓 formation",
-    "shortDescription": "Réaliser des formations pour monter en compétences sur des sujets de transition écologique.",
+    "shortDescription": "Réaliser des formations vous permet de monter en compétence sur des sujets de transition écologique.",
     "image": "/images/projet/formation.webp",
-    "longDescription": "Les formations peuvent permettre de faire monter en compétences les membres de votre équipe et d'adapter vos pratiques professionnelles aux exigences environnementales. \\\nLes opérateurs publics proposent un vaste choix de formations gratuites sur les thématiques de la transition écologique et énergétique. Elles peuvent prendre la forme de formations encadrées en présentiel ou à distance pour s'adapter aux besoins et aux contraintes des apprenants (classe virtuelle en temps réel, e-learning en autonomie…).",
-    "moreDescription": "",
+    "longDescription": "Les formations peuvent permettre de faire monter en compétence les membres de votre équipe et d'adapter vos pratiques professionnelles aux exigences environnementales.\\\nLes opérateurs publics proposent un vaste choix de formations gratuites sur les thématiques de la transition écologique et énergétique. \\\nElles peuvent prendre la forme de formations encadrées en présentiel ou à distance pour s'adapter aux besoins et aux contraintes des apprenants (classe virtuelle en temps réel, e-learning en autonomie…).",
+    "moreDescription": "- [**Formation \"Climat : Tout comprendre, agir ensemble !\"**](https://librairie.ademe.fr/changement-climatique/6999-formation-climat-tout-comprendre-agir-ensemble-version-initiation.html) - version initiation, par l'ADEME.\n- [**Portail des Formations Environnement**](https://formations.ademe.fr/accueil.html) de l'ADEME.\n- [**Le catalogue des Formations sur la transition écologique et les enjeux RSE**](https://www.bpifrance-universite.fr/catalogue/recherche?t[]=37&t[]=38), par Bpifrance.",
     "themes": [
       "rh"
     ],
