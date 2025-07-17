@@ -2,30 +2,24 @@
   <div class="fr-container fr-px-0">
     <div class="fr-grid-row">
       <div class="fr-col-12">
-        <div class="fr-card fr-card--cta fr-card--horizontal fr-card--grey fr-p-4v">
+        <div class="fr-card fr-card--cta fr-enlarge-link fr-card--horizontal fr-card--icon-link fr-card--grey fr-p-4v fr-card--no-border">
           <div class="fr-card__body">
-            <div class="fr-card__content fr-justify-center">
-              <h2
-                class="fr-card__title fr-text--blue"
-                v-html="resolvedTitle"
-              />
-              <p
-                class="fr-card__desc fr-text--md"
-                v-html="description"
-              />
-              <div
-                v-if="ctaBtnTitle"
-                class="fr-card__end"
-              >
-                <TeeDsfrButton
-                  class="inline-flex fr-text--yellow fr-text--bold fr-btn-align-center"
-                  @click.prevent="onClick()"
+            <div class="fr-card__content">
+              <h3 class="fr-card__title">
+                <a
+                  :href="resolvedLink"
+                  target="_blank"
+                  rel="noopener external"
                 >
-                  <template #default>
-                    {{ ctaBtnTitle }}
-                  </template>
-                </TeeDsfrButton>
-              </div>
+                  {{ resolvedTitle }}
+                </a>
+              </h3>
+              <p class="fr-card__desc fr-text--md">
+                Le service public <strong>Transition écologique des entreprises</strong> vous permet de trouver les aides, accompagnements
+                et ressources issues de l'ensemble des acteurs publics pour vous aider à réaliser votre projet de transition écologique
+                (ADEME, CCI, CMA, Bpifrance, DGFiP, etc.)
+              </p>
+              <div class="fr-card__start"></div>
             </div>
           </div>
           <div class="fr-card__header">
@@ -41,7 +35,7 @@
               <img
                 class="fr-card__logo"
                 :src="img(Identity.logoPath, { height: 50, width: 50, quality: 100, loading: 'lazy' })"
-                alt="Transition Ecologique des Entreprises - ADEME"
+                alt="Transition Écologique des Entreprises - ADEME"
               />
             </div>
           </div>
@@ -55,32 +49,35 @@
 import { Identity } from '@/tools/Identity'
 import { Image } from '@/tools/image'
 import { computed } from 'vue'
-import { Color } from '@/types'
+import { useRouter } from 'vue-router'
+import { Color, RouteName } from '@/types'
 
 interface Props {
+  link?: string
   title?: string
-  description: string
   imageSrc?: string
   imageAlt?: string
   objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down'
   imgBgColor?: Color
-  ctaBtnTitle?: string
-  onClick: CallableFunction
 }
 
 const props = withDefaults(defineProps<Props>(), {
+  link: undefined,
   title: undefined,
   imageSrc: undefined,
   imageAlt: undefined,
   objectFit: 'cover',
-  imgBgColor: undefined,
-  ctaBtnTitle: undefined
+  imgBgColor: undefined
 })
 
+const router = useRouter()
+
+const defaultLink = router.resolve({ name: RouteName.Homepage }).href
 const defaultTitle = 'Accédez aux aides publiques pour votre projet de transition écologique'
 const defaultImageSrc = 'images/TEE_computer_home.webp'
 const defaultImageAlt = "Image de la page d'accueil de mission transition écologique"
 
+const resolvedLink = computed(() => props.link || defaultLink)
 const resolvedTitle = computed(() => props.title || defaultTitle)
 const resolvedImageSrc = computed(() =>
   props.imageSrc
@@ -90,14 +87,19 @@ const resolvedImageSrc = computed(() =>
 const resolvedImageAlt = computed(() => props.imageAlt || defaultImageAlt)
 
 const img = Image.getUrl
+
+const imageResizerChild = () => import('@iframe-resizer/child')
+imageResizerChild()
 </script>
 
 <style scoped lang="scss">
 @use '@/assets/scss/tool';
 
 .fr-card {
-  :hover:not(button, button *) {
-    cursor: default !important;
+  .fr-card__title {
+    a::after {
+      display: inline-block !important;
+    }
   }
 }
 </style>
