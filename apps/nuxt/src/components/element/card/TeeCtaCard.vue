@@ -1,51 +1,45 @@
 <template>
-  <div class="fr-container fr-px-0">
-    <div class="fr-grid-row">
-      <div class="fr-col-12">
-        <div class="fr-card fr-card--cta fr-card--horizontal fr-card--grey fr-p-4v">
-          <div class="fr-card__body">
-            <div class="fr-card__content fr-justify-center">
-              <h2
-                class="fr-card__title fr-text--blue"
-                v-html="resolvedTitle"
-              />
-              <p
-                class="fr-card__desc fr-text--md"
-                v-html="description"
-              />
-              <div
-                v-if="ctaBtnTitle"
-                class="fr-card__end"
-              >
-                <TeeDsfrButton
-                  class="inline-flex fr-text--yellow fr-text--bold fr-btn-align-center"
-                  @click.prevent="onClick()"
-                >
-                  <template #default>
-                    {{ ctaBtnTitle }}
-                  </template>
-                </TeeDsfrButton>
-              </div>
-            </div>
-          </div>
-          <div class="fr-card__header">
-            <div
-              class="fr-card__img"
-              :class="[imgBgColor ? `fr-bg--${imgBgColor}` : '', objectFit === 'contain' ? 'fr-card__img--contain' : '']"
-            >
-              <img
-                class="fr-responsive-img"
-                :src="resolvedImageSrc"
-                :alt="resolvedImageAlt"
-              />
-              <img
-                class="fr-card__logo"
-                :src="img(Identity.logoPath, { height: 50, width: 50, quality: 100, loading: 'lazy' })"
-                alt="Transition Ecologique des Entreprises - ADEME"
-              />
-            </div>
-          </div>
+  <div class="fr-card fr-card--cta fr-card--horizontal fr-card--grey fr-p-4v">
+    <div class="fr-card__body">
+      <div class="fr-card__content fr-justify-center">
+        <h2
+          class="fr-card__title fr-text--blue"
+          v-html="resolvedTitle"
+        />
+        <p
+          class="fr-card__desc fr-text--md"
+          v-html="description"
+        />
+        <div
+          v-if="ctaBtnTitle"
+          class="fr-card__end"
+        >
+          <TeeDsfrButton
+            class="inline-flex fr-text--yellow fr-text--bold fr-btn-align-center"
+            @click.prevent="onClick()"
+          >
+            <template #default>
+              {{ ctaBtnTitle }}
+            </template>
+          </TeeDsfrButton>
         </div>
+      </div>
+    </div>
+    <div class="fr-card__header">
+      <div
+        class="fr-card__img"
+        :class="[imgBgColor ? `fr-bg--${imgBgColor}` : '', objectFit === 'contain' ? 'fr-card__img--contain' : '']"
+      >
+        <img
+          class="fr-responsive-img"
+          :src="resolvedImageSrc"
+          :alt="resolvedImageAlt"
+        />
+        <img
+          class="fr-card__logo"
+          :src="img(Identity.logoPath, { height: 50, width: 50, quality: 100, loading: 'lazy' })"
+          alt="Transition Écologique des Entreprises - ADEME"
+        />
       </div>
     </div>
   </div>
