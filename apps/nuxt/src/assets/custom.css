@@ -10,9 +10,6 @@ WARNING :
 .fr-justify-center {
   justify-content: center;
 }
-.fr-card:hover {
-  cursor: pointer !important;
-}
 .fr-modal-custom::before {
   content: none !important;
 }

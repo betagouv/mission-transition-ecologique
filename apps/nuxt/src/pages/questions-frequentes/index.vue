@@ -73,16 +73,23 @@ useSchemaOrg(defineWebPage({ description: description }))
       </div>
     </template>
     <Faq :faq-items="FaqJson.pages[FaqPage.Faq]" />
-    <div class="fr-bg--blue--lightness fr-col-12 fr-py-0-5v fr-mt-8v fr-mb-8v"></div>
-    <TeeCtaCard
-      title="Accélérez votre transition avec la plateforme <i>Transition Écologique des Entreprises</i>."
-      title-tag="h2"
-      description="Trouvez les aides adaptées pour financer la transition environnementale de votre entreprise et, en quelques clics, entrez en contact avec les bons interlocuteurs pour mener vos projets au succès."
-      cta-btn-title="Trouver les aides pour mon entreprise"
-      target="_self"
-      :on-click="onClick"
-      :bg-color="Color.purple"
-      object-fit="contain"
-    />
+    <div class="fr-bg--blue--lightness fr-col-12 fr-py-0-5v fr-mt-8v"></div>
+    <template #bottom>
+      <div class="fr-grid-row fr-mb-8v">
+        <div
+          class="fr-col-12"
+          :class="Navigation.getClassesBySideMenu(true)"
+        >
+          <TeeCtaCard
+            title="Accélérez votre transition avec la plateforme <i>Transition Écologique des Entreprises</i>."
+            description="Trouvez les aides adaptées pour financer la transition environnementale de votre entreprise et, en quelques clics, entrez en contact avec les bons interlocuteurs pour mener vos projets au succès."
+            cta-btn-title="Trouver les aides pour mon entreprise"
+            :on-click="onClick"
+            :img-bg-color="Color.purple"
+            object-fit="contain"
+          />
+        </div>
+      </div>
+    </template>
   </Layout>
 </template>

@@ -1,8 +1,8 @@
 <template>
-  <TeeCtaCard
-    :bg-color="Color.purple"
+  <TeeIframeCard
+    :img-bg-color="Color.purple"
     object-fit="contain"
-  ></TeeCtaCard>
+  />
 </template>
 
 <script setup lang="ts">
