@@ -2124,7 +2124,7 @@
     "linkedProjects": [
       31
     ],
-    "priority": "150",
+    "priority": "99",
     "highlightPriority": null,
     "sectors": [
       "B",
@@ -3171,6 +3171,39 @@
       "S",
       "T",
       "U"
+    ]
+  },
+  {
+    "id": 699,
+    "slug": "produits-biosources",
+    "title": "Produits biosourcés",
+    "nameTag": "🐚 Produits biosourcés",
+    "shortDescription": "Les produits biosourcés sont issus de matières naturelles et limitent notre dépendance au pétrole.",
+    "image": "/images/projet/biosource.webp",
+    "longDescription": "Issus de matières **végétales ou animales**, de champignons ou encore de bactéries, les produits biosourcés vous permettent de **limiter l'utilisation du pétrole**, une ressource qui se raréfie et qui génère à la fois pollution et émissions de gaz à effet de serre.\n\nDans les secteurs de l'industrie, de la construction ou de l'agriculture, par exemple, utiliser des matières premières biosourcées présente de nombreux attraits :\n\n- il s'agit d'une **ressource renouvelable et locale** qui présente des perspectives d'innovation et de création d'emplois ;\n- les matériaux biosourcés s'inscrivent dans l'**économie circulaire** et offrent un potentiel de revenus supplémentaires pour les producteurs qui peuvent revendre leurs ressources au secteur du bâtiment ou aux sites de transformation ;\n- le cycle de vie des matériaux biosourcés émet une **faible empreinte carbone** ;\n- les matériaux biosourcés ont des **propriétés intéressantes** (thermiques, acoustiques...)\n- l'utilisation de ces matériaux peut vous permettre de **valoriser votre engagement** et d'obtenir des labellisations.",
+    "moreDescription": "- [**Tout comprendre : les produits biosourcés**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/7620-tout-comprendre-les-produits-biosources-9791029723506.html#product-presentation), un guide de l'ADEME en dix questions.\n- [**Bilan thématique Bâtiment Bois construction et matériaux biosourcés**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/4651-bilan-thematique-batiment-bois-construction-et-materiaux-biosources-9791029717895.html#product-presentation), du Programme d'investissements d'avenir (PIA).\n- [**Matériaux biosourcés : usages et avantages pour l'éco-construction et les entreprises**](https://bigmedia.bpifrance.fr/nos-dossiers/materiaux-biosources-usages-et-avantages-pour-leco-construction-et-les-entreprises), par Bpifrance.",
+    "themes": [
+      "eco-design",
+      "environmental"
+    ],
+    "mainTheme": "eco-design",
+    "programs": [
+      "fond-vert-territoires-d-industrie",
+      "investissement-ecoconception",
+      "certification-agriculture-biologique",
+      "decarb-ind-25",
+      "decarb-flash-2025-2027"
+    ],
+    "linkedProjects": [
+      36
+    ],
+    "priority": "245",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "F"
     ]
   },
   {
