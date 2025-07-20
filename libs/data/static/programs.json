@@ -4115,6 +4115,7 @@
     "titre": "Bilan Carbone®",
     "promesse": "Réaliser un Bilan Carbone® avec un pro reconnu par l'Association pour la transition Bas Carbone",
     "description": "Le Bilan Carbone® est une méthodologie de comptabilisation des émissions de gaz à effet de serre (GES) aujourd’hui la plus utilisée en France. L’Association pour la transition Bas Carbone (ABC) a été créée en 2011 sous l’impulsion de l’Agence de l’Environnement et de la Maîtrise de l’Énergie (ADEME) et de l’Association des Professionnels en Conseil Climat (APCC) afin d'initier et réussir sa stratégie de décarbonation.",
+    "fin de validité": "01/07/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Association pour la transition Bas Carbone",
     "autres opérateurs": [
@@ -4127,7 +4128,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Trouvez dans l'annuaire des prestataires de l'Association pour la transition Bas Carbone (ABC) le professionnel qui vous convient selon vos critères",
+        "description": "Trouvez dans l'annuaire des prestataires de l'Association pour la transition Bas Carbone (ABC) le professionnel qui vous convient selon vos critères.",
         "liens": [
           {
             "lien": "https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/",
@@ -4136,7 +4137,7 @@
         ]
       },
       {
-        "description": "Contactez le prestataires afin de réaliser votre bilan d'émission de gaz à effet de serres"
+        "description": "Contactez le prestataire afin de réaliser votre bilan d'émission de gaz à effet de serre."
       }
     ],
     "conditions d'éligibilité": {
@@ -4245,9 +4246,14 @@
       "date du jour": null,
       "entreprise . est ciblée": {
         "toutes ces conditions": [
+          "est éligible",
           "est dans un secteur d'activité ciblé",
           "a un objectif ciblé"
         ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
+        "valeur": "oui"
       },
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
@@ -19461,7 +19467,7 @@
   {
     "titre": "Formation développement durable",
     "promesse": "Formez-vous au développement durable de votre entreprise",
-    "description": "Vous souhaitez engager votre entreprise dans une démarche responsable ? Cette formation digitale vous guide pas à pas : \n\n- **découvrez les enjeux du développement durable et de la RSE,**\n- **réalisez un autodiagnostic** pour évaluer vos pratiques, \n- **définissez vos axes d’amélioration et apprenez à les valoriser.**\n\nCette formation courte permet d'embarquer rapidement vos équipes, clients et fournisseurs dans la mise en place d'une une démarche complète d’entreprise responsable.",
+    "description": "Vous souhaitez engager votre entreprise dans une démarche responsable ? Cette formation digitale vous guide pas à pas :\n\n- **découvrez les enjeux du développement durable et de la RSE,**\n- **réalisez un autodiagnostic** pour évaluer vos pratiques,\n- **définissez vos axes d’amélioration** et **apprenez à les valoriser.**\n\nCette formation courte permet d'embarquer rapidement vos équipes, clients et fournisseurs dans la mise en place d'une démarche complète d’entreprise responsable.",
     "description longue": "Au programme :\n1. Mesurez votre impact sur le développement durable\n- Les principes du développement durable et de la RSE\n- Les enjeux du développement durable dans le monde artisanal\n- L’incidence de la réglementation sur votre activité\n \n2. Identifiez les acteurs de votre démarche\n- Les parties prenantes externes et internes\n- Les besoins et les attentes des parties prenantes\n \n3. Réalisez votre plan d’action\n- La première étape de l’intégration :  l’autodiagnostic\n- Les orientations de développement durable et RSE à privilégier\n- Les actions à mettre en place pour une démarche éco-responsable\n- Les outils de pilotage nécessaires à son intégration\n \n4. Valorisez et communiquez votre engagement\n- Les labels et marques utiles à la valorisation de vos produits et services\n- La valorisation de votre engagement grâce à votre communication",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
