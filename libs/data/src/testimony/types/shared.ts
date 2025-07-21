@@ -8,7 +8,7 @@ export interface Testimony {
   companyName: string
   authorName: string
   authorFunction: string
-  authorImage: string
+  authorImage?: string
   authorImageAttributes: string
   externalLink: string
   projects: ProjectId[]

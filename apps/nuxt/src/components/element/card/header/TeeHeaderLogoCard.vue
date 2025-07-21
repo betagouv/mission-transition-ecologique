@@ -42,7 +42,7 @@ const img = Image.getUrl
       />
       <img
         class="fr-card__logo"
-        :src="img(Identity.logoPath, { height: 50, quality: 100, loading: 'lazy', format: 'webp' })"
+        :src="Identity.logoPath"
         alt="Transition Écologique des Entreprises - ADEME"
       />
     </div>

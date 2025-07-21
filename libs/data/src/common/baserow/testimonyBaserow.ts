@@ -9,7 +9,6 @@ export class TestimonyBaserow extends AbstractBaserow {
   private readonly _logPath: string = path.join(this.__dirname, '../../../static/testimony_images_download_info.json')
   private _imageDownloader: ImageBaserow
   private readonly _imagePath = '/images/testimony/'
-  private readonly _defaultImageName = '/images/logos/mission-transition-logo-alone.png'
 
   constructor(imageDirectory: string) {
     super()
@@ -31,7 +30,7 @@ export class TestimonyBaserow extends AbstractBaserow {
     const maybeImageName = await this._imageDownloader.handleDirectImage(baserowTestimony.Photo)
     let imageName
     if (maybeImageName.isErr) {
-      imageName = this._defaultImageName
+      imageName = undefined
     } else {
       imageName = this._imagePath + maybeImageName.value
     }
