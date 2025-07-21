@@ -106,12 +106,14 @@
               )
             </li>
             <li>
-              Contacter le délégué du Défenseur des droits dans votre région (<a
+              Contacter le délégué du Défenseur des droits dans votre région (
+              <a
                 href="https://www.defenseurdesdroits.fr/saisir/delegues"
                 target="_blank"
                 rel="noopener noreferrer"
                 >https://www.defenseurdesdroits.fr/saisir/delegues
               </a>
+              )
             </li>
             <li>
               Envoyer un courrier par la poste (gratuit, ne pas mettre de timbre)
