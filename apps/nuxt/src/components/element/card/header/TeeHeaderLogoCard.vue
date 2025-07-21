@@ -48,5 +48,3 @@ const img = Image.getUrl
     </div>
   </div>
 </template>
-
-<style scoped lang="scss"></style>
