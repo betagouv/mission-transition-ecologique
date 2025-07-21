@@ -4,7 +4,7 @@
       <div class="fr-card__content fr-justify-center">
         <h2
           class="fr-card__title fr-text--blue"
-          v-html="resolvedTitle"
+          v-html="title"
         />
         <p
           class="fr-card__desc fr-text--md"
@@ -35,8 +35,6 @@
 </template>
 
 <script setup lang="ts">
-import { Image } from '@/tools/image'
-import { computed } from 'vue'
 import { Color } from '@/types'
 
 interface Props {
@@ -50,28 +48,14 @@ interface Props {
   onClick: CallableFunction
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  title: undefined,
+withDefaults(defineProps<Props>(), {
+  title: 'Accédez aux aides publiques pour votre projet de transition écologique',
   imageSrc: undefined,
   imageAlt: undefined,
   objectFit: 'cover',
   imgBgColor: undefined,
   ctaBtnTitle: undefined
 })
-
-const defaultTitle = 'Accédez aux aides publiques pour votre projet de transition écologique'
-const defaultImageSrc = 'images/TEE_computer_home.webp'
-const defaultImageAlt = "Image de la page d'accueil de mission transition écologique"
-
-const resolvedTitle = computed(() => props.title || defaultTitle)
-const resolvedImageSrc = computed(() =>
-  props.imageSrc
-    ? img(props.imageSrc, { height: 250, quality: 70, loading: 'lazy' })
-    : img(defaultImageSrc, { height: 350, quality: 100, loading: 'lazy' })
-)
-const resolvedImageAlt = computed(() => props.imageAlt || defaultImageAlt)
-
-const img = Image.getUrl
 </script>
 
 <style scoped lang="scss">

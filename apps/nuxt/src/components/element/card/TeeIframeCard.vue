@@ -11,7 +11,7 @@
                   target="_blank"
                   rel="noopener external"
                 >
-                  {{ resolvedTitle }}
+                  {{ title }}
                 </a>
               </h3>
               <p class="fr-card__desc fr-text--md">
@@ -35,7 +35,6 @@
 </template>
 
 <script setup lang="ts">
-import { Image } from '@/tools/image'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { Color, RouteName } from '@/types'
@@ -51,7 +50,7 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
   link: undefined,
-  title: undefined,
+  title: 'Accédez aux aides publiques pour votre projet de transition écologique',
   imageSrc: undefined,
   imageAlt: undefined,
   objectFit: 'cover',
@@ -61,20 +60,7 @@ const props = withDefaults(defineProps<Props>(), {
 const router = useRouter()
 
 const defaultLink = router.resolve({ name: RouteName.Homepage }).href
-const defaultTitle = 'Accédez aux aides publiques pour votre projet de transition écologique'
-const defaultImageSrc = 'images/TEE_computer_home.webp'
-const defaultImageAlt = "Image de la page d'accueil de mission transition écologique"
-
 const resolvedLink = computed(() => props.link || defaultLink)
-const resolvedTitle = computed(() => props.title || defaultTitle)
-const resolvedImageSrc = computed(() =>
-  props.imageSrc
-    ? img(props.imageSrc, { height: 250, quality: 70, loading: 'lazy' })
-    : img(defaultImageSrc, { height: 350, quality: 100, loading: 'lazy' })
-)
-const resolvedImageAlt = computed(() => props.imageAlt || defaultImageAlt)
-
-const img = Image.getUrl
 
 const imageResizerChild = () => import('@iframe-resizer/child')
 imageResizerChild()
