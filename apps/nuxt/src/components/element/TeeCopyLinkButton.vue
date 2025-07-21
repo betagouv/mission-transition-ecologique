@@ -4,7 +4,7 @@
     :size="size"
     :tertiary="tertiary"
     :no-outline="noOutline"
-    class="fr-radius-a--2v fr-text--black fr-px-4v"
+    class="fr-radius-a--2v fr-px-4v"
     :class="`${linkCopied ? copyClass : ''} ${textClass}`"
     icon="fr-icon-links-line"
     @click="copyUrl"

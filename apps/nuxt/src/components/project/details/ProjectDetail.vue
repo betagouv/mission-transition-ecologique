@@ -13,7 +13,10 @@
     <template #sidemenu>
       <TeeCopyLinkButton
         class="fr-mt-6v"
+        tertiary
         no-outline
+        copy-class="fr-text--green"
+        text-class="fr-text--black"
       />
       <ProjectSideNav :project="project" />
     </template>

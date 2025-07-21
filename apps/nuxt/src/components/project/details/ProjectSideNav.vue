@@ -7,8 +7,8 @@
       v-for="item in menuItems"
       :key="item.id"
       :href="`#${item.to}`"
-      class="fr-sidemenu__link fr-pl-4v"
-      :class="[item.class ? item.class : '', item.icon ? 'fr-btn--icon-left ' + item.icon : '']"
+      class="fr-pl-4v"
+      :class="[item.class ? item.class : 'fr-sidemenu__link', item.icon ? 'fr-btn--icon-left ' + item.icon : '']"
       @click.prevent="scrollTo(item.to)"
     >
       {{ item.text }}
