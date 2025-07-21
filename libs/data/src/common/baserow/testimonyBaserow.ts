@@ -28,12 +28,11 @@ export class TestimonyBaserow extends AbstractBaserow {
 
   private async _convertToDomain(baserowTestimony: BaserowTestimony): Promise<Testimony> {
     const maybeImageName = await this._imageDownloader.handleDirectImage(baserowTestimony.Photo)
-    let imageName
-    if (maybeImageName.isErr) {
-      imageName = undefined
-    } else {
+    let imageName: string | undefined = undefined
+    if (!maybeImageName.isErr) {
       imageName = this._imagePath + maybeImageName.value
     }
+
     return {
       slug: baserowTestimony['Id fiche témoignage'],
       verbatim: baserowTestimony.Verbatim,
