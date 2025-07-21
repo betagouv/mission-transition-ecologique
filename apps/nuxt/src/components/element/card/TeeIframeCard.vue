@@ -22,23 +22,12 @@
               <div class="fr-card__start"></div>
             </div>
           </div>
-          <div class="fr-card__header">
-            <div
-              class="fr-card__img"
-              :class="[imgBgColor ? `fr-bg--${imgBgColor}` : '', objectFit === 'contain' ? 'fr-card__img--contain' : '']"
-            >
-              <img
-                class="fr-responsive-img"
-                :src="resolvedImageSrc"
-                :alt="resolvedImageAlt"
-              />
-              <img
-                class="fr-card__logo"
-                :src="img(Identity.logoPath, { height: 50, width: 50, quality: 100, loading: 'lazy' })"
-                alt="Transition Écologique des Entreprises - ADEME"
-              />
-            </div>
-          </div>
+          <TeeHeaderLogoCard
+            :image-src="imageSrc"
+            :image-alt="imageAlt"
+            :img-bg-color="imgBgColor"
+            :object-fit="objectFit"
+          />
         </div>
       </div>
     </div>
@@ -46,7 +35,6 @@
 </template>
 
 <script setup lang="ts">
-import { Identity } from '@/tools/Identity'
 import { Image } from '@/tools/image'
 import { computed } from 'vue'
 import { useRouter } from 'vue-router'
