@@ -4,16 +4,16 @@
     :size="size"
     :tertiary="tertiary"
     :no-outline="noOutline"
-    class="fr-radius-a--2v"
+    class="fr-radius-a--2v fr-text--black fr-px-4v"
     :class="`${linkCopied ? copyClass : ''} ${textClass}`"
-    icon="fr-icon-link"
+    icon="fr-icon-links-line"
     @click="copyUrl"
   />
 </template>
 <script setup lang="ts">
 interface Props {
   size?: 'sm' | 'md' | 'lg'
-  noOutline?: boolean
+  noOutline: boolean
   tertiary?: boolean
   copyClass?: string
   textClass?: string
@@ -21,7 +21,7 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   size: 'sm',
   noOutline: false,
-  tertiary: false,
+  tertiary: true,
   copyClass: 'fr-bg--green',
   textClass: ''
 })
