@@ -87,9 +87,7 @@
     "externalLink": "https://www.occitanie.cci.fr/actualite/la-grandeur-retrouvee-du-domaine-de-camboyer",
     "homePageHighlight": null,
     "projects": [
-      138,
-      144,
-      929
+      144
     ]
   },
   {
@@ -125,6 +123,21 @@
     ]
   },
   {
+    "slug": "dechets-vinea-energie",
+    "verbatim": "Avant, les déchets de vigne étaient brûlés à l’air libre, libérant particules fines et gaz à effet de serre. Avec l’appui de l’ADEME, nous avons développé une solution de collecte et de revalorisation pour **décarboner la filière viticole.**",
+    "companyName": "Vinea Énergie",
+    "authorName": "Alice SHAW et Romain GUILLAUMENT",
+    "authorFunction": "cofondateurs de Vinea Énergie",
+    "authorImage": "/images/testimony/vinea-png.webp",
+    "authorImageAttributes": "Photo de Alice SHAW, Romain GUILLAUMENT, co-fondateurs de Vinea Énergie, engagée dans la transition écologique",
+    "externalLink": "https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=5248&preview",
+    "homePageHighlight": null,
+    "projects": [
+      1,
+      21
+    ]
+  },
+  {
     "slug": "tremplin-les-delices-de-louison",
     "verbatim": "Grâce à l'aide de l'ADEME, notre boulangerie a investi pour une production durable : éclairage LED, froid économe, récupération d’eau, tri et compostage des biodéchets, réduction des emballages, récupération de chaleur fatale… et **visons -50 % d’émissions de CO₂ d’ici 2030.**",
     "companyName": "Les Délices de Louison",
@@ -137,6 +150,7 @@
     "projects": [
       2,
       3,
+      9,
       23,
       24,
       31,
@@ -204,6 +218,49 @@
       26,
       35,
       143
+    ]
+  },
+  {
+    "slug": "heppner-cyclologistique",
+    "verbatim": "Nous livrons déjà **18 villes en cyclo-logistique**, alliant zéro émission et respect strict des zones urbaines sensibles. Les vélos-cargos sont une réponse concrète aux défis du **dernier kilomètre**, pour des centres-villes plus apaisés et une logistique durable.",
+    "companyName": "Heppner",
+    "authorName": "Noémie FELDBAUER",
+    "authorFunction": "Directrice de la transition energétique chez Heppner",
+    "authorImage": "/images/testimony/noemie-feldbauer-jpg.webp",
+    "authorImageAttributes": "Noémie FELDBAUER, Directrice de la transition energétique chez Heppner",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      863
+    ]
+  },
+  {
+    "slug": "heppner-report-modal",
+    "verbatim": "Heppner participe au programme REMOVE de l’ADEME pour évaluer le **potentiel du fret ferroviaire et fluvial sur nos flux longue distance réguliers**. Notre ambition : développer ces solutions multimodales qui décarbonent jusqu’à 95 % le transport comparé à la route !",
+    "companyName": "Heppner",
+    "authorName": "Noémie FELDBAUER",
+    "authorFunction": "Directrice de la transition énergétique chez Heppner",
+    "authorImage": "/images/testimony/noemie-feldbauer-jpg.webp",
+    "authorImageAttributes": "Noémie FELDBAUER, Directrice de la transition énergétique chez Heppner",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      731,
+      995
+    ]
+  },
+  {
+    "slug": "heppner-poidslourds",
+    "verbatim": "Depuis 2019, chez Heppner, nous diversifions le mix énergétique de notre flotte. Aujourd’hui, **67 % de nos poids lourds roulent aux énergies alternatives**, et d’ici la fin de l'année, nous intégrerons **18 poids lourds électriques** supplémentaires.",
+    "companyName": "Heppner",
+    "authorName": "Noémie FELDBAUER",
+    "authorFunction": "directrice de la transition énergétique chez Heppner",
+    "authorImage": "/images/testimony/noemie-feldbauer-jpg.webp",
+    "authorImageAttributes": "Noémie FELDBAUER, directrice de la transition énergétique chez Heppner",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      998
     ]
   }
 ]

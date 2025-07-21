@@ -20,7 +20,7 @@ export class TestimonyBaserow extends AbstractBaserow {
     const baserowTestimonies = await this._getTableData<BaserowTestimony>(this._testimoniesTableId)
     const testimonies = await Promise.all(
       baserowTestimonies
-        .filter((baserowTestimony) => baserowTestimony.Statut.value.includes('validé'))
+        .filter((baserowTestimony) => baserowTestimony.Statut.value.includes('En prod'))
         .map((baserowTestimony) => this._convertToDomain(baserowTestimony))
     )
     this._imageDownloader.cleanup()
