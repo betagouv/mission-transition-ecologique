@@ -142,8 +142,21 @@ export default class Navigation {
   getHrefByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {
     if (this._router) {
       const href = this._router.resolve({ name: routeName, params: params }).href
-      return Config.baseUrl ? `${Config.baseUrl}${href}` : href
+      return this.baseUrl ? `${this.baseUrl}${href}` : href
     }
+  }
+
+  get baseUrl() {
+    const baseUrl = Config.baseUrl
+    if (baseUrl) {
+      return baseUrl
+    }
+
+    if (import.meta.client) {
+      return window.location.origin
+    }
+
+    return undefined
   }
 
   static getClassesBySideMenu(hasSideMenu: boolean) {
