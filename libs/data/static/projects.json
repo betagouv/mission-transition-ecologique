@@ -140,7 +140,7 @@
     "shortDescription": "L’énergie solaire photovoltaïque transforme le rayonnement solaire en électricité.",
     "image": "/images/projet/panneaux-solaires.webp",
     "longDescription": "Les panneaux solaires produisent de l'électricité grâce au rayonnement du soleil.\\\nPosés sur une toiture, au sol ou sur une terrasse, les capteurs peuvent être également intégrés à votre bâtiment, sous forme d'ardoises, de tuiles ou d'éléments de façades.\\\nL’électricité produite peut être utilisée sur place (autoconsommation) ou réinjectée dans le réseau de distribution électrique.\\\nL'installation de panneaux solaires vous permet donc de faire des économies et de réduire l'empreinte écologique de votre entreprise.",
-    "moreDescription": "- [**Le Centre de ressources Photovoltaïque**](https://www.photovoltaique.info/fr/) : un site ressource sur le Photovoltaïque crée avec le soutient de l’ADEME.\n- [**La marque AQPV**](https://www.aqpv.fr/) (Alliance Qualité Photovoltaïque) : lancée par l'État, cette marque rassemble tous les modules photovoltaïques afin d'assurer une performance et une fiabilité maximale en termes de conception, installation, opération et maintenance.\n- **L'électricité photovoltaïque en 10 questions,** un livret proposé par l'ADEME.\n- [**Qualit’EnR**](https://www.qualit-enr.org/), un annuaire de professionnels RGE qualifiés pour votre projet de construction ou de rénovation énergétique.",
+    "moreDescription": "- [**Le Centre de ressources Photovoltaïque**](https://www.photovoltaique.info/fr/) : un site ressource sur le Photovoltaïque crée avec le soutient de l’ADEME.\n- [**La marque AQPV**](https://www.aqpv.fr/) (Alliance Qualité Photovoltaïque) : lancée par l'État, cette marque rassemble tous les modules photovoltaïques afin d'assurer une performance et une fiabilité maximale en termes de conception, installation, opération et maintenance.\n- [**L'électricité photovoltaïque en 10 questions**](https://librairie.ademe.fr/batiment/7545-l-electricite-photovoltaique-en-10-questions-9791029721465.html)**,** un livret proposé par l'ADEME.\n- [**Qualit’EnR**](https://www.qualit-enr.org/), un annuaire de professionnels RGE qualifiés pour votre projet de construction ou de rénovation énergétique.",
     "themes": [
       "energy"
     ],
@@ -1286,7 +1286,7 @@
       31
     ],
     "priority": "60",
-    "highlightPriority": "9",
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -2885,7 +2885,7 @@
     "shortDescription": "Les sols drainants permettent l'infiltration de l'eau de pluie et un meilleur rafraichissement.",
     "image": "/images/projet/revetement-permeable.webp",
     "longDescription": "Face aux canicules et au risque d'inondation, désimperméabiliser les revêtements de vos espaces extérieurs (cours, parking...) peut jouer un rôle majeur à la fois :\n\n- pour permettre l'infiltration de l'eau de pluie, la réduction des inondations et la recharge des nappes phréatiques ;\n\n- et pour diminuer l'effet d'îlot de chaleur urbain (où la chaleur est absorbée et réémise). Vous créez ainsi des espaces végétalisés jouant un rôle capital dans le refroidissement de l'air par évapotranspiration.\n\nPavés poreux, béton drainant, structure en nid d'abeille, gravier stabilisé... il existe divers solutions de revêtements perméables qui peuvent s'adapter à vos usages et vos objectifs. De couleur claire, ils reflèteront davantage la chaleur. Végétalisés, les revêtements permettront l'évaporation de l'eau. Ce type de revêtement peut vous permettre de diminuer la température de surface de 6°C en journée et ainsi d'augmenter significativement le confort de vos équipes et de votre clientèle.",
-    "moreDescription": "- [**Désimperméabiliser les villes**](https://github.com/betagouv/mission-transition-ecologique/issues/1998). Un guide opérationnel pour (re)découvrir les sols urbains, par l'ADEME. \n- [**Désimperméabilisation et renaturation des sols**](https://www.cerema.fr/fr/actualites/desimpermeabilisation-renaturation-sols-serie-fiches-du) : une série de fiches du Cerema.",
+    "moreDescription": "- [**Désimperméabiliser les villes**](https://librairie.ademe.fr/urbanisme-territoires-et-sols/8132-desimpermeabiliser-les-villes-guide-operationnel-pour-redecouvrir-les-sols-urbains.html). Un guide opérationnel pour (re)découvrir les sols urbains, par l'ADEME.\n- [**Désimperméabilisation et renaturation des sols**](https://www.cerema.fr/fr/actualites/desimpermeabilisation-renaturation-sols-serie-fiches-du) : une série de fiches du Cerema.",
     "themes": [
       "building",
       "biodiversite"
@@ -3003,7 +3003,7 @@
       21
     ],
     "priority": "905",
-    "highlightPriority": "6",
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
