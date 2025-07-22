@@ -3007,9 +3007,7 @@
     "sectors": [
       "A",
       "B",
-      "C",
-      "D",
-      "F"
+      "D"
     ]
   },
   {
@@ -3203,7 +3201,9 @@
       "A",
       "B",
       "C",
-      "F"
+      "E",
+      "F",
+      "G"
     ]
   },
   {
@@ -3298,9 +3298,6 @@
     "highlightPriority": null,
     "sectors": [
       "B",
-      "C",
-      "D",
-      "F",
       "H"
     ]
   },
@@ -3361,8 +3358,6 @@
     "priority": "230",
     "highlightPriority": null,
     "sectors": [
-      "A",
-      "F",
       "G",
       "H"
     ]
@@ -3528,8 +3523,6 @@
     "priority": "253",
     "highlightPriority": null,
     "sectors": [
-      "C",
-      "G",
       "H"
     ]
   },
@@ -3592,9 +3585,6 @@
     "highlightPriority": null,
     "sectors": [
       "B",
-      "C",
-      "E",
-      "G",
       "H"
     ]
   },
@@ -3621,9 +3611,6 @@
     "priority": "260",
     "highlightPriority": null,
     "sectors": [
-      "C",
-      "E",
-      "G",
       "H"
     ]
   },
