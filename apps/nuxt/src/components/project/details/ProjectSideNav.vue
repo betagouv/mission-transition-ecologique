@@ -7,7 +7,8 @@
       v-for="item in menuItems"
       :key="item.id"
       :href="`#${item.to}`"
-      class="fr-sidemenu__link"
+      class="fr-pl-4v"
+      :class="[item.class ? item.class : 'fr-sidemenu__link', item.icon ? 'fr-btn--icon-left ' + item.icon : '']"
       @click.prevent="scrollTo(item.to)"
     >
       {{ item.text }}
@@ -58,7 +59,14 @@ const allMenuItems = computed(() => [
     condition: props.project.moreDescription.length > 0
   },
   { id: 'aids', to: `project-aids-title`, text: 'Mes aides', condition: props.project.programs.length > 0 || isDataFull.value },
-  { id: 'contact', to: `form-title`, text: 'Contact', condition: props.project.programs.length > 0 || isDataFull.value },
+  {
+    id: 'contact',
+    to: `form-title`,
+    text: 'Contact',
+    condition: props.project.programs.length > 0 || isDataFull.value,
+    class: 'fr-btn fr-radius-a--2v fr-text--white',
+    icon: 'fr-icon-mail-line'
+  },
   {
     id: 'linked-testimonies',
     to: `project-testimonies-title`,
