@@ -87,7 +87,9 @@
     "997": "plan-action-logistique",
     "998": "vehicules-lourds-propres",
     "1028": "achats-responsables",
-    "1127": "nettoyage-sans-produits-chimiques"
+    "1127": "nettoyage-sans-produits-chimiques",
+    "1160": "fours-industriels-electriques",
+    "1193": "isolation-thermique-equipements-industriels"
   },
   "program_rowid_to_url_mapping": {
     "1": "accelerateur-decarbonation",
