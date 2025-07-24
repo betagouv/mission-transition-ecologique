@@ -1,18 +1,17 @@
-export type DemandsAtTime = {
-  year: number
-  month: number
-  nDemands: number
+export type StatsPeriodicity = 'day' | 'week' | 'month' | 'year'
+
+export interface StatQueryParams {
+  periodicity?: StatsPeriodicity
+  since?: string
+  to?: string
 }
 
-export interface ProgramStats {
-  countProgramsTotal: number | null
-  countProgramsNow: number | null
+export interface Stat {
+  value: number
+  date: string
 }
 
-export interface OpportunityStats {
-  countOpportunitiesTotal: number | null
-  countOpportunities30Days: number | null
-  demandsTimeSeries: DemandsAtTime[]
+export interface StatOutput {
+  description?: string
+  stats: Stat[]
 }
-
-export type StatsData = ProgramStats & OpportunityStats
