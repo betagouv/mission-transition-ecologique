@@ -1,0 +1,75 @@
+titre: Formation Défendre un projet
+promesse: >-
+  Renforcez votre argumentaire pour donner plus d'impact à votre projet
+  d'efficacité énergétique.
+description: "Suivez une formation en ligne pour apprendre à défendre votre projet d’économie d’énergie et de décarbonation.\n\nApprenez, à travers une formation en e-learning à :\n\n- Structurer\_un pitch convaincant sur votre projet ;\n\n- Perfectionner\_vos compétences en communication verbale et non verbale ;\n\n- Anticiper et répondre aux objections ;\n\n- Recevoir et intégrer des feedbacks constructifs."
+fin de validité: 31/12/2025
+illustration: images/TEE_ampoule.png
+opérateur de contact: ADEME
+contact question: https://formations.ademe.fr/contactez-nous.html
+url: >-
+  https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_convaincre-et-argumenter-un-projet-d-efficacite-energetique-et-de-decarbonation-:-e-learning_s5356.html
+nature de l'aide: formation
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 3h
+objectifs:
+  - description: Prenez connaissance du programme de la formation.
+    liens:
+      - lien: >-
+          https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_convaincre-et-argumenter-un-projet-d-efficacite-energetique-et-de-decarbonation-:-e-learning_s5356.html
+        texte: Consulter le programme
+  - description: >-
+      Inscrivez-vous sur la plateforme ADEME Formations. Vous pouvez ajouter
+      plusieurs participants.
+    liens:
+      - lien: >-
+          https://formations.ademe.fr/solutions/beforeregister.php?sessionid=9628
+        texte: formations.ademe.fr
+  - description: >-
+      Obtenez le lien de la formation à réaliser en ligne en toute autonomie à
+      l'aide de vidéos et de quizz.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter

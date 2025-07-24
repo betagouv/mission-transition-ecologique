@@ -10,10 +10,10 @@ url: https://guide-aides.hautsdefrance.fr/dispositif1045
 nature de l'aide: étude
 montant du financement: 50% du coût de l'accompagnement, jusqu'à 10 000 € HT.
 objectifs:
-  - description: "oisissez le prestataire\_rev3 qui vous accompagnera :"
+  - description: "Choisissez le prestataire\_rev3 qui vous accompagnera. "
     liens:
       - lien: mailto:BTR3@hautsdefrance.fr
-        texte: BTR3@hautsdefrance.fr
+        texte: Faire la demande
   - description: Créez un compte sur la Plateforme régionale des aides et des subventions.
     liens:
       - lien: https://aides.hautsdefrance.fr/sub/tiers/inscription
