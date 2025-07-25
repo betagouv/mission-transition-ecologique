@@ -1572,7 +1572,10 @@
       "mobilipro",
       "diag-biodiversite",
       "impact-co2",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "formation-convaincre-et-argumenter",
+      "formation-communiquer-et-sensibiliser",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [],
     "priority": "20",
@@ -1686,7 +1689,10 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "aide-tpe-transition-na",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "formation-convaincre-et-argumenter",
+      "formation-communiquer-et-sensibiliser",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [
       26
@@ -1981,7 +1987,8 @@
       "aide-tourisme-guadeloupe",
       "fasep",
       "aide-investissement-librairie",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [
       26,
@@ -2867,7 +2874,10 @@
       "formation-engager-entreprise-transition-ecologique",
       "formation-artisan-developpement-durable",
       "cci-business-optimizer",
-      "ecogestes-paca"
+      "ecogestes-paca",
+      "formation-convaincre-et-argumenter",
+      "formation-communiquer-et-sensibiliser",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [
       26
@@ -3623,7 +3633,7 @@
     "shortDescription": "Intégrer des critères environnementaux, sociaux et éthiques dans les achats de votre entreprise.",
     "image": "/images/projet/achats-responsables.webp",
     "longDescription": "Une politique d’achats responsables vise à limiter les impacts négatifs de vos achats sur l’environnement et la société, tout en garantissant la performance de votre entreprise. Cela signifie choisir vos fournisseurs et produits en fonction de critères durables : impact carbone, conditions sociales de fabrication, durabilité des matériaux, etc. Vous pouvez ainsi privilégier des produits locaux, reconditionnés ou issus de l’économie circulaire, mais aussi intégrer des clauses RSE dans vos contrats. Ces pratiques vous permettent de mieux maîtriser vos risques, d’anticiper les nouvelles réglementations comme la directive CSRD, et de renforcer la crédibilité de votre démarche RSE. C’est une approche progressive, accessible à toutes les entreprises, même petites, avec des gains concrets à la clé : coûts optimisés, image renforcée, conformité assurée.",
-    "moreDescription": "- [**Comment mettre en place une politique d’achats responsables dans votre entreprise ?**](https://bigmedia.bpifrance.fr/nos-dossiers/comment-mettre-en-place-une-politique-dachats-responsables-dans-votre-entreprise?) (Bpifrance)\n\n- [**Comment veiller au respect des droits de l’Homme au travail dans les chaînes d’approvisionnement ?**](https://www.economie.gouv.fr/files/files/directions_services/dae/doc/AR_guide_thematique_DH_VF.pdf?) (DAE)\n\n- [**Découvrez l'ISO 20400**](https://www.iso.org/files/live/sites/isoorg/files/store/fr/ISO%2020400_Sustainable_procur.pdf), la norme internationale sur les achats responsables.\n\n- [**Les fiches-outils \"achats éco-responsables**](https://www.economie.gouv.fr/dae/publications-et-textes/fiches-outils-achats-eco-responsables)\" pour vous aider à structurer vos critères de choix de fournisseurs par typologie d'achat. (DAE)\n\n- [**Toolbox achats responsables**](https://www.woeb.swiss/images/dokumente/PDF/FR/Toolbox_B-Outils_et_methodes_pour_evaluer_limpact_FR_13.09.2021.pdf)**,** un guide qui propose des méthodes pour évaluer l'impact des fournisseurs (OFEV)",
+    "moreDescription": "- [**Comment mettre en place une politique d’achats responsables dans votre entreprise ?**](https://bigmedia.bpifrance.fr/nos-dossiers/comment-mettre-en-place-une-politique-dachats-responsables-dans-votre-entreprise?) (Bpifrance)\n\n- [**Comment veiller au respect des droits de l’Homme au travail dans les chaînes d’approvisionnement ?**](https://www.economie.gouv.fr/files/files/directions_services/dae/doc/AR_guide_thematique_DH_VF.pdf?) (DAE)\n\n- [**Découvrez l'ISO 20400**](https://www.iso.org/files/live/sites/isoorg/files/store/fr/ISO%2020400_Sustainable_procur.pdf), la norme internationale sur les achats responsables.\n\n- [**Les fiches-outils \"achats éco-responsables**](https://www.economie.gouv.fr/dae/publications-et-textes/fiches-outils-achats-eco-responsables)\" pour vous aider à structurer vos critères de choix de fournisseurs par typologie d'achat. (DAE)",
     "themes": [
       "rh",
       "eco-design"
