@@ -22,6 +22,7 @@
     "start": "node apps/nuxt/.output/server/index.mjs --port $PORT",
     "build:etl": "nx run @tee/etl:build-docker",
     "build:start": "npm run build && npm run start",
+    "update:trainings": "nx run @tee/data:update-trainings",
     "generate:programs": "nx run @tee/data:generate-programs",
     "generate:projects": "nx run @tee/data:generate-projects",
     "generate:testimonies": "nx run @tee/data:generate-testimonies",
@@ -84,6 +85,7 @@
     "vite": "^5.0.0",
     "vue": "^3.5.11",
     "vue-router": "^4.3.3",
+    "xml2js": "^0.6.2",
     "zod": "^3.24.1"
   },
   "devDependencies": {

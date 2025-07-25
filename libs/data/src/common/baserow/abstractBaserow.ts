@@ -73,4 +73,20 @@ export abstract class AbstractBaserow {
     }
     throw Error('Baserow token not found.')
   }
+
+  protected async _patchRow(tableId: number, rowId: number, data: Record<string, any>): Promise<void> {
+    try {
+      await axios.patch(`${this._baseUrl}/database/rows/table/${tableId}/${rowId}/?user_field_names=true`, data, this._axiosHeader)
+    } catch (error) {
+      console.error(`Error patching row ${rowId} in table ${tableId}:`, error)
+    }
+  }
+
+  protected async _createRow(tableId: number, data: Record<string, any>): Promise<void> {
+    try {
+      await axios.post(`${this._baseUrl}/database/rows/table/${tableId}/?user_field_names=true`, data, this._axiosHeader)
+    } catch (error) {
+      console.error(`Error creating row in table ${tableId}:`, error)
+    }
+  }
 }

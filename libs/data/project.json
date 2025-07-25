@@ -31,6 +31,15 @@
         ]
       }
     },
+    "update-trainings": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/updateBaserowTrainings.ts"
+        ]
+      }
+    },
     "generate-programs": {
       "executor": "nx:run-commands",
       "options": {
