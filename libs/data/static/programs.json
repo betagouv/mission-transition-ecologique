@@ -1561,8 +1561,8 @@
         "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation du CNL ou en contactant un conseiller.",
         "liens": [
           {
-            "lien": "<https://centrenationaldulivre.fr/aides-financement/aide-a-l-investissement-aux-librairies-francaises>",
-            "texte": "Critères d'éligibilité\\"
+            "lien": "https://centrenationaldulivre.fr/aides-financement/aide-a-l-investissement-aux-librairies-francaises",
+            "texte": "Voir les critères d'éligibilité"
           }
         ]
       },
@@ -4892,11 +4892,11 @@
     "montant du financement": "50% du coût de l'accompagnement, jusqu'à 10 000 € HT.",
     "objectifs": [
       {
-        "description": "oisissez le prestataire rev3 qui vous accompagnera :",
+        "description": "Choisissez le prestataire rev3 qui vous accompagnera. ",
         "liens": [
           {
             "lien": "mailto:BTR3@hautsdefrance.fr",
-            "texte": "BTR3@hautsdefrance.fr"
+            "texte": "Faire la demande"
           }
         ]
       },
@@ -5507,7 +5507,7 @@
         "liens": [
           {
             "lien": "https://www.centre-valdeloire.fr/le-guide-des-aides-de-la-region-centre-val-de-loire/cap-te-transition-ecologique",
-            "texte": "Les contacts des conseillers de la Région"
+            "texte": "Prendre contact"
           }
         ]
       },
@@ -19622,6 +19622,372 @@
     "id": "formation-artisan-developpement-durable"
   },
   {
+    "titre": "Formation Communication Décarbonation",
+    "promesse": "Formez vos équipes pour communiquer efficacement sur la décarbonation et les économies d'énergie.",
+    "description": "Suivez une formation en ligne pour comprendre les fondamentaux d'une communication efficace autour d'un projet de décarbonation et d'économies d'énergie, au sein de votre entreprise. Ainsi, vous apprenez à :\n\n- Planifier votre stratégie de communication ;\n\n- Planifier une campagne de sensibilisation ;\n\n- Concevoir vos supports de communication.",
+    "fin de validité": "31/12/2025",
+    "illustration": "images/TEE_ampoule.png",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://formations.ademe.fr/contactez-nous.html",
+    "url": "https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_communiquer-et-sensibiliser-sur-l-economie-d-energie-et-la-decarbonation-dans-son-entreprise_s5357.html",
+    "nature de l'aide": "formation",
+    "coût de l'accompagnement": "Gratuit",
+    "durée de l'accompagnement": "3h",
+    "objectifs": [
+      {
+        "description": "Prenez connaissance du programme de la formation.",
+        "liens": [
+          {
+            "lien": "https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_communiquer-et-sensibiliser-sur-l-economie-d-energie-et-la-decarbonation-dans-son-entreprise_s5357.html",
+            "texte": "Consulter le programme"
+          }
+        ]
+      },
+      {
+        "description": "Inscrivez-vous sur la plateforme ADEME Formations. Vous pouvez ajouter plusieurs participants.",
+        "liens": [
+          {
+            "lien": "https://formations.ademe.fr/solutions/beforeregister.php?sessionid=9629",
+            "texte": "formations.ademe.fr"
+          }
+        ]
+      },
+      {
+        "description": "Obtenez le lien de la formation à réaliser en ligne en toute autonomie à l'aide de vidéos et de quizz."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter"
+        ]
+      }
+    },
+    "id": "formation-communiquer-et-sensibiliser"
+  },
+  {
+    "titre": "Formation Défendre un projet",
+    "promesse": "Renforcez votre argumentaire pour donner plus d'impact à votre projet d'efficacité énergétique.",
+    "description": "Suivez une formation en ligne pour apprendre à défendre votre projet d’économie d’énergie et de décarbonation.\n\nApprenez, à travers une formation en e-learning à :\n\n- Structurer un pitch convaincant sur votre projet ;\n\n- Perfectionner vos compétences en communication verbale et non verbale ;\n\n- Anticiper et répondre aux objections ;\n\n- Recevoir et intégrer des feedbacks constructifs.",
+    "fin de validité": "31/12/2025",
+    "illustration": "images/TEE_ampoule.png",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://formations.ademe.fr/contactez-nous.html",
+    "url": "https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_convaincre-et-argumenter-un-projet-d-efficacite-energetique-et-de-decarbonation-:-e-learning_s5356.html",
+    "nature de l'aide": "formation",
+    "coût de l'accompagnement": "Gratuit",
+    "durée de l'accompagnement": "3h",
+    "objectifs": [
+      {
+        "description": "Prenez connaissance du programme de la formation.",
+        "liens": [
+          {
+            "lien": "https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_convaincre-et-argumenter-un-projet-d-efficacite-energetique-et-de-decarbonation-:-e-learning_s5356.html",
+            "texte": "Consulter le programme"
+          }
+        ]
+      },
+      {
+        "description": "Inscrivez-vous sur la plateforme ADEME Formations. Vous pouvez ajouter plusieurs participants.",
+        "liens": [
+          {
+            "lien": "https://formations.ademe.fr/solutions/beforeregister.php?sessionid=9628",
+            "texte": "formations.ademe.fr"
+          }
+        ]
+      },
+      {
+        "description": "Obtenez le lien de la formation à réaliser en ligne en toute autonomie à l'aide de vidéos et de quizz."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter"
+        ]
+      }
+    },
+    "id": "formation-convaincre-et-argumenter"
+  },
+  {
     "titre": "Formation ADEME",
     "promesse": "Réalisez une initiation aux enjeux de la transition écologique",
     "description": "Suivez une formation en ligne pour initier la transition écologique de votre entreprise. Vous découvrirez les principales transformations de la société, de l'économie, des territoires et les enjeux de la transition écologique pour les entreprises. Puis en seconde partie, vous serez invité à identifier les risques et les opportunités pour votre entreprise ainsi que les premiers leviers d’action pour se mettre en mouvement.",
@@ -29088,6 +29454,189 @@
       }
     },
     "id": "ormat"
+  },
+  {
+    "titre": "Formation Outils pour l'adaptation",
+    "promesse": "Formez-vous aux principaux enjeux de l'adaptation au dérèglement climatique.",
+    "description": "Suivez une formation en ligne pour acquérir les notions de base sur l'adaptation aux changements climatiques. \n\nAu cours de cette formation, vous apprendrez notamment à :\n\n- Diagnostiquer les impacts de votre entreprise au changement climatique ;\n- Construire des stratégies à mettre en place ;\n- Évaluer les actions ;\n- Découvrir des exemples vertueux d'actions d'adaptation.",
+    "fin de validité": "31/12/2025",
+    "illustration": "images/TEE_energie_verte.png",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://formations.ademe.fr/contactez-nous.html",
+    "url": "https://formations.ademe.fr/formations_changement-climatique_adapter-son-territoire-au-changement-climatique---outils-et-methodes-pour-l-adaptation_s5343.html",
+    "nature de l'aide": "formation",
+    "coût de l'accompagnement": "Gratuit",
+    "durée de l'accompagnement": "3h",
+    "objectifs": [
+      {
+        "description": "Prenez connaissance du programme de la formation.",
+        "liens": [
+          {
+            "lien": "https://formations.ademe.fr/formations_changement-climatique_adapter-son-territoire-au-changement-climatique---outils-et-methodes-pour-l-adaptation_s5343.html",
+            "texte": "consulter le programme"
+          }
+        ]
+      },
+      {
+        "description": "Inscrivez-vous sur la plateforme ADEME Formations. Vous pouvez ajouter plusieurs participants.",
+        "liens": [
+          {
+            "lien": "https://formations.ademe.fr/solutions/beforeregister.php?sessionid=9691",
+            "texte": "formations.ademe.fr"
+          }
+        ]
+      },
+      {
+        "description": "Obtenez le lien de la formation à réaliser en ligne en toute autonomie à l'aide de vidéos et de quizz."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d’activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter"
+        ]
+      }
+    },
+    "id": "outils-pour-adaptation"
   },
   {
     "titre": "PACTE Industrie",

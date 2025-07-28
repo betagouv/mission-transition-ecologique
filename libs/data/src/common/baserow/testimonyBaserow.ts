@@ -9,7 +9,6 @@ export class TestimonyBaserow extends AbstractBaserow {
   private readonly _logPath: string = path.join(this.__dirname, '../../../static/testimony_images_download_info.json')
   private _imageDownloader: ImageBaserow
   private readonly _imagePath = '/images/testimony/'
-  private readonly _defaultImageName = '/images/logos/mission-transition-logo-alone.png'
 
   constructor(imageDirectory: string) {
     super()
@@ -29,12 +28,11 @@ export class TestimonyBaserow extends AbstractBaserow {
 
   private async _convertToDomain(baserowTestimony: BaserowTestimony): Promise<Testimony> {
     const maybeImageName = await this._imageDownloader.handleDirectImage(baserowTestimony.Photo)
-    let imageName
-    if (maybeImageName.isErr) {
-      imageName = this._defaultImageName
-    } else {
+    let imageName: string | undefined = undefined
+    if (!maybeImageName.isErr) {
       imageName = this._imagePath + maybeImageName.value
     }
+
     return {
       slug: baserowTestimony['Id fiche témoignage'],
       verbatim: baserowTestimony.Verbatim,

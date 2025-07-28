@@ -17,12 +17,9 @@
           <cite>{{ testimony.authorFunction }}</cite>
         </li>
       </ul>
-      <div
-        v-if="testimony.authorImage"
-        class="fr-quote__image"
-      >
+      <div class="fr-quote__image">
         <img
-          :src="testimony.authorImage"
+          :src="testimony.authorImage ? img(testimony.authorImage, { width: 184, quality: 70, loading: 'lazy' }) : Identity.logoPath"
           class="fr-responsive-img"
           alt=""
         />
@@ -65,6 +62,8 @@
 </template>
 
 <script lang="ts" setup>
+import { Identity } from '@/tools/Identity'
+import { Image } from '@/tools/image'
 import { Marked } from '@/tools/marked'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { ProjectType, Color, Testimony } from '@/types'
@@ -83,6 +82,8 @@ onNuxtReady(async () => {
   const shuffled = allLinkedProjectsTags.sort(() => 0.5 - Math.random())
   linkedProjectsTags.value = shuffled.slice(0, 3)
 })
+
+const img = Image.getUrl
 </script>
 
 <style lang="scss">

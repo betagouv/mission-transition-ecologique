@@ -162,14 +162,16 @@ definePageMeta({
 const navigation = new Navigation()
 const budgetChartCanvas = ref<HTMLCanvasElement | null>(null)
 
-const budgetLabels = ['Design', 'Développement et Data engineering', 'Pilotage', 'Coaching', 'BizDev']
+const budgetLabels = ['Design', 'Développement et Data engineering', 'Pilotage', 'Coaching', 'BizDev', 'Frais annexes']
 const budgetData = {
-  2023: [83194, 164674, 154627, 48600, 10819],
-  2024: [152552.4, 439117.59, 192628.8, 61862.4, 172558.18]
+  2023: [83194, 164674, 154627, 48600, 10819, 0],
+  2024: [157685, 444292, 191755, 65230, 183402, 3764],
+  2025: [141960, 301069, 177341, 60264, 216129, 10764]
 }
 const yearsLabels = {
   2023: 2023,
-  2024: '2024 (Prévisionnel)'
+  2024: 2024,
+  2025: '2025 (Prévisionnel)'
 }
 const yearlyTotals = computed(() => {
   return Object.entries(budgetData).reduce(
