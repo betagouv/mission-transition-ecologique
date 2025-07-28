@@ -22,7 +22,7 @@ export default class StatisticsFeatures {
     const since = params.since ?? new Date(today.getFullYear(), 0, 1)
     const to = params.to ?? new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1)
 
-    const filtered = data
+    const filteredData = data
       .map((datum) => ({
         date: new Date(datum.week_start_date), // week_start_date is a metabase variable that is poorly named and that is simply the statistic date
         value: datum.total_2_3
@@ -33,7 +33,7 @@ export default class StatisticsFeatures {
 
     const statsByPeriodicity: Record<string, Stat> = {}
 
-    filtered.forEach(({ date, value }) => {
+    filteredData.forEach(({ date, value }) => {
       let keyStatDate = today
 
       switch (periodicity) {
