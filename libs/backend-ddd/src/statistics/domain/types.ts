@@ -1,9 +1,14 @@
-export type StatsPeriodicity = 'day' | 'week' | 'month' | 'year'
+export enum StatsPeriodicity {
+  Day = 'day',
+  Week = 'week',
+  Month = 'month',
+  Year = 'year'
+}
 
 export interface StatQueryParams {
   periodicity?: StatsPeriodicity
-  since?: string
-  to?: string
+  since?: Date
+  to?: Date
 }
 
 export interface Stat {

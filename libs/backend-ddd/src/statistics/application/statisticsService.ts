@@ -1,5 +1,5 @@
-import { StatOutput, StatQueryParams } from '@tee/common'
 import StatisticsFeatures from '../domain/statisticsFeatures'
+import { StatOutput, StatQueryParams } from '../domain/types'
 
 export class StatisticsService {
   public async getNorthStarStats(params: StatQueryParams): Promise<StatOutput> {
