@@ -28,7 +28,7 @@ export class TrainingBaserow extends AbstractBaserow {
       Tarif: training.Tarif_net_de_taxes,
       Durée: training.Durée_totale_en_heures,
       'Nombre de jours': training.Nombre_de_jours_de_formation,
-      'Nombre de sessions à venir': training.session ? training.session.length : 0,
+      'Nombre de sessions à venir': Array.isArray(training.session) ? training.session.length : training.session ? 1 : 0,
       'Nombre de participants par session':
         'De ' + training.Nombre_de_participants_minimum + ' à ' + training.Nombre_de_participants_maximum
     }
