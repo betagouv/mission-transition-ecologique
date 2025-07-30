@@ -1,4 +1,4 @@
-import { ThemeId } from '../../theme/types/shared'
+import { ThemeId } from '@tee/common'
 import type { Dispositif as ProgramWithoutId } from './program'
 
 export enum ProgramAidType {

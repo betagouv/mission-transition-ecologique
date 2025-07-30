@@ -79,7 +79,7 @@ import { useNavigationStore } from '@/stores/navigation'
 import { FaqPage } from '@/tools/faq/faqType'
 import Navigation from '@/tools/navigation'
 import { Theme } from '@/tools/theme'
-import { ThemeId } from '@tee/data'
+import { ThemeId } from '@/types'
 import { computed } from 'vue'
 
 interface Props {
