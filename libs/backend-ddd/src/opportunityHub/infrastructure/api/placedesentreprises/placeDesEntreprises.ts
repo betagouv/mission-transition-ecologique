@@ -32,10 +32,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return new Error('Operator List non valid for Place des entreprises')
   }
 
-  override support = (opportunityData: OpportunityAssociatedData) => {
-    if (opportunityData.isProgram()) {
-      return !opportunityData.data['activable en autonomie']
-    }
+  override support = (_opportunityData: OpportunityAssociatedData) => {
     return true
   }
 

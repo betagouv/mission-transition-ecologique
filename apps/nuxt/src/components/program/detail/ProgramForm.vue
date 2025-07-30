@@ -6,7 +6,7 @@
     <TeeForm
       v-if="form"
       :data-id="currentProgram.id"
-      :show-c-e-logo="!isProgramAutonomous"
+      :show-c-e-logo="true"
       :phone-callback="phoneCallback"
       :form="form"
       :form-type="OpportunityType.Program"
@@ -22,7 +22,6 @@ import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useProgramStore } from '@/stores/program'
 import Opportunity from '@/tools/opportunity'
-import Program from '@/tools/program/program'
 import Translation from '@/tools/translation'
 import { OpportunityType } from '@/types'
 
@@ -33,10 +32,6 @@ defineProps<Props>()
 
 const { currentProgram } = storeToRefs(useProgramStore())
 
-const isProgramAutonomous = computed(() => {
-  return Program.isProgramAutonomous(currentProgram.value)
-})
-
 const form = computed(() => {
   if (!currentProgram.value) {
     return undefined
@@ -45,13 +40,7 @@ const form = computed(() => {
   return Opportunity.getProgramFormFields(currentProgram.value)
 })
 
-const phoneCallback = computed(() =>
-  isProgramAutonomous.value
-    ? Translation.t('form.phoneContactAutonomy', {
-        operator: currentProgram.value?.['opérateur de contact']
-      })
-    : Translation.t('form.phoneContactCE')
-)
+const phoneCallback = computed(() => Translation.t('form.phoneContactCE'))
 
 const errorEmailSubject = computed(() =>
   Translation.t('program.form.errorEmail.subject', {
