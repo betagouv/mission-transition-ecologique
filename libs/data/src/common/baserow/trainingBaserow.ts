@@ -18,7 +18,19 @@ export class TrainingBaserow extends AbstractBaserow {
       Titre: training.Libellé_de_la_formation,
       Promesse: training.Chapeau_pour_site_web,
       'Url ADEME': training.Lien_URL_vers_la_fiche_programme,
-      Objectifs: training.Objectifs_de_la_formation
+      Objectifs: training.Objectifs_de_la_formation,
+      Thématique: training.Thème._,
+      Modalité: training.Modalité_de_dispense._ + '  |  ' + training.Modalités_et_moyens_pédagogiques,
+      'Codes Sections': Array.isArray(training.Id_section_code) ? training.Id_section_code.map((item) => item.id).join(', ') : '',
+      Cible: training.Public_cible,
+      Programme: training.Programme,
+      Prérequis: training.Prérequis,
+      Tarif: training.Tarif_net_de_taxes,
+      Durée: training.Durée_totale_en_heures,
+      'Nombre de jours': training.Nombre_de_jours_de_formation,
+      'Nombre de sessions à venir': training.session ? training.session.length : 0,
+      'Nombre de participants par session':
+        'De ' + training.Nombre_de_participants_minimum + ' à ' + training.Nombre_de_participants_maximum
     }
 
     if (match && match.id) {
