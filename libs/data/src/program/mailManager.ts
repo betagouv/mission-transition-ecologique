@@ -42,7 +42,7 @@ export class MailManager {
       } else {
         const lastSent = new Date(tech.last_mail_sent_date)
         const newMailMinDate = new Date(lastSent.getFullYear(), lastSent.getMonth() + 6, lastSent.getDate())
-        if (today >= newMailMinDate) {
+        if (today >= newMailMinDate && !tech.eol_mail_sent_date) {
           // await brevo.sendPeriodicMail(program)
           tech.last_mail_sent_date = today.toISOString()
           techChanged = true
@@ -81,6 +81,8 @@ export class MailManager {
   }
 
   async populate_baserow_prod_date() {
+    //
+    // Ajouter Commande bash/git pour sortir le csv
     const csvPath = path.join(path.dirname(fileURLToPath(import.meta.url)), '../../static/program_main_merge_date.csv')
     const csvContent = fs.readFileSync(csvPath, 'utf8')
 
@@ -100,7 +102,8 @@ export class MailManager {
 
       if (matchingProgram) {
         const updatedTech = {
-          prod_release_date: mergeDate
+          prod_release_date: mergeDate,
+          email_enable: false
         }
 
         console.log(csvKey, matchingProgram.id, updatedTech)
@@ -120,6 +123,9 @@ export class MailManager {
 
     const today = new Date().toISOString()
 
+    // lire les entrées json;
+    // CHECK si program.tech est vide plutot que de cast avec un || {}
+
     for (const program of programs) {
       const programKey = program['Id fiche dispositif']
       const tech: ProgramTechField = JSON.parse(program.tech) || {}
@@ -129,9 +135,10 @@ export class MailManager {
       const matchingJson = jsonPrograms.find((p) => p.id === programKey)
       if (matchingJson) {
         tech.prod_release_date = today
+        tech.email_enable = true
 
         // await baserow.patchProgram(program.id, {
-        //   tech: JSON.stringify(tech)
+        //   tech: JSON.stringify(tech),
         // })
 
         console.log(`✅ Set prod_release_date for program ${programKey}`)

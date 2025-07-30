@@ -143,7 +143,8 @@ export interface BaserowTraining extends Id {
 }
 
 export interface ProgramTechField {
-  prod_release_date?: string
+  prod_release_date: string
+  email_enable: boolean // TODO
   last_mail_sent_date?: string
   eol_mail_sent_date?: string
 }
