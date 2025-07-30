@@ -1,114 +1,82 @@
-import { DemandsAtTime, OpportunityStats, ProgramStats, StatsData } from '@tee/common'
-import { ProgramService } from '../../program/application/programService'
-import { Result } from 'true-myth'
-import { OpportunityRepository } from '../../opportunity/domain/spi'
-import StatisticsCache from './statisticsCache'
-import Monitor from '../../common/domain/monitoring/monitor'
+import { Stat, StatOutput, StatQueryParams, StatsPeriodicity } from './types'
 
 export default class StatisticsFeatures {
-  private readonly _opportunityRepository: OpportunityRepository
-  private readonly _cache: StatisticsCache
-  private readonly _programService: ProgramService
+  async fetchNorthStarStats(params: StatQueryParams): Promise<StatOutput> {
+    const METABASE_URL = 'http://tee-metabase.osc-fr1.scalingo.io/public/question/6969b2ab-ec49-44a0-9db8-3e2f9afbcf29.json'
 
-  constructor(opportunityRepository: OpportunityRepository, programService: ProgramService) {
-    this._opportunityRepository = opportunityRepository
-    this._cache = StatisticsCache.getInstance()
-    this._programService = programService
-  }
-
-  async computeStatistics(): Promise<Result<StatsData, Error>> {
-    if (!this._cache.statistics || !this._cache.isValid()) {
-      const opportunityStats = await this.getOpportunityStatistics()
-      const programStats = this.getProgramStatistics()
-
-      const statistics: StatsData = {
-        ...programStats,
-        ...opportunityStats
-      }
-      this._cache.statistics = {
-        statistics: statistics,
-        timestamp: Date.now()
-      }
-    }
-    return Result.ok(this._cache.statistics.statistics)
-  }
-
-  async getOpportunityStatistics(): Promise<OpportunityStats> {
-    const opportunitiesDates = await this.getOpportunitiesCreated()
-    let datesWithinLast30Days = 0
-    let timeSeries: DemandsAtTime[] = []
-    if (opportunitiesDates) {
-      const thirtyDaysAgo = new Date(new Date().getTime() - 30 * 24 * 60 * 60 * 1000)
-      datesWithinLast30Days = opportunitiesDates.filter((date) => date >= thirtyDaysAgo).length
-      timeSeries = this.convertDatesToCumulativeTimeSeries(opportunitiesDates)
-    }
-    return {
-      countOpportunitiesTotal: opportunitiesDates ? opportunitiesDates.length : null,
-      countOpportunities30Days: opportunitiesDates ? datesWithinLast30Days : null,
-      demandsTimeSeries: timeSeries
-    }
-  }
-
-  getProgramStatistics(): ProgramStats {
-    const allPrograms = this._programService.getAll()
-    const activeProgramsResult = this._programService.getFilteredPrograms({})
-    if (activeProgramsResult.isErr) {
-      Monitor.error('Error generating program statistics', { error: activeProgramsResult.error })
-      throw activeProgramsResult.error
-    }
-    return {
-      countProgramsTotal: allPrograms.length,
-      countProgramsNow: activeProgramsResult.value.length
-    }
-  }
-
-  convertDatesToCumulativeTimeSeries(opportunitiesDate: Date[]): DemandsAtTime[] {
-    const timeSeries: DemandsAtTime[] = []
-
-    for (const date of opportunitiesDate) {
-      const year = date.getFullYear()
-      const month = date.getMonth() + 1
-
-      const existingEntryIndex = timeSeries.findIndex((entry) => entry.year === year && entry.month === month)
-      if (existingEntryIndex !== -1) {
-        const entry = timeSeries[existingEntryIndex] as DemandsAtTime
-        entry.nDemands++
-      } else {
-        timeSeries.push({ year: year, month: month, nDemands: 1 })
-      }
+    const response = await fetch(METABASE_URL)
+    if (!response.ok) {
+      throw new Error('Stats API: Failed to fetch Metabase data')
     }
 
-    return this.convertToCumulativeTimeSeries(timeSeries)
-  }
-
-  convertToCumulativeTimeSeries(timeSeries: DemandsAtTime[]): DemandsAtTime[] {
-    // Sort the array by year and month
-    timeSeries.sort((a, b) => {
-      if (a.year !== b.year) {
-        return a.year - b.year
-      }
-      return a.month - b.month
-    })
-    // compute the cumulative sum
-    let cumulativeTotal = 0
-    return timeSeries.map((entry) => {
-      cumulativeTotal += entry.nDemands
-
+    const data: { week_start_date: string; total_2_3: number }[] = await response.json()
+    if (data.length === 0) {
       return {
-        year: entry.year,
-        month: entry.month,
-        nDemands: cumulativeTotal
+        description: `Entreprises bénéficiaires`,
+        stats: []
       }
+    }
+
+    const periodicity = params.periodicity || StatsPeriodicity.Month
+    const today = new Date()
+    const since = params.since ?? new Date(today.getFullYear(), 0, 1)
+    const to = params.to ?? new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1)
+
+    const filteredData = data
+      .map((datum) => ({
+        date: new Date(datum.week_start_date), // week_start_date is a metabase variable that is poorly named and that is simply the statistic date
+        value: datum.total_2_3
+      }))
+      .filter((datum) => {
+        return datum.date >= since && datum.date <= to
+      })
+
+    const statsByPeriodicity: Record<string, Stat> = {}
+
+    filteredData.forEach(({ date, value }) => {
+      let keyStatDate = today
+
+      switch (periodicity) {
+        case StatsPeriodicity.Day:
+          // Set to the start of the day
+          keyStatDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0, 0))
+          break
+        case StatsPeriodicity.Week: {
+          // Set to the start of the week (Monday)
+          keyStatDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate() - ((date.getDay() + 6) % 7), 0, 0, 0, 0))
+          break
+        }
+        case StatsPeriodicity.Month:
+          // Set to the start of the month
+          keyStatDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), 1, 0, 0, 0, 0))
+          break
+        case StatsPeriodicity.Year:
+          // Set to the start of the year
+          keyStatDate = new Date(Date.UTC(date.getFullYear(), 0, 1, 0, 0, 0, 0))
+          break
+      }
+
+      const key = keyStatDate.toISOString()
+      if (!statsByPeriodicity[key]) {
+        statsByPeriodicity[key] = { date: keyStatDate.toISOString(), value: 0 }
+      }
+      statsByPeriodicity[key].value += value
     })
+
+    const stats: Stat[] = Object.values(statsByPeriodicity)
+      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
+      .map((stat) => ({
+        ...stat,
+        date: stat.date.split('T')[0]
+      }))
+
+    return {
+      description: `Entreprises bénéficiaires`,
+      stats
+    }
   }
 
-  async getOpportunitiesCreated(): Promise<Date[] | null> {
-    const opportunitiesDates = await this._opportunityRepository.readDates()
-
-    if (opportunitiesDates.isOk) {
-      return opportunitiesDates.value
-    }
-    Monitor.error('Error generating Opportunities dates ', { error: opportunitiesDates.error })
-    return null
+  toLocalDateOnly(date: Date): Date {
+    return new Date(date.getFullYear(), date.getMonth(), date.getDate())
   }
 }
