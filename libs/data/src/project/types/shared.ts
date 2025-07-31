@@ -18,6 +18,8 @@ export interface ProjectType {
   priority: number
   highlightPriority: number | null
   sectors: string[]
+  metaTitle?: string
+  metaDescription?: string
 }
 
 export type ProjectId = (typeof projects)[number]['id']

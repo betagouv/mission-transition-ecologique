@@ -1,11 +1,10 @@
 import { UseSeoMetaInput } from '@unhead/vue'
 
 export class MetaSeo {
-  private static readonly _baseTitle = 'Transition écologique des TPE & PME'
-  private static readonly _defaultTitle = 'Aides et financements personnalisés'
+  private static readonly _defaultTitle = 'Transition écologique des entreprises : plus de 160 aides disponibles'
   private static readonly _defaultImage = '/images/TEE-social-network-sharing.webp'
   public static readonly defaultDescription =
-    'Service public pour les entreprises : Accédez simplement aux aides, accompagnements et financements disponibles pour les entreprises de votre secteur'
+    'Accédez aux bonnes aides pour la transition écologique de votre entreprise. Subventions, dispositifs et accompagnements pour TPE et PME.'
   public static readonly descriptionWebsite =
     'Service public en ligne pour accompagner les entreprises dans leur transition écologique en facilitant l’accès aux aides, subventions et dispositifs adaptés.'
 
@@ -18,7 +17,7 @@ export class MetaSeo {
   }
 
   public static readonly title = (title?: string) => {
-    return `${title || this._defaultTitle} - ${this._baseTitle}`
+    return `${title || this._defaultTitle}`
   }
 
   private static readonly _description = (description?: string) => {

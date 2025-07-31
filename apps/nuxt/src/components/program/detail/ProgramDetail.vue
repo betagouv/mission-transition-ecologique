@@ -132,8 +132,9 @@ const scrollToRef = (targetRef: HTMLElement | null | undefined) => {
 const scrollToForm = () => scrollToRef(formRef.value)
 const scrollToActivation = () => scrollToRef(activationRef.value)
 
-useSeoMeta(MetaSeo.get(currentProgram.value?.titre, currentProgram.value?.description))
-useSchemaOrg(defineWebPage({ description: currentProgram.value?.description }))
+const description = currentProgram.value?.metaDescription ?? currentProgram.value?.description
+useSeoMeta(MetaSeo.get(currentProgram.value?.metaTitre ?? currentProgram.value?.titre, description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
