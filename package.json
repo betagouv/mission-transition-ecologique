@@ -46,7 +46,7 @@
     "npm": ">=11.0 <12"
   },
   "dependencies": {
-    "@getbrevo/brevo": "^2.2.0",
+    "@getbrevo/brevo": "^3.0.1",
     "@gouvfr/dsfr": "^1.13.0",
     "@gouvminint/vue-dsfr": "^8.1.1",
     "@iframe-resizer/child": "^5.3.2",
