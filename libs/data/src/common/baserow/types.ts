@@ -132,3 +132,9 @@ export interface BaserowTestimony extends Id, BaserowSectors {
   'Mise en avant': number
   'Nom entreprise': string
 }
+
+export interface BaserowFaq extends Id {
+  Question: string
+  Réponse: string
+  Actif: boolean
+}
