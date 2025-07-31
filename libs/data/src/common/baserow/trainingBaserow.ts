@@ -1,9 +1,10 @@
 import { AbstractBaserow } from './abstractBaserow'
 import { BaserowTraining } from './types'
 import { Training } from '../../trainings/types'
+import ConfigBaserow from '../../configBaserow'
 
 export class TrainingBaserow extends AbstractBaserow {
-  private readonly _tableId = 620771
+  private readonly _tableId = ConfigBaserow.TRAINING_ID
   private _trainings: BaserowTraining[] = []
 
   async getAll(): Promise<BaserowTraining[]> {
