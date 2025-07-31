@@ -11,9 +11,8 @@
   />
 </template>
 <script setup lang="ts">
-import { ThemeId } from '@tee/data'
 import { computed } from 'vue'
-import { FilterItemKeys } from '@/types'
+import { FilterItemKeys, ThemeId } from '@/types'
 import { useFiltersStore } from '@/stores/filters'
 interface Props {
   hasError: boolean
