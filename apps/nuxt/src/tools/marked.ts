@@ -36,7 +36,7 @@ export class Marked {
       return false
     }
 
-    const url = this.getUrl(token)
+    const url = this._getUrl(token)
 
     if (url) {
       const config = useRuntimeConfig()
@@ -51,18 +51,11 @@ export class Marked {
     return token.href.startsWith('/')
   }
 
-  private static getUrl(token: Tokens.Link) {
-    let url: URL | undefined
-    if ('canParse' in URL && URL.canParse(token.href)) {
-      url = new URL(token.href)
-    } else {
-      try {
-        url = new URL(token.href)
-      } catch (e) {
-        url = undefined
-      }
+  private static _getUrl(token: Tokens.Link) {
+    try {
+      return new URL(token.href)
+    } catch (e) {
+      return undefined
     }
-
-    return url
   }
 }
