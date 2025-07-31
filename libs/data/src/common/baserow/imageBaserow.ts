@@ -92,7 +92,11 @@ export class ImageBaserow extends AbstractBaserow {
 
     const fileName = `${imageName}.webp`
     const filePath = path.join(this._imageDirectory, fileName)
-    fs.writeFileSync(filePath, webpBuffer)
+    try {
+      fs.writeFileSync(filePath, webpBuffer)
+    } catch {
+      return Result.err(new Error('Error while trying to create the the local ' + imageName))
+    }
     this._metadata[imageName] = image[0].uploaded_at
     this._processedImages.add(fileName)
 
@@ -128,7 +132,7 @@ export class ImageBaserow extends AbstractBaserow {
   }
 
   private _generateImageName(imageData: ImageTable): string {
-    let baseName = imageData['Image URL TEE']
+    let baseName = this._slugify(imageData['Image URL TEE'])
     if (!baseName) {
       baseName = this._slugify(imageData.Titre)
     }
@@ -168,5 +172,6 @@ export class ImageBaserow extends AbstractBaserow {
       .trim()
       .replace(/[\s\W-]+/g, '-') // Replace spaces and non-alphanumeric characters with hyphens
       .replace(/^-+|-+$/g, '') // Remove leading or trailing hyphens
+      .slice(0, 50)
   }
 }
