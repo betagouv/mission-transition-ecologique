@@ -4,6 +4,13 @@ export interface Id {
   id: number
 }
 
+export interface BaserowData<T> {
+  count: number
+  next: string | null
+  previous: string | null
+  results: T[]
+}
+
 export interface BaserowProject extends Id, BaserowSectors {
   order: string
   Nom: string
@@ -131,10 +138,4 @@ export interface BaserowTestimony extends Id, BaserowSectors {
   Région: LinkObject[]
   'Mise en avant': number
   'Nom entreprise': string
-}
-
-export interface BaserowFaq extends Id {
-  Question: string
-  Réponse: string
-  Actif: boolean
 }
