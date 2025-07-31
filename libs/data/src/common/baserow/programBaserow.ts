@@ -134,4 +134,8 @@ export class ProgramBaserow extends AbstractBaserow {
       'Eligibilité Spécifique': conditionalValue['Eligibilité Spécifique']
     }
   }
+
+  async patchProgram(rowId: number, data: Record<string, any>): Promise<void> {
+    await this._patchRow(this._programTableId, rowId, data)
+  }
 }

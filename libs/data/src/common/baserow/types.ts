@@ -132,3 +132,19 @@ export interface BaserowTestimony extends Id, BaserowSectors {
   'Mise en avant': number
   'Nom entreprise': string
 }
+
+export interface BaserowTraining extends Id {
+  'Id Ademe': string
+  'Futures Sessions': string
+  Titre: string
+  Promesse: string
+  'Url ADEME': string
+  Objectifs: string
+}
+
+export interface ProgramTechField {
+  prod_release_date: string
+  email_enable: boolean // TODO
+  last_mail_sent_date?: string
+  eol_mail_sent_date?: string
+}
