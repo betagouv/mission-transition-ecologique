@@ -4,13 +4,18 @@ import { Training } from '../../trainings/types'
 
 export class TrainingBaserow extends AbstractBaserow {
   private readonly _tableId = 620771
+  private _trainings: BaserowTraining[] = []
 
   async getAll(): Promise<BaserowTraining[]> {
-    return this._getTableData<BaserowTraining>(this._tableId)
+    return (this._trainings = await this._getTableData<BaserowTraining>(this._tableId))
   }
 
-  async patchOrCreate(training: Training, existingTrainings: BaserowTraining[]): Promise<void> {
-    const match = existingTrainings.find((baserowTraining) => baserowTraining['Id Ademe'] === training.id)
+  async patchOrCreate(training: Training): Promise<void> {
+    if (!this._trainings.length) {
+      throw new Error('TrainingBaserow: No trainings loaded. Call getAll() first.')
+    }
+
+    const match = this._trainings.find((baserowTraining) => baserowTraining['Id Ademe'] === training.id)
 
     const payload: Partial<BaserowTraining> = {
       'Id Ademe': training.id,
