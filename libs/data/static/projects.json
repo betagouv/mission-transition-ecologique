@@ -596,7 +596,7 @@
     "nameTag": "🌬 pompe à chaleur",
     "shortDescription": "Les pompes à chaleur génèrent de la chaleur en allant capter une énergie renouvelable dans leur environnement.",
     "image": "/images/projet/pac.webp",
-    "longDescription": "Les pompes à chaleur sont des équipements de chauffage, de refroidissement et de production d'eau chaude sanitaire dotées d’une très grande efficacité énergétique. \n\nElles puisent, dans l’air ou dans le sol, une énergie totalement gratuite et renouvelable. Cette énergie récupérée est ensuite restituée dans vos locaux grâce à un échangeur de chaleur qui demande peu d'électricité pour fonctionner.\n\nPlus économiques et écologiques en fonctionnement, elles peuvent remplacer vos chaudières à gaz, au fioul ou vos chauffages électriques. Certaines pompes à chaleur peuvent également produire de l'eau chaude et climatiser.",
+    "longDescription": "Les pompes à chaleur sont des équipements de chauffage, de refroidissement et de production d'eau chaude sanitaire dotées d’une très grande efficacité énergétique.\n\nElles puisent, dans l’air ou dans le sol, une énergie disponible et renouvelable : la chaleur. Cette énergie récupérée est ensuite restituée dans vos locaux grâce à un échangeur de chaleur. Et même si prélever cette énergie, n'est pas gratuit, cette équipement demande peu d'électricité pour fonctionner.\n\nPlus économiques et écologiques en fonctionnement, elles peuvent remplacer vos chaudières à gaz, au fioul ou vos chauffages électriques. Certaines pompes à chaleur peuvent également produire de l'eau chaude et climatiser.",
     "moreDescription": "- [**Qualit’EnR**](https://www.qualit-enr.org/), un annuaire de professionnels RGE qualifiés pour votre projet de construction ou de rénovation énergétique.",
     "themes": [
       "energy",
@@ -817,7 +817,7 @@
     "title": "Audit énergétique",
     "nameTag": "🎯 audit énergétique",
     "shortDescription": "Il permet d’évaluer la performance énergétique de vos locaux et de définir des scénarios de rénovation énergétique.",
-    "image": "/images/projet/audit-energétique.webp",
+    "image": "/images/projet/audit-energetique.webp",
     "longDescription": "Chauffage, isolation, eau chaude, climatisation, ventilation, éclairage… Un audit énergétique permet de faire expertiser des locaux professionnels et identifier des solutions et des financements afin de les rendre plus confortables, plus performants et de réaliser des économies durables.\n\nAinsi, mettez-vous en conformité avec les obligations réglementaires, comme le Dispositif Éco Énergie Tertiaire (DEET), communément appelé \"décret tertiaire\".",
     "moreDescription": "- [**Réglementation Audit énergétique,**](https://portail-rse.beta.gouv.fr/reglementations/audit-energetique) Un portail pour connaitre les obligations de votre entreprise.\n- [**Le Dispositif Éco Énergie Tertiaire (EET), qu'est-ce que c'est ?**](https://www.ecologie.gouv.fr/eco-energie-tertiaire-eet) Une page pour comprendre le cadre de la règlementation.",
     "themes": [
@@ -1572,10 +1572,7 @@
       "mobilipro",
       "diag-biodiversite",
       "impact-co2",
-      "booster-transformation-rev-3",
-      "formation-convaincre-et-argumenter",
-      "formation-communiquer-et-sensibiliser",
-      "outils-pour-adaptation"
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [],
     "priority": "20",
@@ -1689,10 +1686,7 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "aide-tpe-transition-na",
-      "aide-investissement-corse",
-      "formation-convaincre-et-argumenter",
-      "formation-communiquer-et-sensibiliser",
-      "outils-pour-adaptation"
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       26
@@ -1987,8 +1981,7 @@
       "aide-tourisme-guadeloupe",
       "fasep",
       "aide-investissement-librairie",
-      "booster-transformation-rev-3",
-      "outils-pour-adaptation"
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [
       26,
@@ -2874,10 +2867,7 @@
       "formation-engager-entreprise-transition-ecologique",
       "formation-artisan-developpement-durable",
       "cci-business-optimizer",
-      "ecogestes-paca",
-      "formation-convaincre-et-argumenter",
-      "formation-communiquer-et-sensibiliser",
-      "outils-pour-adaptation"
+      "ecogestes-paca"
     ],
     "linkedProjects": [
       26
@@ -3753,6 +3743,31 @@
       "D",
       "E",
       "F"
+    ]
+  },
+  {
+    "id": 1228,
+    "slug": "broyeur-vegetaux",
+    "title": "Broyage des déchets verts",
+    "nameTag": "🍂 broyeur végétaux",
+    "shortDescription": "Un broyeur de végétaux vous permet de réduire et de réemployer vos déchets verts.",
+    "image": "/images/projet/broyage-vegetaux.webp",
+    "longDescription": "Afin de réduire la part des déchets verts déposés en déchetterie, et les coûts attenant au transport de ces déchets, investissez dans un broyeur de végétaux. Ainsi, vous mettez en place une logique circulaire en transformant vos déchets en végétaux en broyat, réutilisable notamment pour le paillage, le jardinage raisonné et l'éco-pâturage.",
+    "moreDescription": "- [**Conseils sur le broyage-paillage des déchets verts**](https://librairie.ademe.fr/economie-circulaire-et-dechets/4021-conseils-sur-le-broyage-paillage-des-dechets-verts.html), une fiche de l'ADEME.",
+    "themes": [
+      "waste"
+    ],
+    "mainTheme": "waste",
+    "programs": [
+      "tremplin"
+    ],
+    "linkedProjects": [],
+    "priority": "720",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "E",
+      "I"
     ]
   }
 ]
