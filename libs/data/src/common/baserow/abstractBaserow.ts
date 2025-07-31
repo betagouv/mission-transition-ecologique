@@ -2,6 +2,7 @@ import axios from 'axios'
 import dotenv from 'dotenv'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import ConfigBaserow from '../../configBaserow'
 import { Id, LinkObject } from './types'
 
 dotenv.config()
@@ -10,10 +11,10 @@ export abstract class AbstractBaserow {
   protected readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
   private readonly _apiToken = this._setBaserowToken()
   private readonly _baseUrl = 'https://api.baserow.io/api'
-  protected readonly _themeTableId = 305258
-  protected readonly _operatorTableId = 314410
-  protected readonly _geographicAreasTableId = 314474
-  protected readonly _projectTableId = 305253
+  protected readonly _themeTableId = ConfigBaserow.THEME_ID
+  protected readonly _operatorTableId = ConfigBaserow.OPERATOR_ID
+  protected readonly _geographicAreasTableId = ConfigBaserow.GEOGRAPHIC_AREAS_ID
+  protected readonly _projectTableId = ConfigBaserow.PROJECT_ID
 
   private readonly _axiosHeader = {
     headers: {

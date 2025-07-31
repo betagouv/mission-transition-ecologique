@@ -1,5 +1,5 @@
+import { ThemeId } from '../../theme/types'
 import { StructureSize, BuildingProperty, WasteSortingStatus, WasteManagementStatus, YesNo, MobilityStatus } from './types'
-import { ThemeId } from '@tee/data'
 
 export enum QuestionnaireDataEnum {
   priority_objective = 'priority_objective',

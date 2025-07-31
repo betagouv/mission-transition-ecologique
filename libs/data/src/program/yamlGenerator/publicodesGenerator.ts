@@ -1,5 +1,5 @@
 import { DataProgram, Publicodes } from '../types/domain'
-import { ThemeId } from '../../theme/types/shared'
+import { ThemeId } from '@tee/common'
 import { Logger } from '../../common/logger/logger'
 import { LogLevel } from '../../common/logger/types'
 

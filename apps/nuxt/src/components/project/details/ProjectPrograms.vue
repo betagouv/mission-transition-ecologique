@@ -60,7 +60,6 @@
           <p class="fr-mt-n3v fr-mb-0">{{ Translation.t('project.noPrograms.subtitle') }}</p>
         </TeeDsfrHighlight>
         <div
-          v-if="isDataFull"
           id="project-contact"
           ref="teeProjectFormContainer"
           class="fr-bg--blue--lightness fr-grid-row fr-p-2w"

@@ -1,5 +1,5 @@
 import { ProjectId } from '../../project/types/shared'
-import { ThemeId } from '../../theme/types/shared'
+import { ThemeId } from '@tee/common'
 
 export interface Testimony {
   slug: string
