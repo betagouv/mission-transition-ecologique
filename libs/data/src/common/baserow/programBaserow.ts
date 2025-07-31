@@ -1,4 +1,5 @@
 import fs from 'fs'
+import ConfigBaserow from '../../configBaserow'
 import { AbstractBaserow } from './abstractBaserow'
 import { ConditionalValues, Program } from './types'
 import {
@@ -14,9 +15,9 @@ import { Theme } from '../../theme/types/domain'
 import { FileManager } from '../fileManager'
 
 export class ProgramBaserow extends AbstractBaserow {
-  private readonly _geographicCoverageTableId = 314470
-  private readonly _programTableId = 314437
-  private readonly _conditionnalValuesTableId = 351202
+  private readonly _geographicCoverageTableId = ConfigBaserow.GEOGRAPHIC_COVERAGE_ID
+  private readonly _programTableId = ConfigBaserow.PROGRAM_ID
+  private readonly _conditionnalValuesTableId = ConfigBaserow.CONDITIONAL_VALUES_ID
   private _operators: Operator[] = []
   private _geographicAreas: GeographicCoverage[] = []
 

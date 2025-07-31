@@ -2,6 +2,7 @@ import fs from 'fs'
 import axios from 'axios'
 import path from 'path'
 import sharp from 'sharp'
+import ConfigBaserow from '../../configBaserow'
 import { AbstractBaserow } from './abstractBaserow'
 import { LinkObject, ImageTable, Image } from './types'
 import { Result } from 'true-myth'
@@ -11,7 +12,7 @@ interface ImageMetadata {
 }
 
 export class ImageBaserow extends AbstractBaserow {
-  private readonly _imageTableId = 315189
+  private readonly _imageTableId = ConfigBaserow.IMAGE_ID
   private _metadata: ImageMetadata = {}
   private _processedImages: Set<string> = new Set()
 

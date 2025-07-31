@@ -407,6 +407,7 @@
       "diag-decarbon-action",
       "programme-breizh-fab",
       "tremplin",
+      "nos-gestes-climat",
       "aide-financement-occitanie",
       "cedre-premier-pas",
       "sud-pret-climat",
@@ -416,8 +417,7 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "bilan-carbone",
-      "evaluation-carbone-lise",
-      "impact-co2"
+      "evaluation-carbone-lise"
     ],
     "linkedProjects": [
       26,
@@ -1211,6 +1211,7 @@
       "diag-eco-flux",
       "programme-ecod-o",
       "tpe-gagnantes-sur-tous-les-couts",
+      "nos-gestes-climat",
       "cci-business-optimizer",
       "cedre-premier-pas",
       "sud-pret-climat",
@@ -1570,7 +1571,11 @@
       "pret-ile-de-france",
       "mobilipro",
       "diag-biodiversite",
-      "booster-transformation-rev-3"
+      "impact-co2",
+      "booster-transformation-rev-3",
+      "formation-convaincre-et-argumenter",
+      "formation-communiquer-et-sensibiliser",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [],
     "priority": "20",
@@ -1684,7 +1689,10 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "aide-tpe-transition-na",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "formation-convaincre-et-argumenter",
+      "formation-communiquer-et-sensibiliser",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [
       26
@@ -1916,7 +1924,6 @@
       "decarb-ind-25",
       "prit-hdf",
       "je-change-ma-voiture",
-      "impact-co2",
       "booster-transformation-rev-3"
     ],
     "linkedProjects": [
@@ -1980,7 +1987,8 @@
       "aide-tourisme-guadeloupe",
       "fasep",
       "aide-investissement-librairie",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [
       26,
@@ -2616,7 +2624,7 @@
     "shortDescription": "Il permet de conserver les vélos de vos collaborateurs et de vos clients à l'abri des vols et des intempéries.",
     "image": "/images/projet/parking-a-velos.webp",
     "longDescription": "La construction ou l’installation d'un abri à vélos sécurisés encourage les déplacements à vélo de vos collaborateurs, et favorise l'accueil des cyclo-touristes.\n\nL’abri doit être sécurisé et comporter des dispositifs fixes permettant de stabiliser et d'attacher les vélos par le cadre et au moins une roue. (Art. R. 113-12 du CCH)\n\nS'il est équipé de panneaux photovoltaïques, l'abri à vélo peut vous permettre de produire l'électricité nécessaire à la recharge des vélos à assistance électrique.\n\nUn abris à vélos peut être équipé :\n\n- de bornes de recharge pour vélo à assistance électrique (VAE)\n\n- de bornes de gonflage\n\n- de bornes de réparation\n\n- de bornes multifonction\n\n- de consignes à bagages sécurisées",
-    "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé.",
+    "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé.\n- [**Obligation d'installation d'infrastructures de stationnement des vélos**](https://entreprendre.service-public.fr/vosdroits/F38482), par Entreprendre.Service-Public.fr.",
     "themes": [
       "mobility"
     ],
@@ -2800,7 +2808,7 @@
     "shortDescription": "Encourager vos collaborateurs et clients à utiliser un véhicule électrique pour leurs déplacements.",
     "image": "/images/projet/bornes-voitures-electriques.webp",
     "longDescription": "D'ici 10 ans, la vente des voitures à énergie fossile devrait être interdite dans toute l'UE, et remplacée par la vente de véhicules électriques (et autres véhicules non polluants), dans le but d'atteindre la neutralité carbone en 2050.\n\nVous pouvez dores et déjà accompagner cette mesure de décarbonation en installant une borne de recharge électrique près de vos locaux pour appuyer vos collaborateurs, vos fournisseurs et vos clients dans leur usage d'un véhicule électrique. Ainsi, vous palliez à votre niveau au maillage insuffisant des stations services, et vous affichez votre ambition écologique.\n\nQuand elle est associée à une ombrière photovoltaïque, une borne de recharge peut limiter son impact sur le réseau électrique tout en permettant l’implantation de bornes de puissance plus élevées.",
-    "moreDescription": "- [**Voitures électriques et bornes de recharge**](https://librairie.ademe.fr/mobilite-et-transports/5877-avis-de-l-ademe-voitures-electriques-et-bornes-de-recharges.html), un guide de l'ADEME.\n- [**Bornes de recharge en entreprise**](https://bigmedia.bpifrance.fr/nos-dossiers/bornes-de-recharge-en-entreprise-une-transition-vers-la-mobilite-electrique-et-durable), focus sur les obligations et les étapes clés, par BPI France.",
+    "moreDescription": "- [**Voitures électriques et bornes de recharge**](https://librairie.ademe.fr/mobilite-et-transports/5877-avis-de-l-ademe-voitures-electriques-et-bornes-de-recharges.html), un guide de l'ADEME.\n- [**Bornes de recharge en entreprise**](https://bigmedia.bpifrance.fr/nos-dossiers/bornes-de-recharge-en-entreprise-une-transition-vers-la-mobilite-electrique-et-durable), focus sur les obligations et les étapes clés, par BPI France.\n- [**Les obligations légales dans les parkings de plus de 10 places**](https://entreprendre.service-public.fr/vosdroits/F38491), par Entreprendre.Service-Public.fr.",
     "themes": [
       "mobility"
     ],
@@ -2866,7 +2874,10 @@
       "formation-engager-entreprise-transition-ecologique",
       "formation-artisan-developpement-durable",
       "cci-business-optimizer",
-      "ecogestes-paca"
+      "ecogestes-paca",
+      "formation-convaincre-et-argumenter",
+      "formation-communiquer-et-sensibiliser",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [
       26
@@ -3622,7 +3633,7 @@
     "shortDescription": "Intégrer des critères environnementaux, sociaux et éthiques dans les achats de votre entreprise.",
     "image": "/images/projet/achats-responsables.webp",
     "longDescription": "Une politique d’achats responsables vise à limiter les impacts négatifs de vos achats sur l’environnement et la société, tout en garantissant la performance de votre entreprise. Cela signifie choisir vos fournisseurs et produits en fonction de critères durables : impact carbone, conditions sociales de fabrication, durabilité des matériaux, etc. Vous pouvez ainsi privilégier des produits locaux, reconditionnés ou issus de l’économie circulaire, mais aussi intégrer des clauses RSE dans vos contrats. Ces pratiques vous permettent de mieux maîtriser vos risques, d’anticiper les nouvelles réglementations comme la directive CSRD, et de renforcer la crédibilité de votre démarche RSE. C’est une approche progressive, accessible à toutes les entreprises, même petites, avec des gains concrets à la clé : coûts optimisés, image renforcée, conformité assurée.",
-    "moreDescription": "- [**Comment mettre en place une politique d’achats responsables dans votre entreprise ?**](https://bigmedia.bpifrance.fr/nos-dossiers/comment-mettre-en-place-une-politique-dachats-responsables-dans-votre-entreprise?) (Bpifrance)\n\n- [**Comment veiller au respect des droits de l’Homme au travail dans les chaînes d’approvisionnement ?**](https://www.economie.gouv.fr/files/files/directions_services/dae/doc/AR_guide_thematique_DH_VF.pdf?) (DAE)\n\n- [**Découvrez l'ISO 20400**](https://www.iso.org/files/live/sites/isoorg/files/store/fr/ISO%2020400_Sustainable_procur.pdf), la norme internationale sur les achats responsables.\n\n- [**Les fiches-outils \"achats éco-responsables**](https://www.economie.gouv.fr/dae/publications-et-textes/fiches-outils-achats-eco-responsables)\" pour vous aider à structurer vos critères de choix de fournisseurs par typologie d'achat. (DAE)\n\n- [**Toolbox achats responsables**](https://www.woeb.swiss/images/dokumente/PDF/FR/Toolbox_B-Outils_et_methodes_pour_evaluer_limpact_FR_13.09.2021.pdf)**,** un guide qui propose des méthodes pour évaluer l'impact des fournisseurs (OFEV)",
+    "moreDescription": "- [**Comment mettre en place une politique d’achats responsables dans votre entreprise ?**](https://bigmedia.bpifrance.fr/nos-dossiers/comment-mettre-en-place-une-politique-dachats-responsables-dans-votre-entreprise?) (Bpifrance)\n\n- [**Comment veiller au respect des droits de l’Homme au travail dans les chaînes d’approvisionnement ?**](https://www.economie.gouv.fr/files/files/directions_services/dae/doc/AR_guide_thematique_DH_VF.pdf?) (DAE)\n\n- [**Découvrez l'ISO 20400**](https://www.iso.org/files/live/sites/isoorg/files/store/fr/ISO%2020400_Sustainable_procur.pdf), la norme internationale sur les achats responsables.\n\n- [**Les fiches-outils \"achats éco-responsables**](https://www.economie.gouv.fr/dae/publications-et-textes/fiches-outils-achats-eco-responsables)\" pour vous aider à structurer vos critères de choix de fournisseurs par typologie d'achat. (DAE)",
     "themes": [
       "rh",
       "eco-design"
@@ -3687,6 +3698,61 @@
     "sectors": [
       "I",
       "Q"
+    ]
+  },
+  {
+    "id": 1160,
+    "slug": "fours-industriels-electriques",
+    "title": "Fours industriels électriques",
+    "nameTag": "⚡ fours électriques",
+    "shortDescription": "Un four électrique est plus durable et plus économe en énergie qu'un four au gaz.",
+    "image": "/images/projet/fours-industriels-electriques.webp",
+    "longDescription": "Remplacer votre four industriel au gaz naturel par un four 100% électrique présente de nombreux intérêts :\n\n- la **durabilité** : les fours électriques sont moins coûteux à installer, à entretenir et nécessitent moins de réparation que les fours utilisant des combustibles fossiles ;\n- les **économies d'énergie** : les fours électriques consomment moins d'énergie que les fours au gaz naturel pour produire la même quantité de chaleur, ils contribuent à réduire considérablement la consommation de ressources ;\n- la précision et le **contrôle de la température** : les appareils électriques produisent une température constante, uniforme et contrôlée ;\n- la **décarbonation** de vos activités : n'utilisant pas de combustible fossile, les fours électriques n'émettent ni gaz à effet de serre ni polluants atmosphériques.",
+    "moreDescription": "- [**L'énergie : un poste clé dans l'industrie**](https://librairie.ademe.fr/batiment/1846-energie-un-poste-cle-dans-l-industrie-l--9791029709159.html#), un guide de l'ADEME.",
+    "themes": [
+      "energy"
+    ],
+    "mainTheme": "energy",
+    "programs": [
+      "decarb-flash-2025-2027"
+    ],
+    "linkedProjects": [
+      4
+    ],
+    "priority": "360",
+    "highlightPriority": null,
+    "sectors": [
+      "B",
+      "C",
+      "F"
+    ]
+  },
+  {
+    "id": 1193,
+    "slug": "isolation-thermique-equipements-industriels",
+    "title": "Isolation des équipements industriels",
+    "nameTag": "♨️ Isolation tuyauteries",
+    "shortDescription": "Elle permet d'améliorer les performances énergétiques de votre site industriel, en évitant la déperdition thermique.",
+    "image": "/images/projet/isolation-tuyauterie.webp",
+    "longDescription": "Isoler vos tuyauteries, vos équipements, ainsi que vos réseaux de fluides caloporteurs et frigoporteurs vous permet d'éviter la déperdition thermique et le gaspillage énergétique.\\\nCe procédé, aussi appelé **calorifugeage industriel**, consiste à envelopper les canalisations et les machines de matériaux isolants, tels que la laine de verre ou la laine de roche. Cela permet :\n\n- d'**éviter les fuites de chaleur** (qui peuvent aller jusqu’à 10°C entre la chaudière et le circuit d’eau chaude),\n- d'**améliorer les performances énergétiques** de votre site industriel,\n- de **diminuer les coûts**,\n- d'**améliorer votre empreinte carbone**.",
+    "moreDescription": "- [**Décarboner l'industrie, enjeux et défis**](https://librairie.ademe.fr/industrie-et-production-durable/7146-decarboner-l-industrie-9791029722974.html) : un guide de l'ADEME.",
+    "themes": [
+      "energy",
+      "building"
+    ],
+    "mainTheme": "energy",
+    "programs": [
+      "decarb-flash-2025-2027"
+    ],
+    "linkedProjects": [],
+    "priority": "630",
+    "highlightPriority": null,
+    "sectors": [
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
     ]
   }
 ]

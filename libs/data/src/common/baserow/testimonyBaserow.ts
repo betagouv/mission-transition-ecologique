@@ -1,3 +1,4 @@
+import ConfigBaserow from '../../configBaserow'
 import { AbstractBaserow } from './abstractBaserow'
 import { BaserowTestimony } from './types'
 import { Testimony } from '../../testimony/types/shared'
@@ -5,7 +6,7 @@ import { ImageBaserow } from './imageBaserow'
 import path from 'path'
 
 export class TestimonyBaserow extends AbstractBaserow {
-  private readonly _testimoniesTableId = 399896
+  private readonly _testimoniesTableId = ConfigBaserow.TESTIMONIES_ID
   private readonly _logPath: string = path.join(this.__dirname, '../../../static/testimony_images_download_info.json')
   private _imageDownloader: ImageBaserow
   private readonly _imagePath = '/images/testimony/'
