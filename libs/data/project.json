@@ -53,6 +53,15 @@
         "parallel": false
       }
     },
+    "send-program-mails": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/sendMailToProgramContacts.ts"
+        ]
+      }
+    },
     "test": {
       "executor": "nx:run-commands",
       "options": {

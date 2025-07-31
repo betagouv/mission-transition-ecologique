@@ -41,6 +41,7 @@ export interface DataProgram extends BaserowSectors {
   Statuts: Status[]
   conditionalData?: ConditionalValues[]
   'redirection-vers': number[]
+  tech: string
 }
 
 export enum Publicodes {
