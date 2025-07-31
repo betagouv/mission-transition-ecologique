@@ -1,6 +1,15 @@
 {
   "extends": ["@nuxt/eslint-config", "@vue/eslint-config-prettier/skip-formatting", "../../.eslintrc.json"],
-  "ignorePatterns": ["!**/*", ".nuxt/**", ".output/**", "node_modules", "nuxt.config.ts", "src/public/scripts/iframe.js"],
+  "ignorePatterns": [
+    "!**/*",
+    ".nuxt/**",
+    ".output/**",
+    "node_modules",
+    "nuxt.config.ts",
+    "src/public/scripts/iframe.js",
+    "**/vite.config.*.timestamp*",
+    "**/vitest.config.*.timestamp*"
+  ],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx", "*.vue"],
