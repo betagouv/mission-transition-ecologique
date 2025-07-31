@@ -140,6 +140,17 @@ export interface BaserowTraining extends Id {
   Promesse: string
   'Url ADEME': string
   Objectifs: string
+  Thématique: string
+  'Nombre de sessions à venir': number
+  'Nombre de participants par session': string
+  Modalité: string
+  'Codes Sections': string
+  Cible: string
+  Programme: string
+  Prérequis: string
+  Tarif: string
+  Durée: string
+  'Nombre de jours': string
 }
 
 export interface ProgramTechField {

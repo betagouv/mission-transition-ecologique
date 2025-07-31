@@ -11,6 +11,7 @@ export abstract class AbstractBaserow {
   protected readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
   private readonly _apiToken = this._setBaserowToken()
   private readonly _baseUrl = 'https://api.baserow.io/api'
+  private readonly _url = `${this._baseUrl}/database/rows/table`
   protected readonly _themeTableId = ConfigBaserow.THEME_ID
   protected readonly _operatorTableId = ConfigBaserow.OPERATOR_ID
   protected readonly _geographicAreasTableId = ConfigBaserow.GEOGRAPHIC_AREAS_ID
@@ -24,7 +25,7 @@ export abstract class AbstractBaserow {
 
   protected async _getTableData<T>(tableId: number): Promise<T[]> {
     try {
-      const response = await axios.get(`${this._baseUrl}/database/rows/table/${tableId}/?user_field_names=true`, this._axiosHeader)
+      const response = await axios.get(`${this._url}/${tableId}/?user_field_names=true`, this._axiosHeader)
       await this._delay(100)
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
       let results = response.data.results
@@ -44,7 +45,7 @@ export abstract class AbstractBaserow {
 
   protected async _getRowData<T>(tableId: number, rowId: number): Promise<T | null> {
     try {
-      const response = await axios.get(`${this._baseUrl}/database/rows/table/${tableId}/${rowId}/?user_field_names=true`, this._axiosHeader)
+      const response = await axios.get(`${this._url}/${tableId}/${rowId}/?user_field_names=true`, this._axiosHeader)
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
       return response.data
@@ -75,9 +76,10 @@ export abstract class AbstractBaserow {
     throw Error('Baserow token not found.')
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   protected async _patchRow(tableId: number, rowId: number, data: Record<string, any>): Promise<void> {
     try {
-      await axios.patch(`${this._baseUrl}/database/rows/table/${tableId}/${rowId}/?user_field_names=true`, data, this._axiosHeader)
+      await axios.patch(`${this._url}/${tableId}/${rowId}/?user_field_names=true`, data, this._axiosHeader)
     } catch (error) {
       console.error(`Error patching row ${rowId} in table ${tableId}:`, error)
     }
@@ -85,7 +87,7 @@ export abstract class AbstractBaserow {
 
   protected async _createRow(tableId: number, data: Record<string, any>): Promise<void> {
     try {
-      await axios.post(`${this._baseUrl}/database/rows/table/${tableId}/?user_field_names=true`, data, this._axiosHeader)
+      await axios.post(`${this._url}/${tableId}/?user_field_names=true`, data, this._axiosHeader)
     } catch (error) {
       console.error(`Error creating row in table ${tableId}:`, error)
     }
