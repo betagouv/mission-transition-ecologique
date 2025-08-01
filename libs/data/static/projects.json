@@ -1572,7 +1572,10 @@
       "mobilipro",
       "diag-biodiversite",
       "impact-co2",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "formation-convaincre-et-argumenter",
+      "formation-communiquer-et-sensibiliser",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [],
     "priority": "20",
@@ -1686,7 +1689,10 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "aide-tpe-transition-na",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "formation-convaincre-et-argumenter",
+      "formation-communiquer-et-sensibiliser",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [
       26
@@ -1981,7 +1987,8 @@
       "aide-tourisme-guadeloupe",
       "fasep",
       "aide-investissement-librairie",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [
       26,
@@ -2867,7 +2874,10 @@
       "formation-engager-entreprise-transition-ecologique",
       "formation-artisan-developpement-durable",
       "cci-business-optimizer",
-      "ecogestes-paca"
+      "ecogestes-paca",
+      "formation-convaincre-et-argumenter",
+      "formation-communiquer-et-sensibiliser",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [
       26
