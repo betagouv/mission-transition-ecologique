@@ -1572,7 +1572,10 @@
       "mobilipro",
       "diag-biodiversite",
       "impact-co2",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "formation-convaincre-et-argumenter",
+      "formation-communiquer-et-sensibiliser",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [],
     "priority": "20",
@@ -1686,7 +1689,10 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "aide-tpe-transition-na",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "formation-convaincre-et-argumenter",
+      "formation-communiquer-et-sensibiliser",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [
       26
@@ -1981,7 +1987,8 @@
       "aide-tourisme-guadeloupe",
       "fasep",
       "aide-investissement-librairie",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [
       26,
@@ -2850,6 +2857,94 @@
     ]
   },
   {
+    "id": 203,
+    "slug": "haie-bocagere",
+    "title": "Plantation de haies",
+    "nameTag": "🌱 haie",
+    "shortDescription": "Planter des haies bocagères protège vos élevages et cultures, régule les inondations et favorise la biodiversité.",
+    "image": "/images/projet/haie.webp",
+    "longDescription": "D'ici 2030, la France doit se doter chaque année de plus de 5 000 kilomètres linéaires de haies supplémentaires (objectif fixé par le SGPE).\\\nEn plus de préserver la biodiversité et d'offrir un refuge aux animaux sauvages, la plantation de haies bocagères peut vous permettre :\n\n- D'augmenter vos rendements agricoles,\n\n- De protéger vos cultures et vos animaux d'élevage,\n\n- De stabiliser et d'enrichir les sols,\n\n- En cas d'intempéries, de freiner les inondations,\n\n- De constituer une barrière physique aux pesticides et produits phytosanitaires,\n\n- De constituer une réserve de bois et de stocker du carbone.",
+    "moreDescription": "- [**Stocks de bois et de carbone dans les haies bocagères françaises**](https://librairie.ademe.fr/energies/5388-stocks-de-bois-et-de-carbone-dans-les-haies-bocageres-francaises.html#product-presentation), une évaluation de l'ADEME.\n- **Haies et bocages, des réservoirs de biodiversité**, un état des lieux par l'Office Français de la Biodiversité.",
+    "themes": [
+      "biodiversite",
+      "water"
+    ],
+    "mainTheme": "biodiversite",
+    "programs": [
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
+    ],
+    "linkedProjects": [
+      20,
+      144
+    ],
+    "priority": "325",
+    "highlightPriority": "6",
+    "sectors": [
+      "A",
+      "F",
+      "N",
+      "O"
+    ]
+  },
+  {
+    "id": 302,
+    "slug": "communication-responsable",
+    "title": "Communication responsable",
+    "nameTag": "📢 communication",
+    "shortDescription": "Apprenez à valoriser votre engagement en faveur de l’environnement, sans greenwashing, sans pratique commerciale trompeuse.",
+    "image": "/images/projet/communication-responsable.webp",
+    "longDescription": "Les programmes, réseaux et communautés sont nombreux. Adaptés à votre secteur d'activité, ils vous permettent de valoriser les efforts menés au sein de votre entreprise en faveur de l'environnement auprès de votre clientèle et de fédérer vos équipes autour des valeurs de responsabilité écologique.",
+    "moreDescription": "- [**Vers une communication plus responsable et sans greenwashing**](https://communication-responsable.ademe.fr/), un guide dédié aux professionnels de la communication et du marketing, par l'ADEME.\n- [**Guide pratique des allégations environnementales**](https://www.economie.gouv.fr/files/files/directions_services/cnc/avis/2023/Allegations_environnementales/guide_2023.pdf) du Conseil National de la Consommation.\n- [**Des règles d’éthique applicables à la communication publicitaire en France**](https://www.arpp.org/nous-consulter/regles/regles-de-deontologie/), les recommandations de l'ARPP (Autorité de régulation professionnelle de la publicité).",
+    "themes": [
+      "environmental"
+    ],
+    "mainTheme": "environmental",
+    "programs": [
+      "communaute-coq-vert",
+      "eco-defis-des-artisans-et-des-commercants",
+      "imprim-vert",
+      "programme-breizh-fab",
+      "programme-eve",
+      "repar-acteurs",
+      "cedre-premier-pas",
+      "sud-pret-climat",
+      "entreprises-engagees-nature",
+      "pret-energie-aura",
+      "pret-ile-de-france"
+    ],
+    "linkedProjects": [
+      31
+    ],
+    "priority": "380",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
+  },
+  {
     "id": 337,
     "slug": "sensibilisation-eco-gestes",
     "title": "Sensibilisation aux éco-gestes",
@@ -2867,7 +2962,10 @@
       "formation-engager-entreprise-transition-ecologique",
       "formation-artisan-developpement-durable",
       "cci-business-optimizer",
-      "ecogestes-paca"
+      "ecogestes-paca",
+      "formation-convaincre-et-argumenter",
+      "formation-communiquer-et-sensibiliser",
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [
       26
