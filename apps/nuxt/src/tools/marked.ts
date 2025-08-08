@@ -32,9 +32,14 @@ export class Marked {
   }
 
   public static isLocalLink(token: Tokens.Link): boolean {
-    if (URL.canParse(token.href)) {
+    if (!token.href) {
+      return false
+    }
+
+    const url = this._getUrl(token)
+
+    if (url) {
       const config = useRuntimeConfig()
-      const url = new URL(token.href)
 
       return (
         [config.public.siteUrl, 'https://preprod.mission-transition-ecologique.incubateur.net', 'http://localhost:4242'].includes(
@@ -44,5 +49,13 @@ export class Marked {
     }
 
     return token.href.startsWith('/')
+  }
+
+  private static _getUrl(token: Tokens.Link) {
+    try {
+      return new URL(token.href)
+    } catch (e) {
+      return undefined
+    }
   }
 }
