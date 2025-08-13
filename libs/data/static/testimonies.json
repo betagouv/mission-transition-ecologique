@@ -143,7 +143,7 @@
     "companyName": "Les Délices de Louison",
     "authorName": "Betty VERGNAUD",
     "authorFunction": "Dirigeante de la boulangerie Les Délices de Louison (Groupe Marc & Betty)",
-    "authorImage": "/images/testimony/temoignage-betty-vergnaud-les-delices-de-louison-png.webp",
+    "authorImage": "/images/testimony/temoignage-betty-vergnaud-les-delices-de-louison-p.webp",
     "authorImageAttributes": "Photo de Betty VERGNAUD, Dirigeante de la boulangerie Les Délices de Louison, engagée dans la transition écologique",
     "externalLink": "https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=5479&preview",
     "homePageHighlight": null,
@@ -261,6 +261,20 @@
     "homePageHighlight": null,
     "projects": [
       998
+    ]
+  },
+  {
+    "slug": "led-extruplast",
+    "verbatim": "Le remplacement de nos anciennes lampes par des LED nous a permis de passer de 560 à 319 points lumineux, tout en assurant un éclairage plus homogène et sans zones d’ombre. Résultat : une réduction de 64 % de la puissance électrique nécessaire, soit environ **265 000 kWh économisés chaque année.**",
+    "companyName": "Extruplast",
+    "authorName": "Stéphane REMAUD",
+    "authorFunction": "responsable RSE chez Extruplast",
+    "authorImage": "/images/testimony/stephane-renaud-extruplast-png.webp",
+    "authorImageAttributes": "Photo de M. Stéphane REMAUD, responsable RSE chez Extruplast",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      2
     ]
   }
 ]
