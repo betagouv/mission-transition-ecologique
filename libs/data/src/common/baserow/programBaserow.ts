@@ -1,7 +1,7 @@
 import fs from 'fs'
 import ConfigBaserow from '../../configBaserow'
 import { AbstractBaserow } from './abstractBaserow'
-import { ConditionalValues, Program } from './types'
+import { ConditionalValues, Program, ProgramTechSerialized } from './types'
 import {
   DataProgram,
   Status,
@@ -53,7 +53,7 @@ export class ProgramBaserow extends AbstractBaserow {
     try {
       fs.writeFileSync('program_tmp.json', JSON.stringify(dataPrograms, null, 2))
       console.log(
-        'All baserow relevant data has been cached.\nIf you are working on the code, you can and should use the cached data by calling getPrograms with true (in data/src/program/yamlGenerator/ProgramYamlGenerator.ts, line 14)\n'
+        'All baserow relevant data has been cached.\nIf you are working on the code, you can and should use the cached data by calling ProgramBaserow.getPrograms() with true\n'
       )
     } catch {
       // known empty bloc, comment for the linter!
@@ -135,7 +135,7 @@ export class ProgramBaserow extends AbstractBaserow {
     }
   }
 
-  async patchProgram(rowId: number, data: Record<string, any>): Promise<void> {
-    await this._patchRow(this._programTableId, rowId, data)
+  async patchProgram(rowId: number, data: ProgramTechSerialized): Promise<void> {
+    await this._patchRow<ProgramTechSerialized>(this._programTableId, rowId, data)
   }
 }

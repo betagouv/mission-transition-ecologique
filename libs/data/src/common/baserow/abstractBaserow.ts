@@ -76,8 +76,7 @@ export abstract class AbstractBaserow {
     throw Error('Baserow token not found.')
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  protected async _patchRow(tableId: number, rowId: number, data: Record<string, any>): Promise<void> {
+  protected async _patchRow<T>(tableId: number, rowId: number, data: Partial<T>): Promise<void> {
     try {
       await axios.patch(`${this._url}/${tableId}/${rowId}/?user_field_names=true`, data, this._axiosHeader)
     } catch (error) {
@@ -85,7 +84,7 @@ export abstract class AbstractBaserow {
     }
   }
 
-  protected async _createRow(tableId: number, data: Record<string, any>): Promise<void> {
+  protected async _createRow<T>(tableId: number, data: Partial<T>): Promise<void> {
     try {
       await axios.post(`${this._url}/${tableId}/?user_field_names=true`, data, this._axiosHeader)
     } catch (error) {

@@ -3,9 +3,9 @@ import { ProgramBaserow } from '../common/baserow/programBaserow'
 import fs from 'fs'
 import { parse } from 'csv-parse/sync'
 import { fileURLToPath } from 'url'
-import { ProgramTechField } from '../common/baserow/types'
+import { ProgramTechnicalInfo } from '../common/baserow/types'
 import { ProgramUtils } from './programUtils'
-import { jsonPrograms } from '../../static'
+import { DataProgram } from './types/domain'
 
 interface ProgramCsvRow {
   filename: string
@@ -14,76 +14,127 @@ interface ProgramCsvRow {
 
 export class MailManager {
   async sendProgramsMails() {
-    const baserow = new ProgramBaserow()
-    const programs = await baserow.getPrograms(false)
-
-    const today = new Date()
-    const prodCutoffDate = new Date('2025-08-01')
+    const programs = await new ProgramBaserow().getPrograms(true) // TODO remove true in prod
 
     for (const program of programs) {
       if (!ProgramUtils.isInProd(program)) {
         continue
       }
-      const programRowId = program.id
-      const tech: ProgramTechField = JSON.parse(program.tech) || {}
 
-      const prodDate = tech.prod_release_date ? new Date(tech.prod_release_date) : null
-      if (!prodDate || prodDate < prodCutoffDate) {
-        continue
-      }
-
-      let techChanged = false
-
-      if (!tech.last_mail_sent_date) {
-        // await brevo.sendInitialMail(program)
-        tech.last_mail_sent_date = today.toISOString()
-        techChanged = true
-        console.log(`📩 Sent initial mail for program ${programRowId}`)
-      } else {
-        const lastSent = new Date(tech.last_mail_sent_date)
-        const newMailMinDate = new Date(lastSent.getFullYear(), lastSent.getMonth() + 6, lastSent.getDate())
-        if (today >= newMailMinDate && !tech.eol_mail_sent_date) {
-          // await brevo.sendPeriodicMail(program)
-          tech.last_mail_sent_date = today.toISOString()
-          techChanged = true
-          console.log(`📩 Sent periodic mail for program ${programRowId}`)
-        }
-      }
-
-      const endDate = program.DISPOSITIF_DATE_FIN ? new Date(program.DISPOSITIF_DATE_FIN) : null
-      if (endDate) {
-        const eolMailMinDate = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate() - 15)
-
-        if (today >= eolMailMinDate && !tech.eol_mail_sent_date) {
-          // await brevo.sendEolMail(program)
-          tech.eol_mail_sent_date = today.toISOString()
-          techChanged = true
-          console.log(`📩 Sent EOL mail for program ${programRowId}`)
-        }
-
-        const todayPlus15Days = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 15)
-        if (tech.eol_mail_sent_date && endDate > todayPlus15Days) {
-          // if the eol date changed, the eol mail sent is not relevant anymore
-          delete tech.eol_mail_sent_date
-          techChanged = true
-          console.log(`🧼 Cleared EOL mail flag for program ${programRowId} (end_date moved)`)
-        }
-      }
-
-      if (techChanged) {
-        // await baserow.patchProgram(program.id, {
-        //   tech: JSON.stringify(tech)
-        // })
-        console.log(`✅ Patched tech field for program ${programRowId}`)
-        await new Promise((res) => setTimeout(res, 200)) // Wait 0.2s between requeststo avoid hitting API limits
-      }
+      let techInfos = this._parseTechField(program)
+      techInfos = this._maybeInitializeMailTechFields(techInfos)
+      techInfos = await this._maybeSendInitialMail(program, techInfos)
+      techInfos = await this._maybeSendEOLMail(program, techInfos)
+      techInfos = await this._maybeSendPeriodicMail(program, techInfos)
+      await this._maybeUpdateTechInfos(program, techInfos)
     }
   }
 
+  private _parseTechField(program: DataProgram): ProgramTechnicalInfo {
+    try {
+      return JSON.parse(program.tech) || {}
+    } catch {
+      return {}
+    }
+  }
+
+  private _maybeInitializeMailTechFields(techInfos: ProgramTechnicalInfo): ProgramTechnicalInfo {
+    if (techInfos.email_enable == null) {
+      if (!techInfos.prod_release_date) {
+        techInfos.prod_release_date = new Date().toISOString()
+      }
+      techInfos.email_enable = false // TODO replace to do when in PROD
+    }
+    return techInfos
+  }
+
+  private async _maybeSendInitialMail(program: DataProgram, techInfos: ProgramTechnicalInfo): Promise<ProgramTechnicalInfo> {
+    if (!techInfos.email_enable) return techInfos
+
+    if (!techInfos.last_mail_sent_date) {
+      await brevo.sendInitialMail(program)
+      techInfos.last_mail_sent_date = new Date().toISOString()
+    }
+    return techInfos
+  }
+
+  private async _maybeSendPeriodicMail(program: DataProgram, techInfos: ProgramTechnicalInfo): Promise<ProgramTechnicalInfo> {
+    if (!techInfos.email_enable || !techInfos.last_mail_sent_date) return techInfos
+
+    const lastSent = new Date(techInfos.last_mail_sent_date)
+    const newMailMinDate = new Date(lastSent.getFullYear(), lastSent.getMonth() + 6, lastSent.getDate())
+
+    if (new Date() >= newMailMinDate) {
+      await brevo.sendPeriodicMail(program)
+      techInfos.last_mail_sent_date = new Date().toISOString()
+    }
+    return techInfos
+  }
+
+  private async _maybeSendEOLMail(program: DataProgram, techInfos: ProgramTechnicalInfo): Promise<ProgramTechnicalInfo> {
+    if (!techInfos.email_enable) return techInfos
+
+    const endDate = program.DISPOSITIF_DATE_FIN ? new Date(program.DISPOSITIF_DATE_FIN) : null
+    if (!endDate) return techInfos
+
+    // if we already sent an eol mail,
+    // check if the end date changed and if we should reset the eol_mail_sent_date
+    if (techInfos.eol_mail_sent_date) {
+      const mailDate = new Date(techInfos.eol_mail_sent_date)
+      const eolMaxDate = new Date(mailDate.getFullYear(), mailDate.getMonth(), mailDate.getDate() + 15)
+      if (endDate > eolMaxDate) {
+        delete techInfos.eol_mail_sent_date
+      }
+    }
+
+    const eolMailMinDate = new Date(endDate.getFullYear(), endDate.getMonth(), endDate.getDate() - 15)
+    const today = new Date()
+
+    if (today >= eolMailMinDate && !techInfos.eol_mail_sent_date) {
+      await brevo.sendEolMail(program)
+      techInfos.eol_mail_sent_date = today.toISOString()
+      techInfos.last_mail_sent_date = today.toISOString()
+    }
+
+    return techInfos
+  }
+
+  private async _maybeUpdateTechInfos(program: DataProgram, techInfos: ProgramTechnicalInfo): Promise<void> {
+    const oldTechsInfos = this._parseTechField(program)
+    if (
+      oldTechsInfos.email_enable != techInfos.email_enable ||
+      oldTechsInfos.eol_mail_sent_date != techInfos.eol_mail_sent_date ||
+      oldTechsInfos.last_mail_sent_date != techInfos.last_mail_sent_date ||
+      oldTechsInfos.prod_release_date != techInfos.prod_release_date
+    ) {
+      await new ProgramBaserow().patchProgram(program.id, {
+        tech: JSON.stringify(techInfos)
+      })
+      await this._wait()
+    }
+  }
+
+  private async _wait(ms = 200) {
+    return new Promise((res) => setTimeout(res, ms))
+  }
+
+  // Code that has been used for the initialization of the "tech" column
+  // Imo should be deleted, i don't know why we would keep it ?
   async populate_baserow_prod_date() {
-    //
-    // Ajouter Commande bash/git pour sortir le csv
-    const csvPath = path.join(path.dirname(fileURLToPath(import.meta.url)), '../../static/program_main_merge_date.csv')
+    // ##### BASH SCRIPT #####
+    // Bash script that, when started in a specific directory
+    // return a csv with the date at which each file have been created (not exactly the production date but close in TEE)
+    // echo "filename,date_added" > program_creation_date.csv
+    // for file in $(git ls-files); do
+    // commit=$(git log --follow --diff-filter=A --format="%H" -- "$file" | tail -n 1)
+    // if [ -n "$commit" ]; then
+    //     date=$(git show -s --format="%ad" --date=iso "$commit")
+    //     echo "\"$file\",\"$date\"" >> program_creation_date.csv
+    // fi
+    // done
+    // ##### END BASH SCRIPT #####
+
+    const csvPath = path.join(path.dirname(fileURLToPath(import.meta.url)), '../../static/program_creation_date.csv')
     const csvContent = fs.readFileSync(csvPath, 'utf8')
 
     const records = parse<ProgramCsvRow>(csvContent, {
@@ -113,36 +164,6 @@ export class MailManager {
         console.log(`✅ Patched program ${csvKey} with merge date ${mergeDate}`)
       } else {
         console.log(`❌ No match found in Baserow for CSV key: ${csvKey}`)
-      }
-    }
-  }
-
-  async populateFutureProdDates() {
-    const baserow = new ProgramBaserow()
-    const programs = await baserow.getPrograms(false)
-
-    const today = new Date().toISOString()
-
-    // lire les entrées json;
-    // CHECK si program.tech est vide plutot que de cast avec un || {}
-
-    for (const program of programs) {
-      const programKey = program['Id fiche dispositif']
-      const tech: ProgramTechField = JSON.parse(program.tech) || {}
-
-      if (tech.prod_release_date) continue
-
-      const matchingJson = jsonPrograms.find((p) => p.id === programKey)
-      if (matchingJson) {
-        tech.prod_release_date = today
-        tech.email_enable = true
-
-        // await baserow.patchProgram(program.id, {
-        //   tech: JSON.stringify(tech),
-        // })
-
-        console.log(`✅ Set prod_release_date for program ${programKey}`)
-        await new Promise((res) => setTimeout(res, 200))
       }
     }
   }
