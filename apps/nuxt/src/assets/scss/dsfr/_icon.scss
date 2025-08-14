@@ -3,13 +3,11 @@
 @use '../../../../../../node_modules/@gouvfr/dsfr/.config/icon' as dsfr-icons;
 @use '../../../../../../node_modules/@gouvfr/dsfr/src/dsfr/core/style/display/tool/mask-image';
 
-
-
 // Define our custom icons list
 $icons-list: (
   // Maps icons
   map-pin-2-line,
-    // System icons
+  // System icons
   arrow-left-line,
   arrow-right-line,
   check-line,
@@ -17,18 +15,19 @@ $icons-list: (
   close-line,
   external-link-fill,
   checkbox-circle-fill,
-    // Business icons
+  information-line,
+  // Business icons
   mail-line,
   briefcase-line,
   links-line,
-    // Editor icons
-    // Finance icons
+  // Editor icons
+  // Finance icons
   money-euro-circle-line,
-    // user icons
+  // user icons
   team-line,
   account-pin-circle-line,
   account-circle-fill,
-    // editor icons
+  // editor icons
   question-mark,
   // communication
   chat-3-line,
@@ -41,7 +40,12 @@ $custom-icons-config: ();
   $icon-config: map.get(dsfr-icons.$icons-config, $icon);
 
   @if $icon-config {
-    $custom-icons-config: map.merge($custom-icons-config, ($icon: $icon-config));
+    $custom-icons-config: map.merge(
+      $custom-icons-config,
+      (
+        $icon: $icon-config
+      )
+    );
   }
 }
 
@@ -53,7 +57,7 @@ $custom-icons-config: ();
   @return before after;
 }
 
-@mixin pseudo($type:before, $content:null, $display:null) {
+@mixin pseudo($type: before, $content: null, $display: null) {
   @if $type != after and $type != before and $type != marker and $type != (before after) {
     @error '$type must be before or after element';
   }

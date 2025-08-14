@@ -1,5 +1,6 @@
 <template>
   <TeeEligibilityBar
+    v-sticky="{ fixed: true }"
     :color="color"
     :bg-color="getEligibilityColor"
     :message="getEligibilityMessage"
@@ -117,3 +118,12 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.is-stuck {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+}
+</style>

@@ -66,9 +66,9 @@
   -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/briefcase-line.svg");
   mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/briefcase-line.svg");
 }
-.fr-icon-link::before, .fr-icon-link::after {
-  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/editor/link.svg");
-  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/editor/link.svg");
+.fr-icon-links-line::before, .fr-icon-links-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/links-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/links-line.svg");
 }
 .fr-icon-money-euro-circle-line::before, .fr-icon-money-euro-circle-line::after {
   -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/finance/money-euro-circle-line.svg");
@@ -93,6 +93,10 @@
 .fr-icon-chat-3-line::before, .fr-icon-chat-3-line::after {
   -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/communication/chat-3-line.svg");
   mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/communication/chat-3-line.svg");
+}
+.fr-icon-information-line::before, .fr-icon-information-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/information-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/information-line.svg");
 }
 
 .fr-accordion__btn {
@@ -2241,6 +2245,7 @@
 .fr-card-banner .fr-card__header .fr-card__img {
   height: 100%;
   align-content: center;
+  max-height: 200px;
 }
 .fr-card-banner .fr-card__header .fr-card__img img {
   object-fit: fill;
@@ -2322,6 +2327,48 @@
 }
 .fr-card.fr-enlarge-link .fr-card__content .fr-card__end p {
   font-size: 0.8rem;
+}
+@media (min-width: 48em) {
+  .fr-card.fr-card--cta .fr-card__header {
+    flex-basis: 30%;
+  }
+}
+@media (min-width: 62em) {
+  .fr-card.fr-card--cta .fr-card__header {
+    flex-basis: 25%;
+  }
+}
+.fr-card.fr-card--cta .fr-card__header {
+  align-content: center;
+}
+@media (min-width: 48em) {
+  .fr-card.fr-card--cta .fr-card__img {
+    max-height: 250px;
+  }
+}
+.fr-card.fr-card--cta .fr-card__img {
+  position: relative;
+}
+.fr-card.fr-card--cta .fr-card__img img {
+  max-height: 250px;
+}
+.fr-card.fr-card--cta .fr-card__img::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 70%, rgb(255, 255, 255) 95%) !important;
+}
+.fr-card.fr-card--cta .fr-card__img .fr-card__logo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
 }
 .fr-card.fr-card--program .fr-card__content {
   padding: 1rem 1.5rem 4rem !important;
@@ -2964,6 +3011,10 @@
 
 .fr-position--relative {
   position: relative;
+}
+
+.fr-flex-direction--column {
+  flex-direction: column;
 }
 
 .fr-header .fr-header__tools {
