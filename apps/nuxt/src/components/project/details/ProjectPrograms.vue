@@ -17,37 +17,45 @@
             </div>
           </div>
         </template>
-        <TeeRegisterHighlight
-          v-if="!isDataFull"
-          class="fr-mx-3v"
-          :text="Translation.t('project.projectRegisterHighlightText')"
-        />
-        <div class="fr-grid-row">
-          <div class="fr-col-12 fr-text-center">
-            <TeeSpinner v-if="navigationStore.hasSpinner" />
-            <TeeError
-              v-else-if="hasError"
-              :mailto="Contact.mailTo"
-              :email="Contact.email"
+        <div class="sticky-limits">
+          <div
+            v-sticky
+            class="sticky-element fr-py-1w"
+          >
+            <TeeRegisterHighlight
+              v-if="!isDataFull"
+              class="fr-mx-3v"
+              :text="Translation.t('project.projectRegisterHighlightText')"
+              :button-label="Translation.t('project.projectRegisterHighlightButtonLabelText')"
             />
           </div>
-          <p
-            v-if="companyDataSelected && isDataFull && !navigationStore.hasSpinner && countFilteredPrograms"
-            class="fr-mb-0"
-            v-html="resume"
-          ></p>
-          <ProjectProgramsList
-            v-if="studyPrograms.length > 0 && !navigationStore.hasSpinner"
-            :title="Translation.t('project.studyPrograms')"
-            :programs="studyPrograms"
-            :project="project"
-          />
-          <ProjectProgramsList
-            v-if="financePrograms.length > 0 && !navigationStore.hasSpinner"
-            :title="Translation.t('project.financePrograms')"
-            :programs="financePrograms"
-            :project="project"
-          />
+          <div class="fr-grid-row">
+            <div class="fr-col-12 fr-text-center">
+              <TeeSpinner v-if="navigationStore.hasSpinner" />
+              <TeeError
+                v-else-if="hasError"
+                :mailto="Contact.mailTo"
+                :email="Contact.email"
+              />
+            </div>
+            <p
+              v-if="companyDataSelected && isDataFull && !navigationStore.hasSpinner && countFilteredPrograms"
+              class="fr-mb-0"
+              v-html="resume"
+            ></p>
+            <ProjectProgramsList
+              v-if="studyPrograms.length > 0 && !navigationStore.hasSpinner"
+              :title="Translation.t('project.studyPrograms')"
+              :programs="studyPrograms"
+              :project="project"
+            />
+            <ProjectProgramsList
+              v-if="financePrograms.length > 0 && !navigationStore.hasSpinner"
+              :title="Translation.t('project.financePrograms')"
+              :programs="financePrograms"
+              :project="project"
+            />
+          </div>
         </div>
         <TeeDsfrHighlight
           v-if="isDataFull && !countFilteredPrograms && !navigationStore.hasSpinner"
@@ -142,3 +150,34 @@ const financePrograms = computed(() => {
   return ProgramSorter.byFinanceAidType(filteredByAidType)
 })
 </script>
+
+<style lang="scss" scoped>
+@media (min-width: 769px) {
+  .sticky-element {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #fff;
+  }
+
+  .is-stuck {
+    box-shadow: inset 0 -1px 0 0 var(--border-default-grey) !important;
+  }
+
+  /* small white div to hide the 1px ul marker */
+  .is-stuck::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -2px;
+    bottom: 0;
+    width: 2px;
+    background: white;
+    z-index: 2;
+  }
+
+  ::v-deep(.sticky-element .fr-text--lg) {
+    margin-bottom: 0 !important;
+  }
+}
+</style>
