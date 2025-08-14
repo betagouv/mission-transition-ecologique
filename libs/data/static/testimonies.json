@@ -188,6 +188,22 @@
     ]
   },
   {
+    "slug": "ecoconception-Resistex",
+    "verbatim": "**-47 % d’émissions de CO₂ en 10 ans** : derrière ce chiffre, un chantier de fond mené avec conviction. Fournisseurs responsables, suppression du plastique dans nos emballages, optimisation de la consommation énergétique de nos produits, amélioration de la réparabilité… Chaque maillon de notre chaîne de valeur a été repensé pour réduire notre impact.",
+    "companyName": "Resistex",
+    "authorName": "Bernard ALFANDARI",
+    "authorFunction": "PDG de Resistex",
+    "authorImage": "/images/testimony/photo-portrait-bernard-alfandari-jpg.webp",
+    "authorImageAttributes": "Photo de Bernard ALFANDARI, PDG de Resistex, engagé dans la transition écologique",
+    "externalLink": "https://www.youtube.com/watch?si=i0-lilDFC83yZHhG&v=CsHv3WCb_Hw&feature=youtu.be",
+    "homePageHighlight": null,
+    "projects": [
+      1,
+      31,
+      36
+    ]
+  },
+  {
     "slug": "friche-reemploi-kaleidoscoop",
     "verbatim": "Notre tiers-lieu est né d’une **friche industrielle de 3000 m²** que nous avons **réhabilitée** avec soin. **Matériaux locaux, biosourcés, récupération** de sanitaires, parquet, carrelage… Plus de 90 % du mobilier est issu du **réemploi.** Chaque choix traduit notre engagement pour un lieu responsable, ancré dans son histoire.",
     "companyName": "Kaleidoscoop",
@@ -261,6 +277,38 @@
     "homePageHighlight": null,
     "projects": [
       998
+    ]
+  },
+  {
+    "slug": "sabarot",
+    "verbatim": "Grâce à **3 000 m² de panneaux photovoltaïques** installés sur le toit de notre entrepôt, nous produisons une partie importante de notre électricité en temps réel. En 2024, leur production a atteint **586 MWh, entièrement autoconsommés sur site.**",
+    "companyName": "Sabarot Wessner SAS",
+    "authorName": "Guillaume Martin",
+    "authorFunction": "Responsable RSE chez Sabarot Wassner SAS",
+    "authorImage": "/images/testimony/guillaume_martin-jpg.webp",
+    "authorImageAttributes": "Photo de Guillaume Martin, Responsable RSE chez Sabarot",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      5
+    ]
+  },
+  {
+    "slug": "sabarot",
+    "verbatim": "Pour encourager une mobilité plus propre, on a installé **4 bornes de recharge**, ajouté des **hybrides** dans notre flotte et soutenu le **covoiturage** avec un coup de pouce de 50 €. Un grand local à vélos complète le tout. Cap sur un **parc 100 % électrique** d’ici 2027.",
+    "companyName": "Sabarot Wessner SAS",
+    "authorName": "Guillaume Martin",
+    "authorFunction": "Responsable RSE chez Sabarot Wassner SAS",
+    "authorImage": "/images/testimony/guillaume_martin-jpg.webp",
+    "authorImageAttributes": "",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      16,
+      18,
+      104,
+      147,
+      731
     ]
   },
   {
