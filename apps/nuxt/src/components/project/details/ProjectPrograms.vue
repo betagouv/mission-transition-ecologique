@@ -152,7 +152,7 @@ const financePrograms = computed(() => {
 </script>
 
 <style lang="scss" scoped>
-@media (min-width: 769px) {
+@media (width >= 769px) {
   .sticky-element {
     position: sticky;
     top: 0;
