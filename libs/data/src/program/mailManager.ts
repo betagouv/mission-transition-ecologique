@@ -48,7 +48,7 @@ export class MailManager {
       if (!techInfos.prod_release_date) {
         techInfos.prod_release_date = new Date().toISOString()
       }
-      techInfos.email_enable = false // TODO replace to do when in PROD
+      techInfos.email_enable = true
     }
     return techInfos
   }
