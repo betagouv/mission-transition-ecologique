@@ -13,6 +13,8 @@ import {
 } from '../../program/types/domain'
 import { Theme } from '../../theme/types/domain'
 import { FileManager } from '../fileManager'
+import { ContactBaserow } from './contactBaserow'
+import { Contact } from '../types'
 
 export class ProgramBaserow extends AbstractBaserow {
   private readonly _geographicCoverageTableId = ConfigBaserow.GEOGRAPHIC_COVERAGE_ID
@@ -27,7 +29,6 @@ export class ProgramBaserow extends AbstractBaserow {
     this._geographicAreas = []
   }
 
-  // Note : caching the downloaded data by default to nudge towards reducing the data transfer from baserow.
   async getPrograms(useLocalRawData: boolean): Promise<DataProgram[]> {
     if (useLocalRawData) {
       try {
@@ -42,11 +43,14 @@ export class ProgramBaserow extends AbstractBaserow {
     const geographicCoverages = await this._getTableData<GeographicCoverage>(this._geographicCoverageTableId)
     const themes = await this._getTableData<Theme>(this._themeTableId)
     const conditionnalValues = await this._getTableData<ConditionalValues>(this._conditionnalValuesTableId)
+    const contactValues = await new ContactBaserow().getAll()
 
     this._operators = await this._getTableData<Operator>(this._operatorTableId)
     this._geographicAreas = await this._getTableData<GeographicAreas>(this._geographicAreasTableId)
 
-    const dataPrograms = baserowPrograms.map((baserowProgram) => this._convertToDataProgram(baserowProgram, geographicCoverages, themes))
+    const dataPrograms = baserowPrograms.map((baserowProgram) =>
+      this._convertToDataProgram(baserowProgram, geographicCoverages, themes, contactValues)
+    )
 
     this._enrichDataProgramsWithConditionnals(dataPrograms, conditionnalValues)
 
@@ -62,7 +66,12 @@ export class ProgramBaserow extends AbstractBaserow {
     return dataPrograms
   }
 
-  private _convertToDataProgram(program: Program, geographicCoverages: GeographicCoverage[], themes: Theme[]): DataProgram {
+  private _convertToDataProgram(
+    program: Program,
+    geographicCoverages: GeographicCoverage[],
+    themes: Theme[],
+    contacts: Contact[]
+  ): DataProgram {
     const {
       Statuts,
       "Nature de l'aide": aidTypes,
@@ -72,6 +81,7 @@ export class ProgramBaserow extends AbstractBaserow {
       'Zones géographiques': programGeographicAreas,
       'Thèmes Ciblés': programThemes,
       'redirection-vers': redirectProgram,
+      'Référent Interne': internalContactLinks,
       ...nonModifiedFields
     } = program
 
@@ -82,6 +92,7 @@ export class ProgramBaserow extends AbstractBaserow {
     const domainProgramGeographicAreas = this._replaceLinkObjectByTableData<GeographicAreas>(programGeographicAreas, this._geographicAreas)
     const domainProgramThemes = this._replaceLinkObjectByTableData<Theme>(programThemes, themes)
     const redirectsIds = redirectProgram.map((linkedObj) => linkedObj.id)
+    const internalContacts = this._replaceLinkObjectByTableData<Contact>(internalContactLinks, contacts)
 
     const rawProgram: DataProgram = {
       ...nonModifiedFields,
@@ -92,7 +103,8 @@ export class ProgramBaserow extends AbstractBaserow {
       'Zones géographiques': domainProgramGeographicAreas,
       'Couverture géographique': domainGeographicCoverage[0],
       'Thèmes Ciblés': domainProgramThemes,
-      'redirection-vers': redirectsIds
+      'redirection-vers': redirectsIds,
+      ...(internalContacts.length > 0 && { internalContact: internalContacts[0] })
     }
 
     return rawProgram

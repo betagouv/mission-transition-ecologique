@@ -60,6 +60,8 @@ export abstract class AbstractBaserow {
   }
 
   protected _replaceLinkObjectByTableData<T extends Id>(links: LinkObject[], referencedTableData: T[]): T[] {
+    if (!links) return []
+
     const tableData = links.map((link) => referencedTableData.find((object) => link.id === object.id))
 
     if (tableData.includes(undefined)) {

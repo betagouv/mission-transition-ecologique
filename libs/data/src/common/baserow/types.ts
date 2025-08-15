@@ -52,6 +52,7 @@ export interface Program
       | 'Zones géographiques'
       | 'Thèmes Ciblés'
       | 'redirection-vers'
+      | 'contact'
     >,
     BaserowSectors,
     ProgramTechSerialized {
@@ -63,6 +64,7 @@ export interface Program
   'Zones géographiques': LinkObject[]
   'Thèmes Ciblés': LinkObject[]
   'redirection-vers': LinkObject[]
+  'Référent Interne': LinkObject[]
 }
 
 export interface ProgramTechSerialized {
@@ -163,4 +165,9 @@ export interface ProgramTechnicalInfo {
   email_enable?: boolean
   last_mail_sent_date?: string
   eol_mail_sent_date?: string
+}
+
+export interface BaserowContact extends Id {
+  'Prénom NOM': string
+  Courriel: string
 }

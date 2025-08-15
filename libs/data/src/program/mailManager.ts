@@ -6,6 +6,9 @@ import { fileURLToPath } from 'url'
 import { ProgramTechnicalInfo } from '../common/baserow/types'
 import { ProgramUtils } from './programUtils'
 import { DataProgram } from './types/domain'
+import BrevoMail from '../common/brevo/brevoMail'
+import { Contact } from '../common/types'
+import z from 'zod'
 
 interface ProgramCsvRow {
   filename: string
@@ -23,9 +26,11 @@ export class MailManager {
 
       let techInfos = this._parseTechField(program)
       techInfos = this._maybeInitializeMailTechFields(techInfos)
-      techInfos = await this._maybeSendInitialMail(program, techInfos)
-      techInfos = await this._maybeSendEOLMail(program, techInfos)
-      techInfos = await this._maybeSendPeriodicMail(program, techInfos)
+      if (this._isContactValidAndEligible(program.internalContact)) {
+        techInfos = await this._maybeSendInitialMail(program, techInfos)
+        techInfos = await this._maybeSendEOLMail(program, techInfos)
+        techInfos = await this._maybeSendPeriodicMail(program, techInfos)
+      }
       await this._maybeUpdateTechInfos(program, techInfos)
     }
   }
@@ -52,7 +57,7 @@ export class MailManager {
     if (!techInfos.email_enable) return techInfos
 
     if (!techInfos.last_mail_sent_date) {
-      await brevo.sendInitialMail(program)
+      await new BrevoMail().sendInitialMail(program)
       techInfos.last_mail_sent_date = new Date().toISOString()
     }
     return techInfos
@@ -65,7 +70,7 @@ export class MailManager {
     const newMailMinDate = new Date(lastSent.getFullYear(), lastSent.getMonth() + 6, lastSent.getDate())
 
     if (new Date() >= newMailMinDate) {
-      await brevo.sendPeriodicMail(program)
+      await new BrevoMail().sendPeriodicMail(program)
       techInfos.last_mail_sent_date = new Date().toISOString()
     }
     return techInfos
@@ -91,7 +96,7 @@ export class MailManager {
     const today = new Date()
 
     if (today >= eolMailMinDate && !techInfos.eol_mail_sent_date) {
-      await brevo.sendEolMail(program)
+      await new BrevoMail().sendEolMail(program)
       techInfos.eol_mail_sent_date = today.toISOString()
       techInfos.last_mail_sent_date = today.toISOString()
     }
@@ -116,6 +121,16 @@ export class MailManager {
 
   private async _wait(ms = 200) {
     return new Promise((res) => setTimeout(res, ms))
+  }
+
+  private _isContactValidAndEligible(internalContact: Contact | undefined) {
+    if (!internalContact) {
+      return false
+    }
+    if (!z.string().email().safeParse(internalContact.mail).success) {
+      return false
+    }
+    return !internalContact.mail.endsWith('ademe.fr')
   }
 
   // Code that has been used for the initialization of the "tech" column
