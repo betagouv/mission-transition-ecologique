@@ -17,7 +17,7 @@ interface ProgramCsvRow {
 
 export class MailManager {
   async sendProgramsMails() {
-    const programs = await new ProgramBaserow().getPrograms(true) // TODO remove true in prod
+    const programs = await new ProgramBaserow().getPrograms(false)
 
     for (const program of programs) {
       if (!ProgramUtils.isInProd(program)) {

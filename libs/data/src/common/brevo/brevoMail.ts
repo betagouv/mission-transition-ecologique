@@ -16,23 +16,23 @@ export default class BrevoMail {
     this._api.setApiKey(TransactionalEmailsApiApiKeys.apiKey, Config.BREVO_API_TOKEN)
   }
 
-  sendInitialMail(program: DataProgram) {
-    this._sendMail(program, MailType.Initial)
+  async sendInitialMail(program: DataProgram) {
+    await this._sendMail(program, MailType.Initial)
   }
 
-  sendPeriodicMail(program: DataProgram) {
-    this._sendMail(program, MailType.Periodic)
+  async sendPeriodicMail(program: DataProgram) {
+    await this._sendMail(program, MailType.Periodic)
   }
 
-  sendEolMail(program: DataProgram) {
-    this._sendMail(program, MailType.EndOfLife)
+  async sendEolMail(program: DataProgram) {
+    await this._sendMail(program, MailType.EndOfLife)
   }
 
   private async _sendMail(program: DataProgram, mailType: MailType): Promise<void> {
     try {
       await this._api.sendTransacEmail(this._createEmail(program, mailType))
-    } catch {
-      //do nothing
+    } catch (err: unknown) {
+      console.log(err)
     }
   }
 
@@ -44,7 +44,7 @@ export default class BrevoMail {
     const email = new SendSmtpEmail()
 
     if (mailType == MailType.Initial) {
-      email.templateId = this._programEolNotification
+      email.templateId = this._programInProdNotification
       email.params = {
         programName: program.Titre,
         programLink: this._baseProdCatalogUrl + program['Id fiche dispositif'],
@@ -52,7 +52,7 @@ export default class BrevoMail {
       }
     }
     if (mailType == MailType.Periodic) {
-      email.templateId = this._programEolNotification
+      email.templateId = this._programSixMonthNotification
       email.params = {
         programName: program.Titre,
         programLink: this._baseProdCatalogUrl + program['Id fiche dispositif']
