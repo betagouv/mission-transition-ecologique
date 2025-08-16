@@ -10284,7 +10284,7 @@
     "url": "https://www.parcs-naturels-regionaux.fr/les-enjeux/biodiversite/life-biodivfrance-entreprises-biodiversite",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuite",
-    "durée de l'accompagnement": "Plusieurs jours répartis sur trois ans.",
+    "durée de l'accompagnement": "1 à 2 jours répartis sur 3 mois",
     "objectifs": [
       {
         "description": "Exprimez votre intérêt en contactant un conseiller par mail.",
@@ -19990,7 +19990,7 @@
   {
     "titre": "Formation ADEME",
     "promesse": "Réalisez une initiation aux enjeux de la transition écologique",
-    "description": "Suivez une formation en ligne pour initier la transition écologique de votre entreprise. Vous découvrirez les principales transformations de la société, de l'économie, des territoires et les enjeux de la transition écologique pour les entreprises. Puis en seconde partie, vous serez invité à identifier les risques et les opportunités pour votre entreprise ainsi que les premiers leviers d’action pour se mettre en mouvement.",
+    "description": "Suivez une **formation en ligne** pour engager la transition écologique de votre entreprise. Elle vous aidera, vous et vos équipes, à :\n\n- **Comprendre les grandes transformations** de la société, de l’économie et des territoires face à l’urgence écologique.\n\n- **Identifier les enjeux, risques et opportunités** propres à votre activité.\n\n- Repérer les premiers **leviers d’action** pour initier le changement.\n\n- Découvrir des **solutions concrètes** dans des domaines clés : bâtiment, énergie, production, gestion des déchets, écoconception, achats, logistique et environnement de travail.\n\nÀ l’issue de cette formation de 3h, vous repartirez avec une vision claire et des outils opérationnels pour mettre votre entreprise en mouvement.",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
@@ -21701,7 +21701,7 @@
         "Normandie"
       ],
       "secteur d'activité": [
-        "Ne sont pas éligibles à l’aide, les exploitations agricoles, les associations à but non commercial, les organismes publics, les sociétés d’économies mixtes et les promoteurs immobilier."
+        "Ne sont pas éligibles à l’aide, les entreprises en B2C, les exploitations agricoles, les associations à but non commercial, les organismes publics, les sociétés d’économies mixtes et les promoteurs immobilier."
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -21814,7 +21814,6 @@
           "code NAF niveau 1 . est D",
           "code NAF niveau 1 . est E",
           "code NAF niveau 1 . est F",
-          "code NAF niveau 1 . est G",
           "code NAF niveau 1 . est H",
           "code NAF niveau 1 . est J",
           "code NAF niveau 1 . est K",
@@ -32104,8 +32103,8 @@
   {
     "titre": "Prêt transition écologique Île-de-France",
     "promesse": "Financez votre projet de transition écologique grâce à un prêt à taux préférentiel",
-    "description": "Vous avez un projet visant à réduire votre consommation énergétique ou l'impact environnemental de votre entreprise ? Le Prêt transition écologique Île-de-France permet de financer, à taux préférentiel, des investissements matériels et immatériels dans les champs suivants : \n- l'amélioration de la performance (énergie, eau, matière), \n- l'optimisation des procédés, \n- la mobilité “zéro carbone” pour les salariés, les marchandises et les produits, \n- la création de services et produits permettant de réduire la consommation de ressources, \n-l'intégration d'énergies renouvelables.",
-    "description longue": "L'aide régionale prend la forme d'un prêt à taux préférentiel octroyé à des conditions plus favorables que les conditions du marché. Ce prêt intervient en qualité de produit de \"cofinancement\", en complément des financements octroyés par les banques. \n\nSont éligibles, les investissements visant à : \n • Optimiser les procédés, ou améliorer la performance (énergie, eau, matière) afin de mieux maîtriser ou de diminuer les impacts sur l’environnement, y compris des procédés d’économie circulaire,\n • Favoriser la mobilité “zéro carbone” pour les salariés, les marchandises et les produits ,\n • Innover pour mettre sur le marché des produits ou des services en matière de protection de l’environnement, d’économie circulaire et/ou permettant une réduction de la consommation de ressources, renouvelables ou non (énergie, matières premières, eau, l’allongement de la durée de vie des produits, l’intégration de recyclé, la recyclabilité, la réutilisation ou le réemploi),\n • Favoriser un mix énergétique plus vertueux en intégrant davantage d’énergies renouvelables.",
+    "description": "Vous avez un projet visant à réduire votre consommation énergétique ou l'impact environnemental de votre entreprise ? Le Prêt transition écologique Île-de-France permet de financer, à taux préférentiel, des investissements matériels et immatériels dans les champs suivants :\n\n- l'amélioration de la performance (énergie, eau, matière),\n- l'optimisation des procédés,\n- la mobilité “zéro carbone” pour les salariés, les marchandises et les produits,\n- la création de services et produits permettant de réduire la consommation de ressources,\\\n  -l'intégration d'énergies renouvelables,\n- les dépenses liées à votre croissance si vous êtes un offreur de solution de transition écologique.",
+    "description longue": "L'aide régionale prend la forme d'un prêt à taux préférentiel octroyé à des conditions plus favorables que les conditions du marché. Ce prêt intervient en qualité de produit de \"cofinancement\", en complément des financements octroyés par les banques. \n\nSont éligibles, les investissements visant à : \n • Optimiser les procédés, ou améliorer la performance (énergie, eau, matière) afin de mieux maîtriser ou de diminuer les impacts sur l’environnement, y compris des procédés d’économie circulaire,\n • Favoriser la mobilité “zéro carbone” pour les salariés, les marchandises et les produits ,\n • Innover pour mettre sur le marché des produits ou des services en matière de protection de l’environnement, d’économie circulaire et/ou permettant une réduction de la consommation de ressources, renouvelables ou non (énergie, matières premières, eau, l’allongement de la durée de vie des produits, l’intégration de recyclé, la recyclabilité, la réutilisation ou le réemploi),\n • Favoriser un mix énergétique plus vertueux en intégrant davantage d’énergies renouvelables, \n• Croître votre activité si vous êtes un offreur de solution de transition écologique.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Région Île-de-France",
     "autres opérateurs": [
@@ -32128,7 +32127,7 @@
         ]
       },
       {
-        "description": "Réalisez un diagnostic énergétique ou environnemental et obtenez un plan d'action qui sera à transmettre à votre dossier de candidature. Les livrables fournis par le prestataire du diagnostic seront à joindre au dossier.\\",
+        "description": "Pour une demande prêt d'un montant inférieur à 75 000 €, passez directement à l'étape 3. Pour une demande de prêt d'un montant supérieur à 75 000 €, réalisez un diagnostic énergétique ou environnemental et obtenez un plan d'action qui sera à transmettre à votre dossier de candidature. Les livrables fournis par le prestataire du diagnostic seront à joindre au dossier.\\",
         "liens": [
           {
             "lien": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/diag-ecoconception",
@@ -32165,11 +32164,11 @@
         "liens": [
           {
             "lien": "https://flash.bpifrance.fr/financement/pret-transition-ecologique-idf",
-            "texte": "Faire ma demande de prêt pour un montant inférieur à 50 000 € inclus"
+            "texte": "Faire ma demande de prêt pour un montant inférieur à 75 000 € inclus"
           },
           {
-            "lien": "https://app.bel.bpifrance.fr/subscribe/pret-region-energie?pk_vid=170beb113c74c81d17062826113d1eca",
-            "texte": "Faire ma demande de prêt pour un montant supérieur à 50 000 €"
+            "lien": "https://moncompte.bpifrance.fr/redirect?goto=https%3A%2F%2Fmoncompte.bpifrance.fr%3A443%2Fam%2Foauth2%2Frealms%2Froot%2Frealms%2Fmcb%2Fauthorize%3Fresponse_type%3Dcode%26client_id%3Dbrc-spa%26state%3DdG9qLk5XTG9CcW55SnRzSHZWZGZwZXdsWU9GZ3RUWW1vOVV2SkhvVDhhaXpu%3B%25252Fsubscribe%25252Fpret-region-energie%25253Fpk_vid%25253D170beb113c74c81d17062826113d1eca%26redirect_uri%3Dhttps%3A%2F%2Fapp.bel.bpifrance.fr%2Fsso%2Fcode%26scope%3Dopenid%2520profile%2520email%2520legacy%26code_challenge%3DOxH1_rTVq1JVuU9vmiUftHPIanWzIEor7WtT0myKUnw%26code_challenge_method%3DS256%26nonce%3DdG9qLk5XTG9CcW55SnRzSHZWZGZwZXdsWU9GZ3RUWW1vOVV2SkhvVDhhaXpu%26acr%3Dloginsimple%26acr_sig%3DqA3CLSmb7GpikFpH1WcgPvgZbKAwnaaiH1D0KG9O9BA&realm=/mcb&service=LoginSimple",
+            "texte": "Faire ma demande de prêt pour un montant supérieur à 75 000 €"
           }
         ]
       },
