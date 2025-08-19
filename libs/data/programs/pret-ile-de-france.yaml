@@ -6,19 +6,21 @@ description: >-
   Vous avez un projet visant à réduire votre consommation énergétique ou
   l'impact environnemental de votre entreprise ? Le Prêt transition écologique
   Île-de-France permet de financer, à taux préférentiel, des investissements
-  matériels et immatériels dans les champs suivants : 
+  matériels et immatériels dans les champs suivants :
 
-  - l'amélioration de la performance (énergie, eau, matière), 
 
-  - l'optimisation des procédés, 
+  - l'amélioration de la performance (énergie, eau, matière),
+
+  - l'optimisation des procédés,
 
   - la mobilité “zéro carbone” pour les salariés, les marchandises et les
-  produits, 
+  produits,
 
   - la création de services et produits permettant de réduire la consommation de
-  ressources, 
-
-  -l'intégration d'énergies renouvelables.
+  ressources,\
+    -l'intégration d'énergies renouvelables,
+  - les dépenses liées à votre croissance si vous êtes un offreur de solution de
+  transition écologique.
 description longue: >-
   L'aide régionale prend la forme d'un prêt à taux préférentiel octroyé à des
   conditions plus favorables que les conditions du marché. Ce prêt intervient en
@@ -30,7 +32,9 @@ description longue: >-
    • Optimiser les procédés, ou améliorer la performance (énergie, eau, matière) afin de mieux maîtriser ou de diminuer les impacts sur l’environnement, y compris des procédés d’économie circulaire,
    • Favoriser la mobilité “zéro carbone” pour les salariés, les marchandises et les produits ,
    • Innover pour mettre sur le marché des produits ou des services en matière de protection de l’environnement, d’économie circulaire et/ou permettant une réduction de la consommation de ressources, renouvelables ou non (énergie, matières premières, eau, l’allongement de la durée de vie des produits, l’intégration de recyclé, la recyclabilité, la réutilisation ou le réemploi),
-   • Favoriser un mix énergétique plus vertueux en intégrant davantage d’énergies renouvelables.
+   • Favoriser un mix énergétique plus vertueux en intégrant davantage d’énergies renouvelables, 
+  • Croître votre activité si vous êtes un offreur de solution de transition
+  écologique.
 illustration: images/TEE_eolienne.png
 opérateur de contact: Région Île-de-France
 autres opérateurs:
@@ -47,9 +51,11 @@ objectifs:
       - lien: https://pret-transition-ecologique.iledefrance.fr/
         texte: Vérifier les critères d'éligibilité
   - description: >-
-      Réalisez un diagnostic énergétique ou environnemental et obtenez un plan
-      d'action qui sera à transmettre à votre dossier de candidature. Les
-      livrables fournis par le prestataire du diagnostic seront à joindre au
+      Pour une demande prêt d'un montant inférieur à 75 000 €, passez
+      directement à l'étape 3. Pour une demande de prêt d'un montant supérieur à
+      75 000 €, réalisez un diagnostic énergétique ou environnemental et obtenez
+      un plan d'action qui sera à transmettre à votre dossier de candidature.
+      Les livrables fournis par le prestataire du diagnostic seront à joindre au
       dossier.\
     liens:
       - lien: >-
@@ -79,10 +85,10 @@ objectifs:
       dossiers.
     liens:
       - lien: https://flash.bpifrance.fr/financement/pret-transition-ecologique-idf
-        texte: Faire ma demande de prêt pour un montant inférieur à 50 000 € inclus
+        texte: Faire ma demande de prêt pour un montant inférieur à 75 000 € inclus
       - lien: >-
-          https://app.bel.bpifrance.fr/subscribe/pret-region-energie?pk_vid=170beb113c74c81d17062826113d1eca
-        texte: Faire ma demande de prêt pour un montant supérieur à 50 000 €
+          https://moncompte.bpifrance.fr/redirect?goto=https%3A%2F%2Fmoncompte.bpifrance.fr%3A443%2Fam%2Foauth2%2Frealms%2Froot%2Frealms%2Fmcb%2Fauthorize%3Fresponse_type%3Dcode%26client_id%3Dbrc-spa%26state%3DdG9qLk5XTG9CcW55SnRzSHZWZGZwZXdsWU9GZ3RUWW1vOVV2SkhvVDhhaXpu%3B%25252Fsubscribe%25252Fpret-region-energie%25253Fpk_vid%25253D170beb113c74c81d17062826113d1eca%26redirect_uri%3Dhttps%3A%2F%2Fapp.bel.bpifrance.fr%2Fsso%2Fcode%26scope%3Dopenid%2520profile%2520email%2520legacy%26code_challenge%3DOxH1_rTVq1JVuU9vmiUftHPIanWzIEor7WtT0myKUnw%26code_challenge_method%3DS256%26nonce%3DdG9qLk5XTG9CcW55SnRzSHZWZGZwZXdsWU9GZ3RUWW1vOVV2SkhvVDhhaXpu%26acr%3Dloginsimple%26acr_sig%3DqA3CLSmb7GpikFpH1WcgPvgZbKAwnaaiH1D0KG9O9BA&realm=/mcb&service=LoginSimple
+        texte: Faire ma demande de prêt pour un montant supérieur à 75 000 €
   - description: Si votre demande est acceptée, signez le contrat de prêt.
   - description: Recevez les fonds sous 10 jours en moyenne et commencez votre projet.
 conditions d'éligibilité:
