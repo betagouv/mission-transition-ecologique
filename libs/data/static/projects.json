@@ -2959,7 +2959,6 @@
     ],
     "mainTheme": "energy",
     "programs": [
-      "formation-engager-entreprise-transition-ecologique",
       "formation-artisan-developpement-durable",
       "cci-business-optimizer",
       "ecogestes-paca",
@@ -3217,7 +3216,6 @@
     ],
     "mainTheme": "waste",
     "programs": [
-      "formation-engager-entreprise-transition-ecologique",
       "cci-business-optimizer"
     ],
     "linkedProjects": [
