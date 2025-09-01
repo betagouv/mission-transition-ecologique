@@ -134,7 +134,8 @@
     "homePageHighlight": null,
     "projects": [
       1,
-      21
+      21,
+      1226
     ]
   },
   {
@@ -300,7 +301,7 @@
     "authorName": "Guillaume Martin",
     "authorFunction": "Responsable RSE chez Sabarot Wassner SAS",
     "authorImage": "/images/testimony/guillaume_martin-jpg.webp",
-    "authorImageAttributes": "",
+    "authorImageAttributes": "Photo de Guillaume Martin, Responsable RSE chez Sabarot",
     "externalLink": "",
     "homePageHighlight": null,
     "projects": [
