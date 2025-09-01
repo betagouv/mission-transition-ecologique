@@ -124,9 +124,7 @@ if (currentProgram.value) {
 const scrollToRef = (targetRef: HTMLElement | null | undefined) => {
   if (!targetRef) return
   if (targetRef) {
-    navigation.isByRouteName(RouteName.CatalogProgramDetail) || navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)
-      ? Scroll.to(targetRef)
-      : Scroll.toWithTopBarOffset(targetRef)
+    Scroll.toWithEligibilityBarOffset(targetRef)
   }
 }
 const scrollToForm = () => scrollToRef(formRef.value)

@@ -142,7 +142,7 @@ const bgClass = computed(() => {
 const scrollTo = (id: string) => {
   const element = document.getElementById(id)
   if (element) {
-    Scroll.toWithTopBarOffset(element)
+    Scroll.toWithEligibilityBarOffset(element)
   }
 }
 
