@@ -156,8 +156,6 @@ const financePrograms = computed(() => {
 onMounted(async () => {
   await nextTick()
   if (stickyElement.value) {
-    console.log('stickyElement', stickyElement.value)
-
     const stickyWithOffset = new AddClassOnScroll(stickyElement.value, stickyElement.value, 'sticky-bottom-border')
     stickyWithOffset.addEventListenerOnScroll()
   }
