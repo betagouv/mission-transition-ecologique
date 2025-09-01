@@ -1,6 +1,5 @@
 <template>
   <TeeEligibilityBar
-    v-sticky="{ fixed: true }"
     :color="color"
     :bg-color="getEligibilityColor"
     :message="getEligibilityMessage"

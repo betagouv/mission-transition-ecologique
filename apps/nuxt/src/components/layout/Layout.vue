@@ -1,10 +1,9 @@
 <template>
-  <div
+  <slot
     v-if="$slots.beforeBreadcrumb"
-    class="fr-container--fluid"
+    name="beforeBreadcrumb"
   >
-    <slot name="beforeBreadcrumb"> </slot>
-  </div>
+  </slot>
   <slot
     v-if="breadcrumb"
     name="breadcrumb"
