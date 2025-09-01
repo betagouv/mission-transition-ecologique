@@ -3203,6 +3203,67 @@
     ]
   },
   {
+    "id": 567,
+    "slug": "couvert-vegetal-plantes-couvertures",
+    "title": "Couvert végétal",
+    "nameTag": "🌱 couvert végétal",
+    "shortDescription": "Le couvert végétal prévient la pollution et améliore la fertilité des terres agricoles.",
+    "image": "/images/projet/couvert-vegetal.webp",
+    "longDescription": "Le **couvert végétal**, aussi appelé plante de couverture, est une pratique d’**agriculture durable** qui protège et régénère vos sols. En grandes cultures, il prend souvent la forme de **couverts intermédiaires**, semés entre deux productions principales.\n\nAdopter le couvert végétal sur votre **exploitation agricole**, c’est profiter d’avantages concrets :\n\n- réduction des adventices et meilleure maîtrise des intrants,\n\n- limitation des pertes d’**engrais** et de la **pollution diffuse**,\n\n- enrichissement du sol grâce à la fixation d’**azote** par les légumineuses,\n\n- développement de la **biodiversité fonctionnelle**,\n\n- sol plus fertile avec une meilleure **rétention d’eau**.\n\nEn France, la surface en couverts est passée à 2,9 millions d’hectares en 2022. L’objectif fixé est 4,8 millions d’ici 2030, soit une progression de 65 %.",
+    "moreDescription": "- [**Les principales étapes pour réussir vos couverts végétaux et les valoriser**](https://landes.chambres-agriculture.fr/sinformer/produire-innover/productions-vegetales/couverts-vegetaux)**,** par la Chambre d’agriculture des Landes.\n- [**L'agroforesterie, un enjeu pour les paysages agricoles**](https://infos.ademe.fr/agriculture-alimentation/2025/agroforesterie-redonner-de-la-valeur-a-larbre-pour-transformer-nos-paysages-agricoles/), par l'ADEME.",
+    "themes": [
+      "biodiversite",
+      "water"
+    ],
+    "mainTheme": "biodiversite",
+    "programs": [
+      "certification-agriculture-biologique",
+      "sud-pret-climat",
+      "pass-transformation-ecologique"
+    ],
+    "linkedProjects": [
+      144,
+      203,
+      632
+    ],
+    "priority": "412",
+    "highlightPriority": "7",
+    "sectors": [
+      "A"
+    ]
+  },
+  {
+    "id": 632,
+    "slug": "agroecologie",
+    "title": "Pratique agroécologique",
+    "nameTag": "🍄 agroécologie",
+    "shortDescription": "L'agroécologie intègre les principes écologiques dans les pratiques agricoles pour créer des systèmes alimentaires durables.",
+    "image": "/images/projet/agroecologie.webp",
+    "longDescription": "L'agroécologie repose sur une gestion des terres agricoles qui **préserve la biodiversité, protège les ressources** naturelles et **limite l'impact** **environnemental** de l'agriculture tout en répondant aux besoins humains. \\\nElle vise à créer des systèmes agricoles résilients, équilibrés et durables sur le long terme, en favorisant des techniques comme :\n\n- la **rotation des cultures**,\n- l'utilisation de **couverts végétaux**,\n- la **diversification** des cultures,\n- l'**intégration de l'élevage** et de l'agriculture afin de maximiser les synergies entre eux,\n- la **gestion responsable des sols et de l'eau**,\n- l'adoption de **pratiques respectueuses des communautés locales** et de leur culture.",
+    "moreDescription": "- [**L’énergie de l’agroécologie, une solution pour le climat,**](https://agriculture-de-conservation.com/sites/agriculture-de-conservation.com/IMG/pdf/carbone-organique-sol.pdf) un guide de l'ADEME.\n- [**L'agriculture face au changement climatique**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/8012-l-agriculture-face-au-changement-climatique.html#product-presentation), une infographie proposée par l'ADEME.",
+    "themes": [
+      "biodiversite"
+    ],
+    "mainTheme": "biodiversite",
+    "programs": [
+      "etude-methanisation",
+      "investissement-biognv-agricole-et-territorial",
+      "sobriete-et-resilience-des-territoires",
+      "pret-vert",
+      "pret-vert-ademe",
+      "aide-financement-occitanie",
+      "certification-agriculture-biologique"
+    ],
+    "linkedProjects": [
+      567
+    ],
+    "priority": "511",
+    "highlightPriority": null,
+    "sectors": [
+      "A"
+    ]
+  },
+  {
     "id": 666,
     "slug": "tourisme-zero-dechet",
     "title": "Tourisme zéro déchet",
