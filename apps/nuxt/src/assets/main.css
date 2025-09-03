@@ -58,6 +58,10 @@
   -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/checkbox-circle-fill.svg");
   mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/checkbox-circle-fill.svg");
 }
+.fr-icon-information-line::before, .fr-icon-information-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/information-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/information-line.svg");
+}
 .fr-icon-mail-line::before, .fr-icon-mail-line::after {
   -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/mail-line.svg");
   mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/mail-line.svg");
@@ -66,9 +70,9 @@
   -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/briefcase-line.svg");
   mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/briefcase-line.svg");
 }
-.fr-icon-link::before, .fr-icon-link::after {
-  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/editor/link.svg");
-  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/editor/link.svg");
+.fr-icon-links-line::before, .fr-icon-links-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/links-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/links-line.svg");
 }
 .fr-icon-money-euro-circle-line::before, .fr-icon-money-euro-circle-line::after {
   -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/finance/money-euro-circle-line.svg");
@@ -229,25 +233,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: white !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--white {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--black {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -263,25 +248,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(231.7, 231.7, 231.7) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--black {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #161616 !important;
-  }
-  .fr-bg-xs--black--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(185.1, 185.1, 185.1) !important;
-  }
-  .fr-bg-xs--black--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(231.7, 231.7, 231.7) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--yellow {
     background-color: #facf35 !important;
   }
@@ -291,19 +257,6 @@
   .fr-bg--yellow--lightness {
     background-color: rgb(254.5, 250.2, 234.8) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--yellow {
-    background-color: #facf35 !important;
-  }
-  .fr-bg-xs--yellow--light {
-    background-color: rgb(253.5, 240.6, 194.4) !important;
-  }
-  .fr-bg-xs--yellow--lightness {
-    background-color: rgb(254.5, 250.2, 234.8) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--deep-red {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -319,25 +272,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(255, 226.5, 228.4) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--deep-red {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #e1000f !important;
-  }
-  .fr-bg-xs--deep-red--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 169.5, 175.2) !important;
-  }
-  .fr-bg-xs--deep-red--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 226.5, 228.4) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--red {
     background-color: #fca081 !important;
   }
@@ -347,19 +281,6 @@
   .fr-bg--red--lightness {
     background-color: rgb(254.7, 245.5, 242.4) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--red {
-    background-color: #fca081 !important;
-  }
-  .fr-bg-xs--red--light {
-    background-color: rgb(254.1, 226.5, 217.2) !important;
-  }
-  .fr-bg-xs--red--lightness {
-    background-color: rgb(254.7, 245.5, 242.4) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--purple {
     background-color: #6a62f4 !important;
   }
@@ -369,19 +290,6 @@
   .fr-bg--purple--lightness {
     background-color: rgb(240.1, 239.3, 253.9) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--purple {
-    background-color: #6a62f4 !important;
-  }
-  .fr-bg-xs--purple--light {
-    background-color: rgb(210.3, 207.9, 251.7) !important;
-  }
-  .fr-bg-xs--purple--lightness {
-    background-color: rgb(240.1, 239.3, 253.9) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--green {
     background-color: #1ebe8e !important;
   }
@@ -391,19 +299,6 @@
   .fr-bg--green--lightness {
     background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--green {
-    background-color: #1ebe8e !important;
-  }
-  .fr-bg-xs--green--light {
-    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
-  }
-  .fr-bg-xs--green--lightness {
-    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--blue {
     background-color: #001891 !important;
   }
@@ -413,19 +308,6 @@
   .fr-bg--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue {
-    background-color: #001891 !important;
-  }
-  .fr-bg-xs--blue--light {
-    background-color: rgb(145.5, 163.624137931, 255) !important;
-  }
-  .fr-bg-xs--blue--lightness {
-    background-color: rgb(218.5, 224.5413793103, 255) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--blue-france {
     background-color: #000091 !important;
   }
@@ -435,19 +317,6 @@
   .fr-bg--blue-france--lightness {
     background-color: rgb(218.5, 218.5, 255) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue-france {
-    background-color: #000091 !important;
-  }
-  .fr-bg-xs--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
-  }
-  .fr-bg-xs--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--grey {
     background-color: #777777 !important;
   }
@@ -458,24 +327,14 @@
     background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--grey {
-    background-color: #777777 !important;
+@media (max-width: 35.98em) {
+  .fr-bg-xs--none {
+    background-image: none !important;
   }
-  .fr-bg-xs--grey--light {
-    background-color: rgb(214.2, 214.2, 214.2) !important;
-  }
-  .fr-bg-xs--grey--lightness {
-    background-color: rgb(241.4, 241.4, 241.4) !important;
+  .fr-bg-xs--none:hover {
+    background-color: transparent !important;
   }
 }
-.fr-bg--none {
-  background-image: none !important;
-}
-.fr-bg--none:hover {
-  background-color: transparent !important;
-}
-
 @media (min-width: 36em) {
   .fr-bg-sm--white {
     /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -492,25 +351,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: white !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--white {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--black {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -526,25 +366,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(231.7, 231.7, 231.7) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--black {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #161616 !important;
-  }
-  .fr-bg-xs--black--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(185.1, 185.1, 185.1) !important;
-  }
-  .fr-bg-xs--black--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(231.7, 231.7, 231.7) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--yellow {
     background-color: #facf35 !important;
   }
@@ -554,19 +375,6 @@
   .fr-bg-sm--yellow--lightness {
     background-color: rgb(254.5, 250.2, 234.8) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--yellow {
-    background-color: #facf35 !important;
-  }
-  .fr-bg-xs--yellow--light {
-    background-color: rgb(253.5, 240.6, 194.4) !important;
-  }
-  .fr-bg-xs--yellow--lightness {
-    background-color: rgb(254.5, 250.2, 234.8) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--deep-red {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -582,25 +390,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(255, 226.5, 228.4) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--deep-red {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #e1000f !important;
-  }
-  .fr-bg-xs--deep-red--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 169.5, 175.2) !important;
-  }
-  .fr-bg-xs--deep-red--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 226.5, 228.4) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--red {
     background-color: #fca081 !important;
   }
@@ -610,19 +399,6 @@
   .fr-bg-sm--red--lightness {
     background-color: rgb(254.7, 245.5, 242.4) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--red {
-    background-color: #fca081 !important;
-  }
-  .fr-bg-xs--red--light {
-    background-color: rgb(254.1, 226.5, 217.2) !important;
-  }
-  .fr-bg-xs--red--lightness {
-    background-color: rgb(254.7, 245.5, 242.4) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--purple {
     background-color: #6a62f4 !important;
   }
@@ -632,19 +408,6 @@
   .fr-bg-sm--purple--lightness {
     background-color: rgb(240.1, 239.3, 253.9) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--purple {
-    background-color: #6a62f4 !important;
-  }
-  .fr-bg-xs--purple--light {
-    background-color: rgb(210.3, 207.9, 251.7) !important;
-  }
-  .fr-bg-xs--purple--lightness {
-    background-color: rgb(240.1, 239.3, 253.9) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--green {
     background-color: #1ebe8e !important;
   }
@@ -654,19 +417,6 @@
   .fr-bg-sm--green--lightness {
     background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--green {
-    background-color: #1ebe8e !important;
-  }
-  .fr-bg-xs--green--light {
-    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
-  }
-  .fr-bg-xs--green--lightness {
-    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--blue {
     background-color: #001891 !important;
   }
@@ -676,19 +426,6 @@
   .fr-bg-sm--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue {
-    background-color: #001891 !important;
-  }
-  .fr-bg-xs--blue--light {
-    background-color: rgb(145.5, 163.624137931, 255) !important;
-  }
-  .fr-bg-xs--blue--lightness {
-    background-color: rgb(218.5, 224.5413793103, 255) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--blue-france {
     background-color: #000091 !important;
   }
@@ -698,19 +435,6 @@
   .fr-bg-sm--blue-france--lightness {
     background-color: rgb(218.5, 218.5, 255) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue-france {
-    background-color: #000091 !important;
-  }
-  .fr-bg-xs--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
-  }
-  .fr-bg-xs--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--grey {
     background-color: #777777 !important;
   }
@@ -721,24 +445,14 @@
     background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--grey {
-    background-color: #777777 !important;
+@media (max-width: 47.98em) {
+  .fr-bg-sm--none {
+    background-image: none !important;
   }
-  .fr-bg-xs--grey--light {
-    background-color: rgb(214.2, 214.2, 214.2) !important;
-  }
-  .fr-bg-xs--grey--lightness {
-    background-color: rgb(241.4, 241.4, 241.4) !important;
+  .fr-bg-sm--none:hover {
+    background-color: transparent !important;
   }
 }
-.fr-bg--none {
-  background-image: none !important;
-}
-.fr-bg--none:hover {
-  background-color: transparent !important;
-}
-
 @media (min-width: 48em) {
   .fr-bg-md--white {
     /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -755,25 +469,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: white !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--white {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--black {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -789,25 +484,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(231.7, 231.7, 231.7) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--black {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #161616 !important;
-  }
-  .fr-bg-xs--black--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(185.1, 185.1, 185.1) !important;
-  }
-  .fr-bg-xs--black--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(231.7, 231.7, 231.7) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--yellow {
     background-color: #facf35 !important;
   }
@@ -817,19 +493,6 @@
   .fr-bg-md--yellow--lightness {
     background-color: rgb(254.5, 250.2, 234.8) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--yellow {
-    background-color: #facf35 !important;
-  }
-  .fr-bg-xs--yellow--light {
-    background-color: rgb(253.5, 240.6, 194.4) !important;
-  }
-  .fr-bg-xs--yellow--lightness {
-    background-color: rgb(254.5, 250.2, 234.8) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--deep-red {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -845,25 +508,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(255, 226.5, 228.4) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--deep-red {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #e1000f !important;
-  }
-  .fr-bg-xs--deep-red--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 169.5, 175.2) !important;
-  }
-  .fr-bg-xs--deep-red--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 226.5, 228.4) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--red {
     background-color: #fca081 !important;
   }
@@ -873,19 +517,6 @@
   .fr-bg-md--red--lightness {
     background-color: rgb(254.7, 245.5, 242.4) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--red {
-    background-color: #fca081 !important;
-  }
-  .fr-bg-xs--red--light {
-    background-color: rgb(254.1, 226.5, 217.2) !important;
-  }
-  .fr-bg-xs--red--lightness {
-    background-color: rgb(254.7, 245.5, 242.4) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--purple {
     background-color: #6a62f4 !important;
   }
@@ -895,19 +526,6 @@
   .fr-bg-md--purple--lightness {
     background-color: rgb(240.1, 239.3, 253.9) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--purple {
-    background-color: #6a62f4 !important;
-  }
-  .fr-bg-xs--purple--light {
-    background-color: rgb(210.3, 207.9, 251.7) !important;
-  }
-  .fr-bg-xs--purple--lightness {
-    background-color: rgb(240.1, 239.3, 253.9) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--green {
     background-color: #1ebe8e !important;
   }
@@ -917,19 +535,6 @@
   .fr-bg-md--green--lightness {
     background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--green {
-    background-color: #1ebe8e !important;
-  }
-  .fr-bg-xs--green--light {
-    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
-  }
-  .fr-bg-xs--green--lightness {
-    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--blue {
     background-color: #001891 !important;
   }
@@ -939,19 +544,6 @@
   .fr-bg-md--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue {
-    background-color: #001891 !important;
-  }
-  .fr-bg-xs--blue--light {
-    background-color: rgb(145.5, 163.624137931, 255) !important;
-  }
-  .fr-bg-xs--blue--lightness {
-    background-color: rgb(218.5, 224.5413793103, 255) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--blue-france {
     background-color: #000091 !important;
   }
@@ -961,19 +553,6 @@
   .fr-bg-md--blue-france--lightness {
     background-color: rgb(218.5, 218.5, 255) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue-france {
-    background-color: #000091 !important;
-  }
-  .fr-bg-xs--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
-  }
-  .fr-bg-xs--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--grey {
     background-color: #777777 !important;
   }
@@ -984,24 +563,14 @@
     background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--grey {
-    background-color: #777777 !important;
+@media (max-width: 61.98em) {
+  .fr-bg-md--none {
+    background-image: none !important;
   }
-  .fr-bg-xs--grey--light {
-    background-color: rgb(214.2, 214.2, 214.2) !important;
-  }
-  .fr-bg-xs--grey--lightness {
-    background-color: rgb(241.4, 241.4, 241.4) !important;
+  .fr-bg-md--none:hover {
+    background-color: transparent !important;
   }
 }
-.fr-bg--none {
-  background-image: none !important;
-}
-.fr-bg--none:hover {
-  background-color: transparent !important;
-}
-
 @media (min-width: 62em) {
   .fr-bg-lg--white {
     /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -1018,25 +587,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: white !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--white {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--black {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -1052,25 +602,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(231.7, 231.7, 231.7) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--black {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #161616 !important;
-  }
-  .fr-bg-xs--black--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(185.1, 185.1, 185.1) !important;
-  }
-  .fr-bg-xs--black--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(231.7, 231.7, 231.7) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--yellow {
     background-color: #facf35 !important;
   }
@@ -1080,19 +611,6 @@
   .fr-bg-lg--yellow--lightness {
     background-color: rgb(254.5, 250.2, 234.8) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--yellow {
-    background-color: #facf35 !important;
-  }
-  .fr-bg-xs--yellow--light {
-    background-color: rgb(253.5, 240.6, 194.4) !important;
-  }
-  .fr-bg-xs--yellow--lightness {
-    background-color: rgb(254.5, 250.2, 234.8) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--deep-red {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -1108,25 +626,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(255, 226.5, 228.4) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--deep-red {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #e1000f !important;
-  }
-  .fr-bg-xs--deep-red--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 169.5, 175.2) !important;
-  }
-  .fr-bg-xs--deep-red--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 226.5, 228.4) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--red {
     background-color: #fca081 !important;
   }
@@ -1136,19 +635,6 @@
   .fr-bg-lg--red--lightness {
     background-color: rgb(254.7, 245.5, 242.4) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--red {
-    background-color: #fca081 !important;
-  }
-  .fr-bg-xs--red--light {
-    background-color: rgb(254.1, 226.5, 217.2) !important;
-  }
-  .fr-bg-xs--red--lightness {
-    background-color: rgb(254.7, 245.5, 242.4) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--purple {
     background-color: #6a62f4 !important;
   }
@@ -1158,19 +644,6 @@
   .fr-bg-lg--purple--lightness {
     background-color: rgb(240.1, 239.3, 253.9) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--purple {
-    background-color: #6a62f4 !important;
-  }
-  .fr-bg-xs--purple--light {
-    background-color: rgb(210.3, 207.9, 251.7) !important;
-  }
-  .fr-bg-xs--purple--lightness {
-    background-color: rgb(240.1, 239.3, 253.9) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--green {
     background-color: #1ebe8e !important;
   }
@@ -1180,19 +653,6 @@
   .fr-bg-lg--green--lightness {
     background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--green {
-    background-color: #1ebe8e !important;
-  }
-  .fr-bg-xs--green--light {
-    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
-  }
-  .fr-bg-xs--green--lightness {
-    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--blue {
     background-color: #001891 !important;
   }
@@ -1202,19 +662,6 @@
   .fr-bg-lg--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue {
-    background-color: #001891 !important;
-  }
-  .fr-bg-xs--blue--light {
-    background-color: rgb(145.5, 163.624137931, 255) !important;
-  }
-  .fr-bg-xs--blue--lightness {
-    background-color: rgb(218.5, 224.5413793103, 255) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--blue-france {
     background-color: #000091 !important;
   }
@@ -1224,19 +671,6 @@
   .fr-bg-lg--blue-france--lightness {
     background-color: rgb(218.5, 218.5, 255) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue-france {
-    background-color: #000091 !important;
-  }
-  .fr-bg-xs--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
-  }
-  .fr-bg-xs--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--grey {
     background-color: #777777 !important;
   }
@@ -1247,24 +681,14 @@
     background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--grey {
-    background-color: #777777 !important;
+@media (max-width: 77.98em) {
+  .fr-bg-lg--none {
+    background-image: none !important;
   }
-  .fr-bg-xs--grey--light {
-    background-color: rgb(214.2, 214.2, 214.2) !important;
-  }
-  .fr-bg-xs--grey--lightness {
-    background-color: rgb(241.4, 241.4, 241.4) !important;
+  .fr-bg-lg--none:hover {
+    background-color: transparent !important;
   }
 }
-.fr-bg--none {
-  background-image: none !important;
-}
-.fr-bg--none:hover {
-  background-color: transparent !important;
-}
-
 @media (min-width: 78em) {
   .fr-bg-xl--white {
     /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -1281,25 +705,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: white !important;
   }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--white {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-}
-@media (min-width: 78em) {
   .fr-bg-xl--black {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -1315,25 +720,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(231.7, 231.7, 231.7) !important;
   }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--black {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #161616 !important;
-  }
-  .fr-bg-xs--black--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(185.1, 185.1, 185.1) !important;
-  }
-  .fr-bg-xs--black--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(231.7, 231.7, 231.7) !important;
-  }
-}
-@media (min-width: 78em) {
   .fr-bg-xl--yellow {
     background-color: #facf35 !important;
   }
@@ -1343,19 +729,6 @@
   .fr-bg-xl--yellow--lightness {
     background-color: rgb(254.5, 250.2, 234.8) !important;
   }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--yellow {
-    background-color: #facf35 !important;
-  }
-  .fr-bg-xs--yellow--light {
-    background-color: rgb(253.5, 240.6, 194.4) !important;
-  }
-  .fr-bg-xs--yellow--lightness {
-    background-color: rgb(254.5, 250.2, 234.8) !important;
-  }
-}
-@media (min-width: 78em) {
   .fr-bg-xl--deep-red {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -1371,8 +744,107 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(255, 226.5, 228.4) !important;
   }
+  .fr-bg-xl--red {
+    background-color: #fca081 !important;
+  }
+  .fr-bg-xl--red--light {
+    background-color: rgb(254.1, 226.5, 217.2) !important;
+  }
+  .fr-bg-xl--red--lightness {
+    background-color: rgb(254.7, 245.5, 242.4) !important;
+  }
+  .fr-bg-xl--purple {
+    background-color: #6a62f4 !important;
+  }
+  .fr-bg-xl--purple--light {
+    background-color: rgb(210.3, 207.9, 251.7) !important;
+  }
+  .fr-bg-xl--purple--lightness {
+    background-color: rgb(240.1, 239.3, 253.9) !important;
+  }
+  .fr-bg-xl--green {
+    background-color: #1ebe8e !important;
+  }
+  .fr-bg-xl--green--light {
+    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
+  }
+  .fr-bg-xl--green--lightness {
+    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
+  }
+  .fr-bg-xl--blue {
+    background-color: #001891 !important;
+  }
+  .fr-bg-xl--blue--light {
+    background-color: rgb(145.5, 163.624137931, 255) !important;
+  }
+  .fr-bg-xl--blue--lightness {
+    background-color: rgb(218.5, 224.5413793103, 255) !important;
+  }
+  .fr-bg-xl--blue-france {
+    background-color: #000091 !important;
+  }
+  .fr-bg-xl--blue-france--light {
+    background-color: rgb(145.5, 145.5, 255) !important;
+  }
+  .fr-bg-xl--blue-france--lightness {
+    background-color: rgb(218.5, 218.5, 255) !important;
+  }
+  .fr-bg-xl--grey {
+    background-color: #777777 !important;
+  }
+  .fr-bg-xl--grey--light {
+    background-color: rgb(214.2, 214.2, 214.2) !important;
+  }
+  .fr-bg-xl--grey--lightness {
+    background-color: rgb(241.4, 241.4, 241.4) !important;
+  }
 }
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
+.fr-bg--none {
+  background-image: none !important;
+}
+.fr-bg--none:hover {
+  background-color: transparent !important;
+}
+@media (max-width: 35.98em) {
+  .fr-bg-xs--white {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: white !important;
+  }
+  .fr-bg-xs--white--light {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: white !important;
+  }
+  .fr-bg-xs--white--lightness {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: white !important;
+  }
+  .fr-bg-xs--black {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: #161616 !important;
+  }
+  .fr-bg-xs--black--light {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(185.1, 185.1, 185.1) !important;
+  }
+  .fr-bg-xs--black--lightness {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(231.7, 231.7, 231.7) !important;
+  }
+  .fr-bg-xs--yellow {
+    background-color: #facf35 !important;
+  }
+  .fr-bg-xs--yellow--light {
+    background-color: rgb(253.5, 240.6, 194.4) !important;
+  }
+  .fr-bg-xs--yellow--lightness {
+    background-color: rgb(254.5, 250.2, 234.8) !important;
+  }
   .fr-bg-xs--deep-red {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -1388,19 +860,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(255, 226.5, 228.4) !important;
   }
-}
-@media (min-width: 78em) {
-  .fr-bg-xl--red {
-    background-color: #fca081 !important;
-  }
-  .fr-bg-xl--red--light {
-    background-color: rgb(254.1, 226.5, 217.2) !important;
-  }
-  .fr-bg-xl--red--lightness {
-    background-color: rgb(254.7, 245.5, 242.4) !important;
-  }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--red {
     background-color: #fca081 !important;
   }
@@ -1410,19 +869,6 @@
   .fr-bg-xs--red--lightness {
     background-color: rgb(254.7, 245.5, 242.4) !important;
   }
-}
-@media (min-width: 78em) {
-  .fr-bg-xl--purple {
-    background-color: #6a62f4 !important;
-  }
-  .fr-bg-xl--purple--light {
-    background-color: rgb(210.3, 207.9, 251.7) !important;
-  }
-  .fr-bg-xl--purple--lightness {
-    background-color: rgb(240.1, 239.3, 253.9) !important;
-  }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--purple {
     background-color: #6a62f4 !important;
   }
@@ -1432,19 +878,6 @@
   .fr-bg-xs--purple--lightness {
     background-color: rgb(240.1, 239.3, 253.9) !important;
   }
-}
-@media (min-width: 78em) {
-  .fr-bg-xl--green {
-    background-color: #1ebe8e !important;
-  }
-  .fr-bg-xl--green--light {
-    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
-  }
-  .fr-bg-xl--green--lightness {
-    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
-  }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--green {
     background-color: #1ebe8e !important;
   }
@@ -1454,19 +887,6 @@
   .fr-bg-xs--green--lightness {
     background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
-}
-@media (min-width: 78em) {
-  .fr-bg-xl--blue {
-    background-color: #001891 !important;
-  }
-  .fr-bg-xl--blue--light {
-    background-color: rgb(145.5, 163.624137931, 255) !important;
-  }
-  .fr-bg-xl--blue--lightness {
-    background-color: rgb(218.5, 224.5413793103, 255) !important;
-  }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--blue {
     background-color: #001891 !important;
   }
@@ -1476,19 +896,6 @@
   .fr-bg-xs--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
-}
-@media (min-width: 78em) {
-  .fr-bg-xl--blue-france {
-    background-color: #000091 !important;
-  }
-  .fr-bg-xl--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
-  }
-  .fr-bg-xl--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
-  }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--blue-france {
     background-color: #000091 !important;
   }
@@ -1498,19 +905,6 @@
   .fr-bg-xs--blue-france--lightness {
     background-color: rgb(218.5, 218.5, 255) !important;
   }
-}
-@media (min-width: 78em) {
-  .fr-bg-xl--grey {
-    background-color: #777777 !important;
-  }
-  .fr-bg-xl--grey--light {
-    background-color: rgb(214.2, 214.2, 214.2) !important;
-  }
-  .fr-bg-xl--grey--lightness {
-    background-color: rgb(241.4, 241.4, 241.4) !important;
-  }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--grey {
     background-color: #777777 !important;
   }
@@ -1520,12 +914,6 @@
   .fr-bg-xs--grey--lightness {
     background-color: rgb(241.4, 241.4, 241.4) !important;
   }
-}
-.fr-bg--none {
-  background-image: none !important;
-}
-.fr-bg--none:hover {
-  background-color: transparent !important;
 }
 
 .fr-badge.fr-badge--info {
@@ -2241,6 +1629,7 @@
 .fr-card-banner .fr-card__header .fr-card__img {
   height: 100%;
   align-content: center;
+  max-height: 200px;
 }
 .fr-card-banner .fr-card__header .fr-card__img img {
   object-fit: fill;
@@ -2322,6 +1711,48 @@
 }
 .fr-card.fr-enlarge-link .fr-card__content .fr-card__end p {
   font-size: 0.8rem;
+}
+@media (min-width: 48em) {
+  .fr-card.fr-card--cta .fr-card__header {
+    flex-basis: 30%;
+  }
+}
+@media (min-width: 62em) {
+  .fr-card.fr-card--cta .fr-card__header {
+    flex-basis: 25%;
+  }
+}
+.fr-card.fr-card--cta .fr-card__header {
+  align-content: center;
+}
+@media (min-width: 48em) {
+  .fr-card.fr-card--cta .fr-card__img {
+    max-height: 250px;
+  }
+}
+.fr-card.fr-card--cta .fr-card__img {
+  position: relative;
+}
+.fr-card.fr-card--cta .fr-card__img img {
+  max-height: 250px;
+}
+.fr-card.fr-card--cta .fr-card__img::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 70%, rgb(255, 255, 255) 95%) !important;
+}
+.fr-card.fr-card--cta .fr-card__img .fr-card__logo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
 }
 .fr-card.fr-card--program .fr-card__content {
   padding: 1rem 1.5rem 4rem !important;
@@ -2956,14 +2387,48 @@
     display: inline;
   }
 }
-.fr-sticky {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+@media (min-width: 0) {
+  .fr-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+}
+@media (min-width: 36em) {
+  .fr-sticky-sm {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+}
+@media (min-width: 48em) {
+  .fr-sticky-md {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+}
+@media (min-width: 62em) {
+  .fr-sticky-lg {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+}
+@media (min-width: 78em) {
+  .fr-sticky-xl {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
 }
 
 .fr-position--relative {
   position: relative;
+}
+
+.fr-flex-direction--column {
+  flex-direction: column;
 }
 
 .fr-header .fr-header__tools {

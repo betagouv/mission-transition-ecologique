@@ -596,7 +596,7 @@
     "nameTag": "🌬 pompe à chaleur",
     "shortDescription": "Les pompes à chaleur génèrent de la chaleur en allant capter une énergie renouvelable dans leur environnement.",
     "image": "/images/projet/pac.webp",
-    "longDescription": "Les pompes à chaleur sont des équipements de chauffage, de refroidissement et de production d'eau chaude sanitaire dotées d’une très grande efficacité énergétique. \n\nElles puisent, dans l’air ou dans le sol, une énergie totalement gratuite et renouvelable. Cette énergie récupérée est ensuite restituée dans vos locaux grâce à un échangeur de chaleur qui demande peu d'électricité pour fonctionner.\n\nPlus économiques et écologiques en fonctionnement, elles peuvent remplacer vos chaudières à gaz, au fioul ou vos chauffages électriques. Certaines pompes à chaleur peuvent également produire de l'eau chaude et climatiser.",
+    "longDescription": "Les pompes à chaleur sont des équipements de chauffage, de refroidissement et de production d'eau chaude sanitaire dotées d’une très grande efficacité énergétique.\n\nElles puisent, dans l’air ou dans le sol, une énergie disponible et renouvelable : la chaleur. Cette énergie récupérée est ensuite restituée dans vos locaux grâce à un échangeur de chaleur. Et même si prélever cette énergie, n'est pas gratuit, cette équipement demande peu d'électricité pour fonctionner.\n\nPlus économiques et écologiques en fonctionnement, elles peuvent remplacer vos chaudières à gaz, au fioul ou vos chauffages électriques. Certaines pompes à chaleur peuvent également produire de l'eau chaude et climatiser.",
     "moreDescription": "- [**Qualit’EnR**](https://www.qualit-enr.org/), un annuaire de professionnels RGE qualifiés pour votre projet de construction ou de rénovation énergétique.",
     "themes": [
       "energy",
@@ -817,7 +817,7 @@
     "title": "Audit énergétique",
     "nameTag": "🎯 audit énergétique",
     "shortDescription": "Il permet d’évaluer la performance énergétique de vos locaux et de définir des scénarios de rénovation énergétique.",
-    "image": "/images/projet/audit-energétique.webp",
+    "image": "/images/projet/audit-energetique.webp",
     "longDescription": "Chauffage, isolation, eau chaude, climatisation, ventilation, éclairage… Un audit énergétique permet de faire expertiser des locaux professionnels et identifier des solutions et des financements afin de les rendre plus confortables, plus performants et de réaliser des économies durables.\n\nAinsi, mettez-vous en conformité avec les obligations réglementaires, comme le Dispositif Éco Énergie Tertiaire (DEET), communément appelé \"décret tertiaire\".",
     "moreDescription": "- [**Réglementation Audit énergétique,**](https://portail-rse.beta.gouv.fr/reglementations/audit-energetique) Un portail pour connaitre les obligations de votre entreprise.\n- [**Le Dispositif Éco Énergie Tertiaire (EET), qu'est-ce que c'est ?**](https://www.ecologie.gouv.fr/eco-energie-tertiaire-eet) Une page pour comprendre le cadre de la règlementation.",
     "themes": [
@@ -2857,6 +2857,94 @@
     ]
   },
   {
+    "id": 203,
+    "slug": "haie-bocagere",
+    "title": "Plantation de haies",
+    "nameTag": "🌱 haie",
+    "shortDescription": "Planter des haies bocagères protège vos élevages et cultures, régule les inondations et favorise la biodiversité.",
+    "image": "/images/projet/haie-bocagere.webp",
+    "longDescription": "D'ici 2030, la France doit se doter chaque année de plus de 5 000 kilomètres linéaires de haies supplémentaires (objectif fixé par le SGPE).\\\nLes haies bocagères, parfois appelées haies champêtres ou haies vives, sont des **clôtures végétales diversifiées**, souvent implantées **en bordure de parcelles agricoles.**\\\nEn plus de préserver la biodiversité et d'offrir un refuge aux animaux sauvages, la plantation de haies bocagères peut vous permettre :\n\n- D'augmenter vos rendements agricoles,\n\n- De protéger vos cultures et vos animaux d'élevage,\n\n- De stabiliser et d'enrichir les sols,\n\n- En cas d'intempéries, de freiner les inondations,\n\n- De constituer une barrière physique aux pesticides et produits phytosanitaires,\n\n- De constituer une réserve de bois et de stocker du carbone.",
+    "moreDescription": "- [**Stocks de bois et de carbone dans les haies bocagères françaises**](https://librairie.ademe.fr/energies/5388-stocks-de-bois-et-de-carbone-dans-les-haies-bocageres-francaises.html#product-presentation), une évaluation de l'ADEME.\n- **Haies et bocages, des réservoirs de biodiversité**, un état des lieux par l'Office Français de la Biodiversité.",
+    "themes": [
+      "biodiversite",
+      "water"
+    ],
+    "mainTheme": "biodiversite",
+    "programs": [
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
+    ],
+    "linkedProjects": [
+      20,
+      144
+    ],
+    "priority": "325",
+    "highlightPriority": "6",
+    "sectors": [
+      "A",
+      "F",
+      "N",
+      "O"
+    ]
+  },
+  {
+    "id": 302,
+    "slug": "communication-responsable",
+    "title": "Communication responsable",
+    "nameTag": "📢 communication",
+    "shortDescription": "Valoriser l'engagement de votre entreprise en faveur de l’environnement.",
+    "image": "/images/projet/communication-responsable.webp",
+    "longDescription": "La communication responsable, c’est parler de votre entreprise et de vos actions de façon sincère, claire et en accord avec la réalité de vos engagements. Elle ne se limite pas à « verdir » votre image : elle reflète vos choix concrets et votre vision à long terme.\n\nElle s’appuie sur quatre grands piliers :\n\n- **Des messages responsables** : bannir le greenwashing, éviter les stéréotypes et mettre en avant des récits porteurs de solutions et d’inspiration.\n\n- **L’éco-socio-conception des supports** : concevoir vos outils de communication en limitant leur impact environnemental et social à chaque étape (fabrication, distribution, usage, fin de vie), en privilégiant par exemple des matériaux responsables et une production locale.\n\n- **Le dialogue avec vos parties prenantes** : écouter vos clients, salariés, fournisseurs, partenaires… pour co-construire des messages qui font sens et créent de la confiance.\n\n- **L’efficacité** : utiliser avec justesse les ressources nécessaires (budget, temps, supports) pour atteindre vos objectifs de communication, en évitant tout gaspillage ou excès inutile.",
+    "moreDescription": "- [**Vers une communication plus responsable et sans greenwashing**](https://communication-responsable.ademe.fr/), un guide dédié aux professionnels de la communication et du marketing, par l'ADEME.\n- [**Guide pratique des allégations environnementales**](https://www.economie.gouv.fr/files/files/directions_services/cnc/avis/2023/Allegations_environnementales/guide_2023.pdf) du Conseil National de la Consommation.\n- [**Des règles d’éthique applicables à la communication publicitaire en France**](https://www.arpp.org/nous-consulter/regles/regles-de-deontologie/), les recommandations de l'ARPP (Autorité de régulation professionnelle de la publicité).",
+    "themes": [
+      "environmental"
+    ],
+    "mainTheme": "environmental",
+    "programs": [
+      "communaute-coq-vert",
+      "eco-defis-des-artisans-et-des-commercants",
+      "imprim-vert",
+      "programme-breizh-fab",
+      "programme-eve",
+      "repar-acteurs",
+      "cedre-premier-pas",
+      "sud-pret-climat",
+      "entreprises-engagees-nature",
+      "pret-energie-aura",
+      "pret-ile-de-france"
+    ],
+    "linkedProjects": [
+      31
+    ],
+    "priority": "380",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
+  },
+  {
     "id": 337,
     "slug": "sensibilisation-eco-gestes",
     "title": "Sensibilisation aux éco-gestes",
@@ -2871,7 +2959,6 @@
     ],
     "mainTheme": "energy",
     "programs": [
-      "formation-engager-entreprise-transition-ecologique",
       "formation-artisan-developpement-durable",
       "cci-business-optimizer",
       "ecogestes-paca",
@@ -3116,6 +3203,67 @@
     ]
   },
   {
+    "id": 567,
+    "slug": "couvert-vegetal-plantes-couvertures",
+    "title": "Couvert végétal",
+    "nameTag": "🌱 couvert végétal",
+    "shortDescription": "Le couvert végétal prévient la pollution et améliore la fertilité des terres agricoles.",
+    "image": "/images/projet/couvert-vegetal.webp",
+    "longDescription": "Le **couvert végétal**, aussi appelé plante de couverture, est une pratique d’**agriculture durable** qui protège et régénère vos sols. En grandes cultures, il prend souvent la forme de **couverts intermédiaires**, semés entre deux productions principales.\n\nAdopter le couvert végétal sur votre **exploitation agricole**, c’est profiter d’avantages concrets :\n\n- réduction des adventices et meilleure maîtrise des intrants,\n\n- limitation des pertes d’**engrais** et de la **pollution diffuse**,\n\n- enrichissement du sol grâce à la fixation d’**azote** par les légumineuses,\n\n- développement de la **biodiversité fonctionnelle**,\n\n- sol plus fertile avec une meilleure **rétention d’eau**.\n\nEn France, la surface en couverts est passée à 2,9 millions d’hectares en 2022. L’objectif fixé est 4,8 millions d’ici 2030, soit une progression de 65 %.",
+    "moreDescription": "- [**Les principales étapes pour réussir vos couverts végétaux et les valoriser**](https://landes.chambres-agriculture.fr/sinformer/produire-innover/productions-vegetales/couverts-vegetaux)**,** par la Chambre d’agriculture des Landes.\n- [**L'agroforesterie, un enjeu pour les paysages agricoles**](https://infos.ademe.fr/agriculture-alimentation/2025/agroforesterie-redonner-de-la-valeur-a-larbre-pour-transformer-nos-paysages-agricoles/), par l'ADEME.",
+    "themes": [
+      "biodiversite",
+      "water"
+    ],
+    "mainTheme": "biodiversite",
+    "programs": [
+      "certification-agriculture-biologique",
+      "sud-pret-climat",
+      "pass-transformation-ecologique"
+    ],
+    "linkedProjects": [
+      144,
+      203,
+      632
+    ],
+    "priority": "412",
+    "highlightPriority": "7",
+    "sectors": [
+      "A"
+    ]
+  },
+  {
+    "id": 632,
+    "slug": "agroecologie",
+    "title": "Pratique agroécologique",
+    "nameTag": "🍄 agroécologie",
+    "shortDescription": "L'agroécologie intègre les principes écologiques dans les pratiques agricoles pour créer des systèmes alimentaires durables.",
+    "image": "/images/projet/agroecologie.webp",
+    "longDescription": "L'agroécologie repose sur une gestion des terres agricoles qui **préserve la biodiversité, protège les ressources** naturelles et **limite l'impact** **environnemental** de l'agriculture tout en répondant aux besoins humains. \\\nElle vise à créer des systèmes agricoles résilients, équilibrés et durables sur le long terme, en favorisant des techniques comme :\n\n- la **rotation des cultures**,\n- l'utilisation de **couverts végétaux**,\n- la **diversification** des cultures,\n- l'**intégration de l'élevage** et de l'agriculture afin de maximiser les synergies entre eux,\n- la **gestion responsable des sols et de l'eau**,\n- l'adoption de **pratiques respectueuses des communautés locales** et de leur culture.",
+    "moreDescription": "- [**L’énergie de l’agroécologie, une solution pour le climat,**](https://agriculture-de-conservation.com/sites/agriculture-de-conservation.com/IMG/pdf/carbone-organique-sol.pdf) un guide de l'ADEME.\n- [**L'agriculture face au changement climatique**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/8012-l-agriculture-face-au-changement-climatique.html#product-presentation), une infographie proposée par l'ADEME.",
+    "themes": [
+      "biodiversite"
+    ],
+    "mainTheme": "biodiversite",
+    "programs": [
+      "etude-methanisation",
+      "investissement-biognv-agricole-et-territorial",
+      "sobriete-et-resilience-des-territoires",
+      "pret-vert",
+      "pret-vert-ademe",
+      "aide-financement-occitanie",
+      "certification-agriculture-biologique"
+    ],
+    "linkedProjects": [
+      567
+    ],
+    "priority": "511",
+    "highlightPriority": null,
+    "sectors": [
+      "A"
+    ]
+  },
+  {
     "id": 666,
     "slug": "tourisme-zero-dechet",
     "title": "Tourisme zéro déchet",
@@ -3129,7 +3277,6 @@
     ],
     "mainTheme": "waste",
     "programs": [
-      "formation-engager-entreprise-transition-ecologique",
       "cci-business-optimizer"
     ],
     "linkedProjects": [
@@ -3753,6 +3900,31 @@
       "D",
       "E",
       "F"
+    ]
+  },
+  {
+    "id": 1228,
+    "slug": "broyeur-vegetaux",
+    "title": "Broyage des déchets verts",
+    "nameTag": "🍂 broyeur végétaux",
+    "shortDescription": "Un broyeur de végétaux vous permet de réduire et de réemployer vos déchets verts.",
+    "image": "/images/projet/broyage-vegetaux.webp",
+    "longDescription": "Afin de réduire la part des déchets verts déposés en déchetterie, et les coûts attenant au transport de ces déchets, investissez dans un broyeur de végétaux. Ainsi, vous mettez en place une logique circulaire en transformant vos déchets en végétaux en broyat, réutilisable notamment pour le paillage, le jardinage raisonné et l'éco-pâturage.",
+    "moreDescription": "- [**Conseils sur le broyage-paillage des déchets verts**](https://librairie.ademe.fr/economie-circulaire-et-dechets/4021-conseils-sur-le-broyage-paillage-des-dechets-verts.html), une fiche de l'ADEME.",
+    "themes": [
+      "waste"
+    ],
+    "mainTheme": "waste",
+    "programs": [
+      "tremplin"
+    ],
+    "linkedProjects": [],
+    "priority": "720",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "E",
+      "I"
     ]
   }
 ]

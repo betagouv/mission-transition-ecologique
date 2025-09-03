@@ -133,6 +133,33 @@ export interface BaserowTestimony extends Id, BaserowSectors {
   'Nom entreprise': string
 }
 
+export interface BaserowTraining extends Id {
+  'Id Ademe': string
+  'Futures Sessions': string
+  Titre: string
+  Promesse: string
+  'Url ADEME': string
+  Objectifs: string
+  Thématique: string
+  'Nombre de sessions à venir': number
+  'Nombre de participants par session': string
+  Modalité: string
+  'Codes Sections': string
+  Cible: string
+  Programme: string
+  Prérequis: string
+  Tarif: string
+  Durée: string
+  'Nombre de jours': string
+}
+
+export interface ProgramTechField {
+  prod_release_date: string
+  email_enable: boolean // TODO
+  last_mail_sent_date?: string
+  eol_mail_sent_date?: string
+}
+
 export interface BaserowFaq extends Id {
   Question: string
   Réponse: string
