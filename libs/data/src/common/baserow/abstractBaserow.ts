@@ -39,7 +39,7 @@ export abstract class AbstractBaserow {
     try {
       const response = await this._getData<T>(tableId)
       await this._delay(100)
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
+
       let results = response.data.results
       let next = response.data.next
       while (next) {
@@ -59,7 +59,6 @@ export abstract class AbstractBaserow {
     try {
       const response = await this._getDatum<T>(tableId, rowId)
 
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
       return response.data
     } catch (error) {
       console.error('Error fetching a specific row of data from baserow :', error)
