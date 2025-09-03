@@ -1,9 +1,8 @@
-export default class StickyWithOffset {
-  private readonly class = 'fr-sticky'
-
+export default class AddClassOnScroll {
   constructor(
     private stickyElement?: HTMLElement,
-    private offsetElement?: HTMLElement | null
+    private offsetElement?: HTMLElement | null,
+    private className = 'fr-sticky'
   ) {}
 
   addEventListenerOnScroll(): void {
@@ -16,10 +15,10 @@ export default class StickyWithOffset {
 
   handleScroll = (): void => {
     if (this.stickyElement && this.offsetElement) {
-      if (window.scrollY > this.offsetElement.offsetTop) {
-        this.stickyElement.classList.add(this.class)
+      if (window.scrollY >= this.offsetElement.offsetTop) {
+        this.stickyElement.classList.add(this.className)
       } else {
-        this.stickyElement.classList.remove('fr-sticky')
+        this.stickyElement.classList.remove(this.className)
       }
     }
   }

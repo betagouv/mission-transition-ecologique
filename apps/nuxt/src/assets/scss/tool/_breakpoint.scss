@@ -1,7 +1,24 @@
-@function modifierByBreakpoint($breakpoint) {
-  @if $breakpoint == xs {
+@use '../setting';
+@use 'sass:list';
+
+@function modifierByBreakpoint($breakpoint, $default: xs) {
+  @if $breakpoint == $default {
     @return '';
   }
 
   @return '-#{$breakpoint}';
+}
+
+@mixin respond-to($media) {
+  @debug 'afin de rester mobile first, n‘utiliser la mixin respond-to uniquement s‘il n‘y a pas d‘autre alternative, lui préférer systématiquement la mixin respond-from';
+
+  $limits: map_get(setting.$breakpoints-values, $media);
+
+  @if $limits != null and list.length($limits) == 2 {
+    @media (max-width: list.nth($limits, 2)) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
 }
