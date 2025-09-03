@@ -4,31 +4,35 @@
 @use 'setting';
 @use 'tool';
 
-@each $breakpoint, $value in setting.$breakpoints-values {
-  $modifier: tool.modifierByBreakpoint($breakpoint);
-
-  @include tool.media-query-respond-from($breakpoint) {
-    @each $color, $properties in setting.$colors {
-      .fr-bg {
-        &#{$modifier} {
+.fr-bg {
+  @each $breakpoint, $value in setting.$breakpoints-values {
+    @include tool.media-query-respond-from($breakpoint) {
+      $modifier: tool.modifierByBreakpoint($breakpoint);
+      &#{$modifier} {
+        @each $color, $properties in setting.$colors {
           @include tool.background-color($color, $properties);
         }
+      }
+    }
 
-        @media (width >= 0) and (width <= 575px){
-          &-xs{
-            @include tool.background-color($color, $properties);
+    @include tool.respond-to($breakpoint) {
+      $modifier: tool.modifierByBreakpoint($breakpoint, xl);
+      &#{$modifier} {
+        &--none {
+          background-image: none !important;
+
+          &:hover {
+            background-color: transparent !important;
           }
         }
       }
     }
   }
 
-  .fr-bg {
-    &--none {
-      background-image: none !important;
-
-      &:hover {
-        background-color: transparent !important;
+  @include tool.respond-to(xs) {
+    &-xs {
+      @each $color, $properties in setting.$colors {
+        @include tool.background-color($color, $properties);
       }
     }
   }

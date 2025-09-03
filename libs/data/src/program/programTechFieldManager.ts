@@ -1,0 +1,1 @@
+// TO FILL WITH METHODS INSIDE mailManger ATM.

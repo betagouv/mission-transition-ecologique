@@ -11,6 +11,7 @@ export abstract class AbstractBaserow {
   protected readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
   private readonly _apiToken = ConfigBaserow.TOKEN
   private readonly _baseUrl = 'https://api.baserow.io/api'
+  private readonly _url = `${this._baseUrl}/database/rows/table`
   protected readonly _themeTableId = ConfigBaserow.THEME_ID
   protected readonly _operatorTableId = ConfigBaserow.OPERATOR_ID
   protected readonly _geographicAreasTableId = ConfigBaserow.GEOGRAPHIC_AREAS_ID
@@ -78,5 +79,22 @@ export abstract class AbstractBaserow {
     }
 
     return tableData.filter((item) => item !== undefined) as T[]
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  protected async _patchRow(tableId: number, rowId: number, data: Record<string, any>): Promise<void> {
+    try {
+      await axios.patch(`${this._url}/${tableId}/${rowId}/?user_field_names=true`, data, this._axiosHeader)
+    } catch (error) {
+      console.error(`Error patching row ${rowId} in table ${tableId}:`, error)
+    }
+  }
+
+  protected async _createRow(tableId: number, data: Record<string, any>): Promise<void> {
+    try {
+      await axios.post(`${this._url}/${tableId}/?user_field_names=true`, data, this._axiosHeader)
+    } catch (error) {
+      console.error(`Error creating row in table ${tableId}:`, error)
+    }
   }
 }

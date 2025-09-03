@@ -66,12 +66,17 @@
     "144": "biodiversite",
     "146": "maitrise-besoins-chauffage",
     "147": "borne-recharge-ve",
+    "203": "haie-bocagere",
+    "302": "communication-responsable",
     "337": "sensibilisation-eco-gestes",
+    "372": "maintenance-préventive",
     "378": "revetements-permeables",
     "401": "utilitaire-camion-propre",
     "434": "methanisation",
     "467": "management-energie",
     "566": "trajet-ferroviaire-train-metro",
+    "567": "couvert-vegetal-plantes-couvertures",
+    "632": "agroecologie",
     "666": "tourisme-zero-dechet",
     "667": "materiaux-de-reemploi",
     "699": "produits-biosources",
@@ -89,7 +94,8 @@
     "1028": "achats-responsables",
     "1127": "nettoyage-sans-produits-chimiques",
     "1160": "fours-industriels-electriques",
-    "1193": "isolation-thermique-equipements-industriels"
+    "1193": "isolation-thermique-equipements-industriels",
+    "1228": "broyeur-vegetaux"
   },
   "program_rowid_to_url_mapping": {
     "1": "accelerateur-decarbonation",

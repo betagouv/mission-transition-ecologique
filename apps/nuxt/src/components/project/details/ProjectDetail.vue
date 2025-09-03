@@ -7,7 +7,7 @@
       <ProjectHeader
         v-if="project"
         :project="project"
-        :theme-color="themeColor as Color"
+        :theme-color="typedThemeColor"
       />
     </template>
     <template #sidemenu>
@@ -31,7 +31,7 @@
     <LinkedProjects
       v-if="project?.linkedProjects.length"
       :project="project"
-      :color="themeColor as Color"
+      :color="typedThemeColor"
     />
   </Layout>
 </template>
@@ -49,6 +49,7 @@ const { currentProject: project } = storeToRefs(useProjectStore())
 const navigation = new Navigation()
 
 const themeColor = ref<Color | ''>()
+const typedThemeColor = themeColor as Color
 
 const description = project.value?.metaDescription ?? project.value?.shortDescription
 useSeoMeta(MetaSeo.get(project.value?.metaTitle ?? project.value?.title, description))
