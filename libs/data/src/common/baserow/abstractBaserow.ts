@@ -28,11 +28,11 @@ export abstract class AbstractBaserow {
   }
 
   protected async _getData<T>(tableId: number) {
-    return await this._axios.get<BaserowData<T>>(`${this._baseUrl}/database/rows/table/${tableId}/?user_field_names=true`)
+    return await this._axios.get<BaserowData<T>>(`${this._url}/${tableId}/?user_field_names=true`)
   }
 
   protected async _getDatum<T>(tableId: number, rowId: number) {
-    return await this._axios.get<T>(`${this._baseUrl}/database/rows/table/${tableId}/${rowId}/?user_field_names=true`)
+    return await this._axios.get<T>(`${this._url}/${tableId}/${rowId}/?user_field_names=true`)
   }
 
   protected async _getTableData<T>(tableId: number): Promise<T[]> {
@@ -81,18 +81,17 @@ export abstract class AbstractBaserow {
     return tableData.filter((item) => item !== undefined) as T[]
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  protected async _patchRow(tableId: number, rowId: number, data: Record<string, any>): Promise<void> {
+  protected async _patchRow(tableId: number, rowId: number, data: Record<string, unknown>): Promise<void> {
     try {
-      await axios.patch(`${this._url}/${tableId}/${rowId}/?user_field_names=true`, data, this._axiosHeader)
+      await this._axios.patch(`${this._url}/${tableId}/${rowId}/?user_field_names=true`, data)
     } catch (error) {
       console.error(`Error patching row ${rowId} in table ${tableId}:`, error)
     }
   }
 
-  protected async _createRow(tableId: number, data: Record<string, any>): Promise<void> {
+  protected async _createRow(tableId: number, data: Record<string, unknown>): Promise<void> {
     try {
-      await axios.post(`${this._url}/${tableId}/?user_field_names=true`, data, this._axiosHeader)
+      await this._axios.post(`${this._url}/${tableId}/?user_field_names=true`, data)
     } catch (error) {
       console.error(`Error creating row in table ${tableId}:`, error)
     }
