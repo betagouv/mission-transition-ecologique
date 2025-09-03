@@ -1,6 +1,7 @@
 import { ProgramType } from './shared'
 import { BaserowSectors } from '../../common/baserow/types'
 import { Theme } from '../../theme/types/domain'
+import { Contact } from '../../common/types'
 
 export interface DataProgram extends BaserowSectors {
   id: number
@@ -42,6 +43,7 @@ export interface DataProgram extends BaserowSectors {
   conditionalData?: ConditionalValues[]
   'redirection-vers': number[]
   tech: string
+  internalContact?: Contact
 }
 
 export enum Publicodes {

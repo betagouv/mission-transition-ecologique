@@ -24,3 +24,9 @@ export type RawBrevoDealAttributes = {
   created_at: string
   deal_stage: string
 }
+
+export enum MailType {
+  Initial = 'Initial',
+  EndOfLife = 'EndOfLife',
+  Periodic = 'Periodic'
+}
