@@ -1,7 +1,7 @@
 <template>
   <LayoutCatalog
     :has-side-menu="hasSideMenu"
-    :title="title"
+    title="Les aides à la transition écologique"
     :has-error="hasError"
     :count-items="countPrograms"
     :faq-page="FaqPage.CatalogProgram"
@@ -33,10 +33,10 @@ const programStore = useProgramStore()
 const { programs, hasError } = storeToRefs(useProgramStore())
 const navigation = new Navigation()
 
-const title = 'Les aides à la transition écologique'
-const description =
-  'Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :' +
-  'ADEME, Bpifrance, CCI, CMA, etc.'
+const seoTitle = 'Aides aux entreprises et subventions dédiées à la transition écologique'
+const seoDescription =
+  'Trouvez les aides adaptées à votre entreprise : subvention, financements et accompagnements de l’ADEME, Bpifrance,' +
+  ' CCI… pour votre transition énergétique et écologique.'
 
 onServerPrefetch(async () => {
   await new ProgramManager().getDependentCompanyData(false)
@@ -46,8 +46,8 @@ onNuxtReady(async () => {
   await new ProgramManager().getDependentCompanyData(true)
 })
 
-useSeoMeta(MetaSeo.get(title, description))
-useSchemaOrg(defineWebPage({ description: description }))
+useSeoMeta(MetaSeo.get(seoTitle, seoDescription))
+useSchemaOrg(defineWebPage({ description: seoDescription }))
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())

@@ -130,7 +130,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Eclairage LED pour entreprises - Subventions pour la rénovation énergétique",
+    "metaDescription": "Faites des économies d’énergie en remplaçant vos ampoules classiques par des ampoules LED. Découvrez les aides et subventions disponibles."
   },
   {
     "id": 5,
@@ -200,7 +202,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Panneaux solaires pour les entreprises - Solution durable et rentable",
+    "metaDescription": "Produisez votre propre électricité grâce aux panneaux solaires. Autoconsommez ou revendez l’énergie générée et réduisez l’empreinte écologique de votre entreprise."
   },
   {
     "id": 3,
@@ -246,7 +250,9 @@
       "H",
       "I",
       "M"
-    ]
+    ],
+    "metaTitle": "Réduction des emballages - Gestion des déchets en entreprise",
+    "metaDescription": "Adoptez une stratégie de réduction, de réemploi et de recyclage des emballages et du plastique à usage unique dans votre entreprise. Anticipez les exigences de la loi AGEC."
   },
   {
     "id": 6,
@@ -448,7 +454,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Bilan GES entreprise  - Bilan carbone ADEME",
+    "metaDescription": "Quantifiez les émissions de gaz à effet de serre émises ou captées par les activités de votre entreprise avec la méthode Bilan Carbone® élaborée par l’ADEME."
   },
   {
     "id": 8,
@@ -809,7 +817,9 @@
     "highlightPriority": null,
     "sectors": [
       "A"
-    ]
+    ],
+    "metaTitle": "Subventions serre agricole - Valorisation de l’énergie solaire",
+    "metaDescription": "Les serres agricoles valorisent l’énergie solaire, réduisent les pesticides et protègent les cultures. Découvrez comment améliorer leurs performances et les aides disponibles."
   },
   {
     "id": 14,
@@ -953,7 +963,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Isolation thermique des entreprises - Rénovation énergétique",
+    "metaDescription": "Faites isoler vos bâtiments pour limiter les pertes de chaleur et de fraîcheur. Une bonne isolation thermique réduit vos dépenses énergétiques."
   },
   {
     "id": 16,
@@ -1602,7 +1614,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Sensibilisation à l'environnement et à l'écologie en entreprise",
+    "metaDescription": "Formez et mobilisez vos équipes autour des enjeux climatiques : ateliers, formations, défis... pour ancrer la transition écologique dans la culture de l’entreprise."
   },
   {
     "id": 27,
@@ -1721,7 +1735,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Formations à l'environnement et à l'écologie en entreprise",
+    "metaDescription": "Découvrez les formations proposées par les opérateurs publics pour renforcer les compétences de vos équipes face aux enjeux environnementaux."
   },
   {
     "id": 29,
@@ -1831,7 +1847,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Stratégie RSE - Aide à la mise en place d'une démarche responsable",
+    "metaDescription": "Déployez une stratégie RSE pour engager vos salariés et leur faire prendre conscience des enjeux en matière d'écologie et de développement durable."
   },
   {
     "id": 31,
@@ -1890,7 +1908,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Diagnostic à 360° - Transition écologique des entreprises",
+    "metaDescription": "Évaluez l’impact environnemental de votre activité avec le diag 360. Un état des lieux complet pour guider la transition écologique de votre entreprise."
   },
   {
     "id": 32,
@@ -1953,7 +1973,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Plan de transition bas carbone aligné CRSD",
+    "metaDescription": "Construisez un plan de transition bas carbone aligné avec la SNBC et conforme à la CSRD pour réduire les émissions de gaz à effet de serre de votre entreprise."
   },
   {
     "id": 33,
@@ -2219,7 +2241,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Récupérateur d’eau de pluie - Gestion de l'eau en entreprise",
+    "metaDescription": "Améliorez la gestion de l’eau dans votre entreprise grâce à la récupération d’eau de pluie. Réduisez votre consommation d’eau potable et faites des économies durables."
   },
   {
     "id": 72,
@@ -2667,7 +2691,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Abris vélos pour entreprises - Stratégie de mobilité durable",
+    "metaDescription": "Encouragez la mobilité durable dans votre entreprise avec l’installation d’un abri vélo. Offrez un espace sécurisé et équipé à vos collaborateurs."
   },
   {
     "id": 144,
@@ -3903,6 +3929,48 @@
     ]
   },
   {
+    "id": 1226,
+    "slug": "zero-perte-en-production",
+    "title": "Zéro perte en production",
+    "nameTag": "🛢️ zero perte en production",
+    "shortDescription": "En réintégrant dans la production les déchets générés, vous créez une approche circulaire vertueuse.",
+    "image": "/images/projet/zero-perte-en-production.webp",
+    "longDescription": "Votre entreprise génère des chutes, des copeaux, des solvants ou des matières non conformes ?\\\nIl est souvent possible de **revaloriser** ces pertes directement dans vos processus.\\\nIl s'agit d'**identifier les flux internes** de déchets recyclables pour l**es réintégrer dans la production** (par broyage, filtration, fonte…).\\\nCette approche circulaire permet de :\n\n- **réduire l’achat de matières vierges,**\n- **diminuer les coûts** de tri et de traitement des déchets,\n- **renforcer votre autonomie** face aux hausses de prix,\n- **valoriser votre démarche environnementale.**",
+    "moreDescription": "- [**Comment réduire et valoriser les déchets d’activités économiques ?**](https://economie-circulaire.ademe.fr/dechets-activites-economiques) par l'ADEME.\n- [**Gestion des déchets en entreprise, quelles exigences règlementaires ?**](https://entreprendre.service-public.fr/vosdroits/F37825) par Entreprendre.Service-Public.fr.",
+    "themes": [
+      "waste"
+    ],
+    "mainTheme": "waste",
+    "programs": [
+      "diagnostic-dechets",
+      "etude-biodechets",
+      "etude-methanisation",
+      "fond-vert-territoires-d-industrie",
+      "diag-eco-flux",
+      "gestion-des-biodechets",
+      "investissement-gestion-des-biodechets",
+      "investissement-reemploi-reutilisation-reparation",
+      "decarb-flash-2025-2027",
+      "bciat-biomasse-chaleur-industrie-agriculture-tertiaire"
+    ],
+    "linkedProjects": [
+      3
+    ],
+    "priority": "427",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I"
+    ]
+  },
+  {
     "id": 1228,
     "slug": "broyeur-vegetaux",
     "title": "Broyage des déchets verts",
@@ -3915,15 +3983,44 @@
       "waste"
     ],
     "mainTheme": "waste",
-    "programs": [
-      "tremplin"
-    ],
+    "programs": [],
     "linkedProjects": [],
     "priority": "720",
     "highlightPriority": null,
     "sectors": [
       "A",
       "E",
+      "I"
+    ]
+  },
+  {
+    "id": 1260,
+    "slug": "consigne-reemploi",
+    "title": "Consigne et réemploi",
+    "nameTag": "🍶 Consigne",
+    "shortDescription": "La consigne permet à votre entreprise de réduire ses déchets grâce au réemploi des contenants.",
+    "image": "/images/projet/consigne.webp",
+    "longDescription": "La consigne consiste à mettre en place des **emballages réemployables** qui, une fois collectés, sont lavés puis remis en circulation. Cette pratique s’inscrit dans une logique d’**économie circulaire** et peut bénéficier à toutes les entreprises, quel que soit leur secteur.\n\nMettre en place la consigne, c’est :\n\n- **réduire vos déchets** et limiter votre impact environnemental ;\n\n- **diminuer vos coûts** liés aux emballages jetables à usage unique ;\n\n- **valoriser votre image de marque RSE** et vous **distinguer de la concurrence** par une solution innovante ;\n\n- **fidéliser vos clients** grâce à une offre plus responsable et durable.\n\nAvant d’être déployée, cette démarche doit faire l’objet d’une **évaluation de sa pertinence**, notamment au regard de l’échelle territoriale et du modèle économique envisagé. Lorsqu’elle est justifiée, la consigne constitue un **levier majeur de prévention des déchets** et de performance durable.",
+    "moreDescription": "- [**Emballages consignés**](https://www.ecologie.gouv.fr/politiques-publiques/emballages-consignes) : explication du dispositif, bénéfices et cadre public à connaître par le Ministère de la Transition écologique\n\n- [**La consigne pour réemploi**](https://librairie.ademe.fr/economie-circulaire-et-dechets/4592-consigne-pour-reemploi-et-recyclage-des-bouteilles-de-boissons.html) expliquée par l’ADEME.\n\n- [**France Consigne**](https://franceconsigne.fr/)**,** le groupement d’opérateurs nationaux du réemploi d’emballages, \\\n  qui accompagne la montée en puissance de la filière de réemploi.",
+    "themes": [
+      "waste"
+    ],
+    "mainTheme": "waste",
+    "programs": [
+      "aides-au-reemploi-des-emballages",
+      "diagnostic-dechets",
+      "etude-reemploi-reutilisation-reparation",
+      "charte-zero-dechet-plastique",
+      "aide-tpe-transition-na"
+    ],
+    "linkedProjects": [
+      21
+    ],
+    "priority": "672",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "C",
       "I"
     ]
   }
