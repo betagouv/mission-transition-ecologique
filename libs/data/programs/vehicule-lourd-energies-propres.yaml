@@ -13,13 +13,15 @@ description longue: >-
 
   Taux de la déduction :
 
+
   - de 20% pour les véhicules dont le poids autorisé en charge est ≥ à 2,6
-  tonnes et < à 3,5 tonnes,
+  tonnes et &lt; à 3,5 tonnes,
 
   - de 60% pour les véhicules dont le poids autorisé en charge est ≥ à 3,5
   tonnes et ≤ à 16 tonnes,
 
-  - de 40% pour ceux dont le poids total autorisé en charge est > à 16 tonnes.
+  - de 40% pour ceux dont le poids total autorisé en charge est &gt; à 16
+  tonnes.
 illustration: images/TEE_ampoule.png
 opérateur de contact: DDFIP
 contact question: https://www.impots.gouv.fr/contacts
