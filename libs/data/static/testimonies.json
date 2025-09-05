@@ -313,6 +313,21 @@
     ]
   },
   {
+    "slug": "agriculture-urbaine-biodiversité-eau",
+    "verbatim": "Acteurs de la transition alimentaire, nous cherchons à mieux mesurer et réduire notre impact. Le **plan d’action Biodiversité** et l’**Empreinte Eau** nous ont permis de structurer notre démarche, d’établir un diagnostic clair et d’identifier des leviers d’action concrets.",
+    "companyName": "Cols Verts",
+    "authorName": "Boris Marcel",
+    "authorFunction": "co-fondateur des Cols Verts",
+    "authorImage": "/images/testimony/borismarcel-jpg.webp",
+    "authorImageAttributes": "Photo de M. Marcel, Co-fondateur et directeur chez réseau national Les Cols Verts, engagé dans la transition écologique",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      20,
+      144
+    ]
+  },
+  {
     "slug": "led-extruplast",
     "verbatim": "Le remplacement de nos anciennes lampes par des LED nous a permis de passer de 560 à 319 points lumineux, tout en assurant un éclairage plus homogène et sans zones d’ombre. Résultat : une réduction de 64 % de la puissance électrique nécessaire, soit environ **265 000 kWh économisés chaque année.**",
     "companyName": "Extruplast",
@@ -324,6 +339,36 @@
     "homePageHighlight": null,
     "projects": [
       2
+    ]
+  },
+  {
+    "slug": "bilan-carbone-plan-transition",
+    "verbatim": "Une stratégie climat n’est ni une option ni un discours. Je pense que les entreprises ayant fait un **bilan carbone** et un **plan de transition** seront les plus résilientes et profiterons ainsi de nouvelles opportunités d’**accroître leurs performances économiques**.",
+    "companyName": "Mobeetip",
+    "authorName": "Nicolas Motheau",
+    "authorFunction": "directeur et associé Mobeetip",
+    "authorImage": "/images/testimony/nicolasmotheau-jpg.webp",
+    "authorImageAttributes": "Photo de M. Nicolas Motheau, Directeur et associé Mobeetip, engagé dans la transition écologique",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      1,
+      32
+    ]
+  },
+  {
+    "slug": "numerique-responsable-keeep",
+    "verbatim": "Nous avons intégré le réemploi dans toutes nos pratiques : **100 % de nos équipements sont reconditionnés en France**, leur **durée de vie prolongée** par la maintenance et la réparation, et nos équipes formées à des pratiques responsables.",
+    "companyName": "",
+    "authorName": "Mirabelle Lamoureux",
+    "authorFunction": "CEO de Keeep",
+    "authorImage": "/images/testimony/mirabelle-lamoureux-jpg.webp",
+    "authorImageAttributes": "Photo de Mme Mirabelle Lamoureux – CEO de Keeep, engagé dans la transition écologique",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      22,
+      1261
     ]
   }
 ]
