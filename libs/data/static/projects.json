@@ -295,7 +295,8 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "certificats-economie-energie",
-      "decarb-flash-2025-2027"
+      "decarb-flash-2025-2027",
+      "deter-decarboner-le-tertiaire"
     ],
     "linkedProjects": [
       4
@@ -365,7 +366,8 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "certificats-economie-energie",
-      "decarb-flash-2025-2027"
+      "decarb-flash-2025-2027",
+      "deter-decarboner-le-tertiaire"
     ],
     "linkedProjects": [
       4
@@ -499,7 +501,8 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "certificats-economie-energie",
-      "bciat-biomasse-chaleur-industrie-agriculture-tertiaire"
+      "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
+      "deter-decarboner-le-tertiaire"
     ],
     "linkedProjects": [
       4
@@ -637,7 +640,8 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "certificats-economie-energie",
-      "decarb-flash-2025-2027"
+      "decarb-flash-2025-2027",
+      "deter-decarboner-le-tertiaire"
     ],
     "linkedProjects": [
       4,
@@ -855,7 +859,8 @@
       "projets-hebergements-touristiques-cvl",
       "impulsion-environnement",
       "hotellerie-independante-bfc",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "deter-decarboner-le-tertiaire"
     ],
     "linkedProjects": [
       4
@@ -2794,7 +2799,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "prit-hdf",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "deter-decarboner-le-tertiaire"
     ],
     "linkedProjects": [
       4,
@@ -4022,6 +4028,41 @@
       "A",
       "C",
       "I"
+    ]
+  },
+  {
+    "id": 1261,
+    "slug": "allongement-duree-de-vie",
+    "title": "Allongement de la durée de vie",
+    "nameTag": "⏳ allongement durée de vie",
+    "shortDescription": "Intégrez la longévité de vos produits et leur réparabilité dans les critères de fabrication.",
+    "image": "/images/projet/allongement-duree-de-vie.webp",
+    "longDescription": "Allonger la durée de vos produits consiste à prendre en compte leur **qualité** et leur **durabilité** dans le processus de fabrication.\n\nÀ l'opposé des produits jetables et du high tech (technologie de pointe, à haute consommation en carbone), vous pouvez **concevoir des produits durables, inspirés des principes du low tech** (technologies douces) :\n\n- **Réparabilité** : le consommateur doit pouvoir allonger la durée de vie de son produit ou de son appareil en faisant appel à un service de réparation ou en ayant accès facilement à des pièces détachées ;\n- **Faible impact** : minimisez l'utilisation des ressources rares et réduisez, de fait, la production de déchets ;\n- **Utilité :** concevez des produits qui répondent aux besoins fondamentaux des individus. Ainsi, vous réduisez les impacts négatifs de la surconsommation.",
+    "moreDescription": "- [**Comment mettre en pratique l’écoconception en entreprise**](https://economie-circulaire.ademe.fr/ecoconception), une page ressource proposée par l’ADEME.\n- [**Analyse du cycle de vie**](https://bigmedia.bpifrance.fr/nos-dossiers/analyse-du-cycle-de-vie-definition-objectifs-etapes-de-realisation) : définition, objectifs, étapes de réalisation.\n- [**Valorisez votre démarche d'écoconception avec l'Écolabel européen**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen)**.**",
+    "themes": [
+      "eco-design"
+    ],
+    "mainTheme": "eco-design",
+    "programs": [
+      "diag-ecoconception",
+      "etude-performance-produits",
+      "investissement-ecoconception",
+      "cedre-premier-pas",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "aide-tpe-transition-na",
+      "accelerateur-economie-circulaire"
+    ],
+    "linkedProjects": [
+      36
+    ],
+    "priority": "212",
+    "highlightPriority": null,
+    "sectors": [
+      "C",
+      "F",
+      "G",
+      "H"
     ]
   }
 ]
