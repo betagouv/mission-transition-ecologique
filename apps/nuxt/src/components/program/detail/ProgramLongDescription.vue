@@ -13,7 +13,6 @@
 </template>
 
 <script setup lang="ts">
-// import { computed } from 'vue'
 import type { ProgramTypeForFront } from '@/types'
 import Translation from '@/tools/translation'
 import { Marked } from '@/tools/marked'
@@ -22,9 +21,4 @@ interface Props {
   program: ProgramTypeForFront
 }
 defineProps<Props>()
-
-// const descriptionParagraphs = computed(() => {
-//   const textRaw = props.program['description longue']
-//   return textRaw ? textRaw.split('\n') : []
-// })
 </script>
