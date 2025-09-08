@@ -76,10 +76,9 @@ import FaqCatalog from '@/components/faq/FaqCatalog.vue'
 import Layout from '@/components/layout/Layout.vue'
 import { useFiltersStore } from '@/stores/filters'
 import { useNavigationStore } from '@/stores/navigation'
-import { FaqPage } from '@/tools/faq/faqType'
 import Navigation from '@/tools/navigation'
 import { Theme } from '@/tools/theme'
-import { ThemeId } from '@/types'
+import { ThemeId, FaqPage } from '@/types'
 import { computed } from 'vue'
 
 interface Props {

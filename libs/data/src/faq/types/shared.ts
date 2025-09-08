@@ -1,4 +1,4 @@
-import { Color } from '@/types'
+import { Color } from '@tee/common'
 
 export enum FaqPage {
   Home = 'home',
@@ -7,17 +7,18 @@ export enum FaqPage {
   Faq = 'faq'
 }
 
-export interface FaqItem {
+export interface FaqSection {
   title: string
   color: Color
   questions: QuestionItem[]
 }
 
-interface QuestionItem {
+export interface QuestionItem {
+  id: number
   question: string
   answer: string
 }
 
 export type FaqType = {
-  [key in FaqPage]?: FaqItem[]
+  [key in FaqPage]?: FaqSection[]
 }

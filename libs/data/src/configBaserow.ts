@@ -11,6 +11,8 @@ export default class ConfigBaserow extends ConfigCommon {
   private static _TABLE_ID_TESTIMONIES = 399896
   private static _TABLE_ID_THEME = 305258
   private static _TABLE_ID_TRAINING = 620771
+  private static _TABLE_ID_FAQ = 620771
+  private static _TABLE_ID_FAQ_SECTION = 620771
 
   public static get TOKEN() {
     return this.getEnvValue('BASEROW_TOKEN')
@@ -54,5 +56,13 @@ export default class ConfigBaserow extends ConfigCommon {
 
   public static get TRAINING_ID() {
     return parseInt(this.getEnvValue('BASEROW_TABLE_ID_TRAINING', this._TABLE_ID_TRAINING.toString()))
+  }
+
+  public static get FAQ_ID() {
+    return parseInt(this.getEnvValue('BASEROW_TABLE_ID_FAQ', this._TABLE_ID_FAQ.toString()))
+  }
+
+  public static get FAQ_SECTION_ID() {
+    return parseInt(this.getEnvValue('BASEROW_TABLE_ID_FAQ_SECTION', this._TABLE_ID_FAQ_SECTION.toString()))
   }
 }

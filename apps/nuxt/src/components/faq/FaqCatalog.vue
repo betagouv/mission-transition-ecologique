@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { FaqJson } from '@/tools/faq/FaqJson'
-import { FaqPage } from '@/tools/faq/faqType'
+import { FaqPage } from '@/types'
 import Navigation from '@/tools/navigation'
 
 interface Props {

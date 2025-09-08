@@ -18,11 +18,11 @@
 </template>
 <script lang="ts" setup>
 import FaqSection from '@/components/faq/FaqSection.vue'
-import { FaqItem } from '@/tools/faq/faqType'
 import { Marked } from '@/tools/marked'
+import { FaqSection } from '@/types'
 
 interface Props {
-  faqItems: FaqItem[]
+  faqItems: FaqSection[]
 }
 const props = defineProps<Props>()
 

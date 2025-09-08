@@ -1,5 +1,4 @@
-import { FaqPage, FaqType } from '@/tools/faq/faqType'
-import { Color } from '@/types'
+import { Color, FaqPage, FaqType } from '@/types'
 
 export class FaqJson {
   static pages: FaqType = {

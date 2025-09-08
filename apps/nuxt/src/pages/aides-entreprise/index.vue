@@ -15,9 +15,8 @@
 
 <script setup lang="ts">
 import { MiddlewareName } from '@/middleware/type/middlewareName'
-import { FaqPage } from '@/tools/faq/faqType'
 import Navigation from '@/tools/navigation'
-import { RouteName } from '@/types'
+import { RouteName, FaqPage } from '@/types'
 import { useProgramStore } from '@/stores/program'
 import { ProgramManager } from '@/tools/program/programManager'
 import { MetaSeo } from '@/tools/metaSeo'

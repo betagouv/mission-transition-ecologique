@@ -40,10 +40,9 @@
 <script setup lang="ts">
 import { defineRouteRules } from '#imports'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
-import { FaqPage } from '@/tools/faq/faqType'
 import { MetaRobots } from '@/tools/metaRobots'
 import Navigation from '@/tools/navigation'
-import { FilterItemKeys, RouteName } from '@/types'
+import { FilterItemKeys, RouteName, FaqPage } from '@/types'
 
 const { filters } = storeToRefs(useFiltersStore())
 const navigation = new Navigation()

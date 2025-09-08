@@ -2,11 +2,9 @@
 import { useCompanyDataStore } from '@/stores/companyData'
 import { CompanyData } from '@/tools/companyData'
 import Contact from '@/tools/contact'
-
-import { FaqPage } from '@/tools/faq/faqType'
 import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
-import { Color, RouteName } from '@/types'
+import { Color, RouteName, FaqPage } from '@/types'
 
 const { FaqJson } = await import('@/tools/faq/FaqJson')
 

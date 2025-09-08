@@ -6,11 +6,17 @@ export class Logger {
   private _baserowProgramLink = 'https://baserow.io/database/114839/table/314437/539069/row/'
   private _baserowProjectLink = 'https://baserow.io/database/114839/table/305253/519286/row/'
 
-  constructor(private _type: LoggerType) {}
+  constructor(
+    private _type: LoggerType,
+    private _consoleLog = false
+  ) {}
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   log(criticity: LogLevel, message: string, name: string, baserowId: number, data?: any) {
     this.logs.push({ name, baserowId, criticity, message, data })
+    if (this._consoleLog) {
+      console.log({ name, baserowId, criticity, message, data })
+    }
   }
 
   write(fileName: string) {

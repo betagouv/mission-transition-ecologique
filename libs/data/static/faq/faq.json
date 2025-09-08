@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Comment marche cet outil ?",
+    "color": "green",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Qu’est-ce que la plateforme *Transition Écologique des Entreprises* ?",
+        "answer": "La plateforme *Transition Écologique des Entreprises* est un service public en ligne, gratuit, qui accompagne les entreprises dans leurs démarches de transition environnementale.\n\nSon rôle est de rendre visibles et accessibles les aides existantes pour financer des projets écologiques et orienter les entreprises vers les bons interlocuteurs pour les accompagner dans leur transition.\n\nConcrètement, la plateforme permet de rechercher des aides adaptées à sa situation, de découvrir des projets inspirants et d’être mis en relation avec les bons acteurs pour passer à l’action plus facilement.\n\nEntre janvier et juin 2025, **plus de 4000 entreprises ont été orientées grâce à la plateforme** *Transition Écologique des Entreprises* !"
+      },
+      {
+        "id": 2,
+        "question": "Comment la plateforme peut-elle aider mon entreprise dans sa transition écologique ?",
+        "answer": "La plateforme *Transition Écologique des Entreprises* a été conçue pour simplifier l’accès à l’information et faire gagner du temps aux entreprises.\n\nEn quelques étapes, elle vous permet :\n\n- D’identifier les aides publiques adaptées à votre entreprise.\n- De comprendre rapidement les critères d’éligibilité et les démarches à effectuer.\n- D’être mis en relation avec les bons interlocuteurs pour vous aider à avancer sereinement.\n- De vous inspirer, si besoin, de projets similaires.\n\nQue vous en soyez au stade de l’idée ou déjà dans la mise en œuvre, la plateforme vous oriente vers les ressources et les contacts utiles pour faire progresser concrètement votre transition."
+      }
+    ]
+  },
+  {
+    "title": "Pour qui ?",
+    "color": "purple",
+    "questions": [
+      {
+        "id": 3,
+        "question": "À qui s’adresse la plateforme ?",
+        "answer": "La plateforme *Transition Écologique des Entreprises* référence des aides pour les entreprises de toutes tailles, du micro-entrepreneur à la grande entreprise.\n\nMais parce que la transition écologique doit être accessible à toutes les entreprises, nous mettons un **accent particulier sur les TPE et les PME**, qui représentent la **majorité des entreprises en France**. Notre objectif : aider le plus grand nombre à passer à l’action, quels que soient les moyens ou la taille de la structure.\n\nSi le sujet vous intéresse, vous trouverez plus d’informations sur la [stratégie de l'ADEME pour accélérer la transition écologique des entreprises (2025-2028)](https://librairie.ademe.fr/institutionnel/7912-strategie-de-l-ademe-pour-accelerer-la-transition-ecologique-des-entreprises-9791029724121.html)"
+      }
+    ]
+  }
+]

@@ -1,7 +1,12 @@
+import { FaqPage } from '../../faq/types/shared'
 import { ConditionalValues as DomainConditionalValues, DataProgram } from '../../program/types/domain'
 
 export interface Id {
   id: number
+}
+
+interface Order {
+  order: number
 }
 
 export interface BaserowProject extends Id, BaserowSectors {
@@ -160,8 +165,23 @@ export interface ProgramTechField {
   eol_mail_sent_date?: string
 }
 
-export interface BaserowFaq extends Id {
+export interface BaserowFaq extends Id, Order {
   Question: string
   Réponse: string
   Actif: boolean
+  Page: LinkObject | null
+  Section: LinkObject[]
+}
+
+export interface BaserowFaqSection extends Id, Order {
+  Titre: string
+  Couleur: LinkObject
+}
+
+export interface FaqItemStructured extends BaserowFaqSection {
+  faqs: BaserowFaq[]
+}
+
+export type FaqStructured = {
+  [key in FaqPage]?: FaqItemStructured[]
 }
