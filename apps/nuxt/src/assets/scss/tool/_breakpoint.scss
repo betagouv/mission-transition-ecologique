@@ -10,7 +10,7 @@
 }
 
 @mixin respond-to($media) {
-  @debug 'afin de rester mobile first, n‘utiliser la mixin respond-to uniquement s‘il n‘y a pas d‘autre alternative, lui préférer systématiquement la mixin respond-from';
+  // @debug 'afin de rester mobile first, n‘utiliser la mixin respond-to uniquement s‘il n‘y a pas d‘autre alternative, lui préférer systématiquement la mixin respond-from';
 
   $limits: map_get(setting.$breakpoints-values, $media);
 
