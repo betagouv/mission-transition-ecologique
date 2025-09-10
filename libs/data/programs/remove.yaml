@@ -15,7 +15,17 @@ description: >-
   - **REMO** qui accompagne les entreprises dans la mise en œuvre de solutions
   de **report modal** afin de générer des bénéfices énergétiques et
   environnementaux.
-description longue: "- Le dispositif REMO, à destination des chargeurs, commissionnaires et transporteurs, vous aide et vous accompagne dans la réflexion et la mise en œuvre de vos projets de report modal  : \n\tAide à l’identification des flux éligibles,\n\tAccompagnement méthodologique de sa réflexion à sa réalisation par des bureaux d’études,\n- Le dispositif LOG-te s’adresse aux entreprises des secteurs ferroviaire, fluvial et cabotage maritime : \n\tAtteinte des objectifs de gains énergétiques sur le matériel utilisé (engins de manutention, locomotives, péniches, etc.),\n\tÀ partir d’un catalogue d’actions élaboré par l’ADEME,\n\tAccompagnement par des bureaux d’études."
+description longue: >-
+  - Le dispositif REMO, à destination des chargeurs, commissionnaires et
+  transporteurs, vous aide et vous accompagne dans la réflexion et la mise en
+  œuvre de vos projets de report modal :\
+    Aide à l’identification des flux éligibles,\
+    Accompagnement méthodologique de sa réflexion à sa réalisation par des bureaux d’études,
+  - Le dispositif LOG-te s’adresse aux entreprises des secteurs ferroviaire,
+  fluvial et cabotage maritime :\
+    Atteinte des objectifs de gains énergétiques sur le matériel utilisé (engins de manutention, locomotives, péniches, etc.),\
+    À partir d’un catalogue d’actions élaboré par l’ADEME,\
+    Accompagnement par des bureaux d’études.
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
 contact question: mailto:aap.remove@ademe.fr
