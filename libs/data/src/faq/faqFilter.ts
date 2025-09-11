@@ -28,11 +28,11 @@ export class FaqFilter implements FaqFilterInterface {
 
         for (const faq of section.questions) {
           try {
-            if (!faq.question) {
+            if (!faq.question?.trim()) {
               throw new Error(`Question non fournie`)
             }
 
-            if (!faq.answer) {
+            if (!faq.answer?.trim()) {
               throw new Error(`Réponse non fournie`)
             }
 
