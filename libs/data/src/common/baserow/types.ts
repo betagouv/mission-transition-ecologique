@@ -24,6 +24,13 @@ interface CreationDate {
   'Date de création': string
 }
 
+export interface BaserowData<T> {
+  count: number
+  next: string | null
+  previous: string | null
+  results: T[]
+}
+
 export interface BaserowProject extends Id, BaserowSectors {
   order: string
   Nom: string
@@ -61,6 +68,11 @@ export interface Image {
   uploaded_at: string
 }
 
+export interface BaserowMetaData {
+  'Meta Titre': string | null
+  'Meta Description': string | null
+}
+
 export interface Program
   extends Omit<
       DataProgram,
@@ -74,7 +86,8 @@ export interface Program
       | 'Thèmes Ciblés'
       | 'redirection-vers'
     >,
-    BaserowSectors {
+    BaserowSectors,
+    BaserowMetaData {
   Statuts: LinkObject[]
   "Nature de l'aide": LinkObject
   'Opérateur de contact': LinkObject[]

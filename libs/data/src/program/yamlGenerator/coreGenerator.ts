@@ -27,8 +27,10 @@ export class CoreGenerator {
     this._validateSlug()
 
     this._addSimpleField('titre', this.program.Titre, true)
+    this._addSimpleField('metaTitre', this.program['Meta Titre'], false)
     this._addSimpleField('promesse', this.program.Promesse, true)
     this._addSimpleField('description', this.program['Description courte'], true)
+    this._addSimpleField('metaDescription', this.program['Meta Description'], false)
     await LinkValidator.logInvalidLinks(
       this.program['Description courte'],
       this.logger,

@@ -81,7 +81,9 @@ export class ProjectBaserow extends AbstractBaserow {
       highlightPriority: baserowProject['Mise En Avant'],
       sectors: this._generateSectors(baserowProject as BaserowSectors),
       status: this._convertStatus(baserowProject?.Statut),
-      ...(redirect !== undefined && { redirectTo: redirect })
+      ...(redirect !== undefined && { redirectTo: redirect }),
+      metaTitle: baserowProject['Meta Titre'] ?? undefined,
+      metaDescription: baserowProject['Meta Description'] ?? undefined
     }
   }
 
