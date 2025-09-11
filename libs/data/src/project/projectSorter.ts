@@ -1,9 +1,10 @@
+import { NafRepository } from '../establishment/nafRepository'
 import { ProjectType } from './types/shared'
 
 export class ProjectSorter {
-  public byPriority(projects: ProjectType[]) {
+  public byPriority(projects: ProjectType[], codeNAF: string | undefined) {
     return projects.sort((a, b) => {
-      return a.priority - b.priority
+      return this._getPriority(a.priority, codeNAF) - this._getPriority(b.priority, codeNAF)
     })
   }
 
@@ -30,5 +31,24 @@ export class ProjectSorter {
     const highlightSorted = this.byHighlight(projects.filter((project) => project.sectors.length > 5))
 
     return [...sectorProjects, ...highlightSorted]
+  }
+
+  private _getPriority(priorities: Record<string, number>, companySector: string | undefined): number {
+    if (!companySector) {
+      return priorities['default']
+    }
+    if (priorities[companySector]) {
+      return priorities[companySector]
+    }
+
+    const nafRepository = new NafRepository()
+    for (const getter of ['getNiv4', 'getNiv3', 'getNiv2', 'getSectionCode'] as const) {
+      const code = nafRepository[getter](companySector)
+      if (code.isJust && priorities[code.value]) {
+        return priorities[code.value]
+      }
+    }
+
+    return priorities['default']
   }
 }

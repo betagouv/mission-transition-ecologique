@@ -1,11 +1,9 @@
 import { nafMapping } from '@tee/data/static'
 import { Maybe } from 'true-myth'
-import { NafRepository as NafRepositoryType } from '../../domain/spi'
 import { CompanyActivityType, NAF1 } from '@tee/common'
 import { Result } from 'true-myth'
-import { normalizeString } from '../../../common/string'
 
-export class NafRepository implements NafRepositoryType {
+export class NafRepository {
   private _lastNafCode = ''
   private _lastNafData: NafData | undefined
 
@@ -84,4 +82,14 @@ interface NafData {
   NIV2: string
   NIV1: string
   label_vf: string
+}
+
+const normalizeString = (str: string) => {
+  // remove accents, spaces, ponctuation and to lowerCase
+  return str
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[-\s]/g, '')
+    .trim()
 }

@@ -77,7 +77,7 @@ export class ProjectBaserow extends AbstractBaserow {
       mainTheme: this._generateMainTheme(baserowProject['Thématique principale'], baserowThemes),
       programs: this._generateProgramList(baserowProject.Dispositifs),
       linkedProjects: this._generateLinkedProjectList(baserowProject['Projets complémentaires']),
-      priority: baserowProject.Prio,
+      priority: this._generatePriority(baserowProject.Prio, baserowProject['Prios spécifiques']),
       highlightPriority: baserowProject['Mise En Avant'],
       sectors: this._generateSectors(baserowProject as BaserowSectors),
       status: this._convertStatus(baserowProject?.Statut),
@@ -157,5 +157,27 @@ export class ProjectBaserow extends AbstractBaserow {
       return ProjectStatus.Others
     }
     return Object.values(ProjectStatus).includes(status.value as ProjectStatus) ? (status.value as ProjectStatus) : ProjectStatus.Others
+  }
+
+  private _generatePriority(defaultPriority: number, otherPrios: string): Record<string, number> {
+    const result: Record<string, number> = { default: defaultPriority }
+
+    if (!otherPrios) {
+      return result
+    }
+
+    otherPrios
+      .split('\n')
+      .map((line) => line.trim())
+      .filter((line) => line.length > 0)
+      .forEach((line) => {
+        const [key, value] = line.split(':')
+        if (key && value !== undefined) {
+          result[key.trim()] = Number(value.trim())
+        }
+      })
+    // TODO replace "default" codename by its value.
+
+    return result
   }
 }

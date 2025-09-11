@@ -11,6 +11,6 @@ export interface ProjectRepository {
 }
 
 export interface ProjectSorterInterface {
-  byPriority(projects: ProjectType[]): ProjectType[]
+  byPriority(projects: ProjectType[], codeNAF: string | undefined): ProjectType[]
   bySector(projects: ProjectType[]): ProjectType[]
 }

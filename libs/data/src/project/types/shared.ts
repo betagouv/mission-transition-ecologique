@@ -15,7 +15,7 @@ export interface ProjectType {
   mainTheme: ThemeId
   programs: string[]
   linkedProjects: ProjectId[]
-  priority: number
+  priority: Record<string, number>
   highlightPriority: number | null
   sectors: string[]
   metaTitle?: string
