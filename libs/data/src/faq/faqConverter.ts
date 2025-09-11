@@ -1,6 +1,6 @@
 import { Color } from '@tee/common'
 import { ReplacerBaserow } from '../common/baserow/replacerBaserow'
-import { FaqPage, FaqSection, FaqType, QuestionItem } from './types/shared'
+import { FaqPage, FaqSectionType, FaqType, QuestionItem } from './types/shared'
 import { BaserowFaq, BaserowFaqSection, FaqItemStructured, FaqStructured } from '../common/baserow/types'
 
 export class FaqConverter {
@@ -107,7 +107,7 @@ export class FaqConverter {
     return faqs
   }
 
-  private _mappedFaqSection(faqSection: FaqItemStructured): FaqSection {
+  private _mappedFaqSection(faqSection: FaqItemStructured): FaqSectionType {
     return {
       title: faqSection.Titre,
       color: ReplacerBaserow.replaceLinkObjectByValue(faqSection.Couleur) as Color,

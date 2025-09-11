@@ -19,10 +19,10 @@
 <script lang="ts" setup>
 import FaqSection from '@/components/faq/FaqSection.vue'
 import { Marked } from '@/tools/marked'
-import { FaqSection } from '@/types'
+import { FaqSectionType } from '@/types'
 
 interface Props {
-  faqItems: FaqSection[]
+  faqItems: FaqSectionType[]
 }
 const props = defineProps<Props>()
 

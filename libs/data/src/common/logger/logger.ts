@@ -3,19 +3,35 @@ import { LogEvent, LoggerType, LogLevel, LogLevelDisplay } from './types'
 
 export class Logger {
   private logs: LogEvent[] = []
-  private _baserowProgramLink = 'https://baserow.io/database/114839/table/314437/539069/row/'
-  private _baserowProjectLink = 'https://baserow.io/database/114839/table/305253/519286/row/'
+
+  // Configuration centralisée des URLs Baserow
+  private static readonly _baserowBaseUri = 'https://baserow.io/database/114839/table/'
+  private static readonly _baserowConfig = {
+    [LoggerType.Program]: { tableId: '314437', viewId: '539069' },
+    [LoggerType.Project]: { tableId: '305253', viewId: '519286' },
+    [LoggerType.Faq]: { tableId: '669314', viewId: '1271291' }
+  }
 
   constructor(
     private _type: LoggerType,
     private _consoleLog = false
   ) {}
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  log(criticity: LogLevel, message: string, name: string, baserowId: number, data?: any) {
-    this.logs.push({ name, baserowId, criticity, message, data })
+  // ... existing code ...
+
+  private _buildBaserowLink(log: LogEvent): string | undefined {
+    const config = Logger._baserowConfig[this._type]
+    if (!config) {
+      return undefined
+    }
+
+    return `${Logger._baserowBaseUri}${config.tableId}/${config.viewId}/row/${log.baserowId}`
+  }
+
+  log(criticality: LogLevel, message: string, name: string, baserowId: number, data?: unknown) {
+    this.logs.push({ name, baserowId, criticality, message, data })
     if (this._consoleLog) {
-      console.log({ name, baserowId, criticity, message, data })
+      console.log({ name, baserowId, criticality, message, data })
     }
   }
 
@@ -26,9 +42,8 @@ export class Logger {
     markdownContent += '| --- | --- | --- | --- | --- |\n'
 
     sortedLogs.forEach((log) => {
-      const baserowLink =
-        this._type == LoggerType.Project ? this._baserowProjectLink + log.baserowId : this._baserowProgramLink + log.baserowId
-      markdownContent += `| ${LogLevelDisplay[log.criticity]} | ${log.name} | [lien](${baserowLink}) |  ${log.message} | ${JSON.stringify(log.data)} |\n`
+      const baserowLink = this._buildBaserowLink(log)
+      markdownContent += `| ${LogLevelDisplay[log.criticality]} | ${log.name} | (${baserowLink ? `[lien](${baserowLink}` : ``}) |  ${log.message} | ${JSON.stringify(log.data)} |\n`
     })
 
     fs.writeFileSync(fileName, markdownContent, 'utf8')
@@ -36,10 +51,10 @@ export class Logger {
 
   private _sortLogs(): LogEvent[] {
     return this.logs.sort((a, b) => {
-      if (a.criticity === LogLevel.Info && b.criticity !== LogLevel.Info) {
+      if (a.criticality === LogLevel.Info && b.criticality !== LogLevel.Info) {
         return 1
       }
-      if (b.criticity === LogLevel.Info && a.criticity !== LogLevel.Info) {
+      if (b.criticality === LogLevel.Info && a.criticality !== LogLevel.Info) {
         return -1
       }
 
@@ -48,7 +63,7 @@ export class Logger {
         return nameComparison
       }
 
-      return a.criticity - b.criticity
+      return a.criticality - b.criticality
     })
   }
 }

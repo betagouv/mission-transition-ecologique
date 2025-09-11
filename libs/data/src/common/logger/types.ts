@@ -21,7 +21,7 @@ export const LogLevelDisplay: Record<LogLevel, string> = {
 export interface LogEvent {
   name: string
   baserowId: number
-  criticity: LogLevel
+  criticality: LogLevel
   message: string
   data: unknown
 }

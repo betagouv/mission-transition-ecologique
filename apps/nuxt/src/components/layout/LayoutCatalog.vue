@@ -57,13 +57,13 @@
       :count-items="countItems"
     />
     <template
-      v-if="$slots.faq || faqPage"
+      v-if="$slots.faq || faqItems"
       #faq
     >
       <slot name="faq">
         <FaqCatalog
-          v-if="faqPage"
-          :faq-page="faqPage"
+          v-if="faqItems"
+          :faq-items="faqItems"
           :has-side-menu="hasSideMenu"
         />
       </slot>
@@ -86,7 +86,7 @@ interface Props {
   title?: string
   hasError?: boolean
   countItems: number
-  faqPage?: FaqPage
+  faqItems?: FaqPage
 }
 const props = defineProps<Props>()
 

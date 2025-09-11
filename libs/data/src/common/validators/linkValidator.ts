@@ -25,7 +25,7 @@ export class LinkValidator {
   }
 
   public static async findInvalidLinks(inputText: string): Promise<string[]> {
-    const urlRegex = /(https?:\/\/[^\s]+)/g
+    const urlRegex = /(https?:\/\/[^\s]+[a-zA-Z0-9])/g
     const foundLinks = inputText.match(urlRegex) || []
     const invalidLinks = []
     for (const rawLink of foundLinks) {
@@ -57,14 +57,11 @@ export class LinkValidator {
   private static async _fetchValidation(link: string) {
     try {
       const fetchResponse = await fetch(new URL(link), { method: 'GET', redirect: 'follow', signal: AbortSignal.timeout(2000) })
-      if (fetchResponse.ok) {
-        return true
-      } else {
-        return false
-      }
+      return fetchResponse.ok
     } catch (error) {
       // mandatory linter comment
     }
+
     return false
   }
 
@@ -83,6 +80,7 @@ export class LinkValidator {
     } catch (error) {
       // mandatory linter comment
     }
+
     return false
   }
 

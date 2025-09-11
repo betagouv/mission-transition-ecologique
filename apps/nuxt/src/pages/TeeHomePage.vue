@@ -28,8 +28,8 @@
             Trouvez ici des réponses concrètes sur les aides, démarches et outils pour réussir votre transition écologique.
           </p>
         </div>
-        <Faq
-          :faq-items="FaqJson.pages[FaqPage.Home]"
+        <LazyFaq
+          :faq-items="faqHomeJson"
           class="fr-container fr-px-md-0"
         />
       </div>
@@ -42,11 +42,13 @@ import { defineRouteRules } from '#imports'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { MetaRobots } from '@/tools/metaRobots'
 import Navigation from '@/tools/navigation'
-import { FilterItemKeys, RouteName, FaqPage } from '@/types'
+import { FaqSectionType, FilterItemKeys, RouteName } from '@/types'
 
 const { filters } = storeToRefs(useFiltersStore())
 const navigation = new Navigation()
-const { FaqJson } = await import('@/tools/faq/FaqJson')
+
+const { default: json } = await import('@tee/data/static/frontend/faq/home.json')
+const faqHomeJson = json as unknown as FaqSectionType[]
 
 definePageMeta({
   path: '/',

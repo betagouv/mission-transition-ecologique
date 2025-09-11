@@ -4,7 +4,7 @@
     :title="title"
     :has-error="hasError"
     :count-items="countPrograms"
-    :faq-page="FaqPage.CatalogProgram"
+    :faq-items="faqCatalogProgram"
   >
     <template #sidemenu>
       <ProgramFiltersAccordion with-title />
@@ -16,7 +16,7 @@
 <script setup lang="ts">
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import Navigation from '@/tools/navigation'
-import { RouteName, FaqPage } from '@/types'
+import { FaqSectionType, RouteName } from '@/types'
 import { useProgramStore } from '@/stores/program'
 import { ProgramManager } from '@/tools/program/programManager'
 import { MetaSeo } from '@/tools/metaSeo'
@@ -27,6 +27,9 @@ definePageMeta({
   name: RouteName.CatalogPrograms,
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
 })
+
+const { default: json } = await import('@tee/data/static/frontend/faq/catalog-program.json')
+const faqCatalogProgram = json as unknown as FaqSectionType[]
 
 const programStore = useProgramStore()
 const { programs, hasError } = storeToRefs(useProgramStore())

@@ -4,9 +4,7 @@ import { CompanyData } from '@/tools/companyData'
 import Contact from '@/tools/contact'
 import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
-import { Color, RouteName, FaqPage } from '@/types'
-
-const { FaqJson } = await import('@/tools/faq/FaqJson')
+import { Color, FaqSectionType, RouteName } from '@/types'
 
 onNuxtReady(async () => {
   CompanyData.isDataFullComputed().value // call to initialize computed reactivity variable
@@ -15,6 +13,9 @@ onNuxtReady(async () => {
 definePageMeta({
   name: RouteName.Faq
 })
+
+const { default: json } = await import('@tee/data/static/frontend/faq/faq.json')
+const faqJson = json as unknown as FaqSectionType[]
 
 const title = 'Questions fréquentes'
 const description =
@@ -70,7 +71,7 @@ useSchemaOrg(defineWebPage({ description: description }))
         </div>
       </div>
     </template>
-    <Faq :faq-items="FaqJson.pages[FaqPage.Faq]" />
+    <Faq :faq-items="faqJson" />
     <div class="fr-bg--blue--lightness fr-col-12 fr-py-0-5v fr-mt-8v"></div>
     <template #bottom>
       <div class="fr-grid-row fr-mb-8v">

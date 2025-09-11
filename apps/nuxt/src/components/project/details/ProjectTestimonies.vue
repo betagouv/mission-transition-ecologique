@@ -10,7 +10,7 @@
   >
     <template #content>
       <p class="fr-hidden fr-unhidden-md fr-mb-0">Ces entreprises sont passées à l'action et en récoltent déjà les bénéfices.</p>
-      <Testimony
+      <LazyTestimony
         v-for="(testimony, index) in testimoniesToDisplay"
         :key="testimony.slug"
         :class="[index === testimoniesToDisplay.length - 1 ? 'fr-mt-4w fr-bg-sm--none' : 'fr-mt-4w fr-mb-6w']"
@@ -21,8 +21,10 @@
 </template>
 
 <script lang="ts" setup>
-import type { ProjectType } from '@/types' // adjust path as needed
-import { testimonies } from '@tee/data/static'
+import { ProjectType, Testimony } from '@/types' // adjust path as needed
+
+const { default: testimoniesJson } = await import('@tee/data/static/frontend/testimonies/testimonies.json')
+const testimonies = testimoniesJson as unknown as Testimony[]
 
 const props = defineProps<{
   project: ProjectType | undefined

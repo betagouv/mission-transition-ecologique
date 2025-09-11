@@ -11,8 +11,8 @@ export default class ConfigBaserow extends ConfigCommon {
   private static _TABLE_ID_TESTIMONIES = 399896
   private static _TABLE_ID_THEME = 305258
   private static _TABLE_ID_TRAINING = 620771
-  private static _TABLE_ID_FAQ = 620771
-  private static _TABLE_ID_FAQ_SECTION = 620771
+  private static _TABLE_ID_FAQ = 669314
+  private static _TABLE_ID_FAQ_SECTION = 669315
 
   public static get TOKEN() {
     return this.getEnvValue('BASEROW_TOKEN')

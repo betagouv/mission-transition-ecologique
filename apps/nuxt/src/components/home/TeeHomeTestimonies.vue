@@ -9,7 +9,7 @@
       </div>
       <div class="fr-grid-row fr-grid-row--center fr-mt-4w">
         <div class="fr-col-md-10 fr-col-xl-10">
-          <Testimony
+          <LazyTestimony
             v-for="(testimony, index) in testimoniesToDisplay"
             :key="testimony.slug"
             :class="[index === testimoniesToDisplay.length - 1 ? 'fr-mb-md-3w fr-bg-sm--none' : 'fr-mb-6w']"
@@ -22,10 +22,13 @@
 </template>
 
 <script lang="ts" setup>
-import { testimonies } from '@tee/data/static'
+import { Testimony } from '@/types'
+
+const { default: testimoniesJson } = await import('@tee/data/static/frontend/testimonies/testimonies.json')
+const testimonies = testimoniesJson as unknown as Testimony[]
 
 const testimoniesToDisplay = testimonies
-  .filter((testimonie) => testimonie.homePageHighlight > 0)
+  .filter((testimony) => testimony.homePageHighlight > 0)
   .sort((a, b) => a.homePageHighlight - b.homePageHighlight)
 </script>
 

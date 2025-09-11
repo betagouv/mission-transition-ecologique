@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-import { FaqJson } from '@/tools/faq/FaqJson'
-import { FaqPage } from '@/types'
+import { FaqSectionType } from '@/types'
 import Navigation from '@/tools/navigation'
 
 interface Props {
-  faqPage: FaqPage
+  faqItems: FaqSectionType[]
   hasSideMenu: boolean
 }
 defineProps<Props>()
@@ -23,5 +22,5 @@ defineProps<Props>()
       </p>
     </div>
   </div>
-  <Faq :faq-items="FaqJson.pages[faqPage]" />
+  <Faq :faq-items="faqItems" />
 </template>

@@ -1,5 +1,6 @@
 import { BaserowFaq } from '../common/baserow/types'
 import { FileManager } from '../common/fileManager'
+import { LinkValidator } from '../common/validators/linkValidator'
 import { FaqConverter } from './faqConverter'
 import { FaqPage, FaqType } from './types/shared'
 import path from 'path'
@@ -10,11 +11,11 @@ import { LoggerType, LogLevel } from '../common/logger/types'
 
 export class FaqFeature {
   private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
-  private readonly _outputdirPath: string = path.join(this.__dirname, '../../static/faq')
+  private readonly _outputdirPath: string = path.join(this.__dirname, '../../static/frontend/faq')
   private _logger: Logger
 
   constructor() {
-    this._logger = new Logger(LoggerType.Faq, true)
+    this._logger = new Logger(LoggerType.Faq)
   }
 
   async generateFaqJson(): Promise<void> {
@@ -30,9 +31,11 @@ export class FaqFeature {
     await this._validateData(faqs)
 
     console.log(`Start generating the project JSON.`)
-    for (const page in faqs) {
-      FileManager.writeJson(this._outputdirPath + `/${page}.json`, faqs[page as FaqPage], `faq ${page}.json updated`)
+    for (const page of Object.values(FaqPage)) {
+      FileManager.writeJson(this._outputdirPath + `/${page}.json`, faqs[page as FaqPage] ?? [], `faq ${page}.json updated`)
     }
+
+    this._logger.write('generateFaqJson.log')
   }
 
   private _filter(baserowFaqs: BaserowFaq[]) {
@@ -57,6 +60,9 @@ export class FaqFeature {
 
           if (!faq.answer) {
             messageContext = `Réponse non fournie`
+          } else {
+            await LinkValidator.logInvalidLinks(faq.answer, this._logger, LogLevel.Major, 'Réponse', faq.answer, faq.id)
+            continue
           }
 
           if (!messageContext) {
