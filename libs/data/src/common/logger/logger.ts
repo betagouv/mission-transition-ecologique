@@ -43,7 +43,7 @@ export class Logger implements LoggerInterface {
 
     sortedLogs.forEach((log) => {
       const baserowLink = this._buildBaserowLink(log)
-      markdownContent += `| ${LogLevelDisplay[log.criticality]} | ${log.name} | (${baserowLink ? `[lien](${baserowLink}` : ``}) |  ${log.message} | ${JSON.stringify(log.data)} |\n`
+      markdownContent += `| ${LogLevelDisplay[log.criticality]} | ${log.name} | ${baserowLink ? `[lien](${baserowLink})` : ``} |  ${log.message} | ${JSON.stringify(log.data)} |\n`
     })
 
     fs.writeFileSync(fileName, markdownContent, 'utf8')
