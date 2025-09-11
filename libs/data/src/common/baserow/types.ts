@@ -17,7 +17,7 @@ interface LastModification {
 }
 
 interface LastModificationBy {
-  'Dernière modification par': object
+  'Dernière modification par': { id: number; name: string }
 }
 
 interface CreationDate {
