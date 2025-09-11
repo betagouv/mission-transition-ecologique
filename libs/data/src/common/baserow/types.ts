@@ -1,12 +1,27 @@
 import { FaqPage } from '../../faq/types/shared'
 import { ConditionalValues as DomainConditionalValues, DataProgram } from '../../program/types/domain'
 
+export interface FaqBaserowInterface {
+  getFaqs(): Promise<{ baserowFaqs: BaserowFaq[]; baserowFaqSections: BaserowFaqSection[] }>
+}
+
 export interface Id {
   id: number
 }
 
 interface Order {
   order: number
+}
+interface LastModification {
+  'Dernière modification': string
+}
+
+interface LastModificationBy {
+  'Dernière modification par': object
+}
+
+interface CreationDate {
+  'Date de création': string
 }
 
 export interface BaserowProject extends Id, BaserowSectors {
@@ -30,6 +45,7 @@ export interface BaserowProject extends Id, BaserowSectors {
 
 export interface LinkObject extends Id {
   value: string
+  [key: string]: unknown
 }
 
 export interface ImageTable extends Id {
@@ -173,7 +189,7 @@ export interface BaserowFaq extends Id, Order {
   Section: LinkObject[]
 }
 
-export interface BaserowFaqSection extends Id, Order {
+export interface BaserowFaqSection extends Id, Order, CreationDate, LastModification, LastModificationBy {
   Titre: string
   Couleur: LinkObject
 }

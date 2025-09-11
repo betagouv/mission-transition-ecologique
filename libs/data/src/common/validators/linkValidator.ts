@@ -2,8 +2,7 @@ import axios from 'axios'
 import https from 'https'
 import { chromium } from 'playwright'
 import { RequestInit as NodeFetchRequestInit } from 'node-fetch'
-import { Logger } from '../logger/logger'
-import { LogLevel } from '../logger/types'
+import { LoggerInterface, LogLevel } from '../logger/types'
 
 export class LinkValidator {
   public static forceHttps(link: string) {
@@ -12,7 +11,7 @@ export class LinkValidator {
 
   public static async logInvalidLinks(
     inputText: string,
-    logger: Logger,
+    logger: LoggerInterface,
     logLevel: LogLevel,
     fieldName: string,
     id: string,

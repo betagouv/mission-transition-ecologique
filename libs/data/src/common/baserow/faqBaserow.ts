@@ -1,8 +1,8 @@
 import ConfigBaserow from '../../configBaserow'
 import { AbstractBaserow } from './abstractBaserow'
-import { BaserowFaq, BaserowFaqSection } from './types'
+import { BaserowFaq, BaserowFaqSection, FaqBaserowInterface } from './types'
 
-export class FaqBaserow extends AbstractBaserow {
+export class FaqBaserow extends AbstractBaserow implements FaqBaserowInterface {
   private readonly _faqTableId = ConfigBaserow.FAQ_ID
   private readonly _faqSectionTableId = ConfigBaserow.FAQ_SECTION_ID
 

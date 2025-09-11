@@ -1,9 +1,13 @@
 import { Color } from '@tee/common'
 import { ReplacerBaserow } from '../common/baserow/replacerBaserow'
-import { FaqPage, FaqSectionType, FaqType, QuestionItem } from './types/shared'
 import { BaserowFaq, BaserowFaqSection, FaqItemStructured, FaqStructured } from '../common/baserow/types'
+import { LoggerInterface, LogLevel } from '../common/logger/types'
+import { FaqConverterInterface } from './types/domain'
+import { FaqPage, FaqSectionType, FaqType, QuestionItem } from './types/shared'
 
-export class FaqConverter {
+export class FaqConverter implements FaqConverterInterface {
+  constructor(private _logger: LoggerInterface) {}
+
   toDomain(baserowFaqs: BaserowFaq[], baserowFaqSections: BaserowFaqSection[]) {
     const faqs = this._buildStructuredFaqs(baserowFaqs, baserowFaqSections)
     this._sort(faqs)
@@ -36,6 +40,13 @@ export class FaqConverter {
     for (const baserowFaq of baserowFaqs) {
       const page = this._mappedPageName(ReplacerBaserow.replaceLinkObjectByValue(baserowFaq.Page) as string)
       if (!page) {
+        this._logger.log(
+          LogLevel.Critic,
+          `Page de destination pour la question de FAQ non reconnue`,
+          `FAQ ID Baserow: ${baserowFaq.id}`,
+          baserowFaq.id,
+          baserowFaq.Page
+        )
         continue
       }
 

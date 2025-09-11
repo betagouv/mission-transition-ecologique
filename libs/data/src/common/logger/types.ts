@@ -1,3 +1,8 @@
+export interface LoggerInterface {
+  log(criticality: LogLevel, message: string, name: string, baserowId: number, data?: unknown): void
+  write(fileName: string): void
+}
+
 export enum LogLevel {
   Info = 30,
   Minor = 20,

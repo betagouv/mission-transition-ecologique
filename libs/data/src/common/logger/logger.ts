@@ -1,7 +1,7 @@
 import * as fs from 'fs'
-import { LogEvent, LoggerType, LogLevel, LogLevelDisplay } from './types'
+import { LogEvent, LoggerInterface, LoggerType, LogLevel, LogLevelDisplay } from './types'
 
-export class Logger {
+export class Logger implements LoggerInterface {
   private logs: LogEvent[] = []
 
   // Configuration centralisée des URLs Baserow

@@ -1,34 +1,33 @@
-import { BaserowFaq } from '../common/baserow/types'
+import { FaqBaserowInterface } from '../common/baserow/types'
 import { FileManager } from '../common/fileManager'
-import { LinkValidator } from '../common/validators/linkValidator'
-import { FaqConverter } from './faqConverter'
-import { FaqPage, FaqType } from './types/shared'
+import { FaqConverterInterface, FaqFilterInterface } from './types/domain'
+import { FaqPage } from './types/shared'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { FaqBaserow } from '../common/baserow/faqBaserow'
-import { Logger } from '../common/logger/logger'
-import { LoggerType, LogLevel } from '../common/logger/types'
+import { LoggerInterface } from '../common/logger/types'
 
 export class FaqFeature {
   private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
   private readonly _outputdirPath: string = path.join(this.__dirname, '../../static/frontend/faq')
-  private _logger: Logger
 
-  constructor() {
-    this._logger = new Logger(LoggerType.Faq)
-  }
+  constructor(
+    private _baserow: FaqBaserowInterface,
+    private _converter: FaqConverterInterface,
+    private _filter: FaqFilterInterface,
+    private _logger: LoggerInterface
+  ) {}
 
   async generateFaqJson(): Promise<void> {
     console.log(`Start loading Baserow data.`)
-    const { baserowFaqs, baserowFaqSections } = await new FaqBaserow().getFaqs()
+    const { baserowFaqs, baserowFaqSections } = await this._baserow.getFaqs()
 
-    const baserowFaqsFiltered = this._filter(baserowFaqs)
+    const baserowFaqsFiltered = this._filter.byActive(baserowFaqs)
 
     console.log(`Start converting Baserow data to domain.`)
-    const faqs = new FaqConverter().toDomain(baserowFaqsFiltered, baserowFaqSections)
+    const faqs = this._converter.toDomain(baserowFaqsFiltered, baserowFaqSections)
 
     console.log(`Start validating FAQ data.`)
-    await this._validateData(faqs)
+    await this._filter.byValidity(faqs)
 
     console.log(`Start generating the project JSON.`)
     for (const page of Object.values(FaqPage)) {
@@ -36,44 +35,5 @@ export class FaqFeature {
     }
 
     this._logger.write('generateFaqJson.log')
-  }
-
-  private _filter(baserowFaqs: BaserowFaq[]) {
-    return baserowFaqs.filter((faq) => faq.Actif)
-  }
-
-  private async _validateData(faqs: FaqType) {
-    for (const page in faqs) {
-      const faqSections = faqs[page as FaqPage]
-
-      if (!faqSections) {
-        continue
-      }
-
-      for (const section of faqSections) {
-        for (const faq of section.questions) {
-          let messageContext: string | undefined
-
-          if (!faq.question) {
-            messageContext = `Question non fournie`
-          }
-
-          if (!faq.answer) {
-            messageContext = `Réponse non fournie`
-          } else {
-            await LinkValidator.logInvalidLinks(faq.answer, this._logger, LogLevel.Major, 'Réponse', faq.answer, faq.id)
-            continue
-          }
-
-          if (!messageContext) {
-            continue
-          }
-
-          this._logger.log(LogLevel.Major, messageContext, section.title, faq.id)
-
-          section.questions = section.questions.filter((questionItem) => questionItem.id !== faq.id)
-        }
-      }
-    }
   }
 }
