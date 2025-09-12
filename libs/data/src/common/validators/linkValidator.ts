@@ -1,7 +1,7 @@
 import axios from 'axios'
 import https from 'https'
-import { chromium } from 'playwright'
 import { RequestInit as NodeFetchRequestInit } from 'node-fetch'
+import { chromium } from 'playwright'
 import { LoggerInterface, LogLevel } from '../logger/types'
 
 export class LinkValidator {
@@ -24,8 +24,7 @@ export class LinkValidator {
   }
 
   public static async findInvalidLinks(inputText: string): Promise<string[]> {
-    const urlRegex = /(https?:\/\/[^\s]+[a-zA-Z0-9])/g
-    const foundLinks = inputText.match(urlRegex) || []
+    const foundLinks = this.foundLinks(inputText)
     const invalidLinks = []
     for (const rawLink of foundLinks) {
       const link = this.forceHttps(rawLink)
@@ -35,6 +34,11 @@ export class LinkValidator {
       }
     }
     return invalidLinks
+  }
+
+  public static foundLinks(inputText: string) {
+    const urlRegex = /(https?:\/\/[^\s]+[a-zA-Z0-9])/g
+    return inputText.match(urlRegex) || []
   }
 
   static fetch = (url: URL, init?: NodeFetchRequestInit) => import('node-fetch').then(({ default: fetch }) => fetch(url, init))
