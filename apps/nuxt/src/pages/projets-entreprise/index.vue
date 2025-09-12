@@ -39,7 +39,7 @@ definePageMeta({
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
 })
 
-const { default: json } = await import('@tee/data/static/frontend/faq/catalog-project.json')
+const { default: json } = await import('@/public/json/faq/catalog-project.json')
 const faqCatalogProject = json as unknown as FaqSectionType[]
 
 const { projects, hasError } = storeToRefs(useProjectStore())

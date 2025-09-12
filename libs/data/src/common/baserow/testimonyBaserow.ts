@@ -7,7 +7,7 @@ import path from 'path'
 
 export class TestimonyBaserow extends AbstractBaserow {
   private readonly _testimoniesTableId = ConfigBaserow.TESTIMONIES_ID
-  private readonly _logPath: string = path.join(this.__dirname, '../../../static/frontend/testimonies/testimony_images_download_info.json')
+  private readonly _logPath: string = path.join(this.__dirname, '../../../src/testimony/testimony_images_download_info.json')
   private _imageDownloader: ImageBaserow
   private readonly _imagePath = '/images/testimony/'
 

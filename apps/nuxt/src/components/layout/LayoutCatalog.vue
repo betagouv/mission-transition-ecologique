@@ -78,7 +78,7 @@ import { useFiltersStore } from '@/stores/filters'
 import { useNavigationStore } from '@/stores/navigation'
 import Navigation from '@/tools/navigation'
 import { Theme } from '@/tools/theme'
-import { ThemeId, FaqPage } from '@/types'
+import { ThemeId, FaqSectionType } from '@/types'
 import { computed } from 'vue'
 
 interface Props {
@@ -86,7 +86,7 @@ interface Props {
   title?: string
   hasError?: boolean
   countItems: number
-  faqItems?: FaqPage
+  faqItems?: FaqSectionType[]
 }
 const props = defineProps<Props>()
 

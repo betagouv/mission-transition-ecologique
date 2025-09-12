@@ -23,6 +23,7 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
+  title: undefined,
   content: undefined,
   containerFrom: undefined,
   titleTag: 'h3',

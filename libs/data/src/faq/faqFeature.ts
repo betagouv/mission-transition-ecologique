@@ -8,7 +8,7 @@ import { LoggerInterface } from '../common/logger/types'
 
 export class FaqFeature {
   private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
-  private readonly _outputdirPath: string = path.join(this.__dirname, '../../static/frontend/faq')
+  private readonly _outputdirPath: string = path.join(this.__dirname, '../../../../apps/nuxt/src/public/json/faq')
 
   constructor(
     private _baserow: FaqBaserowInterface,
@@ -30,6 +30,7 @@ export class FaqFeature {
     await this._filter.byValidity(faqs)
 
     console.log(`Start generating the project JSON.`)
+    FileManager.createFolderIfNotExists(this._outputdirPath)
     for (const page of Object.values(FaqPage)) {
       FileManager.writeJson(this._outputdirPath + `/${page}.json`, faqs[page as FaqPage] ?? [], `faq ${page}.json updated`)
     }

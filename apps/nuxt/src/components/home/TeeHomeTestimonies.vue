@@ -24,7 +24,7 @@
 <script lang="ts" setup>
 import { Testimony } from '@/types'
 
-const { default: testimoniesJson } = await import('@tee/data/static/frontend/testimonies/testimonies.json')
+const { default: testimoniesJson } = await import('@/public/json/testimony/testimonies.json')
 const testimonies = testimoniesJson as unknown as Testimony[]
 
 const testimoniesToDisplay = testimonies

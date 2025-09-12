@@ -23,7 +23,7 @@
 <script lang="ts" setup>
 import { ProjectType, Testimony } from '@/types' // adjust path as needed
 
-const { default: testimoniesJson } = await import('@tee/data/static/frontend/testimonies/testimonies.json')
+const { default: testimoniesJson } = await import('@/public/json/testimony/testimonies.json')
 const testimonies = testimoniesJson as unknown as Testimony[]
 
 const props = defineProps<{

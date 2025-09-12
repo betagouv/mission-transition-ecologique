@@ -14,7 +14,7 @@ definePageMeta({
   name: RouteName.Faq
 })
 
-const { default: json } = await import('@tee/data/static/frontend/faq/faq.json')
+const { default: json } = await import('@/public/json/faq/faq.json')
 const faqJson = json as unknown as FaqSectionType[]
 
 const title = 'Questions fréquentes'

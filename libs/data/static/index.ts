@@ -10,13 +10,6 @@ if (process.env['VITE_DATA_TEST'] === 'true') {
 }
 export { projects }
 
-// #####> OPERATORS ######
-import { EnrichedOperator } from '../src/operators/types/shared'
-import operatorsJson from './operators.json'
-
-const enrichedOperators: EnrichedOperator[] = operatorsJson as unknown as EnrichedOperator[]
-export { enrichedOperators }
-
 // #####> PROGRAMS ######
 import { ProgramType } from '../src/program/types/shared'
 import { default as programsJson } from './programs.json'

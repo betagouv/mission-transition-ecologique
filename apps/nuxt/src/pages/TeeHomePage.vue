@@ -47,7 +47,7 @@ import { FaqSectionType, FilterItemKeys, RouteName } from '@/types'
 const { filters } = storeToRefs(useFiltersStore())
 const navigation = new Navigation()
 
-const { default: json } = await import('@tee/data/static/frontend/faq/home.json')
+const { default: json } = await import('@/public/json/faq/home.json')
 const faqHomeJson = json as unknown as FaqSectionType[]
 
 definePageMeta({
