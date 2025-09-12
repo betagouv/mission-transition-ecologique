@@ -1,7 +1,27 @@
+import { FaqPage } from '../../faq/types/shared'
 import { ConditionalValues as DomainConditionalValues, DataProgram } from '../../program/types/domain'
+
+export interface FaqBaserowInterface {
+  getFaqs(): Promise<{ baserowFaqs: BaserowFaq[]; baserowFaqSections: BaserowFaqSection[] }>
+}
 
 export interface Id {
   id: number
+}
+
+interface Order {
+  order: number
+}
+interface LastModification {
+  'Dernière modification': string
+}
+
+interface LastModificationBy {
+  'Dernière modification par': { id: number; name: string }
+}
+
+interface CreationDate {
+  'Date de création': string
 }
 
 export interface BaserowData<T> {
@@ -11,7 +31,7 @@ export interface BaserowData<T> {
   results: T[]
 }
 
-export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
+export interface BaserowProject extends Id, BaserowSectors {
   order: string
   Nom: string
   'Description courte': string
@@ -32,6 +52,7 @@ export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
 
 export interface LinkObject extends Id {
   value: string
+  [key: string]: unknown
 }
 
 export interface ImageTable extends Id {
@@ -171,4 +192,25 @@ export interface ProgramTechField {
   email_enable: boolean // TODO
   last_mail_sent_date?: string
   eol_mail_sent_date?: string
+}
+
+export interface BaserowFaq extends Id, Order {
+  Question: string
+  Réponse: string
+  Actif: boolean
+  Page: LinkObject | null
+  Section: LinkObject[]
+}
+
+export interface BaserowFaqSection extends Id, Order, CreationDate, LastModification, LastModificationBy {
+  Titre: string
+  Couleur: LinkObject
+}
+
+export interface FaqItemStructured extends BaserowFaqSection {
+  faqs: BaserowFaq[]
+}
+
+export type FaqStructured = {
+  [key in FaqPage]?: FaqItemStructured[]
 }

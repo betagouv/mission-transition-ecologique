@@ -1,4 +1,3 @@
-export * from './color'
 export * from '../tools/companyData/types/companyDataType'
 export * from './conditionOperators'
 export * from './elementsPropsTypes'

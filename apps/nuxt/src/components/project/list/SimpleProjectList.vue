@@ -35,8 +35,7 @@
   </LayoutList>
 </template>
 <script setup lang="ts">
-import { ProjectType } from '@tee/data'
-import { FilterItemKeys } from '@/types'
+import { FilterItemKeys, ProjectType } from '@/types'
 import ProjectPriority from '@/tools/project/projectPriority'
 
 const { filters } = storeToRefs(useFiltersStore())

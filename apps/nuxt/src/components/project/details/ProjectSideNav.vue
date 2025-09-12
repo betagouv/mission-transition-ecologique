@@ -22,7 +22,9 @@
 <script setup lang="ts">
 import { ProjectType } from '@/types'
 import { Scroll } from '@/tools/scroll'
-import { testimonies } from '@tee/data/static'
+import { Testimony } from '@/types'
+
+const testimonies: Testimony[] = []
 
 interface Props {
   project: ProjectType

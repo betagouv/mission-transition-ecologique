@@ -1,3 +1,8 @@
+export interface LoggerInterface {
+  log(criticality: LogLevel, message: string, name: string, baserowId: number, data?: unknown): void
+  write(fileName: string): void
+}
+
 export enum LogLevel {
   Info = 30,
   Minor = 20,
@@ -7,7 +12,8 @@ export enum LogLevel {
 
 export enum LoggerType {
   Program = 'Dispositif',
-  Project = 'Projet'
+  Project = 'Projet',
+  Faq = 'FAQ'
 }
 
 export const LogLevelDisplay: Record<LogLevel, string> = {
@@ -20,7 +26,7 @@ export const LogLevelDisplay: Record<LogLevel, string> = {
 export interface LogEvent {
   name: string
   baserowId: number
-  criticity: LogLevel
+  criticality: LogLevel
   message: string
   data: unknown
 }

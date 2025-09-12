@@ -57,13 +57,13 @@
       :count-items="countItems"
     />
     <template
-      v-if="$slots.faq || faqPage"
+      v-if="$slots.faq || faqItems"
       #faq
     >
       <slot name="faq">
         <FaqCatalog
-          v-if="faqPage"
-          :faq-page="faqPage"
+          v-if="faqItems"
+          :faq-items="faqItems"
           :has-side-menu="hasSideMenu"
         />
       </slot>
@@ -76,10 +76,9 @@ import FaqCatalog from '@/components/faq/FaqCatalog.vue'
 import Layout from '@/components/layout/Layout.vue'
 import { useFiltersStore } from '@/stores/filters'
 import { useNavigationStore } from '@/stores/navigation'
-import { FaqPage } from '@/tools/faq/faqType'
 import Navigation from '@/tools/navigation'
 import { Theme } from '@/tools/theme'
-import { ThemeId } from '@/types'
+import { ThemeId, FaqSectionType } from '@/types'
 import { computed } from 'vue'
 
 interface Props {
@@ -87,7 +86,7 @@ interface Props {
   title?: string
   hasError?: boolean
   countItems: number
-  faqPage?: FaqPage
+  faqItems?: FaqSectionType[]
 }
 const props = defineProps<Props>()
 

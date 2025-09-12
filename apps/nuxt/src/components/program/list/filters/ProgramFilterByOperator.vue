@@ -7,10 +7,9 @@
 </template>
 
 <script setup lang="ts">
+import { enrichedOperators } from '@/tools/operator'
 import { DsfrCheckboxSetProps } from '@gouvminint/vue-dsfr'
 import { FilterItemKeys, FiltersType, OperatorFilter } from '@/types'
-
-import { enrichedOperators } from '@tee/data/static'
 import { useFiltersStore } from '@/stores/filters'
 
 const filters: FiltersType = useFiltersStore().filters

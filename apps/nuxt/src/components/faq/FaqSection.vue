@@ -25,11 +25,11 @@
   </div>
 </template>
 <script lang="ts" setup>
-import { FaqItem } from '@/tools/faq/faqType'
+import { FaqSectionType } from '@/types'
 import { Marked } from '@/tools/marked'
 
 interface Props {
-  faqItem: FaqItem
+  faqItem: FaqSectionType
 }
 defineProps<Props>()
 

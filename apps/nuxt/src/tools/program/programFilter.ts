@@ -1,3 +1,4 @@
+import { enrichedOperators } from '@/tools/operator'
 import {
   FiltersKeys,
   FiltersType,
@@ -9,7 +10,6 @@ import {
   ThemeId,
   type ValueOf
 } from '@/types'
-import { enrichedOperators } from '@tee/data/static'
 
 export default class ProgramFilter {
   static byAidType(program: ProgramTypeForFront, programAidTypesSelected: ProgramAidType[]) {

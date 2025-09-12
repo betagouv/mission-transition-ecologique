@@ -135,7 +135,7 @@ export class ProgramBaserow extends AbstractBaserow {
     }
   }
 
-  async patchProgram(rowId: number, data: Record<string, any>): Promise<void> {
+  async patchProgram(rowId: number, data: Record<string, unknown>): Promise<void> {
     await this._patchRow(this._programTableId, rowId, data)
   }
 }

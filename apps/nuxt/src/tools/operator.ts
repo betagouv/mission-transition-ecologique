@@ -1,3 +1,8 @@
+import operatorsJson from '@/public/json/operator/operators.json'
+import { EnrichedOperator } from '@tee/data'
+
+export const enrichedOperators: EnrichedOperator[] = operatorsJson as unknown as EnrichedOperator[]
+
 export const partners = [
   {
     label: 'ADEME',
