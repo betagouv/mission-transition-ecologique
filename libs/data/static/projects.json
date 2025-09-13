@@ -433,7 +433,7 @@
       31
     ],
     "priority": "90",
-    "highlightPriority": null,
+    "highlightPriority": "8",
     "sectors": [
       "A",
       "B",
@@ -648,7 +648,7 @@
       14
     ],
     "priority": "320",
-    "highlightPriority": "8",
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -2913,7 +2913,7 @@
       144
     ],
     "priority": "325",
-    "highlightPriority": "6",
+    "highlightPriority": null,
     "sectors": [
       "A",
       "F",
@@ -3259,7 +3259,7 @@
       632
     ],
     "priority": "412",
-    "highlightPriority": "7",
+    "highlightPriority": null,
     "sectors": [
       "A"
     ]
