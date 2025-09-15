@@ -24,7 +24,8 @@ import { ProjectType } from '@/types'
 import { Scroll } from '@/tools/scroll'
 import { Testimony } from '@/types'
 
-const testimonies: Testimony[] = []
+const { default: testimoniesJson } = await import('@/public/json/testimony/testimonies.json')
+const testimonies = testimoniesJson as unknown as Testimony[]
 
 interface Props {
   project: ProjectType
