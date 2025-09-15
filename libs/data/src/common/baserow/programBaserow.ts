@@ -1,4 +1,5 @@
 import fs from 'fs'
+import ConfigBaserow from '../../configBaserow'
 import { AbstractBaserow } from './abstractBaserow'
 import { ConditionalValues, Program } from './types'
 import {
@@ -14,9 +15,9 @@ import { Theme } from '../../theme/types/domain'
 import { FileManager } from '../fileManager'
 
 export class ProgramBaserow extends AbstractBaserow {
-  private readonly _geographicCoverageTableId = 314470
-  private readonly _programTableId = 314437
-  private readonly _conditionnalValuesTableId = 351202
+  private readonly _geographicCoverageTableId = ConfigBaserow.GEOGRAPHIC_COVERAGE_ID
+  private readonly _programTableId = ConfigBaserow.PROGRAM_ID
+  private readonly _conditionalValuesTableId = ConfigBaserow.CONDITIONAL_VALUES_ID
   private _operators: Operator[] = []
   private _geographicAreas: GeographicCoverage[] = []
 
@@ -40,19 +41,19 @@ export class ProgramBaserow extends AbstractBaserow {
     const baserowPrograms = await this._getTableData<Program>(this._programTableId)
     const geographicCoverages = await this._getTableData<GeographicCoverage>(this._geographicCoverageTableId)
     const themes = await this._getTableData<Theme>(this._themeTableId)
-    const conditionnalValues = await this._getTableData<ConditionalValues>(this._conditionnalValuesTableId)
+    const conditionalValues = await this._getTableData<ConditionalValues>(this._conditionalValuesTableId)
 
     this._operators = await this._getTableData<Operator>(this._operatorTableId)
     this._geographicAreas = await this._getTableData<GeographicAreas>(this._geographicAreasTableId)
 
     const dataPrograms = baserowPrograms.map((baserowProgram) => this._convertToDataProgram(baserowProgram, geographicCoverages, themes))
 
-    this._enrichDataProgramsWithConditionnals(dataPrograms, conditionnalValues)
+    this._enrichDataProgramsWithConditionals(dataPrograms, conditionalValues)
 
     try {
       fs.writeFileSync('program_tmp.json', JSON.stringify(dataPrograms, null, 2))
       console.log(
-        'All baserow relevant data has been cached.\nIf you are working on the code, you can and should use the cached data by calling getPrograms with true (in data/src/program/yamlGenerator/ProgramYamlGenerator.ts, line 14)\n'
+        'All baserow relevant data has been cached.\nIf you are working on the code, you can and should use the cached data by calling getPrograms with true (in data/src/program/yamlGenerator/ProgramYamlGenerator.ts, line 25)\n'
       )
     } catch {
       // known empty bloc, comment for the linter!
@@ -97,19 +98,19 @@ export class ProgramBaserow extends AbstractBaserow {
     return rawProgram
   }
 
-  private _enrichDataProgramsWithConditionnals(programs: DataProgram[], conditionnalValues: ConditionalValues[]) {
-    conditionnalValues.forEach((conditionnalValue) => {
-      if (!conditionnalValue['Dispositif concerné'].length) {
+  private _enrichDataProgramsWithConditionals(programs: DataProgram[], conditionalValues: ConditionalValues[]) {
+    conditionalValues.forEach((conditionalValue) => {
+      if (!conditionalValue['Dispositif concerné'].length) {
         // TODO ajouter logging
         return
       }
-      const dataConditionnal = this._convertToDataConditionalValue(conditionnalValue)
-      const matchingProgram = programs.find((program) => program['Id fiche dispositif'] === dataConditionnal['Dispositif concerné'])
+      const dataConditional = this._convertToDataConditionalValue(conditionalValue)
+      const matchingProgram = programs.find((program) => program['Id fiche dispositif'] === dataConditional['Dispositif concerné'])
       if (matchingProgram) {
         if (!matchingProgram.conditionalData) {
           matchingProgram.conditionalData = []
         }
-        matchingProgram.conditionalData.push(dataConditionnal)
+        matchingProgram.conditionalData.push(dataConditional)
       }
     })
   }
@@ -132,5 +133,9 @@ export class ProgramBaserow extends AbstractBaserow {
       'Eligibilité taille': conditionalValue['Eligibilité taille'],
       'Eligibilité Spécifique': conditionalValue['Eligibilité Spécifique']
     }
+  }
+
+  async patchProgram(rowId: number, data: Record<string, any>): Promise<void> {
+    await this._patchRow(this._programTableId, rowId, data)
   }
 }

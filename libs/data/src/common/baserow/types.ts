@@ -4,7 +4,14 @@ export interface Id {
   id: number
 }
 
-export interface BaserowProject extends Id, BaserowSectors {
+export interface BaserowData<T> {
+  count: number
+  next: string | null
+  previous: string | null
+  results: T[]
+}
+
+export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
   order: string
   Nom: string
   'Description courte': string
@@ -40,6 +47,11 @@ export interface Image {
   uploaded_at: string
 }
 
+export interface BaserowMetaData {
+  'Meta Titre': string | null
+  'Meta Description': string | null
+}
+
 export interface Program
   extends Omit<
       DataProgram,
@@ -53,7 +65,8 @@ export interface Program
       | 'Thèmes Ciblés'
       | 'redirection-vers'
     >,
-    BaserowSectors {
+    BaserowSectors,
+    BaserowMetaData {
   Statuts: LinkObject[]
   "Nature de l'aide": LinkObject
   'Opérateur de contact': LinkObject[]
@@ -131,4 +144,31 @@ export interface BaserowTestimony extends Id, BaserowSectors {
   Région: LinkObject[]
   'Mise en avant': number
   'Nom entreprise': string
+}
+
+export interface BaserowTraining extends Id {
+  'Id Ademe': string
+  'Futures Sessions': string
+  Titre: string
+  Promesse: string
+  'Url ADEME': string
+  Objectifs: string
+  Thématique: string
+  'Nombre de sessions à venir': number
+  'Nombre de participants par session': string
+  Modalité: string
+  'Codes Sections': string
+  Cible: string
+  Programme: string
+  Prérequis: string
+  Tarif: string
+  Durée: string
+  'Nombre de jours': string
+}
+
+export interface ProgramTechField {
+  prod_release_date: string
+  email_enable: boolean // TODO
+  last_mail_sent_date?: string
+  eol_mail_sent_date?: string
 }

@@ -12,7 +12,7 @@
           <Testimony
             v-for="(testimony, index) in testimoniesToDisplay"
             :key="testimony.slug"
-            :class="[index === testimoniesToDisplay.length - 1 ? 'fr-mb-md-3w remove-mobile-border' : 'fr-mb-6w']"
+            :class="[index === testimoniesToDisplay.length - 1 ? 'fr-mb-md-3w fr-bg-sm--none' : 'fr-mb-6w']"
             :testimony="testimony"
           />
         </div>
@@ -48,11 +48,5 @@ const testimoniesToDisplay = testimonies
 
 .fr-quote {
   background-image: linear-gradient(0deg, setting.$blue, setting.$blue);
-}
-
-@media (width <= 767.98px) {
-  .remove-mobile-border {
-    background-image: none !important;
-  }
 }
 </style>

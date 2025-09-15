@@ -2,6 +2,7 @@ import fs from 'fs'
 import axios from 'axios'
 import path from 'path'
 import sharp from 'sharp'
+import ConfigBaserow from '../../configBaserow'
 import { AbstractBaserow } from './abstractBaserow'
 import { LinkObject, ImageTable, Image } from './types'
 import { Result } from 'true-myth'
@@ -11,7 +12,7 @@ interface ImageMetadata {
 }
 
 export class ImageBaserow extends AbstractBaserow {
-  private readonly _imageTableId = 315189
+  private readonly _imageTableId = ConfigBaserow.IMAGE_ID
   private _metadata: ImageMetadata = {}
   private _processedImages: Set<string> = new Set()
 
@@ -92,7 +93,11 @@ export class ImageBaserow extends AbstractBaserow {
 
     const fileName = `${imageName}.webp`
     const filePath = path.join(this._imageDirectory, fileName)
-    fs.writeFileSync(filePath, webpBuffer)
+    try {
+      fs.writeFileSync(filePath, webpBuffer)
+    } catch {
+      return Result.err(new Error('Error while trying to create the the local ' + imageName))
+    }
     this._metadata[imageName] = image[0].uploaded_at
     this._processedImages.add(fileName)
 
@@ -128,7 +133,7 @@ export class ImageBaserow extends AbstractBaserow {
   }
 
   private _generateImageName(imageData: ImageTable): string {
-    let baseName = imageData['Image URL TEE']
+    let baseName = this._slugify(imageData['Image URL TEE'])
     if (!baseName) {
       baseName = this._slugify(imageData.Titre)
     }
@@ -168,5 +173,6 @@ export class ImageBaserow extends AbstractBaserow {
       .trim()
       .replace(/[\s\W-]+/g, '-') // Replace spaces and non-alphanumeric characters with hyphens
       .replace(/^-+|-+$/g, '') // Remove leading or trailing hyphens
+      .slice(0, 50)
   }
 }

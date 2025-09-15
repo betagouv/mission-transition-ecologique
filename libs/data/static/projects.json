@@ -130,7 +130,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Eclairage LED pour entreprises - Subventions pour la rénovation énergétique",
+    "metaDescription": "Faites des économies d’énergie en remplaçant vos ampoules classiques par des ampoules LED. Découvrez les aides et subventions disponibles."
   },
   {
     "id": 5,
@@ -200,7 +202,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Panneaux solaires pour les entreprises - Solution durable et rentable",
+    "metaDescription": "Produisez votre propre électricité grâce aux panneaux solaires. Autoconsommez ou revendez l’énergie générée et réduisez l’empreinte écologique de votre entreprise."
   },
   {
     "id": 3,
@@ -246,7 +250,9 @@
       "H",
       "I",
       "M"
-    ]
+    ],
+    "metaTitle": "Réduction des emballages - Gestion des déchets en entreprise",
+    "metaDescription": "Adoptez une stratégie de réduction, de réemploi et de recyclage des emballages et du plastique à usage unique dans votre entreprise. Anticipez les exigences de la loi AGEC."
   },
   {
     "id": 6,
@@ -289,7 +295,8 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "certificats-economie-energie",
-      "decarb-flash-2025-2027"
+      "decarb-flash-2025-2027",
+      "deter-decarboner-le-tertiaire"
     ],
     "linkedProjects": [
       4
@@ -359,7 +366,8 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "certificats-economie-energie",
-      "decarb-flash-2025-2027"
+      "decarb-flash-2025-2027",
+      "deter-decarboner-le-tertiaire"
     ],
     "linkedProjects": [
       4
@@ -448,7 +456,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Bilan GES entreprise  - Bilan carbone ADEME",
+    "metaDescription": "Quantifiez les émissions de gaz à effet de serre émises ou captées par les activités de votre entreprise avec la méthode Bilan Carbone® élaborée par l’ADEME."
   },
   {
     "id": 8,
@@ -491,7 +501,8 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "certificats-economie-energie",
-      "bciat-biomasse-chaleur-industrie-agriculture-tertiaire"
+      "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
+      "deter-decarboner-le-tertiaire"
     ],
     "linkedProjects": [
       4
@@ -596,7 +607,7 @@
     "nameTag": "🌬 pompe à chaleur",
     "shortDescription": "Les pompes à chaleur génèrent de la chaleur en allant capter une énergie renouvelable dans leur environnement.",
     "image": "/images/projet/pac.webp",
-    "longDescription": "Les pompes à chaleur sont des équipements de chauffage, de refroidissement et de production d'eau chaude sanitaire dotées d’une très grande efficacité énergétique. \n\nElles puisent, dans l’air ou dans le sol, une énergie totalement gratuite et renouvelable. Cette énergie récupérée est ensuite restituée dans vos locaux grâce à un échangeur de chaleur qui demande peu d'électricité pour fonctionner.\n\nPlus économiques et écologiques en fonctionnement, elles peuvent remplacer vos chaudières à gaz, au fioul ou vos chauffages électriques. Certaines pompes à chaleur peuvent également produire de l'eau chaude et climatiser.",
+    "longDescription": "Les pompes à chaleur sont des équipements de chauffage, de refroidissement et de production d'eau chaude sanitaire dotées d’une très grande efficacité énergétique.\n\nElles puisent, dans l’air ou dans le sol, une énergie disponible et renouvelable : la chaleur. Cette énergie récupérée est ensuite restituée dans vos locaux grâce à un échangeur de chaleur. Et même si prélever cette énergie, n'est pas gratuit, cette équipement demande peu d'électricité pour fonctionner.\n\nPlus économiques et écologiques en fonctionnement, elles peuvent remplacer vos chaudières à gaz, au fioul ou vos chauffages électriques. Certaines pompes à chaleur peuvent également produire de l'eau chaude et climatiser.",
     "moreDescription": "- [**Qualit’EnR**](https://www.qualit-enr.org/), un annuaire de professionnels RGE qualifiés pour votre projet de construction ou de rénovation énergétique.",
     "themes": [
       "energy",
@@ -629,7 +640,8 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "certificats-economie-energie",
-      "decarb-flash-2025-2027"
+      "decarb-flash-2025-2027",
+      "deter-decarboner-le-tertiaire"
     ],
     "linkedProjects": [
       4,
@@ -809,7 +821,9 @@
     "highlightPriority": null,
     "sectors": [
       "A"
-    ]
+    ],
+    "metaTitle": "Subventions serre agricole - Valorisation de l’énergie solaire",
+    "metaDescription": "Les serres agricoles valorisent l’énergie solaire, réduisent les pesticides et protègent les cultures. Découvrez comment améliorer leurs performances et les aides disponibles."
   },
   {
     "id": 14,
@@ -817,7 +831,7 @@
     "title": "Audit énergétique",
     "nameTag": "🎯 audit énergétique",
     "shortDescription": "Il permet d’évaluer la performance énergétique de vos locaux et de définir des scénarios de rénovation énergétique.",
-    "image": "/images/projet/audit-energétique.webp",
+    "image": "/images/projet/audit-energetique.webp",
     "longDescription": "Chauffage, isolation, eau chaude, climatisation, ventilation, éclairage… Un audit énergétique permet de faire expertiser des locaux professionnels et identifier des solutions et des financements afin de les rendre plus confortables, plus performants et de réaliser des économies durables.\n\nAinsi, mettez-vous en conformité avec les obligations réglementaires, comme le Dispositif Éco Énergie Tertiaire (DEET), communément appelé \"décret tertiaire\".",
     "moreDescription": "- [**Réglementation Audit énergétique,**](https://portail-rse.beta.gouv.fr/reglementations/audit-energetique) Un portail pour connaitre les obligations de votre entreprise.\n- [**Le Dispositif Éco Énergie Tertiaire (EET), qu'est-ce que c'est ?**](https://www.ecologie.gouv.fr/eco-energie-tertiaire-eet) Une page pour comprendre le cadre de la règlementation.",
     "themes": [
@@ -845,7 +859,8 @@
       "projets-hebergements-touristiques-cvl",
       "impulsion-environnement",
       "hotellerie-independante-bfc",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "deter-decarboner-le-tertiaire"
     ],
     "linkedProjects": [
       4
@@ -953,7 +968,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Isolation thermique des entreprises - Rénovation énergétique",
+    "metaDescription": "Faites isoler vos bâtiments pour limiter les pertes de chaleur et de fraîcheur. Une bonne isolation thermique réduit vos dépenses énergétiques."
   },
   {
     "id": 16,
@@ -1602,7 +1619,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Sensibilisation à l'environnement et à l'écologie en entreprise",
+    "metaDescription": "Formez et mobilisez vos équipes autour des enjeux climatiques : ateliers, formations, défis... pour ancrer la transition écologique dans la culture de l’entreprise."
   },
   {
     "id": 27,
@@ -1721,7 +1740,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Formations à l'environnement et à l'écologie en entreprise",
+    "metaDescription": "Découvrez les formations proposées par les opérateurs publics pour renforcer les compétences de vos équipes face aux enjeux environnementaux."
   },
   {
     "id": 29,
@@ -1831,7 +1852,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Stratégie RSE - Aide à la mise en place d'une démarche responsable",
+    "metaDescription": "Déployez une stratégie RSE pour engager vos salariés et leur faire prendre conscience des enjeux en matière d'écologie et de développement durable."
   },
   {
     "id": 31,
@@ -1890,7 +1913,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Diagnostic à 360° - Transition écologique des entreprises",
+    "metaDescription": "Évaluez l’impact environnemental de votre activité avec le diag 360. Un état des lieux complet pour guider la transition écologique de votre entreprise."
   },
   {
     "id": 32,
@@ -1953,7 +1978,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Plan de transition bas carbone aligné CRSD",
+    "metaDescription": "Construisez un plan de transition bas carbone aligné avec la SNBC et conforme à la CSRD pour réduire les émissions de gaz à effet de serre de votre entreprise."
   },
   {
     "id": 33,
@@ -2219,7 +2246,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Récupérateur d’eau de pluie - Gestion de l'eau en entreprise",
+    "metaDescription": "Améliorez la gestion de l’eau dans votre entreprise grâce à la récupération d’eau de pluie. Réduisez votre consommation d’eau potable et faites des économies durables."
   },
   {
     "id": 72,
@@ -2667,7 +2696,9 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "metaTitle": "Abris vélos pour entreprises - Stratégie de mobilité durable",
+    "metaDescription": "Encouragez la mobilité durable dans votre entreprise avec l’installation d’un abri vélo. Offrez un espace sécurisé et équipé à vos collaborateurs."
   },
   {
     "id": 144,
@@ -2768,7 +2799,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "prit-hdf",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "deter-decarboner-le-tertiaire"
     ],
     "linkedProjects": [
       4,
@@ -2857,6 +2889,94 @@
     ]
   },
   {
+    "id": 203,
+    "slug": "haie-bocagere",
+    "title": "Plantation de haies",
+    "nameTag": "🌱 haie",
+    "shortDescription": "Planter des haies bocagères protège vos élevages et cultures, régule les inondations et favorise la biodiversité.",
+    "image": "/images/projet/haie-bocagere.webp",
+    "longDescription": "D'ici 2030, la France doit se doter chaque année de plus de 5 000 kilomètres linéaires de haies supplémentaires (objectif fixé par le SGPE).\\\nLes haies bocagères, parfois appelées haies champêtres ou haies vives, sont des **clôtures végétales diversifiées**, souvent implantées **en bordure de parcelles agricoles.**\\\nEn plus de préserver la biodiversité et d'offrir un refuge aux animaux sauvages, la plantation de haies bocagères peut vous permettre :\n\n- D'augmenter vos rendements agricoles,\n\n- De protéger vos cultures et vos animaux d'élevage,\n\n- De stabiliser et d'enrichir les sols,\n\n- En cas d'intempéries, de freiner les inondations,\n\n- De constituer une barrière physique aux pesticides et produits phytosanitaires,\n\n- De constituer une réserve de bois et de stocker du carbone.",
+    "moreDescription": "- [**Stocks de bois et de carbone dans les haies bocagères françaises**](https://librairie.ademe.fr/energies/5388-stocks-de-bois-et-de-carbone-dans-les-haies-bocageres-francaises.html#product-presentation), une évaluation de l'ADEME.\n- **Haies et bocages, des réservoirs de biodiversité**, un état des lieux par l'Office Français de la Biodiversité.",
+    "themes": [
+      "biodiversite",
+      "water"
+    ],
+    "mainTheme": "biodiversite",
+    "programs": [
+      "sud-pret-climat",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "cap-transition-ecologique"
+    ],
+    "linkedProjects": [
+      20,
+      144
+    ],
+    "priority": "325",
+    "highlightPriority": "6",
+    "sectors": [
+      "A",
+      "F",
+      "N",
+      "O"
+    ]
+  },
+  {
+    "id": 302,
+    "slug": "communication-responsable",
+    "title": "Communication responsable",
+    "nameTag": "📢 communication",
+    "shortDescription": "Valoriser l'engagement de votre entreprise en faveur de l’environnement.",
+    "image": "/images/projet/communication-responsable.webp",
+    "longDescription": "La communication responsable, c’est parler de votre entreprise et de vos actions de façon sincère, claire et en accord avec la réalité de vos engagements. Elle ne se limite pas à « verdir » votre image : elle reflète vos choix concrets et votre vision à long terme.\n\nElle s’appuie sur quatre grands piliers :\n\n- **Des messages responsables** : bannir le greenwashing, éviter les stéréotypes et mettre en avant des récits porteurs de solutions et d’inspiration.\n\n- **L’éco-socio-conception des supports** : concevoir vos outils de communication en limitant leur impact environnemental et social à chaque étape (fabrication, distribution, usage, fin de vie), en privilégiant par exemple des matériaux responsables et une production locale.\n\n- **Le dialogue avec vos parties prenantes** : écouter vos clients, salariés, fournisseurs, partenaires… pour co-construire des messages qui font sens et créent de la confiance.\n\n- **L’efficacité** : utiliser avec justesse les ressources nécessaires (budget, temps, supports) pour atteindre vos objectifs de communication, en évitant tout gaspillage ou excès inutile.",
+    "moreDescription": "- [**Vers une communication plus responsable et sans greenwashing**](https://communication-responsable.ademe.fr/), un guide dédié aux professionnels de la communication et du marketing, par l'ADEME.\n- [**Guide pratique des allégations environnementales**](https://www.economie.gouv.fr/files/files/directions_services/cnc/avis/2023/Allegations_environnementales/guide_2023.pdf) du Conseil National de la Consommation.\n- [**Des règles d’éthique applicables à la communication publicitaire en France**](https://www.arpp.org/nous-consulter/regles/regles-de-deontologie/), les recommandations de l'ARPP (Autorité de régulation professionnelle de la publicité).",
+    "themes": [
+      "environmental"
+    ],
+    "mainTheme": "environmental",
+    "programs": [
+      "communaute-coq-vert",
+      "eco-defis-des-artisans-et-des-commercants",
+      "imprim-vert",
+      "programme-breizh-fab",
+      "programme-eve",
+      "repar-acteurs",
+      "cedre-premier-pas",
+      "sud-pret-climat",
+      "entreprises-engagees-nature",
+      "pret-energie-aura",
+      "pret-ile-de-france"
+    ],
+    "linkedProjects": [
+      31
+    ],
+    "priority": "380",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ]
+  },
+  {
     "id": 337,
     "slug": "sensibilisation-eco-gestes",
     "title": "Sensibilisation aux éco-gestes",
@@ -2871,7 +2991,6 @@
     ],
     "mainTheme": "energy",
     "programs": [
-      "formation-engager-entreprise-transition-ecologique",
       "formation-artisan-developpement-durable",
       "cci-business-optimizer",
       "ecogestes-paca",
@@ -3116,6 +3235,67 @@
     ]
   },
   {
+    "id": 567,
+    "slug": "couvert-vegetal-plantes-couvertures",
+    "title": "Couvert végétal",
+    "nameTag": "🌱 couvert végétal",
+    "shortDescription": "Le couvert végétal prévient la pollution et améliore la fertilité des terres agricoles.",
+    "image": "/images/projet/couvert-vegetal.webp",
+    "longDescription": "Le **couvert végétal**, aussi appelé plante de couverture, est une pratique d’**agriculture durable** qui protège et régénère vos sols. En grandes cultures, il prend souvent la forme de **couverts intermédiaires**, semés entre deux productions principales.\n\nAdopter le couvert végétal sur votre **exploitation agricole**, c’est profiter d’avantages concrets :\n\n- réduction des adventices et meilleure maîtrise des intrants,\n\n- limitation des pertes d’**engrais** et de la **pollution diffuse**,\n\n- enrichissement du sol grâce à la fixation d’**azote** par les légumineuses,\n\n- développement de la **biodiversité fonctionnelle**,\n\n- sol plus fertile avec une meilleure **rétention d’eau**.\n\nEn France, la surface en couverts est passée à 2,9 millions d’hectares en 2022. L’objectif fixé est 4,8 millions d’ici 2030, soit une progression de 65 %.",
+    "moreDescription": "- [**Les principales étapes pour réussir vos couverts végétaux et les valoriser**](https://landes.chambres-agriculture.fr/sinformer/produire-innover/productions-vegetales/couverts-vegetaux)**,** par la Chambre d’agriculture des Landes.\n- [**L'agroforesterie, un enjeu pour les paysages agricoles**](https://infos.ademe.fr/agriculture-alimentation/2025/agroforesterie-redonner-de-la-valeur-a-larbre-pour-transformer-nos-paysages-agricoles/), par l'ADEME.",
+    "themes": [
+      "biodiversite",
+      "water"
+    ],
+    "mainTheme": "biodiversite",
+    "programs": [
+      "certification-agriculture-biologique",
+      "sud-pret-climat",
+      "pass-transformation-ecologique"
+    ],
+    "linkedProjects": [
+      144,
+      203,
+      632
+    ],
+    "priority": "412",
+    "highlightPriority": "7",
+    "sectors": [
+      "A"
+    ]
+  },
+  {
+    "id": 632,
+    "slug": "agroecologie",
+    "title": "Pratique agroécologique",
+    "nameTag": "🍄 agroécologie",
+    "shortDescription": "L'agroécologie intègre les principes écologiques dans les pratiques agricoles pour créer des systèmes alimentaires durables.",
+    "image": "/images/projet/agroecologie.webp",
+    "longDescription": "L'agroécologie repose sur une gestion des terres agricoles qui **préserve la biodiversité, protège les ressources** naturelles et **limite l'impact** **environnemental** de l'agriculture tout en répondant aux besoins humains. \\\nElle vise à créer des systèmes agricoles résilients, équilibrés et durables sur le long terme, en favorisant des techniques comme :\n\n- la **rotation des cultures**,\n- l'utilisation de **couverts végétaux**,\n- la **diversification** des cultures,\n- l'**intégration de l'élevage** et de l'agriculture afin de maximiser les synergies entre eux,\n- la **gestion responsable des sols et de l'eau**,\n- l'adoption de **pratiques respectueuses des communautés locales** et de leur culture.",
+    "moreDescription": "- [**L’énergie de l’agroécologie, une solution pour le climat,**](https://agriculture-de-conservation.com/sites/agriculture-de-conservation.com/IMG/pdf/carbone-organique-sol.pdf) un guide de l'ADEME.\n- [**L'agriculture face au changement climatique**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/8012-l-agriculture-face-au-changement-climatique.html#product-presentation), une infographie proposée par l'ADEME.",
+    "themes": [
+      "biodiversite"
+    ],
+    "mainTheme": "biodiversite",
+    "programs": [
+      "etude-methanisation",
+      "investissement-biognv-agricole-et-territorial",
+      "sobriete-et-resilience-des-territoires",
+      "pret-vert",
+      "pret-vert-ademe",
+      "aide-financement-occitanie",
+      "certification-agriculture-biologique"
+    ],
+    "linkedProjects": [
+      567
+    ],
+    "priority": "511",
+    "highlightPriority": null,
+    "sectors": [
+      "A"
+    ]
+  },
+  {
     "id": 666,
     "slug": "tourisme-zero-dechet",
     "title": "Tourisme zéro déchet",
@@ -3129,7 +3309,6 @@
     ],
     "mainTheme": "waste",
     "programs": [
-      "formation-engager-entreprise-transition-ecologique",
       "cci-business-optimizer"
     ],
     "linkedProjects": [
@@ -3753,6 +3932,137 @@
       "D",
       "E",
       "F"
+    ]
+  },
+  {
+    "id": 1226,
+    "slug": "zero-perte-en-production",
+    "title": "Zéro perte en production",
+    "nameTag": "🛢️ zero perte en production",
+    "shortDescription": "En réintégrant dans la production les déchets générés, vous créez une approche circulaire vertueuse.",
+    "image": "/images/projet/zero-perte-en-production.webp",
+    "longDescription": "Votre entreprise génère des chutes, des copeaux, des solvants ou des matières non conformes ?\\\nIl est souvent possible de **revaloriser** ces pertes directement dans vos processus.\\\nIl s'agit d'**identifier les flux internes** de déchets recyclables pour l**es réintégrer dans la production** (par broyage, filtration, fonte…).\\\nCette approche circulaire permet de :\n\n- **réduire l’achat de matières vierges,**\n- **diminuer les coûts** de tri et de traitement des déchets,\n- **renforcer votre autonomie** face aux hausses de prix,\n- **valoriser votre démarche environnementale.**",
+    "moreDescription": "- [**Comment réduire et valoriser les déchets d’activités économiques ?**](https://economie-circulaire.ademe.fr/dechets-activites-economiques) par l'ADEME.\n- [**Gestion des déchets en entreprise, quelles exigences règlementaires ?**](https://entreprendre.service-public.fr/vosdroits/F37825) par Entreprendre.Service-Public.fr.",
+    "themes": [
+      "waste"
+    ],
+    "mainTheme": "waste",
+    "programs": [
+      "diagnostic-dechets",
+      "etude-biodechets",
+      "etude-methanisation",
+      "fond-vert-territoires-d-industrie",
+      "diag-eco-flux",
+      "gestion-des-biodechets",
+      "investissement-gestion-des-biodechets",
+      "investissement-reemploi-reutilisation-reparation",
+      "decarb-flash-2025-2027",
+      "bciat-biomasse-chaleur-industrie-agriculture-tertiaire"
+    ],
+    "linkedProjects": [
+      3
+    ],
+    "priority": "427",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I"
+    ]
+  },
+  {
+    "id": 1228,
+    "slug": "broyeur-vegetaux",
+    "title": "Broyage des déchets verts",
+    "nameTag": "🍂 broyeur végétaux",
+    "shortDescription": "Un broyeur de végétaux vous permet de réduire et de réemployer vos déchets verts.",
+    "image": "/images/projet/broyage-vegetaux.webp",
+    "longDescription": "Afin de réduire la part des déchets verts déposés en déchetterie, et les coûts attenant au transport de ces déchets, investissez dans un broyeur de végétaux. Ainsi, vous mettez en place une logique circulaire en transformant vos déchets en végétaux en broyat, réutilisable notamment pour le paillage, le jardinage raisonné et l'éco-pâturage.",
+    "moreDescription": "- [**Conseils sur le broyage-paillage des déchets verts**](https://librairie.ademe.fr/economie-circulaire-et-dechets/4021-conseils-sur-le-broyage-paillage-des-dechets-verts.html), une fiche de l'ADEME.",
+    "themes": [
+      "waste"
+    ],
+    "mainTheme": "waste",
+    "programs": [],
+    "linkedProjects": [],
+    "priority": "720",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "E",
+      "I"
+    ]
+  },
+  {
+    "id": 1260,
+    "slug": "consigne-reemploi",
+    "title": "Consigne et réemploi",
+    "nameTag": "🍶 Consigne",
+    "shortDescription": "La consigne permet à votre entreprise de réduire ses déchets grâce au réemploi des contenants.",
+    "image": "/images/projet/consigne.webp",
+    "longDescription": "La consigne consiste à mettre en place des **emballages réemployables** qui, une fois collectés, sont lavés puis remis en circulation. Cette pratique s’inscrit dans une logique d’**économie circulaire** et peut bénéficier à toutes les entreprises, quel que soit leur secteur.\n\nMettre en place la consigne, c’est :\n\n- **réduire vos déchets** et limiter votre impact environnemental ;\n\n- **diminuer vos coûts** liés aux emballages jetables à usage unique ;\n\n- **valoriser votre image de marque RSE** et vous **distinguer de la concurrence** par une solution innovante ;\n\n- **fidéliser vos clients** grâce à une offre plus responsable et durable.\n\nAvant d’être déployée, cette démarche doit faire l’objet d’une **évaluation de sa pertinence**, notamment au regard de l’échelle territoriale et du modèle économique envisagé. Lorsqu’elle est justifiée, la consigne constitue un **levier majeur de prévention des déchets** et de performance durable.",
+    "moreDescription": "- [**Emballages consignés**](https://www.ecologie.gouv.fr/politiques-publiques/emballages-consignes) : explication du dispositif, bénéfices et cadre public à connaître par le Ministère de la Transition écologique\n\n- [**La consigne pour réemploi**](https://librairie.ademe.fr/economie-circulaire-et-dechets/4592-consigne-pour-reemploi-et-recyclage-des-bouteilles-de-boissons.html) expliquée par l’ADEME.\n\n- [**France Consigne**](https://franceconsigne.fr/)**,** le groupement d’opérateurs nationaux du réemploi d’emballages, \\\n  qui accompagne la montée en puissance de la filière de réemploi.",
+    "themes": [
+      "waste"
+    ],
+    "mainTheme": "waste",
+    "programs": [
+      "aides-au-reemploi-des-emballages",
+      "diagnostic-dechets",
+      "etude-reemploi-reutilisation-reparation",
+      "charte-zero-dechet-plastique",
+      "aide-tpe-transition-na"
+    ],
+    "linkedProjects": [
+      21
+    ],
+    "priority": "672",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "C",
+      "I"
+    ]
+  },
+  {
+    "id": 1261,
+    "slug": "allongement-duree-de-vie",
+    "title": "Allongement de la durée de vie",
+    "nameTag": "⏳ allongement durée de vie",
+    "shortDescription": "Intégrez la longévité de vos produits et leur réparabilité dans les critères de fabrication.",
+    "image": "/images/projet/allongement-duree-de-vie.webp",
+    "longDescription": "Allonger la durée de vos produits consiste à prendre en compte leur **qualité** et leur **durabilité** dans le processus de fabrication.\n\nÀ l'opposé des produits jetables et du high tech (technologie de pointe, à haute consommation en carbone), vous pouvez **concevoir des produits durables, inspirés des principes du low tech** (technologies douces) :\n\n- **Réparabilité** : le consommateur doit pouvoir allonger la durée de vie de son produit ou de son appareil en faisant appel à un service de réparation ou en ayant accès facilement à des pièces détachées ;\n- **Faible impact** : minimisez l'utilisation des ressources rares et réduisez, de fait, la production de déchets ;\n- **Utilité :** concevez des produits qui répondent aux besoins fondamentaux des individus. Ainsi, vous réduisez les impacts négatifs de la surconsommation.",
+    "moreDescription": "- [**Comment mettre en pratique l’écoconception en entreprise**](https://economie-circulaire.ademe.fr/ecoconception), une page ressource proposée par l’ADEME.\n- [**Analyse du cycle de vie**](https://bigmedia.bpifrance.fr/nos-dossiers/analyse-du-cycle-de-vie-definition-objectifs-etapes-de-realisation) : définition, objectifs, étapes de réalisation.\n- [**Valorisez votre démarche d'écoconception avec l'Écolabel européen**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen)**.**",
+    "themes": [
+      "eco-design"
+    ],
+    "mainTheme": "eco-design",
+    "programs": [
+      "diag-ecoconception",
+      "etude-performance-produits",
+      "investissement-ecoconception",
+      "cedre-premier-pas",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "aide-tpe-transition-na",
+      "accelerateur-economie-circulaire"
+    ],
+    "linkedProjects": [
+      36
+    ],
+    "priority": "212",
+    "highlightPriority": null,
+    "sectors": [
+      "C",
+      "F",
+      "G",
+      "H"
     ]
   }
 ]

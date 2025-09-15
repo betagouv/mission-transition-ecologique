@@ -22,9 +22,11 @@
     "start": "node apps/nuxt/.output/server/index.mjs --port $PORT",
     "build:etl": "nx run @tee/etl:build-docker",
     "build:start": "npm run build && npm run start",
+    "update:trainings": "nx run @tee/data:update-trainings",
     "generate:programs": "nx run @tee/data:generate-programs",
     "generate:projects": "nx run @tee/data:generate-projects",
     "generate:testimonies": "nx run @tee/data:generate-testimonies",
+    "send:program:mails": "nx run @tee/data:send-program-mails",
     "generate:iframe-script": "nx run @tee/nuxt:generate-iframe-script",
     "generate:iframe-script:watch": "nx run @tee/nuxt:generate-iframe-script --watch",
     "database:update": "nx run @tee/etl:update-database",
@@ -84,6 +86,7 @@
     "vite": "6.3.5",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1",
+    "xml2js": "^0.6.2",
     "zod": "^3.24.1"
   },
   "devDependencies": {
@@ -118,6 +121,7 @@
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^13.0.0",
     "@vue/test-utils": "^2.4.1",
+    "csv-parse": "^6.1.0",
     "eslint": "~8.57.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.29.1",

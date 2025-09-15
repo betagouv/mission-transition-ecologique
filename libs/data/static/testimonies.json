@@ -134,7 +134,8 @@
     "homePageHighlight": null,
     "projects": [
       1,
-      21
+      21,
+      1226
     ]
   },
   {
@@ -143,7 +144,7 @@
     "companyName": "Les Délices de Louison",
     "authorName": "Betty VERGNAUD",
     "authorFunction": "Dirigeante de la boulangerie Les Délices de Louison (Groupe Marc & Betty)",
-    "authorImage": "/images/testimony/temoignage-betty-vergnaud-les-delices-de-louison-png.webp",
+    "authorImage": "/images/testimony/temoignage-betty-vergnaud-les-delices-de-louison-p.webp",
     "authorImageAttributes": "Photo de Betty VERGNAUD, Dirigeante de la boulangerie Les Délices de Louison, engagée dans la transition écologique",
     "externalLink": "https://librairie.ademe.fr/index.php?controller=attachment&id_attachment=5479&preview",
     "homePageHighlight": null,
@@ -185,6 +186,22 @@
     "projects": [
       4,
       139
+    ]
+  },
+  {
+    "slug": "ecoconception-Resistex",
+    "verbatim": "**-47 % d’émissions de CO₂ en 10 ans** : derrière ce chiffre, un chantier de fond mené avec conviction. Fournisseurs responsables, suppression du plastique dans nos emballages, optimisation de la consommation énergétique de nos produits, amélioration de la réparabilité… Chaque maillon de notre chaîne de valeur a été repensé pour réduire notre impact.",
+    "companyName": "Resistex",
+    "authorName": "Bernard ALFANDARI",
+    "authorFunction": "PDG de Resistex",
+    "authorImage": "/images/testimony/photo-portrait-bernard-alfandari-jpg.webp",
+    "authorImageAttributes": "Photo de Bernard ALFANDARI, PDG de Resistex, engagé dans la transition écologique",
+    "externalLink": "https://www.youtube.com/watch?si=i0-lilDFC83yZHhG&v=CsHv3WCb_Hw&feature=youtu.be",
+    "homePageHighlight": null,
+    "projects": [
+      1,
+      31,
+      36
     ]
   },
   {
@@ -261,6 +278,97 @@
     "homePageHighlight": null,
     "projects": [
       998
+    ]
+  },
+  {
+    "slug": "sabarot",
+    "verbatim": "Grâce à **3 000 m² de panneaux photovoltaïques** installés sur le toit de notre entrepôt, nous produisons une partie importante de notre électricité en temps réel. En 2024, leur production a atteint **586 MWh, entièrement autoconsommés sur site.**",
+    "companyName": "Sabarot Wessner SAS",
+    "authorName": "Guillaume Martin",
+    "authorFunction": "Responsable RSE chez Sabarot Wassner SAS",
+    "authorImage": "/images/testimony/guillaume_martin-jpg.webp",
+    "authorImageAttributes": "Photo de Guillaume Martin, Responsable RSE chez Sabarot",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      5
+    ]
+  },
+  {
+    "slug": "sabarot",
+    "verbatim": "Pour encourager une mobilité plus propre, on a installé **4 bornes de recharge**, ajouté des **hybrides** dans notre flotte et soutenu le **covoiturage** avec un coup de pouce de 50 €. Un grand local à vélos complète le tout. Cap sur un **parc 100 % électrique** d’ici 2027.",
+    "companyName": "Sabarot Wessner SAS",
+    "authorName": "Guillaume Martin",
+    "authorFunction": "Responsable RSE chez Sabarot Wassner SAS",
+    "authorImage": "/images/testimony/guillaume_martin-jpg.webp",
+    "authorImageAttributes": "Photo de Guillaume Martin, Responsable RSE chez Sabarot",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      16,
+      18,
+      104,
+      147,
+      731
+    ]
+  },
+  {
+    "slug": "agriculture-urbaine-biodiversité-eau",
+    "verbatim": "Acteurs de la transition alimentaire, nous cherchons à mieux mesurer et réduire notre impact. Le **plan d’action Biodiversité** et l’**Empreinte Eau** nous ont permis de structurer notre démarche, d’établir un diagnostic clair et d’identifier des leviers d’action concrets.",
+    "companyName": "Cols Verts",
+    "authorName": "Boris Marcel",
+    "authorFunction": "co-fondateur des Cols Verts",
+    "authorImage": "/images/testimony/borismarcel-jpg.webp",
+    "authorImageAttributes": "Photo de M. Marcel, Co-fondateur et directeur chez réseau national Les Cols Verts, engagé dans la transition écologique",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      20,
+      144
+    ]
+  },
+  {
+    "slug": "led-extruplast",
+    "verbatim": "Le remplacement de nos anciennes lampes par des LED nous a permis de passer de 560 à 319 points lumineux, tout en assurant un éclairage plus homogène et sans zones d’ombre. Résultat : une réduction de 64 % de la puissance électrique nécessaire, soit environ **265 000 kWh économisés chaque année.**",
+    "companyName": "Extruplast",
+    "authorName": "Stéphane REMAUD",
+    "authorFunction": "responsable RSE chez Extruplast",
+    "authorImage": "/images/testimony/stephane-renaud-extruplast-png.webp",
+    "authorImageAttributes": "Photo de M. Stéphane REMAUD, responsable RSE chez Extruplast",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      2
+    ]
+  },
+  {
+    "slug": "bilan-carbone-plan-transition",
+    "verbatim": "Une stratégie climat n’est ni une option ni un discours. Je pense que les entreprises ayant fait un **bilan carbone** et un **plan de transition** seront les plus résilientes et profiterons ainsi de nouvelles opportunités d’**accroître leurs performances économiques**.",
+    "companyName": "Mobeetip",
+    "authorName": "Nicolas Motheau",
+    "authorFunction": "directeur et associé Mobeetip",
+    "authorImage": "/images/testimony/nicolasmotheau-jpg.webp",
+    "authorImageAttributes": "Photo de M. Nicolas Motheau, Directeur et associé Mobeetip, engagé dans la transition écologique",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      1,
+      32
+    ]
+  },
+  {
+    "slug": "numerique-responsable-keeep",
+    "verbatim": "Nous avons intégré le réemploi dans toutes nos pratiques : **100 % de nos équipements sont reconditionnés en France**, leur **durée de vie prolongée** par la maintenance et la réparation, et nos équipes formées à des pratiques responsables.",
+    "companyName": "",
+    "authorName": "Mirabelle Lamoureux",
+    "authorFunction": "CEO de Keeep",
+    "authorImage": "/images/testimony/mirabelle-lamoureux-jpg.webp",
+    "authorImageAttributes": "Photo de Mme Mirabelle Lamoureux – CEO de Keeep, engagé dans la transition écologique",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      22,
+      1261
     ]
   }
 ]

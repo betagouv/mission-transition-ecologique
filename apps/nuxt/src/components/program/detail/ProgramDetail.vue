@@ -124,16 +124,15 @@ if (currentProgram.value) {
 const scrollToRef = (targetRef: HTMLElement | null | undefined) => {
   if (!targetRef) return
   if (targetRef) {
-    navigation.isByRouteName(RouteName.CatalogProgramDetail) || navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)
-      ? Scroll.to(targetRef)
-      : Scroll.toWithTopBarOffset(targetRef)
+    Scroll.toWithEligibilityBarOffset(targetRef)
   }
 }
 const scrollToForm = () => scrollToRef(formRef.value)
 const scrollToActivation = () => scrollToRef(activationRef.value)
 
-useSeoMeta(MetaSeo.get(currentProgram.value?.titre, currentProgram.value?.description))
-useSchemaOrg(defineWebPage({ description: currentProgram.value?.description }))
+const description = currentProgram.value?.metaDescription ?? currentProgram.value?.description
+useSeoMeta(MetaSeo.get(currentProgram.value?.metaTitre ?? currentProgram.value?.titre, description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())

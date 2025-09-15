@@ -1,8 +1,8 @@
 import { ProgramType } from './shared'
-import { BaserowSectors } from '../../common/baserow/types'
+import { BaserowSectors, BaserowMetaData } from '../../common/baserow/types'
 import { Theme } from '../../theme/types/domain'
 
-export interface DataProgram extends BaserowSectors {
+export interface DataProgram extends BaserowSectors, BaserowMetaData {
   id: number
   'Id fiche dispositif': string
   Titre: string
@@ -41,6 +41,7 @@ export interface DataProgram extends BaserowSectors {
   Statuts: Status[]
   conditionalData?: ConditionalValues[]
   'redirection-vers': number[]
+  tech: string
 }
 
 export enum Publicodes {

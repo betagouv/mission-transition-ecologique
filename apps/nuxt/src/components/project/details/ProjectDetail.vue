@@ -7,11 +7,17 @@
       <ProjectHeader
         v-if="project"
         :project="project"
-        :theme-color="themeColor as Color"
+        :theme-color="typedThemeColor"
       />
     </template>
     <template #sidemenu>
-      <TeeCopyLinkButton class="fr-mt-6v" />
+      <TeeCopyLinkButton
+        class="fr-mt-6v"
+        tertiary
+        no-outline
+        copy-class="fr-text--green"
+        text-class="fr-text--black"
+      />
       <ProjectSideNav :project="project" />
     </template>
     <div id="externalLinksTracking">
@@ -25,7 +31,7 @@
     <LinkedProjects
       v-if="project?.linkedProjects.length"
       :project="project"
-      :color="themeColor as Color"
+      :color="typedThemeColor"
     />
   </Layout>
 </template>
@@ -43,9 +49,11 @@ const { currentProject: project } = storeToRefs(useProjectStore())
 const navigation = new Navigation()
 
 const themeColor = ref<Color | ''>()
+const typedThemeColor = themeColor as Color
 
-useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription))
-useSchemaOrg(defineWebPage({ description: project.value?.shortDescription }))
+const description = project.value?.metaDescription ?? project.value?.shortDescription
+useSeoMeta(MetaSeo.get(project.value?.metaTitle ?? project.value?.title, description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 if (project.value) {
   useHead({

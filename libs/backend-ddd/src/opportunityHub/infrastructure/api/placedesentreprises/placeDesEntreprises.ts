@@ -8,8 +8,8 @@ import { OpportunityWithContactId } from '../../../../opportunity/domain/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
 import { ProgramService } from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
-import { Operators, ProgramType, ThemeId } from '@tee/data'
-import { Objective, Opportunity, OpportunityType } from '@tee/common'
+import { Operators, ProgramType } from '@tee/data'
+import { Objective, Opportunity, OpportunityType, ThemeId } from '@tee/common'
 import Monitor from '../../../../common/domain/monitoring/monitor'
 import { OpportunityAssociatedData } from '../../../../opportunity/domain/opportunityAssociatedData'
 
@@ -32,10 +32,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return new Error('Operator List non valid for Place des entreprises')
   }
 
-  override support = (opportunityData: OpportunityAssociatedData) => {
-    if (opportunityData.isProgram()) {
-      return !opportunityData.data['activable en autonomie']
-    }
+  override support = (_opportunityData: OpportunityAssociatedData) => {
     return true
   }
 
