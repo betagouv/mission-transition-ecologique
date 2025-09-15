@@ -29,12 +29,16 @@ const props = defineProps<{
 }>()
 
 const testimoniesToDisplay = computed(() => {
-  if (!props.project) return []
+  if (!props.project) {
+    return []
+  }
   return testimonies.filter((testimony) => testimony.projects?.includes(props.project!.id))
 })
 
 const hasTestimony = computed(() => {
-  if (!props.project) return false
+  if (!props.project) {
+    return false
+  }
   return testimonies.some((testimony) => testimony.projects?.includes(props.project!.id))
 })
 </script>

@@ -41,7 +41,9 @@ const scrollTo = (id: string) => {
 }
 
 const hasTestimony = computed(() => {
-  if (!props.project) return false
+  if (!props.project) {
+    return false
+  }
   return testimonies.some((testimony) => testimony.projects?.includes(props.project!.id))
 })
 

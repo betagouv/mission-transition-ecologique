@@ -122,7 +122,9 @@ if (currentProgram.value) {
 }
 
 const scrollToRef = (targetRef: HTMLElement | null | undefined) => {
-  if (!targetRef) return
+  if (!targetRef) {
+    return
+  }
   if (targetRef) {
     Scroll.toWithEligibilityBarOffset(targetRef)
   }
