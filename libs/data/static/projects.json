@@ -433,7 +433,7 @@
       31
     ],
     "priority": "90",
-    "highlightPriority": null,
+    "highlightPriority": "8",
     "sectors": [
       "A",
       "B",
@@ -648,7 +648,7 @@
       14
     ],
     "priority": "320",
-    "highlightPriority": "8",
+    "highlightPriority": null,
     "sectors": [
       "A",
       "B",
@@ -2913,7 +2913,7 @@
       144
     ],
     "priority": "325",
-    "highlightPriority": "6",
+    "highlightPriority": null,
     "sectors": [
       "A",
       "F",
@@ -3005,6 +3005,45 @@
     "highlightPriority": null,
     "sectors": [
       "I"
+    ]
+  },
+  {
+    "id": 372,
+    "slug": "maintenance-preventive",
+    "title": "Maintenance préventive",
+    "nameTag": "⚙️ maintenance",
+    "shortDescription": "La maintenance préventive de vos appareils permet d'économiser l'énergie et de prévenir les pannes.",
+    "image": "/images/projet/maintenance-preventive.webp",
+    "longDescription": "La **maintenance préventive** des équipements consommateurs d’énergie (eau, électricité, gaz) est une stratégie clé pour sécuriser la production et améliorer la performance énergétique de votre entreprise. Plutôt que d’attendre une panne coûteuse, vous agissez en amont pour maintenir vos installations en bon état et garantir leur rendement optimal.\n\nLes bénéfices concrets pour votre activité :\n\n- **anticiper les pannes** et éviter les arrêts de production,\n\n- **réduire les coûts** liés à la maintenance corrective et aux réparations d’urgence,\n\n- **optimiser les performances** de vos appareils pour fonctionner à plein rendement,\n\n- **diminuer votre consommation d’énergie** en limitant fuites et pertes invisibles.\n\nUn suivi régulier et planifié renforce la compétitivité de votre entreprise tout en contribuant à la transition énergétique.",
+    "moreDescription": "- [**Pourquoi l'entretien de nos appareils n'a rien d'anodin ?**](https://librairie.ademe.fr/consommer-autrement/5390-pourquoi-l-entretien-de-nos-appareils-n-a-rien-d-anodin-.html#product-presentation)**,** une infographie de l'ADEME.",
+    "themes": [
+      "energy",
+      "water"
+    ],
+    "mainTheme": "energy",
+    "programs": [
+      "sud-pret-climat",
+      "cheque-vert-grand-est",
+      "pret-energie-aura",
+      "pass-transition-bzh",
+      "pret-ile-de-france",
+      "perf-crise-energetique-cvl"
+    ],
+    "linkedProjects": [
+      4
+    ],
+    "priority": "512",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "Q"
     ]
   },
   {
@@ -3259,7 +3298,7 @@
       632
     ],
     "priority": "412",
-    "highlightPriority": "7",
+    "highlightPriority": null,
     "sectors": [
       "A"
     ]
@@ -3532,7 +3571,7 @@
     "shortDescription": "La cyclologistique est le transport de marchandises à l'aide d'un vélo.",
     "image": "/images/projet/cyclologistique.webp",
     "longDescription": "En ville, le transport et la livraison de marchandises est polluant, bruyant et consommateur d'espace public (stationnement, embouteillages...). La cyclologistique vous permet de reporter une partie de ces flux sur le vélo, un mode de transport écologique et doux.\n\nEn favorisant des fournisseurs qui utilisent la cyclologistique ou en faisant vous-même l'acquisition de vélo-cargos ou de cycles à assistance électrique, vous contribuez à réduire l'émission des gaz à effet de serre et à désencombrer les rues des utilitaires. Vous affichez également les ambitions écologiques et responsables de votre entreprise !",
-    "moreDescription": "- [**Les vélos cargos pour optimiser la logistique décarbonée du dernier kilomètre**](https://librairie.ademe.fr/mobilite-et-transports/5903-les-velos-cargos-pour-optimiser-la-logistique-decarbonee-du-dernier-kilometre.html), par l'ADEME.\n- [**Panorama de la cyclologistique en France**](https://lesboitesavelo.org/wp-content/uploads/2025/02/Observatoire-des-cyclomobilites-professionnelles-2024-Interactif.pdf), état des lieux, enjeux et recommandations pour la filière cyclologistique par L’association Boîtes à Vélo.\n- [**Le guide pour réussir sa transition vers le vélo cargo,**](https://lesboitesavelo.org/wp-content/uploads/2025/06/Guide-Reussir-sa-transition-vers-le-velo-cargo_Boites-a-velo.pdf) par L’association Boîtes à Vélo\n- [**Sensibilisation à la cyclocargologie**](https://cyclocargologie.fr/evenements/)**,** évènements et webinaires autour de la cyclologistique.",
+    "moreDescription": "- [**Les vélos cargos pour optimiser la logistique décarbonée du dernier kilomètre**](https://librairie.ademe.fr/mobilite-et-transports/5903-les-velos-cargos-pour-optimiser-la-logistique-decarbonee-du-dernier-kilometre.html), par l'ADEME.\n- [**Panorama de la cyclologistique en France**](https://lesboitesavelo.org/wp-content/uploads/2025/02/Observatoire-des-cyclomobilites-professionnelles-2024-Interactif.pdf), état des lieux, enjeux et recommandations pour la filière cyclologistique par L’association Boîtes à Vélo.\n- [**Le guide pour réussir sa transition vers le vélo cargo,**](https://lesboitesavelo.org/wp-content/uploads/2025/07/Guide-Reussir-sa-transition-vers-le-velo-cargo_Boites-a-velo.pdf) par L’association Boîtes à Vélo\n- [**Sensibilisation à la cyclocargologie**](https://cyclocargologie.fr/evenements/)**,** évènements et webinaires autour de la cyclologistique.",
     "themes": [
       "mobility"
     ],
