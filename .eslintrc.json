@@ -25,7 +25,11 @@
       "files": ["*.ts", "*.tsx", "*.mts"],
       "extends": ["plugin:@nx/typescript"],
       "rules": {
-        "@typescript-eslint/no-unused-vars": "off"
+        "@typescript-eslint/no-unused-vars": "off",
+        "curly": [
+          "error",
+          "all"
+        ]
       }
     },
     {
@@ -55,6 +59,10 @@
         "leadingUnderscore": "forbid",
         "trailingUnderscore": "forbid"
       }
+    ],
+    "curly": [
+      "error",
+      "all"
     ]
   }
 }

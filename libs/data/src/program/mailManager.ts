@@ -130,7 +130,9 @@ export class MailManager {
       const programKey = program['Id fiche dispositif']
       const tech: ProgramTechField = JSON.parse(program.tech) || {}
 
-      if (tech.prod_release_date) continue
+      if (tech.prod_release_date) {
+        continue
+      }
 
       const matchingJson = jsonPrograms.find((p) => p.id === programKey)
       if (matchingJson) {

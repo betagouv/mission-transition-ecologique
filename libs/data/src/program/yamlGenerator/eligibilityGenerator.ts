@@ -67,7 +67,9 @@ function setEligibilitySector(generator: CoreGenerator) {
 }
 
 function setEligibilityGeography(generator: CoreGenerator) {
-  if (generator.program['Couverture géographique'].Name == 'National') return ["France et territoires d'outre-mer"]
+  if (generator.program['Couverture géographique'].Name == 'National') {
+    return ["France et territoires d'outre-mer"]
+  }
 
   if (generator.program['Zones Spécifiques (géographie)']) {
     generator.logger.log(

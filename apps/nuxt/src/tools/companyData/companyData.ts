@@ -111,7 +111,9 @@ export class CompanyData {
   }
 
   static hasSiret() {
-    if (!this.company) return false
+    if (!this.company) {
+      return false
+    }
 
     return !!(this.company as EstablishmentFront)?.siret
   }

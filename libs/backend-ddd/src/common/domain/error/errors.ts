@@ -12,7 +12,9 @@ import ServiceNotFoundError from '../api/serviceNotFoundError'
  * @arg value - expected to be an error, e.g. retrieved with the `catch` keyword.
  */
 export function ensureError(value: unknown): Error {
-  if (value instanceof Error) return value
+  if (value instanceof Error) {
+    return value
+  }
 
   let stringified = '[Unable to stringify the thrown value]'
   try {
