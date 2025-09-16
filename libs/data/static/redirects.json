@@ -4,7 +4,8 @@
     "seche-linge": "electromenager-basse-consommation",
     "economisateurs-eau-sanitaires": "economiseurs-eau-sanitaires",
     "restauration-durable": "menus-circuits-courts",
-    "composteur": "gestion-biodechets"
+    "composteur": "gestion-biodechets",
+    "maintenance-préventive": "maintenance-preventive"
   },
   "program_redirects": {
     "audits-clef-verte": "label-clef-verte",
@@ -69,7 +70,7 @@
     "203": "haie-bocagere",
     "302": "communication-responsable",
     "337": "sensibilisation-eco-gestes",
-    "372": "maintenance-préventive",
+    "372": "maintenance-preventive",
     "378": "revetements-permeables",
     "401": "utilitaire-camion-propre",
     "434": "methanisation",

@@ -29,10 +29,8 @@ export default class ProjectFeatures {
     if (!questionnaireData.codeNAF1 || questionnaireData.onlyEligible === false) {
       return projects
     }
-    const eligibleProjects = projects.filter((project) => {
+    return projects.filter((project) => {
       return this._projectEligibility.isEligible(project, questionnaireData.codeNAF1 as string)
     })
-
-    return this._projectSorter.bySector(eligibleProjects)
   }
 }

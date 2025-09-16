@@ -160,7 +160,7 @@ export class ProjectBaserow extends AbstractBaserow {
   }
 
   private _generatePriority(defaultPriority: number, otherPrios: string): Record<string, number> {
-    const result: Record<string, number> = { default: defaultPriority }
+    const result: Record<string, number> = { default: Number(defaultPriority) }
 
     if (!otherPrios) {
       return result

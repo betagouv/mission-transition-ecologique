@@ -39,7 +39,7 @@
 import { useProjectStore } from '@/stores/project'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { ProjectManager } from '@/tools/project/projectManager'
-import { ProjectSorter } from '@tee/data'
+import { ProjectType } from '@tee/data'
 import { Theme } from '@/tools/theme'
 import { CompanyData } from '@/tools/companyData'
 import { RouteName } from '@/types'
@@ -62,7 +62,6 @@ const theme = Theme.getThemeFromSelectedTheme()
 const { projects, hasError } = storeToRefs(useProjectStore())
 const { hasSpinner } = storeToRefs(useNavigationStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
-const projectSorter = new ProjectSorter()
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
 const sortedProjects = computed(() => {
@@ -71,7 +70,7 @@ const sortedProjects = computed(() => {
   }
 
   if (!theme.value || !Theme.isTheme(theme.value)) {
-    return isDataFull.value ? projectSorter.byHighlightAndSector(filteredProjects.value) : projectSorter.byHighlight(filteredProjects.value)
+    return isDataFull.value ? projects.value : byHighlight(filteredProjects.value)
   }
 
   return filteredProjects.value
@@ -87,4 +86,16 @@ const countProjects = computed(() => {
 const hasNoResults = computed(() => {
   return !hasSpinner.value && (hasError.value || !countProjects.value)
 })
+
+function byHighlight(projects: ProjectType[]): ProjectType[] {
+  return projects.slice().sort((a, b) => {
+    if (!a.highlightPriority) {
+      return 1
+    }
+    if (!b.highlightPriority) {
+      return -1
+    }
+    return a.highlightPriority - b.highlightPriority
+  })
+}
 </script>
