@@ -37,7 +37,6 @@
       "soutien-hebergement-touristique",
       "hotellerie-independante-bfc",
       "camping-independant-bfc",
-      "investissement-outre-mer",
       "certificats-economie-energie",
       "aide-investissement-librairie",
       "booster-transformation-rev-3"
@@ -103,9 +102,7 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "hotellerie-independante-bfc",
-      "fonds-tourisme-occitanie",
       "aide-tourisme-guadeloupe",
-      "investissement-outre-mer",
       "certificats-economie-energie"
     ],
     "linkedProjects": [
@@ -178,9 +175,7 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "hotellerie-independante-bfc",
-      "fonds-tourisme-occitanie",
       "aide-investissement-corse",
-      "investissement-outre-mer",
       "certificats-economie-energie",
       "decarb-flash-2025-2027"
     ],
@@ -238,7 +233,6 @@
       "tremplin",
       "aide-financement-occitanie",
       "ecoproduction-hdf",
-      "visite-matiere-dechet",
       "cedre-investissement",
       "sud-pret-climat",
       "charte-zero-dechet-plastique",
@@ -246,8 +240,7 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "aide-tpe-transition-na",
-      "aide-investissement-corse",
-      "investissement-outre-mer"
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       21
@@ -308,9 +301,7 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "hotellerie-independante-bfc",
-      "fonds-tourisme-occitanie",
       "aide-investissement-corse",
-      "investissement-outre-mer",
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
       "deter-decarboner-le-tertiaire"
@@ -384,7 +375,6 @@
       "agir-pdl",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "investissement-outre-mer",
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
       "deter-decarboner-le-tertiaire"
@@ -447,7 +437,6 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "bilan-carbone",
-      "investissement-outre-mer",
       "evaluation-carbone-lise"
     ],
     "linkedProjects": [
@@ -524,9 +513,7 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "hotellerie-independante-bfc",
-      "fonds-tourisme-occitanie",
       "aide-investissement-corse",
-      "investissement-outre-mer",
       "certificats-economie-energie",
       "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
       "deter-decarboner-le-tertiaire"
@@ -596,9 +583,7 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "hotellerie-independante-bfc",
-      "fonds-tourisme-occitanie",
       "aide-investissement-corse",
-      "investissement-outre-mer",
       "certificats-economie-energie",
       "decarb-flash-2025-2027"
     ],
@@ -649,7 +634,6 @@
     "mainTheme": "energy",
     "programs": [
       "etude-geothermie-de-surface-et-d-aerothermie",
-      "geothermie-de-surface-grand-est",
       "fonds-tourisme-durable",
       "investissement-contrat-chaleur-renouvelable",
       "investissement-geothermie-de-surface-et-d-aerothermie",
@@ -672,9 +656,7 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "hotellerie-independante-bfc",
-      "fonds-tourisme-occitanie",
       "aide-investissement-corse",
-      "investissement-outre-mer",
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
       "deter-decarboner-le-tertiaire"
@@ -734,7 +716,6 @@
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
       "hotellerie-independante-bfc",
-      "investissement-outre-mer",
       "certificats-economie-energie"
     ],
     "linkedProjects": [
@@ -783,7 +764,6 @@
     "mainTheme": "energy",
     "programs": [
       "etude-geothermie-de-surface-et-d-aerothermie",
-      "geothermie-de-surface-grand-est",
       "etude-geothermie-profonde",
       "etude-test-geothermie",
       "fonds-tourisme-durable",
@@ -800,7 +780,6 @@
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
       "agir-pdl",
-      "investissement-outre-mer",
       "certificats-economie-energie"
     ],
     "linkedProjects": [
@@ -857,8 +836,7 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
-      "aide-tourisme-guadeloupe",
-      "investissement-outre-mer"
+      "aide-tourisme-guadeloupe"
     ],
     "linkedProjects": [
       4
@@ -909,7 +887,6 @@
       "impulsion-environnement",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "investissement-outre-mer",
       "deter-decarboner-le-tertiaire"
     ],
     "linkedProjects": [
@@ -985,10 +962,8 @@
       "camping-independant-na",
       "prit-hdf",
       "hotellerie-independante-bfc",
-      "fonds-tourisme-occitanie",
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
-      "investissement-outre-mer",
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
       "aide-investissement-librairie",
@@ -1052,8 +1027,6 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "impulsion-environnement",
-      "investissement-outre-mer",
-      "car-labelling",
       "je-change-ma-voiture",
       "mobilipro",
       "booster-transformation-rev-3"
@@ -1116,7 +1089,6 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "impulsion-environnement",
-      "investissement-outre-mer",
       "certificats-economie-energie"
     ],
     "linkedProjects": [
@@ -1182,8 +1154,6 @@
       "pret-ile-de-france",
       "impulsion-environnement",
       "aide-tourisme-guadeloupe",
-      "investissement-outre-mer",
-      "car-labelling",
       "je-change-ma-voiture",
       "certificats-economie-energie"
     ],
@@ -1247,8 +1217,6 @@
       "soutien-hebergement-touristique",
       "camping-independant-na",
       "prit-hdf",
-      "fonds-tourisme-occitanie",
-      "investissement-outre-mer",
       "je-change-ma-voiture"
     ],
     "linkedProjects": [
@@ -1312,7 +1280,6 @@
       "programme-reseau",
       "hotellerie-independante-bfc",
       "aide-tourisme-guadeloupe",
-      "investissement-outre-mer",
       "booster-transformation-rev-3"
     ],
     "linkedProjects": [
@@ -1363,7 +1330,6 @@
       "diagnostic-dechets",
       "ormat",
       "tremplin",
-      "visite-matiere-dechet",
       "cedre-premier-pas",
       "sud-pret-climat",
       "charte-zero-dechet-plastique",
@@ -1373,7 +1339,6 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "aide-tpe-transition-na",
-      "investissement-outre-mer",
       "booster-transformation-rev-3"
     ],
     "linkedProjects": [
@@ -1429,9 +1394,7 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "aide-investissement-corse",
-      "investissement-outre-mer",
-      "PME-realisant-un-saut-technologique"
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       36
@@ -1483,7 +1446,6 @@
       "investissement-centre-de-tri",
       "ormat",
       "tremplin",
-      "visite-matiere-dechet",
       "cedre-investissement",
       "sud-pret-climat",
       "pret-energie-aura",
@@ -1494,9 +1456,7 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "aide-tpe-transition-na",
-      "fonds-tourisme-occitanie",
-      "aide-investissement-corse",
-      "investissement-outre-mer"
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       21
@@ -1562,13 +1522,10 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "agir-pdl",
-      "fresque-agri-alim",
       "hotellerie-independante-na",
       "camping-independant-na",
       "aide-tpe-transition-na",
-      "fonds-tourisme-occitanie",
-      "aide-investissement-corse",
-      "investissement-outre-mer"
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       21
@@ -1623,8 +1580,7 @@
       "sud-pret-climat",
       "pret-energie-aura",
       "pass-transition-bzh",
-      "pret-ile-de-france",
-      "investissement-outre-mer"
+      "pret-ile-de-france"
     ],
     "linkedProjects": [
       21
@@ -1678,18 +1634,13 @@
       "ecogestes-paca",
       "investour",
       "sud-pret-climat",
-      "fresque-du-climat",
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "fresque-du-sol",
-      "fresque-agri-alim",
-      "investissement-outre-mer",
       "mobilipro",
       "diag-biodiversite",
       "impact-co2",
       "booster-transformation-rev-3",
-      "les-collectifs",
       "formation-convaincre-et-argumenter",
       "formation-communiquer-et-sensibiliser",
       "outils-pour-adaptation"
@@ -1749,8 +1700,7 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "aide-tpe-transition-na",
-      "investissement-outre-mer"
+      "aide-tpe-transition-na"
     ],
     "linkedProjects": [
       30
@@ -1805,7 +1755,6 @@
       "formation-artisan-developpement-durable",
       "formations-tee",
       "pacte-industrie",
-      "climatometre",
       "ecogestes-paca",
       "investour",
       "sud-pret-climat",
@@ -1815,7 +1764,6 @@
       "pret-ile-de-france",
       "aide-tpe-transition-na",
       "aide-investissement-corse",
-      "investissement-outre-mer",
       "formation-convaincre-et-argumenter",
       "formation-communiquer-et-sensibiliser",
       "outils-pour-adaptation"
@@ -1872,10 +1820,8 @@
       "sud-pret-climat",
       "pret-energie-aura",
       "pret-ile-de-france",
-      "investissement-outre-mer",
       "credit-impot-recherche",
-      "credit-impot-innovation",
-      "PME-realisant-un-saut-technologique"
+      "credit-impot-innovation"
     ],
     "linkedProjects": [],
     "priority": {
@@ -1935,7 +1881,6 @@
       "cap-transition-ecologique",
       "camping-independant-bfc",
       "aide-tourisme-guadeloupe",
-      "investissement-outre-mer",
       "diag-impact-biodiversite",
       "booster-transformation-rev-3"
     ],
@@ -2002,9 +1947,7 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "prit-hdf",
-      "camping-independant-bfc",
-      "investissement-outre-mer",
-      "car-labelling"
+      "camping-independant-bfc"
     ],
     "linkedProjects": [],
     "priority": {
@@ -2068,10 +2011,8 @@
       "cap-transition-ecologique",
       "decarb-ind-25",
       "prit-hdf",
-      "investissement-outre-mer",
       "je-change-ma-voiture",
-      "booster-transformation-rev-3",
-      "PME-realisant-un-saut-technologique"
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [
       1
@@ -2136,12 +2077,10 @@
       "cap-transition-ecologique",
       "prit-hdf",
       "aide-tourisme-guadeloupe",
-      "investissement-outre-mer",
       "fasep",
       "aide-investissement-librairie",
       "booster-transformation-rev-3",
-      "outils-pour-adaptation",
-      "PME-realisant-un-saut-technologique"
+      "outils-pour-adaptation"
     ],
     "linkedProjects": [
       26,
@@ -2208,8 +2147,7 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "ecolabel",
-      "aide-labellisation-corse",
-      "investissement-outre-mer"
+      "aide-labellisation-corse"
     ],
     "linkedProjects": [
       31
@@ -2267,7 +2205,6 @@
       "ecoconception-bzh",
       "ecoproduction-hdf",
       "industries-vertes",
-      "visite-matiere-dechet",
       "cedre-premier-pas",
       "cedre-investissement",
       "sud-pret-climat",
@@ -2282,13 +2219,11 @@
       "camping-independant-bfc",
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
-      "investissement-outre-mer",
       "credit-impot-recherche",
       "credit-impot-innovation",
       "fasep",
       "accelerateur-economie-circulaire",
-      "booster-transformation-rev-3",
-      "PME-realisant-un-saut-technologique"
+      "booster-transformation-rev-3"
     ],
     "linkedProjects": [
       31
@@ -2353,8 +2288,7 @@
       "prit-hdf",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "aide-tourisme-guadeloupe",
-      "investissement-outre-mer"
+      "aide-tourisme-guadeloupe"
     ],
     "linkedProjects": [
       20
@@ -2420,10 +2354,8 @@
       "camping-independant-na",
       "prit-hdf",
       "hotellerie-independante-bfc",
-      "fonds-tourisme-occitanie",
       "aide-investissement-corse",
-      "aide-tourisme-guadeloupe",
-      "investissement-outre-mer"
+      "aide-tourisme-guadeloupe"
     ],
     "linkedProjects": [
       20
@@ -2534,9 +2466,7 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "prit-hdf",
-      "fonds-tourisme-occitanie",
       "aide-tourisme-guadeloupe",
-      "investissement-outre-mer",
       "certificats-economie-energie"
     ],
     "linkedProjects": [
@@ -2577,11 +2507,9 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "agir-pdl",
-      "fresque-agri-alim",
       "aide-tpe-transition-na",
       "prit-hdf",
-      "aide-tourisme-guadeloupe",
-      "investissement-outre-mer"
+      "aide-tourisme-guadeloupe"
     ],
     "linkedProjects": [
       31
@@ -2620,9 +2548,7 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "prit-hdf",
-      "fonds-tourisme-occitanie",
-      "investissement-outre-mer"
+      "prit-hdf"
     ],
     "linkedProjects": [
       4
@@ -2662,8 +2588,7 @@
       "prit-hdf",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "aide-tourisme-guadeloupe",
-      "investissement-outre-mer"
+      "aide-tourisme-guadeloupe"
     ],
     "linkedProjects": [
       20
@@ -2721,8 +2646,7 @@
       "prit-hdf",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "aide-tourisme-guadeloupe",
-      "investissement-outre-mer"
+      "aide-tourisme-guadeloupe"
     ],
     "linkedProjects": [
       33
@@ -2781,8 +2705,7 @@
       "soutien-hebergement-touristique",
       "agir-pdl",
       "prit-hdf",
-      "aide-investissement-corse",
-      "investissement-outre-mer"
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       14,
@@ -2838,8 +2761,7 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "soutien-hebergement-touristique",
-      "prit-hdf",
-      "investissement-outre-mer"
+      "prit-hdf"
     ],
     "linkedProjects": [
       16
@@ -2905,7 +2827,6 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
-      "investissement-outre-mer",
       "diag-impact-biodiversite",
       "diag-biodiversite"
     ],
@@ -2976,9 +2897,7 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "prit-hdf",
-      "fonds-tourisme-occitanie",
       "aide-tourisme-guadeloupe",
-      "investissement-outre-mer",
       "deter-decarboner-le-tertiaire"
     ],
     "linkedProjects": [
@@ -3037,7 +2956,6 @@
       "pret-ile-de-france",
       "impulsion-environnement",
       "prit-hdf",
-      "investissement-outre-mer",
       "advenir",
       "certificats-economie-energie"
     ],
@@ -3090,8 +3008,7 @@
       "sud-pret-climat",
       "pret-energie-aura",
       "pret-ile-de-france",
-      "cap-transition-ecologique",
-      "investissement-outre-mer"
+      "cap-transition-ecologique"
     ],
     "linkedProjects": [
       20,
@@ -3136,8 +3053,7 @@
       "sud-pret-climat",
       "entreprises-engagees-nature",
       "pret-energie-aura",
-      "pret-ile-de-france",
-      "investissement-outre-mer"
+      "pret-ile-de-france"
     ],
     "linkedProjects": [
       31
@@ -3188,7 +3104,6 @@
       "formation-artisan-developpement-durable",
       "cci-business-optimizer",
       "ecogestes-paca",
-      "investissement-outre-mer",
       "formation-convaincre-et-argumenter",
       "formation-communiquer-et-sensibiliser",
       "outils-pour-adaptation"
@@ -3225,8 +3140,7 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "perf-crise-energetique-cvl",
-      "investissement-outre-mer"
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [
       4
@@ -3266,8 +3180,7 @@
       "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
-      "perf-crise-energetique-cvl",
-      "investissement-outre-mer"
+      "perf-crise-energetique-cvl"
     ],
     "linkedProjects": [
       33
@@ -3370,9 +3283,7 @@
     "programs": [
       "etude-methanisation",
       "investissement-methanisation",
-      "pret-methanisation-ademe",
       "aide-tpe-transition-na",
-      "investissement-outre-mer",
       "certificats-economie-energie"
     ],
     "linkedProjects": [
@@ -3408,7 +3319,6 @@
     "mainTheme": "energy",
     "programs": [
       "pacte-industrie",
-      "investissement-outre-mer",
       "certificats-economie-energie"
     ],
     "linkedProjects": [
@@ -3541,7 +3451,6 @@
       "etude-methanisation",
       "investissement-biognv-agricole-et-territorial",
       "sobriete-et-resilience-des-territoires",
-      "climagri",
       "pret-vert",
       "pret-vert-ademe",
       "aide-financement-occitanie",
@@ -3694,7 +3603,6 @@
       "retrofit-electrique",
       "cheque-transition-bioethanol",
       "pass-transition-bzh",
-      "car-labelling",
       "je-change-ma-voiture",
       "mobilipro",
       "certificats-economie-energie",
@@ -3752,7 +3660,6 @@
       "agir-pdl",
       "pami",
       "aide-tourisme-guadeloupe",
-      "investissement-outre-mer",
       "corimer",
       "certificats-economie-energie"
     ],
@@ -3820,7 +3727,6 @@
     "mainTheme": "mobility",
     "programs": [
       "extreme-defi-mobilite",
-      "aides-relais",
       "pass-transition-bzh"
     ],
     "linkedProjects": [
@@ -4278,7 +4184,6 @@
       "gestion-des-biodechets",
       "investissement-gestion-des-biodechets",
       "investissement-reemploi-reutilisation-reparation",
-      "visite-matiere-dechet",
       "decarb-flash-2025-2027",
       "bciat-biomasse-chaleur-industrie-agriculture-tertiaire"
     ],
@@ -4346,7 +4251,6 @@
       "aides-au-reemploi-des-emballages",
       "diagnostic-dechets",
       "etude-reemploi-reutilisation-reparation",
-      "ecodefis-paca",
       "charte-zero-dechet-plastique",
       "aide-tpe-transition-na"
     ],

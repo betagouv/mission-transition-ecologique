@@ -31,8 +31,8 @@ export class ProjectFeatures {
     console.log(`Baserow Data sucessfully downloaded.\n\nStarting to validate the project data and generating the project JSON.`)
     new Redirect(this._logger).updateProjectsRedirects(projects)
 
-    // const validProjects = await this._validateData(projects) //TODO TOREMOVE DEV CODE
-    const sanitizedProjects = projects.map(({ status: _status, ...rest }) => rest)
+    const validProjects = await this._validateData(projects)
+    const sanitizedProjects = validProjects.map(({ status: _status, ...rest }) => rest)
     FileManager.writeJson(this._outputFilePath, sanitizedProjects, 'projects.json updated')
     this._logger.write('projectGeneration.log')
 
