@@ -171,12 +171,12 @@ export class ProjectBaserow extends AbstractBaserow {
       .map((line) => line.trim())
       .filter((line) => line.length > 0)
       .forEach((line) => {
-        const [key, value] = line.split(':')
-        if (key && value !== undefined) {
-          result[key.trim()] = Number(value.trim())
+        const [sector, priority] = line.split(':')
+        if (sector && priority !== undefined) {
+          const trimmedPriority = priority.trim()
+          result[sector.trim()] = trimmedPriority === 'default' ? Number(defaultPriority) : Number(trimmedPriority)
         }
       })
-    // TODO replace "default" codename by its value.
 
     return result
   }
