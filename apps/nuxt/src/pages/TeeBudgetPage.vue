@@ -192,10 +192,14 @@ const formatCurrency = (value: number): string => {
 }
 
 const drawBudgetChart = async () => {
-  if (!budgetChartCanvas.value) return
+  if (!budgetChartCanvas.value) {
+    return
+  }
 
   const chartContext = budgetChartCanvas.value.getContext('2d')
-  if (!chartContext) return
+  if (!chartContext) {
+    return
+  }
 
   // Import Chart.js de manière asynchrone
   const { default: Chart } = await import('chart.js/auto')
