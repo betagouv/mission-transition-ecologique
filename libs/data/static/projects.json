@@ -16,6 +16,7 @@
       "baisse-les-watts",
       "fonds-tourisme-durable",
       "diag-eco-flux",
+      "mission-strategie-environnement",
       "programme-breizh-fab",
       "renovation-petit-tertiaire-prive",
       "tpe-gagnantes-sur-tous-les-couts",
@@ -413,6 +414,7 @@
     "mainTheme": "environmental",
     "programs": [
       "diag-decarbon-action",
+      "mission-strategie-environnement",
       "programme-breizh-fab",
       "tremplin",
       "nos-gestes-climat",
@@ -845,6 +847,7 @@
       "booster-eco-energie-tertiaire",
       "etude-performance-energetique-en-industrie",
       "diag-perf-immo",
+      "mission-strategie-environnement",
       "renovation-petit-tertiaire-prive",
       "aide-financement-occitanie",
       "cedre-premier-pas",
@@ -1700,6 +1703,7 @@
       "formation-artisan-developpement-durable",
       "formations-tee",
       "pacte-industrie",
+      "mission-strategie-environnement",
       "ecogestes-paca",
       "investour",
       "sud-pret-climat",
@@ -1759,6 +1763,7 @@
     "mainTheme": "rh",
     "programs": [
       "etude-projet-de-recherche",
+      "trophees-crisalide-eco-activites",
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-energie-aura",
@@ -1812,6 +1817,7 @@
       "enviroveille",
       "formation-artisan-developpement-durable",
       "mission-conseil-rse",
+      "mission-strategie-environnement",
       "aide-financement-occitanie",
       "cedre-premier-pas",
       "sud-pret-climat",
@@ -1876,6 +1882,7 @@
       "diag-eco-flux",
       "formation-artisan-developpement-durable",
       "performa-environnement",
+      "mission-strategie-environnement",
       "programme-breizh-fab",
       "tpe-gagnantes-sur-tous-les-couts",
       "cedre-premier-pas",
@@ -2071,6 +2078,7 @@
       "programme-eve",
       "repar-acteurs",
       "tremplin",
+      "trophees-crisalide-eco-activites",
       "aide-financement-occitanie",
       "cedre-premier-pas",
       "sud-pret-climat",
@@ -2133,9 +2141,11 @@
       "investissement-reemploi-reutilisation-reparation",
       "programme-breizh-fab",
       "tremplin",
+      "trophees-crisalide-eco-activites",
       "ecoconception-bzh",
       "ecoproduction-hdf",
       "industries-vertes",
+      "bonus-reparation",
       "cedre-premier-pas",
       "cedre-investissement",
       "sud-pret-climat",
@@ -3022,6 +3032,7 @@
     ],
     "mainTheme": "energy",
     "programs": [
+      "bonus-reparation",
       "sud-pret-climat",
       "cheque-vert-grand-est",
       "pret-energie-aura",
@@ -3195,6 +3206,7 @@
     "mainTheme": "energy",
     "programs": [
       "pacte-industrie",
+      "mission-strategie-environnement",
       "certificats-economie-energie"
     ],
     "linkedProjects": [
@@ -3372,7 +3384,9 @@
       "building"
     ],
     "mainTheme": "building",
-    "programs": [],
+    "programs": [
+      "programme-synergies-durables"
+    ],
     "linkedProjects": [],
     "priority": "330",
     "highlightPriority": null,
@@ -3656,7 +3670,9 @@
       "mobility"
     ],
     "mainTheme": "mobility",
-    "programs": [],
+    "programs": [
+      "programme-synergies-durables"
+    ],
     "linkedProjects": [],
     "priority": "100",
     "highlightPriority": null,
@@ -3860,6 +3876,7 @@
     "programs": [
       "diagnostic-rse",
       "formations-tee",
+      "programme-synergies-durables",
       "booster-transformation-rev-3"
     ],
     "linkedProjects": [
@@ -3995,6 +4012,7 @@
       "gestion-des-biodechets",
       "investissement-gestion-des-biodechets",
       "investissement-reemploi-reutilisation-reparation",
+      "programme-synergies-durables",
       "decarb-flash-2025-2027",
       "bciat-biomasse-chaleur-industrie-agriculture-tertiaire"
     ],
@@ -4086,6 +4104,7 @@
       "diag-ecoconception",
       "etude-performance-produits",
       "investissement-ecoconception",
+      "bonus-reparation",
       "cedre-premier-pas",
       "pret-energie-aura",
       "pret-ile-de-france",
@@ -4103,5 +4122,41 @@
       "G",
       "H"
     ]
+  },
+  {
+    "id": 1391,
+    "slug": "engins-propres",
+    "title": "Acquisition d'un engin plus propre",
+    "nameTag": "🏗️ engins propres",
+    "shortDescription": "Un engin non routier est \"propre\" s'il fonctionne avec des énergies renouvelables et émet peu de CO₂.",
+    "image": "/images/projet/engins-propres.webp",
+    "longDescription": "Engins de chantier, engins d'extraction, machines aéroportuaires, remontées mécaniques, matériel de manutention, machines industrielles... les engins de chantier sont des sources importantes d’émission de CO2, et de particules fines, contribuant à la pollution atmosphérique et au dérèglement climatique.\n\nEn remplaçant vos engins non routiers par des **engins plus propres (fonctionnant à l’électricité, au gaz, à l’hydrogène, hybrides…)**, vous contribuez à décarboner votre activité et à améliorer la qualité de l’air. Des aides financières peuvent vous aider à acquérir ces engins et à **pérenniser votre activité vis-à-vis des nouvelles normes environnementales.**",
+    "moreDescription": "- [**Émissions de particules lors de chantiers urbains et évaluation des mesures de prévention**](https://librairie.ademe.fr/air/5735-emissions-de-particules-lors-de-chantiers-urbains-et-evaluation-des-mesures-de-prevention.html), un guide de l'ADEME.\n- [**Quelle réglementation environnementale pour les entreprises du bâtiment ?**](https://bigmedia.bpifrance.fr/nos-dossiers/re2020-reglementation-environnementale-pour-les-entreprises-du-batiment) par Bpifrance.",
+    "themes": [
+      "mobility"
+    ],
+    "mainTheme": "mobility",
+    "programs": [
+      "engins-moins-polluants"
+    ],
+    "linkedProjects": [
+      998
+    ],
+    "priority": "272",
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "R"
+    ],
+    "metaTitle": "",
+    "metaDescription": ""
   }
 ]
