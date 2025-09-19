@@ -31,9 +31,13 @@ describe('LinkValidator', () => {
     },
     {
       description: 'handles multiple lines with URLs',
-      text: `Line 1: https://example.com\n\n
-      Line 2: http://another-site.org`,
+      text: `Line 1: https://example.com\n\nLine 2: http://another-site.org`,
       expected: [['https://example.com', 'http://another-site.org']]
+    },
+    {
+      description: 'handles multiple lines with URLs and code tokens (tabs)',
+      text: `Line 1: https://example.com\n\n    Line 2: http://another-site.org`,
+      expected: [['https://example.com']]
     },
     {
       description: 'finds URLs in parentheses, brackets, or markdown',
@@ -42,7 +46,12 @@ describe('LinkValidator', () => {
         '[https://bar.org]',
         'here you can find [our site](https://example.com).'
       ],
-      expected: [['https://example.com', 'http://test.org'], ['https://bar.org'], ['https://example.com']]
+      expected: [['https://example.com', 'http://test.org]'], ['https://bar.org]'], ['https://example.com']]
+    },
+    {
+      description: 'test markdown',
+      text: ['here you can find [our site](https://example.com).'],
+      expected: [['https://example.com']]
     },
     {
       description: 'finds IP-based URLs or encoded characters',

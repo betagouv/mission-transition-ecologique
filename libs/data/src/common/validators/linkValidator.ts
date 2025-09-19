@@ -3,6 +3,7 @@ import https from 'https'
 import { RequestInit as NodeFetchRequestInit } from 'node-fetch'
 import { chromium } from 'playwright'
 import { LoggerInterface, LogLevel } from '../logger/types'
+import { MarkedUrl } from '../tool/markedUrl'
 
 export class LinkValidator {
   public static forceHttps(link: string) {
@@ -37,8 +38,7 @@ export class LinkValidator {
   }
 
   public static foundLinks(inputText: string) {
-    const urlRegex = /(https?:\/\/[^\s]+[a-zA-Z0-9])/g
-    return inputText.match(urlRegex) || []
+    return new MarkedUrl(inputText).getExternal()
   }
 
   static fetch = (url: URL, init?: NodeFetchRequestInit) => import('node-fetch').then(({ default: fetch }) => fetch(url, init))

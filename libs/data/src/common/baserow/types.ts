@@ -31,7 +31,7 @@ export interface BaserowData<T> {
   results: T[]
 }
 
-export interface BaserowProject extends Id, BaserowSectors {
+export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
   order: string
   Nom: string
   'Description courte': string
