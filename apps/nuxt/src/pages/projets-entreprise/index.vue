@@ -4,7 +4,7 @@
     title="Les projets de transition écologique"
     :has-error="hasError"
     :count-items="countProjects"
-    :faq-page="FaqPage.CatalogProject"
+    :faq-items="faqCatalogProject"
   >
     <template #sidemenu>
       <ProjectFiltersAccordion with-title />
@@ -25,13 +25,12 @@ import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { useCompanyDataStore } from '@/stores/companyData'
 import { useProjectStore } from '@/stores/project'
 import { CompanyData } from '@/tools/companyData'
-import { FaqPage } from '@/tools/faq/faqType'
 import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { Theme } from '@/tools/theme'
-import { RouteName } from '@/types'
+import { FaqSectionType, RouteName } from '@/types'
 import { computed } from 'vue'
 import { MetaRobots } from '@/tools/metaRobots'
 
@@ -39,6 +38,9 @@ definePageMeta({
   name: RouteName.CatalogProjects,
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
 })
+
+const { default: json } = await import('@/public/json/faq/catalog-project.json')
+const faqCatalogProject = json as unknown as FaqSectionType[]
 
 const { projects, hasError } = storeToRefs(useProjectStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())

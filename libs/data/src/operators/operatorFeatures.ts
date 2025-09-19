@@ -8,9 +8,11 @@ import { readPrograms } from '../program/dataPipeline'
 
 export class OperatorFeatures {
   private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
-  private readonly _outputFilePath: string = path.join(this.__dirname, '../../static/operators.json')
+  private readonly _outputDirPath: string = path.join(this.__dirname, '../../../../apps/nuxt/src/public/json/operator/')
+  private readonly _outputFileName: string = 'operators.json'
   private readonly _outputTypeFilePath: string = path.join(this.__dirname, './types/generatedShared.ts')
   private readonly _schemaFilePath = path.join(this.__dirname, '../../schemas/program-with-publicodes-schema.json')
+
   async updateOperatorsData() {
     const allOperators = await new OperatorBaserow().getAll()
     const programs = readPrograms(true)
@@ -23,10 +25,14 @@ export class OperatorFeatures {
 
     const programOperators = allOperators.filter((operator) => programOperatorsNames.has(operator.operator))
 
-    FileManager.writeJson(this._outputFilePath, programOperators, 'operator.json updated')
-
+    this._updateJson(programOperators)
     this._updateJsonSchema(programOperators)
     this._generateOperatorsFiltersCategoryType(programOperators)
+  }
+
+  private _updateJson(programOperators: RawOperator[]) {
+    FileManager.createFolderIfNotExists(this._outputDirPath)
+    FileManager.writeJson(this._outputDirPath + this._outputFileName, programOperators, 'operator.json updated')
   }
 
   private _updateJsonSchema(operators: RawOperator[]) {

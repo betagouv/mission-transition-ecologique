@@ -39,10 +39,9 @@
 import { useProjectStore } from '@/stores/project'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { ProjectManager } from '@/tools/project/projectManager'
-import { ProjectSorter } from '@tee/data'
 import { Theme } from '@/tools/theme'
 import { CompanyData } from '@/tools/companyData'
-import { RouteName } from '@/types'
+import { RouteName, ProjectSorter } from '@/types'
 
 interface Props {
   limit: number

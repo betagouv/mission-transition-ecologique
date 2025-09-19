@@ -1,9 +1,9 @@
 import axios from 'axios'
 import https from 'https'
-import { chromium } from 'playwright'
 import { RequestInit as NodeFetchRequestInit } from 'node-fetch'
-import { Logger } from '../logger/logger'
-import { LogLevel } from '../logger/types'
+import { chromium } from 'playwright'
+import { LoggerInterface, LogLevel } from '../logger/types'
+import { MarkedUrl } from '../tool/markedUrl'
 
 export class LinkValidator {
   public static forceHttps(link: string) {
@@ -12,7 +12,7 @@ export class LinkValidator {
 
   public static async logInvalidLinks(
     inputText: string,
-    logger: Logger,
+    logger: LoggerInterface,
     logLevel: LogLevel,
     fieldName: string,
     id: string,
@@ -25,8 +25,7 @@ export class LinkValidator {
   }
 
   public static async findInvalidLinks(inputText: string): Promise<string[]> {
-    const urlRegex = /(https?:\/\/[^\s]+)/g
-    const foundLinks = inputText.match(urlRegex) || []
+    const foundLinks = this.foundLinks(inputText)
     const invalidLinks = []
     for (const rawLink of foundLinks) {
       const link = this.forceHttps(rawLink)
@@ -36,6 +35,10 @@ export class LinkValidator {
       }
     }
     return invalidLinks
+  }
+
+  public static foundLinks(inputText: string) {
+    return new MarkedUrl(inputText).getExternal()
   }
 
   static fetch = (url: URL, init?: NodeFetchRequestInit) => import('node-fetch').then(({ default: fetch }) => fetch(url, init))
@@ -57,14 +60,11 @@ export class LinkValidator {
   private static async _fetchValidation(link: string) {
     try {
       const fetchResponse = await fetch(new URL(link), { method: 'GET', redirect: 'follow', signal: AbortSignal.timeout(2000) })
-      if (fetchResponse.ok) {
-        return true
-      } else {
-        return false
-      }
+      return fetchResponse.ok
     } catch (error) {
       // mandatory linter comment
     }
+
     return false
   }
 
@@ -83,6 +83,7 @@ export class LinkValidator {
     } catch (error) {
       // mandatory linter comment
     }
+
     return false
   }
 
