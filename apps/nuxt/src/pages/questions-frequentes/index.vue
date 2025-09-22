@@ -81,7 +81,7 @@ useSchemaOrg(defineWebPage({ description: description }))
           :class="Navigation.getClassesBySideMenu(true)"
         >
           <TeeCtaCard
-            title="Accélérez votre transition avec la plateforme <i>Transition Écologique des Entreprises</i>."
+            title="Accélérez votre transition avec la plateforme <i>Transition écologique des entreprises</i>."
             description="Trouvez les aides adaptées pour financer la transition environnementale de votre entreprise et, en quelques clics, entrez en contact avec les bons interlocuteurs pour mener vos projets au succès."
             cta-btn-title="Trouver les aides pour mon entreprise"
             :on-click="onClick"
