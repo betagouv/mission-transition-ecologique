@@ -1,6 +1,5 @@
 import axios from 'axios'
 import https from 'https'
-import { RequestInit as NodeFetchRequestInit } from 'node-fetch'
 import { chromium } from 'playwright'
 import { LoggerInterface, LogLevel } from '../logger/types'
 import { MarkedUrl } from '../tool/markedUrl'
@@ -34,14 +33,13 @@ export class LinkValidator {
         invalidLinks.push(link)
       }
     }
+
     return invalidLinks
   }
 
   public static foundLinks(inputText: string) {
     return new MarkedUrl(inputText).getExternal()
   }
-
-  static fetch = (url: URL, init?: NodeFetchRequestInit) => import('node-fetch').then(({ default: fetch }) => fetch(url, init))
 
   public static async isValidLink(rawLink: string) {
     const link = this.forceHttps(rawLink)
@@ -111,11 +109,8 @@ export class LinkValidator {
         await page.mouse.move(x, y, { steps: 50 })
         await delay(Math.random() * 500)
       }
-      if (response && response.status() < 400) {
-        return true
-      } else {
-        return false
-      }
+
+      return !!(response && response.status() < 400)
     } catch (error) {
       return false
     } finally {
