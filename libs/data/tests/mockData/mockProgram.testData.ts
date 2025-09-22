@@ -3,7 +3,7 @@ import { DataProgram, DataProgramType } from '../../src/program/types/domain'
 export function makeMockProgram(overrides: Partial<DataProgram> = {}): DataProgram {
   return {
     id: 1,
-    'Id fiche dispositif': 'mock-id',
+    'Id fiche dispositif': 'act-pas-a-pas',
     Titre: 'Mock Program',
     Promesse: '',
     'Description courte': '',
