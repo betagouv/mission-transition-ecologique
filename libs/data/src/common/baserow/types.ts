@@ -37,9 +37,13 @@ export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
   'Description courte': string
   Statut: LinkObject
   Image: LinkObject[]
-  'Qu’est-ce que c’est ?': string
-  'Pour aller plus loin': string
   Titre: string
+  'Titre - Pourquoi ?': string
+  'Qu’est-ce que c’est ?': string
+  'Titre - Me documenter': string
+  'Pour aller plus loin': string
+  'Titre - Projets complémentaires': string
+  'Description - Projets complémentaires': string
   'Projets complémentaires': LinkObject[]
   'Thématique principale': LinkObject[]
   NameTag: string
@@ -47,6 +51,7 @@ export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
   Dispositifs: LinkObject[]
   Prio: number
   'Mise En Avant': number | null
+  'Titre - FAQ': string
   'redirection-vers': LinkObject[]
 }
 

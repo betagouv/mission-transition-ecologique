@@ -9,12 +9,17 @@ export interface ProjectType {
   countEligiblePrograms: number
   shortDescription: string
   image: string
+  titleLongDescription?: string
   longDescription: string
+  titleMoreDescription?: string
   moreDescription: string
   themes: ThemeId[]
   mainTheme: ThemeId
   programs: string[]
+  titleLinkedProjects?: string
+  descriptionLinkedProjects?: string
   linkedProjects: ProjectId[]
+  titleFaq?: string
   priority: number
   highlightPriority: number | null
   sectors: string[]
