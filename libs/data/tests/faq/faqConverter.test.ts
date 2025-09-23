@@ -21,7 +21,7 @@ describe('FaqConverter', () => {
     test('should convert fixture data to domain format correctly', async () => {
       const { baserowFaqs, baserowFaqSections } = await new FaqBaserowMock().getFaqs()
 
-      const result = faqConverter.toDomain(baserowFaqs, baserowFaqSections)
+      const result = faqConverter.toDomainByPages(baserowFaqs, baserowFaqSections)
 
       // Should have pages based on fixture data
       expect(Object.keys(result).length).toBeGreaterThan(0)
@@ -50,7 +50,7 @@ describe('FaqConverter', () => {
     })
 
     test('should handle empty input arrays', () => {
-      const result = faqConverter.toDomain([], [])
+      const result = faqConverter.toDomainByPages([], [])
       expect(result).toEqual({})
     })
 
@@ -74,7 +74,8 @@ describe('FaqConverter', () => {
               order: '1.00000000000000000000'
             }
           ],
-          order: '1.50000000000000000000' as unknown as number
+          order: '1.50000000000000000000' as unknown as number,
+          Projet: []
         },
         {
           id: 2,
@@ -93,11 +94,12 @@ describe('FaqConverter', () => {
               order: '1.00000000000000000000'
             }
           ],
-          order: '1.00000000000000000000' as unknown as number
+          order: '1.00000000000000000000' as unknown as number,
+          Projet: []
         }
       ]
 
-      const result = faqConverter.toDomain(baserowFaqs, baserowFaqSections)
+      const result = faqConverter.toDomainByPages(baserowFaqs, baserowFaqSections)
 
       // Check that questions are sorted by order
       for (const page in result) {
@@ -131,10 +133,11 @@ describe('FaqConverter', () => {
             order: '1.00000000000000000000'
           }
         ],
-        order: 1
+        order: 1,
+        Projet: []
       }
 
-      const result = faqConverter.toDomain([unknownPageFaq], baserowFaqSections)
+      const result = faqConverter.toDomainByPages([unknownPageFaq], baserowFaqSections)
       expect(mockLogger.log).toHaveBeenCalledWith(
         LogLevel.Critic,
         'Page de destination pour la question de FAQ non reconnue',
@@ -156,10 +159,11 @@ describe('FaqConverter', () => {
         Actif: true,
         Page: { id: 3827575, value: 'Accueil', color: 'blue' },
         Section: [{ id: 999, value: 'Missing Section', order: '1.0' }], // Non-existent section
-        order: 1
+        order: 1,
+        Projet: []
       }
 
-      const result = faqConverter.toDomain([faqWithMissingSection], baserowFaqSections)
+      const result = faqConverter.toDomainByPages([faqWithMissingSection], baserowFaqSections)
       expect(Object.keys(result)).toHaveLength(0)
     })
   })

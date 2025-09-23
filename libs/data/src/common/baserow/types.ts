@@ -3,6 +3,7 @@ import { ConditionalValues as DomainConditionalValues, DataProgram } from '../..
 
 export interface FaqBaserowInterface {
   getFaqs(): Promise<{ baserowFaqs: BaserowFaq[]; baserowFaqSections: BaserowFaqSection[] }>
+  getProjectsFaqs(): Promise<{ baserowFaqs: BaserowFaq[]; baserowFaqSections: BaserowFaqSection[] }>
 }
 
 export interface Id {
@@ -53,6 +54,7 @@ export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
   'Mise En Avant': number | null
   'Titre - FAQ': string
   'redirection-vers': LinkObject[]
+  Faq: LinkObject[]
 }
 
 export interface LinkObject extends Id {
@@ -205,6 +207,7 @@ export interface BaserowFaq extends Id, Order {
   Actif: boolean
   Page: LinkObject | null
   Section: LinkObject[]
+  Projet: LinkObject[]
 }
 
 export interface BaserowFaqSection extends Id, Order, CreationDate, LastModification, LastModificationBy {
@@ -217,5 +220,5 @@ export interface FaqItemStructured extends BaserowFaqSection {
 }
 
 export type FaqStructured = {
-  [key in FaqPage]?: FaqItemStructured[]
+  [key in FaqPage | number]?: FaqItemStructured[]
 }

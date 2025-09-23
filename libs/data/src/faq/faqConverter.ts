@@ -2,14 +2,21 @@ import { Color } from '@tee/common'
 import { ReplacerBaserow } from '../common/baserow/replacerBaserow'
 import { BaserowFaq, BaserowFaqSection, FaqItemStructured, FaqStructured } from '../common/baserow/types'
 import { LoggerInterface, LogLevel } from '../common/logger/types'
-import { FaqConverterInterface } from './types/domain'
-import { FaqPage, FaqSectionType, FaqType, QuestionItem } from './types/shared'
+import { DataProject } from '../project/types/domain'
+import { FaqConverterInterface, FaqType } from './types/domain'
+import { FaqPage, FaqSectionType, QuestionItem } from './types/shared'
 
 export class FaqConverter implements FaqConverterInterface {
   constructor(private _logger: LoggerInterface) {}
 
-  toDomain(baserowFaqs: BaserowFaq[], baserowFaqSections: BaserowFaqSection[]) {
-    const faqs = this._buildStructuredFaqs(baserowFaqs, baserowFaqSections)
+  toDomainByPages(baserowFaqs: BaserowFaq[], baserowFaqSections: BaserowFaqSection[]) {
+    const faqs = this._buildStructuredFaqsByPages(baserowFaqs, baserowFaqSections)
+    this._sort(faqs)
+    return this._buildDomainFaqs(faqs)
+  }
+
+  toDomainByProjects(baserowFaqs: BaserowFaq[], baserowFaqSections: BaserowFaqSection[], projects: DataProject[]) {
+    const faqs = this._buildStructuredFaqsByProjects(baserowFaqs, baserowFaqSections, projects)
     this._sort(faqs)
     return this._buildDomainFaqs(faqs)
   }
@@ -35,39 +42,80 @@ export class FaqConverter implements FaqConverterInterface {
     faqs.sort((a, b) => a.order - b.order)
   }
 
-  private _buildStructuredFaqs(baserowFaqs: BaserowFaq[], baserowFaqSections: BaserowFaqSection[]) {
+  private _buildStructuredFaqsByPages(baserowFaqs: BaserowFaq[], baserowFaqSections: BaserowFaqSection[]) {
     const faqs: FaqStructured = {}
     for (const baserowFaq of baserowFaqs) {
-      const page = this._mappedPageName(ReplacerBaserow.replaceLinkObjectByValue(baserowFaq.Page) as string)
-      if (!page) {
-        this._logger.log(
-          LogLevel.Critic,
-          `Page de destination pour la question de FAQ non reconnue`,
-          `FAQ ID Baserow: ${baserowFaq.id}`,
-          baserowFaq.id,
-          baserowFaq.Page
-        )
+      const page = this._mappedPageName(ReplacerBaserow.linkObjectByValue(baserowFaq.Page) as string)
+
+      if (!this._isFaqPage(page, baserowFaq)) {
         continue
       }
 
-      const faqSection = ReplacerBaserow.replaceLinkObjectByTableData<BaserowFaqSection, true>(baserowFaq.Section, baserowFaqSections, true)
+      this._buildStructuredFaq(page, baserowFaq, baserowFaqSections, faqs)
+    }
 
-      if (!faqSection) {
+    return faqs
+  }
+
+  private _buildStructuredFaqsByProjects(baserowFaqs: BaserowFaq[], baserowFaqSections: BaserowFaqSection[], projects: DataProject[]) {
+    const faqs: FaqStructured = {}
+    for (const baserowFaq of baserowFaqs) {
+      const project = ReplacerBaserow.linkObjectByTableData<DataProject, true>(baserowFaq.Projet, projects, true)
+
+      if (!this._isFaqProject(project, baserowFaq)) {
         continue
       }
 
-      if (!faqs[page]) {
-        faqs[page] = [{ ...faqSection, faqs: [baserowFaq] }]
-        continue
-      } else if (!faqs[page]?.find((section) => section.id === faqSection.id)) {
-        faqs[page]?.push({ ...faqSection, faqs: [baserowFaq] })
+      this._buildStructuredFaq(project.id, baserowFaq, baserowFaqSections, faqs)
+    }
+
+    return faqs
+  }
+
+  private _buildStructuredFaq(key: FaqPage | number, baserowFaq: BaserowFaq, baserowFaqSections: BaserowFaqSection[], faqs: FaqStructured) {
+    const faqSection = ReplacerBaserow.linkObjectByTableData<BaserowFaqSection, true>(baserowFaq.Section, baserowFaqSections, true)
+
+    if (!faqSection) {
+      return
+    }
+
+    if (!faqs[key]) {
+      faqs[key] = [{ ...faqSection, faqs: [baserowFaq] }]
+      return
+    } else if (!faqs[key]?.find((section) => section.id === faqSection.id)) {
+      faqs[key]?.push({ ...faqSection, faqs: [baserowFaq] })
+      return
+    }
+
+    for (const faqSectionItem of faqs[key]) {
+      if (faqSectionItem.id === faqSection.id) {
+        faqSectionItem.faqs.push(baserowFaq)
+        break
+      }
+    }
+  }
+
+  private _buildDomainFaqs(faqsStructured: FaqStructured): FaqType {
+    const faqs: FaqType = {}
+    for (const key in faqsStructured) {
+      const faqItemsStructured = faqsStructured[key]
+      if (!faqItemsStructured) {
         continue
       }
 
-      for (const faqSectionItem of faqs[page]) {
-        if (faqSectionItem.id === faqSection.id) {
-          faqSectionItem.faqs.push(baserowFaq)
-          break
+      if (!faqs[key]) {
+        faqs[key] = []
+      }
+
+      for (const index in faqItemsStructured) {
+        if (!faqItemsStructured[index]) {
+          continue
+        }
+
+        const section = this._mappedFaqSection(faqItemsStructured[index])
+        faqs[key]?.push(section)
+        for (const faq of faqItemsStructured[index].faqs) {
+          section.questions.push(this._mappedFaq(faq))
         }
       }
     }
@@ -90,38 +138,10 @@ export class FaqConverter implements FaqConverterInterface {
     }
   }
 
-  private _buildDomainFaqs(faqsStructured: FaqStructured): FaqType {
-    const faqs: FaqType = {}
-    for (const page in faqsStructured) {
-      const faqItemsStructured = faqsStructured[page as FaqPage]
-      if (!faqItemsStructured) {
-        continue
-      }
-
-      if (!faqs[page as FaqPage]) {
-        faqs[page as FaqPage] = []
-      }
-
-      for (const index in faqItemsStructured) {
-        if (!faqItemsStructured[index]) {
-          continue
-        }
-
-        const section = this._mappedFaqSection(faqItemsStructured[index])
-        faqs[page as FaqPage]?.push(section)
-        for (const faq of faqItemsStructured[index].faqs) {
-          section.questions.push(this._mappedFaq(faq))
-        }
-      }
-    }
-
-    return faqs
-  }
-
   private _mappedFaqSection(faqSection: FaqItemStructured): FaqSectionType {
     return {
       title: faqSection.Titre,
-      color: ReplacerBaserow.replaceLinkObjectByValue(faqSection.Couleur) as Color,
+      color: ReplacerBaserow.linkObjectByValue(faqSection.Couleur) as Color,
       questions: []
     }
   }
@@ -132,5 +152,56 @@ export class FaqConverter implements FaqConverterInterface {
       question: faq.Question,
       answer: faq['Réponse']
     }
+  }
+
+  private _isFaqPage(page: FaqPage | undefined, baserowFaq: BaserowFaq): page is FaqPage {
+    if (!page) {
+      if (baserowFaq.Projet.length === 0) {
+        this._logNotLinkedToPageOrProject(baserowFaq)
+      }
+
+      return false
+    }
+
+    if (baserowFaq.Projet.length > 0) {
+      this._logLinkedToProjectAndPage(page, baserowFaq)
+
+      return false
+    }
+
+    return true
+  }
+
+  private _isFaqProject(project: DataProject | undefined, baserowFaq: BaserowFaq): project is DataProject {
+    if (!project) {
+      if (baserowFaq.Page) {
+        this._logNotLinkedToPageOrProject(baserowFaq)
+      }
+
+      return false
+    }
+
+    if (baserowFaq.Page) {
+      this._logLinkedToProjectAndPage(ReplacerBaserow.linkObjectByValue(baserowFaq.Page) as FaqPage, baserowFaq)
+
+      return false
+    }
+
+    return true
+  }
+
+  private _logLinkedToProjectAndPage(page: FaqPage, baserowFaq: BaserowFaq) {
+    this._log(
+      `FAQ lié à une page statique: ${page} et à un projet : ${ReplacerBaserow.linkObjectsByValues(baserowFaq.Projet).toString()}`,
+      baserowFaq
+    )
+  }
+
+  private _logNotLinkedToPageOrProject(baserowFaq: BaserowFaq) {
+    this._log('FAQ non lié à une page statique ni à un projet', baserowFaq)
+  }
+
+  private _log(message: string, baserowFaq: BaserowFaq) {
+    this._logger.log(LogLevel.Critic, message, `FAQ ID Baserow: ${baserowFaq.id}`, baserowFaq.id, baserowFaq.id)
   }
 }
