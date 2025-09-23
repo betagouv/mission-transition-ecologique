@@ -868,7 +868,7 @@
     "linkedProjects": [
       4
     ],
-    "priority": "140",
+    "priority": "125",
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2816,7 +2816,7 @@
       4,
       14
     ],
-    "priority": "130",
+    "priority": "135",
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3674,7 +3674,7 @@
       "programme-synergies-durables"
     ],
     "linkedProjects": [],
-    "priority": "100",
+    "priority": "105",
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3882,7 +3882,7 @@
     "linkedProjects": [
       929
     ],
-    "priority": "100",
+    "priority": "106",
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3928,7 +3928,7 @@
       30,
       1028
     ],
-    "priority": "120",
+    "priority": "122",
     "highlightPriority": null,
     "sectors": [
       "I",
