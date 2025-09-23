@@ -24,7 +24,7 @@
         >
           <ProjectCard
             :project="linkedProject"
-            :title-tag="h3"
+            title-tag="h3"
             class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
           />
         </li>
