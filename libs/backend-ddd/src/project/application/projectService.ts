@@ -5,7 +5,7 @@ import { Result } from 'true-myth'
 import { RedirectService } from '../../common/application/redirectService'
 import { ProjectEligibility } from '../infrastructure/projectEligibility'
 import { ProjectsJson } from '../infrastructure/projectsJson'
-import { ProjectSorter } from '../infrastructure/projectSorter'
+import { ProjectSorter } from '../domain/projectSorter'
 
 export class ProjectService {
   private _project: ProjectFeatures

@@ -28,6 +28,7 @@ export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
   Prio: number
   'Mise En Avant': number | null
   'redirection-vers': LinkObject[]
+  'Prios spécifiques': string
 }
 
 export interface LinkObject extends Id {
