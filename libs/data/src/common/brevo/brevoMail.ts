@@ -9,8 +9,8 @@ export default class BrevoMail implements MailSenderInterface {
   private readonly _programEolNotification = 15
   private _api = new TransactionalEmailsApi()
 
-  private readonly _baseProdCatalogUrl = 'https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/' // TODO Bad Practice, to discuss with yohann
-  private readonly _baseProdFormUrl = 'https://mission-transition-ecologique.beta.gouv.fr/ajouter-une-aide-entreprises/' // TODO Bad Practice, to discuss with yohann
+  private readonly _baseProdCatalogUrl = 'https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/'
+  private readonly _baseProdFormUrl = 'https://mission-transition-ecologique.beta.gouv.fr/ajouter-une-aide-entreprises/'
 
   constructor() {
     this._api.setApiKey(TransactionalEmailsApiApiKeys.apiKey, Config.BREVO_API_TOKEN)

@@ -71,7 +71,9 @@ export abstract class AbstractBaserow {
   }
 
   protected _replaceLinkObjectByTableData<T extends Id>(links: LinkObject[], referencedTableData: T[]): T[] {
-    if (!links) return []
+    if (!links) {
+      return []
+    }
 
     const tableData = links.map((link) => referencedTableData.find((object) => link.id === object.id))
 
@@ -80,13 +82,6 @@ export abstract class AbstractBaserow {
     }
 
     return tableData.filter((item) => item !== undefined) as T[]
-  }
-
-  private _setBaserowToken(): string {
-    if (process.env['BASEROW_TOKEN']) {
-      return process.env['BASEROW_TOKEN']
-    }
-    throw Error('Baserow token not found.')
   }
 
   protected async _patchRow<T>(tableId: number, rowId: number, data: Partial<T>): Promise<void> {

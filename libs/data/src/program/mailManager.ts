@@ -49,7 +49,9 @@ export class MailManager {
   }
 
   private async _maybeSendInitialMail(program: DataProgram, techInfos: ProgramTechnicalInfo): Promise<ProgramTechnicalInfo> {
-    if (!techInfos.email_enable) return techInfos
+    if (!techInfos.email_enable) {
+      return techInfos
+    }
 
     if (!techInfos.last_mail_sent_date) {
       await this._mailSender.sendInitialMail(program)
@@ -59,7 +61,9 @@ export class MailManager {
   }
 
   private async _maybeSendPeriodicMail(program: DataProgram, techInfos: ProgramTechnicalInfo): Promise<ProgramTechnicalInfo> {
-    if (!techInfos.email_enable || !techInfos.last_mail_sent_date) return techInfos
+    if (!techInfos.email_enable || !techInfos.last_mail_sent_date) {
+      return techInfos
+    }
 
     const lastSent = new Date(techInfos.last_mail_sent_date)
     const newMailMinDate = new Date(lastSent.getFullYear(), lastSent.getMonth() + 6, lastSent.getDate())
@@ -72,10 +76,14 @@ export class MailManager {
   }
 
   private async _maybeSendEOLMail(program: DataProgram, techInfos: ProgramTechnicalInfo): Promise<ProgramTechnicalInfo> {
-    if (!techInfos.email_enable) return techInfos
+    if (!techInfos.email_enable) {
+      return techInfos
+    }
 
     const endDate = program.DISPOSITIF_DATE_FIN ? new Date(program.DISPOSITIF_DATE_FIN) : null
-    if (!endDate) return techInfos
+    if (!endDate) {
+      return techInfos
+    }
 
     // if we already sent an eol mail,
     // check if the end date changed and if we should reset the eol_mail_sent_date

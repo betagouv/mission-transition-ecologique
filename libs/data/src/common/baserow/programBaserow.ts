@@ -42,7 +42,7 @@ export class ProgramBaserow extends AbstractBaserow {
     const baserowPrograms = await this._getTableData<Program>(this._programTableId)
     const geographicCoverages = await this._getTableData<GeographicCoverage>(this._geographicCoverageTableId)
     const themes = await this._getTableData<Theme>(this._themeTableId)
-    const conditionnalValues = await this._getTableData<ConditionalValues>(this._conditionnalValuesTableId)
+    const conditionalValues = await this._getTableData<ConditionalValues>(this._conditionalValuesTableId)
     const contactValues = await new ContactBaserow().getAll()
 
     this._operators = await this._getTableData<Operator>(this._operatorTableId)
