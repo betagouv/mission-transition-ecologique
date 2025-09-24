@@ -41,30 +41,39 @@ export default class BrevoMail {
       throw new Error('Program has no internal contact when contact validity has already been tested !')
     }
 
-    const email = new SendSmtpEmail()
+    const baseParams = {
+      programName: program.Titre,
+      programLink: `${this._baseProdCatalogUrl}${program['Id fiche dispositif']}`
+    }
 
-    if (mailType == MailType.Initial) {
-      email.templateId = this._programInProdNotification
-      email.params = {
-        programName: program.Titre,
-        programLink: this._baseProdCatalogUrl + program['Id fiche dispositif'],
-        formLink: this._baseProdFormUrl
+    const email = new SendSmtpEmail()
+    switch (mailType) {
+      case MailType.Initial: {
+        email.templateId = this._programInProdNotification
+        email.params = {
+          ...baseParams,
+          formLink: this._baseProdFormUrl
+        }
+        break
       }
-    }
-    if (mailType == MailType.Periodic) {
-      email.templateId = this._programSixMonthNotification
-      email.params = {
-        programName: program.Titre,
-        programLink: this._baseProdCatalogUrl + program['Id fiche dispositif']
+      case MailType.Periodic: {
+        email.templateId = this._programSixMonthNotification
+        email.params = {
+          ...baseParams
+        }
+        break
       }
-    }
-    if (mailType == MailType.EndOfLife) {
-      email.templateId = this._programEolNotification
-      email.params = {
-        programName: program.Titre,
-        programLink: this._baseProdCatalogUrl + program['Id fiche dispositif'],
-        programEndDate: program.DISPOSITIF_DATE_FIN,
-        formLink: this._baseProdFormUrl
+      case MailType.EndOfLife: {
+        email.templateId = this._programEolNotification
+        email.params = {
+          ...baseParams,
+          programEndDate: program.DISPOSITIF_DATE_FIN,
+          formLink: this._baseProdFormUrl
+        }
+        break
+      }
+      default: {
+        throw new Error(`Unsupported mail type: ${mailType}`)
       }
     }
 

@@ -1,20 +1,10 @@
-import path from 'path'
 import { ProgramBaserow } from '../common/baserow/programBaserow'
-import fs from 'fs'
-import { parse } from 'csv-parse/sync'
-import { fileURLToPath } from 'url'
 import { ProgramTechnicalInfo } from '../common/baserow/types'
 import { ProgramUtils } from './programUtils'
 import { DataProgram } from './types/domain'
 import BrevoMail from '../common/brevo/brevoMail'
 import { Contact } from '../common/types'
 import z from 'zod'
-
-interface ProgramCsvRow {
-  filename: string
-  date_added: string
-}
-
 export class MailManager {
   async sendProgramsMails() {
     const programs = await new ProgramBaserow().getPrograms(false)
@@ -134,52 +124,55 @@ export class MailManager {
   }
 
   // Code that has been used for the initialization of the "tech" column
-  // Imo should be deleted, i don't know why we would keep it ?
-  async populate_baserow_prod_date() {
-    // ##### BASH SCRIPT #####
-    // Bash script that, when started in a specific directory
-    // return a csv with the date at which each file have been created (not exactly the production date but close in TEE)
-    // echo "filename,date_added" > program_creation_date.csv
-    // for file in $(git ls-files); do
-    // commit=$(git log --follow --diff-filter=A --format="%H" -- "$file" | tail -n 1)
-    // if [ -n "$commit" ]; then
-    //     date=$(git show -s --format="%ad" --date=iso "$commit")
-    //     echo "\"$file\",\"$date\"" >> program_creation_date.csv
-    // fi
-    // done
-    // ##### END BASH SCRIPT #####
+  //   interface ProgramCsvRow {
+  //   filename: string
+  //   date_added: string
+  // }
+  // async populate_baserow_prod_date() {
+  // ##### BASH SCRIPT #####
+  // Bash script that, when started in a specific directory
+  // return a csv with the date at which each file have been created (not exactly the production date but close in TEE)
+  // echo "filename,date_added" > program_creation_date.csv
+  // for file in $(git ls-files); do
+  // commit=$(git log --follow --diff-filter=A --format="%H" -- "$file" | tail -n 1)
+  // if [ -n "$commit" ]; then
+  //     date=$(git show -s --format="%ad" --date=iso "$commit")
+  //     echo "\"$file\",\"$date\"" >> program_creation_date.csv
+  // fi
+  // done
+  // ##### END BASH SCRIPT #####
 
-    const csvPath = path.join(path.dirname(fileURLToPath(import.meta.url)), '../../static/program_creation_date.csv')
-    const csvContent = fs.readFileSync(csvPath, 'utf8')
+  //     const csvPath = path.join(path.dirname(fileURLToPath(import.meta.url)), '../../static/program_creation_date.csv')
+  //     const csvContent = fs.readFileSync(csvPath, 'utf8')
 
-    const records = parse<ProgramCsvRow>(csvContent, {
-      columns: true,
-      skip_empty_lines: true
-    })
+  //     const records = parse<ProgramCsvRow>(csvContent, {
+  //       columns: true,
+  //       skip_empty_lines: true
+  //     })
 
-    const programs = await new ProgramBaserow().getPrograms(false)
+  //     const programs = await new ProgramBaserow().getPrograms(false)
 
-    const baserow = new ProgramBaserow()
-    for (const record of records) {
-      const csvKey = record.filename.slice(0, -5)
-      const mergeDate = record.date_added
+  //     const baserow = new ProgramBaserow()
+  //     for (const record of records) {
+  //       const csvKey = record.filename.slice(0, -5)
+  //       const mergeDate = record.date_added
 
-      const matchingProgram = programs.find((program) => program['Id fiche dispositif'] === csvKey)
+  //       const matchingProgram = programs.find((program) => program['Id fiche dispositif'] === csvKey)
 
-      if (matchingProgram) {
-        const updatedTech = {
-          prod_release_date: mergeDate,
-          email_enable: false
-        }
+  //       if (matchingProgram) {
+  //         const updatedTech = {
+  //           prod_release_date: mergeDate,
+  //           email_enable: false
+  //         }
 
-        console.log(csvKey, matchingProgram.id, updatedTech)
-        await baserow.patchProgram(matchingProgram.id, { tech: JSON.stringify(updatedTech) })
-        await new Promise((resolve) => setTimeout(resolve, 200))
+  //         console.log(csvKey, matchingProgram.id, updatedTech)
+  //         await baserow.patchProgram(matchingProgram.id, { tech: JSON.stringify(updatedTech) })
+  //         await new Promise((resolve) => setTimeout(resolve, 200))
 
-        console.log(`✅ Patched program ${csvKey} with merge date ${mergeDate}`)
-      } else {
-        console.log(`❌ No match found in Baserow for CSV key: ${csvKey}`)
-      }
-    }
-  }
+  //         console.log(`✅ Patched program ${csvKey} with merge date ${mergeDate}`)
+  //       } else {
+  //         console.log(`❌ No match found in Baserow for CSV key: ${csvKey}`)
+  //       }
+  //     }
+  //   }
 }
