@@ -136,3 +136,9 @@ interface ModifiableFields {
   'Eligibilité taille': string
   'Eligibilité Spécifique': string
 }
+
+export interface MailSenderInterface {
+  sendInitialMail(program: DataProgram): Promise<void>
+  sendPeriodicMail(program: DataProgram): Promise<void>
+  sendEolMail(program: DataProgram): Promise<void>
+}

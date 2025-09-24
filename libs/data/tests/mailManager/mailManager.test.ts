@@ -1,14 +1,9 @@
-import { describe, expect, beforeEach, vi, Mock } from 'vitest'
-vi.mock('../../src/common/brevo/brevoMail', () => {
-  return import('../../src/common/brevo/__mocks__/brevoMail').then((mod) => ({
-    default: mod.default
-  }))
-})
+import { describe, expect, beforeEach, vi } from 'vitest'
 
-// vi.mock('../../src/common/brevo/brevoMail', async () => {
-//   const BrevoMailMock = (await import('../../src/common/brevo/__mocks__/brevoMail')).default
-//   return { default: BrevoMailMock }
-// })
+vi.mock('../../src/common/brevo/brevoMail', async () => {
+  const BrevoMailMock = (await import('./mailSenderMock')).default
+  return { default: BrevoMailMock }
+})
 vi.mock('../../src/common/baserow/programBaserow', () => {
   return {
     ProgramBaserow: vi.fn().mockImplementation(() => ({
@@ -25,10 +20,10 @@ import BrevoMail from '../../src/common/brevo/brevoMail'
 
 describe('MailManager', () => {
   let mailManager: MailManager
-
+  let mailSender: BrevoMail
   beforeEach(() => {
-    mailManager = new MailManager()
-
+    mailSender = new BrevoMail()
+    mailManager = new MailManager(mailSender)
     vi.spyOn(mailManager as any, '_wait').mockResolvedValue(undefined)
     vi.useFakeTimers()
     vi.setSystemTime(new Date('2025-06-01'))
@@ -41,54 +36,52 @@ describe('MailManager', () => {
 
   mailManagerTestCases.forEach(({ name, testData, expected }) => {
     test(name, async () => {
-      const program = makeMockProgram(testData)
+      let program = makeMockProgram(testData)
+
+      const patchProgramSpy = vi.fn().mockResolvedValue(undefined)
 
       ;(ProgramBaserow as any).mockImplementation(() => {
         return {
           getPrograms: vi.fn().mockResolvedValue([program]),
-          patchProgram: vi.fn().mockImplementation((_id: number, data: unknown) => {
-            console.log('TechData:', data)
-            return Promise.resolve()
-          })
+          patchProgram: patchProgramSpy
         }
       })
 
       await mailManager.sendProgramsMails()
-      const brevoMock = (BrevoMail as unknown as Mock).mock
-      console.log('brevoMock', brevoMock)
-      console.log(
-        brevoMock.calls,
-        brevoMock.contexts,
-        brevoMock.instances,
-        brevoMock.invocationCallOrder,
-        brevoMock.lastCall,
-        brevoMock.results
-      )
-
-      if (!expected.sendInitialMail && !expected.sendPeriodicMail && !expected.sendEolMail) {
-        expect(brevoMock).not.toBeDefined()
-      }
-
-      const brevoInstance = brevoMock.instances[0]
-      console.log('brevoinstance: ', brevoInstance)
-      expect(brevoInstance.sendInitialMail).toBeDefined()
 
       if (expected.sendInitialMail) {
-        expect(brevoInstance.sendInitialMail).toHaveBeenCalled()
+        expect(mailSender.sendInitialMail).toHaveBeenCalled()
       } else {
-        expect(brevoInstance.sendInitialMail).not.toHaveBeenCalled()
+        expect(mailSender.sendInitialMail).not.toHaveBeenCalled()
       }
 
       if (expected.sendPeriodicMail) {
-        expect(brevoInstance.sendPeriodicMail).toHaveBeenCalled()
+        expect(mailSender.sendPeriodicMail).toHaveBeenCalled()
       } else {
-        expect(brevoInstance.sendPeriodicMail).not.toHaveBeenCalled()
+        expect(mailSender.sendPeriodicMail).not.toHaveBeenCalled()
       }
 
       if (expected.sendEolMail) {
-        expect(brevoInstance.sendEolMail).toHaveBeenCalled()
+        expect(mailSender.sendEolMail).toHaveBeenCalled()
       } else {
-        expect(brevoInstance.sendEolMail).not.toHaveBeenCalled()
+        expect(mailSender.sendEolMail).not.toHaveBeenCalled()
+      }
+
+      if (patchProgramSpy.mock.calls.length > 0) {
+        const newtechdata = patchProgramSpy.mock.calls[0][1]
+        program = {
+          ...program,
+          tech: newtechdata.tech
+        }
+        vi.clearAllMocks()
+        expect(mailSender.sendInitialMail).not.toHaveBeenCalled()
+        expect(mailSender.sendPeriodicMail).not.toHaveBeenCalled()
+        expect(mailSender.sendEolMail).not.toHaveBeenCalled()
+        console.log(program.tech)
+        await mailManager.sendProgramsMails()
+        expect(mailSender.sendInitialMail).not.toHaveBeenCalled()
+        expect(mailSender.sendPeriodicMail).not.toHaveBeenCalled()
+        expect(mailSender.sendEolMail).not.toHaveBeenCalled()
       }
     })
   })

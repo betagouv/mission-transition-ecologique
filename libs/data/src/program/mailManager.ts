@@ -1,11 +1,16 @@
 import { ProgramBaserow } from '../common/baserow/programBaserow'
 import { ProgramTechnicalInfo } from '../common/baserow/types'
 import { ProgramUtils } from './programUtils'
-import { DataProgram } from './types/domain'
-import BrevoMail from '../common/brevo/brevoMail'
+import { DataProgram, MailSenderInterface } from './types/domain'
 import { Contact } from '../common/types'
 import z from 'zod'
 export class MailManager {
+  private readonly _mailSender: MailSenderInterface
+
+  constructor(mailSender: MailSenderInterface) {
+    this._mailSender = mailSender
+  }
+
   async sendProgramsMails() {
     const programs = await new ProgramBaserow().getPrograms(false)
 
@@ -47,7 +52,7 @@ export class MailManager {
     if (!techInfos.email_enable) return techInfos
 
     if (!techInfos.last_mail_sent_date) {
-      await new BrevoMail().sendInitialMail(program)
+      await this._mailSender.sendInitialMail(program)
       techInfos.last_mail_sent_date = new Date().toISOString()
     }
     return techInfos
@@ -60,7 +65,7 @@ export class MailManager {
     const newMailMinDate = new Date(lastSent.getFullYear(), lastSent.getMonth() + 6, lastSent.getDate())
 
     if (new Date() >= newMailMinDate) {
-      await new BrevoMail().sendPeriodicMail(program)
+      await this._mailSender.sendPeriodicMail(program)
       techInfos.last_mail_sent_date = new Date().toISOString()
     }
     return techInfos
@@ -86,7 +91,7 @@ export class MailManager {
     const today = new Date()
 
     if (today >= eolMailMinDate && !techInfos.eol_mail_sent_date) {
-      await new BrevoMail().sendEolMail(program)
+      await this._mailSender.sendEolMail(program)
       techInfos.eol_mail_sent_date = today.toISOString()
       techInfos.last_mail_sent_date = today.toISOString()
     }

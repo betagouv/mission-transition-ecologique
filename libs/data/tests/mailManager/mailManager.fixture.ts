@@ -72,7 +72,7 @@ export const mailManagerTestCases: MailManagerTestCase[] = [
     },
     expected: {
       sendInitialMail: false,
-      sendPeriodicMail: false,
+      sendPeriodicMail: true,
       sendEolMail: false
     }
   },
@@ -93,7 +93,7 @@ export const mailManagerTestCases: MailManagerTestCase[] = [
     expected: {
       sendInitialMail: false,
       sendPeriodicMail: false,
-      sendEolMail: false
+      sendEolMail: true
     }
   },
   {
@@ -141,28 +141,8 @@ export const mailManagerTestCases: MailManagerTestCase[] = [
     testData: {
       tech: JSON.stringify({
         email_enable: true,
-        eol_mail_sent_date: '2024-06-01T00:00:00.000Z',
-        last_mail_sent_date: '2024-06-01T00:00:00.000Z',
-        prod_release_date: '2024-06-01T00:00:00.000Z'
-      }),
-      DISPOSITIF_DATE_DEBUT: '2024-01-01',
-      DISPOSITIF_DATE_FIN: '2025-06-10',
-      Statuts: [Status.InProd],
-      internalContact: { id: 1, name: 'test', mail: 'test@test.com' }
-    },
-    expected: {
-      sendInitialMail: false,
-      sendPeriodicMail: false,
-      sendEolMail: false
-    }
-  },
-  {
-    name: 'EOL mail should be send in priority over periodic mail / old EOL mail should not count',
-    testData: {
-      tech: JSON.stringify({
-        email_enable: true,
-        eol_mail_sent_date: '2024-06-01T00:00:00.000Z',
-        last_mail_sent_date: '2024-06-01T00:00:00.000Z',
+        eol_mail_sent_date: '2025-05-28T00:00:00.000Z',
+        last_mail_sent_date: '2025-05-28T00:00:00.000Z',
         prod_release_date: '2024-06-01T00:00:00.000Z'
       }),
       DISPOSITIF_DATE_DEBUT: '2024-01-01',

@@ -1,9 +1,9 @@
 import { SendSmtpEmail, TransactionalEmailsApi, TransactionalEmailsApiApiKeys } from '@getbrevo/brevo'
 import Config from '../../config'
-import { DataProgram } from '../../program/types/domain'
+import { DataProgram, MailSenderInterface } from '../../program/types/domain'
 import { MailType } from './types'
 
-export default class BrevoMail {
+export default class BrevoMail implements MailSenderInterface {
   private readonly _programInProdNotification = 13
   private readonly _programSixMonthNotification = 14
   private readonly _programEolNotification = 15
