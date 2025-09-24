@@ -64,6 +64,8 @@ export function makeMockProgram(overrides: Partial<DataProgram> = {}): DataProgr
     "TActivités des ménages en tant qu'employeurs, activités indifférenciées des ménages en tant que producteurs de biens et services pour usage propre":
       false,
     'UActivités extra-territoriales': false,
+    'Meta Titre': '',
+    'Meta Description': '',
     ...overrides
   }
 }

@@ -14,7 +14,7 @@ vi.mock('../../src/common/baserow/programBaserow', () => {
 })
 import { MailManager } from '../../src/program/mailManager'
 import { mailManagerTestCases } from './mailManager.fixture'
-import { makeMockProgram } from '../mockData/mockProgram.testData'
+import { makeMockProgram } from '../mockData/mockProgram.factory'
 import { ProgramBaserow } from '../../src/common/baserow/programBaserow'
 import BrevoMail from '../../src/common/brevo/brevoMail'
 
