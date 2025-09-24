@@ -11,7 +11,6 @@ export class ProjectSorter implements ProjectSorterInterface {
   }
 
   private _getPriority(priorities: Record<string, number>, companySector: string | undefined): number {
-    console.log(priorities)
     if (!companySector) {
       return priorities['default']
     }

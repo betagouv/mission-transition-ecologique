@@ -6,6 +6,7 @@ import { Theme } from '../../theme/types/domain'
 import { ImageBaserow } from './imageBaserow'
 import { Logger } from '../logger/logger'
 import { LogLevel } from '../logger/types'
+import { ProjectPriority } from '../../project/types/shared'
 
 export class ProjectBaserow extends AbstractBaserow {
   private readonly _imagePath = '/images/projet/'
@@ -77,7 +78,7 @@ export class ProjectBaserow extends AbstractBaserow {
       mainTheme: this._generateMainTheme(baserowProject['Thématique principale'], baserowThemes),
       programs: this._generateProgramList(baserowProject.Dispositifs),
       linkedProjects: this._generateLinkedProjectList(baserowProject['Projets complémentaires']),
-      priority: this._generatePriority(baserowProject.Prio, baserowProject['Prios spécifiques']),
+      priority: this._generatePriority(baserowProject.Prio, baserowProject['Prios spécifiques'], baserowProject),
       highlightPriority: baserowProject['Mise En Avant'],
       sectors: this._generateSectors(baserowProject as BaserowSectors),
       status: this._convertStatus(baserowProject?.Statut),
@@ -159,8 +160,9 @@ export class ProjectBaserow extends AbstractBaserow {
     return Object.values(ProjectStatus).includes(status.value as ProjectStatus) ? (status.value as ProjectStatus) : ProjectStatus.Others
   }
 
-  private _generatePriority(defaultPriority: number, otherPrios: string): Record<string, number> {
-    const result: Record<string, number> = { default: Number(defaultPriority) }
+  private _generatePriority(defaultPriority: number, otherPrios: string, project: BaserowProject): ProjectPriority {
+    // This field workings are detailed in the baserow column description.
+    const result: ProjectPriority = { default: Number(defaultPriority) }
 
     if (!otherPrios) {
       return result
@@ -171,6 +173,16 @@ export class ProjectBaserow extends AbstractBaserow {
       .map((line) => line.trim())
       .filter((line) => line.length > 0)
       .forEach((line) => {
+        if (!/^[A-Za-z0-9.]+[A-Za-z]?:\d+$/.test(line)) {
+          this._logger.log(
+            LogLevel.Major,
+            `Format de prio spécifique invalide "${line}" - doit être, pour chaque ligne, uniquement 'NAF:n' avec NAF un code naf valide et n un nombre`,
+            project.Titre,
+            project.id
+          )
+          return
+        }
+
         const [sector, priority] = line.split(':')
         if (sector && priority !== undefined) {
           const trimmedPriority = priority.trim()

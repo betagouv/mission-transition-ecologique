@@ -39,10 +39,9 @@
 import { useProjectStore } from '@/stores/project'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { ProjectManager } from '@/tools/project/projectManager'
-import { ProjectType } from '@tee/data'
 import { Theme } from '@/tools/theme'
 import { CompanyData } from '@/tools/companyData'
-import { RouteName } from '@/types'
+import { RouteName, ProjectType } from '@/types'
 
 interface Props {
   limit: number
@@ -88,7 +87,7 @@ const hasNoResults = computed(() => {
 })
 
 function byHighlight(projects: ProjectType[]): ProjectType[] {
-  return projects.slice().sort((a, b) => {
+  return projects.toSorted((a, b) => {
     if (!a.highlightPriority) {
       return 1
     }
