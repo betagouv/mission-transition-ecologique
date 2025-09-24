@@ -27,7 +27,9 @@ export const readPrograms = (log = false): ProgramType[] => {
   const __dirname = path.dirname(fileURLToPath(import.meta.url))
   const dataDirPath: string = path.join(__dirname, PROGRAMS_FOLDER_PATH)
 
-  if (log) console.log('📂 Reading data at', dataDirPath, '\n')
+  if (log) {
+    console.log('📂 Reading data at', dataDirPath, '\n')
+  }
 
   const filenames: string[] = fs.readdirSync(dataDirPath)
 
@@ -52,11 +54,15 @@ export const prependInterface = (programs: ProgramType[], log = false): ProgramT
   const __dirname = path.dirname(fileURLToPath(import.meta.url))
   const fullPath: string = path.join(__dirname, INTERFACE_PATH)
 
-  if (log) console.log('🗎 reading constants at', fullPath)
+  if (log) {
+    console.log('🗎 reading constants at', fullPath)
+  }
   const file: string = fs.readFileSync(fullPath, 'utf8')
   const constants = yaml.load(file) as Record<string, unknown>
 
-  if (log) console.log('➕ prepending publicodes with common constants')
+  if (log) {
+    console.log('➕ prepending publicodes with common constants')
+  }
 
   return programs.map((p) => {
     p.publicodes = { ...constants, ...p.publicodes }
