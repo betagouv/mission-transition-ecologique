@@ -788,7 +788,8 @@
       4
     ],
     "priority": {
-      "default": 950
+      "default": 950,
+      "86.1": 45
     },
     "highlightPriority": null,
     "sectors": [
@@ -896,7 +897,7 @@
       4
     ],
     "priority": {
-      "default": 140
+      "default": 125
     },
     "highlightPriority": null,
     "sectors": [
@@ -2915,7 +2916,7 @@
       14
     ],
     "priority": {
-      "default": 130
+      "default": 135
     },
     "highlightPriority": null,
     "sectors": [
@@ -3145,6 +3146,7 @@
     ],
     "mainTheme": "energy",
     "programs": [
+      "bonus-reparation",
       "sud-pret-climat",
       "cheque-vert-grand-est",
       "pret-energie-aura",
@@ -3829,7 +3831,7 @@
     ],
     "linkedProjects": [],
     "priority": {
-      "default": 100
+      "default": 105
     },
     "highlightPriority": null,
     "sectors": [
@@ -3991,7 +3993,7 @@
     "linkedProjects": [],
     "priority": {
       "default": 750,
-      "B1": 0,
+      "B": 1,
       "H": 4
     },
     "highlightPriority": null,
@@ -4053,7 +4055,7 @@
       929
     ],
     "priority": {
-      "default": 100
+      "default": 106
     },
     "highlightPriority": null,
     "sectors": [
@@ -4101,7 +4103,7 @@
       1028
     ],
     "priority": {
-      "default": 120,
+      "default": 122,
       "I": 5,
       "Q": 1
     },
@@ -4348,7 +4350,9 @@
     "linkedProjects": [
       998
     ],
-    "priority": "272",
+    "priority": {
+      "default": 272
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
