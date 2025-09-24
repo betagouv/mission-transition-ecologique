@@ -15,7 +15,7 @@
 </template>
 <script lang="ts" setup>
 interface Props {
-  title: string
+  title?: string
   content?: string
   containerFrom?: 'sm' | 'md' | 'lg' | 'xl'
   titleTag?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6'

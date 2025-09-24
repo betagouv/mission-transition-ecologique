@@ -4,7 +4,14 @@ export interface Id {
   id: number
 }
 
-export interface BaserowProject extends Id, BaserowSectors {
+export interface BaserowData<T> {
+  count: number
+  next: string | null
+  previous: string | null
+  results: T[]
+}
+
+export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
   order: string
   Nom: string
   'Description courte': string
@@ -21,6 +28,7 @@ export interface BaserowProject extends Id, BaserowSectors {
   Prio: number
   'Mise En Avant': number | null
   'redirection-vers': LinkObject[]
+  'Prios spécifiques': string
 }
 
 export interface LinkObject extends Id {
@@ -40,6 +48,11 @@ export interface Image {
   uploaded_at: string
 }
 
+export interface BaserowMetaData {
+  'Meta Titre': string | null
+  'Meta Description': string | null
+}
+
 export interface Program
   extends Omit<
       DataProgram,
@@ -55,6 +68,7 @@ export interface Program
       | 'contact'
     >,
     BaserowSectors,
+    BaserowMetaData,
     ProgramTechSerialized {
   Statuts: LinkObject[]
   "Nature de l'aide": LinkObject

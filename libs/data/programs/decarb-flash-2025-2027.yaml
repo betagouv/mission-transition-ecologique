@@ -1,11 +1,15 @@
 titre: Decarb Flash 2025-2027
 promesse: Financez la décarbonation de votre industrie
 description: >-
-  Cet appel à projet finance les initiatives devant doivent conduire à une
-  décarbonation des activités industrielles, principalement par en baissant la
-  consommation de combustibles, que ce soit au niveau des procédés industriels,
-  des équipements produisant des utilités industrielles ou de l’isolation des
-  bâtiments industriels.
+  Financez la décarbonations de vos activités industrielles grâce à cet appel à
+  projet, en agissant sur :
+
+
+  - La baisse de la consommation énergétique dans les procédés de production ;
+
+  - L’électrification des équipements industriels ;
+
+  - L’isolation thermique de vos bâtiments.
 description longue: >-
   Les projets éligibles sont les suivants : 
 
@@ -104,16 +108,15 @@ conditions d'éligibilité:
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
-    - Tous secteurs d'activité
+    - "Les secteurs suivants sont exclus de cet appel à projets\_:\n\n- les activités tertiaires\n\n- les activités agricoles (sauf celles relevant de l’industrie agro-alimentaire)\n\n- les secteurs de la pêche et de l’aquaculture\n\n- les travaux publics pour leurs activités sur chantier mobile\n\n- les incinérateurs de tout type de déchets (hors incinérateur intégré à un site de production industrielle)\n\n- les entités industrielles productrices d’énergie sur réseaux (électrique, de gaz etc.)."
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-    - "L'appel à projets se base sur une liste précise d’opérations éligibles, dont le coût total cumulé doit être\_compris entre 100\_k€ (25\_k€ en Corse et Outre-mer) et 3\_M€."
+    - "Le coût total des opérations doit être\_compris entre 100\_k€ (25\_k€ en Corse et Outre-mer) et 3\_M€."
     - >-
-      Sont concernés les sites industriels appartenant à des PME (y compris
-      soumises à la directive EU-ETS) ainsi qu’à ceux appartenant à des Grandes
-      Entreprises (au sens communautaire) non soumises à la directive EU-ETS.
-    - "Les secteurs suivants sont exclus de cet appel à projets\_: les activités tertiaires, agricoles (sauf celles relevant de l’industrie agro-alimentaire), de la pêche et de l’aquaculture, les travaux publics pour leurs activités sur chantier mobile, les incinérateurs de tout type de déchets (hors incinérateur intégré à un site de production industrielle) et les entités industrielles dont l’activité est la production et la mise sur le marché d’énergie sur réseaux (électrique, de gaz etc.)."
+      L'appel à projet concerne les sites industriels appartenant à des PME,
+      ainsi qu’à ceux appartenant à des Grandes Entreprises (non soumises à la
+      directive EU-ETS).
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

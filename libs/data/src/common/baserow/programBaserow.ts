@@ -19,7 +19,7 @@ import { Contact } from '../types'
 export class ProgramBaserow extends AbstractBaserow {
   private readonly _geographicCoverageTableId = ConfigBaserow.GEOGRAPHIC_COVERAGE_ID
   private readonly _programTableId = ConfigBaserow.PROGRAM_ID
-  private readonly _conditionnalValuesTableId = ConfigBaserow.CONDITIONAL_VALUES_ID
+  private readonly _conditionalValuesTableId = ConfigBaserow.CONDITIONAL_VALUES_ID
   private _operators: Operator[] = []
   private _geographicAreas: GeographicCoverage[] = []
 
@@ -52,7 +52,7 @@ export class ProgramBaserow extends AbstractBaserow {
       this._convertToDataProgram(baserowProgram, geographicCoverages, themes, contactValues)
     )
 
-    this._enrichDataProgramsWithConditionnals(dataPrograms, conditionnalValues)
+    this._enrichDataProgramsWithConditionals(dataPrograms, conditionalValues)
 
     try {
       fs.writeFileSync('program_tmp.json', JSON.stringify(dataPrograms, null, 2))
@@ -110,19 +110,19 @@ export class ProgramBaserow extends AbstractBaserow {
     return rawProgram
   }
 
-  private _enrichDataProgramsWithConditionnals(programs: DataProgram[], conditionnalValues: ConditionalValues[]) {
-    conditionnalValues.forEach((conditionnalValue) => {
-      if (!conditionnalValue['Dispositif concerné'].length) {
+  private _enrichDataProgramsWithConditionals(programs: DataProgram[], conditionalValues: ConditionalValues[]) {
+    conditionalValues.forEach((conditionalValue) => {
+      if (!conditionalValue['Dispositif concerné'].length) {
         // TODO ajouter logging
         return
       }
-      const dataConditionnal = this._convertToDataConditionalValue(conditionnalValue)
-      const matchingProgram = programs.find((program) => program['Id fiche dispositif'] === dataConditionnal['Dispositif concerné'])
+      const dataConditional = this._convertToDataConditionalValue(conditionalValue)
+      const matchingProgram = programs.find((program) => program['Id fiche dispositif'] === dataConditional['Dispositif concerné'])
       if (matchingProgram) {
         if (!matchingProgram.conditionalData) {
           matchingProgram.conditionalData = []
         }
-        matchingProgram.conditionalData.push(dataConditionnal)
+        matchingProgram.conditionalData.push(dataConditional)
       }
     })
   }

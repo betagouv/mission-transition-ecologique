@@ -1,7 +1,7 @@
 <template>
   <LayoutCatalog
     :has-side-menu="hasSideMenu"
-    :title="title"
+    title="Les projets de transition écologique"
     :has-error="hasError"
     :count-items="countProjects"
     :faq-page="FaqPage.CatalogProject"
@@ -46,8 +46,10 @@ const theme = Theme.getThemeFromSelectedTheme()
 const filteredProjects = ProjectFilter.filter(projects, theme)
 const navigation = new Navigation()
 
-const title = 'Les projets de transition écologique'
-const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
+const seoTitle = 'Projets écologiques en entreprise –  Exemples et opportunités'
+const seoDescription =
+  "Découvrez  les projets de transition écologique pour votre secteur d'activité : explications, ressources," +
+  " témoignages d'entreprises et liste des aides financières associées."
 
 onServerPrefetch(async () => {
   await new ProjectManager().getProjects()
@@ -66,8 +68,8 @@ const sortedProjects = computed(() => {
   return filteredProjects.value
 })
 
-useSeoMeta(MetaSeo.get(title, description))
-useSchemaOrg(defineWebPage({ description: description }))
+useSeoMeta(MetaSeo.get(seoTitle, seoDescription))
+useSchemaOrg(defineWebPage({ description: seoDescription }))
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())

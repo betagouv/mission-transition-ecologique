@@ -8,12 +8,20 @@
       "description": "Titre commercial du dispositif. Si pas de titre commercial clairement identifé, un titre générique du type \"Dispositif { opérateur de contact }\" peut être utilisé.",
       "type": "string"
     },
+    "metaTitre": {
+      "description": "Titre du dispositif pour les metadatas de la page. Il s'agit du titre qui sera affiché dans l'onglet du navigateur.",
+      "type": "string"
+    },
     "promesse": {
       "description": "TODO",
       "type": "string"
     },
     "description": {
       "description": "La description donne les principales informations du dispositif en quelques lignes",
+      "type": "string"
+    },
+    "metaDescription": {
+      "description": "Description du dispositif pour les metadatas de la page. Il s'agit de la description qui sera affichée dans les résultats de recherche.",
       "type": "string"
     },
     "description longue": {

@@ -4,7 +4,8 @@
     "seche-linge": "electromenager-basse-consommation",
     "economisateurs-eau-sanitaires": "economiseurs-eau-sanitaires",
     "restauration-durable": "menus-circuits-courts",
-    "composteur": "gestion-biodechets"
+    "composteur": "gestion-biodechets",
+    "maintenance-préventive": "maintenance-preventive"
   },
   "program_redirects": {
     "audits-clef-verte": "label-clef-verte",
@@ -69,7 +70,7 @@
     "203": "haie-bocagere",
     "302": "communication-responsable",
     "337": "sensibilisation-eco-gestes",
-    "372": "maintenance-préventive",
+    "372": "maintenance-preventive",
     "378": "revetements-permeables",
     "401": "utilitaire-camion-propre",
     "434": "methanisation",
@@ -95,7 +96,11 @@
     "1127": "nettoyage-sans-produits-chimiques",
     "1160": "fours-industriels-electriques",
     "1193": "isolation-thermique-equipements-industriels",
-    "1228": "broyeur-vegetaux"
+    "1226": "zero-perte-en-production",
+    "1228": "broyeur-vegetaux",
+    "1260": "consigne-reemploi",
+    "1261": "allongement-duree-de-vie",
+    "1391": "engins-propres"
   },
   "program_rowid_to_url_mapping": {
     "1": "accelerateur-decarbonation",
@@ -311,6 +316,7 @@
     "1684": "remove",
     "1717": "formation-convaincre-et-argumenter",
     "1718": "formation-communiquer-et-sensibiliser",
-    "1719": "outils-pour-adaptation"
+    "1719": "outils-pour-adaptation",
+    "1750": "deter-decarboner-le-tertiaire"
   }
 }

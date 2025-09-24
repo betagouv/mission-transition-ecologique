@@ -19,12 +19,11 @@
         </template>
         <div class="sticky-limits">
           <div
-            v-sticky
-            class="sticky-element fr-py-1w"
+            ref="stickyElement"
+            class="fr-sticky-md fr-py-1w"
           >
             <TeeRegisterHighlight
               v-if="!isDataFull"
-              class="fr-mx-3v"
               :text="Translation.t('project.projectRegisterHighlightText')"
               :button-label="Translation.t('project.projectRegisterHighlightButtonLabelText')"
             />
@@ -43,18 +42,20 @@
               class="fr-mb-0"
               v-html="resume"
             ></p>
-            <ProjectProgramsList
-              v-if="studyPrograms.length > 0 && !navigationStore.hasSpinner"
-              :title="Translation.t('project.studyPrograms')"
-              :programs="studyPrograms"
-              :project="project"
-            />
-            <ProjectProgramsList
-              v-if="financePrograms.length > 0 && !navigationStore.hasSpinner"
-              :title="Translation.t('project.financePrograms')"
-              :programs="financePrograms"
-              :project="project"
-            />
+            <ul>
+              <ProjectProgramsList
+                v-if="studyPrograms.length > 0 && !navigationStore.hasSpinner"
+                :title="Translation.t('project.studyPrograms')"
+                :programs="studyPrograms"
+                :project="project"
+              />
+              <ProjectProgramsList
+                v-if="financePrograms.length > 0 && !navigationStore.hasSpinner"
+                :title="Translation.t('project.financePrograms')"
+                :programs="financePrograms"
+                :project="project"
+              />
+            </ul>
           </div>
         </div>
         <TeeDsfrHighlight
@@ -94,6 +95,7 @@
 import { useProgramStore } from '@/stores/program'
 import { CompanyData } from '@/tools/companyData'
 import { ProgramManager } from '@/tools/program/programManager'
+import AddClassOnScroll from '@/tools/addClassOnScroll'
 import { ProgramAidType, ProjectType, OpportunityType, Color, ProgramTypeForFront } from '@/types'
 import Contact from '@/tools/contact'
 import Translation from '@/tools/translation'
@@ -111,6 +113,7 @@ const { programs, hasError } = storeToRefs(useProgramStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 const { companyDataSelected } = storeToRefs(useFiltersStore())
 const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormContainer')
+const stickyElement = useTemplateRef<HTMLElement>('stickyElement')
 
 const resume = computed<string>(() =>
   Translation.t('project.programsList', {
@@ -149,23 +152,26 @@ const financePrograms = computed(() => {
 
   return ProgramSorter.byFinanceAidType(filteredByAidType)
 })
+
+onMounted(async () => {
+  await nextTick()
+  if (stickyElement.value) {
+    const stickyWithOffset = new AddClassOnScroll(stickyElement.value, stickyElement.value, 'sticky-bottom-border')
+    stickyWithOffset.addEventListenerOnScroll()
+  }
+})
 </script>
 
 <style lang="scss" scoped>
-@media (width >= 769px) {
-  .sticky-element {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: #fff;
-  }
+.fr-sticky-md {
+  background: #fff;
 
-  .is-stuck {
+  &.sticky-bottom-border {
     box-shadow: inset 0 -1px 0 0 var(--border-default-grey) !important;
   }
 
   /* small white div to hide the 1px ul marker */
-  .is-stuck::before {
+  &::before {
     content: '';
     position: absolute;
     top: 0;
@@ -175,9 +181,9 @@ const financePrograms = computed(() => {
     background: white;
     z-index: 2;
   }
+}
 
-  ::v-deep(.sticky-element .fr-text--lg) {
-    margin-bottom: 0 !important;
-  }
+::v-deep(.fr-sticky-md .fr-text--lg) {
+  margin-bottom: 0 !important;
 }
 </style>

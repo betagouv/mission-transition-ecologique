@@ -58,7 +58,9 @@ function testDataAgainstSchema(data: object, dataDesc: string, validate: Validat
 }
 
 function ensureError(value: unknown): Error {
-  if (value instanceof Error) return value
+  if (value instanceof Error) {
+    return value
+  }
 
   let stringified = '[Unable to stringify the thrown value]'
   try {

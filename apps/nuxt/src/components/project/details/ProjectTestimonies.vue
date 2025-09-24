@@ -13,7 +13,7 @@
       <Testimony
         v-for="(testimony, index) in testimoniesToDisplay"
         :key="testimony.slug"
-        :class="[index === testimoniesToDisplay.length - 1 ? 'fr-mt-4w remove-mobile-border' : 'fr-mt-4w fr-mb-6w']"
+        :class="[index === testimoniesToDisplay.length - 1 ? 'fr-mt-4w fr-bg-sm--none' : 'fr-mt-4w fr-mb-6w']"
         :testimony="testimony"
       />
     </template>
@@ -29,20 +29,16 @@ const props = defineProps<{
 }>()
 
 const testimoniesToDisplay = computed(() => {
-  if (!props.project) return []
+  if (!props.project) {
+    return []
+  }
   return testimonies.filter((testimony) => testimony.projects?.includes(props.project!.id))
 })
 
 const hasTestimony = computed(() => {
-  if (!props.project) return false
+  if (!props.project) {
+    return false
+  }
   return testimonies.some((testimony) => testimony.projects?.includes(props.project!.id))
 })
 </script>
-
-<style scoped lang="scss">
-@media (width <= 767.98px) {
-  .remove-mobile-border {
-    background-image: none !important;
-  }
-}
-</style>

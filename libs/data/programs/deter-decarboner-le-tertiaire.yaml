@@ -1,0 +1,141 @@
+titre: DÉTER - DÉcarboner le TERtiaire
+promesse: Réduisez la consommation énergétique de vos bâtiments du tertiaire
+description: >-
+  Cet appel à projet finance les études de faisabilité et les et investissements
+  devant conduire à une réduction de la consommation énergétique dans des
+  bâtiments à usage tertiaire, principalement grâce à :
+
+
+  - la production et l’utilisation de chaleur renouvelable
+
+  - l’amélioration de l’efficacité énergétique.
+description longue: >-
+  Le dispositif a pour objectif de promouvoir la production et l’utilisation de
+  chaleur renouvelable et l’amélioration de l’efficacité énergétique, notamment
+  par le biais d’aides issues du dispositif Fonds Chaleur opéré par l’ADEME.
+
+
+  L'AAP donnera lieu à des conventions d'aide groupées qui lieront le
+  bénéficiaire et l’ADEME, et assureront des aides :
+
+
+  - Aux études de faisabilité de production de chaleur EnR&R (Énergies
+  renouvelables et de récupération) éligibles au Fonds Chaleur.
+
+  - Aux investissements à engager pour la production de cette chaleur.
+
+
+  En contrepartie de l’aide apportée, le bénéficiaire sera soumis à des
+  exigences d’efficacité énergétique s’inscrivant dans une logique
+  d’accélération des objectifs du DEET et de décarbonation de la chaleur. En
+  particulier, le dispositif doit promouvoir une démarche conjuguée d’efficacité
+  énergétique et de couverture par des EnR&R des besoins de chaleur du candidat,
+  sur le périmètre identifié.
+
+
+  Cet engagement se matérialisera par les deux objectifs suivants :
+
+
+  - Objectif d’efficacité énergétique : sur l’ensemble des sites identifiés, les
+  actions conjuguées d’efficacité et d’approvisionnement énergétiques, tous
+  usages confondus, doivent conduire à une baisse globale des consommations, en
+  énergie finale, d’au moins 50 % à l’issue des conventions.
+
+  - Objectif de couverture EnR&R : il est attendu une couverture minimum de 65 %
+  des besoins de chaleur de l’ensemble des bâtiments identifiés par des EnR&R.
+
+
+  Le bilan énergétique de chaque site sera établi selon le périmètre consigné
+  sur la plateforme OPERAT.
+
+
+  Deux dates de relèves auront lieu pour instruire les dossiers de demande
+  d'aide :
+
+
+  - Une première relève le 22 mai 2025.
+
+  - Et une deuxième le 16 octobre 2025.
+
+
+  Des échanges préalables avec l'ADEME sont recommandés avant tout dépôt de
+  demande d'aide.
+début de validité: 06/02/2025
+fin de validité: 12/02/2026
+illustration: images/TEE_ampoule.png
+opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000790
+url: https://agir.ademe.fr/aides-financieres/aap/deter-decarboner-le-tertiaire-0
+nature de l'aide: financement
+montant du financement: 1,5 M€ d’aide maximale par site, selon la nature du projet
+objectifs:
+  - description: >-
+      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
+      l’ADEME.
+    liens:
+      - lien: >-
+          https://agir.ademe.fr/sites/default/files/AAP%20DETER%20-%20Cahier%20des%20Charges%20-%20Octobre%202025.docx
+        texte: Vérifier mon éligibilité
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/user/register
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre demande d'aide : informations administratives, description
+      du projet, détails techniques et financiers, étude de faisabilité, etc. À
+      ce stade, votre investissement ne doit pas avoir été réalisé !
+    liens:
+      - lien: >-
+          https://agir.ademe.fr/aides-financieres/aap/deter-decarboner-le-tertiaire-0
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez vos investissements, une fois reçu le paiement de l'ADEME.
+  - description: Faites un bilan des performances de votre projet et informez-en l'ADEME.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Bâtiments à usage tertiaire
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Le périmètre concerné doit inclure au moins cinq sites (au maximum vingt)
+      se situant dans au moins deux régions administratives différentes.
+    - >-
+      La délimitation de chaque site (au sens de sa consommation énergétique)
+      doit correspondre à celle soumise au DEET.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique
