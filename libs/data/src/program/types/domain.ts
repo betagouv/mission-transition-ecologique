@@ -1,6 +1,7 @@
 import { ProgramType } from './shared'
 import { BaserowSectors, BaserowMetaData } from '../../common/baserow/types'
 import { Theme } from '../../theme/types/domain'
+import { Contact } from '../../common/types'
 
 export interface DataProgram extends BaserowSectors, BaserowMetaData {
   id: number
@@ -42,6 +43,7 @@ export interface DataProgram extends BaserowSectors, BaserowMetaData {
   conditionalData?: ConditionalValues[]
   'redirection-vers': number[]
   tech: string
+  internalContact?: Contact
 }
 
 export enum Publicodes {
@@ -133,4 +135,10 @@ interface ModifiableFields {
   "Durée de l'aide": string
   'Eligibilité taille': string
   'Eligibilité Spécifique': string
+}
+
+export interface MailSenderInterface {
+  sendInitialMail(program: DataProgram): Promise<void>
+  sendPeriodicMail(program: DataProgram): Promise<void>
+  sendEolMail(program: DataProgram): Promise<void>
 }

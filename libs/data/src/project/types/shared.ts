@@ -15,7 +15,7 @@ export interface ProjectType {
   mainTheme: ThemeId
   programs: string[]
   linkedProjects: ProjectId[]
-  priority: number
+  priority: ProjectPriority
   highlightPriority: number | null
   sectors: string[]
   metaTitle?: string
@@ -23,3 +23,8 @@ export interface ProjectType {
 }
 
 export type ProjectId = (typeof projects)[number]['id']
+
+export interface ProjectPriority {
+  default: number
+  [key: string]: number
+}
