@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import ConfigBaserow from '../../configBaserow'
+import { ReplacerBaserow } from './replacerBaserow'
 import { BaserowData, Id, LinkObject } from './types'
 
 dotenv.config()
@@ -70,18 +71,12 @@ export abstract class AbstractBaserow {
     return new Promise((resolve) => setTimeout(resolve, ms))
   }
 
-  protected _replaceLinkObjectByTableData<T extends Id>(links: LinkObject[], referencedTableData: T[]): T[] {
-    if (!links) {
-      return []
-    }
-
-    const tableData = links.map((link) => referencedTableData.find((object) => link.id === object.id))
-
-    if (tableData.includes(undefined)) {
-      console.warn("warning, a baserow link isn't defined, it should never happen", links)
-    }
-
-    return tableData.filter((item) => item !== undefined) as T[]
+  protected _replaceLinkObjectByTableData<T extends Id, O extends boolean = false>(
+    links: LinkObject[],
+    referencedTableData: T[],
+    one?: O
+  ): O extends true ? T | undefined : T[] {
+    return ReplacerBaserow.replaceLinkObjectByTableData<T, O>(links, referencedTableData, one)
   }
 
   protected async _patchRow<T>(tableId: number, rowId: number, data: Partial<T>): Promise<void> {

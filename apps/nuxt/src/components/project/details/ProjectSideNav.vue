@@ -22,7 +22,10 @@
 <script setup lang="ts">
 import { ProjectType } from '@/types'
 import { Scroll } from '@/tools/scroll'
-import { testimonies } from '@tee/data/static'
+import { Testimony } from '@/types'
+
+const { default: testimoniesJson } = await import('@/public/json/testimony/testimonies.json')
+const testimonies = testimoniesJson as unknown as Testimony[]
 
 interface Props {
   project: ProjectType

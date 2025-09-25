@@ -1,5 +1,6 @@
 export { default as ConfigCommon } from './config/configCommon'
 export * from './config/types'
+export * from './color/color'
 export * from './establishment'
 export * from './geoSearch/types'
 export * from './opportunity'
