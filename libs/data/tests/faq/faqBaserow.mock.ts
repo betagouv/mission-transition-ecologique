@@ -9,4 +9,8 @@ export class FaqBaserowMock implements FaqBaserowInterface {
       baserowFaqSections: faqSection.faqSectionBaserow as unknown as BaserowFaqSection[]
     }
   }
+
+  getProjectsFaqs(): Promise<{ baserowFaqs: BaserowFaq[]; baserowFaqSections: BaserowFaqSection[] }> {
+    return Promise.resolve({ baserowFaqSections: [], baserowFaqs: [] })
+  }
 }

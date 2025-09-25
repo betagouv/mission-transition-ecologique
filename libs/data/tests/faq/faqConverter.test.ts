@@ -1,5 +1,5 @@
 import { describe, test, expect, beforeEach, vi } from 'vitest'
-import { LoggerInterface, LogLevel } from '../../src/common/logger/types'
+import { LoggerInterface, LoggerType, LogLevel } from '../../src/common/logger/types'
 import { FaqConverter } from '../../src/faq/faqConverter'
 import { FaqConverterInterface } from '../../src/faq/types/domain'
 import { FaqPage } from '../../src/faq/types/shared'
@@ -140,10 +140,11 @@ describe('FaqConverter', () => {
       const result = faqConverter.toDomainByPages([unknownPageFaq], baserowFaqSections)
       expect(mockLogger.log).toHaveBeenCalledWith(
         LogLevel.Critic,
-        'Page de destination pour la question de FAQ non reconnue',
+        'FAQ non lié à une page statique ni à un projet',
         `FAQ ID Baserow: ${unknownPageFaq.id}`,
         unknownPageFaq.id,
-        unknownPageFaq.Page
+        unknownPageFaq.id,
+        LoggerType.Faq
       )
       expect(Object.keys(result)).toHaveLength(0)
     })
