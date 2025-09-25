@@ -61,8 +61,7 @@ export function makeMockProgram(overrides: Partial<DataProgram> = {}): DataProgr
     'QSanté humaine et action sociale': false,
     'RArts, spectacles et activités récréatives': false,
     'SAutres activités de services': false,
-    "TActivités des ménages en tant qu'employeurs, activités indifférenciées des ménages en tant que producteurs de biens et services pour usage propre":
-      false,
+    "TActivités des ménages en tant qu'employeurs, activités indifférenciées des ménages en tant que producteurs de biens et services pour usage propre": false,
     'UActivités extra-territoriales': false,
     'Meta Titre': '',
     'Meta Description': '',
