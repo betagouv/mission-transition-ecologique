@@ -3,9 +3,8 @@
     <h2
       class="fr-h5 fr-pt-3w"
       :class="`fr-faq--${faqItem.color}`"
-    >
-      {{ faqItem.title }}
-    </h2>
+      v-html="faqItem.title"
+    />
   </div>
   <div class="fr-col-12 fr-col-md-9 fr-col-justify-md--left fr-col-xl-10 fr-col-justify--center">
     <DsfrAccordionsGroup v-model="activeAccordion">
