@@ -54,6 +54,7 @@ export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
   'Mise En Avant': number | null
   'Titre - FAQ': string
   'redirection-vers': LinkObject[]
+  'Prios spécifiques': string
   Faq: LinkObject[]
 }
 
@@ -92,9 +93,11 @@ export interface Program
       | 'Zones géographiques'
       | 'Thèmes Ciblés'
       | 'redirection-vers'
+      | 'contact'
     >,
     BaserowSectors,
-    BaserowMetaData {
+    BaserowMetaData,
+    ProgramTechSerialized {
   Statuts: LinkObject[]
   "Nature de l'aide": LinkObject
   'Opérateur de contact': LinkObject[]
@@ -103,6 +106,11 @@ export interface Program
   'Zones géographiques': LinkObject[]
   'Thèmes Ciblés': LinkObject[]
   'redirection-vers': LinkObject[]
+  'Référent Interne': LinkObject[]
+}
+
+export interface ProgramTechSerialized {
+  tech: string
 }
 
 export interface Operator {
@@ -194,9 +202,9 @@ export interface BaserowTraining extends Id {
   'Nombre de jours': string
 }
 
-export interface ProgramTechField {
-  prod_release_date: string
-  email_enable: boolean // TODO
+export interface ProgramTechnicalInfo {
+  prod_release_date?: string
+  email_enable?: boolean
   last_mail_sent_date?: string
   eol_mail_sent_date?: string
 }
@@ -221,4 +229,9 @@ export interface FaqItemStructured extends BaserowFaqSection {
 
 export type FaqStructured = {
   [key in FaqPage | number]?: FaqItemStructured[]
+}
+
+export interface BaserowContact extends Id {
+  'Prénom NOM': string
+  Courriel: string
 }

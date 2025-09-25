@@ -6,6 +6,10 @@ export class ReplacerBaserow {
     referencedTableData: T[],
     one?: O
   ): O extends true ? T | undefined : T[] {
+    if (!links) {
+      return (one ? undefined : []) as O extends true ? T | undefined : T[]
+    }
+
     const tableData = links.map((link) => referencedTableData.find((object) => link.id === object.id))
 
     if (tableData.includes(undefined)) {

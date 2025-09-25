@@ -45,7 +45,9 @@
     "linkedProjects": [
       31
     ],
-    "priority": "40",
+    "priority": {
+      "default": 40
+    },
     "highlightPriority": "5",
     "sectors": [
       "A",
@@ -108,7 +110,9 @@
     "linkedProjects": [
       4
     ],
-    "priority": "220",
+    "priority": {
+      "default": 220
+    },
     "highlightPriority": "2",
     "sectors": [
       "A",
@@ -181,7 +185,9 @@
     "linkedProjects": [
       4
     ],
-    "priority": "340",
+    "priority": {
+      "default": 340
+    },
     "highlightPriority": "3",
     "sectors": [
       "A",
@@ -243,7 +249,9 @@
     "linkedProjects": [
       21
     ],
-    "priority": "100",
+    "priority": {
+      "default": 100
+    },
     "highlightPriority": "6",
     "sectors": [
       "A",
@@ -306,7 +314,9 @@
     "linkedProjects": [
       4
     ],
-    "priority": "400",
+    "priority": {
+      "default": 400
+    },
     "highlightPriority": "7",
     "sectors": [
       "A",
@@ -378,7 +388,9 @@
     "linkedProjects": [
       4
     ],
-    "priority": "900",
+    "priority": {
+      "default": 900
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -440,7 +452,9 @@
       28,
       31
     ],
-    "priority": "90",
+    "priority": {
+      "default": 90
+    },
     "highlightPriority": "8",
     "sectors": [
       "A",
@@ -516,7 +530,9 @@
     "linkedProjects": [
       4
     ],
-    "priority": "610",
+    "priority": {
+      "default": 610
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -584,7 +600,9 @@
     "linkedProjects": [
       4
     ],
-    "priority": "910",
+    "priority": {
+      "default": 910
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -658,7 +676,9 @@
       4,
       14
     ],
-    "priority": "320",
+    "priority": {
+      "default": 320
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -713,7 +733,9 @@
     "linkedProjects": [
       4
     ],
-    "priority": "980",
+    "priority": {
+      "default": 980
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -776,7 +798,10 @@
     "linkedProjects": [
       4
     ],
-    "priority": "950",
+    "priority": {
+      "default": 950,
+      "86.1": 45
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -831,7 +856,10 @@
     "linkedProjects": [
       4
     ],
-    "priority": "500",
+    "priority": {
+      "default": 500,
+      "A": 2
+    },
     "highlightPriority": null,
     "sectors": [
       "A"
@@ -881,7 +909,9 @@
     "linkedProjects": [
       4
     ],
-    "priority": "125",
+    "priority": {
+      "default": 125
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -965,7 +995,9 @@
       4,
       14
     ],
-    "priority": "150",
+    "priority": {
+      "default": 150
+    },
     "highlightPriority": "1",
     "sectors": [
       "A",
@@ -1038,7 +1070,9 @@
     "linkedProjects": [
       31
     ],
-    "priority": "50",
+    "priority": {
+      "default": 50
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1097,7 +1131,9 @@
     "linkedProjects": [
       16
     ],
-    "priority": "550",
+    "priority": {
+      "default": 550
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1162,7 +1198,9 @@
     "linkedProjects": [
       16
     ],
-    "priority": "190",
+    "priority": {
+      "default": 190
+    },
     "highlightPriority": "4",
     "sectors": [
       "A",
@@ -1223,7 +1261,9 @@
     "linkedProjects": [
       16
     ],
-    "priority": "140",
+    "priority": {
+      "default": 140
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1285,7 +1325,9 @@
     "linkedProjects": [
       31
     ],
-    "priority": "70",
+    "priority": {
+      "default": 70
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1343,7 +1385,9 @@
     "linkedProjects": [
       31
     ],
-    "priority": "60",
+    "priority": {
+      "default": 60
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1397,7 +1441,9 @@
     "linkedProjects": [
       36
     ],
-    "priority": "800",
+    "priority": {
+      "default": 800
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1458,7 +1504,9 @@
     "linkedProjects": [
       21
     ],
-    "priority": "180",
+    "priority": {
+      "default": 180
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1526,7 +1574,9 @@
     "linkedProjects": [
       21
     ],
-    "priority": "330",
+    "priority": {
+      "default": 330
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1580,7 +1630,9 @@
     "linkedProjects": [
       21
     ],
-    "priority": "440",
+    "priority": {
+      "default": 440
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1640,7 +1692,9 @@
       "outils-pour-adaptation"
     ],
     "linkedProjects": [],
-    "priority": "20",
+    "priority": {
+      "default": 20
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1698,7 +1752,9 @@
     "linkedProjects": [
       30
     ],
-    "priority": "170",
+    "priority": {
+      "default": 170
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1764,7 +1820,9 @@
     "linkedProjects": [
       26
     ],
-    "priority": "160",
+    "priority": {
+      "default": 160
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1817,7 +1875,9 @@
       "credit-impot-innovation"
     ],
     "linkedProjects": [],
-    "priority": "890",
+    "priority": {
+      "default": 890
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1880,7 +1940,9 @@
     "linkedProjects": [
       31
     ],
-    "priority": "770",
+    "priority": {
+      "default": 770
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -1943,7 +2005,9 @@
       "camping-independant-bfc"
     ],
     "linkedProjects": [],
-    "priority": "10",
+    "priority": {
+      "default": 10
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2009,7 +2073,9 @@
     "linkedProjects": [
       1
     ],
-    "priority": "660",
+    "priority": {
+      "default": 660
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2077,7 +2143,9 @@
       26,
       144
     ],
-    "priority": "310",
+    "priority": {
+      "default": 310
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2143,7 +2211,9 @@
     "linkedProjects": [
       31
     ],
-    "priority": "380",
+    "priority": {
+      "default": 380
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2220,7 +2290,9 @@
     "linkedProjects": [
       31
     ],
-    "priority": "99",
+    "priority": {
+      "default": 99
+    },
     "highlightPriority": null,
     "sectors": [
       "B",
@@ -2284,7 +2356,9 @@
     "linkedProjects": [
       20
     ],
-    "priority": "290",
+    "priority": {
+      "default": 290
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2350,7 +2424,9 @@
     "linkedProjects": [
       20
     ],
-    "priority": "120",
+    "priority": {
+      "default": 120
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2400,7 +2476,9 @@
       30,
       31
     ],
-    "priority": "85",
+    "priority": {
+      "default": 85
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2460,7 +2538,12 @@
     "linkedProjects": [
       4
     ],
-    "priority": "191",
+    "priority": {
+      "default": 191,
+      "I": 6,
+      "Q": 2,
+      "T": 1
+    },
     "highlightPriority": null,
     "sectors": [
       "I",
@@ -2498,7 +2581,10 @@
     "linkedProjects": [
       31
     ],
-    "priority": "240",
+    "priority": {
+      "default": 240,
+      "I": 3
+    },
     "highlightPriority": null,
     "sectors": [
       "I"
@@ -2535,7 +2621,10 @@
     "linkedProjects": [
       4
     ],
-    "priority": "210",
+    "priority": {
+      "default": 210,
+      "I": 2
+    },
     "highlightPriority": null,
     "sectors": [
       "I"
@@ -2573,7 +2662,9 @@
     "linkedProjects": [
       20
     ],
-    "priority": "120",
+    "priority": {
+      "default": 120
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2630,7 +2721,9 @@
     "linkedProjects": [
       33
     ],
-    "priority": "230",
+    "priority": {
+      "default": 230
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2689,7 +2782,9 @@
       14,
       33
     ],
-    "priority": "130",
+    "priority": {
+      "default": 130
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2743,7 +2838,9 @@
     "linkedProjects": [
       16
     ],
-    "priority": "250",
+    "priority": {
+      "default": 250
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2809,7 +2906,9 @@
     "linkedProjects": [
       33
     ],
-    "priority": "65",
+    "priority": {
+      "default": 65
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2879,7 +2978,9 @@
       4,
       14
     ],
-    "priority": "135",
+    "priority": {
+      "default": 135
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2936,7 +3037,9 @@
     "linkedProjects": [
       16
     ],
-    "priority": "345",
+    "priority": {
+      "default": 345
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -2987,7 +3090,13 @@
       20,
       144
     ],
-    "priority": "325",
+    "priority": {
+      "default": 325,
+      "A": 7,
+      "F": 3,
+      "N": 1,
+      "O": 1
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3026,7 +3135,9 @@
     "linkedProjects": [
       31
     ],
-    "priority": "380",
+    "priority": {
+      "default": 380
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3078,7 +3189,10 @@
     "linkedProjects": [
       26
     ],
-    "priority": "80",
+    "priority": {
+      "default": 80,
+      "I": 1
+    },
     "highlightPriority": null,
     "sectors": [
       "I"
@@ -3111,7 +3225,9 @@
     "linkedProjects": [
       4
     ],
-    "priority": "512",
+    "priority": {
+      "default": 512
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3150,7 +3266,9 @@
     "linkedProjects": [
       33
     ],
-    "priority": "217",
+    "priority": {
+      "default": 217
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3202,7 +3320,9 @@
     "linkedProjects": [
       16
     ],
-    "priority": "260",
+    "priority": {
+      "default": 260
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3253,7 +3373,12 @@
       4,
       21
     ],
-    "priority": "905",
+    "priority": {
+      "default": 905,
+      "A": 6,
+      "B": 4,
+      "D": 1
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3284,7 +3409,9 @@
     "linkedProjects": [
       4
     ],
-    "priority": "427",
+    "priority": {
+      "default": 427
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3332,7 +3459,9 @@
     "linkedProjects": [
       16
     ],
-    "priority": "95",
+    "priority": {
+      "default": 95
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3383,7 +3512,10 @@
       203,
       632
     ],
-    "priority": "412",
+    "priority": {
+      "default": 412,
+      "A": 1
+    },
     "highlightPriority": null,
     "sectors": [
       "A"
@@ -3415,7 +3547,10 @@
     "linkedProjects": [
       567
     ],
-    "priority": "511",
+    "priority": {
+      "default": 511,
+      "A": 3
+    },
     "highlightPriority": null,
     "sectors": [
       "A"
@@ -3441,7 +3576,10 @@
     "linkedProjects": [
       21
     ],
-    "priority": "240",
+    "priority": {
+      "default": 240,
+      "I": 4
+    },
     "highlightPriority": null,
     "sectors": [
       "I"
@@ -3465,7 +3603,9 @@
       "programme-synergies-durables"
     ],
     "linkedProjects": [],
-    "priority": "330",
+    "priority": {
+      "default": 330
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3516,7 +3656,9 @@
     "linkedProjects": [
       36
     ],
-    "priority": "245",
+    "priority": {
+      "default": 245
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3563,7 +3705,9 @@
     "linkedProjects": [
       16
     ],
-    "priority": "200",
+    "priority": {
+      "default": 200
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3617,7 +3761,11 @@
     "linkedProjects": [
       16
     ],
-    "priority": "880",
+    "priority": {
+      "default": 880,
+      "B": 2,
+      "H": 5
+    },
     "highlightPriority": null,
     "sectors": [
       "B",
@@ -3644,7 +3792,9 @@
       "etude-friches-polluees"
     ],
     "linkedProjects": [],
-    "priority": "470",
+    "priority": {
+      "default": 470
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3680,7 +3830,11 @@
       16,
       997
     ],
-    "priority": "230",
+    "priority": {
+      "default": 230,
+      "G": 1,
+      "H": 3
+    },
     "highlightPriority": null,
     "sectors": [
       "G",
@@ -3714,7 +3868,9 @@
       26,
       731
     ],
-    "priority": "219",
+    "priority": {
+      "default": 219
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3758,7 +3914,9 @@
       "programme-synergies-durables"
     ],
     "linkedProjects": [],
-    "priority": "105",
+    "priority": {
+      "default": 105
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3803,7 +3961,9 @@
     "linkedProjects": [
       16
     ],
-    "priority": "195",
+    "priority": {
+      "default": 195
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3851,7 +4011,10 @@
     "linkedProjects": [
       16
     ],
-    "priority": "253",
+    "priority": {
+      "default": 253,
+      "H": 1
+    },
     "highlightPriority": null,
     "sectors": [
       "H"
@@ -3881,7 +4044,9 @@
     "linkedProjects": [
       995
     ],
-    "priority": "865",
+    "priority": {
+      "default": 865
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -3914,7 +4079,11 @@
       "booster-transformation-rev-3"
     ],
     "linkedProjects": [],
-    "priority": "750",
+    "priority": {
+      "default": 750,
+      "B": 1,
+      "H": 4
+    },
     "highlightPriority": null,
     "sectors": [
       "B",
@@ -3942,7 +4111,10 @@
     "linkedProjects": [
       16
     ],
-    "priority": "260",
+    "priority": {
+      "default": 260,
+      "H": 2
+    },
     "highlightPriority": null,
     "sectors": [
       "H"
@@ -3972,7 +4144,9 @@
     "linkedProjects": [
       929
     ],
-    "priority": "106",
+    "priority": {
+      "default": 106
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -4019,7 +4193,11 @@
       30,
       1028
     ],
-    "priority": "122",
+    "priority": {
+      "default": 122,
+      "I": 5,
+      "Q": 1
+    },
     "highlightPriority": null,
     "sectors": [
       "I",
@@ -4046,7 +4224,12 @@
     "linkedProjects": [
       4
     ],
-    "priority": "360",
+    "priority": {
+      "default": 360,
+      "B": 3,
+      "C": 1,
+      "F": 1
+    },
     "highlightPriority": null,
     "sectors": [
       "B",
@@ -4073,7 +4256,14 @@
       "decarb-flash-2025-2027"
     ],
     "linkedProjects": [],
-    "priority": "630",
+    "priority": {
+      "default": 630,
+      "B": 5,
+      "C": 4,
+      "D": 2,
+      "E": 2,
+      "F": 4
+    },
     "highlightPriority": null,
     "sectors": [
       "B",
@@ -4113,7 +4303,9 @@
     "linkedProjects": [
       3
     ],
-    "priority": "427",
+    "priority": {
+      "default": 427
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -4143,7 +4335,12 @@
     "mainTheme": "waste",
     "programs": [],
     "linkedProjects": [],
-    "priority": "720",
+    "priority": {
+      "default": 720,
+      "A": 5,
+      "E": 1,
+      "I": 8
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -4175,7 +4372,12 @@
     "linkedProjects": [
       21
     ],
-    "priority": "672",
+    "priority": {
+      "default": 672,
+      "A": 4,
+      "C": 2,
+      "I": 7
+    },
     "highlightPriority": null,
     "sectors": [
       "A",
@@ -4211,7 +4413,13 @@
     "linkedProjects": [
       36
     ],
-    "priority": "212",
+    "priority": {
+      "default": 212,
+      "C": 3,
+      "F": 2,
+      "G": 2,
+      "H": 6
+    },
     "highlightPriority": null,
     "sectors": [
       "C",
@@ -4240,7 +4448,9 @@
     "linkedProjects": [
       998
     ],
-    "priority": "272",
+    "priority": {
+      "default": 272
+    },
     "highlightPriority": null,
     "sectors": [
       "A",

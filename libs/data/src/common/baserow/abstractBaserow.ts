@@ -92,7 +92,7 @@ export abstract class AbstractBaserow {
     }
   }
 
-  protected async _createRow(tableId: number, data: Record<string, unknown>): Promise<void> {
+  protected async _createRow<T>(tableId: number, data: Partial<T>): Promise<void> {
     try {
       await this._axios.post(`${this._url}/${tableId}/?user_field_names=true`, data)
     } catch (error) {
