@@ -235,3 +235,9 @@ export interface BaserowContact extends Id {
   'Prénom NOM': string
   Courriel: string
 }
+
+export interface BaserowFilter {
+  filter_type: 'OR' | 'AND'
+  filters: { type: string; field: string; value: string | number }[]
+  groups: []
+}

@@ -1,23 +1,27 @@
+import { BaserowFilter } from './types'
+
 export class FilterBaserow {
-  private _filters: Record<any, any>
+  private _filters: BaserowFilter
 
   constructor(private _type: 'OR' | 'AND') {
-    this._filters = { filter_type: this._type, filters: [] }
+    this._filters = { filter_type: this._type, filters: [], groups: [] }
   }
 
-  get(): Record<any, any> {
-    return this._filters
+  get(): { filters: string } {
+    return { filters: JSON.stringify(this._filters) }
   }
 
   withNotEmpty(fieldName: string): FilterBaserow {
-    this._filters = { ...this._filters, ...{ filters: { type: 'not_empty', field: fieldName, value: '' } } }
-
+    this._addFilter('not_empty', fieldName)
     return this
   }
 
   withIsActive(fieldName: string): FilterBaserow {
-    this._filters = { ...this._filters, ...{ filters: { type: 'boolean', field: fieldName, value: 1 } } }
-
+    this._addFilter('boolean', fieldName, 1)
     return this
+  }
+
+  private _addFilter(type: string, field: string, value: string | number = ''): void {
+    this._filters.filters.push({ type, field, value })
   }
 }

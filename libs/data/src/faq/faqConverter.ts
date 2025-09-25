@@ -1,7 +1,7 @@
 import { Color } from '@tee/common'
 import { ReplacerBaserow } from '../common/baserow/replacerBaserow'
 import { BaserowFaq, BaserowFaqSection, FaqItemStructured, FaqStructured } from '../common/baserow/types'
-import { LoggerInterface, LogLevel } from '../common/logger/types'
+import { LoggerInterface, LoggerType, LogLevel } from '../common/logger/types'
 import { DataProject } from '../project/types/domain'
 import { FaqConverterInterface, FaqType } from './types/domain'
 import { FaqPage, FaqSectionType, QuestionItem } from './types/shared'
@@ -174,7 +174,7 @@ export class FaqConverter implements FaqConverterInterface {
 
   private _isFaqProject(project: DataProject | undefined, baserowFaq: BaserowFaq): project is DataProject {
     if (!project) {
-      if (baserowFaq.Page) {
+      if (!baserowFaq.Page) {
         this._logNotLinkedToPageOrProject(baserowFaq)
       }
 
@@ -202,6 +202,6 @@ export class FaqConverter implements FaqConverterInterface {
   }
 
   private _log(message: string, baserowFaq: BaserowFaq) {
-    this._logger.log(LogLevel.Critic, message, `FAQ ID Baserow: ${baserowFaq.id}`, baserowFaq.id, baserowFaq.id)
+    this._logger.log(LogLevel.Critic, message, `FAQ ID Baserow: ${baserowFaq.id}`, baserowFaq.id, baserowFaq.id, LoggerType.Faq)
   }
 }
