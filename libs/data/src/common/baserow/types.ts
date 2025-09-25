@@ -51,11 +51,11 @@ export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
   'Thématiques secondaires': LinkObject[]
   Dispositifs: LinkObject[]
   Prio: number
+  'Prios spécifiques': string
   'Mise En Avant': number | null
   'Titre - FAQ': string
-  'redirection-vers': LinkObject[]
-  'Prios spécifiques': string
   Faq: LinkObject[]
+  'redirection-vers': LinkObject[]
 }
 
 export interface LinkObject extends Id {

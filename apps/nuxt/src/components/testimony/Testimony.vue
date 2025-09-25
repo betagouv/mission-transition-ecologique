@@ -26,38 +26,20 @@
         <!-- L’alternative de l’image (attribut alt) doit rester vide car l’image est illustrative et ne doit pas être restituée aux technologies d’assistance (DSFR guidance)-->
       </div>
     </figcaption>
-    <div class="fr-hidden fr-unhidden-md">
-      <ul class="fr-grid-row fr-grid-row--left fr-raw-list fr-mt-2v">
-        <li
-          v-for="linkedProject in linkedProjectsTags"
-          :key="linkedProject.id"
-          class="fr-mr-2v"
-        >
-          <TeeProjectButton
-            class="fr-my-1-5v"
-            :project="linkedProject"
-            :color="Color.blue"
-            size="sm"
-          />
-        </li>
-      </ul>
-    </div>
-    <div class="fr-hidden-md fr-mt-4v fr-container-fluid">
-      <ul class="fr-grid-row fr-raw-list fr-ml-0">
-        <li
-          v-for="linkedProject in linkedProjectsTags"
-          :key="linkedProject.id"
-          class="fr-mr-2v"
-        >
-          <TeeProjectButton
-            class="fr-my-1-5v"
-            :project="linkedProject"
-            :color="Color.blue"
-            size="sm"
-          />
-        </li>
-      </ul>
-    </div>
+    <ul class="fr-grid-row fr-grid-row--left fr-raw-list fr-mt-md-2v">
+      <li
+        v-for="linkedProject in linkedProjectsTags"
+        :key="linkedProject.id"
+        class="fr-mr-2v"
+      >
+        <TeeProjectButton
+          class="fr-my-1-5v"
+          :project="linkedProject"
+          :color="Color.blue"
+          size="sm"
+        />
+      </li>
+    </ul>
   </figure>
 </template>
 

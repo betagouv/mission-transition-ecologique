@@ -48,7 +48,7 @@ export abstract class AbstractBaserow {
       let next = response.data.next
       while (next) {
         const response = await this._axios.get(next, {
-          params: filters ? filters : {}
+          params: filters ? filters.get() : {}
         })
         await this._delay(100)
         results = results.concat(response.data.results)
@@ -84,7 +84,7 @@ export abstract class AbstractBaserow {
     return ReplacerBaserow.linkObjectByTableData<T, O>(links, referencedTableData, one)
   }
 
-  protected async _patchRow(tableId: number, rowId: number, data: Record<string, unknown>): Promise<void> {
+  protected async _patchRow<T>(tableId: number, rowId: number, data: Partial<T>): Promise<void> {
     try {
       await this._axios.patch(`${this._url}/${tableId}/${rowId}/?user_field_names=true`, data)
     } catch (error) {

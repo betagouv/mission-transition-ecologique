@@ -138,34 +138,6 @@ export class FaqConverter implements FaqConverterInterface {
     }
   }
 
-  private _buildDomainFaqs(faqsStructured: FaqStructured): FaqType {
-    const faqs: FaqType = {}
-    for (const page in faqsStructured) {
-      const faqItemsStructured = faqsStructured[page as FaqPage]
-      if (!faqItemsStructured) {
-        continue
-      }
-
-      if (!faqs[page as FaqPage]) {
-        faqs[page as FaqPage] = []
-      }
-
-      for (const index in faqItemsStructured) {
-        if (!faqItemsStructured[index]) {
-          continue
-        }
-
-        const section = this._mappedFaqSection(faqItemsStructured[index])
-        faqs[page as FaqPage]?.push(section)
-        for (const faq of faqItemsStructured[index].faqs) {
-          section.questions.push(this._mappedFaq(faq))
-        }
-      }
-    }
-
-    return faqs
-  }
-
   private _mappedFaqSection(faqSection: FaqItemStructured): FaqSectionType {
     return {
       title: faqSection.Titre,

@@ -4,7 +4,7 @@
     class="fr-py-5v fr-border-b--grey--light"
     :title="project.titleLinkedProjects ?? Translation.t('project.linkedProjects.title')"
     container-from="md"
-    title-class="fr-h4 fr-mb-2v"
+    title-class="fr-h4"
     title-tag="h2"
   >
     <template #content>
