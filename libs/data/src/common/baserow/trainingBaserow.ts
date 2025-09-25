@@ -40,9 +40,9 @@ export class TrainingBaserow extends AbstractBaserow {
     }
 
     if (match && match.id) {
-      await this._patchRow(this._tableId, match.id, payload)
+      await this._patchRow<BaserowTraining>(this._tableId, match.id, payload)
     } else {
-      await this._createRow(this._tableId, payload)
+      await this._createRow<BaserowTraining>(this._tableId, payload)
     }
   }
 }

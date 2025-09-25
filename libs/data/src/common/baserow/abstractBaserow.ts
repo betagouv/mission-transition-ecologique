@@ -71,6 +71,10 @@ export abstract class AbstractBaserow {
   }
 
   protected _replaceLinkObjectByTableData<T extends Id>(links: LinkObject[], referencedTableData: T[]): T[] {
+    if (!links) {
+      return []
+    }
+
     const tableData = links.map((link) => referencedTableData.find((object) => link.id === object.id))
 
     if (tableData.includes(undefined)) {
@@ -80,7 +84,7 @@ export abstract class AbstractBaserow {
     return tableData.filter((item) => item !== undefined) as T[]
   }
 
-  protected async _patchRow(tableId: number, rowId: number, data: Record<string, unknown>): Promise<void> {
+  protected async _patchRow<T>(tableId: number, rowId: number, data: Partial<T>): Promise<void> {
     try {
       await this._axios.patch(`${this._url}/${tableId}/${rowId}/?user_field_names=true`, data)
     } catch (error) {
@@ -88,7 +92,7 @@ export abstract class AbstractBaserow {
     }
   }
 
-  protected async _createRow(tableId: number, data: Record<string, unknown>): Promise<void> {
+  protected async _createRow<T>(tableId: number, data: Partial<T>): Promise<void> {
     try {
       await this._axios.post(`${this._url}/${tableId}/?user_field_names=true`, data)
     } catch (error) {

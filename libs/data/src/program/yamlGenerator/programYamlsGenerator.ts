@@ -24,13 +24,13 @@ export class ProgramYamlsGenerator {
     // on the first run use getPrograms(false) then for all following call use getPrograms(true)
     const programs = await new ProgramBaserow().getPrograms(false)
     for (const program of programs) {
-      if (ProgramUtils.isInProd(program)) {
+      if (ProgramUtils.isFlaggedForProd(program)) {
         await this._createProgramYaml(program)
       }
     }
 
     const redirectWatchedPrograms = programs.filter((program) => {
-      return ProgramUtils.isInProd(program) || program.Statuts.includes(Status.Replaced)
+      return ProgramUtils.isFlaggedForProd(program) || program.Statuts.includes(Status.Replaced)
     })
     new Redirect(this._logger).updateProgramRedirects(redirectWatchedPrograms)
 
