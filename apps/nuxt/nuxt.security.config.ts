@@ -1,4 +1,4 @@
-import { SecurityHeaders, RateLimiter, ContentSecurityPolicyValue } from 'nuxt-security'
+import { SecurityHeaders, RateLimiter, ContentSecurityPolicyValue, XssValidator } from 'nuxt-security'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import Config from './src/config'
 
@@ -16,7 +16,8 @@ export class NuxtSecurityConfig {
         ...this._getDefaultContentSecurityPolicy(),
         'frame-ancestors': ["'self'"]
       },
-      crossOriginEmbedderPolicy: false
+      crossOriginEmbedderPolicy: false,
+      xFrameOptions: false
       // Missing headers:
       // 'X-Frame-Options': 'ALLOW-FROM https://conseillers-entreprises.service-public.fr',
       // 'Expect-CT': `default-src 'self' ${this._sentryData?.domain ? this._sentryData.domain : ''}; report-uri ${this._sentryData?.url};`
@@ -28,8 +29,7 @@ export class NuxtSecurityConfig {
       contentSecurityPolicy: {
         ...this._getDefaultContentSecurityPolicy(),
         'frame-ancestors': false
-      },
-      xFrameOptions: false
+      }
     }
   }
 
@@ -63,11 +63,19 @@ export class NuxtSecurityConfig {
       ],
       'base-uri': ["'self'"],
       'frame-src': ["'self'", this._baserowFormUrl, this._metabaseUrl],
+      'manifest-src': ["'self'"],
       'default-src': ["'none'"]
     }
   }
 
   static getRateLimiterConfig(): RateLimiter | undefined | false {
     return Config.isProduction() ? undefined : false
+  }
+
+  static getXssValidatorConfig(): XssValidator | undefined | false {
+    return {
+      // data already escaped on brevo. So no worries to disable escapedHtml on our backend (for now).
+      escapeHtml: false
+    }
   }
 }

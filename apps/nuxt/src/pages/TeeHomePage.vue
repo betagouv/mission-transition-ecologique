@@ -9,14 +9,31 @@
         <TeeCta />
       </div>
     </template>
+
     <div class="fr-container--fluid fr-container-md">
       <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-pt-6v">Quel est votre projet ?</h2>
       <TeeHomeProjectList :limit="filters[FilterItemKeys.themeType] === '' ? 8 : 9" />
-      <div class="fr-grid-row fr-grid-row--center">
-        <div class="fr-bg--blue--lightness fr-hidden fr-unhidden-sm fr-col-12 fr-py-0-5v fr-my-8v"></div>
-      </div>
-      <TeePromises />
     </div>
+    <TeeHomeTestimonies />
+    <div class="fr-container--fluid fr-container-md">
+      <TeePromises />
+      <div class="fr-bg--blue--lightness fr-col-12 fr-py-0-5v fr-mt-8v fr-mb-8v"></div>
+    </div>
+
+    <template #faq>
+      <div class="fr-container--fluid fr-container-md">
+        <div class="fr-container fr-px-md-0">
+          <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-pt-6v fr-mb-2v">Questions fréquentes</h2>
+          <p class="fr-text--blue-france fr-text-center fr-text-left-md fr-mb-8v">
+            Trouvez ici des réponses concrètes sur les aides, démarches et outils pour réussir votre transition écologique.
+          </p>
+        </div>
+        <LazyFaq
+          :faq-items="faqHomeJson"
+          class="fr-container fr-px-md-0"
+        />
+      </div>
+    </template>
   </Layout>
 </template>
 
@@ -24,9 +41,14 @@
 import { defineRouteRules } from '#imports'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { MetaRobots } from '@/tools/metaRobots'
-import { FilterItemKeys, RouteName } from '@/types'
+import Navigation from '@/tools/navigation'
+import { FaqSectionType, FilterItemKeys, RouteName } from '@/types'
 
 const { filters } = storeToRefs(useFiltersStore())
+const navigation = new Navigation()
+
+const { default: json } = await import('@/public/json/faq/home.json')
+const faqHomeJson = json as unknown as FaqSectionType[]
 
 definePageMeta({
   path: '/',
@@ -41,5 +63,13 @@ defineRouteRules({
   }
 })
 
-useHead(MetaRobots.indexFollow())
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.Homepage)
+    }
+  ],
+  ...MetaRobots.indexFollow()
+})
 </script>

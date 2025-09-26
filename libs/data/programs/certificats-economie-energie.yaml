@@ -1,0 +1,92 @@
+titre: Certificats d'économies d'énergie (CEE)
+promesse: Financez vos initiatives visant à améliorer l'efficacité énergétique
+description: >-
+  Les Certificats d’Économies d’Énergie (CEE) sont des aides financières
+  destinées aux entreprises qui réalisent des travaux améliorant leur
+  performance énergétique. Isolation, remplacement de chauffage, optimisation de
+  procédés… de nombreuses actions sont éligibles. \
+
+  Cette aide est versée par les fournisseurs d’énergie (électricité, gaz, fioul,
+  carburant…) dans le cadre d’une obligation légale. Le montant peut prendre la
+  forme d’une prime, d’une réduction directe sur votre devis ou d’un
+  remboursement après travaux, selon le partenaire choisi. \
+
+  Ce dispositif permet de réduire le coût de vos investissements tout en
+  diminuant durablement votre consommation d’énergie.
+description longue: >-
+  Tous les fournisseurs d'électricité, de gaz ou GPL, de fioul domestique, de
+  chaleur et de froid peuvent proposer une aide CEE pour la réalisation de
+  travaux d'économies d'énergie.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Ministère de la Transition Écologique
+contact question: formulaire
+url: https://www.service-public.fr/particuliers/vosdroits/F35584
+nature de l'aide: financement
+montant du financement: En fonction du projet
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Identifiez une opération éligible correspondant à votre activité, en
+      consultant les fiches par secteur disponibles sur le site du ministère de
+      la Transition écologique.
+    liens:
+      - lien: >-
+          https://www.ecologie.gouv.fr/politiques-publiques/operations-standardisees-deconomies-denergie
+        texte: Accéder à la liste des fiches
+  - description: >-
+      Contactez plusieurs fournisseurs d'énergie (délégataire) avant de
+      commencer les travaux afin de comparer leurs offres. Une fois que vous
+      avez choisi un délégataire et accepté son offre, signez une convention
+      CEE.
+  - description: >-
+      Faites réaliser les travaux par une entreprise certifiée RGE (Reconnu
+      Garant de l'environnement).
+    liens:
+      - lien: https://www.service-public.fr/particuliers/vosdroits/R39412
+        texte: Liste des entreprises certifiées RGE
+  - description: >-
+      Transmettez les justificatifs (factures, attestations, fiches
+      techniques...) au délégataire avec qui vous avez signé une convention CEE.
+  - description: >-
+      Recevez la prime CEE (par virement, par chèque, en bons d'achat, ou
+      déduite de votre facture).
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique

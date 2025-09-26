@@ -1,0 +1,64 @@
+[
+  {
+    "title": "Quels projets de transition écologique ?",
+    "color": "green",
+    "questions": [
+      {
+        "id": 61,
+        "question": "Qu’est-ce qu’un projet écologique pour une entreprise ?",
+        "answer": "Un projet écologique en entreprise désigne toute action mise en place pour limiter son impact sur l’environnement. Cela peut concerner la consommation d’énergie, la gestion des déchets, les achats, la mobilité, la biodiversité ou encore la fabrication des produits.\n\nIl n’y a pas de définition unique, un projet « vert » peut être très simple (installer un éclairage LED) ou plus structurant (rénover un bâtiment, repenser une chaîne logistique, adopter une démarche d’écoconception…).\n\nCes projets peuvent répondre à différents objectifs :\n\n- Réduire les consommations d’eau, d’énergie ou de matières premières.\n- Limiter les émissions de gaz à effet de serre.\n- Mieux gérer les déchets ou les emballages.\n- Proposer des produits ou services plus durables.\n\nPour transformer l’intention en action, ces projets peuvent être soutenus par des aides publiques, des formations ciblées, des subventions ou des diagnostics adaptés."
+      },
+      {
+        "id": 62,
+        "question": "En quoi consistent les projets de transition écologique référencés sur cet outil ?",
+        "answer": "Nous avons pris le temps d’écouter les chefs d’entreprise pour comprendre leurs besoins et leurs ambitions en matière de transition écologique.\n\nQu’il s’agisse d’installer des panneaux solaires, d’acheter de l’électroménager basse consommation, de mettre en place une flotte de vélos pour les salariés ou de lancer une politique RSE, la **diversité des projets** est grande — et elle s’enrichit chaque jour. Vous pouvez découvrir le [**catalogue complet ici**](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise).\n\nPour chaque projet, vous trouverez des **ressources utiles** ainsi que les **aides publiques correspondantes**. En renseignant le nom de votre entreprise ou votre SIRET, vous saurez rapidement si vous êtes éligible."
+      },
+      {
+        "id": 63,
+        "question": "À quoi correspond l'ordre de priorité ?",
+        "answer": "Pour chaque thématique (énergie, rénovation, mobilité, eau…), nous avons identifié **un projet à faire en priorité**.\n\nIl peut s’agir d’un plan d’action à mener après un diagnostic approfondi, ou d’un projet simple à mettre en œuvre permettant d’obtenir un **impact maximal avec un investissement minimal**.\n\nPar exemple, si vous souhaitez rafraîchir vos bâtiments en été, plutôt que de penser directement à l’installation d’une pompe à chaleur réversible ou à une rénovation thermique complète, nous vous conseillons de commencer par revoir vos [**ouvrants et ombrages**](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/ouvrants-ombrages) (volets, films solaires, pergolas, voiles d’ombrage…). C’est un projet peu coûteux qui peut avoir un effet très significatif."
+      }
+    ]
+  },
+  {
+    "title": "Quelles thématiques environne­mentales ?",
+    "color": "yellow",
+    "questions": [
+      {
+        "id": 64,
+        "question": "⚡️ Qu’est-ce que l’efficacité énergétique ?",
+        "answer": "L’efficacité énergétique mesure le rapport entre l’énergie consommée et le service rendu. On parle d’efficacité lorsqu’un équipement, un bâtiment ou un véhicule **consomme moins d’énergie pour un même usage** : chauffer une pièce, produire un bien, éclairer un espace, etc.\n\nRemplacer une vieille chaudière par un modèle à haut rendement, installer des ampoules LED ou améliorer l’isolation sont autant d’actions d’efficacité énergétique.\n\nÀ ne pas confondre avec la **sobriété énergétique**, qui vise à **réduire les besoins en énergie** en modifiant les comportements (chauffer un peu moins, optimiser les déplacements…).\n\n👉 En entreprise, **combiner efficacité et sobriété** permet **d’engager concrètement la transition énergétique** tout en réduisant durablement vos consommations, vos coûts et votre empreinte carbone."
+      },
+      {
+        "id": 65,
+        "question": "💧 Comment puis-je réduire la consommation d’eau dans mon entreprise ?",
+        "answer": "L’augmentation des coûts et la raréfaction de l’eau sont deux raisons essentielles pour réduire la consommation d’eau au sein d’une entreprise.\n\nEn entreprise, vous pouvez agir :\n\n- **En intérieur**, en installant des équipements économes (mitigeurs, double chasse d’eau) et en optimisant l’utilisation des machines (lave-linge, lave-vaisselle, etc.).\n- **Dans vos process de production**, en adaptant les procédés pour consommer moins d’eau, recycler l’eau utilisée ou utiliser des alternatives moins gourmandes.\n- **En extérieur**, en adoptant des systèmes d’arrosage économes (goutte-à-goutte, paillage), en récupérant l’eau de pluie, ou en installant des toilettes sèches.\n\nLes leviers d’action sont nombreux. Pour les identifier, vous pouvez commencer par effectuer un [**diagnostic ciblé** de votre consommation d'eau](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/plan-action-eau)."
+      },
+      {
+        "id": 66,
+        "question": "🏢 Qu’est-ce qu’un bâtiment basse consommation ?",
+        "answer": "Un bâtiment basse consommation (BBC) consomme **moins d’énergie qu’un bâtiment standard** **pour être chauffé, rafraîchi, ventilé et éclairé**. En France, il respecte généralement la norme RT 2012 ou RE2020, avec une consommation inférieure à **50 kWh/m²/an**.\n\nPour réduire la consommation énergétique d’un bâtiment, on peut agir sur :\n\n- son **isolation thermique** (par l’intérieur ou l’extérieur)\n- la **performance de ses équipements** (chauffage, ventilation, éclairage…)\n- sa **conception bioclimatique** (orientation, compacité, apports solaires…)\n- son **mode de chauffage** (pompe à chaleur, géothermie…)\n\n👉 Un [audit énergétique](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/audit-energetique) peut vous permettre de faire expertiser vos locaux professionnel afin de les rendre plus confortables, plus performants et de réaliser des économies durables dans le cadre d’une rénovation."
+      },
+      {
+        "id": 68,
+        "question": "🚲 Qu’est-ce que la mobilité douce en entreprise ?",
+        "answer": "La mobilité douce en entreprise désigne l’ensemble des **déplacements professionnels à faible impact environnemental** : marche, vélo, transports en commun, covoiturage, ou véhicules bas carbone.\n\nElle vise à **remplacer les transports polluants**, routiers ou aériens, par des solutions plus durables, parfois alimentées en énergie renouvelable (véhicules électriques, ferroviaire…).\n\nCela concerne :\n\n- les **trajets domicile-travail** de vos collaborateurs,\n- le **transport de marchandises**,\n- les **déplacements de vos fournisseurs**.\n\n👉 Le [**plan d’action mobilité**](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/plan-mobilite) est un outil clé pour organiser et développer la mobilité douce dans votre entreprise."
+      },
+      {
+        "id": 70,
+        "question": "🐝 Peut-on concilier développement économique et biodiversité ?",
+        "answer": "La biodiversité désigne l’ensemble des êtres vivants et les écosystèmes dans lesquels ils évoluent. Elle est essentielle pour l’agriculture, la santé, le climat, l’eau…\n\nLe modèle de développement économique actuel repose sur une **logique extractive et d’accroissement qui se heurte avec les limites planétaires**, limites que nous avons déjà en grande part dépassées. Il est donc impératif de repenser des modèles de développement économique qui ne supposent plus d’endommager de manière irrémédiable la biosphère, mais s’engagent dans une logique de **limitation des impacts négatifs, et plus encore de régénération du vivant et de la biodiversité**.\n\nLes entreprises font face à des défis climatiques et énergétiques majeurs. Il leur faut repenser leur feuille de route en tenant compte des questions environnementales et intégrer à leurs valeurs l’**adaptation**, la **résilience** et la **préservation des écosystèmes**."
+      },
+      {
+        "id": 69,
+        "question": "🧑‍🎓 Pourquoi votre stratégie RSE doit-elle intégrer la transition écologique ?",
+        "answer": "La transition écologique transforme en profondeur les façons de produire, de consommer et de travailler. Pour s’y engager durablement, les entreprises peuvent s’appuyer sur une démarche structurée : **la RSE (Responsabilité Sociétale des Entreprises).**\n\nLa RSE permet de mobiliser vos salariés autour d’actions concrètes, de faire évoluer les comportements et de donner du sens à votre démarche de transition.\n\nUne stratégie RSE, même à l’échelle d’une TPE ou PME, vous aide à :\n\n- **sensibiliser** aux enjeux écologiques et sociaux,\n- **former** vos équipes aux bons gestes,\n- **construire** un plan d’action réaliste et partagé.\n\nC’est un moyen simple de **faire de la transition écologique une valeur partagée**, intégrée à la culture de votre entreprise.\n\n💡 Envie de structurer votre démarche ? Découvrez le [projet “stratégie RSE”](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/strategie-rse)"
+      },
+      {
+        "id": 67,
+        "question": "🔁 Qu’est-ce que l’écoconception et pourquoi l’adopter en entreprise ?",
+        "answer": "L’écoconception consiste à **intégrer l’impact environnemental** dès la conception d’un produit ou d’un service, en considérant tout son cycle de vie : de l’**extraction des matériaux** à la **fabrication**, jusqu’à la **fin de vie**.\n\nCela peut se traduire par :\n\n- choisir des matériaux durables ou recyclés ;\n- repenser un emballage trop volumineux ou polluant ;\n- concevoir un produit réparable ou recyclable ;\n- optimiser les transports pour réduire l’empreinte carbone.\n\nLes produits écoconçus peuvent aussi obtenir un label, valorisant votre démarche auprès de vos clients et renforçant la confiance en votre entreprise.\n\n💡 Découvrez comment passer à l’action en consultant [la fiche “éco-conception”](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/ecoconception)"
+      }
+    ]
+  }
+]

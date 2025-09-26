@@ -9,6 +9,7 @@
         <div class="fr-grid-row fr-grid-row--middle">
           <img
             class="fr-col-2 fr-hidden fr-unhidden-sm"
+            loading="lazy"
             :src="img"
             :alt="altImg"
           />

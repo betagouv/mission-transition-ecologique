@@ -60,6 +60,7 @@ export interface DealAttributes {
 
 export interface DealUpdateAttributes {
   envoy: boolean
+  idce: string
 }
 
 export enum BrevoCompanySize {

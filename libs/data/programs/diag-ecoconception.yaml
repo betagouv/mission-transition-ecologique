@@ -1,14 +1,32 @@
 titre: Diag Ecoconception
 promesse: Évaluez la performance environnementale de vos produits, procédés et services
 description: >-
-  Bénéficiez des conseils d'un expert écoconception référencé par Bpifrance pour
-  évaluer la performance environnementale de vos produits, services et procédés
-  ou d'un accompagnement en vue de l'obtention de l'Ecolabel européen.
-aide temporairement indisponible: oui
+  Bénéficiez de l'accompagnement d’un expert écoconception référencé par
+  Bpifrance pour améliorer la performance environnementale de vos produits,
+  services et procédés. Vous serez soutenu pour :
+
+
+  - **Sensibiliser vos équipes** et former un référent en écoconception
+
+
+  - Réaliser une **évaluation environnementale** (analyse du cycle de vie)
+
+
+  - Identifier et chiffrer des l**eviers d’amélioration** sans transférer de
+  pollution
+
+
+  - Mettre en place un **plan d’action** technico-économique pour
+  l’éco-conception
+
+
+  - Préparer et accompagner votre démarche vers l’**obtention de l’Ecolabel
+  européen**
 illustration: images/TEE_eolienne.png
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - ADEME
+contact question: formulaire
 url: https://diag.bpifrance.fr/diag-eco-conception
 nature de l'aide: étude
 coût de l'accompagnement: >-
@@ -17,20 +35,21 @@ coût de l'accompagnement: >-
 durée de l'accompagnement: 18 jours de prestation répartis sur 6 à 8 mois
 objectifs:
   - description: >-
-      Sensibiliser les équipes internes à l’écoconception et former un référent
-      écoconception dans votre entreprise.
+      Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le
+      site de Bpifrance
+    liens:
+      - lien: https://diag.bpifrance.fr/contactez-nous
+        texte: Formulaire de contact
   - description: >-
-      Réaliser une évaluation environnementale basée sur l’analyse du cycle de
-      vie du produit, service ou procédé concerné.
+      Échangez avec un conseiller pour vérifier votre éligibilité et préparer
+      votre demande.
   - description: >-
-      Identifier, formaliser et chiffrer les leviers d’écoconception, en
-      maîtrisant le risque de transfert de pollution.
+      Définissez avec l’expert le périmètre du diagnostic, la méthode et le
+      calendrier.
+  - description: Formalisez votre demande et validez les modalités de l'accompagnement.
   - description: >-
-      Préparer la mise en œuvre d'un plan d’actions incluant un premier
-      dimensionnement technico-économique.
-  - description: >-
-      Accompagner à l'obtention de l'Ecolabel européen dans tout le processus de
-      certification.
+      Lancez le diagnostic avec l'expert écoconception sélectionné par
+      bpifrance.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 250 salariés

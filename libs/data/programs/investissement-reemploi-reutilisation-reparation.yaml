@@ -5,25 +5,33 @@ promesse: >-
 description: >-
   Vous disposez d’une étude pour votre projet dans le domaine du
   réemploi-réutilisation et réparation, et vous souhaitez investir pour le
-  mettre en œuvre ? Cette aide est destinée à subventionner les équipements
-  permettant la collecte préservante, le stockage, la traçabilité des flux, la
-  réparation et la remise en état des objets.
+  mettre en œuvre ? 
+
+
+  Cette aide est destinée à **subventionner les équipements permettant la
+  collecte préservante, le stockage, la traçabilité des flux, la réparation et
+  la remise en état des objets.**
 description longue: >-
   Pour bénéficier de cette aide, votre projet d'investissement doit être
   cohérent avec la stratégie territoriale d’économie circulaire et de prévention
   des déchets.
 
+
+  \
+
   La collecte préservante en amont et toute l’opération de remise en état puis
   de remise sur le marché doit pouvoir démontrer son efficacité :
 
-  • Par un gisement significatif de déchets évités ;
 
-  • Par un tonnage réemployé-réutilisé-réparé performant et significatif ;
+  - Par un gisement significatif de déchets évités ;
 
-  • Par un système de suivi, de comptage et de traçabilité des flux ;
+  - Par un tonnage réemployé-réutilisé-réparé performant et significatif ;
 
-  • Par des actions de communication et de sensibilisation à une consommation
+  - Par un système de suivi, de comptage et de traçabilité des flux ;
+
+  - Par des actions de communication et de sensibilisation à une consommation
   responsable et à la réduction des déchets accompagnant les investissements.
+
 
   La réalisation préalable d'une étude de faisabilité est une condition
   d'éligibilité.
@@ -31,6 +39,7 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000717
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-investissements-reemploi-reutilisation-reparation-hors-emballages
 nature de l'aide: financement

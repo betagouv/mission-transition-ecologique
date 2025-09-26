@@ -1,15 +1,20 @@
 titre: Étude "Récupération de chaleur fatale"
 promesse: Étudiez votre projet de récupération de chaleur perdue
 description: >-
-  Vous pensez avoir de la chaleur perdue mais ne savez pas comment la valoriser
-  ? Vous souhaitez mettre en place une installation de récupération de chaleur
-  fatale ? 
+  Vous pensez disposer de chaleur perdue sans savoir comment la valoriser ? Vous
+  souhaitez mettre en place une installation de récupération de chaleur fatale
+  ?\
 
-  L'ADEME vous apporte une aide pour une étude de faisabilité, étape nécessaire
-  avant tout investissement. Cette étude vous permettra d'identifier des
-  solutions techniques adaptées aux possibilités du site d’implantation, ainsi
-  que des solutions pour le montage financier, administratif et juridique de
-  votre investissement.
+  L’ADEME peut financer une **étude de faisabilité**, étape indispensable avant
+  tout investissement. Elle permet de :\
+
+  – **identifier les solutions techniques adaptées à votre site**,\
+
+  – **analyser les options de montage financier, administratif et juridique**.
+
+
+  Cet accompagnement vous aide à évaluer la pertinence de votre projet et à
+  prendre des décisions éclairées pour optimiser vos ressources énergétiques.
 description longue: >-
   La chaleur de récupération (ou chaleur fatale) est la chaleur générée par un
   procédé dont l’objectif premier n’est pas la production d’énergie, et qui de
@@ -29,6 +34,7 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
+contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-faisabilite-linstallation-recuperation-chaleur-fatale
 nature de l'aide: étude

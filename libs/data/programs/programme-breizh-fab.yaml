@@ -3,9 +3,27 @@ promesse: >-
   Bénéficiez d'un accompagnement pour apprendre comment allier compétitivité et
   transition écologique
 description: >-
-  Breizh Fab propose aux industriels de la région Bretagne d’être accompagnés
-  pour développer leurs projets et intégrez les enjeux des mutations
-  environnementales pour gagner en compétitivité.
+  Breizh Fab accompagne les industriels bretons pour intégrer les enjeux de
+  transition environnementale dans leurs projets, renforcer leur compétitivité
+  et anticiper les mutations à venir. Ce parcours propose un accompagnement
+  personnalisé et l’accès à une dynamique collective régionale.
+
+
+  - Bénéficiez d’un état des lieux gratuit sur deux jours pour évaluer vos
+  enjeux environnementaux et de décarbonation.
+
+
+  - Définissez les priorités d’action selon vos besoins : stratégie,
+  performance, investissements, transition environnementale, organisationnelle
+  ou numérique.
+
+
+  - Accédez à un accompagnement individuel sur les défis identifiés, avec
+  l’appui de consultants spécialisés.
+
+
+  - Participez tout au long de l’année à des temps d’échange ouverts à tous les
+  industriels bretons : ateliers, webinaires, visites d’entreprise, rencontres…
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Breizh Fab
 autres opérateurs:
@@ -14,24 +32,29 @@ autres opérateurs:
   - Centre Technique des Industries Mécaniques
   - Région Bretagne
   - Union des industries et métiers de la métallurgie
+contact question: https://www.breizhfab.bzh/vos-contacts-breizh-fab/
 url: https://www.breizhfab.bzh/nos-solutions-daccompagnement/
 nature de l'aide: étude
 coût de l'accompagnement: Etat des lieux gratuit, puis reste à charge de 325€ HT par jour engagé
 durée de l'accompagnement: 2 à 12 jours
 objectifs:
   - description: >-
-      Réaliser un état des lieux gratuit de 2 jours sur les enjeux de la
-      transition environnementale et de la décarbonation.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - lien: mailto:contact@breizhfab.bzh
+        texte: contact@breizhfab.bzh
   - description: >-
-      Définissez ensuite les "défis" prioritaires sur lesquels vous souhaitez
-      bénéficier d'un accompagnement individuel (stratégie, performance,
-      business, investissements, transition environnementale, transition
-      organisationnelle, transition numérique)
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Tout au long de l’année, participez à différents formats de rencontres
-      ouvertes et gratuites à l’ensemble des industriels bretons pour
-      s’informer, confronter ses idées et densifier son réseau régional.
-      (webinaires, ateliers, visites d'entreprise, rencontres...)
+      Recevez les éléments pour compléter votre candidature : votre fiche
+      candidature, le contrat Breizh Fab ainsi qu'un questionnaire "Transitions"
+      à compléter en ligne.
+  - description: Dès réception de ces 3 éléments, Breizh Fab instruit votre candidature.
+  - description: >-
+      L’équipe Breizh Fab missionne un Référent Transition Environnementale
+      Décarbonation pour réaliser l’accompagnement.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 250 salariés

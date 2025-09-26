@@ -37,6 +37,7 @@ début de validité: 27/01/2025
 fin de validité: 15/10/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000688
 url: https://agir.ademe.fr/aides-financieres/aap/corimer-navires-bas-carbone
 nature de l'aide: financement
 montant du financement: 60% des dépenses engagées
@@ -55,8 +56,10 @@ objectifs:
         texte: Consulter la liste des documents
   - description: >-
       Planifiez une réunion de prédépôt du dossier (en ayant complété l'Annexe 2
-      du dossier), au moins un mois avant le dépôt du dossier complet. Contactez
-      l'adresse [aap.navires@ademe.fr](mailto:aap.navires@ademe.fr)
+      du dossier), au moins un mois avant le dépôt du dossier complet. 
+    liens:
+      - lien: mailto:aap.navires@ademe.fr
+        texte: Contactez par mail
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier en ligne
     liens:
       - lien: >-
@@ -80,6 +83,14 @@ conditions d'éligibilité:
     - Tous secteurs d'activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - 'Les seuils minimaux de coût total des projets sont les suivants :'
+    - >-
+      1 million d’euros minimum pour les projets, individuels ou en consortium,
+      portés ou coordonnés par une PME
+    - >-
+      4 millions d’euros minimum pour les projets, individuels ou en consortium,
+      portés ou coordonnés par une Grande entreprise.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

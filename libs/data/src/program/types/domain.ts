@@ -1,8 +1,9 @@
 import { ProgramType } from './shared'
-import { BaserowSectors } from '../../common/baserow/types'
+import { BaserowSectors, BaserowMetaData } from '../../common/baserow/types'
 import { Theme } from '../../theme/types/domain'
+import { Contact } from '../../common/types'
 
-export interface DataProgram extends BaserowSectors {
+export interface DataProgram extends BaserowSectors, BaserowMetaData {
   id: number
   'Id fiche dispositif': string
   Titre: string
@@ -10,6 +11,7 @@ export interface DataProgram extends BaserowSectors {
   'Description courte': string
   'Contact Question': string
   'Description longue': string
+  'Contact Question': string
   'Opérateur de contact': Operator[]
   'Dispositif activable en autonomie': boolean
   'URL externe': string
@@ -41,6 +43,8 @@ export interface DataProgram extends BaserowSectors {
   Statuts: Status[]
   conditionalData?: ConditionalValues[]
   'redirection-vers': number[]
+  tech: string
+  internalContact?: Contact
 }
 
 export enum Publicodes {
@@ -133,4 +137,10 @@ interface ModifiableFields {
   "Durée de l'aide": string
   'Eligibilité taille': string
   'Eligibilité Spécifique': string
+}
+
+export interface MailSenderInterface {
+  sendInitialMail(program: DataProgram): Promise<void>
+  sendPeriodicMail(program: DataProgram): Promise<void>
+  sendEolMail(program: DataProgram): Promise<void>
 }

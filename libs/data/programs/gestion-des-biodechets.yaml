@@ -1,11 +1,29 @@
 titre: Gestion des biodéchets
 promesse: Valorisez les biodéchets de votre entreprise
 description: >-
-  Vous produisez des biodéchets et vous aimeriez trouver des solutions pour les
-  réduire ou les valoriser ? la CCI Hauts-de-France vous propose un
-  accompagnement à la gestion des biodéchets.
+  Vous cherchez à mieux gérer vos **biodéchets** et à en faire une ressource ?
+  La CCI Hauts-de-France vous accompagne pour identifier les solutions de
+  réduction et de valorisation adaptées à votre activité. Cet accompagnement
+  vous aide à structurer une démarche concrète et efficace.
+
+
+  - Analysez la **nature, le volume et la fréquence** de vos biodéchets, ainsi
+  que leur localisation.
+
+
+  - Repérez les solutions de **valorisation proches de chez vous** : compostage,
+  méthanisation, etc.
+
+
+  - Référencez vos flux sur une **plateforme géolocalisée** dédiée pour
+  faciliter les synergies locales.
+
+
+  - Bénéficiez d’un **outil d’aide à la décision** pour choisir les solutions
+  techniques, repérer les dispositifs de financement mobilisables, et entrer en
+  contact avec les bons interlocuteurs.
 description longue: >-
-  Qu’est-ce qu’un biodéchet ?
+  Qu’est-ce qu’un biodéchet ?\
 
   L’article L. 541-1-1 du code de l’environnement définit les biodéchets comme :
   « Les déchets non dangereux biodégradables de jardin ou de parc, les déchets
@@ -16,30 +34,34 @@ description longue: >-
 
 
   En pratique, les biodéchets à traiter sont :
-   
-  Déchets verts : tontes de pelouse et fauchage, feuilles mortes, tailles
+
+
+  - Les déchets verts : tontes de pelouse et fauchage, feuilles mortes, tailles
   d’arbustes, haies et brindilles ou encore déchets ligneux issus de l’élagage
   et de l’abattage d’arbres et de haies.
 
-  Déchets alimentaires : restes de repas ou de préparation de repas ou produits
-  périmés non consommés.
+  - Les déchets alimentaires : restes de repas ou de préparation de repas ou
+  produits périmés non consommés.
 illustration: images/TEE_eolienne.png
 opérateur de contact: Chambre de Commerce et de l'Industrie
+contact question: formulaire
 url: https://hautsdefrance.cci.fr/solutions/accompagnement-gestion-biodechets/
 nature de l'aide: étude
 coût de l'accompagnement: De 750 à 3 500 € HT
 durée de l'accompagnement: De 1 à 5 jours selon la taille et le secteur d'activité de l'entreprise
 objectifs:
   - description: >-
-      Analyser votre production de biodéchets : volume, fréquence, situation
-      géographique, nature, etc.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Identifier les solutions de valorisation associées, disponibles à
-      proximité (compostage, méthanisation, etc).
-  - description: Répertorier les biodéchets sur une plateforme géolocalisée.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Obtenir un outil d’aide à la décision : solutions techniques, dispositifs
-      de financements, contacts associés.
+      Définissez avec l’expert le périmètre du diagnostic, la méthode et le
+      calendrier.
+  - description: Lancez le diagnostic avec l'expert proposé par votre CCI.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TeeDsfrBreadcrumb :links="[{ text: 'Budget', to: RouteName.Budget }]" />
+    <TeeDsfrBreadcrumb :links="[{ text: 'Budget', to: { name: RouteName.Budget } }]" />
     <div class="fr-container fr-mb-8w">
       <div class="fr-mb-6w">
         <h1 class="fr-mb-3w fr-text--blue-france">Budget</h1>
@@ -148,9 +148,10 @@
 </template>
 
 <script setup lang="ts">
+import { MetaSeo } from '@/tools/metaSeo'
+import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 import { onMounted, ref } from 'vue'
-import Chart from 'chart.js/auto'
 import { MetaRobots } from '@/tools/metaRobots'
 
 definePageMeta({
@@ -158,16 +159,19 @@ definePageMeta({
   name: RouteName.Budget
 })
 
+const navigation = new Navigation()
 const budgetChartCanvas = ref<HTMLCanvasElement | null>(null)
 
-const budgetLabels = ['Design', 'Développement et Data engineering', 'Pilotage', 'Coaching', 'BizDev']
+const budgetLabels = ['Design', 'Développement et Data engineering', 'Pilotage', 'Coaching', 'BizDev', 'Frais annexes']
 const budgetData = {
-  2023: [83194, 164674, 154627, 48600, 10819],
-  2024: [152552.4, 439117.59, 192628.8, 61862.4, 172558.18]
+  2023: [83194, 164674, 154627, 48600, 10819, 0],
+  2024: [157685, 444292, 191755, 65230, 183402, 3764],
+  2025: [141960, 301069, 177341, 60264, 216129, 10764]
 }
 const yearsLabels = {
   2023: 2023,
-  2024: '2024 (Prévisionnel)'
+  2024: 2024,
+  2025: '2025 (Prévisionnel)'
 }
 const yearlyTotals = computed(() => {
   return Object.entries(budgetData).reduce(
@@ -187,11 +191,18 @@ const formatCurrency = (value: number): string => {
   }).format(value)
 }
 
-const drawBudgetChart = () => {
-  if (!budgetChartCanvas.value) return
+const drawBudgetChart = async () => {
+  if (!budgetChartCanvas.value) {
+    return
+  }
 
   const chartContext = budgetChartCanvas.value.getContext('2d')
-  if (!chartContext) return
+  if (!chartContext) {
+    return
+  }
+
+  // Import Chart.js de manière asynchrone
+  const { default: Chart } = await import('chart.js/auto')
 
   const totalByCategory = budgetLabels.map((label, index) => {
     return budgetData[2023][index] + budgetData[2024][index]
@@ -237,10 +248,24 @@ const drawBudgetChart = () => {
 }
 
 onMounted(() => {
-  drawBudgetChart()
+  drawBudgetChart().catch((error) => {
+    console.error('Erreur lors du chargement du graphique:', error)
+  })
 })
 
-useHead(MetaRobots.indexFollow())
+const description = 'Informations relatives au budget du site Mission Transition Écologique des Entreprises.'
+useSeoMeta(MetaSeo.get('Budget', description))
+useSchemaOrg(defineWebPage({ description: description }))
+
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.Budget)
+    }
+  ],
+  ...MetaRobots.indexFollow()
+})
 </script>
 
 <style scoped>

@@ -27,7 +27,6 @@ description longue: >-
   éventuel.
 
 
-
   Sont éligibles :
 
 
@@ -42,6 +41,7 @@ description longue: >-
 fin de validité: 01/11/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: Région Sud (PACA)
+contact question: mailto:m.decerou@regionsudinvestissement.com
 url: https://entreprises.maregionsud.fr/financement/sud-entreprises/investour
 nature de l'aide: prêt
 montant du prêt: >-
@@ -54,6 +54,9 @@ objectifs:
       d'éligibilité et pour le montage de votre dossier de candidature.
       Attention, l'opération pour laquelle vous sollicitez une aide financière
       ne doit pas avoir commencé.
+    liens:
+      - lien: https://www.maregionsud.fr/vos-aides/detail/investour
+        texte: Je fais ma demande
   - description: >-
       Votre dossier fait l’objet d’un examen par un Comité technique de
       pré-sélection. Les entreprises présélectionnées sont conviés à un comité

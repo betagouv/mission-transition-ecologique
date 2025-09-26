@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
 import TeeFooter from '@/components/TeeFooter.vue'
+import { Identity } from '@/tools/Identity'
 import { MetaSeo } from '@/tools/metaSeo'
 import Translation from '@/tools/translation'
 import Cookie from '@/tools/cookies'
@@ -19,6 +20,19 @@ navigationStore.setRouter(router)
 navigationStore.setRoute(route)
 
 useSeoMeta(MetaSeo.default())
+useSchemaOrg([
+  defineWebPage({ name: MetaSeo.title, description: MetaSeo.defaultDescription }),
+  defineWebSite({
+    name: MetaSeo.title,
+    description: MetaSeo.descriptionWebsite
+  }),
+  defineOrganization({
+    '@type': 'GovernmentOrganization',
+    name: Identity.title,
+    logo: Identity.logoPath,
+    description: Identity.description
+  })
+])
 </script>
 
 <template>

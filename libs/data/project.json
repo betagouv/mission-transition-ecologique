@@ -13,12 +13,39 @@
         "test"
       ]
     },
+    "generate-testimonies": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/generateTestimoniesJson.ts"
+        ]
+      }
+    },
     "generate-projects": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/data",
         "commands": [
           "npx tsx src/scripts/generateProjectsJson.ts"
+        ]
+      }
+    },
+    "generate-faq": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/generateFaqJson.ts"
+        ]
+      }
+    },
+    "update-trainings": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/updateBaserowTrainings.ts"
         ]
       }
     },
@@ -41,6 +68,15 @@
         "cwd": "libs/data",
         "commands": [
           "npx tsx src/scripts/dataGouvExport.ts"
+        ]
+      }
+    },
+    "send-program-mails": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/sendMailToProgramContacts.ts"
         ]
       }
     },

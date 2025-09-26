@@ -23,13 +23,6 @@
         {{ title }}
       </h5>
       <p><slot /></p>
-      <TeeButtonExternalLink
-        v-if="link"
-        :href="link"
-        class="fr-mt-3v"
-      >
-        {{ linkText }}
-      </TeeButtonExternalLink>
     </div>
   </div>
 </template>
@@ -40,8 +33,6 @@ import { CalloutType } from '@/types/elementsPropsTypes'
 interface Props {
   type?: CalloutType
   title?: string | number | undefined
-  link?: string | undefined
-  linkText?: string | undefined
   contentClass?: string | undefined
   img?: string | undefined
   imgContainerClass?: string | undefined
@@ -51,8 +42,6 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   type: CalloutType.Default,
   title: undefined,
-  link: undefined,
-  linkText: undefined,
   contentClass: undefined,
   img: undefined,
   imgContainerClass: undefined,

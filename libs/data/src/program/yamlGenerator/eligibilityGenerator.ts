@@ -2,8 +2,9 @@ import { LogLevel } from '../../common/logger/types'
 import { DataProgram } from '../types/domain'
 import { CoreGenerator } from './coreGenerator'
 import { ProgramEligibility } from '../programEligibility'
+import { LinkValidator } from '../../common/validators/linkValidator'
 
-export function setEligibility(generator: CoreGenerator) {
+export async function setEligibility(generator: CoreGenerator) {
   const eligibility_conditions: { [key: string]: string[] } = {
     "taille de l'entreprise": [setEligibilitySize(generator.program), setMicroEntrepreneur(generator.program)],
     'secteur géographique': setEligibilityGeography(generator),
@@ -11,7 +12,7 @@ export function setEligibility(generator: CoreGenerator) {
     "nombre d'années d'activité": setEligibilityYears(generator.program)
   }
   if (generator.program['Eligibilité Spécifique']) {
-    const otherEligibilities = setOtherEligibilityCriteria(generator)
+    const otherEligibilities = await setOtherEligibilityCriteria(generator)
     if (otherEligibilities.length) {
       eligibility_conditions["autres critères d'éligibilité"] = otherEligibilities
     }
@@ -19,7 +20,15 @@ export function setEligibility(generator: CoreGenerator) {
   generator.yamlContent["conditions d'éligibilité"] = eligibility_conditions
 }
 
-function setOtherEligibilityCriteria(generator: CoreGenerator): string[] {
+async function setOtherEligibilityCriteria(generator: CoreGenerator): Promise<string[]> {
+  await LinkValidator.logInvalidLinks(
+    generator.program['Eligibilité Spécifique'],
+    generator.logger,
+    LogLevel.Minor,
+    'Eligibilité Spécifique',
+    generator.program['Id fiche dispositif'],
+    generator.program.id
+  )
   const criteriaList = generator.program['Eligibilité Spécifique'].split('\n').map((criteria) => criteria.trim())
   if (criteriaList.filter((criteria) => !criteria.startsWith('- ')).length) {
     generator.logger.log(
@@ -58,7 +67,9 @@ function setEligibilitySector(generator: CoreGenerator) {
 }
 
 function setEligibilityGeography(generator: CoreGenerator) {
-  if (generator.program['Couverture géographique'].Name == 'National') return ["France et territoires d'outre-mer"]
+  if (generator.program['Couverture géographique'].Name == 'National') {
+    return ["France et territoires d'outre-mer"]
+  }
 
   if (generator.program['Zones Spécifiques (géographie)']) {
     generator.logger.log(

@@ -1,38 +1,60 @@
 titre: Plan de mobilité
-promesse: Améliorer et optimiser l'accessibilité de votre entreprise
+promesse: Mettez en place un plan de mobilité sur mesure avec l'aide d'un expert
 description: >-
-  Vous souhaitez mettre en place un plan de mobilité pour votre entreprise ?
-  Votre CCI vous propose une prestation d’accompagnement pour vous aider à
-  répondre à vos obligations légales en réalisant votre démarche de plan de
-  mobilité.
+  La Chambre de Commerce et d’Industrie vous accompagne dans la mise en place
+  d’un plan de mobilité adapté à votre entreprise et conforme à vos obligations
+  légales. Cet accompagnement permet d’intégrer la mobilité durable dans votre
+  stratégie tout en fédérant vos équipes.
+
+
+  - Structuration de la démarche et mobilisation des acteurs clés.
+
+
+  - Réalisation d’un diagnostic mobilité (analyse territoriale, enquête
+  salariés…).
+
+
+  - Co-construction d’un plan d’action lors d’un atelier participatif.
+
+
+  - Mise en œuvre des actions en impliquant les collaborateurs à chaque étape.
+
+
+  - Suivi de la démarche et pilotage du plan sur trois ans.
+
+
+  Un accompagnement opérationnel pour réduire l’impact de vos déplacements
+  professionnels, améliorer le bien-être des salariés et répondre aux enjeux
+  environnementaux et réglementaires.
 description longue: >-
   Le plan de mobilité (PDM) est un ensemble de mesures visant à optimiser les
   déplacements liés aux activités professionnelles. Cela concerne les trajets
   domicile/travail mais aussi les déplacements professionnels des
-  collaborateurs, des clients et des partenaires.
+  collaborateurs, des clients et des partenaires.\
 
   Le PDM est une obligation pour les entreprises de plus de 100 travailleurs sur
-  un même site. 
+  un même site.
 
 
   Exemples de mesures pouvant entrer dans un PDM :
 
-  • La promotion du vélo ; 
 
-  • L’amélioration de l’accès des bâtiments par les piétons ; 
+  - La promotion du vélo ;
 
-  • L’encouragement à l’utilisation des transports publics ;
+  - L’amélioration de l’accès des bâtiments par les piétons ;
 
-  • L’aménagement des horaires de travail ;
+  - L’encouragement à l’utilisation des transports publics ;
 
-  • L’accompagnement et l’encouragement à habiter à proximité du lieu de travail
+  - L’aménagement des horaires de travail ;
+
+  - L’accompagnement et l’encouragement à habiter à proximité du lieu de travail
   ou sur le réseau de transport en commun ;
 
-  • La mise en place d’un service d’autopartage ;
+  - La mise en place d’un service d’autopartage ;
 
-  • L’incitation au covoiturage ;
+  - L’incitation au covoiturage ;
 
-  •  La garantie de la prise en charge du retour au domicile en cas de
+  - La garantie de la prise en charge du retour au domicile en cas de
   circonstances exceptionnelles : chèque-taxi, utilisation de voitures de
   service ou de vélos à assistance électrique...
 
@@ -44,6 +66,7 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Chambre de Commerce et de l'Industrie
+contact question: formulaire
 url: >-
   https://www.entreprises.cci-paris-idf.fr/web/transition-ecologique/plan-de-mobilite-entreprise-ameliorez-l-accessibilite-de-votre-etablissement
 nature de l'aide: étude
@@ -51,18 +74,17 @@ coût de l'accompagnement: de 3 000 € à 10 000 € en fonction de la taille d
 durée de l'accompagnement: 6 à 12 jours
 objectifs:
   - description: >-
-      Mobiliser les acteurs et planifier, structurer la démarche de plan de
-      mobilité.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Réaliser un diagnostic à l'échelle territoriale et une enquête auprès de
-      vos salariés.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Elaborer un plan d'action sous la forme d'un atelier participatif avec les
-      salariés.
-  - description: >-
-      Mettre en oeuvre les différentes actions et mobiliser les collaborateurs à
-      chaque étape.
-  - description: Planifier et suivre les actions sur trois ans.
+      Définissez avec l’expert le périmètre du diagnostic, la méthode et le
+      calendrier.
+  - description: Lancez le diagnostic avec l'expert proposé par votre CCI.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Entre 50 et 500 salariés

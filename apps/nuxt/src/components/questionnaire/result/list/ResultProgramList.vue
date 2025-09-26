@@ -2,7 +2,7 @@
   <!-- PROGRAMS AS LIST OF CARDS -->
   <div class="fr-container--fluid fr-container--fluid--no-overflow">
     <div class="fr-grid-row fr-grid-row--center">
-      <div class="fr-container fr-m-0 fr-p-0 fr-pl-md-2v">
+      <div class="fr-container fr-m-0 fr-p-md-0 fr-pl-md-2v">
         <div class="fr-grid-row fr-grid-row--center">
           <div
             v-if="!navigationStore.hasSpinner"

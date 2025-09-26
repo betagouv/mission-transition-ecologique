@@ -2,8 +2,9 @@ import fs from 'fs'
 import axios from 'axios'
 import path from 'path'
 import sharp from 'sharp'
+import ConfigBaserow from '../../configBaserow'
 import { AbstractBaserow } from './abstractBaserow'
-import { LinkObject, ImageTable } from './types'
+import { LinkObject, ImageTable, Image } from './types'
 import { Result } from 'true-myth'
 
 interface ImageMetadata {
@@ -11,7 +12,7 @@ interface ImageMetadata {
 }
 
 export class ImageBaserow extends AbstractBaserow {
-  private readonly _imageTableId = 315189
+  private readonly _imageTableId = ConfigBaserow.IMAGE_ID
   private _metadata: ImageMetadata = {}
   private _processedImages: Set<string> = new Set()
 
@@ -29,7 +30,7 @@ export class ImageBaserow extends AbstractBaserow {
    * @param baserowImage - A baserowLink object pointing to the image informations.
    * @returns the name of the image in the local directory or an error
    */
-  async handleImage(baserowImage: LinkObject[]): Promise<Result<string, Error>> {
+  async handleImageFromImageTable(baserowImage: LinkObject[]): Promise<Result<string, Error>> {
     if (baserowImage.length != 1) {
       return Result.err(new Error('A single image should be listed in the image field.'))
     }
@@ -68,6 +69,41 @@ export class ImageBaserow extends AbstractBaserow {
     return Result.ok(fileName)
   }
 
+  async handleDirectImage(image: Image[]): Promise<Result<string, Error>> {
+    if (image.length != 1) {
+      return Result.err(new Error('A single image should be listed in the image field.'))
+    }
+
+    const imageName = this._slugify(image[0].visible_name)
+    if (this._imageAlreadyDownloaded(imageName, image[0].uploaded_at)) {
+      this._metadata[imageName] = image[0].uploaded_at
+      this._processedImages.add(imageName + '.webp')
+      return Result.ok(imageName + '.webp')
+    }
+
+    let imageDownloadResponse
+    try {
+      imageDownloadResponse = await axios.get(image[0].url, { responseType: 'arraybuffer' })
+    } catch {
+      return Result.err(new Error('Error while trying to download the image ' + imageName))
+    }
+
+    const imageBuffer = Buffer.from(imageDownloadResponse.data, 'binary')
+    const webpBuffer = await this._sharpImage(imageBuffer)
+
+    const fileName = `${imageName}.webp`
+    const filePath = path.join(this._imageDirectory, fileName)
+    try {
+      fs.writeFileSync(filePath, webpBuffer)
+    } catch {
+      return Result.err(new Error('Error while trying to create the the local ' + imageName))
+    }
+    this._metadata[imageName] = image[0].uploaded_at
+    this._processedImages.add(fileName)
+
+    return Result.ok(fileName)
+  }
+
   cleanup() {
     // delete the images whose name is not in 'processedImages'
     const existingFiles = fs.readdirSync(this._imageDirectory)
@@ -97,7 +133,7 @@ export class ImageBaserow extends AbstractBaserow {
   }
 
   private _generateImageName(imageData: ImageTable): string {
-    let baseName = imageData['Image URL TEE']
+    let baseName = this._slugify(imageData['Image URL TEE'])
     if (!baseName) {
       baseName = this._slugify(imageData.Titre)
     }
@@ -137,5 +173,6 @@ export class ImageBaserow extends AbstractBaserow {
       .trim()
       .replace(/[\s\W-]+/g, '-') // Replace spaces and non-alphanumeric characters with hyphens
       .replace(/^-+|-+$/g, '') // Remove leading or trailing hyphens
+      .slice(0, 50)
   }
 }

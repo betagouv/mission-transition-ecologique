@@ -1,25 +1,8 @@
-export interface GetLandingResponseData {
-  data: Landing[]
-  metadata: Metadata
-}
-
-interface Theme {
-  id: number
-  title: string
-  slug: string
-  description: string
-}
-
-export interface Landing {
-  id: number
-  title: string
-  slug: string
-  partner_url: string
-  landing_themes: Theme[]
-}
-
-interface Metadata {
-  total_results: number
+export interface SolicitationResponseData {
+  data: {
+    solicitation_id: number
+    institutions_partenaires: string[]
+  }
 }
 
 export enum Subject {
@@ -51,12 +34,5 @@ export interface Solicitation {
   email: string
   phone_number: string
   siret: string
-  location: string
-  api_calling_url?: string
-  questions_additionnelles: AdditionalQuestion[]
-}
-
-interface AdditionalQuestion {
-  question_id: number
-  answer: boolean
+  origin_url?: string
 }

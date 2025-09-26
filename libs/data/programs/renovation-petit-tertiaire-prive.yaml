@@ -1,11 +1,10 @@
 titre: Diagnostic SARE
 promesse: Engagez la rénovation énergétique de votre local professionnel
 description: >-
-  Vous souhaitez réaliser des économies d’énergie et améliorer le confort de vos
-  locaux professionnels ? Vous pouvez bénéficier d'un accompagnement pour vous
-  aider à identifier les solutions techniques les plus adaptées (isolation,
-  climatisation, eau chaude, ventilation, éclairage…) et rechercher les aides
-  financières mobilisables. 
+  Vous souhaitez réduire vos consommations d’énergie et améliorer le confort de
+  vos bâtiments ? Un accompagnement personnalisé vous aide à **identifier les
+  travaux prioritaires** (isolation, ventilation, éclairage, chauffage, etc.) et
+  à **repérer les aides financières mobilisables.**
 fin de validité: 01/01/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
@@ -13,6 +12,7 @@ autres opérateurs:
   - Chambre de Commerce et de l'Industrie
   - Chambre des Métiers et de l'Artisanat
   - France Rénov'
+contact question: formulaire
 url: >-
   https://www.ecologie.gouv.fr/sites/default/files/211130_guide_METRO_COPIL_VF2.pdf
 nature de l'aide: étude
@@ -20,18 +20,21 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 2h
 objectifs:
   - description: >-
-      Réalisez un premier rendez-vous par téléphone avec un expert en transition
-      énergétique référencé par l'ADEME pour échanger sur votre projet de
-      rénovation de vos locaux.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Benéficiez d'un rendez-vous de l'expert en transition énergétique dans vos
-      locaux pour aborder votre projet dans son ensemble : vos besoins et
-      attentes, les travaux d’amélioration du bâtiment et des systèmes
-      envisagés, ainsi que les éventuelles contraintes à prendre en compte.
+      Échangez lors d’un premier rendez-vous téléphonique avec un expert en
+      transition énergétique référencé par l’ADEME.
+  - description: Définissez ensemble la date de la visite sur site.
   - description: >-
-      A l’issu de ce rendez-vous, obtenez un compte-rendu détaillé vous
-      permettant d’évaluer les travaux à envisager ainsi que les aides
-      financières mobilisables.
+      Accueillez cet expert dans vos locaux pour une visite complète, permettant
+      d’analyser vos usages, vos attentes et les contraintes techniques du
+      bâtiment.
+  - description: >-
+      Recevez un compte-rendu détaillé avec des pistes concrètes de travaux et
+      une première estimation des aides disponibles.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 250 salariés

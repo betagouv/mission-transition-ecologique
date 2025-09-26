@@ -1,52 +1,77 @@
 titre: Etude "biodéchets"
 promesse: ' Réalisez une étude préalable au tri ou à la valorisation de vos biodéchets'
 description: >-
-  Réalisez une étude de diagnostic ou de faisabilité pour étudier votre projet
-  d'investissement lié aux biodéchets. L'ADEME soutient financièrement les
-  études de diagnostic ou de faisaibilité préalables à la préparation des
-  déchets organiques, au compostage autonome et aux installations de traitement
-  et de valorisation (déconditionnement, hygiénisation ou plateforme de
-  compostage).
+  Vous avez un projet de valorisation des biodéchets ? **L’ADEME peut financer
+  vos études de diagnostic ou de faisabilité,** parmi lesquelles :
+
+
+  - Le diagnostic des besoins en tri et valorisation des biodéchets à l’échelle
+  d’un territoire (quartier, zone d’activité, etc.)
+
+
+  - Les études préalables à la préparation des biodéchets : tri,
+  déconditionnement, hygiénisation
+
+
+  - Les études pour la mise en place d’un compostage autonome en établissement
+
+
+  - Les études en vue de créer ou adapter des plateformes de compostage, des
+  ateliers de déconditionnement ou des installations de traitement de
+  sous-produits animaux (SPAN)
+
+
+  Ces études ont pour objectif de structurer en amont des projets solides,
+  adaptés aux besoins locaux, de sécuriser vos investissements et de **favoriser
+  une gestion durable des matières organiques.**
 description longue: >-
-  L'ADEME finance les études suivantes : 
+  L'ADEME finance les études suivantes :
 
 
   À destination des producteurs de déchets organiques ou des acteurs de la
-  collecte des biodéchets : 
+  collecte des biodéchets :
 
-  • Les études de diagnostic des besoins en installations de tri et de
+
+  - Les études de diagnostic des besoins en installations de tri et de
   valorisation des biodéchets. Ces études doivent être réalisée à l’échelle
   d’une zone de chalandise déterminée (quartier, ZI, ZAC, etc.).
 
 
-  À destination des producteurs de déchets organiques : 
+  À destination des producteurs de déchets organiques :
 
-  • Les études préalables à la préparation des biodéchets.
 
-  • Les études préalables au compostage autonome en établissement.
+  - Les études préalables à la préparation des biodéchets.
 
+  - Les études préalables au compostage autonome en établissement.
+
+
+  \
 
   L'ADEME finance les études suivantes à destination des acteurs privés dans la
   collecte et le traitement des biodéchets :
 
-  • Les études préalables à la réalisation d'installations ou d'ateliers visant
-  à déconditionner des produits. 
 
-  •  Les études préalables à la création de nouvelles plateformes de compostage
+  - Les études préalables à la réalisation d'installations ou d'ateliers visant
+  à déconditionner des produits.
+
+  - Les études préalables à la création de nouvelles plateformes de compostage
   ou l’adaptation de plateformes de compostage de déchets verts existantes à
   l’accueil de déchets alimentaires.
 
-  • Les études préalables à la création / adaptation/hygiènisation de
+  - Les études préalables à la création / adaptation/hygiènisation de
   plateformes de valorisation des biodéchets classés Sous-Produits Animaux
-  (SPAN). 
+  (SPAN).
 
+
+  \
 
   Cette aide est plafonnée à 50 000 € HT pour une étude diagnostic, et 100 000 €
-  HT pour une étude de faisabilité préalable à un investissement. 
+  HT pour une étude de faisabilité préalable à un investissement.
 début de validité: 01/01/2024
 fin de validité: 31/12/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000720
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-gestion-biodechets-acteurs-economiques?cible=79
 nature de l'aide: étude
@@ -87,8 +112,9 @@ conditions d'éligibilité:
     - France et territoires d'outre-mer
   secteur d'activité:
     - >-
-      cette aide concerne les entreprises de restauration, de production ou de
-      commerce alimentaire et les opérateurs privés de traitement de biodéchets.
+      Ce dispositif s’adresse aux producteurs de biodéchets, aux acteurs de la
+      collecte et aux porteurs de projets privés dans le traitement des déchets
+      organiques.
     - >-
       Section I : Hébergement et restauration / Section E Division 38 :
       Collecte, traitement et élimination des déchets ; récupération /  Section

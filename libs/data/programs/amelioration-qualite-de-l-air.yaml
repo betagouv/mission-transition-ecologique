@@ -3,11 +3,27 @@ promesse: >-
   Bénéficiez d'un financement pour vos projets visant à améliorer la qualité de
   l'air
 description: >-
-  Vous travaillez dans une zone couverte par un Plan de Protection de
-  l'Atmosphère (PPA) ou dans un territoire présentant des dépassements de seuils
-  réglementaires en dioxyde d'azote (NO₂), particules ou ozone (O₃) et vous
-  souhaitez réduire durablement vos émissions de polluants atmosphériques ?
-  L’ADEME peut accompagner financièrement vos actions.
+  Votre entreprise est implantée dans une zone couverte par un **Plan de
+  Protection de l’Atmosphère (PPA)** ou un territoire où les seuils de pollution
+  de l’air (NO₂, particules, ozone) sont dépassés ?
+
+
+  L’ADEME peut vous aider à financer :
+
+
+  - des **études** en vue d’un projet opérationnel,
+
+
+  - des **actions de sensibilisation** au changement de pratiques,
+
+
+  - certains **investissements** (mobilité moins polluante, logistique,
+  organisation des chantiers, raccordement électrique à quai).
+
+
+  L’objectif est de **réduire durablement les émissions de polluants
+  atmosphériques** dans les zones les plus exposées, en soutenant des démarches
+  concrètes, adaptées à votre activité et à votre territoire.
 description longue: >-
   L’ADEME peut vous accompagner pour :
      - Des études permettant d’aboutir à une mise en place opérationnelle d’actions permettant de réduire les émissions de polluants atmosphériques réglementés pour les zones concernées.
@@ -51,6 +67,7 @@ début de validité: 01/01/2025
 fin de validité: 31/12/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000708
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/amelioration-qualite-lair-territoires-ppa-depassements-recents?cible=79&region=35
 nature de l'aide: étude

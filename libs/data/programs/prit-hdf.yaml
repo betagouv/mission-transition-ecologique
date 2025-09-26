@@ -28,6 +28,7 @@ description longue: >-
   et les acquisitions foncières).
 illustration: images/TEE_eolienne.png
 opérateur de contact: Région Hauts-de-France
+contact question: formulaire
 url: https://aides.hautsdefrance.fr/sub/tiers/aides/details/?sigle=PRIT
 nature de l'aide: financement
 montant du financement: >-
@@ -74,7 +75,9 @@ publicodes:
     une de ces conditions:
       - code NAF niveau 1 . est I
   entreprise . a un objectif ciblé:
-    une de ces conditions: []
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
       - région = Hauts-de-France

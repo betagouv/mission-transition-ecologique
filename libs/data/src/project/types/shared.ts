@@ -1,4 +1,4 @@
-import { ThemeId } from '../../theme/types/shared'
+import { ThemeId } from '@tee/common'
 import { projects } from '../../../static'
 
 export interface ProjectType {
@@ -15,9 +15,16 @@ export interface ProjectType {
   mainTheme: ThemeId
   programs: string[]
   linkedProjects: ProjectId[]
-  priority: number
+  priority: ProjectPriority
   highlightPriority: number | null
   sectors: string[]
+  metaTitle?: string
+  metaDescription?: string
 }
 
 export type ProjectId = (typeof projects)[number]['id']
+
+export interface ProjectPriority {
+  default: number
+  [key: string]: number
+}

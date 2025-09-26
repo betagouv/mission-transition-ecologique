@@ -4,14 +4,27 @@ promesse: >-
   traitement, de valorisation et de collecte
 description: >-
   Vous êtes un acteur privé dans la collecte et le traitement des biodéchets ?
-  L’ADEME soutient financièrement la création de plateformes de compostage, la
-  mise en place d’une collecte par mobilité douce, les investissements visant à
-  déconditionner des produits ainsi que les investissements pour la valorisation
-  des "Sous-Produits Animaux". 
-description longue: "Les investissements éligibles sont :\n\n• La création de nouvelles plateformes de compostage ou l’adaptation de plateformes de compostage de déchets verts existantes à l’accueil de déchets alimentaires.\n\n• Les investissements dans des équipements pour la mise en place d’une collecte par mobilité douce des déchets alimentaires (par vélo, vélo à assistance électrique ou autre équipement similaire). Les dépenses éligibles sont les contenants\_: bioseaux/bacs, surcoût de bennes, vélos et remorques. \n\n• Les installations ou les ateliers visant à déconditionner des produits (par exemple les biodéchets de la distribution alimentaire et de la restauration).\n\n• La création de nouvelles plateformes ou l'adaptation d'une installation existante de valorisation des biodéchets, pour recevoir des biodéchets classés Sous-Produits Animaux (SPAN) de catégorie 3 ou 2. L'Ademe soutient également les investissements d’hygiénisation des SPAN, sur une installation dédiée, hors site de compostage ou de méthanisation, dans le cadre d’un schéma de gestion territorial de la matière organique."
+
+
+  L’ADEME soutient financièrement :
+
+
+  - la **création de plateformes de compostage**,
+
+
+  - la **mise en place d’une collecte par mobilité douce**,
+
+
+  - les **investissements pour déconditionner des produits**,
+
+
+  - ainsi que les **investissements pour la valorisation des Sous-Produits
+  Animaux**.
+description longue: "Les investissements éligibles sont :\n\n- La création de nouvelles plateformes de compostage ou l’adaptation de plateformes de compostage de déchets verts existantes à l’accueil de déchets alimentaires.\n- Les investissements dans des équipements pour la mise en place d’une collecte par mobilité douce des déchets alimentaires (par vélo, vélo à assistance électrique ou autre équipement similaire). Les dépenses éligibles sont les contenants\_: bioseaux/bacs, surcoût de bennes, vélos et remorques.\n- Les installations ou les ateliers visant à déconditionner des produits (par exemple les biodéchets de la distribution alimentaire et de la restauration).\n- La création de nouvelles plateformes ou l'adaptation d'une installation existante de valorisation des biodéchets, pour recevoir des biodéchets classés Sous-Produits Animaux (SPAN) de catégorie 3 ou 2. L'Ademe soutient également les investissements d’hygiénisation des SPAN, sur une installation dédiée, hors site de compostage ou de méthanisation, dans le cadre d’un schéma de gestion territorial de la matière organique."
 fin de validité: 31/12/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000716
 url: >-
   https://agir.ademe.fr/aides-financieres/2025/gestion-des-biodechets-des-acteurs-economiques
 nature de l'aide: financement

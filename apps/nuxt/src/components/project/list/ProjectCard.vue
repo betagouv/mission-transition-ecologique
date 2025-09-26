@@ -2,11 +2,14 @@
   <DsfrCard
     :title="project.title"
     :description="project.shortDescription"
-    :img-src="project.image"
+    :img-src="img(project.image, { height: 265, quality: 70, loading: 'lazy' })"
     :alt-img="`image / ${project.title}`"
     :no-arrow="true"
     :link="getRouteToProjectDetail(project)"
     class="teste2e-project-target project-card"
+    :class="[{ 'fr-card-priority': isPriorityProject }, { 'fr-card-priority--highlighted': isPriorityProject && !isUniquePriority }]"
+    enlarge
+    :title-tag="titleTag"
   >
     <template
       v-if="isPriorityProject"
@@ -14,7 +17,7 @@
     >
       <div
         v-if="!isUniquePriority"
-        class="fr-card__header--priority fr-hidden fr-unhidden-lg"
+        class="fr-card__header--priority"
       >
         {{ priorityOrder }}
       </div>
@@ -42,6 +45,7 @@
 </template>
 
 <script setup lang="ts">
+import { Image } from '@/tools/image'
 import Navigation from '@/tools/navigation'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
 import { ProjectType, RouteName } from '@/types'
@@ -53,18 +57,23 @@ interface Props {
   isPriorityProject?: boolean
   isUniquePriority?: boolean
   priorityOrder?: number
+  titleTag?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 }
 
 const props = withDefaults(defineProps<Props>(), {
   isPriorityProject: false,
-  priorityOrder: undefined
+  priorityOrder: undefined,
+  titleTag: 'h3'
 })
 const priorityTag: string = 'A FAIRE EN PRIORITÉ'
+
+const img = Image.getUrl
+const navigationStore = useNavigationStore()
 
 const eligibleProgramsTag = computed(() => {
   return `${props.project.countEligiblePrograms} AIDE${props.project.countEligiblePrograms > 1 ? 'S' : ''}`
 })
-const navigationStore = useNavigationStore()
+
 const navigation = new Navigation()
 const getRouteToProjectDetail = (project: ProjectType): RouteLocationRaw => {
   return {

@@ -8,7 +8,7 @@
               <div class="fr-col-12">
                 <p class="fr-text--purple fr-h4 fr-text--bold fr-mb-0">TPE, PME</p>
                 <h1 class="fr-mb-3v">
-                  Trouvez les solutions pour
+                  Trouvez les aides pour
                   <span class="fr-display-md--block">la transition écologique </span>
                   <span class="fr-display-md--block">de votre entreprise</span>
                 </h1>
@@ -38,7 +38,7 @@
       <div class="fr-col-2 fr-col-md-4 fr-col--middle fr-col-lg-4 tee-track-image-right fr-col-unhidden-md fr-col-hidden">
         <img
           class="fr-responsive-img"
-          src="/images/TEE-illustrationHP.png"
+          :src="img('/images/TEE-illustrationHP.png', { format: 'webp', densities: 1, quality: 70, loading: 'lazy' })"
           alt="Illustration de la page d'accueil - Une maison avec une éolienne, une ampoule et une prise électrique"
         />
       </div>
@@ -47,11 +47,13 @@
 </template>
 <script setup lang="ts">
 import { useCompanyDataStore } from '@/stores/companyData'
+import { Image } from '@/tools/image'
 import { RouteName } from '@/types/routeType'
 import Navigation from '@/tools/navigation'
 
 const router = useRouter()
 const { isDataFull } = storeToRefs(useCompanyDataStore())
+const img = Image.getUrl
 
 const toQuestionnaire = async () => {
   if (isDataFull.value) {

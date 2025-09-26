@@ -1,22 +1,23 @@
 <template>
   <DsfrCard
-    class="fr-card--program-detail"
+    class="fr-card--program"
     :title="program.titre"
     :end-detail="getCostInfos()"
     end-detail-icon="fr-icon-money-euro-circle-line fr-text--blue"
     :description="program.promesse"
-    :img-src="`/${program.illustration}`"
+    :img-src="img(`/${program.illustration}`, { height: 320, quality: 70, loading: 'lazy' })"
     :alt-img="`image / ${program.titre}`"
     :horizontal="true"
     :no-arrow="true"
     :link="getRouteToProgramDetail()"
     :badges="[{ label: program['nature de l\'aide'], noIcon: true, small: true }]"
-    title-tag="h2"
+    :title-tag="titleTag"
   >
   </DsfrCard>
 </template>
 
 <script setup lang="ts">
+import { Image } from '@/tools/image'
 import Navigation from '@/tools/navigation'
 import { ProgramAidType, ProgramTypeForFront, ProjectType, RouteName } from '@/types'
 import { consolidateAmounts } from '@/tools/helpers'
@@ -28,8 +29,14 @@ import { useNavigationStore } from '@/stores/navigation'
 interface Props {
   program: ProgramTypeForFront
   project?: ProjectType
+  titleTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 }
-const { program, project } = defineProps<Props>()
+const { program, project = undefined, titleTag = 'h2' } = defineProps<Props>()
+
+const navigationStore = useNavigationStore()
+const navigation = new Navigation()
+const isCatalog = navigation.isCatalogPrograms()
+const img = Image.getUrl
 
 const getCostInfos = () => {
   let prefix: string = ''
@@ -69,10 +76,6 @@ const getCostInfos = () => {
 
   return `${prefix} : ${text}`
 }
-
-const navigationStore = useNavigationStore()
-const navigation = new Navigation()
-const isCatalog = navigation.isCatalogPrograms()
 
 const getRouteName = () => {
   if (isCatalog) {

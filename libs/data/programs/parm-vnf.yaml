@@ -1,0 +1,77 @@
+titre: Plan d'aide au report modal (PARM)
+promesse: Optimisez votre logistique grâce au transport fluvial
+description: >-
+  Le programme PARM soutient les entreprises souhaitant intégrer le transport
+  fluvial dans leurs chaînes logistiques. Ce dispositif encourage le recours au
+  transport fluvial en finançant des études, des phases d’expérimentation ou des
+  équipements de manutention. Ainsi, le programme aide à réduire l'empreinte
+  carbone du transport de marchandises.
+description longue: >-
+  Bénéficiez d'aides financières pour vos :​
+
+  - Études de faisabilité en vue de recourir au transport par voie fluviale
+  (études logistiques, de marché, de construction ou de résistance d’un quai, de
+  bathymétrie, de trajectoire). : jusqu'à 50% des coûts, plafonné à 25 000 € par
+  projet.
+
+  - Expérimentations de transport fluvial : prise en charge jusqu'à 100% des
+  surcoûts, plafonnée à 100 000 € pour 10 voyages sur 6 mois.
+
+  - Expérimentation de distribution urbaine fluviale : aide jusqu'à 100% des
+  surcoûts les six premiers mois, puis 50% les six mois suivants, plafonnée à
+  200 000 € par projet.
+
+  - Équipements de manutention, sur une infrastructure ou une superstructure de
+  chargement/déchargement : subvention jusqu'à 50% des investissements, dans la
+  limite de 500 000 €.
+fin de validité: 31/12/2027
+illustration: images/TEE_eolienne.png
+opérateur de contact: Voies Navigables de France
+contact question: mailto:olivier.dehouck@vnf.fr
+url: >-
+  https://www.vnf.fr/vnf/accueil/logistique-fluviale/adopter-le-transport-fluvial/aides-et-financements-adopter/aide-parm/
+nature de l'aide: étude
+montant du financement: Jusqu'à 500 000 €
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Contactez un conseiller des Voies Navigables de France pour lui faire part
+      de votre projet et de votre demande de bénéficier du Plan d’aide au report
+      modal (PARM).
+    liens:
+      - lien: mailto:olivier.dehouck@vnf.fr
+        texte: olivier.dehouck@vnf.fr
+  - description: Complétez votre demande d'aide auprès de votre conseiller.
+  - description: Si vous êtes éligibles, recevez votre subvention.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Les entreprises souhaitant intégrer la voie d’eau dans leurs chaînes
+      logistiques.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a une categorie legale eligible
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est H
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable

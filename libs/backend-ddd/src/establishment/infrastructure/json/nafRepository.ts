@@ -19,6 +19,21 @@ export class NafRepository implements NafRepositoryType {
     return Maybe.of(nafData?.NIV1)
   }
 
+  public getNiv2(nafCode: string): Maybe<string> {
+    const nafData = this._findNafData(nafCode)
+    return Maybe.of(nafData?.NIV2)
+  }
+
+  public getNiv3(nafCode: string): Maybe<string> {
+    const nafData = this._findNafData(nafCode)
+    return Maybe.of(nafData?.NIV3)
+  }
+
+  public getNiv4(nafCode: string): Maybe<string> {
+    const nafData = this._findNafData(nafCode)
+    return Maybe.of(nafData?.NIV4)
+  }
+
   public searchNAF(searchTerm: string): Result<CompanyActivityType[], Error> {
     let results = []
     const normalizedSearch = normalizeString(searchTerm)

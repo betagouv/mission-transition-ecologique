@@ -9,24 +9,21 @@ description: >-
 description longue: >-
   Les dépenses d’investissement éligibles correspondent notamment aux :
 
+
   - Equipements de production (outil productif) ;
 
   - Equipements nécessaires à l'outil productif telles que les utilités (vapeur,
   air comprimé, etc.) ;
 
   - Equipements périphériques tels que : raccordement/armoire électrique,
-  tuyauterie,
-
-  automatisme, etc. ;
-
+  tuyauterie,\
+    automatisme, etc. ;
   - Equipements de mesure, comptage, suivi et reporting des consommations
   d'énergie ou des émissions de GES ;
 
   - Les travaux d'installation des équipements listés ci-dessus, y compris le
-  génie civil,
-
-  terrassement, VRD ;
-
+  génie civil,\
+    terrassement, VRD ;
   - Les études d'ingénierie ainsi que les études de suivi de réalisation et la
   coordination des travaux. Pour les études réalisées en interne, les dépenses
   seront limitées à 10% de l'ensemble des autres dépenses éligibles ; le
@@ -39,50 +36,28 @@ description longue: >-
 
   Quatre thématiques sont éligibles :
 
-  1- Efficacité énergétique
 
-  - Remplacement d'un équipement par un équipement énergétiquement plus
-  performant
-
-  - Mise en place d’équipements de récupération de chaleur 
-
-  - Valorisation de combustible fatal sous forme 100 % thermique
-
-
-  2- Modification du mix énergétique
-
-  - Electrification des procédés et des utilités : (four électrique, compression
-  mécanique de vapeur, pompe à chaleur, séparation membranaire ...) ;
-
-  - Intégration d’énergies thermiques renouvelables ou de récupération 
-
-
-  3- Modification du mix matières
-
-  - Procédés de recyclage ou utilisation de matière recyclée conduisant à une
-  réduction des émissions de GES ;
-
-  - Procédés d'efficacité matière ;
-
-  - Utilisation de matières premières alternatives conduisant à une réduction
-  des émissions de GES ;
-
-  - Réduction d’autres GES que le CO2 (exemples : le méthane (CH4), le protoxyde
-  d’azote ((N2O),
-
-  etc.).
-
-
-  4-Captage, stockage et utilisation du CO2
-
-  - Captage et séquestration du carbone.
-
-  - Captage et utilisation de carbone, uniquement pour des projets de
-  minéralisation.
+  1. Efficacité énergétique
+     - Remplacement d'un équipement par un équipement énergétiquement plus performant
+     - Mise en place d’équipements de récupération de chaleur
+     - Valorisation de combustible fatal sous forme 100 % thermique
+  2. Modification du mix énergétique
+     - Electrification des procédés et des utilités : (four électrique, compression mécanique de vapeur, pompe à chaleur, séparation membranaire ...) ;
+     - Intégration d’énergies thermiques renouvelables ou de récupération
+  3. Modification du mix matières
+     - Procédés de recyclage ou utilisation de matière recyclée conduisant à une réduction des émissions de GES ;
+     - Procédés d'efficacité matière ;
+     - Utilisation de matières premières alternatives conduisant à une réduction des émissions de GES ;
+     - Réduction d’autres GES que le CO2 (exemples : le méthane (CH4), le protoxyde d’azote ((N2O),\
+       etc.).
+  4. Captage, stockage et utilisation du CO2
+     - Captage et séquestration du carbone.
+     - Captage et utilisation de carbone, uniquement pour des projets de minéralisation.
 début de validité: 09/12/2024
 fin de validité: 15/05/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000664
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20240530/decarbonation-lindustrie-decarb-ind-25
 nature de l'aide: financement
@@ -121,12 +96,13 @@ conditions d'éligibilité:
     - France et territoires d'outre-mer
   secteur d'activité:
     - |-
-      - Les industries et activités inéligibles sont
-        - Activités tertiaires ;
-        - Activités agricoles (sauf industrie agro-alimentaire) ;
-        - Activités du secteur BTP sur chantier ;
-        - Unités de Valorisation Energétiques des déchets (UVE) ;
-        - Industries de production et mise sur le marché d'énergie sur le réseau.
+      Les industries et activités inéligibles sont
+
+      - Activités tertiaires ;
+      - Activités agricoles (sauf industrie agro-alimentaire) ;
+      - Activités du secteur BTP sur chantier ;
+      - Unités de Valorisation Energétiques des déchets (UVE) ;
+      - Industries de production et mise sur le marché d'énergie sur le réseau.
     - Les codes NAF éligibles sont compris entre 10.11Z et 33.20D.
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
@@ -167,4 +143,5 @@ publicodes:
       - code NAF niveau 1 . est G
       - code NAF niveau 1 . est H
   entreprise . a un objectif ciblé:
-    une de ces conditions: []
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental

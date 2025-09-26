@@ -6,8 +6,8 @@ import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFe
 import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
-import { Operators, ProgramType, ThemeId } from '@tee/data'
-import { ContactDetails, Opportunity, OpportunityType, SiretValidator } from '@tee/common'
+import { Operators, ProgramType } from '@tee/data'
+import { ContactDetails, Opportunity, OpportunityType, SiretValidator, ThemeId } from '@tee/common'
 import EstablishmentService from '../../establishment/application/establishmentService'
 import Monitor from '../../common/domain/monitoring/monitor'
 import { ProjectService } from '../../project/application/projectService'
@@ -110,17 +110,20 @@ export default class OpportunityFeatures {
     void new OpportunityHubFeatures(this._opportunityHubRepositories)
       .maybeTransmitOpportunity(opportunity, data)
       .then(async (opportunityHubResult) => {
-        if (opportunityHubResult == Maybe.nothing()) {
-          const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
+        if (opportunityHubResult !== false && opportunityHubResult.isOk) {
+          const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, opportunityHubResult.value)
           if (opportunityUpdateErr.isJust) {
-            Monitor.warning('Opportunity status not updated after a transmission to a Hub', { error: opportunityUpdateErr.value })
+            Monitor.warning('Opportunity status not updated after a transmission to a Hub', {
+              error: opportunityUpdateErr.value,
+              idCe: opportunityHubResult.value
+            })
           }
         }
       })
   }
 
-  private async _updateOpportunitySentToHub(opportunityId: OpportunityId, success: boolean): Promise<Maybe<Error | null>> {
-    return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: success })
+  private async _updateOpportunitySentToHub(opportunityId: OpportunityId, idCe: number): Promise<Maybe<Error | null>> {
+    return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: true, idCe })
   }
 
   private _addContactOperatorToOpportunity(opportunity: OpportunityWithContactId): OpportunityWithOperatorContactAndContactId {

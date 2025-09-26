@@ -14,6 +14,10 @@ export type Dispositif = {
    */
   titre: string;
   /**
+   * Titre du dispositif pour les metadatas de la page. Il s'agit du titre qui sera affiché dans l'onglet du navigateur.
+   */
+  metaTitre?: string;
+  /**
    * TODO
    */
   promesse: string;
@@ -21,6 +25,10 @@ export type Dispositif = {
    * La description donne les principales informations du dispositif en quelques lignes
    */
   description?: string;
+  /**
+   * Description du dispositif pour les metadatas de la page. Il s'agit de la description qui sera affichée dans les résultats de recherche.
+   */
+  metaDescription?: string;
   /**
    * La description longue La description longue est facultative. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple pour définir un terme technique, pour détailler une loi à laquelle un dispositif fait référence ou pour détailler les projets concernés par un financement
    */
@@ -87,7 +95,6 @@ export type Dispositif = {
     | "CCI Bretagne"
     | "CCI ou CMA"
     | "Chambre de Commerce et de l'Industrie"
-    | "CEE"
     | "Centre Technique des Industries Mécaniques"
     | "Chambre des Métiers et de l'Artisanat"
     | "DDFIP"
@@ -122,7 +129,12 @@ export type Dispositif = {
     | "Agence de Développement Economique de Corse"
     | "Agence de Tourisme de la Corse"
     | "Région Guadeloupe"
-    | "Avere-France";
+    | "Avere-France"
+    | "Centre National du Livre";
+  /**
+   * Le contact en cas de question, peut être un lien vers le formulaire, un mail ou une url.
+   */
+  "contact question"?: string;
   /**
    * Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.
    */
@@ -246,7 +258,6 @@ export type Operators =
   | "CCI Bretagne"
   | "CCI ou CMA"
   | "Chambre de Commerce et de l'Industrie"
-  | "CEE"
   | "Centre Technique des Industries Mécaniques"
   | "Chambre des Métiers et de l'Artisanat"
   | "DDFIP"
@@ -281,4 +292,5 @@ export type Operators =
   | "Agence de Développement Economique de Corse"
   | "Agence de Tourisme de la Corse"
   | "Région Guadeloupe"
-  | "Avere-France";
+  | "Avere-France"
+  | "Centre National du Livre";

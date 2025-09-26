@@ -3,11 +3,13 @@ promesse: >-
   Bénéficiez d'un financement pour réaliser votre projet d'installation d'un
   système solaire combiné
 description: >-
-  Vous disposez d’une étude pour votre projet d'installation de production de
-  chaleur solaire collective, pour du chauffage et de l’eau chaude sanitaire
+  Vous disposez d’une étude pour votre projet d'installation de **production de
+  chaleur solaire collective**, pour du chauffage et de l’eau chaude sanitaire
   (ECS), avec capteurs solaires thermiques ? Vous souhaitez investir pour le
-  mettre en œuvre ? L'ADEME vous accompagne financièrement dans la réalisation
-  de ce projet.
+  mettre en œuvre ? 
+
+
+  L'ADEME vous accompagne financièrement dans la réalisation de ce projet.
 description longue: >-
   Les opérations de Systèmes Solaires Combinés (SSC) sont des installations de
   production de chaleur solaire collective, pour du chauffage et de l’eau chaude
@@ -25,21 +27,20 @@ description longue: >-
 
   Opérations éligibles :
 
-  • Opération dédiée : une installation Systèmes Solaires Combinés (SSC) pour un
-  seul bâtiment avec appoint et stockage
 
-  centralisés ou appoints et stockages individualisés ;
+  - Opération dédiée : une installation Systèmes Solaires Combinés (SSC) pour un
+  seul bâtiment avec appoint et stockage centralisés ou appoints et stockages
+  individualisés ;
 
-  • Opération groupée : plusieurs installations SSC sur plusieurs bâtiments
-  localisés sur un même site,
-
-  dans un éco-quartier ou équivalent, porté par un bailleur social ou un
-  promoteur privé via une entité juridique identifiée, définie par un seul et
-  unique marché.
+  - Opération groupée : plusieurs installations SSC sur plusieurs bâtiments
+  localisés sur un même site, dans un éco-quartier ou équivalent, porté par un
+  bailleur social ou un promoteur privé via une entité juridique identifiée,
+  définie par un seul et unique marché.
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
+contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installations-systemes-solaires-combines
 nature de l'aide: financement

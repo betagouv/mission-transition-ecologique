@@ -1,10 +1,37 @@
+import { FaqPage } from '../../faq/types/shared'
 import { ConditionalValues as DomainConditionalValues, DataProgram } from '../../program/types/domain'
+
+export interface FaqBaserowInterface {
+  getFaqs(): Promise<{ baserowFaqs: BaserowFaq[]; baserowFaqSections: BaserowFaqSection[] }>
+}
 
 export interface Id {
   id: number
 }
 
-export interface BaserowProject extends Id, BaserowSectors {
+interface Order {
+  order: number
+}
+interface LastModification {
+  'Dernière modification': string
+}
+
+interface LastModificationBy {
+  'Dernière modification par': { id: number; name: string }
+}
+
+interface CreationDate {
+  'Date de création': string
+}
+
+export interface BaserowData<T> {
+  count: number
+  next: string | null
+  previous: string | null
+  results: T[]
+}
+
+export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
   order: string
   Nom: string
   'Description courte': string
@@ -21,10 +48,12 @@ export interface BaserowProject extends Id, BaserowSectors {
   Prio: number
   'Mise En Avant': number | null
   'redirection-vers': LinkObject[]
+  'Prios spécifiques': string
 }
 
 export interface LinkObject extends Id {
   value: string
+  [key: string]: unknown
 }
 
 export interface ImageTable extends Id {
@@ -36,8 +65,13 @@ export interface ImageTable extends Id {
 
 export interface Image {
   url: string
-  name: string
+  visible_name: string
   uploaded_at: string
+}
+
+export interface BaserowMetaData {
+  'Meta Titre': string | null
+  'Meta Description': string | null
 }
 
 export interface Program
@@ -52,8 +86,11 @@ export interface Program
       | 'Zones géographiques'
       | 'Thèmes Ciblés'
       | 'redirection-vers'
+      | 'contact'
     >,
-    BaserowSectors {
+    BaserowSectors,
+    BaserowMetaData,
+    ProgramTechSerialized {
   Statuts: LinkObject[]
   "Nature de l'aide": LinkObject
   'Opérateur de contact': LinkObject[]
@@ -62,6 +99,11 @@ export interface Program
   'Zones géographiques': LinkObject[]
   'Thèmes Ciblés': LinkObject[]
   'redirection-vers': LinkObject[]
+  'Référent Interne': LinkObject[]
+}
+
+export interface ProgramTechSerialized {
+  tech: string
 }
 
 export interface Operator {
@@ -115,4 +157,74 @@ export type Sectors = {
 
 export type BaserowSectors = {
   [K in keyof typeof SectorKeys]: boolean
+}
+
+export interface BaserowTestimony extends Id, BaserowSectors {
+  'Id fiche témoignage': string
+  Statut: LinkObject
+  Theme: LinkObject
+  Verbatim: string
+  "Fonction + nom de l'entreprise": string
+  'Prénom NOM': string
+  Photo: Image[]
+  "attribut de l'image": string
+  'Lien externe vers le témoignage': string
+  Projets: LinkObject[]
+  Dispositifs: LinkObject[]
+  Région: LinkObject[]
+  'Mise en avant': number
+  'Nom entreprise': string
+}
+
+export interface BaserowTraining extends Id {
+  'Id Ademe': string
+  'Futures Sessions': string
+  Titre: string
+  Promesse: string
+  'Url ADEME': string
+  Objectifs: string
+  Thématique: string
+  'Nombre de sessions à venir': number
+  'Nombre de participants par session': string
+  Modalité: string
+  'Codes Sections': string
+  Cible: string
+  Programme: string
+  Prérequis: string
+  Tarif: string
+  Durée: string
+  'Nombre de jours': string
+}
+
+export interface ProgramTechnicalInfo {
+  prod_release_date?: string
+  email_enable?: boolean
+  last_mail_sent_date?: string
+  eol_mail_sent_date?: string
+}
+
+export interface BaserowFaq extends Id, Order {
+  Question: string
+  Réponse: string
+  Actif: boolean
+  Page: LinkObject | null
+  Section: LinkObject[]
+}
+
+export interface BaserowFaqSection extends Id, Order, CreationDate, LastModification, LastModificationBy {
+  Titre: string
+  Couleur: LinkObject
+}
+
+export interface FaqItemStructured extends BaserowFaqSection {
+  faqs: BaserowFaq[]
+}
+
+export type FaqStructured = {
+  [key in FaqPage]?: FaqItemStructured[]
+}
+
+export interface BaserowContact extends Id {
+  'Prénom NOM': string
+  Courriel: string
 }

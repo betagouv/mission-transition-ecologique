@@ -7,8 +7,8 @@
     :quick-links="quickLinks"
     logo-text="RÉPUBLIQUE<br>FRANÇAISE"
     :show-search="false"
-    :operator-img-src="`/images/logos/mission-transition-logo-alone.png`"
-    operator-img-alt="Transition Ecologique des Entreprises - ADEME"
+    :operator-img-src="Identity.logoPath"
+    operator-img-alt="Transition Écologique des Entreprises - ADEME"
     operator-img-style="width:3.5rem;"
   />
 </template>
@@ -18,6 +18,7 @@
 // console.log(`TeeHeader > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { TeeDsfrHeaderMenuLinkProps } from '@/components/element/vueDsfr/dsfrHeader/TeeDsfrHeaderMenuLinks.vue'
+import { Identity } from '@/tools/Identity'
 import { RouteName } from '@/types/routeType'
 
 const quickLinks: TeeDsfrHeaderMenuLinkProps[] = [

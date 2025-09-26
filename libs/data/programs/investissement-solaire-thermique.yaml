@@ -1,30 +1,36 @@
 titre: Investissement "Solaire thermique"
 promesse: Réalisez votre projet de production d'eau chaude par la chaleur solaire
 description: >-
-  Vous disposez d’une étude de faisabilité pour votre installation de production
-  d'eau chaude solaire thermique, et vous souhaitez investir pour le mettre en
-  œuvre ? Cette aide est destinée à subventionner votre installation.
+  Vous disposez d’une **étude de faisabilité** pour votre installation de
+  production d'**eau chaude solaire thermique**, et vous souhaitez investir pour
+  le mettre en œuvre ? Cette aide est destinée à subventionner votre
+  installation.
 description longue: >-
   Sont éligibles les opérations de production d'eau chaude sanitaire ou eau
   chaude de process industriels ou agricoles dont la surface utile de capteurs
-  est comprise entre 25 et 1500 m². 
+  est comprise entre 25 et 1500 m².
+
+
+  \
 
   Cette aide s'adresse :
 
-  • Au Logement Collectif et par extension, tout hébergement permanent ou
+
+  - Au Logement Collectif et par extension, tout hébergement permanent ou
   d’occupation de longue durée avec des besoins importants en Eau Chaude
   Sanitaire (ECS), tels que secteur hospitalier et sanitaire, structures
-  d’accueil, maisons de retraite, etc. 
+  d’accueil, maisons de retraite, etc.
 
-  • Au secteur Tertiaire, Industrie et Agriculture comprenant les établissements
+  - Au secteur Tertiaire, Industrie et Agriculture comprenant les établissements
   ayant des usages ECS durant toute l’année : activités agro-alimentaires
   (laiteries, fromageries, …) et agricoles, processus industriels consommateurs
   d'eau chaude, restaurants, campings utilisés au-delà des seuls mois de juillet
-  et août, piscines à usage collectif. 
+  et août, piscines à usage collectif.
 
-  • Des opérations couplées à des Réseaux de Chaleur urbains (RCU), contribuant
+  - Des opérations couplées à des Réseaux de Chaleur urbains (RCU), contribuant
   à l’objectif d’atteindre une alimentation globale du réseau couverte par au
   minimum 65 % d’EnR&R.
+
 
   La réalisation d’une étude de faisabilité préalable est une condition
   d'éligibilité.
@@ -32,6 +38,7 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
+contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installation-production-deau-chaude-solaire-thermique
 nature de l'aide: financement

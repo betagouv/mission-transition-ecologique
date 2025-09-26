@@ -5,40 +5,36 @@ promesse: >-
 description: >-
   Le B.A.-BA du climat et de la biodiversité est une formation permettant à
   toutes les personnes qui le souhaitent, d’acquérir les connaissances
-  fondamentales sur le changement climatique et la biodiversité. Proposée par le
-  Cned - Centre national d'enseignement à distance, il est le fruit d’une
-  collaboration entre experts scientifiques reconnus et experts de la pédagogie
-  numérique.
+  fondamentales sur le changement climatique et la biodiversité. 
+
+  Proposée par le Cned - Centre national d'enseignement à distance, il est le
+  fruit d’une collaboration entre experts scientifiques reconnus et experts de
+  la pédagogie numérique.
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Centre national d'enseignement à distance
+contact question: https://climat.cned.fr/contact/
 url: https://climat.cned.fr/
 nature de l'aide: formation
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 7h
 activable en autonomie: oui
 objectifs:
-  - description: >-
-      Découvrez les cinq chapitres de la formation, réalisés à partir de
-      constats scientifiques, et présentés sous une forme claire et accessible
-    liens:
-      - lien: https://climat.cned.fr/formations/
-        texte: Accéder à la formation
-  - description: >-
-      Inscrivez-vous à la formation gratuite, en ligne, à réaliser en toute
-      autonomie (durée estimé : 7h)
-    liens:
-      - lien: https://climat.cned.fr/
-        texte: climat.cned.fr
-  - description: "Avant de démarrer la formation, testez vos connaissances\_avec 5 questions sur le changement climatique, ses enjeux et les moyens d’agir"
+  - description: "Avant de démarrer la formation, testez vos connaissances\_avec 5 questions sur le changement climatique, ses enjeux et les moyens d’agir."
     liens:
       - lien: https://climat.cned.fr/le-saviez-vous/
         texte: Testez vos connaissances
   - description: >-
-      Validez les connaissances que vous aurez acquises à l’issue de chaque
-      chapitre
+      Accédez à la formation gratuite, en ligne, à réaliser en toute autonomie
+      (durée totale estimée : 7h).
+    liens:
+      - lien: https://climat.cned.fr/formations/
+        texte: Accéder à la formation
   - description: >-
-      Recevrez un badge numérique valorisant vos connaissances sur le changement
-      climatique, ses enjeux et les moyens d’agir
+      Validez les connaissances que vous aurez acquises à l’issue de chaque
+      chapitre.
+  - description: >-
+      Pour chaque chapitre de la formation, recevez un badge numérique attestant
+      vos nouveaux acquis.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

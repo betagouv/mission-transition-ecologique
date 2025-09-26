@@ -1,9 +1,11 @@
 titre: Investissement "Récupération de chaleur fatale"
 promesse: Financez votre installation de récupération de chaleur fatale
 description: >-
-  Vous disposez d’une étude pour votre projet d'installation de récupération de
-  chaleur fatale ? Vous souhaitez investir pour le mettre en œuvre ? L’ADEME
-  peut accompagner financièrement la réalisation de votre installation.
+  Vous disposez d’une étude pour votre projet d'**installation de récupération
+  de chaleur fatale** ? Vous souhaitez investir pour le mettre en œuvre ? 
+
+
+  L’ADEME peut accompagner financièrement la réalisation de votre installation.
 description longue: >-
   Les investissements éligibles sont :
 
@@ -31,6 +33,7 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
+contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/realisation-dinstallations-recuperation-chaleur-fatale
 nature de l'aide: financement

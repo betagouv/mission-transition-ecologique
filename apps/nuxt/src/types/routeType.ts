@@ -16,7 +16,8 @@ export enum RouteName {
   ProgramFromProjectResultDetail = 'program-from-project-detail',
   ProjectResultDetail = 'project-result-detail',
   Statistics = 'statistics',
-  Accessibility = 'accessibility'
+  Accessibility = 'accessibility',
+  Faq = 'faq'
 }
 
 export enum RoutePath {

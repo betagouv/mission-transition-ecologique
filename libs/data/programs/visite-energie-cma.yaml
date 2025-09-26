@@ -1,30 +1,49 @@
 titre: Visite Énergie CMA
 promesse: Optimisez les consommations d'énergie de votre entreprise
 description: >-
-  Faites vous accompagner par un conseiller en transition énergétique et
-  écologique pour faire le point sur vos contrats et factures d’énergie,
-  identifier vos postes énergivores et découvrir les bonnes pratiques à mettre
-  en place pour réaliser des économies d'énergie.
+  La **Visite Énergie** est un diagnostic rapide sur site pour analyser votre
+  consommation, repérer les postes énergivores et identifier des économies
+  possibles. Un conseiller vous fournit des conseils pratiques et un plan
+  d’action adapté, avec un suivi personnalisé pour vous aider à optimiser vos
+  coûts et votre efficacité.
+
+
+  - **Diagnostic complet** de votre consommation.
+
+
+  - **Identification des postes énergivores** et bonnes pratiques recommandées.
+
+
+  - Plan d’action à court, moyen ou long terme avec retour sur investissement
+  rapide.
+
+
+  - **Optimisation** des contrats d’énergie et du système d’éclairage.
+
+
+  - **Accompagnement personnalisé** pour la mise en œuvre.
+fin de validité: 25/06/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: Chambre des Métiers et de l'Artisanat
+contact question: formulaire
+url: >-
+  https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/maitrise-besoins-chauffage/visite-energie-cma
 nature de l'aide: étude
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 1 journée
 objectifs:
   - description: >-
-      Faites le point sur votre consommation énergétique avec un expert de la
-      Chambre des Métiers de l'Artisanat lors d'une visite sur site.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Identifiez les postes d’énergie les plus consommateurs et découvrez les
-      bonnes pratiques pour optimiser vos coûts.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Définissez des solutions concrètes à travers un plan d’action détaillé sur
-      du court, moyen ou long terme, avec un retour sur investissement rapide et
-      significatif.
-  - description: >-
-      Optimisez le type de contrat souscrit avec vos fournisseurs d’énergie et
-      votre parc d’éclairage.
-  - description: Bénéficiez d'un suivi de votre plan d'action.
+      Définissez avec l’expert le périmètre du diagnostic, la méthode et le
+      calendrier.
+  - description: Lancez le diagnostic avec l'expert proposé par votre CMA.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 250 salariés
@@ -44,6 +63,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
   entreprise . a un effectif éligible:

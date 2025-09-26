@@ -5,7 +5,7 @@
   >
     <img
       v-if="props.bgImage"
-      :src="props.bgImage"
+      :src="img(props.bgImage, { quality: 70, densities: 1, sizes: '576px sm:768px md:992px lg:1248px' })"
       :alt="props.imgAlt"
     />
     <div :class="[styleClass]">
@@ -20,6 +20,7 @@
 </template>
 
 <script setup lang="ts">
+import { Image } from '@/tools/image'
 import { Color } from '@/types'
 
 export interface TeeBannerProps {
@@ -41,6 +42,8 @@ const props = withDefaults(defineProps<TeeBannerProps>(), {
   imgAlt: '',
   contentAlignment: undefined
 })
+
+const img = Image.getUrl
 
 const bgClass = computed(() => {
   return {

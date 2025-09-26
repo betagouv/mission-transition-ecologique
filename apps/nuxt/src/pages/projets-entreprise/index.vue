@@ -1,9 +1,10 @@
 <template>
   <LayoutCatalog
     :has-side-menu="hasSideMenu"
-    :title="title"
+    title="Les projets de transition écologique"
     :has-error="hasError"
     :count-items="countProjects"
+    :faq-items="faqCatalogProject"
   >
     <template #sidemenu>
       <ProjectFiltersAccordion with-title />
@@ -25,10 +26,11 @@ import { useCompanyDataStore } from '@/stores/companyData'
 import { useProjectStore } from '@/stores/project'
 import { CompanyData } from '@/tools/companyData'
 import { MetaSeo } from '@/tools/metaSeo'
+import Navigation from '@/tools/navigation'
 import ProjectFilter from '@/tools/project/projectFilter'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { Theme } from '@/tools/theme'
-import { RouteName } from '@/types'
+import { FaqSectionType, RouteName } from '@/types'
 import { computed } from 'vue'
 import { MetaRobots } from '@/tools/metaRobots'
 
@@ -37,13 +39,19 @@ definePageMeta({
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
 })
 
+const { default: json } = await import('@/public/json/faq/catalog-project.json')
+const faqCatalogProject = json as unknown as FaqSectionType[]
+
 const { projects, hasError } = storeToRefs(useProjectStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 const theme = Theme.getThemeFromSelectedTheme()
 const filteredProjects = ProjectFilter.filter(projects, theme)
+const navigation = new Navigation()
 
-const title = 'Les projets de transition écologique'
-const description = 'Accédez à la liste des projets de transition écologique destinées aux entreprises.'
+const seoTitle = 'Projets écologiques en entreprise –  Exemples et opportunités'
+const seoDescription =
+  "Découvrez  les projets de transition écologique pour votre secteur d'activité : explications, ressources," +
+  " témoignages d'entreprises et liste des aides financières associées."
 
 onServerPrefetch(async () => {
   await new ProjectManager().getProjects()
@@ -62,7 +70,8 @@ const sortedProjects = computed(() => {
   return filteredProjects.value
 })
 
-useSeoMeta(MetaSeo.get(title, description))
+useSeoMeta(MetaSeo.get(seoTitle, seoDescription))
+useSchemaOrg(defineWebPage({ description: seoDescription }))
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
@@ -76,5 +85,13 @@ const countProjects = computed(() => {
   return filteredProjects.value?.length || 0
 })
 
-useHead(MetaRobots.noIndexOnQueries(useRoute().fullPath))
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.CatalogProjects)
+    }
+  ],
+  ...MetaRobots.noIndexOnQueries(useRoute().fullPath)
+})
 </script>

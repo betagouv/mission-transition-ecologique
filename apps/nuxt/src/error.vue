@@ -24,6 +24,7 @@
           <img
             class="fr-footer__logo fr-responsive-img"
             src="/images/tracks/no-results.png"
+            loading="lazy"
             alt="illustration page d'erreur"
           />
         </div>

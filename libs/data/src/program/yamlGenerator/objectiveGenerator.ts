@@ -1,23 +1,34 @@
 import { YamlObjective } from '../types/domain'
 import { CoreGenerator } from './coreGenerator'
 import { validateObjectiveLink } from './linksValidator'
+import { LinkValidator } from '../../common/validators/linkValidator'
+import { LogLevel } from '../../common/logger/types'
+import z from 'zod'
 
-export function setObjectives(generator: CoreGenerator) {
+export async function setObjectives(generator: CoreGenerator) {
   const objectifs: YamlObjective[] = []
 
   for (let i = 1; i <= 6; i++) {
     const step = generator.program[`étape${i}` as keyof typeof generator.program] as string
     if (step) {
-      objectifs.push(parseStep(step, i, generator))
+      objectifs.push(await parseStep(step, i, generator))
     }
   }
   generator.yamlContent['objectifs'] = objectifs
   return
 }
 
-function parseStep(step: string, stepId: number, generator: CoreGenerator): YamlObjective {
+async function parseStep(step: string, stepId: number, generator: CoreGenerator): Promise<YamlObjective> {
   const lines = step.split('\n')
   const description = lines[0].substring(2)
+  await LinkValidator.logInvalidLinks(
+    description,
+    generator.logger,
+    LogLevel.Minor,
+    `"Objectif ${stepId}"`,
+    generator.program['Id fiche dispositif'],
+    generator.program.id
+  )
 
   const liens = lines
     .slice(1)
@@ -27,7 +38,11 @@ function parseStep(step: string, stepId: number, generator: CoreGenerator): Yaml
       }
       const match = line.match(/\[(.*?)\]\((.*?)\)/)
       if (match) {
-        validateObjectiveLink(match[2], stepId, generator)
+        const isUrl = z.string().url().safeParse(match[2]).success
+        const isEmail = match[2].startsWith('mailto:')
+        if (isUrl && !isEmail) {
+          validateObjectiveLink(match[2], stepId, generator)
+        }
         return { lien: match[2], texte: match[1] }
       }
       return null

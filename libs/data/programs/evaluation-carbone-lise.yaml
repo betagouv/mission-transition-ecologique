@@ -1,0 +1,128 @@
+titre: Évaluation carbone LISE
+promesse: Disposez d’une première estimation rapide de votre empreinte carbone
+description: >-
+  Le programme LISE – *"Limitez vos Impacts et Suivez vos Émissions"* – vous
+  propose un accompagnement de deux jours pour :
+
+
+  - définir le périmètre de votre étude ;
+
+
+  - collecter et traiter vos données d’émissions de CO₂ ;
+
+
+  - identifier vos principaux postes d’émissions avec des résultats détaillés ;
+
+
+  - élaborer un plan d’action personnalisé pour réduire vos consommations et vos
+  émissions ;
+
+
+  - être orienté vers les aides adaptées à vos premières actions de
+  décarbonation.
+
+
+  Un format court, idéal pour obtenir une estimation fiable de votre empreinte
+  carbone sans réaliser un Bilan Carbone complet.
+description longue: >-
+  Dans le cadre de la transition écologique, les émissions de gaz à effet de
+  serre sont classées en trois scopes (ou périmètres) définis par le GHG
+  Protocol, une référence internationale. Le programme LISE se concentre
+  principalement sur les deux premiers :
+
+
+  Scope 1 : émissions directes\
+
+  Ce sont les émissions générées directement par l’entreprise, notamment par la
+  combustion de carburants dans les chaudières (gaz, fioul), les véhicules ou
+  les procédés industriels sur site.
+
+
+  \
+
+  Scope 2 : émissions indirectes liées à l’énergie\
+
+  Elles proviennent de la production d’électricité, de chaleur, de vapeur ou de
+  froid achetés et consommés par l’entreprise. Bien que produites ailleurs,
+  elles sont liées à l’activité énergétique de l’entreprise.
+
+
+  \
+
+  Le scope 3, qui regroupe toutes les autres émissions indirectes (achats,
+  transport, usage des produits, etc.), n’est pas traité dans le cadre de
+  l’accompagnement LISE.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Chambre de Commerce et de l'Industrie
+contact question: formulaire
+url: >-
+  https://www.cci.fr/offre/evaluation-carbone-simplifiee-lise-mesurez-et-reduisez-vos-emissions-de-co2
+nature de l'aide: étude
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 2 jours d'accompagnement
+objectifs:
+  - description: Exprimez votre intérêt en contactant un conseiller via le formulaire
+    liens:
+      - formulaire: true
+  - description: >-
+      Un conseiller CCI vous rappelle pour répondre à vos questions et vous
+      guider dans la constitution de votre demande.
+  - description: >-
+      Planifiez les deux jours d’accompagnement avec le chargé d’étude qui vous
+      sera attribué.
+  - description: >-
+      Bénéficiez d’un diagnostic structuré de vos émissions de CO₂ et repartez
+      avec un plan d’action concret pour enclencher votre démarche de
+      décarbonation.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 250 salariés
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a un effectif éligible
+      - a une categorie legale eligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 249
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental

@@ -5,7 +5,7 @@ promesse: >-
 description: >-
   Vous travaillez dans une zone polluée et vous souhaitez réduire durablement
   vos émissions de polluants atmosphériques ? L’ADEME peut accompagner
-  financièrement vos actions. 
+  financièrement vos actions.
 description longue: >-
   L’ADEME peut vous accompagner pour :
      - Des études permettant d’aboutir à une mise en place opérationnelle d’actions permettant de réduire les émissions de polluants atmosphériques réglementés pour les zones concernées.
@@ -41,6 +41,7 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2023
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000708
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/actions-qualite-lair-territoires-contentieux
 nature de l'aide: étude

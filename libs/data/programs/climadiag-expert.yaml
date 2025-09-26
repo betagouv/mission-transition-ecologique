@@ -1,12 +1,30 @@
 titre: ClimaDiag expert
+metaTitre: ClimaDiag Expert – Diagnostic climat et plan d’adaptation
 promesse: >-
   Anticipez l’impact des changements climatiques pour votre entreprise et
   sécurisez votre activité
 description: >-
-  Bénéficiez d'un accompagnement d'un expert CCI pour vous aider à évaluer la
-  vulnérabilité climatique de votre entreprise, prévenir les impacts du
-  dérèglement climatique et vous aider à limiter les coûts imprévus de canicule,
-  inondation, sécheresse, etc.
+  Anticipez les effets du changement climatique sur votre activité avec
+  l’accompagnement d’un expert CCI. Grâce à un **diagnostic réalisé sur site**,
+  évaluez la vulnérabilité de votre entreprise et **définissez un plan
+  d’adaptation concre**t.\
+
+  L’accompagnement vous permet de :
+
+
+  - Hiérarchiser les risques climatiques (canicule, inondation, sécheresse…)
+
+
+  - Analyser les impacts sur vos clients, fournisseurs et concurrents
+
+
+  - Concevoir un plan d’actions adapté à votre réalité opérationnelle
+
+
+  - Identifier des solutions de financement pour engager les premières actions
+metaDescription: >-
+  Anticipez les effets du changement climatique : diagnostic, plan d'adaptation
+  et aides financières pour sécuriser votre entreprise.
 début de validité: 01/10/2023
 fin de validité: 01/08/2026
 illustration: images/TEE_energie_verte.png
@@ -14,19 +32,21 @@ opérateur de contact: Chambre de Commerce et de l'Industrie
 autres opérateurs:
   - ADEME
   - Agence de l'Eau
+contact question: formulaire
 url: https://www.grandest.cci.fr/produit/climadiag-expert
 nature de l'aide: étude
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 5 à 10 jours selon la taille de l'entreprise
 objectifs:
+  - description: Exprimez votre intérêt en contactant un conseiller via le formulaire.
+    liens:
+      - formulaire: true
   - description: >-
-      Réalisez un diagnostic sur site pour évaluer et hierarchiser l'ensemble
-      des risques encourus par votre entreprise.
+      Un conseiller CCI vous rappelle pour répondre à vos questions et vous
+      guider dans la constitution de votre demande.
   - description: >-
-      Identifiez l'impact sur votre écosystème : concurrents & sources
-      d'insatisfaction client liées aux changements climatiques.
-  - description: Concevez un plan d'actions à mettre en oeuvre.
-  - description: Identifiez des financements possibles.
+      Planifiez le diagnostic sur site avec le chargé d’étude qui vous sera
+      attribué.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Entre 20 et 500 salariés

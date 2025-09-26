@@ -1,5 +1,5 @@
 <template>
-  <TeeIframe
+  <TeeIframeCard
     :link="href"
     :title="`Accédez aux aides publiques pour votre projet de ${projectTitle}`"
     :image-src="currentProject?.image"

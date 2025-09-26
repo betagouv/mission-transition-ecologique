@@ -3,42 +3,45 @@ promesse: >-
   Réhabilitez votre installation solaire thermique collective défectueuse ou
   improductive
 description: >-
-  Votre installation solaire thermique pour la production d'eau chaude est
-  défécteuse ou à l'arrêt ? L'ADEME vous apporte un soutien financier pour la
-  réalisation d'un audit de votre système d'installation solaire thermique,
-  ainsi que pour les travaux de réhabilitation.
+  Votre installation solaire thermique pour la production d’eau chaude est
+  défectueuse ou à l’arrêt ? L’ADEME vous soutient financièrement pour :
+
+
+  - **réaliser un audit afin d’identifier les causes de dysfonctionnement**,
+
+  - **évaluer les actions correctives et financer les travaux de remise en
+  service**.
+
+
+  Cette aide vous permet de restaurer rapidement les performances de votre
+  installation, de réduire son impact environnemental et de retrouver une
+  production d’eau chaude économique et durable.
 description longue: >-
-  Pour être éligible, votre installation doit : 
+  Pour être éligible, votre installation doit :
 
-  • être une installation solaire thermique pour la
 
-  production d’eau chaude ;
+  - être une installation solaire thermique pour la production d’eau chaude ;
 
-  • avoir recours à l’installation de capteurs solaires thermiques vitrés à
+  - avoir recours à l’installation de capteurs solaires thermiques vitrés à
+  circulation de liquide certifiés (CSTBat, SolarKeymark ou équivalents) ;
 
-  circulation de liquide certifiés (CSTBat, SolarKeymark ou équivalents) ; 
+  - être à destination de logements collectifs, du secteurs tertiaire, industrie
+  ou agriculture.
 
-  • être à destination de logements collectifs, du secteurs tertiaire, industrie
-  ou agriculture. 
-
-  • avoir moins de 20 ans depuis sa mise en service à la date de dépôt de la
-
+  - avoir moins de 20 ans depuis sa mise en service à la date de dépôt de la
   demande d’aide.
 
-  • Avoir une surface de capteurs solaires thermiques installée supérieure ou
+  - Avoir une surface de capteurs solaires thermiques installée supérieure ou
   égale à 25 m² en métropole et 10 m² en DOM-TOM (en une seule installation ou
   en cumul de surface de plusieurs petites installations).
 
-  • purgée de tous les moyens de recours contre les parties responsables de
-
+  - purgée de tous les moyens de recours contre les parties responsables de
   l’installation (Garantie de Parfait Achèvement, Dommage d’Ouvrage, Assurance
-  décennale et autre...). 
+  décennale et autre...).
 
 
   Les installations prioritaires à ce dispositif sont les installations à
   l’arrêt ou ayant leur productivité en deçà de 50% de la valeur de référence.
-
-
   L’ADEME privilégiera les actions groupées d’installations ainsi que les
   consortiums/groupements de prestataire d’ingénierie, d’installateur et
   d’exploitant.
@@ -46,6 +49,7 @@ début de validité: 03/06/2019
 fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000692
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/audit-rehabilitation-dinstallations-solaires-thermiques-collectives
 nature de l'aide: étude

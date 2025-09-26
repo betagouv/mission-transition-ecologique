@@ -3,6 +3,7 @@ promesse: Financez votre projet de transition écologique dans le secteur du tou
 description: "Bénéficiez d’un prêt participatif «\_Agir Pays de la Loire\_». Ce prêt est destiné à accompagner les innovations incluant une démarche de transition écologique, portées par les entreprises du tourisme. Grâce à ce prêt, financez, par exemple, votre isolation thermique, vos équipements d’économies d’eau et d’énergie."
 illustration: images/TEE_ampoule.png
 opérateur de contact: Région Pays de la Loire
+contact question: mailto:tourisme@paysdelaloire.fr
 url: https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-agir-tourisme
 nature de l'aide: prêt
 montant du prêt: Variable selon projet, à 3,3% TEG
@@ -66,7 +67,12 @@ publicodes:
       - code NAF niveau 1 . est I
       - code NAF niveau 1 . est L
   entreprise . a un objectif ciblé:
-    une de ces conditions: []
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
       - région = Pays de la Loire

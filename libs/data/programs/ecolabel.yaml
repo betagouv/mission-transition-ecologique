@@ -47,6 +47,7 @@ début de validité: 01/01/2025
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
+contact question: mailto:amo.ecolabeleu@ademe.fr
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen
 nature de l'aide: financement
@@ -86,33 +87,13 @@ conditions d'éligibilité:
     - France et territoires d'outre-mer
   secteur d'activité:
     - >-
-      Les secteurs éligibles à l'Écolabel sont : 
-
-
-      - Hébergement touristique
-
-
-
-      - Services de nettoyage intérieur
-
-
-
-      - Milieux de culture, amendements pour sols
-
-      - Papier tissue et produits tissue, papier graphique, produits en papier
-      imprimé, produits de papeterie et sacs en papier
-
-      - Produits de nettoyage pour surfaces dures, de protection hygiénique
-      absorbants
-
-      - Détergents textiles, détergents pour lave vaisselle, à usage industriel,
-      destinés aux collectivités ou détergents pour vaisselle à la main
-
-      - Produits cosmétiques et produits de soin pour animaux
-
-      - Peintures et vernis d'intérieur ou d'extérieur
-
-      - Lubrifiants
+      L'Écolabel s'applique à plusieurs secteurs : l’hébergement touristique,
+      les services de nettoyage intérieur, les produits d’entretien (détergents
+      textiles, vaisselle, surfaces dures, usage industriel), les produits
+      d’hygiène (cosmétiques, soins pour animaux, protections hygiéniques), les
+      articles en papier (tissue, graphique, imprimé, papeterie, sacs), les
+      milieux de culture et amendements pour sols, les peintures et vernis,
+      ainsi que les lubrifiants.
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:

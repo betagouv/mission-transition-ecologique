@@ -3,15 +3,22 @@ promesse: >-
   Entreprise industrielle, réalisez un audit énergétique de votre site de
   production
 description: >-
-  L’ADEME vous aide à financer l'audit énergétique sur le périmètre de votre
-  choix : site de production, atelier ou process. 
+  L’ADEME vous aide à financer un audit énergétique sur le périmètre de votre
+  choix : site de production, atelier ou process.
 
-  L'audit énergétique vous permet de réaliser un état des lieux complet de vos
-  consommations et d'identifier vos postes les plus émetteurs en terme de
-  dépenses énergétiques. Votre auditeur énergétique vous aidera ensuite a
-  identifier les actions les plus rentables et efficaces à mener et à les
-  hiérarchiser en fonction du temps de retour sur investissement et de leur
-  facilité de leur mise en œuvre.
+
+  L’audit énergétique vous permet :
+
+
+  -  **de réaliser un état des lieux complet de vos consommations**, pour mieux
+  comprendre où et comment l’énergie est utilisée ;
+
+  -  **d’identifier les postes les plus énergivores**, en croisant les données
+  techniques et économiques ;
+
+  - **de définir et hiérarchiser les actions les plus efficaces**, selon leur
+  rentabilité, leur temps de retour sur investissement et leur facilité de mise
+  en œuvre.
 description longue: >-
   Les audits énergétiques offrent pour bénéfices 10 à 20 % d'économie sur un
   site en moyenne et des bases solides pour la mise en œuvre d'un Système de
@@ -20,6 +27,7 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000697
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/audit-energetique-industrie
 nature de l'aide: étude

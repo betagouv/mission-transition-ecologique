@@ -2,6 +2,7 @@
   <div
     id="eligibility-bar"
     ref="eligibilityCriteria"
+    class="fr-container--fluid"
     :class="bgClass"
   >
     <div class="fr-container fr-grid-row fr-grid-row--center fr-grid-row--middle fr-py-3v">
@@ -60,7 +61,7 @@
 import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
 import { Scroll } from '@/tools/scroll'
-import StickyWithOffset from '@/tools/stickyWithOffset'
+import AddClassOnScroll from '@/tools/addClassOnScroll'
 import { Color, RouteName } from '@/types'
 import type { RouteLocationRaw } from 'vue-router'
 
@@ -105,7 +106,7 @@ const props = withDefaults(defineProps<Props>(), {
   messageDetail: undefined
 })
 const eligibilityCriteria = ref<HTMLElement>()
-const stickyWithOffset = ref<StickyWithOffset | null>(null)
+const stickyWithOffset = ref<AddClassOnScroll | null>(null)
 
 const fontColor = computed(() => {
   return props.color ? `fr-text--${props.color}` : undefined
@@ -120,7 +121,7 @@ function isProgramDetailPage() {
 onMounted(async () => {
   if (isProgramDetailPage()) {
     await nextTick()
-    stickyWithOffset.value = new StickyWithOffset(eligibilityCriteria.value, document.getElementById('tee-header'))
+    stickyWithOffset.value = new AddClassOnScroll(eligibilityCriteria.value, document.getElementById('tee-header'))
     stickyWithOffset.value.addEventListenerOnScroll()
   }
 })
@@ -142,7 +143,7 @@ const bgClass = computed(() => {
 const scrollTo = (id: string) => {
   const element = document.getElementById(id)
   if (element) {
-    Scroll.toWithTopBarOffset(element)
+    Scroll.toWithEligibilityBarOffset(element)
   }
 }
 

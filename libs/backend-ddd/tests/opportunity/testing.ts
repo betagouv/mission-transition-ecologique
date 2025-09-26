@@ -1,5 +1,4 @@
-import { ContactDetails, Opportunity, OpportunityDetails, OpportunityType } from '@tee/common'
-import { ThemeId } from '@tee/data'
+import { ContactDetails, Opportunity, OpportunityDetails, OpportunityType, ThemeId } from '@tee/common'
 
 export const fakeContact = (): ContactDetails => {
   return {

@@ -56,17 +56,29 @@
         &--inline {
           display: inline;
         }
-      } 
-    } 
+      }
+    }
   }
 }
 
 .fr-sticky {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  @each $breakpoint, $value in setting.$breakpoints-values {
+    $modifier: tool.modifierByBreakpoint($breakpoint);
+
+    @include tool.media-query-respond-from($breakpoint) {
+      &#{$modifier} {
+        position: sticky;
+        top: 0;
+        z-index: 501;
+      }
+    }
+  }
 }
 
 .fr-position--relative {
   position: relative;
+}
+
+.fr-flex-direction--column {
+  flex-direction: column;
 }

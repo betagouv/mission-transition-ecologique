@@ -1,37 +1,48 @@
 titre: Étude "Solaire thermique"
 promesse: Étudiez la faisabilité d'une installation solaire thermique
 description: >-
-  Vous souhaitez mettre en place une installation solaire thermique ? L'ADEME
-  vous apporte une aide pour une étude de faisabilité, étape nécessaire avant
-  tout investissement. Cette étude vous permettra d'identifier les solutions
-  techniques adaptées aux possibilités de votre site d’implantation ainsi que
-  les solutions pour le montage financier, administratif et juridique de votre
-  investissement.
-description longue: >
+  Vous souhaitez **installer un système solaire thermique pour produire de l’eau
+  chaude sur votre site** ? L’ADEME vous soutient financièrement pour réaliser
+  une **étude de faisabilité,** étape essentielle avant tout investissement.
+  Cette étude vous permettra de :\
+
+  – **déterminer les solutions techniques** les plus adaptées à votre
+  installation,\
+
+  – **analyser les aspects financiers, administratifs et juridiques** de votre
+  projet.
+
+
+  Grâce à cette aide, vous pourrez évaluer la viabilité de votre projet et
+  prendre des décisions éclairées avant de lancer les travaux.
+description longue: >-
   Cette étude de faisabilité peut être liée à la mise en œuvre :
 
-  •  d’installations dédiées sur bâtiment ou process
 
-  •  d’installations sur réseau de chaleur
+  - d’installations dédiées sur bâtiment ou process
 
-  • de systèmes solaires combinés
+  - d’installations sur réseau de chaleur
+
+  - de systèmes solaires combinés
 
 
   L’étude de faisabilité vous permettra de :
 
-  • Vérifier la faisabilité technique et économique du projet d’implantation
+
+  - Vérifier la faisabilité technique et économique du projet d’implantation
   d’une installation solaire.
 
-  • Proposer des solutions techniques adaptées au contexte et aux possibilités
+  - Proposer des solutions techniques adaptées au contexte et aux possibilités
   du site d’implantation, et assurer le dimensionnement et la pérennité de
   l’installation.
 
-  • Explorer des solutions pour le financement de l’opération et le montage
+  - Explorer des solutions pour le financement de l’opération et le montage
   administratif et juridique.
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
+contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etude-faisabilite-dinstallation-solaire-thermique
 nature de l'aide: étude

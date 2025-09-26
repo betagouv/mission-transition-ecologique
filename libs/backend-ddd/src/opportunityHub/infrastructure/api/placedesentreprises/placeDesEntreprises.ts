@@ -1,15 +1,15 @@
-import { Maybe, Result } from 'true-myth'
+import { Result } from 'true-myth'
 import axios, { AxiosInstance, RawAxiosRequestHeaders } from 'axios'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { ensureError, handleException } from '../../../../common/domain/error/errors'
 import Config from '../../../../config'
-import { GetLandingResponseData, Subject, subjectToIdMapping, CreateSolicitationApiBody } from './types'
+import { SolicitationResponseData, Subject, subjectToIdMapping, CreateSolicitationApiBody } from './types'
 import { OpportunityWithContactId } from '../../../../opportunity/domain/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
 import { ProgramService } from '../../../../program/application/programService'
 import OpportunityService from '../../../../opportunity/application/opportunityService'
-import { Operators, ProgramType, ThemeId } from '@tee/data'
-import { Objective, Opportunity, OpportunityType } from '@tee/common'
+import { Operators, ProgramType } from '@tee/data'
+import { Objective, Opportunity, OpportunityType, ThemeId } from '@tee/common'
 import Monitor from '../../../../common/domain/monitoring/monitor'
 import { OpportunityAssociatedData } from '../../../../opportunity/domain/opportunityAssociatedData'
 
@@ -32,10 +32,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return new Error('Operator List non valid for Place des entreprises')
   }
 
-  override support = (opportunityData: OpportunityAssociatedData) => {
-    if (opportunityData.isProgram()) {
-      return !opportunityData.data['activable en autonomie']
-    }
+  override support = (_opportunityData: OpportunityAssociatedData) => {
     return true
   }
 
@@ -47,7 +44,10 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return !reachTransmissionLimit
   }
 
-  public transmitOpportunity = async (opportunity: Opportunity, opportunityData: OpportunityAssociatedData): Promise<Maybe<Error>> => {
+  public transmitOpportunity = async (
+    opportunity: Opportunity,
+    opportunityData: OpportunityAssociatedData
+  ): Promise<Result<number, Error>> => {
     let maybePayload
     if (opportunityData.isProgram()) {
       maybePayload = this._createProgramRequestBody(opportunity, opportunityData.data)
@@ -56,17 +56,17 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     } else if (opportunityData.isCustomProject()) {
       maybePayload = this._createProjectRequestBody(opportunity, opportunityData.data.title)
     } else {
-      return Maybe.of(Error("Canno't transmit to PDE an opportunity of type" + opportunity.type))
+      return Result.err(Error("Canno't transmit to PDE an opportunity of type" + opportunity.type))
     }
     if (maybePayload.isErr) {
-      return Maybe.of(maybePayload.error)
+      return Result.err(maybePayload.error)
     }
     return await this._sendOpportunity(maybePayload.value)
   }
 
-  private _sendOpportunity = async (payload: CreateSolicitationApiBody): Promise<Maybe<Error>> => {
+  private _sendOpportunity = async (payload: CreateSolicitationApiBody): Promise<Result<number, Error>> => {
     try {
-      const response = await this._axios.request<GetLandingResponseData>({
+      const response = await this._axios.request<SolicitationResponseData>({
         method: 'POST',
         url: `/solicitations`,
         data: payload,
@@ -74,16 +74,25 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       })
       const status = response.status
       if (status != 200) {
-        Monitor.error('Error creating an opportunity at CE during CE API Call', { CeReponse: response })
+        Monitor.error('Error creating an opportunity at CE during CE API Call', { CeReponse: response, payload: payload })
 
-        return Maybe.of(Error('PDE Api Error ' + status))
+        return Result.err(new Error('PDE Api Error ' + status))
+      }
+      const solicitationId = response.data?.data?.solicitation_id
+      if (typeof solicitationId === 'number') {
+        return Result.ok(solicitationId)
       } else {
-        return Maybe.nothing()
+        Monitor.warning('Unable to retrieve the Id from CE while transmitting the opportunity using the API', {
+          CeReponse: response,
+          payload: payload
+        })
+
+        return Result.err(new Error('Invalid response format: missing solicitation_id'))
       }
     } catch (exception: unknown) {
       Monitor.exception(ensureError(exception))
 
-      return Maybe.of(handleException(exception))
+      return Result.err(handleException(exception))
     }
   }
 
@@ -152,9 +161,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         email: opportunity.email,
         phone_number: opportunity.phoneNumber,
         siret: opportunity.companySiret,
-        location: '',
-        api_calling_url: opportunity.linkToCatalog,
-        questions_additionnelles: []
+        origin_url: opportunity.linkToCatalog
       }
     })
   }
@@ -188,9 +195,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         email: opportunity.email,
         phone_number: opportunity.phoneNumber,
         siret: opportunity.companySiret,
-        location: '',
-        api_calling_url: opportunity.linkToCatalog,
-        questions_additionnelles: []
+        origin_url: opportunity.linkToCatalog
       }
     })
   }

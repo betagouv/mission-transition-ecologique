@@ -1,5 +1,5 @@
-import { Opportunity, OpportunityDetails } from '@tee/common'
-import { ProgramType, ProjectType, Operators, ThemeId } from '@tee/data'
+import { Opportunity, OpportunityDetails, ThemeId } from '@tee/common'
+import { ProgramType, ProjectType, Operators } from '@tee/data'
 
 export type OpportunityWithContactId = Opportunity & {
   contactId: number
@@ -15,6 +15,7 @@ export type OpportunityDetailsShort = Omit<OpportunityDetails, 'linkToPage' | 'l
 
 export interface OpportunityUpdateAttributes {
   sentToOpportunityHub: boolean
+  idCe: number
 }
 
 export interface ContactId {
