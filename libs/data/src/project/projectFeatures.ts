@@ -1,6 +1,10 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { FaqBaserow } from '../common/baserow/faqBaserow'
 import { ProjectBaserow } from '../common/baserow/projectBaserow'
+import { FaqBaserowInterface } from '../common/baserow/types'
+import { FaqConverter } from '../faq/faqConverter'
+import { FaqFilter } from '../faq/faqFilter'
 import { DataProject, ProjectStatus } from './types/domain'
 import { jsonPrograms } from '../../static'
 import { ProgramType } from '../program/types/shared'
@@ -19,7 +23,7 @@ export class ProjectFeatures {
   private _programs: ProgramType[] = []
   private _logger: Logger
 
-  constructor() {
+  constructor(private _faqBaserow: FaqBaserowInterface = new FaqBaserow()) {
     this._programs = jsonPrograms as unknown as ProgramType[]
     this._logger = new Logger(LoggerType.Project)
   }
@@ -41,6 +45,7 @@ export class ProjectFeatures {
 
   private async _validateData(rawProjects: DataProject[]) {
     const validProjects: DataProject[] = []
+    const projectFaqs = await this._getFaqsByProjects(rawProjects)
     for (const project of rawProjects) {
       if (project.status != ProjectStatus.InProd) {
         continue
@@ -49,6 +54,8 @@ export class ProjectFeatures {
       this._validateLinkedProjects(project, rawProjects)
       this._validatePrograms(project, this._programs)
       await this._validateLinks(project)
+
+      project.faqs = projectFaqs[project.id] ?? []
 
       if (this._validateSlug(project)) {
         validProjects.push(project)
@@ -116,19 +123,23 @@ export class ProjectFeatures {
   }
 
   private async _validateLinks(project: DataProject) {
-    const markdownText = project.moreDescription
-    const linkRegex = /\[.*?\]\((https?:\/\/[^\s]+)\)|\bhttps?:\/\/[^\s]+/g
-    const links = [...markdownText.matchAll(linkRegex)].map((match) => match[1] || match[0])
-    for (const link of links) {
-      if (!(await LinkValidator.isValidLink(link))) {
-        this._logger.log(
-          LogLevel.Major,
-          `Erreur de validation de lien dans le champ "pour aller plus loin"`,
-          project['title'],
-          project.id,
-          `[Lien cassé](${link})`
-        )
-      }
+    const invalidLinks: string[] = await LinkValidator.findInvalidLinks(project.moreDescription)
+    for (const link of invalidLinks) {
+      this._logger.log(
+        LogLevel.Major,
+        `Erreur de validation de lien dans le champ "pour aller plus loin"`,
+        project['title'],
+        project.id,
+        `[Lien cassé](${link})`
+      )
     }
+  }
+
+  private async _getFaqsByProjects(projects: DataProject[]) {
+    const { baserowFaqs, baserowFaqSections } = await this._faqBaserow.getProjectsFaqs()
+    const faqsByProjects = new FaqConverter(this._logger).toDomainByProjects(baserowFaqs, baserowFaqSections, projects)
+    await new FaqFilter(this._logger).byValidity(faqsByProjects)
+
+    return faqsByProjects
   }
 }

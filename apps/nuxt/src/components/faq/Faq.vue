@@ -11,6 +11,7 @@
         <FaqSection
           v-if="faqItem"
           :faq-item="faqItem"
+          :is-full-width="isFullWidth"
         />
       </div>
     </template>
@@ -23,6 +24,7 @@ import { FaqSectionType } from '@/types'
 
 interface Props {
   faqItems: FaqSectionType[]
+  isFullWidth?: boolean
 }
 const props = defineProps<Props>()
 

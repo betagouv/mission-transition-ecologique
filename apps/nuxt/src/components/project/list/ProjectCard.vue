@@ -77,7 +77,7 @@ const eligibleProgramsTag = computed(() => {
 const navigation = new Navigation()
 const getRouteToProjectDetail = (project: ProjectType): RouteLocationRaw => {
   return {
-    name: navigation.isCatalogProjects() || navigation.isHomepage() ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
+    name: navigation.isCatalogAboutProjects() || navigation.isHomepage() ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
     params: { projectSlug: project.slug },
     query: navigationStore.query
   }

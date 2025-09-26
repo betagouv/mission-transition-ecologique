@@ -18,7 +18,3 @@ export interface QuestionItem {
   question: string
   answer: string
 }
-
-export type FaqType = {
-  [key in FaqPage]?: FaqSectionType[]
-}

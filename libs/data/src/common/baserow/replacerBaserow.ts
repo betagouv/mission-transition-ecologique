@@ -1,7 +1,7 @@
 import { Id, LinkObject } from './types'
 
 export class ReplacerBaserow {
-  static replaceLinkObjectByTableData<T extends Id, O extends boolean = false>(
+  static linkObjectByTableData<T extends Id, O extends boolean = false>(
     links: LinkObject[],
     referencedTableData: T[],
     one?: O
@@ -20,7 +20,15 @@ export class ReplacerBaserow {
     return (one ? filtered[0] : filtered) as O extends true ? T | undefined : T[]
   }
 
-  static replaceLinkObjectByValue<T = string>(linkObject: LinkObject | undefined | null): T | undefined {
+  static linkObjectByValue<T = string>(linkObject: LinkObject | undefined | null): T | undefined {
     return linkObject ? (linkObject.value as T) : undefined
+  }
+
+  static linkObjectsByValues<T = string>(linkObjects: LinkObject[]): T[] {
+    return linkObjects.map((linkObject) => linkObject.value as T)
+  }
+
+  static linkObjectsByIds<T = number>(linkObjects: LinkObject[]): T[] {
+    return linkObjects.map((linkObject) => linkObject.id as T)
   }
 }

@@ -1,5 +1,6 @@
 import ConfigBaserow from '../../configBaserow'
 import { AbstractBaserow } from './abstractBaserow'
+import { FilterBaserow } from './filterBaserow'
 import { BaserowFaq, BaserowFaqSection, FaqBaserowInterface } from './types'
 
 export class FaqBaserow extends AbstractBaserow implements FaqBaserowInterface {
@@ -9,6 +10,16 @@ export class FaqBaserow extends AbstractBaserow implements FaqBaserowInterface {
   async getFaqs(): Promise<{ baserowFaqs: BaserowFaq[]; baserowFaqSections: BaserowFaqSection[] }> {
     return {
       baserowFaqs: await this._getTableData<BaserowFaq>(this._faqTableId),
+      baserowFaqSections: await this._getTableData<BaserowFaqSection>(this._faqSectionTableId)
+    }
+  }
+
+  async getProjectsFaqs(): Promise<{ baserowFaqs: BaserowFaq[]; baserowFaqSections: BaserowFaqSection[] }> {
+    return {
+      baserowFaqs: await this._getTableData<BaserowFaq>(
+        this._faqTableId,
+        new FilterBaserow('AND').withNotEmpty('Projet').withIsActive('Actif')
+      ),
       baserowFaqSections: await this._getTableData<BaserowFaqSection>(this._faqSectionTableId)
     }
   }

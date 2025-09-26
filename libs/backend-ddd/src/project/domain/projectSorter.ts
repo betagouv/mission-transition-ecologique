@@ -4,7 +4,6 @@ import { ProjectSorterInterface } from './spi'
 
 export class ProjectSorter implements ProjectSorterInterface {
   public byPriority(projects: ProjectType[], codeNAF: string | undefined) {
-    projects.map((p) => console.log(p.slug, this._getPriority(p.priority, codeNAF)))
     return projects.sort((a, b) => {
       return this._getPriority(a.priority, codeNAF) - this._getPriority(b.priority, codeNAF)
     })

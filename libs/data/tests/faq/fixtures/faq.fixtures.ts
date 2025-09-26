@@ -24,7 +24,8 @@ export const faqBaserow = [
         value: 'section 1',
         order: '1.00000000000000000000'
       }
-    ]
+    ],
+    Projet: []
   },
   {
     id: 4,
@@ -49,7 +50,8 @@ export const faqBaserow = [
         value: 'section 1',
         order: '1.00000000000000000000'
       }
-    ]
+    ],
+    Projet: []
   },
   {
     id: 3,
@@ -74,7 +76,8 @@ export const faqBaserow = [
         value: 'Pour qui ?',
         order: '2.00000000000000000000'
       }
-    ]
+    ],
+    Projet: []
   },
   {
     id: 2,
@@ -99,7 +102,8 @@ export const faqBaserow = [
         value: 'Comment marche cet outil ?',
         order: '1.00000000000000000000'
       }
-    ]
+    ],
+    Projet: []
   },
   {
     id: 67,
@@ -124,7 +128,8 @@ export const faqBaserow = [
         value: 'Pourquoi ?',
         order: '3.00000000000000000000'
       }
-    ]
+    ],
+    Projet: []
   },
   {
     id: 133,
@@ -149,7 +154,8 @@ export const faqBaserow = [
         value: 'Pourquoi ?',
         order: '3.00000000000000000000'
       }
-    ]
+    ],
+    Projet: []
   },
   {
     id: 140,
@@ -174,7 +180,8 @@ export const faqBaserow = [
         value: 'Pourquoi ?',
         order: '3.00000000000000000000'
       }
-    ]
+    ],
+    Projet: []
   },
   {
     id: 141,
@@ -199,7 +206,8 @@ export const faqBaserow = [
         value: 'Pourquoi ?',
         order: '3.00000000000000000000'
       }
-    ]
+    ],
+    Projet: []
   }
 ] as unknown as BaserowFaq[]
 
@@ -211,6 +219,7 @@ export const inactiveFaqs: BaserowFaq[] = [
     Actif: false,
     Page: { id: 1, value: 'Accueil', Couleur: 'blue' },
     Section: [{ id: 1, value: 'Test', order: '1.0' }],
-    order: 1
+    order: 1,
+    Projet: []
   }
 ]

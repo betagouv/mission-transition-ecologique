@@ -1,7 +1,7 @@
 import { Color } from '@tee/common'
 import { LoggerInterface, LogLevel } from '../common/logger/types'
-import { FaqFilterInterface } from './types/domain'
-import { FaqPage, FaqType } from './types/shared'
+import { FaqFilterInterface, FaqType } from './types/domain'
+import { FaqPage } from './types/shared'
 import { BaserowFaq } from '../common/baserow/types'
 import { LinkValidator } from '../common/validators/linkValidator'
 

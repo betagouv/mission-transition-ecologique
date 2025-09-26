@@ -1,5 +1,5 @@
 export interface LoggerInterface {
-  log(criticality: LogLevel, message: string, name: string, baserowId: number, data?: unknown): void
+  log(criticality: LogLevel, message: string, name: string, baserowId: number, data?: unknown, type?: LoggerType): void
   write(fileName: string): void
 }
 
@@ -29,4 +29,5 @@ export interface LogEvent {
   criticality: LogLevel
   message: string
   data: unknown
+  type?: LoggerType
 }

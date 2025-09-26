@@ -20,7 +20,7 @@ export class Logger implements LoggerInterface {
   // ... existing code ...
 
   private _buildBaserowLink(log: LogEvent): string | undefined {
-    const config = Logger._baserowConfig[this._type]
+    const config = Logger._baserowConfig[log.type ?? this._type]
     if (!config) {
       return undefined
     }
@@ -28,10 +28,10 @@ export class Logger implements LoggerInterface {
     return `${Logger._baserowBaseUri}${config.tableId}/${config.viewId}/row/${log.baserowId}`
   }
 
-  log(criticality: LogLevel, message: string, name: string, baserowId: number, data?: unknown) {
-    this.logs.push({ name, baserowId, criticality, message, data })
+  log(criticality: LogLevel, message: string, name: string, baserowId: number, data?: unknown, type?: LoggerType): void {
+    this.logs.push({ name, baserowId, criticality, message, data, type })
     if (this._consoleLog) {
-      console.log({ name, baserowId, criticality, message, data })
+      console.log({ name, baserowId, criticality, message, data, type })
     }
   }
 

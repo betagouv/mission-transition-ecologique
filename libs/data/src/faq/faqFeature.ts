@@ -24,7 +24,7 @@ export class FaqFeature {
     const baserowFaqsFiltered = this._filter.byActive(baserowFaqs)
 
     console.log(`Start converting Baserow data to domain.`)
-    const faqs = this._converter.toDomain(baserowFaqsFiltered, baserowFaqSections)
+    const faqs = this._converter.toDomainByPages(baserowFaqsFiltered, baserowFaqSections)
 
     console.log(`Start validating FAQ data.`)
     await this._filter.byValidity(faqs)

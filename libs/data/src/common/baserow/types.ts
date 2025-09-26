@@ -3,6 +3,7 @@ import { ConditionalValues as DomainConditionalValues, DataProgram } from '../..
 
 export interface FaqBaserowInterface {
   getFaqs(): Promise<{ baserowFaqs: BaserowFaq[]; baserowFaqSections: BaserowFaqSection[] }>
+  getProjectsFaqs(): Promise<{ baserowFaqs: BaserowFaq[]; baserowFaqSections: BaserowFaqSection[] }>
 }
 
 export interface Id {
@@ -37,18 +38,24 @@ export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
   'Description courte': string
   Statut: LinkObject
   Image: LinkObject[]
-  'Qu’est-ce que c’est ?': string
-  'Pour aller plus loin': string
   Titre: string
+  'Titre - Pourquoi ?': string
+  'Qu’est-ce que c’est ?': string
+  'Titre - Me documenter': string
+  'Pour aller plus loin': string
+  'Titre - Projets complémentaires': string
+  'Description - Projets complémentaires': string
   'Projets complémentaires': LinkObject[]
   'Thématique principale': LinkObject[]
   NameTag: string
   'Thématiques secondaires': LinkObject[]
   Dispositifs: LinkObject[]
   Prio: number
-  'Mise En Avant': number | null
-  'redirection-vers': LinkObject[]
   'Prios spécifiques': string
+  'Mise En Avant': number | null
+  'Titre - FAQ': string
+  Faq: LinkObject[]
+  'redirection-vers': LinkObject[]
 }
 
 export interface LinkObject extends Id {
@@ -208,6 +215,7 @@ export interface BaserowFaq extends Id, Order {
   Actif: boolean
   Page: LinkObject | null
   Section: LinkObject[]
+  Projet: LinkObject[]
 }
 
 export interface BaserowFaqSection extends Id, Order, CreationDate, LastModification, LastModificationBy {
@@ -220,10 +228,16 @@ export interface FaqItemStructured extends BaserowFaqSection {
 }
 
 export type FaqStructured = {
-  [key in FaqPage]?: FaqItemStructured[]
+  [key in FaqPage | number]?: FaqItemStructured[]
 }
 
 export interface BaserowContact extends Id {
   'Prénom NOM': string
   Courriel: string
+}
+
+export interface BaserowFilter {
+  filter_type: 'OR' | 'AND'
+  filters: { type: string; field: string; value: string | number }[]
+  groups: []
 }

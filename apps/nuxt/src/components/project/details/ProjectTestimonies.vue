@@ -5,7 +5,7 @@
     class="fr-py-5v fr-border-b--grey--light"
     title="🌟 Elles l'ont fait !"
     container-from="md"
-    title-class="fr-h4 fr-mb-2v"
+    title-class="fr-h4"
     title-tag="h2"
   >
     <template #content>
@@ -13,7 +13,8 @@
       <LazyTestimony
         v-for="(testimony, index) in testimoniesToDisplay"
         :key="testimony.slug"
-        :class="[index === testimoniesToDisplay.length - 1 ? 'fr-mt-4w fr-bg-sm--none' : 'fr-mt-4w fr-mb-6w']"
+        class="fr-mt-4w fr-pl-md-4w fr-pl-0"
+        :class="[index === testimoniesToDisplay.length - 1 ? ' fr-bg-sm--none fr-pb-3v' : 'fr-mb-4w']"
         :testimony="testimony"
       />
     </template>
