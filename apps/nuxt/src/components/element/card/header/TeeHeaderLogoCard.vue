@@ -43,7 +43,7 @@ const img = Image.getUrl
       <img
         class="fr-card__logo"
         :src="Identity.logoPath"
-        alt="Transition Écologique des Entreprises - ADEME"
+        alt="Transition écologique des entreprises - ADEME"
       />
     </div>
   </div>

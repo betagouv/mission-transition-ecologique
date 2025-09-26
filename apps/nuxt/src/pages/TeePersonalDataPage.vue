@@ -71,7 +71,7 @@ const cookies: PrivacyPolicyPropsCookie[] = [
   }
 ]
 
-const description = 'Informations relatives à la politique de confidentialité du site Mission Transition Écologique des Entreprises.'
+const description = 'Informations relatives à la politique de confidentialité du site Mission Transition écologique des entreprises.'
 useSeoMeta(MetaSeo.get('Politique de confidentialité', description))
 useSchemaOrg(defineWebPage({ description: description }))
 

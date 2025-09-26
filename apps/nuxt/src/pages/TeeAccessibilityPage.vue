@@ -146,7 +146,7 @@ definePageMeta({
 
 const navigation = new Navigation()
 
-const description = "Informations relatives à l'accessibilité du site de la Mission Transition Écologique des Entreprises."
+const description = "Informations relatives à l'accessibilité du site de la Mission Transition écologique des entreprises."
 useSeoMeta(MetaSeo.get('Accessibilité', description))
 useSchemaOrg(defineWebPage({ description: description }))
 

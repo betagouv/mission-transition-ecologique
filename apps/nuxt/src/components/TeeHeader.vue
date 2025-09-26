@@ -8,7 +8,7 @@
     logo-text="RÉPUBLIQUE<br>FRANÇAISE"
     :show-search="false"
     :operator-img-src="Identity.logoPath"
-    operator-img-alt="Transition Écologique des Entreprises - ADEME"
+    operator-img-alt="Transition écologique des entreprises - ADEME"
     operator-img-style="width:3.5rem;"
   />
 </template>
