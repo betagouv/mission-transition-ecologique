@@ -9,7 +9,6 @@ export interface DataProgram extends BaserowSectors, BaserowMetaData {
   Titre: string
   Promesse: string
   'Description courte': string
-  'Contact Question': string
   'Description longue': string
   'Contact Question': string
   'Opérateur de contact': Operator[]

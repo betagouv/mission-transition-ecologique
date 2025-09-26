@@ -19,22 +19,26 @@ export class ProgramExport {
   private readonly _outputFilePath: string = path.join(this.__dirname, '../../static/programs.csv')
 
   async exportAsCsv(): Promise<void> {
-    const programs = await new ProgramBaserow().getPrograms(false)
+    const programs = await new ProgramBaserow().getPrograms(true)
     const projects = await new ProjectBaserow('', new Logger(LoggerType.Project)).getProdProjects(false)
 
     const previousExportedPrograms = this._readPreviousCSV()
 
-    const schemaPrograms: schemaProgram[] = programs.filter(ProgramUtils.isInProd).map((program) => {
-      const previous = previousExportedPrograms.find((p) => p.nom === program.Titre) // Note : pas optimal mais ça semble trop de travail de faire mieux pour le nombre d'utilisations prévues du code.
-      return this.convertFromDataTypeToSchemaType(program, projects, previous)
-    })
+    const schemaPrograms: schemaProgram[] = programs
+      .filter((program) => ProgramUtils.isInProd(program))
+      .map((program) => {
+        const previous = previousExportedPrograms.find((p) => p.nom === program.Titre) // Note : pas optimal mais ça semble trop de travail de faire mieux pour le nombre d'utilisations prévues du code.
+        return this.convertFromDataTypeToSchemaType(program, projects, previous)
+      })
 
     const csv = stringify(schemaPrograms, { header: true })
     fs.writeFileSync(this._outputFilePath, csv, 'utf-8')
   }
 
   private _readPreviousCSV(): schemaProgram[] {
-    if (!fs.existsSync(this._outputFilePath)) return []
+    if (!fs.existsSync(this._outputFilePath)) {
+      return []
+    }
 
     const content = fs.readFileSync(this._outputFilePath, 'utf-8')
     const records: schemaProgram[] = parse(content, {
@@ -116,14 +120,18 @@ export class ProgramExport {
   }
 
   _getStepString(data: string) {
-    if (!data) return ''
+    if (!data) {
+      return ''
+    }
 
     const lines = data.split('\n')
     return lines[0]?.substring(2) ?? ''
   }
 
   _generateStepLinks(data: string, teeUrl: string): string | undefined {
-    if (!data) return ''
+    if (!data) {
+      return ''
+    }
     const lines = data.split('\n')
     const links = lines
       .slice(1)
@@ -200,10 +208,14 @@ export class ProgramExport {
   }
 
   _formatDate(input?: string): string | undefined {
-    if (!input) return undefined
+    if (!input) {
+      return undefined
+    }
 
     const date = new Date(input)
-    if (isNaN(date.getTime())) return undefined
+    if (isNaN(date.getTime())) {
+      return undefined
+    }
 
     return date.toISOString()
   }
@@ -213,17 +225,23 @@ export class ProgramExport {
   }
 
   _parseExistenceFromText(text?: string): number | undefined {
-    if (!text || !text.toLowerCase().includes('au moins')) return undefined
+    if (!text || !text.toLowerCase().includes('au moins')) {
+      return undefined
+    }
 
     const match = text.match(/au moins\s+(\d+|un)/i)
-    if (!match) return undefined
+    if (!match) {
+      return undefined
+    }
 
     const value = match[1].toLowerCase()
     return value === 'un' ? 1 : parseInt(value, 10)
   }
 
   _checkSpecificStatus(text?: string): string | undefined {
-    if (!text) return undefined
+    if (!text) {
+      return undefined
+    }
 
     const normalized = text.toLowerCase().trim()
     if (normalized === 'artisan' || normalized === 'réservée aux artisans') {

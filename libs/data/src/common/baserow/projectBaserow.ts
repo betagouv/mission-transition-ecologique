@@ -58,19 +58,24 @@ export class ProjectBaserow extends AbstractBaserow {
     return projects
   }
 
-  private async _convertToDataProjectType(baserowProject: BaserowProject, baserowThemes: Theme[]): Promise<DataProject> {
-    const maybeImageName = await this._imageDownloader.handleImageFromImageTable(baserowProject.Image)
-    let imageName
-    if (maybeImageName.isErr) {
-      this._logger.log(
-        LogLevel.Major,
-        maybeImageName.error.message + '\n, defaulting to a default image',
-        baserowProject.Titre,
-        baserowProject.id
-      )
-      imageName = this._defaultProjectImageName
-    } else {
-      imageName = maybeImageName.value
+  private async _convertToDataProjectType(
+    baserowProject: BaserowProject,
+    baserowThemes: Theme[],
+    reloadImages = true
+  ): Promise<DataProject> {
+    let imageName = this._defaultProjectImageName
+    if (reloadImages) {
+      const maybeImageName = await this._imageDownloader.handleImageFromImageTable(baserowProject.Image)
+      if (maybeImageName.isErr) {
+        this._logger.log(
+          LogLevel.Major,
+          maybeImageName.error.message + '\n, defaulting to a default image',
+          baserowProject.Titre,
+          baserowProject.id
+        )
+      } else {
+        imageName = maybeImageName.value
+      }
     }
 
     const redirect = this._generateRedirect(baserowProject)
