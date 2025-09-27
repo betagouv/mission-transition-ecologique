@@ -63,6 +63,8 @@ conditions d'éligibilité:
     - Réservée aux artisans
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - Être un artisan
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

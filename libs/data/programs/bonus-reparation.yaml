@@ -71,7 +71,7 @@ conditions d'éligibilité:
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
-    - "La labellisation est ouverte à tout type de réparateurs professionnels : les artisans réparateurs, les réparateurs industriels, les SAV de fabricants et des distributeurs et les acteurs de la réparation à distances\nIl doit s'agir de réparations sur les produits suivants\_: équipements électriques et électroniques (EEE), éléments d'ameublement, produits textiles d'habillement, les chaussures ou le linge de maison, jouets, articles de sport et de loisirs, articles de bricolage et de jardin."
+    - "La labellisation est ouverte à tout type de réparateurs professionnels : les artisans réparateurs, les réparateurs industriels, les SAV de fabricants et des distributeurs et les acteurs de la réparation à distances\\\nIl doit s'agir de réparations sur les produits suivants\_: équipements électriques et électroniques (EEE), éléments d'ameublement, produits textiles d'habillement, les chaussures ou le linge de maison, jouets, articles de sport et de loisirs, articles de bricolage et de jardin."
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:
