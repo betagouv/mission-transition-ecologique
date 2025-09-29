@@ -21,7 +21,7 @@ export class ProgramExport {
   private readonly _dataGouvUtm = '?utm_campaign=openData'
 
   async exportAsCsv(): Promise<void> {
-    const programs = await new ProgramBaserow().getPrograms(true) //TODO remove true which use local cached data
+    const programs = await new ProgramBaserow().getPrograms(false)
     const projects = await new ProjectBaserow('', new Logger(LoggerType.Project)).getProdProjects(false)
 
     const previousExportedPrograms = this._readPreviousCSV()
@@ -117,21 +117,36 @@ export class ProgramExport {
     const tempMap = new Map<number, Porteur>()
 
     for (const op of operators1) {
-      op.siren === undefined && console.log(`WARNING, Missing siren: ${op.Nom}`)
+      if (op.Tag === 'CCI ou CMA') {
+        tempMap.set(24, {
+          nom: 'CCI FRANCE',
+          siren: '187500020',
+          roles: [PorteurRole.Instructeur, PorteurRole.Diffuseur]
+        })
+        tempMap.set(40, {
+          nom: 'CMA FRANCE (APCM)',
+          siren: '187500046',
+          roles: [PorteurRole.Instructeur, PorteurRole.Diffuseur]
+        })
+        continue
+      }
+      !op.siren && console.log(`WARNING, Missing siren: ${op.Nom}, ${op.id}`)
+      !op['Nom Normalisé'] && console.log(`WARNING, Missing Nom normalisé: ${op.Nom}, ${op.id}`)
       tempMap.set(op.id, {
-        nom: op.Nom,
+        nom: op['Nom Normalisé'],
         siren: op.siren,
         roles: [PorteurRole.Instructeur, PorteurRole.Diffuseur]
       })
     }
 
     for (const op of operators2) {
-      op.siren === undefined && console.log(`WARNING, Missing siren: ${op.Nom}`)
+      !op.siren && console.log(`WARNING, Missing siren: ${op.Nom}, ${op.id}`)
+      !op['Nom Normalisé'] && console.log(`WARNING, Missing Nom normalisé: ${op.Nom}, ${op.id}`)
       if (tempMap.has(op.id)) {
         const existing = tempMap.get(op.id)
         if (!existing) {
           tempMap.set(op.id, {
-            nom: op.Nom,
+            nom: op['Nom Normalisé'],
             siren: op.siren,
             roles: [PorteurRole.Diffuseur]
           })

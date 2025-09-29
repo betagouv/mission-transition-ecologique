@@ -83,6 +83,7 @@ export interface Operator {
   Tag: string
   Nom: string
   siren: string
+  'Nom Normalisé': string
 }
 
 export interface GeographicCoverage {
