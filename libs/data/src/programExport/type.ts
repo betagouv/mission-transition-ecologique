@@ -1,53 +1,74 @@
 import { UUID } from 'crypto'
+import { DataProgramType } from '../program/types/domain'
 
 export interface schemaProgram {
-  id_aide: UUID
-  nom: string
+  id: UUID
+  titre: string
   promesse: string
-  description_courte: string
-  description_longue: string
-  programmes_aide?: string
-  porteurs_aide: string
-  porteurs_siren: string
-  beneficiaires_aide?: string
-  types_aides: string
-  montant_aide_ou_cout: string
-  duree_aide?: string
-  projets_reference: string
-  exemple_projet?: string
-  thematique_aide: string
+  description: string
+  eligibilite: string
+  types_aides: SchemaAideType[]
+  porteurs: Porteur[]
+  programmes_parents?: string
+  url_source?: string
+  cibles: Cible[]
+  eligibilite_geographique: string[]
+  eligibilite_geographique_exclusions?: string[]
   date_ouverture?: string
-  dates_releve_intermediaire?: string
   date_cloture?: string
-  url_source: string
-  contact_question: string
-  activation_etape_1: string
-  activation_etape_1_liens?: string
-  activation_etape_2?: string
-  activation_etape_2_liens?: string
-  activation_etape_3?: string
-  activation_etape_3_liens?: string
-  activation_etape_4?: string
-  activation_etape_4_liens?: string
-  activation_etape_5?: string
-  activation_etape_5_liens?: string
-  activation_etape_6?: string
-  activation_etape_6_liens?: string
+  date_mise_a_jour: string
+}
+
+export type SchemaProgramCsv = Omit<
+  schemaProgram,
+  'types_aides' | 'porteurs' | 'cibles' | 'eligibilite_geographique' | 'eligibilite_geographique_exclusions'
+> & {
+  types_aides: string
+  porteurs: string
+  cibles: string
   eligibilite_geographique: string
-  eligibilite_geographique_exclusions?: string
-  eligibilite_sectorielle: string
-  eligibilite_sectorielle_naf: string
-  eligibilite_sectorielle_exclusions?: string
-  eligibilite_effectif: string
-  eligibilite_effectif_min?: number
-  eligibilite_effectif_max?: number
-  eligibilite_existence?: string
-  eligibilite_existence_min?: number
-  eligibilite_existence_max?: number
-  eligibilite_statuts_specifiques?: string
-  eligibilite_statuts_exclus?: string
-  eligibilite_autre?: string
-  date_mise_a_jour_aide: string
+  eligibilite_geographique_exclusions: string
+}
+
+export enum SchemaAideType {
+  Assistance = 'assistance',
+  AvantageFiscal = 'avantage fiscal',
+  Conseil = 'conseil',
+  Etude = 'étude',
+  Financement = 'financement',
+  Formation = 'formation',
+  Information = 'information',
+  Pret = 'prêt'
+}
+export interface Porteur {
+  nom: string
+  siren: string
+  roles: PorteurRole[]
+}
+
+export const DataProgramTypeToTypeAide: Record<DataProgramType, SchemaAideType[]> = {
+  [DataProgramType.Study]: [SchemaAideType.Etude],
+  [DataProgramType.TaxAdvantage]: [SchemaAideType.AvantageFiscal],
+  [DataProgramType.Financing]: [SchemaAideType.Financement],
+  [DataProgramType.FinancingStudy]: [SchemaAideType.Financement, SchemaAideType.Etude],
+  [DataProgramType.Loan]: [SchemaAideType.Pret],
+  [DataProgramType.Training]: [SchemaAideType.Formation],
+  [DataProgramType.ActionTraining]: [SchemaAideType.Formation, SchemaAideType.Assistance],
+  [DataProgramType.Awareness]: [SchemaAideType.Information],
+  [DataProgramType.Undefined]: []
+}
+
+export enum Cible {
+  Professionnels = 'professionnels',
+  Particuliers = 'particuliers',
+  Associations = 'associations',
+  SecteurPublic = 'secteur public'
+}
+
+export enum PorteurRole {
+  Diffuseur = 'diffuseur',
+  Financeur = 'financeur',
+  Instructeur = 'instructeur'
 }
 
 export const COG_MAPPING: Record<string, string> = {
