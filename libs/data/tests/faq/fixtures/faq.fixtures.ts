@@ -1,5 +1,57 @@
 import { BaserowFaq } from '../../../src/common/baserow/types'
 
+const pages = {
+  faq: {
+    id: 3827578,
+    value: 'FAQ',
+    color: 'orange'
+  },
+  accueil: {
+    id: 3827575,
+    value: 'Accueil',
+    color: 'blue'
+  },
+  unknown: {
+    id: 999,
+    value: 'Unknown Page',
+    color: 'blue'
+  }
+}
+
+// Définition des sections communes
+const sections = {
+  section1: {
+    id: 1,
+    value: 'section 1',
+    order: '1.00000000000000000000'
+  },
+  pourQui: {
+    id: 2,
+    value: 'Pour qui ?',
+    order: '2.00000000000000000000'
+  },
+  commentMarche: {
+    id: 1,
+    value: 'Comment marche cet outil ?',
+    order: '3.00000000000000000000'
+  },
+  pourquoi: {
+    id: 3,
+    value: 'Pourquoi ?',
+    order: '4.00000000000000000000'
+  },
+  unknown: {
+    id: 99,
+    value: 'Unknown Section',
+    order: '4.00000000000000000000'
+  },
+  projectSection1: {
+    id: 1,
+    value: 'Project Section 1',
+    order: '1.00000000000000000000'
+  }
+}
+
 export const faqBaserow = [
   {
     id: 1,
@@ -8,23 +60,13 @@ export const faqBaserow = [
     Question: 'question 3',
     Réponse: 'réponse 3',
     Actif: true,
-    Page: {
-      id: 3827578,
-      value: 'FAQ',
-      color: 'orange'
-    },
+    Page: pages.faq,
     'Dernière modification': '2025-09-04',
     'Dernière modification par': {
       id: 81214,
       name: 'Master ADEME'
     },
-    Section: [
-      {
-        id: 1,
-        value: 'section 1',
-        order: '1.00000000000000000000'
-      }
-    ],
+    Section: [sections.section1],
     Projet: []
   },
   {
@@ -34,23 +76,13 @@ export const faqBaserow = [
     Question: 'question 1',
     Réponse: 'réponse 1',
     Actif: true,
-    Page: {
-      id: 3827578,
-      value: 'FAQ',
-      color: 'orange'
-    },
+    Page: pages.faq,
     'Dernière modification': '2025-09-04',
     'Dernière modification par': {
       id: 81214,
       name: 'Master ADEME'
     },
-    Section: [
-      {
-        id: 1,
-        value: 'section 1',
-        order: '1.00000000000000000000'
-      }
-    ],
+    Section: [sections.section1],
     Projet: []
   },
   {
@@ -60,23 +92,13 @@ export const faqBaserow = [
     Question: 'question 2',
     Réponse: 'réponse 2',
     Actif: true,
-    Page: {
-      id: 3827578,
-      value: 'FAQ',
-      color: 'orange'
-    },
+    Page: pages.faq,
     'Dernière modification': '2025-07-30',
     'Dernière modification par': {
       id: 81214,
       name: 'Master ADEME'
     },
-    Section: [
-      {
-        id: 2,
-        value: 'Pour qui ?',
-        order: '2.00000000000000000000'
-      }
-    ],
+    Section: [sections.pourQui],
     Projet: []
   },
   {
@@ -86,23 +108,13 @@ export const faqBaserow = [
     Question: 'question 4',
     Réponse: 'réponse 4.',
     Actif: true,
-    Page: {
-      id: 3827578,
-      value: 'FAQ',
-      color: 'orange'
-    },
+    Page: pages.faq,
     'Dernière modification': '2025-07-31',
     'Dernière modification par': {
       id: 81214,
       name: 'Master ADEME'
     },
-    Section: [
-      {
-        id: 1,
-        value: 'Comment marche cet outil ?',
-        order: '3.00000000000000000000'
-      }
-    ],
+    Section: [sections.commentMarche],
     Projet: []
   },
   {
@@ -112,23 +124,13 @@ export const faqBaserow = [
     Question: 'question 5',
     Réponse: 'réponse 5',
     Actif: true,
-    Page: {
-      id: 3827575,
-      value: 'Accueil',
-      color: 'blue'
-    },
+    Page: pages.accueil,
     'Dernière modification': '2025-09-08',
     'Dernière modification par': {
       id: 81214,
       name: 'Master ADEME'
     },
-    Section: [
-      {
-        id: 3,
-        value: 'Pourquoi ?',
-        order: '4.00000000000000000000'
-      }
-    ],
+    Section: [sections.pourquoi],
     Projet: []
   },
   {
@@ -138,23 +140,13 @@ export const faqBaserow = [
     Question: '',
     Réponse: 'réponse 6',
     Actif: true,
-    Page: {
-      id: 3827575,
-      value: 'Accueil',
-      color: 'blue'
-    },
+    Page: pages.accueil,
     'Dernière modification': '2025-09-08',
     'Dernière modification par': {
       id: 81214,
       name: 'Master ADEME'
     },
-    Section: [
-      {
-        id: 3,
-        value: 'Pourquoi ?',
-        order: '4.00000000000000000000'
-      }
-    ],
+    Section: [sections.pourquoi],
     Projet: []
   },
   {
@@ -164,23 +156,13 @@ export const faqBaserow = [
     Question: 'question 7',
     Réponse: null,
     Actif: true,
-    Page: {
-      id: 3827575,
-      value: 'Accueil',
-      color: 'blue'
-    },
+    Page: pages.accueil,
     'Dernière modification': '2025-09-08',
     'Dernière modification par': {
       id: 81214,
       name: 'Master ADEME'
     },
-    Section: [
-      {
-        id: 3,
-        value: 'Pourquoi ?',
-        order: '4.00000000000000000000'
-      }
-    ],
+    Section: [sections.pourquoi],
     Projet: []
   },
   {
@@ -195,14 +177,8 @@ export const faqBaserow = [
     Question: 'question 8',
     Réponse: 'réponse 8',
     Actif: true,
-    Page: { id: 999, value: 'Unknown Page', color: 'blue' },
-    Section: [
-      {
-        id: 1,
-        value: 'Comment marche cet outil ?',
-        order: '3.00000000000000000000'
-      }
-    ],
+    Page: pages.unknown,
+    Section: [sections.commentMarche],
     Projet: []
   },
   {
@@ -212,23 +188,13 @@ export const faqBaserow = [
     Question: 'question 7',
     Réponse: null,
     Actif: true,
-    Page: {
-      id: 3827575,
-      value: 'Accueil',
-      color: 'blue'
-    },
+    Page: pages.accueil,
     'Dernière modification': '2025-09-08',
     'Dernière modification par': {
       id: 81214,
       name: 'Master ADEME'
     },
-    Section: [
-      {
-        id: 99,
-        value: 'Unknown Section',
-        order: '4.00000000000000000000'
-      }
-    ],
+    Section: [sections.unknown],
     Projet: []
   }
 ] as unknown as BaserowFaq[]
@@ -247,13 +213,7 @@ export const faqsWithProjects = [
       id: 81214,
       name: 'Master ADEME'
     },
-    Section: [
-      {
-        id: 1,
-        value: 'Project Section 1',
-        order: '1.00000000000000000000'
-      }
-    ],
+    Section: [sections.projectSection1],
     Projet: [
       {
         id: 1,
@@ -274,13 +234,7 @@ export const faqsWithProjects = [
       id: 81214,
       name: 'Master ADEME'
     },
-    Section: [
-      {
-        id: 1,
-        value: 'Project Section 1',
-        order: '1.00000000000000000000'
-      }
-    ],
+    Section: [],
     Projet: [
       {
         id: 1,
@@ -301,13 +255,7 @@ export const faqsWithProjects = [
       id: 81214,
       name: 'Master ADEME'
     },
-    Section: [
-      {
-        id: 2,
-        value: 'Project Section 2',
-        order: '2.00000000000000000000'
-      }
-    ],
+    Section: [],
     Projet: [
       {
         id: 2,
@@ -322,23 +270,13 @@ export const faqsWithProjects = [
     Question: 'Project and Page FAQ question',
     Réponse: 'Project and Page FAQ answer',
     Actif: true,
-    Page: {
-      id: 3827575,
-      value: 'Accueil',
-      color: 'blue'
-    },
+    Page: pages.accueil,
     'Dernière modification': '2025-09-04',
     'Dernière modification par': {
       id: 81214,
       name: 'Master ADEME'
     },
-    Section: [
-      {
-        id: 1,
-        value: 'Mixed Section',
-        order: '3.00000000000000000000'
-      }
-    ],
+    Section: [],
     Projet: [
       {
         id: 1,
@@ -359,13 +297,7 @@ export const faqsWithProjects = [
       id: 81214,
       name: 'Master ADEME'
     },
-    Section: [
-      {
-        id: 1,
-        value: 'Project Section 1',
-        order: '1.00000000000000000000'
-      }
-    ],
+    Section: [],
     Projet: [
       {
         id: 999,
@@ -386,13 +318,7 @@ export const faqsWithProjects = [
       id: 81214,
       name: 'Master ADEME'
     },
-    Section: [
-      {
-        id: 1,
-        value: 'Project Section 1',
-        order: '1.00000000000000000000'
-      }
-    ],
+    Section: [],
     Projet: []
   }
 ] as unknown as BaserowFaq[]
