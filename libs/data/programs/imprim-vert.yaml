@@ -32,7 +32,8 @@ description longue: >-
 illustration: images/TEE_ampoule.png
 opérateur de contact: Chambre des Métiers et de l'Artisanat
 autres opérateurs:
-  - CCI ou CMA
+  - Chambre de Commerce et de l'Industrie
+  - Chambre des Métiers et de l'Artisanat
 contact question: formulaire
 url: https://www.artisanat.fr/metiers/labels-qualifications/label-imprim-vert
 nature de l'aide: étude
@@ -71,7 +72,7 @@ conditions d'éligibilité:
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:
-    - Réservé aux artisans
+    - Être un artisan
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
