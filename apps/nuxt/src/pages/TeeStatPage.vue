@@ -33,7 +33,7 @@ definePageMeta({
   name: RouteName.Statistics
 })
 
-const description = 'Informations relatives aux statistiques du site Mission Transition Écologique des Entreprises.'
+const description = 'Informations relatives aux statistiques du site Mission Transition écologique des entreprises.'
 useSeoMeta(MetaSeo.get('Statistiques', description))
 useSchemaOrg(defineWebPage({ description: description }))
 
