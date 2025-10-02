@@ -2,6 +2,7 @@ import { ProgramType } from './shared'
 import { BaserowSectors, BaserowMetaData } from '../../common/baserow/types'
 import { Theme } from '../../theme/types/domain'
 import { Contact } from '../../common/types'
+import { Operator } from '../../operators/types/domain'
 
 export interface DataProgram extends BaserowSectors, BaserowMetaData {
   id: number
@@ -77,14 +78,6 @@ export interface Formulaire {
 }
 
 export type ConditionalYaml = Required<ProgramType['champs conditionnels'][]>[number][number]
-
-export interface Operator {
-  id: number
-  Tag: string
-  Nom: string
-  siren: string
-  'Nom Normalisé': string
-}
 
 export interface GeographicCoverage {
   id: number

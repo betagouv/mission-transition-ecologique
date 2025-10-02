@@ -1,19 +1,23 @@
-import { RawOperator } from '../../operators/types/domain'
+import { Operator } from '../../operators/types/domain'
 import { AbstractBaserow } from './abstractBaserow'
-import { Operator } from './types'
+import { BaserowOperator } from './types'
 
 export class OperatorBaserow extends AbstractBaserow {
-  async getAll(): Promise<RawOperator[]> {
-    const baserowOperators = await this._getTableData<Operator>(this._operatorTableId)
+  async getAll(): Promise<Operator[]> {
+    const baserowOperators = await this._getTableData<BaserowOperator>(this._operatorTableId)
     return baserowOperators
       .filter((baserowOperator) => baserowOperator.Nom != '')
       .map((baserowOperator) => this._convertToDomain(baserowOperator))
   }
 
-  private _convertToDomain(baserowOperator: Operator): RawOperator {
+  private _convertToDomain(baserowOperator: BaserowOperator): Operator {
     return {
-      operator: baserowOperator.Nom,
-      filterCategories: baserowOperator.Filtre.map((link) => link.value)
+      id: baserowOperator.id,
+      tag: baserowOperator.Tag,
+      name: baserowOperator.Nom,
+      siren: baserowOperator.siren,
+      filterCategories: baserowOperator.Filtre.map((link) => link.value),
+      normalizedName: baserowOperator['Nom Normalisé']
     }
   }
 }

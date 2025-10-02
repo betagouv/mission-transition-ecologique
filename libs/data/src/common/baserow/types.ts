@@ -106,13 +106,6 @@ export interface ProgramTechSerialized {
   tech: string
 }
 
-export interface Operator {
-  Nom: string
-  Tag: string
-  Filtre: LinkObject[]
-  siren: string
-}
-
 export interface ConditionalValues
   extends Omit<
     DomainConditionalValues,
@@ -227,4 +220,13 @@ export type FaqStructured = {
 export interface BaserowContact extends Id {
   'Prénom NOM': string
   Courriel: string
+}
+
+export interface BaserowOperator {
+  id: number
+  Filtre: LinkObject[]
+  Tag: string
+  Nom: string
+  siren: string
+  'Nom Normalisé': string
 }

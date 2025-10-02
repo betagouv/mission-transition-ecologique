@@ -40,6 +40,7 @@ export enum SchemaAideType {
   Information = 'information',
   Pret = 'prêt'
 }
+
 export interface Porteur {
   nom: string
   siren: string

@@ -5,7 +5,7 @@ import { stringify } from 'csv-stringify/sync'
 import { fileURLToPath } from 'url'
 import { ProgramUtils } from '../program/programUtils'
 import { Cible, COG_MAPPING, DataProgramTypeToTypeAide, Porteur, PorteurRole, schemaProgram, SchemaProgramCsv } from './type'
-import { DataProgram, GeographicAreas, GeographicCoverage, Operator } from '../program/types/domain'
+import { DataProgram, GeographicAreas, GeographicCoverage } from '../program/types/domain'
 import { ProgramBaserow } from '../common/baserow/programBaserow'
 import { randomUUID, UUID } from 'crypto'
 import { BaserowSectors, SectorKeys } from '../common/baserow/types'
@@ -13,6 +13,7 @@ import { Logger } from '../common/logger/logger'
 import { LoggerType } from '../common/logger/types'
 import { ProjectBaserow } from '../common/baserow/projectBaserow'
 import { DataProject } from '../project/types/domain'
+import { Operator } from '../operators/types/domain'
 
 export class ProgramExport {
   private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -117,7 +118,7 @@ export class ProgramExport {
     const tempMap = new Map<number, Porteur>()
 
     for (const op of operators1) {
-      if (op.Tag === 'CCI ou CMA') {
+      if (op.tag === 'CCI ou CMA') {
         tempMap.set(24, {
           nom: 'CCI FRANCE',
           siren: '187500020',
@@ -130,23 +131,23 @@ export class ProgramExport {
         })
         continue
       }
-      !op.siren && console.log(`WARNING, Missing siren: ${op.Nom}, ${op.id}`)
-      !op['Nom Normalisé'] && console.log(`WARNING, Missing Nom normalisé: ${op.Nom}, ${op.id}`)
+      !op.siren && console.log(`WARNING, Missing siren: ${op.name}, ${op.id}`)
+      !op.normalizedName && console.log(`WARNING, Missing Nom normalisé: ${op.name}, ${op.id}`)
       tempMap.set(op.id, {
-        nom: op['Nom Normalisé'],
+        nom: op.normalizedName,
         siren: op.siren,
         roles: [PorteurRole.Instructeur, PorteurRole.Diffuseur]
       })
     }
 
     for (const op of operators2) {
-      !op.siren && console.log(`WARNING, Missing siren: ${op.Nom}, ${op.id}`)
-      !op['Nom Normalisé'] && console.log(`WARNING, Missing Nom normalisé: ${op.Nom}, ${op.id}`)
+      !op.siren && console.log(`WARNING, Missing siren: ${op.name}, ${op.id}`)
+      !op.normalizedName && console.log(`WARNING, Missing Nom normalisé: ${op.name}, ${op.id}`)
       if (tempMap.has(op.id)) {
         const existing = tempMap.get(op.id)
         if (!existing) {
           tempMap.set(op.id, {
-            nom: op['Nom Normalisé'],
+            nom: op.normalizedName,
             siren: op.siren,
             roles: [PorteurRole.Diffuseur]
           })
@@ -211,7 +212,7 @@ export class ProgramExport {
     lines.push(this._generateActivationStepText(program))
 
     lines.push(`Lien externe de présentation de l'aide ${program['URL externe']}`)
-    // commented cause too long if used
+    // commented because the field is too long if used
     // if (program['Description longue']) {
     //   lines.push(`Description plus détaillée:\n ${program['Description longue']}`)
     // }
