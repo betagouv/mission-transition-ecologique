@@ -77,7 +77,7 @@ describe('MailManager', () => {
         expect(mailSender.sendInitialMail).not.toHaveBeenCalled()
         expect(mailSender.sendPeriodicMail).not.toHaveBeenCalled()
         expect(mailSender.sendEolMail).not.toHaveBeenCalled()
-        console.log(program.tech)
+
         await mailManager.sendProgramsMails()
         expect(mailSender.sendInitialMail).not.toHaveBeenCalled()
         expect(mailSender.sendPeriodicMail).not.toHaveBeenCalled()

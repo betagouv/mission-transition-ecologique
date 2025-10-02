@@ -4,8 +4,6 @@ import { LoggerMock } from '../logger.mock'
 import { LogLevel } from '../../src/common/logger/types'
 import { FaqPage } from '../../src/faq/types/shared'
 import { Color } from '@tee/common'
-import * as faqFixtures from './fixtures/faq.fixtures'
-import { FaqBaserowMock } from './faqBaserow.mock'
 
 // Mock the LinkValidator module
 vi.mock('../../src/common/validators/linkValidator', () => ({
@@ -22,34 +20,6 @@ describe('FaqFilter', () => {
     mockLogger = new LoggerMock()
     vi.spyOn(mockLogger, 'log')
     faqFilter = new FaqFilter(mockLogger)
-  })
-
-  describe('byActive', () => {
-    test('should filter only active FAQs using fixture data', async () => {
-      const { baserowFaqs } = await new FaqBaserowMock().getFaqs()
-      const activeFaqs = baserowFaqs.filter((faq) => faq.Actif)
-      const inactiveFaqs = baserowFaqs.filter((faq) => !faq.Actif)
-
-      const result = faqFilter.byActive(baserowFaqs)
-
-      expect(result).toHaveLength(activeFaqs.length)
-      expect(result.every((faq) => faq.Actif)).toBe(true)
-
-      // Ensure inactive FAQs are not in the result
-      inactiveFaqs.forEach((inactiveFaq) => {
-        expect(result.find((faq) => faq.id === inactiveFaq.id)).toBeUndefined()
-      })
-    })
-
-    test('should return empty array when no active FAQs', () => {
-      const result = faqFilter.byActive(faqFixtures.inactiveFaqs)
-      expect(result).toHaveLength(0)
-    })
-
-    test('should handle empty input array', () => {
-      const result = faqFilter.byActive([])
-      expect(result).toHaveLength(0)
-    })
   })
 
   describe('byValidity', () => {
@@ -87,8 +57,14 @@ describe('FaqFilter', () => {
       expect(faqs[FaqPage.Home][0].questions[0].id).toBe(1)
 
       // Should log errors for invalid FAQs
-      expect(mockLogger.log).toHaveBeenCalledWith(LogLevel.Major, 'Question non fournie', 'Test Section', 2)
-      expect(mockLogger.log).toHaveBeenCalledWith(LogLevel.Major, 'Réponse non fournie', 'Test Section', 3)
+      expect(mockLogger.log).toHaveBeenCalledWith(LogLevel.Major, 'Question non fournie', '2', 2, {
+        question: '',
+        reponse: 'Some answer'
+      })
+      expect(mockLogger.log).toHaveBeenCalledWith(LogLevel.Major, 'Réponse non fournie', '3', 3, {
+        question: 'Another question',
+        reponse: ''
+      })
       expect(mockLogger.log).toHaveBeenCalledTimes(2)
     })
 
@@ -192,10 +168,11 @@ describe('FaqFilter', () => {
       await faqFilter.byValidity(faqs)
 
       // Since empty string is truthy, question validation will be checked
-      expect(mockLogger.log).toHaveBeenCalledWith(LogLevel.Major, 'Question non fournie', 'Test Section', 1)
+      expect(mockLogger.log).toHaveBeenCalledWith(LogLevel.Major, 'Question non fournie', '1', 1, { question: '', reponse: '' })
+      expect(mockLogger.log).toHaveBeenCalledTimes(1)
 
       // Should not call with answer error since question error is prioritized
-      expect(mockLogger.log).not.toHaveBeenCalledWith(LogLevel.Major, 'Réponse non fournie', 'Test Section', 1)
+      expect(mockLogger.log).not.toHaveBeenCalledWith(LogLevel.Major, 'Réponse non fournie', '1', 1, { question: '', reponse: '' })
     })
 
     test('should handle sections with no questions', async () => {

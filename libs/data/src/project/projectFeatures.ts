@@ -1,10 +1,8 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { FaqBaserow } from '../common/baserow/faqBaserow'
 import { ProjectBaserow } from '../common/baserow/projectBaserow'
-import { FaqBaserowInterface } from '../common/baserow/types'
-import { FaqConverter } from '../faq/faqConverter'
 import { FaqFilter } from '../faq/faqFilter'
+import { FaqRepositoryInterface } from '../faq/types/domain'
 import { DataProject, ProjectStatus } from './types/domain'
 import { jsonPrograms } from '../../static'
 import { ProgramType } from '../program/types/shared'
@@ -12,7 +10,7 @@ import { ThemeId } from '@tee/common'
 import { SlugValidator } from '../common/validators/slugValidator'
 import { LinkValidator } from '../common/validators/linkValidator'
 import { Logger } from '../common/logger/logger'
-import { LoggerType, LogLevel } from '../common/logger/types'
+import { LogLevel } from '../common/logger/types'
 import { FileManager } from '../common/fileManager'
 import Redirect from '../common/redirect/redirect'
 
@@ -21,11 +19,12 @@ export class ProjectFeatures {
   private readonly _outputFilePath: string = path.join(this.__dirname, '../../static/projects.json')
   private readonly _outputImageDirectory: string = path.join(this.__dirname, '../../../../apps/nuxt/src/public/images/projet')
   private _programs: ProgramType[] = []
-  private _logger: Logger
 
-  constructor(private _faqBaserow: FaqBaserowInterface = new FaqBaserow()) {
+  constructor(
+    private _logger: Logger,
+    private _faqBaserow: FaqRepositoryInterface
+  ) {
     this._programs = jsonPrograms as unknown as ProgramType[]
-    this._logger = new Logger(LoggerType.Project)
   }
 
   async generateProjectsJson(): Promise<void> {
@@ -136,9 +135,10 @@ export class ProjectFeatures {
   }
 
   private async _getFaqsByProjects(projects: DataProject[]) {
-    const { baserowFaqs, baserowFaqSections } = await this._faqBaserow.getProjectsFaqs()
-    const faqsByProjects = new FaqConverter(this._logger).toDomainByProjects(baserowFaqs, baserowFaqSections, projects)
-    await new FaqFilter(this._logger).byValidity(faqsByProjects)
+    const faqsByProjects = await this._faqBaserow.getProjectsFaqs(projects)
+    for (const index in faqsByProjects) {
+      faqsByProjects[index] = await new FaqFilter(this._logger).byValidatedQuestions(faqsByProjects[index])
+    }
 
     return faqsByProjects
   }

@@ -1,11 +1,6 @@
 import { FaqPage } from '../../faq/types/shared'
 import { ConditionalValues as DomainConditionalValues, DataProgram } from '../../program/types/domain'
 
-export interface FaqBaserowInterface {
-  getFaqs(): Promise<{ baserowFaqs: BaserowFaq[]; baserowFaqSections: BaserowFaqSection[] }>
-  getProjectsFaqs(): Promise<{ baserowFaqs: BaserowFaq[]; baserowFaqSections: BaserowFaqSection[] }>
-}
-
 export interface Id {
   id: number
 }
@@ -218,17 +213,23 @@ export interface BaserowFaq extends Id, Order {
   Projet: LinkObject[]
 }
 
+export interface BaserowFaqs {
+  faqs: BaserowFaq[]
+}
+
 export interface BaserowFaqSection extends Id, Order, CreationDate, LastModification, LastModificationBy {
   Titre: string
   Couleur: LinkObject
 }
 
-export interface FaqItemStructured extends BaserowFaqSection {
-  faqs: BaserowFaq[]
+export interface FaqItemStructured extends BaserowFaqSection, BaserowFaqs {}
+
+export type FaqPagesStructured = {
+  [key in FaqPage]?: FaqItemStructured[]
 }
 
-export type FaqStructured = {
-  [key in FaqPage | number]?: FaqItemStructured[]
+export type FaqProjectsStructured = {
+  [key: number]: BaserowFaqs
 }
 
 export interface BaserowContact extends Id {

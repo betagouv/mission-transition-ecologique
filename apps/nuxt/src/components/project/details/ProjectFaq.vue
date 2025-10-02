@@ -1,17 +1,15 @@
 <template>
   <TeeContentBlock
-    v-for="(faq, index) in project.faqs"
     id="project-faq-projects-title"
-    :key="index"
     class="fr-py-5v fr-border-b--grey--light"
-    :title="faq.title ?? 'Questions fréquentes'"
+    :title="project.titleFaq ?? 'Questions fréquentes'"
     container-from="md"
     title-class="fr-h4"
     title-tag="h2"
   >
     <template #content>
       <FaqQuestions
-        :faq-questions="faq.questions"
+        :faq-questions="project.faqs"
         is-full-width
       />
     </template>
