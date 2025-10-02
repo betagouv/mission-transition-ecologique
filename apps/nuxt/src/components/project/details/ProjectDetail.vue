@@ -34,7 +34,7 @@
       :color="typedThemeColor"
     />
     <ProjectFaq
-      v-if="project?.faqs.length"
+      v-if="project?.faqs?.length"
       :project="project"
     />
   </Layout>

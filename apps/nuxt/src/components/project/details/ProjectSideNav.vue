@@ -88,7 +88,7 @@ const allMenuItems = computed(() => [
     id: 'project-faq',
     to: `project-faq-projects-title`,
     text: 'Questions fréquentes',
-    condition: props.project.faqs.length > 0
+    condition: props.project?.faqs?.length > 0
   }
 ])
 </script>
