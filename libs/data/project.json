@@ -62,6 +62,16 @@
         "parallel": false
       }
     },
+    "generate-programs-json": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/buildProgramJson.ts"
+        ]
+      }
+    },
+
     "send-program-mails": {
       "executor": "nx:run-commands",
       "options": {

@@ -27,7 +27,25 @@ export type ProgramFiltersType = {
 
 export type { ProgramWithoutId }
 export type ProgramType = ProgramWithoutId & {
+  eligibility_data: EligibilityData
   id: string
+}
+
+export interface EligibilityData {
+  validity?: {
+    start?: string
+    end?: string
+  }
+  company: {
+    minEmployees?: number
+    maxEmployees?: number
+    excludeMicroentrepreneur?: boolean
+    allowedNafSections: string[]
+    allowedRegion?: string[]
+  }
+  questionnaire?: {
+    priorityObjectives?: string[]
+  }
 }
 
 export type ProgramTypeWithEligibility = ProgramType & {

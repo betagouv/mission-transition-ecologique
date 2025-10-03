@@ -200,7 +200,45 @@
         ]
       }
     },
-    "id": "accelerateur-decarbonation"
+    "id": "accelerateur-decarbonation",
+    "eligibility_data": {
+      "validity": {
+        "start": "06/02/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "minEmployees": 50,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Accélérateur Économie Circulaire",
@@ -401,7 +439,46 @@
         ]
       }
     },
-    "id": "accelerateur-economie-circulaire"
+    "id": "accelerateur-economie-circulaire",
+    "eligibility_data": {
+      "validity": {
+        "start": "25/11/2025",
+        "end": "25/11/2026"
+      },
+      "company": {
+        "minEmployees": 10,
+        "maxEmployees": 249,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "ACT - Programme Volontaire Français",
@@ -609,7 +686,43 @@
         ]
       }
     },
-    "id": "act-pas-a-pas"
+    "id": "act-pas-a-pas",
+    "eligibility_data": {
+      "validity": {
+        "start": "13/11/2023",
+        "end": "30/06/2026"
+      },
+      "company": {
+        "minEmployees": 250,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Adaptation au changement climatique en Bretagne",
@@ -801,7 +914,42 @@
         ]
       }
     },
-    "id": "adaptation-bzh"
+    "id": "adaptation-bzh",
+    "eligibility_data": {
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Bretagne"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "ADVENIR",
@@ -977,7 +1125,26 @@
         ]
       }
     },
-    "id": "advenir"
+    "id": "advenir",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Agir en Pays de la Loire",
@@ -1162,7 +1329,25 @@
         ]
       }
     },
-    "id": "agir-pdl"
+    "id": "agir-pdl",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "I",
+          "L"
+        ],
+        "allowedRegion": [
+          "Pays de la Loire"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Aide au financement en Occitanie",
@@ -1352,7 +1537,48 @@
         ]
       }
     },
-    "id": "aide-financement-occitanie"
+    "id": "aide-financement-occitanie",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Occitanie"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "former_ou_recruter",
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Impresa Sì",
@@ -1545,7 +1771,46 @@
         ]
       }
     },
-    "id": "aide-investissement-corse"
+    "id": "aide-investissement-corse",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Corse"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Aide à l’investissement aux librairies françaises",
@@ -1752,7 +2017,30 @@
         ]
       }
     },
-    "id": "aide-investissement-librairie"
+    "id": "aide-investissement-librairie",
+    "eligibility_data": {
+      "validity": {
+        "start": "15/01/2025",
+        "end": "31/10/2025"
+      },
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "G",
+          "J",
+          "L",
+          "M",
+          "N",
+          "P",
+          "S"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment"
+        ]
+      }
+    }
   },
   {
     "titre": "Soutien à la labellisation touristique",
@@ -1934,7 +2222,23 @@
         ]
       }
     },
-    "id": "aide-labellisation-corse"
+    "id": "aide-labellisation-corse",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "I"
+        ],
+        "allowedRegion": [
+          "Corse"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Aide régionale au développement de produits touristiques",
@@ -2136,7 +2440,49 @@
         ]
       }
     },
-    "id": "aide-tourisme-guadeloupe"
+    "id": "aide-tourisme-guadeloupe",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2025",
+        "end": "15/09/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Guadeloupe"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "mon_impact_environnemental",
+          "l'écoconception",
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Aide à l'investissement des transitions",
@@ -2327,7 +2673,43 @@
         ]
       }
     },
-    "id": "aide-tpe-transition-na"
+    "id": "aide-tpe-transition-na",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 9,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Nouvelle-Aquitaine"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Aide travaux hébergements touristiques",
@@ -2512,7 +2894,22 @@
         ]
       }
     },
-    "id": "aide-travaux-tourisme-aura"
+    "id": "aide-travaux-tourisme-aura",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "I"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment"
+        ]
+      }
+    }
   },
   {
     "titre": "Aides au réemploi des emballages",
@@ -2740,7 +3137,61 @@
         ]
       }
     },
-    "id": "aides-au-reemploi-des-emballages"
+    "id": "aides-au-reemploi-des-emballages",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets"
+        ]
+      }
+    }
   },
   {
     "titre": "Amélioration de la qualité de l’air",
@@ -2960,7 +3411,52 @@
         ]
       }
     },
-    "id": "amelioration-qualite-de-l-air"
+    "id": "amelioration-qualite-de-l-air",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2025",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Grand Est",
+          "Île-de-France",
+          "Martinique",
+          "Normandie",
+          "Occitanie",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "AMO chaufferie biomasse",
@@ -3155,7 +3651,25 @@
         ]
       }
     },
-    "id": "amo-chaufferie-biomasse"
+    "id": "amo-chaufferie-biomasse",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2024"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "E"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Audit label Clef Verte",
@@ -3327,7 +3841,26 @@
         ]
       }
     },
-    "id": "audit-clef-verte-sud"
+    "id": "audit-clef-verte-sud",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "01/12/2024"
+      },
+      "company": {
+        "allowedNafSections": [
+          "I"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Audit énergétique volontaire en industrie",
@@ -3526,7 +4059,27 @@
         ]
       }
     },
-    "id": "audit-energetique-en-industrie"
+    "id": "audit-energetique-en-industrie",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "B.A.-BA du climat et de la biodiversité",
@@ -3708,7 +4261,40 @@
         ]
       }
     },
-    "id": "b-a-ba-du-climat-et-biodiversite"
+    "id": "b-a-ba-du-climat-et-biodiversite",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter",
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Baisse Les Watts",
@@ -3913,7 +4499,44 @@
         ]
       }
     },
-    "id": "baisse-les-watts"
+    "id": "baisse-les-watts",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "01/05/2025"
+      },
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "BCIAT 2025 - Biomasse chaleur pour l'industrie, l'agriculture et le tertiaire",
@@ -4113,7 +4736,28 @@
         ]
       }
     },
-    "id": "bciat-biomasse-chaleur-industrie-agriculture-tertiaire"
+    "id": "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
+    "eligibility_data": {
+      "validity": {
+        "start": "22/04/2025",
+        "end": "16/10/2025"
+      },
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Bilan Carbone®",
@@ -4290,7 +4934,43 @@
         ]
       }
     },
-    "id": "bilan-carbone"
+    "id": "bilan-carbone",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "01/07/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Bonus écologique",
@@ -4492,7 +5172,43 @@
         ]
       }
     },
-    "id": "bonus-ecologique"
+    "id": "bonus-ecologique",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "14/02/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Bonus Réparation",
@@ -4648,7 +5364,21 @@
         ]
       }
     },
-    "id": "bonus-reparation"
+    "id": "bonus-reparation",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "S"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Booster Éco-Énergie Tertiaire",
@@ -4882,7 +5612,54 @@
         ]
       }
     },
-    "id": "booster-eco-energie-tertiaire"
+    "id": "booster-eco-energie-tertiaire",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "maxEmployees": 4999,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Corse",
+          "Guadeloupe",
+          "Guyane",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Occitanie",
+          "Polynésie française"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Booster Transformation Rev3",
@@ -5091,7 +5868,43 @@
         ]
       }
     },
-    "id": "booster-transformation-rev-3"
+    "id": "booster-transformation-rev-3",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 250,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Hauts-de-France"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Aide aux campings indépendants de Bourgogne-Franche-Comté",
@@ -5299,7 +6112,32 @@
         ]
       }
     },
-    "id": "camping-independant-bfc"
+    "id": "camping-independant-bfc",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/05/2024",
+        "end": "31/12/2028"
+      },
+      "company": {
+        "maxEmployees": 49,
+        "allowedNafSections": [
+          "I"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "l'écoconception",
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Aide aux campings indépendants de Nouvelle-Aquitaine",
@@ -5492,7 +6330,28 @@
         ]
       }
     },
-    "id": "camping-independant-na"
+    "id": "camping-independant-na",
+    "eligibility_data": {
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "I"
+        ],
+        "allowedRegion": [
+          "Nouvelle-Aquitaine"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "CAP Transition Ecologique",
@@ -5692,7 +6551,47 @@
         ]
       }
     },
-    "id": "cap-transition-ecologique"
+    "id": "cap-transition-ecologique",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 249,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Centre-Val de Loire"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "mon_impact_environnemental",
+          "l'écoconception",
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "CCI Business Optimizer",
@@ -5857,7 +6756,25 @@
         ]
       }
     },
-    "id": "cci-business-optimizer"
+    "id": "cci-business-optimizer",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "I"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "CEDRE Ambition",
@@ -6081,7 +6998,45 @@
         ]
       }
     },
-    "id": "cedre-ambition"
+    "id": "cedre-ambition",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "13/12/2024"
+      },
+      "company": {
+        "maxEmployees": 249,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "CEDRE Investissement",
@@ -6296,7 +7251,49 @@
         ]
       }
     },
-    "id": "cedre-investissement"
+    "id": "cedre-investissement",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "former_ou_recruter",
+          "mon_impact_environnemental",
+          "l'écoconception",
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "CEDRE Premier Pas",
@@ -6509,7 +7506,45 @@
         ]
       }
     },
-    "id": "cedre-premier-pas"
+    "id": "cedre-premier-pas",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "former_ou_recruter",
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Certification en agriculture biologique",
@@ -6671,7 +7706,24 @@
         ]
       }
     },
-    "id": "certification-agriculture-biologique"
+    "id": "certification-agriculture-biologique",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Certificats d'économies d'énergie (CEE)",
@@ -6854,7 +7906,38 @@
         ]
       }
     },
-    "id": "certificats-economie-energie"
+    "id": "certificats-economie-energie",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Charte \"zéro déchet plastique\"",
@@ -7067,7 +8150,43 @@
         ]
       }
     },
-    "id": "charte-zero-dechet-plastique"
+    "id": "charte-zero-dechet-plastique",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets",
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Chèque Transition Bioéthanol",
@@ -7271,7 +8390,45 @@
         ]
       }
     },
-    "id": "cheque-transition-bioethanol"
+    "id": "cheque-transition-bioethanol",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "24/03/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Chèque Vert Grand Est",
@@ -7494,7 +8651,46 @@
         ]
       }
     },
-    "id": "cheque-vert-grand-est"
+    "id": "cheque-vert-grand-est",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 19,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Grand Est"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_mobilité_durable",
+          "ma_performance_énergétique",
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "ClimaDiag expert",
@@ -7687,7 +8883,34 @@
         ]
       }
     },
-    "id": "climadiag-expert"
+    "id": "climadiag-expert",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/10/2023",
+        "end": "01/08/2026"
+      },
+      "company": {
+        "minEmployees": 20,
+        "maxEmployees": 499,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "H"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Communauté du Coq Vert",
@@ -7874,7 +9097,38 @@
         ]
       }
     },
-    "id": "communaute-coq-vert"
+    "id": "communaute-coq-vert",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/06/2020",
+        "end": null
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "L",
+          "M",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "CORIMER Navires bas carbone",
@@ -8091,7 +9345,33 @@
         ]
       }
     },
-    "id": "corimer"
+    "id": "corimer",
+    "eligibility_data": {
+      "validity": {
+        "start": "27/01/2025",
+        "end": "15/10/2025"
+      },
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "H",
+          "I",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Coup de pouce Chauffage",
@@ -8283,7 +9563,33 @@
         ]
       }
     },
-    "id": "coup-de-pouce-chauffage"
+    "id": "coup-de-pouce-chauffage",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Crédit d'impôt innovation (CII)",
@@ -8514,7 +9820,33 @@
         "Montant du dispositif": "Crédit d'impôt de 20%"
       }
     ],
-    "id": "credit-impot-innovation"
+    "id": "credit-impot-innovation",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2027"
+      },
+      "company": {
+        "minEmployees": 20,
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Crédit d'Impôt Recherche (CIR)",
@@ -8689,7 +10021,26 @@
         ]
       }
     },
-    "id": "credit-impot-recherche"
+    "id": "credit-impot-recherche",
+    "eligibility_data": {
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Decarb Flash 2025-2027",
@@ -8883,7 +10234,29 @@
         ]
       }
     },
-    "id": "decarb-flash-2025-2027"
+    "id": "decarb-flash-2025-2027",
+    "eligibility_data": {
+      "validity": {
+        "start": "10/04/2025",
+        "end": "15/02/2027"
+      },
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "H",
+          "M"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Décarbonation de l'industrie",
@@ -9083,7 +10456,30 @@
         ]
       }
     },
-    "id": "decarb-ind-25"
+    "id": "decarb-ind-25",
+    "eligibility_data": {
+      "validity": {
+        "start": "09/12/2024",
+        "end": "15/05/2025"
+      },
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Aide au déploiement de flottes hydrogène",
@@ -9292,7 +10688,47 @@
         ]
       }
     },
-    "id": "deploiement-flottes-hydrogene"
+    "id": "deploiement-flottes-hydrogene",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2026"
+      },
+      "company": {
+        "maxEmployees": 4999,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "DÉTER - DÉcarboner le TERtiaire",
@@ -9490,7 +10926,33 @@
         ]
       }
     },
-    "id": "deter-decarboner-le-tertiaire"
+    "id": "deter-decarboner-le-tertiaire",
+    "eligibility_data": {
+      "validity": {
+        "start": "06/02/2025",
+        "end": "12/02/2026"
+      },
+      "company": {
+        "allowedNafSections": [
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Diag Adaptation",
@@ -9682,7 +11144,40 @@
         ]
       }
     },
-    "id": "diag-adaptation"
+    "id": "diag-adaptation",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 499,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Diag biodiversité",
@@ -9876,7 +11371,40 @@
         ]
       }
     },
-    "id": "diag-biodiversite"
+    "id": "diag-biodiversite",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 249,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Diag Décarbon'Action",
@@ -10070,7 +11598,31 @@
         ]
       }
     },
-    "id": "diag-decarbon-action"
+    "id": "diag-decarbon-action",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 499,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "L",
+          "Q",
+          "R"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Diag Eco-Flux",
@@ -10258,7 +11810,35 @@
         ]
       }
     },
-    "id": "diag-eco-flux"
+    "id": "diag-eco-flux",
+    "eligibility_data": {
+      "company": {
+        "minEmployees": 20,
+        "maxEmployees": 249,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "O",
+          "Q"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Diag Ecoconception",
@@ -10478,7 +12058,37 @@
         ]
       }
     ],
-    "id": "diag-ecoconception"
+    "id": "diag-ecoconception",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 249,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Diagnostic impact dépendance biodiversité",
@@ -10676,7 +12286,49 @@
         ]
       }
     },
-    "id": "diag-impact-biodiversite"
+    "id": "diag-impact-biodiversite",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/06/2024",
+        "end": "01/06/2027"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Grand Est",
+          "Pays de la Loire",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Diag Perf'Immo",
@@ -10866,7 +12518,37 @@
         ]
       }
     },
-    "id": "diag-perf-immo"
+    "id": "diag-perf-immo",
+    "eligibility_data": {
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment"
+        ]
+      }
+    }
   },
   {
     "titre": "Diagnostic Changement climatique",
@@ -11055,7 +12737,40 @@
         ]
       }
     },
-    "id": "diagnostic-changement-climatique"
+    "id": "diagnostic-changement-climatique",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Île-de-France"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Diagnostic déchets",
@@ -11240,7 +12955,34 @@
         ]
       }
     },
-    "id": "diagnostic-dechets"
+    "id": "diagnostic-dechets",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 499,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "F",
+          "G",
+          "H",
+          "I",
+          "N",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets"
+        ]
+      }
+    }
   },
   {
     "titre": "Diagnostic Eco-conception Île-de-France",
@@ -11424,7 +13166,29 @@
         ]
       }
     },
-    "id": "diagnostic-eco-conception-ile-de-france"
+    "id": "diagnostic-eco-conception-ile-de-france",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "maxEmployees": 499,
+        "allowedNafSections": [
+          "M",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Île-de-France"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Diagnostic RSE",
@@ -11617,7 +13381,38 @@
         ]
       }
     },
-    "id": "diagnostic-rse"
+    "id": "diagnostic-rse",
+    "eligibility_data": {
+      "company": {
+        "minEmployees": 20,
+        "maxEmployees": 499,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "Q",
+          "R",
+          "S",
+          "T"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter"
+        ]
+      }
+    }
   },
   {
     "titre": "Diagnostic Transition Ecologique",
@@ -11793,7 +13588,38 @@
         ]
       }
     },
-    "id": "diagnostic-transition-ecologique"
+    "id": "diagnostic-transition-ecologique",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2024"
+      },
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "Q",
+          "R"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Eco-Défis des artisans et des commerçants",
@@ -11961,7 +13787,22 @@
         ]
       }
     },
-    "id": "eco-defis-des-artisans-et-des-commercants"
+    "id": "eco-defis-des-artisans-et-des-commercants",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "F",
+          "G",
+          "I"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Initiation éco-conception",
@@ -12137,7 +13978,28 @@
         ]
       }
     },
-    "id": "ecoconception-bzh"
+    "id": "ecoconception-bzh",
+    "eligibility_data": {
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "C",
+          "F",
+          "G",
+          "M",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Bretagne"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Formation écogestes",
@@ -12306,7 +14168,25 @@
         ]
       }
     },
-    "id": "ecogestes-paca"
+    "id": "ecogestes-paca",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "I"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Accompagnement à l'Écolabel européen",
@@ -12497,7 +14377,30 @@
         ]
       }
     },
-    "id": "ecolabel"
+    "id": "ecolabel",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2025",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "G",
+          "I",
+          "M",
+          "N",
+          "S"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Accompagnement écoproduction",
@@ -12682,7 +14585,43 @@
         ]
       }
     },
-    "id": "ecoproduction-hdf"
+    "id": "ecoproduction-hdf",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Hauts-de-France"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter",
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Engins moins polluants",
@@ -12830,7 +14769,21 @@
         ]
       }
     },
-    "id": "engins-moins-polluants"
+    "id": "engins-moins-polluants",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "F",
+          "H"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Entreprises engagées pour la nature",
@@ -13036,7 +14989,42 @@
         ]
       }
     },
-    "id": "entreprises-engagees-nature"
+    "id": "entreprises-engagees-nature",
+    "eligibility_data": {
+      "validity": {
+        "start": "15/09/2019",
+        "end": null
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Enviroveille",
@@ -13213,7 +15201,31 @@
         ]
       }
     },
-    "id": "enviroveille"
+    "id": "enviroveille",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 499,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "K",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Alimentation durable\"",
@@ -13431,7 +15443,50 @@
         ]
       }
     },
-    "id": "etude-alimentation-durable"
+    "id": "etude-alimentation-durable",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "D",
+          "G",
+          "I"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur",
+          "Saint-Barthélemy",
+          "Saint-Pierre-Et-Miquelon"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets",
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Etude \"biodéchets\"",
@@ -13623,7 +15678,27 @@
         ]
       }
     },
-    "id": "etude-biodechets"
+    "id": "etude-biodechets",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2024",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "E",
+          "G",
+          "I"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Centres de tri\"",
@@ -13811,7 +15886,24 @@
         ]
       }
     },
-    "id": "etude-centres-de-tri"
+    "id": "etude-centres-de-tri",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "E",
+          "F"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Chaufferie biomasse\"",
@@ -14005,7 +16097,30 @@
         ]
       }
     },
-    "id": "etude-chaufferie-biomasse"
+    "id": "etude-chaufferie-biomasse",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G",
+          "H",
+          "I"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Diagnostic serres\"",
@@ -14193,7 +16308,24 @@
         ]
       }
     },
-    "id": "etude-diagnostic-serres"
+    "id": "etude-diagnostic-serres",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "G"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Économie de la fonctionnalité\"",
@@ -14399,7 +16531,42 @@
         ]
       }
     },
-    "id": "etude-economie-de-la-fonctionnalite"
+    "id": "etude-economie-de-la-fonctionnalite",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Etude et Investissement \"qualité de l’air\"",
@@ -14611,7 +16778,52 @@
         ]
       }
     },
-    "id": "etude-et-investissement-qualite-de-l-air"
+    "id": "etude-et-investissement-qualite-de-l-air",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2023"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Grand Est",
+          "Île-de-France",
+          "Martinique",
+          "Normandie",
+          "Occitanie",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude faisabilité \"hydrogène\"",
@@ -14781,7 +16993,24 @@
         ]
       }
     },
-    "id": "etude-faisabilite-hydrogene"
+    "id": "etude-faisabilite-hydrogene",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2023"
+      },
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude et travaux de dépollution d'une friche",
@@ -14975,7 +17204,32 @@
         ]
       }
     },
-    "id": "etude-friches-polluees"
+    "id": "etude-friches-polluees",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2025",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "L"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Gaspillage alimentaire\"",
@@ -15182,7 +17436,39 @@
         ]
       }
     },
-    "id": "etude-gaspillage-alimentaire"
+    "id": "etude-gaspillage-alimentaire",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "D",
+          "G",
+          "I"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté",
+          "Centre-Val de Loire",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Géothermie de surface et d'aérothermie\"",
@@ -15411,7 +17697,33 @@
         "Eligibilité taille": "Pour une grande entreprise"
       }
     ],
-    "id": "etude-geothermie-de-surface-et-d-aerothermie"
+    "id": "etude-geothermie-de-surface-et-d-aerothermie",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "L",
+          "Q"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Géothermie profonde\"",
@@ -15614,7 +17926,33 @@
         ]
       }
     },
-    "id": "etude-geothermie-profonde"
+    "id": "etude-geothermie-profonde",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "L",
+          "Q"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Hydroélectricité\"",
@@ -15819,7 +18157,36 @@
         ]
       }
     },
-    "id": "etude-hydroelectricite"
+    "id": "etude-hydroelectricite",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "I"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "La Réunion",
+          "Nouvelle-Aquitaine",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Méthanisation\"",
@@ -16032,7 +18399,45 @@
         ]
       }
     },
-    "id": "etude-methanisation"
+    "id": "etude-methanisation",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "I"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Pays de la Loire",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets",
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Performance énergétique\" ou de \"décarbonation\" en industrie",
@@ -16221,7 +18626,24 @@
         ]
       }
     },
-    "id": "etude-performance-energetique-en-industrie"
+    "id": "etude-performance-energetique-en-industrie",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Éco-conception\"",
@@ -16451,7 +18873,63 @@
         ]
       }
     },
-    "id": "etude-performance-produits"
+    "id": "etude-performance-produits",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Autoconsommation photovoltaïque\"",
@@ -16678,7 +19156,56 @@
         ]
       }
     },
-    "id": "etude-photovoltaique-ademe"
+    "id": "etude-photovoltaique-ademe",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Guadeloupe",
+          "Guyane",
+          "La Réunion",
+          "Martinique",
+          "Nouvelle-Aquitaine",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur",
+          "Saint-Pierre-Et-Miquelon"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude d'opportunité photovoltaïque",
@@ -16867,7 +19394,35 @@
         ]
       }
     },
-    "id": "etude-photovoltaique-cci"
+    "id": "etude-photovoltaique-cci",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/10/2023",
+        "end": "01/06/2026"
+      },
+      "company": {
+        "maxEmployees": 499,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"projet de recherche\"",
@@ -17065,7 +19620,31 @@
         ]
       }
     },
-    "id": "etude-projet-de-recherche"
+    "id": "etude-projet-de-recherche",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "D",
+          "E",
+          "F",
+          "H",
+          "J",
+          "M",
+          "S"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Récupération de chaleur fatale\"",
@@ -17260,7 +19839,31 @@
         ]
       }
     },
-    "id": "etude-recuperation-de-chaleur-fatale"
+    "id": "etude-recuperation-de-chaleur-fatale",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "H",
+          "I",
+          "M"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"réemploi réutilisation réparation\"",
@@ -17479,7 +20082,49 @@
         ]
       }
     },
-    "id": "etude-reemploi-reutilisation-reparation"
+    "id": "etude-reemploi-reutilisation-reparation",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "E",
+          "G",
+          "I",
+          "J",
+          "R"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"réhabilitation solaires thermiques collectives\"",
@@ -17696,7 +20341,44 @@
         ]
       }
     },
-    "id": "etude-rehabilitation-solaires-thermiques-collectives"
+    "id": "etude-rehabilitation-solaires-thermiques-collectives",
+    "eligibility_data": {
+      "validity": {
+        "start": "03/06/2019",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "L",
+          "N",
+          "Q",
+          "S"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Pays de la Loire",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Réseaux énergie renouvelable\"",
@@ -17891,7 +20573,26 @@
         ]
       }
     },
-    "id": "etude-reseaux-energie-renouvelable"
+    "id": "etude-reseaux-energie-renouvelable",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "D",
+          "E",
+          "Q"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Solaire thermique\"",
@@ -18130,7 +20831,65 @@
         ]
       }
     },
-    "id": "etude-solaire-thermique"
+    "id": "etude-solaire-thermique",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur",
+          "Saint-Pierre-Et-Miquelon"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Étude \"Test géothermie\"",
@@ -18338,7 +21097,43 @@
         ]
       }
     },
-    "id": "etude-test-geothermie"
+    "id": "etude-test-geothermie",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2024"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Évaluation carbone LISE",
@@ -18529,7 +21324,41 @@
         ]
       }
     },
-    "id": "evaluation-carbone-lise"
+    "id": "evaluation-carbone-lise",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 249,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "eXtrême Défi Mobilité",
@@ -18696,7 +21525,22 @@
         ]
       }
     },
-    "id": "extreme-defi-mobilite"
+    "id": "extreme-defi-mobilite",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "G",
+          "H",
+          "M"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "FASEP",
@@ -18902,7 +21746,42 @@
         ]
       }
     },
-    "id": "fasep"
+    "id": "fasep",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 499,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique",
+          "l'écoconception",
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Fiscalité énergétique",
@@ -19068,7 +21947,24 @@
         ]
       }
     },
-    "id": "fiscalite-energetique-occitanie"
+    "id": "fiscalite-energetique-occitanie",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C"
+        ],
+        "allowedRegion": [
+          "Occitanie"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Flotte de vélos à disposition",
@@ -19236,7 +22132,39 @@
         ]
       }
     },
-    "id": "flotte-de-velos-a-disposition"
+    "id": "flotte-de-velos-a-disposition",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Fonds Vert - Territoires d'Industrie",
@@ -19435,7 +22363,33 @@
         ]
       }
     },
-    "id": "fond-vert-territoires-d-industrie"
+    "id": "fond-vert-territoires-d-industrie",
+    "eligibility_data": {
+      "validity": {
+        "start": "12/03/2025",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "former_ou_recruter",
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Fonds Tourisme Durable",
@@ -19677,7 +22631,56 @@
         ]
       }
     },
-    "id": "fonds-tourisme-durable"
+    "id": "fonds-tourisme-durable",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/07/2024"
+      },
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "A",
+          "I"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur",
+          "Saint-Barthélemy",
+          "Saint-Martin"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "former_ou_recruter",
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Formation développement durable",
@@ -19837,7 +22840,22 @@
         ]
       }
     },
-    "id": "formation-artisan-developpement-durable"
+    "id": "formation-artisan-developpement-durable",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "F",
+          "G",
+          "I"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Formation Communication Décarbonation",
@@ -20020,7 +23038,43 @@
         ]
       }
     },
-    "id": "formation-communiquer-et-sensibiliser"
+    "id": "formation-communiquer-et-sensibiliser",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter"
+        ]
+      }
+    }
   },
   {
     "titre": "Formation Défendre un projet",
@@ -20203,7 +23257,43 @@
         ]
       }
     },
-    "id": "formation-convaincre-et-argumenter"
+    "id": "formation-convaincre-et-argumenter",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter"
+        ]
+      }
+    }
   },
   {
     "titre": "Formation ADEME",
@@ -20386,7 +23476,43 @@
         ]
       }
     },
-    "id": "formation-engager-entreprise-transition-ecologique"
+    "id": "formation-engager-entreprise-transition-ecologique",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter"
+        ]
+      }
+    }
   },
   {
     "titre": "Formations du CFDE",
@@ -20566,7 +23692,31 @@
         ]
       }
     },
-    "id": "formations-du-cfde"
+    "id": "formations-du-cfde",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 499,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "H",
+          "K",
+          "M",
+          "O",
+          "P",
+          "Q"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter"
+        ]
+      }
+    }
   },
   {
     "titre": "Formations Transition Écologique et Énergétique",
@@ -20738,7 +23888,39 @@
         ]
       }
     },
-    "id": "formations-tee"
+    "id": "formations-tee",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter"
+        ]
+      }
+    }
   },
   {
     "titre": "Fresque de la Mobilité",
@@ -20926,7 +24108,44 @@
         ]
       }
     },
-    "id": "fresque-de-la-mobilite"
+    "id": "fresque-de-la-mobilite",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 499,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté",
+          "Île-de-France"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Gestion des biodéchets",
@@ -21094,7 +24313,25 @@
         ]
       }
     },
-    "id": "gestion-des-biodechets"
+    "id": "gestion-des-biodechets",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "E",
+          "G",
+          "I"
+        ],
+        "allowedRegion": [
+          "Hauts-de-France"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets"
+        ]
+      }
+    }
   },
   {
     "titre": "Aide à l’hôtellerie indépendante en Bourgogne-Franche-Comté",
@@ -21299,7 +24536,32 @@
         ]
       }
     },
-    "id": "hotellerie-independante-bfc"
+    "id": "hotellerie-independante-bfc",
+    "eligibility_data": {
+      "validity": {
+        "start": "22/03/2024",
+        "end": "31/12/2028"
+      },
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "I"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "l'écoconception",
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Aide à l'hôtellerie indépendante",
@@ -21493,7 +24755,27 @@
         ]
       }
     },
-    "id": "hotellerie-independante-na"
+    "id": "hotellerie-independante-na",
+    "eligibility_data": {
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "I"
+        ],
+        "allowedRegion": [
+          "Nouvelle-Aquitaine"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Impact CO2",
@@ -21678,7 +24960,43 @@
         ]
       }
     },
-    "id": "impact-co2"
+    "id": "impact-co2",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2099"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Imprim'vert",
@@ -21871,7 +25189,20 @@
         "Durée du dispositif": "1,5 à 2,5 jours"
       }
     ],
-    "id": "imprim-vert"
+    "id": "imprim-vert",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "R"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Impulsion Environnement",
@@ -22062,7 +25393,39 @@
         ]
       }
     },
-    "id": "impulsion-environnement"
+    "id": "impulsion-environnement",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "D",
+          "E",
+          "F",
+          "H",
+          "J",
+          "K",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Normandie"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Industries vertes (CI3V)",
@@ -22251,7 +25614,33 @@
         ]
       }
     },
-    "id": "industries-vertes"
+    "id": "industries-vertes",
+    "eligibility_data": {
+      "validity": {
+        "start": "14/03/2024",
+        "end": null
+      },
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "H",
+          "J",
+          "M",
+          "S"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "ma_performance_énergétique",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"bioGNV agricole et territorial\"",
@@ -22434,7 +25823,39 @@
         ]
       }
     },
-    "id": "investissement-biognv-agricole-et-territorial"
+    "id": "investissement-biognv-agricole-et-territorial",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/06/2023",
+        "end": "31/12/2023"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "D",
+          "E"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Hauts-de-France",
+          "Île-de-France",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Pays de la Loire",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets",
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"Boucle d’eau géothermique\"",
@@ -22638,7 +26059,43 @@
         ]
       }
     },
-    "id": "investissement-boucle-d-eau-geothermique"
+    "id": "investissement-boucle-d-eau-geothermique",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"centre de tri\"",
@@ -22848,7 +26305,45 @@
         ]
       }
     },
-    "id": "investissement-centre-de-tri"
+    "id": "investissement-centre-de-tri",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "E"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Pays de la Loire",
+          "Provence-Alpes-Côte d'Azur",
+          "Saint-Barthélemy",
+          "Saint-Martin",
+          "Saint-Pierre-Et-Miquelon"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"Chaleur bois\"",
@@ -23057,7 +26552,43 @@
         ]
       }
     },
-    "id": "investissement-chaleur-bois"
+    "id": "investissement-chaleur-bois",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2024"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"construction et rénovation hors site\"",
@@ -23237,7 +26768,25 @@
         ]
       }
     },
-    "id": "investissement-construction-et-renovation-hors-site"
+    "id": "investissement-construction-et-renovation-hors-site",
+    "eligibility_data": {
+      "validity": {
+        "start": "15/02/2023",
+        "end": "15/01/2024"
+      },
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "F",
+          "Q"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"Contrat Chaleur Renouvelable\"",
@@ -23442,7 +26991,43 @@
         ]
       }
     },
-    "id": "investissement-contrat-chaleur-renouvelable"
+    "id": "investissement-contrat-chaleur-renouvelable",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement  \"contrat patrimonial ENR&R\"",
@@ -23653,7 +27238,46 @@
         ]
       }
     },
-    "id": "investissement-contrat-patrimonial-enr-r"
+    "id": "investissement-contrat-patrimonial-enr-r",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/04/2022",
+        "end": "30/09/2024"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Occitanie"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement contre le gaspillage alimentaire",
@@ -23868,7 +27492,47 @@
         ]
       }
     },
-    "id": "investissement-contre-le-gaspillage-alimentaire"
+    "id": "investissement-contre-le-gaspillage-alimentaire",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "G",
+          "H",
+          "I",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"Ecoconception\"",
@@ -24095,7 +27759,61 @@
         ]
       }
     },
-    "id": "investissement-ecoconception"
+    "id": "investissement-ecoconception",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"Géothermie de surface et d'aérothermie\"",
@@ -24301,7 +28019,43 @@
         ]
       }
     },
-    "id": "investissement-geothermie-de-surface-et-d-aerothermie"
+    "id": "investissement-geothermie-de-surface-et-d-aerothermie",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"Géothermie profonde\"",
@@ -24505,7 +28259,43 @@
         ]
       }
     },
-    "id": "investissement-geothermie-profonde"
+    "id": "investissement-geothermie-profonde",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"Gestion des biodéchets\"",
@@ -24709,7 +28499,43 @@
         ]
       }
     },
-    "id": "investissement-gestion-des-biodechets"
+    "id": "investissement-gestion-des-biodechets",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "E"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Pays de la Loire",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"Méthanisation\"",
@@ -24917,7 +28743,43 @@
         ]
       }
     },
-    "id": "investissement-methanisation"
+    "id": "investissement-methanisation",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "E",
+          "H"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Centre-Val de Loire",
+          "Corse",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Pays de la Loire"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets",
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"PAC solaire\"",
@@ -25121,7 +28983,43 @@
         ]
       }
     },
-    "id": "investissement-pac-solaire"
+    "id": "investissement-pac-solaire",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement pour l'approvisionnement de chaufferies bois",
@@ -25306,7 +29204,23 @@
         ]
       }
     },
-    "id": "investissement-pour-l-approvisionnement-de-chaufferies-bois"
+    "id": "investissement-pour-l-approvisionnement-de-chaufferies-bois",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"recharge véhicules électriques\"",
@@ -25473,7 +29387,24 @@
         ]
       }
     },
-    "id": "investissement-recharge-vehicules-electriques"
+    "id": "investissement-recharge-vehicules-electriques",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/12/2022",
+        "end": "31/12/2024"
+      },
+      "company": {
+        "allowedNafSections": [
+          "G",
+          "Q"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"Récupération de chaleur fatale\"",
@@ -25660,7 +29591,26 @@
         ]
       }
     },
-    "id": "investissement-recuperation-de-chaleur-fatale"
+    "id": "investissement-recuperation-de-chaleur-fatale",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"réemploi réutilisation réparation\"",
@@ -25874,7 +29824,48 @@
         ]
       }
     },
-    "id": "investissement-reemploi-reutilisation-reparation"
+    "id": "investissement-reemploi-reutilisation-reparation",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "E",
+          "F",
+          "G",
+          "S"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"renouvellement forestier\"",
@@ -26043,7 +30034,23 @@
         ]
       }
     },
-    "id": "investissement-renouvellement-forestier"
+    "id": "investissement-renouvellement-forestier",
+    "eligibility_data": {
+      "validity": {
+        "start": "15/06/2023",
+        "end": "31/05/2024"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"Réseaux de chaleur ou de froid\"",
@@ -26230,7 +30237,26 @@
         ]
       }
     },
-    "id": "investissement-reseaux-de-chaleur-ou-de-froid"
+    "id": "investissement-reseaux-de-chaleur-ou-de-froid",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2024"
+      },
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "D",
+          "E",
+          "Q"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"solaire thermique Outre-mer\"",
@@ -26424,7 +30450,50 @@
         ]
       }
     },
-    "id": "investissement-solaire-thermique-outre-mer"
+    "id": "investissement-solaire-thermique-outre-mer",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2023"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Guyane",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Polynésie française"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"Solaire thermique\"",
@@ -26627,7 +30696,42 @@
         ]
       }
     },
-    "id": "investissement-solaire-thermique"
+    "id": "investissement-solaire-thermique",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"Systèmes Solaires Combinés\"",
@@ -26828,7 +30932,40 @@
         ]
       }
     },
-    "id": "investissement-systemes-solaires-combines"
+    "id": "investissement-systemes-solaires-combines",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"vélotourisme\"",
@@ -27029,7 +31166,26 @@
         ]
       }
     },
-    "id": "investissement-velotourisme"
+    "id": "investissement-velotourisme",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/09/2024",
+        "end": "31/10/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "G",
+          "I",
+          "O"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissement \"VTE Vert\"",
@@ -27241,7 +31397,43 @@
         ]
       }
     },
-    "id": "investissement-vte-vert"
+    "id": "investissement-vte-vert",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2025"
+      },
+      "company": {
+        "maxEmployees": 4999,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter"
+        ]
+      }
+    }
   },
   {
     "titre": "INVESTour",
@@ -27422,7 +31614,29 @@
         ]
       }
     },
-    "id": "investour"
+    "id": "investour",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "01/11/2025"
+      },
+      "company": {
+        "maxEmployees": 499,
+        "allowedNafSections": [
+          "I",
+          "L"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "former_ou_recruter"
+        ]
+      }
+    }
   },
   {
     "titre": "Je change ma voiture",
@@ -27605,7 +31819,39 @@
         ]
       }
     },
-    "id": "je-change-ma-voiture"
+    "id": "je-change-ma-voiture",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Label Clef Verte",
@@ -27783,7 +32029,24 @@
         ]
       }
     },
-    "id": "label-clef-verte"
+    "id": "label-clef-verte",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/05/2023",
+        "end": "31/12/2026"
+      },
+      "company": {
+        "maxEmployees": 499,
+        "allowedNafSections": [
+          "I"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Mécénaturel",
@@ -27968,7 +32231,42 @@
         ]
       }
     },
-    "id": "mecenaturel"
+    "id": "mecenaturel",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Mission de Conseil RSE",
@@ -28158,7 +32456,40 @@
         ]
       }
     },
-    "id": "mission-conseil-rse"
+    "id": "mission-conseil-rse",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2018",
+        "end": null
+      },
+      "company": {
+        "minEmployees": 10,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "Q",
+          "R",
+          "S"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Mission Stratégie Environnement",
@@ -28354,7 +32685,41 @@
         ]
       }
     },
-    "id": "mission-strategie-environnement"
+    "id": "mission-strategie-environnement",
+    "eligibility_data": {
+      "company": {
+        "minEmployees": 10,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter"
+        ]
+      }
+    }
   },
   {
     "titre": "Mobili'Pro",
@@ -28545,7 +32910,39 @@
         ]
       }
     },
-    "id": "mobilipro"
+    "id": "mobilipro",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "MOOC Entreprise et biodiversité",
@@ -28725,7 +33122,40 @@
         ]
       }
     },
-    "id": "mooc-biodiversite-entreprise"
+    "id": "mooc-biodiversite-entreprise",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter",
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Nature ta ville",
@@ -28904,7 +33334,38 @@
         ]
       }
     },
-    "id": "nature-ta-ville"
+    "id": "nature-ta-ville",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Navires utilisant des énergies propres",
@@ -29069,7 +33530,28 @@
         ]
       }
     },
-    "id": "navires-energies-propre"
+    "id": "navires-energies-propre",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2024"
+      },
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "H"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Nos Gestes Climat",
@@ -29250,7 +33732,39 @@
         ]
       }
     },
-    "id": "nos-gestes-climat"
+    "id": "nos-gestes-climat",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "ORMAT 2024",
@@ -29464,7 +33978,49 @@
         ]
       }
     },
-    "id": "ormat-2024"
+    "id": "ormat-2024",
+    "eligibility_data": {
+      "validity": {
+        "start": "17/01/2024",
+        "end": "09/09/2024"
+      },
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "E",
+          "F",
+          "G"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets"
+        ]
+      }
+    }
   },
   {
     "titre": "ORMAT",
@@ -29677,7 +34233,48 @@
         ]
       }
     },
-    "id": "ormat"
+    "id": "ormat",
+    "eligibility_data": {
+      "validity": {
+        "start": "17/01/2024",
+        "end": "06/10/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "E",
+          "F",
+          "G"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets"
+        ]
+      }
+    }
   },
   {
     "titre": "Formation Outils pour l'adaptation",
@@ -29860,7 +34457,43 @@
         ]
       }
     },
-    "id": "outils-pour-adaptation"
+    "id": "outils-pour-adaptation",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "29/07/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter"
+        ]
+      }
+    }
   },
   {
     "titre": "PACTE Industrie",
@@ -30055,7 +34688,26 @@
         ]
       }
     },
-    "id": "pacte-industrie"
+    "id": "pacte-industrie",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/06/2023",
+        "end": "30/06/2026"
+      },
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Programme PAMI",
@@ -30273,7 +34925,34 @@
         ]
       }
     },
-    "id": "pami"
+    "id": "pami",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "01/10/2027"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable",
+          "ma_performance_énergétique",
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Plan d'aide au report modal (PARM)",
@@ -30439,7 +35118,25 @@
         ]
       }
     },
-    "id": "parm-vnf"
+    "id": "parm-vnf",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2027"
+      },
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "C",
+          "H"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Pass Transformation Ecologique",
@@ -30652,7 +35349,43 @@
         ]
       }
     },
-    "id": "pass-transformation-ecologique"
+    "id": "pass-transformation-ecologique",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2025"
+      },
+      "company": {
+        "maxEmployees": 19,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "M",
+          "N",
+          "S"
+        ],
+        "allowedRegion": [
+          "Occitanie"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "PASS Transitions",
@@ -30853,7 +35586,42 @@
         ]
       }
     },
-    "id": "pass-transition-bzh"
+    "id": "pass-transition-bzh",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 49,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "J",
+          "M",
+          "N",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Bretagne"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "former_ou_recruter",
+          "mon_impact_environnemental",
+          "l'écoconception",
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Aide aux travaux de rénovation énergétique",
@@ -31035,7 +35803,27 @@
         ]
       }
     },
-    "id": "perf-crise-energetique-aura"
+    "id": "perf-crise-energetique-aura",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "01/09/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "I"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Investissements d'économies d'énergie",
@@ -31198,7 +35986,24 @@
         ]
       }
     },
-    "id": "perf-crise-energetique-cvl"
+    "id": "perf-crise-energetique-cvl",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "G",
+          "I"
+        ],
+        "allowedRegion": [
+          "Centre-Val de Loire"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Performa Environnement",
@@ -31502,7 +36307,29 @@
         "Durée du dispositif": "2 jours"
       }
     ],
-    "id": "performa-environnement"
+    "id": "performa-environnement",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "R",
+          "T"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Plan de mobilité",
@@ -31708,7 +36535,49 @@
         ]
       }
     },
-    "id": "plan-de-mobilite"
+    "id": "plan-de-mobilite",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "minEmployees": 50,
+        "maxEmployees": 499,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Île-de-France"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Prêt Action Climat",
@@ -31894,7 +36763,47 @@
         ]
       }
     },
-    "id": "pret-action-climat"
+    "id": "pret-action-climat",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 49,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "former_ou_recruter",
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Prêt Économies d’Énergie (PEE)",
@@ -32077,7 +36986,41 @@
         ]
       }
     },
-    "id": "pret-economies-d-energie-pee"
+    "id": "pret-economies-d-energie-pee",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 49,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Prêt Energie AURA",
@@ -32327,7 +37270,48 @@
         ]
       }
     },
-    "id": "pret-energie-aura"
+    "id": "pret-energie-aura",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2025"
+      },
+      "company": {
+        "maxEmployees": 249,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Prêt transition écologique Île-de-France",
@@ -32586,7 +37570,52 @@
         ]
       }
     },
-    "id": "pret-ile-de-france"
+    "id": "pret-ile-de-france",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 249,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Île-de-France"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "former_ou_recruter",
+          "mon_impact_environnemental",
+          "l'écoconception",
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Prêt Tourisme Bpifrance",
@@ -32755,7 +37784,25 @@
         ]
       }
     },
-    "id": "pret-tourisme"
+    "id": "pret-tourisme",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "07/11/2024"
+      },
+      "company": {
+        "maxEmployees": 4999,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "I"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment"
+        ]
+      }
+    }
   },
   {
     "titre": "Prêt Vert - Ademe",
@@ -32955,7 +38002,51 @@
         ]
       }
     },
-    "id": "pret-vert-ademe"
+    "id": "pret-vert-ademe",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "16/06/2024"
+      },
+      "company": {
+        "maxEmployees": 249,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "former_ou_recruter",
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Prêt Vert",
@@ -33149,7 +38240,47 @@
         ]
       }
     },
-    "id": "pret-vert"
+    "id": "pret-vert",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 4999,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "former_ou_recruter",
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Prime à la conversion",
@@ -33365,7 +38496,44 @@
         ]
       }
     },
-    "id": "prime-a-la-conversion"
+    "id": "prime-a-la-conversion",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "14/02/2025"
+      },
+      "company": {
+        "maxEmployees": 4999,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Priorités régionales d'interventions touristiques",
@@ -33540,7 +38708,23 @@
         ]
       }
     },
-    "id": "prit-hdf"
+    "id": "prit-hdf",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "I"
+        ],
+        "allowedRegion": [
+          "Hauts-de-France"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental",
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Programme Breizh Fab",
@@ -33727,7 +38911,26 @@
         ]
       }
     },
-    "id": "programme-breizh-fab"
+    "id": "programme-breizh-fab",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "allowedRegion": [
+          "Bretagne"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Programme Ecod'o",
@@ -33907,7 +39110,25 @@
         ]
       }
     },
-    "id": "programme-ecod-o"
+    "id": "programme-ecod-o",
+    "eligibility_data": {
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "C",
+          "D",
+          "I"
+        ],
+        "allowedRegion": [
+          "Bretagne"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "diminuer_ma_consommation_d'eau"
+        ]
+      }
+    }
   },
   {
     "titre": "Programme EVE",
@@ -34074,7 +39295,25 @@
         ]
       }
     },
-    "id": "programme-eve"
+    "id": "programme-eve",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2025"
+      },
+      "company": {
+        "allowedNafSections": [
+          "G",
+          "H"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable",
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Programme Res'Eau",
@@ -34269,7 +39508,28 @@
         ]
       }
     },
-    "id": "programme-reseau"
+    "id": "programme-reseau",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "30/04/2026"
+      },
+      "company": {
+        "allowedNafSections": [
+          "I",
+          "N",
+          "S"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "diminuer_ma_consommation_d'eau"
+        ]
+      }
+    }
   },
   {
     "titre": "Programme Synergies durables",
@@ -34449,7 +39709,31 @@
         ]
       }
     },
-    "id": "programme-synergies-durables"
+    "id": "programme-synergies-durables",
+    "eligibility_data": {
+      "company": {
+        "minEmployees": 20,
+        "maxEmployees": 499,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "M"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Projets d'hébergements touristiques",
@@ -34633,7 +39917,25 @@
         ]
       }
     },
-    "id": "projets-hebergements-touristiques-cvl"
+    "id": "projets-hebergements-touristiques-cvl",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 249,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "I"
+        ],
+        "allowedRegion": [
+          "Centre-Val de Loire"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Recharges pour véhicules électriques",
@@ -34798,7 +40100,28 @@
         ]
       }
     },
-    "id": "recharge-vehicule-electrique"
+    "id": "recharge-vehicule-electrique",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "H",
+          "I",
+          "L",
+          "O",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Programme REMOVE",
@@ -34990,7 +40313,38 @@
         ]
       }
     },
-    "id": "remove"
+    "id": "remove",
+    "eligibility_data": {
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Crédit d'Impôt Rénovation Énergétique (CIRE)",
@@ -35184,7 +40538,40 @@
         ]
       }
     },
-    "id": "renovation-energetique"
+    "id": "renovation-energetique",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2024"
+      },
+      "company": {
+        "maxEmployees": 249,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "C",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment"
+        ]
+      }
+    }
   },
   {
     "titre": "Diagnostic SARE",
@@ -35374,7 +40761,37 @@
         ]
       }
     },
-    "id": "renovation-petit-tertiaire-prive"
+    "id": "renovation-petit-tertiaire-prive",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "01/01/2025"
+      },
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment"
+        ]
+      }
+    }
   },
   {
     "titre": "Répar'acteurs",
@@ -35552,7 +40969,21 @@
         ]
       }
     },
-    "id": "repar-acteurs"
+    "id": "repar-acteurs",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "C",
+          "S"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets"
+        ]
+      }
+    }
   },
   {
     "titre": "Rétrofit électrique",
@@ -35717,7 +41148,39 @@
         ]
       }
     },
-    "id": "retrofit-electrique"
+    "id": "retrofit-electrique",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Sites touristiques exemplaires",
@@ -35889,7 +41352,26 @@
         ]
       }
     },
-    "id": "sites-touristiques-exemplaires"
+    "id": "sites-touristiques-exemplaires",
+    "eligibility_data": {
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "I",
+          "L",
+          "R"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Plan Solaire Sud PV Plus",
@@ -36092,7 +41574,43 @@
         ]
       }
     },
-    "id": "smart-pv"
+    "id": "smart-pv",
+    "eligibility_data": {
+      "company": {
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Sobriété et Résilience des Territoires",
@@ -36275,7 +41793,43 @@
         ]
       }
     },
-    "id": "sobriete-et-resilience-des-territoires"
+    "id": "sobriete-et-resilience-des-territoires",
+    "eligibility_data": {
+      "validity": {
+        "start": "02/05/2023",
+        "end": "30/11/2024"
+      },
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Plan Solaire : Paré pour le solaire",
@@ -36465,7 +42019,43 @@
         ]
       }
     },
-    "id": "solaire-ready"
+    "id": "solaire-ready",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "rénover_mon_bâtiment",
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Soutien à l'hébergement touristique",
@@ -36652,7 +42242,25 @@
         ]
       }
     },
-    "id": "soutien-hebergement-touristique"
+    "id": "soutien-hebergement-touristique",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "I",
+          "L"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Soutien au photovoltaïque en Grand Est",
@@ -36851,7 +42459,42 @@
         ]
       }
     },
-    "id": "soutien-pv-grand-est"
+    "id": "soutien-pv-grand-est",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Grand Est"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Sud Prêt Climat",
@@ -37077,7 +42720,48 @@
         ]
       }
     },
-    "id": "sud-pret-climat"
+    "id": "sud-pret-climat",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "31/12/2024"
+      },
+      "company": {
+        "maxEmployees": 249,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique",
+          "mon_impact_environnemental",
+          "l'écoconception",
+          "préserver_la_biodiversité"
+        ]
+      }
+    }
   },
   {
     "titre": "Formation référent tourisme durable ",
@@ -37244,7 +42928,22 @@
         ]
       }
     },
-    "id": "tourisme-durable-paca"
+    "id": "tourisme-durable-paca",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "I"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "former_ou_recruter"
+        ]
+      }
+    }
   },
   {
     "titre": "TPE gagnantes sur tous les coûts",
@@ -37428,7 +43127,35 @@
         ]
       }
     },
-    "id": "tpe-gagnantes-sur-tous-les-couts"
+    "id": "tpe-gagnantes-sur-tous-les-couts",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 19,
+        "allowedNafSections": [
+          "A",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "M",
+          "Q",
+          "R",
+          "S",
+          "T"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Tremplin",
@@ -37643,7 +43370,44 @@
         ]
       }
     },
-    "id": "tremplin"
+    "id": "tremplin",
+    "eligibility_data": {
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "A",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable",
+          "la_gestion_des_déchets",
+          "diminuer_ma_consommation_d'eau",
+          "mon_impact_environnemental",
+          "l'écoconception"
+        ]
+      }
+    }
   },
   {
     "titre": "Trophées Crisalide Eco-activités",
@@ -37824,7 +43588,40 @@
         ]
       }
     },
-    "id": "trophees-crisalide-eco-activites"
+    "id": "trophees-crisalide-eco-activites",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Bretagne",
+          "Normandie",
+          "Pays de la Loire"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mon_impact_environnemental"
+        ]
+      }
+    }
   },
   {
     "titre": "Véhicule lourd énergies propres",
@@ -37998,7 +43795,39 @@
         ]
       }
     },
-    "id": "vehicule-lourd-energies-propres"
+    "id": "vehicule-lourd-energies-propres",
+    "eligibility_data": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Véhicules lourds électriques",
@@ -38176,7 +44005,23 @@
         ]
       }
     },
-    "id": "vehicules-lourds-electriques"
+    "id": "vehicules-lourds-electriques",
+    "eligibility_data": {
+      "validity": {
+        "start": "26/08/2024",
+        "end": "07/10/2024"
+      },
+      "company": {
+        "allowedNafSections": [
+          "H"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "la_mobilité_durable"
+        ]
+      }
+    }
   },
   {
     "titre": "Visite Énergie CCI",
@@ -38400,7 +44245,38 @@
         "Montant du dispositif": "Gratuit"
       }
     ],
-    "id": "visite-energie-cci"
+    "id": "visite-energie-cci",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 499,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Visite Énergie CMA",
@@ -38636,7 +44512,31 @@
         "Durée du dispositif": "2 jours de prestation répartis sur 12 mois"
       }
     ],
-    "id": "visite-energie-cma"
+    "id": "visite-energie-cma",
+    "eligibility_data": {
+      "validity": {
+        "start": null,
+        "end": "25/06/2025"
+      },
+      "company": {
+        "maxEmployees": 249,
+        "allowedNafSections": [
+          "C",
+          "D",
+          "F",
+          "I",
+          "M",
+          "N",
+          "R",
+          "T"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   },
   {
     "titre": "Visite Énergie CCI/CMA",
@@ -38865,6 +44765,39 @@
         "Montant du dispositif": "Gratuit"
       }
     ],
-    "id": "visite-energie"
+    "id": "visite-energie",
+    "eligibility_data": {
+      "company": {
+        "maxEmployees": 499,
+        "excludeMicroentrepreneur": true,
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "ma_performance_énergétique"
+        ]
+      }
+    }
   }
 ]

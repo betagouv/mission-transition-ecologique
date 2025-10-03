@@ -1,4 +1,4 @@
-import { CurrentDateProvider, ProgramRepository, RulesManager } from './spi'
+import { ProgramRepository, EligibilityEvaluator } from './spi'
 import { evaluateProgramEligibility, filterPrograms } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
@@ -10,16 +10,10 @@ import { ProgramNotFoundError } from './types'
 
 export default class ProgramFeatures {
   private _programRepository: ProgramRepository
-  private _currentDateService: CurrentDateProvider | undefined
-  private _rulesService: RulesManager | undefined
+  private _rulesService: EligibilityEvaluator | undefined
 
-  constructor(
-    programRepository: ProgramRepository,
-    currentDateService: CurrentDateProvider | undefined = undefined,
-    rulesService: RulesManager | undefined = undefined
-  ) {
+  constructor(programRepository: ProgramRepository, rulesService: EligibilityEvaluator | undefined = undefined) {
     this._programRepository = programRepository
-    this._currentDateService = currentDateService
     this._rulesService = rulesService
   }
 
@@ -42,16 +36,11 @@ export default class ProgramFeatures {
       return Result.ok({ ...program, eligibility: ProgramEligibilityType.Unknown })
     }
 
-    if (!this._currentDateService || !this._rulesService) {
+    if (!this._rulesService) {
       return Result.err(new Error('currentDateService and rulesService should be defined to evaluate a program'))
     }
 
-    const programWithEligibility = evaluateProgramEligibility(
-      program,
-      questionnaireData,
-      this._currentDateService.get(),
-      this._rulesService
-    )
+    const programWithEligibility = evaluateProgramEligibility(program, questionnaireData, this._rulesService)
     if (programWithEligibility.isErr) {
       return Result.err(programWithEligibility.error)
     }
@@ -60,7 +49,7 @@ export default class ProgramFeatures {
   }
 
   public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
-    if (!this._currentDateService || !this._rulesService) {
+    if (!this._rulesService) {
       return Result.err(new Error('currentDateService and rulesService should be defined to filter programs'))
     }
     let allPrograms
@@ -71,7 +60,7 @@ export default class ProgramFeatures {
       allPrograms = this._programRepository.getAll()
     }
 
-    let filteredPrograms = filterPrograms(allPrograms, questionnaireData, this._currentDateService.get(), this._rulesService)
+    let filteredPrograms = filterPrograms(allPrograms, questionnaireData, this._rulesService)
     if (questionnaireData.is_questionnaire) {
       filteredPrograms = filteredPrograms.map((programs) => sortPrograms(programs))
     }

@@ -4,9 +4,9 @@ import { Result } from 'true-myth'
 import { ensureError } from '../../common/domain/error/errors'
 import { ProgramType } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
-import { RulesManager } from '../domain/spi'
+import { EligibilityEvaluator } from '../domain/spi'
 
-export class PublicodesService implements RulesManager {
+export class PublicodesService implements EligibilityEvaluator {
   private static instance: PublicodesService
 
   private readonly _publicodeEngines: Record<string, Engine>
@@ -23,12 +23,10 @@ export class PublicodesService implements RulesManager {
     return PublicodesService.instance
   }
 
-  public evaluate(
-    rule: string,
-    program: ProgramType,
-    questionnaireData: QuestionnaireData,
-    currentDate: string
-  ): Result<boolean | undefined, Error> {
+  public evaluate(program: ProgramType, questionnaireData: QuestionnaireData): Result<boolean | undefined, Error> {
+    const rule = 'entreprise . est ciblée'
+    const currentDate = new Date().toLocaleDateString('fr-FR')
+
     const engine = this._publicodeEngines[program.id]
     if (!engine) {
       return Result.err(

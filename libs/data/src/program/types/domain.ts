@@ -142,3 +142,32 @@ export interface MailSenderInterface {
   sendPeriodicMail(program: DataProgram): Promise<void>
   sendEolMail(program: DataProgram): Promise<void>
 }
+
+export enum Region {
+  AuvergneRhoneAlpes = 'Auvergne-Rhône-Alpes',
+  BourgogneFrancheComte = 'Bourgogne-Franche-Comté',
+  Bretagne = 'Bretagne',
+  CentreValDeLoire = 'Centre-Val de Loire',
+  Corse = 'Corse',
+  GrandEst = 'Grand Est',
+  HautsDeFrance = 'Hauts-de-France',
+  Normandie = 'Normandie',
+  NouvelleAquitaine = 'Nouvelle-Aquitaine',
+  Occitanie = 'Occitanie',
+  ProvenceAlpesCoteDAzur = "Provence-Alpes-Côte d'Azur",
+  PaysDeLaLoire = 'Pays de la Loire',
+  IleDeFrance = 'Île-de-France',
+  Guadeloupe = 'Guadeloupe',
+  Guyane = 'Guyane',
+  LaReunion = 'La Réunion',
+  Martinique = 'Martinique',
+  Mayotte = 'Mayotte',
+  IleDeClipperton = 'Ile de Clipperton',
+  NouvelleCaledonie = 'Nouvelle-Calédonie',
+  PolynesieFrancaise = 'Polynésie française',
+  SaintBarthelemy = 'Saint-Barthélemy',
+  SaintMartin = 'Saint-Martin',
+  SaintPierreEtMiquelon = 'Saint-Pierre-Et-Miquelon',
+  TerresAustralesEtAntarctiquesFrancaises = 'Terres australes et antarctiques françaises',
+  WallisEtFutuna = 'Wallis et Futuna'
+}
