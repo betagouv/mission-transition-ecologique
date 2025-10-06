@@ -31,7 +31,7 @@ export class ProjectFeatures {
     console.log(`Start loading Baserow data and creating the project images`)
     const projects = await new ProjectBaserow(this._outputImageDirectory, this._logger).getProdAndArchivedProjects()
 
-    this._addFaqsToProjects(projects)
+    await this._addFaqsToProjects(projects)
 
     console.log(`Baserow Data sucessfully downloaded.\n\nStarting to validate the project data and generating the project JSON.`)
     new Redirect(this._logger).updateProjectsRedirects(projects)
