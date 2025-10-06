@@ -245,7 +245,7 @@
         "Tous secteurs d’activité"
       ],
       "nombre d'années d'activité": [
-        "3 ans"
+        "Au moins 3 ans d'activité"
       ],
       "autres critères d'éligibilité": [
         "Vous dirigez une PME et avez déjà engagé une réflexion stratégique sur l’économie circulaire, validée en interne ou mise à l’épreuve à travers un projet concret."
@@ -4534,7 +4534,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "La labellisation est ouverte à tout type de réparateurs professionnels : les artisans réparateurs, les réparateurs industriels, les SAV de fabricants et des distributeurs et les acteurs de la réparation à distances\nIl doit s'agir de réparations sur les produits suivants : équipements électriques et électroniques (EEE), éléments d'ameublement, produits textiles d'habillement, les chaussures ou le linge de maison, jouets, articles de sport et de loisirs, articles de bricolage et de jardin."
+        "La labellisation est ouverte à tout type de réparateurs professionnels : les artisans réparateurs, les réparateurs industriels, les SAV de fabricants et des distributeurs et les acteurs de la réparation à distances\\\nIl doit s'agir de réparations sur les produits suivants : équipements électriques et électroniques (EEE), éléments d'ameublement, produits textiles d'habillement, les chaussures ou le linge de maison, jouets, articles de sport et de loisirs, articles de bricolage et de jardin."
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -11818,7 +11818,7 @@
         ]
       },
       {
-        "description": "Un conseiller CCI vous recontacte pour faire le point sur vos pratiques et choisir les éco-défis à relever par votre entreprise."
+        "description": "Un conseiller CCI ou CMA vous recontacte pour faire le point sur vos pratiques et choisir les éco-défis à relever par votre entreprise."
       },
       {
         "description": "Mettez en œuvre les actions retenues avec un appui personnalisé si besoin."
@@ -19723,6 +19723,9 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Être un artisan"
       ]
     },
     "publicodes": {
@@ -21685,7 +21688,8 @@
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "autres opérateurs": [
-      "CCI ou CMA"
+      "Chambre de Commerce et de l'Industrie",
+      "Chambre des Métiers et de l'Artisanat"
     ],
     "contact question": "formulaire",
     "url": "https://www.artisanat.fr/metiers/labels-qualifications/label-imprim-vert",
@@ -21730,7 +21734,7 @@
         "Éligible à toutes les entreprises"
       ],
       "autres critères d'éligibilité": [
-        "Réservé aux artisans"
+        "Être un artisan"
       ]
     },
     "publicodes": {

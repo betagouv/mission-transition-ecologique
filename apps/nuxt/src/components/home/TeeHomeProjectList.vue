@@ -87,7 +87,8 @@ const hasNoResults = computed(() => {
 })
 
 function byHighlight(projects: ProjectType[]): ProjectType[] {
-  return projects.toSorted((a, b) => {
+  // Using slice->sort instead of toSorted to ensure maximum browser compatibilities
+  return projects.slice().sort((a, b) => {
     if (!a.highlightPriority) {
       return 1
     }
