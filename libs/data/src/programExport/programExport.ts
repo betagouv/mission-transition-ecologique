@@ -114,48 +114,49 @@ export class ProgramExport {
     return Array.isArray(value) ? value.join('|') : value
   }
 
-  private _formatOperators(operators1: Operator[], operators2: Operator[]): Porteur[] {
-    const tempMap = new Map<number, Porteur>()
+  private _formatOperators(contactOperators: Operator[], otherOperators: Operator[]): Porteur[] {
+    const operatorMap = new Map<number, Porteur>()
 
-    for (const op of operators1) {
-      if (op.tag === 'CCI ou CMA') {
-        tempMap.set(24, {
+    for (const operator of contactOperators) {
+      if (operator.tag === 'CCI ou CMA') {
+        operatorMap.set(24, {
           nom: 'CCI FRANCE',
           siren: '187500020',
           roles: [PorteurRole.Instructeur, PorteurRole.Diffuseur]
         })
-        tempMap.set(40, {
+        operatorMap.set(40, {
           nom: 'CMA FRANCE (APCM)',
           siren: '187500046',
           roles: [PorteurRole.Instructeur, PorteurRole.Diffuseur]
         })
         continue
       }
-      !op.siren && console.log(`WARNING, Missing siren: ${op.name}, ${op.id}`)
-      !op.normalizedName && console.log(`WARNING, Missing Nom normalisé: ${op.name}, ${op.id}`)
-      tempMap.set(op.id, {
-        nom: op.normalizedName,
-        siren: op.siren,
+      this._warnOnMissing(operator)
+      operatorMap.set(operator.id, {
+        nom: operator.normalizedName,
+        siren: operator.siren,
         roles: [PorteurRole.Instructeur, PorteurRole.Diffuseur]
       })
     }
 
-    for (const op of operators2) {
-      !op.siren && console.log(`WARNING, Missing siren: ${op.name}, ${op.id}`)
-      !op.normalizedName && console.log(`WARNING, Missing Nom normalisé: ${op.name}, ${op.id}`)
-      if (tempMap.has(op.id)) {
-        const existing = tempMap.get(op.id)
-        if (!existing) {
-          tempMap.set(op.id, {
-            nom: op.normalizedName,
-            siren: op.siren,
-            roles: [PorteurRole.Diffuseur]
-          })
-        }
+    for (const operator of otherOperators) {
+      this._warnOnMissing(operator)
+      const existing = operatorMap.get(operator.id)
+      if (!existing) {
+        operatorMap.set(operator.id, {
+          nom: operator.normalizedName,
+          siren: operator.siren,
+          roles: [PorteurRole.Diffuseur]
+        })
       }
     }
 
-    return Array.from(tempMap.values())
+    return Array.from(operatorMap.values())
+  }
+
+  private _warnOnMissing(operator: Operator): void {
+    !operator.siren && console.log(`WARNING, Missing siren: ${operator.name}, ${operator.id}`)
+    !operator.normalizedName && console.log(`WARNING, Missing Nom normalisé: ${operator.name}, ${operator.id}`)
   }
 
   private _getGeographicCoverage(coverage: GeographicCoverage, geographicAreas: GeographicAreas[] = []): string[] {
