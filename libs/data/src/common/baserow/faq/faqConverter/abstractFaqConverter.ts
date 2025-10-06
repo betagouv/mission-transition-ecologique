@@ -21,15 +21,16 @@ export abstract class AbstractFaqConverter {
   protected _logLinkedToProjectAndPage(page: FaqPage, baserowFaq: BaserowFaq) {
     this._log(
       `FAQ lié à une page statique: ${page} et à un projet : ${ReplacerBaserow.linkObjectsByValues(baserowFaq.Projet).toString()}`,
-      baserowFaq
+      baserowFaq,
+      LogLevel.Major
     )
   }
 
   protected _logNotLinkedToPageOrProject(baserowFaq: BaserowFaq) {
-    this._log('FAQ non lié à une page statique ni à un projet', baserowFaq)
+    this._log('FAQ non lié à une page statique ni à un projet', baserowFaq, LogLevel.Critic)
   }
 
-  private _log(message: string, baserowFaq: BaserowFaq) {
-    this._logger.log(LogLevel.Critic, message, `FAQ ID Baserow: ${baserowFaq.id}`, baserowFaq.id, baserowFaq.id, LoggerType.Faq)
+  private _log(message: string, baserowFaq: BaserowFaq, logLevel: LogLevel) {
+    this._logger.log(logLevel, message, `FAQ ID Baserow: ${baserowFaq.id}`, baserowFaq.id, baserowFaq.id, LoggerType.Faq)
   }
 }

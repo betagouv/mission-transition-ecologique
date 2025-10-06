@@ -947,7 +947,7 @@
     "image": "/images/projet/isolation-thermique.webp",
     "titleLongDescription": "Pourquoi l'isolation thermique ?",
     "longDescription": "L’isolation thermique des bâtiments permet de garantir le confort en été comme en hiver en limitant le recours à la climatisation et au chauffage. Un logement mal isolé génère des pertes conséquentes de chaleur en hiver et de fraîcheur en été par le toit, les murs, les portes, les fenêtres et le sol.\\\nGrâce à des travaux d’isolation, vous diminuez vos factures d’énergie et améliorez votre confort tout au long de l’année.",
-    "titleMoreDescription": "Comment me documenter pour l'isolation",
+    "titleMoreDescription": "Comment me documenter pour l'isolation ?",
     "moreDescription": "- [**Les exigences réglementaires pour les travaux de rénovation**](https://librairie.ademe.fr/ged/8069/fiche-exigences-reglementaires-renovation.pdf), une fiche pratique de l'ADEME.\n- [**Réduction de la consommation d'énergie dans les bâtiments à usage tertiaire**](https://entreprendre.service-public.fr/vosdroits/F38065), les obligations légales par Entreprendre.Service-Public.fr.\n- [**Quel est le meilleur isolant thermique pour une isolation efficace ?**](https://www.baisseleswatts.fr/actualites/equipement-energetique/quel-est-le-meilleur-isolant-thermique) un article proposé par Baisse les watts.\n- [**L'annuaire des professionnels RGE et des architectes,**](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte) trouver un professionnel RGE, compétent pour réaliser des travaux d'isolation thermique.",
     "themes": [
       "building",
@@ -990,7 +990,7 @@
       "booster-transformation-rev-3"
     ],
     "titleLinkedProjects": "Les prérequis pour l'isolation thermique",
-    "descriptionLinkedProjects": "Réalisez ces prérequis pour assurer la pertinence avec le projet d'isolation thermique",
+    "descriptionLinkedProjects": "Réalisez ces prérequis pour assurer la pertinence avec le projet d'isolation thermique.",
     "linkedProjects": [
       4,
       14
@@ -1022,7 +1022,7 @@
       "T",
       "U"
     ],
-    "titleFaq": "❓Questions fréquentes sur l’isolation thermique",
+    "titleFaq": "❓Les questions fréquentes sur l’isolation thermique",
     "metaTitle": "Isolation thermique des entreprises - Rénovation énergétique",
     "metaDescription": "Faites isoler vos bâtiments pour limiter les pertes de chaleur et de fraîcheur. Une bonne isolation thermique réduit vos dépenses énergétiques.",
     "faqs": [

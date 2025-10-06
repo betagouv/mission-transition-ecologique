@@ -31,6 +31,8 @@ export class ProjectFeatures {
     console.log(`Start loading Baserow data and creating the project images`)
     const projects = await new ProjectBaserow(this._outputImageDirectory, this._logger).getProdAndArchivedProjects()
 
+    this._addFaqsToProjects(projects)
+
     console.log(`Baserow Data sucessfully downloaded.\n\nStarting to validate the project data and generating the project JSON.`)
     new Redirect(this._logger).updateProjectsRedirects(projects)
 
@@ -42,9 +44,15 @@ export class ProjectFeatures {
     return
   }
 
+  private async _addFaqsToProjects(projects: DataProject[]) {
+    const projectFaqs = await this._getFaqsByProjects(projects)
+    for (const project of projects) {
+      project.faqs = projectFaqs[project.id] ?? []
+    }
+  }
+
   private async _validateData(rawProjects: DataProject[]) {
     const validProjects: DataProject[] = []
-    const projectFaqs = await this._getFaqsByProjects(rawProjects)
     for (const project of rawProjects) {
       if (project.status != ProjectStatus.InProd) {
         continue
@@ -53,8 +61,6 @@ export class ProjectFeatures {
       this._validateLinkedProjects(project, rawProjects)
       this._validatePrograms(project, this._programs)
       await this._validateLinks(project)
-
-      project.faqs = projectFaqs[project.id] ?? []
 
       if (this._validateSlug(project)) {
         validProjects.push(project)

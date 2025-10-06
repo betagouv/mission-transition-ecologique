@@ -89,7 +89,7 @@ describe('FaqProjectConverter', () => {
 
       // Should log the mixed link and not include in results
       expect(mockLogger.log).toHaveBeenCalledWith(
-        LogLevel.Critic,
+        LogLevel.Major,
         expect.stringContaining('FAQ lié à une page statique: Accueil et à un projet'),
         expect.stringContaining('FAQ ID Baserow: 1004'),
         1004,
