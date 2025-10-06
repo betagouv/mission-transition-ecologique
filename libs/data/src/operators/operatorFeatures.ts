@@ -2,7 +2,7 @@ import path from 'path'
 import fs from 'fs'
 import { fileURLToPath } from 'url'
 import { OperatorBaserow } from '../common/baserow/operatorBaserow'
-import { RawOperator } from './types/domain'
+import { Operator } from './types/domain'
 import { FileManager } from '../common/fileManager'
 import { readPrograms } from '../program/dataPipeline'
 
@@ -12,6 +12,10 @@ export class OperatorFeatures {
   private readonly _outputFileName: string = 'operators.json'
   private readonly _outputTypeFilePath: string = path.join(this.__dirname, './types/generatedShared.ts')
   private readonly _schemaFilePath = path.join(this.__dirname, '../../schemas/program-with-publicodes-schema.json')
+
+  async getOperators(): Promise<Operator[]> {
+    return await new OperatorBaserow().getAll()
+  }
 
   async updateOperatorsData() {
     const allOperators = await new OperatorBaserow().getAll()
@@ -23,21 +27,26 @@ export class OperatorFeatures {
       ])
     )
 
-    const programOperators = allOperators.filter((operator) => programOperatorsNames.has(operator.operator))
+    const programOperators = allOperators.filter((operator) => programOperatorsNames.has(operator.name))
 
     this._updateJson(programOperators)
     this._updateJsonSchema(programOperators)
     this._generateOperatorsFiltersCategoryType(programOperators)
   }
 
-  private _updateJson(programOperators: RawOperator[]) {
+  private _updateJson(programOperators: Operator[]) {
+    const jsonOperators = programOperators.map((operators) => ({
+      operator: operators.name,
+      filterCategories: operators.filterCategories
+    }))
+
     FileManager.createFolderIfNotExists(this._outputDirPath)
-    FileManager.writeJson(this._outputDirPath + this._outputFileName, programOperators, 'operator.json updated')
+    FileManager.writeJson(this._outputDirPath + this._outputFileName, jsonOperators, 'operator.json updated')
   }
 
-  private _updateJsonSchema(operators: RawOperator[]) {
+  private _updateJsonSchema(operators: Operator[]) {
     const schema = JSON.parse(fs.readFileSync(this._schemaFilePath, 'utf-8'))
-    const operatorsName = operators.map((operator) => operator.operator)
+    const operatorsName = operators.map((operator) => operator.name)
 
     if (schema.$defs && schema.$defs.operators) {
       schema.$defs.operators.enum = operatorsName
@@ -46,7 +55,7 @@ export class OperatorFeatures {
     }
   }
 
-  private _generateOperatorsFiltersCategoryType(operators: RawOperator[]) {
+  private _generateOperatorsFiltersCategoryType(operators: Operator[]) {
     const filterOptions = [...new Set(operators.flatMap((operator) => operator.filterCategories))]
     const typeDeclaration = this.generateEnumDeclaration(filterOptions)
     FileManager.writeRaw(this._outputTypeFilePath, typeDeclaration, 'OperatorFilter type updated')
