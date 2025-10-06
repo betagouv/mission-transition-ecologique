@@ -23,11 +23,19 @@ export class ProjectBaserow extends AbstractBaserow {
     this._imageDownloader = new ImageBaserow(imageDirectory, this._logPath)
   }
 
-  async getProdAndArchivedProjects(): Promise<DataProject[]> {
+  async getProdProjects(reloadImages = true): Promise<DataProject[]> {
+    const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
+    const validBaserowProjects = baserowProjects.filter((project) => {
+      return this._convertStatus(project?.Statut) == ProjectStatus.InProd
+    })
+    return await this._convertProjectList(validBaserowProjects, reloadImages)
+  }
+
+  async getProdAndArchivedProjects(reloadImages = true): Promise<DataProject[]> {
     const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
     const validBaserowProjects = this._getValidBaserowProjects(baserowProjects)
 
-    return await this._convertProjectList(validBaserowProjects)
+    return await this._convertProjectList(validBaserowProjects, reloadImages)
   }
 
   private _getValidBaserowProjects = (baserowProjects: BaserowProject[]) => {
@@ -36,13 +44,13 @@ export class ProjectBaserow extends AbstractBaserow {
     })
   }
 
-  private async _convertProjectList(projectList: BaserowProject[]): Promise<DataProject[]> {
+  private async _convertProjectList(projectList: BaserowProject[], reloadImages = true): Promise<DataProject[]> {
     const baserowThemes = await this._getTableData<Theme>(this._themeTableId)
 
     const projects: DataProject[] = []
     for (const project of projectList) {
       try {
-        const result = await this._convertToDataProjectType(project, baserowThemes)
+        const result = await this._convertToDataProjectType(project, baserowThemes, reloadImages)
         projects.push(result)
         console.info(`successfully loaded project ${project.id}`)
         await this._delay(100)
@@ -50,23 +58,30 @@ export class ProjectBaserow extends AbstractBaserow {
         console.error(`Error processing project ${project.id}:`, error)
       }
     }
-    this._imageDownloader.cleanup()
+    if (reloadImages) {
+      this._imageDownloader.cleanup()
+    }
     return projects
   }
 
-  private async _convertToDataProjectType(baserowProject: BaserowProject, baserowThemes: Theme[]): Promise<DataProject> {
-    const maybeImageName = await this._imageDownloader.handleImageFromImageTable(baserowProject.Image)
-    let imageName
-    if (maybeImageName.isErr) {
-      this._logger.log(
-        LogLevel.Major,
-        maybeImageName.error.message + '\n, defaulting to a default image',
-        baserowProject.Titre,
-        baserowProject.id
-      )
-      imageName = this._defaultProjectImageName
-    } else {
-      imageName = maybeImageName.value
+  private async _convertToDataProjectType(
+    baserowProject: BaserowProject,
+    baserowThemes: Theme[],
+    reloadImages = true
+  ): Promise<DataProject> {
+    let imageName = this._defaultProjectImageName
+    if (reloadImages) {
+      const maybeImageName = await this._imageDownloader.handleImageFromImageTable(baserowProject.Image)
+      if (maybeImageName.isErr) {
+        this._logger.log(
+          LogLevel.Major,
+          maybeImageName.error.message + '\n, defaulting to a default image',
+          baserowProject.Titre,
+          baserowProject.id
+        )
+      } else {
+        imageName = maybeImageName.value
+      }
     }
 
     const redirect = this._generateRedirect(baserowProject)

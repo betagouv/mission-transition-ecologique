@@ -5,7 +5,7 @@
       <div class="fr-mb-6w">
         <h1 class="fr-mb-3w fr-text--blue-france">Budget</h1>
         <p>
-          Transition Écologique des Entreprises est un service public numérique, c’est pourquoi nous sommes transparents sur les ressources
+          Transition écologique des entreprises est un service public numérique, c’est pourquoi nous sommes transparents sur les ressources
           allouées et la manière dont elles sont employées.
         </p>
       </div>
@@ -25,7 +25,7 @@
 
       <h2 class="fr-mt-3w fr-text--blue-france">Fonctionnement</h2>
       <p>
-        Transition Écologique des Entreprises est une start-up d'état. L'équipe est donc portée par un intrapreneur qui est responsable du
+        Transition écologique des entreprises est une start-up d'état. L'équipe est donc portée par un intrapreneur qui est responsable du
         service numérique développé. Son rôle est multiple : déploiement, gestion des produits, référent auprès de son administration
         (budget, compte rendus d'avancement).
       </p>

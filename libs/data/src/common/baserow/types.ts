@@ -108,12 +108,6 @@ export interface ProgramTechSerialized {
   tech: string
 }
 
-export interface Operator {
-  Nom: string
-  Tag: string
-  Filtre: LinkObject[]
-}
-
 export interface ConditionalValues
   extends Omit<
     DomainConditionalValues,
@@ -241,4 +235,13 @@ export interface BaserowFilter {
   filter_type: 'OR' | 'AND'
   filters: { type: string; field: string; value: string | number }[]
   groups: []
+}
+
+export interface BaserowOperator {
+  id: number
+  Filtre: LinkObject[]
+  Tag: string
+  Nom: string
+  siren: string
+  'Nom Normalisé': string
 }

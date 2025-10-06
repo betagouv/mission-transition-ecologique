@@ -6,7 +6,6 @@ import {
   DataProgram,
   Status,
   DataProgramType,
-  Operator,
   GeographicCoverage,
   GeographicAreas,
   ConditionalValues as DomainConditionalValues
@@ -15,6 +14,8 @@ import { Theme } from '../../theme/types/domain'
 import { FileManager } from '../fileManager'
 import { ContactBaserow } from './contactBaserow'
 import { Contact } from '../types'
+import { Operator } from '../../operators/types/domain'
+import { OperatorBaserow } from './operatorBaserow'
 
 export class ProgramBaserow extends AbstractBaserow {
   private readonly _geographicCoverageTableId = ConfigBaserow.GEOGRAPHIC_COVERAGE_ID
@@ -45,7 +46,7 @@ export class ProgramBaserow extends AbstractBaserow {
     const conditionalValues = await this._getTableData<ConditionalValues>(this._conditionalValuesTableId)
     const contactValues = await new ContactBaserow().getAll()
 
-    this._operators = await this._getTableData<Operator>(this._operatorTableId)
+    this._operators = await new OperatorBaserow().getAll()
     this._geographicAreas = await this._getTableData<GeographicAreas>(this._geographicAreasTableId)
 
     const dataPrograms = baserowPrograms.map((baserowProgram) =>
