@@ -52,8 +52,6 @@ export class FaqProjectConverter extends AbstractFaqConverter {
 
     if (baserowFaq.Page) {
       this._logLinkedToProjectAndPage(ReplacerBaserow.linkObjectByValue(baserowFaq.Page) as FaqPage, baserowFaq)
-
-      return false
     }
 
     return true

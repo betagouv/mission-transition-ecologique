@@ -134,8 +134,6 @@ export class FaqPageConverter extends AbstractFaqConverter {
 
     if (baserowFaq.Projet.length > 0) {
       this._logLinkedToProjectAndPage(page, baserowFaq)
-
-      return false
     }
 
     return true

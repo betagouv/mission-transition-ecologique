@@ -84,7 +84,7 @@ describe('FaqProjectConverter', () => {
       }
     })
 
-    test('should filter out FAQs with both Page and Projet links', () => {
+    test('should log major level on FAQs with both Page and Projet links', () => {
       const result = faqProjectConverter.toDomain(getProjectFaqs(), dataProjectFixtures)
 
       // Should log the mixed link and not include in results
@@ -97,13 +97,17 @@ describe('FaqProjectConverter', () => {
         LoggerType.Faq
       )
 
-      // Ensure FAQ with both links is not in results
+      let found = false
       for (const projectId in result) {
         const faqs = result[projectId]
-        faqs.forEach((faq) => {
-          expect(faq.id).not.toBe(1004)
-        })
+        if (faqs.some((faq) => faq.id === 1004)) {
+          found = true
+          break
+        }
       }
+
+      expect(found).toBe(true)
+      expect(result[1].length).toBe(3)
     })
 
     test('should filter out FAQs with no Page and no Projet links', () => {
@@ -156,8 +160,8 @@ describe('FaqProjectConverter', () => {
       expect(result[1]).toBeDefined()
       expect(result[2]).toBeDefined()
 
-      // Project 1 should have 2 FAQs (excluding mixed and inactive ones)
-      expect(result[1].length).toBe(2)
+      // Project 1 should have 2 FAQs (excluding inactive ones)
+      expect(result[1].length).toBe(3)
 
       // Project 2 should have 1 FAQ
       expect(result[2].length).toBe(1)
