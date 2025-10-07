@@ -55,21 +55,21 @@ export class ConditionalDataGenerator {
     let min = oneConditional['Condition: nb min salaries']
     let max = oneConditional['Condition: nb max salaries']
     if (!min) {
-      min = '0'
+      min = 0
       this._logger.log(
         LogLevel.Minor,
         `Dispositif conditionnel sur la taille: nb min salaries manquant, valeur par défaut 0 utilisée.`,
-        this.program['Id fiche dispositif'],
-        this.program.id
+        this._program['Id fiche dispositif'],
+        this._program.id
       )
     }
     if (!max) {
-      max = '999'
-      this.logger.log(
+      max = 999
+      this._logger.log(
         LogLevel.Minor,
         `Dispositif conditionnel sur la taille: nb max salaries manquant, valeur par défaut 999 utilisée.`,
-        this.program['Id fiche dispositif'],
-        this.program.id
+        this._program['Id fiche dispositif'],
+        this._program.id
       )
     }
 
@@ -89,11 +89,11 @@ export class ConditionalDataGenerator {
     }
 
     if (oneConditional['Opérateur de contact'].length) {
-      addField('opérateur de contact', oneConditional['Opérateur de contact'][0].Nom)
+      addField('opérateur de contact', oneConditional['Opérateur de contact'][0].name)
     }
     addField(
       'autres opérateurs',
-      oneConditional['Autres opérateurs'].map((operator) => operator.Nom)
+      oneConditional['Autres opérateurs'].map((operator) => operator.name)
     )
     addField('url', oneConditional['URL externe'])
     addField('Montant du dispositif', oneConditional["Montant de l'aide ou coût"])
