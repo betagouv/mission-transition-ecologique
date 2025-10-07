@@ -17,12 +17,12 @@ export default class ProgramFeatures {
     this._rulesService = rulesService
   }
 
-  public getById(id: string): ProgramType | undefined {
+  public getOneById(id: string): ProgramType | undefined {
     return this._programRepository.getById(id)
   }
 
-  public getOneWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
-    let program = this.getById(id)
+  public getOneByIdWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
+    let program = this.getOneById(id)
     if (!program) {
       Monitor.warning('Requested Program Id unknown', { id })
       return Result.err(new ProgramNotFoundError())
@@ -37,7 +37,7 @@ export default class ProgramFeatures {
     }
 
     if (!this._rulesService) {
-      return Result.err(new Error('currentDateService and rulesService should be defined to evaluate a program'))
+      return Result.err(new Error('RulesService should be defined to evaluate a program'))
     }
 
     const programWithEligibility = evaluateProgramEligibility(program, questionnaireData, this._rulesService)
@@ -72,7 +72,7 @@ export default class ProgramFeatures {
   }
 
   public getObjectives(id: string): Objective[] {
-    const program = this.getById(id)
+    const program = this.getOneById(id)
     if (program === undefined) {
       return []
     }

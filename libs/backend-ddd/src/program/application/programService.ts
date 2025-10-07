@@ -24,11 +24,11 @@ export class ProgramService {
   }
 
   public getById(id: string): ProgramType | undefined {
-    return this._program.getById(id)
+    return this._program.getOneById(id)
   }
 
   public getOneWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
-    return this._program.getOneWithMaybeEligibility(id, questionnaireData)
+    return this._program.getOneByIdWithMaybeEligibility(id, questionnaireData)
   }
 
   public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
