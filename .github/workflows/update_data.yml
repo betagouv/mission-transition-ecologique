@@ -169,6 +169,8 @@ jobs:
           cache: 'npm'
 
       - run: npm clean-install --foreground-scripts
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
 
       - name: Generate FAQ
         env:
