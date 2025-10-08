@@ -77,12 +77,10 @@ class DBManager:
     def clear_programs_table(self):
         self.clear_table(TableName.PROGRAMS)
 
-
     def clear_table(self, table_name):
       query = f"TRUNCATE TABLE __SCHEMA_NAME__.{table_name} RESTART IDENTITY;"
       try:
           self.query(query)
-          print(table_name +" table is cleared and can be rewritten.")
       except Exception as e:
-          print("Failed to clear table:" + table_name, e)
+          print("Failed to clear table: " + table_name, e)
 
