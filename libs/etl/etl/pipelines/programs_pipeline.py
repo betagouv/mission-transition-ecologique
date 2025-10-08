@@ -14,11 +14,11 @@ class ProgramsPipeline:
         prodPrograms = [
             program
             for program in raw_programs
-            if program.get("Statuts") is not None and (program["Statuts"][0].get("value") == "En prod" or program["Statuts"][0].get("value") == "Temporairement indispo")
+            if program.get("Statuts")
+            and len(program["Statuts"]) > 0
+            and program["Statuts"][0].get("value") in ("En prod", "Temporairement indispo")
         ]
         programs = [Program("baserow", program) for program in prodPrograms]
-        print(programs)
-
         update_programs(programs)
 
 ProgramsPipeline().update_program_table()

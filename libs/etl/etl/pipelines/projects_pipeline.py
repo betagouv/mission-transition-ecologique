@@ -19,4 +19,4 @@ class ProjectsPipeline:
         projects = [Project("baserow", project) for project in prodProjects]
         update_projects(projects)
 
-# ProjectsPipeline().update_project_table()
+ProjectsPipeline().update_project_table()
