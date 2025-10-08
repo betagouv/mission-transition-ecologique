@@ -8,13 +8,8 @@ from etl.tools.db_structure import TableName
 
 class ProjectsPipeline:
     def update_project_table(self):
-        raw_projects = BaserowExtractor().get_projects()
-        prodProjects = [
-            project
-            for project in raw_projects
-            if project.get("Statut") is not None and project["Statut"].get("value") == "En prod"
-        ]
-        projects = [Project("baserow", project) for project in prodProjects]
+        prod_projects = BaserowExtractor().get_in_prod_projects()
+        projects = [Project("baserow", project) for project in prod_projects]
         if len(projects):
             DBManager().clear_projects_table()
             update_projects(projects)

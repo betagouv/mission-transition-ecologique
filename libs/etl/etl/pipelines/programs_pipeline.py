@@ -8,15 +8,8 @@ from etl.tools.db_structure import TableName
 
 class ProgramsPipeline:
     def update_program_table(self):
-        raw_programs = BaserowExtractor().get_programs()
-        prodPrograms = [
-            program
-            for program in raw_programs
-            if program.get("Statuts")
-            and len(program["Statuts"]) > 0
-            and program["Statuts"][0].get("value") in ("En prod", "Temporairement indispo")
-        ]
-        programs = [Program("baserow", program) for program in prodPrograms]
+        prod_programs = BaserowExtractor().get_in_prod_programs()
+        programs = [Program("baserow", program) for program in prod_programs]
         if len(programs):
             DBManager().clear_programs_table()
             update_programs(programs)
