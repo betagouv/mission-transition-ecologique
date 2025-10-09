@@ -3,7 +3,7 @@ import { Maybe } from 'true-myth'
 import { OpportunityAssociatedData } from '../../../domain/opportunityAssociatedData'
 import Config from '../../../../config'
 import { MailerManager } from '../../../domain/spi'
-import { ProgramType, Program, ProjectType } from '@tee/data'
+import { ProgramType, ProgramNameFormatter, ProjectType } from '@tee/data'
 import { Opportunity } from '@tee/common'
 import Monitor from '../../../../common/domain/monitoring/monitor'
 import { ensureError } from '../../../../common/domain/error/errors'
@@ -54,7 +54,7 @@ export default class BrevoMail {
   private _paramsProgram(opportunity: Opportunity, program: ProgramType) {
     return {
       programName: program.titre,
-      prefixedProgramName: Program.getPrefixedProgramName(program),
+      prefixedProgramName: ProgramNameFormatter.getPrefixedProgramName(program),
       programLink: opportunity.linkToPage,
       programPromise: program.promesse,
       operatorName: program['opérateur de contact'],

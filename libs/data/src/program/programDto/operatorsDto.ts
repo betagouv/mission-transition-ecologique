@@ -1,9 +1,9 @@
-import { CoreGenerator } from './coreGenerator'
+import { ProgramDto } from './programDto'
 import { LogLevel } from '../../common/logger/types'
 import { Operator } from '../../operators/types/domain'
 
-export function setOperators(generator: CoreGenerator) {
-  const { program, logger } = generator
+export function setOperators(generator: ProgramDto) {
+  const { rawProgram: program, logger } = generator
   if (program['Opérateur de contact'].length != 1) {
     logger.log(
       LogLevel.Critic,
@@ -27,23 +27,23 @@ export function setOperators(generator: CoreGenerator) {
     generator.valid = false
     return
   }
-  generator.yamlContent['opérateur de contact'] = program['Opérateur de contact'][0].name
+  generator.programData['opérateur de contact'] = program['Opérateur de contact'][0].name
 
   const filteredOperators = filterValidOperators(generator)
   if (filteredOperators.length) {
-    generator.yamlContent['autres opérateurs'] = filteredOperators.map((operator) => operator.name)
+    generator.programData['autres opérateurs'] = filteredOperators.map((operator) => operator.name)
   }
 }
 
-function filterValidOperators(generator: CoreGenerator): Operator[] {
-  return generator.program['Autres opérateurs'].filter((operator) => {
+function filterValidOperators(generator: ProgramDto): Operator[] {
+  return generator.rawProgram['Autres opérateurs'].filter((operator) => {
     const hasName = operator.name
     if (!hasName) {
       generator.logger.log(
         LogLevel.Minor,
         "Un des 'autres opérateurs' n'a pas de nom, sa valeur est ignorée. Sa prise en compte nécessite l'ajout de son nom dans la colonne baserow correspondante",
-        generator.program['Id fiche dispositif'],
-        generator.program.id,
+        generator.rawProgram['Id fiche dispositif'],
+        generator.rawProgram.id,
         operator.name
       )
     }

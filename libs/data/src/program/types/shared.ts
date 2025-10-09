@@ -27,7 +27,26 @@ export type ProgramFiltersType = {
 
 export type { ProgramWithoutId }
 export type ProgramType = ProgramWithoutId & {
+  eligibilityData: EligibilityData
   id: string
+}
+
+export interface EligibilityData {
+  validity?: {
+    start?: string
+    end?: string
+  }
+  company: {
+    minEmployees?: number
+    maxEmployees?: number
+    excludeMicroentrepreneur?: boolean
+    allowedNafSections: string[]
+    allowedRegion?: string[]
+    ownsBuildings?: boolean
+  }
+  questionnaire?: {
+    priorityObjectives?: string[]
+  }
 }
 
 export type ProgramTypeWithEligibility = ProgramType & {
@@ -37,3 +56,20 @@ export type ProgramTypeWithEligibility = ProgramType & {
 export type ProgramTypeForFront = Exclude<ProgramTypeWithEligibility, 'publicodes'> & {
   filters?: ProgramFiltersType
 }
+
+export enum PublicodesCondition {
+  allOfThese = 'toutes ces conditions',
+  oneOfThese = 'une de ces conditions'
+}
+
+export type ProgramStaticBaseType = Omit<ProgramWithoutId, 'opérateur de contact' | 'autres opérateurs'> & {
+  'opérateur de contact': string
+  'autres opérateurs': string[]
+  id: string
+  eligibilityData: EligibilityData
+}
+
+export type ProgramJsonBaseType = ProgramStaticBaseType & Record<string, unknown>
+// Record string unknown pour l'interface
+
+export type ProgramYamlType = Omit<ProgramStaticBaseType, 'id' | 'eligibilityData'>

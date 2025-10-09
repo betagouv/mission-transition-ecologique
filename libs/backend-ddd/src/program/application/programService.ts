@@ -2,7 +2,6 @@ import { Result } from 'true-myth'
 import { ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import ProgramFeatures from '../domain/programFeatures'
 import ProgramsJson from '../infrastructure/programsJson'
-import { currentDateService } from '../infrastructure/currentDate'
 import { PublicodesService } from '../infrastructure/publicodesService'
 import { Objective, QuestionnaireData } from '@tee/common'
 import FrontConverter from '../infrastructure/frontConverter'
@@ -17,7 +16,7 @@ export class ProgramService {
 
   public constructor() {
     const programsService = ProgramsJson.getInstance()
-    this._program = new ProgramFeatures(programsService, currentDateService, PublicodesService.getInstance())
+    this._program = new ProgramFeatures(programsService, PublicodesService.getInstance())
   }
 
   public getRedirect(slug: string): string | undefined {
@@ -25,11 +24,11 @@ export class ProgramService {
   }
 
   public getById(id: string): ProgramType | undefined {
-    return this._program.getById(id)
+    return this._program.getOneById(id)
   }
 
   public getOneWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
-    return this._program.getOneWithMaybeEligibility(id, questionnaireData)
+    return this._program.getOneByIdWithMaybeEligibility(id, questionnaireData)
   }
 
   public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {

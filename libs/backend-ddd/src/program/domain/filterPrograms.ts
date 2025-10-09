@@ -1,16 +1,9 @@
 import { Result } from 'true-myth'
-import { RulesManager } from './spi'
+import { EligibilityEvaluator } from './spi'
 import { ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 import { ProgramEligibility } from '@tee/data'
-
-/** Expected rule to evaluate if a program should be displayed to the user or
- * filtered out (in a program's `publicodes`
- * property).
- *  @constant
- *  @default
- */
-export const FILTERING_RULE_NAME = 'entreprise . est ciblée'
+import { ProgramEligibilityEvaluator } from './programEligibilityEvaluator'
 
 /** Filter out programs for which the company is not eligible
  *
@@ -21,19 +14,43 @@ export const FILTERING_RULE_NAME = 'entreprise . est ciblée'
 export const filterPrograms = (
   programs: ProgramType[],
   inputData: QuestionnaireData,
-  currentDate: string,
-  rulesService: RulesManager
+  rulesService: EligibilityEvaluator
 ): Result<ProgramTypeWithEligibility[], Error> => {
   const filteredPrograms: ProgramTypeWithEligibility[] = []
+  const filteredProgramsByJson: ProgramTypeWithEligibility[] = []
 
+  console.time('publicodes - All Programs')
   for (const program of programs) {
-    const programWithElibibility = evaluateProgramEligibility(program, inputData, currentDate, rulesService)
-    if (programWithElibibility.isErr) {
-      return Result.err(addErrorDetails(programWithElibibility.error, program.id))
+    const programWithEligibility = evaluateProgramEligibility(program, inputData, rulesService)
+    if (programWithEligibility.isErr) {
+      return Result.err(addErrorDetails(programWithEligibility.error, program.id))
     }
 
-    if (shouldKeepProgram(programWithElibibility.value.eligibility, inputData.onlyEligible)) {
-      filteredPrograms.push(programWithElibibility.value)
+    if (shouldKeepProgram(programWithEligibility.value.eligibility, inputData.onlyEligible)) {
+      filteredPrograms.push(programWithEligibility.value)
+    }
+  }
+  console.timeEnd('publicodes - All Programs')
+
+  console.time('directjson - All Programs')
+  for (const program of programs) {
+    const programWithEligibility = evaluateProgramEligibilityByJson(program, inputData)
+    if (programWithEligibility.isErr) {
+      return Result.err(addErrorDetails(programWithEligibility.error, program.id))
+    }
+
+    if (shouldKeepProgram(programWithEligibility.value.eligibility, inputData.onlyEligible)) {
+      filteredProgramsByJson.push(programWithEligibility.value)
+    }
+  }
+  console.timeEnd('directjson - All Programs')
+
+  for (const filteredProgram of filteredPrograms) {
+    const filteredProgramByJson = filteredProgramsByJson.find((program) => program.id === filteredProgram.id)
+    if (filteredProgramByJson && filteredProgram.eligibility != filteredProgramByJson.eligibility) {
+      console.log('conflicting results', filteredProgram.id)
+      console.log(filteredProgram.eligibility)
+      console.log(filteredProgramByJson.eligibility)
     }
   }
 
@@ -43,10 +60,10 @@ export const filterPrograms = (
 export const evaluateProgramEligibility = (
   program: ProgramType,
   inputData: QuestionnaireData,
-  currentDate: string,
-  rulesService: RulesManager
+  rulesService: EligibilityEvaluator
 ): Result<ProgramTypeWithEligibility, Error> => {
-  const evaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, inputData, currentDate)
+  console.time('publicodes - program : ' + program.id)
+  const evaluation = rulesService.evaluate(program, inputData)
 
   if (evaluation.isErr) {
     return Result.err(addErrorDetails(evaluation.error, program.id))
@@ -54,14 +71,35 @@ export const evaluateProgramEligibility = (
 
   // since publicodes return a single boolean or undefined value and we want to know if ineligible programs
   // are ineligible because of the inputData of because of their EOL, we need an other publicodes evaluation for this specific question
-  const dateEvaluation = rulesService.evaluate(FILTERING_RULE_NAME, program, {}, currentDate)
+  const dateEvaluation = rulesService.evaluate(program, {})
   if (dateEvaluation.isErr) {
     return Result.err(addErrorDetails(dateEvaluation.error, program.id))
   }
+  console.timeEnd('publicodes - program : ' + program.id)
 
   const programWithElibibility = setEligibility(program, evaluation.value, dateEvaluation.value)
 
   return Result.ok(programWithElibibility)
+}
+
+export const evaluateProgramEligibilityByJson = (
+  program: ProgramType,
+  inputData: QuestionnaireData
+): Result<ProgramTypeWithEligibility, Error> => {
+  const evaluator = new ProgramEligibilityEvaluator()
+  console.time('directjson - program : ' + program.id)
+
+  const newFullDataEvaluation = evaluator.evaluate(program, inputData)
+  const newDateEvaluation = evaluator.evaluate(program, {})
+  console.timeEnd('directjson - program : ' + program.id)
+
+  if (newFullDataEvaluation.isErr || newDateEvaluation.isErr) {
+    return Result.err(new Error('new elibigility evaluator error'))
+  }
+
+  const programWithEligibility = setEligibility(program, newFullDataEvaluation.value, newDateEvaluation.value)
+
+  return Result.ok(programWithEligibility)
 }
 
 const addErrorDetails = (err: Error, programName: string): Error => {

@@ -166,7 +166,7 @@ export default class OpportunityFeatures {
   }
 
   private _getProgramById(id: string): ProgramType | undefined {
-    return new ProgramFeatures(this._programRepository).getById(id)
+    return new ProgramFeatures(this._programRepository).getOneById(id)
   }
 
   private async _sendReturnReceipt(opportunity: OpportunityWithContactId, associatedData: OpportunityAssociatedData) {

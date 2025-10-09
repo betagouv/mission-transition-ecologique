@@ -1,6 +1,6 @@
-import { ProgramAidType, ProgramType } from './types/shared'
+import { ProgramAidType, ProgramType } from '../../types/shared'
 
-export class Program {
+export class ProgramNameFormatter {
   public static getPrefixedProgramName(program: ProgramType) {
     let prefix = ''
     switch (program["nature de l'aide"]) {

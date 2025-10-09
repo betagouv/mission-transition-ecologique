@@ -8,9 +8,5 @@ console.log('Start the project data generation')
 const logger = new Logger(LoggerType.Project)
 new ProjectFeatures(logger, new FaqBaserow(logger))
   .generateProjectsJson()
-  .then(() => {
-    console.log('Project data generated')
-  })
-  .catch((error) => {
-    console.error('Error during the project data generation:', error)
-  })
+  .then(() => console.log('Project data generated'))
+  .catch((error) => console.error('Error during the project data generation:', error))

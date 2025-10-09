@@ -1,5 +1,5 @@
-import { jsonPrograms } from '../../static'
-import { DataProgram, Status } from './types/domain'
+import { jsonPrograms } from '../../../static'
+import { DataProgram, Status } from '../types/domain'
 
 export class ProgramUtils {
   public static isFlaggedForProd(program: DataProgram) {
