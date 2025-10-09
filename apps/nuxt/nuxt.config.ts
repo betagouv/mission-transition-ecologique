@@ -7,8 +7,8 @@ import { NuxtScriptsConfig } from './nuxt.scripts.config'
 import { NuxtSecurityConfig } from './nuxt.security.config'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import { ChangeFreq, Priority } from './src/types/sitemapType'
-import { Identity } from '@/tools/identity'
 import { MetaSeo } from './src/tools/metaSeo'
+import { Identity } from './src/tools/identity'
 
 /**
  * Remove prerender and swr for CI and test data.

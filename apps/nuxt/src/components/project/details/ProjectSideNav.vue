@@ -54,16 +54,21 @@ const allMenuItems = computed(() => [
   {
     id: 'project',
     to: `project-description-details-title`,
-    text: 'Pourquoi ?',
+    text: props.project.titleLongDescription ? 'Pourquoi ?' : "Qu'est ce que c'est ?",
     condition: props.project.longDescription.length > 0
   },
   {
     id: 'project-more',
     to: `project-more-details-title`,
-    text: 'Me documenter',
+    text: props.project.titleMoreDescription ? 'Me documenter' : 'Pour aller plus loin',
     condition: props.project.moreDescription.length > 0
   },
-  { id: 'aids', to: `project-aids-title`, text: 'Mes aides', condition: props.project.programs.length > 0 || isDataFull.value },
+  {
+    id: 'aids',
+    to: `project-aids-title`,
+    text: isDataFull.value ? 'Vos aides' : 'Toutes les aides',
+    condition: props.project.programs.length > 0 || isDataFull.value
+  },
   {
     id: 'contact',
     to: `form-title`,
