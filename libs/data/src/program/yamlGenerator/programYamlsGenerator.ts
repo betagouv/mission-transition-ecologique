@@ -22,7 +22,7 @@ export class ProgramYamlsGenerator {
   async updatePrograms(): Promise<void> {
     // while working on the script, to avoid hitting Baserow API limits and to decrease our global impact, please cache locally the data :
     // on the first run use getPrograms(false) then for all following call use getPrograms(true)
-    const programs = await new ProgramBaserow().getPrograms(false)
+    const programs = await new ProgramBaserow().getPrograms(true)
     for (const program of programs) {
       if (ProgramUtils.isFlaggedForProd(program)) {
         await this._createProgramYaml(program)

@@ -4302,9 +4302,9 @@
     "description": "Le programme Baisse les Watts vous accompagne dans la **maîtrise de votre consommation d’énergie**, à l'aide de trois dispositifs : le Carnet de bord Énergie, un accompagnement téléphonique et un parcours de formations collectives et individuelles.",
     "description longue": "Baisse les Watts vous aide à réduire votre consommation en :\n- Électricité,\n- Gaz,\n- Fioul,\n- GPL,\n- RCU (Réseau de chaleur urbain) – hors carburants.",
     "début de validité": "01/01/2023",
-    "fin de validité": "01/05/2025",
+    "fin de validité": "01/05/2026",
     "illustration": "images/TEE_eolienne.png",
-    "opérateur de contact": "La Poste",
+    "opérateur de contact": "ADEME",
     "autres opérateurs": [
       "Chambre de Commerce et de l'Industrie",
       "Chambre des Métiers et de l'Artisanat"
@@ -4503,7 +4503,7 @@
     "eligibility_data": {
       "validity": {
         "start": "01/01/2023",
-        "end": "01/05/2025"
+        "end": "01/05/2026"
       },
       "company": {
         "maxEmployees": 249,

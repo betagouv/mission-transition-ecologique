@@ -101,12 +101,6 @@
     "filterCategories": []
   },
   {
-    "operator": "La Poste",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
     "operator": "Ministère de la Transition Écologique",
     "filterCategories": [
       "État"
