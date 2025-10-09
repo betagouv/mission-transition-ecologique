@@ -7,6 +7,7 @@
     "shortDescription": "Il met en évidence vos postes d’énergie les plus consommateurs et les pistes de solutions.",
     "image": "/images/projet/plan-action-eco-energie.webp",
     "longDescription": "La réalisation d'un plan d'action énergie est un premier pas indispensable à la mise en place d'une stratégie énergétique au sein de votre entreprise.\n\nDes accompagnements vous aideront à identifier les postes énergivores au sein de votre entreprise, identifier des bonnes pratiques faciles à mettre en œuvre, et élaborer un plan d'action pour maîtriser durablement vos consommations. Ce plan d'action constitue souvent l'étape préalable indispensable à la mise en place d'un projet, pouvant aboutir à des études plus précises ou des investissements.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Sobriété énergétique en entreprise,**](https://www.cci.fr/crise-energetique/entreprises-20-conseils-pour-faire-baisser-votre-facture-denergie) 20 conseils pour faire baisser votre facture d’énergie.",
     "themes": [
       "energy"
@@ -71,6 +72,33 @@
       "S",
       "T",
       "U"
+    ],
+    "faqs": [
+      {
+        "id": 146,
+        "question": "Quelles entreprises sont obligées de réaliser un audit énergétique obligatoire ?",
+        "answer": "Seules les **grandes entreprises** **ont l’obligation de réaliser un audit énergétique** tous les quatre ans. Il s’agit des entreprises qui emploient plus de 250 salariés ou qui réalisent un chiffre d’affaires annuel supérieur à 50 millions d’euros et un total de bilan de plus de 43 millions d’euros. \\\nLe but de cet audit est de réaliser un **bilan complet** de la consommation énergétique de l’entreprise, et d’engager un **plan de sobriété**."
+      },
+      {
+        "id": 147,
+        "question": "Comment réduire la consommation d'énergie dans une entreprise ?",
+        "answer": "Afin de réduire efficacement la consommation énergétique, vous pouvez vous faire accompagner pour :\n\n- Dresser un **bilan complet de vos consommations**, et repérer les **postes les plus énergivores.**\n- Identifier les **économies d’énergie** que vous pouvez réaliser rapidement.\n- Mettre en place **un plan d’économie d’énergie** en agissant sur plusieurs leviers (changement de fournisseurs d’énergie, type de chauffage, isolation du bâtiment…)."
+      },
+      {
+        "id": 148,
+        "question": "Qu’est-ce qu’un certificat d’économies d’énergie (CEE) ?",
+        "answer": "Un certificat d'économie d'énergie (CEE) est une **aide financière** destinée aux entreprises qui réalisent des **travaux d’amélioration de la performance énergétique**.\n\nIl peut s’agir, par exemple, de travaux :\n\n- De changement de système de chauffage.\n- D’isolation thermique.\n- D’optimisation de procédés…\n\nCette aide est **octroyée par les fournisseurs d’énergie (électricité, gaz, fioul, carburant…) dans le cadre d’une obligation légale**. Elle peut être versée sous forme d’un remboursement après travaux, d’une prime, d’une réduction directe sur votre devis ou d’un remboursement après travaux, selon le fournisseur choisi."
+      },
+      {
+        "id": 149,
+        "question": "Quels travaux de rénovation énergétique permettent de faire des économies d’énergie en entreprise ?",
+        "answer": "Pour rendre votre entreprise sobre énergétiquement, il faut considérer en priorité :\n\n- **L’isolation du bâtiment**. Rénover zones qui engendrent le plus de déperdition énergétique : toiture, murs, vitrage…\n- **La ventilation**. Un système de ventilation VMC double flux vous permettra de réguler efficacement l’humidité intérieure.\n- **Le chauffage**. C’est la ligne la plus importante de votre facture énergétique. Un système de chauffage fonctionnant aux énergies renouvelables (pompe à chaleur, chaudière biomasse, réseau de chaleur…) vous fera réaliser d’importantes économies.\n- **L’éclairage.** L’installation de LED, d’une minuterie ou de détecteurs de mouvement fera baisser votre facture.\n- **L’optimisation des process.** L’automatisation des process ou le remplacement des machines par un équivalent performant."
+      },
+      {
+        "id": 150,
+        "question": "Comment financer des travaux d’économie d’énergie ?",
+        "answer": "De nombreuses aides financières, accompagnements, crédits d’impôt peuvent vous permettre de financer ces travaux. Elles sont parfois réservées à un secteur d’activité ou à une zone géographique. [Saisissez votre SIRET et laissez-vous guider](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/plan-action-eco-energie/?profil-entreprise=oui)."
+      }
     ]
   },
   {
@@ -81,6 +109,7 @@
     "shortDescription": "Les ampoules LED sont extrêmement économes en énergie par rapport aux ampoules traditionnelles.",
     "image": "/images/projet/eclairage-led.webp",
     "longDescription": "Les ampoules LED (diode électroluminescente) consomment très peu d'énergie pour un excellent rendement lumineux, et ont une durée de vie supérieure aux ampoules classiques.\n\nAinsi, vous contribuez à réduire l'empreinte carbone de votre entreprise tout en réalisant des économies d'énergie.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Comment choisir ses ampoules ?** ](https://agirpourlatransition.ademe.fr/particuliers/maison/economies-denergie-deau/comment-choisir-ampoules)Des conseils pour choisir entre les différents types de LED proposés sur le marché.\n- [**Rénover l’éclairage des bâtiments tertiaires**](https://librairie.ademe.fr/ged/207/renover-eclairage-tertaire-011133.pdf), l'essentiel des informations techniques, réglementaires, ergonomiques, économiques, utiles pour programmer et réussir la rénovation de l'éclairage d'un bâtiment.",
     "themes": [
       "energy"
@@ -137,7 +166,8 @@
       "U"
     ],
     "metaTitle": "Eclairage LED pour entreprises - Subventions pour la rénovation énergétique",
-    "metaDescription": "Faites des économies d’énergie en remplaçant vos ampoules classiques par des ampoules LED. Découvrez les aides et subventions disponibles."
+    "metaDescription": "Faites des économies d’énergie en remplaçant vos ampoules classiques par des ampoules LED. Découvrez les aides et subventions disponibles.",
+    "faqs": []
   },
   {
     "id": 5,
@@ -147,6 +177,7 @@
     "shortDescription": "L’énergie solaire photovoltaïque transforme le rayonnement solaire en électricité.",
     "image": "/images/projet/panneaux-solaires.webp",
     "longDescription": "Les panneaux solaires produisent de l'électricité grâce au rayonnement du soleil.\\\nPosés sur une toiture, au sol ou sur une terrasse, les capteurs peuvent être également intégrés à votre bâtiment, sous forme d'ardoises, de tuiles ou d'éléments de façades.\\\nL’électricité produite peut être utilisée sur place (autoconsommation) ou réinjectée dans le réseau de distribution électrique.\\\nL'installation de panneaux solaires vous permet donc de faire des économies et de réduire l'empreinte écologique de votre entreprise.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Le Centre de ressources Photovoltaïque**](https://www.photovoltaique.info/fr/) : un site ressource sur le Photovoltaïque crée avec le soutient de l’ADEME.\n- [**La marque AQPV**](https://www.aqpv.fr/) (Alliance Qualité Photovoltaïque) : lancée par l'État, cette marque rassemble tous les modules photovoltaïques afin d'assurer une performance et une fiabilité maximale en termes de conception, installation, opération et maintenance.\n- [**L'électricité photovoltaïque en 10 questions**](https://librairie.ademe.fr/batiment/7545-l-electricite-photovoltaique-en-10-questions-9791029721465.html)**,** un livret proposé par l'ADEME.\n- [**Qualit’EnR**](https://www.qualit-enr.org/), un annuaire de professionnels RGE qualifiés pour votre projet de construction ou de rénovation énergétique.",
     "themes": [
       "energy"
@@ -211,7 +242,8 @@
       "U"
     ],
     "metaTitle": "Panneaux solaires pour les entreprises - Solution durable et rentable",
-    "metaDescription": "Produisez votre propre électricité grâce aux panneaux solaires. Autoconsommez ou revendez l’énergie générée et réduisez l’empreinte écologique de votre entreprise."
+    "metaDescription": "Produisez votre propre électricité grâce aux panneaux solaires. Autoconsommez ou revendez l’énergie générée et réduisez l’empreinte écologique de votre entreprise.",
+    "faqs": []
   },
   {
     "id": 3,
@@ -221,6 +253,7 @@
     "shortDescription": "Diminuer vos emballages plastiques et favoriser des solutions de réemploi.",
     "image": "/images/projet/reduction-emballages.webp",
     "longDescription": "*“L’emballage le plus respectueux de l’environnement reste celui que l’on ne produit pas”*. \\\nMoins de matières premières extraites, transportées et transformées, donc moins de déchets d’emballages à gérer après usage. \\\n\\\nLa loi AGEC fixe des objectifs ambitieux sur la réduction des emballages à usage unique et notamment la fin de la mise sur le marché d'emballages en plastique à usage unique d'ici à 2040. Les entreprises sont encouragées à mettre en œuvre des actions pour la réduction, la réutilisation, le réemploi et le recyclage des emballages en plastique à usage unique.\n\nLa Responsabilité Elargie du Producteur (REP) implique que les producteurs sont responsables de la gestion des déchets générés par les produits qu'ils mettent sur le marché.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Tout savoir sur la loi AGEC**](https://www.ecologie.gouv.fr/loi-anti-gaspillage-economie-circulaire) : La loi anti-gaspillage pour une économie circulaire.\n\n- [**Filières à Responsabilité Élargie du Producteur (REP**)](https://entreprendre.service-public.fr/vosdroits/F37937), un tour d'horizon par Entreprendre.Service-Public.fr.\n\n- [**Quelles sont les produits concernés par la Responsabilité Elargie du Producteur** ](https://filieres-rep.ademe.fr/filieres-rep)**?** par l’observatoire du réemploi et de la réutilisation.\n\n- [**Le paradoxe du plastique.**](https://librairie.ademe.fr/ged/6402/guide-paradoxe-plastique-10-questions.pdf) Pourquoi et comment sortir de notre dépendance aux plastiques ? Ce guide fait le tour de la question et des solutions.",
     "themes": [
       "waste",
@@ -261,7 +294,8 @@
       "M"
     ],
     "metaTitle": "Réduction des emballages - Gestion des déchets en entreprise",
-    "metaDescription": "Adoptez une stratégie de réduction, de réemploi et de recyclage des emballages et du plastique à usage unique dans votre entreprise. Anticipez les exigences de la loi AGEC."
+    "metaDescription": "Adoptez une stratégie de réduction, de réemploi et de recyclage des emballages et du plastique à usage unique dans votre entreprise. Anticipez les exigences de la loi AGEC.",
+    "faqs": []
   },
   {
     "id": 6,
@@ -271,6 +305,7 @@
     "shortDescription": "Les panneaux solaires thermiques sont destinés à produire de l'eau chaude sanitaire.",
     "image": "/images/projet/chauffe-eau-solaire.webp",
     "longDescription": "L’énergie solaire thermique est une énergie renouvelable qui permet de produire de la chaleur et de l’eau chaude à partir de capteurs solaires. Elle se distingue du solaire photovoltaïque qui produit de l’électricité à partir du rayonnement solaire. La chaleur produite peut ensuite être utilisée directement en eau chaude sanitaire ou en eau technique pour alimenter un procédé.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Solaire thermique**](https://fondschaleur.ademe.fr/solaire-thermique/) **:** définition, chiffres clés et domaines d'applications.\n\n- [**Qualit’EnR**](https://www.qualit-enr.org/), un annuaire de professionnels RGE qualifiés pour votre projet de construction ou de rénovation énergétique.",
     "themes": [
       "energy"
@@ -336,7 +371,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 7,
@@ -346,6 +382,7 @@
     "shortDescription": "Un réseau de chaleur (ou réseau de chauffage urbain) est une installation distribuant à plusieurs utilisateurs.",
     "image": "/images/projet/reseau-chaleur.webp",
     "longDescription": "Les réseaux de chaleur permettent de répartir et distribuer de la chaleur ou du froid à plusieurs bâtiments à partir d'une même source de chaleur renouvelable (chaufferie biomasse, géothermie, chaleur de récupération, chaleur fatale, chaleur solaire thermique).\\\nRaccorder les bâtiments de votre entreprise à un réseau de chaleur existant vous permet de chauffer vos bâtiments grâce à une énergie renouvelable et produite localement, et de réaliser des économies substantielles en énergie.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Réseaux de chaleur** :](https://fondschaleur.ademe.fr/reseau-de-chaleur/) définition, chiffre clés et domaines d'applications.\n- [**Découvrir les réseaux près de chez vous**](https://france-chaleur-urbaine.beta.gouv.fr/professionnels) : saisissez votre adresse pour savoir si un réseau de chaleur existe à proximité de votre bâtiment.",
     "themes": [
       "energy"
@@ -409,7 +446,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1,
@@ -419,6 +457,7 @@
     "shortDescription": "Quantifier vos émissions de Gaz à effet de serre émise ou captée par les activités de votre entreprise.",
     "image": "/images/projet/bilan-ges.webp",
     "longDescription": "Le bilan des émissions de gaz à effet de serre (GES) permet de comptabiliser les émissions de gaz à effet de serre générées, directement ou indirectement, par les activités d’une entreprise. Cette méthode est utilisée pour concevoir et mettre en place un plan de réduction des émissions à l’échelle d’une entreprise. \\\nLa grande majorité des bilans GES réalisés en France utilisent la méthode Bilan Carbone®, élaborée par l’ADEME. \\\nSi la loi oblige certaines à réaliser leur Bilan GES, toutes les entreprises peuvent réaliser un Bilan GES, même lorsqu’elles n’y sont pas contraintes. À la clé, de nombreux avantages : respect des enjeux RSE, économies d’énergie, anticipation des lois, marque employeur...",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Guide** : tout comprendre, le changement climatique](https://librairie.ademe.fr/changement-climatique/7745-tout-comprendre-le-changement-climatique-9791029724589.html) Comment limiter la hausse des températures et limiter le changement climatique ?\n- [**La neutralité carbone**](https://librairie.ademe.fr/industrie-et-production-durable/4524-avis-de-l-ademe-la-neutralite-carbone.html) Des clés pour s’approprier ce sujet et adopter des gestes responsables\n- [**Réglementation bilan GES,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) Un portail pour connaitre les obligations de votre entreprise.\n- [**L'annuaire des prestataires Bilan Carbone®**](https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/)**,** par l'Association pour la transition Bas Carbone (ABC)\n- [**Bilans GES ADEME,**](https://bilans-ges.ademe.fr/) la plateforme nationale pour la publication des bilans d'émission de gaz à effet.",
     "themes": [
       "environmental"
@@ -474,7 +513,34 @@
       "U"
     ],
     "metaTitle": "Bilan GES entreprise  - Bilan carbone ADEME",
-    "metaDescription": "Quantifiez les émissions de gaz à effet de serre émises ou captées par les activités de votre entreprise avec la méthode Bilan Carbone® élaborée par l’ADEME."
+    "metaDescription": "Quantifiez les émissions de gaz à effet de serre émises ou captées par les activités de votre entreprise avec la méthode Bilan Carbone® élaborée par l’ADEME.",
+    "faqs": [
+      {
+        "id": 137,
+        "question": "Comment faire un bilan des gaz à effet de serre ?",
+        "answer": "Un bilan des émissions de gaz à effet de serre, ou BEGES, consiste à mesurer sur une année complète, l’ensemble des **émissions directes et indirectes** produites par une entreprise. Il se déroule en plusieurs étapes :\n\n- Le cadrage\n- L’identification des sources et émissions\n- La collecte des données\n- Le calcul du bilan et des analyses\n- L’élaboration du plan de transition\n- La publication en ligne du BEGES.\n\nPour ce faire, vous pouvez faire appel à un **prestataire extérieur** ou le **réaliser en interne**, en vous appuyant sur les [guides sectoriels de l’ADEME](https://bilans-ges.ademe.fr/ressources/approches-sectorielles)."
+      },
+      {
+        "id": 138,
+        "question": "Quelles sont les obligations réglementaires du bilan GES (ou BEGES) ?",
+        "answer": "Le **Bilan des Émissions de Gaz à Effet de Serre (BEGES)** est **obligatoire** si votre entreprise compte plus de **500 salariés** en métropole (ou **250 en Outre-mer**). Vous devez alors **réaliser et publier un bilan GES complet**, mis à jour tous les **quatre ans**.\n\nSi votre entreprise compte **entre 50 et 500 salariés**, vous êtes concerné par le **bilan carbone simplifié**. Cette version allégée du BEGES permet d’évaluer vos **principales sources d’émissions** et de définir un **plan d’action climat adapté**.\n\nSont également concernées par l’obligation de réaliser un bilan GES :\n\n- Les personnes morales de droit public de plus de 250 salariés (comme les hôpitaux ou établissements publics).\n- Les services de l’État.\n- Les régions, les départements, les communes, les métropoles et les communautés d’agglomérations de plus de 50 000 habitants."
+      },
+      {
+        "id": 139,
+        "question": "Pourquoi réaliser un bilan GES en entreprise ?",
+        "answer": "Même si vous n’y êtes pas contraints, la réalisation d’un bilan GES (ou BEGES) présente de nombreux avantages :\n\n- Vous **activez un des points clés de la stratégie RSE**, en agissant sur le volet environnemental.\n- Vous **analysez en détail votre consommation énergétique** et mettez en place des actions concrètes pour la réduire de manière significative.\n- Vous **devancez les obligations réglementaires** de votre secteur en agissant dores et déjà sur des points clés (pollution, efficacité énergétique, émissions carbone…).\n- Vous **jouez sur la réputation de votre entreprise**, et inscrivez l’aspect environnemental au sein de vos valeurs."
+      },
+      {
+        "id": 140,
+        "question": "Quels sont les trois scopes du bilan GES ?",
+        "answer": "Un bilan GES est réalisé suivant trois scopes, trois périmètres :\n\n- Le scope 1 mesure les **émissions directes** de gaz à effet de serre, émanant des activités de l’entreprise et issues de combustibles fossiles (pétrole, gaz, charbon…). Il peut s’agir par exemple du chauffage des locaux, de l’utilisation des camionnettes de l’entreprise, etc.\n- Le scope 2 correspond aux **émissions indirectes** résultant de la production d'énergie achetée et consommée par l'entreprise.\n- Le scope 3 analyse les **émissions indirectes** qui résultent des activités de l'entreprise, mais qui sont **en dehors de son périmètre de contrôle**. Il peut s’agir du transport des marchandises, de la production de déchets, etc."
+      },
+      {
+        "id": 141,
+        "question": "Combien coûte un bilan GES ?",
+        "answer": "Le coût d’un bilan GES est variable selon :\n\n- Le prestataire choisi.\n- Le scope couvert.\n- La taille de l’entreprise.\n\nIl faut compter environ 10 000 € pour une PME qui réaliserait un bilan complet (scopes 1, 2 et 3) avec l’aide d’un cabinet de conseil. Pour un bilan réalisé grâce à une plateforme avec des outils de suivi des émissions, il faut compter entre 2 000 à 5 000 €."
+      }
+    ]
   },
   {
     "id": 8,
@@ -484,6 +550,7 @@
     "shortDescription": "Une chaufferie biomasse est un système alimenté par des matières végétales, principalement du bois.",
     "image": "/images/projet/chauffage-bois.webp",
     "longDescription": "Une chaufferie biomasse utilise des dérivés de matière organique, principalement du bois, afin de produire de la chaleur et de l’eau chaude.\n\nPrésent sous différentes formes (granulés, pellets, plaquettes forestières ou bûches), le bois constitue une alternative locale écologique aux chaufferies traditionnelles, gourmandes en énergies fossiles (gaz, fioul…) et responsables d’importantes émissions de gaz à effet de serre.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Biomasse** ](https://fondschaleur.ademe.fr/biomasse/): définition, chiffres clés et domaines d'applications.\n\n- [**Qualit’EnR**](https://www.qualit-enr.org/), un annuaire de professionnels RGE qualifiés pour votre projet de construction ou de rénovation énergétique.",
     "themes": [
       "energy"
@@ -549,7 +616,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 9,
@@ -559,6 +627,7 @@
     "shortDescription": "La chaleur de récupération (ou fatale) est la chaleur « perdue » par une installation qui dégage une énergie thermique.",
     "image": "/images/projet/chaleur-recuperation.webp",
     "longDescription": "Quand l'énergie thermique produite par une installation n'est pas utilisée en totalité, on parle de \"chaleur fatale\". Cette chaleur peut-être récupérée pour les besoins de chauffage d'un bâtiment par exemple ou réintroduite dans un réseau de chaleur. Elle devient une source importante d'économies d'énergie.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Chaleur fatale**](https://fondschaleur.ademe.fr/chaleur-fatale-2/) : définition, chiffres clés et domaines d'application",
     "themes": [
       "energy"
@@ -618,7 +687,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 10,
@@ -628,6 +698,7 @@
     "shortDescription": "Les pompes à chaleur génèrent de la chaleur en allant capter une énergie renouvelable dans leur environnement.",
     "image": "/images/projet/pac.webp",
     "longDescription": "Les pompes à chaleur sont des équipements de chauffage, de refroidissement et de production d'eau chaude sanitaire dotées d’une très grande efficacité énergétique.\n\nElles puisent, dans l’air ou dans le sol, une énergie disponible et renouvelable : la chaleur. Cette énergie récupérée est ensuite restituée dans vos locaux grâce à un échangeur de chaleur. Et même si prélever cette énergie, n'est pas gratuit, cette équipement demande peu d'électricité pour fonctionner.\n\nPlus économiques et écologiques en fonctionnement, elles peuvent remplacer vos chaudières à gaz, au fioul ou vos chauffages électriques. Certaines pompes à chaleur peuvent également produire de l'eau chaude et climatiser.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Qualit’EnR**](https://www.qualit-enr.org/), un annuaire de professionnels RGE qualifiés pour votre projet de construction ou de rénovation énergétique.",
     "themes": [
       "energy",
@@ -693,7 +764,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 11,
@@ -703,6 +775,7 @@
     "shortDescription": "L'énergie hydraulique permet de fabriquer de l'électricité grâce à la force de l'eau.",
     "image": "/images/projet/energie-hydraulique.webp",
     "longDescription": "L'énergie hydraulique, renouvelable, permet de produire de l'électricité grâce à la force motrice de l’eau provenant d’une rivière, d’un lac ou des eaux captées par gravitation (turbinage).\\\nL’hydroélectricité est la première source d’électricité renouvelable en France, et la deuxième source de production électrique derrière l'énergie nucléaire.\n\nLes projets de production hydroélectrique peuvent prendre la forme d'un nouvel aménagement, de la remise en service ou de l'optimisation d'un équipement préalablement existant. \\\nRéalisez une étude de faisabilité et mettez en place votre projet à fort impact écologique.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**La filière hydroélectrique**](https://agirpourlatransition.ademe.fr/collectivites/amenager-territoire/energies-renouvelables-sobriete/hydroelectricite), décryptée par l'ADEME.",
     "themes": [
       "energy"
@@ -749,7 +822,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 12,
@@ -759,6 +833,7 @@
     "shortDescription": "La géothermie permet de produire différents types d'énergie en fonction de la température de la chaleur puisée dans le sous-sol.",
     "image": "/images/projet/geothermie.webp",
     "longDescription": "La géothermie est une énergie renouvelable qui consiste à exploiter la chaleur du sous-sol pour produire de la chaleur, du froid ou de l'électricité. Cette énergie est disponible localement, 24h/24, 365 jours/an, et est peu dépendante des variations climatiques journalières ou saisonnières.\n\nLa géothermie peut être exploitée à différentes profondeurs et pour de nombreux usages, tels que le chauffage des bâtiments, la climatisation, le rafraîchissement, le stockage d'énergie thermique, etc. La géothermie est une énergie renouvelable locale, permanente et décarbonée. Elle est peu émettrice de gaz à effet de serre et contribue à la décarbonation du chauffage des bâtiments.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Géothermie**](https://www.geothermies.fr/decouvrir-la-geothermie) : définition, chiffres clés et domaines d'application",
     "themes": [
       "energy"
@@ -814,7 +889,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 13,
@@ -824,6 +900,7 @@
     "shortDescription": "Améliorer la performance énergétique de vos serres agricoles.",
     "image": "/images/projet/serres-agricoles.webp",
     "longDescription": "Les serres maraîchères et horticoles offrent une valorisation efficace de l’énergie solaire. En outre, elles permettent une protection naturelle des cultures contre les bioagresseurs, et permettent ainsi de réduire l’utilisation des pesticides.\n\nL’accompagnement des agriculteurs maraîchers dans la construction, la rénovation et l'amélioration des performances énergétiques des serres agricoles est donc au cœur des enjeux environnementaux.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Guide de conception d'une serre bioclimatique**](https://librairie.ademe.fr/produire-autrement/4532-guide-de-conception-d-une-serre-bioclimatique.html)**,** destiné aux exploitants afin de réaliser et construire leur serre.",
     "themes": [
       "energy",
@@ -853,7 +930,8 @@
       "A"
     ],
     "metaTitle": "Subventions serre agricole - Valorisation de l’énergie solaire",
-    "metaDescription": "Les serres agricoles valorisent l’énergie solaire, réduisent les pesticides et protègent les cultures. Découvrez comment améliorer leurs performances et les aides disponibles."
+    "metaDescription": "Les serres agricoles valorisent l’énergie solaire, réduisent les pesticides et protègent les cultures. Découvrez comment améliorer leurs performances et les aides disponibles.",
+    "faqs": []
   },
   {
     "id": 14,
@@ -863,6 +941,7 @@
     "shortDescription": "Il permet d’évaluer la performance énergétique de vos locaux et de définir des scénarios de rénovation énergétique.",
     "image": "/images/projet/audit-energetique.webp",
     "longDescription": "Chauffage, isolation, eau chaude, climatisation, ventilation, éclairage… Un audit énergétique permet de faire expertiser des locaux professionnels et identifier des solutions et des financements afin de les rendre plus confortables, plus performants et de réaliser des économies durables.\n\nAinsi, mettez-vous en conformité avec les obligations réglementaires, comme le Dispositif Éco Énergie Tertiaire (DEET), communément appelé \"décret tertiaire\".",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Réglementation Audit énergétique,**](https://portail-rse.beta.gouv.fr/reglementations/audit-energetique) Un portail pour connaitre les obligations de votre entreprise.\n- [**Le Dispositif Éco Énergie Tertiaire (EET), qu'est-ce que c'est ?**](https://www.ecologie.gouv.fr/eco-energie-tertiaire-eet) Une page pour comprendre le cadre de la règlementation.",
     "themes": [
       "energy",
@@ -922,7 +1001,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 15,
@@ -932,6 +1012,7 @@
     "shortDescription": "L’isolation thermique permet de réduire les pertes de chaleur de vos locaux et de diminuer vos dépenses énergétiques.",
     "image": "/images/projet/isolation-thermique.webp",
     "longDescription": "L’isolation thermique des bâtiments permet de garantir le confort en été comme en hiver en limitant le recours à la climatisation et au chauffage. Un logement mal isolé génère des pertes conséquentes de chaleur en hiver et de fraîcheur en été par le toit, les murs, les portes, les fenêtres et le sol.\\\nGrâce à des travaux d’isolation, vous diminuez vos factures d’énergie et améliorez votre confort tout au long de l’année.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Les exigences réglementaires pour les travaux de rénovation**](https://librairie.ademe.fr/ged/8069/fiche-exigences-reglementaires-renovation.pdf), une fiche pratique de l'ADEME.\n- [**Réduction de la consommation d'énergie dans les bâtiments à usage tertiaire**](https://entreprendre.service-public.fr/vosdroits/F38065), les obligations légales par Entreprendre.Service-Public.fr.\n- [**Quel est le meilleur isolant thermique pour une isolation efficace ?**](https://www.baisseleswatts.fr/actualites/equipement-energetique/quel-est-le-meilleur-isolant-thermique) un article proposé par Baisse les watts.\n- [**L'annuaire des professionnels RGE et des architectes,**](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte) trouver un professionnel RGE, compétent pour réaliser des travaux d'isolation thermique.",
     "themes": [
       "building",
@@ -1005,7 +1086,8 @@
       "U"
     ],
     "metaTitle": "Isolation thermique des entreprises - Rénovation énergétique",
-    "metaDescription": "Faites isoler vos bâtiments pour limiter les pertes de chaleur et de fraîcheur. Une bonne isolation thermique réduit vos dépenses énergétiques."
+    "metaDescription": "Faites isoler vos bâtiments pour limiter les pertes de chaleur et de fraîcheur. Une bonne isolation thermique réduit vos dépenses énergétiques.",
+    "faqs": []
   },
   {
     "id": 16,
@@ -1015,6 +1097,7 @@
     "shortDescription": "Un plan de mobilité est une démarche d’analyse et d’optimisation des déplacements générés par l’activité d’une entreprise.",
     "image": "/images/projet/plan-mobilite.webp",
     "longDescription": "Le Plan de Mobilité Durable Employeur est une démarche stratégique visant à optimiser les déplacements liés à l'activité de votre entreprise pour diminuer vos émissions polluantes. \\\nLe plan repose sur une analyse des déplacements (professionnels, domicile-travail...) de vos différents usagers (équipe, clients, fournisseurs...) et propose un plan d'actions adaptées aux spécificités de votre site. Le Plan de Mobilité Durable Employeur s'inscrit dans un processus de changement : il influence les comportements des usagers, l’organisation de la structure (horaires de travail, activités du site, structuration du territoire) et favorise l’adoption de modes de transport plus durables.\n\nPour garantir son succès, le plan de mobilité nécessite l'implication de la direction, une communication régulière avec les usagers et une évaluation à 2-3 ans pour ajuster les actions en fonction de l'impact observé sur les comportements et les modes de transport utilisés.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Plan de mobilité employeur**](https://entreprendre.service-public.fr/vosdroits/F38002) : Quels objectifs ? Qui est concerné ? Par Entreprendre.Service-Public.fr\n- [**Changer de mobilité dans le cadre de ses trajets domicile-travail**,](https://agirpourlatransition.ademe.fr/particuliers/bureau/deplacements/trajets-domicile-travail-aussi-optez-mobilite-plus-durable) témoignages d'employés ayant fait le choix de mobilités actives.\n- [**Centre de ressources mobilité durable employeur**](https://employeursprocovoiturage.ademe.fr/centre-de-ressources-mobilite-durable-employeur/), des fiches pratiques pour réaliser un plan de mobilité en autonomie.\n- [**La mobilité de demain**](https://archives.qqf.fr/infographie/60/la-mobilite-de-demain), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.",
     "themes": [
       "mobility"
@@ -1064,6 +1147,28 @@
       "S",
       "T",
       "U"
+    ],
+    "faqs": [
+      {
+        "id": 155,
+        "question": "Pourquoi mettre en place un plan de mobilité dans son entreprise ?",
+        "answer": "Mettre en place de moyens de transports non polluants et un plan de mobilité au sein de votre entreprise présente plusieurs avantages. Cela vous permet de :\n\n- **Optimiser les déplacements** des collaborateurs.\n- **Diminuer les émissions** de gaz à effets de serre et la pollution.\n- **Décongestionner le trafic** routier, notamment en milieu urbain.\n- **Améliorer la qualité de vie** de vos salariés, en favorisant les mobilités douces."
+      },
+      {
+        "id": 156,
+        "question": "Quelles sont les étapes d'un plan de mobilité employeur ?",
+        "answer": "Le plan de mobilité peut faire l’objet de **négociations** entre les salariés et l’employeur, **ou être décrété unilatéralement** par l’employeur.\n\nLe plan de mobilité s’effectue selon les étapes suivantes :\n\n1. **L’analyse détaillée** des déplacements professionnels, et des trajets domicile-travail effectués par les collaborateurs.\n2. Une évaluation de l’**offre de transport**.\n3. L’élaboration d’un **programme d’actions concrètes**, chiffrées et suivant un calendrier précis.\n4. Le **suivi de ces actions**, et la réalisation d’une mise-à-jour à une échéance prédéfinie."
+      },
+      {
+        "id": 157,
+        "question": "Quel type d’actions peuvent figurer dans le plan de mobilité ?",
+        "answer": "Vous pouvez, par exemple promouvoir les mobilités douces sur le trajet domicile-travail, à l’aide de différentes mesures incitatives :\n\n- Promouvoir l’**autopartage et le covoiturage** des salariés en accordant une prime, des places de stationnement réservées.\n- Installer un **abri à vélo**.\n- Inciter au **télétravail partiel ou complet**, quand cela est possible.\n- Mettre en place des **bornes de recharge** pour les véhicules électriques.\n\nVous pouvez également intégrer les déplacements professionnels au plan de mobilité et inciter les salariés à réaliser les **déplacements nationaux en train** plutôt qu’en avion."
+      },
+      {
+        "id": 158,
+        "question": "Qu'est-ce que la loi d'orientation des mobilités ?",
+        "answer": "La loi d’orientation des mobilités, promulguée en 2019, a pour objectif d’offrir une alternative à la voiture partout où cela est possible. Elle vise à atteindre la **neutralité carbone d'ici 2050** et de **réduire de 37,5 % les émissions de CO2 d'ici 2030**. Ainsi, elle consacre :\n\n- Un **plan vélo** pour tripler sa part dans les déplacements.\n- Un **plan covoiturage**.\n- Des **zones à faibles émissions (ZFE)**.\n- La **contribution des modes les plus émetteurs** au financement des mobilités (le transport routier et le secteur aérien).\n\nCette loi oblige les entreprises de plus de 50 salariés à inclure un volet consacré à la mobilité dans les Négociations annuelles obligatoires (NAO). Si les négociations échouent, un Plan de mobilité employeur (PDME) est élaboré."
+      }
     ]
   },
   {
@@ -1074,6 +1179,7 @@
     "shortDescription": "Le rétrofit consiste à remplacer le moteur de son véhicule thermique par un moteur électrique.",
     "image": "/images/projet/retrofit.webp",
     "longDescription": "Depuis le 4 avril 2020, il est autorisé d’électrifier un véhicule thermique. Cette pratique, appelée rétrofit, consiste à retirer le moteur thermique (essence ou diesel) ainsi que le réservoir du véhicule et à les remplacer par un moteur électrique et une batterie.\n\nLe rétrofit électrique permet d’augmenter la part de voitures électriques en circulation et ainsi de diminuer les quantités de CO2 et de polluants atmosphériques émises lors des déplacements quotidiens.\n\nEn réhabilitant de vieux véhicules thermiques, le retrofit constitue également une alternative à la fabrication de nouveaux véhicules. Ainsi, il participe à la réduction des émissions de gaz à effet de serre en diminuant les consommations de ressources nécessaires à la fabrication de véhicules électriques neufs.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Tout savoir sur le retrofit éléctrique**](https://www.ecologie.gouv.fr/politiques-publiques/savoir-retrofit-electrique)**.**",
     "themes": [
       "mobility"
@@ -1124,7 +1230,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 18,
@@ -1134,6 +1241,7 @@
     "shortDescription": "Une voiture à faible émission émet peu de CO₂ et polluants, tout en consommant un minimum d'énergie.",
     "image": "/images/projet/vehicule-propre.webp",
     "longDescription": "L'usage des véhicules thermiques génère des émissions de CO₂, accélérant le changement climatique et contribuant à la pollution de l’air. Dans les grandes agglomérations, les niveaux de pollution de l’air les plus élevés et la plupart des dépassements des valeurs seuils européennes sont observés à proximité du trafic routier, mettant en danger la santé publique. \\\n\\\nEn optant pour une voiture électrique, hybride ou à hydrogène, vous contribuez à décarboner le secteur du transport et à améliorer significativement la qualité de l'air. Les véhicules \"propres\", au-delà de leur impact positif sur l’environnement, offrent également des avantages économiques. Ils permettent de réduire les coûts de fonctionnement à long terme, notamment grâce à une consommation d’énergie moindre et des aides financières pour l’acquisition. \\\n\\\nQue ce soit pour vos déplacements professionnels, vos trajets domicile-travail, la mobilité de vos équipes, ou celle de vos fournisseurs, c'est peut-être le moment de changer de voiture pour un modèle plus économe, plus propre et plus sûr !",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Flotte automobile : pourquoi et comment accélérer son verdissement ?** ](https://bigmedia.bpifrance.fr/nos-dossiers/flotte-automobile-pourquoi-et-comment-accelerer-son-verdissement)un tour d'horizon proposé par Bpifrance\n- [**Le bonus écologique pour les voitures des entreprises individuelles**](https://entreprendre.service-public.fr/vosdroits/F38132), le cadre légal par Entreprendre.Service-Public.fr.\n- [**Voitures électriques et bornes de recharge**](https://librairie.ademe.fr/mobilite-et-transport/5877-avis-de-l-ademe-voitures-electriques-et-bornes-de-recharges.html), l'avis de l'ADEME\n- [**Car labelling**](https://carlabelling.ademe.fr/), un outil de l'ADEME pour comparer l'impact environnemental des véhicules neufs.",
     "themes": [
       "mobility"
@@ -1190,7 +1298,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 19,
@@ -1200,6 +1309,7 @@
     "shortDescription": "Le vélo réduit les émissions, améliore la santé et optimise la mobilité durable en entreprise.",
     "image": "/images/projet/velo.webp",
     "longDescription": "Les déplacements domicile-travail et professionnels sont souvent le **premier poste d’émissions de gaz à effet de serre** des activités de bureau. Et pour cause : **trois quarts de ces trajets se font encore seul en voiture**, avec un fort impact environnemental.\n\nPourtant, des alternatives existent. **Le vélo et le vélo à assistance électrique** (VAE) sont à la fois **écologiques, économiques** et **bénéfiques pour la santé**. Ils conviennent particulièrement aux déplacements domicile-travail et aux trajets professionnels courts.\n\n\\\nPour **faciliter l’usage du vélo** dans votre entreprise, vous pouvez par exemple :\n\n- proposer une aide à l’achat de vélos ou VAE à vos équipes\n\n- mettre à disposition des vélos de fonction ou en libre-service\n\n- installer un parking à vélos sécurisé\n\n- aménager des douches, vestiaires et casiers pour les cyclistes\n\n- participer à des challenges et à des animations de sensibilisation autour du vélo.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé.\n- [**Le forfait mobilités durables (FMD)**](https://www.ecologie.gouv.fr/politiques-publiques/faq-forfait-mobilites-durables-fmd#scroll-nav__2), réponses à toutes vos questions.\n- [**Les services vélos proposés par les employeurs**](https://librairie.ademe.fr/mobilite-et-transports/5028-les-services-velos-proposes-par-les-employeurs.html), un guide de l'ADEME.",
     "themes": [
       "mobility"
@@ -1252,7 +1362,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 20,
@@ -1262,6 +1373,7 @@
     "shortDescription": "Il met en évidence vos postes de consommation d'eau les plus importants et les pistes de solutions.",
     "image": "/images/projet/plan-action-eau.webp",
     "longDescription": "Raréfaction de l'eau, restriction des consommations, augmentation des coûts : maîtriser sa consommation d’eau est un enjeu essentiel pour les entreprises.\n\nComment agir au sein de votre entreprise pour poursuivre votre activité et faire des économies d’eau ?\n\nFaites-vous accompagner par un expert, et réalisez un diagnostic global de vos flux (énergie, déchets, eau...) ou une étude ciblée de votre consommation d'eau.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Eau secours, demain tous à sec**](https://www.qqf.fr/infographie/eau-secours-demain-tous-a-sec/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**10 conseils aux entreprises pour une sobriété en eau**](https://www.cci.fr/actualites/10-conseils-aux-entreprises-pour-une-sobriete-en-eau). Une fiche conseil proposée par la CCI, Chambre de Commerce et d’Industrie.",
     "themes": [
       "water"
@@ -1315,6 +1427,28 @@
       "S",
       "T",
       "U"
+    ],
+    "faqs": [
+      {
+        "id": 159,
+        "question": "À combien estime-t-on la consommation moyenne d’un salarié ?",
+        "answer": "Tandis que la consommation d’eau potable s’élève à **145 litres par habitant** et par jour :\n\n- Un **salarié du tertiaire** consomme environ **40 litres** chaque jour.\n- Un **client d’hébergement touristique** consomme, quant à lui, en moyenne **300 litres** par jour."
+      },
+      {
+        "id": 160,
+        "question": "Comment réduire sa consommation d’eau en entreprise ?",
+        "answer": "De nombreuses mesures et investissements peuvent vous aider à réduire considérablement votre consommation d’eau et à réduire votre facture. Vous pouvez, par exemple :\n\n- Suivre précisément votre consommation et **détecter d’éventuelles fuites d’eau**, en relevant le compteur le vendredi soir puis le lundi avant la reprise de l’activité.\n- Mettre en place **un circuit fermé au sein de votre cycle de production**. Ainsi, vous pouvez réutiliser les eaux usées pour refroidir vos installations.\n- **Collecter les eaux de pluie** et les réutiliser pour les sanitaires, l’arrosage, l’alimentation d’aires de lavage, le rinçage de cuves…\n- **Remplacer vos équipements anciens** par des machines moins gourmandes en eau.\n- Installer des **dispositifs peu coûteux sur les robinets** et les arrivées d’eau : réducteurs de débit, douchettes économiques, chasses d’eau à double débit…\n- **Sensibiliser vos collaborateurs et vos clients** aux écogestes."
+      },
+      {
+        "id": 161,
+        "question": "Quel est l'objectif du Plan de sobriété en eau ?",
+        "answer": "Le plan de sobriété en eau vise à remettre la consommation d’eau au centre de l’attention des entreprises. Ainsi, vous :\n\n- Placez **la préoccupation écologique au cœur** de vos valeurs.\n- **Diminuez vos factures**.\n- **Anticipez d’éventuelles restrictions** **d’eau** et pérennisez votre activité.\n- Mettez votre entreprise **en conformité avec la réglementation** actuelle ou à venir."
+      },
+      {
+        "id": 162,
+        "question": "Quels secteurs consomment le plus d'eau ?",
+        "answer": "L’**agriculture** arrive en tête de la consommation d’eau et représente à elle seule 57 % du total des activités économiques.\n\nEnsuite, c’est l’**eau potable** qui représente 26 % de la consommation d’eau.\n\nLe **refroidissement des centrales électriques** s’élève à 12 %.\n\nLes **usages industriels** représentent 5 %."
+      }
     ]
   },
   {
@@ -1325,6 +1459,7 @@
     "shortDescription": "Améliorer la gestion de vos flux de déchets et limiter vos pertes de matières.",
     "image": "/images/projet/plan-action-dechets.webp",
     "longDescription": "Un diagnostic déchets est un excellent point de départ pour évaluer la production et gestion des déchets de votre entreprise et identifier un plan d’action pour les réduire à la source.\n\nVous pouvez vous faire accompagner par un expert pour faire le point sur vos usages, définir des objectifs de réduction et de gestion des déchets, et construire un plan d’action pour atteindre ces objectifs. Ce plan d'action est l'étape préalable indispensable à la mise en place d'un projet, pouvant aboutir à des études plus précises ou des investissements.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Comment diminuer vos déchets plastiques** ](https://agirpourlatransition.ademe.fr/particuliers/maison/dechets/comment-diminuer-dechets-plastiques)**?** Tour d’horizon pour changer la donne.\n- [**Gestion des déchets de l'entreprise : ce qui doit être mis en place**](https://entreprendre.service-public.fr/vosdroits/F37825), par Entreprendre.Service-Public.fr.",
     "themes": [
       "waste"
@@ -1374,6 +1509,28 @@
       "S",
       "T",
       "U"
+    ],
+    "faqs": [
+      {
+        "id": 163,
+        "question": "Quelles sont les grandes stratégies de gestion des déchets ?",
+        "answer": "Un plan de déchets en entreprise repose sur les étapes suivantes :\n\n- **Un état des lieux de la production des déchets** de votre entreprise, et des pratiques de gestion de déchets actuellement à l’œuvre.\n- Une **identification des filières de collecte** et de la valorisation appropriée à chaque type de déchets.\n- Une **analyse des améliorations possibles** (tri, collecte, réemploi, mutualisation, etc.) et les **financements** associés.\n- Un **plan d’action pour la gestion des déchets**, permettant la **mise en conformité réglementaire**."
+      },
+      {
+        "id": 164,
+        "question": "Quels sont les principaux flux de déchets produits par une entreprise ?",
+        "answer": "Les types de déchets générés par une entreprise dépendent directement de son secteur d’activité : le tertiaire et l’industrie métallurgique, par exemple, produisent des flux très différents.\n\nConcrètement, on distingue :\n\n- **Les déchets inertes**, principalement issus du BTP. Ce sont ceux qui ne s’altèrent pas avec le temps. Par exemple les tuiles, le béton, la céramique, les pierres.\n- **Les déchets dangereux.** Par exemple les piles, la peinture, l’huile de vidange, les appareils électroniques.\n- **Les déchets non dangereux non inertes.** Il peut s’agir :\n  - De **matériaux recyclables** (carton, verre, papier, bois, métal)\n  - De matériaux **non recyclables** (déchets mélangés).\n  - De **biodéchets** (déchets de table ou déchets verts issus de l’agriculture ou de l’entretien des espaces verts)."
+      },
+      {
+        "id": 165,
+        "question": "Quelles sont les obligations légales pour le tri à la source en entreprise ?",
+        "answer": "Sauf dérogation (petits bureaux, petit chantier ou autre dérogation), les entreprises ont l’obligation légale de **trier leurs déchets à la source**. Sont concernés :\n\n- Le papier\n- Les métaux\n- Le verre\n- Les plastiques\n- Le bois\n- Les textiles\n- Les biodéchets\n- Les huiles alimentaires.\n\nCela signifie que vous devez trier vos déchets et les déposer dans des conteneurs correspondant à chaque catégorie, avant leur collecte et éventuel retraitement. Ces conteneurs doivent être **distincts et accessibles** **à vos employés** afin de faciliter le tri au quotidien.\n\nD’autre part, si vous accueillez du public (ERP) et produisez plus de 1 100 litres de déchets par semaine, vous devez organiser une **collecte distincte auprès de vos visiteurs** pour les déchets d’emballage ménager et les biodéchets."
+      },
+      {
+        "id": 166,
+        "question": "Comment réduire concrètement les déchets au quotidien dans une entreprise ?",
+        "answer": "Pour réduire efficacement les déchets dans votre entreprise, vous pouvez dores et déjà mettre en place les mesures suivantes :\n\n- **Consommer durablement, de manière responsable**. C’est-à-dire privilégier la location de matériel à l’achat, acheter du mobilier ou du matériel de seconde main quand c’est possible, faire fabriquer par des artisans…\n- **Mettre en place le réemploi au bureau :** imprimer recto-verso, utiliser le papier de brouillon. \n- **Installer des conteneurs pour faire du tri sélectif**.\n- **Composter les biodéchets** issus de la cantine.\n- **Mettre de la vaisselle à disposition** pour le café et, ainsi, limiter l’usage de vaisselle jetable."
+      }
     ]
   },
   {
@@ -1384,6 +1541,7 @@
     "shortDescription": "Mettre en place une stratégie de consommation ou de conception responsable du numérique.",
     "image": "/images/projet/numerique-responsable.webp",
     "longDescription": "Si le numérique est aujourd’hui indispensable au fonctionnement des entreprises, son empreinte écologique est bien réelle : fabrication énergivore, équipements vite obsolètes, consommation de ressources rares, pollution numérique.\\\nLe **numérique responsable** vise à **réduire cet impact tout en maintenant l'efficacité des services numériques**.\n\nPour passer à l’action :\n\n- Mettez en place une politique d’**achats responsables** (matériel durable, labellisé, réemployé).\n\n- **Allongez la durée de vie** de vos équipements (achat reconditionné, maintenance, réparation) et favorisez le réemploi et le recyclage en **fin de vie.**\n\n- Concevez des sites et logiciels **éco-conçus** : légers, sobres en énergie, adaptés aux besoins réels.\n\n- **Formez vos équipes** aux bonnes pratiques : envoi raisonné des emails, stockage maîtrisé, usage responsable du cloud.\n\n- Choisissez des **hébergeurs engagés** (énergie renouvelable, data centers sobres).\n\nPour encadrer ces pratiques, la loi AGEC fixe aux entreprises des dispositions pour rallonger la durée de vie des produits numériques et la loi REEN vise à limiter le renouvellement des appareils numériques en interdisant les pratiques d’obsolescence et en favorisant le réemploi et la réutilisation.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**L'impact des bonnes pratiques numériques écoresponsables au sein de votre organisation**](https://ecoresponsable.numerique.gouv.fr/publications/impact-bonnes-pratiques/)**.**\n\n- [**Pollution numérique**](https://archives.qqf.fr/infographie/69/pollution-numerique-du-clic-au-declic)**, du clic au déclic**, une infographie *\"Qu'est-ce qu'on fait ?!\"*\n\n- [**Le** **numérique responsable**](https://www.ecologie.gouv.fr/politiques-publiques/numerique-responsable)**,** vision d'ensemble du cadre législatif par le ministère de la transition écologique et de la cohésion des territoires.\n\n- [**Le Référentiel général d'écoconception de services numériques (RGESN)**](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/). Il définit les critères de conception durable des services numériques afin d'en réduire l'empreinte environnementale.",
     "themes": [
       "eco-design"
@@ -1429,7 +1587,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 23,
@@ -1439,6 +1598,7 @@
     "shortDescription": "Le tri sélectif consiste à séparer les déchets en différentes catégories en fonction de leur composition.",
     "image": "/images/projet/tri-dechets.webp",
     "longDescription": "Depuis le 16 juillet 2021, les professionnels ont l’obligation de trier à la source 7 types de déchets : papier/carton, métal, plastique, verre, bois, déchets de fraction minérale et plâtre.\n\nCe système de tri sélectif permet de diminuer la quantité de déchets traités par enfouissement ou incinération pour orienter les déchets vers les filières de recyclage adaptées, à même de les revaloriser. De ce fait, il permet de préserver les ressources naturelles et de limiter les émissions de gaz à effet de serre.\n\nSur le plan économique, le tri et le recyclage des déchets peuvent entraîner des économies significatives en réduisant les frais de gestion des déchets et en évitant les pénalités liées à la non-conformité aux réglementations environnementales.\n\nÀ compter du 1er janvier 2025, l’obligation portera sur 8 flux en intégrant les déchets de textiles. Parallèlement à ces textes, la Loi AGEC précise les obligations en matière de tri à la source des biodéchets. 9 flux au total devront être triés.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Tri 5 flux des professionnels**](https://www.ecologie.gouv.fr/sites/default/files/documents/2019.01.31_Document_Tri5flux.pdf)**,** quelles sont mes obligations ?\n- [**Tri à la source des 9 flux**](https://librairie.ademe.fr/ged/7183/tri-a-la-source-des-9-flux-011719.pdf)**,** un décryptage synthétique de l'obligation : pourquoi trier ? qui est concerné ? quelles sont les modalités de tri et de collecte des 9 flux ?\n- [**Tri à la source des déchets des entreprises : ce qu'il faut savoir**](https://entreprendre.service-public.fr/vosdroits/F37782), par Entreprendre.Service-Public.fr.",
     "themes": [
       "waste"
@@ -1491,7 +1651,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 24,
@@ -1501,6 +1662,7 @@
     "shortDescription": "Définir la méthode de gestion des déchets verts la plus adaptée à votre entreprise.",
     "image": "/images/projet/gestion-biodechets.webp",
     "longDescription": "Les biodéchets sont les déchets alimentaires (restes de repas, épluchures, produits périmés non consommés), ainsi que les déchets issus de l’entretien des parcs et jardins (feuilles mortes, tonte, taille).\n\nA partir du 1er janvier 2024, l’obligation de tri à la source des biodéchets s’applique à toutes les entreprises, quels que soient les volumes et l’activité des producteurs / détenteurs. Les entreprises peuvent opter pour une solution de compostage sur site pour transformer les biodéchets en compost utilisable localement ou pour une collecte des biodéchets en faisant appel à des prestataires extérieurs.\n\nL'objectif de cette mesure est de lutter contre le gaspillage alimentaire et de limiter les impacts environnementaux liés au traitement de nos ordures.\n\nEn effet, l’incinération des biodéchets est énergivore et polluante : pour chaque tonne de déchets incinérée, au moins une tonne de CO2 est émise.\n\nUne fois triés, les biodéchets peuvent être utilisés en engrais organiques pour une agriculture plus durable et respectueuse de l'environnement. Ils peuvent aussi être revalorisé pour produire du biogaz destiné à un usage local ou réinjecté dans le réseau de gaz naturel.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Trier et valoriser les déchets alimentaires : comment et à quel coût ?** ](https://librairie.ademe.fr/dechets-economie-circulaire/5635-dechets-des-professionnels-etablissements-publics-guide.html)Un guide destiné aux producteurs de déchets alimentaires pour aider à la mise en œuvre du tri à la source dans leurs établissements.\n- [**Comment réussir son compost**](https://librairie.ademe.fr/7447-comment-reussir-son-compost-.html), un guide de l'ADEME.\n- [**Tri à la source des déchets des entreprises : ce qu'il faut savoir**](https://entreprendre.service-public.fr/vosdroits/F37782), par Entreprendre.Service-Public.fr.\n- [**Gestion des invendus non alimentaires et alimentaires**](https://entreprendre.service-public.fr/vosdroits/F37829), tour d'horizon.",
     "themes": [
       "waste"
@@ -1560,7 +1722,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 25,
@@ -1570,6 +1733,7 @@
     "shortDescription": "Limiter votre gaspillage alimentaire à tous les stades de la chaine de production.",
     "image": "/images/projet/lutte-gaspillage-alimentaire.webp",
     "longDescription": "Le gaspillage alimentaire est défini comme toute nourriture destinée à la consommation humaine qui, à une étape de la chaîne alimentaire, est perdue, jetée ou dégradée. En France, chaque année près de 20% de la nourriture produite finit à la poubelle. Cela représente 150 kg de nourriture par personne et par an, gaspillés tout au long de la chaîne alimentaire depuis le producteur jusqu'au consommateur.\n\nAu fil des années, le cadre réglementaire français s'est renforcé envers les entreprises, notamment avec la loi anti-gaspillage pour une économie circulaire (AGEC). Désormais, l’interdiction de rendre impropre à la consommation des denrées encore consommables s’applique aux industries agroalimentaires, aux grossistes, aux distributeurs et à la restauration collective. De même, ces acteurs ont l’obligation (au-delà d’un certain seuil) de proposer une convention de don à une association habilitée.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Consommateurs, producteurs, territoires, tous concernés par la lutte contre le gaspillage alimentaire.**](https://agriculture.gouv.fr/consommateurs-producteurs-territoires-tous-concernes-par-la-lutte-contre-le-gaspillage-alimentaire) Un dossier rassemblant tous les éléments à connaître sur la lutte contre le gaspillage alimentaire.\n- [**Tout savoir sur les lois qui encadrent la lutte contre le gaspillage alimentaire**](https://agriculture.gouv.fr/lutte-contre-le-gaspillage-alimentaire-les-lois-francaises) **en France.**\n- [**Gestion des invendus non alimentaires et alimentaires**](https://entreprendre.service-public.fr/vosdroits/F37829), tour d'horizon par Entreprendre.Service-Public.fr.\n- [**Mieux manger, moins gaspiller, moins polluer**](https://www.qqf.fr/infographie/mieux-manger-moins-gaspiller-moins-polluer/)**.** Une infographie *\"Qu'est-ce qu'on fait ?!\"* réalisée en partenariat avec l'ADEME.",
     "themes": [
       "waste"
@@ -1615,7 +1779,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 26,
@@ -1625,6 +1790,7 @@
     "shortDescription": "Sensibiliser votre équipe sur les enjeux environnementaux de votre activité et sur les éco-gestes à mettre en place au quotidien.",
     "image": "/images/projet/sensibilisation-equipes.webp",
     "longDescription": "La sensibilisation à l'environnement en entreprise est indispensable pour une mobilisation globale face aux défis climatiques. Cela peut se traduire par des ateliers collaboratifs et formations sur une thématique environnementale, des retours d'apprentissage d'autres entreprises, ou des défis à relever sous la forme d'un jeu en équipe.\n\nLa participation active des équipes est clé pour que chacun se sente connecté aux objectifs durables de l'entreprise et motivé pour faire évoluer ses pratiques.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Écoresponsable au bureau**](https://www.ecologie.gouv.fr/sites/default/files/documents/ecoresponsable_au_bureau-2.pdf), un guide de bonnes pratiques proposé par l'ADEME.\n- [**Sensibilisation aux écogestes,**](https://www.economie.gouv.fr/mission-innovation/les-actions-vertes/sensibilisation-aux-ecogestes) par l'équipe du BercyLab.",
     "themes": [
       "rh"
@@ -1678,7 +1844,29 @@
       "U"
     ],
     "metaTitle": "Sensibilisation à l'environnement et à l'écologie en entreprise",
-    "metaDescription": "Formez et mobilisez vos équipes autour des enjeux climatiques : ateliers, formations, défis... pour ancrer la transition écologique dans la culture de l’entreprise."
+    "metaDescription": "Formez et mobilisez vos équipes autour des enjeux climatiques : ateliers, formations, défis... pour ancrer la transition écologique dans la culture de l’entreprise.",
+    "faqs": [
+      {
+        "id": 142,
+        "question": "Comment organiser une campagne de sensibilisation environnementale ?",
+        "answer": "Afin de mettre en place une campagne de sensibilisation environnementale, il est important d’en définir :\n\n- Les **messages**, clairs et percutants.\n- Le **public** ciblé par cette campagne.\n- Les **objectifs** visés, la stratégie à adopter.\n- Les **parties prenantes** qui seront impliquées (experts, équipes internes).\n- Les critères de la **mesure d’impact** pour évaluer si cette campagne a porté ses fruits."
+      },
+      {
+        "id": 143,
+        "question": "Quels sont les éco-gestes que l'on peut adopter en entreprise ?",
+        "answer": "- Sur l’aspect **mobilité**, vous pouvez inciter vos collaborateurs à se déplacer en vélo ou en transports en commun (tram, bus, train…) ou à pratiquer le covoiturage. Vous pouvez également mettre en place des jours de télétravail.\n- Sur le volet **déchets**, vous pouvez mettre à disposition des poubelles de tri, inciter vos équipes à utiliser des récipients réutilisables pour le déjeuner quand ils s’approvisionnent à l’extérieur, réduire les portions à la cantine.\n- Pour limiter les **dépenses énergétiques liées au bâtiment**, vous pouvez installer des robinets automatiques, lier une partie de l’éclairage à des détecteurs de présence, baisser le chauffage et fournir des gilets chauffants à vos salariés."
+      },
+      {
+        "id": 144,
+        "question": "Quels supports ou affiches utiliser pour sensibiliser efficacement à l’environnement ?",
+        "answer": "Le plus efficace est de diversifier les modes de communication et les messages. Vous pouvez, par exemple :\n\n- Faire suivre des **formations** à vos équipes.\n- Disposer des **affiches incitatives** près des lieux de collecte des déchets, à la cantine, dans les sanitaires.\n- Mettre en place des **ateliers** de sensibilisation.\n- Organiser des **jeux**, et des **défis** pour fédérer vos équipes autour des valeurs environnementales."
+      },
+      {
+        "id": 145,
+        "question": "Quelles sont les meilleures campagnes de sensibilisation environnementale ?",
+        "answer": "Les meilleures campagnes de sensibilisation sont celles qui ont des **effets sur le long-terme** et qui fédèrent véritablement les équipes autour d’elles\n\nAinsi, il est important de privilégier des campagnes qui:\n\n- Impliquent les parties prenantes tout au long de la campagne.\n- Proposent de mettre en place des éco-gestes avec un véritable impact, et qui soient à la portée de chacun.\n- S’appuient sur des données chiffrées, ou la parole d’experts du climat.\n- Dressent un bilan final et mesurent l’impact réalisé."
+      }
+    ]
   },
   {
     "id": 27,
@@ -1688,6 +1876,7 @@
     "shortDescription": "Recruter un profil sur des missions de transition écologique et énergétique.",
     "image": "/images/projet/recrutement.webp",
     "longDescription": "Les bénéfices d'un recrutement d'une personne dédiée aux sujets sociaux et environnementaux sont nombreux. Elle peut vous aider à élaborer et à mettre en œuvre des mesures visant à réduire l'empreinte environnementale dans le respect des obligations légales. A terme, investir dans ce type de poste permet d'améliorer la résilience de votre entreprise aux risques environnementaux, de construire un business plan durable et de renforcer votre rôle d'employeur responsable.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Responsable RSE**](https://www.apec.fr/tous-nos-metiers/ressources-humaines/responsable-rse.html), une fiche de poste proposée par l'APEC.",
     "themes": [
       "rh"
@@ -1735,7 +1924,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 28,
@@ -1745,6 +1935,7 @@
     "shortDescription": "Réaliser des formations vous permet de monter en compétence sur des sujets de transition écologique.",
     "image": "/images/projet/formation.webp",
     "longDescription": "Les formations peuvent permettre de faire monter en compétence les membres de votre équipe et d'adapter vos pratiques professionnelles aux exigences environnementales.\\\nLes opérateurs publics proposent un vaste choix de formations gratuites sur les thématiques de la transition écologique et énergétique. \\\nElles peuvent prendre la forme de formations encadrées en présentiel ou à distance pour s'adapter aux besoins et aux contraintes des apprenants (classe virtuelle en temps réel, e-learning en autonomie…).",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Formation \"Climat : Tout comprendre, agir ensemble !\"**](https://librairie.ademe.fr/changement-climatique/6999-formation-climat-tout-comprendre-agir-ensemble-version-initiation.html) - version initiation, par l'ADEME.\n- [**Portail des Formations Environnement**](https://formations.ademe.fr/accueil.html) de l'ADEME.\n- [**Le catalogue des Formations sur la transition écologique et les enjeux RSE**](https://www.bpifrance-universite.fr/catalogue/recherche?t[]=37&t[]=38), par Bpifrance.",
     "themes": [
       "rh"
@@ -1804,7 +1995,29 @@
       "U"
     ],
     "metaTitle": "Formations à l'environnement et à l'écologie en entreprise",
-    "metaDescription": "Découvrez les formations proposées par les opérateurs publics pour renforcer les compétences de vos équipes face aux enjeux environnementaux."
+    "metaDescription": "Découvrez les formations proposées par les opérateurs publics pour renforcer les compétences de vos équipes face aux enjeux environnementaux.",
+    "faqs": [
+      {
+        "id": 151,
+        "question": "Comment les formations peuvent-elles aider une entreprise à s’engager dans la transition écologique ?",
+        "answer": "Que ça soit pour **initier** une démarche de transition écologique ou pour **faire monter vos collaborateurs en compétence** sur un sujet précis, les formations peuvent vous permettre de saisir rapidement les enjeux de transition écologique et d’appliquer des mesures concrètes au sein de votre entreprise.\n\nEn ligne ou en présentiel, individuelles ou collectives, certaines formations peuvent donner droit à une labellisation."
+      },
+      {
+        "id": 152,
+        "question": "Comment choisir une formation environnement adaptée à son entreprise ?",
+        "answer": "Listez vos besoins sur :\n\n- La **thématique** environnementale sur laquelle vous souhaitez recevoir des information.\n- Le **temps** dont vous disposez (un module isolé, une série de formations).\n- La **modalité** qui vous convient (présentiel/visio, individuel/collectif).\n- Le **nombre de participants** que vous souhaitez inscrire.\n\nEnsuite, consultez les catalogues de formation et trouvez celles qui répondent à vos attentes."
+      },
+      {
+        "id": 153,
+        "question": "Quels modules ou thématiques peuvent être inclus dans une formation environnement (RSE, énergie, déchets, mobilité…) ?",
+        "answer": "Les formations recouvrent un panel important de thématiques. Consultez les catalogues de formations pour avoir une idée précise des thèmes abordés et vous inscrire à celle qui correspond à vos besoins."
+      },
+      {
+        "id": 154,
+        "question": "Quelles sont les obligations légales en matière de formation environnement pour les entreprises ?",
+        "answer": "Il n’y a **pas d’obligation légale** à la formation environnementale.\n\nCela dit, recevoir les outils et les informations pour être capable d’évaluer l’impact écologique de l’activité de son entreprise permet :\n\n- D’anticiper au mieux les règlementations environnementales.\n- De s’adapter et de pérenniser son activité face aux changements climatiques.\n- De fédérer ses équipes autour de valeurs fortes, telles que la protection de l’environnement."
+      }
+    ]
   },
   {
     "id": 29,
@@ -1814,6 +2027,7 @@
     "shortDescription": "Recruter un doctorant pour mener un projet de recherche sur un sujet de Transition écologique.",
     "image": "/images/projet/projet-recherche.webp",
     "longDescription": "La recherche, développement et innovation (RDI) est nécessaire dans la compréhension des transformations en cours dans la société, dans le déploiement de projets de transition écologique adaptés aux territoires et aux secteurs d’activité.\n\nLe recrutement d'un doctorant peut vous aider à approfondir votre projet de recherche ou d’avancée technologique en matière de transition écologique.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**La liste des appels à projets de recherche**](https://www.appelsprojetsrecherche.fr/), en France. Un site qui facilite la recherche de financement et permet aux chercheurs d’être notifiés des nouveaux appels à venir.",
     "themes": [
       "rh"
@@ -1856,7 +2070,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 30,
@@ -1866,6 +2081,7 @@
     "shortDescription": "Construire une stratégie d’impact environnemental et sociétal RSE.",
     "image": "/images/projet/strategie-rse.webp",
     "longDescription": "La RSE (Responsabilité sociétale des entreprises) se définit comme la responsabilité des entreprises vis-à-vis des effets qu'elles exercent sur la société, sur trois plans principaux : environnemental, social et économique.\n\nEngager vos salariés autour d’une stratégie RSE permet de leur faire prendre conscience des enjeux et de changer les comportements, notamment en matière de transition écologique et de développement durable.\n\nGrâce à des expertises et l’élaboration d’un plan d’action, ou la formation de vos salariés, vous placez l’engagement et les valeurs environnementales au cœur de la culture de votre entreprise.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Qu'est-ce que la RSE ?**](https://www.ecologie.gouv.fr/responsabilite-societale-des-entreprises) Cette page détaille le cadre réglementaire de la responsabilité sociétale des entreprises.\n- [**Le portail RSE**](https://portail-rse.beta.gouv.fr/)**.** Un portail unique pour comprendre à quelles règlementations votre entreprise est soumise, et piloter vos obligations depuis un tableau de bord.",
     "themes": [
       "environmental",
@@ -1922,7 +2138,34 @@
       "U"
     ],
     "metaTitle": "Stratégie RSE - Aide à la mise en place d'une démarche responsable",
-    "metaDescription": "Déployez une stratégie RSE pour engager vos salariés et leur faire prendre conscience des enjeux en matière d'écologie et de développement durable."
+    "metaDescription": "Déployez une stratégie RSE pour engager vos salariés et leur faire prendre conscience des enjeux en matière d'écologie et de développement durable.",
+    "faqs": [
+      {
+        "id": 100,
+        "question": "Quels sont les piliers de la stratégie RSE ?",
+        "answer": "Les **trois piliers de la Responsabilité Sociétale des Entreprises (RSE)** sont **économique, social et environnemental**.\n\n- Le **pilier économique** vise la pérennité de l’entreprise.\n- Le **pilier social** concerne le respect des droits humains, des conditions de travail équitables (pour les équipes et les fournisseurs) et le bien-être des collaborateurs.\n- Le **pilier environnemental** encourage la réduction de l’empreinte carbone, la gestion responsable des ressources et la transition écologique. \n\nEn combinant ces trois dimensions, une entreprise développe une **stratégie RSE cohérente**, alliant rentabilité, éthique et durabilité."
+      },
+      {
+        "id": 133,
+        "question": "Comment mettre en place une stratégie RSE dans l’entreprise ?",
+        "answer": "Le meilleur point d’entrée pour la mise en place d’une stratégie RSE est **l’établissement d’un diagnostic**, appuyé par un expert. \\\nEnsemble, vous dresserez un **bilan** de votre entreprise dans les différents domaines de la RSE, vous mettrez en évidence ses forces et ses faiblesses, puis vous élaborerez un **plan d’action personnalisé.** \\\nCe travail servira de base à la feuille de route et à l’implémentation des **premières actions concrètes**."
+      },
+      {
+        "id": 134,
+        "question": "Est-ce que la RSE est obligatoire ?",
+        "answer": "La mise en place d’une stratégie RSE est une **démarche volontaire des entreprises et ne constitue pas une obligation légale**. \\\nCela dit, la démarche RSE constitue une démarche vertueuse qui peut faire une différence pour vos collaborateurs et vos clients. \\\nOutre la stratégie RSE, les entreprises sont soumises à des obligations légales et à un cadre de règlementation (loi PACTE, loi anti-gaspillage…) qui rendent nécessaire la prise en compte des questions environnementales dans l’élaboration de la stratégie d’une entreprise."
+      },
+      {
+        "id": 135,
+        "question": "Quels exemples concrets de stratégies RSE peut-on observer dans les entreprises ?",
+        "answer": "Parmi les nombreux axes sur lesquels vous pouvez agir en développant une stratégie RSE, vous pouvez par exemple :\n\n- Effectuer un **diagnostic énergétique** pour dresser un bilan de la consommation énergétique dans votre entreprise.\n- Faire un **bilan carbone**, pour comprendre puis réduire les postes importants d’émission de CO2.\n- Développer un **plan stratégique de gestion des déchets.**\n- Élaborer une **charte d’éco-conception de vos produits** et travailler à augmenter leur durée de vie et leur réparabilité.\n- Travailler à **l’isolation énergétique de vos bâtiments** et revoir le **plan d’éclairage.**"
+      },
+      {
+        "id": 136,
+        "question": "Qu'est-ce que la norme ISO 26000 ?",
+        "answer": "La norme ISO 26000 est un standard international en matière de RSE, qui s'articule autour de **sept thématiques** :\n\n- La gouvernance de l’organisation.\n- Les droits de l’Homme.\n- Les relations et conditions de travail.\n- L’environnement.\n- La loyauté des pratiques.\n- Les questions relatives aux consommateurs.\n- Les communautés et le développement local.\n\nCes sept thématiques permettent de guider la mise en place d’actions concrètes et d’élaborer une vision pérenne, éthique et responsable."
+      }
+    ]
   },
   {
     "id": 31,
@@ -1932,6 +2175,7 @@
     "shortDescription": "Réaliser un diagnostic de votre entreprise au prisme de l’environnement.",
     "image": "/images/projet/diag-360.webp",
     "longDescription": "Un diagnostic à 360° est une étape clé pour initier la transition écologique de votre entreprise. Il offre un état des lieux complet, couvrant des domaines tels que l’économie d’énergie, l’isolation des locaux, les consommations d’eau, la gestion des déchets, les matières premières, les achats, la mobilité, etc. Cette analyse permet d’évaluer l’impact environnemental de votre activité et d’identifier les enjeux prioritaires spécifiques à votre entreprise. À l'issue du diagnostic, vous bénéficiez de conseils et propositions d'actions concrètes pour amorcer le changement, ainsi qu'un plan d’action à moyen et long terme pour transformer durablement votre entreprise. Un expert peut également vous accompagner dans la recherche de subventions afin de concrétiser ce plan d'action.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Les témoignages d'accompagnement à la transition écologique et énergétique des entreprises**](https://www.entreprises.cci-paris-idf.fr/web/transition-ecologique/temoignages-clients), par la CCI\n- [**Les modèles d'affaires à l'aune de la sobriété,**](https://www.cci-paris-idf.fr/fr/prospective/sobriete-modeles-affaires) une étude de la CCI sur les implications de la sobriété sur le modèle d’affaires des entreprises.",
     "themes": [
       "environmental"
@@ -1986,16 +2230,18 @@
       "U"
     ],
     "metaTitle": "Diagnostic à 360° - Transition écologique des entreprises",
-    "metaDescription": "Évaluez l’impact environnemental de votre activité avec le diag 360. Un état des lieux complet pour guider la transition écologique de votre entreprise."
+    "metaDescription": "Évaluez l’impact environnemental de votre activité avec le diag 360. Un état des lieux complet pour guider la transition écologique de votre entreprise.",
+    "faqs": []
   },
   {
     "id": 32,
     "slug": "plan-transition-bas-carbone",
     "title": "Plan de transition bas carbone",
     "nameTag": "🌱 statégie bas carbone",
-    "shortDescription": "Construire la feuille de route de son entreprise pour réduire ses émissions de gaz à effet de serre.",
+    "shortDescription": "Construire la feuille de route de son entreprise pour réduire ses émissions de gaz à effet de serre à long terme.",
     "image": "/images/projet/plan-transition-bas-carbone.webp",
-    "longDescription": "Le plan de transition d'une entreprise présente l’ensemble des actions et des moyens envisagés pour réduire ses émissions de gaz à effet de serre et les objectifs à atteindre pour le prochain bilan.\n\nAvant de définir ce plan de transition, il est nécessaire de quantifier votre impact via un bilan de gaz à effet de serre (GES). Vous pourrez ensuite définir une trajectoire de réduction réaliste et atteignable pour réduire durablement vos principaux postes émetteurs de GES.\n\nUne stratégie bas carbone efficace doit s'aligner sur la trajectoire cible de la SNBC, Stratégie Nationale Bas Carbone (SNBC), qui est la feuille de route de la France pour lutter contre le changement climatique. Cette stratégie s’appuie sur un scénario d’atteinte de la neutralité carbone à l’horizon 2050 (c’est-à-dire, un équilibre entre l’émission des gaz à effet de serre et leur absorption).\n\nCette objectif de **neutralité carbone** n'est atteignable que si les entreprises se mettent en mouvement !",
+    "longDescription": "Le plan de transition d'une entreprise présente l’ensemble des actions et des moyens envisagés pour réduire ses émissions de gaz à effet de serre et les objectifs à atteindre pour atteindre la neutralité carbone.\n\nAvant de définir ce plan de transition, il est nécessaire de quantifier votre impact via un bilan de gaz à effet de serre (GES). Vous pourrez ensuite définir une trajectoire de réduction réaliste et atteignable pour réduire durablement vos principaux postes émetteurs de GES.\n\nUne stratégie bas carbone efficace doit s'aligner sur la trajectoire cible de la SNBC, Stratégie Nationale Bas Carbone (SNBC), qui est la feuille de route de la France pour lutter contre le changement climatique. Cette stratégie s’appuie sur un scénario d’atteinte de la neutralité carbone à l’horizon 2050 (c’est-à-dire, un équilibre entre l’émission des gaz à effet de serre et leur absorption).\n\nCette objectif de **neutralité carbone** n'est atteignable que si les entreprises se mettent en mouvement !",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Portail RSE,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) un site qui vous permet de connaitre vos obligations pour la réalisation du bilan GES et du plan de transition.\n- [**Guide pour la construction, la mise en oeuvre et le suivi d'un plan de transition**](https://bilans-ges.ademe.fr/api/medias/d69d82c9-f060-468f-94c8-bc7391bd1b7e/download)**.**\n- [**La Stratégie Nationale Bas Carbone**](https://bigmedia.bpifrance.fr/nos-dossiers/strategie-nationale-bas-carbone-snbc-definition-objectifs-et-application-en-entreprise) : définition, objectifs et application en entreprise.\n- [**L'Association pour la transition Bas Carbone**](https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/) : un annuaire des prestataires pour réaliser un bilan carbone.",
     "themes": [
       "environmental"
@@ -2050,7 +2296,8 @@
       "U"
     ],
     "metaTitle": "Plan de transition bas carbone aligné CRSD",
-    "metaDescription": "Construisez un plan de transition bas carbone aligné avec la SNBC et conforme à la CSRD pour réduire les émissions de gaz à effet de serre de votre entreprise."
+    "metaDescription": "Construisez un plan de transition bas carbone aligné avec la SNBC et conforme à la CSRD pour réduire les émissions de gaz à effet de serre de votre entreprise.",
+    "faqs": []
   },
   {
     "id": 33,
@@ -2060,6 +2307,7 @@
     "shortDescription": "Adapter la stratégie et les actions de votre entreprise pour faire face aux évolutions du climat.",
     "image": "/images/projet/plan-adaptation-climat.webp",
     "longDescription": "**Le plan d’adaptation au dérèglement climatique** est un accompagnement destiné à **évaluer la vulnérabilité** de votre entreprise face aux aléas climatiques déjà à l’œuvre : canicules, sécheresses, inondations, tempêtes, tensions sur les ressources…\n\nCet accompagnement vous aide à **bâtir une stratégie de résilience** adaptée à vos activités, à votre territoire et à vos contraintes opérationnelles. Vous identifiez les risques, prévenez les ruptures d’activité, sécurisez les conditions de travail, et **anticipez les coûts économiques et sociaux** liés aux perturbations climatiques.\n\nDans un contexte où les événements extrêmes se multiplient, adapter son entreprise n’est plus une option mais une nécessité.\n\n**L’adaptation vise à limiter les effets du changement climatique déjà en cours. Elle est complémentaire des actions d’atténuation**, qui visent à en réduire les causes (notamment les émissions de gaz à effet de serre). Ces deux démarches doivent être pensées ensemble pour une stratégie climatique cohérente et durable.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Adaptation des entreprises au changement climatique : Agir maintenant !**](https://www.cci-paris-idf.fr/sites/default/files/2025-03/CCI_Adaptation-au-changement-climatique_fev-2025.pdf) Une étude des CCI de France.\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.",
     "themes": [
       "environmental"
@@ -2117,6 +2365,28 @@
       "S",
       "T",
       "U"
+    ],
+    "faqs": [
+      {
+        "id": 172,
+        "question": "Pourquoi les entreprises doivent-elles intégrer l’adaptation climatique dans leur stratégie ?",
+        "answer": "L’intégration de l’adaptation climatique dans la stratégie de l’entreprise permet de :\n\n- **Préparer votre entreprise face aux perturbations climatiques** et, ainsi, assurer la continuité et la pérennité de l’activité.\n- Atténuer les causes du changement climatique, c’est-à-dire **réduire l’impact de votre entreprise** sur la pollution, les émissions de CO2, la consommation d’énergies fossiles.\n- Atténuer les effets du changement climatique, en **analysant et renforçant les points de vulnérabilité**."
+      },
+      {
+        "id": 173,
+        "question": "Existe-t-il des obligations légales pour les entreprises en matière de plan climat ?",
+        "answer": "Pour l’instant, seules les **grandes entreprises publiques de l’énergie et des transports** doivent se doter d’un plan d’adaptation pour s’assurer que leurs infrastructures vitales résistent aux dérèglements climatiques. \n\nSi les autres entreprises n’y sont pour l’instant pas légalement tenues, elles sont fortement incitées à réaliser un plan climatique pour évaluer leur vulnérabilité et renforcer leur résilience en cas d’intempéries ou de sécheresses."
+      },
+      {
+        "id": 174,
+        "question": "Quelles sont les causes principales du changement climatique ?",
+        "answer": "Le changement climatique est **le résultat de l’activité humaine** générant des **gaz à effet de serre** en grande quantité. Ces gaz, s’ils sont fortement concentrés, provoquent le dérèglement climatique qui, lui-même entraîne :\n\n- L’érosion des sols et leur appauvrissement en matière organique.\n- La salinisation.\n- La chute de la biodiversité et l’extinction d’espèces.\n- Les glissements de terrain, les inondations, la désertification, la disparition de la banquise arctique…\n\nLes principales activités humaines responsables sont **l’agriculture intensive, l’extractivisme, l’industrie chimique, les transports, la combustion de combustibles fossiles**.\n\n---"
+      },
+      {
+        "id": 175,
+        "question": "Quels risques liés au climat mon entreprise doit-elle anticiper (canicules, sécheresses, inondations…) ?",
+        "answer": "Chaque secteur d’activité et chaque zone géographique comporte **ses propres risques climatiques**. Certaines filières sont particulièrement exposées comme :\n\n- Le secteur touristique.\n- La filière bois, vulnérable face aux tempêtes, sécheresses et parasites.\n- Le bâtiment, qui doit travailler à l’adaptation thermique, au chaud comme au froid.\n- L’agroalimentaire, particulièrement vulnérable en cas de sécheresse.\n- Le transport.\n- Les communications électroniques…\n\nToutes les entreprises, quel que soit leur secteur, doivent **anticiper les risques** pour leur activité. Cela inclut : une dégradation des infrastructures, une rupture d’approvisionnement en ressources (notamment l’eau), des coupures logistiques ou encore une baisse de productivité si les conditions de travail deviennent insuffisantes."
+      }
     ]
   },
   {
@@ -2127,6 +2397,7 @@
     "shortDescription": "Valoriser votre engagement et vos actions menées en faveur de l’environnement.",
     "image": "/images/projet/com-labelisation.webp",
     "longDescription": "Les labels environnementaux sont nombreux (Ecolabel européen, Coq Vert, Imprim Vert, Clef verte...).\n\nAdaptés à votre secteur d'activité, ils vous permettent de valoriser les efforts menés au sein de votre entreprise en faveur de l'environnement auprès de votre clientèle et de fédérer vos équipes autour des valeurs de responsabilité écologique.\n\nLe saviez-vous ?\n\nL’Ecolabel européen est le seul label écologique public et officiel européen permettant de valoriser des produits et services plus respectueux de l’environnement tout en garantissant des performances identiques à celles des produits et services analogues.\n\nCet Ecolabel couvre une large gamme de produits utilisés au quotidien par les professionnels et les particuliers, tels que des papiers, détergents, terreaux, oreillers, ainsi que des hébergements touristiques et des entreprises de propreté.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Les labels environnementaux**](https://agirpourlatransition.ademe.fr/particuliers/labels-environnementaux), passés au crible par l'ADEME. Une analyse de plus de 100 labels, par catégorie de produits.\n- [**Qualité de « société à mission »**](https://entreprendre.service-public.fr/vosdroits/F37408), de quoi s'agit-il et comment l'obtenir ? Par Entreprendre.Service-Public.fr.\n- Mécénat d'entreprise : dons en faveur d'organismes sans but lucratif.",
     "themes": [
       "environmental"
@@ -2184,7 +2455,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 36,
@@ -2194,6 +2466,7 @@
     "shortDescription": "Réduire les impacts de votre produit ou service à toutes les étapes de son cycle de vie.",
     "image": "/images/projet/ecoconception.webp",
     "longDescription": "La démarche d'écoconception (ou conception écologique) est une approche de développement des produits et services respectueuse de l'environnement.\n\nElle consiste à analyser l'ensemble du cycle de vie d'un produit ou d'un service pour identifier comment diminuer son impact environnemental : extraction des matières premières, fabrication, utilisation, rejet dans les milieux naturels en fin de vie, etc.\n\nUne approche d'écoconception est nécessaire pour se questionner sur la fin de vie de vos produits et réorienter judicieusement vos choix de conception. Cela peut passer par exemple par un choix de matières premières plus robustes pour allonger la durée de vie de vos produits, anticiper la réparation ou la revalorisation des matières.\n\nIl s'agit d'une démarche encouragée par la loi anti-gaspillage pour une économie circulaire (AGEC) pour permettre aux entreprises de faire évoluer leur modèle de production.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Comment mettre en pratique l’écoconception en entreprise**](https://economie-circulaire.ademe.fr/ecoconception), une page ressource proposée par l’ADEME.\n- [**Les lignes directrices à suivre pour la réalisation d’un diagnostic d’éco-conception**](https://librairie.ademe.fr/dechets-economie-circulaire/4169-lignes-directrices-diagnostic-ecoconception.html)**.**\n- [**Analyse du cycle de vie**](https://bigmedia.bpifrance.fr/nos-dossiers/analyse-du-cycle-de-vie-definition-objectifs-etapes-de-realisation) : définition, objectifs, étapes de réalisation.\n- [**Valorisez votre démarche d'écoconception avec l'Écolabel européen**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen)**.**",
     "themes": [
       "eco-design"
@@ -2261,6 +2534,33 @@
       "S",
       "T",
       "U"
+    ],
+    "faqs": [
+      {
+        "id": 167,
+        "question": "Qu'est-ce qu'un produit éco-conçu ?",
+        "answer": "Un produit éco-conçu est un produit réalisé selon les grands principes :\n\n- De l’**allongement de son cycle de vie** : on construit pour durer.\n- De la **réparabilité** : on préfère réparer plutôt que jeter et acheter du neuf.\n- Du **minimum de ressources** : on limite l’extraction de matières premières, et on privilégie la revalorisation des matières.\n- **De l’utilité** : on produit des biens nécessaires et utiles, non futiles.\n- De la **recyclabilité** : on anticipe le réemploi des matériaux en fin de vie."
+      },
+      {
+        "id": 168,
+        "question": "Pourquoi faire de l’éco-conception dans une entreprise ?",
+        "answer": "L’éco-conception en entreprise présente plusieurs avantages :\n\n- Elle créé de la valeur, en produisant des **objets de bonne qualité**, **utiles et réparables.**\n- Elle diminue l’**usage de matières premières** et pérennise ainsi l’activité, dans un contexte de possibles diminutions ou de pénuries.\n- Elle inscrit l’entreprise dans une **démarche écoresponsable**, prisée des consommateurs.\n- Elle minimise l’**impact environnemental** de la production et anticipe les obligations règlementaires en la matière."
+      },
+      {
+        "id": 169,
+        "question": "Existe-t-il des obligations réglementaires en matière d’éco-conception ?",
+        "answer": "En 2024, l’UE a posé un cadre législatif à l’éconception en promulgant l’[**ESPR : Ecodesign for Sustainable Products Regulation**](https://commission.europa.eu/energy-climate-change-environment/standards-tools-and-labels/products-labelling-rules-and-requirements/ecodesign-sustainable-products-regulation_en?prefLang=fr). Y sont soumis tous les biens physiques commercialisés au sein de l’UE, à l’exception des produits d’alimentation, des voitures, et des produits liés à la défense ou la sécurité nationale.\n\nCe règlement européen introduit un **éventail d’exigences pour la réparabilité, la qualité et la durée de vie des produits**. Il interdit également la destruction des produits invendus et impose une transparence sur les matériaux utilisés."
+      },
+      {
+        "id": 170,
+        "question": "Qu’est-ce que l’analyse du cycle de vie ?",
+        "answer": "L’analyse du cycle de vie, ou ACV (définie par la norme ISO 14044) est un outil qui permet d’évaluer les aspects environnementaux et les impacts d’un certain type de produit.\n\nÀ l’aide d’une méthodologie précise, l’entreprise évalue les 5 phases suivantes :\n\n- La **conception** et le choix des matières premières (extraction, approvisionnement et transport des matières premières).\n- La **fabrication** du produit fini ou du service (construction, emballage).\n- La **mise en circulation** (distribution, commercialisation).\n- L’**utilisation** du produit ou du service (entretien, usage).\n- La **fin de vie** (collecte, réparation, recyclage)."
+      },
+      {
+        "id": 171,
+        "question": "Quels sont des exemples concrets d’éco-conception en entreprise ?",
+        "answer": "Pour mettre en œuvre une démarche d’éco-conception, votre entreprise peut :\n\n- Réduire sa gamme de produits pour développer un produit plus **polyvalent**.\n- Faire en sorte que ce produit soit plus **résistant**, et offrir un service de **réparation**.\n- Fabriquer à partir de matériaux **recyclés ou upcyclés**.\n- Chercher des **fournisseurs locaux** afin de réduire le transport des marchandises.\n- Encourager la **revente** en développant une boutique de seconde main."
+      }
     ]
   },
   {
@@ -2271,6 +2571,7 @@
     "shortDescription": "Un récupérateur d'eau de pluie permet permet de préserver cette ressource naturelle et de l'utiliser à des fins non potables.",
     "image": "/images/projet/recuperateur-eau-pluie.webp",
     "longDescription": "45% de l’eau que nous utilisons au quotidien ne nécessite pas d’être potable.\n\nLa récupération d'eau de pluie peut couvrir une partie de la consommation d'eau de votre entreprise. Elle peut être utilisée par exemple pour le nettoyage, l'arrosage, la préparation de produits industriels, les chasses d'eau ou même le lavage du linge, sous réserve de posséder un équipement spécifique.\n\nEn valorisant cette ressource gratuite et renouvelable, cela permet de limiter la consommation d’eau douce de votre entreprise : d’agir pour préserver la ressource en eau et de faire des économies financières !",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Tout savoir sur la récupération de l'eau de pluie**](https://www.service-public.fr/particuliers/vosdroits/F31481)",
     "themes": [
       "water"
@@ -2329,7 +2630,8 @@
       "U"
     ],
     "metaTitle": "Récupérateur d’eau de pluie - Gestion de l'eau en entreprise",
-    "metaDescription": "Améliorez la gestion de l’eau dans votre entreprise grâce à la récupération d’eau de pluie. Réduisez votre consommation d’eau potable et faites des économies durables."
+    "metaDescription": "Améliorez la gestion de l’eau dans votre entreprise grâce à la récupération d’eau de pluie. Réduisez votre consommation d’eau potable et faites des économies durables.",
+    "faqs": []
   },
   {
     "id": 72,
@@ -2339,6 +2641,7 @@
     "shortDescription": "Des équipements ou rénovations de vos installations pour vous permettre de faire des économies d'eau.",
     "image": "/images/projet/economiseurs-eau-sanitaires.webp",
     "longDescription": "La mise en place d'équipements ou de travaux de rénovation de vos installations sanitaires peuvent vous permettre de réaliser des économies d'eau non négligeables. Vous pouvez opter par exemple pour :\n\n- des économiseurs d'eau ou de robinets mitigeurs à installer sur vos lavabos,\n- des chasses d’eau à double commande et de plaquettes à mettre dans le réservoir des toilettes,\n- des urinoirs avec écoulement déclenché en fonction de la présence ou d'urinoirs sans eau,\n- des toilettes sèches, qui ne requièrent aucune utilisation d'eau.\n- un équipement de suivi de vos consommations d'eau.\n\nEn complément de ces installations, pensez à sensibiliser vos équipes et vos clients aux bonnes pratiques d'économies d’eau !",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Eau secours : demain tous à sec**](https://www.qqf.fr/infographie/eau-secours-demain-tous-a-sec/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Quels équipements permettent d'économiser l'eau au quotidien ?**](https://www.cieau.com/le-metier-de-leau/usages-consommation-conseils/quels-equipements-permettent-deconomiser-leau-au-quotidien/) Une fiche pratique proposée par le centre d'information sur l'eau",
     "themes": [
       "water"
@@ -2394,7 +2697,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 104,
@@ -2404,6 +2708,7 @@
     "shortDescription": "Le covoiturage consiste à partager un véhicule entre plusieurs personnes pour réduire les coûts et l'impact environnemental.",
     "image": "/images/projet/covoiturage.webp",
     "longDescription": "Le covoiturage est une mise en relation d'un conducteur avec un ou plusieurs passagers dans le but de réaliser un trajet. Le covoiturage permet d'économiser 2 000 € par an pour un.e salarié.e résident à 30 km de son lieu de travail.\n\nSelon l’ADEME, 70% des déplacements domicile-travail sont réalisés avec des véhicules individuels et la part du covoiturage quotidien est estimée à seulement 3%. \\\nEnfin, rappelons que le transport en voiture représente 15% des émissions de gaz à effet de serre en France. C'est le premier facteur d'émission de CO2e.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Les étapes pour mettre en place une stratégie covoiturage au sein de votre entreprise**](https://employeursprocovoiturage.ademe.fr/strategie-covoiturage/)**,** issu du plan national covoiturage du quotidien, proposé par l'ADEME.\n- [**La charte d’engagement en faveur du covoiturage des salarié.es**](https://employeursprocovoiturage.ademe.fr/)**,** proposée par l'ADEME.",
     "themes": [
       "mobility"
@@ -2445,7 +2750,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 137,
@@ -2455,6 +2761,7 @@
     "shortDescription": "L'électroménager professionnel à haute efficacité énergétique vous permet de réduire votre consommation d'énergie.",
     "image": "/images/projet/seche-linge.webp",
     "longDescription": "Investir dans des équipements électroménagers professionnels à haute efficacité énergétique est une opportunité pour votre entreprise de réduire considérablement sa consommation d'énergie tout en optimisant ses performances. Qu’il s’agisse de réfrigérateurs, de lave-vaisselle ou de fours, ces équipements offrent des fonctionnalités avancées, comme la régulation intelligente de la température ou l’utilisation optimisée des ressources. Par exemple, un sèche-linge professionnel doté d’une pompe à chaleur peut réduire sa consommation énergétique jusqu’à 50 % par rapport à un modèle classique ! En intégrant ces solutions, vous pouvez réaliser des économies significatives sur vos factures énergétiques tout en augmentant la durabilité de vos équipements.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Les critères de sélection d'un sèche-linge pro**](https://www.guidetopten.fr/grand-public/selection-criteria/criteres-de-selection-seche-linge-professionnels), proposé par Guide Topten, un comparateur soutenu par l'ADEME.\n- [**Appareils de froid pour la restauration**](https://www.guidetopten.fr/pro/products/bus_refrigerators_stor), le Guide Topten.\n- [**L'étiquette énergie** : ](https://www.economie.gouv.fr/particuliers/etiquette-energie-electromenager)Bien choisir ses appareils électroménagers grâce à l'étiquette énergie.",
     "themes": [
       "energy"
@@ -2491,7 +2798,8 @@
       "I",
       "Q",
       "T"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 138,
@@ -2501,6 +2809,7 @@
     "shortDescription": "Élaborer des menus préparés avec des produits sains, locaux et à faible impact écologique.",
     "image": "/images/projet/menus-circuits-courts.webp",
     "longDescription": "Favoriser les circuits courts et proposer des produits locaux et de saison sont des choix stratégiques pour les restaurateurs, qui permettent de soutenir l’économie locale tout en réduisant l'empreinte carbone. En minimisant les distances de transport, vous garantissez des produits plus frais et de meilleure qualité, tout en participant à la préservation de l’environnement.\n\nIntégrer des plats végétariens à la carte est également un levier essentiel. La production de viande ayant un impact écologique plus important, offrir des options végétariennes permet de réduire la consommation de ressources naturelles et les émissions de gaz à effet de serre. Ces choix répondent à une demande croissante de consommateurs soucieux de leur bien-être et de l’environnement.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Restaurant Engagé : éco-responsabilité en restauration**](https://librairie.ademe.fr/7385-restaurant-engage-eco-responsabilite-en-restauration.html), un guide de l'ADEME.\n- [**Acteurs de la restauration : devenez un maillon engagé de l’alimentation durable**](https://agirpourlatransition.ademe.fr/entreprises/restauration-durable)\n- [**Restaurant : Quelles actions mettre en place pour un tourisme durable ?**](https://agirpourlatransition.ademe.fr/entreprises/restauration-durable)",
     "themes": [
       "eco-design"
@@ -2529,7 +2838,8 @@
     "highlightPriority": null,
     "sectors": [
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 139,
@@ -2539,6 +2849,7 @@
     "shortDescription": "Des appareils de réfrigération de grand efficacité énergétique vous permettent de réduire votre consommation électrique.",
     "image": "/images/projet/frigo.webp",
     "longDescription": "Vitrines réfrigérées, petits frigos, armoires à boissons, comptoirs, congélateurs à glaces... : les meubles frigorifiques trop anciens sont source de gaspillage énergétique. Leur remplacement par des équipements neufs ou d'occasion de meilleur rendement énergétique peut réduire considérablement votre consommation et diminuer votre impact climatique.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Diagnostic économies d'énergie réfrigération dans l'industrie**](https://librairie.ademe.fr/produire-autrement/712-diagnostic-economies-d-energie-refrigeration-dans-l-industrie.html), un guide de l'ADEME.\n- [**CO2 ou NH3 : Quel système de froid choisir ?**](https://www.greentechjournal.fr/refrigeration-ecologique/#La_disponibilite_des_systemes_de_froid_ecologiques), par GreenTech Journal.\n- [**Frigo basse consommation : gardez votre facture d’électricité au frais,**](https://www.baisseleswatts.fr/actualites/equipement-energetique/refrigerateur-et-congelateur-optimisez-votre-consommation) un article de Baisse les watts.",
     "themes": [
       "energy"
@@ -2568,7 +2879,8 @@
     "highlightPriority": null,
     "sectors": [
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 140,
@@ -2578,6 +2890,7 @@
     "shortDescription": "Un système d'irrigation performant peut vous faire économiser l'eau.",
     "image": "/images/projet/arrosage.webp",
     "longDescription": "Terrasses, jardins et potagers sont gourmands en arrosage. Certains équipements limiteront votre consommation d'eau, comme par exemple :\n\n- un arrosage au goutte-à-goutte\n- un système de récupération d'eau de pluie\n- le paillage (qui limite l'évaporation)\n- la culture d’espèces peu gourmandes en eau et adaptées au climat local\n- le raccordement à un puits existant.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Un jardin au naturel**](https://agirpourlatransition.ademe.fr/particuliers/maison/jardinage/jardin-naturel), un guide de l'ADEME\n- [**Mesures de restrictions des usages de l'eau en période de sécheresse**](https://www.ecologie.gouv.fr/sites/default/files/documents/MM23087_Synthese_usages%20eau%20secheresse_BATweb.pdf), une publication du Ministère de la Transition écologique et de la Cohésion des territoires.\n- [**Eau secours, demain tous à sec**](https://www.qqf.fr/infographie/eau-secours-demain-tous-a-sec/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.",
     "themes": [
       "water"
@@ -2627,7 +2940,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 141,
@@ -2637,6 +2951,7 @@
     "shortDescription": "La végétalisation contribue à réduire les îlots de chaleur tout en améliorant la qualité de vie de vos équipes.",
     "image": "/images/projet/vegetalisation.webp",
     "longDescription": "La végétalisation est un recours efficace et économe en énergie pour limiter la hausse de la température de vos bâtiments en été. Ce rafraichissement s'explique par plusieurs raisons :\n\n- Les plantes libèrent de l'eau par le processus d'évapotranspiration, ce qui contribue à abaisser la température ambiante.\n- Les arbres et les grandes plantes fournissent de l'ombre, réduisant ainsi l'ensoleillement direct sur les sols et les bâtiments.\n- En remplaçant des surfaces comme le béton par de la végétation, on limite l'absorption de chaleur par ces matériaux qui retiennent la chaleur.\n- Les plantes filtrent les polluants de l'air et produisent de l'oxygène, ce qui contribue à créer un environnement plus sain et plus agréable.\n- Les espaces verts favorisent la biodiversité, ce qui peut contribuer à un meilleur équilibre des écosystèmes locaux, aidant à maintenir des températures agréables.\n\nLa végétalisation est une solution vertueuse qui est se présente comme un excellent moyen pour limiter l'usage de la climatisation et ainsi réduire votre consommation d'énergie. Elle peut être mise en place via des jardins partagés, des plans d’eau, des tapis de plantes grasses, des plantes grimpantes ou comestibles sur vos façades, des prairies végétales ou des potagers sur les toits de vos bâtiments.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Des exemples de projets de végétalisation inspirants**](https://plusfraichemaville.fr/projet) proposés par Plus fraiche ma ville",
     "themes": [
       "biodiversite"
@@ -2685,7 +3000,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 142,
@@ -2695,6 +3011,7 @@
     "shortDescription": "L'installation d'ouvrants et de structures d'ombrages permet de limiter le rayonnement solaire direct, et de conserver la fraîcheur en été.",
     "image": "/images/projet/ombrage.webp",
     "longDescription": "Volets, stores, films solaires, rideaux occultant, pergolas, voiles d'ombrages... ces dispositifs améliorent le confort thermique de vos bâtiments, que ce soit pour vos collaborateurs ou pour votre clientèle. Ainsi, vous conservez la fraîcheur tout en limitant l'usage de la climatisation. Du même coup, vous allégez votre facture et vous réduisez votre empreinte carbone.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Les différentes structures d'ombrage**](https://plusfraichemaville.fr/fiche-solution/structure-ombrage), les matériaux et les coûts, par Plus fraîche ma ville.\n- [**Les structures d'ombrage de façade**](https://plusfraichemaville.fr/fiche-solution/facade-structure-ombrage) (volets, stores, film de protection...), par Plus fraîche ma ville.",
     "themes": [
       "building"
@@ -2745,7 +3062,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 143,
@@ -2755,6 +3073,7 @@
     "shortDescription": "Il permet de conserver les vélos de vos collaborateurs et de vos clients à l'abri des vols et des intempéries.",
     "image": "/images/projet/parking-a-velos.webp",
     "longDescription": "La construction ou l’installation d'un abri à vélos sécurisés encourage les déplacements à vélo de vos collaborateurs, et favorise l'accueil des cyclo-touristes.\n\nL’abri doit être sécurisé et comporter des dispositifs fixes permettant de stabiliser et d'attacher les vélos par le cadre et au moins une roue. (Art. R. 113-12 du CCH)\n\nS'il est équipé de panneaux photovoltaïques, l'abri à vélo peut vous permettre de produire l'électricité nécessaire à la recharge des vélos à assistance électrique.\n\nUn abris à vélos peut être équipé :\n\n- de bornes de recharge pour vélo à assistance électrique (VAE)\n\n- de bornes de gonflage\n\n- de bornes de réparation\n\n- de bornes multifonction\n\n- de consignes à bagages sécurisées",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé.\n- [**Obligation d'installation d'infrastructures de stationnement des vélos**](https://entreprendre.service-public.fr/vosdroits/F38482), par Entreprendre.Service-Public.fr.",
     "themes": [
       "mobility"
@@ -2802,7 +3121,8 @@
       "U"
     ],
     "metaTitle": "Abris vélos pour entreprises - Stratégie de mobilité durable",
-    "metaDescription": "Encouragez la mobilité durable dans votre entreprise avec l’installation d’un abri vélo. Offrez un espace sécurisé et équipé à vos collaborateurs."
+    "metaDescription": "Encouragez la mobilité durable dans votre entreprise avec l’installation d’un abri vélo. Offrez un espace sécurisé et équipé à vos collaborateurs.",
+    "faqs": []
   },
   {
     "id": 144,
@@ -2812,6 +3132,7 @@
     "shortDescription": "Comprendre et minimiser les impacts de l'activité de votre entreprise sur la faune et la flore.",
     "image": "/images/projet/biodiversite.webp",
     "longDescription": "La Stratégie nationale biodiversité 2030 promeut les initiatives pour faire progresser la prise en compte de la biodiversité dans les stratégies des entreprises. Il s'agit à la fois de minimiser l'impact des entreprises sur les écosystèmes et de renforcer la résilience de leur activité au changement climatique. \\\nLa préservation ou la restauration d'espèces en danger, de faune et de flore, réduire les pollutions, ramener de la nature en ville... sont autant de propositions qui visent à renforcer les liens avec les écosystèmes.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Entreprises engagées pour la nature** **de l'OFB**](https://biodiversite.gouv.fr/sites/default/files/2024-03/OFB_GUIDE_EEN_2023.pdf), un guide gouvernemental.\n- [**9 mesures de la Stratégie nationale biodiversité 2030**](https://biodiversite.gouv.fr/les-mesures-de-la-snb?field_target%5B196%5D=196&op=) pour les entreprises.\n- [**Le Kit biodiversité**](https://secure.webpublication.fr/534282/.Bpifrance-kit-biodiversit%C3%A9/) un guide pour mettre de la biodiversité partout (notamment les PME/ETI)",
     "themes": [
       "biodiversite"
@@ -2867,7 +3188,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 146,
@@ -2877,6 +3199,7 @@
     "shortDescription": "Un dispositif de régulation thermique peut permettre d'économiser jusqu'à 30 % d'énergie en chauffage.",
     "image": "/images/projet/thermostat.webp",
     "longDescription": "D’ici à 2027, tous les bâtiments résidentiels et tertiaires devront équiper les systèmes de chauffage et de refroidissement de système de régulation thermique. Cette mesure vise à maintenir la consommation d'énergie à un niveau raisonnable. Parmi les dispositifs de régulation thermique, vous pouvez opter par exemple pour :\n\n- des robinets thermostatiques de radiateur\n- un thermostat d’ambiance\n- un détecteur d'ouverture de fenêtre permettant d’interrompre le chauffage\n- un éclairage ou dispositif de détection de présence\n- un programmateur horaire\n- un système de gestion par chambre des consignes des radiateurs, pour les établissements de tourisme.\n\nEn complément de ces installations, les consignes de températures pour les établissements hôteliers préconisent 20°C à 22°C pour une chambre occupée ; 16°C à 18°C pour chambre inoccupée pendant une courte période.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Pourquoi passer au thermostat programmable ?**](https://librairie.ademe.fr/urbanisme/5792-pourquoi-passer-au-thermostat-programmable-.html) Une infographie de l'ADEME.\n- [**Énergie, chauffage et refroidissement des bâtiments : améliorez votre efficacité énergétique**](https://agirpourlatransition.ademe.fr/entreprises/energie-chauffage)**,** un état des lieux et des leviers d'action à destination des TPE et PME.",
     "themes": [
       "energy",
@@ -2938,7 +3261,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 147,
@@ -2948,6 +3272,7 @@
     "shortDescription": "Encourager vos collaborateurs et clients à utiliser un véhicule électrique pour leurs déplacements.",
     "image": "/images/projet/bornes-voitures-electriques.webp",
     "longDescription": "D'ici 10 ans, la vente des voitures à énergie fossile devrait être interdite dans toute l'UE, et remplacée par la vente de véhicules électriques (et autres véhicules non polluants), dans le but d'atteindre la neutralité carbone en 2050.\n\nVous pouvez dores et déjà accompagner cette mesure de décarbonation en installant une borne de recharge électrique près de vos locaux pour appuyer vos collaborateurs, vos fournisseurs et vos clients dans leur usage d'un véhicule électrique. Ainsi, vous palliez à votre niveau au maillage insuffisant des stations services, et vous affichez votre ambition écologique.\n\nQuand elle est associée à une ombrière photovoltaïque, une borne de recharge peut limiter son impact sur le réseau électrique tout en permettant l’implantation de bornes de puissance plus élevées.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Voitures électriques et bornes de recharge**](https://librairie.ademe.fr/mobilite-et-transports/5877-avis-de-l-ademe-voitures-electriques-et-bornes-de-recharges.html), un guide de l'ADEME.\n- [**Bornes de recharge en entreprise**](https://bigmedia.bpifrance.fr/nos-dossiers/bornes-de-recharge-en-entreprise-une-transition-vers-la-mobilite-electrique-et-durable), focus sur les obligations et les étapes clés, par BPI France.\n- [**Les obligations légales dans les parkings de plus de 10 places**](https://entreprendre.service-public.fr/vosdroits/F38491), par Entreprendre.Service-Public.fr.",
     "themes": [
       "mobility"
@@ -2996,7 +3321,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 203,
@@ -3006,6 +3332,7 @@
     "shortDescription": "Planter des haies bocagères protège vos élevages et cultures, régule les inondations et favorise la biodiversité.",
     "image": "/images/projet/haie-bocagere.webp",
     "longDescription": "D'ici 2030, la France doit se doter chaque année de plus de 5 000 kilomètres linéaires de haies supplémentaires (objectif fixé par le SGPE).\\\nLes haies bocagères, parfois appelées haies champêtres ou haies vives, sont des **clôtures végétales diversifiées**, souvent implantées **en bordure de parcelles agricoles.**\\\nEn plus de préserver la biodiversité et d'offrir un refuge aux animaux sauvages, la plantation de haies bocagères peut vous permettre :\n\n- D'augmenter vos rendements agricoles,\n\n- De protéger vos cultures et vos animaux d'élevage,\n\n- De stabiliser et d'enrichir les sols,\n\n- En cas d'intempéries, de freiner les inondations,\n\n- De constituer une barrière physique aux pesticides et produits phytosanitaires,\n\n- De constituer une réserve de bois et de stocker du carbone.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Stocks de bois et de carbone dans les haies bocagères françaises**](https://librairie.ademe.fr/energies/5388-stocks-de-bois-et-de-carbone-dans-les-haies-bocageres-francaises.html#product-presentation), une évaluation de l'ADEME.\n- **Haies et bocages, des réservoirs de biodiversité**, un état des lieux par l'Office Français de la Biodiversité.",
     "themes": [
       "biodiversite",
@@ -3035,7 +3362,8 @@
       "F",
       "N",
       "O"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 302,
@@ -3045,6 +3373,7 @@
     "shortDescription": "Valoriser l'engagement de votre entreprise en faveur de l’environnement.",
     "image": "/images/projet/communication-responsable.webp",
     "longDescription": "La communication responsable, c’est parler de votre entreprise et de vos actions de façon sincère, claire et en accord avec la réalité de vos engagements. Elle ne se limite pas à « verdir » votre image : elle reflète vos choix concrets et votre vision à long terme.\n\nElle s’appuie sur quatre grands piliers :\n\n- **Des messages responsables** : bannir le greenwashing, éviter les stéréotypes et mettre en avant des récits porteurs de solutions et d’inspiration.\n\n- **L’éco-socio-conception des supports** : concevoir vos outils de communication en limitant leur impact environnemental et social à chaque étape (fabrication, distribution, usage, fin de vie), en privilégiant par exemple des matériaux responsables et une production locale.\n\n- **Le dialogue avec vos parties prenantes** : écouter vos clients, salariés, fournisseurs, partenaires… pour co-construire des messages qui font sens et créent de la confiance.\n\n- **L’efficacité** : utiliser avec justesse les ressources nécessaires (budget, temps, supports) pour atteindre vos objectifs de communication, en évitant tout gaspillage ou excès inutile.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Vers une communication plus responsable et sans greenwashing**](https://communication-responsable.ademe.fr/), un guide dédié aux professionnels de la communication et du marketing, par l'ADEME.\n- [**Guide pratique des allégations environnementales**](https://www.economie.gouv.fr/files/files/directions_services/cnc/avis/2023/Allegations_environnementales/guide_2023.pdf) du Conseil National de la Consommation.\n- [**Des règles d’éthique applicables à la communication publicitaire en France**](https://www.arpp.org/nous-consulter/regles/regles-de-deontologie/), les recommandations de l'ARPP (Autorité de régulation professionnelle de la publicité).",
     "themes": [
       "environmental"
@@ -3092,7 +3421,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 337,
@@ -3102,6 +3432,7 @@
     "shortDescription": "Une sensibilisation pour inciter vos clients à adopter des comportements responsables.",
     "image": "/images/projet/sensibilisation-ecogestes.webp",
     "longDescription": "Pour appuyer vos efforts visant à réduire la consommation de ressources et la production de déchets de votre établissement, il est important de sensibiliser vos clients aux éco-gestes à adopter.  Dans un hébergement touristique, par exemple, l’affichage de messages pédagogiques dans les chambres peut encourager vos clients à réutiliser les serviettes, limiter l’utilisation des équipements de chauffage ou de climatisation, ou à éteindre les lumières et les appareils électriques lorsqu’ils ne sont pas utilisés. Pour leurs sorties, invitez vos clients à ne laisser aucun déchet derrière eux (emballages, mégots, chewing-gums…).\n\nPour faciliter la mise en place de ces bonnes pratiques, sensibilisez également vos équipes afin qu'elles puissent promouvoir ces comportements vertueux auprès des clients.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Le kit écogestes**](https://pronormandietourisme.fr/2024/05/31/kit-ecogestes-ademe/) destiné aux établissements touristiques, proposé par l’ADEME\n- [**Éco-gestes : sensibiliser les touristes**](https://www.ardeche.cci.fr/actualite/eco-gestes-sensibiliser-les-touristes), par la CCI Ardèche",
     "themes": [
       "energy",
@@ -3126,7 +3457,8 @@
     "highlightPriority": null,
     "sectors": [
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 372,
@@ -3136,6 +3468,7 @@
     "shortDescription": "La maintenance préventive de vos appareils permet d'économiser l'énergie et de prévenir les pannes.",
     "image": "/images/projet/maintenance-preventive.webp",
     "longDescription": "La **maintenance préventive** des équipements consommateurs d’énergie (eau, électricité, gaz) est une stratégie clé pour sécuriser la production et améliorer la performance énergétique de votre entreprise. Plutôt que d’attendre une panne coûteuse, vous agissez en amont pour maintenir vos installations en bon état et garantir leur rendement optimal.\n\nLes bénéfices concrets pour votre activité :\n\n- **anticiper les pannes** et éviter les arrêts de production,\n\n- **réduire les coûts** liés à la maintenance corrective et aux réparations d’urgence,\n\n- **optimiser les performances** de vos appareils pour fonctionner à plein rendement,\n\n- **diminuer votre consommation d’énergie** en limitant fuites et pertes invisibles.\n\nUn suivi régulier et planifié renforce la compétitivité de votre entreprise tout en contribuant à la transition énergétique.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Pourquoi l'entretien de nos appareils n'a rien d'anodin ?**](https://librairie.ademe.fr/consommer-autrement/5390-pourquoi-l-entretien-de-nos-appareils-n-a-rien-d-anodin-.html#product-presentation)**,** une infographie de l'ADEME.",
     "themes": [
       "energy",
@@ -3168,7 +3501,8 @@
       "G",
       "H",
       "Q"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 378,
@@ -3178,6 +3512,7 @@
     "shortDescription": "Les sols drainants permettent l'infiltration de l'eau de pluie et un meilleur rafraichissement.",
     "image": "/images/projet/revetement-permeable.webp",
     "longDescription": "Face aux canicules et au risque d'inondation, désimperméabiliser les revêtements de vos espaces extérieurs (cours, parking...) peut jouer un rôle majeur à la fois :\n\n- pour permettre l'infiltration de l'eau de pluie, la réduction des inondations et la recharge des nappes phréatiques ;\n\n- et pour diminuer l'effet d'îlot de chaleur urbain (où la chaleur est absorbée et réémise). Vous créez ainsi des espaces végétalisés jouant un rôle capital dans le refroidissement de l'air par évapotranspiration.\n\nPavés poreux, béton drainant, structure en nid d'abeille, gravier stabilisé... il existe divers solutions de revêtements perméables qui peuvent s'adapter à vos usages et vos objectifs. De couleur claire, ils reflèteront davantage la chaleur. Végétalisés, les revêtements permettront l'évaporation de l'eau. Ce type de revêtement peut vous permettre de diminuer la température de surface de 6°C en journée et ainsi d'augmenter significativement le confort de vos équipes et de votre clientèle.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Désimperméabiliser les villes**](https://librairie.ademe.fr/urbanisme-territoires-et-sols/8132-desimpermeabiliser-les-villes-guide-operationnel-pour-redecouvrir-les-sols-urbains.html). Un guide opérationnel pour (re)découvrir les sols urbains, par l'ADEME.\n- [**Désimperméabilisation et renaturation des sols**](https://www.cerema.fr/fr/actualites/desimpermeabilisation-renaturation-sols-serie-fiches-du) : une série de fiches du Cerema.",
     "themes": [
       "building",
@@ -3220,7 +3555,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 401,
@@ -3230,6 +3566,7 @@
     "shortDescription": "Un utilitaire propre émet peu de CO₂ et consomme peu ou pas d’énergie fossile.",
     "image": "/images/projet/utilitaire-camion-propre.webp",
     "longDescription": "La livraison et le transport de marchandises ont un fort impact sur l'émission de gaz à effet de serre et la pollution aux particules fines.\n\nRemplacer votre camionnette thermique par un utilitaire électrique ou hybride contribue à améliorer la qualité de l'air en milieux urbain, rural et péri-urbain.\n\nDans un contexte où les réglementations environnementales se durcissent et où les zones à faibles émissions (ZFE) se multiplient, acquérir un petit utilitaire propre vous permet aussi de garantir la continuité de votre activité sans restriction.\n\nDes aides financières ou des prêts à taux préférentiels peuvent vous aider à acquérir les utilitaires nécessaire à votre entreprise.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Verdir ma flotte**](https://verdirmaflotte.fr/), un outil pour comparer le coût et les émissions des énergies alternatives pour le renouvellement de votre flotte de véhicules.\n- [**Circuler en zone à faible émission mobilité**](https://entreprendre.service-public.fr/vosdroits/F38025), que dit la règlementation ?",
     "themes": [
       "mobility"
@@ -3273,7 +3610,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 434,
@@ -3283,6 +3621,7 @@
     "shortDescription": "La méthanisation produit du biogaz à partir de déchets et résidus agricoles.",
     "image": "/images/projet/methanisation.webp",
     "longDescription": "La méthanisation est un processus biologique qui consiste à décomposer des matières organiques (déchets agricoles, déchets industriels, déchets ménagers, boues d'épuration...) pour produire du biogaz, un gaz renouvelable, ainsi que du digesta**t**, un résidu organique riche en nutriments.\\\nLe biogaz peut-être alors utilisé comme source d'énergie (chaleur, carburant, source d'électricité) et le digestat comme fertilisant pour les sols, à condition d'en éliminer préalablement les bactéries pathogènes.\n\nLa méthanisation permet ainsi de valoriser les déchets organiques en énergie et en engrais, réduisant ainsi les coûts et les impacts liés à leur traitement. Vous pouvez également utiliser le biogaz produit pour répondre aux besoins énergétiques de votre entreprise ou le vendre à des réseaux de distribution (injection dans le réseau de gaz naturel).",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Méthanisation**](https://infos.ademe.fr/magazine-fevrier-2022/faits-et-chiffres/les-chiffres-cles-de-la-methanisation/), Définition et chiffres clés par l'ADEME.\n- [**L'élu, la méthanisation et le biogaz**](https://amorce.asso.fr/publications/guide-l-elu-la-methanisation-et-le-biogaz-enp78), un guide de l'association AMORCE, pour saisir les enjeux de la production de biogaz.",
     "themes": [
       "energy",
@@ -3310,7 +3649,8 @@
       "A",
       "B",
       "D"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 467,
@@ -3320,6 +3660,7 @@
     "shortDescription": "Mettre en place une démarche structurée afin de piloter en continu l’efficacité énergétique de votre entreprise",
     "image": "/images/projet/management-energie.webp",
     "longDescription": "Mettez en place une démarche cohérente et structurée, afin de contrôler, surveiller et améliorer en continu l’efficacité énergétique de votre entreprise, ainsi que vos émissions de carbone.\n\nAu sein de vos équipes, vous pouvez nommer et former un référent énergie qui assurera une veille continue pour éviter le gaspillage et identifiera des gains possibles pour réduire la consommation. \n\nAvec la mise en place d'un système de management de l'énergie certifié ISO 50001, vous pouvez économiser entre 10 % et 25 % de la facture énergétique annuelle de l'entreprise.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Mettre en place un système de management de l’énergie**](https://agirpourlatransition.ademe.fr/entreprises/demarche-decarbonation-industrie/systeme-management-energie) par l'ADEME\n- [**Norme ISO 50001**](https://www.iso.org/fr/iso-50001-energy-management.html) **-** La norme internationale conçue pour aider les organisations à améliorer leurs performances énergétiques\n- [**Les missions du référent énergie**](https://atee.fr/system/files/2019-12/2015-MDE-%20Fiche%20Fonction%20des%20R%C3%A9f%C3%A9rents%20Energie.pdf#:~:text=Le%20r%C3%A9f%C3%A9rent%20%C3%A9nergie%20doit%20%C3%AAtre%20capable%20de%20%3A,prestations%20%C3%A9nerg%C3%A9tiques.%20Suivre%20la%20r%C3%A9alisation%20d%E2%80%99un%20audit%20%C3%A9nerg%C3%A9tique.), une fiche technique des missions et activités du référent énergie en entreprise.",
     "themes": [
       "energy",
@@ -3360,7 +3701,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 566,
@@ -3370,6 +3712,7 @@
     "shortDescription": "Le train, un mode de transport à haute efficacité énergétique",
     "image": "/images/projet/train.webp",
     "longDescription": "Réduire l’empreinte carbone liée aux déplacements professionnels est un levier essentiel pour les entreprises qui engagent leur transition écologique. Parmi les solutions les plus efficaces et accessibles, le train se distingue par son excellent bilan environnemental. En remplaçant les trajets professionnels effectués en voiture ou en avion par des voyages en train, votre entreprise réduit considérablement ses émissions tout en conservant confort, rapidité et praticité.\n\nPrenons l’exemple concret d’un trajet Nantes-Paris. Les émissions sont les suivantes :\n\n- Train : 1,2 kg de CO₂\n\n- Voiture thermique : 84 kg de CO₂\n\n- Avion : 88,5 kg de CO₂\n\nAinsi, choisir le train pour ce trajet réduit les émissions de CO₂ d’environ 98 % par rapport à la voiture ou l’avion.\\\nEn intégrant le train dans votre politique de mobilité, votre entreprise peut réaliser des réductions significatives d'émissions de CO₂, contribuant ainsi activement à la lutte contre le changement climatique.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Calculer l'impact carbone de vos trajets**](https://impactco2.fr/outils/transport) en fonction du moyen de transport, avec l'outil Impact CO2.\n- [**Faire essayer pour faire adopter : l'opération \"Allez-vous préférer le train ?\"**](https://librairie.ademe.fr/societe-et-politiques-publiques/6517-faire-essayer-pour-faire-adopter-l-operation-allez-vous-preferer-le-train-.html), par l'ADEME.",
     "themes": [
       "mobility"
@@ -3409,7 +3752,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 567,
@@ -3419,6 +3763,7 @@
     "shortDescription": "Le couvert végétal prévient la pollution et améliore la fertilité des terres agricoles.",
     "image": "/images/projet/couvert-vegetal.webp",
     "longDescription": "Le **couvert végétal**, aussi appelé plante de couverture, est une pratique d’**agriculture durable** qui protège et régénère vos sols. En grandes cultures, il prend souvent la forme de **couverts intermédiaires**, semés entre deux productions principales.\n\nAdopter le couvert végétal sur votre **exploitation agricole**, c’est profiter d’avantages concrets :\n\n- réduction des adventices et meilleure maîtrise des intrants,\n\n- limitation des pertes d’**engrais** et de la **pollution diffuse**,\n\n- enrichissement du sol grâce à la fixation d’**azote** par les légumineuses,\n\n- développement de la **biodiversité fonctionnelle**,\n\n- sol plus fertile avec une meilleure **rétention d’eau**.\n\nEn France, la surface en couverts est passée à 2,9 millions d’hectares en 2022. L’objectif fixé est 4,8 millions d’ici 2030, soit une progression de 65 %.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Les principales étapes pour réussir vos couverts végétaux et les valoriser**](https://landes.chambres-agriculture.fr/sinformer/produire-innover/productions-vegetales/couverts-vegetaux)**,** par la Chambre d’agriculture des Landes.\n- [**L'agroforesterie, un enjeu pour les paysages agricoles**](https://infos.ademe.fr/agriculture-alimentation/2025/agroforesterie-redonner-de-la-valeur-a-larbre-pour-transformer-nos-paysages-agricoles/), par l'ADEME.",
     "themes": [
       "biodiversite",
@@ -3442,7 +3787,8 @@
     "highlightPriority": null,
     "sectors": [
       "A"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 632,
@@ -3452,13 +3798,13 @@
     "shortDescription": "L'agroécologie intègre les principes écologiques dans les pratiques agricoles pour créer des systèmes alimentaires durables.",
     "image": "/images/projet/agroecologie.webp",
     "longDescription": "L'agroécologie repose sur une gestion des terres agricoles qui **préserve la biodiversité, protège les ressources** naturelles et **limite l'impact** **environnemental** de l'agriculture tout en répondant aux besoins humains. \\\nElle vise à créer des systèmes agricoles résilients, équilibrés et durables sur le long terme, en favorisant des techniques comme :\n\n- la **rotation des cultures**,\n- l'utilisation de **couverts végétaux**,\n- la **diversification** des cultures,\n- l'**intégration de l'élevage** et de l'agriculture afin de maximiser les synergies entre eux,\n- la **gestion responsable des sols et de l'eau**,\n- l'adoption de **pratiques respectueuses des communautés locales** et de leur culture.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**L’énergie de l’agroécologie, une solution pour le climat,**](https://agriculture-de-conservation.com/sites/agriculture-de-conservation.com/IMG/pdf/carbone-organique-sol.pdf) un guide de l'ADEME.\n- [**L'agriculture face au changement climatique**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/8012-l-agriculture-face-au-changement-climatique.html#product-presentation), une infographie proposée par l'ADEME.",
     "themes": [
       "biodiversite"
     ],
     "mainTheme": "biodiversite",
     "programs": [
-      "etude-methanisation",
       "investissement-biognv-agricole-et-territorial",
       "sobriete-et-resilience-des-territoires",
       "pret-vert",
@@ -3476,7 +3822,8 @@
     "highlightPriority": null,
     "sectors": [
       "A"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 666,
@@ -3486,6 +3833,7 @@
     "shortDescription": "Limiter la production de déchets et le gaspillage en adoptant des alternatives durables.",
     "image": "/images/projet/tourisme-zero-dechet.webp",
     "longDescription": "Les entreprises du tourisme ont un rôle important à jouer en réduisant significativement leurs déchets. \\\nDans un restaurant, l’utilisation de contenants consignés et des boîtes apportées par le client pour la vente à emporter, la réduction des emballages inutiles, le libre-service et la réduction des portions de nourriture, l’achat en vrac et en grand conditionnement auprès de vos fournisseurs permettent d'adopter une démarche zéro déchet et de réduire le gaspillage alimentaire.\n\nDans un hébergement, la mise en place des distributeurs de savon et de shampoing rechargeables, le remplacement des mini-produits par des alternatives durables, la suppression des emballages individuels au petit-déjeuner et la réutilisation du linge (serviettes changées sur demande) sont autant de solutions efficaces. Privilégier les fournisseurs locaux et les produits écoresponsables permet aussi de réduire l’empreinte écologique.\n\nChaque action, même minime, contribue à un tourisme plus respectueux de l’environnement.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Actions antigaspi dans la restauration collective et l'hôtellerie**](https://librairie.ademe.fr/consommer-autrement/6318-actions-antigaspi-dans-la-restauration-collective-et-l-hotellerie.html), un guide de l'ADEME\n- [**L’hébergement touristique à l’heure du Zero Waste**](https://www.zerowastefrance.org/wp-content/uploads/2018/03/lhebergement-touristique-a-lheure-du-zero-waste_dossier-du-mois-mars-2016.pdf), par l'association Zero Waste France\n- [**Le guide zéro déchets campings**](https://xrm.eudonet.com/xrm/at?tok=A9F448AD&cs=SEZCpsM48jgTHWP5emNUROM2jfb2JLfQxJv8Zn4Q8GzupqCQtgwsMmvqQb1xsaogdpobAHnvBwM%3d&p=26qteH2RHB75Srxr9exCyZtuQapRPQymr7apV-BBwo72rTj7VYzAyvA-PCFClMtjSR1An0IGAxQ%3d)**,** par la Fédération nationale de l'hôtellerie de plein air",
     "themes": [
       "waste"
@@ -3504,7 +3852,8 @@
     "highlightPriority": null,
     "sectors": [
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 667,
@@ -3514,6 +3863,7 @@
     "shortDescription": "Réutiliser des matériaux dans le bâtiment permet de réduire les déchets et de préserver les ressources.",
     "image": "/images/projet/materiaux-de-reemploi.webp",
     "longDescription": "Le réemploi dans la rénovation consiste à réutiliser des matériaux et équipements issus de la déconstruction ou de la rénovation de bâtiments. Briques, tuiles, carrelage, parquets, cloisons, sanitaires, mobilier, menuiseries, robinetterie, luminaires… Tous ces éléments peuvent être récupérés et intégrés à un nouveau projet, évitant ainsi la production de déchets de chantier, tout en limitant les émissions de CO₂ liées à l’extraction et à la fabrication de nouveaux matériaux.\n\nAu-delà de son impact environnemental positif, le réemploi permet de réduire significativement les coûts d’achat des matériaux. Pour s’approvisionner en matériaux de réemploi, il existe aujourd’hui des plateformes spécialisées qui collectent, trient et revendent ces éléments à des prix souvent plus avantageux que le neuf.\n\nEn intégrant le réemploi dans votre projet de rénovation, vous faites le choix d’un aménagement à la fois durable et économique, contribuant efficacement à la transition écologique.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Économie circulaire : comment ça marche ?**](https://librairie.ademe.fr/ged/928/infographie-economie-circulaire-comment-ca-marche.pdf) Une infographie proposée par l'ADEME.\n- [**Réemploi des matériaux et produits de construction dans le bâtiment**](https://www.ffbatiment.fr/techniques-batiment/performance-environnementale-batiments/reduction-carbone/dossier/reemploi-materiaux-produits-construction-dans-batiment), par la Fédération Française du Bâtiment",
     "themes": [
       "building"
@@ -3549,7 +3899,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 699,
@@ -3559,6 +3910,7 @@
     "shortDescription": "Les produits biosourcés sont issus de matières naturelles et limitent notre dépendance au pétrole.",
     "image": "/images/projet/biosource.webp",
     "longDescription": "Issus de matières **végétales ou animales**, de champignons ou encore de bactéries, les produits biosourcés vous permettent de **limiter l'utilisation du pétrole**, une ressource qui se raréfie et qui génère à la fois pollution et émissions de gaz à effet de serre.\n\nDans les secteurs de l'industrie, de la construction ou de l'agriculture, par exemple, utiliser des matières premières biosourcées présente de nombreux attraits :\n\n- il s'agit d'une **ressource renouvelable et locale** qui présente des perspectives d'innovation et de création d'emplois ;\n- les matériaux biosourcés s'inscrivent dans l'**économie circulaire** et offrent un potentiel de revenus supplémentaires pour les producteurs qui peuvent revendre leurs ressources au secteur du bâtiment ou aux sites de transformation ;\n- le cycle de vie des matériaux biosourcés émet une **faible empreinte carbone** ;\n- les matériaux biosourcés ont des **propriétés intéressantes** (thermiques, acoustiques...)\n- l'utilisation de ces matériaux peut vous permettre de **valoriser votre engagement** et d'obtenir des labellisations.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Tout comprendre : les produits biosourcés**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/7620-tout-comprendre-les-produits-biosources-9791029723506.html#product-presentation), un guide de l'ADEME en dix questions.\n- [**Bilan thématique Bâtiment Bois construction et matériaux biosourcés**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/4651-bilan-thematique-batiment-bois-construction-et-materiaux-biosources-9791029717895.html#product-presentation), du Programme d'investissements d'avenir (PIA).\n- [**Matériaux biosourcés : usages et avantages pour l'éco-construction et les entreprises**](https://bigmedia.bpifrance.fr/nos-dossiers/materiaux-biosources-usages-et-avantages-pour-leco-construction-et-les-entreprises), par Bpifrance.",
     "themes": [
       "eco-design",
@@ -3586,7 +3938,8 @@
       "E",
       "F",
       "G"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 731,
@@ -3596,6 +3949,7 @@
     "shortDescription": "Transférer les déplacements de vos collaborateurs vers des modes de transport moins polluants.",
     "image": "/images/projet/report-modal.webp",
     "longDescription": "La transition des mobilités de votre entreprise, appelée aussi \"report modal\", vise à réduire votre empreinte carbone en repensant vos modes de transport. Il s'agit de transférer vos trajets, ainsi que ceux de vos équipes depuis des modes polluants (voitures thermiques, avions…) vers des alternatives durables telles que le train, le vélo, le covoiturage, ou encore la voiture électrique. Par exemple, privilégier les transports en commun pour les trajets professionnels quotidiens permet de réduire les émissions par passager tout en désengorgeant les routes et en diminuant la consommation d’énergie.\\\nPour initier cette transition des mobilités, commencez par identifier les modes de transport les plus fréquents et polluants de vos équipes, puis explorez des solutions alternatives pour transférer progressivement vos déplacements vers des modes non polluants.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables. Comment engager la transition ?**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf), un guide gouvernemental.",
     "themes": [
       "mobility"
@@ -3649,7 +4003,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 764,
@@ -3659,6 +4014,7 @@
     "shortDescription": "Verdir une flotte maritime réduit consommation de carburant, émissions atmosphériques et rejets polluants des navires.",
     "image": "/images/projet/navires-propres.webp",
     "longDescription": "**Qu’il s’agisse de navires de transport de marchandises ou de bateaux de plaisance, la flotte maritime reste souvent énergivore et responsable d’importants rejets polluants.**\\\nVerdir votre flotte permet de réduire cet impact tout en optimisant vos coûts. Pour cela, plusieurs actions concrètes peuvent être mises en œuvre :\n\n- Adopter des navires plus économes en énergie, en intégrant des technologies qui optimisent la vitesse, l’itinéraire et l’entretien des moteurs, afin de limiter la consommation de carburant et d’améliorer la rentabilité des opérations ;\n\n- Choisir des navires éco-conçus, réduisant les émissions de gaz à effet de serre grâce à des moteurs et technologies plus propres, des matériaux durables et légers, des systèmes de gestion de l’énergie performants, et une meilleure prise en compte du recyclage en fin de vie ;\n\n- Optimiser la gestion des déchets et intégrer des énergies renouvelables pour rendre votre flotte plus propre, plus durable et plus respectueuse de l’environnement.\n\nUne flotte décarbonée, alimentée par des énergies renouvelables et peu polluante, constitue une alternative crédible et efficace au fret routier et au transport aérien.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Comment réduire la pollution des transports maritimes ?**](https://www.dispositif-reponses.org/cles-pour-comprendre/boite-a-outils/comment-reduire-la-pollution-des-transports-maritimes-) par la Direction Interrégionale de la Mer Méditerranée.\n- **Comment [réduire les émissions de gaz à effet de serre provenant des navires](https://www.imo.org/fr/MediaCentre/HotTopics/pages/reducing-greenhouse-gas-emissions-from-ships.aspx),** par l'Organisation Maritime Internationale (OMI).\n- [**Bilan thématique Navire**](https://librairie.ademe.fr/mobilite-et-transports/708-bilan-thematique-navire-edition-2020.html), un panorama des projets de navire propre à la recherche de solutions moins polluantes, par l'ADEME.",
     "themes": [
       "mobility"
@@ -3687,7 +4043,8 @@
     "sectors": [
       "B",
       "H"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 797,
@@ -3697,6 +4054,7 @@
     "shortDescription": "Transformez une friche en opportunité sans consommer de nouveaux terrains naturels ou agricoles.",
     "image": "/images/projet/friche-industrielle.webp",
     "longDescription": "Vous avez un projet d’activité, mais peu de terrain disponible ? Pensez aux friches ! Ces espaces déjà artificialisés peuvent accueillir des projets d’entreprise (locaux, production, stockage, bureaux, etc.) sans empiéter sur des terres agricoles ou naturelles.\\\nEn réutilisant une friche, vous valorisez un terrain souvent bien situé et vous limitez l’impact environnemental de votre projet. Même si le sol est pollué, des aides existent pour financer les études, la dépollution ou les travaux.\\\nC’est aussi une façon concrète de contribuer à la transition écologique, en réduisant l’artificialisation des sols tout en donnant un nouvel usage à un espace délaissé.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**La reconquête des friches**](https://librairie.ademe.fr/urbanisme-territoires-et-sols/5458-la-reconquete-des-friches-l-ademe-vous-accompagne-9791029719462.html#product-presentation), un guide de l'ADEME pour y parvenir.\n- [**Réhabiliter les friches : opportunités et méthodologie**](https://www.cerema.fr/fr/actualites/rehabiliter-friches-opportunites-methodologie)**,** un dossier thématique Céréma.",
     "themes": [
       "building",
@@ -3722,7 +4080,8 @@
       "G",
       "H",
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 863,
@@ -3732,6 +4091,7 @@
     "shortDescription": "La cyclologistique est le transport de marchandises à l'aide d'un vélo.",
     "image": "/images/projet/cyclologistique.webp",
     "longDescription": "En ville, le transport et la livraison de marchandises est polluant, bruyant et consommateur d'espace public (stationnement, embouteillages...). La cyclologistique vous permet de reporter une partie de ces flux sur le vélo, un mode de transport écologique et doux.\n\nEn favorisant des fournisseurs qui utilisent la cyclologistique ou en faisant vous-même l'acquisition de vélo-cargos ou de cycles à assistance électrique, vous contribuez à réduire l'émission des gaz à effet de serre et à désencombrer les rues des utilitaires. Vous affichez également les ambitions écologiques et responsables de votre entreprise !",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Les vélos cargos pour optimiser la logistique décarbonée du dernier kilomètre**](https://librairie.ademe.fr/mobilite-et-transports/5903-les-velos-cargos-pour-optimiser-la-logistique-decarbonee-du-dernier-kilometre.html), par l'ADEME.\n- [**Panorama de la cyclologistique en France**](https://lesboitesavelo.org/wp-content/uploads/2025/02/Observatoire-des-cyclomobilites-professionnelles-2024-Interactif.pdf), état des lieux, enjeux et recommandations pour la filière cyclologistique par L’association Boîtes à Vélo.\n- [**Le guide pour réussir sa transition vers le vélo cargo,**](https://lesboitesavelo.org/wp-content/uploads/2025/07/Guide-Reussir-sa-transition-vers-le-velo-cargo_Boites-a-velo.pdf) par L’association Boîtes à Vélo\n- [**Sensibilisation à la cyclocargologie**](https://cyclocargologie.fr/evenements/)**,** évènements et webinaires autour de la cyclologistique.",
     "themes": [
       "mobility"
@@ -3754,7 +4114,8 @@
     "sectors": [
       "G",
       "H"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 896,
@@ -3764,6 +4125,7 @@
     "shortDescription": "L'écoconduite vise à adapter sa conduite pour diminuer consommation de carburant et émissions de CO₂.",
     "image": "/images/projet/ecoconduite.webp",
     "longDescription": "Face à la hausse du prix du carburant et à l’urgence climatique, changer sa façon de conduire peut réduire fortement sa consommation et ses émissions. Pour les trajets courts, privilégiez la marche, le vélo ou les transports en commun. Et si vous utilisez la voiture, pensez au covoiturage et à l’écoconduite pour faire des économies.\n\nL’écoconduite permet d’économiser jusqu’à 15 % de carburant, soit environ un plein tous les six mois. Concrètement, cela passe par :\n\n- Conduire sans à-coups et jamais en surrégime\n\n- Diminuer votre vitesse de 10 km/h sur autoroute\n\n- Éviter la climatisation quand elle n'est pas absolument nécessaire\n\n- Couper le moteur pour les arrêts supérieurs à 10 secondes\n\n- Avoir des pneus basse-consommation, bien gonflés\n\n- Vérifier l'état des filtres à air et à huile de votre voiture\n\nL’adoption de l’écoconduite permet à votre entreprise de limiter ses dépenses en carburant, de réduire l’usure des véhicules et d’optimiser la gestion de sa flotte, tout en impliquant les équipes dans une démarche concrète de transition écologique.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Comment consommer moins de carburant ?**](https://librairie.ademe.fr/mobilite-et-transport/5432-comment-consommer-moins-de-carburants-.html#/44-type_de_produit-format_electronique), une infographie de l'ADEME.\n- [**Les mesures anti-pollution sur les routes**](https://www.securite-routiere.gouv.fr/chacun-son-mode-de-deplacement/dangers-de-la-route-en-voiture/mieux-conduire-en-voiture/eco), une fiche du gouvernement et de la Sécurité Routière.",
     "themes": [
       "mobility"
@@ -3808,7 +4170,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 929,
@@ -3818,6 +4181,7 @@
     "shortDescription": "Réduisez les émissions de transport en choisissant des fournisseurs proches de votre entreprise.",
     "image": "/images/projet/fournisseurs-locaux.webp",
     "longDescription": "Privilégier des fournisseurs locaux consiste à intégrer la dimension géographique dans vos décisions d’achat. Cela permet de limiter les distances de transport, de réduire les émissions de gaz à effet de serre et de renforcer les relations économiques locales. En complément, le choix de modes de livraison moins polluants (véhicules électriques, cyclologistique, fret ferroviaire…) permet d’améliorer encore l’empreinte carbone de votre activité. Cette démarche peut s’amorcer par les actions suivantes :\n\n- Identifier vos postes d’achats principaux et leurs impacts environnementaux\n\n- Cartographier vos fournisseurs actuels pour évaluer leur localisation et leurs pratiques\n\n- Rechercher des alternatives locales ou plus responsables dans chaque catégorie d’achat\n\n- Intégrer des clauses durables dans les appels d’offres et contrats (localisation, mode de transport, certification RSE, etc.)\n\n- Sensibiliser vos équipes aux enjeux et aux nouveaux critères d’achat\n\n- Évaluer régulièrement la performance de la démarche (indicateurs CO₂, part de fournisseurs locaux, etc.)",
+    "titleMoreDescription": "",
     "moreDescription": "- **Achats courants et matières premières : adoptez une stratégie plus responsable** (ADEME)\n- [**Choisir un fournisseur local et durable**](https://bigmedia.bpifrance.fr/nos-dossiers/comment-mettre-en-place-une-politique-dachats-responsables-dans-votre-entreprise). (Bpifrance)\n- [**Fiches-outils \"achats éco-responsables**](https://www.economie.gouv.fr/dae/publications-et-textes/fiches-outils-achats-eco-responsables)\" pour vous aider à structurer vos critères de choix de fournisseurs par typologie d'achat. (DAE)",
     "themes": [
       "mobility"
@@ -3852,7 +4216,8 @@
       "R",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 962,
@@ -3862,6 +4227,7 @@
     "shortDescription": "Les véhicules intermédiaires, légers, économiques et non polluants peuvent remplacer l'automobile.",
     "image": "/images/projet/vehicule-intermediaire.webp",
     "longDescription": "Connaissez-vous les véhicules intermédiaires ou Vélis ? Cette famille de véhicules entre le vélo classique et la voiture comprend tous les modes de transport de moins de 600 kg, allant de 25 à 90 km/h. Il peut s'agir, par exemple, d'un vélo cargo, d'un tricycle protégé, un vélo-taxi ou d'une voiturette électrique.\\\nNon polluants, non bruyants, peu encombrants, et dix fois moins coûteux qu'une automobile, les véhicules intermédiaires constituent une excellente alternative en milieux urbains, péri-urbains et ruraux, qu'il s'agisse :\n\n- des déplacements de vos collaborateurs et de leurs familles,\n- des livraisons,\n- de la mise à disposition de véhicules pour vos clients.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Les véhicules intermédiaires : un levier pour décarboner la mobilité ?**](https://fresquedelamobilite.org/les-vehicules-intermediaires-leviers-de-decarbonation/), un article de la Fresque de la mobilité.\n- [**Le potentiel des véhicules intermédiaires**](https://www.cerema.fr/system/files/documents/2023/11/8_durlin_vehicules_intermediaires_0.pdf)**,** un rapport du CEREMA.",
     "themes": [
       "mobility"
@@ -3899,7 +4265,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 995,
@@ -3909,6 +4276,7 @@
     "shortDescription": "Transférer le transport de marchandises vers le rail, le fluvial ou le maritime, moins polluants.",
     "image": "/images/projet/fret-faible-impact.webp",
     "longDescription": "Le secteur du transport et de la logistique, majoritairement fondé sur l’usage de poids lourds, est l’un des principaux émetteurs de gaz à effet de serre et de polluants atmosphériques.\\\nFace à l’urgence climatique et aux contraintes croissantes pesant sur la route (Zones à Faibles Émissions, saturation du réseau, hausse des péages…), le secteur doit évoluer.\\\nChoisir des modes de transport plus propres comme le ferroviaire, le fluvial ou le maritime — qui émettent jusqu’à cinq fois moins de CO₂ que la route — constitue une solution fiable, moins exposée aux aléas routiers.\\\nTravailler avec des chargeurs et partenaires engagés dans une démarche bas carbone devient aussi un levier de différenciation et de compétitivité.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Comment limiter la pollution du trafic routier ?**](https://librairie.ademe.fr/air/658-comment-limiter-la-pollution-du-trafic-routier-.html#product-presentation), une infographie de l'ADEME.\n- [**Le transport routier de marchandises**](https://www.statistiques.developpement-durable.gouv.fr/transport-routier-de-marchandises), les données statistiques nationales, par le ministère de la transition écologique.\n- [**Le guide du transport combiné rail-route**](https://gntc.fr/wp-content/uploads/2025/05/Guide-Transport-combine-GNTC-Digitale-Mai-2025.pdf), par le GNTC en partenariat avec l'ADEME",
     "themes": [
       "mobility"
@@ -3929,7 +4297,8 @@
     "highlightPriority": null,
     "sectors": [
       "H"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 996,
@@ -3939,6 +4308,7 @@
     "shortDescription": "Le verdissement des bateaux réduit énergie consommée et rejets polluants dans rivières, fleuves, bassins, canaux.",
     "image": "/images/projet/bateaux-propres.webp",
     "longDescription": "Le transport fluvial offre de nombreux atouts sur le plan écologique et constitue une excellente alternative au fret routier et au transport aérien.\\\nÀ condition, bien sûr, que les bateaux de plaisance et de marchandises ne soient pas eux-mêmes énergivores ni à l’origine de rejets polluants importants.\n\nPour verdir votre flotte fluviale, plusieurs leviers peuvent être activés :\n\n- L’électrification totale ou partielle des moteurs, associée à une infrastructure de recharge adaptée ;\n\n- Le recours à des technologies plus propres (BioGNL, BioGNC, hydrogène, biocarburants), avec ou sans modification lourde de la motorisation ;\n\n- L’adoption d’un logiciel de gestion de flotte (meilleur routage, vitesse optimisée...) pour réduire la consommation énergétique ;\n\n- L’amélioration de la conception des bateaux et l’intégration d’énergies renouvelables (matériaux composites, meilleur tirant d’eau, voiles rigides, panneaux solaires...) ;\n\n- La formation à l’éco-navigation et le développement d’une culture de la sobriété dans les pratiques quotidiennes du personnel de bord.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Impact Air Climat du transport fluvial**](https://librairie.ademe.fr/mobilite-et-transports/6473-impact-air-climat-transport-fluvial-etude-bibliographique.html), une étude de l'ADEME.\n- [**La feuille de route de la transition écologique**](https://www.vnf.fr/vnf/dossiers-actualitess/fluent-la-feuille-de-route-de-la-transition-expertisee-par-vnf/) par VNF (Voies Navigables de France).",
     "themes": [
       "mobility"
@@ -3965,7 +4335,8 @@
       "D",
       "F",
       "H"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 997,
@@ -3975,6 +4346,7 @@
     "shortDescription": "Optimiser le transport de vos marchandises réduit votre consommation d'énergie et vos émissions de CO2.",
     "image": "/images/projet/plan-action-logistique.webp",
     "longDescription": "Avant de mettre en œuvre des actions logistiques, il est essentiel de partir d’un diagnostic. En analysant vos flux, vos modes de transport, et vos indicateurs actuels, vous identifiez précisément les leviers à activer pour gagner en efficacité et réduire votre empreinte carbone.\n\nSur cette base, vous pouvez construire un plan d’action logistique adapté à votre activité, combinant performance économique et transition écologique.\n\nPlusieurs pistes concrètes peuvent être explorées :\n\n- Améliorer le taux de chargement de vos camions pour éviter les trajets à vide (ex. : mutualisation des flux, réduction du vide dans les colis)\n\n- Optimiser vos tournées grâce au zonage ou à des outils de planification intelligente\n\n- Mutualiser les plateformes logistiques avec d’autres acteurs\n\n- Déployer des solutions de transport urbain bas carbone (cyclologistique, véhicules propres…)\n\n- Reporter une partie du transport routier vers le rail, le fluvial ou le maritime\n\n- Intégrer des indicateurs carbone dans vos objectifs de pilotage",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Commerce en ligne : Impacts environnementaux de la logistique, des transports et des déplacements**](https://librairie.ademe.fr/societe-et-politiques-publiques/6261-commerce-en-ligne-impacts-environnementaux-de-la-logistique-des-transports-et-des-deplacements.html), une étude de l'ADEME.\n- [**La fabrique de la logistique**](https://www.lafabriquedelalogistique.fr/), des projets d'intérêts généraux portés par les acteurs de la logistique.",
     "themes": [
       "mobility"
@@ -3997,7 +4369,8 @@
     "sectors": [
       "B",
       "H"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 998,
@@ -4007,6 +4380,7 @@
     "shortDescription": "Un véhicule lourd est \"propre\" s’il émet peu de CO₂ et consomme peu d’énergie fossile.",
     "image": "/images/projet/vehicule-lourd-propre.webp",
     "longDescription": "Poids lourds, autobus... le secteur du transport routier de marchandises et de voyageurs est le principal émetteur de gaz à effet de serre et de pollution de l'air. Les moteurs diesel génèrent des émissions de CO₂, d'oxydes d'azote (NOx) et de particules fines, contribuant au réchauffement climatique et aux problèmes de santé publique.\n\nEn choisissant un véhicule lourd électrique, hybride ou en verdissant votre flotte de poids lourds, vous contribuez à décarboner le secteur du transport et à améliorer significativement la qualité de l'air. Les véhicules \"propres\" offrent aussi des avantages économiques. Bien que l'investissement initial soit plus élevé, les coûts de carburant et d'entretien sont réduits. De plus, des aides financières peuvent soutenir l’acquisition de ces véhicules lourds, tout en vous préparant à répondre aux exigences environnementales de plus en plus strictes.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Verdir ma flotte**](https://verdirmaflotte.fr/), un outil pour comparer le coût et les émissions des énergies alternatives pour le renouvellement de votre flotte de véhicules.\n- [**Normes d'émissions de CO₂ pour les véhicules utilitaires lourds**](https://ec.europa.eu/commission/presscorner/detail/fr/ip_23_762): La Commission européenne fournit des informations sur les normes d'émissions pour les véhicules utilitaires lourds, visant à réduire leur empreinte carbone.",
     "themes": [
       "mobility"
@@ -4026,7 +4400,8 @@
     "highlightPriority": null,
     "sectors": [
       "H"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1028,
@@ -4036,6 +4411,7 @@
     "shortDescription": "Intégrer des critères environnementaux, sociaux et éthiques dans les achats de votre entreprise.",
     "image": "/images/projet/achats-responsables.webp",
     "longDescription": "Une politique d’achats responsables vise à limiter les impacts négatifs de vos achats sur l’environnement et la société, tout en garantissant la performance de votre entreprise. Cela signifie choisir vos fournisseurs et produits en fonction de critères durables : impact carbone, conditions sociales de fabrication, durabilité des matériaux, etc. Vous pouvez ainsi privilégier des produits locaux, reconditionnés ou issus de l’économie circulaire, mais aussi intégrer des clauses RSE dans vos contrats. Ces pratiques vous permettent de mieux maîtriser vos risques, d’anticiper les nouvelles réglementations comme la directive CSRD, et de renforcer la crédibilité de votre démarche RSE. C’est une approche progressive, accessible à toutes les entreprises, même petites, avec des gains concrets à la clé : coûts optimisés, image renforcée, conformité assurée.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Comment mettre en place une politique d’achats responsables dans votre entreprise ?**](https://bigmedia.bpifrance.fr/nos-dossiers/comment-mettre-en-place-une-politique-dachats-responsables-dans-votre-entreprise?) (Bpifrance)\n\n- [**Comment veiller au respect des droits de l’Homme au travail dans les chaînes d’approvisionnement ?**](https://www.economie.gouv.fr/files/files/directions_services/dae/doc/AR_guide_thematique_DH_VF.pdf?) (DAE)\n\n- [**Découvrez l'ISO 20400**](https://www.iso.org/files/live/sites/isoorg/files/store/fr/ISO%2020400_Sustainable_procur.pdf), la norme internationale sur les achats responsables.\n\n- [**Les fiches-outils \"achats éco-responsables**](https://www.economie.gouv.fr/dae/publications-et-textes/fiches-outils-achats-eco-responsables)\" pour vous aider à structurer vos critères de choix de fournisseurs par typologie d'achat. (DAE)",
     "themes": [
       "rh",
@@ -4077,7 +4453,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1127,
@@ -4087,6 +4464,7 @@
     "shortDescription": "Réduire les risques pour la santé et l’environnement grâce à des pratiques d’hygiène plus sobres.",
     "image": "/images/projet/nettoyage.webp",
     "longDescription": "Les produits d’entretien classiques contiennent souvent des composés chimiques irritants et émettent des polluants volatils **nocifs pour la santé**. Selon l’Anses, 91 % des agents d’entretien sont exposés à au moins un produit dangereux, avec un risque accru de troubles respiratoires ou cutanés.\n\nIls ont aussi un **fort impact environnemental** : consommation d’eau, multiplication des emballages plastiques, rejets polluants dans les eaux usées. Adopter des alternatives sans chimie protège les personnes et la planète.\n\n\\\n**Quelques pistes pour agir :**\n\n- Privilégier le **nettoyage courant**, suffisant pour éliminer salissures et microbes. La désinfection doit rester ciblée (épidémies, pathogènes persistants).\n\n- Choisir les produits en équilibrant **efficacité et risques**, en consultant les **Fiches de Données de Sécurité (FDS)**.\n\n- Utiliser la **vapeur**, la **microfibre** ou l’**eau ozonée** pour un nettoyage sans chimie.\n\n- Impliquer les équipes (agents d’entretien, CHSCT, médecine du travail) pour **simplifier les protocoles**.\n\n- Favoriser du **mobilier facile à entretenir** et des **produits écolabellisés**.\n\n- Réduire le nombre de produits, éviter les **prêts à l’emploi** et privilégier les produits **rechargeables**.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**L'entretien des locaux dans les Établissements Recevant du Public**](https://www.appa.asso.fr/wp-content/uploads/2024/10/DGS-Lentretien-des-ERP-Version-Ultime.pdf?), guide proposé par l'APPA, axé sur les protocoles d’entretien adaptés aux ERP.\n- [**Comment choisir et acheter ses produits d'entretien ?**](https://www.appa.asso.fr/wp-content/uploads/2024/10/DGS-Lentretien-des-ERP-Version-Ultime.pdf), un guide à l'usage des acheteurs publics, par le Centre de gestion du département de l'Isère.\n- [**Éco nettoyage**](https://www.cpias-ile-de-france.fr/docprocom/doc/arsara-econettoyage-mai2021.pdf), guide de l'ARS dédié au secteur des soins, qui détaille les pratiques de nettoyage sans produits chimiques.",
     "themes": [
       "water"
@@ -4108,7 +4486,8 @@
     "sectors": [
       "I",
       "Q"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1160,
@@ -4118,6 +4497,7 @@
     "shortDescription": "Un four électrique est plus durable et plus économe en énergie qu'un four au gaz.",
     "image": "/images/projet/fours-industriels-electriques.webp",
     "longDescription": "Remplacer votre four industriel au gaz naturel par un four 100% électrique présente de nombreux intérêts :\n\n- la **durabilité** : les fours électriques sont moins coûteux à installer, à entretenir et nécessitent moins de réparation que les fours utilisant des combustibles fossiles ;\n- les **économies d'énergie** : les fours électriques consomment moins d'énergie que les fours au gaz naturel pour produire la même quantité de chaleur, ils contribuent à réduire considérablement la consommation de ressources ;\n- la précision et le **contrôle de la température** : les appareils électriques produisent une température constante, uniforme et contrôlée ;\n- la **décarbonation** de vos activités : n'utilisant pas de combustible fossile, les fours électriques n'émettent ni gaz à effet de serre ni polluants atmosphériques.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**L'énergie : un poste clé dans l'industrie**](https://librairie.ademe.fr/batiment/1846-energie-un-poste-cle-dans-l-industrie-l--9791029709159.html#), un guide de l'ADEME.",
     "themes": [
       "energy"
@@ -4140,7 +4520,8 @@
       "B",
       "C",
       "F"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1193,
@@ -4150,6 +4531,7 @@
     "shortDescription": "Elle permet d'améliorer les performances énergétiques de votre site industriel, en évitant la déperdition thermique.",
     "image": "/images/projet/isolation-tuyauterie.webp",
     "longDescription": "Isoler vos tuyauteries, vos équipements, ainsi que vos réseaux de fluides caloporteurs et frigoporteurs vous permet d'éviter la déperdition thermique et le gaspillage énergétique.\\\nCe procédé, aussi appelé **calorifugeage industriel**, consiste à envelopper les canalisations et les machines de matériaux isolants, tels que la laine de verre ou la laine de roche. Cela permet :\n\n- d'**éviter les fuites de chaleur** (qui peuvent aller jusqu’à 10°C entre la chaudière et le circuit d’eau chaude),\n- d'**améliorer les performances énergétiques** de votre site industriel,\n- de **diminuer les coûts**,\n- d'**améliorer votre empreinte carbone**.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Décarboner l'industrie, enjeux et défis**](https://librairie.ademe.fr/industrie-et-production-durable/7146-decarboner-l-industrie-9791029722974.html) : un guide de l'ADEME.",
     "themes": [
       "energy",
@@ -4175,7 +4557,8 @@
       "D",
       "E",
       "F"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1226,
@@ -4185,6 +4568,7 @@
     "shortDescription": "En réintégrant dans la production les déchets générés, vous créez une approche circulaire vertueuse.",
     "image": "/images/projet/zero-perte-en-production.webp",
     "longDescription": "Votre entreprise génère des chutes, des copeaux, des solvants ou des matières non conformes ?\\\nIl est souvent possible de **revaloriser** ces pertes directement dans vos processus.\\\nIl s'agit d'**identifier les flux internes** de déchets recyclables pour l**es réintégrer dans la production** (par broyage, filtration, fonte…).\\\nCette approche circulaire permet de :\n\n- **réduire l’achat de matières vierges,**\n- **diminuer les coûts** de tri et de traitement des déchets,\n- **renforcer votre autonomie** face aux hausses de prix,\n- **valoriser votre démarche environnementale.**",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Comment réduire et valoriser les déchets d’activités économiques ?**](https://economie-circulaire.ademe.fr/dechets-activites-economiques) par l'ADEME.\n- [**Gestion des déchets en entreprise, quelles exigences règlementaires ?**](https://entreprendre.service-public.fr/vosdroits/F37825) par Entreprendre.Service-Public.fr.",
     "themes": [
       "waste"
@@ -4220,7 +4604,8 @@
       "G",
       "H",
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1228,
@@ -4230,6 +4615,7 @@
     "shortDescription": "Un broyeur de végétaux vous permet de réduire et de réemployer vos déchets verts.",
     "image": "/images/projet/broyage-vegetaux.webp",
     "longDescription": "Afin de réduire la part des déchets verts déposés en déchetterie, et les coûts attenant au transport de ces déchets, investissez dans un broyeur de végétaux. Ainsi, vous mettez en place une logique circulaire en transformant vos déchets en végétaux en broyat, réutilisable notamment pour le paillage, le jardinage raisonné et l'éco-pâturage.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Conseils sur le broyage-paillage des déchets verts**](https://librairie.ademe.fr/economie-circulaire-et-dechets/4021-conseils-sur-le-broyage-paillage-des-dechets-verts.html), une fiche de l'ADEME.",
     "themes": [
       "waste"
@@ -4248,7 +4634,8 @@
       "A",
       "E",
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1260,
@@ -4258,6 +4645,7 @@
     "shortDescription": "La consigne permet à votre entreprise de réduire ses déchets grâce au réemploi des contenants.",
     "image": "/images/projet/consigne.webp",
     "longDescription": "La consigne consiste à mettre en place des **emballages réemployables** qui, une fois collectés, sont lavés puis remis en circulation. Cette pratique s’inscrit dans une logique d’**économie circulaire** et peut bénéficier à toutes les entreprises, quel que soit leur secteur.\n\nMettre en place la consigne, c’est :\n\n- **réduire vos déchets** et limiter votre impact environnemental ;\n\n- **diminuer vos coûts** liés aux emballages jetables à usage unique ;\n\n- **valoriser votre image de marque RSE** et vous **distinguer de la concurrence** par une solution innovante ;\n\n- **fidéliser vos clients** grâce à une offre plus responsable et durable.\n\nAvant d’être déployée, cette démarche doit faire l’objet d’une **évaluation de sa pertinence**, notamment au regard de l’échelle territoriale et du modèle économique envisagé. Lorsqu’elle est justifiée, la consigne constitue un **levier majeur de prévention des déchets** et de performance durable.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Emballages consignés**](https://www.ecologie.gouv.fr/politiques-publiques/emballages-consignes) : explication du dispositif, bénéfices et cadre public à connaître par le Ministère de la Transition écologique\n\n- [**La consigne pour réemploi**](https://librairie.ademe.fr/economie-circulaire-et-dechets/4592-consigne-pour-reemploi-et-recyclage-des-bouteilles-de-boissons.html) expliquée par l’ADEME.\n\n- [**France Consigne**](https://franceconsigne.fr/)**,** le groupement d’opérateurs nationaux du réemploi d’emballages, \\\n  qui accompagne la montée en puissance de la filière de réemploi.",
     "themes": [
       "waste"
@@ -4284,7 +4672,8 @@
       "A",
       "C",
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1261,
@@ -4294,6 +4683,7 @@
     "shortDescription": "Intégrez la longévité de vos produits et leur réparabilité dans les critères de fabrication.",
     "image": "/images/projet/allongement-duree-de-vie.webp",
     "longDescription": "Allonger la durée de vos produits consiste à prendre en compte leur **qualité** et leur **durabilité** dans le processus de fabrication.\n\nÀ l'opposé des produits jetables et du high tech (technologie de pointe, à haute consommation en carbone), vous pouvez **concevoir des produits durables, inspirés des principes du low tech** (technologies douces) :\n\n- **Réparabilité** : le consommateur doit pouvoir allonger la durée de vie de son produit ou de son appareil en faisant appel à un service de réparation ou en ayant accès facilement à des pièces détachées ;\n- **Faible impact** : minimisez l'utilisation des ressources rares et réduisez, de fait, la production de déchets ;\n- **Utilité :** concevez des produits qui répondent aux besoins fondamentaux des individus. Ainsi, vous réduisez les impacts négatifs de la surconsommation.",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Comment mettre en pratique l’écoconception en entreprise**](https://economie-circulaire.ademe.fr/ecoconception), une page ressource proposée par l’ADEME.\n- [**Analyse du cycle de vie**](https://bigmedia.bpifrance.fr/nos-dossiers/analyse-du-cycle-de-vie-definition-objectifs-etapes-de-realisation) : définition, objectifs, étapes de réalisation.\n- [**Valorisez votre démarche d'écoconception avec l'Écolabel européen**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen)**.**",
     "themes": [
       "eco-design"
@@ -4326,7 +4716,8 @@
       "F",
       "G",
       "H"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1391,
@@ -4336,6 +4727,7 @@
     "shortDescription": "Un engin non routier est \"propre\" s'il fonctionne avec des énergies renouvelables et émet peu de CO₂.",
     "image": "/images/projet/engins-propres.webp",
     "longDescription": "Engins de chantier, engins d'extraction, machines aéroportuaires, remontées mécaniques, matériel de manutention, machines industrielles... les engins de chantier sont des sources importantes d’émission de CO2, et de particules fines, contribuant à la pollution atmosphérique et au dérèglement climatique.\n\nEn remplaçant vos engins non routiers par des **engins plus propres (fonctionnant à l’électricité, au gaz, à l’hydrogène, hybrides…)**, vous contribuez à décarboner votre activité et à améliorer la qualité de l’air. Des aides financières peuvent vous aider à acquérir ces engins et à **pérenniser votre activité vis-à-vis des nouvelles normes environnementales.**",
+    "titleMoreDescription": "",
     "moreDescription": "- [**Émissions de particules lors de chantiers urbains et évaluation des mesures de prévention**](https://librairie.ademe.fr/air/5735-emissions-de-particules-lors-de-chantiers-urbains-et-evaluation-des-mesures-de-prevention.html), un guide de l'ADEME.\n- [**Quelle réglementation environnementale pour les entreprises du bâtiment ?**](https://bigmedia.bpifrance.fr/nos-dossiers/re2020-reglementation-environnementale-pour-les-entreprises-du-batiment) par Bpifrance.",
     "themes": [
       "mobility"
@@ -4364,6 +4756,56 @@
       "R"
     ],
     "metaTitle": "",
-    "metaDescription": ""
+    "metaDescription": "",
+    "faqs": []
+  },
+  {
+    "id": 1424,
+    "slug": "palettes-calage",
+    "title": "Palettes et calage",
+    "nameTag": "📦 palettes et calage",
+    "shortDescription": "Réduisez les matériaux de calage et l'usage de palettes dans le transport et l'entrepôt de vos produits.",
+    "image": "/images/projet/palettes-calage.webp",
+    "longDescription": "La loi AGEC prévoit la fin des emballages en plastique à usage unique d'ici 2040. Mettez-vous en conformité avec la réglementation en diminuant l’usage des matériaux d’emballage des palettes, des matériaux de calage et des palettes elles-mêmes.\n\n- Supprimez les emballages plastiques à usage unique de vos produits en mettant en place un dispositif de **réemploi des emballages**, en coopération avec vos clients et fournisseurs.\n- Remplacez les emballages plastiques de vos palettes par des **housses, sangles ou filets réemployables.**\n- Privilégiez les **matériaux de calage issus du recyclage** (textile recyclé en ouate, cartons griffés en lambeaux, frisure de bois).\n- **Réutilisez les palettes plusieurs fois**, à l’aide de la mise en place d’une logistique retour.",
+    "titleMoreDescription": "",
+    "moreDescription": "- [**Réemploi des emballages et alternatives aux emballages plastiques à usage unique**](https://librairie.ademe.fr/economie-circulaire-et-dechets/5301-reemploi-des-emballages-et-alternatives-aux-emballages-plastiques-a-usage-unique.html), un guide de l'ADEME.\n- [**Évaluation environnementale de la consigne pour le réemploi des emballages en verre**](https://librairie.ademe.fr/economie-circulaire-et-dechets/6359-evaluation-environnementale-de-la-consigne-pour-le-reemploi-des-emballages-en-verre-en-france.html), par l'Observatoire du réemploi et de la réutilisation.",
+    "themes": [
+      "waste",
+      "eco-design"
+    ],
+    "mainTheme": "waste",
+    "programs": [
+      "accelerateur-decarbonation",
+      "aides-au-reemploi-des-emballages",
+      "label-clef-verte",
+      "aide-financement-occitanie",
+      "cedre-investissement",
+      "sud-pret-climat",
+      "charte-zero-dechet-plastique",
+      "pret-ile-de-france",
+      "cap-transition-ecologique",
+      "aide-investissement-corse"
+    ],
+    "linkedProjects": [
+      3,
+      1260
+    ],
+    "priority": {
+      "default": 227
+    },
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "metaTitle": "",
+    "metaDescription": "",
+    "faqs": []
   }
 ]
