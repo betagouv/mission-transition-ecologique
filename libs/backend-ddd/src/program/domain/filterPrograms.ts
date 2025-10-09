@@ -17,15 +17,40 @@ export const filterPrograms = (
   rulesService: EligibilityEvaluator
 ): Result<ProgramTypeWithEligibility[], Error> => {
   const filteredPrograms: ProgramTypeWithEligibility[] = []
+  const filteredProgramsByJson: ProgramTypeWithEligibility[] = []
 
+  console.time('publicodes - All Programs')
   for (const program of programs) {
-    const programWithElibibility = evaluateProgramEligibility(program, inputData, rulesService)
-    if (programWithElibibility.isErr) {
-      return Result.err(addErrorDetails(programWithElibibility.error, program.id))
+    const programWithEligibility = evaluateProgramEligibility(program, inputData, rulesService)
+    if (programWithEligibility.isErr) {
+      return Result.err(addErrorDetails(programWithEligibility.error, program.id))
     }
 
-    if (shouldKeepProgram(programWithElibibility.value.eligibility, inputData.onlyEligible)) {
-      filteredPrograms.push(programWithElibibility.value)
+    if (shouldKeepProgram(programWithEligibility.value.eligibility, inputData.onlyEligible)) {
+      filteredPrograms.push(programWithEligibility.value)
+    }
+  }
+  console.timeEnd('publicodes - All Programs')
+
+  console.time('directjson - All Programs')
+  for (const program of programs) {
+    const programWithEligibility = evaluateProgramEligibilityByJson(program, inputData)
+    if (programWithEligibility.isErr) {
+      return Result.err(addErrorDetails(programWithEligibility.error, program.id))
+    }
+
+    if (shouldKeepProgram(programWithEligibility.value.eligibility, inputData.onlyEligible)) {
+      filteredProgramsByJson.push(programWithEligibility.value)
+    }
+  }
+  console.timeEnd('directjson - All Programs')
+
+  for (const filteredProgram of filteredPrograms) {
+    const filteredProgramByJson = filteredProgramsByJson.find((program) => program.id === filteredProgram.id)
+    if (filteredProgramByJson && filteredProgram.eligibility != filteredProgramByJson.eligibility) {
+      console.log('conflicting results', filteredProgram.id)
+      console.log(filteredProgram.eligibility)
+      console.log(filteredProgramByJson.eligibility)
     }
   }
 
@@ -37,7 +62,7 @@ export const evaluateProgramEligibility = (
   inputData: QuestionnaireData,
   rulesService: EligibilityEvaluator
 ): Result<ProgramTypeWithEligibility, Error> => {
-  console.time('publicodes')
+  console.time('publicodes - program : ' + program.id)
   const evaluation = rulesService.evaluate(program, inputData)
 
   if (evaluation.isErr) {
@@ -50,29 +75,31 @@ export const evaluateProgramEligibility = (
   if (dateEvaluation.isErr) {
     return Result.err(addErrorDetails(dateEvaluation.error, program.id))
   }
-  console.timeEnd('publicodes')
+  console.timeEnd('publicodes - program : ' + program.id)
 
   const programWithElibibility = setEligibility(program, evaluation.value, dateEvaluation.value)
 
+  return Result.ok(programWithElibibility)
+}
+
+export const evaluateProgramEligibilityByJson = (
+  program: ProgramType,
+  inputData: QuestionnaireData
+): Result<ProgramTypeWithEligibility, Error> => {
   const evaluator = new ProgramEligibilityEvaluator()
-  console.time('directjson')
+  console.time('directjson - program : ' + program.id)
 
   const newFullDataEvaluation = evaluator.evaluate(program, inputData)
-  const newdateEvaluation = evaluator.evaluate(program, {})
-  console.timeEnd('directjson')
+  const newDateEvaluation = evaluator.evaluate(program, {})
+  console.timeEnd('directjson - program : ' + program.id)
 
-  if (newFullDataEvaluation.isErr || newdateEvaluation.isErr) {
+  if (newFullDataEvaluation.isErr || newDateEvaluation.isErr) {
     return Result.err(new Error('new elibigility evaluator error'))
   }
 
-  const newEvaluation = setEligibility(program, newFullDataEvaluation.value, newdateEvaluation.value)
+  const programWithEligibility = setEligibility(program, newFullDataEvaluation.value, newDateEvaluation.value)
 
-  if (programWithElibibility.eligibility != newEvaluation.eligibility) {
-    console.log('conflicting results', programWithElibibility.id)
-    console.log(programWithElibibility.eligibility, evaluation.value, dateEvaluation.value)
-    console.log(newEvaluation.eligibility, newFullDataEvaluation.value, newdateEvaluation.value)
-  }
-  return Result.ok(programWithElibibility)
+  return Result.ok(programWithEligibility)
 }
 
 const addErrorDetails = (err: Error, programName: string): Error => {
