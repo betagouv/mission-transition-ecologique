@@ -9,10 +9,7 @@
       v-html="faqItem.title"
     />
   </div>
-  <FaqQuestions
-    :faq-questions="faqItem.questions"
-    :is-full-width="isFullWidth"
-  />
+  <FaqQuestions :faq-questions="faqItem.questions" />
 </template>
 <script lang="ts" setup>
 import FaqQuestions from '@/components/faq/FaqQuestions.vue'
@@ -20,7 +17,6 @@ import { FaqSectionType } from '@/types'
 
 interface Props {
   faqItem: FaqSectionType
-  isFullWidth?: boolean
 }
 defineProps<Props>()
 </script>

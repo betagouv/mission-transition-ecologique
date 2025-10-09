@@ -1,7 +1,7 @@
 import { Color } from '@tee/common'
 import { LoggerInterface, LogLevel } from '../common/logger/types'
 import { FaqFilterInterface, FaqPageType } from './types/domain'
-import { FaqPage, QuestionItem } from './types/shared'
+import { FaqPage, FaqQuestionItem } from './types/shared'
 import { LinkValidator } from '../common/validators/linkValidator'
 
 export class FaqFilter implements FaqFilterInterface {
@@ -26,8 +26,8 @@ export class FaqFilter implements FaqFilterInterface {
     }
   }
 
-  public byValidatedQuestions = async (questions: QuestionItem[]) => {
-    const validatedQuestions: QuestionItem[] = []
+  public byValidatedQuestions = async (questions: FaqQuestionItem[]) => {
+    const validatedQuestions: FaqQuestionItem[] = []
     for (const question of questions) {
       try {
         if (!question.question?.trim()) {

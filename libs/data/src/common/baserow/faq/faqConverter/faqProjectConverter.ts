@@ -2,7 +2,7 @@ import { ReplacerBaserow } from '../../replacerBaserow'
 import { BaserowFaq, BaserowFaqs } from '../../types'
 import { DataProject } from '../../../../project/types/domain'
 import { FaqProjectType } from '../../../../faq/types/domain'
-import { FaqPage, QuestionItem } from '../../../../faq/types/shared'
+import { FaqPage, FaqQuestionItem } from '../../../../faq/types/shared'
 import { AbstractFaqConverter } from './abstractFaqConverter'
 
 export class FaqProjectConverter extends AbstractFaqConverter {
@@ -12,7 +12,7 @@ export class FaqProjectConverter extends AbstractFaqConverter {
     const faqs: FaqProjectType = {}
     for (const projectId in faqsStructured) {
       this._sortFaqs(faqsStructured[projectId].faqs)
-      const questions: QuestionItem[] = []
+      const questions: FaqQuestionItem[] = []
       for (const faq of faqsStructured[projectId].faqs) {
         questions.push(this._mappedFaq(faq))
       }

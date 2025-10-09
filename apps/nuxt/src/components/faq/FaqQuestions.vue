@@ -23,10 +23,10 @@
 </template>
 <script lang="ts" setup>
 import { Marked } from '@/tools/marked'
-import { QuestionItem } from '@tee/data'
+import { FaqQuestionItem } from '@tee/data'
 
 interface Props {
-  faqQuestions: QuestionItem[]
+  faqQuestions: FaqQuestionItem[]
   isFullWidth?: boolean
 }
 defineProps<Props>()

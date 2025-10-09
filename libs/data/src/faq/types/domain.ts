@@ -1,5 +1,5 @@
 import { DataProject } from '../../project/types/domain'
-import { FaqPage, FaqSectionType, QuestionItem } from './shared'
+import { FaqPage, FaqSectionType, FaqQuestionItem } from './shared'
 
 export interface FaqRepositoryInterface {
   getFaqs(): Promise<FaqPageType>
@@ -8,7 +8,7 @@ export interface FaqRepositoryInterface {
 
 export interface FaqFilterInterface {
   byValidity(faqs: FaqPageType): Promise<void>
-  byValidatedQuestions(questions: QuestionItem[]): Promise<QuestionItem[]>
+  byValidatedQuestions(questions: FaqQuestionItem[]): Promise<FaqQuestionItem[]>
 }
 
 export type FaqPageType = {
@@ -16,5 +16,5 @@ export type FaqPageType = {
 }
 
 export type FaqProjectType = {
-  [key: number]: QuestionItem[]
+  [key: number]: FaqQuestionItem[]
 }

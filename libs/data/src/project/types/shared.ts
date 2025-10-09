@@ -1,6 +1,6 @@
 import { ThemeId } from '@tee/common'
 import { projects } from '../../../static'
-import { QuestionItem } from '../../faq/types/shared'
+import { FaqQuestionItem } from '../../faq/types/shared'
 
 export interface ProjectType {
   id: number
@@ -26,7 +26,7 @@ export interface ProjectType {
   sectors: string[]
   metaTitle?: string
   metaDescription?: string
-  faqs: QuestionItem[]
+  faqs: FaqQuestionItem[]
 }
 
 export type ProjectId = (typeof projects)[number]['id']

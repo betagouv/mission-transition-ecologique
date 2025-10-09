@@ -1,7 +1,7 @@
 import { ReplacerBaserow } from '../../replacerBaserow'
 import { BaserowFaq } from '../../types'
 import { LoggerInterface, LoggerType, LogLevel } from '../../../logger/types'
-import { FaqPage, QuestionItem } from '../../../../faq/types/shared'
+import { FaqPage, FaqQuestionItem } from '../../../../faq/types/shared'
 
 export abstract class AbstractFaqConverter {
   constructor(private _logger: LoggerInterface) {}
@@ -10,7 +10,7 @@ export abstract class AbstractFaqConverter {
     faqs.sort((a, b) => a.order - b.order)
   }
 
-  protected _mappedFaq(faq: BaserowFaq): QuestionItem {
+  protected _mappedFaq(faq: BaserowFaq): FaqQuestionItem {
     return {
       id: faq.id,
       question: faq.Question,

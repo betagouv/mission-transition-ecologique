@@ -16,14 +16,16 @@
   </TeeContentBlock>
 </template>
 <script setup lang="ts">
+import FaqQuestions from '@/components/faq/FaqQuestions.vue'
 import { useProjectStore } from '@/stores/project'
+import { Faq } from '@/tools/faq'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { ProjectType } from '@/types'
 
 interface Props {
   project: ProjectType
 }
-defineProps<Props>()
+const props = defineProps<Props>()
 
 const linkedProjectsTags = ref<ProjectType[]>([])
 
@@ -31,4 +33,10 @@ onNuxtReady(async () => {
   await new ProjectManager().getProjects()
   linkedProjectsTags.value = await useProjectStore().getLinkedProjectsFromCurrent()
 })
+
+useSchemaOrg([{ '@type': 'FAQPage', mainEntity: defineQuestions() }])
+
+function defineQuestions() {
+  return Faq.defineQuestions(props.project.faqs)
+}
 </script>
