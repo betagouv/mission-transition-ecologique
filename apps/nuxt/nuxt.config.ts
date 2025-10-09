@@ -7,7 +7,7 @@ import { NuxtScriptsConfig } from './nuxt.scripts.config'
 import { NuxtSecurityConfig } from './nuxt.security.config'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import { ChangeFreq, Priority } from './src/types/sitemapType'
-import { Identity } from './src/tools/Identity'
+import { Identity } from '@/tools/identity'
 import { MetaSeo } from './src/tools/metaSeo'
 
 /**

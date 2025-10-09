@@ -37,6 +37,6 @@ onNuxtReady(async () => {
 useSchemaOrg([{ '@type': 'FAQPage', mainEntity: defineQuestions() }])
 
 function defineQuestions() {
-  return Faq.defineQuestions(props.project.faqs)
+  return Faq.getDefineQuestions(props.project.faqs)
 }
 </script>

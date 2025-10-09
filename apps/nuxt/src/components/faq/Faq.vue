@@ -31,7 +31,7 @@ useSchemaOrg([{ '@type': 'FAQPage', mainEntity: defineQuestions() }])
 function defineQuestions() {
   const itemListElement = []
   for (const faqItem of props.faqItems) {
-    const defineQuestions = Faq.defineQuestions(faqItem.questions)
+    const defineQuestions = Faq.getDefineQuestions(faqItem.questions)
     itemListElement.push(...defineQuestions)
   }
 

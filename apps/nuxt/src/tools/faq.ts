@@ -2,7 +2,7 @@ import { Marked } from '@/tools/marked'
 import { FaqQuestionItem } from '@tee/data'
 
 export class Faq {
-  public static defineQuestions(questions: FaqQuestionItem[]) {
+  public static getDefineQuestions(questions: FaqQuestionItem[]) {
     const defineQuestions = []
     for (const question of questions) {
       defineQuestions.push(

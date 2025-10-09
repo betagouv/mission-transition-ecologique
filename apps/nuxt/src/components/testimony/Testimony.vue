@@ -44,7 +44,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Identity } from '@/tools/Identity'
+import { Identity } from '@/tools/identity'
 import { Image } from '@/tools/image'
 import { Marked } from '@/tools/marked'
 import { ProjectManager } from '@/tools/project/projectManager'
