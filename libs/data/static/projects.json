@@ -71,8 +71,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 2,
@@ -138,8 +137,7 @@
       "U"
     ],
     "metaTitle": "Eclairage LED pour entreprises - Subventions pour la rénovation énergétique",
-    "metaDescription": "Faites des économies d’énergie en remplaçant vos ampoules classiques par des ampoules LED. Découvrez les aides et subventions disponibles.",
-    "faqs": []
+    "metaDescription": "Faites des économies d’énergie en remplaçant vos ampoules classiques par des ampoules LED. Découvrez les aides et subventions disponibles."
   },
   {
     "id": 5,
@@ -213,8 +211,7 @@
       "U"
     ],
     "metaTitle": "Panneaux solaires pour les entreprises - Solution durable et rentable",
-    "metaDescription": "Produisez votre propre électricité grâce aux panneaux solaires. Autoconsommez ou revendez l’énergie générée et réduisez l’empreinte écologique de votre entreprise.",
-    "faqs": []
+    "metaDescription": "Produisez votre propre électricité grâce aux panneaux solaires. Autoconsommez ou revendez l’énergie générée et réduisez l’empreinte écologique de votre entreprise."
   },
   {
     "id": 3,
@@ -264,8 +261,7 @@
       "M"
     ],
     "metaTitle": "Réduction des emballages - Gestion des déchets en entreprise",
-    "metaDescription": "Adoptez une stratégie de réduction, de réemploi et de recyclage des emballages et du plastique à usage unique dans votre entreprise. Anticipez les exigences de la loi AGEC.",
-    "faqs": []
+    "metaDescription": "Adoptez une stratégie de réduction, de réemploi et de recyclage des emballages et du plastique à usage unique dans votre entreprise. Anticipez les exigences de la loi AGEC."
   },
   {
     "id": 6,
@@ -340,8 +336,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 7,
@@ -414,8 +409,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 1,
@@ -480,8 +474,7 @@
       "U"
     ],
     "metaTitle": "Bilan GES entreprise  - Bilan carbone ADEME",
-    "metaDescription": "Quantifiez les émissions de gaz à effet de serre émises ou captées par les activités de votre entreprise avec la méthode Bilan Carbone® élaborée par l’ADEME.",
-    "faqs": []
+    "metaDescription": "Quantifiez les émissions de gaz à effet de serre émises ou captées par les activités de votre entreprise avec la méthode Bilan Carbone® élaborée par l’ADEME."
   },
   {
     "id": 8,
@@ -556,8 +549,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 9,
@@ -626,8 +618,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 10,
@@ -702,8 +693,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 11,
@@ -759,8 +749,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 12,
@@ -800,7 +789,7 @@
     ],
     "priority": {
       "default": 950,
-      "Q86.1": 45
+      "86.1": 45
     },
     "highlightPriority": null,
     "sectors": [
@@ -825,8 +814,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 13,
@@ -865,8 +853,7 @@
       "A"
     ],
     "metaTitle": "Subventions serre agricole - Valorisation de l’énergie solaire",
-    "metaDescription": "Les serres agricoles valorisent l’énergie solaire, réduisent les pesticides et protègent les cultures. Découvrez comment améliorer leurs performances et les aides disponibles.",
-    "faqs": []
+    "metaDescription": "Les serres agricoles valorisent l’énergie solaire, réduisent les pesticides et protègent les cultures. Découvrez comment améliorer leurs performances et les aides disponibles."
   },
   {
     "id": 14,
@@ -935,8 +922,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 15,
@@ -945,9 +931,7 @@
     "nameTag": "🪟 isolation",
     "shortDescription": "L’isolation thermique permet de réduire les pertes de chaleur de vos locaux et de diminuer vos dépenses énergétiques.",
     "image": "/images/projet/isolation-thermique.webp",
-    "titleLongDescription": "Pourquoi l'isolation thermique ?",
     "longDescription": "L’isolation thermique des bâtiments permet de garantir le confort en été comme en hiver en limitant le recours à la climatisation et au chauffage. Un logement mal isolé génère des pertes conséquentes de chaleur en hiver et de fraîcheur en été par le toit, les murs, les portes, les fenêtres et le sol.\\\nGrâce à des travaux d’isolation, vous diminuez vos factures d’énergie et améliorez votre confort tout au long de l’année.",
-    "titleMoreDescription": "Comment me documenter pour l'isolation ?",
     "moreDescription": "- [**Les exigences réglementaires pour les travaux de rénovation**](https://librairie.ademe.fr/ged/8069/fiche-exigences-reglementaires-renovation.pdf), une fiche pratique de l'ADEME.\n- [**Réduction de la consommation d'énergie dans les bâtiments à usage tertiaire**](https://entreprendre.service-public.fr/vosdroits/F38065), les obligations légales par Entreprendre.Service-Public.fr.\n- [**Quel est le meilleur isolant thermique pour une isolation efficace ?**](https://www.baisseleswatts.fr/actualites/equipement-energetique/quel-est-le-meilleur-isolant-thermique) un article proposé par Baisse les watts.\n- [**L'annuaire des professionnels RGE et des architectes,**](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte) trouver un professionnel RGE, compétent pour réaliser des travaux d'isolation thermique.",
     "themes": [
       "building",
@@ -989,8 +973,6 @@
       "aide-investissement-librairie",
       "booster-transformation-rev-3"
     ],
-    "titleLinkedProjects": "Les prérequis pour l'isolation thermique",
-    "descriptionLinkedProjects": "Réalisez ces prérequis pour assurer la pertinence avec le projet d'isolation thermique.",
     "linkedProjects": [
       4,
       14
@@ -1022,36 +1004,8 @@
       "T",
       "U"
     ],
-    "titleFaq": "❓Les questions fréquentes sur l’isolation thermique",
     "metaTitle": "Isolation thermique des entreprises - Rénovation énergétique",
-    "metaDescription": "Faites isoler vos bâtiments pour limiter les pertes de chaleur et de fraîcheur. Une bonne isolation thermique réduit vos dépenses énergétiques.",
-    "faqs": [
-      {
-        "id": 101,
-        "question": "Quelles entreprises sont concernées par les travaux d’isolation thermique ?",
-        "answer": "Les travaux d’isolation concernent toutes les entreprises quel que soit leur secteur d’activité. Cela inclut les commerces, les bureaux, les sites industriels, les hôtels, les restaurants, les établissements de santé, les bâtiments publics, les entrepôts…\n\nCe projet peut être une priorité pour les entreprises qui occupent des bâtiments anciens, peu performants ou qui souhaitent réduire leurs coûts d’exploitation.\n\nC’est aussi un moyen pour anticiper la hausse des prix de l’énergie, répondre aux obligations réglementaires ou engager une démarche RSE plus globale."
-      },
-      {
-        "id": 134,
-        "question": "Comment isoler un bâtiment professionnel ?",
-        "answer": "Avant de vous lancer dans les travaux de rénovation, il est important de faire un point sur l’état de votre bâtiment. Où sont les pertes de chaleur ? Quels postes sont les plus énergivores ? Est-ce qu’un audit a été réalisé ?\n\nSi ce n’est pas le cas, un diagnostic 360° peut vous aider à y voir plus clair. C’est un point de départ recommandé pour prioriser vos actions.\n\nChaque bâtiment est différent. Le choix des travaux dépend de l’ancienneté du bâtiment, de son usage (tertiaire, industriel…), de votre budget et des aides disponibles.\n\nIl est recommandé de faire appel à un professionnel qualifié RGE (Reconnu Garant de l’Environnement). Cela garantit la qualité des travaux et vous permet de bénéficier des aides financières prévues pour l’isolation."
-      },
-      {
-        "id": 135,
-        "question": "Quels résultats attendre après des travaux d’isolation thermique ?",
-        "answer": "Une isolation bien réalisée permet de limiter les pertes de chaleur en hiver et de conserver la fraîcheur en été. Concrètement, cela se traduit par une baisse des consommations de chauffage et de climatisation donc une réduction des factures d’énergie.\n\nElle améliore également le confort thermique dans les locaux, ce qui peut avoir un impact positif sur la qualité de vie au travail.\n\nÀ plus long terme, ces travaux valorisent le patrimoine immobilier de l’entreprise et contribuent à une stratégie bas carbone."
-      },
-      {
-        "id": 136,
-        "question": "Quel est le meilleur isolant thermique pour les bâtiments ?",
-        "answer": "Il n’existe pas un isolant « meilleur » dans l’absolu mais des matériaux adaptés à chaque situation : laine de roche, ouate de cellulose, panneaux de polyuréthane, fibre de bois…\n\nLe choix dépend de nombreux facteurs dont le type de bâtiment, la surface à isoler, les conditions climatiques locales, le budget disponible, les contraintes techniques, etc.\n\nL’accompagnement par un professionnel qualifié permet d’identifier la solution la plus pertinente pour votre entreprise, en tenant compte des critères de performance, de durabilité et d’impact environnemental."
-      },
-      {
-        "id": 137,
-        "question": "Où trouver un professionnel RGE pour réaliser des travaux d’isolation thermique ?",
-        "answer": "Pour bénéficier des aides à la rénovation et garantir la qualité des travaux, il est recommandé de faire appel à un professionnel RGE (Reconnu Garant de l’Environnement).\n\nUn annuaire officiel est mis à disposition par l’ADEME et France Rénov’ pour vous aider à identifier un artisan ou un bureau d’études compétent près de chez vous : [consulter l'annuaire des professionnels RGE et des architectes.](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte#/tab)"
-      }
-    ]
+    "metaDescription": "Faites isoler vos bâtiments pour limiter les pertes de chaleur et de fraîcheur. Une bonne isolation thermique réduit vos dépenses énergétiques."
   },
   {
     "id": 16,
@@ -1110,8 +1064,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 17,
@@ -1171,8 +1124,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 18,
@@ -1238,8 +1190,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 19,
@@ -1301,8 +1252,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 20,
@@ -1365,8 +1315,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 21,
@@ -1425,8 +1374,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 22,
@@ -1481,8 +1429,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 23,
@@ -1544,8 +1491,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 24,
@@ -1614,8 +1560,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 25,
@@ -1670,8 +1615,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 26,
@@ -1734,8 +1678,7 @@
       "U"
     ],
     "metaTitle": "Sensibilisation à l'environnement et à l'écologie en entreprise",
-    "metaDescription": "Formez et mobilisez vos équipes autour des enjeux climatiques : ateliers, formations, défis... pour ancrer la transition écologique dans la culture de l’entreprise.",
-    "faqs": []
+    "metaDescription": "Formez et mobilisez vos équipes autour des enjeux climatiques : ateliers, formations, défis... pour ancrer la transition écologique dans la culture de l’entreprise."
   },
   {
     "id": 27,
@@ -1792,8 +1735,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 28,
@@ -1862,8 +1804,7 @@
       "U"
     ],
     "metaTitle": "Formations à l'environnement et à l'écologie en entreprise",
-    "metaDescription": "Découvrez les formations proposées par les opérateurs publics pour renforcer les compétences de vos équipes face aux enjeux environnementaux.",
-    "faqs": []
+    "metaDescription": "Découvrez les formations proposées par les opérateurs publics pour renforcer les compétences de vos équipes face aux enjeux environnementaux."
   },
   {
     "id": 29,
@@ -1915,8 +1856,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 30,
@@ -1982,8 +1922,7 @@
       "U"
     ],
     "metaTitle": "Stratégie RSE - Aide à la mise en place d'une démarche responsable",
-    "metaDescription": "Déployez une stratégie RSE pour engager vos salariés et leur faire prendre conscience des enjeux en matière d'écologie et de développement durable.",
-    "faqs": []
+    "metaDescription": "Déployez une stratégie RSE pour engager vos salariés et leur faire prendre conscience des enjeux en matière d'écologie et de développement durable."
   },
   {
     "id": 31,
@@ -2047,8 +1986,7 @@
       "U"
     ],
     "metaTitle": "Diagnostic à 360° - Transition écologique des entreprises",
-    "metaDescription": "Évaluez l’impact environnemental de votre activité avec le diag 360. Un état des lieux complet pour guider la transition écologique de votre entreprise.",
-    "faqs": []
+    "metaDescription": "Évaluez l’impact environnemental de votre activité avec le diag 360. Un état des lieux complet pour guider la transition écologique de votre entreprise."
   },
   {
     "id": 32,
@@ -2112,8 +2050,7 @@
       "U"
     ],
     "metaTitle": "Plan de transition bas carbone aligné CRSD",
-    "metaDescription": "Construisez un plan de transition bas carbone aligné avec la SNBC et conforme à la CSRD pour réduire les émissions de gaz à effet de serre de votre entreprise.",
-    "faqs": []
+    "metaDescription": "Construisez un plan de transition bas carbone aligné avec la SNBC et conforme à la CSRD pour réduire les émissions de gaz à effet de serre de votre entreprise."
   },
   {
     "id": 33,
@@ -2180,8 +2117,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 35,
@@ -2248,8 +2184,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 36,
@@ -2326,8 +2261,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 71,
@@ -2395,8 +2329,7 @@
       "U"
     ],
     "metaTitle": "Récupérateur d’eau de pluie - Gestion de l'eau en entreprise",
-    "metaDescription": "Améliorez la gestion de l’eau dans votre entreprise grâce à la récupération d’eau de pluie. Réduisez votre consommation d’eau potable et faites des économies durables.",
-    "faqs": []
+    "metaDescription": "Améliorez la gestion de l’eau dans votre entreprise grâce à la récupération d’eau de pluie. Réduisez votre consommation d’eau potable et faites des économies durables."
   },
   {
     "id": 72,
@@ -2461,8 +2394,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 104,
@@ -2513,8 +2445,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 137,
@@ -2560,8 +2491,7 @@
       "I",
       "Q",
       "T"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 138,
@@ -2599,8 +2529,7 @@
     "highlightPriority": null,
     "sectors": [
       "I"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 139,
@@ -2639,8 +2568,7 @@
     "highlightPriority": null,
     "sectors": [
       "I"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 140,
@@ -2699,8 +2627,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 141,
@@ -2758,8 +2685,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 142,
@@ -2819,8 +2745,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 143,
@@ -2877,8 +2802,7 @@
       "U"
     ],
     "metaTitle": "Abris vélos pour entreprises - Stratégie de mobilité durable",
-    "metaDescription": "Encouragez la mobilité durable dans votre entreprise avec l’installation d’un abri vélo. Offrez un espace sécurisé et équipé à vos collaborateurs.",
-    "faqs": []
+    "metaDescription": "Encouragez la mobilité durable dans votre entreprise avec l’installation d’un abri vélo. Offrez un espace sécurisé et équipé à vos collaborateurs."
   },
   {
     "id": 144,
@@ -2943,8 +2867,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 146,
@@ -3015,8 +2938,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 147,
@@ -3074,8 +2996,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 203,
@@ -3114,8 +3035,7 @@
       "F",
       "N",
       "O"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 302,
@@ -3172,8 +3092,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 337,
@@ -3207,8 +3126,7 @@
     "highlightPriority": null,
     "sectors": [
       "I"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 372,
@@ -3250,8 +3168,7 @@
       "G",
       "H",
       "Q"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 378,
@@ -3303,8 +3220,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 401,
@@ -3357,8 +3273,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 434,
@@ -3395,8 +3310,7 @@
       "A",
       "B",
       "D"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 467,
@@ -3446,8 +3360,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 566,
@@ -3496,8 +3409,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 567,
@@ -3530,8 +3442,7 @@
     "highlightPriority": null,
     "sectors": [
       "A"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 632,
@@ -3565,8 +3476,7 @@
     "highlightPriority": null,
     "sectors": [
       "A"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 666,
@@ -3594,8 +3504,7 @@
     "highlightPriority": null,
     "sectors": [
       "I"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 667,
@@ -3640,8 +3549,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 699,
@@ -3678,8 +3586,7 @@
       "E",
       "F",
       "G"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 731,
@@ -3742,8 +3649,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 764,
@@ -3781,8 +3687,7 @@
     "sectors": [
       "B",
       "H"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 797,
@@ -3817,8 +3722,7 @@
       "G",
       "H",
       "I"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 863,
@@ -3850,8 +3754,7 @@
     "sectors": [
       "G",
       "H"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 896,
@@ -3905,8 +3808,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 929,
@@ -3950,8 +3852,7 @@
       "R",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 962,
@@ -3998,8 +3899,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 995,
@@ -4029,8 +3929,7 @@
     "highlightPriority": null,
     "sectors": [
       "H"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 996,
@@ -4066,8 +3965,7 @@
       "D",
       "F",
       "H"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 997,
@@ -4092,14 +3990,14 @@
     "linkedProjects": [],
     "priority": {
       "default": 750,
+      "B": 1,
       "H": 4
     },
     "highlightPriority": null,
     "sectors": [
       "B",
       "H"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 998,
@@ -4128,8 +4026,7 @@
     "highlightPriority": null,
     "sectors": [
       "H"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 1028,
@@ -4180,8 +4077,7 @@
       "S",
       "T",
       "U"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 1127,
@@ -4212,8 +4108,7 @@
     "sectors": [
       "I",
       "Q"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 1160,
@@ -4245,8 +4140,7 @@
       "B",
       "C",
       "F"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 1193,
@@ -4281,8 +4175,7 @@
       "D",
       "E",
       "F"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 1226,
@@ -4327,8 +4220,7 @@
       "G",
       "H",
       "I"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 1228,
@@ -4356,8 +4248,7 @@
       "A",
       "E",
       "I"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 1260,
@@ -4393,8 +4284,7 @@
       "A",
       "C",
       "I"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 1261,
@@ -4436,8 +4326,7 @@
       "F",
       "G",
       "H"
-    ],
-    "faqs": []
+    ]
   },
   {
     "id": 1391,
@@ -4475,7 +4364,6 @@
       "R"
     ],
     "metaTitle": "",
-    "metaDescription": "",
-    "faqs": []
+    "metaDescription": ""
   }
 ]
