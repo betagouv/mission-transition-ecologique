@@ -94,7 +94,7 @@ describe('FaqFilter', () => {
         mockLogger,
         LogLevel.Major,
         'Réponse',
-        'Valid answer with links',
+        'Valid question',
         1
       )
     })
