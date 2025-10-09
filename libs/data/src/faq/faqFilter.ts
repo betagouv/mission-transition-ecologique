@@ -38,7 +38,7 @@ export class FaqFilter implements FaqFilterInterface {
           throw new Error(`Réponse non fournie`)
         }
 
-        await LinkValidator.logInvalidLinks(question.answer, this._logger, LogLevel.Major, 'Réponse', question.answer, question.id)
+        await LinkValidator.logInvalidLinks(question.answer, this._logger, LogLevel.Major, 'Réponse', question.question, question.id)
         validatedQuestions.push(question)
       } catch (error: unknown) {
         if (error instanceof Error) {
