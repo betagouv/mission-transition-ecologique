@@ -1,10 +1,6 @@
 import { FaqPage } from '../../faq/types/shared'
 import { ConditionalValues as DomainConditionalValues, DataProgram } from '../../program/types/domain'
 
-export interface FaqBaserowInterface {
-  getFaqs(): Promise<{ baserowFaqs: BaserowFaq[]; baserowFaqSections: BaserowFaqSection[] }>
-}
-
 export interface Id {
   id: number
 }
@@ -37,18 +33,24 @@ export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
   'Description courte': string
   Statut: LinkObject
   Image: LinkObject[]
-  'Qu’est-ce que c’est ?': string
-  'Pour aller plus loin': string
   Titre: string
+  'Titre - Pourquoi ?': string
+  'Qu’est-ce que c’est ?': string
+  'Titre - Me documenter': string
+  'Pour aller plus loin': string
+  'Titre - Projets complémentaires': string
+  'Description - Projets complémentaires': string
   'Projets complémentaires': LinkObject[]
   'Thématique principale': LinkObject[]
   NameTag: string
   'Thématiques secondaires': LinkObject[]
   Dispositifs: LinkObject[]
   Prio: number
-  'Mise En Avant': number | null
-  'redirection-vers': LinkObject[]
   'Prios spécifiques': string
+  'Mise En Avant': number | null
+  'Titre - FAQ': string
+  Faq: LinkObject[]
+  'redirection-vers': LinkObject[]
 }
 
 export interface LinkObject extends Id {
@@ -202,6 +204,11 @@ export interface BaserowFaq extends Id, Order {
   Actif: boolean
   Page: LinkObject | null
   Section: LinkObject[]
+  Projet: LinkObject[]
+}
+
+export interface BaserowFaqs {
+  faqs: BaserowFaq[]
 }
 
 export interface BaserowFaqSection extends Id, Order, CreationDate, LastModification, LastModificationBy {
@@ -209,17 +216,25 @@ export interface BaserowFaqSection extends Id, Order, CreationDate, LastModifica
   Couleur: LinkObject
 }
 
-export interface FaqItemStructured extends BaserowFaqSection {
-  faqs: BaserowFaq[]
+export interface FaqItemStructured extends BaserowFaqSection, BaserowFaqs {}
+
+export type FaqPagesStructured = {
+  [key in FaqPage]?: FaqItemStructured[]
 }
 
-export type FaqStructured = {
-  [key in FaqPage]?: FaqItemStructured[]
+export type FaqProjectsStructured = {
+  [key: number]: BaserowFaqs
 }
 
 export interface BaserowContact extends Id {
   'Prénom NOM': string
   Courriel: string
+}
+
+export interface BaserowFilter {
+  filter_type: 'OR' | 'AND'
+  filters: { type: string; field: string; value: string | number }[]
+  groups: []
 }
 
 export interface BaserowOperator {

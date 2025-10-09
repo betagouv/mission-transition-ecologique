@@ -33,6 +33,10 @@
       :project="project"
       :color="typedThemeColor"
     />
+    <ProjectFaq
+      v-if="project?.faqs?.length"
+      :project="project"
+    />
   </Layout>
 </template>
 <script setup lang="ts">

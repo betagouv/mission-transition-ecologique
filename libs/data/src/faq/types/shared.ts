@@ -10,15 +10,11 @@ export enum FaqPage {
 export interface FaqSectionType {
   title: string
   color: Color
-  questions: QuestionItem[]
+  questions: FaqQuestionItem[]
 }
 
-export interface QuestionItem {
+export interface FaqQuestionItem {
   id: number
   question: string
   answer: string
-}
-
-export type FaqType = {
-  [key in FaqPage]?: FaqSectionType[]
 }

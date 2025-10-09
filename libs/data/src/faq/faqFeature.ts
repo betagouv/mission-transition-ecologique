@@ -1,6 +1,5 @@
-import { FaqBaserowInterface } from '../common/baserow/types'
 import { FileManager } from '../common/fileManager'
-import { FaqConverterInterface, FaqFilterInterface } from './types/domain'
+import { FaqFilterInterface, FaqRepositoryInterface } from './types/domain'
 import { FaqPage } from './types/shared'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -11,20 +10,14 @@ export class FaqFeature {
   private readonly _outputdirPath: string = path.join(this.__dirname, '../../../../apps/nuxt/src/public/json/faq')
 
   constructor(
-    private _baserow: FaqBaserowInterface,
-    private _converter: FaqConverterInterface,
+    private _baserow: FaqRepositoryInterface,
     private _filter: FaqFilterInterface,
     private _logger: LoggerInterface
   ) {}
 
   async generateFaqJson(): Promise<void> {
-    console.log(`Start loading Baserow data.`)
-    const { baserowFaqs, baserowFaqSections } = await this._baserow.getFaqs()
-
-    const baserowFaqsFiltered = this._filter.byActive(baserowFaqs)
-
-    console.log(`Start converting Baserow data to domain.`)
-    const faqs = this._converter.toDomain(baserowFaqsFiltered, baserowFaqSections)
+    console.log(`Start loading Baserow data and convert to domain.`)
+    const faqs = await this._baserow.getFaqs()
 
     console.log(`Start validating FAQ data.`)
     await this._filter.byValidity(faqs)

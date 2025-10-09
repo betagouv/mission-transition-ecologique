@@ -1,6 +1,7 @@
 import path from 'path'
 import { AbstractBaserow } from './abstractBaserow'
 import { DataProject, ProjectStatus } from '../../project/types/domain'
+import { ReplacerBaserow } from './replacerBaserow'
 import { LinkObject, BaserowProject, BaserowSectors, SectorKeys } from './types'
 import { Theme } from '../../theme/types/domain'
 import { ImageBaserow } from './imageBaserow'
@@ -32,10 +33,15 @@ export class ProjectBaserow extends AbstractBaserow {
 
   async getProdAndArchivedProjects(reloadImages = true): Promise<DataProject[]> {
     const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
-    const validBaserowProjects = baserowProjects.filter((project) => {
+    const validBaserowProjects = this._getValidBaserowProjects(baserowProjects)
+
+    return await this._convertProjectList(validBaserowProjects, reloadImages)
+  }
+
+  private _getValidBaserowProjects = (baserowProjects: BaserowProject[]) => {
+    return baserowProjects.filter((project) => {
       return this._convertStatus(project?.Statut) == ProjectStatus.InProd || this._convertStatus(project?.Statut) == ProjectStatus.Archived
     })
-    return await this._convertProjectList(validBaserowProjects, reloadImages)
   }
 
   private async _convertProjectList(projectList: BaserowProject[], reloadImages = true): Promise<DataProject[]> {
@@ -87,19 +93,25 @@ export class ProjectBaserow extends AbstractBaserow {
       nameTag: baserowProject.NameTag,
       shortDescription: baserowProject['Description courte'],
       image: this._imagePath + imageName,
+      titleLongDescription: baserowProject['Titre - Pourquoi ?'] ?? undefined,
       longDescription: baserowProject['Qu’est-ce que c’est ?'],
+      titleMoreDescription: baserowProject['Titre - Me documenter'] ?? undefined,
       moreDescription: baserowProject['Pour aller plus loin'],
       themes: this._generateThemeList(baserowProject['Thématique principale'], baserowProject['Thématiques secondaires'], baserowThemes),
       mainTheme: this._generateMainTheme(baserowProject['Thématique principale'], baserowThemes),
-      programs: this._generateProgramList(baserowProject.Dispositifs),
-      linkedProjects: this._generateLinkedProjectList(baserowProject['Projets complémentaires']),
+      programs: ReplacerBaserow.linkObjectsByValues(baserowProject.Dispositifs),
+      titleLinkedProjects: baserowProject['Titre - Projets complémentaires'] ?? undefined,
+      descriptionLinkedProjects: baserowProject['Description - Projets complémentaires'] ?? undefined,
+      linkedProjects: ReplacerBaserow.linkObjectsByIds(baserowProject['Projets complémentaires']),
       priority: this._generatePriority(baserowProject.Prio, baserowProject['Prios spécifiques'], baserowProject),
       highlightPriority: baserowProject['Mise En Avant'],
       sectors: this._generateSectors(baserowProject as BaserowSectors),
+      titleFaq: baserowProject['Titre - FAQ'] ?? undefined,
       status: this._convertStatus(baserowProject?.Statut),
       ...(redirect !== undefined && { redirectTo: redirect }),
       metaTitle: baserowProject['Meta Titre'] ?? undefined,
-      metaDescription: baserowProject['Meta Description'] ?? undefined
+      metaDescription: baserowProject['Meta Description'] ?? undefined,
+      faqs: []
     }
   }
 

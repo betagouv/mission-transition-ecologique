@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Identity } from '@/tools/Identity'
+import { Identity } from '@/tools/identity'
 import { Image } from '@/tools/image'
 import { computed } from 'vue'
 import { Color } from '@/types'

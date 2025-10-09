@@ -18,7 +18,7 @@
 // console.log(`TeeHeader > FUNCTION_NAME > MSG_OR_VALUE :`)
 
 import { TeeDsfrHeaderMenuLinkProps } from '@/components/element/vueDsfr/dsfrHeader/TeeDsfrHeaderMenuLinks.vue'
-import { Identity } from '@/tools/Identity'
+import { Identity } from '@/tools/identity'
 import { RouteName } from '@/types/routeType'
 
 const quickLinks: TeeDsfrHeaderMenuLinkProps[] = [
