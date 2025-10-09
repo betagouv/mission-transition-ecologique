@@ -1,8 +1,8 @@
-import { ProgramBaserow } from '../common/baserow/programBaserow'
-import { ProgramTechnicalInfo } from '../common/baserow/types'
-import { ProgramUtils } from './programUtils'
-import { DataProgram, MailSenderInterface } from './types/domain'
-import { Contact } from '../common/types'
+import { ProgramBaserow } from '../../common/baserow/programBaserow'
+import { ProgramTechnicalInfo } from '../../common/baserow/types'
+import { ProgramUtils } from '../utils/programUtils'
+import { DataProgram, MailSenderInterface } from '../types/domain'
+import { Contact } from '../../common/types'
 import z from 'zod'
 export class MailManager {
   private readonly _mailSender: MailSenderInterface

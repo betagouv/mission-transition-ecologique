@@ -1,12 +1,12 @@
 import { Result } from 'true-myth'
-import { LegalCategory, QuestionnaireChecker, QuestionnaireData, SizeToWorkforce, StructureSize } from '@tee/common'
+import { LegalCategory, QuestionnaireChecker, QuestionnaireData, SizeToWorkforce, StructureSize, ThemeId } from '@tee/common'
 import { EligibilityData, ProgramType } from '@tee/data'
 import { EligibilityEvaluator } from './spi'
 
 export class ProgramEligibilityEvaluator implements EligibilityEvaluator {
   evaluate(program: ProgramType, questionnaireData: QuestionnaireData): Result<boolean | undefined, Error> {
     try {
-      const eligibility: EligibilityData = program.eligibility_data
+      const eligibility: EligibilityData = program.eligibilityData
       if (!this.isDateValid(eligibility)) {
         // console.log('date false')
         return Result.ok(false)
@@ -121,35 +121,35 @@ export class ProgramEligibilityEvaluator implements EligibilityEvaluator {
     const objectivesFromQuestionnaire: string[] = []
 
     if (QuestionnaireChecker.isEnvironmentalImpact(data.recently_audited)) {
-      objectivesFromQuestionnaire.push('mon_impact_environnemental')
+      objectivesFromQuestionnaire.push(ThemeId.Environmental)
     }
 
     if (QuestionnaireChecker.isEcoDesign(data.wastes_materials_objective)) {
-      objectivesFromQuestionnaire.push("l'écoconception")
+      objectivesFromQuestionnaire.push(ThemeId.EcoDesign)
     }
 
     if (QuestionnaireChecker.isWasteManagement(data.wastes_management_objective)) {
-      objectivesFromQuestionnaire.push('la_gestion_des_déchets')
+      objectivesFromQuestionnaire.push(ThemeId.Waste)
     }
 
     if (QuestionnaireChecker.isWaterConsumption(data.water_reduction_objective)) {
-      objectivesFromQuestionnaire.push("diminuer_ma_consommation_d'eau")
+      objectivesFromQuestionnaire.push(ThemeId.Water)
     }
 
     if (QuestionnaireChecker.isSustainableMobility(data.sustainable_mobility_objective)) {
-      objectivesFromQuestionnaire.push('la_mobilité_durable')
+      objectivesFromQuestionnaire.push(ThemeId.Mobility)
     }
 
     if (QuestionnaireChecker.isEnergyPerformance(data.energy_reduction_objective)) {
-      objectivesFromQuestionnaire.push('ma_performance_énergétique')
+      objectivesFromQuestionnaire.push(ThemeId.Energy)
     }
 
     if (QuestionnaireChecker.isBuildingProperty(data.building_property)) {
-      objectivesFromQuestionnaire.push('rénover_mon_bâtiment')
+      objectivesFromQuestionnaire.push(ThemeId.Building)
     }
 
-    objectivesFromQuestionnaire.push('préserver_la_biodiversité')
-    objectivesFromQuestionnaire.push('former_ou_recruter')
+    objectivesFromQuestionnaire.push(ThemeId.Biodiversity)
+    objectivesFromQuestionnaire.push(ThemeId.RH)
 
     // Check if any of the objectives from questionnaire match allowed objectives
     return objectivesFromQuestionnaire.some((obj) => allowedObjectives.includes(obj))
