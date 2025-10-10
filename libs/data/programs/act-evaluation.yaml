@@ -1,69 +1,58 @@
-titre: ACT - Programme Volontaire Français
-metaTitre: ACT pas à pas – Programme Volontaire Français ADEME
-promesse: >-
-  Développez votre stratégie bas carbone et mettez en œuvre votre plan de
-  transition
+titre: ACT Évaluation
+promesse: Évaluez votre plan de transition bas carbone et communiquez sur vos résultats
 description: >-
-  L’ADEME soutient financièrement les entreprises qui souhaitent **questionner
-  leur modèle économique** pour identifier un nouveau modèle compatible avec une
-  **trajectoire bas carbone.**\
+  Vous êtes une entreprise mature dotée d'un plan de transition et vous
+  souhaitez l'évaluer au regard des objectifs de décarbonation de l’accord de
+  Paris ? \
 
-  Vous serez accompagné avec la **méthode ACT Pas à Pas** (Assessing Low Carbon
-  Transition), une méthode structurante, progressive et sur le long terme qui
-  aide les entreprises à **réduire significativement leurs émissions de gaz à
-  effet de serre**.
-metaDescription: >-
-  Construisez votre stratégie bas carbone avec ACT pas à pas. Une méthode
-  structurante et progressive pour engager votre entreprise dans la transition
-  écologique..
+  L'ADEME vous accompagne avec la méthode **ACT Évaluation** (Assessing Low
+  Carbon Transition), qui propose une méthode structurante et un suivi réalisé
+  par un consultant. Ainsi, vous évaluez votre stratégie bas carbone, et vous
+  pouvez rendre publics vos résultats d'évaluation.
 description longue: >-
-  L'étude ACT Pas à Pas se déroule en 12 à 18 mois selon les entreprises.
+  Les grandes étapes de l'évaluation sont les suivantes :
 
 
-  Les grandes étapes de l'étude sont les suivantes :
+  - Vous découvrez la méthode ACT évaluation et sa grille de notation.
 
 
-  - Analyser la maturité initiale de l'entreprise sur des bases carbone.
+  - Vous réalisez une évaluation de la stratégie bas carbone, accompagnée par un
+  consultant.
 
-  - Exposer les enjeux et réaliser une analyse stratégique de l’entreprise dans
-  un contexte de transition bas carbone.
 
-  - Déterminer une vision d’entreprise et concevoir la feuille de route du plan
-  de transition à court, moyen et long terme.
+  - Vous sollicitez un financement pour cette étude.
 
-  - Élaborer des objectifs de performance carbone et définir une stratégie.
 
-  - Mettre en œuvre des actions de décarbonation.
+  - Vous avez la possibilité de communiquer les résultats de l'évaluation.
 début de validité: 13/11/2023
 fin de validité: 30/06/2026
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
 contact question: https://cloud.contact.ademe.fr/act-fr
-url: https://actinitiative.org/fr/act-in-france/
 nature de l'aide: étude
-montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 18 000 €
+montant du financement: Jusqu’à 80% du coût de l’évaluation, dans un maximum de 3 000 € HT
 objectifs:
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener l'étude
       méthodologie ACT.
     liens:
       - lien: https://actinitiative.org/fr/find-an-advisor/
-        texte: Prestataires "ACT Pas à pas"
+        texte: Prestataires "ACT Évaluation"
   - description: >-
-      Déposez votre demande d'aide : informations administratives, description
-      du projet, détails techniques et financiers, etc. À ce stade, votre projet
-      ne doit pas avoir commencé !
+      Déposez votre demande de financement pour l'évaluation au guichet
+      correspondant à votre secteur d'activité (entreprise industrielle ou non
+      industrielle).
     liens:
       - lien: https://actinitiative.org/fr/act-in-france-soutien-financier/
-        texte: Soutien financier
+        texte: Dépôt de la demande
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
       recevez un contrat de financement précisant le montant d’aide maximum, les
       conditions et les modalités de versement.
-  - description: Réalisez votre étude ACT Pas à Pas.
+  - description: Réalisez votre étude ACT Évaluation.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Plus de 250 salariés
+    - Toutes tailles
     - Non éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
@@ -74,10 +63,6 @@ conditions d'éligibilité:
       Industrie](https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/pacte-industrie)
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
-  autres critères d'éligibilité:
-    - >-
-      Pour accéder à cette étude, vous devez avoir déjà réalisé un premier bilan
-      de gaz à effet de serre.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -90,11 +75,7 @@ publicodes:
         - dispositif . début de validité <= date du jour
         - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-      - a un effectif éligible
       - a une categorie legale eligible
-  entreprise . a un effectif éligible:
-    toutes ces conditions:
-      - effectif >= 250
   entreprise . a une categorie legale eligible:
     toutes ces conditions:
       - microentrepreneur = non
