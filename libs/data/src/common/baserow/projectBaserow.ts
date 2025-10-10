@@ -93,24 +93,26 @@ export class ProjectBaserow extends AbstractBaserow {
       nameTag: baserowProject.NameTag,
       shortDescription: baserowProject['Description courte'],
       image: this._imagePath + imageName,
-      titleLongDescription: baserowProject['Titre - Pourquoi ?'] ?? undefined,
+      titleLongDescription: baserowProject['Titre - Pourquoi ?'] ? baserowProject['Titre - Pourquoi ?'] : undefined,
       longDescription: baserowProject['Qu’est-ce que c’est ?'],
-      titleMoreDescription: baserowProject['Titre - Me documenter'] ?? undefined,
+      titleMoreDescription: baserowProject['Titre - Me documenter'] ? baserowProject['Titre - Me documenter'] : undefined,
       moreDescription: baserowProject['Pour aller plus loin'],
       themes: this._generateThemeList(baserowProject['Thématique principale'], baserowProject['Thématiques secondaires'], baserowThemes),
       mainTheme: this._generateMainTheme(baserowProject['Thématique principale'], baserowThemes),
       programs: ReplacerBaserow.linkObjectsByValues(baserowProject.Dispositifs),
-      titleLinkedProjects: baserowProject['Titre - Projets complémentaires'] ?? undefined,
+      titleLinkedProjects: baserowProject['Titre - Projets complémentaires']
+        ? baserowProject['Titre - Projets complémentaires']
+        : undefined,
       descriptionLinkedProjects: baserowProject['Description - Projets complémentaires'] ?? undefined,
       linkedProjects: ReplacerBaserow.linkObjectsByIds(baserowProject['Projets complémentaires']),
       priority: this._generatePriority(baserowProject.Prio, baserowProject['Prios spécifiques'], baserowProject),
       highlightPriority: baserowProject['Mise En Avant'],
       sectors: this._generateSectors(baserowProject as BaserowSectors),
-      titleFaq: baserowProject['Titre - FAQ'] ?? undefined,
+      titleFaq: baserowProject['Titre - FAQ'] ? baserowProject['Titre - FAQ'] : undefined,
       status: this._convertStatus(baserowProject?.Statut),
       ...(redirect !== undefined && { redirectTo: redirect }),
-      metaTitle: baserowProject['Meta Titre'] ?? undefined,
-      metaDescription: baserowProject['Meta Description'] ?? undefined,
+      metaTitle: baserowProject['Meta Titre'] ? baserowProject['Meta Titre'] : undefined,
+      metaDescription: baserowProject['Meta Description'] ? baserowProject['Meta Description'] : undefined,
       faqs: []
     }
   }

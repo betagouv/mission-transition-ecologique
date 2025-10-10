@@ -2,7 +2,7 @@
   <TeeContentBlock
     id="project-linked-projects-title"
     class="fr-py-5v fr-border-b--grey--light"
-    :title="project.titleLinkedProjects ?? Translation.t('project.linkedProjects.title')"
+    :title="project.titleLinkedProjects ? project.titleLinkedProjects : Translation.t('project.linkedProjects.title')"
     container-from="md"
     title-class="fr-h4"
     title-tag="h2"

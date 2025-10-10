@@ -100,7 +100,8 @@
     "1228": "broyeur-vegetaux",
     "1260": "consigne-reemploi",
     "1261": "allongement-duree-de-vie",
-    "1391": "engins-propres"
+    "1391": "engins-propres",
+    "1424": "palettes-calage"
   },
   "program_rowid_to_url_mapping": {
     "1": "accelerateur-decarbonation",
