@@ -81,6 +81,6 @@ const img = Image.getUrl
 }
 
 .other-logo {
-  max-width: 15rem !important;
+  max-width: 13rem !important;
 }
 </style>
