@@ -79,7 +79,8 @@ const img = Image.getUrl
   max-width: 5.8rem !important;
   width: revert-layer !important;
 }
+
 .other-logo {
-  max-width: 18rem !important;
+  max-width: 15rem !important;
 }
 </style>
