@@ -37,7 +37,7 @@ export const partners = [
 export const otherPartner = {
   label: 'Conseiller Entreprise',
   img: '/images/logos/ce-logo.svg',
-  href: 'https://conseillers-entreprises.service-public.fr/',
+  href: 'https://conseillers-entreprises.service-public.gouv.fr/',
   format: 'webp'
 }
 
