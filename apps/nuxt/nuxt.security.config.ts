@@ -19,7 +19,7 @@ export class NuxtSecurityConfig {
       crossOriginEmbedderPolicy: false,
       xFrameOptions: false
       // Missing headers:
-      // 'X-Frame-Options': 'ALLOW-FROM https://conseillers-entreprises.service-public.fr',
+      // 'X-Frame-Options': 'ALLOW-FROM https://conseillers-entreprises.service-public.gouv.fr',
       // 'Expect-CT': `default-src 'self' ${this._sentryData?.domain ? this._sentryData.domain : ''}; report-uri ${this._sentryData?.url};`
     }
   }

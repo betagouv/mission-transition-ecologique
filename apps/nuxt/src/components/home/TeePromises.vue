@@ -56,7 +56,7 @@ const img = Image.getUrl
         <div class="fr-col-justify--center fr-grid-row fr-col-content--middle">
           <img
             :key="otherPartner.label"
-            class="fr-responsive-img fr-m-2v operator-logo"
+            class="fr-responsive-img fr-m-2v other-logo"
             :src="img(otherPartner.img, { format: otherPartner.format ?? undefined, densities: 1, quality: 70, loading: 'lazy' })"
             :alt="otherPartner.label"
           />
@@ -78,5 +78,8 @@ const img = Image.getUrl
   max-height: 5.5rem;
   max-width: 5.8rem !important;
   width: revert-layer !important;
+}
+.other-logo {
+  max-width: 18rem !important;
 }
 </style>

@@ -56,7 +56,7 @@ const thirdParties: PrivacyPolicyPropsThirdParty[] = [
     country: 'France',
     hostingCountry: 'France',
     serviceType: 'Traitement des demandes par les conseillers',
-    policyUrl: 'https://conseillers-entreprises.service-public.fr/mentions_d_information'
+    policyUrl: 'https://conseillers-entreprises.service-public.gouv.fr/mentions_d_information'
   }
 ]
 
