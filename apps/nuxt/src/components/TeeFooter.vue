@@ -9,14 +9,14 @@
         <div class="fr-grid-row">
           <div class="fr-col-12 fr-col-md-8">
             <Feedback
-              title="Merci de nous aider à améliorer ce service :"
+              title="Merci de nous aider à améliorer ce service"
               title-class="fr-h6"
               :position="FeedbackButtonPosition.Footer"
             />
           </div>
           <div class="fr-col-12 fr-col-md-4">
             <div class="fr-follow__social">
-              <p class="fr-h6">Lien utiles</p>
+              <p class="fr-h6">Liens utiles</p>
               <ul>
                 <li
                   v-for="link in utilLinks"
