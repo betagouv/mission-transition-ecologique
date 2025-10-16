@@ -6,9 +6,10 @@
       :value="`form-checkbox-${field.label}`"
       :valid-message="getValidMessage()"
       :error-message="getErrorMessage()"
+      inline
     >
       <template #label>
-        <span class="fr-text--sm">
+        <span class="fr-text--sm fr-mb-2v">
           {{ field.label }}
           <router-link
             v-if="field.hintLink"
@@ -37,3 +38,10 @@ interface Props {
 defineProps<Props>()
 const model = defineModel<BooleanFieldInputType['value']>()
 </script>
+
+<style scoped>
+:deep(.fr-fieldset__element) {
+  margin-bottom: 0;
+  padding: 0;
+}
+</style>
