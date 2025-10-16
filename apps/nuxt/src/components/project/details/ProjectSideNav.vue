@@ -21,7 +21,7 @@
 </template>
 <script setup lang="ts">
 import { ProjectType } from '@/types'
-import { Scroll } from '@/tools/scroll'
+import { Scroll } from '@/tools/scroll/scroll'
 import { Testimony } from '@/types'
 
 const { default: testimoniesJson } = await import('@/public/json/testimony/testimonies.json')

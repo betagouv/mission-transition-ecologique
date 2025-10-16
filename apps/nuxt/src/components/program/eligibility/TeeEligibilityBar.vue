@@ -60,8 +60,8 @@
 <script setup lang="ts">
 import Breakpoint from '@/tools/breakpoints'
 import Navigation from '@/tools/navigation'
-import { Scroll } from '@/tools/scroll'
-import AddClassOnScroll from '@/tools/addClassOnScroll'
+import { Scroll } from '@/tools/scroll/scroll'
+import AddClassOnScroll from '@/tools/scroll/addClassOnScroll'
 import { Color, RouteName } from '@/types'
 import type { RouteLocationRaw } from 'vue-router'
 

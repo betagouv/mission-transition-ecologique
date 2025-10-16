@@ -70,7 +70,7 @@ import { useProjectStore } from '@/stores/project'
 import { storeToRefs } from 'pinia'
 import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 import Analytics from '@/tools/analytic/analytics'
-import { Scroll } from '@/tools/scroll'
+import { Scroll } from '@/tools/scroll/scroll'
 import { useCompanyDataStore } from '@/stores/companyData'
 import { ProgramEligibility } from '@/types'
 

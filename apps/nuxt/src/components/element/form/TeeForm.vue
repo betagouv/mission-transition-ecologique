@@ -75,15 +75,17 @@
     class="fr-mt-5v fr-mx-auto fr-grid-row fr-grid-row--center fr-grid-row--middle"
   >
     <template #phoneContact>
-      <p class="fr-mb-5v">
-        <span v-html="phoneCallback"></span>
-      </p>
-      <div
-        v-if="showCELogo"
-        class="fr-header__service"
-      >
-        <p class="fr-header__service-title fr-mb-0"><span class="fr-text--deep-red">Conseillers-Entreprises</span>.Service-Public.fr</p>
-        <p class="fr-header__service-tagline">Le service public d’accompagnement des entreprises</p>
+      <div class="fr-col-md-9 fr-mx-auto">
+        <p class="fr-mb-5v">
+          <span v-html="phoneCallback"></span>
+        </p>
+        <div
+          v-if="showCELogo"
+          class="fr-header__service"
+        >
+          <p class="fr-header__service-title fr-mb-0"><span class="fr-text--deep-red">Conseillers-Entreprises</span>.Service-Public.fr</p>
+          <p class="fr-header__service-tagline">Le service public d’accompagnement des entreprises</p>
+        </div>
       </div>
     </template>
   </TeeFormCallback>
@@ -91,7 +93,7 @@
 
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
-import { Scroll } from '@/tools/scroll'
+import { Scroll } from '@/tools/scroll/scroll'
 import { computed } from 'vue'
 import { type ReqResp, FormDataType, InputFieldUnionType, ProjectType, ProgramTypeForFront } from '@/types'
 import Translation from '@/tools/translation'

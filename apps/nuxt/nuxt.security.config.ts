@@ -8,6 +8,7 @@ export class NuxtSecurityConfig {
   static _metabaseUrl = 'https://tee-metabase.osc-fr1.scalingo.io'
   static _posthogUrl = 'https://eu.i.posthog.com'
   static _posthogAssetsUrl = 'https://eu-assets.i.posthog.com'
+  static _jedonnemonavisUrl = 'https://jedonnemonavis.numerique.gouv.fr'
   static _sentryData = NuxtSentryConfig.getSentryData()
 
   static getHeadersConfig(): SecurityHeaders {
@@ -51,7 +52,7 @@ export class NuxtSecurityConfig {
       'style-src': ["'self'", "'unsafe-inline'", this._baserowFormUrl, this._metabaseUrl],
       'font-src': ["'self'"],
       'object-src': ["'self'"],
-      'img-src': ["'self'", 'data:'],
+      'img-src': ["'self'", 'data:', this._jedonnemonavisUrl],
       'connect-src': [
         "'self'",
         this._statsBetaGouvFrUrl,

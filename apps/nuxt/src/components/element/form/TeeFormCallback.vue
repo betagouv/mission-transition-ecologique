@@ -1,8 +1,5 @@
 <template>
-  <div
-    teste2e-select="callback-contact-form"
-    class="fr-col-12 fr-col-md-9"
-  >
+  <div teste2e-select="callback-contact-form">
     <!-- MESSAGE IF ERROR-->
     <TeeError
       v-if="!hasValidResponse"
@@ -34,13 +31,19 @@
         {{ Translation.t('form.nowWhat') }}
       </h6>
       <slot name="phoneContact" />
+      <Feedback
+        title="Aidez-nous à améliorer ce service"
+        title-class="fr-text--blue-france fr-h4"
+        class="fr-bg--white fr-p-3w"
+        :position="FeedbackButtonPosition.Form"
+      />
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import Translation from '@/tools/translation'
 import Contact from '@/tools/contact'
-import { FormDataType, type ReqResp } from '@/types'
+import Translation from '@/tools/translation'
+import { FeedbackButtonPosition, FormDataType, type ReqResp } from '@/types'
 
 interface Props {
   form: FormDataType
