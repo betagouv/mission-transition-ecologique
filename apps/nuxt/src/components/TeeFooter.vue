@@ -17,15 +17,16 @@
           <div class="fr-col-12 fr-col-md-4">
             <div class="fr-follow__social">
               <p class="fr-h6">Liens utiles</p>
-              <ul>
+              <ul class="">
                 <li
                   v-for="link in utilLinks"
                   :key="link.label"
+                  class="fr-footer__content-item"
                 >
                   <router-link
                     v-if="link.to"
                     :to="link.to"
-                    class="fr-footer__bottom-link"
+                    class="fr-footer__content-link"
                   >
                     {{ link.label }}
                   </router-link>
@@ -34,7 +35,7 @@
                     :href="link.href"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="fr-footer__bottom-link"
+                    class="fr-footer__content-link"
                   >
                     {{ link.label }}
                   </a>
