@@ -1,0 +1,61 @@
+import { DataProject, ProjectStatus } from '../../../src/project/types/domain'
+
+export const dataProjectFixtures: DataProject[] = [
+  {
+    id: 1,
+    title: 'Test Project 1',
+    slug: 'test-project-1',
+    nameTag: 'TP1',
+    shortDescription: 'Short description for test project 1',
+    image: 'test-image-1.jpg',
+    longDescription: 'Long description for test project 1',
+    moreDescription: 'More description for test project 1',
+    themes: ['theme1', 'theme2'],
+    mainTheme: 'theme1',
+    programs: ['program1', 'program2'],
+    linkedProjects: [2],
+    priority: { default: 1, high: 2 },
+    highlightPriority: 1,
+    sectors: ['sector1', 'sector2'],
+    faqs: [],
+    status: ProjectStatus.InProd
+  },
+  {
+    id: 2,
+    title: 'Test Project 2',
+    slug: 'test-project-2',
+    nameTag: 'TP2',
+    shortDescription: 'Short description for test project 2',
+    image: 'test-image-2.jpg',
+    longDescription: 'Long description for test project 2',
+    moreDescription: 'More description for test project 2',
+    themes: ['theme2', 'theme3'],
+    mainTheme: 'theme2',
+    programs: ['program2', 'program3'],
+    linkedProjects: [1],
+    priority: { default: 2, high: 1 },
+    highlightPriority: 2,
+    sectors: ['sector2', 'sector3'],
+    faqs: [],
+    status: ProjectStatus.InProd
+  },
+  {
+    id: 3,
+    title: 'Archived Project',
+    slug: 'archived-project',
+    nameTag: 'AP',
+    shortDescription: 'Short description for archived project',
+    image: 'archived-image.jpg',
+    longDescription: 'Long description for archived project',
+    moreDescription: 'More description for archived project',
+    themes: ['theme1'],
+    mainTheme: 'theme1',
+    programs: ['program1'],
+    linkedProjects: [],
+    priority: { default: 3 },
+    highlightPriority: null,
+    sectors: ['sector1'],
+    faqs: [],
+    status: ProjectStatus.Archived
+  }
+]

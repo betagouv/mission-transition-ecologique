@@ -244,9 +244,9 @@
     "titre": "ACT - Programme Volontaire Français",
     "metaTitre": "ACT pas à pas – Programme Volontaire Français ADEME",
     "promesse": "Développez votre stratégie bas carbone et mettez en œuvre votre plan de transition",
-    "description": "L’ADEME soutient financièrement les entreprises qui souhaitent **questionner leur modèle économique** pour identifier un nouveau modèle compatible avec une **trajectoire bas carbone.**\\\nVous serez accompagné avec la méthode ACT Pas à Pas (Assessing Low Carbon Transition), une méthode structurante, progressive et sur le long terme qui aide les entreprises à **réduire significativement leurs émissions de gaz à effet de serre**.",
+    "description": "L’ADEME soutient financièrement les entreprises qui souhaitent **questionner leur modèle économique** pour identifier un nouveau modèle compatible avec une **trajectoire bas carbone.**\\\nVous serez accompagné avec la **méthode ACT Pas à Pas** (Assessing Low Carbon Transition), une méthode structurante, progressive et sur le long terme qui aide les entreprises à **réduire significativement leurs émissions de gaz à effet de serre**.",
     "metaDescription": "Construisez votre stratégie bas carbone avec ACT pas à pas. Une méthode structurante et progressive pour engager votre entreprise dans la transition écologique..",
-    "description longue": "L'étude ACT Pas à Pas se déroule en 12 à 18 mois selon les entreprises.\n\nLes grandes étapes de l'étude sont les suivantes :\n\n- Analyser la maturité initiale de l'entreprise sur des bases carbone.\n- Exposer les enjeux et réaliser une analyse stratégique de l’entreprise dans un contexte de transition bas carbone.\n- Déterminer une vision d’entreprise et concevoir la feuille de route du plan de transition à court, moyen et long terme.\n- Elaborer des objectifs de performance carbone et définir une stratégie.\n- Mettre en oeuvre des actions de décarbonation.",
+    "description longue": "L'étude ACT Pas à Pas se déroule en 12 à 18 mois selon les entreprises.\n\nLes grandes étapes de l'étude sont les suivantes :\n\n- Analyser la maturité initiale de l'entreprise sur des bases carbone.\n- Exposer les enjeux et réaliser une analyse stratégique de l’entreprise dans un contexte de transition bas carbone.\n- Déterminer une vision d’entreprise et concevoir la feuille de route du plan de transition à court, moyen et long terme.\n- Élaborer des objectifs de performance carbone et définir une stratégie.\n- Mettre en œuvre des actions de décarbonation.",
     "début de validité": "13/11/2023",
     "fin de validité": "30/06/2026",
     "illustration": "images/TEE_energie_verte.png",
@@ -266,7 +266,7 @@
         ]
       },
       {
-        "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir commencé !",
+        "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
         "liens": [
           {
             "lien": "https://actinitiative.org/fr/act-in-france-soutien-financier/",
@@ -4130,13 +4130,18 @@
     "id": "diagnostic-rse"
   },
   {
-    "titre": "Eco-Défis des artisans et des commerçants",
-    "metaTitre": "Éco-défis des artisans et des commerçants - Label écologique",
-    "promesse": "Réalisez des éco-défis et obtenez un label pour valoriser votre engagement",
-    "description": "Participez à l’opération « Eco-défis des commerçants et artisans » qui permet de **valoriser les actions menées par les entreprises locales** en matière d’environnement, énergie, transport, déchets, éco-produits, gestion de l’eau, emballages, responsabilité sociétale. Déployée dans plusieurs régions, elle repose sur une **marque nationale, une méthodologie, une liste de défis et des animations.**\n\n- Engagez-vous en faveur d’un développement durable de votre entreprise en mettant en place des **éco-défis**.\n- Bénéficiez de **conseils personnalisés** pour améliorer vos performances économiques, environnementales et sociétales.\n- **Obtenez le label « éco-défis »** pour valoriser votre démarche auprès de vos clients.\n- Profiter d’une **communication gratuite** dans le cadre de cette opération.",
-    "metaDescription": "Réalisez des défis écologiques pour améliorer la performance environnementale de votre activité et obtenez le label éco-défis pour valoriser votre engagement",
-    "illustration": "images/TEE_energie_verte.png",
-    "opérateur de contact": "CCI ou CMA",
+    "titre": "Baisse Les Watts",
+    "promesse": "Bénéficiez d'outils et de formations pour économiser l'énergie en entreprise",
+    "description": "Le programme Baisse les Watts vous accompagne dans la **maîtrise de votre consommation d’énergie**, à l'aide de trois dispositifs : le Carnet de bord Énergie, un accompagnement téléphonique et un parcours de formations collectives et individuelles.",
+    "description longue": "Baisse les Watts vous aide à réduire votre consommation en :\n- Électricité,\n- Gaz,\n- Fioul,\n- GPL,\n- RCU (Réseau de chaleur urbain) – hors carburants.",
+    "début de validité": "01/01/2023",
+    "fin de validité": "01/05/2026",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "ADEME",
+    "autres opérateurs": [
+      "Chambre de Commerce et de l'Industrie",
+      "Chambre des Métiers et de l'Artisanat"
+    ],
     "contact question": "formulaire",
     "url": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/eco-defis-des-artisans-et-des-commercants",
     "nature de l'aide": "étude",
@@ -21067,6 +21072,11 @@
       "entreprise . a un effectif éligible": {
         "toutes ces conditions": [
           "effectif >= 10"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
         ]
       },
       "entreprise . a une categorie legale eligible": {

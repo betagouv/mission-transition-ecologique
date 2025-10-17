@@ -20,7 +20,7 @@
         <div class="sticky-limits">
           <div
             ref="stickyElement"
-            class="fr-sticky-md fr-py-1w"
+            class="fr-sticky-md"
           >
             <TeeRegisterHighlight
               v-if="!isDataFull"

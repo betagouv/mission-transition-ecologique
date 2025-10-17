@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import path from 'path'
 import { fileURLToPath } from 'url'
 import ConfigBaserow from '../../configBaserow'
+import { FilterBaserow } from './filterBaserow'
 import { ReplacerBaserow } from './replacerBaserow'
 import { BaserowData, Id, LinkObject } from './types'
 
@@ -28,23 +29,27 @@ export abstract class AbstractBaserow {
     return axios.create(this._axiosHeader)
   }
 
-  protected async _getData<T>(tableId: number) {
-    return await this._axios.get<BaserowData<T>>(`${this._url}/${tableId}/?user_field_names=true`)
+  protected async _getData<T>(tableId: number, filters: FilterBaserow | undefined) {
+    return await this._axios.get<BaserowData<T>>(`${this._url}/${tableId}/?user_field_names=true`, {
+      params: filters ? filters.get() : {}
+    })
   }
 
   protected async _getDatum<T>(tableId: number, rowId: number) {
     return await this._axios.get<T>(`${this._url}/${tableId}/${rowId}/?user_field_names=true`)
   }
 
-  protected async _getTableData<T>(tableId: number): Promise<T[]> {
+  protected async _getTableData<T>(tableId: number, filters: FilterBaserow | undefined = undefined): Promise<T[]> {
     try {
-      const response = await this._getData<T>(tableId)
+      const response = await this._getData<T>(tableId, filters)
       await this._delay(100)
 
       let results = response.data.results
       let next = response.data.next
       while (next) {
-        const response = await this._axios.get(next)
+        const response = await this._axios.get(next, {
+          params: filters ? filters.get() : {}
+        })
         await this._delay(100)
         results = results.concat(response.data.results)
         next = response.data.next
@@ -76,7 +81,7 @@ export abstract class AbstractBaserow {
     referencedTableData: T[],
     one?: O
   ): O extends true ? T | undefined : T[] {
-    return ReplacerBaserow.replaceLinkObjectByTableData<T, O>(links, referencedTableData, one)
+    return ReplacerBaserow.linkObjectByTableData<T, O>(links, referencedTableData, one)
   }
 
   protected async _patchRow<T>(tableId: number, rowId: number, data: Partial<T>): Promise<void> {

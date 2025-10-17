@@ -37,11 +37,11 @@ interface ContentProps {
 
 const projectDescription = ref<ContentProps>({
   description: {
-    title: "❓ Qu'est ce que c'est ?",
+    title: props.project.titleLongDescription ? props.project.titleLongDescription : "❓ Qu'est ce que c'est ?",
     details: props.project.longDescription
   },
   more: {
-    title: '📚 Pour aller plus loin',
+    title: props.project.titleMoreDescription ? props.project.titleMoreDescription : '📚 Pour aller plus loin',
     details: props.project.moreDescription
   }
 })

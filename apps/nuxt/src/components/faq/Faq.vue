@@ -18,7 +18,7 @@
 </template>
 <script lang="ts" setup>
 import FaqSection from '@/components/faq/FaqSection.vue'
-import { Marked } from '@/tools/marked'
+import { Faq } from '@/tools/faq'
 import { FaqSectionType } from '@/types'
 
 interface Props {
@@ -31,14 +31,8 @@ useSchemaOrg([{ '@type': 'FAQPage', mainEntity: defineQuestions() }])
 function defineQuestions() {
   const itemListElement = []
   for (const faqItem of props.faqItems) {
-    for (const question of faqItem.questions) {
-      itemListElement.push(
-        defineQuestion({
-          name: Marked.toHtml(question.question, false, false),
-          acceptedAnswer: Marked.toHtml(question.answer, true, false)
-        })
-      )
-    }
+    const defineQuestions = Faq.getDefineQuestions(faqItem.questions)
+    itemListElement.push(...defineQuestions)
   }
 
   return itemListElement

@@ -34,7 +34,7 @@ export const faqSectionBaserow: BaserowFaqSection[] = [
     }
   },
   {
-    id: 34,
+    id: 3,
     order: '3.00000000000000000000' as unknown as number,
     Titre: 'Pourquoi ?',
     Couleur: {

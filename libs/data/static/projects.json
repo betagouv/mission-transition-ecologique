@@ -71,6 +71,33 @@
       "S",
       "T",
       "U"
+    ],
+    "faqs": [
+      {
+        "id": 146,
+        "question": "Quelles entreprises sont obligées de réaliser un audit énergétique obligatoire ?",
+        "answer": "Seules les **grandes entreprises** **ont l’obligation de réaliser un audit énergétique** tous les quatre ans. Il s’agit des entreprises qui emploient plus de 250 salariés ou qui réalisent un chiffre d’affaires annuel supérieur à 50 millions d’euros et un total de bilan de plus de 43 millions d’euros. \\\nLe but de cet audit est de réaliser un **bilan complet** de la consommation énergétique de l’entreprise, et d’engager un **plan de sobriété**."
+      },
+      {
+        "id": 147,
+        "question": "Comment réduire la consommation d'énergie dans une entreprise ?",
+        "answer": "Afin de réduire efficacement la consommation énergétique, vous pouvez vous faire accompagner pour :\n\n- Dresser un **bilan complet de vos consommations**, et repérer les **postes les plus énergivores.**\n- Identifier les **économies d’énergie** que vous pouvez réaliser rapidement.\n- Mettre en place **un plan d’économie d’énergie** en agissant sur plusieurs leviers (changement de fournisseurs d’énergie, type de chauffage, isolation du bâtiment…)."
+      },
+      {
+        "id": 148,
+        "question": "Qu’est-ce qu’un certificat d’économies d’énergie (CEE) ?",
+        "answer": "Un certificat d'économie d'énergie (CEE) est une **aide financière** destinée aux entreprises qui réalisent des **travaux d’amélioration de la performance énergétique**.\n\nIl peut s’agir, par exemple, de travaux :\n\n- De changement de système de chauffage.\n- D’isolation thermique.\n- D’optimisation de procédés…\n\nCette aide est **octroyée par les fournisseurs d’énergie (électricité, gaz, fioul, carburant…) dans le cadre d’une obligation légale**. Elle peut être versée sous forme d’un remboursement après travaux, d’une prime, d’une réduction directe sur votre devis ou d’un remboursement après travaux, selon le fournisseur choisi."
+      },
+      {
+        "id": 149,
+        "question": "Quels travaux de rénovation énergétique permettent de faire des économies d’énergie en entreprise ?",
+        "answer": "Pour rendre votre entreprise sobre énergétiquement, il faut considérer en priorité :\n\n- **L’isolation du bâtiment**. Rénover zones qui engendrent le plus de déperdition énergétique : toiture, murs, vitrage…\n- **La ventilation**. Un système de ventilation VMC double flux vous permettra de réguler efficacement l’humidité intérieure.\n- **Le chauffage**. C’est la ligne la plus importante de votre facture énergétique. Un système de chauffage fonctionnant aux énergies renouvelables (pompe à chaleur, chaudière biomasse, réseau de chaleur…) vous fera réaliser d’importantes économies.\n- **L’éclairage.** L’installation de LED, d’une minuterie ou de détecteurs de mouvement fera baisser votre facture.\n- **L’optimisation des process.** L’automatisation des process ou le remplacement des machines par un équivalent performant."
+      },
+      {
+        "id": 150,
+        "question": "Comment financer des travaux d’économie d’énergie ?",
+        "answer": "De nombreuses aides financières, accompagnements, crédits d’impôt peuvent vous permettre de financer ces travaux. Elles sont parfois réservées à un secteur d’activité ou à une zone géographique. [Saisissez votre SIRET et laissez-vous guider](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/plan-action-eco-energie/?profil-entreprise=oui)."
+      }
     ]
   },
   {
@@ -137,7 +164,8 @@
       "U"
     ],
     "metaTitle": "Eclairage LED pour entreprises - Subventions pour la rénovation énergétique",
-    "metaDescription": "Faites des économies d’énergie en remplaçant vos ampoules classiques par des ampoules LED. Découvrez les aides et subventions disponibles."
+    "metaDescription": "Faites des économies d’énergie en remplaçant vos ampoules classiques par des ampoules LED. Découvrez les aides et subventions disponibles.",
+    "faqs": []
   },
   {
     "id": 5,
@@ -176,7 +204,6 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "hotellerie-independante-bfc",
-      "aide-investissement-corse",
       "certificats-economie-energie",
       "decarb-flash-2025-2027"
     ],
@@ -211,7 +238,8 @@
       "U"
     ],
     "metaTitle": "Panneaux solaires pour les entreprises - Solution durable et rentable",
-    "metaDescription": "Produisez votre propre électricité grâce aux panneaux solaires. Autoconsommez ou revendez l’énergie générée et réduisez l’empreinte écologique de votre entreprise."
+    "metaDescription": "Produisez votre propre électricité grâce aux panneaux solaires. Autoconsommez ou revendez l’énergie générée et réduisez l’empreinte écologique de votre entreprise.",
+    "faqs": []
   },
   {
     "id": 3,
@@ -261,7 +289,8 @@
       "M"
     ],
     "metaTitle": "Réduction des emballages - Gestion des déchets en entreprise",
-    "metaDescription": "Adoptez une stratégie de réduction, de réemploi et de recyclage des emballages et du plastique à usage unique dans votre entreprise. Anticipez les exigences de la loi AGEC."
+    "metaDescription": "Adoptez une stratégie de réduction, de réemploi et de recyclage des emballages et du plastique à usage unique dans votre entreprise. Anticipez les exigences de la loi AGEC.",
+    "faqs": []
   },
   {
     "id": 6,
@@ -336,7 +365,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 7,
@@ -409,7 +439,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1,
@@ -474,7 +505,34 @@
       "U"
     ],
     "metaTitle": "Bilan GES entreprise  - Bilan carbone ADEME",
-    "metaDescription": "Quantifiez les émissions de gaz à effet de serre émises ou captées par les activités de votre entreprise avec la méthode Bilan Carbone® élaborée par l’ADEME."
+    "metaDescription": "Quantifiez les émissions de gaz à effet de serre émises ou captées par les activités de votre entreprise avec la méthode Bilan Carbone® élaborée par l’ADEME.",
+    "faqs": [
+      {
+        "id": 137,
+        "question": "Comment faire un bilan des gaz à effet de serre ?",
+        "answer": "Un bilan des émissions de gaz à effet de serre, ou BEGES, consiste à mesurer sur une année complète, l’ensemble des **émissions directes et indirectes** produites par une entreprise. Il se déroule en plusieurs étapes :\n\n- Le cadrage\n- L’identification des sources et émissions\n- La collecte des données\n- Le calcul du bilan et des analyses\n- L’élaboration du plan de transition\n- La publication en ligne du BEGES.\n\nPour ce faire, vous pouvez faire appel à un **prestataire extérieur** ou le **réaliser en interne**, en vous appuyant sur les [guides sectoriels de l’ADEME](https://bilans-ges.ademe.fr/ressources/approches-sectorielles)."
+      },
+      {
+        "id": 138,
+        "question": "Quelles sont les obligations réglementaires du bilan GES (ou BEGES) ?",
+        "answer": "Le **Bilan des Émissions de Gaz à Effet de Serre (BEGES)** est **obligatoire** si votre entreprise compte plus de **500 salariés** en métropole (ou **250 en Outre-mer**). Vous devez alors **réaliser et publier un bilan GES complet**, mis à jour tous les **quatre ans**.\n\nSi votre entreprise compte **entre 50 et 500 salariés**, vous êtes concerné par le **bilan carbone simplifié**. Cette version allégée du BEGES permet d’évaluer vos **principales sources d’émissions** et de définir un **plan d’action climat adapté**.\n\nSont également concernées par l’obligation de réaliser un bilan GES :\n\n- Les personnes morales de droit public de plus de 250 salariés (comme les hôpitaux ou établissements publics).\n- Les services de l’État.\n- Les régions, les départements, les communes, les métropoles et les communautés d’agglomérations de plus de 50 000 habitants."
+      },
+      {
+        "id": 139,
+        "question": "Pourquoi réaliser un bilan GES en entreprise ?",
+        "answer": "Même si vous n’y êtes pas contraints, la réalisation d’un bilan GES (ou BEGES) présente de nombreux avantages :\n\n- Vous **activez un des points clés de la stratégie RSE**, en agissant sur le volet environnemental.\n- Vous **analysez en détail votre consommation énergétique** et mettez en place des actions concrètes pour la réduire de manière significative.\n- Vous **devancez les obligations réglementaires** de votre secteur en agissant dores et déjà sur des points clés (pollution, efficacité énergétique, émissions carbone…).\n- Vous **jouez sur la réputation de votre entreprise**, et inscrivez l’aspect environnemental au sein de vos valeurs."
+      },
+      {
+        "id": 140,
+        "question": "Quels sont les trois scopes du bilan GES ?",
+        "answer": "Un bilan GES est réalisé suivant trois scopes, trois périmètres :\n\n- Le scope 1 mesure les **émissions directes** de gaz à effet de serre, émanant des activités de l’entreprise et issues de combustibles fossiles (pétrole, gaz, charbon…). Il peut s’agir par exemple du chauffage des locaux, de l’utilisation des camionnettes de l’entreprise, etc.\n- Le scope 2 correspond aux **émissions indirectes** résultant de la production d'énergie achetée et consommée par l'entreprise.\n- Le scope 3 analyse les **émissions indirectes** qui résultent des activités de l'entreprise, mais qui sont **en dehors de son périmètre de contrôle**. Il peut s’agir du transport des marchandises, de la production de déchets, etc."
+      },
+      {
+        "id": 141,
+        "question": "Combien coûte un bilan GES ?",
+        "answer": "Le coût d’un bilan GES est variable selon :\n\n- Le prestataire choisi.\n- Le scope couvert.\n- La taille de l’entreprise.\n\nIl faut compter environ 10 000 € pour une PME qui réaliserait un bilan complet (scopes 1, 2 et 3) avec l’aide d’un cabinet de conseil. Pour un bilan réalisé grâce à une plateforme avec des outils de suivi des émissions, il faut compter entre 2 000 à 5 000 €."
+      }
+    ]
   },
   {
     "id": 8,
@@ -549,7 +607,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 9,
@@ -618,7 +677,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 10,
@@ -693,7 +753,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 11,
@@ -749,7 +810,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 12,
@@ -814,7 +876,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 13,
@@ -853,7 +916,8 @@
       "A"
     ],
     "metaTitle": "Subventions serre agricole - Valorisation de l’énergie solaire",
-    "metaDescription": "Les serres agricoles valorisent l’énergie solaire, réduisent les pesticides et protègent les cultures. Découvrez comment améliorer leurs performances et les aides disponibles."
+    "metaDescription": "Les serres agricoles valorisent l’énergie solaire, réduisent les pesticides et protègent les cultures. Découvrez comment améliorer leurs performances et les aides disponibles.",
+    "faqs": []
   },
   {
     "id": 14,
@@ -922,7 +986,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 15,
@@ -1005,7 +1070,8 @@
       "U"
     ],
     "metaTitle": "Isolation thermique des entreprises - Rénovation énergétique",
-    "metaDescription": "Faites isoler vos bâtiments pour limiter les pertes de chaleur et de fraîcheur. Une bonne isolation thermique réduit vos dépenses énergétiques."
+    "metaDescription": "Faites isoler vos bâtiments pour limiter les pertes de chaleur et de fraîcheur. Une bonne isolation thermique réduit vos dépenses énergétiques.",
+    "faqs": []
   },
   {
     "id": 16,
@@ -1064,6 +1130,28 @@
       "S",
       "T",
       "U"
+    ],
+    "faqs": [
+      {
+        "id": 155,
+        "question": "Pourquoi mettre en place un plan de mobilité dans son entreprise ?",
+        "answer": "Mettre en place de moyens de transports non polluants et un plan de mobilité au sein de votre entreprise présente plusieurs avantages. Cela vous permet de :\n\n- **Optimiser les déplacements** des collaborateurs.\n- **Diminuer les émissions** de gaz à effets de serre et la pollution.\n- **Décongestionner le trafic** routier, notamment en milieu urbain.\n- **Améliorer la qualité de vie** de vos salariés, en favorisant les mobilités douces."
+      },
+      {
+        "id": 156,
+        "question": "Quelles sont les étapes d'un plan de mobilité employeur ?",
+        "answer": "Le plan de mobilité peut faire l’objet de **négociations** entre les salariés et l’employeur, **ou être décrété unilatéralement** par l’employeur.\n\nLe plan de mobilité s’effectue selon les étapes suivantes :\n\n1. **L’analyse détaillée** des déplacements professionnels, et des trajets domicile-travail effectués par les collaborateurs.\n2. Une évaluation de l’**offre de transport**.\n3. L’élaboration d’un **programme d’actions concrètes**, chiffrées et suivant un calendrier précis.\n4. Le **suivi de ces actions**, et la réalisation d’une mise-à-jour à une échéance prédéfinie."
+      },
+      {
+        "id": 157,
+        "question": "Quel type d’actions peuvent figurer dans le plan de mobilité ?",
+        "answer": "Vous pouvez, par exemple promouvoir les mobilités douces sur le trajet domicile-travail, à l’aide de différentes mesures incitatives :\n\n- Promouvoir l’**autopartage et le covoiturage** des salariés en accordant une prime, des places de stationnement réservées.\n- Installer un **abri à vélo**.\n- Inciter au **télétravail partiel ou complet**, quand cela est possible.\n- Mettre en place des **bornes de recharge** pour les véhicules électriques.\n\nVous pouvez également intégrer les déplacements professionnels au plan de mobilité et inciter les salariés à réaliser les **déplacements nationaux en train** plutôt qu’en avion."
+      },
+      {
+        "id": 158,
+        "question": "Qu'est-ce que la loi d'orientation des mobilités ?",
+        "answer": "La loi d’orientation des mobilités, promulguée en 2019, a pour objectif d’offrir une alternative à la voiture partout où cela est possible. Elle vise à atteindre la **neutralité carbone d'ici 2050** et de **réduire de 37,5 % les émissions de CO2 d'ici 2030**. Ainsi, elle consacre :\n\n- Un **plan vélo** pour tripler sa part dans les déplacements.\n- Un **plan covoiturage**.\n- Des **zones à faibles émissions (ZFE)**.\n- La **contribution des modes les plus émetteurs** au financement des mobilités (le transport routier et le secteur aérien).\n\nCette loi oblige les entreprises de plus de 50 salariés à inclure un volet consacré à la mobilité dans les Négociations annuelles obligatoires (NAO). Si les négociations échouent, un Plan de mobilité employeur (PDME) est élaboré."
+      }
     ]
   },
   {
@@ -1124,7 +1212,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 18,
@@ -1190,7 +1279,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 19,
@@ -1252,7 +1342,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 20,
@@ -1315,6 +1406,28 @@
       "S",
       "T",
       "U"
+    ],
+    "faqs": [
+      {
+        "id": 159,
+        "question": "À combien estime-t-on la consommation moyenne d’un salarié ?",
+        "answer": "Tandis que la consommation d’eau potable s’élève à **145 litres par habitant** et par jour :\n\n- Un **salarié du tertiaire** consomme environ **40 litres** chaque jour.\n- Un **client d’hébergement touristique** consomme, quant à lui, en moyenne **300 litres** par jour."
+      },
+      {
+        "id": 160,
+        "question": "Comment réduire sa consommation d’eau en entreprise ?",
+        "answer": "De nombreuses mesures et investissements peuvent vous aider à réduire considérablement votre consommation d’eau et à réduire votre facture. Vous pouvez, par exemple :\n\n- Suivre précisément votre consommation et **détecter d’éventuelles fuites d’eau**, en relevant le compteur le vendredi soir puis le lundi avant la reprise de l’activité.\n- Mettre en place **un circuit fermé au sein de votre cycle de production**. Ainsi, vous pouvez réutiliser les eaux usées pour refroidir vos installations.\n- **Collecter les eaux de pluie** et les réutiliser pour les sanitaires, l’arrosage, l’alimentation d’aires de lavage, le rinçage de cuves…\n- **Remplacer vos équipements anciens** par des machines moins gourmandes en eau.\n- Installer des **dispositifs peu coûteux sur les robinets** et les arrivées d’eau : réducteurs de débit, douchettes économiques, chasses d’eau à double débit…\n- **Sensibiliser vos collaborateurs et vos clients** aux écogestes."
+      },
+      {
+        "id": 161,
+        "question": "Quel est l'objectif du Plan de sobriété en eau ?",
+        "answer": "Le plan de sobriété en eau vise à remettre la consommation d’eau au centre de l’attention des entreprises. Ainsi, vous :\n\n- Placez **la préoccupation écologique au cœur** de vos valeurs.\n- **Diminuez vos factures**.\n- **Anticipez d’éventuelles restrictions** **d’eau** et pérennisez votre activité.\n- Mettez votre entreprise **en conformité avec la réglementation** actuelle ou à venir."
+      },
+      {
+        "id": 162,
+        "question": "Quels secteurs consomment le plus d'eau ?",
+        "answer": "L’**agriculture** arrive en tête de la consommation d’eau et représente à elle seule 57 % du total des activités économiques.\n\nEnsuite, c’est l’**eau potable** qui représente 26 % de la consommation d’eau.\n\nLe **refroidissement des centrales électriques** s’élève à 12 %.\n\nLes **usages industriels** représentent 5 %."
+      }
     ]
   },
   {
@@ -1374,6 +1487,28 @@
       "S",
       "T",
       "U"
+    ],
+    "faqs": [
+      {
+        "id": 163,
+        "question": "Quelles sont les grandes stratégies de gestion des déchets ?",
+        "answer": "Un plan de déchets en entreprise repose sur les étapes suivantes :\n\n- **Un état des lieux de la production des déchets** de votre entreprise, et des pratiques de gestion de déchets actuellement à l’œuvre.\n- Une **identification des filières de collecte** et de la valorisation appropriée à chaque type de déchets.\n- Une **analyse des améliorations possibles** (tri, collecte, réemploi, mutualisation, etc.) et les **financements** associés.\n- Un **plan d’action pour la gestion des déchets**, permettant la **mise en conformité réglementaire**."
+      },
+      {
+        "id": 164,
+        "question": "Quels sont les principaux flux de déchets produits par une entreprise ?",
+        "answer": "Les types de déchets générés par une entreprise dépendent directement de son secteur d’activité : le tertiaire et l’industrie métallurgique, par exemple, produisent des flux très différents.\n\nConcrètement, on distingue :\n\n- **Les déchets inertes**, principalement issus du BTP. Ce sont ceux qui ne s’altèrent pas avec le temps. Par exemple les tuiles, le béton, la céramique, les pierres.\n- **Les déchets dangereux.** Par exemple les piles, la peinture, l’huile de vidange, les appareils électroniques.\n- **Les déchets non dangereux non inertes.** Il peut s’agir :\n  - De **matériaux recyclables** (carton, verre, papier, bois, métal)\n  - De matériaux **non recyclables** (déchets mélangés).\n  - De **biodéchets** (déchets de table ou déchets verts issus de l’agriculture ou de l’entretien des espaces verts)."
+      },
+      {
+        "id": 165,
+        "question": "Quelles sont les obligations légales pour le tri à la source en entreprise ?",
+        "answer": "Sauf dérogation (petits bureaux, petit chantier ou autre dérogation), les entreprises ont l’obligation légale de **trier leurs déchets à la source**. Sont concernés :\n\n- Le papier\n- Les métaux\n- Le verre\n- Les plastiques\n- Le bois\n- Les textiles\n- Les biodéchets\n- Les huiles alimentaires.\n\nCela signifie que vous devez trier vos déchets et les déposer dans des conteneurs correspondant à chaque catégorie, avant leur collecte et éventuel retraitement. Ces conteneurs doivent être **distincts et accessibles** **à vos employés** afin de faciliter le tri au quotidien.\n\nD’autre part, si vous accueillez du public (ERP) et produisez plus de 1 100 litres de déchets par semaine, vous devez organiser une **collecte distincte auprès de vos visiteurs** pour les déchets d’emballage ménager et les biodéchets."
+      },
+      {
+        "id": 166,
+        "question": "Comment réduire concrètement les déchets au quotidien dans une entreprise ?",
+        "answer": "Pour réduire efficacement les déchets dans votre entreprise, vous pouvez dores et déjà mettre en place les mesures suivantes :\n\n- **Consommer durablement, de manière responsable**. C’est-à-dire privilégier la location de matériel à l’achat, acheter du mobilier ou du matériel de seconde main quand c’est possible, faire fabriquer par des artisans…\n- **Mettre en place le réemploi au bureau :** imprimer recto-verso, utiliser le papier de brouillon. \n- **Installer des conteneurs pour faire du tri sélectif**.\n- **Composter les biodéchets** issus de la cantine.\n- **Mettre de la vaisselle à disposition** pour le café et, ainsi, limiter l’usage de vaisselle jetable."
+      }
     ]
   },
   {
@@ -1429,7 +1564,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 23,
@@ -1491,7 +1627,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 24,
@@ -1560,7 +1697,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 25,
@@ -1615,7 +1753,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 26,
@@ -1678,7 +1817,29 @@
       "U"
     ],
     "metaTitle": "Sensibilisation à l'environnement et à l'écologie en entreprise",
-    "metaDescription": "Formez et mobilisez vos équipes autour des enjeux climatiques : ateliers, formations, défis... pour ancrer la transition écologique dans la culture de l’entreprise."
+    "metaDescription": "Formez et mobilisez vos équipes autour des enjeux climatiques : ateliers, formations, défis... pour ancrer la transition écologique dans la culture de l’entreprise.",
+    "faqs": [
+      {
+        "id": 142,
+        "question": "Comment organiser une campagne de sensibilisation environnementale ?",
+        "answer": "Afin de mettre en place une campagne de sensibilisation environnementale, il est important d’en définir :\n\n- Les **messages**, clairs et percutants.\n- Le **public** ciblé par cette campagne.\n- Les **objectifs** visés, la stratégie à adopter.\n- Les **parties prenantes** qui seront impliquées (experts, équipes internes).\n- Les critères de la **mesure d’impact** pour évaluer si cette campagne a porté ses fruits."
+      },
+      {
+        "id": 143,
+        "question": "Quels sont les éco-gestes que l'on peut adopter en entreprise ?",
+        "answer": "- Sur l’aspect **mobilité**, vous pouvez inciter vos collaborateurs à se déplacer en vélo ou en transports en commun (tram, bus, train…) ou à pratiquer le covoiturage. Vous pouvez également mettre en place des jours de télétravail.\n- Sur le volet **déchets**, vous pouvez mettre à disposition des poubelles de tri, inciter vos équipes à utiliser des récipients réutilisables pour le déjeuner quand ils s’approvisionnent à l’extérieur, réduire les portions à la cantine.\n- Pour limiter les **dépenses énergétiques liées au bâtiment**, vous pouvez installer des robinets automatiques, lier une partie de l’éclairage à des détecteurs de présence, baisser le chauffage et fournir des gilets chauffants à vos salariés."
+      },
+      {
+        "id": 144,
+        "question": "Quels supports ou affiches utiliser pour sensibiliser efficacement à l’environnement ?",
+        "answer": "Le plus efficace est de diversifier les modes de communication et les messages. Vous pouvez, par exemple :\n\n- Faire suivre des **formations** à vos équipes.\n- Disposer des **affiches incitatives** près des lieux de collecte des déchets, à la cantine, dans les sanitaires.\n- Mettre en place des **ateliers** de sensibilisation.\n- Organiser des **jeux**, et des **défis** pour fédérer vos équipes autour des valeurs environnementales."
+      },
+      {
+        "id": 145,
+        "question": "Quelles sont les meilleures campagnes de sensibilisation environnementale ?",
+        "answer": "Les meilleures campagnes de sensibilisation sont celles qui ont des **effets sur le long-terme** et qui fédèrent véritablement les équipes autour d’elles\n\nAinsi, il est important de privilégier des campagnes qui:\n\n- Impliquent les parties prenantes tout au long de la campagne.\n- Proposent de mettre en place des éco-gestes avec un véritable impact, et qui soient à la portée de chacun.\n- S’appuient sur des données chiffrées, ou la parole d’experts du climat.\n- Dressent un bilan final et mesurent l’impact réalisé."
+      }
+    ]
   },
   {
     "id": 27,
@@ -1735,7 +1896,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 28,
@@ -1804,7 +1966,29 @@
       "U"
     ],
     "metaTitle": "Formations à l'environnement et à l'écologie en entreprise",
-    "metaDescription": "Découvrez les formations proposées par les opérateurs publics pour renforcer les compétences de vos équipes face aux enjeux environnementaux."
+    "metaDescription": "Découvrez les formations proposées par les opérateurs publics pour renforcer les compétences de vos équipes face aux enjeux environnementaux.",
+    "faqs": [
+      {
+        "id": 151,
+        "question": "Comment les formations peuvent-elles aider une entreprise à s’engager dans la transition écologique ?",
+        "answer": "Que ça soit pour **initier** une démarche de transition écologique ou pour **faire monter vos collaborateurs en compétence** sur un sujet précis, les formations peuvent vous permettre de saisir rapidement les enjeux de transition écologique et d’appliquer des mesures concrètes au sein de votre entreprise.\n\nEn ligne ou en présentiel, individuelles ou collectives, certaines formations peuvent donner droit à une labellisation."
+      },
+      {
+        "id": 152,
+        "question": "Comment choisir une formation environnement adaptée à son entreprise ?",
+        "answer": "Listez vos besoins sur :\n\n- La **thématique** environnementale sur laquelle vous souhaitez recevoir des information.\n- Le **temps** dont vous disposez (un module isolé, une série de formations).\n- La **modalité** qui vous convient (présentiel/visio, individuel/collectif).\n- Le **nombre de participants** que vous souhaitez inscrire.\n\nEnsuite, consultez les catalogues de formation et trouvez celles qui répondent à vos attentes."
+      },
+      {
+        "id": 153,
+        "question": "Quels modules ou thématiques peuvent être inclus dans une formation environnement (RSE, énergie, déchets, mobilité…) ?",
+        "answer": "Les formations recouvrent un panel important de thématiques. Consultez les catalogues de formations pour avoir une idée précise des thèmes abordés et vous inscrire à celle qui correspond à vos besoins."
+      },
+      {
+        "id": 154,
+        "question": "Quelles sont les obligations légales en matière de formation environnement pour les entreprises ?",
+        "answer": "Il n’y a **pas d’obligation légale** à la formation environnementale.\n\nCela dit, recevoir les outils et les informations pour être capable d’évaluer l’impact écologique de l’activité de son entreprise permet :\n\n- D’anticiper au mieux les règlementations environnementales.\n- De s’adapter et de pérenniser son activité face aux changements climatiques.\n- De fédérer ses équipes autour de valeurs fortes, telles que la protection de l’environnement."
+      }
+    ]
   },
   {
     "id": 29,
@@ -1856,7 +2040,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 30,
@@ -1922,7 +2107,34 @@
       "U"
     ],
     "metaTitle": "Stratégie RSE - Aide à la mise en place d'une démarche responsable",
-    "metaDescription": "Déployez une stratégie RSE pour engager vos salariés et leur faire prendre conscience des enjeux en matière d'écologie et de développement durable."
+    "metaDescription": "Déployez une stratégie RSE pour engager vos salariés et leur faire prendre conscience des enjeux en matière d'écologie et de développement durable.",
+    "faqs": [
+      {
+        "id": 100,
+        "question": "Quels sont les piliers de la stratégie RSE ?",
+        "answer": "Les **trois piliers de la Responsabilité Sociétale des Entreprises (RSE)** sont **économique, social et environnemental**.\n\n- Le **pilier économique** vise la pérennité de l’entreprise.\n- Le **pilier social** concerne le respect des droits humains, des conditions de travail équitables (pour les équipes et les fournisseurs) et le bien-être des collaborateurs.\n- Le **pilier environnemental** encourage la réduction de l’empreinte carbone, la gestion responsable des ressources et la transition écologique. \n\nEn combinant ces trois dimensions, une entreprise développe une **stratégie RSE cohérente**, alliant rentabilité, éthique et durabilité."
+      },
+      {
+        "id": 133,
+        "question": "Comment mettre en place une stratégie RSE dans l’entreprise ?",
+        "answer": "Le meilleur point d’entrée pour la mise en place d’une stratégie RSE est **l’établissement d’un diagnostic**, appuyé par un expert. \\\nEnsemble, vous dresserez un **bilan** de votre entreprise dans les différents domaines de la RSE, vous mettrez en évidence ses forces et ses faiblesses, puis vous élaborerez un **plan d’action personnalisé.** \\\nCe travail servira de base à la feuille de route et à l’implémentation des **premières actions concrètes**."
+      },
+      {
+        "id": 134,
+        "question": "Est-ce que la RSE est obligatoire ?",
+        "answer": "La mise en place d’une stratégie RSE est une **démarche volontaire des entreprises et ne constitue pas une obligation légale**. \\\nCela dit, la démarche RSE constitue une démarche vertueuse qui peut faire une différence pour vos collaborateurs et vos clients. \\\nOutre la stratégie RSE, les entreprises sont soumises à des obligations légales et à un cadre de règlementation (loi PACTE, loi anti-gaspillage…) qui rendent nécessaire la prise en compte des questions environnementales dans l’élaboration de la stratégie d’une entreprise."
+      },
+      {
+        "id": 135,
+        "question": "Quels exemples concrets de stratégies RSE peut-on observer dans les entreprises ?",
+        "answer": "Parmi les nombreux axes sur lesquels vous pouvez agir en développant une stratégie RSE, vous pouvez par exemple :\n\n- Effectuer un **diagnostic énergétique** pour dresser un bilan de la consommation énergétique dans votre entreprise.\n- Faire un **bilan carbone**, pour comprendre puis réduire les postes importants d’émission de CO2.\n- Développer un **plan stratégique de gestion des déchets.**\n- Élaborer une **charte d’éco-conception de vos produits** et travailler à augmenter leur durée de vie et leur réparabilité.\n- Travailler à **l’isolation énergétique de vos bâtiments** et revoir le **plan d’éclairage.**"
+      },
+      {
+        "id": 136,
+        "question": "Qu'est-ce que la norme ISO 26000 ?",
+        "answer": "La norme ISO 26000 est un standard international en matière de RSE, qui s'articule autour de **sept thématiques** :\n\n- La gouvernance de l’organisation.\n- Les droits de l’Homme.\n- Les relations et conditions de travail.\n- L’environnement.\n- La loyauté des pratiques.\n- Les questions relatives aux consommateurs.\n- Les communautés et le développement local.\n\nCes sept thématiques permettent de guider la mise en place d’actions concrètes et d’élaborer une vision pérenne, éthique et responsable."
+      }
+    ]
   },
   {
     "id": 31,
@@ -1986,16 +2198,17 @@
       "U"
     ],
     "metaTitle": "Diagnostic à 360° - Transition écologique des entreprises",
-    "metaDescription": "Évaluez l’impact environnemental de votre activité avec le diag 360. Un état des lieux complet pour guider la transition écologique de votre entreprise."
+    "metaDescription": "Évaluez l’impact environnemental de votre activité avec le diag 360. Un état des lieux complet pour guider la transition écologique de votre entreprise.",
+    "faqs": []
   },
   {
     "id": 32,
     "slug": "plan-transition-bas-carbone",
     "title": "Plan de transition bas carbone",
     "nameTag": "🌱 statégie bas carbone",
-    "shortDescription": "Construire la feuille de route de son entreprise pour réduire ses émissions de gaz à effet de serre.",
+    "shortDescription": "Construire la feuille de route de son entreprise pour réduire ses émissions de gaz à effet de serre à long terme.",
     "image": "/images/projet/plan-transition-bas-carbone.webp",
-    "longDescription": "Le plan de transition d'une entreprise présente l’ensemble des actions et des moyens envisagés pour réduire ses émissions de gaz à effet de serre et les objectifs à atteindre pour le prochain bilan.\n\nAvant de définir ce plan de transition, il est nécessaire de quantifier votre impact via un bilan de gaz à effet de serre (GES). Vous pourrez ensuite définir une trajectoire de réduction réaliste et atteignable pour réduire durablement vos principaux postes émetteurs de GES.\n\nUne stratégie bas carbone efficace doit s'aligner sur la trajectoire cible de la SNBC, Stratégie Nationale Bas Carbone (SNBC), qui est la feuille de route de la France pour lutter contre le changement climatique. Cette stratégie s’appuie sur un scénario d’atteinte de la neutralité carbone à l’horizon 2050 (c’est-à-dire, un équilibre entre l’émission des gaz à effet de serre et leur absorption).\n\nCette objectif de **neutralité carbone** n'est atteignable que si les entreprises se mettent en mouvement !",
+    "longDescription": "Le plan de transition d'une entreprise présente l’ensemble des actions et des moyens envisagés pour réduire ses émissions de gaz à effet de serre et les objectifs à atteindre pour atteindre la neutralité carbone.\n\nAvant de définir ce plan de transition, il est nécessaire de quantifier votre impact via un bilan de gaz à effet de serre (GES). Vous pourrez ensuite définir une trajectoire de réduction réaliste et atteignable pour réduire durablement vos principaux postes émetteurs de GES.\n\nUne stratégie bas carbone efficace doit s'aligner sur la trajectoire cible de la SNBC, Stratégie Nationale Bas Carbone (SNBC), qui est la feuille de route de la France pour lutter contre le changement climatique. Cette stratégie s’appuie sur un scénario d’atteinte de la neutralité carbone à l’horizon 2050 (c’est-à-dire, un équilibre entre l’émission des gaz à effet de serre et leur absorption).\n\nCette objectif de **neutralité carbone** n'est atteignable que si les entreprises se mettent en mouvement !",
     "moreDescription": "- [**Portail RSE,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) un site qui vous permet de connaitre vos obligations pour la réalisation du bilan GES et du plan de transition.\n- [**Guide pour la construction, la mise en oeuvre et le suivi d'un plan de transition**](https://bilans-ges.ademe.fr/api/medias/d69d82c9-f060-468f-94c8-bc7391bd1b7e/download)**.**\n- [**La Stratégie Nationale Bas Carbone**](https://bigmedia.bpifrance.fr/nos-dossiers/strategie-nationale-bas-carbone-snbc-definition-objectifs-et-application-en-entreprise) : définition, objectifs et application en entreprise.\n- [**L'Association pour la transition Bas Carbone**](https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/) : un annuaire des prestataires pour réaliser un bilan carbone.",
     "themes": [
       "environmental"
@@ -2017,7 +2230,8 @@
       "cap-transition-ecologique",
       "decarb-ind-25",
       "prit-hdf",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "act-evaluation"
     ],
     "linkedProjects": [
       1
@@ -2050,13 +2264,14 @@
       "U"
     ],
     "metaTitle": "Plan de transition bas carbone aligné CRSD",
-    "metaDescription": "Construisez un plan de transition bas carbone aligné avec la SNBC et conforme à la CSRD pour réduire les émissions de gaz à effet de serre de votre entreprise."
+    "metaDescription": "Construisez un plan de transition bas carbone aligné avec la SNBC et conforme à la CSRD pour réduire les émissions de gaz à effet de serre de votre entreprise.",
+    "faqs": []
   },
   {
     "id": 33,
     "slug": "plan-adaptation-climat",
     "title": "Plan d’adaptation au dérèglement climatique",
-    "nameTag": "🥵 adaptation climat",
+    "nameTag": "🌡 adaptation climat",
     "shortDescription": "Adapter la stratégie et les actions de votre entreprise pour faire face aux évolutions du climat.",
     "image": "/images/projet/plan-adaptation-climat.webp",
     "longDescription": "**Le plan d’adaptation au dérèglement climatique** est un accompagnement destiné à **évaluer la vulnérabilité** de votre entreprise face aux aléas climatiques déjà à l’œuvre : canicules, sécheresses, inondations, tempêtes, tensions sur les ressources…\n\nCet accompagnement vous aide à **bâtir une stratégie de résilience** adaptée à vos activités, à votre territoire et à vos contraintes opérationnelles. Vous identifiez les risques, prévenez les ruptures d’activité, sécurisez les conditions de travail, et **anticipez les coûts économiques et sociaux** liés aux perturbations climatiques.\n\nDans un contexte où les événements extrêmes se multiplient, adapter son entreprise n’est plus une option mais une nécessité.\n\n**L’adaptation vise à limiter les effets du changement climatique déjà en cours. Elle est complémentaire des actions d’atténuation**, qui visent à en réduire les causes (notamment les émissions de gaz à effet de serre). Ces deux démarches doivent être pensées ensemble pour une stratégie climatique cohérente et durable.",
@@ -2117,6 +2332,28 @@
       "S",
       "T",
       "U"
+    ],
+    "faqs": [
+      {
+        "id": 172,
+        "question": "Pourquoi les entreprises doivent-elles intégrer l’adaptation climatique dans leur stratégie ?",
+        "answer": "L’intégration de l’adaptation climatique dans la stratégie de l’entreprise permet de :\n\n- **Préparer votre entreprise face aux perturbations climatiques** et, ainsi, assurer la continuité et la pérennité de l’activité.\n- Atténuer les causes du changement climatique, c’est-à-dire **réduire l’impact de votre entreprise** sur la pollution, les émissions de CO2, la consommation d’énergies fossiles.\n- Atténuer les effets du changement climatique, en **analysant et renforçant les points de vulnérabilité**."
+      },
+      {
+        "id": 173,
+        "question": "Existe-t-il des obligations légales pour les entreprises en matière de plan climat ?",
+        "answer": "Pour l’instant, seules les **grandes entreprises publiques de l’énergie et des transports** doivent se doter d’un plan d’adaptation pour s’assurer que leurs infrastructures vitales résistent aux dérèglements climatiques. \n\nSi les autres entreprises n’y sont pour l’instant pas légalement tenues, elles sont fortement incitées à réaliser un plan climatique pour évaluer leur vulnérabilité et renforcer leur résilience en cas d’intempéries ou de sécheresses."
+      },
+      {
+        "id": 174,
+        "question": "Quelles sont les causes principales du changement climatique ?",
+        "answer": "Le changement climatique est **le résultat de l’activité humaine** générant des **gaz à effet de serre** en grande quantité. Ces gaz, s’ils sont fortement concentrés, provoquent le dérèglement climatique qui, lui-même entraîne :\n\n- L’érosion des sols et leur appauvrissement en matière organique.\n- La salinisation.\n- La chute de la biodiversité et l’extinction d’espèces.\n- Les glissements de terrain, les inondations, la désertification, la disparition de la banquise arctique…\n\nLes principales activités humaines responsables sont **l’agriculture intensive, l’extractivisme, l’industrie chimique, les transports, la combustion de combustibles fossiles**.\n\n---"
+      },
+      {
+        "id": 175,
+        "question": "Quels risques liés au climat mon entreprise doit-elle anticiper (canicules, sécheresses, inondations…) ?",
+        "answer": "Chaque secteur d’activité et chaque zone géographique comporte **ses propres risques climatiques**. Certaines filières sont particulièrement exposées comme :\n\n- Le secteur touristique.\n- La filière bois, vulnérable face aux tempêtes, sécheresses et parasites.\n- Le bâtiment, qui doit travailler à l’adaptation thermique, au chaud comme au froid.\n- L’agroalimentaire, particulièrement vulnérable en cas de sécheresse.\n- Le transport.\n- Les communications électroniques…\n\nToutes les entreprises, quel que soit leur secteur, doivent **anticiper les risques** pour leur activité. Cela inclut : une dégradation des infrastructures, une rupture d’approvisionnement en ressources (notamment l’eau), des coupures logistiques ou encore une baisse de productivité si les conditions de travail deviennent insuffisantes."
+      }
     ]
   },
   {
@@ -2153,7 +2390,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "ecolabel",
-      "aide-labellisation-corse"
+      "aide-labellisation-corse",
+      "act-evaluation"
     ],
     "linkedProjects": [
       31
@@ -2184,7 +2422,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 36,
@@ -2261,6 +2500,33 @@
       "S",
       "T",
       "U"
+    ],
+    "faqs": [
+      {
+        "id": 167,
+        "question": "Qu'est-ce qu'un produit éco-conçu ?",
+        "answer": "Un produit éco-conçu est un produit réalisé selon les grands principes :\n\n- De l’**allongement de son cycle de vie** : on construit pour durer.\n- De la **réparabilité** : on préfère réparer plutôt que jeter et acheter du neuf.\n- Du **minimum de ressources** : on limite l’extraction de matières premières, et on privilégie la revalorisation des matières.\n- **De l’utilité** : on produit des biens nécessaires et utiles, non futiles.\n- De la **recyclabilité** : on anticipe le réemploi des matériaux en fin de vie."
+      },
+      {
+        "id": 168,
+        "question": "Pourquoi faire de l’éco-conception dans une entreprise ?",
+        "answer": "L’éco-conception en entreprise présente plusieurs avantages :\n\n- Elle créé de la valeur, en produisant des **objets de bonne qualité**, **utiles et réparables.**\n- Elle diminue l’**usage de matières premières** et pérennise ainsi l’activité, dans un contexte de possibles diminutions ou de pénuries.\n- Elle inscrit l’entreprise dans une **démarche écoresponsable**, prisée des consommateurs.\n- Elle minimise l’**impact environnemental** de la production et anticipe les obligations règlementaires en la matière."
+      },
+      {
+        "id": 169,
+        "question": "Existe-t-il des obligations réglementaires en matière d’éco-conception ?",
+        "answer": "En 2024, l’UE a posé un cadre législatif à l’éconception en promulgant l’[**ESPR : Ecodesign for Sustainable Products Regulation**](https://commission.europa.eu/energy-climate-change-environment/standards-tools-and-labels/products-labelling-rules-and-requirements/ecodesign-sustainable-products-regulation_en?prefLang=fr). Y sont soumis tous les biens physiques commercialisés au sein de l’UE, à l’exception des produits d’alimentation, des voitures, et des produits liés à la défense ou la sécurité nationale.\n\nCe règlement européen introduit un **éventail d’exigences pour la réparabilité, la qualité et la durée de vie des produits**. Il interdit également la destruction des produits invendus et impose une transparence sur les matériaux utilisés."
+      },
+      {
+        "id": 170,
+        "question": "Qu’est-ce que l’analyse du cycle de vie ?",
+        "answer": "L’analyse du cycle de vie, ou ACV (définie par la norme ISO 14044) est un outil qui permet d’évaluer les aspects environnementaux et les impacts d’un certain type de produit.\n\nÀ l’aide d’une méthodologie précise, l’entreprise évalue les 5 phases suivantes :\n\n- La **conception** et le choix des matières premières (extraction, approvisionnement et transport des matières premières).\n- La **fabrication** du produit fini ou du service (construction, emballage).\n- La **mise en circulation** (distribution, commercialisation).\n- L’**utilisation** du produit ou du service (entretien, usage).\n- La **fin de vie** (collecte, réparation, recyclage)."
+      },
+      {
+        "id": 171,
+        "question": "Quels sont des exemples concrets d’éco-conception en entreprise ?",
+        "answer": "Pour mettre en œuvre une démarche d’éco-conception, votre entreprise peut :\n\n- Réduire sa gamme de produits pour développer un produit plus **polyvalent**.\n- Faire en sorte que ce produit soit plus **résistant**, et offrir un service de **réparation**.\n- Fabriquer à partir de matériaux **recyclés ou upcyclés**.\n- Chercher des **fournisseurs locaux** afin de réduire le transport des marchandises.\n- Encourager la **revente** en développant une boutique de seconde main."
+      }
     ]
   },
   {
@@ -2329,7 +2595,8 @@
       "U"
     ],
     "metaTitle": "Récupérateur d’eau de pluie - Gestion de l'eau en entreprise",
-    "metaDescription": "Améliorez la gestion de l’eau dans votre entreprise grâce à la récupération d’eau de pluie. Réduisez votre consommation d’eau potable et faites des économies durables."
+    "metaDescription": "Améliorez la gestion de l’eau dans votre entreprise grâce à la récupération d’eau de pluie. Réduisez votre consommation d’eau potable et faites des économies durables.",
+    "faqs": []
   },
   {
     "id": 72,
@@ -2394,7 +2661,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 104,
@@ -2445,7 +2713,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 137,
@@ -2491,7 +2760,8 @@
       "I",
       "Q",
       "T"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 138,
@@ -2529,7 +2799,8 @@
     "highlightPriority": null,
     "sectors": [
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 139,
@@ -2568,7 +2839,8 @@
     "highlightPriority": null,
     "sectors": [
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 140,
@@ -2627,7 +2899,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 141,
@@ -2685,7 +2958,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 142,
@@ -2745,7 +3019,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 143,
@@ -2802,7 +3077,8 @@
       "U"
     ],
     "metaTitle": "Abris vélos pour entreprises - Stratégie de mobilité durable",
-    "metaDescription": "Encouragez la mobilité durable dans votre entreprise avec l’installation d’un abri vélo. Offrez un espace sécurisé et équipé à vos collaborateurs."
+    "metaDescription": "Encouragez la mobilité durable dans votre entreprise avec l’installation d’un abri vélo. Offrez un espace sécurisé et équipé à vos collaborateurs.",
+    "faqs": []
   },
   {
     "id": 144,
@@ -2867,7 +3143,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 146,
@@ -2938,7 +3215,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 147,
@@ -2996,7 +3274,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 203,
@@ -3035,7 +3314,8 @@
       "F",
       "N",
       "O"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 302,
@@ -3092,7 +3372,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 337,
@@ -3126,7 +3407,8 @@
     "highlightPriority": null,
     "sectors": [
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 372,
@@ -3168,7 +3450,8 @@
       "G",
       "H",
       "Q"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 378,
@@ -3220,7 +3503,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 401,
@@ -3273,7 +3557,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 434,
@@ -3310,7 +3595,8 @@
       "A",
       "B",
       "D"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 467,
@@ -3360,7 +3646,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 566,
@@ -3409,7 +3696,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 567,
@@ -3442,7 +3730,8 @@
     "highlightPriority": null,
     "sectors": [
       "A"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 632,
@@ -3458,7 +3747,6 @@
     ],
     "mainTheme": "biodiversite",
     "programs": [
-      "etude-methanisation",
       "investissement-biognv-agricole-et-territorial",
       "sobriete-et-resilience-des-territoires",
       "pret-vert",
@@ -3476,7 +3764,8 @@
     "highlightPriority": null,
     "sectors": [
       "A"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 666,
@@ -3504,7 +3793,8 @@
     "highlightPriority": null,
     "sectors": [
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 667,
@@ -3549,7 +3839,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 699,
@@ -3586,7 +3877,8 @@
       "E",
       "F",
       "G"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 731,
@@ -3649,7 +3941,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 764,
@@ -3687,7 +3980,8 @@
     "sectors": [
       "B",
       "H"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 797,
@@ -3722,7 +4016,8 @@
       "G",
       "H",
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 863,
@@ -3754,7 +4049,8 @@
     "sectors": [
       "G",
       "H"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 896,
@@ -3808,7 +4104,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 929,
@@ -3852,7 +4149,8 @@
       "R",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 962,
@@ -3899,7 +4197,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 995,
@@ -3929,7 +4228,8 @@
     "highlightPriority": null,
     "sectors": [
       "H"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 996,
@@ -3965,7 +4265,8 @@
       "D",
       "F",
       "H"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 997,
@@ -3997,7 +4298,8 @@
     "sectors": [
       "B",
       "H"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 998,
@@ -4026,7 +4328,8 @@
     "highlightPriority": null,
     "sectors": [
       "H"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1028,
@@ -4077,7 +4380,8 @@
       "S",
       "T",
       "U"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1127,
@@ -4108,7 +4412,8 @@
     "sectors": [
       "I",
       "Q"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1160,
@@ -4140,7 +4445,8 @@
       "B",
       "C",
       "F"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1193,
@@ -4175,7 +4481,8 @@
       "D",
       "E",
       "F"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1226,
@@ -4220,7 +4527,8 @@
       "G",
       "H",
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1228,
@@ -4248,7 +4556,8 @@
       "A",
       "E",
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1260,
@@ -4284,7 +4593,8 @@
       "A",
       "C",
       "I"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1261,
@@ -4326,7 +4636,8 @@
       "F",
       "G",
       "H"
-    ]
+    ],
+    "faqs": []
   },
   {
     "id": 1391,
@@ -4363,7 +4674,52 @@
       "I",
       "R"
     ],
-    "metaTitle": "",
-    "metaDescription": ""
+    "faqs": []
+  },
+  {
+    "id": 1424,
+    "slug": "palettes-calage",
+    "title": "Palettes et calage",
+    "nameTag": "📦 palettes et calage",
+    "shortDescription": "Réduisez les matériaux de calage et l'usage de palettes dans le transport et l'entrepôt de vos produits.",
+    "image": "/images/projet/palettes-calage.webp",
+    "longDescription": "La loi AGEC prévoit la fin des emballages en plastique à usage unique d'ici 2040. Mettez-vous en conformité avec la réglementation en diminuant l’usage des matériaux d’emballage des palettes, des matériaux de calage et des palettes elles-mêmes.\n\n- Supprimez les emballages plastiques à usage unique de vos produits en mettant en place un dispositif de **réemploi des emballages**, en coopération avec vos clients et fournisseurs.\n- Remplacez les emballages plastiques de vos palettes par des **housses, sangles ou filets réemployables.**\n- Privilégiez les **matériaux de calage issus du recyclage** (textile recyclé en ouate, cartons griffés en lambeaux, frisure de bois).\n- **Réutilisez les palettes plusieurs fois**, à l’aide de la mise en place d’une logistique retour.",
+    "moreDescription": "- [**Réemploi des emballages et alternatives aux emballages plastiques à usage unique**](https://librairie.ademe.fr/economie-circulaire-et-dechets/5301-reemploi-des-emballages-et-alternatives-aux-emballages-plastiques-a-usage-unique.html), un guide de l'ADEME.\n- [**Évaluation environnementale de la consigne pour le réemploi des emballages en verre**](https://librairie.ademe.fr/economie-circulaire-et-dechets/6359-evaluation-environnementale-de-la-consigne-pour-le-reemploi-des-emballages-en-verre-en-france.html), par l'Observatoire du réemploi et de la réutilisation.",
+    "themes": [
+      "waste",
+      "eco-design"
+    ],
+    "mainTheme": "waste",
+    "programs": [
+      "accelerateur-decarbonation",
+      "aides-au-reemploi-des-emballages",
+      "label-clef-verte",
+      "aide-financement-occitanie",
+      "cedre-investissement",
+      "sud-pret-climat",
+      "charte-zero-dechet-plastique",
+      "pret-ile-de-france",
+      "cap-transition-ecologique",
+      "aide-investissement-corse"
+    ],
+    "linkedProjects": [
+      3,
+      1260
+    ],
+    "priority": {
+      "default": 227
+    },
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "faqs": []
   }
 ]
