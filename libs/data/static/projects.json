@@ -2048,9 +2048,11 @@
     "slug": "strategie-rse",
     "title": "Stratégie RSE",
     "nameTag": "🤝️ stratégie RSE",
-    "shortDescription": "Construire une stratégie d’impact environnemental et sociétal RSE.",
+    "shortDescription": "Impliquer votre équipe dans une démarche RSE pour renforcer l’impact environnemental et sociétal de votre entreprise.",
     "image": "/images/projet/strategie-rse.webp",
+    "titleLongDescription": "🤝 Qu’est-ce qu'une stratégie RSE ?",
     "longDescription": "La RSE (Responsabilité sociétale des entreprises) se définit comme la responsabilité des entreprises vis-à-vis des effets qu'elles exercent sur la société, sur trois plans principaux : environnemental, social et économique.\n\nEngager vos salariés autour d’une stratégie RSE permet de leur faire prendre conscience des enjeux et de changer les comportements, notamment en matière de transition écologique et de développement durable.\n\nGrâce à des expertises et l’élaboration d’un plan d’action, ou la formation de vos salariés, vous placez l’engagement et les valeurs environnementales au cœur de la culture de votre entreprise.",
+    "titleMoreDescription": "📚 Comment me documenter au mieux sur la stratégie RSE ?",
     "moreDescription": "- [**Qu'est-ce que la RSE ?**](https://www.ecologie.gouv.fr/responsabilite-societale-des-entreprises) Cette page détaille le cadre réglementaire de la responsabilité sociétale des entreprises.\n- [**Le portail RSE**](https://portail-rse.beta.gouv.fr/)**.** Un portail unique pour comprendre à quelles règlementations votre entreprise est soumise, et piloter vos obligations depuis un tableau de bord.",
     "themes": [
       "environmental",
@@ -2076,6 +2078,8 @@
       "diag-impact-biodiversite",
       "booster-transformation-rev-3"
     ],
+    "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
+    "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
     "linkedProjects": [
       31
     ],
@@ -2106,6 +2110,7 @@
       "T",
       "U"
     ],
+    "titleFaq": "☝️ Questions fréquentes sur la stratégie RSE",
     "metaTitle": "Stratégie RSE - Aide à la mise en place d'une démarche responsable",
     "metaDescription": "Déployez une stratégie RSE pour engager vos salariés et leur faire prendre conscience des enjeux en matière d'écologie et de développement durable.",
     "faqs": [
@@ -2275,7 +2280,7 @@
     "shortDescription": "Adapter la stratégie et les actions de votre entreprise pour faire face aux évolutions du climat.",
     "image": "/images/projet/plan-adaptation-climat.webp",
     "longDescription": "**Le plan d’adaptation au dérèglement climatique** est un accompagnement destiné à **évaluer la vulnérabilité** de votre entreprise face aux aléas climatiques déjà à l’œuvre : canicules, sécheresses, inondations, tempêtes, tensions sur les ressources…\n\nCet accompagnement vous aide à **bâtir une stratégie de résilience** adaptée à vos activités, à votre territoire et à vos contraintes opérationnelles. Vous identifiez les risques, prévenez les ruptures d’activité, sécurisez les conditions de travail, et **anticipez les coûts économiques et sociaux** liés aux perturbations climatiques.\n\nDans un contexte où les événements extrêmes se multiplient, adapter son entreprise n’est plus une option mais une nécessité.\n\n**L’adaptation vise à limiter les effets du changement climatique déjà en cours. Elle est complémentaire des actions d’atténuation**, qui visent à en réduire les causes (notamment les émissions de gaz à effet de serre). Ces deux démarches doivent être pensées ensemble pour une stratégie climatique cohérente et durable.",
-    "moreDescription": "- [**Adaptation des entreprises au changement climatique : Agir maintenant !**](https://www.cci-paris-idf.fr/sites/default/files/2025-03/CCI_Adaptation-au-changement-climatique_fev-2025.pdf) Une étude des CCI de France.\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.",
+    "moreDescription": "- [**Adaptation des entreprises au changement climatique : Agir maintenant !**](https://www.cci-paris-idf.fr/sites/default/files/2025-03/CCI_Adaptation-au-changement-climatique_fev-2025.pdf) Une étude des CCI de France.\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.\n- [**Canicule et santé au travail : prévenir les risques, protéger les équipes**](https://www.anact.fr/canicule-travail-prevention-risques)**,** tour d'horizon et conseils pratiques de l'ANACT",
     "themes": [
       "environmental"
     ],
