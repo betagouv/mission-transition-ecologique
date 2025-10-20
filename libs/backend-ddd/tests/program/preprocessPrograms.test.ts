@@ -2,12 +2,11 @@ import { QuestionnaireData } from '@tee/common'
 import { Entry, setObjectProperty } from '../../src/common/objects'
 import { type ProgramType } from '@tee/data'
 import { makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
-import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
 import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { PublicodesService } from '../../src/program/infrastructure/publicodesService'
 
-const makeProgram = (rules: object) => makeProgramHelper({ rules: { ...{ [FILTERING_RULE_NAME]: { valeur: 'oui' } }, ...rules } })
+const makeProgram = (rules: object) => makeProgramHelper({ rules: { ...{ ['entreprise . est ciblée']: { valeur: 'oui' } }, ...rules } })
 
 enum DataSources {
   Questionnaire,
@@ -56,7 +55,7 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
 
     const program = makeProgram({
       ...publicodesInterface,
-      [FILTERING_RULE_NAME]: fileringRule
+      ['entreprise . est ciblée']: fileringRule
     })
 
     const questionnaireData: QuestionnaireData = {
@@ -88,11 +87,7 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
 
     const programs = [program]
     PublicodesService.init(programs)
-    const result = new ProgramFeatures(
-      makeProgramsRepository(programs),
-      testCurrentDateService,
-      PublicodesService.getInstance()
-    ).getFilteredBy(questionnaireData)
+    const result = new ProgramFeatures(makeProgramsRepository(programs), PublicodesService.getInstance()).getFilteredBy(questionnaireData)
 
     expectToBeOk(result)
 

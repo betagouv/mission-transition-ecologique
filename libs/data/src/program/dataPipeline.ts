@@ -14,7 +14,7 @@ dotenv.config()
 const OUTPUT_FOLDER_PATH = '../../static'
 const OUTPUT_FILENAME = 'programs.json'
 const PROGRAMS_FOLDER_PATH = '../../programs'
-const INTERFACE_PATH = 'interface.yaml'
+const INTERFACE_PATH = 'futureLegacy/interface.yaml'
 
 /**
  * Build programs dataset from folder and yaml files
@@ -44,7 +44,7 @@ export const readPrograms = (log = false): ProgramType[] => {
 
     const program: any = { ...(yaml.load(yamlFile) as ProgramWithoutId), id: id }
 
-    program['eligibility_data'] = extractEligibilityData(program)
+    program['eligibilityData'] = extractEligibilityData(program)
 
     programs.push(program)
   })
@@ -146,12 +146,11 @@ function extractEligibilityData(program: ProgramType): any {
 
   if (publicodes['entreprise . est dans une zone géographique éligible']?.['une de ces conditions']) {
     const regionConds = publicodes['entreprise . est dans une zone géographique éligible']['une de ces conditions']
-    console.log(regionConds)
     eligibility.company = {
       ...(eligibility.company || {}),
       allowedRegion: regionConds.map((c: string) => c.split('région = ')[1])
     }
   }
-  console.log(eligibility)
+
   return eligibility
 }

@@ -45,7 +45,7 @@ export interface EligibilityData {
     ownsBuildings?: boolean
   }
   questionnaire?: {
-    priorityObjectives?: string[]
+    priorityObjectives?: ThemeId[]
   }
 }
 

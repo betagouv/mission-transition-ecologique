@@ -1,5 +1,6 @@
-import { PublicodesKeys, PublicodeObjective, ThemeId } from '@tee/common'
+import { PublicodeObjective, PublicodesKeys, ThemeId } from '@tee/common'
 import { FiltersKeys, ProgramTypeForFront, ProgramTypeWithEligibility, PublicodesCondition } from '@tee/data'
+import { ProgramService } from '../../program/application/programService'
 import type { ObjectivePublicodeData } from './types'
 
 class FrontConverter {
@@ -42,7 +43,11 @@ class FrontConverter {
   }
 
   public convertDomainToFront(program: ProgramTypeWithEligibility): ProgramTypeForFront {
-    const { publicodes, ...frontProgram } = program
+    return ProgramService.isPublicodesEvaluator() ? this._convertWithPublicodes(program) : this._convertFromJson(program)
+  }
+
+  private _convertWithPublicodes(program: ProgramTypeWithEligibility) {
+    const { publicodes, eligibilityData: _eligibilityData, ...frontProgram } = program
     if (publicodes) {
       const filters = Object.keys(publicodes).reduce<{ [key in FiltersKeys]?: string[] }>((acc, publicodeKey) => {
         const filterKey = this._getFilterKey(publicodeKey)
@@ -57,6 +62,17 @@ class FrontConverter {
       return { ...frontProgram, filters: filters } as ProgramTypeForFront
     }
     return frontProgram as ProgramTypeForFront
+  }
+
+  private _convertFromJson(program: ProgramTypeWithEligibility) {
+    const { publicodes: _publicodes, eligibilityData, ...frontProgram } = program
+
+    return {
+      ...frontProgram,
+      filters: {
+        [FiltersKeys.Theme]: eligibilityData?.questionnaire?.priorityObjectives || undefined
+      }
+    } as ProgramTypeForFront
   }
 }
 

@@ -10,7 +10,6 @@ export default defineEventHandler(async (event) => {
 
 const programsCached = cachedFunction(
   async (event: H3Event, questionnaireData: QuestionnaireData) => {
-    console.time('get programs')
     const programService = new ProgramService()
     const programsResult = programService.getFilteredPrograms(questionnaireData)
 
@@ -22,11 +21,7 @@ const programsCached = cachedFunction(
       })
     }
 
-    console.time('convert programs')
-    const programsToReturn = programsResult.value.map((program) => programService.convertDomainToFront(program))
-    console.timeEnd('convert programs')
-    console.timeEnd('get programs')
-    return programsToReturn
+    return programsResult.value.map((program) => programService.convertDomainToFront(program))
   },
   {
     name: 'programs',

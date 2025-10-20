@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import { ProgramType } from '@tee/data'
+import { ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 
 export interface ProgramRepository {
@@ -9,5 +9,5 @@ export interface ProgramRepository {
 }
 
 export interface EligibilityEvaluator {
-  evaluate: (program: ProgramType, questionnaireData: QuestionnaireData) => Result<boolean | undefined, Error>
+  evaluate: (program: ProgramType, questionnaireData: QuestionnaireData) => Result<ProgramTypeWithEligibility, Error>
 }

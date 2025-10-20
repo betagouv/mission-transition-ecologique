@@ -15,10 +15,10 @@ export class EligibilityDto {
     this.setPeriodValidity()
     this.setEmployees()
     this.setLegalCategory()
-    this.setSector()
-    this.setBuildingOwnership()
-    this.setGeographicArea()
-    this.setObjectives()
+    this._setSector()
+    this._setBuildingOwnership()
+    this._setGeographicArea()
+    this._setObjectives()
 
     return this.eligibility
   }
@@ -49,7 +49,7 @@ export class EligibilityDto {
     }
   }
 
-  private setSector() {
+  private _setSector() {
     const program = this.generator.rawProgram
     const secteurs = [
       'AAgriculture, sylviculture et pêche',
@@ -87,13 +87,13 @@ export class EligibilityDto {
     }
   }
 
-  private setBuildingOwnership() {
+  private _setBuildingOwnership() {
     if (this.generator.rawProgram.Propriétaire && this.generator.rawProgram.Propriétaire != '*') {
       this.eligibility.company.ownsBuildings = true
     }
   }
 
-  private readonly departToRegionMap: Record<string, string> = {
+  private readonly _departToRegionMap: Record<string, string> = {
     Vaucluse: "Provence-Alpes-Côte d'Azur",
     'Bouches-du-Rhône': "Provence-Alpes-Côte d'Azur",
     'Alpes-Maritimes': "Provence-Alpes-Côte d'Azur",
@@ -104,7 +104,7 @@ export class EligibilityDto {
     Jura: 'Bourgogne-Franche-Comté'
   }
 
-  private setGeographicArea() {
+  private _setGeographicArea() {
     const program = this.generator.rawProgram
     const coverage = program['Couverture géographique']?.Name
     if (!coverage || coverage === 'National') {
@@ -117,8 +117,8 @@ export class EligibilityDto {
       regions = program['Zones géographiques'].map((z) => z.Name)
     } else if (coverage === 'Départemental') {
       const mapped = program['Zones géographiques'].map((z) => {
-        if (this.departToRegionMap[z.Name]) {
-          return this.departToRegionMap[z.Name]
+        if (this._departToRegionMap[z.Name]) {
+          return this._departToRegionMap[z.Name]
         }
         this.generator.logger.log(
           LogLevel.Major,
@@ -136,7 +136,7 @@ export class EligibilityDto {
     }
   }
 
-  private setObjectives() {
+  private _setObjectives() {
     const program = this.generator.rawProgram
     const programThemes = program['Thèmes Ciblés']
     if (!programThemes || programThemes.length === 0) {
@@ -145,7 +145,7 @@ export class EligibilityDto {
     }
 
     this.eligibility.questionnaire = {
-      priorityObjectives: programThemes.map((theme) => theme['Nom (Tech)'] as string)
+      priorityObjectives: programThemes.map((theme) => theme['Nom (Tech)'])
     }
   }
 }

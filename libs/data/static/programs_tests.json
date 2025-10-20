@@ -212,8 +212,7 @@
           "T",
           "U"
         ],
-        "minEmployees": "50",
-        "excludeMicroentrepreneur": true
+        "minEmployees": "50"
       },
       "validity": {
         "start": "06/02/2023",
@@ -415,6 +414,8 @@
       "company": {
         "allowedNafSections": [
           "A",
+          "B",
+          "C",
           "D",
           "E",
           "F",
@@ -433,13 +434,7 @@
           "S",
           "T",
           "U"
-        ],
-        "minEmployees": "250",
-        "excludeMicroentrepreneur": true
-      },
-      "validity": {
-        "start": "13/11/2023",
-        "end": "30/06/2026"
+        ]
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -661,7 +656,6 @@
           "T",
           "U"
         ],
-        "excludeMicroentrepreneur": true,
         "allowedRegion": [
           "Bretagne"
         ]
@@ -1152,10 +1146,6 @@
           "C",
           "E"
         ]
-      },
-      "validity": {
-        "start": "01/01/2023",
-        "end": "31/12/2024"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -2005,7 +1995,36 @@
         ]
       }
     },
-    "id": "bonus-ecologique"
+    "id": "bonus-ecologique",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mobility"
+        ]
+      }
+    }
   },
   {
     "titre": "Bonus Réparation",
@@ -2396,7 +2415,6 @@
     "eligibilityData": {
       "company": {
         "allowedNafSections": [
-          "F",
           "G",
           "H",
           "I",
@@ -2405,7 +2423,6 @@
           "L",
           "M",
           "N",
-          "O",
           "P",
           "Q",
           "R",
@@ -2414,25 +2431,18 @@
           "U"
         ],
         "maxEmployees": "4999",
-        "excludeMicroentrepreneur": true,
         "ownsBuildings": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bourgogne-Franche-Comté",
           "Bretagne",
           "Corse",
-          "Guadeloupe",
-          "Guyane",
-          "La Réunion",
-          "Martinique",
-          "Mayotte",
-          "Occitanie",
-          "Polynésie française"
+          "Occitanie"
         ]
       },
       "validity": {
         "start": "01/01/2023",
-        "end": "31/12/2025"
+        "end": "31/12/2034"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -3532,7 +3542,42 @@
         ]
       }
     },
-    "id": "cheque-transition-bioethanol"
+    "id": "cheque-transition-bioethanol",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mobility"
+        ]
+      }
+    }
   },
   {
     "titre": "ClimaDiag expert",
@@ -3726,7 +3771,6 @@
         ],
         "minEmployees": "20",
         "maxEmployees": "499",
-        "excludeMicroentrepreneur": true,
         "allowedRegion": [
           "Bourgogne-Franche-Comté"
         ]
@@ -4356,8 +4400,7 @@
           "Q",
           "R"
         ],
-        "maxEmployees": "499",
-        "excludeMicroentrepreneur": true
+        "maxEmployees": "499"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -4555,8 +4598,7 @@
           "Q"
         ],
         "minEmployees": "20",
-        "maxEmployees": "249",
-        "excludeMicroentrepreneur": true
+        "maxEmployees": "249"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -4759,8 +4801,7 @@
           "R",
           "S"
         ],
-        "maxEmployees": "249",
-        "excludeMicroentrepreneur": true
+        "maxEmployees": "249"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -4975,7 +5016,6 @@
           "T",
           "U"
         ],
-        "excludeMicroentrepreneur": true,
         "ownsBuildings": true
       },
       "questionnaire": {
@@ -5160,20 +5200,7 @@
           "C",
           "D",
           "E",
-          "F",
-          "G",
-          "H",
-          "I",
-          "J",
-          "K",
-          "L",
-          "M",
-          "N",
-          "O",
-          "P",
-          "Q",
-          "R",
-          "S"
+          "F"
         ],
         "maxEmployees": "249",
         "allowedRegion": [
@@ -5377,7 +5404,6 @@
           "S"
         ],
         "maxEmployees": "499",
-        "excludeMicroentrepreneur": true,
         "allowedRegion": [
           "Provence-Alpes-Côte d'Azur"
         ]
@@ -5781,8 +5807,7 @@
           "T"
         ],
         "minEmployees": "20",
-        "maxEmployees": "499",
-        "excludeMicroentrepreneur": true
+        "maxEmployees": "499"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -5956,7 +5981,34 @@
         ]
       }
     },
-    "id": "diagnostic-transition-ecologique"
+    "id": "diagnostic-transition-ecologique",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "Q",
+          "R"
+        ],
+        "maxEmployees": "249"
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "environmental"
+        ]
+      }
+    }
   },
   {
     "titre": "Eco-Défis des artisans et des commerçants",
@@ -6306,7 +6358,6 @@
           "R",
           "S"
         ],
-        "excludeMicroentrepreneur": true,
         "allowedRegion": [
           "Bretagne"
         ]
@@ -6474,9 +6525,6 @@
     "id": "ecogestes-paca",
     "eligibilityData": {
       "company": {
-        "allowedNafSections": [
-          "I"
-        ],
         "allowedRegion": [
           "Provence-Alpes-Côte d'Azur"
         ]
@@ -9053,8 +9101,8 @@
         ]
       },
       "validity": {
-        "start": "01/01/2025",
-        "end": "31/12/2025"
+        "start": "01/12/2023",
+        "end": "31/12/2023"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -10432,25 +10480,8 @@
       "company": {
         "allowedNafSections": [
           "A",
-          "B",
           "C",
-          "D",
-          "E",
-          "F",
-          "G",
-          "H",
-          "I",
-          "J",
-          "K",
-          "L",
-          "M",
-          "N",
-          "O",
-          "P",
-          "Q",
-          "R",
-          "S",
-          "T"
+          "J"
         ],
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
@@ -10730,22 +10761,13 @@
         ],
         "ownsBuildings": true,
         "allowedRegion": [
-          "Auvergne-Rhône-Alpes",
-          "Bourgogne-Franche-Comté",
-          "Bretagne",
+          "Corse",
           "Guadeloupe",
           "Guyane",
-          "La Réunion",
           "Martinique",
-          "Nouvelle-Aquitaine",
           "Polynésie française",
-          "Provence-Alpes-Côte d'Azur",
           "Saint-Pierre-Et-Miquelon"
         ]
-      },
-      "validity": {
-        "start": "01/01/2023",
-        "end": "31/12/2025"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -11373,20 +11395,13 @@
     "eligibilityData": {
       "company": {
         "allowedNafSections": [
-          "A",
           "B",
           "C",
           "D",
           "E",
-          "F",
           "H",
-          "I",
-          "M"
+          "I"
         ]
-      },
-      "validity": {
-        "start": "01/01/2023",
-        "end": "31/12/2025"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -12638,10 +12653,6 @@
         ],
         "ownsBuildings": true
       },
-      "validity": {
-        "start": "01/01/2023",
-        "end": "31/12/2024"
-      },
       "questionnaire": {
         "priorityObjectives": [
           "energy"
@@ -12812,8 +12823,7 @@
         "allowedNafSections": [
           "C",
           "G",
-          "H",
-          "M"
+          "H"
         ]
       },
       "questionnaire": {
@@ -13227,8 +13237,8 @@
         ]
       },
       "validity": {
-        "start": "12/03/2025",
-        "end": "31/12/2025"
+        "start": "12/03/2034",
+        "end": "31/12/2034"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -13513,10 +13523,6 @@
           "Saint-Barthélemy",
           "Saint-Martin"
         ]
-      },
-      "validity": {
-        "start": "01/01/2023",
-        "end": "31/07/2024"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -14358,8 +14364,7 @@
         ],
         "maxEmployees": "499",
         "allowedRegion": [
-          "Bourgogne-Franche-Comté",
-          "Île-de-France"
+          "Provence-Alpes-Côte d'Azur"
         ]
       },
       "questionnaire": {
@@ -14897,18 +14902,8 @@
       "company": {
         "allowedNafSections": [
           "B",
-          "C",
-          "D",
-          "E",
-          "F",
-          "H",
-          "J",
-          "M",
-          "S"
+          "C"
         ]
-      },
-      "validity": {
-        "start": "14/03/2024"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -15848,10 +15843,6 @@
         ],
         "ownsBuildings": true
       },
-      "validity": {
-        "start": "01/01/2023",
-        "end": "31/12/2024"
-      },
       "questionnaire": {
         "priorityObjectives": [
           "energy"
@@ -16039,13 +16030,8 @@
       "company": {
         "allowedNafSections": [
           "C",
-          "F",
-          "Q"
+          "F"
         ]
-      },
-      "validity": {
-        "start": "15/02/2023",
-        "end": "15/01/2024"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -16529,10 +16515,6 @@
           "Occitanie"
         ]
       },
-      "validity": {
-        "start": "01/04/2022",
-        "end": "30/09/2024"
-      },
       "questionnaire": {
         "priorityObjectives": [
           "energy"
@@ -17007,22 +16989,7 @@
         "allowedNafSections": [
           "A",
           "C",
-          "D",
-          "E",
-          "F",
-          "G",
-          "H",
-          "I",
-          "J",
-          "K",
-          "L",
-          "M",
-          "N",
-          "P",
-          "Q",
-          "R",
-          "S",
-          "T"
+          "J"
         ],
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
@@ -19255,10 +19222,6 @@
           "A"
         ]
       },
-      "validity": {
-        "start": "15/06/2023",
-        "end": "31/05/2024"
-      },
       "questionnaire": {
         "priorityObjectives": [
           "building"
@@ -19454,13 +19417,8 @@
         "allowedNafSections": [
           "C",
           "D",
-          "E",
-          "Q"
+          "E"
         ]
-      },
-      "validity": {
-        "start": "01/01/2023",
-        "end": "31/12/2024"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -20367,14 +20325,13 @@
       "company": {
         "allowedNafSections": [
           "A",
-          "G",
           "I",
           "O"
         ]
       },
       "validity": {
-        "start": "01/09/2024",
-        "end": "31/10/2025"
+        "start": "01/12/2023",
+        "end": "31/12/2023"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -20605,8 +20562,7 @@
           "R",
           "S"
         ],
-        "maxEmployees": "4999",
-        "excludeMicroentrepreneur": true
+        "maxEmployees": "4999"
       },
       "validity": {
         "end": "31/12/2025"
@@ -21211,8 +21167,7 @@
           "R",
           "S"
         ],
-        "minEmployees": "10",
-        "excludeMicroentrepreneur": true
+        "minEmployees": "10"
       },
       "validity": {
         "start": "01/01/2018"
@@ -21434,8 +21389,7 @@
           "T",
           "U"
         ],
-        "minEmployees": "10",
-        "excludeMicroentrepreneur": true
+        "minEmployees": "10"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -21824,9 +21778,6 @@
           "H"
         ]
       },
-      "validity": {
-        "end": "31/12/2024"
-      },
       "questionnaire": {
         "priorityObjectives": [
           "energy"
@@ -22044,7 +21995,50 @@
         ]
       }
     },
-    "id": "ormat-2034"
+    "id": "ormat-2034",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "start": "01/09/2034",
+        "end": "09/09/2034"
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "waste"
+        ]
+      }
+    }
   },
   {
     "titre": "PACTE Industrie",
@@ -22666,7 +22660,6 @@
         ],
         "minEmployees": "50",
         "maxEmployees": "499",
-        "excludeMicroentrepreneur": true,
         "allowedRegion": [
           "Île-de-France"
         ]
@@ -23430,11 +23423,7 @@
           "S",
           "T"
         ],
-        "maxEmployees": "249",
-        "excludeMicroentrepreneur": true
-      },
-      "validity": {
-        "end": "16/06/2024"
+        "maxEmployees": "249"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -23703,8 +23692,7 @@
           "T",
           "U"
         ],
-        "maxEmployees": "4999",
-        "excludeMicroentrepreneur": true
+        "maxEmployees": "4999"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -23929,7 +23917,39 @@
         ]
       }
     },
-    "id": "prime-a-la-conversion"
+    "id": "prime-a-la-conversion",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "mobility"
+        ]
+      }
+    }
   },
   {
     "titre": "Programme Breizh Fab",
@@ -24297,7 +24317,6 @@
           "D",
           "I"
         ],
-        "excludeMicroentrepreneur": true,
         "allowedRegion": [
           "Bretagne"
         ]
@@ -24479,7 +24498,7 @@
         ]
       },
       "validity": {
-        "end": "31/12/2025"
+        "end": "31/12/2023"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -24670,8 +24689,7 @@
           "M"
         ],
         "minEmployees": "20",
-        "maxEmployees": "499",
-        "excludeMicroentrepreneur": true
+        "maxEmployees": "499"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -25068,12 +25086,7 @@
           "T",
           "U"
         ],
-        "maxEmployees": "249",
-        "excludeMicroentrepreneur": true
-      },
-      "validity": {
-        "start": "01/01/2023",
-        "end": "31/12/2024"
+        "maxEmployees": "249"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -25275,9 +25288,6 @@
           "U"
         ],
         "maxEmployees": "249"
-      },
-      "validity": {
-        "end": "01/01/2025"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -25862,7 +25872,6 @@
           "L",
           "R"
         ],
-        "excludeMicroentrepreneur": true,
         "allowedRegion": [
           "Provence-Alpes-Côte d'Azur"
         ]
@@ -26094,7 +26103,6 @@
           "T",
           "U"
         ],
-        "excludeMicroentrepreneur": true,
         "allowedRegion": [
           "Provence-Alpes-Côte d'Azur"
         ]
@@ -26311,10 +26319,6 @@
           "T",
           "U"
         ]
-      },
-      "validity": {
-        "start": "02/05/2023",
-        "end": "30/11/2024"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -26777,13 +26781,9 @@
           "U"
         ],
         "maxEmployees": "249",
-        "excludeMicroentrepreneur": true,
         "allowedRegion": [
           "Provence-Alpes-Côte d'Azur"
         ]
-      },
-      "validity": {
-        "end": "31/12/2024"
       },
       "questionnaire": {
         "priorityObjectives": [
@@ -27800,20 +27800,7 @@
           "E",
           "F",
           "G",
-          "H",
-          "I",
-          "J",
-          "K",
-          "L",
-          "M",
-          "N",
-          "O",
-          "P",
-          "Q",
-          "R",
-          "S",
-          "T",
-          "U"
+          "H"
         ]
       },
       "questionnaire": {
@@ -28195,7 +28182,38 @@
         ]
       }
     },
-    "id": "visite-energie-cci"
+    "id": "visite-energie-cci",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "minEmployees": "20",
+        "maxEmployees": "499"
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "energy"
+        ]
+      }
+    }
   },
   {
     "titre": "Visite Énergie CMA",
@@ -28361,6 +28379,26 @@
         ]
       }
     },
-    "id": "visite-energie-cma"
+    "id": "visite-energie-cma",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "D",
+          "F",
+          "I",
+          "M",
+          "N",
+          "R",
+          "T"
+        ],
+        "maxEmployees": "249"
+      },
+      "questionnaire": {
+        "priorityObjectives": [
+          "energy"
+        ]
+      }
+    }
   }
 ]

@@ -25,7 +25,6 @@
     "export:programs": "nx run @tee/data:export-programs",
     "update:trainings": "nx run @tee/data:update-trainings",
     "generate:programs": "nx run @tee/data:generate-programs",
-    "generate:programs:json": "nx run @tee/data:generate-programs-json",
     "generate:projects": "nx run @tee/data:generate-projects",
     "generate:testimonies": "nx run @tee/data:generate-testimonies",
     "generate:faq": "nx run @tee/data:generate-faq",
