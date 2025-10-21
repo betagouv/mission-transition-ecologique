@@ -3,7 +3,7 @@ import { FiltersKeys, ProgramTypeForFront, ProgramTypeWithEligibility, Publicode
 import { ProgramService } from '../../program/application/programService'
 import type { ObjectivePublicodeData } from './types'
 
-class FrontConverter {
+export default class FrontConverter {
   private _publicodeToThemeMapping = {
     [PublicodeObjective.EnvironmentalImpact]: ThemeId.Environmental,
     [PublicodeObjective.EnergyPerformance]: ThemeId.Energy,
@@ -75,5 +75,3 @@ class FrontConverter {
     } as ProgramTypeForFront
   }
 }
-
-export default FrontConverter
