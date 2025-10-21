@@ -62,11 +62,6 @@
               :src="img('/images/logos/ademe.svg')"
               alt="logo de l'ADEME - Agence de de la Transition Écologique"
             />
-            <img
-              class="fr-footer__logo"
-              :src="img('/images/logos/mission-transition-ecologique-logo-texte.svg')"
-              alt="logo de la Transition Écologique des Entreprises"
-            />
           </a>
         </div>
         <div class="fr-footer__content">

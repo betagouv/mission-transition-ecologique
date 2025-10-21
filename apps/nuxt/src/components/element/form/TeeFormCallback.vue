@@ -2,7 +2,7 @@
   <div teste2e-select="callback-contact-form">
     <!-- MESSAGE IF ERROR-->
     <TeeError
-      v-if="!hasValidResponse"
+      v-if="hasValidResponse"
       teste2e-selector="error-callback-contact-form"
       :mailto="getMailTo()"
       :email="Contact.email"
@@ -14,11 +14,11 @@
 
     <!-- MESSAGE IF 200 -->
     <div
-      v-if="hasValidResponse || true"
+      v-else
       teste2e-selector="success-callback-contact-form"
       class="fr-text-center fr-grid-row fr-grid-row--center"
     >
-      <p class="fr-text--blue-france fr-col-12">
+      <p class="fr-text--blue-france fr-col-12 fr-mb-3v">
         <span
           class="fr-icon-checkbox-circle-fill fr-icon--lg"
           aria-hidden="true"

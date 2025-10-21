@@ -59,8 +59,7 @@ const img = Image.getUrl
             class="fr-responsive-img fr-m-2v other-logo"
             :src="
               img(ConseillerEntreprisePartner.img, {
-                format: ConseillerEntreprisePartner.format ?? undefined,
-                densities: 1,
+                densities: 'x1 x2',
                 loading: 'lazy'
               })
             "

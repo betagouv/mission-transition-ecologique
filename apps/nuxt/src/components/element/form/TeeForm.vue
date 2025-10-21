@@ -1,8 +1,8 @@
 <template>
   <!-- BACK TO FORM BTN -->
   <TeeDsfrButton
-    v-show="!formIsSent"
-    class="fr-btn fr-btn--tertiary-no-outline fr-col-10 fr-mb-3v"
+    v-show="formIsSent"
+    class="fr-btn fr-btn--tertiary-no-outline fr-col-10"
     tertiary
     no-outline
     icon-only
@@ -68,22 +68,25 @@
     </div>
   </form>
   <TeeFormCallback
-    v-if="formIsSent || true"
+    v-if="formIsSent"
     :form="form"
     :error-email-subject="errorEmailSubject"
     :request-response="requestResponse"
-    class="fr-mt-5v fr-mx-auto"
+    class="fr-mx-auto"
   >
     <template #phoneContact>
       <div class="fr-col-md-9 fr-mx-auto">
         <p class="fr-mb-4v">
           <span v-html="phoneCallback"></span>
         </p>
-        <nuxt-img
+        <img
           v-if="showCELogo"
-          :src="ConseillerEntreprisePartner.img"
-          loading="lazy"
-          densities="x1 x2"
+          :src="
+            img(ConseillerEntreprisePartner.img, {
+              densities: 'x1 x2',
+              loading: 'lazy'
+            })
+          "
           :alt="ConseillerEntreprisePartner.label"
           width="300px"
         />
