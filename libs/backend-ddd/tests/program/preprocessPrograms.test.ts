@@ -230,7 +230,7 @@ describe(`
    AND a program with a rule using "date du jour"
   WHEN evaluating this rule
 EXPECT the program to be kept or filtered out as expected`, () => {
-  const testCurrentDate = (currentDate: string, keptDate: string, expectedKeep: boolean) => {
+  const testCurrentDate = (currentDate: Date, keptDate: string, expectedKeep: boolean) => {
     //   `date du jour = ${keptDate}` ne fonctionne pas comme attendu
     // cf https://github.com/publicodes/publicodes/issues/430
     // Contournement:
@@ -238,16 +238,20 @@ EXPECT the program to be kept or filtered out as expected`, () => {
       'toutes ces conditions': [`date du jour <= ${keptDate}`, `date du jour >= ${keptDate}`]
     }
 
+    vi.setSystemTime(currentDate)
+
     testHelperPreprocessing({
-      title: `current date is mapped to "date du jour" (current date ${currentDate}, keep if equal to ${keptDate})`,
-      currentDate: currentDate,
+      title: `current date is mapped to "date du jour" (current date ${currentDate.toLocaleDateString('fr-FR')}, keep if equal to ${keptDate})`,
+      currentDate: currentDate.toLocaleDateString('fr-FR'),
       inputDataSource: DataSources.CurrentDateService,
       publicodesKey: 'date du jour',
       filteringRule: rule,
       expectedKeep: expectedKeep
     })
+
+    vi.useRealTimers()
   }
 
-  testCurrentDate('31/12/2023', '31/12/2023', true)
-  testCurrentDate('01/12/2023', '31/12/2023', false)
+  testCurrentDate(new Date(2023, 11, 31), '31/12/2023', true)
+  testCurrentDate(new Date(2023, 11, 1), '31/12/2023', false)
 })

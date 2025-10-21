@@ -1,4 +1,6 @@
 import { ProgramType, ProgramAidType } from '@tee/data'
+import { ProgramEligibilityEvaluator } from '../../src/program/domain/programEligibilityEvaluator'
+import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { ProgramRepository } from '../../src/program/domain/spi'
 
 export type Rules = { ['entreprise . est ciblée']: { [k: string]: unknown } | string; [k: string]: unknown }
@@ -40,8 +42,12 @@ export const mockCurrentDateService = { get: () => '01/01/2024' }
 
 export const makeProgramsRepository = (programs: ProgramType[]): ProgramRepository => {
   return {
-    getById: () => undefined,
+    getById: (id: string) => programs.find((p) => p.id === id),
     getAll: () => programs,
     getEditablePrograms: () => programs
   }
+}
+
+export const makeProgramFeatures = (programs: ProgramType[]): ProgramFeatures => {
+  return new ProgramFeatures(makeProgramsRepository(programs), new ProgramEligibilityEvaluator())
 }
