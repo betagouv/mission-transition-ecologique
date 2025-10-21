@@ -46,7 +46,9 @@
       31
     ],
     "priority": {
-      "default": 40
+      "default": 40,
+      "I": 2,
+      "C": 2
     },
     "highlightPriority": "5",
     "sectors": [
@@ -478,7 +480,10 @@
       31
     ],
     "priority": {
-      "default": 90
+      "default": 90,
+      "Q": 3,
+      "C": 3,
+      "F": 6
     },
     "highlightPriority": "8",
     "sectors": [
@@ -909,7 +914,7 @@
     ],
     "priority": {
       "default": 500,
-      "A": 2
+      "A": 6
     },
     "highlightPriority": null,
     "sectors": [
@@ -961,7 +966,9 @@
       4
     ],
     "priority": {
-      "default": 125
+      "default": 125,
+      "Q": 2,
+      "G": 5
     },
     "highlightPriority": null,
     "sectors": [
@@ -1105,7 +1112,8 @@
       31
     ],
     "priority": {
-      "default": 50
+      "default": 50,
+      "F": 3
     },
     "highlightPriority": null,
     "sectors": [
@@ -1790,7 +1798,9 @@
     ],
     "linkedProjects": [],
     "priority": {
-      "default": 20
+      "default": 20,
+      "Q": 1,
+      "F": 2
     },
     "highlightPriority": null,
     "sectors": [
@@ -2048,9 +2058,11 @@
     "slug": "strategie-rse",
     "title": "Stratégie RSE",
     "nameTag": "🤝️ stratégie RSE",
-    "shortDescription": "Construire une stratégie d’impact environnemental et sociétal RSE.",
+    "shortDescription": "Impliquer votre équipe dans une démarche RSE pour renforcer l’impact environnemental et sociétal de votre entreprise.",
     "image": "/images/projet/strategie-rse.webp",
+    "titleLongDescription": "🤝 Qu’est-ce qu'une stratégie RSE ?",
     "longDescription": "La RSE (Responsabilité sociétale des entreprises) se définit comme la responsabilité des entreprises vis-à-vis des effets qu'elles exercent sur la société, sur trois plans principaux : environnemental, social et économique.\n\nEngager vos salariés autour d’une stratégie RSE permet de leur faire prendre conscience des enjeux et de changer les comportements, notamment en matière de transition écologique et de développement durable.\n\nGrâce à des expertises et l’élaboration d’un plan d’action, ou la formation de vos salariés, vous placez l’engagement et les valeurs environnementales au cœur de la culture de votre entreprise.",
+    "titleMoreDescription": "📚 Comment me documenter au mieux sur la stratégie RSE ?",
     "moreDescription": "- [**Qu'est-ce que la RSE ?**](https://www.ecologie.gouv.fr/responsabilite-societale-des-entreprises) Cette page détaille le cadre réglementaire de la responsabilité sociétale des entreprises.\n- [**Le portail RSE**](https://portail-rse.beta.gouv.fr/)**.** Un portail unique pour comprendre à quelles règlementations votre entreprise est soumise, et piloter vos obligations depuis un tableau de bord.",
     "themes": [
       "environmental",
@@ -2076,6 +2088,8 @@
       "diag-impact-biodiversite",
       "booster-transformation-rev-3"
     ],
+    "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
+    "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
     "linkedProjects": [
       31
     ],
@@ -2106,6 +2120,7 @@
       "T",
       "U"
     ],
+    "titleFaq": "☝️ Questions fréquentes sur la stratégie RSE",
     "metaTitle": "Stratégie RSE - Aide à la mise en place d'une démarche responsable",
     "metaDescription": "Déployez une stratégie RSE pour engager vos salariés et leur faire prendre conscience des enjeux en matière d'écologie et de développement durable.",
     "faqs": [
@@ -2171,7 +2186,10 @@
     ],
     "linkedProjects": [],
     "priority": {
-      "default": 10
+      "default": 10,
+      "C": 1,
+      "G": 1,
+      "F": 1
     },
     "highlightPriority": null,
     "sectors": [
@@ -2275,7 +2293,7 @@
     "shortDescription": "Adapter la stratégie et les actions de votre entreprise pour faire face aux évolutions du climat.",
     "image": "/images/projet/plan-adaptation-climat.webp",
     "longDescription": "**Le plan d’adaptation au dérèglement climatique** est un accompagnement destiné à **évaluer la vulnérabilité** de votre entreprise face aux aléas climatiques déjà à l’œuvre : canicules, sécheresses, inondations, tempêtes, tensions sur les ressources…\n\nCet accompagnement vous aide à **bâtir une stratégie de résilience** adaptée à vos activités, à votre territoire et à vos contraintes opérationnelles. Vous identifiez les risques, prévenez les ruptures d’activité, sécurisez les conditions de travail, et **anticipez les coûts économiques et sociaux** liés aux perturbations climatiques.\n\nDans un contexte où les événements extrêmes se multiplient, adapter son entreprise n’est plus une option mais une nécessité.\n\n**L’adaptation vise à limiter les effets du changement climatique déjà en cours. Elle est complémentaire des actions d’atténuation**, qui visent à en réduire les causes (notamment les émissions de gaz à effet de serre). Ces deux démarches doivent être pensées ensemble pour une stratégie climatique cohérente et durable.",
-    "moreDescription": "- [**Adaptation des entreprises au changement climatique : Agir maintenant !**](https://www.cci-paris-idf.fr/sites/default/files/2025-03/CCI_Adaptation-au-changement-climatique_fev-2025.pdf) Une étude des CCI de France.\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.",
+    "moreDescription": "- [**Adaptation des entreprises au changement climatique : Agir maintenant !**](https://www.cci-paris-idf.fr/sites/default/files/2025-03/CCI_Adaptation-au-changement-climatique_fev-2025.pdf) Une étude des CCI de France.\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.\n- [**Canicule et santé au travail : prévenir les risques, protéger les équipes**](https://www.anact.fr/canicule-travail-prevention-risques)**,** tour d'horizon et conseils pratiques de l'ANACT",
     "themes": [
       "environmental"
     ],
@@ -2307,7 +2325,8 @@
       144
     ],
     "priority": {
-      "default": 310
+      "default": 310,
+      "F": 4
     },
     "highlightPriority": null,
     "sectors": [
@@ -2751,8 +2770,8 @@
     ],
     "priority": {
       "default": 191,
-      "I": 6,
-      "Q": 2,
+      "I": 8,
+      "Q": 5,
       "T": 1
     },
     "highlightPriority": null,
@@ -2794,7 +2813,7 @@
     ],
     "priority": {
       "default": 240,
-      "I": 3
+      "I": 5
     },
     "highlightPriority": null,
     "sectors": [
@@ -2834,7 +2853,7 @@
     ],
     "priority": {
       "default": 210,
-      "I": 2
+      "I": 7
     },
     "highlightPriority": null,
     "sectors": [
@@ -3118,7 +3137,8 @@
       33
     ],
     "priority": {
-      "default": 65
+      "default": 65,
+      "A": 3
     },
     "highlightPriority": null,
     "sectors": [
@@ -3303,10 +3323,7 @@
     ],
     "priority": {
       "default": 325,
-      "A": 7,
-      "F": 3,
-      "N": 1,
-      "O": 1
+      "A": 4
     },
     "highlightPriority": null,
     "sectors": [
@@ -3478,7 +3495,8 @@
       33
     ],
     "priority": {
-      "default": 217
+      "default": 217,
+      "G": 4
     },
     "highlightPriority": null,
     "sectors": [
@@ -3586,7 +3604,7 @@
     ],
     "priority": {
       "default": 905,
-      "A": 6,
+      "A": 7,
       "B": 4,
       "D": 1
     },
@@ -3725,7 +3743,7 @@
     ],
     "priority": {
       "default": 412,
-      "A": 1
+      "A": 2
     },
     "highlightPriority": null,
     "sectors": [
@@ -3759,7 +3777,7 @@
     ],
     "priority": {
       "default": 511,
-      "A": 3
+      "A": 1
     },
     "highlightPriority": null,
     "sectors": [
@@ -3788,7 +3806,7 @@
     ],
     "priority": {
       "default": 240,
-      "I": 4
+      "I": 3
     },
     "highlightPriority": null,
     "sectors": [
@@ -3974,7 +3992,7 @@
     "priority": {
       "default": 880,
       "B": 2,
-      "H": 5
+      "H": 6
     },
     "highlightPriority": null,
     "sectors": [
@@ -4042,8 +4060,7 @@
     ],
     "priority": {
       "default": 230,
-      "G": 1,
-      "H": 3
+      "H": 4
     },
     "highlightPriority": null,
     "sectors": [
@@ -4125,7 +4142,8 @@
     ],
     "linkedProjects": [],
     "priority": {
-      "default": 105
+      "default": 105,
+      "G": 2
     },
     "highlightPriority": null,
     "sectors": [
@@ -4223,7 +4241,7 @@
     ],
     "priority": {
       "default": 253,
-      "H": 1
+      "H": 3
     },
     "highlightPriority": null,
     "sectors": [
@@ -4292,7 +4310,7 @@
     "priority": {
       "default": 750,
       "B": 1,
-      "H": 4
+      "H": 1
     },
     "highlightPriority": null,
     "sectors": [
@@ -4355,7 +4373,8 @@
       929
     ],
     "priority": {
-      "default": 106
+      "default": 106,
+      "G": 3
     },
     "highlightPriority": null,
     "sectors": [
@@ -4405,8 +4424,8 @@
     ],
     "priority": {
       "default": 122,
-      "I": 5,
-      "Q": 1
+      "I": 6,
+      "Q": 4
     },
     "highlightPriority": null,
     "sectors": [
@@ -4437,8 +4456,7 @@
     "priority": {
       "default": 360,
       "B": 3,
-      "C": 1,
-      "F": 1
+      "C": 4
     },
     "highlightPriority": null,
     "sectors": [
@@ -4469,10 +4487,9 @@
     "priority": {
       "default": 630,
       "B": 5,
-      "C": 4,
+      "C": 7,
       "D": 2,
-      "E": 2,
-      "F": 4
+      "E": 2
     },
     "highlightPriority": null,
     "sectors": [
@@ -4548,8 +4565,7 @@
     "priority": {
       "default": 720,
       "A": 5,
-      "E": 1,
-      "I": 8
+      "E": 1
     },
     "highlightPriority": null,
     "sectors": [
@@ -4584,9 +4600,8 @@
     ],
     "priority": {
       "default": 672,
-      "A": 4,
-      "C": 2,
-      "I": 7
+      "C": 5,
+      "I": 4
     },
     "highlightPriority": null,
     "sectors": [
@@ -4625,10 +4640,7 @@
     ],
     "priority": {
       "default": 212,
-      "C": 3,
-      "F": 2,
-      "G": 2,
-      "H": 6
+      "C": 6
     },
     "highlightPriority": null,
     "sectors": [
@@ -4659,7 +4671,8 @@
       998
     ],
     "priority": {
-      "default": 272
+      "default": 272,
+      "F": 5
     },
     "highlightPriority": null,
     "sectors": [
@@ -4707,7 +4720,40 @@
       1260
     ],
     "priority": {
-      "default": 227
+      "default": 227,
+      "H": 5
+    },
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+    ],
+    "faqs": []
+  },
+  {
+    "id": 1490,
+    "slug": "hydrogene-vert",
+    "title": "Hydrogène vert",
+    "nameTag": "🧪 Hydrogène vert",
+    "shortDescription": "L'extraction décarbonée de l'hydrogène permet de limiter le recours aux énergies fossiles.",
+    "image": "/images/projet/hydrogene-vert.webp",
+    "longDescription": "L'hydrogène peut être produit au moyen d'une technique décarbonée : **l'électrolyse de l'eau**, qui consiste à décomposer l'eau (H2O) en dioxygène (O2) et dihydrogène (H2) grâce à un courant électrique, issu d'énergies renouvelables (solaire, éolien...). \\\nLe gaz obtenu par ce procédé écologique est appelé **hydrogène vert**.\\\nContrairement à son homologue, **l'hydrogène dit \"gris\"**, la production de l'hydrogène vert n'a pas recours aux énergies fossiles.\\\nL'hydrogène est présent dans **l'industrie, le transport** et **l'agriculture**, notamment avec :\n\n- le raffinage des carburants\n- la production d’engrais\n- les mobilités lourdes (autocars, bateaux, poids lourds, fret...).",
+    "moreDescription": "- [**L'hydrogène et ses usages**](https://www.ecologie.gouv.fr/politiques-publiques/lhydrogene-ses-avantages), par ecologie.gouv.fr.\n- [**L'hydrogène renouvelable et bas carbone**](https://agirpourlatransition.ademe.fr/entreprises/hydrogene), un état des lieux réalisé par l'ADEME.",
+    "themes": [
+      "energy"
+    ],
+    "mainTheme": "energy",
+    "programs": [],
+    "descriptionLinkedProjects": "",
+    "linkedProjects": [],
+    "priority": {
+      "default": 327
     },
     "highlightPriority": null,
     "sectors": [
