@@ -1,5 +1,6 @@
 import { PublicodeObjective, PublicodesKeys, ThemeId } from '@tee/common'
 import { FiltersKeys, ProgramTypeForFront, ProgramTypeWithEligibility, PublicodesCondition } from '@tee/data'
+import { ThemeConverter } from '../../common/domain/converter/ThemeConverter'
 import { ProgramService } from '../../program/application/programService'
 import type { ObjectivePublicodeData } from './types'
 
@@ -32,7 +33,7 @@ export default class FrontConverter {
 
   private _getTheme(publicodeData: ObjectivePublicodeData): ThemeId[] {
     const objectives: PublicodeObjective[] = publicodeData[PublicodesCondition.oneOfThese]
-    return objectives.map((obj: PublicodeObjective) => this._publicodeToThemeMapping[obj])
+    return ThemeConverter.fromObjectives(objectives)
   }
 
   private _getFilterData(publicodeData: unknown) {

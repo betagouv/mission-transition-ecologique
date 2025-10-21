@@ -1,3 +1,4 @@
+import { ThemeConverter } from '../../common/domain/converter/ThemeConverter'
 import { ProgramRepository, EligibilityEvaluator } from './spi'
 import { ProgramFilter } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
@@ -75,17 +76,21 @@ export default class ProgramFeatures {
     if (program === undefined) {
       return []
     }
-    const publicodeObjectives = program.eligibilityData.questionnaire?.priorityObjectives
-    if (!publicodeObjectives) {
+    const themeIds = program.eligibilityData.questionnaire?.priorityObjectives
+    if (!themeIds) {
       return []
     }
-    const objectivesArray: Objective[] = []
+
+    const publicodeObjectives = ThemeConverter.toObjectives(themeIds)
+
+    const objectives: Objective[] = []
     publicodeObjectives.forEach((publicodeObjective) => {
       const objectiveValue = Object.values(Objective).find((value) => publicodeObjective.includes(value as string))
       if (objectiveValue) {
-        objectivesArray.push(objectiveValue as Objective)
+        objectives.push(objectiveValue as Objective)
       }
     })
-    return objectivesArray
+
+    return objectives
   }
 }
