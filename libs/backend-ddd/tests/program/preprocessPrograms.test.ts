@@ -1,7 +1,7 @@
 import { QuestionnaireData } from '@tee/common'
 import { Entry, setObjectProperty } from '../../src/common/objects'
 import { type ProgramType } from '@tee/data'
-import { makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
+import { makeProgramHelper, makeProgramsRepository } from './testing'
 import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { PublicodesService } from '../../src/program/infrastructure/publicodesService'
@@ -62,7 +62,6 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
       region: 'Corse',
       codeNAF1: 'J'
     }
-    let testCurrentDateService = mockCurrentDateService // by default
 
     // Set input data depending on data source
     if (
@@ -79,10 +78,6 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
         const value = testCase.inputDataEntry[1]
         setObjectProperty(program, key, value)
       }
-    }
-
-    if (testCase.inputDataSource === DataSources.CurrentDateService) {
-      testCurrentDateService = { get: () => testCase.currentDate }
     }
 
     const programs = [program]
