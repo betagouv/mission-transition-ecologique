@@ -1,7 +1,7 @@
 <template>
   <!-- BACK TO FORM BTN -->
   <TeeDsfrButton
-    v-show="formIsSent"
+    v-show="!formIsSent"
     class="fr-btn fr-btn--tertiary-no-outline fr-col-10 fr-mb-3v"
     tertiary
     no-outline
@@ -68,31 +68,34 @@
     </div>
   </form>
   <TeeFormCallback
-    v-if="formIsSent"
+    v-if="formIsSent || true"
     :form="form"
     :error-email-subject="errorEmailSubject"
     :request-response="requestResponse"
-    class="fr-mt-5v fr-mx-auto fr-grid-row fr-grid-row--center fr-grid-row--middle"
+    class="fr-mt-5v fr-mx-auto"
   >
     <template #phoneContact>
       <div class="fr-col-md-9 fr-mx-auto">
-        <p class="fr-mb-5v">
+        <p class="fr-mb-4v">
           <span v-html="phoneCallback"></span>
         </p>
-        <div
+        <nuxt-img
           v-if="showCELogo"
-          class="fr-header__service"
-        >
-          <p class="fr-header__service-title fr-mb-0"><span class="fr-text--deep-red">Conseillers-Entreprises</span>.Service-Public.fr</p>
-          <p class="fr-header__service-tagline">Le service public d’accompagnement des entreprises</p>
-        </div>
+          :src="ConseillerEntreprisePartner.img"
+          loading="lazy"
+          densities="x1 x2"
+          :alt="ConseillerEntreprisePartner.label"
+          width="300px"
+        />
       </div>
     </template>
   </TeeFormCallback>
 </template>
 
 <script setup lang="ts">
+import { Image } from '@/tools/image'
 import Navigation from '@/tools/navigation'
+import { ConseillerEntreprisePartner } from '@/tools/operator'
 import { Scroll } from '@/tools/scroll/scroll'
 import { computed } from 'vue'
 import { type ReqResp, FormDataType, InputFieldUnionType, ProjectType, ProgramTypeForFront } from '@/types'
@@ -103,7 +106,6 @@ import OpportunityApi from '@/tools/api/opportunityApi'
 import { OpportunityType } from '@tee/common'
 import Analytics from '@/tools/analytic/analytics'
 
-const navigation = new Navigation()
 interface Props {
   dataId?: string
   showTitle?: boolean
@@ -133,6 +135,9 @@ const formIsSent = ref<boolean>(false)
 const requestResponse = ref<ReqResp>()
 const isLoading = ref<boolean>(false)
 const localForm = ref<FormDataType>(props.form)
+const navigation = new Navigation()
+const img = Image.getUrl
+
 const isFormFilled = computed(() => {
   const isFilled = []
   for (const key of Object.keys(localForm.value) as Array<keyof typeof localForm.value>) {

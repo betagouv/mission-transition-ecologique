@@ -23,6 +23,8 @@ defineProps<{ title: string; titleClass: string; position: FeedbackButtonPositio
       <img
         src="https://jedonnemonavis.numerique.gouv.fr/static/bouton-bleu-clair.svg"
         alt="Je donne mon avis"
+        loading="lazy"
+        height="80px"
       />
     </a>
   </div>

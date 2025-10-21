@@ -6,7 +6,7 @@
   >
     <div class="fr-follow">
       <div class="fr-container">
-        <div class="fr-grid-row">
+        <div class="fr-grid-row fr-text-center fr-text-left-md">
           <div class="fr-col-12 fr-col-md-8">
             <Feedback
               title="Merci de nous aider à améliorer ce service"
@@ -15,33 +15,31 @@
             />
           </div>
           <div class="fr-col-12 fr-col-md-4">
-            <div class="fr-follow__social">
-              <p class="fr-h6">Liens utiles</p>
-              <ul class="">
-                <li
-                  v-for="link in utilLinks"
-                  :key="link.label"
-                  class="fr-footer__content-item"
+            <p class="fr-h6">Liens utiles</p>
+            <ul class="">
+              <li
+                v-for="link in utilLinks"
+                :key="link.label"
+                class="fr-footer__content-item"
+              >
+                <router-link
+                  v-if="link.to"
+                  :to="link.to"
+                  class="fr-footer__content-link"
                 >
-                  <router-link
-                    v-if="link.to"
-                    :to="link.to"
-                    class="fr-footer__content-link"
-                  >
-                    {{ link.label }}
-                  </router-link>
-                  <a
-                    v-else
-                    :href="link.href"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="fr-footer__content-link"
-                  >
-                    {{ link.label }}
-                  </a>
-                </li>
-              </ul>
-            </div>
+                  {{ link.label }}
+                </router-link>
+                <a
+                  v-else
+                  :href="link.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="fr-footer__content-link"
+                >
+                  {{ link.label }}
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -104,9 +102,10 @@
               <li
                 v-for="operator in operators"
                 :key="operator.label"
+                class="fr-col-6"
               >
                 <a
-                  class="footer__partners-link fr-bg--none fr-my-4v fr-ml-4v"
+                  class="footer__partners-link fr-bg--none fr-my-4v"
                   target="_blank"
                   :href="operator.href"
                   rel="noopener noreferrer"
@@ -276,5 +275,11 @@ const operators = partnersAll
 <style scoped lang="scss">
 .ademe-logo {
   height: 7.2rem;
+}
+
+.fr-footer__partners-sub {
+  ul {
+    flex-direction: row;
+  }
 }
 </style>
