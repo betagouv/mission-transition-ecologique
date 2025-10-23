@@ -6,7 +6,8 @@ description: >-
   Vous avez un projet visant à réduire votre consommation énergétique ou
   l'impact environnemental de votre entreprise ? Le prêt énergie AURA permet de
   financer, à taux préférentiel, les investissements matériels et immatériels
-  dans les champs suivants : 
+  dans les champs suivants :
+
 
   - l’amélioration de la performance (énergie, eau, matière),
 
@@ -59,12 +60,11 @@ objectifs:
   - description: Vérifiez les modalités du prêt.
     liens:
       - lien: https://pretregion.auvergnerhonealpes.fr/
-        texte: Détail des modalités.
+        texte: Détail des modalités
   - description: >-
       Réalisez un diagnostic énergétique ou environnemental et obtenez un plan
-      d'action qui sera à transmettre à votre dossier de candidature. Les
-      livrables fournis par le prestataire du diagnostic seront à joindre au
-      dossier.\
+      d'action qui sera à transmettre à votre dossier de candidature (ainsi que
+      ses livrables). Les diagnostics éligibles sont les suivants :
     liens:
       - lien: >-
           https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/diag-ecoconception

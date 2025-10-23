@@ -41,7 +41,9 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Variable
 activable en autonomie: oui
 objectifs:
-  - description: Vérifiez votre éligibilité en parcourant la documentation du programme.
+  - description: >-
+      Consultez la documentation du programme pour vérifier l'éligibilité de
+      votre projet.
     liens:
       - lien: >-
           https://www.cote-azur.cci.fr/app/uploads/2024/11/Reglement-Appel-a-candidatures-ReSEau.pdf
