@@ -1,5 +1,5 @@
 from etl.transform.dto.baserow.program import program_from_baserow
-
+from etl.load.config.extractor import Extractor
 
 class Program:
     ID = "id"
@@ -29,7 +29,7 @@ class Program:
         self.min_employee = ""
         self.max_employee = ""
 
-        if src == "baserow":
+        if src == Extractor.BASEROW:
             program_from_baserow(self, args[0])
         else:
             raise ValueError("Unknown data source")

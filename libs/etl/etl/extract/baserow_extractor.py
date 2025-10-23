@@ -1,17 +1,17 @@
 import requests
-import os
-from dotenv import load_dotenv
 import json
+from etl.tools.config.config import Config
+from etl.tools.config.config_baserow import ConfigBaserow
 
 
-class BaserowExtractor():
+class BaserowExtractor:
     BASE_URL = "https://api.baserow.io/api/database/rows/table/"
-    PROJECT_TABLE_ID = 305253
-    PROGRAM_TABLE_ID = 314437
+    PROJECT_TABLE_ID = ConfigBaserow.PROJECT_TABLE_ID()
+    PROGRAM_TABLE_ID = ConfigBaserow.PROGRAM_TABLE_ID()
+    BASEROW_TOKEN = Config.BASEROW_TOKEN()
 
     def __init__(self):
-        load_dotenv()
-        self._headers = {"Authorization": f"Token {os.getenv('BASEROW_TOKEN')}"}
+        self._headers = {"Authorization": f"Token {self.BASEROW_TOKEN}"}
 
     def _get_table_data(self, table_id, params=None):
         """Fetch all rows from a Baserow table."""
@@ -26,10 +26,10 @@ class BaserowExtractor():
         return results
 
     def get_projects(self):
-          return self._get_table_data(self.PROJECT_TABLE_ID)
+        return self._get_table_data(self.PROJECT_TABLE_ID)
 
     def get_programs(self):
-          return self._get_table_data(self.PROGRAM_TABLE_ID)
+        return self._get_table_data(self.PROGRAM_TABLE_ID)
 
     def get_in_prod_projects(self):
         filter_obj = {
@@ -50,4 +50,3 @@ class BaserowExtractor():
 
         params = {"filters": json.dumps(filter_obj)}
         return self._get_table_data(self.PROGRAM_TABLE_ID, params=params)
-

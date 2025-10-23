@@ -16,7 +16,7 @@ class Project:
         self.related_programs = ""
         self.themes = ""
 
-        if src == "baserow":
+        if src == Extractor.BASEROW:
             project_from_baserow(self, args[0])
         else:
             raise ValueError("Unknown data source")

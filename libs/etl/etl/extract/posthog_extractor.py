@@ -1,13 +1,11 @@
-import os
 import requests
-from dotenv import load_dotenv
+from etl.tools.config.config import Config
 
 
 class PosthogExtractor:
     def __init__(self):
-        load_dotenv()
-        self.project_id = os.getenv("POSTHOG_PROJECT_ID", "")
-        self.read_api_key = os.getenv("POSTHOG_READ_API_KEY", "")
+        self.project_id = Config.POSTHOG_PROJECT_ID()
+        self.read_api_key = Config.POSTHOG_READ_API_KEY()
 
         if not self.project_id or not self.read_api_key:
             raise ValueError(

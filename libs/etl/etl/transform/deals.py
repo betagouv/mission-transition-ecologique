@@ -1,5 +1,5 @@
 from etl.transform.dto.brevo import deal_from_brevo
-
+from etl.load.config.extractor import Extractor
 
 class Deal:
     BREVO_ID = "brevo_id"
@@ -27,7 +27,7 @@ class Deal:
         self.parter_id_opale = ""
         self.partner_matchquality_opale = ""
 
-        if src == "brevo":
+        if src == Extractor.BREVO:
             deal_from_brevo(self, args[0], args[1])
         else:
             raise ValueError("Unknown data source")
