@@ -11,10 +11,9 @@ montant du financement: Variable selon le bâtiment et le type d'équipement
 activable en autonomie: oui
 objectifs:
   - description: >-
-      Vérifiez votre éligibilité en réalisant le test “Votre bâtiment est-il
-      raccordable à un réseau de chaleur ?”. Si un réseau de chaleur passe à
-      proximité de votre adresse, vous avez le droit à une prime pour le
-      raccordement de vos locaux à ce réseau.
+      Faites le test “Votre bâtiment est-il raccordable à un réseau de chaleur
+      ?”. Si un réseau de chaleur passe à proximité de votre adresse, vous avez
+      le droit à une prime pour le raccordement de vos locaux à ce réseau.
     liens:
       - lien: https://france-chaleur-urbaine.beta.gouv.fr/ressources/aides#contenu
         texte: Réaliser le test

@@ -1015,7 +1015,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en réalisant votre simulation.",
+        "description": "Assurez-vous de l’éligibilité de votre projet en réalisant une simulation.",
         "liens": [
           {
             "lien": "https://advenir.mobi/je-definis-mon-projet/",
@@ -1188,7 +1188,7 @@
     "durée du prêt": "De 2 à 10 ans (dont 3 ans maximum de différé)",
     "objectifs": [
       {
-        "description": "Vérifiez l'éligibilité de votre projet.",
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://www.paysdelaloire.fr/sites/default/files/aides/2ae4eace-0470-11ee-baf5-23743e123976/subvention%2Cpret_reglement-dintervention-maj-janvier-2024_2ae4eace_ri.pdf",
@@ -1758,11 +1758,11 @@
     "montant du financement": "financement de 4 000 à 100 000 €, prêt de 8 000 à 300 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation du CNL ou en contactant un conseiller.",
+        "description": "Assurez-vous de l’éligibilité de votre projet en parcourant la documentation du CNL ou en contactant un conseiller.",
         "liens": [
           {
             "lien": "https://centrenationaldulivre.fr/aides-financement/aide-a-l-investissement-aux-librairies-francaises",
-            "texte": "Voir les critères d'éligibilité"
+            "texte": "Critères d'éligibilité"
           }
         ]
       },
@@ -2724,7 +2724,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude ou 60% de l'investissement",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9emploi%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -2953,7 +2953,7 @@
     "montant du financement": "Variable selon projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Am%C3%A9lioration%20de%20la%20qualit%C3%A9%20de%20l%27air%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -3173,7 +3173,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
@@ -3540,7 +3540,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20transition%20%C3%A9cologique%20industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -4126,11 +4126,11 @@
     "montant du financement": "Selon la nature du projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
             "lien": "https://agir.ademe.fr/aides-financieres/aap/bciat-2025-biomasse-chaleur-pour-lindustrie-lagriculture-et-le-tertiaire#eligibility",
-            "texte": "Vérifier mon éligibilité"
+            "texte": "Conditions d'éligibilité"
           }
         ]
       },
@@ -4861,7 +4861,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Booster%20Entreprises%20Eco-Energie%20Tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -5305,7 +5305,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation.",
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://www.bourgognefranchecomte.fr/file-download?fid=15544",
@@ -5510,7 +5510,7 @@
     "montant du financement": "Jusqu'à 25% des dépenses, dans la limite de 400 000 € HT",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation.",
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/campings-de-tourisme-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1",
@@ -5851,7 +5851,6 @@
       },
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
-          "code NAF niveau 1 . est A",
           "code NAF niveau 1 . est B",
           "code NAF niveau 1 . est C",
           "code NAF niveau 1 . est D",
@@ -6292,7 +6291,7 @@
     "montant du financement": "Jusqu'à 70% des dépenses éligibles, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation et en contactant un conseiller.",
+        "description": "Consultez la documentation pour vérifier l’éligibilité de votre projet ou contactez un conseiller..",
         "liens": [
           {
             "lien": "https://www.maregionsud.fr/vos-aides/detail/cedre-investissement",
@@ -8087,7 +8086,7 @@
     "montant du financement": "60% des dépenses engagées",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
             "lien": "https://agir.ademe.fr/sites/default/files/CORIMER%20Navires%20Bas%20Carbone%20-%20France%202030%20-%20Cahier%20des%20charges%20-%202025.docx",
@@ -8303,7 +8302,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Vérifiez votre éligibilité en réalisant le test “Votre bâtiment est-il raccordable à un réseau de chaleur ?”. Si un réseau de chaleur passe à proximité de votre adresse, vous avez le droit à une prime pour le raccordement de vos locaux à ce réseau.",
+        "description": "Faites le test “Votre bâtiment est-il raccordable à un réseau de chaleur ?”. Si un réseau de chaleur passe à proximité de votre adresse, vous avez le droit à une prime pour le raccordement de vos locaux à ce réseau.",
         "liens": [
           {
             "lien": "https://france-chaleur-urbaine.beta.gouv.fr/ressources/aides#contenu",
@@ -8902,16 +8901,26 @@
     "montant du financement": "Selon la nature du projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
-            "lien": "https://agir.ademe.fr/sites/default/files/DECARB-FLASH%202025-2027%20-%20Cahier%20des%20charges%20-%202025.docx",
-            "texte": "Vérifier mon éligibilité"
+            "lien": "https://agir.ademe.fr/sites/default/files/DECARB%20FLASH%202025-2027%20-%20Cahier%20des%20charges%20-%202025.pdf",
+            "texte": "Cahier des charges"
+          },
+          {
+            "lien": "https://agir.ademe.fr/sites/default/files/DECARB%20FLASH%202025-2027%20-%20Liste%20des%20actions%20%C3%A9ligibles%20-%202025.pdf",
+            "texte": "Liste des actions éligibles"
           }
         ]
       },
       {
-        "description": "Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au moins un mois avant la date limite de dépôt)."
+        "description": "Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au moins un mois avant la date limite de dépôt).",
+        "liens": [
+          {
+            "lien": "mailto:decarb.flash@ademe.fr",
+            "texte": "decarb.flash@ademe.fr"
+          }
+        ]
       },
       {
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
@@ -9096,7 +9105,7 @@
     "montant du financement": "Selon projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
             "lien": "https://agir.ademe.fr/sites/default/files/DECARB%20IND%2025%20-%20Foire%20aux%20questions%20-%202025.pdf",
@@ -9505,11 +9514,11 @@
     "montant du financement": "1,5 M€ d’aide maximale par site, selon la nature du projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
             "lien": "https://agir.ademe.fr/sites/default/files/AAP%20DETER%20-%20Cahier%20des%20Charges%20-%20Octobre%202025.docx",
-            "texte": "Vérifier mon éligibilité"
+            "texte": "Critères d'éligibilité"
           }
         ]
       },
@@ -12893,7 +12902,7 @@
     "montant de l'avantage fiscal": "40% à 60% du prix de l'engin",
     "objectifs": [
       {
-        "description": "Vérifiez l'éligibilité de l'engin que vous souhaitez acquérir."
+        "description": "Vérifiez si l'engin que vous souhaitez acquérir est éligible."
       },
       {
         "description": "Déduisez l'aide de vos résultats imposables."
@@ -13426,7 +13435,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20alimentation%20durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -13644,7 +13653,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20investissements%20gestion%20biod%C3%A9chets%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -13836,7 +13845,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 50 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20centres%20de%20tri%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -14024,7 +14033,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
@@ -14217,7 +14226,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 50 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
@@ -14406,7 +14415,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Soutien%20EFC%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -14612,7 +14621,7 @@
     "montant du financement": "Jusqu'à 70% pour une étude et 55% pour un investissement",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller."
       },
       {
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
@@ -14824,7 +14833,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet."
       },
       {
         "description": "Choisissez le prestataire qui va vous accompagner pour mener votre étude d'opportunité ou de faisabilité et obtenez un devis."
@@ -14994,7 +15003,7 @@
     "montant du financement": "Variable selon projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20reconversion%20friches%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf",
@@ -15188,7 +15197,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20lutte%20contre%20le%20gaspillage%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -15395,7 +15404,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
@@ -15624,7 +15633,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/collectivites/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -15827,7 +15836,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20pour%20une%20installation%20hydro%C3%A9lectrique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -16032,7 +16041,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/entreprises/sites/default/files/%C3%89tudes%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -16245,7 +16254,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20transition%20%C3%A9cologique%20industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -16433,7 +16442,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 150 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20%C3%A9coconception%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -16665,7 +16674,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 € HT",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tude%20autoconsommation%20photovolta%C3%AFque%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement.pdf",
@@ -17080,7 +17089,7 @@
     "montant du financement": "Selon projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/RDI%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -17278,7 +17287,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
@@ -17475,7 +17484,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20RRR%20hors%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -17692,7 +17701,7 @@
     "montant du financement": "Selon la surface et l'ancienneté de l’installation solaire, dans un maximum de 30 000€ HT",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9habilitation%20installations%20solaires%20thermiques%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf",
@@ -17908,7 +17917,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -18104,7 +18113,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
@@ -18343,7 +18352,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
@@ -19654,7 +19663,7 @@
     "montant du financement": "de 5 000 € HT à 200 000 € HT",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Fonds%20Tourisme%20Durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
@@ -21313,7 +21322,7 @@
     "montant du financement": "Jusqu'à 50% des dépenses, dans la limite de 180 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation.",
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://www.bourgognefranchecomte.fr/file-download?fid=15543",
@@ -21516,7 +21525,7 @@
     "montant du financement": "Jusqu'à 25% des dépenses, dans la limite de 400 000 € HT",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation.",
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1",
@@ -22088,7 +22097,7 @@
     "montant du financement": "Variable selon le projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant le règlement du dispositif \"Impulsion environnement\"",
+        "description": "Consultez le règlement du dispositif \"Impulsion environnement\" pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://www.normandie.fr/sites/default/files/2025-06/reglement_impulsion_environnement_fev_2024.pdf",
@@ -22265,6 +22274,164 @@
       }
     },
     "id": "impulsion-environnement"
+  },
+  {
+    "titre": "Indicateur climat",
+    "promesse": "L'indicateur climat est un outil visant à rendre transparente et lisible la transition écologique de votre entreprise.",
+    "description": "La Banque de France vous accompagne dans l’évaluation de vos émissions de gaz à effet de serre et de la résilience climatique de votre entreprise, à l'aide d'un outil gratuit : l'indicateur climat.\n\nCet indicateur de référence permet à votre entreprise de :\n\n- Prendre conscience des impacts et des opportunités.\n- D’évaluer votre résilience et vos plans d'action face aux aléas climatiques (températures, précipitations, sécheresse...).\n- De disposer d’un indicateur de référence, utilisable auprès de vos financeurs, de vos clients ou de vos fournisseurs.",
+    "description longue": "L'évaluation proposée repose sur :\n\n- des informations propres à l’entreprise potentiellement collectées directement auprès d’elle (volumes d’activité présent et futur, émissions de gaz à effet de\\\n  serre associées, leviers de décarbonation).\n- des trajectoires de décarbonation de référence alignées sur l’Accord de\\\n  Paris.\n- un cadre méthodologique inspiré de la méthode ACT de l’ADEME, reconnue à l’international.\n- une analyse d’expert menée par le Réseau de la Banque de France, présent sur tout le territoire et au service des entreprises.",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "Banque de France",
+    "contact question": "mailto:pierre.meignant@banque-france.fr",
+    "url": "file:///Users/betagouv/Downloads/20251003_Presentation.Indicateur_Climat_BDF-4.pdf",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "gratuit",
+    "durée de l'accompagnement": "variable",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Créez un compte et connectez-vous sur l'Espace Dirigeant de la Banque de France.",
+        "liens": [
+          {
+            "lien": "https://dirigeant.banque-france.fr/#/",
+            "texte": "Espace Dirigeant"
+          }
+        ]
+      },
+      {
+        "description": "Collectez les données et répondez aux questions concernant l'adaptabilité climatique de votre entreprise."
+      },
+      {
+        "description": "Obtenez une évaluation personnalisée à l'aide de l'indicateur climat."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "En phase de déploiement (qui se poursuivra jusqu'en 2027), l'indicateur climatique concerne les secteurs de la production d'électricité, des transports, de la détention de parcs immobiliers, de la production de ciment et de la construction de bâtiments."
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est L"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "indicateur-climat"
   },
   {
     "titre": "Industries vertes (CI3V)",
@@ -22470,7 +22637,7 @@
     "montant du financement": "Jusqu'à 70% des coûts, dans un maximum de 200 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet."
       },
       {
         "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade, votre investissement ne doit pas avoir été realisé !"
@@ -22653,7 +22820,7 @@
     "montant du financement": "Aide calculée au cas par cas",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Boucle%20d%27eau%20temp%C3%A9r%C3%A9e%20%C3%A0%20%C3%A9nergie%20g%C3%A9othermique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -22857,7 +23024,7 @@
     "montant du financement": "Selon le type de projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Investissements%20CDT%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -23067,7 +23234,7 @@
     "montant du financement": "Selon projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20des%20installations%20biomasse%20%C3%A9nergie%20-%202024.pdf",
@@ -23276,7 +23443,7 @@
     "montant du financement": "Selon la taille de l'entreprise et la zone géographique",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller."
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller."
       },
       {
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
@@ -23456,7 +23623,7 @@
     "montant du financement": "Selon le type d'investissement",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Contrat%20Chaleur%20Renouvelable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -23661,7 +23828,7 @@
     "montant du financement": "Selon les types d'investissement",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/AAP%20Contrat%20Patrimonial%20Chaleur%20Renouvelable%20en%20Occitanie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20-%20Mars%202022.docx",
@@ -23872,7 +24039,7 @@
     "montant du financement": "Jusqu’à 60 % des coûts d'investissement, 65% pour la Corse et 75% pour les DOM",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Installation%20%C3%A9quipements%20lutte%20contre%20le%20gaspillage%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.docx",
@@ -24087,7 +24254,7 @@
     "montant du financement": "Entre 15 % à 60 % selon le projet, dans un maximum de 300 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Travaux%20investissements%20%C3%A9coconception%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -24316,7 +24483,7 @@
     "montant du financement": "Aide calculée au cas par cas",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/G%C3%A9othermie%20de%20surface%20et%20a%C3%A9rothermie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -24520,7 +24687,7 @@
     "montant du financement": "Aide calculée au cas par cas",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%20G%C3%A9othermie%20profonde%20-%202025.pdf",
@@ -24723,7 +24890,7 @@
     "montant du financement": "Jusqu'à 60 % selon la taille de l'entreprise et son territoire",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Investissements%20gestion%20biod%C3%A9chets%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -24928,7 +25095,7 @@
     "montant du financement": "Aide calculée selon le type d'installation",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Investissements%20installations%20de%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -25136,7 +25303,7 @@
     "montant du financement": "Aide forfaitaire de 38 à 25 €/MWh",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PAC%20solaire%20pour%20la%20production%20d%27ECS%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -25340,7 +25507,7 @@
     "montant du financement": "Entre 20 à 55% selon investissement",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Approvisionnement%20biomasse%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -25525,7 +25692,7 @@
     "montant du financement": "Selon la puissance de l’installation",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet."
       },
       {
         "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade, votre investissement ne doit pas avoir été realisé !"
@@ -25692,7 +25859,7 @@
     "montant du financement": "Aide calculée au cas par cas",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9cup%C3%A9ration%20de%20chaleur%20fatale%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -25879,7 +26046,7 @@
     "montant du financement": "Jusqu'à 75% des coûts, dans un maximum de 200 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/RRR%20hors%20emballages%20-%20Investissement%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -26093,7 +26260,7 @@
     "montant du financement": "Entre 37,5% à 80% selon le projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Renouvellement%20Forestier%20-%20Cahier%20des%20charges%20-%20Volet%201%20-%202023.pdf",
@@ -26262,7 +26429,7 @@
     "montant du financement": "Aide calculée au cas par cas",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9seaux%20chaleur%20et%20froid%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
@@ -26449,7 +26616,7 @@
     "montant du financement": "Aide forfaitaire en fonction du type d’installation",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet."
       },
       {
         "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade, votre investissement ne doit pas avoir été realisé !"
@@ -26643,7 +26810,7 @@
     "montant du financement": "Forfaitaire en fonction de la zone géographique et de la surface de l’installation",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Solaire%20thermique%20eau%20chaude%20sanitaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -26846,7 +27013,7 @@
     "montant du financement": "Selon la chaleur produite",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Syst%C3%A8me%20Solaire%20Combin%C3%A9%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -29683,7 +29850,7 @@
     "montant du financement": "Jusqu'à 80% d'aide, dans un maximum selon le projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agir.ademe.fr/sites/default/files/AAP%20ORMAT%202025%20-%20Cahier%20des%20charges%20-%202025.pdf",
@@ -30081,7 +30248,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude selon la taille de l'entreprise",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PACTE%20Industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -30278,7 +30445,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Vérifiez l'éligibilité de votre projet ou contactez la direction du développement de Voies Navigables de France (VNF) par mail.",
+        "description": "Assurez-vous de l'éligibilité de votre projet ou contactez la direction du développement de Voies Navigables de France (VNF) par mail.",
         "liens": [
           {
             "lien": "https://www.vnf.fr/vnf/accueil/beneficier-de-solutions-en-faveur-de-la-transition-energetique-du-secteur-fluvial/comment-financer-un-projet-de-verdissement-de-la-flotte-fluviale/",
@@ -30869,7 +31036,7 @@
     "montant du financement": "Jusqu'à 50 % des dépenses éligibles, dans un maximum de 50 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation du Pass Transition ou en contactant un conseiller.",
+        "description": "Consultez la documentation du Pass Transition ou contactez un conseiller pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://www.bretagne.bzh/app/uploads/annexe_liste_investissements_eligibles_26_04_2024.pdf",
@@ -32284,7 +32451,7 @@
   {
     "titre": "Prêt Energie AURA",
     "promesse": "Financez votre projet de transition écologique grâce à un prêt à taux préférentiel",
-    "description": "Vous avez un projet visant à réduire votre consommation énergétique ou l'impact environnemental de votre entreprise ? Le prêt énergie AURA permet de financer, à taux préférentiel, les investissements matériels et immatériels dans les champs suivants : \n- l’amélioration de la performance (énergie, eau, matière),\n- l'optimisation des procédés,\n- la mobilité “zéro carbone” pour les salariés, les marchandises et les produits,\n- la création de services et produits permettant de réduire la consommation de ressources,\n- l'intégration d'énergies renouvelables.",
+    "description": "Vous avez un projet visant à réduire votre consommation énergétique ou l'impact environnemental de votre entreprise ? Le prêt énergie AURA permet de financer, à taux préférentiel, les investissements matériels et immatériels dans les champs suivants :\n\n- l’amélioration de la performance (énergie, eau, matière),\n- l'optimisation des procédés,\n- la mobilité “zéro carbone” pour les salariés, les marchandises et les produits,\n- la création de services et produits permettant de réduire la consommation de ressources,\n- l'intégration d'énergies renouvelables.",
     "description longue": "L'aide régionale prend la forme d'un prêt à taux préférentiel octroyé à des conditions plus favorables que les conditions du marché. Ce prêt intervient en qualité de produit de \"cofinancement\", en complément des financements octroyés par les banques.\n\nSont éligibles, les investissements visant à :\n\n- Optimiser les procédés, ou améliorer la performance (énergie, eau, matière) afin de mieux maîtriser ou de diminuer les impacts sur l’environnement, y compris des procédés d’économie circulaire,\n- Favoriser la mobilité “zéro carbone” pour les salariés, les marchandises et les produits,\n- Innover pour mettre sur le marché des produits ou des services en matière de protection de l’environnement, d’économie circulaire et/ou permettant une réduction de la consommation de ressources, renouvelables ou non (énergie, matières premières, eau, l’allongement de la durée de vie des produits, l’intégration de recyclé, la recyclabilité, la réutilisation ou le réemploi),\n- Favoriser un mix énergétique plus vertueux en intégrant davantage d’énergies renouvelables.",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
@@ -32304,12 +32471,12 @@
         "liens": [
           {
             "lien": "https://pretregion.auvergnerhonealpes.fr/",
-            "texte": "Détail des modalités."
+            "texte": "Détail des modalités"
           }
         ]
       },
       {
-        "description": "Réalisez un diagnostic énergétique ou environnemental et obtenez un plan d'action qui sera à transmettre à votre dossier de candidature. Les livrables fournis par le prestataire du diagnostic seront à joindre au dossier.\\",
+        "description": "Réalisez un diagnostic énergétique ou environnemental et obtenez un plan d'action qui sera à transmettre à votre dossier de candidature (ainsi que ses livrables). Les diagnostics éligibles sont les suivants :",
         "liens": [
           {
             "lien": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/diag-ecoconception",
@@ -32553,7 +32720,7 @@
         "liens": [
           {
             "lien": "https://pret-transition-ecologique.iledefrance.fr/",
-            "texte": "Vérifier les critères d'éligibilité"
+            "texte": "Critères d'éligibilité"
           }
         ]
       },
@@ -33582,7 +33749,7 @@
     "montant du financement": "Jusqu'à 50 % du coût de l'investissement, dans la limite de 100 000 €. Variable selon les projets.",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation.",
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://aides.hautsdefrance.fr/sub/tiers/aides/details/?sigle=PRIT",
@@ -34297,7 +34464,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Vérifiez votre éligibilité en parcourant la documentation du programme.",
+        "description": "Consultez la documentation du programme pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://www.cote-azur.cci.fr/app/uploads/2024/11/Reglement-Appel-a-candidatures-ReSEau.pdf",
@@ -36682,7 +36849,7 @@
     "montant du financement": "Jusqu'à 60% des dépenses éligibles, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l'éligibilité de votre projet auprès d'un conseiller Région Sud",
+        "description": "Contactez un conseiller Région Sud et consultez la documentation pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://entreprises.maregionsud.fr/financement/sud-entreprises/soutien-a-lhebergement-touristique",
@@ -36868,7 +37035,7 @@
     "montant du financement": "Variable selon projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de la Région Grand Est.",
+        "description": "Consultez la documentation de la Région Grand Est pour vérifier l’éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://www.grandest.fr/vos-aides-regionales/soutien-au-photovoltaique/",
@@ -37077,7 +37244,7 @@
         "liens": [
           {
             "lien": "https://flash.bpifrance.fr/financement/sud-pret-climat",
-            "texte": "Vérifier les critères d'éligibilité"
+            "texte": "Critères d'éligibilité"
           }
         ]
       },
@@ -37648,7 +37815,7 @@
     "montant du financement": "de 2 500 € HT à 200 000 € HT",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Tremplin%20pour%20la%20transition%20%C3%A9cologique%20des%20PME%20_%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20_%202025.pdf",
@@ -38041,7 +38208,7 @@
     "montant de l'avantage fiscal": "20% à 60% du coût du véhicule, en fonction de sa taille.",
     "objectifs": [
       {
-        "description": "Vérifiez l'éligibilité du véhicule lourd que vous souhaitez acquérir, en consultant le bulletin officiel. ",
+        "description": "Vérifiez l'éligibilité du véhicule lourd que vous souhaitez acquérir, en consultant le bulletin officiel.",
         "liens": [
           {
             "lien": "https://bofip.impots.gouv.fr/bofip/10079-PGP.html/identifiant%3DBOI-BIC-BASE-100-20-20240417",

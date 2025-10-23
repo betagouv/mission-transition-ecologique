@@ -70,12 +70,12 @@ nature de l'aide: financement
 montant du financement: 1,5 M€ d’aide maximale par site, selon la nature du projet
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME.
+      Consultez la documentation de l’ADEME ou contactez un conseiller pour
+      vérifier l’éligibilité de votre projet .
     liens:
       - lien: >-
           https://agir.ademe.fr/sites/default/files/AAP%20DETER%20-%20Cahier%20des%20Charges%20-%20Octobre%202025.docx
-        texte: Vérifier mon éligibilité
+        texte: Critères d'éligibilité
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
       - lien: https://agirpourlatransition.ademe.fr/user/register

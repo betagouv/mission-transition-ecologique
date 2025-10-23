@@ -75,15 +75,21 @@ nature de l'aide: financement
 montant du financement: Selon la nature du projet
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME.
+      Consultez la documentation de l’ADEME ou contactez un conseiller pour
+      vérifier l’éligibilité de votre projet .
     liens:
       - lien: >-
-          https://agir.ademe.fr/sites/default/files/DECARB-FLASH%202025-2027%20-%20Cahier%20des%20charges%20-%202025.docx
-        texte: Vérifier mon éligibilité
+          https://agir.ademe.fr/sites/default/files/DECARB%20FLASH%202025-2027%20-%20Cahier%20des%20charges%20-%202025.pdf
+        texte: Cahier des charges
+      - lien: >-
+          https://agir.ademe.fr/sites/default/files/DECARB%20FLASH%202025-2027%20-%20Liste%20des%20actions%20%C3%A9ligibles%20-%202025.pdf
+        texte: Liste des actions éligibles
   - description: >-
       Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au
       moins un mois avant la date limite de dépôt).
+    liens:
+      - lien: mailto:decarb.flash@ademe.fr
+        texte: decarb.flash@ademe.fr
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
       - lien: https://agirpourlatransition.ademe.fr/user/register
