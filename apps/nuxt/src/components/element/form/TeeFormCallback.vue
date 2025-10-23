@@ -29,7 +29,7 @@
       </h3>
       <slot name="phoneContact" />
       <Feedback
-        title="Aidez-nous à améliorer ce service"
+        title="Aidez-nous à améliorer<span class='fr-display--block fr-display-sm--inline'> ce service"
         title-class="fr-text--blue-france fr-h4"
         class="fr-bg--white fr-p-3w fr-mt-6w fr-col-12"
         :position="FeedbackButtonPosition.Form"

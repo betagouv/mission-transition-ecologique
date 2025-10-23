@@ -10,9 +10,8 @@ defineProps<{ title: string; titleClass: string; position: FeedbackButtonPositio
     <p
       class="fr-mb-0"
       :class="titleClass"
-    >
-      {{ title }}
-    </p>
+      v-html="title"
+    />
     <p class="fr-mb-4v">Donnez-nous votre avis en 2 minutes.</p>
     <a
       :href="ConfigFeedback.getUrl(position)"
