@@ -1,14 +1,13 @@
-import os
 import time
 import sib_api_v3_sdk
-from dotenv import load_dotenv
+from etl.tools.config.config import Config
 
 
 class BrevoExtractor:
+
     def __init__(self):
-        load_dotenv()
         self._brevo_configuration = sib_api_v3_sdk.Configuration()
-        self._brevo_configuration.api_key["api-key"] = os.getenv("BREVO_API_TOKEN")
+        self._brevo_configuration.api_key["api-key"] = Config.BREVO_API_TOKEN()
 
     def get_contacts(self):
         """Retrieves Brevo contacts using the Brevo API."""

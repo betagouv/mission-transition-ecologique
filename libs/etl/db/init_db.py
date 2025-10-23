@@ -1,8 +1,6 @@
 import psycopg2
 from etl.tools.db_manager import DBManager
-from dotenv import load_dotenv
-import os
-
+from etl.tools.config.config import Config
 
 def init_db():
     """Executes schema.sql to initialize the database."""
@@ -14,8 +12,7 @@ def init_db():
     except Exception as e:
         print(f"❌ Error initializing database: {e}")
 
-    load_dotenv()
-    if os.getenv("TEST") == "True":
+    if Config.TEST():
         DBManager().query("GRANT ALL PRIVILEGES ON SCHEMA statistics_test TO PUBLIC;")
         DBManager().query(
             "GRANT INSERT, DELETE, UPDATE, TRUNCATE, REFERENCES, TRIGGER, SELECT ON ALL TABLES IN SCHEMA statistics_test TO PUBLIC;"

@@ -6,7 +6,8 @@ class TableName:
     WEB_REGISTERED_SIRET = "web_registered_siret"
     COMPANIES = "companies"
     SIRET_SEARCH_ERROR = "siret_search_error"
-
+    PROJECTS="projects"
+    PROGRAMS="programs"
 
 class CompaniesColumn:
     SIRET = "siret"

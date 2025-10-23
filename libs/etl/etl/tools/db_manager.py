@@ -1,20 +1,20 @@
-import os
 import psycopg2
 from psycopg2 import pool
-from dotenv import load_dotenv
+from etl.tools.db_structure import TableName
+from etl.tools.config.config import Config
 
 
 class DBManager:
+
     def __init__(self):
-        load_dotenv()
         self.pool = psycopg2.pool.SimpleConnectionPool(
             1,  # Min connections in the pool
             5,  # Max connections in the pool
-            user=os.getenv("DB_USER"),
-            host=os.getenv("DB_HOST"),
-            database=os.getenv("DB_NAME"),
-            password=os.getenv("DB_PASSWORD"),
-            port=int(os.getenv("DB_PORT")),
+            user=Config.DB_USER(),
+            host=Config.DB_HOST(),
+            database=Config.DB_NAME(),
+            password=Config.DB_PASSWORD(),
+            port=Config.DB_PORT(),
             sslmode="require",
         )
 
@@ -67,5 +67,18 @@ class DBManager:
                 self.pool.putconn(connection)
 
     def _replace_schema_name(self, string_data):
-        schema_name = "statistics_test" if os.getenv("TEST") == "True" else "statistics"
+        schema_name = "statistics_test" if Config.TEST() else "statistics"
         return string_data.replace("__SCHEMA_NAME__", schema_name)
+
+    def clear_projects_table(self):
+        self.clear_table(TableName.PROJECTS)
+
+    def clear_programs_table(self):
+        self.clear_table(TableName.PROGRAMS)
+
+    def clear_table(self, table_name):
+        query = f"TRUNCATE TABLE __SCHEMA_NAME__.{table_name} RESTART IDENTITY;"
+        try:
+            self.query(query)
+        except Exception as e:
+            print("Failed to clear table: " + table_name, e)
