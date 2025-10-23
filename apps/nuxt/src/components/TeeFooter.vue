@@ -7,14 +7,14 @@
     <div class="fr-follow">
       <div class="fr-container">
         <div class="fr-grid-row fr-text-center fr-text-left-md">
-          <div class="fr-col-12 fr-col-md-8">
+          <div class="fr-col-12 fr-col-md-6">
             <Feedback
               title="Merci de nous aider à améliorer ce service"
               title-class="fr-h6"
               :position="FeedbackButtonPosition.Footer"
             />
           </div>
-          <div class="fr-col-12 fr-col-md-4">
+          <div class="fr-col-12 fr-col-md-6">
             <p class="fr-h6">Liens utiles</p>
             <ul class="">
               <li

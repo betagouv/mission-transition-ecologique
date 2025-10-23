@@ -2,7 +2,7 @@
   <div teste2e-select="callback-contact-form">
     <!-- MESSAGE IF ERROR-->
     <TeeError
-      v-if="hasValidResponse"
+      v-if="!hasValidResponse"
       teste2e-selector="error-callback-contact-form"
       :mailto="getMailTo()"
       :email="Contact.email"
