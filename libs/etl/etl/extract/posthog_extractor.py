@@ -33,7 +33,7 @@ class PosthogExtractor:
 
     def get_events(self, event_types, start_date=None, end_date=None):
         event_list = ", ".join([f"'{event}'" for event in event_types])
-        hogql_query = f"SELECT * FROM events WHERE event IN ({event_list})"
+        hogql_query = f"SELECT uuid, event, properties, timestamp, distinct_id, $session_id, person_id FROM events WHERE event IN ({event_list})"
         if start_date and end_date:
             hogql_query += (
                 f" AND timestamp > '{start_date}' AND timestamp <= '{end_date}'"

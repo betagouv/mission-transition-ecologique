@@ -67,7 +67,7 @@ class DBManager:
                 self.pool.putconn(connection)
 
     def _replace_schema_name(self, string_data):
-        schema_name = "statistics_test" if os.getenv("TEST") == "True" else "statistics"
+        schema_name = "statistics_test" if Config.TEST() else "statistics"
         return string_data.replace("__SCHEMA_NAME__", schema_name)
 
     def clear_projects_table(self):

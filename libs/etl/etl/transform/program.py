@@ -1,5 +1,5 @@
 from etl.transform.dto.baserow.program import program_from_baserow
-from etl.load.config.extractor import Extractor
+from etl.extract.config.extractor import Extractor
 
 class Program:
     ID = "id"

@@ -1,6 +1,7 @@
 import os
 from dotenv import load_dotenv
 
+load_dotenv()
 
 class Config:
     @staticmethod
@@ -9,7 +10,7 @@ class Config:
 
     @staticmethod
     def DB_PORT():
-        return int(cls.get_env_value("DB_PORT"))
+        return int(Config.get_env_value("DB_PORT"))
 
     @staticmethod
     def get_env_value(name, default_value=None):
@@ -20,17 +21,17 @@ class Config:
             raise RuntimeError(f"Expected environment variable {name} is not defined")
         return value
 
-    for _var in [
-        "BREVO_API_TOKEN",
-        "BASEROW_TOKEN",
-        "POSTHOG_PROJECT_ID",
-        "POSTHOG_READ_API_KEY",
-        "SIRENE_API_311_TOKEN",
-        "POSTHOG_WRITE_API_KEY",
-        "DB_USER",
-        "DB_HOST",
-        "DB_NAME",
-        "DB_PASSWORD",
-        "TESTNONEXISTIN",
-    ]:
-        setattr(Config, _var, classmethod(lambda cls, n=_var: cls.get_env_value(n)))
+for _var in [
+    "BREVO_API_TOKEN",
+    "BASEROW_TOKEN",
+    "POSTHOG_PROJECT_ID",
+    "POSTHOG_READ_API_KEY",
+    "SIRENE_API_311_TOKEN",
+    "POSTHOG_WRITE_API_KEY",
+    "DB_USER",
+    "DB_HOST",
+    "DB_NAME",
+    "DB_PASSWORD",
+    "TESTNONEXISTIN",
+]:
+    setattr(Config, _var, classmethod(lambda cls, n=_var: cls.get_env_value(n)))

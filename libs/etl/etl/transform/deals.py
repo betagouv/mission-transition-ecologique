@@ -1,5 +1,5 @@
 from etl.transform.dto.brevo import deal_from_brevo
-from etl.load.config.extractor import Extractor
+from etl.extract.config.extractor import Extractor
 
 class Deal:
     BREVO_ID = "brevo_id"

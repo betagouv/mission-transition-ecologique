@@ -1,4 +1,5 @@
 from etl.transform.dto.baserow.project import project_from_baserow
+from etl.extract.config.extractor import Extractor
 
 class Project:
     ID="id"
