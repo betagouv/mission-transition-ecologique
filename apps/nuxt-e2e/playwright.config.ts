@@ -56,17 +56,17 @@ export default defineConfig<ConfigOptions>({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   /* Run your local dev server before starting the tests */
   timeout: timeOut * 2,
-  // webServer: {
-  //   timeout: 120000,
-  //   env: {
-  //     VITE_DATA_TEST: 'true',
-  //     THIRD_PARTY_API_ENABLED: 'false',
-  //     PORT: '4242'
-  //   },
-  //   command: 'npm run build:start',
-  //   url: 'http://localhost:4242',
-  //   reuseExistingServer: !process.env.CI
-  // },
+  webServer: {
+    timeout: 120000,
+    env: {
+      VITE_DATA_TEST: 'true',
+      THIRD_PARTY_API_ENABLED: 'false',
+      PORT: '4242'
+    },
+    command: 'npm run build:start',
+    url: 'http://localhost:4242',
+    reuseExistingServer: !process.env.CI
+  },
   /* Configure projects for major browsers */
   projects: [
     {
