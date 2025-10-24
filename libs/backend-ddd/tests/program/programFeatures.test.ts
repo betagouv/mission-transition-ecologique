@@ -1,4 +1,4 @@
-import { LegalCategory, Objective, QuestionnaireData, StructureSize, WasteManagementStatus, YesNo } from '@tee/common'
+import { LegalCategory, QuestionnaireData, StructureSize, WasteManagementStatus, YesNo } from '@tee/common'
 import { ProgramEligibilityType } from '@tee/data'
 import { describe, expect, test } from 'vitest'
 import { expectToBeErr, expectToBeOk } from '../testing'
@@ -451,46 +451,6 @@ describe('ProgramFeatures', () => {
 
       const regionProgramResult = result.value.find((p) => p.id === 'program-region-restriction')
       expect(regionProgramResult?.eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
-    })
-  })
-
-  describe('getObjectives', () => {
-    test('should return empty array when program does not exist', () => {
-      const programFeatures = makeProgramFeatures([])
-
-      const result = programFeatures.getObjectives('non-existent-id')
-
-      expect(result).toEqual([])
-    })
-
-    test('should return empty array when program has no objectives in eligibilityData', () => {
-      const programFeatures = makeProgramFeatures([validProgram])
-
-      const result = programFeatures.getObjectives('valid-program')
-
-      expect(result).toEqual([])
-    })
-
-    test('should extract objectives from program eligibilityData', () => {
-      const programFeatures = makeProgramFeatures([programWithEnergyObjective])
-
-      const result = programFeatures.getObjectives('program-energy-objective')
-
-      expect(result).toHaveLength(1)
-      // TODO FIX IT - Replace by theme ids ?
-      expect(result).toContain(Objective.EnergyPerformance)
-    })
-
-    test('should extract multiple objectives from program', () => {
-      const programFeatures = makeProgramFeatures([programWithMultipleObjectives])
-
-      const result = programFeatures.getObjectives('program-multiple-objectives')
-
-      expect(result).toHaveLength(3)
-      // TODO FIX IT - Replace by theme ids ?
-      expect(result).toContain(Objective.EnergyPerformance)
-      expect(result).toContain(Objective.WaterConsumption)
-      expect(result).toContain(Objective.WasteManagement)
     })
   })
 })

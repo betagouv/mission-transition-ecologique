@@ -34,6 +34,7 @@ type PreprocessingTestCase = (QuestionnaireInputProperty | ProgramInputProperty 
   publicodesKey: string
   filteringRule: string | { [k: string]: unknown }
   expectedKeep: boolean
+  currentDate?: string
 }
 
 /** tests that input data for the filtering (either from the questionnaire or from the program), is correctly translated into publicodes by
@@ -63,6 +64,13 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
       codeNAF1: 'J'
     }
 
+    if (testCase.currentDate) {
+      vi.useFakeTimers()
+      const [day, month, year] = testCase.currentDate.split('/').map((part) => parseInt(part, 10))
+      const testDate = new Date(year, month - 1, day)
+      vi.setSystemTime(testDate)
+    }
+
     // Set input data depending on data source
     if (
       testCase.inputDataSource !== DataSources.CurrentDateService &&
@@ -88,6 +96,10 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
 
     const expectedLength = expectedKeep ? 1 : 0
     expect(result.value).toHaveLength(expectedLength)
+
+    if (testCase.currentDate) {
+      vi.useRealTimers()
+    }
   })
 }
 
@@ -238,8 +250,6 @@ EXPECT the program to be kept or filtered out as expected`, () => {
       'toutes ces conditions': [`date du jour <= ${keptDate}`, `date du jour >= ${keptDate}`]
     }
 
-    vi.setSystemTime(currentDate)
-
     testHelperPreprocessing({
       title: `current date is mapped to "date du jour" (current date ${currentDate.toLocaleDateString('fr-FR')}, keep if equal to ${keptDate})`,
       currentDate: currentDate.toLocaleDateString('fr-FR'),
@@ -248,8 +258,6 @@ EXPECT the program to be kept or filtered out as expected`, () => {
       filteringRule: rule,
       expectedKeep: expectedKeep
     })
-
-    vi.useRealTimers()
   }
 
   testCurrentDate(new Date(2023, 11, 31), '31/12/2023', true)

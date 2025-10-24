@@ -1,10 +1,9 @@
-import { ThemeConverter } from '../../common/domain/converter/ThemeConverter'
 import { ProgramRepository, EligibilityEvaluator } from './spi'
 import { ProgramFilter } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
 import { ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
-import { Objective, QuestionnaireData } from '@tee/common'
+import { QuestionnaireData } from '@tee/common'
 import { Monitor } from '../../common'
 import ProgramCustomizer from './programCustomizer'
 import { ProgramNotFoundError } from './types'
@@ -69,28 +68,5 @@ export default class ProgramFeatures {
 
   public getAll(): ProgramType[] {
     return this._programRepository.getAll()
-  }
-
-  public getObjectives(id: string): Objective[] {
-    const program = this.getOneById(id)
-    if (program === undefined) {
-      return []
-    }
-    const themeIds = program.eligibilityData.questionnaire?.priorityObjectives
-    if (!themeIds) {
-      return []
-    }
-
-    const publicodeObjectives = ThemeConverter.toObjectives(themeIds)
-
-    const objectives: Objective[] = []
-    publicodeObjectives.forEach((publicodeObjective) => {
-      const objectiveValue = Object.values(Objective).find((value) => publicodeObjective.includes(value as string))
-      if (objectiveValue) {
-        objectives.push(objectiveValue as Objective)
-      }
-    })
-
-    return objectives
   }
 }

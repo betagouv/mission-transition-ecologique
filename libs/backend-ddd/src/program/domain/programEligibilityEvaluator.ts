@@ -140,9 +140,9 @@ export class ProgramEligibilityEvaluator implements EligibilityEvaluator {
       objectivesFromQuestionnaire.push(ThemeId.Energy)
     }
 
-    // if (QuestionnaireChecker.isBuildingProperty(data.building_property)) {
-    objectivesFromQuestionnaire.push(ThemeId.Building)
-    // }
+    if (QuestionnaireChecker.isBuildingProperty(data.building_property)) {
+      objectivesFromQuestionnaire.push(ThemeId.Building)
+    }
 
     objectivesFromQuestionnaire.push(ThemeId.Biodiversity)
     objectivesFromQuestionnaire.push(ThemeId.RH)

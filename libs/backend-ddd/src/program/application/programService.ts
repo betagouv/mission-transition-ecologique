@@ -4,12 +4,12 @@ import { ProgramEligibilityEvaluator } from '../domain/programEligibilityEvaluat
 import ProgramFeatures from '../domain/programFeatures'
 import ProgramsJson from '../infrastructure/programsJson'
 import { PublicodesService } from '../infrastructure/publicodesService'
-import { Objective, QuestionnaireData } from '@tee/common'
+import { QuestionnaireData } from '@tee/common'
 import FrontConverter from '../infrastructure/frontConverter'
 import { RedirectService } from '../../common/application/redirectService'
 
 export class ProgramService {
-  private _program: ProgramFeatures
+  public program: ProgramFeatures
   private static _withPublicodes = false
 
   public static init(): void {
@@ -31,7 +31,7 @@ export class ProgramService {
     const evaluator =
       _withPublicodes || ProgramService._withPublicodes ? PublicodesService.getInstance() : new ProgramEligibilityEvaluator()
 
-    this._program = new ProgramFeatures(programRepository, evaluator)
+    this.program = new ProgramFeatures(programRepository, evaluator)
   }
 
   public getRedirect(slug: string): string | undefined {
@@ -39,15 +39,15 @@ export class ProgramService {
   }
 
   public getById(id: string): ProgramType | undefined {
-    return this._program.getOneById(id)
+    return this.program.getOneById(id)
   }
 
   public getOneWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
-    return this._program.getOneByIdWithMaybeEligibility(id, questionnaireData)
+    return this.program.getOneByIdWithMaybeEligibility(id, questionnaireData)
   }
 
   public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
-    return this._program.getFilteredBy(questionnaireData)
+    return this.program.getFilteredBy(questionnaireData)
   }
 
   public convertDomainToFront(program: ProgramTypeWithEligibility) {
@@ -55,10 +55,6 @@ export class ProgramService {
   }
 
   public getAll(): ProgramType[] {
-    return this._program.getAll()
-  }
-
-  public getObjectives(id: string): Objective[] {
-    return this._program.getObjectives(id)
+    return this.program.getAll()
   }
 }

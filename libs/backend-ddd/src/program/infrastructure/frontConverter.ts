@@ -5,21 +5,6 @@ import { ProgramService } from '../../program/application/programService'
 import type { ObjectivePublicodeData } from './types'
 
 export default class FrontConverter {
-  private _publicodeToThemeMapping = {
-    [PublicodeObjective.EnvironmentalImpact]: ThemeId.Environmental,
-    [PublicodeObjective.EnergyPerformance]: ThemeId.Energy,
-    [PublicodeObjective.WaterConsumption]: ThemeId.Water,
-    [PublicodeObjective.BuildingRenovation]: ThemeId.Building,
-    [PublicodeObjective.SustainableMobility]: ThemeId.Mobility,
-    [PublicodeObjective.WasteManagement]: ThemeId.Waste,
-    [PublicodeObjective.EcoDesign]: ThemeId.EcoDesign,
-    [PublicodeObjective.TrainOrRecruit]: ThemeId.RH,
-    [PublicodeObjective.MakeSavings]: ThemeId.Environmental,
-    [PublicodeObjective.DurablyInvest]: ThemeId.Environmental,
-    [PublicodeObjective.Biodiversity]: ThemeId.Biodiversity,
-    [PublicodeObjective.UnknownYet]: ThemeId.Environmental
-  }
-
   private _getFilterKey(publicodeKey: string): FiltersKeys | undefined {
     if (publicodeKey === PublicodesKeys.hasObjective) {
       return FiltersKeys.Theme
