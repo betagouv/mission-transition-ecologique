@@ -32,6 +32,5 @@ for _var in [
     "DB_HOST",
     "DB_NAME",
     "DB_PASSWORD",
-    "TESTNONEXISTIN",
 ]:
     setattr(Config, _var, classmethod(lambda cls, n=_var: cls.get_env_value(n)))
