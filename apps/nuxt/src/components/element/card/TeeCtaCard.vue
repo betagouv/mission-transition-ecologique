@@ -30,6 +30,7 @@
       :image-alt="imageAlt"
       :img-bg-color="imgBgColor"
       :object-fit="objectFit"
+      :with-logo="withLogo"
     />
   </div>
 </template>
@@ -46,6 +47,7 @@ interface Props {
   imgBgColor?: Color
   ctaBtnTitle?: string
   onClick: CallableFunction
+  withLogo: boolean
 }
 
 withDefaults(defineProps<Props>(), {
@@ -54,7 +56,8 @@ withDefaults(defineProps<Props>(), {
   imageAlt: undefined,
   objectFit: 'cover',
   imgBgColor: undefined,
-  ctaBtnTitle: undefined
+  ctaBtnTitle: undefined,
+  withLogo: true
 })
 </script>
 
