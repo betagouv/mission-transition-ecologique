@@ -33,16 +33,4 @@ export class OpportunityAssociatedData {
 
     return undefined
   }
-
-  private _hasSlug(): boolean {
-    return this._isDefined() && 'slug' in this.data
-  }
-
-  private _hasTitre(): boolean {
-    return this._isDefined() && 'titre' in this.data
-  }
-
-  private _isDefined(): boolean {
-    return this.data !== undefined
-  }
 }
