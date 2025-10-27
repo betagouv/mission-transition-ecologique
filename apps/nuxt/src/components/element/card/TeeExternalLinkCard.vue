@@ -68,7 +68,7 @@ defineProps<{
 
 .tee-external-link-card-logo {
   max-width: 70%;
-  max-height: 6rem;
+  max-height: 5rem;
   width: auto;
   height: auto;
   object-fit: contain;

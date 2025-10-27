@@ -1,5 +1,5 @@
 <template>
-  <section class="fr-my-6w">
+  <section class="fr-my-3w">
     <h2>À la rencontre des entreprises</h2>
     <p>
       En 2025, notre ambition est de <strong>faire connaître le service à toutes les TPE et PME françaises</strong>
@@ -28,10 +28,7 @@
 
     <ul>
       <li>
-        <strong>Chaque jour</strong>, nous faisons évoluer ce service numérique grâce aux retours des entreprises. Nous organisons
-        régulièrement des tests utilisateurs, échangeons avec les dirigeants et recueillons leurs retours d’expérience pour améliorer la
-        plateforme. Fidèles à l’approche Startup d’État, notre équipe conçoit, teste et améliore en continu la plateforme pour qu’elle reste
-        simple, efficace et en phase avec les besoins de ses utilisateurs.
+        <strong>Au fil des retours des entreprises</strong>, nous faisons évoluer ce service numérique pour mieux répondre à leurs besoins. Nous organisons régulièrement des tests utilisateurs, échangeons avec les dirigeants et recueillons leurs retours d’expérience pour améliorer la plateforme.e. Fidèles à l’approche startup d’État, notre équipe conçoit, teste et améliore en continu la plateforme pour qu’elle reste simple, efficace et en phase avec les besoins de ses utilisateurs.
       </li>
     </ul>
 

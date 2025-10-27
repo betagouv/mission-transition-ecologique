@@ -1,5 +1,5 @@
 <template>
-  <section class="fr-grid-row fr-my-3w fr-grid-row fr-grid-row-md--gutters fr-grid-row--middle">
+  <section class="fr-grid-row fr-my-3w fr-grid-row fr-grid-row--middle">
     <div class="fr-col-12 fr-col-md-7">
       <h2>Le fruit d’un partenariat entre acteurs publics</h2>
 
@@ -50,7 +50,7 @@
         le Réseau Entreprendre, les Entreprises s’engagent, La Clef Verte, etc.).
       </p>
     </div>
-    <div class="fr-col-12 fr-col-md-5">
+    <div class="fr-col-12 fr-col-md-5 fr-pl-md-4w">
       <TeeNumberCard
         v-for="(card, index) in cards"
         class="fr-my-2w"
@@ -88,3 +88,9 @@ const cards = [
   }
 ]
 </script>
+
+<style scoped>
+p:last-child {
+  margin-bottom: 0;
+}
+</style>

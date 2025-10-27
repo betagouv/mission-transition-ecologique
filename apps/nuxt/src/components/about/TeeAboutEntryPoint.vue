@@ -9,7 +9,7 @@
     <ol>
       <li class="fr-ml-1w"><strong>découvrir des idées de projets</strong> et d’actions de transition écologique pour votre entreprise.</li>
       <li class="fr-ml-1w">
-        <strong>identifier la bonne aide</strong> pour votre entreprise (accompagnements, études, formations, financements…)issue de
+        <strong>identifier la bonne aide</strong> pour votre entreprise (accompagnements, études, formations, financements…) issue de
         l’ensemble des partenaires publics.
       </li>
       <li class="fr-ml-1w"><strong>contacter un conseiller</strong> pour vous accompagner dans vos démarches.</li>
@@ -20,7 +20,7 @@
       </TeeDsfrButton>
     </div>
 
-    <ul class="fr-grid-row fr-grid-row--center fr-grid-row-md--left fr-raw-list fr-mt-3w">
+    <ul class="fr-grid-row fr-grid-row--center fr-grid-row-md--left fr-raw-list fr-mt-2w">
       <li
         v-for="project in sortedProjects"
         :key="project.id"
@@ -28,7 +28,7 @@
       >
         <TeeProjectButton
           :project="project"
-          class="fr-mb-2v"
+          class="fr-mt-2v"
           :color="Color.blue"
         />
       </li>
@@ -63,8 +63,4 @@ onMounted(async () => {
 const { projects } = storeToRefs(useProjectStore())
 const filteredProjects = ProjectFilter.filterByHighlight(projects)
 const sortedProjects = computed(() => ProjectSorter.byHighlight(filteredProjects.value))
-
-watchEffect(() => {
-  console.log('Sorted projects:', sortedProjects.value)
-})
 </script>

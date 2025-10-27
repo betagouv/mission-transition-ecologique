@@ -1,5 +1,5 @@
 <template>
-  <section class="fr-grid-row fr-grid-row--gutters fr-grid-row--middle">
+  <section class="fr-grid-row fr-grid-row--middle fr-my-3w">
     <div class="fr-col-12 fr-col-md-6">
       <h2>Un service public dédié à la transition écologique des entreprises</h2>
       <p>
@@ -14,12 +14,25 @@
       </p>
     </div>
 
-    <div class="fr-col-12 fr-col-md-6">
+    <div class="fr-col-12 fr-col-md-6 fr-pl-md-4w">
       <img
         src="/images/about/Tee_about_intro.webp"
         alt="Illustration transition écologique"
-        class="fr-responsive-img"
+        class="fr-m-auto"
       />
     </div>
   </section>
 </template>
+
+<style scoped>
+img {
+  max-height: 22rem;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+</style>

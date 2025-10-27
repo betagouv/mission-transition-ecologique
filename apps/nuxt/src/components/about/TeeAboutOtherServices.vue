@@ -6,7 +6,7 @@
       <div
         v-for="(card, index) in cards"
         :key="index"
-        class="fr-col-12 fr-col-lg-6 fr-p-1w"
+        class="fr-col-12 fr-col-lg-6 fr-py-1v fr-p-md-1v"
       >
         <TeeExternalLinkCard
           :image="card.image"
@@ -24,7 +24,7 @@ const cards = [
   {
     image: "/images/about/Tee_about_other_services_quefairede.webp",
     imageAlt: "Image du site Que faire de mes déchets",
-    logo: "/images/logos/cci-france.svg",
+    logo: "/images/logos/que-faire-de-mes-dechets.jpg",
     logoAlt: "Logo du site Que faire de mes déchets",
     description: "Trouvez les adresses près de chez vous pour réduire vos déchets.",
     link: "https://www.ecologie.gouv.fr"
@@ -32,7 +32,7 @@ const cards = [
   {
     image: "/images/about/Tee_about_other_services_gestesclimat.webp",
     imageAlt: "Image du site Nos Gestes Climat",
-    logo: "/images/logos/cci-france.svg",
+    logo: "/images/logos/nos-gestes-climat.jpg",
     logoAlt: "Logo du site Nos Gestes Climat",
     description: "Sensibilisez votre audience sur leur empreinte carbone et eau.",
     link: "https://nosgestesclimat.fr/"
@@ -40,7 +40,7 @@ const cards = [
   {
     image: "/images/about/Tee_about_other_services_impactco2.webp",
     imageAlt: "Image du site Impact CO₂",
-    logo: "/images/logos/cci-france.svg",
+    logo: "/images/logos/impact-co2.jpg",
     logoAlt: "Logo du site Impact CO₂",
     description: "Communiquez sur l'impact carbone avec des outils thématiques.",
     link: "https://impactco2.fr/"
@@ -48,7 +48,7 @@ const cards = [
   {
     image: "/images/about/Tee_about_other_services_plusfraiche.webp",
     imageAlt: "Image du site Plus Fraîche Ma Ville",
-    logo: "/images/logos/cci-france.svg",
+    logo: "/images/logos/plus-fraiche-ma-ville.jpg",
     logoAlt: "Logo du site Plus Fraîche Ma Ville",
     description: "Trouvez les bonnes solutions pour rafraîchir durablement votre collectivité.",
     link: "https://plusfraichemaville.fr/"

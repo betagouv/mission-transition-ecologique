@@ -1,10 +1,10 @@
 <template>
-  <section class="fr-grid-row fr-my-4w fr-grid-row--middle">
-    <div class="fr-col-12 fr-col-md-6 fr-pr-3w fr-my-2w fr-my-md-0">
+  <section class="fr-grid-row fr-my-3w fr-grid-row--middle">
+    <div class="fr-hidden fr-unhidden-md fr-col-md-6 fr-pr-3w">
       <img
         src="/images/about/Tee_about_startup.webp"
         alt="Startup d'État illustration"
-        class="fr-responsive-img"
+        class="fr-m-auto"
       />
     </div>
 
@@ -30,8 +30,30 @@
 
       <p>
         Pour construire et promouvoir le service au quotidien, cette Startup d’État réunit une petite équipe pluridisciplinaire composée
-        d’experts du numérique : design, développement, produit, déploiement, éditorial.
+        d’experts du numérique&nbsp;: design, développement, produit, déploiement, éditorial.
       </p>
+    </div>
+        <div class="fr-hidden-md md fr-col-12 fr-pr-3w">
+      <img
+        src="/images/about/Tee_about_startup.webp"
+        alt="Startup d'État illustration"
+        class="fr-m-auto"
+      />
     </div>
   </section>
 </template>
+
+<style scoped>
+img {
+  max-height: 24rem;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+</style>

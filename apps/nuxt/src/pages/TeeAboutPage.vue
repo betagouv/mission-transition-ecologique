@@ -1,10 +1,7 @@
 <template>
   <div>
     <TeeDsfrBreadcrumb :links="[{ text: 'Qui sommes nous ?', to: { name: RouteName.About } }]" />
-    <div
-      id="simple-page"
-      class="fr-container"
-    >
+    <div class="fr-container">
       <h1 class="fr-text--blue-france">Qui sommes-nous ?</h1>
       <TeeAboutIntro />
       <TeeAboutEntryPoint />
@@ -12,7 +9,11 @@
       <TeeAboutStateStartup />
       <TeeAboutCompanies />
       <TeeAboutTheyTalkAboutUs />
+    </div>
+    <div class="fr-container-fluid fr-container-md">
       <TeeAboutTestimonies class="fr-bg--blue--lightness" />
+    </div>
+    <div class="fr-container">
       <TeeCtaCard
         title="<img src='/images/logos/tee-with-name.webp' alt='Transition écologique des entreprises'/>"
         description="Trouvez les aides adaptées pour financer la transition environnementale de votre entreprise et, en quelques clics, entrez en contact avec les bons interlocuteurs pour mener vos projets au succès."
@@ -21,6 +22,7 @@
         :img-bg-color="Color.yellowLighted"
         object-fit="contain"
         :with-logo="false"
+        class="fr-my-3w"
       />
       <TeeAboutOtherServices />
     </div>

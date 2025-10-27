@@ -1,5 +1,5 @@
 <template>
-  <section class="fr-my-6w">
+  <section class="fr-my-3w">
     <h2>Ils parlent de nous</h2>
     <ul>
       <li>

@@ -1,7 +1,7 @@
 <template>
-  <section class="fr-background-alt--grey fr-py-6w fr-my-6w">
+  <section class="fr-my-3w fr-py-3w fr-px-6w">
     <div class="fr-grid-row fr-grid-row--center">
-      <div class="fr-col-md-11 fr-col-xl-11">
+      <div class="fr-col-12">
         <h2>Des retours du terrain</h2>
         <p>
           Le service Transition écologique des entreprises progresse grâce aux retours de ses utilisateurs. Ces témoignages, issus
@@ -9,12 +9,12 @@
         </p>
       </div>
     </div>
-    <div class="fr-grid-row fr-grid-row--center fr-mt-4w">
+    <div class="fr-grid-row fr-grid-row--center fr-mt-3w">
       <div class="fr-col-md-10 fr-col-xl-10">
         <LazyTestimony
           v-for="(testimony, index) in testimonies"
           :key="testimony.slug"
-          :class="[index === testimonies.length - 1 ? 'fr-mb-md-3w fr-bg-sm--none' : 'fr-mb-6w']"
+          :class="[index === testimonies.length - 1 ? 'fr-mb-md-3w' : 'fr-mb-6w']"
           :testimony="testimony"
         />
       </div>
@@ -48,7 +48,7 @@ const testimonies = [
   {
     slug: 'biomere',
     verbatim:
-      'Cet outil peut me permettre d’être **plus autonome dans mes recherches** de subventions. C’est aussi une belle **source d’inspiration** pour mettre en place des actions auxquelles je n’aurais pas pensé !.',
+      'Cet outil peut me permettre d’être **plus autonome dans mes recherches** de subventions. C’est aussi une belle **source d’inspiration** pour mettre en place des actions auxquelles je n’aurais pas pensé !',
     companyName: 'Biomère',
     authorName: 'Pauline VENOT',
     authorFunction: 'chargée de mission RSE chez Biomère',
@@ -57,3 +57,9 @@ const testimonies = [
   }
 ]
 </script>
+
+<style scoped>
+p:last-child {
+  margin-bottom: 0;
+}
+</style>
