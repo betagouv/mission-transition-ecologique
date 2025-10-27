@@ -34,11 +34,10 @@ export const partners = [
   }
 ]
 
-export const otherPartner = {
+export const ConseillerEntreprisePartner = {
   label: 'Conseiller Entreprise',
   img: '/images/logos/ce-logo.svg',
-  href: 'https://conseillers-entreprises.service-public.gouv.fr/',
-  format: 'webp'
+  href: 'https://conseillers-entreprises.service-public.gouv.fr/'
 }
 
-export const partnersAll = [otherPartner, ...partners]
+export const partnersAll = [ConseillerEntreprisePartner, ...partners]

@@ -18,7 +18,7 @@ const programFrDict = {
     projectExamplesSM: 'Exemples de projets financés',
     projectExamples: 'Quelques exemples de projets financés par cette aide :',
     programAmIEligible: "Conditions d'éligibilité",
-    programActivationRegistration: "Vérifiez automatiquement l'éligibilité de votre entreprise à l'aide de votre SIRET",
+    programActivationRegistration: "Vérifiez automatiquement l'éligibilité de votre entreprise à l'aide de votre SIRET.",
     form: {
       hint: '👋 Envoyez votre demande, un conseiller {operator} vous contactera prochainement',
       errorEmail: {

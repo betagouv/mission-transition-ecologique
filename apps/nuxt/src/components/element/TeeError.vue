@@ -1,6 +1,6 @@
 <template>
   <div class="fr-text-center">
-    <p class="fr-text--deep-red fr-text--md fr-m-0">
+    <p class="fr-text--deep-red fr-text--md fr-m-0 fr-mb-3v">
       <span
         class="fr-icon-close-circle-fill fr-icon--lg"
         aria-hidden="true"

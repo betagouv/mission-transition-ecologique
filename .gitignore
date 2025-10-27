@@ -23,6 +23,7 @@ node_modules
 
 # IDEs and editors
 .idea
+.junie
 .project
 .classpath
 .c9/
