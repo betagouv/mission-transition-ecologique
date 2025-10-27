@@ -1,6 +1,6 @@
 <template>
-  <section class="fr-grid-row fr-my-6w fr-grid-row--middle">
-    <div class="fr-col-12 fr-col-md-6 fr-pr-3w">
+  <section class="fr-grid-row fr-my-4w fr-grid-row--middle">
+    <div class="fr-col-12 fr-col-md-6 fr-pr-3w fr-my-2w fr-my-md-0">
       <img
         src="/images/about/Tee_about_startup.webp"
         alt="Startup d'État illustration"

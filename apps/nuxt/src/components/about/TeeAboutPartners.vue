@@ -1,5 +1,5 @@
 <template>
-  <section class="fr-grid-row fr-my-3w fr-grid-row">
+  <section class="fr-grid-row fr-my-3w fr-grid-row fr-grid-row-md--gutters fr-grid-row--middle">
     <div class="fr-col-12 fr-col-md-7">
       <h2>Le fruit d’un partenariat entre acteurs publics</h2>
 
@@ -51,10 +51,16 @@
       </p>
     </div>
     <div class="fr-col-12 fr-col-md-5">
-      <DsfrTiles
-        :tiles
-        horizontal
-      />
+      <TeeNumberCard
+        v-for="(card, index) in cards"
+        class="fr-my-2w"
+        :key="index"
+        :number="card.number"
+        :title="card.title"
+        :color="card.color"
+      >
+        <div v-html="card.description"></div>
+      </TeeNumberCard>
     </div>
   </section>
 </template>
@@ -62,20 +68,22 @@
 <script setup>
 import { Color } from '@tee/common'
 
-const tiles = [
+const cards = [
   {
-    title: '163',
-    description: 'Dispositifs d’aides financières \n Financements, accompagnements, formations...',
-    color: Color.blue
+    number: '163',
+    title: 'Dispositifs d’aides financières',
+    description: 'Financements, accompagnements, formations...',
+    color: Color.purple
   },
   {
-    title: '28',
-    description: 'Partenaires publics \n logos :ademe, bpi, cci, cma + symbol ...',
+    number: '28',
+    title: 'Partenaires publics',
+    description: "<div style='display:flex; align-items:center; gap:0.5rem;'><img src='/images/logos/logos-operators.png' alt='Logos de partenaires institutionnels de transition écologique des entreprises' style='max-width:90%;'/>...</div>",
     color: Color.green
   },
   {
-    title: '8012',
-    description: 'Entreprises accompagnées en 2025',
+    number: '8012',
+    title: 'Entreprises accompagnées en 2025',
     color: Color.red
   }
 ]

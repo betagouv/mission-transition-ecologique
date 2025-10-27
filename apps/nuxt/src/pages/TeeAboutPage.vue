@@ -3,7 +3,7 @@
     <TeeDsfrBreadcrumb :links="[{ text: 'Qui sommes nous ?', to: { name: RouteName.About } }]" />
     <div
       id="simple-page"
-      class="fr-container fr-mb-8w"
+      class="fr-container"
     >
       <h1 class="fr-text--blue-france">Qui sommes-nous ?</h1>
       <TeeAboutIntro />
@@ -14,8 +14,7 @@
       <TeeAboutTheyTalkAboutUs />
       <TeeAboutTestimonies class="fr-bg--blue--lightness" />
       <TeeCtaCard
-        title="<img src='/images/logos/tee-with-name.webp' alt='Transition écologique des entreprises' style='width: 250px; height: auto;'
-/>"
+        title="<img src='/images/logos/tee-with-name.webp' alt='Transition écologique des entreprises'/>"
         description="Trouvez les aides adaptées pour financer la transition environnementale de votre entreprise et, en quelques clics, entrez en contact avec les bons interlocuteurs pour mener vos projets au succès."
         cta-btn-title="Trouver les aides pour mon entreprise"
         :on-click="goToCtaLink"
