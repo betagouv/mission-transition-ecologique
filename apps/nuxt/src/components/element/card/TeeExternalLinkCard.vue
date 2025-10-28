@@ -85,7 +85,7 @@ defineProps<{
   position: absolute;
   right: 1rem;
   bottom: 0.5rem;
-  font-size: 0rem;
+  font-size: 0;
 }
 
 .tee-external-link-card-link:hover {
