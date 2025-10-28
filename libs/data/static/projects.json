@@ -951,7 +951,6 @@
     "programs": [
       "audit-energetique-en-industrie",
       "baisse-les-watts",
-      "booster-eco-energie-tertiaire",
       "etude-performance-energetique-en-industrie",
       "diag-perf-immo",
       "mission-strategie-environnement",
@@ -4830,7 +4829,9 @@
       "energy"
     ],
     "mainTheme": "energy",
-    "programs": [],
+    "programs": [
+      "innovation-hydrogene"
+    ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [],
     "priority": {
