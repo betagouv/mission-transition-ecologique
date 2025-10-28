@@ -1013,7 +1013,9 @@
     "nameTag": "🪟 isolation",
     "shortDescription": "L’isolation thermique permet de réduire les pertes de chaleur de vos locaux et de diminuer vos dépenses énergétiques.",
     "image": "/images/projet/isolation-thermique.webp",
+    "titleLongDescription": "🤝 Qu’est-ce que l'isolation thermique ?",
     "longDescription": "L’isolation thermique des bâtiments permet de garantir le confort en été comme en hiver en limitant le recours à la climatisation et au chauffage. Un logement mal isolé génère des pertes conséquentes de chaleur en hiver et de fraîcheur en été par le toit, les murs, les portes, les fenêtres et le sol.\\\nGrâce à des travaux d’isolation, vous diminuez vos factures d’énergie et améliorez votre confort tout au long de l’année.",
+    "titleMoreDescription": "📚 Comment me documenter au mieux sur l'isolation thermique ?",
     "moreDescription": "- [**Les exigences réglementaires pour les travaux de rénovation**](https://librairie.ademe.fr/ged/8069/fiche-exigences-reglementaires-renovation.pdf), une fiche pratique de l'ADEME.\n- [**Réduction de la consommation d'énergie dans les bâtiments à usage tertiaire**](https://entreprendre.service-public.fr/vosdroits/F38065), les obligations légales par Entreprendre.Service-Public.fr.\n- [**Quel est le meilleur isolant thermique pour une isolation efficace ?**](https://www.baisseleswatts.fr/actualites/equipement-energetique/quel-est-le-meilleur-isolant-thermique) un article proposé par Baisse les watts.\n- [**L'annuaire des professionnels RGE et des architectes,**](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte) trouver un professionnel RGE, compétent pour réaliser des travaux d'isolation thermique.",
     "themes": [
       "building",
@@ -1055,6 +1057,8 @@
       "aide-investissement-librairie",
       "booster-transformation-rev-3"
     ],
+    "titleLinkedProjects": "🔍 Les prérequis pour réussir l'isolation thermique de votre bâtiment",
+    "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de l'isolation thermique de votre bâtiment",
     "linkedProjects": [
       4,
       14
@@ -1086,9 +1090,31 @@
       "T",
       "U"
     ],
+    "titleFaq": "☝️ Questions fréquentes sur l'isolation thermique",
     "metaTitle": "Isolation thermique des entreprises - Rénovation énergétique",
     "metaDescription": "Faites isoler vos bâtiments pour limiter les pertes de chaleur et de fraîcheur. Une bonne isolation thermique réduit vos dépenses énergétiques.",
-    "faqs": []
+    "faqs": [
+      {
+        "id": 199,
+        "question": "Pourquoi faire de l’isolation thermique en entreprise ?",
+        "answer": "L’isolation thermique de vos bâtiments professionnels présente de nombreux avantages :\n\n- Parce qu’elle limite les pertes de chaleur en hiver et de conserve la fraîcheur en été, une bonne isolation vous permet d’**alléger vos factures énergétiques, de chauffage et de climatisation**.\n- Elle **améliore le confort des employés** et le bien-être au travail, en été comme en hiver.\n- Elle **réduit l’empreinte carbone** de votre entreprise.\n- Elle vous permet, à long terme, de **réduire les coûts de maintenance** et de réparation du bâtiment."
+      },
+      {
+        "id": 200,
+        "question": "Existe-t-il des obligations légales en matière d’isolation thermique ?",
+        "answer": "Dès lors que des travaux importants sont entrepris sur des **locaux de commerce**, des **bureaux** ou un **établissement hôtelier,** l’isolation thermique du bâtiment est obligatoire.\n\n\\\nIl peut s’agir :\n\n- Du **ravalement de façade** (sauf façade en pierre, torchis, bois, chaux), qui oblige du même coup une isolation du bâtiment par l’extérieur.\n- De **travaux d'aménagement** pour rendre des locaux habitables. L’isolation des parois opaques est alors obligatoire.\n- De **travaux de toiture** impliquant le remplacement ou le recouvrement d'au moins 50 % de la couverture. L’isolation du toit ou du plafond haut est requise.\n\nCes obligations légales ne s’appliquent pas à la Guadeloupe, la Guyane, la Martinique, La Réunion et Mayotte."
+      },
+      {
+        "id": 201,
+        "question": "Quels sont les endroits à isoler en priorité ?",
+        "answer": "Dans un bâtiment neuf ou existant, les endroits à isoler en priorité sont :\n\n- La **toiture ou le plafond haut**, c’est la première source de déperdition de chaleur). Il est possible de l’isoler par l’intérieur (combles) ou par l’extérieur (parking, toiture terrasse).\n- Les **murs extérieurs**, qu’il est possible d’isoler par l’extérieur ou par l’intérieur. Cette dernière solution est moins coûteuse mais fait perdre en superficie.\n- Les **huisseries** : **portes, vitrines, fenêtres**. Leur remplacement par du double ou du triple vitrage, de la menuiserie performante et l’ajout de stores ou de films thermiques permet d’améliorer considérablement le confort thermique.\n- Le **plancher bas**, qu’il est possible d’isoler par le dessous (sous dalle) ou au sol (plancher isolant ou chauffant).\n- Les **ponts thermiques et les infiltrations d’air**, qui surviennent généralement à l'intersection de deux parois. Pour y faire face, le renforcement des joints des portes et des fenêtres, l’étanchéité des passages de câbles, des gaines et des trappes techniques, et l’installation d’une ventilation mécanique contrôlée (VMC) constituent des solutions efficaces."
+      },
+      {
+        "id": 232,
+        "question": "Quels travaux de rénovation viendront compléter l’isolation thermique ?",
+        "answer": "Isoler seul ne suffit pas. Pour réaliser d’importantes économies d’énergie, il est possible de coupler l’isolation énergétique du bâtiment avec d’autres travaux comme :\n\n- Le **remplacement du [système de chauffage](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/maitrise-besoins-chauffage)** par un système écologique et performant.\n- L’ajout d’un **système de ventilation efficace**, qui garantit un air sain sans perdre la chaleur. Une VMC double flux est une solution performante.\n- La [**modernisation de l’éclairage**](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/eclairage-led), afin de réduire la consommation électrique et d’améliorer le confort des employés.\n- L’installation d’**équipements à énergie renouvelable**, comme des [panneaux photovoltaïques](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/panneaux-solaires), un chauffe-eau solaire, une [pompe à chaleur](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/pac) hybride ou le [raccordement à un réseau de chaleur](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/reseau-chaleur)…"
+      }
+    ]
   },
   {
     "id": 16,
