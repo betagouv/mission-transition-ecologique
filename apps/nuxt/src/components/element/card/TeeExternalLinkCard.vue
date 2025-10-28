@@ -78,7 +78,6 @@ defineProps<{
 
 .tee-external-link-card-description {
   font-size: 0.875rem;
-  color: var(--text-default-grey);
   margin: 1rem 4rem 0 0;
 }
 
@@ -86,7 +85,6 @@ defineProps<{
   position: absolute;
   right: 1rem;
   bottom: 0.5rem;
-  text-decoration: none;
   font-size: 0rem;
 }
 
