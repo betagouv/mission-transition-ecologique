@@ -48,6 +48,7 @@ defineProps<{
   min-height: 12rem;
   max-height: 20rem;
   position: relative;
+  height: 100%;
 }
 
 .tee-external-link-card-image {

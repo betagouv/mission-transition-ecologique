@@ -47,7 +47,7 @@ interface Props {
   imgBgColor?: Color
   ctaBtnTitle?: string
   onClick: CallableFunction
-  withLogo: boolean
+  withLogo?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
@@ -68,5 +68,9 @@ withDefaults(defineProps<Props>(), {
   :hover:not(button, button *) {
     cursor: default !important;
   }
+}
+
+:deep(img) {
+  max-width: 100%;
 }
 </style>

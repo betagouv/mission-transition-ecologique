@@ -33,7 +33,7 @@
         d’experts du numérique&nbsp;: design, développement, produit, déploiement, éditorial.
       </p>
     </div>
-        <div class="fr-hidden-md md fr-col-12 fr-pr-3w">
+        <div class="fr-hidden-md md fr-col-12 fr-mt-2w">
       <img
         src="/images/about/Tee_about_startup.webp"
         alt="Startup d'État illustration"

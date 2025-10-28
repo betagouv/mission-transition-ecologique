@@ -14,7 +14,7 @@
       </p>
     </div>
 
-    <div class="fr-col-12 fr-col-md-6 fr-pl-md-4w">
+    <div class="fr-col-12 fr-col-md-6 fr-pl-md-4w fr-mt-2w fr-mt-md-0">
       <img
         src="/images/about/Tee_about_intro.webp"
         alt="Illustration transition écologique"
@@ -27,6 +27,7 @@
 <style scoped>
 img {
   max-height: 22rem;
+  max-width:100%;
   width: auto;
   height: auto;
   display: block;

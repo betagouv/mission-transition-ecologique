@@ -1,5 +1,5 @@
 <template>
-  <section class="fr-my-3w fr-py-3w fr-px-6w">
+  <section class="fr-my-3w fr-py-3w fr-px-2w fr-px-md-6w">
     <div class="fr-grid-row fr-grid-row--center">
       <div class="fr-col-12">
         <h2>Des retours du terrain</h2>
@@ -10,11 +10,11 @@
       </div>
     </div>
     <div class="fr-grid-row fr-grid-row--center fr-mt-3w">
-      <div class="fr-col-md-10 fr-col-xl-10">
+      <div class="fr-col-md-10">
         <LazyTestimony
           v-for="(testimony, index) in testimonies"
           :key="testimony.slug"
-          :class="[index === testimonies.length - 1 ? 'fr-mb-md-3w' : 'fr-mb-6w']"
+          :class="[index === testimonies.length - 1 ? 'fr-mb-md-3w' : 'fr-mb-md-6w']"
           :testimony="testimony"
         />
       </div>
@@ -61,5 +61,9 @@ const testimonies = [
 <style scoped>
 p:last-child {
   margin-bottom: 0;
+}
+
+figure.fr-quote:last-child {
+  padding-bottom: 0 !important;
 }
 </style>
