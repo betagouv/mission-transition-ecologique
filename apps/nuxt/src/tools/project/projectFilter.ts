@@ -50,4 +50,13 @@ export default class ProjectFilter {
   static isValidFilterValue(programFilterValue: ValueOf<FiltersType> | undefined) {
     return programFilterValue !== undefined && programFilterValue !== ''
   }
+
+  static readonly filterByHighlight = (projects: Ref<ProjectType[] | undefined>) => {
+    return computed(() => {
+      if (!projects.value) {
+        return undefined
+      }
+      return projects.value.filter((project) => project.highlightPriority)
+    })
+  }
 }

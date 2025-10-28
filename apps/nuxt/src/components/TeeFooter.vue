@@ -215,6 +215,10 @@ const mainLinks = [
   {
     label: 'Questions fréquentes',
     to: { name: RouteName.Faq }
+  },
+  {
+    label: 'Qui sommes nous ?',
+    to: { name: RouteName.About }
   }
 ]
 

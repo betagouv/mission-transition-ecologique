@@ -59,10 +59,12 @@ const props = defineProps<TestimonyProps>()
 const linkedProjectsTags = ref<ProjectType[]>([])
 
 onNuxtReady(async () => {
-  await new ProjectManager().getProjects()
-  const allLinkedProjectsTags = await useProjectStore().getProjectsFromIds(props.testimony.projects)
-  const shuffled = allLinkedProjectsTags.sort(() => 0.5 - Math.random())
-  linkedProjectsTags.value = shuffled.slice(0, 3)
+  if (props.testimony.projects) {
+    await new ProjectManager().getProjects()
+    const allLinkedProjectsTags = await useProjectStore().getProjectsFromIds(props.testimony.projects)
+    const shuffled = allLinkedProjectsTags.sort(() => 0.5 - Math.random())
+    linkedProjectsTags.value = shuffled.slice(0, 3)
+  }
 })
 
 const img = Image.getUrl

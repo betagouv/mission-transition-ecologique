@@ -9,13 +9,15 @@ interface Props {
   imageAlt?: string
   objectFit?: 'cover' | 'contain' | 'fill' | 'none' | 'scale-down'
   imgBgColor?: Color
+  withLogo?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
   imageSrc: undefined,
   imageAlt: "Image de la page d'accueil de mission transition écologique",
   objectFit: 'cover',
-  imgBgColor: undefined
+  imgBgColor: undefined,
+  withLogo: true
 })
 
 const defaultImageSrc = 'images/TEE_computer_home.webp'
@@ -41,6 +43,7 @@ const img = Image.getUrl
         :alt="imageAlt"
       />
       <img
+        v-if="withLogo"
         class="fr-card__logo"
         :src="Identity.logoPath"
         alt="Transition écologique des entreprises - ADEME"
