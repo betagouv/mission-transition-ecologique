@@ -218,12 +218,10 @@
         "start": "06/02/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Programme Volontaire Français ACT",
@@ -436,12 +434,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Parcours Adaptation au changement climatique",
@@ -660,12 +656,10 @@
           "Bretagne"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Aides au réemploi des emballages",
@@ -940,12 +934,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
       }
-    }
   },
   {
     "titre": "AMO chaufferie biomasse ",
@@ -1147,12 +1139,10 @@
           "E"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Audit énergétique en industrie",
@@ -1361,12 +1351,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Audit label Clef Verte",
@@ -1554,12 +1542,10 @@
         "start": "01/05/2023",
         "end": "31/12/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Baisse Les Watts",
@@ -1796,12 +1782,10 @@
         "start": "01/01/2023",
         "end": "01/05/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Bonus écologique",
@@ -2019,12 +2003,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Bonus Réparation",
@@ -2187,13 +2169,11 @@
           "S"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Booster Éco-Énergie Tertiaire",
@@ -2431,7 +2411,6 @@
           "U"
         ],
         "maxEmployees": "4999",
-        "ownsBuildings": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bourgogne-Franche-Comté",
@@ -2444,13 +2423,11 @@
         "start": "01/01/2023",
         "end": "31/12/2034"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "CEDRE Investissement",
@@ -2679,8 +2656,7 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -2692,7 +2668,6 @@
           "biodiversite"
         ]
       }
-    }
   },
   {
     "titre": "CEDRE Premier Pas",
@@ -2924,8 +2899,7 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility",
           "waste",
           "water",
@@ -2935,7 +2909,6 @@
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Certification en agriculture biologique",
@@ -3105,13 +3078,11 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental",
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Charte \"zéro déchet plastique\"",
@@ -3335,13 +3306,11 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "biodiversite"
         ]
       }
-    }
   },
   {
     "titre": "Chèque Transition Bioéthanol",
@@ -3572,12 +3541,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "ClimaDiag expert",
@@ -3779,12 +3746,10 @@
         "start": "01/10/2023",
         "end": "01/08/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Communauté du Coq Vert",
@@ -3992,12 +3957,10 @@
       "validity": {
         "start": "01/06/2020"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Coup de pouce Chauffage",
@@ -4206,13 +4169,11 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Diag Décarbon'Action",
@@ -4402,12 +4363,10 @@
         ],
         "maxEmployees": "499"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Diag Eco-Flux",
@@ -4600,15 +4559,13 @@
         "minEmployees": "20",
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "water",
           "energy",
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Diag Ecoconception",
@@ -4803,12 +4760,10 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Diag Perf'Immo",
@@ -5015,15 +4970,12 @@
           "S",
           "T",
           "U"
-        ],
-        "ownsBuildings": true
+        ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
       }
-    }
   },
   {
     "titre": "Diagnostic Changement climatique",
@@ -5207,12 +5159,10 @@
           "Île-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Diagnostic déchets",
@@ -5408,12 +5358,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
       }
-    }
   },
   {
     "titre": "Diagnostic Eco-conception Île-de-France",
@@ -5608,12 +5556,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Diagnostic RSE",
@@ -5809,12 +5755,10 @@
         "minEmployees": "20",
         "maxEmployees": "499"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
       }
-    }
   },
   {
     "titre": "Diagnostic Transition Ecologique",
@@ -6003,12 +5947,10 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Eco-Défis des artisans et des commerçants",
@@ -6176,12 +6118,10 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Initiation éco-conception",
@@ -6362,12 +6302,10 @@
           "Bretagne"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Formation écogestes",
@@ -6529,15 +6467,13 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "water",
           "energy",
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Engins moins polluants",
@@ -6692,12 +6628,10 @@
           "H"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Entreprises engagées pour la nature",
@@ -6924,12 +6858,10 @@
       "validity": {
         "start": "15/09/2019"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "biodiversite"
         ]
       }
-    }
   },
   {
     "titre": "Enviroveille",
@@ -7126,12 +7058,10 @@
         ],
         "maxEmployees": "499"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Alimentation durable\"",
@@ -7382,14 +7312,12 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "environmental",
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Etude \"biodéchets\"",
@@ -7582,12 +7510,10 @@
         "start": "01/01/2024",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Centres de tri\"",
@@ -7785,12 +7711,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Chaufferie biomasse\"",
@@ -8000,12 +7924,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Diagnostic serres\"",
@@ -8220,19 +8142,16 @@
         "allowedNafSections": [
           "A",
           "G"
-        ],
-        "ownsBuildings": true
+        ]
       },
       "validity": {
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Économie de la fonctionnalité\"",
@@ -8466,12 +8385,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Etude et Investissement \"qualité de l’air\"",
@@ -8721,12 +8638,10 @@
         "start": "01/01/2023",
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Étude faisabilité \"hydrogène\"",
@@ -8906,12 +8821,10 @@
         "start": "01/01/2023",
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"friches polluées\"",
@@ -9104,12 +9017,10 @@
         "start": "01/12/2023",
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Gaspillage alimentaire\"",
@@ -9342,12 +9253,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Géothermie de surface et d'aérothermie\"",
@@ -9568,12 +9477,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Hydroélectricité\"",
@@ -9799,12 +9706,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Méthanisation\"",
@@ -10047,13 +9952,11 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Performance énergétique\" en industrie",
@@ -10259,12 +10162,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Éco-conception\"",
@@ -10509,12 +10410,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Autoconsommation photovoltaïque\"",
@@ -10759,7 +10658,6 @@
           "T",
           "U"
         ],
-        "ownsBuildings": true,
         "allowedRegion": [
           "Corse",
           "Guadeloupe",
@@ -10769,12 +10667,10 @@
           "Saint-Pierre-Et-Miquelon"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Étude d'opportunité photovoltaïque",
@@ -10975,13 +10871,11 @@
         "start": "01/10/2023",
         "end": "01/06/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"projet de recherche\"",
@@ -11196,12 +11090,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Récupération de chaleur fatale\"",
@@ -11403,12 +11295,10 @@
           "I"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"réemploi réutilisation réparation\"",
@@ -11660,12 +11550,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"réhabilitation solaires thermiques collectives\"",
@@ -11884,7 +11772,6 @@
           "Q",
           "S"
         ],
-        "ownsBuildings": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bretagne",
@@ -11908,12 +11795,10 @@
         "start": "03/06/2019",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Réseaux énergie renouvelable\"",
@@ -12119,12 +12004,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Solaire thermique\"",
@@ -12414,12 +12297,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Étude \"Test géothermie\"",
@@ -12650,15 +12531,12 @@
           "S",
           "T",
           "U"
-        ],
-        "ownsBuildings": true
+        ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "eXtrême Défi Mobilité",
@@ -12826,12 +12704,10 @@
           "H"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Flotte de vélos à disposition",
@@ -13024,12 +12900,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Fond Vert - Territoires d'Industrie",
@@ -13240,8 +13114,7 @@
         "start": "12/03/2034",
         "end": "31/12/2034"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -13252,7 +13125,6 @@
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Fonds Tourisme Durable",
@@ -13524,8 +13396,7 @@
           "Saint-Martin"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -13536,7 +13407,6 @@
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Formation ADEME",
@@ -13741,12 +13611,10 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
       }
-    }
   },
   {
     "titre": "Formations du CFDE",
@@ -13943,12 +13811,10 @@
         ],
         "maxEmployees": "499"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
       }
-    }
   },
   {
     "titre": "Formations Transition Écologique et Énergétique",
@@ -14149,12 +14015,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
       }
-    }
   },
   {
     "titre": "Fresque de la Mobilité",
@@ -14367,12 +14231,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Gestion des biodéchets",
@@ -14546,12 +14408,10 @@
           "Hauts-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
       }
-    }
   },
   {
     "titre": "Imprim'vert",
@@ -14741,12 +14601,10 @@
           "R"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Industries vertes",
@@ -14905,14 +14763,12 @@
           "C"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "energy",
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"bioGNV agricole et territorial\"",
@@ -15119,13 +14975,11 @@
         "start": "01/06/2023",
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"Boucle d’eau géothermique\"",
@@ -15358,12 +15212,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"centre de tri\"",
@@ -15603,12 +15455,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"Chaleur bois\"",
@@ -15840,15 +15690,12 @@
           "S",
           "T",
           "U"
-        ],
-        "ownsBuildings": true
+        ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"construction et rénovation hors site\"",
@@ -16033,12 +15880,10 @@
           "F"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"Contrat Chaleur Renouvelable\"",
@@ -16271,12 +16116,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement  \"contrat patrimonial ENR&R\"",
@@ -16515,12 +16358,10 @@
           "Occitanie"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement contre le gaspillage alimentaire",
@@ -16768,12 +16609,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"Ecoconception\"",
@@ -17017,12 +16856,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"Géothermie de surface et d'aérothermie\"",
@@ -17255,12 +17092,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"Géothermie profonde\"",
@@ -17493,12 +17328,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"Gestion des biodéchets\"",
@@ -17728,12 +17561,10 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"Méthanisation\"",
@@ -17966,13 +17797,11 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"PAC solaire\"",
@@ -18205,12 +18034,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement pour l'approvisionnement de chaufferies bois",
@@ -18404,12 +18231,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"recharge véhicules électriques\"",
@@ -18579,19 +18404,16 @@
         "allowedNafSections": [
           "G",
           "Q"
-        ],
-        "ownsBuildings": true
+        ]
       },
       "validity": {
         "start": "01/12/2022",
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"Récupération de chaleur fatale\"",
@@ -18790,12 +18612,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"réemploi réutilisation réparation\"",
@@ -19043,12 +18863,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"renouvellement forestier\"",
@@ -19222,12 +19040,10 @@
           "A"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"Réseaux de chaleur ou de froid\"",
@@ -19420,12 +19236,10 @@
           "E"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"solaire thermique Outre-mer\"",
@@ -19655,12 +19469,10 @@
         "start": "01/01/2023",
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"Solaire thermique\"",
@@ -19910,12 +19722,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"Systèmes Solaires Combinés\"",
@@ -20142,12 +19952,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"vélotourisme\"",
@@ -20333,12 +20141,10 @@
         "start": "01/12/2023",
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Investissement \"VTE Vert\"",
@@ -20567,12 +20373,10 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
       }
-    }
   },
   {
     "titre": "INVESTour",
@@ -20752,13 +20556,11 @@
       "validity": {
         "end": "01/11/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "rh"
         ]
       }
-    }
   },
   {
     "titre": "Mécénaturel",
@@ -20971,12 +20773,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "biodiversite"
         ]
       }
-    }
   },
   {
     "titre": "Mission de Conseil RSE",
@@ -21172,12 +20972,10 @@
       "validity": {
         "start": "01/01/2018"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Mission Stratégie Environnement",
@@ -21391,12 +21189,10 @@
         ],
         "minEmployees": "10"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
       }
-    }
   },
   {
     "titre": "Nature ta ville",
@@ -21596,12 +21392,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "biodiversite"
         ]
       }
-    }
   },
   {
     "titre": "Navires utilisant des énergies propres",
@@ -21778,12 +21572,10 @@
           "H"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "ORMAT 2034",
@@ -22033,12 +21825,10 @@
         "start": "01/09/2034",
         "end": "09/09/2034"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
       }
-    }
   },
   {
     "titre": "PACTE Industrie",
@@ -22243,12 +22033,10 @@
         "start": "01/06/2023",
         "end": "30/06/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Performa Environnement",
@@ -22431,12 +22219,10 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Plan de mobilité",
@@ -22668,12 +22454,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Prêt Action Climat",
@@ -22885,8 +22669,7 @@
         ],
         "maxEmployees": "49"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -22897,7 +22680,6 @@
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Prêt Économies d’Énergie (PEE)",
@@ -23150,12 +22932,10 @@
         "maxEmployees": "49",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Prêt Vert - Ademe",
@@ -23425,8 +23205,7 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -23437,7 +23216,6 @@
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Prêt Vert",
@@ -23694,8 +23472,7 @@
         ],
         "maxEmployees": "4999"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -23706,7 +23483,6 @@
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Prime à la conversion",
@@ -23944,12 +23720,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Programme Breizh Fab",
@@ -24134,12 +23908,10 @@
           "Bretagne"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Programme Ecod'o",
@@ -24321,12 +24093,10 @@
           "Bretagne"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "water"
         ]
       }
-    }
   },
   {
     "titre": "Programme EVE",
@@ -24500,13 +24270,11 @@
       "validity": {
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility",
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Programme Synergies durables",
@@ -24691,12 +24459,10 @@
         "minEmployees": "20",
         "maxEmployees": "499"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Recharges pour véhicules électriques",
@@ -24874,12 +24640,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Crédit d'Impôt Rénovation Énergétique (CIRE)",
@@ -25088,12 +24852,10 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
       }
-    }
   },
   {
     "titre": "Diagnostic SARE",
@@ -25289,12 +25051,10 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
       }
-    }
   },
   {
     "titre": "Répar'acteurs",
@@ -25501,12 +25261,10 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
       }
-    }
   },
   {
     "titre": "Rétrofit électrique",
@@ -25696,12 +25454,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Sites touristiques exemplaires",
@@ -25876,13 +25632,11 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Plan Solaire Smart PV",
@@ -26107,12 +25861,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Sobriété et Résilience des Territoires",
@@ -26320,12 +26072,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Plan Solaire Ready",
@@ -26543,13 +26293,11 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Sud Prêt Climat",
@@ -26785,8 +26533,7 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "water",
           "energy",
@@ -26795,7 +26542,6 @@
           "biodiversite"
         ]
       }
-    }
   },
   {
     "titre": "Formation référent tourisme durable ",
@@ -26959,12 +26705,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
       }
-    }
   },
   {
     "titre": "TPE gagnantes sur tous les coûts",
@@ -27157,14 +26901,12 @@
         ],
         "maxEmployees": "19"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "water",
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Tremplin",
@@ -27396,8 +27138,7 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility",
           "waste",
           "water",
@@ -27405,7 +27146,6 @@
           "eco-design"
         ]
       }
-    }
   },
   {
     "titre": "Trophées Crisalide Eco-activités",
@@ -27631,12 +27371,10 @@
           "Pays de la Loire"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
       }
-    }
   },
   {
     "titre": "Véhicule lourd énergies propres",
@@ -27803,12 +27541,10 @@
           "H"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Véhicules lourds électriques",
@@ -27996,12 +27732,10 @@
         "start": "26/08/2024",
         "end": "07/10/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
       }
-    }
   },
   {
     "titre": "Visite Énergie CCI",
@@ -28208,12 +27942,10 @@
         "minEmployees": "20",
         "maxEmployees": "499"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   },
   {
     "titre": "Visite Énergie CMA",
@@ -28394,11 +28126,9 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
       }
-    }
   }
 ]

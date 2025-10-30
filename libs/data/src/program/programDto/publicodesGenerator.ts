@@ -71,10 +71,6 @@ export class PublicodesGenerator {
       publicodes[Publicodes.ZONE_GEO] = this._generateGeographicConditions()
     }
 
-    if (this._eligibility.company.ownsBuildings) {
-      cibles.push(Publicodes.PROPRIO)
-    }
-
     return publicodes
   }
 
@@ -122,7 +118,7 @@ export class PublicodesGenerator {
 
   // --- Objectifs ---
   private _generateObjectifConditions() {
-    const objectives = this._eligibility.questionnaire?.priorityObjectives
+    const objectives = this._eligibility.priorityObjectives
     if (!objectives || objectives.length === 0) {
       return null
     }

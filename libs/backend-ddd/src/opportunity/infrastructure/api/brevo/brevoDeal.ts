@@ -62,7 +62,7 @@ const updateBrevoDeal: OpportunityRepository['update'] = async (
   updateAttributes: OpportunityUpdateAttributes
 ): Promise<Maybe<Error | null>> => {
   const brevoDeal = convertDomainToBrevoDealUpdate(updateAttributes)
-  console.log('Updating Brevo deal', { dealId: dealId.id, brevoDeal })
+
   return requestUpdateDeal(dealId, brevoDeal)
 }
 

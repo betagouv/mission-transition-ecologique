@@ -42,11 +42,8 @@ export interface EligibilityData {
     excludeMicroentrepreneur?: boolean
     allowedNafSections: string[]
     allowedRegion?: string[]
-    ownsBuildings?: boolean
   }
-  questionnaire?: {
-    priorityObjectives?: ThemeId[]
-  }
+  priorityObjectives?: ThemeId[]
 }
 
 export type ProgramTypeWithEligibility = ProgramType & {
@@ -69,7 +66,6 @@ export type ProgramStaticBaseType = Omit<ProgramWithoutId, 'opérateur de contac
   eligibilityData: EligibilityData
 }
 
-export type ProgramJsonBaseType = ProgramStaticBaseType & Record<string, unknown>
-// Record string unknown pour l'interface
+export type ProgramJsonBaseType = ProgramStaticBaseType & Record<string, unknown> // Record string unknown to allow appending the interface
 
 export type ProgramYamlType = Omit<ProgramStaticBaseType, 'id' | 'eligibilityData'>

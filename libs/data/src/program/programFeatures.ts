@@ -7,7 +7,7 @@ export class ProgramFeatures {
   async updatePrograms(): Promise<void> {
     const programs = await new ProgramUpdater().getProcessedProgramsAndGenerateRedirects()
 
-    await new YamlGenerator().export(programs) // working
+    await new YamlGenerator().export(programs)
     await new JsonGenerator().export(programs)
   }
 

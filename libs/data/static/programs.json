@@ -83,12 +83,10 @@
         "start": "06/02/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -329,12 +327,10 @@
         "start": "13/11/2023",
         "end": "30/06/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -600,12 +596,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -853,12 +847,10 @@
         "start": "01/01/2023",
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -1070,12 +1062,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -1262,12 +1252,10 @@
         "start": "01/05/2023",
         "end": "31/12/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -1484,12 +1472,10 @@
         "start": "01/01/2023",
         "end": "01/05/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -1727,7 +1713,6 @@
         ],
         "maxEmployees": "4999",
         "excludeMicroentrepreneur": true,
-        "ownsBuildings": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bourgogne-Franche-Comté",
@@ -1746,13 +1731,11 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -1988,12 +1971,10 @@
         "start": "01/10/2023",
         "end": "01/08/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -2220,12 +2201,10 @@
       "validity": {
         "start": "01/06/2020"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -2443,13 +2422,11 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -2649,12 +2626,10 @@
         "maxEmployees": "499",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -2870,12 +2845,10 @@
         ],
         "maxEmployees": "499"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -3094,12 +3067,10 @@
         "maxEmployees": "249",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -3339,12 +3310,10 @@
           "Île-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -3552,12 +3521,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -3766,12 +3733,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -3981,12 +3946,10 @@
         "maxEmployees": "499",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -4185,12 +4148,10 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -4358,12 +4319,10 @@
           "H"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -4539,12 +4498,10 @@
         ],
         "maxEmployees": "499"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -4779,14 +4736,12 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -5020,12 +4975,10 @@
         "start": "01/01/2024",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -5228,12 +5181,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -5439,12 +5390,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -5643,19 +5592,16 @@
         "allowedNafSections": [
           "A",
           "G"
-        ],
-        "ownsBuildings": true
+        ]
       },
       "validity": {
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -5874,12 +5820,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -6117,12 +6061,10 @@
         "start": "01/01/2023",
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -6336,12 +6278,10 @@
         "start": "01/01/2023",
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -6547,12 +6487,10 @@
         "start": "01/01/2025",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -6775,12 +6713,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -7014,12 +6950,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -7267,12 +7201,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -7508,13 +7440,11 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -7740,12 +7670,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -7983,12 +7911,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -8247,7 +8173,6 @@
           "T",
           "U"
         ],
-        "ownsBuildings": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bourgogne-Franche-Comté",
@@ -8266,12 +8191,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -8499,13 +8422,11 @@
         "start": "01/10/2023",
         "end": "01/06/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -8753,12 +8674,10 @@
         "start": "01/01/2025",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -9000,12 +8919,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -9219,12 +9136,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -9458,12 +9373,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -9693,7 +9606,6 @@
           "Q",
           "S"
         ],
-        "ownsBuildings": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bretagne",
@@ -9717,12 +9629,10 @@
         "start": "03/06/2019",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -9954,12 +9864,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -10208,12 +10116,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -10473,12 +10379,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -10700,19 +10604,16 @@
           "S",
           "T",
           "U"
-        ],
-        "ownsBuildings": true
+        ]
       },
       "validity": {
         "start": "01/01/2023",
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -10917,12 +10818,10 @@
           "M"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -11100,12 +10999,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -11352,8 +11249,7 @@
         "start": "01/01/2023",
         "end": "31/07/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -11363,8 +11259,7 @@
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -11609,8 +11504,7 @@
         "start": "12/03/2025",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -11620,8 +11514,7 @@
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -11829,12 +11722,10 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -12047,13 +11938,11 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh",
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -12251,12 +12140,10 @@
         ],
         "maxEmployees": "499"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -12455,15 +12342,13 @@
         "maxEmployees": "249",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "water",
           "energy",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -12676,12 +12561,10 @@
           "Île-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -12886,12 +12769,10 @@
           "Hauts-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -13072,12 +12953,10 @@
           "I"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -13253,12 +13132,10 @@
           "R"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -13465,13 +13342,11 @@
         "start": "01/06/2023",
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -13706,12 +13581,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -13948,12 +13821,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -14192,19 +14063,16 @@
           "S",
           "T",
           "U"
-        ],
-        "ownsBuildings": true
+        ]
       },
       "validity": {
         "start": "01/01/2023",
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -14416,12 +14284,10 @@
         "start": "15/02/2023",
         "end": "15/01/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -14639,12 +14505,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -14882,12 +14746,10 @@
         "start": "01/04/2022",
         "end": "30/09/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -15136,12 +14998,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -15403,12 +15263,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -15667,12 +15525,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -15907,12 +15763,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -16147,12 +16001,10 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -16385,13 +16237,11 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -16630,12 +16480,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -16851,12 +16699,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -17027,19 +16873,16 @@
         "allowedNafSections": [
           "G",
           "Q"
-        ],
-        "ownsBuildings": true
+        ]
       },
       "validity": {
         "start": "01/12/2022",
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -17239,12 +17082,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -17468,12 +17309,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -17682,12 +17521,10 @@
         "start": "15/06/2023",
         "end": "31/05/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -17885,12 +17722,10 @@
         "start": "01/01/2023",
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -18107,12 +17942,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -18332,12 +18165,10 @@
         "start": "01/01/2023",
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -18580,12 +18411,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -18814,12 +18643,10 @@
         "start": "01/09/2024",
         "end": "31/10/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -19016,15 +18843,12 @@
           "T",
           "U"
         ],
-        "excludeMicroentrepreneur": true,
-        "ownsBuildings": true
+        "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -19232,12 +19056,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -19467,12 +19289,10 @@
         "start": "17/01/2024",
         "end": "06/10/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -19707,12 +19527,10 @@
         "start": "01/06/2023",
         "end": "30/06/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -19898,12 +19716,10 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -20244,12 +20060,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -20505,12 +20319,10 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -20730,12 +20542,10 @@
       "validity": {
         "start": "01/01/2018"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -20956,12 +20766,10 @@
         "minEmployees": "10",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -21174,8 +20982,7 @@
         ],
         "maxEmployees": "49"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -21185,8 +20992,7 @@
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -21405,12 +21211,10 @@
           "Bretagne"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -21604,12 +21408,10 @@
           "Bretagne"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "water"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -21799,13 +21601,11 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility",
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -21984,12 +21784,10 @@
         "maxEmployees": "499",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -22200,12 +21998,10 @@
         "start": "01/01/2023",
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -22432,12 +22228,10 @@
       "validity": {
         "end": "01/01/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -22637,12 +22431,10 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -22826,12 +22618,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -23035,12 +22825,10 @@
         "start": "02/05/2023",
         "end": "30/11/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -23249,14 +23037,12 @@
         ],
         "maxEmployees": "19"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "water",
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -23488,16 +23274,14 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility",
           "waste",
           "water",
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -23714,12 +23498,10 @@
           "Pays de la Loire"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -23929,12 +23711,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -24135,12 +23915,10 @@
         "maxEmployees": "499",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -24404,12 +24182,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -24604,12 +24380,10 @@
         "maxEmployees": "49",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -24825,8 +24599,7 @@
         "maxEmployees": "4999",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -24836,8 +24609,7 @@
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -25067,8 +24839,7 @@
       "validity": {
         "end": "16/06/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -25078,8 +24849,7 @@
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -25309,12 +25079,10 @@
           "Bretagne"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -25532,8 +25300,7 @@
           "Occitanie"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -25543,8 +25310,7 @@
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -25738,8 +25504,7 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "waste",
           "water",
@@ -25747,8 +25512,7 @@
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -25934,12 +25698,10 @@
           "Bretagne"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -26126,15 +25888,13 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "water",
           "energy",
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -26330,14 +26090,12 @@
           "Hauts-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh",
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -26533,13 +26291,11 @@
           "Occitanie"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -26718,12 +26474,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -26900,13 +26654,11 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -27104,14 +26856,12 @@
       "validity": {
         "start": "14/03/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "energy",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -27296,12 +27046,10 @@
       "validity": {
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -27473,13 +27221,11 @@
           "S"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -27687,8 +27433,7 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility",
           "waste",
           "water",
@@ -27697,8 +27442,7 @@
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -27933,8 +27677,7 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -27945,8 +27688,7 @@
           "eco-design",
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -28165,13 +27907,11 @@
       "validity": {
         "end": "01/11/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "rh"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -28403,8 +28143,7 @@
       "validity": {
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "water",
           "energy",
@@ -28412,8 +28151,7 @@
           "eco-design",
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -28622,13 +28360,11 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -28826,12 +28562,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -29046,13 +28780,11 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -29281,12 +29013,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -29487,12 +29217,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -29720,12 +29448,10 @@
       "validity": {
         "start": "15/09/2019"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -29960,13 +29686,11 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -30182,12 +29906,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -30397,12 +30119,10 @@
         "start": "26/08/2024",
         "end": "07/10/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -30575,12 +30295,10 @@
       "validity": {
         "end": "07/11/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -30784,13 +30502,11 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh",
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -31026,12 +30742,10 @@
       "validity": {
         "end": "13/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -31254,13 +30968,11 @@
       "validity": {
         "end": "01/09/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -31478,12 +31190,10 @@
       "validity": {
         "end": "31/12/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -31730,15 +31440,13 @@
           "Grand Est"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "energy",
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -31981,12 +31689,10 @@
           "Grand Est"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -32201,12 +31907,10 @@
           "Auvergne-Rhône-Alpes"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -32453,8 +32157,7 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility",
           "waste",
           "water",
@@ -32462,8 +32165,7 @@
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -32694,8 +32396,7 @@
           "Bretagne"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -32706,8 +32407,7 @@
           "eco-design",
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -32944,15 +32644,13 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility",
           "waste",
           "water",
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -33231,8 +32929,7 @@
           "Île-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -33243,8 +32940,7 @@
           "eco-design",
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -33478,8 +33174,7 @@
           "Centre-Val de Loire"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "waste",
           "water",
@@ -33488,8 +33183,7 @@
           "eco-design",
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -33697,12 +33391,10 @@
           "Centre-Val de Loire"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -33887,13 +33579,11 @@
           "Centre-Val de Loire"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -34108,13 +33798,11 @@
         "start": "01/01/2025",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -34316,8 +34004,7 @@
           "Normandie"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility",
           "waste",
           "water",
@@ -34325,8 +34012,7 @@
           "environmental",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -34538,14 +34224,12 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility",
           "water",
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -34755,12 +34439,10 @@
       "validity": {
         "end": "30/04/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "water"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -34956,14 +34638,12 @@
           "Pays de la Loire"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "water",
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -35172,12 +34852,10 @@
         "start": "09/12/2024",
         "end": "15/05/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -35417,14 +35095,12 @@
         "start": "01/01/2023",
         "end": "01/10/2027"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility",
           "energy",
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -35629,16 +35305,14 @@
           "Nouvelle-Aquitaine"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "waste",
           "water",
           "energy",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -35841,8 +35515,7 @@
           "Nouvelle-Aquitaine"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -35850,8 +35523,7 @@
           "energy",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -36057,13 +35729,11 @@
           "Nouvelle-Aquitaine"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -36273,13 +35943,11 @@
           "Hauts-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental",
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -36483,8 +36151,7 @@
         "start": "22/03/2024",
         "end": "31/12/2028"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "waste",
           "water",
@@ -36492,8 +36159,7 @@
           "eco-design",
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -36716,8 +36382,7 @@
         "start": "01/05/2024",
         "end": "31/12/2028"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "waste",
           "water",
@@ -36725,8 +36390,7 @@
           "eco-design",
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -36934,13 +36598,11 @@
           "Corse"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -37136,15 +36798,13 @@
           "Corse"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "waste",
           "water",
           "energy",
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -37376,8 +37036,7 @@
         "start": "01/01/2025",
         "end": "15/09/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building",
           "mobility",
           "waste",
@@ -37387,8 +37046,7 @@
           "eco-design",
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -37611,12 +37269,10 @@
           "H"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -37794,13 +37450,11 @@
         ],
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -38012,12 +37666,10 @@
       "validity": {
         "end": "31/12/2027"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -38268,12 +37920,10 @@
         "start": "01/06/2024",
         "end": "01/06/2027"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -38524,13 +38174,11 @@
         "start": "27/01/2025",
         "end": "15/10/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility",
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -38746,12 +38394,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -38969,12 +38615,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -39177,12 +38821,10 @@
         "maxEmployees": "249",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -39405,12 +39047,10 @@
         "maxEmployees": "249",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -39636,12 +39276,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -39825,12 +39463,10 @@
       "validity": {
         "end": "31/12/2027"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -40038,12 +39674,10 @@
         "start": "10/04/2025",
         "end": "15/02/2027"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -40254,12 +39888,10 @@
         "start": "22/04/2025",
         "end": "16/10/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -40482,14 +40114,12 @@
         "maxEmployees": "499",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy",
           "eco-design",
           "biodiversite"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -40730,12 +40360,10 @@
         "start": "15/01/2025",
         "end": "31/10/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "building"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -40949,12 +40577,10 @@
         "start": "25/11/2025",
         "end": "25/11/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "eco-design"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -41188,12 +40814,10 @@
       "validity": {
         "end": "31/12/2099"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -41421,12 +41045,10 @@
           "Hauts-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -41652,12 +41274,10 @@
         ],
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "mobility"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -41874,12 +41494,10 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -42092,12 +41710,10 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -42310,12 +41926,10 @@
       "validity": {
         "end": "29/07/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "rh"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -42539,12 +42153,10 @@
         "start": "06/02/2025",
         "end": "12/02/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "energy"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,
@@ -42755,12 +42367,10 @@
         "start": "13/11/2023",
         "end": "30/06/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
+      "priorityObjectives": [
           "environmental"
         ]
-      }
-    },
+      },
     "publicodes": {
       "entreprise": null,
       "entreprise . effectif": null,

@@ -16,7 +16,6 @@ export class EligibilityDto {
     this.setEmployees()
     this.setLegalCategory()
     this._setSector()
-    this._setBuildingOwnership()
     this._setGeographicArea()
     this._setObjectives()
 
@@ -87,12 +86,6 @@ export class EligibilityDto {
     }
   }
 
-  private _setBuildingOwnership() {
-    if (this.generator.rawProgram.Propriétaire && this.generator.rawProgram.Propriétaire != '*') {
-      this.eligibility.company.ownsBuildings = true
-    }
-  }
-
   private readonly _departToRegionMap: Record<string, string> = {
     Vaucluse: "Provence-Alpes-Côte d'Azur",
     'Bouches-du-Rhône': "Provence-Alpes-Côte d'Azur",
@@ -144,8 +137,6 @@ export class EligibilityDto {
       return
     }
 
-    this.eligibility.questionnaire = {
-      priorityObjectives: programThemes.map((theme) => theme['Nom (Tech)'])
-    }
+    this.eligibility.priorityObjectives = programThemes.map((theme) => theme['Nom (Tech)'])
   }
 }

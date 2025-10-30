@@ -14,23 +14,26 @@ export class JsonGenerator {
   private readonly outputDir = path.join(this.__dirname, OUTPUT_FOLDER_PATH)
 
   async export(programs: ProgramStaticBaseType[]): Promise<void> {
-    console.log('♺ Converting data to JSON')
+    const enrichedPrograms = this.prependPublicodesInterface(programs)
+    this.writeFile(enrichedPrograms)
+    console.log('🖊️  Program Json successfully written')
+  }
 
+  async prependPublicodesInterface(programs: ProgramStaticBaseType[]): Promise<unknown> {
     const interfacePath = path.join(this.__dirname, INTERFACE_PATH)
     const file = fs.readFileSync(interfacePath, 'utf8')
     const constants = yaml.load(file) as Record<string, unknown>
-
-    const enrichedPrograms = programs.map((program) => {
+    return programs.map((program) => {
       const publicodes = { ...constants, ...(program['publicodes'] || {}) }
 
       return { ...program, publicodes }
     })
+  }
 
-    const dataAsJson = JSON.stringify(enrichedPrograms, null, 2)
+  async writeFile(programs: unknown) {
+    const dataAsJson = JSON.stringify(programs, null, 2)
     FileManager.createFolderIfNotExists(this.outputDir)
     const dataOutPath = path.join(this.outputDir, OUTPUT_FILENAME)
     fs.writeFileSync(dataOutPath, dataAsJson, 'utf8')
-
-    console.log('🖊️  Data successfully written at', dataOutPath)
   }
 }

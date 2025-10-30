@@ -17,17 +17,18 @@ export const validProgram: ProgramType = {
   "nature de l'aide": ProgramAidType.study,
   "coût de l'accompagnement": '1000 €',
   "conditions d'éligibilité": {
-    "taille de l'entreprise": ['Toutes tailles'],
+    "taille de l'entreprise": ['texte', 'texte'],
     'secteur géographique': ['France'],
     "secteur d'activité": ['Tous secteurs'],
     "nombre d'années d'activité": ['Éligible à toutes les entreprises']
   },
-  publicodes: {},
+  publicodes: {
+    'entreprise . est ciblée': {}
+  },
   eligibilityData: {
     company: {
       allowedNafSections: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U']
-    },
-    questionnaire: {}
+    }
   }
 }
 
@@ -42,12 +43,14 @@ export const programWithDateValidity: ProgramType = {
   "nature de l'aide": ProgramAidType.study,
   "coût de l'accompagnement": '2000 €',
   "conditions d'éligibilité": {
-    "taille de l'entreprise": ['Toutes tailles'],
+    "taille de l'entreprise": ['texte', 'texte'],
     'secteur géographique': ['France'],
     "secteur d'activité": ['Tous secteurs'],
     "nombre d'années d'activité": ['Aucune restriction']
   },
-  publicodes: {},
+  publicodes: {
+    'entreprise . est ciblée': {}
+  },
   eligibilityData: {
     company: {
       allowedNafSections: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U']
@@ -55,8 +58,7 @@ export const programWithDateValidity: ProgramType = {
     validity: {
       start: '01/01/2024',
       end: '31/12/2024'
-    },
-    questionnaire: {}
+    }
   }
 }
 
@@ -71,12 +73,14 @@ export const programWithExpiredDates: ProgramType = {
   "nature de l'aide": ProgramAidType.study,
   "coût de l'accompagnement": '2000 €',
   "conditions d'éligibilité": {
-    "taille de l'entreprise": ['Toutes tailles'],
+    "taille de l'entreprise": ['texte', 'texte'],
     'secteur géographique': ['France'],
     "secteur d'activité": ['Tous secteurs'],
     "nombre d'années d'activité": ['Aucune restriction']
   },
-  publicodes: {},
+  publicodes: {
+    'entreprise . est ciblée': {}
+  },
   eligibilityData: {
     company: {
       allowedNafSections: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U']
@@ -84,8 +88,7 @@ export const programWithExpiredDates: ProgramType = {
     validity: {
       start: '01/01/2020',
       end: '31/12/2020'
-    },
-    questionnaire: {}
+    }
   }
 }
 
@@ -96,22 +99,23 @@ export const programWithMinEmployees: ProgramType = {
   description: 'Programme pour entreprises de 50 salariés minimum',
   illustration: 'images/test.png',
   objectifs: [],
-  'opérateur de contact': 'Bpifrance',
+  'opérateur de contact': "Banque Publique d'Investissement France",
   "nature de l'aide": ProgramAidType.study,
   "coût de l'accompagnement": '5000 €',
   "conditions d'éligibilité": {
-    "taille de l'entreprise": ['Plus de 50 salariés'],
+    "taille de l'entreprise": ['texte', 'texte'],
     'secteur géographique': ['France'],
     "secteur d'activité": ['Tous secteurs'],
     "nombre d'années d'activité": ['Au moins 3 ans']
   },
-  publicodes: {},
+  publicodes: {
+    'entreprise . est ciblée': {}
+  },
   eligibilityData: {
     company: {
       allowedNafSections: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U'],
       minEmployees: 50
-    },
-    questionnaire: {}
+    }
   }
 }
 
@@ -126,18 +130,19 @@ export const programWithMaxEmployees: ProgramType = {
   "nature de l'aide": ProgramAidType.fund,
   "coût de l'accompagnement": '3000 €',
   "conditions d'éligibilité": {
-    "taille de l'entreprise": ["Jusqu'à 250 salariés"],
+    "taille de l'entreprise": ['texte', 'texte'],
     'secteur géographique': ['France'],
     "secteur d'activité": ['Tous secteurs'],
     "nombre d'années d'activité": ['Aucune restriction']
   },
-  publicodes: {},
+  publicodes: {
+    'entreprise . est ciblée': {}
+  },
   eligibilityData: {
     company: {
       allowedNafSections: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U'],
       maxEmployees: 250
-    },
-    questionnaire: {}
+    }
   }
 }
 
@@ -148,22 +153,23 @@ export const programExcludingMicroentrepreneur: ProgramType = {
   description: 'Programme excluant les micro-entrepreneurs',
   illustration: 'images/test.png',
   objectifs: [],
-  'opérateur de contact': 'Bpifrance',
+  'opérateur de contact': "Banque Publique d'Investissement France",
   "nature de l'aide": ProgramAidType.study,
   "coût de l'accompagnement": '4000 €',
   "conditions d'éligibilité": {
-    "taille de l'entreprise": ['Non éligible aux micro-entreprises'],
+    "taille de l'entreprise": ['Toutes tailles', 'Non éligible aux micro-entreprises'],
     'secteur géographique': ['France'],
     "secteur d'activité": ['Tous secteurs'],
     "nombre d'années d'activité": ['Au moins 2 ans']
   },
-  publicodes: {},
+  publicodes: {
+    'entreprise . est ciblée': {}
+  },
   eligibilityData: {
     company: {
       allowedNafSections: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U'],
       excludeMicroentrepreneur: true
-    },
-    questionnaire: {}
+    }
   }
 }
 
@@ -178,17 +184,18 @@ export const programWithNafRestriction: ProgramType = {
   "nature de l'aide": ProgramAidType.fund,
   "coût de l'accompagnement": '6000 €',
   "conditions d'éligibilité": {
-    "taille de l'entreprise": ['Toutes tailles'],
+    "taille de l'entreprise": ['Toutes tailles', 'Éligible aux micro-entreprises'],
     'secteur géographique': ['France'],
     "secteur d'activité": ['Industrie extractive', 'Industrie manufacturière'],
     "nombre d'années d'activité": ['Aucune restriction']
   },
-  publicodes: {},
+  publicodes: {
+    'entreprise . est ciblée': {}
+  },
   eligibilityData: {
     company: {
       allowedNafSections: ['B', 'C', 'D']
-    },
-    questionnaire: {}
+    }
   }
 }
 
@@ -203,18 +210,19 @@ export const programWithRegionRestriction: ProgramType = {
   "nature de l'aide": ProgramAidType.fund,
   "coût de l'accompagnement": '2500 €',
   "conditions d'éligibilité": {
-    "taille de l'entreprise": ['Toutes tailles'],
+    "taille de l'entreprise": ['Toutes tailles', 'Éligible aux micro-entreprises'],
     'secteur géographique': ['Île-de-France'],
     "secteur d'activité": ['Tous secteurs'],
     "nombre d'années d'activité": ['Aucune restriction']
   },
-  publicodes: {},
+  publicodes: {
+    'entreprise . est ciblée': {}
+  },
   eligibilityData: {
     company: {
       allowedNafSections: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U'],
       allowedRegion: ['Île-de-France']
-    },
-    questionnaire: {}
+    }
   }
 }
 
@@ -229,19 +237,19 @@ export const programWithEnergyObjective: ProgramType = {
   "nature de l'aide": ProgramAidType.study,
   "coût de l'accompagnement": '3500 €',
   "conditions d'éligibilité": {
-    "taille de l'entreprise": ['Toutes tailles'],
+    "taille de l'entreprise": ['Toutes tailles', 'Éligible aux micro-entreprises'],
     'secteur géographique': ['France'],
     "secteur d'activité": ['Tous secteurs'],
     "nombre d'années d'activité": ['Aucune restriction']
   },
-  publicodes: {},
+  publicodes: {
+    'entreprise . est ciblée': {}
+  },
   eligibilityData: {
     company: {
       allowedNafSections: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U']
     },
-    questionnaire: {
-      priorityObjectives: [ThemeId.Energy]
-    }
+    priorityObjectives: [ThemeId.Energy]
   }
 }
 
@@ -256,19 +264,19 @@ export const programWithEnvironmentalObjective: ProgramType = {
   "nature de l'aide": ProgramAidType.study,
   "coût de l'accompagnement": '4500 €',
   "conditions d'éligibilité": {
-    "taille de l'entreprise": ['Toutes tailles'],
+    "taille de l'entreprise": ['Toutes tailles', 'Éligible aux micro-entreprises'],
     'secteur géographique': ['France'],
     "secteur d'activité": ['Tous secteurs'],
     "nombre d'années d'activité": ['Aucune restriction']
   },
-  publicodes: {},
+  publicodes: {
+    'entreprise . est ciblée': {}
+  },
   eligibilityData: {
     company: {
       allowedNafSections: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U']
     },
-    questionnaire: {
-      priorityObjectives: [ThemeId.Environmental]
-    }
+    priorityObjectives: [ThemeId.Environmental]
   }
 }
 
@@ -283,19 +291,19 @@ export const programWithMultipleObjectives: ProgramType = {
   "nature de l'aide": ProgramAidType.train,
   "coût de l'accompagnement": '7000 €',
   "conditions d'éligibilité": {
-    "taille de l'entreprise": ['Toutes tailles'],
+    "taille de l'entreprise": ['Toutes tailles', 'Éligible aux micro-entreprises'],
     'secteur géographique': ['France'],
     "secteur d'activité": ['Tous secteurs'],
     "nombre d'années d'activité": ['Aucune restriction']
   },
-  publicodes: {},
+  publicodes: {
+    'entreprise . est ciblée': {}
+  },
   eligibilityData: {
     company: {
       allowedNafSections: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U']
     },
-    questionnaire: {
-      priorityObjectives: [ThemeId.Energy, ThemeId.Water, ThemeId.Waste]
-    }
+    priorityObjectives: [ThemeId.Energy, ThemeId.Water, ThemeId.Waste]
   }
 }
 
