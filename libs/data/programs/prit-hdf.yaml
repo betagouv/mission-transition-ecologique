@@ -35,7 +35,7 @@ montant du financement: >-
   Jusqu'à 50 % du coût de l'investissement, dans la limite de 100 000 €.
   Variable selon les projets.
 objectifs:
-  - description: Vérifiez l’éligibilité de votre projet en parcourant la documentation.
+  - description: Consultez la documentation pour vérifier l'éligibilité de votre projet.
     liens:
       - lien: https://aides.hautsdefrance.fr/sub/tiers/aides/details/?sigle=PRIT
         texte: Conditions et critères d'éligibilité

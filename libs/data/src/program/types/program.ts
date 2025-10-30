@@ -129,7 +129,8 @@ export type Dispositif = {
     | "Agence de Tourisme de la Corse"
     | "Région Guadeloupe"
     | "Avere-France"
-    | "Centre National du Livre";
+    | "Centre National du Livre"
+    | "Banque de France";
   /**
    * Le contact en cas de question, peut être un lien vers le formulaire, un mail ou une url.
    */
@@ -291,4 +292,5 @@ export type Operators =
   | "Agence de Tourisme de la Corse"
   | "Région Guadeloupe"
   | "Avere-France"
-  | "Centre National du Livre";
+  | "Centre National du Livre"
+  | "Banque de France";

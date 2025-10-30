@@ -37,6 +37,8 @@ jobs:
           echo "DB_NAME=${{ secrets.DB_NAME }}" >> $ENV_PATH
           echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" >> $ENV_PATH
           echo "DB_PORT=${{ secrets.DB_PORT }}" >> $ENV_PATH
+          echo "ETL_TEST=${{ secrets.ETL_TEST }}" >> $ENV_PATH
+          echo "BASEROW_TOKEN=${{ secrets.BASEROW_TOKEN }}" >> $ENV_PATH
 
       - run: npx nx run @tee/etl:build-docker
       - run: npx nx run @tee/etl:update-database-ci
