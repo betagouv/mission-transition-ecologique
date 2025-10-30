@@ -86,7 +86,6 @@ export type Dispositif = {
    */
   "opérateur de contact":
     | "ADEME"
-    | "ASP"
     | "Agence de l'Eau Loire-Bretagne"
     | "Agence de l'Eau Rhône-Méditerranée-Corse"
     | "Agence de l'Eau"
@@ -123,7 +122,6 @@ export type Dispositif = {
     | "Office français de la biodiversité"
     | "Région Bourgogne-Franche-Comté"
     | "Région Auvergne-Rhône-Alpes"
-    | "Association pour la transition Bas Carbone"
     | "Région Nouvelle-Aquitaine"
     | "Agence de Développement Economique de Corse"
     | "Agence de Tourisme de la Corse"
@@ -198,6 +196,12 @@ export type Dispositif = {
     [k: string]: unknown;
   };
   /**
+   * Données d'éligibilite du programme. Sous format codifié pour traitements automatiques
+   */
+  eligibilityData?: {
+    [k: string]: unknown;
+  };
+  /**
    * Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.
    */
   publicodes: {
@@ -249,7 +253,6 @@ export type Dispositif = {
 );
 export type Operators =
   | "ADEME"
-  | "ASP"
   | "Agence de l'Eau Loire-Bretagne"
   | "Agence de l'Eau Rhône-Méditerranée-Corse"
   | "Agence de l'Eau"
@@ -286,7 +289,6 @@ export type Operators =
   | "Office français de la biodiversité"
   | "Région Bourgogne-Franche-Comté"
   | "Région Auvergne-Rhône-Alpes"
-  | "Association pour la transition Bas Carbone"
   | "Région Nouvelle-Aquitaine"
   | "Agence de Développement Economique de Corse"
   | "Agence de Tourisme de la Corse"

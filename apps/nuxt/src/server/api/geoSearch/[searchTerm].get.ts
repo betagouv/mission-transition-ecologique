@@ -1,6 +1,7 @@
 import { defineEventHandler, H3Event } from 'h3'
 import { Monitor, GeoSearchService } from '@tee/backend-ddd'
 import { z } from 'zod'
+import { CacheKeyBuilder } from '~/server/utils/CacheKeyBuilder'
 
 const geoSearchTermSchema = z.object({
   searchTerm: z.string()
@@ -29,7 +30,7 @@ const geoSearchCached = cachedFunction(
   },
   {
     name: 'geosearch',
-    getKey: (event: H3Event, searchTerm: string) => CacheKeyBuilder.formEvent(event, searchTerm),
-    maxAge: 60 * 60 * 24 // 24 hours
+    getKey: (event: H3Event, searchTerm: string) => CacheKeyBuilder.fromEvent(event, searchTerm),
+    maxAge: CacheKeyBuilder.MAX_AGE
   }
 )

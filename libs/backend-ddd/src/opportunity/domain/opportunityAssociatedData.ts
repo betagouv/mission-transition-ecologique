@@ -1,4 +1,4 @@
-import { OpportunityType } from '@tee/common'
+import { OpportunityType, ThemeId } from '@tee/common'
 import { ProgramType, ProjectType } from '@tee/data'
 import { CustomProject, OpportunityObjectDetails } from './types'
 
@@ -20,15 +20,17 @@ export class OpportunityAssociatedData {
     return this._opportunityType === OpportunityType.CustomProject
   }
 
-  private _hasSlug(): boolean {
-    return this._isDefined() && 'slug' in this.data
-  }
+  public getThemeId(): ThemeId | undefined {
+    if (this.isProgram()) {
+      if (this.data.eligibilityData.priorityObjectives?.length === 1) {
+        return this.data.eligibilityData.priorityObjectives[0]
+      }
+    }
 
-  private _hasTitre(): boolean {
-    return this._isDefined() && 'titre' in this.data
-  }
+    if (this.isProject()) {
+      return this.data.mainTheme
+    }
 
-  private _isDefined(): boolean {
-    return this.data !== undefined
+    return undefined
   }
 }

@@ -6,12 +6,6 @@
     ]
   },
   {
-    "operator": "ASP",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
     "operator": "Agence de l'Eau Loire-Bretagne",
     "filterCategories": [
       "Agence de l'eau"
@@ -218,12 +212,6 @@
     "operator": "Région Auvergne-Rhône-Alpes",
     "filterCategories": [
       "Régions"
-    ]
-  },
-  {
-    "operator": "Association pour la transition Bas Carbone",
-    "filterCategories": [
-      "Opérateurs nationaux"
     ]
   },
   {

@@ -1,6 +1,7 @@
 import { defineEventHandler, H3Event } from 'h3'
 import { EstablishmentService, Monitor, EstablishmentNotFoundError } from '@tee/backend-ddd'
 import { z } from 'zod'
+import { CacheKeyBuilder } from '~/server/utils/CacheKeyBuilder'
 
 const routeParamsSchema = z.object({
   query: z.string()
@@ -39,7 +40,7 @@ const establishmentCached = cachedFunction(
   },
   {
     name: 'establishment',
-    getKey: (event: H3Event, query: string, count: number) => CacheKeyBuilder.formEvent(event, `${query}-${count}`),
-    maxAge: 60 * 60 * 24 // 24 hours
+    getKey: (event: H3Event, query: string, count: number) => CacheKeyBuilder.fromEvent(event, `${query}-${count}`),
+    maxAge: CacheKeyBuilder.MAX_AGE
   }
 )

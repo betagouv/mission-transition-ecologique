@@ -1,13 +1,12 @@
 import { QuestionnaireData } from '@tee/common'
 import { Entry, setObjectProperty } from '../../src/common/objects'
 import { type ProgramType } from '@tee/data'
-import { makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
-import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
+import { makeProgramHelper, makeProgramsRepository } from './testing'
 import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { PublicodesService } from '../../src/program/infrastructure/publicodesService'
 
-const makeProgram = (rules: object) => makeProgramHelper({ rules: { ...{ [FILTERING_RULE_NAME]: { valeur: 'oui' } }, ...rules } })
+const makeProgram = (rules: object) => makeProgramHelper({ rules: { ...{ ['entreprise . est ciblée']: { valeur: 'oui' } }, ...rules } })
 
 enum DataSources {
   Questionnaire,
@@ -35,6 +34,7 @@ type PreprocessingTestCase = (QuestionnaireInputProperty | ProgramInputProperty 
   publicodesKey: string
   filteringRule: string | { [k: string]: unknown }
   expectedKeep: boolean
+  currentDate?: string
 }
 
 /** tests that input data for the filtering (either from the questionnaire or from the program), is correctly translated into publicodes by
@@ -56,14 +56,20 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
 
     const program = makeProgram({
       ...publicodesInterface,
-      [FILTERING_RULE_NAME]: fileringRule
+      ['entreprise . est ciblée']: fileringRule
     })
 
     const questionnaireData: QuestionnaireData = {
       region: 'Corse',
       codeNAF1: 'J'
     }
-    let testCurrentDateService = mockCurrentDateService // by default
+
+    if (testCase.currentDate) {
+      vi.useFakeTimers()
+      const [day, month, year] = testCase.currentDate.split('/').map((part) => parseInt(part, 10))
+      const testDate = new Date(year, month - 1, day)
+      vi.setSystemTime(testDate)
+    }
 
     // Set input data depending on data source
     if (
@@ -82,22 +88,18 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
       }
     }
 
-    if (testCase.inputDataSource === DataSources.CurrentDateService) {
-      testCurrentDateService = { get: () => testCase.currentDate }
-    }
-
     const programs = [program]
     PublicodesService.init(programs)
-    const result = new ProgramFeatures(
-      makeProgramsRepository(programs),
-      testCurrentDateService,
-      PublicodesService.getInstance()
-    ).getFilteredBy(questionnaireData)
+    const result = new ProgramFeatures(makeProgramsRepository(programs), PublicodesService.getInstance()).getFilteredBy(questionnaireData)
 
     expectToBeOk(result)
 
     const expectedLength = expectedKeep ? 1 : 0
     expect(result.value).toHaveLength(expectedLength)
+
+    if (testCase.currentDate) {
+      vi.useRealTimers()
+    }
   })
 }
 
@@ -240,7 +242,7 @@ describe(`
    AND a program with a rule using "date du jour"
   WHEN evaluating this rule
 EXPECT the program to be kept or filtered out as expected`, () => {
-  const testCurrentDate = (currentDate: string, keptDate: string, expectedKeep: boolean) => {
+  const testCurrentDate = (currentDate: Date, keptDate: string, expectedKeep: boolean) => {
     //   `date du jour = ${keptDate}` ne fonctionne pas comme attendu
     // cf https://github.com/publicodes/publicodes/issues/430
     // Contournement:
@@ -249,8 +251,8 @@ EXPECT the program to be kept or filtered out as expected`, () => {
     }
 
     testHelperPreprocessing({
-      title: `current date is mapped to "date du jour" (current date ${currentDate}, keep if equal to ${keptDate})`,
-      currentDate: currentDate,
+      title: `current date is mapped to "date du jour" (current date ${currentDate.toLocaleDateString('fr-FR')}, keep if equal to ${keptDate})`,
+      currentDate: currentDate.toLocaleDateString('fr-FR'),
       inputDataSource: DataSources.CurrentDateService,
       publicodesKey: 'date du jour',
       filteringRule: rule,
@@ -258,6 +260,6 @@ EXPECT the program to be kept or filtered out as expected`, () => {
     })
   }
 
-  testCurrentDate('31/12/2023', '31/12/2023', true)
-  testCurrentDate('01/12/2023', '31/12/2023', false)
+  testCurrentDate(new Date(2023, 11, 31), '31/12/2023', true)
+  testCurrentDate(new Date(2023, 11, 1), '31/12/2023', false)
 })

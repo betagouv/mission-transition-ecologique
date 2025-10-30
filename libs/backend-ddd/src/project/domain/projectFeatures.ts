@@ -3,17 +3,11 @@ import { ProjectType } from '@tee/data'
 import { ProjectEligibilityInterface, ProjectRepository, ProjectSorterInterface } from './spi'
 
 export default class ProjectFeatures {
-  private readonly _projectEligibility: ProjectEligibilityInterface
-  private readonly _projectSorter: ProjectSorterInterface
-
   constructor(
     private readonly _projectRepository: ProjectRepository,
-    projectEligibility: ProjectEligibilityInterface,
-    projectSorter: ProjectSorterInterface
-  ) {
-    this._projectEligibility = projectEligibility
-    this._projectSorter = projectSorter
-  }
+    private readonly _projectEligibility: ProjectEligibilityInterface,
+    private readonly _projectSorter: ProjectSorterInterface
+  ) {}
 
   public getById(id: number): ProjectType | undefined {
     return this._projectRepository.getOneById(id)

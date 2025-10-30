@@ -203,6 +203,10 @@
         "nombre d'années d'activité"
       ]
     },
+    "eligibilityData": {
+      "description": "Données d'éligibilite du programme. Sous format codifié pour traitements automatiques",
+      "type": "object"
+    },
     "publicodes": {
       "description": "Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.",
       "type": "object",
@@ -335,7 +339,6 @@
     "operators": {
       "enum": [
         "ADEME",
-        "ASP",
         "Agence de l'Eau Loire-Bretagne",
         "Agence de l'Eau Rhône-Méditerranée-Corse",
         "Agence de l'Eau",
@@ -372,7 +375,6 @@
         "Office français de la biodiversité",
         "Région Bourgogne-Franche-Comté",
         "Région Auvergne-Rhône-Alpes",
-        "Association pour la transition Bas Carbone",
         "Région Nouvelle-Aquitaine",
         "Agence de Développement Economique de Corse",
         "Agence de Tourisme de la Corse",

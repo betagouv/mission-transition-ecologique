@@ -12,6 +12,13 @@
         "lint",
         "test"
       ]
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/backend-ddd",
+        "command": "npx vitest run"
+      }
     }
   }
 }

@@ -1,6 +1,7 @@
 import { Monitor, ProgramService } from '@tee/backend-ddd'
 import { QuestionnaireData, serverQuestionnaireDataSchema } from '@tee/common'
 import { defineEventHandler, H3Event } from 'h3'
+import { CacheKeyBuilder } from '~/server/utils/CacheKeyBuilder'
 
 export default defineEventHandler(async (event) => {
   const questionnaireData = await getValidatedQuery(event, serverQuestionnaireDataSchema.parse)
@@ -26,8 +27,8 @@ const programsCached = cachedFunction(
   {
     name: 'programs',
     getKey: (event: H3Event) => {
-      return CacheKeyBuilder.formEvent(event)
+      return CacheKeyBuilder.fromEvent(event)
     },
-    maxAge: 60 * 60 * 24 // 24 hours
+    maxAge: CacheKeyBuilder.MAX_AGE
   }
 )

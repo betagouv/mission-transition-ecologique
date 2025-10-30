@@ -1,24 +1,24 @@
 import { YamlObjective } from '../types/domain'
-import { CoreGenerator } from './coreGenerator'
+import { ProgramDto } from './programDto'
 import { validateObjectiveLink } from './linksValidator'
 import { LinkValidator } from '../../common/validators/linkValidator'
 import { LogLevel } from '../../common/logger/types'
 import z from 'zod'
 
-export async function setObjectives(generator: CoreGenerator) {
+export async function setObjectives(generator: ProgramDto) {
   const objectifs: YamlObjective[] = []
 
   for (let i = 1; i <= 6; i++) {
-    const step = generator.program[`étape${i}` as keyof typeof generator.program] as string
+    const step = generator.rawProgram[`étape${i}` as keyof typeof generator.rawProgram] as string
     if (step) {
       objectifs.push(await parseStep(step, i, generator))
     }
   }
-  generator.yamlContent['objectifs'] = objectifs
+  generator.programData['objectifs'] = objectifs
   return
 }
 
-async function parseStep(step: string, stepId: number, generator: CoreGenerator): Promise<YamlObjective> {
+async function parseStep(step: string, stepId: number, generator: ProgramDto): Promise<YamlObjective> {
   const lines = step.split('\n')
   const description = lines[0].substring(2)
   await LinkValidator.logInvalidLinks(
@@ -26,8 +26,8 @@ async function parseStep(step: string, stepId: number, generator: CoreGenerator)
     generator.logger,
     LogLevel.Minor,
     `"Objectif ${stepId}"`,
-    generator.program['Id fiche dispositif'],
-    generator.program.id
+    generator.rawProgram['Id fiche dispositif'],
+    generator.rawProgram.id
   )
 
   const liens = lines

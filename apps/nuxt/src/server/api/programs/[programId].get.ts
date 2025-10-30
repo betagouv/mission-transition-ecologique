@@ -2,6 +2,7 @@ import { QuestionnaireData, serverQuestionnaireDataSchema } from '@tee/common'
 import { defineEventHandler, H3Event } from 'h3'
 import { ProgramNotFoundError, ProgramService } from '@tee/backend-ddd'
 import { z } from 'zod'
+import { CacheKeyBuilder } from '~/server/utils/CacheKeyBuilder'
 
 const programIdSchema = z.object({
   programId: z.string()
@@ -43,7 +44,7 @@ const programCached = cachedFunction(
   },
   {
     name: 'program',
-    getKey: (event: H3Event, programId: string) => CacheKeyBuilder.formEvent(event, programId),
-    maxAge: 60 * 60 * 24 // 24 hours
+    getKey: (event: H3Event, programId: string) => CacheKeyBuilder.fromEvent(event, programId),
+    maxAge: CacheKeyBuilder.MAX_AGE
   }
 )

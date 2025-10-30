@@ -12,7 +12,7 @@ vi.mock('../../src/common/baserow/programBaserow', () => {
     }))
   }
 })
-import { MailManager } from '../../src/program/mailManager'
+import { MailManager } from '../../src/program/services/mailManager'
 import { mailManagerTestCases } from './mailManager.fixture'
 import { makeMockProgram } from '../mockData/mockProgram.factory'
 import { ProgramBaserow } from '../../src/common/baserow/programBaserow'
