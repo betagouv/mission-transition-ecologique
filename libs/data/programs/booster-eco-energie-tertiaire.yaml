@@ -2,18 +2,16 @@ titre: Booster Entreprises
 promesse: Bénéficiez d'un accompagnement pour la rénovation énergétique de vos bâtiments
 description: >-
   Vous avez des bâtiments tertiaires et souhaitez réduire vos consommations
-  d’énergie ? L’ADEME peut financer votre **audit énergétique** pour définir un
-  plan d’action et de financement. Elle soutient aussi l’**ingénierie des
-  travaux**, qu’il s’agisse d’une mission de **maîtrise d’œuvre** pour la
-  rénovation énergétique ou d’une **mission d’assistance à maîtrise d’ouvrage**
-  (AMO) pour un Contrat de Performance Énergétique (CPE).
+  d’énergie ? L’ADEME peut financer l’**ingénierie des travaux**, qu’il s’agisse
+  d’une mission de **maîtrise d’œuvre** pour la rénovation énergétique ou d’une
+  **mission d’assistance à maîtrise d’ouvrage** (AMO) pour un Contrat de
+  Performance Énergétique (CPE).
 description longue: >-
   • Votre entreprise dispose de bâtiments de moins de 1 000 m² à usage tertiaire
   ? \
 
-  Le financement "Booster Entreprises" offre un soutien pour réaliser un audit
-  énergétique, un plan d'action sur 2 ans et l'ingénierie pour la réalisation de
-  vos travaux d'économie d'énergie.
+  Le financement "Booster Entreprises" offre un soutien pour réaliser vos
+  travaux d'économie d'énergie.
 
 
   • Votre entreprise dispose de bâtiments de 1 000 m², et plus, à usage
@@ -34,8 +32,8 @@ opérateur de contact: ADEME
 contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000744
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/booster-entreprises-reduire-facture-energetique-gagner-valeur-verte
-nature de l'aide: étude
-montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
+nature de l'aide: financement
+montant du financement: Jusqu'à 80% du coût des travaux, dans un maximum de 100 000 €
 objectifs:
   - description: >-
       Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
@@ -55,7 +53,7 @@ objectifs:
   - description: >-
       Déposez votre demande d'aide auprès de l'ADEME : informations
       administratives, description du projet, rapport d'audit énergétique,
-      détails techniques et financiers, etc. A ce stade, votre audit ou missions
+      détails techniques et financiers, etc. À ce stade, vos missions
       d'ingénierie ne doivent pas avoir commencé !
     liens:
       - lien: >-
