@@ -14,8 +14,8 @@ export class JsonGenerator {
   private readonly outputDir = path.join(this.__dirname, OUTPUT_FOLDER_PATH)
 
   async export(programs: ProgramStaticBaseType[]): Promise<void> {
-    const enrichedPrograms = this.prependPublicodesInterface(programs)
-    this.writeFile(enrichedPrograms)
+    const enrichedPrograms = await this.prependPublicodesInterface(programs)
+    await this.writeFile(enrichedPrograms)
     console.log('🖊️  Program Json successfully written')
   }
 
@@ -31,6 +31,7 @@ export class JsonGenerator {
   }
 
   async writeFile(programs: unknown) {
+    console.log(programs)
     const dataAsJson = JSON.stringify(programs, null, 2)
     FileManager.createFolderIfNotExists(this.outputDir)
     const dataOutPath = path.join(this.outputDir, OUTPUT_FILENAME)
