@@ -14,9 +14,7 @@ test('Data is valid against the JSON schema', () => {
   const validate = compileSchema(programSchema)
   const programs = jsonPrograms as unknown as ProgramType[]
 
-  const program = programs.slice(1, 2) // TODO remove
-  console.log(program)
-  program.forEach((p) => {
+  programs.forEach((p) => {
     const { id: id, ...programWithoutId } = p
     testDataAgainstSchema(programWithoutId, `Data for the program with id ${id}`, validate)
   })

@@ -1,6 +1,7 @@
 import { EligibilityData } from '../types/shared'
 import { ProgramDto } from './programDto'
 import { LogLevel } from '../../common/logger/types'
+import { SectorKeys } from '../../common/baserow/types'
 
 export class EligibilityDto {
   private eligibility!: EligibilityData
@@ -43,43 +44,20 @@ export class EligibilityDto {
   }
 
   private setLegalCategory() {
-    if (this.generator.rawProgram.microEntrepreneur != 'oui') {
+    if (this.generator.rawProgram.microEntrepreneur.toLowerCase() != 'oui') {
       this.eligibility.company.excludeMicroentrepreneur = true
     }
   }
 
   private _setSector() {
     const program = this.generator.rawProgram
-    const secteurs = [
-      'AAgriculture, sylviculture et pêche',
-      'BIndustries extractives',
-      'CIndustrie manufacturière',
-      "DProduction et distribution d'électricité, de gaz, de vapeur et d'air conditionné",
-      "EProduction et distribution d'eau, assainissement, gestion des déchets et dépollution",
-      'FConstruction',
-      "GCommerce, réparation d'automobiles et de motocycles",
-      'HTransports et entreposage',
-      'IHébergement et restauration',
-      'JInformation et communication',
-      "KActivités financières et d'assurance",
-      'LActivités immobilières',
-      'MActivités spécialisées, scientifiques et techniques',
-      'NActivités de services administratifs et de soutien',
-      'OAdministration publique',
-      'PEnseignement',
-      'QSanté humaine et action sociale',
-      'RArts, spectacles et activités récréatives',
-      'SAutres activités de services',
-      "TActivités des ménages en tant qu'employeurs, activités indifférenciées des ménages en tant que producteurs de biens et services pour usage propre",
-      'UActivités extra-territoriales'
-    ]
-
     const allowedNaf: string[] = []
-    secteurs.forEach((sector) => {
+
+    for (const [sector, code] of Object.entries(SectorKeys)) {
       if (program[sector as keyof typeof program]) {
-        allowedNaf.push(sector[0])
+        allowedNaf.push(code)
       }
-    })
+    }
 
     if (allowedNaf.length > 0) {
       this.eligibility.company.allowedNafSections = allowedNaf

@@ -1,4 +1,4 @@
-import { ThemeId } from '@tee/common'
+import { Objective, ThemeId } from '@tee/common'
 import { Publicodes } from '../types/domain'
 import { EligibilityData } from '../types/shared'
 
@@ -74,7 +74,6 @@ export class PublicodesGenerator {
     return publicodes
   }
 
-  // --- Effectif ---
   private _generateEffectifConditions() {
     const { minEmployees, maxEmployees } = this._eligibility.company
     if (minEmployees || maxEmployees) {
@@ -90,7 +89,6 @@ export class PublicodesGenerator {
     return null
   }
 
-  // --- Categorie légale ---
   private _generateLegalTypeCondition() {
     if (this._eligibility.company.excludeMicroentrepreneur) {
       return { [Publicodes.ALL]: ['microentrepreneur = non'] }
@@ -98,25 +96,22 @@ export class PublicodesGenerator {
     return null
   }
 
-  // --- Secteur ---
   private _generateSectorConditions() {
     const naf = this._eligibility.company.allowedNafSections
     if (naf && naf.length) {
-      return { 'une de ces conditions': naf.map((c) => `code NAF niveau 1 . est ${c}`) }
+      return { 'une de ces conditions': naf.map((code) => `code NAF niveau 1 . est ${code}`) }
     }
     return null
   }
 
-  // --- Zone géographique ---
   private _generateGeographicConditions() {
     const regions = this._eligibility.company.allowedRegion
     if (regions && regions.length) {
-      return { [Publicodes.ANY]: regions.sort((a, b) => a.localeCompare(b, 'fr-FR')).map((r) => `région = ${r}`) }
+      return { [Publicodes.ANY]: regions.sort((a, b) => a.localeCompare(b, 'fr-FR')).map((region) => `région = ${region}`) }
     }
     return null
   }
 
-  // --- Objectifs ---
   private _generateObjectifConditions() {
     const objectives = this._eligibility.priorityObjectives
     if (!objectives || objectives.length === 0) {
@@ -124,21 +119,21 @@ export class PublicodesGenerator {
     }
 
     const themeToPublicodesMapping = {
-      [ThemeId.Building]: 'est rénover mon bâtiment',
-      [ThemeId.Mobility]: 'est la mobilité durable',
-      [ThemeId.Waste]: 'est la gestion des déchets',
-      [ThemeId.Water]: "est diminuer ma consommation d'eau",
-      [ThemeId.Energy]: 'est ma performance énergétique',
-      [ThemeId.RH]: 'est former ou recruter',
-      [ThemeId.Environmental]: 'est mon impact environnemental',
-      [ThemeId.EcoDesign]: "est l'écoconception",
-      [ThemeId.Biodiversity]: 'est préserver la biodiversité'
+      [ThemeId.Building]: Objective.BuildingRenovation,
+      [ThemeId.Mobility]: Objective.SustainableMobility,
+      [ThemeId.Waste]: Objective.WasteManagement,
+      [ThemeId.Water]: Objective.WaterConsumption,
+      [ThemeId.Energy]: Objective.EnergyPerformance,
+      [ThemeId.RH]: Objective.TrainOrRecruit,
+      [ThemeId.Environmental]: Objective.EnvironmentalImpact,
+      [ThemeId.EcoDesign]: Objective.EcoDesign,
+      [ThemeId.Biodiversity]: Objective.Biodiversity
     }
 
     const mapped = objectives
-      .map((t) => themeToPublicodesMapping[t as ThemeId])
+      .map((theme) => themeToPublicodesMapping[theme as ThemeId])
       .filter(Boolean)
-      .map((label) => 'questionnaire . objectif prioritaire . ' + label)
+      .map((objective) => 'questionnaire . objectif prioritaire . est ' + objective)
 
     if (mapped.length > 0) {
       return { [Publicodes.ANY]: mapped }

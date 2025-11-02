@@ -31,7 +31,6 @@ export class JsonGenerator {
   }
 
   async writeFile(programs: unknown) {
-    console.log(programs)
     const dataAsJson = JSON.stringify(programs, null, 2)
     FileManager.createFolderIfNotExists(this.outputDir)
     const dataOutPath = path.join(this.outputDir, OUTPUT_FILENAME)
