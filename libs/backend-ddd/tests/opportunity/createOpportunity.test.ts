@@ -60,11 +60,20 @@ const dummyDailyOpportunities = (): Promise<Result<OpportunityDetailsShort[], Er
   return Promise.resolve(Result.ok([]))
 }
 
+const dummyDailyOpportunitiesWithLimitReached = (): Promise<Result<OpportunityDetailsShort[], Error>> => {
+  return Promise.resolve(Result.ok([{} as OpportunityDetailsShort, {} as OpportunityDetailsShort]))
+}
+
 const dummyOpportunityRepository: OpportunityRepository = {
   create: dummyAddOpportunity,
   update: dummyUpdateOpportunity,
   readDates: dummyOpportunitiesDates,
   getDailyOpportunitiesByContactId: dummyDailyOpportunities
+}
+
+const dummyOpportunityRepositoryWithLimitReached: OpportunityRepository = {
+  ...dummyOpportunityRepository,
+  getDailyOpportunitiesByContactId: dummyDailyOpportunitiesWithLimitReached
 }
 
 const dummyProgramRepository: ProgramRepository = {
@@ -134,7 +143,7 @@ describe(`
  EXPECT a contact to be created or updated, and an opportunity to be created and emailReceipt sent`, () => {
   const createOpportunity = makeCreateOpportunity(
     dummyContactRepository,
-    dummyOpportunityRepository,
+    dummyOpportunityRepositoryWithLimitReached,
     new OpportunityHubFeatures([new PlaceDesEntreprisesMockWithReturnReceipt()])
   )
 
