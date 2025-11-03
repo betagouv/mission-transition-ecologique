@@ -1,18 +1,20 @@
+import { Logger } from '../../common/logger/logger'
+import { DataProgram } from '../types/domain'
 import { EligibilityData } from '../types/shared'
-import { ProgramDto } from './programDto'
 import { LogLevel } from '../../common/logger/types'
 import { SectorKeys } from '../../common/baserow/types'
 
 export class EligibilityDto {
-  private eligibility!: EligibilityData
-  private generator!: ProgramDto
+  private _eligibilityData: EligibilityData = {
+    company: { allowedNafSections: [] }
+  }
 
-  public setEligibility(generator: ProgramDto): EligibilityData {
-    this.generator = generator
-    this.eligibility = {
-      company: { allowedNafSections: [] }
-    }
+  constructor(
+    private _program: DataProgram,
+    private _logger: Logger
+  ) {}
 
+  public setEligibility(): EligibilityData {
     this.setPeriodValidity()
     this.setEmployees()
     this.setLegalCategory()
@@ -20,47 +22,44 @@ export class EligibilityDto {
     this._setGeographicArea()
     this._setObjectives()
 
-    return this.eligibility
+    return this._eligibilityData
   }
 
   private setPeriodValidity() {
-    const program = this.generator.rawProgram
-    if (program.DISPOSITIF_DATE_DEBUT || program.DISPOSITIF_DATE_FIN) {
-      this.eligibility.validity = {
-        start: program.DISPOSITIF_DATE_DEBUT || undefined,
-        end: program.DISPOSITIF_DATE_FIN || undefined
+    if (this._program.DISPOSITIF_DATE_DEBUT || this._program.DISPOSITIF_DATE_FIN) {
+      this._eligibilityData.validity = {
+        start: this._program.DISPOSITIF_DATE_DEBUT || undefined,
+        end: this._program.DISPOSITIF_DATE_FIN || undefined
       }
     }
   }
 
   private setEmployees() {
-    const program = this.generator.rawProgram
-    if (program.minEff && program.minEff != 0) {
-      this.eligibility.company.minEmployees = program.minEff
+    if (this._program.minEff && this._program.minEff != 0) {
+      this._eligibilityData.company.minEmployees = this._program.minEff
     }
-    if (program.maxEff) {
-      this.eligibility.company.maxEmployees = program.maxEff
+    if (this._program.maxEff) {
+      this._eligibilityData.company.maxEmployees = this._program.maxEff
     }
   }
 
   private setLegalCategory() {
-    if (this.generator.rawProgram.microEntrepreneur.toLowerCase() != 'oui') {
-      this.eligibility.company.excludeMicroentrepreneur = true
+    if (this._program.microEntrepreneur.toLowerCase() != 'oui') {
+      this._eligibilityData.company.excludeMicroentrepreneur = true
     }
   }
 
   private _setSector() {
-    const program = this.generator.rawProgram
     const allowedNaf: string[] = []
 
     for (const [sector, code] of Object.entries(SectorKeys)) {
-      if (program[sector as keyof typeof program]) {
+      if (this._program[sector as keyof typeof this._program]) {
         allowedNaf.push(code)
       }
     }
 
     if (allowedNaf.length > 0) {
-      this.eligibility.company.allowedNafSections = allowedNaf
+      this._eligibilityData.company.allowedNafSections = allowedNaf
     }
   }
 
@@ -76,8 +75,7 @@ export class EligibilityDto {
   }
 
   private _setGeographicArea() {
-    const program = this.generator.rawProgram
-    const coverage = program['Couverture géographique']?.Name
+    const coverage = this._program['Couverture géographique']?.Name
     if (!coverage || coverage === 'National') {
       return
     }
@@ -85,17 +83,17 @@ export class EligibilityDto {
     let regions: string[] = []
 
     if (coverage === 'Régional') {
-      regions = program['Zones géographiques'].map((z) => z.Name)
+      regions = this._program['Zones géographiques'].map((z) => z.Name)
     } else if (coverage === 'Départemental') {
-      const mapped = program['Zones géographiques'].map((z) => {
+      const mapped = this._program['Zones géographiques'].map((z) => {
         if (this._departToRegionMap[z.Name]) {
           return this._departToRegionMap[z.Name]
         }
-        this.generator.logger.log(
+        this._logger.log(
           LogLevel.Major,
           `Department ${z.Name} missing in departToRegionMap`,
-          program['Id fiche dispositif'],
-          program.id
+          this._program['Id fiche dispositif'],
+          this._program.id
         )
         return null
       })
@@ -103,18 +101,17 @@ export class EligibilityDto {
     }
 
     if (regions.length > 0) {
-      this.eligibility.company.allowedRegion = regions
+      this._eligibilityData.company.allowedRegion = regions
     }
   }
 
   private _setObjectives() {
-    const program = this.generator.rawProgram
-    const programThemes = program['Thèmes Ciblés']
+    const programThemes = this._program['Thèmes Ciblés']
     if (!programThemes || programThemes.length === 0) {
-      this.generator.logger.log(LogLevel.Major, `Dispositif sans thème`, program['Id fiche dispositif'], program.id)
+      this._logger.log(LogLevel.Major, `Dispositif sans thème`, this._program['Id fiche dispositif'], this._program.id)
       return
     }
 
-    this.eligibility.priorityObjectives = programThemes.map((theme) => theme['Nom (Tech)'])
+    this._eligibilityData.priorityObjectives = programThemes.map((theme) => theme['Nom (Tech)'])
   }
 }

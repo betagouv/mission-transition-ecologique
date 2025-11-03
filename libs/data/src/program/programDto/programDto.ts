@@ -67,7 +67,7 @@ export class ProgramDto {
     }
     await setObjectives(this)
     await setEligibilityTexts(this)
-    this.programData['eligibilityData'] = new EligibilityDto().setEligibility(this)
+    this.programData['eligibilityData'] = new EligibilityDto(this.rawProgram, this.logger).setEligibility()
     this.programData['publicodes'] = new PublicodesGenerator().generatePublicodes(this.programData['eligibilityData'] as EligibilityData)
     new ConditionalDataGenerator(this.rawProgram, this.logger).generate(this.programData)
     this.programData['id'] = this.rawProgram['Id fiche dispositif']
