@@ -7,9 +7,9 @@
         <strong>simplifier les démarches administratives liées à la transition écologique</strong>.
       </p>
       <p>
-        Inaugurée officiellement par Mme Olivia Grégoire, ministre déléguée chargée des Petites et moyennes entreprises, du Commerce, de
-        l’Artisanat et du Tourisme, Mme Agnès Pannier-Runacher, ministre de la Transition énergétique, et M. Christophe Béchu, ministre de
-        la Transition écologique et de la Cohésion des territoires, elle s’inscrit dans la volonté de
+        Inaugurée officiellement par Mme&nbsp;Olivia Grégoire, ministre déléguée chargée des Petites et moyennes entreprises, du Commerce,
+        de l’Artisanat et du Tourisme, Mme&nbsp;Agnès Pannier-Runacher, ministre de la Transition énergétique, et M.&nbsp;Christophe Béchu,
+        ministre de la Transition écologique et de la Cohésion des territoires, elle s’inscrit dans la volonté de
         <strong>rendre la transition plus accessible aux petites et moyennes entreprises</strong> sur tout le territoire.
       </p>
     </div>
@@ -24,10 +24,12 @@
   </section>
 </template>
 
-<style scoped>
+<script setup lang="ts" />
+
+<style scoped lang="scss">
 img {
   max-height: 22rem;
-  max-width:100%;
+  max-width: 100%;
   width: auto;
   height: auto;
   display: block;

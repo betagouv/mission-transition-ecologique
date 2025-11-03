@@ -34,12 +34,13 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { RouteName, Color } from '@/types'
 import { useRouter } from 'vue-router'
 import { ProjectManager } from '@/tools/project/projectManager'
 import ProjectFilter from '@/tools/project/projectFilter'
 import ProjectSorter from '@/tools/project/projectSorter'
+import { storeToRefs } from 'pinia'
 import { useProjectStore } from '@/stores/project'
 
 const router = useRouter()
@@ -51,14 +52,14 @@ onServerPrefetch(async () => {
   await new ProjectManager().getProjects()
 })
 
-onMounted(async () => {
-  if (!projects.value?.length) {
-    const manager = new ProjectManager()
-    await manager.getProjects()
-  }
+onNuxtReady(async () => {
+  await new ProjectManager().getProjects()
 })
 
 const { projects } = storeToRefs(useProjectStore())
 const filteredProjects = ProjectFilter.filterByHighlight(projects)
-const sortedProjects = computed(() => ProjectSorter.byHighlight(filteredProjects.value))
+const sortedProjects = computed(() => {
+  console.log(projects)
+  return ProjectSorter.byHighlight(filteredProjects.value)
+})
 </script>

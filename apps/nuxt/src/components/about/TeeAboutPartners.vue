@@ -53,8 +53,8 @@
     <div class="fr-col-12 fr-col-md-5 fr-pl-md-4w">
       <TeeNumberCard
         v-for="(card, index) in cards"
-        class="fr-my-2w"
         :key="index"
+        class="fr-my-2w"
         :number="card.number"
         :title="card.title"
         :color="card.color"
@@ -65,8 +65,8 @@
   </section>
 </template>
 
-<script setup>
-import { Color } from '@tee/common'
+<script setup lang="ts">
+import { Color } from '@/types'
 
 const cards = [
   {
@@ -78,7 +78,8 @@ const cards = [
   {
     number: '28',
     title: 'Partenaires publics',
-    description: "<div style='display:flex; align-items:center; gap:0.5rem;'><img src='/images/logos/logos-operators.png' alt='Logos de partenaires institutionnels de transition écologique des entreprises' style='max-width:90%;'/>...</div>",
+    description:
+      "<div style='display:flex; align-items:center; gap:0.5rem;'><img src='/images/logos/logos-operators.png' alt='Logos de partenaires institutionnels de transition écologique des entreprises' style='max-width:90%;'/>...</div>",
     color: Color.green
   },
   {
