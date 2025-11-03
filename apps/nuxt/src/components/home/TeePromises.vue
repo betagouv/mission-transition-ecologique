@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Image } from '@/tools/image'
-import { partners, otherPartner } from '@/tools/operator'
+import { partners, ConseillerEntreprisePartner } from '@/tools/operator'
 
 const img = Image.getUrl
 </script>
@@ -55,10 +55,15 @@ const img = Image.getUrl
         </p>
         <div class="fr-col-justify--center fr-grid-row fr-col-content--middle">
           <img
-            :key="otherPartner.label"
+            :key="ConseillerEntreprisePartner.label"
             class="fr-responsive-img fr-m-2v other-logo"
-            :src="img(otherPartner.img, { format: otherPartner.format ?? undefined, densities: 1, quality: 70, loading: 'lazy' })"
-            :alt="otherPartner.label"
+            :src="
+              img(ConseillerEntreprisePartner.img, {
+                densities: 'x1 x2',
+                loading: 'lazy'
+              })
+            "
+            :alt="ConseillerEntreprisePartner.label"
           />
         </div>
       </div>

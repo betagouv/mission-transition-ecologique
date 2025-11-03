@@ -4847,36 +4847,30 @@
     "id": "bonus-reparation"
   },
   {
-    "titre": "Booster Éco-Énergie Tertiaire",
+    "titre": "Booster Entreprises",
     "promesse": "Bénéficiez d'un accompagnement pour la rénovation énergétique de vos bâtiments",
-    "description": "Vous avez des bâtiments d'activités tertiaires et souhaitez réduire vos consommations d'énergie ? L’ADEME soutient financièrement le coût de **prestations d’audit** pour obtenir un plan d’action et un plan de financement, ainsi que l’**ingénierie de réalisation de travaux d'économie d'énergie.**",
-    "description longue": "• Votre entreprise dispose de bâtiments de moins de 1 000 m² à usage tertiaire ? \\\nLe financement \"Booster Entreprises Eco-Energie Tertiaire\" offre un soutien pour réaliser un audit énergétique, un plan d'action sur 2 ans et l'ingénierie pour la réalisation de vos travaux d'économie d'énergie.\n\n• Votre entreprise dispose de bâtiments de 1 000 m², et plus, à usage tertiaire ? \\\nLe dispositif \"Booster Entreprises Eco-Energie Tertiaire\" offre un soutien uniquement à la phase 3, à savoir l'ingénierie pour la mise en œuvre d'actions et de travaux permettant l’atteinte des exigences du Dispositif Eco Energie Tertiaire (DEET). Le DEET est une obligation réglementaire engageant les acteurs du tertiaire vers la sobriété énergétique. Issu du décret 2019?771 du 23 juillet 2019 dit « décret tertiaire », il impose une réduction progressive de la consommation d’énergie dans les bâtiments et parties de bâtiments de 1 000 m², et plus, à usage tertiaire afin de lutter contre le changement climatique.",
+    "description": "Vous avez des bâtiments tertiaires et souhaitez réduire vos consommations d’énergie ? L’ADEME peut financer l’**ingénierie des travaux**, qu’il s’agisse d’une mission de **maîtrise d’œuvre** pour la rénovation énergétique ou d’une **mission d’assistance à maîtrise d’ouvrage** (AMO) pour un Contrat de Performance Énergétique (CPE).",
+    "description longue": "• Votre entreprise dispose de bâtiments de moins de 1 000 m² à usage tertiaire ? \\\nLe financement \"Booster Entreprises\" offre un soutien pour réaliser vos travaux d'économie d'énergie.\n\n• Votre entreprise dispose de bâtiments de 1 000 m², et plus, à usage tertiaire ? \\\nLe dispositif \"Booster Entreprises\" offre un soutien uniquement à la phase 3, à savoir l'ingénierie pour la mise en œuvre d'actions et de travaux permettant l’atteinte des exigences du Dispositif Eco Energie Tertiaire (DEET). Le DEET est une obligation réglementaire engageant les acteurs du tertiaire vers la sobriété énergétique. Issu du décret 2019?771 du 23 juillet 2019 dit « décret tertiaire », il impose une réduction progressive de la consommation d’énergie dans les bâtiments et parties de bâtiments de 1 000 m², et plus, à usage tertiaire afin de lutter contre le changement climatique.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
     "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000744",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/booster-entreprises-reduire-facture-energetique-gagner-valeur-verte",
-    "nature de l'aide": "étude",
-    "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 80% du coût des travaux, dans un maximum de 100 000 €",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Booster%20Entreprises%20Eco-Energie%20Tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agir.ademe.fr/sites/default/files/Booster%20entreprises%20Eco%20Energie%20Tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
       },
       {
-        "description": "Identifiez le prestataire qui va vous accompagner pour réaliser l'audit énergétique et faites réaliser un devis."
-      },
-      {
-        "description": "Définissez la prestation nécessaire pour mettre en œuvre vos travaux : une mission de maîtrise d’œuvre rénovation énergétique / ou une mission d'assistance à maitrise d'ouvrage pour la mise en oeuvre d'un Contrat de Performance Énergétique (CPE)."
-      },
-      {
-        "description": "Choisissez les prestataires qui vous accompagneront pour vos missions d'ingénierie et faites réaliser des devis. Ces prestataires doivent répondre aux critères de qualification et compétences décrits dans les cahiers des charges de l'ADEME."
+        "description": "Choisissez des prestataires qualifiés pour l’audit énergétique, l’accompagnement et/ou les missions d’ingénierie. Leurs devis seront à joindre à votre dossier."
       },
       {
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
@@ -4888,7 +4882,7 @@
         ]
       },
       {
-        "description": "Déposez votre demande d'aide auprès de l'ADEME : informations administratives, description du projet, rapport d'audit énergétique, détails techniques et financiers, etc. A ce stade, votre audit ou missions d'ingénierie ne doivent pas avoir commencé !",
+        "description": "Déposez votre demande d'aide auprès de l'ADEME : informations administratives, description du projet, rapport d'audit énergétique, détails techniques et financiers, etc. À ce stade, vos missions d'ingénierie ne doivent pas avoir commencé !",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/booster-entreprises-reduire-facture-energetique-gagner-valeur-verte",
@@ -4903,7 +4897,7 @@
         "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
-        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Corse, Guadeloupe, Guyane, La Réunion, Martinique, Mayotte, Occitanie, Polynésie française"
+        "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
         "Secteur tertiaire"
@@ -5022,8 +5016,7 @@
         },
         "toutes ces conditions": [
           "a un effectif éligible",
-          "a une categorie legale eligible",
-          "entreprise . est dans une zone géographique éligible"
+          "a une categorie legale eligible"
         ]
       },
       "entreprise . a un effectif éligible": {
@@ -5060,21 +5053,6 @@
         "une de ces conditions": [
           "questionnaire . objectif prioritaire . est rénover mon bâtiment",
           "questionnaire . objectif prioritaire . est ma performance énergétique"
-        ]
-      },
-      "entreprise . est dans une zone géographique éligible": {
-        "une de ces conditions": [
-          "région = Auvergne-Rhône-Alpes",
-          "région = Bourgogne-Franche-Comté",
-          "région = Bretagne",
-          "région = Corse",
-          "région = Guadeloupe",
-          "région = Guyane",
-          "région = La Réunion",
-          "région = Martinique",
-          "région = Mayotte",
-          "région = Occitanie",
-          "région = Polynésie française"
         ]
       }
     },
@@ -22621,6 +22599,206 @@
       }
     },
     "id": "industries-vertes"
+  },
+  {
+    "titre": "Innovation et démonstration hydrogène",
+    "promesse": "Financez vos travaux liés à la production et au transport de l'hydrogène",
+    "description": "Cet appel à projets finance les travaux de développement d'un équipement, d'un produit ou d'un service, ou bien la réalisation d'un démonstrateur mettant en œuvre de l’hydrogène. Il peut s'agir de travaux de développement ou d'amélioration de systèmes liés à la production, au transport d’hydrogène ou à ses usages. Dans le cadre, par exemple, d'applications industrielles, ou de fourniture d'énergie.",
+    "description longue": "Les projets devront s’inscrire dans au moins un des quatre axes  :\n\n- Axe 1 - Briques technologiques : composants et systèmes innovants.\n- Axe 2 - Pilotes (ou premières commerciales) innovants industriels et réseaux, fourniture temporaire ou localisée d’énergie.\n- Axe 3 - Conception et démonstration de nouveaux véhicules.\n- Axe 4 - Écoconception et recyclabilité.",
+    "début de validité": "07/05/2025",
+    "fin de validité": "25/09/2026",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "ADEME",
+    "contact question": "mailto:aap.h2@ademe.fr",
+    "url": "https://agir.ademe.fr/aides-financieres/aap/innovation-et-demonstration-hydrogene",
+    "nature de l'aide": "financement",
+    "montant du financement": "Selon la nature du projet",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/aides-financieres/aap/innovation-et-demonstration-hydrogene",
+            "texte": "Critères d'éligibilité"
+          }
+        ]
+      },
+      {
+        "description": "Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au moins un mois avant la date limite de dépôt)."
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, étude de faisabilité, etc. À ce stade, votre investissement ne doit pas avoir été réalisé !",
+        "liens": [
+          {
+            "lien": "https://vosaides.ademe.fr/create-assistant?id_dispo=1ef2e56b-bc2a-6bec-9fb1-a934ba616ec6&id_liste=1ef2e56b-bc2c-6618-a560-a934ba616ec6&dossier_aide_type=INVES",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez vos investissements."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Fabrication d'hydrogène, industrie, transport et fourniture d'énergie"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Ce dispositif s'adresse aux entreprises seules ou en collaboration (5 partenaires au maximum), notamment avec des laboratoires de recherche (non obligatoire)."
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "a une categorie legale eligible"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      }
+    },
+    "id": "innovation-hydrogene"
   },
   {
     "titre": "Investissement \"bioGNV agricole et territorial\"",

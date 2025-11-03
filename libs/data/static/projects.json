@@ -6,7 +6,9 @@
     "nameTag": "🎯 plan d’action énergie",
     "shortDescription": "Il met en évidence vos postes d’énergie les plus consommateurs et les pistes de solutions.",
     "image": "/images/projet/plan-action-eco-energie.webp",
+    "titleLongDescription": "🤝 Qu’est-ce qu'un plan d'action économies d'énergie ?",
     "longDescription": "La réalisation d'un plan d'action énergie est un premier pas indispensable à la mise en place d'une stratégie énergétique au sein de votre entreprise.\n\nDes accompagnements vous aideront à identifier les postes énergivores au sein de votre entreprise, identifier des bonnes pratiques faciles à mettre en œuvre, et élaborer un plan d'action pour maîtriser durablement vos consommations. Ce plan d'action constitue souvent l'étape préalable indispensable à la mise en place d'un projet, pouvant aboutir à des études plus précises ou des investissements.",
+    "titleMoreDescription": "📚 Comment me documenter au mieux sur le plan d'action économies d'énergie ?",
     "moreDescription": "- [**Sobriété énergétique en entreprise,**](https://www.cci.fr/crise-energetique/entreprises-20-conseils-pour-faire-baisser-votre-facture-denergie) 20 conseils pour faire baisser votre facture d’énergie.",
     "themes": [
       "energy"
@@ -42,6 +44,8 @@
       "aide-investissement-librairie",
       "booster-transformation-rev-3"
     ],
+    "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action économies d'énergie",
+    "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action économies d'énergie",
     "linkedProjects": [
       31
     ],
@@ -74,6 +78,7 @@
       "T",
       "U"
     ],
+    "titleFaq": "☝️ Questions fréquentes sur le plan d'action économies d'énergie",
     "faqs": [
       {
         "id": 146,
@@ -451,7 +456,9 @@
     "nameTag": "🌱 bilan GES",
     "shortDescription": "Quantifier vos émissions de Gaz à effet de serre émise ou captée par les activités de votre entreprise.",
     "image": "/images/projet/bilan-ges.webp",
+    "titleLongDescription": "🤝 Qu’est-ce qu'un bilan de gaz à effet de serre ?",
     "longDescription": "Le bilan des émissions de gaz à effet de serre (GES) permet de comptabiliser les émissions de gaz à effet de serre générées, directement ou indirectement, par les activités d’une entreprise. Cette méthode est utilisée pour concevoir et mettre en place un plan de réduction des émissions à l’échelle d’une entreprise. \\\nLa grande majorité des bilans GES réalisés en France utilisent la méthode Bilan Carbone®, élaborée par l’ADEME. \\\nSi la loi oblige certaines à réaliser leur Bilan GES, toutes les entreprises peuvent réaliser un Bilan GES, même lorsqu’elles n’y sont pas contraintes. À la clé, de nombreux avantages : respect des enjeux RSE, économies d’énergie, anticipation des lois, marque employeur...",
+    "titleMoreDescription": "📚 Comment me documenter au mieux sur le bilan de gaz à effet de serre ?",
     "moreDescription": "- [**Guide** : tout comprendre, le changement climatique](https://librairie.ademe.fr/changement-climatique/7745-tout-comprendre-le-changement-climatique-9791029724589.html) Comment limiter la hausse des températures et limiter le changement climatique ?\n- [**La neutralité carbone**](https://librairie.ademe.fr/industrie-et-production-durable/4524-avis-de-l-ademe-la-neutralite-carbone.html) Des clés pour s’approprier ce sujet et adopter des gestes responsables\n- [**Réglementation bilan GES,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) Un portail pour connaitre les obligations de votre entreprise.\n- [**L'annuaire des prestataires Bilan Carbone®**](https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/)**,** par l'Association pour la transition Bas Carbone (ABC)\n- [**Bilans GES ADEME,**](https://bilans-ges.ademe.fr/) la plateforme nationale pour la publication des bilans d'émission de gaz à effet.",
     "themes": [
       "environmental"
@@ -474,6 +481,8 @@
       "bilan-carbone",
       "evaluation-carbone-lise"
     ],
+    "titleLinkedProjects": "🔍 Les prérequis pour réussir un bilan de gaz à effet de serre",
+    "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre bilan de gaz à effet de serre",
     "linkedProjects": [
       26,
       28,
@@ -509,6 +518,7 @@
       "T",
       "U"
     ],
+    "titleFaq": "☝️ Questions fréquentes sur le bilan de gaz à effet de serre",
     "metaTitle": "Bilan GES entreprise  - Bilan carbone ADEME",
     "metaDescription": "Quantifiez les émissions de gaz à effet de serre émises ou captées par les activités de votre entreprise avec la méthode Bilan Carbone® élaborée par l’ADEME.",
     "faqs": [
@@ -941,7 +951,6 @@
     "programs": [
       "audit-energetique-en-industrie",
       "baisse-les-watts",
-      "booster-eco-energie-tertiaire",
       "etude-performance-energetique-en-industrie",
       "diag-perf-immo",
       "mission-strategie-environnement",
@@ -1003,7 +1012,9 @@
     "nameTag": "🪟 isolation",
     "shortDescription": "L’isolation thermique permet de réduire les pertes de chaleur de vos locaux et de diminuer vos dépenses énergétiques.",
     "image": "/images/projet/isolation-thermique.webp",
+    "titleLongDescription": "🤝 Qu’est-ce que l'isolation thermique ?",
     "longDescription": "L’isolation thermique des bâtiments permet de garantir le confort en été comme en hiver en limitant le recours à la climatisation et au chauffage. Un logement mal isolé génère des pertes conséquentes de chaleur en hiver et de fraîcheur en été par le toit, les murs, les portes, les fenêtres et le sol.\\\nGrâce à des travaux d’isolation, vous diminuez vos factures d’énergie et améliorez votre confort tout au long de l’année.",
+    "titleMoreDescription": "📚 Comment me documenter au mieux sur l'isolation thermique ?",
     "moreDescription": "- [**Les exigences réglementaires pour les travaux de rénovation**](https://librairie.ademe.fr/ged/8069/fiche-exigences-reglementaires-renovation.pdf), une fiche pratique de l'ADEME.\n- [**Réduction de la consommation d'énergie dans les bâtiments à usage tertiaire**](https://entreprendre.service-public.fr/vosdroits/F38065), les obligations légales par Entreprendre.Service-Public.fr.\n- [**Quel est le meilleur isolant thermique pour une isolation efficace ?**](https://www.baisseleswatts.fr/actualites/equipement-energetique/quel-est-le-meilleur-isolant-thermique) un article proposé par Baisse les watts.\n- [**L'annuaire des professionnels RGE et des architectes,**](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte) trouver un professionnel RGE, compétent pour réaliser des travaux d'isolation thermique.",
     "themes": [
       "building",
@@ -1045,6 +1056,8 @@
       "aide-investissement-librairie",
       "booster-transformation-rev-3"
     ],
+    "titleLinkedProjects": "🔍 Les prérequis pour réussir l'isolation thermique de votre bâtiment",
+    "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de l'isolation thermique de votre bâtiment",
     "linkedProjects": [
       4,
       14
@@ -1076,9 +1089,31 @@
       "T",
       "U"
     ],
+    "titleFaq": "☝️ Questions fréquentes sur l'isolation thermique",
     "metaTitle": "Isolation thermique des entreprises - Rénovation énergétique",
     "metaDescription": "Faites isoler vos bâtiments pour limiter les pertes de chaleur et de fraîcheur. Une bonne isolation thermique réduit vos dépenses énergétiques.",
-    "faqs": []
+    "faqs": [
+      {
+        "id": 199,
+        "question": "Pourquoi faire de l’isolation thermique en entreprise ?",
+        "answer": "L’isolation thermique de vos bâtiments professionnels présente de nombreux avantages :\n\n- Parce qu’elle limite les pertes de chaleur en hiver et de conserve la fraîcheur en été, une bonne isolation vous permet d’**alléger vos factures énergétiques, de chauffage et de climatisation**.\n- Elle **améliore le confort des employés** et le bien-être au travail, en été comme en hiver.\n- Elle **réduit l’empreinte carbone** de votre entreprise.\n- Elle vous permet, à long terme, de **réduire les coûts de maintenance** et de réparation du bâtiment."
+      },
+      {
+        "id": 200,
+        "question": "Existe-t-il des obligations légales en matière d’isolation thermique ?",
+        "answer": "Dès lors que des travaux importants sont entrepris sur des **locaux de commerce**, des **bureaux** ou un **établissement hôtelier,** l’isolation thermique du bâtiment est obligatoire.\n\n\\\nIl peut s’agir :\n\n- Du **ravalement de façade** (sauf façade en pierre, torchis, bois, chaux), qui oblige du même coup une isolation du bâtiment par l’extérieur.\n- De **travaux d'aménagement** pour rendre des locaux habitables. L’isolation des parois opaques est alors obligatoire.\n- De **travaux de toiture** impliquant le remplacement ou le recouvrement d'au moins 50 % de la couverture. L’isolation du toit ou du plafond haut est requise.\n\nCes obligations légales ne s’appliquent pas à la Guadeloupe, la Guyane, la Martinique, La Réunion et Mayotte."
+      },
+      {
+        "id": 201,
+        "question": "Quels sont les endroits à isoler en priorité ?",
+        "answer": "Dans un bâtiment neuf ou existant, les endroits à isoler en priorité sont :\n\n- La **toiture ou le plafond haut**, c’est la première source de déperdition de chaleur). Il est possible de l’isoler par l’intérieur (combles) ou par l’extérieur (parking, toiture terrasse).\n- Les **murs extérieurs**, qu’il est possible d’isoler par l’extérieur ou par l’intérieur. Cette dernière solution est moins coûteuse mais fait perdre en superficie.\n- Les **huisseries** : **portes, vitrines, fenêtres**. Leur remplacement par du double ou du triple vitrage, de la menuiserie performante et l’ajout de stores ou de films thermiques permet d’améliorer considérablement le confort thermique.\n- Le **plancher bas**, qu’il est possible d’isoler par le dessous (sous dalle) ou au sol (plancher isolant ou chauffant).\n- Les **ponts thermiques et les infiltrations d’air**, qui surviennent généralement à l'intersection de deux parois. Pour y faire face, le renforcement des joints des portes et des fenêtres, l’étanchéité des passages de câbles, des gaines et des trappes techniques, et l’installation d’une ventilation mécanique contrôlée (VMC) constituent des solutions efficaces."
+      },
+      {
+        "id": 232,
+        "question": "Quels travaux de rénovation viendront compléter l’isolation thermique ?",
+        "answer": "Isoler seul ne suffit pas. Pour réaliser d’importantes économies d’énergie, il est possible de coupler l’isolation énergétique du bâtiment avec d’autres travaux comme :\n\n- Le **remplacement du [système de chauffage](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/maitrise-besoins-chauffage)** par un système écologique et performant.\n- L’ajout d’un **système de ventilation efficace**, qui garantit un air sain sans perdre la chaleur. Une VMC double flux est une solution performante.\n- La [**modernisation de l’éclairage**](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/eclairage-led), afin de réduire la consommation électrique et d’améliorer le confort des employés.\n- L’installation d’**équipements à énergie renouvelable**, comme des [panneaux photovoltaïques](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/panneaux-solaires), un chauffe-eau solaire, une [pompe à chaleur](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/pac) hybride ou le [raccordement à un réseau de chaleur](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/reseau-chaleur)…"
+      }
+    ]
   },
   {
     "id": 16,
@@ -1087,7 +1122,9 @@
     "nameTag": "☄️ plan mobilité employeur",
     "shortDescription": "Un plan de mobilité est une démarche d’analyse et d’optimisation des déplacements générés par l’activité d’une entreprise.",
     "image": "/images/projet/plan-mobilite.webp",
+    "titleLongDescription": "🤝 Qu’est-ce qu'un plan d'action mobilité ?",
     "longDescription": "Le Plan de Mobilité Durable Employeur est une démarche stratégique visant à optimiser les déplacements liés à l'activité de votre entreprise pour diminuer vos émissions polluantes. \\\nLe plan repose sur une analyse des déplacements (professionnels, domicile-travail...) de vos différents usagers (équipe, clients, fournisseurs...) et propose un plan d'actions adaptées aux spécificités de votre site. Le Plan de Mobilité Durable Employeur s'inscrit dans un processus de changement : il influence les comportements des usagers, l’organisation de la structure (horaires de travail, activités du site, structuration du territoire) et favorise l’adoption de modes de transport plus durables.\n\nPour garantir son succès, le plan de mobilité nécessite l'implication de la direction, une communication régulière avec les usagers et une évaluation à 2-3 ans pour ajuster les actions en fonction de l'impact observé sur les comportements et les modes de transport utilisés.",
+    "titleMoreDescription": "📚 Comment me documenter au mieux sur le plan d'action mobilité ?",
     "moreDescription": "- [**Plan de mobilité employeur**](https://entreprendre.service-public.fr/vosdroits/F38002) : Quels objectifs ? Qui est concerné ? Par Entreprendre.Service-Public.fr\n- [**Changer de mobilité dans le cadre de ses trajets domicile-travail**,](https://agirpourlatransition.ademe.fr/particuliers/bureau/deplacements/trajets-domicile-travail-aussi-optez-mobilite-plus-durable) témoignages d'employés ayant fait le choix de mobilités actives.\n- [**Centre de ressources mobilité durable employeur**](https://employeursprocovoiturage.ademe.fr/centre-de-ressources-mobilite-durable-employeur/), des fiches pratiques pour réaliser un plan de mobilité en autonomie.\n- [**La mobilité de demain**](https://archives.qqf.fr/infographie/60/la-mobilite-de-demain), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.",
     "themes": [
       "mobility"
@@ -1108,6 +1145,8 @@
       "mobilipro",
       "booster-transformation-rev-3"
     ],
+    "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action mobilité",
+    "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action mobilité",
     "linkedProjects": [
       31
     ],
@@ -1139,6 +1178,7 @@
       "T",
       "U"
     ],
+    "titleFaq": "☝️ Questions fréquentes sur le plan de mobilité employeur",
     "faqs": [
       {
         "id": 155,
@@ -1360,7 +1400,9 @@
     "nameTag": "🎯 plan d’action eau",
     "shortDescription": "Il met en évidence vos postes de consommation d'eau les plus importants et les pistes de solutions.",
     "image": "/images/projet/plan-action-eau.webp",
+    "titleLongDescription": "🤝 Qu’est-ce qu'un plan d'action eau ?",
     "longDescription": "Raréfaction de l'eau, restriction des consommations, augmentation des coûts : maîtriser sa consommation d’eau est un enjeu essentiel pour les entreprises.\n\nComment agir au sein de votre entreprise pour poursuivre votre activité et faire des économies d’eau ?\n\nFaites-vous accompagner par un expert, et réalisez un diagnostic global de vos flux (énergie, déchets, eau...) ou une étude ciblée de votre consommation d'eau.",
+    "titleMoreDescription": "📚 Comment me documenter au mieux sur le plan d'action eau ?",
     "moreDescription": "- [**Eau secours, demain tous à sec**](https://www.qqf.fr/infographie/eau-secours-demain-tous-a-sec/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**10 conseils aux entreprises pour une sobriété en eau**](https://www.cci.fr/actualites/10-conseils-aux-entreprises-pour-une-sobriete-en-eau). Une fiche conseil proposée par la CCI, Chambre de Commerce et d’Industrie.",
     "themes": [
       "water"
@@ -1385,6 +1427,8 @@
       "aide-tourisme-guadeloupe",
       "booster-transformation-rev-3"
     ],
+    "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action eau",
+    "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action eau",
     "linkedProjects": [
       31
     ],
@@ -1415,6 +1459,7 @@
       "T",
       "U"
     ],
+    "titleFaq": "☝️ Questions fréquentes sur le plan d'action eau",
     "faqs": [
       {
         "id": 159,
@@ -1445,7 +1490,9 @@
     "nameTag": "🗑 plan d'action déchets",
     "shortDescription": "Améliorer la gestion de vos flux de déchets et limiter vos pertes de matières.",
     "image": "/images/projet/plan-action-dechets.webp",
+    "titleLongDescription": "🤝 Qu’est-ce qu'un plan d'action déchets ?",
     "longDescription": "Un diagnostic déchets est un excellent point de départ pour évaluer la production et gestion des déchets de votre entreprise et identifier un plan d’action pour les réduire à la source.\n\nVous pouvez vous faire accompagner par un expert pour faire le point sur vos usages, définir des objectifs de réduction et de gestion des déchets, et construire un plan d’action pour atteindre ces objectifs. Ce plan d'action est l'étape préalable indispensable à la mise en place d'un projet, pouvant aboutir à des études plus précises ou des investissements.",
+    "titleMoreDescription": "📚 Comment me documenter au mieux sur le plan d'action déchets ?",
     "moreDescription": "- [**Comment diminuer vos déchets plastiques** ](https://agirpourlatransition.ademe.fr/particuliers/maison/dechets/comment-diminuer-dechets-plastiques)**?** Tour d’horizon pour changer la donne.\n- [**Gestion des déchets de l'entreprise : ce qui doit être mis en place**](https://entreprendre.service-public.fr/vosdroits/F37825), par Entreprendre.Service-Public.fr.",
     "themes": [
       "waste"
@@ -1466,6 +1513,8 @@
       "aide-tpe-transition-na",
       "booster-transformation-rev-3"
     ],
+    "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action déchets",
+    "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action déchets",
     "linkedProjects": [
       31
     ],
@@ -1496,6 +1545,7 @@
       "T",
       "U"
     ],
+    "titleFaq": "☝️ Questions fréquentes sur le plan d'action déchets",
     "faqs": [
       {
         "id": 163,
@@ -1771,7 +1821,9 @@
     "nameTag": "👫 sensibilisation",
     "shortDescription": "Sensibiliser votre équipe sur les enjeux environnementaux de votre activité et sur les éco-gestes à mettre en place au quotidien.",
     "image": "/images/projet/sensibilisation-equipes.webp",
+    "titleLongDescription": "🤝 Qu’est-ce qu'une campagne de sensibilisation des équipes ?",
     "longDescription": "La sensibilisation à l'environnement en entreprise est indispensable pour une mobilisation globale face aux défis climatiques. Cela peut se traduire par des ateliers collaboratifs et formations sur une thématique environnementale, des retours d'apprentissage d'autres entreprises, ou des défis à relever sous la forme d'un jeu en équipe.\n\nLa participation active des équipes est clé pour que chacun se sente connecté aux objectifs durables de l'entreprise et motivé pour faire évoluer ses pratiques.",
+    "titleMoreDescription": "📚 Comment me documenter au mieux sur la sensibilisation des équipes ?",
     "moreDescription": "- [**Écoresponsable au bureau**](https://www.ecologie.gouv.fr/sites/default/files/documents/ecoresponsable_au_bureau-2.pdf), un guide de bonnes pratiques proposé par l'ADEME.\n- [**Sensibilisation aux écogestes,**](https://www.economie.gouv.fr/mission-innovation/les-actions-vertes/sensibilisation-aux-ecogestes) par l'équipe du BercyLab.",
     "themes": [
       "rh"
@@ -1796,6 +1848,8 @@
       "formation-communiquer-et-sensibiliser",
       "outils-pour-adaptation"
     ],
+    "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
+    "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
     "linkedProjects": [],
     "priority": {
       "default": 20,
@@ -1826,6 +1880,7 @@
       "T",
       "U"
     ],
+    "titleFaq": "☝️ Questions fréquentes sur la sensibilisation des équipes",
     "metaTitle": "Sensibilisation à l'environnement et à l'écologie en entreprise",
     "metaDescription": "Formez et mobilisez vos équipes autour des enjeux climatiques : ateliers, formations, défis... pour ancrer la transition écologique dans la culture de l’entreprise.",
     "faqs": [
@@ -1916,7 +1971,9 @@
     "nameTag": "🎓 formation",
     "shortDescription": "Réaliser des formations vous permet de monter en compétence sur des sujets de transition écologique.",
     "image": "/images/projet/formation.webp",
+    "titleLongDescription": "🤝 Qu’est-ce qu'une formation environnement ?",
     "longDescription": "Les formations peuvent permettre de faire monter en compétence les membres de votre équipe et d'adapter vos pratiques professionnelles aux exigences environnementales.\\\nLes opérateurs publics proposent un vaste choix de formations gratuites sur les thématiques de la transition écologique et énergétique. \\\nElles peuvent prendre la forme de formations encadrées en présentiel ou à distance pour s'adapter aux besoins et aux contraintes des apprenants (classe virtuelle en temps réel, e-learning en autonomie…).",
+    "titleMoreDescription": "📚 Comment me documenter au mieux sur les formations environnement ?",
     "moreDescription": "- [**Formation \"Climat : Tout comprendre, agir ensemble !\"**](https://librairie.ademe.fr/changement-climatique/6999-formation-climat-tout-comprendre-agir-ensemble-version-initiation.html) - version initiation, par l'ADEME.\n- [**Portail des Formations Environnement**](https://formations.ademe.fr/accueil.html) de l'ADEME.\n- [**Le catalogue des Formations sur la transition écologique et les enjeux RSE**](https://www.bpifrance-universite.fr/catalogue/recherche?t[]=37&t[]=38), par Bpifrance.",
     "themes": [
       "rh"
@@ -1945,6 +2002,8 @@
       "formation-communiquer-et-sensibiliser",
       "outils-pour-adaptation"
     ],
+    "titleLinkedProjects": "🔍 Les prérequis pour réussir une formation environnement",
+    "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre formation environnement",
     "linkedProjects": [
       26
     ],
@@ -1975,6 +2034,7 @@
       "T",
       "U"
     ],
+    "titleFaq": "☝️ Questions fréquentes sur les formations environnement",
     "metaTitle": "Formations à l'environnement et à l'écologie en entreprise",
     "metaDescription": "Découvrez les formations proposées par les opérateurs publics pour renforcer les compétences de vos équipes face aux enjeux environnementaux.",
     "faqs": [
@@ -2182,7 +2242,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "prit-hdf",
-      "camping-independant-bfc"
+      "camping-independant-bfc",
+      "indicateur-climat"
     ],
     "linkedProjects": [],
     "priority": {
@@ -2249,7 +2310,8 @@
       "decarb-ind-25",
       "prit-hdf",
       "booster-transformation-rev-3",
-      "act-evaluation"
+      "act-evaluation",
+      "indicateur-climat"
     ],
     "linkedProjects": [
       1
@@ -2292,7 +2354,9 @@
     "nameTag": "🌡 adaptation climat",
     "shortDescription": "Adapter la stratégie et les actions de votre entreprise pour faire face aux évolutions du climat.",
     "image": "/images/projet/plan-adaptation-climat.webp",
+    "titleLongDescription": "🤝 Qu’est-ce qu'un plan d'adaptation climat ?",
     "longDescription": "**Le plan d’adaptation au dérèglement climatique** est un accompagnement destiné à **évaluer la vulnérabilité** de votre entreprise face aux aléas climatiques déjà à l’œuvre : canicules, sécheresses, inondations, tempêtes, tensions sur les ressources…\n\nCet accompagnement vous aide à **bâtir une stratégie de résilience** adaptée à vos activités, à votre territoire et à vos contraintes opérationnelles. Vous identifiez les risques, prévenez les ruptures d’activité, sécurisez les conditions de travail, et **anticipez les coûts économiques et sociaux** liés aux perturbations climatiques.\n\nDans un contexte où les événements extrêmes se multiplient, adapter son entreprise n’est plus une option mais une nécessité.\n\n**L’adaptation vise à limiter les effets du changement climatique déjà en cours. Elle est complémentaire des actions d’atténuation**, qui visent à en réduire les causes (notamment les émissions de gaz à effet de serre). Ces deux démarches doivent être pensées ensemble pour une stratégie climatique cohérente et durable.",
+    "titleMoreDescription": "📚 Comment me documenter au mieux sur le plan d'adaptation climat ?",
     "moreDescription": "- [**Adaptation des entreprises au changement climatique : Agir maintenant !**](https://www.cci-paris-idf.fr/sites/default/files/2025-03/CCI_Adaptation-au-changement-climatique_fev-2025.pdf) Une étude des CCI de France.\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.\n- [**Canicule et santé au travail : prévenir les risques, protéger les équipes**](https://www.anact.fr/canicule-travail-prevention-risques)**,** tour d'horizon et conseils pratiques de l'ANACT",
     "themes": [
       "environmental"
@@ -2318,8 +2382,11 @@
       "fasep",
       "aide-investissement-librairie",
       "booster-transformation-rev-3",
-      "outils-pour-adaptation"
+      "outils-pour-adaptation",
+      "indicateur-climat"
     ],
+    "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'adaptation climat",
+    "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'adaptation climat",
     "linkedProjects": [
       26,
       144
@@ -2352,6 +2419,7 @@
       "T",
       "U"
     ],
+    "titleFaq": "☝️ Questions fréquentes sur le plan d'action climat",
     "faqs": [
       {
         "id": 172,
@@ -2410,7 +2478,8 @@
       "cap-transition-ecologique",
       "ecolabel",
       "aide-labellisation-corse",
-      "act-evaluation"
+      "act-evaluation",
+      "indicateur-climat"
     ],
     "linkedProjects": [
       31
@@ -2451,7 +2520,9 @@
     "nameTag": "🔁 écoconception",
     "shortDescription": "Réduire les impacts de votre produit ou service à toutes les étapes de son cycle de vie.",
     "image": "/images/projet/ecoconception.webp",
+    "titleLongDescription": "🤝 Qu’est-ce que l'écoconception ?",
     "longDescription": "La démarche d'écoconception (ou conception écologique) est une approche de développement des produits et services respectueuse de l'environnement.\n\nElle consiste à analyser l'ensemble du cycle de vie d'un produit ou d'un service pour identifier comment diminuer son impact environnemental : extraction des matières premières, fabrication, utilisation, rejet dans les milieux naturels en fin de vie, etc.\n\nUne approche d'écoconception est nécessaire pour se questionner sur la fin de vie de vos produits et réorienter judicieusement vos choix de conception. Cela peut passer par exemple par un choix de matières premières plus robustes pour allonger la durée de vie de vos produits, anticiper la réparation ou la revalorisation des matières.\n\nIl s'agit d'une démarche encouragée par la loi anti-gaspillage pour une économie circulaire (AGEC) pour permettre aux entreprises de faire évoluer leur modèle de production.",
+    "titleMoreDescription": "📚 Comment me documenter au mieux sur l'écoconception ?",
     "moreDescription": "- [**Comment mettre en pratique l’écoconception en entreprise**](https://economie-circulaire.ademe.fr/ecoconception), une page ressource proposée par l’ADEME.\n- [**Les lignes directrices à suivre pour la réalisation d’un diagnostic d’éco-conception**](https://librairie.ademe.fr/dechets-economie-circulaire/4169-lignes-directrices-diagnostic-ecoconception.html)**.**\n- [**Analyse du cycle de vie**](https://bigmedia.bpifrance.fr/nos-dossiers/analyse-du-cycle-de-vie-definition-objectifs-etapes-de-realisation) : définition, objectifs, étapes de réalisation.\n- [**Valorisez votre démarche d'écoconception avec l'Écolabel européen**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen)**.**",
     "themes": [
       "eco-design"
@@ -2491,6 +2562,8 @@
       "accelerateur-economie-circulaire",
       "booster-transformation-rev-3"
     ],
+    "titleLinkedProjects": "🔍 Les prérequis pour réussir une démarche d'écoconception",
+    "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité d'une démarche d'écoconception",
     "linkedProjects": [
       31
     ],
@@ -2520,6 +2593,7 @@
       "T",
       "U"
     ],
+    "titleFaq": "☝️ Questions fréquentes sur l'écoconception",
     "faqs": [
       {
         "id": 167,
@@ -3314,8 +3388,7 @@
     "programs": [
       "sud-pret-climat",
       "pret-energie-aura",
-      "pret-ile-de-france",
-      "cap-transition-ecologique"
+      "pret-ile-de-france"
     ],
     "linkedProjects": [
       20,
@@ -3605,7 +3678,6 @@
     "priority": {
       "default": 905,
       "A": 7,
-      "B": 4,
       "D": 1
     },
     "highlightPriority": null,
@@ -3799,7 +3871,20 @@
     ],
     "mainTheme": "waste",
     "programs": [
-      "cci-business-optimizer"
+      "aides-au-reemploi-des-emballages",
+      "fonds-tourisme-durable",
+      "ormat",
+      "tremplin",
+      "aide-financement-occitanie",
+      "ecoproduction-hdf",
+      "cedre-investissement",
+      "sud-pret-climat",
+      "charte-zero-dechet-plastique",
+      "pret-energie-aura",
+      "pret-ile-de-france",
+      "cap-transition-ecologique",
+      "aide-tpe-transition-na",
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       21
@@ -3991,7 +4076,6 @@
     ],
     "priority": {
       "default": 880,
-      "B": 2,
       "H": 6
     },
     "highlightPriority": null,
@@ -4309,7 +4393,6 @@
     "linkedProjects": [],
     "priority": {
       "default": 750,
-      "B": 1,
       "H": 1
     },
     "highlightPriority": null,
@@ -4455,7 +4538,6 @@
     ],
     "priority": {
       "default": 360,
-      "B": 3,
       "C": 4
     },
     "highlightPriority": null,
@@ -4486,7 +4568,6 @@
     "linkedProjects": [],
     "priority": {
       "default": 630,
-      "B": 5,
       "C": 7,
       "D": 2,
       "E": 2
@@ -4692,12 +4773,12 @@
   {
     "id": 1424,
     "slug": "palettes-calage",
-    "title": "Palettes et calage",
+    "title": "Réemploi des emballages logistiques",
     "nameTag": "📦 palettes et calage",
     "shortDescription": "Réduisez les matériaux de calage et l'usage de palettes dans le transport et l'entrepôt de vos produits.",
     "image": "/images/projet/palettes-calage.webp",
     "longDescription": "La loi AGEC prévoit la fin des emballages en plastique à usage unique d'ici 2040. Mettez-vous en conformité avec la réglementation en diminuant l’usage des matériaux d’emballage des palettes, des matériaux de calage et des palettes elles-mêmes.\n\n- Supprimez les emballages plastiques à usage unique de vos produits en mettant en place un dispositif de **réemploi des emballages**, en coopération avec vos clients et fournisseurs.\n- Remplacez les emballages plastiques de vos palettes par des **housses, sangles ou filets réemployables.**\n- Privilégiez les **matériaux de calage issus du recyclage** (textile recyclé en ouate, cartons griffés en lambeaux, frisure de bois).\n- **Réutilisez les palettes plusieurs fois**, à l’aide de la mise en place d’une logistique retour.",
-    "moreDescription": "- [**Réemploi des emballages et alternatives aux emballages plastiques à usage unique**](https://librairie.ademe.fr/economie-circulaire-et-dechets/5301-reemploi-des-emballages-et-alternatives-aux-emballages-plastiques-a-usage-unique.html), un guide de l'ADEME.\n- [**Évaluation environnementale de la consigne pour le réemploi des emballages en verre**](https://librairie.ademe.fr/economie-circulaire-et-dechets/6359-evaluation-environnementale-de-la-consigne-pour-le-reemploi-des-emballages-en-verre-en-france.html), par l'Observatoire du réemploi et de la réutilisation.",
+    "moreDescription": "- [**Réemploi des emballages et alternatives aux emballages plastiques à usage unique**](https://librairie.ademe.fr/economie-circulaire-et-dechets/5301-reemploi-des-emballages-et-alternatives-aux-emballages-plastiques-a-usage-unique.html), un guide de l'ADEME.",
     "themes": [
       "waste",
       "eco-design"
@@ -4716,8 +4797,7 @@
       "aide-investissement-corse"
     ],
     "linkedProjects": [
-      3,
-      1260
+      21
     ],
     "priority": {
       "default": 227,
@@ -4749,7 +4829,9 @@
       "energy"
     ],
     "mainTheme": "energy",
-    "programs": [],
+    "programs": [
+      "innovation-hydrogene"
+    ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [],
     "priority": {

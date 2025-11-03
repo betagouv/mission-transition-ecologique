@@ -1,13 +1,53 @@
 <template>
   <!-- FOOTER -->
   <div
-    class="fr-footer"
+    class="fr-footer fr-pt-0-5v"
     role="contentinfo"
   >
-    <div class="fr-container">
+    <div class="fr-follow">
+      <div class="fr-container">
+        <div class="fr-grid-row fr-text-center fr-text-left-md">
+          <div class="fr-col-12 fr-col-md-6">
+            <Feedback
+              title="Merci de nous aider à améliorer ce service"
+              title-class="fr-h6"
+              :position="FeedbackButtonPosition.Footer"
+            />
+          </div>
+          <div class="fr-col-12 fr-col-md-6">
+            <p class="fr-h6">Liens utiles</p>
+            <ul class="">
+              <li
+                v-for="link in utilLinks"
+                :key="link.label"
+                class="fr-footer__content-item"
+              >
+                <router-link
+                  v-if="link.to"
+                  :to="link.to"
+                  class="fr-footer__content-link"
+                >
+                  {{ link.label }}
+                </router-link>
+                <a
+                  v-else
+                  :href="link.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="fr-footer__content-link"
+                >
+                  {{ link.label }}
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fr-container fr-pt-4w">
       <!-- FOOTER BODY -->
-      <div class="fr-footer__body fr-grid-row">
-        <div class="fr-footer__brand fr-col-lg-3">
+      <div class="fr-footer__body">
+        <div class="fr-footer__brand fr-enlarge-link">
           <p class="fr-logo">
             République
             <br />Française
@@ -18,17 +58,17 @@
             title="Retour à l’accueil du site - Transition écologique des entreprises - République Française"
           >
             <img
-              class="fr-footer__logo"
-              :src="img('/images/logos/ademe.svg', { quality: 70, densities: 1 })"
+              class="fr-footer__logo ademe-logo"
+              :src="img('/images/logos/ademe.svg')"
               alt="logo de l'ADEME - Agence de de la Transition Écologique"
             />
           </a>
         </div>
-        <div class="fr-footer__content fr-col-lg-9">
+        <div class="fr-footer__content">
           <p class="fr-footer__content-desc">
-            Notre mission : accompagner les TPE et PME dans leur transition écologique en leur donnant les moyens d’identifier leurs projets
-            prioritaires, d’accéder aux aides publiques adaptées à leur entreprise et de mobiliser les conseillers pour concrétiser leurs
-            démarches.
+            <strong>Notre mission :</strong> accompagner les TPE et PME dans leur transition écologique en leur donnant les moyens
+            d’identifier leurs projets prioritaires, d’accéder aux aides publiques adaptées à leur entreprise et de mobiliser les
+            conseillers pour concrétiser leurs démarches.
           </p>
           <ul class="fr-footer__content-list">
             <li
@@ -57,9 +97,10 @@
               <li
                 v-for="operator in operators"
                 :key="operator.label"
+                class="fr-col-6"
               >
                 <a
-                  class="footer__partners-link fr-bg--none fr-my-4v fr-ml-4v"
+                  class="footer__partners-link fr-bg--none fr-my-4v"
                   target="_blank"
                   :href="operator.href"
                   rel="noopener noreferrer"
@@ -93,8 +134,9 @@
             :key="link.label"
             class="fr-footer__bottom-item"
           >
+            <TeeFooterCookiesButton v-if="link.label === 'cookies'" />
             <router-link
-              v-if="link.to"
+              v-else-if="link.to"
               :to="link.to"
               class="fr-footer__bottom-link"
             >
@@ -110,7 +152,6 @@
               {{ link.label }}
             </a>
           </li>
-          <TeeFooterCookiesButton />
         </ul>
 
         <!-- LICENCE LINKS -->
@@ -120,6 +161,7 @@
             <a
               :href="sourceCodeHref"
               class="fr-link-licence no-content-after"
+              target="_blank"
             >
               {{ Translation.t('footer.sourceCode') }}
             </a>
@@ -128,6 +170,7 @@
             <a
               :href="licenceHref"
               class="fr-link-licence no-content-after"
+              target="_blank"
             >
               {{ licenceName }}
             </a>
@@ -139,6 +182,7 @@
 </template>
 
 <script setup lang="ts">
+import { FeedbackButtonPosition } from '@/tools/feedback/feedbackType'
 import { Image } from '@/tools/image'
 import { partnersAll } from '@/tools/operator'
 import Translation from '@/tools/translation'
@@ -189,16 +233,15 @@ const mainLinks = [
     to: { name: RouteName.PersonalData }
   },
   {
-    label: 'Code source',
-    href: sourceCodeHref
-  },
-  {
-    label: 'Données ouvertes',
-    href: openData
+    label: 'cookies'
   },
   {
     label: 'Statistiques',
     to: { name: RouteName.Statistics }
+  },
+  {
+    label: 'Données ouvertes',
+    href: openData
   },
   {
     label: 'Budget',
@@ -207,6 +250,13 @@ const mainLinks = [
   {
     label: 'Ajouter une aide',
     to: { name: RouteName.AddProgram }
+  }
+]
+
+const utilLinks = [
+  {
+    label: 'Questions fréquentes',
+    to: { name: RouteName.Faq }
   },
   {
     label: 'Kit média',
@@ -224,3 +274,15 @@ const mainLinks = [
 
 const operators = partnersAll
 </script>
+
+<style scoped lang="scss">
+.ademe-logo {
+  height: 7.2rem;
+}
+
+.fr-footer__partners-sub {
+  ul {
+    flex-direction: row;
+  }
+}
+</style>
