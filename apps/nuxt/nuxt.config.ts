@@ -39,12 +39,12 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   routeRules: {
     '/_nuxt/**': {
       headers: {
-        'cache-control': `public, max-age=${maxAge31Days}, s-maxage=${maxAge31Days} must-revalidate`
+        'cache-control': `public, max-age=${maxAge31Days}, s-maxage=${maxAge31Days}`
       }
     },
     '/images/**': {
       headers: {
-        'cache-control': `public, max-age=${maxAge31Days}, s-maxage=${maxAge31Days} must-revalidate`
+        'cache-control': `public, max-age=${maxAge31Days}, s-maxage=${maxAge31Days}`
       }
     },
     '/': { prerender: true },
@@ -109,6 +109,13 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       preprocessorOptions: {
         scss: {
           silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin']
+        }
+      }
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          inlineDynamicImports: true
         }
       }
     }
