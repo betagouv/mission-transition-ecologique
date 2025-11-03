@@ -259,16 +259,12 @@ const utilLinks = [
     to: { name: RouteName.Faq }
   },
   {
-    label: 'Kit média',
-    href: mediaKit
-  },
-  {
-    label: 'Questions fréquentes',
-    to: { name: RouteName.Faq }
-  },
-  {
     label: 'Qui sommes nous ?',
     to: { name: RouteName.About }
+  },
+  {
+    label: 'Kit média',
+    href: mediaKit
   }
 ]
 
