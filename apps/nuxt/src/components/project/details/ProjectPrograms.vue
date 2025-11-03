@@ -95,7 +95,7 @@
 import { useProgramStore } from '@/stores/program'
 import { CompanyData } from '@/tools/companyData'
 import { ProgramManager } from '@/tools/program/programManager'
-import AddClassOnScroll from '@/tools/addClassOnScroll'
+import AddClassOnScroll from '@/tools/scroll/addClassOnScroll'
 import { ProgramAidType, ProjectType, OpportunityType, Color, ProgramTypeForFront } from '@/types'
 import Contact from '@/tools/contact'
 import Translation from '@/tools/translation'
