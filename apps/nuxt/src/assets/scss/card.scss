@@ -88,11 +88,11 @@
   }
 
   &-priority {
-    outline: solid 0.20rem setting.$green;
+    outline: solid 0.2rem setting.$green;
 
     &--highlighted {
       .fr-card__header::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         right: 0;
@@ -106,7 +106,7 @@
   }
 
   &__title a::after {
-     display: none !important;
+    display: none !important;
   }
 
   &__header--priority {
@@ -137,10 +137,9 @@
       outline-offset: 0;
     }
 
-
     .fr-card__content {
       .fr-card__end p {
-        font-size: .8rem;
+        font-size: 0.8rem;
       }
     }
   }
@@ -154,7 +153,7 @@
 
     @include tool.media-query-respond-from(lg) {
       .fr-card__header {
-        flex-basis: 25%;
+        flex-basis: 35%;
       }
     }
 
@@ -251,7 +250,7 @@
   }
 
   &.project-card {
-    &.fr-enlarge-link  {
+    &.fr-enlarge-link {
       &:active {
         @include tool.media-query-respond-from(xs) {
           border-radius: 1rem !important;
@@ -288,20 +287,20 @@
 
   .fr-badge--success {
     background-color: setting.$green;
-    color: setting.$white
+    color: setting.$white;
   }
 
   @each $color, $properties in setting.$colors {
     &--#{$color} {
-      @if $color != "grey" {
+      @if $color != 'grey' {
         @if meta.type-of($properties) == map {
-          background-color: map.get($properties, "color") !important;
-          color: map.get($properties, "color-with-background") !important;
+          background-color: map.get($properties, 'color') !important;
+          color: map.get($properties, 'color-with-background') !important;
         }
 
         .fr-card__title {
           @if meta.type-of($properties) == map {
-            color: map.get($properties, "color-with-background") !important;
+            color: map.get($properties, 'color-with-background') !important;
           } @else {
             color: setting.$text-grey;
           }
@@ -337,7 +336,7 @@
         height: 100%;
 
         img {
-          height: 100%
+          height: 100%;
         }
       }
     }
