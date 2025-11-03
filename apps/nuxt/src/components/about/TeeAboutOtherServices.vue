@@ -2,11 +2,11 @@
   <section class="fr-my-3w">
     <h2>Les autres services de l’accélérateur de la transition écologique</h2>
 
-    <div class="fr-grid-row">
-      <div
+    <ul class="fr-grid-row fr-grid-row--gutters fr-raw-list">
+      <li
         v-for="(card, index) in cards"
         :key="index"
-        class="fr-col-12 fr-col-lg-6 fr-py-1v fr-p-md-1v"
+        class="fr-col-12 fr-col-lg-6"
       >
         <TeeExternalLinkCard
           :image="card.image"
@@ -14,8 +14,8 @@
           :description="card.description"
           :link="card.link"
         />
-      </div>
-    </div>
+      </li>
+    </ul>
   </section>
 </template>
 

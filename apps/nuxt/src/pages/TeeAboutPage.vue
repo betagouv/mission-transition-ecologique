@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <TeeDsfrBreadcrumb :links="[{ text: 'Qui sommes nous ?', to: { name: RouteName.About } }]" />
-    <div class="fr-container">
+  <Layout
+    :links="[{ text: 'Qui sommes nous ?', to: { name: RouteName.About } }]"
+    fluid
+  >
+    <div class="fr-container fr-mt-3v">
       <h1 class="fr-text--blue-france">Qui sommes-nous ?</h1>
       <TeeAboutIntro />
       <TeeAboutEntryPoint />
@@ -26,7 +28,7 @@
       />
       <TeeAboutOtherServices />
     </div>
-  </div>
+  </Layout>
 </template>
 
 <script setup lang="ts">
