@@ -36,7 +36,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { RouteName, Color } from '@/types'
 import { useRouter } from 'vue-router'
 import { ProjectManager } from '@/tools/project/projectManager'
