@@ -83,6 +83,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     },
     telemetry: false
   },
+  buildAssetsDir: `/_nuxt/v${Math.floor(Date.now() / 1000).toString()}/`,
   devServer: {
     host: 'localhost',
     port: 4242
