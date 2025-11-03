@@ -1,8 +1,5 @@
 <template>
-  <div
-    :class="[{ 'fr-col-md-3 fr-col-lg-3 fr-col-xl-2 fr-pr-3v': !isFullWidth }]"
-    class="fr-col-12"
-  >
+  <div class="fr-col-12 fr-col-md-3 fr-col-lg-3 fr-col-xl-2 fr-pr-3v">
     <h2
       class="fr-h5 fr-pt-3w"
       :class="`fr-faq--${faqItem.color}`"
