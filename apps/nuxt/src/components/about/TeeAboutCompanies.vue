@@ -23,12 +23,15 @@
 
     <p>
       👉
-      <a href="mailto:contact@mission-transition-ecologique.beta.gouv.fr"> Nous contacter pour s’inscrire à la prochaine démo en ligne </a>
+      <a :href="Contact.mailTo"> Nous contacter pour s’inscrire à la prochaine démo en ligne </a>
     </p>
 
     <ul>
       <li>
-        <strong>Au fil des retours des entreprises</strong>, nous faisons évoluer ce service numérique pour mieux répondre à leurs besoins. Nous organisons régulièrement des tests utilisateurs, échangeons avec les dirigeants et recueillons leurs retours d’expérience pour améliorer la plateforme.e. Fidèles à l’approche startup d’État, notre équipe conçoit, teste et améliore en continu la plateforme pour qu’elle reste simple, efficace et en phase avec les besoins de ses utilisateurs.
+        <strong>Au fil des retours des entreprises</strong>, nous faisons évoluer ce service numérique pour mieux répondre à leurs besoins.
+        Nous organisons régulièrement des tests utilisateurs, échangeons avec les dirigeants et recueillons leurs retours d’expérience pour
+        améliorer la plateforme.e. Fidèles à l’approche startup d’État, notre équipe conçoit, teste et améliore en continu la plateforme
+        pour qu’elle reste simple, efficace et en phase avec les besoins de ses utilisateurs.
       </li>
     </ul>
 
@@ -44,4 +47,6 @@
   </section>
 </template>
 
-<script setup></script>
+<script setup lang="ts">
+import Contact from '@/tools/contact'
+</script>

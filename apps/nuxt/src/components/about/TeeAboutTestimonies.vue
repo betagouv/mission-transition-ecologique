@@ -11,7 +11,7 @@
     </div>
     <div class="fr-grid-row fr-grid-row--center fr-mt-3w">
       <div class="fr-col-md-10">
-        <LazyTestimony
+        <Testimony
           v-for="(testimony, index) in testimonies"
           :key="testimony.slug"
           :class="[index === testimonies.length - 1 ? 'fr-mb-md-3w' : 'fr-mb-md-6w']"
@@ -22,8 +22,10 @@
   </section>
 </template>
 
-<script setup>
-const testimonies = [
+<script setup lang="ts">
+import { Testimony as TestimonyType } from '@/types'
+
+const testimonies: TestimonyType[] = [
   {
     slug: 'la-fenetriere',
     verbatim:
