@@ -39,12 +39,12 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   routeRules: {
     '/_nuxt/**': {
       headers: {
-        'cache-control': `public, max-age=${maxAge31Days}, s-maxage=${maxAge31Days}`
+        'cache-control': `public, max-age=${maxAge31Days}, s-maxage=${maxAge31Days} must-revalidate`
       }
     },
     '/images/**': {
       headers: {
-        'cache-control': `public, max-age=${maxAge31Days}, s-maxage=${maxAge31Days}`
+        'cache-control': `public, max-age=${maxAge31Days}, s-maxage=${maxAge31Days} must-revalidate`
       }
     },
     '/': { prerender: true },
@@ -83,7 +83,6 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     },
     telemetry: false
   },
-  buildAssetsDir: `/_nuxt/v${Math.floor(Date.now() / 1000).toString()}/`,
   devServer: {
     host: 'localhost',
     port: 4242
