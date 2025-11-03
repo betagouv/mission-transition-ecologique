@@ -111,13 +111,6 @@ export default <DefineNuxtConfig>defineNuxtConfig({
           silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin']
         }
       }
-    },
-    build: {
-      rollupOptions: {
-        output: {
-          inlineDynamicImports: true
-        }
-      }
     }
   },
   components: [
