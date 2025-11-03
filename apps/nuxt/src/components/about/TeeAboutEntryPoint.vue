@@ -3,7 +3,8 @@
     <h2>Le point d’entrée vers les aides à la transition écologique des entreprises</h2>
     <p>
       La plateforme <em>Transition écologique des entreprises</em> est un <strong>service public en ligne et gratuit</strong> qui accompagne
-      les entreprises dans leur transition environnementale. Elle permet de :</p>
+      les entreprises dans leur transition environnementale. Elle permet de :
+    </p>
     <ol>
       <li class="fr-ml-1w"><strong>découvrir des idées de projets</strong> et d’actions de transition écologique pour votre entreprise.</li>
       <li class="fr-ml-1w">
@@ -59,7 +60,6 @@ onNuxtReady(async () => {
 const { projects } = storeToRefs(useProjectStore())
 const filteredProjects = ProjectFilter.filterByHighlight(projects)
 const sortedProjects = computed(() => {
-  console.log(projects)
   return ProjectSorter.byHighlight(filteredProjects.value)
 })
 </script>

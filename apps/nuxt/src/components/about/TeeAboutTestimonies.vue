@@ -12,7 +12,7 @@
     <div class="fr-grid-row fr-grid-row--center fr-mt-3w">
       <div class="fr-col-md-10">
         <Testimony
-          v-for="(testimony, index) in testimonies"
+          v-for="testimony in testimonies"
           :key="testimony.slug"
           class="fr-mb-md-2w"
           :testimony="testimony"
