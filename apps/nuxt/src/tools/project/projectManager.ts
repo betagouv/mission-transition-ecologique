@@ -69,7 +69,8 @@ export class ProjectManager {
       navigation.isProgramDetail() ||
       navigation.isQuestionnaireThemeCards() ||
       navigation.isHomepage() ||
-      navigation.isCatalogProjects()
+      navigation.isCatalogProjects() ||
+      navigation.isAboutPage()
     ) {
       await this.getProjects()
     } else {
