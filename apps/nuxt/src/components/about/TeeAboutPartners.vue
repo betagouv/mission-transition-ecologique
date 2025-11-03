@@ -1,5 +1,5 @@
 <template>
-  <section class="fr-grid-row fr-my-3w fr-grid-row fr-grid-row--middle">
+  <section class="fr-grid-row fr-my-6w fr-grid-row fr-grid-row--middle">
     <div class="fr-col-12 fr-col-md-7">
       <h2>Le fruit d’un partenariat entre acteurs publics</h2>
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="fr-my-3w">
+  <section class="fr-my-6w">
     <h2>À la rencontre des entreprises</h2>
     <p>
       En 2025, notre ambition est de <strong>faire connaître le service à toutes les TPE et PME françaises</strong>

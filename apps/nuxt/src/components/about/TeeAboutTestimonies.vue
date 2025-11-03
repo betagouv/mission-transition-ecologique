@@ -14,7 +14,7 @@
         <LazyTestimony
           v-for="(testimony, index) in testimonies"
           :key="testimony.slug"
-          :class="[index === testimonies.length - 1 ? 'fr-mb-md-3w' : 'fr-mb-md-6w']"
+          class="fr-mb-md-2w"
           :testimony="testimony"
         />
       </div>

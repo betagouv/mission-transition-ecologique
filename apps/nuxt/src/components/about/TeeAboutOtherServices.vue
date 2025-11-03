@@ -1,5 +1,5 @@
 <template>
-  <section class="fr-my-3w">
+  <section class="fr-mt-6w fr-mb-3w">
     <h2>Les autres services de l’accélérateur de la transition écologique</h2>
 
     <div class="fr-grid-row">

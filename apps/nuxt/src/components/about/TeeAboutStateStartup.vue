@@ -1,6 +1,6 @@
 <template>
-  <section class="fr-grid-row fr-my-3w fr-grid-row--middle">
-    <div class="fr-hidden fr-unhidden-md fr-col-md-6 fr-pr-3w">
+  <section class="fr-grid-row fr-my-6w fr-grid-row--middle">
+    <div class="fr-hidden fr-unhidden-md fr-col-md-5 fr-pr-3w">
       <img
         src="/images/about/Tee_about_startup.webp"
         alt="Startup d'État illustration"
@@ -8,7 +8,7 @@
       />
     </div>
 
-    <div class="fr-col-12 fr-col-md-6">
+    <div class="fr-col-12 fr-col-md-7">
       <h2>Un service développé par une Startup d’État</h2>
       <p>
         Le service public <em>Transition écologique des entreprises</em> est
@@ -45,7 +45,6 @@
 
 <style scoped>
 img {
-  max-height: 24rem;
   max-width: 100%;
   width: auto;
   height: auto;

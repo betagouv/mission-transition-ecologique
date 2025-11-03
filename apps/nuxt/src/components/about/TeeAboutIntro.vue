@@ -1,5 +1,5 @@
 <template>
-  <section class="fr-grid-row fr-grid-row--middle fr-my-3w">
+  <section class="fr-grid-row fr-grid-row--middle fr-mt-3w fr-mb-6w">
     <div class="fr-col-12 fr-col-md-6">
       <h2>Un service public dédié à la transition écologique des entreprises</h2>
       <p>

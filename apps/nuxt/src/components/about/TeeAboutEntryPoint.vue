@@ -1,11 +1,9 @@
 <template>
-  <section class="fr-my-3w">
+  <section class="fr-my-6w">
     <h2>Le point d’entrée vers les aides à la transition écologique des entreprises</h2>
     <p>
       La plateforme <em>Transition écologique des entreprises</em> est un <strong>service public en ligne et gratuit</strong> qui accompagne
-      les entreprises dans leur transition environnementale.
-    </p>
-    <p>Elle permet de :</p>
+      les entreprises dans leur transition environnementale. Elle permet de :</p>
     <ol>
       <li class="fr-ml-1w"><strong>découvrir des idées de projets</strong> et d’actions de transition écologique pour votre entreprise.</li>
       <li class="fr-ml-1w">
