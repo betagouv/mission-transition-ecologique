@@ -31,7 +31,6 @@ export class ProgramDto {
     this._addSimpleField('metaTitre', this.rawProgram['Meta Titre'], false)
     this._addSimpleField('promesse', this.rawProgram.Promesse, true)
     this._addSimpleField('description', this.rawProgram['Description courte'], true)
-    this._addSimpleField('metaDescription', this.rawProgram['Meta Description'], false)
     await LinkValidator.logInvalidLinks(
       this.rawProgram['Description courte'],
       this.logger,
@@ -40,6 +39,7 @@ export class ProgramDto {
       this.rawProgram['Id fiche dispositif'],
       this.rawProgram.id
     )
+    this._addSimpleField('metaDescription', this.rawProgram['Meta Description'], false)
     this._addSimpleField('description longue', this.rawProgram['Description longue'])
     await LinkValidator.logInvalidLinks(
       this.rawProgram['Description longue'],

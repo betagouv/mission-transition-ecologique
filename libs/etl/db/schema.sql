@@ -82,3 +82,27 @@ CREATE TABLE IF NOT EXISTS __SCHEMA_NAME__.detail_page_view (
     event_id UUID PRIMARY KEY,
     web_user_id UUID
 );
+
+CREATE TABLE IF NOT EXISTS __SCHEMA_NAME__.projects (
+    id INT PRIMARY KEY,
+    slug TEXT UNIQUE NOT NULL,
+    name TEXT NOT NULL,
+    sector_eligibility TEXT,
+    related_programs TEXT,
+    themes TEXT
+);
+
+CREATE TABLE IF NOT EXISTS __SCHEMA_NAME__.programs (
+    id INT PRIMARY KEY,
+    slug TEXT UNIQUE NOT NULL,
+    name TEXT NOT NULL,
+    themes TEXT NOT NULL,
+    aid_type TEXT NOT NULL,
+    contact_operator TEXT,
+    other_operators TEXT,
+    linked_projects TEXT,
+    sector_eligibility TEXT,
+    geography_eligibility TEXT,
+    min_employee INT,
+    max_employee INT
+);

@@ -109,7 +109,7 @@ export class ProgramEligibilityEvaluator implements EligibilityEvaluator {
   }
 
   private _matchObjectives(eligibility: EligibilityData, data: QuestionnaireData): boolean {
-    const allowedObjectives = eligibility.questionnaire?.priorityObjectives
+    const allowedObjectives = eligibility.priorityObjectives
     if (!allowedObjectives || allowedObjectives.length === 0) {
       return true // no restriction on objectives
     }

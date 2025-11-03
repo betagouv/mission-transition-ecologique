@@ -4,7 +4,8 @@ import { fileURLToPath } from 'url'
 import { OperatorBaserow } from '../common/baserow/operatorBaserow'
 import { Operator } from './types/domain'
 import { FileManager } from '../common/fileManager'
-import { readPrograms } from '../program/dataPipeline'
+import { jsonPrograms } from '../../static'
+import { ProgramType } from '../program/types/shared'
 
 export class OperatorFeatures {
   private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -19,7 +20,7 @@ export class OperatorFeatures {
 
   async updateOperatorsData() {
     const allOperators = await new OperatorBaserow().getAll()
-    const programs = readPrograms(true)
+    const programs = jsonPrograms as unknown as ProgramType[]
     const programOperatorsNames = new Set<string>(
       programs.flatMap((program) => [
         program['opérateur de contact'],

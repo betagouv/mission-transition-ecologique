@@ -83,11 +83,9 @@
         "start": "06/02/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -329,11 +327,9 @@
         "start": "13/11/2023",
         "end": "30/06/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -498,7 +494,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude ou 60% de l'investissement",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9emploi%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -600,11 +596,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste"
-        ]
-      }
+      "priorityObjectives": [
+        "waste"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -781,7 +775,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
@@ -853,11 +847,9 @@
         "start": "01/01/2023",
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -994,7 +986,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20transition%20%C3%A9cologique%20industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -1070,11 +1062,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -1262,11 +1252,9 @@
         "start": "01/05/2023",
         "end": "31/12/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -1484,11 +1472,9 @@
         "start": "01/01/2023",
         "end": "01/05/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -1636,36 +1622,30 @@
     "id": "baisse-les-watts"
   },
   {
-    "titre": "Booster Éco-Énergie Tertiaire",
+    "titre": "Booster Entreprises",
     "promesse": "Bénéficiez d'un accompagnement pour la rénovation énergétique de vos bâtiments",
-    "description": "Vous avez des bâtiments d'activités tertiaires et souhaitez réduire vos consommations d'énergie ? L’ADEME soutient financièrement le coût de **prestations d’audit** pour obtenir un plan d’action et un plan de financement, ainsi que l’**ingénierie de réalisation de travaux d'économie d'énergie.**",
-    "description longue": "• Votre entreprise dispose de bâtiments de moins de 1 000 m² à usage tertiaire ? \\\nLe financement \"Booster Entreprises Eco-Energie Tertiaire\" offre un soutien pour réaliser un audit énergétique, un plan d'action sur 2 ans et l'ingénierie pour la réalisation de vos travaux d'économie d'énergie.\n\n• Votre entreprise dispose de bâtiments de 1 000 m², et plus, à usage tertiaire ? \\\nLe dispositif \"Booster Entreprises Eco-Energie Tertiaire\" offre un soutien uniquement à la phase 3, à savoir l'ingénierie pour la mise en œuvre d'actions et de travaux permettant l’atteinte des exigences du Dispositif Eco Energie Tertiaire (DEET). Le DEET est une obligation réglementaire engageant les acteurs du tertiaire vers la sobriété énergétique. Issu du décret 2019?771 du 23 juillet 2019 dit « décret tertiaire », il impose une réduction progressive de la consommation d’énergie dans les bâtiments et parties de bâtiments de 1 000 m², et plus, à usage tertiaire afin de lutter contre le changement climatique.",
+    "description": "Vous avez des bâtiments tertiaires et souhaitez réduire vos consommations d’énergie ? L’ADEME peut financer l’**ingénierie des travaux**, qu’il s’agisse d’une mission de **maîtrise d’œuvre** pour la rénovation énergétique ou d’une **mission d’assistance à maîtrise d’ouvrage** (AMO) pour un Contrat de Performance Énergétique (CPE).",
+    "description longue": "• Votre entreprise dispose de bâtiments de moins de 1 000 m² à usage tertiaire ? \\\nLe financement \"Booster Entreprises\" offre un soutien pour réaliser vos travaux d'économie d'énergie.\n\n• Votre entreprise dispose de bâtiments de 1 000 m², et plus, à usage tertiaire ? \\\nLe dispositif \"Booster Entreprises\" offre un soutien uniquement à la phase 3, à savoir l'ingénierie pour la mise en œuvre d'actions et de travaux permettant l’atteinte des exigences du Dispositif Eco Energie Tertiaire (DEET). Le DEET est une obligation réglementaire engageant les acteurs du tertiaire vers la sobriété énergétique. Issu du décret 2019?771 du 23 juillet 2019 dit « décret tertiaire », il impose une réduction progressive de la consommation d’énergie dans les bâtiments et parties de bâtiments de 1 000 m², et plus, à usage tertiaire afin de lutter contre le changement climatique.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
     "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000744",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/booster-entreprises-reduire-facture-energetique-gagner-valeur-verte",
-    "nature de l'aide": "étude",
-    "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 80% du coût des travaux, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Booster%20Entreprises%20Eco-Energie%20Tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agir.ademe.fr/sites/default/files/Booster%20entreprises%20Eco%20Energie%20Tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
       },
       {
-        "description": "Identifiez le prestataire qui va vous accompagner pour réaliser l'audit énergétique et faites réaliser un devis."
-      },
-      {
-        "description": "Définissez la prestation nécessaire pour mettre en œuvre vos travaux : une mission de maîtrise d’œuvre rénovation énergétique / ou une mission d'assistance à maitrise d'ouvrage pour la mise en oeuvre d'un Contrat de Performance Énergétique (CPE)."
-      },
-      {
-        "description": "Choisissez les prestataires qui vous accompagneront pour vos missions d'ingénierie et faites réaliser des devis. Ces prestataires doivent répondre aux critères de qualification et compétences décrits dans les cahiers des charges de l'ADEME."
+        "description": "Choisissez des prestataires qualifiés pour l’audit énergétique, l’accompagnement et/ou les missions d’ingénierie. Leurs devis seront à joindre à votre dossier."
       },
       {
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
@@ -1677,7 +1657,7 @@
         ]
       },
       {
-        "description": "Déposez votre demande d'aide auprès de l'ADEME : informations administratives, description du projet, rapport d'audit énergétique, détails techniques et financiers, etc. A ce stade, votre audit ou missions d'ingénierie ne doivent pas avoir commencé !",
+        "description": "Déposez votre demande d'aide auprès de l'ADEME : informations administratives, description du projet, rapport d'audit énergétique, détails techniques et financiers, etc. À ce stade, vos missions d'ingénierie ne doivent pas avoir commencé !",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/booster-entreprises-reduire-facture-energetique-gagner-valeur-verte",
@@ -1692,7 +1672,7 @@
         "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
-        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Corse, Guadeloupe, Guyane, La Réunion, Martinique, Mayotte, Occitanie, Polynésie française"
+        "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
         "Secteur tertiaire"
@@ -1726,32 +1706,16 @@
           "U"
         ],
         "maxEmployees": "4999",
-        "excludeMicroentrepreneur": true,
-        "ownsBuildings": true,
-        "allowedRegion": [
-          "Auvergne-Rhône-Alpes",
-          "Bourgogne-Franche-Comté",
-          "Bretagne",
-          "Corse",
-          "Guadeloupe",
-          "Guyane",
-          "La Réunion",
-          "Martinique",
-          "Mayotte",
-          "Occitanie",
-          "Polynésie française"
-        ]
+        "excludeMicroentrepreneur": true
       },
       "validity": {
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -1846,8 +1810,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "entreprise . est propriétaire de ses locaux"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -1859,8 +1822,7 @@
         },
         "toutes ces conditions": [
           "a un effectif éligible",
-          "a une categorie legale eligible",
-          "entreprise . est dans une zone géographique éligible"
+          "a une categorie legale eligible"
         ]
       },
       "entreprise . a un effectif éligible": {
@@ -1897,21 +1859,6 @@
         "une de ces conditions": [
           "questionnaire . objectif prioritaire . est rénover mon bâtiment",
           "questionnaire . objectif prioritaire . est ma performance énergétique"
-        ]
-      },
-      "entreprise . est dans une zone géographique éligible": {
-        "une de ces conditions": [
-          "région = Auvergne-Rhône-Alpes",
-          "région = Bourgogne-Franche-Comté",
-          "région = Bretagne",
-          "région = Corse",
-          "région = Guadeloupe",
-          "région = Guyane",
-          "région = La Réunion",
-          "région = Martinique",
-          "région = Mayotte",
-          "région = Occitanie",
-          "région = Polynésie française"
         ]
       }
     },
@@ -1988,11 +1935,9 @@
         "start": "01/10/2023",
         "end": "01/08/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -2220,11 +2165,9 @@
       "validity": {
         "start": "01/06/2020"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -2368,7 +2311,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Vérifiez votre éligibilité en réalisant le test “Votre bâtiment est-il raccordable à un réseau de chaleur ?”. Si un réseau de chaleur passe à proximité de votre adresse, vous avez le droit à une prime pour le raccordement de vos locaux à ce réseau.",
+        "description": "Faites le test “Votre bâtiment est-il raccordable à un réseau de chaleur ?”. Si un réseau de chaleur passe à proximité de votre adresse, vous avez le droit à une prime pour le raccordement de vos locaux à ce réseau.",
         "liens": [
           {
             "lien": "https://france-chaleur-urbaine.beta.gouv.fr/ressources/aides#contenu",
@@ -2443,12 +2386,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -2649,11 +2590,9 @@
         "maxEmployees": "499",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -2870,11 +2809,9 @@
         ],
         "maxEmployees": "499"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -3094,11 +3031,9 @@
         "maxEmployees": "249",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -3339,11 +3274,9 @@
           "Île-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -3552,11 +3485,9 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste"
-        ]
-      }
+      "priorityObjectives": [
+        "waste"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -3766,11 +3697,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -3981,11 +3910,9 @@
         "maxEmployees": "499",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh"
-        ]
-      }
+      "priorityObjectives": [
+        "rh"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -4185,11 +4112,9 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -4325,7 +4250,7 @@
     "montant de l'avantage fiscal": "40% à 60% du prix de l'engin",
     "objectifs": [
       {
-        "description": "Vérifiez l'éligibilité de l'engin que vous souhaitez acquérir."
+        "description": "Vérifiez si l'engin que vous souhaitez acquérir est éligible."
       },
       {
         "description": "Déduisez l'aide de vos résultats imposables."
@@ -4358,11 +4283,9 @@
           "H"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -4539,11 +4462,9 @@
         ],
         "maxEmployees": "499"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -4690,7 +4611,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20alimentation%20durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -4779,13 +4700,11 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste",
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "waste",
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -4951,7 +4870,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20investissements%20gestion%20biod%C3%A9chets%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -5020,11 +4939,9 @@
         "start": "01/01/2024",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste"
-        ]
-      }
+      "priorityObjectives": [
+        "waste"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -5163,7 +5080,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 50 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20centres%20de%20tri%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -5228,11 +5145,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste"
-        ]
-      }
+      "priorityObjectives": [
+        "waste"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -5368,7 +5283,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
@@ -5439,11 +5354,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -5584,7 +5497,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 50 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
@@ -5643,18 +5556,15 @@
         "allowedNafSections": [
           "A",
           "G"
-        ],
-        "ownsBuildings": true
+        ]
       },
       "validity": {
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -5749,8 +5659,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "entreprise . est propriétaire de ses locaux"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -5791,7 +5700,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Soutien%20EFC%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -5874,11 +5783,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -6032,7 +5939,7 @@
     "montant du financement": "Jusqu'à 70% pour une étude et 55% pour un investissement",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller."
       },
       {
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
@@ -6117,11 +6024,9 @@
         "start": "01/01/2023",
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -6289,7 +6194,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet."
       },
       {
         "description": "Choisissez le prestataire qui va vous accompagner pour mener votre étude d'opportunité ou de faisabilité et obtenez un devis."
@@ -6336,11 +6241,9 @@
         "start": "01/01/2023",
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -6476,7 +6379,7 @@
     "montant du financement": "Variable selon projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20reconversion%20friches%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf",
@@ -6547,11 +6450,9 @@
         "start": "01/01/2025",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building"
-        ]
-      }
+      "priorityObjectives": [
+        "building"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -6695,7 +6596,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20lutte%20contre%20le%20gaspillage%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -6775,11 +6676,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste"
-        ]
-      }
+      "priorityObjectives": [
+        "waste"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -6934,7 +6833,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
@@ -7014,11 +6913,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -7189,7 +7086,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20pour%20une%20installation%20hydro%C3%A9lectrique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -7267,11 +7164,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -7423,7 +7318,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/entreprises/sites/default/files/%C3%89tudes%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -7508,12 +7403,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste",
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "waste",
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -7674,7 +7567,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20transition%20%C3%A9cologique%20industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -7740,11 +7633,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -7879,7 +7770,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 150 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20%C3%A9coconception%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -7983,11 +7874,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -8167,7 +8056,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 € HT",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tude%20autoconsommation%20photovolta%C3%AFque%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement.pdf",
@@ -8247,7 +8136,6 @@
           "T",
           "U"
         ],
-        "ownsBuildings": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bourgogne-Franche-Comté",
@@ -8266,11 +8154,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -8365,8 +8251,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "entreprise . est propriétaire de ses locaux"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -8499,12 +8384,10 @@
         "start": "01/10/2023",
         "end": "01/06/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -8660,7 +8543,7 @@
     "montant du financement": "Variable selon projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Am%C3%A9lioration%20de%20la%20qualit%C3%A9%20de%20l%27air%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -8753,11 +8636,9 @@
         "start": "01/01/2025",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -8925,7 +8806,7 @@
     "montant du financement": "Selon projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/RDI%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -9000,11 +8881,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh"
-        ]
-      }
+      "priorityObjectives": [
+        "rh"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -9147,7 +9026,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
@@ -9219,11 +9098,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -9368,7 +9245,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20RRR%20hors%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -9458,11 +9335,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -9627,7 +9502,7 @@
     "montant du financement": "Selon la surface et l'ancienneté de l’installation solaire, dans un maximum de 30 000€ HT",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9habilitation%20installations%20solaires%20thermiques%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf",
@@ -9693,7 +9568,6 @@
           "Q",
           "S"
         ],
-        "ownsBuildings": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bretagne",
@@ -9717,11 +9591,9 @@
         "start": "03/06/2019",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -9816,8 +9688,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "entreprise . est propriétaire de ses locaux"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -9881,7 +9752,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -9954,11 +9825,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -10096,7 +9965,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
@@ -10208,11 +10077,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -10393,7 +10260,7 @@
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/collectivites/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -10473,11 +10340,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -10622,7 +10487,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
@@ -10700,18 +10565,15 @@
           "S",
           "T",
           "U"
-        ],
-        "ownsBuildings": true
+        ]
       },
       "validity": {
         "start": "01/01/2023",
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -10806,8 +10668,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "entreprise . est propriétaire de ses locaux"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -10917,11 +10778,9 @@
           "M"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -11100,11 +10959,9 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -11249,7 +11106,7 @@
     "montant du financement": "de 5 000 € HT à 200 000 € HT",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Fonds%20Tourisme%20Durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
@@ -11352,18 +11209,16 @@
         "start": "01/01/2023",
         "end": "31/07/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "mobility",
-          "waste",
-          "water",
-          "energy",
-          "rh",
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "rh",
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -11609,18 +11464,16 @@
         "start": "12/03/2025",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "mobility",
-          "waste",
-          "water",
-          "energy",
-          "rh",
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "rh",
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -11829,11 +11682,9 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh"
-        ]
-      }
+      "priorityObjectives": [
+        "rh"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -12047,12 +11898,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh",
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "rh",
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -12251,11 +12100,9 @@
         ],
         "maxEmployees": "499"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh"
-        ]
-      }
+      "priorityObjectives": [
+        "rh"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -12455,14 +12302,12 @@
         "maxEmployees": "249",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste",
-          "water",
-          "energy",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "waste",
+        "water",
+        "energy",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -12676,11 +12521,9 @@
           "Île-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -12886,11 +12729,9 @@
           "Hauts-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste"
-        ]
-      }
+      "priorityObjectives": [
+        "waste"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -13072,11 +12913,9 @@
           "I"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -13253,11 +13092,9 @@
           "R"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -13410,7 +13247,7 @@
     "montant du financement": "Jusqu'à 70% des coûts, dans un maximum de 200 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet."
       },
       {
         "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade, votre investissement ne doit pas avoir été realisé !"
@@ -13465,12 +13302,10 @@
         "start": "01/06/2023",
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste",
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "waste",
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -13625,7 +13460,7 @@
     "montant du financement": "Aide calculée au cas par cas",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Boucle%20d%27eau%20temp%C3%A9r%C3%A9e%20%C3%A0%20%C3%A9nergie%20g%C3%A9othermique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -13706,11 +13541,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -13865,7 +13698,7 @@
     "montant du financement": "Selon le type de projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Investissements%20CDT%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -13948,11 +13781,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste"
-        ]
-      }
+      "priorityObjectives": [
+        "waste"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -14113,7 +13944,7 @@
     "montant du financement": "Selon projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20des%20installations%20biomasse%20%C3%A9nergie%20-%202024.pdf",
@@ -14192,18 +14023,15 @@
           "S",
           "T",
           "U"
-        ],
-        "ownsBuildings": true
+        ]
       },
       "validity": {
         "start": "01/01/2023",
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -14298,8 +14126,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "entreprise . est propriétaire de ses locaux"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -14359,7 +14186,7 @@
     "montant du financement": "Selon la taille de l'entreprise et la zone géographique",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller."
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller."
       },
       {
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
@@ -14416,11 +14243,9 @@
         "start": "15/02/2023",
         "end": "15/01/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building"
-        ]
-      }
+      "priorityObjectives": [
+        "building"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -14557,7 +14382,7 @@
     "montant du financement": "Selon le type d'investissement",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Contrat%20Chaleur%20Renouvelable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -14639,11 +14464,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -14798,7 +14621,7 @@
     "montant du financement": "Selon les types d'investissement",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/AAP%20Contrat%20Patrimonial%20Chaleur%20Renouvelable%20en%20Occitanie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20-%20Mars%202022.docx",
@@ -14882,11 +14705,9 @@
         "start": "01/04/2022",
         "end": "30/09/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -15048,7 +14869,7 @@
     "montant du financement": "Jusqu’à 60 % des coûts d'investissement, 65% pour la Corse et 75% pour les DOM",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Installation%20%C3%A9quipements%20lutte%20contre%20le%20gaspillage%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.docx",
@@ -15136,11 +14957,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste"
-        ]
-      }
+      "priorityObjectives": [
+        "waste"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -15303,7 +15122,7 @@
     "montant du financement": "Entre 15 % à 60 % selon le projet, dans un maximum de 300 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Travaux%20investissements%20%C3%A9coconception%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -15403,11 +15222,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -15586,7 +15403,7 @@
     "montant du financement": "Aide calculée au cas par cas",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/G%C3%A9othermie%20de%20surface%20et%20a%C3%A9rothermie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -15667,11 +15484,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -15826,7 +15641,7 @@
     "montant du financement": "Aide calculée au cas par cas",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%20G%C3%A9othermie%20profonde%20-%202025.pdf",
@@ -15907,11 +15722,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -16065,7 +15878,7 @@
     "montant du financement": "Jusqu'à 60 % selon la taille de l'entreprise et son territoire",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Investissements%20gestion%20biod%C3%A9chets%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -16147,11 +15960,9 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste"
-        ]
-      }
+      "priorityObjectives": [
+        "waste"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -16305,7 +16116,7 @@
     "montant du financement": "Aide calculée selon le type d'installation",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Investissements%20installations%20de%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -16385,12 +16196,10 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste",
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "waste",
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -16549,7 +16358,7 @@
     "montant du financement": "Aide forfaitaire de 38 à 25 €/MWh",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PAC%20solaire%20pour%20la%20production%20d%27ECS%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -16630,11 +16439,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -16789,7 +16596,7 @@
     "montant du financement": "Entre 20 à 55% selon investissement",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Approvisionnement%20biomasse%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -16851,11 +16658,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -16990,7 +16795,7 @@
     "montant du financement": "Selon la puissance de l’installation",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet."
       },
       {
         "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade, votre investissement ne doit pas avoir été realisé !"
@@ -17027,18 +16832,15 @@
         "allowedNafSections": [
           "G",
           "Q"
-        ],
-        "ownsBuildings": true
+        ]
       },
       "validity": {
         "start": "01/12/2022",
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -17133,8 +16935,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "entreprise . est propriétaire de ses locaux"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -17175,7 +16976,7 @@
     "montant du financement": "Aide calculée au cas par cas",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9cup%C3%A9ration%20de%20chaleur%20fatale%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -17239,11 +17040,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -17381,7 +17180,7 @@
     "montant du financement": "Jusqu'à 75% des coûts, dans un maximum de 200 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/RRR%20hors%20emballages%20-%20Investissement%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
@@ -17468,11 +17267,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -17636,7 +17433,7 @@
     "montant du financement": "Entre 37,5% à 80% selon le projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Renouvellement%20Forestier%20-%20Cahier%20des%20charges%20-%20Volet%201%20-%202023.pdf",
@@ -17682,11 +17479,9 @@
         "start": "15/06/2023",
         "end": "31/05/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building"
-        ]
-      }
+      "priorityObjectives": [
+        "building"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -17821,7 +17616,7 @@
     "montant du financement": "Aide calculée au cas par cas",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9seaux%20chaleur%20et%20froid%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
@@ -17885,11 +17680,9 @@
         "start": "01/01/2023",
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -18027,7 +17820,7 @@
     "montant du financement": "Forfaitaire en fonction de la zone géographique et de la surface de l’installation",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Solaire%20thermique%20eau%20chaude%20sanitaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -18107,11 +17900,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -18265,7 +18056,7 @@
     "montant du financement": "Aide forfaitaire en fonction du type d’installation",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME."
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet."
       },
       {
         "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade, votre investissement ne doit pas avoir été realisé !"
@@ -18332,11 +18123,9 @@
         "start": "01/01/2023",
         "end": "31/12/2023"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -18502,7 +18291,7 @@
     "montant du financement": "Selon la chaleur produite",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Syst%C3%A8me%20Solaire%20Combin%C3%A9%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -18580,11 +18369,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -18814,11 +18601,9 @@
         "start": "01/09/2024",
         "end": "31/10/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -19016,14 +18801,11 @@
           "T",
           "U"
         ],
-        "excludeMicroentrepreneur": true,
-        "ownsBuildings": true
+        "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building"
-        ]
-      }
+      "priorityObjectives": [
+        "building"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -19118,8 +18900,7 @@
         "toutes ces conditions": [
           "est éligible",
           "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé",
-          "entreprise . est propriétaire de ses locaux"
+          "a un objectif ciblé"
         ]
       },
       "entreprise . est éligible": {
@@ -19232,11 +19013,9 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh"
-        ]
-      }
+      "priorityObjectives": [
+        "rh"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -19381,7 +19160,7 @@
     "montant du financement": "Jusqu'à 80% d'aide, dans un maximum selon le projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agir.ademe.fr/sites/default/files/AAP%20ORMAT%202025%20-%20Cahier%20des%20charges%20-%202025.pdf",
@@ -19467,11 +19246,9 @@
         "start": "17/01/2024",
         "end": "06/10/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste"
-        ]
-      }
+      "priorityObjectives": [
+        "waste"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -19637,7 +19414,7 @@
     "montant du financement": "Jusqu'à 80% du coût de l'étude selon la taille de l'entreprise",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PACTE%20Industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
@@ -19707,11 +19484,9 @@
         "start": "01/06/2023",
         "end": "30/06/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -19898,11 +19673,9 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -20244,11 +20017,9 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -20505,11 +20276,9 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh"
-        ]
-      }
+      "priorityObjectives": [
+        "rh"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -20730,11 +20499,9 @@
       "validity": {
         "start": "01/01/2018"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -20956,11 +20723,9 @@
         "minEmployees": "10",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh"
-        ]
-      }
+      "priorityObjectives": [
+        "rh"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -21174,18 +20939,16 @@
         ],
         "maxEmployees": "49"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "mobility",
-          "waste",
-          "water",
-          "energy",
-          "rh",
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "rh",
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -21405,11 +21168,9 @@
           "Bretagne"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -21604,11 +21365,9 @@
           "Bretagne"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "water"
-        ]
-      }
+      "priorityObjectives": [
+        "water"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -21799,12 +21558,10 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility",
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility",
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -21984,11 +21741,9 @@
         "maxEmployees": "499",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -22200,11 +21955,9 @@
         "start": "01/01/2023",
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building"
-        ]
-      }
+      "priorityObjectives": [
+        "building"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -22432,11 +22185,9 @@
       "validity": {
         "end": "01/01/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building"
-        ]
-      }
+      "priorityObjectives": [
+        "building"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -22637,11 +22388,9 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste"
-        ]
-      }
+      "priorityObjectives": [
+        "waste"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -22826,11 +22575,9 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -23035,11 +22782,9 @@
         "start": "02/05/2023",
         "end": "30/11/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -23249,13 +22994,11 @@
         ],
         "maxEmployees": "19"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste",
-          "water",
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "waste",
+        "water",
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -23407,7 +23150,7 @@
     "montant du financement": "de 2 500 € HT à 200 000 € HT",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME ou en contactant un conseiller.",
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Tremplin%20pour%20la%20transition%20%C3%A9cologique%20des%20PME%20_%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20_%202025.pdf",
@@ -23488,15 +23231,13 @@
         "start": "01/01/2023",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility",
-          "waste",
-          "water",
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility",
+        "waste",
+        "water",
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -23714,11 +23455,9 @@
           "Pays de la Loire"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -23870,7 +23609,7 @@
     "montant de l'avantage fiscal": "20% à 60% du coût du véhicule, en fonction de sa taille.",
     "objectifs": [
       {
-        "description": "Vérifiez l'éligibilité du véhicule lourd que vous souhaitez acquérir, en consultant le bulletin officiel. ",
+        "description": "Vérifiez l'éligibilité du véhicule lourd que vous souhaitez acquérir, en consultant le bulletin officiel.",
         "liens": [
           {
             "lien": "https://bofip.impots.gouv.fr/bofip/10079-PGP.html/identifiant%3DBOI-BIC-BASE-100-20-20240417",
@@ -23929,11 +23668,9 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -24135,11 +23872,9 @@
         "maxEmployees": "499",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -24404,11 +24139,9 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -24604,11 +24337,9 @@
         "maxEmployees": "49",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -24825,18 +24556,16 @@
         "maxEmployees": "4999",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "mobility",
-          "waste",
-          "water",
-          "energy",
-          "rh",
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "rh",
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -25067,18 +24796,16 @@
       "validity": {
         "end": "16/06/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "mobility",
-          "waste",
-          "water",
-          "energy",
-          "rh",
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "rh",
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -25309,11 +25036,9 @@
           "Bretagne"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -25532,18 +25257,16 @@
           "Occitanie"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "mobility",
-          "waste",
-          "water",
-          "energy",
-          "rh",
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "rh",
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -25738,16 +25461,14 @@
         ],
         "maxEmployees": "249"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "waste",
-          "water",
-          "energy",
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "waste",
+        "water",
+        "energy",
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -25934,11 +25655,9 @@
           "Bretagne"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -26126,14 +25845,12 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste",
-          "water",
-          "energy",
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "waste",
+        "water",
+        "energy",
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -26330,13 +26047,11 @@
           "Hauts-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh",
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "rh",
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -26533,12 +26248,10 @@
           "Occitanie"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "energy",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -26718,11 +26431,9 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh"
-        ]
-      }
+      "priorityObjectives": [
+        "rh"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -26900,12 +26611,10 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -27104,13 +26813,11 @@
       "validity": {
         "start": "14/03/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "energy",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "energy",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -27296,11 +27003,9 @@
       "validity": {
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -27473,12 +27178,10 @@
           "S"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "waste",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -27687,17 +27390,15 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility",
-          "waste",
-          "water",
-          "energy",
-          "rh",
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "rh",
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -27854,7 +27555,7 @@
     "montant du financement": "Jusqu'à 70% des dépenses éligibles, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation et en contactant un conseiller.",
+        "description": "Consultez la documentation pour vérifier l’éligibilité de votre projet ou contactez un conseiller..",
         "liens": [
           {
             "lien": "https://www.maregionsud.fr/vos-aides/detail/cedre-investissement",
@@ -27933,19 +27634,17 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "mobility",
-          "waste",
-          "water",
-          "energy",
-          "rh",
-          "environmental",
-          "eco-design",
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "rh",
+        "environmental",
+        "eco-design",
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -28165,12 +27864,10 @@
       "validity": {
         "end": "01/11/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "rh"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "rh"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -28322,7 +28019,7 @@
         "liens": [
           {
             "lien": "https://flash.bpifrance.fr/financement/sud-pret-climat",
-            "texte": "Vérifier les critères d'éligibilité"
+            "texte": "Critères d'éligibilité"
           }
         ]
       },
@@ -28403,16 +28100,14 @@
       "validity": {
         "end": "31/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste",
-          "water",
-          "energy",
-          "environmental",
-          "eco-design",
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "waste",
+        "water",
+        "energy",
+        "environmental",
+        "eco-design",
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -28622,12 +28317,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -28826,11 +28519,9 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -29046,12 +28737,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -29281,11 +28970,9 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -29487,11 +29174,9 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -29720,11 +29405,9 @@
       "validity": {
         "start": "15/09/2019"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -29960,12 +29643,10 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste",
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "waste",
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -30182,11 +29863,9 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -30397,11 +30076,9 @@
         "start": "26/08/2024",
         "end": "07/10/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -30575,11 +30252,9 @@
       "validity": {
         "end": "07/11/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building"
-        ]
-      }
+      "priorityObjectives": [
+        "building"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -30784,12 +30459,10 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh",
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "rh",
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -31026,11 +30699,9 @@
       "validity": {
         "end": "13/12/2024"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -31254,12 +30925,10 @@
       "validity": {
         "end": "01/09/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -31478,11 +31147,9 @@
       "validity": {
         "end": "31/12/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -31730,14 +31397,12 @@
           "Grand Est"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "mobility",
-          "energy",
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "mobility",
+        "energy",
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -31904,7 +31569,7 @@
     "montant du financement": "Variable selon projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de la Région Grand Est.",
+        "description": "Consultez la documentation de la Région Grand Est pour vérifier l’éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://www.grandest.fr/vos-aides-regionales/soutien-au-photovoltaique/",
@@ -31981,11 +31646,9 @@
           "Grand Est"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -32201,11 +31864,9 @@
           "Auvergne-Rhône-Alpes"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building"
-        ]
-      }
+      "priorityObjectives": [
+        "building"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -32329,7 +31990,7 @@
   {
     "titre": "Prêt Energie AURA",
     "promesse": "Financez votre projet de transition écologique grâce à un prêt à taux préférentiel",
-    "description": "Vous avez un projet visant à réduire votre consommation énergétique ou l'impact environnemental de votre entreprise ? Le prêt énergie AURA permet de financer, à taux préférentiel, les investissements matériels et immatériels dans les champs suivants : \n- l’amélioration de la performance (énergie, eau, matière),\n- l'optimisation des procédés,\n- la mobilité “zéro carbone” pour les salariés, les marchandises et les produits,\n- la création de services et produits permettant de réduire la consommation de ressources,\n- l'intégration d'énergies renouvelables.",
+    "description": "Vous avez un projet visant à réduire votre consommation énergétique ou l'impact environnemental de votre entreprise ? Le prêt énergie AURA permet de financer, à taux préférentiel, les investissements matériels et immatériels dans les champs suivants :\n\n- l’amélioration de la performance (énergie, eau, matière),\n- l'optimisation des procédés,\n- la mobilité “zéro carbone” pour les salariés, les marchandises et les produits,\n- la création de services et produits permettant de réduire la consommation de ressources,\n- l'intégration d'énergies renouvelables.",
     "description longue": "L'aide régionale prend la forme d'un prêt à taux préférentiel octroyé à des conditions plus favorables que les conditions du marché. Ce prêt intervient en qualité de produit de \"cofinancement\", en complément des financements octroyés par les banques.\n\nSont éligibles, les investissements visant à :\n\n- Optimiser les procédés, ou améliorer la performance (énergie, eau, matière) afin de mieux maîtriser ou de diminuer les impacts sur l’environnement, y compris des procédés d’économie circulaire,\n- Favoriser la mobilité “zéro carbone” pour les salariés, les marchandises et les produits,\n- Innover pour mettre sur le marché des produits ou des services en matière de protection de l’environnement, d’économie circulaire et/ou permettant une réduction de la consommation de ressources, renouvelables ou non (énergie, matières premières, eau, l’allongement de la durée de vie des produits, l’intégration de recyclé, la recyclabilité, la réutilisation ou le réemploi),\n- Favoriser un mix énergétique plus vertueux en intégrant davantage d’énergies renouvelables.",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
@@ -32349,12 +32010,12 @@
         "liens": [
           {
             "lien": "https://pretregion.auvergnerhonealpes.fr/",
-            "texte": "Détail des modalités."
+            "texte": "Détail des modalités"
           }
         ]
       },
       {
-        "description": "Réalisez un diagnostic énergétique ou environnemental et obtenez un plan d'action qui sera à transmettre à votre dossier de candidature. Les livrables fournis par le prestataire du diagnostic seront à joindre au dossier.\\",
+        "description": "Réalisez un diagnostic énergétique ou environnemental et obtenez un plan d'action qui sera à transmettre à votre dossier de candidature (ainsi que ses livrables). Les diagnostics éligibles sont les suivants :",
         "liens": [
           {
             "lien": "https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/diag-ecoconception",
@@ -32453,16 +32114,14 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility",
-          "waste",
-          "water",
-          "energy",
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -32629,7 +32288,7 @@
     "montant du financement": "Jusqu'à 50 % des dépenses éligibles, dans un maximum de 50 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation du Pass Transition ou en contactant un conseiller.",
+        "description": "Consultez la documentation du Pass Transition ou contactez un conseiller pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://www.bretagne.bzh/app/uploads/annexe_liste_investissements_eligibles_26_04_2024.pdf",
@@ -32694,19 +32353,17 @@
           "Bretagne"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "mobility",
-          "waste",
-          "water",
-          "energy",
-          "rh",
-          "environmental",
-          "eco-design",
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "rh",
+        "environmental",
+        "eco-design",
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -32944,14 +32601,12 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility",
-          "waste",
-          "water",
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility",
+        "waste",
+        "water",
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -33122,7 +32777,7 @@
         "liens": [
           {
             "lien": "https://pret-transition-ecologique.iledefrance.fr/",
-            "texte": "Vérifier les critères d'éligibilité"
+            "texte": "Critères d'éligibilité"
           }
         ]
       },
@@ -33231,19 +32886,17 @@
           "Île-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "mobility",
-          "waste",
-          "water",
-          "energy",
-          "rh",
-          "environmental",
-          "eco-design",
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "rh",
+        "environmental",
+        "eco-design",
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -33453,7 +33106,6 @@
     "eligibilityData": {
       "company": {
         "allowedNafSections": [
-          "A",
           "B",
           "C",
           "D",
@@ -33478,17 +33130,15 @@
           "Centre-Val de Loire"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "waste",
-          "water",
-          "energy",
-          "environmental",
-          "eco-design",
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "waste",
+        "water",
+        "energy",
+        "environmental",
+        "eco-design",
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -33605,7 +33255,6 @@
       },
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
-          "code NAF niveau 1 . est A",
           "code NAF niveau 1 . est B",
           "code NAF niveau 1 . est C",
           "code NAF niveau 1 . est D",
@@ -33697,11 +33346,9 @@
           "Centre-Val de Loire"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -33887,12 +33534,10 @@
           "Centre-Val de Loire"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -34108,12 +33753,10 @@
         "start": "01/01/2025",
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -34253,7 +33896,7 @@
     "montant du financement": "Variable selon le projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant le règlement du dispositif \"Impulsion environnement\"",
+        "description": "Consultez le règlement du dispositif \"Impulsion environnement\" pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://www.normandie.fr/sites/default/files/2025-06/reglement_impulsion_environnement_fev_2024.pdf",
@@ -34316,16 +33959,14 @@
           "Normandie"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility",
-          "waste",
-          "water",
-          "energy",
-          "environmental",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "environmental",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -34476,7 +34117,7 @@
     "montant du financement": "Jusqu'à 60% des dépenses éligibles, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l'éligibilité de votre projet auprès d'un conseiller Région Sud",
+        "description": "Contactez un conseiller Région Sud et consultez la documentation pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://entreprises.maregionsud.fr/financement/sud-entreprises/soutien-a-lhebergement-touristique",
@@ -34538,13 +34179,11 @@
           "Provence-Alpes-Côte d'Azur"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility",
-          "water",
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility",
+        "water",
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -34687,7 +34326,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Vérifiez votre éligibilité en parcourant la documentation du programme.",
+        "description": "Consultez la documentation du programme pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://www.cote-azur.cci.fr/app/uploads/2024/11/Reglement-Appel-a-candidatures-ReSEau.pdf",
@@ -34755,11 +34394,9 @@
       "validity": {
         "end": "30/04/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "water"
-        ]
-      }
+      "priorityObjectives": [
+        "water"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -34896,7 +34533,7 @@
     "durée du prêt": "De 2 à 10 ans (dont 3 ans maximum de différé)",
     "objectifs": [
       {
-        "description": "Vérifiez l'éligibilité de votre projet.",
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://www.paysdelaloire.fr/sites/default/files/aides/2ae4eace-0470-11ee-baf5-23743e123976/subvention%2Cpret_reglement-dintervention-maj-janvier-2024_2ae4eace_ri.pdf",
@@ -34956,13 +34593,11 @@
           "Pays de la Loire"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "water",
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "water",
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -35101,7 +34736,7 @@
     "montant du financement": "Selon projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
             "lien": "https://agir.ademe.fr/sites/default/files/DECARB%20IND%2025%20-%20Foire%20aux%20questions%20-%202025.pdf",
@@ -35172,11 +34807,9 @@
         "start": "09/12/2024",
         "end": "15/05/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -35328,7 +34961,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Vérifiez l'éligibilité de votre projet ou contactez la direction du développement de Voies Navigables de France (VNF) par mail.",
+        "description": "Assurez-vous de l'éligibilité de votre projet ou contactez la direction du développement de Voies Navigables de France (VNF) par mail.",
         "liens": [
           {
             "lien": "https://www.vnf.fr/vnf/accueil/beneficier-de-solutions-en-faveur-de-la-transition-energetique-du-secteur-fluvial/comment-financer-un-projet-de-verdissement-de-la-flotte-fluviale/",
@@ -35417,13 +35050,11 @@
         "start": "01/01/2023",
         "end": "01/10/2027"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility",
-          "energy",
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility",
+        "energy",
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -35567,7 +35198,7 @@
     "montant du financement": "Jusqu'à 25% des dépenses, dans la limite de 400 000 € HT",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation.",
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://les-aides.nouvelle-aquitaine.fr/economie-et-emploi/hotels-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1",
@@ -35629,15 +35260,13 @@
           "Nouvelle-Aquitaine"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "waste",
-          "water",
-          "energy",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "waste",
+        "water",
+        "energy",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -35781,7 +35410,7 @@
     "montant du financement": "Jusqu'à 25% des dépenses, dans la limite de 400 000 € HT",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation.",
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://les-aides.nouvelle-aquitaine.fr/amenagement-du-territoire/campings-de-tourisme-independants?Profil=Entreprise&Transition=Biodiversit%C3%A9____Climat____D%C3%A9chets____Environnement____Littoral____%C3%89conomie%20circulaire____%C3%89conomies%20d%27%C3%A9nergie____%C3%89nergies%20renouvelables&Type=Aides&page=1",
@@ -35841,16 +35470,14 @@
           "Nouvelle-Aquitaine"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "mobility",
-          "waste",
-          "water",
-          "energy",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -36057,12 +35684,10 @@
           "Nouvelle-Aquitaine"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "waste",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -36222,7 +35847,7 @@
     "montant du financement": "Jusqu'à 50 % du coût de l'investissement, dans la limite de 100 000 €. Variable selon les projets.",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation.",
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://aides.hautsdefrance.fr/sub/tiers/aides/details/?sigle=PRIT",
@@ -36273,12 +35898,10 @@
           "Hauts-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental",
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental",
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -36415,7 +36038,7 @@
     "montant du financement": "Jusqu'à 50% des dépenses, dans la limite de 180 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation.",
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://www.bourgognefranchecomte.fr/file-download?fid=15543",
@@ -36483,16 +36106,14 @@
         "start": "22/03/2024",
         "end": "31/12/2028"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "waste",
-          "water",
-          "energy",
-          "eco-design",
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "waste",
+        "water",
+        "energy",
+        "eco-design",
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -36646,7 +36267,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation.",
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://www.bourgognefranchecomte.fr/file-download?fid=15544",
@@ -36716,16 +36337,14 @@
         "start": "01/05/2024",
         "end": "31/12/2028"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "waste",
-          "water",
-          "energy",
-          "eco-design",
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "waste",
+        "water",
+        "energy",
+        "eco-design",
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -36934,12 +36553,10 @@
           "Corse"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -37136,14 +36753,12 @@
           "Corse"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "waste",
-          "water",
-          "energy",
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "waste",
+        "water",
+        "energy",
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -37376,18 +36991,16 @@
         "start": "01/01/2025",
         "end": "15/09/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building",
-          "mobility",
-          "waste",
-          "water",
-          "energy",
-          "environmental",
-          "eco-design",
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "building",
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "environmental",
+        "eco-design",
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -37553,7 +37166,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en réalisant votre simulation.",
+        "description": "Assurez-vous de l’éligibilité de votre projet en réalisant une simulation.",
         "liens": [
           {
             "lien": "https://advenir.mobi/je-definis-mon-projet/",
@@ -37611,11 +37224,9 @@
           "H"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -37794,12 +37405,10 @@
         ],
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "rh",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -38012,11 +37621,9 @@
       "validity": {
         "end": "31/12/2027"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -38268,11 +37875,9 @@
         "start": "01/06/2024",
         "end": "01/06/2027"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -38437,7 +38042,7 @@
     "montant du financement": "60% des dépenses engagées",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
             "lien": "https://agir.ademe.fr/sites/default/files/CORIMER%20Navires%20Bas%20Carbone%20-%20France%202030%20-%20Cahier%20des%20charges%20-%202025.docx",
@@ -38524,12 +38129,10 @@
         "start": "27/01/2025",
         "end": "15/10/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility",
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility",
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -38746,11 +38349,9 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -38969,11 +38570,9 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -39177,11 +38776,9 @@
         "maxEmployees": "249",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -39405,11 +39002,9 @@
         "maxEmployees": "249",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -39636,11 +39231,9 @@
           "U"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -39825,11 +39418,9 @@
       "validity": {
         "end": "31/12/2027"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -39967,16 +39558,26 @@
     "montant du financement": "Selon la nature du projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
-            "lien": "https://agir.ademe.fr/sites/default/files/DECARB-FLASH%202025-2027%20-%20Cahier%20des%20charges%20-%202025.docx",
-            "texte": "Vérifier mon éligibilité"
+            "lien": "https://agir.ademe.fr/sites/default/files/DECARB%20FLASH%202025-2027%20-%20Cahier%20des%20charges%20-%202025.pdf",
+            "texte": "Cahier des charges"
+          },
+          {
+            "lien": "https://agir.ademe.fr/sites/default/files/DECARB%20FLASH%202025-2027%20-%20Liste%20des%20actions%20%C3%A9ligibles%20-%202025.pdf",
+            "texte": "Liste des actions éligibles"
           }
         ]
       },
       {
-        "description": "Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au moins un mois avant la date limite de dépôt)."
+        "description": "Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au moins un mois avant la date limite de dépôt).",
+        "liens": [
+          {
+            "lien": "mailto:decarb.flash@ademe.fr",
+            "texte": "decarb.flash@ademe.fr"
+          }
+        ]
       },
       {
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
@@ -40038,11 +39639,9 @@
         "start": "10/04/2025",
         "end": "15/02/2027"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -40183,11 +39782,11 @@
     "montant du financement": "Selon la nature du projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
             "lien": "https://agir.ademe.fr/aides-financieres/aap/bciat-2025-biomasse-chaleur-pour-lindustrie-lagriculture-et-le-tertiaire#eligibility",
-            "texte": "Vérifier mon éligibilité"
+            "texte": "Conditions d'éligibilité"
           }
         ]
       },
@@ -40254,11 +39853,9 @@
         "start": "22/04/2025",
         "end": "16/10/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -40482,13 +40079,11 @@
         "maxEmployees": "499",
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy",
-          "eco-design",
-          "biodiversite"
-        ]
-      }
+      "priorityObjectives": [
+        "energy",
+        "eco-design",
+        "biodiversite"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -40652,11 +40247,11 @@
     "montant du financement": "financement de 4 000 à 100 000 €, prêt de 8 000 à 300 000 €",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation du CNL ou en contactant un conseiller.",
+        "description": "Assurez-vous de l’éligibilité de votre projet en parcourant la documentation du CNL ou en contactant un conseiller.",
         "liens": [
           {
             "lien": "https://centrenationaldulivre.fr/aides-financement/aide-a-l-investissement-aux-librairies-francaises",
-            "texte": "Voir les critères d'éligibilité"
+            "texte": "Critères d'éligibilité"
           }
         ]
       },
@@ -40730,11 +40325,9 @@
         "start": "15/01/2025",
         "end": "31/10/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "building"
-        ]
-      }
+      "priorityObjectives": [
+        "building"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -40949,11 +40542,9 @@
         "start": "25/11/2025",
         "end": "25/11/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "eco-design"
-        ]
-      }
+      "priorityObjectives": [
+        "eco-design"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -41188,11 +40779,9 @@
       "validity": {
         "end": "31/12/2099"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -41421,11 +41010,9 @@
           "Hauts-de-France"
         ]
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -41652,11 +41239,9 @@
         ],
         "excludeMicroentrepreneur": true
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "mobility"
-        ]
-      }
+      "priorityObjectives": [
+        "mobility"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -41874,11 +41459,9 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh"
-        ]
-      }
+      "priorityObjectives": [
+        "rh"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -42092,11 +41675,9 @@
       "validity": {
         "end": "31/12/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh"
-        ]
-      }
+      "priorityObjectives": [
+        "rh"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -42310,11 +41891,9 @@
       "validity": {
         "end": "29/07/2025"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "rh"
-        ]
-      }
+      "priorityObjectives": [
+        "rh"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -42464,11 +42043,11 @@
     "montant du financement": "1,5 M€ d’aide maximale par site, selon la nature du projet",
     "objectifs": [
       {
-        "description": "Vérifiez l’éligibilité de votre projet en parcourant la documentation de l’ADEME.",
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
             "lien": "https://agir.ademe.fr/sites/default/files/AAP%20DETER%20-%20Cahier%20des%20Charges%20-%20Octobre%202025.docx",
-            "texte": "Vérifier mon éligibilité"
+            "texte": "Critères d'éligibilité"
           }
         ]
       },
@@ -42539,11 +42118,9 @@
         "start": "06/02/2025",
         "end": "12/02/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "energy"
-        ]
-      }
+      "priorityObjectives": [
+        "energy"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -42755,11 +42332,9 @@
         "start": "13/11/2023",
         "end": "30/06/2026"
       },
-      "questionnaire": {
-        "priorityObjectives": [
-          "environmental"
-        ]
-      }
+      "priorityObjectives": [
+        "environmental"
+      ]
     },
     "publicodes": {
       "entreprise": null,
@@ -42903,5 +42478,399 @@
       }
     },
     "id": "act-evaluation"
+  },
+  {
+    "titre": "Innovation et démonstration hydrogène",
+    "promesse": "Financez vos travaux liés à la production et au transport de l'hydrogène",
+    "description": "Cet appel à projets finance les travaux de développement d'un équipement, d'un produit ou d'un service, ou bien la réalisation d'un démonstrateur mettant en œuvre de l’hydrogène. Il peut s'agir de travaux de développement ou d'amélioration de systèmes liés à la production, au transport d’hydrogène ou à ses usages. Dans le cadre, par exemple, d'applications industrielles, ou de fourniture d'énergie.",
+    "description longue": "Les projets devront s’inscrire dans au moins un des quatre axes  :\n\n- Axe 1 - Briques technologiques : composants et systèmes innovants.\n- Axe 2 - Pilotes (ou premières commerciales) innovants industriels et réseaux, fourniture temporaire ou localisée d’énergie.\n- Axe 3 - Conception et démonstration de nouveaux véhicules.\n- Axe 4 - Écoconception et recyclabilité.",
+    "début de validité": "07/05/2025",
+    "fin de validité": "25/09/2026",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "ADEME",
+    "contact question": "mailto:aap.h2@ademe.fr",
+    "url": "https://agir.ademe.fr/aides-financieres/aap/innovation-et-demonstration-hydrogene",
+    "nature de l'aide": "financement",
+    "montant du financement": "Selon la nature du projet",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/aides-financieres/aap/innovation-et-demonstration-hydrogene",
+            "texte": "Critères d'éligibilité"
+          }
+        ]
+      },
+      {
+        "description": "Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au moins un mois avant la date limite de dépôt)."
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, étude de faisabilité, etc. À ce stade, votre investissement ne doit pas avoir été réalisé !",
+        "liens": [
+          {
+            "lien": "https://vosaides.ademe.fr/create-assistant?id_dispo=1ef2e56b-bc2a-6bec-9fb1-a934ba616ec6&id_liste=1ef2e56b-bc2c-6618-a560-a934ba616ec6&dossier_aide_type=INVES",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez vos investissements."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Fabrication d'hydrogène, industrie, transport et fourniture d'énergie"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Ce dispositif s'adresse aux entreprises seules ou en collaboration (5 partenaires au maximum), notamment avec des laboratoires de recherche (non obligatoire)."
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "F",
+          "S",
+          "T",
+          "U"
+        ],
+        "excludeMicroentrepreneur": true
+      },
+      "validity": {
+        "start": "07/05/2025",
+        "end": "25/09/2026"
+      },
+      "priorityObjectives": [
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "a une categorie legale eligible"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      }
+    },
+    "id": "innovation-hydrogene"
+  },
+  {
+    "titre": "Indicateur climat",
+    "promesse": "L'indicateur climat est un outil visant à rendre transparente et lisible la transition écologique de votre entreprise.",
+    "description": "La Banque de France vous accompagne dans l’évaluation de vos émissions de gaz à effet de serre et de la résilience climatique de votre entreprise, à l'aide d'un outil gratuit : l'indicateur climat.\n\nCet indicateur de référence permet à votre entreprise de :\n\n- Prendre conscience des impacts et des opportunités.\n- D’évaluer votre résilience et vos plans d'action face aux aléas climatiques (températures, précipitations, sécheresse...).\n- De disposer d’un indicateur de référence, utilisable auprès de vos financeurs, de vos clients ou de vos fournisseurs.",
+    "description longue": "L'évaluation proposée repose sur :\n\n- des informations propres à l’entreprise potentiellement collectées directement auprès d’elle (volumes d’activité présent et futur, émissions de gaz à effet de\\\n  serre associées, leviers de décarbonation).\n- des trajectoires de décarbonation de référence alignées sur l’Accord de\\\n  Paris.\n- un cadre méthodologique inspiré de la méthode ACT de l’ADEME, reconnue à l’international.\n- une analyse d’expert menée par le Réseau de la Banque de France, présent sur tout le territoire et au service des entreprises.",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "Banque de France",
+    "contact question": "mailto:pierre.meignant@banque-france.fr",
+    "url": "file:///Users/betagouv/Downloads/20251003_Presentation.Indicateur_Climat_BDF-4.pdf",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "gratuit",
+    "durée de l'accompagnement": "variable",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Créez un compte et connectez-vous sur l'Espace Dirigeant de la Banque de France.",
+        "liens": [
+          {
+            "lien": "https://dirigeant.banque-france.fr/#/",
+            "texte": "Espace Dirigeant"
+          }
+        ]
+      },
+      {
+        "description": "Collectez les données et répondez aux questions concernant l'adaptabilité climatique de votre entreprise."
+      },
+      {
+        "description": "Obtenez une évaluation personnalisée à l'aide de l'indicateur climat."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "En phase de déploiement (qui se poursuivra jusqu'en 2027), l'indicateur climatique concerne les secteurs de la production d'électricité, des transports, de la détention de parcs immobiliers, de la production de ciment et de la construction de bâtiments."
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "F",
+          "H",
+          "L"
+        ]
+      },
+      "priorityObjectives": [
+        "environmental"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est L"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "indicateur-climat"
   }
 ]

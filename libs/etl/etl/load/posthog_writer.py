@@ -1,19 +1,13 @@
 from posthog import Posthog
-import os
-from dotenv import load_dotenv
+from etl.tools.config.config import Config
 
-
+### Copy from a small python tool used a couple time in the TEE project
+### currently not in use in the package
 class PosthogManager:
     def __init__(self):
-        load_dotenv()
-        self.write_api_key = os.getenv("POSTHOG_WRITE_API_KEY", "")
+        self.write_api_key = Config.POSTHOG_WRITE_API_KEY()
         self._posthog_client = None
         self._events_to_create = []
-
-        if not self.project_id or not self.write_api_key or not self.read_api_key:
-            raise ValueError(
-                "Missing PostHog configuration. Ensure POSTHOG_WRITE_API_KEY is set in the environment."
-            )
 
         try:
             self._posthog_client = Posthog(

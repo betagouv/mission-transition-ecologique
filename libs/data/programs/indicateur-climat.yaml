@@ -1,0 +1,85 @@
+titre: Indicateur climat
+promesse: >-
+  L'indicateur climat est un outil visant à rendre transparente et lisible la
+  transition écologique de votre entreprise.
+description: >-
+  La Banque de France vous accompagne dans l’évaluation de vos émissions de gaz
+  à effet de serre et de la résilience climatique de votre entreprise, à l'aide
+  d'un outil gratuit : l'indicateur climat.
+
+
+  Cet indicateur de référence permet à votre entreprise de :
+
+
+  - Prendre conscience des impacts et des opportunités.
+
+  - D’évaluer votre résilience et vos plans d'action face aux aléas climatiques
+  (températures, précipitations, sécheresse...).
+
+  - De disposer d’un indicateur de référence, utilisable auprès de vos
+  financeurs, de vos clients ou de vos fournisseurs.
+description longue: >-
+  L'évaluation proposée repose sur :
+
+
+  - des informations propres à l’entreprise potentiellement collectées
+  directement auprès d’elle (volumes d’activité présent et futur, émissions de
+  gaz à effet de\
+    serre associées, leviers de décarbonation).
+  - des trajectoires de décarbonation de référence alignées sur l’Accord de\
+    Paris.
+  - un cadre méthodologique inspiré de la méthode ACT de l’ADEME, reconnue à
+  l’international.
+
+  - une analyse d’expert menée par le Réseau de la Banque de France, présent sur
+  tout le territoire et au service des entreprises.
+illustration: images/TEE_eolienne.png
+opérateur de contact: Banque de France
+contact question: mailto:pierre.meignant@banque-france.fr
+url: >-
+  file:///Users/betagouv/Downloads/20251003_Presentation.Indicateur_Climat_BDF-4.pdf
+nature de l'aide: étude
+coût de l'accompagnement: gratuit
+durée de l'accompagnement: variable
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Créez un compte et connectez-vous sur l'Espace Dirigeant de la Banque de
+      France.
+    liens:
+      - lien: https://dirigeant.banque-france.fr/#/
+        texte: Espace Dirigeant
+  - description: >-
+      Collectez les données et répondez aux questions concernant l'adaptabilité
+      climatique de votre entreprise.
+  - description: Obtenez une évaluation personnalisée à l'aide de l'indicateur climat.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      En phase de déploiement (qui se poursuivra jusqu'en 2027), l'indicateur
+      climatique concerne les secteurs de la production d'électricité, des
+      transports, de la détention de parcs immobiliers, de la production de
+      ciment et de la construction de bâtiments.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est L
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental

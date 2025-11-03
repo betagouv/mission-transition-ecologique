@@ -22,8 +22,8 @@ export class OpportunityAssociatedData {
 
   public getThemeId(): ThemeId | undefined {
     if (this.isProgram()) {
-      if (this.data.eligibilityData.questionnaire?.priorityObjectives?.length === 1) {
-        return this.data.eligibilityData.questionnaire.priorityObjectives[0]
+      if (this.data.eligibilityData.priorityObjectives?.length === 1) {
+        return this.data.eligibilityData.priorityObjectives[0]
       }
     }
 

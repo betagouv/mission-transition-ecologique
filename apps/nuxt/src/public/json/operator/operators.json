@@ -6,12 +6,6 @@
     ]
   },
   {
-    "operator": "ASP",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
     "operator": "Agence de l'Eau Loire-Bretagne",
     "filterCategories": [
       "Agence de l'eau"
@@ -221,12 +215,6 @@
     ]
   },
   {
-    "operator": "Association pour la transition Bas Carbone",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
     "operator": "Région Nouvelle-Aquitaine",
     "filterCategories": [
       "Régions"
@@ -261,5 +249,9 @@
     "filterCategories": [
       "Opérateurs nationaux"
     ]
+  },
+  {
+    "operator": "Banque de France",
+    "filterCategories": []
   }
 ]
