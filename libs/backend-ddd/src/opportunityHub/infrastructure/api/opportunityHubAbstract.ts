@@ -22,7 +22,7 @@ export default abstract class OpportunityHubAbstract implements OpportunityHubRe
     return false
   }
 
-  abstract hasDailyContactTransmissionLimit(): boolean
+  abstract hasTransmissionLimit(): boolean
   abstract needReturnReceipt(): boolean
 
   public abstract transmitOpportunity: (

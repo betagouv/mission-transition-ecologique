@@ -49,9 +49,10 @@ export default class OpportunityFeatures {
     }
 
     void (async () => {
-      if (!(await this._hasReachedDailyContactTransmissionLimit(opportunityWithContactId, opportunityAssociatedData.value))) {
-        void this._sendReturnReceipt(opportunityWithContactId, opportunityAssociatedData.value)
+      if (!(await this._hasReachedTransmissionLimit(opportunityWithContactId, opportunityAssociatedData.value))) {
         void this._transmitOpportunityToHubs(opportunityResult.value, opportunityWithOperatorAndContact, opportunityAssociatedData.value)
+      } else {
+        void this._sendReturnReceipt(opportunityWithContactId, opportunityAssociatedData.value)
       }
     })()
 
@@ -139,19 +140,17 @@ export default class OpportunityFeatures {
   }
 
   private async _sendReturnReceipt(opportunity: OpportunityWithContactId, opportunityData: OpportunityAssociatedData) {
-    if (this._opportunityHubFeatures.needReturnReceipt(opportunityData)) {
-      const hasError = await this._mailRepository.sendReturnReceipt(opportunity, opportunityData)
-      if (hasError) {
-        Monitor.warning('Error while sending a return receipt', { error: hasError })
-      }
+    const hasError = await this._mailRepository.sendReturnReceipt(opportunity, opportunityData)
+    if (hasError) {
+      Monitor.warning('Error while sending a return receipt', { error: hasError })
     }
   }
 
-  private async _hasReachedDailyContactTransmissionLimit(
+  private async _hasReachedTransmissionLimit(
     opportunity: OpportunityWithContactId,
     opportunityData: OpportunityAssociatedData
   ): Promise<boolean> {
-    if (!this._opportunityHubFeatures.hasDailyContactTransmissionLimit(opportunityData)) {
+    if (!this._opportunityHubFeatures.hasTransmissionLimit(opportunityData)) {
       return false
     }
 

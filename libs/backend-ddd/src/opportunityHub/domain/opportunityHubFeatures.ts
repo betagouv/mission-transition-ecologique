@@ -31,10 +31,10 @@ export default class OpportunityHubFeatures {
     return false
   }
 
-  public hasDailyContactTransmissionLimit = (opportunityData: OpportunityAssociatedData): boolean => {
+  public hasTransmissionLimit = (opportunityData: OpportunityAssociatedData): boolean => {
     for (const opportunityHubRepository of this._opportunityHubRepositories) {
       if (opportunityHubRepository.support(opportunityData)) {
-        return opportunityHubRepository.hasDailyContactTransmissionLimit()
+        return opportunityHubRepository.hasTransmissionLimit()
       }
     }
 

@@ -37,7 +37,7 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return false
   }
 
-  public hasDailyContactTransmissionLimit(): boolean {
+  public hasTransmissionLimit(): boolean {
     return true
   }
 

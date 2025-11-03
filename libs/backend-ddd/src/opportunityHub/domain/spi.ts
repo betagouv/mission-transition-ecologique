@@ -8,5 +8,5 @@ export interface OpportunityHubRepository {
   transmitOpportunity: (opportunity: Opportunity, opportunityObject: OpportunityAssociatedData) => Promise<Result<number, Error>>
   support: (opportunityObject: OpportunityAssociatedData) => boolean
   needReturnReceipt: () => boolean
-  hasDailyContactTransmissionLimit(): boolean
+  hasTransmissionLimit(): boolean
 }
