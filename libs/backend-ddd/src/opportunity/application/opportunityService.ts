@@ -6,7 +6,6 @@ import Config from '../../config'
 import EstablishmentService from '../../establishment/application/establishmentService'
 import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFeatures'
 import { ProgramService } from '../../program'
-import ProgramFeatures from '../../program/domain/programFeatures'
 import { ProjectService } from '../../project'
 import { OpportunityId } from '../domain/types'
 import OpportunityFeatures from '../domain/opportunityFeatures'
@@ -14,7 +13,6 @@ import { Result } from 'true-myth'
 import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
 import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
 import { ContactRepository, MailerManager, OpportunityRepository } from '../domain/spi'
-import ProgramsJson from '../../program/infrastructure/programsJson'
 import BrevoMail from '../infrastructure/api/brevo/brevoMail'
 import { PlaceDesEntreprises } from '../../opportunityHub/infrastructure/api/placedesentreprises/placeDesEntreprises'
 
@@ -54,10 +52,6 @@ export default class OpportunityService {
 
   private _getOpportunityHubFeatures(): OpportunityHubFeatures {
     return new OpportunityHubFeatures([Config.PDE_API_ENABLED ? new PlaceDesEntreprises() : new PlaceDesEntreprisesMock()])
-  }
-
-  private _getProgramFeature(): ProgramFeatures {
-    return new ProgramFeatures(ProgramsJson.getInstance())
   }
 
   private _getMailRepository(): MailerManager {
