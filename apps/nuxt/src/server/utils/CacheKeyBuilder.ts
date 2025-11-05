@@ -3,7 +3,7 @@ import crypto from 'node:crypto'
 import Config from '~/config'
 
 export class CacheKeyBuilder {
-  static MAX_AGE = 60 * 60 * 6 // 6 hours
+  static MAX_AGE = 60 * 60 * 1 // 1 hours
   static fromEvent = (event: H3Event, prefix: string | undefined = undefined): string => {
     return this._buildKey(this._encode(event.path), prefix)
   }
