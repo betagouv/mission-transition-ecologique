@@ -20,7 +20,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Schéma pluriannuel de mise en accessibilité des actifs numériques de l’ADEME pour 2021-2023
+                Schéma pluriannuel de mise en accessibilité des actifs numériques de l’ADEME pour 2024-2026
               </a>
             </li>
             <li>
@@ -29,7 +29,7 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Plan d’action de l’année en cours(ouvre un nouvel onglet).
+                Plan d’action de l’année en cours (ouvre un nouvel onglet).
               </a>
             </li>
           </ul>
