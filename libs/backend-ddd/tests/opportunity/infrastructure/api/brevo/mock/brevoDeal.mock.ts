@@ -20,7 +20,7 @@ const getDailyOpportunitiesByContactId = async (): Promise<Result<OpportunityDet
   return Result.ok([] as OpportunityDetailsShort[])
 }
 
-export const brevoRepositoryTest: OpportunityRepository = {
+export const brevoRepositoryMock: OpportunityRepository = {
   create: addBrevoDeal,
   update: updateBrevoDeal,
   readDates: getBrevoCreationDates,

@@ -1,6 +1,7 @@
 import { defineEventHandler, H3Event } from 'h3'
 import { Monitor, ProjectService } from '@tee/backend-ddd'
 import { z } from 'zod'
+import { CacheKeyBuilder } from '~/server/utils/CacheKeyBuilder'
 
 const projectSlugSchema = z.object({
   slug: z.string()
@@ -34,7 +35,7 @@ const projectCached = cachedFunction(
   },
   {
     name: 'project',
-    getKey: (event: H3Event, slug: string) => CacheKeyBuilder.formEvent(event, slug),
-    maxAge: 60 * 60 * 24 // 24 hours
+    getKey: (event: H3Event, slug: string) => CacheKeyBuilder.fromEvent(event, slug),
+    maxAge: CacheKeyBuilder.MAX_AGE
   }
 )

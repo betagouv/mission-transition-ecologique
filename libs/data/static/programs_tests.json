@@ -186,7 +186,42 @@
         ]
       }
     },
-    "id": "accelerateur-decarbonation"
+    "id": "accelerateur-decarbonation",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "minEmployees": "50"
+      },
+      "validity": {
+        "start": "06/02/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Programme Volontaire Français ACT",
@@ -372,7 +407,37 @@
         ]
       }
     },
-    "id": "act-pas-a-pas"
+    "id": "act-pas-a-pas",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Parcours Adaptation au changement climatique",
@@ -562,7 +627,39 @@
         ]
       }
     },
-    "id": "adaptation-bzh"
+    "id": "adaptation-bzh",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Bretagne"
+        ]
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Aides au réemploi des emballages",
@@ -788,7 +885,59 @@
         ]
       }
     },
-    "id": "aides-au-reemploi-des-emballages"
+    "id": "aides-au-reemploi-des-emballages",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "waste"
+        ]
+      }
   },
   {
     "titre": "AMO chaufferie biomasse ",
@@ -981,7 +1130,19 @@
         ]
       }
     },
-    "id": "amo-chaufferie-biomasse"
+    "id": "amo-chaufferie-biomasse",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "E"
+        ]
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Audit énergétique en industrie",
@@ -1175,7 +1336,25 @@
         ]
       }
     },
-    "id": "audit-energetique-en-industrie"
+    "id": "audit-energetique-en-industrie",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Audit label Clef Verte",
@@ -1351,7 +1530,22 @@
         ]
       }
     },
-    "id": "audits-clef-verte"
+    "id": "audits-clef-verte",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "I"
+        ],
+        "maxEmployees": "499"
+      },
+      "validity": {
+        "start": "01/05/2023",
+        "end": "31/12/2026"
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Baisse Les Watts",
@@ -1556,7 +1750,42 @@
         ]
       }
     },
-    "id": "baisse-les-watts"
+    "id": "baisse-les-watts",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "maxEmployees": "249"
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "01/05/2026"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Bonus écologique",
@@ -1750,7 +1979,34 @@
         ]
       }
     },
-    "id": "bonus-ecologique"
+    "id": "bonus-ecologique",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "U"
+        ]
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Bonus Réparation",
@@ -1905,7 +2161,19 @@
         ]
       }
     },
-    "id": "bonus-reparation"
+    "id": "bonus-reparation",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "S"
+        ]
+      },
+      "priorityObjectives": [
+          "waste",
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Booster Éco-Énergie Tertiaire",
@@ -2123,7 +2391,43 @@
         ]
       }
     },
-    "id": "booster-eco-energie-tertiaire"
+    "id": "booster-eco-energie-tertiaire",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "maxEmployees": "4999",
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Corse",
+          "Occitanie"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2034"
+      },
+      "priorityObjectives": [
+          "building",
+          "energy"
+        ]
+      }
   },
   {
     "titre": "CEDRE Investissement",
@@ -2323,7 +2627,47 @@
         ]
       }
     },
-    "id": "cedre-investissement"
+    "id": "cedre-investissement",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "U"
+        ],
+        "maxEmployees": "249",
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "building",
+          "mobility",
+          "waste",
+          "water",
+          "energy",
+          "rh",
+          "environmental",
+          "eco-design",
+          "biodiversite"
+        ]
+      }
   },
   {
     "titre": "CEDRE Premier Pas",
@@ -2528,7 +2872,43 @@
         ]
       }
     },
-    "id": "cedre-premier-pas"
+    "id": "cedre-premier-pas",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "mobility",
+          "waste",
+          "water",
+          "energy",
+          "rh",
+          "environmental",
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Certification en agriculture biologique",
@@ -2688,7 +3068,21 @@
         ]
       }
     },
-    "id": "certification-agriculture-biologique"
+    "id": "certification-agriculture-biologique",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A"
+        ]
+      },
+      "validity": {
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "environmental",
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Charte \"zéro déchet plastique\"",
@@ -2882,7 +3276,41 @@
         ]
       }
     },
-    "id": "charte-zero-dechet-plastique"
+    "id": "charte-zero-dechet-plastique",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "waste",
+          "biodiversite"
+        ]
+      }
   },
   {
     "titre": "Chèque Transition Bioéthanol",
@@ -3083,7 +3511,40 @@
         ]
       }
     },
-    "id": "cheque-transition-bioethanol"
+    "id": "cheque-transition-bioethanol",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "ClimaDiag expert",
@@ -3264,7 +3725,31 @@
         ]
       }
     },
-    "id": "climadiag-expert"
+    "id": "climadiag-expert",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "H"
+        ],
+        "minEmployees": "20",
+        "maxEmployees": "499",
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté"
+        ]
+      },
+      "validity": {
+        "start": "01/10/2023",
+        "end": "01/08/2026"
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Communauté du Coq Vert",
@@ -3447,7 +3932,35 @@
         ]
       }
     },
-    "id": "communaute-coq-vert"
+    "id": "communaute-coq-vert",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "L",
+          "M",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ]
+      },
+      "validity": {
+        "start": "01/06/2020"
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Coup de pouce Chauffage",
@@ -3636,7 +4149,31 @@
         ]
       }
     },
-    "id": "coup-de-pouce-chauffage"
+    "id": "coup-de-pouce-chauffage",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "priorityObjectives": [
+          "building",
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Diag Décarbon'Action",
@@ -3808,7 +4345,28 @@
         ]
       }
     },
-    "id": "diag-decarbon-action"
+    "id": "diag-decarbon-action",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "L",
+          "Q",
+          "R"
+        ],
+        "maxEmployees": "499"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Diag Eco-Flux",
@@ -3982,7 +4540,32 @@
         ]
       }
     },
-    "id": "diag-eco-flux"
+    "id": "diag-eco-flux",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "O",
+          "Q"
+        ],
+        "minEmployees": "20",
+        "maxEmployees": "249"
+      },
+      "priorityObjectives": [
+          "waste",
+          "water",
+          "energy",
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Diag Ecoconception",
@@ -4153,7 +4736,34 @@
         ]
       }
     },
-    "id": "diag-ecoconception"
+    "id": "diag-ecoconception",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "maxEmployees": "249"
+      },
+      "priorityObjectives": [
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Diag Perf'Immo",
@@ -4338,7 +4948,34 @@
         ]
       }
     },
-    "id": "diag-perf-immo"
+    "id": "diag-perf-immo",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "priorityObjectives": [
+          "building"
+        ]
+      }
   },
   {
     "titre": "Diagnostic Changement climatique",
@@ -4507,7 +5144,25 @@
         ]
       }
     },
-    "id": "diagnostic-changement-climatique"
+    "id": "diagnostic-changement-climatique",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "maxEmployees": "249",
+        "allowedRegion": [
+          "Île-de-France"
+        ]
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Diagnostic déchets",
@@ -4682,7 +5337,31 @@
         ]
       }
     },
-    "id": "diagnostic-dechets"
+    "id": "diagnostic-dechets",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "F",
+          "G",
+          "H",
+          "I",
+          "N",
+          "Q",
+          "R",
+          "S"
+        ],
+        "maxEmployees": "499",
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "waste"
+        ]
+      }
   },
   {
     "titre": "Diagnostic Eco-conception Île-de-France",
@@ -4860,7 +5539,27 @@
         ]
       }
     },
-    "id": "diagnostic-eco-conception-ile-de-france"
+    "id": "diagnostic-eco-conception-ile-de-france",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "M",
+          "R",
+          "S"
+        ],
+        "maxEmployees": "499",
+        "allowedRegion": [
+          "Île-de-France"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Diagnostic RSE",
@@ -5031,7 +5730,35 @@
         ]
       }
     },
-    "id": "diagnostic-rse"
+    "id": "diagnostic-rse",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "Q",
+          "R",
+          "S",
+          "T"
+        ],
+        "minEmployees": "20",
+        "maxEmployees": "499"
+      },
+      "priorityObjectives": [
+          "rh"
+        ]
+      }
   },
   {
     "titre": "Diagnostic Transition Ecologique",
@@ -5198,7 +5925,32 @@
         ]
       }
     },
-    "id": "diagnostic-transition-ecologique"
+    "id": "diagnostic-transition-ecologique",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "Q",
+          "R"
+        ],
+        "maxEmployees": "249"
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Eco-Défis des artisans et des commerçants",
@@ -5356,7 +6108,20 @@
         ]
       }
     },
-    "id": "eco-defis-des-artisans-et-des-commercants"
+    "id": "eco-defis-des-artisans-et-des-commercants",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "F",
+          "G",
+          "I"
+        ],
+        "maxEmployees": "249"
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Initiation éco-conception",
@@ -5522,7 +6287,25 @@
         ]
       }
     },
-    "id": "ecoconception-bzh"
+    "id": "ecoconception-bzh",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "F",
+          "G",
+          "M",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Bretagne"
+        ]
+      },
+      "priorityObjectives": [
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Formation écogestes",
@@ -5677,7 +6460,20 @@
         ]
       }
     },
-    "id": "ecogestes-paca"
+    "id": "ecogestes-paca",
+    "eligibilityData": {
+      "company": {
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "waste",
+          "water",
+          "energy",
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Engins moins polluants",
@@ -5823,7 +6619,19 @@
         ]
       }
     },
-    "id": "engins-moins-polluants"
+    "id": "engins-moins-polluants",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "F",
+          "H"
+        ]
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Entreprises engagées pour la nature",
@@ -6021,7 +6829,39 @@
         ]
       }
     },
-    "id": "entreprises-engagees-nature"
+    "id": "entreprises-engagees-nature",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "U"
+        ]
+      },
+      "validity": {
+        "start": "15/09/2019"
+      },
+      "priorityObjectives": [
+          "biodiversite"
+        ]
+      }
   },
   {
     "titre": "Enviroveille",
@@ -6199,7 +7039,29 @@
         ]
       }
     },
-    "id": "enviroveille"
+    "id": "enviroveille",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "K",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q"
+        ],
+        "maxEmployees": "499"
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Étude \"Alimentation durable\"",
@@ -6414,7 +7276,48 @@
         ]
       }
     },
-    "id": "etude-alimentation-durable"
+    "id": "etude-alimentation-durable",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "D",
+          "G",
+          "I"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur",
+          "Saint-Barthélemy",
+          "Saint-Pierre-Et-Miquelon"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "waste",
+          "environmental",
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Etude \"biodéchets\"",
@@ -6592,7 +7495,25 @@
         ]
       }
     },
-    "id": "etude-biodechets"
+    "id": "etude-biodechets",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "E",
+          "G",
+          "I"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2024",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "waste"
+        ]
+      }
   },
   {
     "titre": "Étude \"Centres de tri\"",
@@ -6778,7 +7699,22 @@
         ]
       }
     },
-    "id": "etude-centres-de-tri"
+    "id": "etude-centres-de-tri",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "E",
+          "F"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "waste"
+        ]
+      }
   },
   {
     "titre": "Étude \"Chaufferie biomasse\"",
@@ -6970,7 +7906,28 @@
         ]
       }
     },
-    "id": "etude-chaufferie-biomasse"
+    "id": "etude-chaufferie-biomasse",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G",
+          "H",
+          "I"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Étude \"Diagnostic serres\"",
@@ -7179,7 +8136,22 @@
         ]
       }
     },
-    "id": "etude-diagnostic-serres"
+    "id": "etude-diagnostic-serres",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "G"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Étude \"Économie de la fonctionnalité\"",
@@ -7383,7 +8355,40 @@
         ]
       }
     },
-    "id": "etude-economie-de-la-fonctionnalite"
+    "id": "etude-economie-de-la-fonctionnalite",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Etude et Investissement \"qualité de l’air\"",
@@ -7593,7 +8598,50 @@
         ]
       }
     },
-    "id": "etude-et-investissement-qualite-de-l-air"
+    "id": "etude-et-investissement-qualite-de-l-air",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Grand Est",
+          "Île-de-France",
+          "Martinique",
+          "Normandie",
+          "Occitanie",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2023"
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Étude faisabilité \"hydrogène\"",
@@ -7761,7 +8809,22 @@
         ]
       }
     },
-    "id": "etude-faisabilite-hydrogene"
+    "id": "etude-faisabilite-hydrogene",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2023"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Étude \"friches polluées\"",
@@ -7934,7 +8997,30 @@
         ]
       }
     },
-    "id": "etude-friches-polluees"
+    "id": "etude-friches-polluees",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "L"
+        ]
+      },
+      "validity": {
+        "start": "01/12/2023",
+        "end": "31/12/2023"
+      },
+      "priorityObjectives": [
+          "building"
+        ]
+      }
   },
   {
     "titre": "Étude \"Gaspillage alimentaire\"",
@@ -8085,7 +9171,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8141,7 +9226,37 @@
         ]
       }
     },
-    "id": "etude-gaspillage-alimentaire"
+    "id": "etude-gaspillage-alimentaire",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "D",
+          "G",
+          "I"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté",
+          "Centre-Val de Loire",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "waste"
+        ]
+      }
   },
   {
     "titre": "Étude \"Géothermie de surface et d'aérothermie\"",
@@ -8298,7 +9413,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8342,7 +9456,31 @@
         ]
       }
     },
-    "id": "etude-geothermie-de-surface-et-d-aerothermie"
+    "id": "etude-geothermie-de-surface-et-d-aerothermie",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "L",
+          "Q"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Étude \"Hydroélectricité\"",
@@ -8494,7 +9632,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8545,7 +9682,34 @@
         ]
       }
     },
-    "id": "etude-hydroelectricite"
+    "id": "etude-hydroelectricite",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "I"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "La Réunion",
+          "Nouvelle-Aquitaine",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Étude \"Méthanisation\"",
@@ -8696,7 +9860,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8757,7 +9920,43 @@
         ]
       }
     },
-    "id": "etude-methanisation"
+    "id": "etude-methanisation",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "I"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Pays de la Loire",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "waste",
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Étude \"Performance énergétique\" en industrie",
@@ -8909,7 +10108,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -8952,7 +10150,22 @@
         ]
       }
     },
-    "id": "etude-performance-energetique-en-industrie"
+    "id": "etude-performance-energetique-en-industrie",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Étude \"Éco-conception\"",
@@ -9102,7 +10315,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9164,7 +10376,44 @@
         ]
       }
     },
-    "id": "etude-performance-produits"
+    "id": "etude-performance-produits",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "J"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Étude \"Autoconsommation photovoltaïque\"",
@@ -9315,7 +10564,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9384,7 +10632,45 @@
         ]
       }
     },
-    "id": "etude-photovoltaique-ademe"
+    "id": "etude-photovoltaique-ademe",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Corse",
+          "Guadeloupe",
+          "Guyane",
+          "Martinique",
+          "Polynésie française",
+          "Saint-Pierre-Et-Miquelon"
+        ]
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Étude d'opportunité photovoltaïque",
@@ -9508,7 +10794,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9564,7 +10849,33 @@
         ]
       }
     },
-    "id": "etude-photovoltaique-cci"
+    "id": "etude-photovoltaique-cci",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "maxEmployees": "499",
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté"
+        ]
+      },
+      "validity": {
+        "start": "01/10/2023",
+        "end": "01/06/2026"
+      },
+      "priorityObjectives": [
+          "building",
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Étude \"projet de recherche\"",
@@ -9718,7 +11029,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9761,7 +11071,29 @@
         ]
       }
     },
-    "id": "etude-projet-de-recherche"
+    "id": "etude-projet-de-recherche",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "D",
+          "E",
+          "F",
+          "H",
+          "J",
+          "M",
+          "S"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "rh"
+        ]
+      }
   },
   {
     "titre": "Étude \"Récupération de chaleur fatale\"",
@@ -9912,7 +11244,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -9952,7 +11283,22 @@
         ]
       }
     },
-    "id": "etude-recuperation-de-chaleur-fatale"
+    "id": "etude-recuperation-de-chaleur-fatale",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "H",
+          "I"
+        ]
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Étude \"réemploi réutilisation réparation\"",
@@ -10103,7 +11449,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10168,7 +11513,47 @@
         ]
       }
     },
-    "id": "etude-reemploi-reutilisation-reparation"
+    "id": "etude-reemploi-reutilisation-reparation",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "E",
+          "G",
+          "I",
+          "J",
+          "R"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Étude \"réhabilitation solaires thermiques collectives\"",
@@ -10322,7 +11707,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10379,7 +11763,42 @@
         ]
       }
     },
-    "id": "etude-rehabilitation-solaires-thermiques-collectives"
+    "id": "etude-rehabilitation-solaires-thermiques-collectives",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "L",
+          "N",
+          "Q",
+          "S"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Pays de la Loire",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "start": "03/06/2019",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Étude \"Réseaux énergie renouvelable\"",
@@ -10535,7 +11954,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10572,7 +11990,24 @@
         ]
       }
     },
-    "id": "etude-reseaux-energie-renouvelable"
+    "id": "etude-reseaux-energie-renouvelable",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "D",
+          "E",
+          "Q"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Étude \"Solaire thermique\"",
@@ -10729,7 +12164,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -10810,7 +12244,63 @@
         ]
       }
     },
-    "id": "etude-solaire-thermique"
+    "id": "etude-solaire-thermique",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur",
+          "Saint-Pierre-Et-Miquelon"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Étude \"Test géothermie\"",
@@ -10961,7 +12451,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11017,7 +12506,37 @@
         ]
       }
     },
-    "id": "etude-test-geothermie"
+    "id": "etude-test-geothermie",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "eXtrême Défi Mobilité",
@@ -11150,7 +12669,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11177,7 +12695,19 @@
         ]
       }
     },
-    "id": "extreme-defi-mobilite"
+    "id": "extreme-defi-mobilite",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "G",
+          "H"
+        ]
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Flotte de vélos à disposition",
@@ -11299,7 +12829,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11344,7 +12873,37 @@
         ]
       }
     },
-    "id": "flotte-de-velos-a-disposition"
+    "id": "flotte-de-velos-a-disposition",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Fond Vert - Territoires d'Industrie",
@@ -11497,7 +13056,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11542,7 +13100,31 @@
         ]
       }
     },
-    "id": "fond-vert-territoires-d-industrie"
+    "id": "fond-vert-territoires-d-industrie",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
+      "validity": {
+        "start": "12/03/2034",
+        "end": "31/12/2034"
+      },
+      "priorityObjectives": [
+          "building",
+          "mobility",
+          "waste",
+          "water",
+          "energy",
+          "rh",
+          "environmental",
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Fonds Tourisme Durable",
@@ -11705,7 +13287,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -11782,7 +13363,50 @@
         ]
       }
     },
-    "id": "fonds-tourisme-durable"
+    "id": "fonds-tourisme-durable",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "I"
+        ],
+        "maxEmployees": "249",
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur",
+          "Saint-Barthélemy",
+          "Saint-Martin"
+        ]
+      },
+      "priorityObjectives": [
+          "building",
+          "mobility",
+          "waste",
+          "water",
+          "energy",
+          "rh",
+          "environmental",
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Formation ADEME",
@@ -11957,7 +13581,40 @@
         ]
       }
     },
-    "id": "formation-engager-entreprise-transition-ecologique"
+    "id": "formation-engager-entreprise-transition-ecologique",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "validity": {
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "rh"
+        ]
+      }
   },
   {
     "titre": "Formations du CFDE",
@@ -12089,7 +13746,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -12136,7 +13792,29 @@
         ]
       }
     },
-    "id": "formations-du-cfde"
+    "id": "formations-du-cfde",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "H",
+          "K",
+          "M",
+          "O",
+          "P",
+          "Q"
+        ],
+        "maxEmployees": "499"
+      },
+      "priorityObjectives": [
+          "rh"
+        ]
+      }
   },
   {
     "titre": "Formations Transition Écologique et Énergétique",
@@ -12266,7 +13944,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -12311,7 +13988,37 @@
         ]
       }
     },
-    "id": "formations-tee"
+    "id": "formations-tee",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "priorityObjectives": [
+          "rh"
+        ]
+      }
   },
   {
     "titre": "Fresque de la Mobilité",
@@ -12432,7 +14139,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -12494,7 +14200,41 @@
         ]
       }
     },
-    "id": "fresque-de-la-mobilite"
+    "id": "fresque-de-la-mobilite",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "maxEmployees": "499",
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Gestion des biodéchets",
@@ -12617,7 +14357,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -12656,7 +14395,23 @@
         ]
       }
     },
-    "id": "gestion-des-biodechets"
+    "id": "gestion-des-biodechets",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "E",
+          "G",
+          "I"
+        ],
+        "allowedRegion": [
+          "Hauts-de-France"
+        ]
+      },
+      "priorityObjectives": [
+          "waste"
+        ]
+      }
   },
   {
     "titre": "Imprim'vert",
@@ -12780,7 +14535,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -12839,7 +14593,18 @@
         ]
       }
     },
-    "id": "imprim-vert"
+    "id": "imprim-vert",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "R"
+        ]
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Industries vertes",
@@ -12963,7 +14728,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -12991,7 +14755,20 @@
         ]
       }
     },
-    "id": "industries-vertes"
+    "id": "industries-vertes",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C"
+        ]
+      },
+      "priorityObjectives": [
+          "building",
+          "energy",
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Investissement \"bioGNV agricole et territorial\"",
@@ -13118,7 +14895,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13173,7 +14949,37 @@
         ]
       }
     },
-    "id": "investissement-biognv-agricole-et-territorial"
+    "id": "investissement-biognv-agricole-et-territorial",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "D",
+          "E"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Hauts-de-France",
+          "Île-de-France",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Pays de la Loire",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "start": "01/06/2023",
+        "end": "31/12/2023"
+      },
+      "priorityObjectives": [
+          "waste",
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement \"Boucle d’eau géothermique\"",
@@ -13321,7 +15127,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13376,7 +15181,41 @@
         ]
       }
     },
-    "id": "investissement-boucle-d-eau-geothermique"
+    "id": "investissement-boucle-d-eau-geothermique",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement \"centre de tri\"",
@@ -13524,7 +15363,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13584,7 +15422,43 @@
         ]
       }
     },
-    "id": "investissement-centre-de-tri"
+    "id": "investissement-centre-de-tri",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "E"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Pays de la Loire",
+          "Provence-Alpes-Côte d'Azur",
+          "Saint-Barthélemy",
+          "Saint-Martin",
+          "Saint-Pierre-Et-Miquelon"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "waste"
+        ]
+      }
   },
   {
     "titre": "Investissement \"Chaleur bois\"",
@@ -13736,7 +15610,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13792,7 +15665,37 @@
         ]
       }
     },
-    "id": "investissement-chaleur-bois"
+    "id": "investissement-chaleur-bois",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement \"construction et rénovation hors site\"",
@@ -13934,7 +15837,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -13970,7 +15872,18 @@
         ]
       }
     },
-    "id": "investissement-construction-et-renovation-hors-site"
+    "id": "investissement-construction-et-renovation-hors-site",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "F"
+        ]
+      },
+      "priorityObjectives": [
+          "building"
+        ]
+      }
   },
   {
     "titre": "Investissement \"Contrat Chaleur Renouvelable\"",
@@ -14118,7 +16031,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -14173,7 +16085,41 @@
         ]
       }
     },
-    "id": "investissement-contrat-chaleur-renouvelable"
+    "id": "investissement-contrat-chaleur-renouvelable",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement  \"contrat patrimonial ENR&R\"",
@@ -14321,7 +16267,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -14383,7 +16328,40 @@
         ]
       }
     },
-    "id": "investissement-contrat-patrimonial-enr-r"
+    "id": "investissement-contrat-patrimonial-enr-r",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Occitanie"
+        ]
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement contre le gaspillage alimentaire",
@@ -14534,7 +16512,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -14597,7 +16574,45 @@
         ]
       }
     },
-    "id": "investissement-contre-le-gaspillage-alimentaire"
+    "id": "investissement-contre-le-gaspillage-alimentaire",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "G",
+          "H",
+          "I",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "waste"
+        ]
+      }
   },
   {
     "titre": "Investissement \"Ecoconception\"",
@@ -14746,7 +16761,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -14808,7 +16822,44 @@
         ]
       }
     },
-    "id": "investissement-ecoconception"
+    "id": "investissement-ecoconception",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "J"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Investissement \"Géothermie de surface et d'aérothermie\"",
@@ -14956,7 +17007,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15011,7 +17061,41 @@
         ]
       }
     },
-    "id": "investissement-geothermie-de-surface-et-d-aerothermie"
+    "id": "investissement-geothermie-de-surface-et-d-aerothermie",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement \"Géothermie profonde\"",
@@ -15159,7 +17243,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15214,7 +17297,41 @@
         ]
       }
     },
-    "id": "investissement-geothermie-profonde"
+    "id": "investissement-geothermie-profonde",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement \"Gestion des biodéchets\"",
@@ -15362,7 +17479,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15415,7 +17531,40 @@
         ]
       }
     },
-    "id": "investissement-gestion-des-biodechets"
+    "id": "investissement-gestion-des-biodechets",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "E"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Pays de la Loire",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "waste"
+        ]
+      }
   },
   {
     "titre": "Investissement \"Méthanisation\"",
@@ -15563,7 +17712,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15619,7 +17767,41 @@
         ]
       }
     },
-    "id": "investissement-methanisation"
+    "id": "investissement-methanisation",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "E",
+          "H"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Centre-Val de Loire",
+          "Corse",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Pays de la Loire"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "waste",
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement \"PAC solaire\"",
@@ -15767,7 +17949,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -15822,7 +18003,41 @@
         ]
       }
     },
-    "id": "investissement-pac-solaire"
+    "id": "investissement-pac-solaire",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement pour l'approvisionnement de chaufferies bois",
@@ -15971,7 +18186,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16006,7 +18220,21 @@
         ]
       }
     },
-    "id": "investissement-pour-l-approvisionnement-de-chaufferies-bois"
+    "id": "investissement-pour-l-approvisionnement-de-chaufferies-bois",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement \"recharge véhicules électriques\"",
@@ -16135,7 +18363,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16171,7 +18398,22 @@
         ]
       }
     },
-    "id": "investissement-recharge-vehicules-electriques"
+    "id": "investissement-recharge-vehicules-electriques",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "G",
+          "Q"
+        ]
+      },
+      "validity": {
+        "start": "01/12/2022",
+        "end": "31/12/2024"
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Investissement \"Récupération de chaleur fatale\"",
@@ -16319,7 +18561,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16357,7 +18598,24 @@
         ]
       }
     },
-    "id": "investissement-recuperation-de-chaleur-fatale"
+    "id": "investissement-recuperation-de-chaleur-fatale",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement \"réemploi réutilisation réparation\"",
@@ -16505,7 +18763,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16570,7 +18827,46 @@
         ]
       }
     },
-    "id": "investissement-reemploi-reutilisation-reparation"
+    "id": "investissement-reemploi-reutilisation-reparation",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "E",
+          "F",
+          "G",
+          "S"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Investissement \"renouvellement forestier\"",
@@ -16703,7 +18999,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16738,7 +19033,17 @@
         ]
       }
     },
-    "id": "investissement-renouvellement-forestier"
+    "id": "investissement-renouvellement-forestier",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A"
+        ]
+      },
+      "priorityObjectives": [
+          "building"
+        ]
+      }
   },
   {
     "titre": "Investissement \"Réseaux de chaleur ou de froid\"",
@@ -16886,7 +19191,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -16923,7 +19227,19 @@
         ]
       }
     },
-    "id": "investissement-reseaux-de-chaleur-ou-de-froid"
+    "id": "investissement-reseaux-de-chaleur-ou-de-froid",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "D",
+          "E"
+        ]
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement \"solaire thermique Outre-mer\"",
@@ -17050,7 +19366,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17116,7 +19431,48 @@
         ]
       }
     },
-    "id": "investissement-solaire-thermique-outre-mer"
+    "id": "investissement-solaire-thermique-outre-mer",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Guyane",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Polynésie française"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2023"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement \"Solaire thermique\"",
@@ -17264,7 +19620,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17337,7 +19692,40 @@
         ]
       }
     },
-    "id": "investissement-solaire-thermique"
+    "id": "investissement-solaire-thermique",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "U"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement \"Systèmes Solaires Combinés\"",
@@ -17485,7 +19873,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17537,7 +19924,38 @@
         ]
       }
     },
-    "id": "investissement-systemes-solaires-combines"
+    "id": "investissement-systemes-solaires-combines",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Investissement \"vélotourisme\"",
@@ -17674,7 +20092,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17711,7 +20128,23 @@
         ]
       }
     },
-    "id": "investissement-velotourisme"
+    "id": "investissement-velotourisme",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "I",
+          "O"
+        ]
+      },
+      "validity": {
+        "start": "01/12/2023",
+        "end": "31/12/2023"
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Investissement \"VTE Vert\"",
@@ -17858,7 +20291,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -17912,7 +20344,39 @@
         ]
       }
     },
-    "id": "investissement-vte-vert"
+    "id": "investissement-vte-vert",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "maxEmployees": "4999"
+      },
+      "validity": {
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "rh"
+        ]
+      }
   },
   {
     "titre": "INVESTour",
@@ -18040,7 +20504,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18078,7 +20541,23 @@
         ]
       }
     },
-    "id": "investour"
+    "id": "investour",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "I",
+          "L"
+        ],
+        "maxEmployees": "499",
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "building",
+          "rh"
+        ]
+      }
   },
   {
     "titre": "Mécénaturel",
@@ -18206,7 +20685,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18262,7 +20740,40 @@
         ]
       }
     },
-    "id": "mecenaturel"
+    "id": "mecenaturel",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "biodiversite"
+        ]
+      }
   },
   {
     "titre": "Mission de Conseil RSE",
@@ -18388,7 +20899,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18433,7 +20943,36 @@
         ]
       }
     },
-    "id": "mission-conseil-rse"
+    "id": "mission-conseil-rse",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "Q",
+          "R",
+          "S"
+        ],
+        "minEmployees": "10"
+      },
+      "validity": {
+        "start": "01/01/2018"
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Mission Stratégie Environnement",
@@ -18564,7 +21103,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18620,7 +21158,38 @@
         ]
       }
     },
-    "id": "mission-strategie-environnement"
+    "id": "mission-strategie-environnement",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "minEmployees": "10"
+      },
+      "priorityObjectives": [
+          "rh"
+        ]
+      }
   },
   {
     "titre": "Nature ta ville",
@@ -18743,7 +21312,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18795,7 +21363,36 @@
         ]
       }
     },
-    "id": "nature-ta-ville"
+    "id": "nature-ta-ville",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "biodiversite"
+        ]
+      }
   },
   {
     "titre": "Navires utilisant des énergies propres",
@@ -18926,7 +21523,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -18961,7 +21557,22 @@
         ]
       }
     },
-    "id": "navires-energies-propre"
+    "id": "navires-energies-propre",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "H"
+        ]
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "ORMAT 2034",
@@ -19109,7 +21720,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19174,7 +21784,48 @@
         ]
       }
     },
-    "id": "ormat-2034"
+    "id": "ormat-2034",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "start": "01/09/2034",
+        "end": "09/09/2034"
+      },
+      "priorityObjectives": [
+          "waste"
+        ]
+      }
   },
   {
     "titre": "PACTE Industrie",
@@ -19328,7 +21979,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19366,7 +22016,24 @@
         ]
       }
     },
-    "id": "pacte-industrie"
+    "id": "pacte-industrie",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E"
+        ]
+      },
+      "validity": {
+        "start": "01/06/2023",
+        "end": "30/06/2026"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Performa Environnement",
@@ -19488,7 +22155,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19533,7 +22199,27 @@
         ]
       }
     },
-    "id": "performa-environnement"
+    "id": "performa-environnement",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "R",
+          "T"
+        ],
+        "maxEmployees": "249"
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Plan de mobilité",
@@ -19661,7 +22347,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19730,7 +22415,46 @@
         ]
       }
     },
-    "id": "plan-de-mobilite"
+    "id": "plan-de-mobilite",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "minEmployees": "50",
+        "maxEmployees": "499",
+        "allowedRegion": [
+          "Île-de-France"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Prêt Action Climat",
@@ -19852,7 +22576,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -19915,7 +22638,45 @@
         ]
       }
     },
-    "id": "pret-action-climat"
+    "id": "pret-action-climat",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "maxEmployees": "49"
+      },
+      "priorityObjectives": [
+          "building",
+          "mobility",
+          "waste",
+          "water",
+          "energy",
+          "rh",
+          "environmental",
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Prêt Économies d’Énergie (PEE)",
@@ -20036,7 +22797,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -20140,7 +22900,39 @@
         ]
       }
     },
-    "id": "pret-economies-d-energie-pee"
+    "id": "pret-economies-d-energie-pee",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "maxEmployees": "49",
+        "excludeMicroentrepreneur": true
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Prêt Vert - Ademe",
@@ -20270,7 +23062,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -20384,7 +23175,44 @@
         ]
       }
     },
-    "id": "pret-vert-ademe"
+    "id": "pret-vert-ademe",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T"
+        ],
+        "maxEmployees": "249"
+      },
+      "priorityObjectives": [
+          "building",
+          "mobility",
+          "waste",
+          "water",
+          "energy",
+          "rh",
+          "environmental",
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Prêt Vert",
@@ -20509,7 +23337,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -20615,7 +23442,44 @@
         ]
       }
     },
-    "id": "pret-vert"
+    "id": "pret-vert",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "maxEmployees": "4999"
+      },
+      "priorityObjectives": [
+          "building",
+          "mobility",
+          "waste",
+          "water",
+          "energy",
+          "rh",
+          "environmental",
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Prime à la conversion",
@@ -20771,7 +23635,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -20827,7 +23690,37 @@
         ]
       }
     },
-    "id": "prime-a-la-conversion"
+    "id": "prime-a-la-conversion",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Programme Breizh Fab",
@@ -20953,7 +23846,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -20999,7 +23891,24 @@
         ]
       }
     },
-    "id": "programme-breizh-fab"
+    "id": "programme-breizh-fab",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "maxEmployees": "249",
+        "allowedRegion": [
+          "Bretagne"
+        ]
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Programme Ecod'o",
@@ -21132,7 +24041,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -21170,7 +24078,22 @@
         ]
       }
     },
-    "id": "programme-ecod-o"
+    "id": "programme-ecod-o",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "D",
+          "I"
+        ],
+        "allowedRegion": [
+          "Bretagne"
+        ]
+      },
+      "priorityObjectives": [
+          "water"
+        ]
+      }
   },
   {
     "titre": "Programme EVE",
@@ -21302,7 +24225,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -21334,7 +24256,22 @@
         ]
       }
     },
-    "id": "programme-eve"
+    "id": "programme-eve",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "G",
+          "H"
+        ]
+      },
+      "validity": {
+        "end": "31/12/2023"
+      },
+      "priorityObjectives": [
+          "mobility",
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Programme Synergies durables",
@@ -21456,7 +24393,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -21502,7 +24438,28 @@
         ]
       }
     },
-    "id": "programme-synergies-durables"
+    "id": "programme-synergies-durables",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "M"
+        ],
+        "minEmployees": "20",
+        "maxEmployees": "499"
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Recharges pour véhicules électriques",
@@ -21624,7 +24581,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -21665,7 +24621,26 @@
         ]
       }
     },
-    "id": "recharge-vehicule-electrique"
+    "id": "recharge-vehicule-electrique",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "H",
+          "I",
+          "L",
+          "O",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Crédit d'Impôt Rénovation Énergétique (CIRE)",
@@ -21795,7 +24770,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -21852,7 +24826,33 @@
         ]
       }
     },
-    "id": "renovation-energetique"
+    "id": "renovation-energetique",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "maxEmployees": "249"
+      },
+      "priorityObjectives": [
+          "building"
+        ]
+      }
   },
   {
     "titre": "Diagnostic SARE",
@@ -21979,7 +24979,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22028,7 +25027,31 @@
         ]
       }
     },
-    "id": "renovation-petit-tertiaire-prive"
+    "id": "renovation-petit-tertiaire-prive",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "maxEmployees": "249"
+      },
+      "priorityObjectives": [
+          "building"
+        ]
+      }
   },
   {
     "titre": "Répar'acteurs",
@@ -22159,7 +25182,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22227,7 +25249,19 @@
         ]
       }
     },
-    "id": "repar-acteurs"
+    "id": "repar-acteurs",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "S"
+        ],
+        "maxEmployees": "249"
+      },
+      "priorityObjectives": [
+          "waste"
+        ]
+      }
   },
   {
     "titre": "Rétrofit électrique",
@@ -22346,7 +25380,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22391,7 +25424,37 @@
         ]
       }
     },
-    "id": "retrofit-electrique"
+    "id": "retrofit-electrique",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Sites touristiques exemplaires",
@@ -22516,7 +25579,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22555,7 +25617,23 @@
         ]
       }
     },
-    "id": "sites-touristiques-exemplaires"
+    "id": "sites-touristiques-exemplaires",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "I",
+          "L",
+          "R"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "building",
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Plan Solaire Smart PV",
@@ -22695,7 +25773,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22751,7 +25828,40 @@
         ]
       }
     },
-    "id": "smart-pv"
+    "id": "smart-pv",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Sobriété et Résilience des Territoires",
@@ -22878,7 +25988,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -22933,7 +26042,37 @@
         ]
       }
     },
-    "id": "sobriete-et-resilience-des-territoires"
+    "id": "sobriete-et-resilience-des-territoires",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ]
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Plan Solaire Ready",
@@ -23065,7 +26204,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -23122,7 +26260,41 @@
         ]
       }
     },
-    "id": "solaire-ready"
+    "id": "solaire-ready",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "building",
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Sud Prêt Climat",
@@ -23270,7 +26442,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -23333,7 +26504,41 @@
         ]
       }
     },
-    "id": "sud-pret-climat"
+    "id": "sud-pret-climat",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "U"
+        ],
+        "maxEmployees": "249",
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "waste",
+          "water",
+          "energy",
+          "environmental",
+          "eco-design",
+          "biodiversite"
+        ]
+      }
   },
   {
     "titre": "Formation référent tourisme durable ",
@@ -23452,7 +26657,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -23488,7 +26692,20 @@
         ]
       }
     },
-    "id": "tourisme-durable-paca"
+    "id": "tourisme-durable-paca",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "I"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+          "rh"
+        ]
+      }
   },
   {
     "titre": "TPE gagnantes sur tous les coûts",
@@ -23610,7 +26827,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -23661,7 +26877,33 @@
         ]
       }
     },
-    "id": "tpe-gagnantes-sur-tous-les-couts"
+    "id": "tpe-gagnantes-sur-tous-les-couts",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "M",
+          "Q",
+          "R",
+          "S",
+          "T"
+        ],
+        "maxEmployees": "19"
+      },
+      "priorityObjectives": [
+          "waste",
+          "water",
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Tremplin",
@@ -23811,7 +27053,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -23866,7 +27107,42 @@
         ]
       }
     },
-    "id": "tremplin"
+    "id": "tremplin",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "maxEmployees": "249"
+      },
+      "validity": {
+        "start": "01/01/2023",
+        "end": "31/12/2025"
+      },
+      "priorityObjectives": [
+          "mobility",
+          "waste",
+          "water",
+          "environmental",
+          "eco-design"
+        ]
+      }
   },
   {
     "titre": "Trophées Crisalide Eco-activités",
@@ -24005,7 +27281,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -24065,7 +27340,38 @@
         ]
       }
     },
-    "id": "trophees-crisalide-eco-activites"
+    "id": "trophees-crisalide-eco-activites",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "allowedRegion": [
+          "Bretagne",
+          "Normandie",
+          "Pays de la Loire"
+        ]
+      },
+      "priorityObjectives": [
+          "environmental"
+        ]
+      }
   },
   {
     "titre": "Véhicule lourd énergies propres",
@@ -24187,7 +27493,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -24219,7 +27524,24 @@
         ]
       }
     },
-    "id": "vehicule-lourd-energies-propres"
+    "id": "vehicule-lourd-energies-propres",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ]
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Véhicules lourds électriques",
@@ -24362,7 +27684,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -24397,7 +27718,21 @@
         ]
       }
     },
-    "id": "vehicules-lourds-electriques"
+    "id": "vehicules-lourds-electriques",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "H"
+        ]
+      },
+      "validity": {
+        "start": "26/08/2024",
+        "end": "07/10/2024"
+      },
+      "priorityObjectives": [
+          "mobility"
+        ]
+      }
   },
   {
     "titre": "Visite Énergie CCI",
@@ -24525,7 +27860,6 @@
           "est préserver la biodiversité": null
         }
       },
-
       "dispositif": {
         "avec": {
           "début de validité": null,
@@ -24579,7 +27913,36 @@
         ]
       }
     },
-    "id": "visite-energie-cci"
+    "id": "visite-energie-cci",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "minEmployees": "20",
+        "maxEmployees": "499"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   },
   {
     "titre": "Visite Énergie CMA",
@@ -24745,6 +28108,24 @@
         ]
       }
     },
-    "id": "visite-energie-cma"
+    "id": "visite-energie-cma",
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "D",
+          "F",
+          "I",
+          "M",
+          "N",
+          "R",
+          "T"
+        ],
+        "maxEmployees": "249"
+      },
+      "priorityObjectives": [
+          "energy"
+        ]
+      }
   }
 ]

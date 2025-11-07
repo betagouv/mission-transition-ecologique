@@ -1,13 +1,14 @@
-import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
 import { ProgramType, ProgramAidType } from '@tee/data'
+import { ProgramEligibilityEvaluator } from '../../src/program/domain/programEligibilityEvaluator'
+import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { ProgramRepository } from '../../src/program/domain/spi'
 
-export type Rules = { [FILTERING_RULE_NAME]: { [k: string]: unknown } | string; [k: string]: unknown }
+export type Rules = { ['entreprise . est ciblée']: { [k: string]: unknown } | string; [k: string]: unknown }
 
 /** makes data for a mock program with given eligibility rules */
 export const makeProgramHelper = ({
   id = '',
-  rules = { [FILTERING_RULE_NAME]: { valeur: 'oui' } },
+  rules = { ['entreprise . est ciblée']: { valeur: 'oui' } },
   cost = '1000 €',
   nature = ProgramAidType.study
 }: {
@@ -32,7 +33,8 @@ export const makeProgramHelper = ({
       "secteur d'activité": ['d'],
       "nombre d'années d'activité": ['e']
     },
-    publicodes: rules
+    publicodes: rules,
+    eligibilityData: { company: { allowedNafSections: ['I'] } }
   }
 }
 
@@ -40,8 +42,12 @@ export const mockCurrentDateService = { get: () => '01/01/2024' }
 
 export const makeProgramsRepository = (programs: ProgramType[]): ProgramRepository => {
   return {
-    getById: () => undefined,
+    getById: (id: string) => programs.find((p) => p.id === id),
     getAll: () => programs,
     getEditablePrograms: () => programs
   }
+}
+
+export const makeProgramFeatures = (programs: ProgramType[]): ProgramFeatures => {
+  return new ProgramFeatures(makeProgramsRepository(programs), new ProgramEligibilityEvaluator())
 }

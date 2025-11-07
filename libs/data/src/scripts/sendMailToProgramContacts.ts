@@ -1,5 +1,5 @@
 import BrevoMail from '../common/brevo/brevoMail'
-import { MailManager } from '../program/mailManager'
+import { MailManager } from '../program/services/mailManager'
 
 console.log('Start sending mail to Program Contact if needed')
 

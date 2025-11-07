@@ -1,41 +1,41 @@
 import { LogLevel } from '../../common/logger/types'
 import { DataProgram } from '../types/domain'
-import { CoreGenerator } from './coreGenerator'
-import { ProgramEligibility } from '../programEligibility'
+import { ProgramDto } from './programDto'
+import { ProgramEligibility } from '../utils/shared/programEligibility'
 import { LinkValidator } from '../../common/validators/linkValidator'
 
-export async function setEligibility(generator: CoreGenerator) {
+export async function setEligibilityTexts(generator: ProgramDto) {
   const eligibility_conditions: { [key: string]: string[] } = {
-    "taille de l'entreprise": [setEligibilitySize(generator.program), setMicroEntrepreneur(generator.program)],
+    "taille de l'entreprise": [setEligibilitySize(generator.rawProgram), setMicroEntrepreneur(generator.rawProgram)],
     'secteur géographique': setEligibilityGeography(generator),
     "secteur d'activité": setEligibilitySector(generator),
-    "nombre d'années d'activité": setEligibilityYears(generator.program)
+    "nombre d'années d'activité": setEligibilityYears(generator.rawProgram)
   }
-  if (generator.program['Eligibilité Spécifique']) {
+  if (generator.rawProgram['Eligibilité Spécifique']) {
     const otherEligibilities = await setOtherEligibilityCriteria(generator)
     if (otherEligibilities.length) {
       eligibility_conditions["autres critères d'éligibilité"] = otherEligibilities
     }
   }
-  generator.yamlContent["conditions d'éligibilité"] = eligibility_conditions
+  generator.programData["conditions d'éligibilité"] = eligibility_conditions
 }
 
-async function setOtherEligibilityCriteria(generator: CoreGenerator): Promise<string[]> {
+async function setOtherEligibilityCriteria(generator: ProgramDto): Promise<string[]> {
   await LinkValidator.logInvalidLinks(
-    generator.program['Eligibilité Spécifique'],
+    generator.rawProgram['Eligibilité Spécifique'],
     generator.logger,
     LogLevel.Minor,
     'Eligibilité Spécifique',
-    generator.program['Id fiche dispositif'],
-    generator.program.id
+    generator.rawProgram['Id fiche dispositif'],
+    generator.rawProgram.id
   )
-  const criteriaList = generator.program['Eligibilité Spécifique'].split('\n').map((criteria) => criteria.trim())
+  const criteriaList = generator.rawProgram['Eligibilité Spécifique'].split('\n').map((criteria) => criteria.trim())
   if (criteriaList.filter((criteria) => !criteria.startsWith('- ')).length) {
     generator.logger.log(
       LogLevel.Major,
       'Problème de format du champ "éligibilité spécifique" qui doit être une liste !',
-      generator.program['Id fiche dispositif'],
-      generator.program.id,
+      generator.rawProgram['Id fiche dispositif'],
+      generator.rawProgram.id,
       criteriaList
     )
     return []
@@ -50,39 +50,39 @@ function setEligibilityYears(program: DataProgram): string[] {
   return [ProgramEligibility.ELIGIBLE_FOR_ALL]
 }
 
-function setEligibilitySector(generator: CoreGenerator) {
-  if (!generator.program['Eligibilité Sectorielle']) {
+function setEligibilitySector(generator: ProgramDto) {
+  if (!generator.rawProgram['Eligibilité Sectorielle']) {
     generator.logger.log(
       LogLevel.Critic,
       'Eligibilité sectorielle manquante.',
-      generator.program['Id fiche dispositif'],
-      generator.program.id
+      generator.rawProgram['Id fiche dispositif'],
+      generator.rawProgram.id
     )
     generator.valid = false
   }
-  if (generator.program['Eligibilité Naf']) {
-    return [generator.program['Eligibilité Sectorielle'], generator.program['Eligibilité Naf']]
+  if (generator.rawProgram['Eligibilité Naf']) {
+    return [generator.rawProgram['Eligibilité Sectorielle'], generator.rawProgram['Eligibilité Naf']]
   }
-  return [generator.program['Eligibilité Sectorielle']]
+  return [generator.rawProgram['Eligibilité Sectorielle']]
 }
 
-function setEligibilityGeography(generator: CoreGenerator) {
-  if (generator.program['Couverture géographique'].Name == 'National') {
+function setEligibilityGeography(generator: ProgramDto) {
+  if (generator.rawProgram['Couverture géographique'].Name == 'National') {
     return ["France et territoires d'outre-mer"]
   }
 
-  if (generator.program['Zones Spécifiques (géographie)']) {
+  if (generator.rawProgram['Zones Spécifiques (géographie)']) {
     generator.logger.log(
       LogLevel.Major,
       "Le champ zone géographique a été abandonné et n'est plus affiché. Merci de convertir la condition en un point de la liste du champ 'Eligibilité spécifique'",
-      generator.program['Id fiche dispositif'],
-      generator.program.id,
-      generator.program['Zones Spécifiques (géographie)']
+      generator.rawProgram['Id fiche dispositif'],
+      generator.rawProgram.id,
+      generator.rawProgram['Zones Spécifiques (géographie)']
     )
   }
 
   return [
-    generator.program['Zones géographiques']
+    generator.rawProgram['Zones géographiques']
       .map((geographicArea) => geographicArea.Name)
       .sort((a, b) => a.localeCompare(b, 'fr-FR'))
       .join(', ')

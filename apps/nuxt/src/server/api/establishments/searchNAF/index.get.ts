@@ -1,6 +1,7 @@
 import { defineEventHandler, H3Event } from 'h3'
 import { Monitor, EstablishmentService } from '@tee/backend-ddd'
 import { z } from 'zod'
+import { CacheKeyBuilder } from '~/server/utils/CacheKeyBuilder'
 
 const nafSearchQuerySchema = z.object({
   searchTerm: z.string().optional().default('')
@@ -28,8 +29,8 @@ const searchNafCached = cachedFunction(
   {
     name: 'nafSearch',
     getKey: (event: H3Event) => {
-      return CacheKeyBuilder.formEvent(event)
+      return CacheKeyBuilder.fromEvent(event)
     },
-    maxAge: 60 * 60 * 24 // 24 hours
+    maxAge: CacheKeyBuilder.MAX_AGE
   }
 )

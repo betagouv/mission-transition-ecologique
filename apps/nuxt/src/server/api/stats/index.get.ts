@@ -1,14 +1,11 @@
+import { Monitor, StatisticsService, statQueryParamsSchema } from '@tee/backend-ddd'
 import { defineEventHandler } from 'h3'
-import { Monitor, StatisticsService } from '@tee/backend-ddd'
-import { statQueryParamsSchema } from '@tee/backend-ddd'
 
 export default defineEventHandler(async (event) => {
   try {
     const statsQuery = await getValidatedQuery(event, statQueryParamsSchema.parse)
 
-    const statsResult = await new StatisticsService().getNorthStarStats(statsQuery)
-
-    return statsResult
+    return await new StatisticsService().getNorthStarStats(statsQuery)
   } catch (error: any) {
     Monitor.error('Error in /api/stats', { error })
     throw createError({
