@@ -19,6 +19,7 @@ export async function setObjectives(generator: ProgramDto) {
 }
 
 async function parseStep(step: string, stepId: number, generator: ProgramDto): Promise<YamlObjective> {
+  step = step.replaceAll('https://agirpourlatransition.ademe.fr/user/register', 'https://agirpourlatransition.ademe.fr/inscription')
   const lines = step.split('\n')
   const description = lines[0].substring(2)
   await LinkValidator.logInvalidLinks(
