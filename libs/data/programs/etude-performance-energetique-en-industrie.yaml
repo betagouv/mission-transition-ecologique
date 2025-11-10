@@ -1,61 +1,54 @@
 titre: Étude "Performance énergétique" ou de "décarbonation" en industrie
 promesse: >-
-  Réalisez une étude de faisabilité pour votre projet de la performance
-  énergétique ou de décarbonation de votre site de production
+  Vérifiez la faisabilité technique et économique de votre projet de
+  décarbonation
 description: >-
-  Vous avez réalisé un audit énergétique et vous avez identifié un projet pour
-  optimiser la performance énergétique ou de décarbonation de vos processus de
-  production ?
+  Vous avez déjà réalisé un audit énergétique et identifié un projet pour
+  améliorer la performance ou décarboner vos procédés de production ?\
 
-  L'ADEME peut vous aider à financer votre étude de faisabilité pour vérifier la
-  faisabilité technique et économique de votre projet et étudier les solutions
-  de montage financier et juridique.
+  L’ADEME peut financer une **étude de faisabilité**, étape clé avant de passer
+  à l’investissement.
+
+
+  Cette étude permet de :\
+
+  – **valider la faisabilité technique et économique de votre projet**,\
+
+  – **explorer les options de montage financier, administratif et juridique**.
+
+
+  Elle vous aide à sécuriser votre décision d’investissement et à choisir les
+  solutions les plus pertinentes pour votre activité.
 description longue: >-
   Cette étude doit s’inscrire dans une démarche cohérente de décarbonation des
   procédés de votre entreprise. Elle se décline en cinq étapes successives :
 
 
-  1. Sobriété
-
-  Le changement de comportement est le levier le moins coûteux et le plus
-  impactant pour réduire les consommations et baisser les émissions de gaz à
-  effet de serre.
-
+  1. Sobriété\
+     Le changement de comportement est le levier le moins coûteux et le plus impactant pour réduire les consommations et baisser les émissions de gaz à effet de serre.
   2. Modification du mix matières
-
-  - Efficacité matière via l’incorporation de Matières Premières Recyclées et
-  valorisation des coproduits.
-
-  - Développement de procédés utilisant moins d’intrants, ou des intrants moins
-  émissifs.
-
+     - Efficacité matière via l’incorporation de Matières Premières Recyclées et valorisation des coproduits.
+     - Développement de procédés utilisant moins d’intrants, ou des intrants moins émissifs.
   3. Amélioration de l’efficacité énergétique
-
-  - Performance énergétique des technologies et procédés.
-
-  - Adéquation des températures produites au regard des besoins finaux.
-
+     - Performance énergétique des technologies et procédés.
+     - Adéquation des températures produites au regard des besoins finaux.
   4. Substitution des énergies fossiles
-
-  - Substitution des combustibles fossiles par des combustibles décarbonés ou
-  bas carbone (chaleur fatale, biomasse, biogaz, hydrogène décarboné,
-  combustibles solides de récupération, géothermie, solaire thermique, etc.).
-
-  - Electrification de la chaleur et des procédés.
-
+     - Substitution des combustibles fossiles par des combustibles décarbonés ou bas carbone (chaleur fatale, biomasse, biogaz, hydrogène décarboné, combustibles solides de récupération, géothermie, solaire thermique, etc.).
+     - Electrification de la chaleur et des procédés.
   5. Captage du CO₂ à la source
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000699
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-faisabilite-performance-energetique-decarbonation-dentreprises
 nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
           https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20transition%20%C3%A9cologique%20industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
@@ -117,7 +110,6 @@ publicodes:
     une de ces conditions:
       - code NAF niveau 1 . est B
       - code NAF niveau 1 . est C
-      - code NAF niveau 1 . est Q
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est ma performance énergétique

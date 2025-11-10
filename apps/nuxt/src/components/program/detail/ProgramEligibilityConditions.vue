@@ -1,36 +1,48 @@
 <template>
-  <div class="fr-grid-row fr-grid-row--gutters">
-    <div
-      v-for="partIdx in 2"
-      :key="`part-${partIdx}`"
-      class="fr-col-6 fr-col-xs-12"
-    >
-      <div
-        v-for="(field, idx) in getFieldsForColumn(partIdx)"
-        :key="`elegibility-field-part1-${idx}`"
-        class="fr-mb-4v fr-text--purple"
-      >
-        <h4 class="fr-text--bold fr-mb-1v fr-text--purple fr-text--md">
-          <span class="fr-mr-1v">{{ eligilityEmojis[field] }}</span>
-          {{ field.toString()[0].toUpperCase() + field.toString().slice(1) }}
-        </h4>
-        <ul class="fr-pl-4w fr-mt-1v">
-          <li
-            v-for="(value, i) in programEligibility[field]"
-            :key="`elegibility-field-${idx}-value-${i}`"
-            class="fr-mb-0"
-            v-html="Marked.toHtml(value)"
-          ></li>
-        </ul>
+  <TeeContentBlock
+    v-if="program && program['conditions d\'éligibilité']"
+    id="eligibilite"
+    :title="Translation.t('program.programAmIEligible')"
+    container-from="md"
+    class="fr-py-5v fr-border-t--grey--light"
+    title-class="fr-h4"
+  >
+    <template #content>
+      <div class="fr-grid-row fr-grid-row--gutters">
+        <div
+          v-for="partIdx in 2"
+          :key="`part-${partIdx}`"
+          class="fr-col-6 fr-col-xs-12"
+        >
+          <div
+            v-for="(field, idx) in getFieldsForColumn(partIdx)"
+            :key="`elegibility-field-part1-${idx}`"
+            class="fr-mb-4v fr-text--purple"
+          >
+            <h4 class="fr-text--bold fr-mb-1v fr-text--purple fr-text--md">
+              <span class="fr-mr-1v">{{ eligilityEmojis[field] }}</span>
+              {{ field.toString()[0].toUpperCase() + field.toString().slice(1) }}
+            </h4>
+            <ul class="fr-pl-4w fr-mt-1v">
+              <li
+                v-for="(value, i) in programEligibility[field]"
+                :key="`elegibility-field-${idx}-value-${i}`"
+                class="fr-mb-0"
+                v-html="Marked.toHtml(value)"
+              ></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </template>
+  </TeeContentBlock>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
 import { ProgramTypeForFront } from '@/types'
 import { Marked } from '@/tools/marked'
+import Translation from '@/tools/translation'
 
 type EligibilityCategory = keyof ProgramTypeForFront["conditions d'éligibilité"]
 

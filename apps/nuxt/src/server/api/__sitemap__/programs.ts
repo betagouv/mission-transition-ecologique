@@ -19,7 +19,7 @@ export default defineSitemapEventHandler(async () => {
     const url = UrlBuilder.params(RoutePath.CatalogProgramDetail, { programId: programId })
     urls.push({
       loc: url,
-      priority: isActive ? Priority.MidHigh : Priority.Null,
+      priority: isActive ? Priority.MidHigh : Priority.Low,
       changefreq: ChangeFreq.Monthly
     })
   }

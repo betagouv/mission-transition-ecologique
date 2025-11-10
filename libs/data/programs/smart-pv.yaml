@@ -12,17 +12,17 @@ description longue: >-
   Les investissements éligibles comprennent :
 
 
-  •  la fourniture (panneaux, rails, onduleurs, stockage, le cas échéant),
+  - la fourniture (panneaux, rails, onduleurs, stockage, le cas échéant),
 
-  •  le câblage,
+  - le câblage,
 
-  •  le monitoring,
+  - le monitoring,
 
-  •  les fonctions smart grid,
+  - les fonctions smart grid,
 
-  •  la gestion d’énergie et la pose,
+  - la gestion d’énergie et la pose,
 
-  •  les frais juridiques et administratifs en lien avec le montage de
+  - les frais juridiques et administratifs en lien avec le montage de
   l’opération. Le coût des structures d’ombrières est plafonné à 0,50 €/Wc.
 
 
@@ -33,6 +33,7 @@ description longue: >-
   solaire".
 illustration: images/TEE_ampoule.png
 opérateur de contact: Région Sud (PACA)
+contact question: mailto:relationentrepriseusager@maregionsud.fr
 url: >-
   https://www.maregionsud.fr/vos-aides/detail/plan-solaire-sud-pv-plus-en-soutien-de-lautoconsommation-photovoltaique
 nature de l'aide: financement

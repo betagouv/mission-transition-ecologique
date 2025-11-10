@@ -1,17 +1,18 @@
-import { addBrevoContactTest } from '../../../tests/opportunity/infrastructure/api/brevo/mock/brevoContact'
-import { brevoRepositoryTest } from '../../../tests/opportunity/infrastructure/api/brevo/mock/brevoDeal'
-import BrevoMailTest from '../../../tests/opportunity/infrastructure/api/brevo/mock/brevoMail'
-import { PlaceDesEntreprisesTest } from '../../../tests/opportunityHub/infrastructure/api/mock/placeDesEntreprises'
+import { addBrevoContactMock } from '../../../tests/opportunity/infrastructure/api/brevo/mock/brevoContact.mock'
+import { brevoRepositoryMock } from '../../../tests/opportunity/infrastructure/api/brevo/mock/brevoDeal.mock'
+import BrevoMailMock from '../../../tests/opportunity/infrastructure/api/brevo/mock/brevoMail.mock'
+import { PlaceDesEntreprisesMock } from '../../../tests/opportunityHub/infrastructure/api/mock/placeDesEntreprises.mock'
 import Config from '../../config'
-import { OpportunityDetailsShort, OpportunityId } from '../domain/types'
+import EstablishmentService from '../../establishment/application/establishmentService'
+import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFeatures'
+import { ProgramService } from '../../program'
+import { ProjectService } from '../../project'
+import { OpportunityId } from '../domain/types'
 import OpportunityFeatures from '../domain/opportunityFeatures'
 import { Result } from 'true-myth'
 import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
 import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
-import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
 import { ContactRepository, MailerManager, OpportunityRepository } from '../domain/spi'
-import { ProgramRepository } from '../../program/domain/spi'
-import ProgramsJson from '../../program/infrastructure/programsJson'
 import BrevoMail from '../infrastructure/api/brevo/brevoMail'
 import { PlaceDesEntreprises } from '../../opportunityHub/infrastructure/api/placedesentreprises/placeDesEntreprises'
 
@@ -24,9 +25,11 @@ export default class OpportunityService {
     this._opportunityFeatures = new OpportunityFeatures(
       this._getContactRepository(),
       this._getOpportunityRepository(),
-      this._getOpportunityHubRepositories(),
-      this._getProgramRepository(),
-      this._getMailRepository()
+      this._getMailRepository(),
+      this._getOpportunityHubFeatures(),
+      new ProgramService().program,
+      new ProjectService().project,
+      new EstablishmentService().establishmentFeatures
     )
   }
 
@@ -37,29 +40,21 @@ export default class OpportunityService {
     return await this._opportunityFeatures.createOpportunity(opportunity, optIn)
   }
 
-  public async getDailyOpportunitiesByContactId(contactId: number): Promise<Result<OpportunityDetailsShort[], Error>> {
-    return await this._opportunityFeatures.getDailyOpportunitiesByContactId(contactId)
-  }
-
   private _getContactRepository(): ContactRepository {
     return {
-      createOrUpdate: Config.BREVO_API_ENABLED ? addBrevoContact : addBrevoContactTest
+      createOrUpdate: Config.BREVO_API_ENABLED ? addBrevoContact : addBrevoContactMock
     }
   }
 
   private _getOpportunityRepository(): OpportunityRepository {
-    return Config.BREVO_API_ENABLED ? brevoRepository : brevoRepositoryTest
+    return Config.BREVO_API_ENABLED ? brevoRepository : brevoRepositoryMock
   }
 
-  private _getOpportunityHubRepositories(): OpportunityHubRepository[] {
-    return [Config.PDE_API_ENABLED ? new PlaceDesEntreprises() : new PlaceDesEntreprisesTest()]
-  }
-
-  private _getProgramRepository(): ProgramRepository {
-    return ProgramsJson.getInstance()
+  private _getOpportunityHubFeatures(): OpportunityHubFeatures {
+    return new OpportunityHubFeatures([Config.PDE_API_ENABLED ? new PlaceDesEntreprises() : new PlaceDesEntreprisesMock()])
   }
 
   private _getMailRepository(): MailerManager {
-    return { sendReturnReceipt: Config.BREVO_API_ENABLED ? new BrevoMail().sendReturnReceipt : new BrevoMailTest().sendReturnReceipt }
+    return { sendReturnReceipt: Config.BREVO_API_ENABLED ? new BrevoMail().sendReturnReceipt : new BrevoMailMock().sendReturnReceipt }
   }
 }

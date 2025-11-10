@@ -1,14 +1,16 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
 import { ProjectBaserow } from '../common/baserow/projectBaserow'
+import { FaqFilter } from '../faq/faqFilter'
+import { FaqRepositoryInterface } from '../faq/types/domain'
 import { DataProject, ProjectStatus } from './types/domain'
 import { jsonPrograms } from '../../static'
 import { ProgramType } from '../program/types/shared'
-import { ThemeId } from '../theme/types/shared'
+import { ThemeId } from '@tee/common'
 import { SlugValidator } from '../common/validators/slugValidator'
 import { LinkValidator } from '../common/validators/linkValidator'
 import { Logger } from '../common/logger/logger'
-import { LoggerType, LogLevel } from '../common/logger/types'
+import { LogLevel } from '../common/logger/types'
 import { FileManager } from '../common/fileManager'
 import Redirect from '../common/redirect/redirect'
 
@@ -17,16 +19,19 @@ export class ProjectFeatures {
   private readonly _outputFilePath: string = path.join(this.__dirname, '../../static/projects.json')
   private readonly _outputImageDirectory: string = path.join(this.__dirname, '../../../../apps/nuxt/src/public/images/projet')
   private _programs: ProgramType[] = []
-  private _logger: Logger
 
-  constructor() {
+  constructor(
+    private _logger: Logger,
+    private _faqBaserow: FaqRepositoryInterface
+  ) {
     this._programs = jsonPrograms as unknown as ProgramType[]
-    this._logger = new Logger(LoggerType.Project)
   }
 
   async generateProjectsJson(): Promise<void> {
     console.log(`Start loading Baserow data and creating the project images`)
     const projects = await new ProjectBaserow(this._outputImageDirectory, this._logger).getProdAndArchivedProjects()
+
+    await this._addFaqsToProjects(projects)
 
     console.log(`Baserow Data sucessfully downloaded.\n\nStarting to validate the project data and generating the project JSON.`)
     new Redirect(this._logger).updateProjectsRedirects(projects)
@@ -37,6 +42,13 @@ export class ProjectFeatures {
     this._logger.write('projectGeneration.log')
 
     return
+  }
+
+  private async _addFaqsToProjects(projects: DataProject[]) {
+    const projectFaqs = await this._getFaqsByProjects(projects)
+    for (const project of projects) {
+      project.faqs = projectFaqs[project.id] ?? []
+    }
   }
 
   private async _validateData(rawProjects: DataProject[]) {
@@ -116,19 +128,24 @@ export class ProjectFeatures {
   }
 
   private async _validateLinks(project: DataProject) {
-    const markdownText = project.moreDescription
-    const linkRegex = /\[.*?\]\((https?:\/\/[^\s]+)\)|\bhttps?:\/\/[^\s]+/g
-    const links = [...markdownText.matchAll(linkRegex)].map((match) => match[1] || match[0])
-    for (const link of links) {
-      if (!(await LinkValidator.isValidLink(link))) {
-        this._logger.log(
-          LogLevel.Major,
-          `Erreur de validation de lien dans le champ "pour aller plus loin"`,
-          project['title'],
-          project.id,
-          `[Lien cassé](${link})`
-        )
-      }
+    const invalidLinks: string[] = await LinkValidator.findInvalidLinks(project.moreDescription)
+    for (const link of invalidLinks) {
+      this._logger.log(
+        LogLevel.Major,
+        `Erreur de validation de lien dans le champ "pour aller plus loin"`,
+        project['title'],
+        project.id,
+        `[Lien cassé](${link})`
+      )
     }
+  }
+
+  private async _getFaqsByProjects(projects: DataProject[]) {
+    const faqsByProjects = await this._faqBaserow.getProjectsFaqs(projects)
+    for (const index in faqsByProjects) {
+      faqsByProjects[index] = await new FaqFilter(this._logger).byValidatedQuestions(faqsByProjects[index])
+    }
+
+    return faqsByProjects
   }
 }

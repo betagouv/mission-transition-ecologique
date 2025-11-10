@@ -1,33 +1,39 @@
 import { Monitor, ProgramService } from '@tee/backend-ddd'
 import { QuestionnaireData, serverQuestionnaireDataSchema } from '@tee/common'
 import { defineEventHandler, H3Event } from 'h3'
+import { CacheKeyBuilder } from '~/server/utils/CacheKeyBuilder'
 
 export default defineEventHandler(async (event) => {
   const questionnaireData = await getValidatedQuery(event, serverQuestionnaireDataSchema.parse)
 
-  return await programsCached(event, questionnaireData)
+  return getPrograms(questionnaireData)
+  // return await _getProgramsCached(event, questionnaireData)
 })
 
-const programsCached = cachedFunction(
+const getPrograms = (questionnaireData: QuestionnaireData) => {
+  const programService = new ProgramService()
+  const programsResult = programService.getFilteredPrograms(questionnaireData)
+
+  if (programsResult.isErr) {
+    Monitor.error('Error in get programs', { questionnaireData, error: programsResult.error })
+    throw createError({
+      statusCode: 500,
+      statusMessage: programsResult.error.message
+    })
+  }
+
+  return programsResult.value.map((program) => programService.convertDomainToFront(program))
+}
+
+const _getProgramsCached = cachedFunction(
   async (event: H3Event, questionnaireData: QuestionnaireData) => {
-    const programService = new ProgramService()
-    const programsResult = programService.getFilteredPrograms(questionnaireData)
-
-    if (programsResult.isErr) {
-      Monitor.error('Error in get programs', { questionnaireData, error: programsResult.error })
-      throw createError({
-        statusCode: 500,
-        statusMessage: programsResult.error.message
-      })
-    }
-
-    return programsResult.value.map((program) => programService.convertDomainToFront(program))
+    return getPrograms(questionnaireData)
   },
   {
     name: 'programs',
     getKey: (event: H3Event) => {
-      return CacheKeyBuilder.formEvent(event)
+      return CacheKeyBuilder.fromEvent(event)
     },
-    maxAge: 60 * 60 * 24 // 24 hours
+    maxAge: CacheKeyBuilder.MAX_AGE
   }
 )

@@ -3,64 +3,74 @@ promesse: >-
   Rejoignez l'eXtrême Défi, un programme innovant pour concevoir les véhicules
   de demain
 description: >-
-  L' eXtrême Défi Mobilité est un parcours d'innovation dont l'objectif est
-  d’imaginer, prototyper et produire de nouvelles solutions de déplacement du
-  quotidien pour les territoires dépendants de l’automobile : durables,
-  réparables, reconditionnables, légers et économes. 
-description longue: >
+  L’eXtrême Défi Mobilité est un parcours d'innovation visant à imaginer et
+  développer des solutions de déplacement durables et adaptées aux territoires
+  dépendants de l’automobile.
+
+
+  - Participez à des **sessions de créativité** pour concevoir de nouveaux
+  concepts d'objets roulants.
+
+
+  - Prototypez des véhicules, avec des **expérimentations continues** auprès
+  d'utilisateurs dans les territoires partenaires.
+
+
+  - Passez à la **phase d’industrialisation** : production, assemblage,
+  réparation, et reconditionnement des véhicules tout en affinant le design.
+
+
+  - Identifiez les **sources de financement** régionales, nationales ou de
+  l’ADEME pour soutenir les différentes phases de votre projet.
+
+
+  - Bénéficiez des nombreuses **expertises du réseau** : mécanique, design,
+  électronique, urbanisme, ecoconception, modèles économiques, communication,
+  marketing, etc.
+description longue: >-
   L’eXtrême Défi porte l'ambition de concevoir des véhicules :
 
 
-  • 10 fois moins couteux par rapport à une automobile (0,6 à 0,8 €/km pour
+  - 10 fois moins couteux par rapport à une automobile (0,6 à 0,8 €/km pour
   10000 km/an d’après A.C.F.) en intégrant l’ensemble des dépenses grâce à un
   embarquement de batterie minimaliste, l’utilisation de composant standardisé,
   mutualisé entre différents véhicules et une conception permettant de garantir
   une longue durée de vie, donc une faible perte de valeur dans le temps,
 
-
-  • 10 fois plus durable en visant une très haute recyclabilité, capacité à être
+  - 10 fois plus durable en visant une très haute recyclabilité, capacité à être
   réparé, reconditionné pour avoir plusieurs vies, plusieurs usages. La durée de
   vie moyenne d’une voiture est de 13 ans et l’âge moyen du parc automobile est
   de 11 ans.
 
-  • 10 fois plus léger pour réduire fortement le besoin de batterie, la
+  - 10 fois plus léger pour réduire fortement le besoin de batterie, la
   consommation d’énergie donc les coûts. La masse moyenne des voitures neuves
   vendues en 2019 est 1240 kg. Ce critère est essentiel pour atteindre la
   neutralité carbone.
 
-
-  • 10 fois plus simple en travaillant l’écoconception pour réduire le nombre de
+  - 10 fois plus simple en travaillant l’écoconception pour réduire le nombre de
   composant, avoir des assemblages démontables, utiliser au maximum des
   standards et travailler collectivement sur l’interopérabilité.
 
-
-  • 10 fois moins puissant grâce à un véhicule léger et efficient mais également
+  - 10 fois moins puissant grâce à un véhicule léger et efficient mais également
   avec des vitesses maxi adaptées aux besoins et aux territoires entre 25 et 80
   km/h.
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
+contact question: https://xd.ademe.fr/autres-questions
 url: https://xd.ademe.fr/participer
 nature de l'aide: étude
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Jusqu'à 3 ans d'accompagnement
 objectifs:
-  - description: >-
-      Participez à des sessions de créativité pour faire émerger de nouveaux
-      concepts d'objets roulants.
-  - description: >-
-      Prototypez les véhicules et expérimentez en continu auprès d'utilisateurs
-      dans les territoires partenaires du défi.
-  - description: >-
-      Passez en phase d'industrialisation : production, assemblage, réparation,
-      reconditionnement, et affinez le design des véhicules en répétant phases
-      d'idéation et prototypage.
-  - description: >-
-      Identifiez des sources de financement de votre région, de l’ADEME ou au
-      niveau national sur l'ensemble des phases.
-  - description: >-
-      Intégrez la communauté de l'eXtrême Défi et bénéficiez des nombreuses
-      expertises du réseau : mécanique, design, électronique, urbanisme,
-      ecoconception, modèles économiques, communication, marketing, etc.
+  - description: Découvrez le programme eXtrême Défi.
+    liens:
+      - lien: https://xd.ademe.fr/approche-integrale
+        texte: Le site de l’eXtrême Défi
+  - description: Explorez les différentes manières de vous impliquer dans le programme.
+    liens:
+      - lien: https://wikixd.fabmob.io/wiki/Devenir_acteur_de_l'XD
+        texte: Quatre niveaux d'engagement possibles
+  - description: Exprimer votre intérêt pour rejoindre la communauté de l'eXtrême Défi.
     liens:
       - lien: https://airtable.com/apprjFOnbLySO8spa/shraH0xKsFZnkZOKw
         texte: Rejoignez l'extrême Défi

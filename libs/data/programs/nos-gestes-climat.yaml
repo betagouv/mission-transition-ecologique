@@ -8,6 +8,7 @@ description: >-
   individuel, en seulement 10 minutes.
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
+contact question: https://nosgestesclimat.fr/contact
 url: https://nosgestesclimat.fr/
 nature de l'aide: formation
 coût de l'accompagnement: Gratuit
@@ -15,20 +16,20 @@ durée de l'accompagnement: 10min
 activable en autonomie: oui
 objectifs:
   - description: >-
-      Comme **2 millions de personnes** obtenez votre empreinte carbone et
-      empreinte eau, grâce au calculateur "Nos Gestes Climat"
+      Obtenez votre empreinte carbone et empreinte eau, grâce au calculateur
+      "Nos Gestes Climat".
     liens:
       - lien: https://nosgestesclimat.fr/
         texte: Passer le test
   - description: >-
-      Lancez une campagne dans votre organisation et **engagez une démarche
-      durable** avec ce calculateur en ligne
+      Lancez une campagne dans votre organisation et engagez une démarche
+      durable avec ce calculateur en ligne.
     liens:
       - lien: https://nosgestesclimat.fr/organisations
         texte: Tester Nos Gestes Climat pour votre organisation
   - description: >-
       Explorez, analysez et téléchargez des données anonymisées pour faire des
-      choix éclairés et améliorer continuellement votre démarche écologique
+      choix éclairés et améliorer continuellement votre démarche écologique.
   - description: >-
       Permettez à vos parties prenantes (collaborateurs, partenaires,
       clients...) de calculer et réduire leur empreinte carbone et eau

@@ -1,9 +1,8 @@
 import { nafMapping } from '@tee/data/static'
 import { Maybe } from 'true-myth'
 import { NafRepository as NafRepositoryType } from '../../domain/spi'
-import { CompanyActivityType, NAF1 } from '@tee/common'
+import { CompanyActivityType, NAF1, normalizeString } from '@tee/common'
 import { Result } from 'true-myth'
-import { normalizeString } from '../../../common/string'
 
 export class NafRepository implements NafRepositoryType {
   private _lastNafCode = ''
@@ -17,6 +16,21 @@ export class NafRepository implements NafRepositoryType {
   public getSectionCode(nafCode: string): Maybe<string> {
     const nafData = this._findNafData(nafCode)
     return Maybe.of(nafData?.NIV1)
+  }
+
+  public getNiv2(nafCode: string): Maybe<string> {
+    const nafData = this._findNafData(nafCode)
+    return Maybe.of(nafData?.NIV2)
+  }
+
+  public getNiv3(nafCode: string): Maybe<string> {
+    const nafData = this._findNafData(nafCode)
+    return Maybe.of(nafData?.NIV3)
+  }
+
+  public getNiv4(nafCode: string): Maybe<string> {
+    const nafData = this._findNafData(nafCode)
+    return Maybe.of(nafData?.NIV4)
   }
 
   public searchNAF(searchTerm: string): Result<CompanyActivityType[], Error> {

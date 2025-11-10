@@ -38,7 +38,7 @@
                 :project="project"
                 :is-priority-project="true"
                 :priority-order="index + 1"
-                class="fr-radius-a--1v fr-card--shadow fr-card-priority fr-card-priority--highlighted fr-enlarge-link"
+                class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
               />
             </div>
           </div>
@@ -89,7 +89,6 @@
               :is-unique-priority="isUniquePriority"
               :priority-order="getPriorityOrder(project)"
               class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
-              :class="{ 'fr-card-priority': isPriorityProject(project) }"
             />
           </div>
         </div>
@@ -105,6 +104,7 @@ import { computed } from 'vue'
 import { ProjectType } from '@/types'
 import { CompanyData } from '@/tools/companyData'
 import { useFiltersStore } from '@/stores/filters'
+import ProjectPriority from '@/tools/project/projectPriority'
 
 interface ProjectListProps {
   sortedProjects?: ProjectType[]
@@ -119,22 +119,13 @@ const resume = computed<string>(() => {
   })
 })
 
-const hasPriorityProjects = computed(() => {
-  return priorityProjects.value ? priorityProjects.value?.length > 0 : false
-})
+const priorityProjects = computed(() => ProjectPriority.get(props.sortedProjects))
 
-const isUniquePriority = computed(() => {
-  return priorityProjects.value ? priorityProjects.value.length === 1 : false
-})
+const hasPriorityProjects = computed(() => ProjectPriority.has(priorityProjects.value))
 
-const priorityProjects = computed(() => {
-  const projectQty = hasThemeSelected.value ? 1 : 3
-  return props.sortedProjects ? props.sortedProjects.slice(0, projectQty) : undefined
-})
+const isUniquePriority = computed(() => ProjectPriority.isUnique(priorityProjects.value))
 
-const nonPriorityProjects = computed(() => {
-  return props.sortedProjects ? props.sortedProjects.slice(3) : undefined
-})
+const nonPriorityProjects = computed(() => ProjectPriority.getNonPriorityProjects(props.sortedProjects, priorityProjects.value))
 
 const hasThemeSelected = computed(() => {
   return filtersStore.hasThemeTypeSelected()
@@ -148,11 +139,7 @@ const hideMainProjectListComponent = computed(() => {
   return !hasThemeSelected.value
 })
 
-const isPriorityProject = (project: ProjectType) => {
-  return priorityProjects.value!.includes(project)
-}
+const isPriorityProject = (project: ProjectType) => ProjectPriority.is(project, priorityProjects.value)
 
-const getPriorityOrder = (project: ProjectType) => {
-  return priorityProjects.value ? priorityProjects.value.indexOf(project) + 1 : undefined
-}
+const getPriorityOrder = (project: ProjectType) => ProjectPriority.getIndex(project, priorityProjects.value)
 </script>

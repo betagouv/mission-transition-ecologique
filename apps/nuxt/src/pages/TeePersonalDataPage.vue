@@ -17,6 +17,8 @@
 <script setup lang="ts">
 import TeeFooterCookiesButton from '@/components/TeeFooterCookiesButton.vue'
 import { MetaRobots } from '@/tools/metaRobots'
+import { MetaSeo } from '@/tools/metaSeo'
+import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 import { PrivacyPolicyPropsCookie, PrivacyPolicyPropsThirdParty, PrivacyPolicy } from '@incubateur-ademe/legal-pages-vue3'
 
@@ -24,6 +26,8 @@ definePageMeta({
   path: '/donnees-personnelles',
   name: RouteName.PersonalData
 })
+
+const navigation = new Navigation()
 
 const thirdParties: PrivacyPolicyPropsThirdParty[] = [
   {
@@ -52,7 +56,7 @@ const thirdParties: PrivacyPolicyPropsThirdParty[] = [
     country: 'France',
     hostingCountry: 'France',
     serviceType: 'Traitement des demandes par les conseillers',
-    policyUrl: 'https://conseillers-entreprises.service-public.fr/mentions_d_information'
+    policyUrl: 'https://conseillers-entreprises.service-public.gouv.fr/mentions_d_information'
   }
 ]
 
@@ -67,5 +71,17 @@ const cookies: PrivacyPolicyPropsCookie[] = [
   }
 ]
 
-useHead(MetaRobots.indexFollow())
+const description = 'Informations relatives à la politique de confidentialité du site Mission Transition écologique des entreprises.'
+useSeoMeta(MetaSeo.get('Politique de confidentialité', description))
+useSchemaOrg(defineWebPage({ description: description }))
+
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.PersonalData)
+    }
+  ],
+  ...MetaRobots.indexFollow()
+})
 </script>

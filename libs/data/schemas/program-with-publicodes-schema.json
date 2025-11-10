@@ -8,12 +8,20 @@
       "description": "Titre commercial du dispositif. Si pas de titre commercial clairement identifé, un titre générique du type \"Dispositif { opérateur de contact }\" peut être utilisé.",
       "type": "string"
     },
+    "metaTitre": {
+      "description": "Titre du dispositif pour les metadatas de la page. Il s'agit du titre qui sera affiché dans l'onglet du navigateur.",
+      "type": "string"
+    },
     "promesse": {
       "description": "TODO",
       "type": "string"
     },
     "description": {
       "description": "La description donne les principales informations du dispositif en quelques lignes",
+      "type": "string"
+    },
+    "metaDescription": {
+      "description": "Description du dispositif pour les metadatas de la page. Il s'agit de la description qui sera affichée dans les résultats de recherche.",
       "type": "string"
     },
     "description longue": {
@@ -97,6 +105,10 @@
       "description": "L'opérateur de contact est l'opérateur à contacter pour obtenir des informations supplémentaires sur le dispositif.",
       "type": "string",
       "$ref": "#/$defs/operators"
+    },
+    "contact question": {
+      "description": "Le contact en cas de question, peut être un lien vers le formulaire, un mail ou une url.",
+      "type": "string"
     },
     "autres opérateurs": {
       "description": "Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.",
@@ -190,6 +202,10 @@
         "secteur d'activité",
         "nombre d'années d'activité"
       ]
+    },
+    "eligibilityData": {
+      "description": "Données d'éligibilite du programme. Sous format codifié pour traitements automatiques",
+      "type": "object"
     },
     "publicodes": {
       "description": "Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.",
@@ -323,7 +339,6 @@
     "operators": {
       "enum": [
         "ADEME",
-        "ASP",
         "Agence de l'Eau Loire-Bretagne",
         "Agence de l'Eau Rhône-Méditerranée-Corse",
         "Agence de l'Eau",
@@ -339,7 +354,6 @@
         "EcoCO2",
         "France Rénov'",
         "InvestEU",
-        "La Poste",
         "Ministère de la Transition Écologique",
         "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment",
         "Région Bretagne",
@@ -361,12 +375,13 @@
         "Office français de la biodiversité",
         "Région Bourgogne-Franche-Comté",
         "Région Auvergne-Rhône-Alpes",
-        "Association pour la transition Bas Carbone",
         "Région Nouvelle-Aquitaine",
         "Agence de Développement Economique de Corse",
         "Agence de Tourisme de la Corse",
         "Région Guadeloupe",
-        "Avere-France"
+        "Avere-France",
+        "Centre National du Livre",
+        "Banque de France"
       ]
     }
   }

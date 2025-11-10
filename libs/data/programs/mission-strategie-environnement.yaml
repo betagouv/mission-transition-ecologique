@@ -3,15 +3,35 @@ promesse: >-
   Définissez la feuille de route pour la transition énergétique et écologique de
   votre entreprise
 description: >-
-  Bénéficiez d'une mission de conseil ciblée sur 13 jours d'un expert
-  environnement référencé par Bpifrance. Un accompagnement pour vous aider à
-  enclencher votre transition énergétique et écologique, l’inscrire dans la
-  stratégie de votre entreprise et construire votre feuille de route jusqu’à
-  2030.
+  Bénéficiez de **13 jours d’accompagnement** par un expert environnement
+  référencé par Bpifrance pour intégrer la **transition écologique et
+  énergétique** dans la stratégie de votre entreprise. Cette mission vous permet
+  de prendre du recul, structurer votre démarche et construire une **feuille de
+  route adaptée** à votre activité.
+
+
+  Vous pourrez :
+
+
+  - **Sensibiliser vos équipes** aux enjeux environnementaux,
+
+
+  - **Évaluer les impacts** de votre activité,
+
+
+  - **Identifier risques et opportunités** liés à la transition,
+
+
+  - **Formaliser votre raison d’être**,
+
+
+  - et construire une **trajectoire jusqu’en 2030** pour guider vos actions
+  selon vos objectifs.
 illustration: images/TEE_eolienne.png
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - InvestEU
+contact question: formulaire
 url: >-
   https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/mission-strategie-environnement
 nature de l'aide: étude
@@ -19,16 +39,17 @@ coût de l'accompagnement: 5 000 € HT
 durée de l'accompagnement: 13 jours
 objectifs:
   - description: >-
-      Sensibiliser et renforcer les compétences de vos collaborateurs sur les
-      sujets liés la transition environnementale.
-  - description: Définir la raison d’être de votre entreprise.
-  - description: Evaluer les impacts de l’activité de votre entreprise sur l’environnement.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Etablir les risques et opportunités de la transition environnementale sur
-      l’activité de votre entreprise.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Définir la feuille de route jusqu’à 2030 de votre entreprise pour vous
-      guider dans la transition énergétique et écologique.
+      Définissez avec l’expert le périmètre du diagnostic, la méthode et le
+      calendrier.
+  - description: Lancez le diagnostic avec l'expert environnement référencé par Bpifrance.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Plus de 10 salariés

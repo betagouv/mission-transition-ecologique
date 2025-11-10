@@ -1,23 +1,10 @@
-import { PublicodesKeys, PublicodeObjective } from '@tee/common'
-import { FiltersKeys, ProgramTypeForFront, ProgramTypeWithEligibility, PublicodesCondition, ThemeId } from '@tee/data'
+import { PublicodeObjective, PublicodesKeys, ThemeId } from '@tee/common'
+import { FiltersKeys, ProgramTypeForFront, ProgramTypeWithEligibility, PublicodesCondition } from '@tee/data'
+import { ThemeConverter } from '../../common/domain/converter/ThemeConverter'
+import { ProgramService } from '../../program/application/programService'
 import type { ObjectivePublicodeData } from './types'
 
-class FrontConverter {
-  private _publicodeToThemeMapping = {
-    [PublicodeObjective.EnvironmentalImpact]: ThemeId.Environmental,
-    [PublicodeObjective.EnergyPerformance]: ThemeId.Energy,
-    [PublicodeObjective.WaterConsumption]: ThemeId.Water,
-    [PublicodeObjective.BuildingRenovation]: ThemeId.Building,
-    [PublicodeObjective.SustainableMobility]: ThemeId.Mobility,
-    [PublicodeObjective.WasteManagement]: ThemeId.Waste,
-    [PublicodeObjective.EcoDesign]: ThemeId.EcoDesign,
-    [PublicodeObjective.TrainOrRecruit]: ThemeId.RH,
-    [PublicodeObjective.MakeSavings]: ThemeId.Environmental,
-    [PublicodeObjective.DurablyInvest]: ThemeId.Environmental,
-    [PublicodeObjective.Biodiversity]: ThemeId.Biodiversity,
-    [PublicodeObjective.UnknownYet]: ThemeId.Environmental
-  }
-
+export default class FrontConverter {
   private _getFilterKey(publicodeKey: string): FiltersKeys | undefined {
     if (publicodeKey === PublicodesKeys.hasObjective) {
       return FiltersKeys.Theme
@@ -31,7 +18,7 @@ class FrontConverter {
 
   private _getTheme(publicodeData: ObjectivePublicodeData): ThemeId[] {
     const objectives: PublicodeObjective[] = publicodeData[PublicodesCondition.oneOfThese]
-    return objectives.map((obj: PublicodeObjective) => this._publicodeToThemeMapping[obj])
+    return ThemeConverter.fromObjectives(objectives)
   }
 
   private _getFilterData(publicodeData: unknown) {
@@ -42,7 +29,11 @@ class FrontConverter {
   }
 
   public convertDomainToFront(program: ProgramTypeWithEligibility): ProgramTypeForFront {
-    const { publicodes, ...frontProgram } = program
+    return ProgramService.isPublicodesEvaluator() ? this._convertWithPublicodes(program) : this._convertFromJson(program)
+  }
+
+  private _convertWithPublicodes(program: ProgramTypeWithEligibility) {
+    const { publicodes, eligibilityData: _eligibilityData, ...frontProgram } = program
     if (publicodes) {
       const filters = Object.keys(publicodes).reduce<{ [key in FiltersKeys]?: string[] }>((acc, publicodeKey) => {
         const filterKey = this._getFilterKey(publicodeKey)
@@ -58,6 +49,15 @@ class FrontConverter {
     }
     return frontProgram as ProgramTypeForFront
   }
-}
 
-export default FrontConverter
+  private _convertFromJson(program: ProgramTypeWithEligibility) {
+    const { publicodes: _publicodes, eligibilityData, ...frontProgram } = program
+
+    return {
+      ...frontProgram,
+      filters: {
+        [FiltersKeys.Theme]: eligibilityData?.questionnaire?.priorityObjectives || undefined
+      }
+    } as ProgramTypeForFront
+  }
+}

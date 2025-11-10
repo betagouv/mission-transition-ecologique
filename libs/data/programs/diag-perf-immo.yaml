@@ -1,9 +1,30 @@
 titre: Diag Perf'Immo
 promesse: Réduisez la consommation énergétique de vos bâtiments
 description: >-
-  Bénéficiez des conseils d'un expert environnement référencé par Bpifrance pour
-  réduire les consommations énergétiques de vos bâtiments et établir une
-  trajectoire conforme au Décret Tertiaire.
+  Bpifrance propose le diagnostic Perf’Immo pour vous aider à améliorer la
+  performance énergétique de vos bâtiments et à répondre aux exigences du Décret
+  Tertiaire. Cet accompagnement se déroule en plusieurs étapes :
+
+
+  - Collecte et analyse des données existantes (plans, équipements,
+  consommations, usages…)
+
+
+  - Visite du site et mesures complémentaires si nécessaire
+
+
+  - Bilan énergétique et définition d’objectifs conformes à la réglementation
+
+
+  - Élaboration de scénarios d’amélioration chiffrés et hiérarchisés
+
+
+  - Aide à la déclaration sur la plateforme OPERAT, si besoin
+
+
+  Ce diagnostic vous aide à prioriser vos actions, à planifier vos
+  investissements et à engager une trajectoire d’optimisation énergétique claire
+  et durable.
 description longue: >-
   L’obligation réglementaire du Dispositif Éco Énergie Tertiaire (DEET), plus
   communément appelé « décret tertiaire », impose aux entreprises de réduire la
@@ -13,11 +34,11 @@ description longue: >-
 
 
   Le décret tertiaire est officiellement entré en vigueur en octobre 2019.
-aide temporairement indisponible: oui
 illustration: images/TEE_ampoule.png
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - ADEME
+contact question: formulaire
 url: >-
   https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/diag-perfimmo
 nature de l'aide: étude
@@ -27,20 +48,20 @@ coût de l'accompagnement: >-
 durée de l'accompagnement: variable selon la surface et la complexité du site
 objectifs:
   - description: >-
-      Collecter et analyser des informations clés existantes (plans, équipements
-      techniques, occupation, données de consommation énergétique, etc.)
+      Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le
+      site de Bpifrance
+    liens:
+      - lien: https://diag.bpifrance.fr/contactez-nous
+        texte: Formulaire de contact
   - description: >-
-      Effectuer des observations sur site et réaliser des mesures
-      complémentaires si nécessaire.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Etablir un bilan énergétique et définir des objectifs de performance
-      énergétique conformes aux exigences du Décret Tertiaire
+      Définissez avec l’expert le périmètre du diagnostic, la méthode et le
+      calendrier.
   - description: >-
-      Elaborer des scénarios d’amélioration chiffrés pour l’atteinte de ces
-      objectifs
-  - description: >-
-      Être accompagné dans la réalisation de la déclaration sur la plateforme
-      OPERAT le cas échéant
+      Lancez le diagnostic avec le bureau d’études spécialisé et référencé par
+      Bpifrance.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
@@ -63,7 +84,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - entreprise . est propriétaire de ses locaux
   entreprise . est éligible:
     toutes ces conditions:
       - a une categorie legale eligible

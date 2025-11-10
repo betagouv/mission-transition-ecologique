@@ -35,6 +35,7 @@ illustration: images/TEE_eolienne.png
 opérateur de contact: Voies Navigables de France
 autres opérateurs:
   - ADEME
+contact question: mailto:pami-connect@vnf.fr
 url: >-
   https://www.vnf.fr/vnf/accueil/beneficier-de-solutions-en-faveur-de-la-transition-energetique-du-secteur-fluvial/comment-financer-un-projet-de-verdissement-de-la-flotte-fluviale/pami/comment-faire-une-demande-daide-pami/
 nature de l'aide: financement
@@ -42,13 +43,14 @@ montant du financement: De 20 000 € à 500 000 € selon projet
 activable en autonomie: oui
 objectifs:
   - description: >-
-      Vérifiez l'éligibilité de votre projet ou contactez la direction du
-      développement de Voies Navigables de France (VNF) par mail :
-      pami-connect@vnf.fr
+      Assurez-vous de l'éligibilité de votre projet ou contactez la direction du
+      développement de Voies Navigables de France (VNF) par mail.
     liens:
       - lien: >-
           https://www.vnf.fr/vnf/accueil/beneficier-de-solutions-en-faveur-de-la-transition-energetique-du-secteur-fluvial/comment-financer-un-projet-de-verdissement-de-la-flotte-fluviale/
         texte: Critères d'éligibilité
+      - lien: mailto:pami-connect@vnf.fr
+        texte: Contacter par mail
   - description: Créez un compte sur PAMI Connect.
     liens:
       - lien: https://portail-pami-connect.vnf.fr/

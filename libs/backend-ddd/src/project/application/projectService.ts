@@ -5,18 +5,18 @@ import { Result } from 'true-myth'
 import { RedirectService } from '../../common/application/redirectService'
 import { ProjectEligibility } from '../infrastructure/projectEligibility'
 import { ProjectsJson } from '../infrastructure/projectsJson'
-import { ProjectSorter } from '../infrastructure/projectSorter'
+import { ProjectSorter } from '../domain/projectSorter'
 
 export class ProjectService {
-  private _project: ProjectFeatures
+  public project: ProjectFeatures
 
   public constructor() {
-    this._project = new ProjectFeatures(ProjectsJson.getInstance(), new ProjectEligibility(), new ProjectSorter())
+    this.project = new ProjectFeatures(ProjectsJson.getInstance(), new ProjectEligibility(), new ProjectSorter())
   }
 
   public getFiltered(questionnaireData: QuestionnaireData): Result<ProjectType[], Error> {
     try {
-      return Result.ok(this._project.getFiltered(questionnaireData))
+      return Result.ok(this.project.getFiltered(questionnaireData))
     } catch (error: unknown) {
       if (error instanceof Error) {
         return Result.err(error)
@@ -50,11 +50,11 @@ export class ProjectService {
   }
 
   public getById(id: number): ProjectType | undefined {
-    return this._project.getById(id)
+    return this.project.getById(id)
   }
 
   public getBySlug(id: string): ProjectType | undefined {
-    return this._project.getBySlug(id)
+    return this.project.getBySlug(id)
   }
 
   public getRedirect(slug: string): string | undefined {

@@ -15,8 +15,6 @@ You can check the full list of commands from the libs/etl/project.json file
 
 The docker container must be used while developing too.
 
-While working on the package, in the .env file, set the variable `TEST=True`
-
 To create the docker container :
 `npm run build:etl`
 
@@ -34,3 +32,4 @@ If your contribution is answering an issue of the repository, feel free to direc
 
 - In postgreSQL, when UserA creates a schema, only UserA and Superusers have access to the schema. If we recreate the production database from scratch, don't forget to grant the correct rights to every user that needs it (or better, define a 'production' role and attribute the role to the corresponding users).
 - In postgreSQL, only the user that has created a schema and superusers can delete a schema. Feel free to rename the test schema if you want to create a new schema but please clean it on the database afterwards.
+- By default, the package is in its test settings, set the env variable ETL_TEST to false to push the updates to the production schema

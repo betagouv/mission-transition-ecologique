@@ -33,6 +33,7 @@ illustration: images/TEE_eolienne.png
 opérateur de contact: Chambre de Commerce et de l'Industrie
 autres opérateurs:
   - Agence de l'Eau Rhône-Méditerranée-Corse
+contact question: formulaire
 url: >-
   https://www.cote-azur.cci.fr/beneficiez-de-laccompagnement-reseau-pour-economiser-leau-dans-votre-entreprise/
 nature de l'aide: étude
@@ -40,7 +41,9 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Variable
 activable en autonomie: oui
 objectifs:
-  - description: Vérifiez votre éligibilité en parcourant la documentation du programme.
+  - description: >-
+      Consultez la documentation du programme pour vérifier l'éligibilité de
+      votre projet.
     liens:
       - lien: >-
           https://www.cote-azur.cci.fr/app/uploads/2024/11/Reglement-Appel-a-candidatures-ReSEau.pdf

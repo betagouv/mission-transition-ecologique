@@ -1,37 +1,25 @@
 import { Maybe, Result } from 'true-myth'
+import EstablishmentFeatures from '../../establishment/domain/establishmentFeatures'
+import ProjectFeatures from '../../project/domain/projectFeatures'
 import { OpportunityAssociatedData } from './opportunityAssociatedData'
 import type { ContactRepository, MailerManager, OpportunityRepository } from './spi'
-import { OpportunityId, OpportunityWithContactId, OpportunityDetailsShort, OpportunityWithOperatorContactAndContactId } from './types'
+import { OpportunityId, OpportunityWithContactId, OpportunityWithOperatorContactAndContactId } from './types'
 import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFeatures'
-import { OpportunityHubRepository } from '../../opportunityHub/domain/spi'
-import { ProgramRepository } from '../../program/domain/spi'
 import ProgramFeatures from '../../program/domain/programFeatures'
-import { Operators, ProgramType, ThemeId } from '@tee/data'
-import { ContactDetails, Opportunity, OpportunityType, SiretValidator } from '@tee/common'
-import EstablishmentService from '../../establishment/application/establishmentService'
+import { Operators, ProgramType } from '@tee/data'
+import { ContactDetails, Opportunity, OpportunityType, SiretValidator, ThemeId } from '@tee/common'
 import Monitor from '../../common/domain/monitoring/monitor'
-import { ProjectService } from '../../project/application/projectService'
 
 export default class OpportunityFeatures {
-  private readonly _contactRepository: ContactRepository
-  private readonly _opportunityRepository: OpportunityRepository
-  private readonly _opportunityHubRepositories: OpportunityHubRepository[]
-  private readonly _programRepository: ProgramRepository
-  private readonly _mailRepository: MailerManager
-
   constructor(
-    contactRepository: ContactRepository,
-    opportunityRepository: OpportunityRepository,
-    opportunityHubRepositories: OpportunityHubRepository[],
-    programRepository: ProgramRepository,
-    mailRepository: MailerManager
-  ) {
-    this._contactRepository = contactRepository
-    this._opportunityRepository = opportunityRepository
-    this._opportunityHubRepositories = opportunityHubRepositories
-    this._programRepository = programRepository
-    this._mailRepository = mailRepository
-  }
+    private readonly _contactRepository: ContactRepository,
+    private readonly _opportunityRepository: OpportunityRepository,
+    private readonly _mailRepository: MailerManager,
+    private readonly _opportunityHubFeatures: OpportunityHubFeatures,
+    private readonly _programFeatures: ProgramFeatures,
+    private readonly _projectFeatures: ProjectFeatures,
+    private readonly _establishmentFeatures: EstablishmentFeatures
+  ) {}
 
   createOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<OpportunityId, Error>> => {
     const maybeFullOpportunity = await this._verifyAndAddEstablishmentData(opportunity)
@@ -48,34 +36,30 @@ export default class OpportunityFeatures {
     const opportunityWithContactId = this._addContactIdToOpportunity(opportunity, contactIdResult.value.id)
     const opportunityWithOperatorAndContact = this._addContactOperatorToOpportunity(opportunityWithContactId)
 
-    // const maybeError = this._defineOpportunityDatabaseId(opportunityWithOperatorAndContact)
-    // if (maybeError.isJust) {
-    //   return Result.err(maybeError.value)
-    // }
-
-    const opportunityAssociatedObject = this._createOpportunityAssociatedObject(opportunityWithOperatorAndContact)
-    if (opportunityAssociatedObject.isErr) {
-      Monitor.error('Error during the creation of the Opportunity Associated Object', { error: opportunityAssociatedObject.error })
-      return Result.err(opportunityAssociatedObject.error)
+    const opportunityAssociatedData = this._createOpportunityAssociatedData(opportunityWithOperatorAndContact)
+    if (opportunityAssociatedData.isErr) {
+      Monitor.error('Error during the creation of the Opportunity Associated Object', { error: opportunityAssociatedData.error })
+      return Result.err(opportunityAssociatedData.error)
     }
 
-    const opportunityResult = await this._opportunityRepository.create(opportunityWithOperatorAndContact, opportunityAssociatedObject.value)
+    const opportunityResult = await this._opportunityRepository.create(opportunityWithOperatorAndContact, opportunityAssociatedData.value)
     if (opportunityResult.isErr) {
       Monitor.error('Error during Opportunity Creation', { error: opportunityResult.error })
       return opportunityResult
     }
 
-    this._sendReturnReceipt(opportunityWithContactId, opportunityAssociatedObject.value)
-    this._transmitOpportunityToHubs(opportunityResult.value, opportunityWithOperatorAndContact, opportunityAssociatedObject.value)
+    void (async () => {
+      if (!(await this._hasReachedTransmissionLimit(opportunityWithContactId, opportunityAssociatedData.value))) {
+        void this._transmitOpportunityToHubs(opportunityResult.value, opportunityWithOperatorAndContact, opportunityAssociatedData.value)
+      } else {
+        void this._sendReturnReceipt(opportunityWithContactId, opportunityAssociatedData.value)
+      }
+    })()
 
     return opportunityResult
   }
 
-  getDailyOpportunitiesByContactId = async (contactId: number): Promise<Result<OpportunityDetailsShort[], Error>> => {
-    return await this._opportunityRepository.getDailyOpportunitiesByContactId(contactId)
-  }
-
-  private _createOpportunityAssociatedObject(
+  private _createOpportunityAssociatedData(
     opportunity: OpportunityWithOperatorContactAndContactId
   ): Result<OpportunityAssociatedData, Error> {
     switch (opportunity.type) {
@@ -87,7 +71,7 @@ export default class OpportunityFeatures {
         return Result.ok(new OpportunityAssociatedData(OpportunityType.Program, associatedProgram))
       }
       case OpportunityType.Project: {
-        const associatedProject = new ProjectService().getById(+opportunity.id)
+        const associatedProject = this._projectFeatures.getById(+opportunity.id)
         if (!associatedProject) {
           return Result.err(new Error('Project with id ' + opportunity.id + 'not found'))
         }
@@ -102,25 +86,30 @@ export default class OpportunityFeatures {
           })
         )
       default:
-        return Result.err(new Error('Opportunity type not handled in _createOpportunityAssociatedObject'))
+        return Result.err(new Error('Opportunity type not handled in _createOpportunityAssociatedData'))
     }
   }
 
-  private _transmitOpportunityToHubs(opportunityId: OpportunityId, opportunity: OpportunityWithContactId, data: OpportunityAssociatedData) {
-    void new OpportunityHubFeatures(this._opportunityHubRepositories)
-      .maybeTransmitOpportunity(opportunity, data)
-      .then(async (opportunityHubResult) => {
-        if (opportunityHubResult == Maybe.nothing()) {
-          const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, !opportunityHubResult.isJust)
-          if (opportunityUpdateErr.isJust) {
-            Monitor.warning('Opportunity status not updated after a transmission to a Hub', { error: opportunityUpdateErr.value })
-          }
-        }
-      })
+  private async _transmitOpportunityToHubs(
+    opportunityId: OpportunityId,
+    opportunity: OpportunityWithContactId,
+    opportunityData: OpportunityAssociatedData
+  ) {
+    const opportunityHubResult = await this._opportunityHubFeatures.transmitOpportunity(opportunity, opportunityData)
+
+    if (opportunityHubResult !== false && opportunityHubResult.isOk) {
+      const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, opportunityHubResult.value)
+      if (opportunityUpdateErr.isJust) {
+        Monitor.warning('Opportunity status not updated after a transmission to a Hub', {
+          error: opportunityUpdateErr.value,
+          idCe: opportunityHubResult.value
+        })
+      }
+    }
   }
 
-  private async _updateOpportunitySentToHub(opportunityId: OpportunityId, success: boolean): Promise<Maybe<Error | null>> {
-    return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: success })
+  private async _updateOpportunitySentToHub(opportunityId: OpportunityId, idCe: number): Promise<Maybe<Error | null>> {
+    return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: true, idCe })
   }
 
   private _addContactOperatorToOpportunity(opportunity: OpportunityWithContactId): OpportunityWithOperatorContactAndContactId {
@@ -139,22 +128,6 @@ export default class OpportunityFeatures {
     }
   }
 
-  private _defineOpportunityDatabaseId(opportunity: OpportunityWithOperatorContactAndContactId): Maybe<Error> {
-    if (opportunity.type === OpportunityType.Project) {
-      const project = new ProjectService().getById(+opportunity.id)
-      if (!project) {
-        return Maybe.just(new Error('Project with id ' + opportunity.id + 'not found'))
-      }
-      // opportunity.id = project.slug
-    }
-    if (opportunity.type === OpportunityType.CustomProject) {
-      opportunity.id = opportunity.titleMessage || 'Projet sans Titre'
-    }
-
-    // do nothing in all the other type for which the databaseId is already the domainId.
-    return Maybe.nothing()
-  }
-
   private _addContactIdToOpportunity(opportunity: Opportunity, id: number): OpportunityWithContactId {
     return {
       ...opportunity,
@@ -163,17 +136,33 @@ export default class OpportunityFeatures {
   }
 
   private _getProgramById(id: string): ProgramType | undefined {
-    return new ProgramFeatures(this._programRepository).getById(id)
+    return this._programFeatures.getOneById(id)
   }
 
-  private async _sendReturnReceipt(opportunity: OpportunityWithContactId, associatedData: OpportunityAssociatedData) {
-    if (!(await new OpportunityHubFeatures(this._opportunityHubRepositories).shouldTransmitToPDE(opportunity, associatedData))) {
-      void this._mailRepository.sendReturnReceipt(opportunity, associatedData).then((hasError) => {
-        if (hasError) {
-          Monitor.warning('Error while sending a return receipt', { error: hasError })
-        }
-      })
+  private async _sendReturnReceipt(opportunity: OpportunityWithContactId, opportunityData: OpportunityAssociatedData) {
+    const hasError = await this._mailRepository.sendReturnReceipt(opportunity, opportunityData)
+    if (hasError) {
+      Monitor.warning('Error while sending a return receipt', { error: hasError })
     }
+  }
+
+  private async _hasReachedTransmissionLimit(
+    opportunity: OpportunityWithContactId,
+    opportunityData: OpportunityAssociatedData
+  ): Promise<boolean> {
+    if (!this._opportunityHubFeatures.hasTransmissionLimit(opportunityData)) {
+      return false
+    }
+
+    const previousDailyOpportunities = await this._opportunityRepository.getDailyOpportunitiesByContactId(opportunity.contactId)
+    if (previousDailyOpportunities.isErr) {
+      return false
+    }
+
+    // The current opportunity being already created in BREVO when we check the hub transmission, we count the current program.
+    // The question is do we have MORE than one transmissible opportunity, which indicates older transmissions.
+    // We count all opportunities types (programs, projects, custom projects) as transmissible here.
+    return previousDailyOpportunities.value.length > 1
   }
 
   private async _verifyAndAddEstablishmentData(opportunity: Opportunity): Promise<Result<Opportunity, Error>> {
@@ -181,7 +170,7 @@ export default class OpportunityFeatures {
       return Result.err(new Error('invalid SIRET')) //since there is a validator in the front end,
       // it means this is a direct query which we can ignore if poorly formatted
     }
-    const establishmentInfos = await new EstablishmentService().getBySiret(opportunity.companySiret)
+    const establishmentInfos = await this._establishmentFeatures.getBySiret(opportunity.companySiret)
     if (establishmentInfos.isErr) {
       return Result.ok(opportunity) // if we don't suceed in enhancing the data, we still want to create an opportunity
     }

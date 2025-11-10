@@ -11,67 +11,71 @@ description: >-
 description longue: >-
   Sont éligibles : 
 
-  • Les dépenses liées au déploiement, à la mise en œuvre et à la continuité du
+
+  - Les dépenses liées au déploiement, à la mise en œuvre et à la continuité du
   plan d’actions défini lors des parcours.
 
-  • Les dépenses portant sur des projets d’investissements liés à des dépenses
+  - Les dépenses portant sur des projets d’investissements liés à des dépenses
   matérielles et/ou immatérielles prenant en compte les enjeux de la transition
   écologique et énergétique et de la décarbonation.
 
-  • Le matériel d’occasion s’il est au prix du marché de l’occasion et sur
+  - Le matériel d’occasion s’il est au prix du marché de l’occasion et sur
   présentation d'une attestation d’achat accompagnée de la facture initiale.
 
 
   À titre d'exemple (non exhaustif) : 
 
-  • Équipements économes en ressources.
 
-  • Équipements permettant un meilleur tri des déchets ou de l’incorporation de
+  - Équipements économes en ressources.
+
+  - Équipements permettant un meilleur tri des déchets ou de l’incorporation de
   matières premières secondaires.
 
-  • Équipements de vrac.
+  - Équipements de vrac.
 
-  • Équipements favorisant l'efficacité énergétique (machines moins énergivores,
+  - Équipements favorisant l'efficacité énergétique (machines moins énergivores,
   éclairage plus performant, isolation).
 
-  • Récupérateurs d’eau.
+  - Récupérateurs d’eau.
 
-  • Études préalables à des investissements.
+  - Études préalables à des investissements.
 
 
-  Sont exclus : 
+  Sont exclus :
 
-  • Travaux de construction de bâtiments, extensions, voirie.
 
-  • Travaux d’aménagement sauf ceux favorisant explicitement les économies
+  - Travaux de construction de bâtiments, extensions, voirie.
+
+  - Travaux d’aménagement sauf ceux favorisant explicitement les économies
   d’énergie avec des précisions sur les économies attendues.
 
-  • Climatisations.
+  - Climatisations.
 
-  • Acquisition de terrains ou de bâtiments.
+  - Acquisition de terrains ou de bâtiments.
 
-  • Équipements informatiques.
+  - Équipements informatiques.
 
-  • Acquisitions effectuées par crédit-bail.
+  - Acquisitions effectuées par crédit-bail.
 
-  • Dépenses de R&D ou développement expérimental.
+  - Dépenses de R&D ou développement expérimental.
 
-  • Toutes dépenses de fonctionnement, y compris les dépenses de personnel ou
+  - Toutes dépenses de fonctionnement, y compris les dépenses de personnel ou
   d’abonnements pouvant être liées au projet d’investissement.
 
 
-  • Les investissements portant sur l'installation de panneaux photovoltaïques,
+  Les investissements portant sur l'installation de panneaux photovoltaïques,
   pompes à chaleur géothermiques et le solaire thermique collectif sont
   également exclus. Des dispositifs spécifiques sont mobilisables.
 illustration: images/TEE_ampoule.png
 opérateur de contact: Région Sud (PACA)
+contact question: mailto:relationentrepriseusager@maregionsud.fr
 url: https://www.maregionsud.fr/vos-aides/detail/cedre-investissement
 nature de l'aide: financement
 montant du financement: Jusqu'à 70% des dépenses éligibles, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation et
-      en contactant un conseiller.
+      Consultez la documentation pour vérifier l’éligibilité de votre projet ou
+      contactez un conseiller..
     liens:
       - lien: https://www.maregionsud.fr/vos-aides/detail/cedre-investissement
         texte: Conditions éligibilité et financement
@@ -90,9 +94,12 @@ objectifs:
       l'accompagnateur-expert.
   - description: >-
       Pour finaliser votre demande de subvention, envoyez une copie de votre
-      dossier par mail à cedre@maregionsud.fr avec pour objet "Investissement
-      CEDRE Premiers pas" ou "Investissement CEDRE Ambition" selon
-      l'accompagnement dont vous avez bénéficié en amont.
+      dossier par mail avec pour objet "Investissement CEDRE Premiers pas" ou
+      "Investissement CEDRE Ambition" selon l'accompagnement dont vous avez
+      bénéficié en amont.
+    liens:
+      - lien: mailto:cedre@maregionsud.fr
+        texte: Contacter par mail
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 250 salariés

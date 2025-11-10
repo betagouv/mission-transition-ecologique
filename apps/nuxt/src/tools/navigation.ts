@@ -1,3 +1,4 @@
+import Config from '@/config'
 import { RouteName, TrackId } from '@/types'
 import { RouteLocationNormalizedLoaded, RouteParamsGeneric, Router } from 'vue-router'
 
@@ -8,6 +9,7 @@ export default class Navigation {
   ) {}
 
   private static instance: Navigation
+
   static getInstance(route: RouteLocationNormalizedLoaded | undefined = undefined, router: Router | undefined = undefined) {
     if (!this.instance) {
       this.instance = new Navigation(route, router)
@@ -140,8 +142,34 @@ export default class Navigation {
 
   getHrefByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {
     if (this._router) {
-      return this._router.resolve({ name: routeName, params: params }).href
+      const href = this._router.resolve({ name: routeName, params: params }).href
+      return this.baseUrl ? `${this.baseUrl}${href}` : href
     }
+  }
+
+  getAbsoluteUrlByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {
+    if (this._router) {
+      return new URL(this._router.resolve({ name: routeName, params: params }).href, window.location.origin).href
+    }
+  }
+
+  get baseUrl() {
+    const baseUrl = Config.baseUrl
+    if (baseUrl) {
+      return baseUrl
+    }
+
+    if (import.meta.client) {
+      return window.location.origin
+    }
+
+    return undefined
+  }
+
+  static getClassesBySideMenu(hasSideMenu: boolean) {
+    return hasSideMenu
+      ? 'fr-col-offset-md-3 fr-col-md-9 fr-col-justify-md--left fr-col-offset-xl-2 fr-col-xl-10 fr-col-justify--center'
+      : ''
   }
 
   static hashByRouteName = (routeName: string) => {
@@ -162,6 +190,15 @@ export default class Navigation {
         useNavigationStore().setFromQuestionnaireCtaRegisterModal(false)
         await this._router.push({
           name: RouteName.QuestionnaireStart
+        })
+      }
+    }
+
+    if (this.isByRouteName(RouteName.Faq)) {
+      if (navigationStore.isFromCtaRegisterModal) {
+        useNavigationStore().setFromCtaRegisterModal(false)
+        await this._router.push({
+          name: RouteName.CatalogPrograms
         })
       }
     }

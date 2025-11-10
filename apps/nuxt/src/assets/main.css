@@ -1,3 +1,104 @@
+@import "@gouvfr/dsfr/dist/core/core.css";
+@import "@gouvfr/dsfr/dist/core/core.legacy.css";
+@import "@gouvfr/dsfr/dist/component/accordion/accordion.css";
+@import "@gouvfr/dsfr/dist/component/badge/badge.css";
+@import "@gouvfr/dsfr/dist/component/breadcrumb/breadcrumb.css";
+@import "@gouvfr/dsfr/dist/component/button/button.css";
+@import "@gouvfr/dsfr/dist/component/card/card.css";
+@import "@gouvfr/dsfr/dist/component/checkbox/checkbox.css";
+@import "@gouvfr/dsfr/dist/component/consent/consent.css";
+@import "@gouvfr/dsfr/dist/component/form/form.css";
+@import "@gouvfr/dsfr/dist/component/header/header.css";
+@import "@gouvfr/dsfr/dist/component/highlight/highlight.css";
+@import "@gouvfr/dsfr/dist/component/input/input.css";
+@import "@gouvfr/dsfr/dist/component/link/link.css";
+@import "@gouvfr/dsfr/dist/component/logo/logo.css";
+@import "@gouvfr/dsfr/dist/component/modal/modal.css";
+@import "@gouvfr/dsfr/dist/component/navigation/navigation.css";
+@import "@gouvfr/dsfr/dist/component/radio/radio.css";
+@import "@gouvfr/dsfr/dist/component/search/search.css";
+@import "@gouvfr/dsfr/dist/component/select/select.css";
+@import "@gouvfr/dsfr/dist/component/sidemenu/sidemenu.css";
+@import "@gouvfr/dsfr/dist/component/tab/tab.css";
+@import "@gouvfr/dsfr/dist/component/table/table.css";
+@import "@gouvfr/dsfr/dist/component/tag/tag.css";
+@import "@gouvfr/dsfr/dist/component/tile/tile.css";
+@import '@gouvfr/dsfr/dist/component/follow/follow.css';
+@import '@gouvfr/dsfr/dist/component/footer/footer.css';
+@import '@gouvfr/dsfr/dist/component/quote/quote.css';
+.fr-icon-map-pin-2-line::before, .fr-icon-map-pin-2-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/map/map-pin-2-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/map/map-pin-2-line.svg");
+}
+.fr-icon-arrow-left-line::before, .fr-icon-arrow-left-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/arrow-left-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/arrow-left-line.svg");
+}
+.fr-icon-arrow-right-line::before, .fr-icon-arrow-right-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/arrow-right-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/arrow-right-line.svg");
+}
+.fr-icon-check-line::before, .fr-icon-check-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/check-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/check-line.svg");
+}
+.fr-icon-close-circle-fill::before, .fr-icon-close-circle-fill::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/close-circle-fill.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/close-circle-fill.svg");
+}
+.fr-icon-close-line::before, .fr-icon-close-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/close-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/close-line.svg");
+}
+.fr-icon-external-link-fill::before, .fr-icon-external-link-fill::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/external-link-fill.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/external-link-fill.svg");
+}
+.fr-icon-checkbox-circle-fill::before, .fr-icon-checkbox-circle-fill::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/checkbox-circle-fill.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/checkbox-circle-fill.svg");
+}
+.fr-icon-information-line::before, .fr-icon-information-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/information-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/system/information-line.svg");
+}
+.fr-icon-mail-line::before, .fr-icon-mail-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/mail-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/mail-line.svg");
+}
+.fr-icon-briefcase-line::before, .fr-icon-briefcase-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/briefcase-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/briefcase-line.svg");
+}
+.fr-icon-links-line::before, .fr-icon-links-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/links-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/business/links-line.svg");
+}
+.fr-icon-money-euro-circle-line::before, .fr-icon-money-euro-circle-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/finance/money-euro-circle-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/finance/money-euro-circle-line.svg");
+}
+.fr-icon-team-line::before, .fr-icon-team-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/user/team-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/user/team-line.svg");
+}
+.fr-icon-account-pin-circle-line::before, .fr-icon-account-pin-circle-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/user/account-pin-circle-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/user/account-pin-circle-line.svg");
+}
+.fr-icon-account-circle-fill::before, .fr-icon-account-circle-fill::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/user/account-circle-fill.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/user/account-circle-fill.svg");
+}
+.fr-icon-question-mark::before, .fr-icon-question-mark::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/editor/question-mark.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/editor/question-mark.svg");
+}
+.fr-icon-chat-3-line::before, .fr-icon-chat-3-line::after {
+  -webkit-mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/communication/chat-3-line.svg");
+  mask-image: url("../../../../node_modules/@gouvfr/dsfr/dist/icons/communication/chat-3-line.svg");
+}
+
 .fr-accordion__btn {
   color: var(--text-title-grey);
 }
@@ -132,25 +233,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: white !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--white {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--black {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -166,25 +248,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(231.7, 231.7, 231.7) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--black {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #161616 !important;
-  }
-  .fr-bg-xs--black--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(185.1, 185.1, 185.1) !important;
-  }
-  .fr-bg-xs--black--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(231.7, 231.7, 231.7) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--yellow {
     background-color: #facf35 !important;
   }
@@ -194,19 +257,6 @@
   .fr-bg--yellow--lightness {
     background-color: rgb(254.5, 250.2, 234.8) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--yellow {
-    background-color: #facf35 !important;
-  }
-  .fr-bg-xs--yellow--light {
-    background-color: rgb(253.5, 240.6, 194.4) !important;
-  }
-  .fr-bg-xs--yellow--lightness {
-    background-color: rgb(254.5, 250.2, 234.8) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--deep-red {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -222,25 +272,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(255, 226.5, 228.4) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--deep-red {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #e1000f !important;
-  }
-  .fr-bg-xs--deep-red--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 169.5, 175.2) !important;
-  }
-  .fr-bg-xs--deep-red--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 226.5, 228.4) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--red {
     background-color: #fca081 !important;
   }
@@ -250,19 +281,6 @@
   .fr-bg--red--lightness {
     background-color: rgb(254.7, 245.5, 242.4) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--red {
-    background-color: #fca081 !important;
-  }
-  .fr-bg-xs--red--light {
-    background-color: rgb(254.1, 226.5, 217.2) !important;
-  }
-  .fr-bg-xs--red--lightness {
-    background-color: rgb(254.7, 245.5, 242.4) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--purple {
     background-color: #6a62f4 !important;
   }
@@ -272,19 +290,6 @@
   .fr-bg--purple--lightness {
     background-color: rgb(240.1, 239.3, 253.9) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--purple {
-    background-color: #6a62f4 !important;
-  }
-  .fr-bg-xs--purple--light {
-    background-color: rgb(210.3, 207.9, 251.7) !important;
-  }
-  .fr-bg-xs--purple--lightness {
-    background-color: rgb(240.1, 239.3, 253.9) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--green {
     background-color: #1ebe8e !important;
   }
@@ -294,19 +299,6 @@
   .fr-bg--green--lightness {
     background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--green {
-    background-color: #1ebe8e !important;
-  }
-  .fr-bg-xs--green--light {
-    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
-  }
-  .fr-bg-xs--green--lightness {
-    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--blue {
     background-color: #001891 !important;
   }
@@ -316,19 +308,6 @@
   .fr-bg--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue {
-    background-color: #001891 !important;
-  }
-  .fr-bg-xs--blue--light {
-    background-color: rgb(145.5, 163.624137931, 255) !important;
-  }
-  .fr-bg-xs--blue--lightness {
-    background-color: rgb(218.5, 224.5413793103, 255) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--blue-france {
     background-color: #000091 !important;
   }
@@ -338,19 +317,6 @@
   .fr-bg--blue-france--lightness {
     background-color: rgb(218.5, 218.5, 255) !important;
   }
-}
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue-france {
-    background-color: #000091 !important;
-  }
-  .fr-bg-xs--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
-  }
-  .fr-bg-xs--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
-  }
-}
-@media (min-width: 0) {
   .fr-bg--grey {
     background-color: #777777 !important;
   }
@@ -361,24 +327,14 @@
     background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
-@media (min-width: 0) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--grey {
-    background-color: #777777 !important;
+@media (max-width: 35.98em) {
+  .fr-bg-xs--none {
+    background-image: none !important;
   }
-  .fr-bg-xs--grey--light {
-    background-color: rgb(214.2, 214.2, 214.2) !important;
-  }
-  .fr-bg-xs--grey--lightness {
-    background-color: rgb(241.4, 241.4, 241.4) !important;
+  .fr-bg-xs--none:hover {
+    background-color: transparent !important;
   }
 }
-.fr-bg--none {
-  background-image: none !important;
-}
-.fr-bg--none:hover {
-  background-color: transparent !important;
-}
-
 @media (min-width: 36em) {
   .fr-bg-sm--white {
     /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -395,25 +351,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: white !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--white {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--black {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -429,25 +366,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(231.7, 231.7, 231.7) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--black {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #161616 !important;
-  }
-  .fr-bg-xs--black--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(185.1, 185.1, 185.1) !important;
-  }
-  .fr-bg-xs--black--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(231.7, 231.7, 231.7) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--yellow {
     background-color: #facf35 !important;
   }
@@ -457,19 +375,6 @@
   .fr-bg-sm--yellow--lightness {
     background-color: rgb(254.5, 250.2, 234.8) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--yellow {
-    background-color: #facf35 !important;
-  }
-  .fr-bg-xs--yellow--light {
-    background-color: rgb(253.5, 240.6, 194.4) !important;
-  }
-  .fr-bg-xs--yellow--lightness {
-    background-color: rgb(254.5, 250.2, 234.8) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--deep-red {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -485,25 +390,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(255, 226.5, 228.4) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--deep-red {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #e1000f !important;
-  }
-  .fr-bg-xs--deep-red--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 169.5, 175.2) !important;
-  }
-  .fr-bg-xs--deep-red--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 226.5, 228.4) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--red {
     background-color: #fca081 !important;
   }
@@ -513,19 +399,6 @@
   .fr-bg-sm--red--lightness {
     background-color: rgb(254.7, 245.5, 242.4) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--red {
-    background-color: #fca081 !important;
-  }
-  .fr-bg-xs--red--light {
-    background-color: rgb(254.1, 226.5, 217.2) !important;
-  }
-  .fr-bg-xs--red--lightness {
-    background-color: rgb(254.7, 245.5, 242.4) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--purple {
     background-color: #6a62f4 !important;
   }
@@ -535,19 +408,6 @@
   .fr-bg-sm--purple--lightness {
     background-color: rgb(240.1, 239.3, 253.9) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--purple {
-    background-color: #6a62f4 !important;
-  }
-  .fr-bg-xs--purple--light {
-    background-color: rgb(210.3, 207.9, 251.7) !important;
-  }
-  .fr-bg-xs--purple--lightness {
-    background-color: rgb(240.1, 239.3, 253.9) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--green {
     background-color: #1ebe8e !important;
   }
@@ -557,19 +417,6 @@
   .fr-bg-sm--green--lightness {
     background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--green {
-    background-color: #1ebe8e !important;
-  }
-  .fr-bg-xs--green--light {
-    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
-  }
-  .fr-bg-xs--green--lightness {
-    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--blue {
     background-color: #001891 !important;
   }
@@ -579,19 +426,6 @@
   .fr-bg-sm--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue {
-    background-color: #001891 !important;
-  }
-  .fr-bg-xs--blue--light {
-    background-color: rgb(145.5, 163.624137931, 255) !important;
-  }
-  .fr-bg-xs--blue--lightness {
-    background-color: rgb(218.5, 224.5413793103, 255) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--blue-france {
     background-color: #000091 !important;
   }
@@ -601,19 +435,6 @@
   .fr-bg-sm--blue-france--lightness {
     background-color: rgb(218.5, 218.5, 255) !important;
   }
-}
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue-france {
-    background-color: #000091 !important;
-  }
-  .fr-bg-xs--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
-  }
-  .fr-bg-xs--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
-  }
-}
-@media (min-width: 36em) {
   .fr-bg-sm--grey {
     background-color: #777777 !important;
   }
@@ -624,24 +445,14 @@
     background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
-@media (min-width: 36em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--grey {
-    background-color: #777777 !important;
+@media (max-width: 47.98em) {
+  .fr-bg-sm--none {
+    background-image: none !important;
   }
-  .fr-bg-xs--grey--light {
-    background-color: rgb(214.2, 214.2, 214.2) !important;
-  }
-  .fr-bg-xs--grey--lightness {
-    background-color: rgb(241.4, 241.4, 241.4) !important;
+  .fr-bg-sm--none:hover {
+    background-color: transparent !important;
   }
 }
-.fr-bg--none {
-  background-image: none !important;
-}
-.fr-bg--none:hover {
-  background-color: transparent !important;
-}
-
 @media (min-width: 48em) {
   .fr-bg-md--white {
     /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -658,25 +469,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: white !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--white {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--black {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -692,25 +484,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(231.7, 231.7, 231.7) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--black {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #161616 !important;
-  }
-  .fr-bg-xs--black--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(185.1, 185.1, 185.1) !important;
-  }
-  .fr-bg-xs--black--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(231.7, 231.7, 231.7) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--yellow {
     background-color: #facf35 !important;
   }
@@ -720,19 +493,6 @@
   .fr-bg-md--yellow--lightness {
     background-color: rgb(254.5, 250.2, 234.8) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--yellow {
-    background-color: #facf35 !important;
-  }
-  .fr-bg-xs--yellow--light {
-    background-color: rgb(253.5, 240.6, 194.4) !important;
-  }
-  .fr-bg-xs--yellow--lightness {
-    background-color: rgb(254.5, 250.2, 234.8) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--deep-red {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -748,25 +508,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(255, 226.5, 228.4) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--deep-red {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #e1000f !important;
-  }
-  .fr-bg-xs--deep-red--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 169.5, 175.2) !important;
-  }
-  .fr-bg-xs--deep-red--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 226.5, 228.4) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--red {
     background-color: #fca081 !important;
   }
@@ -776,19 +517,6 @@
   .fr-bg-md--red--lightness {
     background-color: rgb(254.7, 245.5, 242.4) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--red {
-    background-color: #fca081 !important;
-  }
-  .fr-bg-xs--red--light {
-    background-color: rgb(254.1, 226.5, 217.2) !important;
-  }
-  .fr-bg-xs--red--lightness {
-    background-color: rgb(254.7, 245.5, 242.4) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--purple {
     background-color: #6a62f4 !important;
   }
@@ -798,19 +526,6 @@
   .fr-bg-md--purple--lightness {
     background-color: rgb(240.1, 239.3, 253.9) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--purple {
-    background-color: #6a62f4 !important;
-  }
-  .fr-bg-xs--purple--light {
-    background-color: rgb(210.3, 207.9, 251.7) !important;
-  }
-  .fr-bg-xs--purple--lightness {
-    background-color: rgb(240.1, 239.3, 253.9) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--green {
     background-color: #1ebe8e !important;
   }
@@ -820,19 +535,6 @@
   .fr-bg-md--green--lightness {
     background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--green {
-    background-color: #1ebe8e !important;
-  }
-  .fr-bg-xs--green--light {
-    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
-  }
-  .fr-bg-xs--green--lightness {
-    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--blue {
     background-color: #001891 !important;
   }
@@ -842,19 +544,6 @@
   .fr-bg-md--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue {
-    background-color: #001891 !important;
-  }
-  .fr-bg-xs--blue--light {
-    background-color: rgb(145.5, 163.624137931, 255) !important;
-  }
-  .fr-bg-xs--blue--lightness {
-    background-color: rgb(218.5, 224.5413793103, 255) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--blue-france {
     background-color: #000091 !important;
   }
@@ -864,19 +553,6 @@
   .fr-bg-md--blue-france--lightness {
     background-color: rgb(218.5, 218.5, 255) !important;
   }
-}
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue-france {
-    background-color: #000091 !important;
-  }
-  .fr-bg-xs--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
-  }
-  .fr-bg-xs--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
-  }
-}
-@media (min-width: 48em) {
   .fr-bg-md--grey {
     background-color: #777777 !important;
   }
@@ -887,24 +563,14 @@
     background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
-@media (min-width: 48em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--grey {
-    background-color: #777777 !important;
+@media (max-width: 61.98em) {
+  .fr-bg-md--none {
+    background-image: none !important;
   }
-  .fr-bg-xs--grey--light {
-    background-color: rgb(214.2, 214.2, 214.2) !important;
-  }
-  .fr-bg-xs--grey--lightness {
-    background-color: rgb(241.4, 241.4, 241.4) !important;
+  .fr-bg-md--none:hover {
+    background-color: transparent !important;
   }
 }
-.fr-bg--none {
-  background-image: none !important;
-}
-.fr-bg--none:hover {
-  background-color: transparent !important;
-}
-
 @media (min-width: 62em) {
   .fr-bg-lg--white {
     /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -921,25 +587,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: white !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--white {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--black {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -955,25 +602,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(231.7, 231.7, 231.7) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--black {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #161616 !important;
-  }
-  .fr-bg-xs--black--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(185.1, 185.1, 185.1) !important;
-  }
-  .fr-bg-xs--black--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(231.7, 231.7, 231.7) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--yellow {
     background-color: #facf35 !important;
   }
@@ -983,19 +611,6 @@
   .fr-bg-lg--yellow--lightness {
     background-color: rgb(254.5, 250.2, 234.8) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--yellow {
-    background-color: #facf35 !important;
-  }
-  .fr-bg-xs--yellow--light {
-    background-color: rgb(253.5, 240.6, 194.4) !important;
-  }
-  .fr-bg-xs--yellow--lightness {
-    background-color: rgb(254.5, 250.2, 234.8) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--deep-red {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -1011,25 +626,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(255, 226.5, 228.4) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--deep-red {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #e1000f !important;
-  }
-  .fr-bg-xs--deep-red--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 169.5, 175.2) !important;
-  }
-  .fr-bg-xs--deep-red--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(255, 226.5, 228.4) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--red {
     background-color: #fca081 !important;
   }
@@ -1039,19 +635,6 @@
   .fr-bg-lg--red--lightness {
     background-color: rgb(254.7, 245.5, 242.4) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--red {
-    background-color: #fca081 !important;
-  }
-  .fr-bg-xs--red--light {
-    background-color: rgb(254.1, 226.5, 217.2) !important;
-  }
-  .fr-bg-xs--red--lightness {
-    background-color: rgb(254.7, 245.5, 242.4) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--purple {
     background-color: #6a62f4 !important;
   }
@@ -1061,19 +644,6 @@
   .fr-bg-lg--purple--lightness {
     background-color: rgb(240.1, 239.3, 253.9) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--purple {
-    background-color: #6a62f4 !important;
-  }
-  .fr-bg-xs--purple--light {
-    background-color: rgb(210.3, 207.9, 251.7) !important;
-  }
-  .fr-bg-xs--purple--lightness {
-    background-color: rgb(240.1, 239.3, 253.9) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--green {
     background-color: #1ebe8e !important;
   }
@@ -1083,19 +653,6 @@
   .fr-bg-lg--green--lightness {
     background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--green {
-    background-color: #1ebe8e !important;
-  }
-  .fr-bg-xs--green--light {
-    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
-  }
-  .fr-bg-xs--green--lightness {
-    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--blue {
     background-color: #001891 !important;
   }
@@ -1105,19 +662,6 @@
   .fr-bg-lg--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue {
-    background-color: #001891 !important;
-  }
-  .fr-bg-xs--blue--light {
-    background-color: rgb(145.5, 163.624137931, 255) !important;
-  }
-  .fr-bg-xs--blue--lightness {
-    background-color: rgb(218.5, 224.5413793103, 255) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--blue-france {
     background-color: #000091 !important;
   }
@@ -1127,19 +671,6 @@
   .fr-bg-lg--blue-france--lightness {
     background-color: rgb(218.5, 218.5, 255) !important;
   }
-}
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--blue-france {
-    background-color: #000091 !important;
-  }
-  .fr-bg-xs--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
-  }
-  .fr-bg-xs--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
-  }
-}
-@media (min-width: 62em) {
   .fr-bg-lg--grey {
     background-color: #777777 !important;
   }
@@ -1150,24 +681,14 @@
     background-color: rgb(241.4, 241.4, 241.4) !important;
   }
 }
-@media (min-width: 62em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--grey {
-    background-color: #777777 !important;
+@media (max-width: 77.98em) {
+  .fr-bg-lg--none {
+    background-image: none !important;
   }
-  .fr-bg-xs--grey--light {
-    background-color: rgb(214.2, 214.2, 214.2) !important;
-  }
-  .fr-bg-xs--grey--lightness {
-    background-color: rgb(241.4, 241.4, 241.4) !important;
+  .fr-bg-lg--none:hover {
+    background-color: transparent !important;
   }
 }
-.fr-bg--none {
-  background-image: none !important;
-}
-.fr-bg--none:hover {
-  background-color: transparent !important;
-}
-
 @media (min-width: 78em) {
   .fr-bg-xl--white {
     /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -1184,25 +705,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: white !important;
   }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--white {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-  .fr-bg-xs--white--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: white !important;
-  }
-}
-@media (min-width: 78em) {
   .fr-bg-xl--black {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -1218,25 +720,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(231.7, 231.7, 231.7) !important;
   }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--black {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: #161616 !important;
-  }
-  .fr-bg-xs--black--light {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(185.1, 185.1, 185.1) !important;
-  }
-  .fr-bg-xs--black--lightness {
-    /* Wrong parsing on function name from stylelint, so next line is disable */
-    /* stylelint-disable-next-line function-name-case */
-    background-color: rgb(231.7, 231.7, 231.7) !important;
-  }
-}
-@media (min-width: 78em) {
   .fr-bg-xl--yellow {
     background-color: #facf35 !important;
   }
@@ -1246,19 +729,6 @@
   .fr-bg-xl--yellow--lightness {
     background-color: rgb(254.5, 250.2, 234.8) !important;
   }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
-  .fr-bg-xs--yellow {
-    background-color: #facf35 !important;
-  }
-  .fr-bg-xs--yellow--light {
-    background-color: rgb(253.5, 240.6, 194.4) !important;
-  }
-  .fr-bg-xs--yellow--lightness {
-    background-color: rgb(254.5, 250.2, 234.8) !important;
-  }
-}
-@media (min-width: 78em) {
   .fr-bg-xl--deep-red {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -1274,8 +744,107 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(255, 226.5, 228.4) !important;
   }
+  .fr-bg-xl--red {
+    background-color: #fca081 !important;
+  }
+  .fr-bg-xl--red--light {
+    background-color: rgb(254.1, 226.5, 217.2) !important;
+  }
+  .fr-bg-xl--red--lightness {
+    background-color: rgb(254.7, 245.5, 242.4) !important;
+  }
+  .fr-bg-xl--purple {
+    background-color: #6a62f4 !important;
+  }
+  .fr-bg-xl--purple--light {
+    background-color: rgb(210.3, 207.9, 251.7) !important;
+  }
+  .fr-bg-xl--purple--lightness {
+    background-color: rgb(240.1, 239.3, 253.9) !important;
+  }
+  .fr-bg-xl--green {
+    background-color: #1ebe8e !important;
+  }
+  .fr-bg-xl--green--light {
+    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
+  }
+  .fr-bg-xl--green--lightness {
+    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
+  }
+  .fr-bg-xl--blue {
+    background-color: #001891 !important;
+  }
+  .fr-bg-xl--blue--light {
+    background-color: rgb(145.5, 163.624137931, 255) !important;
+  }
+  .fr-bg-xl--blue--lightness {
+    background-color: rgb(218.5, 224.5413793103, 255) !important;
+  }
+  .fr-bg-xl--blue-france {
+    background-color: #000091 !important;
+  }
+  .fr-bg-xl--blue-france--light {
+    background-color: rgb(145.5, 145.5, 255) !important;
+  }
+  .fr-bg-xl--blue-france--lightness {
+    background-color: rgb(218.5, 218.5, 255) !important;
+  }
+  .fr-bg-xl--grey {
+    background-color: #777777 !important;
+  }
+  .fr-bg-xl--grey--light {
+    background-color: rgb(214.2, 214.2, 214.2) !important;
+  }
+  .fr-bg-xl--grey--lightness {
+    background-color: rgb(241.4, 241.4, 241.4) !important;
+  }
 }
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
+.fr-bg--none {
+  background-image: none !important;
+}
+.fr-bg--none:hover {
+  background-color: transparent !important;
+}
+@media (max-width: 35.98em) {
+  .fr-bg-xs--white {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: white !important;
+  }
+  .fr-bg-xs--white--light {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: white !important;
+  }
+  .fr-bg-xs--white--lightness {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: white !important;
+  }
+  .fr-bg-xs--black {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: #161616 !important;
+  }
+  .fr-bg-xs--black--light {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(185.1, 185.1, 185.1) !important;
+  }
+  .fr-bg-xs--black--lightness {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    background-color: rgb(231.7, 231.7, 231.7) !important;
+  }
+  .fr-bg-xs--yellow {
+    background-color: #facf35 !important;
+  }
+  .fr-bg-xs--yellow--light {
+    background-color: rgb(253.5, 240.6, 194.4) !important;
+  }
+  .fr-bg-xs--yellow--lightness {
+    background-color: rgb(254.5, 250.2, 234.8) !important;
+  }
   .fr-bg-xs--deep-red {
     /* Wrong parsing on function name from stylelint, so next line is disable */
     /* stylelint-disable-next-line function-name-case */
@@ -1291,19 +860,6 @@
     /* stylelint-disable-next-line function-name-case */
     background-color: rgb(255, 226.5, 228.4) !important;
   }
-}
-@media (min-width: 78em) {
-  .fr-bg-xl--red {
-    background-color: #fca081 !important;
-  }
-  .fr-bg-xl--red--light {
-    background-color: rgb(254.1, 226.5, 217.2) !important;
-  }
-  .fr-bg-xl--red--lightness {
-    background-color: rgb(254.7, 245.5, 242.4) !important;
-  }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--red {
     background-color: #fca081 !important;
   }
@@ -1313,19 +869,6 @@
   .fr-bg-xs--red--lightness {
     background-color: rgb(254.7, 245.5, 242.4) !important;
   }
-}
-@media (min-width: 78em) {
-  .fr-bg-xl--purple {
-    background-color: #6a62f4 !important;
-  }
-  .fr-bg-xl--purple--light {
-    background-color: rgb(210.3, 207.9, 251.7) !important;
-  }
-  .fr-bg-xl--purple--lightness {
-    background-color: rgb(240.1, 239.3, 253.9) !important;
-  }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--purple {
     background-color: #6a62f4 !important;
   }
@@ -1335,19 +878,6 @@
   .fr-bg-xs--purple--lightness {
     background-color: rgb(240.1, 239.3, 253.9) !important;
   }
-}
-@media (min-width: 78em) {
-  .fr-bg-xl--green {
-    background-color: #1ebe8e !important;
-  }
-  .fr-bg-xl--green--light {
-    background-color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
-  }
-  .fr-bg-xl--green--lightness {
-    background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
-  }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--green {
     background-color: #1ebe8e !important;
   }
@@ -1357,19 +887,6 @@
   .fr-bg-xs--green--lightness {
     background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
   }
-}
-@media (min-width: 78em) {
-  .fr-bg-xl--blue {
-    background-color: #001891 !important;
-  }
-  .fr-bg-xl--blue--light {
-    background-color: rgb(145.5, 163.624137931, 255) !important;
-  }
-  .fr-bg-xl--blue--lightness {
-    background-color: rgb(218.5, 224.5413793103, 255) !important;
-  }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--blue {
     background-color: #001891 !important;
   }
@@ -1379,19 +896,6 @@
   .fr-bg-xs--blue--lightness {
     background-color: rgb(218.5, 224.5413793103, 255) !important;
   }
-}
-@media (min-width: 78em) {
-  .fr-bg-xl--blue-france {
-    background-color: #000091 !important;
-  }
-  .fr-bg-xl--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
-  }
-  .fr-bg-xl--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
-  }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--blue-france {
     background-color: #000091 !important;
   }
@@ -1401,19 +905,6 @@
   .fr-bg-xs--blue-france--lightness {
     background-color: rgb(218.5, 218.5, 255) !important;
   }
-}
-@media (min-width: 78em) {
-  .fr-bg-xl--grey {
-    background-color: #777777 !important;
-  }
-  .fr-bg-xl--grey--light {
-    background-color: rgb(214.2, 214.2, 214.2) !important;
-  }
-  .fr-bg-xl--grey--lightness {
-    background-color: rgb(241.4, 241.4, 241.4) !important;
-  }
-}
-@media (min-width: 78em) and (width >= 0) and (width <= 575px) {
   .fr-bg-xs--grey {
     background-color: #777777 !important;
   }
@@ -1423,12 +914,6 @@
   .fr-bg-xs--grey--lightness {
     background-color: rgb(241.4, 241.4, 241.4) !important;
   }
-}
-.fr-bg--none {
-  background-image: none !important;
-}
-.fr-bg--none:hover {
-  background-color: transparent !important;
 }
 
 .fr-badge.fr-badge--info {
@@ -2144,6 +1629,7 @@
 .fr-card-banner .fr-card__header .fr-card__img {
   height: 100%;
   align-content: center;
+  max-height: 200px;
 }
 .fr-card-banner .fr-card__header .fr-card__img img {
   object-fit: fill;
@@ -2182,7 +1668,7 @@
   }
 }
 .fr-card-priority {
-  border: solid 0.2rem #1ebe8e;
+  outline: solid 0.2rem #1ebe8e;
 }
 .fr-card-priority--highlighted .fr-card__header::before {
   content: "";
@@ -2193,14 +1679,15 @@
   border-top: 5rem solid #1ebe8e;
   width: 0;
   z-index: 50;
+  border-top-right-radius: 0.9rem;
 }
 .fr-card__title a::after {
   display: none !important;
 }
 .fr-card__header--priority {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.9rem;
+  right: 0.9rem;
   color: #fff;
   font-size: 2rem;
   font-weight: bold;
@@ -2224,6 +1711,48 @@
 }
 .fr-card.fr-enlarge-link .fr-card__content .fr-card__end p {
   font-size: 0.8rem;
+}
+@media (min-width: 48em) {
+  .fr-card.fr-card--cta .fr-card__header {
+    flex-basis: 30%;
+  }
+}
+@media (min-width: 62em) {
+  .fr-card.fr-card--cta .fr-card__header {
+    flex-basis: 25%;
+  }
+}
+.fr-card.fr-card--cta .fr-card__header {
+  align-content: center;
+}
+@media (min-width: 48em) {
+  .fr-card.fr-card--cta .fr-card__img {
+    max-height: 250px;
+  }
+}
+.fr-card.fr-card--cta .fr-card__img {
+  position: relative;
+}
+.fr-card.fr-card--cta .fr-card__img img {
+  max-height: 250px;
+}
+.fr-card.fr-card--cta .fr-card__img::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom right, rgba(255, 255, 255, 0) 70%, rgb(255, 255, 255) 95%) !important;
+}
+.fr-card.fr-card--cta .fr-card__img .fr-card__logo {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
 }
 .fr-card.fr-card--program .fr-card__content {
   padding: 1rem 1.5rem 4rem !important;
@@ -2858,14 +2387,48 @@
     display: inline;
   }
 }
-.fr-sticky {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+@media (min-width: 0) {
+  .fr-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+}
+@media (min-width: 36em) {
+  .fr-sticky-sm {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+}
+@media (min-width: 48em) {
+  .fr-sticky-md {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+}
+@media (min-width: 62em) {
+  .fr-sticky-lg {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+}
+@media (min-width: 78em) {
+  .fr-sticky-xl {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
 }
 
 .fr-position--relative {
   position: relative;
+}
+
+.fr-flex-direction--column {
+  flex-direction: column;
 }
 
 .fr-header .fr-header__tools {
@@ -3055,235 +2618,117 @@ ol.fr-order-list > li::marker {
 }
 
 @media (min-width: 0) {
-  .fr-radius-tl {
-    border-top-left-radius: 0 !important;
-  }
   .fr-radius-tl--0 {
     border-top-left-radius: 0 !important;
-  }
-  .fr-radius-tl {
-    border-top-left-radius: 1rem !important;
   }
   .fr-radius-tl--1v {
     border-top-left-radius: 1rem !important;
   }
-  .fr-radius-tl {
-    border-top-left-radius: 2rem !important;
-  }
   .fr-radius-tl--2v {
     border-top-left-radius: 2rem !important;
-  }
-  .fr-radius-tl {
-    border-top-left-radius: 2.5rem !important;
   }
   .fr-radius-tl--2-5v {
     border-top-left-radius: 2.5rem !important;
   }
-  .fr-radius-tr {
-    border-top-right-radius: 0 !important;
-  }
   .fr-radius-tr--0 {
     border-top-right-radius: 0 !important;
-  }
-  .fr-radius-tr {
-    border-top-right-radius: 1rem !important;
   }
   .fr-radius-tr--1v {
     border-top-right-radius: 1rem !important;
   }
-  .fr-radius-tr {
-    border-top-right-radius: 2rem !important;
-  }
   .fr-radius-tr--2v {
     border-top-right-radius: 2rem !important;
-  }
-  .fr-radius-tr {
-    border-top-right-radius: 2.5rem !important;
   }
   .fr-radius-tr--2-5v {
     border-top-right-radius: 2.5rem !important;
   }
-  .fr-radius-br {
-    border-bottom-right-radius: 0 !important;
-  }
   .fr-radius-br--0 {
     border-bottom-right-radius: 0 !important;
-  }
-  .fr-radius-br {
-    border-bottom-right-radius: 1rem !important;
   }
   .fr-radius-br--1v {
     border-bottom-right-radius: 1rem !important;
   }
-  .fr-radius-br {
-    border-bottom-right-radius: 2rem !important;
-  }
   .fr-radius-br--2v {
     border-bottom-right-radius: 2rem !important;
-  }
-  .fr-radius-br {
-    border-bottom-right-radius: 2.5rem !important;
   }
   .fr-radius-br--2-5v {
     border-bottom-right-radius: 2.5rem !important;
   }
-  .fr-radius-bl {
-    border-bottom-left-radius: 0 !important;
-  }
   .fr-radius-bl--0 {
     border-bottom-left-radius: 0 !important;
-  }
-  .fr-radius-bl {
-    border-bottom-left-radius: 1rem !important;
   }
   .fr-radius-bl--1v {
     border-bottom-left-radius: 1rem !important;
   }
-  .fr-radius-bl {
-    border-bottom-left-radius: 2rem !important;
-  }
   .fr-radius-bl--2v {
     border-bottom-left-radius: 2rem !important;
   }
-  .fr-radius-bl {
-    border-bottom-left-radius: 2.5rem !important;
-  }
   .fr-radius-bl--2-5v {
     border-bottom-left-radius: 2.5rem !important;
-  }
-  .fr-radius-t {
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
   }
   .fr-radius-t--0 {
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
   }
-  .fr-radius-t {
-    border-top-left-radius: 1rem !important;
-    border-top-right-radius: 1rem !important;
-  }
   .fr-radius-t--1v {
     border-top-left-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
-  }
-  .fr-radius-t {
-    border-top-left-radius: 2rem !important;
-    border-top-right-radius: 2rem !important;
   }
   .fr-radius-t--2v {
     border-top-left-radius: 2rem !important;
     border-top-right-radius: 2rem !important;
   }
-  .fr-radius-t {
-    border-top-left-radius: 2.5rem !important;
-    border-top-right-radius: 2.5rem !important;
-  }
   .fr-radius-t--2-5v {
     border-top-left-radius: 2.5rem !important;
     border-top-right-radius: 2.5rem !important;
-  }
-  .fr-radius-r {
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
   }
   .fr-radius-r--0 {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
   }
-  .fr-radius-r {
-    border-top-right-radius: 1rem !important;
-    border-bottom-right-radius: 1rem !important;
-  }
   .fr-radius-r--1v {
     border-top-right-radius: 1rem !important;
     border-bottom-right-radius: 1rem !important;
-  }
-  .fr-radius-r {
-    border-top-right-radius: 2rem !important;
-    border-bottom-right-radius: 2rem !important;
   }
   .fr-radius-r--2v {
     border-top-right-radius: 2rem !important;
     border-bottom-right-radius: 2rem !important;
   }
-  .fr-radius-r {
-    border-top-right-radius: 2.5rem !important;
-    border-bottom-right-radius: 2.5rem !important;
-  }
   .fr-radius-r--2-5v {
     border-top-right-radius: 2.5rem !important;
     border-bottom-right-radius: 2.5rem !important;
-  }
-  .fr-radius-b {
-    border-bottom-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
   }
   .fr-radius-b--0 {
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
   }
-  .fr-radius-b {
-    border-bottom-right-radius: 1rem !important;
-    border-bottom-left-radius: 1rem !important;
-  }
   .fr-radius-b--1v {
     border-bottom-right-radius: 1rem !important;
     border-bottom-left-radius: 1rem !important;
-  }
-  .fr-radius-b {
-    border-bottom-right-radius: 2rem !important;
-    border-bottom-left-radius: 2rem !important;
   }
   .fr-radius-b--2v {
     border-bottom-right-radius: 2rem !important;
     border-bottom-left-radius: 2rem !important;
   }
-  .fr-radius-b {
-    border-bottom-right-radius: 2.5rem !important;
-    border-bottom-left-radius: 2.5rem !important;
-  }
   .fr-radius-b--2-5v {
     border-bottom-right-radius: 2.5rem !important;
     border-bottom-left-radius: 2.5rem !important;
-  }
-  .fr-radius-l {
-    border-bottom-left-radius: 0 !important;
-    border-top-left-radius: 0 !important;
   }
   .fr-radius-l--0 {
     border-bottom-left-radius: 0 !important;
     border-top-left-radius: 0 !important;
   }
-  .fr-radius-l {
-    border-bottom-left-radius: 1rem !important;
-    border-top-left-radius: 1rem !important;
-  }
   .fr-radius-l--1v {
     border-bottom-left-radius: 1rem !important;
     border-top-left-radius: 1rem !important;
-  }
-  .fr-radius-l {
-    border-bottom-left-radius: 2rem !important;
-    border-top-left-radius: 2rem !important;
   }
   .fr-radius-l--2v {
     border-bottom-left-radius: 2rem !important;
     border-top-left-radius: 2rem !important;
   }
-  .fr-radius-l {
-    border-bottom-left-radius: 2.5rem !important;
-    border-top-left-radius: 2.5rem !important;
-  }
   .fr-radius-l--2-5v {
     border-bottom-left-radius: 2.5rem !important;
     border-top-left-radius: 2.5rem !important;
-  }
-  .fr-radius-a {
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
   }
   .fr-radius-a--0 {
     border-top-left-radius: 0 !important;
@@ -3291,35 +2736,17 @@ ol.fr-order-list > li::marker {
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
   }
-  .fr-radius-a {
-    border-top-left-radius: 1rem !important;
-    border-top-right-radius: 1rem !important;
-    border-bottom-right-radius: 1rem !important;
-    border-bottom-left-radius: 1rem !important;
-  }
   .fr-radius-a--1v {
     border-top-left-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
     border-bottom-right-radius: 1rem !important;
     border-bottom-left-radius: 1rem !important;
   }
-  .fr-radius-a {
-    border-top-left-radius: 2rem !important;
-    border-top-right-radius: 2rem !important;
-    border-bottom-right-radius: 2rem !important;
-    border-bottom-left-radius: 2rem !important;
-  }
   .fr-radius-a--2v {
     border-top-left-radius: 2rem !important;
     border-top-right-radius: 2rem !important;
     border-bottom-right-radius: 2rem !important;
     border-bottom-left-radius: 2rem !important;
-  }
-  .fr-radius-a {
-    border-top-left-radius: 2.5rem !important;
-    border-top-right-radius: 2.5rem !important;
-    border-bottom-right-radius: 2.5rem !important;
-    border-bottom-left-radius: 2.5rem !important;
   }
   .fr-radius-a--2-5v {
     border-top-left-radius: 2.5rem !important;
@@ -3329,235 +2756,117 @@ ol.fr-order-list > li::marker {
   }
 }
 @media (min-width: 36em) {
-  .fr-radius-sm-tl {
-    border-top-left-radius: 0 !important;
-  }
   .fr-radius-sm-tl--0 {
     border-top-left-radius: 0 !important;
-  }
-  .fr-radius-sm-tl {
-    border-top-left-radius: 1rem !important;
   }
   .fr-radius-sm-tl--1v {
     border-top-left-radius: 1rem !important;
   }
-  .fr-radius-sm-tl {
-    border-top-left-radius: 2rem !important;
-  }
   .fr-radius-sm-tl--2v {
     border-top-left-radius: 2rem !important;
-  }
-  .fr-radius-sm-tl {
-    border-top-left-radius: 2.5rem !important;
   }
   .fr-radius-sm-tl--2-5v {
     border-top-left-radius: 2.5rem !important;
   }
-  .fr-radius-sm-tr {
-    border-top-right-radius: 0 !important;
-  }
   .fr-radius-sm-tr--0 {
     border-top-right-radius: 0 !important;
-  }
-  .fr-radius-sm-tr {
-    border-top-right-radius: 1rem !important;
   }
   .fr-radius-sm-tr--1v {
     border-top-right-radius: 1rem !important;
   }
-  .fr-radius-sm-tr {
-    border-top-right-radius: 2rem !important;
-  }
   .fr-radius-sm-tr--2v {
     border-top-right-radius: 2rem !important;
-  }
-  .fr-radius-sm-tr {
-    border-top-right-radius: 2.5rem !important;
   }
   .fr-radius-sm-tr--2-5v {
     border-top-right-radius: 2.5rem !important;
   }
-  .fr-radius-sm-br {
-    border-bottom-right-radius: 0 !important;
-  }
   .fr-radius-sm-br--0 {
     border-bottom-right-radius: 0 !important;
-  }
-  .fr-radius-sm-br {
-    border-bottom-right-radius: 1rem !important;
   }
   .fr-radius-sm-br--1v {
     border-bottom-right-radius: 1rem !important;
   }
-  .fr-radius-sm-br {
-    border-bottom-right-radius: 2rem !important;
-  }
   .fr-radius-sm-br--2v {
     border-bottom-right-radius: 2rem !important;
-  }
-  .fr-radius-sm-br {
-    border-bottom-right-radius: 2.5rem !important;
   }
   .fr-radius-sm-br--2-5v {
     border-bottom-right-radius: 2.5rem !important;
   }
-  .fr-radius-sm-bl {
-    border-bottom-left-radius: 0 !important;
-  }
   .fr-radius-sm-bl--0 {
     border-bottom-left-radius: 0 !important;
-  }
-  .fr-radius-sm-bl {
-    border-bottom-left-radius: 1rem !important;
   }
   .fr-radius-sm-bl--1v {
     border-bottom-left-radius: 1rem !important;
   }
-  .fr-radius-sm-bl {
-    border-bottom-left-radius: 2rem !important;
-  }
   .fr-radius-sm-bl--2v {
     border-bottom-left-radius: 2rem !important;
   }
-  .fr-radius-sm-bl {
-    border-bottom-left-radius: 2.5rem !important;
-  }
   .fr-radius-sm-bl--2-5v {
     border-bottom-left-radius: 2.5rem !important;
-  }
-  .fr-radius-sm-t {
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
   }
   .fr-radius-sm-t--0 {
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
   }
-  .fr-radius-sm-t {
-    border-top-left-radius: 1rem !important;
-    border-top-right-radius: 1rem !important;
-  }
   .fr-radius-sm-t--1v {
     border-top-left-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
-  }
-  .fr-radius-sm-t {
-    border-top-left-radius: 2rem !important;
-    border-top-right-radius: 2rem !important;
   }
   .fr-radius-sm-t--2v {
     border-top-left-radius: 2rem !important;
     border-top-right-radius: 2rem !important;
   }
-  .fr-radius-sm-t {
-    border-top-left-radius: 2.5rem !important;
-    border-top-right-radius: 2.5rem !important;
-  }
   .fr-radius-sm-t--2-5v {
     border-top-left-radius: 2.5rem !important;
     border-top-right-radius: 2.5rem !important;
-  }
-  .fr-radius-sm-r {
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
   }
   .fr-radius-sm-r--0 {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
   }
-  .fr-radius-sm-r {
-    border-top-right-radius: 1rem !important;
-    border-bottom-right-radius: 1rem !important;
-  }
   .fr-radius-sm-r--1v {
     border-top-right-radius: 1rem !important;
     border-bottom-right-radius: 1rem !important;
-  }
-  .fr-radius-sm-r {
-    border-top-right-radius: 2rem !important;
-    border-bottom-right-radius: 2rem !important;
   }
   .fr-radius-sm-r--2v {
     border-top-right-radius: 2rem !important;
     border-bottom-right-radius: 2rem !important;
   }
-  .fr-radius-sm-r {
-    border-top-right-radius: 2.5rem !important;
-    border-bottom-right-radius: 2.5rem !important;
-  }
   .fr-radius-sm-r--2-5v {
     border-top-right-radius: 2.5rem !important;
     border-bottom-right-radius: 2.5rem !important;
-  }
-  .fr-radius-sm-b {
-    border-bottom-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
   }
   .fr-radius-sm-b--0 {
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
   }
-  .fr-radius-sm-b {
-    border-bottom-right-radius: 1rem !important;
-    border-bottom-left-radius: 1rem !important;
-  }
   .fr-radius-sm-b--1v {
     border-bottom-right-radius: 1rem !important;
     border-bottom-left-radius: 1rem !important;
-  }
-  .fr-radius-sm-b {
-    border-bottom-right-radius: 2rem !important;
-    border-bottom-left-radius: 2rem !important;
   }
   .fr-radius-sm-b--2v {
     border-bottom-right-radius: 2rem !important;
     border-bottom-left-radius: 2rem !important;
   }
-  .fr-radius-sm-b {
-    border-bottom-right-radius: 2.5rem !important;
-    border-bottom-left-radius: 2.5rem !important;
-  }
   .fr-radius-sm-b--2-5v {
     border-bottom-right-radius: 2.5rem !important;
     border-bottom-left-radius: 2.5rem !important;
-  }
-  .fr-radius-sm-l {
-    border-bottom-left-radius: 0 !important;
-    border-top-left-radius: 0 !important;
   }
   .fr-radius-sm-l--0 {
     border-bottom-left-radius: 0 !important;
     border-top-left-radius: 0 !important;
   }
-  .fr-radius-sm-l {
-    border-bottom-left-radius: 1rem !important;
-    border-top-left-radius: 1rem !important;
-  }
   .fr-radius-sm-l--1v {
     border-bottom-left-radius: 1rem !important;
     border-top-left-radius: 1rem !important;
-  }
-  .fr-radius-sm-l {
-    border-bottom-left-radius: 2rem !important;
-    border-top-left-radius: 2rem !important;
   }
   .fr-radius-sm-l--2v {
     border-bottom-left-radius: 2rem !important;
     border-top-left-radius: 2rem !important;
   }
-  .fr-radius-sm-l {
-    border-bottom-left-radius: 2.5rem !important;
-    border-top-left-radius: 2.5rem !important;
-  }
   .fr-radius-sm-l--2-5v {
     border-bottom-left-radius: 2.5rem !important;
     border-top-left-radius: 2.5rem !important;
-  }
-  .fr-radius-sm-a {
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
   }
   .fr-radius-sm-a--0 {
     border-top-left-radius: 0 !important;
@@ -3565,35 +2874,17 @@ ol.fr-order-list > li::marker {
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
   }
-  .fr-radius-sm-a {
-    border-top-left-radius: 1rem !important;
-    border-top-right-radius: 1rem !important;
-    border-bottom-right-radius: 1rem !important;
-    border-bottom-left-radius: 1rem !important;
-  }
   .fr-radius-sm-a--1v {
     border-top-left-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
     border-bottom-right-radius: 1rem !important;
     border-bottom-left-radius: 1rem !important;
   }
-  .fr-radius-sm-a {
-    border-top-left-radius: 2rem !important;
-    border-top-right-radius: 2rem !important;
-    border-bottom-right-radius: 2rem !important;
-    border-bottom-left-radius: 2rem !important;
-  }
   .fr-radius-sm-a--2v {
     border-top-left-radius: 2rem !important;
     border-top-right-radius: 2rem !important;
     border-bottom-right-radius: 2rem !important;
     border-bottom-left-radius: 2rem !important;
-  }
-  .fr-radius-sm-a {
-    border-top-left-radius: 2.5rem !important;
-    border-top-right-radius: 2.5rem !important;
-    border-bottom-right-radius: 2.5rem !important;
-    border-bottom-left-radius: 2.5rem !important;
   }
   .fr-radius-sm-a--2-5v {
     border-top-left-radius: 2.5rem !important;
@@ -3603,235 +2894,117 @@ ol.fr-order-list > li::marker {
   }
 }
 @media (min-width: 48em) {
-  .fr-radius-md-tl {
-    border-top-left-radius: 0 !important;
-  }
   .fr-radius-md-tl--0 {
     border-top-left-radius: 0 !important;
-  }
-  .fr-radius-md-tl {
-    border-top-left-radius: 1rem !important;
   }
   .fr-radius-md-tl--1v {
     border-top-left-radius: 1rem !important;
   }
-  .fr-radius-md-tl {
-    border-top-left-radius: 2rem !important;
-  }
   .fr-radius-md-tl--2v {
     border-top-left-radius: 2rem !important;
-  }
-  .fr-radius-md-tl {
-    border-top-left-radius: 2.5rem !important;
   }
   .fr-radius-md-tl--2-5v {
     border-top-left-radius: 2.5rem !important;
   }
-  .fr-radius-md-tr {
-    border-top-right-radius: 0 !important;
-  }
   .fr-radius-md-tr--0 {
     border-top-right-radius: 0 !important;
-  }
-  .fr-radius-md-tr {
-    border-top-right-radius: 1rem !important;
   }
   .fr-radius-md-tr--1v {
     border-top-right-radius: 1rem !important;
   }
-  .fr-radius-md-tr {
-    border-top-right-radius: 2rem !important;
-  }
   .fr-radius-md-tr--2v {
     border-top-right-radius: 2rem !important;
-  }
-  .fr-radius-md-tr {
-    border-top-right-radius: 2.5rem !important;
   }
   .fr-radius-md-tr--2-5v {
     border-top-right-radius: 2.5rem !important;
   }
-  .fr-radius-md-br {
-    border-bottom-right-radius: 0 !important;
-  }
   .fr-radius-md-br--0 {
     border-bottom-right-radius: 0 !important;
-  }
-  .fr-radius-md-br {
-    border-bottom-right-radius: 1rem !important;
   }
   .fr-radius-md-br--1v {
     border-bottom-right-radius: 1rem !important;
   }
-  .fr-radius-md-br {
-    border-bottom-right-radius: 2rem !important;
-  }
   .fr-radius-md-br--2v {
     border-bottom-right-radius: 2rem !important;
-  }
-  .fr-radius-md-br {
-    border-bottom-right-radius: 2.5rem !important;
   }
   .fr-radius-md-br--2-5v {
     border-bottom-right-radius: 2.5rem !important;
   }
-  .fr-radius-md-bl {
-    border-bottom-left-radius: 0 !important;
-  }
   .fr-radius-md-bl--0 {
     border-bottom-left-radius: 0 !important;
-  }
-  .fr-radius-md-bl {
-    border-bottom-left-radius: 1rem !important;
   }
   .fr-radius-md-bl--1v {
     border-bottom-left-radius: 1rem !important;
   }
-  .fr-radius-md-bl {
-    border-bottom-left-radius: 2rem !important;
-  }
   .fr-radius-md-bl--2v {
     border-bottom-left-radius: 2rem !important;
   }
-  .fr-radius-md-bl {
-    border-bottom-left-radius: 2.5rem !important;
-  }
   .fr-radius-md-bl--2-5v {
     border-bottom-left-radius: 2.5rem !important;
-  }
-  .fr-radius-md-t {
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
   }
   .fr-radius-md-t--0 {
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
   }
-  .fr-radius-md-t {
-    border-top-left-radius: 1rem !important;
-    border-top-right-radius: 1rem !important;
-  }
   .fr-radius-md-t--1v {
     border-top-left-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
-  }
-  .fr-radius-md-t {
-    border-top-left-radius: 2rem !important;
-    border-top-right-radius: 2rem !important;
   }
   .fr-radius-md-t--2v {
     border-top-left-radius: 2rem !important;
     border-top-right-radius: 2rem !important;
   }
-  .fr-radius-md-t {
-    border-top-left-radius: 2.5rem !important;
-    border-top-right-radius: 2.5rem !important;
-  }
   .fr-radius-md-t--2-5v {
     border-top-left-radius: 2.5rem !important;
     border-top-right-radius: 2.5rem !important;
-  }
-  .fr-radius-md-r {
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
   }
   .fr-radius-md-r--0 {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
   }
-  .fr-radius-md-r {
-    border-top-right-radius: 1rem !important;
-    border-bottom-right-radius: 1rem !important;
-  }
   .fr-radius-md-r--1v {
     border-top-right-radius: 1rem !important;
     border-bottom-right-radius: 1rem !important;
-  }
-  .fr-radius-md-r {
-    border-top-right-radius: 2rem !important;
-    border-bottom-right-radius: 2rem !important;
   }
   .fr-radius-md-r--2v {
     border-top-right-radius: 2rem !important;
     border-bottom-right-radius: 2rem !important;
   }
-  .fr-radius-md-r {
-    border-top-right-radius: 2.5rem !important;
-    border-bottom-right-radius: 2.5rem !important;
-  }
   .fr-radius-md-r--2-5v {
     border-top-right-radius: 2.5rem !important;
     border-bottom-right-radius: 2.5rem !important;
-  }
-  .fr-radius-md-b {
-    border-bottom-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
   }
   .fr-radius-md-b--0 {
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
   }
-  .fr-radius-md-b {
-    border-bottom-right-radius: 1rem !important;
-    border-bottom-left-radius: 1rem !important;
-  }
   .fr-radius-md-b--1v {
     border-bottom-right-radius: 1rem !important;
     border-bottom-left-radius: 1rem !important;
-  }
-  .fr-radius-md-b {
-    border-bottom-right-radius: 2rem !important;
-    border-bottom-left-radius: 2rem !important;
   }
   .fr-radius-md-b--2v {
     border-bottom-right-radius: 2rem !important;
     border-bottom-left-radius: 2rem !important;
   }
-  .fr-radius-md-b {
-    border-bottom-right-radius: 2.5rem !important;
-    border-bottom-left-radius: 2.5rem !important;
-  }
   .fr-radius-md-b--2-5v {
     border-bottom-right-radius: 2.5rem !important;
     border-bottom-left-radius: 2.5rem !important;
-  }
-  .fr-radius-md-l {
-    border-bottom-left-radius: 0 !important;
-    border-top-left-radius: 0 !important;
   }
   .fr-radius-md-l--0 {
     border-bottom-left-radius: 0 !important;
     border-top-left-radius: 0 !important;
   }
-  .fr-radius-md-l {
-    border-bottom-left-radius: 1rem !important;
-    border-top-left-radius: 1rem !important;
-  }
   .fr-radius-md-l--1v {
     border-bottom-left-radius: 1rem !important;
     border-top-left-radius: 1rem !important;
-  }
-  .fr-radius-md-l {
-    border-bottom-left-radius: 2rem !important;
-    border-top-left-radius: 2rem !important;
   }
   .fr-radius-md-l--2v {
     border-bottom-left-radius: 2rem !important;
     border-top-left-radius: 2rem !important;
   }
-  .fr-radius-md-l {
-    border-bottom-left-radius: 2.5rem !important;
-    border-top-left-radius: 2.5rem !important;
-  }
   .fr-radius-md-l--2-5v {
     border-bottom-left-radius: 2.5rem !important;
     border-top-left-radius: 2.5rem !important;
-  }
-  .fr-radius-md-a {
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
   }
   .fr-radius-md-a--0 {
     border-top-left-radius: 0 !important;
@@ -3839,35 +3012,17 @@ ol.fr-order-list > li::marker {
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
   }
-  .fr-radius-md-a {
-    border-top-left-radius: 1rem !important;
-    border-top-right-radius: 1rem !important;
-    border-bottom-right-radius: 1rem !important;
-    border-bottom-left-radius: 1rem !important;
-  }
   .fr-radius-md-a--1v {
     border-top-left-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
     border-bottom-right-radius: 1rem !important;
     border-bottom-left-radius: 1rem !important;
   }
-  .fr-radius-md-a {
-    border-top-left-radius: 2rem !important;
-    border-top-right-radius: 2rem !important;
-    border-bottom-right-radius: 2rem !important;
-    border-bottom-left-radius: 2rem !important;
-  }
   .fr-radius-md-a--2v {
     border-top-left-radius: 2rem !important;
     border-top-right-radius: 2rem !important;
     border-bottom-right-radius: 2rem !important;
     border-bottom-left-radius: 2rem !important;
-  }
-  .fr-radius-md-a {
-    border-top-left-radius: 2.5rem !important;
-    border-top-right-radius: 2.5rem !important;
-    border-bottom-right-radius: 2.5rem !important;
-    border-bottom-left-radius: 2.5rem !important;
   }
   .fr-radius-md-a--2-5v {
     border-top-left-radius: 2.5rem !important;
@@ -3877,235 +3032,117 @@ ol.fr-order-list > li::marker {
   }
 }
 @media (min-width: 62em) {
-  .fr-radius-lg-tl {
-    border-top-left-radius: 0 !important;
-  }
   .fr-radius-lg-tl--0 {
     border-top-left-radius: 0 !important;
-  }
-  .fr-radius-lg-tl {
-    border-top-left-radius: 1rem !important;
   }
   .fr-radius-lg-tl--1v {
     border-top-left-radius: 1rem !important;
   }
-  .fr-radius-lg-tl {
-    border-top-left-radius: 2rem !important;
-  }
   .fr-radius-lg-tl--2v {
     border-top-left-radius: 2rem !important;
-  }
-  .fr-radius-lg-tl {
-    border-top-left-radius: 2.5rem !important;
   }
   .fr-radius-lg-tl--2-5v {
     border-top-left-radius: 2.5rem !important;
   }
-  .fr-radius-lg-tr {
-    border-top-right-radius: 0 !important;
-  }
   .fr-radius-lg-tr--0 {
     border-top-right-radius: 0 !important;
-  }
-  .fr-radius-lg-tr {
-    border-top-right-radius: 1rem !important;
   }
   .fr-radius-lg-tr--1v {
     border-top-right-radius: 1rem !important;
   }
-  .fr-radius-lg-tr {
-    border-top-right-radius: 2rem !important;
-  }
   .fr-radius-lg-tr--2v {
     border-top-right-radius: 2rem !important;
-  }
-  .fr-radius-lg-tr {
-    border-top-right-radius: 2.5rem !important;
   }
   .fr-radius-lg-tr--2-5v {
     border-top-right-radius: 2.5rem !important;
   }
-  .fr-radius-lg-br {
-    border-bottom-right-radius: 0 !important;
-  }
   .fr-radius-lg-br--0 {
     border-bottom-right-radius: 0 !important;
-  }
-  .fr-radius-lg-br {
-    border-bottom-right-radius: 1rem !important;
   }
   .fr-radius-lg-br--1v {
     border-bottom-right-radius: 1rem !important;
   }
-  .fr-radius-lg-br {
-    border-bottom-right-radius: 2rem !important;
-  }
   .fr-radius-lg-br--2v {
     border-bottom-right-radius: 2rem !important;
-  }
-  .fr-radius-lg-br {
-    border-bottom-right-radius: 2.5rem !important;
   }
   .fr-radius-lg-br--2-5v {
     border-bottom-right-radius: 2.5rem !important;
   }
-  .fr-radius-lg-bl {
-    border-bottom-left-radius: 0 !important;
-  }
   .fr-radius-lg-bl--0 {
     border-bottom-left-radius: 0 !important;
-  }
-  .fr-radius-lg-bl {
-    border-bottom-left-radius: 1rem !important;
   }
   .fr-radius-lg-bl--1v {
     border-bottom-left-radius: 1rem !important;
   }
-  .fr-radius-lg-bl {
-    border-bottom-left-radius: 2rem !important;
-  }
   .fr-radius-lg-bl--2v {
     border-bottom-left-radius: 2rem !important;
   }
-  .fr-radius-lg-bl {
-    border-bottom-left-radius: 2.5rem !important;
-  }
   .fr-radius-lg-bl--2-5v {
     border-bottom-left-radius: 2.5rem !important;
-  }
-  .fr-radius-lg-t {
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
   }
   .fr-radius-lg-t--0 {
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
   }
-  .fr-radius-lg-t {
-    border-top-left-radius: 1rem !important;
-    border-top-right-radius: 1rem !important;
-  }
   .fr-radius-lg-t--1v {
     border-top-left-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
-  }
-  .fr-radius-lg-t {
-    border-top-left-radius: 2rem !important;
-    border-top-right-radius: 2rem !important;
   }
   .fr-radius-lg-t--2v {
     border-top-left-radius: 2rem !important;
     border-top-right-radius: 2rem !important;
   }
-  .fr-radius-lg-t {
-    border-top-left-radius: 2.5rem !important;
-    border-top-right-radius: 2.5rem !important;
-  }
   .fr-radius-lg-t--2-5v {
     border-top-left-radius: 2.5rem !important;
     border-top-right-radius: 2.5rem !important;
-  }
-  .fr-radius-lg-r {
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
   }
   .fr-radius-lg-r--0 {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
   }
-  .fr-radius-lg-r {
-    border-top-right-radius: 1rem !important;
-    border-bottom-right-radius: 1rem !important;
-  }
   .fr-radius-lg-r--1v {
     border-top-right-radius: 1rem !important;
     border-bottom-right-radius: 1rem !important;
-  }
-  .fr-radius-lg-r {
-    border-top-right-radius: 2rem !important;
-    border-bottom-right-radius: 2rem !important;
   }
   .fr-radius-lg-r--2v {
     border-top-right-radius: 2rem !important;
     border-bottom-right-radius: 2rem !important;
   }
-  .fr-radius-lg-r {
-    border-top-right-radius: 2.5rem !important;
-    border-bottom-right-radius: 2.5rem !important;
-  }
   .fr-radius-lg-r--2-5v {
     border-top-right-radius: 2.5rem !important;
     border-bottom-right-radius: 2.5rem !important;
-  }
-  .fr-radius-lg-b {
-    border-bottom-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
   }
   .fr-radius-lg-b--0 {
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
   }
-  .fr-radius-lg-b {
-    border-bottom-right-radius: 1rem !important;
-    border-bottom-left-radius: 1rem !important;
-  }
   .fr-radius-lg-b--1v {
     border-bottom-right-radius: 1rem !important;
     border-bottom-left-radius: 1rem !important;
-  }
-  .fr-radius-lg-b {
-    border-bottom-right-radius: 2rem !important;
-    border-bottom-left-radius: 2rem !important;
   }
   .fr-radius-lg-b--2v {
     border-bottom-right-radius: 2rem !important;
     border-bottom-left-radius: 2rem !important;
   }
-  .fr-radius-lg-b {
-    border-bottom-right-radius: 2.5rem !important;
-    border-bottom-left-radius: 2.5rem !important;
-  }
   .fr-radius-lg-b--2-5v {
     border-bottom-right-radius: 2.5rem !important;
     border-bottom-left-radius: 2.5rem !important;
-  }
-  .fr-radius-lg-l {
-    border-bottom-left-radius: 0 !important;
-    border-top-left-radius: 0 !important;
   }
   .fr-radius-lg-l--0 {
     border-bottom-left-radius: 0 !important;
     border-top-left-radius: 0 !important;
   }
-  .fr-radius-lg-l {
-    border-bottom-left-radius: 1rem !important;
-    border-top-left-radius: 1rem !important;
-  }
   .fr-radius-lg-l--1v {
     border-bottom-left-radius: 1rem !important;
     border-top-left-radius: 1rem !important;
-  }
-  .fr-radius-lg-l {
-    border-bottom-left-radius: 2rem !important;
-    border-top-left-radius: 2rem !important;
   }
   .fr-radius-lg-l--2v {
     border-bottom-left-radius: 2rem !important;
     border-top-left-radius: 2rem !important;
   }
-  .fr-radius-lg-l {
-    border-bottom-left-radius: 2.5rem !important;
-    border-top-left-radius: 2.5rem !important;
-  }
   .fr-radius-lg-l--2-5v {
     border-bottom-left-radius: 2.5rem !important;
     border-top-left-radius: 2.5rem !important;
-  }
-  .fr-radius-lg-a {
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
   }
   .fr-radius-lg-a--0 {
     border-top-left-radius: 0 !important;
@@ -4113,35 +3150,17 @@ ol.fr-order-list > li::marker {
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
   }
-  .fr-radius-lg-a {
-    border-top-left-radius: 1rem !important;
-    border-top-right-radius: 1rem !important;
-    border-bottom-right-radius: 1rem !important;
-    border-bottom-left-radius: 1rem !important;
-  }
   .fr-radius-lg-a--1v {
     border-top-left-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
     border-bottom-right-radius: 1rem !important;
     border-bottom-left-radius: 1rem !important;
   }
-  .fr-radius-lg-a {
-    border-top-left-radius: 2rem !important;
-    border-top-right-radius: 2rem !important;
-    border-bottom-right-radius: 2rem !important;
-    border-bottom-left-radius: 2rem !important;
-  }
   .fr-radius-lg-a--2v {
     border-top-left-radius: 2rem !important;
     border-top-right-radius: 2rem !important;
     border-bottom-right-radius: 2rem !important;
     border-bottom-left-radius: 2rem !important;
-  }
-  .fr-radius-lg-a {
-    border-top-left-radius: 2.5rem !important;
-    border-top-right-radius: 2.5rem !important;
-    border-bottom-right-radius: 2.5rem !important;
-    border-bottom-left-radius: 2.5rem !important;
   }
   .fr-radius-lg-a--2-5v {
     border-top-left-radius: 2.5rem !important;
@@ -4151,235 +3170,117 @@ ol.fr-order-list > li::marker {
   }
 }
 @media (min-width: 78em) {
-  .fr-radius-xl-tl {
-    border-top-left-radius: 0 !important;
-  }
   .fr-radius-xl-tl--0 {
     border-top-left-radius: 0 !important;
-  }
-  .fr-radius-xl-tl {
-    border-top-left-radius: 1rem !important;
   }
   .fr-radius-xl-tl--1v {
     border-top-left-radius: 1rem !important;
   }
-  .fr-radius-xl-tl {
-    border-top-left-radius: 2rem !important;
-  }
   .fr-radius-xl-tl--2v {
     border-top-left-radius: 2rem !important;
-  }
-  .fr-radius-xl-tl {
-    border-top-left-radius: 2.5rem !important;
   }
   .fr-radius-xl-tl--2-5v {
     border-top-left-radius: 2.5rem !important;
   }
-  .fr-radius-xl-tr {
-    border-top-right-radius: 0 !important;
-  }
   .fr-radius-xl-tr--0 {
     border-top-right-radius: 0 !important;
-  }
-  .fr-radius-xl-tr {
-    border-top-right-radius: 1rem !important;
   }
   .fr-radius-xl-tr--1v {
     border-top-right-radius: 1rem !important;
   }
-  .fr-radius-xl-tr {
-    border-top-right-radius: 2rem !important;
-  }
   .fr-radius-xl-tr--2v {
     border-top-right-radius: 2rem !important;
-  }
-  .fr-radius-xl-tr {
-    border-top-right-radius: 2.5rem !important;
   }
   .fr-radius-xl-tr--2-5v {
     border-top-right-radius: 2.5rem !important;
   }
-  .fr-radius-xl-br {
-    border-bottom-right-radius: 0 !important;
-  }
   .fr-radius-xl-br--0 {
     border-bottom-right-radius: 0 !important;
-  }
-  .fr-radius-xl-br {
-    border-bottom-right-radius: 1rem !important;
   }
   .fr-radius-xl-br--1v {
     border-bottom-right-radius: 1rem !important;
   }
-  .fr-radius-xl-br {
-    border-bottom-right-radius: 2rem !important;
-  }
   .fr-radius-xl-br--2v {
     border-bottom-right-radius: 2rem !important;
-  }
-  .fr-radius-xl-br {
-    border-bottom-right-radius: 2.5rem !important;
   }
   .fr-radius-xl-br--2-5v {
     border-bottom-right-radius: 2.5rem !important;
   }
-  .fr-radius-xl-bl {
-    border-bottom-left-radius: 0 !important;
-  }
   .fr-radius-xl-bl--0 {
     border-bottom-left-radius: 0 !important;
-  }
-  .fr-radius-xl-bl {
-    border-bottom-left-radius: 1rem !important;
   }
   .fr-radius-xl-bl--1v {
     border-bottom-left-radius: 1rem !important;
   }
-  .fr-radius-xl-bl {
-    border-bottom-left-radius: 2rem !important;
-  }
   .fr-radius-xl-bl--2v {
     border-bottom-left-radius: 2rem !important;
   }
-  .fr-radius-xl-bl {
-    border-bottom-left-radius: 2.5rem !important;
-  }
   .fr-radius-xl-bl--2-5v {
     border-bottom-left-radius: 2.5rem !important;
-  }
-  .fr-radius-xl-t {
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
   }
   .fr-radius-xl-t--0 {
     border-top-left-radius: 0 !important;
     border-top-right-radius: 0 !important;
   }
-  .fr-radius-xl-t {
-    border-top-left-radius: 1rem !important;
-    border-top-right-radius: 1rem !important;
-  }
   .fr-radius-xl-t--1v {
     border-top-left-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
-  }
-  .fr-radius-xl-t {
-    border-top-left-radius: 2rem !important;
-    border-top-right-radius: 2rem !important;
   }
   .fr-radius-xl-t--2v {
     border-top-left-radius: 2rem !important;
     border-top-right-radius: 2rem !important;
   }
-  .fr-radius-xl-t {
-    border-top-left-radius: 2.5rem !important;
-    border-top-right-radius: 2.5rem !important;
-  }
   .fr-radius-xl-t--2-5v {
     border-top-left-radius: 2.5rem !important;
     border-top-right-radius: 2.5rem !important;
-  }
-  .fr-radius-xl-r {
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
   }
   .fr-radius-xl-r--0 {
     border-top-right-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
   }
-  .fr-radius-xl-r {
-    border-top-right-radius: 1rem !important;
-    border-bottom-right-radius: 1rem !important;
-  }
   .fr-radius-xl-r--1v {
     border-top-right-radius: 1rem !important;
     border-bottom-right-radius: 1rem !important;
-  }
-  .fr-radius-xl-r {
-    border-top-right-radius: 2rem !important;
-    border-bottom-right-radius: 2rem !important;
   }
   .fr-radius-xl-r--2v {
     border-top-right-radius: 2rem !important;
     border-bottom-right-radius: 2rem !important;
   }
-  .fr-radius-xl-r {
-    border-top-right-radius: 2.5rem !important;
-    border-bottom-right-radius: 2.5rem !important;
-  }
   .fr-radius-xl-r--2-5v {
     border-top-right-radius: 2.5rem !important;
     border-bottom-right-radius: 2.5rem !important;
-  }
-  .fr-radius-xl-b {
-    border-bottom-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
   }
   .fr-radius-xl-b--0 {
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
   }
-  .fr-radius-xl-b {
-    border-bottom-right-radius: 1rem !important;
-    border-bottom-left-radius: 1rem !important;
-  }
   .fr-radius-xl-b--1v {
     border-bottom-right-radius: 1rem !important;
     border-bottom-left-radius: 1rem !important;
-  }
-  .fr-radius-xl-b {
-    border-bottom-right-radius: 2rem !important;
-    border-bottom-left-radius: 2rem !important;
   }
   .fr-radius-xl-b--2v {
     border-bottom-right-radius: 2rem !important;
     border-bottom-left-radius: 2rem !important;
   }
-  .fr-radius-xl-b {
-    border-bottom-right-radius: 2.5rem !important;
-    border-bottom-left-radius: 2.5rem !important;
-  }
   .fr-radius-xl-b--2-5v {
     border-bottom-right-radius: 2.5rem !important;
     border-bottom-left-radius: 2.5rem !important;
-  }
-  .fr-radius-xl-l {
-    border-bottom-left-radius: 0 !important;
-    border-top-left-radius: 0 !important;
   }
   .fr-radius-xl-l--0 {
     border-bottom-left-radius: 0 !important;
     border-top-left-radius: 0 !important;
   }
-  .fr-radius-xl-l {
-    border-bottom-left-radius: 1rem !important;
-    border-top-left-radius: 1rem !important;
-  }
   .fr-radius-xl-l--1v {
     border-bottom-left-radius: 1rem !important;
     border-top-left-radius: 1rem !important;
-  }
-  .fr-radius-xl-l {
-    border-bottom-left-radius: 2rem !important;
-    border-top-left-radius: 2rem !important;
   }
   .fr-radius-xl-l--2v {
     border-bottom-left-radius: 2rem !important;
     border-top-left-radius: 2rem !important;
   }
-  .fr-radius-xl-l {
-    border-bottom-left-radius: 2.5rem !important;
-    border-top-left-radius: 2.5rem !important;
-  }
   .fr-radius-xl-l--2-5v {
     border-bottom-left-radius: 2.5rem !important;
     border-top-left-radius: 2.5rem !important;
-  }
-  .fr-radius-xl-a {
-    border-top-left-radius: 0 !important;
-    border-top-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
   }
   .fr-radius-xl-a--0 {
     border-top-left-radius: 0 !important;
@@ -4387,35 +3288,17 @@ ol.fr-order-list > li::marker {
     border-bottom-right-radius: 0 !important;
     border-bottom-left-radius: 0 !important;
   }
-  .fr-radius-xl-a {
-    border-top-left-radius: 1rem !important;
-    border-top-right-radius: 1rem !important;
-    border-bottom-right-radius: 1rem !important;
-    border-bottom-left-radius: 1rem !important;
-  }
   .fr-radius-xl-a--1v {
     border-top-left-radius: 1rem !important;
     border-top-right-radius: 1rem !important;
     border-bottom-right-radius: 1rem !important;
     border-bottom-left-radius: 1rem !important;
   }
-  .fr-radius-xl-a {
-    border-top-left-radius: 2rem !important;
-    border-top-right-radius: 2rem !important;
-    border-bottom-right-radius: 2rem !important;
-    border-bottom-left-radius: 2rem !important;
-  }
   .fr-radius-xl-a--2v {
     border-top-left-radius: 2rem !important;
     border-top-right-radius: 2rem !important;
     border-bottom-right-radius: 2rem !important;
     border-bottom-left-radius: 2rem !important;
-  }
-  .fr-radius-xl-a {
-    border-top-left-radius: 2.5rem !important;
-    border-top-right-radius: 2.5rem !important;
-    border-bottom-right-radius: 2.5rem !important;
-    border-bottom-left-radius: 2.5rem !important;
   }
   .fr-radius-xl-a--2-5v {
     border-top-left-radius: 2.5rem !important;
@@ -4656,6 +3539,11 @@ a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=
 }
 .tee-font-style--normal {
   font-style: normal;
+}
+
+.markdown-spacing-reset p,
+.markdown-spacing-reset li {
+  margin: 0 !important;
 }
 
 /*# sourceMappingURL=main.css.map */

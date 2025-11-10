@@ -10,12 +10,13 @@ illustration: images/TEE_eolienne.png
 opérateur de contact: Avere-France
 autres opérateurs:
   - ADEME
+contact question: https://advenir.mobi/contact/
 url: https://advenir.mobi/
 nature de l'aide: financement
 montant du financement: Selon le projet
 activable en autonomie: oui
 objectifs:
-  - description: Vérifiez l’éligibilité de votre projet en réalisant votre simulation.
+  - description: Assurez-vous de l’éligibilité de votre projet en réalisant une simulation.
     liens:
       - lien: https://advenir.mobi/je-definis-mon-projet/
         texte: Simulateur de projet

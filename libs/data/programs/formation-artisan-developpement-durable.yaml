@@ -2,22 +2,53 @@ titre: Formation développement durable
 promesse: Formez-vous au développement durable de votre entreprise
 description: >-
   Vous souhaitez engager votre entreprise dans une démarche responsable ? Cette
-  formation 100 % numérique vous guide pas à pas : découvrez les enjeux du
-  développement durable et de la RSE, réalisez un autodiagnostic pour évaluer
-  vos pratiques, définissez vos axes d’amélioration et apprenez à les valoriser.
+  formation digitale vous guide pas à pas :
+
+
+  - **découvrez les enjeux du développement durable et de la RSE,**
+
+  - **réalisez un autodiagnostic** pour évaluer vos pratiques,
+
+  - **définissez vos axes d’amélioration** et **apprenez à les valoriser.**
+
+
   Cette formation courte permet d'embarquer rapidement vos équipes, clients et
-  fournisseurs dans la mise en place d'une une démarche complète d’entreprise
+  fournisseurs dans la mise en place d'une démarche complète d’entreprise
   responsable.
+description longue: |-
+  Au programme :
+
+  1. Mesurez votre impact sur le développement durable
+     - Les principes du développement durable et de la RSE
+     - Les enjeux du développement durable dans le monde artisanal
+     - L’incidence de la réglementation sur votre activité
+  2. Identifiez les acteurs de votre démarche
+     - Les parties prenantes externes et internes
+     - Les besoins et les attentes des parties prenantes
+  3. Réalisez votre plan d’action
+     - La première étape de l’intégration : l’autodiagnostic
+     - Les orientations de développement durable et RSE à privilégier
+     - Les actions à mettre en place pour une démarche éco-responsable
+     - Les outils de pilotage nécessaires à son intégration
+  4. Valorisez et communiquez votre engagement
+     - Les labels et marques utiles à la valorisation de vos produits et services
+     - La valorisation de votre engagement grâce à votre communication
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Chambre des Métiers et de l'Artisanat
+contact question: formulaire
 url: https://www.artisanat.fr/integrer-developpement-durable
 nature de l'aide: formation
 coût de l'accompagnement: 150€ TTC avec possibilité de prise en charge selon votre statut
 durée de l'accompagnement: 5h
 objectifs:
   - description: >-
-      Contactez un conseiller pour vérifier votre éligibilité et vous inscrire à
-      cette formation.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
+  - description: >-
+      Un conseiller vous recontacte pour échanger et compléter votre
+      inscription.
   - description: Une fois inscrit, recevez un lien pour accéder au contenu de la formation.
   - description: >-
       Vous disposez de 30 jours pour consulter les modules et suivre le
@@ -32,6 +63,8 @@ conditions d'éligibilité:
     - Réservée aux artisans
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - Être un artisan
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

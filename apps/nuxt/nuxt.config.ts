@@ -1,10 +1,14 @@
+import { defineOrganization } from 'nuxt-schema-org/schema'
 import Config from './src/config'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { DefineNuxtConfig, defineNuxtConfig } from 'nuxt/config'
+import { suppressWarningsPlugin } from './vite.logger.plugin'
 import { NuxtScriptsConfig } from './nuxt.scripts.config'
 import { NuxtSecurityConfig } from './nuxt.security.config'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import { ChangeFreq, Priority } from './src/types/sitemapType'
+import { MetaSeo } from './src/tools/metaSeo'
+import { Identity } from './src/tools/identity'
 
 /**
  * Remove prerender and swr for CI and test data.
@@ -13,7 +17,8 @@ import { ChangeFreq, Priority } from './src/types/sitemapType'
  * it can cause issues with the build
  */
 const hasPrerenderOrSwr = !process.env.CI && !Config.isTestData
-const maxAge = 2678400 // 31 days in seconds
+const maxAge31Days = 2678400 // 31 days in seconds
+const maxAge7Days = 604800 // 7 days in seconds
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default <DefineNuxtConfig>defineNuxtConfig({
@@ -22,18 +27,24 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     head: {
       htmlAttrs: {
         lang: 'fr'
-      }
+      },
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+        { rel: 'manifest', href: '/manifest.webmanifest' }
+      ]
     }
   },
   routeRules: {
     '/_nuxt/**': {
       headers: {
-        'cache-control': `public, max-age=${maxAge}, s-maxage=${maxAge}`
+        'cache-control': `public, max-age=${maxAge31Days}, s-maxage=${maxAge31Days}`
       }
     },
     '/images/**': {
       headers: {
-        'cache-control': `public, max-age=${maxAge}, s-maxage=${maxAge}`
+        'cache-control': `public, max-age=${maxAge31Days}, s-maxage=${maxAge31Days}`
       }
     },
     '/': { prerender: true },
@@ -48,6 +59,12 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '/budget': { prerender: true },
     '/ajouter-une-aide-entreprises': { prerender: true },
     '/iframe/**': {
+      swr: true,
+      security: {
+        headers: NuxtSecurityConfig.getIframePageHeadersConfig()
+      }
+    },
+    '/iframe': {
       swr: true,
       security: {
         headers: NuxtSecurityConfig.getIframePageHeadersConfig()
@@ -80,14 +97,14 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     autoImport: true
   },
   css: [
-    '@gouvfr/dsfr/dist/dsfr.min.css', // Le CSS minimal du DSFR
-    '@gouvfr/dsfr/dist/utility/icons/icons.min.css', // Styles de tous les composants du DSFR
+    // '@gouvfr/dsfr/dist/dsfr.min.css', // Le CSS minimal du DSFR
+    // '@gouvfr/dsfr/dist/utility/icons/icons.min.css', // Styles de tous les composants du DSFR
     '@gouvminint/vue-dsfr/styles', // Styles des composants VueDsfr
     '~/assets/custom.css',
     '~/assets/main.scss'
   ],
   vite: {
-    plugins: [nxViteTsPaths()],
+    plugins: [nxViteTsPaths(), suppressWarningsPlugin()],
     css: {
       preprocessorOptions: {
         scss: {
@@ -117,8 +134,9 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     devLogs: true
   },
   experimental: {
-    renderJsonPayloads: false,
-    inlineRouteRules: true
+    renderJsonPayloads: true,
+    inlineRouteRules: true,
+    headNext: true
     // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 
@@ -129,7 +147,9 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '@sentry/nuxt/module',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
-    '@nuxt/scripts'
+    '@nuxt/scripts',
+    '@nuxt/image',
+    'nuxt-schema-org'
   ],
   // Modules who need to have a look:
   // - nuxt-purgecss
@@ -139,7 +159,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       hashScripts: true
     },
     headers: NuxtSecurityConfig.getHeadersConfig(),
-    rateLimiter: NuxtSecurityConfig.getRateLimiterConfig()
+    rateLimiter: NuxtSecurityConfig.getRateLimiterConfig(),
+    xssValidator: NuxtSecurityConfig.getXssValidatorConfig()
   },
   sentry: NuxtSentryConfig.getConfig(),
   sitemap: {
@@ -154,11 +175,31 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     sources: ['/api/__sitemap__/programs', '/api/__sitemap__/projects']
   },
   robots: {
-    disallow: ['/ajouter-une-aide-entreprises', '/iframe/projet/'],
+    disallow: ['/ajouter-une-aide-entreprises', '/iframe/**', '/iframe', '/demo/**'],
     credits: false
+  },
+  site: {
+    name: MetaSeo.title(),
+    description: Identity.description
+  },
+  schemaOrg: {
+    defaults: false
   },
   scripts: {
     registry: NuxtScriptsConfig.getRegistry()
+  },
+  image: {
+    format: ['webp'],
+    screen: {
+      xs: 576,
+      sm: 768,
+      md: 992,
+      lg: 1248
+    },
+    densities: [1],
+    ipx: {
+      maxAge: maxAge7Days
+    }
   },
   runtimeConfig: {
     public: {
@@ -166,6 +207,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       sentry: {
         dsn: Config.SENTRY_DSN
       },
+      siteUrl: undefined, // Defined on environment variables
       posthog: {
         apiKey: Config.posthogApiKey
       },

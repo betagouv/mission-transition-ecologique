@@ -3,10 +3,11 @@ promesse: Faites le meilleur choix pour acheter un véhicule plus propre et éco
 description: >-
   Vous souhaitez acquérir une voiture électrique, une voiture hybride ou un vélo
   à assistance électrique (VAE) ? "Je change ma voiture" vous permet de trouver
-  rapidement le véhicule propre le plus adapté à vos besoins les aides
+  rapidement le véhicule propre le plus adapté à vos besoins ainsi que les aides
   disponibles dans votre région pour le financer.
 illustration: images/TEE_eolienne.png
 opérateur de contact: Ministère de la Transition Écologique
+contact question: formulaire
 url: https://jechangemavoiture.gouv.fr/jcmv/aide-achat.html?content=aides-locales
 nature de l'aide: financement
 montant du financement: Selon votre localisation

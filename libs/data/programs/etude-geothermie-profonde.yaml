@@ -1,11 +1,20 @@
 titre: Étude "Géothermie profonde"
 promesse: Réalisez une étude pour votre projet d'installation de géothermie profonde
 description: >-
-  L’ADEME vous accompagne dans le financement d’une étude de faisabilité avant
-  d'investir dans une installation de géothermie profonde. Cette étude vous
-  aidera a identifier les techniques adaptées aux possibilités du site
-  d’implantation, ainsi que des solutions pour le montage financier,
-  administratif et juridique de votre investissement.
+  L'ADEME vous aide à financer une **étude de faisabilité** avant d'investir
+  dans une installation de géothermie profonde. Cette étude vous permettra
+  d'identifier :
+
+
+  - les **solutions techniques** les plus adaptées à votre site,
+
+  - les options pour le **montage financier, administratif et juridique** de
+  votre projet.
+
+
+  Vous pourrez ainsi évaluer la viabilité de votre installation de géothermie et
+  vous assurer que votre investissement est bien conçu avant de lancer les
+  travaux.
 description longue: >-
   La géothermie profonde consiste à récupérer la chaleur de l’eau contenue dans
   le sous-sol, situé à plus de 200 mètres de profondeur.
@@ -21,14 +30,15 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
+contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
   https://agirpourlatransition.ademe.fr/collectivites/aides-financieres/2025/etude-daide-a-decision-projets-geothermie-profonde
 nature de l'aide: étude
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
           https://agirpourlatransition.ademe.fr/collectivites/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf

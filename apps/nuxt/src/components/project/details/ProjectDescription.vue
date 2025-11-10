@@ -3,12 +3,14 @@
     v-for="(description, index) in projectDescription"
     :id="`project-${index}-details-title`"
     :key="`project-${index}-details-title`"
-    class="fr-py-6v fr-border-b--grey--light"
+    class="fr-py-5v fr-border-b--grey--light"
     :title="description.title"
     container-from="md"
+    title-class="fr-h4"
+    title-tag="h2"
   >
     <template #content>
-      <div v-html="markdownToHtml(description.details)" />
+      <div v-html="Marked.toHtml(description.details)" />
     </template>
   </TeeContentBlock>
 </template>
@@ -35,19 +37,12 @@ interface ContentProps {
 
 const projectDescription = ref<ContentProps>({
   description: {
-    title: "❓ Qu'est ce que c'est ?",
+    title: props.project.titleLongDescription ? props.project.titleLongDescription : "❓ Qu'est ce que c'est ?",
     details: props.project.longDescription
   },
   more: {
-    title: '📚 Pour aller plus loin',
+    title: props.project.titleMoreDescription ? props.project.titleMoreDescription : '📚 Pour aller plus loin',
     details: props.project.moreDescription
   }
 })
-
-const markdownToHtml = (text: string | undefined) => {
-  if (text) {
-    return Marked.toHtml(text)
-  }
-  return ''
-}
 </script>

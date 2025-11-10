@@ -7,8 +7,11 @@ description: >-
 description longue: >-
   Les équipements financés sont les suivants :
 
-  • Unités de méthanisation avec cogénération (< 500 kWe) ou injection de
+
+  - Unités de méthanisation avec cogénération (&lt; 500 kWe) ou injection de
   biométhane :
+
+
 
   - production de biogaz ;
 
@@ -16,8 +19,9 @@ description longue: >-
   cogénération d’électricité et de chaleur, épuration du biogaz en biométhane,
   injection dans le réseau public.
 
-  • Stations d’épuration urbaines (STEU) : valorisation énergétique du biogaz
+  - Stations d’épuration urbaines (STEU) : valorisation énergétique du biogaz
   comprenant l’épuration en biométhane et l’injection dans le réseau public.
+
 
   La réalisation d'une étude de faisabilité préalable est une condition
   d'éligibilité.
@@ -25,14 +29,15 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
+contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/realisation-dinstallations-methanisation-injection-cogeneration-chaleur
 nature de l'aide: financement
 montant du financement: Aide calculée selon le type d'installation
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
           https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Investissements%20installations%20de%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf

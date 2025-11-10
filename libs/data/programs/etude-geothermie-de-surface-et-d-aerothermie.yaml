@@ -3,21 +3,29 @@ promesse: >-
   Réalisez une étude pour votre projet d'installation de géothermie de surface
   et aérothermie
 description: >-
-  L’ADEME vous accompagne dans le financement d’une étude de faisabilité avant
-  d'investir dans une installation de géothermie de surface (PAC géothermique)
-  ou dans une installation d'aérothermie (PAC air/eau). Cette étude vous aidera
-  a identifier les techniques adaptées aux possibilités du site d’implantation,
-  ainsi que des solutions pour le montage financier, administratif et juridique
-  de votre investissement.
+  L’ADEME vous accompagne dans le financement d’une **étude de faisabilité**
+  avant d’investir dans une installation de géothermie de surface (PAC
+  géothermique) ou d’aérothermie (PAC air/eau). Cette étude vous permettra de :
+
+
+  -  **identifier les techniques adaptées aux caractéristiques de votre site**,
+
+  - **connaître les solutions pour le montage financier, administratif et
+  juridique** de votre projet.
+
+
+  Elle vous aide ainsi à sécuriser votre investissement et à choisir la solution
+  la plus pertinente.
 description longue: >-
   Ce dispositif d’aide comprend les études de projet lié à la mise en œuvre de :
 
-  • pompes à chaleur sur aquifère superficiel, champs de sondes géothermiques,
-  géostructures énergétiques, eaux usées, eau de mer ou eaux thermales ;
 
-  • pompes à chaleur aérothermiques (PAC air/eau)
+  - pompes à chaleur sur aquifère superficiel, champs de sondes géothermiques,
+  géostructures énergétiques, eaux usées, eau de mer ou eaux thermales
 
-  • de boucle d’eau tempérée «géothermique».
+  - pompes à chaleur aérothermiques (PAC air/eau)
+
+  - de boucle d’eau tempérée «géothermique».
 
 
   Pour les projets de pompes à chaleur géothermiques sur aquifère superficiel ou
@@ -30,14 +38,15 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
+contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etude-daide-a-decision-projets-geothermie-surface-daerothermie
 nature de l'aide: étude
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
           https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf

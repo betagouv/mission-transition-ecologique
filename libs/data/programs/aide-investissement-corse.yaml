@@ -30,6 +30,7 @@ description longue: >-
   mises aux normes environnementales.
 illustration: images/TEE_eolienne.png
 opérateur de contact: Agence de Développement Economique de Corse
+contact question: mailto:contact@adec.corsica
 url: https://www.adec.corsica/attachment/2439000/
 nature de l'aide: financement
 montant du financement: Jusqu'à 30% des dépenses éligibles, dans un maximum de 200 000 €
@@ -40,7 +41,7 @@ objectifs:
       de la Corse afin de vous accompagner dans votre démarche et obtenir les
       documents à compléter pour déposer votre demande.
     liens:
-      - lien: https://www.adec.corsica/Nos-adresses_a22.html
+      - lien: https://adec.corsica/contact/
         texte: Contacts de l'ADEC
   - description: Déposez votre demande, elle sera examinée, et recevez votre aide.
 conditions d'éligibilité:

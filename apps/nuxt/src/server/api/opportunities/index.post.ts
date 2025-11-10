@@ -23,6 +23,7 @@ export default defineEventHandler(async (event) => {
         statusMessage: `Opportunity not created: ${opportunityResult.error.message}`
       })
     }
+
     throw createError({
       statusCode: 500,
       statusMessage: `Server internal error: ${opportunityResult.error.message}`

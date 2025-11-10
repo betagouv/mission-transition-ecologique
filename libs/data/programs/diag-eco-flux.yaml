@@ -3,29 +3,52 @@ promesse: >-
   Bénéficiez d’un état des lieux sur vos flux pour vous aider à faire des
   économies
 description: >-
-  Bénéficiez des conseils d'un expert environnement référencé par Bpifrance pour
-  réaliser rapidement des économies durables en suivant une méthodologie
-  élaborée avec l'ADEME.
-aide temporairement indisponible: oui
+  Réduisez rapidement vos coûts tout en améliorant votre performance
+  environnementale grâce au Diag Eco-Flux. Ce diagnostic vous permet
+  d’**identifier et d’exploiter des pistes concrètes d’économies sur vos
+  principaux postes de consommation.** Vous êtes accompagné par un expert
+  référencé par Bpifrance, selon une méthodologie élaborée avec l’ADEME.
+
+
+  - **Analysez vos flux** d’énergie, d’eau, de matières premières et de déchets.
+
+
+  - **Repérez les pertes et les leviers d’action prioritaires.**
+
+
+  - **Définissez un** **plan d’action ciblé**, simple à mettre en œuvre.
+
+
+  - **Lancez vos premières actions** de réduction des pertes.
+
+
+  Les entreprises ayant mené ce diagnostic constatent **en moyenne 45 000 €
+  d’économies par an et par site.**
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - ADEME
-url: https://diag.bpifrance.fr/produit/diag-eco-flux
+contact question: formulaire
+url: https://diag.bpifrance.fr/diag-eco-flux
 nature de l'aide: étude
-coût de l'accompagnement: De 2 000 € HT à 3 000 € HT après subvention de 50%
+coût de l'accompagnement: 3 000 € HT après subvention de 50%
 durée de l'accompagnement: 6 à 8 jours de prestation répartis sur 15 à 18 mois
 objectifs:
   - description: >-
-      Faites un état des lieux de vos flux (déchets et pertes en énergie,
-      matière et eau) et identifiez les axes prioritaires d’économies.
+      Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le
+      site de Bpifrance
+    liens:
+      - lien: https://diag.bpifrance.fr/contactez-nous
+        texte: Formulaire de contact
   - description: >-
-      Mettez en place un plan d'action simple pour réduire vos déchets et votre
-      consommation d'énergie, de matières et d'eau.
-  - description: Lancez vos premières actions.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Réalisez en moyenne 45 000 € d'économies par an et par site de production
-      ou établissement (sur la base de 678 missions restituées).
+      Définissez ensemble le périmètre du diagnostic, la méthode et le
+      calendrier.
+  - description: >-
+      Lancez le diagnostic avec l'expert, consultant indépendant agréé et
+      sélectionné par Bpifrance.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Entre 20 et 250 salariés
@@ -74,14 +97,3 @@ publicodes:
         d'eau
       - questionnaire . objectif prioritaire . est ma performance énergétique
       - questionnaire . objectif prioritaire . est l'écoconception
-champs conditionnels:
-  - toutes ces conditions:
-      - effectif >= 20
-      - effectif <= 49
-    Montant du dispositif: 2 000 € HT après subvention de 50%
-    Eligibilité taille: De 20 à 49 salariés
-  - toutes ces conditions:
-      - effectif >= 50
-      - effectif <= 249
-    Montant du dispositif: 3 000 € HT après subvention de 50%
-    Eligibilité taille: De 50 à 250 salariés

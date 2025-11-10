@@ -1,9 +1,10 @@
 <template>
   <LayoutCatalog
     :has-side-menu="hasSideMenu"
-    :title="title"
+    title="Les aides à la transition écologique"
     :has-error="hasError"
     :count-items="countPrograms"
+    :faq-items="faqCatalogProgram"
   >
     <template #sidemenu>
       <ProgramFiltersAccordion with-title />
@@ -14,7 +15,8 @@
 
 <script setup lang="ts">
 import { MiddlewareName } from '@/middleware/type/middlewareName'
-import { RouteName } from '@/types'
+import Navigation from '@/tools/navigation'
+import { FaqSectionType, RouteName } from '@/types'
 import { useProgramStore } from '@/stores/program'
 import { ProgramManager } from '@/tools/program/programManager'
 import { MetaSeo } from '@/tools/metaSeo'
@@ -26,13 +28,17 @@ definePageMeta({
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
 })
 
+const { default: json } = await import('@/public/json/faq/catalog-program.json')
+const faqCatalogProgram = json as unknown as FaqSectionType[]
+
 const programStore = useProgramStore()
 const { programs, hasError } = storeToRefs(useProgramStore())
+const navigation = new Navigation()
 
-const title = 'Les aides à la transition écologique'
-const description =
-  'Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :' +
-  'ADEME, Bpifrance, CCI, CMA, etc.'
+const seoTitle = 'Aides aux entreprises et subventions dédiées à la transition écologique'
+const seoDescription =
+  'Trouvez les aides adaptées à votre entreprise : subvention, financements et accompagnements de l’ADEME, Bpifrance,' +
+  ' CCI… pour votre transition énergétique et écologique.'
 
 onServerPrefetch(async () => {
   await new ProgramManager().getDependentCompanyData(false)
@@ -42,7 +48,8 @@ onNuxtReady(async () => {
   await new ProgramManager().getDependentCompanyData(true)
 })
 
-useSeoMeta(MetaSeo.get(title, description))
+useSeoMeta(MetaSeo.get(seoTitle, seoDescription))
+useSchemaOrg(defineWebPage({ description: seoDescription }))
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
@@ -60,5 +67,13 @@ const countPrograms = computed(() => {
   return filteredPrograms.value?.length || 0
 })
 
-useHead(MetaRobots.noIndexOnQueries(useRoute().fullPath))
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.CatalogPrograms)
+    }
+  ],
+  ...MetaRobots.noIndexOnQueries(useRoute().fullPath)
+})
 </script>

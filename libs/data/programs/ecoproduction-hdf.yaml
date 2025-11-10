@@ -3,31 +3,47 @@ promesse: >-
   Engagez la transition économique de votre entreprise vers un modèle d’économie
   circulaire
 description: >-
-  L'accompagnement écoproduction est un outil d'aide à la décision qui propose
-  au chef d'entreprise de repenser son modèle linéaire (extraire, fabriquer,
-  consommer, jeter) vers un modèle économique plus circulaire.
+  L’accompagnement Écoproduction vous aide à repenser votre modèle économique en
+  intégrant les principes de l’économie circulaire, pour gagner en résilience,
+  réduire vos impacts et identifier de nouvelles opportunités. Cet
+  accompagnement vous permet de : 
+
+
+  - Faire le point sur votre fonctionnement actuel (achats d’énergie, usages,
+  consommation d’eau, gestion des déchets, etc.)
+
+
+  - Comprendre les limites du modèle linéaire et identifier les leviers concrets
+  d’un passage vers un modèle plus circulaire : flux de matière, organisation,
+  bâtiment, produits, gouvernance…
+
+
+  - Co-construire un plan d’action adapté à votre activité, avec une vision
+  court, moyen et long terme, et un guide pas à pas
+
+
+  - Être accompagné sur plusieurs mois pour structurer et mettre en œuvre votre
+  démarche de transition économique
 illustration: images/TEE_eolienne.png
 opérateur de contact: Chambre de Commerce et de l'Industrie
+contact question: formulaire
 url: https://hautsdefrance.cci.fr/solutions/accompagnement-ecoproduction/
 nature de l'aide: étude
 coût de l'accompagnement: Sur devis, jusqu’à 80% de prise en charge possible
 durée de l'accompagnement: '2 à 12 jours de prestation répartis sur 4 à 6 mois '
 objectifs:
   - description: >-
-      Faire le point sur le modèle existant (achat d’énergie, usages existants
-      de l’énergie, de l’eau, des déchets produits…)
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Sensibiliser aux enjeux que posent l'économie linéaire actuelle et
-      identifier les opportunités d’un modèle d'économie circulaire sur
-      l'activité de votre entreprise : gestion des flux, bâti, produit/process,
-      gouvernance…
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Co-construire un plan d'action à court, moyen et long termes et apporter
-      une vision prospective de ce que l’entreprise peut devenir avec un « guide
-      » pas à pas.
-  - description: >-
-      Bénéficiez d'un accompagnement sur plusieurs mois dans votre démarche de
-      transition économique.
+      Définissez avec l’expert le périmètre de l'accompagnement, la méthode et
+      le calendrier.
+  - description: Démarrez l'accompagnement avec l'expert proposé par votre CCI.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

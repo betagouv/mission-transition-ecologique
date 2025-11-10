@@ -8,7 +8,7 @@
   >
     <TeeDsfrButton
       class="fr-text--yellow fr-text--bold"
-      :label="Translation.t('results.eligibilityCheckCTA')"
+      :label="buttonLabel"
       @click="openModal"
     />
   </TeeDsfrHighlight>
@@ -20,8 +20,12 @@ import { Color } from '@/types'
 
 interface Props {
   text: string
+  buttonLabel?: string
 }
-defineProps<Props>()
+withDefaults(defineProps<Props>(), {
+  buttonLabel: Translation.t('results.eligibilityCheckCTA')
+})
+
 const openModal = () => {
   Navigation.toggleRegisterModal()
 }

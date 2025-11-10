@@ -1,4 +1,5 @@
 titre: Investissement "VTE Vert"
+metaTitre: VTE Vert -  Aide au recrutement pour la transition écologique
 promesse: >-
   Recrutez un jeune talent sur des missions de transition énergétique et
   écologique
@@ -6,17 +7,22 @@ description: >-
   Le Volontariat Territorial en Entreprise (VTE) "Vert" permet d’accompagner
   financièrement les entreprises dans leur recrutement d’un jeune talent sur des
   missions de transition énergétique et écologique.
+metaDescription: >-
+  Bénéficiez d'une aide financière grâce au Volontariat Territorial en
+  Entreprise Vert pour recruter un jeune talent sur des missions de transition
+  énergétique et écologique.
 description longue: >-
   L’Aide VTE Vert est destinée à contribuer au financement de frais internes
   (rémunération) et/ou de frais externes (frais de scolarité, achat de matériel
-  ou logiciel, etc.) directement liés à la mission du jeune en VTE Vert. 
+  ou logiciel, etc.) directement liés à la mission du jeune en VTE Vert.
 
 
-  Le programme VTE Vert entend par jeune talent : 
+  Le programme VTE Vert entend par jeune talent :
 
-  • un jeune diplômé depuis moins de 2 ans
 
-  • un étudiant ou diplômé à partir du niveau bac+3
+  - un jeune diplômé depuis moins de 2 ans
+
+  - un étudiant ou diplômé à partir du niveau bac+3
 
 
   La mission d’un VTE doit durer au moins un an, soit en alternance longue
@@ -26,11 +32,13 @@ description longue: >-
 
   Le VTE prend la forme d’un contrat d’apprentissage ou de travail classique. Il
   est rémunéré sur la base d’un accord entre l’entreprise et le Volontaire, aux
-  conditions du marché. 
+  conditions du marché.
+fin de validité: 31/12/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - ADEME
+contact question: formulaire
 url: https://www.vte-france.fr/aide-vte-vert/
 nature de l'aide: financement
 montant du financement: 50% des dépenses engagées dans la limite de 8000 €
@@ -84,6 +92,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - a une categorie legale eligible

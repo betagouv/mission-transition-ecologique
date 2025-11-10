@@ -18,39 +18,40 @@ description longue: >-
   par les banques.
 
 
-  Sont éligibles : 
+  Sont éligibles :
 
 
-  • Les besoins en fonds de roulement liés à un projet de développement de
+  - Les besoins en fonds de roulement liés à un projet de développement de
   l'entreprise en relation avec la transition énergétique, écologique et/ou
   l’économie circulaire.
 
-  • Les investissements immatériels, les coûts de mise aux normes
+  - Les investissements immatériels, les coûts de mise aux normes
   (environnement, sécurité), de recrutement, de formation, de frais de
   prospection, les dépenses de publicité, etc.
 
 
-  Sont exclus : 
+  Sont exclus :
 
 
-  • Les opérations relatives au financement de la création (entreprises de moins
+  - Les opérations relatives au financement de la création (entreprises de moins
   d’un an d’ancienneté).
 
-  • Les investissements immobiliers et mobiliers, les acquisitions de titres ou
+  - Les investissements immobiliers et mobiliers, les acquisitions de titres ou
   de fonds de commerce.
 
-  • Les programmes de transmission (y compris croissance externe) et de
+  - Les programmes de transmission (y compris croissance externe) et de
   restructuration financière.
 
-  • Les opérations purement patrimoniales (cash out, vente à soi-même, etc.).
+  - Les opérations purement patrimoniales (cash out, vente à soi-même, etc.).
 
-  • La substitution de dettes et remboursement d’encours existants ou comptes
+  - La substitution de dettes et remboursement d’encours existants ou comptes
   courants.
 fin de validité: 31/12/2024
 illustration: images/TEE_ampoule.png
 opérateur de contact: Région Sud (PACA)
 autres opérateurs:
   - Banque Publique d'Investissement France
+contact question: formulaire
 url: >-
   https://entreprises.maregionsud.fr/financement/sud-entreprises/soutien-a-lhebergement-touristique/sud-pret-climat
 nature de l'aide: prêt
@@ -60,7 +61,7 @@ objectifs:
   - description: Vérifiez l’éligibilité de votre projet et les modalités du prêt.
     liens:
       - lien: https://flash.bpifrance.fr/financement/sud-pret-climat
-        texte: Vérifier les critères d'éligibilité
+        texte: Critères d'éligibilité
   - description: >-
       Réalisez votre demande de prêt sur Bpifrance, la Banque Publique
       d'Investissement dédiée aux entreprises, en charge de l'instruction des

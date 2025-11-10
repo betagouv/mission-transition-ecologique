@@ -3,9 +3,19 @@ promesse: >-
   Réalisez une étude pour réduire vos pertes dues au gaspillage alimentaire ou
   invendus
 description: >-
-  Vous souhaitez mettre en œuvre un projet de réduction de vos pertes dues au
-  gaspillage alimentaire à réduire le gaspillage alimentaire ou aux invendus non
-  alimentaires ? L’ADEME finance votre étude de diagnostic ou de faisabilité.
+  Votre entreprise souhaite **réduire ses pertes liées au gaspillage alimentaire
+  ou aux invendus non alimentaires** ? L’ADEME peut financer **une étude de
+  diagnostic ou de faisabilité** afin de :\
+
+  – **identifier les leviers d’action adaptés à votre activité,**\
+
+  – **analyser vos flux de gaspillage et cibler les étapes critiques de la
+  chaîne** (production, transformation, logistique, vente).
+
+
+  Cette étude permet de construire un plan d’actions concret et peut également
+  intégrer des pistes de réutilisation, de dons ou de valorisation des produits
+  non commercialisables.
 description longue: >-
   La loi AGEC, fixe comme objectif de réduire le gaspillage alimentaire de 50 %
   par rapport à son niveau de 2015 à l’horizon 2025 dans les domaines de la
@@ -21,14 +31,15 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000714
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-lutte-contre-gaspillage-alimentaire
 nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
           https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20lutte%20contre%20le%20gaspillage%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx

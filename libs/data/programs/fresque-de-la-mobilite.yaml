@@ -1,24 +1,46 @@
 titre: Fresque de la Mobilité
 promesse: Participez à une Fresque de la mobilité dédiée aux entreprises
 description: >-
-  Vous voulez sensibiliser vos salarié.e.s sur la mobilité et avez besoin d'un
-  outil pour embarquer votre équipe ou votre direction ? La fresque de la
-  mobilité est l'atelier qu'il vous faut pour bien démarrer le projet.
+  La Fresque de la mobilité est un atelier collaboratif ludique et pédagogique
+  qui sensibilise vos salarié·es et fédère autour d’un projet de transformation.
+
+
+  Cet atelier vous permet de :
+
+
+  - **comprendre les enjeux** de l’hyper-mobilité et ses impacts
+  environnementaux ;
+
+  -  **identifier les leviers d’action** pour réduire les émissions liées aux
+  déplacements professionnels et domicile-travail ;
+
+  -  **initier une démarche collective de décarbonation** de la mobilité ;
+
+  -  **mobiliser vos équipes** grâce à une animation participative favorisant
+  échanges et créativité.
+
+
+  C’est un point de départ efficace pour bâtir une culture d’entreprise alignée
+  avec la transition écologique.
 illustration: images/TEE_ampoule.png
 opérateur de contact: Chambre de Commerce et de l'Industrie
+contact question: formulaire
 url: https://fresquedelamobilite.org/
 nature de l'aide: étude
 coût de l'accompagnement: Sur devis
 durée de l'accompagnement: 1/2 journée
 objectifs:
-  - description: Sensibiliser aux impacts et aux limites de l'hyper-mobilité actuelle.
   - description: >-
-      Découvrir les leviers d’actions à votre disposition pour s’engager à tous
-      les niveaux vers une mobilité décarbonée.
-  - description: Engager l’entreprise dans un processus de décarbonation de la mobilité.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Fédérer les équipes à travers une animation collaborative et apprendre à
-      travers un jeu éducatif, ludique et pédagogique.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
+  - description: >-
+      Planifiez l'animation de la Fresque de la mobilité au sein de votre
+      entreprise.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 500 salariés

@@ -3,17 +3,11 @@ import { ProjectType } from '@tee/data'
 import { ProjectEligibilityInterface, ProjectRepository, ProjectSorterInterface } from './spi'
 
 export default class ProjectFeatures {
-  private readonly _projectEligibility: ProjectEligibilityInterface
-  private readonly _projectSorter: ProjectSorterInterface
-
   constructor(
     private readonly _projectRepository: ProjectRepository,
-    projectEligibility: ProjectEligibilityInterface,
-    projectSorter: ProjectSorterInterface
-  ) {
-    this._projectEligibility = projectEligibility
-    this._projectSorter = projectSorter
-  }
+    private readonly _projectEligibility: ProjectEligibilityInterface,
+    private readonly _projectSorter: ProjectSorterInterface
+  ) {}
 
   public getById(id: number): ProjectType | undefined {
     return this._projectRepository.getOneById(id)
@@ -25,14 +19,12 @@ export default class ProjectFeatures {
 
   public getFiltered(questionnaireData: QuestionnaireData): ProjectType[] {
     const projects = this._projectRepository.get()
-    this._projectSorter.byPriority(projects)
+    this._projectSorter.byPriority(projects, questionnaireData.codeNAF)
     if (!questionnaireData.codeNAF1 || questionnaireData.onlyEligible === false) {
       return projects
     }
-    const eligibleProjects = projects.filter((project) => {
+    return projects.filter((project) => {
       return this._projectEligibility.isEligible(project, questionnaireData.codeNAF1 as string)
     })
-
-    return this._projectSorter.bySector(eligibleProjects)
   }
 }

@@ -114,7 +114,7 @@ import {
 } from '@/types'
 import { RouteName } from '@/types/routeType'
 import Navigation from '@/tools/navigation'
-import { Scroll } from '@/tools/scroll'
+import { Scroll } from '@/tools/scroll/scroll'
 import TrackColOption from '@/tools/questionnaire/track/TrackColOption'
 import TrackComponent from '@/tools/questionnaire/track/TrackComponent'
 import { useRouter } from 'vue-router'

@@ -27,7 +27,8 @@ description: >-
 illustration: images/TEE_eolienne.png
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
-  - ADEME
+  - Office français de la biodiversité
+contact question: formulaire
 url: https://diag.bpifrance.fr/diag-biodiversite
 nature de l'aide: étude
 coût de l'accompagnement: 6 000€ HT, après prise en charge de 40%
@@ -50,14 +51,14 @@ objectifs:
       dans votre entreprise.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Moins de 250 salariés.
+    - Moins de 250 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
     - Tous secteurs d'activité
   nombre d'années d'activité:
-    - '"Au moins 1 an d''activité"'
+    - Au moins 1 an d'activité
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -70,7 +71,7 @@ publicodes:
       - a une categorie legale eligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-      - effectif <= 250
+      - effectif <= 249
   entreprise . a une categorie legale eligible:
     toutes ces conditions:
       - microentrepreneur = non

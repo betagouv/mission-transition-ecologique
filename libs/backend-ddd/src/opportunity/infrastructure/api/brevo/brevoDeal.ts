@@ -31,8 +31,9 @@ const addBrevoDeal: OpportunityRepository['create'] = async (
 
   if (!dealId.isErr) {
     const maybeError = await associateBrevoDealToContact(dealId.value, domainOpportunity.contactId)
-    if (maybeError.isJust)
+    if (maybeError.isJust) {
       return Result.err(new Error('Something went wrong while attaching contact to opportunity', { cause: maybeError.value }))
+    }
   }
 
   return dealId
@@ -106,7 +107,8 @@ const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorConta
 
 const convertDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdateAttributes): DealUpdateAttributes => {
   return {
-    envoy: domainUpdateAttributes.sentToOpportunityHub
+    envoy: domainUpdateAttributes.sentToOpportunityHub,
+    idce: domainUpdateAttributes.idCe.toString()
   }
 }
 

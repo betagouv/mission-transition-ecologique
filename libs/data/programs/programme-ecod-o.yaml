@@ -5,6 +5,21 @@ description: >-
   tourisme et de la restauration dans la réduction de leur consommation d’eau.
   Le soutien intervient sur les aspects techniques mais aussi financiers et
   réglementaires.
+
+
+  - **Bénéficiez d'un diagnostic personnalisé** des consommations et usages dans
+  votre entreprise, réalisé par un expert de la CCI.
+
+  - **Identifiez les potentiels d'économie** d'eau et de réutilisation des eaux
+  usées traitées (REUSE/REUT).
+
+  - **Bénéficiez d'un plan d'action** dédié à votre entreprise.
+
+  - Profitez d'un appui dans la **recherche de solutions et de financements**
+  pour vos projets d'investissement.
+
+  - **Mettez en place les préconisations** et réduisez vos consommations d'eau
+  d'au moins 10%.
 illustration: images/TEE_energie_verte.png
 opérateur de contact: Chambre de Commerce et de l'Industrie
 autres opérateurs:
@@ -14,6 +29,7 @@ autres opérateurs:
   - Saur
   - Suez
   - Véolia Eau
+contact question: formulaire
 url: >-
   https://www.bretagne.cci.fr/developper-son-entreprise/developpement-durable/le-programme-ecod-o
 nature de l'aide: étude
@@ -21,18 +37,17 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Selon l'entreprise
 objectifs:
   - description: >-
-      Bénéficiez d'un diagnostic personnalisé des consommations et usages dans
-      votre entreprise, réalisé par un expert de la CCI.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Identifiez les potentiels d'économie d'eau et de réutilisation des eaux
-      usées traitées (REUSE/REUT).
-  - description: Bénéficiez d'un plan d'action dédié à votre entreprise.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Profitez d'un appui dans la recherche de solutions et de financements pour
-      vos projets d'investissement.
-  - description: >-
-      Mettez en place les préconisations et réduisez vos consommations d'eau
-      d'au moins 10%.
+      Définissez avec l’expert le périmètre du diagnostic, la méthode et le
+      calendrier.
+  - description: Lancez le diagnostic avec l'expert proposé par votre CCI.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

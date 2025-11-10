@@ -3,32 +3,44 @@ promesse: >-
   Adaptez l'organisation de votre entreprise aux conséquences du changement
   climatique
 description: >-
-  Votre CCI vous accompagne dans l'élaboration d'un plan d'adaptation aux
-  phénomènes liés aux conséquences du changement climatique (canicules,
-  sécheresses, innondations,…)afin de vous permettre de poursuivre votre
-  activité en limitant les impacts économiques et en saisissant les éventuelles
-  opportunités.
+  Le changement climatique expose progressivement votre entreprise à de
+  nouvelles vulnérabilités. Cet accompagnement vous aide :
+
+
+  - **à comprendre les enjeux concrets du dérèglement climatique** pour votre
+  activité, à court et moyen terme ;
+
+  - **à analyser les aléas climatiques passés et les projections futures**, en
+  lien avec votre territoire ;
+
+  - **à identifier les impacts directs et indirects** sur votre entreprise
+  (économiques, sociaux, organisationnels) ;
+
+  - **à repérer des opportunités d’adaptation**, pour faire évoluer vos
+  produits, services ou modes de fonctionnement.
+
+
+  Vous êtes ensuite accompagné dans l’**élaboration d’un plan d’adaptation sur
+  mesure**, adapté à votre secteur et à votre environnement local.
 illustration: images/TEE_ampoule.png
 opérateur de contact: Chambre de Commerce et de l'Industrie
 autres opérateurs:
   - ADEME
+contact question: formulaire
 nature de l'aide: étude
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 3 jours
 objectifs:
+  - description: Exprimez votre intérêt en contactant un conseiller via le formulaire.
+    liens:
+      - formulaire: true
   - description: >-
-      Analyser les évènements climatiques passés ayant déjà affecté votre
-      secteur, et les tendances futures sur la base des projections climatiques.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Identifier les impacts directs sur vos activités ainsi que des impacts
-      indirects (financiers et sociaux) et leurs évolutions à court, moyen et
-      long terme.
-  - description: >-
-      Mettre en évidence les menaces posées par le changement climatique et les
-      opportunités potentiellement pour vos activités, produits et services.
-  - description: >-
-      Disposer d’un plan d’adaptation pour les risques climatiques au sein de
-      votre entreprise.
+      Définissez avec l’expert le périmètre du diagnostic, la méthode et le
+      calendrier.
+  - description: Lancez le diagnostic avec l'expert proposé par votre CCI.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 250 salariés
@@ -59,6 +71,19 @@ publicodes:
       - code NAF niveau 1 . est D
       - code NAF niveau 1 . est E
       - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est mon impact environnemental

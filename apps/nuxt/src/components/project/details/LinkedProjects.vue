@@ -1,23 +1,31 @@
 <template>
   <TeeContentBlock
     id="project-linked-projects-title"
-    class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
-    :title="Translation.t('project.linkedProjects.title')"
+    class="fr-py-5v fr-border-b--grey--light"
+    :title="project.titleLinkedProjects ? project.titleLinkedProjects : Translation.t('project.linkedProjects.title')"
     container-from="md"
+    title-class="fr-h4"
+    title-tag="h2"
   >
     <template #content>
-      <div class="fr-my-4v">{{ Translation.t('project.linkedProjects.description') }}</div>
-      <ul class="fr-grid-row fr-grid-row--left fr-raw-list">
+      <div
+        class="fr-mb-4v"
+        v-html="
+          project.descriptionLinkedProjects
+            ? Marked.toHtml(project.descriptionLinkedProjects)
+            : Translation.t('project.linkedProjects.description')
+        "
+      />
+      <ul class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-raw-list">
         <li
-          v-for="(linkedProject, index) in linkedProjectsTags"
+          v-for="linkedProject in linkedProjectsTags"
           :key="linkedProject.id"
-          :class="index === 0 ? `fr-mr-1v` : index === linkedProjectsTags.length - 1 ? `fr-ml-1v` : `fr-mx-1v`"
+          class="fr-col-12 fr-col-sm-6 fr-col-lg-4"
         >
-          <TeeProjectButton
-            class="fr-my-1-5v"
-            target="_blank"
+          <ProjectCard
             :project="linkedProject"
-            :color="color"
+            title-tag="h3"
+            class="fr-radius-a--1v fr-card--shadow fr-enlarge-link"
           />
         </li>
       </ul>
@@ -26,6 +34,7 @@
 </template>
 <script setup lang="ts">
 import { useProjectStore } from '@/stores/project'
+import { Marked } from '@/tools/marked'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { Color, ProjectType } from '@/types'
 import Translation from '@/tools/translation'

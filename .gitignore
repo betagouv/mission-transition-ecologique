@@ -23,6 +23,7 @@ node_modules
 
 # IDEs and editors
 .idea
+.junie
 .project
 .classpath
 .c9/
@@ -86,3 +87,5 @@ dispositifs*.xlsx
 .cache
 vite.config.*.timestamp*
 vitest.config.*.timestamp*
+.cursor/rules/nx-rules.mdc
+.github/instructions/nx.instructions.md

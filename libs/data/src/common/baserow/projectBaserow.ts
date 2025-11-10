@@ -1,14 +1,15 @@
 import path from 'path'
 import { AbstractBaserow } from './abstractBaserow'
 import { DataProject, ProjectStatus } from '../../project/types/domain'
+import { ReplacerBaserow } from './replacerBaserow'
 import { LinkObject, BaserowProject, BaserowSectors, SectorKeys } from './types'
 import { Theme } from '../../theme/types/domain'
 import { ImageBaserow } from './imageBaserow'
 import { Logger } from '../logger/logger'
 import { LogLevel } from '../logger/types'
+import { ProjectPriority } from '../../project/types/shared'
 
 export class ProjectBaserow extends AbstractBaserow {
-  private readonly _projectTableId = 305253
   private readonly _imagePath = '/images/projet/'
   private readonly _logPath: string = path.join(this.__dirname, '../../../static/project_images_download_info.json')
   private _imageDownloader: ImageBaserow
@@ -22,21 +23,34 @@ export class ProjectBaserow extends AbstractBaserow {
     this._imageDownloader = new ImageBaserow(imageDirectory, this._logPath)
   }
 
-  async getProdAndArchivedProjects(): Promise<DataProject[]> {
+  async getProdProjects(reloadImages = true): Promise<DataProject[]> {
     const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
     const validBaserowProjects = baserowProjects.filter((project) => {
-      return this._convertStatus(project?.Statut) == ProjectStatus.InProd || this._convertStatus(project?.Statut) == ProjectStatus.Archived
+      return this._convertStatus(project?.Statut) == ProjectStatus.InProd
     })
-    return await this._convertProjectList(validBaserowProjects)
+    return await this._convertProjectList(validBaserowProjects, reloadImages)
   }
 
-  private async _convertProjectList(projectList: BaserowProject[]): Promise<DataProject[]> {
+  async getProdAndArchivedProjects(reloadImages = true): Promise<DataProject[]> {
+    const baserowProjects = await this._getTableData<BaserowProject>(this._projectTableId)
+    const validBaserowProjects = this._getValidBaserowProjects(baserowProjects)
+
+    return await this._convertProjectList(validBaserowProjects, reloadImages)
+  }
+
+  private _getValidBaserowProjects = (baserowProjects: BaserowProject[]) => {
+    return baserowProjects.filter((project) => {
+      return this._convertStatus(project?.Statut) == ProjectStatus.InProd || this._convertStatus(project?.Statut) == ProjectStatus.Archived
+    })
+  }
+
+  private async _convertProjectList(projectList: BaserowProject[], reloadImages = true): Promise<DataProject[]> {
     const baserowThemes = await this._getTableData<Theme>(this._themeTableId)
 
     const projects: DataProject[] = []
     for (const project of projectList) {
       try {
-        const result = await this._convertToDataProjectType(project, baserowThemes)
+        const result = await this._convertToDataProjectType(project, baserowThemes, reloadImages)
         projects.push(result)
         console.info(`successfully loaded project ${project.id}`)
         await this._delay(100)
@@ -44,23 +58,30 @@ export class ProjectBaserow extends AbstractBaserow {
         console.error(`Error processing project ${project.id}:`, error)
       }
     }
-    this._imageDownloader.cleanup()
+    if (reloadImages) {
+      this._imageDownloader.cleanup()
+    }
     return projects
   }
 
-  private async _convertToDataProjectType(baserowProject: BaserowProject, baserowThemes: Theme[]): Promise<DataProject> {
-    const maybeImageName = await this._imageDownloader.handleImage(baserowProject.Image)
-    let imageName
-    if (maybeImageName.isErr) {
-      this._logger.log(
-        LogLevel.Major,
-        maybeImageName.error.message + '\n, defaulting to a default image',
-        baserowProject.Titre,
-        baserowProject.id
-      )
-      imageName = this._defaultProjectImageName
-    } else {
-      imageName = maybeImageName.value
+  private async _convertToDataProjectType(
+    baserowProject: BaserowProject,
+    baserowThemes: Theme[],
+    reloadImages = true
+  ): Promise<DataProject> {
+    let imageName = this._defaultProjectImageName
+    if (reloadImages) {
+      const maybeImageName = await this._imageDownloader.handleImageFromImageTable(baserowProject.Image)
+      if (maybeImageName.isErr) {
+        this._logger.log(
+          LogLevel.Major,
+          maybeImageName.error.message + '\n, defaulting to a default image',
+          baserowProject.Titre,
+          baserowProject.id
+        )
+      } else {
+        imageName = maybeImageName.value
+      }
     }
 
     const redirect = this._generateRedirect(baserowProject)
@@ -72,17 +93,27 @@ export class ProjectBaserow extends AbstractBaserow {
       nameTag: baserowProject.NameTag,
       shortDescription: baserowProject['Description courte'],
       image: this._imagePath + imageName,
+      titleLongDescription: baserowProject['Titre - Pourquoi ?'] ? baserowProject['Titre - Pourquoi ?'] : undefined,
       longDescription: baserowProject['Qu’est-ce que c’est ?'],
+      titleMoreDescription: baserowProject['Titre - Me documenter'] ? baserowProject['Titre - Me documenter'] : undefined,
       moreDescription: baserowProject['Pour aller plus loin'],
       themes: this._generateThemeList(baserowProject['Thématique principale'], baserowProject['Thématiques secondaires'], baserowThemes),
       mainTheme: this._generateMainTheme(baserowProject['Thématique principale'], baserowThemes),
-      programs: this._generateProgramList(baserowProject.Dispositifs),
-      linkedProjects: this._generateLinkedProjectList(baserowProject['Projets complémentaires']),
-      priority: baserowProject.Prio,
+      programs: ReplacerBaserow.linkObjectsByValues(baserowProject.Dispositifs),
+      titleLinkedProjects: baserowProject['Titre - Projets complémentaires']
+        ? baserowProject['Titre - Projets complémentaires']
+        : undefined,
+      descriptionLinkedProjects: baserowProject['Description - Projets complémentaires'] ?? undefined,
+      linkedProjects: ReplacerBaserow.linkObjectsByIds(baserowProject['Projets complémentaires']),
+      priority: this._generatePriority(baserowProject.Prio, baserowProject['Prios spécifiques'], baserowProject),
       highlightPriority: baserowProject['Mise En Avant'],
       sectors: this._generateSectors(baserowProject as BaserowSectors),
+      titleFaq: baserowProject['Titre - FAQ'] ? baserowProject['Titre - FAQ'] : undefined,
       status: this._convertStatus(baserowProject?.Statut),
-      ...(redirect !== undefined && { redirectTo: redirect })
+      ...(redirect !== undefined && { redirectTo: redirect }),
+      metaTitle: baserowProject['Meta Titre'] ? baserowProject['Meta Titre'] : undefined,
+      metaDescription: baserowProject['Meta Description'] ? baserowProject['Meta Description'] : undefined,
+      faqs: []
     }
   }
 
@@ -156,5 +187,38 @@ export class ProjectBaserow extends AbstractBaserow {
       return ProjectStatus.Others
     }
     return Object.values(ProjectStatus).includes(status.value as ProjectStatus) ? (status.value as ProjectStatus) : ProjectStatus.Others
+  }
+
+  private _generatePriority(defaultPriority: number, otherPrios: string, project: BaserowProject): ProjectPriority {
+    // This field workings are detailed in the baserow column description.
+    const result: ProjectPriority = { default: Number(defaultPriority) }
+
+    if (!otherPrios) {
+      return result
+    }
+
+    otherPrios
+      .split('\n')
+      .map((line) => line.trim())
+      .filter((line) => line.length > 0)
+      .forEach((line) => {
+        if (!/^[A-Za-z0-9.]+[A-Za-z]?:\d+$/.test(line)) {
+          this._logger.log(
+            LogLevel.Major,
+            `Format de prio spécifique invalide "${line}" - doit être, pour chaque ligne, uniquement 'NAF:n' avec NAF un code naf valide et n un nombre`,
+            project.Titre,
+            project.id
+          )
+          return
+        }
+
+        const [sector, priority] = line.split(':')
+        if (sector && priority !== undefined) {
+          const trimmedPriority = priority.trim()
+          result[sector.trim()] = trimmedPriority === 'default' ? Number(defaultPriority) : Number(trimmedPriority)
+        }
+      })
+
+    return result
   }
 }

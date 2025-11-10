@@ -1,4 +1,5 @@
 titre: Investissement "Géothermie de surface et d'aérothermie"
+metaTitre: Géothermie de surface et aérothermie - Financement ADEME
 promesse: >-
   Financez votre installation de production de chaleur et de froid à partir de
   géothermie de surface ou d'aérothermie
@@ -7,32 +8,38 @@ description: >-
   chaleur et de froid à partir de géothermie de surface ou d'aérothermie ? Vous
   souhaitez investir pour le mettre en œuvre ? L’ADEME peut accompagner
   financièrement la réalisation de votre installation.
+metaDescription: >-
+  Bénéficiez d’un accompagnement de l’ADEME pour financer l’installation de
+  systèmes de géothermie de surface ou d’aérothermie dans votre entreprise.
 description longue: >-
   L’ADEME peut accompagner les opérations suivantes :
 
-  • géothermie de surface avec pompes à chaleur sur aquifère superficiel, sur
+
+  - géothermie de surface avec pompes à chaleur sur aquifère superficiel, sur
   champ de sondes géothermiques, sur géostructures énergétiques, sur échangeurs
   compacts géothermiques ou sur chaussées thermoactives ;
 
-  • installations utilisant les mêmes principes que la géothermie mais
+  - installations utilisant les mêmes principes que la géothermie mais
   valorisant par pompe à chaleur l’énergie des eaux usées, de l’eau de mer, des
   eaux de surface ou des eaux thermales ;
 
-  • aérothermie uniquement les pompes chaleur air/eau.
+  - aérothermie uniquement les pompes chaleur air/eau.
+
 
   La réalisation d’une étude préalable est une condition d'éligibilité.
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
+contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installations-production-chaleur-froid-renouvelable-a-partir-geothermie
 nature de l'aide: financement
 montant du financement: Aide calculée au cas par cas
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
           https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/G%C3%A9othermie%20de%20surface%20et%20a%C3%A9rothermie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf

@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Pourquoi ?",
+    "color": "red",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Qu'est-ce que la transition écologique ?",
+        "answer": "La transition écologique peut être définie comme **l’ensemble des mesures à prendre afin de limiter l’impact de nos activités sur l’environnement**.\n\nElle vise à repenser nos modes de production, de consommation et d’organisation afin de les inscrire dans une logique de développement durable.\n\nPour une entreprise, cela signifie adapter son activité à ces enjeux (énergie, déchets, mobilité, achats, numérique, infrastructures…) tout en garantissant sa pérennité dans un monde en mutation."
+      },
+      {
+        "id": 2,
+        "question": "Pourquoi la transition écologique est-elle une question urgente ?",
+        "answer": "Agir pour **limiter l’impact négatif de l’activité humaine** est devenu un **impératif absolu**.\n\nLa vie sur Terre est le produit de conditions exceptionnelles qui l’ont rendue propice.\n\nEn 2009, une équipe de scientifiques (J. Rockström et W. Steffen) établit une liste de 9 conditions qui interagissent les uns avec les autres. Il s’agit de **9 limites planétaires** qui, si elles étaient dépassées, emballeraient le système d’une manière difficilement prévisible, avec des conséquences dramatiques et irréversibles, compromettant la possibilité de la vie sur Terre.\n\nCes 9 limites planétaires sont :\n\n- Le changement d’occupation des sols\n- Le cycle de l’eau douce\n- La perturbation des cycles de l’azote et du phosphore\n- L’érosion de la biodiversité\n- Le changement climatique\n- Les nouvelles entités dans la biosphère\n- L’acidification des océans\n- L’augmentation des aérosols dans l’atmosphère\n- L’appauvrissement de la couche d’ozone\n\nSeules les trois dernières limites n’ont pas été dépassées depuis 2023. **Toutes les autres ont été franchies**.\n\nPour les entreprises, l’enjeu est double :\n\n- Les entreprises peuvent agir à leur niveau pour **réaliser une transition écologique** sur différents plans (transformation du bâtiment, économies d’énergie, déchets, mobilité, aménagement de la chaîne de valeur…) et contribuer à **réduire les impacts négatifs de leur activité** sur les limites planétaires.\n- Les entreprises doivent s’adapter sans tarder pour **pérenniser et adapter leur activité face à aux catastrophes climatiques** (canicules, inondations, tempêtes…) dont la fréquence ne cesse d’augmenter. Elles doivent également **se conformer à la mise en place de nouvelles règlementations**."
+      },
+      {
+        "id": 3,
+        "question": "Pourquoi la transition écologique est une nécessité pour les entreprises ?",
+        "answer": "Pour les entreprises, les enjeux de la transition écologique sont multiples :\n\n- **Réduire leur impact environnemental** en agissant sur l’énergie, les bâtiments, les déchets, la mobilité ou encore la chaîne de valeur.\n- **Faire face aux risques croissants** liés au dérèglement climatique (canicules, inondations, tempêtes…).\n- **Se conformer à la mise en place de nouvelles réglementations,** notamment en matière de Responsabilité sociétale des entreprises (RSE) ou de durabilité.\n- **Diminuer les coûts opérationnels** en réduisant leur consommation d’énergie, d’eau ou de matières premières.\n- **Accéder à de nouvelles sources de financements** de plus en plus conditionnés à des critères environnementaux, sociaux ou de gouvernance.\n- **Améliorer leur image de marque**, attirer les talents, renforcer la confiance des clients et des partenaires.\n- **Innover et rester compétitives** dans un contexte de transformation économique rapide."
+      },
+      {
+        "id": 4,
+        "question": "Comment rendre son entreprise plus écologique ?",
+        "answer": "La première étape pour engager une transition écologique est de comprendre où et comment votre entreprise impacte l’environnement. Cela passe par un **diagnostic environnemental** qui vous permet d’identifier vos principaux postes d’impact et de prioriser les actions à mener.\n\n**Si vous avez déjà un enjeu en tête** (énergie, déchets, mobilité, eau…), un diagnostic ciblé vous aidera à structurer votre plan d’action. Vous pouvez, par exemple, faire un bilan complet de votre consommation énergétique, de votre empreinte carbone, de votre politique de mobilité, de votre gestion des déchets, etc.\n\nSinon, le [**Diagnostic 360°**](https://mission-transition-ecologique.beta.gouv.fr/projets-entreprise/diag-360), gratuit sous certaines conditions, vous offre une vision d’ensemble de vos impacts pour faire émerger vos priorités et initier la transition écologique de votre entreprise."
+      },
+      {
+        "id": 5,
+        "question": "Quel est le rôle des aides aux entreprises dans la transition écologique ?",
+        "answer": "Les aides aux entreprises servent à financer la transition écologique et à accompagner les entreprises dans la mise en œuvre d’un projet, quel que soit son degré de maturité.\n\nSi vous ne savez pas par où commencer, une formation sur les enjeux de la transition écologique ou un diagnostic de vos consommations énergétiques constituent d’excellents points de départ.\n\nSi vous avez une idée plus précise, par exemple, installer une pompe à chaleur dans vos locaux ou engager une stratégie RSE, vous aurez sans doute besoin d’un financement ou d’un prêt à taux préférentiel. Les aides publiques sont là pour ça !"
+      },
+      {
+        "id": 6,
+        "question": "À qui s’adresser pour bénéficier d’aides aux entreprises pour la transition écologique ?",
+        "answer": "**Vous êtes au bon endroit !**\n\nNotre plateforme *Transition Écologique des Entreprises* a été conçue pour aider les entreprises à **trouver les aides et les subventions qui peuvent accompagner leur projet de transition écologique**, quel que soit son degré de maturité.\n\nAinsi, nous mettons en relation les entreprises avec les **bons dispositifs** et les **bons interlocuteurs**.\n\nLes **aides aux entreprises** sont principalement proposées par des acteurs publics dont l’État, l’ADEME, les collectivités locales ou encore Bpifrance."
+      }
+    ]
+  }
+]

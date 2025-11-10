@@ -1,4 +1,4 @@
-import { ThemeId } from '../../theme/types/shared'
+import { ThemeId } from '@tee/common'
 import type { Dispositif as ProgramWithoutId } from './program'
 
 export enum ProgramAidType {
@@ -27,7 +27,23 @@ export type ProgramFiltersType = {
 
 export type { ProgramWithoutId }
 export type ProgramType = ProgramWithoutId & {
+  eligibilityData: EligibilityData
   id: string
+}
+
+export interface EligibilityData {
+  validity?: {
+    start?: string
+    end?: string
+  }
+  company: {
+    minEmployees?: number
+    maxEmployees?: number
+    excludeMicroentrepreneur?: boolean
+    allowedNafSections: string[]
+    allowedRegion?: string[]
+  }
+  priorityObjectives?: ThemeId[]
 }
 
 export type ProgramTypeWithEligibility = ProgramType & {
@@ -37,3 +53,19 @@ export type ProgramTypeWithEligibility = ProgramType & {
 export type ProgramTypeForFront = Exclude<ProgramTypeWithEligibility, 'publicodes'> & {
   filters?: ProgramFiltersType
 }
+
+export enum PublicodesCondition {
+  allOfThese = 'toutes ces conditions',
+  oneOfThese = 'une de ces conditions'
+}
+
+export type ProgramStaticBaseType = Omit<ProgramWithoutId, 'opérateur de contact' | 'autres opérateurs'> & {
+  'opérateur de contact': string
+  'autres opérateurs': string[]
+  id: string
+  eligibilityData: EligibilityData
+}
+
+export type ProgramJsonBaseType = ProgramStaticBaseType & Record<string, unknown> // Record string unknown to allow appending the interface
+
+export type ProgramYamlType = Omit<ProgramStaticBaseType, 'id' | 'eligibilityData'>

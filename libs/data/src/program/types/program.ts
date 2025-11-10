@@ -14,6 +14,10 @@ export type Dispositif = {
    */
   titre: string;
   /**
+   * Titre du dispositif pour les metadatas de la page. Il s'agit du titre qui sera affiché dans l'onglet du navigateur.
+   */
+  metaTitre?: string;
+  /**
    * TODO
    */
   promesse: string;
@@ -21,6 +25,10 @@ export type Dispositif = {
    * La description donne les principales informations du dispositif en quelques lignes
    */
   description?: string;
+  /**
+   * Description du dispositif pour les metadatas de la page. Il s'agit de la description qui sera affichée dans les résultats de recherche.
+   */
+  metaDescription?: string;
   /**
    * La description longue La description longue est facultative. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple pour définir un terme technique, pour détailler une loi à laquelle un dispositif fait référence ou pour détailler les projets concernés par un financement
    */
@@ -78,7 +86,6 @@ export type Dispositif = {
    */
   "opérateur de contact":
     | "ADEME"
-    | "ASP"
     | "Agence de l'Eau Loire-Bretagne"
     | "Agence de l'Eau Rhône-Méditerranée-Corse"
     | "Agence de l'Eau"
@@ -94,7 +101,6 @@ export type Dispositif = {
     | "EcoCO2"
     | "France Rénov'"
     | "InvestEU"
-    | "La Poste"
     | "Ministère de la Transition Écologique"
     | "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
     | "Région Bretagne"
@@ -116,12 +122,17 @@ export type Dispositif = {
     | "Office français de la biodiversité"
     | "Région Bourgogne-Franche-Comté"
     | "Région Auvergne-Rhône-Alpes"
-    | "Association pour la transition Bas Carbone"
     | "Région Nouvelle-Aquitaine"
     | "Agence de Développement Economique de Corse"
     | "Agence de Tourisme de la Corse"
     | "Région Guadeloupe"
-    | "Avere-France";
+    | "Avere-France"
+    | "Centre National du Livre"
+    | "Banque de France";
+  /**
+   * Le contact en cas de question, peut être un lien vers le formulaire, un mail ou une url.
+   */
+  "contact question"?: string;
   /**
    * Les autres opérateurs peuvent être des opérateurs co-financeurs, ou des partenaires du dispositif. Ils doivent être différents de l'opérateur de contcat.
    */
@@ -185,6 +196,12 @@ export type Dispositif = {
     [k: string]: unknown;
   };
   /**
+   * Données d'éligibilite du programme. Sous format codifié pour traitements automatiques
+   */
+  eligibilityData?: {
+    [k: string]: unknown;
+  };
+  /**
    * Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.
    */
   publicodes: {
@@ -236,7 +253,6 @@ export type Dispositif = {
 );
 export type Operators =
   | "ADEME"
-  | "ASP"
   | "Agence de l'Eau Loire-Bretagne"
   | "Agence de l'Eau Rhône-Méditerranée-Corse"
   | "Agence de l'Eau"
@@ -252,7 +268,6 @@ export type Operators =
   | "EcoCO2"
   | "France Rénov'"
   | "InvestEU"
-  | "La Poste"
   | "Ministère de la Transition Écologique"
   | "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
   | "Région Bretagne"
@@ -274,9 +289,10 @@ export type Operators =
   | "Office français de la biodiversité"
   | "Région Bourgogne-Franche-Comté"
   | "Région Auvergne-Rhône-Alpes"
-  | "Association pour la transition Bas Carbone"
   | "Région Nouvelle-Aquitaine"
   | "Agence de Développement Economique de Corse"
   | "Agence de Tourisme de la Corse"
   | "Région Guadeloupe"
-  | "Avere-France";
+  | "Avere-France"
+  | "Centre National du Livre"
+  | "Banque de France";

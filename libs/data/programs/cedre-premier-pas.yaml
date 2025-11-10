@@ -53,6 +53,7 @@ description longue: >-
   prévention des risques, etc.).
 illustration: images/TEE_ampoule.png
 opérateur de contact: Région Sud (PACA)
+contact question: mailto:relationentrepriseusager@maregionsud.fr
 url: https://www.maregionsud.fr/vos-aides/detail/cedre-premiers-pas
 nature de l'aide: étude
 montant du financement: >-
@@ -62,6 +63,9 @@ objectifs:
   - description: >-
       Prenez contact avec un conseiller afin de vérifier l'éligibilité de votre
       projet.
+    liens:
+      - lien: mailto:relationentrepriseusager@maregionsud.fr
+        texte: relationentrepriseusager@maregionsud.fr
   - description: >-
       Sélectionnez la thématique sur laquelle vous souhaitez être accompagné :
       impact environnemental, mobilité, consommation d'énergie, empreinte

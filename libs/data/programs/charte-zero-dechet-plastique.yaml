@@ -1,8 +1,14 @@
 titre: Charte "zéro déchet plastique"
+metaTitre: Charte zéro déchet plastique – Zéro plastique en entreprise
 promesse: Engagez-vous dans une démarche de diminution des pollutions plastiques
 description: "Devenez signataire de la charte « zéro déchet plastique » et engagez votre entreprise sur un plan d'action de réduction de l’usage des plastiques à usage unique, sur l'optimisation de la gestion et du tri des déchets plastiques et l'adoption de solutions de réemploi. En adhérant à la charte \"zéro déchet plastique\" de votre région, vous intégrez\_la communauté des signataires animée par l’Agence Régionale pour la Biodiversité et l’Environnement (ARBE) et bénéficiez de ressources et retours d'expériences de autres signataires pour vous aider dans la mise en œuvre de vos actions."
+metaDescription: >-
+  Rejoignez la charte zéro plastique et engagez votre entreprise dans une
+  démarche de réduction de l’usage des plastiques à usage unique, de tri et de
+  réemploi.
 illustration: images/TEE_ampoule.png
 opérateur de contact: Agence Régionale Biodiversité et Environnement
+contact question: mailto:c.poulin@arbe-regionsud.org
 url: >-
   https://www.arbe-regionsud.org/1375-2-chartes-zero-dechet-plastique.html#anchor147544
 nature de l'aide: étude
@@ -12,23 +18,31 @@ activable en autonomie: oui
 objectifs:
   - description: >-
       Prenez connaissance et signez la charte « zéro déchet plastique » pour
-      engager votre entreprise dans cette démarche. Une fois signée,
-      transmettez-la à l'ARBE par mail à l'adresse : c.poulin@arbe-regionsud.org
+      engager votre entreprise dans cette démarche.
     liens:
       - lien: >-
           https://www.arbe-regionsud.org/Block/download/?id=236629&filename=Entreprises-et-Associations-Demarche-ecoexemplaire-Charte-052024.pdf
         texte: Télécharger la charte
   - description: >-
-      Mettez en place un groupe de travail interne "zéro déchet plastique" dans
-      votre entreprise pour assurer l'élaboration et le suivi d'un plan
-      d'action, et participer à la dynamique de la communauté.
+      Contactez la référente de la charte "zéro déchet plastique" de votre
+      région pour poser vos éventuelles questions et transmettre la charte
+      d'engagement signée.
+    liens:
+      - lien: https://c.poulin@arbe-regionsud.org
+        texte: c.poulin@arbe-regionsud.org
   - description: >-
-      Complétez votre fiche "plan d'action" et transmettez-la par mail à l’ARBE
-      dans les 3 mois suivants la signature de la charte.
+      Mettez en place un groupe de travail interne "zéro déchet plastique" dans
+      votre entreprise pour assurer l'élaboration d'un plan d'action.
     liens:
       - lien: >-
           https://www.arbe-regionsud.org/Block/download/?id=236624&filename=Entreprises-et-Associations-Demarche-eco-exemplaire-Plan-dActions.docx
         texte: Téléchargez le plan d'action à compléter
+  - description: >-
+      Finalisez votre fiche "plan d'action" et transmettez-la par mail à l’ARBE
+      dans les 3 mois suivants la signature de la charte.
+    liens:
+      - lien: mailto:c.poulin@arbe-regionsud.org
+        texte: Contacter par mail
   - description: L'ARBE se charge ensuite d'analyser votre candidature.
   - description: >-
       Deux ans après la signature de la Charte, évaluez les résultats de votre

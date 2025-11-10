@@ -3,14 +3,22 @@ promesse: >-
   Réalisez une étude sur le modèle de l'économie de la fonctionnalité pour votre
   produit
 description: >-
-  Vous souhaitez développer un service innovant en alternative à la fourniture
-  d’un produit ? L’ADEME peut vous aider à financer une étude pour vous aider à
-  définir votre nouvelle offre de services. Une phase de sensibilisation vous
-  permettra de découvrir les différentes dimensions du modèle de l'économie de
-  la fonctionnalité et de la coopération. Une phase pratique vous invitera a
-  questionner l’organisation de votre entreprise, vos relations partenariales,
-  ainsi que votre modèle de revenus, dans le but d'élaborer une nouvelle offre
-  de service.
+  Vous souhaitez développer une offre de service innovante en alternative à la
+  fourniture d’un produit ? L’ADEME vous soutient dans cette démarche en
+  finançant une étude pour vous aider à définir et structurer votre nouvelle
+  offre. Cette étude se compose de deux phases :
+
+
+  - **Une phase de sensibilisation**, pour vous familiariser avec le modèle de
+  l’économie de la fonctionnalité, qui privilégie l’usage d’un produit plutôt
+  que sa simple possession.
+
+
+  - **Une phase pratique**, pour réfléchir à l’organisation de votre entreprise,
+  vos relations partenariales et votre modèle économique. Vous serez accompagné
+  dans la définition de vos sources de revenus et dans la mise en place de
+  solutions adaptées pour faire évoluer votre modèle vers un service durable et
+  innovant.
 description longue: >-
   L’économie de la fonctionnalité est une démarche économique de transformation
   progressive des entreprises, des collectivités et des citoyens. Elle s’appuie
@@ -22,14 +30,15 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000712
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-a-leconomie-fonctionnalite-cooperation?cible=79
 nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
           https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Soutien%20EFC%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx

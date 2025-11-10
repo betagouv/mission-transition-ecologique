@@ -27,8 +27,9 @@ export default class Config extends ConfigCommon {
     return this.isProduction() || process.env['VITE_MATOMO_ENABLE'] === 'true'
   }
 
-  static get baseUrl() {
-    return process.env['BASE_URL']
+  static get baseUrl(): string | undefined {
+    const config = useRuntimeConfig()
+    return (config.public.siteUrl as string | undefined) || undefined
   }
 
   static get posthogApiKey() {

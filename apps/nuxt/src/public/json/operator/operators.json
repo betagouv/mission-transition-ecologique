@@ -1,0 +1,257 @@
+[
+  {
+    "operator": "ADEME",
+    "filterCategories": [
+      "ADEME"
+    ]
+  },
+  {
+    "operator": "Agence de l'Eau Loire-Bretagne",
+    "filterCategories": [
+      "Agence de l'eau"
+    ]
+  },
+  {
+    "operator": "Agence de l'Eau Rhône-Méditerranée-Corse",
+    "filterCategories": [
+      "Agence de l'eau"
+    ]
+  },
+  {
+    "operator": "Agence de l'Eau",
+    "filterCategories": [
+      "Agence de l'eau"
+    ]
+  },
+  {
+    "operator": "Banque Publique d'Investissement France",
+    "filterCategories": [
+      "Bpifrance"
+    ]
+  },
+  {
+    "operator": "Breizh Fab",
+    "filterCategories": [
+      "Opérateurs territoriaux"
+    ]
+  },
+  {
+    "operator": "CCI Bretagne",
+    "filterCategories": [
+      "CCI"
+    ]
+  },
+  {
+    "operator": "CCI ou CMA",
+    "filterCategories": [
+      "CCI",
+      "CMA"
+    ]
+  },
+  {
+    "operator": "Chambre de Commerce et de l'Industrie",
+    "filterCategories": [
+      "CCI"
+    ]
+  },
+  {
+    "operator": "Centre Technique des Industries Mécaniques",
+    "filterCategories": [
+      "Opérateurs territoriaux"
+    ]
+  },
+  {
+    "operator": "Chambre des Métiers et de l'Artisanat",
+    "filterCategories": [
+      "CMA"
+    ]
+  },
+  {
+    "operator": "DDFIP",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "DREAL Bretagne",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "EcoCO2",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "France Rénov'",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "InvestEU",
+    "filterCategories": []
+  },
+  {
+    "operator": "Ministère de la Transition Écologique",
+    "filterCategories": [
+      "État"
+    ]
+  },
+  {
+    "operator": "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Région Bretagne",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Grand Est",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Saur",
+    "filterCategories": []
+  },
+  {
+    "operator": "Suez",
+    "filterCategories": []
+  },
+  {
+    "operator": "Union des industries et métiers de la métallurgie",
+    "filterCategories": [
+      "OP"
+    ]
+  },
+  {
+    "operator": "Véolia Eau",
+    "filterCategories": []
+  },
+  {
+    "operator": "Centre national d'enseignement à distance",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Voies Navigables de France",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Région Centre-Val de Loire",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Occitanie",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Hauts-de-France",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Île-de-France",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Normandie",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Pays de la Loire",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Sud (PACA)",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Agence Régionale Biodiversité et Environnement",
+    "filterCategories": [
+      "OFB/ARB"
+    ]
+  },
+  {
+    "operator": "Office français de la biodiversité",
+    "filterCategories": [
+      "OFB/ARB"
+    ]
+  },
+  {
+    "operator": "Région Bourgogne-Franche-Comté",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Auvergne-Rhône-Alpes",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Région Nouvelle-Aquitaine",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Agence de Développement Economique de Corse",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Agence de Tourisme de la Corse",
+    "filterCategories": [
+      "Opérateurs territoriaux"
+    ]
+  },
+  {
+    "operator": "Région Guadeloupe",
+    "filterCategories": [
+      "Régions"
+    ]
+  },
+  {
+    "operator": "Avere-France",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Centre National du Livre",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Banque de France",
+    "filterCategories": []
+  }
+]

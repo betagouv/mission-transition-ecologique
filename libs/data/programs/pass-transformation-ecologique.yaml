@@ -11,77 +11,53 @@ description: >-
   vos équipements d'économies d’eau, des gestions des déchets, d'économies
   d'énergie et de digitalisation de vos processus.
 description longue: >-
-  • Les dépenses éligibles doivent s’inscrire dans un programme d’investissement
-  de 10 000 € minimum. 
+  - Les dépenses éligibles doivent s’inscrire dans un programme d’investissement
+  de 10 000 € minimum.
 
-  • Les dépenses éligibles peuvent être des investissements en matériel neuf ou
+  - Les dépenses éligibles peuvent être des investissements en matériel neuf ou
   d’occasion, garantis 6 mois min. avec un montant unitaire de chaque dépense de
   1 000 € HT minimum.
 
 
   Les investissements matériels éligibles sont les suivants :
 
-  Production de chaleur et de froid :
 
-  • Géothermie sur champ de sondes et géo structures énergétiques
-
-  • Géothermie sur eau de nappe, sur eau de mer et sur eaux usées
-
-  • Géocooling
-
-  • Pompe à chaleur
-
-  • Solaire thermique
-
-  • Chaudière biomasse
-
-
-  Economie circulaire et gestion des déchets :
-
-  • Système de récupération des eaux de pluie
-
-  • Système de réutilisation des eaux usées
-
-  • Compacteurs mécanique (cartons, plastiques, textiles et toutes autres
-  matières valorisables…) et/ou broyeurs de végétaux
-
-  • Equipements de tri et systèmes de recyclage
-
-  Sobriété énergétique / optimisation/accessibilité :
-
-  • Systèmes de management et de stockage de l’énergie/ Système domotique pour
-  le suivi, la gestion ou la régulation de la consommation
-
-  • Capteurs/ éclairage de détection automatique
-
-  • Isolation thermique des réseaux de chaleur
-
-  • Étanchéité des réseaux
-
-  • Exosquelette
-
-  • Investissements spécifiques sur l’accessibilité pour les personnes en
-  situation de handicap ne relevant pas des obligations règlementaires
-
-
-  Digitalisation :
-
-  • Acquisition d’un système global de gestion ERP, GPAO (système de gestion de
-  la production d’assistée par ordinateur) ou de système de cybersécurité.
-
+  - Production de chaleur et de froid :
+    - Géothermie sur champ de sondes et géo structures énergétiques
+    - Géothermie sur eau de nappe, sur eau de mer et sur eaux usées
+    - Géocooling
+    - Pompe à chaleur
+    - Solaire thermique
+    - Chaudière biomasse
+  - Economie circulaire et gestion des déchets :
+    - Système de récupération des eaux de pluie
+    - Système de réutilisation des eaux usées
+    - Compacteurs mécanique (cartons, plastiques, textiles et toutes autres matières valorisables…) et/ou broyeurs de végétaux
+    - Equipements de tri et systèmes de recyclage
+  - Sobriété énergétique / optimisation/accessibilité :
+    - Systèmes de management et de stockage de l’énergie/ Système domotique pour le suivi, la gestion ou la régulation de la consommation
+    - Capteurs/ éclairage de détection automatique
+    - Isolation thermique des réseaux de chaleur
+    - Étanchéité des réseaux
+    - Exosquelette
+    - Investissements spécifiques sur l’accessibilité pour les personnes en situation de handicap ne relevant pas des obligations règlementaires
+  - Digitalisation :
+    - Acquisition d’un système global de gestion ERP, GPAO (système de gestion de la production d’assistée par ordinateur) ou de système de cybersécurité.
 
   Dépenses éligibles complémentaires uniquement pour les entreprises relevant du
   tourisme :
 
-  • Dépenses de végétalisation et des-imperméabilisation des sols
 
-  • Création du 1er outil de visite interactive
+  - Dépenses de végétalisation et des-imperméabilisation des sols
 
-  • Acquisition de systèmes de transport collectif électrique gratuits pour les
+  - Création du 1er outil de visite interactive
+
+  - Acquisition de systèmes de transport collectif électrique gratuits pour les
   touristes
 fin de validité: 31/12/2025
 illustration: images/TEE_ampoule.png
 opérateur de contact: Région Occitanie
+contact question: https://www.laregion.fr/Contactez-la-Region
 url: https://hubentreprendre.laregion.fr/financement/pass-transformation-ecologique
 nature de l'aide: financement
 montant du financement: Jusqu'à 50 % des dépenses éligibles, dans un maximum de 10 000 €
@@ -144,7 +120,7 @@ publicodes:
       - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-      - effectif <= 20
+      - effectif <= 19
   entreprise . a une categorie legale eligible:
     toutes ces conditions:
       - microentrepreneur = non

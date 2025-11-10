@@ -11,27 +11,27 @@ description: >-
   structure de soutien des panneaux, etc.
 description longue: >-
   Les dépenses éligibles sont les dépenses d’investissement liées aux travaux, à
-  savoir les coûts suivants : 
+  savoir les coûts suivants :
 
 
-  • Désamiantage de la toiture, y compris diagnostic préalable (sur l’ensemble
+  - Désamiantage de la toiture, y compris diagnostic préalable (sur l’ensemble
   des pans de toiture)
 
-  • Renforcement de la toiture. 
+  - Renforcement de la toiture.
 
-  • Couverture permettant l’installation solaire et/ou reprise de l’étanchéité
-  et/ou de l’isolation (hors coûts de l’installation photovoltaïque). 
+  - Couverture permettant l’installation solaire et/ou reprise de l’étanchéité
+  et/ou de l’isolation (hors coûts de l’installation photovoltaïque).
 
-  • Structure de soutien des panneaux, type ombrière, etc. 
+  - Structure de soutien des panneaux, type ombrière, etc.
 
-  • Coût de raccordement amont au projet : rénovation des colonnes montantes de
+  - Coût de raccordement amont au projet : rénovation des colonnes montantes de
   bâtiment pour le passage de gaines électriques, viabilisation de parcelle,
-  etc. 
+  etc.
 
-  • Toutes missions de bureau de contrôles et bureau d’étude (diagnostics
-  préalables, étude sol, étude structure, ERP, EDVV13, etc.). 
+  - Toutes missions de bureau de contrôles et bureau d’étude (diagnostics
+  préalables, étude sol, étude structure, ERP, EDVV13, etc.).
 
-  • Dispositifs de protection foudre et de sécurisation des toitures. 
+  - Dispositifs de protection foudre et de sécurisation des toitures.
 
 
   Les opérations citées ci-dessus ne seront éligibles que si elles ont pour
@@ -40,6 +40,7 @@ description longue: >-
   future installation photovoltaïque seront priorisés.
 illustration: images/TEE_eolienne.png
 opérateur de contact: Région Sud (PACA)
+contact question: mailto:relationentrepriseusager@maregionsud.fr
 url: >-
   https://www.maregionsud.fr/vos-aides/detail/plan-solaire-dispositif-pare-pour-le-solaire
 nature de l'aide: financement

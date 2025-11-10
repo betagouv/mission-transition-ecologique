@@ -24,6 +24,8 @@
 </template>
 
 <script setup lang="ts">
+import { MetaSeo } from '@/tools/metaSeo'
+import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/tools/contact'
 import { LegalNoticePropsThirdParty, LegalNotice } from '@incubateur-ademe/legal-pages-vue3'
@@ -36,6 +38,7 @@ definePageMeta({
 
 const privacyPolicy = useRouter().resolve({ name: RouteName.PersonalData }).href
 const siteUrl = useRouter().resolve({ name: RouteName.Homepage }).href
+const navigation = new Navigation()
 
 const thirdParties: LegalNoticePropsThirdParty[] = [
   {
@@ -50,5 +53,17 @@ const thirdParties: LegalNoticePropsThirdParty[] = [
   }
 ]
 
-useHead(MetaRobots.indexFollow())
+const description = 'Informations relatives aux mentions légales du site Mission Transition écologique des entreprises.'
+useSeoMeta(MetaSeo.get('Mentions légales', description))
+useSchemaOrg(defineWebPage({ description: description }))
+
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: navigation.getHrefByRouteName(RouteName.Legal)
+    }
+  ],
+  ...MetaRobots.indexFollow()
+})
 </script>

@@ -1,56 +1,51 @@
-titre: Booster Éco-Énergie Tertiaire
+titre: Booster Entreprises
 promesse: Bénéficiez d'un accompagnement pour la rénovation énergétique de vos bâtiments
 description: >-
-  Vous avez des bâtiments d'activités tertiaires et souhaitez réduire vos
-  consommations d'énergie ? L’ADEME soutient financièrement le coût de
-  prestations d’audit pour obtenir un plan d’action et un plan de financement,
-  ainsi que l’ingénierie de réalisation de travaux d'économie d'énergie.
+  Vous avez des bâtiments tertiaires et souhaitez réduire vos consommations
+  d’énergie ? L’ADEME peut financer l’**ingénierie des travaux**, qu’il s’agisse
+  d’une mission de **maîtrise d’œuvre** pour la rénovation énergétique ou d’une
+  **mission d’assistance à maîtrise d’ouvrage** (AMO) pour un Contrat de
+  Performance Énergétique (CPE).
 description longue: >-
   • Votre entreprise dispose de bâtiments de moins de 1 000 m² à usage tertiaire
-  ? Le financement "Booster Entreprises Eco-Energie Tertiaire" offre un soutien
-  pour réaliser un audit énergétique, un plan d'action sur 2 ans et l'ingénierie
-  pour la réalisation de vos travaux d'économie d'énergie.
+  ? \
+
+  Le financement "Booster Entreprises" offre un soutien pour réaliser vos
+  travaux d'économie d'énergie.
 
 
   • Votre entreprise dispose de bâtiments de 1 000 m², et plus, à usage
-  tertiaire ? Le dispositif "Booster Entreprises Eco-Energie Tertiaire" offre un
-  soutien uniquement à la phase 3, à savoir l'ingénierie pour la mise en œuvre
-  d'actions et de travaux permettant l’atteinte des exigences du Dispositif Eco
-  Energie Tertiaire (DEET). Le DEET est une obligation réglementaire engageant
-  les acteurs du tertiaire vers la sobriété énergétique. Issu du décret 2019?771
-  du 23 juillet 2019 dit « décret tertiaire », il impose une réduction
-  progressive de la consommation d’énergie dans les bâtiments et parties de
-  bâtiments de 1 000 m², et plus, à usage tertiaire afin de lutter contre le
-  changement climatique.
+  tertiaire ? \
+
+  Le dispositif "Booster Entreprises" offre un soutien uniquement à la phase 3,
+  à savoir l'ingénierie pour la mise en œuvre d'actions et de travaux permettant
+  l’atteinte des exigences du Dispositif Eco Energie Tertiaire (DEET). Le DEET
+  est une obligation réglementaire engageant les acteurs du tertiaire vers la
+  sobriété énergétique. Issu du décret 2019?771 du 23 juillet 2019 dit « décret
+  tertiaire », il impose une réduction progressive de la consommation d’énergie
+  dans les bâtiments et parties de bâtiments de 1 000 m², et plus, à usage
+  tertiaire afin de lutter contre le changement climatique.
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000744
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/booster-entreprises-reduire-facture-energetique-gagner-valeur-verte
-nature de l'aide: étude
-montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
+nature de l'aide: financement
+montant du financement: Jusqu'à 80% du coût des travaux, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Booster%20Entreprises%20Eco-Energie%20Tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
+          https://agir.ademe.fr/sites/default/files/Booster%20entreprises%20Eco%20Energie%20Tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
         texte: Conditions éligibilité et financement
   - description: >-
-      Identifiez le prestataire qui va vous accompagner pour réaliser l'audit
-      énergétique et faites réaliser un devis.
-  - description: >-
-      Définissez la prestation nécessaire pour mettre en œuvre vos travaux : une
-      mission de maîtrise d’œuvre rénovation énergétique / ou une mission
-      d'assistance à maitrise d'ouvrage pour la mise en oeuvre d'un Contrat de
-      Performance Énergétique (CPE).
-  - description: >-
-      Choisissez les prestataires qui vous accompagneront pour vos missions
-      d'ingénierie et faites réaliser des devis. Ces prestataires doivent
-      répondre aux critères de qualification et compétences décrits dans les
-      cahiers des charges de l'ADEME.
+      Choisissez des prestataires qualifiés pour l’audit énergétique,
+      l’accompagnement et/ou les missions d’ingénierie. Leurs devis seront à
+      joindre à votre dossier.
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
       - lien: https://agirpourlatransition.ademe.fr/user/register
@@ -58,7 +53,7 @@ objectifs:
   - description: >-
       Déposez votre demande d'aide auprès de l'ADEME : informations
       administratives, description du projet, rapport d'audit énergétique,
-      détails techniques et financiers, etc. A ce stade, votre audit ou missions
+      détails techniques et financiers, etc. À ce stade, vos missions
       d'ingénierie ne doivent pas avoir commencé !
     liens:
       - lien: >-
@@ -69,10 +64,7 @@ conditions d'éligibilité:
     - Moins de 5000 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
-    - >-
-      Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Corse,
-      Guadeloupe, Guyane, La Réunion, Martinique, Mayotte, Occitanie, Polynésie
-      française
+    - France et territoires d'outre-mer
   secteur d'activité:
     - Secteur tertiaire
   nombre d'années d'activité:
@@ -90,7 +82,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - entreprise . est propriétaire de ses locaux
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
@@ -99,7 +90,6 @@ publicodes:
     toutes ces conditions:
       - a un effectif éligible
       - a une categorie legale eligible
-      - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
       - effectif <= 4999
@@ -128,16 +118,3 @@ publicodes:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est rénover mon bâtiment
       - questionnaire . objectif prioritaire . est ma performance énergétique
-  entreprise . est dans une zone géographique éligible:
-    une de ces conditions:
-      - région = Auvergne-Rhône-Alpes
-      - région = Bourgogne-Franche-Comté
-      - région = Bretagne
-      - région = Corse
-      - région = Guadeloupe
-      - région = Guyane
-      - région = La Réunion
-      - région = Martinique
-      - région = Mayotte
-      - région = Occitanie
-      - région = Polynésie française

@@ -1,5 +1,5 @@
-import { ThemeId } from '@tee/data'
 import { z } from 'zod'
+import { ThemeId } from '../theme/types'
 import { stringBoolean } from '../validator'
 import { BuildingProperty, MobilityStatus, StructureSize, WasteManagementStatus, WasteSortingStatus, YesNo } from './types/types'
 

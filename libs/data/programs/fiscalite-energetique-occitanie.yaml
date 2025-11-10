@@ -3,28 +3,45 @@ promesse: >-
   Entreprise électro-intensive, réduisez votre facture d’électricité en
   bénéficiant d’un taux réduit de fiscalité énergétique
 description: >-
-  Vous êtes une entreprise électro-intensive ? Vous pouvez bénéficier d'un
-  accompagnement pour vous aider à obtenir un remboursement de votre trop-payé
-  et accéder au taux réduit de fiscalité auquel vous avez droit.
+  Réduisez durablement votre facture d’électricité grâce à un accompagnement
+  pour obtenir le taux réduit de fiscalité énergétique auquel votre entreprise
+  peut avoir droit.
+
+
+  Cet accompagnement permet de :
+
+
+  - vérifier votre éligibilité à la réduction de contribution au service public
+  de l’électricité (CSPE) en analysant votre consommation, votre secteur et
+  votre procédé industriel.
+
+
+  - constituer et déposer le dossier de déclaration auprès de votre fournisseur
+  d’énergie et du service des douanes.
+
+
+  - former un référent en interne pour assurer chaque année les démarches et
+  maintenir les exonérations obtenues.
 illustration: images/TEE_ampoule.png
 opérateur de contact: Chambre de Commerce et de l'Industrie
+contact question: formulaire
 url: https://www.occitanie.cci.fr/produit/optimiser-sa-fiscalite-energetique
 nature de l'aide: étude
 coût de l'accompagnement: Sur devis
 durée de l'accompagnement: 1 à 2 jours de prestation répartis sur 3 mois
 objectifs:
   - description: >-
-      Situer la consommation d’énergie de votre entreprise par rapport à celle
-      de votre secteur d’activité, analyser le procédé industriel de votre
-      entreprise et collecter vos informations déclaratives afin de vérifier
-      votre éligibilité.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Préparer et déposer le dossier de déclaration auprès du fournisseur
-      d’énergie et du service des douanes.
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Prendre en charge la montée en compétence d’une personne dans l’entreprise
-      qui pourra effectuer chaque année les formalités nécessaires, et
-      pérenniser les exonérations obtenues.
+      Définissez avec l’expert le périmètre du diagnostic, la méthode et le
+      calendrier.
+  - description: Lancez le diagnostic avec l'expert proposé par votre CCI.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

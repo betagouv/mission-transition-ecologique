@@ -1,10 +1,24 @@
 titre: Imprim'vert
 promesse: Réduisez l’impact de l’impression et obtenez le label Imprim’Vert®
 description: >-
-  Vous souhaitez réduire l'impact de votre activité du secteur de l’imprimerie
-  en faisant des choix stratégiques, écologiques et made in France ? Valoriser
-  votre engagement environnemental auprès de vos clients par l’obtention du
-  label Imprim’Vert®.
+  Vous souhaitez réduire l’impact environnemental de votre imprimerie en faisant
+  des choix stratégiques, écologiques et Made in France ? Le label Imprim’Vert®
+  valorise votre engagement et renforce la confiance de vos clients.
+
+
+  Avec l’accompagnement de la Chambre de Métiers et de l’Artisanat (CMA), vous
+  réalisez un **diagnostic environnemental**, première étape clé pour obtenir le
+  label. Ce diagnostic permet de :\
+
+  – **identifier les actions à mener pour répondre aux critères du cahier des
+  charges**,\
+
+  – **limiter l’impact de votre activité sur l’environnement** (gestion des
+  déchets dangereux, stockage sécurisé, réduction des produits toxiques…).
+
+
+  Vous pourrez ensuite constituer un dossier conforme aux exigences de la
+  marque.
 description longue: >-
   La marque Imprim'vert® a pour objectif de favoriser la mise en place par les
   entreprises exerçant les activités d'impression, d'actions concrètes
@@ -18,27 +32,31 @@ description longue: >-
 illustration: images/TEE_ampoule.png
 opérateur de contact: Chambre des Métiers et de l'Artisanat
 autres opérateurs:
-  - CCI ou CMA
+  - Chambre de Commerce et de l'Industrie
+  - Chambre des Métiers et de l'Artisanat
+contact question: formulaire
 url: https://www.artisanat.fr/metiers/labels-qualifications/label-imprim-vert
 nature de l'aide: étude
 coût de l'accompagnement: Sur devis, de 150 € à 450 € HT
 durée de l'accompagnement: 1 journée
 objectifs:
   - description: >-
-      Réaliser un diagnostic lors d'une visite sur site par un conseiller CMA
-      référent Imprim’Vert®.
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
   - description: >-
-      Obtenir des préconisations sur votre démarche environnementale dans le but
-      d’être conforme au cahier des charges du label (déchets dangereux,
-      sécurisation des stockages des produits liquides dangereux, non
-      utilisation de produits toxiques, sensibilisation des clients et salariés,
-      consommations énergétiques).
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
   - description: >-
-      Bénéficier de l'expertise de votre conseiller pour le montage de votre
-      dossier pour présentation au jury.
+      Planifiez et réalisez le diagnostic environnemental de votre entreprise
+      avec l’expert CMA.
   - description: >-
-      Mettre en avant votre engagement pour valoriser l’entreprise auprès des
-      clients et être référencé sur le site Imprim'Vert.
+      Bénéficiez d'une aide pour constituer le dossier de référencement conforme
+      au cahier des charges Imprim’Vert®,
+  - description: >-
+      Soumettez votre dossier à un comité d’attribution régional pour
+      l'obtention du label Imprim’Vert®.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

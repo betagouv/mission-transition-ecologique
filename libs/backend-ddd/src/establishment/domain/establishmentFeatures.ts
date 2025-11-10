@@ -115,12 +115,12 @@ export default class EstablishmentFeatures {
     return { resultCount: result.resultCount, establishments: transformedEstablishments }
   }
 
-  private _computeBestStructureSizeGuess(establishement: Establishment): StructureSize | undefined {
-    if (establishement.legalCategory === LegalCategory.EI) {
+  private _computeBestStructureSizeGuess(establishment: Establishment): StructureSize | undefined {
+    if (establishment.legalCategory === LegalCategory.EI) {
       return StructureSize.EI
     }
 
-    switch (establishement.workforceRange) {
+    switch (establishment.workforceRange) {
       case '00': // 0 employee
       case '01': // 1 to 2 employees
       case '02': // 3 to 5 employees
