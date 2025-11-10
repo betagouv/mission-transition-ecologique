@@ -49,7 +49,7 @@ début de validité: 03/06/2019
 fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000692
+contact question: https://contact-agir.ademe.fr/contact?id_dsp=DSP000692
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/audit-rehabilitation-dinstallations-solaires-thermiques-collectives
 nature de l'aide: étude
@@ -62,7 +62,7 @@ objectifs:
       projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9habilitation%20installations%20solaires%20thermiques%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/R%C3%A9habilitation%20installations%20solaires%20thermiques%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez un prestataire "Reconnu Garant de l'Environnement" (RGE) ou
@@ -73,7 +73,7 @@ objectifs:
         texte: L'annuaire des professionnels RGE
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre demande d'aide : informations administratives, description

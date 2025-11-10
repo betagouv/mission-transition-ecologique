@@ -488,7 +488,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000713",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000713",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/aides-reemploi-emballages-contenants?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 80% du coût de l'étude ou 60% de l'investissement",
@@ -497,7 +497,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9emploi%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/R%C3%A9emploi%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -512,7 +512,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -778,7 +778,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -796,7 +796,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -805,7 +805,7 @@
         "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/entreprises/aides-financieres/2024/assistance-a-maitrise-douvrage-mise-place-dune-chaufferie-biomasse",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/assistance-a-maitrise-douvrage-mise-place-dune-chaufferie-biomasse",
             "texte": "Déposer mon dossier"
           }
         ]
@@ -980,7 +980,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000697",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000697",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/audit-energetique-industrie",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
@@ -989,7 +989,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20transition%20%C3%A9cologique%20industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20transition%20%C3%A9cologique%20industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -1007,7 +1007,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -1630,8 +1630,8 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000744",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/booster-entreprises-reduire-facture-energetique-gagner-valeur-verte",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000744",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2025/booster-entreprises-reduire-votre-facture-energetique-et-gagner-en-valeur-verte",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 80% du coût des travaux, dans un maximum de 100 000 €",
     "objectifs": [
@@ -1651,7 +1651,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -4605,7 +4605,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000724",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000724",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/subvention-etudes-dalimentation-durable",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
@@ -4614,7 +4614,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20alimentation%20durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20alimentation%20durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -4626,7 +4626,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -4864,7 +4864,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000720",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000720",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-gestion-biodechets-acteurs-economiques?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
@@ -4873,7 +4873,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20investissements%20gestion%20biod%C3%A9chets%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20investissements%20gestion%20biod%C3%A9chets%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -4885,7 +4885,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -5074,7 +5074,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000711",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000711",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/realisation-detudes-creation-lextension-modernisation-centres-tri-dechets",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 50 000 €",
@@ -5083,7 +5083,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20centres%20de%20tri%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20centres%20de%20tri%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -5095,7 +5095,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -5286,7 +5286,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -5298,7 +5298,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -5491,7 +5491,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000737",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000737",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/diagnostic-energetique-etude-dopportunite-multi-enr-serres",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 50 000 €",
@@ -5500,7 +5500,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -5512,7 +5512,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -5694,7 +5694,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000712",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000712",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-a-leconomie-fonctionnalite-cooperation?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude",
@@ -5703,7 +5703,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Soutien%20EFC%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Soutien%20EFC%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -5715,7 +5715,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -5933,7 +5933,7 @@
     "fin de validité": "31/12/2023",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000708",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000708",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/actions-qualite-lair-territoires-contentieux",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% pour une étude et 55% pour un investissement",
@@ -5945,7 +5945,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -6188,13 +6188,19 @@
     "fin de validité": "31/12/2023",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000323",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Opportunit%C3%A9%20et%20faisabilit%C3%A9%20d%C3%A9ploiement%20hydrog%C3%A8ne%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202023.pdf",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000323",
+    "url": "https://agirpourlatransition.ademe.fr/sites/default/files/Opportunit%C3%A9%20et%20faisabilit%C3%A9%20d%C3%A9ploiement%20hydrog%C3%A8ne%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202023.pdf",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
     "objectifs": [
       {
-        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet."
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Opportunit%C3%A9%20et%20faisabilit%C3%A9%20d%C3%A9ploiement%20hydrog%C3%A8ne%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202023.pdf",
+            "texte": "Conditions d'éligibilité"
+          }
+        ]
       },
       {
         "description": "Choisissez le prestataire qui va vous accompagner pour mener votre étude d'opportunité ou de faisabilité et obtenez un devis."
@@ -6373,7 +6379,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000742",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000742",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-travaux-depollution-dune-friche-fonds-vert",
     "nature de l'aide": "étude",
     "montant du financement": "Variable selon projet",
@@ -6382,7 +6388,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20reconversion%20friches%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20reconversion%20friches%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf",
             "texte": "Conditions d'éligibilité et financement"
           }
         ]
@@ -6391,7 +6397,7 @@
         "description": "Choisissez le prestataire qui va vous accompagner pour mener cette étude sur la base du cahier des charges et obtenez un devis.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20et%20travaux%20de%20d%C3%A9pollution%20d%27une%20friche%20-%20Recommandations%20-%20%C3%89tudes%20de%20pollution%20des%20sols.xlsx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20et%20travaux%20de%20d%C3%A9pollution%20d%27une%20friche%20-%20Recommandations%20-%20%C3%89tudes%20de%20pollution%20des%20sols.xlsx",
             "texte": "Cahier des charges"
           }
         ]
@@ -6590,7 +6596,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000714",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000714",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-lutte-contre-gaspillage-alimentaire",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
@@ -6599,7 +6605,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20lutte%20contre%20le%20gaspillage%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20lutte%20contre%20le%20gaspillage%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -6611,7 +6617,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -6836,7 +6842,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -6854,7 +6860,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -7080,7 +7086,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000705",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000705",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-installation-hydroelectrique?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
@@ -7089,7 +7095,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20pour%20une%20installation%20hydro%C3%A9lectrique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20pour%20une%20installation%20hydro%C3%A9lectrique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -7101,7 +7107,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -7321,7 +7327,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/entreprises/sites/default/files/%C3%89tudes%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -7333,7 +7339,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -7342,7 +7348,7 @@
         "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/entreprises/aides-financieres/2025/etudes-prealables-a-construction-dune-installation-methanisation",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-prealables-a-construction-dune-installation-methanisation",
             "texte": "Déposer mon dossier"
           }
         ]
@@ -7561,7 +7567,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000699",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000699",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-faisabilite-performance-energetique-decarbonation-dentreprises",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
@@ -7570,7 +7576,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20transition%20%C3%A9cologique%20industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20transition%20%C3%A9cologique%20industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -7582,7 +7588,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -7764,7 +7770,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000725",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000725",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-decoconception-produits-services",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 150 000 €",
@@ -7773,7 +7779,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20%C3%A9coconception%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20%C3%A9coconception%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -7785,7 +7791,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -8050,7 +8056,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000728",
+    "contact question": "https://contact-agir.ademe.fr/ontact?id_dsp=DSP000728",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-faisabilite-lautoconsommation-electrique-photovoltaique",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 € HT",
@@ -8059,7 +8065,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tude%20autoconsommation%20photovolta%C3%AFque%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tude%20autoconsommation%20photovolta%C3%AFque%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -8071,7 +8077,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -8537,7 +8543,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000708",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000708",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/amelioration-qualite-lair-territoires-ppa-depassements-recents?cible=79&region=35",
     "nature de l'aide": "étude",
     "montant du financement": "Variable selon projet",
@@ -8546,7 +8552,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Am%C3%A9lioration%20de%20la%20qualit%C3%A9%20de%20l%27air%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Am%C3%A9lioration%20de%20la%20qualit%C3%A9%20de%20l%27air%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions d'éligibilité et de financement"
           }
         ]
@@ -8555,7 +8561,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -8800,7 +8806,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000756",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000756",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/projets-recherche-developpement?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Selon projet",
@@ -8809,7 +8815,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/RDI%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/RDI%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -8827,7 +8833,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -9029,7 +9035,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -9041,7 +9047,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -9239,7 +9245,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000722",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000722",
     "url": "https://agir.ademe.fr/aides-financieres/2025/soutien-aux-etudes-et-diagnostics-pour-le-reemploi-reutilisation-et-la?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
@@ -9248,7 +9254,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20RRR%20hors%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20RRR%20hors%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions d'éligibilité et de financement"
           }
         ]
@@ -9260,7 +9266,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -9496,7 +9502,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000692",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000692",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/audit-rehabilitation-dinstallations-solaires-thermiques-collectives",
     "nature de l'aide": "étude",
     "montant du financement": "Selon la surface et l'ancienneté de l’installation solaire, dans un maximum de 30 000€ HT",
@@ -9505,7 +9511,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9habilitation%20installations%20solaires%20thermiques%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/R%C3%A9habilitation%20installations%20solaires%20thermiques%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -9523,7 +9529,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -9746,7 +9752,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000734",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000734",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-reseaux-chaleur-froid-alimentes-enr-enrr",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
@@ -9755,7 +9761,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -9773,7 +9779,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -9968,7 +9974,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -9986,7 +9992,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -10263,7 +10269,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/collectivites/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -10281,7 +10287,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -10481,7 +10487,7 @@
     "fin de validité": "31/12/2024",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000528",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000528",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/test-reponse-thermique-terrain-geothermie",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
@@ -10502,7 +10508,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -11109,11 +11115,11 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Fonds%20Tourisme%20Durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Fonds%20Tourisme%20Durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
             "texte": "Conditions éligibilité et financement"
           },
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Fonds%20Tourisme%20Durable%20-%20P%C3%A9rim%C3%A8tre%20communes%20%C3%A9ligibles%20-%2001-06-2023.xlsx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Fonds%20Tourisme%20Durable%20-%20P%C3%A9rim%C3%A8tre%20communes%20%C3%A9ligibles%20-%2001-06-2023.xlsx",
             "texte": "Liste des communes éligibles"
           }
         ]
@@ -11122,7 +11128,7 @@
         "description": "Choisissez un prestataire parmi la les partenaires \"Fonds Tourisme Durable\" pour mener votre diagnostic. Ensemble, définissez les actions prioritaires pour engager la transition écologique de votre entreprise.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Liste%20contacts%20partenaires%20Fonds%20Tourisme%20Durable%2012-02-2024.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Liste%20contacts%20partenaires%20Fonds%20Tourisme%20Durable%2006-06-2024.pdf",
             "texte": "Liste des partenaires Fonds Tourisme Durable"
           }
         ]
@@ -11131,13 +11137,13 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
       },
       {
-        "description": "Après avoir effectué le diagnostic, vous pouvez déposer votre demande d'aide pour votre projet de transition écologique : informations administratives, description du projet, détails techniques et financiers, etc. A ce stade, votre projet ne doit pas avoir commencé !",
+        "description": "Après avoir effectué le diagnostic, vous pouvez déposer votre demande d'aide pour votre projet de transition écologique : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
         "liens": [
           {
             "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/fonds-tourisme-durable-restaurateurs-hebergeurs-accelerez-transition",
@@ -11389,7 +11395,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000810",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000810",
     "url": "https://www.demarches-simplifiees.fr/commencer/fonds-vert-3-territoires-industrie",
     "nature de l'aide": "financement",
     "montant du financement": "Variable selon le projet",
@@ -13241,13 +13247,19 @@
     "fin de validité": "31/12/2023",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000414",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Stations%20bioGNV%20agricole%20et%20territorial%20-%20Cahier%20des%20charges%20.pdf",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000414",
+    "url": "https://agirpourlatransition.ademe.fr/sites/default/files/Stations%20bioGNV%20agricole%20et%20territorial%20-%20Cahier%20des%20charges%20.pdf",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 70% des coûts, dans un maximum de 200 000 €",
     "objectifs": [
       {
-        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet."
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Stations%20bioGNV%20agricole%20et%20territorial%20-%20Cahier%20des%20charges%20.pdf",
+            "texte": "Conditions d'éligibilité et financements"
+          }
+        ]
       },
       {
         "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, étude de faisabilité, etc. A ce stade, votre investissement ne doit pas avoir été realisé !"
@@ -13454,7 +13466,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000706",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000706",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installations-production-chaleur-froid-a-partir-boucle-deau-temperee",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
@@ -13463,7 +13475,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Boucle%20d%27eau%20temp%C3%A9r%C3%A9e%20%C3%A0%20%C3%A9nergie%20g%C3%A9othermique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Boucle%20d%27eau%20temp%C3%A9r%C3%A9e%20%C3%A0%20%C3%A9nergie%20g%C3%A9othermique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -13472,7 +13484,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -13692,7 +13704,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000711",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000711",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/creation-extension-modernisation-dun-centre-tri-dechets-valorisation-matiere?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Selon le type de projet",
@@ -13701,7 +13713,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Investissements%20CDT%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Investissements%20CDT%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -13710,7 +13722,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -13947,7 +13959,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20des%20installations%20biomasse%20%C3%A9nergie%20-%202024.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20des%20installations%20biomasse%20%C3%A9nergie%20-%202024.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -13956,7 +13968,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -14180,7 +14192,7 @@
     "fin de validité": "15/01/2024",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000342",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000342",
     "url": "https://agir.ademe.fr/aides-financieres/aap/developpement-de-la-construction-et-de-la-renovation-hors-site-crhos?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Selon la taille de l'entreprise et la zone géographique",
@@ -14192,7 +14204,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -14385,7 +14397,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Contrat%20Chaleur%20Renouvelable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Contrat%20Chaleur%20Renouvelable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -14394,7 +14406,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -14615,7 +14627,7 @@
     "fin de validité": "30/09/2024",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000154",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000154",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20220328/contrat-patrimonial-developpement-chaleur-renouvelable-occitanie?cible=79&region=41",
     "nature de l'aide": "financement",
     "montant du financement": "Selon les types d'investissement",
@@ -14624,7 +14636,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/AAP%20Contrat%20Patrimonial%20Chaleur%20Renouvelable%20en%20Occitanie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20-%20Mars%202022.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/AAP%20Contrat%20Patrimonial%20Chaleur%20Renouvelable%20en%20Occitanie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20-%20Mars%202022.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -14633,7 +14645,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -14863,7 +14875,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000715",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000715",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installation-dequipements-lutte-contre-gaspillage",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu’à 60 % des coûts d'investissement, 65% pour la Corse et 75% pour les DOM",
@@ -14872,7 +14884,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Installation%20%C3%A9quipements%20lutte%20contre%20le%20gaspillage%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Installation%20%C3%A9quipements%20lutte%20contre%20le%20gaspillage%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -14884,7 +14896,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -15116,7 +15128,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000718",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000718",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/investissements-decoconception-ameliorer-performance-environnementale?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Entre 15 % à 60 % selon le projet, dans un maximum de 300 000 €",
@@ -15125,7 +15137,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Travaux%20investissements%20%C3%A9coconception%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Travaux%20investissements%20%C3%A9coconception%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -15134,7 +15146,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -15406,7 +15418,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/G%C3%A9othermie%20de%20surface%20et%20a%C3%A9rothermie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/G%C3%A9othermie%20de%20surface%20et%20a%C3%A9rothermie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -15415,7 +15427,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -15644,7 +15656,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%20G%C3%A9othermie%20profonde%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%20G%C3%A9othermie%20profonde%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -15653,7 +15665,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -15872,7 +15884,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000716",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000716",
     "url": "https://agir.ademe.fr/aides-financieres/2025/gestion-des-biodechets-des-acteurs-economiques",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 60 % selon la taille de l'entreprise et son territoire",
@@ -15881,7 +15893,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Investissements%20gestion%20biod%C3%A9chets%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Investissements%20gestion%20biod%C3%A9chets%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -15890,7 +15902,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -16119,7 +16131,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Investissements%20installations%20de%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Investissements%20installations%20de%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -16128,7 +16140,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -16361,7 +16373,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PAC%20solaire%20pour%20la%20production%20d%27ECS%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/PAC%20solaire%20pour%20la%20production%20d%27ECS%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -16370,7 +16382,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -16590,7 +16602,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000732",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000732",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/equipements-lapprovisionnement-chaufferies-bois-fonds-chaleur-plan-relance",
     "nature de l'aide": "financement",
     "montant du financement": "Entre 20 à 55% selon investissement",
@@ -16599,7 +16611,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Approvisionnement%20biomasse%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Approvisionnement%20biomasse%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -16608,7 +16620,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -16789,7 +16801,7 @@
     "fin de validité": "31/12/2024",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000256",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000256",
     "url": "https://agir.ademe.fr/aides-financieres/aap/infrastructures-de-recharge-pour-les-vehicules-electriques-dans-les-stations",
     "nature de l'aide": "financement",
     "montant du financement": "Selon la puissance de l’installation",
@@ -16979,7 +16991,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9cup%C3%A9ration%20de%20chaleur%20fatale%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/R%C3%A9cup%C3%A9ration%20de%20chaleur%20fatale%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -16988,7 +17000,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -17174,7 +17186,7 @@
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000717",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000717",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-investissements-reemploi-reutilisation-reparation-hors-emballages",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 75% des coûts, dans un maximum de 200 000 €",
@@ -17183,7 +17195,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/RRR%20hors%20emballages%20-%20Investissement%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/RRR%20hors%20emballages%20-%20Investissement%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -17192,7 +17204,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -17427,7 +17439,7 @@
     "fin de validité": "31/05/2024",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000394",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000394",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230413/renouvellement-forestier",
     "nature de l'aide": "financement",
     "montant du financement": "Entre 37,5% à 80% selon le projet",
@@ -17436,7 +17448,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Renouvellement%20Forestier%20-%20Cahier%20des%20charges%20-%20Volet%201%20-%202023.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Renouvellement%20Forestier%20-%20Cahier%20des%20charges%20-%20Volet%201%20-%202023.pdf",
             "texte": "Cahier des charges"
           }
         ]
@@ -17619,7 +17631,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9seaux%20chaleur%20et%20froid%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/R%C3%A9seaux%20chaleur%20et%20froid%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -17628,7 +17640,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -17823,7 +17835,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Solaire%20thermique%20eau%20chaude%20sanitaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Solaire%20thermique%20eau%20chaude%20sanitaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -17832,7 +17844,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -18050,7 +18062,7 @@
     "fin de validité": "31/12/2023",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000302",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000302",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/installations-production-deau-chaude-solaire-thermique-outre-mer",
     "nature de l'aide": "financement",
     "montant du financement": "Aide forfaitaire en fonction du type d’installation",
@@ -18294,7 +18306,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Syst%C3%A8me%20Solaire%20Combin%C3%A9%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Syst%C3%A8me%20Solaire%20Combin%C3%A9%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -18303,7 +18315,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -18517,7 +18529,7 @@
     "fin de validité": "31/10/2025",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000686",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000686",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20241115/developper-velotourisme",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu’à 55 % des coûts d'investissement",
@@ -18544,7 +18556,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -19154,7 +19166,7 @@
     "fin de validité": "06/10/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000798",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000798",
     "url": "https://agir.ademe.fr/aides-financieres/aap/fonds-economie-circulaire-ormat-2025-objectif-recyclage-matieres",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 80% d'aide, dans un maximum selon le projet",
@@ -19175,7 +19187,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -19417,7 +19429,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PACTE%20Industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/PACTE%20Industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -19426,7 +19438,7 @@
         "description": "Choisissez un bureau d'étude parmi les prestataires référencés dans le cadre du programme PACTE Industrie.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PACTE%20Industrie%20-%20Annuaire%20prestataires.xlsx",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/PACTE%20Industrie%20-%20Annuaire%20prestataires.xlsx",
             "texte": "Annuaire des prestataires"
           }
         ]
@@ -19435,7 +19447,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -22716,7 +22728,7 @@
     "fin de validité": "30/11/2024",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000398",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000398",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20230418/sobriete-resilience-territoires?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Selon projet",
@@ -23141,10 +23153,10 @@
     "description": "Le guichet « Tremplin pour la transition écologique des PME » permet de faire évoluer votre entreprise en cohérence avec la transition écologique. L’ADEME soutient le financement rapide des investissements et études dont vous avez besoin.",
     "metaDescription": "Facilitez la transition écologique de votre PME avec le dispositif Tremplin de l’ADEME : financement rapide des investissements et études.",
     "début de validité": "01/01/2023",
-    "fin de validité": "31/12/2025",
+    "fin de validité": "16/10/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000743",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000743",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/tremplin-transition-ecologique-pme",
     "nature de l'aide": "financement",
     "montant du financement": "de 2 500 € HT à 200 000 € HT",
@@ -23153,7 +23165,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Tremplin%20pour%20la%20transition%20%C3%A9cologique%20des%20PME%20_%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20_%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Tremplin%20pour%20la%20transition%20%C3%A9cologique%20des%20PME%20_%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20_%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -23165,7 +23177,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -23229,7 +23241,7 @@
       },
       "validity": {
         "start": "01/01/2023",
-        "end": "31/12/2025"
+        "end": "16/10/2025"
       },
       "priorityObjectives": [
         "mobility",
@@ -30015,7 +30027,7 @@
     "fin de validité": "07/10/2024",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000677",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000677",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20240703/appel-a-projets-vehicules-lourds-electriques-2024-programme-cee-e-trans",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 90 000 € HT par véhicule",
@@ -30024,7 +30036,7 @@
         "description": "Préparez votre dossier et ses pièces justificatives.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/E-trans%20-%20Cahier%20des%20charges%20-%20V2%20-%202024.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/E-trans%20-%20Cahier%20des%20charges%20-%20V2%20-%202024.pdf",
             "texte": "Liste des critères et des pièces justificatives"
           }
         ]
@@ -30033,7 +30045,7 @@
         "description": "Créer un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -30865,7 +30877,7 @@
     "montant du financement": "Jusqu'à 20% des dépenses éligibles",
     "objectifs": [
       {
-        "description": "Complétez la \"fiche premier contact\" pour décrire votre projet de rénovation. ",
+        "description": "Complétez la \"fiche premier contact\" pour décrire votre projet de rénovation.",
         "liens": [
           {
             "lien": "https://www.auvergnerhonealpes.fr/media/3039/download?inline",
@@ -33698,7 +33710,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier de demande de financement.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -34730,7 +34742,7 @@
     "fin de validité": "15/05/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000664",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000664",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20240530/decarbonation-lindustrie-decarb-ind-25",
     "nature de l'aide": "financement",
     "montant du financement": "Selon projet",
@@ -34748,7 +34760,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -38036,7 +38048,7 @@
     "fin de validité": "15/10/2025",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000688",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000688",
     "url": "https://agir.ademe.fr/aides-financieres/aap/corimer-navires-bas-carbone",
     "nature de l'aide": "financement",
     "montant du financement": "60% des dépenses engagées",
@@ -39583,7 +39595,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -39797,7 +39809,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -42037,7 +42049,7 @@
     "fin de validité": "12/02/2026",
     "illustration": "images/TEE_ampoule.png",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000790",
+    "contact question": "https://contact-agir.ademe.fr/contact?id_dsp=DSP000790",
     "url": "https://agir.ademe.fr/aides-financieres/aap/deter-decarboner-le-tertiaire-0",
     "nature de l'aide": "financement",
     "montant du financement": "1,5 M€ d’aide maximale par site, selon la nature du projet",
@@ -42055,7 +42067,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -42509,7 +42521,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/user/register",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -42708,7 +42720,7 @@
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Banque de France",
     "contact question": "mailto:pierre.meignant@banque-france.fr",
-    "url": "file:///Users/betagouv/Downloads/20251003_Presentation.Indicateur_Climat_BDF-4.pdf",
+    "url": "https://www.banque-france.fr/fr/votre-service/entreprises/la-banque-de-france-vous-aide/indicateur-climat",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "gratuit",
     "durée de l'accompagnement": "variable",
@@ -42872,5 +42884,201 @@
       }
     },
     "id": "indicateur-climat"
+  },
+  {
+    "titre": "Eco-diagnostic Commerce",
+    "promesse": "Ajustez votre politique RH aux enjeux de la transition écologique",
+    "description": "Ce diagnostic permet de dresser un état des lieux de votre activité et de mettre en lumière les leviers pour engager votre entreprise sur la voie de la transition écologique. Il s'agit d'un accompagnement de 2 à 5 jours qui vous permettra :\n\n- de faire un **état des lieux global** des besoins à couvrir dans votre entreprise en matière de transition écologique, **sous l'angle RH**.\n- d'**établir un plan d'action** pour atteindre le cap fixé par votre entreprise.\n- de vous accompagner dans la **conduite des chantiers** identifiés comme\\\n  prioritaires.",
+    "illustration": "images/TEE_eolienne.png",
+    "opérateur de contact": "Opcommerce",
+    "contact question": "https://www.lopcommerce.com/contact/",
+    "url": "https://www.lopcommerce.com/l-opcommerce/offre-de-services/eco-diagnostic-commerce/",
+    "nature de l'aide": "étude",
+    "montant du financement": "de 50 à 100% du coût de la prestation",
+    "objectifs": [
+      {
+        "description": "Créez un compte sur le site de l'Opcommerce.",
+        "liens": [
+          {
+            "lien": "https://auth.lopcommerce.com/accounts/create",
+            "texte": "Créer mon compte Opcommerce"
+          }
+        ]
+      },
+      {
+        "description": "Répondez au Test-flash conçu par l’Opcommerce pour mesurer le niveau de maturité de votre entreprise en matière de transition écologique.",
+        "liens": [
+          {
+            "lien": "https://- <https://www.lopcommerce.com/l-opcommerce/offre-de-services/test-flash-transition-ecologique/>",
+            "texte": "Test-flash\\"
+          }
+        ]
+      },
+      {
+        "description": "Contactez votre conseiller Opcommerce pour exprimer votre intérêt pour l'Eco-diagnostic Commerce.",
+        "liens": [
+          {
+            "lien": "https://www.lopcommerce.com/contact/",
+            "texte": "Contacter mon conseiller"
+          }
+        ]
+      },
+      {
+        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
+      },
+      {
+        "description": "Lancez le diagnostic avec l'expert proposé par votre Opcommerce."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises du secteur du commerce"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "G",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "R",
+          "S",
+          "U"
+        ]
+      },
+      "priorityObjectives": [
+        "rh",
+        "environmental"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter",
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "eco-diagnostic-commerce"
   }
 ]

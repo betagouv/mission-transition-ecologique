@@ -20,7 +20,7 @@ début de validité: 26/08/2024
 fin de validité: 07/10/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000677
+contact question: https://contact-agir.ademe.fr/contact?id_dsp=DSP000677
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20240703/appel-a-projets-vehicules-lourds-electriques-2024-programme-cee-e-trans
 nature de l'aide: financement
@@ -29,11 +29,11 @@ objectifs:
   - description: Préparez votre dossier et ses pièces justificatives.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/E-trans%20-%20Cahier%20des%20charges%20-%20V2%20-%202024.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/E-trans%20-%20Cahier%20des%20charges%20-%20V2%20-%202024.pdf
         texte: Liste des critères et des pièces justificatives
   - description: Créer un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier et ses pièces justificatives impérativement avant le

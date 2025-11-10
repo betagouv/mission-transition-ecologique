@@ -54,7 +54,7 @@ début de validité: 01/01/2025
 fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000742
+contact question: https://contact-agir.ademe.fr/contact?id_dsp=DSP000742
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-travaux-depollution-dune-friche-fonds-vert
 nature de l'aide: étude
@@ -65,14 +65,14 @@ objectifs:
       projet .
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20reconversion%20friches%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20reconversion%20friches%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf
         texte: Conditions d'éligibilité et financement
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener cette étude
       sur la base du cahier des charges et obtenez un devis.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20et%20travaux%20de%20d%C3%A9pollution%20d%27une%20friche%20-%20Recommandations%20-%20%C3%89tudes%20de%20pollution%20des%20sols.xlsx
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20et%20travaux%20de%20d%C3%A9pollution%20d%27une%20friche%20-%20Recommandations%20-%20%C3%89tudes%20de%20pollution%20des%20sols.xlsx
         texte: Cahier des charges
   - description: >-
       Déposez votre demande d'aide : informations administratives, description
