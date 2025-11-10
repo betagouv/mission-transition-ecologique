@@ -1,9 +1,8 @@
 import { nafMapping } from '@tee/data/static'
 import { Maybe } from 'true-myth'
 import { NafRepository as NafRepositoryType } from '../../domain/spi'
-import { CompanyActivityType, NAF1 } from '@tee/common'
+import { CompanyActivityType, NAF1, normalizeString } from '@tee/common'
 import { Result } from 'true-myth'
-import { normalizeString } from '../../../common/string'
 
 export class NafRepository implements NafRepositoryType {
   private _lastNafCode = ''

@@ -19,12 +19,12 @@ export default class EstablishmentService {
     )
   }
 
-  public search(query: string, resultCount: number): Promise<Result<EstablishmentSearch, Error>> {
-    return this.establishmentFeatures.search(query, resultCount)
+  public async search(query: string, resultCount: number): Promise<Result<EstablishmentSearch, Error>> {
+    return await this.establishmentFeatures.search(query, resultCount)
   }
 
-  public getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
-    return this.establishmentFeatures.getBySiret(siret)
+  public async getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
+    return await this.establishmentFeatures.getBySiret(siret)
   }
 
   public searchNAF(query: string): Result<CompanyActivityType[], Error> {

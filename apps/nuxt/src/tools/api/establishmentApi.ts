@@ -20,7 +20,7 @@ export default class EstablishmentApi extends RequestApi {
     }
   }
 
-  async searchActivities(searchTerm: string): Promise<ResultApi<CompanyActivityType[]>> {
-    return await super.getJson<CompanyActivityType[]>(`${this.url}searchNAF?searchTerm=${searchTerm}`)
+  async searchActivities(): Promise<ResultApi<CompanyActivityType[]>> {
+    return await super.getJson<CompanyActivityType[]>(`${this.url}searchNAF`)
   }
 }
