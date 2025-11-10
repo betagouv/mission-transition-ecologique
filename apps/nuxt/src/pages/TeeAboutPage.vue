@@ -37,6 +37,7 @@ import Navigation from '@/tools/navigation'
 import { Color, RouteName } from '@/types'
 import { MetaRobots } from '@/tools/metaRobots'
 import { useRouter } from 'vue-router'
+import { MetaSeo } from '@/tools/metaSeo'
 
 definePageMeta({
   path: '/qui-sommes-nous',
@@ -54,9 +55,10 @@ const goToCtaLink = () => {
   })
 }
 
-// const description = "TODO."
-// useSeoMeta(MetaSeo.get('About-us', description))
-// useSchemaOrg(defineWebPage({ description: description }))
+const description =
+  'Découvrez le service public Transition écologique des entreprises, porté par l’ADEME, qui simplifie l’accès aux aides et accompagne les TPE et PME dans leur transition.'
+useSeoMeta(MetaSeo.get('Qui sommes-nous ? - Transition écologique des entreprises', description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 useHead({
   link: [

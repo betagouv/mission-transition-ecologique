@@ -5,7 +5,8 @@ export type FeedbackButtonType = {
 
 export enum FeedbackButtonPosition {
   Form = 'form',
-  Footer = 'footer'
+  Footer = 'footer',
+  AboutUs = 'qui-sommes-nous'
 }
 
 export type FeedbackType = {

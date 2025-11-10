@@ -34,11 +34,7 @@
         pour qu’elle reste simple, efficace et en phase avec les besoins de ses utilisateurs.
       </li>
     </ul>
-
-    <TeeDsfrButton>
-      <template #default> TODO Je donne mon avis </template>
-    </TeeDsfrButton>
-
+    <FeedbackLink :position="FeedbackButtonPosition.AboutUs" />
     <p class="fr-pt-2w">
       Au cours des douze derniers mois, la plateforme a enregistré
       <strong>plus de 84&nbsp;000 visites</strong> et permis à plusieurs milliers d’entreprises de trouver les
@@ -49,4 +45,5 @@
 
 <script setup lang="ts">
 import Contact from '@/tools/contact'
+import { FeedbackButtonPosition } from '@/tools/feedback/feedbackType'
 </script>

@@ -19,7 +19,7 @@
       </TeeDsfrButton>
     </div>
 
-    <ul class="fr-grid-row fr-grid-row--center fr-grid-row-md--left fr-raw-list fr-mt-2w">
+    <ul class="fr-grid-row fr-raw-list fr-mt-2w">
       <li
         v-for="project in sortedProjects"
         :key="project.id"
@@ -58,7 +58,7 @@ onNuxtReady(async () => {
 })
 
 const { projects } = storeToRefs(useProjectStore())
-const filteredProjects = ProjectFilter.filterByHighlight(projects)
+const filteredProjects = ProjectFilter.byHighlight(projects)
 const sortedProjects = computed(() => {
   return ProjectSorter.byHighlight(filteredProjects.value)
 })

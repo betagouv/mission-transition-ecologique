@@ -51,7 +51,7 @@ export default class ProjectFilter {
     return programFilterValue !== undefined && programFilterValue !== ''
   }
 
-  static readonly filterByHighlight = (projects: Ref<ProjectType[] | undefined>) => {
+  static readonly byHighlight = (projects: Ref<ProjectType[] | undefined>) => {
     return computed(() => {
       if (!projects.value) {
         return undefined

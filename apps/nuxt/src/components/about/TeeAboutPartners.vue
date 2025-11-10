@@ -50,18 +50,21 @@
         le Réseau Entreprendre, les Entreprises s’engagent, La Clef Verte, etc.).
       </p>
     </div>
-    <div class="fr-col-12 fr-col-md-5 fr-pl-md-4w">
-      <TeeNumberCard
+    <ul class="fr-col-12 fr-col-md-5 fr-pl-md-4w">
+      <li
         v-for="(card, index) in cards"
         :key="index"
         class="fr-my-2w"
-        :number="card.number"
-        :title="card.title"
-        :color="card.color"
       >
-        <div v-html="card.description"></div>
-      </TeeNumberCard>
-    </div>
+        <TeeNumberCard
+          :number="card.number"
+          :title="card.title"
+          :color="card.color"
+        >
+          <div v-html="card.description"></div>
+        </TeeNumberCard>
+      </li>
+    </ul>
   </section>
 </template>
 
@@ -93,5 +96,11 @@ const cards = [
 <style scoped>
 p:last-child {
   margin-bottom: 0;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 </style>
