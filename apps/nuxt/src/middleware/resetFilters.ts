@@ -1,7 +1,8 @@
 import Navigation from '@/tools/navigation'
 
-export default defineNuxtRouteMiddleware(() => {
-  if (new Navigation().isQuestionnaire()) {
+export default defineNuxtRouteMiddleware((to) => {
+  const navigation = Navigation.getInstance(to)
+  if (navigation.isQuestionnaire()) {
     useFiltersStore().resetFilters()
   }
 })

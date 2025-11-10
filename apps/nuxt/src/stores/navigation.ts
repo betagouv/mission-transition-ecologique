@@ -6,21 +6,10 @@ import type { UrlParam } from '@/types/navigation'
 import Navigation from '@/tools/navigation'
 import { ref, computed } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import {
-  type LocationQuery,
-  type LocationQueryValue,
-  type RouteLocationNormalizedLoaded,
-  type RouteLocationAsRelativeGeneric,
-  type Router,
-  RouteParamsGeneric,
-  RouteLocationRaw
-} from 'vue-router'
+import { type LocationQuery, type LocationQueryValue, type RouteLocationAsRelativeGeneric, RouteLocationRaw } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 
 export const useNavigationStore = defineStore('navigation', () => {
-  const router = ref<Router>()
-  const route = ref<RouteLocationNormalizedLoaded>()
-  const searchParams = ref<URLSearchParams>(new URLSearchParams())
   const stringOfSearchParams = ref<string>('')
   const tabSelectedOnList = ref<number>(0)
   const hasSpinner = ref<boolean>(false)
@@ -29,7 +18,7 @@ export const useNavigationStore = defineStore('navigation', () => {
   const isFromQuestionnaireCtaRegisterModal = ref<boolean>(false)
   const query = computed<Record<string, LocationQueryValue | LocationQueryValue[]>>(() => {
     const query: LocationQuery = {}
-    for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
+    for (const key of getURLSearchParams().keys()) {
       addQueryByKey(key, query)
     }
 
@@ -38,7 +27,7 @@ export const useNavigationStore = defineStore('navigation', () => {
 
   function addQueryByKey(key: string, query: LocationQuery) {
     if (!(key in query)) {
-      const values = searchParams.value.getAll(key)
+      const values = getURLSearchParams().getAll(key)
       query[key] = values.length > 1 ? values : values[0]
     }
 
@@ -47,7 +36,7 @@ export const useNavigationStore = defineStore('navigation', () => {
 
   function queryByUsedTrackId(usedTrackId: string) {
     const query: LocationQuery = {}
-    for (const key of new URLSearchParams(stringOfSearchParams.value).keys()) {
+    for (const key of getURLSearchParams().keys()) {
       if (key === usedTrackId) {
         break
       }
@@ -77,14 +66,6 @@ export const useNavigationStore = defineStore('navigation', () => {
     return route
   }
 
-  function setRouter(useRouter: Router) {
-    router.value = useRouter
-  }
-
-  function setRoute(useRoute: RouteLocationNormalizedLoaded) {
-    route.value = useRoute
-  }
-
   function updateSearchParams(query: LocationQuery) {
     Object.entries(query).forEach(([key, value]) => {
       updateSearchParam({ name: key, value: value } as UrlParam)
@@ -104,45 +85,40 @@ export const useNavigationStore = defineStore('navigation', () => {
     }
   }
 
-  function deleteSearchParam(name: string) {
-    const params = new URLSearchParams(searchParams.value.toString())
+  function deleteSearchParam(name: string, searchParams: URLSearchParams | undefined = undefined) {
+    const params = searchParams ?? getURLSearchParams()
     if (params.has(name)) {
       params.delete(name)
-      searchParams.value = params
-      setStringOfSearchParams()
+      setStringOfSearchParams(params)
     }
   }
 
+  function getURLSearchParams(): URLSearchParams {
+    return new URLSearchParams(stringOfSearchParams.value)
+  }
+
   function setSearchParam(name: string, value: string | string[]) {
+    const searchParams = getURLSearchParams()
     if (Array.isArray(value)) {
-      deleteSearchParam(name)
-      value.forEach((value) => searchParams.value.append(name, value))
+      deleteSearchParam(name, searchParams)
+      value.forEach((value) => searchParams.append(name, value))
     } else {
-      const params = new URLSearchParams(searchParams.value.toString())
-      params.set(name, value)
-      searchParams.value = params
+      searchParams.set(name, value)
     }
 
-    setStringOfSearchParams()
+    setStringOfSearchParams(searchParams)
   }
 
   function replaceBrowserHistory(): void {
     history.replaceState({}, '', `?${stringOfSearchParams.value}`)
   }
 
-  function setStringOfSearchParams() {
-    stringOfSearchParams.value = searchParams.value.toString()
+  function setStringOfSearchParams(searchParams: URLSearchParams) {
+    stringOfSearchParams.value = searchParams.toString()
   }
 
   function resetSearchParams() {
-    searchParams.value = new URLSearchParams()
     stringOfSearchParams.value = ''
-  }
-
-  function getAbsoluteUrlByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {
-    if (router.value) {
-      return new URL(router.value.resolve({ name: routeName, params: params }).href, window.location.origin).href
-    }
   }
 
   function setFromCtaRegisterModal(value: boolean) {
@@ -161,24 +137,18 @@ export const useNavigationStore = defineStore('navigation', () => {
   }
 
   return {
-    router,
-    route,
     query,
-    searchParams,
     tabSelectedOnList,
     hasSpinner,
     hasRegisterModal,
     isFromCtaRegisterModal,
     isFromQuestionnaireCtaRegisterModal,
     resetSearchParams,
-    setRouter,
-    setRoute,
     setSearchParams,
     updateSearchParam,
     deleteSearchParam,
     routeByTrackId,
     replaceBrowserHistory,
-    getAbsoluteUrlByRouteName,
     setFromCtaRegisterModal,
     setFromQuestionnaireCtaRegisterModal,
     resetFromCtaRegisterModal

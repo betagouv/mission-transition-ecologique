@@ -1,4 +1,3 @@
-import { useNavigationStore } from '@/stores/navigation'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import {
   TrackId,
@@ -16,6 +15,7 @@ import {
 } from '@/types'
 import RequestApi from '@/tools/api/requestApi'
 import Opportunity from '@/tools/opportunity'
+import Navigation from '@/tools/navigation'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 
 export default class OpportunityApi extends RequestApi {
@@ -105,14 +105,14 @@ export default class OpportunityApi extends RequestApi {
   private _generateCatalogLink(): string | undefined {
     if (this._opportunityType == OpportunityType.Program) {
       return (
-        useNavigationStore().getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
+        new Navigation().getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
           programId: this._slug as ProgramTypeForFront['id']
         }) ?? ''
       )
     }
     if (this._opportunityType == OpportunityType.Project) {
       return (
-        useNavigationStore().getAbsoluteUrlByRouteName(RouteName.CatalogProjectDetail, {
+        new Navigation().getAbsoluteUrlByRouteName(RouteName.CatalogProjectDetail, {
           projectSlug: this._slug as ProjectType['slug']
         }) ?? ''
       )

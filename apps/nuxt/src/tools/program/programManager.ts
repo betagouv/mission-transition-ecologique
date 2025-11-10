@@ -1,15 +1,15 @@
-import { useUsedTrackStore } from '@/stores/usedTrack'
 import ProgramApi from '@/tools/api/programApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
-import { ProgramTypeForFront, QuestionnaireData } from '@/types'
+import { QuestionnaireData } from '@/tools/questionnaire/questionnaireData'
+import { ProgramTypeForFront, QuestionnaireData as QuestionnaireDataType } from '@/types'
 
 export class ProgramManager {
   _useProgram = useProgramStore()
   _useNavigation = useNavigationStore()
 
-  async get(questionnaireData: QuestionnaireData = {}) {
+  async get(questionnaireData: QuestionnaireDataType = {}) {
     this._useNavigation.hasSpinner = true
     const resultApi = await this._getFromApi(questionnaireData)
     if (resultApi.isOk()) {
@@ -24,7 +24,7 @@ export class ProgramManager {
   }
 
   async getFiltered(onlyEligible: boolean | undefined = undefined) {
-    const questionnaireData = useUsedTrackStore().getQuestionnaireData()
+    const questionnaireData = QuestionnaireData.get()
     if (onlyEligible !== undefined) {
       questionnaireData.onlyEligible = onlyEligible
     }
@@ -70,11 +70,11 @@ export class ProgramManager {
     }
   }
 
-  private async _getFromApi(questionnaireData: QuestionnaireData = {}): Promise<ResultApi<ProgramTypeForFront[]>> {
+  private async _getFromApi(questionnaireData: QuestionnaireDataType = {}): Promise<ResultApi<ProgramTypeForFront[]>> {
     return await new ProgramApi(questionnaireData).get()
   }
 
   private async _getOneFromApi(id: string): Promise<ResultApi<ProgramTypeForFront>> {
-    return await new ProgramApi(useUsedTrackStore().getQuestionnaireData()).getOne(id)
+    return await new ProgramApi(QuestionnaireData.get()).getOne(id)
   }
 }
