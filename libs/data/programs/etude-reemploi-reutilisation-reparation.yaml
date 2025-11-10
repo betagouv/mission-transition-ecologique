@@ -37,7 +37,7 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000722
+contact question: https://contact-agir.ademe.fr/contact?id_dsp=DSP000722
 url: >-
   https://agir.ademe.fr/aides-financieres/2025/soutien-aux-etudes-et-diagnostics-pour-le-reemploi-reutilisation-et-la?cible=79
 nature de l'aide: étude
@@ -48,7 +48,7 @@ objectifs:
       projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20RRR%20hors%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20RRR%20hors%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
         texte: Conditions d'éligibilité et de financement
   - description: >-
       Choisissez le bureau d'étude qui va vous accompagner pour mener l'étude/le
@@ -56,7 +56,7 @@ objectifs:
       d’Ouvrage (AMO).
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du

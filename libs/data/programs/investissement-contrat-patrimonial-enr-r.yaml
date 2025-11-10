@@ -19,7 +19,7 @@ début de validité: 01/04/2022
 fin de validité: 30/09/2024
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000154
+contact question: https://contact-agir.ademe.fr/contact?id_dsp=DSP000154
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/20220328/contrat-patrimonial-developpement-chaleur-renouvelable-occitanie?cible=79&region=41
 nature de l'aide: financement
@@ -30,11 +30,11 @@ objectifs:
       projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/AAP%20Contrat%20Patrimonial%20Chaleur%20Renouvelable%20en%20Occitanie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20-%20Mars%202022.docx
+          https://agirpourlatransition.ademe.fr/sites/default/files/AAP%20Contrat%20Patrimonial%20Chaleur%20Renouvelable%20en%20Occitanie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20-%20Mars%202022.docx
         texte: Conditions éligibilité et financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du

@@ -39,7 +39,7 @@ début de validité: 17/01/2024
 fin de validité: 06/10/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000798
+contact question: https://contact-agir.ademe.fr/contact?id_dsp=DSP000798
 url: >-
   https://agir.ademe.fr/aides-financieres/aap/fonds-economie-circulaire-ormat-2025-objectif-recyclage-matieres
 nature de l'aide: financement
@@ -58,7 +58,7 @@ objectifs:
       / expérimentation).
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre demande d'aide : informations administratives, description

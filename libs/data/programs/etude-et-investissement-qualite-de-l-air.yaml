@@ -41,7 +41,7 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2023
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000708
+contact question: https://contact-agir.ademe.fr/contact?id_dsp=DSP000708
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/actions-qualite-lair-territoires-contentieux
 nature de l'aide: étude
@@ -52,7 +52,7 @@ objectifs:
       projet ou contactez un conseiller.
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du

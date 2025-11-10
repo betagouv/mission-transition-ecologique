@@ -29,9 +29,9 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.png
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000744
+contact question: https://contact-agir.ademe.fr/contact?id_dsp=DSP000744
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/booster-entreprises-reduire-facture-energetique-gagner-valeur-verte
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2025/booster-entreprises-reduire-votre-facture-energetique-et-gagner-en-valeur-verte
 nature de l'aide: financement
 montant du financement: Jusqu'à 80% du coût des travaux, dans un maximum de 100 000 €
 objectifs:
@@ -48,7 +48,7 @@ objectifs:
       joindre à votre dossier.
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre demande d'aide auprès de l'ADEME : informations

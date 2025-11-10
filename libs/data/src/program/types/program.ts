@@ -127,6 +127,7 @@ export type Dispositif = {
     | "Agence de Tourisme de la Corse"
     | "Région Guadeloupe"
     | "Avere-France"
+    | "Opcommerce"
     | "Centre National du Livre"
     | "Banque de France";
   /**
@@ -294,5 +295,6 @@ export type Operators =
   | "Agence de Tourisme de la Corse"
   | "Région Guadeloupe"
   | "Avere-France"
+  | "Opcommerce"
   | "Centre National du Livre"
   | "Banque de France";

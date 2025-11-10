@@ -64,7 +64,7 @@ début de validité: 06/02/2025
 fin de validité: 12/02/2026
 illustration: images/TEE_ampoule.png
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000790
+contact question: https://contact-agir.ademe.fr/contact?id_dsp=DSP000790
 url: https://agir.ademe.fr/aides-financieres/aap/deter-decarboner-le-tertiaire-0
 nature de l'aide: financement
 montant du financement: 1,5 M€ d’aide maximale par site, selon la nature du projet
@@ -78,7 +78,7 @@ objectifs:
         texte: Critères d'éligibilité
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre demande d'aide : informations administratives, description
