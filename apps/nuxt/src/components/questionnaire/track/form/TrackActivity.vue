@@ -36,11 +36,11 @@
   </TeeDsfrSearchBar>
 </template>
 <script lang="ts" setup>
+import { useEstablishmentStore } from '@/stores/establishment'
 import { TrackOptionsInput, CompanyActivityType, TrackOptionItem, Color } from '@/types'
 import { useDebounce } from '@vueuse/core'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import Translation from '@/tools/translation'
-import EstablishmentApi from '@/tools/api/establishmentApi'
 
 interface Props {
   option: TrackOptionsInput
@@ -48,6 +48,7 @@ interface Props {
 const props = defineProps<Props>()
 const emit = defineEmits(['updateSelection'])
 const selectedActivity = defineModel<CompanyActivityType>()
+const establishmentStore = useEstablishmentStore()
 const activityInput = ref<string>('')
 const activityResults = ref<CompanyActivityType[]>([])
 const isLoading = ref<boolean>(false)
@@ -75,10 +76,7 @@ const selectActivity = (activity: CompanyActivityType) => {
 }
 const searchActivity = async () => {
   isLoading.value = true
-  const results = await new EstablishmentApi().searchActivities(activityInput.value)
-  if (results.isOk()) {
-    activityResults.value = results.data
-  }
+  activityResults.value = await establishmentStore.searchActivities(activityInput.value)
   isLoading.value = false
 }
 function createData(): TrackOptionItem {

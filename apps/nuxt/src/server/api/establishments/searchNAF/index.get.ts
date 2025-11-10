@@ -9,22 +9,28 @@ const nafSearchQuerySchema = z.object({
 
 export default defineEventHandler(async (event: H3Event) => {
   const searchTerm = await getValidatedQuery(event, nafSearchQuerySchema.parse)
-  return await searchNafCached(event, searchTerm.searchTerm)
+
+  return searchNaf(searchTerm.searchTerm)
+  // return await _searchNafCached(event, searchTerm.searchTerm)
 })
 
-const searchNafCached = cachedFunction(
+const searchNaf = (searchTerm: string) => {
+  const activitiesResult = new EstablishmentService().searchNAF(searchTerm)
+
+  if (activitiesResult.isErr) {
+    Monitor.error('Error in searchActivities', { searchTerm, error: activitiesResult.error })
+    throw createError({
+      statusCode: 500,
+      statusMessage: activitiesResult.error.message
+    })
+  }
+
+  return activitiesResult.value
+}
+
+const _searchNafCached = cachedFunction(
   async (event: H3Event, searchTerm) => {
-    const activitiesResult = new EstablishmentService().searchNAF(searchTerm)
-
-    if (activitiesResult.isErr) {
-      Monitor.error('Error in searchActivities', { searchTerm, error: activitiesResult.error })
-      throw createError({
-        statusCode: 500,
-        statusMessage: activitiesResult.error.message
-      })
-    }
-
-    return activitiesResult.value
+    return searchNaf(searchTerm)
   },
   {
     name: 'nafSearch',

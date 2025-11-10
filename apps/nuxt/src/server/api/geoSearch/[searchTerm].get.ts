@@ -10,23 +10,28 @@ const geoSearchTermSchema = z.object({
 export default defineEventHandler(async (event) => {
   const routeParams = await getValidatedRouterParams(event, geoSearchTermSchema.parse)
 
-  return geoSearchCached(event, routeParams.searchTerm)
+  return geoSearch(routeParams.searchTerm)
+  // return await _geoSearchCached(event, routeParams.searchTerm)
 })
 
-const geoSearchCached = cachedFunction(
+const geoSearch = (searchTerm: string) => {
+  const citiesResult = new GeoSearchService().searchCities(searchTerm)
+
+  if (citiesResult.isErr) {
+    const err = citiesResult.error
+    Monitor.error('Error in searchCities', { searchTerm: searchTerm, error: err })
+    throw createError({
+      statusCode: 500,
+      statusMessage: 'Server internal error'
+    })
+  }
+
+  return citiesResult.value
+}
+
+const _geoSearchCached = cachedFunction(
   async (event: H3Event, searchTerm: string) => {
-    const citiesResult = new GeoSearchService().searchCities(searchTerm)
-
-    if (citiesResult.isErr) {
-      const err = citiesResult.error
-      Monitor.error('Error in searchCities', { searchTerm: searchTerm, error: err })
-      throw createError({
-        statusCode: 500,
-        statusMessage: 'Server internal error'
-      })
-    }
-
-    return citiesResult.value
+    return geoSearch(searchTerm)
   },
   {
     name: 'geosearch',
