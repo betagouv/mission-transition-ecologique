@@ -1,13 +1,9 @@
 import { useNavigationStore } from '@/stores/navigation'
 import { useTrackStore } from '@/stores/track'
-import Navigation from '@/tools/navigation'
 import {
   CompanyDataStorageKey,
   EstablishmentFront,
-  LegalCategory,
   type NextTrackRuleSet,
-  type QuestionnaireData,
-  StructureSize,
   type Track,
   TrackComponent,
   TrackId,
@@ -249,35 +245,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     }
   }
 
-  function getQuestionnaireData(): QuestionnaireData {
-    const questionnaireData: { [k: string]: any } = {}
-    usedTracks.value.forEach((usedTrack) => {
-      usedTrack.selected.forEach((trackOptions: TrackOptions) => {
-        const questionnaireDatum = trackOptions.questionnaireData || {}
-
-        Object.entries(questionnaireDatum).forEach(([key, value]) => {
-          questionnaireData[key] = value as unknown
-        })
-
-        if (usedTrack.id === TrackId.Siret && questionnaireDatum.legalCategory === LegalCategory.EI) {
-          questionnaireData.structure_size = StructureSize.EI
-        }
-      })
-    })
-    const navigation = Navigation.getInstance()
-    if (!navigation.isCatalog() && !navigation.isCatalogProgramDetail() && !navigation.isHomepage()) {
-      questionnaireData.onlyEligible = true
-    } else if (navigation.isCatalogPrograms()) {
-      questionnaireData.onlyEligible = false
-    }
-
-    questionnaireData.is_questionnaire = navigation.isQuestionnaire()
-
-    CompanyData.populateQuestionnaireData(questionnaireData)
-
-    return questionnaireData
-  }
-
   function setFromStorage() {
     for (const [companyDataStorageKey, value] of Object.entries(CompanyData.dataRef.value)) {
       if (value) {
@@ -353,7 +320,6 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     add,
     resetUsedTracks,
     findInQuestionnaireDataByTrackIdAndKey,
-    getQuestionnaireData,
     setFromNavigation,
     setFromStorage
   }

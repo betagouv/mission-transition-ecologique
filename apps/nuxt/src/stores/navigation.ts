@@ -6,20 +6,10 @@ import type { UrlParam } from '@/types/navigation'
 import Navigation from '@/tools/navigation'
 import { ref, computed } from 'vue'
 import { acceptHMRUpdate, defineStore } from 'pinia'
-import {
-  type LocationQuery,
-  type LocationQueryValue,
-  type RouteLocationNormalizedLoaded,
-  type RouteLocationAsRelativeGeneric,
-  type Router,
-  RouteParamsGeneric,
-  RouteLocationRaw
-} from 'vue-router'
+import { type LocationQuery, type LocationQueryValue, type RouteLocationAsRelativeGeneric, RouteLocationRaw } from 'vue-router'
 import { RouteName } from '@/types/routeType'
 
 export const useNavigationStore = defineStore('navigation', () => {
-  const router = ref<Router>()
-  const route = ref<RouteLocationNormalizedLoaded>()
   const searchParams = ref<URLSearchParams>(new URLSearchParams())
   const stringOfSearchParams = ref<string>('')
   const tabSelectedOnList = ref<number>(0)
@@ -77,14 +67,6 @@ export const useNavigationStore = defineStore('navigation', () => {
     return route
   }
 
-  function setRouter(useRouter: Router) {
-    router.value = useRouter
-  }
-
-  function setRoute(useRoute: RouteLocationNormalizedLoaded) {
-    route.value = useRoute
-  }
-
   function updateSearchParams(query: LocationQuery) {
     Object.entries(query).forEach(([key, value]) => {
       updateSearchParam({ name: key, value: value } as UrlParam)
@@ -139,12 +121,6 @@ export const useNavigationStore = defineStore('navigation', () => {
     stringOfSearchParams.value = ''
   }
 
-  function getAbsoluteUrlByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {
-    if (router.value) {
-      return new URL(router.value.resolve({ name: routeName, params: params }).href, window.location.origin).href
-    }
-  }
-
   function setFromCtaRegisterModal(value: boolean) {
     isFromQuestionnaireCtaRegisterModal.value = false
     isFromCtaRegisterModal.value = value
@@ -161,8 +137,6 @@ export const useNavigationStore = defineStore('navigation', () => {
   }
 
   return {
-    router,
-    route,
     query,
     searchParams,
     tabSelectedOnList,
@@ -171,14 +145,11 @@ export const useNavigationStore = defineStore('navigation', () => {
     isFromCtaRegisterModal,
     isFromQuestionnaireCtaRegisterModal,
     resetSearchParams,
-    setRouter,
-    setRoute,
     setSearchParams,
     updateSearchParam,
     deleteSearchParam,
     routeByTrackId,
     replaceBrowserHistory,
-    getAbsoluteUrlByRouteName,
     setFromCtaRegisterModal,
     setFromQuestionnaireCtaRegisterModal,
     resetFromCtaRegisterModal

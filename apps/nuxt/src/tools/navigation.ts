@@ -9,6 +9,7 @@ export default class Navigation {
   ) {}
 
   private static instance: Navigation
+
   static getInstance(route: RouteLocationNormalizedLoaded | undefined = undefined, router: Router | undefined = undefined) {
     if (!this.instance) {
       this.instance = new Navigation(route, router)
@@ -143,6 +144,12 @@ export default class Navigation {
     if (this._router) {
       const href = this._router.resolve({ name: routeName, params: params }).href
       return this.baseUrl ? `${this.baseUrl}${href}` : href
+    }
+  }
+
+  getAbsoluteUrlByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {
+    if (this._router) {
+      return new URL(this._router.resolve({ name: routeName, params: params }).href, window.location.origin).href
     }
   }
 
