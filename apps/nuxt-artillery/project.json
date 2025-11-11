@@ -19,6 +19,13 @@
         "command": "artillery run -e staging artillery-page.yml"
       }
     },
+    "test:pages:personal": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e personal artillery-page.yml"
+      }
+    },
     "test:pages:prod": {
       "executor": "nx:run-commands",
       "options": {

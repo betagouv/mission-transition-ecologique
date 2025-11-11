@@ -47,9 +47,11 @@
     "docker:python": "nx run @tee/etl:docker-python",
     "cleanup": "nx run @tee/nuxt:cleanup",
     "artillery:page:dev": "nx run @tee/nuxt-artillery:test:pages:dev",
+    "artillery:page:personal": "nx run @tee/nuxt-artillery:test:pages:personal",
     "artillery:page:staging": "nx run @tee/nuxt-artillery:test:pages:staging",
     "artillery:page:prod": "nx run @tee/nuxt-artillery:test:pages:prod",
     "artillery:load:dev": "nx run @tee/nuxt-artillery:test:load:dev",
+    "artillery:load:personal": "nx run @tee/nuxt-artillery:test:load:personal",
     "artillery:load:staging": "nx run @tee/nuxt-artillery:test:load:staging",
     "artillery:load:prod": "nx run @tee/nuxt-artillery:test:load:prod"
   },

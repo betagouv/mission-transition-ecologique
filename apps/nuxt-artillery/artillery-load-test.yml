@@ -8,6 +8,8 @@ config:
       target: https://mission-transition-ecologique.beta.gouv.fr
     staging:
       target: https://preprod.mission-transition-ecologique.incubateur.net
+    personal:
+      target: https://tee.yohannvalentin.fr
   phases:
     - duration: 300
       arrivalRate: 1
