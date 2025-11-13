@@ -7,7 +7,8 @@ import { TestType } from 'playwright/types/test'
 export abstract class BasePage {
   constructor(
     protected page: Page,
-    protected step: TestType<any, any>['step']
+    protected step: TestType<any, any>['step'],
+    protected withRefresh = false
   ) {}
   /**
    * Navigate to the page
@@ -19,6 +20,13 @@ export abstract class BasePage {
    */
   async waitForLoad(): Promise<void> {
     await this.page.waitForLoadState('networkidle')
+  }
+
+  async refreshPage(): Promise<void> {
+    if (this.withRefresh) {
+      await this.page.reload()
+      await this.waitForLoad()
+    }
   }
 
   /**

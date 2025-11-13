@@ -8,6 +8,7 @@ export class Programs extends BasePage {
 
   async navigate(): Promise<void> {
     await this.step('Programs list page', async () => {
+      await this.refreshPage()
       await this.page.goto(`${this.path}`)
       this.log('Visited program list page')
       await this.waitForLoad()
@@ -19,6 +20,7 @@ export class Programs extends BasePage {
       const programLinks = await this.getProgramLinks()
 
       for (const programLink of programLinks) {
+        await this.refreshPage()
         await this.page.goto(`${programLink}`)
         this.log(`Visited program page: ${programLink}`)
         await this.waitForLoad()

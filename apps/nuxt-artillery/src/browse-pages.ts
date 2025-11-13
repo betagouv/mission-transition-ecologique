@@ -12,13 +12,14 @@ import { Homepage, Programs, Projects } from './pages'
  */
 async function browsePages(page: Page, context: { vars: { target: string } }, events: unknown, test: TestType<any, any>): Promise<void> {
   try {
+    const withResfresh = true // Set to true to enable page refreshes for testing
     console.log('Starting page navigation...')
     const { step } = test
 
     // Initialize page objects
     const homepage = new Homepage(page, step)
-    const programs = new Programs(page, step)
-    const projects = new Projects(page, step)
+    const programs = new Programs(page, step, withResfresh)
+    const projects = new Projects(page, step, withResfresh)
 
     // Navigate through pages
     await homepage.navigate()

@@ -8,6 +8,7 @@ export class Projects extends BasePage {
 
   async navigate(): Promise<void> {
     await this.step('Projects list page', async () => {
+      await this.refreshPage()
       await this.page.goto(`${this.path}`)
       this.log('Visited project list page')
       await this.waitForLoad()
@@ -19,6 +20,7 @@ export class Projects extends BasePage {
       const projectLinks = await this.getProjectLinks()
 
       for (const projectLink of projectLinks) {
+        await this.refreshPage()
         await this.page.goto(`${projectLink}`)
         this.log(`Visited project page: ${projectLink}`)
         await this.waitForLoad()

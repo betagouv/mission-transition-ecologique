@@ -19,7 +19,7 @@
     "dev:start": "PORT=4242 npm run start",
     "dev:build:start": "npm run build && npm run dev:start",
     "build": "export NODE_OPTIONS=--max-old-space-size=6144 && nx run-many -t build",
-    "start": "node apps/nuxt/.output/server/index.mjs --port $PORT",
+    "start": "node --expose-gc --inspect apps/nuxt/.output/server/index.mjs --port $PORT",
     "build:etl": "nx run @tee/etl:build-docker",
     "build:start": "npm run build && npm run start",
     "export:programs": "nx run @tee/data:export-programs",

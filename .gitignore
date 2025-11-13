@@ -18,6 +18,9 @@ tmp
 /out-tsc
 *timestamp-*.mjs
 
+# node
+Heap.*
+
 # dependencies
 node_modules
 
