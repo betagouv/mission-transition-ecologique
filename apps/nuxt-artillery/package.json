@@ -1,0 +1,10 @@
+{
+  "name": "@tee/nuxt-artillery",
+  "version": "1.0.0",
+  "description": "Load testing for TEE application using Artillery and Playwright",
+  "main": "index.js",
+  "devDependencies": {
+    "artillery": "^2.0.0",
+    "playwright": "^1.47.2"
+  }
+}

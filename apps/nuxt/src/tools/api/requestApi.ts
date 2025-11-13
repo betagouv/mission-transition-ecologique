@@ -26,14 +26,17 @@ export default abstract class RequestApi {
     baseUrl = baseUrl ?? this.url
     const url: string = this.query ? `${baseUrl}?${this.query}` : baseUrl
 
-    const { data: cachedData } = useNuxtData<T>(url)
-    if (cachedData.value) {
-      return new ResultApi<T>(cachedData, null)
-    }
-
-    const { data, error } = (await useAsyncData<T>(url, async () => {
-      return await $fetch(url)
-    })) as _AsyncData<T | null, NuxtError<unknown> | null>
+    const { data, error } = (await useAsyncData<T>(
+      url,
+      async () => {
+        return await $fetch(url)
+      },
+      {
+        getCachedData(url, nuxtApp) {
+          return nuxtApp.payload.data[url] || nuxtApp.static.data[url]
+        }
+      }
+    )) as _AsyncData<T | null, NuxtError<unknown> | null>
 
     return new ResultApi<T>(data, error)
   }
