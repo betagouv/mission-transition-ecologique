@@ -1,6 +1,6 @@
 import { Result } from 'true-myth'
 import { LegalCategory, QuestionnaireChecker, QuestionnaireData, SizeToWorkforce, StructureSize, ThemeId } from '@tee/common'
-import { EligibilityData, ProgramEligibility, ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
+import { EligibilityData, ProgramEligibility, ProgramEligibilityStatus, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { EligibilityEvaluator } from './spi'
 
 export class ProgramEligibilityEvaluator implements EligibilityEvaluator {
@@ -8,18 +8,18 @@ export class ProgramEligibilityEvaluator implements EligibilityEvaluator {
     try {
       const eligibilityData: EligibilityData = program.eligibilityData
       if (!this._isDateValid(eligibilityData)) {
-        return Result.ok({ ...program, eligibility: ProgramEligibilityType.ProgramEol })
+        return Result.ok({ ...program, eligibility: ProgramEligibilityStatus.ProgramEol })
       }
 
       if (!this._matchCompanyConditions(eligibilityData, questionnaireData) || !this._matchObjectives(eligibilityData, questionnaireData)) {
-        return Result.ok({ ...program, eligibility: ProgramEligibilityType.NotEligible })
+        return Result.ok({ ...program, eligibility: ProgramEligibilityStatus.NotEligible })
       }
 
       return Result.ok({
         ...program,
         eligibility: ProgramEligibility.isPartiallyEligible(program)
-          ? ProgramEligibilityType.PartiallyEligible
-          : ProgramEligibilityType.Eligible
+          ? ProgramEligibilityStatus.PartiallyEligible
+          : ProgramEligibilityStatus.Eligible
       })
     } catch (err) {
       return Result.err(

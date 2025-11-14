@@ -9,7 +9,7 @@
 </template>
 <script setup lang="ts">
 import Translation from '@/tools/translation'
-import { Color, ProgramEligibilityType, RouteName } from '@/types'
+import { Color, ProgramEligibilityStatus, RouteName } from '@/types'
 import { TeeEligibilityBarLink, TeeEligibilityBarMessage } from '@/components/program/eligibility/TeeEligibilityBar.vue'
 import { useProgramStore } from '@/stores/program'
 import { storeToRefs } from 'pinia'
@@ -52,21 +52,21 @@ const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(()
     }
   }
   switch (program.value?.eligibility) {
-    case ProgramEligibilityType.Eligible:
+    case ProgramEligibilityStatus.Eligible:
       return {
         default: 'Votre entreprise remplit les critères pour bénéficier de cette aide.',
         mobile: 'Vous entreprise peut prétendre à cette aide.',
         icon: 'fr-icon-checkbox-circle-fill',
         role: 'status'
       }
-    case ProgramEligibilityType.PartiallyEligible:
+    case ProgramEligibilityStatus.PartiallyEligible:
       return {
         default: 'Votre entreprise semble éligible à cette aide.',
         mobile: 'Votre pouvez être éligible.',
         icon: 'fr-icon-checkbox-circle-fill',
         role: 'status'
       }
-    case ProgramEligibilityType.NotEligible:
+    case ProgramEligibilityStatus.NotEligible:
     default:
       return {
         default: "Oups, votre entreprise n'est pas éligible à cette aide.",
@@ -84,7 +84,7 @@ const getEligibilityColor: ComputedRef<Color> = computed(() => {
 
   return Program.isTemporaryUnavailable(program.value)
     ? Color.red
-    : program.value && [ProgramEligibilityType.NotEligible, ProgramEligibilityType.Unknown].includes(program.value.eligibility)
+    : program.value && [ProgramEligibilityStatus.NotEligible, ProgramEligibilityStatus.Unknown].includes(program.value.eligibility)
       ? Color.red
       : Color.greenLightnessed
 })
@@ -94,14 +94,14 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
     return undefined
   }
   switch (program.value?.eligibility) {
-    case ProgramEligibilityType.PartiallyEligible:
+    case ProgramEligibilityStatus.PartiallyEligible:
       return {
         hash: 'eligibilite',
         label: 'Voir les autres critères à respecter',
         labelMobile: 'Vérifier les critères'
       }
-    case ProgramEligibilityType.NotEligible:
-    case ProgramEligibilityType.Unknown:
+    case ProgramEligibilityStatus.NotEligible:
+    case ProgramEligibilityStatus.Unknown:
       return {
         url: RouteName.CatalogPrograms,
         label: 'Voir les aides pour mon entreprise',
@@ -111,7 +111,7 @@ const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = compu
           useFiltersStore().setCompanyDataSelected(useCompanyDataStore().isDataFull)
         }
       }
-    case ProgramEligibilityType.Eligible:
+    case ProgramEligibilityStatus.Eligible:
     default:
       return undefined
   }

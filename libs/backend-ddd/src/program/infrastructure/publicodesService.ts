@@ -2,7 +2,7 @@ import Engine from 'publicodes'
 import { evaluateRule } from './publicodes'
 import { Result } from 'true-myth'
 import { ensureError } from '../../common/domain/error/errors'
-import { ProgramEligibility, ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
+import { ProgramEligibility, ProgramEligibilityStatus, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 import { EligibilityEvaluator } from '../domain/spi'
 
@@ -64,10 +64,10 @@ export class PublicodesService implements EligibilityEvaluator {
     evaluationValue: boolean | undefined,
     dateEvaluation: boolean | undefined
   ): ProgramTypeWithEligibility {
-    let eligibility: ProgramEligibilityType
+    let eligibility: ProgramEligibilityStatus
 
     if (dateEvaluation === false) {
-      eligibility = ProgramEligibilityType.ProgramEol
+      eligibility = ProgramEligibilityStatus.ProgramEol
       return { ...program, eligibility }
     }
 
@@ -79,10 +79,10 @@ export class PublicodesService implements EligibilityEvaluator {
     // there are a dozen of programs that return 'undefined' values.
     if (isEligible) {
       eligibility = ProgramEligibility.isPartiallyEligible(program)
-        ? ProgramEligibilityType.PartiallyEligible
-        : ProgramEligibilityType.Eligible
+        ? ProgramEligibilityStatus.PartiallyEligible
+        : ProgramEligibilityStatus.Eligible
     } else {
-      eligibility = ProgramEligibilityType.NotEligible
+      eligibility = ProgramEligibilityStatus.NotEligible
     }
 
     return { ...program, eligibility }
