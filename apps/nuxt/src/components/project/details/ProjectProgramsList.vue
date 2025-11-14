@@ -4,6 +4,7 @@
     <ul class="fr-raw-list fr-ml-n2w fr-grid-row fr-grid-row--gutters">
       <li
         v-for="program in programs"
+        :id="program.id"
         :key="program.id"
         class="fr-col-12 fr-col-sm-6 fr-col-md-12 fr-pl-0"
       >

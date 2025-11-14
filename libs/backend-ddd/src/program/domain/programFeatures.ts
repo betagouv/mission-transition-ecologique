@@ -2,7 +2,7 @@ import { ProgramRepository, EligibilityEvaluator } from './spi'
 import { ProgramFilter } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
-import { ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
+import { ProgramEligibilityStatus, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 import { Monitor } from '../../common'
 import ProgramCustomizer from './programCustomizer'
@@ -30,7 +30,7 @@ export default class ProgramFeatures {
     }
 
     if (Object.keys(questionnaireData).length === 0) {
-      return Result.ok({ ...program, eligibility: ProgramEligibilityType.Unknown })
+      return Result.ok({ ...program, eligibility: ProgramEligibilityStatus.Unknown })
     }
 
     if (!this._eligibilityEvaluator) {

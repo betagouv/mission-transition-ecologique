@@ -1,5 +1,5 @@
 import { type Rules, makeProgramHelper, makeProgramsRepository } from './testing'
-import { ProgramEligibilityType, ProgramTypeWithEligibility, type ProgramType, ProgramEligibility } from '@tee/data'
+import { ProgramEligibilityStatus, ProgramTypeWithEligibility, type ProgramType, ProgramEligibility } from '@tee/data'
 import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { type Result } from 'true-myth'
@@ -22,8 +22,8 @@ const addEligibility = (programs: ProgramType[]): ProgramTypeWithEligibility[] =
   return programs.map((program) => ({
     ...program,
     eligibility: ProgramEligibility.isPartiallyEligible(program)
-      ? ProgramEligibilityType.PartiallyEligible
-      : ProgramEligibilityType.Eligible
+      ? ProgramEligibilityStatus.PartiallyEligible
+      : ProgramEligibilityStatus.Eligible
   }))
 }
 

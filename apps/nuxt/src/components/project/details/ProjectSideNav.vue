@@ -65,7 +65,7 @@ const allMenuItems = computed(() => [
   },
   {
     id: 'aids',
-    to: `project-aids-title`,
+    to: `aides`,
     text: isDataFull.value ? 'Vos aides' : 'Toutes les aides',
     condition: props.project.programs.length > 0 || isDataFull.value
   },

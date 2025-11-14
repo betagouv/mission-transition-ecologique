@@ -1,5 +1,5 @@
 import { LegalCategory, QuestionnaireData, StructureSize, WasteManagementStatus, YesNo } from '@tee/common'
-import { ProgramEligibilityType } from '@tee/data'
+import { ProgramEligibilityStatus } from '@tee/data'
 import { describe, expect, test } from 'vitest'
 import { expectToBeErr, expectToBeOk } from '../testing'
 import {
@@ -47,7 +47,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value.id).toBe('valid-program')
-      expect(result.value.eligibility).toBe(ProgramEligibilityType.Unknown)
+      expect(result.value.eligibility).toBe(ProgramEligibilityStatus.Unknown)
     })
 
     test('should return error when program does not exist', () => {
@@ -75,7 +75,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value.id).toBe('valid-program')
-      expect(result.value.eligibility).toBe(ProgramEligibilityType.Eligible)
+      expect(result.value.eligibility).toBe(ProgramEligibilityStatus.Eligible)
     })
   })
 
@@ -131,7 +131,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
 
       vi.useRealTimers()
     })
@@ -152,7 +152,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.NotEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.NotEligible)
     })
 
     test('should keep programs with minEmployees when company is large enough', () => {
@@ -168,7 +168,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
     })
 
     test('should filter out programs with maxEmployees when company is too large', () => {
@@ -185,7 +185,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.NotEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.NotEligible)
     })
 
     test('should keep programs with maxEmployees when company is small enough', () => {
@@ -201,7 +201,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
     })
   })
 
@@ -221,7 +221,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.NotEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.NotEligible)
     })
 
     test('should keep programs excluding microentrepreneur when company is not EI', () => {
@@ -238,7 +238,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
     })
   })
 
@@ -257,7 +257,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.NotEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.NotEligible)
     })
 
     test('should keep programs with NAF restrictions when code matches', () => {
@@ -273,7 +273,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
     })
 
     test('should keep programs when NAF code is not provided in questionnaire', () => {
@@ -289,7 +289,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
     })
   })
 
@@ -308,7 +308,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.NotEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.NotEligible)
     })
 
     test('should keep programs with region restrictions when region matches', () => {
@@ -324,7 +324,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
     })
 
     test('should keep programs when region is not provided in questionnaire', () => {
@@ -340,7 +340,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
     })
   })
 
@@ -362,7 +362,7 @@ describe('ProgramFeatures', () => {
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
       // Building, Biodiversity, and RH are always added to objectives, so program matches
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
     })
 
     test('should keep programs when energy objective matches', () => {
@@ -379,7 +379,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
     })
 
     test('should keep programs when environmental objective matches', () => {
@@ -396,7 +396,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
     })
 
     test('should keep programs when at least one of multiple objectives matches', () => {
@@ -413,7 +413,7 @@ describe('ProgramFeatures', () => {
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
-      expect(result.value[0].eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
     })
   })
 
@@ -440,17 +440,17 @@ describe('ProgramFeatures', () => {
 
       // Check individual eligibilities
       const validProgramResult = result.value.find((p) => p.id === 'valid-program')
-      expect(validProgramResult?.eligibility).toBe(ProgramEligibilityType.Eligible)
+      expect(validProgramResult?.eligibility).toBe(ProgramEligibilityStatus.Eligible)
 
       // Expired program should not be in results (ProgramEol filtered out)
       const expiredProgramResult = result.value.find((p) => p.id === 'program-expired')
       expect(expiredProgramResult).toBeUndefined()
 
       const nafProgramResult = result.value.find((p) => p.id === 'program-naf-restriction')
-      expect(nafProgramResult?.eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
+      expect(nafProgramResult?.eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
 
       const regionProgramResult = result.value.find((p) => p.id === 'program-region-restriction')
-      expect(regionProgramResult?.eligibility).toBe(ProgramEligibilityType.PartiallyEligible)
+      expect(regionProgramResult?.eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
     })
   })
 })

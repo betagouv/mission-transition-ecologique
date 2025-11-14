@@ -1,5 +1,5 @@
 import { sortPrograms } from '../../src/program/domain/sortPrograms'
-import { ProgramType, ProgramAidType, ProgramEligibilityType, ProgramTypeWithEligibility } from '@tee/data'
+import { ProgramType, ProgramAidType, ProgramEligibilityStatus, ProgramTypeWithEligibility } from '@tee/data'
 import { makeProgramHelper } from './testing'
 
 const makeProgram = (id: string, nature: ProgramAidType, cost = '') => ({
@@ -8,13 +8,13 @@ const makeProgram = (id: string, nature: ProgramAidType, cost = '') => ({
     nature: nature,
     cost: cost
   }),
-  eligibility: ProgramEligibilityType.Eligible
+  eligibility: ProgramEligibilityStatus.Eligible
 })
 
 const addEligibility = (programs: ProgramType[]): ProgramTypeWithEligibility[] => {
   return programs.map((program) => ({
     ...program,
-    eligibility: ProgramEligibilityType.Eligible
+    eligibility: ProgramEligibilityStatus.Eligible
   }))
 }
 

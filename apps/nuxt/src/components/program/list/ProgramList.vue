@@ -8,6 +8,7 @@
     </template>
     <li
       v-for="program in filteredPrograms"
+      :id="program.id"
       :key="program.id"
       class="fr-col-12 fr-col-sm-6 fr-col-md-12"
     >

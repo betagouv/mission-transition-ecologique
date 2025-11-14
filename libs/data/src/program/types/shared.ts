@@ -9,7 +9,7 @@ export enum ProgramAidType {
   tax = 'avantage fiscal'
 }
 
-export enum ProgramEligibilityType {
+export enum ProgramEligibilityStatus {
   Eligible = 'eligible',
   PartiallyEligible = 'partially-eligible',
   NotEligible = 'not-eligible',
@@ -47,7 +47,7 @@ export interface EligibilityData {
 }
 
 export type ProgramTypeWithEligibility = ProgramType & {
-  eligibility: ProgramEligibilityType
+  eligibility: ProgramEligibilityStatus
 }
 
 export type ProgramTypeForFront = Exclude<ProgramTypeWithEligibility, 'publicodes'> & {
