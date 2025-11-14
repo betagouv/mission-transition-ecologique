@@ -111,13 +111,10 @@
                       img(operator.img, {
                         quality: 70,
                         densities: 1,
-                        loading: 'lazy',
-                        format: operator.format ?? undefined,
-                        width: operator.width ?? undefined
+                        loading: 'lazy'
                       })
                     "
                     :alt="operator.label"
-                    :width="operator.width ?? undefined"
                   />
                 </a>
               </li>
@@ -280,5 +277,9 @@ const operators = partnersAll
   ul {
     flex-direction: row;
   }
+}
+
+.fr-footer__partners-sub ul li img {
+  max-width: min(10rem, 85%) !important; /* fix dsfr logo  */
 }
 </style>
