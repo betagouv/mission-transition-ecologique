@@ -73,7 +73,7 @@ export class PublicodesService implements EligibilityEvaluator {
 
     const isEligible = typeof evaluationValue === 'undefined' || evaluationValue
     // if (typeof evaluationValue === 'undefined') {
-    //   eligibility = ProgramEligibilityType.Unknown
+    //   eligibility = ProgramEligibilityStatus.Unknown
     // }
     // TODO, analyse the undefined returns from publicodes
     // there are a dozen of programs that return 'undefined' values.
