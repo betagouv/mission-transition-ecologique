@@ -5,8 +5,20 @@ promesse: >-
   écologique
 description: >-
   Le Volontariat Territorial en Entreprise (VTE) "Vert" permet d’accompagner
-  financièrement les entreprises dans leur recrutement d’un jeune talent sur des
-  missions de transition énergétique et écologique.
+  financièrement les entreprises dans leur **recrutement d’un jeune talent sur
+  des missions de transition énergétique et écologique.** Par exemple :
+
+
+  - Mettre en place un approvisionnement et une chaîne logistique verte
+
+
+  - Adapter des process industriels pour une production plus sobre.
+
+
+  - Réduire l’impact environnemental de produits ou services existants.
+
+
+  - Création de nouveaux produits ou services à faible impact environnemental.
 metaDescription: >-
   Bénéficiez d'une aide financière grâce au Volontariat Territorial en
   Entreprise Vert pour recruter un jeune talent sur des missions de transition
@@ -45,7 +57,7 @@ montant du financement: 50% des dépenses engagées dans la limite de 8000 €
 activable en autonomie: oui
 objectifs:
   - description: >-
-      Vous n'avez pas encore trouvé votre talent VTE ? Créez votre espace
+      Vous cherchez un jeune talent VTE à recruter ? Créez votre espace
       recruteur sur le site vte-france. Depuis votre espace, vous pourrez
       publier une annonce et accéder à la CVthèque des candidats.
     liens:

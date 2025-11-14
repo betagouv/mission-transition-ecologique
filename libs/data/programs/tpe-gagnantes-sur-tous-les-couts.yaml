@@ -54,7 +54,13 @@ conditions d'éligibilité:
     - Moins de 20 salariés
     - Éligible aux micro-entreprises
   secteur géographique:
-    - France et territoires d'outre-mer
+    - >-
+      Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
+      Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
+      Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine,
+      Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française,
+      Provence-Alpes-Côte d'Azur, Saint-Barthélemy, Saint-Martin,
+      Saint-Pierre-Et-Miquelon
   secteur d'activité:
     - Artisan
   nombre d'années d'activité:
@@ -70,6 +76,7 @@ publicodes:
   entreprise . est éligible:
     toutes ces conditions:
       - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
       - effectif <= 19
@@ -96,3 +103,27 @@ publicodes:
         questionnaire . objectif prioritaire . est diminuer ma consommation
         d'eau
       - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Auvergne-Rhône-Alpes
+      - région = Bourgogne-Franche-Comté
+      - région = Bretagne
+      - région = Centre-Val de Loire
+      - région = Grand Est
+      - région = Guadeloupe
+      - région = Guyane
+      - région = Hauts-de-France
+      - région = Île-de-France
+      - région = La Réunion
+      - région = Martinique
+      - région = Mayotte
+      - région = Normandie
+      - région = Nouvelle-Aquitaine
+      - région = Nouvelle-Calédonie
+      - région = Occitanie
+      - région = Pays de la Loire
+      - région = Polynésie française
+      - région = Provence-Alpes-Côte d'Azur
+      - région = Saint-Barthélemy
+      - région = Saint-Martin
+      - région = Saint-Pierre-Et-Miquelon
