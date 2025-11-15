@@ -1,38 +1,39 @@
 titre: Indicateur climat
 promesse: >-
-  L'indicateur climat est un outil visant à rendre transparente et lisible la
-  transition écologique de votre entreprise.
+  Évaluez gratuitement votre plan de transition et votre stratégie face aux
+  aléas climatiques
 description: >-
-  La Banque de France vous accompagne dans l’évaluation de vos émissions de gaz
-  à effet de serre et de la résilience climatique de votre entreprise, à l'aide
-  d'un outil gratuit : l'indicateur climat.
+  L’Indicateur Climat de la Banque de France est un outil d’accompagnement
+  gratuit, conçu pour aider votre entreprise à évaluer son positionnement face
+  aux enjeux climatiques propres à son secteur. Cet indicateur de référence
+  permet à votre entreprise :
 
 
-  Cet indicateur de référence permet à votre entreprise de :
+  - D’évaluer sa trajectoire d’émissions de gaz à effet de serre, en la
+  comparant à une trajectoire de décarbonation de référence alignée sur l’Accord
+  de Paris.
 
+  - D’analyser sa stratégie d’adaptation au regard de son exposition aux
+  évolutions de différents aléas climatiques (températures, précipitations,
+  sécheresses, etc.).
 
-  - Prendre conscience des impacts et des opportunités.
-
-  - D’évaluer votre résilience et vos plans d'action face aux aléas climatiques
-  (températures, précipitations, sécheresse...).
-
-  - De disposer d’un indicateur de référence, utilisable auprès de vos
-  financeurs, de vos clients ou de vos fournisseurs.
+  - De disposer d’un indicateur de référence, utilisable auprès de ses
+  financeurs, de ses clients ou de ses fournisseurs.
 description longue: >-
-  L'évaluation proposée repose sur :
+  L’évaluation de l’Indicateur Climat repose sur :
 
 
-  - des informations propres à l’entreprise potentiellement collectées
-  directement auprès d’elle (volumes d’activité présent et futur, émissions de
-  gaz à effet de\
-    serre associées, leviers de décarbonation).
-  - des trajectoires de décarbonation de référence alignées sur l’Accord de\
-    Paris.
-  - un cadre méthodologique inspiré de la méthode ACT de l’ADEME, reconnue à
+  - Des informations propres à votre entreprise (volumes d’activité présent et
+  futur, émissions de gaz à effet de serre associées, leviers de décarbonation).
+
+  - Des trajectoires de décarbonation de référence alignées sur l’Accord de
+  Paris.
+
+  - D’un cadre méthodologique inspiré de la méthode ACT de l’ADEME, reconnue à
   l’international.
 
-  - une analyse d’expert menée par le Réseau de la Banque de France, présent sur
-  tout le territoire et au service des entreprises.
+  - D’une analyse d’experts menée par le Réseau de la Banque de France, présent
+  sur tout le territoire et au service des entreprises.
 illustration: images/TEE_eolienne.png
 opérateur de contact: Banque de France
 contact question: mailto:pierre.meignant@banque-france.fr
@@ -50,8 +51,9 @@ objectifs:
       - lien: https://dirigeant.banque-france.fr/#/
         texte: Espace Dirigeant
   - description: >-
-      Collectez les données et répondez aux questions concernant l'adaptabilité
-      climatique de votre entreprise.
+      Prenez contact par mail en écrivant à [climat.XX@banque-france.fr
+      ](mailto:climat.XX@banque-france.fr)(remplacez XX par le numéro de votre
+      département).
   - description: Obtenez une évaluation personnalisée à l'aide de l'indicateur climat.
 conditions d'éligibilité:
   taille de l'entreprise:
@@ -60,11 +62,7 @@ conditions d'éligibilité:
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
-    - >-
-      En phase de déploiement (qui se poursuivra jusqu'en 2027), l'indicateur
-      climatique concerne les secteurs de la production d'électricité, des
-      transports, de la détention de parcs immobiliers, de la production de
-      ciment et de la construction de bâtiments.
+    - "- L’Indicateur Climat concerne les entreprises des secteurs de la production d'électricité, des transports, de la détention de parcs immobiliers, de la production de ciment et de la construction de bâtiments.\n- D’ici 2027, il adressera les entreprises des secteurs suivants\_: acier, aluminium, chimie, pétrole et gaz, construction de véhicules, agriculture."
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:
