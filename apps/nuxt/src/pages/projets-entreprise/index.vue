@@ -53,9 +53,7 @@ const seoDescription =
   "Découvrez  les projets de transition écologique pour votre secteur d'activité : explications, ressources," +
   " témoignages d'entreprises et liste des aides financières associées."
 
-onServerPrefetch(async () => {
-  await new ProjectManager().getProjects()
-})
+await new ProjectManager().getProjects()
 
 onNuxtReady(async () => {
   CompanyData.isDataFullComputed().value // call to initialize computed reactivity variable

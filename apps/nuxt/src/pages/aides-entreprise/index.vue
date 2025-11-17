@@ -40,9 +40,7 @@ const seoDescription =
   'Trouvez les aides adaptées à votre entreprise : subvention, financements et accompagnements de l’ADEME, Bpifrance,' +
   ' CCI… pour votre transition énergétique et écologique.'
 
-onServerPrefetch(async () => {
-  await new ProgramManager().getDependentCompanyData(false)
-})
+await new ProgramManager().getDependentCompanyData(false)
 
 onNuxtReady(async () => {
   await new ProgramManager().getDependentCompanyData(true)

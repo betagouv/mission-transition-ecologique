@@ -22,7 +22,6 @@ const maxAge7Days = 604800 // 7 days in seconds
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default <DefineNuxtConfig>defineNuxtConfig({
-  ssr: false,
   app: {
     rootId: 'tee',
     head: {
@@ -140,7 +139,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     inlineRouteRules: true,
     headNext: true,
     // typescriptPlugin: true,
-    // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
+    sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 
   modules: [
