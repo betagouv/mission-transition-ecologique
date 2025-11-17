@@ -1660,7 +1660,7 @@
         "description": "Déposez votre demande d'aide auprès de l'ADEME : informations administratives, description du projet, rapport d'audit énergétique, détails techniques et financiers, etc. À ce stade, vos missions d'ingénierie ne doivent pas avoir commencé !",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/booster-entreprises-reduire-facture-energetique-gagner-valeur-verte",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2025/booster-entreprises-reduire-votre-facture-energetique-et-gagner-en-valeur-verte?backtosearch=true",
             "texte": "Déposer mon dossier"
           }
         ]
@@ -10496,7 +10496,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -19657,7 +19657,7 @@
         "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
-        "France et territoires d'outre-mer"
+        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française, Provence-Alpes-Côte d'Azur, Saint-Barthélemy, Saint-Martin, Saint-Pierre-Et-Miquelon"
       ],
       "secteur d'activité": [
         "Artisan"
@@ -19683,7 +19683,31 @@
           "R",
           "T"
         ],
-        "maxEmployees": "249"
+        "maxEmployees": "249",
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur",
+          "Saint-Barthélemy",
+          "Saint-Martin",
+          "Saint-Pierre-Et-Miquelon"
+        ]
       },
       "priorityObjectives": [
         "environmental"
@@ -19787,7 +19811,8 @@
       },
       "entreprise . est éligible": {
         "toutes ces conditions": [
-          "a un effectif éligible"
+          "a un effectif éligible",
+          "entreprise . est dans une zone géographique éligible"
         ]
       },
       "entreprise . a un effectif éligible": {
@@ -19812,6 +19837,32 @@
       "entreprise . a un objectif ciblé": {
         "une de ces conditions": [
           "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Auvergne-Rhône-Alpes",
+          "région = Bourgogne-Franche-Comté",
+          "région = Bretagne",
+          "région = Centre-Val de Loire",
+          "région = Grand Est",
+          "région = Guadeloupe",
+          "région = Guyane",
+          "région = Hauts-de-France",
+          "région = Île-de-France",
+          "région = La Réunion",
+          "région = Martinique",
+          "région = Mayotte",
+          "région = Normandie",
+          "région = Nouvelle-Aquitaine",
+          "région = Nouvelle-Calédonie",
+          "région = Occitanie",
+          "région = Pays de la Loire",
+          "région = Polynésie française",
+          "région = Provence-Alpes-Côte d'Azur",
+          "région = Saint-Barthélemy",
+          "région = Saint-Martin",
+          "région = Saint-Pierre-Et-Miquelon"
         ]
       }
     },
@@ -20195,7 +20246,7 @@
     "titre": "Investissement \"VTE Vert\"",
     "metaTitre": "VTE Vert -  Aide au recrutement pour la transition écologique",
     "promesse": "Recrutez un jeune talent sur des missions de transition énergétique et écologique",
-    "description": "Le Volontariat Territorial en Entreprise (VTE) \"Vert\" permet d’accompagner financièrement les entreprises dans leur recrutement d’un jeune talent sur des missions de transition énergétique et écologique.",
+    "description": "Le Volontariat Territorial en Entreprise (VTE) \"Vert\" permet d’accompagner financièrement les entreprises dans leur **recrutement d’un jeune talent sur des missions de transition énergétique et écologique.** Par exemple :\n\n- Mettre en place un approvisionnement et une chaîne logistique verte\n\n- Adapter des process industriels pour une production plus sobre.\n\n- Réduire l’impact environnemental de produits ou services existants.\n\n- Création de nouveaux produits ou services à faible impact environnemental.",
     "metaDescription": "Bénéficiez d'une aide financière grâce au Volontariat Territorial en Entreprise Vert pour recruter un jeune talent sur des missions de transition énergétique et écologique.",
     "description longue": "L’Aide VTE Vert est destinée à contribuer au financement de frais internes (rémunération) et/ou de frais externes (frais de scolarité, achat de matériel ou logiciel, etc.) directement liés à la mission du jeune en VTE Vert.\n\nLe programme VTE Vert entend par jeune talent :\n\n- un jeune diplômé depuis moins de 2 ans\n- un étudiant ou diplômé à partir du niveau bac+3\n\nLa mission d’un VTE doit durer au moins un an, soit en alternance longue (contrat d’apprentissage ou de professionnalisation), soit sur la base d’un CDD d’au moins un an, ou d’un CDI.\n\nLe VTE prend la forme d’un contrat d’apprentissage ou de travail classique. Il est rémunéré sur la base d’un accord entre l’entreprise et le Volontaire, aux conditions du marché.",
     "fin de validité": "31/12/2025",
@@ -20211,7 +20262,7 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Vous n'avez pas encore trouvé votre talent VTE ? Créez votre espace recruteur sur le site vte-france. Depuis votre espace, vous pourrez publier une annonce et accéder à la CVthèque des candidats.",
+        "description": "Vous cherchez un jeune talent VTE à recruter ? Créez votre espace recruteur sur le site vte-france. Depuis votre espace, vous pourrez publier une annonce et accéder à la CVthèque des candidats.",
         "liens": [
           {
             "lien": "https://www.emploi.vte-france.fr/company/signin/register",
@@ -22974,7 +23025,7 @@
         "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
-        "France et territoires d'outre-mer"
+        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française, Provence-Alpes-Côte d'Azur, Saint-Barthélemy, Saint-Martin, Saint-Pierre-Et-Miquelon"
       ],
       "secteur d'activité": [
         "Artisan"
@@ -23004,7 +23055,31 @@
           "S",
           "T"
         ],
-        "maxEmployees": "19"
+        "maxEmployees": "19",
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur",
+          "Saint-Barthélemy",
+          "Saint-Martin",
+          "Saint-Pierre-Et-Miquelon"
+        ]
       },
       "priorityObjectives": [
         "waste",
@@ -23110,7 +23185,8 @@
       },
       "entreprise . est éligible": {
         "toutes ces conditions": [
-          "a un effectif éligible"
+          "a un effectif éligible",
+          "entreprise . est dans une zone géographique éligible"
         ]
       },
       "entreprise . a un effectif éligible": {
@@ -23141,6 +23217,32 @@
           "questionnaire . objectif prioritaire . est la gestion des déchets",
           "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
           "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Auvergne-Rhône-Alpes",
+          "région = Bourgogne-Franche-Comté",
+          "région = Bretagne",
+          "région = Centre-Val de Loire",
+          "région = Grand Est",
+          "région = Guadeloupe",
+          "région = Guyane",
+          "région = Hauts-de-France",
+          "région = Île-de-France",
+          "région = La Réunion",
+          "région = Martinique",
+          "région = Mayotte",
+          "région = Normandie",
+          "région = Nouvelle-Aquitaine",
+          "région = Nouvelle-Calédonie",
+          "région = Occitanie",
+          "région = Pays de la Loire",
+          "région = Polynésie française",
+          "région = Provence-Alpes-Côte d'Azur",
+          "région = Saint-Barthélemy",
+          "région = Saint-Martin",
+          "région = Saint-Pierre-Et-Miquelon"
         ]
       }
     },
@@ -23848,7 +23950,7 @@
         "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
-        "France et territoires d'outre-mer"
+        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française, Provence-Alpes-Côte d'Azur, Saint-Barthélemy, Saint-Martin, Saint-Pierre-Et-Miquelon"
       ],
       "secteur d'activité": [
         "Tous secteurs d’activité"
@@ -23882,7 +23984,31 @@
           "U"
         ],
         "maxEmployees": "499",
-        "excludeMicroentrepreneur": true
+        "excludeMicroentrepreneur": true,
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur",
+          "Saint-Barthélemy",
+          "Saint-Martin",
+          "Saint-Pierre-Et-Miquelon"
+        ]
       },
       "priorityObjectives": [
         "energy"
@@ -23987,7 +24113,8 @@
       "entreprise . est éligible": {
         "toutes ces conditions": [
           "a un effectif éligible",
-          "a une categorie legale eligible"
+          "a une categorie legale eligible",
+          "entreprise . est dans une zone géographique éligible"
         ]
       },
       "entreprise . a un effectif éligible": {
@@ -24027,6 +24154,32 @@
       "entreprise . a un objectif ciblé": {
         "une de ces conditions": [
           "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Auvergne-Rhône-Alpes",
+          "région = Bourgogne-Franche-Comté",
+          "région = Bretagne",
+          "région = Centre-Val de Loire",
+          "région = Grand Est",
+          "région = Guadeloupe",
+          "région = Guyane",
+          "région = Hauts-de-France",
+          "région = Île-de-France",
+          "région = La Réunion",
+          "région = Martinique",
+          "région = Mayotte",
+          "région = Normandie",
+          "région = Nouvelle-Aquitaine",
+          "région = Nouvelle-Calédonie",
+          "région = Occitanie",
+          "région = Pays de la Loire",
+          "région = Polynésie française",
+          "région = Provence-Alpes-Côte d'Azur",
+          "région = Saint-Barthélemy",
+          "région = Saint-Martin",
+          "région = Saint-Pierre-Et-Miquelon"
         ]
       }
     },
@@ -38751,7 +38904,7 @@
         "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
-        "France et territoires d'outre-mer"
+        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française, Provence-Alpes-Côte d'Azur, Saint-Barthélemy, Saint-Martin, Saint-Pierre-Et-Miquelon"
       ],
       "secteur d'activité": [
         "Tous secteurs d'activité"
@@ -38786,7 +38939,31 @@
           "U"
         ],
         "maxEmployees": "249",
-        "excludeMicroentrepreneur": true
+        "excludeMicroentrepreneur": true,
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur",
+          "Saint-Barthélemy",
+          "Saint-Martin",
+          "Saint-Pierre-Et-Miquelon"
+        ]
       },
       "priorityObjectives": [
         "environmental"
@@ -38891,7 +39068,8 @@
       "entreprise . est éligible": {
         "toutes ces conditions": [
           "a un effectif éligible",
-          "a une categorie legale eligible"
+          "a une categorie legale eligible",
+          "entreprise . est dans une zone géographique éligible"
         ]
       },
       "entreprise . a un effectif éligible": {
@@ -38932,6 +39110,32 @@
       "entreprise . a un objectif ciblé": {
         "une de ces conditions": [
           "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Auvergne-Rhône-Alpes",
+          "région = Bourgogne-Franche-Comté",
+          "région = Bretagne",
+          "région = Centre-Val de Loire",
+          "région = Grand Est",
+          "région = Guadeloupe",
+          "région = Guyane",
+          "région = Hauts-de-France",
+          "région = Île-de-France",
+          "région = La Réunion",
+          "région = Martinique",
+          "région = Mayotte",
+          "région = Normandie",
+          "région = Nouvelle-Aquitaine",
+          "région = Nouvelle-Calédonie",
+          "région = Occitanie",
+          "région = Pays de la Loire",
+          "région = Polynésie française",
+          "région = Provence-Alpes-Côte d'Azur",
+          "région = Saint-Barthélemy",
+          "région = Saint-Martin",
+          "région = Saint-Pierre-Et-Miquelon"
         ]
       }
     },
@@ -39586,8 +39790,12 @@
         "description": "Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au moins un mois avant la date limite de dépôt).",
         "liens": [
           {
-            "lien": "mailto:decarb.flash@ademe.fr",
-            "texte": "decarb.flash@ademe.fr"
+            "lien": "https://outlook.office.com/book/DECARBFLASH20252027RunionsdeprdptRservations@ademe.fr/?ismsaljsauthenabled=true",
+            "texte": "Prenez rendez-vous en sélectionnant la région de votre projet industriel"
+          },
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/DECARB%20FLASH%202025-2027%20-%20Contacts%20ADEME%20en%20R%C3%A9gion%20-%2009-2025.pdf",
+            "texte": "Vous disposez également de la liste des contacts dans les directions régionales"
           }
         ]
       },
@@ -42714,9 +42922,9 @@
   },
   {
     "titre": "Indicateur climat",
-    "promesse": "L'indicateur climat est un outil visant à rendre transparente et lisible la transition écologique de votre entreprise.",
-    "description": "La Banque de France vous accompagne dans l’évaluation de vos émissions de gaz à effet de serre et de la résilience climatique de votre entreprise, à l'aide d'un outil gratuit : l'indicateur climat.\n\nCet indicateur de référence permet à votre entreprise de :\n\n- Prendre conscience des impacts et des opportunités.\n- D’évaluer votre résilience et vos plans d'action face aux aléas climatiques (températures, précipitations, sécheresse...).\n- De disposer d’un indicateur de référence, utilisable auprès de vos financeurs, de vos clients ou de vos fournisseurs.",
-    "description longue": "L'évaluation proposée repose sur :\n\n- des informations propres à l’entreprise potentiellement collectées directement auprès d’elle (volumes d’activité présent et futur, émissions de gaz à effet de\\\n  serre associées, leviers de décarbonation).\n- des trajectoires de décarbonation de référence alignées sur l’Accord de\\\n  Paris.\n- un cadre méthodologique inspiré de la méthode ACT de l’ADEME, reconnue à l’international.\n- une analyse d’expert menée par le Réseau de la Banque de France, présent sur tout le territoire et au service des entreprises.",
+    "promesse": "Évaluez gratuitement votre plan de transition et votre stratégie face aux aléas climatiques",
+    "description": "L’Indicateur Climat de la Banque de France est un outil d’accompagnement gratuit, conçu pour aider votre entreprise à évaluer son positionnement face aux enjeux climatiques propres à son secteur. Cet indicateur de référence permet à votre entreprise :\n\n- D’évaluer sa trajectoire d’émissions de gaz à effet de serre, en la comparant à une trajectoire de décarbonation de référence alignée sur l’Accord de Paris.\n- D’analyser sa stratégie d’adaptation au regard de son exposition aux évolutions de différents aléas climatiques (températures, précipitations, sécheresses, etc.).\n- De disposer d’un indicateur de référence, utilisable auprès de ses financeurs, de ses clients ou de ses fournisseurs.",
+    "description longue": "L’évaluation de l’Indicateur Climat repose sur :\n\n- Des informations propres à votre entreprise (volumes d’activité présent et futur, émissions de gaz à effet de serre associées, leviers de décarbonation).\n- Des trajectoires de décarbonation de référence alignées sur l’Accord de Paris.\n- D’un cadre méthodologique inspiré de la méthode ACT de l’ADEME, reconnue à l’international.\n- D’une analyse d’experts menée par le Réseau de la Banque de France, présent sur tout le territoire et au service des entreprises.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Banque de France",
     "contact question": "mailto:pierre.meignant@banque-france.fr",
@@ -42736,7 +42944,7 @@
         ]
       },
       {
-        "description": "Collectez les données et répondez aux questions concernant l'adaptabilité climatique de votre entreprise."
+        "description": "Prenez contact par mail en écrivant à [climat.XX@banque-france.fr ](mailto:climat.XX@banque-france.fr)(remplacez XX par le numéro de votre département)."
       },
       {
         "description": "Obtenez une évaluation personnalisée à l'aide de l'indicateur climat."
@@ -42751,7 +42959,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "En phase de déploiement (qui se poursuivra jusqu'en 2027), l'indicateur climatique concerne les secteurs de la production d'électricité, des transports, de la détention de parcs immobiliers, de la production de ciment et de la construction de bâtiments."
+        "- L’Indicateur Climat concerne les entreprises des secteurs de la production d'électricité, des transports, de la détention de parcs immobiliers, de la production de ciment et de la construction de bâtiments.\n- D’ici 2027, il adressera les entreprises des secteurs suivants : acier, aluminium, chimie, pétrole et gaz, construction de véhicules, agriculture."
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
