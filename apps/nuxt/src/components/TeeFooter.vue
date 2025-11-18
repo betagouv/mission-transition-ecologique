@@ -280,6 +280,6 @@ const operators = partnersAll
 }
 
 .fr-footer__partners-sub ul li img {
-  max-width: min(10rem, 85%) !important; /* fix dsfr logo  */
+  max-width: min(10rem, 85%) !important; /* fix dsfr logo display on really small screens  */
 }
 </style>
