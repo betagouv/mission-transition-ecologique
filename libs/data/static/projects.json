@@ -4844,5 +4844,36 @@
       "H"
     ],
     "faqs": []
+  },
+  {
+    "id": 1523,
+    "slug": "efficacite-energetique-des-procedes-industriels",
+    "title": "Efficacité énergétique des procédés industriels",
+    "nameTag": "⚡ efficacité industrielle",
+    "shortDescription": "Elle permet de réduire la facture énergétique associée aux procédés industriels de production.",
+    "image": "/images/projet/efficacite-energetique-des-procedes-industriels.webp",
+    "longDescription": "Le remplacement de vos équipements industriels par des équipements électriques (chaudière, four, système de chauffage ou de séchage…), l'installation de purgeurs vapeur, de lignes de retours, d'un système de thermocompression ou de mise sous-vide sont autant d’actions qui vous permettent de rendre vos procédés industriels efficaces. \\\nAinsi cela vous permet :\n\n- de **faire baisser la facture** énergétique des coûts de production.\n- d'**améliorer la performance** de votre site industriel.\n- de **participer à la décarbonation** de l’industrie .",
+    "moreDescription": "- [**Décarboner l'industrie, enjeux et défis**](https://librairie.ademe.fr/industrie-et-production-durable/7146-decarboner-l-industrie-9791029722974.html) : une présentation de l'ADEME.\n- [**La flexibilité électrique en industrie**](https://librairie.ademe.fr/energies/4724-flexibilite-electrique-en-industrie.html#), un guide de l'ADEME pour comprendre les dispositifs d'effacement énergétique en milieu industriel.",
+    "themes": [
+      "energy"
+    ],
+    "mainTheme": "energy",
+    "programs": [
+      "decarb-flash-2025-2027"
+    ],
+    "descriptionLinkedProjects": "",
+    "linkedProjects": [],
+    "priority": {
+      "default": 482
+    },
+    "highlightPriority": null,
+    "sectors": [
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "faqs": []
   }
 ]

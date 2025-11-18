@@ -102,7 +102,8 @@
     "1261": "allongement-duree-de-vie",
     "1391": "engins-propres",
     "1424": "palettes-calage",
-    "1490": "hydrogene-vert"
+    "1490": "hydrogene-vert",
+    "1523": "efficacite-energetique-des-procedes-industriels"
   },
   "program_rowid_to_url_mapping": {
     "1": "accelerateur-decarbonation",
