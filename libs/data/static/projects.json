@@ -23,7 +23,6 @@
       "renovation-petit-tertiaire-prive",
       "tpe-gagnantes-sur-tous-les-couts",
       "visite-energie",
-      "visite-energie-cma",
       "cci-business-optimizer",
       "fiscalite-energetique-occitanie",
       "cedre-premier-pas",
@@ -123,7 +122,7 @@
     "programs": [
       "fonds-tourisme-durable",
       "visite-energie",
-      "visite-energie-cma",
+      "pret-economies-d-energie-pee",
       "aide-financement-occitanie",
       "cedre-investissement",
       "sud-pret-climat",
@@ -478,7 +477,6 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "cap-transition-ecologique",
-      "bilan-carbone",
       "evaluation-carbone-lise"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un bilan de gaz à effet de serre",
@@ -524,7 +522,7 @@
     "faqs": [
       {
         "id": 137,
-        "question": "Comment faire un bilan des gaz à effet de serre ?",
+        "question": "Comment faire un bilan de gaz à effet de serre ?",
         "answer": "Un bilan des émissions de gaz à effet de serre, ou BEGES, consiste à mesurer sur une année complète, l’ensemble des **émissions directes et indirectes** produites par une entreprise. Il se déroule en plusieurs étapes :\n\n- Le cadrage\n- L’identification des sources et émissions\n- La collecte des données\n- Le calcul du bilan et des analyses\n- L’élaboration du plan de transition\n- La publication en ligne du BEGES.\n\nPour ce faire, vous pouvez faire appel à un **prestataire extérieur** ou le **réaliser en interne**, en vous appuyant sur les [guides sectoriels de l’ADEME](https://bilans-ges.ademe.fr/ressources/approches-sectorielles)."
       },
       {
@@ -850,6 +848,7 @@
       "investissement-contrat-chaleur-renouvelable",
       "investissement-geothermie-de-surface-et-d-aerothermie",
       "investissement-geothermie-profonde",
+      "pret-economies-d-energie-pee",
       "aide-financement-occitanie",
       "sud-pret-climat",
       "cheque-vert-grand-est",
@@ -1219,6 +1218,7 @@
       "amelioration-qualite-de-l-air",
       "pret-action-climat",
       "retrofit-electrique",
+      "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-vert-ademe",
       "aide-financement-occitanie",
@@ -1277,16 +1277,14 @@
     ],
     "mainTheme": "mobility",
     "programs": [
-      "bonus-ecologique",
       "fonds-tourisme-durable",
       "pret-action-climat",
-      "prime-a-la-conversion",
       "tremplin",
+      "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-vert-ademe",
       "aide-financement-occitanie",
       "sud-pret-climat",
-      "cheque-transition-bioethanol",
       "recharge-vehicule-electrique",
       "pret-tourisme",
       "deploiement-flottes-hydrogene",
@@ -1344,7 +1342,6 @@
     ],
     "mainTheme": "mobility",
     "programs": [
-      "bonus-ecologique",
       "flotte-de-velos-a-disposition",
       "fonds-tourisme-durable",
       "pret-action-climat",
@@ -1846,7 +1843,8 @@
       "booster-transformation-rev-3",
       "formation-convaincre-et-argumenter",
       "formation-communiquer-et-sensibiliser",
-      "outils-pour-adaptation"
+      "outils-pour-adaptation",
+      "eco-diagnostic-commerce"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
@@ -1930,7 +1928,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "aide-tpe-transition-na"
+      "aide-tpe-transition-na",
+      "eco-diagnostic-commerce"
     ],
     "linkedProjects": [
       30
@@ -2226,7 +2225,6 @@
     "mainTheme": "environmental",
     "programs": [
       "diagnostic-changement-climatique",
-      "diagnostic-transition-ecologique",
       "fonds-tourisme-durable",
       "diag-eco-flux",
       "formation-artisan-developpement-durable",
@@ -2472,7 +2470,6 @@
       "cedre-premier-pas",
       "sud-pret-climat",
       "entreprises-engagees-nature",
-      "audit-clef-verte-sud",
       "pret-energie-aura",
       "pret-ile-de-france",
       "cap-transition-ecologique",
@@ -3123,7 +3120,7 @@
     "shortDescription": "Il permet de conserver les vélos de vos collaborateurs et de vos clients à l'abri des vols et des intempéries.",
     "image": "/images/projet/parking-a-velos.webp",
     "longDescription": "La construction ou l’installation d'un abri à vélos sécurisés encourage les déplacements à vélo de vos collaborateurs, et favorise l'accueil des cyclo-touristes.\n\nL’abri doit être sécurisé et comporter des dispositifs fixes permettant de stabiliser et d'attacher les vélos par le cadre et au moins une roue. (Art. R. 113-12 du CCH)\n\nS'il est équipé de panneaux photovoltaïques, l'abri à vélo peut vous permettre de produire l'électricité nécessaire à la recharge des vélos à assistance électrique.\n\nUn abris à vélos peut être équipé :\n\n- de bornes de recharge pour vélo à assistance électrique (VAE)\n\n- de bornes de gonflage\n\n- de bornes de réparation\n\n- de bornes multifonction\n\n- de consignes à bagages sécurisées",
-    "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-3_Mobilite%20durable%20entrepriseA4_web.pdf)**,** les obligations et dispositifs de soutien dans le secteur privé.\n- [**Obligation d'installation d'infrastructures de stationnement des vélos**](https://entreprendre.service-public.fr/vosdroits/F38482), par Entreprendre.Service-Public.fr.",
+    "moreDescription": "- [**Mon entreprise à l'heure des mobilités durables,**](https://www.ecologie.gouv.fr/sites/default/files/documents/22061-4_Mobilite%20durable%20entrepriseA4_0.pdf) les obligations et dispositifs de soutien dans le secteur privé.\n- [**Obligation d'installation d'infrastructures de stationnement des vélos**](https://entreprendre.service-public.fr/vosdroits/F38482), par Entreprendre.Service-Public.fr.",
     "themes": [
       "mobility"
     ],
@@ -3262,7 +3259,6 @@
       "performa-environnement",
       "tpe-gagnantes-sur-tous-les-couts",
       "visite-energie",
-      "visite-energie-cma",
       "cedre-investissement",
       "sud-pret-climat",
       "cheque-vert-grand-est",
@@ -3379,7 +3375,7 @@
     "shortDescription": "Planter des haies bocagères protège vos élevages et cultures, régule les inondations et favorise la biodiversité.",
     "image": "/images/projet/haie-bocagere.webp",
     "longDescription": "D'ici 2030, la France doit se doter chaque année de plus de 5 000 kilomètres linéaires de haies supplémentaires (objectif fixé par le SGPE).\\\nLes haies bocagères, parfois appelées haies champêtres ou haies vives, sont des **clôtures végétales diversifiées**, souvent implantées **en bordure de parcelles agricoles.**\\\nEn plus de préserver la biodiversité et d'offrir un refuge aux animaux sauvages, la plantation de haies bocagères peut vous permettre :\n\n- D'augmenter vos rendements agricoles,\n\n- De protéger vos cultures et vos animaux d'élevage,\n\n- De stabiliser et d'enrichir les sols,\n\n- En cas d'intempéries, de freiner les inondations,\n\n- De constituer une barrière physique aux pesticides et produits phytosanitaires,\n\n- De constituer une réserve de bois et de stocker du carbone.",
-    "moreDescription": "- [**Stocks de bois et de carbone dans les haies bocagères françaises**](https://librairie.ademe.fr/energies/5388-stocks-de-bois-et-de-carbone-dans-les-haies-bocageres-francaises.html#product-presentation), une évaluation de l'ADEME.\n- **Haies et bocages, des réservoirs de biodiversité**, un état des lieux par l'Office Français de la Biodiversité.",
+    "moreDescription": "- [**Stocks de bois et de carbone dans les haies bocagères françaises**](https://librairie.ademe.fr/energies/5388-stocks-de-bois-et-de-carbone-dans-les-haies-bocageres-francaises.html#product-presentation), une évaluation de l'ADEME.\n- [**Haies et bocages, des réservoirs de biodiversité**](https://www.ofb.gouv.fr/haies-et-bocages-des-reservoirs-de-biodiversite), un état des lieux par l'Office Français de la Biodiversité.",
     "themes": [
       "biodiversite",
       "water"
@@ -3611,10 +3607,7 @@
     ],
     "mainTheme": "mobility",
     "programs": [
-      "bonus-ecologique",
-      "prime-a-la-conversion",
       "programme-eve",
-      "cheque-transition-bioethanol",
       "deploiement-flottes-hydrogene",
       "pass-transition-bzh",
       "certificats-economie-energie"
@@ -3705,6 +3698,7 @@
     "programs": [
       "pacte-industrie",
       "mission-strategie-environnement",
+      "pret-economies-d-energie-pee",
       "certificats-economie-energie"
     ],
     "linkedProjects": [
@@ -3997,7 +3991,6 @@
     ],
     "mainTheme": "mobility",
     "programs": [
-      "bonus-ecologique",
       "etude-et-investissement-qualite-de-l-air",
       "amelioration-qualite-de-l-air",
       "extreme-defi-mobilite",
@@ -4005,10 +3998,8 @@
       "fond-vert-territoires-d-industrie",
       "investissement-velotourisme",
       "plan-de-mobilite",
-      "prime-a-la-conversion",
       "programme-eve",
       "retrofit-electrique",
-      "cheque-transition-bioethanol",
       "pass-transition-bzh",
       "je-change-ma-voiture",
       "mobilipro",
@@ -4062,6 +4053,7 @@
     "mainTheme": "mobility",
     "programs": [
       "amelioration-qualite-de-l-air",
+      "pret-economies-d-energie-pee",
       "pret-vert",
       "navires-energies-propre",
       "pass-transition-bzh",
@@ -4348,6 +4340,7 @@
     "mainTheme": "mobility",
     "programs": [
       "amelioration-qualite-de-l-air",
+      "pret-economies-d-energie-pee",
       "agir-pdl",
       "pami",
       "certificats-economie-energie",
@@ -4531,6 +4524,7 @@
     ],
     "mainTheme": "energy",
     "programs": [
+      "pret-economies-d-energie-pee",
       "decarb-flash-2025-2027"
     ],
     "linkedProjects": [
@@ -4563,6 +4557,7 @@
     ],
     "mainTheme": "energy",
     "programs": [
+      "pret-economies-d-energie-pee",
       "decarb-flash-2025-2027"
     ],
     "linkedProjects": [],
@@ -4847,6 +4842,38 @@
       "F",
       "G",
       "H"
+    ],
+    "faqs": []
+  },
+  {
+    "id": 1523,
+    "slug": "efficacite-energetique-des-procedes-industriels",
+    "title": "Efficacité énergétique des procédés industriels",
+    "nameTag": "⚡ efficacité industrielle",
+    "shortDescription": "Elle permet de réduire la facture énergétique associée aux procédés industriels de production.",
+    "image": "/images/projet/efficacite-energetique-des-procedes-industriels.webp",
+    "longDescription": "Le remplacement de vos équipements industriels par des équipements électriques (chaudière, four, système de chauffage ou de séchage…), l'installation de purgeurs vapeur, de lignes de retours, d'un système de thermocompression ou de mise sous-vide sont autant d’actions qui vous permettent de rendre vos procédés industriels efficaces. \\\nAinsi cela vous permet :\n\n- de **faire baisser la facture** énergétique des coûts de production.\n- d'**améliorer la performance** de votre site industriel.\n- de **participer à la décarbonation** de l’industrie .",
+    "moreDescription": "- [**Décarboner l'industrie, enjeux et défis**](https://librairie.ademe.fr/industrie-et-production-durable/7146-decarboner-l-industrie-9791029722974.html) : une présentation de l'ADEME.\n- [**La flexibilité électrique en industrie**](https://librairie.ademe.fr/energies/4724-flexibilite-electrique-en-industrie.html#), un guide de l'ADEME pour comprendre les dispositifs d'effacement énergétique en milieu industriel.",
+    "themes": [
+      "energy"
+    ],
+    "mainTheme": "energy",
+    "programs": [
+      "decarb-flash-2025-2027"
+    ],
+    "descriptionLinkedProjects": "",
+    "linkedProjects": [],
+    "priority": {
+      "default": 482,
+      "C": 8
+    },
+    "highlightPriority": null,
+    "sectors": [
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
     ],
     "faqs": []
   }
