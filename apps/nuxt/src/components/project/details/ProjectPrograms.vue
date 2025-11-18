@@ -173,7 +173,7 @@ onMounted(() => {
     return
   }
 
-  Scroll.toHashInSequence(route.hash)
+  Scroll.toHashWithRetries(route.hash)
 })
 </script>
 

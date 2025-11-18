@@ -25,37 +25,21 @@ export class Scroll {
     window.scrollTo({ top: offsetTop + clientHeight / 2 - docHeight / 2 })
   }
 
-  static async toHashWithRetry(hash: string) {
+  static async toHashWithRetries(hash: string) {
     const cleanHash = hash.replace('#', '')
     if (!cleanHash) {
       return
     }
 
-    await nextTick()
-
-    let tries = 0
     const maxTries = 5
-
-    const tryScroll = async () => {
+    for (let tries = 0; tries < maxTries; tries++) {
+      await nextTick()
       const el = document.getElementById(cleanHash)
-
       if (el) {
         Scroll.to(el, false)
       } else if (tries++ < maxTries) {
-        await new Promise((r) => setTimeout(r, 40))
-        await nextTick()
-        tryScroll()
+        await new Promise((r) => setTimeout(r, 50))
       }
     }
-
-    tryScroll()
-  }
-
-  static async toHashInSequence(hash: string) {
-    await Scroll.toHashWithRetry(hash)
-
-    await new Promise((resolve) => setTimeout(resolve, 100))
-
-    await Scroll.toHashWithRetry(hash)
   }
 }

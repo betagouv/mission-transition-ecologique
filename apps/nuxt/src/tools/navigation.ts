@@ -37,7 +37,7 @@ export default class Navigation {
 
       const navigation = Navigation.getInstance()
       if (!navigationStore.hasRegisterModal && navigation._route.hash) {
-        Scroll.toHashInSequence(navigation._route.hash)
+        Scroll.toHashWithRetries(navigation._route.hash)
       }
     }
   }
