@@ -4864,7 +4864,8 @@
     "descriptionLinkedProjects": "",
     "linkedProjects": [],
     "priority": {
-      "default": 482
+      "default": 482,
+      "C": 8
     },
     "highlightPriority": null,
     "sectors": [
