@@ -3,16 +3,13 @@ import type Token from 'markdown-it/lib/token'
 
 export class MarkedUrl {
   private _urls: string[] = []
-  private readonly _md = new MarkdownIt({ html: true })
+  private readonly _md = new MarkdownIt({ html: true, linkify: true })
 
   constructor(private _markdown: string) {}
 
   get(): string[] {
-    const tokens = this._md.parse(this._markdown)
+    const tokens = this._md.parse(this._markdown, {})
     this._extractUrls(tokens)
-    if (this._urls.length) {
-      console.log(this._urls)
-    }
     return this._urls
   }
 
