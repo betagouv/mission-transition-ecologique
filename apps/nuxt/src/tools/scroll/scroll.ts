@@ -33,11 +33,11 @@ export class Scroll {
 
     const maxTries = 5
     for (let tries = 0; tries < maxTries; tries++) {
-      await nextTick()
       const el = document.getElementById(cleanHash)
       if (el) {
         Scroll.to(el, false)
       } else if (tries++ < maxTries) {
+        await nextTick()
         await new Promise((r) => setTimeout(r, 50))
       }
     }
