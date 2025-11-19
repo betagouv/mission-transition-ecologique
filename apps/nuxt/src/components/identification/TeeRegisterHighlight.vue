@@ -17,16 +17,31 @@
 import Navigation from '@/tools/navigation'
 import Translation from '@/tools/translation'
 import { Color } from '@/types'
+import { useRouter, useRoute } from 'vue-router'
+const router = useRouter()
+const route = useRoute()
 
 interface Props {
   text: string
   buttonLabel?: string
+  setHash?: string
 }
-withDefaults(defineProps<Props>(), {
-  buttonLabel: Translation.t('results.eligibilityCheckCTA')
+
+const props = withDefaults(defineProps<Props>(), {
+  buttonLabel: Translation.t('results.eligibilityCheckCTA'),
+  setHash: ''
 })
 
 const openModal = () => {
   Navigation.toggleRegisterModal()
+
+  if (props.setHash) {
+    router.replace({
+      name: route.name,
+      params: route.params,
+      query: route.query,
+      hash: '#' + props.setHash
+    })
+  }
 }
 </script>

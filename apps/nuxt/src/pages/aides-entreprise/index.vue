@@ -76,4 +76,18 @@ useHead({
   ],
   ...MetaRobots.noIndexOnQueries(useRoute().fullPath)
 })
+
+import { onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { Scroll } from '@/tools/scroll/scroll'
+
+const route = useRoute()
+
+onMounted(() => {
+  if (!route.hash) {
+    return
+  }
+
+  Scroll.toHashWithRetries(route.hash)
+})
 </script>
