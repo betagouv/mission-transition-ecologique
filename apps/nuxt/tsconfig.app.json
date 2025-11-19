@@ -3,8 +3,7 @@
   "compilerOptions": {
     "composite": true,
     "types": ["./src/env.d.ts"],
-    "resolveJsonModule": true,
-    "noEmit": true
+    "resolveJsonModule": true
   },
   "include": [".nuxt/nuxt.d.ts", "src/**/*", "./**/*"],
   "exclude": [
@@ -19,6 +18,8 @@
     "src/**/*.test.js",
     "src/**/*.spec.js",
     "src/**/*.test.jsx",
-    "src/**/*.spec.jsx"
+    "src/**/*.spec.jsx",
+    "src/public/**/*.js",
+    "scripts/**/*"
   ]
 }
