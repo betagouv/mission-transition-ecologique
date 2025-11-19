@@ -9,7 +9,7 @@ export class Marked {
       return ''
     }
 
-    const md = new MarkdownIt({ html: true })
+    const md = new MarkdownIt({ html: true, linkify: true })
 
     if (withExtension) {
       this._extend(md)
