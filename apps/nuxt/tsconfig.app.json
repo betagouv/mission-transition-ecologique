@@ -3,7 +3,8 @@
   "compilerOptions": {
     "composite": true,
     "types": ["./src/env.d.ts"],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "noEmit": true
   },
   "include": [".nuxt/nuxt.d.ts", "src/**/*", "./**/*"],
   "exclude": [
