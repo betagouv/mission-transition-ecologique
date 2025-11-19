@@ -32,11 +32,9 @@ const img = Image.getUrl
                 format: operator.format ?? undefined,
                 densities: 1,
                 quality: 70,
-                loading: 'lazy',
-                width: operator.width ?? undefined
+                loading: 'lazy'
               })
             "
-            :width="operator.width ?? undefined"
             :alt="operator.label"
           />
         </div>

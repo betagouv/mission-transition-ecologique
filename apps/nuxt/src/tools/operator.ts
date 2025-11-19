@@ -19,7 +19,6 @@ export const partners = [
     label: 'CCI France',
     img: '/images/logos/cci-france.svg',
     href: 'https://www.cci.fr/',
-    width: '130px',
     format: 'webp'
   },
   {
