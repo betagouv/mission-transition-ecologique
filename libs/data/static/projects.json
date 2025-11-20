@@ -49,6 +49,8 @@
       31
     ],
     "priority": {
+      "55": 2,
+      "56": 2,
       "default": 40,
       "I": 2,
       "C": 2
@@ -2248,7 +2250,8 @@
       "default": 10,
       "C": 1,
       "G": 1,
-      "F": 1
+      "F": 1,
+      "55.3": 3
     },
     "highlightPriority": null,
     "sectors": [
@@ -2840,6 +2843,7 @@
       4
     ],
     "priority": {
+      "55": 5,
       "default": 191,
       "I": 8,
       "Q": 5,
@@ -2883,8 +2887,10 @@
       31
     ],
     "priority": {
+      "56": 3,
       "default": 240,
-      "I": 5
+      "I": 5,
+      "55.3": 8
     },
     "highlightPriority": null,
     "sectors": [
@@ -2923,6 +2929,8 @@
       4
     ],
     "priority": {
+      "55": 6,
+      "56": 6,
       "default": 210,
       "I": 7
     },
@@ -3375,7 +3383,7 @@
     "shortDescription": "Planter des haies bocagères protège vos élevages et cultures, régule les inondations et favorise la biodiversité.",
     "image": "/images/projet/haie-bocagere.webp",
     "longDescription": "D'ici 2030, la France doit se doter chaque année de plus de 5 000 kilomètres linéaires de haies supplémentaires (objectif fixé par le SGPE).\\\nLes haies bocagères, parfois appelées haies champêtres ou haies vives, sont des **clôtures végétales diversifiées**, souvent implantées **en bordure de parcelles agricoles.**\\\nEn plus de préserver la biodiversité et d'offrir un refuge aux animaux sauvages, la plantation de haies bocagères peut vous permettre :\n\n- D'augmenter vos rendements agricoles,\n\n- De protéger vos cultures et vos animaux d'élevage,\n\n- De stabiliser et d'enrichir les sols,\n\n- En cas d'intempéries, de freiner les inondations,\n\n- De constituer une barrière physique aux pesticides et produits phytosanitaires,\n\n- De constituer une réserve de bois et de stocker du carbone.",
-    "moreDescription": "- [**Stocks de bois et de carbone dans les haies bocagères françaises**](https://librairie.ademe.fr/energies/5388-stocks-de-bois-et-de-carbone-dans-les-haies-bocageres-francaises.html#product-presentation), une évaluation de l'ADEME.\n- [**Haies et bocages, des réservoirs de biodiversité**](https://www.ofb.gouv.fr/haies-et-bocages-des-reservoirs-de-biodiversite), un état des lieux par l'Office Français de la Biodiversité.",
+    "moreDescription": "- [**Stocks de bois et de carbone dans les haies bocagères françaises**](https://librairie.ademe.fr/energies/5388-stocks-de-bois-et-de-carbone-dans-les-haies-bocageres-francaises.html#product-presentation), une évaluation de l'ADEME.\n- [**Haies et bocages, des réservoirs de biodiversité**](https://www.ofb.gouv.fr/haies-et-bocages-des-reservoirs-de-biodiversite), un état des lieux par l'Office Français de la Biodiversité.\n- [**Le guichet unique de la haie**](https://haie.beta.gouv.fr/), un point d'accès unique à la réglementation et aux démarches administratives sur les haies.",
     "themes": [
       "biodiversite",
       "water"
@@ -3398,6 +3406,7 @@
     "sectors": [
       "A",
       "F",
+      "I",
       "N",
       "O"
     ],
@@ -3884,8 +3893,11 @@
       21
     ],
     "priority": {
+      "55": 3,
+      "56": 4,
       "default": 240,
-      "I": 3
+      "I": 3,
+      "55.3": 2
     },
     "highlightPriority": null,
     "sectors": [
@@ -4499,6 +4511,7 @@
       1028
     ],
     "priority": {
+      "55": 4,
       "default": 122,
       "I": 6,
       "Q": 4
@@ -4675,6 +4688,7 @@
       21
     ],
     "priority": {
+      "56": 6,
       "default": 672,
       "C": 5,
       "I": 4
