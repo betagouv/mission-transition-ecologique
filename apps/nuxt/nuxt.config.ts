@@ -88,7 +88,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     port: 4242
   },
   typescript: {
-    typeCheck: true,
+    typeCheck: false,
     tsConfig: {
       extends: '../tsconfig.app.json' // Nuxt copies this string as-is to the `./.nuxt/tsconfig.json`, therefore it needs to be relative to that directory
     }

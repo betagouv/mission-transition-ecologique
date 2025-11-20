@@ -84,7 +84,7 @@ $custom-icons-config: ();
 // Helper functions and mixins for icon generation
 @function getIconUrl($icon, $important: false) {
   $config: map.get($custom-icons-config, $icon);
-  $url: url('../../../../node_modules/@gouvfr/dsfr/dist/#{map.get($config, path)}');
+  $url: url('../../../../../../node_modules/@gouvfr/dsfr/dist/#{map.get($config, path)}');
 
   @return $url if($important, !important, null);
 }
