@@ -48,10 +48,7 @@ interface Props {
   limit: number
 }
 const props = defineProps<Props>()
-
-onServerPrefetch(async () => {
-  await new ProjectManager().getProjects()
-})
+await new ProjectManager().getProjects()
 
 onNuxtReady(async () => {
   CompanyData.isDataFullComputed().value // call to initialize computed reactivity variable

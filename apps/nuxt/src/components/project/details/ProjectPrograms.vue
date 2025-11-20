@@ -124,9 +124,7 @@ const resume = computed<string>(() =>
   })
 )
 
-onServerPrefetch(async () => {
-  await new ProgramManager().getDependentCompanyData()
-})
+await new ProgramManager().getDependentCompanyData()
 
 onNuxtReady(async () => {
   await new ProgramManager().getDependentCompanyData(true)

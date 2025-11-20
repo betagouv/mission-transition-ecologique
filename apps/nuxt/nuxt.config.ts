@@ -123,6 +123,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     experimental: {
       openAPI: true
     },
+    // debug: true,
+    // dev: true,
     devStorage: {
       cache: {
         driver: 'null'
@@ -134,10 +136,10 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     devLogs: true
   },
   experimental: {
-    renderJsonPayloads: false,
     inlineRouteRules: true,
-    headNext: true
-    // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
+    headNext: true,
+    // typescriptPlugin: true,
+    sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 
   modules: [
