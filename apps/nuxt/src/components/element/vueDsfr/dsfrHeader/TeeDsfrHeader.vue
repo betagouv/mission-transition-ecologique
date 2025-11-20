@@ -21,21 +21,6 @@
                 </RouterLink>
               </div>
               <div
-                v-if="isWithSlotOperator"
-                class="fr-header__operator"
-              >
-                <!-- @slot Slot nommé operator pour le logo opérateur. Sera dans `<div class="fr-header__operator">` -->
-                <slot name="operator">
-                  <img
-                    v-if="operatorImgSrc"
-                    class="fr-responsive-img"
-                    :src="operatorImgSrc"
-                    :alt="operatorImgAlt"
-                    :style="operatorImgStyle"
-                  />
-                </slot>
-              </div>
-              <div
                 v-if="showSearch || isWithSlotNav || quickLinks?.length"
                 class="fr-header__navbar"
               >
@@ -74,22 +59,12 @@
                 :title
                 v-bind="$attrs"
               >
-                <p class="fr-header__service-title">
-                  {{ serviceTitle }}
-                  <span
-                    v-if="showBeta"
-                    class="fr-badge fr-badge--sm fr-badge--green-emeraude"
-                  >
-                    BETA
-                  </span>
-                </p>
+                <div class="fr-header__service-title">
+                  <img src="/images/logos/ademe.svg" />
+                  <img src="/images/logos/mission-transition-ecologique-logo-texte.svg" />
+                  <img src="/images/logos/agir.svg" />
+                </div>
               </RouterLink>
-              <p
-                v-if="serviceDescription"
-                class="fr-header__service-tagline"
-              >
-                {{ serviceDescription }}
-              </p>
             </div>
             <div
               v-if="!serviceTitle && showBeta"
@@ -301,3 +276,18 @@ provide(registerNavigationLinkKey, () => {
   return hideModal
 })
 </script>
+
+<style scoped>
+.fr-header__service-title {
+  display: flex;
+  align-items: center; /* vertically align images */
+  gap: 1rem; /* horizontal spacing */
+  height: 60px; /* set the desired header height */
+}
+
+.fr-header__service-title img {
+  height: 100%; /* image height matches the div */
+  width: auto; /* preserve aspect ratio */
+  object-fit: contain; /* ensure logos scale nicely */
+}
+</style>
