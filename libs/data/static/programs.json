@@ -764,7 +764,7 @@
     "titre": "AMO chaufferie biomasse",
     "promesse": "Financez une prestation d’assistance à maîtrise d’ouvrage pour la mise en place d'une chaufferie biomasse",
     "description": "Vous avez pour projet de mettre en place une chaufferie biomasse dans votre entreprise? Afin de garantir la bonne exécution de votre projet, l’ADEME vous aide à financer des prestations d’assistance à maîtrise d’ouvrage (AMO).",
-    "description longue": "Les missions d’assistance à maitrise d’ouvrage vous permettront : \n\n- d’assurer la qualité du projet à travers une vision globale et en coordination avec les différents acteurs du projet ;\n- de mettre en œuvre les différentes étapes du projet et de rédiger les cahiers des charges si nécessaire (bureau d’études, maîtrise d’œuvre) ;\n- de s’assurer de la conformité réglementaire et technique de l’installation ;\n- de s’assurer du bon fonctionnement de l’installation et des modalités de maintenance.",
+    "description longue": "Les missions d’assistance à maitrise d’ouvrage vous permettront :\n\n- d’assurer la qualité du projet à travers une vision globale et en coordination avec les différents acteurs du projet ;\n- de mettre en œuvre les différentes étapes du projet et de rédiger les cahiers des charges si nécessaire (bureau d’études, maîtrise d’œuvre) ;\n- de s’assurer de la conformité réglementaire et technique de l’installation ;\n- de s’assurer du bon fonctionnement de l’installation et des modalités de maintenance.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2024",
     "illustration": "images/TEE_ampoule.png",
@@ -1385,7 +1385,7 @@
     "titre": "Baisse Les Watts",
     "promesse": "Bénéficiez d'outils et de formations pour économiser l'énergie en entreprise",
     "description": "Le programme Baisse les Watts vous accompagne dans la **maîtrise de votre consommation d’énergie**, à l'aide de trois dispositifs : le Carnet de bord Énergie, un accompagnement téléphonique et un parcours de formations collectives et individuelles.",
-    "description longue": "Baisse les Watts vous aide à réduire votre consommation en :\n- Électricité,\n- Gaz,\n- Fioul,\n- GPL,\n- RCU (Réseau de chaleur urbain) – hors carburants.",
+    "description longue": "Baisse les Watts vous aide à réduire votre consommation en :\n\n- Électricité,\n- Gaz,\n- Fioul,\n- GPL,\n- RCU (Réseau de chaleur urbain) – hors carburants.",
     "début de validité": "01/01/2023",
     "fin de validité": "01/05/2026",
     "illustration": "images/TEE_eolienne.png",
@@ -2301,7 +2301,7 @@
     "titre": "Coup de pouce Chauffage",
     "promesse": "Chauffez vos bâtiments grâce à une énergie renouvelable",
     "description": "Bénéficiez d'une prime pour le **remplacement de vos anciens équipements à énergie fossile** (charbon, fioul ou gaz) au profit d’un système de chauffage ou de production d’eau chaude fonctionnant aux énergies renouvelables.",
-    "description longue": "Pour être éligible au Coup de pouce Chauffage, votre bâtiment doit :\n- Être dédié à un usage tertiaire (vous devez en être propriétaire ou gestionnaire)\n- Être inférieur à 1000 m2\n- Être construit depuis au moins deux ans à la date d’engagement de l'opération\n- Ne pas avoir été raccordé à un réseau de chaleur (dans un délai de cinq ans précédant la date de l'engagement de l'opération)\n\nLes barèmes\n- Le montant des primes dépend des offres commerciales de chaque signataire de la charte, c’est pour cela qu’il est important de comparer les offres commerciales avant de vous engager.\n- Le montant des primes est établi en fonction de la surface du bâtiment, du type d’équipement installé, du type d’équipement qui est remplacé, et du cours du marché des Certificats d'économies d'énergie (CEE).",
+    "description longue": "Pour être éligible au Coup de pouce Chauffage, votre bâtiment doit :\n\n- Être dédié à un usage tertiaire (vous devez en être propriétaire ou gestionnaire)\n- Être inférieur à 1000 m2\n- Être construit depuis au moins deux ans à la date d’engagement de l'opération\n- Ne pas avoir été raccordé à un réseau de chaleur (dans un délai de cinq ans précédant la date de l'engagement de l'opération)\n\nLes barèmes\n\n- Le montant des primes dépend des offres commerciales de chaque signataire de la charte, c’est pour cela qu’il est important de comparer les offres commerciales avant de vous engager.\n- Le montant des primes est établi en fonction de la surface du bâtiment, du type d’équipement installé, du type d’équipement qui est remplacé, et du cours du marché des Certificats d'économies d'énergie (CEE).",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Ministère de la Transition Écologique",
     "contact question": "https://france-renov.gouv.fr/preparer-projet/trouver-conseiller",
@@ -2733,7 +2733,7 @@
     "titre": "Diag Adaptation",
     "promesse": "Évaluez la vulnérabilité climatique de votre entreprise",
     "description": "Anticipez les impacts du changement climatique sur votre activité et adaptez votre entreprise pour **limiter les risques liés aux aléas climatiques** (canicules, inondations, sécheresses…). Cet accompagnement vous aide à évaluer votre vulnérabilité, à sécuriser votre organisation et à **construire une trajectoire de résilience.**\n\n- Profitez d’une **visite sur site** par un expert pour identifier les impacts potentiels du changement climatique sur votre chaîne de valeur, à court, moyen et long terme (horizons 2035 et 2055).\n\n- Recevez un **diagnostic complet** incluant un rapport de synthèse et une feuille de route adaptée à votre activité.\n\n- Co-construisez un *plan d’action chiffré*, hiérarchisé et concret pour réduire les vulnérabilités identifiées et renforcer la résilience de votre entreprise face aux évolutions climatiques.",
-    "description longue": "Le Diag Adaptation permet d’étudier la vulnérabilité de votre activité au changement climatique afin d’anticiper les risques physiques actuels et futurs pour votre site d’exploitation (chaîne de valeur de l’activité et processus de l’entreprise, réseaux de distribution, approvisionnements, aléas climatiques récurrents…).\nL’intervention pour chaque Diag Adaptation est limitée à 1 site d’exploitation de votre entreprise. Il est possible de bénéficier de plusieurs diagnostics pour couvrir les différents sites de votre entreprise.",
+    "description longue": "Le Diag Adaptation permet d’étudier la vulnérabilité de votre activité au changement climatique afin d’anticiper les risques physiques actuels et futurs pour votre site d’exploitation (chaîne de valeur de l’activité et processus de l’entreprise, réseaux de distribution, approvisionnements, aléas climatiques récurrents…).\\\nL’intervention pour chaque Diag Adaptation est limitée à 1 site d’exploitation de votre entreprise. Il est possible de bénéficier de plusieurs diagnostics pour couvrir les différents sites de votre entreprise.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
@@ -4241,7 +4241,7 @@
     "titre": "Engins moins polluants",
     "promesse": "Investissez dans des engins non routiers moins polluants",
     "description": "Ce dispositif fiscal **soutient l’achat ou la location d’engins non routiers fonctionnant avec des énergies alternatives plus propres** (électricité, gaz, hydrogène, hybride…).\n\nGrâce à une **déduction exceptionnelle sur le résultat fiscal,** il vous aide à compenser le surcoût de ces équipements plus respectueux de l’environnement et à engager concrètement votre entreprise dans la transition énergétique.",
-    "description longue": "La déduction s’applique :\n\n- aux entreprises du bâtiment et de travaux publics,\n- aux entreprises produisant des substances minérales solides,\n- aux exploitants aéroportuaires,\n- aux exploitants de remontées mécaniques et de domaines skiables.\n\nSont éligibles :\n\n- Les engins \"non routiers\", c'est-à-dire n'ayant pas reçu d'autorisation pour circuler sur la voie publique et n'étant pas immatriculés.\n- Les engins non routiers inscrits à l'actif immobilisé et fonctionnant au gaz naturel, à l'énergie électrique ou à l'hydrogène,\n- Les engins non routiers combinant l'énergie électrique et une motorisation à l'essence ou au superéthanol E85 et ceux combinant l'essence à du gaz naturel carburant ou du gaz de pétrole liquéfié dont les émissions sont inférieures ou égales à une valeur fixée par décret, qui relèvent de l'une catégories suivantes : \n  - matériels et outillages utilisés pour des opérations industrielles,\n  - matériels de manutention,\n  - moteurs installés dans les matériels des deux précédentes catégories.",
+    "description longue": "La déduction s’applique :\n\n- aux entreprises du bâtiment et de travaux publics,\n- aux entreprises produisant des substances minérales solides,\n- aux exploitants aéroportuaires,\n- aux exploitants de remontées mécaniques et de domaines skiables.\n\nSont éligibles :\n\n- Les engins \"non routiers\", c'est-à-dire n'ayant pas reçu d'autorisation pour circuler sur la voie publique et n'étant pas immatriculés.\n- Les engins non routiers inscrits à l'actif immobilisé et fonctionnant au gaz naturel, à l'énergie électrique ou à l'hydrogène,\n- Les engins non routiers combinant l'énergie électrique et une motorisation à l'essence ou au superéthanol E85 et ceux combinant l'essence à du gaz naturel carburant ou du gaz de pétrole liquéfié dont les émissions sont inférieures ou égales à une valeur fixée par décret, qui relèvent de l'une catégories suivantes :\n  - matériels et outillages utilisés pour des opérations industrielles,\n  - matériels de manutention,\n  - moteurs installés dans les matériels des deux précédentes catégories.",
     "illustration": "images/TEE_energie_verte.png",
     "opérateur de contact": "DDFIP",
     "contact question": "https://www.impots.gouv.fr/contacts",
@@ -19673,7 +19673,6 @@
       "company": {
         "allowedNafSections": [
           "C",
-          "D",
           "E",
           "F",
           "G",
@@ -19823,7 +19822,6 @@
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
           "code NAF niveau 1 . est C",
-          "code NAF niveau 1 . est D",
           "code NAF niveau 1 . est E",
           "code NAF niveau 1 . est F",
           "code NAF niveau 1 . est G",
@@ -40921,7 +40919,7 @@
   {
     "titre": "Impact CO2",
     "promesse": "Sensibilisez votre équipe et vos clients aux enjeux d'impact carbone",
-    "description": "Sensibilisez vos clients et vos salariés à la transition écologique en intégrant à votre site ou vos applications des outils ludiques qui rendent compréhensible l'impact carbone. Que ce soit pour saisir l'impact environnemental des modes de chauffage, des appareils ménagers, des modes de transport, de la livraison de colis... les outils \"impact CO2\" rendent tangibles les ordres de grandeur liés à la consommation carbone.\n\nCes outils, gratuits et personnalisables s'intègrent en quelques clics à votre environnement numérique (site, appli) ou la communication de votre entreprise.",
+    "description": "Les outils « impact CO₂ » ont pour objectif de **sensibiliser** un large public à la transition écologique en s’**intégrant dans vos contenus en ligne**. \\\nSous forme de simulateurs, d’infographies ou de quiz, ils expliquent clairement l’impact carbone et aident chacun à comprendre les ordres de grandeur.\n\nQu’il s’agisse du chauffage, des appareils ménagers, des transports ou de la livraison de colis, ces outils rendent visibles et concrets les niveaux de consommation carbone. **Gratuits et personnalisables,** ils s’intègrent en quelques clics dans votre site, votre application ou vos supports de communication pour **montrer, en un coup d’œil, l’impact environnemental de différents usages.**",
     "description longue": "L'utilisation de l'API est entièrement gratuite. Afin de garantir un fonctionnement efficace, une clé d'API est nécessaire. Vous pouvez en demander une à l’équipe Impact CO2 en écrivant à impactco2@ademe.fr.",
     "fin de validité": "31/12/2099",
     "illustration": "images/TEE_eolienne.png",
@@ -40934,13 +40932,16 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Cherchez sur le site Impact CO2 le simulateur, la donnée ou l’infographie adaptée à votre contenu puis cliquez et scrollez sur la bannière *Partager / Intégrer / Télécharger*.",
+        "description": "Visitez le site Impact CO2 et découvrez la collection de simulateurs, contenus et infographies thématiques. Sélectionnez l'outil qui vous intéresse.",
         "liens": [
           {
             "lien": "https://impactco2.fr/outils",
             "texte": "Liste des outils par thématiques"
           }
         ]
+      },
+      {
+        "description": "Pour intégrer une ressource sur votre site ou vos supports de communication, il suffit de cliquer sur le bouton \"&lt;/&gt; Intégrer\" puis configurez vos paramètres d’affichage (langue, mode d'affichage...)"
       },
       {
         "description": "Si vous avez besoin d'aide, remplissez le formulaire afin de prendre RDV avec un conseiller.",
@@ -42927,7 +42928,7 @@
     "description longue": "L’évaluation de l’Indicateur Climat repose sur :\n\n- Des informations propres à votre entreprise (volumes d’activité présent et futur, émissions de gaz à effet de serre associées, leviers de décarbonation).\n- Des trajectoires de décarbonation de référence alignées sur l’Accord de Paris.\n- D’un cadre méthodologique inspiré de la méthode ACT de l’ADEME, reconnue à l’international.\n- D’une analyse d’experts menée par le Réseau de la Banque de France, présent sur tout le territoire et au service des entreprises.",
     "illustration": "images/TEE_eolienne.png",
     "opérateur de contact": "Banque de France",
-    "contact question": "mailto:pierre.meignant@banque-france.fr",
+    "contact question": "https://www.banque-france.fr/fr/nous-contacter",
     "url": "https://www.banque-france.fr/fr/votre-service/entreprises/la-banque-de-france-vous-aide/indicateur-climat",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "gratuit",
@@ -42944,10 +42945,10 @@
         ]
       },
       {
-        "description": "Prenez contact par mail en écrivant à [climat.XX@banque-france.fr ](mailto:climat.XX@banque-france.fr)(remplacez XX par le numéro de votre département)."
+        "description": "Obtenez une évaluation personnalisée à l'aide de l'indicateur climat."
       },
       {
-        "description": "Obtenez une évaluation personnalisée à l'aide de l'indicateur climat."
+        "description": "Si vous avez des questions, écrivez à [climat.XX@banque-france.fr ](mailto:climat.XX@banque-france.fr)(remplacez XX par le numéro de votre département)."
       }
     ],
     "conditions d'éligibilité": {
