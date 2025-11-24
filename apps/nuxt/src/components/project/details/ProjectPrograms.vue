@@ -1,7 +1,7 @@
 <template>
   <TeeContentBlock
     v-if="isDataFull || countFilteredPrograms"
-    id="project-aids-title"
+    id="aides"
     class="fr-py-5v fr-border-b--grey--light"
     :title="companyDataSelected && isDataFull ? '💰 Vos aides' : '💰 Toutes les aides'"
     container-from="md"
@@ -26,6 +26,7 @@
               v-if="!isDataFull"
               :text="Translation.t('project.projectRegisterHighlightText')"
               :button-label="Translation.t('project.projectRegisterHighlightButtonLabelText')"
+              set-hash="aides"
             />
           </div>
           <div class="fr-grid-row">
@@ -139,7 +140,7 @@ const filteredPrograms = computed(() => {
 
 const studyPrograms = computed(() => {
   return filteredPrograms.value.filter((program: ProgramTypeForFront) =>
-    [ProgramAidType.study, ProgramAidType.train].includes(program["nature de l'aide"])
+    [ProgramAidType.study, ProgramAidType.train].includes(program["nature de l'aide"] as ProgramAidType)
   )
 })
 
@@ -157,6 +158,20 @@ onMounted(async () => {
     const stickyWithOffset = new AddClassOnScroll(stickyElement.value, stickyElement.value, 'sticky-bottom-border')
     stickyWithOffset.addEventListenerOnScroll()
   }
+})
+
+import { onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { Scroll } from '@/tools/scroll/scroll'
+
+const route = useRoute()
+
+onMounted(() => {
+  if (!route.hash) {
+    return
+  }
+
+  Scroll.toHashWithRetries(route.hash)
 })
 </script>
 

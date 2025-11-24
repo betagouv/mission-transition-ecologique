@@ -17,13 +17,15 @@ export class ConfigFeedback {
     if (Config.isProduction()) {
       return {
         [FeedbackButtonPosition.Form]: { ...formId, buttonId: 4024 },
-        [FeedbackButtonPosition.Footer]: { ...formId, buttonId: 4035 }
+        [FeedbackButtonPosition.Footer]: { ...formId, buttonId: 4035 },
+        [FeedbackButtonPosition.AboutUs]: { ...formId, buttonId: 4066 }
       }
     }
 
     return {
       [FeedbackButtonPosition.Form]: { ...formId, buttonId: 4033 },
-      [FeedbackButtonPosition.Footer]: { ...formId, buttonId: 4034 }
+      [FeedbackButtonPosition.Footer]: { ...formId, buttonId: 4034 },
+      [FeedbackButtonPosition.AboutUs]: { ...formId, buttonId: 4034 }
     }
   }
 

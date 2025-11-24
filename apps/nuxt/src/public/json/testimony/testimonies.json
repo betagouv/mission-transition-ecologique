@@ -150,7 +150,6 @@
     "homePageHighlight": null,
     "projects": [
       2,
-      3,
       9,
       23,
       24,
@@ -310,6 +309,21 @@
       104,
       147,
       731
+    ]
+  },
+  {
+    "slug": "boboulo",
+    "verbatim": "J’ai choisi le verre consigné pour limiter les déchets et préserver toutes les qualités de la sève de bouleau que je produis. C’est une évidence dans ma démarche locale et circulaire : de la forêt jusqu’au point de vente.",
+    "companyName": "Boboulo",
+    "authorName": "Cyriaque Hattemer",
+    "authorFunction": "Fondateur de Boboulo",
+    "authorImage": "/images/testimony/photo-de-cyriaque-hattemer-fondateur-de-boboulo-jp.webp",
+    "authorImageAttributes": "Photo de Cyriaque Hattemer, Fondateur de Boboulo, engagé dans la transition écologique",
+    "externalLink": "",
+    "homePageHighlight": null,
+    "projects": [
+      3,
+      1260
     ]
   },
   {

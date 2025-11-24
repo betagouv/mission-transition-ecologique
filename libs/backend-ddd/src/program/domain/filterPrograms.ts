@@ -1,6 +1,6 @@
 import { Result } from 'true-myth'
 import { EligibilityEvaluator } from './spi'
-import { ProgramEligibilityType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
+import { ProgramEligibilityStatus, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 
 export class ProgramFilter {
@@ -37,8 +37,8 @@ export class ProgramFilter {
     return new Error(`Evaluation of rule failed on program with id ${programName}`)
   }
 
-  private _shouldKeepProgram(programEligibility: ProgramEligibilityType, onlyEligible: boolean | undefined): boolean {
-    if (programEligibility === ProgramEligibilityType.ProgramEol) {
+  private _shouldKeepProgram(programEligibility: ProgramEligibilityStatus, onlyEligible: boolean | undefined): boolean {
+    if (programEligibility === ProgramEligibilityStatus.ProgramEol) {
       return false
     }
 
@@ -46,6 +46,6 @@ export class ProgramFilter {
       return true
     }
 
-    return programEligibility !== ProgramEligibilityType.NotEligible
+    return programEligibility !== ProgramEligibilityStatus.NotEligible
   }
 }

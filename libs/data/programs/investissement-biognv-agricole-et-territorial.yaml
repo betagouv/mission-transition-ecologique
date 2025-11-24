@@ -32,15 +32,19 @@ début de validité: 01/06/2023
 fin de validité: 31/12/2023
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000414
+contact question: https://contact-agir.ademe.fr/contact?id_dsp=DSP000414
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Stations%20bioGNV%20agricole%20et%20territorial%20-%20Cahier%20des%20charges%20.pdf
+  https://agirpourlatransition.ademe.fr/sites/default/files/Stations%20bioGNV%20agricole%20et%20territorial%20-%20Cahier%20des%20charges%20.pdf
 nature de l'aide: financement
 montant du financement: Jusqu'à 70% des coûts, dans un maximum de 200 000 €
 objectifs:
   - description: >-
       Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
       projet.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/sites/default/files/Stations%20bioGNV%20agricole%20et%20territorial%20-%20Cahier%20des%20charges%20.pdf
+        texte: Conditions d'éligibilité et financements
   - description: >-
       Déposez votre demande d'aide : informations administratives, description
       du projet, détails techniques et financiers, étude de faisabilité, etc. A

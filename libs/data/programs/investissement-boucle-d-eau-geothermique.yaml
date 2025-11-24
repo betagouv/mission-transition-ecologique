@@ -23,7 +23,7 @@ début de validité: 01/01/2023
 fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000706
+contact question: https://contact-agir.ademe.fr/contact?id_dsp=DSP000706
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/installations-production-chaleur-froid-a-partir-boucle-deau-temperee
 nature de l'aide: financement
@@ -34,11 +34,11 @@ objectifs:
       projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Boucle%20d%27eau%20temp%C3%A9r%C3%A9e%20%C3%A0%20%C3%A9nergie%20g%C3%A9othermique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/Boucle%20d%27eau%20temp%C3%A9r%C3%A9e%20%C3%A0%20%C3%A9nergie%20g%C3%A9othermique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
         texte: Conditions éligibilité et financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du

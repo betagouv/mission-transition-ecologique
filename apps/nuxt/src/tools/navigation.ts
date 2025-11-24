@@ -1,6 +1,7 @@
 import Config from '@/config'
 import { RouteName, TrackId } from '@/types'
 import { RouteLocationNormalizedLoaded, RouteParamsGeneric, Router } from 'vue-router'
+import { Scroll } from './scroll/scroll'
 
 export default class Navigation {
   constructor(
@@ -33,6 +34,11 @@ export default class Navigation {
           behavior: 'instant'
         })
       }
+
+      const navigation = Navigation.getInstance()
+      if (!navigationStore.hasRegisterModal && navigation._route.hash) {
+        Scroll.toHashWithRetries(navigation._route.hash)
+      }
     }
   }
 
@@ -58,6 +64,10 @@ export default class Navigation {
 
   isHomepage() {
     return this.isByRouteName(RouteName.Homepage)
+  }
+
+  isAboutPage() {
+    return this.isByRouteName(RouteName.About)
   }
 
   isCatalogPrograms() {

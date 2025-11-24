@@ -38,10 +38,11 @@
 <script setup lang="ts">
 import { useProjectStore } from '@/stores/project'
 import ProjectFilter from '@/tools/project/projectFilter'
+import ProjectSorter from '@/tools/project/projectSorter'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { Theme } from '@/tools/theme'
 import { CompanyData } from '@/tools/companyData'
-import { RouteName, ProjectType } from '@/types'
+import { RouteName } from '@/types'
 
 interface Props {
   limit: number
@@ -66,7 +67,7 @@ const sortedProjects = computed(() => {
   }
 
   if (!theme.value || !Theme.isTheme(theme.value)) {
-    return isDataFull.value ? projects.value : byHighlight(filteredProjects.value)
+    return isDataFull.value ? projects.value : ProjectSorter.byHighlight(filteredProjects.value)
   }
 
   return filteredProjects.value
@@ -82,17 +83,4 @@ const countProjects = computed(() => {
 const hasNoResults = computed(() => {
   return !hasSpinner.value && (hasError.value || !countProjects.value)
 })
-
-function byHighlight(projects: ProjectType[]): ProjectType[] {
-  // Using slice->sort instead of toSorted to ensure maximum browser compatibilities
-  return projects.slice().sort((a, b) => {
-    if (!a.highlightPriority) {
-      return 1
-    }
-    if (!b.highlightPriority) {
-      return -1
-    }
-    return a.highlightPriority - b.highlightPriority
-  })
-}
 </script>

@@ -88,11 +88,19 @@ objectifs:
       Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au
       moins un mois avant la date limite de dépôt).
     liens:
-      - lien: mailto:decarb.flash@ademe.fr
-        texte: decarb.flash@ademe.fr
+      - lien: >-
+          https://outlook.office.com/book/DECARBFLASH20252027RunionsdeprdptRservations@ademe.fr/?ismsaljsauthenabled=true
+        texte: >-
+          Prenez rendez-vous en sélectionnant la région de votre projet
+          industriel
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/sites/default/files/DECARB%20FLASH%202025-2027%20-%20Contacts%20ADEME%20en%20R%C3%A9gion%20-%2009-2025.pdf
+        texte: >-
+          Vous disposez également de la liste des contacts dans les directions
+          régionales
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre demande d'aide : informations administratives, description
