@@ -25,18 +25,15 @@ export default abstract class RequestApi {
   public async getJson<T>(baseUrl: string | undefined = undefined): Promise<ResultApi<T>> {
     baseUrl = baseUrl ?? this.url
     const url: string = this.query ? `${baseUrl}?${this.query}` : baseUrl
-    const { data, error } = (await useAsyncData<T>(
-      url,
-      async () => {
-        return await $fetch(url)
-      },
-      {
-        getCachedData(url, nuxtApp) {
-          return nuxtApp.payload.data[url] || nuxtApp.static.data[url]
-        },
-        deep: false
-      }
-    )) as _AsyncData<T | null, NuxtError<unknown> | null>
+
+    const { data: cachedData } = useNuxtData<T>(url)
+    if (cachedData.value) {
+      return new ResultApi<T>(cachedData, null)
+    }
+
+    const { data, error } = (await useAsyncData<T>(url, async () => {
+      return await $fetch(url)
+    })) as _AsyncData<T | null, NuxtError<unknown> | null>
 
     return new ResultApi<T>(data, error)
   }

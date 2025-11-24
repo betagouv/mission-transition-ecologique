@@ -1,6 +1,6 @@
 import Config from '@/config'
 import { RouteName, TrackId } from '@/types'
-import { RouteLocationNormalizedLoaded, RouteParamsGeneric, Router } from 'vue-router'
+import { RouteLocationNormalizedLoaded, RouteParamsGeneric } from 'vue-router'
 import { Scroll } from './scroll/scroll'
 
 export default class Navigation {

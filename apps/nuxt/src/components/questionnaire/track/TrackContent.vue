@@ -117,7 +117,6 @@ import Navigation from '@/tools/navigation'
 import { Scroll } from '@/tools/scroll/scroll'
 import TrackColOption from '@/tools/questionnaire/track/TrackColOption'
 import TrackComponent from '@/tools/questionnaire/track/TrackComponent'
-import { useRouter } from 'vue-router'
 
 interface Props {
   trackElement: Element

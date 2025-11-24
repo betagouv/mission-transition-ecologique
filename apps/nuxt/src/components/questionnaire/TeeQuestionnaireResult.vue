@@ -31,7 +31,6 @@
 import { RouteName } from '@/types/routeType'
 import { useNavigationStore } from '@/stores/navigation'
 import { MetaSeo } from '@/tools/metaSeo'
-import { useRoute } from 'vue-router'
 
 const route = useRoute()
 const siret = route.query.siret
