@@ -1,16 +1,21 @@
 titre: Impact CO2
 promesse: Sensibilisez votre équipe et vos clients aux enjeux d'impact carbone
 description: >-
-  Sensibilisez vos clients et vos salariés à la transition écologique en
-  intégrant à votre site ou vos applications des outils ludiques qui rendent
-  compréhensible l'impact carbone. Que ce soit pour saisir l'impact
-  environnemental des modes de chauffage, des appareils ménagers, des modes de
-  transport, de la livraison de colis... les outils "impact CO2" rendent
-  tangibles les ordres de grandeur liés à la consommation carbone.
+  Les outils « impact CO₂ » ont pour objectif de **sensibiliser** un large
+  public à la transition écologique en s’**intégrant dans vos contenus en
+  ligne**. \
+
+  Sous forme de simulateurs, d’infographies ou de quiz, ils expliquent
+  clairement l’impact carbone et aident chacun à comprendre les ordres de
+  grandeur.
 
 
-  Ces outils, gratuits et personnalisables s'intègrent en quelques clics à votre
-  environnement numérique (site, appli) ou la communication de votre entreprise.
+  Qu’il s’agisse du chauffage, des appareils ménagers, des transports ou de la
+  livraison de colis, ces outils rendent visibles et concrets les niveaux de
+  consommation carbone. **Gratuits et personnalisables,** ils s’intègrent en
+  quelques clics dans votre site, votre application ou vos supports de
+  communication pour **montrer, en un coup d’œil, l’impact environnemental de
+  différents usages.**
 description longue: >-
   L'utilisation de l'API est entièrement gratuite. Afin de garantir un
   fonctionnement efficace, une clé d'API est nécessaire. Vous pouvez en demander
@@ -26,12 +31,16 @@ durée de l'accompagnement: 10 minutes
 activable en autonomie: oui
 objectifs:
   - description: >-
-      Cherchez sur le site Impact CO2 le simulateur, la donnée ou l’infographie
-      adaptée à votre contenu puis cliquez et scrollez sur la bannière *Partager
-      / Intégrer / Télécharger*.
+      Visitez le site Impact CO2 et découvrez la collection de simulateurs,
+      contenus et infographies thématiques. Sélectionnez l'outil qui vous
+      intéresse.
     liens:
       - lien: https://impactco2.fr/outils
         texte: Liste des outils par thématiques
+  - description: >-
+      Pour intégrer une ressource sur votre site ou vos supports de
+      communication, il suffit de cliquer sur le bouton "&lt;/&gt; Intégrer"
+      puis configurez vos paramètres d’affichage (langue, mode d'affichage...)
   - description: >-
       Si vous avez besoin d'aide, remplissez le formulaire afin de prendre RDV
       avec un conseiller.

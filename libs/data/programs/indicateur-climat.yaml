@@ -36,7 +36,7 @@ description longue: >-
   sur tout le territoire et au service des entreprises.
 illustration: images/TEE_eolienne.png
 opérateur de contact: Banque de France
-contact question: mailto:pierre.meignant@banque-france.fr
+contact question: https://www.banque-france.fr/fr/nous-contacter
 url: >-
   https://www.banque-france.fr/fr/votre-service/entreprises/la-banque-de-france-vous-aide/indicateur-climat
 nature de l'aide: étude
@@ -50,11 +50,11 @@ objectifs:
     liens:
       - lien: https://dirigeant.banque-france.fr/#/
         texte: Espace Dirigeant
+  - description: Obtenez une évaluation personnalisée à l'aide de l'indicateur climat.
   - description: >-
-      Prenez contact par mail en écrivant à [climat.XX@banque-france.fr
+      Si vous avez des questions, écrivez à [climat.XX@banque-france.fr
       ](mailto:climat.XX@banque-france.fr)(remplacez XX par le numéro de votre
       département).
-  - description: Obtenez une évaluation personnalisée à l'aide de l'indicateur climat.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
