@@ -9,7 +9,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
-    "noEmit": true
   },
   "files": [],
   "include": [],
