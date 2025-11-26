@@ -260,6 +260,10 @@ const utilLinks = [
     to: { name: RouteName.About }
   },
   {
+    label: 'Plan du site',
+    to: { name: RouteName.SitemapPage }
+  },
+  {
     label: 'Kit média',
     href: mediaKit
   }
