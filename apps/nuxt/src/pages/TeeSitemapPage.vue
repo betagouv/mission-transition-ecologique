@@ -4,108 +4,130 @@
     fluid
   >
     <div class="fr-container fr-mt-3v fr-mb-8v">
-      <h1 class="fr-text--blue-france">Plan du site</h1>
-      <p class="fr-text--lg fr-mb-4w">Retrouvez l'ensemble des pages de la plateforme Transition écologique des entreprises.</p>
-
-      <!-- Pages principales -->
-      <section class="fr-mb-6w">
-        <h2 class="fr-text--blue-france">Pages principales</h2>
-        <ul class="fr-ml-4w">
-          <li
-            v-for="page in mainPages"
-            :key="page.name"
-          >
-            <NuxtLink :to="{ name: page.name }">
-              {{ page.label }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </section>
-
-      <!-- Programs -->
-      <section class="fr-mb-6w">
-        <h2 class="fr-text--blue-france">
-          Dispositifs d'aide
-          <span
-            v-if="programs.length > 0"
-            class="fr-text--regular fr-text--sm"
-          >
-            ({{ programs.length }} aide{{ programs.length > 1 ? 's' : '' }})
-          </span>
-        </h2>
-        <p class="fr-mb-2w">
-          <NuxtLink :to="{ name: RouteName.CatalogPrograms }"> Voir toutes les aides aux entreprises </NuxtLink>
-        </p>
-        <div
-          v-if="loadingPrograms"
-          class="fr-ml-4w"
-        >
-          <TeeSpinner class="fr-my-2w" />
+      <div class="fr-grid-row">
+        <div class="fr-col-12 fr-col-md-3 fr-mt-md-4w fr-mb-2w">
+          <DsfrSideMenu
+            heading-title="Sommaire"
+            :menu-items="tableOfContents"
+          />
         </div>
-        <ul
-          v-else-if="sortedPrograms.length > 0"
-          class="fr-ml-4w sitemap-list"
-        >
-          <li
-            v-for="program in sortedPrograms"
-            :key="program.id"
-          >
-            <NuxtLink :to="`/aides-entreprise/${program.id}`">
-              {{ program.titre }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </section>
+        <div class="fr-col-12 fr-col-md-9">
+          <h1 class="fr-text--blue-france">Plan du site</h1>
+          <p class="fr-text--lg fr-mb-4w">Retrouvez l'ensemble des pages de la plateforme Transition écologique des entreprises.</p>
 
-      <!-- Projets -->
-      <section class="fr-mb-6w">
-        <h2 class="fr-text--blue-france">
-          Projets de transition écologique
-          <span
-            v-if="projects.length > 0"
-            class="fr-text--regular fr-text--sm"
+          <!-- Pages principales -->
+          <section
+            id="pages-principales"
+            class="fr-mb-6w"
           >
-            ({{ projects.length }} projet{{ projects.length > 1 ? 's' : '' }})
-          </span>
-        </h2>
-        <p class="fr-mb-2w">
-          <NuxtLink :to="{ name: RouteName.CatalogProjects }"> Voir tous les projets d'entreprise </NuxtLink>
-        </p>
-        <div
-          v-if="loadingProjects"
-          class="fr-ml-4w"
-        >
-          <TeeSpinner class="fr-my-2w" />
+            <h2 class="fr-text--blue-france">Pages principales</h2>
+            <ul class="fr-ml-4w">
+              <li
+                v-for="page in mainPages"
+                :key="page.name"
+              >
+                <NuxtLink :to="{ name: page.name }">
+                  {{ page.label }}
+                </NuxtLink>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Programs -->
+          <section
+            id="dispositifs-aide"
+            class="fr-mb-6w"
+          >
+            <h2 class="fr-text--blue-france">
+              Dispositifs d'aide
+              <span
+                v-if="programs.length > 0"
+                class="fr-text--regular fr-text--sm"
+              >
+                ({{ programs.length }} aide{{ programs.length > 1 ? 's' : '' }})
+              </span>
+            </h2>
+            <p class="fr-mb-2w">
+              <NuxtLink :to="{ name: RouteName.CatalogPrograms }"> Voir toutes les aides aux entreprises </NuxtLink>
+            </p>
+            <div
+              v-if="loadingPrograms"
+              class="fr-ml-4w"
+            >
+              <TeeSpinner class="fr-my-2w" />
+            </div>
+            <ul
+              v-else-if="sortedPrograms.length > 0"
+              class="fr-ml-4w sitemap-list"
+            >
+              <li
+                v-for="program in sortedPrograms"
+                :key="program.id"
+              >
+                <NuxtLink :to="`/aides-entreprise/${program.id}`">
+                  {{ program.titre }}
+                </NuxtLink>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Projets -->
+          <section
+            id="projets-transition"
+            class="fr-mb-6w"
+          >
+            <h2 class="fr-text--blue-france">
+              Projets de transition écologique
+              <span
+                v-if="projects.length > 0"
+                class="fr-text--regular fr-text--sm"
+              >
+                ({{ projects.length }} projet{{ projects.length > 1 ? 's' : '' }})
+              </span>
+            </h2>
+            <p class="fr-mb-2w">
+              <NuxtLink :to="{ name: RouteName.CatalogProjects }"> Voir tous les projets d'entreprise </NuxtLink>
+            </p>
+            <div
+              v-if="loadingProjects"
+              class="fr-ml-4w"
+            >
+              <TeeSpinner class="fr-my-2w" />
+            </div>
+            <ul
+              v-else-if="sortedProjects.length > 0"
+              class="fr-ml-4w sitemap-list"
+            >
+              <li
+                v-for="project in sortedProjects"
+                :key="project.slug"
+              >
+                <NuxtLink :to="`/projets-entreprise/${project.slug}`">
+                  {{ project.title }}
+                </NuxtLink>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Pages d'Informations légales -->
+          <section
+            id="informations-legales"
+            class="fr-mb-6w"
+          >
+            <h2 class="fr-text--blue-france">Informations légales</h2>
+            <ul class="fr-ml-4w">
+              <li
+                v-for="page in legalPages"
+                :key="page.name"
+              >
+                <NuxtLink :to="{ name: page.name }">
+                  {{ page.label }}
+                </NuxtLink>
+              </li>
+            </ul>
+          </section>
         </div>
-        <ul
-          v-else-if="sortedProjects.length > 0"
-          class="fr-ml-4w sitemap-list"
-        >
-          <li
-            v-for="project in sortedProjects"
-            :key="project.slug"
-          >
-            <NuxtLink :to="`/projets-entreprise/${project.slug}`">
-              {{ project.title }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </section>
-
-      <!-- Pages d'Informations légales -->
-      <section class="fr-mb-6w">
-        <h2 class="fr-text--blue-france">Informations légales</h2>
-        <ul class="fr-ml-4w">
-          <li
-            v-for="page in legalPages"
-            :key="page.name"
-          >
-            <NuxtLink :to="{ name: page.name }">
-              {{ page.label }}
-            </NuxtLink>
-          </li>
-        </ul>
-      </section>
+      </div>
     </div>
   </Layout>
 </template>
@@ -120,6 +142,7 @@ import { ProjectManager } from '@/tools/project/projectManager'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
 import { useNavigationStore } from '@/stores/navigation'
+import { DsfrSideMenuListItemProps } from '@gouvminint/vue-dsfr/types'
 
 definePageMeta({
   path: '/plan-du-site',
@@ -188,4 +211,23 @@ const sortedProjects = computed(() => {
 
 const loadingPrograms = computed(() => hasSpinner.value || hasProgramError.value)
 const loadingProjects = computed(() => hasSpinner.value || hasProjectError.value)
+
+const tableOfContents = computed(() => [
+  {
+    text: 'Pages principales',
+    to: '#pages-principales'
+  },
+  {
+    text: "Dispositifs d'aide",
+    to: '#dispositifs-aide'
+  },
+  {
+    text: 'Projets de transition',
+    to: '#projets-transition'
+  },
+  {
+    text: 'Informations légales',
+    to: '#informations-legales'
+  }
+]) as unknown as DsfrSideMenuListItemProps[]
 </script>
