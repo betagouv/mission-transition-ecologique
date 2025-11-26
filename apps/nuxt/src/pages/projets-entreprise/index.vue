@@ -33,6 +33,7 @@ import { Theme } from '@/tools/theme'
 import { FaqSectionType, RouteName } from '@/types'
 import { computed } from 'vue'
 import { MetaRobots } from '@/tools/metaRobots'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 definePageMeta({
   name: RouteName.CatalogProjects,
@@ -53,9 +54,7 @@ const seoDescription =
   "Découvrez  les projets de transition écologique pour votre secteur d'activité : explications, ressources," +
   " témoignages d'entreprises et liste des aides financières associées."
 
-onServerPrefetch(async () => {
-  await new ProjectManager().getProjects()
-})
+await new ProjectManager().getProjects()
 
 onNuxtReady(async () => {
   CompanyData.isDataFullComputed().value // call to initialize computed reactivity variable

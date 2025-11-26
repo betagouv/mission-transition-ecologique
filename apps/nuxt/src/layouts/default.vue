@@ -5,6 +5,7 @@ import { Identity } from '@/tools/identity'
 import { MetaSeo } from '@/tools/metaSeo'
 import Translation from '@/tools/translation'
 import Cookie from '@/tools/cookies'
+import { defineOrganization, defineWebPage, defineWebSite, useSchemaOrg } from '@unhead/schema-org/vue'
 
 const navigationStore = useNavigationStore()
 
@@ -14,10 +15,11 @@ onBeforeMount(() => {
 })
 
 useSeoMeta(MetaSeo.default())
+
 useSchemaOrg([
-  defineWebPage({ name: MetaSeo.title, description: MetaSeo.defaultDescription }),
+  defineWebPage({ name: MetaSeo.title(), description: MetaSeo.defaultDescription }),
   defineWebSite({
-    name: MetaSeo.title,
+    name: MetaSeo.title(),
     description: MetaSeo.descriptionWebsite
   }),
   defineOrganization({

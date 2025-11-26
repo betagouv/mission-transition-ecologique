@@ -38,6 +38,7 @@ import { Color, RouteName } from '@/types'
 import { MetaRobots } from '@/tools/metaRobots'
 import { useRouter } from 'vue-router'
 import { MetaSeo } from '@/tools/metaSeo'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 definePageMeta({
   path: '/qui-sommes-nous',

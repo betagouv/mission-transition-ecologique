@@ -48,6 +48,7 @@ import { useProjectStore } from '@/stores/project'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 import Analytics from '@/tools/analytic/analytics'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 const { currentProject: project } = storeToRefs(useProjectStore())
 const navigation = new Navigation()

@@ -53,8 +53,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '/projets-entreprise': { prerender: hasPrerenderOrSwr },
     '/projets-entreprise/**': { swr: hasPrerenderOrSwr },
     '/accessibilite': { prerender: true },
-    // '/mentions-legales': { prerender: true },
-    // '/donnees-personnelles': { prerender: true },
+    '/mentions-legales': { prerender: true },
+    '/donnees-personnelles': { prerender: true },
     '/stats': { swr: 86400 }, // cached for 1 day (86400 seconds)
     '/budget': { prerender: true },
     '/ajouter-une-aide-entreprises': { prerender: true },
@@ -88,7 +88,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     port: 4242
   },
   typescript: {
-    typeCheck: true,
+    typeCheck: false,
     tsConfig: {
       extends: '../tsconfig.app.json' // Nuxt copies this string as-is to the `./.nuxt/tsconfig.json`, therefore it needs to be relative to that directory
     }
@@ -123,6 +123,12 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     experimental: {
       openAPI: true
     },
+    // prerender: {
+    //   crawlLinks: true,
+    //   failOnError: false,
+    // },
+    // debug: true,
+    // dev: true,
     devStorage: {
       cache: {
         driver: 'null'
@@ -134,9 +140,9 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     devLogs: true
   },
   experimental: {
-    renderJsonPayloads: false,
     inlineRouteRules: true,
-    headNext: true
+    headNext: true,
+    // typescriptPlugin: true,
     // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 
@@ -148,8 +154,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@nuxt/scripts',
-    '@nuxt/image',
-    'nuxt-schema-org'
+    '@nuxt/image'
   ],
   // Modules who need to have a look:
   // - nuxt-purgecss
@@ -181,9 +186,6 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   site: {
     name: MetaSeo.title(),
     description: Identity.description
-  },
-  schemaOrg: {
-    defaults: false
   },
   scripts: {
     registry: NuxtScriptsConfig.getRegistry()

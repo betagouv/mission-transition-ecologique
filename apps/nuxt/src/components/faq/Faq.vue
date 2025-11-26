@@ -20,6 +20,7 @@
 import FaqSection from '@/components/faq/FaqSection.vue'
 import { Faq } from '@/tools/faq'
 import { FaqSectionType } from '@/types'
+import { useSchemaOrg } from '@unhead/schema-org/vue'
 
 interface Props {
   faqItems: FaqSectionType[]

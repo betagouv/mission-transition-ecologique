@@ -25,6 +25,7 @@ import { MetaRobots } from '@/tools/metaRobots'
 import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 const navigation = new Navigation()
 

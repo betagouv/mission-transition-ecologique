@@ -30,6 +30,7 @@ import { RouteName } from '@/types/routeType'
 import Contact from '@/tools/contact'
 import { LegalNoticePropsThirdParty, LegalNotice } from '@incubateur-ademe/legal-pages-vue3'
 import { MetaRobots } from '@/tools/metaRobots'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 definePageMeta({
   path: '/mentions-legales',

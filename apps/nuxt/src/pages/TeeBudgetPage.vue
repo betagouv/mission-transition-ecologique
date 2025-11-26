@@ -153,6 +153,7 @@ import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 import { onMounted, ref } from 'vue'
 import { MetaRobots } from '@/tools/metaRobots'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 definePageMeta({
   path: '/budget',

@@ -22,6 +22,7 @@ import { ProgramManager } from '@/tools/program/programManager'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import { MetaRobots } from '@/tools/metaRobots'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 definePageMeta({
   name: RouteName.CatalogPrograms,
@@ -40,9 +41,7 @@ const seoDescription =
   'Trouvez les aides adaptées à votre entreprise : subvention, financements et accompagnements de l’ADEME, Bpifrance,' +
   ' CCI… pour votre transition énergétique et écologique.'
 
-onServerPrefetch(async () => {
-  await new ProgramManager().getDependentCompanyData(false)
-})
+await new ProgramManager().getDependentCompanyData(false)
 
 onNuxtReady(async () => {
   await new ProgramManager().getDependentCompanyData(true)
