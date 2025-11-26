@@ -5,6 +5,7 @@ import Contact from '@/tools/contact'
 import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
 import { Color, FaqSectionType, RouteName } from '@/types'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 onNuxtReady(async () => {
   CompanyData.isDataFullComputed().value // call to initialize computed reactivity variable

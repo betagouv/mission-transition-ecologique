@@ -21,6 +21,7 @@ import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 import { PrivacyPolicyPropsCookie, PrivacyPolicyPropsThirdParty, PrivacyPolicy } from '@incubateur-ademe/legal-pages-vue3'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 definePageMeta({
   path: '/donnees-personnelles',

@@ -14,6 +14,7 @@ import { useUsedTrackStore } from '@/stores/usedTrack'
 import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
 import { type RouteLocationAsRelativeGeneric, type RouteLocationRaw, RouteParamsGeneric } from 'vue-router'
+import { defineBreadcrumb, useSchemaOrg } from '@unhead/schema-org/vue'
 
 export interface TeeDsfrBreadcrumbProps {
   links?: DsfrBreadcrumbProps['links']

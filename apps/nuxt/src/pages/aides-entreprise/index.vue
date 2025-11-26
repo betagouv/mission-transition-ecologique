@@ -22,6 +22,7 @@ import { ProgramManager } from '@/tools/program/programManager'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed } from 'vue'
 import { MetaRobots } from '@/tools/metaRobots'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 definePageMeta({
   name: RouteName.CatalogPrograms,

@@ -21,6 +21,7 @@ import { useProjectStore } from '@/stores/project'
 import { Faq } from '@/tools/faq'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { ProjectType } from '@/types'
+import { useSchemaOrg } from '@unhead/schema-org/vue'
 
 interface Props {
   project: ProjectType

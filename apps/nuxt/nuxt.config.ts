@@ -53,8 +53,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '/projets-entreprise': { prerender: hasPrerenderOrSwr },
     '/projets-entreprise/**': { swr: hasPrerenderOrSwr },
     '/accessibilite': { prerender: true },
-    // '/mentions-legales': { prerender: true },
-    // '/donnees-personnelles': { prerender: true },
+    '/mentions-legales': { prerender: true },
+    '/donnees-personnelles': { prerender: true },
     '/stats': { swr: 86400 }, // cached for 1 day (86400 seconds)
     '/budget': { prerender: true },
     '/ajouter-une-aide-entreprises': { prerender: true },
@@ -123,6 +123,10 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     experimental: {
       openAPI: true
     },
+    // prerender: {
+    //   crawlLinks: true,
+    //   failOnError: false,
+    // },
     // debug: true,
     // dev: true,
     devStorage: {
@@ -150,8 +154,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@nuxt/scripts',
-    '@nuxt/image',
-    'nuxt-schema-org'
+    '@nuxt/image'
   ],
   // Modules who need to have a look:
   // - nuxt-purgecss
@@ -183,9 +186,6 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   site: {
     name: MetaSeo.title(),
     description: Identity.description
-  },
-  schemaOrg: {
-    defaults: false
   },
   scripts: {
     registry: NuxtScriptsConfig.getRegistry()

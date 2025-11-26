@@ -1,5 +1,6 @@
 import { Marked } from '@/tools/marked'
 import { FaqQuestionItem } from '@tee/data'
+import { defineQuestion } from '@unhead/schema-org/vue'
 
 export class Faq {
   public static getDefineQuestions(questions: FaqQuestionItem[]) {

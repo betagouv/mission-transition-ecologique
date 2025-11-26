@@ -73,6 +73,7 @@ import Analytics from '@/tools/analytic/analytics'
 import { Scroll } from '@/tools/scroll/scroll'
 import { useCompanyDataStore } from '@/stores/companyData'
 import { ProgramEligibility } from '@/types'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 const { currentProgram } = storeToRefs(useProgramStore())
 const { currentProject } = storeToRefs(useProjectStore())

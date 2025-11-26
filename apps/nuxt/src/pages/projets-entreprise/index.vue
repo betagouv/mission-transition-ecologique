@@ -33,6 +33,7 @@ import { Theme } from '@/tools/theme'
 import { FaqSectionType, RouteName } from '@/types'
 import { computed } from 'vue'
 import { MetaRobots } from '@/tools/metaRobots'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 definePageMeta({
   name: RouteName.CatalogProjects,
