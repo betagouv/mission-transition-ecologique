@@ -1400,7 +1400,7 @@
     "shortDescription": "Il met en évidence vos postes de consommation d'eau les plus importants et les pistes de solutions.",
     "image": "/images/projet/plan-action-eau.webp",
     "titleLongDescription": "🤝 Qu’est-ce qu'un plan d'action eau ?",
-    "longDescription": "Raréfaction de l'eau, restriction des consommations, augmentation des coûts : maîtriser sa consommation d’eau est un enjeu essentiel pour les entreprises.\n\nComment agir au sein de votre entreprise pour poursuivre votre activité et faire des économies d’eau ?\n\nFaites-vous accompagner par un expert, et réalisez un diagnostic global de vos flux (énergie, déchets, eau...) ou une étude ciblée de votre consommation d'eau.",
+    "longDescription": "Raréfaction de l'eau, restriction des consommations, augmentation des coûts : **maîtriser sa consommation d’eau est un enjeu essentiel** pour les entreprises.\n\nComment agir au sein de votre entreprise pour poursuivre votre activité et faire des économies d’eau ?\n\n**Faites-vous accompagner** par un expert, et réalisez un diagnostic global de vos flux (énergie, déchets, eau...) ou une étude ciblée de votre consommation d'eau.",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur le plan d'action eau ?",
     "moreDescription": "- [**Eau secours, demain tous à sec**](https://www.qqf.fr/infographie/eau-secours-demain-tous-a-sec/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**10 conseils aux entreprises pour une sobriété en eau**](https://www.cci.fr/actualites/10-conseils-aux-entreprises-pour-une-sobriete-en-eau). Une fiche conseil proposée par la CCI, Chambre de Commerce et d’Industrie.",
     "themes": [
@@ -4272,7 +4272,8 @@
     ],
     "mainTheme": "mobility",
     "programs": [
-      "extreme-defi-mobilite"
+      "extreme-defi-mobilite",
+      "fond-vert-territoires-d-industrie"
     ],
     "linkedProjects": [
       16
