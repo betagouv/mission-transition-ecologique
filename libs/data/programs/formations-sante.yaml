@@ -1,0 +1,68 @@
+titre: Formations Opco Santé
+promesse: Formez vos salariés à la transition écologique
+description: >-
+  Accédez à un catalogue de formations, rigoureusement sélectionnées pour
+  répondre aux besoins de votre entreprise et de vos collaborateurs. Au
+  programme :
+
+
+  - Sensibilisation à la prévention et à la gestion des déchets.
+
+  - Hygiène et nettoyage: pratiques et achats responsables pour l'entretien des
+  locaux en établissements sanitaires et médico-sociaux.
+
+  - Sensibilisation à la transition énergétique. 
+
+  - etc.
+illustration: images/TEE_ampoule.png
+opérateur de contact: Opco Santé
+contact question: formulaire
+url: https://www.opco-sante.fr/
+nature de l'aide: formation
+coût de l'accompagnement: Variable
+durée de l'accompagnement: Variable selon la formation choisie
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Rendez-vous sur le catalogue de formations de l'Opco Santé et trouvez la
+      formation et la session qui vous convient.
+    liens:
+      - lien: https://catalogue.opco-sante.fr/Portal/Default.aspx?page=1
+        texte: Catalogue de formations
+  - description: >-
+      Créez un compte sur le site de l'Opco Santé et inscrivez-vous à la session
+      de votre choix.
+    liens:
+      - lien: https://%3Chttps://webservice.opco-sante.fr/conditions.aspx%3E
+        texte: Créer mon compte
+  - description: >-
+      Pour toute demande de pris en charge d'une formation, contactez le service
+      entreprises de votre région.
+    liens:
+      - lien: https://www.opco-sante.fr/contact/
+        texte: Service entreprises
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises des secteurs sanitaire, social et médico-social privé à but
+      non lucratif, des services de prévention et de santé au travail, de
+      l'hospitalisation privée et du thermalisme
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est Q
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter

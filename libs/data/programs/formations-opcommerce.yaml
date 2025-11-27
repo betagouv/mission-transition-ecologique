@@ -1,0 +1,73 @@
+titre: Formations Opcommerce
+promesse: Formez vos salariés à la transition écologique
+description: >-
+  Accédez à un catalogue de formations, rigoureusement sélectionnées pour
+  répondre aux besoins de votre entreprise et de vos collaborateurs. Au
+  programme :
+
+
+  - Environnement et règlementation.
+
+  - Achats responsables.
+
+  - Analyse du cycle de vie d'un produit.
+
+  - Les fondamentaux de l'économie circulaire.
+
+  - Mettre en place une stratégie climat.
+
+  - etc.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Opcommerce
+contact question: formulaire
+url: https://clickandform.lopcommerce.com
+nature de l'aide: formation
+coût de l'accompagnement: Variable
+durée de l'accompagnement: Variable selon la formation choisie
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Rendez-vous sur le catalogue de formations de l'Opcommerce et trouvez la
+      formation et la session qui vous convient.
+    liens:
+      - lien: https://clickandform.lopcommerce.com/Recherche?idDomaine=10
+        texte: Catalogue de formations
+  - description: >-
+      Créez un compte sur le site de l'Opcommerce et inscrivez-vous à la session
+      de votre choix.
+    liens:
+      - lien: https://auth.lopcommerce.com/accounts/create
+        texte: Créer mon compte Opcommerce
+  - description: >-
+      organisme de formation sélectionné vous contacte et valide avec vous le
+      choix de la formation. Vous recevez ensuite les informations pratiques
+      pour la formation de votre salarié.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Entreprises des secteurs du commerce, du bricolage, de l'import-export
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
