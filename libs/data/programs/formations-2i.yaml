@@ -1,0 +1,74 @@
+titre: Formations Opco 2i
+promesse: Formez vos salariés à la transition écologique
+description: >-
+  Accédez à un catalogue de formations, rigoureusement sélectionnées pour
+  répondre aux besoins de votre entreprise et de vos collaborateurs. Au
+  programme :
+
+
+  - Comprendre les enjeux de la biodiversité.
+
+  - Mettre en place une démarche RSE.
+
+  - TPE PME, comment intégrer le développement durable.
+
+  - Élaborer un projet de transition écologique. 
+
+  - etc.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Opco 2i
+contact question: formulaire
+url: >-
+  https://www.opco2i.fr/transition-ecologique-nouvelle-offre-de-formation-dans-le-catalogue-2i-actions-cles-en-main/
+nature de l'aide: formation
+coût de l'accompagnement: Variable
+durée de l'accompagnement: Variable selon la formation choisie
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Rendez-vous sur le catalogue de formations d'Opco 2i et trouvez la
+      formation et la session qui vous convient (en sélectionnant le domaine
+      "Transition Écologique")
+    liens:
+      - lien: <https://www.linscription.com/pro/opco2i-actionsclesenmain.php>
+        texte: Catalogue de formations\
+  - description: >-
+      Créez un compte sur le site d'Opco 2i et inscrivez-vous à la session de
+      votre choix.
+    liens:
+      - lien: https://portail.opco2i.fr/
+        texte: Créer mon compte Opco 2i
+  - description: >-
+      Pour toute demande de pris en charge d'une formation, contactez le service
+      entreprises dans votre région
+    liens:
+      - lien: >-
+          https://-
+          <https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/>
+        texte: Service entreprises\
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises des secteurs interindustriels, de la métallurgie, de la chimie
+      et de la plasturgie
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est M
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter

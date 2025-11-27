@@ -129,7 +129,16 @@ export type Dispositif = {
     | "Avere-France"
     | "Opcommerce"
     | "Centre National du Livre"
-    | "Banque de France";
+    | "Banque de France"
+    | "Constructys"
+    | "Atlas"
+    | "Opco AFDAS"
+    | "Opco Ocapiat"
+    | "Opco 2i"
+    | "Opco EP"
+    | "Opco Mobilités"
+    | "Opco Santé"
+    | "Opco Uniformation";
   /**
    * Le contact en cas de question, peut être un lien vers le formulaire, un mail ou une url.
    */
@@ -297,4 +306,13 @@ export type Operators =
   | "Avere-France"
   | "Opcommerce"
   | "Centre National du Livre"
-  | "Banque de France";
+  | "Banque de France"
+  | "Constructys"
+  | "Atlas"
+  | "Opco AFDAS"
+  | "Opco Ocapiat"
+  | "Opco 2i"
+  | "Opco EP"
+  | "Opco Mobilités"
+  | "Opco Santé"
+  | "Opco Uniformation";

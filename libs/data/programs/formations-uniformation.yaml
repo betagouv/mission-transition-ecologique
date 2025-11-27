@@ -1,0 +1,69 @@
+titre: Formations Uniformation
+promesse: Formez vos salariés à la transition écologique
+description: >-
+  Accédez à un catalogue de formations, rigoureusement sélectionnées pour
+  répondre aux besoins de votre entreprise et de vos collaborateurs. Au
+  programme :
+
+
+  - Accompagner des publics sur les enjeux de transition écologique.
+
+  - Contribuer à l’éducation à l’environnement et au développement durable, avec
+  l'animation d'un jardin partagé.
+
+  - Impulser la transition écologique de sa structure.
+
+  - etc.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Opco Uniformation
+contact question: formulaire
+url: >-
+  https://www.uniformation.fr/entreprise/formation/offre-de-formations-cles-en-main?combine_text=&session_start_min=&session_start_max=&presence_type=All&offer=All&branch=All&training_theme=99&target_training=All
+nature de l'aide: formation
+coût de l'accompagnement: Variable
+durée de l'accompagnement: Variable selon la formation choisie
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Rendez-vous sur le catalogue de formations de l'Opco Uniformation et
+      trouvez la formation et la session qui vous convient.
+    liens:
+      - lien: >-
+          https://-
+          <https://www.uniformation.fr/entreprise/formation/offre-de-formations-cles-en-main?combine_text=&session_start_min=&session_start_max=&presence_type=All&offer=All&branch=All&training_theme=99&target_training=All>
+        texte: Catalogue de formations
+  - description: >-
+      Inscrivez-vous à la formation choisie en suivant les modalités indiquées
+      sur le site.
+  - description: >-
+      Pour toute demande de pris en charge d'une formation, contactez
+      Uniformation
+    liens:
+      - lien: https://www.uniformation.fr/nous-contacter
+        texte: Contact Uniformation
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises des secteurs du champ social, des services aux personnes, de
+      l'insertion, du sport, de l'enseignement et de la formation
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter

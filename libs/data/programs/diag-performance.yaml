@@ -1,0 +1,61 @@
+titre: Diag performance
+promesse: Bénéficiez d'un accompagnement à la transition écologique
+description: >-
+  Ce diagnostic permet de dresser un **état des lieux de vos pratiques** et de
+  mettre en lumière les axes de progression pour engager votre entreprise sur la
+  voie de la transition écologique. \
+
+  Une fois le diagnostic établi, un **accompagnement sur mesure** vous aide à
+  déployer les solutions concrètes qui ont été mises en avant lors du
+  diagnostic.
+illustration: images/TEE_energie_verte.png
+opérateur de contact: Constructys
+contact question: formulaire
+url: https://www.constructys.fr/beneficiez-du-diag-performance/
+nature de l'aide: étude
+montant du financement: Jusqu'à 100% du coût du diagnostic, en fonction des conventions régionales
+objectifs:
+  - description: Créez un compte sur le site de Constructys
+    liens:
+      - lien: https://services.constructys.fr/constructys/account/create/step-1
+        texte: Créer mon compte
+  - description: >-
+      Contactez votre conseiller régional Constructys pour exprimer votre
+      intérêt pour le Diag Performance.
+    liens:
+      - lien: https://www.constructys.fr/contacts/
+        texte: Contacter mon conseiller
+  - description: >-
+      Définissez avec l’expert le périmètre du diagnostic, la méthode et le
+      calendrier.
+  - description: Lancez le diagnostic avec l'expert proposé par votre Constructys.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 300 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises du secteur de la construction, du bâtiment, des travaux
+      publics et du négoce des matériaux de construction
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 300
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est F
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental

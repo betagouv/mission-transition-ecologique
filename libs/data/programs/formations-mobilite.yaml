@@ -1,0 +1,70 @@
+titre: Formations Opco Mobilités
+promesse: Formez vos salariés à la transition écologique
+description: >-
+  Accédez à un catalogue de formations, rigoureusement sélectionnées pour
+  répondre aux besoins de votre entreprise et de vos collaborateurs. Au
+  programme :
+
+
+  - Déployer une démarche en Transition Écologique.
+
+  - Initiation bilan carbone et empreinte écologique.
+
+  - Mettre en place une stratégie RSE priorisant la transition écologique.
+
+  - etc.
+illustration: images/TEE_ampoule.png
+opérateur de contact: Opco Mobilités
+contact question: formulaire
+url: https://www.opcomobilites.fr/
+nature de l'aide: formation
+coût de l'accompagnement: Variable
+durée de l'accompagnement: Variable selon la formation choisie
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Rendez-vous sur le catalogue de formations de l'Opco Mobilités et trouvez
+      la formation et la session qui vous convient.
+    liens:
+      - lien: https://mcampus.opcomobilites.fr/
+        texte: Catalogue de formations
+  - description: >-
+      Créez un compte sur le site de l'Opco Mobilités et inscrivez-vous à la
+      session de votre choix.
+    liens:
+      - lien: >-
+          https://-
+          <https://sso.opcomobilites.fr/sign-up?redirect=https://mcampus.opcomobilites.fr/>
+        texte: Créer mon compte
+  - description: >-
+      Pour toute demande de pris en charge d'une formation, contactez votre
+      délégation régionale.
+    liens:
+      - lien: >-
+          https://www.opcomobilites.fr/fileadmin/user_upload/Service_de_proximite/Contact-Delegations-regionales-Juillet2023-V3.pdf
+        texte: Annuaire des délégations régionales
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises des secteurs de l'automobile, de la logistique, des services
+      et transports
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter

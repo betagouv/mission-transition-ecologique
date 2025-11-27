@@ -259,5 +259,57 @@
   {
     "operator": "Banque de France",
     "filterCategories": []
+  },
+  {
+    "operator": "Constructys",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Atlas",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Opco AFDAS",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Opco Ocapiat",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Opco 2i",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Opco EP",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Opco Mobilités",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Opco Santé",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ]
+  },
+  {
+    "operator": "Opco Uniformation",
+    "filterCategories": []
   }
 ]

@@ -1,0 +1,71 @@
+titre: Formations Ocapiat
+promesse: Formez vos salariés à la transition écologique
+description: >-
+  Accédez à un catalogue de formations, rigoureusement sélectionnées pour
+  répondre aux besoins de votre entreprise et de vos collaborateurs. Au
+  programme :
+
+
+  - Maîtrise des épandages organiques.
+
+  - De la vigne aux vins bio.
+
+  - Découvrir l'agroforesterie en cultures et en élevage.
+
+  - Réduction et réutilisation de l'eau.
+
+  - Les fondamentaux de l'agro-écologie.
+
+  - etc.
+illustration: images/TEE_ampoule.png
+opérateur de contact: Opco Ocapiat
+contact question: formulaire
+url: https://www.ocapiat.fr/transition-ecologique-adaptez-votre-entreprise/
+nature de l'aide: formation
+coût de l'accompagnement: Variable
+durée de l'accompagnement: Variable selon la formation choisie
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Rendez-vous sur le catalogue de formations d'Ocapiat et trouvez la
+      formation et la session qui vous convient.
+    liens:
+      - lien: >-
+          https://-
+          <https://www.ocapiat.fr/wp-content/uploads/Book-national-TRANSITION-ECOLOGIQUE_2024.pdf>
+        texte: Catalogue de formations\
+  - description: >-
+      Créez un compte sur le site d'Ocapiat et inscrivez-vous à la session de
+      votre choix.
+    liens:
+      - lien: https://moncompte.ocapiat.fr/appspublic/compte/DemandeCreationCompte
+        texte: Créer un compte
+  - description: >-
+      Pour toute demande de pris en charge d'une formation, contactez le service
+      entreprises d'Ocapiat.
+    liens:
+      - lien: https://www.ocapiat.fr/nous-contacter/
+        texte: Service entreprises
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises des secteurs de la coopération agricole, de l’agriculture, de
+      la pêche, de l’industrie, de l'agroalimentaire et des territoires.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
