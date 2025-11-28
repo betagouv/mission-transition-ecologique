@@ -18,11 +18,11 @@ description: >-
 description longue: >-
   La chaleur de récupération (ou chaleur fatale) est la chaleur générée par un
   procédé dont l’objectif premier n’est pas la production d’énergie, et qui de
-  ce fait n’est pas nécessairement récupérée. 
+  ce fait n’est pas nécessairement récupérée.
 
 
   Il s’agit alors de capter puis transporter cette chaleur, qui serait perdue,
-  pour favoriser son exploitation sous forme thermique. 
+  pour favoriser son exploitation sous forme thermique.
 
 
   Dans un contexte de limitation progressive du recours aux ressources fossiles
@@ -32,7 +32,7 @@ description longue: >-
   transition énergétique.
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: ADEME
 contact question: https://fondschaleur.ademe.fr/contact/
 url: >-

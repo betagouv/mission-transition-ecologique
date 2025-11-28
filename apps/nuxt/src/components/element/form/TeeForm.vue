@@ -3,6 +3,7 @@
   <TeeDsfrButton
     v-show="formIsSent"
     class="fr-btn fr-btn--tertiary-no-outline fr-col-10"
+    only-label="retour au formulaire"
     tertiary
     no-outline
     icon-only

@@ -79,7 +79,7 @@ defineProps<{
 }
 
 .tee-number-card-title {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
   color: var(--text-title-grey);
   margin-bottom: 0.25rem;

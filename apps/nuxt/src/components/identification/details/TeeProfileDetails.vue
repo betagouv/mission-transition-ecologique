@@ -6,6 +6,7 @@
     <TeeDsfrButton
       size="small"
       class="fr-btn--tertiary-no-outline fr-text-left fr-p-0 fr-text--white fr-btn-bg fr-text--sm fr-text--decoration-underline"
+      only-label="je renseigne mon SIRET"
       @click="openSiretStep"
     >
       <span class="fr-pr-2v fr-icon-arrow-left-line" /><span>je renseigne mon SIRET</span>

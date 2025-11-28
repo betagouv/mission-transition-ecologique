@@ -68,6 +68,7 @@
     <div>
       <TeeDsfrButton
         class="fr-btn--tertiary-no-outline fr-text-left fr-p-0 fr-btn-bg fr-text--white fr-text--sm"
+        only-label="ou je complète mes informations manuellement"
         @click="doManualRegister"
       >
         {{ Translation.t('or') }}

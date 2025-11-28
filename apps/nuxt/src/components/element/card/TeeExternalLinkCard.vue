@@ -2,7 +2,7 @@
   <div class="tee-external-link-card">
     <div class="tee-external-link-card-image">
       <img
-        :src="image"
+        :src="img(image, { quality: 70, loading: 'lazy' })"
         :alt="imageAlt"
       />
     </div>
@@ -10,7 +10,7 @@
     <div class="tee-external-link-card-content">
       <img
         class="tee-external-link-card-logo"
-        :src="logo"
+        :src="img(logo, { quality: 70, loading: 'lazy' })"
         :alt="logoAlt"
       />
       <p class="tee-external-link-card-description">
@@ -29,6 +29,9 @@
 </template>
 
 <script setup lang="ts">
+import { Image } from '@/tools/image'
+const img = Image.getUrl
+
 defineProps<{
   image: string
   imageAlt: string

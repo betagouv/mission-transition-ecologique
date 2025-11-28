@@ -152,7 +152,7 @@ export class ProgramDto {
   }
 
   private _setRandomIllustration(): string {
-    const illustrations = ['images/TEE_energie_verte.png', 'images/TEE_ampoule.png', 'images/TEE_eolienne.png']
+    const illustrations = ['images/TEE_energie_verte.webp', 'images/TEE_ampoule.webp', 'images/TEE_eolienne.webp']
     return illustrations[Math.floor(Math.random() * 3)]
   }
 

@@ -1,6 +1,7 @@
 <template>
   <header
     role="banner"
+    aria-label="En-tête du site"
     class="fr-header"
     :class="navigation.isHomepage() ? 'fr-sticky' : ''"
   >
@@ -165,15 +166,13 @@
                 />
               </template>
               <slot name="before-quick-links" />
-              <nav role="navigation">
-                <TeeDsfrHeaderMenuLinks
-                  v-if="menuOpened"
-                  role="navigation"
-                  :links="quickLinks"
-                  :nav-aria-label="quickLinksAriaLabel"
-                  @link-click="onQuickLinkClick"
-                />
-              </nav>
+              <TeeDsfrHeaderMenuLinks
+                v-if="menuOpened"
+                role="navigation"
+                :links="quickLinks"
+                :nav-aria-label="quickLinksAriaLabel"
+                @link-click="onQuickLinkClick"
+              />
               <slot name="after-quick-links" />
             </div>
 

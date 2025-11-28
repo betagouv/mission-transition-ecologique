@@ -3,7 +3,7 @@
     class="fr-btn-fullwidth fr-btn-align-center"
     :label="option.label?.[Translation.lang]"
     size="large"
-    style="font-weight: 1000; min-height: 3.5rem; font-size: 1.5rem"
+    style="font-weight: 700; min-height: 3.5rem; font-size: 1.5rem"
   />
 </template>
 

@@ -3,6 +3,7 @@
     class="fr-container--fluid fr-container--fluid--no-overflow fr-px-0v fr-mt-0 fr-mb-10v"
     style="min-height: 800px"
   >
+    <h1 class="fr-sr-only">Questionnaire permettant de découvrir des aides et projets personnalisés</h1>
     <TeeQuestionnaire :track-id="TrackId.BuildingProperty" />
   </div>
 </template>

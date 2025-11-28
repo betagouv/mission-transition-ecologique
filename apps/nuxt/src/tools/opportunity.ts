@@ -69,7 +69,7 @@ export default class Opportunity {
           content:
             "Pour vous aider au mieux, nos conseillers ont besoin d'éléments de contexte.\n" +
             'N’hésitez pas à nous détailler votre projet, vos besoins ou vos questionnements.',
-          img: img('/images/TEE-conseiller.svg', { loading: 'lazy' })
+          img: img('/images/TEE-conseiller.webp', { loading: 'lazy' })
         }
       },
       cgu: {

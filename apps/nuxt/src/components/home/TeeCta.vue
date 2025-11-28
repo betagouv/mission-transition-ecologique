@@ -26,6 +26,7 @@
             <TeeDsfrButton
               size="lg"
               class="inline-flex fr-text--yellow fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center"
+              only-label="Je trouve les aides pour mon projet"
               @click="toQuestionnaire()"
             >
               <template #default>
@@ -38,7 +39,7 @@
       <div class="fr-col-2 fr-col-md-4 fr-col--middle fr-col-lg-4 tee-track-image-right fr-col-unhidden-md fr-col-hidden">
         <img
           class="fr-responsive-img"
-          :src="img('/images/TEE-illustrationHP.png', { format: 'webp', densities: 1, quality: 70, loading: 'lazy' })"
+          :src="img('/images/TEE-illustrationHP.webp', { quality: 70, loading: 'lazy' })"
           alt="Illustration de la page d'accueil - Une maison avec une éolienne, une ampoule et une prise électrique"
         />
       </div>

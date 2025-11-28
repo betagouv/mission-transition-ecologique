@@ -19,6 +19,7 @@
             <TeeDsfrButton
               id="close-register-modal"
               size="sm"
+              only-label="fermer la modale d'enregistrement"
               class="fr-btn-bg--blue--light fr-bg--blue--lightness fr-mr-4v fr-mt-8v fr-p-0 fr-text--blue-france fr-radius-a--2v"
               @click="closeModal"
             >

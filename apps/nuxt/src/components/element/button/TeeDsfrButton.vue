@@ -2,6 +2,7 @@
   <DsfrButton
     v-bind="props"
     :icon="iconComputed"
+    :aria-label="onlyLabel"
   >
     <slot name="default"></slot>
   </DsfrButton>
@@ -13,6 +14,7 @@ import type { DsfrButtonProps } from '@gouvminint/vue-dsfr/types/components/Dsfr
 
 interface DsfrButtonPropsWithLoading extends DsfrButtonProps {
   loading?: boolean
+  onlyLabel?: string
 }
 const props = defineProps<DsfrButtonPropsWithLoading>()
 
