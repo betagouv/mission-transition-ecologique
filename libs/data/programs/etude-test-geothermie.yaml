@@ -1,7 +1,7 @@
 titre: Étude "Test géothermie"
 promesse: >-
   Réalisez un test de réponse thermique de terrain pour dimensionner vos
-  installations géothermiques. 
+  installations géothermiques.
 description: >-
   Vous avez un projet de géothermie sur champs de sondes verticales ? L’ADEME
   vous accompagne dans **le financement du Test de réponse Thermique (TRT)**
@@ -13,10 +13,10 @@ description longue: >-
   refroidir des bâtiments. Pour bien comprendre et exploiter cette ressource, il
   est essentiel de réaliser des tests de réponse thermique. Ceux-ci permettent
   notamment d’évaluer la conductivité thermique du sol et de dimensionner
-  correctement les installations géothermiques. 
+  correctement les installations géothermiques.
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 contact question: https://contact-agir.ademe.fr/?id_dsp=DSP000528
 url: >-

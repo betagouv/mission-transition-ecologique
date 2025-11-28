@@ -11,7 +11,7 @@ description: >-
   d'exploitation mais aussi améliorer l'expérience client et renforcer
   l'attractivité écoresponsable de votre établissement.
 fin de validité: 01/09/2025
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: Région Auvergne-Rhône-Alpes
 contact question: mailto:crise-energie-tourisme@auvergnerhonealpes.fr
 url: >-
@@ -27,7 +27,7 @@ objectifs:
         texte: Fiche premier contact
   - description: >-
       Transmettez cette fiche complétée par mail à la direction du tourisme de
-      la région afin de vérifier l'éligibilité de votre projet. 
+      la région afin de vérifier l'éligibilité de votre projet.
     liens:
       - lien: mailto:crise-energie-tourisme@auvergnerhonealpes.fr
         texte: Contacter par mail
