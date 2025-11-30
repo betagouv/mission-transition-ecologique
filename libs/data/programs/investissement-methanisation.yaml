@@ -94,7 +94,9 @@ publicodes:
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
       - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
       - code NAF niveau 1 . est E
       - code NAF niveau 1 . est H
   entreprise . a un objectif ciblé:
