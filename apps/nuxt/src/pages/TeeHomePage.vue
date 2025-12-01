@@ -53,7 +53,7 @@ const faqHomeJson = json as unknown as FaqSectionType[]
 definePageMeta({
   path: '/',
   name: RouteName.Homepage,
-  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetFilters]
+  middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.setUsedTracks, MiddlewareName.resetFilters]
 })
 
 defineRouteRules({
