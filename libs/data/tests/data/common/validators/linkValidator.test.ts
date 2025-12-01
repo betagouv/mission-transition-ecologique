@@ -46,7 +46,7 @@ describe('LinkValidator', () => {
         '[https://bar.org]',
         'here you can find [our site](https://example.com).'
       ],
-      expected: [['https://example.com', 'http://test.org]'], ['https://bar.org]'], ['https://example.com']]
+      expected: [['https://example.com', 'http://test.org'], ['https://bar.org'], ['https://example.com']]
     },
     {
       description: 'test markdown',
