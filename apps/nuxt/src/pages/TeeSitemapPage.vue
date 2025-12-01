@@ -1,17 +1,14 @@
 <template>
   <Layout
     :links="[{ text: 'Plan du site' }]"
-    fluid
+    sticky-menu
   >
+    <template #sidemenu>
+      <TeeSideMenu :items="tableOfContents" />
+    </template>
     <div class="fr-container fr-mt-3v fr-mb-8v">
       <div class="fr-grid-row">
-        <div class="fr-col-12 fr-col-md-3 fr-mt-md-4w fr-mb-2w">
-          <DsfrSideMenu
-            heading-title="Sommaire"
-            :menu-items="tableOfContents"
-          />
-        </div>
-        <div class="fr-col-12 fr-col-md-9">
+        <div class="fr-col-12">
           <h1 class="fr-text--blue-france">Plan du site</h1>
           <p class="fr-text--lg fr-mb-4w">Retrouvez l'ensemble des pages de la plateforme Transition écologique des entreprises.</p>
 
@@ -19,8 +16,9 @@
           <section
             id="pages-principales"
             class="fr-mb-6w"
+            aria-labelledby="pages-principales-title"
           >
-            <h2 class="fr-text--blue-france">Pages principales</h2>
+            <h2 id="pages-principales-title">Pages principales</h2>
             <ul class="fr-ml-4w">
               <li
                 v-for="page in mainPages"
@@ -37,9 +35,11 @@
           <section
             id="dispositifs-aide"
             class="fr-mb-6w"
+            aria-labelledby="dispositifs-aide-title"
+            :aria-busy="loadingPrograms"
           >
-            <h2 class="fr-text--blue-france">
-              Dispositifs d'aide
+            <h2 id="dispositifs-aide-title">
+              Les aides à la transition écologique
               <span
                 v-if="programs.length > 0"
                 class="fr-text--regular fr-text--sm"
@@ -47,14 +47,16 @@
                 ({{ programs.length }} aide{{ programs.length > 1 ? 's' : '' }})
               </span>
             </h2>
-            <p class="fr-mb-2w">
-              <NuxtLink :to="{ name: RouteName.CatalogPrograms }"> Voir toutes les aides aux entreprises </NuxtLink>
-            </p>
             <div
               v-if="loadingPrograms"
               class="fr-ml-4w"
+              role="status"
+              aria-live="polite"
             >
-              <TeeSpinner class="fr-my-2w" />
+              <TeeSpinner
+                class="fr-my-2w"
+                aria-label="Chargement des dispositifs d'aide"
+              />
             </div>
             <ul
               v-else-if="sortedPrograms.length > 0"
@@ -75,9 +77,11 @@
           <section
             id="projets-transition"
             class="fr-mb-6w"
+            aria-labelledby="projets-transition-title"
+            :aria-busy="loadingProjects"
           >
-            <h2 class="fr-text--blue-france">
-              Projets de transition écologique
+            <h2 id="projets-transition-title">
+              Les projets de transition écologique
               <span
                 v-if="projects.length > 0"
                 class="fr-text--regular fr-text--sm"
@@ -85,14 +89,16 @@
                 ({{ projects.length }} projet{{ projects.length > 1 ? 's' : '' }})
               </span>
             </h2>
-            <p class="fr-mb-2w">
-              <NuxtLink :to="{ name: RouteName.CatalogProjects }"> Voir tous les projets d'entreprise </NuxtLink>
-            </p>
             <div
               v-if="loadingProjects"
               class="fr-ml-4w"
+              role="status"
+              aria-live="polite"
             >
-              <TeeSpinner class="fr-my-2w" />
+              <TeeSpinner
+                class="fr-my-2w"
+                aria-label="Chargement des projets de transition"
+              />
             </div>
             <ul
               v-else-if="sortedProjects.length > 0"
@@ -113,8 +119,9 @@
           <section
             id="informations-legales"
             class="fr-mb-6w"
+            aria-labelledby="informations-legales-title"
           >
-            <h2 class="fr-text--blue-france">Informations légales</h2>
+            <h2 id="informations-legales-title">Informations légales</h2>
             <ul class="fr-ml-4w">
               <li
                 v-for="page in legalPages"
@@ -141,17 +148,22 @@ import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
-import { useNavigationStore } from '@/stores/navigation'
-import { DsfrSideMenuListItemProps } from '@gouvminint/vue-dsfr/types'
+import { defineRouteRules } from '#imports'
 
 definePageMeta({
   path: '/plan-du-site',
   name: RouteName.SitemapPage
 })
 
+defineRouteRules({
+  sitemap: {
+    priority: 1.0,
+    changefreq: 'weekly'
+  }
+})
+
 const navigation = new Navigation()
 
-// SEO
 const description =
   'Plan du site de la plateforme Transition écologique des entreprises. Accédez à toutes les pages, aides et projets pour faciliter votre navigation.'
 
@@ -167,22 +179,13 @@ useHead({
   ],
   ...MetaRobots.indexFollow()
 })
-
-// Chargement des données côté serveur
-onServerPrefetch(async () => {
-  // await new ProgramManager().getDependentCompanyData(false)
-  await new ProjectManager().getProjects()
-})
-
 onNuxtReady(async () => {
-  await new ProgramManager().getDependentCompanyData(false)
   await new ProjectManager().getProjects()
+  await new ProgramManager().getDependentCompanyData(false)
 })
 
-// Récupération des stores
-const { programs, hasError: hasProgramError } = storeToRefs(useProgramStore())
-const { projects, hasError: hasProjectError } = storeToRefs(useProjectStore())
-const { hasSpinner } = storeToRefs(useNavigationStore())
+const { programs } = storeToRefs(useProgramStore())
+const { projects } = storeToRefs(useProjectStore())
 
 const mainPages = [
   { name: RouteName.Homepage, label: 'Accueil' },
@@ -209,25 +212,29 @@ const sortedProjects = computed(() => {
   return [...projects.value].sort((a, b) => a.title.localeCompare(b.title))
 })
 
-const loadingPrograms = computed(() => hasSpinner.value || hasProgramError.value)
-const loadingProjects = computed(() => hasSpinner.value || hasProjectError.value)
+const loadingPrograms = computed(() => sortedPrograms.value.length === 0)
+const loadingProjects = computed(() => sortedProjects.value.length === 0)
 
 const tableOfContents = computed(() => [
   {
+    id: 'pages-principales',
     text: 'Pages principales',
-    to: '#pages-principales'
+    to: 'pages-principales'
   },
   {
-    text: "Dispositifs d'aide",
-    to: '#dispositifs-aide'
+    id: 'dispositifs-aide',
+    text: 'Les aides à la transition écologique',
+    to: 'dispositifs-aide'
   },
   {
-    text: 'Projets de transition',
-    to: '#projets-transition'
+    id: 'projets-transition',
+    text: 'Les projets de transition écologique',
+    to: 'projets-transition'
   },
   {
+    id: 'informations-legales',
     text: 'Informations légales',
-    to: '#informations-legales'
+    to: 'informations-legales'
   }
-]) as unknown as DsfrSideMenuListItemProps[]
+])
 </script>
