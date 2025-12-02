@@ -1,5 +1,7 @@
-titre: Étude "Méthanisation"
-promesse: Étudiez votre projet de construction d'une installation de méthanisation
+titre: Étude "Méthanisation" en PACA
+promesse: >-
+  Étudiez votre projet de construction d'une installation de méthanisation en
+  PACA
 description: >-
   Vous avez un projet de méthanisation pour valoriser des déchets ou matières
   organiques en énergie renouvelable ? L’ADEME peut financer une **étude
@@ -52,56 +54,38 @@ description longue: >-
   - Appui au montage juridique des projets collectifs
 
   - Appui au montage du plan de financement.
-début de validité: 01/01/2023
-fin de validité: 31/12/2025
 illustration: images/TEE_ampoule.png
-opérateur de contact: ADEME
-contact question: https://fondschaleur.ademe.fr/contact/
+opérateur de contact: Région Sud (PACA)
+autres opérateurs:
+  - ADEME
+contact question: >-
+  https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/etude-de-faisabilite-pour-des-projets-de-methanisation
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/entreprises/aides-financieres/2025/etudes-prealables-a-construction-dune-installation-methanisation
+  https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/etude-de-faisabilite-pour-des-projets-de-methanisation
 nature de l'aide: étude
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
-      projet ou contactez un conseiller.
+      Dans un premier temps, il est indispensable de contacter le GERES pour
+      l’élaboration du pré-diagnostic d’opportunité
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
-        texte: Conditions éligibilité et financement
+          https://www.maregionsud.fr/vos-aides/detail/etude-de-faisabilite-pour-des-projets-de-methanisation
+        texte: Voir les contacts pour faire sa demande
   - description: >-
-      Choisissez le prestataire qui va vous accompagner pour mener votre étude
-      et obtenez un devis. Il peut s'agir d'une étude de diagnostic, de
-      faisabilité ou un accompagnement au montage projet. Les études de
-      faisabilité devront être réalisées par un bureau d’étude certifié
-      Qualimétha ou équivalent.
-  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+      Dans un deuxième temps, lorsque le potentiel est avéré : contacter le
+      chargé de mission régional pour le détail des dispositifs et les modalités
+      de dépôt de la demande. M. Emmanuel Giovannoni - Service Transition
+      Energétique - Direction de la
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/inscription
-        texte: Créer mon compte ADEME
-  - description: >-
-      Déposez votre dossier : informations administratives, description du
-      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
-      doit pas avoir commencé !
-    liens:
-      - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-prealables-a-construction-dune-installation-methanisation
-        texte: Déposer mon dossier
-  - description: >-
-      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-      recevez un contrat de financement précisant le montant d’aide maximum, les
-      conditions et les modalités de versement.
-  - description: Réalisez votre étude.
+      - lien: mailto:egiovannoni@maregionsud.fr
+        texte: egiovannoni@maregionsud.fr
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
     - Éligible aux micro-entreprises
   secteur géographique:
-    - >-
-      Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
-      Loire, Corse, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
-      Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Occitanie,
-      Pays de la Loire
+    - Provence-Alpes-Côte d'Azur
   secteur d'activité:
     - Activité agricole ou  industries agro-alimentaires
   nombre d'années d'activité:
@@ -119,10 +103,6 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si:
-      toutes ces conditions:
-        - dispositif . début de validité <= date du jour
-        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
@@ -139,19 +119,4 @@ publicodes:
       - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-      - région = Auvergne-Rhône-Alpes
-      - région = Bourgogne-Franche-Comté
-      - région = Bretagne
-      - région = Centre-Val de Loire
-      - région = Corse
-      - région = Guadeloupe
-      - région = Guyane
-      - région = Hauts-de-France
-      - région = Île-de-France
-      - région = La Réunion
-      - région = Martinique
-      - région = Mayotte
-      - région = Normandie
-      - région = Nouvelle-Aquitaine
-      - région = Occitanie
-      - région = Pays de la Loire
+      - région = Provence-Alpes-Côte d'Azur
