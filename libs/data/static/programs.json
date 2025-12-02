@@ -536,7 +536,7 @@
         "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
-        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française, Provence-Alpes-Côte d'Azur"
+        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française"
       ],
       "secteur d'activité": [
         "Tous secteurs d’activité"
@@ -588,8 +588,7 @@
           "Nouvelle-Calédonie",
           "Occitanie",
           "Pays de la Loire",
-          "Polynésie française",
-          "Provence-Alpes-Côte d'Azur"
+          "Polynésie française"
         ]
       },
       "validity": {
@@ -753,8 +752,7 @@
           "région = Nouvelle-Calédonie",
           "région = Occitanie",
           "région = Pays de la Loire",
-          "région = Polynésie française",
-          "région = Provence-Alpes-Côte d'Azur"
+          "région = Polynésie française"
         ]
       }
     },
@@ -7366,7 +7364,7 @@
         "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
-        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Corse, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Occitanie, Pays de la Loire, Provence-Alpes-Côte d'Azur"
+        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Corse, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Occitanie, Pays de la Loire"
       ],
       "secteur d'activité": [
         "Activité agricole ou  industries agro-alimentaires"
@@ -7383,6 +7381,9 @@
         "allowedNafSections": [
           "A",
           "C",
+          "D",
+          "E",
+          "H",
           "I"
         ],
         "allowedRegion": [
@@ -7401,8 +7402,7 @@
           "Normandie",
           "Nouvelle-Aquitaine",
           "Occitanie",
-          "Pays de la Loire",
-          "Provence-Alpes-Côte d'Azur"
+          "Pays de la Loire"
         ]
       },
       "validity": {
@@ -7525,6 +7525,9 @@
         "une de ces conditions": [
           "code NAF niveau 1 . est A",
           "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est H",
           "code NAF niveau 1 . est I"
         ]
       },
@@ -7551,8 +7554,7 @@
           "région = Normandie",
           "région = Nouvelle-Aquitaine",
           "région = Occitanie",
-          "région = Pays de la Loire",
-          "région = Provence-Alpes-Côte d'Azur"
+          "région = Pays de la Loire"
         ]
       }
     },
@@ -11450,11 +11452,6 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
-      ],
-      "autres critères d'éligibilité": [
-        "Cette aide est destinée aux entreprises situées sur les territoires d'industrie 2023-2027",
-        "Les projets doivent présenter une assiette minimale de dépenses de 400 000 € (excepté Corse et Outre-Mer)",
-        "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)"
       ]
     },
     "eligibilityData": {
@@ -16114,6 +16111,202 @@
     "id": "investissement-gestion-des-biodechets"
   },
   {
+    "titre": "Étude \"Méthanisation\" en PACA",
+    "promesse": "Étudiez votre projet de construction d'une installation de méthanisation en PACA",
+    "description": "Vous avez un projet de méthanisation pour valoriser des déchets ou matières organiques en énergie renouvelable ? L’ADEME peut financer une **étude préalable** pour en évaluer la faisabilité.\n\nCette étude permet de :\\\n– **analyser les gisements disponibles, les technologies adaptées et les options de valorisation du biogaz**,\\\n– **évaluer les contraintes économiques, réglementaires et liées au site**.\n\nC’est une étape essentielle pour sécuriser votre projet, affiner sa conception et bâtir un dossier solide en vue de sa réalisation.",
+    "description longue": "La méthanisation est un processus naturel biologique de dégradation de la matière organique grâce à l'action de micro-organismes. Chargées dans un digesteur, chauffées et brassées en l’absence d’oxygène pendant plusieurs jours, ces matières produisent une énergie renouvelable, le biogaz et un fertilisant, le digestat.\\\nLe biogaz produit peut ensuite être valorisé et vendu sous différentes formes (chaleur, électricité, injection dans le réseau de gaz naturel, carburant pour véhicules).\n\nL'ADEME soutient le financement aux :\n\n- Études de diagnostic et d’accompagnement de projets (dont études de faisabilité) : unités de méthanisation à la ferme, centralisées, en industries agro-alimentaires, biodéchets des collectivités ou station d’épuration urbaines (STEU).\n- Accompagnement au montage projet après étude de faisabilité :\n- Études de raccordement au réseau public de gaz (pour les projets d’injection, voir plus bas en détail, certaines études seulement sont éligibles).\n- Etudes d’Assistance à Maîtrise d’Ouvrage avant construction de l’installation.\n- Etudes pour la concertation locale/ communication/information\n- Etudes agronomiques\n- Appui au montage juridique des projets collectifs\n- Appui au montage du plan de financement.",
+    "illustration": "images/TEE_ampoule.png",
+    "opérateur de contact": "Région Sud (PACA)",
+    "autres opérateurs": [
+      "ADEME"
+    ],
+    "contact question": "https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/etude-de-faisabilite-pour-des-projets-de-methanisation",
+    "url": "https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/etude-de-faisabilite-pour-des-projets-de-methanisation",
+    "nature de l'aide": "étude",
+    "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "objectifs": [
+      {
+        "description": "Dans un premier temps, il est indispensable de contacter le GERES pour l’élaboration du pré-diagnostic d’opportunité",
+        "liens": [
+          {
+            "lien": "https://www.maregionsud.fr/vos-aides/detail/etude-de-faisabilite-pour-des-projets-de-methanisation",
+            "texte": "Voir les contacts pour faire sa demande"
+          }
+        ]
+      },
+      {
+        "description": "Dans un deuxième temps, lorsque le potentiel est avéré : contacter le chargé de mission régional pour le détail des dispositifs et les modalités de dépôt de la demande. M. Emmanuel Giovannoni - Service Transition Energétique - Direction de la",
+        "liens": [
+          {
+            "lien": "mailto:egiovannoni@maregionsud.fr",
+            "texte": "egiovannoni@maregionsud.fr"
+          }
+        ]
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "secteur d'activité": [
+        "Activité agricole ou  industries agro-alimentaires"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "D",
+          "E",
+          "H",
+          "I"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+        "waste",
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Provence-Alpes-Côte d'Azur"
+        ]
+      }
+    },
+    "id": "etude-methanisation-paca"
+  },
+  {
     "titre": "Investissement \"Méthanisation\"",
     "promesse": "Financez votre installation de méthanisation",
     "description": "Vous disposez d’une étude pour votre projet de méthanisation ? Vous souhaitez investir pour le mettre en œuvre ? L’ADEME peut accompagner financièrement la réalisation de votre installation.",
@@ -16183,7 +16376,9 @@
       "company": {
         "allowedNafSections": [
           "A",
+          "B",
           "C",
+          "D",
           "E",
           "H"
         ],
@@ -16323,7 +16518,9 @@
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
           "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
           "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
           "code NAF niveau 1 . est E",
           "code NAF niveau 1 . est H"
         ]
@@ -45088,5 +45285,192 @@
       }
     },
     "id": "formations-mobilite"
+  },
+  {
+    "titre": "Investissement \"Méthanisation\" en PACA",
+    "promesse": "Financez votre installation de méthanisation en PACA",
+    "description": "Vous disposez d’une étude pour votre projet de méthanisation ? Vous souhaitez investir pour le mettre en œuvre ? L’ADEME peut accompagner financièrement la réalisation de votre installation.",
+    "description longue": "Les équipements financés sont les suivants :\n\n- Unités de méthanisation avec cogénération (&lt; 500 kWe) ou injection de biométhane :\n\n\n- production de biogaz ;\n- valorisation énergétique du biogaz : production de chaleur seule, cogénération d’électricité et de chaleur, épuration du biogaz en biométhane, injection dans le réseau public.\n- Stations d’épuration urbaines (STEU) : valorisation énergétique du biogaz comprenant l’épuration en biométhane et l’injection dans le réseau public.\n\nLa réalisation d'une étude de faisabilité préalable est une condition d'éligibilité.",
+    "illustration": "images/TEE_energie_verte.png",
+    "opérateur de contact": "Région Sud (PACA)",
+    "contact question": "mailto:egiovannoni@maregionsud.fr",
+    "url": "https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/aides-a-linvestissement-en-methanisation",
+    "nature de l'aide": "financement",
+    "montant du financement": "Aide calculée selon le type d'installation",
+    "objectifs": [
+      {
+        "description": "Prendre contact avec le chargé de mission qui transmettra le détail des dispositifs et les modalités de dépôt de la demande après échange sur le projet.",
+        "liens": [
+          {
+            "lien": "mailto:egiovannoni@maregionsud.fr",
+            "texte": "egiovannoni@maregionsud.fr"
+          }
+        ]
+      },
+      {
+        "description": "Créer un compte et déposer son dossier sur l'espace numérique de la région sud"
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d’activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "H"
+        ],
+        "allowedRegion": [
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "priorityObjectives": [
+        "waste",
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est H"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Provence-Alpes-Côte d'Azur"
+        ]
+      }
+    },
+    "id": "investissement-methanisation-paca"
   }
 ]

@@ -1,5 +1,5 @@
-titre: Investissement "Méthanisation"
-promesse: Financez votre installation de méthanisation
+titre: Investissement "Méthanisation" en PACA
+promesse: Financez votre installation de méthanisation en PACA
 description: >-
   Vous disposez d’une étude pour votre projet de méthanisation ? Vous souhaitez
   investir pour le mettre en œuvre ? L’ADEME peut accompagner financièrement la
@@ -25,49 +25,30 @@ description longue: >-
 
   La réalisation d'une étude de faisabilité préalable est une condition
   d'éligibilité.
-début de validité: 01/01/2023
-fin de validité: 31/12/2025
 illustration: images/TEE_energie_verte.png
-opérateur de contact: ADEME
-contact question: https://fondschaleur.ademe.fr/contact/
+opérateur de contact: Région Sud (PACA)
+contact question: mailto:egiovannoni@maregionsud.fr
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/realisation-dinstallations-methanisation-injection-cogeneration-chaleur
+  https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/aides-a-linvestissement-en-methanisation
 nature de l'aide: financement
 montant du financement: Aide calculée selon le type d'installation
 objectifs:
   - description: >-
-      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
-      projet ou contactez un conseiller.
+      Prendre contact avec le chargé de mission qui transmettra le détail des
+      dispositifs et les modalités de dépôt de la demande après échange sur le
+      projet.
     liens:
-      - lien: >-
-          https://agirpourlatransition.ademe.fr/sites/default/files/Investissements%20installations%20de%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
-        texte: Conditions éligibilité et financement
-  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
-    liens:
-      - lien: https://agirpourlatransition.ademe.fr/inscription
-        texte: Créer mon compte ADEME
+      - lien: mailto:egiovannoni@maregionsud.fr
+        texte: egiovannoni@maregionsud.fr
   - description: >-
-      Déposez votre dossier : informations administratives, description du
-      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
-      doit pas avoir commencé !
-    liens:
-      - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/realisation-dinstallations-methanisation-injection-cogeneration-chaleur
-        texte: Déposer mon dossier
-  - description: >-
-      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
-      recevez un contrat de financement précisant le montant d’aide maximum, les
-      conditions et les modalités de versement.
-  - description: Réalisez vos investissements.
+      Créer un compte et déposer son dossier sur l'espace numérique de la région
+      sud
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
     - Éligible aux micro-entreprises
   secteur géographique:
-    - >-
-      Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Centre-Val de Loire, Corse,
-      Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion,
-      Martinique, Normandie, Nouvelle-Aquitaine, Occitanie, Pays de la Loire
+    - Provence-Alpes-Côte d'Azur
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -85,10 +66,6 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si:
-      toutes ces conditions:
-        - dispositif . début de validité <= date du jour
-        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
@@ -105,17 +82,4 @@ publicodes:
       - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
-      - région = Auvergne-Rhône-Alpes
-      - région = Bourgogne-Franche-Comté
-      - région = Centre-Val de Loire
-      - région = Corse
-      - région = Guadeloupe
-      - région = Guyane
-      - région = Hauts-de-France
-      - région = Île-de-France
-      - région = La Réunion
-      - région = Martinique
-      - région = Normandie
-      - région = Nouvelle-Aquitaine
-      - région = Occitanie
-      - région = Pays de la Loire
+      - région = Provence-Alpes-Côte d'Azur
