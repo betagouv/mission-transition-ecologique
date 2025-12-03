@@ -18948,7 +18948,7 @@
     "contact question": "formulaire",
     "url": "https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/diag-perfimmo",
     "nature de l'aide": "étude",
-    "coût de l'accompagnement": "entre 3 000 € HT et 17 000 € HT (subventionné par l'ADEME à hauteur de 40% du montant HT, dans la limite de 6 800 € par site)",
+    "coût de l'accompagnement": "entre 3 000 € HT et 17 000 € HT (subventionné par l'ADEME à hauteur de 50% du montant HT, dans la limite de 8 500 € par site)",
     "durée de l'accompagnement": "variable selon la surface et la complexité du site",
     "objectifs": [
       {
@@ -18991,6 +18991,7 @@
     "eligibilityData": {
       "company": {
         "allowedNafSections": [
+          "A",
           "B",
           "C",
           "D",
@@ -18999,6 +19000,7 @@
           "G",
           "H",
           "I",
+          "J",
           "K",
           "L",
           "M",
@@ -19124,6 +19126,7 @@
       },
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
+          "code NAF niveau 1 . est A",
           "code NAF niveau 1 . est B",
           "code NAF niveau 1 . est C",
           "code NAF niveau 1 . est D",
@@ -19132,6 +19135,7 @@
           "code NAF niveau 1 . est G",
           "code NAF niveau 1 . est H",
           "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
           "code NAF niveau 1 . est K",
           "code NAF niveau 1 . est L",
           "code NAF niveau 1 . est M",
