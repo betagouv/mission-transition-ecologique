@@ -147,6 +147,7 @@ import { ProjectManager } from '@/tools/project/projectManager'
 import { useProgramStore } from '@/stores/program'
 import { useProjectStore } from '@/stores/project'
 import { defineRouteRules } from '#imports'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 definePageMeta({
   path: '/plan-du-site',
