@@ -8,23 +8,26 @@
       </p>
       <p>
         Inaugurée officiellement par Mme&nbsp;Olivia Grégoire, ministre déléguée chargée des Petites et moyennes entreprises, du Commerce,
-        de l’Artisanat et du Tourisme, Mme&nbsp;Agnès Pannier-Runacher, ministre de la Transition énergétique, et M.&nbsp;Christophe Béchu,
-        ministre de la Transition écologique et de la Cohésion des territoires, elle s’inscrit dans la volonté de
+        de l'Artisanat et du Tourisme, Mme&nbsp;Agnès Pannier-Runacher, ministre de la Transition énergétique, et M.&nbsp;Christophe Béchu,
+        ministre de la Transition écologique et de la Cohésion des territoires, elle s'inscrit dans la volonté de
         <strong>rendre la transition plus accessible aux petites et moyennes entreprises</strong> sur tout le territoire.
       </p>
     </div>
 
     <div class="fr-col-12 fr-col-md-6 fr-pl-md-4w fr-mt-2w fr-mt-md-0">
       <img
-        src="/images/about/Tee_about_intro.webp"
-        alt="Illustration transition écologique"
+        :src="img('/images/about/Tee_about_intro.webp', { quality: 70, loading: 'lazy' })"
+        alt="Photo d'un ordinateur avec un navigateur ouvert sur le site transition écologique des entreprises"
         class="fr-m-auto"
       />
     </div>
   </section>
 </template>
 
-<script setup lang="ts" />
+<script setup lang="ts">
+import { Image } from '@/tools/image'
+const img = Image.getUrl
+</script>
 
 <style scoped lang="scss">
 img {

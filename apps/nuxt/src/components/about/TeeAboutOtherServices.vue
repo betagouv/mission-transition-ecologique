@@ -10,7 +10,9 @@
       >
         <TeeExternalLinkCard
           :image="card.image"
+          :image-alt="card.imageAlt"
           :logo="card.logo"
+          :logo-alt="card.logoAlt"
           :description="card.description"
           :link="card.link"
         />

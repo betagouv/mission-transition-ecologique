@@ -3,6 +3,7 @@
   <div
     class="fr-footer fr-pt-0-5v"
     role="contentinfo"
+    aria-label="Pied de page"
   >
     <div class="fr-follow">
       <div class="fr-container">

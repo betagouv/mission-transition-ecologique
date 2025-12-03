@@ -70,19 +70,23 @@
 
 <script setup lang="ts">
 import { Color } from '@/types'
+import { Image } from '@/tools/image'
+
+const img = Image.getUrl
+
+const logosImageSrc = img('/images/logos/logos-operators.png', { quality: 70 })
 
 const cards = [
   {
     number: '163',
-    title: 'Dispositifs d’aides financières',
+    title: "Dispositifs d'aides financières",
     description: 'Financements, accompagnements, formations...',
     color: Color.purple
   },
   {
     number: '28',
     title: 'Partenaires publics',
-    description:
-      "<div style='display:flex; align-items:center; gap:0.5rem;'><img src='/images/logos/logos-operators.png' alt='Logos de partenaires institutionnels de transition écologique des entreprises' style='max-width:90%;'/>...</div>",
+    description: `<div style='display:flex; align-items:center; gap:0.5rem;'><img src='${logosImageSrc}' alt='Logos de partenaires institutionnels de transition écologique des entreprises' style='max-width:90%;'/>...</div>`,
     color: Color.green
   },
   {
