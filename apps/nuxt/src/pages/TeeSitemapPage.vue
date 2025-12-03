@@ -51,7 +51,6 @@
               v-if="loadingPrograms"
               class="fr-ml-4w"
               role="status"
-              aria-live="polite"
             >
               <TeeSpinner
                 class="fr-my-2w"
@@ -93,7 +92,6 @@
               v-if="loadingProjects"
               class="fr-ml-4w"
               role="status"
-              aria-live="polite"
             >
               <TeeSpinner
                 class="fr-my-2w"
@@ -181,7 +179,7 @@ useHead({
 })
 onNuxtReady(async () => {
   await new ProjectManager().getProjects()
-  await new ProgramManager().getDependentCompanyData(false)
+  await new ProgramManager().get()
 })
 
 const { programs } = storeToRefs(useProgramStore())

@@ -1,5 +1,8 @@
 <template>
-  <TeeSideMenu :items="allMenuItems">
+  <TeeSideMenu
+    id="project-sidemenu"
+    :items="allMenuItems"
+  >
     <ProjectFiltersAccordion
       v-if="isDataFull"
       with-title
