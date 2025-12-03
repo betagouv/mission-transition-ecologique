@@ -1025,6 +1025,7 @@
     "programs": [
       "booster-eco-energie-tertiaire",
       "fonds-tourisme-durable",
+      "diag-perf-immo",
       "renovation-energetique",
       "renovation-petit-tertiaire-prive",
       "pret-economies-d-energie-pee",
@@ -3691,9 +3692,11 @@
     "mainTheme": "energy",
     "programs": [
       "etude-methanisation",
+      "etude-methanisation-paca",
       "investissement-methanisation",
       "aide-tpe-transition-na",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "investissement-methanisation-paca"
     ],
     "linkedProjects": [
       4,
@@ -4634,6 +4637,7 @@
       "diag-eco-flux",
       "gestion-des-biodechets",
       "investissement-gestion-des-biodechets",
+      "etude-methanisation-paca",
       "investissement-reemploi-reutilisation-reparation",
       "programme-synergies-durables",
       "decarb-flash-2025-2027",
