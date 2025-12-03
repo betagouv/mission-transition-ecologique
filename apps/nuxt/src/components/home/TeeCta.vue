@@ -29,9 +29,7 @@
               only-label="Je trouve les aides pour mon projet"
               @click="toQuestionnaire()"
             >
-              <template #default>
-                Je trouve les aides <span class="fr-display--block fr-display-sm--inline">pour mon projet</span>
-              </template>
+              Je trouve les aides <span class="fr-display--block fr-display-sm--inline">pour mon projet</span>
             </TeeDsfrButton>
           </div>
         </div>

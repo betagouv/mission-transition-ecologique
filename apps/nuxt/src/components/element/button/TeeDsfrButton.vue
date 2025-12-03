@@ -4,7 +4,7 @@
     :icon="iconComputed"
     :aria-label="onlyLabel"
   >
-    <slot name="default"></slot>
+    <slot></slot>
   </DsfrButton>
 </template>
 
