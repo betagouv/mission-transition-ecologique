@@ -1,27 +1,16 @@
 <template>
-  <div
+  <TeeSideMenu
     id="project-sidemenu"
-    class="fr-pr-0 fr-mt-6v"
+    :items="allMenuItems"
   >
-    <a
-      v-for="item in menuItems"
-      :key="item.id"
-      :href="`#${item.to}`"
-      class="fr-pl-4v"
-      :class="[item.class ? item.class : 'fr-sidemenu__link', item.icon ? 'fr-btn--icon-left ' + item.icon : '']"
-      @click.prevent="scrollTo(item.to)"
-    >
-      {{ item.text }}
-    </a>
     <ProjectFiltersAccordion
       v-if="isDataFull"
       with-title
     />
-  </div>
+  </TeeSideMenu>
 </template>
 <script setup lang="ts">
 import { ProjectType } from '@/types'
-import { Scroll } from '@/tools/scroll/scroll'
 import { Testimony } from '@/types'
 
 const { default: testimoniesJson } = await import('@/public/json/testimony/testimonies.json')
@@ -33,15 +22,6 @@ interface Props {
 const props = defineProps<Props>()
 
 const { isDataFull } = storeToRefs(useCompanyDataStore())
-
-const menuItems = computed(() => allMenuItems.value.filter((item) => item.condition))
-
-const scrollTo = (id: string) => {
-  const element = document.getElementById(id)
-  if (element) {
-    Scroll.to(element)
-  }
-}
 
 const hasTestimony = computed(() => {
   if (!props.project) {

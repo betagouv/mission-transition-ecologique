@@ -246,6 +246,10 @@ const mainLinks = [
     to: { name: RouteName.Budget }
   },
   {
+    label: 'Plan du site',
+    to: { name: RouteName.SitemapPage }
+  },
+  {
     label: 'Ajouter une aide',
     to: { name: RouteName.AddProgram }
   }
