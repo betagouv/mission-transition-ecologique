@@ -3,7 +3,6 @@
 
 import { useCompanyDataStore } from '@/stores/companyData'
 import { useFiltersStore } from '@/stores/filters'
-import { CompanyData } from '@/tools/companyData'
 import ProgramFilter from '@/tools/program/programFilter'
 import { FilterItemKeys, OperatorFilter, ProgramAidType, ProgramTypeForFront, Region, ThemeId } from '@/types'
 import { ref } from 'vue'
@@ -15,6 +14,7 @@ export const useProgramStore = defineStore('program', () => {
   const hasError = ref<boolean>(false)
 
   const filtersStore = useFiltersStore()
+  const companyStore = useCompanyDataStore()
 
   function reset() {
     programs.value = []
@@ -24,9 +24,9 @@ export const useProgramStore = defineStore('program', () => {
   }
 
   const programsByFilters = computed(() => {
-    const isCompanySelected = useFiltersStore().companyDataSelected && useCompanyDataStore().isDataFull
+    const isCompanySelected = filtersStore.companyDataSelected && companyStore.isDataFull
     if (isCompanySelected) {
-      useFiltersStore().resetFilter(FilterItemKeys.regionAid)
+      filtersStore.resetFilter(FilterItemKeys.regionAid)
     }
 
     return programs.value.filter((program: ProgramTypeForFront) => {
@@ -40,29 +40,12 @@ export const useProgramStore = defineStore('program', () => {
     })
   })
 
-  function getProgramsByFilters(programs: ProgramTypeForFront[]) {
-    const isCompanySelected = CompanyData.isCompanySelected()
-    if (isCompanySelected) {
-      useFiltersStore().resetFilter(FilterItemKeys.regionAid)
-    }
-    return programs.filter((program: ProgramTypeForFront) => {
-      return (
-        ProgramFilter.byAidType(program, filtersStore.filters[FilterItemKeys.typeAid] as ProgramAidType[]) &&
-        ProgramFilter.byTheme(program, filtersStore.filters[FilterItemKeys.themeType] as ThemeId) &&
-        ProgramFilter.byOperator(program, filtersStore.filters[FilterItemKeys.operatorAid] as OperatorFilter[]) &&
-        ProgramFilter.byRegion(program, filtersStore.filters[FilterItemKeys.regionAid] as Region[]) &&
-        ProgramFilter.byCompanyData(program, isCompanySelected)
-      )
-    })
-  }
-
   return {
     programs,
     currentProgram,
     hasPrograms,
     hasError,
     programsByFilters,
-    getProgramsByFilters,
     reset
   }
 })
