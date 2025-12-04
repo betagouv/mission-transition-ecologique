@@ -18,7 +18,7 @@
       />
       <ul class="fr-grid-row fr-grid-row--gutters fr-grid-row--left fr-raw-list">
         <li
-          v-for="linkedProject in linkedProjectsTags"
+          v-for="linkedProject in linkedProjects"
           :key="linkedProject.id"
           class="fr-col-12 fr-col-sm-6 fr-col-lg-4"
         >
@@ -45,10 +45,6 @@ interface Props {
 }
 defineProps<Props>()
 
-const linkedProjectsTags = ref<ProjectType[]>([])
-
-onNuxtReady(async () => {
-  await new ProjectManager().getProjects()
-  linkedProjectsTags.value = await useProjectStore().getLinkedProjectsFromCurrent()
-})
+await new ProjectManager().getProjects()
+const { linkedProjects } = storeToRefs(useProjectStore())
 </script>

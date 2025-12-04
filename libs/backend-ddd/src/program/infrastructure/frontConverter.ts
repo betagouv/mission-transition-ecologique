@@ -56,7 +56,7 @@ export default class FrontConverter {
     return {
       ...frontProgram,
       filters: {
-        [FiltersKeys.Theme]: eligibilityData?.questionnaire?.priorityObjectives || undefined
+        [FiltersKeys.Theme]: eligibilityData?.priorityObjectives || undefined
       }
     } as ProgramTypeForFront
   }

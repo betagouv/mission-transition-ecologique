@@ -17,9 +17,7 @@
 </template>
 <script setup lang="ts">
 import FaqQuestions from '@/components/faq/FaqQuestions.vue'
-import { useProjectStore } from '@/stores/project'
 import { Faq } from '@/tools/faq'
-import { ProjectManager } from '@/tools/project/projectManager'
 import { ProjectType } from '@/types'
 import { useSchemaOrg } from '@unhead/schema-org/vue'
 
@@ -27,13 +25,6 @@ interface Props {
   project: ProjectType
 }
 const props = defineProps<Props>()
-
-const linkedProjectsTags = ref<ProjectType[]>([])
-
-onNuxtReady(async () => {
-  await new ProjectManager().getProjects()
-  linkedProjectsTags.value = await useProjectStore().getLinkedProjectsFromCurrent()
-})
 
 useSchemaOrg([{ '@type': 'FAQPage', mainEntity: defineQuestions() }])
 

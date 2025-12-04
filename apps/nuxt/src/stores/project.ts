@@ -34,6 +34,17 @@ export const useProjectStore = defineStore('project', () => {
     })
   }
 
+  const linkedProjects = computed(() => {
+    const projectCurrent = currentProject.value
+    if (hasProjects.value && projects.value.length > 0 && projectCurrent && projectCurrent.linkedProjects.length > 0) {
+      return projects.value.filter((project) => {
+        return projectCurrent.linkedProjects.includes(project.id)
+      })
+    }
+
+    return []
+  })
+
   async function getLinkedProjectsFromCurrent() {
     const projectCurrent = currentProject.value
     if (hasProjects.value && projectCurrent) {
@@ -52,6 +63,7 @@ export const useProjectStore = defineStore('project', () => {
     hasError,
     currentProject,
     getLinkedProjectsFromCurrent,
+    linkedProjects,
     getProjectsByFilters,
     getProjectsFromIds
   }
