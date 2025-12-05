@@ -266,6 +266,7 @@
     "programs": [
       "aides-au-reemploi-des-emballages",
       "fonds-tourisme-durable",
+      "fond-vert-territoires-d-industrie",
       "ormat",
       "tremplin",
       "aide-financement-occitanie",
@@ -1706,6 +1707,7 @@
       "etude-alimentation-durable",
       "etude-biodechets",
       "fonds-tourisme-durable",
+      "fond-vert-territoires-d-industrie",
       "gestion-des-biodechets",
       "investissement-gestion-des-biodechets",
       "performa-environnement",
@@ -3944,6 +3946,7 @@
     ],
     "mainTheme": "building",
     "programs": [
+      "fond-vert-territoires-d-industrie",
       "programme-synergies-durables"
     ],
     "linkedProjects": [],
@@ -4708,6 +4711,7 @@
       "aides-au-reemploi-des-emballages",
       "diagnostic-dechets",
       "etude-reemploi-reutilisation-reparation",
+      "fond-vert-territoires-d-industrie",
       "charte-zero-dechet-plastique",
       "aide-tpe-transition-na"
     ],
@@ -4783,7 +4787,8 @@
     ],
     "mainTheme": "mobility",
     "programs": [
-      "engins-moins-polluants"
+      "engins-moins-polluants",
+      "fond-vert-territoires-d-industrie"
     ],
     "linkedProjects": [
       998
