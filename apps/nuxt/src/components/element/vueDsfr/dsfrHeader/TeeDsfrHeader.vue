@@ -25,7 +25,6 @@
                 v-if="isWithSlotOperator"
                 class="fr-header__operator"
               >
-                <!-- @slot Slot nommé operator pour le logo opérateur. Sera dans `<div class="fr-header__operator">` -->
                 <slot name="operator">
                   <img
                     v-if="operatorImgSrc"
@@ -35,6 +34,17 @@
                     :style="operatorImgStyle"
                   />
                 </slot>
+              </div>
+              <div
+                v-if="secondOperatorImgSrc"
+                class="fr-header__operator fr-hidden-lg"
+              >
+                <img
+                  class="fr-responsive-img"
+                  :src="secondOperatorImgSrc"
+                  :alt="secondOperatorImgAlt"
+                  :style="secondOperatorImgStyle"
+                />
               </div>
               <div
                 v-if="showSearch || isWithSlotNav || quickLinks?.length"
@@ -66,17 +76,14 @@
                 />
               </div>
             </div>
-            <div
-              v-if="serviceTitle"
-              class="fr-header__service"
-            >
+            <div class="fr-header__service fr-px-0">
               <RouterLink
                 :to="homeTo"
                 :title
                 v-bind="$attrs"
               >
                 <p class="fr-header__service-title">
-                  {{ serviceTitle }}
+                  Transition écologique<span class="fr-display-lg--block"> des entreprises</span>
                   <span
                     v-if="showBeta"
                     class="fr-badge fr-badge--sm fr-badge--green-emeraude"
@@ -87,10 +94,21 @@
               </RouterLink>
               <p
                 v-if="serviceDescription"
-                class="fr-header__service-tagline"
+                class="fr-header__service-tagline fr-hidden-lg"
               >
                 {{ serviceDescription }}
               </p>
+            </div>
+            <div
+              v-if="secondOperatorImgSrc"
+              class="fr-header__operator fr-unhidden-lg fr-hidden"
+            >
+              <img
+                class="fr-responsive-img"
+                :src="secondOperatorImgSrc"
+                :alt="secondOperatorImgAlt"
+                :style="secondOperatorImgStyle"
+              />
             </div>
             <div
               v-if="!serviceTitle && showBeta"
@@ -101,7 +119,7 @@
               </p>
             </div>
           </div>
-          <div class="fr-header__tools">
+          <div class="fr-header__tools fr-pl-0">
             <div
               v-if="quickLinks?.length || languageSelector"
               class="fr-header__tools-links"
@@ -120,7 +138,7 @@
                 />
               </template>
             </div>
-            <div class="fr-my-auto fr-px-4v fr-hidden fr-unhidden-lg">
+            <div class="fr-my-auto fr-pr-4v fr-hidden fr-unhidden-lg">
               <TeeRegisterCTA />
             </div>
             <div
@@ -215,13 +233,19 @@
   </header>
 </template>
 <script lang="ts" setup>
-import { computed, onMounted, onUnmounted, ref, toRef, useSlots } from 'vue'
+import { computed, onMounted, onUnmounted, ref, type StyleValue, toRef, useSlots } from 'vue'
 import { DsfrLanguageSelector, DsfrLogo, DsfrSearchBar, registerNavigationLinkKey } from '@gouvminint/vue-dsfr'
 import type { DsfrLanguageSelectorElement } from '@gouvminint/vue-dsfr/types/components/DsfrLanguageSelector/DsfrLanguageSelector.vue'
 import type { DsfrHeaderProps } from '@gouvminint/vue-dsfr/types/components/DsfrHeader/DsfrHeader.vue'
 import Navigation from '@/tools/navigation'
 
-const props = withDefaults(defineProps<DsfrHeaderProps>(), {
+interface TeeDsfrHeaderProps extends DsfrHeaderProps {
+  secondOperatorImgSrc?: string
+  secondOperatorImgAlt?: string
+  secondOperatorImgStyle?: StyleValue
+}
+
+const props = withDefaults(defineProps<TeeDsfrHeaderProps>(), {
   searchbarId: 'searchbar-header',
   languageSelector: undefined,
   serviceTitle: undefined,
@@ -232,6 +256,9 @@ const props = withDefaults(defineProps<DsfrHeaderProps>(), {
   operatorImgAlt: '',
   operatorImgSrc: '',
   operatorImgStyle: () => ({}),
+  secondOperatorImgSrc: '',
+  secondOperatorImgAlt: '',
+  secondOperatorImgStyle: () => ({}),
   placeholder: 'Rechercher...',
   quickLinks: () => [],
   searchLabel: 'Recherche',

@@ -7,7 +7,7 @@
       <li
         v-for="(quickLink, index) in links"
         :key="index"
-        class="fr-px-4v"
+        class="fr-pl-4v"
       >
         <DsfrHeaderMenuLink
           v-if="!quickLink.links"
@@ -23,7 +23,7 @@
           <!-- DROPDOWN MENU ITEM - DISPLAY WIDER THAN MD -->
           <DsfrNavigation
             :id="idNav"
-            class="fr-hidden fr-unhidden-lg fr-pr-2w fr-pr-lg-0"
+            class="fr-hidden fr-unhidden-lg fr-pr-4w fr-pr-lg-0"
             :nav-items="[{ title: 'Catalogue', links: quickLink.links }]"
             aria-label="Sous Menu secondaire"
           />
