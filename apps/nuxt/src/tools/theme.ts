@@ -137,9 +137,8 @@ export class Theme {
     return Object.values(ThemeId).includes(theme as ThemeId) || theme === ''
   }
 
-  static getPriorityProjects(projects: ProjectType[] | undefined) {
-    const sortedProjects = (projects as unknown as ProjectType[]).sort((a, b) => a.priority - b.priority)
-    return { projects: sortedProjects.slice(0, 3), moreThanThree: sortedProjects.length > 3 }
+  static getPriorityProjects(projects: ProjectType[]) {
+    return { projects: projects.slice(0, 3), moreThanThree: projects.length > 3 }
   }
 
   static getThemeFromSelectedTheme(): ComputedRef<ThemeId | undefined> {
