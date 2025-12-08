@@ -1,7 +1,7 @@
 titre: Fonds Vert - Territoires d'Industrie
 promesse: >-
   Financez votre projet industriel d'intérêt général en matière de transition
-  écologique 
+  écologique
 description: >-
   Vous portez un projet de développement industriel présentant un **intérêt
   général manifeste** en termes de revitalisation économique et de transition
@@ -54,7 +54,7 @@ description longue: >-
   réindustrialisation de ces chaînes de valeur industrielles.
 début de validité: 12/03/2025
 fin de validité: 31/12/2025
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000810
 url: >-
@@ -102,18 +102,6 @@ conditions d'éligibilité:
     - Industrie
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
-  autres critères d'éligibilité:
-    - >-
-      Cette aide est destinée aux entreprises situées sur les territoires
-      d'industrie 2023-2027
-    - >-
-      Les projets doivent présenter une assiette minimale de dépenses de 400 000
-      € (excepté Corse et Outre-Mer)
-    - >-
-      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
-      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
-      (sous quelque forme que ce soit : marché signé, commande signée, devis
-      accepté…)
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

@@ -1,0 +1,122 @@
+titre: Étude "Méthanisation" en PACA
+promesse: >-
+  Étudiez votre projet de construction d'une installation de méthanisation en
+  PACA
+description: >-
+  Vous avez un projet de méthanisation pour valoriser des déchets ou matières
+  organiques en énergie renouvelable ? L’ADEME peut financer une **étude
+  préalable** pour en évaluer la faisabilité.
+
+
+  Cette étude permet de :\
+
+  – **analyser les gisements disponibles, les technologies adaptées et les
+  options de valorisation du biogaz**,\
+
+  – **évaluer les contraintes économiques, réglementaires et liées au site**.
+
+
+  C’est une étape essentielle pour sécuriser votre projet, affiner sa conception
+  et bâtir un dossier solide en vue de sa réalisation.
+description longue: >-
+  La méthanisation est un processus naturel biologique de dégradation de la
+  matière organique grâce à l'action de micro-organismes. Chargées dans un
+  digesteur, chauffées et brassées en l’absence d’oxygène pendant plusieurs
+  jours, ces matières produisent une énergie renouvelable, le biogaz et un
+  fertilisant, le digestat.\
+
+  Le biogaz produit peut ensuite être valorisé et vendu sous différentes formes
+  (chaleur, électricité, injection dans le réseau de gaz naturel, carburant pour
+  véhicules).
+
+
+  L'ADEME soutient le financement aux :
+
+
+  - Études de diagnostic et d’accompagnement de projets (dont études de
+  faisabilité) : unités de méthanisation à la ferme, centralisées, en industries
+  agro-alimentaires, biodéchets des collectivités ou station d’épuration
+  urbaines (STEU).
+
+  - Accompagnement au montage projet après étude de faisabilité :
+
+  - Études de raccordement au réseau public de gaz (pour les projets
+  d’injection, voir plus bas en détail, certaines études seulement sont
+  éligibles).
+
+  - Etudes d’Assistance à Maîtrise d’Ouvrage avant construction de
+  l’installation.
+
+  - Etudes pour la concertation locale/ communication/information
+
+  - Etudes agronomiques
+
+  - Appui au montage juridique des projets collectifs
+
+  - Appui au montage du plan de financement.
+illustration: images/TEE_ampoule.webp
+opérateur de contact: Région Sud (PACA)
+autres opérateurs:
+  - ADEME
+contact question: >-
+  https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/etude-de-faisabilite-pour-des-projets-de-methanisation
+url: >-
+  https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/etude-de-faisabilite-pour-des-projets-de-methanisation
+nature de l'aide: étude
+montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
+objectifs:
+  - description: >-
+      Dans un premier temps, il est indispensable de contacter le GERES pour
+      l’élaboration du pré-diagnostic d’opportunité
+    liens:
+      - lien: >-
+          https://www.maregionsud.fr/vos-aides/detail/etude-de-faisabilite-pour-des-projets-de-methanisation
+        texte: Voir les contacts pour faire sa demande
+  - description: >-
+      Dans un deuxième temps, lorsque le potentiel est avéré : contacter le
+      chargé de mission régional pour le détail des dispositifs et les modalités
+      de dépôt de la demande. M. Emmanuel Giovannoni - Service Transition
+      Energétique - Direction de la
+    liens:
+      - lien: mailto:egiovannoni@maregionsud.fr
+        texte: egiovannoni@maregionsud.fr
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Activité agricole ou  industries agro-alimentaires
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur

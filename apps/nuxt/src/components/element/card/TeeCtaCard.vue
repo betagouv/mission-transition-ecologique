@@ -18,9 +18,7 @@
             class="inline-flex fr-text--yellow fr-text--bold fr-btn-align-center"
             @click.prevent="onClick()"
           >
-            <template #default>
-              {{ ctaBtnTitle }}
-            </template>
+            {{ ctaBtnTitle }}
           </TeeDsfrButton>
         </div>
       </div>

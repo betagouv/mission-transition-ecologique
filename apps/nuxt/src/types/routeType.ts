@@ -18,7 +18,8 @@ export enum RouteName {
   Statistics = 'statistics',
   Accessibility = 'accessibility',
   Faq = 'faq',
-  About = 'qui-sommes-nous'
+  About = 'qui-sommes-nous',
+  SitemapPage = 'plan-du-site'
 }
 
 export enum RoutePath {

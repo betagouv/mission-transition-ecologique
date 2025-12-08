@@ -9,7 +9,7 @@
     <template #sidemenu>
       <ProgramFiltersAccordion with-title />
     </template>
-    <ProgramList :filtered-programs="filteredPrograms" />
+    <ProgramList :filtered-programs="programsByFilters" />
   </LayoutCatalog>
 </template>
 
@@ -20,9 +20,11 @@ import { FaqSectionType, RouteName } from '@/types'
 import { useProgramStore } from '@/stores/program'
 import { ProgramManager } from '@/tools/program/programManager'
 import { MetaSeo } from '@/tools/metaSeo'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { MetaRobots } from '@/tools/metaRobots'
 import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
+import { useRoute } from 'vue-router'
+import { Scroll } from '@/tools/scroll/scroll'
 
 definePageMeta({
   name: RouteName.CatalogPrograms,
@@ -32,9 +34,9 @@ definePageMeta({
 const { default: json } = await import('@/public/json/faq/catalog-program.json')
 const faqCatalogProgram = json as unknown as FaqSectionType[]
 
-const programStore = useProgramStore()
-const { programs, hasError } = storeToRefs(useProgramStore())
+const { hasError, programsByFilters } = storeToRefs(useProgramStore())
 const navigation = new Navigation()
+const route = useRoute()
 
 const seoTitle = 'Aides aux entreprises et subventions dédiées à la transition écologique'
 const seoDescription =
@@ -58,12 +60,8 @@ const hasSideMenu = computed(() => {
   return !hasError.value
 })
 
-const filteredPrograms = computed(() => {
-  return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
-})
-
 const countPrograms = computed(() => {
-  return filteredPrograms.value?.length || 0
+  return programsByFilters.value.length || 0
 })
 
 useHead({
@@ -75,12 +73,6 @@ useHead({
   ],
   ...MetaRobots.noIndexOnQueries(useRoute().fullPath)
 })
-
-import { onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-import { Scroll } from '@/tools/scroll/scroll'
-
-const route = useRoute()
 
 onMounted(() => {
   if (!route.hash) {

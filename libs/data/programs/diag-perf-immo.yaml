@@ -34,7 +34,7 @@ description longue: >-
 
 
   Le décret tertiaire est officiellement entré en vigueur en octobre 2019.
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_ampoule.webp
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - ADEME
@@ -43,8 +43,8 @@ url: >-
   https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/diag-perfimmo
 nature de l'aide: étude
 coût de l'accompagnement: >-
-  entre 3 000 € HT et 17 000 € HT (subventionné par l'ADEME à hauteur de 40% du
-  montant HT, dans la limite de 6 800 € par site)
+  entre 3 000 € HT et 17 000 € HT (subventionné par l'ADEME à hauteur de 50% du
+  montant HT, dans la limite de 8 500 € par site)
 durée de l'accompagnement: variable selon la surface et la complexité du site
 objectifs:
   - description: >-
@@ -92,6 +92,7 @@ publicodes:
       - microentrepreneur = non
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
+      - code NAF niveau 1 . est A
       - code NAF niveau 1 . est B
       - code NAF niveau 1 . est C
       - code NAF niveau 1 . est D
@@ -100,6 +101,7 @@ publicodes:
       - code NAF niveau 1 . est G
       - code NAF niveau 1 . est H
       - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
       - code NAF niveau 1 . est K
       - code NAF niveau 1 . est L
       - code NAF niveau 1 . est M

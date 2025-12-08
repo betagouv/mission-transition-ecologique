@@ -1,0 +1,85 @@
+titre: Investissement "Méthanisation" en PACA
+promesse: Financez votre installation de méthanisation en PACA
+description: >-
+  Vous disposez d’une étude pour votre projet de méthanisation ? Vous souhaitez
+  investir pour le mettre en œuvre ? L’ADEME peut accompagner financièrement la
+  réalisation de votre installation.
+description longue: >-
+  Les équipements financés sont les suivants :
+
+
+  - Unités de méthanisation avec cogénération (&lt; 500 kWe) ou injection de
+  biométhane :
+
+
+
+  - production de biogaz ;
+
+  - valorisation énergétique du biogaz : production de chaleur seule,
+  cogénération d’électricité et de chaleur, épuration du biogaz en biométhane,
+  injection dans le réseau public.
+
+  - Stations d’épuration urbaines (STEU) : valorisation énergétique du biogaz
+  comprenant l’épuration en biométhane et l’injection dans le réseau public.
+
+
+  La réalisation d'une étude de faisabilité préalable est une condition
+  d'éligibilité.
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: Région Sud (PACA)
+contact question: mailto:egiovannoni@maregionsud.fr
+url: >-
+  https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/aides-a-linvestissement-en-methanisation
+nature de l'aide: financement
+montant du financement: Aide calculée selon le type d'installation
+objectifs:
+  - description: >-
+      Prendre contact avec le chargé de mission qui transmettra le détail des
+      dispositifs et les modalités de dépôt de la demande après échange sur le
+      projet.
+    liens:
+      - lien: mailto:egiovannoni@maregionsud.fr
+        texte: egiovannoni@maregionsud.fr
+  - description: >-
+      Créer un compte et déposer son dossier sur l'espace numérique de la région
+      sud
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      L'opération pour laquelle vous sollicitez une aide financière ne doit pas
+      avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
+      (sous quelque forme que ce soit : marché signé, commande signée, devis
+      accepté…)
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est H
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Provence-Alpes-Côte d'Azur

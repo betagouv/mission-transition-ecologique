@@ -16,6 +16,8 @@ export class ProjectManager {
   withCompanyData() {
     if (new Navigation().isCatalogProjects()) {
       return CompanyData.isCompanySelected()
+    } else if (new Navigation().isSitemapPage()) {
+      return false
     }
 
     return this._companyDateStore.isDataFull
@@ -71,7 +73,8 @@ export class ProjectManager {
       navigation.isQuestionnaireThemeCards() ||
       navigation.isHomepage() ||
       navigation.isCatalogProjects() ||
-      navigation.isAboutPage()
+      navigation.isAboutPage() ||
+      navigation.isProjectDetail()
     ) {
       await this.getProjects()
     } else {

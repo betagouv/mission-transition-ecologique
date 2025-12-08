@@ -54,7 +54,7 @@ description longue: >-
   - Appui au montage du plan de financement.
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
@@ -101,7 +101,7 @@ conditions d'éligibilité:
       Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
       Loire, Corse, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
       Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Occitanie,
-      Pays de la Loire, Provence-Alpes-Côte d'Azur
+      Pays de la Loire
   secteur d'activité:
     - Activité agricole ou  industries agro-alimentaires
   nombre d'années d'activité:
@@ -129,6 +129,9 @@ publicodes:
     une de ces conditions:
       - code NAF niveau 1 . est A
       - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est H
       - code NAF niveau 1 . est I
   entreprise . a un objectif ciblé:
     une de ces conditions:
@@ -152,4 +155,3 @@ publicodes:
       - région = Nouvelle-Aquitaine
       - région = Occitanie
       - région = Pays de la Loire
-      - région = Provence-Alpes-Côte d'Azur

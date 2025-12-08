@@ -1025,6 +1025,7 @@
     "programs": [
       "booster-eco-energie-tertiaire",
       "fonds-tourisme-durable",
+      "diag-perf-immo",
       "renovation-energetique",
       "renovation-petit-tertiaire-prive",
       "pret-economies-d-energie-pee",
@@ -1590,7 +1591,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "diag-performance"
     ],
     "linkedProjects": [
       36
@@ -1846,7 +1848,17 @@
       "formation-convaincre-et-argumenter",
       "formation-communiquer-et-sensibiliser",
       "outils-pour-adaptation",
-      "eco-diagnostic-commerce"
+      "eco-diagnostic-commerce",
+      "diag-performance",
+      "formations-atlas",
+      "formations-afdas",
+      "formations-opcommerce",
+      "formations-ocapiat",
+      "formations-2i",
+      "formations-ep",
+      "formations-sante",
+      "formations-uniformation",
+      "formations-mobilite"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
@@ -1931,7 +1943,8 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "aide-tpe-transition-na",
-      "eco-diagnostic-commerce"
+      "eco-diagnostic-commerce",
+      "diag-performance"
     ],
     "linkedProjects": [
       30
@@ -2001,7 +2014,16 @@
       "aide-investissement-corse",
       "formation-convaincre-et-argumenter",
       "formation-communiquer-et-sensibiliser",
-      "outils-pour-adaptation"
+      "outils-pour-adaptation",
+      "formations-atlas",
+      "formations-afdas",
+      "formations-opcommerce",
+      "formations-ocapiat",
+      "formations-2i",
+      "formations-ep",
+      "formations-sante",
+      "formations-uniformation",
+      "formations-mobilite"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une formation environnement",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre formation environnement",
@@ -2243,7 +2265,8 @@
       "cap-transition-ecologique",
       "prit-hdf",
       "camping-independant-bfc",
-      "indicateur-climat"
+      "indicateur-climat",
+      "diag-performance"
     ],
     "linkedProjects": [],
     "priority": {
@@ -3669,9 +3692,11 @@
     "mainTheme": "energy",
     "programs": [
       "etude-methanisation",
+      "etude-methanisation-paca",
       "investissement-methanisation",
       "aide-tpe-transition-na",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "investissement-methanisation-paca"
     ],
     "linkedProjects": [
       4,
@@ -4612,6 +4637,7 @@
       "diag-eco-flux",
       "gestion-des-biodechets",
       "investissement-gestion-des-biodechets",
+      "etude-methanisation-paca",
       "investissement-reemploi-reutilisation-reparation",
       "programme-synergies-durables",
       "decarb-flash-2025-2027",
