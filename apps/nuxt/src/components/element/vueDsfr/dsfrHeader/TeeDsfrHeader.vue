@@ -76,17 +76,14 @@
                 />
               </div>
             </div>
-            <div
-              v-if="serviceTitle"
-              class="fr-header__service"
-            >
+            <div class="fr-header__service fr-px-0">
               <RouterLink
                 :to="homeTo"
                 :title
                 v-bind="$attrs"
               >
                 <p class="fr-header__service-title">
-                  {{ serviceTitle }}
+                  Transition écologique<span class="fr-display-lg--block"> des entreprises</span>
                   <span
                     v-if="showBeta"
                     class="fr-badge fr-badge--sm fr-badge--green-emeraude"
@@ -122,7 +119,7 @@
               </p>
             </div>
           </div>
-          <div class="fr-header__tools">
+          <div class="fr-header__tools fr-pl-0">
             <div
               v-if="quickLinks?.length || languageSelector"
               class="fr-header__tools-links"
@@ -141,7 +138,7 @@
                 />
               </template>
             </div>
-            <div class="fr-my-auto fr-px-4v fr-hidden fr-unhidden-lg">
+            <div class="fr-my-auto fr-pr-4v fr-hidden fr-unhidden-lg">
               <TeeRegisterCTA />
             </div>
             <div
@@ -330,13 +327,3 @@ provide(registerNavigationLinkKey, () => {
   return hideModal
 })
 </script>
-
-<style scoped lang="scss">
-.fr-header__brand-top {
-  overflow: unset;
-}
-
-.fr-header__tools {
-  padding-left: 0;
-}
-</style>

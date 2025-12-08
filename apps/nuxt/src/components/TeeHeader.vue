@@ -1,7 +1,6 @@
 <template>
   <TeeDsfrHeader
     id="tee-header"
-    service-title="Transition écologique des entreprises"
     service-description="Allier écologie avec économies !"
     home-to="/"
     :quick-links="quickLinks"
