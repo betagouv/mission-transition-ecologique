@@ -10,6 +10,9 @@
     :operator-img-src="Identity.logoPath"
     operator-img-alt="Transition écologique des entreprises - ADEME"
     operator-img-style="width:3.5rem;"
+    :second-operator-img-src="Identity.logoAgirPath"
+    second-operator-img-alt="AGIR pour la transition écologique - ADEME"
+    second-operator-img-style="width:5.5rem;"
   />
 </template>
 
