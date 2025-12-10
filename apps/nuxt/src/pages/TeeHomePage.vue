@@ -44,7 +44,6 @@ import { MetaRobots } from '@/tools/metaRobots'
 import Navigation from '@/tools/navigation'
 import { FaqSectionType, RouteName } from '@/types'
 
-const { filters } = storeToRefs(useFiltersStore())
 const navigation = new Navigation()
 
 const { default: json } = await import('@/public/json/faq/home.json')
