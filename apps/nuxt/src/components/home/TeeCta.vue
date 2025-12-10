@@ -6,7 +6,6 @@
           <div class="fr-col-12">
             <div class="fr-grid-row">
               <div class="fr-col-12">
-                <p class="fr-text--purple fr-h4 fr-text--bold fr-mb-0">TPE, PME</p>
                 <h1 class="fr-mb-3v">
                   Trouvez les aides pour
                   <span class="fr-display-md--block">la transition écologique </span>
