@@ -9,5 +9,6 @@ export enum OperatorFilter {
   OperateursNationaux = 'Opérateurs nationaux',
   OP = 'OP',
   Regions = 'Régions',
-  OFBARB = 'OFB/ARB'
+  OFBARB = 'OFB/ARB',
+  OPCO = 'OPCO'
 }

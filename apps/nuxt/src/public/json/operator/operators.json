@@ -247,7 +247,7 @@
   {
     "operator": "Opcommerce",
     "filterCategories": [
-      "Opérateurs nationaux"
+      "OPCO"
     ]
   },
   {
@@ -263,53 +263,61 @@
   {
     "operator": "Constructys",
     "filterCategories": [
-      "Opérateurs nationaux"
+      "OPCO"
     ]
   },
   {
     "operator": "Atlas",
     "filterCategories": [
-      "Opérateurs nationaux"
+      "OPCO"
     ]
   },
   {
     "operator": "Opco AFDAS",
     "filterCategories": [
-      "Opérateurs nationaux"
+      "OPCO"
     ]
   },
   {
     "operator": "Opco Ocapiat",
     "filterCategories": [
-      "Opérateurs nationaux"
+      "OPCO"
     ]
   },
   {
     "operator": "Opco 2i",
     "filterCategories": [
-      "Opérateurs nationaux"
+      "OPCO"
     ]
   },
   {
     "operator": "Opco EP",
     "filterCategories": [
-      "Opérateurs nationaux"
+      "OPCO"
     ]
   },
   {
     "operator": "Opco Mobilités",
     "filterCategories": [
-      "Opérateurs nationaux"
+      "OPCO"
     ]
   },
   {
     "operator": "Opco Santé",
     "filterCategories": [
-      "Opérateurs nationaux"
+      "OPCO"
     ]
   },
   {
     "operator": "Opco Uniformation",
-    "filterCategories": []
+    "filterCategories": [
+      "OPCO"
+    ]
+  },
+  {
+    "operator": "ANACT",
+    "filterCategories": [
+      "Régions"
+    ]
   }
 ]
