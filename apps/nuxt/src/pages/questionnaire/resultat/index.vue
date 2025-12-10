@@ -14,7 +14,7 @@ import { RouteName } from '@/types/routeType'
 
 definePageMeta({
   name: RouteName.QuestionnaireResult,
-  middleware: [MiddlewareName.setUsedTracks, MiddlewareName.hasUsedTracks]
+  middleware: [MiddlewareName.hasUsedTracks]
 })
 
 defineRouteRules({

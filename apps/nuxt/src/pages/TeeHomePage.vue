@@ -12,7 +12,7 @@
 
     <div class="fr-container--fluid fr-container-md">
       <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-pt-6v">Quel est votre projet ?</h2>
-      <TeeHomeProjectList :limit="filters[FilterItemKeys.themeType] === '' ? 8 : 9" />
+      <TeeHomeProjectList />
     </div>
     <TeeHomeTestimonies />
     <div class="fr-container--fluid fr-container-md">
@@ -42,9 +42,8 @@ import { defineRouteRules } from '#imports'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { MetaRobots } from '@/tools/metaRobots'
 import Navigation from '@/tools/navigation'
-import { FaqSectionType, FilterItemKeys, RouteName } from '@/types'
+import { FaqSectionType, RouteName } from '@/types'
 
-const { filters } = storeToRefs(useFiltersStore())
 const navigation = new Navigation()
 
 const { default: json } = await import('@/public/json/faq/home.json')

@@ -14,7 +14,7 @@ import { RouteName } from '@/types/routeType'
 
 definePageMeta({
   name: RouteName.Questionnaire,
-  middleware: [MiddlewareName.setUsedTracks, MiddlewareName.hasUsedTracks, MiddlewareName.hasTrack]
+  middleware: [MiddlewareName.hasUsedTracks, MiddlewareName.hasTrack]
 })
 
 useHead(MetaRobots.noIndexNoFollow())
