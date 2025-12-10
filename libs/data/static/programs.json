@@ -11390,9 +11390,9 @@
   },
   {
     "titre": "Fonds Vert - Territoires d'Industrie",
-    "promesse": "Financez votre projet industriel d'intérêt général en matière de transition écologique ",
-    "description": "Vous portez un projet de développement industriel présentant un **intérêt général manifeste** en termes de revitalisation économique et de transition écologique ?\n\nLe programme **Territoires d’industrie** soutient les entreprises engagées dans des projets d’investissements industriels ambitieux et exemplaires, tant sur le plan **environnemental**, **socio-économique** que **territorial**.",
-    "description longue": "Les projets éligibles sont des projets d’investissements industriels exemplaires sur le plan environnemental qui contribuent à l’émergence, au renforcement ou à la réindustrialisation de chaînes de valeur industrielles clés pour la transition écologique.\n\n\\\nAfin d’être éligibles, les projets doivent être suffisamment matures.\n\nPar exemple :\n\n- Bioéconomie pour le développement de produits biosourcés (chanvre, lin, laine, bois, paille, bioéconomie marine, chimie, etc.) ;\n- Nouvelles mobilités durables (vélos, vélos-cargos, véhicules intermédiaires, etc.) ;\n- Souveraineté alimentaire et relocalisation des filières agroalimentaires (unités de\\\n  transformation locale de production, par exemple en lien avec un projet alimentaire\\\n  territorial, etc.) ;\n- Relocalisation de biens de consommation courants (habillement, mobilier, etc.) avec un\\\n  process significativement plus respectueux de l’environnement que les standards ;\n- Productions industrielles contribuant au recyclage de matériaux ou matières premières, à l’économie circulaire et au réemploi, ou à la valorisation de déchets et co-produits\\\n  (équipements de la transition énergétique, de la rénovation du bâti, etc.) ;\n- Projets qui s’inscrivent dans une stratégie de diversification pour des territoires fragiles dont\\\n  l’économie est impactée par le changement climatique (notamment territoires de montagne).\n- Projets d’investissements contribuant au développement des\\\n  compétences (école de production, centre de formation, plateau technique, etc.)\n\nA titre auxiliaire, la mesure peut soutenir des projets d’investissements contribuant au développement des compétences nécessaires à la réindustrialisation de ces chaînes de valeur industrielles.",
+    "promesse": "Financez votre projet industriel en matière de transition écologique",
+    "description": "Vous portez un projet d’**investissement industriel structurant et ambitieux** sur le plan environnemental ?\n\nLe programme Territoires d’industrie soutient les entreprises engagées dans des projets qui contribuent à l’émergence, au renforcement et/ou à la réindustrialisation de **chaînes de valeur stratégiques** **pour la transition écologique**.",
+    "description longue": "Les projets éligibles sont des projets d’investissements industriels exemplaires sur le plan environnemental qui contribuent à l’émergence, au renforcement ou à la réindustrialisation de chaînes de valeur industrielles clés pour la transition écologique.\n\n\\\nAfin d’être éligibles, les projets doivent être suffisamment matures.\n\nA titre d’exemple, les chaînes de valeur soutenues pourront relever des secteurs suivants :\n\n- Bioéconomie pour le développement de produits biosourcés (chanvre, lin, laine, bois, paille, bioéconomie marine, chimie, etc.) ;\n- Nouvelles mobilités durables (vélos, vélos-cargos, véhicules intermédiaires, etc.) ;\n- Souveraineté alimentaire et relocalisation des filières agroalimentaires (unités de\\\n  transformation locale de production, par exemple en lien avec un projet alimentaire\\\n  territorial, etc.) ;\n- Relocalisation de biens de consommation courants (habillement, mobilier, etc.) avec un\\\n  process significativement plus respectueux de l’environnement que les standards ;\n- Productions industrielles contribuant au recyclage de matériaux ou matières premières, à l’économie circulaire et au réemploi, ou à la valorisation de déchets et co-produits\\\n  (équipements de la transition énergétique, de la rénovation du bâti, etc.) ;\n- Projets qui s’inscrivent dans une stratégie de diversification pour des territoires fragiles dont\\\n  l’économie est impactée par le changement climatique (notamment territoires de montagne).\n- Projets d’investissements contribuant au développement des\\\n  compétences (école de production, centre de formation, plateau technique, etc.)\n\nA titre auxiliaire, la mesure peut soutenir des projets d’investissements contribuant au développement des compétences nécessaires à la réindustrialisation de ces chaînes de valeur industrielles.",
     "début de validité": "12/03/2025",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_ampoule.webp",
@@ -16123,7 +16123,7 @@
     "contact question": "https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/etude-de-faisabilite-pour-des-projets-de-methanisation",
     "url": "https://entreprises.maregionsud.fr/aides-et-appels-a-projet/detail/etude-de-faisabilite-pour-des-projets-de-methanisation",
     "nature de l'aide": "étude",
-    "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "montant du financement": "Jusqu'à 70% du coût de l'étude (avec des plafonds) selon la nature du projet",
     "objectifs": [
       {
         "description": "Dans un premier temps, il est indispensable de contacter le GERES pour l’élaboration du pré-diagnostic d’opportunité",
@@ -32642,7 +32642,7 @@
   {
     "titre": "PASS Transitions",
     "promesse": "Financez votre transition environnementale avec une aide de la région Bretagne",
-    "description": "La Région Bretagne soutient financièrement la transition environnementale des petites entreprises via le \"Pass Transition\".\\\nLe Pass Transition finance des études pour accélérer votre transition sur l'eau, l'énergie, économie circulaire, les déchets, la biodiversité, RSE, mobilité, numérique responsable.\\\nIl participe aussi au financement d'équipements pour le suivi et la réduction de vos déchets, consommations en eau et en énergie.\\\nEnfin, il peut contribuer au financement d'un recrutement d’une personne à temps partagé occupant un poste stratégique en matière de transitions (ex : responsable RSE, management de l’énergie)",
+    "description": "La Région Bretagne soutient financièrement la transition environnementale des petites entreprises via le \"Pass Transition\".\\\nLe Pass Transition **finance des études** pour accélérer votre transition sur l'eau, l'énergie, économie circulaire, les déchets, la biodiversité, RSE, mobilité, numérique responsable.\\\nIl participe aussi au **financement d'équipements** pour le suivi et la réduction de vos déchets, consommations en eau et en énergie.\\\nEnfin, il peut contribuer au **financement d'un recrutement** d’une personne à temps partagé occupant un poste stratégique en matière de transitions (ex : responsable RSE, management de l’énergie)",
     "description longue": "Le PASS Transitions finance 50 % des dépenses éligibles. Il comporte 3 volets :\n- Volet 1. Investissements : \nFinancement d'équipements pour le suivi et la réduction des consommations en énergie, eau et déchets et la production d’énergie photovoltaïque.\nL'aide aux investissements est comprise entre 20 000 € et 50 000 €, pour un mininum de 40 000 € de dépenses. \n\n- Volet 2. Conseil : \nFinancement d’une formation, participation à une fresque, étude, audit, diagnostic...relevant des transitions sur les thématique énergétique, eau, économie circulaire, déchets, biodiversité, RSE, mobilité, numérique. \nL'aide au conseil est comprise entre 4 000 € et 10 000 €, pour un mininum de 8 000 € de dépenses.\n\n- Volet 3. Ressources Humaines \nFinancement d'un recrutement d’une personne à temps partagé occupant un poste stratégique en matière de transitions (ex : responsable RSE, management de l’énergie).\nL'aide aux Ressources Humaines est comprise entre 4 000 € et 10 000 €, pour un minimum de 8 000 € de dépenses.",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "Région Bretagne",
@@ -32685,7 +32685,7 @@
         "Bretagne"
       ],
       "secteur d'activité": [
-        "- Être une entreprise dans la production ou le service aux entreprises de production\n- Être une entreprise dans la filière culturelle : spécifiquement les prestataires travaillant sur des œuvres de création cinématographique et audiovisuelle"
+        "La production,  le service aux entreprises de production et la filière culturelle : spécifiquement les prestataires travaillant sur des œuvres de création cinématographique et audiovisuelle."
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -45289,6 +45289,599 @@
       }
     },
     "id": "formations-mobilite"
+  },
+  {
+    "titre": "Accélérateur des possibles",
+    "promesse": "Bénéficiez de soutien pour vos projets qui articulent transition écologique, conditions de travail et dialogue social",
+    "description": "Vous avez un projet de développement qui articule des questions liées au travail, au dialogue social, aux conditions de travail et à la transition écologique ? Cet appel à projets vous permet de bénéficier gratuitement d'un parcours de 2 jours pendant lesquels vous :\n\n- Rencontrez d'autres participants, échangez et sécurisez vos projets.\n- Bénéficiez de conseils d'experts des conditions de travail et de l’écologie (méthodes et outils).\n- Effectuez un retour d’expérience avec l’ensemble des participants (avancement, réussites, difficultés et pistes d’action).",
+    "début de validité": "01/01/2025",
+    "fin de validité": "01/12/2026",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "ANACT",
+    "contact question": "mailto:m.perrocheau@anact.fr",
+    "url": "https://www.anact.fr/accelerateur-des-possibles",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "Gratuit",
+    "durée de l'accompagnement": "2 jours de prestation",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Candidatez à l'appel à projets avant fin mars 2026 en contactant la chargée de mission des pays de la Loire (écrire à [m.perrocheau@anact.fr](mailto:m.perrocheau@anact.fr))."
+      },
+      {
+        "description": "Début avril, vous saurez si votre projet est retenu. S'il l'est, vous recevez les détails du programme."
+      },
+      {
+        "description": "Les 09 et 10 juin 2026, suivez le programme \"Accélérateur des possibles\"."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "TPE, PME, entrepreneurs salariés",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Pays de la Loire"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d’activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "maxEmployees": "300",
+        "allowedRegion": [
+          "Pays de la Loire"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2025",
+        "end": "01/12/2026"
+      },
+      "priorityObjectives": [
+        "rh"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "a un effectif éligible",
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . a un effectif éligible": {
+        "toutes ces conditions": [
+          "effectif <= 300"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Pays de la Loire"
+        ]
+      }
+    },
+    "id": "accelerateur-des-possibles"
+  },
+  {
+    "titre": "Performa Adaptation",
+    "promesse": "Identifiez les vulnérabilités de votre entreprise au changement climatique mettez en place un plan d'adaptation",
+    "description": "Bénéficiez d'un accompagnement par un expert de la CMA pour :\n\n- Réaliser un diagnostic des risques et aléas climatiques auxquels votre entreprise est exposée à court, moyen et long terme.\n- Construire un plan d’actions prioritaires pour réduire la vulnérabilité et renforcer la résilience aux évolutions climatiques.",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
+    "contact question": "formulaire",
+    "url": "https://www.artisanat.fr/magazine/dossiers-artisanat/role-artisanat-dans-transition-ecologique",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "gratuite",
+    "durée de l'accompagnement": null,
+    "objectifs": [
+      {
+        "description": "Contactez-nous via ce formulaire, un conseiller de la Chambre de Métiers et de l’Artisanat de votre région vérifiera votre éligibilité."
+      },
+      {
+        "description": "Si vous êtes éligible, vous recevrez les modalités de cet accompagnement."
+      },
+      {
+        "description": "Démarrez l'accompagnement."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Moins de 250 salariés",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "R",
+          "T"
+        ]
+      },
+      "validity": {
+        "start": "5/12/2025"
+      },
+      "priorityObjectives": [
+        "environmental"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "dispositif . début de validité <= date du jour",
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est T"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "performa-adaptation"
+  },
+  {
+    "titre": "Cap décarbonation",
+    "promesse": "Faites le point sur vos émissions de carbone et construisez un plan d’action décarbonation",
+    "description": "Prenez activement part à la décarbonation de l'artisanat en France !\n\nBénéficiez d'un accompagnement par un expert de la CMA pour :\n\n- Mesurer les principaux postes d’émissions de gaz à effet de serre dans votre entreprise.\n- Construire un plan d’action des postes prioritaires pour diminuer les émissions et réaliser d'importantes économies d'énergie.",
+    "description longue": "Deux niveaux d’expertise sont proposés :\n\n- Scope 1 et 2 : à partir du la visite énergie et un bilan des principaux postes d’émissions de GES.\n- Scope 1-2-3 : à partir du diagnostic des flux « TPE gagnantes sur tous les coûts ».",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
+    "url": "https://www.artisanat.fr/magazine/dossiers-artisanat/role-artisanat-dans-transition-ecologique",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "gratuite",
+    "durée de l'accompagnement": null,
+    "objectifs": [
+      {
+        "description": "Contactez-nous via ce formulaire, un conseiller de la Chambre de Métiers et de l’Artisanat de votre région vérifiera votre éligibilité."
+      },
+      {
+        "description": "Si vous êtes éligible, vous recevrez les modalités de cet accompagnement."
+      },
+      {
+        "description": "Démarrez l'accompagnement."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Moins de 250 salariés",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "R",
+          "T"
+        ]
+      },
+      "validity": {
+        "start": "5/12/2025"
+      },
+      "priorityObjectives": [
+        "energy",
+        "environmental"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "dispositif . début de validité <= date du jour",
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est T"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "cap-decarbonation"
   },
   {
     "titre": "Investissement \"Méthanisation\" en PACA",
