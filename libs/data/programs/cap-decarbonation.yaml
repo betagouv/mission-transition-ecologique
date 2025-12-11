@@ -25,11 +25,12 @@ description longue: >-
   coûts ».
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Chambre des Métiers et de l'Artisanat
+contact question: formulaire
 url: >-
   https://www.artisanat.fr/magazine/dossiers-artisanat/role-artisanat-dans-transition-ecologique
 nature de l'aide: étude
 coût de l'accompagnement: gratuite
-durée de l'accompagnement: null
+durée de l'accompagnement: variable
 objectifs:
   - description: >-
       Contactez-nous via ce formulaire, un conseiller de la Chambre de Métiers
