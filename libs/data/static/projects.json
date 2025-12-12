@@ -41,7 +41,8 @@
       "camping-independant-bfc",
       "certificats-economie-energie",
       "aide-investissement-librairie",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "cap-decarbonation"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action économies d'énergie",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action économies d'énergie",
@@ -480,7 +481,8 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "cap-transition-ecologique",
-      "evaluation-carbone-lise"
+      "evaluation-carbone-lise",
+      "cap-decarbonation"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un bilan de gaz à effet de serre",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre bilan de gaz à effet de serre",
@@ -2171,7 +2173,8 @@
       "camping-independant-bfc",
       "aide-tourisme-guadeloupe",
       "diag-impact-biodiversite",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "accelerateur-des-possibles"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
@@ -2337,7 +2340,8 @@
       "prit-hdf",
       "booster-transformation-rev-3",
       "act-evaluation",
-      "indicateur-climat"
+      "indicateur-climat",
+      "cap-decarbonation"
     ],
     "linkedProjects": [
       1
@@ -2409,7 +2413,8 @@
       "aide-investissement-librairie",
       "booster-transformation-rev-3",
       "outils-pour-adaptation",
-      "indicateur-climat"
+      "indicateur-climat",
+      "performa-adaptation"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'adaptation climat",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'adaptation climat",
@@ -2802,8 +2807,7 @@
     "linkedProjects": [
       16,
       26,
-      30,
-      31
+      30
     ],
     "priority": {
       "default": 85
@@ -3237,9 +3241,7 @@
       "diag-impact-biodiversite",
       "diag-biodiversite"
     ],
-    "linkedProjects": [
-      33
-    ],
+    "linkedProjects": [],
     "priority": {
       "default": 65,
       "A": 3
@@ -3461,7 +3463,8 @@
       "sud-pret-climat",
       "entreprises-engagees-nature",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "accelerateur-des-possibles"
     ],
     "linkedProjects": [
       31
@@ -3840,7 +3843,6 @@
     ],
     "linkedProjects": [
       144,
-      203,
       632
     ],
     "priority": {
@@ -3874,9 +3876,7 @@
       "aide-financement-occitanie",
       "certification-agriculture-biologique"
     ],
-    "linkedProjects": [
-      567
-    ],
+    "linkedProjects": [],
     "priority": {
       "default": 511,
       "A": 1
@@ -4469,7 +4469,7 @@
   {
     "id": 1028,
     "slug": "achats-responsables",
-    "title": "Achats responsables",
+    "title": "Politique d'achats responsables",
     "nameTag": "📦 achats responsables",
     "shortDescription": "Intégrer des critères environnementaux, sociaux et éthiques dans les achats de votre entreprise.",
     "image": "/images/projet/achats-responsables.webp",
@@ -4486,9 +4486,7 @@
       "programme-synergies-durables",
       "booster-transformation-rev-3"
     ],
-    "linkedProjects": [
-      929
-    ],
+    "linkedProjects": [],
     "priority": {
       "default": 106,
       "G": 3
@@ -4536,7 +4534,6 @@
       "diag-eco-flux"
     ],
     "linkedProjects": [
-      30,
       1028
     ],
     "priority": {
@@ -4647,7 +4644,7 @@
       "bciat-biomasse-chaleur-industrie-agriculture-tertiaire"
     ],
     "linkedProjects": [
-      3
+      36
     ],
     "priority": {
       "default": 427
