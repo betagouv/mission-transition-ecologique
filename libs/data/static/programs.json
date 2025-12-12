@@ -21753,7 +21753,7 @@
     "description longue": "Par ses dispositifs dédiés, le programme apporte les solutions adaptées aux besoins de chaque acteur (chargeur, commissionnaire de transport, transporteur de marchandises, transporteur de voyageurs, grossiste).\n\n- FRET21 accompagne les entreprises agissant en qualité de donneurs d’ordre pour mieux intégrer l’impact des transports dans leur démarche RSE. 4 axes d’action :\n  - Taux de chargement\n  - Distance parcourue\n  - Moyens de transport\n  - Achats responsables\n- EVcom donne les outils et l’accompagnement nécessaires aux commissionnaires pour agir avec leurs partenaires transport en faveur de l’environnement. 4 axes d’action :\n  - Flotte propre\n  - Achats transport\n  - Collaboration clients\n  - Démarche RSE\n- Objectif CO2 soutient les transporteurs routiers dans leur démarche de réduction d’émissions de GES et de polluants atmosphériques. 4 axes d’action :\n  - Véhicules\n  - Carburant\n  - Conducteurs\n  - Organisation des transports",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.webp",
-    "opérateur de contact": "EcoCO2",
+    "opérateur de contact": "ADEME",
     "autres opérateurs": [
       "ADEME",
       "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
@@ -43484,187 +43484,6 @@
     "id": "eco-diagnostic-commerce"
   },
   {
-    "titre": "Diag performance",
-    "promesse": "Bénéficiez d'un accompagnement à la transition écologique",
-    "description": "Ce diagnostic permet de dresser un **état des lieux de vos pratiques** et de mettre en lumière les axes de progression pour engager votre entreprise sur la voie de la transition écologique. \\\nUne fois le diagnostic établi, un **accompagnement sur mesure** vous aide à déployer les solutions concrètes qui ont été mises en avant lors du diagnostic.",
-    "illustration": "images/TEE_energie_verte.webp",
-    "opérateur de contact": "Constructys",
-    "contact question": "formulaire",
-    "url": "https://www.constructys.fr/beneficiez-du-diag-performance/",
-    "nature de l'aide": "étude",
-    "montant du financement": "Jusqu'à 100% du coût du diagnostic, en fonction des conventions régionales",
-    "objectifs": [
-      {
-        "description": "Créez un compte sur le site de Constructys",
-        "liens": [
-          {
-            "lien": "https://services.constructys.fr/constructys/account/create/step-1",
-            "texte": "Créer mon compte"
-          }
-        ]
-      },
-      {
-        "description": "Contactez votre conseiller régional Constructys pour exprimer votre intérêt pour le Diag Performance.",
-        "liens": [
-          {
-            "lien": "https://www.constructys.fr/contacts/",
-            "texte": "Contacter mon conseiller"
-          }
-        ]
-      },
-      {
-        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
-      },
-      {
-        "description": "Lancez le diagnostic avec l'expert proposé par votre Constructys."
-      }
-    ],
-    "conditions d'éligibilité": {
-      "taille de l'entreprise": [
-        "Moins de 300 salariés",
-        "Éligible aux micro-entreprises"
-      ],
-      "secteur géographique": [
-        "France et territoires d'outre-mer"
-      ],
-      "secteur d'activité": [
-        "Entreprises du secteur de la construction, du bâtiment, des travaux publics et du négoce des matériaux de construction"
-      ],
-      "nombre d'années d'activité": [
-        "Éligible à toutes les entreprises"
-      ]
-    },
-    "eligibilityData": {
-      "company": {
-        "allowedNafSections": [
-          "F"
-        ],
-        "maxEmployees": "300"
-      },
-      "priorityObjectives": [
-        "environmental"
-      ]
-    },
-    "publicodes": {
-      "entreprise": null,
-      "entreprise . effectif": null,
-      "entreprise . microentrepreneur": null,
-      "entreprise . secteur d'activité": {
-        "avec": {
-          "est industrie": null,
-          "est tertiaire": null,
-          "est agriculture": null,
-          "est tourisme": null,
-          "est artisanat": null,
-          "est autre secteur": null
-        }
-      },
-      "entreprise . code NAF": null,
-      "entreprise . code NAF niveau 1": {
-        "avec": {
-          "est A": null,
-          "est B": null,
-          "est C": null,
-          "est D": null,
-          "est E": null,
-          "est F": null,
-          "est G": null,
-          "est H": null,
-          "est I": null,
-          "est J": null,
-          "est K": null,
-          "est L": null,
-          "est M": null,
-          "est N": null,
-          "est O": null,
-          "est P": null,
-          "est Q": null,
-          "est R": null,
-          "est S": null,
-          "est T": null,
-          "est U": null
-        }
-      },
-      "entreprise . est propriétaire de ses locaux": null,
-      "région": null,
-      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
-      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
-      "Bretagne": "\"Bretagne\"",
-      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
-      "Corse": "\"Corse\"",
-      "Grand Est": "\"Grand Est\"",
-      "Hauts-de-France": "\"Hauts-de-France\"",
-      "Normandie": "\"Normandie\"",
-      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
-      "Occitanie": "\"Occitanie\"",
-      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
-      "Pays de la Loire": "\"Pays de la Loire\"",
-      "Île-de-France": "\"Île-de-France\"",
-      "Guadeloupe": "\"Guadeloupe\"",
-      "Guyane": "\"Guyane\"",
-      "La Réunion": "\"La Réunion\"",
-      "Martinique": "\"Martinique\"",
-      "Mayotte": "\"Mayotte\"",
-      "Ile de Clipperton": "\"Ile de Clipperton\"",
-      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
-      "Polynésie française": "\"Polynésie française\"",
-      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
-      "Saint-Martin": "\"Saint-Martin\"",
-      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
-      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
-      "Wallis et Futuna": "\"Wallis et Futuna\"",
-      "questionnaire": null,
-      "questionnaire . objectif prioritaire": {
-        "avec": {
-          "est mon impact environnemental": null,
-          "est ma performance énergétique": null,
-          "est diminuer ma consommation d'eau": null,
-          "est rénover mon bâtiment": null,
-          "est la mobilité durable": null,
-          "est la gestion des déchets": null,
-          "est l'écoconception": null,
-          "est former ou recruter": null,
-          "est préserver la biodiversité": null
-        }
-      },
-      "dispositif": {
-        "avec": {
-          "début de validité": null,
-          "fin de validité": null
-        }
-      },
-      "date du jour": null,
-      "entreprise . est ciblée": {
-        "toutes ces conditions": [
-          "est éligible",
-          "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé"
-        ]
-      },
-      "entreprise . est éligible": {
-        "toutes ces conditions": [
-          "a un effectif éligible"
-        ]
-      },
-      "entreprise . a un effectif éligible": {
-        "toutes ces conditions": [
-          "effectif <= 300"
-        ]
-      },
-      "entreprise . est dans un secteur d'activité ciblé": {
-        "une de ces conditions": [
-          "code NAF niveau 1 . est F"
-        ]
-      },
-      "entreprise . a un objectif ciblé": {
-        "une de ces conditions": [
-          "questionnaire . objectif prioritaire . est mon impact environnemental"
-        ]
-      }
-    },
-    "id": "diag-performance"
-  },
-  {
     "titre": "Formations Atlas",
     "promesse": "Formez vos salariés à la transition écologique",
     "description": "Accédez à un catalogue de formations clés en main, aux tarifs négociés, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et à ceux de vos salariés. Au programme :\n\n- Mettre en place une démarche RSE.\n- Agir sur l'empreinte carbone de votre entreprise.\n- S'engager vers un numérique responsable.\n- Construire des fresques autour du climat, du numérique, de la biodiversité.",
@@ -44387,8 +44206,8 @@
         "description": "Rendez-vous sur le catalogue de formations d'Opco 2i et trouvez la formation et la session qui vous convient (en sélectionnant le domaine \"Transition Écologique\")",
         "liens": [
           {
-            "lien": "<https://www.linscription.com/pro/opco2i-actionsclesenmain.php>",
-            "texte": "Catalogue de formations\\"
+            "lien": "https://www.linscription.com/pro/opco2i-actionsclesenmain.php",
+            "texte": "Catalogue de formations"
           }
         ]
       },
@@ -44405,8 +44224,8 @@
         "description": "Pour toute demande de pris en charge d'une formation, contactez le service entreprises dans votre région",
         "liens": [
           {
-            "lien": "https://- <https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/>",
-            "texte": "Service entreprises\\"
+            "lien": "https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/",
+            "texte": "Service entreprises"
           }
         ]
       }
@@ -45499,6 +45318,9 @@
     "description": "Bénéficiez d'un accompagnement par un expert de la CMA pour :\n\n- Réaliser un diagnostic des risques et aléas climatiques auxquels votre entreprise est exposée à court, moyen et long terme.\n- Construire un plan d’actions prioritaires pour réduire la vulnérabilité et renforcer la résilience aux évolutions climatiques.",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
+    "autres opérateurs": [
+      "ADEME"
+    ],
     "contact question": "formulaire",
     "url": "https://www.artisanat.fr/magazine/dossiers-artisanat/role-artisanat-dans-transition-ecologique",
     "nature de l'aide": "étude",
@@ -45533,6 +45355,7 @@
     "eligibilityData": {
       "company": {
         "allowedNafSections": [
+          "C",
           "D",
           "E",
           "F",
@@ -45653,6 +45476,7 @@
       },
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
+          "code NAF niveau 1 . est C",
           "code NAF niveau 1 . est D",
           "code NAF niveau 1 . est E",
           "code NAF niveau 1 . est F",
