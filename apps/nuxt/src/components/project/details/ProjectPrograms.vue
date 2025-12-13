@@ -72,7 +72,7 @@
         <div
           id="project-contact"
           ref="teeProjectFormContainer"
-          class="fr-bg--blue--lightness fr-grid-row fr-p-2w"
+          class="fr-bg--blue--lightness fr-grid-row fr-mt-3w fr-p-2w"
         >
           <TeeForm
             v-if="project"
