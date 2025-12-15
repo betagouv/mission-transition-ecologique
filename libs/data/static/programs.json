@@ -21753,7 +21753,7 @@
     "description longue": "Par ses dispositifs dédiés, le programme apporte les solutions adaptées aux besoins de chaque acteur (chargeur, commissionnaire de transport, transporteur de marchandises, transporteur de voyageurs, grossiste).\n\n- FRET21 accompagne les entreprises agissant en qualité de donneurs d’ordre pour mieux intégrer l’impact des transports dans leur démarche RSE. 4 axes d’action :\n  - Taux de chargement\n  - Distance parcourue\n  - Moyens de transport\n  - Achats responsables\n- EVcom donne les outils et l’accompagnement nécessaires aux commissionnaires pour agir avec leurs partenaires transport en faveur de l’environnement. 4 axes d’action :\n  - Flotte propre\n  - Achats transport\n  - Collaboration clients\n  - Démarche RSE\n- Objectif CO2 soutient les transporteurs routiers dans leur démarche de réduction d’émissions de GES et de polluants atmosphériques. 4 axes d’action :\n  - Véhicules\n  - Carburant\n  - Conducteurs\n  - Organisation des transports",
     "fin de validité": "31/12/2025",
     "illustration": "images/TEE_energie_verte.webp",
-    "opérateur de contact": "EcoCO2",
+    "opérateur de contact": "ADEME",
     "autres opérateurs": [
       "ADEME",
       "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
@@ -43487,6 +43487,7 @@
     "titre": "Diag performance",
     "promesse": "Bénéficiez d'un accompagnement à la transition écologique",
     "description": "Ce diagnostic permet de dresser un **état des lieux de vos pratiques** et de mettre en lumière les axes de progression pour engager votre entreprise sur la voie de la transition écologique. \\\nUne fois le diagnostic établi, un **accompagnement sur mesure** vous aide à déployer les solutions concrètes qui ont été mises en avant lors du diagnostic.",
+    "fin de validité": "30/11/2025",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "Constructys",
     "contact question": "formulaire",
@@ -43540,6 +43541,9 @@
           "F"
         ],
         "maxEmployees": "300"
+      },
+      "validity": {
+        "end": "30/11/2025"
       },
       "priorityObjectives": [
         "environmental"
@@ -43642,6 +43646,7 @@
         ]
       },
       "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
         "toutes ces conditions": [
           "a un effectif éligible"
         ]
@@ -44387,8 +44392,8 @@
         "description": "Rendez-vous sur le catalogue de formations d'Opco 2i et trouvez la formation et la session qui vous convient (en sélectionnant le domaine \"Transition Écologique\")",
         "liens": [
           {
-            "lien": "<https://www.linscription.com/pro/opco2i-actionsclesenmain.php>",
-            "texte": "Catalogue de formations\\"
+            "lien": "https://www.linscription.com/pro/opco2i-actionsclesenmain.php",
+            "texte": "Catalogue de formations"
           }
         ]
       },
@@ -44405,8 +44410,8 @@
         "description": "Pour toute demande de pris en charge d'une formation, contactez le service entreprises dans votre région",
         "liens": [
           {
-            "lien": "https://- <https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/>",
-            "texte": "Service entreprises\\"
+            "lien": "https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/",
+            "texte": "Service entreprises"
           }
         ]
       }
@@ -45499,6 +45504,9 @@
     "description": "Bénéficiez d'un accompagnement par un expert de la CMA pour :\n\n- Réaliser un diagnostic des risques et aléas climatiques auxquels votre entreprise est exposée à court, moyen et long terme.\n- Construire un plan d’actions prioritaires pour réduire la vulnérabilité et renforcer la résilience aux évolutions climatiques.",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
+    "autres opérateurs": [
+      "ADEME"
+    ],
     "contact question": "formulaire",
     "url": "https://www.artisanat.fr/magazine/dossiers-artisanat/role-artisanat-dans-transition-ecologique",
     "nature de l'aide": "étude",
@@ -45533,6 +45541,7 @@
     "eligibilityData": {
       "company": {
         "allowedNafSections": [
+          "C",
           "D",
           "E",
           "F",
@@ -45653,6 +45662,7 @@
       },
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
+          "code NAF niveau 1 . est C",
           "code NAF niveau 1 . est D",
           "code NAF niveau 1 . est E",
           "code NAF niveau 1 . est F",
@@ -45677,6 +45687,7 @@
     "promesse": "Faites le point sur vos émissions de carbone et construisez un plan d’action décarbonation",
     "description": "Prenez activement part à la décarbonation de l'artisanat en France !\n\nBénéficiez d'un accompagnement par un expert de la CMA pour :\n\n- Mesurer les principaux postes d’émissions de gaz à effet de serre dans votre entreprise.\n- Construire un plan d’action des postes prioritaires pour diminuer les émissions et réaliser d'importantes économies d'énergie.",
     "description longue": "Deux niveaux d’expertise sont proposés :\n\n- Scope 1 et 2 : à partir du la visite énergie et un bilan des principaux postes d’émissions de GES.\n- Scope 1-2-3 : à partir du diagnostic des flux « TPE gagnantes sur tous les coûts ».",
+    "début de validité": "05/12/2025",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "contact question": "formulaire",
@@ -45727,7 +45738,7 @@
         ]
       },
       "validity": {
-        "start": "5/12/2025"
+        "start": "05/12/2025"
       },
       "priorityObjectives": [
         "energy",
