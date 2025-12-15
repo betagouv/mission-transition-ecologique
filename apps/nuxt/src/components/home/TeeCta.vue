@@ -24,7 +24,7 @@
           <div class="fr-col-lg-8 fr-col-md-10 fr-col-sm-12 fr-col-xs-12 tee-home-cta-btn">
             <TeeDsfrButton
               size="lg"
-              class="inline-flex fr-text--yellow fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center"
+              class="inline-flex fr-btn-bg--blue fr-btn-bg--blue--light fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center"
               only-label="Je trouve les aides pour mon projet"
               @click="toQuestionnaire()"
             >

@@ -65,7 +65,7 @@ function isActive(tag: ThemeType) {
   return Theme.getTags().length === 1 || filters[FilterItemKeys.themeType] === (tag.id as string)
 }
 
-const updateThemeTypeSelected = async (value: string | number) => {
+const updateThemeTypeSelected = (value: string | number | undefined) => {
   filtersStore.setThemeTypeSelected(value as string)
 
   const navigation = new Navigation()

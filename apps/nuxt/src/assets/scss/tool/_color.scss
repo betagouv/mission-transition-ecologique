@@ -7,6 +7,11 @@
   @return color.scale($color, $lightness: $lightness);
 }
 
+@function opacity($key) {
+  @return map.get(setting.$opacities, $key);
+}
+
+
 @mixin get-background-color-by-opacity($properties, $opacity: 0%) {
   @if meta.type-of($properties) == map {
     background-color: scaleLightness(map.get($properties, "color"), $opacity) !important;

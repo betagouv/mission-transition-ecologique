@@ -5,7 +5,7 @@
     fluid
   >
     <template #top>
-      <div class="fr-bg--blue--lightness">
+      <div class="fr-bg--green--lightness">
         <TeeCta />
       </div>
     </template>
