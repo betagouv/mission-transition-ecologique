@@ -13,6 +13,8 @@ description: >-
   renforcer la résilience aux évolutions climatiques.
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Chambre des Métiers et de l'Artisanat
+autres opérateurs:
+  - ADEME
 contact question: formulaire
 url: >-
   https://www.artisanat.fr/magazine/dossiers-artisanat/role-artisanat-dans-transition-ecologique
@@ -46,6 +48,7 @@ publicodes:
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
+      - code NAF niveau 1 . est C
       - code NAF niveau 1 . est D
       - code NAF niveau 1 . est E
       - code NAF niveau 1 . est F

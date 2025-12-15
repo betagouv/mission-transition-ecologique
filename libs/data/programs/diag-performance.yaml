@@ -8,6 +8,7 @@ description: >-
   Une fois le diagnostic établi, un **accompagnement sur mesure** vous aide à
   déployer les solutions concrètes qui ont été mises en avant lors du
   diagnostic.
+fin de validité: 30/11/2025
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Constructys
 contact question: formulaire
@@ -48,6 +49,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
   entreprise . a un effectif éligible:

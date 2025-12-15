@@ -7,7 +7,7 @@ export enum OperatorFilter {
   CMA = 'CMA',
   Etat = 'État',
   OperateursNationaux = 'Opérateurs nationaux',
-  OP = 'OP',
+  OrganismesProfessionnels = 'Organismes professionnels',
   Regions = 'Régions',
   OFBARB = 'OFB/ARB',
   OPCO = 'OPCO'
