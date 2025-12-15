@@ -1,5 +1,5 @@
 <template>
-  <div class="fr-container--fluid fr-bg--blue--lightness">
+  <div class="fr-container--fluid fr-bg--green--lightness">
     <div class="fr-container">
       <div class="fr-container fr-px-md-0">
         <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-mt-5w fr-mb-2v">Elles l'ont fait !</h2>
