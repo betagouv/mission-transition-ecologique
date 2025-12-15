@@ -18,7 +18,9 @@ export class ImageBaserow extends AbstractBaserow {
 
   constructor(
     private readonly _imageDirectory: string,
-    private readonly _metadataFilePath?: string
+    private readonly _metadataFilePath?: string,
+    private readonly _quality = 60,
+    private readonly __imagePublicPath: string | undefined = undefined
   ) {
     super()
     this._loadMetadata()
@@ -66,7 +68,7 @@ export class ImageBaserow extends AbstractBaserow {
     this._metadata[imageName] = imageInfos.Image[0].uploaded_at
     this._processedImages.add(fileName)
 
-    return Result.ok(fileName)
+    return Result.ok(this.__imagePublicPath ? this.__imagePublicPath + fileName : fileName)
   }
 
   async handleDirectImage(image: Image[]): Promise<Result<string, Error>> {
@@ -162,7 +164,7 @@ export class ImageBaserow extends AbstractBaserow {
     if (metadata.width && metadata.width > 1280) {
       imageSharp = imageSharp.resize(1280)
     }
-    return await imageSharp.webp({ quality: 60 }).toBuffer()
+    return await imageSharp.webp({ quality: this._quality }).toBuffer()
   }
 
   private _slugify(title: string): string {

@@ -28,6 +28,7 @@
     "generate:programs": "nx run @tee/data:generate-programs",
     "generate:projects": "nx run @tee/data:generate-projects",
     "generate:testimonies": "nx run @tee/data:generate-testimonies",
+    "generate:operators": "nx run @tee/data:generate-operators",
     "generate:faq": "nx run @tee/data:generate-faq",
     "send:program:mails": "nx run @tee/data:send-program-mails",
     "generate:iframe-script": "nx run @tee/nuxt:generate-iframe-script",

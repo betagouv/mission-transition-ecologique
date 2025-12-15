@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Image } from '@/tools/image'
-import { partners, ConseillerEntreprisePartner } from '@/tools/operator'
+import { partners, ConseillerEntreprisePartner } from '@/tools/partner'
 
 const img = Image.getUrl
 </script>

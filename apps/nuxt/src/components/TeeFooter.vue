@@ -182,7 +182,7 @@
 <script setup lang="ts">
 import { FeedbackButtonPosition } from '@/tools/feedback/feedbackType'
 import { Image } from '@/tools/image'
-import { partnersAll } from '@/tools/operator'
+import { partnersAll } from '@/tools/partner'
 import Translation from '@/tools/translation'
 import { RouteName } from '@/types/routeType'
 

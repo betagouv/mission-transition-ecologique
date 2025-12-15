@@ -197,6 +197,14 @@
   }
 
   &.fr-card--program {
+    &.fr-card--horizontal {
+      .fr-card__img {
+        img {
+          object-fit: contain;
+        }
+      }
+    }
+
     .fr-card__content {
       padding: 1rem 1.5rem 4rem !important;
 

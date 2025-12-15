@@ -39,7 +39,7 @@
 </template>
 <script setup lang="ts">
 import Contact from '@/tools/contact'
-import { ConseillerEntreprisePartner } from '@/tools/operator'
+import { ConseillerEntreprisePartner } from '@/tools/partner'
 import Translation from '@/tools/translation'
 import { FeedbackButtonPosition, FormDataType, type ReqResp } from '@/types'
 

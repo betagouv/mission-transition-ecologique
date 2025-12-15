@@ -1,7 +1,9 @@
 import path from 'path'
 import fs from 'fs'
 import { fileURLToPath } from 'url'
+import { ImageBaserow } from '../common/baserow/imageBaserow'
 import { OperatorBaserow } from '../common/baserow/operatorBaserow'
+import { LoggerInterface } from '../common/logger/types'
 import { Operator } from './types/domain'
 import { FileManager } from '../common/fileManager'
 import { jsonPrograms } from '../../static'
@@ -14,12 +16,13 @@ export class OperatorFeatures {
   private readonly _outputTypeFilePath: string = path.join(this.__dirname, './types/generatedShared.ts')
   private readonly _schemaFilePath = path.join(this.__dirname, '../../schemas/program-with-publicodes-schema.json')
 
-  async getOperators(): Promise<Operator[]> {
-    return await new OperatorBaserow().getAll()
-  }
+  constructor(
+    private _imageDownloader: ImageBaserow,
+    private _logger: LoggerInterface
+  ) {}
 
   async updateOperatorsData() {
-    const allOperators = await new OperatorBaserow().getAll()
+    const allOperators = await new OperatorBaserow(this._imageDownloader, this._logger).getAll()
     const programs = jsonPrograms as unknown as ProgramType[]
     const programOperatorsNames = new Set<string>(
       programs.flatMap((program) => [
@@ -38,7 +41,8 @@ export class OperatorFeatures {
   private _updateJson(programOperators: Operator[]) {
     const jsonOperators = programOperators.map((operators) => ({
       operator: operators.name,
-      filterCategories: operators.filterCategories
+      filterCategories: operators.filterCategories,
+      imagePath: operators.imagePath
     }))
 
     FileManager.createFolderIfNotExists(this._outputDirPath)

@@ -244,4 +244,6 @@ export interface BaserowOperator {
   Nom: string
   siren: string
   'Nom Normalisé': string
+  Image: LinkObject[]
+  'Image URL TEE': string
 }
