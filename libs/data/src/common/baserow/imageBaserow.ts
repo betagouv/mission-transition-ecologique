@@ -20,11 +20,13 @@ export class ImageBaserow extends AbstractBaserow {
     private readonly _imageDirectory: string,
     private readonly _metadataFilePath?: string,
     private readonly _quality = 60,
-    private readonly __imagePublicPath: string | undefined = undefined
+    private readonly _imagePublicPath: string | undefined = undefined
   ) {
     super()
     this._loadMetadata()
   }
+
+  private readonly _imageExtension = '.webp'
 
   /**
    * Downloads the image if needed and returns the name of the image.
@@ -46,10 +48,12 @@ export class ImageBaserow extends AbstractBaserow {
     }
 
     const imageName = this._generateImageName(imageInfos)
+    const fileName = this._getFileName(imageName)
+    const imageSrc = this._getImageSrc(imageName)
     if (this._imageAlreadyDownloaded(imageName, imageInfos.Image[0].uploaded_at)) {
       this._metadata[imageName] = imageInfos.Image[0].uploaded_at
-      this._processedImages.add(imageName + '.webp')
-      return Result.ok(imageName + '.webp')
+      this._processedImages.add(fileName)
+      return Result.ok(imageSrc)
     }
 
     let imageDownloadResponse
@@ -62,13 +66,16 @@ export class ImageBaserow extends AbstractBaserow {
     const imageBuffer = Buffer.from(imageDownloadResponse.data, 'binary')
     const webpBuffer = await this._sharpImage(imageBuffer)
 
-    const fileName = `${imageName}.webp`
     const filePath = path.join(this._imageDirectory, fileName)
     fs.writeFileSync(filePath, webpBuffer)
     this._metadata[imageName] = imageInfos.Image[0].uploaded_at
     this._processedImages.add(fileName)
 
-    return Result.ok(this.__imagePublicPath ? this.__imagePublicPath + fileName : fileName)
+    return Result.ok(imageSrc)
+  }
+
+  private _getFileName = (imageName: string) => {
+    return imageName + this._imageExtension
   }
 
   async handleDirectImage(image: Image[]): Promise<Result<string, Error>> {
@@ -77,10 +84,12 @@ export class ImageBaserow extends AbstractBaserow {
     }
 
     const imageName = this._slugify(image[0].visible_name)
+    const fileName = this._getFileName(imageName)
+    const imageSrc = this._getImageSrc(imageName)
     if (this._imageAlreadyDownloaded(imageName, image[0].uploaded_at)) {
       this._metadata[imageName] = image[0].uploaded_at
-      this._processedImages.add(imageName + '.webp')
-      return Result.ok(imageName + '.webp')
+      this._processedImages.add(fileName)
+      return Result.ok(imageSrc)
     }
 
     let imageDownloadResponse
@@ -93,7 +102,6 @@ export class ImageBaserow extends AbstractBaserow {
     const imageBuffer = Buffer.from(imageDownloadResponse.data, 'binary')
     const webpBuffer = await this._sharpImage(imageBuffer)
 
-    const fileName = `${imageName}.webp`
     const filePath = path.join(this._imageDirectory, fileName)
     try {
       fs.writeFileSync(filePath, webpBuffer)
@@ -103,7 +111,11 @@ export class ImageBaserow extends AbstractBaserow {
     this._metadata[imageName] = image[0].uploaded_at
     this._processedImages.add(fileName)
 
-    return Result.ok(fileName)
+    return Result.ok(imageSrc)
+  }
+
+  private _getImageSrc = (imageName: string) => {
+    return this._imagePublicPath ? this._imagePublicPath + imageName + this._imageExtension : imageName + this._imageExtension
   }
 
   cleanup() {
@@ -114,7 +126,7 @@ export class ImageBaserow extends AbstractBaserow {
       if (!isProcessed) {
         const fullPath = path.join(this._imageDirectory, file)
         fs.unlinkSync(fullPath)
-        delete this._metadata[file.replace('.webp', '')]
+        delete this._metadata[file.replace(this._imageExtension, '')]
       }
     }
 

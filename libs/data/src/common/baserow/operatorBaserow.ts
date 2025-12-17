@@ -44,6 +44,7 @@ export class OperatorBaserow extends AbstractBaserow {
         this._logger.log(LogLevel.Major, maybeImageName.error.message + '\n, no default image', baserowOperator.Nom, baserowOperator.id)
         return undefined
       } else {
+        console.log(`Successfully downloaded image for operator ${baserowOperator.Nom}`, maybeImageName.value)
         return maybeImageName.value
       }
     }
