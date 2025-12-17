@@ -13,6 +13,19 @@ vi.mock('axios', () => ({
 }))
 import axios from 'axios'
 
+// Surcharger ConfigBaserow pour les tests uniquement (pas de dépendance à des variables d'env)
+// On mock le module réel afin que toute lecture de ConfigBaserow utilise ces valeurs neutres.
+vi.mock('../../../src/configBaserow', () => ({
+  default: {
+    TOKEN: 'TEST_TOKEN',
+    THEME_ID: 0,
+    OPERATOR_ID: 0,
+    GEOGRAPHIC_AREAS_ID: 0,
+    PROJECT_ID: 0,
+    IMAGE_ID: 1
+  }
+}))
+
 // sharp is a function returning a chainable object
 const mockToBuffer = vi.fn()
 const mockWebp = vi.fn(() => ({ toBuffer: mockToBuffer }))
