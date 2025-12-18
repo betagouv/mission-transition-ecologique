@@ -79,12 +79,6 @@
     ]
   },
   {
-    "operator": "EcoCO2",
-    "filterCategories": [
-      "Opérateurs nationaux"
-    ]
-  },
-  {
     "operator": "France Rénov'",
     "filterCategories": [
       "Opérateurs nationaux"
@@ -103,7 +97,7 @@
   {
     "operator": "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment",
     "filterCategories": [
-      "OP"
+      "Organismes professionnels"
     ]
   },
   {
@@ -129,7 +123,7 @@
   {
     "operator": "Union des industries et métiers de la métallurgie",
     "filterCategories": [
-      "OP"
+      "Organismes professionnels"
     ]
   },
   {

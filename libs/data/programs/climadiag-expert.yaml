@@ -49,12 +49,12 @@ objectifs:
       attribué.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Entre 20 et 500 salariés
+    - Toutes tailles
     - Non éligible aux micro-entreprises
   secteur géographique:
-    - Bourgogne-Franche-Comté
+    - France et territoires d'outre-mer
   secteur d'activité:
-    - Industrie
+    - Tous secteurs d’activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:
@@ -69,13 +69,7 @@ publicodes:
         - dispositif . début de validité <= date du jour
         - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-      - a un effectif éligible
       - a une categorie legale eligible
-      - entreprise . est dans une zone géographique éligible
-  entreprise . a un effectif éligible:
-    toutes ces conditions:
-      - effectif >= 20
-      - effectif <= 499
   entreprise . a une categorie legale eligible:
     toutes ces conditions:
       - microentrepreneur = non
@@ -86,10 +80,10 @@ publicodes:
       - code NAF niveau 1 . est D
       - code NAF niveau 1 . est E
       - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
       - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est M
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est mon impact environnemental
-  entreprise . est dans une zone géographique éligible:
-    une de ces conditions:
-      - région = Bourgogne-Franche-Comté
