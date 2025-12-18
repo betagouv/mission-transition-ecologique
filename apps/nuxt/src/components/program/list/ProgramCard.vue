@@ -51,7 +51,6 @@ const isCatalog = navigation.isCatalogPrograms()
 const img = Image.getUrl
 
 const getOperator = () => {
-  console.log(new Operator().getOneByName(program['opérateur de contact']))
   return new Operator().getOneByName(program['opérateur de contact'])
 }
 
