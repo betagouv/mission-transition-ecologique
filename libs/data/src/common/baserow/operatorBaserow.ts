@@ -1,3 +1,4 @@
+import { Result } from 'true-myth'
 import { Operator } from '../../operators/types/domain'
 import { LoggerInterface, LogLevel } from '../logger/types'
 import { AbstractBaserow } from './abstractBaserow'
@@ -32,23 +33,26 @@ export class OperatorBaserow extends AbstractBaserow {
       siren: baserowOperator.siren,
       filterCategories: baserowOperator.Filtre.map((link) => link.value),
       normalizedName: baserowOperator['Nom Normalisé'],
-      imagePath: await this._convertImage(baserowOperator)
+      ...(await this._convertImage(baserowOperator))
     }
   }
 
   private async _convertImage(baserowOperator: BaserowOperator) {
     if (this._imageDownloader && this._logger) {
-      const maybeImageName = await this._imageDownloader.handleImageFromImageTable(baserowOperator.Image)
+      const maybeImageName = (await this._imageDownloader.handleImageFromImageTable(baserowOperator.Image, true)) as Result<
+        { imagePath: string; color: string },
+        Error
+      >
 
       if (maybeImageName.isErr) {
         this._logger.log(LogLevel.Major, maybeImageName.error.message + '\n, no default image', baserowOperator.Nom, baserowOperator.id)
-        return undefined
+        return { imagePath: undefined, color: undefined }
       } else {
         console.log(`Successfully downloaded image for operator ${baserowOperator.Nom}`, maybeImageName.value)
         return maybeImageName.value
       }
     }
 
-    return undefined
+    return { imagePath: undefined, color: undefined }
   }
 }

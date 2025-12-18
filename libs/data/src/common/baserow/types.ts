@@ -63,6 +63,7 @@ export interface ImageTable extends Id {
   'Alt-text': string
   Image: Image[]
   'Image URL TEE': string
+  Couleur?: LinkObject
 }
 
 export interface Image {

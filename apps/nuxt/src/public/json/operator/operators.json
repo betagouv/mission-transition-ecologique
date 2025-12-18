@@ -30,7 +30,8 @@
     "filterCategories": [
       "Bpifrance"
     ],
-    "imagePath": "/images/logos/operateur/bpi.webp"
+    "imagePath": "/images/logos/operateur/bpi.webp",
+    "color": "yellow"
   },
   {
     "operator": "Breizh Fab",

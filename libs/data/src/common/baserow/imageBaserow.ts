@@ -1,9 +1,11 @@
+import { Color } from '@tee/common'
 import fs from 'fs'
 import axios from 'axios'
 import path from 'path'
 import sharp from 'sharp'
 import ConfigBaserow from '../../configBaserow'
 import { AbstractBaserow } from './abstractBaserow'
+import { ReplacerBaserow } from './replacerBaserow'
 import { LinkObject, ImageTable, Image } from './types'
 import { Result } from 'true-myth'
 
@@ -32,9 +34,13 @@ export class ImageBaserow extends AbstractBaserow {
    * Downloads the image if needed and returns the name of the image.
    *
    * @param baserowImage - A baserowLink object pointing to the image informations.
+   * @param withColor
    * @returns the name of the image in the local directory or an error
    */
-  async handleImageFromImageTable(baserowImage: LinkObject[]): Promise<Result<string, Error>> {
+  async handleImageFromImageTable(
+    baserowImage: LinkObject[],
+    withColor = false
+  ): Promise<Result<string | { imagePath: string; color: string | undefined }, Error>> {
     if (baserowImage.length != 1) {
       return Result.err(new Error('A single image should be listed in the image field.'))
     }
@@ -50,10 +56,11 @@ export class ImageBaserow extends AbstractBaserow {
     const imageName = this._generateImageName(imageInfos)
     const fileName = this._getFileName(imageName)
     const imageSrc = this._getImageSrc(imageName)
+    const color = withColor ? (ReplacerBaserow.linkObjectByValue(imageInfos.Couleur) as Color) : undefined
     if (this._imageAlreadyDownloaded(imageName, imageInfos.Image[0].uploaded_at)) {
       this._metadata[imageName] = imageInfos.Image[0].uploaded_at
       this._processedImages.add(fileName)
-      return Result.ok(imageSrc)
+      return withColor ? Result.ok({ imagePath: imageSrc, color: color }) : Result.ok(imageSrc)
     }
 
     let imageDownloadResponse
@@ -71,7 +78,7 @@ export class ImageBaserow extends AbstractBaserow {
     this._metadata[imageName] = imageInfos.Image[0].uploaded_at
     this._processedImages.add(fileName)
 
-    return Result.ok(imageSrc)
+    return withColor ? Result.ok({ imagePath: imageSrc, color: color }) : Result.ok(imageSrc)
   }
 
   private _getFileName = (imageName: string) => {

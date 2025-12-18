@@ -1,6 +1,7 @@
 <template>
   <DsfrCard
     class="fr-card--program"
+    :class="getOperator() && getOperator()?.color ? `fr-card-header-bg--${getOperator()?.color}` : ''"
     :title="program.titre"
     :end-detail="getCostInfos()"
     end-detail-icon="fr-icon-money-euro-circle-line fr-text--blue"
@@ -14,9 +15,15 @@
     :horizontal="true"
     :no-arrow="true"
     :link="getRouteToProgramDetail()"
-    :badges="[{ label: program['nature de l\'aide'], noIcon: true, small: true }]"
     :title-tag="titleTag"
   >
+    <template #start-details>
+      <DsfrBadge
+        :label="program['nature de l\'aide']"
+        small
+        no-icon
+      />
+    </template>
   </DsfrCard>
 </template>
 
@@ -44,6 +51,7 @@ const isCatalog = navigation.isCatalogPrograms()
 const img = Image.getUrl
 
 const getOperator = () => {
+  console.log(new Operator().getOneByName(program['opérateur de contact']))
   return new Operator().getOneByName(program['opérateur de contact'])
 }
 

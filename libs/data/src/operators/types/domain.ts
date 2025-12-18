@@ -6,4 +6,5 @@ export interface Operator {
   normalizedName: string
   filterCategories: string[]
   imagePath?: string
+  color?: string
 }

@@ -42,7 +42,8 @@ export class OperatorFeatures {
     const jsonOperators = programOperators.map((operators) => ({
       operator: operators.name,
       filterCategories: operators.filterCategories,
-      imagePath: operators.imagePath
+      imagePath: operators.imagePath,
+      color: operators.color
     }))
 
     FileManager.createFolderIfNotExists(this._outputDirPath)

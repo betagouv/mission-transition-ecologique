@@ -197,6 +197,16 @@
   }
 
   &.fr-card--program {
+    @each $color, $properties in setting.$colors {
+      &.fr-card-header-bg--#{$color} {
+        .fr-card__header {
+          .fr-card__img {
+            @include tool.get-background-color-by-opacity($properties, tool.opacity(--lightness));
+          }
+        }
+      }
+    }
+
     &.fr-card--horizontal {
       .fr-card__img {
         img {
