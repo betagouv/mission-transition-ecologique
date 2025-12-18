@@ -5,4 +5,6 @@ export interface Operator {
   siren: string
   normalizedName: string
   filterCategories: string[]
+  imagePath?: string
+  color?: string
 }

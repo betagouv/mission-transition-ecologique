@@ -1,24 +1,36 @@
 <template>
   <DsfrCard
     class="fr-card--program"
+    :class="getOperator() && getOperator()?.color ? `fr-card-header-bg--${getOperator()?.color}` : ''"
     :title="program.titre"
     :end-detail="getCostInfos()"
     end-detail-icon="fr-icon-money-euro-circle-line fr-text--blue"
     :description="program.promesse"
-    :img-src="img(`/${program.illustration}`, { height: 320, quality: 70, loading: 'lazy' })"
-    :alt-img="`image / ${program.titre}`"
+    :img-src="
+      getOperator()?.imagePath
+        ? img(getOperator()?.imagePath, { height: 320, quality: 100, loading: 'lazy' })
+        : img(`/${program.illustration}`, { height: 320, quality: 70, loading: 'lazy' })
+    "
+    :alt-img="getOperator()?.imagePath ? `Logo de ${getOperator()?.operator}` : `Image de ${program.titre}`"
     :horizontal="true"
     :no-arrow="true"
     :link="getRouteToProgramDetail()"
-    :badges="[{ label: program['nature de l\'aide'], noIcon: true, small: true }]"
     :title-tag="titleTag"
   >
+    <template #start-details>
+      <DsfrBadge
+        :label="program['nature de l\'aide']"
+        small
+        no-icon
+      />
+    </template>
   </DsfrCard>
 </template>
 
 <script setup lang="ts">
 import { Image } from '@/tools/image'
 import Navigation from '@/tools/navigation'
+import { Operator } from '@/tools/operator'
 import { ProgramAidType, ProgramTypeForFront, ProjectType, RouteName } from '@/types'
 import { consolidateAmounts } from '@/tools/helpers'
 import Translation from '@/tools/translation'
@@ -37,6 +49,10 @@ const navigationStore = useNavigationStore()
 const navigation = new Navigation()
 const isCatalog = navigation.isCatalogPrograms()
 const img = Image.getUrl
+
+const getOperator = () => {
+  return new Operator().getOneByName(program['opérateur de contact'])
+}
 
 const getCostInfos = () => {
   let prefix: string = ''
