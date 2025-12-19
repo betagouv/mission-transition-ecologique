@@ -38,8 +38,9 @@ objectifs:
   - description: >-
       Choisissez l'auditeur énergétique qui va vous accompagner. Vérifier ses
       références et ses compétences en matière de diagnostic énergétique et
-      d'énergies renouvelables. Définissez les objectifs de l'audit ainsi que
-      son périmètre, et faites réaliser un devis.
+      d'énergies renouvelables. Définissez ensemble les objectifs et le
+      périmètre de l'audit.
+  - description: Faites réaliser un devis. Ce document sera à joindre à votre dossier.
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
       - lien: https://agirpourlatransition.ademe.fr/inscription
@@ -56,10 +57,6 @@ objectifs:
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
       recevez un contrat de financement précisant le montant d’aide maximum, les
       conditions et les modalités de versement.
-  - description: >-
-      Réalisez votre audit énergétique : état des lieux de vos consommations,
-      pistes d'amélioration, hiérarchisation des actions en fonction de leur
-      faisabilité et de leur temps de retour sur investissement.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

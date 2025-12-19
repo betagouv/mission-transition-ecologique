@@ -252,12 +252,8 @@
   },
   {
     "operator": "Banque de France",
-    "filterCategories": []
-  },
-  {
-    "operator": "Constructys",
     "filterCategories": [
-      "OPCO"
+      "Opérateurs nationaux"
     ]
   },
   {
