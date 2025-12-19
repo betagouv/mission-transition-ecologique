@@ -5492,7 +5492,10 @@
         ]
       },
       {
-        "description": "Choisissez l'auditeur énergétique qui va vous accompagner. Vérifier ses références et ses compétences en matière de diagnostic énergétique et d'énergies renouvelables. Définissez les objectifs de l'audit ainsi que son périmètre, et faites réaliser un devis."
+        "description": "Choisissez l'auditeur énergétique qui va vous accompagner. Vérifier ses références et ses compétences en matière de diagnostic énergétique et d'énergies renouvelables. Définissez ensemble les objectifs et le périmètre de l'audit."
+      },
+      {
+        "description": "Faites réaliser un devis. Ce document sera à joindre à votre dossier."
       },
       {
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
@@ -5514,9 +5517,6 @@
       },
       {
         "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
-      },
-      {
-        "description": "Réalisez votre audit énergétique : état des lieux de vos consommations, pistes d'amélioration, hiérarchisation des actions en fonction de leur faisabilité et de leur temps de retour sur investissement."
       }
     ],
     "conditions d'éligibilité": {
@@ -38834,7 +38834,7 @@
   {
     "titre": "Mobili'Pro",
     "promesse": "Optimisez la mobilité de vos collaborateurs",
-    "description": "Le programme Mobili'Pro vous aide à optimiser les déplacements en voiture de vos collaborateurs. Bénéficiez d’un accompagnement sur trois ans, comprenant un diagnostic de votre flotte, l’élaboration d’un plan d’action sur-mesure et un suivi chiffré des résultats. Vous serez guidé dans la mise en place de solutions pour réduire l'impact environnemental de vos trajets professionnels tout en améliorant la gestion de votre flotte de véhicules.",
+    "description": "Le programme Mobili'Pro vous aide à **optimiser les déplacements en voiture de vos collaborateurs**. Bénéficiez d’un accompagnement sur trois ans, comprenant : \\\n- un diagnostic de votre flotte,\\\n- l’élaboration d’un plan d’action sur-mesure,\\\n- et un suivi chiffré des résultats. \\\nVous serez guidé dans la mise en place de solutions pour réduire l'impact environnemental de vos trajets professionnels tout en améliorant la gestion de votre flotte de véhicules.",
     "illustration": "images/TEE_eolienne.webp",
     "opérateur de contact": "ADEME",
     "contact question": "mailto:mobilipro@ademe.fr",
@@ -43484,192 +43484,6 @@
     "id": "eco-diagnostic-commerce"
   },
   {
-    "titre": "Diag performance",
-    "promesse": "Bénéficiez d'un accompagnement à la transition écologique",
-    "description": "Ce diagnostic permet de dresser un **état des lieux de vos pratiques** et de mettre en lumière les axes de progression pour engager votre entreprise sur la voie de la transition écologique. \\\nUne fois le diagnostic établi, un **accompagnement sur mesure** vous aide à déployer les solutions concrètes qui ont été mises en avant lors du diagnostic.",
-    "fin de validité": "30/11/2025",
-    "illustration": "images/TEE_energie_verte.webp",
-    "opérateur de contact": "Constructys",
-    "contact question": "formulaire",
-    "url": "https://www.constructys.fr/beneficiez-du-diag-performance/",
-    "nature de l'aide": "étude",
-    "montant du financement": "Jusqu'à 100% du coût du diagnostic, en fonction des conventions régionales",
-    "objectifs": [
-      {
-        "description": "Créez un compte sur le site de Constructys",
-        "liens": [
-          {
-            "lien": "https://services.constructys.fr/constructys/account/create/step-1",
-            "texte": "Créer mon compte"
-          }
-        ]
-      },
-      {
-        "description": "Contactez votre conseiller régional Constructys pour exprimer votre intérêt pour le Diag Performance.",
-        "liens": [
-          {
-            "lien": "https://www.constructys.fr/contacts/",
-            "texte": "Contacter mon conseiller"
-          }
-        ]
-      },
-      {
-        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
-      },
-      {
-        "description": "Lancez le diagnostic avec l'expert proposé par votre Constructys."
-      }
-    ],
-    "conditions d'éligibilité": {
-      "taille de l'entreprise": [
-        "Moins de 300 salariés",
-        "Éligible aux micro-entreprises"
-      ],
-      "secteur géographique": [
-        "France et territoires d'outre-mer"
-      ],
-      "secteur d'activité": [
-        "Entreprises du secteur de la construction, du bâtiment, des travaux publics et du négoce des matériaux de construction"
-      ],
-      "nombre d'années d'activité": [
-        "Éligible à toutes les entreprises"
-      ]
-    },
-    "eligibilityData": {
-      "company": {
-        "allowedNafSections": [
-          "F"
-        ],
-        "maxEmployees": "300"
-      },
-      "validity": {
-        "end": "30/11/2025"
-      },
-      "priorityObjectives": [
-        "environmental"
-      ]
-    },
-    "publicodes": {
-      "entreprise": null,
-      "entreprise . effectif": null,
-      "entreprise . microentrepreneur": null,
-      "entreprise . secteur d'activité": {
-        "avec": {
-          "est industrie": null,
-          "est tertiaire": null,
-          "est agriculture": null,
-          "est tourisme": null,
-          "est artisanat": null,
-          "est autre secteur": null
-        }
-      },
-      "entreprise . code NAF": null,
-      "entreprise . code NAF niveau 1": {
-        "avec": {
-          "est A": null,
-          "est B": null,
-          "est C": null,
-          "est D": null,
-          "est E": null,
-          "est F": null,
-          "est G": null,
-          "est H": null,
-          "est I": null,
-          "est J": null,
-          "est K": null,
-          "est L": null,
-          "est M": null,
-          "est N": null,
-          "est O": null,
-          "est P": null,
-          "est Q": null,
-          "est R": null,
-          "est S": null,
-          "est T": null,
-          "est U": null
-        }
-      },
-      "entreprise . est propriétaire de ses locaux": null,
-      "région": null,
-      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
-      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
-      "Bretagne": "\"Bretagne\"",
-      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
-      "Corse": "\"Corse\"",
-      "Grand Est": "\"Grand Est\"",
-      "Hauts-de-France": "\"Hauts-de-France\"",
-      "Normandie": "\"Normandie\"",
-      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
-      "Occitanie": "\"Occitanie\"",
-      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
-      "Pays de la Loire": "\"Pays de la Loire\"",
-      "Île-de-France": "\"Île-de-France\"",
-      "Guadeloupe": "\"Guadeloupe\"",
-      "Guyane": "\"Guyane\"",
-      "La Réunion": "\"La Réunion\"",
-      "Martinique": "\"Martinique\"",
-      "Mayotte": "\"Mayotte\"",
-      "Ile de Clipperton": "\"Ile de Clipperton\"",
-      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
-      "Polynésie française": "\"Polynésie française\"",
-      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
-      "Saint-Martin": "\"Saint-Martin\"",
-      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
-      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
-      "Wallis et Futuna": "\"Wallis et Futuna\"",
-      "questionnaire": null,
-      "questionnaire . objectif prioritaire": {
-        "avec": {
-          "est mon impact environnemental": null,
-          "est ma performance énergétique": null,
-          "est diminuer ma consommation d'eau": null,
-          "est rénover mon bâtiment": null,
-          "est la mobilité durable": null,
-          "est la gestion des déchets": null,
-          "est l'écoconception": null,
-          "est former ou recruter": null,
-          "est préserver la biodiversité": null
-        }
-      },
-      "dispositif": {
-        "avec": {
-          "début de validité": null,
-          "fin de validité": null
-        }
-      },
-      "date du jour": null,
-      "entreprise . est ciblée": {
-        "toutes ces conditions": [
-          "est éligible",
-          "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé"
-        ]
-      },
-      "entreprise . est éligible": {
-        "applicable si": "date du jour <= dispositif . fin de validité",
-        "toutes ces conditions": [
-          "a un effectif éligible"
-        ]
-      },
-      "entreprise . a un effectif éligible": {
-        "toutes ces conditions": [
-          "effectif <= 300"
-        ]
-      },
-      "entreprise . est dans un secteur d'activité ciblé": {
-        "une de ces conditions": [
-          "code NAF niveau 1 . est F"
-        ]
-      },
-      "entreprise . a un objectif ciblé": {
-        "une de ces conditions": [
-          "questionnaire . objectif prioritaire . est mon impact environnemental"
-        ]
-      }
-    },
-    "id": "diag-performance"
-  },
-  {
     "titre": "Formations Atlas",
     "promesse": "Formez vos salariés à la transition écologique",
     "description": "Accédez à un catalogue de formations clés en main, aux tarifs négociés, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et à ceux de vos salariés. Au programme :\n\n- Mettre en place une démarche RSE.\n- Agir sur l'empreinte carbone de votre entreprise.\n- S'engager vers un numérique responsable.\n- Construire des fresques autour du climat, du numérique, de la biodiversité.",
@@ -45271,8 +45085,8 @@
   },
   {
     "titre": "Accélérateur des possibles",
-    "promesse": "Bénéficiez de soutien pour vos projets qui articulent transition écologique, conditions de travail et dialogue social",
-    "description": "Vous avez un projet de développement qui articule des questions liées au travail, au dialogue social, aux conditions de travail et à la transition écologique ? Cet appel à projets vous permet de bénéficier gratuitement d'un parcours de 2 jours pendant lesquels vous :\n\n- Rencontrez d'autres participants, échangez et sécurisez vos projets.\n- Bénéficiez de conseils d'experts des conditions de travail et de l’écologie (méthodes et outils).\n- Effectuez un retour d’expérience avec l’ensemble des participants (avancement, réussites, difficultés et pistes d’action).",
+    "promesse": "Intégrez les questions de Qualité de Vie et des Conditions de Travail dans vos projets de transition écologique",
+    "description": "Vous avez un projet de développement qui articule des **questions liées au travail, au dialogue social, aux conditions de travail et à la transition écologique** ? Cet appel à projets vous permet de **bénéficier gratuitement d'un parcours de 2 jours** pendant lesquels vous :\n\n- Rencontrez d'autres participants, échangez et sécurisez vos projets.\n- Bénéficiez de conseils d'experts des conditions de travail et de l’écologie (méthodes et outils).\n- Effectuez un retour d’expérience avec l’ensemble des participants (avancements, réussites, difficultés et pistes d’action).",
     "début de validité": "01/01/2025",
     "fin de validité": "01/12/2026",
     "illustration": "images/TEE_energie_verte.webp",
@@ -45285,13 +45099,22 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
+        "description": "Découvrez le programme proposé par l'accélérateur des possibles",
+        "liens": [
+          {
+            "lien": "https://www.anact.fr/accelerateur-des-possibles",
+            "texte": "L'accélérateur des possibles"
+          }
+        ]
+      },
+      {
         "description": "Candidatez à l'appel à projets avant fin mars 2026 en contactant la chargée de mission des pays de la Loire (écrire à [m.perrocheau@anact.fr](mailto:m.perrocheau@anact.fr))."
       },
       {
         "description": "Début avril, vous saurez si votre projet est retenu. S'il l'est, vous recevez les détails du programme."
       },
       {
-        "description": "Les 09 et 10 juin 2026, suivez le programme \"Accélérateur des possibles\"."
+        "description": "Les 9 et 10 juin 2026, suivez le programme \"Accélérateur des possibles\"."
       }
     ],
     "conditions d'éligibilité": {
@@ -45500,8 +45323,8 @@
   },
   {
     "titre": "Performa Adaptation",
-    "promesse": "Identifiez les vulnérabilités de votre entreprise au changement climatique mettez en place un plan d'adaptation",
-    "description": "Bénéficiez d'un accompagnement par un expert de la CMA pour :\n\n- Réaliser un diagnostic des risques et aléas climatiques auxquels votre entreprise est exposée à court, moyen et long terme.\n- Construire un plan d’actions prioritaires pour réduire la vulnérabilité et renforcer la résilience aux évolutions climatiques.",
+    "promesse": "Identifiez les vulnérabilités de votre entreprise au changement climatique et mettez en place un plan d'adaptation",
+    "description": "Bénéficiez d'un accompagnement par un expert de la CMA pour :\n\n- **Réaliser un diagnostic** des risques et aléas climatiques auxquels votre entreprise est exposée à court, moyen et long terme.\n- **Construire un plan d’actions prioritaires** pour réduire la vulnérabilité et renforcer la résilience de votre entreprise aux évolutions climatiques.",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "autres opérateurs": [
@@ -45514,7 +45337,12 @@
     "durée de l'accompagnement": "Variable",
     "objectifs": [
       {
-        "description": "Contactez-nous via ce formulaire, un conseiller de la Chambre de Métiers et de l’Artisanat de votre région vérifiera votre éligibilité."
+        "description": "Contactez-nous via ce formulaire. Un conseiller de la Chambre de Métiers et de l’Artisanat de votre région vérifiera votre éligibilité.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
         "description": "Si vous êtes éligible, vous recevrez les modalités de cet accompagnement."
@@ -45532,7 +45360,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "Tous secteurs d'activité"
+        "Entreprises d'artisanat"
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -45684,8 +45512,8 @@
   },
   {
     "titre": "Cap décarbonation",
-    "promesse": "Faites le point sur vos émissions de carbone et construisez un plan d’action décarbonation",
-    "description": "Prenez activement part à la décarbonation de l'artisanat en France !\n\nBénéficiez d'un accompagnement par un expert de la CMA pour :\n\n- Mesurer les principaux postes d’émissions de gaz à effet de serre dans votre entreprise.\n- Construire un plan d’action des postes prioritaires pour diminuer les émissions et réaliser d'importantes économies d'énergie.",
+    "promesse": "Faites le point sur vos émissions de carbone et construisez un plan d’action de décarbonation",
+    "description": "Prenez activement part à la décarbonation de l'artisanat en France !\n\nBénéficiez d'un accompagnement par un expert de la CMA pour :\n\n- **Mesurer les principaux postes d’émissions** de gaz à effet de serre dans votre entreprise.\n- **Construire un plan d’action** des postes prioritaires pour diminuer les émissions et réaliser d'importantes économies d'énergie.",
     "description longue": "Deux niveaux d’expertise sont proposés :\n\n- Scope 1 et 2 : à partir du la visite énergie et un bilan des principaux postes d’émissions de GES.\n- Scope 1-2-3 : à partir du diagnostic des flux « TPE gagnantes sur tous les coûts ».",
     "début de validité": "05/12/2025",
     "illustration": "images/TEE_energie_verte.webp",
@@ -45697,7 +45525,12 @@
     "durée de l'accompagnement": "variable",
     "objectifs": [
       {
-        "description": "Contactez-nous via ce formulaire, un conseiller de la Chambre de Métiers et de l’Artisanat de votre région vérifiera votre éligibilité."
+        "description": "Contactez-nous via ce formulaire. Un conseiller de la Chambre de Métiers et de l’Artisanat de votre région vérifiera votre éligibilité.",
+        "liens": [
+          {
+            "formulaire": true
+          }
+        ]
       },
       {
         "description": "Si vous êtes éligible, vous recevrez les modalités de cet accompagnement."
@@ -45715,7 +45548,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "Tous secteurs"
+        "Entreprises d'artisanat"
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"

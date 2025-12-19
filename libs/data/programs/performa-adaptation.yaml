@@ -1,16 +1,16 @@
 titre: Performa Adaptation
 promesse: >-
-  Identifiez les vulnérabilités de votre entreprise au changement climatique
+  Identifiez les vulnérabilités de votre entreprise au changement climatique et
   mettez en place un plan d'adaptation
 description: >-
   Bénéficiez d'un accompagnement par un expert de la CMA pour :
 
 
-  - Réaliser un diagnostic des risques et aléas climatiques auxquels votre
+  - **Réaliser un diagnostic** des risques et aléas climatiques auxquels votre
   entreprise est exposée à court, moyen et long terme.
 
-  - Construire un plan d’actions prioritaires pour réduire la vulnérabilité et
-  renforcer la résilience aux évolutions climatiques.
+  - **Construire un plan d’actions prioritaires** pour réduire la vulnérabilité
+  et renforcer la résilience de votre entreprise aux évolutions climatiques.
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Chambre des Métiers et de l'Artisanat
 autres opérateurs:
@@ -23,8 +23,10 @@ coût de l'accompagnement: gratuite
 durée de l'accompagnement: Variable
 objectifs:
   - description: >-
-      Contactez-nous via ce formulaire, un conseiller de la Chambre de Métiers
+      Contactez-nous via ce formulaire. Un conseiller de la Chambre de Métiers
       et de l’Artisanat de votre région vérifiera votre éligibilité.
+    liens:
+      - formulaire: true
   - description: Si vous êtes éligible, vous recevrez les modalités de cet accompagnement.
   - description: Démarrez l'accompagnement.
 conditions d'éligibilité:
@@ -34,7 +36,7 @@ conditions d'éligibilité:
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
-    - Tous secteurs d'activité
+    - Entreprises d'artisanat
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:
