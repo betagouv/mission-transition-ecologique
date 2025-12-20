@@ -1594,8 +1594,7 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "aide-investissement-corse",
-      "diag-performance"
+      "aide-investissement-corse"
     ],
     "linkedProjects": [
       36
@@ -1845,7 +1844,6 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "mobilipro",
       "diag-biodiversite",
       "impact-co2",
       "booster-transformation-rev-3",
@@ -1853,7 +1851,6 @@
       "formation-communiquer-et-sensibiliser",
       "outils-pour-adaptation",
       "eco-diagnostic-commerce",
-      "diag-performance",
       "formations-atlas",
       "formations-afdas",
       "formations-opcommerce",
@@ -1947,8 +1944,7 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "aide-tpe-transition-na",
-      "eco-diagnostic-commerce",
-      "diag-performance"
+      "eco-diagnostic-commerce"
     ],
     "linkedProjects": [
       30
@@ -2270,8 +2266,7 @@
       "cap-transition-ecologique",
       "prit-hdf",
       "camping-independant-bfc",
-      "indicateur-climat",
-      "diag-performance"
+      "indicateur-climat"
     ],
     "linkedProjects": [],
     "priority": {
