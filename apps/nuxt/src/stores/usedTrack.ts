@@ -294,7 +294,18 @@ export const useUsedTrackStore = defineStore('usedTrack', () => {
     }
   }
 
-  function resetUsedTracks() {
+  function resetUsedTracks(keepCompanyData = false) {
+    if (keepCompanyData) {
+      const tracksToPreserve = [
+        CompanyData.getTrackIdFromStorageKey(CompanyDataStorageKey.Company),
+        CompanyData.getTrackIdFromStorageKey(CompanyDataStorageKey.Size)
+      ]
+
+      usedTracks.value = usedTracks.value.filter((track) => tracksToPreserve.includes(track.id))
+
+      return
+    }
+
     usedTracks.value = []
   }
 
