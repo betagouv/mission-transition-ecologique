@@ -1,17 +1,13 @@
 <template>
   <DsfrCard
     class="fr-card--program"
-    :class="getOperator() && getOperator()?.color ? `fr-card-header-bg--${getOperator()?.color}` : ''"
+    :class="getOperator && getOperator?.color ? `fr-card-header-bg--${getOperator?.color}` : ''"
     :title="program.titre"
     :end-detail="getCostInfos()"
     end-detail-icon="fr-icon-money-euro-circle-line fr-text--blue"
     :description="program.promesse"
-    :img-src="
-      getOperator()?.imagePath
-        ? img(getOperator()?.imagePath, { height: 320, quality: 100, loading: 'lazy' })
-        : img(`/${program.illustration}`, { height: 320, quality: 70, loading: 'lazy' })
-    "
-    :alt-img="getOperator()?.imagePath ? `Logo de ${getOperator()?.operator}` : `Image de ${program.titre}`"
+    :img-src="getImage()"
+    :alt-img="getOperator?.imagePath ? `Logo de ${getOperator?.operator}` : `Image de ${program.titre}`"
     :horizontal="true"
     :no-arrow="true"
     :link="getRouteToProgramDetail()"
@@ -50,8 +46,15 @@ const navigation = new Navigation()
 const isCatalog = navigation.isCatalogPrograms()
 const img = Image.getUrl
 
-const getOperator = () => {
+const getOperator = computed(() => {
   return new Operator().getOneByName(program['opérateur de contact'])
+})
+
+const getImage = () => {
+  const operator = getOperator.value
+  return operator?.imagePath
+    ? img(operator?.imagePath, { height: 320, quality: 100, loading: 'lazy' })
+    : img(`/${program.illustration}`, { height: 320, quality: 70, loading: 'lazy' })
 }
 
 const getCostInfos = () => {
