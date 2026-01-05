@@ -4,7 +4,8 @@
     "filterCategories": [
       "ADEME"
     ],
-    "imagePath": "/images/logos/operateur/ademe.webp"
+    "imagePath": "/images/logos/operateur/ademe.webp",
+    "color": "blue"
   },
   {
     "operator": "Agence de l'Eau Loire-Bretagne",
@@ -23,7 +24,8 @@
     "filterCategories": [
       "Agence de l'eau"
     ],
-    "imagePath": "/images/logos/operateur/agence-de-l-eau.webp"
+    "imagePath": "/images/logos/operateur/agence-de-l-eau.webp",
+    "color": "green"
   },
   {
     "operator": "Banque Publique d'Investissement France",
@@ -38,7 +40,8 @@
     "filterCategories": [
       "Opérateurs territoriaux"
     ],
-    "imagePath": "/images/logos/operateur/breizhfab.webp"
+    "imagePath": "/images/logos/operateur/breizhfab.webp",
+    "color": "red"
   },
   {
     "operator": "CCI Bretagne",
@@ -52,14 +55,16 @@
       "CCI",
       "CMA"
     ],
-    "imagePath": "/images/logos/operateur/cci-ou-cma.webp"
+    "imagePath": "/images/logos/operateur/cci-ou-cma.webp",
+    "color": "red"
   },
   {
     "operator": "Chambre de Commerce et de l'Industrie",
     "filterCategories": [
       "CCI"
     ],
-    "imagePath": "/images/logos/operateur/cci.webp"
+    "imagePath": "/images/logos/operateur/cci.webp",
+    "color": "blue"
   },
   {
     "operator": "Centre Technique des Industries Mécaniques",
@@ -72,14 +77,16 @@
     "filterCategories": [
       "CMA"
     ],
-    "imagePath": "/images/logos/operateur/cma.webp"
+    "imagePath": "/images/logos/operateur/cma.webp",
+    "color": "red"
   },
   {
     "operator": "DDFIP",
     "filterCategories": [
       "État"
     ],
-    "imagePath": "/images/logos/operateur/ddfip.webp"
+    "imagePath": "/images/logos/operateur/ddfip.webp",
+    "color": "yellow"
   },
   {
     "operator": "DREAL Bretagne",
@@ -92,7 +99,8 @@
     "filterCategories": [
       "Opérateurs nationaux"
     ],
-    "imagePath": "/images/logos/operateur/france-renov.webp"
+    "imagePath": "/images/logos/operateur/france-renov.webp",
+    "color": "red"
   },
   {
     "operator": "InvestEU",
@@ -103,7 +111,8 @@
     "filterCategories": [
       "État"
     ],
-    "imagePath": "/images/logos/operateur/ministere-de-la-transition-ecologique.webp"
+    "imagePath": "/images/logos/operateur/ministere-de-la-transition-ecologique.webp",
+    "color": "blue"
   },
   {
     "operator": "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment",
@@ -116,14 +125,16 @@
     "filterCategories": [
       "Régions"
     ],
-    "imagePath": "/images/logos/operateur/region-bretagne.webp"
+    "imagePath": "/images/logos/operateur/region-bretagne.webp",
+    "color": "red"
   },
   {
     "operator": "Région Grand Est",
     "filterCategories": [
       "Régions"
     ],
-    "imagePath": "/images/logos/operateur/region-grand-est.webp"
+    "imagePath": "/images/logos/operateur/region-grand-est.webp",
+    "color": "yellow"
   },
   {
     "operator": "Saur",
@@ -148,91 +159,104 @@
     "filterCategories": [
       "Opérateurs nationaux"
     ],
-    "imagePath": "/images/logos/operateur/cned.webp"
+    "imagePath": "/images/logos/operateur/cned.webp",
+    "color": "green"
   },
   {
     "operator": "Voies Navigables de France",
     "filterCategories": [
       "Opérateurs nationaux"
     ],
-    "imagePath": "/images/logos/operateur/vnf.webp"
+    "imagePath": "/images/logos/operateur/vnf.webp",
+    "color": "green"
   },
   {
     "operator": "Région Centre-Val de Loire",
     "filterCategories": [
       "Régions"
     ],
-    "imagePath": "/images/logos/operateur/region-centre-val-de-loire.webp"
+    "imagePath": "/images/logos/operateur/region-centre-val-de-loire.webp",
+    "color": "blue"
   },
   {
     "operator": "Région Occitanie",
     "filterCategories": [
       "Régions"
     ],
-    "imagePath": "/images/logos/operateur/region-occitanie.webp"
+    "imagePath": "/images/logos/operateur/region-occitanie.webp",
+    "color": "red"
   },
   {
     "operator": "Région Hauts-de-France",
     "filterCategories": [
       "Régions"
     ],
-    "imagePath": "/images/logos/operateur/region-hauts-de-france.webp"
+    "imagePath": "/images/logos/operateur/region-hauts-de-france.webp",
+    "color": "green"
   },
   {
     "operator": "Région Île-de-France",
     "filterCategories": [
       "Régions"
     ],
-    "imagePath": "/images/logos/operateur/region-ile-de-france.webp"
+    "imagePath": "/images/logos/operateur/region-ile-de-france.webp",
+    "color": "red"
   },
   {
     "operator": "Région Normandie",
     "filterCategories": [
       "Régions"
     ],
-    "imagePath": "/images/logos/operateur/region-normandie.webp"
+    "imagePath": "/images/logos/operateur/region-normandie.webp",
+    "color": "red"
   },
   {
     "operator": "Région Pays de la Loire",
     "filterCategories": [
       "Régions"
     ],
-    "imagePath": "/images/logos/operateur/region-pays-de-la-loire.webp"
+    "imagePath": "/images/logos/operateur/region-pays-de-la-loire.webp",
+    "color": "blue"
   },
   {
     "operator": "Région Sud (PACA)",
     "filterCategories": [
       "Régions"
     ],
-    "imagePath": "/images/logos/operateur/region-sud.webp"
+    "imagePath": "/images/logos/operateur/region-sud.webp",
+    "color": "yellow"
   },
   {
     "operator": "Agence Régionale Biodiversité et Environnement",
     "filterCategories": [
       "OFB/ARB"
     ],
-    "imagePath": "/images/logos/operateur/arbe.webp"
+    "imagePath": "/images/logos/operateur/arbe.webp",
+    "color": "green"
   },
   {
     "operator": "Office français de la biodiversité",
     "filterCategories": [
       "OFB/ARB"
     ],
-    "imagePath": "/images/logos/operateur/ofb.webp"
+    "imagePath": "/images/logos/operateur/ofb.webp",
+    "color": "green"
   },
   {
     "operator": "Région Bourgogne-Franche-Comté",
     "filterCategories": [
       "Régions"
     ],
-    "imagePath": "/images/logos/operateur/region_bourgogne-franche-comte.webp"
+    "imagePath": "/images/logos/operateur/region_bourgogne-franche-comte.webp",
+    "color": "yellow"
   },
   {
     "operator": "Région Auvergne-Rhône-Alpes",
     "filterCategories": [
       "Régions"
     ],
-    "imagePath": "/images/logos/operateur/region-auvergne-rhone-alpes.webp"
+    "imagePath": "/images/logos/operateur/region-auvergne-rhone-alpes.webp",
+    "color": "blue"
   },
   {
     "operator": "Région Nouvelle-Aquitaine",
@@ -245,7 +269,8 @@
     "filterCategories": [
       "Régions"
     ],
-    "imagePath": "/images/logos/operateur/adec.webp"
+    "imagePath": "/images/logos/operateur/adec.webp",
+    "color": "blue"
   },
   {
     "operator": "Agence de Tourisme de la Corse",
@@ -258,21 +283,24 @@
     "filterCategories": [
       "Régions"
     ],
-    "imagePath": "/images/logos/operateur/region-guadeloupe.webp"
+    "imagePath": "/images/logos/operateur/region-guadeloupe.webp",
+    "color": "yellow"
   },
   {
     "operator": "Avere-France",
     "filterCategories": [
       "Opérateurs nationaux"
     ],
-    "imagePath": "/images/logos/operateur/avere.webp"
+    "imagePath": "/images/logos/operateur/avere.webp",
+    "color": "blue"
   },
   {
     "operator": "Opcommerce",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp"
+    "imagePath": "/images/logos/operateur/opco.webp",
+    "color": "blue"
   },
   {
     "operator": "Centre National du Livre",
@@ -285,76 +313,87 @@
     "filterCategories": [
       "Opérateurs nationaux"
     ],
-    "imagePath": "/images/logos/operateur/banque-de-france.webp"
+    "imagePath": "/images/logos/operateur/banque-de-france.webp",
+    "color": "blue"
   },
   {
     "operator": "Constructys",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp"
+    "imagePath": "/images/logos/operateur/opco.webp",
+    "color": "blue"
   },
   {
     "operator": "Atlas",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp"
+    "imagePath": "/images/logos/operateur/opco.webp",
+    "color": "blue"
   },
   {
     "operator": "Opco AFDAS",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp"
+    "imagePath": "/images/logos/operateur/opco.webp",
+    "color": "blue"
   },
   {
     "operator": "Opco Ocapiat",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp"
+    "imagePath": "/images/logos/operateur/opco.webp",
+    "color": "blue"
   },
   {
     "operator": "Opco 2i",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp"
+    "imagePath": "/images/logos/operateur/opco.webp",
+    "color": "blue"
   },
   {
     "operator": "Opco EP",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp"
+    "imagePath": "/images/logos/operateur/opco.webp",
+    "color": "blue"
   },
   {
     "operator": "Opco Mobilités",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp"
+    "imagePath": "/images/logos/operateur/opco.webp",
+    "color": "blue"
   },
   {
     "operator": "Opco Santé",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp"
+    "imagePath": "/images/logos/operateur/opco.webp",
+    "color": "blue"
   },
   {
     "operator": "Opco Uniformation",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp"
+    "imagePath": "/images/logos/operateur/opco.webp",
+    "color": "blue"
   },
   {
     "operator": "ANACT",
     "filterCategories": [
       "Régions"
     ],
-    "imagePath": "/images/logos/operateur/anact.webp"
+    "imagePath": "/images/logos/operateur/anact.webp",
+    "color": "blue"
   }
 ]
