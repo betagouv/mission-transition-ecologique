@@ -1,4 +1,5 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
+
 # Logs
 logs
 *.log
@@ -10,18 +11,17 @@ lerna-debug.log*
 
 # Build artifacts
 build
+dist
 dist-ssr
 *.tsbuildinfo
-# compiled output
-dist
 tmp
 /out-tsc
 *timestamp-*.mjs
 
-# node
+# Node
 Heap.*
 
-# dependencies
+# Dependencies
 node_modules
 
 # IDEs and editors
@@ -33,6 +33,7 @@ node_modules
 *.launch
 .settings/
 *.sublime-workspace
+.ai
 
 # IDE - VSCode
 .vscode/
@@ -41,13 +42,11 @@ node_modules
 !.vscode/launch.json
 !.vscode/extensions.json
 
-# misc
+# Miscellaneous
 /.sass-cache
 /connect.lock
 /coverage
 /libpeerconnection.log
-npm-debug.log
-yarn-error.log
 testem.log
 /typings
 
@@ -55,7 +54,7 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# Default env variables
+# Environment variables
 .env
 
 # XL2Yaml tool
@@ -64,7 +63,7 @@ pyrightconfig.json
 .flake8
 dispositifs*.xlsx
 
-# nx
+# Nx
 .nx/cache
 .nx/workspace-data
 
@@ -73,11 +72,11 @@ dispositifs*.xlsx
 !**/generated/dataset_tests.json
 !generated/index.ts
 
-# local cache
+# Local cache
 **/program_tmp.json
 /test-results/
 
-#playwright
+# Playwright
 /playwright-report/
 /blob-report/
 /playwright/.cache/
@@ -90,5 +89,9 @@ dispositifs*.xlsx
 .cache
 vite.config.*.timestamp*
 vitest.config.*.timestamp*
+
+# Cursor
 .cursor/rules/nx-rules.mdc
+
+# GitHub
 .github/instructions/nx.instructions.md
