@@ -1,6 +1,6 @@
 import Config from '@/config'
 import { RouteName, TrackId } from '@/types'
-import { RouteLocationNormalizedLoaded, RouteParamsGeneric } from 'vue-router'
+import { RouteLocationNormalizedLoaded, RouteParamsGeneric, Router } from 'vue-router'
 import { Scroll } from './scroll/scroll'
 
 export default class Navigation {
@@ -9,13 +9,13 @@ export default class Navigation {
     private _router: Router = useRouter()
   ) {}
 
-  private static instance: Navigation
+  private static _instance: Navigation
 
   static getInstance(route: RouteLocationNormalizedLoaded | undefined = undefined, router: Router | undefined = undefined) {
-    if (!this.instance) {
-      this.instance = new Navigation(route, router)
+    if (!this._instance) {
+      this._instance = new Navigation(route, router)
     }
-    return this.instance
+    return this._instance
   }
 
   static toggleRegisterModal = (forceStatus?: boolean) => {

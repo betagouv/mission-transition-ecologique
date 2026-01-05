@@ -4,24 +4,24 @@ import PosthogManager from '../common/posthog/posthogManager'
 import { PosthogEvent } from '../common/posthog/types'
 
 export class PosthogUpdater {
-  private static instance: PosthogUpdater
-  private lastUpdateTime: Date
+  private static _instance: PosthogUpdater
+  private _lastUpdateTime: Date
 
   private constructor() {
-    this.lastUpdateTime = new Date(Date.now() - 24 * 60 * 60 * 1000)
+    this._lastUpdateTime = new Date(Date.now() - 24 * 60 * 60 * 1000)
   }
 
   public static getInstance(): PosthogUpdater {
-    if (!PosthogUpdater.instance) {
-      PosthogUpdater.instance = new PosthogUpdater()
+    if (!PosthogUpdater._instance) {
+      PosthogUpdater._instance = new PosthogUpdater()
     }
-    return PosthogUpdater.instance
+    return PosthogUpdater._instance
   }
 
   public async updatePosthogData(): Promise<string> {
-    const timeDifference = (new Date().getTime() - this.lastUpdateTime.getTime()) / (1000 * 60)
+    const timeDifference = (new Date().getTime() - this._lastUpdateTime.getTime()) / (1000 * 60)
     if (timeDifference >= 60) {
-      this.lastUpdateTime = new Date()
+      this._lastUpdateTime = new Date()
       return await this._performUpdate()
     } else {
       const minutesRemaining = Math.ceil(60 - timeDifference)

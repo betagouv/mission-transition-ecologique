@@ -3,7 +3,7 @@ import { projects as jsonProjects } from '@tee/data/static'
 import { ProjectType } from '@tee/data'
 
 export class ProjectsJson implements ProjectRepository {
-  private static instance: ProjectsJson
+  private static _instance: ProjectsJson
   private _projects: ProjectType[] = []
 
   private constructor() {
@@ -11,11 +11,11 @@ export class ProjectsJson implements ProjectRepository {
   }
 
   public static getInstance(): ProjectsJson {
-    if (!ProjectsJson.instance) {
-      ProjectsJson.instance = new ProjectsJson()
+    if (!ProjectsJson._instance) {
+      ProjectsJson._instance = new ProjectsJson()
     }
 
-    return ProjectsJson.instance
+    return ProjectsJson._instance
   }
 
   public get(): ProjectType[] {

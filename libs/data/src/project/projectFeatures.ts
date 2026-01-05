@@ -15,9 +15,9 @@ import { FileManager } from '../common/fileManager'
 import Redirect from '../common/redirect/redirect'
 
 export class ProjectFeatures {
-  private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
-  private readonly _outputFilePath: string = path.join(this.__dirname, '../../static/projects.json')
-  private readonly _outputImageDirectory: string = path.join(this.__dirname, '../../../../apps/nuxt/src/public/images/projet')
+  private readonly _dirname = path.dirname(fileURLToPath(import.meta.url))
+  private readonly _outputFilePath: string = path.join(this._dirname, '../../static/projects.json')
+  private readonly _outputImageDirectory: string = path.join(this._dirname, '../../../../apps/nuxt/src/public/images/projet')
   private _programs: ProgramType[] = []
 
   constructor(

@@ -61,8 +61,13 @@
       },
       {
         "selector": "memberLike",
-        "modifiers": ["private"],
-        "format": ["camelCase"],
+        "modifiers": [
+          "private"
+        ],
+        "format": [
+          "camelCase",
+          "UPPER_CASE"
+        ],
         "leadingUnderscore": "require"
       }
     ],

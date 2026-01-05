@@ -6,8 +6,8 @@ import { fileURLToPath } from 'url'
 import { LoggerInterface } from '../common/logger/types'
 
 export class FaqFeature {
-  private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
-  private readonly _outputdirPath: string = path.join(this.__dirname, '../../../../apps/nuxt/src/public/json/faq')
+  private readonly _dirname = path.dirname(fileURLToPath(import.meta.url))
+  private readonly _outputdirPath: string = path.join(this._dirname, '../../../../apps/nuxt/src/public/json/faq')
 
   constructor(
     private _baserow: FaqRepositoryInterface,
