@@ -1,4 +1,4 @@
-import ConfigBaserow from '../../configBaserow'
+import ConfigBaserow from '../../config/configBaserow'
 import { Contact } from '../types'
 import { AbstractBaserow } from './abstractBaserow'
 import { BaserowContact } from './types'

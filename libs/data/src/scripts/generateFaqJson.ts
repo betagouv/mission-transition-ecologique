@@ -1,7 +1,7 @@
 import { FaqBaserow } from '../common/baserow/faq/faqBaserow'
 import { Logger } from '../common/logger/logger'
 import { LoggerType } from '../common/logger/types'
-import Config from '../config'
+import Config from '../config/config'
 import { FaqFeature } from '../faq/faqFeature'
 import { FaqFilter } from '../faq/faqFilter'
 
