@@ -98,7 +98,6 @@ export type Dispositif = {
     | "Chambre des Métiers et de l'Artisanat"
     | "DDFIP"
     | "DREAL Bretagne"
-    | "EcoCO2"
     | "France Rénov'"
     | "InvestEU"
     | "Ministère de la Transition Écologique"
@@ -130,7 +129,6 @@ export type Dispositif = {
     | "Opcommerce"
     | "Centre National du Livre"
     | "Banque de France"
-    | "Constructys"
     | "Atlas"
     | "Opco AFDAS"
     | "Opco Ocapiat"
@@ -138,7 +136,8 @@ export type Dispositif = {
     | "Opco EP"
     | "Opco Mobilités"
     | "Opco Santé"
-    | "Opco Uniformation";
+    | "Opco Uniformation"
+    | "ANACT";
   /**
    * Le contact en cas de question, peut être un lien vers le formulaire, un mail ou une url.
    */
@@ -275,7 +274,6 @@ export type Operators =
   | "Chambre des Métiers et de l'Artisanat"
   | "DDFIP"
   | "DREAL Bretagne"
-  | "EcoCO2"
   | "France Rénov'"
   | "InvestEU"
   | "Ministère de la Transition Écologique"
@@ -307,7 +305,6 @@ export type Operators =
   | "Opcommerce"
   | "Centre National du Livre"
   | "Banque de France"
-  | "Constructys"
   | "Atlas"
   | "Opco AFDAS"
   | "Opco Ocapiat"
@@ -315,4 +312,5 @@ export type Operators =
   | "Opco EP"
   | "Opco Mobilités"
   | "Opco Santé"
-  | "Opco Uniformation";
+  | "Opco Uniformation"
+  | "ANACT";

@@ -11,51 +11,39 @@ description: >-
   d'une mise en lumière par l'Office français de la biodiversité lors de salons
   dédiés au monde de l'entreprise et de la biodiversité.
 début de validité: 15/09/2019
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_ampoule.webp
 opérateur de contact: Office français de la biodiversité
 contact question: https://engagespourlanature.ofb.fr/entreprises/contact
 url: https://engagespourlanature.ofb.fr/entreprises
 nature de l'aide: étude
 coût de l'accompagnement: Gratuit
-durée de l'accompagnement: Plusieurs années
+durée de l'accompagnement: 2 à 3 ans
 activable en autonomie: oui
 objectifs:
   - description: >-
-      Adhérez au programme via la signature d'une charte contenant les 10
-      principes communs de l'initiative "Entreprises engagées pour la nature".
+      Découvrez le programme "Entreprises engagées pour la nature" sur le site
+      de l'OFB et téléchargez la Charte d’engagement au programme.
     liens:
-      - lien: >-
-          https://engagespourlanature.ofb.fr/sites/default/files/2021-12/EEN_Les%20_10_principes_communs_%C3%A0_signer.pdf
-        texte: Télécharger la charte
+      - lien: https://ofb.gouv.fr/entreprises-engagees-nature
+        texte: Découvrez le programme
   - description: >-
-      Créez un compte ou connectez-vous sur Démarches Simplifiées, pour adhérer
-      au programme et déposer la charte signée.
+      L’adhésion au programme est formalisée par la signature de la Charte
+      d’engagement. Le document est à déposer en ligne sur la plateforme
+      "Démarches simplifiées".
     liens:
       - lien: >-
-          https://www.demarches-simplifiees.fr/commencer/entreprises-engagees-pour-la-nature-etape-1
-        texte: Déposer mon formulaire
+          https://demarche.numerique.gouv.fr/commencer/entreprises-engagees-pour-la-nature-etape-1
+        texte: 'Déposer la charte '
+  - description: >-
+      Une fois le dossier validé, l’entreprise devient officiellement adhérente
+      au programme "Entreprises engagées pour la nature".
   - description: >-
       Vous disposez ensuite d'un an pour dresser un état des lieux initial et
-      construire un plan d'action volontaire pour la biodiversité. Ce plan
-      d'action sera à déposer auprès de l'Office Français de la Biodiversité
-      (OFB).
-    liens:
-      - lien: https://engagespourlanature.ofb.fr/entreprises/rejoindre-le-programme
-        texte: Voir le calendrier de dépôt du plan d'action
-      - lien: >-
-          https://www.demarches-simplifiees.fr/commencer/entreprises-engagees-pour-la-nature-etape-2-engage-2
-        texte: Déposer le plan d'action (TPE-PME)
-      - lien: >-
-          https://www.demarches-simplifiees.fr/commencer/entreprises-engagees-pour-la-nature-etape-2-engage
-        texte: Déposer le plan d'action (ETI-Grandes entreprises)
+      construire un plan d'action volontaire pour la biodiversité.
   - description: >-
       Votre plan d'action est analysé par l'OFB pour en mesurer l'ambition et
       l'adéquation vis à vis de vos activités. Une fois validé, vous pouvez le
       communiquer et utiliser le tampon "Entreprises engagées pour la nature".
-  - description: >-
-      Bénéficiez d'une évaluation de votre plan d'action, deux ans après son
-      dépôt par un prestataire mandaté et financé par l'OFB et accédez à un
-      niveau de reconnaissance : en progrès, confirmé, ou exemplaire.
   - description: >-
       Tout au long du programme, vous disposez de guides pratiques et ressources
       pour vous aider à élaborer et suivre votre plan d'action et vous profitez

@@ -47,7 +47,7 @@ useSchemaOrg([
 <template>
   <div>
     <TeeHeader />
-    <div>
+    <div role="main">
       <slot />
     </div>
     <TeeFooter />

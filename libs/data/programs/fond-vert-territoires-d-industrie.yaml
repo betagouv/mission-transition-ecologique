@@ -1,16 +1,6 @@
 titre: Fonds Vert - Territoires d'Industrie
-promesse: >-
-  Financez votre projet industriel d'intérêt général en matière de transition
-  écologique 
-description: >-
-  Vous portez un projet de développement industriel présentant un **intérêt
-  général manifeste** en termes de revitalisation économique et de transition
-  écologique ?
-
-
-  Le programme **Territoires d’industrie** soutient les entreprises engagées
-  dans des projets d’investissements industriels ambitieux et exemplaires, tant
-  sur le plan **environnemental**, **socio-économique** que **territorial**.
+promesse: Financez votre projet industriel en matière de transition écologique
+description: "Vous portez un projet d’**investissement industriel structurant et ambitieux**\_sur le plan environnemental ?\n\nLe programme\_Territoires d’industrie\_soutient les entreprises engagées dans des projets qui contribuent\_à l’émergence, au renforcement et/ou\_à la réindustrialisation de **chaînes de valeur stratégiques**\_**pour la transition écologique**."
 description longue: >-
   Les projets éligibles sont des projets d’investissements industriels
   exemplaires sur le plan environnemental qui contribuent à l’émergence, au
@@ -23,7 +13,8 @@ description longue: >-
   Afin d’être éligibles, les projets doivent être suffisamment matures.
 
 
-  Par exemple :
+  A titre d’exemple, les chaînes de valeur soutenues pourront relever des
+  secteurs suivants :
 
 
   - Bioéconomie pour le développement de produits biosourcés (chanvre, lin,
@@ -54,7 +45,7 @@ description longue: >-
   réindustrialisation de ces chaînes de valeur industrielles.
 début de validité: 12/03/2025
 fin de validité: 31/12/2025
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000810
 url: >-

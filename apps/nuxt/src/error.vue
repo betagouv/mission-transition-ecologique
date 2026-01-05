@@ -23,7 +23,7 @@
         <div class="fr-col-6 fr-col-justify--left fr-col-sm-6 fr-col-md-3 fr-col-offset-md-1 fr-px-0 fr-pt-4v fr-py-md-0">
           <img
             class="fr-footer__logo fr-responsive-img"
-            src="/images/tracks/no-results.png"
+            src="/images/tracks/no-results.svg"
             loading="lazy"
             alt="illustration page d'erreur"
           />

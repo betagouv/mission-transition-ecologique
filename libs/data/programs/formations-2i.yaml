@@ -15,7 +15,7 @@ description: >-
   - Élaborer un projet de transition écologique. 
 
   - etc.
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: Opco 2i
 contact question: formulaire
 url: >-
@@ -30,8 +30,8 @@ objectifs:
       formation et la session qui vous convient (en sélectionnant le domaine
       "Transition Écologique")
     liens:
-      - lien: <https://www.linscription.com/pro/opco2i-actionsclesenmain.php>
-        texte: Catalogue de formations\
+      - lien: https://www.linscription.com/pro/opco2i-actionsclesenmain.php
+        texte: Catalogue de formations
   - description: >-
       Créez un compte sur le site d'Opco 2i et inscrivez-vous à la session de
       votre choix.
@@ -42,10 +42,8 @@ objectifs:
       Pour toute demande de pris en charge d'une formation, contactez le service
       entreprises dans votre région
     liens:
-      - lien: >-
-          https://-
-          <https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/>
-        texte: Service entreprises\
+      - lien: https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/
+        texte: Service entreprises
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

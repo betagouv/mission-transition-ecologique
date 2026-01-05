@@ -1,11 +1,19 @@
 @use 'setting';
 
 .fr-header {
+  .fr-header__brand-top {
+    overflow: unset;
+  }
+
   .fr-header__tools {
     align-items: flex-end;
     flex-direction: row;
     display: flex;
     justify-content: flex-end;
+  }
+
+  .fr-header__service-title {
+    line-height: 1.65rem;
   }
 
   .fr-nav {

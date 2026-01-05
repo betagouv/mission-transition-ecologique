@@ -6,7 +6,6 @@
           <div class="fr-col-12">
             <div class="fr-grid-row">
               <div class="fr-col-12">
-                <p class="fr-text--purple fr-h4 fr-text--bold fr-mb-0">TPE, PME</p>
                 <h1 class="fr-mb-3v">
                   Trouvez les aides pour
                   <span class="fr-display-md--block">la transition écologique </span>
@@ -26,11 +25,10 @@
             <TeeDsfrButton
               size="lg"
               class="inline-flex fr-text--yellow fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center"
+              only-label="Je trouve les aides pour mon projet"
               @click="toQuestionnaire()"
             >
-              <template #default>
-                Je trouve les aides <span class="fr-display--block fr-display-sm--inline">pour mon projet</span>
-              </template>
+              Je trouve les aides <span class="fr-display--block fr-display-sm--inline">pour mon projet</span>
             </TeeDsfrButton>
           </div>
         </div>
@@ -38,7 +36,7 @@
       <div class="fr-col-2 fr-col-md-4 fr-col--middle fr-col-lg-4 tee-track-image-right fr-col-unhidden-md fr-col-hidden">
         <img
           class="fr-responsive-img"
-          :src="img('/images/TEE-illustrationHP.png', { format: 'webp', densities: 1, quality: 70, loading: 'lazy' })"
+          :src="img('/images/TEE-illustrationHP.webp', { quality: 70, loading: 'lazy' })"
           alt="Illustration de la page d'accueil - Une maison avec une éolienne, une ampoule et une prise électrique"
         />
       </div>
