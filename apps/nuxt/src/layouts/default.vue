@@ -3,6 +3,7 @@ import { useNavigationStore } from '@/stores/navigation'
 import TeeFooter from '@/components/TeeFooter.vue'
 import { Identity } from '@/tools/identity'
 import { MetaSeo } from '@/tools/metaSeo'
+import Navigation from '@/tools/navigation'
 import Translation from '@/tools/translation'
 import Cookie from '@/tools/cookies'
 import { defineOrganization, defineWebPage, defineWebSite, useSchemaOrg } from '@unhead/schema-org/vue'
@@ -15,6 +16,18 @@ onBeforeMount(() => {
 })
 
 useSeoMeta(MetaSeo.default())
+
+const navigation = Navigation.getInstance()
+const { currentRoute } = useRouter()
+
+useHead({
+  templateParams: {
+    schemaOrg: {
+      host: navigation.baseUrl,
+      path: computed(() => currentRoute.value.path)
+    }
+  }
+})
 
 useSchemaOrg([
   defineWebPage({ name: MetaSeo.title(), description: MetaSeo.defaultDescription }),
@@ -34,7 +47,7 @@ useSchemaOrg([
 <template>
   <div>
     <TeeHeader />
-    <div>
+    <div role="main">
       <slot />
     </div>
     <TeeFooter />

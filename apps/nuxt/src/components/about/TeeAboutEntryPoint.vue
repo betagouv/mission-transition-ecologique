@@ -14,9 +14,10 @@
       <li class="fr-ml-1w"><strong>contacter un conseiller</strong> pour vous accompagner dans vos démarches.</li>
     </ol>
     <div class="fr-col-12 fr-mt-3w">
-      <TeeDsfrButton @click="toCatalog()">
-        <template #default> Je trouve les aides pour mon projet </template>
-      </TeeDsfrButton>
+      <TeeDsfrButton
+        label="Je trouve les aides pour mon projet"
+        @click="toCatalog()"
+      />
     </div>
 
     <ul class="fr-grid-row fr-raw-list fr-mt-2w">

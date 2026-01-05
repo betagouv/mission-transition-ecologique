@@ -351,7 +351,6 @@
         "Chambre des Métiers et de l'Artisanat",
         "DDFIP",
         "DREAL Bretagne",
-        "EcoCO2",
         "France Rénov'",
         "InvestEU",
         "Ministère de la Transition Écologique",
@@ -383,7 +382,6 @@
         "Opcommerce",
         "Centre National du Livre",
         "Banque de France",
-        "Constructys",
         "Atlas",
         "Opco AFDAS",
         "Opco Ocapiat",
@@ -391,7 +389,8 @@
         "Opco EP",
         "Opco Mobilités",
         "Opco Santé",
-        "Opco Uniformation"
+        "Opco Uniformation",
+        "ANACT"
       ]
     }
   }

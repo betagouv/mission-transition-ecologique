@@ -5,17 +5,15 @@
     size="sm"
     @click="open()"
   >
-    <template #default>
-      <div class="fr-grid-row fr-grid-row--middle">
-        <span>Filtres</span>
-        <span
-          v-if="getFiltersCount"
-          class="fr-filter-count-badge fr-ml-2v"
-        >
-          {{ getFiltersCount }}
-        </span>
-      </div>
-    </template>
+    <div class="fr-grid-row fr-grid-row--middle">
+      <span>Filtres</span>
+      <span
+        v-if="getFiltersCount"
+        class="fr-filter-count-badge fr-ml-2v"
+      >
+        {{ getFiltersCount }}
+      </span>
+    </div>
   </DsfrButton>
   <DsfrModal
     ref="modal"
@@ -24,10 +22,8 @@
     size="xl"
     @close="close()"
   >
-    <template #default>
-      <div class="fr-h5 fr-text--blue-france fr-text-center">Filtres</div>
-      <slot name="filters-accordion"></slot>
-    </template>
+    <div class="fr-h5 fr-text--blue-france fr-text-center">Filtres</div>
+    <slot name="filters-accordion"></slot>
   </DsfrModal>
 </template>
 <script setup lang="ts">

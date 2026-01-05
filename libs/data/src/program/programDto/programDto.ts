@@ -139,6 +139,7 @@ export class ProgramDto {
       this.rawProgram['Id fiche dispositif'],
       this.rawProgram.id
     )
+    this.valid = false
   }
 
   private _setIllustration(): string {
@@ -152,7 +153,7 @@ export class ProgramDto {
   }
 
   private _setRandomIllustration(): string {
-    const illustrations = ['images/TEE_energie_verte.png', 'images/TEE_ampoule.png', 'images/TEE_eolienne.png']
+    const illustrations = ['images/TEE_energie_verte.webp', 'images/TEE_ampoule.webp', 'images/TEE_eolienne.webp']
     return illustrations[Math.floor(Math.random() * 3)]
   }
 
@@ -194,6 +195,16 @@ export class ProgramDto {
       case DataProgramType.Study:
       case DataProgramType.Training:
         this.programData["coût de l'accompagnement"] = this.rawProgram["Montant de l'aide ou coût"]
+        if (!this.rawProgram["Durée de l'aide"]) {
+          this.logger.log(
+            LogLevel.Critic,
+            "Champ durée de l'aide manquant pour une étude ou une formation, dispositif non mis en ligne ou à jour",
+            this.rawProgram['Id fiche dispositif'],
+            this.rawProgram.id,
+            this.rawProgram["Durée de l'aide"]
+          )
+          this.valid = false
+        }
         this.programData["durée de l'accompagnement"] = this.rawProgram["Durée de l'aide"]
         return
       case DataProgramType.Loan:

@@ -41,7 +41,8 @@
       "camping-independant-bfc",
       "certificats-economie-energie",
       "aide-investissement-librairie",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "cap-decarbonation"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action économies d'énergie",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action économies d'énergie",
@@ -266,6 +267,7 @@
     "programs": [
       "aides-au-reemploi-des-emballages",
       "fonds-tourisme-durable",
+      "fond-vert-territoires-d-industrie",
       "ormat",
       "tremplin",
       "aide-financement-occitanie",
@@ -479,7 +481,8 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "cap-transition-ecologique",
-      "evaluation-carbone-lise"
+      "evaluation-carbone-lise",
+      "cap-decarbonation"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un bilan de gaz à effet de serre",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre bilan de gaz à effet de serre",
@@ -1025,6 +1028,7 @@
     "programs": [
       "booster-eco-energie-tertiaire",
       "fonds-tourisme-durable",
+      "diag-perf-immo",
       "renovation-energetique",
       "renovation-petit-tertiaire-prive",
       "pret-economies-d-energie-pee",
@@ -1590,7 +1594,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "diag-performance"
     ],
     "linkedProjects": [
       36
@@ -1704,6 +1709,7 @@
       "etude-alimentation-durable",
       "etude-biodechets",
       "fonds-tourisme-durable",
+      "fond-vert-territoires-d-industrie",
       "gestion-des-biodechets",
       "investissement-gestion-des-biodechets",
       "performa-environnement",
@@ -1846,7 +1852,17 @@
       "formation-convaincre-et-argumenter",
       "formation-communiquer-et-sensibiliser",
       "outils-pour-adaptation",
-      "eco-diagnostic-commerce"
+      "eco-diagnostic-commerce",
+      "diag-performance",
+      "formations-atlas",
+      "formations-afdas",
+      "formations-opcommerce",
+      "formations-ocapiat",
+      "formations-2i",
+      "formations-ep",
+      "formations-sante",
+      "formations-uniformation",
+      "formations-mobilite"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
@@ -1931,7 +1947,8 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "aide-tpe-transition-na",
-      "eco-diagnostic-commerce"
+      "eco-diagnostic-commerce",
+      "diag-performance"
     ],
     "linkedProjects": [
       30
@@ -2001,7 +2018,16 @@
       "aide-investissement-corse",
       "formation-convaincre-et-argumenter",
       "formation-communiquer-et-sensibiliser",
-      "outils-pour-adaptation"
+      "outils-pour-adaptation",
+      "formations-atlas",
+      "formations-afdas",
+      "formations-opcommerce",
+      "formations-ocapiat",
+      "formations-2i",
+      "formations-ep",
+      "formations-sante",
+      "formations-uniformation",
+      "formations-mobilite"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une formation environnement",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre formation environnement",
@@ -2147,7 +2173,8 @@
       "camping-independant-bfc",
       "aide-tourisme-guadeloupe",
       "diag-impact-biodiversite",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "accelerateur-des-possibles"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
@@ -2243,7 +2270,8 @@
       "cap-transition-ecologique",
       "prit-hdf",
       "camping-independant-bfc",
-      "indicateur-climat"
+      "indicateur-climat",
+      "diag-performance"
     ],
     "linkedProjects": [],
     "priority": {
@@ -2312,7 +2340,8 @@
       "prit-hdf",
       "booster-transformation-rev-3",
       "act-evaluation",
-      "indicateur-climat"
+      "indicateur-climat",
+      "cap-decarbonation"
     ],
     "linkedProjects": [
       1
@@ -2384,7 +2413,8 @@
       "aide-investissement-librairie",
       "booster-transformation-rev-3",
       "outils-pour-adaptation",
-      "indicateur-climat"
+      "indicateur-climat",
+      "performa-adaptation"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'adaptation climat",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'adaptation climat",
@@ -2777,8 +2807,7 @@
     "linkedProjects": [
       16,
       26,
-      30,
-      31
+      30
     ],
     "priority": {
       "default": 85
@@ -3212,9 +3241,7 @@
       "diag-impact-biodiversite",
       "diag-biodiversite"
     ],
-    "linkedProjects": [
-      33
-    ],
+    "linkedProjects": [],
     "priority": {
       "default": 65,
       "A": 3
@@ -3436,7 +3463,8 @@
       "sud-pret-climat",
       "entreprises-engagees-nature",
       "pret-energie-aura",
-      "pret-ile-de-france"
+      "pret-ile-de-france",
+      "accelerateur-des-possibles"
     ],
     "linkedProjects": [
       31
@@ -3669,9 +3697,11 @@
     "mainTheme": "energy",
     "programs": [
       "etude-methanisation",
+      "etude-methanisation-paca",
       "investissement-methanisation",
       "aide-tpe-transition-na",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "investissement-methanisation-paca"
     ],
     "linkedProjects": [
       4,
@@ -3813,7 +3843,6 @@
     ],
     "linkedProjects": [
       144,
-      203,
       632
     ],
     "priority": {
@@ -3847,9 +3876,7 @@
       "aide-financement-occitanie",
       "certification-agriculture-biologique"
     ],
-    "linkedProjects": [
-      567
-    ],
+    "linkedProjects": [],
     "priority": {
       "default": 511,
       "A": 1
@@ -3919,6 +3946,7 @@
     ],
     "mainTheme": "building",
     "programs": [
+      "fond-vert-territoires-d-industrie",
       "programme-synergies-durables"
     ],
     "linkedProjects": [],
@@ -4441,7 +4469,7 @@
   {
     "id": 1028,
     "slug": "achats-responsables",
-    "title": "Achats responsables",
+    "title": "Politique d'achats responsables",
     "nameTag": "📦 achats responsables",
     "shortDescription": "Intégrer des critères environnementaux, sociaux et éthiques dans les achats de votre entreprise.",
     "image": "/images/projet/achats-responsables.webp",
@@ -4458,9 +4486,7 @@
       "programme-synergies-durables",
       "booster-transformation-rev-3"
     ],
-    "linkedProjects": [
-      929
-    ],
+    "linkedProjects": [],
     "priority": {
       "default": 106,
       "G": 3
@@ -4508,7 +4534,6 @@
       "diag-eco-flux"
     ],
     "linkedProjects": [
-      30,
       1028
     ],
     "priority": {
@@ -4612,13 +4637,14 @@
       "diag-eco-flux",
       "gestion-des-biodechets",
       "investissement-gestion-des-biodechets",
+      "etude-methanisation-paca",
       "investissement-reemploi-reutilisation-reparation",
       "programme-synergies-durables",
       "decarb-flash-2025-2027",
       "bciat-biomasse-chaleur-industrie-agriculture-tertiaire"
     ],
     "linkedProjects": [
-      3
+      36
     ],
     "priority": {
       "default": 427
@@ -4682,6 +4708,7 @@
       "aides-au-reemploi-des-emballages",
       "diagnostic-dechets",
       "etude-reemploi-reutilisation-reparation",
+      "fond-vert-territoires-d-industrie",
       "charte-zero-dechet-plastique",
       "aide-tpe-transition-na"
     ],
@@ -4757,7 +4784,8 @@
     ],
     "mainTheme": "mobility",
     "programs": [
-      "engins-moins-polluants"
+      "engins-moins-polluants",
+      "fond-vert-territoires-d-industrie"
     ],
     "linkedProjects": [
       998

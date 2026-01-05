@@ -20,9 +20,9 @@ description: >-
   votre filière.
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
-contact question: https://contact-agir.ademe.fr/?id_dsp=DSP000713
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000713
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/aides-reemploi-emballages-contenants?cible=79
 nature de l'aide: financement
@@ -67,8 +67,7 @@ conditions d'éligibilité:
       Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
       Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
       Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine,
-      Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française,
-      Provence-Alpes-Côte d'Azur
+      Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -135,4 +134,3 @@ publicodes:
       - région = Occitanie
       - région = Pays de la Loire
       - région = Polynésie française
-      - région = Provence-Alpes-Côte d'Azur
