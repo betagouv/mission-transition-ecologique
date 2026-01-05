@@ -11440,6 +11440,11 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Situé sur l’un des 183 territoires labellisés par l’Etat \"[Territoires d’industrie](https://www.observatoire-des-territoires.gouv.fr/outils/cartographie-interactive/#c=indicator&i=_zon_.ti2&view=map72)\"",
+        "Les projets doivent présenter une assiette minimale de dépenses de 400 000 €(excepté Corse et Outre-Mer)",
+        "L'opération pour laquelle vous sollicitez une aide financière ne doit pas avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes (sous quelque forme que ce soit : marché signé, commande signée, devis accepté…)"
       ]
     },
     "eligibilityData": {
@@ -45130,6 +45135,12 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Pour postuler et participer à ce dispositif, vous devez :",
+        "Être engagé·e dans un projet de transition écologique dans lequel vous avez la volonté de faire le lien avec les questions de Qualité de Vie et des Conditions de Travail.",
+        "Constituer un binôme paritaire avec une représentation direction et une représentation salariés et/ou métier.",
+        "Maintenir l’engagement du binôme ou trinôme sur la durée du dispositif."
       ]
     },
     "eligibilityData": {
@@ -45888,5 +45899,200 @@
       }
     },
     "id": "investissement-methanisation-paca"
+  },
+  {
+    "titre": "Engins agricoles électriques",
+    "promesse": "Financez l'électrification de vos engins agricoles",
+    "description": "L'ADEME vous accompagne dans le financement d'une expérimentation pourtant sur l'électrification d'engins agricoles. Cette expérimentation peut consister, par exemple en :\n\n- Une **étude de faisabilité** d'électrification de vos engins.\n- L'**achat d'engins** agricoles électriques.\n- L'**électrification d'engins existants.**\n- L'achat d'un **kit d'autoconstruction.**\n- La construction d'**infrastructures de recharges**.\n\nAinsi, vous contribuez à décarboner le secteur de l'agriculture tout en pérennisant votre activité au regard des nouvelles normes environnementales.",
+    "description longue": "Les engins éligibles sont :\n\n- les engins agricoles automoteurs neufs ou rétrofités 100 %\\\n  électriques à batterie, conçus pour être utilisés dans le cadre d’activités agricoles.\n- les équipements émergents pour lesquels il reste des verrous\\\n  techniques, opérationnels, économiques à la date du dépôt de la demande d’aide\n- les engins électriques auto-construits par leur exploitant\\\n  \\\n  Les robots agricoles ne sont pas éligibles au présent dispositif.\\\n  L’engin devra respecter la réglementation en vigueur.\\\n  Les engins devront faire l’objet d’une acquisition par fonds propres ou en crédit-bail.\\\n  Le rétrofit d’engins à motorisation émettrice de CO2 (conforme à la norme en vigueur)\\\n  en motorisation électrique est éligible sous réserve du respect de la réglementation\\\n  en vigueur.\\\n  Hors cas de rétrofit, l’engin ne doit pas avoir fait l’objet précédemment d'une\\\n  première utilisation.\\\n  L’engin ne devra pas être cédé par l'acquéreur dans les 36 mois suivant son acquisition ou sa transformation en engin électrique.\\\n  Un même engin ne peut faire l’objet que d’une seule aide au titre du présent dispositif.\\\n  Le porteur doit déclarer au stade de la demande d’aide et tout au long de la durée du\\\n  contrat de financement toutes les aides obtenues et l’origine du subventionnement.",
+    "début de validité": "02/01/2026",
+    "fin de validité": "30/01/2026",
+    "illustration": "images/TEE_ampoule.webp",
+    "opérateur de contact": "ADEME",
+    "contact question": "mailto:engins-agricoles-elec@ademe.fr",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2025/engins-agricoles-electriques-programme-cee-e-trans?backtosearch=true",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 75% du coût de l'investissement",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/E-Trans%20engins%20agricoles%20%C3%A9lectriques%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2025/engins-agricoles-electriques-programme-cee-e-trans?backtosearch=true",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez votre étude de faisabilité ou vos investissements d'électrification d'engins agricoles."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Secteur agricole"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A"
+        ]
+      },
+      "validity": {
+        "start": "02/01/2026",
+        "end": "30/01/2026"
+      },
+      "priorityObjectives": [
+        "mobility"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la mobilité durable"
+        ]
+      }
+    },
+    "id": "e-trans"
   }
 ]
