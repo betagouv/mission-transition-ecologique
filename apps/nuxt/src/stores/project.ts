@@ -1,4 +1,5 @@
 import { CompanyData } from '@/tools/companyData'
+import { ProjectManager } from '@/tools/project/projectManager'
 import { FilterItemKeys, ProjectId, ProjectType, ThemeId } from '@/types'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
@@ -29,6 +30,10 @@ export const useProjectStore = defineStore('project', () => {
   }
 
   async function getProjectsFromIds(ids: ProjectId[]) {
+    if (projects.value.length === 0) {
+      await new ProjectManager().getProjects()
+    }
+
     return projects.value.filter((project) => {
       return ids.includes(project.id)
     })

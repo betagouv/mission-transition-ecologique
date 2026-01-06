@@ -47,7 +47,6 @@
 import { Identity } from '@/tools/identity'
 import { Image } from '@/tools/image'
 import { Marked } from '@/tools/marked'
-import { ProjectManager } from '@/tools/project/projectManager'
 import { ProjectType, Color, Testimony } from '@/types'
 
 export type TestimonyProps = {
@@ -60,7 +59,6 @@ const linkedProjectsTags = ref<ProjectType[]>([])
 
 onNuxtReady(async () => {
   if (props.testimony.projects) {
-    await new ProjectManager().getProjects()
     const allLinkedProjectsTags = await useProjectStore().getProjectsFromIds(props.testimony.projects)
     const shuffled = allLinkedProjectsTags.sort(() => 0.5 - Math.random())
     linkedProjectsTags.value = shuffled.slice(0, 3)
