@@ -4,12 +4,12 @@ import { BasePage } from './BasePage'
  * Projects class
  */
 export class Projects extends BasePage {
-  private readonly path = '/projets-entreprise'
+  private readonly _path = '/projets-entreprise'
 
   async navigate(): Promise<void> {
     await this.step('Projects list page', async () => {
       await this.refreshPage()
-      await this.page.goto(`${this.path}`)
+      await this.page.goto(`${this._path}`)
       this.log('Visited project list page')
       await this.waitForLoad()
     })

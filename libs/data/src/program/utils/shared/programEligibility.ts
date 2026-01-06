@@ -13,11 +13,11 @@ export class ProgramEligibility {
   public static isPartiallyEligible(program: ProgramType) {
     return (
       program["conditions d'éligibilité"]["autres critères d'éligibilité"] ||
-      (program["conditions d'éligibilité"]["nombre d'années d'activité"] && !this.isYearsEligibleForAll(program))
+      (program["conditions d'éligibilité"]["nombre d'années d'activité"] && !this._isYearsEligibleForAll(program))
     )
   }
 
-  private static isYearsEligibleForAll(program: ProgramType) {
+  private static _isYearsEligibleForAll(program: ProgramType) {
     return program["conditions d'éligibilité"]["nombre d'années d'activité"].includes(this.ELIGIBLE_FOR_ALL)
   }
 }
