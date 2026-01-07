@@ -4459,6 +4459,13 @@
     },
     "highlightPriority": null,
     "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
       "H"
     ],
     "faqs": []
@@ -4921,9 +4928,9 @@
   {
     "id": 1556,
     "slug": "machines-agricoles-propres",
-    "title": "Acqusition d'une machine agricole plus propre",
+    "title": "Acquisition d'une machine agricole plus propre",
     "nameTag": "🚜​ machines agricoles propres",
-    "shortDescription": "Une machine agricole est considérées comme \"propre\" si elle émet peu de CO₂ et qu'elle utilise des énergies renouvelables.",
+    "shortDescription": "Une machine agricole est considérée comme \"propre\" si elle émet peu de CO₂ et qu'elle utilise des énergies renouvelables.",
     "image": "/images/projet/machine-agricole-propre.webp",
     "longDescription": "13 % des émissions de carbone de l'agriculture sont le fait des moteurs des machines agricoles. Pour **réduire l'empreinte carbone** de votre activité agricole, remplacez vos engins agricoles par des **machines hybrides ou fonctionnant à l'électricité, à l'hydrogène, au gaz**...\\\nAinsi, vous contribuez à l'amélioration de la qualité de l'air et vous **pérennisez votre activité** vis-à-vis des **nouvelles normes environnementales**.",
     "moreDescription": "- [**Guide méthodologique ClimAgri®**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/7812-guide-methodologique-climagriR.html#product-presentation).\n- [**Guide des bonnes pratiques agricoles pour l'amélioration de la qualité de l'air**](https://librairie.ademe.fr/air/8885-10691-guide-des-bonnes-pratiques-agricoles-pour-l-amelioration-de-la-qualite-de-l-air.html#product-presentation), un guide de l'ADEME.",
