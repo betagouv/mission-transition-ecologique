@@ -23,8 +23,8 @@
     <template #faq>
       <div class="fr-container--fluid fr-container-md">
         <div class="fr-container fr-px-md-0">
-          <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-pt-6v fr-mb-2v">Questions fréquentes</h2>
-          <p class="fr-text--blue-france fr-text-center fr-text-left-md fr-mb-8v">
+          <h2 class="fr-text--blue-900 fr-text-center fr-text-left-md fr-pt-6v fr-mb-2v">Questions fréquentes</h2>
+          <p class="fr-text--blue-900 fr-text-center fr-text-left-md fr-mb-8v">
             Trouvez ici des réponses concrètes sur les aides, démarches et outils pour réussir votre transition écologique.
           </p>
         </div>

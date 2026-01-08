@@ -13,7 +13,7 @@
       <span
         :id="isSmallScreen ? 'badge-mobile' : 'base-badge'"
         :class="badgeIcon"
-        class="fr-text--blue-france fr-radius-a--2v ignore-modal-click register-badge"
+        class="fr-text--blue-900 fr-radius-a--2v ignore-modal-click register-badge"
       >
       </span>
     </span>

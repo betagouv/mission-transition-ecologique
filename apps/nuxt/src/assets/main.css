@@ -226,13 +226,13 @@
   background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
 }
 .fr-accordion-bg--blue-france .fr-collapse--expanded {
-  background-color: #000091 !important;
+  background-color: #050d3c !important;
 }
 .fr-accordion-bg--blue-france--light .fr-collapse--expanded {
-  background-color: rgb(145.5, 145.5, 255) !important;
+  background-color: rgb(131.7692307692, 148.2, 244.7307692308) !important;
 }
 .fr-accordion-bg--blue-france--lightness .fr-collapse--expanded {
-  background-color: rgb(218.5, 218.5, 255) !important;
+  background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
 }
 .fr-accordion-bg--grey .fr-collapse--expanded {
   background-color: #777777 !important;
@@ -363,13 +363,13 @@
     background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
   }
   .fr-bg--blue-france {
-    background-color: #000091 !important;
+    background-color: #050d3c !important;
   }
   .fr-bg--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
+    background-color: rgb(131.7692307692, 148.2, 244.7307692308) !important;
   }
   .fr-bg--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
+    background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
   }
   .fr-bg--grey {
     background-color: #777777 !important;
@@ -508,13 +508,13 @@
     background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
   }
   .fr-bg-sm--blue-france {
-    background-color: #000091 !important;
+    background-color: #050d3c !important;
   }
   .fr-bg-sm--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
+    background-color: rgb(131.7692307692, 148.2, 244.7307692308) !important;
   }
   .fr-bg-sm--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
+    background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
   }
   .fr-bg-sm--grey {
     background-color: #777777 !important;
@@ -653,13 +653,13 @@
     background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
   }
   .fr-bg-md--blue-france {
-    background-color: #000091 !important;
+    background-color: #050d3c !important;
   }
   .fr-bg-md--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
+    background-color: rgb(131.7692307692, 148.2, 244.7307692308) !important;
   }
   .fr-bg-md--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
+    background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
   }
   .fr-bg-md--grey {
     background-color: #777777 !important;
@@ -798,13 +798,13 @@
     background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
   }
   .fr-bg-lg--blue-france {
-    background-color: #000091 !important;
+    background-color: #050d3c !important;
   }
   .fr-bg-lg--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
+    background-color: rgb(131.7692307692, 148.2, 244.7307692308) !important;
   }
   .fr-bg-lg--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
+    background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
   }
   .fr-bg-lg--grey {
     background-color: #777777 !important;
@@ -943,13 +943,13 @@
     background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
   }
   .fr-bg-xl--blue-france {
-    background-color: #000091 !important;
+    background-color: #050d3c !important;
   }
   .fr-bg-xl--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
+    background-color: rgb(131.7692307692, 148.2, 244.7307692308) !important;
   }
   .fr-bg-xl--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
+    background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
   }
   .fr-bg-xl--grey {
     background-color: #777777 !important;
@@ -1086,13 +1086,13 @@
     background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
   }
   .fr-bg-xs--blue-france {
-    background-color: #000091 !important;
+    background-color: #050d3c !important;
   }
   .fr-bg-xs--blue-france--light {
-    background-color: rgb(145.5, 145.5, 255) !important;
+    background-color: rgb(131.7692307692, 148.2, 244.7307692308) !important;
   }
   .fr-bg-xs--blue-france--lightness {
-    background-color: rgb(218.5, 218.5, 255) !important;
+    background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
   }
   .fr-bg-xs--grey {
     background-color: #777777 !important;
@@ -1106,11 +1106,11 @@
 }
 
 .fr-badge.fr-badge--info {
-  color: #000091;
+  color: #050d3c;
 }
 
 .fr-filter-count-badge {
-  background-color: #000091;
+  background-color: #050d3c;
   color: white;
   border-radius: 1rem;
   padding: 0 0.35rem;
@@ -1240,13 +1240,13 @@
   border-top: thin solid rgb(213.9230769231, 219.4, 251.5769230769);
 }
 .fr-border-t--blue-france {
-  border-top: thin solid #000091;
+  border-top: thin solid #050d3c;
 }
 .fr-border-t--blue-france--light {
-  border-top: thin solid rgb(145.5, 145.5, 255);
+  border-top: thin solid rgb(131.7692307692, 148.2, 244.7307692308);
 }
 .fr-border-t--blue-france--lightness {
-  border-top: thin solid rgb(218.5, 218.5, 255);
+  border-top: thin solid rgb(213.9230769231, 219.4, 251.5769230769);
 }
 .fr-border-t--grey {
   border-top: thin solid #777777;
@@ -1360,13 +1360,13 @@
   border-right: thin solid rgb(213.9230769231, 219.4, 251.5769230769);
 }
 .fr-border-r--blue-france {
-  border-right: thin solid #000091;
+  border-right: thin solid #050d3c;
 }
 .fr-border-r--blue-france--light {
-  border-right: thin solid rgb(145.5, 145.5, 255);
+  border-right: thin solid rgb(131.7692307692, 148.2, 244.7307692308);
 }
 .fr-border-r--blue-france--lightness {
-  border-right: thin solid rgb(218.5, 218.5, 255);
+  border-right: thin solid rgb(213.9230769231, 219.4, 251.5769230769);
 }
 .fr-border-r--grey {
   border-right: thin solid #777777;
@@ -1480,13 +1480,13 @@
   border-bottom: thin solid rgb(213.9230769231, 219.4, 251.5769230769);
 }
 .fr-border-b--blue-france {
-  border-bottom: thin solid #000091;
+  border-bottom: thin solid #050d3c;
 }
 .fr-border-b--blue-france--light {
-  border-bottom: thin solid rgb(145.5, 145.5, 255);
+  border-bottom: thin solid rgb(131.7692307692, 148.2, 244.7307692308);
 }
 .fr-border-b--blue-france--lightness {
-  border-bottom: thin solid rgb(218.5, 218.5, 255);
+  border-bottom: thin solid rgb(213.9230769231, 219.4, 251.5769230769);
 }
 .fr-border-b--grey {
   border-bottom: thin solid #777777;
@@ -1600,13 +1600,13 @@
   border-left: thin solid rgb(213.9230769231, 219.4, 251.5769230769);
 }
 .fr-border-l--blue-france {
-  border-left: thin solid #000091;
+  border-left: thin solid #050d3c;
 }
 .fr-border-l--blue-france--light {
-  border-left: thin solid rgb(145.5, 145.5, 255);
+  border-left: thin solid rgb(131.7692307692, 148.2, 244.7307692308);
 }
 .fr-border-l--blue-france--lightness {
-  border-left: thin solid rgb(218.5, 218.5, 255);
+  border-left: thin solid rgb(213.9230769231, 219.4, 251.5769230769);
 }
 .fr-border-l--grey {
   border-left: thin solid #777777;
@@ -1717,13 +1717,13 @@
   border: thin solid rgb(213.9230769231, 219.4, 251.5769230769);
 }
 .fr-border--blue-france {
-  border: thin solid #000091;
+  border: thin solid #050d3c;
 }
 .fr-border--blue-france--light {
-  border: thin solid rgb(145.5, 145.5, 255);
+  border: thin solid rgb(131.7692307692, 148.2, 244.7307692308);
 }
 .fr-border--blue-france--lightness {
-  border: thin solid rgb(218.5, 218.5, 255);
+  border: thin solid rgb(213.9230769231, 219.4, 251.5769230769);
 }
 .fr-border--grey {
   border: thin solid #777777;
@@ -1896,16 +1896,16 @@
   background-color: rgb(10.1346153846, 26.35, 121.6153846154) !important;
 }
 .fr-btn-bg--blue-france {
-  background-color: #000091 !important;
+  background-color: #050d3c !important;
 }
 .fr-btn-bg--blue-france--light:hover, .fr-btn-bg--blue-france--light:active {
-  background-color: rgb(145.5, 145.5, 255) !important;
+  background-color: rgb(131.7692307692, 148.2, 244.7307692308) !important;
 }
 .fr-btn-bg--blue-france--lightness:hover, .fr-btn-bg--blue-france--lightness:active {
-  background-color: rgb(218.5, 218.5, 255) !important;
+  background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
 }
 .fr-btn-bg--blue-france:hover, .fr-btn-bg--blue-france:active {
-  background-color: rgb(0, 0, 199.75) !important;
+  background-color: rgb(10.1346153846, 26.35, 121.6153846154) !important;
 }
 .fr-btn-bg--grey {
   background-color: #777777 !important;
@@ -1953,7 +1953,7 @@
   box-shadow: inset 0 0 0 1px #050d3c;
 }
 .fr-btn--secondary--blue-france {
-  box-shadow: inset 0 0 0 1px #000091;
+  box-shadow: inset 0 0 0 1px #050d3c;
 }
 .fr-btn--secondary--grey {
   box-shadow: inset 0 0 0 1px #777;
@@ -2181,7 +2181,7 @@
   }
 }
 .fr-card.fr-card--program .fr-card__content p.fr-card__desc {
-  color: #000091;
+  color: #050d3c;
   font-weight: 700;
 }
 @media (min-width: 0) {
@@ -2244,20 +2244,20 @@
 }
 .fr-card--yellow {
   background-color: #facf35 !important;
-  color: #000091 !important;
+  color: #050d3c !important;
 }
 .fr-card--yellow .fr-card__title {
-  color: #000091 !important;
+  color: #050d3c !important;
 }
 .fr-card--deep-red .fr-card__title {
   color: var(--text-default-grey);
 }
 .fr-card--red {
   background-color: #fca081 !important;
-  color: #000091 !important;
+  color: #050d3c !important;
 }
 .fr-card--red .fr-card__title {
-  color: #000091 !important;
+  color: #050d3c !important;
 }
 .fr-card--purple {
   background-color: #6a62f4 !important;
@@ -2302,7 +2302,7 @@
   color: var(--text-inverted-blue-france) !important;
 }
 .fr-card--blue-france {
-  background-color: #000091 !important;
+  background-color: #050d3c !important;
   color: var(--text-inverted-blue-france) !important;
 }
 .fr-card--blue-france .fr-card__title {
@@ -2509,10 +2509,10 @@
 }
 .fr-gradient--yellow {
   background-image: linear-gradient(to bottom, transparent, #facf35);
-  color: #000091;
+  color: #050d3c;
 }
 .fr-gradient--yellow .fr-gradient__title {
-  color: #000091;
+  color: #050d3c;
 }
 .fr-gradient--deep-red {
   background-image: linear-gradient(to bottom, transparent, #e1000f);
@@ -2522,10 +2522,10 @@
 }
 .fr-gradient--red {
   background-image: linear-gradient(to bottom, transparent, #fca081);
-  color: #000091;
+  color: #050d3c;
 }
 .fr-gradient--red .fr-gradient__title {
-  color: #000091;
+  color: #050d3c;
 }
 .fr-gradient--purple {
   background-image: linear-gradient(to bottom, transparent, #6a62f4);
@@ -2570,7 +2570,7 @@
   color: var(--text-inverted-blue-france);
 }
 .fr-gradient--blue-france {
-  background-image: linear-gradient(to bottom, transparent, #000091);
+  background-image: linear-gradient(to bottom, transparent, #050d3c);
   color: var(--text-inverted-blue-france);
 }
 .fr-gradient--blue-france .fr-gradient__title {
@@ -2578,10 +2578,10 @@
 }
 .fr-gradient--grey {
   background-image: linear-gradient(to bottom, transparent, #777);
-  color: #000091;
+  color: #050d3c;
 }
 .fr-gradient--grey .fr-gradient__title {
-  color: #000091;
+  color: #050d3c;
 }
 
 @media (min-width: 0) {
@@ -2891,7 +2891,7 @@
   line-height: 1.65rem;
 }
 .fr-header .fr-nav button.fr-nav__btn {
-  color: #000091;
+  color: #050d3c;
   font-weight: 500;
   min-height: 2rem;
   padding: 0.5rem 1rem;
@@ -2938,7 +2938,7 @@
   background-image: linear-gradient(0deg, #050d3c, #050d3c);
 }
 .fr-highlight-border--blue-france {
-  background-image: linear-gradient(0deg, #000091, #000091);
+  background-image: linear-gradient(0deg, #050d3c, #050d3c);
 }
 .fr-highlight-border--grey {
   background-image: linear-gradient(0deg, #777, #777);
@@ -3061,13 +3061,13 @@
   background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
 }
 .fr-highlight-bg--blue-france {
-  background-color: #000091 !important;
+  background-color: #050d3c !important;
 }
 .fr-highlight-bg--blue-france--light {
-  background-color: rgb(145.5, 145.5, 255) !important;
+  background-color: rgb(131.7692307692, 148.2, 244.7307692308) !important;
 }
 .fr-highlight-bg--blue-france--lightness {
-  background-color: rgb(218.5, 218.5, 255) !important;
+  background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
 }
 .fr-highlight-bg--grey {
   background-color: #777777 !important;
@@ -3856,7 +3856,7 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
   box-shadow: inset 0 -2px 0 0 #050d3c;
 }
 .fr-search-bar--blue-france .fr-input, .fr-search-bar--blue-france .search-button, .fr-search-bar--blue-france .search-clear {
-  box-shadow: inset 0 -2px 0 0 #000091;
+  box-shadow: inset 0 -2px 0 0 #050d3c;
 }
 .fr-search-bar--grey .fr-input, .fr-search-bar--grey .search-button, .fr-search-bar--grey .search-clear {
   box-shadow: inset 0 -2px 0 0 #777;
@@ -3866,7 +3866,7 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
 }
 .fr-search-bar--loading .search-button::before {
   content: "";
-  border: 2px solid #000091;
+  border: 2px solid #050d3c;
   border-top-color: transparent;
   border-radius: 50%;
   position: absolute;
@@ -3925,14 +3925,14 @@ a.fr-tag[aria-pressed=true].fr-tag--yellow.fr-tag--sm, button.fr-tag[aria-presse
 }
 a.fr-tag[aria-pressed=true].fr-tag--yellow, button.fr-tag[aria-pressed=true].fr-tag--yellow {
   background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #facf35 0.625rem) !important;
-  color: #000091 !important;
+  color: #050d3c !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--red.fr-tag--sm {
   background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #fca081 0.5rem) !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--red, button.fr-tag[aria-pressed=true].fr-tag--red {
   background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #fca081 0.625rem) !important;
-  color: #000091 !important;
+  color: #050d3c !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--purple.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--purple.fr-tag--sm {
   background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #6a62f4 0.5rem) !important;
@@ -3977,10 +3977,10 @@ a.fr-tag[aria-pressed=true].fr-tag--blue-900, button.fr-tag[aria-pressed=true].f
   color: var(--text-inverted-blue-france) !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--blue-france.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--blue-france.fr-tag--sm {
-  background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #000091 0.5rem) !important;
+  background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #050d3c 0.5rem) !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--blue-france, button.fr-tag[aria-pressed=true].fr-tag--blue-france {
-  background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #000091 0.625rem) !important;
+  background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #050d3c 0.625rem) !important;
   color: var(--text-inverted-blue-france) !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm {
@@ -3988,7 +3988,7 @@ a.fr-tag[aria-pressed=true].fr-tag--grey.fr-tag--sm, button.fr-tag[aria-pressed=
 }
 a.fr-tag[aria-pressed=true].fr-tag--grey, button.fr-tag[aria-pressed=true].fr-tag--grey {
   background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #777 0.625rem) !important;
-  color: #000091 !important;
+  color: #050d3c !important;
 }
 a.fr-tag[aria-pressed=false], button.fr-tag[aria-pressed=false] {
   /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -4045,7 +4045,7 @@ a.fr-tag[aria-pressed=false]:hover, a.fr-tag[aria-pressed=false]:active, button.
   color: #050d3c !important;
 }
 .fr-text--blue-france {
-  color: #000091 !important;
+  color: #050d3c !important;
 }
 .fr-text--grey {
   color: #777 !important;
@@ -4085,8 +4085,8 @@ a.fr-tag[aria-pressed=false]:hover, a.fr-tag[aria-pressed=false]:active, button.
 }
 
 :root {
-  --blue-900: #050d3c;
-  --border-active-blue-france: var(--blue-900);
+  --blue-france-sun-113-625: #050d3c;
+  --background-action-high-blue-france-hover: rgb(10.1346153846, 26.35, 121.6153846154);
 }
 
 /*# sourceMappingURL=main.css.map */

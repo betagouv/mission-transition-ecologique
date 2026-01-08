@@ -1,3 +1,5 @@
+@use 'scss/tool';
+@use 'scss/setting';
 @import "scss/dsfr";
 @import "scss/accordion";
 @import "scss/background";
@@ -28,8 +30,7 @@
 @import "scss/markdown";
 
 
-
 :root {
-  --blue-900: #050d3c;
-  --border-active-blue-france: var(--blue-900);
+  --blue-france-sun-113-625: #{setting.$blue-900};
+  --background-action-high-blue-france-hover: #{tool.scaleLightness(setting.$blue-900, 15%)};
 }

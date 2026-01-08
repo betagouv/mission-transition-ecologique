@@ -8,7 +8,7 @@
               class="fr-col-12 fr-mt-3v fr-text-center fr-text-left-md"
               :class="lineClassBySideMenu"
             >
-              <h1 class="fr-text--blue-france">{{ title }}</h1>
+              <h1 class="fr-text--blue-900">{{ title }}</h1>
             </div>
           </div>
           <div

@@ -21,17 +21,18 @@ $grey: #777;
 $text-grey: var(--text-default-grey);
 $blue-france-inverted: var(--text-inverted-blue-france);
 
+
 $colors: (
   "white": color.$white,
   "black": color.$black,
   "yellow": (
     "color": $yellow,
-    "color-with-background": color.$blue-france
+    "color-with-background": $blue-900
   ),
   "deep-red": color.$red-marianne,
   "red": (
     "color": $red,
-    "color-with-background": color.$blue-france
+    "color-with-background": $blue-900
   ),
   "purple" : (
     "color": $purple,
@@ -58,11 +59,11 @@ $colors: (
     "color-with-background": $blue-france-inverted,
   ),
   "blue-france": (
-    "color": color.$blue-france,
+    "color": $blue-900,
     "color-with-background": $blue-france-inverted,
   ),
   "grey": (
     "color": $grey,
-    "color-with-background": color.$blue-france
+    "color-with-background": $blue-900
   ),
 );
