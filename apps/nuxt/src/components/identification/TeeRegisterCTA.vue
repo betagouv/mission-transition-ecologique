@@ -1,6 +1,6 @@
 <template>
   <DsfrButton
-    :class="isDataFull ? `fr-btn--tertiary-no-outline` : ``"
+    :class="isDataFull ? `fr-btn--tertiary-no-outline` : `fr-btn-bg--blue-agir`"
     class="ignore-modal-click"
     :title="isDataFull ? companyName : undefined"
     @click="openModal"
@@ -21,7 +21,7 @@
     <span
       v-if="!isSmallScreen"
       id="register-text"
-      :class="isDataFull ? `` : `fr-text--yellow ignore-modal-click`"
+      :class="isDataFull ? `` : `ignore-modal-click`"
     >
       {{ isDataFull ? companyName : Translation.t('register.mainTitle') }}
     </span>

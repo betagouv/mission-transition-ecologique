@@ -19,7 +19,6 @@
     </div>
     <TeeDsfrButton
       v-if="ctaLabel"
-      class="fr-text--yellow"
       :label="ctaLabel"
       @click="emit('cta-click')"
     />

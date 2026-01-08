@@ -1754,7 +1754,12 @@
   /* stylelint-disable-next-line function-name-case */
   background-color: white !important;
 }
-.fr-btn-bg--white:hover, .fr-btn-bg--white:active {
+.fr-btn-bg--white:hover {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: white !important;
+}
+.fr-btn-bg--white:active {
   /* Wrong parsing on function name from stylelint, so next line is disable */
   /* stylelint-disable-next-line function-name-case */
   background-color: white !important;
@@ -1774,10 +1779,15 @@
   /* stylelint-disable-next-line function-name-case */
   background-color: rgb(231.7, 231.7, 231.7) !important;
 }
-.fr-btn-bg--black:hover, .fr-btn-bg--black:active {
+.fr-btn-bg--black:hover {
   /* Wrong parsing on function name from stylelint, so next line is disable */
   /* stylelint-disable-next-line function-name-case */
   background-color: rgb(56.95, 56.95, 56.95) !important;
+}
+.fr-btn-bg--black:active {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: rgb(80.25, 80.25, 80.25) !important;
 }
 .fr-btn-bg--yellow {
   background-color: #facf35 !important;
@@ -1788,8 +1798,11 @@
 .fr-btn-bg--yellow--lightness:hover, .fr-btn-bg--yellow--lightness:active {
   background-color: rgb(254.5, 250.2, 234.8) !important;
 }
-.fr-btn-bg--yellow:hover, .fr-btn-bg--yellow:active {
+.fr-btn-bg--yellow:hover {
   background-color: rgb(250.75, 214.2, 83.3) !important;
+}
+.fr-btn-bg--yellow:active {
+  background-color: rgb(251.25, 219, 103.5) !important;
 }
 .fr-btn-bg--deep-red {
   /* Wrong parsing on function name from stylelint, so next line is disable */
@@ -1806,10 +1819,15 @@
   /* stylelint-disable-next-line function-name-case */
   background-color: rgb(255, 226.5, 228.4) !important;
 }
-.fr-btn-bg--deep-red:hover, .fr-btn-bg--deep-red:active {
+.fr-btn-bg--deep-red:hover {
   /* Wrong parsing on function name from stylelint, so next line is disable */
   /* stylelint-disable-next-line function-name-case */
   background-color: rgb(255, 12.75, 28.9) !important;
+}
+.fr-btn-bg--deep-red:active {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  background-color: rgb(255, 41.25, 55.5) !important;
 }
 .fr-btn-bg--red {
   background-color: #fca081 !important;
@@ -1820,8 +1838,11 @@
 .fr-btn-bg--red--lightness:hover, .fr-btn-bg--red--lightness:active {
   background-color: rgb(254.7, 245.5, 242.4) !important;
 }
-.fr-btn-bg--red:hover, .fr-btn-bg--red:active {
+.fr-btn-bg--red:hover {
   background-color: rgb(252.45, 174.25, 147.9) !important;
+}
+.fr-btn-bg--red:active {
+  background-color: rgb(252.75, 183.75, 160.5) !important;
 }
 .fr-btn-bg--purple {
   background-color: #6a62f4 !important;
@@ -1832,8 +1853,11 @@
 .fr-btn-bg--purple--lightness:hover, .fr-btn-bg--purple--lightness:active {
   background-color: rgb(240.1, 239.3, 253.9) !important;
 }
-.fr-btn-bg--purple:hover, .fr-btn-bg--purple:active {
+.fr-btn-bg--purple:hover {
   background-color: rgb(128.35, 121.55, 245.65) !important;
+}
+.fr-btn-bg--purple:active {
+  background-color: rgb(143.25, 137.25, 246.75) !important;
 }
 .fr-btn-bg--green {
   background-color: #1ebe8e !important;
@@ -1844,8 +1868,11 @@
 .fr-btn-bg--green--lightness:hover, .fr-btn-bg--green--lightness:active {
   background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
 }
-.fr-btn-bg--green:hover, .fr-btn-bg--green:active {
+.fr-btn-bg--green:hover {
   background-color: rgb(42.1136363636, 221.3863636364, 167.6045454545) !important;
+}
+.fr-btn-bg--green:active {
+  background-color: rgb(67.1590909091, 225.3409090909, 177.8863636364) !important;
 }
 .fr-btn-bg--green-agir {
   background-color: #307c6f !important;
@@ -1856,8 +1883,11 @@
 .fr-btn-bg--green-agir--lightness:hover, .fr-btn-bg--green-agir--lightness:active {
   background-color: rgb(230.6325581395, 245.5674418605, 243.0127906977) !important;
 }
-.fr-btn-bg--green-agir:hover, .fr-btn-bg--green-agir:active {
+.fr-btn-bg--green-agir:hover {
   background-color: rgb(62.1488372093, 160.5511627907, 143.7191860465) !important;
+}
+.fr-btn-bg--green-agir:active {
+  background-color: rgb(72.2441860465, 184.2558139535, 165.0959302326) !important;
 }
 .fr-btn-bg--blue {
   background-color: #001891 !important;
@@ -1868,8 +1898,11 @@
 .fr-btn-bg--blue--lightness:hover, .fr-btn-bg--blue--lightness:active {
   background-color: rgb(218.5, 224.5413793103, 255) !important;
 }
-.fr-btn-bg--blue:hover, .fr-btn-bg--blue:active {
+.fr-btn-bg--blue:hover {
   background-color: rgb(0, 33.0620689655, 199.75) !important;
+}
+.fr-btn-bg--blue:active {
+  background-color: rgb(0, 39.1034482759, 236.25) !important;
 }
 .fr-btn-bg--blue-agir {
   background-color: #465f9d !important;
@@ -1880,8 +1913,11 @@
 .fr-btn-bg--blue-agir--lightness:hover, .fr-btn-bg--blue-agir--lightness:active {
   background-color: rgb(235.4268722467, 238.5436123348, 246.2731277533) !important;
 }
-.fr-btn-bg--blue-agir:hover, .fr-btn-bg--blue-agir:active {
+.fr-btn-bg--blue-agir:hover {
   background-color: rgb(88.6284140969, 115.1207048458, 180.8215859031) !important;
+}
+.fr-btn-bg--blue-agir:active {
+  background-color: rgb(108.2015418502, 131.577092511, 189.5484581498) !important;
 }
 .fr-btn-bg--blue-900 {
   background-color: #050d3c !important;
@@ -1892,8 +1928,11 @@
 .fr-btn-bg--blue-900--lightness:hover, .fr-btn-bg--blue-900--lightness:active {
   background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
 }
-.fr-btn-bg--blue-900:hover, .fr-btn-bg--blue-900:active {
+.fr-btn-bg--blue-900:hover {
   background-color: rgb(10.1346153846, 26.35, 121.6153846154) !important;
+}
+.fr-btn-bg--blue-900:active {
+  background-color: rgb(13.5576923077, 35.25, 162.6923076923) !important;
 }
 .fr-btn-bg--blue-france {
   background-color: #050d3c !important;
@@ -1904,8 +1943,11 @@
 .fr-btn-bg--blue-france--lightness:hover, .fr-btn-bg--blue-france--lightness:active {
   background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
 }
-.fr-btn-bg--blue-france:hover, .fr-btn-bg--blue-france:active {
+.fr-btn-bg--blue-france:hover {
   background-color: rgb(10.1346153846, 26.35, 121.6153846154) !important;
+}
+.fr-btn-bg--blue-france:active {
+  background-color: rgb(13.5576923077, 35.25, 162.6923076923) !important;
 }
 .fr-btn-bg--grey {
   background-color: #777777 !important;
@@ -1916,8 +1958,11 @@
 .fr-btn-bg--grey--lightness:hover, .fr-btn-bg--grey--lightness:active {
   background-color: rgb(241.4, 241.4, 241.4) !important;
 }
-.fr-btn-bg--grey:hover, .fr-btn-bg--grey:active {
+.fr-btn-bg--grey:hover {
   background-color: rgb(139.4, 139.4, 139.4) !important;
+}
+.fr-btn-bg--grey:active {
+  background-color: #999999 !important;
 }
 .fr-btn--secondary--white {
   box-shadow: inset 0 0 0 1px #fff;
@@ -2891,7 +2936,7 @@
   line-height: 1.65rem;
 }
 .fr-header .fr-nav button.fr-nav__btn {
-  color: #050d3c;
+  color: #465f9d;
   font-weight: 500;
   min-height: 2rem;
   padding: 0.5rem 1rem;
@@ -4105,8 +4150,10 @@ a.fr-tag[aria-pressed=false]:hover, a.fr-tag[aria-pressed=false]:active, button.
 }
 
 :root {
-  --blue-france-sun-113-625: #050d3c;
-  --background-action-high-blue-france-hover: rgb(10.1346153846, 26.35, 121.6153846154);
+  --blue-france-sun-113-625: #465f9d;
+  --background-action-high-blue-france-hover: rgb(88.6284140969, 115.1207048458, 180.8215859031);
+  --background-action-high-blue-france-active: rgb(108.2015418502, 131.577092511, 189.5484581498);
+  --text-title-grey: #050d3c;
 }
 
 /*# sourceMappingURL=main.css.map */

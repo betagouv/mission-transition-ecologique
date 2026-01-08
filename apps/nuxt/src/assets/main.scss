@@ -32,6 +32,8 @@
 
 
 :root {
-  --blue-france-sun-113-625: #{setting.$blue-900};
-  --background-action-high-blue-france-hover: #{tool.scaleLightness(setting.$blue-900, 15%)};
+  --blue-france-sun-113-625: #{setting.$blue-agir};
+  --background-action-high-blue-france-hover: #{tool.scaleLightness(setting.$blue-agir, 15%)};
+  --background-action-high-blue-france-active: #{tool.scaleLightness(setting.$blue-agir, 25%)};
+  --text-title-grey: #{setting.$blue-900};
 }
