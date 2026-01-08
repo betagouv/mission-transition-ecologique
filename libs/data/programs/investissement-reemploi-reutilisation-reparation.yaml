@@ -36,14 +36,14 @@ description longue: >-
   La réalisation préalable d'une étude de faisabilité est une condition
   d'éligibilité.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
+fin de validité: 31/12/2026
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000717
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000894
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-investissements-reemploi-reutilisation-reparation-hors-emballages
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-aux-investissements-pour-le-reemploi-reutilisation-et-la-reparation-hors-emballages
 nature de l'aide: financement
-montant du financement: Jusqu'à 75% des coûts, dans un maximum de 200 000 €
+montant du financement: Jusqu'à 60% des coûts, dans un maximum de 200 000 €
 objectifs:
   - description: >-
       Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
@@ -76,9 +76,9 @@ conditions d'éligibilité:
   secteur géographique:
     - >-
       Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
-      Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
-      Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine,
-      Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française
+      Loire, Grand Est, Hauts-de-France, Île-de-France, Martinique, Normandie,
+      Nouvelle-Aquitaine, Occitanie, Pays de la Loire, Provence-Alpes-Côte
+      d'Azur
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -123,16 +123,11 @@ publicodes:
       - région = Bretagne
       - région = Centre-Val de Loire
       - région = Grand Est
-      - région = Guadeloupe
-      - région = Guyane
       - région = Hauts-de-France
       - région = Île-de-France
-      - région = La Réunion
       - région = Martinique
-      - région = Mayotte
       - région = Normandie
       - région = Nouvelle-Aquitaine
-      - région = Nouvelle-Calédonie
       - région = Occitanie
       - région = Pays de la Loire
-      - région = Polynésie française
+      - région = Provence-Alpes-Côte d'Azur

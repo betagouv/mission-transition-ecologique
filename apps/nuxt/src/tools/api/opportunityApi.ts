@@ -64,18 +64,18 @@ export default class OpportunityApi extends RequestApi {
     const opportunity: OpportunityFormType = {
       type: this._opportunityType,
       id: this._getId(),
-      titleMessage: this.getTitleMessage(),
+      titleMessage: this._getTitleMessage(),
       firstName: this._opportunityForm.name.value,
       lastName: this._opportunityForm.surname.value,
       email: this._opportunityForm.email.value,
       phoneNumber: this._opportunityForm.tel.value,
       theme: this._opportunityForm.theme.value as ThemeId,
       companySiret: this._opportunityForm.siret.value,
-      companyName: this.getFromUsedTrack(TrackId.Siret, 'denomination'),
+      companyName: this._getFromUsedTrack(TrackId.Siret, 'denomination'),
       companySector: TrackStructure.getSector(),
       companySize: TrackStructure.getSize() ?? undefined,
       message: this._opportunityForm.needs.value,
-      otherData: this.getAllValuesFromUsedTrack(),
+      otherData: this._getAllValuesFromUsedTrack(),
       linkToPage: this._generateLinkToPage(),
       linkToCatalog: this._generateCatalogLink()
     }
@@ -123,18 +123,18 @@ export default class OpportunityApi extends RequestApi {
     return undefined
   }
 
-  private getTitleMessage(): string {
+  private _getTitleMessage(): string {
     if (isProjectFormDataType(this._opportunityForm)) {
       return this._opportunityForm.projectTitle.value as string
     }
     return this._slug as string
   }
 
-  private getFromUsedTrack(trackId: TrackId, key: string) {
+  private _getFromUsedTrack(trackId: TrackId, key: string) {
     return this._usedTrackStore.findInQuestionnaireDataByTrackIdAndKey(trackId, key)
   }
 
-  private getAllValuesFromUsedTrack() {
+  private _getAllValuesFromUsedTrack() {
     return JSON.stringify(this._usedTrackStore.completedQuestionnaireData)
   }
 }

@@ -58,6 +58,17 @@
         "format": ["PascalCase"],
         "leadingUnderscore": "forbid",
         "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": "memberLike",
+        "modifiers": [
+          "private"
+        ],
+        "format": [
+          "camelCase",
+          "UPPER_CASE"
+        ],
+        "leadingUnderscore": "require"
       }
     ],
     "curly": [

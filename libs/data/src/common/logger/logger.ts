@@ -2,7 +2,7 @@ import * as fs from 'fs'
 import { LogEvent, LoggerInterface, LoggerType, LogLevel, LogLevelDisplay } from './types'
 
 export class Logger implements LoggerInterface {
-  private logs: LogEvent[] = []
+  private _logs: LogEvent[] = []
 
   // Configuration centralisée des URLs Baserow
   private static readonly _baserowBaseUri = 'https://baserow.io/database/114839/table/'
@@ -29,7 +29,7 @@ export class Logger implements LoggerInterface {
   }
 
   log(criticality: LogLevel, message: string, name: string, baserowId: number, data?: unknown, type?: LoggerType): void {
-    this.logs.push({ name, baserowId, criticality, message, data, type })
+    this._logs.push({ name, baserowId, criticality, message, data, type })
     if (this._consoleLog) {
       console.log({ name, baserowId, criticality, message, data, type })
     }
@@ -50,7 +50,7 @@ export class Logger implements LoggerInterface {
   }
 
   private _sortLogs(): LogEvent[] {
-    return this.logs.sort((a, b) => {
+    return this._logs.sort((a, b) => {
       if (a.criticality === LogLevel.Info && b.criticality !== LogLevel.Info) {
         return 1
       }

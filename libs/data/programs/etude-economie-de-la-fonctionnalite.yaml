@@ -27,12 +27,12 @@ description longue: >-
   répondent aux besoins réels des usagers tout en limitant la production de
   biens matériels.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
+fin de validité: 31/12/2026
 illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000712
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000891
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-a-leconomie-fonctionnalite-cooperation?cible=79
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-leconomie-de-la-fonctionnalite-et-de-la-cooperation?cible=79
 nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude
 objectifs:
@@ -68,7 +68,11 @@ conditions d'éligibilité:
     - Toutes tailles
     - Éligible aux micro-entreprises
   secteur géographique:
-    - France et territoires d'outre-mer
+    - >-
+      Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Grand Est,
+      Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion,
+      Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie,
+      Occitanie, Pays de la Loire, Polynésie française
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -90,7 +94,8 @@ publicodes:
       toutes ces conditions:
         - dispositif . début de validité <= date du jour
         - date du jour <= dispositif . fin de validité
-    valeur: oui
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
@@ -116,3 +121,22 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Bourgogne-Franche-Comté
+      - région = Bretagne
+      - région = Centre-Val de Loire
+      - région = Grand Est
+      - région = Guadeloupe
+      - région = Guyane
+      - région = Hauts-de-France
+      - région = Île-de-France
+      - région = La Réunion
+      - région = Martinique
+      - région = Mayotte
+      - région = Normandie
+      - région = Nouvelle-Aquitaine
+      - région = Nouvelle-Calédonie
+      - région = Occitanie
+      - région = Pays de la Loire
+      - région = Polynésie française

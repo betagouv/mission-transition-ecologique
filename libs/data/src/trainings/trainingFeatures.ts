@@ -5,12 +5,12 @@ import { TrainingBaserow } from '../common/baserow/trainingBaserow'
 
 export class TrainingFeatures {
   async loadTrainings(): Promise<void> {
-    const trainings = await this.getXmlData()
-    await this.updateDatabase(trainings)
+    const trainings = await this._getXmlData()
+    await this._updateDatabase(trainings)
     return
   }
 
-  private async getXmlData(): Promise<Training[]> {
+  private async _getXmlData(): Promise<Training[]> {
     const xmlPath = 'https://formations.ademe.fr/tmp/flux_formations_agir.xml'
     const xmlContent = await axios.get(xmlPath).then((res) => res.data)
     const parsed = await parseStringPromise(xmlContent, { mergeAttrs: true, explicitArray: false })
@@ -18,7 +18,7 @@ export class TrainingFeatures {
     return parsed.formations.module || []
   }
 
-  private async updateDatabase(trainings: Training[]): Promise<void> {
+  private async _updateDatabase(trainings: Training[]): Promise<void> {
     const trainingBaserow = new TrainingBaserow()
     await trainingBaserow.getAll()
     for (const training of trainings) {

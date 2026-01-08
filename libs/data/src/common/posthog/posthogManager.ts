@@ -4,26 +4,26 @@ import { EventCreation, PosthogEvent } from './types'
 import { DealStage } from '../brevo/types'
 
 export default class PosthogManager {
-  private projectId: string
-  private readApiKey: string
-  private writeApiKey: string
+  private _projectId: string
+  private _readApiKey: string
+  private _writeApiKey: string
   private _posthogClient?: PostHog
   private _eventsToCreate: EventCreation[]
 
   constructor() {
-    this.projectId = process.env['POSTHOG_PROJECT_ID'] || ''
-    this.readApiKey = process.env['POSTHOG_READ_API_KEY'] || ''
-    this.writeApiKey = process.env['POSTHOG_WRITE_API_KEY'] || ''
+    this._projectId = process.env['POSTHOG_PROJECT_ID'] || ''
+    this._readApiKey = process.env['POSTHOG_READ_API_KEY'] || ''
+    this._writeApiKey = process.env['POSTHOG_WRITE_API_KEY'] || ''
     this._eventsToCreate = []
 
-    if (!this.projectId || !this.writeApiKey || !this.readApiKey) {
+    if (!this._projectId || !this._writeApiKey || !this._readApiKey) {
       throw new Error(
         'Missing PostHog configuration. Ensure POSTHOG_PROJECT_ID, POSTHOG_READ_API_KEY and POSTHOG_WRITE_API_KEY are set in the environment.'
       )
     }
 
     try {
-      this._posthogClient = new PostHog(this.writeApiKey, {
+      this._posthogClient = new PostHog(this._writeApiKey, {
         host: 'https://eu.i.posthog.com'
       })
     } catch (error) {
@@ -74,7 +74,7 @@ export default class PosthogManager {
   }
 
   public async getEvents(eventTypes: string[]): Promise<PosthogEvent[]> {
-    const apiUrl = `https://eu.posthog.com/api/projects/${this.projectId}/query/`
+    const apiUrl = `https://eu.posthog.com/api/projects/${this._projectId}/query/`
 
     const hogqlQuery = `
       SELECT *
@@ -90,7 +90,7 @@ export default class PosthogManager {
     }
     const headers = {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${this.readApiKey}`
+      Authorization: `Bearer ${this._readApiKey}`
     }
 
     try {
