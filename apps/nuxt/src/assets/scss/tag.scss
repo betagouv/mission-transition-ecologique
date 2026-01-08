@@ -24,6 +24,11 @@ a, button {
 
     &[aria-pressed="false"] {
       @include tool.get-background-color-by-opacity(setting.$green, tool.opacity(--lightness));
+
+      &:hover,
+      &:active {
+        @include tool.get-background-color-by-opacity(setting.$green-agir, 85%);
+      }
     }
   }
 }

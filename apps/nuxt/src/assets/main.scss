@@ -26,3 +26,10 @@
 @import "scss/transition";
 @import "scss/typography";
 @import "scss/markdown";
+
+
+
+:root {
+  --blue-900: #050d3c;
+  --border-active-blue-france: var(--blue-900);
+}

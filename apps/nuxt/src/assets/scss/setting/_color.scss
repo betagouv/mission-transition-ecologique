@@ -1,17 +1,22 @@
 @use '@gouvfr/dsfr/src/module/color/variable/static' as color;
 @forward '@gouvfr/dsfr/src/module/color/variable/static';
 
+
+
 $opacities: (
   --light: 70%,
   --lightness: 90%
 );
 
 // !!!important!! New color added need to be added to the typescript enum `packages/web/src/types/color.ts`
-$yellow: #ffe552;
-$red: #e48854;
+$yellow: #facf35;
+$red: #fca081;
 $purple: #6a62f4;
-$green: #21ab8e;
-$blue: #465f9d;
+$green: #1ebe8e;
+$green-agir: #307c6f;
+$blue: #001891;
+$blue-agir: #465f9d;
+$blue-900: #050d3c;
 $grey: #777;
 $text-grey: var(--text-default-grey);
 $blue-france-inverted: var(--text-inverted-blue-france);
@@ -36,8 +41,20 @@ $colors: (
     "color": $green,
     "color-with-background": $blue-france-inverted
   ),
+  "green-agir": (
+    "color": $green-agir,
+    "color-with-background": $blue-france-inverted
+  ),
   "blue": (
     "color": $blue,
+    "color-with-background": $blue-france-inverted,
+  ),
+  "blue-agir": (
+    "color": $blue-agir,
+    "color-with-background": $blue-france-inverted,
+  ),
+  "blue-900": (
+    "color": $blue-900,
     "color-with-background": $blue-france-inverted,
   ),
   "blue-france": (

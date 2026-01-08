@@ -11,7 +11,7 @@
     </template>
 
     <div class="fr-container--fluid fr-container-md">
-      <h2 class="fr-text--blue-france fr-text-center fr-text-left-md fr-pt-6v">Quel est votre projet ?</h2>
+      <h2 class="fr-text--blue-900 fr-text-center fr-text-left-md fr-pt-6v">Quel est votre projet ?</h2>
       <TeeHomeProjectList :limit="filters[FilterItemKeys.themeType] === '' ? 8 : 9" />
     </div>
     <TeeHomeTestimonies />

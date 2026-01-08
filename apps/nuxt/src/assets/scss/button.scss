@@ -23,6 +23,11 @@
             }
           }
         }
+
+        &:hover,
+        &:active {
+          @include tool.get-background-color-by-opacity($properties, 15%);
+        }
       }
     }
   }
