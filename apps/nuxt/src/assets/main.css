@@ -2904,6 +2904,26 @@
   width: 13rem;
 }
 
+.tee-cta-image {
+  background-image: url("/images/TEE-illustrationHP.svg");
+}
+@media (max-width: 61.98em) {
+  .tee-cta-image {
+    background-image: url("/images/TEE-illustrationHP-hauteur.svg");
+  }
+}
+@media (max-width: 47.98em) {
+  .tee-cta-image {
+    background-image: none;
+  }
+}
+.tee-cta-image {
+  background-size: auto 300px;
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 1.5rem);
+  background-position-y: bottom;
+}
+
 .fr-highlight-border--white {
   background: linear-gradient(0deg, #fff, #fff);
 }
