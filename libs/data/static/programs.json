@@ -1369,7 +1369,7 @@
   {
     "titre": "Baisse Les Watts",
     "promesse": "Bénéficiez d'outils et de formations pour économiser l'énergie en entreprise",
-    "description": "Le programme Baisse les Watts vous accompagne dans la **maîtrise de votre consommation d’énergie**, à l'aide de trois dispositifs : le Carnet de bord Énergie, un accompagnement téléphonique et un parcours de formations collectives et individuelles.",
+    "description": "Le programme Baisse les Watts vous accompagne dans la **maîtrise de votre consommation d’énergie**, à l'aide de deux dispositifs : le Carnet de bord Énergie, un accompagnement téléphonique.",
     "description longue": "Baisse les Watts vous aide à réduire votre consommation en :\n\n- Électricité,\n- Gaz,\n- Fioul,\n- GPL,\n- RCU (Réseau de chaleur urbain) – hors carburants.",
     "début de validité": "01/01/2023",
     "fin de validité": "01/05/2026",
@@ -1403,12 +1403,6 @@
       },
       {
         "description": "Bénéficiez d'un accompagnement personnalisé avec le suivi d’un conseiller."
-      },
-      {
-        "description": "Inscrivez-vous à des formations dispensées par les CCI ou CMA sous forme d'ateliers collectifs, complétées par un suivi individuel dans vos locaux avec un conseiller énergie."
-      },
-      {
-        "description": "Suivez à votre rythme un parcours de formation en ligne personnalisé selon votre secteur d’activité."
       }
     ],
     "conditions d'éligibilité": {
@@ -39127,7 +39121,7 @@
     "titre": "Évaluation carbone LISE",
     "promesse": "Disposez d’une première estimation rapide de votre empreinte carbone",
     "description": "Le programme LISE – *\"Limitez vos Impacts et Suivez vos Émissions\"* – vous propose un accompagnement de deux jours pour :\n\n- définir le périmètre de votre étude ;\n\n- collecter et traiter vos données d’émissions de CO₂ ;\n\n- identifier vos principaux postes d’émissions avec des résultats détaillés ;\n\n- élaborer un plan d’action personnalisé pour réduire vos consommations et vos émissions ;\n\n- être orienté vers les aides adaptées à vos premières actions de décarbonation.\n\nUn format court, idéal pour obtenir une estimation fiable de votre empreinte carbone sans réaliser un Bilan Carbone complet.",
-    "description longue": "Dans le cadre de la transition écologique, les émissions de gaz à effet de serre sont classées en trois scopes (ou périmètres) définis par le GHG Protocol, une référence internationale. Le programme LISE se concentre principalement sur les deux premiers :\n\nScope 1 : émissions directes\\\nCe sont les émissions générées directement par l’entreprise, notamment par la combustion de carburants dans les chaudières (gaz, fioul), les véhicules ou les procédés industriels sur site.\n\n\\\nScope 2 : émissions indirectes liées à l’énergie\\\nElles proviennent de la production d’électricité, de chaleur, de vapeur ou de froid achetés et consommés par l’entreprise. Bien que produites ailleurs, elles sont liées à l’activité énergétique de l’entreprise.\n\n\\\nLe scope 3, qui regroupe toutes les autres émissions indirectes (achats, transport, usage des produits, etc.), n’est pas traité dans le cadre de l’accompagnement LISE.",
+    "description longue": "Dans le cadre de la transition écologique, les émissions de gaz à effet de serre sont classées en trois scopes (ou périmètres) définis par le GHG Protocol, une référence internationale. Le programme LISE se concentre principalement sur les deux premiers :\n\nScope 1 : émissions directes\\\nCe sont les émissions générées directement par l’entreprise, notamment par la combustion de carburants dans les chaudières (gaz, fioul), les véhicules ou les procédés industriels sur site.\n\n\\\nScope 2 : émissions indirectes liées à l’énergie\\\nElles proviennent de la production d’électricité, de chaleur, de vapeur ou de froid achetés et consommés par l’entreprise. Bien que produites ailleurs, elles sont liées à l’activité énergétique de l’entreprise.\n\n\\\nLe scope 3, qui regroupe toutes les autres émissions indirectes (achats, transport, usage des produits, etc.), est traité dans le cadre de l’accompagnement LISE seulement dans certaines régions.",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "contact question": "formulaire",
@@ -43374,21 +43368,12 @@
         "liens": [
           {
             "lien": "https://auth.lopcommerce.com/accounts/create",
-            "texte": "Créer mon compte Opcommerce"
+            "texte": "Créer mon compte l'Opcommerce"
           }
         ]
       },
       {
-        "description": "Répondez au Test-flash conçu par l’Opcommerce pour mesurer le niveau de maturité de votre entreprise en matière de transition écologique.",
-        "liens": [
-          {
-            "lien": "https://- <https://www.lopcommerce.com/l-opcommerce/offre-de-services/test-flash-transition-ecologique/>",
-            "texte": "Test-flash\\"
-          }
-        ]
-      },
-      {
-        "description": "Contactez votre conseiller Opcommerce pour exprimer votre intérêt pour l'Eco-diagnostic Commerce.",
+        "description": "Contactez votre conseiller l'Opcommerce pour exprimer votre intérêt pour l'Éco-diagnostic Commerce.",
         "liens": [
           {
             "lien": "https://www.lopcommerce.com/contact/",
@@ -43397,10 +43382,7 @@
         ]
       },
       {
-        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
-      },
-      {
-        "description": "Lancez le diagnostic avec l'expert proposé par votre Opcommerce."
+        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier et lancez le diagnostic."
       }
     ],
     "conditions d'éligibilité": {
