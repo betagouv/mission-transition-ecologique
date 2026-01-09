@@ -64,7 +64,7 @@
       "CCI"
     ],
     "imagePath": "/images/logos/operateur/cci.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "Centre Technique des Industries Mécaniques",
@@ -86,7 +86,7 @@
       "État"
     ],
     "imagePath": "/images/logos/operateur/ddfip.webp",
-    "color": "yellow"
+    "color": "blue"
   },
   {
     "operator": "DREAL Bretagne",
@@ -112,7 +112,7 @@
       "État"
     ],
     "imagePath": "/images/logos/operateur/ministere-de-la-transition-ecologique.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment",
@@ -134,7 +134,7 @@
       "Régions"
     ],
     "imagePath": "/images/logos/operateur/region-grand-est.webp",
-    "color": "yellow"
+    "color": "blue"
   },
   {
     "operator": "Saur",
@@ -160,7 +160,7 @@
       "Opérateurs nationaux"
     ],
     "imagePath": "/images/logos/operateur/cned.webp",
-    "color": "green"
+    "color": "purple"
   },
   {
     "operator": "Voies Navigables de France",
@@ -176,7 +176,7 @@
       "Régions"
     ],
     "imagePath": "/images/logos/operateur/region-centre-val-de-loire.webp",
-    "color": "blue"
+    "color": "green"
   },
   {
     "operator": "Région Occitanie",
@@ -270,7 +270,7 @@
       "Régions"
     ],
     "imagePath": "/images/logos/operateur/adec.webp",
-    "color": "blue"
+    "color": "yellow"
   },
   {
     "operator": "Agence de Tourisme de la Corse",
@@ -292,15 +292,7 @@
       "Opérateurs nationaux"
     ],
     "imagePath": "/images/logos/operateur/avere.webp",
-    "color": "blue"
-  },
-  {
-    "operator": "Opcommerce",
-    "filterCategories": [
-      "OPCO"
-    ],
-    "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "blue"
+    "color": "green"
   },
   {
     "operator": "Centre National du Livre",
@@ -314,7 +306,7 @@
       "Opérateurs nationaux"
     ],
     "imagePath": "/images/logos/operateur/banque-de-france.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "Constructys",
@@ -322,7 +314,7 @@
       "OPCO"
     ],
     "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "Atlas",
@@ -330,7 +322,7 @@
       "OPCO"
     ],
     "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "Opco AFDAS",
@@ -338,7 +330,7 @@
       "OPCO"
     ],
     "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "Opco Ocapiat",
@@ -346,7 +338,7 @@
       "OPCO"
     ],
     "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "Opco 2i",
@@ -354,7 +346,7 @@
       "OPCO"
     ],
     "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "Opco EP",
@@ -362,7 +354,7 @@
       "OPCO"
     ],
     "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "Opco Mobilités",
@@ -370,7 +362,7 @@
       "OPCO"
     ],
     "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "Opco Santé",
@@ -378,7 +370,7 @@
       "OPCO"
     ],
     "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "Opco Uniformation",
@@ -386,7 +378,7 @@
       "OPCO"
     ],
     "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "ANACT",
@@ -394,6 +386,6 @@
       "Régions"
     ],
     "imagePath": "/images/logos/operateur/anact.webp",
-    "color": "blue"
+    "color": "green"
   }
 ]
