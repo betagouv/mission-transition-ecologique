@@ -1,5 +1,5 @@
 <template>
-  <ProgramDetail />
+  <ProgramDetailRouter />
 </template>
 
 <script setup lang="ts">

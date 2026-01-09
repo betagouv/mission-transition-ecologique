@@ -23,6 +23,12 @@ if (process.env['VITE_DATA_TEST'] === 'true') {
 
 export { jsonPrograms }
 
+// raw program data
+import { default as externalProgramsJson } from './rawPrograms.json'
+
+const externalJsonPrograms = externalProgramsJson as unknown as ExternalProgramType[]
+export { externalJsonPrograms }
+
 // #####> REDIRECTS ######
 import { default as untypedRedirects } from './redirects.json'
 import { RedirectJson } from '../src/common/redirect/types'

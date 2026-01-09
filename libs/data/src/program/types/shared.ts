@@ -69,3 +69,5 @@ export type ProgramStaticBaseType = Omit<ProgramWithoutId, 'opérateur de contac
 export type ProgramJsonBaseType = ProgramStaticBaseType & Record<string, unknown> // Record string unknown to allow appending the interface
 
 export type ProgramYamlType = Omit<ProgramStaticBaseType, 'id' | 'eligibilityData'>
+
+export type ExternalProgramType = Partial<ProgramType> & Required<Pick<ProgramType, 'id'>>
