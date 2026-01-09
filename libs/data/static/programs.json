@@ -16375,11 +16375,11 @@
     "description": "Vous disposez d’une étude pour votre projet de méthanisation ? Vous souhaitez investir pour le mettre en œuvre ? L’ADEME peut accompagner financièrement la réalisation de votre installation.",
     "description longue": "Les équipements financés sont les suivants :\n\n- Unités de méthanisation avec cogénération (&lt; 500 kWe) ou injection de biométhane :\n\n\n- production de biogaz ;\n- valorisation énergétique du biogaz : production de chaleur seule, cogénération d’électricité et de chaleur, épuration du biogaz en biométhane, injection dans le réseau public.\n- Stations d’épuration urbaines (STEU) : valorisation énergétique du biogaz comprenant l’épuration en biométhane et l’injection dans le réseau public.\n\nLa réalisation d'une étude de faisabilité préalable est une condition d'éligibilité.",
     "début de validité": "01/01/2023",
-    "fin de validité": "31/12/2025",
+    "fin de validité": "31/12/2026",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "ADEME",
     "contact question": "https://fondschaleur.ademe.fr/contact/",
-    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/realisation-dinstallations-methanisation-injection-cogeneration-chaleur",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-methanisation",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée selon le type d'installation",
     "objectifs": [
@@ -16423,7 +16423,7 @@
         "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
-        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Centre-Val de Loire, Corse, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Normandie, Nouvelle-Aquitaine, Occitanie, Pays de la Loire"
+        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Centre-Val de Loire, Corse, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française, Saint-Barthélemy, Saint-Martin"
       ],
       "secteur d'activité": [
         "Tous secteurs d’activité"
@@ -16456,15 +16456,20 @@
           "Île-de-France",
           "La Réunion",
           "Martinique",
+          "Mayotte",
           "Normandie",
           "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
           "Occitanie",
-          "Pays de la Loire"
+          "Pays de la Loire",
+          "Polynésie française",
+          "Saint-Barthélemy",
+          "Saint-Martin"
         ]
       },
       "validity": {
         "start": "01/01/2023",
-        "end": "31/12/2025"
+        "end": "31/12/2026"
       },
       "priorityObjectives": [
         "waste",
@@ -16606,10 +16611,15 @@
           "région = Île-de-France",
           "région = La Réunion",
           "région = Martinique",
+          "région = Mayotte",
           "région = Normandie",
           "région = Nouvelle-Aquitaine",
+          "région = Nouvelle-Calédonie",
           "région = Occitanie",
-          "région = Pays de la Loire"
+          "région = Pays de la Loire",
+          "région = Polynésie française",
+          "région = Saint-Barthélemy",
+          "région = Saint-Martin"
         ]
       }
     },
@@ -43357,7 +43367,7 @@
     "promesse": "Ajustez votre politique RH aux enjeux de la transition écologique",
     "description": "Ce diagnostic permet de dresser un état des lieux de votre activité et de mettre en lumière les leviers pour engager votre entreprise sur la voie de la transition écologique. Il s'agit d'un accompagnement de 2 à 5 jours qui vous permettra :\n\n- de faire un **état des lieux global** des besoins à couvrir dans votre entreprise en matière de transition écologique, **sous l'angle RH**.\n- d'**établir un plan d'action** pour atteindre le cap fixé par votre entreprise.\n- de vous accompagner dans la **conduite des chantiers** identifiés comme\\\n  prioritaires.",
     "illustration": "images/TEE_eolienne.webp",
-    "opérateur de contact": "Opcommerce",
+    "opérateur de contact": "L'Opcommerce",
     "contact question": "https://www.lopcommerce.com/contact/",
     "url": "https://www.lopcommerce.com/l-opcommerce/offre-de-services/eco-diagnostic-commerce/",
     "nature de l'aide": "étude",
@@ -43885,11 +43895,11 @@
     "id": "formations-afdas"
   },
   {
-    "titre": "Formations Opcommerce",
+    "titre": "Formations l'Opcommerce",
     "promesse": "Formez vos salariés à la transition écologique",
     "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Environnement et règlementation.\n- Achats responsables.\n- Analyse du cycle de vie d'un produit.\n- Les fondamentaux de l'économie circulaire.\n- Mettre en place une stratégie climat.\n- etc.",
     "illustration": "images/TEE_energie_verte.webp",
-    "opérateur de contact": "Opcommerce",
+    "opérateur de contact": "L'Opcommerce",
     "contact question": "formulaire",
     "url": "https://clickandform.lopcommerce.com",
     "nature de l'aide": "formation",
