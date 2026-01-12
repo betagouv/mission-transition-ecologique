@@ -20,7 +20,7 @@ export default class StatisticsFeatures {
 
     const periodicity = params.periodicity || StatsPeriodicity.Month
     const today = new Date()
-    const since = params.since ?? new Date().getMonth() + 1
+    const since = params.since ?? new Date().getMonth()
     const to = params.to ?? new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1)
 
     const dateFrom = new PeriodicityTransformer(since, periodicity).toDate()
