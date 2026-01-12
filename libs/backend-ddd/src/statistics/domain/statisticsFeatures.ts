@@ -1,3 +1,4 @@
+import { PeriodicityTransformer } from './periodicityTransformer'
 import { Stat, StatOutput, StatQueryParams, StatsPeriodicity } from './types'
 
 export default class StatisticsFeatures {
@@ -19,8 +20,10 @@ export default class StatisticsFeatures {
 
     const periodicity = params.periodicity || StatsPeriodicity.Month
     const today = new Date()
-    const since = params.since ?? new Date(today.getFullYear(), 0, 1)
+    const since = params.since ?? new Date().getMonth() + 1
     const to = params.to ?? new Date(today.getFullYear(), today.getMonth(), today.getDate() - 1)
+
+    const dateFrom = new PeriodicityTransformer(since, periodicity).toDate()
 
     const filteredData = data
       .map((datum) => ({
@@ -28,7 +31,7 @@ export default class StatisticsFeatures {
         value: datum.total_2_3
       }))
       .filter((datum) => {
-        return datum.date >= since && datum.date <= to
+        return datum.date >= dateFrom && datum.date <= to
       })
 
     const statsByPeriodicity: Record<string, Stat> = {}
