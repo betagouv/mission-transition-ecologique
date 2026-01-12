@@ -142,8 +142,6 @@ const renderTabs = () => {
   dsfrTabs.value?.renderTabs()
 }
 
-const resizeObserver = ref<ResizeObserver | null>(null)
-
 const titles = computed(() => {
   const filteredTitles =
     props.tabTitles?.map((tab) => {
@@ -159,6 +157,7 @@ const titles = computed(() => {
   return filteredTitles.flat()
 })
 
+const resizeObserver = ref<ResizeObserver | null>(null)
 onMounted(() => {
   /*
    * Need to use a resize-observer as tab-content height can
