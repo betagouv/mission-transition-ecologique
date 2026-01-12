@@ -40,17 +40,17 @@ tests.forEach((singleTest) => {
           localStorage.setItem(
             'company',
             JSON.stringify({
-              ville: 'FONTENAY-SOUS-BOIS',
+              ville: 'PARIS',
               structure_size: 'TPE',
-              siret: '83014132100034',
-              secteur: 'Programmation informatique',
+              siret: '83014132100042',
+              secteur: 'Autres activités informatiques',
               region: 'Île-de-France',
               legalCategory: '5710',
               denomination: 'MULTI',
               creationDate: '2017-06-01',
-              codePostal: '94120',
+              codePostal: '75012',
               codeNAF1: 'J',
-              codeNAF: '62.01Z'
+              codeNAF: '62.09Z'
             })
           )
         }
@@ -79,7 +79,7 @@ tests.forEach((singleTest) => {
             }
           } else if (fieldKey === 'needs') {
             const actualNeedsValue = await page.inputValue(selector)
-            expect(actualNeedsValue).toContain(singleTest.manual ? 'Aide par le travail' : 'Programmation informatique')
+            expect(actualNeedsValue).toContain(singleTest.manual ? 'Aide par le travail' : 'Autres activités informatiques')
           } else if (['text', 'email', 'tel'].includes(value.type)) {
             await page.locator(selector).fill(value.value as string, { timeout: timeOut })
           } else if (value.type === 'select' && singleTest.type === 'customProject') {
