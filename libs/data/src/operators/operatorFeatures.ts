@@ -10,11 +10,11 @@ import { jsonPrograms } from '../../static'
 import { ProgramType } from '../program/types/shared'
 
 export class OperatorFeatures {
-  private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
-  private readonly _outputDirPath: string = path.join(this.__dirname, '../../../../apps/nuxt/src/public/json/operator/')
+  private readonly _dirname = path.dirname(fileURLToPath(import.meta.url))
+  private readonly _outputDirPath: string = path.join(this._dirname, '../../../../apps/nuxt/src/public/json/operator/')
   private readonly _outputFileName: string = 'operators.json'
-  private readonly _outputTypeFilePath: string = path.join(this.__dirname, './types/generatedShared.ts')
-  private readonly _schemaFilePath = path.join(this.__dirname, '../../schemas/program-with-publicodes-schema.json')
+  private readonly _outputTypeFilePath: string = path.join(this._dirname, './types/generatedShared.ts')
+  private readonly _schemaFilePath = path.join(this._dirname, '../../schemas/program-with-publicodes-schema.json')
 
   constructor(
     private _imageDownloader: ImageBaserow,

@@ -1,12 +1,12 @@
 titre: Accélérateur des possibles
 promesse: >-
-  Bénéficiez de soutien pour vos projets qui articulent transition écologique,
-  conditions de travail et dialogue social
+  Intégrez les questions de Qualité de Vie et des Conditions de Travail dans vos
+  projets de transition écologique
 description: >-
-  Vous avez un projet de développement qui articule des questions liées au
+  Vous avez un projet de développement qui articule des **questions liées au
   travail, au dialogue social, aux conditions de travail et à la transition
-  écologique ? Cet appel à projets vous permet de bénéficier gratuitement d'un
-  parcours de 2 jours pendant lesquels vous :
+  écologique** ? Cet appel à projets vous permet de **bénéficier gratuitement
+  d'un parcours de 2 jours** pendant lesquels vous :
 
 
   - Rencontrez d'autres participants, échangez et sécurisez vos projets.
@@ -15,7 +15,7 @@ description: >-
   (méthodes et outils).
 
   - Effectuez un retour d’expérience avec l’ensemble des participants
-  (avancement, réussites, difficultés et pistes d’action).
+  (avancements, réussites, difficultés et pistes d’action).
 début de validité: 01/01/2025
 fin de validité: 01/12/2026
 illustration: images/TEE_energie_verte.webp
@@ -27,6 +27,10 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 2 jours de prestation
 activable en autonomie: oui
 objectifs:
+  - description: Découvrez le programme proposé par l'accélérateur des possibles
+    liens:
+      - lien: https://www.anact.fr/accelerateur-des-possibles
+        texte: L'accélérateur des possibles
   - description: >-
       Candidatez à l'appel à projets avant fin mars 2026 en contactant la
       chargée de mission des pays de la Loire (écrire à
@@ -34,7 +38,7 @@ objectifs:
   - description: >-
       Début avril, vous saurez si votre projet est retenu. S'il l'est, vous
       recevez les détails du programme.
-  - description: Les 09 et 10 juin 2026, suivez le programme "Accélérateur des possibles".
+  - description: Les 9 et 10 juin 2026, suivez le programme "Accélérateur des possibles".
 conditions d'éligibilité:
   taille de l'entreprise:
     - TPE, PME, entrepreneurs salariés
@@ -45,6 +49,16 @@ conditions d'éligibilité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - 'Pour postuler et participer à ce dispositif, vous devez :'
+    - >-
+      Être engagé·e dans un projet de transition écologique dans lequel vous
+      avez la volonté de faire le lien avec les questions de Qualité de Vie et
+      des Conditions de Travail.
+    - >-
+      Constituer un binôme paritaire avec une représentation direction et une
+      représentation salariés et/ou métier.
+    - Maintenir l’engagement du binôme ou trinôme sur la durée du dispositif.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

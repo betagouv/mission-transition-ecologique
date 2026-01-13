@@ -16,8 +16,8 @@ import { DataProject } from '../project/types/domain'
 import { Operator } from '../operators/types/domain'
 
 export class ProgramExport {
-  private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
-  private readonly _outputFilePath: string = path.join(this.__dirname, '../../static/data_gouv_export.csv')
+  private readonly _dirname = path.dirname(fileURLToPath(import.meta.url))
+  private readonly _outputFilePath: string = path.join(this._dirname, '../../static/data_gouv_export.csv')
   private readonly _teeBaseUrl = 'https://mission-transition-ecologique.beta.gouv.fr'
   private readonly _dataGouvUtm = '?utm_campaign=openData'
 

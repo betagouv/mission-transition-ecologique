@@ -10,8 +10,8 @@ const OUTPUT_FILENAME = 'programs.json'
 const INTERFACE_PATH = '../futureLegacy/interface.yaml'
 
 export class JsonGenerator {
-  private readonly __dirname = path.dirname(fileURLToPath(import.meta.url))
-  private readonly outputDir = path.join(this.__dirname, OUTPUT_FOLDER_PATH)
+  private readonly _dirname = path.dirname(fileURLToPath(import.meta.url))
+  private readonly _outputDir = path.join(this._dirname, OUTPUT_FOLDER_PATH)
 
   async export(programs: ProgramStaticBaseType[]): Promise<void> {
     const enrichedPrograms = await this.prependPublicodesInterface(programs)
@@ -20,7 +20,7 @@ export class JsonGenerator {
   }
 
   async prependPublicodesInterface(programs: ProgramStaticBaseType[]): Promise<unknown> {
-    const interfacePath = path.join(this.__dirname, INTERFACE_PATH)
+    const interfacePath = path.join(this._dirname, INTERFACE_PATH)
     const file = fs.readFileSync(interfacePath, 'utf8')
     const constants = yaml.load(file) as Record<string, unknown>
     return programs.map((program) => {
@@ -32,8 +32,8 @@ export class JsonGenerator {
 
   async writeFile(programs: unknown) {
     const dataAsJson = JSON.stringify(programs, null, 2)
-    FileManager.createFolderIfNotExists(this.outputDir)
-    const dataOutPath = path.join(this.outputDir, OUTPUT_FILENAME)
+    FileManager.createFolderIfNotExists(this._outputDir)
+    const dataOutPath = path.join(this._outputDir, OUTPUT_FILENAME)
     fs.writeFileSync(dataOutPath, dataAsJson, 'utf8')
   }
 }

@@ -1,7 +1,7 @@
 titre: Cap décarbonation
 promesse: >-
   Faites le point sur vos émissions de carbone et construisez un plan d’action
-  décarbonation
+  de décarbonation
 description: >-
   Prenez activement part à la décarbonation de l'artisanat en France !
 
@@ -9,10 +9,10 @@ description: >-
   Bénéficiez d'un accompagnement par un expert de la CMA pour :
 
 
-  - Mesurer les principaux postes d’émissions de gaz à effet de serre dans votre
-  entreprise.
+  - **Mesurer les principaux postes d’émissions** de gaz à effet de serre dans
+  votre entreprise.
 
-  - Construire un plan d’action des postes prioritaires pour diminuer les
+  - **Construire un plan d’action** des postes prioritaires pour diminuer les
   émissions et réaliser d'importantes économies d'énergie.
 description longue: >-
   Deux niveaux d’expertise sont proposés :
@@ -34,8 +34,10 @@ coût de l'accompagnement: gratuite
 durée de l'accompagnement: variable
 objectifs:
   - description: >-
-      Contactez-nous via ce formulaire, un conseiller de la Chambre de Métiers
+      Contactez-nous via ce formulaire. Un conseiller de la Chambre de Métiers
       et de l’Artisanat de votre région vérifiera votre éligibilité.
+    liens:
+      - formulaire: true
   - description: Si vous êtes éligible, vous recevrez les modalités de cet accompagnement.
   - description: Démarrez l'accompagnement.
 conditions d'éligibilité:
@@ -45,7 +47,7 @@ conditions d'éligibilité:
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
-    - Tous secteurs
+    - Entreprises d'artisanat
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:

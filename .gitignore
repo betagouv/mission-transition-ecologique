@@ -35,6 +35,8 @@ node_modules
 *.sublime-workspace
 .ai
 
+.ai
+
 # IDE - VSCode
 .vscode/
 !.vscode/settings.json

@@ -19,7 +19,7 @@ export default class BrevoAPI {
   constructor() {
     const token = Config.BREVO_API_TOKEN
     this._axios = axios.create({
-      baseURL: this.baseURL,
+      baseURL: this._baseURL,
       headers: this._makeHeaders(token)
     })
   }
@@ -76,7 +76,7 @@ export default class BrevoAPI {
 
   private async _request(data: BrevoRequestData): Promise<Result<AxiosResponse, Error>> {
     try {
-      const response: AxiosResponse = await this.axios.request(data)
+      const response: AxiosResponse = await this._axios.request(data)
       return Result.ok(response)
     } catch (err: unknown) {
       return Result.err(handleException(err))
@@ -88,13 +88,5 @@ export default class BrevoAPI {
       ...AxiosHeaders.makeJsonHeader(),
       'api-key': `${token}`
     }
-  }
-
-  private get baseURL(): string {
-    return this._baseURL
-  }
-
-  private get axios(): AxiosInstance {
-    return this._axios
   }
 }

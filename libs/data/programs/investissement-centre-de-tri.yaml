@@ -9,12 +9,12 @@ description: >-
   tri sur l’ensemble du territoire.
 description longue: "L'ADEME peut accompagner financièrement une aide à la décision (étude) ou une aide à l'investissement.\n\nDes aides à la décision sont attribuées dans le but d’accompagner les porteurs de projets afin de bien cerner le contexte dans lequel s’inscrit le projet d’une part, et de le dimensionner selon les besoins du territoire.\n\nLes aides sont attribuées pour réaliser\_:\n\n- une\_étude de faisabilité préalable à l’investissement dans une installation de tri / valorisation des déchets d’activité économique et des encombrants\_ou d’une déchèterie pour professionnels;\n- une étude territoriale pour les centres de tri emballages ménagers\_;\n\nDes modèles de cahier des charges sont disponibles sur le site de d’ADEME.\n\nLes aides à l’investissement\_concernent :\n\n- les centres de tri des déchets d’activité économique non dangereux (hors emballages ménagers)\_\n- les centres de tri emballages ménagers\_(pour DROM-COM et Corse)\n- les centres de préparation CSR (DROM – COM et Corse uniquement)\n- les déchèteries pour professionnels"
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
+fin de validité: 31/12/2026
 illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000711
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000890
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/creation-extension-modernisation-dun-centre-tri-dechets-valorisation-matiere?cible=79
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/creation-extension-ou-modernisation-dun-centre-de-tri-de-dechets-dactivite-economique-et-decheteries-pour-professionnels?cible=79
 nature de l'aide: financement
 montant du financement: Selon le type de projet
 objectifs:
@@ -48,11 +48,10 @@ conditions d'éligibilité:
     - Éligible aux micro-entreprises
   secteur géographique:
     - >-
-      Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Corse, Grand Est,
-      Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion,
-      Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Occitanie, Pays de la
-      Loire, Provence-Alpes-Côte d'Azur, Saint-Barthélemy, Saint-Martin,
-      Saint-Pierre-Et-Miquelon
+      Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
+      Loire, Grand Est, Hauts-de-France, Île-de-France, Normandie,
+      Nouvelle-Aquitaine, Occitanie, Pays de la Loire, Provence-Alpes-Côte
+      d'Azur
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -84,23 +83,15 @@ publicodes:
       - questionnaire . objectif prioritaire . est la gestion des déchets
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
+      - région = Auvergne-Rhône-Alpes
       - région = Bourgogne-Franche-Comté
       - région = Bretagne
       - région = Centre-Val de Loire
-      - région = Corse
       - région = Grand Est
-      - région = Guadeloupe
-      - région = Guyane
       - région = Hauts-de-France
       - région = Île-de-France
-      - région = La Réunion
-      - région = Martinique
-      - région = Mayotte
       - région = Normandie
       - région = Nouvelle-Aquitaine
       - région = Occitanie
       - région = Pays de la Loire
       - région = Provence-Alpes-Côte d'Azur
-      - région = Saint-Barthélemy
-      - région = Saint-Martin
-      - région = Saint-Pierre-Et-Miquelon

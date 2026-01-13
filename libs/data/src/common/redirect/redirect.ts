@@ -10,8 +10,8 @@ import { DataProgram, Status } from '../../program/types/domain'
 
 export default class Redirect {
   private readonly _jsonPath = '../../../static/redirects.json'
-  private readonly oldRedirectData = redirects as unknown as RedirectJson
-  private newRedirectData = JSON.parse(JSON.stringify(this.oldRedirectData)) as RedirectJson // deep copy for modifications
+  private readonly _oldRedirectData = redirects as unknown as RedirectJson
+  private _newRedirectData = JSON.parse(JSON.stringify(this._oldRedirectData)) as RedirectJson // deep copy for modifications
 
   private _logger: Logger
 
@@ -36,30 +36,30 @@ export default class Redirect {
   private _updateJsonFile() {
     const dirname = path.dirname(fileURLToPath(import.meta.url))
     const outputFilePath: string = path.join(dirname, this._jsonPath)
-    FileManager.writeJson(outputFilePath, this.newRedirectData, 'Project redirections updated')
+    FileManager.writeJson(outputFilePath, this._newRedirectData, 'Project redirections updated')
   }
 
   handleProjectRenaming(projects: DataProject[]) {
     projects.forEach((project) => {
       if (
-        this.newRedirectData.project_rowid_to_url_mapping[project.id] &&
-        this.newRedirectData.project_rowid_to_url_mapping[project.id] != project.slug
+        this._newRedirectData.project_rowid_to_url_mapping[project.id] &&
+        this._newRedirectData.project_rowid_to_url_mapping[project.id] != project.slug
       ) {
-        this._updateProjectSlug(this.newRedirectData.project_rowid_to_url_mapping[project.id], project.slug)
+        this._updateProjectSlug(this._newRedirectData.project_rowid_to_url_mapping[project.id], project.slug)
       }
 
-      this.newRedirectData.project_rowid_to_url_mapping[project.id] = project.slug
+      this._newRedirectData.project_rowid_to_url_mapping[project.id] = project.slug
     })
   }
 
   private _updateProjectSlug(oldSlug: string, newSlug: string) {
-    for (const [key, value] of Object.entries(this.newRedirectData.project_redirects)) {
+    for (const [key, value] of Object.entries(this._newRedirectData.project_redirects)) {
       if (value === oldSlug) {
-        this.newRedirectData.project_redirects[key] = newSlug
+        this._newRedirectData.project_redirects[key] = newSlug
       }
     }
 
-    this.newRedirectData.project_redirects[oldSlug] = newSlug
+    this._newRedirectData.project_redirects[oldSlug] = newSlug
   }
 
   handleProjectReplacements(projects: DataProject[]) {
@@ -69,7 +69,7 @@ export default class Redirect {
           this._logger.log(LogLevel.Major, 'Conflit : en prod / redirection active', project.title, project.id)
         }
 
-        const newSlug = this.newRedirectData.project_rowid_to_url_mapping[project.redirectTo]
+        const newSlug = this._newRedirectData.project_rowid_to_url_mapping[project.redirectTo]
         const redirectValid = projects.some((proj) => proj.id === project.redirectTo)
         if (!newSlug || !redirectValid) {
           this._logger.log(LogLevel.Critic, "Redirection vers un projet non valide, risque d'erreur 404", project.title, project.id)
@@ -78,7 +78,7 @@ export default class Redirect {
         }
       } else {
         // Remove the redirection if it existed but doesn't exist anymore
-        delete this.newRedirectData.project_redirects[project.slug]
+        delete this._newRedirectData.project_redirects[project.slug]
       }
     })
   }
@@ -86,24 +86,24 @@ export default class Redirect {
   handleProgramRenaming(programs: DataProgram[]) {
     programs.forEach((program) => {
       if (
-        this.newRedirectData.program_rowid_to_url_mapping[program.id] &&
-        this.newRedirectData.program_rowid_to_url_mapping[program.id] != program['Id fiche dispositif']
+        this._newRedirectData.program_rowid_to_url_mapping[program.id] &&
+        this._newRedirectData.program_rowid_to_url_mapping[program.id] != program['Id fiche dispositif']
       ) {
-        this._updateProgramSlug(this.newRedirectData.program_rowid_to_url_mapping[program.id], program['Id fiche dispositif'])
+        this._updateProgramSlug(this._newRedirectData.program_rowid_to_url_mapping[program.id], program['Id fiche dispositif'])
       }
 
-      this.newRedirectData.program_rowid_to_url_mapping[program.id] = program['Id fiche dispositif']
+      this._newRedirectData.program_rowid_to_url_mapping[program.id] = program['Id fiche dispositif']
     })
   }
 
   private _updateProgramSlug(oldSlug: string, newSlug: string) {
-    for (const [key, value] of Object.entries(this.newRedirectData.program_redirects)) {
+    for (const [key, value] of Object.entries(this._newRedirectData.program_redirects)) {
       if (value === oldSlug) {
-        this.newRedirectData.program_redirects[key] = newSlug
+        this._newRedirectData.program_redirects[key] = newSlug
       }
     }
 
-    this.newRedirectData.program_redirects[oldSlug] = newSlug
+    this._newRedirectData.program_redirects[oldSlug] = newSlug
   }
 
   handleProgramReplacements(programs: DataProgram[]) {
@@ -122,7 +122,7 @@ export default class Redirect {
           this._logger.log(LogLevel.Major, 'Redirection invalide: multiples redirections en conflit', program.Titre, program.id)
         }
 
-        const newSlug = this.newRedirectData.program_rowid_to_url_mapping[program['redirection-vers'][0]]
+        const newSlug = this._newRedirectData.program_rowid_to_url_mapping[program['redirection-vers'][0]]
         const redirectValid = programs.some((progr) => progr.id === program['redirection-vers'][0])
         if (!newSlug || !redirectValid) {
           this._logger.log(LogLevel.Critic, "Redirection vers un programme non valide, risque d'erreur 404", program.Titre, program.id)
@@ -131,7 +131,7 @@ export default class Redirect {
         }
       } else {
         // Remove the redirection if it existed but doesn't exist anymore
-        delete this.newRedirectData.program_redirects[program['Id fiche dispositif']]
+        delete this._newRedirectData.program_redirects[program['Id fiche dispositif']]
       }
     })
   }

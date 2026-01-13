@@ -18,14 +18,14 @@ description: >-
   Elle vous aide à faire des choix durables, différenciants et adaptés à votre
   activité.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
+fin de validité: 31/12/2026
 illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000725
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000901
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-decoconception-produits-services
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-decoconception-des-produits-et-des-services
 nature de l'aide: étude
-montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 150 000 €
+montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
       Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
@@ -64,7 +64,8 @@ conditions d'éligibilité:
       Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
       Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine,
       Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française,
-      Provence-Alpes-Côte d'Azur
+      Provence-Alpes-Côte d'Azur, Saint-Barthélemy, Saint-Martin,
+      Saint-Pierre-Et-Miquelon
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -134,3 +135,6 @@ publicodes:
       - région = Pays de la Loire
       - région = Polynésie française
       - région = Provence-Alpes-Côte d'Azur
+      - région = Saint-Barthélemy
+      - région = Saint-Martin
+      - région = Saint-Pierre-Et-Miquelon

@@ -3,7 +3,7 @@ import { jsonPrograms } from '@tee/data/static'
 import { ProgramType } from '@tee/data'
 
 export default class ProgramsJson implements ProgramRepository {
-  private static instance: ProgramsJson
+  private static _instance: ProgramsJson
   private _programs: ProgramType[] = []
 
   private constructor() {
@@ -11,11 +11,11 @@ export default class ProgramsJson implements ProgramRepository {
   }
 
   public static getInstance(): ProgramsJson {
-    if (!ProgramsJson.instance) {
-      ProgramsJson.instance = new ProgramsJson()
+    if (!ProgramsJson._instance) {
+      ProgramsJson._instance = new ProgramsJson()
     }
 
-    return ProgramsJson.instance
+    return ProgramsJson._instance
   }
 
   public getEditablePrograms(): ProgramType[] {
