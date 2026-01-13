@@ -2,11 +2,11 @@
   <section>
     <!-- PROGRAM RESUME / TEXT-->
     <h2
-      class="fr-text--blue-france"
+      class="fr-text--blue-900"
       v-html="currentProgram?.promesse"
     />
     <div
-      class="fr-mb-3v fr-text--blue-france"
+      class="fr-mb-3v fr-text--blue-900"
       v-html="Marked.toHtml(currentProgram?.description)"
     />
   </section>

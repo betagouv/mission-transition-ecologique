@@ -26,8 +26,8 @@
           @click="selectLocalisation(localisation)"
         >
           <div class="fr-card__body">
-            <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-              <div class="fr-text--blue-france">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
+            <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-900">
+              <div class="fr-text--blue-900">{{ `${localisation.nom} (${localisation.codePostal}) ` }}</div>
             </div>
           </div>
         </div>

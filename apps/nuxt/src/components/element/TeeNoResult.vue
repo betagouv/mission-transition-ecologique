@@ -13,13 +13,12 @@
       class="fr-px-4v"
       :class="ctaLabel ? 'fr-col-12 fr-col-md-10' : 'fr-col-12 fr-col-md-5'"
     >
-      <p class="fr-text-center fr-h5 fr-text--blue-france fr-mt-6v">
+      <p class="fr-text-center fr-h5 fr-text--blue-900 fr-mt-6v">
         {{ message }}
       </p>
     </div>
     <TeeDsfrButton
       v-if="ctaLabel"
-      class="fr-text--yellow"
       :label="ctaLabel"
       @click="emit('cta-click')"
     />

@@ -9,7 +9,7 @@
     <div class="fr-container fr-mt-3v fr-mb-8v">
       <div class="fr-grid-row">
         <div class="fr-col-12">
-          <h1 class="fr-text--blue-france">Plan du site</h1>
+          <h1 class="fr-text--blue-900">Plan du site</h1>
           <p class="fr-text--lg fr-mb-4w">Retrouvez l'ensemble des pages de la plateforme Transition écologique des entreprises.</p>
 
           <!-- Pages principales -->

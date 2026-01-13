@@ -16,8 +16,8 @@ defineProps<Props>()
       :class="Navigation.getClassesBySideMenu(hasSideMenu)"
       class="fr-col-12 fr-text-center fr-text-left-md fr-pt-6v fr-flex-direction--column"
     >
-      <h2 class="fr-mb-2v fr-text--blue-france">Questions fréquentes</h2>
-      <p class="fr-mb-8v fr-text-center fr-text-left-md fr-text--blue-france">
+      <h2 class="fr-mb-2v fr-text--blue-900">Questions fréquentes</h2>
+      <p class="fr-mb-8v fr-text-center fr-text-left-md fr-text--blue-900">
         Trouvez ici des réponses concrètes sur les aides, démarches et outils pour réussir votre transition écologique.
       </p>
     </div>
