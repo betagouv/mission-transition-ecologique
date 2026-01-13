@@ -101,13 +101,13 @@ describe('ImageBaserow', () => {
       metadataFilePath?: string,
       quality?: number,
       publicPath?: string,
-      private row?: ImageTable | null
+      private _row?: ImageTable | null
     ) {
       super(imageDirectory, metadataFilePath, quality, publicPath)
     }
     // @ts-expect-error override protected/private for tests
     protected async _getRowData() {
-      return this.row
+      return this._row
     }
   }
 
