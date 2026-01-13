@@ -2231,11 +2231,20 @@
 .fr-card.fr-card--program.fr-card-header-bg--green .fr-card__header .fr-card__img {
   background-color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
 }
+.fr-card.fr-card--program.fr-card-header-bg--green-agir .fr-card__header .fr-card__img {
+  background-color: rgb(230.6325581395, 245.5674418605, 243.0127906977) !important;
+}
 .fr-card.fr-card--program.fr-card-header-bg--blue .fr-card__header .fr-card__img {
   background-color: rgb(218.5, 224.5413793103, 255) !important;
 }
+.fr-card.fr-card--program.fr-card-header-bg--blue-agir .fr-card__header .fr-card__img {
+  background-color: rgb(235.4268722467, 238.5436123348, 246.2731277533) !important;
+}
+.fr-card.fr-card--program.fr-card-header-bg--blue-900 .fr-card__header .fr-card__img {
+  background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
+}
 .fr-card.fr-card--program.fr-card-header-bg--blue-france .fr-card__header .fr-card__img {
-  background-color: rgb(218.5, 218.5, 255) !important;
+  background-color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
 }
 .fr-card.fr-card--program.fr-card-header-bg--grey .fr-card__header .fr-card__img {
   background-color: rgb(241.4, 241.4, 241.4) !important;
@@ -4059,8 +4068,8 @@ a.fr-tag[aria-pressed=true].fr-tag--green-agir, button.fr-tag[aria-pressed=true]
   background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #307c6f 0.625rem) !important;
   color: var(--text-inverted-blue-france) !important;
 }
-a.fr-tag[aria-pressed=true].fr-tag--blue-france.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--blue-france.fr-tag--sm {
-  background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #000091 0.5rem) !important;
+a.fr-tag[aria-pressed=true].fr-tag--blue.fr-tag--sm, button.fr-tag[aria-pressed=true].fr-tag--blue.fr-tag--sm {
+  background-image: radial-gradient(circle at 100% 0.1875rem, transparent 0.4475rem, #001891 0.5rem) !important;
 }
 a.fr-tag[aria-pressed=true].fr-tag--blue, button.fr-tag[aria-pressed=true].fr-tag--blue {
   background-image: radial-gradient(circle at 100% 0.25rem, transparent 0.578125rem, #001891 0.625rem) !important;
