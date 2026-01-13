@@ -5,7 +5,7 @@
       "ADEME"
     ],
     "imagePath": "/images/logos/operateur/ademe.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "Agence de l'Eau Loire-Bretagne",
@@ -86,7 +86,7 @@
       "État"
     ],
     "imagePath": "/images/logos/operateur/ddfip.webp",
-    "color": "blue"
+    "color": "red"
   },
   {
     "operator": "DREAL Bretagne",
@@ -126,7 +126,7 @@
       "Régions"
     ],
     "imagePath": "/images/logos/operateur/region-bretagne.webp",
-    "color": "red"
+    "color": "green"
   },
   {
     "operator": "Région Grand Est",
@@ -134,7 +134,7 @@
       "Régions"
     ],
     "imagePath": "/images/logos/operateur/region-grand-est.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "Saur",
@@ -256,7 +256,7 @@
       "Régions"
     ],
     "imagePath": "/images/logos/operateur/region-auvergne-rhone-alpes.webp",
-    "color": "blue"
+    "color": "purple"
   },
   {
     "operator": "Région Nouvelle-Aquitaine",
@@ -295,6 +295,14 @@
     "color": "green"
   },
   {
+    "operator": "L'Opcommerce",
+    "filterCategories": [
+      "OPCO"
+    ],
+    "imagePath": "/images/logos/operateur/opco.webp",
+    "color": "purple"
+  },
+  {
     "operator": "Centre National du Livre",
     "filterCategories": [
       "Opérateurs nationaux"
@@ -306,14 +314,6 @@
       "Opérateurs nationaux"
     ],
     "imagePath": "/images/logos/operateur/banque-de-france.webp",
-    "color": "purple"
-  },
-  {
-    "operator": "Constructys",
-    "filterCategories": [
-      "OPCO"
-    ],
-    "imagePath": "/images/logos/operateur/opco.webp",
     "color": "purple"
   },
   {
