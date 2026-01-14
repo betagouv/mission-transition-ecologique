@@ -4251,6 +4251,8 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "diag-ecoconception",
+      "diagnostic-eco-conception-ile-de-france",
       "programme-synergies-durables"
     ],
     "linkedProjects": [],
