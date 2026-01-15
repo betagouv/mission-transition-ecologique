@@ -1,0 +1,61 @@
+titre: Expert Atlas
+promesse: >-
+  Bénéficiez d'un accompagnement pour définir la stratégie RSE de votre
+  entreprise
+description: >-
+  Cet accompagnement sur 6 jours avec un cabinet d'experts, adapté au niveau de
+  maturité de votre entreprise, vous permet d'impulser, de définir ou
+  d'accompagner votre stratégie RSE en :
+
+
+  - Identifiant les enjeux et les bénéfices de la démarche au sein de votre
+  structure.
+
+  - Construisant votre feuille de route RSE.
+
+  - Valorisant votre démarche RSE.
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: Atlas
+contact question: formulaire
+url: >-
+  https://www.opco-atlas.fr/actualites/structurer-sa-strategie-rse-cest-possible-avec-expertatlas.html
+nature de l'aide: étude
+coût de l'accompagnement: Variable
+durée de l'accompagnement: 6 jours de prestation
+objectifs:
+  - description: Créez un compte sur le site d'Atlas
+    liens:
+      - lien: https://myatlas.opco-atlas.fr/creer-mon-compte
+        texte: Créer mon compte
+  - description: >-
+      Contactez votre conseiller Atlas pour exprimer votre intérêt pour
+      l'accompagnement
+    liens:
+      - lien: https://www.opco-atlas.fr/contact.html
+        texte: Contacter mon conseiller
+  - description: >-
+      Définissez avec l’expert le périmètre de l'accompagnement, la méthode et
+      le calendrier.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises issues des branches des services financiers, de l'assurance,
+      de l'expertise comptable et du conseil.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est K
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
