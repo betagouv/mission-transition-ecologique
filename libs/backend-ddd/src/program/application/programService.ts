@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import { ProgramType, ProgramTypeWithEligibility } from '@tee/data'
+import { AbstractProgramType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { ProgramEligibilityEvaluator } from '../domain/programEligibilityEvaluator'
 import ProgramFeatures from '../domain/programFeatures'
 import ProgramsJson from '../infrastructure/programsJson'
@@ -56,5 +56,17 @@ export class ProgramService {
 
   public getAll(): ProgramType[] {
     return this.program.getAll()
+  }
+
+  public getExternal(): Result<AbstractProgramType[], Error> {
+    return Result.ok(this.program.getExternal())
+  }
+
+  public getExternalById(id: string): Result<AbstractProgramType, Error> {
+    const externalProgram = this.program.getExternalById(id)
+    if (!externalProgram) {
+      return Result.err(new Error('External program not found'))
+    }
+    return Result.ok(externalProgram)
   }
 }

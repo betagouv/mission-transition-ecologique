@@ -14,5 +14,5 @@
 <script setup lang="ts">
 import { Marked } from '@/tools/marked'
 
-const { currentExternalProgram } = storeToRefs(useExternalProgramStore())
+const { currentExtProgram: currentExternalProgram } = storeToRefs(useProgramStore())
 </script>

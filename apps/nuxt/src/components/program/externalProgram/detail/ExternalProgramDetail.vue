@@ -34,9 +34,9 @@
 <script setup lang="ts">
 import { TeeDsfrBreadcrumbProps } from '@/components/element/TeeDsfrBreadcrumb.vue'
 import { useNavigationStore } from '@/stores/navigation'
-import { useExternalProgramStore } from '@/stores/externalProgram'
+import { useProgramStore } from '@/stores/program'
 import Navigation from '@/tools/navigation'
-import { ExternalProgramManager } from '@/tools/externalProgram/externalProgramManager'
+import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { RouteName } from '@/types/routeType'
 import { MetaSeo } from '@/tools/metaSeo'
@@ -47,7 +47,7 @@ import Analytics from '@/tools/analytic/analytics'
 import { Scroll } from '@/tools/scroll/scroll'
 import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
-const { currentExternalProgram } = storeToRefs(useExternalProgramStore())
+const { currentExtProgram: currentExternalProgram } = storeToRefs(useProgramStore())
 const { currentProject } = storeToRefs(useProjectStore())
 const { query } = storeToRefs(useNavigationStore())
 
@@ -56,8 +56,8 @@ const formRef = useTemplateRef<HTMLElement>('form-ref')
 const activationRef = useTemplateRef<HTMLElement>('activation-ref')
 
 onNuxtReady(async () => {
-  if (currentExternalProgram.value) {
-    await new ExternalProgramManager().getOneById(currentExternalProgram.value.id)
+  if (currentExternalProgram.value?.id) {
+    await new ProgramManager().getOneExternal(currentExternalProgram.value.id)
   }
 })
 
@@ -68,7 +68,7 @@ const isCatalogDetail = navigation.isCatalogProgramDetail()
 const routeToResults = {
   name: isCatalogDetail ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
   params: { projectSlug: currentProject.value?.slug },
-  query: isCatalogDetail ? undefined : query,
+  query: isCatalogDetail ? undefined : query.value,
   hash: '#' + currentExternalProgram.value?.id
 }
 
@@ -80,7 +80,7 @@ const links = computed<TeeDsfrBreadcrumbProps['links']>(() => {
   return [...links, { text: currentExternalProgram.value?.titre || '' }]
 })
 
-if (currentExternalProgram.value) {
+if (currentExternalProgram.value?.id) {
   useHead({
     link: [
       {

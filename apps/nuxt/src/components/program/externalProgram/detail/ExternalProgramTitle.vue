@@ -11,5 +11,5 @@
   </div>
 </template>
 <script setup lang="ts">
-const { currentExternalProgram } = storeToRefs(useExternalProgramStore())
+const { currentExtProgram: currentExternalProgram } = storeToRefs(useProgramStore())
 </script>

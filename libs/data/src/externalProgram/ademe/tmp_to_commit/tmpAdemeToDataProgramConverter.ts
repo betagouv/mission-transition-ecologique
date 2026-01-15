@@ -1,8 +1,15 @@
 import { AdemeProgramDetail } from './tmpAdemeProgramType'
 import { AdemeProgramBaserow } from './tmpAdemeProgramBaserowType'
 import { AdemeReferentialMappers } from './ademeReferentialMappers'
+import { GeographicAreas } from '../../../program/types/domain'
 
 export class AdemeToDataProgramConverter {
+  private _geographicAreas: GeographicAreas[] = []
+
+  constructor(geographicAreas: GeographicAreas[] = []) {
+    this._geographicAreas = geographicAreas
+  }
+
   convertAdemeProgramRawToAdemeProgramBaserow(ademeProgram: AdemeProgramDetail): AdemeProgramBaserow {
     const titre = ademeProgram.titre
     const typeProjetLabels = ademeProgram.typeProjet?.map((tp: any) => AdemeReferentialMappers.mapTypeProjet(tp.code)) || []
@@ -11,6 +18,8 @@ export class AdemeToDataProgramConverter {
       ? AdemeReferentialMappers.mapCouvertureGeo(ademeProgram.couvertureGeo.code)
       : ''
     const zoneGeoLabels = ademeProgram.zoneGeo?.map((zg: any) => AdemeReferentialMappers.mapZoneGeo(zg.code)) || []
+
+    const zoneGeoIds = this._mapGeographicAreasToIds(zoneGeoLabels)
 
     return {
       'Id fiche dispositif': this._slugify(titre),
@@ -27,8 +36,31 @@ export class AdemeToDataProgramConverter {
       'Couverture géographique': couvertureGeoLabel,
       'Zones Geo': zoneGeoLabels.join(', '),
       Eligibilité: this._convertHtmlToMarkdown(ademeProgram.eligibilite?.texteEligibilite || ''),
+      'Zones Geo Link': zoneGeoIds,
+      idDSP: ademeProgram.dispositif.idFonctionnel,
+      'Contact URL (auto)': 'https://agirpourlatransition.ademe.fr/form/contact?id_dsp=' + ademeProgram.dispositif.idFonctionnel,
       'Données brutes': JSON.stringify(ademeProgram)
     }
+  }
+
+  private _mapGeographicAreasToIds(labels: string[]): number[] {
+    if (!labels || labels.length === 0) {
+      return []
+    }
+
+    const ids: number[] = []
+
+    for (const label of labels) {
+      const matchingArea = this._geographicAreas.find((area) => area.Name === label)
+
+      if (matchingArea) {
+        ids.push(matchingArea.id)
+      } else {
+        console.warn(`Geographic area not found in Baserow for label: "${label}"`)
+      }
+    }
+
+    return ids
   }
 
   private _slugify(title: string): string {

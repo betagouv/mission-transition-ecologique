@@ -18,13 +18,13 @@
 
 <script setup lang="ts">
 import { Image } from '@/tools/image'
-import { ExternalProgramType, RouteName } from '@/types'
+import { AbstractProgramTypeForFront, RouteName } from '@/types'
 import { DsfrCard } from '@gouvminint/vue-dsfr'
 import type { RouteLocationRaw } from 'vue-router'
 import { useNavigationStore } from '@/stores/navigation'
 
 interface Props {
-  program: ExternalProgramType
+  program: AbstractProgramTypeForFront
   titleTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 }
 const { program, titleTag = 'h2' } = defineProps<Props>()

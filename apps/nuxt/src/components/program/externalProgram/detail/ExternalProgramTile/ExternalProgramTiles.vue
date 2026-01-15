@@ -103,7 +103,7 @@
 import ProgramTile from '@/components/program/detail/ProgramTile/ProgramTile.vue'
 import Translation from '@/tools/translation'
 
-const { currentExternalProgram } = storeToRefs(useExternalProgramStore())
+const { currentExtProgram: currentExternalProgram } = storeToRefs(useProgramStore())
 
 const programCost = computed(() => currentExternalProgram.value?.[`coût de l'accompagnement`])
 const programAidAmount = computed(() => currentExternalProgram.value?.[`montant du financement`])

@@ -13,5 +13,8 @@ export interface AdemeProgramBaserow {
   'Couverture géographique': string
   'Zones Geo': string
   Eligibilité: string
+  'Zones Geo Link': number[]
   'Données brutes': string
+  'Contact URL (auto)': string
+  idDSP: string
 }

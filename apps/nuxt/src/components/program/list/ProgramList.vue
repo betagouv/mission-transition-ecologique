@@ -1,7 +1,7 @@
 <template>
   <LayoutList>
     <template #counter>
-      <TeeCounterResult :to-count="allPrograms" />
+      <TeeCounterResult :in-count="programNumber" />
     </template>
     <template #modalFilter>
       <ProgramModalFilter />
@@ -17,10 +17,10 @@
         class="fr-enlarge-link fr-card--horizontal-tier"
       />
     </li>
-    <template v-if="!isDataFull && externalPrograms && externalPrograms.length > 0">
+    <template v-if="!isDataFull && extPrograms && extPrograms.length > 0">
       <li
-        v-for="externalProgram in externalPrograms"
-        :id="externalProgram.id"
+        v-for="externalProgram in extPrograms"
+        :id="externalProgram.id + 'etr'"
         :key="`external-${externalProgram.id}`"
         class="fr-col-12 fr-col-sm-6 fr-col-md-12"
       >
@@ -37,31 +37,23 @@
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
 import ExternalProgramCard from '@/components/program/externalProgram/ExternalProgramCard.vue'
 import { ProgramTypeForFront } from '@/types'
-import { useExternalProgramStore } from '@/stores/externalProgram'
-import { ExternalProgramManager } from '@/tools/externalProgram/externalProgramManager'
 import { useCompanyDataStore } from '@/stores/companyData'
 import { storeToRefs } from 'pinia'
+import { ProgramManager } from '@/tools/program/programManager'
 
 interface Props {
   filteredPrograms?: ProgramTypeForFront[]
 }
 const props = defineProps<Props>()
-
 const { isDataFull } = storeToRefs(useCompanyDataStore())
-const { externalPrograms } = storeToRefs(useExternalProgramStore())
-
-const allPrograms = computed(() => {
-  const programs = [...(props.filteredPrograms || [])]
-  if (!isDataFull.value && externalPrograms.value && Array.isArray(externalPrograms.value)) {
-    programs.push(...(externalPrograms.value as ProgramTypeForFront[]))
-  }
-  return programs
+const { extPrograms } = storeToRefs(useProgramStore())
+const programNumber = computed(() => {
+  return (props.filteredPrograms?.length || 0) + (extPrograms.value?.length || 0)
 })
 
-// Load external programs if not connected
 onMounted(async () => {
-  if (!isDataFull.value) {
-    await new ExternalProgramManager().get()
+  if (!extPrograms.value || !extPrograms.value.length) {
+    await new ProgramManager().getExternals()
   }
 })
 </script>

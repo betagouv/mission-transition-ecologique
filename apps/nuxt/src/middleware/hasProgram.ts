@@ -1,7 +1,5 @@
 import Navigation from '@/tools/navigation'
 import { ProgramManager } from '@/tools/program/programManager'
-import { ExternalProgramManager } from '@/tools/externalProgram/externalProgramManager'
-import { useExternalProgramStore } from '@/stores/externalProgram'
 
 export default defineNuxtRouteMiddleware(async (to) => {
   if (!to.params.programId) {
@@ -13,15 +11,13 @@ export default defineNuxtRouteMiddleware(async (to) => {
 
   Navigation.getInstance(to)
 
-  // First try to get from regular programs
-  await new ProgramManager().getOneById(to.params.programId as string)
+  const programManager = new ProgramManager()
 
-  // If not found in regular programs, try external programs
+  await programManager.getOneById(to.params.programId as string)
   if (!useProgramStore().currentProgram) {
-    await new ExternalProgramManager().getOneById(to.params.programId as string)
+    await programManager.getOneExternal(to.params.programId as string)
 
-    // If still not found, throw 404
-    if (!useExternalProgramStore().currentExternalProgram) {
+    if (!useProgramStore().currentExtProgram) {
       throw createError({
         statusCode: 404,
         statusMessage: 'Program not Found'

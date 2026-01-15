@@ -16,7 +16,7 @@
 import Translation from '@/tools/translation'
 import { RouteName } from '@/types'
 
-const { currentExternalProgram } = storeToRefs(useExternalProgramStore())
+const { currentExtProgram: currentExternalProgram } = storeToRefs(useProgramStore())
 
 const backLink = {
   name: RouteName.CatalogPrograms,

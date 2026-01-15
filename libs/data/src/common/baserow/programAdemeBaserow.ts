@@ -1,10 +1,13 @@
 import { AbstractBaserow } from './abstractBaserow'
 import { AdemeProgramBaserow } from '../../externalProgram/ademe/tmp_to_commit/tmpAdemeProgramBaserowType'
 import { FilterBaserow } from './filterBaserow'
+import { GeographicAreas } from '../../program/types/domain'
+// import ConfigBaserow from '../../config/configBaserow'
 
 export class ProgramAdemeBaserow extends AbstractBaserow {
   private readonly _programAdemeTableId = 793506
-
+  // protected override readonly _geographicAreasTableId = ConfigBaserow.GEOGRAPHIC_AREAS_ID
+  protected override readonly _geographicAreasTableId = 768812
   async getAll(): Promise<AdemeProgramBaserow[]> {
     return await this._getTableData<AdemeProgramBaserow>(this._programAdemeTableId)
   }
@@ -50,5 +53,9 @@ export class ProgramAdemeBaserow extends AbstractBaserow {
   async getProgramsWithoutDispositifAssocie(): Promise<AdemeProgramBaserow[]> {
     const filter = new FilterBaserow('AND').withEmpty('Dispositif associé')
     return await this._getTableData<AdemeProgramBaserow>(this._programAdemeTableId, filter)
+  }
+
+  async getGeographicAreas(): Promise<GeographicAreas[]> {
+    return await this._getTableData<GeographicAreas>(this._geographicAreasTableId)
   }
 }

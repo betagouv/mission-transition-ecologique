@@ -12,11 +12,12 @@ import Translation from '@/tools/translation'
 
 interface Props {
   toCount?: ProjectType[] | ProgramTypeForFront[]
+  inCount?: number
 }
 
 const props = defineProps<Props>()
 
 const count = computed(() => {
-  return props.toCount?.length || 0
+  return props.inCount || props.toCount?.length || 0
 })
 </script>

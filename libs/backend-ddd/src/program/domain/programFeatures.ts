@@ -2,7 +2,7 @@ import { ProgramRepository, EligibilityEvaluator } from './spi'
 import { ProgramFilter } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
-import { ProgramEligibilityStatus, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
+import { AbstractProgramType, ProgramEligibilityStatus, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 import { Monitor } from '../../common'
 import ProgramCustomizer from './programCustomizer'
@@ -68,5 +68,13 @@ export default class ProgramFeatures {
 
   public getAll(): ProgramType[] {
     return this._programRepository.getAll()
+  }
+
+  public getExternal(): AbstractProgramType[] {
+    return this._programRepository.getExternal()
+  }
+
+  public getExternalById(id: string): AbstractProgramType | undefined {
+    return this._programRepository.getExternalById(id)
   }
 }

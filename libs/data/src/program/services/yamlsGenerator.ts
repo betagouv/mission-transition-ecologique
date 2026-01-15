@@ -11,7 +11,7 @@ export class YamlGenerator {
   async export(programs: ProgramStaticBaseType[]): Promise<void> {
     for (const program of programs) {
       // eslint-disable-next-line unused-imports/no-unused-vars
-      const { id, eligibilityData, ...yamlData } = program
+      const { id, eligibilityData, type, ...yamlData } = program
 
       const yamlString = yaml.dump(yamlData)
       const filePath = path.join(this.outputDir, `${id}.yaml`)

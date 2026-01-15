@@ -4,6 +4,7 @@ import { AdemeToDataProgramConverter } from './tmp_to_commit/tmpAdemeToDataProgr
 import { ProgramAdemeBaserow } from '../../common/baserow/programAdemeBaserow'
 import { AdemeProgramBaserowToStaticConverter } from './tmp_to_commit/ademeProgramBaserowToStaticConverter'
 import { FileManager } from '../../common/fileManager'
+import { AbstractProgramType, ProgramTypes } from '../../program/types/shared'
 
 export class AdemeDataManager {
   private readonly _ademeApi: TempAdemeApi
@@ -11,18 +12,22 @@ export class AdemeDataManager {
   private readonly _baserow: ProgramAdemeBaserow
   private readonly _staticConverter: AdemeProgramBaserowToStaticConverter
 
-  constructor() {
-    this._ademeApi = new TempAdemeApi()
-    this._converter = new AdemeToDataProgramConverter()
-    this._baserow = new ProgramAdemeBaserow()
-    this._staticConverter = new AdemeProgramBaserowToStaticConverter()
+  constructor(
+    ademeApi: TempAdemeApi,
+    converter: AdemeToDataProgramConverter,
+    baserow: ProgramAdemeBaserow,
+    staticConverter: AdemeProgramBaserowToStaticConverter
+  ) {
+    this._ademeApi = ademeApi
+    this._converter = converter
+    this._baserow = baserow
+    this._staticConverter = staticConverter
   }
 
   async updateData(reload = false): Promise<void> {
     try {
       console.log('Starting ADEME data update...')
 
-      // Fetch raw program data from ADEME API
       const rawPrograms = await this._ademeApi.getPrograms(reload)
 
       if (!rawPrograms || rawPrograms.length === 0) {
@@ -32,19 +37,9 @@ export class AdemeDataManager {
 
       console.log(`Fetched ${rawPrograms.length} programs from ADEME API`)
 
-      // Convert raw programs to Baserow format
       const baserowPrograms = rawPrograms.map((program) => this._converter.convertAdemeProgramRawToAdemeProgramBaserow(program))
-
-      console.log(`Converted ${baserowPrograms.length} programs to Baserow format`)
-
-      // Upsert programs to Baserow
-      console.log('Upserting programs to Baserow...')
       await this._baserow.upsertPrograms(baserowPrograms)
-
-      console.log('ADEME data upsert completed successfully')
-
-      // Get programs without "Dispositif associé" and export to rawPrograms.json
-      await this.exportRawPrograms()
+      await this.exportPrograms()
 
       console.log('ADEME data update completed successfully')
     } catch (error) {
@@ -53,20 +48,30 @@ export class AdemeDataManager {
     }
   }
 
-  async exportRawPrograms(): Promise<void> {
+  async exportPrograms(): Promise<void> {
     try {
       const ademePrograms = await this._baserow.getProgramsWithoutDispositifAssocie()
-      const staticPrograms = this._staticConverter.convertToStaticArray(ademePrograms)
-      console.log(staticPrograms)
+      const staticAdemePrograms = this._staticConverter.convertToStaticArray(ademePrograms)
+
+      // Read existing programs from static/programs.json
+      let existingPrograms: AbstractProgramType[] = []
+      try {
+        existingPrograms = FileManager.readJson<AbstractProgramType[]>('static/programs.json')
+      } catch (error) {
+        console.warn('Could not read existing programs.json to update the ademe data')
+      }
+      const nonAdemePrograms = existingPrograms.filter((program) => program['type'] !== ProgramTypes.extAdeme)
+      const updatedPrograms = [...nonAdemePrograms, ...staticAdemePrograms]
       FileManager.writeJson(
-        'static/rawPrograms.json',
-        staticPrograms,
-        '🖊️  Raw ADEME programs JSON successfully written to static/rawPrograms.json'
+        'static/programs.json',
+        updatedPrograms,
+        '🖊️  Updated programs JSON successfully written to static/programs.json'
       )
 
-      console.log('Raw ADEME programs export completed successfully')
+      console.log(`${staticAdemePrograms.length} ADEME programs exported to static/programs.json`)
+      console.log(`Total programs in file: ${updatedPrograms.length}`)
     } catch (error) {
-      console.error('Error exporting raw ADEME programs:', error)
+      console.error('Error exporting ADEME programs:', error)
       throw error
     }
   }

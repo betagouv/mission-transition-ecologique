@@ -39,4 +39,5 @@ export interface QuestionnaireData {
   secteur?: string
   creationDate?: string
   onlyEligible?: boolean
+  onlyExternals?: boolean
 }

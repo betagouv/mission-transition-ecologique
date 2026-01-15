@@ -12,6 +12,17 @@ export default defineEventHandler(async (event) => {
 
 const getPrograms = (questionnaireData: QuestionnaireData) => {
   const programService = new ProgramService()
+  if (questionnaireData.onlyExternals) {
+    const externalProgramsResult = programService.getExternal()
+    if (externalProgramsResult.isErr) {
+      Monitor.error('Error in get external programs', { error: externalProgramsResult.error })
+      throw createError({
+        statusCode: 500,
+        statusMessage: externalProgramsResult.error.message
+      })
+    }
+    return externalProgramsResult.value
+  }
   const programsResult = programService.getFilteredPrograms(questionnaireData)
 
   if (programsResult.isErr) {

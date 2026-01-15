@@ -3,7 +3,7 @@ import { ResultApi } from '@/tools/api/resultApi'
 import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
 import { QuestionnaireData } from '@/tools/questionnaire/questionnaireData'
-import { ProgramTypeForFront, QuestionnaireData as QuestionnaireDataType } from '@/types'
+import { AbstractProgramTypeForFront, ProgramTypeForFront, ProgramTypes, QuestionnaireData as QuestionnaireDataType } from '@/types'
 
 export class ProgramManager {
   _useProgram = useProgramStore()
@@ -36,6 +36,7 @@ export class ProgramManager {
       const program = this._useProgram.programs.find((program) => program.id === id)
       if (program) {
         this._useProgram.currentProgram = program
+        this._useProgram.currentExtProgram = undefined
         return
       }
     }
@@ -43,7 +44,13 @@ export class ProgramManager {
     this._useNavigation.hasSpinner = true
     const resultApi = await this._getOneFromApi(id)
     if (resultApi.isOk()) {
-      this._useProgram.currentProgram = resultApi.data
+      if (resultApi.data['type'] == ProgramTypes.TEE) {
+        this._useProgram.currentProgram = resultApi.data
+        this._useProgram.currentExtProgram = undefined
+      } else if (resultApi.data['type'] == ProgramTypes.extAdeme) {
+        this._useProgram.currentExtProgram = resultApi.data
+        this._useProgram.currentProgram = undefined
+      }
       this._useProgram.hasError = false
     } else {
       this._useProgram.hasError = true
@@ -70,11 +77,33 @@ export class ProgramManager {
     }
   }
 
+  async getExternals(): Promise<ResultApi<AbstractProgramTypeForFront[]>> {
+    const resultApi = (await new ProgramApi({ onlyExternals: true }).get()) as unknown as ResultApi<AbstractProgramTypeForFront[]>
+    if (resultApi.isOk()) {
+      this._useProgram.extPrograms = resultApi.data
+    }
+    return resultApi
+  }
+
+  async getOneExternal(id: string): Promise<ResultApi<AbstractProgramTypeForFront>> {
+    this._useNavigation.hasSpinner = true
+    const resultApi = (await new ProgramApi().getOne(id)) as unknown as ResultApi<AbstractProgramTypeForFront>
+    if (resultApi.isOk()) {
+      this._useProgram.currentExtProgram = resultApi.data
+      this._useProgram.currentProgram = undefined
+      this._useProgram.hasError = false
+    } else {
+      this._useProgram.hasError = true
+    }
+    this._useNavigation.hasSpinner = false
+    return resultApi
+  }
+
   private async _getFromApi(questionnaireData: QuestionnaireDataType = {}): Promise<ResultApi<ProgramTypeForFront[]>> {
-    return await new ProgramApi(questionnaireData).get()
+    return (await new ProgramApi(questionnaireData).get()) as unknown as ResultApi<ProgramTypeForFront[]>
   }
 
   private async _getOneFromApi(id: string): Promise<ResultApi<ProgramTypeForFront>> {
-    return await new ProgramApi(QuestionnaireData.get()).getOne(id)
+    return (await new ProgramApi(QuestionnaireData.get()).getOne(id)) as unknown as ResultApi<ProgramTypeForFront>
   }
 }
