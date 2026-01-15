@@ -1,6 +1,6 @@
 <template>
   <ExternalProgramDetail v-if="isExternalProgram" />
-  <ProgramDetail />
+  <ProgramDetail v-else />
 </template>
 
 <script setup lang="ts">
@@ -10,9 +10,6 @@ import { useProgramStore } from '@/stores/program'
 import { storeToRefs } from 'pinia'
 
 const { currentProgram, currentExtProgram } = storeToRefs(useProgramStore())
-
-console.log(currentProgram.value)
-console.log('ext', currentExtProgram.value)
 
 const isExternalProgram = computed(() => !currentProgram.value && !!currentExtProgram.value)
 </script>

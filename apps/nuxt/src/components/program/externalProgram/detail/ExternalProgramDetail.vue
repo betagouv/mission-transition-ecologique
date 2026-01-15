@@ -1,6 +1,6 @@
 <template>
   <Layout :links="links">
-    <ExternalProgramBackLink />
+    <ProgramBackLink />
     <article
       v-if="currentExternalProgram"
       id="externalLinksTracking"
@@ -9,24 +9,36 @@
       <div class="fr-grid-row fr-grid-row--gutters fr-mb-8v">
         <!-- IMAGE -->
         <div class="fr-col-md-4 fr-col-lg-3 fr-col-xl-3 fr-col-sm-12 fr-text-right fr-tee-program-detail-img">
-          <ExternalProgramImage />
+          <ProgramImage />
         </div>
 
         <!-- TITLE & RESUME -->
         <div class="fr-col">
-          <ExternalProgramTitle />
-          <ExternalProgramResume />
-          <ExternalProgramMainCta
+          <ProgramTitle />
+          <ProgramResume />
+          <ProgramMainCta
             :program="currentExternalProgram"
-            :is-activation-visible="false"
+            :is-activation-visible="true"
             :scroll-to-form="scrollToForm"
             :scroll-to-activation="scrollToActivation"
           />
         </div>
       </div>
-      <ExternalProgramTiles />
-      <ExternalProgramEligibilityConditions :program="currentExternalProgram" />
-      <ExternalProgramLongDescription :program="currentExternalProgram" />
+      <div
+        v-if="currentExternalProgram && currentExternalProgram.objectifs && currentExternalProgram.objectifs.length > 0"
+        ref="activation-ref"
+      >
+        <ProgramActivation
+          :program="currentExternalProgram"
+          :is-form-visible="false"
+          :scroll-to-form="scrollToForm"
+          :show-registration-step="false"
+        />
+      </div>
+
+      <ProgramTiles />
+      <ProgramEligibilityConditions :program="currentExternalProgram" />
+      <ProgramLongDescription :program="currentExternalProgram" />
     </article>
   </Layout>
 </template>

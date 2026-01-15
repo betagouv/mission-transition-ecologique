@@ -46104,10 +46104,29 @@
     "description": "L’ADEME apporte un soutien financier à la réalisation de groupes de projets ayant recours à de la chaleur d’origine renouvelable et de récupération (EnR&R).",
     "description longue": "Bénéficiez d’un **financement pour développer les énergiesrenouvelables thermiques et de récupération** sur votre territoire ou votre   patrimoine.\n\nVous êtes une organisation (collectivité, entreprise ou association)   souhaitant vous engager sur le développement maîtrisé des EnR&R thermiques   sur votre territoire ou sur votre patrimoine ? Le Contrat Chaleur Renouvelable se présente sous la forme d’un contrat unique permettant de **financer un groupe de projets** qui, pris singulièrement, peuvent ne pas être éligibles au Fonds Chaleur. **\n\nPar ailleurs, ce contrat permet de passer par une seule candidature pour un ensemble de projets toutes filières EnR&R thermiques confondues** et à différentes phases, de l’étude du potentiel au suivi de l’installation.\n\nLe **Contrat Chaleur Renouvelable patrimonial**, d’une durée maximale de **6 ans**, vous permet de bénéficier d’aides financières   sur les études et les investissements pour développer des projets EnR&R thermiques sur votre propre patrimoine. \n\nLe **Contrat Chaleur Renouvelable territorial**, d’une durée de **4 ans**, vous permet de développer des projets d’EnR&R thermiques sur votre territoire via des **aides à l’investissement et aux études**. Il vous permet également de bénéficier d’une **aide à l’animation   territoriale** destinée à faire émerger les projets et à accompagner les   porteurs de projets.\n\nVous pouvez retrouver l’ensemble des conditions d’éligibilité et de financement de chaque filière EnR&R éligible au Contrat Chaleur Renouvelable sur les pages Agir suivantes :\n\n- Aide financière - [Réalisation d'installations de production de chaleur biomasse/bois](https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-production-de-chaleur-biomassebois)\n- Aide financière - [Installations de production de chaleur et de froid renouvelable à partir de géothermie de surface, d’aérothermie ou de thalassothermie](https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-et-de-froid-renouvelable-partir-de-geothermie-de-surface-daerothermie-ou-de-thalassothermie)\n- Aide financière - [Extension et création de réseaux de chaleur ou de froid](https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/extension-et-creation-de-reseaux-de-chaleur-ou-de-froid)\n- Aide financière - [Aide à l'installation de pompe à chaleur solaire pour la production d’eau chaude](https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installation-de-pompes-chaleur-solaire-pour-la-production-deau-chaude)\n- Aide financière - [Installations de systèmes solaires combinés](https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-systemes-solaires-combines)\n- Aide financière - [Installation de production d'eau chaude solaire thermique](https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installation-de-production-deau-chaude-solaire-thermique)\n- Aide financière - [Réalisation d'installations de récupération de chaleur fatale](https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-recuperation-de-chaleur-fatale)",
     "opérateur de contact": "ADEME",
-    "autres opérateurs": [],
     "début de validité": "01/01/2026",
     "fin de validité": "31/12/2026",
-    "objectifs": [],
+    "contact question": null,
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/aides-financieres/aap/decarbonation-de-lindustrie-decarb-ind-25",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
     "eligibilityData": {
       "validity": {
         "start": "2026-01-01T00:00:00+01:00",
@@ -46134,10 +46153,29 @@
     "description": "Le programme Mobilogs vise à soutenir la production et le partage de nouvelles connaissances utiles aux acteurs socioéconomiques et institutionnels pour concevoir, expérimenter ou diffuser des mesures de sobriété dans les systèmes de mobilité et de logistique.",
     "description longue": "Mobilogs entend soutenir des travaux de recherche multidisciplinaires ou transdisciplinaires traitant de la sobriété sous toutes ses formes sans oublier les enjeux de mobilité inclusive et d’efficience économique.\n\nPar sobriété sous toutes ses formes, on entend :\n\n- **« sobriété fonctionnelle »** : réduction des distances de déplacement, démotorisation, raccourcissement des chaines logistiques, réduction des volumes consommés et produits ;\n-  **« sobriété coopérative » **: partage d’espace de stockage, covoiturage, autopartage, mutualisation de flux de marchandises, partage de l’espace public pour accueillir tous les modes ;\n- **« sobriété structurelle ou organisationnelle »** : relocalisation d’activités, chaines logistiques restructurées (cyclogistique, transport combiné) ou ralenties (transport maritime à voile), etc. ;\n- **« sobriété dimensionnelle »** : écoconception et acquisition de véhicules dont les caractéristiques techniques et les performances sont adaptées aux besoins réels de déplacement (véhicules légers intermédiaires, rétrofit).\n\nLes travaux soutenus par Mobilogs se structurent autour des trois principales étapes nécessaires au processus de transformation des systèmes **dans une logique d’amélioration continue** :\n\n- « **Planifier **» : Les travaux de recherche pourront permettre de développer des visions de long terme au travers, notamment, d’analyses historiques permettant de dégager les tendances lourdes qu’il faudrait changer. La finalité globale est de concevoir et d’évaluer ex ante de nouveaux scénarios de transition, de nouvelles mesures de politiques publiques nationales ou locales, de nouvelles stratégies de filières prenant en compte la réalité des systèmes.\n-  « **Expérimenter** » : les travaux de recherche attendus auront pour finalité la co-conception, l’expérimentation et l’évaluation de mesures, de modèles organisationnels, et plus largement de dispositif avec un effet attendu sur la soutenabilité des systèmes de mobilité ou de logistique.\n-  « **Déployer** » : les travaux de recherche concerneront les **conditions et modalités de diffusion de connaissances utile**s à la transformation des systèmes de mobilité et de logistique. En se nourrissant notamment des retours d’expérience, il pourra s’agir de développer ou d’améliorer des argumentaires scientifiquement fondés, des récits inspirants ou stratégies d’influence éclairées pour convaincre, des mécanismes de concertation ou de coopération des parties prenantes, des ressources pour monter en compétences et agir en faveur de la soutenabilité.\n\nLes priorités sont précisées dans la section « Problèmes à traiter » du document \"Mobilogs - conditions d'éligibilité\" ci-dessus.\n\nLes projets pourront relever de projets collaboratifs **multidisciplinaires**, de **recherche participat**ive ou de **recherche-action**. \n\nLe montant moyen de l’aide attribuable par projet est de 180-250 k€, pour une durée généralement comprise entre 24 et 36 mois. \n\nSelon la maturité du projet, il est aussi possible d’être accompagné dans le cadre d’un projet de **recherche en émergence **sur une durée de 18 mois pour un montant d’aide maximum de 30 k€.\n\n**Pour vous informer plus avant sur cet appel à projets : **\n\nN’hésitez pas à visionner le webinaire organisé le 6 janvier 2026 disponible [à ce lien](https://events.teams.microsoft.com/event/29056358-2e50-45ce-98e3-18736fb14e93@cb6c2492-4a85-4b15-85a1-ed94d47e5849) \n\n**Pour nous contacter**\n\nUtilisez le formulaire de contact **en bas de cette page**, nous vous conseillons de saisir uniquement \"Entreprise\" si vous dépendez d'un établissement autre qu'une \"Collectivité\". Choisissez \"Demande d'information sur un programme\" pour qualifier votre besoin.\n\n**Comment faire pour candidater ?**\n\nLe présent** appel à manifestation d’intérêt** constitue **la première étape du processus de sélection de Mobilogs**. \n\nIl est ouvert** jusqu’au 19 mars 2026 à 17h.**\n\nIl s’agit d’une phase d’idéation qui devra se conclure par le dépôt d’une lettre d’intention par le coordonnateur du consortium dans le formulaire en ligne. Un guide d’aide à la préparation de la lettre d’intention est disponible ci-dessous. \n\nAttention, cette lettre d’intention ne constituera pas la demande d’aide définitive et il n’est attendu qu’un coût de projet et montant d’aide indicatifs. Le guide de catégories des dépenses est disponible à titre informatif pour permettre d’identifier les postes de dépenses a priori éligibles.\n\nÀ ce stade, par souci de simplicité, il est également possible de n’enregistrer sur la plateforme que le coordonnateur du projet. En revanche, les acteurs cités dans la lettre d’intention devront tous être déclarés lors du dépôt du dossier complet (cf. ci-dessous).\n\n**Suite du processus de candidature**\n\nUn avis d’opportunités formulé par les équipes de l’ADEME sera adressé au porteur du projet dans les 3 semaines suivant le dépôt de la lettre d’intention.\n\nSeuls les consortiums ayant reçu un avis favorable pourront déposer un dossier complet. Tous les modèles de documents seront communiquées ultérieurement.\n\nLes résultats seront annoncés au mois **d’octobre 2026** et les contractualisations des projets lauréats s’étaleront entre novembre 2026 et le printemps 2027.",
     "opérateur de contact": "ADEME",
-    "autres opérateurs": [],
     "début de validité": "17/12/2025",
     "fin de validité": "19/03/2026",
-    "objectifs": [],
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000914",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/aides-financieres/aap/decarbonation-de-lindustrie-decarb-ind-25",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
     "eligibilityData": {
       "validity": {
         "start": "2025-12-17T09:00:00+01:00",
@@ -46162,10 +46200,29 @@
     "description": "Les spécificités des Outre-mer et de la Corse nécessitent une approche particulière de développement des projets luttant contre le gaspillage ou développant le réemploi, la réutilisation, la réparation, le recyclage.",
     "description longue": "Dans le cadre de l’émergence et de la consolidation d’une économie circulaire en Outre-mer et Corse, l’ADEME pourra aider les projets :\n\n- contribuant à la lutte contre le gaspillage afin de limiter les pertes de matière ou les invendus alimentaires de la production à la consommation ;\n\n- visant l’allongement de la durée de vie et d’usage des produits par le réemploi, la réutilisation ou la réparation (remise en état et reconditionnement d’objets, création de recycleries ou de ressourceries…) ;\n\n- ayant pour objet de structurer ou améliorer des filières locales de recyclage et de valorisation matière de tous types de déchets (unité de recyclage et valorisation, unités de remanufacturing, équipements de tri et de valorisation de déchets jusqu’alors non valorisés, équipements de préparation de la matière…) ;\n\n- contribuant à l’évolution des pratiques alimentaires vers une alimentation durable adaptée aux territoires d’Outre-mer et Corse.\n\nLes opérations soutenues pourront comporter un ou plusieurs des volets suivants : \n\n- réalisation de diagnostic territorial, d’étude de faisabilité ou d’expérimentation de solutions adaptées au contexte ultra-marin et corse ;\n\n- actions d’animation, de communication ou de formation ;\n\n- acquisitions d’équipements et réalisations d’investissements matériels.",
     "opérateur de contact": "ADEME",
-    "autres opérateurs": [],
     "début de validité": "01/01/2026",
     "fin de validité": "31/12/2026",
-    "objectifs": [],
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000904",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/aides-financieres/aap/decarbonation-de-lindustrie-decarb-ind-25",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
     "eligibilityData": {
       "validity": {
         "start": "2026-01-01T00:00:00+01:00",
@@ -46205,10 +46262,29 @@
     "description": "Le présent dispositif vise la mise à niveau de chaque territoire en matière de tri, de traitement, de valorisation ou d’élimination des déchets avec des projets adaptés au contexte local.",
     "description longue": "Pour prendre en compte les spécificités en matière de gestion des déchets dans les Outre-mer et en Corse, l’ADEME peut aider les études, puis les investissements structurants ayant pour objet de faciliter le tri et la valorisation de déchets, ainsi que leur traitement ultime, tels que : \n\n- la création ou rénovation des déchèteries, centre de tri et de transfert des collectivités ;\n\n- la création ou rénovation de centre de tri et déchèterie professionnelle ;\n\n- la création de plateformes de compostage ;\n\n- la création de centres de préparation des CSR ;\n\n- la création d’installations de valorisation énergétique ;\n\n- la création ou l’extension de site de stockage des déchets ;\n\n- la résorption des dépôts sauvages.",
     "opérateur de contact": "ADEME",
-    "autres opérateurs": [],
     "début de validité": "01/01/2026",
     "fin de validité": "31/12/2026",
-    "objectifs": [],
+    "contact question": null,
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/aides-financieres/aap/decarbonation-de-lindustrie-decarb-ind-25",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
     "eligibilityData": {
       "validity": {
         "start": "2026-01-01T00:00:00+01:00",
@@ -46250,10 +46326,29 @@
     "description": "Le programme PACTE Industrie vise à former et accompagner les industriels dans leur démarche de décarbonation. Il s’agit de faciliter le passage à l’action vers des investissements afin d’accélérer la transition énergétique et bas carbone.",
     "description longue": "Le programme PACTE Industrie propose des études et coachings sur plusieurs thématiques.\n\n**\n**\n\n**I – Management de l’énergie**\n\nDes études d’opportunités d’évolution du mix énergétique, pour étudier les différents leviers à actionner (efficacité énergétique, récupération de chaleur fatale, énergies renouvelables, ou encore électrification et hydrogène), à l’échelle du site industriel.\n- **Prérequis **: audit énergétique de moins de 4 ans ou revue énergétique de moins de 3 ans. En l’absence d’audit, il est possible d’être accompagné dans le cadre d’une étude globale proposée ci-dessous (uniquement pour les audits non réglementaires).\n- [Cahier des charges étude d’opportunité mix énergétique](https://agirpourlatransition.ademe.fr/sites/default/files/Cahier%20des%20charges%20%C3%A9tude%20d%27opportunit%C3%A9%20mix%20%C3%A9nerg%C3%A9tique%20%C3%A0%20destination%20des%20industriels%20-%202025.pdf)\n\nDes études globales, du diagnostic énergétique à la feuille de route de décarbonation, à l’échelle du site industriel, combinant audit énergétique (non réglementaire) et étude d’opportunité d’évolution du mix énergétique.\n- **Prérequis **: aucun.\n- Des [primes PRO-SMEn](https://pro-smen.org) pour mettre en place la norme ISO 50 001 (Système de management de l’énergie).\n\n**\n**\n\n**II – Stratégie de décarbonation**\n\nDes accompagnements pour élaborer une stratégie de décarbonation ambitieuse et le plan de transition associé (ACT pas à pas), à l’échelle du groupe.\n- **Prérequis **: bilan GES de moins de 2 ans qui couvre toutes les sources importantes d’émissions de GES.**\n- [Cahier des charges ACT pas à pas](https://agirpourlatransition.ademe.fr/sites/default/files/PACTE%20Industrie%20-%20ACT%20Pas%20%C3%A0%20Pas%20-%20M%C3%A9thodologie%20-%202021.pdf)\n\nDes accompagnements pour élaborer une Trajectoire d’investissements bas carbone (TIBC) à l’échelle du groupe, qui permettent de fournir un chiffrage des enjeux financiers et l’estimation des gains d’émissions de gaz à effet de serre associés.\n- Prérequis : **audit énergétique et bilan GES au moins scope 1 et 2.\n- **Point important** : des études d’opportunités d’évolution du mix énergétique seront à mener en parallèle de ces travaux.**\n- [Cahier des charges étude TIBC/STIBC](https://agirpourlatransition.ademe.fr/sites/default/files/PACTE%20Industrie%20-%20STIBC%20-%20Cahier%20des%20charges%20-%202023.pdf)\n\nDes accompagnements combinant les deux approches précédentes, intitulés « Stratégie et Trajectoire d’investissements bas carbone (STIBC) » et permettant de construire des stratégies et trajectoires d’investissements bas carbone à l’échelle du groupe industriel. Ils structurent la vision, la stratégie de décarbonation, le plan de transition associé, et apportent une aide dans la priorisation des investissements.\n- Prérequis **: prérequis et points importants des démarches ACT pas à pas et Trajectoire d’investissements bas carbone.\n- [Cahier des charges étude TIBC/STIBC](https://agirpourlatransition.ademe.fr/sites/default/files/PACTE%20Industrie%20-%20STIBC%20-%20Cahier%20des%20charges%20-%202023.pdf)\n\nDes études pour évaluer l’ambition d’une stratégie de décarbonation et son alignement au regard des objectifs de l’Accord de Paris (ACT évaluation).**\n- [Cahier des charges évaluation ACT](https://actinitiative.org/fr/act-methodologies/)\n\nPoint important** : les accompagnements ACT ne portent que sur le volet atténuation du changement climatique\n\n**\n\nIII – Financement de la transition**\n\n- Cette prestation propose un accompagnement sur mesure pour concrétiser le financement du projet d’investissement de l’entreprise. Pour un projet, le prestataire référencé PACTE Industrie pourra intervenir sur 1 ou plusieurs des 5 coachings financement :\nanalyser et lever les risques technico-économiques sur un projet complexe d’efficacité énergétique ou de décarbonation ;\n- analyser la rentabilité financière et extra-financière d’un projet, intégrant les impacts énergie, GES, quotas ;\n- rechercher le mode de financement le plus adapté et les subventions disponibles pour le montage d’un projet d’efficacité énergétique ou de décarbonation ;\n- accompagner les acteurs internes sur leurs rôles et responsabilités dans le process de financement d’un projet ;\n- structurer le montage financier d’un projet collectif de décarbonation\n\n**Prérequis**: \n- Formation « [Financer la transition énergétique et bas carbone de votre industrie – PACTE Industrie](https://formations.ademe.fr/formations_industrie-et-production-durable_financer-la-transition-energetique-et-bas-carbone--de-votre-industrie---pacte-industrie_s5256.html) »\n\n**Cahiers des charges****\n- [Coaching 1 – Analyse de risques](https://agirpourlatransition.ademe.fr/sites/default/files/Coaching%20financement%201%20-%20Analyse%20de%20risques%20-%202024.pdf)\n- [Coaching 2 – Analyse financière des impacts](https://agirpourlatransition.ademe.fr/sites/default/files/Coaching%20financement%202%20-%20Analyse%20financi%C3%A8re%20des%20impacts%20-%202024.pdf)\n- [Coaching 3 – Modes de financement](https://agirpourlatransition.ademe.fr/sites/default/files/Coaching%20financement%203%20-%20Modes%20de%20financement%20-%202024.pdf)\n- [Coaching 4 – Rôles et responsabilités](https://agirpourlatransition.ademe.fr/sites/default/files/Coaching%20financement%204%20-%20R%C3%B4les%20et%20responsabilit%C3%A9s%20-%202024.pdf)\n- [Coaching 5 – Projet collectif](https://agirpourlatransition.ademe.fr/sites/default/files/Coaching%20financement%205%20-%20Projet%20collectif%20-%202024.pdf)\n\nCette page concerne uniquement les demandes d’aides pour les études et coachings**. Pour les formations, vous pouvez [consulter la page Pacte industrie](https://agirpourlatransition.ademe.fr/entreprises/demarche-decarbonation-industrie/pacte-industrie).\n\n**\n**\n\n**Focus sur le parcours décarbonation d’un industriel :**\n\nL’ADEME vous propose un parcours de décarbonation de l’industrie en 4 étapes pour réduire vos émissions de gaz à effet de serre. En fonction de votre maturité, trouvez les aides qui vous correspondent :\n\n- Faire un état des lieux pour connaître votre situation et identifier les pistes d’actions : [les audits énergétiques en industrie](https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/audit-energetique-volontaire-industrie) et les bilans GES avec les Diag Décarbon'action de Bpifrance. Il est également possible de réaliser un audit énergétique en industrie en combinaison avec l’étude d’opportunité mix énergétique de [PACTE Industrie](https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/pacte-industrie-parcours-accompagnement-competences-transition-energetique-0) afin d’optimiser les délais et les coûts.\n- Structurer votre démarche à court-moyen-long terme sur les volets énergie, stratégie et financement à travers PACTE Industrie.\n- Investiguer et consolider vos projets par des [études de faisabilité de performance énergétique ou de décarbonation](https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/etudes-faisabilite-performance-energetique-decarbonation-dentreprises) et les [différentes études Fonds Chaleur](https://fondschaleur.ademe.fr/).\n- Investir dans des solutions via les aides de l’ADEME : Fonds Chaleur et Fonds Décarbonation de l’Industrie notamment.",
     "opérateur de contact": "ADEME",
-    "autres opérateurs": [],
     "début de validité": "01/01/2026",
     "fin de validité": "31/12/2026",
-    "objectifs": [],
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000857",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agir.ademe.fr/aides-financieres/aap/decarbonation-de-lindustrie-decarb-ind-25",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
     "eligibilityData": {
       "validity": {
         "start": "2026-01-01T00:00:00+01:00",

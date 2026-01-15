@@ -19,12 +19,13 @@
 import Navigation from '@/tools/navigation'
 import Program from '@/tools/program/program'
 import Translation from '@/tools/translation'
+import { AbstractProgramTypeForFront } from '@tee/data'
 
-const { currentProgram } = storeToRefs(useProgramStore())
+const { currentProgram, currentExtProgram } = storeToRefs(useProgramStore())
 const { currentProject } = storeToRefs(useProjectStore())
 const navigation = new Navigation()
 
-const backLink = Program.getBackLink(currentProgram.value, currentProject.value)
+const backLink = Program.getBackLink((currentProgram.value || currentExtProgram.value) as AbstractProgramTypeForFront, currentProject.value)
 
 const isCatalogDetail = navigation.isCatalogProgramDetail()
 </script>
