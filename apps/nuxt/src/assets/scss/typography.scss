@@ -11,6 +11,12 @@
       } @else {
         color: $properties !important;
       }
+
+      @each $name, $opacity in setting.$opacities {
+        &#{$name} {
+          @include tool.get-color-by-opacity($properties, $opacity);
+        }
+      }
     }
   }
 
