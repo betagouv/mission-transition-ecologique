@@ -85,6 +85,10 @@ export const useNavigationStore = defineStore('navigation', () => {
     }
   }
 
+  function updateSearchThemeParam(themeId: string) {
+    updateSearchParam({ name: 'theme', value: themeId } as UrlParam)
+  }
+
   function deleteSearchParam(name: string, searchParams: URLSearchParams | undefined = undefined) {
     const params = searchParams ?? getURLSearchParams()
     if (params.has(name)) {
@@ -110,7 +114,7 @@ export const useNavigationStore = defineStore('navigation', () => {
   }
 
   function replaceBrowserHistory(): void {
-    history.replaceState({}, '', `?${stringOfSearchParams.value}`)
+    history.replaceState({}, '', stringOfSearchParams.value ? `?${stringOfSearchParams.value}` : location.pathname)
   }
 
   function setStringOfSearchParams(searchParams: URLSearchParams) {
@@ -146,6 +150,7 @@ export const useNavigationStore = defineStore('navigation', () => {
     resetSearchParams,
     setSearchParams,
     updateSearchParam,
+    updateSearchThemeParam,
     deleteSearchParam,
     routeByTrackId,
     replaceBrowserHistory,
