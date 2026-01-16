@@ -230,7 +230,7 @@ button.fr-link:hover {
 }
 .fr-tee-program-detail-img > img.fr-responsive-img {
   min-height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .fr-tee-program-detail-img-badge {
   position: absolute;
