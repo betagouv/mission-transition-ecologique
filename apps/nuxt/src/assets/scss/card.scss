@@ -219,7 +219,7 @@
       }
 
       p.fr-card__desc {
-        color: setting.$blue-france;
+        color: setting.$blue-900;
         font-weight: 700;
 
         @include tool.media-query-respond-from(xs) {

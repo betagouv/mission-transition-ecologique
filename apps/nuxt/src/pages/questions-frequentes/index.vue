@@ -52,13 +52,13 @@ useSchemaOrg(defineWebPage({ description: description }))
             class="fr-col-12 fr-mt-3v fr-text-left fr-flex-direction--column"
             :class="Navigation.getClassesBySideMenu(true)"
           >
-            <h1 class="fr-text--blue-france">{{ title }}</h1>
-            <p class="fr-text--blue-france">
+            <h1 class="fr-text--blue-900">{{ title }}</h1>
+            <p class="fr-text--blue-900">
               Bienvenue dans notre Foire aux Questions dédiée aux entreprises qui souhaitent engager leur transition écologique. Vous y
               trouverez des réponses claires aux interrogations les plus fréquentes sur les aides disponibles, les démarches à entreprendre,
               les outils à mobiliser et les services proposés sur la plateforme.
             </p>
-            <p class="fr-text--blue-france">
+            <p class="fr-text--blue-900">
               🔍 Vous ne trouvez pas la réponse à votre question ?
               <a
                 :href="Contact.mailTo"

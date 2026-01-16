@@ -4,7 +4,7 @@
     fluid
   >
     <div class="fr-container fr-mt-3v">
-      <h1 class="fr-text--blue-france">Qui sommes-nous ?</h1>
+      <h1 class="fr-text--blue-900">Qui sommes-nous ?</h1>
       <TeeAboutIntro />
       <TeeAboutEntryPoint />
       <TeeAboutPartners />

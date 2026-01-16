@@ -85,7 +85,7 @@ const canDisplayFilter = (filter: FilterItem) => {
 }
 
 .fr-filter-count-badge {
-  background-color: setting.$blue-france;
+  background-color: setting.$blue-900;
   color: white;
   border-radius: 1rem;
   padding: 0 0.35rem;

@@ -28,7 +28,7 @@
         :to="{ name: RouteName.CatalogProjects }"
         icon="fr-icon-arrow-right-line"
         icon-right
-        class="fr-border-b--blue-france fr-py-0"
+        class="fr-border-b--blue-900 fr-py-0"
       >
         Voir tous les projets
       </TeeButtonLink>

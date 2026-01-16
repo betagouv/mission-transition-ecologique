@@ -18,19 +18,19 @@
       teste2e-selector="success-callback-contact-form"
       class="fr-text-center fr-grid-row fr-grid-row--center"
     >
-      <p class="fr-text--blue-france fr-col-12 fr-mb-3v">
+      <p class="fr-text--blue-900 fr-col-12 fr-mb-3v">
         <span
           class="fr-icon-checkbox-circle-fill fr-icon--lg"
           aria-hidden="true"
         />
       </p>
-      <h3 class="fr-text--blue-france fr-mb-4v">
+      <h3 class="fr-text--blue-900 fr-mb-4v">
         {{ Translation.t(`form.sent`) }}
       </h3>
       <slot name="phoneContact" />
       <Feedback
         title="Aidez-nous à améliorer<span class='fr-display--block fr-display-sm--inline'> ce service"
-        title-class="fr-text--blue-france fr-h4"
+        title-class="fr-text--blue-900 fr-h4"
         class="fr-bg--white fr-p-3w fr-mt-6w fr-col-12"
         :position="FeedbackButtonPosition.Form"
       />

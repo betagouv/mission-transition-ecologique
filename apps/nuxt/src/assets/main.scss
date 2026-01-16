@@ -1,3 +1,5 @@
+@use 'scss/tool';
+@use 'scss/setting';
 @import "scss/dsfr";
 @import "scss/accordion";
 @import "scss/background";
@@ -13,9 +15,11 @@
 @import "scss/gradient";
 @import "scss/grid";
 @import "scss/header";
+@import "scss/home";
 @import "scss/highlight";
 @import "scss/input";
 @import "scss/list";
+@import "scss/modal";
 @import "scss/radius";
 @import "scss/router";
 @import "scss/searchBar";
@@ -26,3 +30,11 @@
 @import "scss/transition";
 @import "scss/typography";
 @import "scss/markdown";
+
+
+:root {
+  --blue-france-sun-113-625: #{setting.$blue-agir};
+  --background-action-high-blue-france-hover: #{tool.scaleLightness(setting.$blue-agir, 15%)};
+  --background-action-high-blue-france-active: #{tool.scaleLightness(setting.$blue-agir, 25%)};
+  --text-title-grey: #{setting.$blue-900};
+}

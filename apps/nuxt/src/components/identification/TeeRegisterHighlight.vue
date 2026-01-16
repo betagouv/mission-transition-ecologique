@@ -7,7 +7,7 @@
     alt-img="image / ecriture"
   >
     <TeeDsfrButton
-      class="fr-text--yellow fr-text--bold"
+      class="fr-text--bold fr-btn-bg--blue-agir"
       :label="buttonLabel"
       @click="openModal"
     />

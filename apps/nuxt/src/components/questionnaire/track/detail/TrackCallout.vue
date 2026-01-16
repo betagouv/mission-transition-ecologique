@@ -52,7 +52,7 @@
           <!-- CALLOUT HINT -->
           <p
             v-if="track.callout.hint"
-            class="fr-mt-2v fr-mb-1v tee-track-callout-hint fr-text--blue-france"
+            class="fr-mt-2v fr-mb-1v tee-track-callout-hint fr-text--blue-900"
           >
             <i>
               <span

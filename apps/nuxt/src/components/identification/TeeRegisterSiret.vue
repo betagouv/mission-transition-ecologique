@@ -1,9 +1,6 @@
 <template>
-  <div
-    id="register-siret"
-    class="fr-col-12 fr-col-md-7 fr-col-offset-md-2"
-  >
-    <h4 class="fr-mb-0 fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
+  <div id="register-siret">
+    <h4 class="fr-mb-0 fr-py-2v fr-text--yellow">Quelle est votre entreprise ?</h4>
     <TeeDsfrSearchBar
       v-model.trim="queryValue"
       :color="Color.yellow"
@@ -30,8 +27,8 @@
             @keydown.enter="selectItem(response)"
           >
             <div class="fr-card__body">
-              <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-                <div class="fr-text--blue-france">
+              <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-900">
+                <div class="fr-text--blue-900">
                   <div class="fr-text--bold">{{ response.denomination || 'Entreprise individuelle' }}</div>
                   SIRET {{ response.siret }}
                 </div>
@@ -50,7 +47,7 @@
             class="fr-card fr-card-result fr-card--no-arrow fr-card--shadow custom-border"
           >
             <div class="fr-card__body fr-p-0">
-              <div class="fr-mb-0 fr-py-1v fr-px-4v fr-text--blue-france fr-text--sm">
+              <div class="fr-mb-0 fr-py-1v fr-px-4v fr-text--blue-900 fr-text--sm">
                 <span>Votre entreprise n'est pas affichée ?</span>
                 <a
                   href="https://annuaire-entreprises.data.gouv.fr/"

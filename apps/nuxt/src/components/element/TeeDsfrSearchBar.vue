@@ -9,7 +9,7 @@
     >
       <span
         v-if="hint"
-        :class="`${backgroundColor ? `fr-text--${backgroundColor}` : ''}`"
+        :class="`${color ? `fr-text--${color}` : ''}`"
         class="fr-hint-text fr-col-justify--left fr-mb-2v"
       >
         {{ hint }}
@@ -77,7 +77,7 @@ const props = withDefaults(defineProps<Props>(), {
   backgroundColor: Color.white,
   isLarge: false,
   deactivateClickOutside: false,
-  searchColor: Color.blueFrance,
+  searchColor: Color.blue900,
   placeholder: ''
 })
 

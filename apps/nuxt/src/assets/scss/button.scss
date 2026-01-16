@@ -21,10 +21,18 @@
             &:active {
               @include tool.get-background-color-by-opacity($properties, $opacity);
             }
-          } 
+          }
+        }
+
+        &:hover {
+          @include tool.get-background-color-by-opacity($properties, 15%);
+        }
+
+        &:active {
+          @include tool.get-background-color-by-opacity($properties, 25%);
         }
       }
-    } 
+    }
   }
 
   &--secondary {

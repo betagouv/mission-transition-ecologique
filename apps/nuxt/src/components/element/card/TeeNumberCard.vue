@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-type Color = 'blue-france' | 'green-tilleul-verveine' | 'red-marianne' | 'yellow-tournesol'
+type Color = 'blue-900' | 'green-tilleul-verveine' | 'red-marianne' | 'yellow-tournesol'
 
 defineProps<{
   number: number | string
@@ -56,7 +56,7 @@ defineProps<{
   width: 24px;
   height: 24px;
   position: relative;
-  background: linear-gradient(135deg, var(--background-action-high-blue-france) 50%, transparent 50%);
+  background: linear-gradient(135deg, var(--background-action-high-blue-900) 50%, transparent 50%);
 }
 
 .tee-number-card-number-div {

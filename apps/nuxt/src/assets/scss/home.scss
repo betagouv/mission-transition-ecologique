@@ -1,0 +1,23 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use 'setting';
+@use 'tool';
+
+.tee-cta-image {
+  background-image: url('/images/TEE-illustrationHP.svg');
+
+  @include tool.respond-to(md) {
+    background-image: url('/images/TEE-illustrationHP-hauteur.svg');
+  }
+
+  @include tool.respond-to(sm) {
+    background-image: none;
+  }
+
+  // height: 300px;
+  background-size: auto 300px;
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 1.5rem);
+  background-position-y: bottom;
+}
+
