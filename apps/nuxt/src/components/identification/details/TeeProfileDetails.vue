@@ -27,7 +27,7 @@
   <div class="fr-col-sm-8 fr-pt-4v fr-col-md-7 fr-col-offset-md-2 fr-col-12">
     <TeeDsfrButton
       :class="Breakpoint.isMobile() ? 'fr-btn-fullwidth' : ''"
-      class="fr-bg--yellow fr-text--blue-france fr-col-justify--center"
+      class="fr-bg--yellow fr-text--blue-900 fr-col-justify--center"
       :label="getSaveProfileButtonLabel"
       :icon="getSaveProfileButtonIcon"
       icon-right

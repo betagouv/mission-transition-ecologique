@@ -3,13 +3,13 @@
     <TeeDsfrBreadcrumb :links="[{ text: 'Budget', to: { name: RouteName.Budget } }]" />
     <div class="fr-container fr-mb-8w">
       <div class="fr-mb-6w">
-        <h1 class="fr-mb-3w fr-text--blue-france">Budget</h1>
+        <h1 class="fr-mb-3w fr-text--blue-900">Budget</h1>
         <p>
           Transition écologique des entreprises est un service public numérique, c’est pourquoi nous sommes transparents sur les ressources
           allouées et la manière dont elles sont employées.
         </p>
       </div>
-      <h2 class="fr-text--blue-france">Principes</h2>
+      <h2 class="fr-text--blue-900">Principes</h2>
       Nous suivons le
       <a
         href="https://beta.gouv.fr/approche/manifeste"
@@ -23,7 +23,7 @@
         <li>L’équipe adopte une approche itérative et d’amélioration en continu</li>
       </ul>
 
-      <h2 class="fr-mt-3w fr-text--blue-france">Fonctionnement</h2>
+      <h2 class="fr-mt-3w fr-text--blue-900">Fonctionnement</h2>
       <p>
         Transition écologique des entreprises est une start-up d'état. L'équipe est donc portée par un intrapreneur qui est responsable du
         service numérique développé. Son rôle est multiple : déploiement, gestion des produits, référent auprès de son administration
@@ -38,7 +38,7 @@
         >.
       </p>
 
-      <h2 class="fr-text--blue-france">Cofinancement</h2>
+      <h2 class="fr-text--blue-900">Cofinancement</h2>
       La particularité de notre Startup d'Etat est le cofinancement par plusieurs entités publiques :
       <ul>
         <li>
@@ -90,7 +90,7 @@
         </li>
       </ul>
 
-      <h2 class="fr-mt-3w fr-text--blue-france">Consommation</h2>
+      <h2 class="fr-mt-3w fr-text--blue-900">Consommation</h2>
 
       <div class="fr-grid-row">
         <div class="fr-col-12 fr-col-lg-7 fr-col--middle fr-col-justify--center">

@@ -20,11 +20,11 @@
     class="fr-mt-n2w"
   >
     <div v-if="requestResponses.resultCount < 4">
-      <span class="fr-text--blue-france tee-font-style--italic">{{ requestResponses.resultCount }} résultats trouvés</span>
+      <span class="fr-text--blue-900 tee-font-style--italic">{{ requestResponses.resultCount }} résultats trouvés</span>
       <h6 class="fr-mt-3v">Sélectionnez votre entreprise :</h6>
     </div>
     <div v-else>
-      <span class="fr-text--blue-france tee-font-style--italic">3 résultats affichés sur {{ requestResponses.resultCount }} trouvés</span>
+      <span class="fr-text--blue-900 tee-font-style--italic">3 résultats affichés sur {{ requestResponses.resultCount }} trouvés</span>
 
       <h6 class="fr-mt-3v">Sélectionnez votre entreprise ou précisez votre recherche</h6>
     </div>
@@ -37,14 +37,14 @@
       v-for="(response, i) in requestResponses.establishments"
       :key="`resp-input-${i}`"
       class="fr-card fr-card-result fr-card--no-arrow fr-mb-2v fr-card--shadow"
-      :class="isSelected(i) ? 'fr-bg--grey--lightness fr-text--blue-france fr-border--blue-france' : 'fr-border--grey--light'"
+      :class="isSelected(i) ? 'fr-bg--grey--lightness fr-text--blue-900 fr-border--blue-900' : 'fr-border--grey--light'"
       @click="selectItem(i)"
     >
       <div class="fr-card__body">
         <div class="fr-card__content fr-py-2v fr-px-4v">
           <div
             class="fr-card__title"
-            :class="{ 'fr-text--blue-france': isSelected(i) }"
+            :class="{ 'fr-text--blue-900': isSelected(i) }"
           >
             <div class="fr-hidden fr-unhidden-md">
               {{ response.denomination || 'Entreprise individuelle' }}

@@ -7,7 +7,7 @@
     <div
       id="register-modal"
       :class="imgClass"
-      class="fr-bg--blue-france fr-px-md-32v fr-px-2v fr-pb-md-24v fr-pb-32v"
+      class="fr-bg--blue-900 fr-px-md-32v fr-px-2v fr-pb-md-24v fr-pb-32v"
     >
       <div
         id="register-modal-content"
@@ -20,7 +20,7 @@
               id="close-register-modal"
               size="sm"
               only-label="fermer la modale d'enregistrement"
-              class="fr-btn-bg--blue--light fr-bg--blue--lightness fr-mr-4v fr-mt-8v fr-p-0 fr-text--blue-france fr-radius-a--2v"
+              class="fr-btn-bg--blue--light fr-bg--blue--lightness fr-mr-4v fr-mt-8v fr-p-0 fr-text--blue-900 fr-radius-a--2v"
               @click="closeModal"
             >
               <span class="fr-icon-close-line fr-icon--lg"></span>

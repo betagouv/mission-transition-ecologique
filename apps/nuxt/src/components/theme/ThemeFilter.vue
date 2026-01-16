@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { ThemeType, ThemeId, FilterItemKeys, FiltersType, TrackId } from '@/types'
+import { ThemeType, ThemeId, FilterItemKeys, FiltersType, TrackId, Color } from '@/types'
 import { Theme } from '@/tools/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 import Navigation from '@/tools/navigation'
@@ -37,7 +37,8 @@ const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
     tagName: 'button',
     value: '',
     selectable: true,
-    selected: filters[FilterItemKeys.themeType] === ''
+    selected: filters[FilterItemKeys.themeType] === '',
+    color: filters[FilterItemKeys.themeType] === '' ? Color.blueAgir : undefined
   }
 
   const tags: TeeDsfrTagProps[] = []
@@ -65,7 +66,7 @@ function isActive(tag: ThemeType) {
   return Theme.getTags().length === 1 || filters[FilterItemKeys.themeType] === (tag.id as string)
 }
 
-const updateThemeTypeSelected = async (value: string | number) => {
+const updateThemeTypeSelected = (value: string | number | undefined) => {
   filtersStore.setThemeTypeSelected(value as string)
 
   const navigation = new Navigation()

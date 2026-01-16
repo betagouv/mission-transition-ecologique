@@ -24,7 +24,7 @@ input[type="search"] {
     box-shadow: inset 0 -2px 0 0 var(--border-disabled-grey);
     color: var(--text-disabled-grey);
   }
-} 
+}
 
 .fr-search-bar {
   &-lg {
@@ -52,7 +52,7 @@ input[type="search"] {
 
       &::before {
         content: "";
-        border: 2px solid setting.$blue-france;
+        border: 2px solid setting.$blue-900;
         border-top-color: transparent;
         border-radius: 50%;
         position: absolute;

@@ -1,6 +1,8 @@
 @use '@gouvfr/dsfr/src/module/color/variable/static' as color;
 @forward '@gouvfr/dsfr/src/module/color/variable/static';
 
+
+
 $opacities: (
   --light: 70%,
   --lightness: 90%
@@ -11,22 +13,26 @@ $yellow: #facf35;
 $red: #fca081;
 $purple: #6a62f4;
 $green: #1ebe8e;
+$green-agir: #307c6f;
 $blue: #001891;
+$blue-agir: #465f9d;
+$blue-900: #050d3c;
 $grey: #777;
 $text-grey: var(--text-default-grey);
 $blue-france-inverted: var(--text-inverted-blue-france);
+
 
 $colors: (
   "white": color.$white,
   "black": color.$black,
   "yellow": (
     "color": $yellow,
-    "color-with-background": color.$blue-france
+    "color-with-background": $blue-900
   ),
   "deep-red": color.$red-marianne,
   "red": (
     "color": $red,
-    "color-with-background": color.$blue-france
+    "color-with-background": $blue-900
   ),
   "purple" : (
     "color": $purple,
@@ -36,16 +42,28 @@ $colors: (
     "color": $green,
     "color-with-background": $blue-france-inverted
   ),
+  "green-agir": (
+    "color": $green-agir,
+    "color-with-background": $blue-france-inverted
+  ),
   "blue": (
     "color": $blue,
     "color-with-background": $blue-france-inverted,
   ),
+  "blue-agir": (
+    "color": $blue-agir,
+    "color-with-background": $blue-france-inverted,
+  ),
+  "blue-900": (
+    "color": $blue-900,
+    "color-with-background": $blue-france-inverted,
+  ),
   "blue-france": (
-    "color": color.$blue-france,
+    "color": $blue-900,
     "color-with-background": $blue-france-inverted,
   ),
   "grey": (
     "color": $grey,
-    "color-with-background": color.$blue-france
+    "color-with-background": $blue-900
   ),
 );

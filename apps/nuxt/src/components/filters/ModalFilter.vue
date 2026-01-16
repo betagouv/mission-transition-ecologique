@@ -22,7 +22,7 @@
     size="xl"
     @close="close()"
   >
-    <div class="fr-h5 fr-text--blue-france fr-text-center">Filtres</div>
+    <div class="fr-h5 fr-text--blue-900 fr-text-center">Filtres</div>
     <slot name="filters-accordion"></slot>
   </DsfrModal>
 </template>

@@ -2,6 +2,7 @@
   <DsfrTag
     v-bind="props"
     :class="classes"
+    class="fr-text--blue-900"
   />
 </template>
 

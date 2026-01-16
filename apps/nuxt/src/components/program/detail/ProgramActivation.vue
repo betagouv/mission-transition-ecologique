@@ -15,7 +15,7 @@
           <div class="fr-mb-0 fr-ml-0">{{ Translation.t('program.programActivationRegistration') }}</div>
           <DsfrButton
             primary
-            class="fr-my-1v fr-text--yellow"
+            class="fr-my-1v"
             @click="openModal"
           >
             {{ Translation.t('results.eligibilityCheckCTA') }}

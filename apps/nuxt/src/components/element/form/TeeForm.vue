@@ -99,7 +99,7 @@
 <script setup lang="ts">
 import { Image } from '@/tools/image'
 import Navigation from '@/tools/navigation'
-import { ConseillerEntreprisePartner } from '@/tools/operator'
+import { ConseillerEntreprisePartner } from '@/tools/partner'
 import { Scroll } from '@/tools/scroll/scroll'
 import { computed } from 'vue'
 import { type ReqResp, FormDataType, InputFieldUnionType, ProjectType, ProgramTypeForFront } from '@/types'

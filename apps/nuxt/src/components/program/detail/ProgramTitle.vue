@@ -1,4 +1,9 @@
 <template>
+  <ul class="fr-badges-group">
+    <li class="fr-badge fr-badge--info fr-badge--no-icon">
+      {{ currentProgram?.["nature de l'aide"] }}
+    </li>
+  </ul>
   <div class="fr-col-justify--left fr-mb-5v">
     <h1 class="fr-h6 fr-text--purple fr-mb-0">{{ currentProgram?.titre }}</h1>
     <TeeCopyLinkButton

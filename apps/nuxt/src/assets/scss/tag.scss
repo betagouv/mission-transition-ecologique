@@ -1,6 +1,7 @@
 @use 'sass:meta';
 @use 'sass:map';
 @use "setting";
+@use 'tool';
 
 a, button {
   &.fr-tag {
@@ -18,6 +19,15 @@ a, button {
             }
           }
         }
+      }
+    }
+
+    &[aria-pressed="false"] {
+      @include tool.get-background-color-by-opacity(setting.$green, tool.opacity(--lightness));
+
+      &:hover,
+      &:active {
+        @include tool.get-background-color-by-opacity(setting.$green-agir, 85%);
       }
     }
   }

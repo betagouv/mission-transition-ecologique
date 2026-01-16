@@ -5,10 +5,14 @@ export enum Color {
   blueFranceLightnessed = 'blue--lightness',
 
   blueFrance = 'blue-france',
+  blue900 = 'blue-900',
+  blueAgir = 'blue-agir',
 
   green = 'green',
   greenLighted = 'green--light',
   greenLightnessed = 'green--lightness',
+
+  greenAgir = 'green-agir',
 
   purple = 'purple',
   purpleLighted = 'purple--light',
