@@ -150,7 +150,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '@pinia/nuxt',
     'nuxt-security',
     'vue-dsfr-nuxt-module',
-    //'@sentry/nuxt/module', on commente pour faire fonctionner avec npm run dev
+    '@sentry/nuxt/module',
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@nuxt/scripts',

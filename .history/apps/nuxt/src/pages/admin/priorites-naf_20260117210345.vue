@@ -5,11 +5,13 @@ import type { DataProject } from '@tee/data'
 import FiltreNaf from '../../components/admin/filtre-naf.vue'
 import ListeProjets from '../../components/admin/liste-projets.vue'
 
+// On récupère les projets
 const {
   data: projects,
   pending,
   error
 } = await useFetch<DataProject[]>('/api/projects', {
+  // Le transform s'assure qu'on récupère bien le tableau, peu importe la structure
   transform: (data: any) => data.results || data
 })
 
@@ -22,12 +24,14 @@ const projetsFiltres = computed(() => {
     return sortProjectsByPriority(baseProjects)
   }
 
-  // LOGIQUE DE FILTRAGE PAR SECTEUR (Lettre)
+  // LOGIQUE BASÉE SUR TON DEBUG :
+  // On extrait la lettre du code NAF sélectionné (ex: "85.59A" -> "A")
   const secteurLettre = selectedNaf.value.match(/[A-Z]$/)?.[0]
 
   const filtered = baseProjects.filter((p) => {
-    // On vérifie si la lettre est présente dans le tableau 'sectors' du projet
-    return p.sectors && Array.isArray(p.sectors) && p.sectors.includes(secteurLettre)
+    // Ton debug a montré que les secteurs sont dans p.sectors (ex: ["A", "B", "C"])
+    // On vérifie si la lettre extraite est présente dans ce tableau
+    return p.sectors && p.sectors.includes(secteurLettre)
   })
 
   return sortProjectsByPriority(filtered)
@@ -41,19 +45,28 @@ const projetsFiltres = computed(() => {
     <FiltreNaf @change="(val: string) => (selectedNaf = val)" />
 
     <div class="mt-8">
-      <div v-if="pending" class="text-center py-10 text-gray-500 italic">
-        Chargement des projets...
+      <div
+        v-if="pending"
+        class="text-center py-10 text-gray-500 italic"
+      >
+        Chargement des projets depuis Baserow...
       </div>
 
-      <div v-else-if="error" class="bg-red-50 text-red-700 p-4 rounded-lg">
-        Erreur : {{ error.statusMessage }}
+      <div
+        v-else-if="error"
+        class="bg-red-50 text-red-700 p-4 rounded-lg border border-red-200"
+      >
+        Erreur lors de la récupération : {{ error.statusMessage || "Impossible de contacter l'API" }}
       </div>
 
-      <ListeProjets v-else :projets="projetsFiltres" />
+      <ListeProjets
+        v-else
+        :projets="projetsFiltres"
+      />
       
-      <div class="mt-4 text-xs text-gray-400">
-        Total : {{ projetsFiltres.length }} projets affichés pour le secteur {{ selectedNaf.match(/[A-Z]$/)?.[0] || 'Tous' }}
-      </div>
+      <p v-if="selectedNaf" class="mt-4 text-sm text-gray-500 italic">
+        Filtre actif : {{ selectedNaf }} ({{ projetsFiltres.length }} projets trouvés)
+      </p>
     </div>
   </div>
 </template>

@@ -23,10 +23,11 @@ const projetsFiltres = computed(() => {
   }
 
   // LOGIQUE DE FILTRAGE PAR SECTEUR (Lettre)
+  // On récupère la lettre à la fin du code NAF (ex: "85.59A" -> "A")
   const secteurLettre = selectedNaf.value.match(/[A-Z]$/)?.[0]
 
   const filtered = baseProjects.filter((p) => {
-    // On vérifie si la lettre est présente dans le tableau 'sectors' du projet
+    // On vérifie si la lettre (ex: 'C') est présente dans le tableau 'sectors' du projet
     return p.sectors && Array.isArray(p.sectors) && p.sectors.includes(secteurLettre)
   })
 
