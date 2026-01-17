@@ -13,7 +13,7 @@ const handleChange = (event: Event) => {
   <div class="bg-white p-5 rounded-lg border border-gray-200 shadow-sm max-w-2xl">
     <label
       for="naf-select"
-      class="block text-sm font-semibold text-gray-700 mb-3"
+      class="block text-sm font-semibold text-gray-600 mb-2"
     >
       Filtrer par secteur d'activité (Code NAF)
     </label>
@@ -21,7 +21,7 @@ const handleChange = (event: Event) => {
     <div class="relative max-w-md">
       <select
         id="naf-select"
-        class="appearance-none block w-full p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none cursor-pointer hover:bg-white hover:border-blue-400 transition-all pr-10"
+        class="appearance-none block w-full p-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg cursor-pointer hover:bg-white hover:border-blue-400 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all pr-10"
         @change="handleChange"
       >
         <option value="">Tous les secteurs</option>

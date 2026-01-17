@@ -146,7 +146,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 
-  // Eviter que les styles du DSFR et de Tailwind ne se battent
+  
   postcss: {
     plugins: {
       tailwindcss: {},

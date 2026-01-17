@@ -146,19 +146,10 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 
-  // Eviter que les styles du DSFR et de Tailwind ne se battent
-  postcss: {
-    plugins: {
-      tailwindcss: {},
-      autoprefixer: {},
-    },
-  },
-
   modules: [
     '@pinia/nuxt',
     'nuxt-security',
-    '@nuxtjs/tailwindcss',
-    'vue-dsfr-nuxt-module',
+    '@nuxtjs/tailwindcss'
     //'@sentry/nuxt/module', on commente pour faire fonctionner avec npm run dev
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
