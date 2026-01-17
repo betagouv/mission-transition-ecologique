@@ -53,7 +53,7 @@ const saveChanges = async () => {
       <h1 class="text-2xl font-bold text-gray-800">Administration : Priorités NAF</h1>
 
       <button v-if="isModified" @click="saveChanges"
-        class="bg-blue-800 hover:!bg-blue-600 text-white px-4 py-2 font-bold">
+        class="bg-blue-700 text-white px-4 py-2 font-bold shadow-sm transition-all">
         Valider les changements
       </button>
     </div>
@@ -68,7 +68,7 @@ const saveChanges = async () => {
 
       <div class="mt-4 text-xs text-gray-400">
         Total : {{ projetsFiltres.length }} projets affichés pour le secteur {{ selectedNaf.match(/[A-Z]$/)?.[0] ||
-          'Tous' }}
+        'Tous' }}
       </div>
     </div>
   </div>

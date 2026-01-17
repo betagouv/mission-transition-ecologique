@@ -26,6 +26,7 @@ const projetsFiltres = computed({
   },
   set: (newOrder) => {
     isModified.value = true
+    // On met à jour les priorités basées sur le nouvel index visuel
     const updated = newOrder.map((p, index) => ({ ...p, priorite: index + 1 }))
     const otherProjects = localProjects.value.filter(lp => !updated.find(u => u.id === lp.id))
     localProjects.value = [...updated, ...otherProjects]
@@ -53,8 +54,8 @@ const saveChanges = async () => {
       <h1 class="text-2xl font-bold text-gray-800">Administration : Priorités NAF</h1>
 
       <button v-if="isModified" @click="saveChanges"
-        class="bg-blue-800 hover:!bg-blue-600 text-white px-4 py-2 font-bold">
-        Valider les changements
+        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-bold shadow-sm transition-all">
+        Enregistrer l'ordre
       </button>
     </div>
 
@@ -67,8 +68,7 @@ const saveChanges = async () => {
       <ListeProjets v-else v-model:projets="projetsFiltres" />
 
       <div class="mt-4 text-xs text-gray-400">
-        Total : {{ projetsFiltres.length }} projets affichés pour le secteur {{ selectedNaf.match(/[A-Z]$/)?.[0] ||
-          'Tous' }}
+        Total : {{ projetsFiltres.length }} projets affichés
       </div>
     </div>
   </div>

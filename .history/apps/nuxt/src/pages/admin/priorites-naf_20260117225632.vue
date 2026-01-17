@@ -50,13 +50,16 @@ const saveChanges = async () => {
 <template>
   <div class="p-8">
     <div class="flex justify-between items-center mb-6">
-      <h1 class="text-2xl font-bold text-gray-800">Administration : Priorités NAF</h1>
+  <h1 class="text-2xl font-bold text-gray-800">Administration : Priorités NAF</h1>
 
-      <button v-if="isModified" @click="saveChanges"
-        class="bg-blue-800 hover:!bg-blue-600 text-white px-4 py-2 font-bold">
-        Valider les changements
-      </button>
-    </div>
+  <button 
+    v-if="isModified" 
+    @click="saveChanges"
+    class="bg-blue-800 hover:bg-blue-900 active:bg-slate-950 text-white px-5 py-2.5 rounded-md font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 ease-in-out transform hover:-translate-y-0.5 active:translate-y-0"
+  >
+    Valider les changements
+  </button>
+</div>
 
     <FiltreNaf @change="(val: string) => (selectedNaf = val)" />
 
@@ -68,7 +71,7 @@ const saveChanges = async () => {
 
       <div class="mt-4 text-xs text-gray-400">
         Total : {{ projetsFiltres.length }} projets affichés pour le secteur {{ selectedNaf.match(/[A-Z]$/)?.[0] ||
-          'Tous' }}
+        'Tous' }}
       </div>
     </div>
   </div>

@@ -13,6 +13,7 @@ const selectedNaf = ref('')
 const localProjects = ref<DataProject[]>([])
 const isModified = ref(false)
 
+// On initialise la copie locale dès que les données arrivent
 watch(projects, (newVal) => {
   if (newVal) localProjects.value = [...newVal]
 }, { immediate: true })
@@ -26,7 +27,10 @@ const projetsFiltres = computed({
   },
   set: (newOrder) => {
     isModified.value = true
+    // On met à jour les priorités basées sur le nouvel index visuel
     const updated = newOrder.map((p, index) => ({ ...p, priorite: index + 1 }))
+    
+    // On fusionne avec le reste des projets (ceux non visibles car filtrés)
     const otherProjects = localProjects.value.filter(lp => !updated.find(u => u.id === lp.id))
     localProjects.value = [...updated, ...otherProjects]
   }
@@ -51,10 +55,13 @@ const saveChanges = async () => {
   <div class="p-8">
     <div class="flex justify-between items-center mb-6">
       <h1 class="text-2xl font-bold text-gray-800">Administration : Priorités NAF</h1>
-
-      <button v-if="isModified" @click="saveChanges"
-        class="bg-blue-800 hover:!bg-blue-600 text-white px-4 py-2 font-bold">
-        Valider les changements
+      
+      <button 
+        v-if="isModified"
+        @click="saveChanges"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-bold shadow-sm transition-all"
+      >
+        Enregistrer l'ordre
       </button>
     </div>
 
@@ -65,10 +72,9 @@ const saveChanges = async () => {
       <div v-else-if="error" class="bg-red-50 text-red-700 p-4 rounded-lg">Erreur : {{ error.statusMessage }}</div>
 
       <ListeProjets v-else v-model:projets="projetsFiltres" />
-
+      
       <div class="mt-4 text-xs text-gray-400">
-        Total : {{ projetsFiltres.length }} projets affichés pour le secteur {{ selectedNaf.match(/[A-Z]$/)?.[0] ||
-          'Tous' }}
+        Total : {{ projetsFiltres.length }} projets affichés
       </div>
     </div>
   </div>

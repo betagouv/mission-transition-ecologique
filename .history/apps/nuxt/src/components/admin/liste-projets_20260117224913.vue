@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { DataProject } from '@tee/data'
-import draggable from 'vuedraggable'
+import draggable from 'vuedraggable' // Assure-toi d'avoir fait npm install vuedraggable@next
 
 const props = defineProps<{
   projets: DataProject[]
@@ -8,6 +8,7 @@ const props = defineProps<{
 
 const emit = defineEmits(['update:projets'])
 
+// Liaison pour le drag and drop
 const list = computed({
   get: () => props.projets,
   set: (value) => emit('update:projets', value)
@@ -25,9 +26,15 @@ const list = computed({
           <th scope="col" class="px-4 py-3 w-28 text-right font-bold">Priorité</th>
         </tr>
       </thead>
-
-      <draggable v-model="list" tag="tbody" item-key="id" handle=".handle" ghost-class="bg-blue-50"
-        class="divide-y divide-gray-200">
+      
+      <draggable 
+        v-model="list" 
+        tag="tbody" 
+        item-key="id" 
+        handle=".handle"
+        ghost-class="bg-blue-50"
+        class="divide-y divide-gray-200"
+      >
         <template #item="{ element: projet }">
           <tr class="hover:bg-gray-50 transition-colors">
             <td class="px-4 py-2 text-center text-gray-400 cursor-grab handle">☰</td>

@@ -52,10 +52,13 @@ const saveChanges = async () => {
     <div class="flex justify-between items-center mb-6">
       <h1 class="text-2xl font-bold text-gray-800">Administration : Priorités NAF</h1>
 
-      <button v-if="isModified" @click="saveChanges"
-        class="bg-blue-800 hover:!bg-blue-600 text-white px-4 py-2 font-bold">
-        Valider les changements
-      </button>
+      <button 
+  v-if="isModified" 
+  @click="saveChanges"
+  class="bg-red-800 text-white px-4 py-2 font-bold shadow-sm transition-colors duration-200 hover:bg-blue-600"
+>
+  Valider les changements
+</button>
     </div>
 
     <FiltreNaf @change="(val: string) => (selectedNaf = val)" />

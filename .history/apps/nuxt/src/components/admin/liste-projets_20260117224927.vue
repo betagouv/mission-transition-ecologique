@@ -8,6 +8,7 @@ const props = defineProps<{
 
 const emit = defineEmits(['update:projets'])
 
+// Liaison pour le drag and drop
 const list = computed({
   get: () => props.projets,
   set: (value) => emit('update:projets', value)

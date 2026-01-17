@@ -53,8 +53,8 @@ const saveChanges = async () => {
       <h1 class="text-2xl font-bold text-gray-800">Administration : Priorités NAF</h1>
 
       <button v-if="isModified" @click="saveChanges"
-        class="bg-blue-800 hover:!bg-blue-600 text-white px-4 py-2 font-bold">
-        Valider les changements
+        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded font-bold shadow-sm transition-all">
+        Enregistrer l'ordre
       </button>
     </div>
 
@@ -64,11 +64,11 @@ const saveChanges = async () => {
       <div v-if="pending" class="text-center py-10 text-gray-500 italic">Chargement...</div>
       <div v-else-if="error" class="bg-red-50 text-red-700 p-4 rounded-lg">Erreur : {{ error.statusMessage }}</div>
 
-      <ListeProjets v-else v-model:projets="projetsFiltres" />
+      <ListeProjets v-else :projets="projetsFiltres" />
 
       <div class="mt-4 text-xs text-gray-400">
         Total : {{ projetsFiltres.length }} projets affichés pour le secteur {{ selectedNaf.match(/[A-Z]$/)?.[0] ||
-          'Tous' }}
+        'Tous' }}
       </div>
     </div>
   </div>

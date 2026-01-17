@@ -53,7 +53,7 @@ const saveChanges = async () => {
       <h1 class="text-2xl font-bold text-gray-800">Administration : Priorités NAF</h1>
 
       <button v-if="isModified" @click="saveChanges"
-        class="bg-blue-800 hover:!bg-blue-600 text-white px-4 py-2 font-bold">
+       class="bg-blue-800 text-white hover:bg-blue-900 px-5 py-2.5 rounded-md font-bold shadow-sm border-2 border-transparent hover:border-blue-200 transition-all duration-300 ease-in-out">
         Valider les changements
       </button>
     </div>
