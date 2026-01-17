@@ -17,7 +17,7 @@ const selectedNaf = ref('')
 
 const projetsFiltres = computed(() => {
   const baseProjects = projects.value || []
-
+  
   if (!selectedNaf.value) {
     return sortProjectsByPriority(baseProjects)
   }
@@ -50,10 +50,9 @@ const projetsFiltres = computed(() => {
       </div>
 
       <ListeProjets v-else :projets="projetsFiltres" />
-
+      
       <div class="mt-4 text-xs text-gray-400">
-        Total : {{ projetsFiltres.length }} projets affichés pour le secteur {{ selectedNaf.match(/[A-Z]$/)?.[0] ||
-        'Tous' }}
+        Total : {{ projetsFiltres.length }} projets affichés pour le secteur {{ selectedNaf.match(/[A-Z]$/)?.[0] || 'Tous' }}
       </div>
     </div>
   </div>

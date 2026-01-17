@@ -34,29 +34,41 @@ const list = computed({
           <th scope="col" class="px-4 py-3 w-28 text-right font-bold">Priorité</th>
         </tr>
       </thead>
-
-      <draggable v-model="list" tag="tbody" item-key="id" handle=".handle" ghost-class="bg-blue-50"
-        class="divide-y divide-gray-200">
+      
+      <draggable 
+        v-model="list" 
+        tag="tbody" 
+        item-key="id" 
+        handle=".handle"
+        ghost-class="bg-blue-50"
+        class="divide-y divide-gray-200"
+      >
         <template #item="{ element: projet }">
           <tr class="hover:bg-gray-50 transition-colors">
             <td class="px-4 py-2 text-center text-gray-400 cursor-grab handle">
               ☰
             </td>
-
+            
             <td class="px-4 py-2 font-medium text-gray-900 truncate" :title="projet.title">
               {{ projet.Titre || projet.title || 'Sans titre' }}
             </td>
-
+            
             <td class="px-4 py-2">
-              <span class="inline-block px-2 py-0.5 rounded-full text-[10px] font-medium whitespace-nowrap"
-                :class="projet.status === 'En prod' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'">
+              <span
+                class="inline-block px-2 py-0.5 rounded-full text-[10px] font-medium whitespace-nowrap"
+                :class="projet.status === 'En prod' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'"
+              >
                 {{ projet.status || 'N/A' }}
               </span>
             </td>
-
+            
             <td class="px-4 py-2 text-right">
-              <input v-model.number="projet.priorite" type="number" @input="$emit('change')"
-                class="w-16 ml-auto bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded block p-1 text-center" />
+              <input
+                v-model.number="projet.priorite"
+                type="number"
+                @input="$emit('change')"
+                class="w-16 ml-auto bg-gray-50 border border-gray-300 text-gray-900 text-xs rounded block p-1 text-center"
+              />
             </td>
           </tr>
         </template>

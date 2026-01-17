@@ -6,15 +6,16 @@ export default defineEventHandler(async (event) => {
   // Construction du payload pour Baserow
   const payload = {
     items: body.items.map((i: any) => ({
-      id: i.id,
-      Prio: i.priorite
+      // Baserow a toujours besoin de l'id technique de la ligne pour savoir quoi modifier
+      id: i.id, 
+      Prio: i.priorite 
     }))
   }
 
   try {
     return await $fetch(`https://api.baserow.io/api/database/rows/table/${TABLE_ID}/batch/`, {
       method: 'PATCH',
-      headers: {
+      headers: { 
         Authorization: `Token ${BASEROW_TOKEN}`,
         'Content-Type': 'application/json'
       },
