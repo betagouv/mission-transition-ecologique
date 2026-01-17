@@ -41,12 +41,12 @@ description longue: |-
     Le porteur doit déclarer au stade de la demande d’aide et tout au long de la durée du\
     contrat de financement toutes les aides obtenues et l’origine du subventionnement.
 début de validité: 02/01/2026
-fin de validité: 30/01/2026
+fin de validité: 30/06/2026
 illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 contact question: mailto:engins-agricoles-elec@ademe.fr
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2025/engins-agricoles-electriques-programme-cee-e-trans?backtosearch=true
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/engins-agricoles-electriques-programme-cee-e-trans?backtosearch=true
 nature de l'aide: financement
 montant du financement: Jusqu'à 75% du coût de l'investissement
 objectifs:
@@ -55,7 +55,7 @@ objectifs:
       projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/sites/default/files/E-Trans%20engins%20agricoles%20%C3%A9lectriques%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/E-Trans%20engins%20agricoles%20%C3%A9lectriques%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
@@ -67,7 +67,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2025/engins-agricoles-electriques-programme-cee-e-trans?backtosearch=true
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/engins-agricoles-electriques-programme-cee-e-trans?backtosearch=true
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
