@@ -11,6 +11,7 @@ export default defineEventHandler(async (event) => {
 
   // Construction du payload pour Baserow
   if (method === 'PATCH') {
+    // On ne lit le body QUE si on est en PATCH
     const body = await readBody(event);
 
     const payload = {
