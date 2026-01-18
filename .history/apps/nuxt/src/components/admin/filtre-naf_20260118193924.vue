@@ -27,8 +27,8 @@ const handleChange = (event: Event) => {
         <option value="dechets">Déchets</option>
         <option value="ecoconception">Écoconception</option>
         <option value="rh">RH</option>
-        <option value="analyses">Analyses</option>
-        <option value="biodiversite">Biodiversité</option>
+        <option value="Analyses">Analyses</option>
+        <option value="Biodiversité">Biodiversité</option>
       </select>
 
       <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
