@@ -21,30 +21,14 @@ const projetsFiltres = computed({
   get: () => {
     const base = localProjects.value.length > 0 ? localProjects.value : (projects.value || [])
     if (!selectedNaf.value) return sortProjectsByPriority(base)
-
-    // Filtrage par thématique exacte
-    return sortProjectsByPriority(
-      base.filter(p => p['Thématique principale'] === selectedNaf.value)
-    )
+    
+    return sortProjectsByPriority(base.filter(p => p.sectors?.includes(secteurLettre)))
   },
   set: (newOrder) => {
     isModified.value = true
-    const fullList = [...localProjects.value]
-
-    // On réorganise la liste globale basée sur le nouvel ordre filtré
-    newOrder.forEach((project, index) => {
-      const globalIndex = fullList.findIndex(p => p.id === project.id)
-      if (globalIndex !== -1) {
-        fullList.splice(globalIndex, 1)
-        fullList.splice(index, 0, project)
-      }
-    })
-
-    // On recalcule les priorités 1, 2, 3... pour tout le monde
-    localProjects.value = fullList.map((p, idx) => ({
-      ...p,
-      priorite: idx + 1
-    }))
+    const updated = newOrder.map((p, index) => ({ ...p, priorite: index + 1 }))
+    const otherProjects = localProjects.value.filter(lp => !updated.find(u => u.id === lp.id))
+    localProjects.value = [...updated, ...otherProjects]
   }
 })
 
@@ -55,7 +39,7 @@ const saveChanges = async () => {
       body: { items: localProjects.value }
     })
     isModified.value = false
-    alert('Priorités sauvegardées dans Baserow !')
+    alert('Priorités sauvegardées !')
     await refresh()
   } catch (err) {
     alert('Erreur lors de la sauvegarde')
@@ -83,7 +67,8 @@ const saveChanges = async () => {
       <ListeProjets v-else v-model:projets="projetsFiltres" />
 
       <div class="mt-4 text-xs text-gray-400">
-        Total : {{ projetsFiltres.length }} projets affichés pour le secteur {{ selectedNaf || 'Toutes les thématiques' }}
+        Total : {{ projetsFiltres.length }} projets affichés pour le secteur {{ selectedNaf.match(/[A-Z]$/)?.[0] ||
+          'Tous' }}
       </div>
     </div>
   </div>

@@ -83,7 +83,7 @@ const saveChanges = async () => {
       <ListeProjets v-else v-model:projets="projetsFiltres" />
 
       <div class="mt-4 text-xs text-gray-400">
-        Total : {{ projetsFiltres.length }} projets affichés pour le secteur {{ selectedNaf || 'Toutes les thématiques' }}
+        Total : {{ projetsFiltres.length }} projets pour : {{ selectedNaf || 'Toutes les thématiques' }}
       </div>
     </div>
   </div>

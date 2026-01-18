@@ -21,7 +21,7 @@ const projetsFiltres = computed({
   get: () => {
     const base = localProjects.value.length > 0 ? localProjects.value : (projects.value || [])
     if (!selectedNaf.value) return sortProjectsByPriority(base)
-
+    
     // Filtrage par thématique exacte
     return sortProjectsByPriority(
       base.filter(p => p['Thématique principale'] === selectedNaf.value)
@@ -30,7 +30,7 @@ const projetsFiltres = computed({
   set: (newOrder) => {
     isModified.value = true
     const fullList = [...localProjects.value]
-
+    
     // On réorganise la liste globale basée sur le nouvel ordre filtré
     newOrder.forEach((project, index) => {
       const globalIndex = fullList.findIndex(p => p.id === project.id)
@@ -66,10 +66,10 @@ const saveChanges = async () => {
 <template>
   <div class="p-8">
     <div class="flex justify-between items-center mb-6">
-      <h1 class="text-2xl font-bold text-gray-800">Administration : Priorités NAF</h1>
+      <h1 class="text-2xl font-bold text-gray-800">Administration : Priorités Thématiques</h1>
 
       <button v-if="isModified" @click="saveChanges"
-        class="bg-blue-800 hover:!bg-blue-600 text-white px-4 py-2 font-bold">
+        class="bg-blue-800 text-white px-4 py-2 font-bold shadow-sm transition-all hover:!bg-blue-600">
         Valider les changements
       </button>
     </div>
@@ -83,7 +83,7 @@ const saveChanges = async () => {
       <ListeProjets v-else v-model:projets="projetsFiltres" />
 
       <div class="mt-4 text-xs text-gray-400">
-        Total : {{ projetsFiltres.length }} projets affichés pour le secteur {{ selectedNaf || 'Toutes les thématiques' }}
+        Total : {{ projetsFiltres.length }} projets pour : {{ selectedNaf || 'Toutes les thématiques' }}
       </div>
     </div>
   </div>
