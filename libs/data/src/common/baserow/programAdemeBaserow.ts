@@ -1,13 +1,12 @@
 import { AbstractBaserow } from './abstractBaserow'
-import { AdemeProgramBaserow } from '../../externalProgram/ademe/tmp_to_commit/tmpAdemeProgramBaserowType'
 import { FilterBaserow } from './filterBaserow'
 import { GeographicAreas } from '../../program/types/domain'
-// import ConfigBaserow from '../../config/configBaserow'
+import { AdemeProgramBaserow } from '../../externalProgram/ademe/types'
+import ConfigBaserow from '../../config/configBaserow'
 
 export class ProgramAdemeBaserow extends AbstractBaserow {
-  private readonly _programAdemeTableId = 793506
-  // protected override readonly _geographicAreasTableId = ConfigBaserow.GEOGRAPHIC_AREAS_ID
-  protected override readonly _geographicAreasTableId = 768812
+  private readonly _programAdemeTableId = ConfigBaserow.PROGRAM_ADEME_ID
+
   async getAll(): Promise<AdemeProgramBaserow[]> {
     return await this._getTableData<AdemeProgramBaserow>(this._programAdemeTableId)
   }
@@ -37,7 +36,7 @@ export class ProgramAdemeBaserow extends AbstractBaserow {
         await this.createProgram(program)
       }
 
-      await this._delay(500)
+      await this._delay(100)
     } catch (error) {
       console.error(`Error upserting program with r2daId ${program.r2daId}:`, error)
       throw error
@@ -45,8 +44,13 @@ export class ProgramAdemeBaserow extends AbstractBaserow {
   }
 
   async upsertPrograms(programs: AdemeProgramBaserow[]): Promise<void> {
-    for (const program of programs) {
-      await this.upsertProgram(program)
+    console.log('Updating programs in baserow')
+    const total = programs.length
+    for (let i = 0; i < programs.length; i++) {
+      await this.upsertProgram(programs[i])
+      if ((i + 1) % 10 === 0 || i === programs.length - 1) {
+        console.log(`Progress: ${i + 1}/${total} programs processed`)
+      }
     }
   }
 

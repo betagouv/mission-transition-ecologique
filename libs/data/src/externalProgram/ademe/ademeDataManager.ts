@@ -1,10 +1,11 @@
 // import { AdemeApi } from './ademeApi'
 import { TempAdemeApi } from './tmp_to_commit/tmpAdemeApi'
-import { AdemeToDataProgramConverter } from './tmp_to_commit/tmpAdemeToDataProgramConverter'
+
 import { ProgramAdemeBaserow } from '../../common/baserow/programAdemeBaserow'
-import { AdemeProgramBaserowToStaticConverter } from './tmp_to_commit/ademeProgramBaserowToStaticConverter'
+import { AdemeProgramBaserowToStaticConverter } from './ademeProgramBaserowToStaticConverter'
 import { FileManager } from '../../common/fileManager'
 import { AbstractProgramType, ProgramTypes } from '../../program/types/shared'
+import { AdemeToDataProgramConverter } from './ademeToDataProgramConverter'
 
 export class AdemeDataManager {
   private readonly _ademeApi: TempAdemeApi

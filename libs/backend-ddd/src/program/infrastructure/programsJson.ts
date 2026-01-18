@@ -12,7 +12,6 @@ export default class ProgramsJson implements ProgramRepository {
     this._allPrograms = jsonPrograms as unknown as AbstractProgramType[]
     this._programs = this._allPrograms.filter((program) => program['type'] === ProgramTypes.TEE) as ProgramType[]
     this._externalPrograms = this._allPrograms.filter((program) => program['type'] === ProgramTypes.extAdeme)
-    console.log('am i here?', this._externalPrograms)
   }
 
   public static getInstance(): ProgramsJson {

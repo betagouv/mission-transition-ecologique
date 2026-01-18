@@ -1,7 +1,7 @@
-import { AdemeProgramDetail } from './tmpAdemeProgramType'
-import { AdemeProgramBaserow } from './tmpAdemeProgramBaserowType'
+import { AdemeProgramDetail } from './ademeProgramType'
 import { AdemeReferentialMappers } from './ademeReferentialMappers'
-import { GeographicAreas } from '../../../program/types/domain'
+import { GeographicAreas } from '../../program/types/domain'
+import { AdemeProgramBaserow } from './types'
 
 export class AdemeToDataProgramConverter {
   private _geographicAreas: GeographicAreas[] = []
@@ -66,12 +66,16 @@ export class AdemeToDataProgramConverter {
   private _slugify(title: string): string {
     return title
       .toLowerCase()
+      .replace(/²/g, '2') // Replace square symbol with 2
+      .replace(/œ/g, 'oe') // Replace œ with oe
+      .replace(/\s+à\s+/g, ' ') // Remove " à " (with spaces)
       .normalize('NFD') // Normalize the string to decompose accents from characters
       .replace(/[\u0300-\u036f]/g, '') // Remove diacritical marks (accents)
+      .replace(/[''\u2019]/g, '') // Remove apostrophes (straight, curly, and Unicode right single quotation mark)
+      .replace(/&/g, '') // Remove ampersand
       .trim()
       .replace(/[\s\W-]+/g, '-') // Replace spaces and non-alphanumeric characters with hyphens
       .replace(/^-+|-+$/g, '') // Remove leading or trailing hyphens
-      .slice(0, 50)
   }
 
   private _convertHtmlToMarkdown(html: string): string {

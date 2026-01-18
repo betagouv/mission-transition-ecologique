@@ -1,5 +1,5 @@
-import { AdemeProgramBaserow } from './tmpAdemeProgramBaserowType'
-import { EligibilityData, ProgramTypes, AbstractProgramType } from '../../../program/types/shared'
+import { EligibilityData, ProgramTypes, AbstractProgramType } from '../../program/types/shared'
+import { AdemeProgramBaserow } from './types'
 
 export class AdemeProgramBaserowToStaticConverter {
   convertToStatic(ademeProgram: AdemeProgramBaserow): AbstractProgramType {
@@ -40,10 +40,14 @@ export class AdemeProgramBaserowToStaticConverter {
         },
         {
           description:
-            'Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !',
+            'Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.',
           liens: [
             {
-              lien: 'https://agir.ademe.fr/aides-financieres/aap/decarbonation-de-lindustrie-decarb-ind-25',
+              lien:
+                'https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/' +
+                (ademeProgram["type d'aide (ADEME)"] === 'AAP' ? 'aap' : '2026') +
+                '/' +
+                ademeProgram['Id fiche dispositif'],
               texte: 'Déposer mon dossier'
             }
           ]

@@ -1,5 +1,5 @@
 // Hardcoded mappings from ADEME referential codes to labels
-
+// Will be done using dynamic API calls when we will remove the temporary API
 export class AdemeReferentialMappers {
   private static readonly COUVERTURE_GEO_MAP: Record<string, string> = {
     '1': 'National',

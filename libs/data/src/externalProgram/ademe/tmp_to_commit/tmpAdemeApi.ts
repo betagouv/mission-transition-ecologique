@@ -50,8 +50,7 @@ export class TempAdemeApi {
 
   private async getProgramList(): Promise<AdemeVersion[]> {
     try {
-      const response = await this._axios.get<AdemeVersionsResponse>(`${BASE_URL}/versions`)
-      console.log(response.data.member.length, 'dispositifs récupérés ')
+      const response = await this._axios.get<AdemeVersionsResponse>(`${BASE_URL}/versions?itemsPerPage=1000`) // 649 programs en 10ans. OK pour une solution temporaire.
       return response.data.member || []
     } catch (error) {
       console.error('Error fetching versions from ADEME API:', error)
@@ -62,7 +61,6 @@ export class TempAdemeApi {
   private async getProgramDetails(programId: string): Promise<any> {
     try {
       const response = await this._axios.get<any>(`${BASE_URL}/versions/${programId}`)
-      console.log(response)
       return response.data
     } catch (error) {
       console.error(`Error fetching program ${programId} from ADEME API:`, error)
@@ -77,6 +75,11 @@ export class TempAdemeApi {
     }
 
     const allVersions = await this.getProgramList()
+
+    const tempAllVersionsPath = 'tempAllProgramData.json'
+    fs.writeFileSync(tempAllVersionsPath, JSON.stringify(allVersions, null, 2))
+    console.log(`Saved ${allVersions.length} programs (before filtering) to ${tempAllVersionsPath}`)
+
     const now = new Date()
     const publicAndActivePrograms = allVersions.filter((version) => {
       const isPublic = version.statut === 'public'
@@ -88,19 +91,17 @@ export class TempAdemeApi {
     console.log(`Found ${publicAndActivePrograms.length} public and active programs out of ${allVersions.length} total`)
 
     const programDetails: any[] = []
-    const limit = Math.min(5, publicAndActivePrograms.length) //TODO TOFIX TMP to test
-
-    for (let i = 0; i < limit; i++) {
+    for (let i = 0; i < publicAndActivePrograms.length; i++) {
       const version = publicAndActivePrograms[i]
-      console.log(`Fetching program ${i + 1}/${limit}: ${version.id}`)
+      console.log(`Fetching program ${i + 1}/${publicAndActivePrograms.length}: ${version.id}`)
 
       const details = await this.getProgramDetails(version.id)
       if (details) {
         programDetails.push(details)
       }
 
-      if (i < limit - 1) {
-        await this.sleep(5)
+      if (i < publicAndActivePrograms.length - 1) {
+        await this.sleep(1)
       }
     }
 

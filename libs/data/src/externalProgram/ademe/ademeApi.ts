@@ -25,7 +25,6 @@ export class AdemeApi {
   async getListeDispositif(): Promise<any | null> {
     try {
       const response = await this._axios.get<any>(`${this._baseUrl}/r2da/listeDispositif`)
-      console.log(response)
       return response.data['ListeDispositifs']
     } catch (error) {
       console.error('Error fetching liste dispositif from ADEME API:', error)

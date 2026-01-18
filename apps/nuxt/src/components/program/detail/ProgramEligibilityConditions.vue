@@ -80,8 +80,6 @@ interface Props {
 const props = defineProps<Props>()
 
 const programEligibility = computed(() => {
-  console.log(props.program)
-  console.log(props.program["conditions d'éligibilité"])
   return props.program["conditions d'éligibilité"]
 })
 </script>
