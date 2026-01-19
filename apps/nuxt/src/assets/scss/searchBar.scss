@@ -1,4 +1,5 @@
 @use "setting";
+@use "tool";
 @use 'sass:meta';
 @use 'sass:map';
 
@@ -43,7 +44,21 @@ input[type="search"] {
           box-shadow: inset 0 -2px 0 0 $properties;
         }
       }
+
+      @if $color == "green-agir" {
+        &--light {
+          .fr-input, .search-button, .search-clear {
+            @if meta.type-of($properties) == map {
+              box-shadow: inset 0 -2px 0 0 tool.scaleLightness(map.get($properties, "color"), tool.opacity(--light));
+            } @else {
+              box-shadow: inset 0 -2px 0 0 tool.scaleLightness($properties, tool.opacity(--light));
+            }
+          }
+        }
+      }
     }
+
+
   }
 
   &--loading {

@@ -11,6 +11,16 @@
   @return map.get(setting.$opacities, $key);
 }
 
+@mixin get-color-by-opacity($properties, $opacity: 0%) {
+  @if meta.type-of($properties) == map {
+    color: scaleLightness(map.get($properties, "color"), $opacity) !important;
+  } @else {
+    /* Wrong parsing on function name from stylelint, so next line is disable */
+    /* stylelint-disable-next-line function-name-case */
+    color: scaleLightness($properties, $opacity) !important;
+  }
+}
+
 @mixin get-background-color-by-opacity($properties, $opacity: 0%) {
   @if meta.type-of($properties) == map {
     background-color: scaleLightness(map.get($properties, "color"), $opacity) !important;

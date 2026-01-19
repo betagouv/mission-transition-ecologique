@@ -1,9 +1,6 @@
 <template>
-  <div
-    id="register-siret"
-    class="fr-col-12 fr-col-md-7 fr-col-offset-md-2"
-  >
-    <h4 class="fr-mb-0 fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
+  <div id="register-siret">
+    <h4 class="fr-mb-0 fr-py-2v fr-text--yellow">Quelle est votre entreprise ?</h4>
     <TeeDsfrSearchBar
       v-model.trim="queryValue"
       :color="Color.yellow"

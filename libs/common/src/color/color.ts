@@ -13,6 +13,8 @@ export enum Color {
   greenLightnessed = 'green--lightness',
 
   greenAgir = 'green-agir',
+  greenAgirLighted = 'green-agir--light',
+  greenAgirLightnessed = 'green-agir--lightness',
 
   purple = 'purple',
   purpleLighted = 'purple--light',
