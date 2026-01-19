@@ -262,7 +262,9 @@
     "operator": "Région Nouvelle-Aquitaine",
     "filterCategories": [
       "Régions"
-    ]
+    ],
+    "imagePath": "/images/logos/operateur/region-nouvelle-aquitaine.webp",
+    "color": "red"
   },
   {
     "operator": "Agence de Développement Economique de Corse",
@@ -276,7 +278,9 @@
     "operator": "Agence de Tourisme de la Corse",
     "filterCategories": [
       "Opérateurs territoriaux"
-    ]
+    ],
+    "imagePath": "/images/logos/operateur/atc.webp",
+    "color": "purple"
   },
   {
     "operator": "Région Guadeloupe",
