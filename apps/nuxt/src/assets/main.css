@@ -74,6 +74,10 @@
   -webkit-mask-image: url("../../../../../../node_modules/@gouvfr/dsfr/dist/icons/business/links-line.svg");
   mask-image: url("../../../../../../node_modules/@gouvfr/dsfr/dist/icons/business/links-line.svg");
 }
+.fr-icon-pencil-line::before, .fr-icon-pencil-line::after {
+  -webkit-mask-image: url("../../../../../../node_modules/@gouvfr/dsfr/dist/icons/design/pencil-line.svg");
+  mask-image: url("../../../../../../node_modules/@gouvfr/dsfr/dist/icons/design/pencil-line.svg");
+}
 .fr-icon-money-euro-circle-line::before, .fr-icon-money-euro-circle-line::after {
   -webkit-mask-image: url("../../../../../../node_modules/@gouvfr/dsfr/dist/icons/finance/money-euro-circle-line.svg");
   mask-image: url("../../../../../../node_modules/@gouvfr/dsfr/dist/icons/finance/money-euro-circle-line.svg");
