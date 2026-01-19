@@ -2,7 +2,6 @@
   <DsfrCard
     class="fr-card--program fr-card--external"
     :title="program.titre || 'Programme externe'"
-    :end-detail="getCostInfos()"
     end-detail-icon="fr-icon-money-euro-circle-line fr-text--blue"
     :description="program.promesse || (program['description courte'] as string) || ''"
     :img-src="img(`/${program?.illustration || 'images/TEE_ampoule.webp'}`, { quality: 70, loading: 'lazy' })"
@@ -12,6 +11,7 @@
     :link="getRouteToExternalProgramDetail()"
     :badges="program['nature de l\'aide'] ? [{ label: program['nature de l\'aide'], noIcon: true, small: true }] : []"
     :title-tag="titleTag"
+    :title-link-attrs="{}"
   >
   </DsfrCard>
 </template>
@@ -31,10 +31,6 @@ const { program, titleTag = 'h2' } = defineProps<Props>()
 
 const navigationStore = useNavigationStore()
 const img = Image.getUrl
-
-const getCostInfos = () => {
-  return ''
-}
 
 const getRouteToExternalProgramDetail = (): RouteLocationRaw => {
   return {

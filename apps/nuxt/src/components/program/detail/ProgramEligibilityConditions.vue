@@ -40,9 +40,9 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
+import { AbstractProgramTypeForFront, ProgramTypeForFront } from '@tee/data'
 import { Marked } from '@/tools/marked'
 import Translation from '@/tools/translation'
-import { AbstractProgramTypeForFront, ProgramTypeForFront } from '@tee/data'
 
 type EligibilityCategory = keyof ProgramTypeForFront["conditions d'éligibilité"]
 

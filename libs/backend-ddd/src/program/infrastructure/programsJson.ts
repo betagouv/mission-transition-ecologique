@@ -34,7 +34,7 @@ export default class ProgramsJson implements ProgramRepository {
     return this.getAll().find((programData: ProgramType) => programData.id === id)
   }
 
-  public getExternal(): AbstractProgramType[] {
+  public getExternals(): AbstractProgramType[] {
     return this._externalPrograms
   }
 

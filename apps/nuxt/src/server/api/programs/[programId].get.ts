@@ -30,7 +30,6 @@ const getProgramById = (event: H3Event<EventHandlerRequest>, programId: string, 
 
   if (program.isErr) {
     if (program.error instanceof ProgramNotFoundError) {
-      // If not found in internal programs, try external programs
       const externalProgram = programService.getExternalById(programId)
 
       if (externalProgram.isOk) {

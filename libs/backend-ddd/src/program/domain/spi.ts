@@ -6,7 +6,7 @@ export interface ProgramRepository {
   getEditablePrograms(): ProgramType[]
   getById: (id: string) => ProgramType | undefined
   getAll: () => ProgramType[]
-  getExternal: () => AbstractProgramType[]
+  getExternals: () => AbstractProgramType[]
   getExternalById: (id: string) => AbstractProgramType | undefined
 }
 

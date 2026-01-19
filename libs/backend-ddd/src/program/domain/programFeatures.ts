@@ -70,8 +70,8 @@ export default class ProgramFeatures {
     return this._programRepository.getAll()
   }
 
-  public getExternal(): AbstractProgramType[] {
-    return this._programRepository.getExternal()
+  public getExternals(): AbstractProgramType[] {
+    return this._programRepository.getExternals()
   }
 
   public getExternalById(id: string): AbstractProgramType | undefined {

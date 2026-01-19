@@ -59,7 +59,7 @@ export class ProgramService {
   }
 
   public getExternal(): Result<AbstractProgramType[], Error> {
-    return Result.ok(this.program.getExternal())
+    return Result.ok(this.program.getExternals())
   }
 
   public getExternalById(id: string): Result<AbstractProgramType, Error> {

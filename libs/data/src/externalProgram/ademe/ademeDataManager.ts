@@ -54,7 +54,6 @@ export class AdemeDataManager {
       const ademePrograms = await this._baserow.getProgramsWithoutDispositifAssocie()
       const staticAdemePrograms = this._staticConverter.convertToStaticArray(ademePrograms)
 
-      // Read existing programs from static/programs.json
       let existingPrograms: AbstractProgramType[] = []
       try {
         existingPrograms = FileManager.readJson<AbstractProgramType[]>('static/programs.json')

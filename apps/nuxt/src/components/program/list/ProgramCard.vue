@@ -12,6 +12,7 @@
     :link="getRouteToProgramDetail()"
     :badges="[{ label: program['nature de l\'aide'], noIcon: true, small: true }]"
     :title-tag="titleTag"
+    :title-link-attrs="{}"
   >
   </DsfrCard>
 </template>
