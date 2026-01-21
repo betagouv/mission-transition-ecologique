@@ -15,6 +15,7 @@ export class AdemeToDataProgramConverter {
     const titre = ademeProgram.titre
     const typeProjetLabels = ademeProgram.typeProjet?.map((tp: any) => AdemeReferentialMappers.mapTypeProjet(tp.code)) || []
     const thematiqueLabels = ademeProgram.thematique?.map((th: any) => AdemeReferentialMappers.mapThematique(th.code)) || []
+    const cibleLabels = ademeProgram.cibleProjet?.map((c: any) => AdemeReferentialMappers.mapCible(c.code)) || []
     const couvertureGeoLabel = ademeProgram.couvertureGeo?.code
       ? AdemeReferentialMappers.mapCouvertureGeo(ademeProgram.couvertureGeo.code)
       : ''
@@ -32,6 +33,7 @@ export class AdemeToDataProgramConverter {
       "type d'aide (ADEME)": ademeProgram.dispositif.typeAide,
       'type de projet (ADEME)': typeProjetLabels.join(', '),
       'theme (ADEME)': thematiqueLabels.join(', '),
+      cible: cibleLabels.join(', '),
       DISPOSITIF_DATE_DEBUT: ademeProgram.dateDebut,
       DISPOSITIF_DATE_FIN: ademeProgram.dateFin,
       'Couverture géographique': couvertureGeoLabel,

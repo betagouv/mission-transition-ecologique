@@ -85,7 +85,9 @@ export class TempAdemeApi {
       const isPublic = version.statut === 'public'
       const dateFin = new Date(version.dateFin)
       const isActive = dateFin > now
-      return isPublic && isActive
+      const cibleProjet = version['cibleProjet'] as Array<{ code: string }> | undefined
+      const isForCompanies = cibleProjet?.some((cible) => cible.code === 'SCA3')
+      return isPublic && isActive && isForCompanies
     })
 
     console.log(`Found ${publicAndActivePrograms.length} public and active programs out of ${allVersions.length} total`)

@@ -20,6 +20,7 @@ export interface AdemeProgramBaserow {
   "type d'aide (ADEME)": string
   'type de projet (ADEME)': string
   'theme (ADEME)': string
+  cible: string
   DISPOSITIF_DATE_DEBUT: string
   DISPOSITIF_DATE_FIN: string
   'Couverture géographique': string
