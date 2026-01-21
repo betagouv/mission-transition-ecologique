@@ -43288,6 +43288,182 @@
     "id": "eco-diagnostic-commerce"
   },
   {
+    "titre": "Easy diag",
+    "promesse": "Bénéficiez d'un accompagnement à la transition écologique",
+    "description": "À l'issue d'un **diagnostic d'une dizaine de minutes**, bénéficiez d'une **analyse personnalisée** réalisée par un conseiller formation, et établissez conjointement un **plan d'action sur mesure** afin d'entamer la transition écologique de votre entreprise.",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Constructys",
+    "contact question": "https://www.constructys.fr/contacts/",
+    "url": "https://ediag.constructys.fr/easydiag-ods/",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "Gratuite",
+    "durée de l'accompagnement": "1 heure de prestation",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Créez votre compte sur le site de Constructys",
+        "liens": [
+          {
+            "lien": "https://services.constructys.fr/constructys/account/create/step-1",
+            "texte": "Créer mon compte"
+          }
+        ]
+      },
+      {
+        "description": "Lancez l'Easy Diag et répondez aux questions",
+        "liens": [
+          {
+            "lien": "https://ediag.constructys.fr/easydiag-ods-choix-siret/",
+            "texte": "Lancer le diagnostic"
+          }
+        ]
+      },
+      {
+        "description": "Recevez l'analyse détaillée de votre conseiller Constructys et les solutions adaptées à vos besoins"
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises des secteurs de la construction, du bâtiment, des travaux publics et du négoce des matériaux de construction"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "F"
+        ]
+      },
+      "priorityObjectives": [
+        "building",
+        "waste",
+        "energy",
+        "rh",
+        "biodiversite"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est F"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est former ou recruter",
+          "questionnaire . objectif prioritaire . est préserver la biodiversité"
+        ]
+      }
+    },
+    "id": "easy-diag"
+  },
+  {
     "titre": "Formations Atlas",
     "promesse": "Formez vos salariés à la transition écologique",
     "description": "Accédez à un catalogue de formations clés en main, aux tarifs négociés, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et à ceux de vos salariés. Au programme :\n\n- Mettre en place une démarche RSE.\n- Agir sur l'empreinte carbone de votre entreprise.\n- S'engager vers un numérique responsable.\n- Construire des fresques autour du climat, du numérique, de la biodiversité.",
@@ -43825,7 +44001,7 @@
     "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Maîtrise des épandages organiques.\n- De la vigne aux vins bio.\n- Découvrir l'agroforesterie en cultures et en élevage.\n- Réduction et réutilisation de l'eau.\n- Les fondamentaux de l'agro-écologie.\n- etc.",
     "illustration": "images/TEE_ampoule.webp",
     "opérateur de contact": "Opco Ocapiat",
-    "contact question": "formulaire",
+    "contact question": "https://www.ocapiat.fr/nous-contacter/",
     "url": "https://www.ocapiat.fr/transition-ecologique-adaptez-votre-entreprise/",
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "Variable",
@@ -44177,12 +44353,13 @@
     "titre": "Sélexion Formations Opco EP",
     "promesse": "Formez vos salariés à la transition écologique",
     "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Maîtriser sa facture énergétique.\n- Comprendre les fondamentaux de la RSE et de la TEE.\n- Intégrer les principes de l'éco-conduite.\n- Agit pour une entreprise plus responsable !\n- etc.",
+    "description longue": "Les formations sont prises en charge selon la taille de l’entreprise :\n\n- Moins de 50 salariés : prise en charge des coûts pédagogiques à 100 %.\n- 50 salariés et plus : prise en charge des coûts pédagogiques à 50 %.",
     "illustration": "images/TEE_ampoule.webp",
     "opérateur de contact": "Opco EP",
     "contact question": "formulaire",
     "url": "https://www.opcoep.fr/entreprise/offre-de-services/transition-ecologique-et-energetique/etre-accompagne",
     "nature de l'aide": "formation",
-    "coût de l'accompagnement": "Variable",
+    "coût de l'accompagnement": "Prise en charge de 50 % à 100 % selon la taille de l’entreprise",
     "durée de l'accompagnement": "Variable selon la formation choisie",
     "activable en autonomie": "oui",
     "objectifs": [
@@ -45135,6 +45312,7 @@
     "titre": "Performa Adaptation",
     "promesse": "Identifiez les vulnérabilités de votre entreprise au changement climatique et mettez en place un plan d'adaptation",
     "description": "Bénéficiez d'un accompagnement par un expert de la CMA pour :\n\n- **Réaliser un diagnostic** des risques et aléas climatiques auxquels votre entreprise est exposée à court, moyen et long terme.\n- **Construire un plan d’actions prioritaires** pour réduire la vulnérabilité et renforcer la résilience de votre entreprise aux évolutions climatiques.",
+    "début de validité": "05/12/2025",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "autres opérateurs": [
@@ -45192,7 +45370,7 @@
         ]
       },
       "validity": {
-        "start": "5/12/2025"
+        "start": "05/12/2025"
       },
       "priorityObjectives": [
         "environmental"
@@ -46312,5 +46490,356 @@
       }
     },
     "id": "expert-atlas"
+  },
+  {
+    "titre": "Diag Accompagnement TEE RH",
+    "promesse": "Soyez accompagné pour établir un état des lieux des impacts environnementaux sur votre entreprise",
+    "description": "Cet accompagnement de 5 à 7 jours vous permet de :\n\n- Établir un **diagnostic sur-mesure** des enjeux de la transition écologique et des impacts RH au sein de votre entreprise.\n- Co-construire un **plan d'action** avec un expert.\n- Mettre en œuvre les **premières mesures** du plan d'action et d'établir un **plan de formation** pour développer les compétences RH dont votre entreprise a besoin.",
+    "illustration": "images/TEE_ampoule.webp",
+    "opérateur de contact": "Opco EP",
+    "contact question": "formulaire",
+    "url": "https://www.opcoep.fr/entreprise/offre-de-services/transition-ecologique-et-energetique/etre-accompagne",
+    "nature de l'aide": "étude",
+    "montant du financement": "Jusqu'à 50% de l'accompagnement",
+    "objectifs": [
+      {
+        "description": "Contactez votre conseiller régional Opco EP",
+        "liens": [
+          {
+            "lien": "https://%3Chttps://www.opcoep.fr/nous-contacter%3E",
+            "texte": "Contacter mon conseiller"
+          }
+        ]
+      },
+      {
+        "description": "Complétez le Diagnostic Reflex TEE (un diagnostic de premier niveau d'une durée de 20 minutes)."
+      },
+      {
+        "description": "Définissez avec l’expert le périmètre de l'accompagnement, la méthode et le calendrier."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Moins de 250 salariés",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises des secteurs de proximité : artisanat, professions libérales, services de proximité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "G",
+          "K",
+          "L",
+          "M",
+          "N",
+          "S",
+          "T"
+        ]
+      },
+      "priorityObjectives": [
+        "energy",
+        "rh",
+        "environmental"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est former ou recruter",
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "diag-accompagnement-tee-rh"
+  },
+  {
+    "titre": "Diagnostic RH",
+    "promesse": "Développez en interne les compétences liées à la transition écologique",
+    "description": "Cet accompagnement sur mesure vous permet de :\n\n- Réaliser un **état des lieux des compétences RH** dont votre entreprise a besoin **pour mener sa** **transition écologique.**\n- Définir un **plan d'action**, avec l'aide d'un expert.\n- Mettre en place les **trois actions prioritaires** au sein de votre entreprise.",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Opco Ocapiat",
+    "contact question": "https://www.ocapiat.fr/nous-contacter/",
+    "url": "https://www.ocapiat.fr/diagnostics-rh-2/",
+    "nature de l'aide": "étude",
+    "montant du financement": "Variable. 100% pour les entreprises de moins de 50 salariés.",
+    "objectifs": [
+      {
+        "description": "Contactez votre conseiller Ocapiat",
+        "liens": [
+          {
+            "lien": "https://www.ocapiat.fr/nous-contacter/",
+            "texte": "Contacter mon conseiller"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte sur le site d'Ocapiat",
+        "liens": [
+          {
+            "lien": "https://moncompte.ocapiat.fr/appspublic/compte/DemandeCreationCompte",
+            "texte": "Créer un compte"
+          }
+        ]
+      },
+      {
+        "description": "Complétez l'Autodiag Maturité Écologique (un diagnostic de premier niveau d'une durée de 10 minutes).",
+        "liens": [
+          {
+            "lien": "https://www.ocapiat.fr/autodiagnostic-maturite-ecologique/",
+            "texte": "Accéder à l'autodiagnostic"
+          }
+        ]
+      },
+      {
+        "description": "Définissez avec l’expert Ocapiat le périmètre de l'accompagnement, la méthode et le calendrier."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises de la coopération agricole, l'agriculture, la pêche, l'industrie agroalimentaire et les territoires"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A"
+        ]
+      },
+      "priorityObjectives": [
+        "rh"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter"
+        ]
+      }
+    },
+    "id": "diagnostic-rh"
   }
 ]

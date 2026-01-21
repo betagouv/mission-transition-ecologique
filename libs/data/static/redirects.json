@@ -328,6 +328,7 @@
     "1981": "indicateur-climat",
     "2014": "eco-diagnostic-commerce",
     "2048": "diag-performance",
+    "2080": "easy-diag",
     "2113": "formations-atlas",
     "2146": "formations-afdas",
     "2149": "formations-opcommerce",
@@ -344,6 +345,8 @@
     "2246": "investissement-methanisation-paca",
     "2344": "e-trans",
     "2377": "cheque-transition-tissu-economique",
-    "2410": "expert-atlas"
+    "2410": "expert-atlas",
+    "2443": "diag-accompagnement-tee-rh",
+    "2476": "diagnostic-rh"
   }
 }
