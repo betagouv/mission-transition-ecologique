@@ -15,13 +15,18 @@ description: >-
   - Agit pour une entreprise plus responsable !
 
   - etc.
+description longue: |-
+  Les formations sont prises en charge selon la taille de l’entreprise :
+
+  - Moins de 50 salariés : prise en charge des coûts pédagogiques à 100 %.
+  - 50 salariés et plus : prise en charge des coûts pédagogiques à 50 %.
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Opco EP
 contact question: formulaire
 url: >-
   https://www.opcoep.fr/entreprise/offre-de-services/transition-ecologique-et-energetique/etre-accompagne
 nature de l'aide: formation
-coût de l'accompagnement: Variable
+coût de l'accompagnement: Prise en charge de 50 % à 100 % selon la taille de l’entreprise
 durée de l'accompagnement: Variable selon la formation choisie
 activable en autonomie: oui
 objectifs:
