@@ -321,6 +321,12 @@
     "color": "purple"
   },
   {
+    "operator": "Constructys",
+    "filterCategories": [
+      "OPCO"
+    ]
+  },
+  {
     "operator": "Atlas",
     "filterCategories": [
       "OPCO"

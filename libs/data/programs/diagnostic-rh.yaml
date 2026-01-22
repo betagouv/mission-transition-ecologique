@@ -1,0 +1,60 @@
+titre: Diagnostic RH
+promesse: Développez en interne les compétences liées à la transition écologique
+description: >-
+  Cet accompagnement sur mesure vous permet de :
+
+
+  - Réaliser un **état des lieux des compétences RH** dont votre entreprise a
+  besoin **pour mener sa** **transition écologique.**
+
+  - Définir un **plan d'action**, avec l'aide d'un expert.
+
+  - Mettre en place les **trois actions prioritaires** au sein de votre
+  entreprise.
+illustration: images/TEE_eolienne.webp
+opérateur de contact: Opco Ocapiat
+contact question: https://www.ocapiat.fr/nous-contacter/
+url: https://www.ocapiat.fr/diagnostics-rh-2/
+nature de l'aide: étude
+montant du financement: Variable. 100% pour les entreprises de moins de 50 salariés.
+objectifs:
+  - description: Contactez votre conseiller Ocapiat
+    liens:
+      - lien: https://www.ocapiat.fr/nous-contacter/
+        texte: Contacter mon conseiller
+  - description: Créez un compte sur le site d'Ocapiat
+    liens:
+      - lien: https://moncompte.ocapiat.fr/appspublic/compte/DemandeCreationCompte
+        texte: Créer un compte
+  - description: >-
+      Complétez l'Autodiag Maturité Écologique (un diagnostic de premier niveau
+      d'une durée de 10 minutes).
+    liens:
+      - lien: https://www.ocapiat.fr/autodiagnostic-maturite-ecologique/
+        texte: Accéder à l'autodiagnostic
+  - description: >-
+      Définissez avec l’expert Ocapiat le périmètre de l'accompagnement, la
+      méthode et le calendrier.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises de la coopération agricole, l'agriculture, la pêche,
+      l'industrie agroalimentaire et les territoires
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter

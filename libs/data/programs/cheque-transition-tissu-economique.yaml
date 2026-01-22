@@ -1,0 +1,111 @@
+titre: Chèque Transition du Tissu Économique
+promesse: Financez vos investissements d'économies d'énergie
+description: >-
+  Vous avez un projet de transition écologique tel que l'installation d'une
+  pompe à chaleur, la pose de luminaires LED ou l'acquisition d'un véhicule
+  propre ? Le Chèque Transition (ex-Chèque Vert Grand Est) finance à hauteur de
+  50% des investissements destinés à réduire la consommation d’énergie,
+  améliorer la qualité de l'air ou réduire la consommation d'énergie fossile de
+  votre entreprise.
+description longue: >-
+  Le bénéficiaire s’engage à mentionner le soutien financier de la Région Grand
+  Est dans tout support de communication.
+début de validité: 01/11/2025
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: Région Grand Est
+contact question: mailto:cheque.transition@grandest.fr
+url: >-
+  https://www.grandest.fr/vos-aides-regionales/cheque-transition-tissu-economique/
+nature de l'aide: financement
+montant du financement: >-
+  Jusqu'à 50% du coût, dans une limite de 10 000 € (sauf véhicule propre limité
+  à 5 000 €)
+objectifs:
+  - description: Vérifiez la liste des dépenses éligibles.
+    liens:
+      - lien: >-
+          https://file:///Users/betagouv/Downloads/reglement-cheque-transition-du-tissu-economique.pdf
+        texte: Dépenses éligibles au Chèque Transition
+  - description: Réalisez vos investissements en avançant les frais.
+  - description: >-
+      Créez votre compte sur la plateforme de la Région Grand-Est (la demande
+      d'aide doit être déposée dans les 4 mois suivant l’acquittement de la
+      facture).
+    liens:
+      - lien: >-
+          https://messervices.grandest.fr/aides/#/crge/connecte/F_TEL0234/depot/simple
+        texte: Portail des demandes d'aides de la Région Grand-Est
+  - description: >-
+      Déposez ensuite votre dossier de demande Chèque Transition sur la
+      plateforme.
+    liens:
+      - lien: >-
+          https://messervices.grandest.fr/aides/#/crge/connecte/F_TEL0344/depot/simple
+        texte: Déposer une demande de Chèque Transition.
+  - description: >-
+      Recevez votre aide en une seule fois dès notification de la décision
+      d'attribution.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 20 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Grand Est
+  secteur d'activité:
+    - >-
+      Tout secteur d’activités hors codes NAF 35, 41, 47.91 à 53, 64 à 70, 84 à
+      88, 94, 97 à 99 et hors profession libérale.
+  nombre d'années d'activité:
+    - >-
+      Au moins un an avant la date de la demande (sauf en cas de reprise
+      d’entreprise assortie d’une nouvelle immatriculation ou de création d’un
+      établissement secondaire).
+  autres critères d'éligibilité:
+    - >-
+      Ne sont pas éligibles les SIAE, les Entreprises Adaptées et les ESAT
+      portés par une collectivité ou un Établissement public.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: dispositif . début de validité <= date du jour
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 19
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Grand Est
