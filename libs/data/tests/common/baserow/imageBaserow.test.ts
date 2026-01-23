@@ -13,8 +13,8 @@ vi.mock('axios', () => ({
 }))
 import axios from 'axios'
 
-// Surcharger ConfigBaserow pour les tests uniquement (pas de dépendance à des variables d'env)
-// On mock le module réel afin que toute lecture de ConfigBaserow utilise ces valeurs neutres.
+// Override ConfigBaserow for tests only (no dependency on env variables)
+// Mock the real module so that any ConfigBaserow reads use these neutral values.
 vi.mock('../../../src/configBaserow', () => ({
   default: {
     TOKEN: 'TEST_TOKEN',
@@ -188,7 +188,7 @@ describe('ImageBaserow', () => {
   })
 
   test('cleanup - supprime les fichiers non traités et sauvegarde les métadonnées', async () => {
-    // 1) Traite une image pour l’ajouter aux fichiers "processed"
+    // Processes an image to add it to the "processed" files
     const row = imageTableRow()
     const sut = new TestImageBaserow(imageDir, metadataPath, 60, undefined, row)
     axiosGet.mockResolvedValueOnce({ data: Buffer.from('z') })
@@ -197,16 +197,15 @@ describe('ImageBaserow', () => {
     const ok = await sut.handleImageFromImageTable([link(1)])
     expect(ok.isOk).toBe(true)
 
-    // 2) Le dossier contient l’image traitée + un fichier obsolète
+    // The file contains the processed image + an obsolete file
     ;(fs.readdirSync as unknown as Mock).mockReturnValueOnce(['logo-ademe.webp', 'obsolete.webp'])
 
-    // 3) cleanup
     sut.cleanup()
 
-    // Vérifie que le fichier obsolète a été supprimé
+    // Check that the obsolete file has been deleted
     expect(fs.unlinkSync).toHaveBeenCalledWith(path.join(imageDir, 'obsolete.webp'))
 
-    // Vérifie la sauvegarde des métadonnées
+    // Verify metadata backup
     expect(fs.writeFileSync).toHaveBeenCalledWith(metadataPath, expect.stringContaining('logo-ademe'))
   })
 })
