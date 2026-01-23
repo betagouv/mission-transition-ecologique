@@ -76,6 +76,8 @@ dispositifs*.xlsx
 # local cache
 **/program_tmp.json
 /test-results/
+temp*.json
+tmp*.json
 
 #playwright
 /playwright-report/
@@ -92,5 +94,4 @@ vite.config.*.timestamp*
 vitest.config.*.timestamp*
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
-temp*.json
-tmp*.json
+

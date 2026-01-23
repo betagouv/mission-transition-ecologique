@@ -1,4 +1,5 @@
 // import { AdemeApi } from './ademeApi'
+import { AdemeProgramDetail } from './ademeProgramType'
 import { TempAdemeApi } from './tmp_to_commit/tmpAdemeApi'
 
 import { ProgramAdemeBaserow } from '../../common/baserow/programAdemeBaserow'
@@ -38,9 +39,11 @@ export class AdemeDataManager {
 
       console.log(`Fetched ${rawPrograms.length} programs from ADEME API`)
 
-      const baserowPrograms = rawPrograms.map((program) => this._converter.convertAdemeProgramRawToAdemeProgramBaserow(program))
+      const baserowPrograms = rawPrograms.map((program) =>
+        this._converter.convertAdemeProgramRawToAdemeProgramBaserow(program as AdemeProgramDetail)
+      )
       await this._baserow.upsertPrograms(baserowPrograms)
-      await this.exportPrograms()
+      await this._exportPrograms()
 
       console.log('ADEME data update completed successfully')
     } catch (error) {
@@ -49,7 +52,7 @@ export class AdemeDataManager {
     }
   }
 
-  async exportPrograms(): Promise<void> {
+  private async _exportPrograms(): Promise<void> {
     try {
       const ademePrograms = await this._baserow.getProgramsWithoutDispositifAssocie()
       const staticAdemePrograms = this._staticConverter.convertToStaticArray(ademePrograms)

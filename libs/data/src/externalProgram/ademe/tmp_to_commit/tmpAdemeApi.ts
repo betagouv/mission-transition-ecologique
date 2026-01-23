@@ -13,16 +13,17 @@ interface AdemeVersion {
   id: string
   statut: string
   dateFin: string
-  [key: string]: any
+  [key: string]: unknown
 }
 
 interface AdemeVersionsResponse {
   member: AdemeVersion[]
-  [key: string]: any
+  [key: string]: unknown
 }
 
 export class TempAdemeApi {
   private readonly _bearerToken: string
+  private readonly _tempAllVersionsPath = 'tempAllProgramData.json'
 
   constructor() {
     this._bearerToken = process.env['ADEME_BEARER_TOKEN'] || ''
@@ -58,9 +59,9 @@ export class TempAdemeApi {
     }
   }
 
-  private async getProgramDetails(programId: string): Promise<any> {
+  private async getProgramDetails(programId: string): Promise<unknown | null> {
     try {
-      const response = await this._axios.get<any>(`${BASE_URL}/versions/${programId}`)
+      const response = await this._axios.get<unknown>(`${BASE_URL}/versions/${programId}`)
       return response.data
     } catch (error) {
       console.error(`Error fetching program ${programId} from ADEME API:`, error)
@@ -68,7 +69,7 @@ export class TempAdemeApi {
     }
   }
 
-  async getPrograms(reload = false): Promise<any[]> {
+  async getPrograms(reload = false): Promise<unknown[]> {
     if (!reload && fs.existsSync(TEMP_FILE_PATH)) {
       const data = fs.readFileSync(TEMP_FILE_PATH, 'utf-8')
       return JSON.parse(data)
@@ -76,9 +77,8 @@ export class TempAdemeApi {
 
     const allVersions = await this.getProgramList()
 
-    const tempAllVersionsPath = 'tempAllProgramData.json'
-    fs.writeFileSync(tempAllVersionsPath, JSON.stringify(allVersions, null, 2))
-    console.log(`Saved ${allVersions.length} programs (before filtering) to ${tempAllVersionsPath}`)
+    fs.writeFileSync(this._tempAllVersionsPath, JSON.stringify(allVersions, null, 2))
+    console.log(`Saved ${allVersions.length} programs (before filtering) to ${this._tempAllVersionsPath}`)
 
     const now = new Date()
     const publicAndActivePrograms = allVersions.filter((version) => {
@@ -92,7 +92,7 @@ export class TempAdemeApi {
 
     console.log(`Found ${publicAndActivePrograms.length} public and active programs out of ${allVersions.length} total`)
 
-    const programDetails: any[] = []
+    const programDetails: unknown[] = []
     for (let i = 0; i < publicAndActivePrograms.length; i++) {
       const version = publicAndActivePrograms[i]
       console.log(`Fetching program ${i + 1}/${publicAndActivePrograms.length}: ${version.id}`)

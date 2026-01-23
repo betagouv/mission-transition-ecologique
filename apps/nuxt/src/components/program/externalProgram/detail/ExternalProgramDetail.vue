@@ -88,9 +88,8 @@ const scrollToRef = (targetRef: HTMLElement | null | undefined) => {
   if (!targetRef) {
     return
   }
-  if (targetRef) {
-    Scroll.toWithEligibilityBarOffset(targetRef)
-  }
+
+  Scroll.toWithEligibilityBarOffset(targetRef)
 }
 const scrollToActivation = () => scrollToRef(activationRef.value)
 
