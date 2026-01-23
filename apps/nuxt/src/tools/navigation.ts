@@ -180,10 +180,29 @@ export default class Navigation {
     return undefined
   }
 
-  static getClassesBySideMenu(hasSideMenu: boolean) {
-    return hasSideMenu
-      ? 'fr-col-offset-md-3 fr-col-md-9 fr-col-justify-md--left fr-col-offset-xl-2 fr-col-xl-10 fr-col-justify--center'
-      : ''
+  static getClassesBySideMenu(hasSideMenu: boolean, withMaxColumns = 12) {
+    if (!hasSideMenu) {
+      return withMaxColumns !== 12 ? `fr-col-md-${withMaxColumns}` : ''
+    }
+
+    const colOffset = 3
+    const xlColOffset = 2
+
+    const colWidth = withMaxColumns - colOffset
+    const xlColWidth = withMaxColumns - xlColOffset
+
+    return (
+      this.getOffsetClassesBySideMenu(hasSideMenu, colOffset, xlColOffset) +
+      ` fr-col-md-${colWidth} fr-col-justify-md--left fr-col-xl-${xlColWidth} fr-col-justify--center`
+    )
+  }
+
+  static getOffsetClassesBySideMenu(hasSideMenu: boolean, colOffset = 3, xlColOffset = 2) {
+    if (!hasSideMenu) {
+      return ''
+    }
+
+    return `fr-col-offset-md-${colOffset} fr-col-offset-xl-${xlColOffset}`
   }
 
   static hashByRouteName = (routeName: string) => {

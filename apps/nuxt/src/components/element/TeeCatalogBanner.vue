@@ -3,14 +3,12 @@
     class="fr-container--fluid fr-banner"
     :class="bgClass"
   >
-    <img
-      v-if="props.bgImage"
-      :src="img(props.bgImage, { quality: 70, densities: 1, sizes: '576px sm:768px md:992px lg:1248px' })"
-      :alt="props.imgAlt"
-    />
-    <div :class="[styleClass]">
+    <div
+      :class="[styleClass]"
+      class="fr-bg-banner"
+    >
       <div class="fr-container">
-        <div class="fr-grid-row fr-grid-row--center fr-grid-row--middle">
+        <div class="fr-grid-row fr-grid-row--middle">
           <slot name="title" />
           <slot name="description" />
         </div>
@@ -20,14 +18,11 @@
 </template>
 
 <script setup lang="ts">
-import { Image } from '@/tools/image'
 import { Color } from '@/types'
 
 export interface TeeBannerProps {
   bgColor?: Color
   hasGradient?: boolean
-  bgImage?: string
-  imgAlt?: string
   contentAlignment?:
     | {
         v?: 'top' | 'bottom' | 'middle' | undefined
@@ -38,12 +33,8 @@ export interface TeeBannerProps {
 
 const props = withDefaults(defineProps<TeeBannerProps>(), {
   bgColor: undefined,
-  bgImage: undefined,
-  imgAlt: '',
   contentAlignment: undefined
 })
-
-const img = Image.getUrl
 
 const bgClass = computed(() => {
   return {
@@ -61,3 +52,12 @@ const styleClass = computed(() => {
   }
 })
 </script>
+
+<style scoped lang="scss">
+.fr-banner .fr-bg-banner {
+  background-image: url('/images/cercle-catalogue.svg');
+  background-repeat: no-repeat;
+  background-size: 473px 239px;
+  background-position: bottom right;
+}
+</style>

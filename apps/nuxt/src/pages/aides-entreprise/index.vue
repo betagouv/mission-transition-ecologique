@@ -1,7 +1,9 @@
 <template>
   <LayoutCatalog
     :has-side-menu="hasSideMenu"
-    title="Les aides à la transition écologique"
+    title="Le catalogue des aides à la transition écologique"
+    description="Accédez à l’ensemble des aides publiques pour vous permettre d’engager la transition écologique de votre entreprise :
+      aides financières, accompagnements, formations, prêts, avantages fiscaux..."
     :has-error="hasError"
     :count-items="countPrograms"
     :faq-items="faqCatalogProgram"
