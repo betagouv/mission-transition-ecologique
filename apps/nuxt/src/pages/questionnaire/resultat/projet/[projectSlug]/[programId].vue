@@ -9,7 +9,7 @@ import { RouteName } from '@/types/routeType'
 
 definePageMeta({
   name: RouteName.ProgramFromProjectResultDetail,
-  middleware: [MiddlewareName.hasProject, MiddlewareName.setUsedTracks, MiddlewareName.hasUsedTracks, MiddlewareName.hasProgram]
+  middleware: [MiddlewareName.hasProject, MiddlewareName.hasUsedTracks, MiddlewareName.hasProgram]
 })
 
 useHead(MetaRobots.noIndexNoFollow())
