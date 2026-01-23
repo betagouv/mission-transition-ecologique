@@ -6,40 +6,48 @@
   >
     <div
       id="register-modal"
-      :class="imgClass"
-      class="fr-bg--blue-900 fr-px-md-32v fr-px-2v fr-pb-md-24v fr-pb-32v"
+      class="fr-bg--blue-agir"
     >
       <div
         id="register-modal-content"
-        class="fr-container fr-grid-row fr-grid-row--left fr-grid-row--top"
+        class="fr-container"
       >
-        <div class="fr-col-12 fr-col-md-10 fr-col-offset-md-2 fr-pb-md-1v fr-pt-7v fr-text--yellow">
-          <div>
-            <div class="fr-h2 fr-mb-0 fr-text--yellow">{{ title }}</div>
+        <div class="fr-grid-row fr-grid-row--left fr-grid-row--top">
+          <div class="fr-col-11 fr-col-md-9 fr-col-offset-md-2">
+            <div class="fr-col-12 fr-pb-md-1v fr-pt-7v">
+              <div class="fr-h2 fr-mb-0 fr-text--white">{{ title }}</div>
+            </div>
+          </div>
+          <div class="fr-col-1 fr-text-right fr-pt-7v">
             <TeeDsfrButton
               id="close-register-modal"
               size="sm"
               only-label="fermer la modale d'enregistrement"
-              class="fr-btn-bg--blue--light fr-bg--blue--lightness fr-mr-4v fr-mt-8v fr-p-0 fr-text--blue-900 fr-radius-a--2v"
+              class="fr-btn-bg--blue--light fr-bg--blue--lightness fr-p-0 fr-text--blue-900 fr-radius-a--2v"
               @click="closeModal"
             >
               <span class="fr-icon-close-line fr-icon--lg"></span>
             </TeeDsfrButton>
           </div>
-          <div>{{ description }}</div>
         </div>
-        <TeeRegisterSiret
-          v-if="registerStep === 1"
-          @select-establishment="updateEstablishment"
-          @manual-register="setManualRegister"
-        />
-        <TeeProfileDetails
-          v-if="registerStep === 2"
-          :company="company"
-          :company-size="companySize"
-          :manual="manualRegistration"
-          @modify-siret="resetSiret"
-        />
+        <div class="fr-col-12 fr-col-md-9 fr-col-offset-md-2">
+          <div class="fr-pb-4v fr-text--white">
+            <div>{{ description }}</div>
+          </div>
+          <TeeRegisterSiret
+            v-if="registerStep === 1"
+            class="fr-col-12 fr-col-md-9"
+            @select-establishment="updateEstablishment"
+            @manual-register="setManualRegister"
+          />
+          <TeeProfileDetails
+            v-if="registerStep === 2"
+            :company="company"
+            :company-size="companySize"
+            :manual="manualRegistration"
+            @modify-siret="resetSiret"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -88,12 +96,14 @@ onClickOutside(registerModal, (ev: MouseEvent) => {
     Navigation.toggleRegisterModal(false)
   }
 })
+
 const registerStep = computed<number>(() => {
   if (company.value || manualRegistration.value) {
     return 2
   }
   return 1
 })
+
 const updateEstablishment = async (selectedEstablishment: EstablishmentFront) => {
   company.value = selectedEstablishment
   if (company.value.structure_size) {
@@ -101,6 +111,7 @@ const updateEstablishment = async (selectedEstablishment: EstablishmentFront) =>
   }
   manualRegistration.value = false
 }
+
 const resetSiret = async () => {
   company.value = null
   companySize.value = null
@@ -113,13 +124,6 @@ const resetSiret = async () => {
   await new ProgramManager().update()
 }
 
-const imgClass = computed<string>(() => {
-  if (Breakpoint.isSmallScreen()) {
-    return `register-modal-sm ${Breakpoint.isMobile() ? 'mobile-modal-img' : ''} `
-  }
-  return 'register-modal-lg'
-})
-
 const setManualRegister = () => {
   manualRegistration.value = true
 }
@@ -128,48 +132,3 @@ const closeModal = () => {
   Navigation.toggleRegisterModal(false)
 }
 </script>
-<style lang="scss" scoped>
-#register-modal-content {
-  position: relative;
-}
-
-#close-register-modal {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-#register-modal-overlay {
-  position: fixed;
-  inset: 0;
-  overflow: hidden scroll;
-  z-index: 2000;
-}
-
-.register-modal-overlay-lg {
-  top: var(--header-height) !important;
-}
-
-#register-modal {
-  display: flex;
-  align-items: flex-start;
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-attachment: scroll;
-  background-size: 100%;
-}
-
-.register-modal-sm {
-  background-image: url('/images/TEE-modal-bottom.svg');
-  min-height: 100vh;
-}
-
-.mobile-modal-img {
-  background-image: url('/images/TEE-modal-bottom-mobile.svg');
-}
-
-.register-modal-lg {
-  background-image: url('/images/TEE-modal-bottom.svg');
-  height: calc(100vh - var(--header-height));
-}
-</style>

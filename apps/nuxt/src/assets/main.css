@@ -74,6 +74,10 @@
   -webkit-mask-image: url("../../../../../../node_modules/@gouvfr/dsfr/dist/icons/business/links-line.svg");
   mask-image: url("../../../../../../node_modules/@gouvfr/dsfr/dist/icons/business/links-line.svg");
 }
+.fr-icon-pencil-line::before, .fr-icon-pencil-line::after {
+  -webkit-mask-image: url("../../../../../../node_modules/@gouvfr/dsfr/dist/icons/design/pencil-line.svg");
+  mask-image: url("../../../../../../node_modules/@gouvfr/dsfr/dist/icons/design/pencil-line.svg");
+}
 .fr-icon-money-euro-circle-line::before, .fr-icon-money-euro-circle-line::after {
   -webkit-mask-image: url("../../../../../../node_modules/@gouvfr/dsfr/dist/icons/finance/money-euro-circle-line.svg");
   mask-image: url("../../../../../../node_modules/@gouvfr/dsfr/dist/icons/finance/money-euro-circle-line.svg");
@@ -3219,6 +3223,44 @@ ol.fr-order-list > li::marker {
   font-size: 1.5rem;
 }
 
+#register-modal-overlay {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 2000;
+}
+#register-modal-overlay #register-modal-content {
+  position: relative;
+}
+#register-modal-overlay.register-modal-overlay-lg {
+  top: var(--header-height) !important;
+}
+#register-modal-overlay #register-modal {
+  display: flex;
+  align-items: flex-start;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: scroll;
+  background-size: 100%;
+}
+@media (min-width: 0) {
+  #register-modal-overlay #register-modal {
+    background-image: url("/images/modale/Illustration-agir-modale-petite.svg");
+    min-height: 100vh;
+  }
+}
+@media (min-width: 36em) {
+  #register-modal-overlay #register-modal {
+    background-image: url("/images/modale/Illustration-agir-modale.svg");
+  }
+}
+@media (min-width: 62em) {
+  #register-modal-overlay #register-modal {
+    height: calc(100vh - var(--header-height));
+    min-height: unset;
+  }
+}
+
 @media (min-width: 0) {
   .fr-radius-tl--0 {
     border-top-left-radius: 0 !important;
@@ -3959,6 +4001,9 @@ input[type=search]::-webkit-search-decoration, input[type=search]::-webkit-searc
 .fr-search-bar--green-agir .fr-input, .fr-search-bar--green-agir .search-button, .fr-search-bar--green-agir .search-clear {
   box-shadow: inset 0 -2px 0 0 #307c6f;
 }
+.fr-search-bar--green-agir--light .fr-input, .fr-search-bar--green-agir--light .search-button, .fr-search-bar--green-agir--light .search-clear {
+  box-shadow: inset 0 -2px 0 0 rgb(181.8976744186, 226.7023255814, 219.038372093);
+}
 .fr-search-bar--blue .fr-input, .fr-search-bar--blue .search-button, .fr-search-bar--blue .search-clear {
   box-shadow: inset 0 -2px 0 0 #001891;
 }
@@ -4127,41 +4172,131 @@ a.fr-tag[aria-pressed=false]:hover, a.fr-tag[aria-pressed=false]:active, button.
 .fr-text--white {
   color: #fff !important;
 }
+.fr-text--white--light {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  color: white !important;
+}
+.fr-text--white--lightness {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  color: white !important;
+}
 .fr-text--black {
   color: #161616 !important;
+}
+.fr-text--black--light {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  color: rgb(185.1, 185.1, 185.1) !important;
+}
+.fr-text--black--lightness {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  color: rgb(231.7, 231.7, 231.7) !important;
 }
 .fr-text--yellow {
   color: #facf35 !important;
 }
+.fr-text--yellow--light {
+  color: rgb(253.5, 240.6, 194.4) !important;
+}
+.fr-text--yellow--lightness {
+  color: rgb(254.5, 250.2, 234.8) !important;
+}
 .fr-text--deep-red {
   color: #e1000f !important;
+}
+.fr-text--deep-red--light {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  color: rgb(255, 169.5, 175.2) !important;
+}
+.fr-text--deep-red--lightness {
+  /* Wrong parsing on function name from stylelint, so next line is disable */
+  /* stylelint-disable-next-line function-name-case */
+  color: rgb(255, 226.5, 228.4) !important;
 }
 .fr-text--red {
   color: #fca081 !important;
 }
+.fr-text--red--light {
+  color: rgb(254.1, 226.5, 217.2) !important;
+}
+.fr-text--red--lightness {
+  color: rgb(254.7, 245.5, 242.4) !important;
+}
 .fr-text--purple {
   color: #6a62f4 !important;
+}
+.fr-text--purple--light {
+  color: rgb(210.3, 207.9, 251.7) !important;
+}
+.fr-text--purple--lightness {
+  color: rgb(240.1, 239.3, 253.9) !important;
 }
 .fr-text--green {
   color: #1ebe8e !important;
 }
+.fr-text--green--light {
+  color: rgb(179.8636363636, 243.1363636364, 224.1545454545) !important;
+}
+.fr-text--green--lightness {
+  color: rgb(229.9545454545, 251.0454545455, 244.7181818182) !important;
+}
 .fr-text--green-agir {
   color: #307c6f !important;
+}
+.fr-text--green-agir--light {
+  color: rgb(181.8976744186, 226.7023255814, 219.038372093) !important;
+}
+.fr-text--green-agir--lightness {
+  color: rgb(230.6325581395, 245.5674418605, 243.0127906977) !important;
 }
 .fr-text--blue {
   color: #001891 !important;
 }
+.fr-text--blue--light {
+  color: rgb(145.5, 163.624137931, 255) !important;
+}
+.fr-text--blue--lightness {
+  color: rgb(218.5, 224.5413793103, 255) !important;
+}
 .fr-text--blue-agir {
   color: #465f9d !important;
+}
+.fr-text--blue-agir--light {
+  color: rgb(196.2806167401, 205.6308370044, 228.8193832599) !important;
+}
+.fr-text--blue-agir--lightness {
+  color: rgb(235.4268722467, 238.5436123348, 246.2731277533) !important;
 }
 .fr-text--blue-900 {
   color: #050d3c !important;
 }
+.fr-text--blue-900--light {
+  color: rgb(131.7692307692, 148.2, 244.7307692308) !important;
+}
+.fr-text--blue-900--lightness {
+  color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
+}
 .fr-text--blue-france {
   color: #050d3c !important;
 }
+.fr-text--blue-france--light {
+  color: rgb(131.7692307692, 148.2, 244.7307692308) !important;
+}
+.fr-text--blue-france--lightness {
+  color: rgb(213.9230769231, 219.4, 251.5769230769) !important;
+}
 .fr-text--grey {
   color: #777 !important;
+}
+.fr-text--grey--light {
+  color: rgb(214.2, 214.2, 214.2) !important;
+}
+.fr-text--grey--lightness {
+  color: rgb(241.4, 241.4, 241.4) !important;
 }
 .fr-text-line-height--3v {
   line-height: 0.75rem;

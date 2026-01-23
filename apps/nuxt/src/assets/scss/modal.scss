@@ -1,0 +1,46 @@
+@use 'tool';
+
+#register-modal-overlay {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 2000;
+
+  #register-modal-content {
+    position: relative;
+  }
+
+  #close-register-modal {
+    // position: absolute;
+    // right: 0;
+    // top: 0;
+  }
+
+  &.register-modal-overlay-lg {
+    top: var(--header-height) !important;
+  }
+
+  #register-modal {
+    display: flex;
+    align-items: flex-start;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment: scroll;
+    background-size: 100%;
+
+    @include tool.media-query-respond-from(xs) {
+      background-image: url('/images/modale/Illustration-agir-modale-petite.svg');
+      min-height: 100vh;
+    }
+
+    @include tool.media-query-respond-from(sm) {
+      background-image: url('/images/modale/Illustration-agir-modale.svg');
+
+    }
+
+    @include tool.media-query-respond-from(lg) {
+      height: calc(100vh - var(--header-height));
+      min-height: unset;
+    }
+  }
+}
