@@ -7,7 +7,7 @@ export enum StatsPeriodicity {
 
 export interface StatQueryParams {
   periodicity?: StatsPeriodicity
-  since?: Date
+  since?: number
   to?: Date
 }
 

@@ -29,7 +29,6 @@
       "sud-pret-climat",
       "cedre-ambition",
       "perf-crise-energetique-aura",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
@@ -42,7 +41,8 @@
       "certificats-economie-energie",
       "aide-investissement-librairie",
       "booster-transformation-rev-3",
-      "cap-decarbonation"
+      "cap-decarbonation",
+      "cheque-transition-tissu-economique"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action économies d'énergie",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action économies d'énergie",
@@ -129,7 +129,6 @@
       "aide-financement-occitanie",
       "cedre-investissement",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
@@ -140,7 +139,8 @@
       "camping-independant-na",
       "hotellerie-independante-bfc",
       "aide-tourisme-guadeloupe",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -328,7 +328,6 @@
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-tourisme",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transition-bzh",
       "pass-transformation-ecologique",
@@ -344,7 +343,8 @@
       "aide-investissement-corse",
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
-      "deter-decarboner-le-tertiaire"
+      "deter-decarboner-le-tertiaire",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -405,7 +405,6 @@
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-tourisme",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
@@ -418,7 +417,8 @@
       "aide-investissement-corse",
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
-      "deter-decarboner-le-tertiaire"
+      "deter-decarboner-le-tertiaire",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -579,7 +579,6 @@
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-tourisme",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
@@ -594,7 +593,8 @@
       "aide-investissement-corse",
       "certificats-economie-energie",
       "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
-      "deter-decarboner-le-tertiaire"
+      "deter-decarboner-le-tertiaire",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -651,7 +651,6 @@
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-tourisme",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
       "cap-transition-ecologique",
@@ -664,7 +663,8 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "certificats-economie-energie",
-      "decarb-flash-2025-2027"
+      "decarb-flash-2025-2027",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -724,7 +724,6 @@
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-tourisme",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
@@ -739,7 +738,8 @@
       "aide-investissement-corse",
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
-      "deter-decarboner-le-tertiaire"
+      "deter-decarboner-le-tertiaire",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4,
@@ -791,13 +791,13 @@
       "etude-hydroelectricite",
       "aide-financement-occitanie",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
       "hotellerie-independante-bfc",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -856,14 +856,14 @@
       "pret-economies-d-energie-pee",
       "aide-financement-occitanie",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
       "agir-pdl",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -963,7 +963,6 @@
       "cedre-premier-pas",
       "sud-pret-climat",
       "cedre-ambition",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
@@ -973,7 +972,8 @@
       "impulsion-environnement",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "deter-decarboner-le-tertiaire"
+      "deter-decarboner-le-tertiaire",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -1041,7 +1041,6 @@
       "solaire-ready",
       "pret-tourisme",
       "perf-crise-energetique-aura",
-      "cheque-vert-grand-est",
       "aide-travaux-tourisme-aura",
       "pret-energie-aura",
       "pass-transformation-ecologique",
@@ -1059,7 +1058,8 @@
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
       "aide-investissement-librairie",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "cheque-transition-tissu-economique"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir l'isolation thermique de votre bâtiment",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de l'isolation thermique de votre bâtiment",
@@ -1294,13 +1294,13 @@
       "recharge-vehicule-electrique",
       "pret-tourisme",
       "deploiement-flottes-hydrogene",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
       "impulsion-environnement",
       "aide-tourisme-guadeloupe",
       "je-change-ma-voiture",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       16
@@ -1859,7 +1859,8 @@
       "formations-ep",
       "formations-sante",
       "formations-uniformation",
-      "formations-mobilite"
+      "formations-mobilite",
+      "expert-atlas"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
@@ -2023,7 +2024,8 @@
       "formations-ep",
       "formations-sante",
       "formations-uniformation",
-      "formations-mobilite"
+      "formations-mobilite",
+      "expert-atlas"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une formation environnement",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre formation environnement",
@@ -2170,7 +2172,8 @@
       "aide-tourisme-guadeloupe",
       "diag-impact-biodiversite",
       "booster-transformation-rev-3",
-      "accelerateur-des-possibles"
+      "accelerateur-des-possibles",
+      "expert-atlas"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
@@ -2382,7 +2385,7 @@
     "titleLongDescription": "🤝 Qu’est-ce qu'un plan d'adaptation climat ?",
     "longDescription": "Le plan d’adaptation au dérèglement climatique est un accompagnement destiné à évaluer la **vulnérabilité de votre entreprise face aux aléas climatiques** déjà à l’œuvre : canicules, sécheresses, inondations, tempêtes, tensions sur les ressources…\n\nCet accompagnement vous aide à **bâtir une stratégie de résilience** adaptée à vos activités, à votre territoire et à vos contraintes opérationnelles. Ainsi, vous :\n\n- **Identifiez les risques**.\n- **Prévenez les ruptures d’activité**.\n- **Sécurisez les conditions de travail**.\n- **Anticipez les coûts économiques et sociaux** liés aux perturbations climatiques.\n\nDans un contexte où les événements extrêmes se multiplient, adapter son entreprise n’est plus une option mais une nécessité.\n\n**L’adaptation vise à limiter les effets du changement climatique déjà en cours. Elle est complémentaire des actions d’atténuation**, qui visent à en réduire les causes (notamment les émissions de gaz à effet de serre). Ces deux démarches doivent être pensées ensemble pour une stratégie climatique cohérente et durable.",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur le plan d'adaptation climat ?",
-    "moreDescription": "- [**Adaptation des entreprises au changement climatique : Agir maintenant !**](https://www.cci-paris-idf.fr/sites/default/files/2025-03/CCI_Adaptation-au-changement-climatique_fev-2025.pdf) Une étude des CCI de France.\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.\n- [**Canicule et santé au travail : prévenir les risques, protéger les équipes**](https://www.anact.fr/canicule-travail-prevention-risques)**,** tour d'horizon et conseils pratiques de l'ANACT",
+    "moreDescription": "- [**Stratégie d'adaptation au changement climatique pour les entreprises**](https://agirpourlatransition.ademe.fr/entreprises/conseils/transverse/strategie/adaptation-climatique), les conseils de l'ADEME pour agir.\n- [**Adaptation des entreprises au changement climatique : Agir maintenant !**](https://www.cci-paris-idf.fr/sites/default/files/2025-03/CCI_Adaptation-au-changement-climatique_fev-2025.pdf) Une étude des CCI de France.\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.\n- [**Canicule et santé au travail : prévenir les risques, protéger les équipes**](https://www.anact.fr/canicule-travail-prevention-risques)**,** tour d'horizon et conseils pratiques de l'ANACT",
     "themes": [
       "environmental"
     ],
@@ -2850,7 +2853,6 @@
       "fonds-tourisme-durable",
       "cedre-investissement",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
       "cap-transition-ecologique",
@@ -2861,7 +2863,8 @@
       "camping-independant-na",
       "prit-hdf",
       "aide-tourisme-guadeloupe",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -2939,7 +2942,6 @@
       "fonds-tourisme-durable",
       "cedre-investissement",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
       "cap-transition-ecologique",
@@ -2947,7 +2949,8 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "prit-hdf"
+      "prit-hdf",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -3100,7 +3103,6 @@
       "fonds-tourisme-durable",
       "cedre-investissement",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "aide-travaux-tourisme-aura",
       "pret-energie-aura",
       "pass-transition-bzh",
@@ -3109,7 +3111,8 @@
       "soutien-hebergement-touristique",
       "agir-pdl",
       "prit-hdf",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       14,
@@ -3291,7 +3294,6 @@
       "visite-energie",
       "cedre-investissement",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
@@ -3303,7 +3305,8 @@
       "camping-independant-na",
       "prit-hdf",
       "aide-tourisme-guadeloupe",
-      "deter-decarboner-le-tertiaire"
+      "deter-decarboner-le-tertiaire",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4,
@@ -3545,11 +3548,11 @@
     "programs": [
       "bonus-reparation",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "perf-crise-energetique-cvl"
+      "perf-crise-energetique-cvl",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -3587,10 +3590,10 @@
     "mainTheme": "building",
     "programs": [
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
-      "perf-crise-energetique-cvl"
+      "perf-crise-energetique-cvl",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       33
@@ -3826,7 +3829,7 @@
     "shortDescription": "Le couvert végétal prévient la pollution et améliore la fertilité des terres agricoles.",
     "image": "/images/projet/couvert-vegetal.webp",
     "longDescription": "Le **couvert végétal**, aussi appelé plante de couverture, est une pratique d’**agriculture durable** qui protège et régénère vos sols. En grandes cultures, il prend souvent la forme de **couverts intermédiaires**, semés entre deux productions principales.\n\nAdopter le couvert végétal sur votre **exploitation agricole**, c’est profiter d’avantages concrets :\n\n- réduction des adventices et meilleure maîtrise des intrants,\n\n- limitation des pertes d’**engrais** et de la **pollution diffuse**,\n\n- enrichissement du sol grâce à la fixation d’**azote** par les légumineuses,\n\n- développement de la **biodiversité fonctionnelle**,\n\n- sol plus fertile avec une meilleure **rétention d’eau**.\n\nEn France, la surface en couverts est passée à 2,9 millions d’hectares en 2022. L’objectif fixé est 4,8 millions d’ici 2030, soit une progression de 65 %.",
-    "moreDescription": "- [**Les principales étapes pour réussir vos couverts végétaux et les valoriser**](https://landes.chambres-agriculture.fr/sinformer/produire-innover/productions-vegetales/couverts-vegetaux)**,** par la Chambre d’agriculture des Landes.\n- [**L'agroforesterie, un enjeu pour les paysages agricoles**](https://infos.ademe.fr/agriculture-alimentation/2025/agroforesterie-redonner-de-la-valeur-a-larbre-pour-transformer-nos-paysages-agricoles/), par l'ADEME.",
+    "moreDescription": "- [**Les principales étapes pour réussir vos couverts végétaux et les valoriser**](https://landes.chambres-agriculture.fr/sinformer/produire-innover/productions-vegetales/couverts-vegetaux)**,** par la Chambre d’agriculture.\n- [**L'agroforesterie, un enjeu pour les paysages agricoles**](https://infos.ademe.fr/agriculture-alimentation/2025/agroforesterie-redonner-de-la-valeur-a-larbre-pour-transformer-nos-paysages-agricoles/), par l'ADEME.",
     "themes": [
       "biodiversite",
       "water"
@@ -3986,8 +3989,7 @@
     "longDescription": "Issus de matières **végétales ou animales**, de champignons ou encore de bactéries, les produits biosourcés vous permettent de **limiter l'utilisation du pétrole**, une ressource qui se raréfie et qui génère à la fois pollution et émissions de gaz à effet de serre.\n\nDans les secteurs de l'industrie, de la construction ou de l'agriculture, par exemple, utiliser des matières premières biosourcées présente de nombreux attraits :\n\n- il s'agit d'une **ressource renouvelable et locale** qui présente des perspectives d'innovation et de création d'emplois ;\n- les matériaux biosourcés s'inscrivent dans l'**économie circulaire** et offrent un potentiel de revenus supplémentaires pour les producteurs qui peuvent revendre leurs ressources au secteur du bâtiment ou aux sites de transformation ;\n- le cycle de vie des matériaux biosourcés émet une **faible empreinte carbone** ;\n- les matériaux biosourcés ont des **propriétés intéressantes** (thermiques, acoustiques...)\n- l'utilisation de ces matériaux peut vous permettre de **valoriser votre engagement** et d'obtenir des labellisations.",
     "moreDescription": "- [**Tout comprendre : les produits biosourcés**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/7620-tout-comprendre-les-produits-biosources-9791029723506.html#product-presentation), un guide de l'ADEME en dix questions.\n- [**Bilan thématique Bâtiment Bois construction et matériaux biosourcés**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/4651-bilan-thematique-batiment-bois-construction-et-materiaux-biosources-9791029717895.html#product-presentation), du Programme d'investissements d'avenir (PIA).\n- [**Matériaux biosourcés : usages et avantages pour l'éco-construction et les entreprises**](https://bigmedia.bpifrance.fr/nos-dossiers/materiaux-biosources-usages-et-avantages-pour-leco-construction-et-les-entreprises), par Bpifrance.",
     "themes": [
-      "eco-design",
-      "environmental"
+      "eco-design"
     ],
     "mainTheme": "eco-design",
     "programs": [
@@ -4124,9 +4126,7 @@
     "longDescription": "Vous avez un projet d’activité, mais peu de terrain disponible ? Pensez aux friches ! Ces espaces déjà artificialisés peuvent accueillir des projets d’entreprise (locaux, production, stockage, bureaux, etc.) sans empiéter sur des terres agricoles ou naturelles.\\\nEn réutilisant une friche, vous valorisez un terrain souvent bien situé et vous limitez l’impact environnemental de votre projet. Même si le sol est pollué, des aides existent pour financer les études, la dépollution ou les travaux.\\\nC’est aussi une façon concrète de contribuer à la transition écologique, en réduisant l’artificialisation des sols tout en donnant un nouvel usage à un espace délaissé.",
     "moreDescription": "- [**La reconquête des friches**](https://librairie.ademe.fr/urbanisme-territoires-et-sols/5458-la-reconquete-des-friches-l-ademe-vous-accompagne-9791029719462.html#product-presentation), un guide de l'ADEME pour y parvenir.\n- [**Réhabiliter les friches : opportunités et méthodologie**](https://www.cerema.fr/fr/actualites/rehabiliter-friches-opportunites-methodologie)**,** un dossier thématique Céréma.",
     "themes": [
-      "building",
-      "environmental",
-      "biodiversite"
+      "building"
     ],
     "mainTheme": "building",
     "programs": [
@@ -4251,6 +4251,8 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "diag-ecoconception",
+      "diagnostic-eco-conception-ile-de-france",
       "programme-synergies-durables"
     ],
     "linkedProjects": [],
@@ -4935,8 +4937,7 @@
     "longDescription": "13 % des émissions de carbone de l'agriculture sont le fait des moteurs des machines agricoles. Pour **réduire l'empreinte carbone** de votre activité agricole, remplacez vos engins agricoles par des **machines hybrides ou fonctionnant à l'électricité, à l'hydrogène, au gaz**...\\\nAinsi, vous contribuez à l'amélioration de la qualité de l'air et vous **pérennisez votre activité** vis-à-vis des **nouvelles normes environnementales**.",
     "moreDescription": "- [**Guide méthodologique ClimAgri®**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/7812-guide-methodologique-climagriR.html#product-presentation).\n- [**Guide des bonnes pratiques agricoles pour l'amélioration de la qualité de l'air**](https://librairie.ademe.fr/air/8885-10691-guide-des-bonnes-pratiques-agricoles-pour-l-amelioration-de-la-qualite-de-l-air.html#product-presentation), un guide de l'ADEME.",
     "themes": [
-      "mobility",
-      "environmental"
+      "mobility"
     ],
     "mainTheme": "mobility",
     "programs": [

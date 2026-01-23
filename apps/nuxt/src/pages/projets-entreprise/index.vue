@@ -1,7 +1,7 @@
 <template>
   <LayoutCatalog
     :has-side-menu="hasSideMenu"
-    title="Les projets de transition écologique"
+    title="Quelles aides pour concrétiser votre projet de transition écologique ?"
     :has-error="hasError"
     :count-items="countProjects"
     :faq-items="faqCatalogProject"
