@@ -41,8 +41,10 @@
       "certificats-economie-energie",
       "aide-investissement-librairie",
       "booster-transformation-rev-3",
+      "easy-diag",
       "cap-decarbonation",
-      "cheque-transition-tissu-economique"
+      "cheque-transition-tissu-economique",
+      "diag-accompagnement-tee-rh"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action économies d'énergie",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action économies d'énergie",
@@ -457,7 +459,7 @@
     "slug": "bilan-ges",
     "title": "Bilan de gaz à effet de serre",
     "nameTag": "🌱 bilan GES",
-    "shortDescription": "Quantifier vos émissions de Gaz à effet de serre émise ou captée par les activités de votre entreprise.",
+    "shortDescription": "Quantifier vos émissions de gaz à effet de serre émises ou captées par les activités de votre entreprise.",
     "image": "/images/projet/bilan-ges.webp",
     "titleLongDescription": "🤝 Qu’est-ce qu'un bilan de gaz à effet de serre ?",
     "longDescription": "Un bilan des émissions de gaz à effet de serre (ou bilan GES, ou BEGES), consiste à mesurer, sur une année complète, **l’ensemble des** **émissions directes et indirectes** de gaz à effet de serre produites par les activités d’une entreprise.\n\nLa grande majorité des bilans GES réalisés en France utilisent la méthode Bilan Carbone®, élaborée par l’ADEME.\n\nLes bilans des émissions de gaz à effet de serre mesurent tour à tour :\n\n- Les émissions directes produites par les équipements de l’entreprise.\n- Les émissions indirectes résultant de la production d'énergie et de chaleur consommée ou achetée par l'entreprise.\n- Les émissions indirectes en dehors du périmètre de contrôle de l’entreprise (achats, transport des marchandises, déchets produits…).\n\nSi la loi oblige certaines entreprises à réaliser leur Bilan GES, toutes les entreprises peuvent le faire, même lorsqu’elles n’y sont pas contraintes. À la clé, de nombreux avantages :\n\n- Le respect des **enjeux RSE**.\n- La réalisation d’importantes **économies d’énergie**.\n- L’anticipation des **contraintes réglementaires**.\n- La consolidation de votre marque employeur et de l’**image de marque** de votre entreprise.",
@@ -973,6 +975,7 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "deter-decarboner-le-tertiaire",
+      "easy-diag",
       "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
@@ -1514,7 +1517,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "aide-tpe-transition-na",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "easy-diag"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action déchets",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action déchets",
@@ -1823,7 +1827,7 @@
     "slug": "sensibilisation-equipes",
     "title": "Sensibilisation des équipes",
     "nameTag": "👫 sensibilisation",
-    "shortDescription": "Sensibiliser votre équipe sur les enjeux environnementaux de votre activité et sur les éco-gestes à mettre en place au quotidien.",
+    "shortDescription": "Sensibiliser votre équipe sur les enjeux environnementaux de votre activité.",
     "image": "/images/projet/sensibilisation-equipes.webp",
     "titleLongDescription": "🤝 Qu’est-ce qu'une campagne de sensibilisation des équipes ?",
     "longDescription": "Une campagne de sensibilisation des équipes est un moyen d’**impliquer vos collaborateurs** face aux défis climatiques, de **les sensibiliser** et de **les former** sur des pratiques liées au **tri des déchets** sur leur lieu de travail, aux **économies d’énergie** et à une **mobilité plus responsable**.\n\nLa sensibilisation peut se traduire par :\n\n- Des ateliers collaboratifs.\n- Des formations sur une thématique environnementale.\n- Des retours d'apprentissage d'autres entreprises.\n- Des défis à relever sous la forme d'un jeu en équipe, etc.\n\nAinsi, vos équipes se sentent en phase avec les objectifs durables de l'entreprise et motivées pour faire évoluer leurs pratiques. Elles acquièrent également un ensemble de gestes dont elles peuvent se faire l’ambassadeur, y compris à l’extérieur de l’entreprise.",
@@ -1851,6 +1855,7 @@
       "formation-communiquer-et-sensibiliser",
       "outils-pour-adaptation",
       "eco-diagnostic-commerce",
+      "easy-diag",
       "formations-atlas",
       "formations-afdas",
       "formations-opcommerce",
@@ -1860,7 +1865,9 @@
       "formations-sante",
       "formations-uniformation",
       "formations-mobilite",
-      "expert-atlas"
+      "expert-atlas",
+      "diag-accompagnement-tee-rh",
+      "diagnostic-rh"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
@@ -1945,7 +1952,9 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "aide-tpe-transition-na",
-      "eco-diagnostic-commerce"
+      "eco-diagnostic-commerce",
+      "easy-diag",
+      "diag-accompagnement-tee-rh"
     ],
     "linkedProjects": [
       30
@@ -2016,6 +2025,7 @@
       "formation-convaincre-et-argumenter",
       "formation-communiquer-et-sensibiliser",
       "outils-pour-adaptation",
+      "easy-diag",
       "formations-atlas",
       "formations-afdas",
       "formations-opcommerce",
@@ -2025,7 +2035,9 @@
       "formations-sante",
       "formations-uniformation",
       "formations-mobilite",
-      "expert-atlas"
+      "expert-atlas",
+      "diag-accompagnement-tee-rh",
+      "diagnostic-rh"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une formation environnement",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre formation environnement",
@@ -2172,8 +2184,10 @@
       "aide-tourisme-guadeloupe",
       "diag-impact-biodiversite",
       "booster-transformation-rev-3",
+      "easy-diag",
       "accelerateur-des-possibles",
-      "expert-atlas"
+      "expert-atlas",
+      "diagnostic-rh"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
@@ -2269,7 +2283,8 @@
       "cap-transition-ecologique",
       "prit-hdf",
       "camping-independant-bfc",
-      "indicateur-climat"
+      "indicateur-climat",
+      "easy-diag"
     ],
     "linkedProjects": [],
     "priority": {
@@ -3237,7 +3252,8 @@
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
       "diag-impact-biodiversite",
-      "diag-biodiversite"
+      "diag-biodiversite",
+      "easy-diag"
     ],
     "linkedProjects": [],
     "priority": {
@@ -3516,7 +3532,8 @@
       "ecogestes-paca",
       "formation-convaincre-et-argumenter",
       "formation-communiquer-et-sensibiliser",
-      "outils-pour-adaptation"
+      "outils-pour-adaptation",
+      "easy-diag"
     ],
     "linkedProjects": [
       26
