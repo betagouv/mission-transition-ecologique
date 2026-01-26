@@ -96,7 +96,6 @@
 </template>
 
 <script setup lang="ts">
-import TeeCatalogBanner from '@/components/element/TeeCatalogBanner.vue'
 import FaqCatalog from '@/components/faq/FaqCatalog.vue'
 import Layout from '@/components/layout/Layout.vue'
 import { useFiltersStore } from '@/stores/filters'
