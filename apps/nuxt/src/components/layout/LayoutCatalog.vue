@@ -9,7 +9,7 @@
           <div
             v-if="$slots.title"
             :class="lineClassBySideMenuForTitle"
-            class="fr-pt-6v"
+            class="fr-pt-6v fr-mb-md-0 fr-mb-6v"
           >
             <slot name="title"> </slot>
           </div>
@@ -24,7 +24,7 @@
         <template #description>
           <p
             v-if="description"
-            class="fr-text--md fr-mt-1v"
+            class="fr-text--md fr-mt-1v fr-hidden fr-unhidden-md"
             :class="lineClassBySideMenuForDescription"
           >
             {{ description }}
@@ -124,7 +124,7 @@ const lineClassBySideMenu = computed(() => {
 })
 
 const lineClassBySideMenuForTitle = computed(() => {
-  return Navigation.getClassesBySideMenu(props.hasSideMenu, 11)
+  return Navigation.getClassesBySideMenu(props.hasSideMenu, 12)
 })
 
 const lineClassBySideMenuForDescription = computed(() => {

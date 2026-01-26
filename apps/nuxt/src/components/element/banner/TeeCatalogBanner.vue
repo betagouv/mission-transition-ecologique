@@ -33,10 +33,14 @@ const bgClass = computed(() => {
 </script>
 
 <style scoped lang="scss">
-.fr-banner .fr-bg-banner {
-  background-image: url('/images/cercle-catalogue.svg');
-  background-repeat: no-repeat;
-  background-size: 473px 239px;
-  background-position: bottom right;
+@use '@/assets/scss/tool';
+
+@include tool.media-query-respond-from(md) {
+  .fr-banner .fr-bg-banner {
+    background-image: url('/images/cercle-catalogue.svg');
+    background-repeat: no-repeat;
+    background-size: 580px 310px;
+    background-position: bottom right;
+  }
 }
 </style>
