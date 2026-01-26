@@ -10,8 +10,6 @@
                 <h1 class="fr-mb-6v fr-text--blue-900">
                   Découvrez vos aides éligibles
                   <span class="fr-display-lg--block">parmi <span class="fr-text--green-agir">tous les financeurs publics</span></span>
-                  <!--                                    la transition écologique </span>-->
-                  <!--                  <span class="fr-display-md&#45;&#45;block">de votre entreprise</span>-->
                 </h1>
               </div>
               <div class="fr-col-12 fr-col-lg-9">
