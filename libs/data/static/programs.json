@@ -20970,234 +20970,6 @@
     "id": "mission-conseil-rse"
   },
   {
-    "titre": "Mission Stratégie Environnement",
-    "promesse": "Définissez la feuille de route pour la transition énergétique et écologique de votre entreprise",
-    "description": "Bénéficiez de **13 jours d’accompagnement** par un expert environnement référencé par Bpifrance pour intégrer la **transition écologique et énergétique** dans la stratégie de votre entreprise. Cette mission vous permet de prendre du recul, structurer votre démarche et construire une **feuille de route adaptée** à votre activité.\n\nVous pourrez :\n\n- **Sensibiliser vos équipes** aux enjeux environnementaux,\n\n- **Évaluer les impacts** de votre activité,\n\n- **Identifier risques et opportunités** liés à la transition,\n\n- **Formaliser votre raison d’être**,\n\n- et construire une **trajectoire jusqu’en 2030** pour guider vos actions selon vos objectifs.",
-    "illustration": "images/TEE_eolienne.webp",
-    "opérateur de contact": "Banque Publique d'Investissement France",
-    "autres opérateurs": [
-      "InvestEU"
-    ],
-    "contact question": "formulaire",
-    "url": "https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/mission-strategie-environnement",
-    "nature de l'aide": "étude",
-    "coût de l'accompagnement": "5 000 € HT",
-    "durée de l'accompagnement": "13 jours",
-    "objectifs": [
-      {
-        "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
-        "liens": [
-          {
-            "formulaire": true
-          }
-        ]
-      },
-      {
-        "description": "Un conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande."
-      },
-      {
-        "description": "Définissez avec l’expert le périmètre du diagnostic, la méthode et le calendrier."
-      },
-      {
-        "description": "Lancez le diagnostic avec l'expert environnement référencé par Bpifrance."
-      }
-    ],
-    "conditions d'éligibilité": {
-      "taille de l'entreprise": [
-        "Plus de 10 salariés",
-        "Non éligible aux micro-entreprises"
-      ],
-      "secteur géographique": [
-        "France et territoires d'outre-mer"
-      ],
-      "secteur d'activité": [
-        "Tous secteurs d’activité"
-      ],
-      "nombre d'années d'activité": [
-        "Au moins 3 ans d’activité"
-      ],
-      "autres critères d'éligibilité": [
-        "Réaliser au minimum 5M€ de chiffre d'affaires (les PME réalisant moins de 5M€ de CA peuvent être éligibles, sous condition de structuration suffisante afin que le parcours conseil soit adapté)"
-      ]
-    },
-    "eligibilityData": {
-      "company": {
-        "allowedNafSections": [
-          "A",
-          "B",
-          "C",
-          "D",
-          "E",
-          "F",
-          "G",
-          "H",
-          "I",
-          "J",
-          "K",
-          "L",
-          "M",
-          "N",
-          "O",
-          "P",
-          "Q",
-          "R",
-          "S",
-          "T",
-          "U"
-        ],
-        "minEmployees": "10",
-        "excludeMicroentrepreneur": true
-      },
-      "priorityObjectives": [
-        "rh"
-      ]
-    },
-    "publicodes": {
-      "entreprise": null,
-      "entreprise . effectif": null,
-      "entreprise . microentrepreneur": null,
-      "entreprise . secteur d'activité": {
-        "avec": {
-          "est industrie": null,
-          "est tertiaire": null,
-          "est agriculture": null,
-          "est tourisme": null,
-          "est artisanat": null,
-          "est autre secteur": null
-        }
-      },
-      "entreprise . code NAF": null,
-      "entreprise . code NAF niveau 1": {
-        "avec": {
-          "est A": null,
-          "est B": null,
-          "est C": null,
-          "est D": null,
-          "est E": null,
-          "est F": null,
-          "est G": null,
-          "est H": null,
-          "est I": null,
-          "est J": null,
-          "est K": null,
-          "est L": null,
-          "est M": null,
-          "est N": null,
-          "est O": null,
-          "est P": null,
-          "est Q": null,
-          "est R": null,
-          "est S": null,
-          "est T": null,
-          "est U": null
-        }
-      },
-      "entreprise . est propriétaire de ses locaux": null,
-      "région": null,
-      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
-      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
-      "Bretagne": "\"Bretagne\"",
-      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
-      "Corse": "\"Corse\"",
-      "Grand Est": "\"Grand Est\"",
-      "Hauts-de-France": "\"Hauts-de-France\"",
-      "Normandie": "\"Normandie\"",
-      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
-      "Occitanie": "\"Occitanie\"",
-      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
-      "Pays de la Loire": "\"Pays de la Loire\"",
-      "Île-de-France": "\"Île-de-France\"",
-      "Guadeloupe": "\"Guadeloupe\"",
-      "Guyane": "\"Guyane\"",
-      "La Réunion": "\"La Réunion\"",
-      "Martinique": "\"Martinique\"",
-      "Mayotte": "\"Mayotte\"",
-      "Ile de Clipperton": "\"Ile de Clipperton\"",
-      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
-      "Polynésie française": "\"Polynésie française\"",
-      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
-      "Saint-Martin": "\"Saint-Martin\"",
-      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
-      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
-      "Wallis et Futuna": "\"Wallis et Futuna\"",
-      "questionnaire": null,
-      "questionnaire . objectif prioritaire": {
-        "avec": {
-          "est mon impact environnemental": null,
-          "est ma performance énergétique": null,
-          "est diminuer ma consommation d'eau": null,
-          "est rénover mon bâtiment": null,
-          "est la mobilité durable": null,
-          "est la gestion des déchets": null,
-          "est l'écoconception": null,
-          "est former ou recruter": null,
-          "est préserver la biodiversité": null
-        }
-      },
-      "dispositif": {
-        "avec": {
-          "début de validité": null,
-          "fin de validité": null
-        }
-      },
-      "date du jour": null,
-      "entreprise . est ciblée": {
-        "toutes ces conditions": [
-          "est éligible",
-          "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé"
-        ]
-      },
-      "entreprise . est éligible": {
-        "toutes ces conditions": [
-          "a un effectif éligible",
-          "a une categorie legale eligible"
-        ]
-      },
-      "entreprise . a un effectif éligible": {
-        "toutes ces conditions": [
-          "effectif >= 10"
-        ]
-      },
-      "entreprise . a une categorie legale eligible": {
-        "toutes ces conditions": [
-          "microentrepreneur = non"
-        ]
-      },
-      "entreprise . est dans un secteur d'activité ciblé": {
-        "une de ces conditions": [
-          "code NAF niveau 1 . est A",
-          "code NAF niveau 1 . est B",
-          "code NAF niveau 1 . est C",
-          "code NAF niveau 1 . est D",
-          "code NAF niveau 1 . est E",
-          "code NAF niveau 1 . est F",
-          "code NAF niveau 1 . est G",
-          "code NAF niveau 1 . est H",
-          "code NAF niveau 1 . est I",
-          "code NAF niveau 1 . est J",
-          "code NAF niveau 1 . est K",
-          "code NAF niveau 1 . est L",
-          "code NAF niveau 1 . est M",
-          "code NAF niveau 1 . est N",
-          "code NAF niveau 1 . est O",
-          "code NAF niveau 1 . est P",
-          "code NAF niveau 1 . est Q",
-          "code NAF niveau 1 . est R",
-          "code NAF niveau 1 . est S",
-          "code NAF niveau 1 . est T",
-          "code NAF niveau 1 . est U"
-        ]
-      },
-      "entreprise . a un objectif ciblé": {
-        "une de ces conditions": [
-          "questionnaire . objectif prioritaire . est former ou recruter"
-        ]
-      }
-    },
-    "id": "mission-strategie-environnement"
-  },
-  {
     "titre": "Prêt Action Climat",
     "promesse": "Financez votre projet de transition écologique et énergétique",
     "description": "Bénéficiez du prêt sans garantie \"Action Climat\" proposé par Bpifrance. Ce prêt est destiné à **accompagner les projets de transition écologique et énergétique** portés par des TPE et PME de moins de 50 salariés. Il est adossé à la garantie verte mise en place avec l’Etat.",
@@ -24697,221 +24469,6 @@
       }
     },
     "id": "nos-gestes-climat"
-  },
-  {
-    "titre": "Prêt Économies d’Énergie (PEE)",
-    "promesse": "Financez vos équipements pour améliorer votre efficacité énergétique",
-    "description": "Le Prêt Économies d’Énergie permet de financer le matériel éligible aux certificats d'économies d'énergie (CEE), et les dépenses liées au projet d’efficience énergétique. ",
-    "illustration": "images/TEE_eolienne.webp",
-    "opérateur de contact": "Banque Publique d'Investissement France",
-    "contact question": "formulaire",
-    "url": "https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-economies-denergie-pee",
-    "nature de l'aide": "prêt",
-    "montant du prêt": "De 10 000 € à 500 000 €",
-    "durée du prêt": "de 3 à 7 ans, avec un différé d’amortissement en capital de 2 ans maximum",
-    "objectifs": [
-      {
-        "description": "Réalisez votre demande de prêt pour votre investissement."
-      },
-      {
-        "description": "L’investissement peut porter sur des équipements qui visent l’amélioration des postes suivants : éclairage, froid, chauffage, climatisation, motorisation électrique."
-      },
-      {
-        "description": "Ce prêt est éligible aux certificats d'économies d'énergie (CEE)"
-      }
-    ],
-    "conditions d'éligibilité": {
-      "taille de l'entreprise": [
-        "Moins de 50 salariés",
-        "Non éligible aux micro-entreprises"
-      ],
-      "secteur géographique": [
-        "France et territoires d'outre-mer"
-      ],
-      "secteur d'activité": [
-        "Tous secteurs d’activité",
-        "Sont exclus: les activités d’intermédiation financière (NAF : section K64 sauf 64-2 pour les achats d’entreprises) ; les activités de promotion immobilière et marchand de biens (NAF : section L68-1, L68-2 et F41-1) ; les entreprises des secteurs agricoles identifiées par les code NAF section A01, et section A02 dont le chiffre d’affaires est inférieur à 750 000 €, à l’exception des codes NAF 02.20Z et 02.40Z (entreprises forestières) \n"
-      ],
-      "nombre d'années d'activité": [
-        "Au moins 3 ans d’activité"
-      ]
-    },
-    "eligibilityData": {
-      "company": {
-        "allowedNafSections": [
-          "A",
-          "B",
-          "C",
-          "D",
-          "E",
-          "F",
-          "G",
-          "H",
-          "I",
-          "J",
-          "K",
-          "L",
-          "M",
-          "N",
-          "O",
-          "P",
-          "Q",
-          "R",
-          "S",
-          "T",
-          "U"
-        ],
-        "maxEmployees": "49",
-        "excludeMicroentrepreneur": true
-      },
-      "priorityObjectives": [
-        "energy"
-      ]
-    },
-    "publicodes": {
-      "entreprise": null,
-      "entreprise . effectif": null,
-      "entreprise . microentrepreneur": null,
-      "entreprise . secteur d'activité": {
-        "avec": {
-          "est industrie": null,
-          "est tertiaire": null,
-          "est agriculture": null,
-          "est tourisme": null,
-          "est artisanat": null,
-          "est autre secteur": null
-        }
-      },
-      "entreprise . code NAF": null,
-      "entreprise . code NAF niveau 1": {
-        "avec": {
-          "est A": null,
-          "est B": null,
-          "est C": null,
-          "est D": null,
-          "est E": null,
-          "est F": null,
-          "est G": null,
-          "est H": null,
-          "est I": null,
-          "est J": null,
-          "est K": null,
-          "est L": null,
-          "est M": null,
-          "est N": null,
-          "est O": null,
-          "est P": null,
-          "est Q": null,
-          "est R": null,
-          "est S": null,
-          "est T": null,
-          "est U": null
-        }
-      },
-      "entreprise . est propriétaire de ses locaux": null,
-      "région": null,
-      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
-      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
-      "Bretagne": "\"Bretagne\"",
-      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
-      "Corse": "\"Corse\"",
-      "Grand Est": "\"Grand Est\"",
-      "Hauts-de-France": "\"Hauts-de-France\"",
-      "Normandie": "\"Normandie\"",
-      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
-      "Occitanie": "\"Occitanie\"",
-      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
-      "Pays de la Loire": "\"Pays de la Loire\"",
-      "Île-de-France": "\"Île-de-France\"",
-      "Guadeloupe": "\"Guadeloupe\"",
-      "Guyane": "\"Guyane\"",
-      "La Réunion": "\"La Réunion\"",
-      "Martinique": "\"Martinique\"",
-      "Mayotte": "\"Mayotte\"",
-      "Ile de Clipperton": "\"Ile de Clipperton\"",
-      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
-      "Polynésie française": "\"Polynésie française\"",
-      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
-      "Saint-Martin": "\"Saint-Martin\"",
-      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
-      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
-      "Wallis et Futuna": "\"Wallis et Futuna\"",
-      "questionnaire": null,
-      "questionnaire . objectif prioritaire": {
-        "avec": {
-          "est mon impact environnemental": null,
-          "est ma performance énergétique": null,
-          "est diminuer ma consommation d'eau": null,
-          "est rénover mon bâtiment": null,
-          "est la mobilité durable": null,
-          "est la gestion des déchets": null,
-          "est l'écoconception": null,
-          "est former ou recruter": null,
-          "est préserver la biodiversité": null
-        }
-      },
-      "dispositif": {
-        "avec": {
-          "début de validité": null,
-          "fin de validité": null
-        }
-      },
-      "date du jour": null,
-      "entreprise . est ciblée": {
-        "toutes ces conditions": [
-          "est éligible",
-          "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé"
-        ]
-      },
-      "entreprise . est éligible": {
-        "toutes ces conditions": [
-          "a un effectif éligible",
-          "a une categorie legale eligible"
-        ]
-      },
-      "entreprise . a un effectif éligible": {
-        "toutes ces conditions": [
-          "effectif <= 49"
-        ]
-      },
-      "entreprise . a une categorie legale eligible": {
-        "toutes ces conditions": [
-          "microentrepreneur = non"
-        ]
-      },
-      "entreprise . est dans un secteur d'activité ciblé": {
-        "une de ces conditions": [
-          "code NAF niveau 1 . est A",
-          "code NAF niveau 1 . est B",
-          "code NAF niveau 1 . est C",
-          "code NAF niveau 1 . est D",
-          "code NAF niveau 1 . est E",
-          "code NAF niveau 1 . est F",
-          "code NAF niveau 1 . est G",
-          "code NAF niveau 1 . est H",
-          "code NAF niveau 1 . est I",
-          "code NAF niveau 1 . est J",
-          "code NAF niveau 1 . est K",
-          "code NAF niveau 1 . est L",
-          "code NAF niveau 1 . est M",
-          "code NAF niveau 1 . est N",
-          "code NAF niveau 1 . est O",
-          "code NAF niveau 1 . est P",
-          "code NAF niveau 1 . est Q",
-          "code NAF niveau 1 . est R",
-          "code NAF niveau 1 . est S",
-          "code NAF niveau 1 . est T",
-          "code NAF niveau 1 . est U"
-        ]
-      },
-      "entreprise . a un objectif ciblé": {
-        "une de ces conditions": [
-          "questionnaire . objectif prioritaire . est ma performance énergétique"
-        ]
-      }
-    },
-    "id": "pret-economies-d-energie-pee"
   },
   {
     "titre": "Prêt Vert",
@@ -31011,7 +30568,7 @@
     "promesse": "Faites-vous accompagner par un expert RSE dans votre transition écologique",
     "description": "Obtenez une subvention pour être accompagné par un expert à l’élaboration d’un diagnostic puis d'un plan d’action de 3 ans portant sur la RSE et la transition écologique. Bénéficiez d'un suivi semestriel par l’expert RSE avec une orientation vers des dispositifs d’aides adaptés. Cet accompagnement vous donne ensuite accès au dispositif \"CEDRE Investissement\" pour vous aider à financer vos projets.",
     "description longue": "Les structures candidates sont notées en fonction de :\n\n1. Votre stratégie de développement : \n   - Modèle économique et financier passé.\n   - Formalisation et cohérence de la stratégie de développement.\n   - Potentiel de création d’emplois.\n   - Stratégie de financement.\n2. Vos enjeux de l’accompagnement RSE et transition écologique :\n   - Enjeux territoriaux et filière.\n   - Niveau d’ambition de l’entreprise en RSE et transition écologique.\n\nCe dispositif est éligible au régime d'aides de minimis (cumul d’aides publiques inférieur à 290 500 euros sur les 3 dernières années).",
-    "fin de validité": "13/12/2024",
+    "fin de validité": "13/12/2025",
     "illustration": "images/TEE_ampoule.webp",
     "opérateur de contact": "Région Sud (PACA)",
     "contact question": "mailto:relationentrepriseusager@maregionsud.fr",
@@ -31110,7 +30667,7 @@
         ]
       },
       "validity": {
-        "end": "13/12/2024"
+        "end": "13/12/2025"
       },
       "priorityObjectives": [
         "environmental"
@@ -46494,7 +46051,7 @@
   {
     "titre": "Diag Accompagnement TEE RH",
     "promesse": "Soyez accompagné pour établir un état des lieux des impacts environnementaux sur votre entreprise",
-    "description": "Cet accompagnement de 5 à 7 jours vous permet de :\n\n- Établir un **diagnostic sur-mesure** des enjeux de la transition écologique et des impacts RH au sein de votre entreprise.\n- Co-construire un **plan d'action** avec un expert.\n- Mettre en œuvre les **premières mesures** du plan d'action et d'établir un **plan de formation** pour développer les compétences RH dont votre entreprise a besoin.",
+    "description": "L'accompagnement \"Transition écologique et énergétique RH\", d'une durée de 5 à 7 jours, vous permet de :\n\n- Établir un **diagnostic sur-mesure** des enjeux de la transition écologique et des impacts RH au sein de votre entreprise.\n- Co-construire un **plan d'action** avec un expert.\n- Mettre en œuvre les **premières mesures** du plan d'action et d'établir un **plan de formation** pour développer les compétences RH dont votre entreprise a besoin.",
     "illustration": "images/TEE_ampoule.webp",
     "opérateur de contact": "Opco EP",
     "contact question": "formulaire",
@@ -46503,10 +46060,10 @@
     "montant du financement": "Jusqu'à 50% de l'accompagnement",
     "objectifs": [
       {
-        "description": "Contactez votre conseiller régional Opco EP",
+        "description": "Contactez votre conseiller régional Opco EP (des Entreprises de Proximité)",
         "liens": [
           {
-            "lien": "https://%3Chttps://www.opcoep.fr/nous-contacter%3E",
+            "lien": "https://www.opcoep.fr/nous-contacter",
             "texte": "Contacter mon conseiller"
           }
         ]
@@ -46841,5 +46398,224 @@
       }
     },
     "id": "diagnostic-rh"
+  },
+  {
+    "titre": "DEMIBaC",
+    "promesse": "Financez un projet d’innovation technologique pour décarboner l’industrie",
+    "description": "DEMIBac finance vos projets d’innovation de l’ensemble des procédés et technologies de décarbonation de l’industrie, notamment :\\\n• L’**efficacité énergétique des équipements et des procédés** liés à la récupération de chaleur ou de froid, au transfert de chaleur, au numérique et l’IA.\\\n• La **décarbonation de la chaleur et du mix énergétique** pour des usages industriels.\\\n• La **décarbonation des procédés**.\\\n• Le **captage, le stockage, le transport et la valorisation du CO2**.\\\n• La **réduction des autres gaz à effet de serre**.",
+    "description longue": "L'appel à projet comporte deux volets : \\\n• Le volet 1 concerne des projets pour le développement de briques technologiques\\\ninnovantes et d’actions de démonstration, dont les consortiums sont généralement\\\nconstitués par des académiques et des industriels de l’offre.\\\n• Le volet 2 cible des projets portés par des consortiums constitués d’un ou plusieurs\\\nindustriels proposant une offre de décarbonation et d’un ou plusieurs industriels côté\\\ndemande prêts à accueillir les solutions innovantes proposées sur leurs sites de\\\nproduction.",
+    "début de validité": "01/07/2025",
+    "fin de validité": "09/03/2027",
+    "illustration": "images/TEE_ampoule.webp",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000815",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-demonstrateurs-realisations-de-premieres-industrielles-associant-loffre-et-la-demande-demibac",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 60% du montant du projet",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/AAP%20DEMIBaC%20-%20Cahier%20des%20charges%20France%202030%20-%202025.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Contactez l’ADEME pour organiser une réunion de pré-dépôt, à l’adresse [demibac@ademe.fr](mailto:demibac@ademe.fr) (en mentionnant « DEMIBaC » dans l’objet du mail) un\\"
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-demonstrateurs-realisations-de-premieres-industrielles-associant-loffre-et-la-demande-demibac",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez votre projet."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité."
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Les coûts des projets soumis à ce dispositif doivent être supérieurs à 1,5 M€."
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ]
+      },
+      "validity": {
+        "start": "01/07/2025",
+        "end": "09/03/2027"
+      },
+      "priorityObjectives": [
+        "energy",
+        "environmental",
+        "eco-design"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est mon impact environnemental",
+          "questionnaire . objectif prioritaire . est l'écoconception"
+        ]
+      }
+    },
+    "id": "demi-bac"
   }
 ]

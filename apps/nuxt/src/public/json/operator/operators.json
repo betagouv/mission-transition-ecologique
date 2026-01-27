@@ -103,10 +103,6 @@
     "color": "red"
   },
   {
-    "operator": "InvestEU",
-    "filterCategories": []
-  },
-  {
     "operator": "Ministère de la Transition Écologique",
     "filterCategories": [
       "État"
