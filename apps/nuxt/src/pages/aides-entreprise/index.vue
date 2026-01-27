@@ -8,7 +8,9 @@
     :faq-items="faqCatalogProgram"
   >
     <template #title>
-      <h1 class="fr-text--blue-900 fr-mb-0">Le catalogue des aides<span class="fr-display-xl--block"> à la transition écologique</span></h1>
+      <h1 class="fr-text--blue-900 fr-mb-0 fr-h2">
+        Le catalogue des aides<span class="fr-display-xl--block"> à la transition écologique</span>
+      </h1>
     </template>
     <template #sidemenu>
       <ProgramFiltersAccordion with-title />

@@ -8,8 +8,8 @@
     :faq-items="faqCatalogProject"
   >
     <template #title>
-      <h1 class="fr-text--blue-900 fr-mb-0">
-        Quelles aides pour concrétiser votre projet<span class="fr-display-xl--block"> de transition écologique ?</span>
+      <h1 class="fr-text--blue-900 fr-mb-0 fr-h2">
+        Quelles aides pour concrétiser votre projet<span class="fr-display-xl--block"> de transition écologique&nbsp;?</span>
       </h1>
     </template>
     <template #sidemenu>
