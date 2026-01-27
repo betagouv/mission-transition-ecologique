@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { ThemeType, ThemeId, FilterItemKeys, FiltersType, Color } from '@/types'
+import { ThemeType, ThemeId, FilterItemKeys, Color } from '@/types'
 import { Theme } from '@/tools/theme'
 import { TeeDsfrTagProps } from '@/components/element/tag/TeeDsfrTag.vue'
 import Navigation from '@/tools/navigation'
@@ -22,7 +22,7 @@ const props = defineProps<Props>()
 
 const filtersStore = useFiltersStore()
 const route = useRoute()
-const { filters }: FiltersType = storeToRefs(filtersStore)
+const { filters } = storeToRefs(filtersStore)
 if (route.query.theme) {
   filters.value[FilterItemKeys.themeType] = Theme.getIdBySlug(route.query.theme as string) ?? ''
 }
@@ -38,7 +38,7 @@ const themeTypeTags = computed<TeeDsfrTagProps[]>((): TeeDsfrTagProps[] => {
     value: '',
     selectable: true,
     selected: filters.value[FilterItemKeys.themeType] === '',
-    color: filters[FilterItemKeys.themeType] === '' ? Color.blueAgir : undefined
+    color: filters.value[FilterItemKeys.themeType] === '' ? Color.blueAgir : undefined
   }
 
   const tags: TeeDsfrTagProps[] = []
@@ -70,8 +70,8 @@ const updateThemeTypeSelected = (value: string | number | undefined) => {
   filtersStore.setThemeTypeSelected(value as string)
 
   const navigation = new Navigation()
-  if ((navigation.isCatalog() || navigation.isHomepage()) && Theme.isValidTheme(value)) {
-    useNavigationStore().updateSearchThemeParam(Theme.getSlugById(value) as string)
+  if ((navigation.isCatalog() || navigation.isHomepage()) && Theme.isValidTheme(value as string)) {
+    useNavigationStore().updateSearchThemeParam(Theme.getSlugById(value as ThemeId) as string)
     useNavigationStore().replaceBrowserHistory()
   }
 }
