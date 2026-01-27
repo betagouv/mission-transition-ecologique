@@ -26539,182 +26539,6 @@
     "id": "tourisme-durable-paca"
   },
   {
-    "titre": "Certification en agriculture biologique",
-    "promesse": "Certifiez votre activité en agriculture biologique et bénéficiez d'un crédit d'impôt",
-    "description": "Vous êtes une entreprise agricole et vous faites l'objet d'une certification en agriculture biologique pour le passage au bio, ou pour son maintien? Bénéficiez d'un crédit d'impôt sur vos dépenses de certification.",
-    "description longue": "Le crédit d'impôt s'applique aux entreprises agricoles qui font l'objet d'une certification en agriculture biologique et qui réalisent au moins 40% de leurs recettes des activités listées ci-dessous :\n- revenus tirés de l'exploitation de biens ruraux,\n- production forestière,\n- exploitation de champignonnières en galeries souterraines,\n- exploitations apicoles,\n- exploitations avicoles,\n- exploitations piscicoles,\n- exploitations ostréicoles,\n- exploitations mytilicoles,\n- obtention de nouvelles variétés végétales,\n- préparation et entraînement des chevaux domestiques, en vue de leur exploitation dans les activités autres que celles du spectacle.\n\nLe crédit d'impôt pour dépenses de certification en agriculture biologique concerne également les entreprises bénéficiant :\n- d'une aide à la conversion à l'agriculture biologique,\n-  d'une aide au maintien de l'agriculture biologique.",
-    "fin de validité": "31/12/2025",
-    "illustration": "images/TEE_energie_verte.webp",
-    "opérateur de contact": "DDFIP",
-    "contact question": "https://www.agencebio.org/decouvrir-le-bio/ses-acteurs/les-organismes-certificateurs-en-france/",
-    "url": "https://les-aides.fr/aide/h0X9/ddfip/credit-d-impot-pour-depenses-de-certification-en-agriculture-biologique.html",
-    "nature de l'aide": "avantage fiscal",
-    "montant de l'avantage fiscal": "4 500 € par an",
-    "activable en autonomie": "oui",
-    "objectifs": [
-      {
-        "description": "Consultez la rubrique \"en savoir plus\" pour prendre connaissance des activités agricoles éligibles à ce crédit d'impôt."
-      },
-      {
-        "description": "Remplissez le formulaire de demande de crédit d'impôt.",
-        "liens": [
-          {
-            "lien": "https://www.impots.gouv.fr/sites/default/files/formulaires/2079-bio-sd/2024/2079-bio-sd_4636.pdf",
-            "texte": "Télécharger le document cerfa"
-          }
-        ]
-      },
-      {
-        "description": "Déposez le document complété auprès du service des impôts des entreprises avec votre déclaration de résultats."
-      },
-      {
-        "description": "Recevez une aide en crédit d'impôt à hauteur de 4500 €/an."
-      }
-    ],
-    "conditions d'éligibilité": {
-      "taille de l'entreprise": [
-        "Toutes tailles",
-        "Éligible aux micro-entreprises"
-      ],
-      "secteur géographique": [
-        "France et territoires d'outre-mer"
-      ],
-      "secteur d'activité": [
-        "Entreprises agricoles"
-      ],
-      "nombre d'années d'activité": [
-        "Éligible à toutes les entreprises"
-      ]
-    },
-    "eligibilityData": {
-      "company": {
-        "allowedNafSections": [
-          "A"
-        ]
-      },
-      "validity": {
-        "end": "31/12/2025"
-      },
-      "priorityObjectives": [
-        "environmental",
-        "eco-design"
-      ]
-    },
-    "publicodes": {
-      "entreprise": null,
-      "entreprise . effectif": null,
-      "entreprise . microentrepreneur": null,
-      "entreprise . secteur d'activité": {
-        "avec": {
-          "est industrie": null,
-          "est tertiaire": null,
-          "est agriculture": null,
-          "est tourisme": null,
-          "est artisanat": null,
-          "est autre secteur": null
-        }
-      },
-      "entreprise . code NAF": null,
-      "entreprise . code NAF niveau 1": {
-        "avec": {
-          "est A": null,
-          "est B": null,
-          "est C": null,
-          "est D": null,
-          "est E": null,
-          "est F": null,
-          "est G": null,
-          "est H": null,
-          "est I": null,
-          "est J": null,
-          "est K": null,
-          "est L": null,
-          "est M": null,
-          "est N": null,
-          "est O": null,
-          "est P": null,
-          "est Q": null,
-          "est R": null,
-          "est S": null,
-          "est T": null,
-          "est U": null
-        }
-      },
-      "entreprise . est propriétaire de ses locaux": null,
-      "région": null,
-      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
-      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
-      "Bretagne": "\"Bretagne\"",
-      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
-      "Corse": "\"Corse\"",
-      "Grand Est": "\"Grand Est\"",
-      "Hauts-de-France": "\"Hauts-de-France\"",
-      "Normandie": "\"Normandie\"",
-      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
-      "Occitanie": "\"Occitanie\"",
-      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
-      "Pays de la Loire": "\"Pays de la Loire\"",
-      "Île-de-France": "\"Île-de-France\"",
-      "Guadeloupe": "\"Guadeloupe\"",
-      "Guyane": "\"Guyane\"",
-      "La Réunion": "\"La Réunion\"",
-      "Martinique": "\"Martinique\"",
-      "Mayotte": "\"Mayotte\"",
-      "Ile de Clipperton": "\"Ile de Clipperton\"",
-      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
-      "Polynésie française": "\"Polynésie française\"",
-      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
-      "Saint-Martin": "\"Saint-Martin\"",
-      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
-      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
-      "Wallis et Futuna": "\"Wallis et Futuna\"",
-      "questionnaire": null,
-      "questionnaire . objectif prioritaire": {
-        "avec": {
-          "est mon impact environnemental": null,
-          "est ma performance énergétique": null,
-          "est diminuer ma consommation d'eau": null,
-          "est rénover mon bâtiment": null,
-          "est la mobilité durable": null,
-          "est la gestion des déchets": null,
-          "est l'écoconception": null,
-          "est former ou recruter": null,
-          "est préserver la biodiversité": null
-        }
-      },
-      "dispositif": {
-        "avec": {
-          "début de validité": null,
-          "fin de validité": null
-        }
-      },
-      "date du jour": null,
-      "entreprise . est ciblée": {
-        "toutes ces conditions": [
-          "est éligible",
-          "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé"
-        ]
-      },
-      "entreprise . est éligible": {
-        "applicable si": "date du jour <= dispositif . fin de validité",
-        "valeur": "oui"
-      },
-      "entreprise . est dans un secteur d'activité ciblé": {
-        "une de ces conditions": [
-          "code NAF niveau 1 . est A"
-        ]
-      },
-      "entreprise . a un objectif ciblé": {
-        "une de ces conditions": [
-          "questionnaire . objectif prioritaire . est mon impact environnemental",
-          "questionnaire . objectif prioritaire . est l'écoconception"
-        ]
-      }
-    },
-    "id": "certification-agriculture-biologique"
-  },
-  {
     "titre": "Industries vertes (CI3V)",
     "promesse": "Investissez dans les industries vertes et bénéficiez d'un crédit d'impôt",
     "description": "Vous êtes une entreprise industrielle et vous avez un projet de production dans l’une des filières clés de la transition écologique : photovoltaïque, batteries, éolien ou pompes à chaleur ? Le crédit d’impôt au titre des investissements dans l’industrie verte (C3IV) peut vous accompagner. Il permet de réduire vos coûts en finançant une partie de vos investissements pour fabriquer ces équipements ou leurs composants.",
@@ -26925,189 +26749,6 @@
       }
     },
     "id": "industries-vertes"
-  },
-  {
-    "titre": "Navires utilisant des énergies propres",
-    "promesse": "Investissez dans l'équipement énergétique écologique de votre navire",
-    "description": "Vous utilisez des navires et bateaux de transport de marchandises ou de passagers, et vous avez des projets d'investissement liées à l'utilisation d'énergies propres ?\nVous pouvez bénéficier d'un crédit d'impôt.",
-    "description longue": "Exemples d'investissements éligibles pour équiper vos navires et bateaux de transport de marchandises  ou de passagers, affectés à votre activité : \n\n- installation d'équipements permettant l'utilisation d'hydrogène et de toute autre propulsion décarbonée comme énergie propulsive principale de vos navires.\n\n- installation d'équipements permettant l'utilisation du gaz naturel liquéfié comme énergie propulsive principale de vos navires.\n\n- installation d'équipements permettant l'utilisation du gaz de pétrole liquéfié, du gaz naturel comprimé, de l'ammoniac, du méthanol, de l'éthanol ou du diméthyl éther comme énergie propulsive principale  de vos navires.\n\n- l'installation des biens destinés au traitement des oxydes de soufre, oxydes d'azote et particules fines contenus dans les gaz d'échappement en vue de les installer sur un navire pour améliorer le niveau d'exigence environnementale. \n\n- l'acquisition de biens destinés à l'alimentation électrique durant l'escale par le réseau terrestre ou au moyen de moteurs auxiliaires utilisant le gaz naturel liquéfié ou une énergie décarbonée, ou de biens destinés à compléter la propulsion principale du navire ou du bateau par une propulsion décarbonée.",
-    "fin de validité": "31/12/2024",
-    "illustration": "images/TEE_ampoule.webp",
-    "opérateur de contact": "DDFIP",
-    "contact question": "https://www.impots.gouv.fr/contacts",
-    "url": "https://les-aides.fr/aide/UxUv3w/ddfip/deduction-pour-investissements-en-navires-de-transports-utilisant-les-energies-renouvelables.html",
-    "nature de l'aide": "avantage fiscal",
-    "montant de l'avantage fiscal": "selon le type d'investissement",
-    "activable en autonomie": "oui",
-    "objectifs": [
-      {
-        "description": "Contactez nos conseillers pour vérifier l'éligibilité de vos dépenses."
-      },
-      {
-        "description": "Réalisez vos investissements jusqu'au 31 décembre 2024."
-      },
-      {
-        "description": "Déclarez le crédit d'impôt au moment de la déclaration de vos résultats."
-      },
-      {
-        "description": "Recevez une aide en crédit d'impôt."
-      }
-    ],
-    "conditions d'éligibilité": {
-      "taille de l'entreprise": [
-        "Toutes tailles",
-        "Éligible aux micro-entreprises"
-      ],
-      "secteur géographique": [
-        "France et territoires d'outre-mer"
-      ],
-      "secteur d'activité": [
-        "A destination des entreprises utilisant des navires et bateaux de transport de marchandises ou de passagers d'un des Etats membres de l'Union européenne ou d'un autre Etat partie à l'accord sur l'Espace économique."
-      ],
-      "nombre d'années d'activité": [
-        "Éligible à toutes les entreprises"
-      ],
-      "autres critères d'éligibilité": [
-        "destiné aux navires dont les escales dans les ports français représentent plus de 30 % du nombre des escales pour chaque année de la durée normale d'amortissement des navires,",
-        "ou dont la durée de navigation dans la zone économique exclusive française représente plus de 30 % du temps de navigation,",
-        "ou destiné aux bateaux de transport de marchandises ou de passagers naviguant dans les eaux intérieures et, le cas échéant, à ceux naviguant en mer."
-      ]
-    },
-    "eligibilityData": {
-      "company": {
-        "allowedNafSections": [
-          "B",
-          "C",
-          "D",
-          "E",
-          "F",
-          "H"
-        ]
-      },
-      "validity": {
-        "end": "31/12/2024"
-      },
-      "priorityObjectives": [
-        "energy"
-      ]
-    },
-    "publicodes": {
-      "entreprise": null,
-      "entreprise . effectif": null,
-      "entreprise . microentrepreneur": null,
-      "entreprise . secteur d'activité": {
-        "avec": {
-          "est industrie": null,
-          "est tertiaire": null,
-          "est agriculture": null,
-          "est tourisme": null,
-          "est artisanat": null,
-          "est autre secteur": null
-        }
-      },
-      "entreprise . code NAF": null,
-      "entreprise . code NAF niveau 1": {
-        "avec": {
-          "est A": null,
-          "est B": null,
-          "est C": null,
-          "est D": null,
-          "est E": null,
-          "est F": null,
-          "est G": null,
-          "est H": null,
-          "est I": null,
-          "est J": null,
-          "est K": null,
-          "est L": null,
-          "est M": null,
-          "est N": null,
-          "est O": null,
-          "est P": null,
-          "est Q": null,
-          "est R": null,
-          "est S": null,
-          "est T": null,
-          "est U": null
-        }
-      },
-      "entreprise . est propriétaire de ses locaux": null,
-      "région": null,
-      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
-      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
-      "Bretagne": "\"Bretagne\"",
-      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
-      "Corse": "\"Corse\"",
-      "Grand Est": "\"Grand Est\"",
-      "Hauts-de-France": "\"Hauts-de-France\"",
-      "Normandie": "\"Normandie\"",
-      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
-      "Occitanie": "\"Occitanie\"",
-      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
-      "Pays de la Loire": "\"Pays de la Loire\"",
-      "Île-de-France": "\"Île-de-France\"",
-      "Guadeloupe": "\"Guadeloupe\"",
-      "Guyane": "\"Guyane\"",
-      "La Réunion": "\"La Réunion\"",
-      "Martinique": "\"Martinique\"",
-      "Mayotte": "\"Mayotte\"",
-      "Ile de Clipperton": "\"Ile de Clipperton\"",
-      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
-      "Polynésie française": "\"Polynésie française\"",
-      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
-      "Saint-Martin": "\"Saint-Martin\"",
-      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
-      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
-      "Wallis et Futuna": "\"Wallis et Futuna\"",
-      "questionnaire": null,
-      "questionnaire . objectif prioritaire": {
-        "avec": {
-          "est mon impact environnemental": null,
-          "est ma performance énergétique": null,
-          "est diminuer ma consommation d'eau": null,
-          "est rénover mon bâtiment": null,
-          "est la mobilité durable": null,
-          "est la gestion des déchets": null,
-          "est l'écoconception": null,
-          "est former ou recruter": null,
-          "est préserver la biodiversité": null
-        }
-      },
-      "dispositif": {
-        "avec": {
-          "début de validité": null,
-          "fin de validité": null
-        }
-      },
-      "date du jour": null,
-      "entreprise . est ciblée": {
-        "toutes ces conditions": [
-          "est éligible",
-          "est dans un secteur d'activité ciblé",
-          "a un objectif ciblé"
-        ]
-      },
-      "entreprise . est éligible": {
-        "applicable si": "date du jour <= dispositif . fin de validité",
-        "valeur": "oui"
-      },
-      "entreprise . est dans un secteur d'activité ciblé": {
-        "une de ces conditions": [
-          "code NAF niveau 1 . est B",
-          "code NAF niveau 1 . est C",
-          "code NAF niveau 1 . est D",
-          "code NAF niveau 1 . est E",
-          "code NAF niveau 1 . est F",
-          "code NAF niveau 1 . est H"
-        ]
-      },
-      "entreprise . a un objectif ciblé": {
-        "une de ces conditions": [
-          "questionnaire . objectif prioritaire . est ma performance énergétique"
-        ]
-      }
-    },
-    "id": "navires-energies-propre"
   },
   {
     "titre": "Bonus Réparation",
@@ -29111,7 +28752,7 @@
     "illustration": "images/TEE_eolienne.webp",
     "opérateur de contact": "Région Sud (PACA)",
     "contact question": "mailto:relationentrepriseusager@maregionsud.fr",
-    "url": "https://www.maregionsud.fr/vos-aides/detail/infrastructures-de-recharges-intelligentes-pour-vehicules-electriques",
+    "url": "v",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 20 000 € HT par borne ou 100 000 € HT par projet",
     "objectifs": [
@@ -42845,7 +42486,7 @@
     "id": "eco-diagnostic-commerce"
   },
   {
-    "titre": "Easy diag",
+    "titre": "Easy Diag Transition Ecologique",
     "promesse": "Bénéficiez d'un accompagnement à la transition écologique",
     "description": "À l'issue d'un **diagnostic d'une dizaine de minutes**, bénéficiez d'une **analyse personnalisée** réalisée par un conseiller formation, et établissez conjointement un **plan d'action sur mesure** afin d'entamer la transition écologique de votre entreprise.",
     "illustration": "images/TEE_eolienne.webp",
@@ -42854,7 +42495,7 @@
     "url": "https://ediag.constructys.fr/easydiag-ods/",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuite",
-    "durée de l'accompagnement": "1 heure de prestation",
+    "durée de l'accompagnement": "15 à 20 minutes",
     "activable en autonomie": "oui",
     "objectifs": [
       {
@@ -42867,10 +42508,10 @@
         ]
       },
       {
-        "description": "Lancez l'Easy Diag et répondez aux questions",
+        "description": "Lancez l'**Easy Diag Transition Ecologique** et répondez aux questions",
         "liens": [
           {
-            "lien": "https://ediag.constructys.fr/easydiag-ods-choix-siret/",
+            "lien": "https://ediag.constructys.fr/easydiag-transition-ecologique-choix-siret/",
             "texte": "Lancer le diagnostic"
           }
         ]

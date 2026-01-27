@@ -1,4 +1,4 @@
-titre: Easy diag
+titre: Easy Diag Transition Ecologique
 promesse: Bénéficiez d'un accompagnement à la transition écologique
 description: >-
   À l'issue d'un **diagnostic d'une dizaine de minutes**, bénéficiez d'une
@@ -11,16 +11,17 @@ contact question: https://www.constructys.fr/contacts/
 url: https://ediag.constructys.fr/easydiag-ods/
 nature de l'aide: étude
 coût de l'accompagnement: Gratuite
-durée de l'accompagnement: 1 heure de prestation
+durée de l'accompagnement: 15 à 20 minutes
 activable en autonomie: oui
 objectifs:
   - description: Créez votre compte sur le site de Constructys
     liens:
       - lien: https://services.constructys.fr/constructys/account/create/step-1
         texte: Créer mon compte
-  - description: Lancez l'Easy Diag et répondez aux questions
+  - description: Lancez l'**Easy Diag Transition Ecologique** et répondez aux questions
     liens:
-      - lien: https://ediag.constructys.fr/easydiag-ods-choix-siret/
+      - lien: >-
+          https://ediag.constructys.fr/easydiag-transition-ecologique-choix-siret/
         texte: Lancer le diagnostic
   - description: >-
       Recevez l'analyse détaillée de votre conseiller Constructys et les

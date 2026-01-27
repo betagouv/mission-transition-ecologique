@@ -320,7 +320,9 @@
     "operator": "Constructys",
     "filterCategories": [
       "OPCO"
-    ]
+    ],
+    "imagePath": "/images/logos/operateur/opco.webp",
+    "color": "purple"
   },
   {
     "operator": "Atlas",
