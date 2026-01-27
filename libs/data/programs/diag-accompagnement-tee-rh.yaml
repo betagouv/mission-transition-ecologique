@@ -3,7 +3,8 @@ promesse: >-
   Soyez accompagné pour établir un état des lieux des impacts environnementaux
   sur votre entreprise
 description: >-
-  Cet accompagnement de 5 à 7 jours vous permet de :
+  L'accompagnement "Transition écologique et énergétique RH", d'une durée de 5 à
+  7 jours, vous permet de :
 
 
   - Établir un **diagnostic sur-mesure** des enjeux de la transition écologique
@@ -22,9 +23,9 @@ url: >-
 nature de l'aide: étude
 montant du financement: Jusqu'à 50% de l'accompagnement
 objectifs:
-  - description: Contactez votre conseiller régional Opco EP
+  - description: Contactez votre conseiller régional Opco EP (des Entreprises de Proximité)
     liens:
-      - lien: https://%3Chttps://www.opcoep.fr/nous-contacter%3E
+      - lien: https://www.opcoep.fr/nous-contacter
         texte: Contacter mon conseiller
   - description: >-
       Complétez le Diagnostic Reflex TEE (un diagnostic de premier niveau d'une
