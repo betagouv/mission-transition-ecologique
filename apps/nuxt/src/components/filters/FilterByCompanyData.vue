@@ -1,69 +1,81 @@
 <template>
-  <div
-    id="company-data-filter-content"
-    class="fr-pt-2v fr-pb-0-5v"
-    :class="{
-      'fr-bg--green--lightness': isCompanyDataSelected,
-      'fr-bg--grey--lightness': !isCompanyDataSelected
-    }"
-  >
-    <DsfrCheckbox
-      v-model="isCompanyDataSelected"
-      :value="`selected-company-${companyName}`"
-      small
-      name="companyFilter"
-      :disabled="navigation.isQuestionnaireResult()"
+  <div id="company-data-filter-content">
+    <div
+      :class="{
+        'fr-bg--blue-agir--lightness': isCompanyDataSelected,
+        'fr-bg--grey--lightness': !isCompanyDataSelected
+      }"
+      class="fr-pt-1v"
     >
-      <template #label>
-        <span
-          class="fr-text--bold fr-text--sm"
-          :class="{
-            'fr-text--grey': !isCompanyDataSelected,
-            'fr-text--black': navigation.isQuestionnaireResult(),
-            'fr-pl-0-5v fr-pl-2v fr-text-left fr-mb-1v': Breakpoint.isMobile()
-          }"
-          >{{ filterData.title }}</span
-        >
-      </template>
-    </DsfrCheckbox>
-    <div class="fr-text-left fr-pl-1v">
-      <div
-        v-for="(detail, key) in filterData.details"
-        :key="key"
-        class="fr-mb-2v"
-        :class="{ 'fr-text--grey': !isCompanyDataSelected }"
+      <DsfrCheckbox
+        v-model="isCompanyDataSelected"
+        :value="`selected-company-${companyName}`"
+        small
+        name="companyFilter"
+        :disabled="navigation.isQuestionnaireResult()"
       >
-        <div class="fr-grid-row">
-          <div class="fr-col-hidden-md">
-            <div class="fr-col-12">
-              <div
-                class="company-filter-icon fr-pl-1v"
-                :class="detail.icon"
-              >
-                <span
-                  class="fr-pl-2v"
-                  :class="{ 'fr-pl-4v': Breakpoint.isMobile() }"
+        <template #label>
+          <span
+            class="fr-text--bold fr-text--sm"
+            :class="{
+              'fr-text--grey': !isCompanyDataSelected,
+              'fr-text--black': navigation.isQuestionnaireResult(),
+              'fr-pl-0-5v fr-pl-2v fr-text-left fr-mb-1v': Breakpoint.isMobile()
+            }"
+          >
+            {{ filterData.title }}
+          </span>
+        </template>
+      </DsfrCheckbox>
+      <div class="fr-text-left fr-pl-1v">
+        <div
+          v-for="(detail, key) in filterData.details"
+          :key="key"
+          class="fr-mb-2v"
+          :class="{ 'fr-text--grey': !isCompanyDataSelected }"
+        >
+          <div class="fr-grid-row">
+            <div class="fr-col-hidden-md">
+              <div class="fr-col-12">
+                <div
+                  class="company-filter-icon fr-pl-1v"
+                  :class="detail.icon"
                 >
-                  {{ detail.label }}
-                </span>
+                  <span
+                    class="fr-pl-2v"
+                    :class="{ 'fr-pl-4v': Breakpoint.isMobile() }"
+                  >
+                    {{ detail.label }}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="fr-hidden fr-unhidden-md">
-            <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pt-1v fr-pl-1v fr-pr-3v">
-              <div
-                class="company-filter-icon-large"
-                :class="detail.icon"
-              />
-            </div>
-            <div class="fr-col-9 fr-col-content--top fr-text-left">
-              <p class="fr-text--xs fr-text-line-height--3v">
-                {{ detail.label }}
-              </p>
+            <div class="fr-hidden fr-unhidden-md">
+              <div class="fr-col-1 fr-mr-3v fr-col-content--top fr-pt-1v fr-pl-1v fr-pr-3v">
+                <div
+                  class="company-filter-icon-large"
+                  :class="detail.icon"
+                />
+              </div>
+              <div class="fr-col-9 fr-col-content--top fr-text-left">
+                <p class="fr-text--xs fr-text-line-height--3v">
+                  {{ detail.label }}
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="fr-text-center">
+      <TeeDsfrButton
+        icon="fr-icon-pencil-line"
+        class="fr-text--blue-agir fr-btn-fullwidth fr-justify-center fr-mb-2v"
+        label="Modifier"
+        secondary
+        :disabled="!isCompanyDataSelected"
+        @click="Navigation.toggleRegisterModal()"
+      />
     </div>
   </div>
 </template>

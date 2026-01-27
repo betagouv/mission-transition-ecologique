@@ -52,7 +52,7 @@ useHead({
 
 <style scoped>
 h1 {
-  color: var(--light-background-action-high-blue-france, #000091);
+  color: var(--light-background-action-high-blue-900, #000091);
   font-size: 2.5rem;
   font-style: normal;
   line-height: 3rem; /* 120% */

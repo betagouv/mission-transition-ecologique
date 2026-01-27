@@ -1,11 +1,17 @@
 <template>
   <LayoutCatalog
     :has-side-menu="hasSideMenu"
-    title="Quelles aides pour concrétiser votre projet de transition écologique ?"
+    description="Explorez les projets de transition écologique et trouvez les aides publiques adaptées à votre entreprise,
+      issues de l’ensemble des financeurs publics."
     :has-error="hasError"
     :count-items="countProjects"
     :faq-items="faqCatalogProject"
   >
+    <template #title>
+      <h1 class="fr-text--blue-900 fr-mb-0 fr-h2">
+        Quelles aides pour concrétiser votre projet<span class="fr-display-xl--block"> de transition écologique&nbsp;?</span>
+      </h1>
+    </template>
     <template #sidemenu>
       <ProjectFiltersAccordion with-title />
     </template>

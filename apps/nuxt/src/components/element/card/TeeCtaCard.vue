@@ -15,7 +15,7 @@
           class="fr-card__end"
         >
           <TeeDsfrButton
-            class="inline-flex fr-text--yellow fr-text--bold fr-btn-align-center"
+            class="inline-flex fr-text--bold fr-btn-align-center"
             @click.prevent="onClick()"
           >
             {{ ctaBtnTitle }}

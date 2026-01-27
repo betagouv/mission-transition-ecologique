@@ -36,7 +36,7 @@ export class Theme {
       tagLabel: '💧 eau',
       slug: 'economies-eau',
       image: '/images/thematique/thematique-eau.svg',
-      color: Color.blueFrance
+      color: Color.blueAgir
     },
     {
       id: ThemeId.EcoDesign,

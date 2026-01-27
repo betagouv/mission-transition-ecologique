@@ -197,6 +197,24 @@
   }
 
   &.fr-card--program {
+    @each $color, $properties in setting.$colors {
+      &.fr-card-header-bg--#{$color} {
+        .fr-card__header {
+          .fr-card__img {
+            @include tool.get-background-color-by-opacity($properties, tool.opacity(--lightness));
+          }
+        }
+      }
+    }
+
+    &.fr-card--horizontal {
+      .fr-card__img {
+        img {
+          object-fit: contain;
+        }
+      }
+    }
+
     .fr-card__content {
       padding: 1rem 1.5rem 4rem !important;
 
@@ -219,7 +237,7 @@
       }
 
       p.fr-card__desc {
-        color: setting.$blue-france;
+        color: setting.$blue-900;
         font-weight: 700;
 
         @include tool.media-query-respond-from(xs) {

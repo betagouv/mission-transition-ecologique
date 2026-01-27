@@ -9,7 +9,8 @@ export class Logger implements LoggerInterface {
   private static readonly _baserowConfig = {
     [LoggerType.Program]: { tableId: '314437', viewId: '539069' },
     [LoggerType.Project]: { tableId: '305253', viewId: '519286' },
-    [LoggerType.Faq]: { tableId: '669314', viewId: '1271291' }
+    [LoggerType.Faq]: { tableId: '669314', viewId: '1271291' },
+    [LoggerType.Operator]: { tableId: '314410', viewId: '539018' }
   }
 
   constructor(
