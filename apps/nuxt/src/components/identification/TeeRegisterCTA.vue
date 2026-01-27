@@ -1,6 +1,6 @@
 <template>
   <DsfrButton
-    :class="isDataFull ? `fr-btn--tertiary-no-outline` : `fr-btn-bg--blue-agir`"
+    :class="isDataFull ? `fr-btn--tertiary-no-outline` : ``"
     class="ignore-modal-click"
     :title="isDataFull ? companyName : undefined"
     @click="openModal"
@@ -47,7 +47,7 @@ const badgeIcon = computed(() => {
   if (isSmallScreen && !isDataFull.value) {
     return 'fr-bg--yellow fr-icon-question-mark'
   } else {
-    return 'fr-bg--green fr-icon-check-line'
+    return 'fr-bg--green-agir--light fr-icon-check-line'
   }
 })
 
