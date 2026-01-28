@@ -63,7 +63,7 @@ const activationRef = useTemplateRef<HTMLElement>('activation-ref')
 
 onNuxtReady(async () => {
   if (currentExtProgram.value?.id) {
-    await new ProgramManager().getOneExternal(currentExtProgram.value.id)
+    await new ProgramManager().getOneById(currentExtProgram.value.id)
   }
 })
 

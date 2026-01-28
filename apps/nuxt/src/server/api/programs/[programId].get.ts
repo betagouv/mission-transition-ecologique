@@ -3,6 +3,7 @@ import { defineEventHandler, EventHandlerRequest, H3Event } from 'h3'
 import { ProgramNotFoundError, ProgramService } from '@tee/backend-ddd'
 import { z } from 'zod'
 import { CacheKeyBuilder } from '~/server/utils/CacheKeyBuilder'
+import { AbstractProgramTypeForFront } from '@tee/data'
 
 const programIdSchema = z.object({
   programId: z.string()
@@ -48,7 +49,7 @@ const getProgramById = (event: H3Event<EventHandlerRequest>, programId: string, 
     })
   }
 
-  return programService.convertDomainToFront(program.value)
+  return programService.convertDomainToFront(program.value) as AbstractProgramTypeForFront
 }
 const _getProgramByIdCached = cachedFunction(
   async (event: H3Event, programId: string, questionnaireData: QuestionnaireData) => {

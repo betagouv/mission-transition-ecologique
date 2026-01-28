@@ -11,18 +11,13 @@ export default defineNuxtRouteMiddleware(async (to) => {
 
   Navigation.getInstance(to)
 
-  const programManager = new ProgramManager()
   const programStore = useProgramStore()
+  await new ProgramManager().getOneById(to.params.programId as string)
 
-  await programManager.getOneById(to.params.programId as string)
-  if (!programStore.currentProgram) {
-    await programManager.getOneExternal(to.params.programId as string)
-
-    if (!programStore.currentExtProgram) {
-      throw createError({
-        statusCode: 404,
-        statusMessage: 'Program not Found'
-      })
-    }
+  if (!programStore.currentProgram && !programStore.currentExtProgram) {
+    throw createError({
+      statusCode: 404,
+      statusMessage: 'Program not Found'
+    })
   }
 })
