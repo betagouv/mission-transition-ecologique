@@ -18,6 +18,7 @@
       "baisse-les-watts",
       "fonds-tourisme-durable",
       "diag-eco-flux",
+      "mission-strategie-environnement",
       "programme-breizh-fab",
       "renovation-petit-tertiaire-prive",
       "tpe-gagnantes-sur-tous-les-couts",
@@ -126,6 +127,7 @@
     "programs": [
       "fonds-tourisme-durable",
       "visite-energie",
+      "pret-economies-d-energie-pee",
       "aide-financement-occitanie",
       "cedre-investissement",
       "sud-pret-climat",
@@ -322,6 +324,7 @@
       "investissement-pac-solaire",
       "investissement-solaire-thermique",
       "investissement-solaire-thermique-outre-mer",
+      "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-vert-ademe",
       "aide-financement-occitanie",
@@ -398,6 +401,7 @@
       "investissement-boucle-d-eau-geothermique",
       "investissement-contrat-chaleur-renouvelable",
       "investissement-reseaux-de-chaleur-ou-de-froid",
+      "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-vert-ademe",
       "aide-financement-occitanie",
@@ -467,6 +471,7 @@
     "mainTheme": "environmental",
     "programs": [
       "diag-decarbon-action",
+      "mission-strategie-environnement",
       "programme-breizh-fab",
       "tremplin",
       "nos-gestes-climat",
@@ -478,6 +483,7 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "cap-transition-ecologique",
+      "bilan-carbone",
       "evaluation-carbone-lise",
       "cap-decarbonation"
     ],
@@ -642,6 +648,7 @@
       "etude-recuperation-de-chaleur-fatale",
       "investissement-contrat-chaleur-renouvelable",
       "investissement-recuperation-de-chaleur-fatale",
+      "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-vert-ademe",
       "aide-financement-occitanie",
@@ -714,6 +721,7 @@
       "investissement-contrat-chaleur-renouvelable",
       "investissement-geothermie-de-surface-et-d-aerothermie",
       "investissement-pac-solaire",
+      "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-vert-ademe",
       "aide-financement-occitanie",
@@ -848,6 +856,7 @@
       "investissement-contrat-chaleur-renouvelable",
       "investissement-geothermie-de-surface-et-d-aerothermie",
       "investissement-geothermie-profonde",
+      "pret-economies-d-energie-pee",
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-energie-aura",
@@ -908,6 +917,7 @@
     "mainTheme": "energy",
     "programs": [
       "etude-diagnostic-serres",
+      "pret-economies-d-energie-pee",
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-energie-aura",
@@ -950,6 +960,7 @@
       "baisse-les-watts",
       "etude-performance-energetique-en-industrie",
       "diag-perf-immo",
+      "mission-strategie-environnement",
       "renovation-petit-tertiaire-prive",
       "aide-financement-occitanie",
       "cedre-premier-pas",
@@ -1024,6 +1035,7 @@
       "diag-perf-immo",
       "renovation-energetique",
       "renovation-petit-tertiaire-prive",
+      "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-vert-ademe",
       "aide-financement-occitanie",
@@ -1216,6 +1228,7 @@
       "amelioration-qualite-de-l-air",
       "pret-action-climat",
       "retrofit-electrique",
+      "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-vert-ademe",
       "aide-financement-occitanie",
@@ -1274,13 +1287,17 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "bonus-ecologique",
       "fonds-tourisme-durable",
       "pret-action-climat",
+      "prime-a-la-conversion",
       "tremplin",
+      "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-vert-ademe",
       "aide-financement-occitanie",
       "sud-pret-climat",
+      "cheque-transition-bioethanol",
       "recharge-vehicule-electrique",
       "pret-tourisme",
       "deploiement-flottes-hydrogene",
@@ -1338,6 +1355,7 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "bonus-ecologique",
       "flotte-de-velos-a-disposition",
       "fonds-tourisme-durable",
       "pret-action-climat",
@@ -1585,7 +1603,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "diag-performance"
     ],
     "linkedProjects": [
       36
@@ -1842,6 +1861,7 @@
       "formation-communiquer-et-sensibiliser",
       "outils-pour-adaptation",
       "eco-diagnostic-commerce",
+      "diag-performance",
       "easy-diag",
       "formations-atlas",
       "formations-afdas",
@@ -1940,6 +1960,7 @@
       "pret-ile-de-france",
       "aide-tpe-transition-na",
       "eco-diagnostic-commerce",
+      "diag-performance",
       "easy-diag",
       "diag-accompagnement-tee-rh"
     ],
@@ -1999,6 +2020,7 @@
       "formation-artisan-developpement-durable",
       "formations-tee",
       "pacte-industrie",
+      "mission-strategie-environnement",
       "ecogestes-paca",
       "investour",
       "sud-pret-climat",
@@ -2157,6 +2179,7 @@
       "enviroveille",
       "formation-artisan-developpement-durable",
       "mission-conseil-rse",
+      "mission-strategie-environnement",
       "aide-financement-occitanie",
       "cedre-premier-pas",
       "sud-pret-climat",
@@ -2252,10 +2275,12 @@
     "mainTheme": "environmental",
     "programs": [
       "diagnostic-changement-climatique",
+      "diagnostic-transition-ecologique",
       "fonds-tourisme-durable",
       "diag-eco-flux",
       "formation-artisan-developpement-durable",
       "performa-environnement",
+      "mission-strategie-environnement",
       "programme-breizh-fab",
       "tpe-gagnantes-sur-tous-les-couts",
       "cedre-premier-pas",
@@ -2268,6 +2293,7 @@
       "prit-hdf",
       "camping-independant-bfc",
       "indicateur-climat",
+      "diag-performance",
       "easy-diag"
     ],
     "linkedProjects": [],
@@ -2501,6 +2527,7 @@
       "cedre-premier-pas",
       "sud-pret-climat",
       "entreprises-engagees-nature",
+      "audit-clef-verte-sud",
       "pret-energie-aura",
       "pret-ile-de-france",
       "cap-transition-ecologique",
@@ -3644,7 +3671,10 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "bonus-ecologique",
+      "prime-a-la-conversion",
       "programme-eve",
+      "cheque-transition-bioethanol",
       "deploiement-flottes-hydrogene",
       "pass-transition-bzh",
       "certificats-economie-energie"
@@ -3737,6 +3767,8 @@
     "programs": [
       "audit-energetique-en-industrie",
       "pacte-industrie",
+      "mission-strategie-environnement",
+      "pret-economies-d-energie-pee",
       "certificats-economie-energie",
       "demi-bac"
     ],
@@ -4031,6 +4063,7 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "bonus-ecologique",
       "etude-et-investissement-qualite-de-l-air",
       "amelioration-qualite-de-l-air",
       "extreme-defi-mobilite",
@@ -4038,8 +4071,10 @@
       "fond-vert-territoires-d-industrie",
       "investissement-velotourisme",
       "plan-de-mobilite",
+      "prime-a-la-conversion",
       "programme-eve",
       "retrofit-electrique",
+      "cheque-transition-bioethanol",
       "pass-transition-bzh",
       "je-change-ma-voiture",
       "mobilipro",
@@ -4093,6 +4128,7 @@
     "mainTheme": "mobility",
     "programs": [
       "amelioration-qualite-de-l-air",
+      "pret-economies-d-energie-pee",
       "pret-vert",
       "navires-energies-propre",
       "pass-transition-bzh",
@@ -4380,6 +4416,7 @@
     "mainTheme": "mobility",
     "programs": [
       "amelioration-qualite-de-l-air",
+      "pret-economies-d-energie-pee",
       "agir-pdl",
       "pami",
       "certificats-economie-energie",
@@ -4568,6 +4605,7 @@
     ],
     "mainTheme": "energy",
     "programs": [
+      "pret-economies-d-energie-pee",
       "decarb-flash-2025-2027"
     ],
     "linkedProjects": [
@@ -4600,6 +4638,7 @@
     ],
     "mainTheme": "energy",
     "programs": [
+      "pret-economies-d-energie-pee",
       "decarb-flash-2025-2027",
       "demi-bac"
     ],
