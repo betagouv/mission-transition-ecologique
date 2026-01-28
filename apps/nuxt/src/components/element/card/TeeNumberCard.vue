@@ -67,7 +67,7 @@ defineProps<{
 }
 
 .tee-number-card-number {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: 2rem;
   font-weight: 700;
 }
 
