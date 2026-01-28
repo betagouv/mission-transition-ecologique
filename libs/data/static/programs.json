@@ -30689,6 +30689,10 @@
           {
             "lien": "https://ofb.gouv.fr/entreprises-engagees-nature",
             "texte": "Découvrez le programme"
+          },
+          {
+            "lien": "https://ofb.gouv.fr/sites/ofb-gouv-fr/files/2025-11/een_charte-d-adhesion-nationale_a-signer.pdf",
+            "texte": "Téléchargez la charte d'engagement au programme"
           }
         ]
       },
@@ -46254,7 +46258,7 @@
         "description": "Rendez-vous sur le catalogue de formations de l'Opco Uniformation et trouvez la formation et la session qui vous convient.",
         "liens": [
           {
-            "lien": "[https://- https://www.uniformation.fr/entreprise/formation/offre-de-formations-cles-en-main?combine_text=&session_start_min=&session_start_max=&presence_type=All&offer=All&branch=46&training_theme=99&target_training=290](https://www.uniformation.fr/entreprise/formation/offre-de-formations-cles-en-main?combine_text=&session_start_min=&session_start_max=&presence_type=All&offer=All&branch=46&training_theme=99&target_training=290",
+            "lien": "https://- \\[https://- https://www.uniformation.fr/entreprise/formation/offre-de-formations-cles-en-main?combine_text=&session_start_min=&session_start_max=&presence_type=All&offer=All&branch=46&training_theme=99&target_training=290\\](https://www.uniformation.fr/entreprise/formation/offre-de-formations-cles-en-main?combine_text=&session_start_min=&session_start_max=&presence_type=All&offer=All&branch=46&training_theme=99&target_training=290",
             "texte": "Catalogue de formations\\"
           }
         ]
