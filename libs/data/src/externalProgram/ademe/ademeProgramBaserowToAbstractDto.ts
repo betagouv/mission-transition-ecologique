@@ -1,8 +1,8 @@
 import { EligibilityData, ProgramTypes, AbstractProgramType } from '../../program/types/shared'
-import { AdemeProgramBaserow } from './types'
+import { AdemeProgramBaserow } from '../../common/baserow/types'
 
-export class AdemeProgramBaserowToStaticConverter {
-  convertToStatic(ademeProgram: AdemeProgramBaserow): AbstractProgramType {
+export class AdemeProgramBaserowToAbstractDto {
+  convert(ademeProgram: AdemeProgramBaserow): AbstractProgramType {
     const eligibilityData: EligibilityData = {
       validity: {
         start: ademeProgram.DISPOSITIF_DATE_DEBUT,
@@ -17,7 +17,6 @@ export class AdemeProgramBaserowToStaticConverter {
     return {
       id: ademeProgram['Id fiche dispositif'],
       titre: ademeProgram.Titre,
-      promesse: '',
       description: ademeProgram['Description courte'],
       'description longue': ademeProgram['Description longue'],
       'opérateur de contact': 'ADEME',
@@ -55,15 +54,15 @@ export class AdemeProgramBaserowToStaticConverter {
       ],
       eligibilityData,
       "conditions d'éligibilité": {
-        'secteur géographique': [ademeProgram['Zones Geo']],
+        'secteur géographique': this._getSecteurGeographique(ademeProgram),
         "autres critères d'éligibilité": ademeProgram.Eligibilité ? [ademeProgram.Eligibilité] : null
       },
       type: ProgramTypes.extAdeme
     }
   }
 
-  convertToStaticArray(ademePrograms: AdemeProgramBaserow[]): AbstractProgramType[] {
-    return ademePrograms.map((program) => this.convertToStatic(program))
+  convertArray(ademePrograms: AdemeProgramBaserow[]): AbstractProgramType[] {
+    return ademePrograms.map((program) => this.convert(program))
   }
 
   private _parseZonesGeo(zonesGeoString: string): string[] | undefined {
@@ -71,5 +70,15 @@ export class AdemeProgramBaserowToStaticConverter {
       return undefined
     }
     return zonesGeoString.split(',').map((zone) => zone.trim())
+  }
+
+  private _getSecteurGeographique(ademeProgram: AdemeProgramBaserow): string[] | null {
+    if (ademeProgram['Couverture géographique'] === 'National') {
+      return ["France et territoires d'outremer"]
+    }
+    if (!ademeProgram['Zones Geo'] || ademeProgram['Zones Geo'].trim() === '') {
+      return null
+    }
+    return [ademeProgram['Zones Geo']]
   }
 }

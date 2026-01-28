@@ -1,7 +1,7 @@
 import { AbstractBaserow } from './abstractBaserow'
 import { FilterBaserow } from './filterBaserow'
 import { GeographicAreas } from '../../program/types/domain'
-import { AdemeProgramBaserow } from '../../externalProgram/ademe/types'
+import { AdemeProgramBaserow } from './types'
 import ConfigBaserow from '../../config/configBaserow'
 
 export class ProgramAdemeBaserow extends AbstractBaserow {
@@ -31,7 +31,7 @@ export class ProgramAdemeBaserow extends AbstractBaserow {
       const existingProgram = await this.getByR2daId(program.r2daId)
 
       if (existingProgram && 'id' in existingProgram) {
-        await this.updateProgram((existingProgram as any).id, program)
+        await this.updateProgram(existingProgram.id as number, program)
       } else {
         await this.createProgram(program)
       }

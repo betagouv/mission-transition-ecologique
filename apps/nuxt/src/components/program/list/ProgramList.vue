@@ -52,7 +52,7 @@ const programNumber = computed(() => {
 })
 
 onMounted(async () => {
-  if (!extPrograms.value || !extPrograms.value.length) {
+  if (!isDataFull.value && (!extPrograms.value || !extPrograms.value.length)) {
     await new ProgramManager().getExternals()
   }
 })

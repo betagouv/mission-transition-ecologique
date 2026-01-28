@@ -1,9 +1,6 @@
 import axios, { AxiosInstance } from 'axios'
-import dotenv from 'dotenv'
 import ConfigAdeme from '../../config/configAdeme'
 import { AdemeTypeReferentiel } from './types'
-
-dotenv.config()
 
 export class AdemeApi {
   private readonly _clientId = ConfigAdeme.CLIENT_ID

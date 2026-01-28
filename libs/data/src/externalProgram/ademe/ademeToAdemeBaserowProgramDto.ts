@@ -1,25 +1,24 @@
 import { AdemeProgramDetail } from './ademeProgramType'
 import { AdemeReferentialMappers } from './ademeReferentialMappers'
 import { GeographicAreas } from '../../program/types/domain'
-import { AdemeProgramBaserow } from './types'
+import { AdemeProgramBaserow } from '../../common/baserow/types'
 import TurndownService from 'turndown'
 
-export class AdemeToDataProgramConverter {
-  private _geographicAreas: GeographicAreas[] = []
+export class AdemeToAdemeBaserowProgramDto {
+  constructor(
+    private _geographicAreas: GeographicAreas[] = [],
+    private readonly _turndownService = new TurndownService()
+  ) {}
 
-  constructor(geographicAreas: GeographicAreas[] = []) {
-    this._geographicAreas = geographicAreas
-  }
-
-  convertAdemeProgramRawToAdemeProgramBaserow(ademeProgram: AdemeProgramDetail): AdemeProgramBaserow {
+  convert(ademeProgram: AdemeProgramDetail): AdemeProgramBaserow {
     const titre = ademeProgram.titre
-    const typeProjetLabels = ademeProgram.typeProjet?.map((tp: any) => AdemeReferentialMappers.mapTypeProjet(tp.code)) || []
-    const thematiqueLabels = ademeProgram.thematique?.map((th: any) => AdemeReferentialMappers.mapThematique(th.code)) || []
-    const cibleLabels = ademeProgram.cibleProjet?.map((c: any) => AdemeReferentialMappers.mapCible(c.code)) || []
+    const typeProjetLabels = ademeProgram.typeProjet?.map((tp) => AdemeReferentialMappers.mapTypeProjet(tp.code as string)) || []
+    const thematiqueLabels = ademeProgram.thematique?.map((th) => AdemeReferentialMappers.mapThematique(th.code as string)) || []
+    const cibleLabels = ademeProgram.cibleProjet?.map((c) => AdemeReferentialMappers.mapCible(c.code as string)) || []
     const couvertureGeoLabel = ademeProgram.couvertureGeo?.code
       ? AdemeReferentialMappers.mapCouvertureGeo(ademeProgram.couvertureGeo.code)
       : ''
-    const zoneGeoLabels = ademeProgram.zoneGeo?.map((zg: any) => AdemeReferentialMappers.mapZoneGeo(zg.code)) || []
+    const zoneGeoLabels = ademeProgram.zoneGeo?.map((zg) => AdemeReferentialMappers.mapZoneGeo(zg.code as string)) || []
 
     const zoneGeoIds = this._mapGeographicAreasToIds(zoneGeoLabels)
 
@@ -74,7 +73,7 @@ export class AdemeToDataProgramConverter {
       .replace(/\s+à\s+/g, ' ') // Remove " à " (with spaces)
       .normalize('NFD') // Normalize the string to decompose accents from characters
       .replace(/[\u0300-\u036f]/g, '') // Remove accents
-      .replace(/[''\u2019]/g, '') // Remove apostrophes (straight, curly, and Unicode right single quotation mark)
+      .replace(/['\u2019]/g, '') // Remove apostrophes (straight and Unicode right single quotation mark)
       .replace(/&/g, '') // Remove ampersand
       .trim()
       .replace(/[\s\W-]+/g, '-') // Replace spaces and non-alphanumeric characters with hyphens
@@ -86,6 +85,6 @@ export class AdemeToDataProgramConverter {
       return ''
     }
 
-    return new TurndownService().turndown(html)
+    return this._turndownService.turndown(html)
   }
 }

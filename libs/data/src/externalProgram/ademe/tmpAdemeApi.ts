@@ -1,6 +1,7 @@
 import axios, { AxiosInstance } from 'axios'
 import dotenv from 'dotenv'
 import fs from 'fs'
+import { FileManager } from '../../common/fileManager'
 
 dotenv.config()
 
@@ -71,8 +72,7 @@ export class TempAdemeApi {
 
   async getPrograms(reload = false): Promise<unknown[]> {
     if (!reload && fs.existsSync(TEMP_FILE_PATH)) {
-      const data = fs.readFileSync(TEMP_FILE_PATH, 'utf-8')
-      return JSON.parse(data)
+      return FileManager.readJson<unknown[]>(TEMP_FILE_PATH)
     }
 
     const allVersions = await this.getProgramList()
@@ -93,16 +93,13 @@ export class TempAdemeApi {
     console.log(`Found ${publicAndActivePrograms.length} public and active programs out of ${allVersions.length} total`)
 
     const programDetails: unknown[] = []
-    for (let i = 0; i < publicAndActivePrograms.length; i++) {
-      const version = publicAndActivePrograms[i]
-      console.log(`Fetching program ${i + 1}/${publicAndActivePrograms.length}: ${version.id}`)
-
+    for (const [index, version] of publicAndActivePrograms.entries()) {
+      console.log(`Fetching program ${index + 1}/${publicAndActivePrograms.length}: ${version.id}`)
       const details = await this.getProgramDetails(version.id)
       if (details) {
         programDetails.push(details)
       }
-
-      if (i < publicAndActivePrograms.length - 1) {
+      if (index < publicAndActivePrograms.length - 1) {
         await this.sleep(1)
       }
     }

@@ -19,7 +19,7 @@
 import Navigation from '@/tools/navigation'
 import Program from '@/tools/program/program'
 import Translation from '@/tools/translation'
-import { AbstractProgramTypeForFront } from '@tee/data'
+import type { AbstractProgramTypeForFront } from '@tee/data'
 
 const { currentProgram, currentExtProgram } = storeToRefs(useProgramStore())
 const { currentProject } = storeToRefs(useProjectStore())

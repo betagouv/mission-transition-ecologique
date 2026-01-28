@@ -76,6 +76,6 @@ export type ProgramJsonBaseType = ProgramStaticBaseType & Record<string, unknown
 
 export type ProgramYamlType = Omit<ProgramStaticBaseType, 'id' | 'eligibilityData' | 'type'>
 
-export type AbstractProgramType = Partial<ProgramStaticBaseType> & Required<Pick<ProgramStaticBaseType, 'id' & 'type'>>
+export type AbstractProgramType = Partial<ProgramStaticBaseType> & Required<Pick<ProgramStaticBaseType, 'id' | 'type'>>
 
-export type AbstractProgramTypeForFront = Partial<ProgramTypeForFront> & Required<Pick<ProgramTypeForFront, 'id' & 'type'>>
+export type AbstractProgramTypeForFront = Partial<ProgramTypeForFront> & Required<Pick<ProgramTypeForFront, 'id' | 'type'>>

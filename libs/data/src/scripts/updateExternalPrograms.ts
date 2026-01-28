@@ -1,17 +1,21 @@
+import dotenv from 'dotenv'
 import { AdemeDataManager } from '../externalProgram/ademe/ademeDataManager'
-import { TempAdemeApi } from '../externalProgram/ademe/tmp_to_commit/tmpAdemeApi'
+import { TempAdemeApi } from '../externalProgram/ademe/tmpAdemeApi'
 import { ProgramAdemeBaserow } from '../common/baserow/programAdemeBaserow'
-import { AdemeProgramBaserowToStaticConverter } from '../externalProgram/ademe/ademeProgramBaserowToStaticConverter'
-import { AdemeToDataProgramConverter } from '../externalProgram/ademe/ademeToDataProgramConverter'
+import { AdemeProgramBaserowToAbstractDto } from '../externalProgram/ademe/ademeProgramBaserowToAbstractDto'
+import { AdemeToAdemeBaserowProgramDto } from '../externalProgram/ademe/ademeToAdemeBaserowProgramDto'
+
+dotenv.config()
 
 const main = async () => {
-  const ademeApi = new TempAdemeApi()
   const baserowApi = new ProgramAdemeBaserow()
-  const outConverter = new AdemeProgramBaserowToStaticConverter()
-  const geographicAreas = await baserowApi.getGeographicAreas()
-  const inConverter = new AdemeToDataProgramConverter(geographicAreas)
 
-  const ademeDataManager = new AdemeDataManager(ademeApi, inConverter, baserowApi, outConverter)
+  const ademeDataManager = new AdemeDataManager(
+    new TempAdemeApi(),
+    new AdemeToAdemeBaserowProgramDto(await baserowApi.getGeographicAreas()),
+    baserowApi,
+    new AdemeProgramBaserowToAbstractDto()
+  )
   await ademeDataManager.updateData()
 }
 

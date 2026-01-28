@@ -84,14 +84,11 @@ if (currentExtProgram.value?.id) {
   })
 }
 
-const scrollToRef = (targetRef: HTMLElement | null | undefined) => {
-  if (!targetRef) {
-    return
+const scrollToActivation = () => {
+  if (activationRef.value) {
+    Scroll.toWithEligibilityBarOffset(activationRef.value)
   }
-
-  Scroll.toWithEligibilityBarOffset(targetRef)
 }
-const scrollToActivation = () => scrollToRef(activationRef.value)
 
 const description = currentExtProgram.value?.metaDescription ?? currentExtProgram.value?.description
 useSeoMeta(MetaSeo.get(currentExtProgram.value?.metaTitre ?? currentExtProgram.value?.titre, description))
