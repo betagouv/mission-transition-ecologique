@@ -17,7 +17,8 @@
     "diag-eco-flux-2": "diag-eco-flux",
     "visite-energie-cci": "visite-energie",
     "visite-energie-cma": "visite-energie",
-    "cheque-vert-grand-est": "cheque-transition-tissu-economique"
+    "cheque-vert-grand-est": "cheque-transition-tissu-economique",
+    "ormat-2024": "ormat"
   },
   "project_rowid_to_url_mapping": {
     "1": "bilan-ges",

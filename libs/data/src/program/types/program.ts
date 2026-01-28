@@ -86,6 +86,7 @@ export type Dispositif = {
    */
   "opérateur de contact":
     | "ADEME"
+    | "Agence de Services et de Paiement"
     | "Agence de l'Eau Loire-Bretagne"
     | "Agence de l'Eau Rhône-Méditerranée-Corse"
     | "Agence de l'Eau"
@@ -99,6 +100,7 @@ export type Dispositif = {
     | "DDFIP"
     | "DREAL Bretagne"
     | "France Rénov'"
+    | "InvestEU"
     | "Ministère de la Transition Écologique"
     | "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
     | "Région Bretagne"
@@ -120,6 +122,7 @@ export type Dispositif = {
     | "Office français de la biodiversité"
     | "Région Bourgogne-Franche-Comté"
     | "Région Auvergne-Rhône-Alpes"
+    | "Association pour la transition Bas Carbone"
     | "Région Nouvelle-Aquitaine"
     | "Agence de Développement Economique de Corse"
     | "Agence de Tourisme de la Corse"
@@ -262,6 +265,7 @@ export type Dispositif = {
 );
 export type Operators =
   | "ADEME"
+  | "Agence de Services et de Paiement"
   | "Agence de l'Eau Loire-Bretagne"
   | "Agence de l'Eau Rhône-Méditerranée-Corse"
   | "Agence de l'Eau"
@@ -275,6 +279,7 @@ export type Operators =
   | "DDFIP"
   | "DREAL Bretagne"
   | "France Rénov'"
+  | "InvestEU"
   | "Ministère de la Transition Écologique"
   | "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
   | "Région Bretagne"
@@ -296,6 +301,7 @@ export type Operators =
   | "Office français de la biodiversité"
   | "Région Bourgogne-Franche-Comté"
   | "Région Auvergne-Rhône-Alpes"
+  | "Association pour la transition Bas Carbone"
   | "Région Nouvelle-Aquitaine"
   | "Agence de Développement Economique de Corse"
   | "Agence de Tourisme de la Corse"

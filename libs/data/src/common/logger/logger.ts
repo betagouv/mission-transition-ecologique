@@ -52,19 +52,11 @@ export class Logger implements LoggerInterface {
 
   private _sortLogs(): LogEvent[] {
     return this._logs.sort((a, b) => {
-      if (a.criticality === LogLevel.Info && b.criticality !== LogLevel.Info) {
-        return 1
+      const criticalityComparison = a.criticality - b.criticality
+      if (criticalityComparison !== 0) {
+        return criticalityComparison
       }
-      if (b.criticality === LogLevel.Info && a.criticality !== LogLevel.Info) {
-        return -1
-      }
-
-      const nameComparison = a.name.localeCompare(b.name)
-      if (nameComparison !== 0) {
-        return nameComparison
-      }
-
-      return a.criticality - b.criticality
+      return a.name.localeCompare(b.name)
     })
   }
 }

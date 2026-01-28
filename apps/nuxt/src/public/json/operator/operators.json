@@ -8,6 +8,14 @@
     "color": "purple"
   },
   {
+    "operator": "Agence de Services et de Paiement",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ],
+    "imagePath": "/images/logos/operateur/asp.webp",
+    "color": "red"
+  },
+  {
     "operator": "Agence de l'Eau Loire-Bretagne",
     "filterCategories": [
       "Agence de l'eau"
@@ -101,6 +109,10 @@
     ],
     "imagePath": "/images/logos/operateur/france-renov.webp",
     "color": "red"
+  },
+  {
+    "operator": "InvestEU",
+    "filterCategories": []
   },
   {
     "operator": "Ministère de la Transition Écologique",
@@ -252,6 +264,14 @@
       "Régions"
     ],
     "imagePath": "/images/logos/operateur/region-auvergne-rhone-alpes.webp",
+    "color": "purple"
+  },
+  {
+    "operator": "Association pour la transition Bas Carbone",
+    "filterCategories": [
+      "Opérateurs nationaux"
+    ],
+    "imagePath": "/images/logos/operateur/abc.webp",
     "color": "purple"
   },
   {

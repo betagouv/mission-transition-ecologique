@@ -105,6 +105,7 @@ export enum Status {
   InProd = 'En prod',
   InProdNotAvailable = 'Temporairement indispo',
   Replaced = 'Remplacé',
+  Archived = 'Archive',
   Other = 'Autres'
 }
 
