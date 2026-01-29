@@ -16,7 +16,9 @@
     "investissement-boucle-d'eau-geothermique": "investissement-boucle-d-eau-geothermique",
     "diag-eco-flux-2": "diag-eco-flux",
     "visite-energie-cci": "visite-energie",
-    "visite-energie-cma": "visite-energie"
+    "visite-energie-cma": "visite-energie",
+    "cheque-vert-grand-est": "cheque-transition-tissu-economique",
+    "ormat-2024": "ormat"
   },
   "project_rowid_to_url_mapping": {
     "1": "bilan-ges",
@@ -103,7 +105,8 @@
     "1391": "engins-propres",
     "1424": "palettes-calage",
     "1490": "hydrogene-vert",
-    "1523": "efficacite-energetique-des-procedes-industriels"
+    "1523": "efficacite-energetique-des-procedes-industriels",
+    "1556": "machines-agricoles-propres"
   },
   "program_rowid_to_url_mapping": {
     "1": "accelerateur-decarbonation",
@@ -326,6 +329,7 @@
     "1981": "indicateur-climat",
     "2014": "eco-diagnostic-commerce",
     "2048": "diag-performance",
+    "2080": "easy-diag",
     "2113": "formations-atlas",
     "2146": "formations-afdas",
     "2149": "formations-opcommerce",
@@ -339,6 +343,13 @@
     "2212": "performa-adaptation",
     "2213": "cap-decarbonation",
     "2245": "etude-methanisation-paca",
-    "2246": "investissement-methanisation-paca"
+    "2246": "investissement-methanisation-paca",
+    "2344": "e-trans",
+    "2377": "cheque-transition-tissu-economique",
+    "2410": "expert-atlas",
+    "2443": "diag-accompagnement-tee-rh",
+    "2476": "diagnostic-rh",
+    "2510": "defi-eco-2050",
+    "2542": "demi-bac"
   }
 }

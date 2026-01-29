@@ -9,7 +9,7 @@ export const tests: SearchResultsDataType = [
   },
   {
     id: 1,
-    url: 'questionnaire/resultat?siret=83014132100034&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non#questionnaire-resultat',
+    url: 'questionnaire/resultat?siret=83014132100042&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non#questionnaire-resultat',
     values: [
       'Communauté du Coq Vert',
       'Entreprises engagées pour la nature',
@@ -45,7 +45,7 @@ export const tests: SearchResultsDataType = [
   },
   {
     id: 2,
-    url: 'questionnaire/resultat/projet/sensibilisation-equipes?siret=83014132100034&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non',
+    url: 'questionnaire/resultat/projet/sensibilisation-equipes?siret=83014132100042&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non',
     values: ['Formation ADEME']
   },
   {

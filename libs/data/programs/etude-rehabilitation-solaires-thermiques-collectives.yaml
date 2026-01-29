@@ -46,12 +46,12 @@ description longue: >-
   consortiums/groupements de prestataire d’ingénierie, d’installateur et
   d’exploitant.
 début de validité: 03/06/2019
-fin de validité: 31/12/2025
+fin de validité: 31/12/2026
 illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000692
+contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/audit-rehabilitation-dinstallations-solaires-thermiques-collectives
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/audit-et-rehabilitation-dinstallations-solaires-thermiques-collectives
 nature de l'aide: étude
 montant du financement: >-
   Selon la surface et l'ancienneté de l’installation solaire, dans un maximum de
@@ -62,7 +62,7 @@ objectifs:
       projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/sites/default/files/R%C3%A9habilitation%20installations%20solaires%20thermiques%20-%20Conditions%20%C3%A9ligibilit%C3%A9%20et%20financement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/R%C3%A9habilitation%20solaire%20thermique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez un prestataire "Reconnu Garant de l'Environnement" (RGE) ou
@@ -93,7 +93,7 @@ conditions d'éligibilité:
     - Éligible aux micro-entreprises
   secteur géographique:
     - >-
-      Auvergne-Rhône-Alpes, Bretagne, Centre-Val de Loire, Corse, Grand Est,
+      Auvergne-Rhône-Alpes, Bretagne, Centre-Val de Loire, Grand Est,
       Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion,
       Martinique, Mayotte, Nouvelle-Aquitaine, Occitanie, Pays de la Loire,
       Provence-Alpes-Côte d'Azur
@@ -133,7 +133,6 @@ publicodes:
       - région = Auvergne-Rhône-Alpes
       - région = Bretagne
       - région = Centre-Val de Loire
-      - région = Corse
       - région = Grand Est
       - région = Guadeloupe
       - région = Guyane

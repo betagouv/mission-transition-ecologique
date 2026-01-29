@@ -5,10 +5,10 @@ import { GeoSearch } from '../domain/spi'
 import { Localisation } from '../infrastructure/json/localisation'
 
 export default class GeoSearchService {
-  private geoSearchFeatures: GeoSearchFeatures
+  private _geoSearchFeatures: GeoSearchFeatures
 
   constructor() {
-    this.geoSearchFeatures = new GeoSearchFeatures(this._getGeoSearchRepository())
+    this._geoSearchFeatures = new GeoSearchFeatures(this._getGeoSearchRepository())
   }
 
   /**
@@ -18,7 +18,7 @@ export default class GeoSearchService {
    */
   public searchCities(searchTerm: string): Result<ConvertedCommune[], Error> {
     try {
-      return Result.ok(this.geoSearchFeatures.search(searchTerm))
+      return Result.ok(this._geoSearchFeatures.search(searchTerm))
     } catch (error: unknown) {
       return Result.err(error as Error)
     }

@@ -13,7 +13,7 @@
       <span
         :id="isSmallScreen ? 'badge-mobile' : 'base-badge'"
         :class="badgeIcon"
-        class="fr-text--blue-france fr-radius-a--2v ignore-modal-click register-badge"
+        class="fr-text--blue-900 fr-radius-a--2v ignore-modal-click register-badge"
       >
       </span>
     </span>
@@ -21,7 +21,7 @@
     <span
       v-if="!isSmallScreen"
       id="register-text"
-      :class="isDataFull ? `` : `fr-text--yellow ignore-modal-click`"
+      :class="isDataFull ? `` : `ignore-modal-click`"
     >
       {{ isDataFull ? companyName : Translation.t('register.mainTitle') }}
     </span>
@@ -47,7 +47,7 @@ const badgeIcon = computed(() => {
   if (isSmallScreen && !isDataFull.value) {
     return 'fr-bg--yellow fr-icon-question-mark'
   } else {
-    return 'fr-bg--green fr-icon-check-line'
+    return 'fr-bg--green-agir--light fr-icon-check-line'
   }
 })
 

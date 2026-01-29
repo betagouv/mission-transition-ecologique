@@ -36,8 +36,8 @@
           @click="selectActivity(activity)"
         >
           <div class="fr-card__body">
-            <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-              <div class="fr-text--blue-france">{{ `${activity.secteur} (${activity.codeNAF})` }}</div>
+            <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-900">
+              <div class="fr-text--blue-900">{{ `${activity.secteur} (${activity.codeNAF})` }}</div>
             </div>
           </div>
         </div>

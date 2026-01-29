@@ -16,7 +16,7 @@ description: >-
   - de vous accompagner dans la **conduite des chantiers** identifiés comme\
     prioritaires.
 illustration: images/TEE_eolienne.webp
-opérateur de contact: Opcommerce
+opérateur de contact: L'Opcommerce
 contact question: https://www.lopcommerce.com/contact/
 url: >-
   https://www.lopcommerce.com/l-opcommerce/offre-de-services/eco-diagnostic-commerce/
@@ -26,25 +26,16 @@ objectifs:
   - description: Créez un compte sur le site de l'Opcommerce.
     liens:
       - lien: https://auth.lopcommerce.com/accounts/create
-        texte: Créer mon compte Opcommerce
+        texte: Créer mon compte l'Opcommerce
   - description: >-
-      Répondez au Test-flash conçu par l’Opcommerce pour mesurer le niveau de
-      maturité de votre entreprise en matière de transition écologique.
-    liens:
-      - lien: >-
-          https://-
-          <https://www.lopcommerce.com/l-opcommerce/offre-de-services/test-flash-transition-ecologique/>
-        texte: Test-flash\
-  - description: >-
-      Contactez votre conseiller Opcommerce pour exprimer votre intérêt pour
-      l'Eco-diagnostic Commerce.
+      Contactez votre conseiller l'Opcommerce pour exprimer votre intérêt pour
+      l'Éco-diagnostic Commerce.
     liens:
       - lien: https://www.lopcommerce.com/contact/
         texte: Contacter mon conseiller
   - description: >-
       Définissez avec l’expert le périmètre du diagnostic, la méthode et le
-      calendrier.
-  - description: Lancez le diagnostic avec l'expert proposé par votre Opcommerce.
+      calendrier et lancez le diagnostic.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

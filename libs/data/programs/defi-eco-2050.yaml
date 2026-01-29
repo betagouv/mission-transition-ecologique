@@ -1,0 +1,58 @@
+titre: Défi Éco 2050
+promesse: >-
+  Engagez vos équipes dans la transition écologique à l'aide d'un jeu
+  collaboratif
+description: >-
+  Sensibilisez vos collaborateurs aux enjeux de la transition écologique dans le
+  secteur de la construction (rénovation, recyclage, décarbonation,
+  biodiversité...) à l'aide d'un jeu de plateau immersif. Participez à une
+  session inter-entreprise ou organisez une session dans votre entreprise. En
+  1h30 à 2h de jeu, vous :
+
+
+  - Informez et **sensibilisez vos équipes sur les enjeux écologiques**
+  réglementaires du secteur de la construction.
+
+  - **Fédérez vos collaborateurs** autour des changements à amorcer pour une
+  activité durable.
+
+  - **Établissez un premier plan d'action et de formation** pour acquérir les
+  compétences en lien avec la transition écologique.
+illustration: images/TEE_eolienne.webp
+opérateur de contact: Constructys
+contact question: https://www.constructys.fr/contacts/
+url: https://www.constructys.fr/defi-eco-2050/
+nature de l'aide: formation
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 1h30 à 2h
+activable en autonomie: oui
+objectifs:
+  - description: Compléter le formulaire pour planifier une session de jeu.
+    liens:
+      - lien: https://constructys.my.site.com/s/surveyEco
+        texte: Formulaire d'inscription Défi Éco 2050
+  - description: "Participez à une session entre pairs ou organisez\_une session au sein de votre entreprise, animée par Constructys."
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Entreprises du secteur de la construction
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est F
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est former ou recruter

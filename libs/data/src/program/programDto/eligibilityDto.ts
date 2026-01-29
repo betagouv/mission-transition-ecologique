@@ -15,9 +15,9 @@ export class EligibilityDto {
   ) {}
 
   public setEligibility(): EligibilityData {
-    this.setPeriodValidity()
-    this.setEmployees()
-    this.setLegalCategory()
+    this._setPeriodValidity()
+    this._setEmployees()
+    this._setLegalCategory()
     this._setSector()
     this._setGeographicArea()
     this._setObjectives()
@@ -25,7 +25,7 @@ export class EligibilityDto {
     return this._eligibilityData
   }
 
-  private setPeriodValidity() {
+  private _setPeriodValidity() {
     if (this._program.DISPOSITIF_DATE_DEBUT || this._program.DISPOSITIF_DATE_FIN) {
       this._eligibilityData.validity = {
         start: this._program.DISPOSITIF_DATE_DEBUT || undefined,
@@ -34,7 +34,7 @@ export class EligibilityDto {
     }
   }
 
-  private setEmployees() {
+  private _setEmployees() {
     if (this._program.minEff && this._program.minEff != 0) {
       this._eligibilityData.company.minEmployees = this._program.minEff
     }
@@ -43,7 +43,7 @@ export class EligibilityDto {
     }
   }
 
-  private setLegalCategory() {
+  private _setLegalCategory() {
     if (this._program.microEntrepreneur.toLowerCase() != 'oui') {
       this._eligibilityData.company.excludeMicroentrepreneur = true
     }

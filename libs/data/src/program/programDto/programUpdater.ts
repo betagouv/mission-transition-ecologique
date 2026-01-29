@@ -15,7 +15,7 @@ export class ProgramUpdater {
     const validPrograms: ProgramStaticBaseType[] = []
 
     for (const program of programs) {
-      if (ProgramUtils.isFlaggedForProd(program)) {
+      if (ProgramUtils.isFlaggedForProd(program) || ProgramUtils.hasBeenInProd(program)) {
         const generator = new ProgramDto(program, this._logger)
         await generator.process()
         if (generator.valid) {

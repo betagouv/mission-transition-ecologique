@@ -10,6 +10,7 @@ export class Theme {
       id: ThemeId.Energy,
       title: 'Énergie',
       tagLabel: '⚡️ énergie',
+      slug: 'energie',
       image: '/images/thematique/thematique-energie.svg',
       color: Color.yellow
     },
@@ -17,6 +18,7 @@ export class Theme {
       id: ThemeId.Building,
       title: 'Construction & rénovation',
       tagLabel: '🏢 rénovation',
+      slug: 'construction-et-renovation',
       image: '/images/thematique/thematique-batiments.svg',
       color: Color.purple
     },
@@ -24,6 +26,7 @@ export class Theme {
       id: ThemeId.Mobility,
       title: 'Mobilité',
       tagLabel: '🚲 mobilité',
+      slug: 'mobilite',
       image: '/images/thematique/thematique-mobilite.svg',
       color: Color.green
     },
@@ -31,13 +34,15 @@ export class Theme {
       id: ThemeId.Water,
       title: 'Économies d’eau',
       tagLabel: '💧 eau',
+      slug: 'economies-eau',
       image: '/images/thematique/thematique-eau.svg',
-      color: Color.blueFrance
+      color: Color.blueAgir
     },
     {
       id: ThemeId.EcoDesign,
       title: 'Éco-conception',
       tagLabel: '🔁 écoconception',
+      slug: 'eco-conception',
       image: '/images/thematique/thematique-eco-conception.svg',
       color: Color.green
     },
@@ -45,6 +50,7 @@ export class Theme {
       id: ThemeId.Waste,
       title: 'Déchets & réemploi',
       tagLabel: '🗑 déchets',
+      slug: 'dechets-et-reemploi',
       image: '/images/thematique/thematique-dechets.svg',
       color: Color.red
     },
@@ -52,6 +58,7 @@ export class Theme {
       id: ThemeId.RH,
       title: 'Ressources humaines',
       tagLabel: '🧑‍🎓 RH',
+      slug: 'ressources-humaines',
       image: '/images/thematique/thematique-ressources-humaines.svg',
       color: Color.yellow
     },
@@ -59,6 +66,7 @@ export class Theme {
       id: ThemeId.Environmental,
       title: 'Analyses environnementales',
       tagLabel: '🌱 analyses',
+      slug: 'analyses-environnementales',
       image: '/images/thematique/thematique-strategie.svg',
       color: Color.purple
     },
@@ -66,6 +74,7 @@ export class Theme {
       id: ThemeId.Biodiversity,
       title: 'Biodiversité',
       tagLabel: '🐝 biodiversité',
+      slug: 'biodiversite',
       image: '/images/thematique/thematique-biodiversite.svg',
       color: Color.green
     }
@@ -73,6 +82,18 @@ export class Theme {
 
   static getById(id: ThemeId | undefined) {
     return this.themes.find((theme) => theme.id === id)
+  }
+
+  static getBySlug(slug: string) {
+    return this.themes.find((theme) => theme.slug === slug)
+  }
+
+  static getIdBySlug(slug: string) {
+    return this.getBySlug(slug)?.id
+  }
+
+  static getSlugById(themeId: ThemeId) {
+    return this.getById(themeId)?.slug ?? ''
   }
 
   static getTitleById(themeId: ThemeId) {
@@ -112,9 +133,12 @@ export class Theme {
     return theme !== ''
   }
 
-  static getPriorityProjects(projects: ProjectType[] | undefined) {
-    const sortedProjects = (projects as unknown as ProjectType[]).sort((a, b) => a.priority - b.priority)
-    return { projects: sortedProjects.slice(0, 3), moreThanThree: sortedProjects.length > 3 }
+  static isValidTheme(theme: string): boolean {
+    return Object.values(ThemeId).includes(theme as ThemeId) || theme === ''
+  }
+
+  static getPriorityProjects(projects: ProjectType[]) {
+    return { projects: projects.slice(0, 3), moreThanThree: projects.length > 3 }
   }
 
   static getThemeFromSelectedTheme(): ComputedRef<ThemeId | undefined> {

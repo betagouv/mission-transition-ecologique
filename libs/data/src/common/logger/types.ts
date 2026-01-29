@@ -13,7 +13,8 @@ export enum LogLevel {
 export enum LoggerType {
   Program = 'Dispositif',
   Project = 'Projet',
-  Faq = 'FAQ'
+  Faq = 'FAQ',
+  Operator = 'Opérateur'
 }
 
 export const LogLevelDisplay: Record<LogLevel, string> = {

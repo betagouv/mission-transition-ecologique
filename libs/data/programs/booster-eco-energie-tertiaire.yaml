@@ -26,21 +26,21 @@ description longue: >-
   dans les bâtiments et parties de bâtiments de 1 000 m², et plus, à usage
   tertiaire afin de lutter contre le changement climatique.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
+fin de validité: 31/12/2026
 illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000744
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000863
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2025/booster-entreprises-reduire-votre-facture-energetique-et-gagner-en-valeur-verte
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/pacte-entreprises-booster-entreprises-reduire-votre-facture-energetique-et-gagner-en-valeur-verte
 nature de l'aide: financement
-montant du financement: Jusqu'à 80% du coût des travaux, dans un maximum de 100 000 €
+montant du financement: Selon le projet
 objectifs:
   - description: >-
       Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
       projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agir.ademe.fr/sites/default/files/Booster%20entreprises%20Eco%20Energie%20Tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/Booster%20Entreprises%20%C3%A9co%20%C3%A9nergie%20tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez des prestataires qualifiés pour l’audit énergétique,
@@ -57,12 +57,12 @@ objectifs:
       d'ingénierie ne doivent pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2025/booster-entreprises-reduire-votre-facture-energetique-et-gagner-en-valeur-verte?backtosearch=true
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/pacte-entreprises-booster-entreprises-reduire-votre-facture-energetique-et-gagner-en-valeur-verte
         texte: Déposer mon dossier
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Moins de 5000 salariés
-    - Non éligible aux micro-entreprises
+    - Toutes tailles
+    - Éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
@@ -87,15 +87,7 @@ publicodes:
       toutes ces conditions:
         - dispositif . début de validité <= date du jour
         - date du jour <= dispositif . fin de validité
-    toutes ces conditions:
-      - a un effectif éligible
-      - a une categorie legale eligible
-  entreprise . a un effectif éligible:
-    toutes ces conditions:
-      - effectif <= 4999
-  entreprise . a une categorie legale eligible:
-    toutes ces conditions:
-      - microentrepreneur = non
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est F

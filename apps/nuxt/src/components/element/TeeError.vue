@@ -10,10 +10,10 @@
       {{ Translation.t(`form.sorryError`) }}
     </h4>
     <slot />
-    <h6 class="fr-text--blue-france fr-text--lg fr-mt-15v fr-mb-3v">
+    <h6 class="fr-text--blue-900 fr-text--lg fr-mt-15v fr-mb-3v">
       {{ Translation.t('form.nowWhat') }}
     </h6>
-    <p class="fr-text--blue-france fr-mb-15v">
+    <p class="fr-text--blue-900 fr-mb-15v">
       <span v-html="Translation.t('form.errorMsg', { mailto: mailto, email: email })" />
     </p>
   </div>

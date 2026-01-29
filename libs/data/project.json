@@ -70,6 +70,16 @@
         "parallel": false
       }
     },
+    "generate-operators": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/generateOperatorsJson.ts"
+        ],
+        "parallel": false
+      }
+    },
     "export-programs": {
       "executor": "nx:run-commands",
       "options": {

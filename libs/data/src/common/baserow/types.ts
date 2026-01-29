@@ -63,6 +63,7 @@ export interface ImageTable extends Id {
   'Alt-text': string
   Image: Image[]
   'Image URL TEE': string
+  Couleur?: LinkObject
 }
 
 export interface Image {
@@ -244,6 +245,8 @@ export interface BaserowOperator {
   Nom: string
   siren: string
   'Nom Normalisé': string
+  Image: LinkObject[]
+  'Image URL TEE': string
 }
 
 export interface AdemeProgramBaserow {

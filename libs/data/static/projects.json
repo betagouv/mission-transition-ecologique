@@ -7,7 +7,7 @@
     "shortDescription": "Il met en évidence vos postes d’énergie les plus consommateurs et les pistes de solutions.",
     "image": "/images/projet/plan-action-eco-energie.webp",
     "titleLongDescription": "🤝 Qu’est-ce qu'un plan d'action économies d'énergie ?",
-    "longDescription": "La réalisation d'un plan d'action énergie est un premier pas indispensable à la mise en place d'une stratégie énergétique au sein de votre entreprise.\n\nDes accompagnements vous aideront à identifier les postes énergivores au sein de votre entreprise, identifier des bonnes pratiques faciles à mettre en œuvre, et élaborer un plan d'action pour maîtriser durablement vos consommations. Ce plan d'action constitue souvent l'étape préalable indispensable à la mise en place d'un projet, pouvant aboutir à des études plus précises ou des investissements.",
+    "longDescription": "Établir un plan d’action d’économies d’énergie constitue la première étape pour la mise en place d’une stratégie énergétique au sein de votre entreprise.\n\nCelui-ci vous permettra :\n\n- D’identifier **les postes les plus énergivores** (eau, électricité, gaz…).\n- D’identifier **une série de bonnes pratiques faciles** à mettre en œuvre.\n- D’élaborer **un plan d’action** pour **maîtriser durablement vos consommations énergétiques**.\n\nDans un deuxième temps vous pouvez mener des études plus poussées sur une thématique spécifique ou mettre en place des investissements pour améliorer la performance énergétique de vos bâtiments ou de votre système de production.\n\nAinsi, **vous pérennisez l’activité de votre entreprise** en anticipant l’augmentation des coûts énergétiques, **vous** **vous mettez en conformité avec la réglementation**, et **vous diminuez votre impact environnemental** tout en améliorant votre image de marque.",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur le plan d'action économies d'énergie ?",
     "moreDescription": "- [**Sobriété énergétique en entreprise,**](https://www.cci.fr/crise-energetique/entreprises-20-conseils-pour-faire-baisser-votre-facture-denergie) 20 conseils pour faire baisser votre facture d’énergie.",
     "themes": [
@@ -29,7 +29,6 @@
       "sud-pret-climat",
       "cedre-ambition",
       "perf-crise-energetique-aura",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
@@ -42,7 +41,10 @@
       "certificats-economie-energie",
       "aide-investissement-librairie",
       "booster-transformation-rev-3",
-      "cap-decarbonation"
+      "easy-diag",
+      "cap-decarbonation",
+      "cheque-transition-tissu-economique",
+      "diag-accompagnement-tee-rh"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action économies d'énergie",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action économies d'énergie",
@@ -129,7 +131,6 @@
       "aide-financement-occitanie",
       "cedre-investissement",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
@@ -140,7 +141,8 @@
       "camping-independant-na",
       "hotellerie-independante-bfc",
       "aide-tourisme-guadeloupe",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -328,7 +330,6 @@
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-tourisme",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transition-bzh",
       "pass-transformation-ecologique",
@@ -344,7 +345,8 @@
       "aide-investissement-corse",
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
-      "deter-decarboner-le-tertiaire"
+      "deter-decarboner-le-tertiaire",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -405,7 +407,6 @@
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-tourisme",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
@@ -418,7 +419,8 @@
       "aide-investissement-corse",
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
-      "deter-decarboner-le-tertiaire"
+      "deter-decarboner-le-tertiaire",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -457,10 +459,10 @@
     "slug": "bilan-ges",
     "title": "Bilan de gaz à effet de serre",
     "nameTag": "🌱 bilan GES",
-    "shortDescription": "Quantifier vos émissions de Gaz à effet de serre émise ou captée par les activités de votre entreprise.",
+    "shortDescription": "Quantifier vos émissions de gaz à effet de serre émises ou captées par les activités de votre entreprise.",
     "image": "/images/projet/bilan-ges.webp",
     "titleLongDescription": "🤝 Qu’est-ce qu'un bilan de gaz à effet de serre ?",
-    "longDescription": "Le bilan des émissions de gaz à effet de serre (GES) permet de comptabiliser les émissions de gaz à effet de serre générées, directement ou indirectement, par les activités d’une entreprise. Cette méthode est utilisée pour concevoir et mettre en place un plan de réduction des émissions à l’échelle d’une entreprise. \\\nLa grande majorité des bilans GES réalisés en France utilisent la méthode Bilan Carbone®, élaborée par l’ADEME. \\\nSi la loi oblige certaines à réaliser leur Bilan GES, toutes les entreprises peuvent réaliser un Bilan GES, même lorsqu’elles n’y sont pas contraintes. À la clé, de nombreux avantages : respect des enjeux RSE, économies d’énergie, anticipation des lois, marque employeur...",
+    "longDescription": "Un bilan des émissions de gaz à effet de serre (ou bilan GES, ou BEGES), consiste à mesurer, sur une année complète, **l’ensemble des** **émissions directes et indirectes** de gaz à effet de serre produites par les activités d’une entreprise.\n\nLa grande majorité des bilans GES réalisés en France utilisent la méthode Bilan Carbone®, élaborée par l’ADEME.\n\nLes bilans des émissions de gaz à effet de serre mesurent tour à tour :\n\n- Les émissions directes produites par les équipements de l’entreprise.\n- Les émissions indirectes résultant de la production d'énergie et de chaleur consommée ou achetée par l'entreprise.\n- Les émissions indirectes en dehors du périmètre de contrôle de l’entreprise (achats, transport des marchandises, déchets produits…).\n\nSi la loi oblige certaines entreprises à réaliser leur Bilan GES, toutes les entreprises peuvent le faire, même lorsqu’elles n’y sont pas contraintes. À la clé, de nombreux avantages :\n\n- Le respect des **enjeux RSE**.\n- La réalisation d’importantes **économies d’énergie**.\n- L’anticipation des **contraintes réglementaires**.\n- La consolidation de votre marque employeur et de l’**image de marque** de votre entreprise.",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur le bilan de gaz à effet de serre ?",
     "moreDescription": "- [**Guide** : tout comprendre, le changement climatique](https://librairie.ademe.fr/changement-climatique/7745-tout-comprendre-le-changement-climatique-9791029724589.html) Comment limiter la hausse des températures et limiter le changement climatique ?\n- [**La neutralité carbone**](https://librairie.ademe.fr/industrie-et-production-durable/4524-avis-de-l-ademe-la-neutralite-carbone.html) Des clés pour s’approprier ce sujet et adopter des gestes responsables\n- [**Réglementation bilan GES,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) Un portail pour connaitre les obligations de votre entreprise.\n- [**L'annuaire des prestataires Bilan Carbone®**](https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/)**,** par l'Association pour la transition Bas Carbone (ABC)\n- [**Bilans GES ADEME,**](https://bilans-ges.ademe.fr/) la plateforme nationale pour la publication des bilans d'émission de gaz à effet.",
     "themes": [
@@ -481,6 +483,7 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "cap-transition-ecologique",
+      "bilan-carbone",
       "evaluation-carbone-lise",
       "cap-decarbonation"
     ],
@@ -579,7 +582,6 @@
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-tourisme",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
@@ -594,7 +596,8 @@
       "aide-investissement-corse",
       "certificats-economie-energie",
       "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
-      "deter-decarboner-le-tertiaire"
+      "deter-decarboner-le-tertiaire",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -651,7 +654,6 @@
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-tourisme",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
       "cap-transition-ecologique",
@@ -664,7 +666,8 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "certificats-economie-energie",
-      "decarb-flash-2025-2027"
+      "decarb-flash-2025-2027",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -724,7 +727,6 @@
       "aide-financement-occitanie",
       "sud-pret-climat",
       "pret-tourisme",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
@@ -739,7 +741,8 @@
       "aide-investissement-corse",
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
-      "deter-decarboner-le-tertiaire"
+      "deter-decarboner-le-tertiaire",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4,
@@ -791,13 +794,13 @@
       "etude-hydroelectricite",
       "aide-financement-occitanie",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
       "hotellerie-independante-bfc",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -856,14 +859,14 @@
       "pret-economies-d-energie-pee",
       "aide-financement-occitanie",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transformation-ecologique",
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "perf-crise-energetique-cvl",
       "agir-pdl",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -963,7 +966,6 @@
       "cedre-premier-pas",
       "sud-pret-climat",
       "cedre-ambition",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
@@ -973,7 +975,9 @@
       "impulsion-environnement",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "deter-decarboner-le-tertiaire"
+      "deter-decarboner-le-tertiaire",
+      "easy-diag",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -1017,7 +1021,7 @@
     "shortDescription": "L’isolation thermique permet de réduire les pertes de chaleur de vos locaux et de diminuer vos dépenses énergétiques.",
     "image": "/images/projet/isolation-thermique.webp",
     "titleLongDescription": "🤝 Qu’est-ce que l'isolation thermique ?",
-    "longDescription": "L’isolation thermique des bâtiments permet de garantir le confort en été comme en hiver en limitant le recours à la climatisation et au chauffage. Un logement mal isolé génère des pertes conséquentes de chaleur en hiver et de fraîcheur en été par le toit, les murs, les portes, les fenêtres et le sol.\\\nGrâce à des travaux d’isolation, vous diminuez vos factures d’énergie et améliorez votre confort tout au long de l’année.",
+    "longDescription": "D’ici 2030, le décret tertiaire (ou Éco Énergie Tertiaire) oblige les entreprises du secteur tertiaire en France à réduire la consommation d’énergie finale de leurs bâtiments de 40 %. Cette **obligation règlementaire** place l’isolation thermique au cœur des priorités des entreprises du tertiaire.\n\nEn outre, l’isolation thermique des bâtiments permet de garantir le confort en été comme en hiver **en limitant le recours à la climatisation et au chauffage**. Un bâtiment mal isolé génère des pertes conséquentes de chaleur en hiver et de fraîcheur en été par le toit, les murs, les portes, les fenêtres et le sol.\n\nGrâce à des travaux d’isolation, vous :\n\n- **Diminuez les factures d’énergie** de votre entreprise.\n- **Améliorez le confort** **de vos équipes** tout au long de l’année.\n- **Garantissez la pérennité de votre activité** en adaptant vos locaux aux évolutions climatiques (canicules, grands froids).",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur l'isolation thermique ?",
     "moreDescription": "- [**Les exigences réglementaires pour les travaux de rénovation**](https://librairie.ademe.fr/ged/8069/fiche-exigences-reglementaires-renovation.pdf), une fiche pratique de l'ADEME.\n- [**Réduction de la consommation d'énergie dans les bâtiments à usage tertiaire**](https://entreprendre.service-public.fr/vosdroits/F38065), les obligations légales par Entreprendre.Service-Public.fr.\n- [**Quel est le meilleur isolant thermique pour une isolation efficace ?**](https://www.baisseleswatts.fr/actualites/equipement-energetique/quel-est-le-meilleur-isolant-thermique) un article proposé par Baisse les watts.\n- [**L'annuaire des professionnels RGE et des architectes,**](https://france-renov.gouv.fr/annuaires-professionnels/artisan-rge-architecte) trouver un professionnel RGE, compétent pour réaliser des travaux d'isolation thermique.",
     "themes": [
@@ -1041,7 +1045,6 @@
       "solaire-ready",
       "pret-tourisme",
       "perf-crise-energetique-aura",
-      "cheque-vert-grand-est",
       "aide-travaux-tourisme-aura",
       "pret-energie-aura",
       "pass-transformation-ecologique",
@@ -1059,7 +1062,8 @@
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
       "aide-investissement-librairie",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "cheque-transition-tissu-economique"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir l'isolation thermique de votre bâtiment",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de l'isolation thermique de votre bâtiment",
@@ -1128,7 +1132,7 @@
     "shortDescription": "Un plan de mobilité est une démarche d’analyse et d’optimisation des déplacements générés par l’activité d’une entreprise.",
     "image": "/images/projet/plan-mobilite.webp",
     "titleLongDescription": "🤝 Qu’est-ce qu'un plan d'action mobilité ?",
-    "longDescription": "Le Plan de Mobilité Durable Employeur est une démarche stratégique visant à optimiser les déplacements liés à l'activité de votre entreprise pour diminuer vos émissions polluantes. \\\nLe plan repose sur une analyse des déplacements (professionnels, domicile-travail...) de vos différents usagers (équipe, clients, fournisseurs...) et propose un plan d'actions adaptées aux spécificités de votre site. Le Plan de Mobilité Durable Employeur s'inscrit dans un processus de changement : il influence les comportements des usagers, l’organisation de la structure (horaires de travail, activités du site, structuration du territoire) et favorise l’adoption de modes de transport plus durables.\n\nPour garantir son succès, le plan de mobilité nécessite l'implication de la direction, une communication régulière avec les usagers et une évaluation à 2-3 ans pour ajuster les actions en fonction de l'impact observé sur les comportements et les modes de transport utilisés.",
+    "longDescription": "Le Plan de Mobilité Durable Employeur est une démarche stratégique visant à optimiser les déplacements liés à l'activité de votre entreprise pour diminuer vos émissions polluantes. \\\nLe plan repose sur :\n\n- Une **analyse des déplacements** (professionnels, domicile-travail...) de vos différents usagers (équipe, clients, fournisseurs...) .\n- L’**élaboration d’un plan d'actions** adaptées aux spécificités de votre site.\n- Une **réorganisation de la structure** (horaires de travail, activités du site, structuration du territoire) **en faveur des modes de transport plus durables** et de la diminution des émissions de gaz à effet de serre.\n\nAinsi, vous pouvez par exemple, adopter une politique de télétravail, installer des équipements pour encourager vos collaborateurs à se déplacer en vélo, favoriser les transports non polluants, revoir votre plan logistique pour optimiser les livraisons…\n\nPour garantir son succès, le plan de mobilité nécessite l'implication de la direction, une communication régulière avec les usagers et une évaluation à 2-3 ans pour ajuster les actions en fonction de l'impact observé sur les comportements et les modes de transport utilisés.",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur le plan d'action mobilité ?",
     "moreDescription": "- [**Plan de mobilité employeur**](https://entreprendre.service-public.fr/vosdroits/F38002) : Quels objectifs ? Qui est concerné ? Par Entreprendre.Service-Public.fr\n- [**Changer de mobilité dans le cadre de ses trajets domicile-travail**,](https://agirpourlatransition.ademe.fr/particuliers/bureau/deplacements/trajets-domicile-travail-aussi-optez-mobilite-plus-durable) témoignages d'employés ayant fait le choix de mobilités actives.\n- [**Centre de ressources mobilité durable employeur**](https://employeursprocovoiturage.ademe.fr/centre-de-ressources-mobilite-durable-employeur/), des fiches pratiques pour réaliser un plan de mobilité en autonomie.\n- [**La mobilité de demain**](https://archives.qqf.fr/infographie/60/la-mobilite-de-demain), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.",
     "themes": [
@@ -1283,24 +1287,27 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "bonus-ecologique",
       "fonds-tourisme-durable",
       "pret-action-climat",
+      "prime-a-la-conversion",
       "tremplin",
       "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-vert-ademe",
       "aide-financement-occitanie",
       "sud-pret-climat",
+      "cheque-transition-bioethanol",
       "recharge-vehicule-electrique",
       "pret-tourisme",
       "deploiement-flottes-hydrogene",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
       "impulsion-environnement",
       "aide-tourisme-guadeloupe",
       "je-change-ma-voiture",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       16
@@ -1348,6 +1355,7 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "bonus-ecologique",
       "flotte-de-velos-a-disposition",
       "fonds-tourisme-durable",
       "pret-action-climat",
@@ -1404,7 +1412,7 @@
     "shortDescription": "Il met en évidence vos postes de consommation d'eau les plus importants et les pistes de solutions.",
     "image": "/images/projet/plan-action-eau.webp",
     "titleLongDescription": "🤝 Qu’est-ce qu'un plan d'action eau ?",
-    "longDescription": "Raréfaction de l'eau, restriction des consommations, augmentation des coûts : **maîtriser sa consommation d’eau est un enjeu essentiel** pour les entreprises.\n\nComment agir au sein de votre entreprise pour poursuivre votre activité et faire des économies d’eau ?\n\n**Faites-vous accompagner** par un expert, et réalisez un diagnostic global de vos flux (énergie, déchets, eau...) ou une étude ciblée de votre consommation d'eau.",
+    "longDescription": "Un Plan d’action eau est une démarche visant à **structurer et optimiser la consommation d’eau au sein de l’entreprise**, en réponse à la raréfaction de l'eau, la restriction des consommations et l’augmentation des coûts énergétiques.\n\nL’accompagnement d’un expert ou une étude ciblée vous permet :\n\n- De réaliser un **diagnostic global de vos flux** (énergie, déchets, eau...).\n- D’établir un **plan d’action eau spécifique** à votre entreprise.\n- De mettre en place les **premières actions** afin de réduire votre consommation d’eau à tous les niveaux (bâtiment, production, équipes…).\n- De **mesurer les économies réalisées** et d’ajuster le plan d’action en fonction\n\nAinsi, vous réduisez votre consommation d’eau en évitant le gâchis (surconsommation d’appareils inadaptés, fuites), vous vous mettez en conformité avec la réglementation et vous contribuez à l’effort environnemental à l’échelle de votre entreprise.",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur le plan d'action eau ?",
     "moreDescription": "- [**Eau secours, demain tous à sec**](https://www.qqf.fr/infographie/eau-secours-demain-tous-a-sec/), une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**10 conseils aux entreprises pour une sobriété en eau**](https://www.cci.fr/actualites/10-conseils-aux-entreprises-pour-une-sobriete-en-eau). Une fiche conseil proposée par la CCI, Chambre de Commerce et d’Industrie.",
     "themes": [
@@ -1494,7 +1502,7 @@
     "shortDescription": "Améliorer la gestion de vos flux de déchets et limiter vos pertes de matières.",
     "image": "/images/projet/plan-action-dechets.webp",
     "titleLongDescription": "🤝 Qu’est-ce qu'un plan d'action déchets ?",
-    "longDescription": "Un diagnostic déchets est un excellent point de départ pour évaluer la production et gestion des déchets de votre entreprise et identifier un plan d’action pour les réduire à la source.\n\nVous pouvez vous faire accompagner par un expert pour faire le point sur vos usages, définir des objectifs de réduction et de gestion des déchets, et construire un plan d’action pour atteindre ces objectifs. Ce plan d'action est l'étape préalable indispensable à la mise en place d'un projet, pouvant aboutir à des études plus précises ou des investissements.",
+    "longDescription": "Un plan d’action déchets est une démarche visant à **évaluer la production et la gestion des déchets** au sein de votre entreprise et à identifier des pistes d’action pour les réduire.\n\nFaites-vous accompagner par un expert pour :\n\n- Faire le point sur vos **usages des déchets en interne**.\n- Définissez des **objectifs de réduction des déchets** en fonction du type auquel ils appartiennent (inerte, dangereux, recyclables, biodéchets...).\n- Construisez un **plan d’action** pour atteindre ces objectifs.\n- Mettez en place des **investissements** ou une **restructuration des pratiques** visant à **diminuer les déchets à la source**, à **améliorer le tri** et à **favoriser le réemploi**.\n\nVous pouvez également accompagner ce plan d’action déchets d’une étude ciblée visant à réduire la quantité d’emballages utilisés et produits, ainsi que les matières premières produites par votre entreprise.",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur le plan d'action déchets ?",
     "moreDescription": "- [**Comment diminuer vos déchets plastiques** ](https://agirpourlatransition.ademe.fr/particuliers/maison/dechets/comment-diminuer-dechets-plastiques)**?** Tour d’horizon pour changer la donne.\n- [**Gestion des déchets de l'entreprise : ce qui doit être mis en place**](https://entreprendre.service-public.fr/vosdroits/F37825), par Entreprendre.Service-Public.fr.",
     "themes": [
@@ -1514,7 +1522,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "aide-tpe-transition-na",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "easy-diag"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action déchets",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action déchets",
@@ -1824,10 +1833,10 @@
     "slug": "sensibilisation-equipes",
     "title": "Sensibilisation des équipes",
     "nameTag": "👫 sensibilisation",
-    "shortDescription": "Sensibiliser votre équipe sur les enjeux environnementaux de votre activité et sur les éco-gestes à mettre en place au quotidien.",
+    "shortDescription": "Sensibiliser votre équipe sur les enjeux environnementaux de votre activité.",
     "image": "/images/projet/sensibilisation-equipes.webp",
     "titleLongDescription": "🤝 Qu’est-ce qu'une campagne de sensibilisation des équipes ?",
-    "longDescription": "La sensibilisation à l'environnement en entreprise est indispensable pour une mobilisation globale face aux défis climatiques. Cela peut se traduire par des ateliers collaboratifs et formations sur une thématique environnementale, des retours d'apprentissage d'autres entreprises, ou des défis à relever sous la forme d'un jeu en équipe.\n\nLa participation active des équipes est clé pour que chacun se sente connecté aux objectifs durables de l'entreprise et motivé pour faire évoluer ses pratiques.",
+    "longDescription": "Une campagne de sensibilisation des équipes est un moyen d’**impliquer vos collaborateurs** face aux défis climatiques, de **les sensibiliser** et de **les former** sur des pratiques liées au **tri des déchets** sur leur lieu de travail, aux **économies d’énergie** et à une **mobilité plus responsable**.\n\nLa sensibilisation peut se traduire par :\n\n- Des ateliers collaboratifs.\n- Des formations sur une thématique environnementale.\n- Des retours d'apprentissage d'autres entreprises.\n- Des défis à relever sous la forme d'un jeu en équipe, etc.\n\nAinsi, vos équipes se sentent en phase avec les objectifs durables de l'entreprise et motivées pour faire évoluer leurs pratiques. Elles acquièrent également un ensemble de gestes dont elles peuvent se faire l’ambassadeur, y compris à l’extérieur de l’entreprise.",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur la sensibilisation des équipes ?",
     "moreDescription": "- [**Écoresponsable au bureau**](https://www.ecologie.gouv.fr/sites/default/files/documents/ecoresponsable_au_bureau-2.pdf), un guide de bonnes pratiques proposé par l'ADEME.\n- [**Sensibilisation aux écogestes,**](https://www.economie.gouv.fr/mission-innovation/les-actions-vertes/sensibilisation-aux-ecogestes) par l'équipe du BercyLab.",
     "themes": [
@@ -1845,7 +1854,6 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "mobilipro",
       "diag-biodiversite",
       "impact-co2",
       "booster-transformation-rev-3",
@@ -1854,6 +1862,7 @@
       "outils-pour-adaptation",
       "eco-diagnostic-commerce",
       "diag-performance",
+      "easy-diag",
       "formations-atlas",
       "formations-afdas",
       "formations-opcommerce",
@@ -1862,7 +1871,10 @@
       "formations-ep",
       "formations-sante",
       "formations-uniformation",
-      "formations-mobilite"
+      "formations-mobilite",
+      "expert-atlas",
+      "diag-accompagnement-tee-rh",
+      "diagnostic-rh"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
@@ -1948,7 +1960,9 @@
       "pret-ile-de-france",
       "aide-tpe-transition-na",
       "eco-diagnostic-commerce",
-      "diag-performance"
+      "diag-performance",
+      "easy-diag",
+      "diag-accompagnement-tee-rh"
     ],
     "linkedProjects": [
       30
@@ -1990,7 +2004,7 @@
     "shortDescription": "Réaliser des formations vous permet de monter en compétence sur des sujets de transition écologique.",
     "image": "/images/projet/formation.webp",
     "titleLongDescription": "🤝 Qu’est-ce qu'une formation environnement ?",
-    "longDescription": "Les formations peuvent permettre de faire monter en compétence les membres de votre équipe et d'adapter vos pratiques professionnelles aux exigences environnementales.\\\nLes opérateurs publics proposent un vaste choix de formations gratuites sur les thématiques de la transition écologique et énergétique. \\\nElles peuvent prendre la forme de formations encadrées en présentiel ou à distance pour s'adapter aux besoins et aux contraintes des apprenants (classe virtuelle en temps réel, e-learning en autonomie…).",
+    "longDescription": "Une formation environnement est une **montée en compétence des membres de votre équipe** vis à vis des exigences environnementales et de la transition écologique en entreprise.\n\nLes opérateurs publics proposent un **vaste choix de formations gratuites ou partiellement prises en charge** sur les thématiques de la transition écologique et énergétique.\n\nCes formations peuvent porter, par exemple sur :\n\n- La mise en place d’une démarche RSE\n- Comment agir sur l’empreinte carbone de son entreprise ?\n- L’élaboration d’un plan d’action déchets, eau, mobilités…\n- Quels décrets environnementaux en cours dans un secteur d’activité et comment y répondre ?\n- Etc.\n\nLes formations environnement peuvent prendre la forme de **formations encadrées en présentiel ou à distance**, **individuelles ou collectives**, pour s'adapter aux besoins et aux contraintes des apprenants (classe virtuelle en temps réel, e-learning en autonomie …).",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur les formations environnement ?",
     "moreDescription": "- [**Formation \"Climat : Tout comprendre, agir ensemble !\"**](https://librairie.ademe.fr/changement-climatique/6999-formation-climat-tout-comprendre-agir-ensemble-version-initiation.html) - version initiation, par l'ADEME.\n- [**Portail des Formations Environnement**](https://formations.ademe.fr/accueil.html) de l'ADEME.\n- [**Le catalogue des Formations sur la transition écologique et les enjeux RSE**](https://www.bpifrance-universite.fr/catalogue/recherche?t[]=37&t[]=38), par Bpifrance.",
     "themes": [
@@ -2019,6 +2033,7 @@
       "formation-convaincre-et-argumenter",
       "formation-communiquer-et-sensibiliser",
       "outils-pour-adaptation",
+      "easy-diag",
       "formations-atlas",
       "formations-afdas",
       "formations-opcommerce",
@@ -2027,7 +2042,10 @@
       "formations-ep",
       "formations-sante",
       "formations-uniformation",
-      "formations-mobilite"
+      "formations-mobilite",
+      "expert-atlas",
+      "diag-accompagnement-tee-rh",
+      "diagnostic-rh"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une formation environnement",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre formation environnement",
@@ -2148,7 +2166,7 @@
     "shortDescription": "Impliquer votre équipe dans une démarche RSE pour renforcer l’impact environnemental et sociétal de votre entreprise.",
     "image": "/images/projet/strategie-rse.webp",
     "titleLongDescription": "🤝 Qu’est-ce qu'une stratégie RSE ?",
-    "longDescription": "La RSE (Responsabilité sociétale des entreprises) se définit comme la responsabilité des entreprises vis-à-vis des effets qu'elles exercent sur la société, sur trois plans principaux : environnemental, social et économique.\n\nEngager vos salariés autour d’une stratégie RSE permet de leur faire prendre conscience des enjeux et de changer les comportements, notamment en matière de transition écologique et de développement durable.\n\nGrâce à des expertises et l’élaboration d’un plan d’action, ou la formation de vos salariés, vous placez l’engagement et les valeurs environnementales au cœur de la culture de votre entreprise.",
+    "longDescription": "La RSE (Responsabilité sociétale des entreprises) se définit comme la responsabilité des entreprises vis-à-vis des effets qu'elles exercent sur la société, sur trois plans d’action :\n\n- **Le plan environnemental**, qui a pour objectif la mise en place de la transition écologique de l’entreprise, la réduction de son empreinte carbone et des impacts qu’elle a sur les ressources et l’environnement.\n- **Le plan social**, qui s’intéresse au bien-être des collaborateurs et à l’instauration de conditions de travail équitables pour les équipes comme pour les fournisseurs.\n- **Le plan économique**, qui englobe les questions de stratégie managériale, d’efficacité et de réduction des coûts, dans le but de favoriser la stabilité économique de l’entreprise.\n\nSi l’élaboration d’une stratégie RSE ne constitue pas une obligation légale, elle est néanmoins une **démarche vertueuse** qui permet à vos équipes de permet de prendre conscience des enjeux et de changer les comportements, notamment en matière de transition écologique et de développement durable.\n\nGrâce à l’établissement d’un diagnostic appuyé par un expert, vous dresserez **un bilan de votre entreprise** dans les différents domaines de la RSE, vous mettrez en évidence **ses axes d’amélioration** et élaborerez **une feuille de route personnalisée** qui vous permettra d’implémenter les premières actions concrètes.",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur la stratégie RSE ?",
     "moreDescription": "- [**Qu'est-ce que la RSE ?**](https://www.ecologie.gouv.fr/responsabilite-societale-des-entreprises) Cette page détaille le cadre réglementaire de la responsabilité sociétale des entreprises.\n- [**Le portail RSE**](https://portail-rse.beta.gouv.fr/)**.** Un portail unique pour comprendre à quelles règlementations votre entreprise est soumise, et piloter vos obligations depuis un tableau de bord.",
     "themes": [
@@ -2174,7 +2192,10 @@
       "aide-tourisme-guadeloupe",
       "diag-impact-biodiversite",
       "booster-transformation-rev-3",
-      "accelerateur-des-possibles"
+      "easy-diag",
+      "accelerateur-des-possibles",
+      "expert-atlas",
+      "diagnostic-rh"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
@@ -2246,7 +2267,7 @@
     "nameTag": "🔎️ diagnostic 360°",
     "shortDescription": "Réaliser un diagnostic de votre entreprise au prisme de l’environnement.",
     "image": "/images/projet/diag-360.webp",
-    "longDescription": "Un diagnostic à 360° est une étape clé pour initier la transition écologique de votre entreprise. Il offre un état des lieux complet, couvrant des domaines tels que l’économie d’énergie, l’isolation des locaux, les consommations d’eau, la gestion des déchets, les matières premières, les achats, la mobilité, etc. Cette analyse permet d’évaluer l’impact environnemental de votre activité et d’identifier les enjeux prioritaires spécifiques à votre entreprise. À l'issue du diagnostic, vous bénéficiez de conseils et propositions d'actions concrètes pour amorcer le changement, ainsi qu'un plan d’action à moyen et long terme pour transformer durablement votre entreprise. Un expert peut également vous accompagner dans la recherche de subventions afin de concrétiser ce plan d'action.",
+    "longDescription": "Un diagnostic à 360° est une étape clé pour initier la transition écologique de votre entreprise. Il offre un état des lieux complet, couvrant des domaines tels que :\n\n- les économies d’énergie,\n- l’isolation des locaux,\n- les consommations d’eau,\n- la gestion des déchets,\n- les matières premières,\n- les achats,\n- la mobilité, etc.\\\n  \\\n  Cette analyse permet d’**évaluer l’impact environnemental** de votre activité et d’**identifier les enjeux prioritaires** spécifiques à votre entreprise. À l'issue du diagnostic, vous bénéficiez de conseils et propositions d'actions concrètes pour amorcer le changement, ainsi qu'un **plan d’action à moyen et long terme** pour transformer durablement votre entreprise. Un expert peut également vous accompagner dans la **recherche de subventions** afin de concrétiser ce plan d'action.",
     "moreDescription": "- [**Les témoignages d'accompagnement à la transition écologique et énergétique des entreprises**](https://www.entreprises.cci-paris-idf.fr/web/transition-ecologique/temoignages-clients), par la CCI\n- [**Les modèles d'affaires à l'aune de la sobriété,**](https://www.cci-paris-idf.fr/fr/prospective/sobriete-modeles-affaires) une étude de la CCI sur les implications de la sobriété sur le modèle d’affaires des entreprises.",
     "themes": [
       "environmental"
@@ -2254,6 +2275,7 @@
     "mainTheme": "environmental",
     "programs": [
       "diagnostic-changement-climatique",
+      "diagnostic-transition-ecologique",
       "fonds-tourisme-durable",
       "diag-eco-flux",
       "formation-artisan-developpement-durable",
@@ -2271,7 +2293,8 @@
       "prit-hdf",
       "camping-independant-bfc",
       "indicateur-climat",
-      "diag-performance"
+      "diag-performance",
+      "easy-diag"
     ],
     "linkedProjects": [],
     "priority": {
@@ -2341,7 +2364,8 @@
       "booster-transformation-rev-3",
       "act-evaluation",
       "indicateur-climat",
-      "cap-decarbonation"
+      "cap-decarbonation",
+      "demi-bac"
     ],
     "linkedProjects": [
       1
@@ -2385,9 +2409,9 @@
     "shortDescription": "Adapter la stratégie et les actions de votre entreprise pour faire face aux évolutions du climat.",
     "image": "/images/projet/plan-adaptation-climat.webp",
     "titleLongDescription": "🤝 Qu’est-ce qu'un plan d'adaptation climat ?",
-    "longDescription": "**Le plan d’adaptation au dérèglement climatique** est un accompagnement destiné à **évaluer la vulnérabilité** de votre entreprise face aux aléas climatiques déjà à l’œuvre : canicules, sécheresses, inondations, tempêtes, tensions sur les ressources…\n\nCet accompagnement vous aide à **bâtir une stratégie de résilience** adaptée à vos activités, à votre territoire et à vos contraintes opérationnelles. Vous identifiez les risques, prévenez les ruptures d’activité, sécurisez les conditions de travail, et **anticipez les coûts économiques et sociaux** liés aux perturbations climatiques.\n\nDans un contexte où les événements extrêmes se multiplient, adapter son entreprise n’est plus une option mais une nécessité.\n\n**L’adaptation vise à limiter les effets du changement climatique déjà en cours. Elle est complémentaire des actions d’atténuation**, qui visent à en réduire les causes (notamment les émissions de gaz à effet de serre). Ces deux démarches doivent être pensées ensemble pour une stratégie climatique cohérente et durable.",
+    "longDescription": "Le plan d’adaptation au dérèglement climatique est un accompagnement destiné à évaluer la **vulnérabilité de votre entreprise face aux aléas climatiques** déjà à l’œuvre : canicules, sécheresses, inondations, tempêtes, tensions sur les ressources…\n\nCet accompagnement vous aide à **bâtir une stratégie de résilience** adaptée à vos activités, à votre territoire et à vos contraintes opérationnelles. Ainsi, vous :\n\n- **Identifiez les risques**.\n- **Prévenez les ruptures d’activité**.\n- **Sécurisez les conditions de travail**.\n- **Anticipez les coûts économiques et sociaux** liés aux perturbations climatiques.\n\nDans un contexte où les événements extrêmes se multiplient, adapter son entreprise n’est plus une option mais une nécessité.\n\n**L’adaptation vise à limiter les effets du changement climatique déjà en cours. Elle est complémentaire des actions d’atténuation**, qui visent à en réduire les causes (notamment les émissions de gaz à effet de serre). Ces deux démarches doivent être pensées ensemble pour une stratégie climatique cohérente et durable.",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur le plan d'adaptation climat ?",
-    "moreDescription": "- [**Adaptation des entreprises au changement climatique : Agir maintenant !**](https://www.cci-paris-idf.fr/sites/default/files/2025-03/CCI_Adaptation-au-changement-climatique_fev-2025.pdf) Une étude des CCI de France.\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.\n- [**Canicule et santé au travail : prévenir les risques, protéger les équipes**](https://www.anact.fr/canicule-travail-prevention-risques)**,** tour d'horizon et conseils pratiques de l'ANACT",
+    "moreDescription": "- [**Stratégie d'adaptation au changement climatique pour les entreprises**](https://agirpourlatransition.ademe.fr/entreprises/conseils/transverse/strategie/adaptation-climatique), les conseils de l'ADEME pour agir.\n- [**Adaptation des entreprises au changement climatique : Agir maintenant !**](https://www.cci-paris-idf.fr/sites/default/files/2025-03/CCI_Adaptation-au-changement-climatique_fev-2025.pdf) Une étude des CCI de France.\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.\n- [**Canicule et santé au travail : prévenir les risques, protéger les équipes**](https://www.anact.fr/canicule-travail-prevention-risques)**,** tour d'horizon et conseils pratiques de l'ANACT",
     "themes": [
       "environmental"
     ],
@@ -2503,6 +2527,7 @@
       "cedre-premier-pas",
       "sud-pret-climat",
       "entreprises-engagees-nature",
+      "audit-clef-verte-sud",
       "pret-energie-aura",
       "pret-ile-de-france",
       "cap-transition-ecologique",
@@ -2551,7 +2576,7 @@
     "shortDescription": "Réduire les impacts de votre produit ou service à toutes les étapes de son cycle de vie.",
     "image": "/images/projet/ecoconception.webp",
     "titleLongDescription": "🤝 Qu’est-ce que l'écoconception ?",
-    "longDescription": "La démarche d'écoconception (ou conception écologique) est une approche de développement des produits et services respectueuse de l'environnement.\n\nElle consiste à analyser l'ensemble du cycle de vie d'un produit ou d'un service pour identifier comment diminuer son impact environnemental : extraction des matières premières, fabrication, utilisation, rejet dans les milieux naturels en fin de vie, etc.\n\nUne approche d'écoconception est nécessaire pour se questionner sur la fin de vie de vos produits et réorienter judicieusement vos choix de conception. Cela peut passer par exemple par un choix de matières premières plus robustes pour allonger la durée de vie de vos produits, anticiper la réparation ou la revalorisation des matières.\n\nIl s'agit d'une démarche encouragée par la loi anti-gaspillage pour une économie circulaire (AGEC) pour permettre aux entreprises de faire évoluer leur modèle de production.",
+    "longDescription": "La démarche d'écoconception (ou conception écologique) est une **approche de développement des produits et services respectueuse de l'environnement**.\n\nElle consiste à :\n\n- Analyser l'ensemble du **cycle de vie** d'un produit ou d'un service\n- Identifier comment **diminuer son impact environnemental** (extraction des matières premières, fabrication, utilisation, etc.)\n- Se questionner sur la **fin de vie de vos produits** (rejets dans les milieux naturels en fin de vie, réutilisation des matières premières, recyclage)\n- Réorienter judicieusement vos **choix de conception** afin de diminuer l’impact environnemental. Cela peut passer par exemple par un **choix de matières premières plus robustes** pour allonger la durée de vie de vos produits, **anticiper la réparation** ou la **revalorisation des matières**.\n\nIl s'agit d'une démarche encouragée par la loi anti-gaspillage pour une économie circulaire (AGEC) pour permettre aux entreprises de faire évoluer leur modèle de production.",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur l'écoconception ?",
     "moreDescription": "- [**Comment mettre en pratique l’écoconception en entreprise**](https://economie-circulaire.ademe.fr/ecoconception), une page ressource proposée par l’ADEME.\n- [**Les lignes directrices à suivre pour la réalisation d’un diagnostic d’éco-conception**](https://librairie.ademe.fr/dechets-economie-circulaire/4169-lignes-directrices-diagnostic-ecoconception.html)**.**\n- [**Analyse du cycle de vie**](https://bigmedia.bpifrance.fr/nos-dossiers/analyse-du-cycle-de-vie-definition-objectifs-etapes-de-realisation) : définition, objectifs, étapes de réalisation.\n- [**Valorisez votre démarche d'écoconception avec l'Écolabel européen**](https://agirpourlatransition.ademe.fr/entreprises/ecoconception/affichez-difference-lecolabel-europeen)**.**",
     "themes": [
@@ -2855,7 +2880,6 @@
       "fonds-tourisme-durable",
       "cedre-investissement",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
       "cap-transition-ecologique",
@@ -2866,7 +2890,8 @@
       "camping-independant-na",
       "prit-hdf",
       "aide-tourisme-guadeloupe",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -2944,7 +2969,6 @@
       "fonds-tourisme-durable",
       "cedre-investissement",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
       "cap-transition-ecologique",
@@ -2952,7 +2976,8 @@
       "agir-pdl",
       "hotellerie-independante-na",
       "camping-independant-na",
-      "prit-hdf"
+      "prit-hdf",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -3105,7 +3130,6 @@
       "fonds-tourisme-durable",
       "cedre-investissement",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "aide-travaux-tourisme-aura",
       "pret-energie-aura",
       "pass-transition-bzh",
@@ -3114,7 +3138,8 @@
       "soutien-hebergement-touristique",
       "agir-pdl",
       "prit-hdf",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       14,
@@ -3214,7 +3239,7 @@
     "nameTag": "🦋 biodiversité",
     "shortDescription": "Comprendre et minimiser les impacts de l'activité de votre entreprise sur la faune et la flore.",
     "image": "/images/projet/biodiversite.webp",
-    "longDescription": "La Stratégie nationale biodiversité 2030 promeut les initiatives pour faire progresser la prise en compte de la biodiversité dans les stratégies des entreprises. Il s'agit à la fois de minimiser l'impact des entreprises sur les écosystèmes et de renforcer la résilience de leur activité au changement climatique. \\\nLa préservation ou la restauration d'espèces en danger, de faune et de flore, réduire les pollutions, ramener de la nature en ville... sont autant de propositions qui visent à renforcer les liens avec les écosystèmes.",
+    "longDescription": "La Stratégie nationale biodiversité 2030 promeut les initiatives pour faire progresser la prise en compte de la biodiversité dans les stratégies des entreprises. \\\nIl s'agit tout à la fois de :\n\n- Minimiser l'**impact des entreprises** sur les écosystèmes.\n- Renforcer la **résilience de leur activité** au changement climatique.\n- Préserver ou restaurer des **espèces en danger**, de faune et de flore.\n- Réduire les **pollutions**.\n- Ramener de la **nature en ville**.",
     "moreDescription": "- [**Entreprises engagées pour la nature** **de l'OFB**](https://biodiversite.gouv.fr/sites/default/files/2024-03/OFB_GUIDE_EEN_2023.pdf), un guide gouvernemental.\n- [**9 mesures de la Stratégie nationale biodiversité 2030**](https://biodiversite.gouv.fr/les-mesures-de-la-snb?field_target%5B196%5D=196&op=) pour les entreprises.\n- [**Le Kit biodiversité**](https://secure.webpublication.fr/534282/.Bpifrance-kit-biodiversit%C3%A9/) un guide pour mettre de la biodiversité partout (notamment les PME/ETI)",
     "themes": [
       "biodiversite"
@@ -3239,7 +3264,8 @@
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
       "diag-impact-biodiversite",
-      "diag-biodiversite"
+      "diag-biodiversite",
+      "easy-diag"
     ],
     "linkedProjects": [],
     "priority": {
@@ -3296,7 +3322,6 @@
       "visite-energie",
       "cedre-investissement",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
@@ -3308,7 +3333,8 @@
       "camping-independant-na",
       "prit-hdf",
       "aide-tourisme-guadeloupe",
-      "deter-decarboner-le-tertiaire"
+      "deter-decarboner-le-tertiaire",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4,
@@ -3518,7 +3544,8 @@
       "ecogestes-paca",
       "formation-convaincre-et-argumenter",
       "formation-communiquer-et-sensibiliser",
-      "outils-pour-adaptation"
+      "outils-pour-adaptation",
+      "easy-diag"
     ],
     "linkedProjects": [
       26
@@ -3550,11 +3577,11 @@
     "programs": [
       "bonus-reparation",
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "perf-crise-energetique-cvl"
+      "perf-crise-energetique-cvl",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       4
@@ -3592,10 +3619,10 @@
     "mainTheme": "building",
     "programs": [
       "sud-pret-climat",
-      "cheque-vert-grand-est",
       "pret-energie-aura",
       "pret-ile-de-france",
-      "perf-crise-energetique-cvl"
+      "perf-crise-energetique-cvl",
+      "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
       33
@@ -3644,7 +3671,10 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "bonus-ecologique",
+      "prime-a-la-conversion",
       "programme-eve",
+      "cheque-transition-bioethanol",
       "deploiement-flottes-hydrogene",
       "pass-transition-bzh",
       "certificats-economie-energie"
@@ -3735,10 +3765,12 @@
     ],
     "mainTheme": "energy",
     "programs": [
+      "audit-energetique-en-industrie",
       "pacte-industrie",
       "mission-strategie-environnement",
       "pret-economies-d-energie-pee",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "demi-bac"
     ],
     "linkedProjects": [
       4
@@ -3830,7 +3862,7 @@
     "shortDescription": "Le couvert végétal prévient la pollution et améliore la fertilité des terres agricoles.",
     "image": "/images/projet/couvert-vegetal.webp",
     "longDescription": "Le **couvert végétal**, aussi appelé plante de couverture, est une pratique d’**agriculture durable** qui protège et régénère vos sols. En grandes cultures, il prend souvent la forme de **couverts intermédiaires**, semés entre deux productions principales.\n\nAdopter le couvert végétal sur votre **exploitation agricole**, c’est profiter d’avantages concrets :\n\n- réduction des adventices et meilleure maîtrise des intrants,\n\n- limitation des pertes d’**engrais** et de la **pollution diffuse**,\n\n- enrichissement du sol grâce à la fixation d’**azote** par les légumineuses,\n\n- développement de la **biodiversité fonctionnelle**,\n\n- sol plus fertile avec une meilleure **rétention d’eau**.\n\nEn France, la surface en couverts est passée à 2,9 millions d’hectares en 2022. L’objectif fixé est 4,8 millions d’ici 2030, soit une progression de 65 %.",
-    "moreDescription": "- [**Les principales étapes pour réussir vos couverts végétaux et les valoriser**](https://landes.chambres-agriculture.fr/sinformer/produire-innover/productions-vegetales/couverts-vegetaux)**,** par la Chambre d’agriculture des Landes.\n- [**L'agroforesterie, un enjeu pour les paysages agricoles**](https://infos.ademe.fr/agriculture-alimentation/2025/agroforesterie-redonner-de-la-valeur-a-larbre-pour-transformer-nos-paysages-agricoles/), par l'ADEME.",
+    "moreDescription": "- [**Les principales étapes pour réussir vos couverts végétaux et les valoriser**](https://landes.chambres-agriculture.fr/sinformer/produire-innover/productions-vegetales/couverts-vegetaux)**,** par la Chambre d’agriculture.\n- [**L'agroforesterie, un enjeu pour les paysages agricoles**](https://infos.ademe.fr/agriculture-alimentation/2025/agroforesterie-redonner-de-la-valeur-a-larbre-pour-transformer-nos-paysages-agricoles/), par l'ADEME.",
     "themes": [
       "biodiversite",
       "water"
@@ -3874,7 +3906,8 @@
       "pret-vert",
       "pret-vert-ademe",
       "aide-financement-occitanie",
-      "certification-agriculture-biologique"
+      "certification-agriculture-biologique",
+      "e-trans"
     ],
     "linkedProjects": [],
     "priority": {
@@ -3939,7 +3972,7 @@
     "nameTag": "🔃 réemploi",
     "shortDescription": "Réutiliser des matériaux dans le bâtiment permet de réduire les déchets et de préserver les ressources.",
     "image": "/images/projet/materiaux-de-reemploi.webp",
-    "longDescription": "Le réemploi dans la rénovation consiste à réutiliser des matériaux et équipements issus de la déconstruction ou de la rénovation de bâtiments. Briques, tuiles, carrelage, parquets, cloisons, sanitaires, mobilier, menuiseries, robinetterie, luminaires… Tous ces éléments peuvent être récupérés et intégrés à un nouveau projet, évitant ainsi la production de déchets de chantier, tout en limitant les émissions de CO₂ liées à l’extraction et à la fabrication de nouveaux matériaux.\n\nAu-delà de son impact environnemental positif, le réemploi permet de réduire significativement les coûts d’achat des matériaux. Pour s’approvisionner en matériaux de réemploi, il existe aujourd’hui des plateformes spécialisées qui collectent, trient et revendent ces éléments à des prix souvent plus avantageux que le neuf.\n\nEn intégrant le réemploi dans votre projet de rénovation, vous faites le choix d’un aménagement à la fois durable et économique, contribuant efficacement à la transition écologique.",
+    "longDescription": "Le réemploi dans la rénovation consiste à **réutiliser des matériaux et équipements issus de la déconstruction** ou de la rénovation de bâtiments.  \\\nBriques, tuiles, carrelage, parquets, cloisons, sanitaires, mobilier, menuiseries, robinetterie, luminaires… Tous ces éléments peuvent être récupérés, ou achetés sur des plateformes spécialisées à un coup avantageux, et intégrés à un nouveau projet.   \\\nAinsi, vous :\n\n- **Évitez la production de déchets** de chantier.\n- **Limitez les émissions de CO₂** liées à l’extraction et à la fabrication de nouveaux matériaux.\n- **Réduisez** significativement **les coûts d’achat** des matériaux.",
     "moreDescription": "- [**Économie circulaire : comment ça marche ?**](https://librairie.ademe.fr/ged/928/infographie-economie-circulaire-comment-ca-marche.pdf) Une infographie proposée par l'ADEME.\n- [**Réemploi des matériaux et produits de construction dans le bâtiment**](https://www.ffbatiment.fr/techniques-batiment/performance-environnementale-batiments/reduction-carbone/dossier/reemploi-materiaux-produits-construction-dans-batiment), par la Fédération Française du Bâtiment",
     "themes": [
       "building"
@@ -3989,8 +4022,7 @@
     "longDescription": "Issus de matières **végétales ou animales**, de champignons ou encore de bactéries, les produits biosourcés vous permettent de **limiter l'utilisation du pétrole**, une ressource qui se raréfie et qui génère à la fois pollution et émissions de gaz à effet de serre.\n\nDans les secteurs de l'industrie, de la construction ou de l'agriculture, par exemple, utiliser des matières premières biosourcées présente de nombreux attraits :\n\n- il s'agit d'une **ressource renouvelable et locale** qui présente des perspectives d'innovation et de création d'emplois ;\n- les matériaux biosourcés s'inscrivent dans l'**économie circulaire** et offrent un potentiel de revenus supplémentaires pour les producteurs qui peuvent revendre leurs ressources au secteur du bâtiment ou aux sites de transformation ;\n- le cycle de vie des matériaux biosourcés émet une **faible empreinte carbone** ;\n- les matériaux biosourcés ont des **propriétés intéressantes** (thermiques, acoustiques...)\n- l'utilisation de ces matériaux peut vous permettre de **valoriser votre engagement** et d'obtenir des labellisations.",
     "moreDescription": "- [**Tout comprendre : les produits biosourcés**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/7620-tout-comprendre-les-produits-biosources-9791029723506.html#product-presentation), un guide de l'ADEME en dix questions.\n- [**Bilan thématique Bâtiment Bois construction et matériaux biosourcés**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/4651-bilan-thematique-batiment-bois-construction-et-materiaux-biosources-9791029717895.html#product-presentation), du Programme d'investissements d'avenir (PIA).\n- [**Matériaux biosourcés : usages et avantages pour l'éco-construction et les entreprises**](https://bigmedia.bpifrance.fr/nos-dossiers/materiaux-biosources-usages-et-avantages-pour-leco-construction-et-les-entreprises), par Bpifrance.",
     "themes": [
-      "eco-design",
-      "environmental"
+      "eco-design"
     ],
     "mainTheme": "eco-design",
     "programs": [
@@ -4031,6 +4063,7 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "bonus-ecologique",
       "etude-et-investissement-qualite-de-l-air",
       "amelioration-qualite-de-l-air",
       "extreme-defi-mobilite",
@@ -4038,8 +4071,10 @@
       "fond-vert-territoires-d-industrie",
       "investissement-velotourisme",
       "plan-de-mobilite",
+      "prime-a-la-conversion",
       "programme-eve",
       "retrofit-electrique",
+      "cheque-transition-bioethanol",
       "pass-transition-bzh",
       "je-change-ma-voiture",
       "mobilipro",
@@ -4124,12 +4159,10 @@
     "nameTag": "🏗️ friche",
     "shortDescription": "Transformez une friche en opportunité sans consommer de nouveaux terrains naturels ou agricoles.",
     "image": "/images/projet/friche-industrielle.webp",
-    "longDescription": "Vous avez un projet d’activité, mais peu de terrain disponible ? Pensez aux friches ! Ces espaces déjà artificialisés peuvent accueillir des projets d’entreprise (locaux, production, stockage, bureaux, etc.) sans empiéter sur des terres agricoles ou naturelles.\\\nEn réutilisant une friche, vous valorisez un terrain souvent bien situé et vous limitez l’impact environnemental de votre projet. Même si le sol est pollué, des aides existent pour financer les études, la dépollution ou les travaux.\\\nC’est aussi une façon concrète de contribuer à la transition écologique, en réduisant l’artificialisation des sols tout en donnant un nouvel usage à un espace délaissé.",
+    "longDescription": "Vous avez un projet d’activité, mais peu de terrain disponible ? Pensez aux friches !  \\\nCes **espaces déjà artificialisés** peuvent accueillir des projets d’entreprise (locaux, production, stockage, bureaux, etc.) **sans empiéter sur des terres agricoles ou naturelles**. Même si le sol est pollué, des aides existent pour financer les études, la dépollution ou les travaux.  \\\nEn réutilisant une friche, vous :\n\n- Valorisez un **terrain** souvent **bien situé**.\n- Limitez l’**impact environnemental** de votre projet.\n- Réduisez l’**artificialisation des sols**.\n- Donnez un **nouvel usage** à un espace délaissé.",
     "moreDescription": "- [**La reconquête des friches**](https://librairie.ademe.fr/urbanisme-territoires-et-sols/5458-la-reconquete-des-friches-l-ademe-vous-accompagne-9791029719462.html#product-presentation), un guide de l'ADEME pour y parvenir.\n- [**Réhabiliter les friches : opportunités et méthodologie**](https://www.cerema.fr/fr/actualites/rehabiliter-friches-opportunites-methodologie)**,** un dossier thématique Céréma.",
     "themes": [
-      "building",
-      "environmental",
-      "biodiversite"
+      "building"
     ],
     "mainTheme": "building",
     "programs": [
@@ -4254,6 +4287,8 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "diag-ecoconception",
+      "diagnostic-eco-conception-ile-de-france",
       "programme-synergies-durables"
     ],
     "linkedProjects": [],
@@ -4462,6 +4497,13 @@
     },
     "highlightPriority": null,
     "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
       "H"
     ],
     "faqs": []
@@ -4597,7 +4639,8 @@
     "mainTheme": "energy",
     "programs": [
       "pret-economies-d-energie-pee",
-      "decarb-flash-2025-2027"
+      "decarb-flash-2025-2027",
+      "demi-bac"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4641,7 +4684,8 @@
       "investissement-reemploi-reutilisation-reparation",
       "programme-synergies-durables",
       "decarb-flash-2025-2027",
-      "bciat-biomasse-chaleur-industrie-agriculture-tertiaire"
+      "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
+      "demi-bac"
     ],
     "linkedProjects": [
       36
@@ -4903,7 +4947,8 @@
     ],
     "mainTheme": "energy",
     "programs": [
-      "decarb-flash-2025-2027"
+      "decarb-flash-2025-2027",
+      "demi-bac"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [],
@@ -4918,6 +4963,35 @@
       "D",
       "E",
       "F"
+    ],
+    "faqs": []
+  },
+  {
+    "id": 1556,
+    "slug": "machines-agricoles-propres",
+    "title": "Acquisition d'une machine agricole plus propre",
+    "nameTag": "🚜​ machines agricoles propres",
+    "shortDescription": "Une machine agricole est considérée comme \"propre\" si elle émet peu de CO₂ et qu'elle utilise des énergies renouvelables.",
+    "image": "/images/projet/machine-agricole-propre.webp",
+    "longDescription": "13 % des émissions de carbone de l'agriculture sont le fait des moteurs des machines agricoles. Pour **réduire l'empreinte carbone** de votre activité agricole, remplacez vos engins agricoles par des **machines hybrides ou fonctionnant à l'électricité, à l'hydrogène, au gaz**...\\\nAinsi, vous contribuez à l'amélioration de la qualité de l'air et vous **pérennisez votre activité** vis-à-vis des **nouvelles normes environnementales**.",
+    "moreDescription": "- [**Guide méthodologique ClimAgri®**](https://librairie.ademe.fr/agriculture-alimentation-foret-bioeconomie/7812-guide-methodologique-climagriR.html#product-presentation).\n- [**Guide des bonnes pratiques agricoles pour l'amélioration de la qualité de l'air**](https://librairie.ademe.fr/air/8885-10691-guide-des-bonnes-pratiques-agricoles-pour-l-amelioration-de-la-qualite-de-l-air.html#product-presentation), un guide de l'ADEME.",
+    "themes": [
+      "mobility"
+    ],
+    "mainTheme": "mobility",
+    "programs": [
+      "e-trans"
+    ],
+    "descriptionLinkedProjects": "",
+    "linkedProjects": [
+      632
+    ],
+    "priority": {
+      "default": 314
+    },
+    "highlightPriority": null,
+    "sectors": [
+      "A"
     ],
     "faqs": []
   }

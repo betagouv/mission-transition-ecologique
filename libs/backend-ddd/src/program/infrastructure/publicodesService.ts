@@ -7,7 +7,7 @@ import { QuestionnaireData } from '@tee/common'
 import { EligibilityEvaluator } from '../domain/spi'
 
 export class PublicodesService implements EligibilityEvaluator {
-  private static instance: PublicodesService
+  private static _instance: PublicodesService
 
   private readonly _publicodeEngines: Record<string, Engine>
 
@@ -16,11 +16,11 @@ export class PublicodesService implements EligibilityEvaluator {
   }
 
   public static init(programs: ProgramType[]): void {
-    PublicodesService.instance = new PublicodesService(programs)
+    PublicodesService._instance = new PublicodesService(programs)
   }
 
   public static getInstance(): PublicodesService {
-    return PublicodesService.instance
+    return PublicodesService._instance
   }
 
   public evaluate(program: ProgramType, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {

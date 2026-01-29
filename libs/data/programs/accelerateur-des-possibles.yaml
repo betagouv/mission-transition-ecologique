@@ -17,7 +17,7 @@ description: >-
   - Effectuez un retour d’expérience avec l’ensemble des participants
   (avancements, réussites, difficultés et pistes d’action).
 début de validité: 01/01/2025
-fin de validité: 01/12/2026
+fin de validité: 31/03/2026
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: ANACT
 contact question: mailto:m.perrocheau@anact.fr
@@ -49,6 +49,16 @@ conditions d'éligibilité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - 'Pour postuler et participer à ce dispositif, vous devez :'
+    - >-
+      Être engagé·e dans un projet de transition écologique dans lequel vous
+      avez la volonté de faire le lien avec les questions de Qualité de Vie et
+      des Conditions de Travail.
+    - >-
+      Constituer un binôme paritaire avec une représentation direction et une
+      représentation salariés et/ou métier.
+    - Maintenir l’engagement du binôme ou trinôme sur la durée du dispositif.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

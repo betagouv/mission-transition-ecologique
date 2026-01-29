@@ -29,8 +29,7 @@ objectifs:
       trouvez la formation et la session qui vous convient.
     liens:
       - lien: >-
-          https://-
-          <https://www.uniformation.fr/entreprise/formation/offre-de-formations-cles-en-main?combine_text=&session_start_min=&session_start_max=&presence_type=All&offer=All&branch=All&training_theme=99&target_training=All>
+          https://www.uniformation.fr/entreprise/formation/offre-de-formations-cles-en-main?combine_text=&session_start_min=&session_start_max=&presence_type=All&offer=All&branch=46&training_theme=99&target_training=290
         texte: Catalogue de formations
   - description: >-
       Inscrivez-vous à la formation choisie en suivant les modalités indiquées
@@ -50,7 +49,7 @@ conditions d'éligibilité:
   secteur d'activité:
     - >-
       Entreprises des secteurs du champ social, des services aux personnes, de
-      l'insertion, du sport, de l'enseignement et de la formation
+      l'insertion, de l'enseignement et de la formation
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:

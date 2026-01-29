@@ -8,10 +8,10 @@ export class Localisation implements GeoSearch {
 
   constructor() {
     this._cities = communes as Commune[]
-    this._citiesByPostalCode = this.separateCitiesByPostalCode()
+    this._citiesByPostalCode = this._separateCitiesByPostalCode()
   }
 
-  private separateCitiesByPostalCode(): ConvertedCommune[] {
+  private _separateCitiesByPostalCode(): ConvertedCommune[] {
     return this._cities.flatMap((city: Commune) =>
       city.codesPostaux.map((postalCode: string) => ({
         ...city,

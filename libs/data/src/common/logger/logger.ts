@@ -2,14 +2,15 @@ import * as fs from 'fs'
 import { LogEvent, LoggerInterface, LoggerType, LogLevel, LogLevelDisplay } from './types'
 
 export class Logger implements LoggerInterface {
-  private logs: LogEvent[] = []
+  private _logs: LogEvent[] = []
 
   // Configuration centralisée des URLs Baserow
   private static readonly _baserowBaseUri = 'https://baserow.io/database/114839/table/'
   private static readonly _baserowConfig = {
     [LoggerType.Program]: { tableId: '314437', viewId: '539069' },
     [LoggerType.Project]: { tableId: '305253', viewId: '519286' },
-    [LoggerType.Faq]: { tableId: '669314', viewId: '1271291' }
+    [LoggerType.Faq]: { tableId: '669314', viewId: '1271291' },
+    [LoggerType.Operator]: { tableId: '314410', viewId: '539018' }
   }
 
   constructor(
@@ -29,7 +30,7 @@ export class Logger implements LoggerInterface {
   }
 
   log(criticality: LogLevel, message: string, name: string, baserowId: number, data?: unknown, type?: LoggerType): void {
-    this.logs.push({ name, baserowId, criticality, message, data, type })
+    this._logs.push({ name, baserowId, criticality, message, data, type })
     if (this._consoleLog) {
       console.log({ name, baserowId, criticality, message, data, type })
     }
@@ -50,20 +51,12 @@ export class Logger implements LoggerInterface {
   }
 
   private _sortLogs(): LogEvent[] {
-    return this.logs.sort((a, b) => {
-      if (a.criticality === LogLevel.Info && b.criticality !== LogLevel.Info) {
-        return 1
+    return this._logs.sort((a, b) => {
+      const criticalityComparison = a.criticality - b.criticality
+      if (criticalityComparison !== 0) {
+        return criticalityComparison
       }
-      if (b.criticality === LogLevel.Info && a.criticality !== LogLevel.Info) {
-        return -1
-      }
-
-      const nameComparison = a.name.localeCompare(b.name)
-      if (nameComparison !== 0) {
-        return nameComparison
-      }
-
-      return a.criticality - b.criticality
+      return a.name.localeCompare(b.name)
     })
   }
 }

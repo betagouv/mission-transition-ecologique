@@ -53,12 +53,12 @@ description longue: >-
 
   - Appui au montage du plan de financement.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
+fin de validité: 31/12/2026
 illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/entreprises/aides-financieres/2025/etudes-prealables-a-construction-dune-installation-methanisation
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-diagnostic-et-daccompagnement-de-projet-dune-installation-de-methanisation?backtosearch=true
 nature de l'aide: étude
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
@@ -67,7 +67,7 @@ objectifs:
       projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener votre étude
@@ -100,8 +100,9 @@ conditions d'éligibilité:
     - >-
       Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
       Loire, Corse, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
-      Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Occitanie,
-      Pays de la Loire
+      Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine,
+      Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française,
+      Saint-Barthélemy, Saint-Martin
   secteur d'activité:
     - Activité agricole ou  industries agro-alimentaires
   nombre d'années d'activité:
@@ -128,11 +129,16 @@ publicodes:
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
       - code NAF niveau 1 . est C
       - code NAF niveau 1 . est D
       - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
       - code NAF niveau 1 . est H
       - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est la gestion des déchets
@@ -153,5 +159,9 @@ publicodes:
       - région = Mayotte
       - région = Normandie
       - région = Nouvelle-Aquitaine
+      - région = Nouvelle-Calédonie
       - région = Occitanie
       - région = Pays de la Loire
+      - région = Polynésie française
+      - région = Saint-Barthélemy
+      - région = Saint-Martin

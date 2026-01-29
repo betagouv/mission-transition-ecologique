@@ -1,8 +1,8 @@
 export default class AddClassOnScroll {
   constructor(
-    private stickyElement?: HTMLElement,
-    private offsetElement?: HTMLElement | null,
-    private className = 'fr-sticky'
+    private _stickyElement?: HTMLElement,
+    private _offsetElement?: HTMLElement | null,
+    private _className = 'fr-sticky'
   ) {}
 
   addEventListenerOnScroll(): void {
@@ -14,11 +14,11 @@ export default class AddClassOnScroll {
   }
 
   handleScroll = (): void => {
-    if (this.stickyElement && this.offsetElement) {
-      if (window.scrollY >= this.offsetElement.offsetTop) {
-        this.stickyElement.classList.add(this.className)
+    if (this._stickyElement && this._offsetElement) {
+      if (window.scrollY >= this._offsetElement.offsetTop) {
+        this._stickyElement.classList.add(this._className)
       } else {
-        this.stickyElement.classList.remove(this.className)
+        this._stickyElement.classList.remove(this._className)
       }
     }
   }

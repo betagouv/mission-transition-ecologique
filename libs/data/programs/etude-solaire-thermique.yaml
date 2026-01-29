@@ -39,12 +39,12 @@ description longue: >-
   - Explorer des solutions pour le financement de l’opération et le montage
   administratif et juridique.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
+fin de validité: 31/12/2026
 illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
 contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etude-faisabilite-dinstallation-solaire-thermique
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-de-faisabilite-dinstallation-solaire-thermique
 nature de l'aide: étude
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
@@ -53,7 +53,7 @@ objectifs:
       projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez un prestataire "Reconnu Garant de l'Environnement" (RGE) ou
@@ -88,10 +88,10 @@ conditions d'éligibilité:
   secteur géographique:
     - >-
       Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
-      Loire, Corse, Grand Est, Guadeloupe, Guyane, Hauts-de-France,
-      Île-de-France, La Réunion, Martinique, Mayotte, Normandie,
-      Nouvelle-Aquitaine, Occitanie, Pays de la Loire, Polynésie française,
-      Provence-Alpes-Côte d'Azur, Saint-Pierre-Et-Miquelon
+      Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
+      Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Occitanie,
+      Pays de la Loire, Polynésie française, Provence-Alpes-Côte d'Azur,
+      Saint-Pierre-Et-Miquelon
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -147,7 +147,6 @@ publicodes:
       - région = Bourgogne-Franche-Comté
       - région = Bretagne
       - région = Centre-Val de Loire
-      - région = Corse
       - région = Grand Est
       - région = Guadeloupe
       - région = Guyane

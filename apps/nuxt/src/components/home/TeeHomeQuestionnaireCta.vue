@@ -1,13 +1,11 @@
 <template>
   <div
-    class="fr-card fr-bg--blue-france--lightness fr-radius-a--1v fr-card--shadow fr-text-center fr-pt-7v"
+    class="fr-card fr-bg--blue-900--lightness fr-radius-a--1v fr-card--shadow fr-text-center fr-pt-7v"
     @click="toQuestionnaire()"
   >
     <div class="fr-card__body">
       <div class="fr-card__content">
-        <h4 class="fr-card__title fr-text--blue-france fr-my-0">
-          Vous ne savez pas<span class="fr-display--block">par où commencer ?</span>
-        </h4>
+        <h4 class="fr-card__title fr-text--blue-900 fr-my-0">Vous ne savez pas<span class="fr-display--block">par où commencer ?</span></h4>
         <p
           class="fr-card__desc fr-text--sm fr-pt-4w fr-pb-2w fr-mt-0"
           v-html="htmlDescription"

@@ -21,21 +21,22 @@ description: >-
   - ainsi que les **investissements pour la valorisation des Sous-Produits
   Animaux**.
 description longue: "Les investissements éligibles sont :\n\n- La création de nouvelles plateformes de compostage ou l’adaptation de plateformes de compostage de déchets verts existantes à l’accueil de déchets alimentaires.\n- Les investissements dans des équipements pour la mise en place d’une collecte par mobilité douce des déchets alimentaires (par vélo, vélo à assistance électrique ou autre équipement similaire). Les dépenses éligibles sont les contenants\_: bioseaux/bacs, surcoût de bennes, vélos et remorques.\n- Les installations ou les ateliers visant à déconditionner des produits (par exemple les biodéchets de la distribution alimentaire et de la restauration).\n- La création de nouvelles plateformes ou l'adaptation d'une installation existante de valorisation des biodéchets, pour recevoir des biodéchets classés Sous-Produits Animaux (SPAN) de catégorie 3 ou 2. L'Ademe soutient également les investissements d’hygiénisation des SPAN, sur une installation dédiée, hors site de compostage ou de méthanisation, dans le cadre d’un schéma de gestion territorial de la matière organique."
-fin de validité: 31/12/2025
+début de validité: 01/01/2024
+fin de validité: 31/12/2026
 illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000716
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000893
 url: >-
-  https://agir.ademe.fr/aides-financieres/2025/gestion-des-biodechets-des-acteurs-economiques
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/gestion-des-biodechets-des-acteurs-economiques
 nature de l'aide: financement
-montant du financement: Jusqu'à 60 % selon la taille de l'entreprise et son territoire
+montant du financement: Jusqu'à 60 % maximum
 objectifs:
   - description: >-
       Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
       projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/sites/default/files/Investissements%20gestion%20biod%C3%A9chets%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
+          https://agirpourlatransition.ademe.fr/sites/default/files/Investissements%20gestion%20biod%C3%A9chets%20acteurs%20%C3%A9co%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
@@ -61,8 +62,7 @@ conditions d'éligibilité:
   secteur géographique:
     - >-
       Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
-      Loire, Corse, Grand Est, Guadeloupe, Guyane, Hauts-de-France,
-      Île-de-France, La Réunion, Martinique, Mayotte, Normandie,
+      Loire, Grand Est, Hauts-de-France, Île-de-France, Martinique, Normandie,
       Nouvelle-Aquitaine, Occitanie, Pays de la Loire, Provence-Alpes-Côte
       d'Azur
   secteur d'activité:
@@ -88,12 +88,22 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est C
       - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est Q
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est la gestion des déchets
@@ -103,15 +113,10 @@ publicodes:
       - région = Bourgogne-Franche-Comté
       - région = Bretagne
       - région = Centre-Val de Loire
-      - région = Corse
       - région = Grand Est
-      - région = Guadeloupe
-      - région = Guyane
       - région = Hauts-de-France
       - région = Île-de-France
-      - région = La Réunion
       - région = Martinique
-      - région = Mayotte
       - région = Normandie
       - région = Nouvelle-Aquitaine
       - région = Occitanie

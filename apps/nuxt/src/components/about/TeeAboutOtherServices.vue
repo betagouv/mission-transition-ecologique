@@ -29,7 +29,7 @@ const cards = [
     logo: '/images/logos/que-faire-de-mes-dechets.jpg',
     logoAlt: 'Logo du site Que faire de mes déchets',
     description: 'Trouvez les adresses près de chez vous pour réduire vos déchets.',
-    link: 'https://www.ecologie.gouv.fr'
+    link: 'https://quefairedemesdechets.ademe.fr/'
   },
   {
     image: '/images/about/Tee_about_other_services_gestesclimat.webp',

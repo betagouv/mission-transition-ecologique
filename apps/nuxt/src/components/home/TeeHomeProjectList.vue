@@ -28,7 +28,7 @@
         :to="{ name: RouteName.CatalogProjects }"
         icon="fr-icon-arrow-right-line"
         icon-right
-        class="fr-border-b--blue-france fr-py-0"
+        class="fr-border-b--blue-900 fr-py-0"
       >
         Voir tous les projets
       </TeeButtonLink>
@@ -44,10 +44,6 @@ import { Theme } from '@/tools/theme'
 import { CompanyData } from '@/tools/companyData'
 import { RouteName } from '@/types'
 
-interface Props {
-  limit: number
-}
-const props = defineProps<Props>()
 await new ProjectManager().getProjects()
 
 onNuxtReady(async () => {
@@ -60,7 +56,10 @@ const { projects, hasError } = storeToRefs(useProjectStore())
 const { hasSpinner } = storeToRefs(useNavigationStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 
+const limit = computed(() => (theme === undefined ? 8 : 9))
+
 const filteredProjects = ProjectFilter.filter(projects, theme)
+
 const sortedProjects = computed(() => {
   if (!filteredProjects.value) {
     return []
@@ -72,8 +71,9 @@ const sortedProjects = computed(() => {
 
   return filteredProjects.value
 })
+
 const projectList = computed(() => {
-  return props.limit ? sortedProjects.value.slice(0, props.limit) : sortedProjects.value
+  return sortedProjects.value.slice(0, limit.value)
 })
 
 const countProjects = computed(() => {

@@ -152,7 +152,7 @@ const isFormNeeded = computed(() => {
 })
 
 const isActivationVisible = computed(() => {
-  if (!currentProgram.value) {
+  if (!currentProgram.value || !Program.isAvailable(currentProgram.value)) {
     return false
   }
   if (!isDataFull.value) {
