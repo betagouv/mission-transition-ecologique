@@ -1,7 +1,10 @@
 <template>
-  <ul class="fr-badges-group">
+  <ul
+    v-if="programType"
+    class="fr-badges-group"
+  >
     <li class="fr-badge fr-badge--info fr-badge--no-icon">
-      {{ currentProgram?.["nature de l'aide"] }}
+      {{ programType }}
     </li>
   </ul>
   <div class="fr-col-justify--left fr-mb-5v">
@@ -17,4 +20,8 @@
 </template>
 <script setup lang="ts">
 const { currentProgram, currentExtProgram } = storeToRefs(useProgramStore())
+
+const programType = computed(() => {
+  return currentProgram.value?.["nature de l'aide"] || currentExtProgram.value?.["nature de l'aide"]
+})
 </script>

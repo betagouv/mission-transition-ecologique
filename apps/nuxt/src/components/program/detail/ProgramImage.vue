@@ -15,16 +15,22 @@ const { currentProgram, currentExtProgram } = storeToRefs(useProgramStore())
 const img = Image.getUrl
 
 const getOperator = computed(() => {
-  if (!currentProgram.value) {
+  const operatorName = currentProgram.value?.['opérateur de contact'] || currentExtProgram.value?.['opérateur de contact']
+  if (!operatorName) {
     return undefined
   }
-  return new Operator().getOneByName(currentProgram.value['opérateur de contact'])
+  return new Operator().getOneByName(operatorName)
 })
 
 const getImage = () => {
   const operator = getOperator.value
+
   return operator?.imagePath
     ? img(operator?.imagePath, { loading: 'lazy' })
-    : img(`/${currentProgram.value?.illustration}`, { height: 320, quality: 70, loading: 'lazy' })
+    : img(`/${currentProgram.value?.illustration || currentExtProgram.value?.illustration || 'images/TEE_ampoule.webp'}`, {
+        height: 320,
+        quality: 70,
+        loading: 'lazy'
+      })
 }
 </script>
