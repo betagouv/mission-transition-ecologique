@@ -1,11 +1,8 @@
 import axios, { AxiosInstance } from 'axios'
 import dotenv from 'dotenv'
-import fs from 'fs'
-import { FileManager } from '../../common/fileManager'
 
 dotenv.config()
 
-const TEMP_FILE_PATH = 'tempProgramData.json'
 const BASE_URL = 'https://prod-r2da-api.ademe-dri.fr/api'
 
 interface AdemeVersion {
@@ -24,7 +21,6 @@ interface AdemeVersionsResponse {
 
 export class TempAdemeApi {
   private readonly _bearerToken: string
-  private readonly _tempAllVersionsPath = 'tempAllProgramData.json'
 
   constructor() {
     this._bearerToken = process.env['ADEME_BEARER_TOKEN'] || ''
@@ -46,11 +42,11 @@ export class TempAdemeApi {
     })
   }
 
-  private async sleep(seconds: number): Promise<void> {
+  private async _sleep(seconds: number): Promise<void> {
     return new Promise((resolve) => setTimeout(resolve, seconds * 1000))
   }
 
-  private async getProgramList(): Promise<AdemeVersion[]> {
+  private async _getProgramList(): Promise<AdemeVersion[]> {
     try {
       const response = await this._axios.get<AdemeVersionsResponse>(`${BASE_URL}/versions?itemsPerPage=1000`) // 649 programs en 10ans. OK pour une solution temporaire.
       return response.data.member || []
@@ -60,7 +56,7 @@ export class TempAdemeApi {
     }
   }
 
-  private async getProgramDetails(programId: string): Promise<unknown | null> {
+  private async _getProgramDetails(programId: string): Promise<unknown | null> {
     try {
       const response = await this._axios.get<unknown>(`${BASE_URL}/versions/${programId}`)
       return response.data
@@ -70,24 +66,16 @@ export class TempAdemeApi {
     }
   }
 
-  async getPrograms(reload = false): Promise<unknown[]> {
-    if (!reload && fs.existsSync(TEMP_FILE_PATH)) {
-      return FileManager.readJson<unknown[]>(TEMP_FILE_PATH)
-    }
-
-    const allVersions = await this.getProgramList()
-
-    fs.writeFileSync(this._tempAllVersionsPath, JSON.stringify(allVersions, null, 2))
-    console.log(`Saved ${allVersions.length} programs (before filtering) to ${this._tempAllVersionsPath}`)
+  async getPrograms(): Promise<unknown[]> {
+    const allVersions = await this._getProgramList()
+    console.log(`Retrieved ${allVersions.length} programs (before filtering)`)
 
     const now = new Date()
     const publicAndActivePrograms = allVersions.filter((version) => {
       const isPublic = version.statut === 'public'
       const dateFin = new Date(version.dateFin)
       const isActive = dateFin > now
-      const cibleProjet = version['cibleProjet'] as Array<{ code: string }> | undefined
-      const isForCompanies = cibleProjet?.some((cible) => cible.code === 'SCA3')
-      return isPublic && isActive && isForCompanies
+      return isPublic && isActive
     })
 
     console.log(`Found ${publicAndActivePrograms.length} public and active programs out of ${allVersions.length} total`)
@@ -95,17 +83,20 @@ export class TempAdemeApi {
     const programDetails: unknown[] = []
     for (const [index, version] of publicAndActivePrograms.entries()) {
       console.log(`Fetching program ${index + 1}/${publicAndActivePrograms.length}: ${version.id}`)
-      const details = await this.getProgramDetails(version.id)
+      const details = await this._getProgramDetails(version.id)
       if (details) {
-        programDetails.push(details)
+        const cibleProjet = (details as Record<string, unknown>)['cibleProjet'] as Array<{ code: string }> | undefined
+        const isForCompanies = cibleProjet?.some((cible) => cible.code === 'SCA3')
+
+        if (isForCompanies) {
+          programDetails.push(details)
+        }
       }
       if (index < publicAndActivePrograms.length - 1) {
-        await this.sleep(1)
+        await this._sleep(1)
       }
     }
-
-    fs.writeFileSync(TEMP_FILE_PATH, JSON.stringify(programDetails, null, 2))
-    console.log(`Saved ${programDetails.length} programs to ${TEMP_FILE_PATH}`)
+    console.log(`Retrieved ${programDetails.length} programs (valid and for companies)`)
 
     return programDetails
   }

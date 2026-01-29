@@ -15,11 +15,11 @@ export class AdemeDataManager {
     private readonly _baserow: ProgramAdemeBaserow,
     private readonly _staticConverter: AdemeProgramBaserowToAbstractDto
   ) {}
-  async updateData(reload = false): Promise<void> {
+  async updateData(): Promise<void> {
     try {
       console.log('Starting ADEME data update...')
 
-      const rawPrograms = await this._ademeApi.getPrograms(reload)
+      const rawPrograms = await this._ademeApi.getPrograms()
 
       if (!rawPrograms || rawPrograms.length === 0) {
         console.error('Failed to fetch programs from ADEME API')
