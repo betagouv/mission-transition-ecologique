@@ -12,8 +12,21 @@ export class ProgramManager {
   async get(questionnaireData: QuestionnaireDataType = {}) {
     this._useNavigation.hasSpinner = true
     const resultApi = await this._getFromApi(questionnaireData)
-    if (resultApi.isOk()) {
-      this._useProgram.programs = resultApi.data
+    if (resultApi.isOk() && resultApi.data) {
+      const teePrograms: ProgramTypeForFront[] = []
+      const externalPrograms: AbstractProgramTypeForFront[] = []
+
+      resultApi.data.forEach((program) => {
+        if (program['type'] === ProgramTypes.TEE) {
+          teePrograms.push(program as ProgramTypeForFront)
+        } else if (program['type'] === ProgramTypes.extAdeme) {
+          externalPrograms.push(program)
+        }
+      })
+
+      this._useProgram.programs = teePrograms
+      this._useProgram.extPrograms = externalPrograms
+
       this._useProgram.hasPrograms = true
       this._useProgram.hasError = false
     } else {
@@ -37,6 +50,15 @@ export class ProgramManager {
       if (program) {
         this._useProgram.currentProgram = program
         this._useProgram.currentExtProgram = undefined
+        return
+      }
+    }
+
+    if (this._useProgram.extPrograms && this._useProgram.extPrograms.length > 0) {
+      const extProgram = this._useProgram.extPrograms.find((program) => program.id === id)
+      if (extProgram) {
+        this._useProgram.currentExtProgram = extProgram
+        this._useProgram.currentProgram = undefined
         return
       }
     }
@@ -72,21 +94,17 @@ export class ProgramManager {
       const currentId = this._useProgram.currentProgram.id
       this._useProgram.reset()
       await this.getOneById(currentId)
+    } else if (navigation.isProgramDetail() && this._useProgram.currentExtProgram) {
+      const currentId = this._useProgram.currentExtProgram.id
+      this._useProgram.reset()
+      await this.getOneById(currentId)
     } else {
       this._useProgram.reset()
     }
   }
 
-  async getExternals(): Promise<ResultApi<AbstractProgramTypeForFront[]>> {
-    const resultApi = (await new ProgramApi({ onlyExternals: true }).get()) as unknown as ResultApi<AbstractProgramTypeForFront[]>
-    if (resultApi.isOk()) {
-      this._useProgram.extPrograms = resultApi.data
-    }
-    return resultApi
-  }
-
-  private async _getFromApi(questionnaireData: QuestionnaireDataType = {}): Promise<ResultApi<ProgramTypeForFront[]>> {
-    return (await new ProgramApi(questionnaireData).get()) as unknown as ResultApi<ProgramTypeForFront[]>
+  private async _getFromApi(questionnaireData: QuestionnaireDataType = {}): Promise<ResultApi<AbstractProgramTypeForFront[]>> {
+    return (await new ProgramApi(questionnaireData).get()) as unknown as ResultApi<AbstractProgramTypeForFront[]>
   }
 
   private async _getOneFromApi(id: string): Promise<ResultApi<AbstractProgramTypeForFront>> {

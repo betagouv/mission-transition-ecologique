@@ -17,7 +17,7 @@
         class="fr-enlarge-link fr-card--horizontal-tier"
       />
     </li>
-    <template v-if="!isDataFull && extPrograms && extPrograms.length > 0">
+    <template v-if="(!isDataFull || !companyDataSelected) && extPrograms && extPrograms.length > 0">
       <li
         v-for="externalProgram in extPrograms"
         :id="externalProgram.id + 'etr'"
@@ -39,7 +39,7 @@ import ExternalProgramCard from '@/components/program/externalProgram/ExternalPr
 import { ProgramTypeForFront } from '@/types'
 import { useCompanyDataStore } from '@/stores/companyData'
 import { storeToRefs } from 'pinia'
-import { ProgramManager } from '@/tools/program/programManager'
+const { companyDataSelected } = storeToRefs(useFiltersStore())
 
 interface Props {
   filteredPrograms?: ProgramTypeForFront[]
@@ -49,11 +49,5 @@ const { isDataFull } = storeToRefs(useCompanyDataStore())
 const { extPrograms } = storeToRefs(useProgramStore())
 const programNumber = computed(() => {
   return (props.filteredPrograms?.length || 0) + (extPrograms.value?.length || 0)
-})
-
-onMounted(async () => {
-  if (!isDataFull.value && (!extPrograms.value || !extPrograms.value.length)) {
-    await new ProgramManager().getExternals()
-  }
 })
 </script>

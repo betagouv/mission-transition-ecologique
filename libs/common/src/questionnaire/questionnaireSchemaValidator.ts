@@ -35,11 +35,9 @@ export const questionnaireDataSchema = z.object({
   denomination: z.string().optional(),
   secteur: z.string().optional(),
   creationDate: z.string().optional(),
-  onlyEligible: z.boolean().optional(),
-  onlyExternals: z.boolean().optional()
+  onlyEligible: z.boolean().optional()
 })
 
 export const serverQuestionnaireDataSchema = questionnaireDataSchema
   .setKey('onlyEligible', stringBoolean.optional())
   .setKey('is_questionnaire', stringBoolean.optional())
-  .setKey('onlyExternals', stringBoolean.optional())
