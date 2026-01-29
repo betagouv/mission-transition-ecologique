@@ -1840,7 +1840,8 @@
         ]
       }
     },
-    "id": "bonus-ecologique"
+    "id": "bonus-ecologique",
+    "type": "tee"
   },
   {
     "titre": "Bonus écologique",
@@ -2075,7 +2076,8 @@
         ]
       }
     },
-    "id": "bonus-ecologique"
+    "id": "bonus-ecologique",
+    "type": "tee"
   },
   {
     "titre": "Booster Entreprises",
@@ -4698,7 +4700,8 @@
         ]
       }
     },
-    "id": "diagnostic-transition-ecologique"
+    "id": "diagnostic-transition-ecologique",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic Transition Ecologique",
@@ -4902,7 +4905,8 @@
         ]
       }
     },
-    "id": "diagnostic-transition-ecologique"
+    "id": "diagnostic-transition-ecologique",
+    "type": "tee"
   },
   {
     "titre": "Eco-Défis des artisans et des commerçants",
@@ -22646,7 +22650,8 @@
         ]
       }
     },
-    "id": "prime-a-la-conversion"
+    "id": "prime-a-la-conversion",
+    "type": "tee"
   },
   {
     "titre": "Prime à la conversion",
@@ -22896,7 +22901,8 @@
         ]
       }
     },
-    "id": "prime-a-la-conversion"
+    "id": "prime-a-la-conversion",
+    "type": "tee"
   },
   {
     "titre": "Programme Breizh Fab",
@@ -31304,7 +31310,8 @@
         ]
       }
     },
-    "id": "cheque-transition-bioethanol"
+    "id": "cheque-transition-bioethanol",
+    "type": "tee"
   },
   {
     "titre": "Chèque Transition Bioéthanol",
@@ -31544,7 +31551,8 @@
         ]
       }
     },
-    "id": "cheque-transition-bioethanol"
+    "id": "cheque-transition-bioethanol",
+    "type": "tee"
   },
   {
     "titre": "Recharges pour véhicules électriques",
@@ -32807,7 +32815,8 @@
         ]
       }
     },
-    "id": "audit-clef-verte-sud"
+    "id": "audit-clef-verte-sud",
+    "type": "tee"
   },
   {
     "titre": "Audit label Clef Verte",
@@ -32996,7 +33005,8 @@
         ]
       }
     },
-    "id": "audit-clef-verte-sud"
+    "id": "audit-clef-verte-sud",
+    "type": "tee"
   },
   {
     "titre": "Prêt Tourisme Bpifrance",
@@ -37335,7 +37345,8 @@
         ]
       }
     },
-    "id": "bilan-carbone"
+    "id": "bilan-carbone",
+    "type": "tee"
   },
   {
     "titre": "Bilan Carbone®",
@@ -37546,7 +37557,8 @@
         ]
       }
     },
-    "id": "bilan-carbone"
+    "id": "bilan-carbone",
+    "type": "tee"
   },
   {
     "titre": "Programme Res'Eau",
@@ -46598,7 +46610,8 @@
         ]
       }
     },
-    "id": "diag-performance"
+    "id": "diag-performance",
+    "type": "tee"
   },
   {
     "titre": "Easy Diag Transition Ecologique",
@@ -46774,7 +46787,8 @@
         ]
       }
     },
-    "id": "easy-diag"
+    "id": "easy-diag",
+    "type": "tee"
   },
   {
     "titre": "Diag performance",
@@ -46960,7 +46974,8 @@
         ]
       }
     },
-    "id": "diag-performance"
+    "id": "diag-performance",
+    "type": "tee"
   },
   {
     "titre": "Easy Diag Transition Ecologique",
@@ -47136,7 +47151,8 @@
         ]
       }
     },
-    "id": "easy-diag"
+    "id": "easy-diag",
+    "type": "tee"
   },
   {
     "titre": "Formations Atlas",
@@ -50772,7 +50788,8 @@
         ]
       }
     },
-    "id": "e-trans"
+    "id": "e-trans",
+    "type": "tee"
   },
   {
     "titre": "Chèque Transition du Tissu Économique",
@@ -51024,7 +51041,8 @@
         ]
       }
     },
-    "id": "cheque-transition-tissu-economique"
+    "id": "cheque-transition-tissu-economique",
+    "type": "tee"
   },
   {
     "titre": "Expert Atlas",
@@ -51191,7 +51209,8 @@
         ]
       }
     },
-    "id": "expert-atlas"
+    "id": "expert-atlas",
+    "type": "tee"
   },
   {
     "titre": "Diag Accompagnement TEE RH",
@@ -51367,7 +51386,8 @@
         ]
       }
     },
-    "id": "diag-accompagnement-tee-rh"
+    "id": "diag-accompagnement-tee-rh",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic RH",
@@ -51542,7 +51562,8 @@
         ]
       }
     },
-    "id": "diagnostic-rh"
+    "id": "diagnostic-rh",
+    "type": "tee"
   },
   {
     "titre": "Défi Éco 2050",
@@ -51707,7 +51728,8 @@
         ]
       }
     },
-    "id": "defi-eco-2050"
+    "id": "defi-eco-2050",
+    "type": "tee"
   },
   {
     "titre": "DEMIBaC",
@@ -51926,6 +51948,7 @@
         ]
       }
     },
-    "id": "demi-bac"
+    "id": "demi-bac",
+    "type": "tee"
   }
 ]
