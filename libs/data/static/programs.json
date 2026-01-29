@@ -46258,8 +46258,8 @@
         "description": "Rendez-vous sur le catalogue de formations de l'Opco Uniformation et trouvez la formation et la session qui vous convient.",
         "liens": [
           {
-            "lien": "https://- \\[https://- https://www.uniformation.fr/entreprise/formation/offre-de-formations-cles-en-main?combine_text=&session_start_min=&session_start_max=&presence_type=All&offer=All&branch=46&training_theme=99&target_training=290\\](https://www.uniformation.fr/entreprise/formation/offre-de-formations-cles-en-main?combine_text=&session_start_min=&session_start_max=&presence_type=All&offer=All&branch=46&training_theme=99&target_training=290",
-            "texte": "Catalogue de formations\\"
+            "lien": "https://www.uniformation.fr/entreprise/formation/offre-de-formations-cles-en-main?combine_text=&session_start_min=&session_start_max=&presence_type=All&offer=All&branch=46&training_theme=99&target_training=290",
+            "texte": "Catalogue de formations"
           }
         ]
       },
@@ -48370,6 +48370,171 @@
       }
     },
     "id": "diagnostic-rh"
+  },
+  {
+    "titre": "Défi Éco 2050",
+    "promesse": "Engagez vos équipes dans la transition écologique à l'aide d'un jeu collaboratif",
+    "description": "Sensibilisez vos collaborateurs aux enjeux de la transition écologique dans le secteur de la construction (rénovation, recyclage, décarbonation, biodiversité...) à l'aide d'un jeu de plateau immersif. Participez à une session inter-entreprise ou organisez une session dans votre entreprise. En 1h30 à 2h de jeu, vous :\n\n- Informez et **sensibilisez vos équipes sur les enjeux écologiques** réglementaires du secteur de la construction.\n- **Fédérez vos collaborateurs** autour des changements à amorcer pour une activité durable.\n- **Établissez un premier plan d'action et de formation** pour acquérir les compétences en lien avec la transition écologique.",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Constructys",
+    "contact question": "https://www.constructys.fr/contacts/",
+    "url": "https://www.constructys.fr/defi-eco-2050/",
+    "nature de l'aide": "formation",
+    "coût de l'accompagnement": "Gratuit",
+    "durée de l'accompagnement": "1h30 à 2h",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Compléter le formulaire pour planifier une session de jeu.",
+        "liens": [
+          {
+            "lien": "https://constructys.my.site.com/s/surveyEco",
+            "texte": "Formulaire d'inscription Défi Éco 2050"
+          }
+        ]
+      },
+      {
+        "description": "Participez à une session entre pairs ou organisez une session au sein de votre entreprise, animée par Constructys."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises du secteur de la construction"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "F"
+        ]
+      },
+      "priorityObjectives": [
+        "building",
+        "waste",
+        "energy",
+        "rh"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est F"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est former ou recruter"
+        ]
+      }
+    },
+    "id": "defi-eco-2050"
   },
   {
     "titre": "DEMIBaC",
