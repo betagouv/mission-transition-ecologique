@@ -9,7 +9,7 @@
     <template #content>
       <ol class="fr-order-list">
         <li
-          v-if="!isDataFull"
+          v-if="!isDataFull && showRegistrationStep"
           class="fr-mb-4v fr-mb-md-2v"
         >
           <div class="fr-mb-0 fr-ml-0">{{ Translation.t('program.programActivationRegistration') }}</div>
@@ -65,16 +65,19 @@
 <script setup lang="ts">
 import Translation from '@/tools/translation'
 import { Marked } from '@/tools/marked'
-import { type ProgramTypeForFront } from '@/types'
+import { AbstractProgramTypeForFront } from '@/types'
 import Navigation from '@/tools/navigation'
 
 interface Props {
-  program: ProgramTypeForFront
+  program: AbstractProgramTypeForFront
   scrollToForm: () => void
   isFormVisible: boolean
+  showRegistrationStep?: boolean
 }
 
-defineProps<Props>()
+withDefaults(defineProps<Props>(), {
+  showRegistrationStep: true
+})
 
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 

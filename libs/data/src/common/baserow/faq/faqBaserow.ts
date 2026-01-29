@@ -1,4 +1,4 @@
-import ConfigBaserow from '../../../configBaserow'
+import ConfigBaserow from '../../../config/configBaserow'
 import { FaqPageType, FaqProjectType, FaqRepositoryInterface } from '../../../faq/types/domain'
 import { DataProject } from '../../../project/types/domain'
 import { LoggerInterface } from '../../logger/types'

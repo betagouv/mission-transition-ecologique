@@ -12,6 +12,7 @@
     :no-arrow="true"
     :link="getRouteToProgramDetail()"
     :title-tag="titleTag"
+    :title-link-attrs="{}"
   >
     <template #start-details>
       <DsfrBadge

@@ -258,6 +258,13 @@
         },
         "additionalProperties": true
       }
+    },
+    "type": {
+      "description": "Type du programme : programme interne TEE ou programme externe (ADEME)",
+      "enum": [
+        "tee",
+        "ext-ademe"
+      ]
     }
   },
   "oneOf": [

@@ -1,5 +1,5 @@
 import Navigation from '@/tools/navigation'
-import { ProgramTypeForFront, ProjectType, RouteName } from '@/types'
+import { AbstractProgramTypeForFront, ProgramTypeForFront, ProjectType, RouteName } from '@/types'
 import type { RouteLocationRaw } from 'vue-router'
 
 export default class Program {
@@ -32,7 +32,10 @@ export default class Program {
     return program?.['activable en autonomie'] === 'oui'
   }
 
-  static getBackLink(program: ProgramTypeForFront | undefined, currentProject?: ProjectType | undefined): RouteLocationRaw | undefined {
+  static getBackLink(
+    program: AbstractProgramTypeForFront | undefined,
+    currentProject?: ProjectType | undefined
+  ): RouteLocationRaw | undefined {
     if (!program) {
       return undefined
     }

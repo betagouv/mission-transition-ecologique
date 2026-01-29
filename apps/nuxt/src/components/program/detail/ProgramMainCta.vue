@@ -23,7 +23,7 @@
       {{ Translation.t('program.ctaContact') }}
     </DsfrButton>
     <TeeButtonExternalLink
-      v-else
+      v-else-if="program['contact question']"
       :href="program['contact question']"
       variant="large-question"
       class="fr-mt-3v"
@@ -36,12 +36,12 @@
 
 <script setup lang="ts">
 import Translation from '@/tools/translation'
-import { ProgramTypeForFront } from '@/types'
+import { AbstractProgramTypeForFront } from '@/types'
 import Analytics from '@/tools/analytic/analytics'
 import { CompanyData } from '@/tools/companyData'
 
 interface Props {
-  program: ProgramTypeForFront
+  program: AbstractProgramTypeForFront
   isActivationVisible: boolean
   scrollToForm: () => void
   scrollToActivation: () => void

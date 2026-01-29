@@ -4,7 +4,7 @@ import { Logger } from '../../common/logger/logger'
 import { LogLevel } from '../../common/logger/types'
 import { SlugValidator } from '../../common/validators/slugValidator'
 import { DataProgram, DataProgramType, Status, YamlImage } from '../types/domain'
-import { EligibilityData, ProgramAidType } from '../types/shared'
+import { EligibilityData, ProgramAidType, ProgramTypes } from '../types/shared'
 import { validateExternalUrlLink } from './linksValidator'
 import { setOperators } from './operatorsDto'
 import { setObjectives } from './objectiveDto'
@@ -71,6 +71,7 @@ export class ProgramDto {
     this.programData['publicodes'] = new PublicodesGenerator().generatePublicodes(this.programData['eligibilityData'] as EligibilityData)
     new ConditionalDataGenerator(this.rawProgram, this.logger).generate(this.programData)
     this.programData['id'] = this.rawProgram['Id fiche dispositif']
+    this.programData['type'] = ProgramTypes.TEE
   }
 
   public get generatedData(): { [key: string]: unknown } {

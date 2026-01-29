@@ -1,5 +1,5 @@
 import { SendSmtpEmail, TransactionalEmailsApi, TransactionalEmailsApiApiKeys } from '@getbrevo/brevo'
-import Config from '../../config'
+import Config from '../../config/config'
 import { DataProgram, MailSenderInterface } from '../../program/types/domain'
 import { MailType } from './types'
 

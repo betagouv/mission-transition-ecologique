@@ -13,12 +13,12 @@
 </template>
 
 <script setup lang="ts">
-import type { ProgramTypeForFront } from '@/types'
+import type { AbstractProgramTypeForFront } from '@/types'
 import Translation from '@/tools/translation'
 import { Marked } from '@/tools/marked'
 
 interface Props {
-  program: ProgramTypeForFront
+  program: AbstractProgramTypeForFront
 }
 defineProps<Props>()
 </script>

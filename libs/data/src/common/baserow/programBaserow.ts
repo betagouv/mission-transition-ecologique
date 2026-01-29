@@ -1,5 +1,5 @@
 import fs from 'fs'
-import ConfigBaserow from '../../configBaserow'
+import ConfigBaserow from '../../config/configBaserow'
 import { AbstractBaserow } from './abstractBaserow'
 import { ConditionalValues, Program, ProgramTechSerialized } from './types'
 import {
