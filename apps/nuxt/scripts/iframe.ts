@@ -16,9 +16,19 @@ function setupIframe(element: HTMLScriptElement) {
   const type = element.dataset.type || ''
   const id = element.dataset.id || ''
   const parentUrl = encodeURIComponent(window.location.href)
-  let src = `${url}/iframe?parent_url=${parentUrl}&utm_campaign=iframe`
-  if (type == 'projet' && id) {
-    src = `${url}/iframe/${type}/${id}?parent_url=${parentUrl}&utm_campaign=iframe`
+  const parentUrlParam = `parent_url=${parentUrl}`
+  const baseParams = `${parentUrlParam}&utm_campaign=iframe`
+  let src: string
+  const iframeBaseUrl = `${url}/iframe`
+  switch (type) {
+    case 'projet':
+      src = id ? `${iframeBaseUrl}/${type}/${id}?${baseParams}` : `${url}/iframe?${baseParams}`
+      break
+    case 'siret':
+      src = `${iframeBaseUrl}/${type}/${id}?${parentUrlParam}&utm_campaign=iframe_siret`
+      break
+    default:
+      src = `${iframeBaseUrl}?${baseParams}`
   }
 
   const iframe = document.createElement('iframe')
