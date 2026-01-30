@@ -15,9 +15,8 @@ definePageMeta({
 
 if (import.meta.client) {
   const params = new URLSearchParams(window.location.search)
-  const parentUrl = params.get('parent_url')
   Analytics.sendEvent('generic_iframe_view', {
-    referrer_url: parentUrl
+    referrer_url: params.get('parent_url')
   })
 }
 

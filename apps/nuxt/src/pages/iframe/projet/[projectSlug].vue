@@ -25,11 +25,10 @@ const href = router.resolve({ name: RouteName.CatalogProjectDetail, params: { pr
 
 if (import.meta.client) {
   const params = new URLSearchParams(window.location.search)
-  const parentUrl = params.get('parent_url')
   Analytics.sendEvent('iframe_view', {
     type: 'project',
     title: projectTitle,
-    referrer_url: parentUrl
+    referrer_url: params.get('parent_url')
   })
 }
 
