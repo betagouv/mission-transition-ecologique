@@ -68,7 +68,7 @@ const company = ref<CompanyDataType[CompanyDataStorageKey.Company]>(registeredDa
 const companySize = ref<CompanyDataType[CompanyDataStorageKey.Size]>(registeredData.value[CompanyDataStorageKey.Size])
 const manualRegistration = ref<boolean>(!!(company.value && !('siret' in company.value)))
 
-const mainStep = ref<number>(2)
+const mainStep = ref<number>(1)
 
 const registerStep = computed<number>(() => {
   if (company.value || manualRegistration.value) {
