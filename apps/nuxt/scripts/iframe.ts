@@ -8,6 +8,7 @@ if (!script) {
 }
 
 if (script) {
+  console.log('script found:', script.dataset.type, script.dataset.id)
   setupIframe(script)
 }
 
@@ -25,7 +26,7 @@ function setupIframe(element: HTMLScriptElement) {
       src = id ? `${iframeBaseUrl}/${type}/${id}?${baseParams}` : `${url}/iframe?${baseParams}`
       break
     case 'siret':
-      src = `${iframeBaseUrl}/${type}/${id}?${parentUrlParam}&utm_campaign=iframe_siret`
+      src = `${iframeBaseUrl}/${type}?${parentUrlParam}&utm_campaign=iframe_siret`
       break
     default:
       src = `${iframeBaseUrl}?${baseParams}`

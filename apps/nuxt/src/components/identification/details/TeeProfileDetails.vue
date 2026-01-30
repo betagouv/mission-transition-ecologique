@@ -49,9 +49,18 @@ interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
   companySize: CompanyDataType[CompanyDataStorageKey.Size]
   manual: boolean
+  fromIframe?: boolean
+  buttonLabel?: string
 }
-const props = defineProps<Props>()
-const emit = defineEmits(['modifySiret', 'closeRegister'])
+
+const props = withDefaults(defineProps<Props>(), {
+  buttonLabel: 'Enregistrer et continuer'
+})
+
+const emit = defineEmits<{
+  modifySiret: []
+  closeRegister: []
+}>()
 const showError = ref<boolean>(false)
 const openSiretStep = () => {
   emit('modifySiret')
@@ -102,10 +111,13 @@ const canBeSaved = computed(() => {
 })
 
 const getSaveProfileButtonLabel = computed(() => {
-  return navigationStore.isFromQuestionnaireCtaRegisterModal ? 'suivant' : 'Enregistrer et fermer'
+  return navigationStore.isFromQuestionnaireCtaRegisterModal ? 'suivant' : props.buttonLabel
 })
 
 const getSaveProfileButtonIcon = computed(() => {
+  if (props.fromIframe) {
+    return 'fr-icon-external-link-fill'
+  }
   return navigationStore.isFromQuestionnaireCtaRegisterModal ? 'fr-icon-arrow-right-line' : ''
 })
 
@@ -132,6 +144,11 @@ const saveProfile = async () => {
       }
     } else {
       Analytics.sendEvent('register_manual_modal')
+    }
+
+    if (props.fromIframe) {
+      emit('closeRegister')
+      return
     }
 
     await UsedTrack.updateQuestionnaireStep()

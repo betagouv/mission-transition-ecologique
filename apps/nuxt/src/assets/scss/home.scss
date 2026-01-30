@@ -4,10 +4,10 @@
 @use 'tool';
 
 .tee-cta-image {
-  background-image: url('/images/TEE-illustrationHP.svg');
+  // background-image: url('/images/TEE-illustrationHP.svg');
 
   @include tool.respond-to(md) {
-    background-image: url('/images/TEE-illustrationHP-hauteur.svg');
+    // background-image: url('/images/TEE-illustrationHP-hauteur.svg');
   }
 
   @include tool.respond-to(sm) {

@@ -6,7 +6,10 @@
   >
     <template #top>
       <div class="fr-bg--green--lightness">
-        <TeeCta />
+        <TeeCta
+          overline="Entreprises & associations"
+          @on-click-button="toQuestionnaire"
+        />
       </div>
     </template>
 
@@ -43,8 +46,11 @@ import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { MetaRobots } from '@/tools/metaRobots'
 import Navigation from '@/tools/navigation'
 import { FaqSectionType, RouteName } from '@/types'
+import { useCompanyDataStore } from '@/stores/companyData'
 
 const navigation = new Navigation()
+const router = useRouter()
+const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const { default: json } = await import('@/public/json/faq/home.json')
 const faqHomeJson = json as unknown as FaqSectionType[]
@@ -61,6 +67,17 @@ defineRouteRules({
     changefreq: 'weekly'
   }
 })
+
+const toQuestionnaire = async () => {
+  if (isDataFull.value) {
+    await router.push({
+      name: RouteName.CatalogProjects
+    })
+  } else {
+    useNavigationStore().setFromCtaRegisterModal(true)
+    Navigation.toggleRegisterModal()
+  }
+}
 
 useHead({
   link: [

@@ -6,16 +6,21 @@
           <div class="fr-col-12">
             <div class="fr-grid-row">
               <div class="fr-col-12">
-                <p class="fr-text--purple fr-h4 fr-text--bold fr-mb-2v fr-text--blue-agir">Entreprises & associations</p>
+                <p
+                  v-if="overline"
+                  class="fr-text--purple fr-h4 fr-text--bold fr-mb-2v fr-text--blue-agir"
+                >
+                  {{ overline }}
+                </p>
                 <h1 class="fr-mb-6v fr-text--blue-900">
                   Découvrez vos aides éligibles
                   <span class="fr-display-lg--block">parmi <span class="fr-text--green-agir">tous les financeurs publics</span></span>
                 </h1>
               </div>
-              <div class="fr-col-12 fr-col-lg-9">
+              <div class="fr-col-12 fr-col-lg-10">
                 <h2 class="fr-text--lg fr-text--regular fr-text--blue-900">
                   Identifiez facilement les aides publiques adaptées à votre entreprise
-                  <span class="fr-display-lg--block"> pour concrétiser vos projets de transition écologique.</span>
+                  <span class="fr-display-xl--block"> pour concrétiser vos projets de transition écologique.</span>
                 </h2>
               </div>
             </div>
@@ -24,34 +29,47 @@
             <TeeDsfrButton
               size="lg"
               class="fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center fr-btn-bg fr-btn-bg--blue-agir"
-              only-label="Je trouve les aides pour mon projet"
-              @click="toQuestionnaire()"
+              :only-label="buttonLabel"
+              @click="$emit('onClickButton')"
             >
-              Je trouve les aides <span class="fr-display--block fr-display-sm--inline">pour mon projet</span>
+              <span v-html="buttonLabel"></span>
             </TeeDsfrButton>
           </div>
         </div>
       </div>
       <div class="fr-col-2 fr-col-md-4 fr-col--middle fr-col-lg-4 fr-col-unhidden-md fr-col-hidden"></div>
     </div>
+    <TeeIllustration
+      class="illustration"
+      :height="svgHeight ?? '300'"
+    />
   </div>
 </template>
 <script setup lang="ts">
-import { useCompanyDataStore } from '@/stores/companyData'
-import { RouteName } from '@/types/routeType'
-import Navigation from '@/tools/navigation'
+interface Props {
+  overline?: string
+  svgHeight?: number | string
+  buttonLabel?: string
+}
 
-const router = useRouter()
-const { isDataFull } = storeToRefs(useCompanyDataStore())
+withDefaults(defineProps<Props>(), {
+  buttonLabel: 'Je trouve les aides <span class="fr-display--block fr-display-sm--inline">pour mon projet</span>'
+})
 
-const toQuestionnaire = async () => {
-  if (isDataFull.value) {
-    await router.push({
-      name: RouteName.CatalogProjects
-    })
-  } else {
-    useNavigationStore().setFromCtaRegisterModal(true)
-    Navigation.toggleRegisterModal()
+defineEmits<{
+  onClickButton: []
+}>()
+</script>
+
+<style scoped lang="scss">
+.tee-cta-image {
+  position: relative;
+
+  .illustration :deep(svg) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: auto;
   }
 }
-</script>
+</style>
