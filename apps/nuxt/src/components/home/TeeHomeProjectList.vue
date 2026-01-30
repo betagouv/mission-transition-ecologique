@@ -56,7 +56,7 @@ const { projects, hasError } = storeToRefs(useProjectStore())
 const { hasSpinner } = storeToRefs(useNavigationStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 
-const limit = computed(() => (theme === undefined ? 8 : 9))
+const limit = computed(() => (theme.value === undefined ? 8 : 9))
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
 
