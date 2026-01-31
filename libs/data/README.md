@@ -1,7 +1,7 @@
 # Data
 
 This library was generated with [Nx](https://nx.dev).
-It mainly contain 3 things : 
+It mainly contains 3 things : 
 - all the typescript types related to the data used in the project
 - the data itself
 - scripts that can be executed to update the data
@@ -24,11 +24,11 @@ Run `nx run @tee/data:test` to execute the unit tests via [vitest](https://vites
 ### Test data
 
 When generating a new test dataset. Please be careful to modify the end of validates dates. Not doing so may lead to unwanted results variations. 
-The easiest way to do so is to replace all occurence of 2024, 2025 and 2026 by 2040.  
+The easiest way to do so is to replace all occurrences of 2024, 2025 and 2026 by 2040.  
 
 
 ## External tools 
-In the directory `tools`, we have some scripts that are independant from the rest of the project. 
+In the directory `tools`, we have some scripts that are independent from the rest of the project. 
 Each of the script has its own readme.
 
 Right now, we only have one script available, and for private use only. 
