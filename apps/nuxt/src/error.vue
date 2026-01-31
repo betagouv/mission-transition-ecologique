@@ -55,7 +55,7 @@ const error500Text = 'Essayez de rafraîchir la page ou bien réessayez plus tar
 
 const leadText = computed<string>(() => {
   if (props.error.statusCode === 404) {
-    return `La page que vous cherchez est introuvable.<br/> Excusez-nous pour la gène occasionnée.`
+    return `La page que vous cherchez est introuvable.<br/> Excusez-nous pour la gêne occasionnée.`
   } else {
     return 'Désolé, le service rencontre un problème, nous travaillons pour le résoudre le plus rapidement possible'
   }
