@@ -95,3 +95,4 @@ vitest.config.*.timestamp*
 
 .history/**
 .history/
+.env

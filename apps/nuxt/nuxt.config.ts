@@ -36,6 +36,10 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       ]
     }
   },
+
+  baserowToken: process.env.BASEROW_TOKEN,
+  baserowTableId: process.env.BASEROW_TABLE_ID,
+  
   routeRules: {
     '/_nuxt/**': {
       headers: {
