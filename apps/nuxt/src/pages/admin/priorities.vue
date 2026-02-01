@@ -35,8 +35,11 @@
               </span>
             </div>
             <div v-if="hasChanges" class="fr-btns-group fr-btns-group--sm fr-btns-group--inline">
-              <button class="fr-btn" @click="saveChanges" :disabled="saving">
-                {{ saving ? 'Enregistrement...' : 'Enregistrer' }}
+              <button class="fr-btn"
+                :class="saving ? 'fr-btn--tertiary-no-outline' : 'fr-background--blue-france fr-text--yellow'"
+                @click="saveChanges" :disabled="saving">
+                <span v-if="!saving" class="fr-icon-check-line fr-pr-1w" aria-hidden="true"></span>
+                {{ saving ? 'Enregistrement...' : 'Enregistrer les modifications' }}
               </button>
               <button class="fr-btn fr-btn--secondary" @click="refresh" :disabled="saving">
                 Annuler
