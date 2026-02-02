@@ -1,13 +1,17 @@
 import { ProgramRepository } from '../domain/spi'
 import { jsonPrograms } from '@tee/data/static'
-import { ProgramType } from '@tee/data'
+import { ProgramType, AbstractProgramType, ProgramTypes } from '@tee/data'
 
 export default class ProgramsJson implements ProgramRepository {
   private static _instance: ProgramsJson
+  private _allPrograms: AbstractProgramType[] = []
   private _programs: ProgramType[] = []
+  private _externalPrograms: AbstractProgramType[] = []
 
   private constructor() {
-    this._programs = jsonPrograms as unknown as ProgramType[]
+    this._allPrograms = jsonPrograms as unknown as AbstractProgramType[]
+    this._programs = this._allPrograms.filter((program) => program['type'] === ProgramTypes.TEE) as unknown as ProgramType[]
+    this._externalPrograms = this._allPrograms.filter((program) => program['type'] === ProgramTypes.extAdeme)
   }
 
   public static getInstance(): ProgramsJson {
@@ -28,5 +32,13 @@ export default class ProgramsJson implements ProgramRepository {
 
   public getById = (id: string): ProgramType | undefined => {
     return this.getAll().find((programData: ProgramType) => programData.id === id)
+  }
+
+  public getExternals(): AbstractProgramType[] {
+    return this._externalPrograms
+  }
+
+  public getExternalById = (id: string): AbstractProgramType | undefined => {
+    return this._externalPrograms.find((program: AbstractProgramType) => program.id === id)
   }
 }

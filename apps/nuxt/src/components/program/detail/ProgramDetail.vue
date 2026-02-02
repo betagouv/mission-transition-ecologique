@@ -25,7 +25,7 @@
           <ProgramTitle />
           <ProgramResume />
           <ProgramMainCta
-            :program="currentProgram"
+            :program="currentProgram as AbstractProgramTypeForFront"
             :is-activation-visible="isActivationVisible"
             :scroll-to-form="scrollToForm"
             :scroll-to-activation="scrollToActivation"
@@ -41,9 +41,9 @@
         />
       </div>
       <ProgramTiles />
-      <ProgramEligibilityConditions :program="currentProgram" />
+      <ProgramEligibilityConditions :program="currentProgram as AbstractProgramTypeForFront" />
       <ProgramProjects :program="currentProgram" />
-      <ProgramLongDescription :program="currentProgram" />
+      <ProgramLongDescription :program="currentProgram as AbstractProgramTypeForFront" />
       <div ref="form-ref">
         <ClientOnly>
           <ProgramForm
@@ -72,7 +72,7 @@ import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 import Analytics from '@/tools/analytic/analytics'
 import { Scroll } from '@/tools/scroll/scroll'
 import { useCompanyDataStore } from '@/stores/companyData'
-import { ProgramEligibility } from '@/types'
+import { AbstractProgramTypeForFront, ProgramEligibility } from '@/types'
 import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 const { currentProgram } = storeToRefs(useProgramStore())

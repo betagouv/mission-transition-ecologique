@@ -4,7 +4,7 @@
 import { useCompanyDataStore } from '@/stores/companyData'
 import { useFiltersStore } from '@/stores/filters'
 import ProgramFilter from '@/tools/program/programFilter'
-import { FilterItemKeys, OperatorFilter, ProgramAidType, ProgramTypeForFront, Region, ThemeId } from '@/types'
+import { AbstractProgramTypeForFront, FilterItemKeys, OperatorFilter, ProgramAidType, ProgramTypeForFront, Region, ThemeId } from '@/types'
 import { ref } from 'vue'
 
 export const useProgramStore = defineStore('program', () => {
@@ -12,6 +12,8 @@ export const useProgramStore = defineStore('program', () => {
   const programs = ref<ProgramTypeForFront[]>([])
   const hasPrograms = ref<boolean>(false)
   const hasError = ref<boolean>(false)
+  const currentExtProgram = ref<AbstractProgramTypeForFront>()
+  const extPrograms = ref<AbstractProgramTypeForFront[]>([])
 
   const filtersStore = useFiltersStore()
   const companyStore = useCompanyDataStore()
@@ -21,6 +23,8 @@ export const useProgramStore = defineStore('program', () => {
     currentProgram.value = undefined
     hasPrograms.value = false
     hasError.value = false
+    currentExtProgram.value = undefined
+    extPrograms.value = []
   }
 
   const programsByFilters = computed(() => {
@@ -46,6 +50,8 @@ export const useProgramStore = defineStore('program', () => {
     hasPrograms,
     hasError,
     programsByFilters,
+    currentExtProgram,
+    extPrograms,
     reset
   }
 })

@@ -1,7 +1,7 @@
 <template>
   <LayoutList>
     <template #counter>
-      <TeeCounterResult :to-count="filteredPrograms" />
+      <TeeCounterResult :in-count="programNumber" />
     </template>
     <template #modalFilter>
       <ProgramModalFilter />
@@ -17,15 +17,37 @@
         class="fr-enlarge-link fr-card--horizontal-tier"
       />
     </li>
+    <template v-if="(!isDataFull || !companyDataSelected) && extPrograms && extPrograms.length > 0">
+      <li
+        v-for="externalProgram in extPrograms"
+        :id="externalProgram.id + 'etr'"
+        :key="`external-${externalProgram.id}`"
+        class="fr-col-12 fr-col-sm-6 fr-col-md-12"
+      >
+        <ExternalProgramCard
+          :program="externalProgram"
+          class="fr-enlarge-link fr-card--horizontal-tier"
+        />
+      </li>
+    </template>
   </LayoutList>
 </template>
 
 <script setup lang="ts">
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
+import ExternalProgramCard from '@/components/program/externalProgram/ExternalProgramCard.vue'
 import { ProgramTypeForFront } from '@/types'
+import { useCompanyDataStore } from '@/stores/companyData'
+import { storeToRefs } from 'pinia'
+const { companyDataSelected } = storeToRefs(useFiltersStore())
 
 interface Props {
   filteredPrograms?: ProgramTypeForFront[]
 }
-defineProps<Props>()
+const props = defineProps<Props>()
+const { isDataFull } = storeToRefs(useCompanyDataStore())
+const { extPrograms } = storeToRefs(useProgramStore())
+const programNumber = computed(() => {
+  return (props.filteredPrograms?.length || 0) + (extPrograms.value?.length || 0)
+})
 </script>
