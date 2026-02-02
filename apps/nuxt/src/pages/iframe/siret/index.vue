@@ -50,7 +50,8 @@
 import Analytics from '@/tools/analytic/analytics'
 import { CompanyData } from '@/tools/companyData'
 import { MetaRobots } from '@/tools/metaRobots'
-import { CompanyDataStorageKey, CompanyDataType, EstablishmentFront } from '@/types'
+import Navigation from '@/tools/navigation'
+import { CompanyDataStorageKey, CompanyDataType, EstablishmentFront, RouteName } from '@/types'
 
 definePageMeta({
   layout: 'iframe'
@@ -90,12 +91,9 @@ const resetSiret = async () => {
   company.value = null
   companySize.value = null
   manualRegistration.value = false
-  // useFiltersStore().setCompanyDataSelected(false)
-  // CompanyData.resetData()
-  // CompanyData.updateRouteFromStorage()
-  // await UsedTrack.updateQuestionnaireStep()
-  // await new ProjectManager().update()
-  // await new ProgramManager().update()
+  useFiltersStore().setCompanyDataSelected(false)
+  CompanyData.resetData()
+  CompanyData.updateRouteFromStorage()
 }
 
 const setManualRegister = () => {
@@ -103,7 +101,8 @@ const setManualRegister = () => {
 }
 
 const openNewTab = () => {
-  const url = window.location.origin
+  CompanyData.updateRouteFromStorage()
+  const url = new Navigation().getAbsoluteUrlByRouteName(RouteName.CatalogProjects, {}, useNavigationStore().query)
   if (window.top) {
     window.top.open(url, '_blank')
   } else {

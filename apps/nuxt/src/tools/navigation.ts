@@ -1,6 +1,6 @@
 import Config from '@/config'
 import { RouteName, TrackId } from '@/types'
-import { RouteLocationNormalizedLoaded, RouteParamsGeneric, Router } from 'vue-router'
+import { type LocationQueryValue, RouteLocationNormalizedLoaded, RouteParamsGeneric, Router } from 'vue-router'
 import { Scroll } from './scroll/scroll'
 
 export default class Navigation {
@@ -161,9 +161,13 @@ export default class Navigation {
     }
   }
 
-  getAbsoluteUrlByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {
+  getAbsoluteUrlByRouteName(
+    routeName: RouteName,
+    params: RouteParamsGeneric = {},
+    query: Record<string, LocationQueryValue | LocationQueryValue[]> = {}
+  ): string | undefined {
     if (this._router) {
-      return new URL(this._router.resolve({ name: routeName, params: params }).href, window.location.origin).href
+      return new URL(this._router.resolve({ name: routeName, params: params, query: query }).href, window.location.origin).href
     }
   }
 
