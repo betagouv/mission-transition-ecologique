@@ -8,7 +8,12 @@
     >
       <span class="fr-pr-2v fr-icon-arrow-left-line" /><span>je renseigne mon SIRET</span>
     </TeeDsfrButton>
-    <h4 class="fr-mb-0 fr-py-2v fr-text--yellow">Quelle est votre entreprise ?</h4>
+    <h4
+      v-if="!fromIframe"
+      class="fr-mb-0 fr-py-2v fr-text--yellow"
+    >
+      Quelle est votre entreprise ?
+    </h4>
   </div>
   <TeeProfileElement
     v-for="detailKey in Object.keys(profile).filter((detailK) => profile[detailK].if !== false)"

@@ -109,6 +109,6 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   colorPrimary: '#465F9D',
   height: 368,
-  width: 'auto'
+  width: '100%'
 })
 </script>

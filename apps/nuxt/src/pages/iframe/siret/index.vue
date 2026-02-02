@@ -11,31 +11,33 @@
     />
     <div
       v-else
-      class="fr-container fr-pt-4w fr-pb-8w fr-grid-row"
+      class="fr-container fr-pt-4w fr-pb-8w"
     >
-      <div class="fr-col-12">
-        <h1 class="fr-h2 fr-text--white fr-mb-2v">Quelle est votre organisation ?</h1>
-        <p class="fr-text--white fr-mb-3v">
-          Renseignez votre profil pour visualiser les aides éligibles et les projets pertinents pour votre secteur.
-        </p>
+      <div class="fr-grid-row">
+        <div class="fr-col-sm-10 fr-col-md-10 fr-col-lg-9 fr-col-xl-10 fr-col-12">
+          <h1 class="fr-h2 fr-text--white fr-mb-2v">Quelle est votre organisation ?</h1>
+          <p class="fr-text--white fr-mb-3v">
+            Renseignez votre profil pour visualiser les aides éligibles et les projets pertinents pour votre secteur.
+          </p>
+        </div>
       </div>
-      <div class="fr-col-6">
+      <div class="fr-col-sm-10 fr-col-md-9 fr-col-lg-8 fr-col-xl-7 fr-col-12">
         <TeeRegisterSiret
           v-if="registerStep === 1"
           @select-establishment="updateEstablishment"
           @manual-register="setManualRegister"
         />
-        <TeeProfileDetails
-          v-if="registerStep === 2"
-          :company="company"
-          :company-size="companySize"
-          :manual="manualRegistration"
-          from-iframe
-          button-label="Je découvre mes aides éligibles"
-          @modify-siret="resetSiret"
-          @close-register="openNewTab"
-        />
       </div>
+      <TeeProfileDetails
+        v-if="registerStep === 2"
+        :company="company"
+        :company-size="companySize"
+        :manual="manualRegistration"
+        from-iframe
+        button-label="Je découvre mes aides éligibles"
+        @modify-siret="resetSiret"
+        @close-register="openNewTab"
+      />
       <TeeIllustration
         class="illustration"
         color-primary="#e6fff7"
@@ -44,7 +46,6 @@
     </div>
   </div>
 </template>
-
 <script setup lang="ts">
 import Analytics from '@/tools/analytic/analytics'
 import { CompanyData } from '@/tools/companyData'
