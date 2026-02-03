@@ -13,7 +13,7 @@
       "type": "string"
     },
     "promesse": {
-      "description": "TODO",
+      "description": "Résume le dispositif de manière claire & simple en un minimum de mots (6 à 16 mots)",
       "type": "string"
     },
     "description": {
@@ -25,7 +25,7 @@
       "type": "string"
     },
     "description longue": {
-      "description": "La description longue La description longue est facultative. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple pour définir un terme technique, pour détailler une loi à laquelle un dispositif fait référence ou pour détailler les projets concernés par un financement",
+      "description": "La description longue est facultative. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple pour définir un terme technique, pour détailler une loi à laquelle un dispositif fait référence ou pour détailler les projets concernés par un financement",
       "type": "string"
     },
     "début de validité": {
@@ -39,15 +39,15 @@
       "pattern": "^[0-3][0-9]/[0-1][0-9]/[0-9]{4}$"
     },
     "aide temporairement indisponible": {
-      "description": "champ présent si le programme est temporairement désactivé",
+      "description": "Champ présent si le programme est temporairement désactivé",
       "type": "string"
     },
     "url": {
-      "description": "TODO",
+      "description": "Lien vers l'URL source du dispositif, là ou nous avons récupéré l'essentiel des informations concernants le dispositifs",
       "type": "string"
     },
     "illustration": {
-      "description": "TODO",
+      "description": "Image associée au dispositif",
       "type": "string"
     },
     "objectifs": {
@@ -68,11 +68,11 @@
                   "type": "object",
                   "properties": {
                     "lien": {
-                      "description": "TODO",
+                      "description": "URL du lien associé à un objectif",
                       "type": "string"
                     },
                     "texte": {
-                      "description": "TODO",
+                      "description": "Texte à afficher à la place du lien",
                       "type": "string"
                     }
                   },
@@ -86,7 +86,7 @@
                   "type": "object",
                   "properties": {
                     "formulaire": {
-                      "description": "TODO",
+                      "description": "Champ indiquant que l'action associée à l'objectif est de remplir le questionnaire disponible sur la page",
                       "type": "boolean"
                     }
                   },
@@ -162,6 +162,7 @@
       "properties": {
         "secteur d'activité": {
           "type": "array",
+          "description": "Liste en langage naturel des secteurs d'activités visés par le dispositif",
           "items": {
             "type": "string"
           },
@@ -169,6 +170,7 @@
         },
         "secteur géographique": {
           "type": "array",
+          "description": "Liste en langage naturel des zones géographiques éligible au dispositif d'aide",
           "items": {
             "type": "string"
           },
@@ -176,6 +178,7 @@
         },
         "taille de l'entreprise": {
           "type": "array",
+          "description": "Liste en langage naturel des entreprises éligibles au dispositif d'aide",
           "items": {
             "type": "string"
           },
@@ -183,6 +186,7 @@
         },
         "nombre d'années d'activité": {
           "type": "array",
+          "description": "Liste en langage naturel précisant les restrictions sur la durée d'existence de l'entreprise",
           "items": {
             "type": "string"
           },
@@ -190,6 +194,7 @@
         },
         "autres critères d'éligibilité": {
           "type": "array",
+          "description": "Liste en langage naturel de tout critère d'éligibilité ne figurant pas dans les sous catégories précédentes",
           "items": {
             "type": "string"
           },
@@ -204,8 +209,23 @@
       ]
     },
     "eligibilityData": {
-      "description": "Données d'éligibilite du programme. Sous format codifié pour traitements automatiques",
-      "type": "object"
+      "description": "Données d'éligibilité du programme. Sous format codifié pour traitements automatiques.",
+      "type": "object",
+      "properties": {
+        "company": {
+          "description": "Données d'éligibilité liés à l'entreprise",
+          "type": "object",
+          "properties": {
+            "allowedNafSections": {
+              "description": "Sections NAF.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
     },
     "publicodes": {
       "description": "Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.",
