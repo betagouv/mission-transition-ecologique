@@ -46068,7 +46068,7 @@
   {
     "titre": "Formations Opco Santé",
     "promesse": "Formez vos salariés à la transition écologique",
-    "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Sensibilisation à la prévention et à la gestion des déchets.\n- Hygiène et nettoyage: pratiques et achats responsables pour l'entretien des locaux en établissements sanitaires et médico-sociaux.\n- Sensibilisation à la transition énergétique. \n- etc.",
+    "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Sensibilisation à la prévention et à la gestion des déchets.\n- Hygiène et nettoyage: pratiques durables pour les établissements.\n- Sensibilisation à la transition énergétique.\n- Achats responsables et durables en restauration collective.\n- Numérique responsable et durable. \n- Etc.",
     "illustration": "images/TEE_ampoule.webp",
     "opérateur de contact": "Opco Santé",
     "contact question": "formulaire",
@@ -48540,7 +48540,7 @@
     "titre": "DEMIBaC",
     "promesse": "Financez un projet d’innovation technologique pour décarboner l’industrie",
     "description": "DEMIBac finance vos projets d’innovation de l’ensemble des procédés et technologies de décarbonation de l’industrie, notamment :\\\n• L’**efficacité énergétique des équipements et des procédés** liés à la récupération de chaleur ou de froid, au transfert de chaleur, au numérique et l’IA.\\\n• La **décarbonation de la chaleur et du mix énergétique** pour des usages industriels.\\\n• La **décarbonation des procédés**.\\\n• Le **captage, le stockage, le transport et la valorisation du CO2**.\\\n• La **réduction des autres gaz à effet de serre**.",
-    "description longue": "L'appel à projet comporte deux volets : \\\n• Le volet 1 concerne des projets pour le développement de briques technologiques\\\ninnovantes et d’actions de démonstration, dont les consortiums sont généralement\\\nconstitués par des académiques et des industriels de l’offre.\\\n• Le volet 2 cible des projets portés par des consortiums constitués d’un ou plusieurs\\\nindustriels proposant une offre de décarbonation et d’un ou plusieurs industriels côté\\\ndemande prêts à accueillir les solutions innovantes proposées sur leurs sites de\\\nproduction.",
+    "description longue": "L'appel à projet comporte deux volets :\n\n- Le volet 1 concerne des projets pour le développement de briques technologiques\\\n  innovantes et d’actions de démonstration, dont les consortiums sont généralement\\\n  constitués par des académiques et des industriels de l’offre.\n\n- Le volet 2 cible des projets portés par des consortiums constitués d’un ou plusieurs\\\n  industriels proposant une offre de décarbonation et d’un ou plusieurs industriels côté\\\n  demande prêts à accueillir les solutions innovantes proposées sur leurs sites de\\\n  production.\n\n  \\\n  Les projets inférieurs à 1,5 M€ seront redirigés vers le dispositif IBaC.",
     "début de validité": "01/07/2025",
     "fin de validité": "09/03/2027",
     "illustration": "images/TEE_ampoule.webp",
@@ -48596,7 +48596,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "Tous secteurs d'activité."
+        "Tous secteurs d'activité"
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -48615,7 +48615,8 @@
           "E",
           "F",
           "G",
-          "H"
+          "H",
+          "M"
         ]
       },
       "validity": {
@@ -48742,7 +48743,8 @@
           "code NAF niveau 1 . est E",
           "code NAF niveau 1 . est F",
           "code NAF niveau 1 . est G",
-          "code NAF niveau 1 . est H"
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est M"
         ]
       },
       "entreprise . a un objectif ciblé": {
@@ -48754,5 +48756,494 @@
       }
     },
     "id": "demi-bac"
+  },
+  {
+    "titre": "IBaC PME",
+    "promesse": "Financez un projet de décarbonation de l'industrie porté par une PME",
+    "description": "Le dispositif IBaC PME soutient financièrement des projets d'innovation portés par des PME en vue de décarboner l'industrie, tels que :\n\n• L’**efficacité énergétique des équipements et des procédés** liés à la récupération de chaleur ou de froid, au transfert de chaleur, au numérique et l’IA.\\\n• La **décarbonation de la chaleur et du mix énergétique** pour des usages industriels.\\\n• La **décarbonation des procédés**.\\\n• Le **captage, le stockage, le transport et la valorisation du CO2**.\\\n• La **réduction des autres gaz à effet de serre**.",
+    "description longue": "Cet appel à projet permet de cofinancer des **projets de recherche, développement et innovation**, dont les coûts totaux sont **inférieurs à 1,5 M€**, et contribue à accélérer le développement et la mise sur le marché de solutions et technologies innovantes.\n\nCet appel à projets se clôture le 09/02/2027 à 15h (heure de Paris), et fait l'objet de 3 relèves intermédiaires :\n\n- le 14/10/2025 à 15h,\n\n- le 03/02/2026 à 15h,\n\n- le 15/09/2026 à 15h.\n\n  \\\n  Les projets supérieurs à 1,5 M€ seront redirigés vers le dispositif DEMIBaC.",
+    "début de validité": "01/07/2025",
+    "fin de validité": "09/02/2027",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000814",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-services-par-des-pme-pour-la-decarbonation-de-lindustrie-ibac-pme",
+    "nature de l'aide": "financement",
+    "montant du financement": "Entre 35% et 45% du montant du projet",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
+        "liens": [
+          {
+            "lien": "https://file:///Users/betagouv/Downloads/AAP%20IBaC%20PME%20-%20Cahier%20des%20charges%20France%202030%20-%202025.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-services-par-des-pme-pour-la-decarbonation-de-lindustrie-ibac-pme",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez votre projet."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Moins de 250 salariés",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Les coûts des projets soumis à ce dispositif doivent être compris entre 300 k€ et 1,5 M€."
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "M"
+        ]
+      },
+      "validity": {
+        "start": "01/07/2025",
+        "end": "09/02/2027"
+      },
+      "priorityObjectives": [
+        "energy",
+        "environmental",
+        "eco-design"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est M"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est mon impact environnemental",
+          "questionnaire . objectif prioritaire . est l'écoconception"
+        ]
+      }
+    },
+    "id": "ibac-pme"
+  },
+  {
+    "titre": "Économie circulaire en Outre-mer et Corse",
+    "promesse": "Financez vos projets de développement du réemploi, de la réparation, du recyclage",
+    "description": "Ce dispositif finance vos études, animations et investissements en faveur de l'économie circulaire, en Outre-Mer et en Corse. Ces projets devront s'inscrire notamment dans :\n\n- La **lutte contre le gaspillage**.\n- Le **réemploi**, la **réutilisation**, la **réparation**.\n- Le recyclage et la **valorisation matière des déchets**.\n- L’évolution des pratiques alimentaires vers une **alimentation durable**.",
+    "description longue": "L’ADEME pourra demander en amont la réalisation de tout projet d’investissement une étude de faisabilité préalable visant à analyser et argumenter la pertinence de la solution choisie, son potentiel marché, ses impacts et bénéfices attendus (économiques, environnementaux, sociaux) et à dimensionner les investissements. Le contenu de cette étude (cahier des charges) sera discuté avec la Direction Régionale de l’ADEME afin de tenir compte des spécificités territoriales.\n\nPour les projets d’investissements d’un montant supérieur à 400 000€, une évaluation environnementale (type ACV ou empreinte projet) pourra être exigée. Celle-ci doit être réalisée par un prestataire externe spécialisé et indépendant et peut être intégrée aux dépenses éligibles. L’étude doit être réalisée selon le cadre de référence méthodologique proposé par l’ADEME. Le montant de l’aide à la prestation d’évaluation environnementale est plafonné à 10 000 €.\n\nL’ADEME tiendra compte d’éventuels co-financements pour ajuster son aide, y compris des aides des éco-organismes, quelle que soit leur forme. Si le projet correspond à des flux REP, il est demandé de prendre contact avec le ou les éco-organismes agréés pour faire connaitre le projet, identifier les possibilités d’accompagnement ou d’aide financière des éco-organismes et garantir le gisement de déchets\\\nconcernés, le cas échéant via une contractualisation avec l’éco-organisme.",
+    "début de validité": "01/01/2026",
+    "fin de validité": "31/12/2026",
+    "illustration": "images/TEE_ampoule.webp",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000904",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 80% delon le projet, dans la limite de 300 000 €",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89mergence%20ECI%20OMC%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez votre projet."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Corse, Guadeloupe, Guyane, La Réunion, Martinique, Mayotte, Nouvelle-Calédonie, Polynésie française, Saint-Barthélemy, Saint-Martin, Saint-Pierre-Et-Miquelon, Terres australes et antarctiques françaises, Wallis et Futuna"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Corse",
+          "Guadeloupe",
+          "Guyane",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Nouvelle-Calédonie",
+          "Polynésie française",
+          "Saint-Barthélemy",
+          "Saint-Martin",
+          "Saint-Pierre-Et-Miquelon",
+          "Terres australes et antarctiques françaises",
+          "Wallis et Futuna"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2026",
+        "end": "31/12/2026"
+      },
+      "priorityObjectives": [
+        "waste",
+        "eco-design"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est l'écoconception"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Corse",
+          "région = Guadeloupe",
+          "région = Guyane",
+          "région = La Réunion",
+          "région = Martinique",
+          "région = Mayotte",
+          "région = Nouvelle-Calédonie",
+          "région = Polynésie française",
+          "région = Saint-Barthélemy",
+          "région = Saint-Martin",
+          "région = Saint-Pierre-Et-Miquelon",
+          "région = Terres australes et antarctiques françaises",
+          "région = Wallis et Futuna"
+        ]
+      }
+    },
+    "id": "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
   }
 ]
