@@ -1,8 +1,9 @@
-titre: DEMIBaC
-promesse: Financez un projet d’innovation technologique pour décarboner l’industrie
+titre: IBaC PME
+promesse: Financez un projet de décarbonation de l'industrie porté par une PME
 description: >-
-  DEMIBac finance vos projets d’innovation de l’ensemble des procédés et
-  technologies de décarbonation de l’industrie, notamment :\
+  Le dispositif IBaC PME soutient financièrement des projets d'innovation portés
+  par des PME en vue de décarboner l'industrie, tels que :
+
 
   • L’**efficacité énergétique des équipements et des procédés** liés à la
   récupération de chaleur ou de froid, au transfert de chaleur, au numérique et
@@ -16,44 +17,24 @@ description: >-
   • Le **captage, le stockage, le transport et la valorisation du CO2**.\
 
   • La **réduction des autres gaz à effet de serre**.
-description longue: >-
-  L'appel à projet comporte deux volets :
-
-
-  - Le volet 1 concerne des projets pour le développement de briques
-  technologiques\
-    innovantes et d’actions de démonstration, dont les consortiums sont généralement\
-    constitués par des académiques et des industriels de l’offre.
-
-  - Le volet 2 cible des projets portés par des consortiums constitués d’un ou
-  plusieurs\
-    industriels proposant une offre de décarbonation et d’un ou plusieurs industriels côté\
-    demande prêts à accueillir les solutions innovantes proposées sur leurs sites de\
-    production.
-
-    \
-    Les projets inférieurs à 1,5 M€ seront redirigés vers le dispositif IBaC.
+description longue: "Cet appel à projet permet de cofinancer des\_**projets de recherche, développement et innovation**, dont les coûts totaux sont\_**inférieurs à 1,5\_M€**,\_et contribue à accélérer le développement et la mise sur le marché de solutions et technologies innovantes.\n\nCet appel à projets se clôture le 09/02/2027 à 15h (heure de Paris), et fait l'objet de 3 relèves intermédiaires :\n\n- le 14/10/2025 à 15h,\n\n- le 03/02/2026 à 15h,\n\n- le 15/09/2026 à 15h.\n\n  \\\n  Les projets supérieurs à 1,5 M€ seront redirigés vers le dispositif DEMIBaC."
 début de validité: 01/07/2025
-fin de validité: 09/03/2027
-illustration: images/TEE_ampoule.webp
+fin de validité: 09/02/2027
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000815
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000814
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-demonstrateurs-realisations-de-premieres-industrielles-associant-loffre-et-la-demande-demibac
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-services-par-des-pme-pour-la-decarbonation-de-lindustrie-ibac-pme
 nature de l'aide: financement
-montant du financement: Jusqu'à 60% du montant du projet
+montant du financement: Entre 35% et 45% du montant du projet
 objectifs:
   - description: >-
       Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
       projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/sites/default/files/AAP%20DEMIBaC%20-%20Cahier%20des%20charges%20France%202030%20-%202025.pdf
+          https://file:///Users/betagouv/Downloads/AAP%20IBaC%20PME%20-%20Cahier%20des%20charges%20France%202030%20-%202025.pdf
         texte: Conditions éligibilité et financement
-  - description: >-
-      Contactez l’ADEME pour organiser une réunion de pré-dépôt, à l’adresse
-      [demibac@ademe.fr](mailto:demibac@ademe.fr) (en mentionnant « DEMIBaC »
-      dans l’objet du mail) un\
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
       - lien: https://agirpourlatransition.ademe.fr/inscription
@@ -64,7 +45,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-demonstrateurs-realisations-de-premieres-industrielles-associant-loffre-et-la-demande-demibac
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-services-par-des-pme-pour-la-decarbonation-de-lindustrie-ibac-pme
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -73,7 +54,7 @@ objectifs:
   - description: Réalisez votre projet.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Toutes tailles
+    - Moins de 250 salariés
     - Éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
@@ -83,8 +64,8 @@ conditions d'éligibilité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:
     - >-
-      Les coûts des projets soumis à ce dispositif doivent être supérieurs à 1,5
-      M€.
+      Les coûts des projets soumis à ce dispositif doivent être compris entre
+      300 k€ et 1,5 M€.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
