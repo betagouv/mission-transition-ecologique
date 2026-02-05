@@ -66,8 +66,6 @@ imageResizerChild()
 </script>
 
 <style scoped lang="scss">
-@use '@/assets/scss/tool';
-
 .fr-card {
   .fr-card__title {
     a::after {

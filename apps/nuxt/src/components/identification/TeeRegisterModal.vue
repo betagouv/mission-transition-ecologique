@@ -37,6 +37,7 @@
           <TeeRegisterSiret
             v-if="registerStep === 1"
             class="fr-col-12 fr-col-md-9"
+            title="Quelle est votre entreprise ?"
             @select-establishment="updateEstablishment"
             @manual-register="setManualRegister"
           />
