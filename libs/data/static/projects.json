@@ -281,7 +281,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "aide-tpe-transition-na",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       21
@@ -1523,7 +1524,8 @@
       "cap-transition-ecologique",
       "aide-tpe-transition-na",
       "booster-transformation-rev-3",
-      "easy-diag"
+      "easy-diag",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action déchets",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action déchets",
@@ -1738,7 +1740,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "aide-tpe-transition-na",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       21
@@ -2367,7 +2370,8 @@
       "act-evaluation",
       "indicateur-climat",
       "cap-decarbonation",
-      "demi-bac"
+      "demi-bac",
+      "ibac-pme"
     ],
     "linkedProjects": [
       1
@@ -2617,7 +2621,8 @@
       "credit-impot-innovation",
       "fasep",
       "accelerateur-economie-circulaire",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une démarche d'écoconception",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité d'une démarche d'écoconception",
@@ -3772,7 +3777,8 @@
       "mission-strategie-environnement",
       "pret-economies-d-energie-pee",
       "certificats-economie-energie",
-      "demi-bac"
+      "demi-bac",
+      "ibac-pme"
     ],
     "linkedProjects": [
       4
@@ -3982,7 +3988,8 @@
     "mainTheme": "building",
     "programs": [
       "fond-vert-territoires-d-industrie",
-      "programme-synergies-durables"
+      "programme-synergies-durables",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4642,7 +4649,8 @@
     "programs": [
       "pret-economies-d-energie-pee",
       "decarb-flash-2025-2027",
-      "demi-bac"
+      "demi-bac",
+      "ibac-pme"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4687,7 +4695,9 @@
       "programme-synergies-durables",
       "decarb-flash-2025-2027",
       "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
-      "demi-bac"
+      "demi-bac",
+      "ibac-pme",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       36
@@ -4756,7 +4766,8 @@
       "etude-reemploi-reutilisation-reparation",
       "fond-vert-territoires-d-industrie",
       "charte-zero-dechet-plastique",
-      "aide-tpe-transition-na"
+      "aide-tpe-transition-na",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       21
@@ -4798,7 +4809,8 @@
       "pret-energie-aura",
       "pret-ile-de-france",
       "aide-tpe-transition-na",
-      "accelerateur-economie-circulaire"
+      "accelerateur-economie-circulaire",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       36
@@ -4950,7 +4962,8 @@
     "mainTheme": "energy",
     "programs": [
       "decarb-flash-2025-2027",
-      "demi-bac"
+      "demi-bac",
+      "ibac-pme"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [],
