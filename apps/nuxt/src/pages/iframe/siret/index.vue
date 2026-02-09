@@ -11,7 +11,7 @@
     />
     <div
       v-else
-      class="fr-container fr-pt-4w fr-pb-8w"
+      class="fr-container fr-pt-4w fr-pb-8w tee-iframe-register"
     >
       <div class="fr-grid-row">
         <div class="fr-col-sm-10 fr-col-md-10 fr-col-lg-9 fr-col-xl-10 fr-col-12">
@@ -37,11 +37,6 @@
         button-label="Je découvre mes aides éligibles"
         @modify-siret="resetSiret"
         @close-register="openNewTab"
-      />
-      <TeeIllustration
-        class="illustration"
-        color-primary="#e6fff7"
-        height="228"
       />
     </div>
   </div>
@@ -70,7 +65,7 @@ const company = ref<CompanyDataType[CompanyDataStorageKey.Company]>(registeredDa
 const companySize = ref<CompanyDataType[CompanyDataStorageKey.Size]>(registeredData.value[CompanyDataStorageKey.Size])
 const manualRegistration = ref<boolean>(!!(company.value && !('siret' in company.value)))
 
-const mainStep = ref<number>(1)
+const mainStep = ref<number>(2)
 
 const registerStep = computed<number>(() => {
   if (company.value || manualRegistration.value) {
@@ -118,12 +113,29 @@ useHead(MetaRobots.noIndexFollow())
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/scss/tool';
+
 #iframe-siret-container {
   .illustration :deep(svg) {
     position: absolute;
     bottom: 0;
     right: 0;
     width: auto;
+  }
+
+  :deep(.tee-cta-image) {
+    background-size: auto 228px;
+  }
+
+  .tee-iframe-register {
+    background-image: url('/images/TEE-illustrationHP-2.svg');
+    background-size: auto 228px;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+
+    @include tool.respond-to(md) {
+      background-image: none;
+    }
   }
 }
 

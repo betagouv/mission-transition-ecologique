@@ -39,10 +39,6 @@
       </div>
       <div class="fr-col-2 fr-col-md-4 fr-col--middle fr-col-lg-4 fr-col-unhidden-md fr-col-hidden"></div>
     </div>
-    <TeeIllustration
-      class="illustration"
-      :height="svgHeight ?? '300'"
-    />
   </div>
 </template>
 <script setup lang="ts">
