@@ -19,6 +19,7 @@ function setupIframe(element: HTMLScriptElement) {
   const parentUrl = encodeURIComponent(window.location.href)
   const parentUrlParam = `parent_url=${parentUrl}`
   const baseParams = `${parentUrlParam}&utm_campaign=iframe`
+  const sourceParam = element.dataset.source ? `&utm_source=${element.dataset.source}` : ''
   let src: string
   const iframeBaseUrl = `${url}/iframe`
   switch (type) {
@@ -26,7 +27,7 @@ function setupIframe(element: HTMLScriptElement) {
       src = id ? `${iframeBaseUrl}/${type}/${id}?${baseParams}` : `${url}/iframe?${baseParams}`
       break
     case 'siret':
-      src = `${iframeBaseUrl}/${type}?${parentUrlParam}&utm_campaign=iframe_siret`
+      src = `${iframeBaseUrl}/${type}?${parentUrlParam}&utm_campaign=iframe_siret${sourceParam}`
       break
     default:
       src = `${iframeBaseUrl}?${baseParams}`
