@@ -29,7 +29,6 @@
             <TeeDsfrButton
               size="lg"
               class="fr-text--bold fr-text-xl fr-btn-fullwidth fr-btn-align-center fr-btn-bg fr-btn-bg--blue-agir"
-              :only-label="buttonLabel"
               @click="$emit('onClickButton')"
             >
               <span v-html="buttonLabel"></span>
@@ -44,12 +43,12 @@
 <script setup lang="ts">
 interface Props {
   overline?: string
-  svgHeight?: number | string
   buttonLabel?: string
 }
 
 withDefaults(defineProps<Props>(), {
-  buttonLabel: 'Je trouve les aides <span class="fr-display--block fr-display-sm--inline">pour mon projet</span>'
+  buttonLabel: 'Je trouve les aides <span class="fr-display--block fr-display-sm--inline">pour mon projet</span>',
+  overline: undefined
 })
 
 defineEmits<{

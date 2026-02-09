@@ -74,7 +74,7 @@ await new ProjectManager().getProjects()
 onNuxtReady(async () => {
   CompanyData.isDataFullComputed().value // call to initialize computed reactivity variable
   await new ProjectManager().getProjects()
-  if (isDataFull) {
+  if (isDataFull.value) {
     await new ProgramManager().getDependentCompanyData(true)
   }
 })

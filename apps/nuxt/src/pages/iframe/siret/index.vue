@@ -5,7 +5,6 @@
   >
     <TeeCta
       v-if="mainStep === 1"
-      svg-height="228"
       button-label="Je teste mon éligibilité"
       @on-click-button="mainStep = 2"
     />

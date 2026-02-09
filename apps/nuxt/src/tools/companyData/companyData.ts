@@ -74,7 +74,6 @@ export class CompanyData {
       const data = this.dataRef
       const companyData = data.value[CompanyDataStorageKey.Company]
       if (!companyData) {
-        console.log('Company data is not full: company data is missing')
         useCompanyDataStore().reset()
         return false
       }

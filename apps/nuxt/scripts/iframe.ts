@@ -8,7 +8,6 @@ if (!script) {
 }
 
 if (script) {
-  console.log('script found:', script.dataset.type, script.dataset.id)
   setupIframe(script)
 }
 
