@@ -59,7 +59,12 @@ export class ProgramManager {
     const navigation = new Navigation()
     if (navigation.isQuestionnaireResult() || navigation.isQuestionnaireProjectDetail()) {
       await this.getDependentCompanyData(undefined)
-    } else if (navigation.isCatalogProjectDetail() || navigation.isCatalogPrograms()) {
+    } else if (
+      navigation.isCatalogProjectDetail() ||
+      navigation.isCatalogPrograms() ||
+      navigation.isHomepage() ||
+      navigation.isCatalogProjects()
+    ) {
       await this.getDependentCompanyData(true)
     } else if (navigation.isProgramDetail() && this._useProgram.currentProgram) {
       const currentId = this._useProgram.currentProgram.id

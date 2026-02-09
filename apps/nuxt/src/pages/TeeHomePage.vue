@@ -14,7 +14,11 @@
     </template>
 
     <div class="fr-container--fluid fr-container-md">
-      <h2 class="fr-text--blue-900 fr-text-center fr-text-left-md fr-pt-6v">Quel est votre projet ?</h2>
+      <h2 class="fr-text--blue-900 fr-text-center fr-text-left-md fr-pt-6v">
+        <template v-if="!isDataFull">Quel est votre projet ?</template>
+        <template v-else> Vous êtes éligible à {{ animatedCount }} {{ animatedCount > 1 ? 'aides' : 'aide' }} </template>
+      </h2>
+
       <TeeHomeProjectList />
     </div>
     <TeeHomeTestimonies />
@@ -42,6 +46,7 @@
 
 <script setup lang="ts">
 import { defineRouteRules } from '#imports'
+import { useCounterProgramsAnimation } from '@/composables/useCounterProgramsAnimation'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { MetaRobots } from '@/tools/metaRobots'
 import Navigation from '@/tools/navigation'
@@ -54,6 +59,8 @@ const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const { default: json } = await import('@/public/json/faq/home.json')
 const faqHomeJson = json as unknown as FaqSectionType[]
+
+const { animatedCount } = useCounterProgramsAnimation()
 
 definePageMeta({
   path: '/',
