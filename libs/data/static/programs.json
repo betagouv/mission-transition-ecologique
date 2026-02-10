@@ -45730,11 +45730,15 @@
         ]
       },
       {
-        "description": "Pour toute demande de pris en charge d'une formation, contactez le service entreprises dans votre région",
+        "description": "Pour toute demande de prise en charge d'une formation, consultez les règles de prise en charge, et contactez votre conseiller régional Opco 2i",
         "liens": [
           {
+            "lien": "https://www.opco2i.fr/formation-et-financement/les-regles-de-prise-en-charge/",
+            "texte": "Règles de prise en charge"
+          },
+          {
             "lien": "https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/",
-            "texte": "Service entreprises"
+            "texte": "Contacter mon conseiller"
           }
         ]
       }
@@ -46618,7 +46622,7 @@
         ]
       },
       {
-        "description": "Candidatez à l'appel à projets avant fin mars 2026 en contactant la chargée de mission des pays de la Loire (écrire à [m.perrocheau@anact.fr](mailto:m.perrocheau@anact.fr))."
+        "description": "Candidatez à l'appel à projets avant fin mars 2026 en contactant la chargée de mission de l'Aract Pays de la Loire (écrire à [m.perrocheau@anact.fr](mailto:m.perrocheau@anact.fr))."
       },
       {
         "description": "Début avril, vous saurez si votre projet est retenu. S'il l'est, vous recevez les détails du programme."
