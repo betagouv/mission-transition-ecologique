@@ -19,8 +19,8 @@
     </li>
     <li
       v-for="externalProgram in extFilteredPrograms"
-      :id="externalProgram.id + '-ext'"
-      :key="`external-${externalProgram.id}`"
+      :id="externalProgram.id"
+      :key="externalProgram.id"
       class="fr-col-12 fr-col-sm-6 fr-col-md-12"
     >
       <ExternalProgramCard
