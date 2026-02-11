@@ -1,6 +1,5 @@
 import { Monitor, ProgramService } from '@tee/backend-ddd'
 import { QuestionnaireData, serverQuestionnaireDataSchema } from '@tee/common'
-import { AbstractProgramTypeForFront } from '@tee/data'
 import { defineEventHandler, H3Event } from 'h3'
 import { CacheKeyBuilder } from '~/server/utils/CacheKeyBuilder'
 
@@ -22,18 +21,8 @@ const getPrograms = (questionnaireData: QuestionnaireData) => {
       statusMessage: programsResult.error.message
     })
   }
-  const teePrograms = programsResult.value.map((program) => programService.convertDomainToFront(program))
 
-  const externalProgramsResult = programService.getExternal()
-  if (externalProgramsResult.isErr) {
-    Monitor.error('Error in get external programs', { error: externalProgramsResult.error })
-    throw createError({
-      statusCode: 500,
-      statusMessage: externalProgramsResult.error.message
-    })
-  }
-
-  return [...teePrograms, ...externalProgramsResult.value] as AbstractProgramTypeForFront[]
+  return programsResult.value
 }
 
 const _getProgramsCached = cachedFunction(

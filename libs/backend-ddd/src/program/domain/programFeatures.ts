@@ -55,7 +55,7 @@ export default class ProgramFeatures {
     return Result.ok(programWithEligibility.value)
   }
 
-  public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
+  private _getFilteredByInternal(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
     if (!this._eligibilityEvaluator) {
       return Result.err(new Error('RulesService should be defined to filter programs'))
     }
@@ -107,5 +107,19 @@ export default class ProgramFeatures {
 
     const frontConverter = new FrontConverter()
     return Result.ok(frontConverter.convertDomainToFront(program.value) as AbstractProgramTypeForFront)
+  }
+
+  public getFilteredProgramsForFront(questionnaireData: QuestionnaireData): Result<AbstractProgramTypeForFront[], Error> {
+    const programsResult = this._getFilteredByInternal(questionnaireData)
+
+    if (programsResult.isErr) {
+      return Result.err(programsResult.error)
+    }
+
+    const frontConverter = new FrontConverter()
+    const teePrograms = programsResult.value.map((program) => frontConverter.convertDomainToFront(program))
+    const externalPrograms = this.getExternals()
+
+    return Result.ok([...teePrograms, ...externalPrograms] as AbstractProgramTypeForFront[])
   }
 }

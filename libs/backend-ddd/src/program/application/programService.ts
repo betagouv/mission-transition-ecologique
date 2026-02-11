@@ -46,8 +46,8 @@ export class ProgramService {
     return this.program.getOneWithMaybeEligibilityForFront(id, questionnaireData)
   }
 
-  public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
-    return this.program.getFilteredBy(questionnaireData)
+  public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<AbstractProgramTypeForFront[], Error> {
+    return this.program.getFilteredProgramsForFront(questionnaireData)
   }
 
   public convertDomainToFront(program: ProgramTypeWithEligibility) {
