@@ -2,11 +2,18 @@ import { ProgramRepository, EligibilityEvaluator } from './spi'
 import { ProgramFilter } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
-import { AbstractProgramType, ProgramEligibilityStatus, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
+import {
+  AbstractProgramType,
+  AbstractProgramTypeForFront,
+  ProgramEligibilityStatus,
+  ProgramType,
+  ProgramTypeWithEligibility
+} from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 import { Monitor } from '../../common'
 import ProgramCustomizer from './programCustomizer'
 import { ProgramNotFoundError } from './types'
+import FrontConverter from '../infrastructure/frontConverter'
 
 export default class ProgramFeatures {
   constructor(
@@ -18,7 +25,10 @@ export default class ProgramFeatures {
     return this._programRepository.getById(id)
   }
 
-  public getOneByIdWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
+  public getOneInternalByIdWithMaybeEligibility(
+    id: string,
+    questionnaireData: QuestionnaireData
+  ): Result<ProgramTypeWithEligibility, Error> {
     let program = this.getOneById(id)
     if (!program) {
       Monitor.warning('Requested Program Id unknown', { id })
@@ -76,5 +86,26 @@ export default class ProgramFeatures {
 
   public getExternalById(id: string): AbstractProgramType | undefined {
     return this._programRepository.getExternalById(id)
+  }
+
+  public getOneWithMaybeEligibilityForFront(id: string, questionnaireData: QuestionnaireData): Result<AbstractProgramTypeForFront, Error> {
+    const program = this.getOneInternalByIdWithMaybeEligibility(id, questionnaireData)
+
+    if (program.isErr) {
+      if (program.error instanceof ProgramNotFoundError) {
+        const externalProgram = this.getExternalById(id)
+
+        if (externalProgram) {
+          return Result.ok(externalProgram as AbstractProgramTypeForFront)
+        }
+
+        return Result.err(program.error)
+      }
+
+      return Result.err(program.error)
+    }
+
+    const frontConverter = new FrontConverter()
+    return Result.ok(frontConverter.convertDomainToFront(program.value) as AbstractProgramTypeForFront)
   }
 }

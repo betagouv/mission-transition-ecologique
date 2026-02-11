@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import { AbstractProgramType, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
+import { AbstractProgramType, AbstractProgramTypeForFront, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { ProgramEligibilityEvaluator } from '../domain/programEligibilityEvaluator'
 import ProgramFeatures from '../domain/programFeatures'
 import ProgramsJson from '../infrastructure/programsJson'
@@ -42,8 +42,8 @@ export class ProgramService {
     return this.program.getOneById(id)
   }
 
-  public getOneWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
-    return this.program.getOneByIdWithMaybeEligibility(id, questionnaireData)
+  public getOneWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<AbstractProgramTypeForFront, Error> {
+    return this.program.getOneWithMaybeEligibilityForFront(id, questionnaireData)
   }
 
   public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
