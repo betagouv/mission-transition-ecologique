@@ -15,7 +15,10 @@
     <template #sidemenu>
       <ProgramFiltersAccordion with-title />
     </template>
-    <ProgramList :filtered-programs="programsByFilters" />
+    <ProgramList
+      :filtered-programs="programsByFilters"
+      :ext-filtered-programs="extProgramsByFilters"
+    />
   </LayoutCatalog>
 </template>
 
@@ -40,7 +43,7 @@ definePageMeta({
 const { default: json } = await import('@/public/json/faq/catalog-program.json')
 const faqCatalogProgram = json as unknown as FaqSectionType[]
 
-const { hasError, programsByFilters } = storeToRefs(useProgramStore())
+const { hasError, programsByFilters, extProgramsByFilters } = storeToRefs(useProgramStore())
 const navigation = new Navigation()
 const route = useRoute()
 

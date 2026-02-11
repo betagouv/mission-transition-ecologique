@@ -20,11 +20,11 @@ export const useProgramStore = defineStore('program', () => {
 
   function reset() {
     programs.value = []
+    extPrograms.value = []
     currentProgram.value = undefined
+    currentExtProgram.value = undefined
     hasPrograms.value = false
     hasError.value = false
-    currentExtProgram.value = undefined
-    extPrograms.value = []
   }
 
   const programsByFilters = computed(() => {
@@ -44,6 +44,14 @@ export const useProgramStore = defineStore('program', () => {
     })
   })
 
+  const extProgramsByFilters = computed(() => {
+    const isCompanySelected = filtersStore.companyDataSelected && companyStore.isDataFull
+    if (isCompanySelected) {
+      return []
+    }
+    return extPrograms.value
+  })
+
   return {
     programs,
     currentProgram,
@@ -52,6 +60,7 @@ export const useProgramStore = defineStore('program', () => {
     programsByFilters,
     currentExtProgram,
     extPrograms,
+    extProgramsByFilters,
     reset
   }
 })
