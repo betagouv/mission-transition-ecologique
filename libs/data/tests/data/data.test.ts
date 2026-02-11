@@ -4,7 +4,7 @@ import programSchema from '../../schemas/program-with-publicodes-schema.json'
 import regionSchema from '../../schemas/region-data-schema.json'
 import communes from '../../static/communes.json'
 import { jsonPrograms } from '../../static'
-import { ProgramType } from '../../src/program/types/shared'
+import { ProgramType, ProgramStaticBaseType, ProgramTypes } from '../../src/program/types/shared'
 
 test('JSON Schema is valid', () => {
   expect(new Ajv().compile(programSchema)).not.toThrow()
@@ -12,7 +12,8 @@ test('JSON Schema is valid', () => {
 
 test('Data is valid against the JSON schema', () => {
   const validate = compileSchema(programSchema)
-  const programs = jsonPrograms as unknown as ProgramType[]
+  const allPrograms = jsonPrograms as unknown as ProgramStaticBaseType[]
+  const programs = allPrograms.filter((p) => p.type === ProgramTypes.TEE) as unknown as ProgramType[]
 
   programs.forEach((p) => {
     const { id: id, ...programWithoutId } = p

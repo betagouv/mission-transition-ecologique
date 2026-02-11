@@ -90,7 +90,9 @@ const testHelperPreprocessing = (testCase: PreprocessingTestCase) => {
 
     const programs = [program]
     PublicodesService.init(programs)
-    const result = new ProgramFeatures(makeProgramsRepository(programs), PublicodesService.getInstance()).getFilteredBy(questionnaireData)
+    const result = new ProgramFeatures(makeProgramsRepository(programs), PublicodesService.getInstance()).getFilteredByInternal(
+      questionnaireData
+    )
 
     expectToBeOk(result)
 
