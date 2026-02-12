@@ -15,7 +15,7 @@ import axios from 'axios'
 
 // Override ConfigBaserow for tests only (no dependency on env variables)
 // Mock the real module so that any ConfigBaserow reads use these neutral values.
-vi.mock('../../../src/configBaserow', () => ({
+vi.mock('../../../src/config/configBaserow', () => ({
   default: {
     TOKEN: 'TEST_TOKEN',
     THEME_ID: 0,
