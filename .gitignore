@@ -33,7 +33,6 @@ node_modules
 *.launch
 .settings/
 *.sublime-workspace
-.ai
 
 # IDE - VSCode
 .vscode/
@@ -90,8 +89,8 @@ dispositifs*.xlsx
 vite.config.*.timestamp*
 vitest.config.*.timestamp*
 
-# Cursor
+# AI Configs
+.ai
 .cursor/rules/nx-rules.mdc
-
-# GitHub
 .github/instructions/nx.instructions.md
+.claude

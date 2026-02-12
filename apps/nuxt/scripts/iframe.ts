@@ -11,15 +11,45 @@ if (script) {
   setupIframe(script)
 }
 
-function setupIframe(element: HTMLScriptElement) {
-  const url = new URL(element.src).origin
-  const type = element.dataset.type || ''
-  const id = element.dataset.id || ''
-  const parentUrl = encodeURIComponent(window.location.href)
-  let src = `${url}/iframe?parent_url=${parentUrl}&utm_campaign=iframe`
-  if (type == 'projet' && id) {
-    src = `${url}/iframe/${type}/${id}?parent_url=${parentUrl}&utm_campaign=iframe`
+interface IframeParams {
+  scriptUrl: string
+  type: string
+  id: string
+  parentUrl: string
+  source?: string
+}
+
+function buildIframeUrl({ scriptUrl, type, id, parentUrl, source }: IframeParams): string {
+  const origin = new URL(scriptUrl).origin
+  const iframeBaseUrl = `${origin}/iframe`
+  const utmCampaign = type === 'siret' ? 'iframe_siret' : 'iframe'
+
+  const params = new URLSearchParams({
+    parent_url: parentUrl,
+    utm_campaign: utmCampaign
+  })
+  if (source) {
+    params.set('utm_source', source)
   }
+
+  switch (type) {
+    case 'projet':
+      return id ? `${iframeBaseUrl}/${type}/${id}?${params}` : `${iframeBaseUrl}?${params}`
+    case 'siret':
+      return `${iframeBaseUrl}/${type}?${params}`
+    default:
+      return `${iframeBaseUrl}?${params}`
+  }
+}
+
+function setupIframe(element: HTMLScriptElement) {
+  const src = buildIframeUrl({
+    scriptUrl: element.src,
+    type: element.dataset.type || '',
+    id: element.dataset.id || '',
+    parentUrl: window.location.href,
+    source: element.dataset.source
+  })
 
   const iframe = document.createElement('iframe')
 

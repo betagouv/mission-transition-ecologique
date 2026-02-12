@@ -3,13 +3,22 @@
     <Script
       id="transition-ecologique-entreprise"
       :src="Iframe.getScript()"
-    ></Script>
+    />
+    <div class="fr-mb-2v"></div>
     <Script
       id="transition-ecologique-entreprise"
       :src="Iframe.getScript()"
       data-type="projet"
       data-id="diag-360"
-    ></Script>
+    />
+    <div class="fr-mb-2v"></div>
+    <Script
+      id="transition-ecologique-entreprise"
+      :src="Iframe.getScript()"
+      data-type="siret"
+      data-source="tee"
+    />
+    <div class="fr-mb-2v"></div>
   </div>
 </template>
 
