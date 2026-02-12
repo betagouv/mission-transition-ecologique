@@ -46,7 +46,6 @@
 
 <script setup lang="ts">
 import { defineRouteRules } from '#imports'
-import { useCounterProgramsAnimation } from '@/composables/useCounterProgramsAnimation'
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import { MetaRobots } from '@/tools/metaRobots'
 import Navigation from '@/tools/navigation'

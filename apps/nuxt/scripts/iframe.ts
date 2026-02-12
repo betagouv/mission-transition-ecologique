@@ -11,26 +11,45 @@ if (script) {
   setupIframe(script)
 }
 
-function setupIframe(element: HTMLScriptElement) {
-  const url = new URL(element.src).origin
-  const type = element.dataset.type || ''
-  const id = element.dataset.id || ''
-  const parentUrl = encodeURIComponent(window.location.href)
-  const parentUrlParam = `parent_url=${parentUrl}`
-  const baseParams = `${parentUrlParam}&utm_campaign=iframe`
-  const sourceParam = element.dataset.source ? `&utm_source=${element.dataset.source}` : ''
-  let src: string
-  const iframeBaseUrl = `${url}/iframe`
+interface IframeParams {
+  scriptUrl: string
+  type: string
+  id: string
+  parentUrl: string
+  source?: string
+}
+
+function buildIframeUrl({ scriptUrl, type, id, parentUrl, source }: IframeParams): string {
+  const origin = new URL(scriptUrl).origin
+  const iframeBaseUrl = `${origin}/iframe`
+  const utmCampaign = type === 'siret' ? 'iframe_siret' : 'iframe'
+
+  const params = new URLSearchParams({
+    parent_url: parentUrl,
+    utm_campaign: utmCampaign
+  })
+  if (source) {
+    params.set('utm_source', source)
+  }
+
   switch (type) {
     case 'projet':
-      src = id ? `${iframeBaseUrl}/${type}/${id}?${baseParams}` : `${url}/iframe?${baseParams}`
-      break
+      return id ? `${iframeBaseUrl}/${type}/${id}?${params}` : `${iframeBaseUrl}?${params}`
     case 'siret':
-      src = `${iframeBaseUrl}/${type}?${parentUrlParam}&utm_campaign=iframe_siret${sourceParam}`
-      break
+      return `${iframeBaseUrl}/${type}?${params}`
     default:
-      src = `${iframeBaseUrl}?${baseParams}`
+      return `${iframeBaseUrl}?${params}`
   }
+}
+
+function setupIframe(element: HTMLScriptElement) {
+  const src = buildIframeUrl({
+    scriptUrl: element.src,
+    type: element.dataset.type || '',
+    id: element.dataset.id || '',
+    parentUrl: window.location.href,
+    source: element.dataset.source
+  })
 
   const iframe = document.createElement('iframe')
 
