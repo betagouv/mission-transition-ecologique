@@ -91,22 +91,21 @@ export default class ProgramFeatures {
   public getOneWithMaybeEligibilityForFront(id: string, questionnaireData: QuestionnaireData): Result<AbstractProgramTypeForFront, Error> {
     const program = this.getOneInternalByIdWithMaybeEligibility(id, questionnaireData)
 
-    if (program.isErr) {
-      if (program.error instanceof ProgramNotFoundError) {
-        const externalProgram = this.getExternalById(id)
+    const frontConverter = new FrontConverter()
 
-        if (externalProgram) {
-          return Result.ok(externalProgram as AbstractProgramTypeForFront)
-        }
-
-        return Result.err(program.error)
-      }
-
-      return Result.err(program.error)
+    if (program.isOk) {
+      return Result.ok(frontConverter.convertDomainToFront(program.value) as AbstractProgramTypeForFront)
     }
 
-    const frontConverter = new FrontConverter()
-    return Result.ok(frontConverter.convertDomainToFront(program.value) as AbstractProgramTypeForFront)
+    if (program.error instanceof ProgramNotFoundError) {
+      const externalProgram = this.getExternalById(id)
+
+      if (externalProgram) {
+        return Result.ok(externalProgram as AbstractProgramTypeForFront)
+      }
+    }
+
+    return Result.err(program.error)
   }
 
   public getFilteredProgramsForFront(questionnaireData: QuestionnaireData): Result<AbstractProgramTypeForFront[], Error> {

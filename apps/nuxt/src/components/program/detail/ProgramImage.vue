@@ -3,19 +3,20 @@
     class="fr-responsive-img"
     :class="getOperator && getOperator?.color ? `fr-bg--${getOperator?.color}--lightness` : ''"
     :src="getImage()"
-    :alt="`image / ${currentProgram?.titre || currentExtProgram?.titre}`"
+    :alt="`image / ${program?.titre}`"
   />
 </template>
 <script setup lang="ts">
 import { Image } from '@/tools/image'
 import { Operator } from '@/tools/operator'
+import AbstractProgram from '@/tools/program/abstractProgram'
 
-const { currentProgram, currentExtProgram } = storeToRefs(useProgramStore())
+const program = AbstractProgram.getCurrent()
 
 const img = Image.getUrl
 
 const getOperator = computed(() => {
-  const operatorName = currentProgram.value?.['opérateur de contact'] || currentExtProgram.value?.['opérateur de contact']
+  const operatorName = program.value?.['opérateur de contact']
   if (!operatorName) {
     return undefined
   }
@@ -27,7 +28,7 @@ const getImage = () => {
 
   return operator?.imagePath
     ? img(operator?.imagePath, { loading: 'lazy' })
-    : img(`/${currentProgram.value?.illustration || currentExtProgram.value?.illustration || 'images/TEE_ampoule.webp'}`, {
+    : img(`/${program.value?.illustration || 'images/TEE_ampoule.webp'}`, {
         height: 320,
         quality: 70,
         loading: 'lazy'
