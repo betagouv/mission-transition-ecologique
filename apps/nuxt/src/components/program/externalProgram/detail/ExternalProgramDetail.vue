@@ -17,7 +17,6 @@
           <ProgramTitle />
           <ProgramResume />
           <ProgramMainCta
-            :program="currentExtProgram"
             :is-activation-visible="true"
             :scroll-to-form="() => {}"
             :scroll-to-activation="scrollToActivation"
@@ -29,7 +28,6 @@
         ref="activation-ref"
       >
         <ProgramActivation
-          :program="currentExtProgram"
           :is-form-visible="false"
           :scroll-to-form="() => {}"
           :show-registration-step="false"
@@ -37,8 +35,8 @@
       </div>
 
       <ProgramTiles />
-      <ProgramEligibilityConditions :program="currentExtProgram" />
-      <ProgramLongDescription :program="currentExtProgram" />
+      <ProgramEligibilityConditions />
+      <ProgramLongDescription />
     </article>
   </Layout>
 </template>

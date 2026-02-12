@@ -8,8 +8,9 @@
   />
 </template>
 <script setup lang="ts">
+import AbstractProgram from '@/tools/program/abstractProgram'
 import Translation from '@/tools/translation'
-import { Color, ProgramEligibilityStatus, RouteName } from '@/types'
+import { AbstractProgramTypeForFront, Color, ProgramEligibilityStatus, RouteName } from '@/types'
 import { TeeEligibilityBarLink, TeeEligibilityBarMessage } from '@/components/program/eligibility/TeeEligibilityBar.vue'
 import { useProgramStore } from '@/stores/program'
 import { storeToRefs } from 'pinia'
@@ -43,7 +44,7 @@ const getEligibilityMessage: ComputedRef<TeeEligibilityBarMessage> = computed(()
       role: 'alert'
     }
   }
-  if (Program.isTemporaryUnavailable(program.value)) {
+  if (AbstractProgram.isTemporaryUnavailable(program.value as AbstractProgramTypeForFront)) {
     return {
       default: 'Cette aide est temporairement indisponible.',
       mobile: 'Cette aide est temporairement indisponible.',
@@ -82,7 +83,7 @@ const getEligibilityColor: ComputedRef<Color> = computed(() => {
     return Color.red
   }
 
-  return Program.isTemporaryUnavailable(program.value)
+  return AbstractProgram.isTemporaryUnavailable(program.value as AbstractProgramTypeForFront)
     ? Color.red
     : program.value && [ProgramEligibilityStatus.NotEligible, ProgramEligibilityStatus.Unknown].includes(program.value.eligibility)
       ? Color.red
@@ -90,7 +91,7 @@ const getEligibilityColor: ComputedRef<Color> = computed(() => {
 })
 
 const getEligibilityLink: ComputedRef<TeeEligibilityBarLink | undefined> = computed(() => {
-  if (Program.isTemporaryUnavailable(program.value)) {
+  if (AbstractProgram.isTemporaryUnavailable(program.value as AbstractProgramTypeForFront)) {
     return undefined
   }
   switch (program.value?.eligibility) {

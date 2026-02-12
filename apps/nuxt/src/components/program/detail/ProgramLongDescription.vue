@@ -13,12 +13,9 @@
 </template>
 
 <script setup lang="ts">
-import type { AbstractProgramTypeForFront } from '@/types'
+import AbstractProgram from '@/tools/program/abstractProgram'
 import Translation from '@/tools/translation'
 import { Marked } from '@/tools/marked'
 
-interface Props {
-  program: AbstractProgramTypeForFront
-}
-defineProps<Props>()
+const program = AbstractProgram.getCurrent()
 </script>

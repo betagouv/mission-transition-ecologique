@@ -39,10 +39,13 @@
 </template>
 
 <script setup lang="ts">
+import AbstractProgram from '@/tools/program/abstractProgram'
 import { computed } from 'vue'
-import type { AbstractProgramTypeForFront, ProgramTypeForFront } from '@tee/data'
+import type { ProgramTypeForFront } from '@tee/data'
 import { Marked } from '@/tools/marked'
 import Translation from '@/tools/translation'
+
+const program = AbstractProgram.getCurrent()
 
 type EligibilityCategory = keyof ProgramTypeForFront["conditions d'éligibilité"]
 
@@ -74,12 +77,7 @@ const getFieldsForColumn = (columnNumber: number): EligibilityCategory[] => {
   return columns[columnNumber - 1]
 }
 
-interface Props {
-  program: AbstractProgramTypeForFront
-}
-const props = defineProps<Props>()
-
 const programEligibility = computed(() => {
-  return props.program["conditions d'éligibilité"]
+  return program.value?.["conditions d'éligibilité"]
 })
 </script>

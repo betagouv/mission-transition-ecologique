@@ -8,7 +8,7 @@
     </li>
   </ul>
   <div class="fr-col-justify--left fr-mb-5v">
-    <h1 class="fr-h6 fr-text--purple fr-mb-0">{{ currentProgram?.titre || currentExtProgram?.titre }}</h1>
+    <h1 class="fr-h6 fr-text--purple fr-mb-0">{{ program?.titre }}</h1>
     <TeeCopyLinkButton
       class="fr-ml-6v fr-hidden fr-unhidden-md"
       :tertiary="true"
@@ -19,9 +19,11 @@
   </div>
 </template>
 <script setup lang="ts">
-const { currentProgram, currentExtProgram } = storeToRefs(useProgramStore())
+import AbstractProgram from '@/tools/program/abstractProgram'
+
+const program = AbstractProgram.getCurrent()
 
 const programType = computed(() => {
-  return currentProgram.value?.["nature de l'aide"] || currentExtProgram.value?.["nature de l'aide"]
+  return program.value?.["nature de l'aide"]
 })
 </script>

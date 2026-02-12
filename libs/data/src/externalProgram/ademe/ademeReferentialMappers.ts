@@ -1,14 +1,14 @@
 // Hardcoded mappings from ADEME referential codes to labels
 // Will be done using dynamic API calls when we will remove the temporary API
 export class AdemeReferentialMappers {
-  private static readonly COUVERTURE_GEO_MAP: Record<string, string> = {
+  private static readonly _COUVERTURE_GEO_MAP: Record<string, string> = {
     '1': 'National',
     '2': 'Européen',
     '3': 'International',
     '4': 'Régional'
   }
 
-  private static readonly ZONE_GEO_MAP: Record<string, string> = {
+  private static readonly _ZONE_GEO_MAP: Record<string, string> = {
     '01': 'Guadeloupe',
     '02': 'Martinique',
     '03': 'Guyane',
@@ -37,7 +37,7 @@ export class AdemeReferentialMappers {
     '989': 'Ile de Clipperton'
   }
 
-  private static readonly THEMATIQUE_MAP: Record<string, string> = {
+  private static readonly _THEMATIQUE_MAP: Record<string, string> = {
     ALIBIO: 'Alimentation / biodéchets',
     AUT: 'Autres',
     BOIBIO: 'Bois, biomasse énergie …',
@@ -66,14 +66,14 @@ export class AdemeReferentialMappers {
     VALENR: 'Valorisation énergétique'
   }
 
-  private static readonly CIBLE_MAP: Record<string, string> = {
+  private static readonly _CIBLE_MAP: Record<string, string> = {
     SCA1: 'Association',
     SCA2: 'Collectivités et secteur public',
     SCA3: 'Entreprise',
     SCA4: 'Organisme de recherche'
   }
 
-  private static readonly TYPE_PROJET_MAP: Record<string, string> = {
+  private static readonly _TYPE_PROJET_MAP: Record<string, string> = {
     ANCOF: 'Animation / Communication / Formation',
     ETAMO: "Etudes - Assistant maitrise d'ouvrage",
     ETDEF: 'Etudes - Diagnostic et études de faisabilité',
@@ -83,23 +83,23 @@ export class AdemeReferentialMappers {
   }
 
   static mapCouvertureGeo(code: string): string {
-    return this.COUVERTURE_GEO_MAP[code] || code
+    return this._COUVERTURE_GEO_MAP[code] || code
   }
 
   static mapZoneGeo(code: string): string {
-    return this.ZONE_GEO_MAP[code] || code
+    return this._ZONE_GEO_MAP[code] || code
   }
 
   static mapThematique(code: string): string {
-    return this.THEMATIQUE_MAP[code] || code
+    return this._THEMATIQUE_MAP[code] || code
   }
 
   static mapCible(code: string): string {
-    return this.CIBLE_MAP[code] || code
+    return this._CIBLE_MAP[code] || code
   }
 
   static mapTypeProjet(code: string): string {
-    return this.TYPE_PROJET_MAP[code] || code
+    return this._TYPE_PROJET_MAP[code] || code
   }
 
   static mapZoneGeoCodes(codes: string[]): string[] {
