@@ -31,7 +31,9 @@ autres opérateurs:
 contact question: formulaire
 url: https://diag.bpifrance.fr/diag-biodiversite
 nature de l'aide: étude
-coût de l'accompagnement: 6 000€ HT, après prise en charge de 40%
+coût de l'accompagnement: >-
+  entre 5 000€ et 7 000€ HT, après prise en charge de 30% à 50% selon votre
+  taille d'entreprise
 durée de l'accompagnement: 10 jours de prestation, répartis sur 3 à 6 mois
 activable en autonomie: oui
 objectifs:
@@ -51,7 +53,7 @@ objectifs:
       dans votre entreprise.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Moins de 250 salariés
+    - Moins de 500 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
@@ -71,7 +73,7 @@ publicodes:
       - a une categorie legale eligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
-      - effectif <= 249
+      - effectif <= 499
   entreprise . a une categorie legale eligible:
     toutes ces conditions:
       - microentrepreneur = non
@@ -100,3 +102,14 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est préserver la biodiversité
+champs conditionnels:
+  - toutes ces conditions:
+      - effectif >= 250
+      - effectif <= 499
+    Montant du dispositif: 7 000€ HT, après prise en charge de 30%
+    Eligibilité taille: Pour les ETI de moins de 500 salariés
+  - toutes ces conditions:
+      - effectif >= 0
+      - effectif <= 249
+    Montant du dispositif: 5 000€ HT, après prise en charge de 50%
+    Eligibilité taille: Pour les entreprises répondant à la définition européenne de la PME
