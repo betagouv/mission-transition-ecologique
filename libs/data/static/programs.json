@@ -39993,7 +39993,7 @@
   {
     "titre": "Mobili'Pro",
     "promesse": "Optimisez la mobilité de vos collaborateurs",
-    "description": "Le programme Mobili'Pro vous aide à **optimiser les déplacements en voiture de vos collaborateurs**. Bénéficiez d’un accompagnement sur trois ans, comprenant : \\\n- un diagnostic de votre flotte,\\\n- l’élaboration d’un plan d’action sur-mesure,\\\n- et un suivi chiffré des résultats. \\\nVous serez guidé dans la mise en place de solutions pour réduire l'impact environnemental de vos trajets professionnels tout en améliorant la gestion de votre flotte de véhicules.",
+    "description": "Le programme Mobili'Pro vous aide à **optimiser les déplacements en voiture de vos collaborateurs**. Bénéficiez d’un accompagnement sur trois ans, comprenant :\n\n- Un diagnostic de votre flotte.\n- L'élaboration d’un plan d’action sur-mesure.\n- Un suivi chiffré des résultats. \\\n  Vous serez guidé dans la mise en place de solutions pour réduire l'impact environnemental de vos trajets professionnels tout en améliorant la gestion de votre flotte de véhicules.",
     "illustration": "images/TEE_eolienne.webp",
     "opérateur de contact": "ADEME",
     "contact question": "mailto:mobilipro@ademe.fr",
@@ -40004,7 +40004,16 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Créez votre compte sur Mobili’Pro. Vous devrez désigner un référent interne chargé du suivi de votre démarche.",
+        "description": "Consultez le site Mobili’Pro pour mieux connaître le dispositif.",
+        "liens": [
+          {
+            "lien": "https://%3Chttps://www.mobilipro.fr/ressources%3E",
+            "texte": "Mobili'Pro"
+          }
+        ]
+      },
+      {
+        "description": "Sollicitez la création de votre compte sur Mobili’Pro. Vous devrez désigner un référent interne chargé du suivi de votre démarche.",
         "liens": [
           {
             "lien": "https://www.mobilipro.fr/signup",
@@ -40013,7 +40022,7 @@
         ]
       },
       {
-        "description": "Choisissez un conseiller Mobili’Pro référencés par le programme. Les conseillers Mobili’Pro sont des consultants expérimentés en gestion de parcs de véhicules et en analyse des déplacements professionnels.",
+        "description": "Sélectionner un conseiller Mobili’Pro référencé par le programme en vous appuyant sur le cahier des charges. Les conseillers Mobili’Pro sont des consultants expérimentés en gestion de parcs de véhicules et en analyse des déplacements professionnels.",
         "liens": [
           {
             "lien": "https://mobilipro.s3.fr-par.scw.cloud/ressources/MobiliPro_Liste%20des%20conseillers%20Mobili%27Pro_juin2024.pdf",
@@ -40022,16 +40031,16 @@
         ]
       },
       {
-        "description": "Signez le formulaire d'engagement en indiquant le conseiller Mobili'Pro retenu.",
+        "description": "Signez le formulaire d'engagement en indiquant le conseiller Mobili'Pro retenu, et envoyez-le à l’adresse [mobilipro@ademe.fr](mailto:mobilipro@ademe.fr).",
         "liens": [
           {
             "lien": "https://mobilipro.s3.fr-par.scw.cloud/ressources/formulaire-dengagement.pdf",
-            "texte": "formulaire à compléter"
+            "texte": "Formulaire à compléter"
           }
         ]
       },
       {
-        "description": "Après votre inscription, votre conseiller Mobili’Pro vous contacte pour initier une première réunion de présentation."
+        "description": "Une fois votre inscription validée, votre conseiller Mobili’Pro vous contacte pour initier une première réunion de présentation."
       }
     ],
     "conditions d'éligibilité": {
@@ -40497,7 +40506,7 @@
     "contact question": "formulaire",
     "url": "https://diag.bpifrance.fr/diag-biodiversite",
     "nature de l'aide": "étude",
-    "coût de l'accompagnement": "6 000€ HT, après prise en charge de 40%",
+    "coût de l'accompagnement": "entre 5 000€ et 7 000€ HT, après prise en charge de 30% à 50% selon votre taille d'entreprise",
     "durée de l'accompagnement": "10 jours de prestation, répartis sur 3 à 6 mois",
     "activable en autonomie": "oui",
     "objectifs": [
@@ -40522,7 +40531,7 @@
     ],
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
-        "Moins de 250 salariés",
+        "Moins de 500 salariés",
         "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
@@ -40559,7 +40568,7 @@
           "T",
           "U"
         ],
-        "maxEmployees": "249",
+        "maxEmployees": "499",
         "excludeMicroentrepreneur": true
       },
       "priorityObjectives": [
@@ -40670,7 +40679,7 @@
       },
       "entreprise . a un effectif éligible": {
         "toutes ces conditions": [
-          "effectif <= 249"
+          "effectif <= 499"
         ]
       },
       "entreprise . a une categorie legale eligible": {
@@ -40708,6 +40717,24 @@
         ]
       }
     },
+    "champs conditionnels": [
+      {
+        "toutes ces conditions": [
+          "effectif >= 250",
+          "effectif <= 499"
+        ],
+        "Montant du dispositif": "7 000€ HT, après prise en charge de 30%",
+        "Eligibilité taille": "Pour les ETI de moins de 500 salariés"
+      },
+      {
+        "toutes ces conditions": [
+          "effectif >= 0",
+          "effectif <= 249"
+        ],
+        "Montant du dispositif": "5 000€ HT, après prise en charge de 50%",
+        "Eligibilité taille": "Pour les entreprises répondant à la définition européenne de la PME"
+      }
+    ],
     "id": "diag-biodiversite"
   },
   {
@@ -46248,13 +46275,14 @@
   {
     "titre": "Formations Uniformation",
     "promesse": "Formez vos salariés à la transition écologique",
-    "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Accompagner des publics sur les enjeux de transition écologique.\n- Contribuer à l’éducation à l’environnement et au développement durable, avec l'animation d'un jardin partagé.\n- Impulser la transition écologique de sa structure.\n- etc.",
+    "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Accompagner des publics sur les enjeux de transition écologique.\n- Contribuer à l’éducation à l’environnement et au développement durable, avec l'animation d'un jardin partagé.\n- Impulser la transition écologique de sa structure.\n- Les écogestes en pratique dans le logement accompagné.\n- Maîtriser les enjeux de la RE2020.\n- Etc.",
+    "fin de validité": "31/12/2026",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "Opco Uniformation",
-    "contact question": "formulaire",
+    "contact question": "https://www.uniformation.fr/nous-contacter",
     "url": "https://www.uniformation.fr/entreprise/formation/offre-de-formations-cles-en-main?combine_text=&session_start_min=&session_start_max=&presence_type=All&offer=All&branch=All&training_theme=99&target_training=All",
     "nature de l'aide": "formation",
-    "coût de l'accompagnement": "Variable",
+    "coût de l'accompagnement": "Gratuite",
     "durée de l'accompagnement": "Variable selon la formation choisie",
     "activable en autonomie": "oui",
     "objectifs": [
@@ -46269,15 +46297,6 @@
       },
       {
         "description": "Inscrivez-vous à la formation choisie en suivant les modalités indiquées sur le site."
-      },
-      {
-        "description": "Pour toute demande de pris en charge d'une formation, contactez Uniformation",
-        "liens": [
-          {
-            "lien": "https://www.uniformation.fr/nous-contacter",
-            "texte": "Contact Uniformation"
-          }
-        ]
       }
     ],
     "conditions d'éligibilité": {
@@ -46303,6 +46322,9 @@
           "Q",
           "S"
         ]
+      },
+      "validity": {
+        "end": "31/12/2026"
       },
       "priorityObjectives": [
         "rh"
@@ -46399,9 +46421,14 @@
       "date du jour": null,
       "entreprise . est ciblée": {
         "toutes ces conditions": [
+          "est éligible",
           "est dans un secteur d'activité ciblé",
           "a un objectif ciblé"
         ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
+        "valeur": "oui"
       },
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
@@ -49249,5 +49276,546 @@
       }
     },
     "id": "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
+  },
+  {
+    "titre": "Diagnostic & Accompagnement CO2i Inter Industrie",
+    "promesse": "Bénéficiez d'un accompagnement à la transition écologique et à la décarbonation",
+    "description": "Ce dispositif combine un diagnostic approfondi et un accompagnement personnalisé pour vous aider à structurer votre démarche et à identifier les leviers à la transition écologique et à la décarbonation de votre entreprise industrielle.\\\nIl vous permet de :\n\n- **Identifier les enjeux clés** de la transition écologique pour votre entreprise.\n- **Définir les impacts sur vos processus**, vos compétences et vos pratiques.\n- **Prioriser les actions** à mettre en œuvre et les **formations** à développer.",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Opco 2i",
+    "contact question": "https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/",
+    "url": "https://www.opco2i.fr/offre-de-services/oeuvrer-pour-lenvironnement/diagnostic-accompagnement-co2i/",
+    "nature de l'aide": "étude",
+    "montant du financement": "Jusqu’à 1 000 € HT/ jour pour les entreprises de 250 salariés.",
+    "objectifs": [
+      {
+        "description": "Contactez votre conseiller régional Opco 2i pour lui manifester votre intérêt pour cet accompagnement.",
+        "liens": [
+          {
+            "lien": "https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/",
+            "texte": "Contacter mon conseiller"
+          }
+        ]
+      },
+      {
+        "description": "Établissez avec lui le périmètre de l'accompagnement, le calendrier et une éventuelle prise en charge.",
+        "liens": [
+          {
+            "lien": "https://www.opco2i.fr/formation-et-financement/les-regles-de-prise-en-charge/",
+            "texte": "Règles de prise en charge"
+          }
+        ]
+      },
+      {
+        "description": "Bénéficiez du diagnostic et de l'accompagnement personnalisé."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises du secteur industriel"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "M"
+        ]
+      },
+      "priorityObjectives": [
+        "building",
+        "energy",
+        "rh",
+        "environmental"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est M"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est former ou recruter",
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "diagnostic-et-accompagnement-co2i"
+  },
+  {
+    "titre": "Accompagnement RH",
+    "promesse": "Bénéficiez d'un accompagnement RH sur mesure à la transition écologique",
+    "description": "Faites-vous accompagner par un cabinet RH pour analyser vos besoins sur la transition écologique et mettre en place un plan d’action. Cet accompagnement sur 6 à 9 mois vous permet de :\n\n- Élaborer un **plan d’action adapté** à votre établissement.\n\n- Obtenir des **outils sur-mesure.**\n\n- Mobiliser vos équipes autour d’un **projet fédérateur**.\n\n- Pouvoir **mesurer l’impact** de ces actions terrain.",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "Opco Santé",
+    "contact question": "https://www.opco-sante.fr/contact/",
+    "url": "https://www.opco-sante.fr/employeur/notre-offres-de-services/on-enrichit-nos-pratiques-rh/accompagnement-rh-sur-mesure/",
+    "nature de l'aide": "étude",
+    "montant du financement": "Variable",
+    "objectifs": [
+      {
+        "description": "Réalisez un autodiagnostic en ligne pour vous vérifier que l'Accompagnement RH est adapté à vos attentes et vos besoins.",
+        "liens": [
+          {
+            "lien": "https://opco-de-la-sante.org/form/autodiagnostic",
+            "texte": "Autodiagnostic en ligne"
+          }
+        ]
+      },
+      {
+        "description": "Contactez votre conseiller Opco Santé pour pour exprimer votre intérêt pour l'accompagnement.",
+        "liens": [
+          {
+            "lien": "https://- <https://www.opco-sante.fr/contact/>",
+            "texte": "Contacter mon conseiller\\"
+          }
+        ]
+      },
+      {
+        "description": "Définissez avec l’expert le périmètre du dispositif, la méthode et le calendrier."
+      },
+      {
+        "description": "Bénéficiez de l'Accompagnement RH."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises des secteurs sanitaire, social et médico-social privé à but non lucratif, des services de prévention et de santé au travail, de l'hospitalisation privée et du thermalisme"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "I",
+          "Q"
+        ]
+      },
+      "priorityObjectives": [
+        "rh",
+        "environmental"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est Q"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter",
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "accompagnement-rh"
+  },
+  {
+    "titre": "Plan de développement des compétences",
+    "promesse": "Bénéficiez d'un financement pour une formation à la transition écologique",
+    "description": "Vous avez identifié une formation à la transition écologique parfaitement adaptée à votre structure ? Recevez un **financement sur mesure** grâce à l'Opco Uniformation.\n\nContactez votre conseiller pour en discuter avec lui et trouver une solution adéquate.",
+    "fin de validité": "31/12/2026",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "Opco Uniformation",
+    "contact question": "https://www.uniformation.fr/nous-contacter",
+    "url": "https://www.uniformation.fr/entreprise/formation/dispositifs-de-formation/plan-de-developpement-des-competences/financement",
+    "nature de l'aide": "étude",
+    "montant du financement": "Variable",
+    "objectifs": [
+      {
+        "description": "Créez un compte sur l'Opco Uniformation. ",
+        "liens": [
+          {
+            "lien": "https://www.uniformation.fr/entreprise/nous-rejoindre-vos-contributions/nous-rejoindre",
+            "texte": "Rejoindre Uniformation"
+          }
+        ]
+      },
+      {
+        "description": "Connectez-vous à votre compte et visualisez les conditions de financement adaptés à votre situation.",
+        "liens": [
+          {
+            "lien": "https://www.uniformation.fr/entreprise/formation/dispositifs-de-formation/plan-de-developpement-des-competences/financement",
+            "texte": "Conditions de financement"
+          }
+        ]
+      },
+      {
+        "description": "Manifestez votre intérêt pour le Plan de développement des compétences auprès de votre conseiller régional. ",
+        "liens": [
+          {
+            "lien": "https://www.uniformation.fr/nous-contacter",
+            "texte": "Contacter mon conseiller régional"
+          }
+        ]
+      },
+      {
+        "description": "Recevez les modalités de financement et inscrivez-vous à la formation de votre choix."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises des secteurs du champ social, des services aux personnes, de l'insertion, de l'enseignement et de la formation"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "L",
+          "N",
+          "Q",
+          "S"
+        ]
+      },
+      "validity": {
+        "end": "31/12/2026"
+      },
+      "priorityObjectives": [
+        "rh"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est S"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter"
+        ]
+      }
+    },
+    "id": "plan-de-developpement-des-competences"
   }
 ]

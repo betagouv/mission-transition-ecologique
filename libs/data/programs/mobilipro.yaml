@@ -3,17 +3,15 @@ promesse: Optimisez la mobilité de vos collaborateurs
 description: >-
   Le programme Mobili'Pro vous aide à **optimiser les déplacements en voiture de
   vos collaborateurs**. Bénéficiez d’un accompagnement sur trois ans, comprenant
-  : \
+  :
 
-  - un diagnostic de votre flotte,\
 
-  - l’élaboration d’un plan d’action sur-mesure,\
+  - Un diagnostic de votre flotte.
 
-  - et un suivi chiffré des résultats. \
+  - L'élaboration d’un plan d’action sur-mesure.
 
-  Vous serez guidé dans la mise en place de solutions pour réduire l'impact
-  environnemental de vos trajets professionnels tout en améliorant la gestion de
-  votre flotte de véhicules.
+  - Un suivi chiffré des résultats. \
+    Vous serez guidé dans la mise en place de solutions pour réduire l'impact environnemental de vos trajets professionnels tout en améliorant la gestion de votre flotte de véhicules.
 illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
 contact question: mailto:mobilipro@ademe.fr
@@ -23,30 +21,36 @@ coût de l'accompagnement: Selon vos projets
 durée de l'accompagnement: 3 jours, répartis sur trois ans
 activable en autonomie: oui
 objectifs:
+  - description: Consultez le site Mobili’Pro pour mieux connaître le dispositif.
+    liens:
+      - lien: https://%3Chttps://www.mobilipro.fr/ressources%3E
+        texte: Mobili'Pro
   - description: >-
-      Créez votre compte sur Mobili’Pro. Vous devrez désigner un référent
-      interne chargé du suivi de votre démarche.
+      Sollicitez la création de votre compte sur Mobili’Pro. Vous devrez
+      désigner un référent interne chargé du suivi de votre démarche.
     liens:
       - lien: https://www.mobilipro.fr/signup
         texte: Création du compte
   - description: >-
-      Choisissez un conseiller Mobili’Pro référencés par le programme. Les
-      conseillers Mobili’Pro sont des consultants expérimentés en gestion de
-      parcs de véhicules et en analyse des déplacements professionnels.
+      Sélectionner un conseiller Mobili’Pro référencé par le programme en vous
+      appuyant sur le cahier des charges. Les conseillers Mobili’Pro sont des
+      consultants expérimentés en gestion de parcs de véhicules et en analyse
+      des déplacements professionnels.
     liens:
       - lien: >-
           https://mobilipro.s3.fr-par.scw.cloud/ressources/MobiliPro_Liste%20des%20conseillers%20Mobili%27Pro_juin2024.pdf
         texte: Liste des conseillers Mobili'Pro
   - description: >-
       Signez le formulaire d'engagement en indiquant le conseiller Mobili'Pro
-      retenu.
+      retenu, et envoyez-le à l’adresse
+      [mobilipro@ademe.fr](mailto:mobilipro@ademe.fr).
     liens:
       - lien: >-
           https://mobilipro.s3.fr-par.scw.cloud/ressources/formulaire-dengagement.pdf
-        texte: formulaire à compléter
+        texte: Formulaire à compléter
   - description: >-
-      Après votre inscription, votre conseiller Mobili’Pro vous contacte pour
-      initier une première réunion de présentation.
+      Une fois votre inscription validée, votre conseiller Mobili’Pro vous
+      contacte pour initier une première réunion de présentation.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
