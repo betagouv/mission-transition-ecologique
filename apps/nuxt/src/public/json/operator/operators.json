@@ -411,7 +411,7 @@
   {
     "operator": "ANACT",
     "filterCategories": [
-      "Régions"
+      "Opérateurs nationaux"
     ],
     "imagePath": "/images/logos/operateur/anact.webp",
     "color": "green"
