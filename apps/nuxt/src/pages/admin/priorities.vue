@@ -8,20 +8,25 @@
           <label class="fr-label fr-text--bold" for="naf-select">Secteur d'activité (Code NAF)</label>
           <select id="naf-select" class="fr-select" v-model="selectedNaf">
             <option value="">-- Priorité Globale --</option>
-            <option value="A">A - Agriculture</option>
-            <option value="B">B - Industries extractives</option>
-            <option value="C">C - Industrie</option>
-            <option value="D">D - Électricité, gaz</option>
-            <option value="E">E - Eau</option>
-            <option value="F">F - Construction</option>
-            <option value="G">G - Commerce</option>
-            <option value="H">H - Transports</option>
-            <option value="I">I - Hébergement / Restauration</option>
-            <option value="Q">Q - Santé</option>
-            <option value="55">55 - Hébergement</option>
-            <option value="56">56 - Restauration</option>
-            <option value="86">86 - Santé humaine</option>
+            <optgroup label="Sections principales">
+              <option v-for="section in mainSections" :key="section.code" :value="section.code">
+                {{ section.code }} - {{ section.label }}
+              </option>
+            </optgroup>
+            <optgroup label="Divisions (NIV2)">
+              <option v-for="div in divisions" :key="div.NIV2" :value="div.NIV2">
+                {{ div.NIV2 }} - {{ div.label_vf }}
+              </option>
+            </optgroup>
+            <optgroup label="Codes détaillés (NIV5)">
+              <option v-for="code in detailedCodes" :key="code.NIV5" :value="code.NIV5">
+                {{ code.NIV5 }} - {{ code.label_vf }}
+              </option>
+            </optgroup>
           </select>
+          <p v-if="selectedNaf && selectedNafLabel" class="fr-text--sm fr-mt-2w">
+            {{ selectedNafLabel }}
+          </p>
         </div>
 
         <div class="fr-mt-4w">
@@ -79,7 +84,7 @@
                   </td>
                   <td>
                     <input type="number" class="fr-input fr-input--sm" :value="getPriority(project)"
-                      @input="updatePriority(project, ($event.target as HTMLInputElement).value)" min="1" />
+                      @input="updatePriority(project, ($event.target as HTMLInputElement).value)" step="0.1" min="0" />
                   </td>
                   <td class="fr-text--bold">{{ project.title || project.Titre || project.Nom || project.slug }}</td>
                   <td>
@@ -87,7 +92,7 @@
                       {{ project['Thématique principale'] || project.mainTheme || 'N/A' }}
                     </span>
                   </td>
-                  <td class="fr-text--sm">{{ project.priority?.default || project.Prio || 'N/A' }}</td>
+                  <td class="fr-text--sm">{{ formatScore(project.priority?.default || project.Prio) }}</td>
                 </tr>
               </tbody>
               <tbody v-else>
@@ -106,7 +111,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
+import nafCodesData from '../../../../../libs/data/static/nafMapping.json'
+
+interface NafCode {
+  tags: string[]
+  tagsFr: string[]
+  NIV5: string
+  NIV4: string
+  NIV3: string
+  NIV2: string
+  NIV1: string
+  label_vf: string
+}
 
 interface Project {
   id: number
@@ -125,6 +142,10 @@ interface Project {
   'Prios spécifiques'?: string
 }
 
+// Charger le mapping NAF depuis le fichier local
+const nafCodes = ref<NafCode[]>(nafCodesData as NafCode[])
+const nafMapping = ref<Map<string, NafCode>>(new Map())
+
 const selectedNaf = ref('')
 const projects = ref<Project[]>([])
 const loading = ref(false)
@@ -133,6 +154,72 @@ const hasChanges = ref(false)
 const draggingIndex = ref<number | null>(null)
 const successMessage = ref('')
 const errorMessage = ref('')
+
+// Sections principales (NIV1)
+const mainSections = computed(() => {
+  const sections = new Map<string, { code: string, label: string }>()
+  nafCodes.value.forEach(code => {
+    if (!sections.has(code.NIV1)) {
+      const labels: Record<string, string> = {
+        'A': 'Agriculture, sylviculture et pêche',
+        'B': 'Industries extractives',
+        'C': 'Industrie manufacturière',
+        'D': 'Production et distribution d\'électricité, gaz',
+        'E': 'Production et distribution d\'eau',
+        'F': 'Construction',
+        'G': 'Commerce',
+        'H': 'Transports et entreposage',
+        'I': 'Hébergement et restauration',
+        'J': 'Information et communication',
+        'K': 'Activités financières et d\'assurance',
+        'L': 'Activités immobilières',
+        'M': 'Activités spécialisées, scientifiques et techniques',
+        'N': 'Activités de services administratifs et de soutien',
+        'O': 'Administration publique',
+        'P': 'Enseignement',
+        'Q': 'Santé humaine et action sociale',
+        'R': 'Arts, spectacles et activités récréatives',
+        'S': 'Autres activités de services',
+        'T': 'Activités des ménages',
+        'U': 'Activités extra-territoriales'
+      }
+      sections.set(code.NIV1, {
+        code: code.NIV1,
+        label: labels[code.NIV1] || code.NIV1
+      })
+    }
+  })
+  return Array.from(sections.values()).sort((a, b) => a.code.localeCompare(b.code))
+})
+
+// Divisions (NIV2)
+const divisions = computed(() => {
+  const divs = new Map<string, NafCode>()
+  nafCodes.value.forEach(code => {
+    if (!divs.has(code.NIV2)) {
+      divs.set(code.NIV2, code)
+    }
+  })
+  return Array.from(divs.values()).sort((a, b) => a.NIV2.localeCompare(b.NIV2))
+})
+
+// Codes détaillés (NIV5) - tous les codes
+const detailedCodes = computed(() => {
+  return nafCodes.value.sort((a, b) => a.NIV5.localeCompare(b.NIV5))
+})
+
+// Label du NAF sélectionné
+const selectedNafLabel = computed(() => {
+  if (!selectedNaf.value) return ''
+  const code = nafMapping.value.get(selectedNaf.value)
+  return code ? code.label_vf : ''
+})
+
+// Formater le score pour l'affichage
+const formatScore = (score: number | undefined): string => {
+  if (score === undefined || score === null) return 'N/A'
+  return score.toFixed(1)
+}
 
 // Récupérer la priorité d'un projet
 const getPriority = (project: Project): number => {
@@ -144,12 +231,12 @@ const getPriority = (project: Project): number => {
   // Mode code NAF : chercher dans "Prios spécifiques"
   const priosSpec = project['Prios spécifiques'] || ''
 
-  // Regex pour matcher "CODE:NOMBRE" avec espaces autour
-  const regex = new RegExp(`(?:^|\\s)${selectedNaf.value.replace('.', '\\.')}:(\\d+)(?:\\s|$)`)
+// Regex pour matcher "CODE:NOMBRE"
+  const regex = new RegExp(`(?:^|\\s)${selectedNaf.value.replace(/\./g, '\\.')}:([0-9]+\\.?[0-9]*)(?:\\s|$)`)
   const match = priosSpec.match(regex)
 
   if (match) {
-    return parseInt(match[1])
+    return parseFloat(match[1])
   }
 
   // Si pas trouvé, retourner la priorité par défaut
@@ -164,6 +251,17 @@ const sortedProjects = computed(() => {
     return prioA - prioB
   })
 })
+
+// Initialiser le mapping NAF
+const initNafMapping = () => {
+  nafCodes.value.forEach((code: NafCode) => {
+    nafMapping.value.set(code.NIV5, code)
+    nafMapping.value.set(code.NIV4, code)
+    nafMapping.value.set(code.NIV3, code)
+    nafMapping.value.set(code.NIV2, code)
+    nafMapping.value.set(code.NIV1, code)
+  })
+}
 
 // Charger les projets
 const refresh = async () => {
@@ -185,7 +283,7 @@ const refresh = async () => {
 
 // Mettre à jour la priorité d'un projet
 const updatePriority = (project: Project, newVal: string) => {
-  const value = parseInt(newVal)
+  const value = parseFloat(newVal)
 
   if (isNaN(value) || value < 1) {
     return
@@ -232,19 +330,26 @@ const handleDragStart = (index: number) => {
 const handleDragOver = (index: number) => {
   if (draggingIndex.value === null || draggingIndex.value === index) return
 
-  // On récupère la liste actuelle triée
   const list = [...sortedProjects.value]
+  const draggedItem = list[draggingIndex.value]
 
-  // On déplace l'élément dans le tableau
-  const draggedItem = list.splice(draggingIndex.value, 1)[0]
-  list.splice(index, 0, draggedItem)
+  // Calculer le nouveau score en fonction de la position
+  let newScore: number
 
-  // On ré-attribue les priorités de 1 à N-projets pour toute la liste pour éviter les doublons
-  list.forEach((project, idx) => {
-    const newPrio = idx + 1
-    updatePriority(project, newPrio.toString())
-  })
+  if (index === 0) {
+    // Déplacer en première position : prendre un score inférieur au premier
+    newScore = getPriority(list[0]) - 1
+  } else if (index === list.length - 1) {
+    // Déplacer en dernière position : prendre un score supérieur au dernier
+    newScore = getPriority(list[list.length - 1]) + 1
+  } else {
+    // Insérer entre deux éléments : moyenne des scores
+    const prevScore = getPriority(list[index - 1])
+    const nextScore = getPriority(list[index])
+    newScore = (prevScore + nextScore) / 2
+  }
 
+  updatePriority(draggedItem, newScore.toString())
   draggingIndex.value = index
   hasChanges.value = true
 }
@@ -288,7 +393,10 @@ const saveChanges = async () => {
 }
 
 // Charger au montage
-refresh()
+onMounted(async () => {
+  initNafMapping()
+  await refresh()
+})
 
 // Recharger quand le NAF change
 watch(selectedNaf, () => {
@@ -353,7 +461,7 @@ watch(selectedNaf, () => {
   border: none;
   border-bottom: 2px solid #000091;
   font-weight: 600;
-  width: 5rem;
+  width: 7rem;
 }
 
 .fr-input--sm:focus {
