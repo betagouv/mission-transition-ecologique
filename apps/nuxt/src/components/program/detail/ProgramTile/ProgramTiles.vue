@@ -91,7 +91,7 @@
         :title="Translation.t('program.programEndValidity')"
         image-path="/images/TEE-date-fin.svg"
         :description="
-          Program.isTemporaryUnavailable(currentProgram)
+          AbstractProgram.isTemporaryUnavailable(currentProgram)
             ? 'Aide temporairement indisponible'
             : programEndValidity
               ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
@@ -103,27 +103,19 @@
 </template>
 <script setup lang="ts">
 import ProgramTile from '@/components/program/detail/ProgramTile/ProgramTile.vue'
-import Program from '@/tools/program/program'
+import AbstractProgram from '@/tools/program/abstractProgram'
 import Translation from '@/tools/translation'
 
-const { currentProgram, currentExtProgram } = storeToRefs(useProgramStore())
+const currentProgram = AbstractProgram.getCurrent()
 
-const programCost = computed(
-  () => currentProgram.value?.[`coût de l'accompagnement`] || currentExtProgram.value?.[`coût de l'accompagnement`]
-)
-const programAidAmount = computed(
-  () => currentProgram.value?.[`montant du financement`] || currentExtProgram.value?.[`montant du financement`]
-)
-const programTaxAdvantage = computed(
-  () => currentProgram.value?.[`montant de l'avantage fiscal`] || currentExtProgram.value?.[`montant de l'avantage fiscal`]
-)
-const programLoan = computed(() => currentProgram.value?.[`montant du prêt`] || currentExtProgram.value?.[`montant du prêt`])
-const programDuration = computed(
-  () => currentProgram.value?.[`durée de l'accompagnement`] || currentExtProgram.value?.[`durée de l'accompagnement`]
-)
-const programLoanDuration = computed(() => currentProgram.value?.[`durée du prêt`] || currentExtProgram.value?.[`durée du prêt`])
-const programProvider = computed(() => currentProgram.value?.['opérateur de contact'] || currentExtProgram.value?.['opérateur de contact'])
-const programEndValidity = computed(() => currentProgram.value?.[`fin de validité`] || currentExtProgram.value?.[`fin de validité`])
+const programCost = computed(() => currentProgram.value?.[`coût de l'accompagnement`])
+const programAidAmount = computed(() => currentProgram.value?.[`montant du financement`])
+const programTaxAdvantage = computed(() => currentProgram.value?.[`montant de l'avantage fiscal`])
+const programLoan = computed(() => currentProgram.value?.[`montant du prêt`])
+const programDuration = computed(() => currentProgram.value?.[`durée de l'accompagnement`])
+const programLoanDuration = computed(() => currentProgram.value?.[`durée du prêt`])
+const programProvider = computed(() => currentProgram.value?.['opérateur de contact'])
+const programEndValidity = computed(() => currentProgram.value?.[`fin de validité`])
 
 const columnTiles = computed(() => {
   const infoBlocks = [

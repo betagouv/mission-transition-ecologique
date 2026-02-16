@@ -2,8 +2,9 @@ import ProgramApi from '@/tools/api/programApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
+import AbstractProgram from '@/tools/program/abstractProgram'
 import { QuestionnaireData } from '@/tools/questionnaire/questionnaireData'
-import { AbstractProgramTypeForFront, ProgramTypeForFront, ProgramTypes, QuestionnaireData as QuestionnaireDataType } from '@/types'
+import { AbstractProgramTypeForFront, ProgramTypeForFront, QuestionnaireData as QuestionnaireDataType } from '@/types'
 
 export class ProgramManager {
   _useProgram = useProgramStore()
@@ -17,9 +18,9 @@ export class ProgramManager {
       const externalPrograms: AbstractProgramTypeForFront[] = []
 
       resultApi.data.forEach((program) => {
-        if (program['type'] === ProgramTypes.TEE) {
-          teePrograms.push(program as ProgramTypeForFront)
-        } else if (program['type'] === ProgramTypes.extAdeme) {
+        if (AbstractProgram.isTeeProgram(program)) {
+          teePrograms.push(program)
+        } else if (AbstractProgram.isExternalProgram(program)) {
           externalPrograms.push(program)
         }
       })
@@ -66,10 +67,10 @@ export class ProgramManager {
     this._useNavigation.hasSpinner = true
     const resultApi = await this._getOneFromApi(id)
     if (resultApi.isOk()) {
-      if (resultApi.data['type'] == ProgramTypes.TEE) {
+      if (AbstractProgram.isTeeProgram(resultApi.data)) {
         this._useProgram.currentProgram = resultApi.data as ProgramTypeForFront
         this._useProgram.currentExtProgram = undefined
-      } else if (resultApi.data['type'] == ProgramTypes.extAdeme) {
+      } else if (AbstractProgram.isExternalProgram(resultApi.data)) {
         this._useProgram.currentExtProgram = resultApi.data
         this._useProgram.currentProgram = undefined
       }
