@@ -15,7 +15,7 @@ const defaultFilterPrograms = (programs: ProgramType[], inputData: Record<string
     ...inputData
   }
 
-  return programService.getFilteredBy(questionnaireData)
+  return programService.getFilteredByInternal(questionnaireData)
 }
 
 const addEligibility = (programs: ProgramType[]): ProgramTypeWithEligibility[] => {

@@ -2,11 +2,18 @@ import { ProgramRepository, EligibilityEvaluator } from './spi'
 import { ProgramFilter } from './filterPrograms'
 import { sortPrograms } from './sortPrograms'
 import { Result } from 'true-myth'
-import { ProgramEligibilityStatus, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
+import {
+  AbstractProgramType,
+  AbstractProgramTypeForFront,
+  ProgramEligibilityStatus,
+  ProgramType,
+  ProgramTypeWithEligibility
+} from '@tee/data'
 import { QuestionnaireData } from '@tee/common'
 import { Monitor } from '../../common'
 import ProgramCustomizer from './programCustomizer'
 import { ProgramNotFoundError } from './types'
+import FrontConverter from '../infrastructure/frontConverter'
 
 export default class ProgramFeatures {
   constructor(
@@ -18,7 +25,10 @@ export default class ProgramFeatures {
     return this._programRepository.getById(id)
   }
 
-  public getOneByIdWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
+  public getOneInternalByIdWithMaybeEligibility(
+    id: string,
+    questionnaireData: QuestionnaireData
+  ): Result<ProgramTypeWithEligibility, Error> {
     let program = this.getOneById(id)
     if (!program) {
       Monitor.warning('Requested Program Id unknown', { id })
@@ -45,7 +55,7 @@ export default class ProgramFeatures {
     return Result.ok(programWithEligibility.value)
   }
 
-  public getFilteredBy(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
+  public getFilteredByInternal(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
     if (!this._eligibilityEvaluator) {
       return Result.err(new Error('RulesService should be defined to filter programs'))
     }
@@ -68,5 +78,47 @@ export default class ProgramFeatures {
 
   public getAll(): ProgramType[] {
     return this._programRepository.getAll()
+  }
+
+  public getExternals(): AbstractProgramType[] {
+    return this._programRepository.getExternals()
+  }
+
+  public getExternalById(id: string): AbstractProgramType | undefined {
+    return this._programRepository.getExternalById(id)
+  }
+
+  public getOneWithMaybeEligibilityForFront(id: string, questionnaireData: QuestionnaireData): Result<AbstractProgramTypeForFront, Error> {
+    const program = this.getOneInternalByIdWithMaybeEligibility(id, questionnaireData)
+
+    const frontConverter = new FrontConverter()
+
+    if (program.isOk) {
+      return Result.ok(frontConverter.convertDomainToFront(program.value) as AbstractProgramTypeForFront)
+    }
+
+    if (program.error instanceof ProgramNotFoundError) {
+      const externalProgram = this.getExternalById(id)
+
+      if (externalProgram) {
+        return Result.ok(externalProgram as AbstractProgramTypeForFront)
+      }
+    }
+
+    return Result.err(program.error)
+  }
+
+  public getFilteredProgramsForFront(questionnaireData: QuestionnaireData): Result<AbstractProgramTypeForFront[], Error> {
+    const programsResult = this.getFilteredByInternal(questionnaireData)
+
+    if (programsResult.isErr) {
+      return Result.err(programsResult.error)
+    }
+
+    const frontConverter = new FrontConverter()
+    const teePrograms = programsResult.value.map((program) => frontConverter.convertDomainToFront(program))
+    const externalPrograms = this.getExternals()
+
+    return Result.ok([...teePrograms, ...externalPrograms] as AbstractProgramTypeForFront[])
   }
 }

@@ -11,6 +11,11 @@ export class FilterBaserow {
     return { filters: JSON.stringify(this._filters) }
   }
 
+  withEmpty(fieldName: string): FilterBaserow {
+    this._addFilter('empty', fieldName)
+    return this
+  }
+
   withNotEmpty(fieldName: string): FilterBaserow {
     this._addFilter('not_empty', fieldName)
     return this
@@ -18,6 +23,11 @@ export class FilterBaserow {
 
   withIsActive(fieldName: string): FilterBaserow {
     this._addFilter('boolean', fieldName, 1)
+    return this
+  }
+
+  withFieldEqualToValue(fieldName: string, value: string | number): FilterBaserow {
+    this._addFilter('equal', fieldName, value)
     return this
   }
 

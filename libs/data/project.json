@@ -40,12 +40,21 @@
         ]
       }
     },
-    "update-trainings": {
+    "update-external-trainings": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/data",
         "commands": [
-          "npx tsx src/scripts/updateBaserowTrainings.ts"
+          "npx tsx src/scripts/updateExternalTrainings.ts"
+        ]
+      }
+    },
+    "update-external-programs": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/updateExternalPrograms.ts"
         ]
       }
     },

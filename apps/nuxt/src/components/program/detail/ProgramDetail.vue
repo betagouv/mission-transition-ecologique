@@ -1,7 +1,11 @@
 <template>
   <Layout :links="links">
     <template
-      v-if="isDataFull || Program.isTemporaryUnavailable(currentProgram) || !Program.isAvailable(currentProgram)"
+      v-if="
+        isDataFull ||
+        AbstractProgram.isTemporaryUnavailable(currentProgram as AbstractProgramTypeForFront) ||
+        !Program.isAvailable(currentProgram)
+      "
       #beforeBreadcrumb
     >
       <ClientOnly>
@@ -25,7 +29,6 @@
           <ProgramTitle />
           <ProgramResume />
           <ProgramMainCta
-            :program="currentProgram"
             :is-activation-visible="isActivationVisible"
             :scroll-to-form="scrollToForm"
             :scroll-to-activation="scrollToActivation"
@@ -35,15 +38,14 @@
       <div ref="activation-ref">
         <ProgramActivation
           v-if="isActivationVisible"
-          :program="currentProgram"
           :is-form-visible="isFormVisible"
           :scroll-to-form="scrollToForm"
         />
       </div>
       <ProgramTiles />
-      <ProgramEligibilityConditions :program="currentProgram" />
+      <ProgramEligibilityConditions />
       <ProgramProjects :program="currentProgram" />
-      <ProgramLongDescription :program="currentProgram" />
+      <ProgramLongDescription />
       <div ref="form-ref">
         <ClientOnly>
           <ProgramForm
@@ -61,6 +63,7 @@ import { TeeDsfrBreadcrumbProps } from '@/components/element/TeeDsfrBreadcrumb.v
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import Navigation from '@/tools/navigation'
+import AbstractProgram from '@/tools/program/abstractProgram'
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { RouteName } from '@/types/routeType'
@@ -72,7 +75,7 @@ import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 import Analytics from '@/tools/analytic/analytics'
 import { Scroll } from '@/tools/scroll/scroll'
 import { useCompanyDataStore } from '@/stores/companyData'
-import { ProgramEligibility } from '@/types'
+import { AbstractProgramTypeForFront, ProgramEligibility } from '@/types'
 import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 const { currentProgram } = storeToRefs(useProgramStore())

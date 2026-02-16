@@ -42,7 +42,7 @@ const getProgramById = (event: H3Event<EventHandlerRequest>, programId: string, 
     })
   }
 
-  return programService.convertDomainToFront(program.value)
+  return program.value
 }
 const _getProgramByIdCached = cachedFunction(
   async (event: H3Event, programId: string, questionnaireData: QuestionnaireData) => {
