@@ -12,7 +12,7 @@ export default class AbstractProgram {
       : (currentExtProgram as Ref<AbstractProgramTypeForFront | undefined>)
   }
 
-  public static isTemporaryUnavailable(program: AbstractProgramTypeForFront | undefined) {
+  public static isTemporaryUnavailable(program: AbstractProgramTypeForFront | ProgramTypeForFront | undefined) {
     return program?.[`aide temporairement indisponible`] === 'oui'
   }
 
@@ -22,12 +22,14 @@ export default class AbstractProgram {
     return program?.type === ProgramTypes.TEE
   }
 
-  public static isExternalProgram(program: AbstractProgramTypeForFront | undefined | null): program is AbstractProgramTypeForFront {
+  public static isExternalProgram(
+    program: AbstractProgramTypeForFront | ProgramTypeForFront | undefined | null
+  ): program is AbstractProgramTypeForFront {
     return program?.type === ProgramTypes.extAdeme
   }
 
   static getBackLink(
-    program: AbstractProgramTypeForFront | undefined,
+    program: AbstractProgramTypeForFront | ProgramTypeForFront | undefined,
     currentProject?: ProjectType | undefined
   ): RouteLocationRaw | undefined {
     if (!program) {
