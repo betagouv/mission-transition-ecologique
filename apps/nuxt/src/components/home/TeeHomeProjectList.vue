@@ -37,6 +37,7 @@
 </template>
 <script setup lang="ts">
 import { useProjectStore } from '@/stores/project'
+import { ProgramManager } from '@/tools/program/programManager'
 import ProjectFilter from '@/tools/project/projectFilter'
 import ProjectSorter from '@/tools/project/projectSorter'
 import { ProjectManager } from '@/tools/project/projectManager'
@@ -49,6 +50,9 @@ await new ProjectManager().getProjects()
 onNuxtReady(async () => {
   CompanyData.isDataFullComputed().value // call to initialize computed reactivity variable
   await new ProjectManager().getProjects()
+  if (isDataFull.value) {
+    await new ProgramManager().getDependentCompanyData(true)
+  }
 })
 
 const theme = Theme.getThemeFromSelectedTheme()
@@ -56,7 +60,7 @@ const { projects, hasError } = storeToRefs(useProjectStore())
 const { hasSpinner } = storeToRefs(useNavigationStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 
-const limit = computed(() => (theme === undefined ? 8 : 9))
+const limit = computed(() => (theme.value === undefined ? 8 : 9))
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
 

@@ -39,11 +39,14 @@ objectifs:
       - lien: https://portail.opco2i.fr/
         texte: Créer mon compte Opco 2i
   - description: >-
-      Pour toute demande de pris en charge d'une formation, contactez le service
-      entreprises dans votre région
+      Pour toute demande de prise en charge d'une formation, consultez les
+      règles de prise en charge, et contactez votre conseiller régional Opco 2i
     liens:
+      - lien: >-
+          https://www.opco2i.fr/formation-et-financement/les-regles-de-prise-en-charge/
+        texte: Règles de prise en charge
       - lien: https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/
-        texte: Service entreprises
+        texte: Contacter mon conseiller
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

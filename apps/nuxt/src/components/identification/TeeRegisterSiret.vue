@@ -1,6 +1,11 @@
 <template>
   <div id="register-siret">
-    <h4 class="fr-mb-0 fr-py-2v fr-text--yellow">Quelle est votre entreprise ?</h4>
+    <h4
+      v-if="title"
+      class="fr-mb-0 fr-py-2v fr-text--yellow"
+    >
+      {{ title }}
+    </h4>
     <TeeDsfrSearchBar
       v-model.trim="queryValue"
       :color="Color.yellow"
@@ -79,6 +84,11 @@
 import Translation from '@/tools/translation'
 import { EstablishmentSearch, EstablishmentFront, Color } from '@/types'
 import CompanySearch from '@/tools/companySearch'
+
+interface Props {
+  title?: string
+}
+defineProps<Props>()
 
 const defaultSearchValue = {
   establishments: [],

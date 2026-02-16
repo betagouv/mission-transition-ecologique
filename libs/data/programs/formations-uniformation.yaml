@@ -13,14 +13,19 @@ description: >-
 
   - Impulser la transition écologique de sa structure.
 
-  - etc.
+  - Les écogestes en pratique dans le logement accompagné.
+
+  - Maîtriser les enjeux de la RE2020.
+
+  - Etc.
+fin de validité: 31/12/2026
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Opco Uniformation
-contact question: formulaire
+contact question: https://www.uniformation.fr/nous-contacter
 url: >-
   https://www.uniformation.fr/entreprise/formation/offre-de-formations-cles-en-main?combine_text=&session_start_min=&session_start_max=&presence_type=All&offer=All&branch=All&training_theme=99&target_training=All
 nature de l'aide: formation
-coût de l'accompagnement: Variable
+coût de l'accompagnement: Gratuite
 durée de l'accompagnement: Variable selon la formation choisie
 activable en autonomie: oui
 objectifs:
@@ -34,12 +39,6 @@ objectifs:
   - description: >-
       Inscrivez-vous à la formation choisie en suivant les modalités indiquées
       sur le site.
-  - description: >-
-      Pour toute demande de pris en charge d'une formation, contactez
-      Uniformation
-    liens:
-      - lien: https://www.uniformation.fr/nous-contacter
-        texte: Contact Uniformation
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
@@ -55,8 +54,12 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est L

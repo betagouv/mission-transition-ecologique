@@ -33,33 +33,38 @@
       </TeeCatalogBanner>
     </template>
     <template #beforeDefault>
-      <slot name="beforeDefault">
-        <div class="fr-grid-row">
-          <div
-            v-if="!hasError"
-            class="fr-col-12 fr-mt-3v"
-            :class="lineClassBySideMenu"
-          >
-            <ThemeFilter />
-          </div>
-        </div>
+      <div
+        v-if="!hasError && $slots.beforeThemeFilter"
+        class="fr-col-12 fr-mt-3v"
+        :class="lineClassBySideMenu"
+      >
+        <slot name="beforeThemeFilter"> </slot>
+      </div>
+      <div class="fr-grid-row">
         <div
           v-if="!hasError"
-          class="fr-grid-row"
+          class="fr-col-12 fr-mt-3v"
+          :class="lineClassBySideMenu"
         >
-          <div
-            class="fr-col-12"
-            :class="lineClassBySideMenu"
-          >
-            <ThemeHeaderCard
-              v-if="hasThemeCard"
-              :theme="theme as ThemeId"
-              radius-corner="tr"
-              radius-size="2-5v"
-            />
-          </div>
+          <ThemeFilter />
         </div>
-      </slot>
+      </div>
+      <div
+        v-if="!hasError"
+        class="fr-grid-row"
+      >
+        <div
+          class="fr-col-12"
+          :class="lineClassBySideMenu"
+        >
+          <ThemeHeaderCard
+            v-if="hasThemeCard"
+            :theme="theme as ThemeId"
+            radius-corner="tr"
+            radius-size="2-5v"
+          />
+        </div>
+      </div>
     </template>
     <template
       v-if="hasSideMenu && $slots.sidemenu"

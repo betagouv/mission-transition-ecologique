@@ -74,7 +74,7 @@ export class CompanyData {
       const data = this.dataRef
       const companyData = data.value[CompanyDataStorageKey.Company]
       if (!companyData) {
-        useCompanyDataStore().isDataFull = false
+        useCompanyDataStore().reset()
         return false
       }
 
@@ -88,6 +88,7 @@ export class CompanyData {
     const data = this.dataRef
     const companyData = data.value[CompanyDataStorageKey.Company]
     if (!companyData) {
+      useCompanyDataStore().hasAnimationDone = false
       return false
     }
     return CompanyDataValidator.validate(companyData)

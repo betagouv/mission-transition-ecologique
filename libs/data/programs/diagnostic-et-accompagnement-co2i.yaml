@@ -1,0 +1,69 @@
+titre: Diagnostic & Accompagnement CO2i Inter Industrie
+promesse: >-
+  Bénéficiez d'un accompagnement à la transition écologique et à la
+  décarbonation
+description: >-
+  Ce dispositif combine un diagnostic approfondi et un accompagnement
+  personnalisé pour vous aider à structurer votre démarche et à identifier les
+  leviers à la transition écologique et à la décarbonation de votre entreprise
+  industrielle.\
+
+  Il vous permet de :
+
+
+  - **Identifier les enjeux clés** de la transition écologique pour votre
+  entreprise.
+
+  - **Définir les impacts sur vos processus**, vos compétences et vos pratiques.
+
+  - **Prioriser les actions** à mettre en œuvre et les **formations** à
+  développer.
+illustration: images/TEE_eolienne.webp
+opérateur de contact: Opco 2i
+contact question: https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/
+url: >-
+  https://www.opco2i.fr/offre-de-services/oeuvrer-pour-lenvironnement/diagnostic-accompagnement-co2i/
+nature de l'aide: étude
+montant du financement: Jusqu’à 1 000 € HT/ jour pour les entreprises de 250 salariés.
+objectifs:
+  - description: >-
+      Contactez votre conseiller régional Opco 2i pour lui manifester votre
+      intérêt pour cet accompagnement.
+    liens:
+      - lien: https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/
+        texte: Contacter mon conseiller
+  - description: >-
+      Établissez avec lui le périmètre de l'accompagnement, le calendrier et une
+      éventuelle prise en charge.
+    liens:
+      - lien: >-
+          https://www.opco2i.fr/formation-et-financement/les-regles-de-prise-en-charge/
+        texte: Règles de prise en charge
+  - description: Bénéficiez du diagnostic et de l'accompagnement personnalisé.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Entreprises du secteur industriel
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est M
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental
