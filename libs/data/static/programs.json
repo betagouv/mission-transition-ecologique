@@ -236,7 +236,8 @@
         ]
       }
     },
-    "id": "accelerateur-decarbonation"
+    "id": "accelerateur-decarbonation",
+    "type": "tee"
   },
   {
     "titre": "ACT - Pas à pas",
@@ -478,7 +479,8 @@
         ]
       }
     },
-    "id": "act-pas-a-pas"
+    "id": "act-pas-a-pas",
+    "type": "tee"
   },
   {
     "titre": "Aides au réemploi des emballages",
@@ -743,7 +745,8 @@
         ]
       }
     },
-    "id": "aides-au-reemploi-des-emballages"
+    "id": "aides-au-reemploi-des-emballages",
+    "type": "tee"
   },
   {
     "titre": "AMO chaufferie biomasse",
@@ -954,7 +957,8 @@
         ]
       }
     },
-    "id": "amo-chaufferie-biomasse"
+    "id": "amo-chaufferie-biomasse",
+    "type": "tee"
   },
   {
     "titre": "Audit énergétique volontaire en industrie",
@@ -1171,7 +1175,8 @@
         ]
       }
     },
-    "id": "audit-energetique-en-industrie"
+    "id": "audit-energetique-en-industrie",
+    "type": "tee"
   },
   {
     "titre": "Label Clef Verte",
@@ -1364,7 +1369,8 @@
         ]
       }
     },
-    "id": "label-clef-verte"
+    "id": "label-clef-verte",
+    "type": "tee"
   },
   {
     "titre": "Baisse Les Watts",
@@ -1598,7 +1604,8 @@
         ]
       }
     },
-    "id": "baisse-les-watts"
+    "id": "baisse-les-watts",
+    "type": "tee"
   },
   {
     "titre": "Bonus écologique",
@@ -1833,7 +1840,8 @@
         ]
       }
     },
-    "id": "bonus-ecologique"
+    "id": "bonus-ecologique",
+    "type": "tee"
   },
   {
     "titre": "Booster Entreprises",
@@ -2061,7 +2069,8 @@
         ]
       }
     },
-    "id": "booster-eco-energie-tertiaire"
+    "id": "booster-eco-energie-tertiaire",
+    "type": "tee"
   },
   {
     "titre": "ClimaDiag expert",
@@ -2267,7 +2276,8 @@
         ]
       }
     },
-    "id": "climadiag-expert"
+    "id": "climadiag-expert",
+    "type": "tee"
   },
   {
     "titre": "Communauté du Coq Vert",
@@ -2482,7 +2492,8 @@
         ]
       }
     },
-    "id": "communaute-coq-vert"
+    "id": "communaute-coq-vert",
+    "type": "tee"
   },
   {
     "titre": "Coup de pouce Chauffage",
@@ -2698,7 +2709,8 @@
         ]
       }
     },
-    "id": "coup-de-pouce-chauffage"
+    "id": "coup-de-pouce-chauffage",
+    "type": "tee"
   },
   {
     "titre": "Diag Décarbon'Action",
@@ -2914,7 +2926,8 @@
         ]
       }
     },
-    "id": "diag-decarbon-action"
+    "id": "diag-decarbon-action",
+    "type": "tee"
   },
   {
     "titre": "Diag Adaptation",
@@ -3137,7 +3150,8 @@
         ]
       }
     },
-    "id": "diag-adaptation"
+    "id": "diag-adaptation",
+    "type": "tee"
   },
   {
     "titre": "Diag Ecoconception",
@@ -3385,7 +3399,8 @@
         ]
       }
     ],
-    "id": "diag-ecoconception"
+    "id": "diag-ecoconception",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic Changement climatique",
@@ -3605,7 +3620,8 @@
         ]
       }
     },
-    "id": "diagnostic-changement-climatique"
+    "id": "diagnostic-changement-climatique",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic déchets",
@@ -3815,7 +3831,8 @@
         ]
       }
     },
-    "id": "diagnostic-dechets"
+    "id": "diagnostic-dechets",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic Eco-conception Île-de-France",
@@ -4019,7 +4036,8 @@
         ]
       }
     },
-    "id": "diagnostic-eco-conception-ile-de-france"
+    "id": "diagnostic-eco-conception-ile-de-france",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic RSE",
@@ -4241,7 +4259,8 @@
         ]
       }
     },
-    "id": "diagnostic-rse"
+    "id": "diagnostic-rse",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic Transition Ecologique",
@@ -4445,7 +4464,8 @@
         ]
       }
     },
-    "id": "diagnostic-transition-ecologique"
+    "id": "diagnostic-transition-ecologique",
+    "type": "tee"
   },
   {
     "titre": "Eco-Défis des artisans et des commerçants",
@@ -4626,7 +4646,8 @@
         ]
       }
     },
-    "id": "eco-defis-des-artisans-et-des-commercants"
+    "id": "eco-defis-des-artisans-et-des-commercants",
+    "type": "tee"
   },
   {
     "titre": "Engins moins polluants",
@@ -4786,7 +4807,8 @@
         ]
       }
     },
-    "id": "engins-moins-polluants"
+    "id": "engins-moins-polluants",
+    "type": "tee"
   },
   {
     "titre": "Enviroveille",
@@ -4985,7 +5007,8 @@
         ]
       }
     },
-    "id": "enviroveille"
+    "id": "enviroveille",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Alimentation durable\"",
@@ -5244,7 +5267,8 @@
         ]
       }
     },
-    "id": "etude-alimentation-durable"
+    "id": "etude-alimentation-durable",
+    "type": "tee"
   },
   {
     "titre": "Etude \"biodéchets\"",
@@ -5485,7 +5509,8 @@
         ]
       }
     },
-    "id": "etude-biodechets"
+    "id": "etude-biodechets",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Centres de tri\"",
@@ -5720,7 +5745,8 @@
         ]
       }
     },
-    "id": "etude-centres-de-tri"
+    "id": "etude-centres-de-tri",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Chaufferie biomasse\"",
@@ -5935,7 +5961,8 @@
         ]
       }
     },
-    "id": "etude-chaufferie-biomasse"
+    "id": "etude-chaufferie-biomasse",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Diagnostic serres\"",
@@ -6137,7 +6164,8 @@
         ]
       }
     },
-    "id": "etude-diagnostic-serres"
+    "id": "etude-diagnostic-serres",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Économie de la fonctionnalité\"",
@@ -6418,7 +6446,8 @@
         ]
       }
     },
-    "id": "etude-economie-de-la-fonctionnalite"
+    "id": "etude-economie-de-la-fonctionnalite",
+    "type": "tee"
   },
   {
     "titre": "Etude et Investissement \"qualité de l’air\"",
@@ -6673,7 +6702,8 @@
         ]
       }
     },
-    "id": "etude-et-investissement-qualite-de-l-air"
+    "id": "etude-et-investissement-qualite-de-l-air",
+    "type": "tee"
   },
   {
     "titre": "Étude faisabilité \"hydrogène\"",
@@ -6864,7 +6894,8 @@
         ]
       }
     },
-    "id": "etude-faisabilite-hydrogene"
+    "id": "etude-faisabilite-hydrogene",
+    "type": "tee"
   },
   {
     "titre": "Étude et travaux de dépollution d'une friche",
@@ -7081,7 +7112,8 @@
         ]
       }
     },
-    "id": "etude-friches-polluees"
+    "id": "etude-friches-polluees",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Gaspillage alimentaire\"",
@@ -7318,7 +7350,8 @@
         ]
       }
     },
-    "id": "etude-gaspillage-alimentaire"
+    "id": "etude-gaspillage-alimentaire",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Géothermie de surface et d'aérothermie\"",
@@ -7571,7 +7604,8 @@
         "Eligibilité taille": "Pour une grande entreprise"
       }
     ],
-    "id": "etude-geothermie-de-surface-et-d-aerothermie"
+    "id": "etude-geothermie-de-surface-et-d-aerothermie",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Hydroélectricité\"",
@@ -7803,7 +7837,8 @@
         ]
       }
     },
-    "id": "etude-hydroelectricite"
+    "id": "etude-hydroelectricite",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Méthanisation\"",
@@ -8074,7 +8109,8 @@
         ]
       }
     },
-    "id": "etude-methanisation"
+    "id": "etude-methanisation",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Performance énergétique\" ou de \"décarbonation\" en industrie",
@@ -8280,7 +8316,8 @@
         ]
       }
     },
-    "id": "etude-performance-energetique-en-industrie"
+    "id": "etude-performance-energetique-en-industrie",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Éco-conception\"",
@@ -8570,7 +8607,8 @@
         ]
       }
     },
-    "id": "etude-performance-produits"
+    "id": "etude-performance-produits",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Autoconsommation photovoltaïque\"",
@@ -8843,7 +8881,8 @@
         ]
       }
     },
-    "id": "etude-photovoltaique-ademe"
+    "id": "etude-photovoltaique-ademe",
+    "type": "tee"
   },
   {
     "titre": "Étude d'opportunité photovoltaïque",
@@ -9058,7 +9097,8 @@
         ]
       }
     },
-    "id": "etude-photovoltaique-cci"
+    "id": "etude-photovoltaique-cci",
+    "type": "tee"
   },
   {
     "titre": "Amélioration de la qualité de l’air",
@@ -9321,7 +9361,8 @@
         ]
       }
     },
-    "id": "amelioration-qualite-de-l-air"
+    "id": "amelioration-qualite-de-l-air",
+    "type": "tee"
   },
   {
     "titre": "Étude \"projet de recherche\"",
@@ -9541,7 +9582,8 @@
         ]
       }
     },
-    "id": "etude-projet-de-recherche"
+    "id": "etude-projet-de-recherche",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Récupération de chaleur fatale\"",
@@ -9758,7 +9800,8 @@
         ]
       }
     },
-    "id": "etude-recuperation-de-chaleur-fatale"
+    "id": "etude-recuperation-de-chaleur-fatale",
+    "type": "tee"
   },
   {
     "titre": "Étude \"réemploi réutilisation réparation\"",
@@ -10003,7 +10046,8 @@
         ]
       }
     },
-    "id": "etude-reemploi-reutilisation-reparation"
+    "id": "etude-reemploi-reutilisation-reparation",
+    "type": "tee"
   },
   {
     "titre": "Étude \"réhabilitation solaires thermiques collectives\"",
@@ -10252,7 +10296,8 @@
         ]
       }
     },
-    "id": "etude-rehabilitation-solaires-thermiques-collectives"
+    "id": "etude-rehabilitation-solaires-thermiques-collectives",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Réseaux énergie renouvelable\"",
@@ -10464,7 +10509,8 @@
         ]
       }
     },
-    "id": "etude-reseaux-energie-renouvelable"
+    "id": "etude-reseaux-energie-renouvelable",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Solaire thermique\"",
@@ -10757,7 +10803,8 @@
         ]
       }
     },
-    "id": "etude-solaire-thermique"
+    "id": "etude-solaire-thermique",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Géothermie profonde\"",
@@ -10984,7 +11031,8 @@
         ]
       }
     },
-    "id": "etude-geothermie-profonde"
+    "id": "etude-geothermie-profonde",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Test géothermie\"",
@@ -11225,7 +11273,8 @@
         ]
       }
     },
-    "id": "etude-test-geothermie"
+    "id": "etude-test-geothermie",
+    "type": "tee"
   },
   {
     "titre": "eXtrême Défi Mobilité",
@@ -11405,7 +11454,8 @@
         ]
       }
     },
-    "id": "extreme-defi-mobilite"
+    "id": "extreme-defi-mobilite",
+    "type": "tee"
   },
   {
     "titre": "Flotte de vélos à disposition",
@@ -11603,7 +11653,8 @@
         ]
       }
     },
-    "id": "flotte-de-velos-a-disposition"
+    "id": "flotte-de-velos-a-disposition",
+    "type": "tee"
   },
   {
     "titre": "Fonds Tourisme Durable",
@@ -11892,7 +11943,8 @@
         ]
       }
     },
-    "id": "fonds-tourisme-durable"
+    "id": "fonds-tourisme-durable",
+    "type": "tee"
   },
   {
     "titre": "Fonds Vert - Territoires d'Industrie",
@@ -12115,7 +12167,8 @@
         ]
       }
     },
-    "id": "fond-vert-territoires-d-industrie"
+    "id": "fond-vert-territoires-d-industrie",
+    "type": "tee"
   },
   {
     "titre": "Formation ADEME",
@@ -12331,7 +12384,8 @@
         ]
       }
     },
-    "id": "formation-engager-entreprise-transition-ecologique"
+    "id": "formation-engager-entreprise-transition-ecologique",
+    "type": "tee"
   },
   {
     "titre": "B.A.-BA du climat et de la biodiversité",
@@ -12544,7 +12598,8 @@
         ]
       }
     },
-    "id": "b-a-ba-du-climat-et-biodiversite"
+    "id": "b-a-ba-du-climat-et-biodiversite",
+    "type": "tee"
   },
   {
     "titre": "Formations du CFDE",
@@ -12746,7 +12801,8 @@
         ]
       }
     },
-    "id": "formations-du-cfde"
+    "id": "formations-du-cfde",
+    "type": "tee"
   },
   {
     "titre": "Diag Eco-Flux",
@@ -12960,7 +13016,8 @@
         ]
       }
     },
-    "id": "diag-eco-flux"
+    "id": "diag-eco-flux",
+    "type": "tee"
   },
   {
     "titre": "Fresque de la Mobilité",
@@ -13183,7 +13240,8 @@
         ]
       }
     },
-    "id": "fresque-de-la-mobilite"
+    "id": "fresque-de-la-mobilite",
+    "type": "tee"
   },
   {
     "titre": "Gestion des biodéchets",
@@ -13367,7 +13425,8 @@
         ]
       }
     },
-    "id": "gestion-des-biodechets"
+    "id": "gestion-des-biodechets",
+    "type": "tee"
   },
   {
     "titre": "Formation développement durable",
@@ -13540,7 +13599,8 @@
         ]
       }
     },
-    "id": "formation-artisan-developpement-durable"
+    "id": "formation-artisan-developpement-durable",
+    "type": "tee"
   },
   {
     "titre": "Imprim'vert",
@@ -13744,7 +13804,8 @@
         "Durée du dispositif": "1,5 à 2,5 jours"
       }
     ],
-    "id": "imprim-vert"
+    "id": "imprim-vert",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"bioGNV agricole et territorial\"",
@@ -13963,7 +14024,8 @@
         ]
       }
     },
-    "id": "investissement-biognv-agricole-et-territorial"
+    "id": "investissement-biognv-agricole-et-territorial",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Boucle d’eau géothermique\"",
@@ -14201,7 +14263,8 @@
         ]
       }
     },
-    "id": "investissement-boucle-d-eau-geothermique"
+    "id": "investissement-boucle-d-eau-geothermique",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"centre de tri\"",
@@ -14431,7 +14494,8 @@
         ]
       }
     },
-    "id": "investissement-centre-de-tri"
+    "id": "investissement-centre-de-tri",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Chaleur bois\"",
@@ -14673,7 +14737,8 @@
         ]
       }
     },
-    "id": "investissement-chaleur-bois"
+    "id": "investissement-chaleur-bois",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"construction et rénovation hors site\"",
@@ -14869,7 +14934,8 @@
         ]
       }
     },
-    "id": "investissement-construction-et-renovation-hors-site"
+    "id": "investissement-construction-et-renovation-hors-site",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Contrat Chaleur Renouvelable\"",
@@ -15108,7 +15174,8 @@
         ]
       }
     },
-    "id": "investissement-contrat-chaleur-renouvelable"
+    "id": "investissement-contrat-chaleur-renouvelable",
+    "type": "tee"
   },
   {
     "titre": "Investissement  \"contrat patrimonial ENR&R\"",
@@ -15356,7 +15423,8 @@
         ]
       }
     },
-    "id": "investissement-contrat-patrimonial-enr-r"
+    "id": "investissement-contrat-patrimonial-enr-r",
+    "type": "tee"
   },
   {
     "titre": "Investissement contre le gaspillage alimentaire",
@@ -15609,7 +15677,8 @@
         ]
       }
     },
-    "id": "investissement-contre-le-gaspillage-alimentaire"
+    "id": "investissement-contre-le-gaspillage-alimentaire",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Ecoconception\"",
@@ -15884,7 +15953,8 @@
         ]
       }
     },
-    "id": "investissement-ecoconception"
+    "id": "investissement-ecoconception",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Géothermie de surface et d'aérothermie\"",
@@ -16124,7 +16194,8 @@
         ]
       }
     },
-    "id": "investissement-geothermie-de-surface-et-d-aerothermie"
+    "id": "investissement-geothermie-de-surface-et-d-aerothermie",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Géothermie profonde\"",
@@ -16362,7 +16433,8 @@
         ]
       }
     },
-    "id": "investissement-geothermie-profonde"
+    "id": "investissement-geothermie-profonde",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Gestion des biodéchets\"",
@@ -16610,7 +16682,8 @@
         ]
       }
     },
-    "id": "investissement-gestion-des-biodechets"
+    "id": "investissement-gestion-des-biodechets",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Méthanisation\" en PACA",
@@ -16806,7 +16879,8 @@
         ]
       }
     },
-    "id": "etude-methanisation-paca"
+    "id": "etude-methanisation-paca",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Méthanisation\"",
@@ -17062,7 +17136,8 @@
         ]
       }
     },
-    "id": "investissement-methanisation"
+    "id": "investissement-methanisation",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"PAC solaire\"",
@@ -17300,7 +17375,8 @@
         ]
       }
     },
-    "id": "investissement-pac-solaire"
+    "id": "investissement-pac-solaire",
+    "type": "tee"
   },
   {
     "titre": "Investissement pour l'approvisionnement de chaufferies bois",
@@ -17499,7 +17575,8 @@
         ]
       }
     },
-    "id": "investissement-pour-l-approvisionnement-de-chaufferies-bois"
+    "id": "investissement-pour-l-approvisionnement-de-chaufferies-bois",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"recharge véhicules électriques\"",
@@ -17680,7 +17757,8 @@
         ]
       }
     },
-    "id": "investissement-recharge-vehicules-electriques"
+    "id": "investissement-recharge-vehicules-electriques",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Récupération de chaleur fatale\"",
@@ -17884,7 +17962,8 @@
         ]
       }
     },
-    "id": "investissement-recuperation-de-chaleur-fatale"
+    "id": "investissement-recuperation-de-chaleur-fatale",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"réemploi réutilisation réparation\"",
@@ -18127,7 +18206,8 @@
         ]
       }
     },
-    "id": "investissement-reemploi-reutilisation-reparation"
+    "id": "investissement-reemploi-reutilisation-reparation",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"renouvellement forestier\"",
@@ -18310,7 +18390,8 @@
         ]
       }
     },
-    "id": "investissement-renouvellement-forestier"
+    "id": "investissement-renouvellement-forestier",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Réseaux de chaleur ou de froid\"",
@@ -18514,7 +18595,8 @@
         ]
       }
     },
-    "id": "investissement-reseaux-de-chaleur-ou-de-froid"
+    "id": "investissement-reseaux-de-chaleur-ou-de-froid",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Solaire thermique\"",
@@ -18750,7 +18832,8 @@
         ]
       }
     },
-    "id": "investissement-solaire-thermique"
+    "id": "investissement-solaire-thermique",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"solaire thermique Outre-mer\"",
@@ -18985,7 +19068,8 @@
         ]
       }
     },
-    "id": "investissement-solaire-thermique-outre-mer"
+    "id": "investissement-solaire-thermique-outre-mer",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Systèmes Solaires Combinés\"",
@@ -19217,7 +19301,8 @@
         ]
       }
     },
-    "id": "investissement-systemes-solaires-combines"
+    "id": "investissement-systemes-solaires-combines",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"vélotourisme\"",
@@ -19435,7 +19520,8 @@
         ]
       }
     },
-    "id": "investissement-velotourisme"
+    "id": "investissement-velotourisme",
+    "type": "tee"
   },
   {
     "titre": "Diag Perf'Immo",
@@ -19656,7 +19742,8 @@
         ]
       }
     },
-    "id": "diag-perf-immo"
+    "id": "diag-perf-immo",
+    "type": "tee"
   },
   {
     "titre": "Formations Transition Écologique et Énergétique",
@@ -19858,7 +19945,8 @@
         ]
       }
     },
-    "id": "formations-tee"
+    "id": "formations-tee",
+    "type": "tee"
   },
   {
     "titre": "ORMAT",
@@ -20110,7 +20198,8 @@
         ]
       }
     },
-    "id": "ormat"
+    "id": "ormat",
+    "type": "tee"
   },
   {
     "titre": "PACTE Industrie",
@@ -20322,7 +20411,8 @@
         ]
       }
     },
-    "id": "pacte-industrie"
+    "id": "pacte-industrie",
+    "type": "tee"
   },
   {
     "titre": "Performa Environnement",
@@ -20695,7 +20785,8 @@
         "Durée du dispositif": "2 jours"
       }
     ],
-    "id": "performa-environnement"
+    "id": "performa-environnement",
+    "type": "tee"
   },
   {
     "titre": "Plan de mobilité",
@@ -20941,7 +21032,8 @@
         ]
       }
     },
-    "id": "plan-de-mobilite"
+    "id": "plan-de-mobilite",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"VTE Vert\"",
@@ -21186,7 +21278,8 @@
         ]
       }
     },
-    "id": "investissement-vte-vert"
+    "id": "investissement-vte-vert",
+    "type": "tee"
   },
   {
     "titre": "Mission de Conseil RSE",
@@ -21406,7 +21499,8 @@
         ]
       }
     },
-    "id": "mission-conseil-rse"
+    "id": "mission-conseil-rse",
+    "type": "tee"
   },
   {
     "titre": "Mission Stratégie Environnement",
@@ -21639,7 +21733,8 @@
         ]
       }
     },
-    "id": "mission-strategie-environnement"
+    "id": "mission-strategie-environnement",
+    "type": "tee"
   },
   {
     "titre": "Prêt Action Climat",
@@ -21863,7 +21958,8 @@
         ]
       }
     },
-    "id": "pret-action-climat"
+    "id": "pret-action-climat",
+    "type": "tee"
   },
   {
     "titre": "Prime à la conversion",
@@ -22113,7 +22209,8 @@
         ]
       }
     },
-    "id": "prime-a-la-conversion"
+    "id": "prime-a-la-conversion",
+    "type": "tee"
   },
   {
     "titre": "Programme Breizh Fab",
@@ -22317,7 +22414,8 @@
         ]
       }
     },
-    "id": "programme-breizh-fab"
+    "id": "programme-breizh-fab",
+    "type": "tee"
   },
   {
     "titre": "Programme Ecod'o",
@@ -22513,7 +22611,8 @@
         ]
       }
     },
-    "id": "programme-ecod-o"
+    "id": "programme-ecod-o",
+    "type": "tee"
   },
   {
     "titre": "Programme EVE",
@@ -22695,7 +22794,8 @@
         ]
       }
     },
-    "id": "programme-eve"
+    "id": "programme-eve",
+    "type": "tee"
   },
   {
     "titre": "Programme Synergies durables",
@@ -22897,7 +22997,8 @@
         ]
       }
     },
-    "id": "programme-synergies-durables"
+    "id": "programme-synergies-durables",
+    "type": "tee"
   },
   {
     "titre": "Crédit d'Impôt Rénovation Énergétique (CIRE)",
@@ -23122,7 +23223,8 @@
         ]
       }
     },
-    "id": "renovation-energetique"
+    "id": "renovation-energetique",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic SARE",
@@ -23339,7 +23441,8 @@
         ]
       }
     },
-    "id": "renovation-petit-tertiaire-prive"
+    "id": "renovation-petit-tertiaire-prive",
+    "type": "tee"
   },
   {
     "titre": "Répar'acteurs",
@@ -23529,7 +23632,8 @@
         ]
       }
     },
-    "id": "repar-acteurs"
+    "id": "repar-acteurs",
+    "type": "tee"
   },
   {
     "titre": "Rétrofit électrique",
@@ -23724,7 +23828,8 @@
         ]
       }
     },
-    "id": "retrofit-electrique"
+    "id": "retrofit-electrique",
+    "type": "tee"
   },
   {
     "titre": "Sobriété et Résilience des Territoires",
@@ -23941,7 +24046,8 @@
         ]
       }
     },
-    "id": "sobriete-et-resilience-des-territoires"
+    "id": "sobriete-et-resilience-des-territoires",
+    "type": "tee"
   },
   {
     "titre": "TPE gagnantes sur tous les coûts",
@@ -24202,7 +24308,8 @@
         ]
       }
     },
-    "id": "tpe-gagnantes-sur-tous-les-couts"
+    "id": "tpe-gagnantes-sur-tous-les-couts",
+    "type": "tee"
   },
   {
     "titre": "Tremplin",
@@ -24452,7 +24559,8 @@
         ]
       }
     },
-    "id": "tremplin"
+    "id": "tremplin",
+    "type": "tee"
   },
   {
     "titre": "Trophées Crisalide Eco-activités",
@@ -24664,7 +24772,8 @@
         ]
       }
     },
-    "id": "trophees-crisalide-eco-activites"
+    "id": "trophees-crisalide-eco-activites",
+    "type": "tee"
   },
   {
     "titre": "Véhicule lourd énergies propres",
@@ -24868,7 +24977,8 @@
         ]
       }
     },
-    "id": "vehicule-lourd-energies-propres"
+    "id": "vehicule-lourd-energies-propres",
+    "type": "tee"
   },
   {
     "titre": "Visite Énergie CCI/CMA",
@@ -25179,7 +25289,8 @@
         "Montant du dispositif": "Gratuit"
       }
     ],
-    "id": "visite-energie"
+    "id": "visite-energie",
+    "type": "tee"
   },
   {
     "titre": "Nos Gestes Climat",
@@ -25390,7 +25501,8 @@
         ]
       }
     },
-    "id": "nos-gestes-climat"
+    "id": "nos-gestes-climat",
+    "type": "tee"
   },
   {
     "titre": "Prêt Économies d’Énergie (PEE)",
@@ -25610,7 +25722,8 @@
         ]
       }
     },
-    "id": "pret-economies-d-energie-pee"
+    "id": "pret-economies-d-energie-pee",
+    "type": "tee"
   },
   {
     "titre": "Prêt Vert",
@@ -25842,7 +25955,8 @@
         ]
       }
     },
-    "id": "pret-vert"
+    "id": "pret-vert",
+    "type": "tee"
   },
   {
     "titre": "Prêt Vert - Ademe",
@@ -26083,7 +26197,8 @@
         ]
       }
     },
-    "id": "pret-vert-ademe"
+    "id": "pret-vert-ademe",
+    "type": "tee"
   },
   {
     "titre": "Adaptation au changement climatique en Bretagne",
@@ -26308,7 +26423,8 @@
         ]
       }
     },
-    "id": "adaptation-bzh"
+    "id": "adaptation-bzh",
+    "type": "tee"
   },
   {
     "titre": "Aide au financement en Occitanie",
@@ -26537,7 +26653,8 @@
         ]
       }
     },
-    "id": "aide-financement-occitanie"
+    "id": "aide-financement-occitanie",
+    "type": "tee"
   },
   {
     "titre": "CCI Business Optimizer",
@@ -26718,7 +26835,8 @@
         ]
       }
     },
-    "id": "cci-business-optimizer"
+    "id": "cci-business-optimizer",
+    "type": "tee"
   },
   {
     "titre": "Initiation éco-conception",
@@ -26913,7 +27031,8 @@
         ]
       }
     },
-    "id": "ecoconception-bzh"
+    "id": "ecoconception-bzh",
+    "type": "tee"
   },
   {
     "titre": "Formation écogestes",
@@ -27098,7 +27217,8 @@
         ]
       }
     },
-    "id": "ecogestes-paca"
+    "id": "ecogestes-paca",
+    "type": "tee"
   },
   {
     "titre": "Accompagnement écoproduction",
@@ -27317,7 +27437,8 @@
         ]
       }
     },
-    "id": "ecoproduction-hdf"
+    "id": "ecoproduction-hdf",
+    "type": "tee"
   },
   {
     "titre": "Fiscalité énergétique",
@@ -27498,7 +27619,8 @@
         ]
       }
     },
-    "id": "fiscalite-energetique-occitanie"
+    "id": "fiscalite-energetique-occitanie",
+    "type": "tee"
   },
   {
     "titre": "Formation référent tourisme durable ",
@@ -27678,7 +27800,8 @@
         ]
       }
     },
-    "id": "tourisme-durable-paca"
+    "id": "tourisme-durable-paca",
+    "type": "tee"
   },
   {
     "titre": "Certification en agriculture biologique",
@@ -27854,7 +27977,8 @@
         ]
       }
     },
-    "id": "certification-agriculture-biologique"
+    "id": "certification-agriculture-biologique",
+    "type": "tee"
   },
   {
     "titre": "Industries vertes (CI3V)",
@@ -28066,7 +28190,8 @@
         ]
       }
     },
-    "id": "industries-vertes"
+    "id": "industries-vertes",
+    "type": "tee"
   },
   {
     "titre": "Navires utilisant des énergies propres",
@@ -28249,7 +28374,8 @@
         ]
       }
     },
-    "id": "navires-energies-propre"
+    "id": "navires-energies-propre",
+    "type": "tee"
   },
   {
     "titre": "Bonus Réparation",
@@ -28417,7 +28543,8 @@
         ]
       }
     },
-    "id": "bonus-reparation"
+    "id": "bonus-reparation",
+    "type": "tee"
   },
   {
     "titre": "CEDRE Premier Pas",
@@ -28666,7 +28793,8 @@
         ]
       }
     },
-    "id": "cedre-premier-pas"
+    "id": "cedre-premier-pas",
+    "type": "tee"
   },
   {
     "titre": "CEDRE Investissement",
@@ -28921,7 +29049,8 @@
         ]
       }
     },
-    "id": "cedre-investissement"
+    "id": "cedre-investissement",
+    "type": "tee"
   },
   {
     "titre": "INVESTour",
@@ -29121,7 +29250,8 @@
         ]
       }
     },
-    "id": "investour"
+    "id": "investour",
+    "type": "tee"
   },
   {
     "titre": "Sud Prêt Climat",
@@ -29385,7 +29515,8 @@
         ]
       }
     },
-    "id": "sud-pret-climat"
+    "id": "sud-pret-climat",
+    "type": "tee"
   },
   {
     "titre": "Sites touristiques exemplaires",
@@ -29574,7 +29705,8 @@
         ]
       }
     },
-    "id": "sites-touristiques-exemplaires"
+    "id": "sites-touristiques-exemplaires",
+    "type": "tee"
   },
   {
     "titre": "Nature ta ville",
@@ -29782,7 +29914,8 @@
         ]
       }
     },
-    "id": "nature-ta-ville"
+    "id": "nature-ta-ville",
+    "type": "tee"
   },
   {
     "titre": "Plan Solaire : Paré pour le solaire",
@@ -30006,7 +30139,8 @@
         ]
       }
     },
-    "id": "solaire-ready"
+    "id": "solaire-ready",
+    "type": "tee"
   },
   {
     "titre": "Plan Solaire Sud PV Plus",
@@ -30243,7 +30377,8 @@
         ]
       }
     },
-    "id": "smart-pv"
+    "id": "smart-pv",
+    "type": "tee"
   },
   {
     "titre": "Chèque Transition Bioéthanol",
@@ -30483,7 +30618,8 @@
         ]
       }
     },
-    "id": "cheque-transition-bioethanol"
+    "id": "cheque-transition-bioethanol",
+    "type": "tee"
   },
   {
     "titre": "Recharges pour véhicules électriques",
@@ -30667,7 +30803,8 @@
         ]
       }
     },
-    "id": "recharge-vehicule-electrique"
+    "id": "recharge-vehicule-electrique",
+    "type": "tee"
   },
   {
     "titre": "Entreprises engagées pour la nature",
@@ -30895,7 +31032,8 @@
         ]
       }
     },
-    "id": "entreprises-engagees-nature"
+    "id": "entreprises-engagees-nature",
+    "type": "tee"
   },
   {
     "titre": "Charte \"zéro déchet plastique\"",
@@ -31142,7 +31280,8 @@
         ]
       }
     },
-    "id": "charte-zero-dechet-plastique"
+    "id": "charte-zero-dechet-plastique",
+    "type": "tee"
   },
   {
     "titre": "Mécénaturel",
@@ -31360,7 +31499,8 @@
         ]
       }
     },
-    "id": "mecenaturel"
+    "id": "mecenaturel",
+    "type": "tee"
   },
   {
     "titre": "Véhicules lourds électriques",
@@ -31552,7 +31692,8 @@
         ]
       }
     },
-    "id": "vehicules-lourds-electriques"
+    "id": "vehicules-lourds-electriques",
+    "type": "tee"
   },
   {
     "titre": "Audit label Clef Verte",
@@ -31741,7 +31882,8 @@
         ]
       }
     },
-    "id": "audit-clef-verte-sud"
+    "id": "audit-clef-verte-sud",
+    "type": "tee"
   },
   {
     "titre": "Prêt Tourisme Bpifrance",
@@ -31925,7 +32067,8 @@
         ]
       }
     },
-    "id": "pret-tourisme"
+    "id": "pret-tourisme",
+    "type": "tee"
   },
   {
     "titre": "MOOC Entreprise et biodiversité",
@@ -32136,7 +32279,8 @@
         ]
       }
     },
-    "id": "mooc-biodiversite-entreprise"
+    "id": "mooc-biodiversite-entreprise",
+    "type": "tee"
   },
   {
     "titre": "CEDRE Ambition",
@@ -32395,7 +32539,8 @@
         ]
       }
     },
-    "id": "cedre-ambition"
+    "id": "cedre-ambition",
+    "type": "tee"
   },
   {
     "titre": "Aide aux travaux de rénovation énergétique",
@@ -32594,7 +32739,8 @@
         ]
       }
     },
-    "id": "perf-crise-energetique-aura"
+    "id": "perf-crise-energetique-aura",
+    "type": "tee"
   },
   {
     "titre": "Aide au déploiement de flottes hydrogène",
@@ -32840,7 +32986,8 @@
         ]
       }
     },
-    "id": "deploiement-flottes-hydrogene"
+    "id": "deploiement-flottes-hydrogene",
+    "type": "tee"
   },
   {
     "titre": "Soutien au photovoltaïque en Grand Est",
@@ -33073,7 +33220,8 @@
         ]
       }
     },
-    "id": "soutien-pv-grand-est"
+    "id": "soutien-pv-grand-est",
+    "type": "tee"
   },
   {
     "titre": "Aide travaux hébergements touristiques",
@@ -33271,7 +33419,8 @@
         ]
       }
     },
-    "id": "aide-travaux-tourisme-aura"
+    "id": "aide-travaux-tourisme-aura",
+    "type": "tee"
   },
   {
     "titre": "Prêt Energie AURA",
@@ -33559,7 +33708,8 @@
         ]
       }
     },
-    "id": "pret-energie-aura"
+    "id": "pret-energie-aura",
+    "type": "tee"
   },
   {
     "titre": "PASS Transitions",
@@ -33793,7 +33943,8 @@
         ]
       }
     },
-    "id": "pass-transition-bzh"
+    "id": "pass-transition-bzh",
+    "type": "tee"
   },
   {
     "titre": "Pass Transformation Ecologique",
@@ -34039,7 +34190,8 @@
         ]
       }
     },
-    "id": "pass-transformation-ecologique"
+    "id": "pass-transformation-ecologique",
+    "type": "tee"
   },
   {
     "titre": "Prêt transition écologique Île-de-France",
@@ -34341,7 +34493,8 @@
         ]
       }
     },
-    "id": "pret-ile-de-france"
+    "id": "pret-ile-de-france",
+    "type": "tee"
   },
   {
     "titre": "CAP Transition Ecologique",
@@ -34577,7 +34730,8 @@
         ]
       }
     },
-    "id": "cap-transition-ecologique"
+    "id": "cap-transition-ecologique",
+    "type": "tee"
   },
   {
     "titre": "Investissements d'économies d'énergie",
@@ -34755,7 +34909,8 @@
         ]
       }
     },
-    "id": "perf-crise-energetique-cvl"
+    "id": "perf-crise-energetique-cvl",
+    "type": "tee"
   },
   {
     "titre": "Projets d'hébergements touristiques",
@@ -34955,7 +35110,8 @@
         ]
       }
     },
-    "id": "projets-hebergements-touristiques-cvl"
+    "id": "projets-hebergements-touristiques-cvl",
+    "type": "tee"
   },
   {
     "titre": "Accompagnement à l'Écolabel européen",
@@ -35167,7 +35323,8 @@
         ]
       }
     },
-    "id": "ecolabel"
+    "id": "ecolabel",
+    "type": "tee"
   },
   {
     "titre": "Impulsion Environnement",
@@ -35388,7 +35545,8 @@
         ]
       }
     },
-    "id": "impulsion-environnement"
+    "id": "impulsion-environnement",
+    "type": "tee"
   },
   {
     "titre": "Soutien à l'hébergement touristique",
@@ -35591,7 +35749,8 @@
         ]
       }
     },
-    "id": "soutien-hebergement-touristique"
+    "id": "soutien-hebergement-touristique",
+    "type": "tee"
   },
   {
     "titre": "Bilan Carbone®",
@@ -35802,7 +35961,8 @@
         ]
       }
     },
-    "id": "bilan-carbone"
+    "id": "bilan-carbone",
+    "type": "tee"
   },
   {
     "titre": "Programme Res'Eau",
@@ -36015,7 +36175,8 @@
         ]
       }
     },
-    "id": "programme-reseau"
+    "id": "programme-reseau",
+    "type": "tee"
   },
   {
     "titre": "Agir en Pays de la Loire",
@@ -36216,7 +36377,8 @@
         ]
       }
     },
-    "id": "agir-pdl"
+    "id": "agir-pdl",
+    "type": "tee"
   },
   {
     "titre": "Décarbonation de l'industrie",
@@ -36437,7 +36599,8 @@
         ]
       }
     },
-    "id": "decarb-ind-25"
+    "id": "decarb-ind-25",
+    "type": "tee"
   },
   {
     "titre": "Programme PAMI",
@@ -36680,7 +36843,8 @@
         ]
       }
     },
-    "id": "pami"
+    "id": "pami",
+    "type": "tee"
   },
   {
     "titre": "Aide à l'hôtellerie indépendante",
@@ -36892,7 +37056,8 @@
         ]
       }
     },
-    "id": "hotellerie-independante-na"
+    "id": "hotellerie-independante-na",
+    "type": "tee"
   },
   {
     "titre": "Aide aux campings indépendants de Nouvelle-Aquitaine",
@@ -37104,7 +37269,8 @@
         ]
       }
     },
-    "id": "camping-independant-na"
+    "id": "camping-independant-na",
+    "type": "tee"
   },
   {
     "titre": "Aide à l'investissement des transitions",
@@ -37329,7 +37495,8 @@
         ]
       }
     },
-    "id": "aide-tpe-transition-na"
+    "id": "aide-tpe-transition-na",
+    "type": "tee"
   },
   {
     "titre": "Priorités régionales d'interventions touristiques",
@@ -37518,7 +37685,8 @@
         ]
       }
     },
-    "id": "prit-hdf"
+    "id": "prit-hdf",
+    "type": "tee"
   },
   {
     "titre": "Aide à l’hôtellerie indépendante en Bourgogne-Franche-Comté",
@@ -37746,7 +37914,8 @@
         ]
       }
     },
-    "id": "hotellerie-independante-bfc"
+    "id": "hotellerie-independante-bfc",
+    "type": "tee"
   },
   {
     "titre": "Aide aux campings indépendants de Bourgogne-Franche-Comté",
@@ -37977,7 +38146,8 @@
         ]
       }
     },
-    "id": "camping-independant-bfc"
+    "id": "camping-independant-bfc",
+    "type": "tee"
   },
   {
     "titre": "Soutien à la labellisation touristique",
@@ -38173,7 +38343,8 @@
         ]
       }
     },
-    "id": "aide-labellisation-corse"
+    "id": "aide-labellisation-corse",
+    "type": "tee"
   },
   {
     "titre": "Impresa Sì",
@@ -38403,7 +38574,8 @@
         ]
       }
     },
-    "id": "aide-investissement-corse"
+    "id": "aide-investissement-corse",
+    "type": "tee"
   },
   {
     "titre": "Aide régionale au développement de produits touristiques",
@@ -38645,7 +38817,8 @@
         ]
       }
     },
-    "id": "aide-tourisme-guadeloupe"
+    "id": "aide-tourisme-guadeloupe",
+    "type": "tee"
   },
   {
     "titre": "ADVENIR",
@@ -38838,7 +39011,8 @@
         ]
       }
     },
-    "id": "advenir"
+    "id": "advenir",
+    "type": "tee"
   },
   {
     "titre": "Crédit d'Impôt Recherche (CIR)",
@@ -39042,7 +39216,8 @@
         ]
       }
     },
-    "id": "credit-impot-recherche"
+    "id": "credit-impot-recherche",
+    "type": "tee"
   },
   {
     "titre": "Crédit d'impôt innovation (CII)",
@@ -39296,7 +39471,8 @@
         "Montant du dispositif": "Crédit d'impôt de 20%"
       }
     ],
-    "id": "credit-impot-innovation"
+    "id": "credit-impot-innovation",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic impact dépendance biodiversité",
@@ -39534,7 +39710,8 @@
         ]
       }
     },
-    "id": "diag-impact-biodiversite"
+    "id": "diag-impact-biodiversite",
+    "type": "tee"
   },
   {
     "titre": "CORIMER Navires bas carbone",
@@ -39775,7 +39952,8 @@
         ]
       }
     },
-    "id": "corimer"
+    "id": "corimer",
+    "type": "tee"
   },
   {
     "titre": "Je change ma voiture",
@@ -39988,7 +40166,8 @@
         ]
       }
     },
-    "id": "je-change-ma-voiture"
+    "id": "je-change-ma-voiture",
+    "type": "tee"
   },
   {
     "titre": "Mobili'Pro",
@@ -40218,7 +40397,8 @@
         ]
       }
     },
-    "id": "mobilipro"
+    "id": "mobilipro",
+    "type": "tee"
   },
   {
     "titre": "Évaluation carbone LISE",
@@ -40492,7 +40672,8 @@
         ]
       }
     },
-    "id": "evaluation-carbone-lise"
+    "id": "evaluation-carbone-lise",
+    "type": "tee"
   },
   {
     "titre": "Diag biodiversité",
@@ -40735,7 +40916,8 @@
         "Eligibilité taille": "Pour les entreprises répondant à la définition européenne de la PME"
       }
     ],
-    "id": "diag-biodiversite"
+    "id": "diag-biodiversite",
+    "type": "tee"
   },
   {
     "titre": "Certificats d'économies d'énergie (CEE)",
@@ -40947,7 +41129,8 @@
         ]
       }
     },
-    "id": "certificats-economie-energie"
+    "id": "certificats-economie-energie",
+    "type": "tee"
   },
   {
     "titre": "Plan d'aide au report modal (PARM)",
@@ -41128,7 +41311,8 @@
         ]
       }
     },
-    "id": "parm-vnf"
+    "id": "parm-vnf",
+    "type": "tee"
   },
   {
     "titre": "Decarb Flash 2025-2027",
@@ -41356,7 +41540,8 @@
         ]
       }
     },
-    "id": "decarb-flash-2025-2027"
+    "id": "decarb-flash-2025-2027",
+    "type": "tee"
   },
   {
     "titre": "BCIAT 2025 - Biomasse chaleur pour l'industrie, l'agriculture et le tertiaire",
@@ -41575,7 +41760,8 @@
         ]
       }
     },
-    "id": "bciat-biomasse-chaleur-industrie-agriculture-tertiaire"
+    "id": "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
+    "type": "tee"
   },
   {
     "titre": "FASEP",
@@ -41821,7 +42007,8 @@
         ]
       }
     },
-    "id": "fasep"
+    "id": "fasep",
+    "type": "tee"
   },
   {
     "titre": "Aide à l’investissement aux librairies françaises",
@@ -42049,7 +42236,8 @@
         ]
       }
     },
-    "id": "aide-investissement-librairie"
+    "id": "aide-investissement-librairie",
+    "type": "tee"
   },
   {
     "titre": "Accélérateur Économie Circulaire",
@@ -42287,7 +42475,8 @@
         ]
       }
     },
-    "id": "accelerateur-economie-circulaire"
+    "id": "accelerateur-economie-circulaire",
+    "type": "tee"
   },
   {
     "titre": "Impact CO2",
@@ -42508,7 +42697,8 @@
         ]
       }
     },
-    "id": "impact-co2"
+    "id": "impact-co2",
+    "type": "tee"
   },
   {
     "titre": "Booster Transformation Rev3",
@@ -42751,7 +42941,8 @@
         ]
       }
     },
-    "id": "booster-transformation-rev-3"
+    "id": "booster-transformation-rev-3",
+    "type": "tee"
   },
   {
     "titre": "Programme REMOVE",
@@ -42972,7 +43163,8 @@
         ]
       }
     },
-    "id": "remove"
+    "id": "remove",
+    "type": "tee"
   },
   {
     "titre": "Formation Défendre un projet",
@@ -43188,7 +43380,8 @@
         ]
       }
     },
-    "id": "formation-convaincre-et-argumenter"
+    "id": "formation-convaincre-et-argumenter",
+    "type": "tee"
   },
   {
     "titre": "Formation Communication Décarbonation",
@@ -43404,7 +43597,8 @@
         ]
       }
     },
-    "id": "formation-communiquer-et-sensibiliser"
+    "id": "formation-communiquer-et-sensibiliser",
+    "type": "tee"
   },
   {
     "titre": "Formation Outils pour l'adaptation",
@@ -43620,7 +43814,8 @@
         ]
       }
     },
-    "id": "outils-pour-adaptation"
+    "id": "outils-pour-adaptation",
+    "type": "tee"
   },
   {
     "titre": "DÉTER - DÉcarboner le TERtiaire",
@@ -43842,7 +44037,8 @@
         ]
       }
     },
-    "id": "deter-decarboner-le-tertiaire"
+    "id": "deter-decarboner-le-tertiaire",
+    "type": "tee"
   },
   {
     "titre": "ACT Évaluation",
@@ -44071,7 +44267,8 @@
         ]
       }
     },
-    "id": "act-evaluation"
+    "id": "act-evaluation",
+    "type": "tee"
   },
   {
     "titre": "Innovation et démonstration hydrogène",
@@ -44292,7 +44489,8 @@
         ]
       }
     },
-    "id": "innovation-hydrogene"
+    "id": "innovation-hydrogene",
+    "type": "tee"
   },
   {
     "titre": "Indicateur climat",
@@ -44471,7 +44669,8 @@
         ]
       }
     },
-    "id": "indicateur-climat"
+    "id": "indicateur-climat",
+    "type": "tee"
   },
   {
     "titre": "Eco-diagnostic Commerce",
@@ -44655,7 +44854,8 @@
         ]
       }
     },
-    "id": "eco-diagnostic-commerce"
+    "id": "eco-diagnostic-commerce",
+    "type": "tee"
   },
   {
     "titre": "Diag performance",
@@ -44841,7 +45041,8 @@
         ]
       }
     },
-    "id": "diag-performance"
+    "id": "diag-performance",
+    "type": "tee"
   },
   {
     "titre": "Easy Diag Transition Ecologique",
@@ -45017,7 +45218,8 @@
         ]
       }
     },
-    "id": "easy-diag"
+    "id": "easy-diag",
+    "type": "tee"
   },
   {
     "titre": "Formations Atlas",
@@ -45191,7 +45393,8 @@
         ]
       }
     },
-    "id": "formations-atlas"
+    "id": "formations-atlas",
+    "type": "tee"
   },
   {
     "titre": "Formations AFDAS",
@@ -45365,7 +45568,8 @@
         ]
       }
     },
-    "id": "formations-afdas"
+    "id": "formations-afdas",
+    "type": "tee"
   },
   {
     "titre": "Formations l'Opcommerce",
@@ -45549,7 +45753,8 @@
         ]
       }
     },
-    "id": "formations-opcommerce"
+    "id": "formations-opcommerce",
+    "type": "tee"
   },
   {
     "titre": "Formations Ocapiat",
@@ -45723,7 +45928,8 @@
         ]
       }
     },
-    "id": "formations-ocapiat"
+    "id": "formations-ocapiat",
+    "type": "tee"
   },
   {
     "titre": "Formations Opco 2i",
@@ -45907,7 +46113,8 @@
         ]
       }
     },
-    "id": "formations-2i"
+    "id": "formations-2i",
+    "type": "tee"
   },
   {
     "titre": "Sélexion Formations Opco EP",
@@ -46094,7 +46301,8 @@
         ]
       }
     },
-    "id": "formations-ep"
+    "id": "formations-ep",
+    "type": "tee"
   },
   {
     "titre": "Formations Opco Santé",
@@ -46270,7 +46478,8 @@
         ]
       }
     },
-    "id": "formations-sante"
+    "id": "formations-sante",
+    "type": "tee"
   },
   {
     "titre": "Formations Uniformation",
@@ -46444,7 +46653,8 @@
         ]
       }
     },
-    "id": "formations-uniformation"
+    "id": "formations-uniformation",
+    "type": "tee"
   },
   {
     "titre": "Formations Opco Mobilités",
@@ -46622,7 +46832,8 @@
         ]
       }
     },
-    "id": "formations-mobilite"
+    "id": "formations-mobilite",
+    "type": "tee"
   },
   {
     "titre": "Accélérateur des possibles",
@@ -46866,7 +47077,8 @@
         ]
       }
     },
-    "id": "accelerateur-des-possibles"
+    "id": "accelerateur-des-possibles",
+    "type": "tee"
   },
   {
     "titre": "Performa Adaptation",
@@ -47056,7 +47268,8 @@
         ]
       }
     },
-    "id": "performa-adaptation"
+    "id": "performa-adaptation",
+    "type": "tee"
   },
   {
     "titre": "Cap décarbonation",
@@ -47248,7 +47461,8 @@
         ]
       }
     },
-    "id": "cap-decarbonation"
+    "id": "cap-decarbonation",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Méthanisation\" en PACA",
@@ -47435,7 +47649,8 @@
         ]
       }
     },
-    "id": "investissement-methanisation-paca"
+    "id": "investissement-methanisation-paca",
+    "type": "tee"
   },
   {
     "titre": "Engins agricoles électriques",
@@ -47630,7 +47845,8 @@
         ]
       }
     },
-    "id": "e-trans"
+    "id": "e-trans",
+    "type": "tee"
   },
   {
     "titre": "Chèque Transition du Tissu Économique",
@@ -47882,7 +48098,8 @@
         ]
       }
     },
-    "id": "cheque-transition-tissu-economique"
+    "id": "cheque-transition-tissu-economique",
+    "type": "tee"
   },
   {
     "titre": "Expert Atlas",
@@ -48049,7 +48266,8 @@
         ]
       }
     },
-    "id": "expert-atlas"
+    "id": "expert-atlas",
+    "type": "tee"
   },
   {
     "titre": "Diag Accompagnement TEE RH",
@@ -48225,7 +48443,8 @@
         ]
       }
     },
-    "id": "diag-accompagnement-tee-rh"
+    "id": "diag-accompagnement-tee-rh",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic RH",
@@ -48400,7 +48619,8 @@
         ]
       }
     },
-    "id": "diagnostic-rh"
+    "id": "diagnostic-rh",
+    "type": "tee"
   },
   {
     "titre": "Défi Éco 2050",
@@ -48565,7 +48785,8 @@
         ]
       }
     },
-    "id": "defi-eco-2050"
+    "id": "defi-eco-2050",
+    "type": "tee"
   },
   {
     "titre": "DEMIBaC",
@@ -48786,7 +49007,8 @@
         ]
       }
     },
-    "id": "demi-bac"
+    "id": "demi-bac",
+    "type": "tee"
   },
   {
     "titre": "IBaC PME",
@@ -49004,7 +49226,8 @@
         ]
       }
     },
-    "id": "ibac-pme"
+    "id": "ibac-pme",
+    "type": "tee"
   },
   {
     "titre": "Économie circulaire en Outre-mer et Corse",
@@ -49275,7 +49498,8 @@
         ]
       }
     },
-    "id": "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
+    "id": "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic & Accompagnement CO2i Inter Industrie",
@@ -49453,7 +49677,8 @@
         ]
       }
     },
-    "id": "diagnostic-et-accompagnement-co2i"
+    "id": "diagnostic-et-accompagnement-co2i",
+    "type": "tee"
   },
   {
     "titre": "Accompagnement RH",
@@ -49626,7 +49851,8 @@
         ]
       }
     },
-    "id": "accompagnement-rh"
+    "id": "accompagnement-rh",
+    "type": "tee"
   },
   {
     "titre": "Plan de développement des compétences",
@@ -49816,6 +50042,1081 @@
         ]
       }
     },
-    "id": "plan-de-developpement-des-competences"
+    "id": "plan-de-developpement-des-competences",
+    "type": "tee"
+  },
+  {
+    "id": "mobilogs-co-construction-de-connaissances-pour-des-mobilites-et-logistiques-soutenables",
+    "titre": "Mobilogs - Co-construction de connaissances pour des mobilités et logistiques soutenables",
+    "description": "Le programme Mobilogs vise à soutenir la production et le partage de nouvelles connaissances utiles aux acteurs socioéconomiques et institutionnels pour concevoir, expérimenter ou diffuser des mesures de sobriété dans les systèmes de mobilité et de logistique.",
+    "description longue": "Mobilogs entend soutenir des travaux de recherche multidisciplinaires ou transdisciplinaires traitant de la sobriété sous toutes ses formes sans oublier les enjeux de mobilité inclusive et d’efficience économique.\n\nPar sobriété sous toutes ses formes, on entend :\n\n*   **« sobriété fonctionnelle »** : réduction des distances de déplacement, démotorisation, raccourcissement des chaines logistiques, réduction des volumes consommés et produits ;\n*    **« sobriété coopérative »** : partage d’espace de stockage, covoiturage, autopartage, mutualisation de flux de marchandises, partage de l’espace public pour accueillir tous les modes ;\n*   **« sobriété structurelle ou organisationnelle »** : relocalisation d’activités, chaines logistiques restructurées (cyclogistique, transport combiné) ou ralenties (transport maritime à voile), etc. ;\n*   **« sobriété dimensionnelle »** : écoconception et acquisition de véhicules dont les caractéristiques techniques et les performances sont adaptées aux besoins réels de déplacement (véhicules légers intermédiaires, rétrofit).\n\nLes travaux soutenus par Mobilogs se structurent autour des trois principales étapes nécessaires au processus de transformation des systèmes **dans une logique d’amélioration continue** :\n\n*   « **Planifier** » : Les travaux de recherche pourront permettre de développer des visions de long terme au travers, notamment, d’analyses historiques permettant de dégager les tendances lourdes qu’il faudrait changer. La finalité globale est de concevoir et d’évaluer ex ante de nouveaux scénarios de transition, de nouvelles mesures de politiques publiques nationales ou locales, de nouvelles stratégies de filières prenant en compte la réalité des systèmes.\n*   « **Expérimenter** » : les travaux de recherche attendus auront pour finalité la co-conception, l’expérimentation et l’évaluation de mesures, de modèles organisationnels, et plus largement de dispositif avec un effet attendu sur la soutenabilité des systèmes de mobilité ou de logistique.\n*   « **Déployer** » : les travaux de recherche concerneront les **conditions et modalités de diffusion de connaissances utile**s à la transformation des systèmes de mobilité et de logistique. En se nourrissant notamment des retours d’expérience, il pourra s’agir de développer ou d’améliorer des argumentaires scientifiquement fondés, des récits inspirants ou stratégies d’influence éclairées pour convaincre, des mécanismes de concertation ou de coopération des parties prenantes, des ressources pour monter en compétences et agir en faveur de la soutenabilité.\n\nLes priorités sont précisées dans la section « Problèmes à traiter » du document \"Mobilogs - conditions d'éligibilité\" ci-dessus.\n\nLes projets pourront relever de projets collaboratifs **multidisciplinaires**, de **recherche participat**ive ou de **recherche-action**.\n\nLe montant moyen de l’aide attribuable par projet est de 180-250 k€, pour une durée généralement comprise entre 24 et 36 mois. \n\nSelon la maturité du projet, il est aussi possible d’être accompagné dans le cadre d’un projet de **recherche en émergence** sur une durée de 18 mois pour un montant d’aide maximum de 30 k€.\n\n**Pour vous informer plus avant sur cet appel à projets :** \n\nN’hésitez pas à visionner le webinaire organisé le 6 janvier 2026 disponible [à ce lien](https://ademecloud-my.sharepoint.com/:v:/g/personal/armelle_debohan_ademe_fr/IQBtuIAjH-yzRq2zILRGHHjsARdfEQjt3ppMBuSXpcaCXjg?e=l0tMjU) \n\n**Pour nous contacter**\n\nUtilisez le formulaire de contact **en bas de cette page**, nous vous conseillons de saisir uniquement \"Entreprise\" si vous dépendez d'un établissement autre qu'une \"Collectivité\". Choisissez \"Demande d'information sur un programme\" pour qualifier votre besoin.\n\n**Comment faire pour candidater ?**\n\nLe présent **appel à manifestation d’intérêt** constitue **la première étape du processus de sélection de Mobilogs**.\n\nIl est ouvert **jusqu’au 19 mars 2026 à 17h.**\n\nIl s’agit d’une phase d’idéation qui devra se conclure par le dépôt d’une lettre d’intention par le coordonnateur du consortium dans le formulaire en ligne. Un guide d’aide à la préparation de la lettre d’intention est disponible ci-dessous. \n\nAttention, cette lettre d’intention ne constituera pas la demande d’aide définitive et il n’est attendu qu’un coût de projet et montant d’aide indicatifs. Le guide de catégories des dépenses est disponible à titre informatif pour permettre d’identifier les postes de dépenses a priori éligibles.\n\nÀ ce stade, par souci de simplicité, il est également possible de n’enregistrer sur la plateforme que le coordonnateur du projet. En revanche, les acteurs cités dans la lettre d’intention devront tous être déclarés lors du dépôt du dossier complet (cf. ci-dessous).\n\n**Suite du processus de candidature**\n\nUn avis d’opportunités formulé par les équipes de l’ADEME sera adressé au porteur du projet dans les 3 semaines suivant le dépôt de la lettre d’intention.\n\nSeuls les consortiums ayant reçu un avis favorable pourront déposer un dossier complet. Tous les modèles de documents seront communiquées ultérieurement.\n\nLes résultats seront annoncés au mois **d’octobre 2026** et les contractualisations des projets lauréats s’étaleront entre novembre 2026 et le printemps 2027.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "17/12/2025",
+    "fin de validité": "19/03/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000914",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobilogs-co-construction-de-connaissances-pour-des-mobilites-et-logistiques-soutenables",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2025-12-17T09:00:00+01:00",
+        "end": "2026-03-19T17:00:00+01:00"
+      },
+      "company": {
+        "allowedNafSections": []
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "France et territoires d'outremer"
+      ],
+      "autres critères d'éligibilité": null
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "amelioration-de-la-qualite-de-lair-dans-les-territoires-en-ppa-ou-dans-ceux-concernes-par-des-depassements-actuels-ou-previsionnels-2030",
+    "titre": "Amélioration de la qualité de l’air dans les territoires en PPA ou dans ceux concernés par des dépassements actuels ou prévisionnels 2030",
+    "description": "L’ADEME aide la mise en œuvre d’actions structurantes pour améliorer la qualité de l’air. Les projets attendus doivent viser en priorité la réduction des particules, des oxydes d’azote et/ou d’ozone, mais ils pourront aussi concerner d’autres polluants (COVNM, HAP).",
+    "description longue": "L’ADEME accompagne les projets permettant une amélioration de la qualité de l’air extérieur. Ils pourront concerner des études, de la communication, des animations ou des investissements.\n\nLes actions soutenues par l’ADEME viseront une réduction de NO₂, de particules PM10, PM2.5 ou d’O₃, mais ils pourront aussi concerner d’autres polluants réglementés – COVNM (composés organiques volatils non méthaniques) ou HAP (Hydrocarbure aromatique polycyclique).  \n\nLes projets ciblés sont ceux :\n\n*   s’insérant dans un programme d’actions structuré visant à améliorer la qualité de l’air sur le territoire (ex. : programmation pluriannuelle, reproductibilité, objectifs clairement définis, anticipation de la directive européenne 2030 sur la qualité de l’air...). Les gains attendus sur la qualité de l’air (NO₂, particules, O₃ ou autres polluants) seront clairement définis au regard de la situation du territoire ;\n*   concernant la combustion de la biomasse, l’urbanisme et les aménagements, les mobilités des entreprises et la logistique.\n\n**Combustion de biomasse et qualité de l’air :**\n\n*   Chauffage domestique au bois : campagnes d’animation/sensibilisation/communication vers les particuliers et/ou professionnels non liées à la mise en place d’un fonds Air-Bois.\n*   Réduction des émissions des chaufferies bois non performantes ayant une puissance inférieure à 1 MW, dépourvues de systèmes de filtration. L’aide pourra porter sur les audits des chaufferies, les études d’impacts non réglementaires avant et/ou après travaux, les investissements correctifs consécutifs à un audit (aide plafonnée à 30 k€ par chaufferie : ajout d’un système de filtration, ajout d’un ballon tampon pour allonger les cycles de la chaudière). Les projets concernant la réduction des émissions de plusieurs chaufferies seront privilégiés, notamment ceux portés par des partenaires publics pour accompagner les communes.\n*   Alternatives au brûlage à l’air libre des déchets verts, notamment dans les territoires d’Outre-mer : actions d’animation et financement possible de broyeurs en complément des actions d’animation.\n\n**Urbanisme, aménagements et qualité de l’air :**\n\n*   Intégration de la QA (qualité de l'air) dans les politiques/documents d’urbanisme, les projets de construction et les chantiers. L’aide pourra porter sur des études non réglementaires prenant en compte précisément la qualité de l’air, des actions de sensibilisation ou d’animation auprès des professionnels.\n\n**Organisation des mobilités marchandises/salariés des entreprises et qualité de l’air :**\n\n*   Optimisation et choix d’organisations logistiques permettant d’améliorer la qualité de l’air.\n*   Optimisation des déplacements des entreprises.\n*   Étude de parc : choix des véhicules selon l’usage, mutualisation.\n*   Intégration de la qualité de l’air dans la politique RSE des entreprises comprenant la sensibilisation et la définition d’un plan d’action.\n*   Équipements de bornes électriques pour le raccordement à quai des bateaux fluviaux et maritimes.\n\nL’aide n’est pas systématique et dépendra de l’impact du projet sur la réduction des émissions de polluants, des indicateurs d’efficacité de l’action et des disponibilités budgétaires.\n\nNous vous conseillons de vous rapprocher de la Direction régionale dont vous dépendez pour vérifier si vous êtes sur un territoire éligible et si votre projet rentre bien dans ce dispositif d’aide. Le cas échéant, vous pourrez être orienté vers un autre financement.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "01/01/2026",
+    "fin de validité": "31/12/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000871",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/amelioration-de-la-qualite-de-lair-dans-les-territoires-en-ppa-ou-dans-ceux-concernes-par-des-depassements-actuels-ou-previsionnels-2030",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2026-01-01T00:00:00+01:00",
+        "end": "2026-12-31T23:59:59+01:00"
+      },
+      "company": {
+        "allowedNafSections": [],
+        "allowedRegion": [
+          "Île-de-France",
+          "Auvergne-Rhône-Alpes",
+          "Provence-Alpes-Côte d'Azur",
+          "Martinique"
+        ]
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "Île-de-France, Auvergne-Rhône-Alpes, Provence-Alpes-Côte d'Azur, Martinique"
+      ],
+      "autres critères d'éligibilité": null
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
+    "titre": "Études et investissements structurants pour la gestion des déchets en Outre-mer et Corse",
+    "description": "Le présent dispositif vise la mise à niveau de chaque territoire en matière de tri, de traitement, de valorisation ou d’élimination des déchets avec des projets adaptés au contexte local.",
+    "description longue": "Pour prendre en compte les spécificités en matière de gestion des déchets dans les Outre-mer et en Corse, l’ADEME peut aider les études, puis les investissements structurants ayant pour objet de faciliter le tri et la valorisation de déchets, ainsi que leur traitement ultime, tels que : \n\n*   la création ou rénovation des déchèteries, centre de tri et de transfert des collectivités ;\n    \n\n*   la création ou rénovation de centre de tri et déchèterie professionnelle ;\n    \n\n*   la création de plateformes de compostage ;\n    \n\n*   la création de centres de préparation des CSR ;\n    \n\n*   la création d’installations de valorisation énergétique ;\n    \n\n*   la création ou l’extension de site de stockage des déchets ;\n    \n\n*   la résorption des dépôts sauvages.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "01/01/2026",
+    "fin de validité": "31/12/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000915",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2026-01-01T00:00:00+01:00",
+        "end": "2026-12-31T23:59:59+01:00"
+      },
+      "company": {
+        "allowedNafSections": [],
+        "allowedRegion": [
+          "Corse",
+          "Saint-Pierre-Et-Miquelon",
+          "Saint-Barthélemy",
+          "Saint-Martin",
+          "Terres australes et antarctiques françaises",
+          "Wallis et Futuna",
+          "Polynésie française",
+          "Nouvelle-Calédonie",
+          "Guadeloupe",
+          "Martinique",
+          "Guyane",
+          "La Réunion",
+          "Mayotte"
+        ]
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "Corse, Saint-Pierre-Et-Miquelon, Saint-Barthélemy, Saint-Martin, Terres australes et antarctiques françaises, Wallis et Futuna, Polynésie française, Nouvelle-Calédonie, Guadeloupe, Martinique, Guyane, La Réunion, Mayotte"
+      ],
+      "autres critères d'éligibilité": [
+        "Les aides sont octroyées par les directions régionales Corse et Outre-Mer. Un contact préalable auprès de celle concernée par le projet est conseillé avant toute démarche, afin de vous guider, de préciser les critères d'éligibilité et de vous apporter un éclairage technique. Merci d'utiliser le formulaire ci-contre \"Contacter l'ADEME\"."
+      ]
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "innovation-et-demonstration-hydrogene",
+    "titre": "Innovation et démonstration Hydrogène",
+    "description": "Cet appel à projets a pour objectif de soutenir les travaux d’innovation et de démonstration, permettant de développer ou d’améliorer les composants et systèmes liés à la production, au transport d’hydrogène et à ses usages.",
+    "description longue": "Cet appel à projets (AAP) a pour objectif de soutenir les travaux d’innovation et de démonstration, permettant de **développer ou d’améliorer les composants et systèmes** liés à la production, au transport d’hydrogène et à ses usages, tels que les applications industrielles, de transport ou de fourniture d’énergie.\n\nCes travaux seront portés par une ou plusieurs entreprises, pour **développer un équipement, un produit ou un service, ou bien réaliser un démonstrateur** mettant en œuvre de l’hydrogène, dans **une perspective de transition écologique et énergétique** et de structuration de la filière.\n\nLes projets devront s’inscrire dans au moins un des quatre axes présentés ci-après :  \n\n*   Axe 1 - Briques technologiques : composants et systèmes innovants.\n*   Axe 2 - Pilotes (ou premières commerciales) innovants industriels et réseaux, fourniture temporaire ou localisée d’énergie.  \n    \n*   Axe 3 - Conception et démonstration de nouveaux véhicules.  \n    \n*   Axe 4 - Écoconception et recyclabilité.\n\nL’appel à projets est ouvert à partir du 6 mai 2025 jusqu’au 25 septembre 2026, et comporte deux relèves intermédiaires :\n\n*   Relève intermédiaire 1 : 29 septembre 2025 - 15h  \n    \n*   Relève intermédiaire 2 : 6 avril 2026 - 15h  \n    \n*   Clôture finale : 25 septembre 2026 - 15h\n\nUne révision du cahier des charges pourra avoir lieu au moins annuellement.  \n\nL’ADEME se réserve le droit de clore l’appel à projets avant cette date, notamment en raison du niveau de consommation de l’enveloppe allouée. Les informations actualisées seront publiées sur le site de l’appel à projets.\n\nPour toute demande d’information, le porteur doit contacter l’ADEME à l’adresse suivante : [aap.h2@ademe.fr](mailto:aap.h2@ademe.fr)\n\nLe pré-dépôt est une étape obligatoire préalable au dépôt qui doit être réalisé au plus tard 1 mois avant le dépôt du dossier complet en contactant l'adresse mail  [aap.h2@ademe.fr](mailto:aap.h2@ademe.fr). Pour organiser une réunion de pré-dépôt, le porteur doit préalablement consulter le cahier des charges de cet appel à projets et adresser l’annexe 2 complétée.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "07/05/2025",
+    "fin de validité": "25/09/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000670",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/innovation-et-demonstration-hydrogene",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2025-05-07T15:00:00+02:00",
+        "end": "2026-09-25T15:00:00+02:00"
+      },
+      "company": {
+        "allowedNafSections": []
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "France et territoires d'outremer"
+      ],
+      "autres critères d'éligibilité": null
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "aact-air-aide-laction-des-collectivites-territoriales-en-faveur-de-la-qualite-de-lair",
+    "titre": "AACT-AIR – Aide à l’action des collectivités territoriales en faveur de la qualité de l’air",
+    "description": "Face aux nouvelles valeurs limites pour le NO₂, les PM10 et PM2,5 et valeurs cibles pour l’ozone fixées par la Directive européenne sur la qualité de l’air ambiant, AACT-AIR aide les collectivités à définir des plans d’action pour améliorer la qualité de l’air d’ici 2030 par le financement d’études.",
+    "description longue": "Les études éligibles dans AACT-AIR 2026 visent à élaborer des **programmes d’actions pour atteindre les objectifs fixés d’ici 2030, voire d’ici 2050** pour les recommandations OMS. Ces programmes d’action pourront alimenter les feuilles de route locales à élaborer dans le cadre de la Directive révisée « Qualité de l’air ambiant ». Ils peuvent reposer sur le socle de travaux élaborés dans le cadre du Plan Climat-Air-Énergie Territorial (PCAET), du Plan d’Action pour la Qualité de l’Air (PAQA), ainsi que sur les données prospectives du Plan de Protection de l’Atmosphère (PPA) le cas échéant.\n\nLes études comporteront deux volets, un volet « bilan » et un volet « objectifs et trajectoire ». Elles peuvent inclure des **évaluations quantitatives d’impact sur la santé** (EQIS). Celles-ci permettent de calculer l’ampleur de l’impact de la pollution atmosphérique sur la santé et/ou les bénéfices pour la santé attendus de différents scénarios de réduction des niveaux de pollution au sein d’une population donnée. \n\nLe porteur de l’étude sera le plus souvent une collectivité. Cependant, dans les cas où l’étude comprendra un développement méthodologique ou portera sur une approche innovante, le portage du projet pourra être assuré par une association, un établissement public ou encore une entreprise privée. Dans ce cas, la collectivité devra être associée étroitement à la conception et à la réalisation de l’étude et sera partenaire bénéficiaire ou non bénéficiaire de l’aide dans la convention de financement.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "01/01/2026",
+    "fin de validité": "31/12/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000868",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aact-air-aide-laction-des-collectivites-territoriales-en-faveur-de-la-qualite-de-lair",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2026-01-01T00:00:00+01:00",
+        "end": "2026-12-31T23:59:59+01:00"
+      },
+      "company": {
+        "allowedNafSections": []
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "France et territoires d'outremer"
+      ],
+      "autres critères d'éligibilité": null
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
+    "titre": "Études de faisabilité de projet de production d'électricité renouvelable en outre-mer et Corse",
+    "description": "L’ADEME accompagne les entreprises et collectivités dans l’évaluation de la faisabilité de projets d’installation de production d’électricité renouvelable en Outre-mer et Corse, réalisée par le biais d’un bureau d’études ou un cabinet-conseil d’assistance à maitrise d’ouvrage.",
+    "description longue": "Cette aide dédiée à la production d’énergies renouvelables vise la réalisation de projets de production d’électricité à partir des technologies suivantes :  \n\n*   photovoltaïque en autoconsommation individuelle (ACI) et collective (ACC) ;\n*   éolien terrestre et en mer ;\n*   hydrolien fluvial et marin ;\n*   petite hydroélectricité au fil de l’eau et microhydroélectricité sur conduite d’eau ;\n*   énergie houlomotrice ;\n*   énergie thermique des mers ;\n*   énergie osmotique ;\n*   station de transfert d’énergie par pompage.\n\nL’étude de faisabilité, sujette à la présente aide ADEME, concerne **l’évaluation et l’analyse du potentiel d’un projet** (technique, économique, sociale, environnementale, juridique, etc.).\n\nElle vise à soutenir le processus décisionnel en révélant de façon objective et rationnelle les forces et les faiblesses du projet, ainsi que les perspectives et les menaces qu’il suppose, tout en précisant les ressources nécessaires pour le mener à bien, et en évaluant, en définitive, les chances de succès.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "01/01/2026",
+    "fin de validité": "31/12/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000876",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2026-01-01T00:00:00+01:00",
+        "end": "2026-12-31T23:59:59+01:00"
+      },
+      "company": {
+        "allowedNafSections": [],
+        "allowedRegion": [
+          "Corse",
+          "Polynésie française",
+          "Nouvelle-Calédonie",
+          "Guadeloupe",
+          "Martinique",
+          "Guyane",
+          "La Réunion",
+          "Mayotte"
+        ]
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "Corse, Polynésie française, Nouvelle-Calédonie, Guadeloupe, Martinique, Guyane, La Réunion, Mayotte"
+      ],
+      "autres critères d'éligibilité": [
+        "Les aides sont octroyées majoritairement via les Directions régionales de l’ADEME. Un contact préalable est conseillé avant toute démarche.\n\nPour contacter votre Direction Régionale, cliquez sur « Je contacte l'ADEME » dans la rubrique « Informations utiles » en bas de page. Sélectionnez ensuite « Question sur mon dossier d'aide financière » dans le champ « Votre besoin »."
+      ]
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "etude-dopportunite-multi-enrr",
+    "titre": "Étude d'opportunité multi-EnR&R",
+    "description": "L’étude d’opportunité multi-EnR&R (Énergies renouvelables et de récupération) vous permet d’identifier la ou les solutions de chaleur et froid renouvelable les plus adaptées à vos besoins.",
+    "description longue": "L’étude d’opportunité permet au maitre d’ouvrage d’avoir une **vision exhaustive des solutions de chaleur et de froids renouvelables** compatibles techniquement avec les besoins de son bâtiment ou ses bâtiments. L’étude des solutions sera complétée d’une analyse multicritère afin d’identifier la ou les solutions énergétiques les plus pertinentes en suivant la démarche EnR'Choix.\n\nAinsi, cette étude comprendra notamment :\n\n*   un **état des lieux énergétique** succinct du ou des bâtiments existants ;\n*   l’**identification de solutions de sobriété et d’efficacité énergétique** à mettre en place afin d’établir un bilan énergétique de référence réaliste des années futures ;\n*   l’**analyse de l’ensemble des ressources énergies renouvelables disponibles** (raccordement à un réseau de chaleur et de froid urbain ou à une boucle d’eau tempérée géothermique, récupération et/ou valorisation de chaleur fatale, géothermies, solaire thermique, bois énergie, aérothermie) ;\n*   l’**étude de l’adéquation des besoins énergétiques** du ou des bâtiments et des ressources disponibles ;\n*   une **analyse multicritère pour comparer ces scénarios techniques** entre eux et identifier la ou les solutions les plus pertinentes.\n\nL’aide est conditionnée au recours à un prestataire dont les compétences respectent un référentiel validé par l’ADEME (RGE Étude) ou pouvant justifier de conditions équivalentes. La liste des professionnels RGE Études est disponible sur le [portail Open data de l’ADEME](https://data.ademe.fr/datasets/liste-des-entreprises-rge-2). Une fois sur la page, cliquez sur le symbole du tableau placé sur la droite. \n\nSelon les régions, l’ADEME s’appuie sur certains relais pour promouvoir les énergies renouvelables et vous guider vers la solution la plus pertinente pour votre projet. À ce titre, des conseils et des notes d’opportunités peuvent vous être fournis. Un contact préalable auprès de votre direction régionale ADEME est fortement recommandé avant toute demande d’aide.\n\nEnfin, pour les collectivités se questionnant sur les solutions de chaleur renouvelable pour leurs bâtiments, mais n’ayant pas réalisé une première étape d’audit énergétique, il est conseillé de se tourner vers les aides du programme [ACTEE](https://programme-cee-actee.fr/) (Action des Collectivités Territoriales pour l’Efficacité Énergétique) qui couple à la fois audit énergétique et étude d’opportunité multi-EnR.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "01/01/2026",
+    "fin de validité": "31/12/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000882",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-dopportunite-multi-enrr",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2026-01-01T00:00:00+01:00",
+        "end": "2026-12-31T23:59:59+01:00"
+      },
+      "company": {
+        "allowedNafSections": [],
+        "allowedRegion": [
+          "Île-de-France",
+          "Bourgogne-Franche-Comté",
+          "Normandie",
+          "Hauts-de-France",
+          "Grand Est",
+          "Bretagne",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Auvergne-Rhône-Alpes",
+          "Provence-Alpes-Côte d'Azur",
+          "Corse",
+          "Martinique",
+          "La Réunion",
+          "Mayotte"
+        ]
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "Île-de-France, Bourgogne-Franche-Comté, Normandie, Hauts-de-France, Grand Est, Bretagne, Nouvelle-Aquitaine, Occitanie, Auvergne-Rhône-Alpes, Provence-Alpes-Côte d'Azur, Corse, Martinique, La Réunion, Mayotte"
+      ],
+      "autres critères d'éligibilité": null
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "aides-au-changement-de-comportement",
+    "titre": "Aides au changement de comportement",
+    "description": "Afin de faire évoluer les mentalités et les comportements en faveur de la transition écologique, l’ADEME peut contribuer au financement de projets d’animation, de communication ou de formation.",
+    "description longue": "Vous souhaitez contribuer au déploiement des politiques de l’ADEME ?  \n\nLes **aides au changement de comportement** visent à financer des projets de sensibilisation, d’animation et/ou de communication **d’envergure et structurants** pour le territoire !\n\nVoici quelques exemples d’actions :\n\n*   **formation/sensibilisation** : analyse des besoins, conception de modules de formation, animation de sessions ;\n*   **communication** : réalisation d’outils, diffusion d’informations, création de sites internet, organisation d’événements ;\n*   **animation** : mobilisation d’une cible, dissémination de solutions, structuration d’une filière, financement de postes relais.\n\nMerci de contacter l’ADEME avant de déposer vos projets sur la plateforme. En effet, l’éligibilité d’un projet dépend des orientations et de la stratégie de chaque Direction régionale, et sous réserve de budget disponible.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "01/01/2026",
+    "fin de validité": "31/12/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000866",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-changement-de-comportement",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2026-01-01T00:00:00+01:00",
+        "end": "2026-12-31T23:59:59+01:00"
+      },
+      "company": {
+        "allowedNafSections": [],
+        "allowedRegion": [
+          "Corse",
+          "Centre-Val de Loire",
+          "Ile de Clipperton",
+          "Île-de-France",
+          "Bourgogne-Franche-Comté",
+          "Polynésie française",
+          "Saint-Martin",
+          "Normandie",
+          "Provence-Alpes-Côte d'Azur",
+          "Guadeloupe",
+          "Nouvelle-Aquitaine",
+          "Martinique",
+          "Occitanie",
+          "Nouvelle-Calédonie",
+          "Guyane",
+          "La Réunion",
+          "Mayotte",
+          "Saint-Barthélemy",
+          "Saint-Pierre-Et-Miquelon",
+          "Bretagne",
+          "Hauts-de-France",
+          "Pays de la Loire",
+          "Grand Est"
+        ]
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "Corse, Centre-Val de Loire, Ile de Clipperton, Île-de-France, Bourgogne-Franche-Comté, Polynésie française, Saint-Martin, Normandie, Provence-Alpes-Côte d'Azur, Guadeloupe, Nouvelle-Aquitaine, Martinique, Occitanie, Nouvelle-Calédonie, Guyane, La Réunion, Mayotte, Saint-Barthélemy, Saint-Pierre-Et-Miquelon, Bretagne, Hauts-de-France, Pays de la Loire, Grand Est"
+      ],
+      "autres critères d'éligibilité": [
+        "Le versement de cette aide dépend des orientations et de la stratégie de chaque Direction Régionale, et sous réserve de budget disponible.\n\nPour en savoir plus, contactez votre Direction Régionale. Cliquez sur « Je contacte l'ADEME » dans la rubrique « Informations utiles » en bas de page. Sélectionnez ensuite « Question sur un projet » dans le champ « Votre besoin »."
+      ]
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "transition-ecologique-et-valorisation-economique-cpier-vallee-de-la-seine",
+    "titre": "Transition écologique et valorisation économique – CPIER Vallée de la Seine",
+    "description": "Cet appel à manifestation d’intérêt (AMI) vise à apporter un soutien financier à des projets et coopérations interrégionales sur la transition écologique en Île-de-France et en Normandie, dans le cadre du Contrat de plan interrégional État-Régions (CPIER) pour la Vallée de la Seine.",
+    "description longue": "**Description du dispositif :**\n\nL’AMI CPIER est mis en œuvre et financé par l’État, via l’ADEME (Directions régionales Île-de-France et Normandie), la Région Normandie et la Région Île-de-France en partenariat avec la Délégation interministérielle au développement de la Vallée de la Seine (DIDVS) et les autres services déconcentrés de l’État.\n\nCet AMI vise à **favoriser l’essor de projets interrégionaux, innovants et exemplaires** dans cinq domaines :\n\n*   solutions durables et décarbonées pour la mobilité des personnes et des marchandises ;\n*   réduction de l’empreinte carbone des procédés industriels ;\n*   transition vers une économie circulaire et boucles locales ;\n*   développement des énergies renouvelables ;\n*   lutte contre le changement climatique, anticipation, adaptation et résilience.\n\n**Les types de projets suivants** peuvent être soutenus : \n\n*   études de préfiguration/études de préfaisabilité ou de faisabilité ;\n*   expérimentations et démonstrateurs exemplaires et innovants ;\n*   aide au changement de comportement (projets d’animation, de communication, de formation). \n\n**Avant tout dépôt de dossier de candidature :** il est fortement recommandé de contacter les personnes référentes de l’AMI en utilisant la fiche projet téléchargeable sur cette page. \n\nL’ADEME est chargée de la réception des dossiers. Dans le cadre d’un comité de pilotage dédié, les projets sont co-instruits par les partenaires financeurs de l’AMI (Région Île-de-France, Région Normandie, ADEME) en partenariat avec la DIDVS et les services déconcentrés de l’État (DREAL Normandie et Préfecture d’Île-de-France).  \n\nLes **principaux critères d’examen des projets** sont les suivants (voir détail dans le règlement de l’AMI) :\n\n*   structuration interrégionale et partenariale du projet ;\n*   capacité à répondre aux enjeux thématiques et stratégiques de l’AMI et du schéma stratégique ;\n*   innovation ;\n*   caractère opérationnel du projet ;\n*   montage technique et financier du projet.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "22/12/2025",
+    "fin de validité": "31/03/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000921",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/transition-ecologique-et-valorisation-economique-cpier-vallee-de-la-seine",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2025-12-22T12:00:00+01:00",
+        "end": "2026-03-31T18:00:00+02:00"
+      },
+      "company": {
+        "allowedNafSections": [],
+        "allowedRegion": [
+          "Île-de-France",
+          "Normandie"
+        ]
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "Île-de-France, Normandie"
+      ],
+      "autres critères d'éligibilité": [
+        "**Avant tout dépôt de dossier de candidature : il est fortement recommandé de contacter les personnes référentes de l’AMI en utilisant la « fiche projet » téléchargeable sur cette page ».** Cette fiche sommaire permettra d’évaluer l’éligibilité du projet préalablement au dépôt d'une candidature complète. Un échange téléphonique pourra être proposé en cas de besoin."
+      ]
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "mobiliser-les-communs-pour-la-transition-ecologique",
+    "titre": "Mobiliser les communs pour la Transition écologique",
+    "description": "**Le dépôt d’un dossier de demande d’aide sur AGIR est strictement interdit pour les projets n’ayant pas fait l’objet d’une sélection préalable sur la plateforme INNOVER.**",
+    "description longue": "L’appel à communs (AAC) vise à rassembler tous les acteurs volontaires pour mutualiser nos ressources et développer ensemble des ressources ouvertes – les communs – qui puissent faire progresser la transition écologique.\n\nPour participer, les candidatures doivent être déposées sur la [plateforme Innover pour la Transition écologique](https://www.innoverpourlatransitionecologique.fr/fr/challenges/appel-a-communs-1)**et non sur Agir**. Cette page Agir**s’adresse uniquement aux communs sélectionnés pour la contractualisation**avec l’ADEME.  \n\nConsultez la [définition des communs](https://wiki.resilience-territoire.ademe.fr/wiki/D%C3%A9couvrir_les_communs) pour en savoir plus.\n\n**Conditions de candidature**\n\nPour faciliter la coopération entre acteurs, principe fondateur de l’appel à communs (AAC), il est attendu d’un projet de commun qu’il réponde aux quatre critères suivants :\n\n*   être mené par des porteurs et porteuses qui adoptent une **posture collaborative** avec la volonté d’intégrer des communautés d’utilisateurs et de contributeur ;\n*   être développé en **licences ouvertes** ;\n*   être **documenté sur les supports numériques** mis à disposition dans le cadre de l’AAC ;\n*   **répondre à l’un ou plusieurs des défis** de l’AAC ;\n*   les projets de commun sont **éligibles à tous les stades de maturité**.  \n    \n\n**Les 5 défis**\n\n5 défis sont proposés :\n\n1.  Alimentation & forêts\n2.  Bâtiment, habitat & aménagement urbain.\n3.  Mobilité & logistique\n4.  Recyclage matière\n5.  Évaluation environnementale pour l’écoconception numérique\n\nL’ADEME subventionne tous types de lauréats publics et privés : entreprises, associations, collectivités, universités, laboratoires… Pour cette 3ᵉ édition de l’AAC, seuls les projets de communs numériques sont éligibles pour un accompagnement de l’ADEME.\n\nLa Fondation MACIF subventionne uniquement les lauréats issus de structures éligibles au mécénat, type association, qui candidatent aux deux défis Mobilités & logistique et/ou Bâtiment, habitat & aménagement urbain. Ces défis sont ouverts à des communs non numériques, les candidats pourront proposer une innovation de produit, de procédé, organisationnelle, marketing, de modèle économique ou sociale, l’objectif étant in fine de provoquer un changement de comportement positif pour la transition écologique.\n\n**Partenaires associés**\n\nPour cette 3ᵉ édition de l’AAC, la Fondation Macif, France Tiers Lieux et l’IGN (Institut national de l’information géographique et forestière) se sont associés à l’ADEME.\n\n**Financement et accompagnement**\n\nS’il est sélectionné par le jury de l’AAC, le projet de commun bénéficiera d’un soutien financier de l’ADEME et/ou de la Fondation Macif, et sera mis en œuvre de la manière suivante :\n\n*   L’ADEME et\\*/ou la Fondation MACIF établira avec les projets lauréats **un contrat distinct et selon ses propres règles**. L’ADEME établira un contrat de financement avec les porteurs de projet et la Fondation Macif établira un contrat de partenariat avec les porteurs de projets.\n*   La **durée des projets présentés** sera de 18 mois maximum.\n*   Le **taux d’aide appliqué sera fixé par chaque structure aidante** (ADEME et/ou Fondation Macif), lors de l’instruction du dossier. Ce taux d’aide sera de 70 % maximum des dépenses éligibles pour une limite maximum de 80 000 euros d’aide par projet. La moyenne des aides accordées par commun étant de 50 000 euros et le minimum étant de 10 000 euros. Le taux d’aide appliqué est fixé selon les termes du système d’aide à la connaissance et les règles générales d’attribution des aides de l’ADEME en vigueur.\n*   Un **accompagnement par une équipe conseil spécialisée sur les communs** et sélectionnée par l’ADEME pour guider les porteurs : sélection de la licence ouverte adaptée, structuration de la gouvernance, définition du modèle économique, animation de la communauté formée autour du commun…\n*   Un **accompagnement technique de l’ADEME** et, en fonction des thématiques traitées, de ses partenaires, l’IGN et/ou la Fondation Macif.\n*   La **participation à la communauté de communs**, et son animation via des journées et des ateliers.\n*   La **valorisation des communs** via les supports de l’ADEME et de ses partenaires.\n\n**Calendrier**\n\nLe calendrier prévisionnel de cette 3ᵉ édition de l’AAC s’organise autour de 2 vagues de sélection de projets de communs, d’une phase d’expertise, de sélection et d’annonce des lauréats :\n\n*   5 mai 2025 : ouverture des candidatures\n*   20 juin 2025 à 18h : premier relevé de candidatures\n*   10 juillet 2025 : comité de sélection du 1ᵉʳ relevé.\n*   30 septembre 2025 à 18h : deuxième relevé de candidatures\n*   6 novembre 2025 : comité de sélection du 2ⁿᵈ relevé.\n\nÀ noter : cette rubrique résume le règlement de l’AAC qui est à **télécharger dans son entièreté dans la rubrique Éligibilité**.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "11/07/2025",
+    "fin de validité": "28/02/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000826",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/mobiliser-les-communs-pour-la-transition-ecologique",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2025-07-11T08:00:00+02:00",
+        "end": "2026-02-28T08:00:00+01:00"
+      },
+      "company": {
+        "allowedNafSections": []
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": null,
+      "autres critères d'éligibilité": null
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "agriculture-et-qualite-de-lair-agriqair",
+    "titre": "Agriculture et qualité de l’air – AgriQAir",
+    "description": "Cet appel à projets vous aide à mettre en œuvre des expérimentations de terrain sur des technologies ou pratiques agricoles de réduction des émissions de NH₃ ou de particules, et/ou des programmes de diffusion des connaissances, en Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté et Hauts-de-France.",
+    "description longue": "Le dispositif **AgriQAir** a vocation à développer l’appropriation de l’enjeu de la qualité de l’air en agriculture, tout en agissant en cohérence avec les ambitions climatiques.\n\nCette édition vise ainsi à encourager la volonté d’**expérimenter, d’évaluer et de diffuser** des solutions efficaces pour réduire les émissions d**’ammoniac** (NH₃) et/ou de **particules fines** (PM2,5 et PM10) par l’agriculture. En considérant leurs émissions de GES associées (N₂O, CH4, CO₂), les projets chercheront à valoriser les synergies qualité de l’air/climat.\n\nL’objectif est d’accompagner des **projets pilotes** de type expérimentation de terrain et/ou d’autres actions pour **aider au changement de comportement** par de l’animation, de la communication, de la sensibilisation, de la formation, ou de la création d’outils (techniques, pédagogiques).\n\nIl est attendu que les projets portent sur les axes suivants :\n\n*   **Axe 1 :** **expérimentation de terrain des bonnes pratiques agricoles pour la réduction des émissions** (polluants atmosphériques et GES), comportant un volet « évaluation environnementale et économique des actions mises en œuvre ».\n*   **Axe 2 :** actions visant à **favoriser l’appréhension et la compréhension par les agriculteurs et agricultrices**, en activité ou en devenir, de **l’enjeu de la qualité de l’air** en contexte de changement climatique, en diffusant les connaissances.  \n    \n\nN.B. Les projets devront préférentiellement **coupler l’Axe 1 et l’Axe 2.**\n\nLes projets portant uniquement sur l’Axe 1 (sans actions visant à diffuser les connaissances acquises à l’issue de l’expérimentation) seront jugés inéligibles. Les projets portant uniquement sur l’Axe 2 restent, eux, éligibles.\n\nLe projet présentera des dépenses d’un montant minimal de 40 000 euros et sera réalisé sur une durée maximale de 3 ans.\n\nL’aide de l’ADEME ne dépassera pas 200 000 euros par projet.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "01/01/2026",
+    "fin de validité": "24/04/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000916",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/agriculture-et-qualite-de-lair-agriqair",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2026-01-01T00:00:00+01:00",
+        "end": "2026-04-24T12:00:00+02:00"
+      },
+      "company": {
+        "allowedNafSections": [],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté",
+          "Hauts-de-France",
+          "Auvergne-Rhône-Alpes"
+        ]
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "Bourgogne-Franche-Comté, Hauts-de-France, Auvergne-Rhône-Alpes"
+      ],
+      "autres critères d'éligibilité": [
+        "Les aides sont octroyées via les Directions Régionales de l'ADEME. Pour toute question relative à l’appel à projets, un message pourra être déposé à l’adresse suivante : aap.agriqair@ademe.fr  \nLa Direction Régionale de l’ADEME concernée par le projet sera informée de votre demande ainsi que le service de la qualité de l’air de l’ADEME."
+      ]
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "programme-cee-adapt-bati-confort-appel-manifestation-dinteret-selection-de-50-operations",
+    "titre": "Programme CEE Adapt Bâti Confort – Appel à manifestation d’intérêt – Sélection de 50 opérations",
+    "description": "L’appel à manifestation d’intérêt (AMI) a pour objet la sélection de bâtiments existants dans lesquels des périodes de surchauffe importantes ont déjà été vécues, et sur lesquels les maîtres d’ouvrage souhaitent être accompagnés et bénéficier d’aides pour mettre en œuvre des actions d’adaptation.",
+    "description longue": "L’appel à manifestation d’intérêt (AMI) a pour objet la sélection de bâtiments existants dans lesquels des périodes de surchauffe importantes ont déjà été vécues avec des conséquences caractérisées (inconfort, activité interrompue, problèmes sanitaires, etc.), et sur lesquels les maîtres d’ouvrage souhaitent intervenir en mettant en œuvre des actions d’adaptation pouvant être des mesures architecturales, techniques ou organisationnelles.\n\nEn candidatant à cet AMI, les maîtres d’ouvrage participeront à un programme national d’intérêt scientifique et de progrès de connaissances sur les solutions pour traiter les surchauffes dans les bâtiments.\n\nEn étant retenu, ils pourront bénéficier  : \n\n*   d’un soutien de type AMO et de prestations d’études spécifiques totalement prises en charge par le programme CEE  : faisabilité des solutions, simulations thermiques, instrumentation avant et après travaux, coaching des usagers ;\n*   d’aides financières aux travaux ;\n*   d’une évaluation multicritères standardisée de leur opération (par CEREMA et CSTB). \n\nDeux sessions de relèves de candidatures sont prévues. Le présent AMI concerne la première session, dont la **date butoir de dépôt est fixée au 16/02/2026**. À titre indicatif, et sous réserve de budget, une seconde session de candidature sera organisée en fin d’année 2026 ou début d’année 2027. Le contenu de l’AMI et les critères de sélection pourront être différents.\n\nLes candidats pourront présenter des bâtiments se trouvant dans les configurations suivantes :\n\n*   Cas 1 : Bâtiments avec une rénovation énergétique ou des travaux d’amélioration en tout début de projet, le projet n’aura pas dépassé l’avancement APS à l’horizon de l'automne 2026, et les travaux devront être terminés avant la fin du premier trimestre 2028.  \n    \n*   Cas 2 : Bâtiments récents ou ayant déjà fait l’objet d’une rénovation, mais nécessitant des travaux ponctuels complémentaires pour corriger des situations d’inconfort, les actions et travaux ponctuels devront être terminés avant la fin du premier trimestre 2028.\n*   Cas 3 : Bâtiments qui font l’objet d’une rénovation énergétique ambitieuse et avancée, la phase de conception est en cours au stade de la candidature à l’AMI, les travaux devront être terminés avant la fin 2027. \n\nL’AMI est organisé en 2 phases :\n\n*   une phase de prédépôt des candidatures suivi d’une phase d’auditions ;\n*   une phase de dépôt des demandes d’aides aux travaux pour les candidatures qui seront sélectionnées à l’issue de la première phase et qui s’engageront dans les actions/travaux d’adaptation conseillées par le programme Adapt Bâti Confort.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "04/12/2025",
+    "fin de validité": "16/02/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000908",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/programme-cee-adapt-bati-confort-appel-manifestation-dinteret-selection-de-50-operations",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2025-12-04T09:00:00+01:00",
+        "end": "2026-02-16T20:00:00+01:00"
+      },
+      "company": {
+        "allowedNafSections": [],
+        "allowedRegion": [
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Auvergne-Rhône-Alpes",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "Nouvelle-Aquitaine, Occitanie, Auvergne-Rhône-Alpes, Provence-Alpes-Côte d'Azur"
+      ],
+      "autres critères d'éligibilité": [
+        "Tout maître d’ouvrage public ou privé est éligible à l’exception des particuliers.  \nLes bâtiments de l’Etat et de ses établissements publics sont éligibles, excepté pour une aide aux travaux.\n\nCes bâtiments seront en fonctionnement et en conditions d’usage réelles ; et représentatifs de leur(s) catégorie(s) d’usage(s).\n\nLes critères d'éligibilité sont détaillés dans le document en téléchargement."
+      ]
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "appel-projets-methanisation-grand-est-2026",
+    "titre": "Appel à projets méthanisation Grand Est 2026",
+    "description": "Cet Appel à projets (AAP) s’adresse aux nouvelles installations ou aux projets de modernisation d’une installation existante traitant des biodéchets ménagers ou sur STEP (Stations d'épuration des eaux usées).",
+    "description longue": "La méthanisation - digestion biologique de la matière organique en l’absence d’oxygène - permet le traitement de déchets organiques et leur retour au sol, la production d’énergie renouvelable et la réduction des émissions de gaz à effet de serre.\n\nLe Grand Est, 1ʳᵉ région en nombre d’installations de méthanisation (injection et cogénération, au 30/12/2024) se dote d’une **stratégie de développement durable de la méthanisation partagée** pour un développement local, harmonieux et pérenne de la filière. La mise en place d’une stratégie découle de la volonté d’atteindre un équilibre régional et la bonne articulation des différents enjeux de la méthanisation afin d’**optimiser l’utilisation des intrants, des surfaces, des réseaux et des digestats** en augmentant la production d’énergie renouvelable et en conciliant les enjeux environnementaux.\n\nCet appel à projets s’adresse aux **nouvelles installations de méthanisation à caractère individuel ou collectif**, qu’il s’agisse d’un projet adossé à une exploitation agricole, une entreprise industrielle, une collectivité locale ou d’un projet multi-partenarial.  \nUn projet de **modernisation d’une installation existante traitant des biodéchets ménagers** (+ de 50 %) **ou sur STEP** peut candidater à cet appel à projets pour accéder à une demande d’aide auprès des fonds FEDER.  \n\nLe biogaz produit pourra être **valorisé** sous différentes formes **(chaleur, injection)**.\n\nPour le cas particulier des **digesteurs de boues de stations d’épuration d’eaux usées urbaines**, seuls les équipements d’épuration et d’injection de biométhane peuvent être aidés par l’ADEME.\n\nLes installations suivantes sont exclues de l’appel à projets :  \n\n*   les **unités de méthanisation sur ordures ménagères résiduelles** (type TMB – Tri Mécano Biologique),\n*   les **unités de valorisation de biogaz sur ISDND** (installation de stockage de déchets non dangereux),\n*   la **couverture et récupération de biogaz sur fosse** (méthanisation psychrophile).\n\n**Les projets ayant débuté les travaux** (toute commande liée à l’opération) avant le dépôt de la demande d’aide **sont inéligibles.**\n\nDans le cadre de cet appel à projets, les dossiers seront évalués et notés de façon à sélectionner les **projets les plus performants**. Les projets peuvent de ce fait bénéficier de bonifications en points (voir le paragraphe 3 du règlement joint). \n\n**Les projets retenus** dans le cadre de cet appel à projets seront **les projets respectant le plus de critères de sélection** et présentant ainsi **les notations les plus élevées**.\n\nLes projets seront examinés par un jury composé de représentants de l’ADEME, de la Région, de la DRAAF, de la DREAL, du SGARE et des Agences de l’Eau, et si besoin de personnalités compétentes dont l’expertise sera jugée nécessaire. \n\nIls seront sélectionnés dans la **limite des crédits disponibles** et sous réserve de disposer d’un **dossier complet**. \n\nLa date limite de dépôt des dossiers est le **mardi 10 février 2026 à 15 h** uniquement via la plateforme : [agirpourlatransition.ademe.fr](https://prod-r2da.ademe-dri.fr/projects/1f0c139b-f034-6a2e-b60f-65c3e4b6e189/general-data/)\n\n**Contact technique :** [christelle.lancelot@ademe.fr](mailto:christelle.lancelot@ademe.fr)\n\n**Contact administratif :** [elisabeth.sesmat@ademe.fr](mailto:elisabeth.sesmat@ademe.fr)",
+    "opérateur de contact": "ADEME",
+    "début de validité": "24/11/2025",
+    "fin de validité": "10/02/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000912",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/appel-projets-methanisation-grand-est-2026",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2025-11-24T08:00:00+01:00",
+        "end": "2026-02-10T15:00:00+01:00"
+      },
+      "company": {
+        "allowedNafSections": [],
+        "allowedRegion": [
+          "Grand Est"
+        ]
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "Grand Est"
+      ],
+      "autres critères d'éligibilité": [
+        "Les critères d'éligibilité sont décrits dans le règlement du présent Appel à projets."
+      ]
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "circularite-avancee-des-plastiques-textiles-et-elastomeres-capte",
+    "titre": "Circularité avancée des plastiques, textiles et élastomères (CAPTE)",
+    "description": "Le présent appel à projets poursuit l’objectif d’accélérer la transition écologique en y contribuant par le recyclage, qui substitue aux matières premières vierges (MPV) des matières premières de recyclage (MPR).\n\n  \n\nLien vers le webinaire de présentation du dispositif : [https://dai.ly/x9lxj4e](https://dai.ly/x9lxj4e)",
+    "description longue": "Cet Appel à projets (AAP) poursuit l’objectif d’**accélérer la transition** et de **contribuer au découplage entre croissance économique et consommation de ressources naturelles** de la société française, en y contribuant par le recyclage, qui substitue aux matières premières vierges (MPV) des matières premières de recyclage (MPR).\n\nCette substitution de MPV par des MPR constitue aussi un puissant levier de décarbonation et de renforcement de la souveraineté de l’industrie française et européenne.\n\nL'AAP prend en compte les apprentissages récents :\n\n*   sur les technologies de recyclage chimique ;\n*   sur le développement de nouvelles technologies qui permettent au recyclage mécanique d’être de plus en plus performant ;\n*   et sur le contexte socio-économique européen et mondialisé du secteur de la production de plastique\n\nIl contribue notamment à la souveraineté matières de la France et de l’Europe.\n\nCe dispositif vise dans ce contexte à **accompagner les investissements nécessaires pour adapter les capacités industrielles françaises** sur l’ensemble de la chaîne de valeur :\n\n*   préparation / décontamination / surtri de la matière déchet ;\n*   production de MPR ;\n*   incorporation de MPR par les transformateurs ;\n*   et prise en compte de l’utilisation de la MPR par les donneurs d’ordre en charge de la conception ou l’assemblage.\n\nCe dispositif incite les entreprises, sur toute la chaîne de valeur, à aller au-delà des acquis déjà en place sur le territoire et des prochaines obligations réglementaires.\n\nCet AAP contribue au **développement de capacités de recyclage chimique innovantes** dans le souci d’une complémentarité optimale avec le recyclage mécanique. Cela afin de réduire l’impact environnemental des matières plastiques produites et utilisées en France et en Europe, en traitant des gisements de déchets plastiques jusqu’ici non recyclables, et en les transformant en MPR à hautes valeurs ajoutées.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "16/05/2025",
+    "fin de validité": "30/01/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000811",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/circularite-avancee-des-plastiques-textiles-et-elastomeres-capte",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2025-05-16T15:00:00+02:00",
+        "end": "2026-01-30T12:00:00+01:00"
+      },
+      "company": {
+        "allowedNafSections": []
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "France et territoires d'outremer"
+      ],
+      "autres critères d'éligibilité": [
+        "Le porteur doit contacter l’ADEME pour organiser une réunion de pré-dépôt au moins 1 mois avant la date de la relève visée, à l’adresse suivante : aap.recyclageplastique@ademe.fr  Idéalement, l’annexe 2 devrait être transmise lors de cette demande."
+      ]
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "remove-dispositif-remo",
+    "titre": "ReMoVe - Dispositif ReMo",
+    "description": "Ce dispositif vise à accompagner le développement de solutions de transport de marchandises efficaces et durables, à créer une dynamique encourageant le recours aux modes massifiés et à réduire les coûts externes du transport de marchandises.",
+    "description longue": "Ce dispositif s’appuie sur le règlement européen relatif au Réseau européen de transport (RECT) publié par la Commission européenne. Il vise à **soutenir le développement de solutions de transport plus efficaces et plus durables**, contribuant à une dynamique ambitieuse de **promotion des modes massifiés alternatifs à la route**.\n\nÀ cette fin, des aides sont proposées aux acteurs du transport de marchandises, afin de **favoriser le report modal du transport routier vers des modes massifiés**.\n\nPour toutes questions, contactez : [reportmodal.remove@ademe.fr](mailto:reportmodal.remove@ademe.fr)",
+    "opérateur de contact": "ADEME",
+    "début de validité": "20/01/2026",
+    "fin de validité": "30/06/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000951",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/remove-dispositif-remo",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2026-01-20T00:00:00+01:00",
+        "end": "2026-06-30T00:00:00+02:00"
+      },
+      "company": {
+        "allowedNafSections": []
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "France et territoires d'outremer"
+      ],
+      "autres critères d'éligibilité": null
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "operations-collectives-pour-la-decarbonation-des-entreprises",
+    "titre": "Opérations collectives pour la décarbonation des entreprises",
+    "description": "Ce dispositif vise à massifier le nombre d'entreprises qui s'engagent dans la décarbonation via un ou plusieurs dispositifs d'accompagnements des programmes CEE PACTE Industrie, Mon parcours économies d'énergie et l'initiative ACT à travers des opérations collectives.",
+    "description longue": "**L’opération collective**\n\nL’opération collective doit rassembler un minimum de 10 entreprises. Ces entreprises peuvent être de toutes tailles et de tous secteurs. Le collectif peut être constitué d’entreprises uniquement industrielles ou non industrielles, ou d’un panel mixte d’entreprises industrielles et non industrielles. Chaque entreprise doit s’engager dans un ou plusieurs dispositif(s) d’accompagnement pour :\n\n*   construire une stratégie de décarbonation, son plan de transition et identifier les leviers de décarbonation (tous secteurs) ;\n*   rendre compte de façon transparente de sa stratégie (tous secteurs) ;\n*   étudier les opportunités d’évolution du mix énergétique des sites industriels (secteur industriel) ;\n*   préparer les investissements financiers (secteur industriel).  \n    \n\nLe porteur doit proposer une animation du collectif pour favoriser des moments d’échanges et de rassemblements autour des projets de décarbonation.\n\n**Les accompagnements pour tout type d’entreprise (industrielles et non industrielles)**\n\n*   Élaborer sa stratégie de décarbonation ACT Pas-à-Pas :   \n    Cet accompagnement guide l’entreprise dans la construction concrète et ambitieuse de sa stratégie de décarbonation et du plan de transition associé, en s’appuyant sur la méthodologie ACT Pas-à-Pas. Il permet à l’entreprise engagée de monter en compétences, mais aussi de mobiliser ses parties prenantes, internes comme externes, afin de produire une stratégie pertinente sur le long terme, permettant au passage d’anticiper les obligations de divulgation de données extrafinancières et climatiques liées à la réglementation française et européenne (CSRD).\n*   Évaluer l’ambition de sa stratégie de décarbonation ACT Évaluation :  \n    Cet accompagnement vise à évaluer l’alignement de la stratégie bas carbone d’une entreprise avec les objectifs de l’Accord de Paris, grâce à la méthodologie internationale ACT Évaluation. Il permet d’identifier les forces et faiblesses de la stratégie de l’entreprise pour l’améliorer et de démontrer auprès de ses parties prenantes (investisseurs, autorités publiques) la crédibilité et la robustesse de son plan, notamment au regard des obligations issues de la CSRD.\n\n**Les accompagnements spécifiques aux entreprises industrielles**\n\n*   Audit énergétique volontaire de son site industriel.\n*   Étudier les opportunités d’évolution du mix énergétique de son site industriel :  \n    Cette étude fournit une vision exhaustive des solutions disponibles sur le site de l’entreprise, à travers une analyse multicritère (technique, énergétique, environnementale et économique) et l’établissement d’une feuille de route de décarbonation du site industriel. Elle permet de faire les bons choix et de planifier les actions et les investissements dans le bon ordre.  \n    \n*   Construire sa trajectoire d’investissements bas carbone :  \n    Cet accompagnement vise à définir la feuille de route de décarbonation à l’échelle du groupe industriel et apporte une aide dans la priorisation des investissements sur chacun des sites industriels. Il permet de transformer la stratégie de l’entreprise en planning d’investissements et piloter la trajectoire de réduction de ses émissions.\n*   Financer son projet d’investissement :  \n    Des coachings financiers 100 % personnalisés sont proposés pour concrétiser le financement de projet d’investissement : analyse des risques technico-économiques, analyse de rentabilité financière et extrafinancière, recherche du mode de financement adapté, accompagnement interne dans le process de financement, montage financier d’un projet collectif.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "22/01/2026",
+    "fin de validité": "12/06/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000949",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/operations-collectives-pour-la-decarbonation-des-entreprises",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2026-01-22T00:00:00+01:00",
+        "end": "2026-06-12T00:00:00+02:00"
+      },
+      "company": {
+        "allowedNafSections": []
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "France et territoires d'outremer"
+      ],
+      "autres critères d'éligibilité": [
+        "Les projets ne présentant pas a minima un collectif de 10 entreprises et 50% de lettres d’intention de la part des entreprises souhaitant s’engager dans l’opération collective seront considérés comme non éligibles.\n\n**Consultez l'intégralité des conditions d'éligibilité et de financement** afin de prendre connaissance de tous les détails, critères d'éligibilité et modalités de ce dispositif.\""
+      ]
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "evaluation-des-impacts-environnementaux-sanitaires-et-socioeconomiques-des-polluants-et-des-activites-anthropiques-sur-le-vivant-phase-2",
+    "titre": "Évaluation des impacts environnementaux, sanitaires et socioéconomiques des polluants et des activités anthropiques sur le vivant - Phase 2",
+    "description": "L’appel à projets de recherche IMPACTS a pour objectif de développer la connaissance des impacts des polluants et des activités anthropiques sur le vivant, qu’il s’agisse des humains, de la biodiversité ou de la structure et du fonctionnement des écosystèmes et socioécosystèmes",
+    "description longue": "Cette 4ᵉ édition de l’appel à Projets de Recherche (APR) « IMPACT : Évaluation des impacts environnementaux, sanitaires et socioéconomiques des polluants et des activités anthropiques sur le vivant », vise à soutenir des projets pour **mieux évaluer et prendre en compte les impacts environnementaux, dont climatiques, sanitaires et socioéconomiques des polluants et des activités anthropiques**.\n\nL’objectif de cet APR est d’améliorer les connaissances afin de réaliser le déploiement de la transition écologique en limitant les impacts environnementaux, socioéconomiques et sanitaires à moyen et long terme, en proposant des méthodes et des outils pour évaluer ces impacts de façon systémique, en appui à la prise de décision.\n\nCelui-ci s’intéresse plus précisément à 5 axes de recherche : \n\n*   l’effet sur le vivant d’une exposition aux pollutions des sols ;  \n    \n*   l’économie circulaire ;\n*   l’évaluation systémique et territorialisée des impacts des pollutions multiples ; \n*   les méthodes d’évaluation environnementale systémique ;\n*   les données de référence, méthodes et outils pour l’évaluation dans le secteur du Transport. \n\nLe montant d’aide de 200 k€ max par projet sera évalué par rapport à la complexité des projets.\n\nPour ces axes, sont éligibles les projets :\n\n*   **déposés par des acteurs publics ou privés de la recherche**. Un partenariat avec des entreprises et/ou des acteurs locaux (régionaux ou autres) est encouragé pour favoriser la prise en compte des caractéristiques environnementales du territoire ;\n*   entrant dans le champ de l’appel à projets ;\n*   d’une **durée inférieure à 36 mois**.  \n    \n\n**Le processus de sélection** a lieu en **deux phases**. Il est assuré par l’ADEME, avec le support d’expertises externes et d’un comité scientifique et technique (CST) constitué de personnalités qualifiées. L’ADEME, les membres du CST, les experts sont tenus à une stricte confidentialité.\n\nPlus d’informations sur le programme IMPACTS sur le site [Recherche ADEME](https://recherche.ademe.fr/evaluation-des-impacts-environnementaux-sanitaires-et-socio-economiques-des-polluants-et-des).\n\nLe calendrier prévisionnel est le suivant :\n\n1.  **Dépôt du dossier (phase 1 - clôturée) :** les candidats ont été invités à déposer leur dossier uniquement sous forme électronique via la plateforme de dépôt et de suivi de l’ADEME, avant le **4 décembre 2025 à 12h**. \n2.  **Le retour des résultats d’évaluation** des préprojets aux porteurs de ceux-ci sera annoncé en **janvier 2026**. Ces retours seront éventuellement accompagnés de recommandations à prendre en compte pour la constitution du projet complet. Elles concerneront :\n    1.  des modifications ou des précisions sur le dossier complet, sur la composition de leur consortium ;\n    2.  la révision à la baisse d’une proposition dont le montant serait jugé excessif au regard de son enjeu ;\n    3.  des suggestions de regroupements de projets dont les enjeux sont proches/similaires afin d’amplifier la portée des projets et leurs retombées positives.\n3.  **Dépôt du dossier complet (phase 2 - en cours) avant le 8 avril 2026** **à 12h** via la plateforme informatique de l’ADEME uniquement pour les dossiers présélectionnés lors de la phase 1.\n4.  **Évaluation externe des dossiers** réalisée par des experts thématiques venant compléter l’expertise faite par l’ADEME. Puis sur la base de ces expertises, présentation et discussion au sein du comité scientifique et technique rassemblant des experts académiques et des membres des ministères, d’agences et de l’ADEME qui formuleront en **juin 2026 un classement des projets reçus**.\n5.  **Retours définitifs** aux équipes au plus tard **fin juin 2026**.\n\nLa décision de financement sera in fine prise par l’ADEME. Elle sera fondée sur la proposition du comité de sélection et sur le budget disponible.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "21/01/2026",
+    "fin de validité": "08/04/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000948",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/evaluation-des-impacts-environnementaux-sanitaires-et-socioeconomiques-des-polluants-et-des-activites-anthropiques-sur-le-vivant-phase-2",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2026-01-21T12:00:00+01:00",
+        "end": "2026-04-08T12:00:00+02:00"
+      },
+      "company": {
+        "allowedNafSections": []
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "France et territoires d'outremer"
+      ],
+      "autres critères d'éligibilité": null
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "programme-coopeco-cooperations-economiques-territoriales-de-transition-savoir-pour-agir",
+    "titre": "Programme COOP'ÉCO - Coopérations économiques territoriales de transition : savoir pour agir",
+    "description": "L'appel à manifestation d'intérêt du programme COOP'ÉCO soutient des recherches-actions participatives, associant des chercheurs et des acteurs socioéconomiques et institutionnels intéressés par la production de nouvelles connaissances sur les coopérations économiques territoriales de transition .",
+    "description longue": "Le [programme COOP'ÉCO](https://recherche.ademe.fr/dispositif-parc/coopeco) explore dans quelle mesure et sous quelles conditions les coopérations économiques territoriales de transition (CETT) ouvrent la voie à une transformation profonde et systémique des modes de production et de distribution, des modes de vie et de l’action publique, pour répondre aux grands défis écologiques.\n\nLe programme produit, capitalise et transmet des connaissances scientifiques et pratiques pour répondre à cet enjeu.\n\nÀ ce titre, le présent appel à manifestation d’intérêt (AMI) vise à soutenir des recherches-actions participatives (RAP) associant des chercheurs et des acteurs socio-économiques et institutionnels intéressés par la production de nouvelles connaissances sur les coopérations économiques territoriales de transition.\n\nDans la logique de la recherche-action participative et pour favoriser les sujets innovants, le dossier de candidature est allégé par rapport à des appels à projets classiques de recherche. L’accent est mis sur la pertinence des thèmes de recherche-action participative proposés depuis les démarches territoriales déjà engagées et sur l’explication du lien de ces thèmes avec les axes de travail du programme.\n\nEn outre, les compétences et la qualité du partenariat acteurs-chercheurs seront également déterminantes.\n\nL’AMI financera des recherches-actions participatives (RAP) analysant des démarches de coopération économique territoriale matures ou en émergence. Les projets dureront de 18 à 24 mois.\n\nPour en savoir plus, consultez la [FAQ de l’AMI COOP'ÉCO](https://recherche.ademe.fr/ami-coopeco-faq).",
+    "opérateur de contact": "ADEME",
+    "début de validité": "11/02/2026",
+    "fin de validité": "05/06/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000964",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/programme-coopeco-cooperations-economiques-territoriales-de-transition-savoir-pour-agir",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2026-02-11T11:00:00+01:00",
+        "end": "2026-06-05T11:00:00+02:00"
+      },
+      "company": {
+        "allowedNafSections": []
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "France et territoires d'outremer"
+      ],
+      "autres critères d'éligibilité": null
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "bciat-2026-biomasse-chaleur-pour-lindustrie-lagriculture-et-le-tertiaire",
+    "titre": "BCIAT 2026 - Biomasse chaleur pour l'industrie, l'agriculture et le tertiaire",
+    "description": "L’appel à projets (AAP) BCIAT 2026 soutient des projets ambitieux de production de chaleur renouvelable en industrie. Les projets de  pyrolyse/pyrogazéification et de méthanisation en autoconsommation sont également éligibles sous conditions.",
+    "description longue": "L’appel à projets BCIAT 2026 vise à **accompagner les projets de production de chaleur de plus de 12 GWh/an via une chaudière ou un générateur à air chaud et à partir de biomasse** (plaquettes forestières et assimilées, connexes et sous-produits de l’industrie de première transformation du bois, bois fin de vie et bois déchets, granulés, sous-produits industriels, sous-produits agricoles).   \n\nSont aussi éligibles :\n\n*   les projets de **mise en place d’une unité de pyrolyse ou de pyrogazéification** en autoconsommation de biochar/biohuiles/syngaz. Ces projets devront démontrer la nécessité du recours à la pyrolyse/pyrogazéification, apporter des garanties quant à leur maturité technique (TRL 9 exigé) et présenter un CAPEX minimum de 3 M€ ;\n*   les projets de **mise en place d’une unité de méthanisation**, dont la production thermique est supérieure à 8 GWh/an et autoconsommant le biogaz produit. \n\nDans le contexte actuel d’**optimisation de la ressource biomasse** et en cohérence avec les **objectifs du projet de la Stratégie française pour l’Énergie et le Climat**, l’ADEME accordera une attention particulière à ce que le candidat fasse la démonstration d’une approche énergétique respectant la hiérarchie suivante :\n\n1.  sobriété\n2.  efficacité énergétique\n3.  valorisation de chaleur fatale\n4.  étude des solutions bas carbone alternatives\n\nL**a solution biomasse sera priorisée pour les projets pour lesquels aucune alternative bas carbone n’est envisageable** dans des conditions technico-économiques acceptables. Le candidat fournira **une étude d’opportunité du mix énergétique bas carbone type PACTE Industrie** (« étude d’opportunité d’évolution du mix énergétique d’un site industriel »). Cette étude peut faire l’objet d’une aide ADEME : les conditions d’éligibilité et de financement sont accessibles sur la [page PACTE Industrie du site Agir pour la transition de l’ADEME](https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/pacte-industrie-parcours-accompagnement-competences-transition-energetique). Le délai de réalisation est estimé à 2 à 3 mois.\n\nLes projets éligibles seront évalués sur la base d’une note N de 100 points attribuée à chaque projet. Cette note sera une addition de 4 composantes :\n\n*   une note **d’efficacité économique** relative à l’efficacité des aides publiques (ratio € aide demandée/tCO2eq d’origine fossile évitée sur 20 ans), évaluée sur 50 points ;\n*   une note sur **la maturité de la démarche de décarbonation** sur 25 points ; \n*   une note relative à **la qualité de l’approvisionnement**, évaluée sur 20 points ;\n*   une note sur **la qualité technique** sur 5 points. \n\nLes projets seront notés selon trois classements :\n\n*   un classement pour les **projets de production de chaleur** à partir de biomasse via une chaudière ou un générateur à air chaud ;\n*   un deuxième classement pour les **projets de pyrolyse et pyrogazéification** ;\n*   un troisième classement pour les **projets de méthanisation**.\n\nLes projets seront financés en suivant les ordres des classements et dans la limite d’un volume maximum de 300 000 t/an en plaquettes forestières (référentiel 2017-1A-PFA) et de l’enveloppe dédiée. Les projets les moins compétitifs seront écartés.\n\nLes projets déposés au BCIAT 2026 devront **s’inscrire dans une démarche de décarbonation globale des sites**, et faisant appel à des plans d’approvisionnements diversifiés, ayant des garanties de gestion durable et de traçabilité.\n\n**Une réunion de pré-dépôt est obligatoire**. Cet échange aura lieu au moins un mois avant la date limite de dépôt. Le porteur contactera l’ADEME rapidement après l’ouverture de l’AAP via l’adresse mail [boisenergie@ademe.fr](mailto:boisenergie@ademe.fr) afin de programmer ce rendez-vous (idéalement dans le mois suivant l’ouverture).",
+    "opérateur de contact": "ADEME",
+    "début de validité": "26/03/2026",
+    "fin de validité": "17/07/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000953",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/bciat-2026-biomasse-chaleur-pour-lindustrie-lagriculture-et-le-tertiaire",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2026-03-26T15:00:00+01:00",
+        "end": "2026-07-17T15:00:00+02:00"
+      },
+      "company": {
+        "allowedNafSections": []
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "France et territoires d'outremer"
+      ],
+      "autres critères d'éligibilité": [
+        "Pour toute information complémentaire sur l'appel à projets BCIAT 2026, vous pouvez contacter l'ADEME par courriel : boisenergie@ademe.fr"
+      ]
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "apr-graine-production-valorisation-des-biomasses-et-preservation-des-ecosystemes-phase-2",
+    "titre": "APR GRAINE - Production, valorisation des biomasses et préservation des écosystèmes - Phase 2",
+    "description": "L’objectif de cette 6ᵉ édition de l’appel à projets de recherche (APR) GRAINE est de soutenir un développement durable de la bioéconomie en réponse à des besoins sociaux dans un contexte de changement climatique, via l’accompagnement des filières de production et de valorisation de biomasses.",
+    "description longue": "Cette 6ᵉ édition de l’**APR GRAINE** vise à soutenir des projets pour **mieux produire, gérer et valoriser les ressources biologiques potentiellement renouvelables**, y compris les déchets organiques, afin de satisfaire les besoins en aliments, en produits et matériaux biosourcés, ou encore en énergies sous la forme de chaleur/électricité, de biocarburant, et contribuer à la préservation de l’environnement.\n\nL’objectif de cet APR est de **soutenir un développement durable de la bioéconomie** en réponse à des besoins sociaux dans un contexte de changement climatique. Autrement dit, d’articuler, au sein des territoires, l’accompagnement des filières de production et de valorisation de biomasses en limitant les impacts, et ce, dans une optique de résilience.\n\nLes biomasses ciblées sont :\n\n*   les productions agricoles et leurs coproduits ;\n*   les productions sylvicoles et leurs coproduits ;\n*   les déchets organiques ;\n*   les coproduits industriels ;\n*   ou encore les algues et les plantes invasives.\n\nL’APR s’oriente autour de **4 axes de recherche :**\n\n*   **Axe 1 – Production durable et résiliente de biomasses préservant les milieux et les ressources** : il vise le développement et l’amélioration des systèmes et des filières de production d’exploitation de biomasses.\n*   **Axe 2 – Transformation et valorisation éco-efficiente d’une biomasse tout en évaluant les impacts sur des systèmes de production concernés** : il vise le développement de nouveaux procédés de transformation et de valorisation de biomasses (ex. : les résidus ou les biodéchets) en intégrant les enjeux liés à l’économie circulaire et à la réduction des impacts environnementaux (y compris ceux liés aux étapes amont de production et mobilisation de la biomasse).\n*   **Axe 3 – Outils et méthodes d’évaluation de la santé des sols et des impacts environnementaux de la bioéconomie** : il vise le développement de méthodes et d’outils d’évaluation pour une approche globale et durable de la gestion des biomasses au sein des filières et des territoires.\n*   **Axe 4 – Recherche-Action et Sciences humaines et sociales pour la transition des systèmes et filières de la bioéconomie** : il vise à identifier et analyser les leviers de la transition des systèmes et filières de la bioéconomie.\n\nLe montant d’aide de 300 k€ max. par projet sera évalué par rapport à la complexité des projets.\n\nUn montant d’aide supérieur pourra être octroyé pour des projets transversaux ayant des objectifs clairs et pertinents et dont l’originalité de la recherche portera sur plusieurs axes/sous-axes thématiques et justifiant d’un partenariat cohérent. Toutefois, nous invitons les porteurs de projet à rechercher des cofinancements.\n\nPour ces axes, **sont éligibles les projets :**\n\n*   collaboratifs déposés par un consortium qui s’appuie sur un partenariat pertinent et qui intègre obligatoirement un partenaire de recherche (public ou privé) ;\n*   entrant dans le champ de l’APR ;\n*   d’une durée maximum de 48 mois.\n\nLe processus de sélection est assuré par l’ADEME, avec le support d’expertises externes et d’un comité scientifique et technique (CST) constitué de personnalités qualifiées. L’ADEME, les membres du CST, les experts sont tenus à une stricte confidentialité.\n\n**Calendrier prévisionnel :**\n\n*   **Dépôt du dossier phase 1 :** les candidats sont invités à déposer leur dossier uniquement sous forme électronique via la plateforme de dépôt et de suivi de l’ADEME, avant le 26/09/2025 à 15h. \n    *   **Note aux porteurs :** L’analyse des projets se fera à partir du « modèle de pré-projet », en complément du remplissage des formulaires sur la plateforme AGIR. Vous pouvez y copier/coller des éléments de contexte et d’objectif (données non conservées pour la phase 2). À ce stade, il est essentiel de décrire la composition et l’intérêt du consortium, ainsi que le rôle des partenaires **sans les saisir sur la plateforme** afin d’éviter une validation formelle prématurée.\n*   **Expertise des dossiers :** à partir de mi-novembre 2025.\n*   **Annonce des dossiers présélectionnés** : début décembre 2025.\n*   **Dépôt du dossier phase 2 :** avant le 16/02/2026 à 15h.\n*   **Expertise externe : réalisée par des experts thématiques** venant compléter l’expertise ADEME. Puis, sur la base de ces expertises, présentation et discussion au sein du CST rassemblant des experts académiques et membres des ministères, d’agences et de l’ADEME qui annonceront en mai 2026 les projets lauréats.\n\nLa décision de financement sera in fine prise par l’ADEME et sera fondée sur la proposition du CST et sur le budget disponible. La phase 2 est **ouverte uniquement aux dossiers présélectionnés lors de la phase 1.**",
+    "opérateur de contact": "ADEME",
+    "début de validité": "01/12/2025",
+    "fin de validité": "16/02/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000925",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/apr-graine-production-valorisation-des-biomasses-et-preservation-des-ecosystemes-phase-2",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2025-12-01T08:00:00+01:00",
+        "end": "2026-02-16T15:00:00+01:00"
+      },
+      "company": {
+        "allowedNafSections": []
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "France et territoires d'outremer"
+      ],
+      "autres critères d'éligibilité": null
+    },
+    "type": "ext-ademe"
+  },
+  {
+    "id": "pact2e-planifier-et-amenager-face-au-changement-climatique-la-transition-des-territoires",
+    "titre": "PACT²e – Planifier et aménager, face au changement climatique, la transition des territoires",
+    "description": "La 3ᵉ édition de l’appel à projets de recherche (APR) PACT²e interroge la planification et l’aménagement des territoires dans un contexte de changement climatique.",
+    "description longue": "Cette troisième édition de l’appel à projets de recherche (APR) PACT²e « Planifier et aménager, face au changement climatique, la transition des territoires » interroge les leviers de l’urbanisme pour planifier et aménager les territoires et les villes dans un contexte d’urgence climatique. Il a vocation à lever des verrous scientifiques pour :  \n\n*   **répondre conjointement aux enjeux d’atténuation et d’adaptation** au changement climatique ;\n*   **maximiser les cobénéfices** environnementaux et sanitaires de l’action climatique ;\n*   analyser pour les **réduire les vulnérabilités sociales** au changement climatique, répartir équitablement les efforts et bénéfices de l’action climatique, et assurer la participation des populations les plus vulnérables, dans un objectif de transition juste.\n\nL’APR s’adresse à des **consortiums pluriels**, composés :\n\n*   d’équipes de recherche (laboratoires publics ou privés de recherche, bureaux d’étude, associations, etc.) interdisciplinaires :  \n    les expertises en lien avec l’urbanisme, l’aménagement et le climat (planification écologique et urbaine, atténuation et adaptation au changement climatique, climatologie urbaine et modélisation, etc.) devront être croisées avec les sciences humaines et sociales (santé publique, économie, sociologie, sciences politiques, géographie, communication, psychologie, anthropologie, design, etc.) ;\n*   d’acteurs territoriaux (collectivités, agences d’urbanisme, CAUE, entreprises, associations, etc.), dans une logique de recherche participative.\n\nIl est structuré autour de deux axes de recherche :\n\n*   **Axe 1** : Planifier des trajectoires territoriales d’atténuation et d’adaptation au changement climatique.\n*   **Axe 2** : Aménager les villes et les villages pour répondre aux enjeux d’atténuation et d’adaptation et maximiser les cobénéfices.\n\nPour l’ensemble de ces axes, les projets attendus :\n\n*   pourront couvrir l’un ou les deux axes de l’APR ;\n*   répondront aux critères d’évaluation définis ;\n*   s’attacheront à développer un ancrage territorial ;\n*   seront composés de consortiums interdisciplinaires et ouverts aux acteurs des territoires ;\n*   seront d’une durée comprise entre 24 mois et 36 mois ;\n*   s’attacheront à communiquer et valoriser les résultats de la recherche :\n    1.  tout au long du projet et au-delà de la communication scientifique ;\n    2.  en veillant à répondre aux besoins des cibles ;\n    3.  et en s’associant, si besoin, à des acteurs compétents en communication, graphisme et/ou design ;\n*   s’assureront du caractère généralisable et transposable des résultats de la recherche ;\n*   incluront une évaluation environnementale des impacts du projet déposé.\n\nLes projets doivent impérativement être déposés avant la date de clôture de l’APR fixée au **13 mars 2026 à 12h** sur la plateforme de dépôt et de suivi ADEME, accessible depuis la plateforme Agir.\n\nLa soumission du dossier en ligne nécessite l’anticipation des délais de saisie du dossier sur la plateforme informatique. Il est conseillé au coordinateur d’initier la création du dossier au moins 2 semaines avant la date de clôture de l’APR.\n\nL’annonce des projets retenus par l’ADEME à l’issue de la phase de sélection est prévue pour le mois de juin 2026.\n\n**Aide financière :**\n\nDans le cadre de l’APR PACT²e, vous pouvez bénéficier d’une **aide financière sous la forme d’une subvention allant de 25 à 100 % des dépenses éligibles**, selon la taille de votre structure, son activité (économique ou non économique), et le type de recherche réalisée dans votre projet (recherche fondamentale et recherche en connaissances nouvelles, recherche industrielle ou développement expérimental). À titre indicatif, le montant moyen de l’aide attribuable par projet est de **100 000 à 200 000 euros** maximum.",
+    "opérateur de contact": "ADEME",
+    "début de validité": "16/12/2025",
+    "fin de validité": "13/03/2026",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000846",
+    "objectifs": [
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/pact2e-planifier-et-amenager-face-au-changement-climatique-la-transition-des-territoires",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      }
+    ],
+    "eligibilityData": {
+      "validity": {
+        "start": "2025-12-16T08:00:00+01:00",
+        "end": "2026-03-13T12:00:00+01:00"
+      },
+      "company": {
+        "allowedNafSections": []
+      }
+    },
+    "conditions d'éligibilité": {
+      "secteur géographique": [
+        "France et territoires d'outremer"
+      ],
+      "autres critères d'éligibilité": null
+    },
+    "type": "ext-ademe"
   }
 ]
