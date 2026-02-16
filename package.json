@@ -167,7 +167,7 @@
     "tsx": "^4.15.4",
     "turndown": "^7.2.2",
     "vitest": "^3.2.4",
-    "vue-dsfr-nuxt-module": "^2.0.0",
+    "vue-dsfr-nuxt-module": "^3.1.2",
     "vue-tsc": "^2.2.8"
   }
 }
