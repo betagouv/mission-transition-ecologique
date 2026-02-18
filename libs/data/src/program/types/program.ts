@@ -242,6 +242,10 @@ export type Dispositif = {
     "toutes ces conditions"?: string[];
     [k: string]: unknown;
   }[];
+  /**
+   * Type du programme : programme interne TEE ou programme externe (ADEME)
+   */
+  type?: "tee" | "ext-ademe";
 } & (
   | {
       "nature de l'aide"?: "formation";

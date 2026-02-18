@@ -25,17 +25,18 @@ nature de l'aide: étude
 montant du financement: Variable
 objectifs:
   - description: >-
-      Réalisez un autodiagnostic en ligne pour vous vérifier que
-      l'Accompagnement RH est adapté à vos attentes et vos besoins.
+      Réalisez un diagnostic pour vous vérifier que l'Accompagnement RH est
+      adapté à vos attentes et vos besoins.
     liens:
-      - lien: https://opco-de-la-sante.org/form/autodiagnostic
-        texte: Autodiagnostic en ligne
+      - lien: >-
+          https://www.opco-sante.fr/employeur/notre-offres-de-services/on-parle-ecologie/
+        texte: Réaliser le diagnostic
   - description: >-
       Contactez votre conseiller Opco Santé pour pour exprimer votre intérêt
       pour l'accompagnement.
     liens:
-      - lien: https://- <https://www.opco-sante.fr/contact/>
-        texte: Contacter mon conseiller\
+      - lien: https://www.opco-sante.fr/contact/
+        texte: Contacter mon conseiller
   - description: >-
       Définissez avec l’expert le périmètre du dispositif, la méthode et le
       calendrier.
