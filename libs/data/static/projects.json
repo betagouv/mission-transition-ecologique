@@ -1437,7 +1437,8 @@
       "programme-reseau",
       "hotellerie-independante-bfc",
       "aide-tourisme-guadeloupe",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "diagnostic-et-accompagnement-co2i"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action eau",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action eau",
@@ -1525,7 +1526,8 @@
       "aide-tpe-transition-na",
       "booster-transformation-rev-3",
       "easy-diag",
-      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+      "diagnostic-et-accompagnement-co2i"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action déchets",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action déchets",
@@ -1878,7 +1880,11 @@
       "expert-atlas",
       "diag-accompagnement-tee-rh",
       "diagnostic-rh",
-      "defi-eco-2050"
+      "defi-eco-2050",
+      "diagnostic-et-accompagnement-co2i",
+      "accompagnement-rh",
+      "plan-de-developpement-des-competences",
+      "autodiagnostic-rse"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
@@ -1966,7 +1972,8 @@
       "eco-diagnostic-commerce",
       "diag-performance",
       "easy-diag",
-      "diag-accompagnement-tee-rh"
+      "diag-accompagnement-tee-rh",
+      "autodiagnostic-rse"
     ],
     "linkedProjects": [
       30
@@ -2050,7 +2057,10 @@
       "expert-atlas",
       "diag-accompagnement-tee-rh",
       "diagnostic-rh",
-      "defi-eco-2050"
+      "defi-eco-2050",
+      "accompagnement-rh",
+      "plan-de-developpement-des-competences",
+      "autodiagnostic-rse"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une formation environnement",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre formation environnement",
@@ -2200,7 +2210,10 @@
       "easy-diag",
       "accelerateur-des-possibles",
       "expert-atlas",
-      "diagnostic-rh"
+      "diagnostic-rh",
+      "accompagnement-rh",
+      "plan-de-developpement-des-competences",
+      "autodiagnostic-rse"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
@@ -2299,7 +2312,10 @@
       "camping-independant-bfc",
       "indicateur-climat",
       "diag-performance",
-      "easy-diag"
+      "easy-diag",
+      "diagnostic-et-accompagnement-co2i",
+      "accompagnement-rh",
+      "autodiagnostic-rse"
     ],
     "linkedProjects": [],
     "priority": {
@@ -2371,7 +2387,8 @@
       "indicateur-climat",
       "cap-decarbonation",
       "demi-bac",
-      "ibac-pme"
+      "ibac-pme",
+      "diagnostic-et-accompagnement-co2i"
     ],
     "linkedProjects": [
       1
@@ -2444,7 +2461,8 @@
       "booster-transformation-rev-3",
       "outils-pour-adaptation",
       "indicateur-climat",
-      "performa-adaptation"
+      "performa-adaptation",
+      "diagnostic-et-accompagnement-co2i"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'adaptation climat",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'adaptation climat",
@@ -2577,7 +2595,7 @@
   {
     "id": 36,
     "slug": "ecoconception",
-    "title": "Éco-conception d’un produit ou service",
+    "title": "Écoconception d’un produit ou service",
     "nameTag": "🔁 écoconception",
     "shortDescription": "Réduire les impacts de votre produit ou service à toutes les étapes de son cycle de vie.",
     "image": "/images/projet/ecoconception.webp",
@@ -4466,7 +4484,8 @@
       "aide-tpe-transition-na",
       "certificats-economie-energie",
       "parm-vnf",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "diagnostic-et-accompagnement-co2i"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4576,7 +4595,7 @@
     "shortDescription": "Réduire les risques pour la santé et l’environnement grâce à des pratiques d’hygiène plus sobres.",
     "image": "/images/projet/nettoyage.webp",
     "longDescription": "Les produits d’entretien classiques contiennent souvent des composés chimiques irritants et émettent des polluants volatils **nocifs pour la santé**. Selon l’Anses, 91 % des agents d’entretien sont exposés à au moins un produit dangereux, avec un risque accru de troubles respiratoires ou cutanés.\n\nIls ont aussi un **fort impact environnemental** : consommation d’eau, multiplication des emballages plastiques, rejets polluants dans les eaux usées. Adopter des alternatives sans chimie protège les personnes et la planète.\n\n\\\n**Quelques pistes pour agir :**\n\n- Privilégier le **nettoyage courant**, suffisant pour éliminer salissures et microbes. La désinfection doit rester ciblée (épidémies, pathogènes persistants).\n\n- Choisir les produits en équilibrant **efficacité et risques**, en consultant les **Fiches de Données de Sécurité (FDS)**.\n\n- Utiliser la **vapeur**, la **microfibre** ou l’**eau ozonée** pour un nettoyage sans chimie.\n\n- Impliquer les équipes (agents d’entretien, CHSCT, médecine du travail) pour **simplifier les protocoles**.\n\n- Favoriser du **mobilier facile à entretenir** et des **produits écolabellisés**.\n\n- Réduire le nombre de produits, éviter les **prêts à l’emploi** et privilégier les produits **rechargeables**.",
-    "moreDescription": "- [**L'entretien des locaux dans les Établissements Recevant du Public**](https://www.appa.asso.fr/wp-content/uploads/2024/10/DGS-Lentretien-des-ERP-Version-Ultime.pdf?), guide proposé par l'APPA, axé sur les protocoles d’entretien adaptés aux ERP.\n- [**Comment choisir et acheter ses produits d'entretien ?**](https://www.appa.asso.fr/wp-content/uploads/2024/10/DGS-Lentretien-des-ERP-Version-Ultime.pdf), un guide à l'usage des acheteurs publics, par le Centre de gestion du département de l'Isère.\n- [**Éco nettoyage**](https://www.cpias-ile-de-france.fr/docprocom/doc/arsara-econettoyage-mai2021.pdf), guide de l'ARS dédié au secteur des soins, qui détaille les pratiques de nettoyage sans produits chimiques.",
+    "moreDescription": "- [**L'entretien des locaux dans les Établissements Recevant du Public**](https://www.appa.asso.fr/wp-content/uploads/2024/10/DGS-Lentretien-des-ERP-Version-Ultime.pdf?), guide proposé par l'APPA, axé sur les protocoles d’entretien adaptés aux ERP.\n- [**Comment choisir et acheter ses produits d'entretien ?**](https://www.appa.asso.fr/wp-content/uploads/2024/10/DGS-Lentretien-des-ERP-Version-Ultime.pdf), un guide à l'usage des acheteurs publics, par le Centre de gestion du département de l'Isère.\n- [**Éco nettoyage**](https://www.cpias-ile-de-france.fr/docprocom/doc/arsara-econettoyage-mai2021.pdf), guide de l'ARS dédié au secteur des soins, qui détaille les pratiques de nettoyage sans produits chimiques.\n- [**Référentiel RSE des entreprises de propreté**](https://www.monde-proprete.com/referentiel-rse-entreprises-de-proprete), pour les entreprises qui souhaitent progresser et valoriser leurs engagements RSE.",
     "themes": [
       "water"
     ],
