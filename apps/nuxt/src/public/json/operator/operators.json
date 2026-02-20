@@ -361,12 +361,20 @@
     "color": "purple"
   },
   {
+    "operator": "Opco Akto",
+    "filterCategories": [
+      "OPCO"
+    ],
+    "imagePath": "/images/logos/operateur/opco-akto.webp",
+    "color": "green"
+  },
+  {
     "operator": "Opco Ocapiat",
     "filterCategories": [
       "OPCO"
     ],
     "imagePath": "/images/logos/operateur/opco-ocapiat.webp",
-    "color": "green"
+    "color": "purple"
   },
   {
     "operator": "Opco 2i",

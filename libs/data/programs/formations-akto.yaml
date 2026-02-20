@@ -1,0 +1,75 @@
+titre: Formations AKTO
+promesse: Formez vos salariés à la transition écologique
+description: >-
+  Accédez à un catalogue de formations, rigoureusement sélectionnées pour
+  répondre aux besoins de votre entreprise et de vos collaborateurs. Au
+  programme :
+
+
+  - La RSE.
+
+  - Les démarches écoresponsables dans les entreprises.
+
+  - La gestion économe de l’énergie.
+
+  - La lutte contre le gaspillage alimentaire.
+
+  - La rénovation énergétique.
+
+  - Etc.
+illustration: images/TEE_eolienne.webp
+opérateur de contact: Opco Akto
+contact question: https://www.akto.fr/nous-contacter/entreprises/
+url: https://espaceformation.akto.fr/
+nature de l'aide: formation
+coût de l'accompagnement: Gratuit pour les entreprises de moins de 50 salariés
+durée de l'accompagnement: Variable selon la formation choisie
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Rendez-vous sur le catalogue de formations d'Akto et trouvez la formation
+      et la session qui vous convient.
+    liens:
+      - lien: https://espaceformation.akto.fr/
+        texte: Catalogue de formations
+  - description: >-
+      Créez un compte sur le site d'Akto et inscrivez-vous à la session de votre
+      choix.
+    liens:
+      - lien: >-
+          https://espaceformation.akto.fr/utilisateur/authentification?from=https://espaceformation.akto.fr/
+        texte: Créer mon compte Akto
+  - description: >-
+      Vous recevez ensuite les informations pratiques pour la formation de vos
+      salariés.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises des secteurs du commerce de gros, des autoroutes, des
+      activités du déchet, de la restauration (collective, rapide, ferroviaire),
+      des hôtels, des cafétérias, des restaurants, de l'eau et assainissement,
+      du travail temporaire, de la propreté et services associés (nettoyage
+      aéroportuaire notamment) et de la formation continue
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est P
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
