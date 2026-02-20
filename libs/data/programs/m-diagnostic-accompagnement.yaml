@@ -1,0 +1,68 @@
+titre: M-Diagnostic et Accompagnement
+promesse: Bénéficiez d'un accompagnement RH à la transition écologique
+description: >-
+  Ce dispositif combine un diagnostic réalisé avec un consultant, ainsi qu'un
+  accompagnement à la mise en place d'un plan d'action pour vous aider à
+  structurer une démarche de transition écologique au sein de vos équipes.
+  Ainsi, vous :
+
+
+  - Dressez un **état des lieux de vos besoins**.
+
+  - Définissez **les actions, outils ou services** pour améliorer les
+  compétences de vos équipes.
+
+  - Établissez **un suivi et un bilan** de la démarche.
+début de validité: 01/03/2026
+illustration: images/TEE_ampoule.webp
+opérateur de contact: Opco Mobilités
+contact question: https://www.opcomobilites.fr/votre-delegation-regionale
+url: >-
+  https://www.opcomobilites.fr/entreprise/anticiper-mes-besoins-en-emploi-et-competences-1
+nature de l'aide: étude
+montant du financement: Accompagnement gratuit pour les entreprises de moins de 50 salariés
+objectifs:
+  - description: >-
+      Réalisez, si vous le souhaitez, l'autodiagnostic en ligne afin de vous
+      préparer au mieux.
+    liens:
+      - lien: https://www.autodiag-entreprises.com/authentification
+        texte: Autodiagnostic en ligne
+  - description: >-
+      Contactez votre conseiller régional Opco Mobilités pour lui manifester
+      votre intérêt pour cet accompagnement.
+    liens:
+      - lien: https://www.opcomobilites.fr/votre-delegation-regionale
+        texte: Contacter mon conseiller
+  - description: >-
+      Établissez avec lui le périmètre de l'accompagnement ainsi que le
+      calendrier, et bénéficiez de l'accompagnement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises des secteurs de l'automobile, de la logistique, des services
+      et transports.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: dispositif . début de validité <= date du jour
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
