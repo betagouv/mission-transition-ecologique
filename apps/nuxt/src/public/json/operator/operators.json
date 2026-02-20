@@ -397,14 +397,16 @@
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opcomobilites.webp",
+    "imagePath": "/images/logos/operateur/opcoSante.webp",
     "color": "green"
   },
   {
     "operator": "Opco Santé",
     "filterCategories": [
       "OPCO"
-    ]
+    ],
+    "imagePath": "/images/logos/operateur/opcomobilites.webp",
+    "color": "purple"
   },
   {
     "operator": "Opco Uniformation",
