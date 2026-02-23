@@ -332,6 +332,8 @@
     "2080": "easy-diag",
     "2113": "formations-atlas",
     "2146": "formations-afdas",
+    "2147": "formations-akto",
+    "2148": "formations-constructys",
     "2149": "formations-opcommerce",
     "2150": "formations-ocapiat",
     "2151": "formations-2i",
@@ -350,6 +352,13 @@
     "2443": "diag-accompagnement-tee-rh",
     "2476": "diagnostic-rh",
     "2510": "defi-eco-2050",
-    "2542": "demi-bac"
+    "2542": "demi-bac",
+    "2575": "ibac-pme",
+    "2674": "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+    "2707": "diagnostic-et-accompagnement-co2i",
+    "2740": "accompagnement-rh",
+    "2773": "plan-de-developpement-des-competences",
+    "2839": "autodiagnostic-rse",
+    "2872": "m-diagnostic-accompagnement"
   }
 }

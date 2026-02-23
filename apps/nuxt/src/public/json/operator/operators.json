@@ -319,8 +319,8 @@
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "purple"
+    "imagePath": "/images/logos/operateur/opcommerce.webp",
+    "color": "green"
   },
   {
     "operator": "Centre National du Livre",
@@ -341,15 +341,15 @@
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "purple"
+    "imagePath": "/images/logos/operateur/opco-constructys.webp",
+    "color": "red"
   },
   {
     "operator": "Atlas",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp",
+    "imagePath": "/images/logos/operateur/opco-atlas.webp",
     "color": "purple"
   },
   {
@@ -357,15 +357,23 @@
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp",
+    "imagePath": "/images/logos/operateur/opco-afdas.webp",
     "color": "purple"
+  },
+  {
+    "operator": "Opco Akto",
+    "filterCategories": [
+      "OPCO"
+    ],
+    "imagePath": "/images/logos/operateur/opco-akto.webp",
+    "color": "green"
   },
   {
     "operator": "Opco Ocapiat",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp",
+    "imagePath": "/images/logos/operateur/opco-ocapiat.webp",
     "color": "purple"
   },
   {
@@ -373,31 +381,31 @@
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "purple"
+    "imagePath": "/images/logos/operateur/opco-2i.webp",
+    "color": "red"
   },
   {
     "operator": "Opco EP",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "purple"
+    "imagePath": "/images/logos/operateur/opco-ep.webp",
+    "color": "yellow"
   },
   {
     "operator": "Opco Mobilités",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "purple"
+    "imagePath": "/images/logos/operateur/opcomobilites.webp",
+    "color": "green"
   },
   {
     "operator": "Opco Santé",
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp",
+    "imagePath": "/images/logos/operateur/opcoSante.webp",
     "color": "purple"
   },
   {
@@ -405,13 +413,13 @@
     "filterCategories": [
       "OPCO"
     ],
-    "imagePath": "/images/logos/operateur/opco.webp",
-    "color": "purple"
+    "imagePath": "/images/logos/operateur/opco-uniformation.webp",
+    "color": "yellow"
   },
   {
     "operator": "ANACT",
     "filterCategories": [
-      "Régions"
+      "Opérateurs nationaux"
     ],
     "imagePath": "/images/logos/operateur/anact.webp",
     "color": "green"

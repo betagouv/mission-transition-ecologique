@@ -1,7 +1,7 @@
 import { AbstractBaserow } from './abstractBaserow'
 import { BaserowTraining } from './types'
 import { Training } from '../../trainings/types'
-import ConfigBaserow from '../../configBaserow'
+import ConfigBaserow from '../../config/configBaserow'
 
 export class TrainingBaserow extends AbstractBaserow {
   private readonly _tableId = ConfigBaserow.TRAINING_ID

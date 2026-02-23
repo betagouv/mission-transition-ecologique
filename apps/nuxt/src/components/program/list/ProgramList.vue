@@ -1,7 +1,7 @@
 <template>
   <LayoutList>
     <template #counter>
-      <TeeCounterResult :to-count="filteredPrograms" />
+      <TeeCounterResult :in-count="programNumber" />
     </template>
     <template #modalFilter>
       <ProgramModalFilter />
@@ -17,15 +17,31 @@
         class="fr-enlarge-link fr-card--horizontal-tier"
       />
     </li>
+    <li
+      v-for="externalProgram in extFilteredPrograms"
+      :id="externalProgram.id"
+      :key="externalProgram.id"
+      class="fr-col-12 fr-col-sm-6 fr-col-md-12"
+    >
+      <ExternalProgramCard
+        :program="externalProgram"
+        class="fr-enlarge-link fr-card--horizontal-tier"
+      />
+    </li>
   </LayoutList>
 </template>
 
 <script setup lang="ts">
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
-import { ProgramTypeForFront } from '@/types'
+import ExternalProgramCard from '@/components/program/externalProgram/ExternalProgramCard.vue'
+import { AbstractProgramTypeForFront, ProgramTypeForFront } from '@/types'
 
 interface Props {
   filteredPrograms?: ProgramTypeForFront[]
+  extFilteredPrograms?: AbstractProgramTypeForFront[]
 }
-defineProps<Props>()
+const props = defineProps<Props>()
+const programNumber = computed(() => {
+  return (props.filteredPrograms?.length || 0) + (props.extFilteredPrograms?.length || 0)
+})
 </script>

@@ -17,26 +17,22 @@ description: >-
 
   • La **réduction des autres gaz à effet de serre**.
 description longue: >-
-  L'appel à projet comporte deux volets : \
+  L'appel à projet comporte deux volets :
 
-  • Le volet 1 concerne des projets pour le développement de briques
+
+  - Le volet 1 concerne des projets pour le développement de briques
   technologiques\
+    innovantes et d’actions de démonstration, dont les consortiums sont généralement\
+    constitués par des académiques et des industriels de l’offre.
 
-  innovantes et d’actions de démonstration, dont les consortiums sont
-  généralement\
-
-  constitués par des académiques et des industriels de l’offre.\
-
-  • Le volet 2 cible des projets portés par des consortiums constitués d’un ou
+  - Le volet 2 cible des projets portés par des consortiums constitués d’un ou
   plusieurs\
+    industriels proposant une offre de décarbonation et d’un ou plusieurs industriels côté\
+    demande prêts à accueillir les solutions innovantes proposées sur leurs sites de\
+    production.
 
-  industriels proposant une offre de décarbonation et d’un ou plusieurs
-  industriels côté\
-
-  demande prêts à accueillir les solutions innovantes proposées sur leurs sites
-  de\
-
-  production.
+    \
+    Les projets inférieurs à 1,5 M€ seront redirigés vers le dispositif IBaC.
 début de validité: 01/07/2025
 fin de validité: 09/03/2027
 illustration: images/TEE_ampoule.webp
@@ -82,7 +78,7 @@ conditions d'éligibilité:
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
-    - Tous secteurs d'activité.
+    - Tous secteurs d'activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:
@@ -111,6 +107,7 @@ publicodes:
       - code NAF niveau 1 . est F
       - code NAF niveau 1 . est G
       - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est M
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est ma performance énergétique

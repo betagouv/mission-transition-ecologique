@@ -281,7 +281,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "aide-tpe-transition-na",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       21
@@ -1436,7 +1437,8 @@
       "programme-reseau",
       "hotellerie-independante-bfc",
       "aide-tourisme-guadeloupe",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "diagnostic-et-accompagnement-co2i"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action eau",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action eau",
@@ -1523,7 +1525,9 @@
       "cap-transition-ecologique",
       "aide-tpe-transition-na",
       "booster-transformation-rev-3",
-      "easy-diag"
+      "easy-diag",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+      "diagnostic-et-accompagnement-co2i"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action déchets",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action déchets",
@@ -1738,7 +1742,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "aide-tpe-transition-na",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       21
@@ -1874,7 +1879,12 @@
       "formations-mobilite",
       "expert-atlas",
       "diag-accompagnement-tee-rh",
-      "diagnostic-rh"
+      "diagnostic-rh",
+      "defi-eco-2050",
+      "diagnostic-et-accompagnement-co2i",
+      "accompagnement-rh",
+      "plan-de-developpement-des-competences",
+      "autodiagnostic-rse"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
@@ -1962,7 +1972,8 @@
       "eco-diagnostic-commerce",
       "diag-performance",
       "easy-diag",
-      "diag-accompagnement-tee-rh"
+      "diag-accompagnement-tee-rh",
+      "autodiagnostic-rse"
     ],
     "linkedProjects": [
       30
@@ -2045,7 +2056,11 @@
       "formations-mobilite",
       "expert-atlas",
       "diag-accompagnement-tee-rh",
-      "diagnostic-rh"
+      "diagnostic-rh",
+      "defi-eco-2050",
+      "accompagnement-rh",
+      "plan-de-developpement-des-competences",
+      "autodiagnostic-rse"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une formation environnement",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre formation environnement",
@@ -2195,7 +2210,10 @@
       "easy-diag",
       "accelerateur-des-possibles",
       "expert-atlas",
-      "diagnostic-rh"
+      "diagnostic-rh",
+      "accompagnement-rh",
+      "plan-de-developpement-des-competences",
+      "autodiagnostic-rse"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
@@ -2294,7 +2312,10 @@
       "camping-independant-bfc",
       "indicateur-climat",
       "diag-performance",
-      "easy-diag"
+      "easy-diag",
+      "diagnostic-et-accompagnement-co2i",
+      "accompagnement-rh",
+      "autodiagnostic-rse"
     ],
     "linkedProjects": [],
     "priority": {
@@ -2365,7 +2386,9 @@
       "act-evaluation",
       "indicateur-climat",
       "cap-decarbonation",
-      "demi-bac"
+      "demi-bac",
+      "ibac-pme",
+      "diagnostic-et-accompagnement-co2i"
     ],
     "linkedProjects": [
       1
@@ -2438,7 +2461,8 @@
       "booster-transformation-rev-3",
       "outils-pour-adaptation",
       "indicateur-climat",
-      "performa-adaptation"
+      "performa-adaptation",
+      "diagnostic-et-accompagnement-co2i"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'adaptation climat",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'adaptation climat",
@@ -2571,7 +2595,7 @@
   {
     "id": 36,
     "slug": "ecoconception",
-    "title": "Éco-conception d’un produit ou service",
+    "title": "Écoconception d’un produit ou service",
     "nameTag": "🔁 écoconception",
     "shortDescription": "Réduire les impacts de votre produit ou service à toutes les étapes de son cycle de vie.",
     "image": "/images/projet/ecoconception.webp",
@@ -2615,7 +2639,8 @@
       "credit-impot-innovation",
       "fasep",
       "accelerateur-economie-circulaire",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une démarche d'écoconception",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité d'une démarche d'écoconception",
@@ -3770,7 +3795,8 @@
       "mission-strategie-environnement",
       "pret-economies-d-energie-pee",
       "certificats-economie-energie",
-      "demi-bac"
+      "demi-bac",
+      "ibac-pme"
     ],
     "linkedProjects": [
       4
@@ -3980,7 +4006,8 @@
     "mainTheme": "building",
     "programs": [
       "fond-vert-territoires-d-industrie",
-      "programme-synergies-durables"
+      "programme-synergies-durables",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4457,7 +4484,8 @@
       "aide-tpe-transition-na",
       "certificats-economie-energie",
       "parm-vnf",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "diagnostic-et-accompagnement-co2i"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4567,7 +4595,7 @@
     "shortDescription": "Réduire les risques pour la santé et l’environnement grâce à des pratiques d’hygiène plus sobres.",
     "image": "/images/projet/nettoyage.webp",
     "longDescription": "Les produits d’entretien classiques contiennent souvent des composés chimiques irritants et émettent des polluants volatils **nocifs pour la santé**. Selon l’Anses, 91 % des agents d’entretien sont exposés à au moins un produit dangereux, avec un risque accru de troubles respiratoires ou cutanés.\n\nIls ont aussi un **fort impact environnemental** : consommation d’eau, multiplication des emballages plastiques, rejets polluants dans les eaux usées. Adopter des alternatives sans chimie protège les personnes et la planète.\n\n\\\n**Quelques pistes pour agir :**\n\n- Privilégier le **nettoyage courant**, suffisant pour éliminer salissures et microbes. La désinfection doit rester ciblée (épidémies, pathogènes persistants).\n\n- Choisir les produits en équilibrant **efficacité et risques**, en consultant les **Fiches de Données de Sécurité (FDS)**.\n\n- Utiliser la **vapeur**, la **microfibre** ou l’**eau ozonée** pour un nettoyage sans chimie.\n\n- Impliquer les équipes (agents d’entretien, CHSCT, médecine du travail) pour **simplifier les protocoles**.\n\n- Favoriser du **mobilier facile à entretenir** et des **produits écolabellisés**.\n\n- Réduire le nombre de produits, éviter les **prêts à l’emploi** et privilégier les produits **rechargeables**.",
-    "moreDescription": "- [**L'entretien des locaux dans les Établissements Recevant du Public**](https://www.appa.asso.fr/wp-content/uploads/2024/10/DGS-Lentretien-des-ERP-Version-Ultime.pdf?), guide proposé par l'APPA, axé sur les protocoles d’entretien adaptés aux ERP.\n- [**Comment choisir et acheter ses produits d'entretien ?**](https://www.appa.asso.fr/wp-content/uploads/2024/10/DGS-Lentretien-des-ERP-Version-Ultime.pdf), un guide à l'usage des acheteurs publics, par le Centre de gestion du département de l'Isère.\n- [**Éco nettoyage**](https://www.cpias-ile-de-france.fr/docprocom/doc/arsara-econettoyage-mai2021.pdf), guide de l'ARS dédié au secteur des soins, qui détaille les pratiques de nettoyage sans produits chimiques.",
+    "moreDescription": "- [**L'entretien des locaux dans les Établissements Recevant du Public**](https://www.appa.asso.fr/wp-content/uploads/2024/10/DGS-Lentretien-des-ERP-Version-Ultime.pdf?), guide proposé par l'APPA, axé sur les protocoles d’entretien adaptés aux ERP.\n- [**Comment choisir et acheter ses produits d'entretien ?**](https://www.appa.asso.fr/wp-content/uploads/2024/10/DGS-Lentretien-des-ERP-Version-Ultime.pdf), un guide à l'usage des acheteurs publics, par le Centre de gestion du département de l'Isère.\n- [**Éco nettoyage**](https://www.cpias-ile-de-france.fr/docprocom/doc/arsara-econettoyage-mai2021.pdf), guide de l'ARS dédié au secteur des soins, qui détaille les pratiques de nettoyage sans produits chimiques.\n- [**Référentiel RSE des entreprises de propreté**](https://www.monde-proprete.com/referentiel-rse-entreprises-de-proprete), pour les entreprises qui souhaitent progresser et valoriser leurs engagements RSE.",
     "themes": [
       "water"
     ],
@@ -4587,6 +4615,7 @@
     "highlightPriority": null,
     "sectors": [
       "I",
+      "N",
       "Q"
     ],
     "faqs": []
@@ -4599,7 +4628,7 @@
     "shortDescription": "Un four électrique est plus durable et plus économe en énergie qu'un four au gaz.",
     "image": "/images/projet/fours-industriels-electriques.webp",
     "longDescription": "Remplacer votre four industriel au gaz naturel par un four 100% électrique présente de nombreux intérêts :\n\n- la **durabilité** : les fours électriques sont moins coûteux à installer, à entretenir et nécessitent moins de réparation que les fours utilisant des combustibles fossiles ;\n- les **économies d'énergie** : les fours électriques consomment moins d'énergie que les fours au gaz naturel pour produire la même quantité de chaleur, ils contribuent à réduire considérablement la consommation de ressources ;\n- la précision et le **contrôle de la température** : les appareils électriques produisent une température constante, uniforme et contrôlée ;\n- la **décarbonation** de vos activités : n'utilisant pas de combustible fossile, les fours électriques n'émettent ni gaz à effet de serre ni polluants atmosphériques.",
-    "moreDescription": "- [**L'énergie : un poste clé dans l'industrie**](https://librairie.ademe.fr/batiment/1846-energie-un-poste-cle-dans-l-industrie-l--9791029709159.html#), un guide de l'ADEME.",
+    "moreDescription": "- [**L'énergie : un poste clé dans l'industrie**](https://librairie.ademe.fr/batiment/1846-energie-un-poste-cle-dans-l-industrie-l--9791029709159.html#), un guide de l'ADEME.\n- [**Guide de la transition écologique à destination du secteur industriel**](https://www.opco2i.fr/wp-content/uploads/2025/03/opco2i-guide-transition-ecologique.pdf), par l'Opco 2i.",
     "themes": [
       "energy"
     ],
@@ -4631,7 +4660,7 @@
     "shortDescription": "Elle permet d'améliorer les performances énergétiques de votre site industriel, en évitant la déperdition thermique.",
     "image": "/images/projet/isolation-tuyauterie.webp",
     "longDescription": "Isoler vos tuyauteries, vos équipements, ainsi que vos réseaux de fluides caloporteurs et frigoporteurs vous permet d'éviter la déperdition thermique et le gaspillage énergétique.\\\nCe procédé, aussi appelé **calorifugeage industriel**, consiste à envelopper les canalisations et les machines de matériaux isolants, tels que la laine de verre ou la laine de roche. Cela permet :\n\n- d'**éviter les fuites de chaleur** (qui peuvent aller jusqu’à 10°C entre la chaudière et le circuit d’eau chaude),\n- d'**améliorer les performances énergétiques** de votre site industriel,\n- de **diminuer les coûts**,\n- d'**améliorer votre empreinte carbone**.",
-    "moreDescription": "- [**Décarboner l'industrie, enjeux et défis**](https://librairie.ademe.fr/industrie-et-production-durable/7146-decarboner-l-industrie-9791029722974.html) : un guide de l'ADEME.",
+    "moreDescription": "- [**Décarboner l'industrie, enjeux et défis**](https://librairie.ademe.fr/industrie-et-production-durable/7146-decarboner-l-industrie-9791029722974.html) : un guide de l'ADEME.\n- [**Guide de la transition écologique à destination du secteur industriel**](https://www.opco2i.fr/wp-content/uploads/2025/03/opco2i-guide-transition-ecologique.pdf), par l'Opco 2i.",
     "themes": [
       "energy",
       "building"
@@ -4640,7 +4669,8 @@
     "programs": [
       "pret-economies-d-energie-pee",
       "decarb-flash-2025-2027",
-      "demi-bac"
+      "demi-bac",
+      "ibac-pme"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4685,7 +4715,9 @@
       "programme-synergies-durables",
       "decarb-flash-2025-2027",
       "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
-      "demi-bac"
+      "demi-bac",
+      "ibac-pme",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       36
@@ -4754,7 +4786,8 @@
       "etude-reemploi-reutilisation-reparation",
       "fond-vert-territoires-d-industrie",
       "charte-zero-dechet-plastique",
-      "aide-tpe-transition-na"
+      "aide-tpe-transition-na",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       21
@@ -4796,7 +4829,8 @@
       "pret-energie-aura",
       "pret-ile-de-france",
       "aide-tpe-transition-na",
-      "accelerateur-economie-circulaire"
+      "accelerateur-economie-circulaire",
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       36
@@ -4861,7 +4895,7 @@
     "shortDescription": "Réduisez les matériaux de calage et l'usage de palettes dans le transport et l'entrepôt de vos produits.",
     "image": "/images/projet/palettes-calage.webp",
     "longDescription": "La loi AGEC prévoit la fin des emballages en plastique à usage unique d'ici 2040. Mettez-vous en conformité avec la réglementation en diminuant l’usage des matériaux d’emballage des palettes, des matériaux de calage et des palettes elles-mêmes.\n\n- Supprimez les emballages plastiques à usage unique de vos produits en mettant en place un dispositif de **réemploi des emballages**, en coopération avec vos clients et fournisseurs.\n- Remplacez les emballages plastiques de vos palettes par des **housses, sangles ou filets réemployables.**\n- Privilégiez les **matériaux de calage issus du recyclage** (textile recyclé en ouate, cartons griffés en lambeaux, frisure de bois).\n- **Réutilisez les palettes plusieurs fois**, à l’aide de la mise en place d’une logistique retour.",
-    "moreDescription": "- [**Réemploi des emballages et alternatives aux emballages plastiques à usage unique**](https://librairie.ademe.fr/economie-circulaire-et-dechets/5301-reemploi-des-emballages-et-alternatives-aux-emballages-plastiques-a-usage-unique.html), un guide de l'ADEME.",
+    "moreDescription": "- [**Réemploi des emballages et alternatives aux emballages plastiques à usage unique**](https://librairie.ademe.fr/economie-circulaire-et-dechets/5301-reemploi-des-emballages-et-alternatives-aux-emballages-plastiques-a-usage-unique.html), un guide de l'ADEME.\n- [**Guide de la transition écologique à destination du secteur industriel**](https://www.opco2i.fr/wp-content/uploads/2025/03/opco2i-guide-transition-ecologique.pdf), par l'Opco 2i.",
     "themes": [
       "waste",
       "eco-design"
@@ -4941,14 +4975,15 @@
     "shortDescription": "Elle permet de réduire la facture énergétique associée aux procédés industriels de production.",
     "image": "/images/projet/efficacite-energetique-des-procedes-industriels.webp",
     "longDescription": "Le remplacement de vos équipements industriels par des équipements électriques (chaudière, four, système de chauffage ou de séchage…), l'installation de purgeurs vapeur, de lignes de retours, d'un système de thermocompression ou de mise sous-vide sont autant d’actions qui vous permettent de rendre vos procédés industriels efficaces. \\\nAinsi cela vous permet :\n\n- de **faire baisser la facture** énergétique des coûts de production.\n- d'**améliorer la performance** de votre site industriel.\n- de **participer à la décarbonation** de l’industrie .",
-    "moreDescription": "- [**Décarboner l'industrie, enjeux et défis**](https://librairie.ademe.fr/industrie-et-production-durable/7146-decarboner-l-industrie-9791029722974.html) : une présentation de l'ADEME.\n- [**La flexibilité électrique en industrie**](https://librairie.ademe.fr/energies/4724-flexibilite-electrique-en-industrie.html#), un guide de l'ADEME pour comprendre les dispositifs d'effacement énergétique en milieu industriel.",
+    "moreDescription": "- [**Décarboner l'industrie, enjeux et défis**](https://librairie.ademe.fr/industrie-et-production-durable/7146-decarboner-l-industrie-9791029722974.html) : une présentation de l'ADEME.\n- [**La flexibilité électrique en industrie**](https://librairie.ademe.fr/energies/4724-flexibilite-electrique-en-industrie.html#), un guide de l'ADEME pour comprendre les dispositifs d'effacement énergétique en milieu industriel.\n- [**Guide de la transition écologique à destination du secteur industriel**](https://www.opco2i.fr/wp-content/uploads/2025/03/opco2i-guide-transition-ecologique.pdf), par l'Opco 2i.",
     "themes": [
       "energy"
     ],
     "mainTheme": "energy",
     "programs": [
       "decarb-flash-2025-2027",
-      "demi-bac"
+      "demi-bac",
+      "ibac-pme"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [],

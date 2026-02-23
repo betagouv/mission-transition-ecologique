@@ -39,11 +39,11 @@ describe('ProgramFeatures', () => {
     })
   })
 
-  describe('getOneByIdWithMaybeEligibility', () => {
+  describe('getOneInternalByIdWithMaybeEligibility', () => {
     test('should return Unknown eligibility when questionnaire is empty', () => {
       const programFeatures = makeProgramFeatures([validProgram])
 
-      const result = programFeatures.getOneByIdWithMaybeEligibility('valid-program', {})
+      const result = programFeatures.getOneInternalByIdWithMaybeEligibility('valid-program', {})
 
       expectToBeOk(result)
       expect(result.value.id).toBe('valid-program')
@@ -57,7 +57,7 @@ describe('ProgramFeatures', () => {
         region: 'Île-de-France'
       }
 
-      const result = programFeatures.getOneByIdWithMaybeEligibility('non-existent-id', questionnaireData)
+      const result = programFeatures.getOneInternalByIdWithMaybeEligibility('non-existent-id', questionnaireData)
 
       expectToBeErr(result)
     })
@@ -71,7 +71,7 @@ describe('ProgramFeatures', () => {
         structure_size: StructureSize.TPE
       }
 
-      const result = programFeatures.getOneByIdWithMaybeEligibility('valid-program', questionnaireData)
+      const result = programFeatures.getOneInternalByIdWithMaybeEligibility('valid-program', questionnaireData)
 
       expectToBeOk(result)
       expect(result.value.id).toBe('valid-program')
@@ -98,7 +98,7 @@ describe('ProgramFeatures', () => {
     })
   })
 
-  describe('getFilteredBy - Date validity conditions', () => {
+  describe('getFilteredByInternal - Date validity conditions', () => {
     test('should mark expired programs as ProgramEol (filtered out by default)', () => {
       const programFeatures = makeProgramFeatures([programWithExpiredDates])
 
@@ -108,7 +108,7 @@ describe('ProgramFeatures', () => {
         structure_size: StructureSize.TPE
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       // ProgramEol is always filtered out, even with onlyEligible: false
@@ -127,7 +127,7 @@ describe('ProgramFeatures', () => {
         structure_size: StructureSize.TPE
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -137,7 +137,7 @@ describe('ProgramFeatures', () => {
     })
   })
 
-  describe('getFilteredBy - Employee count conditions', () => {
+  describe('getFilteredByInternal - Employee count conditions', () => {
     test('should filter out programs with minEmployees when company is too small', () => {
       const programFeatures = makeProgramFeatures([programWithMinEmployees])
 
@@ -148,7 +148,7 @@ describe('ProgramFeatures', () => {
         onlyEligible: false // Include NotEligible in results
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -164,7 +164,7 @@ describe('ProgramFeatures', () => {
         structure_size: StructureSize.GE // 250+ employees
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -181,7 +181,7 @@ describe('ProgramFeatures', () => {
         onlyEligible: false // Include NotEligible in results
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -197,7 +197,7 @@ describe('ProgramFeatures', () => {
         structure_size: StructureSize.ME // 50-250 employees
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -205,7 +205,7 @@ describe('ProgramFeatures', () => {
     })
   })
 
-  describe('getFilteredBy - Microentrepreneur exclusion', () => {
+  describe('getFilteredByInternal - Microentrepreneur exclusion', () => {
     test('should filter out programs excluding microentrepreneur when company is EI', () => {
       const programFeatures = makeProgramFeatures([programExcludingMicroentrepreneur])
 
@@ -217,7 +217,7 @@ describe('ProgramFeatures', () => {
         onlyEligible: false // Include NotEligible in results
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -234,7 +234,7 @@ describe('ProgramFeatures', () => {
         legalCategory: LegalCategory.EI
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -242,7 +242,7 @@ describe('ProgramFeatures', () => {
     })
   })
 
-  describe('getFilteredBy - NAF code filtering', () => {
+  describe('getFilteredByInternal - NAF code filtering', () => {
     test('should filter out programs with NAF restrictions when code does not match', () => {
       const programFeatures = makeProgramFeatures([programWithNafRestriction])
 
@@ -253,7 +253,7 @@ describe('ProgramFeatures', () => {
         onlyEligible: false // Include NotEligible in results
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -269,7 +269,7 @@ describe('ProgramFeatures', () => {
         structure_size: StructureSize.TPE
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -285,7 +285,7 @@ describe('ProgramFeatures', () => {
         // No codeNAF1 provided
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -293,7 +293,7 @@ describe('ProgramFeatures', () => {
     })
   })
 
-  describe('getFilteredBy - Region filtering', () => {
+  describe('getFilteredByInternal - Region filtering', () => {
     test('should filter out programs with region restrictions when region does not match', () => {
       const programFeatures = makeProgramFeatures([programWithRegionRestriction])
 
@@ -304,7 +304,7 @@ describe('ProgramFeatures', () => {
         onlyEligible: false // Include NotEligible in results
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -320,7 +320,7 @@ describe('ProgramFeatures', () => {
         structure_size: StructureSize.TPE
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -336,7 +336,7 @@ describe('ProgramFeatures', () => {
         // No region provided
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -344,7 +344,7 @@ describe('ProgramFeatures', () => {
     })
   })
 
-  describe('getFilteredBy - Objectives matching', () => {
+  describe('getFilteredByInternal - Objectives matching', () => {
     test('should keep programs even when specific objectives do not match (building/biodiversity/RH always match)', () => {
       const programFeatures = makeProgramFeatures([programWithEnergyObjective])
 
@@ -357,7 +357,7 @@ describe('ProgramFeatures', () => {
         wastes_management_objective: WasteManagementStatus.No
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -375,7 +375,7 @@ describe('ProgramFeatures', () => {
         energy_reduction_objective: YesNo.Yes // Matches energy objective
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -392,7 +392,7 @@ describe('ProgramFeatures', () => {
         recently_audited: YesNo.No // Matches environmental objective
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -409,7 +409,7 @@ describe('ProgramFeatures', () => {
         water_reduction_objective: YesNo.Yes // Matches one of the objectives (water)
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       expect(result.value).toHaveLength(1)
@@ -417,7 +417,7 @@ describe('ProgramFeatures', () => {
     })
   })
 
-  describe('getFilteredBy - Multiple programs filtering', () => {
+  describe('getFilteredByInternal - Multiple programs filtering', () => {
     test('should filter multiple programs based on different criteria', () => {
       const programFeatures = makeProgramFeatures([
         validProgram,
@@ -432,7 +432,7 @@ describe('ProgramFeatures', () => {
         structure_size: StructureSize.TPE
       }
 
-      const result = programFeatures.getFilteredBy(questionnaireData)
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
 
       expectToBeOk(result)
       // ProgramEol is filtered out by default, so only 3 programs remain

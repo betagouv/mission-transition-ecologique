@@ -1,4 +1,4 @@
-import ConfigBaserow from '../../configBaserow'
+import ConfigBaserow from '../../config/configBaserow'
 import { AbstractBaserow } from './abstractBaserow'
 import { BaserowTestimony } from './types'
 import { Testimony } from '../../testimony/types/shared'

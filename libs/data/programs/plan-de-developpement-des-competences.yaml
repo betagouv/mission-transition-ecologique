@@ -1,0 +1,70 @@
+titre: Plan de développement des compétences
+promesse: Bénéficiez d'un financement pour une formation à la transition écologique
+description: >-
+  Vous avez identifié une formation à la transition écologique parfaitement
+  adaptée à votre structure ? Recevez un **financement sur mesure** grâce à
+  l'Opco Uniformation.
+
+
+  Contactez votre conseiller pour en discuter avec lui et trouver une solution
+  adéquate.
+fin de validité: 31/12/2026
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: Opco Uniformation
+contact question: https://www.uniformation.fr/nous-contacter
+url: >-
+  https://www.uniformation.fr/entreprise/formation/dispositifs-de-formation/plan-de-developpement-des-competences/financement
+nature de l'aide: étude
+montant du financement: Variable
+objectifs:
+  - description: 'Créez un compte sur l''Opco Uniformation. '
+    liens:
+      - lien: >-
+          https://www.uniformation.fr/entreprise/nous-rejoindre-vos-contributions/nous-rejoindre
+        texte: Rejoindre Uniformation
+  - description: >-
+      Connectez-vous à votre compte et visualisez les conditions de financement
+      adaptés à votre situation.
+    liens:
+      - lien: >-
+          https://www.uniformation.fr/entreprise/formation/dispositifs-de-formation/plan-de-developpement-des-competences/financement
+        texte: Conditions de financement
+  - description: >-
+      Manifestez votre intérêt pour le Plan de développement des compétences
+      auprès de votre conseiller régional. 
+    liens:
+      - lien: https://www.uniformation.fr/nous-contacter
+        texte: Contacter mon conseiller régional
+  - description: >-
+      Recevez les modalités de financement et inscrivez-vous à la formation de
+      votre choix.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises des secteurs du champ social, des services aux personnes, de
+      l'insertion, de l'enseignement et de la formation
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter

@@ -1,0 +1,68 @@
+titre: Formations Constructys
+promesse: Formez vos salariés à la transition écologique
+description: >-
+  Accédez à un catalogue de formations, rigoureusement sélectionnées pour
+  répondre aux besoins de votre entreprise et de vos collaborateurs. Au
+  programme :
+
+
+  - Développer vos compétences sur les travaux de rénovation énergétique.
+
+  - Modules Energies Renouvelables Thermiques avec Qualit’EnR.
+
+  - Audit énergétique en maison individuelle.
+
+  - Isolation thermique.
+
+  - Économies d'eau.
+
+  - Etc.
+illustration: images/TEE_eolienne.webp
+opérateur de contact: Constructys
+contact question: https://www.constructys.fr/contacts/
+url: https://www.constructys.fr/loffre-transition-ecologique-de-constructys/
+nature de l'aide: formation
+coût de l'accompagnement: Variable
+durée de l'accompagnement: Variable selon la formation choisie
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Rendez-vous sur le catalogue de formations de Constructys et trouvez la
+      formation et la session qui vous convient.
+    liens:
+      - lien: >-
+          https://www.constructys.fr/loffre-transition-ecologique-de-constructys/
+        texte: Catalogue de formations
+  - description: >-
+      Créez un compte sur le site de Constructys et inscrivez-vous à la session
+      de votre
+      choix[.](https://services.constructys.fr/constructys/account/create/step-1)
+    liens:
+      - lien: https://services.constructys.fr/constructys/account/create/step-1
+        texte: Créer mon compte
+  - description: >-
+      Vous recevez ensuite les informations pratiques pour la formation de votre
+      salarié.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises des secteurs de la construction, du bâtiment, des travaux
+      publics et du négoce des matériaux de construction
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est F
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter

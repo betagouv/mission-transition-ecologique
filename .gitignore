@@ -74,6 +74,8 @@ dispositifs*.xlsx
 # Local cache
 **/program_tmp.json
 /test-results/
+temp*.json
+tmp*.json
 
 # Playwright
 /playwright-report/

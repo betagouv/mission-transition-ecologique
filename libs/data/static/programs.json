@@ -236,7 +236,8 @@
         ]
       }
     },
-    "id": "accelerateur-decarbonation"
+    "id": "accelerateur-decarbonation",
+    "type": "tee"
   },
   {
     "titre": "ACT - Pas à pas",
@@ -478,7 +479,8 @@
         ]
       }
     },
-    "id": "act-pas-a-pas"
+    "id": "act-pas-a-pas",
+    "type": "tee"
   },
   {
     "titre": "Aides au réemploi des emballages",
@@ -743,7 +745,8 @@
         ]
       }
     },
-    "id": "aides-au-reemploi-des-emballages"
+    "id": "aides-au-reemploi-des-emballages",
+    "type": "tee"
   },
   {
     "titre": "AMO chaufferie biomasse",
@@ -954,7 +957,8 @@
         ]
       }
     },
-    "id": "amo-chaufferie-biomasse"
+    "id": "amo-chaufferie-biomasse",
+    "type": "tee"
   },
   {
     "titre": "Audit énergétique volontaire en industrie",
@@ -1171,7 +1175,8 @@
         ]
       }
     },
-    "id": "audit-energetique-en-industrie"
+    "id": "audit-energetique-en-industrie",
+    "type": "tee"
   },
   {
     "titre": "Label Clef Verte",
@@ -1364,7 +1369,8 @@
         ]
       }
     },
-    "id": "label-clef-verte"
+    "id": "label-clef-verte",
+    "type": "tee"
   },
   {
     "titre": "Baisse Les Watts",
@@ -1598,7 +1604,8 @@
         ]
       }
     },
-    "id": "baisse-les-watts"
+    "id": "baisse-les-watts",
+    "type": "tee"
   },
   {
     "titre": "Bonus écologique",
@@ -1833,7 +1840,8 @@
         ]
       }
     },
-    "id": "bonus-ecologique"
+    "id": "bonus-ecologique",
+    "type": "tee"
   },
   {
     "titre": "Booster Entreprises",
@@ -2061,7 +2069,8 @@
         ]
       }
     },
-    "id": "booster-eco-energie-tertiaire"
+    "id": "booster-eco-energie-tertiaire",
+    "type": "tee"
   },
   {
     "titre": "ClimaDiag expert",
@@ -2267,7 +2276,8 @@
         ]
       }
     },
-    "id": "climadiag-expert"
+    "id": "climadiag-expert",
+    "type": "tee"
   },
   {
     "titre": "Communauté du Coq Vert",
@@ -2482,7 +2492,8 @@
         ]
       }
     },
-    "id": "communaute-coq-vert"
+    "id": "communaute-coq-vert",
+    "type": "tee"
   },
   {
     "titre": "Coup de pouce Chauffage",
@@ -2698,7 +2709,8 @@
         ]
       }
     },
-    "id": "coup-de-pouce-chauffage"
+    "id": "coup-de-pouce-chauffage",
+    "type": "tee"
   },
   {
     "titre": "Diag Décarbon'Action",
@@ -2914,7 +2926,8 @@
         ]
       }
     },
-    "id": "diag-decarbon-action"
+    "id": "diag-decarbon-action",
+    "type": "tee"
   },
   {
     "titre": "Diag Adaptation",
@@ -3137,7 +3150,8 @@
         ]
       }
     },
-    "id": "diag-adaptation"
+    "id": "diag-adaptation",
+    "type": "tee"
   },
   {
     "titre": "Diag Ecoconception",
@@ -3385,7 +3399,8 @@
         ]
       }
     ],
-    "id": "diag-ecoconception"
+    "id": "diag-ecoconception",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic Changement climatique",
@@ -3605,7 +3620,8 @@
         ]
       }
     },
-    "id": "diagnostic-changement-climatique"
+    "id": "diagnostic-changement-climatique",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic déchets",
@@ -3815,7 +3831,8 @@
         ]
       }
     },
-    "id": "diagnostic-dechets"
+    "id": "diagnostic-dechets",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic Eco-conception Île-de-France",
@@ -4019,7 +4036,8 @@
         ]
       }
     },
-    "id": "diagnostic-eco-conception-ile-de-france"
+    "id": "diagnostic-eco-conception-ile-de-france",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic RSE",
@@ -4241,7 +4259,8 @@
         ]
       }
     },
-    "id": "diagnostic-rse"
+    "id": "diagnostic-rse",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic Transition Ecologique",
@@ -4445,7 +4464,8 @@
         ]
       }
     },
-    "id": "diagnostic-transition-ecologique"
+    "id": "diagnostic-transition-ecologique",
+    "type": "tee"
   },
   {
     "titre": "Eco-Défis des artisans et des commerçants",
@@ -4626,7 +4646,8 @@
         ]
       }
     },
-    "id": "eco-defis-des-artisans-et-des-commercants"
+    "id": "eco-defis-des-artisans-et-des-commercants",
+    "type": "tee"
   },
   {
     "titre": "Engins moins polluants",
@@ -4786,7 +4807,8 @@
         ]
       }
     },
-    "id": "engins-moins-polluants"
+    "id": "engins-moins-polluants",
+    "type": "tee"
   },
   {
     "titre": "Enviroveille",
@@ -4985,7 +5007,8 @@
         ]
       }
     },
-    "id": "enviroveille"
+    "id": "enviroveille",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Alimentation durable\"",
@@ -5244,7 +5267,8 @@
         ]
       }
     },
-    "id": "etude-alimentation-durable"
+    "id": "etude-alimentation-durable",
+    "type": "tee"
   },
   {
     "titre": "Etude \"biodéchets\"",
@@ -5485,7 +5509,8 @@
         ]
       }
     },
-    "id": "etude-biodechets"
+    "id": "etude-biodechets",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Centres de tri\"",
@@ -5720,7 +5745,8 @@
         ]
       }
     },
-    "id": "etude-centres-de-tri"
+    "id": "etude-centres-de-tri",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Chaufferie biomasse\"",
@@ -5935,7 +5961,8 @@
         ]
       }
     },
-    "id": "etude-chaufferie-biomasse"
+    "id": "etude-chaufferie-biomasse",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Diagnostic serres\"",
@@ -6137,7 +6164,8 @@
         ]
       }
     },
-    "id": "etude-diagnostic-serres"
+    "id": "etude-diagnostic-serres",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Économie de la fonctionnalité\"",
@@ -6418,7 +6446,8 @@
         ]
       }
     },
-    "id": "etude-economie-de-la-fonctionnalite"
+    "id": "etude-economie-de-la-fonctionnalite",
+    "type": "tee"
   },
   {
     "titre": "Etude et Investissement \"qualité de l’air\"",
@@ -6673,7 +6702,8 @@
         ]
       }
     },
-    "id": "etude-et-investissement-qualite-de-l-air"
+    "id": "etude-et-investissement-qualite-de-l-air",
+    "type": "tee"
   },
   {
     "titre": "Étude faisabilité \"hydrogène\"",
@@ -6864,7 +6894,8 @@
         ]
       }
     },
-    "id": "etude-faisabilite-hydrogene"
+    "id": "etude-faisabilite-hydrogene",
+    "type": "tee"
   },
   {
     "titre": "Étude et travaux de dépollution d'une friche",
@@ -7081,7 +7112,8 @@
         ]
       }
     },
-    "id": "etude-friches-polluees"
+    "id": "etude-friches-polluees",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Gaspillage alimentaire\"",
@@ -7318,7 +7350,8 @@
         ]
       }
     },
-    "id": "etude-gaspillage-alimentaire"
+    "id": "etude-gaspillage-alimentaire",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Géothermie de surface et d'aérothermie\"",
@@ -7571,7 +7604,8 @@
         "Eligibilité taille": "Pour une grande entreprise"
       }
     ],
-    "id": "etude-geothermie-de-surface-et-d-aerothermie"
+    "id": "etude-geothermie-de-surface-et-d-aerothermie",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Hydroélectricité\"",
@@ -7803,7 +7837,8 @@
         ]
       }
     },
-    "id": "etude-hydroelectricite"
+    "id": "etude-hydroelectricite",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Méthanisation\"",
@@ -8074,7 +8109,8 @@
         ]
       }
     },
-    "id": "etude-methanisation"
+    "id": "etude-methanisation",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Performance énergétique\" ou de \"décarbonation\" en industrie",
@@ -8280,7 +8316,8 @@
         ]
       }
     },
-    "id": "etude-performance-energetique-en-industrie"
+    "id": "etude-performance-energetique-en-industrie",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Éco-conception\"",
@@ -8570,7 +8607,8 @@
         ]
       }
     },
-    "id": "etude-performance-produits"
+    "id": "etude-performance-produits",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Autoconsommation photovoltaïque\"",
@@ -8843,7 +8881,8 @@
         ]
       }
     },
-    "id": "etude-photovoltaique-ademe"
+    "id": "etude-photovoltaique-ademe",
+    "type": "tee"
   },
   {
     "titre": "Étude d'opportunité photovoltaïque",
@@ -9058,7 +9097,8 @@
         ]
       }
     },
-    "id": "etude-photovoltaique-cci"
+    "id": "etude-photovoltaique-cci",
+    "type": "tee"
   },
   {
     "titre": "Amélioration de la qualité de l’air",
@@ -9321,7 +9361,8 @@
         ]
       }
     },
-    "id": "amelioration-qualite-de-l-air"
+    "id": "amelioration-qualite-de-l-air",
+    "type": "tee"
   },
   {
     "titre": "Étude \"projet de recherche\"",
@@ -9541,7 +9582,8 @@
         ]
       }
     },
-    "id": "etude-projet-de-recherche"
+    "id": "etude-projet-de-recherche",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Récupération de chaleur fatale\"",
@@ -9758,7 +9800,8 @@
         ]
       }
     },
-    "id": "etude-recuperation-de-chaleur-fatale"
+    "id": "etude-recuperation-de-chaleur-fatale",
+    "type": "tee"
   },
   {
     "titre": "Étude \"réemploi réutilisation réparation\"",
@@ -10003,7 +10046,8 @@
         ]
       }
     },
-    "id": "etude-reemploi-reutilisation-reparation"
+    "id": "etude-reemploi-reutilisation-reparation",
+    "type": "tee"
   },
   {
     "titre": "Étude \"réhabilitation solaires thermiques collectives\"",
@@ -10252,7 +10296,8 @@
         ]
       }
     },
-    "id": "etude-rehabilitation-solaires-thermiques-collectives"
+    "id": "etude-rehabilitation-solaires-thermiques-collectives",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Réseaux énergie renouvelable\"",
@@ -10464,7 +10509,8 @@
         ]
       }
     },
-    "id": "etude-reseaux-energie-renouvelable"
+    "id": "etude-reseaux-energie-renouvelable",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Solaire thermique\"",
@@ -10757,7 +10803,8 @@
         ]
       }
     },
-    "id": "etude-solaire-thermique"
+    "id": "etude-solaire-thermique",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Géothermie profonde\"",
@@ -10984,7 +11031,8 @@
         ]
       }
     },
-    "id": "etude-geothermie-profonde"
+    "id": "etude-geothermie-profonde",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Test géothermie\"",
@@ -11225,7 +11273,8 @@
         ]
       }
     },
-    "id": "etude-test-geothermie"
+    "id": "etude-test-geothermie",
+    "type": "tee"
   },
   {
     "titre": "eXtrême Défi Mobilité",
@@ -11405,7 +11454,8 @@
         ]
       }
     },
-    "id": "extreme-defi-mobilite"
+    "id": "extreme-defi-mobilite",
+    "type": "tee"
   },
   {
     "titre": "Flotte de vélos à disposition",
@@ -11603,7 +11653,8 @@
         ]
       }
     },
-    "id": "flotte-de-velos-a-disposition"
+    "id": "flotte-de-velos-a-disposition",
+    "type": "tee"
   },
   {
     "titre": "Fonds Tourisme Durable",
@@ -11892,7 +11943,8 @@
         ]
       }
     },
-    "id": "fonds-tourisme-durable"
+    "id": "fonds-tourisme-durable",
+    "type": "tee"
   },
   {
     "titre": "Fonds Vert - Territoires d'Industrie",
@@ -12115,7 +12167,8 @@
         ]
       }
     },
-    "id": "fond-vert-territoires-d-industrie"
+    "id": "fond-vert-territoires-d-industrie",
+    "type": "tee"
   },
   {
     "titre": "Formation ADEME",
@@ -12331,7 +12384,8 @@
         ]
       }
     },
-    "id": "formation-engager-entreprise-transition-ecologique"
+    "id": "formation-engager-entreprise-transition-ecologique",
+    "type": "tee"
   },
   {
     "titre": "B.A.-BA du climat et de la biodiversité",
@@ -12544,7 +12598,8 @@
         ]
       }
     },
-    "id": "b-a-ba-du-climat-et-biodiversite"
+    "id": "b-a-ba-du-climat-et-biodiversite",
+    "type": "tee"
   },
   {
     "titre": "Formations du CFDE",
@@ -12746,7 +12801,8 @@
         ]
       }
     },
-    "id": "formations-du-cfde"
+    "id": "formations-du-cfde",
+    "type": "tee"
   },
   {
     "titre": "Diag Eco-Flux",
@@ -12960,7 +13016,8 @@
         ]
       }
     },
-    "id": "diag-eco-flux"
+    "id": "diag-eco-flux",
+    "type": "tee"
   },
   {
     "titre": "Fresque de la Mobilité",
@@ -13183,7 +13240,8 @@
         ]
       }
     },
-    "id": "fresque-de-la-mobilite"
+    "id": "fresque-de-la-mobilite",
+    "type": "tee"
   },
   {
     "titre": "Gestion des biodéchets",
@@ -13367,7 +13425,8 @@
         ]
       }
     },
-    "id": "gestion-des-biodechets"
+    "id": "gestion-des-biodechets",
+    "type": "tee"
   },
   {
     "titre": "Formation développement durable",
@@ -13540,7 +13599,8 @@
         ]
       }
     },
-    "id": "formation-artisan-developpement-durable"
+    "id": "formation-artisan-developpement-durable",
+    "type": "tee"
   },
   {
     "titre": "Imprim'vert",
@@ -13744,7 +13804,8 @@
         "Durée du dispositif": "1,5 à 2,5 jours"
       }
     ],
-    "id": "imprim-vert"
+    "id": "imprim-vert",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"bioGNV agricole et territorial\"",
@@ -13963,7 +14024,8 @@
         ]
       }
     },
-    "id": "investissement-biognv-agricole-et-territorial"
+    "id": "investissement-biognv-agricole-et-territorial",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Boucle d’eau géothermique\"",
@@ -14201,7 +14263,8 @@
         ]
       }
     },
-    "id": "investissement-boucle-d-eau-geothermique"
+    "id": "investissement-boucle-d-eau-geothermique",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"centre de tri\"",
@@ -14431,7 +14494,8 @@
         ]
       }
     },
-    "id": "investissement-centre-de-tri"
+    "id": "investissement-centre-de-tri",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Chaleur bois\"",
@@ -14673,7 +14737,8 @@
         ]
       }
     },
-    "id": "investissement-chaleur-bois"
+    "id": "investissement-chaleur-bois",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"construction et rénovation hors site\"",
@@ -14869,7 +14934,8 @@
         ]
       }
     },
-    "id": "investissement-construction-et-renovation-hors-site"
+    "id": "investissement-construction-et-renovation-hors-site",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Contrat Chaleur Renouvelable\"",
@@ -15108,7 +15174,8 @@
         ]
       }
     },
-    "id": "investissement-contrat-chaleur-renouvelable"
+    "id": "investissement-contrat-chaleur-renouvelable",
+    "type": "tee"
   },
   {
     "titre": "Investissement  \"contrat patrimonial ENR&R\"",
@@ -15356,7 +15423,8 @@
         ]
       }
     },
-    "id": "investissement-contrat-patrimonial-enr-r"
+    "id": "investissement-contrat-patrimonial-enr-r",
+    "type": "tee"
   },
   {
     "titre": "Investissement contre le gaspillage alimentaire",
@@ -15609,7 +15677,8 @@
         ]
       }
     },
-    "id": "investissement-contre-le-gaspillage-alimentaire"
+    "id": "investissement-contre-le-gaspillage-alimentaire",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Ecoconception\"",
@@ -15884,7 +15953,8 @@
         ]
       }
     },
-    "id": "investissement-ecoconception"
+    "id": "investissement-ecoconception",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Géothermie de surface et d'aérothermie\"",
@@ -16124,7 +16194,8 @@
         ]
       }
     },
-    "id": "investissement-geothermie-de-surface-et-d-aerothermie"
+    "id": "investissement-geothermie-de-surface-et-d-aerothermie",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Géothermie profonde\"",
@@ -16362,7 +16433,8 @@
         ]
       }
     },
-    "id": "investissement-geothermie-profonde"
+    "id": "investissement-geothermie-profonde",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Gestion des biodéchets\"",
@@ -16610,7 +16682,8 @@
         ]
       }
     },
-    "id": "investissement-gestion-des-biodechets"
+    "id": "investissement-gestion-des-biodechets",
+    "type": "tee"
   },
   {
     "titre": "Étude \"Méthanisation\" en PACA",
@@ -16806,7 +16879,8 @@
         ]
       }
     },
-    "id": "etude-methanisation-paca"
+    "id": "etude-methanisation-paca",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Méthanisation\"",
@@ -17062,7 +17136,8 @@
         ]
       }
     },
-    "id": "investissement-methanisation"
+    "id": "investissement-methanisation",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"PAC solaire\"",
@@ -17300,7 +17375,8 @@
         ]
       }
     },
-    "id": "investissement-pac-solaire"
+    "id": "investissement-pac-solaire",
+    "type": "tee"
   },
   {
     "titre": "Investissement pour l'approvisionnement de chaufferies bois",
@@ -17499,7 +17575,8 @@
         ]
       }
     },
-    "id": "investissement-pour-l-approvisionnement-de-chaufferies-bois"
+    "id": "investissement-pour-l-approvisionnement-de-chaufferies-bois",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"recharge véhicules électriques\"",
@@ -17680,7 +17757,8 @@
         ]
       }
     },
-    "id": "investissement-recharge-vehicules-electriques"
+    "id": "investissement-recharge-vehicules-electriques",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Récupération de chaleur fatale\"",
@@ -17884,7 +17962,8 @@
         ]
       }
     },
-    "id": "investissement-recuperation-de-chaleur-fatale"
+    "id": "investissement-recuperation-de-chaleur-fatale",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"réemploi réutilisation réparation\"",
@@ -18127,7 +18206,8 @@
         ]
       }
     },
-    "id": "investissement-reemploi-reutilisation-reparation"
+    "id": "investissement-reemploi-reutilisation-reparation",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"renouvellement forestier\"",
@@ -18310,7 +18390,8 @@
         ]
       }
     },
-    "id": "investissement-renouvellement-forestier"
+    "id": "investissement-renouvellement-forestier",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Réseaux de chaleur ou de froid\"",
@@ -18514,7 +18595,8 @@
         ]
       }
     },
-    "id": "investissement-reseaux-de-chaleur-ou-de-froid"
+    "id": "investissement-reseaux-de-chaleur-ou-de-froid",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Solaire thermique\"",
@@ -18750,7 +18832,8 @@
         ]
       }
     },
-    "id": "investissement-solaire-thermique"
+    "id": "investissement-solaire-thermique",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"solaire thermique Outre-mer\"",
@@ -18985,7 +19068,8 @@
         ]
       }
     },
-    "id": "investissement-solaire-thermique-outre-mer"
+    "id": "investissement-solaire-thermique-outre-mer",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Systèmes Solaires Combinés\"",
@@ -19217,7 +19301,8 @@
         ]
       }
     },
-    "id": "investissement-systemes-solaires-combines"
+    "id": "investissement-systemes-solaires-combines",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"vélotourisme\"",
@@ -19435,7 +19520,8 @@
         ]
       }
     },
-    "id": "investissement-velotourisme"
+    "id": "investissement-velotourisme",
+    "type": "tee"
   },
   {
     "titre": "Diag Perf'Immo",
@@ -19656,7 +19742,8 @@
         ]
       }
     },
-    "id": "diag-perf-immo"
+    "id": "diag-perf-immo",
+    "type": "tee"
   },
   {
     "titre": "Formations Transition Écologique et Énergétique",
@@ -19858,7 +19945,8 @@
         ]
       }
     },
-    "id": "formations-tee"
+    "id": "formations-tee",
+    "type": "tee"
   },
   {
     "titre": "ORMAT",
@@ -20110,7 +20198,8 @@
         ]
       }
     },
-    "id": "ormat"
+    "id": "ormat",
+    "type": "tee"
   },
   {
     "titre": "PACTE Industrie",
@@ -20322,7 +20411,8 @@
         ]
       }
     },
-    "id": "pacte-industrie"
+    "id": "pacte-industrie",
+    "type": "tee"
   },
   {
     "titre": "Performa Environnement",
@@ -20695,7 +20785,8 @@
         "Durée du dispositif": "2 jours"
       }
     ],
-    "id": "performa-environnement"
+    "id": "performa-environnement",
+    "type": "tee"
   },
   {
     "titre": "Plan de mobilité",
@@ -20941,7 +21032,8 @@
         ]
       }
     },
-    "id": "plan-de-mobilite"
+    "id": "plan-de-mobilite",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"VTE Vert\"",
@@ -21186,7 +21278,8 @@
         ]
       }
     },
-    "id": "investissement-vte-vert"
+    "id": "investissement-vte-vert",
+    "type": "tee"
   },
   {
     "titre": "Mission de Conseil RSE",
@@ -21406,7 +21499,8 @@
         ]
       }
     },
-    "id": "mission-conseil-rse"
+    "id": "mission-conseil-rse",
+    "type": "tee"
   },
   {
     "titre": "Mission Stratégie Environnement",
@@ -21639,7 +21733,8 @@
         ]
       }
     },
-    "id": "mission-strategie-environnement"
+    "id": "mission-strategie-environnement",
+    "type": "tee"
   },
   {
     "titre": "Prêt Action Climat",
@@ -21863,7 +21958,8 @@
         ]
       }
     },
-    "id": "pret-action-climat"
+    "id": "pret-action-climat",
+    "type": "tee"
   },
   {
     "titre": "Prime à la conversion",
@@ -22113,7 +22209,8 @@
         ]
       }
     },
-    "id": "prime-a-la-conversion"
+    "id": "prime-a-la-conversion",
+    "type": "tee"
   },
   {
     "titre": "Programme Breizh Fab",
@@ -22317,7 +22414,8 @@
         ]
       }
     },
-    "id": "programme-breizh-fab"
+    "id": "programme-breizh-fab",
+    "type": "tee"
   },
   {
     "titre": "Programme Ecod'o",
@@ -22513,7 +22611,8 @@
         ]
       }
     },
-    "id": "programme-ecod-o"
+    "id": "programme-ecod-o",
+    "type": "tee"
   },
   {
     "titre": "Programme EVE",
@@ -22695,7 +22794,8 @@
         ]
       }
     },
-    "id": "programme-eve"
+    "id": "programme-eve",
+    "type": "tee"
   },
   {
     "titre": "Programme Synergies durables",
@@ -22897,7 +22997,8 @@
         ]
       }
     },
-    "id": "programme-synergies-durables"
+    "id": "programme-synergies-durables",
+    "type": "tee"
   },
   {
     "titre": "Crédit d'Impôt Rénovation Énergétique (CIRE)",
@@ -23122,7 +23223,8 @@
         ]
       }
     },
-    "id": "renovation-energetique"
+    "id": "renovation-energetique",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic SARE",
@@ -23339,7 +23441,8 @@
         ]
       }
     },
-    "id": "renovation-petit-tertiaire-prive"
+    "id": "renovation-petit-tertiaire-prive",
+    "type": "tee"
   },
   {
     "titre": "Répar'acteurs",
@@ -23529,7 +23632,8 @@
         ]
       }
     },
-    "id": "repar-acteurs"
+    "id": "repar-acteurs",
+    "type": "tee"
   },
   {
     "titre": "Rétrofit électrique",
@@ -23724,7 +23828,8 @@
         ]
       }
     },
-    "id": "retrofit-electrique"
+    "id": "retrofit-electrique",
+    "type": "tee"
   },
   {
     "titre": "Sobriété et Résilience des Territoires",
@@ -23941,7 +24046,8 @@
         ]
       }
     },
-    "id": "sobriete-et-resilience-des-territoires"
+    "id": "sobriete-et-resilience-des-territoires",
+    "type": "tee"
   },
   {
     "titre": "TPE gagnantes sur tous les coûts",
@@ -24202,7 +24308,8 @@
         ]
       }
     },
-    "id": "tpe-gagnantes-sur-tous-les-couts"
+    "id": "tpe-gagnantes-sur-tous-les-couts",
+    "type": "tee"
   },
   {
     "titre": "Tremplin",
@@ -24452,7 +24559,8 @@
         ]
       }
     },
-    "id": "tremplin"
+    "id": "tremplin",
+    "type": "tee"
   },
   {
     "titre": "Trophées Crisalide Eco-activités",
@@ -24664,7 +24772,8 @@
         ]
       }
     },
-    "id": "trophees-crisalide-eco-activites"
+    "id": "trophees-crisalide-eco-activites",
+    "type": "tee"
   },
   {
     "titre": "Véhicule lourd énergies propres",
@@ -24868,7 +24977,8 @@
         ]
       }
     },
-    "id": "vehicule-lourd-energies-propres"
+    "id": "vehicule-lourd-energies-propres",
+    "type": "tee"
   },
   {
     "titre": "Visite Énergie CCI/CMA",
@@ -25179,7 +25289,8 @@
         "Montant du dispositif": "Gratuit"
       }
     ],
-    "id": "visite-energie"
+    "id": "visite-energie",
+    "type": "tee"
   },
   {
     "titre": "Nos Gestes Climat",
@@ -25390,7 +25501,8 @@
         ]
       }
     },
-    "id": "nos-gestes-climat"
+    "id": "nos-gestes-climat",
+    "type": "tee"
   },
   {
     "titre": "Prêt Économies d’Énergie (PEE)",
@@ -25610,7 +25722,8 @@
         ]
       }
     },
-    "id": "pret-economies-d-energie-pee"
+    "id": "pret-economies-d-energie-pee",
+    "type": "tee"
   },
   {
     "titre": "Prêt Vert",
@@ -25842,7 +25955,8 @@
         ]
       }
     },
-    "id": "pret-vert"
+    "id": "pret-vert",
+    "type": "tee"
   },
   {
     "titre": "Prêt Vert - Ademe",
@@ -26083,7 +26197,8 @@
         ]
       }
     },
-    "id": "pret-vert-ademe"
+    "id": "pret-vert-ademe",
+    "type": "tee"
   },
   {
     "titre": "Adaptation au changement climatique en Bretagne",
@@ -26308,7 +26423,8 @@
         ]
       }
     },
-    "id": "adaptation-bzh"
+    "id": "adaptation-bzh",
+    "type": "tee"
   },
   {
     "titre": "Aide au financement en Occitanie",
@@ -26537,7 +26653,8 @@
         ]
       }
     },
-    "id": "aide-financement-occitanie"
+    "id": "aide-financement-occitanie",
+    "type": "tee"
   },
   {
     "titre": "CCI Business Optimizer",
@@ -26718,7 +26835,8 @@
         ]
       }
     },
-    "id": "cci-business-optimizer"
+    "id": "cci-business-optimizer",
+    "type": "tee"
   },
   {
     "titre": "Initiation éco-conception",
@@ -26913,7 +27031,8 @@
         ]
       }
     },
-    "id": "ecoconception-bzh"
+    "id": "ecoconception-bzh",
+    "type": "tee"
   },
   {
     "titre": "Formation écogestes",
@@ -27098,7 +27217,8 @@
         ]
       }
     },
-    "id": "ecogestes-paca"
+    "id": "ecogestes-paca",
+    "type": "tee"
   },
   {
     "titre": "Accompagnement écoproduction",
@@ -27317,7 +27437,8 @@
         ]
       }
     },
-    "id": "ecoproduction-hdf"
+    "id": "ecoproduction-hdf",
+    "type": "tee"
   },
   {
     "titre": "Fiscalité énergétique",
@@ -27498,7 +27619,8 @@
         ]
       }
     },
-    "id": "fiscalite-energetique-occitanie"
+    "id": "fiscalite-energetique-occitanie",
+    "type": "tee"
   },
   {
     "titre": "Formation référent tourisme durable ",
@@ -27678,7 +27800,8 @@
         ]
       }
     },
-    "id": "tourisme-durable-paca"
+    "id": "tourisme-durable-paca",
+    "type": "tee"
   },
   {
     "titre": "Certification en agriculture biologique",
@@ -27854,7 +27977,8 @@
         ]
       }
     },
-    "id": "certification-agriculture-biologique"
+    "id": "certification-agriculture-biologique",
+    "type": "tee"
   },
   {
     "titre": "Industries vertes (CI3V)",
@@ -28066,7 +28190,8 @@
         ]
       }
     },
-    "id": "industries-vertes"
+    "id": "industries-vertes",
+    "type": "tee"
   },
   {
     "titre": "Navires utilisant des énergies propres",
@@ -28249,7 +28374,8 @@
         ]
       }
     },
-    "id": "navires-energies-propre"
+    "id": "navires-energies-propre",
+    "type": "tee"
   },
   {
     "titre": "Bonus Réparation",
@@ -28417,7 +28543,8 @@
         ]
       }
     },
-    "id": "bonus-reparation"
+    "id": "bonus-reparation",
+    "type": "tee"
   },
   {
     "titre": "CEDRE Premier Pas",
@@ -28666,7 +28793,8 @@
         ]
       }
     },
-    "id": "cedre-premier-pas"
+    "id": "cedre-premier-pas",
+    "type": "tee"
   },
   {
     "titre": "CEDRE Investissement",
@@ -28921,7 +29049,8 @@
         ]
       }
     },
-    "id": "cedre-investissement"
+    "id": "cedre-investissement",
+    "type": "tee"
   },
   {
     "titre": "INVESTour",
@@ -29121,7 +29250,8 @@
         ]
       }
     },
-    "id": "investour"
+    "id": "investour",
+    "type": "tee"
   },
   {
     "titre": "Sud Prêt Climat",
@@ -29385,7 +29515,8 @@
         ]
       }
     },
-    "id": "sud-pret-climat"
+    "id": "sud-pret-climat",
+    "type": "tee"
   },
   {
     "titre": "Sites touristiques exemplaires",
@@ -29574,7 +29705,8 @@
         ]
       }
     },
-    "id": "sites-touristiques-exemplaires"
+    "id": "sites-touristiques-exemplaires",
+    "type": "tee"
   },
   {
     "titre": "Nature ta ville",
@@ -29782,7 +29914,8 @@
         ]
       }
     },
-    "id": "nature-ta-ville"
+    "id": "nature-ta-ville",
+    "type": "tee"
   },
   {
     "titre": "Plan Solaire : Paré pour le solaire",
@@ -30006,7 +30139,8 @@
         ]
       }
     },
-    "id": "solaire-ready"
+    "id": "solaire-ready",
+    "type": "tee"
   },
   {
     "titre": "Plan Solaire Sud PV Plus",
@@ -30243,7 +30377,8 @@
         ]
       }
     },
-    "id": "smart-pv"
+    "id": "smart-pv",
+    "type": "tee"
   },
   {
     "titre": "Chèque Transition Bioéthanol",
@@ -30483,7 +30618,8 @@
         ]
       }
     },
-    "id": "cheque-transition-bioethanol"
+    "id": "cheque-transition-bioethanol",
+    "type": "tee"
   },
   {
     "titre": "Recharges pour véhicules électriques",
@@ -30667,7 +30803,8 @@
         ]
       }
     },
-    "id": "recharge-vehicule-electrique"
+    "id": "recharge-vehicule-electrique",
+    "type": "tee"
   },
   {
     "titre": "Entreprises engagées pour la nature",
@@ -30895,7 +31032,8 @@
         ]
       }
     },
-    "id": "entreprises-engagees-nature"
+    "id": "entreprises-engagees-nature",
+    "type": "tee"
   },
   {
     "titre": "Charte \"zéro déchet plastique\"",
@@ -31142,7 +31280,8 @@
         ]
       }
     },
-    "id": "charte-zero-dechet-plastique"
+    "id": "charte-zero-dechet-plastique",
+    "type": "tee"
   },
   {
     "titre": "Mécénaturel",
@@ -31360,7 +31499,8 @@
         ]
       }
     },
-    "id": "mecenaturel"
+    "id": "mecenaturel",
+    "type": "tee"
   },
   {
     "titre": "Véhicules lourds électriques",
@@ -31552,7 +31692,8 @@
         ]
       }
     },
-    "id": "vehicules-lourds-electriques"
+    "id": "vehicules-lourds-electriques",
+    "type": "tee"
   },
   {
     "titre": "Audit label Clef Verte",
@@ -31741,7 +31882,8 @@
         ]
       }
     },
-    "id": "audit-clef-verte-sud"
+    "id": "audit-clef-verte-sud",
+    "type": "tee"
   },
   {
     "titre": "Prêt Tourisme Bpifrance",
@@ -31925,7 +32067,8 @@
         ]
       }
     },
-    "id": "pret-tourisme"
+    "id": "pret-tourisme",
+    "type": "tee"
   },
   {
     "titre": "MOOC Entreprise et biodiversité",
@@ -32136,7 +32279,8 @@
         ]
       }
     },
-    "id": "mooc-biodiversite-entreprise"
+    "id": "mooc-biodiversite-entreprise",
+    "type": "tee"
   },
   {
     "titre": "CEDRE Ambition",
@@ -32395,7 +32539,8 @@
         ]
       }
     },
-    "id": "cedre-ambition"
+    "id": "cedre-ambition",
+    "type": "tee"
   },
   {
     "titre": "Aide aux travaux de rénovation énergétique",
@@ -32594,7 +32739,8 @@
         ]
       }
     },
-    "id": "perf-crise-energetique-aura"
+    "id": "perf-crise-energetique-aura",
+    "type": "tee"
   },
   {
     "titre": "Aide au déploiement de flottes hydrogène",
@@ -32840,7 +32986,8 @@
         ]
       }
     },
-    "id": "deploiement-flottes-hydrogene"
+    "id": "deploiement-flottes-hydrogene",
+    "type": "tee"
   },
   {
     "titre": "Soutien au photovoltaïque en Grand Est",
@@ -33073,7 +33220,8 @@
         ]
       }
     },
-    "id": "soutien-pv-grand-est"
+    "id": "soutien-pv-grand-est",
+    "type": "tee"
   },
   {
     "titre": "Aide travaux hébergements touristiques",
@@ -33271,7 +33419,8 @@
         ]
       }
     },
-    "id": "aide-travaux-tourisme-aura"
+    "id": "aide-travaux-tourisme-aura",
+    "type": "tee"
   },
   {
     "titre": "Prêt Energie AURA",
@@ -33559,7 +33708,8 @@
         ]
       }
     },
-    "id": "pret-energie-aura"
+    "id": "pret-energie-aura",
+    "type": "tee"
   },
   {
     "titre": "PASS Transitions",
@@ -33793,7 +33943,8 @@
         ]
       }
     },
-    "id": "pass-transition-bzh"
+    "id": "pass-transition-bzh",
+    "type": "tee"
   },
   {
     "titre": "Pass Transformation Ecologique",
@@ -34039,7 +34190,8 @@
         ]
       }
     },
-    "id": "pass-transformation-ecologique"
+    "id": "pass-transformation-ecologique",
+    "type": "tee"
   },
   {
     "titre": "Prêt transition écologique Île-de-France",
@@ -34341,7 +34493,8 @@
         ]
       }
     },
-    "id": "pret-ile-de-france"
+    "id": "pret-ile-de-france",
+    "type": "tee"
   },
   {
     "titre": "CAP Transition Ecologique",
@@ -34577,7 +34730,8 @@
         ]
       }
     },
-    "id": "cap-transition-ecologique"
+    "id": "cap-transition-ecologique",
+    "type": "tee"
   },
   {
     "titre": "Investissements d'économies d'énergie",
@@ -34755,7 +34909,8 @@
         ]
       }
     },
-    "id": "perf-crise-energetique-cvl"
+    "id": "perf-crise-energetique-cvl",
+    "type": "tee"
   },
   {
     "titre": "Projets d'hébergements touristiques",
@@ -34955,7 +35110,8 @@
         ]
       }
     },
-    "id": "projets-hebergements-touristiques-cvl"
+    "id": "projets-hebergements-touristiques-cvl",
+    "type": "tee"
   },
   {
     "titre": "Accompagnement à l'Écolabel européen",
@@ -35167,7 +35323,8 @@
         ]
       }
     },
-    "id": "ecolabel"
+    "id": "ecolabel",
+    "type": "tee"
   },
   {
     "titre": "Impulsion Environnement",
@@ -35388,7 +35545,8 @@
         ]
       }
     },
-    "id": "impulsion-environnement"
+    "id": "impulsion-environnement",
+    "type": "tee"
   },
   {
     "titre": "Soutien à l'hébergement touristique",
@@ -35591,7 +35749,8 @@
         ]
       }
     },
-    "id": "soutien-hebergement-touristique"
+    "id": "soutien-hebergement-touristique",
+    "type": "tee"
   },
   {
     "titre": "Bilan Carbone®",
@@ -35802,7 +35961,8 @@
         ]
       }
     },
-    "id": "bilan-carbone"
+    "id": "bilan-carbone",
+    "type": "tee"
   },
   {
     "titre": "Programme Res'Eau",
@@ -36015,7 +36175,8 @@
         ]
       }
     },
-    "id": "programme-reseau"
+    "id": "programme-reseau",
+    "type": "tee"
   },
   {
     "titre": "Agir en Pays de la Loire",
@@ -36216,7 +36377,8 @@
         ]
       }
     },
-    "id": "agir-pdl"
+    "id": "agir-pdl",
+    "type": "tee"
   },
   {
     "titre": "Décarbonation de l'industrie",
@@ -36437,7 +36599,8 @@
         ]
       }
     },
-    "id": "decarb-ind-25"
+    "id": "decarb-ind-25",
+    "type": "tee"
   },
   {
     "titre": "Programme PAMI",
@@ -36680,7 +36843,8 @@
         ]
       }
     },
-    "id": "pami"
+    "id": "pami",
+    "type": "tee"
   },
   {
     "titre": "Aide à l'hôtellerie indépendante",
@@ -36892,7 +37056,8 @@
         ]
       }
     },
-    "id": "hotellerie-independante-na"
+    "id": "hotellerie-independante-na",
+    "type": "tee"
   },
   {
     "titre": "Aide aux campings indépendants de Nouvelle-Aquitaine",
@@ -37104,7 +37269,8 @@
         ]
       }
     },
-    "id": "camping-independant-na"
+    "id": "camping-independant-na",
+    "type": "tee"
   },
   {
     "titre": "Aide à l'investissement des transitions",
@@ -37329,7 +37495,8 @@
         ]
       }
     },
-    "id": "aide-tpe-transition-na"
+    "id": "aide-tpe-transition-na",
+    "type": "tee"
   },
   {
     "titre": "Priorités régionales d'interventions touristiques",
@@ -37518,7 +37685,8 @@
         ]
       }
     },
-    "id": "prit-hdf"
+    "id": "prit-hdf",
+    "type": "tee"
   },
   {
     "titre": "Aide à l’hôtellerie indépendante en Bourgogne-Franche-Comté",
@@ -37746,7 +37914,8 @@
         ]
       }
     },
-    "id": "hotellerie-independante-bfc"
+    "id": "hotellerie-independante-bfc",
+    "type": "tee"
   },
   {
     "titre": "Aide aux campings indépendants de Bourgogne-Franche-Comté",
@@ -37977,7 +38146,8 @@
         ]
       }
     },
-    "id": "camping-independant-bfc"
+    "id": "camping-independant-bfc",
+    "type": "tee"
   },
   {
     "titre": "Soutien à la labellisation touristique",
@@ -38173,7 +38343,8 @@
         ]
       }
     },
-    "id": "aide-labellisation-corse"
+    "id": "aide-labellisation-corse",
+    "type": "tee"
   },
   {
     "titre": "Impresa Sì",
@@ -38403,7 +38574,8 @@
         ]
       }
     },
-    "id": "aide-investissement-corse"
+    "id": "aide-investissement-corse",
+    "type": "tee"
   },
   {
     "titre": "Aide régionale au développement de produits touristiques",
@@ -38645,7 +38817,8 @@
         ]
       }
     },
-    "id": "aide-tourisme-guadeloupe"
+    "id": "aide-tourisme-guadeloupe",
+    "type": "tee"
   },
   {
     "titre": "ADVENIR",
@@ -38838,7 +39011,8 @@
         ]
       }
     },
-    "id": "advenir"
+    "id": "advenir",
+    "type": "tee"
   },
   {
     "titre": "Crédit d'Impôt Recherche (CIR)",
@@ -39042,7 +39216,8 @@
         ]
       }
     },
-    "id": "credit-impot-recherche"
+    "id": "credit-impot-recherche",
+    "type": "tee"
   },
   {
     "titre": "Crédit d'impôt innovation (CII)",
@@ -39296,7 +39471,8 @@
         "Montant du dispositif": "Crédit d'impôt de 20%"
       }
     ],
-    "id": "credit-impot-innovation"
+    "id": "credit-impot-innovation",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic impact dépendance biodiversité",
@@ -39534,7 +39710,8 @@
         ]
       }
     },
-    "id": "diag-impact-biodiversite"
+    "id": "diag-impact-biodiversite",
+    "type": "tee"
   },
   {
     "titre": "CORIMER Navires bas carbone",
@@ -39775,7 +39952,8 @@
         ]
       }
     },
-    "id": "corimer"
+    "id": "corimer",
+    "type": "tee"
   },
   {
     "titre": "Je change ma voiture",
@@ -39988,12 +40166,13 @@
         ]
       }
     },
-    "id": "je-change-ma-voiture"
+    "id": "je-change-ma-voiture",
+    "type": "tee"
   },
   {
     "titre": "Mobili'Pro",
     "promesse": "Optimisez la mobilité de vos collaborateurs",
-    "description": "Le programme Mobili'Pro vous aide à **optimiser les déplacements en voiture de vos collaborateurs**. Bénéficiez d’un accompagnement sur trois ans, comprenant : \\\n- un diagnostic de votre flotte,\\\n- l’élaboration d’un plan d’action sur-mesure,\\\n- et un suivi chiffré des résultats. \\\nVous serez guidé dans la mise en place de solutions pour réduire l'impact environnemental de vos trajets professionnels tout en améliorant la gestion de votre flotte de véhicules.",
+    "description": "Le programme Mobili'Pro vous aide à **optimiser les déplacements en voiture de vos collaborateurs**. Bénéficiez d’un accompagnement sur trois ans, comprenant :\n\n- Un diagnostic de votre flotte.\n- L'élaboration d’un plan d’action sur-mesure.\n- Un suivi chiffré des résultats. \\\n  Vous serez guidé dans la mise en place de solutions pour réduire l'impact environnemental de vos trajets professionnels tout en améliorant la gestion de votre flotte de véhicules.",
     "illustration": "images/TEE_eolienne.webp",
     "opérateur de contact": "ADEME",
     "contact question": "mailto:mobilipro@ademe.fr",
@@ -40004,7 +40183,16 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Créez votre compte sur Mobili’Pro. Vous devrez désigner un référent interne chargé du suivi de votre démarche.",
+        "description": "Consultez le site Mobili’Pro pour mieux connaître le dispositif.",
+        "liens": [
+          {
+            "lien": "https://%3Chttps://www.mobilipro.fr/ressources%3E",
+            "texte": "Mobili'Pro"
+          }
+        ]
+      },
+      {
+        "description": "Sollicitez la création de votre compte sur Mobili’Pro. Vous devrez désigner un référent interne chargé du suivi de votre démarche.",
         "liens": [
           {
             "lien": "https://www.mobilipro.fr/signup",
@@ -40013,7 +40201,7 @@
         ]
       },
       {
-        "description": "Choisissez un conseiller Mobili’Pro référencés par le programme. Les conseillers Mobili’Pro sont des consultants expérimentés en gestion de parcs de véhicules et en analyse des déplacements professionnels.",
+        "description": "Sélectionner un conseiller Mobili’Pro référencé par le programme en vous appuyant sur le cahier des charges. Les conseillers Mobili’Pro sont des consultants expérimentés en gestion de parcs de véhicules et en analyse des déplacements professionnels.",
         "liens": [
           {
             "lien": "https://mobilipro.s3.fr-par.scw.cloud/ressources/MobiliPro_Liste%20des%20conseillers%20Mobili%27Pro_juin2024.pdf",
@@ -40022,16 +40210,16 @@
         ]
       },
       {
-        "description": "Signez le formulaire d'engagement en indiquant le conseiller Mobili'Pro retenu.",
+        "description": "Signez le formulaire d'engagement en indiquant le conseiller Mobili'Pro retenu, et envoyez-le à l’adresse [mobilipro@ademe.fr](mailto:mobilipro@ademe.fr).",
         "liens": [
           {
             "lien": "https://mobilipro.s3.fr-par.scw.cloud/ressources/formulaire-dengagement.pdf",
-            "texte": "formulaire à compléter"
+            "texte": "Formulaire à compléter"
           }
         ]
       },
       {
-        "description": "Après votre inscription, votre conseiller Mobili’Pro vous contacte pour initier une première réunion de présentation."
+        "description": "Une fois votre inscription validée, votre conseiller Mobili’Pro vous contacte pour initier une première réunion de présentation."
       }
     ],
     "conditions d'éligibilité": {
@@ -40209,7 +40397,8 @@
         ]
       }
     },
-    "id": "mobilipro"
+    "id": "mobilipro",
+    "type": "tee"
   },
   {
     "titre": "Évaluation carbone LISE",
@@ -40483,7 +40672,8 @@
         ]
       }
     },
-    "id": "evaluation-carbone-lise"
+    "id": "evaluation-carbone-lise",
+    "type": "tee"
   },
   {
     "titre": "Diag biodiversité",
@@ -40497,7 +40687,7 @@
     "contact question": "formulaire",
     "url": "https://diag.bpifrance.fr/diag-biodiversite",
     "nature de l'aide": "étude",
-    "coût de l'accompagnement": "6 000€ HT, après prise en charge de 40%",
+    "coût de l'accompagnement": "entre 5 000€ et 7 000€ HT, après prise en charge de 30% à 50% selon votre taille d'entreprise",
     "durée de l'accompagnement": "10 jours de prestation, répartis sur 3 à 6 mois",
     "activable en autonomie": "oui",
     "objectifs": [
@@ -40522,7 +40712,7 @@
     ],
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
-        "Moins de 250 salariés",
+        "Moins de 500 salariés",
         "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
@@ -40559,7 +40749,7 @@
           "T",
           "U"
         ],
-        "maxEmployees": "249",
+        "maxEmployees": "499",
         "excludeMicroentrepreneur": true
       },
       "priorityObjectives": [
@@ -40670,7 +40860,7 @@
       },
       "entreprise . a un effectif éligible": {
         "toutes ces conditions": [
-          "effectif <= 249"
+          "effectif <= 499"
         ]
       },
       "entreprise . a une categorie legale eligible": {
@@ -40708,7 +40898,26 @@
         ]
       }
     },
-    "id": "diag-biodiversite"
+    "champs conditionnels": [
+      {
+        "toutes ces conditions": [
+          "effectif >= 250",
+          "effectif <= 499"
+        ],
+        "Montant du dispositif": "7 000€ HT, après prise en charge de 30%",
+        "Eligibilité taille": "Pour les ETI de moins de 500 salariés"
+      },
+      {
+        "toutes ces conditions": [
+          "effectif >= 0",
+          "effectif <= 249"
+        ],
+        "Montant du dispositif": "5 000€ HT, après prise en charge de 50%",
+        "Eligibilité taille": "Pour les entreprises répondant à la définition européenne de la PME"
+      }
+    ],
+    "id": "diag-biodiversite",
+    "type": "tee"
   },
   {
     "titre": "Certificats d'économies d'énergie (CEE)",
@@ -40920,7 +41129,8 @@
         ]
       }
     },
-    "id": "certificats-economie-energie"
+    "id": "certificats-economie-energie",
+    "type": "tee"
   },
   {
     "titre": "Plan d'aide au report modal (PARM)",
@@ -41101,7 +41311,8 @@
         ]
       }
     },
-    "id": "parm-vnf"
+    "id": "parm-vnf",
+    "type": "tee"
   },
   {
     "titre": "Decarb Flash 2025-2027",
@@ -41329,7 +41540,8 @@
         ]
       }
     },
-    "id": "decarb-flash-2025-2027"
+    "id": "decarb-flash-2025-2027",
+    "type": "tee"
   },
   {
     "titre": "BCIAT 2025 - Biomasse chaleur pour l'industrie, l'agriculture et le tertiaire",
@@ -41548,7 +41760,8 @@
         ]
       }
     },
-    "id": "bciat-biomasse-chaleur-industrie-agriculture-tertiaire"
+    "id": "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
+    "type": "tee"
   },
   {
     "titre": "FASEP",
@@ -41794,7 +42007,8 @@
         ]
       }
     },
-    "id": "fasep"
+    "id": "fasep",
+    "type": "tee"
   },
   {
     "titre": "Aide à l’investissement aux librairies françaises",
@@ -42022,7 +42236,8 @@
         ]
       }
     },
-    "id": "aide-investissement-librairie"
+    "id": "aide-investissement-librairie",
+    "type": "tee"
   },
   {
     "titre": "Accélérateur Économie Circulaire",
@@ -42260,7 +42475,8 @@
         ]
       }
     },
-    "id": "accelerateur-economie-circulaire"
+    "id": "accelerateur-economie-circulaire",
+    "type": "tee"
   },
   {
     "titre": "Impact CO2",
@@ -42481,7 +42697,8 @@
         ]
       }
     },
-    "id": "impact-co2"
+    "id": "impact-co2",
+    "type": "tee"
   },
   {
     "titre": "Booster Transformation Rev3",
@@ -42724,7 +42941,8 @@
         ]
       }
     },
-    "id": "booster-transformation-rev-3"
+    "id": "booster-transformation-rev-3",
+    "type": "tee"
   },
   {
     "titre": "Programme REMOVE",
@@ -42945,7 +43163,8 @@
         ]
       }
     },
-    "id": "remove"
+    "id": "remove",
+    "type": "tee"
   },
   {
     "titre": "Formation Défendre un projet",
@@ -43161,7 +43380,8 @@
         ]
       }
     },
-    "id": "formation-convaincre-et-argumenter"
+    "id": "formation-convaincre-et-argumenter",
+    "type": "tee"
   },
   {
     "titre": "Formation Communication Décarbonation",
@@ -43377,7 +43597,8 @@
         ]
       }
     },
-    "id": "formation-communiquer-et-sensibiliser"
+    "id": "formation-communiquer-et-sensibiliser",
+    "type": "tee"
   },
   {
     "titre": "Formation Outils pour l'adaptation",
@@ -43593,7 +43814,8 @@
         ]
       }
     },
-    "id": "outils-pour-adaptation"
+    "id": "outils-pour-adaptation",
+    "type": "tee"
   },
   {
     "titre": "DÉTER - DÉcarboner le TERtiaire",
@@ -43815,7 +44037,8 @@
         ]
       }
     },
-    "id": "deter-decarboner-le-tertiaire"
+    "id": "deter-decarboner-le-tertiaire",
+    "type": "tee"
   },
   {
     "titre": "ACT Évaluation",
@@ -44044,7 +44267,8 @@
         ]
       }
     },
-    "id": "act-evaluation"
+    "id": "act-evaluation",
+    "type": "tee"
   },
   {
     "titre": "Innovation et démonstration hydrogène",
@@ -44265,7 +44489,8 @@
         ]
       }
     },
-    "id": "innovation-hydrogene"
+    "id": "innovation-hydrogene",
+    "type": "tee"
   },
   {
     "titre": "Indicateur climat",
@@ -44444,7 +44669,8 @@
         ]
       }
     },
-    "id": "indicateur-climat"
+    "id": "indicateur-climat",
+    "type": "tee"
   },
   {
     "titre": "Eco-diagnostic Commerce",
@@ -44628,7 +44854,8 @@
         ]
       }
     },
-    "id": "eco-diagnostic-commerce"
+    "id": "eco-diagnostic-commerce",
+    "type": "tee"
   },
   {
     "titre": "Diag performance",
@@ -44814,7 +45041,8 @@
         ]
       }
     },
-    "id": "diag-performance"
+    "id": "diag-performance",
+    "type": "tee"
   },
   {
     "titre": "Easy Diag Transition Ecologique",
@@ -44990,7 +45218,8 @@
         ]
       }
     },
-    "id": "easy-diag"
+    "id": "easy-diag",
+    "type": "tee"
   },
   {
     "titre": "Formations Atlas",
@@ -45164,7 +45393,8 @@
         ]
       }
     },
-    "id": "formations-atlas"
+    "id": "formations-atlas",
+    "type": "tee"
   },
   {
     "titre": "Formations AFDAS",
@@ -45172,7 +45402,7 @@
     "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Intégrer la RSE dans sa stratégie.\n- Les gestes éco-responsables.\n- Initiation au tourisme durable.\n- Mise en place d'une stratégie bas carbone.\n- etc.",
     "illustration": "images/TEE_eolienne.webp",
     "opérateur de contact": "Opco AFDAS",
-    "contact question": "formulaire",
+    "contact question": "https://www.afdas.com/en-region.html",
     "url": "https://www.afdas.com/entreprise/realiser-des-projets-rh-et-rse/agir-en-faveur-de-la-transition-ecologique.html",
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "Variable",
@@ -45338,7 +45568,356 @@
         ]
       }
     },
-    "id": "formations-afdas"
+    "id": "formations-afdas",
+    "type": "tee"
+  },
+  {
+    "titre": "Formations AKTO",
+    "promesse": "Formez vos salariés à la transition écologique",
+    "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- La RSE.\n- Les démarches écoresponsables dans les entreprises.\n- La gestion économe de l’énergie.\n- La lutte contre le gaspillage alimentaire.\n- La rénovation énergétique.\n- Etc.",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Opco Akto",
+    "contact question": "https://www.akto.fr/nous-contacter/entreprises/",
+    "url": "https://espaceformation.akto.fr/",
+    "nature de l'aide": "formation",
+    "coût de l'accompagnement": "Gratuit pour les entreprises de moins de 50 salariés",
+    "durée de l'accompagnement": "Variable selon la formation choisie",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Rendez-vous sur le catalogue de formations d'Akto et trouvez la formation et la session qui vous convient.",
+        "liens": [
+          {
+            "lien": "https://espaceformation.akto.fr/",
+            "texte": "Catalogue de formations"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte sur le site d'Akto et inscrivez-vous à la session de votre choix.",
+        "liens": [
+          {
+            "lien": "https://espaceformation.akto.fr/utilisateur/authentification?from=https://espaceformation.akto.fr/",
+            "texte": "Créer mon compte Akto"
+          }
+        ]
+      },
+      {
+        "description": "Vous recevez ensuite les informations pratiques pour la formation de vos salariés."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises des secteurs du commerce de gros, des autoroutes, des activités du déchet, de la restauration (collective, rapide, ferroviaire), des hôtels, des cafétérias, des restaurants, de l'eau et assainissement, du travail temporaire, de la propreté et services associés (nettoyage aéroportuaire notamment) et de la formation continue"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "C",
+          "G",
+          "I",
+          "N",
+          "P"
+        ]
+      },
+      "priorityObjectives": [
+        "rh"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est P"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter"
+        ]
+      }
+    },
+    "id": "formations-akto",
+    "type": "tee"
+  },
+  {
+    "titre": "Formations Constructys",
+    "promesse": "Formez vos salariés à la transition écologique",
+    "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Développer vos compétences sur les travaux de rénovation énergétique.\n- Modules Energies Renouvelables Thermiques avec Qualit’EnR.\n- Audit énergétique en maison individuelle.\n- Isolation thermique.\n- Économies d'eau.\n- Etc.",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Constructys",
+    "contact question": "https://www.constructys.fr/contacts/",
+    "url": "https://www.constructys.fr/loffre-transition-ecologique-de-constructys/",
+    "nature de l'aide": "formation",
+    "coût de l'accompagnement": "Variable",
+    "durée de l'accompagnement": "Variable selon la formation choisie",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Rendez-vous sur le catalogue de formations de Constructys et trouvez la formation et la session qui vous convient.",
+        "liens": [
+          {
+            "lien": "https://www.constructys.fr/loffre-transition-ecologique-de-constructys/",
+            "texte": "Catalogue de formations"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte sur le site de Constructys et inscrivez-vous à la session de votre choix[.](https://services.constructys.fr/constructys/account/create/step-1)",
+        "liens": [
+          {
+            "lien": "https://services.constructys.fr/constructys/account/create/step-1",
+            "texte": "Créer mon compte"
+          }
+        ]
+      },
+      {
+        "description": "Vous recevez ensuite les informations pratiques pour la formation de votre salarié."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises des secteurs de la construction, du bâtiment, des travaux publics et du négoce des matériaux de construction"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "F"
+        ]
+      },
+      "priorityObjectives": [
+        "rh"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est F"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter"
+        ]
+      }
+    },
+    "id": "formations-constructys",
+    "type": "tee"
   },
   {
     "titre": "Formations l'Opcommerce",
@@ -45346,7 +45925,7 @@
     "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Environnement et règlementation.\n- Achats responsables.\n- Analyse du cycle de vie d'un produit.\n- Les fondamentaux de l'économie circulaire.\n- Mettre en place une stratégie climat.\n- etc.",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "L'Opcommerce",
-    "contact question": "formulaire",
+    "contact question": "https://www.lopcommerce.com/contact/",
     "url": "https://clickandform.lopcommerce.com",
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "Variable",
@@ -45522,7 +46101,8 @@
         ]
       }
     },
-    "id": "formations-opcommerce"
+    "id": "formations-opcommerce",
+    "type": "tee"
   },
   {
     "titre": "Formations Ocapiat",
@@ -45696,7 +46276,8 @@
         ]
       }
     },
-    "id": "formations-ocapiat"
+    "id": "formations-ocapiat",
+    "type": "tee"
   },
   {
     "titre": "Formations Opco 2i",
@@ -45730,11 +46311,15 @@
         ]
       },
       {
-        "description": "Pour toute demande de pris en charge d'une formation, contactez le service entreprises dans votre région",
+        "description": "Pour toute demande de prise en charge d'une formation, consultez les règles de prise en charge, et contactez votre conseiller régional Opco 2i",
         "liens": [
           {
+            "lien": "https://www.opco2i.fr/formation-et-financement/les-regles-de-prise-en-charge/",
+            "texte": "Règles de prise en charge"
+          },
+          {
             "lien": "https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/",
-            "texte": "Service entreprises"
+            "texte": "Contacter mon conseiller"
           }
         ]
       }
@@ -45876,7 +46461,8 @@
         ]
       }
     },
-    "id": "formations-2i"
+    "id": "formations-2i",
+    "type": "tee"
   },
   {
     "titre": "Sélexion Formations Opco EP",
@@ -46063,15 +46649,16 @@
         ]
       }
     },
-    "id": "formations-ep"
+    "id": "formations-ep",
+    "type": "tee"
   },
   {
     "titre": "Formations Opco Santé",
     "promesse": "Formez vos salariés à la transition écologique",
-    "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Sensibilisation à la prévention et à la gestion des déchets.\n- Hygiène et nettoyage: pratiques et achats responsables pour l'entretien des locaux en établissements sanitaires et médico-sociaux.\n- Sensibilisation à la transition énergétique. \n- etc.",
+    "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Sensibilisation à la prévention et à la gestion des déchets.\n- Hygiène et nettoyage: pratiques durables pour les établissements.\n- Sensibilisation à la transition énergétique.\n- Achats responsables et durables en restauration collective.\n- Numérique responsable et durable. \n- Etc.",
     "illustration": "images/TEE_ampoule.webp",
     "opérateur de contact": "Opco Santé",
-    "contact question": "formulaire",
+    "contact question": "https://www.opco-sante.fr/contact/",
     "url": "https://www.opco-sante.fr/",
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "Variable",
@@ -46239,18 +46826,20 @@
         ]
       }
     },
-    "id": "formations-sante"
+    "id": "formations-sante",
+    "type": "tee"
   },
   {
     "titre": "Formations Uniformation",
     "promesse": "Formez vos salariés à la transition écologique",
-    "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Accompagner des publics sur les enjeux de transition écologique.\n- Contribuer à l’éducation à l’environnement et au développement durable, avec l'animation d'un jardin partagé.\n- Impulser la transition écologique de sa structure.\n- etc.",
+    "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Accompagner des publics sur les enjeux de transition écologique.\n- Contribuer à l’éducation à l’environnement et au développement durable, avec l'animation d'un jardin partagé.\n- Impulser la transition écologique de sa structure.\n- Les écogestes en pratique dans le logement accompagné.\n- Maîtriser les enjeux de la RE2020.\n- Etc.",
+    "fin de validité": "31/12/2026",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "Opco Uniformation",
-    "contact question": "formulaire",
+    "contact question": "https://www.uniformation.fr/nous-contacter",
     "url": "https://www.uniformation.fr/entreprise/formation/offre-de-formations-cles-en-main?combine_text=&session_start_min=&session_start_max=&presence_type=All&offer=All&branch=All&training_theme=99&target_training=All",
     "nature de l'aide": "formation",
-    "coût de l'accompagnement": "Variable",
+    "coût de l'accompagnement": "Gratuite",
     "durée de l'accompagnement": "Variable selon la formation choisie",
     "activable en autonomie": "oui",
     "objectifs": [
@@ -46265,15 +46854,6 @@
       },
       {
         "description": "Inscrivez-vous à la formation choisie en suivant les modalités indiquées sur le site."
-      },
-      {
-        "description": "Pour toute demande de pris en charge d'une formation, contactez Uniformation",
-        "liens": [
-          {
-            "lien": "https://www.uniformation.fr/nous-contacter",
-            "texte": "Contact Uniformation"
-          }
-        ]
       }
     ],
     "conditions d'éligibilité": {
@@ -46299,6 +46879,9 @@
           "Q",
           "S"
         ]
+      },
+      "validity": {
+        "end": "31/12/2026"
       },
       "priorityObjectives": [
         "rh"
@@ -46395,9 +46978,14 @@
       "date du jour": null,
       "entreprise . est ciblée": {
         "toutes ces conditions": [
+          "est éligible",
           "est dans un secteur d'activité ciblé",
           "a un objectif ciblé"
         ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
+        "valeur": "oui"
       },
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
@@ -46413,7 +47001,8 @@
         ]
       }
     },
-    "id": "formations-uniformation"
+    "id": "formations-uniformation",
+    "type": "tee"
   },
   {
     "titre": "Formations Opco Mobilités",
@@ -46421,7 +47010,7 @@
     "description": "Accédez à un catalogue de formations, rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et de vos collaborateurs. Au programme :\n\n- Déployer une démarche en Transition Écologique.\n- Initiation bilan carbone et empreinte écologique.\n- Mettre en place une stratégie RSE priorisant la transition écologique.\n- etc.",
     "illustration": "images/TEE_ampoule.webp",
     "opérateur de contact": "Opco Mobilités",
-    "contact question": "formulaire",
+    "contact question": "https://www.opcomobilites.fr/votre-delegation-regionale",
     "url": "https://www.opcomobilites.fr/",
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "Variable",
@@ -46429,11 +47018,11 @@
     "activable en autonomie": "oui",
     "objectifs": [
       {
-        "description": "Rendez-vous sur le catalogue de formations de l'Opco Mobilités et trouvez la formation et la session qui vous convient.",
+        "description": "Rendez-vous sur le catalogue M-Campus et trouvez la formation et la session qui vous convient.",
         "liens": [
           {
             "lien": "https://mcampus.opcomobilites.fr/",
-            "texte": "Catalogue de formations"
+            "texte": "Catalogue de formations M-Campus"
           }
         ]
       },
@@ -46465,7 +47054,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "Entreprises des secteurs de l'automobile, de la logistique, des services et transports"
+        "Entreprises des secteurs de l'automobile, de la logistique, des services et transports."
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -46591,7 +47180,8 @@
         ]
       }
     },
-    "id": "formations-mobilite"
+    "id": "formations-mobilite",
+    "type": "tee"
   },
   {
     "titre": "Accélérateur des possibles",
@@ -46618,7 +47208,7 @@
         ]
       },
       {
-        "description": "Candidatez à l'appel à projets avant fin mars 2026 en contactant la chargée de mission des pays de la Loire (écrire à [m.perrocheau@anact.fr](mailto:m.perrocheau@anact.fr))."
+        "description": "Candidatez à l'appel à projets avant fin mars 2026 en contactant la chargée de mission de l'Aract Pays de la Loire (écrire à [m.perrocheau@anact.fr](mailto:m.perrocheau@anact.fr))."
       },
       {
         "description": "Début avril, vous saurez si votre projet est retenu. S'il l'est, vous recevez les détails du programme."
@@ -46835,7 +47425,8 @@
         ]
       }
     },
-    "id": "accelerateur-des-possibles"
+    "id": "accelerateur-des-possibles",
+    "type": "tee"
   },
   {
     "titre": "Performa Adaptation",
@@ -47025,7 +47616,8 @@
         ]
       }
     },
-    "id": "performa-adaptation"
+    "id": "performa-adaptation",
+    "type": "tee"
   },
   {
     "titre": "Cap décarbonation",
@@ -47217,7 +47809,8 @@
         ]
       }
     },
-    "id": "cap-decarbonation"
+    "id": "cap-decarbonation",
+    "type": "tee"
   },
   {
     "titre": "Investissement \"Méthanisation\" en PACA",
@@ -47404,7 +47997,8 @@
         ]
       }
     },
-    "id": "investissement-methanisation-paca"
+    "id": "investissement-methanisation-paca",
+    "type": "tee"
   },
   {
     "titre": "Engins agricoles électriques",
@@ -47599,7 +48193,8 @@
         ]
       }
     },
-    "id": "e-trans"
+    "id": "e-trans",
+    "type": "tee"
   },
   {
     "titre": "Chèque Transition du Tissu Économique",
@@ -47851,7 +48446,8 @@
         ]
       }
     },
-    "id": "cheque-transition-tissu-economique"
+    "id": "cheque-transition-tissu-economique",
+    "type": "tee"
   },
   {
     "titre": "Expert Atlas",
@@ -48018,7 +48614,8 @@
         ]
       }
     },
-    "id": "expert-atlas"
+    "id": "expert-atlas",
+    "type": "tee"
   },
   {
     "titre": "Diag Accompagnement TEE RH",
@@ -48194,7 +48791,8 @@
         ]
       }
     },
-    "id": "diag-accompagnement-tee-rh"
+    "id": "diag-accompagnement-tee-rh",
+    "type": "tee"
   },
   {
     "titre": "Diagnostic RH",
@@ -48369,7 +48967,8 @@
         ]
       }
     },
-    "id": "diagnostic-rh"
+    "id": "diagnostic-rh",
+    "type": "tee"
   },
   {
     "titre": "Défi Éco 2050",
@@ -48534,13 +49133,14 @@
         ]
       }
     },
-    "id": "defi-eco-2050"
+    "id": "defi-eco-2050",
+    "type": "tee"
   },
   {
     "titre": "DEMIBaC",
     "promesse": "Financez un projet d’innovation technologique pour décarboner l’industrie",
     "description": "DEMIBac finance vos projets d’innovation de l’ensemble des procédés et technologies de décarbonation de l’industrie, notamment :\\\n• L’**efficacité énergétique des équipements et des procédés** liés à la récupération de chaleur ou de froid, au transfert de chaleur, au numérique et l’IA.\\\n• La **décarbonation de la chaleur et du mix énergétique** pour des usages industriels.\\\n• La **décarbonation des procédés**.\\\n• Le **captage, le stockage, le transport et la valorisation du CO2**.\\\n• La **réduction des autres gaz à effet de serre**.",
-    "description longue": "L'appel à projet comporte deux volets : \\\n• Le volet 1 concerne des projets pour le développement de briques technologiques\\\ninnovantes et d’actions de démonstration, dont les consortiums sont généralement\\\nconstitués par des académiques et des industriels de l’offre.\\\n• Le volet 2 cible des projets portés par des consortiums constitués d’un ou plusieurs\\\nindustriels proposant une offre de décarbonation et d’un ou plusieurs industriels côté\\\ndemande prêts à accueillir les solutions innovantes proposées sur leurs sites de\\\nproduction.",
+    "description longue": "L'appel à projet comporte deux volets :\n\n- Le volet 1 concerne des projets pour le développement de briques technologiques\\\n  innovantes et d’actions de démonstration, dont les consortiums sont généralement\\\n  constitués par des académiques et des industriels de l’offre.\n\n- Le volet 2 cible des projets portés par des consortiums constitués d’un ou plusieurs\\\n  industriels proposant une offre de décarbonation et d’un ou plusieurs industriels côté\\\n  demande prêts à accueillir les solutions innovantes proposées sur leurs sites de\\\n  production.\n\n  \\\n  Les projets inférieurs à 1,5 M€ seront redirigés vers le dispositif IBaC.",
     "début de validité": "01/07/2025",
     "fin de validité": "09/03/2027",
     "illustration": "images/TEE_ampoule.webp",
@@ -48596,7 +49196,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "Tous secteurs d'activité."
+        "Tous secteurs d'activité"
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -48615,7 +49215,8 @@
           "E",
           "F",
           "G",
-          "H"
+          "H",
+          "M"
         ]
       },
       "validity": {
@@ -48742,7 +49343,8 @@
           "code NAF niveau 1 . est E",
           "code NAF niveau 1 . est F",
           "code NAF niveau 1 . est G",
-          "code NAF niveau 1 . est H"
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est M"
         ]
       },
       "entreprise . a un objectif ciblé": {
@@ -48753,6 +49355,1391 @@
         ]
       }
     },
-    "id": "demi-bac"
+    "id": "demi-bac",
+    "type": "tee"
+  },
+  {
+    "titre": "IBaC PME",
+    "promesse": "Financez un projet de décarbonation de l'industrie porté par une PME",
+    "description": "Le dispositif IBaC PME soutient financièrement des projets d'innovation portés par des PME en vue de décarboner l'industrie, tels que :\n\n• L’**efficacité énergétique des équipements et des procédés** liés à la récupération de chaleur ou de froid, au transfert de chaleur, au numérique et l’IA.\\\n• La **décarbonation de la chaleur et du mix énergétique** pour des usages industriels.\\\n• La **décarbonation des procédés**.\\\n• Le **captage, le stockage, le transport et la valorisation du CO2**.\\\n• La **réduction des autres gaz à effet de serre**.",
+    "description longue": "Cet appel à projet permet de cofinancer des **projets de recherche, développement et innovation**, dont les coûts totaux sont **inférieurs à 1,5 M€**, et contribue à accélérer le développement et la mise sur le marché de solutions et technologies innovantes.\n\nCet appel à projets se clôture le 09/02/2027 à 15h (heure de Paris), et fait l'objet de 3 relèves intermédiaires :\n\n- le 14/10/2025 à 15h,\n\n- le 03/02/2026 à 15h,\n\n- le 15/09/2026 à 15h.\n\n  \\\n  Les projets supérieurs à 1,5 M€ seront redirigés vers le dispositif DEMIBaC.",
+    "début de validité": "01/07/2025",
+    "fin de validité": "09/02/2027",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000814",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-services-par-des-pme-pour-la-decarbonation-de-lindustrie-ibac-pme",
+    "nature de l'aide": "financement",
+    "montant du financement": "Entre 35% et 45% du montant du projet",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
+        "liens": [
+          {
+            "lien": "https://file:///Users/betagouv/Downloads/AAP%20IBaC%20PME%20-%20Cahier%20des%20charges%20France%202030%20-%202025.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-services-par-des-pme-pour-la-decarbonation-de-lindustrie-ibac-pme",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez votre projet."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Moins de 250 salariés",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Les coûts des projets soumis à ce dispositif doivent être compris entre 300 k€ et 1,5 M€."
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "M"
+        ]
+      },
+      "validity": {
+        "start": "01/07/2025",
+        "end": "09/02/2027"
+      },
+      "priorityObjectives": [
+        "energy",
+        "environmental",
+        "eco-design"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est M"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est mon impact environnemental",
+          "questionnaire . objectif prioritaire . est l'écoconception"
+        ]
+      }
+    },
+    "id": "ibac-pme",
+    "type": "tee"
+  },
+  {
+    "titre": "Économie circulaire en Outre-mer et Corse",
+    "promesse": "Financez vos projets de développement du réemploi, de la réparation, du recyclage",
+    "description": "Ce dispositif finance vos études, animations et investissements en faveur de l'économie circulaire, en Outre-Mer et en Corse. Ces projets devront s'inscrire notamment dans :\n\n- La **lutte contre le gaspillage**.\n- Le **réemploi**, la **réutilisation**, la **réparation**.\n- Le recyclage et la **valorisation matière des déchets**.\n- L’évolution des pratiques alimentaires vers une **alimentation durable**.",
+    "description longue": "L’ADEME pourra demander en amont la réalisation de tout projet d’investissement une étude de faisabilité préalable visant à analyser et argumenter la pertinence de la solution choisie, son potentiel marché, ses impacts et bénéfices attendus (économiques, environnementaux, sociaux) et à dimensionner les investissements. Le contenu de cette étude (cahier des charges) sera discuté avec la Direction Régionale de l’ADEME afin de tenir compte des spécificités territoriales.\n\nPour les projets d’investissements d’un montant supérieur à 400 000€, une évaluation environnementale (type ACV ou empreinte projet) pourra être exigée. Celle-ci doit être réalisée par un prestataire externe spécialisé et indépendant et peut être intégrée aux dépenses éligibles. L’étude doit être réalisée selon le cadre de référence méthodologique proposé par l’ADEME. Le montant de l’aide à la prestation d’évaluation environnementale est plafonné à 10 000 €.\n\nL’ADEME tiendra compte d’éventuels co-financements pour ajuster son aide, y compris des aides des éco-organismes, quelle que soit leur forme. Si le projet correspond à des flux REP, il est demandé de prendre contact avec le ou les éco-organismes agréés pour faire connaitre le projet, identifier les possibilités d’accompagnement ou d’aide financière des éco-organismes et garantir le gisement de déchets\\\nconcernés, le cas échéant via une contractualisation avec l’éco-organisme.",
+    "début de validité": "01/01/2026",
+    "fin de validité": "31/12/2026",
+    "illustration": "images/TEE_ampoule.webp",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000904",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 80% delon le projet, dans la limite de 300 000 €",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89mergence%20ECI%20OMC%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez votre projet."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Corse, Guadeloupe, Guyane, La Réunion, Martinique, Mayotte, Nouvelle-Calédonie, Polynésie française, Saint-Barthélemy, Saint-Martin, Saint-Pierre-Et-Miquelon, Terres australes et antarctiques françaises, Wallis et Futuna"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Corse",
+          "Guadeloupe",
+          "Guyane",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Nouvelle-Calédonie",
+          "Polynésie française",
+          "Saint-Barthélemy",
+          "Saint-Martin",
+          "Saint-Pierre-Et-Miquelon",
+          "Terres australes et antarctiques françaises",
+          "Wallis et Futuna"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2026",
+        "end": "31/12/2026"
+      },
+      "priorityObjectives": [
+        "waste",
+        "eco-design"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est l'écoconception"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Corse",
+          "région = Guadeloupe",
+          "région = Guyane",
+          "région = La Réunion",
+          "région = Martinique",
+          "région = Mayotte",
+          "région = Nouvelle-Calédonie",
+          "région = Polynésie française",
+          "région = Saint-Barthélemy",
+          "région = Saint-Martin",
+          "région = Saint-Pierre-Et-Miquelon",
+          "région = Terres australes et antarctiques françaises",
+          "région = Wallis et Futuna"
+        ]
+      }
+    },
+    "id": "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+    "type": "tee"
+  },
+  {
+    "titre": "Diagnostic & Accompagnement CO2i Inter Industrie",
+    "promesse": "Bénéficiez d'un accompagnement à la transition écologique et à la décarbonation",
+    "description": "Ce dispositif combine un diagnostic approfondi et un accompagnement personnalisé pour vous aider à structurer votre démarche et à identifier les leviers à la transition écologique et à la décarbonation de votre entreprise industrielle.\\\nIl vous permet de :\n\n- **Identifier les enjeux clés** de la transition écologique pour votre entreprise.\n- **Définir les impacts sur vos processus**, vos compétences et vos pratiques.\n- **Prioriser les actions** à mettre en œuvre et les **formations** à développer.",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Opco 2i",
+    "contact question": "https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/",
+    "url": "https://www.opco2i.fr/offre-de-services/oeuvrer-pour-lenvironnement/diagnostic-accompagnement-co2i/",
+    "nature de l'aide": "étude",
+    "montant du financement": "Jusqu’à 1 000 € HT/ jour pour les entreprises de 250 salariés.",
+    "objectifs": [
+      {
+        "description": "Contactez votre conseiller régional Opco 2i pour lui manifester votre intérêt pour cet accompagnement.",
+        "liens": [
+          {
+            "lien": "https://www.opco2i.fr/nous-connaitre/opco-2i-dans-votre-region/",
+            "texte": "Contacter mon conseiller"
+          }
+        ]
+      },
+      {
+        "description": "Établissez avec lui le périmètre de l'accompagnement, le calendrier et une éventuelle prise en charge.",
+        "liens": [
+          {
+            "lien": "https://www.opco2i.fr/formation-et-financement/les-regles-de-prise-en-charge/",
+            "texte": "Règles de prise en charge"
+          }
+        ]
+      },
+      {
+        "description": "Bénéficiez du diagnostic et de l'accompagnement personnalisé."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises du secteur industriel"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "M"
+        ]
+      },
+      "priorityObjectives": [
+        "building",
+        "energy",
+        "rh",
+        "environmental"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est M"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est former ou recruter",
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "diagnostic-et-accompagnement-co2i",
+    "type": "tee"
+  },
+  {
+    "titre": "Accompagnement RH",
+    "promesse": "Bénéficiez d'un accompagnement RH sur mesure à la transition écologique",
+    "description": "Faites-vous accompagner par un cabinet RH pour analyser vos besoins sur la transition écologique et mettre en place un plan d’action. Cet accompagnement sur 6 à 9 mois vous permet de :\n\n- Élaborer un **plan d’action adapté** à votre établissement.\n\n- Obtenir des **outils sur-mesure.**\n\n- Mobiliser vos équipes autour d’un **projet fédérateur**.\n\n- Pouvoir **mesurer l’impact** de ces actions terrain.",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "Opco Santé",
+    "contact question": "https://www.opco-sante.fr/contact/",
+    "url": "https://www.opco-sante.fr/employeur/notre-offres-de-services/on-enrichit-nos-pratiques-rh/accompagnement-rh-sur-mesure/",
+    "nature de l'aide": "étude",
+    "montant du financement": "Variable",
+    "objectifs": [
+      {
+        "description": "Réalisez un diagnostic pour vous vérifier que l'Accompagnement RH est adapté à vos attentes et vos besoins.",
+        "liens": [
+          {
+            "lien": "https://www.opco-sante.fr/employeur/notre-offres-de-services/on-parle-ecologie/",
+            "texte": "Réaliser le diagnostic"
+          }
+        ]
+      },
+      {
+        "description": "Contactez votre conseiller Opco Santé pour pour exprimer votre intérêt pour l'accompagnement.",
+        "liens": [
+          {
+            "lien": "https://www.opco-sante.fr/contact/",
+            "texte": "Contacter mon conseiller"
+          }
+        ]
+      },
+      {
+        "description": "Définissez avec l’expert le périmètre du dispositif, la méthode et le calendrier."
+      },
+      {
+        "description": "Bénéficiez de l'Accompagnement RH."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises des secteurs sanitaire, social et médico-social privé à but non lucratif, des services de prévention et de santé au travail, de l'hospitalisation privée et du thermalisme"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "I",
+          "Q"
+        ]
+      },
+      "priorityObjectives": [
+        "rh",
+        "environmental"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est Q"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter",
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "accompagnement-rh",
+    "type": "tee"
+  },
+  {
+    "titre": "Plan de développement des compétences",
+    "promesse": "Bénéficiez d'un financement pour une formation à la transition écologique",
+    "description": "Vous avez identifié une formation à la transition écologique parfaitement adaptée à votre structure ? Recevez un **financement sur mesure** grâce à l'Opco Uniformation.\n\nContactez votre conseiller pour en discuter avec lui et trouver une solution adéquate.",
+    "fin de validité": "31/12/2026",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "Opco Uniformation",
+    "contact question": "https://www.uniformation.fr/nous-contacter",
+    "url": "https://www.uniformation.fr/entreprise/formation/dispositifs-de-formation/plan-de-developpement-des-competences/financement",
+    "nature de l'aide": "étude",
+    "montant du financement": "Variable",
+    "objectifs": [
+      {
+        "description": "Créez un compte sur l'Opco Uniformation. ",
+        "liens": [
+          {
+            "lien": "https://www.uniformation.fr/entreprise/nous-rejoindre-vos-contributions/nous-rejoindre",
+            "texte": "Rejoindre Uniformation"
+          }
+        ]
+      },
+      {
+        "description": "Connectez-vous à votre compte et visualisez les conditions de financement adaptés à votre situation.",
+        "liens": [
+          {
+            "lien": "https://www.uniformation.fr/entreprise/formation/dispositifs-de-formation/plan-de-developpement-des-competences/financement",
+            "texte": "Conditions de financement"
+          }
+        ]
+      },
+      {
+        "description": "Manifestez votre intérêt pour le Plan de développement des compétences auprès de votre conseiller régional. ",
+        "liens": [
+          {
+            "lien": "https://www.uniformation.fr/nous-contacter",
+            "texte": "Contacter mon conseiller régional"
+          }
+        ]
+      },
+      {
+        "description": "Recevez les modalités de financement et inscrivez-vous à la formation de votre choix."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises des secteurs du champ social, des services aux personnes, de l'insertion, de l'enseignement et de la formation"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "L",
+          "N",
+          "Q",
+          "S"
+        ]
+      },
+      "validity": {
+        "end": "31/12/2026"
+      },
+      "priorityObjectives": [
+        "rh"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est S"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter"
+        ]
+      }
+    },
+    "id": "plan-de-developpement-des-competences",
+    "type": "tee"
+  },
+  {
+    "titre": "Autodiagnostic RSE",
+    "promesse": "Faites un autodiagnostic en ligne et bénéficiez de conseils pour accélérer votre transition écologique",
+    "description": "Cet autodiagnostic constitue une porte d'entrée vers les services de l'Opco Afdas. Grâce à lui, vous évaluez en quelques minutes la maturité de votre structure en matière de transition écologique. Une fois l'autodiagnostic, vous êtes à même de :\n\n- Identifier les **impacts environnementaux** de vos actions.\n- Entamer une **démarche de responsabilisation.**\n- Obtenir **un plan d’actions personnalisé** en lien avec les offres de services Afdas.\n- Accéder à un **centre de partage de bonnes pratiques.**",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Opco AFDAS",
+    "contact question": "https://www.afdas.com/en-region.html",
+    "url": "https://autodiagnostic-rse.afdas.com/",
+    "nature de l'aide": "étude",
+    "montant du financement": "Gratuite",
+    "objectifs": [
+      {
+        "description": "Inscrivez-vous sur le site de l'Afdas.",
+        "liens": [
+          {
+            "lien": "https://autodiagnostic-rse.afdas.com/inscription",
+            "texte": "M'inscrire"
+          }
+        ]
+      },
+      {
+        "description": "Démarrez l'Autodiagnostic RSE."
+      },
+      {
+        "description": "Entretenez-vous avec un conseiller de l'Afdas et bénéficiez d'appui et de conseils pour élaborer un plan d'action."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises des secteurs de la culture, des industries créatives, des médias, de la communication, des télécommunications, du sport, du tourisme, des loisirs et du divertissement"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "I",
+          "J",
+          "R",
+          "S"
+        ]
+      },
+      "priorityObjectives": [
+        "rh",
+        "environmental"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter",
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "autodiagnostic-rse",
+    "type": "tee"
+  },
+  {
+    "titre": "M-Diagnostic et Accompagnement",
+    "promesse": "Bénéficiez d'un accompagnement RH à la transition écologique",
+    "description": "Ce dispositif combine un diagnostic réalisé avec un consultant, ainsi qu'un accompagnement à la mise en place d'un plan d'action pour vous aider à structurer une démarche de transition écologique au sein de vos équipes. Ainsi, vous :\n\n- Dressez un **état des lieux de vos besoins**.\n- Définissez **les actions, outils ou services** pour améliorer les compétences de vos équipes.\n- Établissez **un suivi et un bilan** de la démarche.",
+    "début de validité": "01/03/2026",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Opco Mobilités",
+    "contact question": "https://www.opcomobilites.fr/votre-delegation-regionale",
+    "url": "https://www.opcomobilites.fr/entreprise/anticiper-mes-besoins-en-emploi-et-competences-1",
+    "nature de l'aide": "étude",
+    "montant du financement": "Accompagnement gratuit pour les entreprises de moins de 50 salariés",
+    "objectifs": [
+      {
+        "description": "Réalisez, si vous le souhaitez, l'autodiagnostic en ligne afin de vous préparer au mieux.",
+        "liens": [
+          {
+            "lien": "https://www.autodiag-entreprises.com/authentification",
+            "texte": "Autodiagnostic en ligne"
+          }
+        ]
+      },
+      {
+        "description": "Contactez votre conseiller régional Opco Mobilités pour lui manifester votre intérêt pour cet accompagnement.",
+        "liens": [
+          {
+            "lien": "https://www.opcomobilites.fr/votre-delegation-regionale",
+            "texte": "Contacter mon conseiller"
+          }
+        ]
+      },
+      {
+        "description": "Établissez avec lui le périmètre de l'accompagnement ainsi que le calendrier, et bénéficiez de l'accompagnement."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises des secteurs de l'automobile, de la logistique, des services et transports."
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "G",
+          "H",
+          "S"
+        ]
+      },
+      "validity": {
+        "start": "01/03/2026"
+      },
+      "priorityObjectives": [
+        "rh"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "dispositif . début de validité <= date du jour",
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est S"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est former ou recruter"
+        ]
+      }
+    },
+    "id": "m-diagnostic-accompagnement",
+    "type": "tee"
   }
 ]

@@ -134,6 +134,7 @@ export type Dispositif = {
     | "Constructys"
     | "Atlas"
     | "Opco AFDAS"
+    | "Opco Akto"
     | "Opco Ocapiat"
     | "Opco 2i"
     | "Opco EP"
@@ -242,6 +243,10 @@ export type Dispositif = {
     "toutes ces conditions"?: string[];
     [k: string]: unknown;
   }[];
+  /**
+   * Type du programme : programme interne TEE ou programme externe (ADEME)
+   */
+  type?: "tee" | "ext-ademe";
 } & (
   | {
       "nature de l'aide"?: "formation";
@@ -313,6 +318,7 @@ export type Operators =
   | "Constructys"
   | "Atlas"
   | "Opco AFDAS"
+  | "Opco Akto"
   | "Opco Ocapiat"
   | "Opco 2i"
   | "Opco EP"

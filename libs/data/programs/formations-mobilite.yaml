@@ -15,7 +15,7 @@ description: >-
   - etc.
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Opco Mobilités
-contact question: formulaire
+contact question: https://www.opcomobilites.fr/votre-delegation-regionale
 url: https://www.opcomobilites.fr/
 nature de l'aide: formation
 coût de l'accompagnement: Variable
@@ -23,11 +23,11 @@ durée de l'accompagnement: Variable selon la formation choisie
 activable en autonomie: oui
 objectifs:
   - description: >-
-      Rendez-vous sur le catalogue de formations de l'Opco Mobilités et trouvez
-      la formation et la session qui vous convient.
+      Rendez-vous sur le catalogue M-Campus et trouvez la formation et la
+      session qui vous convient.
     liens:
       - lien: https://mcampus.opcomobilites.fr/
-        texte: Catalogue de formations
+        texte: Catalogue de formations M-Campus
   - description: >-
       Créez un compte sur le site de l'Opco Mobilités et inscrivez-vous à la
       session de votre choix.
@@ -52,7 +52,7 @@ conditions d'éligibilité:
   secteur d'activité:
     - >-
       Entreprises des secteurs de l'automobile, de la logistique, des services
-      et transports
+      et transports.
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:

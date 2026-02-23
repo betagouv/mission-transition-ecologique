@@ -25,7 +25,7 @@
             </h4>
             <ul class="fr-pl-4w fr-mt-1v">
               <li
-                v-for="(value, i) in programEligibility[field]"
+                v-for="(value, i) in programEligibility?.[field]"
                 :key="`elegibility-field-${idx}-value-${i}`"
                 class="fr-mb-0"
                 v-html="Marked.toHtml(value)"
@@ -39,10 +39,13 @@
 </template>
 
 <script setup lang="ts">
+import AbstractProgram from '@/tools/program/abstractProgram'
 import { computed } from 'vue'
-import { ProgramTypeForFront } from '@/types'
+import type { ProgramTypeForFront } from '@tee/data'
 import { Marked } from '@/tools/marked'
 import Translation from '@/tools/translation'
+
+const program = AbstractProgram.getCurrent()
 
 type EligibilityCategory = keyof ProgramTypeForFront["conditions d'éligibilité"]
 
@@ -70,16 +73,11 @@ const splitInTwo = (fields: EligibilityCategory[]): [EligibilityCategory[], Elig
 }
 
 const getFieldsForColumn = (columnNumber: number): EligibilityCategory[] => {
-  const columns = splitInTwo(order.filter((field) => !!programEligibility.value[field]))
+  const columns = splitInTwo(order.filter((field) => !!programEligibility.value?.[field as keyof typeof programEligibility.value]))
   return columns[columnNumber - 1]
 }
 
-interface Props {
-  program: ProgramTypeForFront
-}
-const props = defineProps<Props>()
-
 const programEligibility = computed(() => {
-  return props.program["conditions d'éligibilité"]
+  return program.value?.["conditions d'éligibilité"]
 })
 </script>

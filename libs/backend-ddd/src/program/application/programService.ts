@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import { ProgramType, ProgramTypeWithEligibility } from '@tee/data'
+import { AbstractProgramType, AbstractProgramTypeForFront, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { ProgramEligibilityEvaluator } from '../domain/programEligibilityEvaluator'
 import ProgramFeatures from '../domain/programFeatures'
 import ProgramsJson from '../infrastructure/programsJson'
@@ -42,12 +42,12 @@ export class ProgramService {
     return this.program.getOneById(id)
   }
 
-  public getOneWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility, Error> {
-    return this.program.getOneByIdWithMaybeEligibility(id, questionnaireData)
+  public getOneWithMaybeEligibility(id: string, questionnaireData: QuestionnaireData): Result<AbstractProgramTypeForFront, Error> {
+    return this.program.getOneWithMaybeEligibilityForFront(id, questionnaireData)
   }
 
-  public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<ProgramTypeWithEligibility[], Error> {
-    return this.program.getFilteredBy(questionnaireData)
+  public getFilteredPrograms(questionnaireData: QuestionnaireData): Result<AbstractProgramTypeForFront[], Error> {
+    return this.program.getFilteredProgramsForFront(questionnaireData)
   }
 
   public convertDomainToFront(program: ProgramTypeWithEligibility) {
@@ -56,5 +56,17 @@ export class ProgramService {
 
   public getAll(): ProgramType[] {
     return this.program.getAll()
+  }
+
+  public getExternal(): Result<AbstractProgramType[], Error> {
+    return Result.ok(this.program.getExternals())
+  }
+
+  public getExternalById(id: string): Result<AbstractProgramType, Error> {
+    const externalProgram = this.program.getExternalById(id)
+    if (!externalProgram) {
+      return Result.err(new Error('External program not found'))
+    }
+    return Result.ok(externalProgram)
   }
 }

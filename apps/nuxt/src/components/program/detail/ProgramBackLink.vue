@@ -17,14 +17,13 @@
 </template>
 <script setup lang="ts">
 import Navigation from '@/tools/navigation'
-import Program from '@/tools/program/program'
+import AbstractProgram from '@/tools/program/abstractProgram'
 import Translation from '@/tools/translation'
 
-const { currentProgram } = storeToRefs(useProgramStore())
 const { currentProject } = storeToRefs(useProjectStore())
 const navigation = new Navigation()
 
-const backLink = Program.getBackLink(currentProgram.value, currentProject.value)
+const backLink = AbstractProgram.getBackLink(AbstractProgram.getCurrent().value, currentProject.value)
 
 const isCatalogDetail = navigation.isCatalogProgramDetail()
 </script>

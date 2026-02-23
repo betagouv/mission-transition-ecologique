@@ -1,0 +1,62 @@
+titre: Autodiagnostic RSE
+promesse: >-
+  Faites un autodiagnostic en ligne et bénéficiez de conseils pour accélérer
+  votre transition écologique
+description: >-
+  Cet autodiagnostic constitue une porte d'entrée vers les services de l'Opco
+  Afdas. Grâce à lui, vous évaluez en quelques minutes la maturité de votre
+  structure en matière de transition écologique. Une fois l'autodiagnostic, vous
+  êtes à même de :
+
+
+  - Identifier les **impacts environnementaux** de vos actions.
+
+  - Entamer une **démarche de responsabilisation.**
+
+  - Obtenir **un plan d’actions personnalisé** en lien avec les offres de
+  services Afdas.
+
+  - Accéder à un **centre de partage de bonnes pratiques.**
+illustration: images/TEE_eolienne.webp
+opérateur de contact: Opco AFDAS
+contact question: https://www.afdas.com/en-region.html
+url: https://autodiagnostic-rse.afdas.com/
+nature de l'aide: étude
+montant du financement: Gratuite
+objectifs:
+  - description: Inscrivez-vous sur le site de l'Afdas.
+    liens:
+      - lien: https://autodiagnostic-rse.afdas.com/inscription
+        texte: M'inscrire
+  - description: Démarrez l'Autodiagnostic RSE.
+  - description: >-
+      Entretenez-vous avec un conseiller de l'Afdas et bénéficiez d'appui et de
+      conseils pour élaborer un plan d'action.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises des secteurs de la culture, des industries créatives, des
+      médias, de la communication, des télécommunications, du sport, du
+      tourisme, des loisirs et du divertissement
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental

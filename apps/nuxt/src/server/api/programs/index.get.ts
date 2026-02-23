@@ -22,7 +22,7 @@ const getPrograms = (questionnaireData: QuestionnaireData) => {
     })
   }
 
-  return programsResult.value.map((program) => programService.convertDomainToFront(program))
+  return programsResult.value
 }
 
 const _getProgramsCached = cachedFunction(

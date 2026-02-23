@@ -64,8 +64,18 @@ export type ProgramStaticBaseType = Omit<ProgramWithoutId, 'opérateur de contac
   'autres opérateurs': string[]
   id: string
   eligibilityData: EligibilityData
+  type: ProgramTypes
+}
+
+export enum ProgramTypes {
+  extAdeme = 'ext-ademe',
+  TEE = 'tee'
 }
 
 export type ProgramJsonBaseType = ProgramStaticBaseType & Record<string, unknown> // Record string unknown to allow appending the interface
 
-export type ProgramYamlType = Omit<ProgramStaticBaseType, 'id' | 'eligibilityData'>
+export type ProgramYamlType = Omit<ProgramStaticBaseType, 'id' | 'eligibilityData' | 'type'>
+
+export type AbstractProgramType = Partial<ProgramStaticBaseType> & Required<Pick<ProgramStaticBaseType, 'id' | 'type'>>
+
+export type AbstractProgramTypeForFront = Partial<ProgramTypeForFront> & Required<Pick<ProgramTypeForFront, 'id' | 'type'>>
