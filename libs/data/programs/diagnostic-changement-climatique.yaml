@@ -4,18 +4,25 @@ promesse: >-
   climatique
 description: >-
   Le changement climatique expose progressivement votre entreprise à de
-  nouvelles vulnérabilités. Cet accompagnement permet d’en comprendre les enjeux
-  concrets pour votre activité.\
+  nouvelles vulnérabilités. Cet accompagnement vous aide :
 
-  À partir d’une analyse des aléas passés et des projections à venir, vous
-  identifiez les impacts directs et indirects sur votre entreprise, qu’ils
-  soient économiques, sociaux ou organisationnels. Vous pouvez également repérer
-  des opportunités d’évolution pour vos produits, services ou modes de
-  fonctionnement. \
 
-  L’accompagnement vous guide dans l’élaboration d’un plan d’adaptation sur
-  mesure, en lien avec les spécificités de votre territoire et de votre secteur.
-illustration: images/TEE_ampoule.png
+  - **à comprendre les enjeux concrets du dérèglement climatique** pour votre
+  activité, à court et moyen terme ;
+
+  - **à analyser les aléas climatiques passés et les projections futures**, en
+  lien avec votre territoire ;
+
+  - **à identifier les impacts directs et indirects** sur votre entreprise
+  (économiques, sociaux, organisationnels) ;
+
+  - **à repérer des opportunités d’adaptation**, pour faire évoluer vos
+  produits, services ou modes de fonctionnement.
+
+
+  Vous êtes ensuite accompagné dans l’**élaboration d’un plan d’adaptation sur
+  mesure**, adapté à votre secteur et à votre environnement local.
+illustration: images/TEE_ampoule.webp
 opérateur de contact: Chambre de Commerce et de l'Industrie
 autres opérateurs:
   - ADEME
@@ -24,14 +31,16 @@ nature de l'aide: étude
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 3 jours
 objectifs:
-  - description: primez votre intérêt en contactant un conseiller via le formulaire.
+  - description: Exprimez votre intérêt en contactant un conseiller via le formulaire.
     liens:
       - formulaire: true
-  - description: ' conseiller vous rappelle pour répondre à vos questions et vous guider dans la constitution de votre demande.'
   - description: >-
-      finissez avec l’expert le périmètre du diagnostic, la méthode et le
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
+  - description: >-
+      Définissez avec l’expert le périmètre du diagnostic, la méthode et le
       calendrier.
-  - description: ncez le diagnostic avec l'expert proposé par votre CCI.
+  - description: Lancez le diagnostic avec l'expert proposé par votre CCI.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 250 salariés

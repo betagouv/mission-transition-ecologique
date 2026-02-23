@@ -4,37 +4,38 @@ promesse: >-
   énergétique et environnementale 
 description: >-
   Vous souhaitez contribuer à la transition écologique à travers un projet de
-  recherche, de développement ou d’innovation (RDI) ? L’ADEME peut cofinancer
-  votre projet s’il vise à faire progresser les connaissances ou les solutions
-  techniques dans des domaines clés comme le changement climatique, la
-  bioéconomie, l’économie circulaire, la préservation des sols, l’efficacité
-  énergétique, les énergies renouvelables ou la qualité de l’air. \
+  recherche, développement ou innovation (RDI) ? L’ADEME peut **cofinancer votre
+  projet s’il vise à faire progresser les connaissances ou les solutions
+  techniques dans des domaines clés**, tels que :
 
-  L’aide concerne aussi bien les phases de recherche amont que les étapes de
-  développement ou d’expérimentation. \
 
-  L’objectif est de soutenir les entreprises qui s’engagent dans des projets à
-  fort impact environnemental, susceptibles de déboucher sur des solutions
-  concrètes, reproductibles ou transférables à d'autres acteurs.
+  -  le changement climatique, la bioéconomie, l’économie circulaire, la
+  préservation des sols,
+
+  -  l’efficacité énergétique, les énergies renouvelables et la qualité de
+  l’air.
+
+
+  L’aide couvre aussi bien l**a recherche amont que le développement ou
+  l’expérimentation.** L’objectif est de soutenir les entreprises engagées dans
+  des projets à fort impact environnemental, pouvant déboucher sur des solutions
+  concrètes, reproductibles et transférables à d’autres acteurs.
 description longue: >-
   L'ADEME renforce son soutien aux recherches permettant :
 
-  • de mieux comprendre les conditions nécessaires aux transformations
-  contribuant à la
 
-  transition écologique tout en tenant compte de l’imbrication des échelles
-  spatiales,
-
-  géographiques et temporelles,
-
-  • d’anticiper les conditions de déploiement des solutions/technologies pour en
+  - de mieux comprendre les conditions nécessaires aux transformations
+  contribuant à la\
+    transition écologique tout en tenant compte de l’imbrication des échelles spatiales,\
+    géographiques et temporelles,
+  - d’anticiper les conditions de déploiement des solutions/technologies pour en
   préparer les déploiements à grande échelle,
 
-  • de s’appuyer sur des transformations en cours dans la société et les
+  - de s’appuyer sur des transformations en cours dans la société et les
   territoires.
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
 contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000756
 url: >-
@@ -43,11 +44,11 @@ nature de l'aide: étude
 montant du financement: Selon projet
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/RDI%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
+          https://agirpourlatransition.ademe.fr/sites/default/files/RDI%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
         texte: Conditions éligibilité et financement
   - description: >-
       Vérifier l’éligibilité de votre projet : pour bénéficier de cette aide à
@@ -59,7 +60,7 @@ objectifs:
         texte: Voir la liste des appels à projets (RDI)
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du

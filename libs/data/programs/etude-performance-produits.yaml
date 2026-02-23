@@ -1,39 +1,45 @@
 titre: Étude "Éco-conception"
 promesse: 'Évaluez la performance environnementale de vos produits, procédés et services '
 description: >-
-  Votre entreprise souhaite concevoir un produit ou un service avec un impact
-  environnemental réduit sur l’ensemble de son cycle de vie ? L’ADEME peut
-  financer une étude d’éco-conception pour aller au-delà du simple diagnostic et
-  structurer une démarche d’amélioration sur toute la chaîne de valeur. Cette
-  étude permet d’identifier les leviers de réduction des impacts
-  environnementaux à chaque étape du cycle de vie (matières premières,
-  fabrication, distribution, usage, fin de vie) et d’intégrer ces enjeux dans la
-  conception même de vos produits ou services. Elle peut aussi inclure l’analyse
-  des compromis techniques, économiques et environnementaux pour vous guider
-  vers des choix durables et différenciants.
+  Vous souhaitez concevoir un produit ou service à faible impact environnemental
+  ? L’ADEME peut financer une **étude d’éco-conception** pour structurer une
+  démarche d’amélioration sur l’ensemble du cycle de vie.
+
+
+  Cette étude permet de :\
+
+  – **identifier les leviers de réduction des impacts** à chaque étape (matières
+  premières, fabrication, usage, fin de vie),\
+
+  – **intégrer les enjeux environnementaux dès la conception**, en tenant compte
+  des compromis techniques, économiques et écologiques.
+
+
+  Elle vous aide à faire des choix durables, différenciants et adaptés à votre
+  activité.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
-illustration: images/TEE_eolienne.png
+fin de validité: 31/12/2026
+illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000725
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000901
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-decoconception-produits-services
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-decoconception-des-produits-et-des-services
 nature de l'aide: étude
-montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 150 000 €
+montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20%C3%A9coconception%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20%C3%89coconception%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener cette étude
       et obtenez un devis.
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du
@@ -58,7 +64,8 @@ conditions d'éligibilité:
       Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
       Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine,
       Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française,
-      Provence-Alpes-Côte d'Azur
+      Provence-Alpes-Côte d'Azur, Saint-Barthélemy, Saint-Martin,
+      Saint-Pierre-Et-Miquelon
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -128,3 +135,6 @@ publicodes:
       - région = Pays de la Loire
       - région = Polynésie française
       - région = Provence-Alpes-Côte d'Azur
+      - région = Saint-Barthélemy
+      - région = Saint-Martin
+      - région = Saint-Pierre-Et-Miquelon

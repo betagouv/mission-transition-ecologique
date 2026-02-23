@@ -137,10 +137,13 @@ def generate_company_id(raw_company_data):
         return None
 
     parsed_data = json.loads(raw_company_data)
+    if not parsed_data or not isinstance(parsed_data, dict):
+        return None
+
     combined_data = (
-        parsed_data.get("codeNAF", "")
-        + parsed_data.get("codePostal", "")
-        + parsed_data.get("structure_size", "")
+        (parsed_data.get("codeNAF") or "")
+        + (parsed_data.get("codePostal") or "")
+        + (parsed_data.get("structure_size") or "")
     )
     hash_object = hashlib.sha256(combined_data.encode())
     return hash_object.hexdigest()

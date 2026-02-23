@@ -25,7 +25,11 @@
       "files": ["*.ts", "*.tsx", "*.mts"],
       "extends": ["plugin:@nx/typescript"],
       "rules": {
-        "@typescript-eslint/no-unused-vars": "off"
+        "@typescript-eslint/no-unused-vars": "off",
+        "curly": [
+          "error",
+          "all"
+        ]
       }
     },
     {
@@ -54,7 +58,22 @@
         "format": ["PascalCase"],
         "leadingUnderscore": "forbid",
         "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": "memberLike",
+        "modifiers": [
+          "private"
+        ],
+        "format": [
+          "camelCase",
+          "UPPER_CASE"
+        ],
+        "leadingUnderscore": "require"
       }
+    ],
+    "curly": [
+      "error",
+      "all"
     ]
   }
 }

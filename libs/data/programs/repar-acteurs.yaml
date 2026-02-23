@@ -3,13 +3,13 @@ promesse: >-
   Rejoignez un réseau de professionnels de la réparation, devenez artisan
   Répar’acteurs !
 description: >-
-  Vous êtes artisan de la réparation ou du dépannage ? Intégrez le réseau
-  national des Répar’acteurs pour promouvoir votre savoir-faire et renforcer
+  Vous êtes artisan de la réparation ou du dépannage ? Intégrez le **réseau
+  national des Répar’acteurs** pour promouvoir votre savoir-faire et renforcer
   votre visibilité auprès des clients engagés dans une consommation plus
   responsable.
 
 
-  - Bénéficiez d’une inscription sur l’annuaire national des Répar’acteurs
+  - Bénéficiez d’une inscription sur **l’annuaire national des Répar’acteurs**
   consulté par les particuliers.
 
 
@@ -31,14 +31,15 @@ description longue: >-
   entreprises (RNE) sont éligibles à la marque répar’acteurs.
 
 
-  Pour être éligible, votre entreprise doit remplir l'une de ces conditions  : 
+  Pour être éligible, votre entreprise doit remplir l'une de ces conditions :
 
-  • Détenir la qualité Artisan ou le titre de Maître Artisan, 
 
-  • Ou bénéficier d'un diplôme ou un titre certifié dans l’activité de
+  - Détenir la qualité Artisan ou le titre de Maître Artisan,
+
+  - Ou bénéficier d'un diplôme ou un titre certifié dans l’activité de
   réparation,
 
-  • Ou exercer depuis 3 années d’expérience professionnelle. 
+  - Ou exercer depuis 3 années d’expérience professionnelle.
 
 
   Les activités éligibles à la marque répar’acteurs sont toutes celles
@@ -50,7 +51,7 @@ description longue: >-
   bâtiment (plomberie, électricité, chauffage, menuiserie, etc), les activités
   du bâtiment (portails, volets roulants, portes) et les réparations des objets
   exclusivement professionnels.
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_ampoule.webp
 opérateur de contact: Chambre des Métiers et de l'Artisanat
 contact question: formulaire
 url: https://www.artisanat.fr/nous-connaitre/vous-accompagner/reparacteurs

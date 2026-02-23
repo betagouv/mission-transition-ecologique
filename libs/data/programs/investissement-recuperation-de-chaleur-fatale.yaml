@@ -1,9 +1,11 @@
 titre: Investissement "Récupération de chaleur fatale"
 promesse: Financez votre installation de récupération de chaleur fatale
 description: >-
-  Vous disposez d’une étude pour votre projet d'installation de récupération de
-  chaleur fatale ? Vous souhaitez investir pour le mettre en œuvre ? L’ADEME
-  peut accompagner financièrement la réalisation de votre installation.
+  Vous disposez d’une étude pour votre projet d'**installation de récupération
+  de chaleur fatale** ? Vous souhaitez investir pour le mettre en œuvre ? 
+
+
+  L’ADEME peut accompagner financièrement la réalisation de votre installation.
 description longue: >-
   Les investissements éligibles sont :
 
@@ -28,25 +30,25 @@ description longue: >-
   Pour être éligibles, les projets doivent valoriser une quantité d’énergie
   thermique supérieure à 1 GWh/an.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
-illustration: images/TEE_eolienne.png
+fin de validité: 31/12/2026
+illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
 contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/realisation-dinstallations-recuperation-chaleur-fatale
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-recuperation-de-chaleur-fatale
 nature de l'aide: financement
 montant du financement: Aide calculée au cas par cas
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9cup%C3%A9ration%20de%20chaleur%20fatale%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/R%C3%A9cup%C3%A9ration%20chaleur%20fatale%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du

@@ -40,7 +40,7 @@
         :tab-id="titles[1].tabId"
       >
         <ResultProgramList
-          :filtered-programs="filteredPrograms"
+          :filtered-programs="programsByFilters"
           :has-error="hasErrorPrograms"
         />
       </DsfrTabContent>
@@ -64,7 +64,7 @@ import { Theme } from '@/tools/theme'
 const navigationStore = useNavigationStore()
 const programStore = useProgramStore()
 const { projects, hasError: hasErrorProjects } = storeToRefs(useProjectStore())
-const { programs, hasError: hasErrorPrograms } = storeToRefs(programStore)
+const { hasError: hasErrorPrograms, programsByFilters } = storeToRefs(programStore)
 const { tabSelectedOnList } = storeToRefs(navigationStore)
 
 onNuxtReady(async () => {
@@ -85,9 +85,6 @@ const titles: TeeDsfrTabsProps['tabTitles'] = [
   }
 ]
 
-const filteredPrograms = computed(() => {
-  return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
-})
 const filteredProjects = computed(() => {
   return ProjectFilter.getProjectsByTheme(projects.value, Theme.getThemeFromSelectedOrPriorityTheme().value)
 })

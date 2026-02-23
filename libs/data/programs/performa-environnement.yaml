@@ -5,25 +5,26 @@ promesse: >-
 description: >-
   Améliorez la performance environnementale de votre entreprise artisanale grâce
   à un diagnostic complet réalisé par un conseiller de la Chambre de Métiers et
-  de l’Artisanat. Cet état des lieux à 360° permet d’identifier vos principaux
-  postes de consommation et de dégager des pistes d’économies concrètes.
+  de l’Artisanat. Cet **état des lieux à 360°** permet d’identifier vos
+  principaux postes de consommation et de dégager des pistes d’économies
+  concrètes.
 
 
-  - Analyse de votre activité sous plusieurs angles : énergie, isolation, eau,
-  déchets, matières premières, achats, mobilité…
+  - **Analyse de votre activité** sous plusieurs angles : énergie, isolation,
+  eau, déchets, matières premières, achats, mobilité…
 
 
-  - Remise d’un plan d’action personnalisé pour réduire vos impacts et optimiser
-  vos dépenses.
+  - **Remise d’un plan d’action personnalisé** pour réduire vos impacts et
+  optimiser vos dépenses.
 
 
-  - Possibilité de valoriser votre démarche par un label environnemental
-  reconnu.
+  - Possibilité de valoriser votre démarche par un **label environnemental
+  reconnu.**
 
 
-  - Appui dans l’identification des aides disponibles (investissements, études,
-  formations) et accompagnement au montage des demandes de financement.
-illustration: images/TEE_energie_verte.png
+  - Appui dans l’**identification des aides disponibles** (investissements,
+  études, formations) et accompagnement au montage des demandes de financement.
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: Chambre des Métiers et de l'Artisanat
 contact question: formulaire
 url: >-
@@ -49,7 +50,13 @@ conditions d'éligibilité:
     - Moins de 250 salariés
     - Éligible aux micro-entreprises
   secteur géographique:
-    - France et territoires d'outre-mer
+    - >-
+      Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
+      Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
+      Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine,
+      Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française,
+      Provence-Alpes-Côte d'Azur, Saint-Barthélemy, Saint-Martin,
+      Saint-Pierre-Et-Miquelon
   secteur d'activité:
     - Artisan
   nombre d'années d'activité:
@@ -65,13 +72,13 @@ publicodes:
   entreprise . est éligible:
     toutes ces conditions:
       - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
       - effectif <= 249
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est C
-      - code NAF niveau 1 . est D
       - code NAF niveau 1 . est E
       - code NAF niveau 1 . est F
       - code NAF niveau 1 . est G
@@ -83,6 +90,30 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est mon impact environnemental
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Auvergne-Rhône-Alpes
+      - région = Bourgogne-Franche-Comté
+      - région = Bretagne
+      - région = Centre-Val de Loire
+      - région = Grand Est
+      - région = Guadeloupe
+      - région = Guyane
+      - région = Hauts-de-France
+      - région = Île-de-France
+      - région = La Réunion
+      - région = Martinique
+      - région = Mayotte
+      - région = Normandie
+      - région = Nouvelle-Aquitaine
+      - région = Nouvelle-Calédonie
+      - région = Occitanie
+      - région = Pays de la Loire
+      - région = Polynésie française
+      - région = Provence-Alpes-Côte d'Azur
+      - région = Saint-Barthélemy
+      - région = Saint-Martin
+      - région = Saint-Pierre-Et-Miquelon
 champs conditionnels:
   - une de ces conditions:
       - région = Auvergne-Rhône-Alpes

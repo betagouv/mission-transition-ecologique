@@ -4,7 +4,8 @@ import ProjectApi from '@/tools/api/projectApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
-import { type ProjectType, QuestionnaireData } from '@/types'
+import { QuestionnaireData } from '@/tools/questionnaire/questionnaireData'
+import { type ProjectType, QuestionnaireData as QuestionnaireDataType } from '@/types'
 
 export class ProjectManager {
   _useProject = useProjectStore()
@@ -15,6 +16,8 @@ export class ProjectManager {
   withCompanyData() {
     if (new Navigation().isCatalogProjects()) {
       return CompanyData.isCompanySelected()
+    } else if (new Navigation().isSitemapPage()) {
+      return false
     }
 
     return this._companyDateStore.isDataFull
@@ -22,8 +25,8 @@ export class ProjectManager {
 
   async getProjects() {
     this._useNavigation.hasSpinner = true
-    const questionnaireData = useUsedTrackStore().getQuestionnaireData()
-    const resultApi = await this._getProjectsFromApi(this.withCompanyData() ? (questionnaireData as QuestionnaireData) : {})
+    const questionnaireData = QuestionnaireData.get()
+    const resultApi = await this._getProjectsFromApi(this.withCompanyData() ? (questionnaireData as QuestionnaireDataType) : {})
     if (resultApi.isOk()) {
       this._useProject.projects = resultApi.data
       this._useProject.hasProjects = true
@@ -69,7 +72,9 @@ export class ProjectManager {
       navigation.isProgramDetail() ||
       navigation.isQuestionnaireThemeCards() ||
       navigation.isHomepage() ||
-      navigation.isCatalogProjects()
+      navigation.isCatalogProjects() ||
+      navigation.isAboutPage() ||
+      navigation.isProjectDetail()
     ) {
       await this.getProjects()
     } else {
@@ -77,7 +82,7 @@ export class ProjectManager {
     }
   }
 
-  private async _getProjectsFromApi(questionnaireData: QuestionnaireData = {}): Promise<ResultApi<ProjectType[]>> {
+  private async _getProjectsFromApi(questionnaireData: QuestionnaireDataType = {}): Promise<ResultApi<ProjectType[]>> {
     return await new ProjectApi(questionnaireData).get()
   }
 

@@ -1,15 +1,15 @@
 <template>
   <div>
-    <TeeDsfrBreadcrumb :links="[{ text: 'Budget', to: RouteName.Budget }]" />
+    <TeeDsfrBreadcrumb :links="[{ text: 'Budget', to: { name: RouteName.Budget } }]" />
     <div class="fr-container fr-mb-8w">
       <div class="fr-mb-6w">
-        <h1 class="fr-mb-3w fr-text--blue-france">Budget</h1>
+        <h1 class="fr-mb-3w fr-text--blue-900">Budget</h1>
         <p>
-          Transition Écologique des Entreprises est un service public numérique, c’est pourquoi nous sommes transparents sur les ressources
+          Transition écologique des entreprises est un service public numérique, c’est pourquoi nous sommes transparents sur les ressources
           allouées et la manière dont elles sont employées.
         </p>
       </div>
-      <h2 class="fr-text--blue-france">Principes</h2>
+      <h2 class="fr-text--blue-900">Principes</h2>
       Nous suivons le
       <a
         href="https://beta.gouv.fr/approche/manifeste"
@@ -23,9 +23,9 @@
         <li>L’équipe adopte une approche itérative et d’amélioration en continu</li>
       </ul>
 
-      <h2 class="fr-mt-3w fr-text--blue-france">Fonctionnement</h2>
+      <h2 class="fr-mt-3w fr-text--blue-900">Fonctionnement</h2>
       <p>
-        Transition Écologique des Entreprises est une start-up d'état. L'équipe est donc portée par un intrapreneur qui est responsable du
+        Transition écologique des entreprises est une start-up d'état. L'équipe est donc portée par un intrapreneur qui est responsable du
         service numérique développé. Son rôle est multiple : déploiement, gestion des produits, référent auprès de son administration
         (budget, compte rendus d'avancement).
       </p>
@@ -38,7 +38,7 @@
         >.
       </p>
 
-      <h2 class="fr-text--blue-france">Cofinancement</h2>
+      <h2 class="fr-text--blue-900">Cofinancement</h2>
       La particularité de notre Startup d'Etat est le cofinancement par plusieurs entités publiques :
       <ul>
         <li>
@@ -90,7 +90,7 @@
         </li>
       </ul>
 
-      <h2 class="fr-mt-3w fr-text--blue-france">Consommation</h2>
+      <h2 class="fr-mt-3w fr-text--blue-900">Consommation</h2>
 
       <div class="fr-grid-row">
         <div class="fr-col-12 fr-col-lg-7 fr-col--middle fr-col-justify--center">
@@ -148,10 +148,12 @@
 </template>
 
 <script setup lang="ts">
+import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
 import { onMounted, ref } from 'vue'
 import { MetaRobots } from '@/tools/metaRobots'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 definePageMeta({
   path: '/budget',
@@ -161,14 +163,16 @@ definePageMeta({
 const navigation = new Navigation()
 const budgetChartCanvas = ref<HTMLCanvasElement | null>(null)
 
-const budgetLabels = ['Design', 'Développement et Data engineering', 'Pilotage', 'Coaching', 'BizDev']
+const budgetLabels = ['Design', 'Développement et Data engineering', 'Pilotage', 'Coaching', 'BizDev', 'Frais annexes']
 const budgetData = {
-  2023: [83194, 164674, 154627, 48600, 10819],
-  2024: [152552.4, 439117.59, 192628.8, 61862.4, 172558.18]
+  2023: [83194, 164674, 154627, 48600, 10819, 0],
+  2024: [157685, 444292, 191755, 65230, 183402, 3764],
+  2025: [141960, 301069, 177341, 60264, 216129, 10764]
 }
 const yearsLabels = {
   2023: 2023,
-  2024: '2024 (Prévisionnel)'
+  2024: 2024,
+  2025: '2025 (Prévisionnel)'
 }
 const yearlyTotals = computed(() => {
   return Object.entries(budgetData).reduce(
@@ -189,10 +193,14 @@ const formatCurrency = (value: number): string => {
 }
 
 const drawBudgetChart = async () => {
-  if (!budgetChartCanvas.value) return
+  if (!budgetChartCanvas.value) {
+    return
+  }
 
   const chartContext = budgetChartCanvas.value.getContext('2d')
-  if (!chartContext) return
+  if (!chartContext) {
+    return
+  }
 
   // Import Chart.js de manière asynchrone
   const { default: Chart } = await import('chart.js/auto')
@@ -245,6 +253,10 @@ onMounted(() => {
     console.error('Erreur lors du chargement du graphique:', error)
   })
 })
+
+const description = 'Informations relatives au budget du site Mission Transition Écologique des Entreprises.'
+useSeoMeta(MetaSeo.get('Budget', description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 useHead({
   link: [

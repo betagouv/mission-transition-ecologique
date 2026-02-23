@@ -13,7 +13,8 @@ import { useNavigationStore } from '@/stores/navigation'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { TrackId } from '@/types'
 import { RouteName } from '@/types/routeType'
-import { type RouteLocationRaw } from 'vue-router'
+import { type RouteLocationAsRelativeGeneric, type RouteLocationRaw, RouteParamsGeneric } from 'vue-router'
+import { defineBreadcrumb, useSchemaOrg } from '@unhead/schema-org/vue'
 
 export interface TeeDsfrBreadcrumbProps {
   links?: DsfrBreadcrumbProps['links']
@@ -57,7 +58,7 @@ const routeToBaseList: RouteLocationRaw = {
 }
 
 const breadcrumbs = computed(() => {
-  const baseLinks: { text: string; to: RouteLocationRaw }[] = [{ text: 'Accueil', to: { name: RouteName.Homepage } }]
+  const baseLinks: { text: string; to: RouteLocationAsRelativeGeneric }[] = [{ text: 'Accueil', to: { name: RouteName.Homepage } }]
   if (!navigation.isStaticPage()) {
     baseLinks.push({ text: getListText(), to: routeToBaseList })
   }
@@ -73,4 +74,32 @@ const breadcrumbs = computed(() => {
   }
   return baseLinks
 })
+
+useSchemaOrg(
+  defineBreadcrumb({
+    itemListElement: defineBreadcrumbItemList()
+  })
+)
+
+function defineBreadcrumbItemList() {
+  const itemListElement = []
+  for (const [breadcrumbIndex, breadcrumb] of breadcrumbs.value.entries()) {
+    const to = breadcrumb.to as RouteLocationAsRelativeGeneric | undefined
+
+    if (!to || breadcrumbIndex === breadcrumbs.value.length - 1) {
+      itemListElement.push({ name: breadcrumb.text })
+    } else {
+      const params = to.params as RouteParamsGeneric | undefined
+
+      if (to.name) {
+        itemListElement.push({
+          name: breadcrumb.text,
+          item: navigation.getHrefByRouteName(to.name as RouteName, params)
+        })
+      }
+    }
+  }
+
+  return itemListElement
+}
 </script>

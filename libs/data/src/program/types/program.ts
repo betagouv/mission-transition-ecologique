@@ -14,6 +14,10 @@ export type Dispositif = {
    */
   titre: string;
   /**
+   * Titre du dispositif pour les metadatas de la page. Il s'agit du titre qui sera affiché dans l'onglet du navigateur.
+   */
+  metaTitre?: string;
+  /**
    * TODO
    */
   promesse: string;
@@ -21,6 +25,10 @@ export type Dispositif = {
    * La description donne les principales informations du dispositif en quelques lignes
    */
   description?: string;
+  /**
+   * Description du dispositif pour les metadatas de la page. Il s'agit de la description qui sera affichée dans les résultats de recherche.
+   */
+  metaDescription?: string;
   /**
    * La description longue La description longue est facultative. Elle peut être ajoutée si on juge que l'utilisateur ne dispose pas des informations suffisantes avec les seules autres informations. Elle peut être ajoutée par exemple pour définir un terme technique, pour détailler une loi à laquelle un dispositif fait référence ou pour détailler les projets concernés par un financement
    */
@@ -78,7 +86,7 @@ export type Dispositif = {
    */
   "opérateur de contact":
     | "ADEME"
-    | "ASP"
+    | "Agence de Services et de Paiement"
     | "Agence de l'Eau Loire-Bretagne"
     | "Agence de l'Eau Rhône-Méditerranée-Corse"
     | "Agence de l'Eau"
@@ -91,10 +99,8 @@ export type Dispositif = {
     | "Chambre des Métiers et de l'Artisanat"
     | "DDFIP"
     | "DREAL Bretagne"
-    | "EcoCO2"
     | "France Rénov'"
     | "InvestEU"
-    | "La Poste"
     | "Ministère de la Transition Écologique"
     | "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
     | "Région Bretagne"
@@ -121,7 +127,21 @@ export type Dispositif = {
     | "Agence de Développement Economique de Corse"
     | "Agence de Tourisme de la Corse"
     | "Région Guadeloupe"
-    | "Avere-France";
+    | "Avere-France"
+    | "L'Opcommerce"
+    | "Centre National du Livre"
+    | "Banque de France"
+    | "Constructys"
+    | "Atlas"
+    | "Opco AFDAS"
+    | "Opco Akto"
+    | "Opco Ocapiat"
+    | "Opco 2i"
+    | "Opco EP"
+    | "Opco Mobilités"
+    | "Opco Santé"
+    | "Opco Uniformation"
+    | "ANACT";
   /**
    * Le contact en cas de question, peut être un lien vers le formulaire, un mail ou une url.
    */
@@ -189,6 +209,12 @@ export type Dispositif = {
     [k: string]: unknown;
   };
   /**
+   * Données d'éligibilite du programme. Sous format codifié pour traitements automatiques
+   */
+  eligibilityData?: {
+    [k: string]: unknown;
+  };
+  /**
    * Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.
    */
   publicodes: {
@@ -217,6 +243,10 @@ export type Dispositif = {
     "toutes ces conditions"?: string[];
     [k: string]: unknown;
   }[];
+  /**
+   * Type du programme : programme interne TEE ou programme externe (ADEME)
+   */
+  type?: "tee" | "ext-ademe";
 } & (
   | {
       "nature de l'aide"?: "formation";
@@ -240,7 +270,7 @@ export type Dispositif = {
 );
 export type Operators =
   | "ADEME"
-  | "ASP"
+  | "Agence de Services et de Paiement"
   | "Agence de l'Eau Loire-Bretagne"
   | "Agence de l'Eau Rhône-Méditerranée-Corse"
   | "Agence de l'Eau"
@@ -253,10 +283,8 @@ export type Operators =
   | "Chambre des Métiers et de l'Artisanat"
   | "DDFIP"
   | "DREAL Bretagne"
-  | "EcoCO2"
   | "France Rénov'"
   | "InvestEU"
-  | "La Poste"
   | "Ministère de la Transition Écologique"
   | "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment"
   | "Région Bretagne"
@@ -283,4 +311,18 @@ export type Operators =
   | "Agence de Développement Economique de Corse"
   | "Agence de Tourisme de la Corse"
   | "Région Guadeloupe"
-  | "Avere-France";
+  | "Avere-France"
+  | "L'Opcommerce"
+  | "Centre National du Livre"
+  | "Banque de France"
+  | "Constructys"
+  | "Atlas"
+  | "Opco AFDAS"
+  | "Opco Akto"
+  | "Opco Ocapiat"
+  | "Opco 2i"
+  | "Opco EP"
+  | "Opco Mobilités"
+  | "Opco Santé"
+  | "Opco Uniformation"
+  | "ANACT";

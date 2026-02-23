@@ -1,9 +1,12 @@
+import { Color } from '@tee/common'
 import fs from 'fs'
 import axios from 'axios'
 import path from 'path'
 import sharp from 'sharp'
+import ConfigBaserow from '../../config/configBaserow'
 import { AbstractBaserow } from './abstractBaserow'
-import { LinkObject, ImageTable } from './types'
+import { ReplacerBaserow } from './replacerBaserow'
+import { LinkObject, ImageTable, Image } from './types'
 import { Result } from 'true-myth'
 
 interface ImageMetadata {
@@ -11,25 +14,33 @@ interface ImageMetadata {
 }
 
 export class ImageBaserow extends AbstractBaserow {
-  private readonly _imageTableId = 315189
+  private readonly _imageTableId = ConfigBaserow.IMAGE_ID
   private _metadata: ImageMetadata = {}
   private _processedImages: Set<string> = new Set()
 
   constructor(
     private readonly _imageDirectory: string,
-    private readonly _metadataFilePath?: string
+    private readonly _metadataFilePath?: string,
+    private readonly _quality = 60,
+    private readonly _imagePublicPath: string | undefined = undefined
   ) {
     super()
     this._loadMetadata()
   }
 
+  private readonly _imageExtension = '.webp'
+
   /**
    * Downloads the image if needed and returns the name of the image.
    *
    * @param baserowImage - A baserowLink object pointing to the image informations.
+   * @param withColor
    * @returns the name of the image in the local directory or an error
    */
-  async handleImage(baserowImage: LinkObject[]): Promise<Result<string, Error>> {
+  async handleImageFromImageTable(
+    baserowImage: LinkObject[],
+    withColor = false
+  ): Promise<Result<string | { imagePath: string; color: string | undefined }, Error>> {
     if (baserowImage.length != 1) {
       return Result.err(new Error('A single image should be listed in the image field.'))
     }
@@ -43,10 +54,13 @@ export class ImageBaserow extends AbstractBaserow {
     }
 
     const imageName = this._generateImageName(imageInfos)
+    const fileName = this._getFileName(imageName)
+    const imageSrc = this._getImageSrc(imageName)
+    const color = withColor ? (ReplacerBaserow.linkObjectByValue(imageInfos.Couleur) as Color) : undefined
     if (this._imageAlreadyDownloaded(imageName, imageInfos.Image[0].uploaded_at)) {
       this._metadata[imageName] = imageInfos.Image[0].uploaded_at
-      this._processedImages.add(imageName + '.webp')
-      return Result.ok(imageName + '.webp')
+      this._processedImages.add(fileName)
+      return withColor ? Result.ok({ imagePath: imageSrc, color: color }) : Result.ok(imageSrc)
     }
 
     let imageDownloadResponse
@@ -59,13 +73,56 @@ export class ImageBaserow extends AbstractBaserow {
     const imageBuffer = Buffer.from(imageDownloadResponse.data, 'binary')
     const webpBuffer = await this._sharpImage(imageBuffer)
 
-    const fileName = `${imageName}.webp`
     const filePath = path.join(this._imageDirectory, fileName)
     fs.writeFileSync(filePath, webpBuffer)
     this._metadata[imageName] = imageInfos.Image[0].uploaded_at
     this._processedImages.add(fileName)
 
-    return Result.ok(fileName)
+    return withColor ? Result.ok({ imagePath: imageSrc, color: color }) : Result.ok(imageSrc)
+  }
+
+  private _getFileName = (imageName: string) => {
+    return imageName + this._imageExtension
+  }
+
+  async handleDirectImage(image: Image[]): Promise<Result<string, Error>> {
+    if (image.length != 1) {
+      return Result.err(new Error('A single image should be listed in the image field.'))
+    }
+
+    const imageName = this._slugify(image[0].visible_name)
+    const fileName = this._getFileName(imageName)
+    const imageSrc = this._getImageSrc(imageName)
+    if (this._imageAlreadyDownloaded(imageName, image[0].uploaded_at)) {
+      this._metadata[imageName] = image[0].uploaded_at
+      this._processedImages.add(fileName)
+      return Result.ok(imageSrc)
+    }
+
+    let imageDownloadResponse
+    try {
+      imageDownloadResponse = await axios.get(image[0].url, { responseType: 'arraybuffer' })
+    } catch {
+      return Result.err(new Error('Error while trying to download the image ' + imageName))
+    }
+
+    const imageBuffer = Buffer.from(imageDownloadResponse.data, 'binary')
+    const webpBuffer = await this._sharpImage(imageBuffer)
+
+    const filePath = path.join(this._imageDirectory, fileName)
+    try {
+      fs.writeFileSync(filePath, webpBuffer)
+    } catch {
+      return Result.err(new Error('Error while trying to create the the local ' + imageName))
+    }
+    this._metadata[imageName] = image[0].uploaded_at
+    this._processedImages.add(fileName)
+
+    return Result.ok(imageSrc)
+  }
+
+  private _getImageSrc = (imageName: string) => {
+    return this._imagePublicPath ? this._imagePublicPath + imageName + this._imageExtension : imageName + this._imageExtension
   }
 
   cleanup() {
@@ -76,7 +133,7 @@ export class ImageBaserow extends AbstractBaserow {
       if (!isProcessed) {
         const fullPath = path.join(this._imageDirectory, file)
         fs.unlinkSync(fullPath)
-        delete this._metadata[file.replace('.webp', '')]
+        delete this._metadata[file.replace(this._imageExtension, '')]
       }
     }
 
@@ -97,7 +154,7 @@ export class ImageBaserow extends AbstractBaserow {
   }
 
   private _generateImageName(imageData: ImageTable): string {
-    let baseName = imageData['Image URL TEE']
+    let baseName = this._slugify(imageData['Image URL TEE'])
     if (!baseName) {
       baseName = this._slugify(imageData.Titre)
     }
@@ -126,7 +183,7 @@ export class ImageBaserow extends AbstractBaserow {
     if (metadata.width && metadata.width > 1280) {
       imageSharp = imageSharp.resize(1280)
     }
-    return await imageSharp.webp({ quality: 60 }).toBuffer()
+    return await imageSharp.webp({ quality: this._quality }).toBuffer()
   }
 
   private _slugify(title: string): string {
@@ -137,5 +194,6 @@ export class ImageBaserow extends AbstractBaserow {
       .trim()
       .replace(/[\s\W-]+/g, '-') // Replace spaces and non-alphanumeric characters with hyphens
       .replace(/^-+|-+$/g, '') // Remove leading or trailing hyphens
+      .slice(0, 50)
   }
 }

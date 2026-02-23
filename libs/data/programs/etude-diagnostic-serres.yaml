@@ -1,40 +1,49 @@
 titre: Étude "Diagnostic serres"
 promesse: Réalisez le diagnostic énergétique de vos serres
 description: >-
-  L’ADEME finance des diagnostics énergétiques pour les serres agricoles afin
-  d’identifier les solutions de réduction des consommations d’énergie et
-  d’évaluer la pertinence d’investir dans des solutions de production d’énergie
-  renouvelable. Ce diagnostic analyse l’ensemble de vos installations
-  (éclairage, ventilation, gestion thermique) et propose des solutions adaptées.
+  L’ADEME finance des **diagnostics énergétiques pour les serres agricoles**
+  afin de :\
+
+  – **identifier des solutions pour réduire vos consommations d’énergie**,\
+
+  – **évaluer la pertinence d’investir dans des équipements de production
+  d’énergie renouvelable**.
+
+
+  Ce diagnostic analyse l’ensemble de vos installations (éclairage, ventilation,
+  gestion thermique) et propose des solutions adaptées.
+
+
   Vous pourrez ainsi optimiser vos dépenses énergétiques et réduire vos
-  émissions de CO2. Cette démarche peut permettre de réaliser jusqu'à 50 %
-  d’économies d’énergie sur votre site, tout en vous orientant vers des choix
+  émissions de CO₂. Cette démarche peut permettre de r**éaliser jusqu’à 50 %
+  d’économies d’énergie sur votre site**, tout en vous orientant vers des choix
   d’investissement plus rentables et écologiques.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
-illustration: images/TEE_energie_verte.png
+fin de validité: 31/12/2026
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000737
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000883
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/diagnostic-energetique-etude-dopportunite-multi-enr-serres
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/diagnostic-energetique-et-etude-dopportunite-multi-enr-pour-les-serres
 nature de l'aide: étude
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 50 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez l'auditeur énergétique qui va vous accompagner. Vérifier ses
       références et ses compétences en matière de diagnostic énergétique et
-      d'énergies renouvelables. Définissez les objectifs de l'audit ainsi que
-      son périmètre, et faites réaliser un devis.
+      d'énergies renouvelables. Définissez ensemble les objectifs et le
+      périmètre de l'audit.
+  - description: Faites réaliser un devis. Ce document sera à joindre à votre dossier.
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du
@@ -42,16 +51,12 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/diagnostic-energetique-etude-dopportunite-multi-enr-serres
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/diagnostic-energetique-et-etude-dopportunite-multi-enr-pour-les-serres
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
       recevez un contrat de financement précisant le montant d’aide maximum, les
       conditions et les modalités de versement.
-  - description: >-
-      Réalisez votre audit énergétique : état des lieux de vos consommations,
-      pistes d'amélioration, hiérarchisation des actions en fonction de leur
-      faisabilité et de leur temps de retour sur investissement.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
@@ -74,7 +79,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - entreprise . est propriétaire de ses locaux
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:

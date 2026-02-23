@@ -51,8 +51,7 @@
 </template>
 <script setup lang="ts">
 import Breakpoint from '@/tools/breakpoints'
-import { Color } from '@/types'
-import { ProjectType } from '@tee/data'
+import { Color, ProjectType } from '@/types'
 
 export interface TrackThemeOptionProps {
   value: string | undefined

@@ -1,0 +1,115 @@
+titre: DEMIBaC
+promesse: Financez un projet d’innovation technologique pour décarboner l’industrie
+description: >-
+  DEMIBac finance vos projets d’innovation de l’ensemble des procédés et
+  technologies de décarbonation de l’industrie, notamment :\
+
+  • L’**efficacité énergétique des équipements et des procédés** liés à la
+  récupération de chaleur ou de froid, au transfert de chaleur, au numérique et
+  l’IA.\
+
+  • La **décarbonation de la chaleur et du mix énergétique** pour des usages
+  industriels.\
+
+  • La **décarbonation des procédés**.\
+
+  • Le **captage, le stockage, le transport et la valorisation du CO2**.\
+
+  • La **réduction des autres gaz à effet de serre**.
+description longue: >-
+  L'appel à projet comporte deux volets :
+
+
+  - Le volet 1 concerne des projets pour le développement de briques
+  technologiques\
+    innovantes et d’actions de démonstration, dont les consortiums sont généralement\
+    constitués par des académiques et des industriels de l’offre.
+
+  - Le volet 2 cible des projets portés par des consortiums constitués d’un ou
+  plusieurs\
+    industriels proposant une offre de décarbonation et d’un ou plusieurs industriels côté\
+    demande prêts à accueillir les solutions innovantes proposées sur leurs sites de\
+    production.
+
+    \
+    Les projets inférieurs à 1,5 M€ seront redirigés vers le dispositif IBaC.
+début de validité: 01/07/2025
+fin de validité: 09/03/2027
+illustration: images/TEE_ampoule.webp
+opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000815
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-demonstrateurs-realisations-de-premieres-industrielles-associant-loffre-et-la-demande-demibac
+nature de l'aide: financement
+montant du financement: Jusqu'à 60% du montant du projet
+objectifs:
+  - description: >-
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/sites/default/files/AAP%20DEMIBaC%20-%20Cahier%20des%20charges%20France%202030%20-%202025.pdf
+        texte: Conditions éligibilité et financement
+  - description: >-
+      Contactez l’ADEME pour organiser une réunion de pré-dépôt, à l’adresse
+      [demibac@ademe.fr](mailto:demibac@ademe.fr) (en mentionnant « DEMIBaC »
+      dans l’objet du mail) un\
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/inscription
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/developpement-de-briques-technologiques-et-demonstrateurs-realisations-de-premieres-industrielles-associant-loffre-et-la-demande-demibac
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez votre projet.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Les coûts des projets soumis à ce dispositif doivent être supérieurs à 1,5
+      M€.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est M
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception

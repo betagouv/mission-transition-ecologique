@@ -1,20 +1,36 @@
 titre: Formation ADEME
 promesse: Réalisez une initiation aux enjeux de la transition écologique
 description: >-
-  Suivez une formation en ligne pour initier la transition écologique de votre
-  entreprise. Vous découvrirez les principales transformations de la société, de
-  l'économie, des territoires et les enjeux de la transition écologique pour les
-  entreprises. Puis en seconde partie, vous serez invité à identifier les
-  risques et les opportunités pour votre entreprise ainsi que les premiers
-  leviers d’action pour se mettre en mouvement.
-illustration: images/TEE_eolienne.png
+  Suivez une **formation en ligne** pour engager la transition écologique de
+  votre entreprise. Elle vous aidera, vous et vos équipes, à :
+
+
+  - **Comprendre les grandes transformations** de la société, de l’économie et
+  des territoires face à l’urgence écologique.
+
+
+  - **Identifier les enjeux, risques et opportunités** propres à votre activité.
+
+
+  - Repérer les premiers **leviers d’action** pour initier le changement.
+
+
+  - Découvrir des **solutions concrètes** dans des domaines clés : bâtiment,
+  énergie, production, gestion des déchets, écoconception, achats, logistique et
+  environnement de travail.
+
+
+  À l’issue de cette formation de 3h, vous repartirez avec une vision claire et
+  des outils opérationnels pour mettre votre entreprise en mouvement.
+fin de validité: 31/12/2026
+illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
 contact question: https://formations.ademe.fr/contactez-nous.html
 url: >-
-  https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_engager-son-entreprise-dans-la-transition-ecologique_s5227.html
+  https://formations.ademe.fr/formations_changement-climatique_engager-son-entreprise-dans-la-transition-ecologique_s5227.html
 nature de l'aide: formation
 coût de l'accompagnement: Gratuit
-durée de l'accompagnement: 2h15
+durée de l'accompagnement: 3h
 objectifs:
   - description: Prenez connaissance du programme de la formation.
     liens:
@@ -26,7 +42,7 @@ objectifs:
       plusieurs participants.
     liens:
       - lien: >-
-          https://formations.ademe.fr/solutions/beforeregister.php?sessionid=7866
+          https://formations.ademe.fr/solutions/beforeregister.php?sessionid=9456
         texte: formations.ademe.fr
   - description: >-
       Obtenez le lien de la formation à réaliser en ligne en toute autonomie à
@@ -44,8 +60,12 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

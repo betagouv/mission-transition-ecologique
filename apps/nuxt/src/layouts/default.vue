@@ -1,30 +1,53 @@
 <script setup lang="ts">
 import { useNavigationStore } from '@/stores/navigation'
 import TeeFooter from '@/components/TeeFooter.vue'
+import { Identity } from '@/tools/identity'
 import { MetaSeo } from '@/tools/metaSeo'
+import Navigation from '@/tools/navigation'
 import Translation from '@/tools/translation'
 import Cookie from '@/tools/cookies'
+import { defineOrganization, defineWebPage, defineWebSite, useSchemaOrg } from '@unhead/schema-org/vue'
 
 const navigationStore = useNavigationStore()
-const router = useRouter()
-const route = useRoute()
 
 onBeforeMount(() => {
   Translation.setLocale('fr')
   Cookie.setCookies()
 })
 
-// cf: https://stackoverflow.com/questions/69495211/vue3-route-query-empty
-navigationStore.setRouter(router)
-navigationStore.setRoute(route)
-
 useSeoMeta(MetaSeo.default())
+
+const navigation = Navigation.getInstance()
+const { currentRoute } = useRouter()
+
+useHead({
+  templateParams: {
+    schemaOrg: {
+      host: navigation.baseUrl,
+      path: computed(() => currentRoute.value.path)
+    }
+  }
+})
+
+useSchemaOrg([
+  defineWebPage({ name: MetaSeo.title(), description: MetaSeo.defaultDescription }),
+  defineWebSite({
+    name: MetaSeo.title(),
+    description: MetaSeo.descriptionWebsite
+  }),
+  defineOrganization({
+    '@type': 'GovernmentOrganization',
+    name: Identity.title,
+    logo: Identity.logoPath,
+    description: Identity.description
+  })
+])
 </script>
 
 <template>
   <div>
     <TeeHeader />
-    <div>
+    <div role="main">
       <slot />
     </div>
     <TeeFooter />

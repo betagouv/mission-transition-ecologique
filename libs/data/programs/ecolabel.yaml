@@ -45,7 +45,7 @@ description longue: >-
   (hôtels, campings, etc.) peuvent également bénéficier de l'écolabel européen.
 début de validité: 01/01/2025
 fin de validité: 31/12/2025
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: ADEME
 contact question: mailto:amo.ecolabeleu@ademe.fr
 url: >-
@@ -64,7 +64,7 @@ objectifs:
       Créez un compte ADEME pour pouvoir déposer votre dossier de demande de
       financement.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: Déposez votre dossier de financement de l'Écolabel
     liens:

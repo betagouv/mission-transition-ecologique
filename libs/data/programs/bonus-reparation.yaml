@@ -13,8 +13,9 @@ description longue: >-
   réparation sont les entreprises effectuant des réparations sur les produits
   suivants :
 
+
   - Équipements électriques et électronique, qu'ils soient destinés à être
-  utilisés par les particuliers ou les professionnels ; 
+  utilisés par les particuliers ou les professionnels ;
 
   - Éléments d’ameublement ;
 
@@ -31,14 +32,15 @@ description longue: >-
 
   Les réparateurs labellisés s'engagent à :
 
-  -  Fournir une garantie commerciale d'au moins 3 mois au client bénéficiant de
+
+  - Fournir une garantie commerciale d'au moins 3 mois au client bénéficiant de
   la réparation
 
   - Informer le consommateur des conditions de participation du fonds au
   financement de la réparation, en procédant à un affichage lisible de
   l'extérieur du local où la réparation est proposée, ainsi qu'une mention sur
   le site internet du réparateur lorsqu'il en a un.
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: ADEME
 contact question: >-
   https://www.ecologie.gouv.fr/politiques-publiques/bonus-reparation-quest-ce-que-cest#vous-etes-un-professionnel-3
@@ -69,7 +71,7 @@ conditions d'éligibilité:
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
-    - "La labellisation est ouverte à tout type de réparateurs professionnels : les artisans réparateurs, les réparateurs industriels, les SAV de fabricants et des distributeurs et les acteurs de la réparation à distances\nIl doit s'agir de réparations sur les produits suivants\_: équipements électriques et électroniques (EEE), éléments d'ameublement, produits textiles d'habillement, les chaussures ou le linge de maison, jouets, articles de sport et de loisirs, articles de bricolage et de jardin."
+    - "La labellisation est ouverte à tout type de réparateurs professionnels : les artisans réparateurs, les réparateurs industriels, les SAV de fabricants et des distributeurs et les acteurs de la réparation à distances\\\nIl doit s'agir de réparations sur les produits suivants\_: équipements électriques et électroniques (EEE), éléments d'ameublement, produits textiles d'habillement, les chaussures ou le linge de maison, jouets, articles de sport et de loisirs, articles de bricolage et de jardin."
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:

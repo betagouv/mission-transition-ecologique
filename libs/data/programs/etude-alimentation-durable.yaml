@@ -1,39 +1,44 @@
 titre: Étude "Alimentation durable"
 promesse: Réalisez une étude autour de l'alimentation durable
 description: >-
-  Vous souhaitez faire évoluer les pratiques alimentaires sur votre territoire
-  ou dans votre entreprise ? L’ADEME vous accompagne en finançant des études
-  pour poser les bases d’une alimentation plus durable. Le dispositif soutient
-  les diagnostics, études de faisabilité ou de connaissance portant sur
-  l’ensemble de la chaîne alimentaire : production, transformation, logistique,
-  consommation. \
+  Vous souhaitez faire évoluer les pratiques alimentaires dans votre entreprise
+  ou sur votre territoire ?\
 
-  L’accent est mis sur les approches à faible impact environnemental :
-  développement de l’agroécologie, réduction des emballages, relocalisation de
-  l’offre alimentaire. Il s’agit aussi de faire évoluer les comportements :
-  achats responsables en circuits de proximité, respect de la saisonnalité,
-  affichage environnemental, rééquilibrage des régimes avec plus de légumineuses
-  et moins de protéines animales. \
+  L’ADEME peut financer des études (diagnostics, faisabilités) pour structurer
+  une **démarche d’alimentation durable, sur l’ensemble de la chaîne :
+  production, transformation, logistique, consommation.**\
 
-  Ce soutien vous permet de structurer une démarche cohérente et ancrée dans les
-  enjeux de votre territoire.
+  Les études peuvent porter sur :
+
+
+  - le développement de l’agroécologie, la relocalisation de l’offre
+  alimentaire, la réduction des emballages ;
+
+
+  - des leviers d’évolution des pratiques : circuits courts, saisonnalité,
+  affichage environnemental, rééquilibrage des régimes.
+
+
+  L’accent est mis sur les **approches à faible impact environnemental et
+  l’évolution des comportements alimentaires.**
 description longue: >-
-  Plusieurs types d'études peuvent être financées par ce financement : 
+  Plusieurs types d'études peuvent être financées par ce financement :
 
-  • Les études générales visant à acquérir ou approfondir les connaissances sur
-  les systèmes alimentaires, 
 
-  • Les diagnostics d'état des lieux techniques ou organisationnel d'
-  opérateur(s) de la filière alimentaire ou d'un territoire. 
+  - Les études générales visant à acquérir ou approfondir les connaissances sur
+  les systèmes alimentaires,
 
-  • Les études de faisabilité d'une nouvelle démarche, projet ou investissement.
+  - Les diagnostics d'état des lieux techniques ou organisationnel d'
+  opérateur(s) de la filière alimentaire ou d'un territoire.
+
+  - Les études de faisabilité d'une nouvelle démarche, projet ou investissement.
 
 
   D'autres fonds ADEME sont disponibles pour financer les études concernant la
   lutte contre le gaspillage alimentaire et la gestion des biodéchets.
 début de validité: 01/01/2023
 fin de validité: 31/12/2025
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000724
 url: >-
@@ -42,18 +47,18 @@ nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20alimentation%20durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20alimentation%20durable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener cette étude
       et obtenez un devis.
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du

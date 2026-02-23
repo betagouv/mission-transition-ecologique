@@ -1,7 +1,7 @@
 titre: Agir en Pays de la Loire
 promesse: Financez votre projet de transition écologique dans le secteur du tourisme
 description: "Bénéficiez d’un prêt participatif «\_Agir Pays de la Loire\_». Ce prêt est destiné à accompagner les innovations incluant une démarche de transition écologique, portées par les entreprises du tourisme. Grâce à ce prêt, financez, par exemple, votre isolation thermique, vos équipements d’économies d’eau et d’énergie."
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_ampoule.webp
 opérateur de contact: Région Pays de la Loire
 contact question: mailto:tourisme@paysdelaloire.fr
 url: https://www.paysdelaloire.fr/les-aides/pays-de-la-loire-agir-tourisme
@@ -9,7 +9,7 @@ nature de l'aide: prêt
 montant du prêt: Variable selon projet, à 3,3% TEG
 durée du prêt: De 2 à 10 ans (dont 3 ans maximum de différé)
 objectifs:
-  - description: Vérifiez l'éligibilité de votre projet.
+  - description: Consultez la documentation pour vérifier l'éligibilité de votre projet.
     liens:
       - lien: >-
           https://www.paysdelaloire.fr/sites/default/files/aides/2ae4eace-0470-11ee-baf5-23743e123976/subvention%2Cpret_reglement-dintervention-maj-janvier-2024_2ae4eace_ri.pdf

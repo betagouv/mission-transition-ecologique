@@ -39,7 +39,7 @@ description longue: >-
   Air Bois et de sa mise en place, accompagnées via l’appel à projets dédié.
 début de validité: 01/01/2023
 fin de validité: 31/12/2023
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
 contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000708
 url: >-
@@ -48,11 +48,11 @@ nature de l'aide: étude
 montant du financement: Jusqu'à 70% pour une étude et 55% pour un investissement
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du

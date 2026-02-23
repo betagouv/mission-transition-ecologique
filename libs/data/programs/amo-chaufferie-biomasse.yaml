@@ -9,19 +9,20 @@ description: >-
 description longue: >-
   Les missions d’assistance à maitrise d’ouvrage vous permettront :
 
-  • d’assurer la qualité du projet à travers une vision globale et en
+
+  - d’assurer la qualité du projet à travers une vision globale et en
   coordination avec les différents acteurs du projet ;
 
-  • de mettre en œuvre les différentes étapes du projet et de rédiger les
+  - de mettre en œuvre les différentes étapes du projet et de rédiger les
   cahiers des charges si nécessaire (bureau d’études, maîtrise d’œuvre) ;
 
-  • de s’assurer de la conformité réglementaire et technique de l’installation ;
+  - de s’assurer de la conformité réglementaire et technique de l’installation ;
 
-  • de s’assurer du bon fonctionnement de l’installation et des modalités de
+  - de s’assurer du bon fonctionnement de l’installation et des modalités de
   maintenance.
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 contact question: formulaire
 url: >-
@@ -30,11 +31,11 @@ nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez votre assistant maître d'ouvrage "Reconnu Garant de
@@ -45,7 +46,7 @@ objectifs:
         texte: Annuaire des professionnels RGE
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du
@@ -53,7 +54,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/entreprises/aides-financieres/2024/assistance-a-maitrise-douvrage-mise-place-dune-chaufferie-biomasse
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/assistance-a-maitrise-douvrage-mise-place-dune-chaufferie-biomasse
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,

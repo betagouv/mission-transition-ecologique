@@ -34,11 +34,11 @@ const navigation = new Navigation()
 
 const getRouteToProjectDetail = (): RouteLocationRaw => {
   const slug = props.project.slug
-  const isCatalogDetail = navigation.isCatalogDetail()
+  const shouldRedirectToCatalog = navigation.isCatalogDetail() || navigation.isHomepage() || navigation.isAboutPage()
   return {
-    name: isCatalogDetail ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
+    name: shouldRedirectToCatalog ? RouteName.CatalogProjectDetail : RouteName.ProjectResultDetail,
     params: { projectSlug: slug },
-    query: isCatalogDetail ? undefined : navigationStore.query
+    query: shouldRedirectToCatalog ? undefined : navigationStore.query
   }
 }
 </script>

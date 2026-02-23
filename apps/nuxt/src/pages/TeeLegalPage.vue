@@ -24,11 +24,13 @@
 </template>
 
 <script setup lang="ts">
+import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types/routeType'
 import Contact from '@/tools/contact'
 import { LegalNoticePropsThirdParty, LegalNotice } from '@incubateur-ademe/legal-pages-vue3'
 import { MetaRobots } from '@/tools/metaRobots'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 definePageMeta({
   path: '/mentions-legales',
@@ -51,6 +53,10 @@ const thirdParties: LegalNoticePropsThirdParty[] = [
     text: "Les données sont ensuite précisées via l'"
   }
 ]
+
+const description = 'Informations relatives aux mentions légales du site Mission Transition écologique des entreprises.'
+useSeoMeta(MetaSeo.get('Mentions légales', description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 useHead({
   link: [

@@ -1,12 +1,10 @@
 <template>
-  <li class="fr-footer__bottom-item">
-    <TeeDsfrButton
-      label="Gestion des cookies"
-      aria-controls="fr-consent-modal"
-      class="fr-footer__bottom-link fr-btn--tertiary-no-outline"
-      @click="openConsent"
-    />
-  </li>
+  <TeeDsfrButton
+    label="Gestion des cookies"
+    aria-controls="fr-consent-modal"
+    class="fr-footer__bottom-link fr-btn--tertiary-no-outline fr-px-0"
+    @click="openConsent"
+  />
 </template>
 <script setup lang="ts">
 const openConsent = () => {

@@ -1,8 +1,8 @@
 titre: Etude "biodéchets"
 promesse: ' Réalisez une étude préalable au tri ou à la valorisation de vos biodéchets'
 description: >-
-  Vous avez un projet de valorisation des biodéchets ? L’ADEME peut financer vos
-  études de diagnostic ou de faisabilité, parmi lesquelles :
+  Vous avez un projet de valorisation des biodéchets ? **L’ADEME peut financer
+  vos études de diagnostic ou de faisabilité,** parmi lesquelles :
 
 
   - Le diagnostic des besoins en tri et valorisation des biodéchets à l’échelle
@@ -22,67 +22,74 @@ description: >-
 
 
   Ces études ont pour objectif de structurer en amont des projets solides,
-  adaptés aux besoins locaux, de sécuriser vos investissements et de favoriser
-  une gestion durable des matières organiques.
+  adaptés aux besoins locaux, de sécuriser vos investissements et de **favoriser
+  une gestion durable des matières organiques.**
 description longue: >-
-  L'ADEME finance les études suivantes : 
+  L'ADEME finance les études suivantes :
 
 
   À destination des producteurs de déchets organiques ou des acteurs de la
-  collecte des biodéchets : 
+  collecte des biodéchets :
 
-  • Les études de diagnostic des besoins en installations de tri et de
+
+  - Les études de diagnostic des besoins en installations de tri et de
   valorisation des biodéchets. Ces études doivent être réalisée à l’échelle
   d’une zone de chalandise déterminée (quartier, ZI, ZAC, etc.).
 
 
-  À destination des producteurs de déchets organiques : 
+  À destination des producteurs de déchets organiques :
 
-  • Les études préalables à la préparation des biodéchets.
 
-  • Les études préalables au compostage autonome en établissement.
+  - Les études préalables à la préparation des biodéchets.
 
+  - Les études préalables au compostage autonome en établissement.
+
+
+  \
 
   L'ADEME finance les études suivantes à destination des acteurs privés dans la
   collecte et le traitement des biodéchets :
 
-  • Les études préalables à la réalisation d'installations ou d'ateliers visant
-  à déconditionner des produits. 
 
-  •  Les études préalables à la création de nouvelles plateformes de compostage
+  - Les études préalables à la réalisation d'installations ou d'ateliers visant
+  à déconditionner des produits.
+
+  - Les études préalables à la création de nouvelles plateformes de compostage
   ou l’adaptation de plateformes de compostage de déchets verts existantes à
   l’accueil de déchets alimentaires.
 
-  • Les études préalables à la création / adaptation/hygiènisation de
+  - Les études préalables à la création / adaptation/hygiènisation de
   plateformes de valorisation des biodéchets classés Sous-Produits Animaux
-  (SPAN). 
+  (SPAN).
 
+
+  \
 
   Cette aide est plafonnée à 50 000 € HT pour une étude diagnostic, et 100 000 €
-  HT pour une étude de faisabilité préalable à un investissement. 
+  HT pour une étude de faisabilité préalable à un investissement.
 début de validité: 01/01/2024
-fin de validité: 31/12/2025
-illustration: images/TEE_ampoule.png
+fin de validité: 31/12/2026
+illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000720
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000897
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-gestion-biodechets-acteurs-economiques?cible=79
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-la-gestion-des-biodechets-des-acteurs-economiques?cible=79
 nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20investissements%20gestion%20biod%C3%A9chets%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tude%20gestion%20biod%C3%A9chets%20acteurs%20%C3%A9co%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.docx
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener cette étude
       et obtenez un devis.
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du
@@ -90,7 +97,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-gestion-biodechets-acteurs-economiques?cible=79
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-la-gestion-des-biodechets-des-acteurs-economiques?cible=79
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -102,17 +109,16 @@ conditions d'éligibilité:
     - Toutes tailles
     - Éligible aux micro-entreprises
   secteur géographique:
-    - France et territoires d'outre-mer
+    - >-
+      Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
+      Loire, Grand Est, Hauts-de-France, Île-de-France, Normandie,
+      Nouvelle-Aquitaine, Occitanie, Pays de la Loire, Provence-Alpes-Côte
+      d'Azur
   secteur d'activité:
     - >-
       Ce dispositif s’adresse aux producteurs de biodéchets, aux acteurs de la
       collecte et aux porteurs de projets privés dans le traitement des déchets
       organiques.
-    - >-
-      Section I : Hébergement et restauration / Section E Division 38 :
-      Collecte, traitement et élimination des déchets ; récupération /  Section
-      G classe 47.11 Commerce de détail en magasin non spécialisé à prédominance
-      alimentaire / Section C division 10 Industries alimentaires
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:
@@ -132,7 +138,8 @@ publicodes:
       toutes ces conditions:
         - dispositif . début de validité <= date du jour
         - date du jour <= dispositif . fin de validité
-    valeur: oui
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
@@ -143,3 +150,17 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est la gestion des déchets
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Auvergne-Rhône-Alpes
+      - région = Bourgogne-Franche-Comté
+      - région = Bretagne
+      - région = Centre-Val de Loire
+      - région = Grand Est
+      - région = Hauts-de-France
+      - région = Île-de-France
+      - région = Normandie
+      - région = Nouvelle-Aquitaine
+      - région = Occitanie
+      - région = Pays de la Loire
+      - région = Provence-Alpes-Côte d'Azur

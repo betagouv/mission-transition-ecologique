@@ -1,0 +1,66 @@
+titre: Formations Atlas
+promesse: Formez vos salariés à la transition écologique
+description: >-
+  Accédez à un catalogue de formations clés en main, aux tarifs négociés,
+  rigoureusement sélectionnées pour répondre aux besoins de votre entreprise et
+  à ceux de vos salariés. Au programme :
+
+
+  - Mettre en place une démarche RSE.
+
+  - Agir sur l'empreinte carbone de votre entreprise.
+
+  - S'engager vers un numérique responsable.
+
+  - Construire des fresques autour du climat, du numérique, de la biodiversité.
+illustration: images/TEE_ampoule.webp
+opérateur de contact: Atlas
+contact question: formulaire
+url: https://campus.opco-atlas.fr/domaines/climat-developpement-durable/4626
+nature de l'aide: formation
+coût de l'accompagnement: Variable
+durée de l'accompagnement: Variable selon la formation choisie
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Rendez-vous sur le catalogue de formations de l'Opco Atlas et trouvez la
+      formation et la session qui vous convient.
+    liens:
+      - lien: >-
+          https://campus.opco-atlas.fr/domaines/climat-developpement-durable/4626
+        texte: Catalogue de formations
+  - description: >-
+      Créez un compte sur le site d'Atlas et inscrivez-vous à la session de
+      votre choix.
+    liens:
+      - lien: https://myatlas.opco-atlas.fr/creer-mon-compte
+        texte: Créer mon compte Atlas
+  - description: >-
+      Pour toute demande de prise en charge d'une formation, contactez le
+      service entreprises.
+    liens:
+      - lien: https://www.opco-atlas.fr/contact.html
+        texte: Service entreprise
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises des secteurs de l'assurance, de la banque, du conseil et de la
+      finance
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est K
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter

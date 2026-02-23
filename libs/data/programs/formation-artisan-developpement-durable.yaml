@@ -2,33 +2,38 @@ titre: Formation développement durable
 promesse: Formez-vous au développement durable de votre entreprise
 description: >-
   Vous souhaitez engager votre entreprise dans une démarche responsable ? Cette
-  formation digitale vous guide pas à pas : découvrez les enjeux du
-  développement durable et de la RSE, réalisez un autodiagnostic pour évaluer
-  vos pratiques, définissez vos axes d’amélioration et apprenez à les valoriser.
+  formation digitale vous guide pas à pas :
+
+
+  - **découvrez les enjeux du développement durable et de la RSE,**
+
+  - **réalisez un autodiagnostic** pour évaluer vos pratiques,
+
+  - **définissez vos axes d’amélioration** et **apprenez à les valoriser.**
+
+
   Cette formation courte permet d'embarquer rapidement vos équipes, clients et
-  fournisseurs dans la mise en place d'une une démarche complète d’entreprise
+  fournisseurs dans la mise en place d'une démarche complète d’entreprise
   responsable.
 description longue: |-
   Au programme :
+
   1. Mesurez votre impact sur le développement durable
-  - Les principes du développement durable et de la RSE
-  - Les enjeux du développement durable dans le monde artisanal
-  - L’incidence de la réglementation sur votre activité
-   
+     - Les principes du développement durable et de la RSE
+     - Les enjeux du développement durable dans le monde artisanal
+     - L’incidence de la réglementation sur votre activité
   2. Identifiez les acteurs de votre démarche
-  - Les parties prenantes externes et internes
-  - Les besoins et les attentes des parties prenantes
-   
+     - Les parties prenantes externes et internes
+     - Les besoins et les attentes des parties prenantes
   3. Réalisez votre plan d’action
-  - La première étape de l’intégration :  l’autodiagnostic
-  - Les orientations de développement durable et RSE à privilégier
-  - Les actions à mettre en place pour une démarche éco-responsable
-  - Les outils de pilotage nécessaires à son intégration
-   
+     - La première étape de l’intégration : l’autodiagnostic
+     - Les orientations de développement durable et RSE à privilégier
+     - Les actions à mettre en place pour une démarche éco-responsable
+     - Les outils de pilotage nécessaires à son intégration
   4. Valorisez et communiquez votre engagement
-  - Les labels et marques utiles à la valorisation de vos produits et services
-  - La valorisation de votre engagement grâce à votre communication
-illustration: images/TEE_energie_verte.png
+     - Les labels et marques utiles à la valorisation de vos produits et services
+     - La valorisation de votre engagement grâce à votre communication
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: Chambre des Métiers et de l'Artisanat
 contact question: formulaire
 url: https://www.artisanat.fr/integrer-developpement-durable
@@ -58,6 +63,8 @@ conditions d'éligibilité:
     - Réservée aux artisans
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - Être un artisan
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

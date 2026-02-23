@@ -1,9 +1,9 @@
 titre: Crédit d'Impôt Rénovation Énergétique (CIRE)
 promesse: Bénéficiez d'un crédit d’impôt pour la rénovation énergétique de vos bâtiments
 description: >-
-  Vous bénéficiez d’un crédit d’impôt pour la rénovation énergétique (travaux
-  d’isolation, chauffe-eau solaire, pompe à chaleur, ventilation mécanique…) de
-  vos bâtiments à usage tertiaire. 
+  Vous bénéficiez d’un **crédit d’impôt pour la rénovation énergétique**
+  (travaux d’isolation, chauffe-eau solaire, pompe à chaleur, ventilation
+  mécanique…) de vos bâtiments à usage tertiaire.
 description longue: >-
   Ce crédit d'impôt pour les PME s'applique aux dépenses de rénovation, engagées
   entre le 1er janvier 2023 et le 31 décembre 2024, sur des bâtiments du
@@ -11,7 +11,7 @@ description longue: >-
   travaux ont débuté.
 
 
-  Les dépenses éligibles sont : 
+  Les dépenses éligibles sont :
 
 
   - Acquisition et pose d'un système d'isolation thermique en rampant de toiture
@@ -21,7 +21,7 @@ description longue: >-
   pignon, par l'extérieur ou l’intérieur,
 
   - Acquisition et pose d'un système d'isolation thermique en toiture terrasse
-  ou couverture de pente inférieure à 5 %, 
+  ou couverture de pente inférieure à 5 %,
 
   - Acquisition et pose d'un chauffe-eau solaire collectif ou d'un dispositif
   solaire collectif pour la production d'eau chaude sanitaire,
@@ -30,17 +30,15 @@ description longue: >-
   finalité essentielle est d'assurer le chauffage des locaux,
 
   - Acquisition et pose d'un système de ventilation mécanique simple flux ou
-  double flux,
-
-  Raccordement à un réseau de chaleur ou de froid,
-
+  double flux,\
+    Raccordement à un réseau de chaleur ou de froid,
   - Acquisition et pose d'une chaudière biomasse,
 
   - Acquisition et pose d'un système de régulation ou de programmation du
   chauffage et de la ventilation.
 début de validité: 01/01/2023
 fin de validité: 31/12/2024
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_eolienne.webp
 opérateur de contact: DDFIP
 contact question: https://www.impots.gouv.fr/contacts
 url: https://entreprendre.service-public.fr/vosdroits/F35585

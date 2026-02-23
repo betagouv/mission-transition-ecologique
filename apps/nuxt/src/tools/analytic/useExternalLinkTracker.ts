@@ -8,7 +8,9 @@ export function useExternalLinkTracker(type: 'program' | 'project') {
   const trackExternalLinks = (event: Event) => {
     if (import.meta.client) {
       const trackedContainer = document.getElementById('externalLinksTracking')
-      if (!trackedContainer) return
+      if (!trackedContainer) {
+        return
+      }
 
       const target = event.target as HTMLElement
       const link = target.closest('a') as HTMLAnchorElement | null

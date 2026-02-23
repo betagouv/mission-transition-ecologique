@@ -27,28 +27,28 @@ description longue: >-
   répondent aux besoins réels des usagers tout en limitant la production de
   biens matériels.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
-illustration: images/TEE_eolienne.png
+fin de validité: 31/12/2026
+illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000712
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000891
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-a-leconomie-fonctionnalite-cooperation?cible=79
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-leconomie-de-la-fonctionnalite-et-de-la-cooperation?cible=79
 nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Soutien%20EFC%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
+          https://agirpourlatransition.ademe.fr/sites/default/files/EFC%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026%20.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener votre étude
       et obtenez un devis.
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du
@@ -56,7 +56,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-a-leconomie-fonctionnalite-cooperation?cible=79
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-leconomie-de-la-fonctionnalite-et-de-la-cooperation?cible=79
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -68,7 +68,11 @@ conditions d'éligibilité:
     - Toutes tailles
     - Éligible aux micro-entreprises
   secteur géographique:
-    - France et territoires d'outre-mer
+    - >-
+      Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Grand Est,
+      Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion,
+      Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie,
+      Occitanie, Pays de la Loire, Polynésie française
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -90,7 +94,8 @@ publicodes:
       toutes ces conditions:
         - dispositif . début de validité <= date du jour
         - date du jour <= dispositif . fin de validité
-    valeur: oui
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
@@ -116,3 +121,22 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Bourgogne-Franche-Comté
+      - région = Bretagne
+      - région = Centre-Val de Loire
+      - région = Grand Est
+      - région = Guadeloupe
+      - région = Guyane
+      - région = Hauts-de-France
+      - région = Île-de-France
+      - région = La Réunion
+      - région = Martinique
+      - région = Mayotte
+      - région = Normandie
+      - région = Nouvelle-Aquitaine
+      - région = Nouvelle-Calédonie
+      - région = Occitanie
+      - région = Pays de la Loire
+      - région = Polynésie française

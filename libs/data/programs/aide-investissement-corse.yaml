@@ -28,7 +28,7 @@ description longue: >-
   répondant à des normes environnementales, dans un but d’amélioration de la
   qualité des produits et des services & travaux d’aménagement au titre des
   mises aux normes environnementales.
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_eolienne.webp
 opérateur de contact: Agence de Développement Economique de Corse
 contact question: mailto:contact@adec.corsica
 url: https://www.adec.corsica/attachment/2439000/
@@ -41,7 +41,7 @@ objectifs:
       de la Corse afin de vous accompagner dans votre démarche et obtenir les
       documents à compléter pour déposer votre demande.
     liens:
-      - lien: https://www.adec.corsica/Nos-adresses_a22.html
+      - lien: https://adec.corsica/contact/
         texte: Contacts de l'ADEC
   - description: Déposez votre demande, elle sera examinée, et recevez votre aide.
 conditions d'éligibilité:

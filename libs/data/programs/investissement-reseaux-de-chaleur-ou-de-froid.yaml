@@ -6,7 +6,8 @@ description: >-
   récupération ? Vous souhaitez investir pour le mettre en œuvre ? L’ADEME peut
   accompagner financièrement la réalisation de votre installation.
 description longue: >-
-  Quelques critères doivent être respectés pour pouvoir bénéficier de l’aide : 
+  Quelques critères doivent être respectés pour pouvoir bénéficier de l’aide :
+
 
   - votre réseau assure des services publics de distribution de la chaleur (la
   collectivité est autorité organisatrice) ;
@@ -16,29 +17,30 @@ description longue: >-
 
   - votre réseau technique distribue uniquement de la chaleur.
 
+
   Condition d'éligibilité : une alimentation globale d’au minimum 65 % d’Energie
   Renouvelable et de Récupération (EnR&R) est visée pour la distribution de
   chaleur et 50 % pour la distribution de froid.
 début de validité: 01/01/2023
-fin de validité: 31/12/2024
-illustration: images/TEE_eolienne.png
+fin de validité: 31/12/2026
+illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
 contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
-  https://agir.ademe.fr/aides-financieres/2025/extension-et-creation-de-reseaux-de-chaleur-ou-de-froid
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/extension-et-creation-de-reseaux-de-chaleur-ou-de-froid
 nature de l'aide: financement
 montant du financement: Aide calculée au cas par cas
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9seaux%20chaleur%20et%20froid%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202024.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/R%C3%A9seaux%20Chaleur%20Froid%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre demande d'aide : informations administratives, description

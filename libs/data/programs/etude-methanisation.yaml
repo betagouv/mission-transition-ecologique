@@ -1,35 +1,42 @@
 titre: Étude "Méthanisation"
 promesse: Étudiez votre projet de construction d'une installation de méthanisation
 description: >-
-  Votre entreprise a un projet de méthanisation pour produire une énergie
-  renouvelable à partir de déchets ou de matières organiques ? L’ADEME peut
-  financer une étude préalable, indispensable pour évaluer la faisabilité
-  technique, économique et réglementaire de votre future installation. Cette
-  étude permet d’analyser les gisements mobilisables, les technologies adaptées,
-  le montage économique, les possibilités de valorisation du biogaz
-  (électricité, chaleur, injection), ainsi que les contraintes liées au site et
-  à la réglementation. Elle constitue une étape clé pour dimensionner votre
-  projet, sécuriser vos choix d’investissement et préparer un dossier solide en
-  vue de sa réalisation.
+  Vous avez un projet de méthanisation pour valoriser des déchets ou matières
+  organiques en énergie renouvelable ? L’ADEME peut financer une **étude
+  préalable** pour en évaluer la faisabilité.
+
+
+  Cette étude permet de :\
+
+  – **analyser les gisements disponibles, les technologies adaptées et les
+  options de valorisation du biogaz**,\
+
+  – **évaluer les contraintes économiques, réglementaires et liées au site**.
+
+
+  C’est une étape essentielle pour sécuriser votre projet, affiner sa conception
+  et bâtir un dossier solide en vue de sa réalisation.
 description longue: >-
   La méthanisation est un processus naturel biologique de dégradation de la
   matière organique grâce à l'action de micro-organismes. Chargées dans un
   digesteur, chauffées et brassées en l’absence d’oxygène pendant plusieurs
   jours, ces matières produisent une énergie renouvelable, le biogaz et un
-  fertilisant, le digestat. 
+  fertilisant, le digestat.\
 
   Le biogaz produit peut ensuite être valorisé et vendu sous différentes formes
   (chaleur, électricité, injection dans le réseau de gaz naturel, carburant pour
   véhicules).
-   
-  L'ADEME soutient le financement aux : 
 
-  • Études de diagnostic et d’accompagnement de projets (dont études de
+
+  L'ADEME soutient le financement aux :
+
+
+  - Études de diagnostic et d’accompagnement de projets (dont études de
   faisabilité) : unités de méthanisation à la ferme, centralisées, en industries
   agro-alimentaires, biodéchets des collectivités ou station d’épuration
   urbaines (STEU).
 
-  • Accompagnement au montage projet après étude de faisabilité :
+  - Accompagnement au montage projet après étude de faisabilité :
 
   - Études de raccordement au réseau public de gaz (pour les projets
   d’injection, voir plus bas en détail, certaines études seulement sont
@@ -46,21 +53,21 @@ description longue: >-
 
   - Appui au montage du plan de financement.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
-illustration: images/TEE_ampoule.png
+fin de validité: 31/12/2026
+illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/entreprises/aides-financieres/2025/etudes-prealables-a-construction-dune-installation-methanisation
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-diagnostic-et-daccompagnement-de-projet-dune-installation-de-methanisation?backtosearch=true
 nature de l'aide: étude
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/entreprises/sites/default/files/%C3%89tudes%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20m%C3%A9thanisation%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener votre étude
@@ -70,7 +77,7 @@ objectifs:
       Qualimétha ou équivalent.
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du
@@ -78,7 +85,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/entreprises/aides-financieres/2025/etudes-prealables-a-construction-dune-installation-methanisation
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etudes-prealables-a-construction-dune-installation-methanisation
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -93,8 +100,9 @@ conditions d'éligibilité:
     - >-
       Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
       Loire, Corse, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
-      Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Occitanie,
-      Pays de la Loire, Provence-Alpes-Côte d'Azur
+      Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine,
+      Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française,
+      Saint-Barthélemy, Saint-Martin
   secteur d'activité:
     - Activité agricole ou  industries agro-alimentaires
   nombre d'années d'activité:
@@ -121,8 +129,16 @@ publicodes:
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
       - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
       - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est la gestion des déchets
@@ -143,6 +159,9 @@ publicodes:
       - région = Mayotte
       - région = Normandie
       - région = Nouvelle-Aquitaine
+      - région = Nouvelle-Calédonie
       - région = Occitanie
       - région = Pays de la Loire
-      - région = Provence-Alpes-Côte d'Azur
+      - région = Polynésie française
+      - région = Saint-Barthélemy
+      - région = Saint-Martin

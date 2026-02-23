@@ -1,0 +1,70 @@
+titre: Formations AFDAS
+promesse: Formez vos salariés à la transition écologique
+description: >-
+  Accédez à un catalogue de formations, rigoureusement sélectionnées pour
+  répondre aux besoins de votre entreprise et de vos collaborateurs. Au
+  programme :
+
+
+  - Intégrer la RSE dans sa stratégie.
+
+  - Les gestes éco-responsables.
+
+  - Initiation au tourisme durable.
+
+  - Mise en place d'une stratégie bas carbone.
+
+  - etc.
+illustration: images/TEE_eolienne.webp
+opérateur de contact: Opco AFDAS
+contact question: https://www.afdas.com/en-region.html
+url: >-
+  https://www.afdas.com/entreprise/realiser-des-projets-rh-et-rse/agir-en-faveur-de-la-transition-ecologique.html
+nature de l'aide: formation
+coût de l'accompagnement: Variable
+durée de l'accompagnement: 7h à 21h, selon la formation choisie
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Rendez-vous sur le catalogue de formations de l'Opco Afdas et trouvez la
+      formation et la session qui vous convient.
+    liens:
+      - lien: >-
+          https://www.afdas.com/entreprise/realiser-des-projets-rh-et-rse/agir-en-faveur-de-la-transition-ecologique.html
+        texte: Catalogue de formations
+  - description: >-
+      Inscrivez-vous à la formation choisie en suivant les modalités indiquées
+      sur le site.
+  - description: >-
+      Pour toute demande de pris en charge d'une formation, contactez le service
+      entreprises de votre région.
+    liens:
+      - lien: https://www.afdas.com/en-region.html
+        texte: Service entreprises
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises des secteurs de la culture, des industries créatives, des
+      médias, de la communication, des télécommunications, du sport, du
+      tourisme, des loisirs et du divertissement
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter

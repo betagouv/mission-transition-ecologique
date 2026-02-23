@@ -1,0 +1,105 @@
+titre: ACT Évaluation
+promesse: Évaluez votre plan de transition bas carbone et communiquez sur vos résultats
+description: >-
+  Vous êtes une entreprise mature dotée d'un plan de transition et vous
+  souhaitez l'évaluer au regard des objectifs de décarbonation de l’accord de
+  Paris ? \
+
+  L'ADEME vous accompagne avec la méthode **ACT Évaluation** (Assessing Low
+  Carbon Transition), qui propose une méthode structurante et un suivi réalisé
+  par un consultant. Ainsi, vous évaluez votre stratégie bas carbone, et vous
+  pouvez rendre publics vos résultats d'évaluation.
+description longue: >-
+  Les grandes étapes de l'évaluation sont les suivantes :
+
+
+  - Vous découvrez la méthode ACT évaluation et sa grille de notation.
+
+
+  - Vous réalisez une évaluation de la stratégie bas carbone, accompagnée par un
+  consultant.
+
+
+  - Vous sollicitez un financement pour cette étude.
+
+
+  - Vous avez la possibilité de communiquer les résultats de l'évaluation.
+début de validité: 13/11/2023
+fin de validité: 30/06/2026
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: ADEME
+contact question: https://cloud.contact.ademe.fr/act-fr
+nature de l'aide: étude
+montant du financement: Jusqu’à 80% du coût de l’évaluation, dans un maximum de 3 000 € HT
+objectifs:
+  - description: >-
+      Choisissez le prestataire qui va vous accompagner pour mener l'étude
+      méthodologie ACT.
+    liens:
+      - lien: https://actinitiative.org/fr/find-an-advisor/
+        texte: Prestataires "ACT Évaluation"
+  - description: >-
+      Déposez votre demande de financement pour l'évaluation au guichet
+      correspondant à votre secteur d'activité (entreprise industrielle ou non
+      industrielle).
+    liens:
+      - lien: https://actinitiative.org/fr/act-in-france-soutien-financier/
+        texte: Dépôt de la demande
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez votre étude ACT Évaluation.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Non éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Tous secteurs d’activité, sauf les industries gérées par le programme
+      [PACTE
+      Industrie](https://mission-transition-ecologique.beta.gouv.fr/aides-entreprise/pacte-industrie)
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a une categorie legale eligible
+  entreprise . a une categorie legale eligible:
+    toutes ces conditions:
+      - microentrepreneur = non
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental

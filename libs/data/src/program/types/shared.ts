@@ -1,4 +1,4 @@
-import { ThemeId } from '../../theme/types/shared'
+import { ThemeId } from '@tee/common'
 import type { Dispositif as ProgramWithoutId } from './program'
 
 export enum ProgramAidType {
@@ -9,7 +9,7 @@ export enum ProgramAidType {
   tax = 'avantage fiscal'
 }
 
-export enum ProgramEligibilityType {
+export enum ProgramEligibilityStatus {
   Eligible = 'eligible',
   PartiallyEligible = 'partially-eligible',
   NotEligible = 'not-eligible',
@@ -27,13 +27,55 @@ export type ProgramFiltersType = {
 
 export type { ProgramWithoutId }
 export type ProgramType = ProgramWithoutId & {
+  eligibilityData: EligibilityData
   id: string
 }
 
+export interface EligibilityData {
+  validity?: {
+    start?: string
+    end?: string
+  }
+  company: {
+    minEmployees?: number
+    maxEmployees?: number
+    excludeMicroentrepreneur?: boolean
+    allowedNafSections: string[]
+    allowedRegion?: string[]
+  }
+  priorityObjectives?: ThemeId[]
+}
+
 export type ProgramTypeWithEligibility = ProgramType & {
-  eligibility: ProgramEligibilityType
+  eligibility: ProgramEligibilityStatus
 }
 
 export type ProgramTypeForFront = Exclude<ProgramTypeWithEligibility, 'publicodes'> & {
   filters?: ProgramFiltersType
 }
+
+export enum PublicodesCondition {
+  allOfThese = 'toutes ces conditions',
+  oneOfThese = 'une de ces conditions'
+}
+
+export type ProgramStaticBaseType = Omit<ProgramWithoutId, 'opérateur de contact' | 'autres opérateurs'> & {
+  'opérateur de contact': string
+  'autres opérateurs': string[]
+  id: string
+  eligibilityData: EligibilityData
+  type: ProgramTypes
+}
+
+export enum ProgramTypes {
+  extAdeme = 'ext-ademe',
+  TEE = 'tee'
+}
+
+export type ProgramJsonBaseType = ProgramStaticBaseType & Record<string, unknown> // Record string unknown to allow appending the interface
+
+export type ProgramYamlType = Omit<ProgramStaticBaseType, 'id' | 'eligibilityData' | 'type'>
+
+export type AbstractProgramType = Partial<ProgramStaticBaseType> & Required<Pick<ProgramStaticBaseType, 'id' | 'type'>>
+
+export type AbstractProgramTypeForFront = Partial<ProgramTypeForFront> & Required<Pick<ProgramTypeForFront, 'id' | 'type'>>

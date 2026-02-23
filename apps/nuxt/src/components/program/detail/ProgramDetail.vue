@@ -1,7 +1,11 @@
 <template>
   <Layout :links="links">
     <template
-      v-if="isDataFull || Program.isTemporaryUnavailable(currentProgram) || !Program.isAvailable(currentProgram)"
+      v-if="
+        isDataFull ||
+        AbstractProgram.isTemporaryUnavailable(currentProgram as AbstractProgramTypeForFront) ||
+        !Program.isAvailable(currentProgram)
+      "
       #beforeBreadcrumb
     >
       <ClientOnly>
@@ -25,25 +29,23 @@
           <ProgramTitle />
           <ProgramResume />
           <ProgramMainCta
-            :program="currentProgram"
             :is-activation-visible="isActivationVisible"
             :scroll-to-form="scrollToForm"
             :scroll-to-activation="scrollToActivation"
           />
         </div>
       </div>
-      <ProgramTiles />
-      <ProgramEligibilityConditions :program="currentProgram" />
       <div ref="activation-ref">
         <ProgramActivation
           v-if="isActivationVisible"
-          :program="currentProgram"
           :is-form-visible="isFormVisible"
           :scroll-to-form="scrollToForm"
         />
       </div>
+      <ProgramTiles />
+      <ProgramEligibilityConditions />
       <ProgramProjects :program="currentProgram" />
-      <ProgramLongDescription :program="currentProgram" />
+      <ProgramLongDescription />
       <div ref="form-ref">
         <ClientOnly>
           <ProgramForm
@@ -61,6 +63,7 @@ import { TeeDsfrBreadcrumbProps } from '@/components/element/TeeDsfrBreadcrumb.v
 import { useNavigationStore } from '@/stores/navigation'
 import { useProgramStore } from '@/stores/program'
 import Navigation from '@/tools/navigation'
+import AbstractProgram from '@/tools/program/abstractProgram'
 import { ProgramManager } from '@/tools/program/programManager'
 import { ProjectManager } from '@/tools/project/projectManager'
 import { RouteName } from '@/types/routeType'
@@ -70,9 +73,10 @@ import { useProjectStore } from '@/stores/project'
 import { storeToRefs } from 'pinia'
 import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 import Analytics from '@/tools/analytic/analytics'
-import { Scroll } from '@/tools/scroll'
+import { Scroll } from '@/tools/scroll/scroll'
 import { useCompanyDataStore } from '@/stores/companyData'
-import { ProgramEligibility } from '@/types'
+import { AbstractProgramTypeForFront, ProgramEligibility } from '@/types'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 const { currentProgram } = storeToRefs(useProgramStore())
 const { currentProject } = storeToRefs(useProjectStore())
@@ -122,17 +126,19 @@ if (currentProgram.value) {
 }
 
 const scrollToRef = (targetRef: HTMLElement | null | undefined) => {
-  if (!targetRef) return
+  if (!targetRef) {
+    return
+  }
   if (targetRef) {
-    navigation.isByRouteName(RouteName.CatalogProgramDetail) || navigation.isByRouteName(RouteName.CatalogProgramFromCatalogProjectDetail)
-      ? Scroll.to(targetRef)
-      : Scroll.toWithTopBarOffset(targetRef)
+    Scroll.toWithEligibilityBarOffset(targetRef)
   }
 }
 const scrollToForm = () => scrollToRef(formRef.value)
 const scrollToActivation = () => scrollToRef(activationRef.value)
 
-useSeoMeta(MetaSeo.get(currentProgram.value?.titre, currentProgram.value?.description))
+const description = currentProgram.value?.metaDescription ?? currentProgram.value?.description
+useSeoMeta(MetaSeo.get(currentProgram.value?.metaTitre ?? currentProgram.value?.titre, description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
@@ -149,7 +155,7 @@ const isFormNeeded = computed(() => {
 })
 
 const isActivationVisible = computed(() => {
-  if (!currentProgram.value) {
+  if (!currentProgram.value || !Program.isAvailable(currentProgram.value)) {
     return false
   }
   if (!isDataFull.value) {

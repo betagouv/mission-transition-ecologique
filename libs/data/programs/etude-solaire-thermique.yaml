@@ -1,52 +1,59 @@
 titre: Étude "Solaire thermique"
 promesse: Étudiez la faisabilité d'une installation solaire thermique
 description: >-
-  Vous souhaitez installer un système solaire thermique pour produire de l’eau
-  chaude sur votre site ? L'ADEME vous soutient financièrement pour réaliser une
-  étude de faisabilité, étape préalable essentielle avant tout investissement.
-  Cette étude vous permettra de déterminer les solutions techniques les plus
-  adaptées aux caractéristiques de votre installation. Elle analysera également
-  les aspects financiers, administratifs et juridiques de votre projet, afin de
-  vous orienter sur les meilleures options de montage. Grâce à cette aide, vous
-  serez en mesure d'évaluer la viabilité de votre projet et de prendre des
-  décisions éclairées avant de vous lancer dans les travaux.
-description longue: >
+  Vous souhaitez **installer un système solaire thermique pour produire de l’eau
+  chaude sur votre site** ? L’ADEME vous soutient financièrement pour réaliser
+  une **étude de faisabilité,** étape essentielle avant tout investissement.
+  Cette étude vous permettra de :\
+
+  – **déterminer les solutions techniques** les plus adaptées à votre
+  installation,\
+
+  – **analyser les aspects financiers, administratifs et juridiques** de votre
+  projet.
+
+
+  Grâce à cette aide, vous pourrez évaluer la viabilité de votre projet et
+  prendre des décisions éclairées avant de lancer les travaux.
+description longue: >-
   Cette étude de faisabilité peut être liée à la mise en œuvre :
 
-  •  d’installations dédiées sur bâtiment ou process
 
-  •  d’installations sur réseau de chaleur
+  - d’installations dédiées sur bâtiment ou process
 
-  • de systèmes solaires combinés
+  - d’installations sur réseau de chaleur
+
+  - de systèmes solaires combinés
 
 
   L’étude de faisabilité vous permettra de :
 
-  • Vérifier la faisabilité technique et économique du projet d’implantation
+
+  - Vérifier la faisabilité technique et économique du projet d’implantation
   d’une installation solaire.
 
-  • Proposer des solutions techniques adaptées au contexte et aux possibilités
+  - Proposer des solutions techniques adaptées au contexte et aux possibilités
   du site d’implantation, et assurer le dimensionnement et la pérennité de
   l’installation.
 
-  • Explorer des solutions pour le financement de l’opération et le montage
+  - Explorer des solutions pour le financement de l’opération et le montage
   administratif et juridique.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
-illustration: images/TEE_eolienne.png
+fin de validité: 31/12/2026
+illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
 contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/etude-faisabilite-dinstallation-solaire-thermique
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-de-faisabilite-dinstallation-solaire-thermique
 nature de l'aide: étude
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financemement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez un prestataire "Reconnu Garant de l'Environnement" (RGE) ou
@@ -57,7 +64,7 @@ objectifs:
         texte: Annuaire des professionnels RGE
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du
@@ -81,10 +88,10 @@ conditions d'éligibilité:
   secteur géographique:
     - >-
       Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
-      Loire, Corse, Grand Est, Guadeloupe, Guyane, Hauts-de-France,
-      Île-de-France, La Réunion, Martinique, Mayotte, Normandie,
-      Nouvelle-Aquitaine, Occitanie, Pays de la Loire, Polynésie française,
-      Provence-Alpes-Côte d'Azur, Saint-Pierre-Et-Miquelon
+      Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
+      Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Occitanie,
+      Pays de la Loire, Polynésie française, Provence-Alpes-Côte d'Azur,
+      Saint-Pierre-Et-Miquelon
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -140,7 +147,6 @@ publicodes:
       - région = Bourgogne-Franche-Comté
       - région = Bretagne
       - région = Centre-Val de Loire
-      - région = Corse
       - région = Grand Est
       - région = Guadeloupe
       - région = Guyane

@@ -36,8 +36,8 @@
           @click="selectActivity(activity)"
         >
           <div class="fr-card__body">
-            <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-france">
-              <div class="fr-text--blue-france">{{ `${activity.secteur} (${activity.codeNAF})` }}</div>
+            <div class="fr-card__content fr-py-1v fr-px-4v fr-text--blue-900">
+              <div class="fr-text--blue-900">{{ `${activity.secteur} (${activity.codeNAF})` }}</div>
             </div>
           </div>
         </div>
@@ -46,8 +46,8 @@
   </TeeDsfrSearchBar>
 </template>
 <script lang="ts" setup>
+import { useEstablishmentStore } from '@/stores/establishment'
 import { RegisterDetailActivity, CompanyActivityType, Color } from '@/types'
-import EstablishmentApi from '@/tools/api/establishmentApi'
 import Translation from '@/tools/translation'
 
 interface Props {
@@ -59,6 +59,7 @@ const props = defineProps<Props>()
 
 const selectedActivity = defineModel<CompanyActivityType>()
 
+const establishmentStore = useEstablishmentStore()
 const activityInput = ref<string>('')
 const isLoading = ref<boolean>(false)
 const activityResults = ref<CompanyActivityType[]>([])
@@ -90,10 +91,7 @@ const selectActivity = (activity: CompanyActivityType) => {
 
 const searchActivity = async () => {
   isLoading.value = true
-  const results = await new EstablishmentApi().searchActivities(activityInput.value)
-  if (results.isOk()) {
-    activityResults.value = results.data
-  }
+  activityResults.value = await establishmentStore.searchActivities(activityInput.value)
   isLoading.value = false
 }
 </script>

@@ -8,33 +8,29 @@ description: >-
   vous accompagner financièrement dans leur réalisation.
 description longue: >-
   Le contrat territorial, porte sur un minimum de 10 installations (quelle que
-  soit la technologie
-
-  utilisée et leur taille). Chaque contrat territorial doit faire appel à
-  plusieurs EnR thermiques
-
-  différentes avec un minimum de 20% d’installations EnR&R autres que le
-  bois-énergie.
+  soit la technologie utilisée et leur taille). Chaque contrat territorial doit
+  faire appel à plusieurs EnR thermiques différentes avec un minimum de 20%
+  d’installations EnR&R autres que le bois-énergie.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
-illustration: images/TEE_energie_verte.png
+fin de validité: 31/12/2026
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: ADEME
 contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/contrat-chaleur-renouvelable
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/contrat-chaleur-renouvelable
 nature de l'aide: financement
 montant du financement: Selon le type d'investissement
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Contrat%20Chaleur%20Renouvelable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/Contrat%20Chaleur%20Renouvelable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
         texte: Conditions éligibilité et financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du

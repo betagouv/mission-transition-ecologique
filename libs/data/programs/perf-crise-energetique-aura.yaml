@@ -10,7 +10,8 @@ description: >-
   Ces travaux de rénovation énergétique peuvent non seulement réduire vos coûts
   d'exploitation mais aussi améliorer l'expérience client et renforcer
   l'attractivité écoresponsable de votre établissement.
-illustration: images/TEE_energie_verte.png
+fin de validité: 01/09/2025
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: Région Auvergne-Rhône-Alpes
 contact question: mailto:crise-energie-tourisme@auvergnerhonealpes.fr
 url: >-
@@ -20,7 +21,7 @@ montant du financement: Jusqu'à 20% des dépenses éligibles
 objectifs:
   - description: >-
       Complétez la "fiche premier contact" pour décrire votre projet de
-      rénovation. 
+      rénovation.
     liens:
       - lien: https://www.auvergnerhonealpes.fr/media/3039/download?inline
         texte: Fiche premier contact
@@ -66,6 +67,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

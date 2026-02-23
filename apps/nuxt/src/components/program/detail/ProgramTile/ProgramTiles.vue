@@ -91,7 +91,7 @@
         :title="Translation.t('program.programEndValidity')"
         image-path="/images/TEE-date-fin.svg"
         :description="
-          Program.isTemporaryUnavailable(currentProgram)
+          AbstractProgram.isTemporaryUnavailable(currentProgram)
             ? 'Aide temporairement indisponible'
             : programEndValidity
               ? Translation.t(Translation.t('program.programAvailableUntil'), { date: programEndValidity })
@@ -103,10 +103,10 @@
 </template>
 <script setup lang="ts">
 import ProgramTile from '@/components/program/detail/ProgramTile/ProgramTile.vue'
-import Program from '@/tools/program/program'
+import AbstractProgram from '@/tools/program/abstractProgram'
 import Translation from '@/tools/translation'
 
-const { currentProgram } = storeToRefs(useProgramStore())
+const currentProgram = AbstractProgram.getCurrent()
 
 const programCost = computed(() => currentProgram.value?.[`coût de l'accompagnement`])
 const programAidAmount = computed(() => currentProgram.value?.[`montant du financement`])

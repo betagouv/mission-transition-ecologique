@@ -1,6 +1,7 @@
 import Config from '@/config'
 import { RouteName, TrackId } from '@/types'
-import { RouteLocationNormalizedLoaded, RouteParamsGeneric, Router } from 'vue-router'
+import { type LocationQueryValue, RouteLocationNormalizedLoaded, RouteParamsGeneric, Router } from 'vue-router'
+import { Scroll } from './scroll/scroll'
 
 export default class Navigation {
   constructor(
@@ -8,12 +9,13 @@ export default class Navigation {
     private _router: Router = useRouter()
   ) {}
 
-  private static instance: Navigation
+  private static _instance: Navigation
+
   static getInstance(route: RouteLocationNormalizedLoaded | undefined = undefined, router: Router | undefined = undefined) {
-    if (!this.instance) {
-      this.instance = new Navigation(route, router)
+    if (!this._instance) {
+      this._instance = new Navigation(route, router)
     }
-    return this.instance
+    return this._instance
   }
 
   static toggleRegisterModal = (forceStatus?: boolean) => {
@@ -31,6 +33,11 @@ export default class Navigation {
           top: 0,
           behavior: 'instant'
         })
+      }
+
+      const navigation = Navigation.getInstance()
+      if (!navigationStore.hasRegisterModal && navigation._route.hash) {
+        Scroll.toHashWithRetries(navigation._route.hash)
       }
     }
   }
@@ -57,6 +64,14 @@ export default class Navigation {
 
   isHomepage() {
     return this.isByRouteName(RouteName.Homepage)
+  }
+
+  isAboutPage() {
+    return this.isByRouteName(RouteName.About)
+  }
+
+  isSitemapPage() {
+    return this.isByRouteName(RouteName.SitemapPage)
   }
 
   isCatalogPrograms() {
@@ -142,8 +157,56 @@ export default class Navigation {
   getHrefByRouteName(routeName: RouteName, params: RouteParamsGeneric = {}): string | undefined {
     if (this._router) {
       const href = this._router.resolve({ name: routeName, params: params }).href
-      return Config.baseUrl ? `${Config.baseUrl}${href}` : href
+      return this.baseUrl ? `${this.baseUrl}${href}` : href
     }
+  }
+
+  getAbsoluteUrlByRouteName(
+    routeName: RouteName,
+    params: RouteParamsGeneric = {},
+    query: Record<string, LocationQueryValue | LocationQueryValue[]> = {}
+  ): string | undefined {
+    if (this._router) {
+      return new URL(this._router.resolve({ name: routeName, params: params, query: query }).href, window.location.origin).href
+    }
+  }
+
+  get baseUrl() {
+    const baseUrl = Config.baseUrl
+    if (baseUrl) {
+      return baseUrl
+    }
+
+    if (import.meta.client) {
+      return window.location.origin
+    }
+
+    return undefined
+  }
+
+  static getClassesBySideMenu(hasSideMenu: boolean, withMaxColumns = 12) {
+    if (!hasSideMenu) {
+      return withMaxColumns !== 12 ? `fr-col-md-${withMaxColumns}` : ''
+    }
+
+    const colOffset = 3
+    const xlColOffset = 2
+
+    const colWidth = withMaxColumns - colOffset
+    const xlColWidth = withMaxColumns - xlColOffset
+
+    return (
+      this.getOffsetClassesBySideMenu(hasSideMenu, colOffset, xlColOffset) +
+      ` fr-col-md-${colWidth} fr-col-justify-md--left fr-col-xl-${xlColWidth} fr-col-justify--center`
+    )
+  }
+
+  static getOffsetClassesBySideMenu(hasSideMenu: boolean, colOffset = 3, xlColOffset = 2) {
+    if (!hasSideMenu) {
+      return ''
+    }
+
+    return `fr-col-offset-md-${colOffset} fr-col-offset-xl-${xlColOffset}`
   }
 
   static hashByRouteName = (routeName: string) => {
@@ -164,6 +227,15 @@ export default class Navigation {
         useNavigationStore().setFromQuestionnaireCtaRegisterModal(false)
         await this._router.push({
           name: RouteName.QuestionnaireStart
+        })
+      }
+    }
+
+    if (this.isByRouteName(RouteName.Faq)) {
+      if (navigationStore.isFromCtaRegisterModal) {
+        useNavigationStore().setFromCtaRegisterModal(false)
+        await this._router.push({
+          name: RouteName.CatalogPrograms
         })
       }
     }

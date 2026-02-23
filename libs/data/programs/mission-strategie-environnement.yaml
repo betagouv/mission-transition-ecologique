@@ -3,29 +3,32 @@ promesse: >-
   Définissez la feuille de route pour la transition énergétique et écologique de
   votre entreprise
 description: >-
-  Bénéficiez de 13 jours d’accompagnement par un expert environnement référencé
-  par Bpifrance pour inscrire la transition écologique et énergétique dans la
-  stratégie de votre entreprise. Cette mission vous aide à prendre du recul,
-  structurer votre démarche et construire une feuille de route concrète et
-  adaptée à votre activité.
+  Bénéficiez de **13 jours d’accompagnement** par un expert environnement
+  référencé par Bpifrance pour intégrer la **transition écologique et
+  énergétique** dans la stratégie de votre entreprise. Cette mission vous permet
+  de prendre du recul, structurer votre démarche et construire une **feuille de
+  route adaptée** à votre activité.
 
 
-  - Sensibilisez vos équipes et développez leurs compétences sur les enjeux
-  environnementaux.
+  Vous pourrez :
 
 
-  - Évaluez les impacts environnementaux de votre activité.
+  - **Sensibiliser vos équipes** aux enjeux environnementaux,
 
 
-  - Identifiez les risques et les opportunités liés à la transition écologique.
+  - **Évaluer les impacts** de votre activité,
 
 
-  - Formalisez la raison d’être de votre entreprise si vous le souhaitez.
+  - **Identifier risques et opportunités** liés à la transition,
 
 
-  - Construisez une trajectoire jusqu’à 2030 qui vous guide dans vos actions,
-  selon vos objectifs et vos capacités.
-illustration: images/TEE_eolienne.png
+  - **Formaliser votre raison d’être**,
+
+
+  - et construire une **trajectoire jusqu’en 2030** pour guider vos actions
+  selon vos objectifs.
+fin de validité: 31/12/2025
+illustration: images/TEE_eolienne.webp
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - InvestEU
@@ -70,6 +73,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - a une categorie legale eligible

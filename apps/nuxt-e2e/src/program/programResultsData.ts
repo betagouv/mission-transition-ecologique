@@ -9,7 +9,7 @@ export const tests: SearchResultsDataType = [
   },
   {
     id: 1,
-    url: 'questionnaire/resultat?siret=83014132100034&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non#questionnaire-resultat',
+    url: 'questionnaire/resultat?siret=83014132100042&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non#questionnaire-resultat',
     values: [
       'Communauté du Coq Vert',
       'Entreprises engagées pour la nature',
@@ -45,7 +45,7 @@ export const tests: SearchResultsDataType = [
   },
   {
     id: 2,
-    url: 'questionnaire/resultat/projet/sensibilisation-equipes?siret=83014132100034&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non',
+    url: 'questionnaire/resultat/projet/sensibilisation-equipes?siret=83014132100042&effectif=TPE&locaux=proprietaire&mobilite=oui&matieres-premieres=oui&tri-dechets=non&dechets=oui&gestion-eau=oui&energie=non&audit=non',
     values: ['Formation ADEME']
   },
   {
@@ -57,13 +57,13 @@ export const tests: SearchResultsDataType = [
       'Entreprises engagées pour la nature',
       'Formation ADEME',
       'Performa Environnement',
-      'Diagnostic SARE',
       'TPE gagnantes sur tous les coûts',
       'Diagnostic Transition Ecologique',
       'Formations Transition Écologique et Énergétique',
       'Visite Énergie CCI',
       'Accélérateur décarbonation',
       'Programme Volontaire Français ACT',
+      'Booster Éco-Énergie Tertiaire',
       'Diag Ecoconception',
       'Diagnostic RSE',
       'Étude "Économie de la fonctionnalité"',
@@ -71,12 +71,14 @@ export const tests: SearchResultsDataType = [
       'Étude "projet de recherche"',
       'Étude "réemploi réutilisation réparation"',
       'Étude "Solaire thermique"',
+      'Étude "Test géothermie"',
       'Mission de Conseil RSE',
       'Mission Stratégie Environnement',
       'Aides au réemploi des emballages',
       'Bonus écologique',
       'Coup de pouce Chauffage',
       'Investissement "Boucle d’eau géothermique"',
+      'Investissement "Chaleur bois"',
       'Investissement "Contrat Chaleur Renouvelable"',
       'Investissement "Ecoconception"',
       'Investissement "Géothermie de surface et d\'aérothermie"',
@@ -92,8 +94,7 @@ export const tests: SearchResultsDataType = [
       'Prêt Action Climat',
       'Prêt Vert - Ademe',
       'Prêt Vert',
-      'Flotte de vélos à disposition',
-      "Crédit d'Impôt Rénovation Énergétique (CIRE)"
+      'Flotte de vélos à disposition'
     ]
   },
   {

@@ -1,50 +1,65 @@
 <template>
   <LayoutCatalog
     :has-side-menu="hasSideMenu"
-    :title="title"
+    description="Accédez à l’ensemble des aides publiques pour vous permettre d’engager la transition écologique de votre entreprise :
+      aides financières, accompagnements, formations, prêts, avantages fiscaux..."
     :has-error="hasError"
     :count-items="countPrograms"
+    :faq-items="faqCatalogProgram"
   >
+    <template #title>
+      <h1 class="fr-text--blue-900 fr-mb-0 fr-h2">
+        Le catalogue des aides<span class="fr-display-xl--block"> à la transition écologique</span>
+      </h1>
+    </template>
     <template #sidemenu>
       <ProgramFiltersAccordion with-title />
     </template>
-    <ProgramList :filtered-programs="filteredPrograms" />
+    <ProgramList
+      :filtered-programs="programsByFilters"
+      :ext-filtered-programs="extProgramsByFilters"
+    />
   </LayoutCatalog>
 </template>
 
 <script setup lang="ts">
 import { MiddlewareName } from '@/middleware/type/middlewareName'
 import Navigation from '@/tools/navigation'
-import { RouteName } from '@/types'
+import { FaqSectionType, RouteName } from '@/types'
 import { useProgramStore } from '@/stores/program'
 import { ProgramManager } from '@/tools/program/programManager'
 import { MetaSeo } from '@/tools/metaSeo'
-import { computed } from 'vue'
+import { computed, onMounted } from 'vue'
 import { MetaRobots } from '@/tools/metaRobots'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
+import { useRoute } from 'vue-router'
+import { Scroll } from '@/tools/scroll/scroll'
 
 definePageMeta({
   name: RouteName.CatalogPrograms,
   middleware: [MiddlewareName.resetUsedTrackStore, MiddlewareName.resetQueries, MiddlewareName.resetFilters]
 })
 
-const programStore = useProgramStore()
-const { programs, hasError } = storeToRefs(useProgramStore())
+const { default: json } = await import('@/public/json/faq/catalog-program.json')
+const faqCatalogProgram = json as unknown as FaqSectionType[]
+
+const { hasError, programsByFilters, extProgramsByFilters } = storeToRefs(useProgramStore())
 const navigation = new Navigation()
+const route = useRoute()
 
-const title = 'Les aides à la transition écologique'
-const description =
-  'Réalisez une recherche parmi les aides à la transition écologique des entreprises, proposées par l’ensemble des partenaires publics :' +
-  'ADEME, Bpifrance, CCI, CMA, etc.'
+const seoTitle = 'Aides aux entreprises et subventions dédiées à la transition écologique'
+const seoDescription =
+  'Trouvez les aides adaptées à votre entreprise : subvention, financements et accompagnements de l’ADEME, Bpifrance,' +
+  ' CCI… pour votre transition énergétique et écologique.'
 
-onServerPrefetch(async () => {
-  await new ProgramManager().getDependentCompanyData(false)
-})
+await new ProgramManager().getDependentCompanyData(false)
 
 onNuxtReady(async () => {
   await new ProgramManager().getDependentCompanyData(true)
 })
 
-useSeoMeta(MetaSeo.get(title, description))
+useSeoMeta(MetaSeo.get(seoTitle, seoDescription))
+useSchemaOrg(defineWebPage({ description: seoDescription }))
 
 onBeforeRouteLeave(() => {
   useSeoMeta(MetaSeo.default())
@@ -54,12 +69,8 @@ const hasSideMenu = computed(() => {
   return !hasError.value
 })
 
-const filteredPrograms = computed(() => {
-  return programs.value ? programStore.getProgramsByFilters(programs.value) : undefined
-})
-
 const countPrograms = computed(() => {
-  return filteredPrograms.value?.length || 0
+  return programsByFilters.value.length || 0
 })
 
 useHead({
@@ -70,5 +81,13 @@ useHead({
     }
   ],
   ...MetaRobots.noIndexOnQueries(useRoute().fullPath)
+})
+
+onMounted(() => {
+  if (!route.hash) {
+    return
+  }
+
+  Scroll.toHashWithRetries(route.hash)
 })
 </script>

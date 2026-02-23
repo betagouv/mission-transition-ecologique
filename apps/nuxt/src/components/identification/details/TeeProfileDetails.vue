@@ -1,32 +1,35 @@
 <template>
-  <div
-    v-show="manual"
-    class="fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
-  >
+  <div v-show="manual">
     <TeeDsfrButton
       size="small"
       class="fr-btn--tertiary-no-outline fr-text-left fr-p-0 fr-text--white fr-btn-bg fr-text--sm fr-text--decoration-underline"
+      only-label="je renseigne mon SIRET"
       @click="openSiretStep"
     >
       <span class="fr-pr-2v fr-icon-arrow-left-line" /><span>je renseigne mon SIRET</span>
     </TeeDsfrButton>
-    <h4 class="fr-mb-0 fr-py-2v fr-text--white">Quelle est votre entreprise ?</h4>
+    <h4
+      v-if="!fromIframe"
+      class="fr-mb-0 fr-py-2v fr-text--yellow"
+    >
+      Quelle est votre entreprise ?
+    </h4>
   </div>
   <TeeProfileElement
     v-for="detailKey in Object.keys(profile).filter((detailK) => profile[detailK].if !== false)"
     :key="profile[detailKey].title"
     v-model="profile[detailKey]"
-    class="fr-col-sm-8 fr-col-md-5 fr-col-offset-md-2 fr-col-12"
+    class="fr-col-sm-10 fr-col-md-9 fr-col-lg-8 fr-col-xl-7 fr-col-12"
     :manual="manual"
     :show-error="showError"
     :detail-infos="profile[detailKey]"
     @update:model-value="updateValue"
     @update:siret="openSiretStep"
   />
-  <div class="fr-col-sm-8 fr-pt-4v fr-col-md-7 fr-col-offset-md-2 fr-col-12">
+  <div class="fr-col-sm-10 fr-pt-4v fr-col-md-7 fr-col-12">
     <TeeDsfrButton
       :class="Breakpoint.isMobile() ? 'fr-btn-fullwidth' : ''"
-      class="fr-bg--yellow fr-text--blue-france fr-col-justify--center"
+      class="fr-btn-bg fr-btn-bg--yellow fr-text--blue-900 fr-col-justify--center"
       :label="getSaveProfileButtonLabel"
       :icon="getSaveProfileButtonIcon"
       icon-right
@@ -51,9 +54,18 @@ interface Props {
   company: CompanyDataType[CompanyDataStorageKey.Company]
   companySize: CompanyDataType[CompanyDataStorageKey.Size]
   manual: boolean
+  fromIframe?: boolean
+  buttonLabel?: string
 }
-const props = defineProps<Props>()
-const emit = defineEmits(['modifySiret', 'closeRegister'])
+
+const props = withDefaults(defineProps<Props>(), {
+  buttonLabel: 'Enregistrer et continuer'
+})
+
+const emit = defineEmits<{
+  modifySiret: []
+  closeRegister: []
+}>()
 const showError = ref<boolean>(false)
 const openSiretStep = () => {
   emit('modifySiret')
@@ -104,10 +116,13 @@ const canBeSaved = computed(() => {
 })
 
 const getSaveProfileButtonLabel = computed(() => {
-  return navigationStore.isFromQuestionnaireCtaRegisterModal ? 'suivant' : 'Enregistrer et fermer'
+  return navigationStore.isFromQuestionnaireCtaRegisterModal ? 'suivant' : props.buttonLabel
 })
 
 const getSaveProfileButtonIcon = computed(() => {
+  if (props.fromIframe) {
+    return 'fr-icon-external-link-fill'
+  }
   return navigationStore.isFromQuestionnaireCtaRegisterModal ? 'fr-icon-arrow-right-line' : ''
 })
 
@@ -134,6 +149,11 @@ const saveProfile = async () => {
       }
     } else {
       Analytics.sendEvent('register_manual_modal')
+    }
+
+    if (props.fromIframe) {
+      emit('closeRegister')
+      return
     }
 
     await UsedTrack.updateQuestionnaireStep()

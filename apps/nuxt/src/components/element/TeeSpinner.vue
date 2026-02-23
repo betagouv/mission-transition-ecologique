@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="fr-text--blue-france"
+    class="fr-text--blue-900"
     xmlns="http://www.w3.org/2000/svg"
     width="8em"
     height="8em"

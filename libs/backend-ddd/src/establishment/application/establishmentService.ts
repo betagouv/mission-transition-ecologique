@@ -9,22 +9,22 @@ import { RechercheEntreprise } from '../infrastructure/api/recherche-entreprise/
 import { CompanyActivityType, EstablishmentSearch } from '@tee/common'
 
 export default class EstablishmentService {
-  private _establishmentFeatures: EstablishmentFeatures
+  public establishmentFeatures: EstablishmentFeatures
 
   constructor() {
-    this._establishmentFeatures = new EstablishmentFeatures(
+    this.establishmentFeatures = new EstablishmentFeatures(
       this._getEstablishmentRepository(),
       this._getCityToRegionMapping(),
       this._getNafRepository()
     )
   }
 
-  public search(query: string, resultCount: number): Promise<Result<EstablishmentSearch, Error>> {
-    return this._establishmentFeatures.search(query, resultCount)
+  public async search(query: string, resultCount: number): Promise<Result<EstablishmentSearch, Error>> {
+    return await this.establishmentFeatures.search(query, resultCount)
   }
 
-  public getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
-    return this._establishmentFeatures.getBySiret(siret)
+  public async getBySiret(siret: Siret): Promise<Result<Establishment, Error>> {
+    return await this.establishmentFeatures.getBySiret(siret)
   }
 
   public searchNAF(query: string): Result<CompanyActivityType[], Error> {

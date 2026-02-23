@@ -29,7 +29,7 @@ description longue: >-
 
   - Un suivi de votre plan d’action.
 fin de validité: 30/04/2026
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_eolienne.webp
 opérateur de contact: Chambre de Commerce et de l'Industrie
 autres opérateurs:
   - Agence de l'Eau Rhône-Méditerranée-Corse
@@ -41,7 +41,9 @@ coût de l'accompagnement: Gratuit
 durée de l'accompagnement: Variable
 activable en autonomie: oui
 objectifs:
-  - description: Vérifiez votre éligibilité en parcourant la documentation du programme.
+  - description: >-
+      Consultez la documentation du programme pour vérifier l'éligibilité de
+      votre projet.
     liens:
       - lien: >-
           https://www.cote-azur.cci.fr/app/uploads/2024/11/Reglement-Appel-a-candidatures-ReSEau.pdf

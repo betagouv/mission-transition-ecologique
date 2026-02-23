@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Quelles aides ?",
+    "color": "blue",
+    "questions": [
+      {
+        "id": 51,
+        "question": "Quelles sont les aides et subventions auxquelles peut prétendre une entreprise ?",
+        "answer": "Il existe en France une multitude d’aides publiques et de subventions pour accompagner les entreprises à chaque étape de leur vie : création, développement, innovation, transition numérique, transition écologique... Mais ces aides sont souvent éparpillées entre de nombreux acteurs, avec des critères et des démarches parfois complexes à identifier.\n\nLa plateforme *Transition écologique des entreprises* se concentre exclusivement sur les aides dédiées à la transition environnementale. Elle permet de centraliser ces dispositifs en un seul endroit, de les rendre lisibles et de faciliter l’orientation vers les bons interlocuteurs."
+      },
+      {
+        "id": 52,
+        "question": "Quels sont les différents types d'aides et comment en bénéficier ?",
+        "answer": "Les aides disponibles sur la plateforme *Transition écologique des entreprises* sont de différentes natures. Faisons le point :\n\n- **Les études :** Ce sont des aides qui vous permettent d’évaluer, avec l’aide d’un expert la faisabilité d’un projet avant investissement. Certaines études peuvent être financées en partie ou intégralement.\n- **Les formations :** Il peut s’agir de formations en ligne ou en présentiel, individuelles ou collectives. Elles portent sur une ou plusieurs thématiques de transition écologiques. Certaines formations peuvent donner droit à une labellisation.\n- **Les financements :** Les aides financières contribuent, avant ou après travaux, à la réalisation d’un projet de transition écologique précis.\n- **Les prêts :** Ils vous donnent droit à une avance de trésorerie à taux préférentiels, pour des investissements portant sur la transition écologique.\n- **Les avantages fiscaux :** Il s’agit d’aides financières qui ne sont pas versées en monnaie sonnante et trébuchante, mais déduite de votre déclaration d’impôts l’année suivante.\n- **Les appels à projets :** Ce sont des financements octroyés aux projets les plus pertinents sur une problématique donnée."
+      },
+      {
+        "id": 53,
+        "question": "De quels opérateurs publics centralisez-vous les aides ?",
+        "answer": "Les principaux opérateurs publics dont les dispositifs sont répertoriés sont l’**ADEME, Bpifrance, CCI France, CMA, l’Office Français de la Biodiversité, la DDFIP**…\n\nTransition Écologique des Entreprises intègre également les aides principales portées par les régions (Provence-Alpes-Côte d'Azur, Grand Est, Bretagne…)."
+      },
+      {
+        "id": 54,
+        "question": "Est-ce que les subventions de l’ADEME sont présentes sur la plateforme ?",
+        "answer": "Oui, la plateforme *Transition écologique des entreprises* référence les subventions et dispositifs d'accompagnement proposés par l’ADEME (Agence de la transition écologique). Ces aides couvrent un large éventail de thématiques : plan bas carbone, audit énergétique, bilan carbone, Bonus Réparation, décarbonation…\n\nLa plateforme permet de les filtrer en fonction de la taille de votre entreprise, de votre secteur d’activité et de votre région pour identifier rapidement celles qui peuvent vous concerner."
+      },
+      {
+        "id": 55,
+        "question": "Est-ce que je peux retrouver l’exhaustivité des aides existantes sur *Transition écologique des entreprises* ?",
+        "answer": "Il existe des centaines d’aides (sans exagérer) à la transition écologique.\n\nCertaines durent plusieurs années, d’autres à peine quelques semaines. Certaines s’adressent à des milliers d’entreprises sur tout le territoire national, d’autres seulement à une poignée. Forcément, il a fallu faire du tri.\n\nNous avons donné **la priorité aux aides destinées aux TPE et PME, aussi bien au niveau national que régional**. *Transition écologique des entreprises* est en constante évolution et nous ajoutons chaque jour de nouvelles aides. Si vous pensez qu’il en manque une, n’hésitez pas à nous écrire."
+      },
+      {
+        "id": 56,
+        "question": "Pourquoi faire une étude avant de réaliser un investissement ?",
+        "answer": "Avant de lancer des travaux importants, il est souvent nécessaire de réaliser une **étude de faisabilité**. Cette étape consiste à être accompagné par un expert qui analyse votre situation (infrastructures, contraintes techniques, réglementaires…) pour vérifier que le projet est viable, identifier les solutions techniques adaptées et estimer les bénéfices attendus, notamment sur votre consommation énergétique.\n\nUne fois cette étape validée, vous pouvez demander un **financement**, c’est-à-dire une aide financière (subvention, prêt à taux réduit, etc.) qui vous permet de couvrir tout ou partie du coût de vos travaux ou investissements.\n\nCertains opérateurs publics, comme l’ADEME, proposent des études de faisabilité partiellement financées. Réaliser cette étude facilite ensuite l’accès aux financements nécessaires pour concrétiser votre projet."
+      },
+      {
+        "id": 57,
+        "question": "Faut-il faire les travaux avant ou après avoir reçu les financements ?",
+        "answer": "Ça dépend ! Certaines aides ne peuvent vous être accordées que si les travaux n’ont pas encore commencé. Il est donc essentiel d’en faire la demande avant d’engager toute dépense.\n\nD’autres aides, au contraire, sont attribuées sur présentation de la facture, une fois les travaux réalisés.\n\nC’est pourquoi il est important de **lire attentivement les conditions d’attribution de chaque aide**. En cas de doute, n’hésitez pas à cliquer sur « J’ai une question »."
+      },
+      {
+        "id": 58,
+        "question": "Qu’est-ce qu’un appel à projets ?",
+        "answer": "Un appel à projets est un **financement** un peu particulier. L’appel à projets **met en concurrence des projets autour d’une problématique**, tout en vous laissant une certaine latitude quant à la manière d’y répondre. Si votre projet, parmi tous les projets ayant postulé, est retenu, vous bénéficiez du financement.\n\nIl peut s’agir, par exemple, d’un appel à projets pour décarboner l’industrie. L’opérateur public examinera donc tous les projets qui prétendent avoir un impact positif sur le bilan carbone du secteur industriel, et financera ceux qui lui semblent pertinents."
+      },
+      {
+        "id": 59,
+        "question": "Quelle est la différence entre un financement par les CEE et un financement par un opérateur public ?",
+        "answer": "Les **Certificats d’Économies d’Énergie (CEE)** sont des aides financières émanant d’**acteurs privés**. Ils sont versés par les fournisseurs d’énergie (électricité, gaz, fioul, carburant…) dans le cadre d’une obligation légale visant à aider les particuliers, les entreprises et les associations (sans distinction) à mettre en place des économies d’énergie. Les [CEE](https://www.ecologie.gouv.fr/politiques-publiques/dispositif-certificats-deconomies-denergie) peuvent prendre la forme d’une prime, d’une réduction directe sur votre devis ou d’un remboursement après travaux.\n\nLes **financements provenant d’opérateurs publics** (ADEME, Bpifrance, CCI, CMA…), quant à eux, sont des **aides versées par l’État ou une collectivité territoriale**. Elles ne s’appliquent par à tous mais conditionnent leur versement à des critères bien spécifiques. Par exemple, certains financements ne seront attribués qu’à des entreprises de plus de 200 salariés dans le secteur de l’industrie et les particuliers ne pourront pas en bénéficier."
+      },
+      {
+        "id": 60,
+        "question": "Je ne trouve aucune aide pour financer mon projet. Qu'est-ce que ça signifie ?",
+        "answer": "Cela ne veut pas dire qu’il n’existe aucune aide pour votre projet, mais simplement qu’**aucune n’est actuellement visible** sur la plateforme *Transition écologique des entreprises* pour votre situation (secteur d’activité, localisation, taille d’entreprise…). Notre base de données est **mise à jour en continu**, mais toutes les aides existantes n’y sont pas encore recensées.\n\nN’hésitez pas à **nous contacter** pour nous présenter votre projet : nous pourrons vous orienter vers des conseillers locaux qui connaissent bien les dispositifs disponibles dans votre territoire.\n\nDans certains cas, il n’y a pas de budget public alloué à un projet. Mais il n’est pas disqualifié pour autant. Ce projet reste **pertinent d’un point de vue écologique et économique** pour votre entreprise. Isoler vos bâtiments peut, par exemple, vous faire réaliser d’importantes économies d’énergie et faire baisser considérablement votre facture, que le projet soit initialement financé ou non."
+      }
+    ]
+  }
+]

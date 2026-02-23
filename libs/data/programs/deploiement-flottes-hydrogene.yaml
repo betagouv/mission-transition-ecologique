@@ -10,7 +10,8 @@ description: >-
 description longue: >-
   Les coûts admissibles sont les suivants :
 
-  a) en ce qui concerne les investissements consistant en l’achat de véhicules
+
+  - en ce qui concerne les investissements consistant en l’achat de véhicules
   propres ou de véhicules à émission nulle, les coûts supplémentaires liés à
   l’achat du véhicule propre ou du véhicule à émission nulle. Ils sont calculés
   comme étant la différence entre les coûts d’investissement liés à l’achat du
@@ -18,28 +19,24 @@ description longue: >-
   liés à l’achat d’un véhicule de la même catégorie qui est conforme aux normes
   de l’Union applicables déjà en vigueur et qui aurait été acquis sans l’aide ;
 
-  b) en ce qui concerne les investissements consistant en la location de
+  - en ce qui concerne les investissements consistant en la location de
   véhicules propres ou de véhicules à émission nulle, les coûts supplémentaires
   liés à la location du véhicule propre ou du véhicule à émission nulle. Ils
   sont calculés comme étant la différence entre la valeur actuelle nette liée à
   la location du véhicule propre ou du véhicule à émission nulle et la valeur
-  actuelle nette liée à la
+  actuelle nette liée à la location d’un véhicule de la même catégorie qui est
+  conforme aux normes de l’Union applicables déjà en vigueur et qui aurait été
+  loué sans l’aide. Aux fins de la détermination des coûts admissibles, les
+  coûts d’exploitation liés à l’exploitation du véhicule, y compris les coûts de
+  l’énergie, les coûts d’assurance et les coûts d’entretien, ne sont pas pris en
+  considération, qu’ils soient ou non inclus dans le contrat de location;
 
-  location d’un véhicule de la même catégorie qui est conforme aux normes de
-  l’Union applicables déjà en vigueur et qui aurait été loué sans l’aide. Aux
-  fins de la détermination des coûts admissibles, les coûts d’exploitation liés
-  à l’exploitation du véhicule, y compris les coûts de l’énergie, les coûts
-  d’assurance et les coûts d’entretien, ne sont pas pris en considération,
-  qu’ils soient ou non inclus dans
-
-  le contrat de location;
-
-  c) en ce qui concerne les investissements consistant en la mise à niveau de
+  - en ce qui concerne les investissements consistant en la mise à niveau de
   véhicules leur permettant d’être considérés comme des véhicules propres ou des
   véhicules à émission nulle, les coûts de l’investissement dans la mise à
   niveau.
 fin de validité: 31/12/2026
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: Région Bourgogne-Franche-Comté
 contact question: mailto:genevieve.caminade@bourgognefranchecomte.fr
 url: https://www.bourgognefranchecomte.fr/node/3833

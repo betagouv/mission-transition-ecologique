@@ -5,7 +5,6 @@ import { HasInputOptions, SiretValue, TrackCategory, TrackComponent, TrackId } f
 import type { Track, NextTrackRuleSet, EstablishmentFront } from '@/types'
 import { ConditionOperators, DataMappingFrom } from '@/types'
 import { LegalCategory } from '@/types'
-import { SiretValidator } from '@tee/common'
 
 // legalCategory == '1000' means it's an individual compagny
 const nextTrackRuleSets: NextTrackRuleSet[] = [
@@ -60,7 +59,6 @@ export const siret: Track = {
       id: 'search-siret',
       hasInput: HasInputOptions.Search,
       value: undefined,
-      validation: SiretValidator.validate,
       questionnaireData: { ...defaultQuestionnaireData },
       title: { fr: 'SIRET' },
       hintLabel: { fr: 'ex : "Fromagerie Sanzot Angers" ou N° SIRET "130 025 265 00013"' },

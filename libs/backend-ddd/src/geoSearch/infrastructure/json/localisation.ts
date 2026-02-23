@@ -1,6 +1,5 @@
 import { communes } from '@tee/data/static'
-import { ConvertedCommune, Commune } from '@tee/common'
-import { normalizeString } from '../../../common/string'
+import { ConvertedCommune, Commune, normalizeString } from '@tee/common'
 import { GeoSearch } from '../../domain/spi'
 
 export class Localisation implements GeoSearch {
@@ -9,10 +8,10 @@ export class Localisation implements GeoSearch {
 
   constructor() {
     this._cities = communes as Commune[]
-    this._citiesByPostalCode = this.separateCitiesByPostalCode()
+    this._citiesByPostalCode = this._separateCitiesByPostalCode()
   }
 
-  private separateCitiesByPostalCode(): ConvertedCommune[] {
+  private _separateCitiesByPostalCode(): ConvertedCommune[] {
     return this._cities.flatMap((city: Commune) =>
       city.codesPostaux.map((postalCode: string) => ({
         ...city,

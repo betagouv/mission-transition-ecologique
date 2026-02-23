@@ -1,0 +1,107 @@
+titre: Accélérateur des possibles
+promesse: >-
+  Intégrez les questions de Qualité de Vie et des Conditions de Travail dans vos
+  projets de transition écologique
+description: >-
+  Vous avez un projet de développement qui articule des **questions liées au
+  travail, au dialogue social, aux conditions de travail et à la transition
+  écologique** ? Cet appel à projets vous permet de **bénéficier gratuitement
+  d'un parcours de 2 jours** pendant lesquels vous :
+
+
+  - Rencontrez d'autres participants, échangez et sécurisez vos projets.
+
+  - Bénéficiez de conseils d'experts des conditions de travail et de l’écologie
+  (méthodes et outils).
+
+  - Effectuez un retour d’expérience avec l’ensemble des participants
+  (avancements, réussites, difficultés et pistes d’action).
+début de validité: 01/01/2025
+fin de validité: 31/03/2026
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: ANACT
+contact question: mailto:m.perrocheau@anact.fr
+url: https://www.anact.fr/accelerateur-des-possibles
+nature de l'aide: étude
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 2 jours de prestation
+activable en autonomie: oui
+objectifs:
+  - description: Découvrez le programme proposé par l'accélérateur des possibles
+    liens:
+      - lien: https://www.anact.fr/accelerateur-des-possibles
+        texte: L'accélérateur des possibles
+  - description: >-
+      Candidatez à l'appel à projets avant fin mars 2026 en contactant la
+      chargée de mission de l'Aract Pays de la Loire (écrire à
+      [m.perrocheau@anact.fr](mailto:m.perrocheau@anact.fr)).
+  - description: >-
+      Début avril, vous saurez si votre projet est retenu. S'il l'est, vous
+      recevez les détails du programme.
+  - description: Les 9 et 10 juin 2026, suivez le programme "Accélérateur des possibles".
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - TPE, PME, entrepreneurs salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Pays de la Loire
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - 'Pour postuler et participer à ce dispositif, vous devez :'
+    - >-
+      Être engagé·e dans un projet de transition écologique dans lequel vous
+      avez la volonté de faire le lien avec les questions de Qualité de Vie et
+      des Conditions de Travail.
+    - >-
+      Constituer un binôme paritaire avec une représentation direction et une
+      représentation salariés et/ou métier.
+    - Maintenir l’engagement du binôme ou trinôme sur la durée du dispositif.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 300
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Pays de la Loire

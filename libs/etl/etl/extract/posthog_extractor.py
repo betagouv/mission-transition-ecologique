@@ -1,13 +1,11 @@
-import os
 import requests
-from dotenv import load_dotenv
+from etl.tools.config.config import Config
 
 
 class PosthogExtractor:
     def __init__(self):
-        load_dotenv()
-        self.project_id = os.getenv("POSTHOG_PROJECT_ID", "")
-        self.read_api_key = os.getenv("POSTHOG_READ_API_KEY", "")
+        self.project_id = Config.POSTHOG_PROJECT_ID()
+        self.read_api_key = Config.POSTHOG_READ_API_KEY()
 
         if not self.project_id or not self.read_api_key:
             raise ValueError(
@@ -35,7 +33,7 @@ class PosthogExtractor:
 
     def get_events(self, event_types, start_date=None, end_date=None):
         event_list = ", ".join([f"'{event}'" for event in event_types])
-        hogql_query = f"SELECT * FROM events WHERE event IN ({event_list})"
+        hogql_query = f"SELECT uuid, event, properties, timestamp, distinct_id, $session_id, person_id FROM events WHERE event IN ({event_list})"
         if start_date and end_date:
             hogql_query += (
                 f" AND timestamp > '{start_date}' AND timestamp <= '{end_date}'"

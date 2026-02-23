@@ -6,7 +6,7 @@ description: >-
   bornes de recharge pour véhicules électriques. Ainsi, faites bénéficier vos
   équipes, vos clients et vos fournisseurs d'un accès facile à des solutions de
   recharge.
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_eolienne.webp
 opérateur de contact: Avere-France
 autres opérateurs:
   - ADEME
@@ -16,7 +16,7 @@ nature de l'aide: financement
 montant du financement: Selon le projet
 activable en autonomie: oui
 objectifs:
-  - description: Vérifiez l’éligibilité de votre projet en réalisant votre simulation.
+  - description: Assurez-vous de l’éligibilité de votre projet en réalisant une simulation.
     liens:
       - lien: https://advenir.mobi/je-definis-mon-projet/
         texte: Simulateur de projet

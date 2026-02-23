@@ -9,6 +9,9 @@ tests.forEach((singleTest) => {
   test(`Test id ${singleTest.id} - Verify programs number and order for query ${singleTest.url}`, async ({ page, goto }) => {
     await goto(singleTest.url, { waitUntil: 'hydration' })
     try {
+      await page.waitForResponse((response) => response.url().includes('/api/programs') && response.status() === 200, {
+        timeout: timeOut
+      })
       await page.locator('.fr-card--program .fr-card__title a').waitFor({ state: 'visible', timeout: timeOut })
     } catch (error) {
       // this is an expected error what can happen
@@ -30,6 +33,7 @@ tests.forEach((singleTest) => {
     // console.warn(elementsLocal)
 
     expect(elementsLocal.length).toBe(singleTest.count ?? singleTest.values.length)
+
     if (!singleTest.count || singleTest.count < 100) {
       for (let i = 0; i < elementsLocal.length; i++) {
         expect(elementsLocal[i]).toBe(singleTest.values[i])

@@ -41,7 +41,7 @@ description longue: >-
   Les prestations externes d'études environnementales sont éligibles à une
   subvention pouvant représenter jusqu’à 50 % du montant éligible, jusqu'à 100
   000 € HT.
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_ampoule.webp
 opérateur de contact: Région Normandie
 contact question: https://adnormandie.fr/dispositif/impulsion-environnement/
 url: https://www.normandie.fr/impulsion-environnement
@@ -49,11 +49,11 @@ nature de l'aide: financement
 montant du financement: Variable selon le projet
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant le règlement du
-      dispositif "Impulsion environnement"
+      Consultez le règlement du dispositif "Impulsion environnement" pour
+      vérifier l'éligibilité de votre projet.
     liens:
       - lien: >-
-          https://www.normandie.fr/sites/default/files/2024-11/reglement_impulsion_environnement_fev_2024.docx
+          https://www.normandie.fr/sites/default/files/2025-06/reglement_impulsion_environnement_fev_2024.pdf
         texte: Règlement Impulsion environnement
   - description: >-
       Prenez contact avec un conseiller de l'Agence de Développement pour la
@@ -79,9 +79,9 @@ conditions d'éligibilité:
     - Normandie
   secteur d'activité:
     - >-
-      Ne sont pas éligibles à l’aide, les exploitations agricoles, les
-      associations à but non commercial, les organismes publics, les sociétés
-      d’économies mixtes et les promoteurs immobilier.
+      Ne sont pas éligibles à l’aide, les entreprises en B2C, les exploitations
+      agricoles, les associations à but non commercial, les organismes publics,
+      les sociétés d’économies mixtes et les promoteurs immobilier.
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:
@@ -99,7 +99,6 @@ publicodes:
       - code NAF niveau 1 . est D
       - code NAF niveau 1 . est E
       - code NAF niveau 1 . est F
-      - code NAF niveau 1 . est G
       - code NAF niveau 1 . est H
       - code NAF niveau 1 . est J
       - code NAF niveau 1 . est K

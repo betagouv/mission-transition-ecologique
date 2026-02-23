@@ -5,48 +5,55 @@ promesse: >-
 description: >-
   Vous disposez d’une étude pour votre projet dans le domaine du
   réemploi-réutilisation et réparation, et vous souhaitez investir pour le
-  mettre en œuvre ? Cette aide est destinée à subventionner les équipements
-  permettant la collecte préservante, le stockage, la traçabilité des flux, la
-  réparation et la remise en état des objets.
+  mettre en œuvre ? 
+
+
+  Cette aide est destinée à **subventionner les équipements permettant la
+  collecte préservante, le stockage, la traçabilité des flux, la réparation et
+  la remise en état des objets.**
 description longue: >-
   Pour bénéficier de cette aide, votre projet d'investissement doit être
   cohérent avec la stratégie territoriale d’économie circulaire et de prévention
   des déchets.
 
+
+  \
+
   La collecte préservante en amont et toute l’opération de remise en état puis
   de remise sur le marché doit pouvoir démontrer son efficacité :
 
-  • Par un gisement significatif de déchets évités ;
 
-  • Par un tonnage réemployé-réutilisé-réparé performant et significatif ;
+  - Par un gisement significatif de déchets évités ;
 
-  • Par un système de suivi, de comptage et de traçabilité des flux ;
+  - Par un tonnage réemployé-réutilisé-réparé performant et significatif ;
 
-  • Par des actions de communication et de sensibilisation à une consommation
+  - Par un système de suivi, de comptage et de traçabilité des flux ;
+
+  - Par des actions de communication et de sensibilisation à une consommation
   responsable et à la réduction des déchets accompagnant les investissements.
+
 
   La réalisation préalable d'une étude de faisabilité est une condition
   d'éligibilité.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
-illustration: images/TEE_energie_verte.png
+fin de validité: 31/12/2026
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000717
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000894
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/soutien-investissements-reemploi-reutilisation-reparation-hors-emballages
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-aux-investissements-pour-le-reemploi-reutilisation-et-la-reparation-hors-emballages
 nature de l'aide: financement
-montant du financement: Jusqu'à 75% des coûts, dans un maximum de 200 000 €
+montant du financement: Jusqu'à 60% des coûts, dans un maximum de 200 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
-      - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/RRR%20hors%20emballages%20-%20Investissement%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
+      - lien: https://agirpourlatransition.ademe.fr/sites/default/files/Invest.pdf
         texte: Conditions éligibilité et financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre demande d'aide : informations administratives, description
@@ -68,9 +75,9 @@ conditions d'éligibilité:
   secteur géographique:
     - >-
       Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
-      Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
-      Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine,
-      Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française
+      Loire, Grand Est, Hauts-de-France, Île-de-France, Martinique, Normandie,
+      Nouvelle-Aquitaine, Occitanie, Pays de la Loire, Provence-Alpes-Côte
+      d'Azur
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -115,16 +122,11 @@ publicodes:
       - région = Bretagne
       - région = Centre-Val de Loire
       - région = Grand Est
-      - région = Guadeloupe
-      - région = Guyane
       - région = Hauts-de-France
       - région = Île-de-France
-      - région = La Réunion
       - région = Martinique
-      - région = Mayotte
       - région = Normandie
       - région = Nouvelle-Aquitaine
-      - région = Nouvelle-Calédonie
       - région = Occitanie
       - région = Pays de la Loire
-      - région = Polynésie française
+      - région = Provence-Alpes-Côte d'Azur

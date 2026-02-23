@@ -1,0 +1,59 @@
+<template>
+  <section class="fr-mt-6w fr-mb-3w">
+    <h2>Les autres services de l’accélérateur de la transition écologique</h2>
+
+    <ul class="fr-grid-row fr-grid-row--gutters fr-raw-list">
+      <li
+        v-for="(card, index) in cards"
+        :key="index"
+        class="fr-col-12 fr-col-lg-6"
+      >
+        <TeeExternalLinkCard
+          :image="card.image"
+          :image-alt="card.imageAlt"
+          :logo="card.logo"
+          :logo-alt="card.logoAlt"
+          :description="card.description"
+          :link="card.link"
+        />
+      </li>
+    </ul>
+  </section>
+</template>
+
+<script setup lang="ts">
+const cards = [
+  {
+    image: '/images/about/Tee_about_other_services_quefairede.webp',
+    imageAlt: 'Image du site Que faire de mes déchets',
+    logo: '/images/logos/que-faire-de-mes-dechets.jpg',
+    logoAlt: 'Logo du site Que faire de mes déchets',
+    description: 'Trouvez les adresses près de chez vous pour réduire vos déchets.',
+    link: 'https://quefairedemesdechets.ademe.fr/'
+  },
+  {
+    image: '/images/about/Tee_about_other_services_gestesclimat.webp',
+    imageAlt: 'Image du site Nos Gestes Climat',
+    logo: '/images/logos/nos-gestes-climat.jpg',
+    logoAlt: 'Logo du site Nos Gestes Climat',
+    description: 'Sensibilisez votre audience sur leur empreinte carbone et eau.',
+    link: 'https://nosgestesclimat.fr/'
+  },
+  {
+    image: '/images/about/Tee_about_other_services_impactco2.webp',
+    imageAlt: 'Image du site Impact CO₂',
+    logo: '/images/logos/impact-co2.jpg',
+    logoAlt: 'Logo du site Impact CO₂',
+    description: "Communiquez sur l'impact carbone avec des outils thématiques.",
+    link: 'https://impactco2.fr/'
+  },
+  {
+    image: '/images/about/Tee_about_other_services_plusfraiche.webp',
+    imageAlt: 'Image du site Plus Fraîche Ma Ville',
+    logo: '/images/logos/plus-fraiche-ma-ville.jpg',
+    logoAlt: 'Logo du site Plus Fraîche Ma Ville',
+    description: 'Trouvez les bonnes solutions pour rafraîchir durablement votre collectivité.',
+    link: 'https://plusfraichemaville.fr/'
+  }
+]
+</script>

@@ -4,12 +4,9 @@ import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
 import { ensureError, handleException } from '../../../../common/domain/error/errors'
 import Config from '../../../../config'
 import { SolicitationResponseData, Subject, subjectToIdMapping, CreateSolicitationApiBody } from './types'
-import { OpportunityWithContactId } from '../../../../opportunity/domain/types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
-import { ProgramService } from '../../../../program/application/programService'
-import OpportunityService from '../../../../opportunity/application/opportunityService'
-import { Operators, ProgramType, ThemeId } from '@tee/data'
-import { Objective, Opportunity, OpportunityType } from '@tee/common'
+import { Operators } from '@tee/data'
+import { Opportunity, ThemeId } from '@tee/common'
 import Monitor from '../../../../common/domain/monitoring/monitor'
 import { OpportunityAssociatedData } from '../../../../opportunity/domain/opportunityAssociatedData'
 
@@ -32,19 +29,16 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     return new Error('Operator List non valid for Place des entreprises')
   }
 
-  override support = (opportunityData: OpportunityAssociatedData) => {
-    if (opportunityData.isProgram()) {
-      return !opportunityData.data['activable en autonomie']
-    }
+  override support = (_opportunityData: OpportunityAssociatedData) => {
     return true
   }
 
-  override shouldTransmit = async (opportunity: OpportunityWithContactId, opportunityData: OpportunityAssociatedData) => {
-    if (!this.support(opportunityData)) {
-      return false
-    }
-    const reachTransmissionLimit = await this.reachedDailyContactTransmissionLimit(opportunity.contactId)
-    return !reachTransmissionLimit
+  public needReturnReceipt() {
+    return false
+  }
+
+  public hasTransmissionLimit(): boolean {
+    return true
   }
 
   public transmitOpportunity = async (
@@ -52,14 +46,15 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     opportunityData: OpportunityAssociatedData
   ): Promise<Result<number, Error>> => {
     let maybePayload
+    const themeId = opportunityData.getThemeId()
     if (opportunityData.isProgram()) {
-      maybePayload = this._createProgramRequestBody(opportunity, opportunityData.data)
+      maybePayload = this._createProgramRequestBody(opportunity, themeId)
     } else if (opportunityData.isProject()) {
-      maybePayload = this._createProjectRequestBody(opportunity, opportunityData.data.title, opportunityData.data.mainTheme)
+      maybePayload = this._createProjectRequestBody(opportunity, opportunityData.data.title, themeId)
     } else if (opportunityData.isCustomProject()) {
       maybePayload = this._createProjectRequestBody(opportunity, opportunityData.data.title)
     } else {
-      return Result.err(Error("Canno't transmit to PDE an opportunity of type" + opportunity.type))
+      return Result.err(Error('Can not transmit to PDE an opportunity of type' + opportunity.type))
     }
     if (maybePayload.isErr) {
       return Result.err(maybePayload.error)
@@ -99,28 +94,6 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  async reachedDailyContactTransmissionLimit(contact: number): Promise<boolean> {
-    const previousDailyOpportunities = await new OpportunityService().getDailyOpportunitiesByContactId(contact)
-    if (previousDailyOpportunities.isErr) {
-      return false
-    }
-
-    let transmissiblePrograms = 0
-    for (const prevOpportunity of previousDailyOpportunities.value) {
-      const prevProgram = new ProgramService().getById(prevOpportunity.id)
-      if (prevProgram && this.support(new OpportunityAssociatedData(OpportunityType.Program, prevProgram))) {
-        transmissiblePrograms += 1
-      } else {
-        // this loop account for both projects and CustomProjects
-        transmissiblePrograms += 1
-      }
-    }
-
-    // The current opportunity being already created in brevo when we check the hub transmission, we count the current program.
-    // The question is do we have MORE than one transmissible opportunity which indicates older tranmissions.
-    return transmissiblePrograms > 1
-  }
-
   private _makeHeaders(token: string): RawAxiosRequestHeaders {
     return {
       ...AxiosHeaders.makeJsonHeader(),
@@ -128,37 +101,11 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     }
   }
 
-  private _objectiveToPdeSubjectMapping: { [key in Objective]: Subject } = {
-    [Objective.EnvironmentalImpact]: Subject.DemarcheEcologie,
-    [Objective.EnergyPerformance]: Subject.Energie,
-    [Objective.WaterConsumption]: Subject.Eau,
-    [Objective.BuildingRenovation]: Subject.Energie,
-    [Objective.SustainableMobility]: Subject.TransportMobilite,
-    [Objective.WasteManagement]: Subject.Dechets,
-    [Objective.EcoDesign]: Subject.DemarcheEcologie,
-    [Objective.TrainOrRecruit]: Subject.BilanRSE,
-    [Objective.MakeSavings]: Subject.DemarcheEcologie,
-    [Objective.DurablyInvest]: Subject.DemarcheEcologie,
-    [Objective.Biodiversity]: Subject.DemarcheEcologie,
-    [Objective.UnknownYet]: Subject.DemarcheEcologie
-  }
-
-  subjectMapping(programObjectives: Objective[]): number {
-    const defaultSubject = Subject.DemarcheEcologie
-    if (programObjectives.length === 1) {
-      const objective = programObjectives[0]
-      const subjectKey = this._objectiveToPdeSubjectMapping[objective]
-      return subjectToIdMapping[subjectKey]
-    } else {
-      return subjectToIdMapping[defaultSubject]
-    }
-  }
-
-  private _createProgramRequestBody(opportunity: Opportunity, program: ProgramType): Result<CreateSolicitationApiBody, Error> {
+  private _createProgramRequestBody(opportunity: Opportunity, themeId: ThemeId | undefined): Result<CreateSolicitationApiBody, Error> {
     return Result.ok({
       solicitation: {
         landing_id: this._pdeLanding,
-        landing_subject_id: this.subjectMapping(new ProgramService().getObjectives(program.id)),
+        landing_subject_id: this._getLandingSubjectIdByTheme(themeId),
         description: opportunity.message,
         full_name: opportunity.firstName + ' ' + opportunity.lastName,
         email: opportunity.email,
@@ -167,6 +114,25 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         origin_url: opportunity.linkToCatalog
       }
     })
+  }
+
+  private _createProjectRequestBody(opportunity: Opportunity, title: string, themeId?: ThemeId): Result<CreateSolicitationApiBody, Error> {
+    return Result.ok({
+      solicitation: {
+        landing_id: this._pdeLanding,
+        landing_subject_id: this._getLandingSubjectIdByTheme(themeId),
+        description: 'Demande via le projet ' + title + '\n\n' + opportunity.message,
+        full_name: opportunity.firstName + ' ' + opportunity.lastName,
+        email: opportunity.email,
+        phone_number: opportunity.phoneNumber,
+        siret: opportunity.companySiret,
+        origin_url: opportunity.linkToCatalog
+      }
+    })
+  }
+
+  private _getLandingSubjectIdByTheme(themeId?: ThemeId): number {
+    return themeId ? subjectToIdMapping[this._themeToPdeSubjectMapping[themeId]] : subjectToIdMapping[Subject.DemarcheEcologie]
   }
 
   private _themeToPdeSubjectMapping: { [key in ThemeId]: Subject } = {
@@ -179,27 +145,5 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
     [ThemeId.Building]: Subject.DemarcheEcologie,
     [ThemeId.Biodiversity]: Subject.DemarcheEcologie,
     [ThemeId.EcoDesign]: Subject.DemarcheEcologie
-  }
-
-  private _createProjectRequestBody(
-    opportunity: Opportunity,
-    title: string,
-    mainTheme?: ThemeId
-  ): Result<CreateSolicitationApiBody, Error> {
-    const landingId = mainTheme
-      ? subjectToIdMapping[this._themeToPdeSubjectMapping[mainTheme]]
-      : subjectToIdMapping[Subject.DemarcheEcologie]
-    return Result.ok({
-      solicitation: {
-        landing_id: this._pdeLanding,
-        landing_subject_id: landingId,
-        description: 'Demande via le projet ' + title + '\n\n' + opportunity.message,
-        full_name: opportunity.firstName + ' ' + opportunity.lastName,
-        email: opportunity.email,
-        phone_number: opportunity.phoneNumber,
-        siret: opportunity.companySiret,
-        origin_url: opportunity.linkToCatalog
-      }
-    })
   }
 }

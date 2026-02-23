@@ -1,19 +1,33 @@
-import { useUsedTrackStore } from '@/stores/usedTrack'
 import ProgramApi from '@/tools/api/programApi'
 import { ResultApi } from '@/tools/api/resultApi'
 import { CompanyData } from '@/tools/companyData'
 import Navigation from '@/tools/navigation'
-import { ProgramTypeForFront, QuestionnaireData } from '@/types'
+import AbstractProgram from '@/tools/program/abstractProgram'
+import { QuestionnaireData } from '@/tools/questionnaire/questionnaireData'
+import { AbstractProgramTypeForFront, ProgramTypeForFront, QuestionnaireData as QuestionnaireDataType } from '@/types'
 
 export class ProgramManager {
   _useProgram = useProgramStore()
   _useNavigation = useNavigationStore()
 
-  async get(questionnaireData: QuestionnaireData = {}) {
+  async get(questionnaireData: QuestionnaireDataType = {}) {
     this._useNavigation.hasSpinner = true
     const resultApi = await this._getFromApi(questionnaireData)
-    if (resultApi.isOk()) {
-      this._useProgram.programs = resultApi.data
+    if (resultApi.isOk() && resultApi.data) {
+      const teePrograms: ProgramTypeForFront[] = []
+      const externalPrograms: AbstractProgramTypeForFront[] = []
+
+      resultApi.data.forEach((program) => {
+        if (AbstractProgram.isTeeProgram(program)) {
+          teePrograms.push(program)
+        } else if (AbstractProgram.isExternalProgram(program)) {
+          externalPrograms.push(program)
+        }
+      })
+
+      this._useProgram.programs = teePrograms
+      this._useProgram.extPrograms = externalPrograms
+
       this._useProgram.hasPrograms = true
       this._useProgram.hasError = false
     } else {
@@ -24,7 +38,7 @@ export class ProgramManager {
   }
 
   async getFiltered(onlyEligible: boolean | undefined = undefined) {
-    const questionnaireData = useUsedTrackStore().getQuestionnaireData()
+    const questionnaireData = QuestionnaireData.get()
     if (onlyEligible !== undefined) {
       questionnaireData.onlyEligible = onlyEligible
     }
@@ -36,6 +50,16 @@ export class ProgramManager {
       const program = this._useProgram.programs.find((program) => program.id === id)
       if (program) {
         this._useProgram.currentProgram = program
+        this._useProgram.currentExtProgram = undefined
+        return
+      }
+    }
+
+    if (this._useProgram.extPrograms && this._useProgram.extPrograms.length > 0) {
+      const extProgram = this._useProgram.extPrograms.find((program) => program.id === id)
+      if (extProgram) {
+        this._useProgram.currentExtProgram = extProgram
+        this._useProgram.currentProgram = undefined
         return
       }
     }
@@ -43,7 +67,13 @@ export class ProgramManager {
     this._useNavigation.hasSpinner = true
     const resultApi = await this._getOneFromApi(id)
     if (resultApi.isOk()) {
-      this._useProgram.currentProgram = resultApi.data
+      if (AbstractProgram.isTeeProgram(resultApi.data)) {
+        this._useProgram.currentProgram = resultApi.data as ProgramTypeForFront
+        this._useProgram.currentExtProgram = undefined
+      } else if (AbstractProgram.isExternalProgram(resultApi.data)) {
+        this._useProgram.currentExtProgram = resultApi.data
+        this._useProgram.currentProgram = undefined
+      }
       this._useProgram.hasError = false
     } else {
       this._useProgram.hasError = true
@@ -59,10 +89,19 @@ export class ProgramManager {
     const navigation = new Navigation()
     if (navigation.isQuestionnaireResult() || navigation.isQuestionnaireProjectDetail()) {
       await this.getDependentCompanyData(undefined)
-    } else if (navigation.isCatalogProjectDetail() || navigation.isCatalogPrograms()) {
+    } else if (
+      navigation.isCatalogProjectDetail() ||
+      navigation.isCatalogPrograms() ||
+      navigation.isHomepage() ||
+      navigation.isCatalogProjects()
+    ) {
       await this.getDependentCompanyData(true)
     } else if (navigation.isProgramDetail() && this._useProgram.currentProgram) {
       const currentId = this._useProgram.currentProgram.id
+      this._useProgram.reset()
+      await this.getOneById(currentId)
+    } else if (navigation.isProgramDetail() && this._useProgram.currentExtProgram) {
+      const currentId = this._useProgram.currentExtProgram.id
       this._useProgram.reset()
       await this.getOneById(currentId)
     } else {
@@ -70,11 +109,11 @@ export class ProgramManager {
     }
   }
 
-  private async _getFromApi(questionnaireData: QuestionnaireData = {}): Promise<ResultApi<ProgramTypeForFront[]>> {
-    return await new ProgramApi(questionnaireData).get()
+  private async _getFromApi(questionnaireData: QuestionnaireDataType = {}): Promise<ResultApi<AbstractProgramTypeForFront[]>> {
+    return (await new ProgramApi(questionnaireData).get()) as unknown as ResultApi<AbstractProgramTypeForFront[]>
   }
 
-  private async _getOneFromApi(id: string): Promise<ResultApi<ProgramTypeForFront>> {
-    return await new ProgramApi(useUsedTrackStore().getQuestionnaireData()).getOne(id)
+  private async _getOneFromApi(id: string): Promise<ResultApi<AbstractProgramTypeForFront>> {
+    return (await new ProgramApi(QuestionnaireData.get()).getOne(id)) as unknown as ResultApi<AbstractProgramTypeForFront>
   }
 }

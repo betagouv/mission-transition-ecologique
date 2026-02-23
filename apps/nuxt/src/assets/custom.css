@@ -10,9 +10,6 @@ WARNING :
 .fr-justify-center {
   justify-content: center;
 }
-.fr-card:hover {
-  cursor: pointer !important;
-}
 .fr-modal-custom::before {
   content: none !important;
 }
@@ -233,7 +230,7 @@ button.fr-link:hover {
 }
 .fr-tee-program-detail-img > img.fr-responsive-img {
   min-height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 .fr-tee-program-detail-img-badge {
   position: absolute;

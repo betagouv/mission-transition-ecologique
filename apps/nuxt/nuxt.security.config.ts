@@ -1,4 +1,4 @@
-import { SecurityHeaders, RateLimiter, ContentSecurityPolicyValue } from 'nuxt-security'
+import { SecurityHeaders, RateLimiter, ContentSecurityPolicyValue, XssValidator } from 'nuxt-security'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import Config from './src/config'
 
@@ -8,6 +8,7 @@ export class NuxtSecurityConfig {
   static _metabaseUrl = 'https://tee-metabase.osc-fr1.scalingo.io'
   static _posthogUrl = 'https://eu.i.posthog.com'
   static _posthogAssetsUrl = 'https://eu-assets.i.posthog.com'
+  static _jedonnemonavisUrl = 'https://jedonnemonavis.numerique.gouv.fr'
   static _sentryData = NuxtSentryConfig.getSentryData()
 
   static getHeadersConfig(): SecurityHeaders {
@@ -19,7 +20,7 @@ export class NuxtSecurityConfig {
       crossOriginEmbedderPolicy: false,
       xFrameOptions: false
       // Missing headers:
-      // 'X-Frame-Options': 'ALLOW-FROM https://conseillers-entreprises.service-public.fr',
+      // 'X-Frame-Options': 'ALLOW-FROM https://conseillers-entreprises.service-public.gouv.fr',
       // 'Expect-CT': `default-src 'self' ${this._sentryData?.domain ? this._sentryData.domain : ''}; report-uri ${this._sentryData?.url};`
     }
   }
@@ -51,7 +52,7 @@ export class NuxtSecurityConfig {
       'style-src': ["'self'", "'unsafe-inline'", this._baserowFormUrl, this._metabaseUrl],
       'font-src': ["'self'"],
       'object-src': ["'self'"],
-      'img-src': ["'self'", 'data:'],
+      'img-src': ["'self'", 'data:', this._jedonnemonavisUrl],
       'connect-src': [
         "'self'",
         this._statsBetaGouvFrUrl,
@@ -70,5 +71,12 @@ export class NuxtSecurityConfig {
 
   static getRateLimiterConfig(): RateLimiter | undefined | false {
     return Config.isProduction() ? undefined : false
+  }
+
+  static getXssValidatorConfig(): XssValidator | undefined | false {
+    return {
+      // data already escaped on brevo. So no worries to disable escapedHtml on our backend (for now).
+      escapeHtml: false
+    }
   }
 }

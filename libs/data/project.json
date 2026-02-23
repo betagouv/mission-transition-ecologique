@@ -13,6 +13,15 @@
         "test"
       ]
     },
+    "generate-testimonies": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/generateTestimoniesJson.ts"
+        ]
+      }
+    },
     "generate-projects": {
       "executor": "nx:run-commands",
       "options": {
@@ -22,17 +31,71 @@
         ]
       }
     },
+    "generate-faq": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/generateFaqJson.ts"
+        ]
+      }
+    },
+    "update-external-trainings": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/updateExternalTrainings.ts"
+        ]
+      }
+    },
+    "update-external-programs": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/updateExternalPrograms.ts"
+        ]
+      }
+    },
     "generate-programs": {
       "executor": "nx:run-commands",
       "options": {
         "cwd": "libs/data",
         "commands": [
-          "npx tsx src/scripts/generateProgramYaml.ts",
+          "npx tsx src/scripts/generateProgramStaticFiles.ts",
           "npx tsx src/scripts/generateOperatorsJson.ts",
-          "npx tsx src/scripts/generateProgramType.ts",
-          "npx tsx src/scripts/buildProgramJson.ts"
+          "npx tsx src/scripts/generateProgramType.ts"
         ],
         "parallel": false
+      }
+    },
+    "generate-operators": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/generateOperatorsJson.ts"
+        ],
+        "parallel": false
+      }
+    },
+    "export-programs": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/dataGouvExport.ts"
+        ]
+      }
+    },
+    "send-program-mails": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/sendMailToProgramContacts.ts"
+        ]
       }
     },
     "test": {

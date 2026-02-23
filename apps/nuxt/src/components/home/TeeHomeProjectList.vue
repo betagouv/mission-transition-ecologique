@@ -8,6 +8,7 @@
       <SimpleProjectList
         v-if="!hasSpinner"
         :project-list="projectList"
+        title-project-tag="h4"
       />
     </div>
     <div
@@ -27,7 +28,7 @@
         :to="{ name: RouteName.CatalogProjects }"
         icon="fr-icon-arrow-right-line"
         icon-right
-        class="fr-border-b--blue-france fr-py-0"
+        class="fr-border-b--blue-900 fr-py-0"
       >
         Voir tous les projets
       </TeeButtonLink>
@@ -36,48 +37,47 @@
 </template>
 <script setup lang="ts">
 import { useProjectStore } from '@/stores/project'
+import { ProgramManager } from '@/tools/program/programManager'
 import ProjectFilter from '@/tools/project/projectFilter'
+import ProjectSorter from '@/tools/project/projectSorter'
 import { ProjectManager } from '@/tools/project/projectManager'
-import { ProjectSorter } from '@tee/data'
 import { Theme } from '@/tools/theme'
 import { CompanyData } from '@/tools/companyData'
 import { RouteName } from '@/types'
 
-interface Props {
-  limit: number
-}
-
-const props = defineProps<Props>()
-
-onServerPrefetch(async () => {
-  await new ProjectManager().getProjects()
-})
+await new ProjectManager().getProjects()
 
 onNuxtReady(async () => {
   CompanyData.isDataFullComputed().value // call to initialize computed reactivity variable
   await new ProjectManager().getProjects()
+  if (isDataFull.value) {
+    await new ProgramManager().getDependentCompanyData(true)
+  }
 })
 
 const theme = Theme.getThemeFromSelectedTheme()
 const { projects, hasError } = storeToRefs(useProjectStore())
 const { hasSpinner } = storeToRefs(useNavigationStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
-const projectSorter = new ProjectSorter()
+
+const limit = computed(() => (theme.value === undefined ? 8 : 9))
 
 const filteredProjects = ProjectFilter.filter(projects, theme)
+
 const sortedProjects = computed(() => {
   if (!filteredProjects.value) {
     return []
   }
 
   if (!theme.value || !Theme.isTheme(theme.value)) {
-    return isDataFull.value ? projectSorter.byHighlightAndSector(filteredProjects.value) : projectSorter.byHighlight(filteredProjects.value)
+    return isDataFull.value ? projects.value : ProjectSorter.byHighlight(filteredProjects.value)
   }
 
   return filteredProjects.value
 })
+
 const projectList = computed(() => {
-  return props.limit ? sortedProjects.value.slice(0, props.limit) : sortedProjects.value
+  return sortedProjects.value.slice(0, limit.value)
 })
 
 const countProjects = computed(() => {

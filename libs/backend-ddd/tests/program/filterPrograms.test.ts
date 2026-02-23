@@ -1,6 +1,5 @@
-import { type Rules, makeProgramHelper, mockCurrentDateService, makeProgramsRepository } from './testing'
-import { FILTERING_RULE_NAME } from '../../src/program/domain/filterPrograms'
-import { ProgramEligibilityType, ProgramTypeWithEligibility, type ProgramType, ProgramEligibility } from '@tee/data'
+import { type Rules, makeProgramHelper, makeProgramsRepository } from './testing'
+import { ProgramEligibilityStatus, ProgramTypeWithEligibility, type ProgramType, ProgramEligibility } from '@tee/data'
 import { expectToBeOk } from '../testing'
 import ProgramFeatures from '../../src/program/domain/programFeatures'
 import { type Result } from 'true-myth'
@@ -9,29 +8,29 @@ import { QuestionnaireData } from '@tee/common'
 
 const defaultFilterPrograms = (programs: ProgramType[], inputData: Record<string, number>): Result<ProgramTypeWithEligibility[], Error> => {
   PublicodesService.init(programs)
-  const programService = new ProgramFeatures(makeProgramsRepository(programs), mockCurrentDateService, PublicodesService.getInstance())
+  const programService = new ProgramFeatures(makeProgramsRepository(programs), PublicodesService.getInstance())
   const questionnaireData: QuestionnaireData = {
     region: 'Corse',
     codeNAF1: 'J',
     ...inputData
   }
 
-  return programService.getFilteredBy(questionnaireData)
+  return programService.getFilteredByInternal(questionnaireData)
 }
 
 const addEligibility = (programs: ProgramType[]): ProgramTypeWithEligibility[] => {
   return programs.map((program) => ({
     ...program,
     eligibility: ProgramEligibility.isPartiallyEligible(program)
-      ? ProgramEligibilityType.PartiallyEligible
-      : ProgramEligibilityType.Eligible
+      ? ProgramEligibilityStatus.PartiallyEligible
+      : ProgramEligibilityStatus.Eligible
   }))
 }
 
 const rulesBoilerplate = {
   entreprise: null,
   'entreprise . effectif': null,
-  [FILTERING_RULE_NAME]: 'entreprise . effectif > 0'
+  ['entreprise . est ciblée']: 'entreprise . effectif > 0'
 }
 
 let id = 0
@@ -120,7 +119,7 @@ EXPECT that the filtering only keeps programs that are eligible (rule
 
   const makePrograms = (rules: string[]): ProgramType[] => {
     const progs = rules.map((r) => {
-      const completeRules = { ...rulesBoilerplate, [FILTERING_RULE_NAME]: r }
+      const completeRules = { ...rulesBoilerplate, ['entreprise . est ciblée']: r }
       return makeProgram(completeRules)
     })
     return progs
@@ -181,7 +180,7 @@ error`, () => {
     },
     {
       name: "keep 'age', discard 'extraProperty'",
-      rules: { age: 0, [FILTERING_RULE_NAME]: 'age = 0' },
+      rules: { age: 0, ['entreprise . est ciblée']: 'age = 0' },
       inputData: { age: 0, extraProperty: 0 }
     }
   ]
@@ -201,6 +200,6 @@ describe(`
   EXPECT the creation of ProgramFeature to fail with a thrown error
 `, () => {
   test('invalid rule', () => {
-    expect(() => defaultFilterPrograms([makeProgram({ [FILTERING_RULE_NAME]: 'invalid Publicode expression' })], {})).toThrow()
+    expect(() => defaultFilterPrograms([makeProgram({ ['entreprise . est ciblée']: 'invalid Publicode expression' })], {})).toThrow()
   })
 })

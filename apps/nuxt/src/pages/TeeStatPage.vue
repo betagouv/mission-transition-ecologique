@@ -13,6 +13,7 @@
           src="https://tee-metabase.osc-fr1.scalingo.io/public/dashboard/5c81eab8-2949-45df-a020-7af231f7ab1e"
           width="100%"
           height="3200px"
+          title="Les statistiques de transition écologique des entreprises"
         />
       </div>
     </div>
@@ -22,8 +23,10 @@
 
 <script setup lang="ts">
 import { MetaRobots } from '@/tools/metaRobots'
+import { MetaSeo } from '@/tools/metaSeo'
 import Navigation from '@/tools/navigation'
 import { RouteName } from '@/types'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 const navigation = new Navigation()
 
@@ -31,6 +34,10 @@ definePageMeta({
   path: '/stats',
   name: RouteName.Statistics
 })
+
+const description = 'Informations relatives aux statistiques du site Mission Transition écologique des entreprises.'
+useSeoMeta(MetaSeo.get('Statistiques', description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 useHead({
   link: [
@@ -45,7 +52,7 @@ useHead({
 
 <style scoped>
 h1 {
-  color: var(--light-background-action-high-blue-france, #000091);
+  color: var(--light-background-action-high-blue-900, #000091);
   font-size: 2.5rem;
   font-style: normal;
   line-height: 3rem; /* 120% */

@@ -1,6 +1,10 @@
 @use 'setting';
 
 .fr-header {
+  .fr-header__brand-top {
+    overflow: unset;
+  }
+
   .fr-header__tools {
     align-items: flex-end;
     flex-direction: row;
@@ -8,9 +12,13 @@
     justify-content: flex-end;
   }
 
+  .fr-header__service-title {
+    line-height: 1.65rem;
+  }
+
   .fr-nav {
     button.fr-nav__btn {
-      color: setting.$blue-france;
+      color: setting.$blue-agir;
       font-weight: 500;
       min-height: 2rem;
       padding: 0.5rem 1rem;

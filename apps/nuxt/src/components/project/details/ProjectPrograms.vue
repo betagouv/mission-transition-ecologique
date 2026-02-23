@@ -1,10 +1,12 @@
 <template>
   <TeeContentBlock
     v-if="isDataFull || countFilteredPrograms"
-    id="project-aids-title"
-    class="fr-pt-3v fr-pb-4v fr-border-b--grey--light"
+    id="aides"
+    class="fr-py-5v fr-border-b--grey--light"
     :title="companyDataSelected && isDataFull ? '💰 Vos aides' : '💰 Toutes les aides'"
     container-from="md"
+    title-class="fr-h4"
+    title-tag="h2"
   >
     <template #content>
       <client-only fallback-tag="div">
@@ -15,37 +17,47 @@
             </div>
           </div>
         </template>
-        <TeeRegisterHighlight
-          v-if="!isDataFull"
-          class="fr-mx-3v"
-          :text="Translation.t('project.projectRegisterHighlightText')"
-        />
-        <div class="fr-grid-row">
-          <div class="fr-col-12 fr-text-center">
-            <TeeSpinner v-if="navigationStore.hasSpinner" />
-            <TeeError
-              v-else-if="hasError"
-              :mailto="Contact.mailTo"
-              :email="Contact.email"
+        <div class="sticky-limits">
+          <div
+            ref="stickyElement"
+            class="fr-sticky-md"
+          >
+            <TeeRegisterHighlight
+              v-if="!isDataFull"
+              :text="Translation.t('project.projectRegisterHighlightText')"
+              :button-label="Translation.t('project.projectRegisterHighlightButtonLabelText')"
+              set-hash="aides"
             />
           </div>
-          <p
-            v-if="companyDataSelected && isDataFull && !navigationStore.hasSpinner && countFilteredPrograms"
-            class="fr-mb-0"
-            v-html="resume"
-          ></p>
-          <ProjectProgramsList
-            v-if="studyPrograms.length > 0 && !navigationStore.hasSpinner"
-            :title="Translation.t('project.studyPrograms')"
-            :programs="studyPrograms"
-            :project="project"
-          />
-          <ProjectProgramsList
-            v-if="financePrograms.length > 0 && !navigationStore.hasSpinner"
-            :title="Translation.t('project.financePrograms')"
-            :programs="financePrograms"
-            :project="project"
-          />
+          <div class="fr-grid-row">
+            <div class="fr-col-12 fr-text-center">
+              <TeeSpinner v-if="navigationStore.hasSpinner" />
+              <TeeError
+                v-else-if="hasError"
+                :mailto="Contact.mailTo"
+                :email="Contact.email"
+              />
+            </div>
+            <p
+              v-if="companyDataSelected && isDataFull && !navigationStore.hasSpinner && countFilteredPrograms"
+              class="fr-mb-0"
+              v-html="resume"
+            ></p>
+            <ul>
+              <ProjectProgramsList
+                v-if="studyPrograms.length > 0 && !navigationStore.hasSpinner"
+                :title="Translation.t('project.studyPrograms')"
+                :programs="studyPrograms"
+                :project="project"
+              />
+              <ProjectProgramsList
+                v-if="financePrograms.length > 0 && !navigationStore.hasSpinner"
+                :title="Translation.t('project.financePrograms')"
+                :programs="financePrograms"
+                :project="project"
+              />
+            </ul>
+          </div>
         </div>
         <TeeDsfrHighlight
           v-if="isDataFull && !countFilteredPrograms && !navigationStore.hasSpinner"
@@ -58,10 +70,9 @@
           <p class="fr-mt-n3v fr-mb-0">{{ Translation.t('project.noPrograms.subtitle') }}</p>
         </TeeDsfrHighlight>
         <div
-          v-if="isDataFull"
           id="project-contact"
           ref="teeProjectFormContainer"
-          class="fr-bg--blue--lightness fr-grid-row fr-p-2w"
+          class="fr-bg--blue--lightness fr-grid-row fr-mt-3w fr-p-2w"
         >
           <TeeForm
             v-if="project"
@@ -85,6 +96,7 @@
 import { useProgramStore } from '@/stores/program'
 import { CompanyData } from '@/tools/companyData'
 import { ProgramManager } from '@/tools/program/programManager'
+import AddClassOnScroll from '@/tools/scroll/addClassOnScroll'
 import { ProgramAidType, ProjectType, OpportunityType, Color, ProgramTypeForFront } from '@/types'
 import Contact from '@/tools/contact'
 import Translation from '@/tools/translation'
@@ -102,6 +114,7 @@ const { programs, hasError } = storeToRefs(useProgramStore())
 const { isDataFull } = storeToRefs(useCompanyDataStore())
 const { companyDataSelected } = storeToRefs(useFiltersStore())
 const teeProjectFormContainer = useTemplateRef<HTMLElement>('teeProjectFormContainer')
+const stickyElement = useTemplateRef<HTMLElement>('stickyElement')
 
 const resume = computed<string>(() =>
   Translation.t('project.programsList', {
@@ -111,9 +124,7 @@ const resume = computed<string>(() =>
   })
 )
 
-onServerPrefetch(async () => {
-  await new ProgramManager().getDependentCompanyData()
-})
+await new ProgramManager().getDependentCompanyData()
 
 onNuxtReady(async () => {
   await new ProgramManager().getDependentCompanyData(true)
@@ -129,7 +140,7 @@ const filteredPrograms = computed(() => {
 
 const studyPrograms = computed(() => {
   return filteredPrograms.value.filter((program: ProgramTypeForFront) =>
-    [ProgramAidType.study, ProgramAidType.train].includes(program["nature de l'aide"])
+    [ProgramAidType.study, ProgramAidType.train].includes(program["nature de l'aide"] as ProgramAidType)
   )
 })
 
@@ -140,4 +151,52 @@ const financePrograms = computed(() => {
 
   return ProgramSorter.byFinanceAidType(filteredByAidType)
 })
+
+onMounted(async () => {
+  await nextTick()
+  if (stickyElement.value) {
+    const stickyWithOffset = new AddClassOnScroll(stickyElement.value, stickyElement.value, 'sticky-bottom-border')
+    stickyWithOffset.addEventListenerOnScroll()
+  }
+})
+
+import { onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { Scroll } from '@/tools/scroll/scroll'
+
+const route = useRoute()
+
+onMounted(() => {
+  if (!route.hash) {
+    return
+  }
+
+  Scroll.toHashWithRetries(route.hash)
+})
 </script>
+
+<style lang="scss" scoped>
+.fr-sticky-md {
+  background: #fff;
+
+  &.sticky-bottom-border {
+    box-shadow: inset 0 -1px 0 0 var(--border-default-grey) !important;
+  }
+
+  /* small white div to hide the 1px ul marker */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -2px;
+    bottom: 0;
+    width: 2px;
+    background: white;
+    z-index: 2;
+  }
+}
+
+::v-deep(.fr-sticky-md .fr-text--lg) {
+  margin-bottom: 0 !important;
+}
+</style>

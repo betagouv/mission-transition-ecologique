@@ -1,0 +1,86 @@
+titre: Indicateur climat
+promesse: >-
+  Évaluez gratuitement votre plan de transition et votre stratégie face aux
+  aléas climatiques
+description: >-
+  L’Indicateur Climat de la Banque de France est un outil d’accompagnement
+  gratuit, conçu pour aider votre entreprise à évaluer son positionnement face
+  aux enjeux climatiques propres à son secteur. Cet indicateur de référence
+  permet à votre entreprise :
+
+
+  - D’évaluer sa trajectoire d’émissions de gaz à effet de serre, en la
+  comparant à une trajectoire de décarbonation de référence alignée sur l’Accord
+  de Paris.
+
+  - D’analyser sa stratégie d’adaptation au regard de son exposition aux
+  évolutions de différents aléas climatiques (températures, précipitations,
+  sécheresses, etc.).
+
+  - De disposer d’un indicateur de référence, utilisable auprès de ses
+  financeurs, de ses clients ou de ses fournisseurs.
+description longue: >-
+  L’évaluation de l’Indicateur Climat repose sur :
+
+
+  - Des informations propres à votre entreprise (volumes d’activité présent et
+  futur, émissions de gaz à effet de serre associées, leviers de décarbonation).
+
+  - Des trajectoires de décarbonation de référence alignées sur l’Accord de
+  Paris.
+
+  - D’un cadre méthodologique inspiré de la méthode ACT de l’ADEME, reconnue à
+  l’international.
+
+  - D’une analyse d’experts menée par le Réseau de la Banque de France, présent
+  sur tout le territoire et au service des entreprises.
+illustration: images/TEE_eolienne.webp
+opérateur de contact: Banque de France
+contact question: https://www.banque-france.fr/fr/nous-contacter
+url: >-
+  https://www.banque-france.fr/fr/votre-service/entreprises/la-banque-de-france-vous-aide/indicateur-climat
+nature de l'aide: étude
+coût de l'accompagnement: gratuit
+durée de l'accompagnement: variable
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Créez un compte et connectez-vous sur l'Espace Dirigeant de la Banque de
+      France.
+    liens:
+      - lien: https://dirigeant.banque-france.fr/#/
+        texte: Espace Dirigeant
+  - description: Obtenez une évaluation personnalisée à l'aide de l'indicateur climat.
+  - description: >-
+      Si vous avez des questions, écrivez à [climat.XX@banque-france.fr
+      ](mailto:climat.XX@banque-france.fr)(remplacez XX par le numéro de votre
+      département).
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - "- L’Indicateur Climat concerne les entreprises des secteurs de la production d'électricité, des transports, de la détention de parcs immobiliers, de la production de ciment et de la construction de bâtiments.\n- D’ici 2027, il adressera les entreprises des secteurs suivants\_: acier, aluminium, chimie, pétrole et gaz, construction de véhicules, agriculture."
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental

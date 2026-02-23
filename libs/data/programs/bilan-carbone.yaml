@@ -9,10 +9,12 @@ description: >-
   l’impulsion de l’Agence de l’Environnement et de la Maîtrise de l’Énergie
   (ADEME) et de l’Association des Professionnels en Conseil Climat (APCC) afin
   d'initier et réussir sa stratégie de décarbonation.
-illustration: images/TEE_eolienne.png
+fin de validité: 01/07/2025
+illustration: images/TEE_eolienne.webp
 opérateur de contact: Association pour la transition Bas Carbone
 autres opérateurs:
   - ADEME
+contact question: formulaire
 url: https://abc-transitionbascarbone.fr/agir/organisation/
 nature de l'aide: étude
 coût de l'accompagnement: Sur devis
@@ -22,14 +24,14 @@ objectifs:
   - description: >-
       Trouvez dans l'annuaire des prestataires de l'Association pour la
       transition Bas Carbone (ABC) le professionnel qui vous convient selon vos
-      critères
+      critères.
     liens:
       - lien: >-
           https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/
         texte: Annuaires des prestataires
   - description: >-
-      Contactez le prestataires afin de réaliser votre bilan d'émission de gaz à
-      effet de serres
+      Contactez le prestataire afin de réaliser votre bilan d'émission de gaz à
+      effet de serre.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
@@ -43,8 +45,12 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

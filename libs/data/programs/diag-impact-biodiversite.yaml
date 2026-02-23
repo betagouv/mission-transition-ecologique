@@ -1,0 +1,111 @@
+titre: Diagnostic impact dépendance biodiversité
+promesse: Diagnostiquez votre impact sur la biodiversité et montez votre plan d’action
+description: >-
+  Vous êtes situé à proximité des parcs naturels des Baronnies Provençales, de
+  Brière, de Livradois-Forez, ou de Lorraine : bénéficiez d'un accompagnement au
+  diagnostic des impacts et des dépendances de votre entreprise à la
+  biodiversité.
+
+
+  - Accédez à un outil de diagnostic afin d'établir un bilan et de guider la
+  priorisation des enjeux.
+
+  - Mettez en place les premières pistes d’actions protégeant la biodiversité et
+  la chaîne de valeur de votre entreprise, quel que soit son secteur d'activité.
+description longue: >-
+  L'animation des parc naturels régionaux sera complétée selon les spécificités
+  territoriales, notamment par de la mise en réseau d'entreprises et de
+  l'accompagnement vers les partenaires ou programmes pertinents pour alimenter
+  la démarche biodiversité de l'entreprise. 
+
+  Les livrables de l'action, à savoir une méthodologie d'accompagnement
+  biodiversité des TPE/PME, les supports des formations et l'outil de diagnostic
+  biodiversité, seront largement diffusés dans le réseau des parcs naturels dans
+  un objectif de démultiplication.
+début de validité: 01/06/2024
+fin de validité: 01/06/2027
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: Ministère de la Transition Écologique
+contact question: mailto:msoulet@parcs-naturels-regionaux.fr
+url: >-
+  https://www.parcs-naturels-regionaux.fr/les-enjeux/biodiversite/life-biodivfrance-entreprises-biodiversite
+nature de l'aide: étude
+coût de l'accompagnement: Gratuite
+durée de l'accompagnement: 1 à 2 jours répartis sur 3 mois
+objectifs:
+  - description: Exprimez votre intérêt en contactant un conseiller par mail.
+    liens:
+      - lien: mailto:msoulet@parcs-naturels-regionaux.fr
+        texte: Contacter par mail
+  - description: >-
+      Un conseiller vous rappelle pour vérifier votre éligibilité et répondre à
+      vos questions.
+  - description: >-
+      Si vous êtes éligibles, entamez le diagnostic et définissez un plan
+      d'action.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 250 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - >-
+      Auvergne-Rhône-Alpes, Grand Est, Pays de la Loire, Provence-Alpes-Côte
+      d'Azur
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Avoir un ou plusieurs site(s) d’entreprise implanté(s) sur le territoire
+      des Parcs naturels régionaux suivants : Parc naturel régional des
+      Baronnies Provençales, Parc naturel régional de Brière, Parc naturel
+      régional Livradois-Forez, Parc naturel régional de Lorraine
+    - >-
+      Consulter la carte :
+      <https://www.parcs-naturels-regionaux.fr/les-parcs/decouvrir-les-59-parcs>
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Auvergne-Rhône-Alpes
+      - région = Grand Est
+      - région = Pays de la Loire
+      - région = Provence-Alpes-Côte d'Azur

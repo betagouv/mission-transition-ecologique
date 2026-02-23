@@ -26,7 +26,9 @@ description longue: >-
   - Prestations de bureaux d'études agréés ou organismes externes,
 
   - Autres dépenses de fonctionnement.
-illustration: images/TEE_eolienne.png
+début de validité: 01/01/2022
+fin de validité: 31/12/2025
+illustration: images/TEE_eolienne.webp
 opérateur de contact: DDFIP
 contact question: https://www.impots.gouv.fr/contacts
 url: https://entreprendre.service-public.fr/vosdroits/F23533
@@ -67,6 +69,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a une categorie legale eligible
   entreprise . a une categorie legale eligible:

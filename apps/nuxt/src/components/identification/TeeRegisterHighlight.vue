@@ -7,8 +7,8 @@
     alt-img="image / ecriture"
   >
     <TeeDsfrButton
-      class="fr-text--yellow fr-text--bold"
-      :label="Translation.t('results.eligibilityCheckCTA')"
+      class="fr-text--bold fr-btn-bg--blue-agir"
+      :label="buttonLabel"
       @click="openModal"
     />
   </TeeDsfrHighlight>
@@ -17,12 +17,31 @@
 import Navigation from '@/tools/navigation'
 import Translation from '@/tools/translation'
 import { Color } from '@/types'
+import { useRouter, useRoute } from 'vue-router'
+const router = useRouter()
+const route = useRoute()
 
 interface Props {
   text: string
+  buttonLabel?: string
+  setHash?: string
 }
-defineProps<Props>()
+
+const props = withDefaults(defineProps<Props>(), {
+  buttonLabel: Translation.t('results.eligibilityCheckCTA'),
+  setHash: ''
+})
+
 const openModal = () => {
   Navigation.toggleRegisterModal()
+
+  if (props.setHash) {
+    router.replace({
+      name: route.name,
+      params: route.params,
+      query: route.query,
+      hash: '#' + props.setHash
+    })
+  }
 }
 </script>

@@ -17,7 +17,7 @@ description longue: >-
   ans. 
 début de validité: 01/04/2022
 fin de validité: 30/09/2024
-illustration: images/TEE_energie_verte.png
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: ADEME
 contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000154
 url: >-
@@ -26,15 +26,15 @@ nature de l'aide: financement
 montant du financement: Selon les types d'investissement
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/AAP%20Contrat%20Patrimonial%20Chaleur%20Renouvelable%20en%20Occitanie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20-%20Mars%202022.docx
+          https://agirpourlatransition.ademe.fr/sites/default/files/AAP%20Contrat%20Patrimonial%20Chaleur%20Renouvelable%20en%20Occitanie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20-%20Mars%202022.docx
         texte: Conditions éligibilité et financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du

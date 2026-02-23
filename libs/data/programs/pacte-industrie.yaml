@@ -1,73 +1,79 @@
 titre: PACTE Industrie
-promesse: Engagez votre industrie dans une démarche de décarbonation
+metaTitre: PACTE Industrie – Transition énergétique et décarbonation industrielle
+promesse: >-
+  Engagez votre industrie dans une démarche de décarbonation et de transition
+  énergétique
 description: >-
   Le programme PACTE Industrie accompagne les industriels dans leur transition
-  énergétique, en offrant des études et un coaching sur des thématiques clés. Il
-  permet de réaliser des études d'opportunité sur le mix énergétique, d'élaborer
-  une stratégie de décarbonation, de définir une Trajectoire d’Investissements
-  Bas Carbone (TIBC), et de construire un plan de financement pour les projets.
+  énergétique grâce à des études et un coaching personnalisés.
 
 
-  L’accompagnement couvre plusieurs axes :
+  Il vous aide notamment à :
 
 
-  - Management de l’énergie : études d’évolution du mix énergétique, audit
-  énergétique, et mise en place de la norme ISO 50 001.
+  - réaliser des **études d’opportunité** sur le mix énergétique,
 
 
-  - Stratégie de décarbonation : développement d’une stratégie de décarbonation
-  ambitieuse, chiffrage des investissements bas carbone et analyse des gains
-  d’émissions.
+  - élaborer une **stratégie de décarbonation** ambitieuse,
 
 
-  - Financement : accompagnement sur les aspects financiers pour structurer le
-  montage et rechercher les financements adaptés.
+  - construire un **plan de financement** adapté à vos projets.
+
+
+  L’accompagnement couvre le management de l’énergie, la stratégie bas carbone
+  et la structuration financière pour vous permettre de mener à bien votre
+  transition.
+metaDescription: >-
+  Accélérez la transition de votre industrie avec le programme PACTE Industrie,
+  inscrit dans une logique de pacte écologique et de stratégie bas carbone, aide
+  ADEME.
 description longue: >-
   Plusieurs types d'accompagnement sont proposés :
 
-  • étude des leviers de décarbonation à l’échelle du site industriel :
+
+  - étude des leviers de décarbonation à l’échelle du site industriel :
   efficacité énergétique, récupération de chaleur fatale, énergies
   renouvelables, ou encore électrification et hydrogène.
 
-  • élaboration d'une stratégie de décarbonation ambitieuse et le plan de
+  - élaboration d'une stratégie de décarbonation ambitieuse et le plan de
   transition associé (ACT pas à pas), à l’échelle du groupe.
 
-  • élaboration d'une Trajectoire d’Investissements Bas Carbone (TIBC) à
+  - élaboration d'une Trajectoire d’Investissements Bas Carbone (TIBC) à
   l’échelle du groupe pour obtenir un chiffrage des gains d’émissions de gaz à
   effet de serre associés.
 
-  • évaluation de l’ambition d’une stratégie de décarbonation et son alignement
+  - évaluation de l’ambition d’une stratégie de décarbonation et son alignement
   au regard des objectifs de l’Accord de Paris (ACT évaluation).
 
-  • accompagnement pour les projets d’investissement bas carbone pour construire
+  - accompagnement pour les projets d’investissement bas carbone pour construire
   leurs plans de financement.
 début de validité: 01/06/2023
-fin de validité: 30/06/2026
-illustration: images/TEE_ampoule.png
+fin de validité: 31/12/2026
+illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 contact question: https://pacte-industrie.ademe.fr/contact/
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/pacte-industrie-parcours-accompagnement-competences-transition-energetique#:~:text=Le%20programme%20PACTE%20Industrie%20vise,transition%20%C3%A9nerg%C3%A9tique%20et%20bas%20carbone.
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/pacte-industrie-parcours-accompagnement-et-competences-pour-la-transition-energetique-de-lindustrie#:~:text=Le%20programme%20PACTE%20Industrie%20vise,transition%20%C3%A9nerg%C3%A9tique%20et%20bas%20carbone.
 nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude selon la taille de l'entreprise
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PACTE%20Industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/PACTE%20Industrie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez un bureau d'étude parmi les prestataires référencés dans le
       cadre du programme PACTE Industrie.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/PACTE%20Industrie%20-%20Annuaire%20prestataires.xlsx
+          https://agirpourlatransition.ademe.fr/sites/default/files/PACTE%20Industrie%20-%20Annuaire%20prestataires.xlsx
         texte: Annuaire des prestataires
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du

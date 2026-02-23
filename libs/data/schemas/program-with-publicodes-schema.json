@@ -8,12 +8,20 @@
       "description": "Titre commercial du dispositif. Si pas de titre commercial clairement identifé, un titre générique du type \"Dispositif { opérateur de contact }\" peut être utilisé.",
       "type": "string"
     },
+    "metaTitre": {
+      "description": "Titre du dispositif pour les metadatas de la page. Il s'agit du titre qui sera affiché dans l'onglet du navigateur.",
+      "type": "string"
+    },
     "promesse": {
       "description": "TODO",
       "type": "string"
     },
     "description": {
       "description": "La description donne les principales informations du dispositif en quelques lignes",
+      "type": "string"
+    },
+    "metaDescription": {
+      "description": "Description du dispositif pour les metadatas de la page. Il s'agit de la description qui sera affichée dans les résultats de recherche.",
       "type": "string"
     },
     "description longue": {
@@ -195,6 +203,10 @@
         "nombre d'années d'activité"
       ]
     },
+    "eligibilityData": {
+      "description": "Données d'éligibilite du programme. Sous format codifié pour traitements automatiques",
+      "type": "object"
+    },
     "publicodes": {
       "description": "Mécanismes publicodes (https://publi.codes/) associés au dispositif. Doit être en langage publicodes valide. Les données nécessaires à l'évaluation des règles (contrat d'interface) sont matérialisés par des clés sans valeurs.",
       "type": "object",
@@ -246,6 +258,13 @@
         },
         "additionalProperties": true
       }
+    },
+    "type": {
+      "description": "Type du programme : programme interne TEE ou programme externe (ADEME)",
+      "enum": [
+        "tee",
+        "ext-ademe"
+      ]
     }
   },
   "oneOf": [
@@ -327,7 +346,7 @@
     "operators": {
       "enum": [
         "ADEME",
-        "ASP",
+        "Agence de Services et de Paiement",
         "Agence de l'Eau Loire-Bretagne",
         "Agence de l'Eau Rhône-Méditerranée-Corse",
         "Agence de l'Eau",
@@ -340,10 +359,8 @@
         "Chambre des Métiers et de l'Artisanat",
         "DDFIP",
         "DREAL Bretagne",
-        "EcoCO2",
         "France Rénov'",
         "InvestEU",
-        "La Poste",
         "Ministère de la Transition Écologique",
         "Confédération de l'Artisanat et des Petites Entreprises du Bâtiment",
         "Région Bretagne",
@@ -370,7 +387,21 @@
         "Agence de Développement Economique de Corse",
         "Agence de Tourisme de la Corse",
         "Région Guadeloupe",
-        "Avere-France"
+        "Avere-France",
+        "L'Opcommerce",
+        "Centre National du Livre",
+        "Banque de France",
+        "Constructys",
+        "Atlas",
+        "Opco AFDAS",
+        "Opco Akto",
+        "Opco Ocapiat",
+        "Opco 2i",
+        "Opco EP",
+        "Opco Mobilités",
+        "Opco Santé",
+        "Opco Uniformation",
+        "ANACT"
       ]
     }
   }

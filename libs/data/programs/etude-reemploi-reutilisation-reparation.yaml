@@ -1,4 +1,5 @@
 titre: Étude "réemploi réutilisation réparation"
+metaTitre: Étude de réemploi, réutilisation et réparation – Aide ADEME
 promesse: >-
   Réalisez une étude de faisabilité pour votre projet dans le
   réemploi-réutilisation ou la réparation
@@ -13,46 +14,41 @@ description: >-
 
   L’objectif est de développer l’offre et la demande de produits réemployés et
   réparés, contribuant ainsi à une économie circulaire et durable.
+metaDescription: >-
+  Bénéficiez d’un financement ADEME jusqu’à 80 % pour étudier la faisabilité de
+  votre projet de réemploi, réparation ou réutilisation (recyclerie, atelier
+  d'upcycling, repair'café, etc.)
 description longue: >-
-  Ce financement concerne : 
+  Ce financement concerne :
 
-  • Les diagnostics de territoire (gisements, acteurs et structures existants,
-  dynamiques locales,
 
-  besoins d’activités supplémentaires, etc.) ;
+  - Les diagnostics de territoire (gisements, acteurs et structures existants,
+  dynamiques locales,\
+    besoins d’activités supplémentaires, etc.) ;
 
-  • Les études d’opportunité (prospective sur un gisement) ou de faisabilité
-  d’un projet
+  - Les études d’opportunité (prospective sur un gisement) ou de faisabilité
+  d’un projet concernant par exemple :
 
-  concernant par exemple :
-
-  - La création d’une nouvelle recyclerie (étude de faisabilité) ;
-
-  - La création d’un fablab dédié à la réparation ;
-
-  - Le développement d’activités spécifiques et de ressources locales favorisant
-  le réemploiréutilisation et la réparation (atelier d’upcycling, repair’café,
-  etc.) ;
-
-  • Les missions d’Assistance à Maîtrise d’Ouvrage (AMO) permettant la mise en
-  œuvre effective sur un chantier de produits et matériaux du bâtiment aptes à
-  une seconde vie.
+    - La création d’une nouvelle recyclerie (étude de faisabilité) ;
+    - La création d’un fablab dédié à la réparation ;
+    - Le développement d’activités spécifiques et de ressources locales favorisant le réemploi, l'utilisation et la réparation (atelier d’upcycling, repair’café, etc.) ;
+    - Les missions d’Assistance à Maîtrise d’Ouvrage (AMO) permettant la mise en œuvre effective sur un chantier de produits et matériaux du bâtiment aptes à une seconde vie.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
-illustration: images/TEE_energie_verte.png
+fin de validité: 31/12/2026
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000722
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000899
 url: >-
-  https://agir.ademe.fr/aides-financieres/2025/soutien-aux-etudes-et-diagnostics-pour-le-reemploi-reutilisation-et-la?cible=79
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-aux-etudes-et-diagnostics-pour-le-reemploi-reutilisation-et-la-reparation-hors-emballages?cible=79
 nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20RRR%20hors%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tude%20RRR%20hors%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions d'éligibilité et de financement
   - description: >-
       Choisissez le bureau d'étude qui va vous accompagner pour mener l'étude/le
@@ -60,7 +56,7 @@ objectifs:
       d’Ouvrage (AMO).
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du
@@ -84,10 +80,9 @@ conditions d'éligibilité:
   secteur géographique:
     - >-
       Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
-      Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
-      Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine,
-      Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française,
-      Provence-Alpes-Côte d'Azur
+      Loire, Grand Est, Hauts-de-France, Île-de-France, Normandie,
+      Nouvelle-Aquitaine, Occitanie, Pays de la Loire, Provence-Alpes-Côte
+      d'Azur
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -129,17 +124,10 @@ publicodes:
       - région = Bretagne
       - région = Centre-Val de Loire
       - région = Grand Est
-      - région = Guadeloupe
-      - région = Guyane
       - région = Hauts-de-France
       - région = Île-de-France
-      - région = La Réunion
-      - région = Martinique
-      - région = Mayotte
       - région = Normandie
       - région = Nouvelle-Aquitaine
-      - région = Nouvelle-Calédonie
       - région = Occitanie
       - région = Pays de la Loire
-      - région = Polynésie française
       - région = Provence-Alpes-Côte d'Azur

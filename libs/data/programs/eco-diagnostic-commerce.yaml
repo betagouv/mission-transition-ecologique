@@ -1,0 +1,68 @@
+titre: Eco-diagnostic Commerce
+promesse: Ajustez votre politique RH aux enjeux de la transition écologique
+description: >-
+  Ce diagnostic permet de dresser un état des lieux de votre activité et de
+  mettre en lumière les leviers pour engager votre entreprise sur la voie de la
+  transition écologique. Il s'agit d'un accompagnement de 2 à 5 jours qui vous
+  permettra :
+
+
+  - de faire un **état des lieux global** des besoins à couvrir dans votre
+  entreprise en matière de transition écologique, **sous l'angle RH**.
+
+  - d'**établir un plan d'action** pour atteindre le cap fixé par votre
+  entreprise.
+
+  - de vous accompagner dans la **conduite des chantiers** identifiés comme\
+    prioritaires.
+illustration: images/TEE_eolienne.webp
+opérateur de contact: L'Opcommerce
+contact question: https://www.lopcommerce.com/contact/
+url: >-
+  https://www.lopcommerce.com/l-opcommerce/offre-de-services/eco-diagnostic-commerce/
+nature de l'aide: étude
+montant du financement: de 50 à 100% du coût de la prestation
+objectifs:
+  - description: Créez un compte sur le site de l'Opcommerce.
+    liens:
+      - lien: https://auth.lopcommerce.com/accounts/create
+        texte: Créer mon compte l'Opcommerce
+  - description: >-
+      Contactez votre conseiller l'Opcommerce pour exprimer votre intérêt pour
+      l'Éco-diagnostic Commerce.
+    liens:
+      - lien: https://www.lopcommerce.com/contact/
+        texte: Contacter mon conseiller
+  - description: >-
+      Définissez avec l’expert le périmètre du diagnostic, la méthode et le
+      calendrier et lancez le diagnostic.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Entreprises du secteur du commerce, du bricolage, de l'import-export
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental

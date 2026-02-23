@@ -1,6 +1,7 @@
 <template>
   <header
     role="banner"
+    aria-label="En-tête du site"
     class="fr-header"
     :class="navigation.isHomepage() ? 'fr-sticky' : ''"
   >
@@ -11,6 +12,7 @@
             <div class="fr-header__brand-top">
               <div class="fr-header__logo">
                 <RouterLink
+                  v-if="!serviceTitle"
                   :to="homeTo"
                   :title
                 >
@@ -19,12 +21,16 @@
                     data-testid="header-logo"
                   />
                 </RouterLink>
+                <DsfrLogo
+                  v-else
+                  :logo-text="logoText"
+                  data-testid="header-logo"
+                />
               </div>
               <div
                 v-if="isWithSlotOperator"
                 class="fr-header__operator"
               >
-                <!-- @slot Slot nommé operator pour le logo opérateur. Sera dans `<div class="fr-header__operator">` -->
                 <slot name="operator">
                   <img
                     v-if="operatorImgSrc"
@@ -34,6 +40,17 @@
                     :style="operatorImgStyle"
                   />
                 </slot>
+              </div>
+              <div
+                v-if="secondOperatorImgSrc"
+                class="fr-header__operator fr-hidden-lg"
+              >
+                <img
+                  class="fr-responsive-img"
+                  :src="secondOperatorImgSrc"
+                  :alt="secondOperatorImgAlt"
+                  :style="secondOperatorImgStyle"
+                />
               </div>
               <div
                 v-if="showSearch || isWithSlotNav || quickLinks?.length"
@@ -47,7 +64,11 @@
                   :title="showSearchLabel"
                   :data-fr-opened="searchModalOpened"
                   @click.prevent.stop="showSearchModal()"
-                />
+                >
+                  <span class="fr-sr-only">
+                    {{ showSearchLabel }}
+                  </span>
+                </button>
                 <div class="fr-hidden-lg">
                   <TeeRegisterCTA />
                 </div>
@@ -59,23 +80,23 @@
                   aria-controls="header-navigation"
                   aria-haspopup="dialog"
                   :aria-label="menuLabel"
-                  :title="menuLabel"
                   data-testid="open-menu-btn"
                   @click.prevent.stop="showMenu()"
-                />
+                >
+                  <span class="fr-sr-only">
+                    {{ menuLabel }}
+                  </span>
+                </button>
               </div>
             </div>
-            <div
-              v-if="serviceTitle"
-              class="fr-header__service"
-            >
+            <div class="fr-header__service fr-px-0">
               <RouterLink
                 :to="homeTo"
                 :title
                 v-bind="$attrs"
               >
                 <p class="fr-header__service-title">
-                  {{ serviceTitle }}
+                  Transition écologique<span class="fr-display-lg--block"> des entreprises</span>
                   <span
                     v-if="showBeta"
                     class="fr-badge fr-badge--sm fr-badge--green-emeraude"
@@ -86,10 +107,21 @@
               </RouterLink>
               <p
                 v-if="serviceDescription"
-                class="fr-header__service-tagline"
+                class="fr-header__service-tagline fr-hidden-lg"
               >
                 {{ serviceDescription }}
               </p>
+            </div>
+            <div
+              v-if="secondOperatorImgSrc"
+              class="fr-header__operator fr-unhidden-lg fr-hidden"
+            >
+              <img
+                class="fr-responsive-img"
+                :src="secondOperatorImgSrc"
+                :alt="secondOperatorImgAlt"
+                :style="secondOperatorImgStyle"
+              />
             </div>
             <div
               v-if="!serviceTitle && showBeta"
@@ -100,7 +132,7 @@
               </p>
             </div>
           </div>
-          <div class="fr-header__tools">
+          <div class="fr-header__tools fr-pl-0">
             <div
               v-if="quickLinks?.length || languageSelector"
               class="fr-header__tools-links"
@@ -119,7 +151,7 @@
                 />
               </template>
             </div>
-            <div class="fr-my-auto fr-px-4v fr-hidden fr-unhidden-lg">
+            <div class="fr-my-auto fr-pr-4v fr-hidden fr-unhidden-lg">
               <TeeRegisterCTA />
             </div>
             <div
@@ -129,43 +161,52 @@
               <DsfrSearchBar
                 :id="searchbarId"
                 :label="searchLabel"
-                :model-value="modelValue"
+                :model-value="String(modelValue || '')"
                 :placeholder="placeholder"
                 style="justify-content: flex-end"
-                @update:model-value="emit('update:modelValue', $event)"
+                @update:model-value="emit('update:modelValue', $event!)"
                 @search="emit('search', $event)"
               />
             </div>
           </div>
         </div>
-        <div
-          v-if="showSearch || isWithSlotNav || (quickLinks && quickLinks.length) || languageSelector"
-          id="header-navigation"
-          class="fr-header__menu fr-modal"
-          :class="{ 'fr-modal--opened': modalOpened }"
-          :aria-label="menuModalLabel"
-          role="dialog"
-          aria-modal="true"
+        <FocusTrap
+          v-if="modalOpened"
+          :active="modalOpened"
+          :focus-trap-options="{
+            initialFocus: '#close-button',
+            fallbackFocus: '#close-button',
+            escapeDeactivates: true,
+            clickOutsideDeactivates: true,
+            returnFocusOnDeactivate: true
+          }"
         >
-          <div class="fr-container">
-            <button
-              id="close-button"
-              class="fr-btn fr-btn--close"
-              aria-controls="header-navigation"
-              data-testid="close-modal-btn"
-              @click.prevent.stop="hideModal()"
-            >
-              {{ closeMenuModalLabel }}
-            </button>
-            <div class="fr-header__menu-links">
-              <template v-if="languageSelector">
-                <DsfrLanguageSelector
-                  v-bind="languageSelector"
-                  @select="languageSelector.currentLanguage = $event.codeIso"
-                />
-              </template>
-              <slot name="before-quick-links" />
-              <nav role="navigation">
+          <div
+            v-if="(showSearch || isWithSlotNav || (quickLinks && quickLinks.length) || languageSelector) && modalOpened"
+            id="header-navigation"
+            class="fr-header__menu fr-modal fr-modal--opened"
+            :aria-label="menuModalLabel"
+            role="dialog"
+            aria-modal="true"
+          >
+            <div class="fr-container">
+              <button
+                id="close-button"
+                class="fr-btn fr-btn--close"
+                aria-controls="header-navigation"
+                data-testid="close-modal-btn"
+                @click.prevent.stop="hideModal()"
+              >
+                {{ closeMenuModalLabel }}
+              </button>
+              <div class="fr-header__menu-links">
+                <template v-if="languageSelector">
+                  <DsfrLanguageSelector
+                    v-bind="languageSelector"
+                    @select="emit('languageSelect', $event)"
+                  />
+                </template>
+                <slot name="before-quick-links" />
                 <TeeDsfrHeaderMenuLinks
                   v-if="menuOpened"
                   role="navigation"
@@ -173,31 +214,30 @@
                   :nav-aria-label="quickLinksAriaLabel"
                   @link-click="onQuickLinkClick"
                 />
-              </nav>
-              <slot name="after-quick-links" />
-            </div>
+                <slot name="after-quick-links" />
+              </div>
 
-            <template v-if="modalOpened">
-              <slot
-                name="mainnav"
-                :hidemodal="hideModal"
-              />
-            </template>
-            <div
-              v-if="searchModalOpened"
-              class="flex justify-center items-center"
-            >
-              <DsfrSearchBar
-                :searchbar-id="searchbarId"
-                :model-value="modelValue"
-                :placeholder="placeholder"
-                @update:model-value="emit('update:modelValue', $event)"
-                @search="emit('search', $event)"
-              />
+              <template v-if="modalOpened">
+                <slot
+                  name="mainnav"
+                  :hidemodal="hideModal"
+                />
+              </template>
+              <div
+                v-if="searchModalOpened"
+                class="flex justify-center items-center"
+              >
+                <DsfrSearchBar
+                  :searchbar-id="searchbarId"
+                  :model-value="String(modelValue || '')"
+                  :placeholder="placeholder"
+                  @update:model-value="emit('update:modelValue', $event)"
+                  @search="emit('search', $event)"
+                />
+              </div>
             </div>
           </div>
-        </div>
-        <!-- @slot Slot par défaut pour le contenu du fieldset (sera dans `<div class="fr-header__body-row">`) -->
+        </FocusTrap>
         <slot />
       </div>
     </div>
@@ -206,7 +246,6 @@
         v-if="isWithSlotNav && !modalOpened"
         class="fr-container"
       >
-        <!-- @slot Slot nommé mainnav pour le menu de navigation principal -->
         <slot
           name="mainnav"
           :hidemodal="hideModal"
@@ -215,14 +254,22 @@
     </div>
   </header>
 </template>
+
 <script lang="ts" setup>
-import { computed, onMounted, onUnmounted, ref, toRef, useSlots } from 'vue'
+import { computed, onMounted, onUnmounted, ref, type StyleValue, toRef } from 'vue'
 import { DsfrLanguageSelector, DsfrLogo, DsfrSearchBar, registerNavigationLinkKey } from '@gouvminint/vue-dsfr'
 import type { DsfrLanguageSelectorElement } from '@gouvminint/vue-dsfr/types/components/DsfrLanguageSelector/DsfrLanguageSelector.vue'
 import type { DsfrHeaderProps } from '@gouvminint/vue-dsfr/types/components/DsfrHeader/DsfrHeader.vue'
 import Navigation from '@/tools/navigation'
+import { FocusTrap } from 'focus-trap-vue'
 
-const props = withDefaults(defineProps<DsfrHeaderProps>(), {
+interface TeeDsfrHeaderProps extends DsfrHeaderProps {
+  secondOperatorImgSrc?: string
+  secondOperatorImgAlt?: string
+  secondOperatorImgStyle?: StyleValue
+}
+
+const props = withDefaults(defineProps<TeeDsfrHeaderProps>(), {
   searchbarId: 'searchbar-header',
   languageSelector: undefined,
   serviceTitle: undefined,
@@ -233,6 +280,9 @@ const props = withDefaults(defineProps<DsfrHeaderProps>(), {
   operatorImgAlt: '',
   operatorImgSrc: '',
   operatorImgStyle: () => ({}),
+  secondOperatorImgSrc: '',
+  secondOperatorImgAlt: '',
+  secondOperatorImgStyle: () => ({}),
   placeholder: 'Rechercher...',
   quickLinks: () => [],
   searchLabel: 'Recherche',
@@ -245,9 +295,25 @@ const props = withDefaults(defineProps<DsfrHeaderProps>(), {
 })
 
 const emit = defineEmits<{
-  (e: 'update:modelValue', payload: string): void
-  (e: 'search', payload: string): void
-  (e: 'languageSelect', payload: DsfrLanguageSelectorElement): void
+  /** Émis lors du changement de la valeur de recherche */
+  'update:modelValue': [payload: string | number | undefined]
+  /** Émis lors de la validation de la recherche */
+  search: [payload: string]
+  /** Émis lors de la sélection d'une langue */
+  languageSelect: [payload: DsfrLanguageSelectorElement]
+}>()
+
+const slots = defineSlots<{
+  /** Slot par défaut pour le contenu du fieldset (sera dans `<div class="fr-header__body-row">`) */
+  default: () => any
+  /** Slot nommé operator pour le logo opérateur. Sera dans `<div class="fr-header__operator">` */
+  operator: () => any
+  /** Slot nommé mainnav pour le menu de navigation principal */
+  mainnav: () => any
+  /** Slot pour du contenu avant les liens rapides */
+  'before-quick-links': () => any
+  /** Slot pour du contenu après les liens rapides */
+  'after-quick-links': () => any
 }>()
 
 const navigation = new Navigation()
@@ -283,7 +349,7 @@ const showMenu = () => {
   // Sans le setTimeout, le focus n'est pas fait
   setTimeout(() => {
     document.getElementById('close-button')?.focus()
-  })
+  }, 50)
 }
 const showSearchModal = () => {
   modalOpened.value = true
@@ -294,8 +360,7 @@ const onQuickLinkClick = hideModal
 
 const title = computed(() => [props.homeLabel, props.serviceTitle].filter((x) => x).join(' - '))
 
-const slots = useSlots()
-const isWithSlotOperator = computed(() => Boolean(slots.operator?.().length) || !!props.operatorImgSrc)
+const isWithSlotOperator = computed(() => Boolean(slots.operator) || !!props.operatorImgSrc)
 const isWithSlotNav = computed(() => Boolean(slots.mainnav))
 provide(registerNavigationLinkKey, () => {
   return hideModal

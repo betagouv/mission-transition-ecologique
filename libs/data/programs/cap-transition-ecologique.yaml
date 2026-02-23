@@ -39,7 +39,7 @@ description longue: >-
   mesure de justifier d'un diagnostic déjà réalisé, d'un plan d’action détaillé
   et argumenté, ou d’avoir bénéficié du suivi et de l’accompagnement de
   l’Accélérateur des transitions Ecologique et sociales régional.
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_ampoule.webp
 opérateur de contact: Région Centre-Val de Loire
 contact question: >-
   https://www.centre-valdeloire.fr/le-guide-des-aides-de-la-region-centre-val-de-loire/cap-te-transition-ecologique
@@ -54,7 +54,7 @@ objectifs:
     liens:
       - lien: >-
           https://www.centre-valdeloire.fr/le-guide-des-aides-de-la-region-centre-val-de-loire/cap-te-transition-ecologique
-        texte: Les contacts des conseillers de la Région
+        texte: Prendre contact
   - description: >-
       Après vérification de l’éligibilité de votre projet, le chargé de mission
       vous adressera le lien par lequel vous pourrez déposer une demande de
@@ -97,7 +97,6 @@ publicodes:
       - microentrepreneur = non
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-      - code NAF niveau 1 . est A
       - code NAF niveau 1 . est B
       - code NAF niveau 1 . est C
       - code NAF niveau 1 . est D

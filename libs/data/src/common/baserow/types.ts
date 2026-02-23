@@ -1,30 +1,61 @@
+import { FaqPage } from '../../faq/types/shared'
 import { ConditionalValues as DomainConditionalValues, DataProgram } from '../../program/types/domain'
 
 export interface Id {
   id: number
 }
 
-export interface BaserowProject extends Id, BaserowSectors {
+interface Order {
+  order: number
+}
+interface LastModification {
+  'Dernière modification': string
+}
+
+interface LastModificationBy {
+  'Dernière modification par': { id: number; name: string }
+}
+
+interface CreationDate {
+  'Date de création': string
+}
+
+export interface BaserowData<T> {
+  count: number
+  next: string | null
+  previous: string | null
+  results: T[]
+}
+
+export interface BaserowProject extends Id, BaserowSectors, BaserowMetaData {
   order: string
   Nom: string
   'Description courte': string
   Statut: LinkObject
   Image: LinkObject[]
-  'Qu’est-ce que c’est ?': string
-  'Pour aller plus loin': string
   Titre: string
+  'Titre - Pourquoi ?': string
+  'Qu’est-ce que c’est ?': string
+  'Titre - Me documenter': string
+  'Pour aller plus loin': string
+  'Titre - Projets complémentaires': string
+  'Description - Projets complémentaires': string
   'Projets complémentaires': LinkObject[]
   'Thématique principale': LinkObject[]
   NameTag: string
   'Thématiques secondaires': LinkObject[]
   Dispositifs: LinkObject[]
   Prio: number
+  'Prios spécifiques': string
   'Mise En Avant': number | null
+  'Titre - FAQ': string
+  Faq: LinkObject[]
   'redirection-vers': LinkObject[]
 }
 
 export interface LinkObject extends Id {
   value: string
+  [key: string]: unknown
 }
 
 export interface ImageTable extends Id {
@@ -32,12 +63,18 @@ export interface ImageTable extends Id {
   'Alt-text': string
   Image: Image[]
   'Image URL TEE': string
+  Couleur?: LinkObject
 }
 
 export interface Image {
   url: string
-  name: string
+  visible_name: string
   uploaded_at: string
+}
+
+export interface BaserowMetaData {
+  'Meta Titre': string | null
+  'Meta Description': string | null
 }
 
 export interface Program
@@ -52,8 +89,11 @@ export interface Program
       | 'Zones géographiques'
       | 'Thèmes Ciblés'
       | 'redirection-vers'
+      | 'contact'
     >,
-    BaserowSectors {
+    BaserowSectors,
+    BaserowMetaData,
+    ProgramTechSerialized {
   Statuts: LinkObject[]
   "Nature de l'aide": LinkObject
   'Opérateur de contact': LinkObject[]
@@ -62,12 +102,11 @@ export interface Program
   'Zones géographiques': LinkObject[]
   'Thèmes Ciblés': LinkObject[]
   'redirection-vers': LinkObject[]
+  'Référent Interne': LinkObject[]
 }
 
-export interface Operator {
-  Nom: string
-  Tag: string
-  Filtre: LinkObject[]
+export interface ProgramTechSerialized {
+  tech: string
 }
 
 export interface ConditionalValues
@@ -114,4 +153,120 @@ export type Sectors = {
 
 export type BaserowSectors = {
   [K in keyof typeof SectorKeys]: boolean
+}
+
+export interface BaserowTestimony extends Id, BaserowSectors {
+  'Id fiche témoignage': string
+  Statut: LinkObject
+  Theme: LinkObject
+  Verbatim: string
+  "Fonction + nom de l'entreprise": string
+  'Prénom NOM': string
+  Photo: Image[]
+  "attribut de l'image": string
+  'Lien externe vers le témoignage': string
+  Projets: LinkObject[]
+  Dispositifs: LinkObject[]
+  Région: LinkObject[]
+  'Mise en avant': number
+  'Nom entreprise': string
+}
+
+export interface BaserowTraining extends Id {
+  'Id Ademe': string
+  'Futures Sessions': string
+  Titre: string
+  Promesse: string
+  'Url ADEME': string
+  Objectifs: string
+  Thématique: string
+  'Nombre de sessions à venir': number
+  'Nombre de participants par session': string
+  Modalité: string
+  'Codes Sections': string
+  Cible: string
+  Programme: string
+  Prérequis: string
+  Tarif: string
+  Durée: string
+  'Nombre de jours': string
+}
+
+export interface ProgramTechnicalInfo {
+  prod_release_date?: string
+  email_enable?: boolean
+  last_mail_sent_date?: string
+  eol_mail_sent_date?: string
+}
+
+export interface BaserowFaq extends Id, Order {
+  Question: string
+  Réponse: string
+  Actif: boolean
+  Page: LinkObject | null
+  Section: LinkObject[]
+  Projet: LinkObject[]
+}
+
+export interface BaserowFaqs {
+  faqs: BaserowFaq[]
+}
+
+export interface BaserowFaqSection extends Id, Order, CreationDate, LastModification, LastModificationBy {
+  Titre: string
+  Couleur: LinkObject
+}
+
+export interface FaqItemStructured extends BaserowFaqSection, BaserowFaqs {}
+
+export type FaqPagesStructured = {
+  [key in FaqPage]?: FaqItemStructured[]
+}
+
+export type FaqProjectsStructured = {
+  [key: number]: BaserowFaqs
+}
+
+export interface BaserowContact extends Id {
+  'Prénom NOM': string
+  Courriel: string
+}
+
+export interface BaserowFilter {
+  filter_type: 'OR' | 'AND'
+  filters: { type: string; field: string; value: string | number }[]
+  groups: []
+}
+
+export interface BaserowOperator {
+  id: number
+  Filtre: LinkObject[]
+  Tag: string
+  Nom: string
+  siren: string
+  'Nom Normalisé': string
+  Image: LinkObject[]
+  'Image URL TEE': string
+}
+
+export interface AdemeProgramBaserow {
+  'Id fiche dispositif': string
+  Titre: string
+  'Description courte': string
+  'Description longue': string
+  r2daId: string
+  'URL R2DA': string
+  "type d'aide (ADEME)": string
+  'type de projet (ADEME)': string
+  'theme (ADEME)': string
+  cible: string
+  DISPOSITIF_DATE_DEBUT: string
+  DISPOSITIF_DATE_FIN: string
+  'Couverture géographique': string
+  'Zones Geo': string
+  Eligibilité: string
+  'Zones Geo Link': number[]
+  'Données brutes': string
+  'Contact URL (auto)': string
+  idDSP: string
 }

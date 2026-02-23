@@ -1,4 +1,4 @@
-import { ThemeId } from './shared'
+import { ThemeId } from '@tee/common'
 
 export interface Theme {
   id: number

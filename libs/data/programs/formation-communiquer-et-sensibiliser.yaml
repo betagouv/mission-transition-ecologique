@@ -1,0 +1,87 @@
+titre: Formation Communication Décarbonation
+promesse: >-
+  Formez vos équipes pour communiquer efficacement sur la décarbonation et les
+  économies d'énergie.
+description: >-
+  Suivez une formation en ligne pour comprendre les fondamentaux d'une
+  communication efficace autour d'un projet de décarbonation et d'économies
+  d'énergie, au sein de votre entreprise. Ainsi, vous apprenez à :
+
+
+  - Planifier votre stratégie de communication ;
+
+
+  - Planifier une campagne de sensibilisation ;
+
+
+  - Concevoir vos supports de communication.
+fin de validité: 31/12/2025
+illustration: images/TEE_ampoule.webp
+opérateur de contact: ADEME
+contact question: https://formations.ademe.fr/contactez-nous.html
+url: >-
+  https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_communiquer-et-sensibiliser-sur-l-economie-d-energie-et-la-decarbonation-dans-son-entreprise_s5357.html
+nature de l'aide: formation
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: 3h
+objectifs:
+  - description: Prenez connaissance du programme de la formation.
+    liens:
+      - lien: >-
+          https://formations.ademe.fr/formations_transition-ecologique-:-approche-transversale_communiquer-et-sensibiliser-sur-l-economie-d-energie-et-la-decarbonation-dans-son-entreprise_s5357.html
+        texte: Consulter le programme
+  - description: >-
+      Inscrivez-vous sur la plateforme ADEME Formations. Vous pouvez ajouter
+      plusieurs participants.
+    liens:
+      - lien: >-
+          https://formations.ademe.fr/solutions/beforeregister.php?sessionid=9629
+        texte: formations.ademe.fr
+  - description: >-
+      Obtenez le lien de la formation à réaliser en ligne en toute autonomie à
+      l'aide de vidéos et de quizz.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter

@@ -1,0 +1,66 @@
+titre: Diag Accompagnement TEE RH
+promesse: >-
+  Soyez accompagné pour établir un état des lieux des impacts environnementaux
+  sur votre entreprise
+description: >-
+  L'accompagnement "Transition écologique et énergétique RH", d'une durée de 5 à
+  7 jours, vous permet de :
+
+
+  - Établir un **diagnostic sur-mesure** des enjeux de la transition écologique
+  et des impacts RH au sein de votre entreprise.
+
+  - Co-construire un **plan d'action** avec un expert.
+
+  - Mettre en œuvre les **premières mesures** du plan d'action et d'établir un
+  **plan de formation** pour développer les compétences RH dont votre entreprise
+  a besoin.
+illustration: images/TEE_ampoule.webp
+opérateur de contact: Opco EP
+contact question: formulaire
+url: >-
+  https://www.opcoep.fr/entreprise/offre-de-services/transition-ecologique-et-energetique/etre-accompagne
+nature de l'aide: étude
+montant du financement: Jusqu'à 50% de l'accompagnement
+objectifs:
+  - description: Contactez votre conseiller régional Opco EP (des Entreprises de Proximité)
+    liens:
+      - lien: https://www.opcoep.fr/nous-contacter
+        texte: Contacter mon conseiller
+  - description: >-
+      Complétez le Diagnostic Reflex TEE (un diagnostic de premier niveau d'une
+      durée de 20 minutes).
+  - description: >-
+      Définissez avec l’expert le périmètre de l'accompagnement, la méthode et
+      le calendrier.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 250 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises des secteurs de proximité : artisanat, professions libérales,
+      services de proximité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental

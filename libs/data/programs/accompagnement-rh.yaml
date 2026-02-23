@@ -1,0 +1,69 @@
+titre: Accompagnement RH
+promesse: Bénéficiez d'un accompagnement RH sur mesure à la transition écologique
+description: >-
+  Faites-vous accompagner par un cabinet RH pour analyser vos besoins sur la
+  transition écologique et mettre en place un plan d’action. Cet accompagnement
+  sur 6 à 9 mois vous permet de :
+
+
+  - Élaborer un **plan d’action adapté** à votre établissement.
+
+
+  - Obtenir des **outils sur-mesure.**
+
+
+  - Mobiliser vos équipes autour d’un **projet fédérateur**.
+
+
+  - Pouvoir **mesurer l’impact** de ces actions terrain.
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: Opco Santé
+contact question: https://www.opco-sante.fr/contact/
+url: >-
+  https://www.opco-sante.fr/employeur/notre-offres-de-services/on-enrichit-nos-pratiques-rh/accompagnement-rh-sur-mesure/
+nature de l'aide: étude
+montant du financement: Variable
+objectifs:
+  - description: >-
+      Réalisez un diagnostic pour vous vérifier que l'Accompagnement RH est
+      adapté à vos attentes et vos besoins.
+    liens:
+      - lien: >-
+          https://www.opco-sante.fr/employeur/notre-offres-de-services/on-parle-ecologie/
+        texte: Réaliser le diagnostic
+  - description: >-
+      Contactez votre conseiller Opco Santé pour pour exprimer votre intérêt
+      pour l'accompagnement.
+    liens:
+      - lien: https://www.opco-sante.fr/contact/
+        texte: Contacter mon conseiller
+  - description: >-
+      Définissez avec l’expert le périmètre du dispositif, la méthode et le
+      calendrier.
+  - description: Bénéficiez de l'Accompagnement RH.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Entreprises des secteurs sanitaire, social et médico-social privé à but
+      non lucratif, des services de prévention et de santé au travail, de
+      l'hospitalisation privée et du thermalisme
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est Q
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental

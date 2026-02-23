@@ -1,16 +1,30 @@
 import axios from 'axios'
 import https from 'https'
 import { chromium } from 'playwright'
-import { RequestInit as NodeFetchRequestInit } from 'node-fetch'
+import { LoggerInterface, LogLevel } from '../logger/types'
+import { MarkedUrl } from '../tool/markedUrl'
 
 export class LinkValidator {
-  public static forceHttps(link) {
+  public static forceHttps(link: string) {
     return link.replace(/^http:\/\//i, 'https://')
   }
 
-  public static async findAndValidateLinks(inputText: string): string[] {
-    const urlRegex = /(https?:\/\/[^\s]+)/g
-    const foundLinks = inputText.match(urlRegex) || []
+  public static async logInvalidLinks(
+    inputText: string,
+    logger: LoggerInterface,
+    logLevel: LogLevel,
+    fieldName: string,
+    id: string,
+    rowId: number
+  ): Promise<void> {
+    const invalidLinks = await LinkValidator.findInvalidLinks(inputText)
+    for (const link of invalidLinks) {
+      logger.log(logLevel, 'Lien invalide détecté dans le champ ' + fieldName, id, rowId, `[Lien cassé](${link})`)
+    }
+  }
+
+  public static async findInvalidLinks(inputText: string): Promise<string[]> {
+    const foundLinks = this.foundLinks(inputText)
     const invalidLinks = []
     for (const rawLink of foundLinks) {
       const link = this.forceHttps(rawLink)
@@ -19,10 +33,13 @@ export class LinkValidator {
         invalidLinks.push(link)
       }
     }
+
     return invalidLinks
   }
 
-  static fetch = (url: URL, init?: NodeFetchRequestInit) => import('node-fetch').then(({ default: fetch }) => fetch(url, init))
+  public static foundLinks(inputText: string) {
+    return new MarkedUrl(inputText).getExternal()
+  }
 
   public static async isValidLink(rawLink: string) {
     const link = this.forceHttps(rawLink)
@@ -41,14 +58,11 @@ export class LinkValidator {
   private static async _fetchValidation(link: string) {
     try {
       const fetchResponse = await fetch(new URL(link), { method: 'GET', redirect: 'follow', signal: AbortSignal.timeout(2000) })
-      if (fetchResponse.ok) {
-        return true
-      } else {
-        return false
-      }
+      return fetchResponse.ok
     } catch (error) {
       // mandatory linter comment
     }
+
     return false
   }
 
@@ -67,6 +81,7 @@ export class LinkValidator {
     } catch (error) {
       // mandatory linter comment
     }
+
     return false
   }
 
@@ -94,11 +109,8 @@ export class LinkValidator {
         await page.mouse.move(x, y, { steps: 50 })
         await delay(Math.random() * 500)
       }
-      if (response && response.status() < 400) {
-        return true
-      } else {
-        return false
-      }
+
+      return !!(response && response.status() < 400)
     } catch (error) {
       return false
     } finally {

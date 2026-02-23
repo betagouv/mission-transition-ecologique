@@ -7,25 +7,35 @@
       <ProjectHeader
         v-if="project"
         :project="project"
-        :theme-color="themeColor as Color"
+        :theme-color="typedThemeColor"
       />
     </template>
     <template #sidemenu>
-      <TeeCopyLinkButton class="fr-mt-6v" />
+      <TeeCopyLinkButton
+        class="fr-mt-6v"
+        tertiary
+        no-outline
+        copy-class="fr-text--green"
+        text-class="fr-text--black"
+      />
       <ProjectSideNav :project="project" />
     </template>
-    <ProjectDescription
-      id="externalLinksTracking"
-      :project="project"
-    />
+    <div id="externalLinksTracking">
+      <ProjectDescription :project="project" />
+    </div>
     <ProjectPrograms
       v-if="project"
       :project="project"
     />
+    <ProjectTestimonies :project="project" />
     <LinkedProjects
       v-if="project?.linkedProjects.length"
       :project="project"
-      :color="themeColor as Color"
+      :color="typedThemeColor"
+    />
+    <ProjectFaq
+      v-if="project?.faqs?.length"
+      :project="project"
     />
   </Layout>
 </template>
@@ -38,13 +48,17 @@ import { useProjectStore } from '@/stores/project'
 import type { DsfrBreadcrumbProps } from '@gouvminint/vue-dsfr'
 import { useExternalLinkTracker } from '@/tools/analytic/useExternalLinkTracker'
 import Analytics from '@/tools/analytic/analytics'
+import { defineWebPage, useSchemaOrg } from '@unhead/schema-org/vue'
 
 const { currentProject: project } = storeToRefs(useProjectStore())
 const navigation = new Navigation()
 
 const themeColor = ref<Color | ''>()
+const typedThemeColor = themeColor as Color
 
-useSeoMeta(MetaSeo.get(project.value?.title, project.value?.shortDescription))
+const description = project.value?.metaDescription ?? project.value?.shortDescription
+useSeoMeta(MetaSeo.get(project.value?.metaTitle ?? project.value?.title, description))
+useSchemaOrg(defineWebPage({ description: description }))
 
 if (project.value) {
   useHead({

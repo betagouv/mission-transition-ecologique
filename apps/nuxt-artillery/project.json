@@ -1,0 +1,58 @@
+{
+  "name": "@tee/nuxt-artillery",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nuxt-artillery/src",
+  "implicitDependencies": ["@tee/nuxt"],
+  "// targets": "to see all targets run: nx show project nuxt-artillery --web",
+  "targets": {
+    "test:pages:dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e development artillery-page.yml"
+      }
+    },
+    "test:pages:staging": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e staging artillery-page.yml"
+      }
+    },
+    "test:pages:personal": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e personal artillery-page.yml"
+      }
+    },
+    "test:pages:prod": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e production artillery-page.yml"
+      }
+    },
+    "test:load:dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e development artillery-load-test.yml"
+      }
+    },
+    "test:load:staging": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e staging artillery-load-test.yml"
+      }
+    },
+    "test:load:prod": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e production artillery-load-test.yml"
+      }
+    }
+  }
+}

@@ -1,39 +1,18 @@
-export const partners = [
-  {
-    label: 'ADEME',
-    img: '/images/logos/ademe.svg',
-    href: 'https://www.ademe.fr/'
-  },
-  {
-    label: 'Bpifrance',
-    img: '/images/logos/bpi-france.svg',
-    href: 'https://www.bpifrance.fr/',
-    format: 'webp'
-  },
-  {
-    label: 'CCI France',
-    img: '/images/logos/cci-france.svg',
-    href: 'https://www.cci.fr/',
-    width: '130px',
-    format: 'webp'
-  },
-  {
-    label: 'CMA France',
-    img: '/images/logos/cma-france.png',
-    href: 'https://www.artisanat.fr/'
-  },
-  {
-    label: 'Office français de la biodiversité',
-    img: '/images/logos/logo-ofb.webp',
-    href: ' https://ofb.gouv.fr'
+import operatorsJson from '@/public/json/operator/operators.json'
+import { EnrichedOperator } from '@tee/data'
+
+export const enrichedOperators: EnrichedOperator[] = operatorsJson as unknown as EnrichedOperator[]
+
+export class Operator {
+  getFilterItems() {
+    return [...new Set(enrichedOperators.flatMap((enrichedOperators) => enrichedOperators.filterCategories))]
+      .map((programOperator) => {
+        return { label: programOperator, name: programOperator, id: programOperator, value: programOperator, modelValue: [programOperator] }
+      })
+      .sort((a, b) => a.label.localeCompare(b.label))
   }
-]
 
-export const otherPartner = {
-  label: 'Conseiller Entreprise',
-  img: '/images/logos/ce-logo.svg',
-  href: 'https://conseillers-entreprises.service-public.fr/',
-  format: 'webp'
+  getOneByName(name: string): EnrichedOperator | undefined {
+    return enrichedOperators.find((operator) => operator.operator === name)
+  }
 }
-
-export const partnersAll = [otherPartner, ...partners]

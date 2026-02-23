@@ -3,37 +3,37 @@ promesse: Réalisez une étude pour vous aider à réduire vos emballages plasti
 description: >-
   Réduisez votre production de déchets en mettant en place des solutions
   concrètes de réemploi des emballages. Cette aide finance les premières étapes
-  de votre projet pour passer à un modèle circulaire. Vous pouvez être soutenu
-  pour :
+  de votre projet pour **passer à un modèle circulaire**. Vous pouvez être
+  soutenu pour :
 
 
-  - des investissements en équipements et outils dédiés au réemploi
+  - des **investissements** en équipements et outils dédiés au réemploi
 
 
-  - des expérimentations à petite échelle pour tester la solution
+  - des **expérimentations** à petite échelle pour tester la solution
 
 
-  - des diagnostics ou études de faisabilité en amont du projet
+  - des **diagnostics ou études de faisabilité** en amont du projet
 
 
   Passez à l’action et structurez une démarche durable et opérationnelle dans
   votre filière.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
-illustration: images/TEE_eolienne.png
+fin de validité: 31/12/2026
+illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000713
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000892
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/aides-reemploi-emballages-contenants?cible=79
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-reemploi-des-emballages?cible=79
 nature de l'aide: financement
 montant du financement: Jusqu'à 80% du coût de l'étude ou 60% de l'investissement
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/R%C3%A9emploi%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
+          https://agirpourlatransition.ademe.fr/sites/default/files/R%C3%A9emploi%20emballages%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Si vous souhaitez financer une étude, commencez par choisir le prestataire
@@ -44,7 +44,7 @@ objectifs:
       investissement. Elles seront à joindre à votre dossier.
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du
@@ -52,7 +52,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/aides-reemploi-emballages
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-reemploi-des-emballages?cible=79
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -65,10 +65,8 @@ conditions d'éligibilité:
   secteur géographique:
     - >-
       Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
-      Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
-      Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine,
-      Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française,
-      Provence-Alpes-Côte d'Azur
+      Loire, Grand Est, Hauts-de-France, Île-de-France, Normandie,
+      Nouvelle-Aquitaine, Occitanie, Pays de la Loire
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -79,6 +77,9 @@ conditions d'éligibilité:
       avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
       (sous quelque forme que ce soit : marché signé, commande signée, devis
       accepté…)
+    - >-
+      Dans le cas d'un investissement, le porteur doit impérativement avoir
+      réalisé en amont une étude de faisabilité.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -122,17 +123,9 @@ publicodes:
       - région = Bretagne
       - région = Centre-Val de Loire
       - région = Grand Est
-      - région = Guadeloupe
-      - région = Guyane
       - région = Hauts-de-France
       - région = Île-de-France
-      - région = La Réunion
-      - région = Martinique
-      - région = Mayotte
       - région = Normandie
       - région = Nouvelle-Aquitaine
-      - région = Nouvelle-Calédonie
       - région = Occitanie
       - région = Pays de la Loire
-      - région = Polynésie française
-      - région = Provence-Alpes-Côte d'Azur

@@ -1,12 +1,12 @@
 import requests
-import os
+from etl.tools.config.config import Config
 import time
 
 
 class SireneExtractor:
     def __init__(self):
         self.api_url = "https://api.insee.fr/api-sirene/3.11/siret/"
-        self.token = os.getenv("SIRENE_API_311_TOKEN", "")
+        self.token = Config.SIRENE_API_311_TOKEN()
 
     def get_establishment_sirene(self, siret):
         """Fetch establishment details for a given SIRET."""

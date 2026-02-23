@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { Image } from '@/tools/image'
-import { partners, otherPartner } from '@/tools/operator'
+import { partners, ConseillerEntreprisePartner } from '@/tools/partner'
 
 const img = Image.getUrl
 </script>
 
 <template>
+  <div class="fr-container fr-hidden fr-unhidden-sm fr-px-md-0">
+    <h2 class="fr-text--blue-900 fr-text-center fr-text-left-md fr-mt-5w fr-mb-6v">Comprendre notre service</h2>
+  </div>
   <div class="fr-container fr-hidden fr-unhidden-sm">
     <div class="fr-grid-row fr-grid-row--center fr-py-8v">
       <div class="fr-col-12 fr-col-md-5 fr-text-center fr-position--relative fr-mb-6w fr-mb-md-0">
@@ -14,7 +17,7 @@ const img = Image.getUrl
           class="circle-background"
           alt="cercle jaune en arrière plan"
         />
-        <h4 class="fr-text--blue-france fr-pb-2v">Le point d'entrée vers les aides à la transition écologique des entreprises</h4>
+        <h2 class="fr-text--blue-900 fr-pb-2v fr-h4">Le point d'entrée vers les aides à la transition écologique des entreprises</h2>
         <p>
           <i>Transition écologique des entreprises</i> vous permet <b>d'identifier la bonne aide</b> pour votre entreprise parmi les aides
           publiques nationales, régionales et territoriales issues de <b>l’ensemble des partenaires publics.</b>
@@ -29,11 +32,9 @@ const img = Image.getUrl
                 format: operator.format ?? undefined,
                 densities: 1,
                 quality: 70,
-                loading: 'lazy',
-                width: operator.width ?? undefined
+                loading: 'lazy'
               })
             "
-            :width="operator.width ?? undefined"
             :alt="operator.label"
           />
         </div>
@@ -44,7 +45,7 @@ const img = Image.getUrl
           class="circle-background"
           alt="cercle vert en arrière plan"
         />
-        <h4 class="fr-text--blue-france fr-pb-2v">Des conseillers pour vous aider sur l'ensemble du territoire</h4>
+        <h2 class="fr-text--blue-900 fr-pb-2v fr-h4">Des conseillers pour vous aider sur l'ensemble du territoire</h2>
         <p>
           Pour vous accompagner dans vos réflexions et répondre à vos questions, nous vous mettons en relation avec
           <b>le conseiller compétent pour votre demande sur votre territoire.</b> Ce conseiller est référencé via le service public
@@ -52,15 +53,19 @@ const img = Image.getUrl
         </p>
         <div class="fr-col-justify--center fr-grid-row fr-col-content--middle">
           <img
-            :key="otherPartner.label"
-            class="fr-responsive-img fr-m-2v operator-logo"
-            :src="img(otherPartner.img, { format: otherPartner.format ?? undefined, densities: 1, quality: 70, loading: 'lazy' })"
-            :alt="otherPartner.label"
+            :key="ConseillerEntreprisePartner.label"
+            class="fr-responsive-img fr-m-2v other-logo"
+            :src="
+              img(ConseillerEntreprisePartner.img, {
+                densities: 'x1 x2',
+                loading: 'lazy'
+              })
+            "
+            :alt="ConseillerEntreprisePartner.label"
           />
         </div>
       </div>
     </div>
-    <div class="fr-bg--blue--lightness fr-hidden-sm fr-col-12 fr-py-0-5v fr-mt-8v fr-mb-16v"></div>
   </div>
 </template>
 
@@ -76,5 +81,9 @@ const img = Image.getUrl
   max-height: 5.5rem;
   max-width: 5.8rem !important;
   width: revert-layer !important;
+}
+
+.other-logo {
+  max-width: 13rem !important;
 }
 </style>

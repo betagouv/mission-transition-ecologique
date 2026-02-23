@@ -26,7 +26,7 @@ description longue: >-
   d’impossibilités techniques qui devront être justifiées.
 début de validité: 01/12/2022
 fin de validité: 31/12/2024
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000256
 url: >-
@@ -35,8 +35,8 @@ nature de l'aide: financement
 montant du financement: Selon la puissance de l’installation
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet.
   - description: >-
       Déposez votre demande d'aide : informations administratives, description
       du projet, détails techniques et financiers, étude de faisabilité, etc. A
@@ -76,7 +76,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - entreprise . est propriétaire de ses locaux
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:

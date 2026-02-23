@@ -5,20 +5,27 @@ description: >-
   conseil et à l'investissement pour rénover, monter en gamme et diversifier vos
   services, avec un focus sur la transition énergétique et des investissements
   responsables en énergie, déchets et eau.
-description longue: |-
+description longue: >-
   Bénéficiez de ce dispositif pour financer deux volets :
-   - Le recours à un conseil extérieur pour des études portant sur un projet d’hôtellerie,
-   - Un programme de rénovation et de requalification d’hôtel ; un programme de développement intégrant la montée en gamme, la création de chambres et/ou de service et d’équipement de diversification ayant un impact sur les nuitées et la durée de séjour.
+
+
+  - Le recours à un conseil extérieur pour des études portant sur un projet
+  d’hôtellerie,
+
+  - Un programme de rénovation et de requalification d’hôtel ; un programme de
+  développement intégrant la montée en gamme, la création de chambres et/ou de
+  service et d’équipement de diversification ayant un impact sur les nuitées et
+  la durée de séjour.
 début de validité: 22/03/2024
 fin de validité: 31/12/2028
-illustration: images/TEE_ampoule.png
+illustration: images/TEE_ampoule.webp
 opérateur de contact: Région Bourgogne-Franche-Comté
 contact question: https://www.bourgognefranchecomte.eu/ProjetTourisme
 url: https://www.bourgognefranchecomte.fr/node/3856
 nature de l'aide: financement
 montant du financement: Jusqu'à 50% des dépenses, dans la limite de 180 000 €
 objectifs:
-  - description: Vérifiez l’éligibilité de votre projet en parcourant la documentation.
+  - description: Consultez la documentation pour vérifier l'éligibilité de votre projet.
     liens:
       - lien: https://www.bourgognefranchecomte.fr/file-download?fid=15543
         texte: Conditions et critères d'éligibilité

@@ -1,41 +1,70 @@
 <template>
   <Layout before-default-class="fr-container--fluid fr-container-md">
-    <template #beforeDefault>
-      <slot name="beforeDefault">
-        <div class="fr-grid-row">
-          <div class="fr-container fr-grid-row fr-px-md-0">
-            <div
-              class="fr-col-12 fr-mt-3v fr-text-center fr-text-left-md"
-              :class="lineClassBySideMenu"
-            >
-              <h1 class="fr-text--blue-france">{{ title }}</h1>
-            </div>
-          </div>
+    <template #top>
+      <TeeCatalogBanner
+        v-if="!hasError"
+        :bg-color="Color.greenAgirLightnessed"
+      >
+        <template #title>
           <div
-            v-if="!hasError"
-            class="fr-col-12 fr-mt-3v"
-            :class="lineClassBySideMenu"
+            v-if="$slots.title"
+            :class="lineClassBySideMenuForTitle"
+            class="fr-pt-6v fr-mb-md-0 fr-mb-6v"
           >
-            <ThemeFilter />
+            <slot name="title"> </slot>
           </div>
-        </div>
+          <h1
+            v-else
+            class="fr-text--blue-900 fr-pt-6v fr-mb-0"
+            :class="lineClassBySideMenuForTitle"
+          >
+            {{ title }}
+          </h1>
+        </template>
+        <template #description>
+          <p
+            v-if="description"
+            class="fr-text--md fr-mt-1v fr-hidden fr-unhidden-md"
+            :class="lineClassBySideMenuForDescription"
+          >
+            {{ description }}
+          </p>
+        </template>
+      </TeeCatalogBanner>
+    </template>
+    <template #beforeDefault>
+      <div
+        v-if="!hasError && $slots.beforeThemeFilter"
+        class="fr-col-12 fr-mt-3v"
+        :class="lineClassBySideMenu"
+      >
+        <slot name="beforeThemeFilter"> </slot>
+      </div>
+      <div class="fr-grid-row">
         <div
           v-if="!hasError"
-          class="fr-grid-row"
+          class="fr-col-12 fr-mt-3v"
+          :class="lineClassBySideMenu"
         >
-          <div
-            class="fr-col-12"
-            :class="lineClassBySideMenu"
-          >
-            <ThemeHeaderCard
-              v-if="hasThemeCard"
-              :theme="theme as ThemeId"
-              radius-corner="tr"
-              radius-size="2-5v"
-            />
-          </div>
+          <ThemeFilter />
         </div>
-      </slot>
+      </div>
+      <div
+        v-if="!hasError"
+        class="fr-grid-row"
+      >
+        <div
+          class="fr-col-12"
+          :class="lineClassBySideMenu"
+        >
+          <ThemeHeaderCard
+            v-if="hasThemeCard"
+            :theme="theme as ThemeId"
+            radius-corner="tr"
+            radius-size="2-5v"
+          />
+        </div>
+      </div>
     </template>
     <template
       v-if="hasSideMenu && $slots.sidemenu"
@@ -56,22 +85,38 @@
       message="Aucune idée d'action n'a pu être identifiée avec les critères choisis..."
       :count-items="countItems"
     />
+    <template
+      v-if="$slots.faq || faqItems"
+      #faq
+    >
+      <slot name="faq">
+        <FaqCatalog
+          v-if="faqItems"
+          :faq-items="faqItems"
+          :has-side-menu="hasSideMenu"
+        />
+      </slot>
+    </template>
   </Layout>
 </template>
 
 <script setup lang="ts">
+import FaqCatalog from '@/components/faq/FaqCatalog.vue'
 import Layout from '@/components/layout/Layout.vue'
 import { useFiltersStore } from '@/stores/filters'
 import { useNavigationStore } from '@/stores/navigation'
+import Navigation from '@/tools/navigation'
 import { Theme } from '@/tools/theme'
-import { ThemeId } from '@tee/data'
+import { ThemeId, FaqSectionType, Color } from '@/types'
 import { computed } from 'vue'
 
 interface Props {
   hasSideMenu: boolean
   title?: string
+  description?: string
   hasError?: boolean
   countItems: number
+  faqItems?: FaqSectionType[]
 }
 const props = defineProps<Props>()
 
@@ -80,9 +125,15 @@ const { hasSpinner } = storeToRefs(useNavigationStore())
 const theme = Theme.getThemeFromSelectedTheme()
 
 const lineClassBySideMenu = computed(() => {
-  return props.hasSideMenu
-    ? 'fr-col-offset-md-3 fr-col-md-9 fr-col-justify-md--left fr-col-offset-xl-2 fr-col-xl-10 fr-col-justify--center'
-    : ''
+  return Navigation.getClassesBySideMenu(props.hasSideMenu)
+})
+
+const lineClassBySideMenuForTitle = computed(() => {
+  return Navigation.getClassesBySideMenu(props.hasSideMenu, 12)
+})
+
+const lineClassBySideMenuForDescription = computed(() => {
+  return Navigation.getClassesBySideMenu(props.hasSideMenu, 9)
 })
 
 const hasThemeCard = computed(() => {

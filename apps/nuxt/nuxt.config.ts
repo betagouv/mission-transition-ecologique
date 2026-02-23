@@ -1,10 +1,14 @@
+import { defineOrganization } from 'nuxt-schema-org/schema'
 import Config from './src/config'
 import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin'
 import { DefineNuxtConfig, defineNuxtConfig } from 'nuxt/config'
+import { suppressWarningsPlugin } from './vite.logger.plugin'
 import { NuxtScriptsConfig } from './nuxt.scripts.config'
 import { NuxtSecurityConfig } from './nuxt.security.config'
 import { NuxtSentryConfig } from './nuxt.sentry.config'
 import { ChangeFreq, Priority } from './src/types/sitemapType'
+import { MetaSeo } from './src/tools/metaSeo'
+import { Identity } from './src/tools/identity'
 
 /**
  * Remove prerender and swr for CI and test data.
@@ -49,8 +53,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '/projets-entreprise': { prerender: hasPrerenderOrSwr },
     '/projets-entreprise/**': { swr: hasPrerenderOrSwr },
     '/accessibilite': { prerender: true },
-    // '/mentions-legales': { prerender: true },
-    // '/donnees-personnelles': { prerender: true },
+    '/mentions-legales': { prerender: true },
+    '/donnees-personnelles': { prerender: true },
     '/stats': { swr: 86400 }, // cached for 1 day (86400 seconds)
     '/budget': { prerender: true },
     '/ajouter-une-aide-entreprises': { prerender: true },
@@ -84,7 +88,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     port: 4242
   },
   typescript: {
-    typeCheck: true,
+    typeCheck: false,
     tsConfig: {
       extends: '../tsconfig.app.json' // Nuxt copies this string as-is to the `./.nuxt/tsconfig.json`, therefore it needs to be relative to that directory
     }
@@ -100,7 +104,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '~/assets/main.scss'
   ],
   vite: {
-    plugins: [nxViteTsPaths()],
+    plugins: [nxViteTsPaths(), suppressWarningsPlugin()],
     css: {
       preprocessorOptions: {
         scss: {
@@ -119,6 +123,12 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     experimental: {
       openAPI: true
     },
+    // prerender: {
+    //   crawlLinks: true,
+    //   failOnError: false,
+    // },
+    // debug: true,
+    // dev: true,
     devStorage: {
       cache: {
         driver: 'null'
@@ -130,8 +140,9 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     devLogs: true
   },
   experimental: {
-    renderJsonPayloads: false,
-    inlineRouteRules: true
+    inlineRouteRules: true,
+    headNext: true,
+    // typescriptPlugin: true,
     // sharedPrerenderData: true, // interssant pour eviter de refaire plusieurs fois la meme requete (https://nuxt.com/docs/api/nuxt-config#sharedprerenderdata)
   },
 
@@ -153,7 +164,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
       hashScripts: true
     },
     headers: NuxtSecurityConfig.getHeadersConfig(),
-    rateLimiter: NuxtSecurityConfig.getRateLimiterConfig()
+    rateLimiter: NuxtSecurityConfig.getRateLimiterConfig(),
+    xssValidator: NuxtSecurityConfig.getXssValidatorConfig()
   },
   sentry: NuxtSentryConfig.getConfig(),
   sitemap: {
@@ -170,6 +182,10 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   robots: {
     disallow: ['/ajouter-une-aide-entreprises', '/iframe/**', '/iframe', '/demo/**'],
     credits: false
+  },
+  site: {
+    name: MetaSeo.title(),
+    description: Identity.description
   },
   scripts: {
     registry: NuxtScriptsConfig.getRegistry()

@@ -2,52 +2,59 @@ titre: Étude "Centres de tri"
 promesse: Réalisez une étude pour votre projet de centre de tri des déchets
 description: >-
   Vous envisagez de créer, moderniser ou étendre un centre de tri ou de
-  préparation des déchets ? Avant toute demande d’aide à l’investissement,
-  l’ADEME peut financer une étude de faisabilité à l’échelle de votre
-  territoire. Cette étude permet d’évaluer les besoins locaux en matière de tri
-  et de préparation, d’analyser les flux de déchets et d’identifier les
-  solutions techniques les plus pertinentes. Elle doit aussi prendre en compte
-  les aspects économiques, logistiques et environnementaux du projet. Ce travail
-  en amont est indispensable pour sécuriser les futures étapes de votre projet,
-  adapter les capacités de traitement aux réalités du territoire, et garantir sa
-  cohérence avec les politiques locales de gestion des déchets.
+  préparation des déchets ? L’ADEME peut financer une **étude de faisabilité
+  territoriale**, préalable à toute demande d’aide à l’investissement.
+
+
+  Cette étude permet de :\
+
+  – **évaluer les besoins et les flux de déchets à l’échelle locale**,\
+
+  – **identifier les solutions techniques adaptées** en tenant compte des enjeux
+  économiques, logistiques et environnementaux.
+
+
+  Elle sécurise les étapes suivantes de votre projet en veillant à sa cohérence
+  avec les politiques locales de gestion des déchets et aux capacités réelles du
+  territoire.
 description longue: >-
   Ces études concernent les investissements suivants :
 
-  • Les Centres de tri des déchets non dangereux d’activités économiques
+
+  - Les Centres de tri des déchets non dangereux d’activités économiques
   (DNDAE),
 
-  • Centres de tri des encombrants,
+  - Centres de tri des encombrants,
 
-  • Centres de tri des emballages ménagers et de papiers graphiques
+  - Centres de tri des emballages ménagers et de papiers graphiques
   (exclusivement pour DROMCOM et Corse)
 
 
   Le périmètre d’étude doit couvrir, au minimum, les collectivités concernées
   par le bassin versant du centre de tri.
 début de validité: 01/01/2023
-fin de validité: 31/12/2025
-illustration: images/TEE_ampoule.png
+fin de validité: 31/12/2026
+illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000711
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000896
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/realisation-detudes-creation-lextension-modernisation-centres-tri-dechets
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-la-creation-lextension-ou-la-modernisation-de-centres-de-tri-des-dechets-dactivites-economiques-et-de-decheteries-pour-professionnels
 nature de l'aide: étude
 montant du financement: Jusqu'à 80% du coût de l'étude, dans un maximum de 50 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/%C3%89tudes%20centres%20de%20tri%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.docx
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20invest.docx
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener votre étude
       et obtenez un devis.
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier : informations administratives, description du
@@ -55,7 +62,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2024/realisation-detudes-creation-lextension-modernisation-centres-tri-dechets
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-pour-la-creation-lextension-ou-la-modernisation-de-centres-de-tri-des-dechets-dactivites-economiques-et-de-decheteries-pour-professionnels
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -67,7 +74,11 @@ conditions d'éligibilité:
     - Toutes tailles
     - Éligible aux micro-entreprises
   secteur géographique:
-    - France et territoires d'outre-mer
+    - >-
+      Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
+      Loire, Grand Est, Hauts-de-France, Île-de-France, Normandie,
+      Nouvelle-Aquitaine, Occitanie, Pays de la Loire, Provence-Alpes-Côte
+      d'Azur
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -89,7 +100,8 @@ publicodes:
       toutes ces conditions:
         - dispositif . début de validité <= date du jour
         - date du jour <= dispositif . fin de validité
-    valeur: oui
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est E
@@ -97,3 +109,17 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est la gestion des déchets
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Auvergne-Rhône-Alpes
+      - région = Bourgogne-Franche-Comté
+      - région = Bretagne
+      - région = Centre-Val de Loire
+      - région = Grand Est
+      - région = Hauts-de-France
+      - région = Île-de-France
+      - région = Normandie
+      - région = Nouvelle-Aquitaine
+      - région = Occitanie
+      - région = Pays de la Loire
+      - région = Provence-Alpes-Côte d'Azur

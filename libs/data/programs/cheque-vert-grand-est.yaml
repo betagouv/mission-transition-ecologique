@@ -1,4 +1,5 @@
 titre: Chèque Vert Grand Est
+metaTitre: Chèque Vert Grand Est – Financer un projet de transition écologique
 promesse: Financez vos investissements d'économies d'énergie
 description: >-
   Vous avez un projet de transition écologique tel que l'installation d'une
@@ -6,10 +7,13 @@ description: >-
   propre ? Le Chèque Vert Grand Est finance à hauteur de 50% des investissements
   destinés à réduire la consommation d’énergie, améliorer la qualité de l'air ou
   réduire la consommation d'énergie fossile de votre entreprise.
+metaDescription: >-
+  Bénéficiez du Chèque Vert pour financer vos projets de transition écologique :
+  réduire la consommation d’énergie, améliorer la qualité de l’air…
 description longue: >-
   Le bénéficiaire s’engage à mentionner le soutien financier de la Région Grand
   Est dans tout support de communication.
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_eolienne.webp
 opérateur de contact: Région Grand Est
 contact question: mailto:chequevert@grandest.fr
 url: https://www.grandest.fr/vos-aides-regionales/cheque-vert/

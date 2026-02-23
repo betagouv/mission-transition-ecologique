@@ -26,7 +26,7 @@ description longue: >-
   - Investissements matériels relatifs à l’exploitation de l’activité, du site,
   ou de l’équipement concerné (sont exclus notamment les travaux de gros œuvre
   et les acquisitions foncières).
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_eolienne.webp
 opérateur de contact: Région Hauts-de-France
 contact question: formulaire
 url: https://aides.hautsdefrance.fr/sub/tiers/aides/details/?sigle=PRIT
@@ -35,7 +35,7 @@ montant du financement: >-
   Jusqu'à 50 % du coût de l'investissement, dans la limite de 100 000 €.
   Variable selon les projets.
 objectifs:
-  - description: Vérifiez l’éligibilité de votre projet en parcourant la documentation.
+  - description: Consultez la documentation pour vérifier l'éligibilité de votre projet.
     liens:
       - lien: https://aides.hautsdefrance.fr/sub/tiers/aides/details/?sigle=PRIT
         texte: Conditions et critères d'éligibilité

@@ -12,13 +12,14 @@ export class FileManager {
   }
 
   static writeRaw(fullPath: string, data: string, successMessage?: string) {
-    fs.writeFile(fullPath, data, (err) => {
-      if (err) {
-        console.log('Error writing file:', err)
-      } else if (successMessage) {
+    try {
+      fs.writeFileSync(fullPath, data)
+      if (successMessage) {
         console.log(successMessage)
       }
-    })
+    } catch (err) {
+      console.log('Error writing file:', err)
+    }
   }
 
   static createFolderIfNotExists(folderName: string): void {

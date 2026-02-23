@@ -1,8 +1,10 @@
 import { ProgramType } from './shared'
-import { BaserowSectors } from '../../common/baserow/types'
+import { BaserowSectors, BaserowMetaData } from '../../common/baserow/types'
 import { Theme } from '../../theme/types/domain'
+import { Contact } from '../../common/types'
+import { Operator } from '../../operators/types/domain'
 
-export interface DataProgram extends BaserowSectors {
+export interface DataProgram extends BaserowSectors, BaserowMetaData {
   id: number
   'Id fiche dispositif': string
   Titre: string
@@ -41,6 +43,8 @@ export interface DataProgram extends BaserowSectors {
   Statuts: Status[]
   conditionalData?: ConditionalValues[]
   'redirection-vers': number[]
+  tech: string
+  internalContact?: Contact
 }
 
 export enum Publicodes {
@@ -75,12 +79,6 @@ export interface Formulaire {
 
 export type ConditionalYaml = Required<ProgramType['champs conditionnels'][]>[number][number]
 
-export interface Operator {
-  id: number
-  Tag: string
-  Nom: string
-}
-
 export interface GeographicCoverage {
   id: number
   Name: string
@@ -107,6 +105,7 @@ export enum Status {
   InProd = 'En prod',
   InProdNotAvailable = 'Temporairement indispo',
   Replaced = 'Remplacé',
+  Archived = 'Archive',
   Other = 'Autres'
 }
 
@@ -132,4 +131,10 @@ interface ModifiableFields {
   "Durée de l'aide": string
   'Eligibilité taille': string
   'Eligibilité Spécifique': string
+}
+
+export interface MailSenderInterface {
+  sendInitialMail(program: DataProgram): Promise<void>
+  sendPeriodicMail(program: DataProgram): Promise<void>
+  sendEolMail(program: DataProgram): Promise<void>
 }

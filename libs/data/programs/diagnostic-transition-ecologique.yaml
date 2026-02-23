@@ -5,28 +5,29 @@ promesse: >-
 description: >-
   Réalisez un diagnostic de transition écologique avec votre conseiller CCI pour
   analyser et piloter les enjeux environnementaux de votre activité. Ce
-  diagnostic aborde plusieurs aspects clés de votre entreprise : la gestion de
+  diagnostic aborde plusieurs aspects clés de votre entreprise : **la gestion de
   vos locaux, vos consommations d'énergie, la gestion des déchets, vos achats
-  responsables et vos pratiques de mobilité. Structuré en trois étapes, il vous
-  aide à mettre en place des actions concrètes pour progresser :
+  responsables et vos pratiques de mobilité.** Structuré en trois étapes, il
+  vous aide à mettre en place des actions concrètes pour progresser :
 
 
-  - État des lieux à 360° pour évaluer la maturité écologique de votre
+  - **État des lieux à 360°** pour évaluer la maturité écologique de votre
   entreprise
 
 
-  - Identification des enjeux prioritaires et des leviers d'amélioration
+  - Identification des **enjeux prioritaires et des leviers d'amélioration**
 
 
-  - Élaboration d'un plan d'action personnalisé pour transformer durablement
+  - Élaboration d'un **plan d'action personnalisé** pour transformer durablement
   votre entreprise et optimiser vos coûts
 
 
   Ce diagnostic vous permet de mieux comprendre vos impacts environnementaux et
   de structurer une démarche de transition écologique.
-illustration: images/TEE_ampoule.png
+fin de validité: 31/12/2024
+illustration: images/TEE_ampoule.webp
 opérateur de contact: Chambre de Commerce et de l'Industrie
-contact question: 'formulaire'
+contact question: formulaire
 nature de l'aide: étude
 coût de l'accompagnement: Gratuit (sauf en PACA à partir de 650€ HT)
 durée de l'accompagnement: 1 jour dont 1/2 journée avec l'entreprise
@@ -57,6 +58,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
   entreprise . a un effectif éligible:

@@ -35,16 +35,16 @@ description longue: >-
   cet appel à projets.
 début de validité: 27/01/2025
 fin de validité: 15/10/2025
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000688
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000668
 url: https://agir.ademe.fr/aides-financieres/aap/corimer-navires-bas-carbone
 nature de l'aide: financement
 montant du financement: 60% des dépenses engagées
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME.
+      Consultez la documentation de l’ADEME ou contactez un conseiller pour
+      vérifier l’éligibilité de votre projet .
     liens:
       - lien: >-
           https://agir.ademe.fr/sites/default/files/CORIMER%20Navires%20Bas%20Carbone%20-%20France%202030%20-%20Cahier%20des%20charges%20-%202025.docx

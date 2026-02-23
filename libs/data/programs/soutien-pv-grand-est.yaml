@@ -2,12 +2,13 @@ titre: Soutien au photovoltaïque en Grand Est
 promesse: Bénéficiez d'une aide régionale pour vos panneaux photovoltaïque
 description: >-
   Vous avez un projet d'installation de panneaux photovoltaïques produisant de
-  l’électricité renouvelable en vue d’une autoconsommation individuelle ou
-  collective ? La Région Grand-Est apporte une aide aux études de structure
-  photovoltaïque, aux études de faisabilité ou agrivoltaïque. Cette subvention
-  peut également participer au financement de votre installation de panneaux
-  photovoltaïques.
-illustration: images/TEE_ampoule.png
+  l’électricité renouvelable en vue d’une autoconsommation collective,
+  participative ou citoyenne ? \
+
+  La Région Grand-Est apporte une aide aux études de structure photovoltaïque,
+  aux études de faisabilité ou agrivoltaïque. Cette subvention peut également
+  participer au financement de votre installation de panneaux photovoltaïques.
+illustration: images/TEE_ampoule.webp
 opérateur de contact: Région Grand Est
 contact question: https://www.grandest.fr/aides/faq-guide-teleservices/
 url: https://www.grandest.fr/vos-aides-regionales/soutien-au-photovoltaique/
@@ -15,8 +16,8 @@ nature de l'aide: financement
 montant du financement: Variable selon projet
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      la Région Grand Est.
+      Consultez la documentation de la Région Grand Est pour vérifier
+      l’éligibilité de votre projet.
     liens:
       - lien: >-
           https://www.grandest.fr/vos-aides-regionales/soutien-au-photovoltaique/
@@ -51,7 +52,10 @@ conditions d'éligibilité:
       L'opération pour laquelle vous sollicitez une aide financière ne doit pas
       avoir commencé ou ne doit pas avoir donné lieu à des engagements fermes
       (sous quelque forme que ce soit : marché signé, commande signée, devis
-      accepté…)
+      accepté…).
+    - >-
+      Les entreprises ne sont éligibles au dispositif que dans le cadre de
+      projets participatifs et citoyens.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:

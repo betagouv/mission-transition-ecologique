@@ -1,44 +1,51 @@
 <template>
-  <ProgramAccordion
+  <TeeContentBlock
     v-if="program && program['conditions d\'éligibilité']"
     id="eligibilite"
-    :accordion-id="`${program.id}-eligibility`"
     :title="Translation.t('program.programAmIEligible')"
+    container-from="md"
+    class="fr-py-5v fr-border-t--grey--light"
+    title-class="fr-h4"
   >
-    <div class="fr-grid-row fr-grid-row--gutters">
-      <div
-        v-for="partIdx in 2"
-        :key="`part-${partIdx}`"
-        class="fr-col-6 fr-col-xs-12"
-      >
+    <template #content>
+      <div class="fr-grid-row fr-grid-row--gutters">
         <div
-          v-for="(field, idx) in getFieldsForColumn(partIdx)"
-          :key="`elegibility-field-part1-${idx}`"
-          class="fr-mb-4v fr-text--purple"
+          v-for="partIdx in 2"
+          :key="`part-${partIdx}`"
+          class="fr-col-6 fr-col-xs-12"
         >
-          <h4 class="fr-text--bold fr-mb-1v fr-text--purple fr-text--md">
-            <span class="fr-mr-1v">{{ eligilityEmojis[field] }}</span>
-            {{ field.toString()[0].toUpperCase() + field.toString().slice(1) }}
-          </h4>
-          <ul class="fr-pl-4w fr-mt-1v">
-            <li
-              v-for="(value, i) in programEligibility[field]"
-              :key="`elegibility-field-${idx}-value-${i}`"
-              class="fr-mb-0"
-              v-html="Marked.toHtml(value)"
-            ></li>
-          </ul>
+          <div
+            v-for="(field, idx) in getFieldsForColumn(partIdx)"
+            :key="`elegibility-field-part1-${idx}`"
+            class="fr-mb-4v fr-text--purple"
+          >
+            <h4 class="fr-text--bold fr-mb-1v fr-text--purple fr-text--md">
+              <span class="fr-mr-1v">{{ eligilityEmojis[field] }}</span>
+              {{ field.toString()[0].toUpperCase() + field.toString().slice(1) }}
+            </h4>
+            <ul class="fr-pl-4w fr-mt-1v">
+              <li
+                v-for="(value, i) in programEligibility?.[field]"
+                :key="`elegibility-field-${idx}-value-${i}`"
+                class="fr-mb-0"
+                v-html="Marked.toHtml(value)"
+              ></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </ProgramAccordion>
+    </template>
+  </TeeContentBlock>
 </template>
 
 <script setup lang="ts">
+import AbstractProgram from '@/tools/program/abstractProgram'
 import { computed } from 'vue'
-import { ProgramTypeForFront } from '@/types'
+import type { ProgramTypeForFront } from '@tee/data'
 import { Marked } from '@/tools/marked'
 import Translation from '@/tools/translation'
+
+const program = AbstractProgram.getCurrent()
 
 type EligibilityCategory = keyof ProgramTypeForFront["conditions d'éligibilité"]
 
@@ -66,16 +73,11 @@ const splitInTwo = (fields: EligibilityCategory[]): [EligibilityCategory[], Elig
 }
 
 const getFieldsForColumn = (columnNumber: number): EligibilityCategory[] => {
-  const columns = splitInTwo(order.filter((field) => !!programEligibility.value[field]))
+  const columns = splitInTwo(order.filter((field) => !!programEligibility.value?.[field as keyof typeof programEligibility.value]))
   return columns[columnNumber - 1]
 }
 
-interface Props {
-  program: ProgramTypeForFront
-}
-const props = defineProps<Props>()
-
 const programEligibility = computed(() => {
-  return props.program["conditions d'éligibilité"]
+  return program.value?.["conditions d'éligibilité"]
 })
 </script>

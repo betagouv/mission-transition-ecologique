@@ -1,0 +1,78 @@
+titre: Cap décarbonation
+promesse: >-
+  Faites le point sur vos émissions de carbone et construisez un plan d’action
+  de décarbonation
+description: >-
+  Prenez activement part à la décarbonation de l'artisanat en France !
+
+
+  Bénéficiez d'un accompagnement par un expert de la CMA pour :
+
+
+  - **Mesurer les principaux postes d’émissions** de gaz à effet de serre dans
+  votre entreprise.
+
+  - **Construire un plan d’action** des postes prioritaires pour diminuer les
+  émissions et réaliser d'importantes économies d'énergie.
+description longue: >-
+  Deux niveaux d’expertise sont proposés :
+
+
+  - Scope 1 et 2 : à partir du la visite énergie et un bilan des principaux
+  postes d’émissions de GES.
+
+  - Scope 1-2-3 : à partir du diagnostic des flux « TPE gagnantes sur tous les
+  coûts ».
+début de validité: 05/12/2025
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: Chambre des Métiers et de l'Artisanat
+contact question: formulaire
+url: >-
+  https://www.artisanat.fr/magazine/dossiers-artisanat/role-artisanat-dans-transition-ecologique
+nature de l'aide: étude
+coût de l'accompagnement: gratuite
+durée de l'accompagnement: variable
+objectifs:
+  - description: >-
+      Contactez-nous via ce formulaire. Un conseiller de la Chambre de Métiers
+      et de l’Artisanat de votre région vérifiera votre éligibilité.
+    liens:
+      - formulaire: true
+  - description: Si vous êtes éligible, vous recevrez les modalités de cet accompagnement.
+  - description: Démarrez l'accompagnement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 250 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Entreprises d'artisanat
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: dispositif . début de validité <= date du jour
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est T
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est mon impact environnemental

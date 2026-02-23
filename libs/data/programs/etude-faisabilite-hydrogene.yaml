@@ -3,29 +3,33 @@ promesse: Étudiez votre projet de déploiement de l'hydrogène renouvelable
 description: >-
   Vous êtes intéressé par le potentiel de l’hydrogène renouvelable comme
   solution de substitution aux énergies fossiles pour vos activités
-  industrielles ? L'ADEME vous apporte une aide pour une étude d'opportunité ou
-  de faisabilité, étapes nécessaires avant tout investissement.
+  industrielles ? L'ADEME vous apporte une aide pour une **étude d'opportunité
+  ou de faisabilité**, étapes nécessaires avant tout investissement.
 description longue: >-
-  • L’étude d’opportunité vise à accompagner les potentiels consommateurs
+  - L’étude d’opportunité vise à accompagner les potentiels consommateurs
   d’hydrogène (mobilité, industrie, stationnaire) dans leur réflexion de
   décarbonation, collectivement sur l’ensemble d’un territoire (regroupement de
-  collectivités, zone industrielle…). 
+  collectivités, zone industrielle…).
 
-  • L’étude de faisabilité se concentre sur le déploiement de l'hydrogène sur un
-  territoire où une demande suffisante aura été préalablement identifiée. 
+  - L’étude de faisabilité se concentre sur le déploiement de l'hydrogène sur un
+  territoire où une demande suffisante aura été préalablement identifiée.
 début de validité: 01/01/2023
 fin de validité: 31/12/2023
-illustration: images/TEE_eolienne.png
+illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
 contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000323
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Opportunit%C3%A9%20et%20faisabilit%C3%A9%20d%C3%A9ploiement%20hydrog%C3%A8ne%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202023.pdf
+  https://agirpourlatransition.ademe.fr/sites/default/files/Opportunit%C3%A9%20et%20faisabilit%C3%A9%20d%C3%A9ploiement%20hydrog%C3%A8ne%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202023.pdf
 nature de l'aide: étude
 montant du financement: Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/sites/default/files/Opportunit%C3%A9%20et%20faisabilit%C3%A9%20d%C3%A9ploiement%20hydrog%C3%A8ne%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202023.pdf
+        texte: Conditions d'éligibilité
   - description: >-
       Choisissez le prestataire qui va vous accompagner pour mener votre étude
       d'opportunité ou de faisabilité et obtenez un devis.

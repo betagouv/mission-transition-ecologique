@@ -2,17 +2,18 @@
   <section>
     <!-- PROGRAM RESUME / TEXT-->
     <h2
-      class="fr-text--blue-france"
-      v-html="currentProgram?.promesse"
+      class="fr-text--blue-900"
+      v-html="program?.promesse"
     />
     <div
-      class="fr-mb-12v fr-text--blue-france"
-      v-html="Marked.toHtml(currentProgram?.description)"
+      class="fr-mb-3v fr-text--blue-900"
+      v-html="Marked.toHtml(program?.description)"
     />
   </section>
 </template>
 <script setup lang="ts">
 import { Marked } from '@/tools/marked'
+import AbstractProgram from '@/tools/program/abstractProgram'
 
-const { currentProgram } = storeToRefs(useProgramStore())
+const program = AbstractProgram.getCurrent()
 </script>

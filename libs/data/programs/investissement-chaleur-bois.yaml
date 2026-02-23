@@ -1,9 +1,9 @@
 titre: Investissement "Chaleur bois"
 promesse: Financez votre installation de production de chaleur à partir de biomasse/bois
 description: >-
-  Vous disposez d’une étude de faisabilité pour votre projet d'installation de
-  production de chaleur biomasse/bois et vous souhaitez investir pour le mettre
-  en œuvre ? Cette aide est destinée à subventionner votre installation.
+  Vous disposez d’une **étude de faisabilité pour votre projet d'installation de
+  production de chaleur biomasse/bois** et vous souhaitez investir pour le
+  mettre en œuvre ? Cette aide est destinée à subventionner votre installation.
 description longue: >-
   Opérations éligibles :
 
@@ -13,25 +13,25 @@ description longue: >-
   - les installations en secteur Industrie (et agricole) ayant une production de
   1 200 à 12 000 MWh/an biomasse sortie chaudière.
 début de validité: 01/01/2023
-fin de validité: 31/12/2024
-illustration: images/TEE_ampoule.png
+fin de validité: 31/12/2026
+illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
-  https://agir.ademe.fr/aides-financieres/2025/realisation-dinstallations-de-production-de-chaleur-biomassebois?cible=79
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-production-de-chaleur-biomassebois?cible=79
 nature de l'aide: financement
 montant du financement: Selon projet
 objectifs:
   - description: >-
-      Vérifiez l’éligibilité de votre projet en parcourant la documentation de
-      l’ADEME ou en contactant un conseiller.
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/sites/default/files/Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20des%20installations%20biomasse%20%C3%A9nergie%20-%202024.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/Installation%20biomasse%20%C3%A9nergie%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%202026.pdf
         texte: Conditions éligibilité et financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
-      - lien: https://agirpourlatransition.ademe.fr/user/register
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: >-
       Déposez votre dossier avant le 15 mai 2025 à 15h00 : informations
@@ -75,7 +75,6 @@ publicodes:
       - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
-      - entreprise . est propriétaire de ses locaux
   entreprise . est éligible:
     applicable si:
       toutes ces conditions:
