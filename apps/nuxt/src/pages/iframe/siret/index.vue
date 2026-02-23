@@ -99,11 +99,7 @@ const setManualRegister = () => {
 const openNewTab = () => {
   CompanyData.updateRouteFromStorage()
   const url = new Navigation().getAbsoluteUrlByRouteName(RouteName.CatalogProjects, {}, useNavigationStore().query)
-  if (window.top) {
-    window.top.open(url, '_blank')
-  } else {
-    window.open(url, '_blank')
-  }
+  window.open(url, '_blank')
 }
 
 // Initialiser iframe-resizer pour la communication avec le parent
