@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Deal, DealsApi, DealsApiApiKeys } from '@getbrevo/brevo'
 import { BrevoDeal, DealStageIdToStage, RawBrevoDealAttributes } from './types'
 
