@@ -1,5 +1,5 @@
-import { dsnFromString } from '@sentry/utils'
 import { ModuleOptions as SentryOptions } from '@sentry/nuxt/build/types/module'
+import { dsnFromString } from '@sentry/core'
 import Config from './src/config'
 
 export class NuxtSentryConfig {
@@ -12,12 +12,10 @@ export class NuxtSentryConfig {
       if (token) {
         return {
           ...options,
-          sourceMapsUploadOptions: {
-            telemetry: false,
-            authToken: token,
-            org: 'betagouv',
-            project: 'tee-frontend-vue'
-          },
+          telemetry: false,
+          authToken: token,
+          org: 'betagouv',
+          project: 'tee-frontend-vue',
           unstable_sentryBundlerPluginOptions: {
             errorHandler: (error: Error) => {
               console.warn(error)
