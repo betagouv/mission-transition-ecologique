@@ -1870,6 +1870,8 @@
       "easy-diag",
       "formations-atlas",
       "formations-afdas",
+      "formations-akto",
+      "formations-constructys",
       "formations-opcommerce",
       "formations-ocapiat",
       "formations-2i",
@@ -1884,7 +1886,8 @@
       "diagnostic-et-accompagnement-co2i",
       "accompagnement-rh",
       "plan-de-developpement-des-competences",
-      "autodiagnostic-rse"
+      "autodiagnostic-rse",
+      "m-diagnostic-accompagnement"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
@@ -2047,6 +2050,8 @@
       "easy-diag",
       "formations-atlas",
       "formations-afdas",
+      "formations-akto",
+      "formations-constructys",
       "formations-opcommerce",
       "formations-ocapiat",
       "formations-2i",
@@ -2060,7 +2065,8 @@
       "defi-eco-2050",
       "accompagnement-rh",
       "plan-de-developpement-des-competences",
-      "autodiagnostic-rse"
+      "autodiagnostic-rse",
+      "m-diagnostic-accompagnement"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une formation environnement",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre formation environnement",
@@ -2213,7 +2219,8 @@
       "diagnostic-rh",
       "accompagnement-rh",
       "plan-de-developpement-des-competences",
-      "autodiagnostic-rse"
+      "autodiagnostic-rse",
+      "m-diagnostic-accompagnement"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
