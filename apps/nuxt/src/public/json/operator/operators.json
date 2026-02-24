@@ -374,7 +374,7 @@
       "OPCO"
     ],
     "imagePath": "/images/logos/operateur/opco-ocapiat.webp",
-    "color": "purple"
+    "color": "red"
   },
   {
     "operator": "Opco 2i",
@@ -404,9 +404,7 @@
     "operator": "Opco Santé",
     "filterCategories": [
       "OPCO"
-    ],
-    "imagePath": "/images/logos/operateur/opcoSante.webp",
-    "color": "purple"
+    ]
   },
   {
     "operator": "Opco Uniformation",
