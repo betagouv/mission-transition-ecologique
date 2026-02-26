@@ -173,7 +173,7 @@ npm run lint:sass:fix
   - Jetbrains  
 https://www.jetbrains.com/help/webstorm/using-stylelint-code-quality-tool.html
 
-  - Vsode  
+  - VSCode
 https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
 
 
