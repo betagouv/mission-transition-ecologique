@@ -19,6 +19,10 @@ import { Identity } from './src/tools/identity'
 const hasPrerenderOrSwr = !process.env.CI && !Config.isTestData
 const maxAge31Days = 2678400 // 31 days in seconds
 const maxAge7Days = 604800 // 7 days in seconds
+// SWR TTL: Nitro's SWR memory driver does not proactively evict entries.
+// This TTL is used by the cacheEviction plugin (server/plugins/cacheEviction.ts)
+// to remove entries older than this threshold during its periodic sweep.
+const swrMaxAge = 60 * 60 // 1 hour in seconds
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default <DefineNuxtConfig>defineNuxtConfig({
@@ -49,9 +53,11 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     },
     '/': { prerender: true },
     '/aides-entreprise': { prerender: hasPrerenderOrSwr },
-    '/aides-entreprise/**': { swr: hasPrerenderOrSwr },
+    // swr with maxAge ensures entry.mtime is set, which the cacheEviction plugin uses
+    // to proactively remove entries older than 1 hour and prevent unbounded memory growth.
+    '/aides-entreprise/**': { swr: hasPrerenderOrSwr ? swrMaxAge : false },
     '/projets-entreprise': { prerender: hasPrerenderOrSwr },
-    '/projets-entreprise/**': { swr: hasPrerenderOrSwr },
+    '/projets-entreprise/**': { swr: hasPrerenderOrSwr ? swrMaxAge : false },
     '/accessibilite': { prerender: true },
     '/mentions-legales': { prerender: true },
     '/donnees-personnelles': { prerender: true },
@@ -59,13 +65,13 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     '/budget': { prerender: true },
     '/ajouter-une-aide-entreprises': { prerender: true },
     '/iframe/**': {
-      swr: true,
+      swr: swrMaxAge,
       security: {
         headers: NuxtSecurityConfig.getIframePageHeadersConfig()
       }
     },
     '/iframe': {
-      swr: true,
+      swr: swrMaxAge,
       security: {
         headers: NuxtSecurityConfig.getIframePageHeadersConfig()
       }
