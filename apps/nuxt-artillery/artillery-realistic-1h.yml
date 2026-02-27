@@ -1,0 +1,41 @@
+config:
+  environments:
+    development:
+      target: http://localhost:4242
+    production:
+      target: https://mission-transition-ecologique.beta.gouv.fr
+    staging:
+      target: https://tee-preprod-pr2519.osc-fr1.scalingo.io
+  phases:
+    # Total ~1h = 3600s, ~100 virtual users
+    # arrivalCount = total users to spawn during the phase (distributed evenly)
+    # Artillery v2 does not support decimal arrivalRate — use arrivalCount instead
+    - duration: 900    # 15 min warm-up
+      arrivalCount: 15 # ~1 user/min
+      maxVUs: 10
+      name: Warm up - ~1 user/min
+    - duration: 1800   # 30 min peak
+      arrivalCount: 60 # ~2 users/min
+      maxVUs: 20
+      name: Peak usage - ~2 users/min
+    - duration: 900    # 15 min wind-down
+      arrivalCount: 25 # ~1.7 users/min (plateau before stop)
+      maxVUs: 20
+      name: Wind down - ~1.7 users/min
+  engines:
+    playwright: {}
+  # Path to our custom Playwright script
+  processor: './src/realistic-browse.ts'
+
+scenarios:
+  # 70% standard browsing: homepage → programs → projects
+  - name: 'Standard browse - homepage, programs and projects'
+    weight: 50
+    engine: playwright
+    flowFunction: 'browseStandard'
+
+  # 30% users arriving on a program page with siret+effectif params, then browse normally
+  - name: 'SIRET landing - program page with company context then browse'
+    weight: 50
+    engine: playwright
+    flowFunction: 'browseWithSiret'
