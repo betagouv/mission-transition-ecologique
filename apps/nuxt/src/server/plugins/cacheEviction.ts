@@ -89,6 +89,9 @@ export default defineNitroPlugin((nitroApp) => {
     }
   }, EVICTION_INTERVAL_MS)
 
+  // Don't prevent the process from exiting (e.g. during build/prerender)
+  intervalId.unref()
+
   // Clean up interval on server shutdown
   process.once('SIGTERM', () => clearInterval(intervalId))
   process.once('SIGINT', () => clearInterval(intervalId))
