@@ -31,7 +31,6 @@
           <ProgramMainCta
             :is-activation-visible="isActivationVisible"
             :scroll-to-form="scrollToForm"
-            :scroll-to-activation="scrollToActivation"
           />
         </div>
       </div>
