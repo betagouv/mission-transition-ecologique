@@ -15,8 +15,7 @@ const programFrDict = {
     programDuration: 'Prestation',
     programLoanDuration: 'Durée du prêt',
     programKnowMore: 'En savoir plus',
-    projectExamplesSM: 'Exemples de projets financés',
-    projectExamples: 'Quelques exemples de projets financés par cette aide :',
+    projectExamples: 'Quelques projets liés',
     programAmIEligible: "Conditions d'éligibilité",
     programActivationRegistration: "Vérifiez automatiquement l'éligibilité de votre entreprise à l'aide de votre SIRET.",
     form: {
