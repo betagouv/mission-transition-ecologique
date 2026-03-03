@@ -1,63 +1,43 @@
-titre: Économie circulaire en Outre-mer et Corse
-promesse: >-
-  Financez vos projets de développement du réemploi, de la réparation, du
-  recyclage
-description: >-
-  Ce dispositif finance vos études, animations et investissements en faveur de
-  l'économie circulaire, en Outre-Mer et en Corse. Ces projets devront
-  s'inscrire notamment dans :
-
-
-  - La **lutte contre le gaspillage**.
-
-  - Le **réemploi**, la **réutilisation**, la **réparation**.
-
-  - Le recyclage et la **valorisation matière des déchets**.
-
-  - L’évolution des pratiques alimentaires vers une **alimentation durable**.
+titre: Gestion des déchets en Outre-mer et Corse
+promesse: Financez vos études et investissements pour la gestion des déchets
+description: "Ce dispositif finance, en Corse et dans les Outre-mer, les études et les investissements structurants qui visent à améliorer **le** **tri, la valorisation et le traitement des déchets**. \n\nIl peut s'agir par exemple de projets qui concernent :\n\n- La création ou la rénovation des déchèteries et de centres de tri.\n\n- La création de plateformes de compostage.\n\n- La création de centres de préparation des CSR\_(Combustibles Solides de Récupération).\n\n- La création d’installations de valorisation énergétique.\n\n- La création ou l’extension de site de stockage des déchets.\n\n- La résorption des dépôts sauvages."
 description longue: >-
-  L’ADEME pourra demander en amont la réalisation de tout projet
-  d’investissement une étude de faisabilité préalable visant à analyser et
-  argumenter la pertinence de la solution choisie, son potentiel marché, ses
-  impacts et bénéfices attendus (économiques, environnementaux, sociaux) et à
-  dimensionner les investissements. Le contenu de cette étude (cahier des
-  charges) sera discuté avec la Direction Régionale de l’ADEME afin de tenir
-  compte des spécificités territoriales.
+  - Taux maximum de 80% pour les études, plafonnés à 50 000 € pour les
+  diagnostics et 100 000 € pour les études de faisabilité.
 
+  - Taux d’aide variant de 10 à 75% pour les investissements, plafonnés selon
+  les territoires, les bénéficiaires et les types investissements.\
+    \
+    Pour candidater :
+  - Le projet ne doit pas être déjà commencé.
 
-  Pour les projets d’investissements d’un montant supérieur à 400 000€, une
-  évaluation environnementale (type ACV ou empreinte projet) pourra être exigée.
-  Celle-ci doit être réalisée par un prestataire externe spécialisé et
-  indépendant et peut être intégrée aux dépenses éligibles. L’étude doit être
-  réalisée selon le cadre de référence méthodologique proposé par l’ADEME. Le
-  montant de l’aide à la prestation d’évaluation environnementale est plafonné à
-  10 000 €.
+  - Il va au-delà des seules obligations règlementaires et ne décharge pas\
+    les producteurs de déchets des obligations qui leur incombent.
+  - Pas de renouvellement à l’identique sans amélioration notable.
 
+  - Le projet doit présenter un intérêt territorial avéré.
 
-  L’ADEME tiendra compte d’éventuels co-financements pour ajuster son aide, y
-  compris des aides des éco-organismes, quelle que soit leur forme. Si le projet
-  correspond à des flux REP, il est demandé de prendre contact avec le ou les
-  éco-organismes agréés pour faire connaitre le projet, identifier les
-  possibilités d’accompagnement ou d’aide financière des éco-organismes et
-  garantir le gisement de déchets\
+  - Pour les produits soumis à une filière Responsabilité Elargie des
+  Producteurs (REP), une coordination avec les éco-organismes est obligatoire.
 
-  concernés, le cas échéant via une contractualisation avec l’éco-organisme.
+  - L’ADEME pourra demander en amont la réalisation d’une étude de\
+    faisabilité préalable à l’investissement.
 début de validité: 01/01/2026
 fin de validité: 31/12/2026
-illustration: images/TEE_ampoule.webp
+illustration: images/TEE_energie_verte.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000904
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000915
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse
 nature de l'aide: financement
-montant du financement: Jusqu'à 80% selon le projet, dans la limite de 300 000 €
+montant du financement: Jusqu'à 80% selon le projet, dans la limite de 100 000 €
 objectifs:
   - description: >-
       Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
       projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89mergence%20ECI%20OMC%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/Investissements%20structurants%20OMC%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
@@ -129,7 +109,6 @@ publicodes:
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est la gestion des déchets
-      - questionnaire . objectif prioritaire . est l'écoconception
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
       - région = Corse

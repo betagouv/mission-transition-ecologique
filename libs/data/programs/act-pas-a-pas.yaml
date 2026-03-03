@@ -1,4 +1,4 @@
-titre: ACT - Pas à pas
+titre: ACT - Pas à pas (hors industrie)
 metaTitre: ACT pas à pas – Programme Volontaire Français ADEME
 promesse: >-
   Développez votre stratégie bas carbone et mettez en œuvre votre plan de
@@ -65,7 +65,7 @@ objectifs:
   - description: Réalisez votre étude ACT Pas à Pas.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Plus de 250 salariés
+    - Toutes tailles
     - Non éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
@@ -92,11 +92,7 @@ publicodes:
         - dispositif . début de validité <= date du jour
         - date du jour <= dispositif . fin de validité
     toutes ces conditions:
-      - a un effectif éligible
       - a une categorie legale eligible
-  entreprise . a un effectif éligible:
-    toutes ces conditions:
-      - effectif >= 250
   entreprise . a une categorie legale eligible:
     toutes ces conditions:
       - microentrepreneur = non

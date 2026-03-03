@@ -1,0 +1,129 @@
+titre: Étude sur la production d'électricité renouvelable en Outre-mer et Corse
+promesse: >-
+  Financez une étude pour vérifier la faisabilité d'un projet de production
+  d'électricité verte
+description: >-
+  Recevez un financement de l'ADEME pour une étude qui établit la **faisabilité
+  d'un projet de production d'électricité** (technique, économique, sociale,
+  environnementale, juridique, etc.) à partir des technologies vertes suivantes
+  :
+
+
+  - Photovoltaïque en autoconsommation individuelle et collective.
+
+  - Éolien terrestre et en mer.
+
+  - Hydrolien fluvial et marin.
+
+  - Petite hydroélectricité au fil de l’eau et microhydroélectricité sur
+  conduite d’eau.
+
+  - Énergie houlomotrice.
+
+  - Énergie thermique des mers.
+
+  - Énergie osmotique.
+
+  - Station de transfert d’énergie par pompage.
+description longue: >-
+  Le prestataire réalisant l'étude de faisabilité doit être externe au
+  bénéficiaire de l'étude et doit s'engager à n'exercer aucune activité
+  incompatible avec son indépendance de jugement et son intégrité. Il n'est pas
+  impliqué directement et n'a pas d'intérêts particuliers: vente, fabrication,
+  installation, utilisation ou maintenance des objets sur lesquels porte
+  l'étude.
+début de validité: 01/01/2026
+fin de validité: 31/12/2026
+illustration: images/TEE_ampoule.webp
+opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000876
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse
+nature de l'aide: étude
+montant du financement: Jusqu'à 80% du coût de l'étude, dans la limite de 50 000 €
+objectifs:
+  - description: >-
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
+    liens:
+      - lien: >-
+          https://file:///Users/betagouv/Downloads/%C3%89tude%20de%20Faisabilit%C3%A9%20EnR%20%C3%A9lectrique%20-%20Conditions%20d'%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026-1.pdf
+        texte: Conditions éligibilité et financement
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/inscription
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+  - description: Réalisez votre étude de faisabilité.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - >-
+      Corse, Guadeloupe, Guyane, La Réunion, Martinique, Mayotte,
+      Nouvelle-Calédonie, Polynésie française
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Corse
+      - région = Guadeloupe
+      - région = Guyane
+      - région = La Réunion
+      - région = Martinique
+      - région = Mayotte
+      - région = Nouvelle-Calédonie
+      - région = Polynésie française

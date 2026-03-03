@@ -36,7 +36,7 @@ objectifs:
       Créez un compte sur le site de l'Opco Santé et inscrivez-vous à la session
       de votre choix.
     liens:
-      - lien: https://%3Chttps://webservice.opco-sante.fr/conditions.aspx%3E
+      - lien: https://webservice.opco-sante.fr/
         texte: Créer mon compte
   - description: >-
       Pour toute demande de pris en charge d'une formation, contactez le service
