@@ -240,7 +240,7 @@
     "type": "tee"
   },
   {
-    "titre": "ACT - Pas à pas",
+    "titre": "ACT - Pas à pas (hors industrie)",
     "metaTitre": "ACT pas à pas – Programme Volontaire Français ADEME",
     "promesse": "Développez votre stratégie bas carbone et mettez en œuvre votre plan de transition",
     "description": "L’ADEME soutient financièrement les entreprises qui souhaitent **questionner leur modèle économique** pour identifier un nouveau modèle compatible avec une **trajectoire bas carbone.**\\\nVous serez accompagné avec la **méthode ACT Pas à Pas** (Assessing Low Carbon Transition), une méthode structurante, progressive et sur le long terme qui aide les entreprises à **réduire significativement leurs émissions de gaz à effet de serre**.",
@@ -282,7 +282,7 @@
     ],
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
-        "Plus de 250 salariés",
+        "Toutes tailles",
         "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
@@ -321,7 +321,6 @@
           "T",
           "U"
         ],
-        "minEmployees": "250",
         "excludeMicroentrepreneur": true
       },
       "validity": {
@@ -436,13 +435,7 @@
           ]
         },
         "toutes ces conditions": [
-          "a un effectif éligible",
           "a une categorie legale eligible"
-        ]
-      },
-      "entreprise . a un effectif éligible": {
-        "toutes ces conditions": [
-          "effectif >= 250"
         ]
       },
       "entreprise . a une categorie legale eligible": {
@@ -46678,7 +46671,7 @@
         "description": "Créez un compte sur le site de l'Opco Santé et inscrivez-vous à la session de votre choix.",
         "liens": [
           {
-            "lien": "https://%3Chttps://webservice.opco-sante.fr/conditions.aspx%3E",
+            "lien": "https://webservice.opco-sante.fr/",
             "texte": "Créer mon compte"
           }
         ]
@@ -49589,7 +49582,7 @@
     "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000904",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
     "nature de l'aide": "financement",
-    "montant du financement": "Jusqu'à 80% delon le projet, dans la limite de 300 000 €",
+    "montant du financement": "Jusqu'à 80% selon le projet, dans la limite de 300 000 €",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -50740,6 +50733,536 @@
       }
     },
     "id": "m-diagnostic-accompagnement",
+    "type": "tee"
+  },
+  {
+    "titre": "Gestion des déchets en Outre-mer et Corse",
+    "promesse": "Financez vos études et investissements pour la gestion des déchets",
+    "description": "Ce dispositif finance, en Corse et dans les Outre-mer, les études et les investissements structurants qui visent à améliorer **le** **tri, la valorisation et le traitement des déchets**. \n\nIl peut s'agir par exemple de projets qui concernent :\n\n- La création ou la rénovation des déchèteries et de centres de tri.\n\n- La création de plateformes de compostage.\n\n- La création de centres de préparation des CSR (Combustibles Solides de Récupération).\n\n- La création d’installations de valorisation énergétique.\n\n- La création ou l’extension de site de stockage des déchets.\n\n- La résorption des dépôts sauvages.",
+    "description longue": "- Taux maximum de 80% pour les études, plafonnés à 50 000 € pour les diagnostics et 100 000 € pour les études de faisabilité.\n- Taux d’aide variant de 10 à 75% pour les investissements, plafonnés selon les territoires, les bénéficiaires et les types investissements.\\\n  \\\n  Pour candidater :\n- Le projet ne doit pas être déjà commencé.\n- Il va au-delà des seules obligations règlementaires et ne décharge pas\\\n  les producteurs de déchets des obligations qui leur incombent.\n- Pas de renouvellement à l’identique sans amélioration notable.\n- Le projet doit présenter un intérêt territorial avéré.\n- Pour les produits soumis à une filière Responsabilité Elargie des Producteurs (REP), une coordination avec les éco-organismes est obligatoire.\n- L’ADEME pourra demander en amont la réalisation d’une étude de\\\n  faisabilité préalable à l’investissement.",
+    "début de validité": "01/01/2026",
+    "fin de validité": "31/12/2026",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000915",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 80% selon le projet, dans la limite de 100 000 €",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Investissements%20structurants%20OMC%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez votre projet."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Corse, Guadeloupe, Guyane, La Réunion, Martinique, Mayotte, Nouvelle-Calédonie, Polynésie française, Saint-Barthélemy, Saint-Martin, Saint-Pierre-Et-Miquelon, Terres australes et antarctiques françaises, Wallis et Futuna"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Corse",
+          "Guadeloupe",
+          "Guyane",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Nouvelle-Calédonie",
+          "Polynésie française",
+          "Saint-Barthélemy",
+          "Saint-Martin",
+          "Saint-Pierre-Et-Miquelon",
+          "Terres australes et antarctiques françaises",
+          "Wallis et Futuna"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2026",
+        "end": "31/12/2026"
+      },
+      "priorityObjectives": [
+        "waste"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la gestion des déchets"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Corse",
+          "région = Guadeloupe",
+          "région = Guyane",
+          "région = La Réunion",
+          "région = Martinique",
+          "région = Mayotte",
+          "région = Nouvelle-Calédonie",
+          "région = Polynésie française",
+          "région = Saint-Barthélemy",
+          "région = Saint-Martin",
+          "région = Saint-Pierre-Et-Miquelon",
+          "région = Terres australes et antarctiques françaises",
+          "région = Wallis et Futuna"
+        ]
+      }
+    },
+    "id": "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
+    "type": "tee"
+  },
+  {
+    "titre": "Étude sur la production d'électricité renouvelable en Outre-mer et Corse",
+    "promesse": "Financez une étude pour vérifier la faisabilité d'un projet de production d'électricité verte",
+    "description": "Recevez un financement de l'ADEME pour une étude qui établit la **faisabilité d'un projet de production d'électricité** (technique, économique, sociale, environnementale, juridique, etc.) à partir des technologies vertes suivantes :\n\n- Photovoltaïque en autoconsommation individuelle et collective.\n- Éolien terrestre et en mer.\n- Hydrolien fluvial et marin.\n- Petite hydroélectricité au fil de l’eau et microhydroélectricité sur conduite d’eau.\n- Énergie houlomotrice.\n- Énergie thermique des mers.\n- Énergie osmotique.\n- Station de transfert d’énergie par pompage.",
+    "description longue": "Le prestataire réalisant l'étude de faisabilité doit être externe au bénéficiaire de l'étude et doit s'engager à n'exercer aucune activité incompatible avec son indépendance de jugement et son intégrité. Il n'est pas impliqué directement et n'a pas d'intérêts particuliers: vente, fabrication, installation, utilisation ou maintenance des objets sur lesquels porte l'étude.",
+    "début de validité": "01/01/2026",
+    "fin de validité": "31/12/2026",
+    "illustration": "images/TEE_ampoule.webp",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000876",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
+    "nature de l'aide": "étude",
+    "montant du financement": "Jusqu'à 80% du coût de l'étude, dans la limite de 50 000 €",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
+        "liens": [
+          {
+            "lien": "https://file:///Users/betagouv/Downloads/%C3%89tude%20de%20Faisabilit%C3%A9%20EnR%20%C3%A9lectrique%20-%20Conditions%20d'%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026-1.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez votre étude de faisabilité."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Corse, Guadeloupe, Guyane, La Réunion, Martinique, Mayotte, Nouvelle-Calédonie, Polynésie française"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Corse",
+          "Guadeloupe",
+          "Guyane",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Nouvelle-Calédonie",
+          "Polynésie française"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2026",
+        "end": "31/12/2026"
+      },
+      "priorityObjectives": [
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Corse",
+          "région = Guadeloupe",
+          "région = Guyane",
+          "région = La Réunion",
+          "région = Martinique",
+          "région = Mayotte",
+          "région = Nouvelle-Calédonie",
+          "région = Polynésie française"
+        ]
+      }
+    },
+    "id": "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
     "type": "tee"
   }
 ]
