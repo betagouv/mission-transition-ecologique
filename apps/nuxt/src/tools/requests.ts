@@ -14,12 +14,12 @@ export const sendApiRequest = async (callback: FormCallback, formData: any, trac
   const dataMapping = callback.dataMapping.filter((dm) => !dm.onlyRemap)
 
   let pathData: any = callback.dataPath || {}
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+
   pathData = remapItem(pathData, dataMapping, formData, trackValues, props, undefined, [], Translation.lang)
   const url = RequestApi.buildUrl(callback.url, pathData as Record<string, string>)
 
   let bodyData: any = callback.dataBody || callback.dataStructure || {}
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+
   bodyData = remapItem(bodyData, dataMapping, formData, trackValues, props, undefined, [], Translation.lang)
   const body = JSON.stringify(bodyData)
 
@@ -43,7 +43,7 @@ export const sendRequest = async (url: string, method: CallbackMethods, headers:
     resp.ok = false
     resp.status = 500
     resp.statusText = 'Internal server error'
-    // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+
     resp.message = `${error}`
   }
 

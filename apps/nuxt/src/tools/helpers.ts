@@ -30,24 +30,21 @@ export const getFrom = (from: any, selectors: PropertyPath[]) => {
           .split('.')
           .filter((t: any) => t !== '')
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return getFromArraySelector(from, arraySelector)
   })
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   return res
 }
 
 const getFromArraySelector = (from: any, selector: string[]) => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return selector.reduce((prev: any, cur: any) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-return
     return prev && prev[cur]
   }, from)
 }
 
 export const getFromOnePath = (from: any, selector: string) => {
   const val = getFrom(from, [selector])
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   return val[0]
 }
 
@@ -59,16 +56,15 @@ export const getFromResp = (from: ReqResp, resMap: ResultsMapping, lang = 'fr') 
       return cleanValue(value, resMap.cleaning as Cleaner[] | CleanerReplaceAll[] | CleanerDefaultIfNull[], lang)
     })
   }
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   return values
 }
 
 export const setIn = (obj: any, [head, ...rest]: string[], value: any) => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const newObj: any = Array.isArray(obj) ? [...(obj as [])] : { ...obj }
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
+
   newObj[head] = rest.length ? setIn(obj[head], rest, value) : value
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   return newObj
 }
 
@@ -79,7 +75,7 @@ export const setProperty = (obj: object, path: string, value: any) => {
     resultObj = { ...obj, ...value } as object
   } else {
     const pathAsArray = path.split('.')
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+
     resultObj = setIn(obj, pathAsArray, value)
   }
 
@@ -107,17 +103,14 @@ export const replaceAll = (value: any, cleaner: CleanerReplaceAll) => {
 }
 
 export const findFromDict = (value: string | string[], cleaner: CleanerFromDict) => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const dict = cleaner.dict
   let valueOut: any
   if (Array.isArray(value)) {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access
     valueOut = value.map((v) => dict[v] || v)
   } else {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-assignment
     valueOut = dict[value] || value
   }
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+
   return valueOut
 }
 
@@ -131,7 +124,6 @@ export const injectInObject = (value: object | object[], cleaner: CleanerInjectI
   let valueOut: object = { ...targetObject }
   if (Array.isArray(value)) {
     value.forEach((v) => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       valueOut = { ...valueOut, ...v }
     })
   } else {
@@ -190,7 +182,6 @@ export const remapItem = (
         value = CompanyDataStorage.getItem(dataMapping.id as CompanyDataStorageKey)
         break
       case DataMappingFrom.FormData:
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         value = formData?.[dataMapping.id]
         break
       case DataMappingFrom.UsedTracks:
@@ -198,10 +189,9 @@ export const remapItem = (
         break
       case DataMappingFrom.AllUsedTracks:
         allResponses = findInObjectsArray(trackValues as object[], dataMapping.id, true)
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+
         value = Object.keys(allResponses)
           .map((k) => {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             return `${k}: ${allResponses[k]}`
           })
           .join(' / ')
@@ -210,7 +200,6 @@ export const remapItem = (
         value = findInObjectsArray(selectionValues as object[], dataMapping.id)
         break
       case DataMappingFrom.Props:
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         value = props?.[dataMapping.id]
         break
       case DataMappingFrom.PropsPath:
@@ -230,10 +219,8 @@ export const remapItem = (
 
     // parse as array
     if (dataMapping.asArray) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       value = (value as string).split(dataMapping.sep || ',')
       if (dataMapping.type === 'integer') {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-call
         value = (value as string[]).map((v: string) => parseInt(v))
       }
     }

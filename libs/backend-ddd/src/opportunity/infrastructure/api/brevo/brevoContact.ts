@@ -34,7 +34,6 @@ const requestCreateContact = async (listIds: number[], contact: ContactDetails, 
   const response = responseResult.value
   let contactId: Result<ContactId, Error>
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison
   if (response.status == axios.HttpStatusCode.Created) {
     contactId = Result.ok(response.data as ContactId)
   } else {

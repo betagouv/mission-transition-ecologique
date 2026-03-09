@@ -78,7 +78,8 @@ export interface BaserowMetaData {
 }
 
 export interface Program
-  extends Omit<
+  extends
+    Omit<
       DataProgram,
       | keyof Sectors
       | 'Statuts'
@@ -109,11 +110,10 @@ export interface ProgramTechSerialized {
   tech: string
 }
 
-export interface ConditionalValues
-  extends Omit<
-    DomainConditionalValues,
-    'Dispositif concerné' | 'Type de condition' | 'valeur de la condition géographique' | 'Opérateur de contact' | 'Autres opérateurs'
-  > {
+export interface ConditionalValues extends Omit<
+  DomainConditionalValues,
+  'Dispositif concerné' | 'Type de condition' | 'valeur de la condition géographique' | 'Opérateur de contact' | 'Autres opérateurs'
+> {
   'Dispositif concerné': LinkObject[]
   'Type de condition': LinkObject
   'valeur de la condition géographique': LinkObject[]
