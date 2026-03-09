@@ -2,75 +2,16 @@ titre: Amélioration de la qualité de l’air
 promesse: >-
   Bénéficiez d'un financement pour vos projets visant à améliorer la qualité de
   l'air
-description: >-
-  Votre entreprise est implantée dans une zone couverte par un **Plan de
-  Protection de l’Atmosphère (PPA)** ou un territoire où les seuils de pollution
-  de l’air (NO₂, particules, ozone) sont dépassés ?
-
-
-  L’ADEME peut vous aider à financer :
-
-
-  - des **études** en vue d’un projet opérationnel,
-
-
-  - des **actions de sensibilisation** au changement de pratiques,
-
-
-  - certains **investissements** (mobilité moins polluante, logistique,
-  organisation des chantiers, raccordement électrique à quai).
-
-
-  L’objectif est de **réduire durablement les émissions de polluants
-  atmosphériques** dans les zones les plus exposées, en soutenant des démarches
-  concrètes, adaptées à votre activité et à votre territoire.
-description longue: >-
-  L’ADEME peut vous accompagner pour :
-     - Des études permettant d’aboutir à une mise en place opérationnelle d’actions permettant de réduire les émissions de polluants atmosphériques réglementés pour les zones concernées.
-     - De la communication, animation, sensibilisation intégrant les changements pérennes de pratiques.
-     - Certains investissements comme ceux relatifs au renouvellement de véhicules, au branchement à quai des navires, aux alternatives au brûlage des déchets verts.
-
-  Les projets pourront concerner notamment (liste non exhaustive) :
-
-  -  la mobilité (active, partagée, report modal) ;
-
-  -  les transports (réduction des émissions de véhicules, logistique, maritime
-  et fluvial) ;
-
-  -  les alternatives au brûlage des déchets verts ;
-
-  - l'accompagnement des professionnels impactés par la mise en œuvre de la zone
-  à faibles émissions mobilité (ZFE-m) ;
-
-  - l’urbanisme intégrant une moindre exposition aux émissions de polluants ;
-
-  - organisation ou faisabilité d’un report modal marchandises/voyageurs vers un
-  mode ayant un plus faible impact environnemental (covoiturage, autopartage,
-  mobilités actives, transport fluvial/maritime/ferroviaire/routier,
-  cyclologistique, développement de tiers-lieux...) ;
-
-  - sensibilisation et accompagnement au changement de comportement des
-  particuliers, des scolaires, des salariés, etc., vers des mobilités moins
-  impactantes d’un point de vue environnemental ;
-
-  - électrification de navires/bateaux de transport de marchandises ou voyageurs
-  pour un branchement électrique à quai ;
-
-  - électrification des postes de stationnement des avions ;
-
-  - accompagnement des professionnels impactés par la mise en œuvre des ZFE-m
-  hors aides au renouvellement des véhicules.
-
-  - BTP /carrières : optimisation d’un chantier et de sa logistique, dans
-  l’objectif de réduire les émissions de polluants réglementés.
-début de validité: 01/01/2025
-fin de validité: 31/12/2025
+description: "Votre entreprise est implantée dans une zone couverte par un **Plan de Protection de l’Atmosphère (PPA)** ou un territoire où les seuils de pollution de l’air (NO₂, particules, ozone) sont dépassés ou qui le seront dans les prévisions à l'horizon\_2030?\n\nL’ADEME peut vous aider à financer :\n\n- des **études** en vue d’un projet opérationnel,\n\n- des **actions de sensibilisation** au changement de pratiques,\n\n- certains **investissements** (mobilité moins polluante, logistique, organisation des chantiers, raccordement électrique à quai).\n\nL’objectif est de **réduire durablement les émissions de polluants atmosphériques** dans les zones les plus exposées, en soutenant des démarches concrètes, adaptées à votre activité et à votre territoire."
+description longue: "Les actions soutenues par l’ADEME viseront une réduction de NO₂, de particules\_PM10, PM2.5 ou d’O₃, mais ils pourront aussi concerner d’autres polluants réglementés – COVNM (composés organiques volatils non méthaniques) ou HAP (Hydrocarbure aromatique polycyclique).\n\nLes projets ciblés sont\_:\n\n- Ceux qui s'insèrent dans un programme d’actions structuré visant à améliorer la qualité de l’air sur le territoire (ex.\_: programmation pluriannuelle, reproductibilité, objectifs clairement définis, anticipation de la directive européenne\_2030 sur la qualité de l’air...). Les gains attendus sur la qualité de l’air (NO₂, particules, O₃ ou autres polluants) seront clairement définis au regard de la situation du territoire.\n\n- Ceux qui concernent la combustion de la biomasse, l’urbanisme et les aménagements, les mobilités des entreprises et la logistique."
+début de validité: 01/01/2026
+fin de validité: 31/12/2026
 illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000708
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000871
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/amelioration-qualite-lair-territoires-ppa-depassements-recents?cible=79&region=35
-nature de l'aide: étude
+nature de l'aide: financement
 montant du financement: Variable selon projet
 objectifs:
   - description: >-
@@ -78,7 +19,7 @@ objectifs:
       projet.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/sites/default/files/Am%C3%A9lioration%20de%20la%20qualit%C3%A9%20de%20l%27air%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/Qualit%C3%A9%20air%20-%20Territoires%20en%20PPA%20ou%20d%C3%A9passements%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions d'éligibilité et de financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
@@ -90,7 +31,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/amelioration-qualite-lair-territoires-ppa-depassements-recents
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/amelioration-de-la-qualite-de-lair-dans-les-territoires-en-ppa-ou-dans-ceux-concernes-par-des-depassements-actuels-ou-previsionnels-2030
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -103,8 +44,8 @@ conditions d'éligibilité:
     - Éligible aux micro-entreprises
   secteur géographique:
     - >-
-      Auvergne-Rhône-Alpes, Grand Est, Île-de-France, Martinique, Normandie,
-      Occitanie, Provence-Alpes-Côte d'Azur
+      Auvergne-Rhône-Alpes, Île-de-France, Martinique, Provence-Alpes-Côte
+      d'Azur
   secteur d'activité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
@@ -159,13 +100,10 @@ publicodes:
       - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est mon impact environnemental
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
       - région = Auvergne-Rhône-Alpes
-      - région = Grand Est
       - région = Île-de-France
       - région = Martinique
-      - région = Normandie
-      - région = Occitanie
       - région = Provence-Alpes-Côte d'Azur
