@@ -7,7 +7,7 @@
       <ProgramModalFilter />
     </template>
     <li
-      v-for="program in sortedPrograms"
+      v-for="program in filteredPrograms"
       :id="program.id"
       :key="program.id"
       class="fr-col-12 fr-col-sm-6 fr-col-md-12"
@@ -35,14 +35,12 @@
 import ProgramCard from '@/components/program/list/ProgramCard.vue'
 import ExternalProgramCard from '@/components/program/externalProgram/ExternalProgramCard.vue'
 import { AbstractProgramTypeForFront, ProgramTypeForFront } from '@/types'
-import { ProgramSorter } from '@/tools/program/programSorter'
 
 interface Props {
   filteredPrograms?: ProgramTypeForFront[]
   extFilteredPrograms?: AbstractProgramTypeForFront[]
 }
 const props = defineProps<Props>()
-const sortedPrograms = computed(() => ProgramSorter.byAlphabeticalOrder(props.filteredPrograms ?? []))
 const programNumber = computed(() => {
   return (props.filteredPrograms?.length || 0) + (props.extFilteredPrograms?.length || 0)
 })
