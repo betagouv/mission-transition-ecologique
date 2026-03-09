@@ -243,7 +243,7 @@
     "titre": "ACT - Pas à pas (hors industrie)",
     "metaTitre": "ACT pas à pas – Programme Volontaire Français ADEME",
     "promesse": "Développez votre stratégie bas carbone et mettez en œuvre votre plan de transition",
-    "description": "L’ADEME soutient financièrement les entreprises qui souhaitent **questionner leur modèle économique** pour identifier un nouveau modèle compatible avec une **trajectoire bas carbone.**\\\nVous serez accompagné avec la **méthode ACT Pas à Pas** (Assessing Low Carbon Transition), une méthode structurante, progressive et sur le long terme qui aide les entreprises à **réduire significativement leurs émissions de gaz à effet de serre**.",
+    "description": "L’ADEME soutient financièrement les entreprises non industrielles qui souhaitent **questionner leur modèle économique** pour identifier un nouveau modèle compatible avec une **trajectoire bas carbone.**\\\nVous serez accompagné avec la **méthode ACT Pas à Pas** (Assessing Low Carbon Transition), une méthode structurante, progressive et sur le long terme qui aide les entreprises à **réduire significativement leurs émissions de gaz à effet de serre**.",
     "metaDescription": "Construisez votre stratégie bas carbone avec ACT pas à pas. Une méthode structurante et progressive pour engager votre entreprise dans la transition écologique..",
     "description longue": "L'étude ACT Pas à Pas se déroule en 12 à 18 mois selon les entreprises.\n\nLes grandes étapes de l'étude sont les suivantes :\n\n- Analyser la maturité initiale de l'entreprise sur des bases carbone.\n- Exposer les enjeux et réaliser une analyse stratégique de l’entreprise dans un contexte de transition bas carbone.\n- Déterminer une vision d’entreprise et concevoir la feuille de route du plan de transition à court, moyen et long terme.\n- Élaborer des objectifs de performance carbone et définir une stratégie.\n- Mettre en œuvre des actions de décarbonation.",
     "début de validité": "13/11/2023",
@@ -9096,22 +9096,22 @@
   {
     "titre": "Amélioration de la qualité de l’air",
     "promesse": "Bénéficiez d'un financement pour vos projets visant à améliorer la qualité de l'air",
-    "description": "Votre entreprise est implantée dans une zone couverte par un **Plan de Protection de l’Atmosphère (PPA)** ou un territoire où les seuils de pollution de l’air (NO₂, particules, ozone) sont dépassés ?\n\nL’ADEME peut vous aider à financer :\n\n- des **études** en vue d’un projet opérationnel,\n\n- des **actions de sensibilisation** au changement de pratiques,\n\n- certains **investissements** (mobilité moins polluante, logistique, organisation des chantiers, raccordement électrique à quai).\n\nL’objectif est de **réduire durablement les émissions de polluants atmosphériques** dans les zones les plus exposées, en soutenant des démarches concrètes, adaptées à votre activité et à votre territoire.",
-    "description longue": "L’ADEME peut vous accompagner pour :\n   - Des études permettant d’aboutir à une mise en place opérationnelle d’actions permettant de réduire les émissions de polluants atmosphériques réglementés pour les zones concernées.\n   - De la communication, animation, sensibilisation intégrant les changements pérennes de pratiques.\n   - Certains investissements comme ceux relatifs au renouvellement de véhicules, au branchement à quai des navires, aux alternatives au brûlage des déchets verts.\n\nLes projets pourront concerner notamment (liste non exhaustive) :\n-  la mobilité (active, partagée, report modal) ;\n-  les transports (réduction des émissions de véhicules, logistique, maritime et fluvial) ;\n-  les alternatives au brûlage des déchets verts ;\n- l'accompagnement des professionnels impactés par la mise en œuvre de la zone à faibles émissions mobilité (ZFE-m) ;\n- l’urbanisme intégrant une moindre exposition aux émissions de polluants ;\n- organisation ou faisabilité d’un report modal marchandises/voyageurs vers un mode ayant un plus faible impact environnemental (covoiturage, autopartage, mobilités actives, transport fluvial/maritime/ferroviaire/routier, cyclologistique, développement de tiers-lieux...) ;\n- sensibilisation et accompagnement au changement de comportement des particuliers, des scolaires, des salariés, etc., vers des mobilités moins impactantes d’un point de vue environnemental ;\n- électrification de navires/bateaux de transport de marchandises ou voyageurs pour un branchement électrique à quai ;\n- électrification des postes de stationnement des avions ;\n- accompagnement des professionnels impactés par la mise en œuvre des ZFE-m hors aides au renouvellement des véhicules.\n- BTP /carrières : optimisation d’un chantier et de sa logistique, dans l’objectif de réduire les émissions de polluants réglementés.",
-    "début de validité": "01/01/2025",
-    "fin de validité": "31/12/2025",
+    "description": "Votre entreprise est implantée dans une zone couverte par un **Plan de Protection de l’Atmosphère (PPA)** ou un territoire où les seuils de pollution de l’air (NO₂, particules, ozone) sont dépassés ou qui le seront dans les prévisions à l'horizon 2030?\n\nL’ADEME peut vous aider à financer :\n\n- des **études** en vue d’un projet opérationnel,\n\n- des **actions de sensibilisation** au changement de pratiques,\n\n- certains **investissements** (mobilité moins polluante, logistique, organisation des chantiers, raccordement électrique à quai).\n\nL’objectif est de **réduire durablement les émissions de polluants atmosphériques** dans les zones les plus exposées, en soutenant des démarches concrètes, adaptées à votre activité et à votre territoire.",
+    "description longue": "Les actions soutenues par l’ADEME viseront une réduction de NO₂, de particules PM10, PM2.5 ou d’O₃, mais ils pourront aussi concerner d’autres polluants réglementés – COVNM (composés organiques volatils non méthaniques) ou HAP (Hydrocarbure aromatique polycyclique).\n\nLes projets ciblés sont :\n\n- Ceux qui s'insèrent dans un programme d’actions structuré visant à améliorer la qualité de l’air sur le territoire (ex. : programmation pluriannuelle, reproductibilité, objectifs clairement définis, anticipation de la directive européenne 2030 sur la qualité de l’air...). Les gains attendus sur la qualité de l’air (NO₂, particules, O₃ ou autres polluants) seront clairement définis au regard de la situation du territoire.\n\n- Ceux qui concernent la combustion de la biomasse, l’urbanisme et les aménagements, les mobilités des entreprises et la logistique.",
+    "début de validité": "01/01/2026",
+    "fin de validité": "31/12/2026",
     "illustration": "images/TEE_ampoule.webp",
     "opérateur de contact": "ADEME",
-    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000708",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000871",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/amelioration-qualite-lair-territoires-ppa-depassements-recents?cible=79&region=35",
-    "nature de l'aide": "étude",
+    "nature de l'aide": "financement",
     "montant du financement": "Variable selon projet",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Am%C3%A9lioration%20de%20la%20qualit%C3%A9%20de%20l%27air%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Qualit%C3%A9%20air%20-%20Territoires%20en%20PPA%20ou%20d%C3%A9passements%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf",
             "texte": "Conditions d'éligibilité et de financement"
           }
         ]
@@ -9129,7 +9129,7 @@
         "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/amelioration-qualite-lair-territoires-ppa-depassements-recents",
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/amelioration-de-la-qualite-de-lair-dans-les-territoires-en-ppa-ou-dans-ceux-concernes-par-des-depassements-actuels-ou-previsionnels-2030",
             "texte": "Déposer mon dossier"
           }
         ]
@@ -9147,7 +9147,7 @@
         "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
-        "Auvergne-Rhône-Alpes, Grand Est, Île-de-France, Martinique, Normandie, Occitanie, Provence-Alpes-Côte d'Azur"
+        "Auvergne-Rhône-Alpes, Île-de-France, Martinique, Provence-Alpes-Côte d'Azur"
       ],
       "secteur d'activité": [
         "Tous secteurs d’activité"
@@ -9189,20 +9189,17 @@
         ],
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
-          "Grand Est",
           "Île-de-France",
           "Martinique",
-          "Normandie",
-          "Occitanie",
           "Provence-Alpes-Côte d'Azur"
         ]
       },
       "validity": {
-        "start": "01/01/2025",
-        "end": "31/12/2025"
+        "start": "01/01/2026",
+        "end": "31/12/2026"
       },
       "priorityObjectives": [
-        "mobility"
+        "environmental"
       ]
     },
     "publicodes": {
@@ -9339,17 +9336,14 @@
       },
       "entreprise . a un objectif ciblé": {
         "une de ces conditions": [
-          "questionnaire . objectif prioritaire . est la mobilité durable"
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
         ]
       },
       "entreprise . est dans une zone géographique éligible": {
         "une de ces conditions": [
           "région = Auvergne-Rhône-Alpes",
-          "région = Grand Est",
           "région = Île-de-France",
           "région = Martinique",
-          "région = Normandie",
-          "région = Occitanie",
           "région = Provence-Alpes-Côte d'Azur"
         ]
       }
@@ -41537,16 +41531,16 @@
     "type": "tee"
   },
   {
-    "titre": "BCIAT 2025 - Biomasse chaleur pour l'industrie, l'agriculture et le tertiaire",
-    "promesse": "Financez votre chaudière ou un générateur à air chaud et à partir de biomasse",
-    "description": "Cet appel à projet finance les projets de production de chaleur supérieurs à 12 GWh/an via une chaudière ou un générateur à air chaud et à partir de biomasse (plaquettes forestières, sous-produits de l’industrie de première transformation du bois, bois fin de vie et bois déchets, granulés, sous-produits industriels, sous-produits agricoles).",
+    "titre": "BCIAT 2026 - Biomasse chaleur pour l'industrie, l'agriculture et le tertiaire",
+    "promesse": "Financez votre chaudière ou un générateur à air chaud à partir de biomasse",
+    "description": "Cet appel à projet finance les projets de production de chaleur supérieurs à 12 GWh/an via une **chaudière** ou un **générateur à air chaud à partir de biomasse** (plaquettes forestières, sous-produits de l’industrie de première transformation du bois, bois fin de vie et bois déchets, granulés, sous-produits industriels, sous-produits agricoles).",
     "description longue": "Dans le contexte actuel d’optimisation de la ressource biomasse et en cohérence avec les objectifs du projet de la Stratégie française pour l’Énergie et le Climat, l’ADEME accordera une attention particulière à ce que le candidat fasse la démonstration d’une approche énergétique respectant la hiérarchie suivante :\n\nsobriété ; efficacité énergétique ; valorisation de chaleur fatale ; étude des solutions bas carbone alternatives.\n\nPour les études de solutions, la solution biomasse sera priorisée pour les projets pour lesquels aucune alternative bas carbone n’est envisageable dans des conditions technico-économiques acceptables. Le candidat fournira ainsi une étude d'opportunité mix énergétique bas carbone type PACTE Industrie (« étude d’opportunité d’évolution du mix énergétique d’un site industriel »).",
-    "début de validité": "22/04/2025",
-    "fin de validité": "16/10/2025",
+    "début de validité": "26/03/2026",
+    "fin de validité": "17/07/2026",
     "illustration": "images/TEE_eolienne.webp",
     "opérateur de contact": "ADEME",
-    "contact question": "mailto:boisenergie@ademe.fr",
-    "url": "https://agir.ademe.fr/aides-financieres/aap/bciat-2025-biomasse-chaleur-pour-lindustrie-lagriculture-et-le-tertiaire",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000953",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/bciat-2026-biomasse-chaleur-pour-lindustrie-lagriculture-et-le-tertiaire",
     "nature de l'aide": "financement",
     "montant du financement": "Selon la nature du projet",
     "objectifs": [
@@ -41554,13 +41548,13 @@
         "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
-            "lien": "https://agir.ademe.fr/aides-financieres/aap/bciat-2025-biomasse-chaleur-pour-lindustrie-lagriculture-et-le-tertiaire#eligibility",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/AAP%20BCIAT%20-%20Cahier%20des%20charges%20-%202025-2026.pdf",
             "texte": "Conditions d'éligibilité"
           }
         ]
       },
       {
-        "description": "Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au moins un mois avant la date limite de dépôt)."
+        "description": "Contactez l'ADEME pour planifier une réunion de pré-dépôt du dossier (au moins un mois avant la date limite de dépôt), en écrivant à [boisenergie@ademe.fr](mailto:boisenergie@ademe.fr)."
       },
       {
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
@@ -41619,8 +41613,8 @@
         "excludeMicroentrepreneur": true
       },
       "validity": {
-        "start": "22/04/2025",
-        "end": "16/10/2025"
+        "start": "26/03/2026",
+        "end": "17/07/2026"
       },
       "priorityObjectives": [
         "energy"
@@ -44034,9 +44028,9 @@
     "type": "tee"
   },
   {
-    "titre": "ACT Évaluation",
+    "titre": "ACT Évaluation (hors industrie)",
     "promesse": "Évaluez votre plan de transition bas carbone et communiquez sur vos résultats",
-    "description": "Vous êtes une entreprise mature dotée d'un plan de transition et vous souhaitez l'évaluer au regard des objectifs de décarbonation de l’accord de Paris ? \\\nL'ADEME vous accompagne avec la méthode **ACT Évaluation** (Assessing Low Carbon Transition), qui propose une méthode structurante et un suivi réalisé par un consultant. Ainsi, vous évaluez votre stratégie bas carbone, et vous pouvez rendre publics vos résultats d'évaluation.",
+    "description": "Vous êtes une entreprise non industrielle mature dotée d'un plan de transition et vous souhaitez l'évaluer au regard des objectifs de décarbonation de l’accord de Paris ? \\\nL'ADEME vous accompagne avec la méthode **ACT Évaluation** (Assessing Low Carbon Transition), qui propose une méthode structurante et un suivi réalisé par un consultant. Ainsi, vous évaluez votre stratégie bas carbone, et vous pouvez rendre publics vos résultats d'évaluation.",
     "description longue": "Les grandes étapes de l'évaluation sont les suivantes :\n\n- Vous découvrez la méthode ACT évaluation et sa grille de notation.\n\n- Vous réalisez une évaluation de la stratégie bas carbone, accompagnée par un consultant.\n\n- Vous sollicitez un financement pour cette étude.\n\n- Vous avez la possibilité de communiquer les résultats de l'évaluation.",
     "début de validité": "13/11/2023",
     "fin de validité": "30/06/2026",
@@ -50602,6 +50596,9 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Dispositif prioritairement destiné aux entreprises de moins de 50 salariés."
       ]
     },
     "eligibilityData": {
@@ -51066,6 +51063,9 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "En Nouvelle Calédonie, le dispositif est réservé aux projets de petite hydroélectricité."
       ]
     },
     "eligibilityData": {
@@ -51263,6 +51263,277 @@
       }
     },
     "id": "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
+    "type": "tee"
+  },
+  {
+    "titre": "Étude d'opportunité énergies renouvelables et de récupération",
+    "promesse": "Financez une étude afin d’identifier la solution de chaleur et froid renouvelable la plus adaptée",
+    "description": "Obtenez le financement d'une étude d'opportunité qui vous permet d'avoir une vision exhaustive des **solutions de chaleur et de froids renouvelables** **compatibles techniquement avec les besoins de votre bâtiment.**\\\n\\\nCette étude comprendra notamment :\n\n- Un **état des lieux énergétique** succinct du ou des bâtiments existants.\n- L’**identification de solutions de sobriété et d’efficacité énergétique** à mettre en place.\n- L'**analyse de l’ensemble des ressources énergies renouvelables disponibles** (raccordement à un réseau de chaleur et de froid urbain ou à une boucle d’eau tempérée géothermique, récupération et/ou valorisation de chaleur fatale, géothermies, solaire thermique, bois énergie, aérothermie).\n- L’**étude de l’adéquation des besoins énergétiques** du ou des bâtiments et des ressources disponibles.\n- Une **analyse multicritère pour comparer ces scénarios techniques** entre eux et identifier les solutions les plus pertinentes.",
+    "début de validité": "01/01/2026",
+    "fin de validité": "31/12/2026",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000882",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-dopportunite-multi-enrr",
+    "nature de l'aide": "étude",
+    "montant du financement": "Jusqu’à 70 % du coût de l'étude pour une petite entreprise",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-dopportunite-multi-enrr",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez votre étude de faisabilité."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Corse, Grand Est, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Occitanie, Provence-Alpes-Côte d'Azur"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Corse",
+          "Grand Est",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Occitanie",
+          "Provence-Alpes-Côte d'Azur"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2026",
+        "end": "31/12/2026"
+      },
+      "priorityObjectives": [
+        "building",
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Auvergne-Rhône-Alpes",
+          "région = Bourgogne-Franche-Comté",
+          "région = Corse",
+          "région = Grand Est",
+          "région = Hauts-de-France",
+          "région = Île-de-France",
+          "région = La Réunion",
+          "région = Martinique",
+          "région = Mayotte",
+          "région = Normandie",
+          "région = Nouvelle-Aquitaine",
+          "région = Occitanie",
+          "région = Provence-Alpes-Côte d'Azur"
+        ]
+      }
+    },
+    "id": "etude-d-opportunite-multi-enrr",
     "type": "tee"
   }
 ]

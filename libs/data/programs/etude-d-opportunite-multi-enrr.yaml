@@ -1,53 +1,24 @@
-titre: Étude sur la production d'électricité renouvelable en Outre-mer et Corse
+titre: Étude d'opportunité énergies renouvelables et de récupération
 promesse: >-
-  Financez une étude pour vérifier la faisabilité d'un projet de production
-  d'électricité verte
-description: >-
-  Recevez un financement de l'ADEME pour une étude qui établit la **faisabilité
-  d'un projet de production d'électricité** (technique, économique, sociale,
-  environnementale, juridique, etc.) à partir des technologies vertes suivantes
-  :
-
-
-  - Photovoltaïque en autoconsommation individuelle et collective.
-
-  - Éolien terrestre et en mer.
-
-  - Hydrolien fluvial et marin.
-
-  - Petite hydroélectricité au fil de l’eau et microhydroélectricité sur
-  conduite d’eau.
-
-  - Énergie houlomotrice.
-
-  - Énergie thermique des mers.
-
-  - Énergie osmotique.
-
-  - Station de transfert d’énergie par pompage.
-description longue: >-
-  Le prestataire réalisant l'étude de faisabilité doit être externe au
-  bénéficiaire de l'étude et doit s'engager à n'exercer aucune activité
-  incompatible avec son indépendance de jugement et son intégrité. Il n'est pas
-  impliqué directement et n'a pas d'intérêts particuliers: vente, fabrication,
-  installation, utilisation ou maintenance des objets sur lesquels porte
-  l'étude.
+  Financez une étude afin d’identifier la solution de chaleur et froid
+  renouvelable la plus adaptée
+description: "Obtenez le financement d'une étude d'opportunité qui vous permet d'avoir une vision exhaustive des **solutions de chaleur et de froids renouvelables** **compatibles techniquement avec les besoins de votre bâtiment.**\\\n\\\nCette étude comprendra notamment\_:\n\n- Un **état des lieux énergétique** succinct du ou des bâtiments existants.\n- L’**identification de solutions de sobriété et d’efficacité énergétique** à mettre en place.\n- L'**analyse de l’ensemble des ressources énergies renouvelables disponibles** (raccordement à un réseau de chaleur et de froid urbain ou à une boucle d’eau tempérée géothermique, récupération et/ou valorisation de chaleur fatale, géothermies, solaire thermique, bois énergie, aérothermie).\n- L’**étude de l’adéquation des besoins énergétiques** du ou des bâtiments et des ressources disponibles.\n- Une **analyse multicritère pour comparer ces scénarios techniques** entre eux et identifier les solutions les plus pertinentes."
 début de validité: 01/01/2026
 fin de validité: 31/12/2026
-illustration: images/TEE_ampoule.webp
+illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
-contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000876
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000882
 url: >-
-  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-dopportunite-multi-enrr
 nature de l'aide: étude
-montant du financement: Jusqu'à 80% du coût de l'étude, dans la limite de 50 000 €
+montant du financement: Jusqu’à 70 % du coût de l'étude pour une petite entreprise
 objectifs:
   - description: >-
       Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
       projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://file:///Users/betagouv/Downloads/%C3%89tude%20de%20Faisabilit%C3%A9%20EnR%20%C3%A9lectrique%20-%20Conditions%20d'%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026-1.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tudes%20en%20faveur%20de%20la%20transition%20%C3%A9cologique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
         texte: Conditions éligibilité et financement
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
     liens:
@@ -59,7 +30,7 @@ objectifs:
       doit pas avoir commencé !
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-dopportunite-multi-enrr
         texte: Déposer mon dossier
   - description: >-
       L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
@@ -72,16 +43,13 @@ conditions d'éligibilité:
     - Éligible aux micro-entreprises
   secteur géographique:
     - >-
-      Corse, Guadeloupe, Guyane, La Réunion, Martinique, Mayotte,
-      Nouvelle-Calédonie, Polynésie française
+      Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Corse, Grand Est,
+      Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte,
+      Normandie, Nouvelle-Aquitaine, Occitanie, Provence-Alpes-Côte d'Azur
   secteur d'activité:
     - Tous secteurs d'activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
-  autres critères d'éligibilité:
-    - >-
-      En Nouvelle Calédonie, le dispositif est réservé aux projets de petite
-      hydroélectricité.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -120,14 +88,20 @@ publicodes:
       - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
       - questionnaire . objectif prioritaire . est ma performance énergétique
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
+      - région = Auvergne-Rhône-Alpes
+      - région = Bourgogne-Franche-Comté
       - région = Corse
-      - région = Guadeloupe
-      - région = Guyane
+      - région = Grand Est
+      - région = Hauts-de-France
+      - région = Île-de-France
       - région = La Réunion
       - région = Martinique
       - région = Mayotte
-      - région = Nouvelle-Calédonie
-      - région = Polynésie française
+      - région = Normandie
+      - région = Nouvelle-Aquitaine
+      - région = Occitanie
+      - région = Provence-Alpes-Côte d'Azur

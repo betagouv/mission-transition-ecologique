@@ -49,6 +49,10 @@ conditions d'éligibilité:
       et transports.
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Dispositif prioritairement destiné aux entreprises de moins de 50
+      salariés.
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
