@@ -1,6 +1,10 @@
 import { ProgramAidType, ProgramTypeForFront } from '@/types'
 
 export class ProgramSorter {
+  static byAlphabeticalOrder(programs: ProgramTypeForFront[]) {
+    return programs.slice().sort((a, b) => a.id.localeCompare(b.id))
+  }
+
   static byFinanceAidType(programs: ProgramTypeForFront[]) {
     return programs.slice().sort((a, b) => {
       const aidKey = "nature de l'aide"
