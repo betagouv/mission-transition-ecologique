@@ -216,7 +216,8 @@
       "camping-independant-na",
       "hotellerie-independante-bfc",
       "certificats-economie-energie",
-      "decarb-flash-2025-2027"
+      "decarb-flash-2025-2027",
+      "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       4
@@ -282,7 +283,8 @@
       "cap-transition-ecologique",
       "aide-tpe-transition-na",
       "aide-investissement-corse",
-      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       21
@@ -347,7 +349,9 @@
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
       "deter-decarboner-le-tertiaire",
-      "cheque-transition-tissu-economique"
+      "cheque-transition-tissu-economique",
+      "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
+      "etude-d-opportunite-multi-enrr"
     ],
     "linkedProjects": [
       4
@@ -421,7 +425,8 @@
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
       "deter-decarboner-le-tertiaire",
-      "cheque-transition-tissu-economique"
+      "cheque-transition-tissu-economique",
+      "etude-d-opportunite-multi-enrr"
     ],
     "linkedProjects": [
       4
@@ -598,7 +603,8 @@
       "certificats-economie-energie",
       "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
       "deter-decarboner-le-tertiaire",
-      "cheque-transition-tissu-economique"
+      "cheque-transition-tissu-economique",
+      "etude-d-opportunite-multi-enrr"
     ],
     "linkedProjects": [
       4
@@ -668,7 +674,9 @@
       "aide-investissement-corse",
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
-      "cheque-transition-tissu-economique"
+      "cheque-transition-tissu-economique",
+      "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
+      "etude-d-opportunite-multi-enrr"
     ],
     "linkedProjects": [
       4
@@ -801,7 +809,8 @@
       "perf-crise-energetique-cvl",
       "hotellerie-independante-bfc",
       "certificats-economie-energie",
-      "cheque-transition-tissu-economique"
+      "cheque-transition-tissu-economique",
+      "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       4
@@ -867,7 +876,8 @@
       "perf-crise-energetique-cvl",
       "agir-pdl",
       "certificats-economie-energie",
-      "cheque-transition-tissu-economique"
+      "cheque-transition-tissu-economique",
+      "etude-d-opportunite-multi-enrr"
     ],
     "linkedProjects": [
       4
@@ -1527,7 +1537,8 @@
       "booster-transformation-rev-3",
       "easy-diag",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
-      "diagnostic-et-accompagnement-co2i"
+      "diagnostic-et-accompagnement-co2i",
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action déchets",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action déchets",
@@ -1671,7 +1682,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "aide-tpe-transition-na",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       21
@@ -1743,7 +1755,8 @@
       "camping-independant-na",
       "aide-tpe-transition-na",
       "aide-investissement-corse",
-      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       21
@@ -1870,6 +1883,8 @@
       "easy-diag",
       "formations-atlas",
       "formations-afdas",
+      "formations-akto",
+      "formations-constructys",
       "formations-opcommerce",
       "formations-ocapiat",
       "formations-2i",
@@ -1884,7 +1899,8 @@
       "diagnostic-et-accompagnement-co2i",
       "accompagnement-rh",
       "plan-de-developpement-des-competences",
-      "autodiagnostic-rse"
+      "autodiagnostic-rse",
+      "m-diagnostic-accompagnement"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
@@ -2047,6 +2063,8 @@
       "easy-diag",
       "formations-atlas",
       "formations-afdas",
+      "formations-akto",
+      "formations-constructys",
       "formations-opcommerce",
       "formations-ocapiat",
       "formations-2i",
@@ -2060,7 +2078,8 @@
       "defi-eco-2050",
       "accompagnement-rh",
       "plan-de-developpement-des-competences",
-      "autodiagnostic-rse"
+      "autodiagnostic-rse",
+      "m-diagnostic-accompagnement"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une formation environnement",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre formation environnement",
@@ -2213,7 +2232,8 @@
       "diagnostic-rh",
       "accompagnement-rh",
       "plan-de-developpement-des-competences",
-      "autodiagnostic-rse"
+      "autodiagnostic-rse",
+      "m-diagnostic-accompagnement"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
@@ -3271,6 +3291,7 @@
     ],
     "mainTheme": "biodiversite",
     "programs": [
+      "amelioration-qualite-de-l-air",
       "fonds-tourisme-durable",
       "sobriete-et-resilience-des-territoires",
       "certification-agriculture-biologique",
@@ -3697,6 +3718,7 @@
     "mainTheme": "mobility",
     "programs": [
       "bonus-ecologique",
+      "amelioration-qualite-de-l-air",
       "prime-a-la-conversion",
       "programme-eve",
       "cheque-transition-bioethanol",
@@ -3756,7 +3778,8 @@
       "investissement-methanisation",
       "aide-tpe-transition-na",
       "certificats-economie-energie",
-      "investissement-methanisation-paca"
+      "investissement-methanisation-paca",
+      "etude-d-opportunite-multi-enrr"
     ],
     "linkedProjects": [
       4,
@@ -3796,7 +3819,8 @@
       "pret-economies-d-energie-pee",
       "certificats-economie-energie",
       "demi-bac",
-      "ibac-pme"
+      "ibac-pme",
+      "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       4
@@ -3973,7 +3997,8 @@
       "pret-ile-de-france",
       "cap-transition-ecologique",
       "aide-tpe-transition-na",
-      "aide-investissement-corse"
+      "aide-investissement-corse",
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       21
@@ -4007,7 +4032,8 @@
     "programs": [
       "fond-vert-territoires-d-industrie",
       "programme-synergies-durables",
-      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4411,6 +4437,7 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "amelioration-qualite-de-l-air",
       "programme-eve",
       "parm-vnf",
       "remove"
@@ -4513,6 +4540,7 @@
     ],
     "mainTheme": "mobility",
     "programs": [
+      "amelioration-qualite-de-l-air",
       "vehicule-lourd-energies-propres",
       "certificats-economie-energie"
     ],
@@ -4717,7 +4745,8 @@
       "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
       "demi-bac",
       "ibac-pme",
-      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       36
@@ -4752,7 +4781,9 @@
       "waste"
     ],
     "mainTheme": "waste",
-    "programs": [],
+    "programs": [
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
+    ],
     "linkedProjects": [],
     "priority": {
       "default": 720,
@@ -4787,7 +4818,8 @@
       "fond-vert-territoires-d-industrie",
       "charte-zero-dechet-plastique",
       "aide-tpe-transition-na",
-      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
       21
@@ -4863,6 +4895,7 @@
     "mainTheme": "mobility",
     "programs": [
       "engins-moins-polluants",
+      "amelioration-qualite-de-l-air",
       "fond-vert-territoires-d-industrie"
     ],
     "linkedProjects": [
