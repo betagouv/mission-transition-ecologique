@@ -404,7 +404,9 @@
     "operator": "Opco Santé",
     "filterCategories": [
       "OPCO"
-    ]
+    ],
+    "imagePath": "/images/logos/operateur/opco-sante.webp",
+    "color": "purple"
   },
   {
     "operator": "Opco Uniformation",
