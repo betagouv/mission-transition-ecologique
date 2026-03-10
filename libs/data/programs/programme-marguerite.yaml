@@ -1,0 +1,111 @@
+titre: Programme Marguerite
+promesse: >-
+  Testez et adoptez des solutions pour réduire l'usage de votre utilitaire en
+  ville
+description: >-
+  Le Programme Marguerite accompagne les artisans et commerçants confrontés aux
+  difficultés de circulation et de stationnement en centre-ville, afin de
+  **réduire l’utilisation de leur véhicule professionnel**, en leur proposant de
+  tester des **solutions logistiques adaptées à leur activité** :
+
+
+  - Livraison sur chantier.
+
+
+  - Évacuation des déchets.
+
+
+  - Mobilités douces.
+
+
+  - Stockage partagé.
+
+
+  - Tournées d'approvisionnement.
+
+
+  - Etc.
+description longue: >-
+  Le Programme Marguerite s'inscrit dans le cadre des certificats d’économies
+  d’énergie (CEE).
+début de validité: 01/01/2024
+fin de validité: 31/12/2026
+illustration: images/TEE_eolienne.webp
+opérateur de contact: CCI ou CMA
+contact question: https://www.programme-marguerite.fr/contact
+url: https://www.programme-marguerite.fr/
+nature de l'aide: financement
+montant du financement: Jusqu'à 1000 €
+activable en autonomie: oui
+objectifs:
+  - description: Remplissez le formulaire de contact du Programme Marguerite.
+    liens:
+      - lien: https://www.programme-marguerite.fr/contact
+        texte: Formulaire de contact
+  - description: >-
+      Vous êtes rappelé sous 48h pour un aiguillage vers la solution la plus
+      adaptée.
+  - description: >-
+      Bénéficiez d'une aide financière pour la mise en place d'une solution sur
+      mesure.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - moins de 20 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - >-
+      Auvergne-Rhône-Alpes, Bouches-du-Rhône, Hauts-de-France, Île-de-France,
+      Nouvelle-Aquitaine, Pays de la Loire
+  secteur d'activité:
+    - Artisans et commerçants
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      Détenir un ou plusieurs véhicules utilisés dans le cadre de l'activité
+      professionnelle.
+    - >-
+      Être en création d'entreprise et avoir besoin de gérer sa logistique :
+      notamment approvisionnement, livraison, gestion des déchets.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Auvergne-Rhône-Alpes
+      - région = Bouches-du-Rhône
+      - région = Hauts-de-France
+      - région = Île-de-France
+      - région = Nouvelle-Aquitaine
+      - région = Pays de la Loire
