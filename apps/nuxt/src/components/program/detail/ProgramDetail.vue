@@ -31,11 +31,10 @@
           <ProgramMainCta
             :is-activation-visible="isActivationVisible"
             :scroll-to-form="scrollToForm"
-            :scroll-to-activation="scrollToActivation"
           />
         </div>
       </div>
-      <div ref="activation-ref">
+      <div>
         <ProgramActivation
           v-if="isActivationVisible"
           :is-form-visible="isFormVisible"
@@ -85,7 +84,6 @@ const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const navigation = new Navigation()
 const formRef = useTemplateRef<HTMLElement>('form-ref')
-const activationRef = useTemplateRef<HTMLElement>('activation-ref')
 
 onNuxtReady(async () => {
   if (currentProgram.value) {
@@ -134,7 +132,6 @@ const scrollToRef = (targetRef: HTMLElement | null | undefined) => {
   }
 }
 const scrollToForm = () => scrollToRef(formRef.value)
-const scrollToActivation = () => scrollToRef(activationRef.value)
 
 const description = currentProgram.value?.metaDescription ?? currentProgram.value?.description
 useSeoMeta(MetaSeo.get(currentProgram.value?.metaTitre ?? currentProgram.value?.titre, description))
