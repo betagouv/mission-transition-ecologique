@@ -1163,7 +1163,8 @@
       "impulsion-environnement",
       "je-change-ma-voiture",
       "mobilipro",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "programme-marguerite"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action mobilité",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action mobilité",
@@ -1755,6 +1756,7 @@
       "camping-independant-na",
       "aide-tpe-transition-na",
       "aide-investissement-corse",
+      "programme-marguerite",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
       "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
     ],
@@ -3724,7 +3726,8 @@
       "cheque-transition-bioethanol",
       "deploiement-flottes-hydrogene",
       "pass-transition-bzh",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "programme-marguerite"
     ],
     "linkedProjects": [
       16
@@ -4132,7 +4135,8 @@
       "je-change-ma-voiture",
       "mobilipro",
       "certificats-economie-energie",
-      "parm-vnf"
+      "parm-vnf",
+      "programme-marguerite"
     ],
     "linkedProjects": [
       16
@@ -4963,6 +4967,59 @@
       "F",
       "G",
       "H"
+    ],
+    "faqs": []
+  },
+  {
+    "id": 1459,
+    "slug": "economie-fonctionnalite",
+    "title": "Économie de la fonctionnalité et de la coopération",
+    "nameTag": "♻️ economie fonctionnalite",
+    "shortDescription": "L'économie de la fonctionnalité permet de concilier croissance économique et transition écologique.",
+    "image": "/images/projet/economie-fonctionnalite.webp",
+    "longDescription": "L’économie de la fonctionnalité et de la coopération consiste à changer d'approche économique en mettant au cœur de l'entreprise la réponse à un besoin plutôt que la vente en grande quantité de produits et de biens. \\\nCette approche permet, entre autres :\n\n- D'accroitre le chiffre d'affaire de l'entreprise en centrant ses objectifs sur la **qualité de service, les compétences, l'utilité servicielle**, et non plus sur le volume des ventes.\n- De fabriquer un **service ou un produit robuste et durable**, à travers notamment l'analyse du cycle de vie, et l'économie circulaire.\n- D'expérimenter de **nouvelles formes d'organisation de la production.**\n- De **réduire les impacts environnementaux** de l'entreprise.",
+    "moreDescription": "- [**Centre de ressources ADEME Économie circulaire**](https://economie-circulaire.ademe.fr/economie-fonctionnalite-cooperation-entreprises)**.**\n- [**L'économie servicielle sociale et soutenable**](https://www.vie-publique.fr/rapport/290468-pour-une-economie-servicielle-sociale-et-soutenable), un rapport du CESE.\n- [**Économie de la fonctionnalité : les grandes entreprises s’y mettent aussi**](https://infos.ademe.fr/magazine-decembre-2023-janvier-2024/dossier/economie-de-la-fonctionnalite-les-grandes-entreprises-sy-mettent-aussi/), un dossier de l'ADEME.",
+    "themes": [
+      "eco-design"
+    ],
+    "mainTheme": "eco-design",
+    "programs": [
+      "diag-ecoconception",
+      "diagnostic-eco-conception-ile-de-france",
+      "etude-economie-de-la-fonctionnalite",
+      "etude-performance-produits",
+      "etude-reemploi-reutilisation-reparation",
+      "investissement-reemploi-reutilisation-reparation",
+      "ecoconception-bzh"
+    ],
+    "descriptionLinkedProjects": "",
+    "linkedProjects": [],
+    "priority": {
+      "default": 723
+    },
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
     ],
     "faqs": []
   },
