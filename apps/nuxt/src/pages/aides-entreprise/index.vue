@@ -16,7 +16,7 @@
       <ProgramFiltersAccordion with-title />
     </template>
     <ProgramList
-      :filtered-programs="programsByFilters"
+      :filtered-programs="sortedProgramsByFilters"
       :ext-filtered-programs="extProgramsByFilters"
     />
   </LayoutCatalog>
@@ -28,6 +28,7 @@ import Navigation from '@/tools/navigation'
 import { FaqSectionType, RouteName } from '@/types'
 import { useProgramStore } from '@/stores/program'
 import { ProgramManager } from '@/tools/program/programManager'
+import { ProgramSorter } from '@/tools/program/programSorter'
 import { MetaSeo } from '@/tools/metaSeo'
 import { computed, onMounted } from 'vue'
 import { MetaRobots } from '@/tools/metaRobots'
@@ -44,6 +45,7 @@ const { default: json } = await import('@/public/json/faq/catalog-program.json')
 const faqCatalogProgram = json as unknown as FaqSectionType[]
 
 const { hasError, programsByFilters, extProgramsByFilters } = storeToRefs(useProgramStore())
+const sortedProgramsByFilters = computed(() => ProgramSorter.byAlphabeticalOrder(programsByFilters.value))
 const navigation = new Navigation()
 const route = useRoute()
 
