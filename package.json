@@ -77,7 +77,7 @@
     "@sentry/node": "10.39.0",
     "@sentry/nuxt": "10.39.0",
     "@types/node": "22.19.11",
-    "@unhead/schema-org": "2.1.4",
+    "@unhead/schema-org": "2.1.12",
     "@vueuse/core": "13.9.0",
     "axios": "1.13.5",
     "chart.js": "4.5.1",
