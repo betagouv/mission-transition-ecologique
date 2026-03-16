@@ -16,7 +16,7 @@ description: >-
 début de validité: 01/03/2026
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Opco Mobilités
-contact question: https://www.opcomobilites.fr/votre-delegation-regionale
+contact question: https://www.opcomobilites.fr/nous-contacter/
 url: >-
   https://www.opcomobilites.fr/entreprise/anticiper-mes-besoins-en-emploi-et-competences-1
 nature de l'aide: étude
@@ -32,7 +32,7 @@ objectifs:
       Contactez votre conseiller régional Opco Mobilités pour lui manifester
       votre intérêt pour cet accompagnement.
     liens:
-      - lien: https://www.opcomobilites.fr/votre-delegation-regionale
+      - lien: https://www.opcomobilites.fr/nous-contacter/
         texte: Contacter mon conseiller
   - description: >-
       Établissez avec lui le périmètre de l'accompagnement ainsi que le
