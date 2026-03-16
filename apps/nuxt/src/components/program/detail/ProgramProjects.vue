@@ -2,7 +2,7 @@
   <TeeContentBlock
     v-if="program && linkedProjects && linkedProjects.length > 0"
     id="linked-projects"
-    :title="Breakpoint.isMobile() ? Translation.t('program.projectExamplesSM') : Translation.t('program.projectExamples')"
+    :title="Translation.t('program.projectExamples')"
     class="fr-py-5v fr-border-t--grey--light"
     title-class="fr-h4"
   >
@@ -26,7 +26,6 @@
 <script lang="ts" setup>
 import Translation from '@/tools/translation'
 import { ProgramTypeForFront } from '@/types'
-import Breakpoint from '@/tools/breakpoints'
 import { useProjectStore } from '@/stores/project'
 import { storeToRefs } from 'pinia'
 import Program from '@/tools/program/program'
