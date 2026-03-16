@@ -1,0 +1,94 @@
+titre: Veille artisanat
+promesse: Suivez en direct les enjeux du secteur de l’artisanat
+description: >-
+  Artisans, abonnez-vous et recevez (par mail, flux RSS...) une information
+  fiable et actualisée pour garantir la conformité réglementaire et éviter les
+  risques liés à la méconnaissance des obligations.\
+
+  Cette Veille Artisanat vous permettra de :
+
+
+  - Vous **adapter rapidement aux changements** législatifs, économiques et
+  sectoriels.
+
+  - Vous **libérer des recherches complexes** et vous permettre de vous
+  concentrer sur votre activité.
+
+  - **Soutenir la prise de décision et l’innovation** en offrant une vision
+  claire des tendances et opportunités du secteur.
+description longue: >-
+  Le dispositif se présente sous la forme de :
+
+
+  - Veille réglementaire : suivi des textes législatifs et réglementaires
+  (national, régional, européen) concernant l’artisanat.
+
+  - Veille sectorielle : actualités économiques, tendances métiers, innovations.
+
+  - Synthèses thématiques : fiches pratiques sur les obligations légales
+  (fiscalité, environnement, sécurité, etc.)
+
+  - Alertes ciblées : notifications quotidienne, hebdomadaires, mensuelles.
+
+  - Newsletter mensuelle : récapitulatif des informations clés.
+illustration: images/TEE_eolienne.webp
+opérateur de contact: Chambre des Métiers et de l'Artisanat
+contact question: formulaire
+url: https://veille.artisanat.fr/dossier_thematique/developpement-durable.html
+nature de l'aide: étude
+coût de l'accompagnement: gratuite
+durée de l'accompagnement: Veille quotidienne
+activable en autonomie: oui
+objectifs:
+  - description: Rendez-vous sur la page de Veille Artisanat.
+    liens:
+      - lien: >-
+          https://veille.artisanat.fr/dossier_thematique/developpement-durable.html
+        texte: Veille Artisanat
+  - description: >-
+      Choisissez le canal d'information qui vous convient, vos thèmes de
+      prédilection et remplissez le formulaire.
+  - description: >-
+      Recevez les informations à la fréquence et sur le canal que vous aurez
+      choisi.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Entreprises artisanales.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental

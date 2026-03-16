@@ -21,7 +21,8 @@ description: >-
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Chambre de Commerce et de l'Industrie
 contact question: formulaire
-url: https://www.ccibusinessoptimizer.fr/
+url: >-
+  https://www.cci.fr/ressources/commerce-et-tourisme/cci-business-optimizer-faire-gagnez-aux-hotels-restaurants-et-cafes-des-marges-sur-les-couts-energetiques-sans-investissements
 nature de l'aide: formation
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 10 minutes
@@ -29,8 +30,9 @@ activable en autonomie: oui
 objectifs:
   - description: Utilisez le service "CCI Business Optimizer" en ligne.
     liens:
-      - lien: https://www.ccibusinessoptimizer.fr/
-        texte: ccibusinessoptimizer.fr
+      - lien: >-
+          https://www.cci.fr/ressources/commerce-et-tourisme/cci-business-optimizer-faire-gagnez-aux-hotels-restaurants-et-cafes-des-marges-sur-les-couts-energetiques-sans-investissements
+        texte: Accédez à CCI Business Optimizer
   - description: >-
       Obtenez un bilan personnalisé des actions à engager et les coordonnées
       d’un conseiller CCI pour aller plus loin dans votre démarche.

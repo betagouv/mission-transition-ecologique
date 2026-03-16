@@ -1,0 +1,115 @@
+titre: Sobriété hydrique des entreprises
+promesse: Investissez dans la réduction de vos consommations et prélèvements d'eau
+description: >-
+  Bénéficiez de subventions pour vous aider à engager des actions (études,
+  investissements, campagnes de sensibilisation, recherche et développement,
+  innovation...) d’économie d’eau, telles que :
+
+
+  - Études de **diagnostics de vos consommations**.
+
+  - Identification des **actions pertinentes**.
+
+  - **Réduction des fuites**.
+
+  - Mise en œuvre de **technologies économes en eau**.
+
+  - Récupération d'**eau pluviale**.
+description longue: >-
+  - Les opérations d’économies d’eau doivent se traduire par une diminution
+  effective des prélèvements dans le milieu au point de prélèvement ou sur le
+  réseau d’eau potable.
+
+  - Pour les travaux, les aides sont conditionnées à l’existence de dispositifs
+  de comptage des prélèvements ou à la présentation simultanée d’une demande
+  d’aide pour l’installation d’un tel dispositif, permettant de démontrer à
+  terme l’atteinte de l’objectif d’économie annoncé.
+
+  - Les actions d’économie d’eau inférieures à 2 000 m³/an sont aidées
+  uniquement dans le cadre de démarches collectives de branche ou de filière,
+  via un appel à projets.
+
+  - Les projets R&D doivent être en lien avec des industriels situés sur les
+  bassins Rhône Méditerranée et Corse.
+début de validité: 01/01/2025
+fin de validité: 31/12/2030
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: Agence de l'Eau Rhône-Méditerranée-Corse
+contact question: https://www.eaurmc.fr/jcms/vmr_36053/fr/contactez-nous
+url: >-
+  https://www.eaurmc.fr/jcms/pro_128682/fr/eco3-sobriete-en-eau-des-activites-industrielles-et-economiques
+nature de l'aide: financement
+montant du financement: Jusqu'à 50% du coût de l'étude ou de l'investissement
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Consultez la documentation pour vérifier l’éligibilité de votre projet ou
+      contactez un conseiller.
+    liens:
+      - lien: >-
+          https://www.eaurmc.fr/jcms/pro_128682/fr/eco3-sobriete-en-eau-des-activites-industrielles-et-economiques
+        texte: Conditions éligibilité et financement
+  - description: Créez un compte Agence de l'eau pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://aides.eaurmc.fr/Tsa/#/mon-compte/creation
+        texte: Créer mon compte
+  - description: "Déposez votre dossier de demande d’aide[ ](https://)via le portail de téléservice des aides, dès que votre avant-projet sommaire ou votre cahier des charges est prêt.\_À ce stade votre projet ne doit pas avoir commencé !"
+    liens:
+      - lien: https://aides.eaurmc.fr/Tsa/
+        texte: Déposer mon dossier
+  - description: >-
+      L'Agence de l'eau étudie votre demande d'aide. Si votre demande est
+      acceptée, recevez un contrat de financement précisant le montant d’aide
+      maximum, les conditions et les modalités de versement.
+  - description: Réalisez vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Bouches-du-Rhône, Corse
+  secteur d'activité:
+    - >-
+      Acteurs économiques (industries, sociétés, entreprises, coopératives…) non
+      agricoles, et organismes de recherche.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
