@@ -141,7 +141,6 @@
       "camping-independant-na",
       "hotellerie-independante-bfc",
       "aide-tourisme-guadeloupe",
-      "certificats-economie-energie",
       "cheque-transition-tissu-economique"
     ],
     "linkedProjects": [
@@ -186,7 +185,7 @@
     "shortDescription": "L’énergie solaire photovoltaïque transforme le rayonnement solaire en électricité.",
     "image": "/images/projet/panneaux-solaires.webp",
     "longDescription": "Les panneaux solaires produisent de l'électricité grâce au rayonnement du soleil.\\\nPosés sur une toiture, au sol ou sur une terrasse, les capteurs peuvent être également intégrés à votre bâtiment, sous forme d'ardoises, de tuiles ou d'éléments de façades.\\\nL’électricité produite peut être utilisée sur place (autoconsommation) ou réinjectée dans le réseau de distribution électrique.\\\nL'installation de panneaux solaires vous permet donc de faire des économies et de réduire l'empreinte écologique de votre entreprise.",
-    "moreDescription": "- [**Le Centre de ressources Photovoltaïque**](https://www.photovoltaique.info/fr/) : un site ressource sur le Photovoltaïque crée avec le soutient de l’ADEME.\n- [**La marque AQPV**](https://www.aqpv.fr/) (Alliance Qualité Photovoltaïque) : lancée par l'État, cette marque rassemble tous les modules photovoltaïques afin d'assurer une performance et une fiabilité maximale en termes de conception, installation, opération et maintenance.\n- [**L'électricité photovoltaïque en 10 questions**](https://librairie.ademe.fr/batiment/7545-l-electricite-photovoltaique-en-10-questions-9791029721465.html)**,** un livret proposé par l'ADEME.\n- [**Qualit’EnR**](https://www.qualit-enr.org/), un annuaire de professionnels RGE qualifiés pour votre projet de construction ou de rénovation énergétique.",
+    "moreDescription": "- [**Le Centre de ressources Photovoltaïque**](https://www.photovoltaique.info/fr/) : un site ressource sur le Photovoltaïque crée avec le soutient de l’ADEME.\n- [**La marque AQPV**](https://www.aqpv.fr/) (Alliance Qualité Photovoltaïque) : lancée par l'État, cette marque rassemble tous les modules photovoltaïques afin d'assurer une performance et une fiabilité maximale en termes de conception, installation, opération et maintenance.\n- [**L'électricité photovoltaïque en 10 questions**](https://librairie.ademe.fr/batiment/7545-l-electricite-photovoltaique-en-10-questions-9791029721465.html)**,** un livret proposé par l'ADEME.\n- [**Qualit’EnR**](https://www.qualit-enr.org/), un annuaire de professionnels RGE qualifiés pour votre projet de construction ou de rénovation énergétique.\n- [**La règlementation autour de l'installation de panneaux solaires pour les entreprises**](https://entreprendre.service-public.gouv.fr/vosdroits/F38925), une ressource d'Entreprendre, le site officiel d’information administrative et de démarches pour les entreprises.",
     "themes": [
       "energy"
     ],
@@ -1163,7 +1162,8 @@
       "impulsion-environnement",
       "je-change-ma-voiture",
       "mobilipro",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "programme-marguerite"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action mobilité",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action mobilité",
@@ -1448,7 +1448,8 @@
       "hotellerie-independante-bfc",
       "aide-tourisme-guadeloupe",
       "booster-transformation-rev-3",
-      "diagnostic-et-accompagnement-co2i"
+      "diagnostic-et-accompagnement-co2i",
+      "sobriete-hydrique"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action eau",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action eau",
@@ -1755,6 +1756,7 @@
       "camping-independant-na",
       "aide-tpe-transition-na",
       "aide-investissement-corse",
+      "programme-marguerite",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
       "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
     ],
@@ -1892,6 +1894,7 @@
       "formations-sante",
       "formations-uniformation",
       "formations-mobilite",
+      "veille-artisanat",
       "expert-atlas",
       "diag-accompagnement-tee-rh",
       "diagnostic-rh",
@@ -2072,6 +2075,7 @@
       "formations-sante",
       "formations-uniformation",
       "formations-mobilite",
+      "veille-artisanat",
       "expert-atlas",
       "diag-accompagnement-tee-rh",
       "diagnostic-rh",
@@ -2228,6 +2232,7 @@
       "booster-transformation-rev-3",
       "easy-diag",
       "accelerateur-des-possibles",
+      "veille-artisanat",
       "expert-atlas",
       "diagnostic-rh",
       "accompagnement-rh",
@@ -2755,7 +2760,8 @@
       "prit-hdf",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "sobriete-hydrique"
     ],
     "linkedProjects": [
       20
@@ -2823,7 +2829,8 @@
       "prit-hdf",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "sobriete-hydrique"
     ],
     "linkedProjects": [
       20
@@ -3065,7 +3072,8 @@
       "prit-hdf",
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
-      "aide-tourisme-guadeloupe"
+      "aide-tourisme-guadeloupe",
+      "sobriete-hydrique"
     ],
     "linkedProjects": [
       20
@@ -3591,7 +3599,8 @@
       "formation-convaincre-et-argumenter",
       "formation-communiquer-et-sensibiliser",
       "outils-pour-adaptation",
-      "easy-diag"
+      "easy-diag",
+      "veille-artisanat"
     ],
     "linkedProjects": [
       26
@@ -3724,7 +3733,8 @@
       "cheque-transition-bioethanol",
       "deploiement-flottes-hydrogene",
       "pass-transition-bzh",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "programme-marguerite"
     ],
     "linkedProjects": [
       16
@@ -4132,7 +4142,8 @@
       "je-change-ma-voiture",
       "mobilipro",
       "certificats-economie-energie",
-      "parm-vnf"
+      "parm-vnf",
+      "programme-marguerite"
     ],
     "linkedProjects": [
       16
@@ -4967,6 +4978,59 @@
     "faqs": []
   },
   {
+    "id": 1459,
+    "slug": "economie-fonctionnalite",
+    "title": "Économie de la fonctionnalité et de la coopération",
+    "nameTag": "♻️ economie fonctionnalite",
+    "shortDescription": "L'économie de la fonctionnalité permet de concilier croissance économique et transition écologique.",
+    "image": "/images/projet/economie-fonctionnalite.webp",
+    "longDescription": "L’économie de la fonctionnalité et de la coopération consiste à changer d'approche économique en mettant au cœur de l'entreprise la réponse à un besoin plutôt que la vente en grande quantité de produits et de biens. \\\nCette approche permet, entre autres :\n\n- D'accroitre le chiffre d'affaire de l'entreprise en centrant ses objectifs sur la **qualité de service, les compétences, l'utilité servicielle**, et non plus sur le volume des ventes.\n- De fabriquer un **service ou un produit robuste et durable**, à travers notamment l'analyse du cycle de vie, et l'économie circulaire.\n- D'expérimenter de **nouvelles formes d'organisation de la production.**\n- De **réduire les impacts environnementaux** de l'entreprise.",
+    "moreDescription": "- [**Centre de ressources ADEME Économie circulaire**](https://economie-circulaire.ademe.fr/economie-fonctionnalite-cooperation-entreprises)**.**\n- [**L'économie servicielle sociale et soutenable**](https://www.vie-publique.fr/rapport/290468-pour-une-economie-servicielle-sociale-et-soutenable), un rapport du CESE.\n- [**Économie de la fonctionnalité : les grandes entreprises s’y mettent aussi**](https://infos.ademe.fr/magazine-decembre-2023-janvier-2024/dossier/economie-de-la-fonctionnalite-les-grandes-entreprises-sy-mettent-aussi/), un dossier de l'ADEME.",
+    "themes": [
+      "eco-design"
+    ],
+    "mainTheme": "eco-design",
+    "programs": [
+      "diag-ecoconception",
+      "diagnostic-eco-conception-ile-de-france",
+      "etude-economie-de-la-fonctionnalite",
+      "etude-performance-produits",
+      "etude-reemploi-reutilisation-reparation",
+      "investissement-reemploi-reutilisation-reparation",
+      "ecoconception-bzh"
+    ],
+    "descriptionLinkedProjects": "",
+    "linkedProjects": [],
+    "priority": {
+      "default": 723
+    },
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J",
+      "K",
+      "L",
+      "M",
+      "N",
+      "O",
+      "P",
+      "Q",
+      "R",
+      "S",
+      "T",
+      "U"
+    ],
+    "faqs": []
+  },
+  {
     "id": 1490,
     "slug": "hydrogene-vert",
     "title": "Hydrogène vert",
@@ -5005,7 +5069,7 @@
     "slug": "efficacite-energetique-des-procedes-industriels",
     "title": "Efficacité énergétique des procédés industriels",
     "nameTag": "⚡ efficacité industrielle",
-    "shortDescription": "Elle permet de réduire la facture énergétique associée aux procédés industriels de production.",
+    "shortDescription": "Elle permet de réduire la facture énergétique et de décarboner les procédés industriels de production.",
     "image": "/images/projet/efficacite-energetique-des-procedes-industriels.webp",
     "longDescription": "Le remplacement de vos équipements industriels par des équipements électriques (chaudière, four, système de chauffage ou de séchage…), l'installation de purgeurs vapeur, de lignes de retours, d'un système de thermocompression ou de mise sous-vide sont autant d’actions qui vous permettent de rendre vos procédés industriels efficaces. \\\nAinsi cela vous permet :\n\n- de **faire baisser la facture** énergétique des coûts de production.\n- d'**améliorer la performance** de votre site industriel.\n- de **participer à la décarbonation** de l’industrie .",
     "moreDescription": "- [**Décarboner l'industrie, enjeux et défis**](https://librairie.ademe.fr/industrie-et-production-durable/7146-decarboner-l-industrie-9791029722974.html) : une présentation de l'ADEME.\n- [**La flexibilité électrique en industrie**](https://librairie.ademe.fr/energies/4724-flexibilite-electrique-en-industrie.html#), un guide de l'ADEME pour comprendre les dispositifs d'effacement énergétique en milieu industriel.\n- [**Guide de la transition écologique à destination du secteur industriel**](https://www.opco2i.fr/wp-content/uploads/2025/03/opco2i-guide-transition-ecologique.pdf), par l'Opco 2i.",
