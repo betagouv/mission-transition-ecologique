@@ -1,17 +1,5 @@
 <template>
-  <!--  <TeeRegisterHighlight-->
-  <!--    v-if="!isDataFull"-->
-  <!--    :text="Translation.t('program.programRegisterHighlightText')"-->
-  <!--  />-->
   <div v-if="isActivationVisible">
-    <DsfrButton
-      size="lg"
-      icon="fr-icon-check-line"
-      class="fr-mt-3v fr-mr-3v"
-      :on-click="() => scrollToActivation()"
-    >
-      {{ Translation.t('program.ctaActivation') }}
-    </DsfrButton>
     <DsfrButton
       v-if="program?.['contact question'] === 'formulaire'"
       secondary
@@ -43,12 +31,10 @@ import { CompanyData } from '@/tools/companyData'
 interface Props {
   isActivationVisible: boolean
   scrollToForm: () => void
-  scrollToActivation: () => void
 }
 defineProps<Props>()
 
 const program = AbstractProgram.getCurrent()
-// const { isDataFull } = storeToRefs(useCompanyDataStore())
 
 const trackAnalytics = () => {
   Analytics.sendEvent('program_external_question_contact', {
