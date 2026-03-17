@@ -1,0 +1,99 @@
+titre: Programme EcoproDDuire
+promesse: Faites-vous accompagner à la mise en place d'une démarche d'éco-conception
+description: >-
+  Le programme **Ecoprodduire,** porté par la CCI Pays de la Loire, accompagne
+  les entreprises dans l’intégration de l’écoconception au cœur de leur
+  stratégie.
+
+
+  Ce programme, mêlant formation, accompagnement individuel et dynamique
+  collective, permet :
+
+
+  - L'analyse de l’**impact environnemental** d’un produit sur l’ensemble de son
+  cycle de vie.
+
+  - L'identification des **leviers concrets de réduction** de l'impact.
+
+  - La **valorisation des actions engagées** à l'aide de la communication
+  environnementale.
+début de validité: 01/01/2020
+fin de validité: 31/12/2027
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: Chambre de Commerce et de l'Industrie
+autres opérateurs:
+  - CCI Pays de la Loire
+contact question: >-
+  https://www.paysdelaloire.cci.fr/entreprise/contact?thematique=transition_ecologique&page=Ecoprodduire
+url: https://www.paysdelaloire.cci.fr/entreprise/transition-ecologique/ecoprodduire
+nature de l'aide: étude
+coût de l'accompagnement: À partir de 2 600 € HT, selon effectif et aides éligibles.
+durée de l'accompagnement: 15,5 jours sur 15 mois
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Contactez un conseiller via le formulaire dédié afin d'exprimer votre
+      intérêt pour le programme Ecoprodduire.
+    liens:
+      - lien: >-
+          https://www.paysdelaloire.cci.fr/entreprise/contact?thematique=transition_ecologique&page=Ecoprodduire
+        texte: Formulaire de contact
+  - description: >-
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
+  - description: >-
+      Définissez avec le conseiller le périmètre du programme, la méthode et le
+      calendrier.
+  - description: Démarrez l'accompagnement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Pays de la Loire
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Pays de la Loire
