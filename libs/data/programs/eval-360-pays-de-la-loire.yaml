@@ -1,0 +1,81 @@
+titre: Eval 360 Transition Ecologique
+promesse: Faites un point complet sur tous les aspects de votre transition écologique
+description: "Bénéficiez d'un accompagnement à l'état des lieux de votre entreprise en matière de transition écologique (mobilité, bâtiment, énergie, écoconception, décarbonation, eau, déchet, etc.).\\\nLe dispositif comporte deux étapes :​\n\n- Un **échange avec l'expert CCI** sur les thématiques prépondérantes de la transition écologique (actions mises en place, \_appétences, pressions).​\n- Un **rendez-vous de restitution** avec un livrable pour évoquer les pistes d'actions et opportunités à explorer."
+début de validité: 01/01/2025
+fin de validité: 31/12/2027
+illustration: images/TEE_eolienne.webp
+opérateur de contact: Chambre de Commerce et de l'Industrie
+autres opérateurs:
+  - CCI Pays de la Loire
+contact question: >-
+  https://www.paysdelaloire.cci.fr/nantes-saint-nazaire/entreprise/contact?thematique=transition_ecologique
+url: >-
+  https://www.paysdelaloire.cci.fr/nantes-saint-nazaire/entreprise/transition-ecologique
+nature de l'aide: étude
+coût de l'accompagnement: Gratuite
+durée de l'accompagnement: Variable
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Contactez un conseiller via le formulaire dédié afin d'exprimer votre
+      intérêt.
+    liens:
+      - lien: >-
+          https://www.paysdelaloire.cci.fr/nantes-saint-nazaire/entreprise/contact?thematique=transition_ecologique
+        texte: Formulaire de contact
+  - description: >-
+      Un conseiller vous rappelle pour répondre à vos questions et vous orienter
+      vers le bon accompagnement.
+  - description: Bénéficiez de l'accompagnement adapté.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 250 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Pays de la Loire
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Pays de la Loire

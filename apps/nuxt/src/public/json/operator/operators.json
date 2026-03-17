@@ -179,6 +179,12 @@
     "color": "green"
   },
   {
+    "operator": "CCI Pays de la Loire",
+    "filterCategories": [
+      "CCI"
+    ]
+  },
+  {
     "operator": "Région Centre-Val de Loire",
     "filterCategories": [
       "Régions"
