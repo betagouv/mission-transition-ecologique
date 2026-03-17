@@ -1874,8 +1874,8 @@
       "pret-energie-aura",
       "pass-transition-bzh",
       "pret-ile-de-france",
-      "diag-biodiversite",
       "impact-co2",
+      "diag-biodiversite",
       "booster-transformation-rev-3",
       "formation-convaincre-et-argumenter",
       "formation-communiquer-et-sensibiliser",
@@ -2655,6 +2655,7 @@
       "cap-transition-ecologique",
       "ecolabel",
       "soutien-hebergement-touristique",
+      "accelerateur-economie-circulaire",
       "aide-tpe-transition-na",
       "prit-hdf",
       "camping-independant-bfc",
@@ -2663,7 +2664,6 @@
       "credit-impot-recherche",
       "credit-impot-innovation",
       "fasep",
-      "accelerateur-economie-circulaire",
       "booster-transformation-rev-3",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
@@ -4871,8 +4871,8 @@
       "cedre-premier-pas",
       "pret-energie-aura",
       "pret-ile-de-france",
-      "aide-tpe-transition-na",
       "accelerateur-economie-circulaire",
+      "aide-tpe-transition-na",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
     ],
     "linkedProjects": [
