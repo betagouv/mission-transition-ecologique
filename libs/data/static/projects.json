@@ -490,7 +490,8 @@
       "cap-transition-ecologique",
       "bilan-carbone",
       "evaluation-carbone-lise",
-      "cap-decarbonation"
+      "cap-decarbonation",
+      "eval-360-pays-de-la-loire"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un bilan de gaz à effet de serre",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre bilan de gaz à effet de serre",
@@ -1449,6 +1450,7 @@
       "aide-tourisme-guadeloupe",
       "booster-transformation-rev-3",
       "diagnostic-et-accompagnement-co2i",
+      "ressourc-eau",
       "sobriete-hydrique"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action eau",
@@ -1620,7 +1622,8 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "aide-investissement-corse",
-      "diag-performance"
+      "diag-performance",
+      "ecoprodduire"
     ],
     "linkedProjects": [
       36
@@ -1903,7 +1906,8 @@
       "accompagnement-rh",
       "plan-de-developpement-des-competences",
       "autodiagnostic-rse",
-      "m-diagnostic-accompagnement"
+      "m-diagnostic-accompagnement",
+      "eval-360-pays-de-la-loire"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
@@ -2238,7 +2242,8 @@
       "accompagnement-rh",
       "plan-de-developpement-des-competences",
       "autodiagnostic-rse",
-      "m-diagnostic-accompagnement"
+      "m-diagnostic-accompagnement",
+      "eval-360-pays-de-la-loire"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
@@ -2340,7 +2345,8 @@
       "easy-diag",
       "diagnostic-et-accompagnement-co2i",
       "accompagnement-rh",
-      "autodiagnostic-rse"
+      "autodiagnostic-rse",
+      "eval-360-pays-de-la-loire"
     ],
     "linkedProjects": [],
     "priority": {
@@ -2413,7 +2419,8 @@
       "cap-decarbonation",
       "demi-bac",
       "ibac-pme",
-      "diagnostic-et-accompagnement-co2i"
+      "diagnostic-et-accompagnement-co2i",
+      "eval-360-pays-de-la-loire"
     ],
     "linkedProjects": [
       1
@@ -2665,7 +2672,8 @@
       "credit-impot-innovation",
       "fasep",
       "booster-transformation-rev-3",
-      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+      "ecoprodduire"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une démarche d'écoconception",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité d'une démarche d'écoconception",
@@ -2761,6 +2769,7 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
+      "ressourc-eau",
       "sobriete-hydrique"
     ],
     "linkedProjects": [
@@ -2830,6 +2839,7 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
+      "ressourc-eau",
       "sobriete-hydrique"
     ],
     "linkedProjects": [
@@ -3073,6 +3083,7 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "aide-tourisme-guadeloupe",
+      "ressourc-eau",
       "sobriete-hydrique"
     ],
     "linkedProjects": [
@@ -4353,7 +4364,8 @@
     "programs": [
       "diag-ecoconception",
       "diagnostic-eco-conception-ile-de-france",
-      "programme-synergies-durables"
+      "programme-synergies-durables",
+      "ecoprodduire"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4593,7 +4605,8 @@
       "diagnostic-rse",
       "formations-tee",
       "programme-synergies-durables",
-      "booster-transformation-rev-3"
+      "booster-transformation-rev-3",
+      "ecoprodduire"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4873,7 +4886,8 @@
       "pret-ile-de-france",
       "accelerateur-economie-circulaire",
       "aide-tpe-transition-na",
-      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse"
+      "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+      "ecoprodduire"
     ],
     "linkedProjects": [
       36
@@ -4997,7 +5011,8 @@
       "etude-performance-produits",
       "etude-reemploi-reutilisation-reparation",
       "investissement-reemploi-reutilisation-reparation",
-      "ecoconception-bzh"
+      "ecoconception-bzh",
+      "ecoprodduire"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [],
