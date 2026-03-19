@@ -79,7 +79,7 @@
     "@types/node": "22.19.11",
     "@unhead/schema-org": "2.1.12",
     "@vueuse/core": "13.9.0",
-    "axios": "1.13.5",
+    "axios": "1.13.6",
     "chart.js": "4.5.1",
     "dotenv": "16.6.1",
     "markdown-it": "14.1.1",
