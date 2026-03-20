@@ -81,6 +81,18 @@
     ]
   },
   {
+    "operator": "CMA Bourgogne-Franche-Comté",
+    "filterCategories": [
+      "CMA"
+    ]
+  },
+  {
+    "operator": "CMA Île-de-France",
+    "filterCategories": [
+      "CMA"
+    ]
+  },
+  {
     "operator": "Chambre des Métiers et de l'Artisanat",
     "filterCategories": [
       "CMA"
