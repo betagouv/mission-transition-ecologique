@@ -3,8 +3,8 @@ import { z } from 'zod'
 import { signJWT } from '~/server/utils/jwt'
 
 const loginSchema = z.object({
-  username: z.string().min(1),
-  password: z.string().min(1)
+  username: z.string().min(1).max(100),
+  password: z.string().min(1).max(200)
 })
 
 const parseUsers = (raw: string): Array<{ username: string; passwordHash: string }> => {
@@ -34,7 +34,9 @@ export default defineEventHandler(async (event) => {
     httpOnly: true,
     sameSite: 'lax',
     path: '/',
-    maxAge: 86400
+    maxAge: 86400,
+    // Secure en production uniquement (HTTPS requis pour transmettre le cookie)
+    secure: process.env.NODE_ENV === 'production'
   })
 
   return { username: user.username }

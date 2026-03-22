@@ -1,12 +1,4 @@
-export interface HistoryEntry {
-  id: number
-  date: string
-  user: string
-  nafCode: string
-  count: number
-  avant: string
-  après: string
-}
+import type { HistoryEntry } from '~/types/baserow'
 
 const BASEROW_API_URL = 'https://api.baserow.io'
 

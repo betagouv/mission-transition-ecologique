@@ -17,3 +17,13 @@ export type ProjectRow = BaserowProject & {
   currentPriority: number
   theme: string
 }
+
+export interface HistoryEntry {
+  id: number
+  date: string
+  user: string
+  nafCode: string
+  count: number
+  avant: string
+  après: string
+}
