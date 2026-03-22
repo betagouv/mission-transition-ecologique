@@ -50,10 +50,8 @@ export default defineEventHandler(async (event) => {
       body: JSON.stringify({ items: batch })
     })
 
-    console.log('[priorities PATCH] status:', response.status)
     if (!response.ok) {
       const errorData = await response.json()
-      console.error('[priorities PATCH] erreur:', JSON.stringify(errorData))
       throw createError({
         statusCode: 500,
         statusMessage: `Erreur Baserow: ${JSON.stringify(errorData)}`
@@ -61,6 +59,5 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-  console.log('[priorities PATCH] succès, items mis à jour:', items.length)
   return { success: true, updated: items.length }
 })

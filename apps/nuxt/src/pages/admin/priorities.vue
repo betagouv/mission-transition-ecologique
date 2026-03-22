@@ -310,11 +310,10 @@ const refresh = async () => {
 
   try {
     const data = await $fetch<BaserowProject[]>('/api/projects/priorities')
-    console.log('[priorities] data reçue côté client:', Array.isArray(data), data?.length)
     projects.value = Array.isArray(data) ? data : []
   } catch (e) {
     errorMessage.value = 'Erreur lors du chargement des projets'
-    console.error('[priorities] erreur client:', e)
+    console.error(e)
   } finally {
     loading.value = false
   }
@@ -389,8 +388,6 @@ const saveChanges = async () => {
       'Prio': parseFloat(p['Prio'] as string) || undefined,
       'Prios spécifiques': p['Prios spécifiques'] || ''
     }))
-
-    console.log('[priorities] saveChanges appelé, nb updates:', updates.length, '| exemple:', updates[0])
 
     await $fetch('/api/projects/priorities', {
       method: 'PATCH',
