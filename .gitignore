@@ -96,3 +96,5 @@ vitest.config.*.timestamp*
 .history/**
 .history/
 .env
+.env.local
+.claude

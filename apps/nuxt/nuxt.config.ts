@@ -37,9 +37,6 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     }
   },
 
-  baserowToken: process.env.BASEROW_TOKEN,
-  baserowTableId: process.env.BASEROW_TABLE_ID,
-  
   routeRules: {
     '/_nuxt/**': {
       headers: {
@@ -217,6 +214,8 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     }
   },
   runtimeConfig: {
+    baserowToken: Config.baserowToken,
+    baserowTableId: Config.baserowTableId,
     public: {
       environment: Config.SERVER_ENVIRONMENT,
       sentry: {

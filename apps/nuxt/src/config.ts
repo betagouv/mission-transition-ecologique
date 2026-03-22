@@ -36,6 +36,14 @@ export default class Config extends ConfigCommon {
     return process.env['POSTHOG_API_KEY'] || 'fake token'
   }
 
+  static get baserowToken() {
+    return process.env['BASEROW_TOKEN'] || ''
+  }
+
+  static get baserowTableId() {
+    return process.env['BASEROW_TABLE_ID'] || ''
+  }
+
   static get isTestData() {
     return this.getEnvValue('VITE_DATA_TEST', 'false') === 'true'
   }
