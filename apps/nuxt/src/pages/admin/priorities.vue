@@ -2,7 +2,17 @@
   <div class="fr-container fr-py-6w">
     <div class="fr-grid-row">
       <div class="fr-col-12">
-        <h1 class="fr-h2 fr-mb-4w">Gestion des priorités</h1>
+        <div class="fr-grid-row fr-grid-row--middle fr-mb-4w">
+          <div class="fr-col">
+            <h1 class="fr-h2 fr-mb-0">Gestion des priorités</h1>
+            <p class="fr-text--sm fr-mb-0 fr-mt-1w" style="color: #666">
+              Connecté en tant que <strong>{{ currentUser }}</strong>
+            </p>
+          </div>
+          <div class="fr-col-auto">
+            <button class="fr-btn fr-btn--secondary fr-btn--sm" @click="handleLogout">Se déconnecter</button>
+          </div>
+        </div>
 
         <!-- Sélecteur NAF en fil d'ariane -->
         <div class="fr-p-4w fr-mb-4w naf-selector">
@@ -85,6 +95,41 @@
           <p class="fr-alert__title">{{ errorMessage }}</p>
         </div>
 
+        <!-- Historique des modifications -->
+        <details class="fr-mb-4w history-details">
+          <summary class="fr-text--bold fr-py-2w">Historique des modifications ({{ history.length }})</summary>
+          <div class="fr-table fr-table--sm fr-table--no-caption fr-mt-2w">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Date</th>
+                  <th scope="col">Utilisateur</th>
+                  <th scope="col">Code NAF</th>
+                  <th scope="col">Projets</th>
+                  <th scope="col">Avant</th>
+                  <th scope="col">Après</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-if="history.length === 0">
+                  <td colspan="6" class="fr-text--center">Aucune modification enregistrée</td>
+                </tr>
+                <tr v-for="(entry, i) in history" :key="i">
+                  <td class="fr-text--sm" style="white-space: nowrap">{{ formatDate(entry.date) }}</td>
+                  <td class="fr-text--sm fr-text--bold">{{ entry.user }}</td>
+                  <td>
+                    <span v-if="entry.nafCode" class="fr-badge fr-badge--sm fr-badge--blue-cumulus">{{ entry.nafCode }}</span>
+                    <span v-else class="fr-text--sm">Global</span>
+                  </td>
+                  <td class="fr-text--sm">{{ entry.count }} projet{{ entry.count > 1 ? 's' : '' }}</td>
+                  <td class="fr-text--sm history-cell">{{ entry.avant }}</td>
+                  <td class="fr-text--sm history-cell">{{ entry.après }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+
         <!-- Tableau des projets -->
         <div class="fr-table fr-table--bordered fr-table--no-caption">
           <table>
@@ -145,9 +190,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onMounted } from 'vue'
-import nafCodesData from '../../../../../libs/data/static/nafMapping.json'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 
+// Désactive le rendu côté serveur pour cette page admin :
+// évite d'inclure nafMapping.json dans le bundle Nitro SSR (cause OOM au build)
+definePageMeta({ ssr: false })
+
+// Chargé dynamiquement dans onMounted pour ne jamais être inclus dans un bundle serveur
 interface NafCode {
   NIV5: string
   NIV4: string
@@ -173,7 +222,8 @@ interface BaserowProject {
   'Prios spécifiques'?: string
 }
 
-const nafCodes = nafCodesData as NafCode[]
+// Ref vide au départ, remplie après le montage côté client uniquement
+const nafCodes = ref<NafCode[]>([])
 
 // --- Sélection NAF en cascade ---
 const selectedSection = ref('')
@@ -207,7 +257,7 @@ const mainSections = computed(() => {
     U: "Activités extra-territoriales"
   }
   const sections = new Map<string, { code: string; label: string }>()
-  nafCodes.forEach((code) => {
+  nafCodes.value.forEach((code) => {
     if (!sections.has(code.NIV1)) {
       sections.set(code.NIV1, { code: code.NIV1, label: labels[code.NIV1] || code.NIV1 })
     }
@@ -218,7 +268,7 @@ const mainSections = computed(() => {
 const filteredDivisions = computed(() => {
   if (!selectedSection.value) return []
   const divs = new Map<string, NafCode>()
-  nafCodes
+  nafCodes.value
     .filter((c) => c.NIV1 === selectedSection.value)
     .forEach((c) => {
       if (!divs.has(c.NIV2)) divs.set(c.NIV2, c)
@@ -228,12 +278,12 @@ const filteredDivisions = computed(() => {
 
 const filteredCodes = computed(() => {
   if (!selectedDivision.value) return []
-  return nafCodes.filter((c) => c.NIV2 === selectedDivision.value).sort((a, b) => a.NIV5.localeCompare(b.NIV5))
+  return nafCodes.value.filter((c) => c.NIV2 === selectedDivision.value).sort((a, b) => a.NIV5.localeCompare(b.NIV5))
 })
 
 const nafMapping = computed(() => {
   const map = new Map<string, NafCode>()
-  nafCodes.forEach((c) => {
+  nafCodes.value.forEach((c) => {
     map.set(c.NIV5, c)
     map.set(c.NIV4, c)
     map.set(c.NIV3, c)
@@ -265,6 +315,7 @@ const onCodeChange = () => {
 
 // --- Données projets ---
 const projects = ref<BaserowProject[]>([])
+const originalProjects = ref<Map<number, { Prio: number | string; 'Prios spécifiques': string }>>(new Map())
 const loading = ref(false)
 const saving = ref(false)
 const hasChanges = ref(false)
@@ -311,6 +362,9 @@ const refresh = async () => {
   try {
     const data = await $fetch<BaserowProject[]>('/api/projects/priorities')
     projects.value = Array.isArray(data) ? data : []
+    originalProjects.value = new Map(
+      projects.value.map((p) => [p.id, { 'Prio': p['Prio'] ?? 9999, 'Prios spécifiques': p['Prios spécifiques'] ?? '' }])
+    )
   } catch (e) {
     errorMessage.value = 'Erreur lors du chargement des projets'
     console.error(e)
@@ -383,11 +437,25 @@ const saveChanges = async () => {
   successMessage.value = ''
 
   try {
-    const updates = projects.value.map((p) => ({
-      id: p.id,
-      'Prio': parseFloat(p['Prio'] as string) || undefined,
-      'Prios spécifiques': p['Prios spécifiques'] || ''
-    }))
+    const updates = projects.value
+      .filter((p) => {
+        const orig = originalProjects.value.get(p.id)
+        if (!orig) return false
+        const prioChanged = parseFloat(p['Prio'] as string) !== parseFloat(orig['Prio'] as string)
+        const priosSpecChanged = (p['Prios spécifiques'] || '') !== (orig['Prios spécifiques'] || '')
+        return prioChanged || priosSpecChanged
+      })
+      .map((p) => {
+        const orig = originalProjects.value.get(p.id)
+        return {
+          id: p.id,
+          titre: p.Titre || p.title || p.slug || '',
+          oldPrio: parseFloat(orig?.['Prio'] as string) || undefined,
+          Prio: parseFloat(p['Prio'] as string) || undefined,
+          oldPriosSpec: orig?.['Prios spécifiques'] ?? '',
+          'Prios spécifiques': p['Prios spécifiques'] || ''
+        }
+      })
 
     await $fetch('/api/projects/priorities', {
       method: 'PATCH',
@@ -396,6 +464,7 @@ const saveChanges = async () => {
 
     successMessage.value = 'Modifications enregistrées avec succès !'
     hasChanges.value = false
+    await loadHistory()
 
     setTimeout(() => {
       successMessage.value = ''
@@ -409,7 +478,63 @@ const saveChanges = async () => {
   }
 }
 
-onMounted(refresh)
+interface HistoryEntry {
+  date: string
+  user: string
+  nafCode: string
+  count: number
+  avant: string
+  après: string
+}
+
+const currentUser = ref('')
+const history = ref<HistoryEntry[]>([])
+
+const formatDate = (iso: string): string => {
+  return new Date(iso).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' })
+}
+
+const handleLogout = async () => {
+  await $fetch('/api/auth/logout', { method: 'POST' })
+  await navigateTo('/admin/login')
+}
+
+// Déconnexion automatique après 30 min d'inactivité
+const INACTIVITY_TIMEOUT = 30 * 60 * 1000
+let inactivityTimer: ReturnType<typeof setTimeout>
+const resetInactivityTimer = () => {
+  clearTimeout(inactivityTimer)
+  inactivityTimer = setTimeout(handleLogout, INACTIVITY_TIMEOUT)
+}
+const ACTIVITY_EVENTS = ['mousemove', 'keydown', 'click', 'scroll']
+
+const loadHistory = async () => {
+  try {
+    const data = await $fetch<HistoryEntry[]>('/api/projects/priorities/history')
+    history.value = data.slice().reverse()
+  } catch {
+    // non bloquant
+  }
+}
+
+onMounted(async () => {
+  // Import dynamique : nafMapping.json (~185KB) chargé uniquement côté client,
+  // jamais inclus dans le bundle Nitro (évite l'OOM au build)
+  // eslint-disable-next-line @nx/enforce-module-boundaries
+  const { default: data } = await import('../../../../../libs/data/static/nafMapping.json')
+  nafCodes.value = data as NafCode[]
+
+  const me = await $fetch<{ username: string }>('/api/auth/me')
+  currentUser.value = me.username
+  await Promise.all([refresh(), loadHistory()])
+  ACTIVITY_EVENTS.forEach((e) => window.addEventListener(e, resetInactivityTimer))
+  resetInactivityTimer()
+})
+
+onUnmounted(() => {
+  ACTIVITY_EVENTS.forEach((e) => window.removeEventListener(e, resetInactivityTimer))
+  clearTimeout(inactivityTimer)
+})
 
 watch(selectedNaf, () => {
   errorMessage.value = ''
@@ -483,5 +608,32 @@ watch(selectedNaf, () => {
 .fr-input--sm:focus {
   outline: none;
   border-bottom-color: #0063cb;
+}
+
+.history-details {
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  padding: 0 1rem;
+}
+
+.history-details summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.75rem 0;
+}
+
+.history-details summary::before {
+  content: '▶ ';
+  font-size: 0.75rem;
+}
+
+.history-details[open] summary::before {
+  content: '▼ ';
+}
+
+.history-cell {
+  white-space: pre-line;
+  max-width: 18rem;
+  vertical-align: top;
 }
 </style>

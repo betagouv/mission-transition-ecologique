@@ -207,6 +207,9 @@ export default <DefineNuxtConfig>defineNuxtConfig({
   runtimeConfig: {
     baserowToken: Config.baserowToken,
     baserowTableId: Config.baserowTableId,
+    adminUsers: Config.adminUsers,
+    jwtSecret: Config.jwtSecret,
+    baserowHistoryTableId: Config.baserowHistoryTableId,
     public: {
       environment: Config.SERVER_ENVIRONMENT,
       sentry: {

@@ -44,6 +44,18 @@ export default class Config extends ConfigCommon {
     return process.env['BASEROW_TABLE_ID'] || ''
   }
 
+  static get adminUsers() {
+    return process.env['ADMIN_USERS'] || ''
+  }
+
+  static get jwtSecret() {
+    return process.env['JWT_SECRET'] || ''
+  }
+
+  static get baserowHistoryTableId() {
+    return process.env['BASEROW_HISTORY_TABLE_ID'] || ''
+  }
+
   static get isTestData() {
     return this.getEnvValue('VITE_DATA_TEST', 'false') === 'true'
   }
