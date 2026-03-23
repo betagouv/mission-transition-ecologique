@@ -1,0 +1,74 @@
+titre: Diagnostic mobilité
+promesse: Optimisez les coûts de vos véhicules professionnels
+description: "Le diagnostic mobilité permet d’évaluer l’impact économique et écologique de vos véhicules professionnels.\\\nIl vous permet de bénéficier de :\n\n- Une visite sur site pour comprendre **vos\_besoins et vos coûts de mobilité**.\n- Une\_analyse de la **rentabilité d’un\_changement de véhicule**\_conforme\_à vos usages\_et à la réglementation\_\n- La remise\_d’un **rapport chiffré**\_recensant les aides pertinentes.\n- Un **suivi des recommandations** mises en œuvre à 6 mois."
+illustration: images/TEE_eolienne.webp
+opérateur de contact: Chambre des Métiers et de l'Artisanat
+autres opérateurs:
+  - CMA Île-de-France
+contact question: formulaire
+url: >-
+  https://www.cma-idf.fr/services/reduire-mes-couts-de-carburant-en-faisant-le-point-avec-un-expert-en-mobilite-des
+nature de l'aide: étude
+coût de l'accompagnement: Jusqu'à 100% du coût de l'étude
+durée de l'accompagnement: 1 jour
+objectifs:
+  - description: >-
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - formulaire: true
+  - description: >-
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
+  - description: Lancez le diagnostic avec l'expert proposé par votre CMA.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 250 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Île-de-France
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 249
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Île-de-France
