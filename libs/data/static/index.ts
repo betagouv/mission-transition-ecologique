@@ -33,3 +33,8 @@ export { redirects }
 // #####> OTHERS DATA ######
 export { default as communes } from './communes.json'
 export { default as nafMapping } from './nafMapping.json'
+
+// #####> COVERAGE ######
+import { default as coverageJson } from './coverage.json'
+import type { CoverageData } from '../src/coverage/types'
+export const coverage = coverageJson as unknown as CoverageData
