@@ -1,0 +1,87 @@
+titre: Étude d'opportunité panneaux photovoltaïques
+promesse: Estimez le potentiel de votre toiture pour un projet photovoltaïque
+description: >-
+  Faites-vous accompagner pour vérifier la pérennité d'un projets d'installation
+  de panneaux photovoltaïques sur vos locaux professionnels.
+
+
+  Ainsi vous vous assurez :
+
+
+  - Du **potentiel de votre toiture** en fonction de l’ensoleillement, de
+  l’orientation, de l’inclinaison et de la surface disponible.
+
+  - De la **rentabilité du projet**.
+
+  - Des **contraintes techniques**.
+description longue: "Lors d'une visite sur site, le conseiller en transition énergétique et écologique étudie et vous remet un rapport de visite sur les points suivants :\n\n- Contrats et factures d’énergie actuels de votre entreprise.\n- Définition de votre\_profil de consommation d'électricité.\n- Étude d'implantation des panneaux avec identification des éventuelles contraintes techniques et/ou architecturales.\n- Simulation de votre production d'électricité.\n- Étude de rentabilité économique avec les options les plus pertinentes pour votre situation\_(autoconsommation, revente totale ou du surplus)."
+illustration: images/TEE_eolienne.webp
+opérateur de contact: Chambre des Métiers et de l'Artisanat
+autres opérateurs:
+  - CMA Bourgogne-Franche-Comté
+contact question: formulaire
+url: >-
+  https://www.artisanat-bfc.fr/detail-offre/je-beneficie-dune-pre-etude-photovoltaique
+nature de l'aide: étude
+coût de l'accompagnement: De 350 à 700 € HT (en distanciel ou avec visite sur site)
+durée de l'accompagnement: 1 journée
+objectifs:
+  - description: >-
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - lien: >-
+          https://www.artisanat-bfc.fr/detail-offre/je-beneficie-dune-pre-etude-photovoltaique/contact
+        texte: Formulaire de contact
+  - description: >-
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
+  - description: Lancez l'étude d'opportunité avec l'expert proposé par votre CMA.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Bourgogne-Franche-Comté
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Bourgogne-Franche-Comté
