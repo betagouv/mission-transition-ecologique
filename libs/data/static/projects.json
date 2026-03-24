@@ -216,7 +216,9 @@
       "hotellerie-independante-bfc",
       "certificats-economie-energie",
       "decarb-flash-2025-2027",
-      "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse"
+      "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
+      "etude-opportunite-pv-bfc",
+      "etude-opportunite-pv-idf"
     ],
     "linkedProjects": [
       4
@@ -271,6 +273,8 @@
       "fonds-tourisme-durable",
       "fond-vert-territoires-d-industrie",
       "ormat",
+      "performa-environnement",
+      "tpe-gagnantes-sur-tous-les-couts",
       "tremplin",
       "aide-financement-occitanie",
       "ecoproduction-hdf",
@@ -350,7 +354,9 @@
       "deter-decarboner-le-tertiaire",
       "cheque-transition-tissu-economique",
       "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
-      "etude-d-opportunite-multi-enrr"
+      "etude-d-opportunite-multi-enrr",
+      "etude-opportunite-pv-bfc",
+      "etude-opportunite-pv-idf"
     ],
     "linkedProjects": [
       4
@@ -730,6 +736,7 @@
       "investissement-contrat-chaleur-renouvelable",
       "investissement-geothermie-de-surface-et-d-aerothermie",
       "investissement-pac-solaire",
+      "visite-energie",
       "pret-economies-d-energie-pee",
       "pret-vert",
       "pret-vert-ademe",
@@ -973,6 +980,7 @@
       "diag-perf-immo",
       "mission-strategie-environnement",
       "renovation-petit-tertiaire-prive",
+      "visite-energie",
       "aide-financement-occitanie",
       "cedre-premier-pas",
       "sud-pret-climat",
@@ -1164,7 +1172,8 @@
       "je-change-ma-voiture",
       "mobilipro",
       "booster-transformation-rev-3",
-      "programme-marguerite"
+      "programme-marguerite",
+      "diag-mobilite-idf"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action mobilité",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action mobilité",
@@ -1251,7 +1260,8 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "impulsion-environnement",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "diag-mobilite-idf"
     ],
     "linkedProjects": [
       16
@@ -1319,7 +1329,8 @@
       "aide-tourisme-guadeloupe",
       "je-change-ma-voiture",
       "certificats-economie-energie",
-      "cheque-transition-tissu-economique"
+      "cheque-transition-tissu-economique",
+      "diag-mobilite-idf"
     ],
     "linkedProjects": [
       16
@@ -1527,6 +1538,7 @@
     "programs": [
       "diagnostic-dechets",
       "ormat",
+      "tpe-gagnantes-sur-tous-les-couts",
       "tremplin",
       "cedre-premier-pas",
       "sud-pret-climat",
@@ -1907,7 +1919,8 @@
       "plan-de-developpement-des-competences",
       "autodiagnostic-rse",
       "m-diagnostic-accompagnement",
-      "eval-360-pays-de-la-loire"
+      "eval-360-pays-de-la-loire",
+      "diag-mobilite-idf"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
@@ -2888,8 +2901,8 @@
     ],
     "mainTheme": "mobility",
     "programs": [
-      "performa-environnement",
-      "plan-de-mobilite"
+      "plan-de-mobilite",
+      "diag-mobilite-idf"
     ],
     "linkedProjects": [
       16,
@@ -2940,6 +2953,7 @@
     "mainTheme": "energy",
     "programs": [
       "fonds-tourisme-durable",
+      "visite-energie",
       "cedre-investissement",
       "sud-pret-climat",
       "pret-energie-aura",
@@ -3029,6 +3043,7 @@
     "mainTheme": "energy",
     "programs": [
       "fonds-tourisme-durable",
+      "visite-energie",
       "cedre-investissement",
       "sud-pret-climat",
       "pret-energie-aura",
@@ -3260,7 +3275,8 @@
       "pass-transition-bzh",
       "pret-ile-de-france",
       "soutien-hebergement-touristique",
-      "prit-hdf"
+      "prit-hdf",
+      "diag-mobilite-idf"
     ],
     "linkedProjects": [
       16
@@ -3605,6 +3621,7 @@
     "mainTheme": "energy",
     "programs": [
       "formation-artisan-developpement-durable",
+      "performa-environnement",
       "cci-business-optimizer",
       "ecogestes-paca",
       "formation-convaincre-et-argumenter",
@@ -3745,7 +3762,8 @@
       "deploiement-flottes-hydrogene",
       "pass-transition-bzh",
       "certificats-economie-energie",
-      "programme-marguerite"
+      "programme-marguerite",
+      "diag-mobilite-idf"
     ],
     "linkedProjects": [
       16
@@ -3891,7 +3909,8 @@
     "programs": [
       "amelioration-qualite-de-l-air",
       "fresque-de-la-mobilite",
-      "plan-de-mobilite"
+      "plan-de-mobilite",
+      "diag-mobilite-idf"
     ],
     "linkedProjects": [
       16
@@ -4154,7 +4173,8 @@
       "mobilipro",
       "certificats-economie-energie",
       "parm-vnf",
-      "programme-marguerite"
+      "programme-marguerite",
+      "diag-mobilite-idf"
     ],
     "linkedProjects": [
       16
@@ -4276,7 +4296,8 @@
     "mainTheme": "mobility",
     "programs": [
       "extreme-defi-mobilite",
-      "pass-transition-bzh"
+      "pass-transition-bzh",
+      "diag-mobilite-idf"
     ],
     "linkedProjects": [
       16,
@@ -4412,7 +4433,8 @@
     "mainTheme": "mobility",
     "programs": [
       "extreme-defi-mobilite",
-      "fond-vert-territoires-d-industrie"
+      "fond-vert-territoires-d-industrie",
+      "diag-mobilite-idf"
     ],
     "linkedProjects": [
       16
@@ -4535,7 +4557,8 @@
       "certificats-economie-energie",
       "parm-vnf",
       "booster-transformation-rev-3",
-      "diagnostic-et-accompagnement-co2i"
+      "diagnostic-et-accompagnement-co2i",
+      "diag-mobilite-idf"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4765,6 +4788,7 @@
       "etude-methanisation-paca",
       "investissement-reemploi-reutilisation-reparation",
       "programme-synergies-durables",
+      "tpe-gagnantes-sur-tous-les-couts",
       "decarb-flash-2025-2027",
       "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
       "demi-bac",
@@ -4840,6 +4864,7 @@
       "diagnostic-dechets",
       "etude-reemploi-reutilisation-reparation",
       "fond-vert-territoires-d-industrie",
+      "tpe-gagnantes-sur-tous-les-couts",
       "charte-zero-dechet-plastique",
       "aide-tpe-transition-na",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
