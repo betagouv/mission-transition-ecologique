@@ -81,6 +81,12 @@
     ]
   },
   {
+    "operator": "CMA Auvergne-Rhône-Alpes",
+    "filterCategories": [
+      "CMA"
+    ]
+  },
+  {
     "operator": "CMA Bourgogne-Franche-Comté",
     "filterCategories": [
       "CMA"
