@@ -1,0 +1,97 @@
+titre: Concilier enjeux écologiques et conditions de travail en TPE-PME
+promesse: >-
+  Articulez l’amélioration des conditions de travail avec des enjeux de
+  transition écologique
+description: "Faites-vous accompagner pour intégrer les enjeux écologiques dans les projets d’investissement, de réorganisation, de gestion des compétences ou de prévention des risques.\\\n\LSelon le degré de maturité de votre entreprise, il s'agira de :\n\n- **Sensibilisation** : conférences, retours d’expériences ou ateliers pour partager des repères sur le lien écologie-travail et ouvrir le dialogue professionnel/social.\n\n- **Formation** : analyse du travail réel dans les enjeux écologiques des projets de transformation dans l’entreprise.\n\n- **Études ou diagnostics thématiques** au sujet des effets de la transition écologique sur le travail et ses conditions de réalisation, suivies de recommandations."
+description longue: >-
+  L'accompagnement articule les trois volets d’actions suivants :
+
+
+  - Volet « actions primaires » : anticiper et agir sur l’organisation du
+  travail (charge, répartition des activités, rythmes, objectifs, coopérations,
+  compétences, sens du travail) pour que les projets écologiques soient conduits
+  en prenant en compte le travail réel.
+
+
+  - Volet « actions secondaires » : aider les collectifs à faire face aux
+  risques liés aux crises écologiques (événements climatiques extrêmes, tensions
+  sur les ressources, crises sanitaires) et renforcer la résilience des
+  organisations.
+
+
+  - Volet « actions tertiaires » : développer les écogestes sans les isoler, en
+  les reliant aux évolutions de l’organisation et à un accompagnement
+  managérial.
+début de validité: 12/02/2026
+fin de validité: 31/12/2026
+illustration: images/TEE_eolienne.webp
+opérateur de contact: ANACT
+contact question: mailto:contact-aract-grand-est@anact.fr
+url: >-
+  https://www.anact.fr/comment-concilier-enjeux-ecologiques-et-conditions-de-travail-accompagnement
+nature de l'aide: étude
+coût de l'accompagnement: Variable
+durée de l'accompagnement: Variable
+objectifs:
+  - description: >-
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - lien: https://www.anact.fr/contact
+        texte: Formulaire de contact Anact
+  - description: >-
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
+  - description: Lancez l'accompagnement avec l'expert proposé par l'Aract Grand Est.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Grand Est
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Grand Est

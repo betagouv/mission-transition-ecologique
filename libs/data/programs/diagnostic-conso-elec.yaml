@@ -1,0 +1,109 @@
+titre: Diagnostic Conso Elec
+promesse: Réduisez votre facture et votre consommation d'électricité
+description: >-
+  Réalisez une **analyse de votre consommation d’électricité** pour identifier
+  les gaspillages et **optimiser vos contrats de fourniture**.
+
+
+  Votre expert CMA collecte vos données de consommation sur le serveur d’ENEDIS.
+  Suite à son analyse, il vous remet un rapport et un plan d'actions
+  prioritaires au cours d'une restitution.
+description longue: >-
+  L'étude consiste à analyser votre courbe de charge d’électricité (puissances
+  électriques appelées mesurées toutes les 10 minutes sur un historique de 2
+  ans).
+
+
+  Cela permet de : 
+
+
+  - Quantifier le talon de consommation de l’entreprise (période de fermeture).
+
+  - Analyser la consommation heure par heure sur une semaine type (hiver et
+  été).
+
+  - Déceler une consommation anormale.
+
+  - Optimiser les contrats de fourniture (puissance souscrite, option heures
+  creuses…).
+
+  - De réduire la consommation et la facture d’électricité.
+début de validité: 01/09/2024
+fin de validité: 30/06/2028
+illustration: images/TEE_ampoule.webp
+opérateur de contact: Chambre des Métiers et de l'Artisanat
+autres opérateurs:
+  - CMA Auvergne-Rhône-Alpes
+contact question: mailto:antoine.chevillard@cma-auvergnerhonealpes.fr
+url: https://diagnostic-conso-elec.fr
+nature de l'aide: étude
+coût de l'accompagnement: Gratuite
+durée de l'accompagnement: 1 heure de restitution après analyse
+objectifs:
+  - description: >-
+      Contactez un conseiller via le formulaire dédié pour exprimer votre
+      intérêt.
+    liens:
+      - lien: >-
+          https://app.diagnostic-conso-elec.fr/app/diagnostic-conso-elec/formulaire-67e2eb844054d1458783d96b?embed=true
+        texte: Formulaire de contact
+  - description: >-
+      Un conseiller vous rappelle pour répondre à vos questions, vérifier votre
+      éligibilité et définir un calendrier.
+  - description: Lancez le diagnostic avec votre expert CMA.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 50 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Auvergne-Rhône-Alpes
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 50
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Auvergne-Rhône-Alpes
