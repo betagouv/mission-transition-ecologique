@@ -80,6 +80,15 @@
         "parallel": false
       }
     },
+    "generate-coverage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/data",
+        "commands": [
+          "npx tsx src/scripts/generateCoverageJson.ts"
+        ]
+      }
+    },
     "export-programs": {
       "executor": "nx:run-commands",
       "options": {

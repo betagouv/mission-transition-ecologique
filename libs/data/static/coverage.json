@@ -1,0 +1,6725 @@
+{
+  "generatedAt": "2026-03-19T17:14:55.537Z",
+  "projects": [
+    {
+      "id": 4,
+      "slug": "plan-action-eco-energie",
+      "title": "Plan d’action économies d’énergie",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 2,
+      "slug": "eclairage-led",
+      "title": "Eclairage LED",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 5,
+      "slug": "panneaux-solaires",
+      "title": "Panneaux solaires",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 3,
+      "slug": "reduction-emballages",
+      "title": "Réduction des emballages",
+      "mainTheme": "waste"
+    },
+    {
+      "id": 6,
+      "slug": "chauffe-eau-solaire",
+      "title": "Chauffe-eau solaire",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 7,
+      "slug": "reseau-chaleur",
+      "title": "Réseau de chaleur",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 1,
+      "slug": "bilan-ges",
+      "title": "Bilan de gaz à effet de serre",
+      "mainTheme": "environmental"
+    },
+    {
+      "id": 8,
+      "slug": "chauffage-bois",
+      "title": "Chauffage au bois",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 9,
+      "slug": "chaleur-recup",
+      "title": "Chaleur de récupération",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 10,
+      "slug": "pac",
+      "title": "Pompe à chaleur",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 11,
+      "slug": "energie-hydraulique",
+      "title": "Energie hydraulique",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 12,
+      "slug": "geothermie",
+      "title": "Géothermie",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 13,
+      "slug": "serres-agricoles",
+      "title": "Serres agricoles",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 14,
+      "slug": "audit-energetique",
+      "title": "Audit énergétique",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 15,
+      "slug": "isolation-thermique",
+      "title": "Isolation thermique",
+      "mainTheme": "building"
+    },
+    {
+      "id": 16,
+      "slug": "plan-mobilite",
+      "title": "Plan d'action mobilité",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 17,
+      "slug": "retrofit",
+      "title": "Rétrofit électrique",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 18,
+      "slug": "voiture-propre",
+      "title": "Acquisition d'une voiture propre",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 19,
+      "slug": "velo",
+      "title": "Déplacements à vélo",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 20,
+      "slug": "plan-action-eau",
+      "title": "Plan d’action eau",
+      "mainTheme": "water"
+    },
+    {
+      "id": 21,
+      "slug": "plan-action-dechets",
+      "title": "Plan d’action déchets & pertes matière",
+      "mainTheme": "waste"
+    },
+    {
+      "id": 22,
+      "slug": "numerique-responsable",
+      "title": "Numérique responsable",
+      "mainTheme": "eco-design"
+    },
+    {
+      "id": 23,
+      "slug": "tri-dechets",
+      "title": "Tri sélectif",
+      "mainTheme": "waste"
+    },
+    {
+      "id": 24,
+      "slug": "gestion-biodechets",
+      "title": "Gestion des biodéchets",
+      "mainTheme": "waste"
+    },
+    {
+      "id": 25,
+      "slug": "lutte-gaspillage-alimentaire",
+      "title": "Lutte contre le gaspillage alimentaire",
+      "mainTheme": "waste"
+    },
+    {
+      "id": 26,
+      "slug": "sensibilisation-equipes",
+      "title": "Sensibilisation des équipes",
+      "mainTheme": "rh"
+    },
+    {
+      "id": 27,
+      "slug": "recrutement",
+      "title": "Recrutement",
+      "mainTheme": "rh"
+    },
+    {
+      "id": 28,
+      "slug": "formation",
+      "title": "Formation environnement",
+      "mainTheme": "rh"
+    },
+    {
+      "id": 29,
+      "slug": "projet-recherche",
+      "title": "Projet de recherche",
+      "mainTheme": "rh"
+    },
+    {
+      "id": 30,
+      "slug": "strategie-rse",
+      "title": "Stratégie RSE",
+      "mainTheme": "environmental"
+    },
+    {
+      "id": 31,
+      "slug": "diag-360",
+      "title": "Diagnostic à 360° sur la transition écologique",
+      "mainTheme": "environmental"
+    },
+    {
+      "id": 32,
+      "slug": "plan-transition-bas-carbone",
+      "title": "Plan de transition bas carbone",
+      "mainTheme": "environmental"
+    },
+    {
+      "id": 33,
+      "slug": "plan-adaptation-climat",
+      "title": "Plan d’adaptation au dérèglement climatique",
+      "mainTheme": "environmental"
+    },
+    {
+      "id": 35,
+      "slug": "com-labelisation",
+      "title": "Labélisation",
+      "mainTheme": "environmental"
+    },
+    {
+      "id": 36,
+      "slug": "ecoconception",
+      "title": "Écoconception d’un produit ou service",
+      "mainTheme": "eco-design"
+    },
+    {
+      "id": 71,
+      "slug": "recuperateur-eau-pluie",
+      "title": "Récupérateur d’eau de pluie",
+      "mainTheme": "water"
+    },
+    {
+      "id": 72,
+      "slug": "economiseurs-eau-sanitaires",
+      "title": "Économiseurs d’eau pour les sanitaires",
+      "mainTheme": "water"
+    },
+    {
+      "id": 104,
+      "slug": "covoiturage",
+      "title": "Covoiturage",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 137,
+      "slug": "electromenager-basse-consommation",
+      "title": "Électroménager basse consommation",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 138,
+      "slug": "menus-circuits-courts",
+      "title": "Menus en circuits courts",
+      "mainTheme": "eco-design"
+    },
+    {
+      "id": 139,
+      "slug": "petite-refrigeration",
+      "title": "Frigo basse consommation",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 140,
+      "slug": "economies-d-eau-exterieur",
+      "title": "Économies d'eau en extérieur",
+      "mainTheme": "water"
+    },
+    {
+      "id": 141,
+      "slug": "vegetalisation",
+      "title": "Végétalisation",
+      "mainTheme": "biodiversite"
+    },
+    {
+      "id": 142,
+      "slug": "ouvrants-ombrages",
+      "title": "Ouvrants et ombrages",
+      "mainTheme": "building"
+    },
+    {
+      "id": 143,
+      "slug": "abris-velos",
+      "title": "Abris à vélos",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 144,
+      "slug": "biodiversite",
+      "title": "Plan d'action biodiversité",
+      "mainTheme": "biodiversite"
+    },
+    {
+      "id": 146,
+      "slug": "maitrise-besoins-chauffage",
+      "title": "Maîtrise des besoins de chauffage",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 147,
+      "slug": "borne-recharge-ve",
+      "title": "Borne de recharge",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 203,
+      "slug": "haie-bocagere",
+      "title": "Plantation de haies",
+      "mainTheme": "biodiversite"
+    },
+    {
+      "id": 302,
+      "slug": "communication-responsable",
+      "title": "Communication responsable",
+      "mainTheme": "environmental"
+    },
+    {
+      "id": 337,
+      "slug": "sensibilisation-eco-gestes",
+      "title": "Sensibilisation aux éco-gestes",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 372,
+      "slug": "maintenance-preventive",
+      "title": "Maintenance préventive",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 378,
+      "slug": "revetements-permeables",
+      "title": "Revêtements perméables",
+      "mainTheme": "building"
+    },
+    {
+      "id": 401,
+      "slug": "utilitaire-camion-propre",
+      "title": "Acquisition d'un petit utilitaire propre",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 434,
+      "slug": "methanisation",
+      "title": "Méthanisation",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 467,
+      "slug": "management-energie",
+      "title": "Management de l’énergie",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 566,
+      "slug": "trajet-ferroviaire-train-metro",
+      "title": "Déplacements en train",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 567,
+      "slug": "couvert-vegetal-plantes-couvertures",
+      "title": "Couvert végétal",
+      "mainTheme": "biodiversite"
+    },
+    {
+      "id": 632,
+      "slug": "agroecologie",
+      "title": "Pratique agroécologique",
+      "mainTheme": "biodiversite"
+    },
+    {
+      "id": 666,
+      "slug": "tourisme-zero-dechet",
+      "title": "Tourisme zéro déchet",
+      "mainTheme": "waste"
+    },
+    {
+      "id": 667,
+      "slug": "materiaux-de-reemploi",
+      "title": "Matériaux de réemploi",
+      "mainTheme": "building"
+    },
+    {
+      "id": 699,
+      "slug": "produits-biosources",
+      "title": "Produits biosourcés",
+      "mainTheme": "eco-design"
+    },
+    {
+      "id": 731,
+      "slug": "transition-mobilites",
+      "title": "Changement des modes de transport",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 764,
+      "slug": "navires-propres",
+      "title": "Navires propres",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 797,
+      "slug": "friches",
+      "title": "Reconversion d’une friche",
+      "mainTheme": "building"
+    },
+    {
+      "id": 863,
+      "slug": "cyclologistique",
+      "title": "Cyclologistique",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 896,
+      "slug": "ecoconduite",
+      "title": "Écoconduite",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 929,
+      "slug": "fournisseurs-locaux",
+      "title": "Fournisseurs locaux",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 962,
+      "slug": "vehicules-intermediaires",
+      "title": "Achat d'un véhicule intermédiaire",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 995,
+      "slug": "fret-faible-impact",
+      "title": "Fret à faible impact",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 996,
+      "slug": "bateaux-propres",
+      "title": "Bateaux propres",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 997,
+      "slug": "plan-action-logistique",
+      "title": "Plan d'action logistique",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 998,
+      "slug": "vehicules-lourds-propres",
+      "title": "Achat d’un véhicule lourd plus propre",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 1028,
+      "slug": "achats-responsables",
+      "title": "Politique d'achats responsables",
+      "mainTheme": "rh"
+    },
+    {
+      "id": 1127,
+      "slug": "nettoyage-sans-produits-chimiques",
+      "title": "Nettoyage sans produits chimiques",
+      "mainTheme": "water"
+    },
+    {
+      "id": 1160,
+      "slug": "fours-industriels-electriques",
+      "title": "Fours industriels électriques",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 1193,
+      "slug": "isolation-thermique-equipements-industriels",
+      "title": "Isolation des équipements industriels",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 1226,
+      "slug": "zero-perte-en-production",
+      "title": "Zéro perte en production",
+      "mainTheme": "waste"
+    },
+    {
+      "id": 1228,
+      "slug": "broyeur-vegetaux",
+      "title": "Broyage des déchets verts",
+      "mainTheme": "waste"
+    },
+    {
+      "id": 1260,
+      "slug": "consigne-reemploi",
+      "title": "Consigne et réemploi",
+      "mainTheme": "waste"
+    },
+    {
+      "id": 1261,
+      "slug": "allongement-duree-de-vie",
+      "title": "Allongement de la durée de vie",
+      "mainTheme": "eco-design"
+    },
+    {
+      "id": 1391,
+      "slug": "engins-propres",
+      "title": "Acquisition d'un engin plus propre",
+      "mainTheme": "mobility"
+    },
+    {
+      "id": 1424,
+      "slug": "palettes-calage",
+      "title": "Réemploi des emballages logistiques",
+      "mainTheme": "waste"
+    },
+    {
+      "id": 1459,
+      "slug": "economie-fonctionnalite",
+      "title": "Économie de la fonctionnalité et de la coopération",
+      "mainTheme": "eco-design"
+    },
+    {
+      "id": 1490,
+      "slug": "hydrogene-vert",
+      "title": "Hydrogène vert",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 1523,
+      "slug": "efficacite-energetique-des-procedes-industriels",
+      "title": "Efficacité énergétique des procédés industriels",
+      "mainTheme": "energy"
+    },
+    {
+      "id": 1556,
+      "slug": "machines-agricoles-propres",
+      "title": "Acquisition d'une machine agricole plus propre",
+      "mainTheme": "mobility"
+    }
+  ],
+  "programs": [
+    {
+      "id": "accelerateur-decarbonation",
+      "title": "Accélérateur décarbonation",
+      "projectIds": [
+        32,
+        1424
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": 50,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "act-pas-a-pas",
+      "title": "ACT - Pas à pas (hors industrie)",
+      "projectIds": [
+        28,
+        32
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "aides-au-reemploi-des-emballages",
+      "title": "Aides au réemploi des emballages",
+      "projectIds": [
+        3,
+        666,
+        1260,
+        1424
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Hauts-de-France",
+        "Île-de-France",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Occitanie",
+        "Pays de la Loire"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "amo-chaufferie-biomasse",
+      "title": "AMO chaufferie biomasse",
+      "projectIds": [
+        8
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "C",
+        "E"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "audit-energetique-en-industrie",
+      "title": "Audit énergétique volontaire en industrie",
+      "projectIds": [
+        14,
+        467
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "label-clef-verte",
+      "title": "Label Clef Verte",
+      "projectIds": [
+        35,
+        1424
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "baisse-les-watts",
+      "title": "Baisse Les Watts",
+      "projectIds": [
+        4,
+        14,
+        146
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "bonus-ecologique",
+      "title": "Bonus écologique",
+      "projectIds": [
+        18,
+        19,
+        401,
+        731
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "booster-eco-energie-tertiaire",
+      "title": "Booster Entreprises",
+      "projectIds": [
+        15,
+        146
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "climadiag-expert",
+      "title": "ClimaDiag expert",
+      "projectIds": [
+        33
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "M"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "communaute-coq-vert",
+      "title": "Communauté du Coq Vert",
+      "projectIds": [
+        35,
+        302
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "L",
+        "M",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "coup-de-pouce-chauffage",
+      "title": "Coup de pouce Chauffage",
+      "projectIds": [
+        7
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "diag-decarbon-action",
+      "title": "Diag Décarbon'Action",
+      "projectIds": [
+        1
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "L",
+        "Q",
+        "R"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "diag-adaptation",
+      "title": "Diag Adaptation",
+      "projectIds": [
+        33
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "diag-ecoconception",
+      "title": "Diag Ecoconception",
+      "projectIds": [
+        22,
+        36,
+        929,
+        1261,
+        1459
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "diagnostic-changement-climatique",
+      "title": "Diagnostic Changement climatique",
+      "projectIds": [
+        31,
+        33
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Île-de-France"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "diagnostic-dechets",
+      "title": "Diagnostic déchets",
+      "projectIds": [
+        21,
+        1226,
+        1260
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "F",
+        "G",
+        "H",
+        "I",
+        "N",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "diagnostic-eco-conception-ile-de-france",
+      "title": "Diagnostic Eco-conception Île-de-France",
+      "projectIds": [
+        36,
+        929,
+        1459
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Île-de-France"
+      ],
+      "sectors": [
+        "M",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "diagnostic-rse",
+      "title": "Diagnostic RSE",
+      "projectIds": [
+        30,
+        1028
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "Q",
+        "R",
+        "S",
+        "T"
+      ],
+      "minEmployees": 20,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "diagnostic-transition-ecologique",
+      "title": "Diagnostic Transition Ecologique",
+      "projectIds": [
+        31
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "Q",
+        "R"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "eco-defis-des-artisans-et-des-commercants",
+      "title": "Eco-Défis des artisans et des commerçants",
+      "projectIds": [
+        35,
+        302
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "F",
+        "G",
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "engins-moins-polluants",
+      "title": "Engins moins polluants",
+      "projectIds": [
+        1391
+      ],
+      "aidType": "avantage fiscal",
+      "regions": null,
+      "sectors": [
+        "B",
+        "F",
+        "H"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "enviroveille",
+      "title": "Enviroveille",
+      "projectIds": [
+        30
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "K",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-alimentation-durable",
+      "title": "Étude \"Alimentation durable\"",
+      "projectIds": [
+        24,
+        25,
+        138
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Bourgogne-Franche-Comté",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Guadeloupe",
+        "Guyane",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Nouvelle-Calédonie",
+        "Occitanie",
+        "Pays de la Loire",
+        "Polynésie française",
+        "Provence-Alpes-Côte d'Azur",
+        "Saint-Barthélemy",
+        "Saint-Pierre-Et-Miquelon"
+      ],
+      "sectors": [
+        "A",
+        "C",
+        "D",
+        "G",
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-biodechets",
+      "title": "Etude \"biodéchets\"",
+      "projectIds": [
+        24,
+        1226
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Hauts-de-France",
+        "Île-de-France",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Occitanie",
+        "Pays de la Loire",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "A",
+        "C",
+        "E",
+        "G",
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-centres-de-tri",
+      "title": "Étude \"Centres de tri\"",
+      "projectIds": [
+        23
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Hauts-de-France",
+        "Île-de-France",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Occitanie",
+        "Pays de la Loire",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "E",
+        "F"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-chaufferie-biomasse",
+      "title": "Étude \"Chaufferie biomasse\"",
+      "projectIds": [
+        8
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "G",
+        "H",
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-diagnostic-serres",
+      "title": "Étude \"Diagnostic serres\"",
+      "projectIds": [
+        13
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "G"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-economie-de-la-fonctionnalite",
+      "title": "Étude \"Économie de la fonctionnalité\"",
+      "projectIds": [
+        36,
+        1459
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Guadeloupe",
+        "Guyane",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Nouvelle-Calédonie",
+        "Occitanie",
+        "Pays de la Loire",
+        "Polynésie française"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-et-investissement-qualite-de-l-air",
+      "title": "Etude et Investissement \"qualité de l’air\"",
+      "projectIds": [
+        731
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Grand Est",
+        "Île-de-France",
+        "Martinique",
+        "Normandie",
+        "Occitanie",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-friches-polluees",
+      "title": "Étude et travaux de dépollution d'une friche",
+      "projectIds": [
+        797
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "L"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-gaspillage-alimentaire",
+      "title": "Étude \"Gaspillage alimentaire\"",
+      "projectIds": [
+        25
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Bourgogne-Franche-Comté",
+        "Centre-Val de Loire",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "A",
+        "C",
+        "D",
+        "G",
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-geothermie-de-surface-et-d-aerothermie",
+      "title": "Étude \"Géothermie de surface et d'aérothermie\"",
+      "projectIds": [
+        10,
+        12
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "L",
+        "Q"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-hydroelectricite",
+      "title": "Étude \"Hydroélectricité\"",
+      "projectIds": [
+        11
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "La Réunion",
+        "Nouvelle-Aquitaine",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-methanisation",
+      "title": "Étude \"Méthanisation\"",
+      "projectIds": [
+        434,
+        1226
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Corse",
+        "Guadeloupe",
+        "Guyane",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Nouvelle-Calédonie",
+        "Occitanie",
+        "Pays de la Loire",
+        "Polynésie française",
+        "Saint-Barthélemy",
+        "Saint-Martin"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "L",
+        "M"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-performance-energetique-en-industrie",
+      "title": "Étude \"Performance énergétique\" ou de \"décarbonation\" en industrie",
+      "projectIds": [
+        14
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "M"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-performance-produits",
+      "title": "Étude \"Éco-conception\"",
+      "projectIds": [
+        22,
+        36,
+        1261,
+        1459
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Guadeloupe",
+        "Guyane",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Nouvelle-Calédonie",
+        "Occitanie",
+        "Pays de la Loire",
+        "Polynésie française",
+        "Provence-Alpes-Côte d'Azur",
+        "Saint-Barthélemy",
+        "Saint-Martin",
+        "Saint-Pierre-Et-Miquelon"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-photovoltaique-ademe",
+      "title": "Étude \"Autoconsommation photovoltaïque\"",
+      "projectIds": [
+        5
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Guadeloupe",
+        "Guyane",
+        "La Réunion",
+        "Martinique",
+        "Nouvelle-Aquitaine",
+        "Polynésie française",
+        "Provence-Alpes-Côte d'Azur",
+        "Saint-Pierre-Et-Miquelon"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-photovoltaique-cci",
+      "title": "Étude d'opportunité photovoltaïque",
+      "projectIds": [
+        5
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Bourgogne-Franche-Comté"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "amelioration-qualite-de-l-air",
+      "title": "Amélioration de la qualité de l’air",
+      "projectIds": [
+        8,
+        16,
+        17,
+        144,
+        401,
+        566,
+        731,
+        764,
+        896,
+        995,
+        996,
+        998,
+        1391
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Île-de-France",
+        "Martinique",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-projet-de-recherche",
+      "title": "Étude \"projet de recherche\"",
+      "projectIds": [
+        29
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "C",
+        "D",
+        "E",
+        "F",
+        "H",
+        "J",
+        "M",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-recuperation-de-chaleur-fatale",
+      "title": "Étude \"Récupération de chaleur fatale\"",
+      "projectIds": [
+        9
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "H",
+        "I",
+        "M"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-reemploi-reutilisation-reparation",
+      "title": "Étude \"réemploi réutilisation réparation\"",
+      "projectIds": [
+        1260,
+        1459
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Hauts-de-France",
+        "Île-de-France",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Occitanie",
+        "Pays de la Loire",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "C",
+        "E",
+        "G",
+        "I",
+        "J",
+        "R"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-rehabilitation-solaires-thermiques-collectives",
+      "title": "Étude \"réhabilitation solaires thermiques collectives\"",
+      "projectIds": [
+        6
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Guadeloupe",
+        "Guyane",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Nouvelle-Aquitaine",
+        "Occitanie",
+        "Pays de la Loire",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "L",
+        "N",
+        "Q",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-reseaux-energie-renouvelable",
+      "title": "Étude \"Réseaux énergie renouvelable\"",
+      "projectIds": [
+        7
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "C",
+        "D",
+        "E",
+        "Q"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-solaire-thermique",
+      "title": "Étude \"Solaire thermique\"",
+      "projectIds": [
+        6
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Guadeloupe",
+        "Guyane",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Occitanie",
+        "Pays de la Loire",
+        "Polynésie française",
+        "Provence-Alpes-Côte d'Azur",
+        "Saint-Pierre-Et-Miquelon"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-geothermie-profonde",
+      "title": "Étude \"Géothermie profonde\"",
+      "projectIds": [
+        7,
+        12
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "L",
+        "Q"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-test-geothermie",
+      "title": "Étude \"Test géothermie\"",
+      "projectIds": [
+        12
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "extreme-defi-mobilite",
+      "title": "eXtrême Défi Mobilité",
+      "projectIds": [
+        731,
+        863,
+        896,
+        962
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "C",
+        "G",
+        "H",
+        "M"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "flotte-de-velos-a-disposition",
+      "title": "Flotte de vélos à disposition",
+      "projectIds": [
+        19,
+        731
+      ],
+      "aidType": "avantage fiscal",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "fonds-tourisme-durable",
+      "title": "Fonds Tourisme Durable",
+      "projectIds": [
+        4,
+        2,
+        5,
+        3,
+        7,
+        8,
+        10,
+        12,
+        15,
+        18,
+        19,
+        23,
+        24,
+        25,
+        28,
+        31,
+        32,
+        35,
+        71,
+        72,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        146,
+        666
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Corse",
+        "Grand Est",
+        "Guadeloupe",
+        "Guyane",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Nouvelle-Calédonie",
+        "Occitanie",
+        "Pays de la Loire",
+        "Polynésie française",
+        "Provence-Alpes-Côte d'Azur",
+        "Saint-Barthélemy",
+        "Saint-Martin"
+      ],
+      "sectors": [
+        "A",
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "fond-vert-territoires-d-industrie",
+      "title": "Fonds Vert - Territoires d'Industrie",
+      "projectIds": [
+        3,
+        24,
+        667,
+        699,
+        731,
+        962,
+        1226,
+        1260,
+        1391
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formation-engager-entreprise-transition-ecologique",
+      "title": "Formation ADEME",
+      "projectIds": [
+        26,
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "b-a-ba-du-climat-et-biodiversite",
+      "title": "B.A.-BA du climat et de la biodiversité",
+      "projectIds": [
+        26,
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formations-du-cfde",
+      "title": "Formations du CFDE",
+      "projectIds": [
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "H",
+        "K",
+        "M",
+        "O",
+        "P",
+        "Q"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "diag-eco-flux",
+      "title": "Diag Eco-Flux",
+      "projectIds": [
+        4,
+        20,
+        31,
+        146,
+        1127,
+        1226
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "O",
+        "Q"
+      ],
+      "minEmployees": 20,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "fresque-de-la-mobilite",
+      "title": "Fresque de la Mobilité",
+      "projectIds": [
+        16,
+        566
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Bourgogne-Franche-Comté",
+        "Île-de-France"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "gestion-des-biodechets",
+      "title": "Gestion des biodéchets",
+      "projectIds": [
+        24,
+        1226
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Hauts-de-France"
+      ],
+      "sectors": [
+        "A",
+        "E",
+        "G",
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formation-artisan-developpement-durable",
+      "title": "Formation développement durable",
+      "projectIds": [
+        26,
+        28,
+        30,
+        31,
+        337
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "C",
+        "F",
+        "G",
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "imprim-vert",
+      "title": "Imprim'vert",
+      "projectIds": [
+        35,
+        302
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "C",
+        "R"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-biognv-agricole-et-territorial",
+      "title": "Investissement \"bioGNV agricole et territorial\"",
+      "projectIds": [
+        632
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Bourgogne-Franche-Comté",
+        "Centre-Val de Loire",
+        "Corse",
+        "Grand Est",
+        "Hauts-de-France",
+        "Île-de-France",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Occitanie",
+        "Pays de la Loire",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "A",
+        "D",
+        "E"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-boucle-d-eau-geothermique",
+      "title": "Investissement \"Boucle d’eau géothermique\"",
+      "projectIds": [
+        7,
+        12
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-centre-de-tri",
+      "title": "Investissement \"centre de tri\"",
+      "projectIds": [
+        23
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Hauts-de-France",
+        "Île-de-France",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Occitanie",
+        "Pays de la Loire",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "E"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-chaleur-bois",
+      "title": "Investissement \"Chaleur bois\"",
+      "projectIds": [
+        8
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-contrat-chaleur-renouvelable",
+      "title": "Investissement \"Contrat Chaleur Renouvelable\"",
+      "projectIds": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        12
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-contre-le-gaspillage-alimentaire",
+      "title": "Investissement contre le gaspillage alimentaire",
+      "projectIds": [
+        25
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Bourgogne-Franche-Comté",
+        "Centre-Val de Loire",
+        "Corse",
+        "Grand Est",
+        "Guadeloupe",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "A",
+        "C",
+        "G",
+        "H",
+        "I",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-ecoconception",
+      "title": "Investissement \"Ecoconception\"",
+      "projectIds": [
+        35,
+        36,
+        699,
+        1261
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Guadeloupe",
+        "Guyane",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Nouvelle-Calédonie",
+        "Occitanie",
+        "Pays de la Loire",
+        "Polynésie française"
+      ],
+      "sectors": [
+        "A",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-geothermie-de-surface-et-d-aerothermie",
+      "title": "Investissement \"Géothermie de surface et d'aérothermie\"",
+      "projectIds": [
+        10,
+        12
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-geothermie-profonde",
+      "title": "Investissement \"Géothermie profonde\"",
+      "projectIds": [
+        12
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-gestion-des-biodechets",
+      "title": "Investissement \"Gestion des biodéchets\"",
+      "projectIds": [
+        24,
+        1226
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Hauts-de-France",
+        "Île-de-France",
+        "Martinique",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Occitanie",
+        "Pays de la Loire",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "A",
+        "C",
+        "E",
+        "G",
+        "I",
+        "M",
+        "N",
+        "Q"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-methanisation-paca",
+      "title": "Étude \"Méthanisation\" en PACA",
+      "projectIds": [
+        434,
+        1226
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "A",
+        "C",
+        "D",
+        "E",
+        "H",
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-methanisation",
+      "title": "Investissement \"Méthanisation\"",
+      "projectIds": [
+        434
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Centre-Val de Loire",
+        "Corse",
+        "Guadeloupe",
+        "Guyane",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Nouvelle-Calédonie",
+        "Occitanie",
+        "Pays de la Loire",
+        "Polynésie française",
+        "Saint-Barthélemy",
+        "Saint-Martin"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "H"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-pac-solaire",
+      "title": "Investissement \"PAC solaire\"",
+      "projectIds": [
+        6,
+        10
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-pour-l-approvisionnement-de-chaufferies-bois",
+      "title": "Investissement pour l'approvisionnement de chaufferies bois",
+      "projectIds": [
+        8
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "A"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-recuperation-de-chaleur-fatale",
+      "title": "Investissement \"Récupération de chaleur fatale\"",
+      "projectIds": [
+        9
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-reemploi-reutilisation-reparation",
+      "title": "Investissement \"réemploi réutilisation réparation\"",
+      "projectIds": [
+        36,
+        1226,
+        1459
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Hauts-de-France",
+        "Île-de-France",
+        "Martinique",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Occitanie",
+        "Pays de la Loire",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "E",
+        "F",
+        "G",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-reseaux-de-chaleur-ou-de-froid",
+      "title": "Investissement \"Réseaux de chaleur ou de froid\"",
+      "projectIds": [
+        7
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "C",
+        "D",
+        "E",
+        "Q"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-solaire-thermique",
+      "title": "Investissement \"Solaire thermique\"",
+      "projectIds": [
+        6
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-solaire-thermique-outre-mer",
+      "title": "Investissement \"solaire thermique Outre-mer\"",
+      "projectIds": [
+        6
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Guyane",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Polynésie française"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-velotourisme",
+      "title": "Investissement \"vélotourisme\"",
+      "projectIds": [
+        143,
+        731
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "A",
+        "G",
+        "I",
+        "O"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "diag-perf-immo",
+      "title": "Diag Perf'Immo",
+      "projectIds": [
+        14,
+        15
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "formations-tee",
+      "title": "Formations Transition Écologique et Énergétique",
+      "projectIds": [
+        28,
+        1028
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "ormat",
+      "title": "ORMAT",
+      "projectIds": [
+        3,
+        21,
+        23,
+        666
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Corse",
+        "Grand Est",
+        "Guadeloupe",
+        "Guyane",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Nouvelle-Calédonie",
+        "Occitanie",
+        "Pays de la Loire",
+        "Polynésie française"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "E",
+        "F",
+        "G"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "pacte-industrie",
+      "title": "PACTE Industrie",
+      "projectIds": [
+        28,
+        32,
+        467
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "performa-environnement",
+      "title": "Performa Environnement",
+      "projectIds": [
+        24,
+        31,
+        33,
+        104,
+        146
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Guadeloupe",
+        "Guyane",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Nouvelle-Calédonie",
+        "Occitanie",
+        "Pays de la Loire",
+        "Polynésie française",
+        "Provence-Alpes-Côte d'Azur",
+        "Saint-Barthélemy",
+        "Saint-Martin",
+        "Saint-Pierre-Et-Miquelon"
+      ],
+      "sectors": [
+        "C",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "R",
+        "T"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "plan-de-mobilite",
+      "title": "Plan de mobilité",
+      "projectIds": [
+        16,
+        104,
+        566,
+        731,
+        896
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Île-de-France"
+      ],
+      "sectors": null,
+      "minEmployees": 50,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "investissement-vte-vert",
+      "title": "Investissement \"VTE Vert\"",
+      "projectIds": [
+        27
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 4999,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "mission-conseil-rse",
+      "title": "Mission de Conseil RSE",
+      "projectIds": [
+        30
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": 10,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "mission-strategie-environnement",
+      "title": "Mission Stratégie Environnement",
+      "projectIds": [
+        4,
+        1,
+        14,
+        28,
+        30,
+        31,
+        467
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": 10,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "pret-action-climat",
+      "title": "Prêt Action Climat",
+      "projectIds": [
+        5,
+        8,
+        17,
+        18,
+        19,
+        24,
+        27,
+        71,
+        72
+      ],
+      "aidType": "prêt",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": 49,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "prime-a-la-conversion",
+      "title": "Prime à la conversion",
+      "projectIds": [
+        18,
+        401,
+        731
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": 4999,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "programme-breizh-fab",
+      "title": "Programme Breizh Fab",
+      "projectIds": [
+        4,
+        1,
+        31,
+        33,
+        35,
+        36,
+        302
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Bretagne"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "programme-ecod-o",
+      "title": "Programme Ecod'o",
+      "projectIds": [
+        20,
+        71,
+        72,
+        140
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Bretagne"
+      ],
+      "sectors": [
+        "C",
+        "D",
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "programme-eve",
+      "title": "Programme EVE",
+      "projectIds": [
+        32,
+        35,
+        302,
+        401,
+        731,
+        896,
+        995,
+        997
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "G",
+        "H"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "programme-synergies-durables",
+      "title": "Programme Synergies durables",
+      "projectIds": [
+        667,
+        929,
+        1028,
+        1226
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "M"
+      ],
+      "minEmployees": 20,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "renovation-energetique",
+      "title": "Crédit d'Impôt Rénovation Énergétique (CIRE)",
+      "projectIds": [
+        15
+      ],
+      "aidType": "avantage fiscal",
+      "regions": null,
+      "sectors": [
+        "C",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "renovation-petit-tertiaire-prive",
+      "title": "Diagnostic SARE",
+      "projectIds": [
+        4,
+        14,
+        15
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "repar-acteurs",
+      "title": "Répar'acteurs",
+      "projectIds": [
+        35,
+        302
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "C",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "retrofit-electrique",
+      "title": "Rétrofit électrique",
+      "projectIds": [
+        17,
+        731
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "sobriete-et-resilience-des-territoires",
+      "title": "Sobriété et Résilience des Territoires",
+      "projectIds": [
+        144,
+        632
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "tpe-gagnantes-sur-tous-les-couts",
+      "title": "TPE gagnantes sur tous les coûts",
+      "projectIds": [
+        4,
+        20,
+        31,
+        146
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Guadeloupe",
+        "Guyane",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Nouvelle-Calédonie",
+        "Occitanie",
+        "Pays de la Loire",
+        "Polynésie française",
+        "Provence-Alpes-Côte d'Azur",
+        "Saint-Barthélemy",
+        "Saint-Martin",
+        "Saint-Pierre-Et-Miquelon"
+      ],
+      "sectors": [
+        "A",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "M",
+        "Q",
+        "R",
+        "S",
+        "T"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 19,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "tremplin",
+      "title": "Tremplin",
+      "projectIds": [
+        3,
+        1,
+        18,
+        19,
+        21,
+        22,
+        23,
+        24,
+        32,
+        35,
+        36,
+        666
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "A",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "trophees-crisalide-eco-activites",
+      "title": "Trophées Crisalide Eco-activités",
+      "projectIds": [
+        29,
+        35,
+        36
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Bretagne",
+        "Normandie",
+        "Pays de la Loire"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "vehicule-lourd-energies-propres",
+      "title": "Véhicule lourd énergies propres",
+      "projectIds": [
+        998
+      ],
+      "aidType": "avantage fiscal",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "visite-energie",
+      "title": "Visite Énergie CCI/CMA",
+      "projectIds": [
+        4,
+        2,
+        146
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Guadeloupe",
+        "Guyane",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Nouvelle-Calédonie",
+        "Occitanie",
+        "Pays de la Loire",
+        "Polynésie française",
+        "Provence-Alpes-Côte d'Azur",
+        "Saint-Barthélemy",
+        "Saint-Martin",
+        "Saint-Pierre-Et-Miquelon"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "nos-gestes-climat",
+      "title": "Nos Gestes Climat",
+      "projectIds": [
+        1,
+        20,
+        26
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "pret-economies-d-energie-pee",
+      "title": "Prêt Économies d’Énergie (PEE)",
+      "projectIds": [
+        2,
+        6,
+        7,
+        9,
+        10,
+        12,
+        13,
+        15,
+        17,
+        18,
+        467,
+        764,
+        996,
+        1160,
+        1193
+      ],
+      "aidType": "prêt",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": 49,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "pret-vert",
+      "title": "Prêt Vert",
+      "projectIds": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        15,
+        17,
+        18,
+        24,
+        27,
+        71,
+        72,
+        147,
+        632,
+        764
+      ],
+      "aidType": "prêt",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 4999,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "pret-vert-ademe",
+      "title": "Prêt Vert - Ademe",
+      "projectIds": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        15,
+        17,
+        18,
+        24,
+        27,
+        71,
+        72,
+        632
+      ],
+      "aidType": "prêt",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "adaptation-bzh",
+      "title": "Adaptation au changement climatique en Bretagne",
+      "projectIds": [
+        33
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Bretagne"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "aide-financement-occitanie",
+      "title": "Aide au financement en Occitanie",
+      "projectIds": [
+        2,
+        5,
+        3,
+        6,
+        7,
+        1,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        17,
+        18,
+        19,
+        22,
+        24,
+        25,
+        29,
+        30,
+        32,
+        33,
+        35,
+        147,
+        632,
+        666,
+        1424
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Occitanie"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "cci-business-optimizer",
+      "title": "CCI Business Optimizer",
+      "projectIds": [
+        4,
+        20,
+        337
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "ecoconception-bzh",
+      "title": "Initiation éco-conception",
+      "projectIds": [
+        36,
+        1459
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Bretagne"
+      ],
+      "sectors": [
+        "C",
+        "F",
+        "G",
+        "M",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "ecogestes-paca",
+      "title": "Formation écogestes",
+      "projectIds": [
+        26,
+        28,
+        337
+      ],
+      "aidType": "formation",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "ecoproduction-hdf",
+      "title": "Accompagnement écoproduction",
+      "projectIds": [
+        3,
+        36,
+        666
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Hauts-de-France"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "fiscalite-energetique-occitanie",
+      "title": "Fiscalité énergétique",
+      "projectIds": [
+        4
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Occitanie"
+      ],
+      "sectors": [
+        "B",
+        "C"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "certification-agriculture-biologique",
+      "title": "Certification en agriculture biologique",
+      "projectIds": [
+        144,
+        567,
+        632,
+        699
+      ],
+      "aidType": "avantage fiscal",
+      "regions": null,
+      "sectors": [
+        "A"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "industries-vertes",
+      "title": "Industries vertes (CI3V)",
+      "projectIds": [
+        36
+      ],
+      "aidType": "avantage fiscal",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "H",
+        "J",
+        "M",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "navires-energies-propre",
+      "title": "Navires utilisant des énergies propres",
+      "projectIds": [
+        764
+      ],
+      "aidType": "avantage fiscal",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "H"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "bonus-reparation",
+      "title": "Bonus Réparation",
+      "projectIds": [
+        36,
+        372,
+        1261
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "C",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "cedre-premier-pas",
+      "title": "CEDRE Premier Pas",
+      "projectIds": [
+        4,
+        1,
+        14,
+        16,
+        20,
+        21,
+        30,
+        31,
+        32,
+        33,
+        35,
+        36,
+        144,
+        302,
+        1261
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "cedre-investissement",
+      "title": "CEDRE Investissement",
+      "projectIds": [
+        2,
+        3,
+        15,
+        23,
+        36,
+        71,
+        137,
+        138,
+        139,
+        140,
+        142,
+        146,
+        666,
+        1424
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investour",
+      "title": "INVESTour",
+      "projectIds": [
+        15,
+        26,
+        27,
+        28
+      ],
+      "aidType": "prêt",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "I",
+        "L"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "sud-pret-climat",
+      "title": "Sud Prêt Climat",
+      "projectIds": [
+        4,
+        2,
+        5,
+        3,
+        6,
+        7,
+        1,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        35,
+        36,
+        71,
+        72,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        146,
+        147,
+        203,
+        302,
+        372,
+        378,
+        567,
+        666,
+        1424
+      ],
+      "aidType": "prêt",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "sites-touristiques-exemplaires",
+      "title": "Sites touristiques exemplaires",
+      "projectIds": [
+        19,
+        71,
+        143,
+        147
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "I",
+        "L",
+        "R"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "nature-ta-ville",
+      "title": "Nature ta ville",
+      "projectIds": [
+        141
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "solaire-ready",
+      "title": "Plan Solaire : Paré pour le solaire",
+      "projectIds": [
+        5,
+        15
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "smart-pv",
+      "title": "Plan Solaire Sud PV Plus",
+      "projectIds": [
+        5
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "cheque-transition-bioethanol",
+      "title": "Chèque Transition Bioéthanol",
+      "projectIds": [
+        18,
+        401,
+        731
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "recharge-vehicule-electrique",
+      "title": "Recharges pour véhicules électriques",
+      "projectIds": [
+        18,
+        147
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "H",
+        "I",
+        "L",
+        "O",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "entreprises-engagees-nature",
+      "title": "Entreprises engagées pour la nature",
+      "projectIds": [
+        35,
+        144,
+        302
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "charte-zero-dechet-plastique",
+      "title": "Charte \"zéro déchet plastique\"",
+      "projectIds": [
+        3,
+        21,
+        144,
+        666,
+        1260,
+        1424
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "mecenaturel",
+      "title": "Mécénaturel",
+      "projectIds": [
+        144
+      ],
+      "aidType": "avantage fiscal",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "audit-clef-verte-sud",
+      "title": "Audit label Clef Verte",
+      "projectIds": [
+        35
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "pret-tourisme",
+      "title": "Prêt Tourisme Bpifrance",
+      "projectIds": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        15,
+        17,
+        18,
+        24,
+        27,
+        71,
+        72
+      ],
+      "aidType": "prêt",
+      "regions": null,
+      "sectors": [
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 4999,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "mooc-biodiversite-entreprise",
+      "title": "MOOC Entreprise et biodiversité",
+      "projectIds": [
+        28,
+        144
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "cedre-ambition",
+      "title": "CEDRE Ambition",
+      "projectIds": [
+        4,
+        1,
+        14,
+        16,
+        20,
+        21,
+        30,
+        31,
+        32,
+        33
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "perf-crise-energetique-aura",
+      "title": "Aide aux travaux de rénovation énergétique",
+      "projectIds": [
+        4,
+        15
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Auvergne-Rhône-Alpes"
+      ],
+      "sectors": [
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "deploiement-flottes-hydrogene",
+      "title": "Aide au déploiement de flottes hydrogène",
+      "projectIds": [
+        17,
+        18,
+        401
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Bourgogne-Franche-Comté"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": 4999,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "soutien-pv-grand-est",
+      "title": "Soutien au photovoltaïque en Grand Est",
+      "projectIds": [
+        5
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Grand Est"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "aide-travaux-tourisme-aura",
+      "title": "Aide travaux hébergements touristiques",
+      "projectIds": [
+        15,
+        142
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Auvergne-Rhône-Alpes"
+      ],
+      "sectors": [
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "pret-energie-aura",
+      "title": "Prêt Energie AURA",
+      "projectIds": [
+        4,
+        2,
+        5,
+        3,
+        6,
+        7,
+        1,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        35,
+        36,
+        71,
+        72,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        146,
+        147,
+        203,
+        302,
+        372,
+        378,
+        666,
+        1261
+      ],
+      "aidType": "prêt",
+      "regions": [
+        "Auvergne-Rhône-Alpes"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "pass-transition-bzh",
+      "title": "PASS Transitions",
+      "projectIds": [
+        4,
+        2,
+        5,
+        6,
+        1,
+        14,
+        16,
+        17,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        30,
+        31,
+        33,
+        36,
+        71,
+        72,
+        140,
+        142,
+        143,
+        144,
+        146,
+        147,
+        372,
+        401,
+        731,
+        764,
+        863
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Bretagne"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "J",
+        "M",
+        "N",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 49,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "pass-transformation-ecologique",
+      "title": "Pass Transformation Ecologique",
+      "projectIds": [
+        6,
+        7,
+        8,
+        10,
+        12,
+        15,
+        19,
+        23,
+        24,
+        71,
+        141,
+        567
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Occitanie"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "M",
+        "N",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 19,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "pret-ile-de-france",
+      "title": "Prêt transition écologique Île-de-France",
+      "projectIds": [
+        4,
+        2,
+        5,
+        3,
+        6,
+        7,
+        1,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        35,
+        36,
+        71,
+        72,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        146,
+        147,
+        203,
+        302,
+        372,
+        378,
+        666,
+        1261,
+        1424
+      ],
+      "aidType": "prêt",
+      "regions": [
+        "Île-de-France"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "cap-transition-ecologique",
+      "title": "CAP Transition Ecologique",
+      "projectIds": [
+        4,
+        2,
+        5,
+        3,
+        6,
+        7,
+        1,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        20,
+        21,
+        23,
+        24,
+        30,
+        31,
+        32,
+        33,
+        35,
+        36,
+        71,
+        72,
+        137,
+        138,
+        139,
+        141,
+        142,
+        144,
+        146,
+        666,
+        1424
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Centre-Val de Loire"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "perf-crise-energetique-cvl",
+      "title": "Investissements d'économies d'énergie",
+      "projectIds": [
+        4,
+        2,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        137,
+        139,
+        146,
+        372,
+        378
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Centre-Val de Loire"
+      ],
+      "sectors": [
+        "C",
+        "G",
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "projets-hebergements-touristiques-cvl",
+      "title": "Projets d'hébergements touristiques",
+      "projectIds": [
+        14,
+        15
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Centre-Val de Loire"
+      ],
+      "sectors": [
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "ecolabel",
+      "title": "Accompagnement à l'Écolabel européen",
+      "projectIds": [
+        35,
+        36
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "A",
+        "C",
+        "G",
+        "I",
+        "M",
+        "N",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "impulsion-environnement",
+      "title": "Impulsion Environnement",
+      "projectIds": [
+        4,
+        2,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        14,
+        16,
+        17,
+        18,
+        146,
+        147
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Normandie"
+      ],
+      "sectors": [
+        "B",
+        "D",
+        "E",
+        "F",
+        "H",
+        "J",
+        "K",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "soutien-hebergement-touristique",
+      "title": "Soutien à l'hébergement touristique",
+      "projectIds": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        19,
+        20,
+        36,
+        71,
+        72,
+        137,
+        140,
+        141,
+        142,
+        143,
+        146
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "I",
+        "L"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "bilan-carbone",
+      "title": "Bilan Carbone®",
+      "projectIds": [
+        1
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "programme-reseau",
+      "title": "Programme Res'Eau",
+      "projectIds": [
+        20
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "I",
+        "N",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "agir-pdl",
+      "title": "Agir en Pays de la Loire",
+      "projectIds": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        12,
+        15,
+        24,
+        71,
+        72,
+        137,
+        138,
+        139,
+        140,
+        142,
+        764,
+        996
+      ],
+      "aidType": "prêt",
+      "regions": [
+        "Pays de la Loire"
+      ],
+      "sectors": [
+        "I",
+        "L"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "decarb-ind-25",
+      "title": "Décarbonation de l'industrie",
+      "projectIds": [
+        32,
+        699
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "pami",
+      "title": "Programme PAMI",
+      "projectIds": [
+        764,
+        996
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "accelerateur-economie-circulaire",
+      "title": "Accélérateur Économie Circulaire",
+      "projectIds": [
+        36,
+        1261
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": 10,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "impact-co2",
+      "title": "Impact CO2",
+      "projectIds": [
+        26
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "hotellerie-independante-na",
+      "title": "Aide à l'hôtellerie indépendante",
+      "projectIds": [
+        2,
+        5,
+        6,
+        8,
+        9,
+        10,
+        15,
+        23,
+        24,
+        72,
+        137,
+        139,
+        146
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Nouvelle-Aquitaine"
+      ],
+      "sectors": [
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "camping-independant-na",
+      "title": "Aide aux campings indépendants de Nouvelle-Aquitaine",
+      "projectIds": [
+        2,
+        5,
+        6,
+        8,
+        9,
+        10,
+        15,
+        19,
+        23,
+        24,
+        72,
+        137,
+        139,
+        146
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Nouvelle-Aquitaine"
+      ],
+      "sectors": [
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "aide-tpe-transition-na",
+      "title": "Aide à l'investissement des transitions",
+      "projectIds": [
+        3,
+        21,
+        23,
+        24,
+        27,
+        28,
+        36,
+        138,
+        434,
+        666,
+        997,
+        1260,
+        1261
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Nouvelle-Aquitaine"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 9,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "prit-hdf",
+      "title": "Priorités régionales d'interventions touristiques",
+      "projectIds": [
+        15,
+        19,
+        31,
+        32,
+        33,
+        36,
+        71,
+        72,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        146,
+        147
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Hauts-de-France"
+      ],
+      "sectors": [
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "hotellerie-independante-bfc",
+      "title": "Aide à l’hôtellerie indépendante en Bourgogne-Franche-Comté",
+      "projectIds": [
+        4,
+        2,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14,
+        15,
+        20,
+        71,
+        72,
+        140,
+        141,
+        144
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Bourgogne-Franche-Comté"
+      ],
+      "sectors": [
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "camping-independant-bfc",
+      "title": "Aide aux campings indépendants de Bourgogne-Franche-Comté",
+      "projectIds": [
+        4,
+        30,
+        31,
+        36
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Bourgogne-Franche-Comté"
+      ],
+      "sectors": [
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 49,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "aide-labellisation-corse",
+      "title": "Soutien à la labellisation touristique",
+      "projectIds": [
+        35
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Corse"
+      ],
+      "sectors": [
+        "I"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "aide-investissement-corse",
+      "title": "Impresa Sì",
+      "projectIds": [
+        3,
+        6,
+        7,
+        8,
+        9,
+        10,
+        14,
+        15,
+        22,
+        23,
+        24,
+        28,
+        36,
+        71,
+        72,
+        140,
+        141,
+        142,
+        144,
+        666,
+        1424
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Corse"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "aide-tourisme-guadeloupe",
+      "title": "Aide régionale au développement de produits touristiques",
+      "projectIds": [
+        2,
+        13,
+        15,
+        18,
+        20,
+        30,
+        33,
+        36,
+        71,
+        72,
+        137,
+        138,
+        140,
+        141,
+        144,
+        146,
+        764
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Guadeloupe"
+      ],
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "advenir",
+      "title": "ADVENIR",
+      "projectIds": [
+        147
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "credit-impot-recherche",
+      "title": "Crédit d'Impôt Recherche (CIR)",
+      "projectIds": [
+        29,
+        36
+      ],
+      "aidType": "avantage fiscal",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "G"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "credit-impot-innovation",
+      "title": "Crédit d'impôt innovation (CII)",
+      "projectIds": [
+        29,
+        36
+      ],
+      "aidType": "avantage fiscal",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I"
+      ],
+      "minEmployees": 20,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "diag-impact-biodiversite",
+      "title": "Diagnostic impact dépendance biodiversité",
+      "projectIds": [
+        30,
+        144
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Grand Est",
+        "Pays de la Loire",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "corimer",
+      "title": "CORIMER Navires bas carbone",
+      "projectIds": [
+        764
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "H",
+        "I",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "je-change-ma-voiture",
+      "title": "Je change ma voiture",
+      "projectIds": [
+        16,
+        18,
+        19,
+        731,
+        896
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "mobilipro",
+      "title": "Mobili'Pro",
+      "projectIds": [
+        16,
+        731,
+        896
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "evaluation-carbone-lise",
+      "title": "Évaluation carbone LISE",
+      "projectIds": [
+        1
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Bretagne",
+        "Centre-Val de Loire",
+        "Grand Est",
+        "Guadeloupe",
+        "Guyane",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Nouvelle-Calédonie",
+        "Occitanie",
+        "Pays de la Loire",
+        "Polynésie française",
+        "Provence-Alpes-Côte d'Azur",
+        "Saint-Barthélemy",
+        "Saint-Martin",
+        "Saint-Pierre-Et-Miquelon"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": 249,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "diag-biodiversite",
+      "title": "Diag biodiversité",
+      "projectIds": [
+        26,
+        144
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "certificats-economie-energie",
+      "title": "Certificats d'économies d'énergie (CEE)",
+      "projectIds": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        15,
+        17,
+        18,
+        137,
+        147,
+        401,
+        434,
+        467,
+        731,
+        764,
+        996,
+        997,
+        998
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "parm-vnf",
+      "title": "Plan d'aide au report modal (PARM)",
+      "projectIds": [
+        731,
+        995,
+        997
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "C",
+        "H"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "decarb-flash-2025-2027",
+      "title": "Decarb Flash 2025-2027",
+      "projectIds": [
+        5,
+        6,
+        7,
+        9,
+        10,
+        15,
+        699,
+        1160,
+        1193,
+        1226,
+        1523
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "H",
+        "M"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "bciat-biomasse-chaleur-industrie-agriculture-tertiaire",
+      "title": "BCIAT 2026 - Biomasse chaleur pour l'industrie, l'agriculture et le tertiaire",
+      "projectIds": [
+        8,
+        1226
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "fasep",
+      "title": "FASEP",
+      "projectIds": [
+        33,
+        36
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": 499,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "aide-investissement-librairie",
+      "title": "Aide à l’investissement aux librairies françaises",
+      "projectIds": [
+        4,
+        15,
+        33
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "G",
+        "J",
+        "L",
+        "M",
+        "N",
+        "P",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "booster-transformation-rev-3",
+      "title": "Booster Transformation Rev3",
+      "projectIds": [
+        4,
+        15,
+        16,
+        20,
+        21,
+        26,
+        30,
+        32,
+        33,
+        36,
+        997,
+        1028
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Hauts-de-France"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": 250,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "remove",
+      "title": "Programme REMOVE",
+      "projectIds": [
+        995,
+        996
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "formation-convaincre-et-argumenter",
+      "title": "Formation Défendre un projet",
+      "projectIds": [
+        26,
+        28,
+        337
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formation-communiquer-et-sensibiliser",
+      "title": "Formation Communication Décarbonation",
+      "projectIds": [
+        26,
+        28,
+        337
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "outils-pour-adaptation",
+      "title": "Formation Outils pour l'adaptation",
+      "projectIds": [
+        26,
+        28,
+        33,
+        337
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "deter-decarboner-le-tertiaire",
+      "title": "DÉTER - DÉcarboner le TERtiaire",
+      "projectIds": [
+        6,
+        7,
+        8,
+        10,
+        14,
+        146
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "act-evaluation",
+      "title": "ACT Évaluation (hors industrie)",
+      "projectIds": [
+        32,
+        35
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "innovation-hydrogene",
+      "title": "Innovation et démonstration hydrogène",
+      "projectIds": [
+        1490
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "F",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": true
+    },
+    {
+      "id": "indicateur-climat",
+      "title": "Indicateur climat",
+      "projectIds": [
+        31,
+        32,
+        33,
+        35
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "H",
+        "I",
+        "K",
+        "L"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "eco-diagnostic-commerce",
+      "title": "Eco-diagnostic Commerce",
+      "projectIds": [
+        26,
+        27
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "G",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "R",
+        "S",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "diag-performance",
+      "title": "Diag performance",
+      "projectIds": [
+        22,
+        26,
+        27,
+        31
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "F"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 300,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "easy-diag",
+      "title": "Easy Diag Transition Ecologique",
+      "projectIds": [
+        4,
+        14,
+        21,
+        26,
+        27,
+        28,
+        30,
+        31,
+        144,
+        337
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "F"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formations-atlas",
+      "title": "Formations Atlas",
+      "projectIds": [
+        26,
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "K"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formations-afdas",
+      "title": "Formations AFDAS",
+      "projectIds": [
+        26,
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "I",
+        "J",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formations-akto",
+      "title": "Formations AKTO",
+      "projectIds": [
+        26,
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "A",
+        "C",
+        "G",
+        "I",
+        "N",
+        "P"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formations-constructys",
+      "title": "Formations Constructys",
+      "projectIds": [
+        26,
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "F"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formations-opcommerce",
+      "title": "Formations l'Opcommerce",
+      "projectIds": [
+        26,
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "S",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formations-ocapiat",
+      "title": "Formations Ocapiat",
+      "projectIds": [
+        26,
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "A"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formations-2i",
+      "title": "Formations Opco 2i",
+      "projectIds": [
+        26,
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "M"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formations-ep",
+      "title": "Sélexion Formations Opco EP",
+      "projectIds": [
+        26,
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "G",
+        "K",
+        "L",
+        "M",
+        "N",
+        "S",
+        "T"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formations-sante",
+      "title": "Formations Opco Santé",
+      "projectIds": [
+        26,
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "I",
+        "Q"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formations-uniformation",
+      "title": "Formations Uniformation",
+      "projectIds": [
+        26,
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "L",
+        "N",
+        "Q",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "formations-mobilite",
+      "title": "Formations Opco Mobilités",
+      "projectIds": [
+        26,
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "G",
+        "H",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "accelerateur-des-possibles",
+      "title": "Accélérateur des possibles",
+      "projectIds": [
+        30,
+        302
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Pays de la Loire"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": 300,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "performa-adaptation",
+      "title": "Performa Adaptation",
+      "projectIds": [
+        33
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "R",
+        "T"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "cap-decarbonation",
+      "title": "Cap décarbonation",
+      "projectIds": [
+        4,
+        1,
+        32
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "R",
+        "T"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "investissement-methanisation-paca",
+      "title": "Investissement \"Méthanisation\" en PACA",
+      "projectIds": [
+        434
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "H"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "veille-artisanat",
+      "title": "Veille artisanat",
+      "projectIds": [
+        26,
+        28,
+        30,
+        337
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "e-trans",
+      "title": "Engins agricoles électriques",
+      "projectIds": [
+        632,
+        1556
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "A"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "cheque-transition-tissu-economique",
+      "title": "Chèque Transition du Tissu Économique",
+      "projectIds": [
+        4,
+        2,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        14,
+        15,
+        18,
+        137,
+        139,
+        142,
+        146,
+        372,
+        378
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Grand Est"
+      ],
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": 19,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "expert-atlas",
+      "title": "Expert Atlas",
+      "projectIds": [
+        26,
+        28,
+        30
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "K"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "diag-accompagnement-tee-rh",
+      "title": "Diag Accompagnement TEE RH",
+      "projectIds": [
+        4,
+        26,
+        27,
+        28
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "G",
+        "K",
+        "L",
+        "M",
+        "N",
+        "S",
+        "T"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "diagnostic-rh",
+      "title": "Diagnostic RH",
+      "projectIds": [
+        26,
+        28,
+        30
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "A"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "defi-eco-2050",
+      "title": "Défi Éco 2050",
+      "projectIds": [
+        26,
+        28
+      ],
+      "aidType": "formation",
+      "regions": null,
+      "sectors": [
+        "F"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "demi-bac",
+      "title": "DEMIBaC",
+      "projectIds": [
+        32,
+        467,
+        1193,
+        1226,
+        1523
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "M"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "ibac-pme",
+      "title": "IBaC PME",
+      "projectIds": [
+        32,
+        467,
+        1193,
+        1226,
+        1523
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "M"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "programme-marguerite",
+      "title": "Programme Marguerite",
+      "projectIds": [
+        16,
+        24,
+        401,
+        731
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bouches-du-Rhône",
+        "Hauts-de-France",
+        "Île-de-France",
+        "Nouvelle-Aquitaine",
+        "Pays de la Loire"
+      ],
+      "sectors": [
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
+      "title": "Économie circulaire en Outre-mer et Corse",
+      "projectIds": [
+        3,
+        21,
+        24,
+        36,
+        667,
+        1226,
+        1260,
+        1261
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Corse",
+        "Guadeloupe",
+        "Guyane",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Nouvelle-Calédonie",
+        "Polynésie française",
+        "Saint-Barthélemy",
+        "Saint-Martin",
+        "Saint-Pierre-Et-Miquelon",
+        "Terres australes et antarctiques françaises",
+        "Wallis et Futuna"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "diagnostic-et-accompagnement-co2i",
+      "title": "Diagnostic & Accompagnement CO2i Inter Industrie",
+      "projectIds": [
+        20,
+        21,
+        26,
+        31,
+        32,
+        33,
+        997
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "M"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "accompagnement-rh",
+      "title": "Accompagnement RH",
+      "projectIds": [
+        26,
+        28,
+        30,
+        31
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "I",
+        "Q"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "plan-de-developpement-des-competences",
+      "title": "Plan de développement des compétences",
+      "projectIds": [
+        26,
+        28,
+        30
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "L",
+        "N",
+        "Q",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "autodiagnostic-rse",
+      "title": "Autodiagnostic RSE",
+      "projectIds": [
+        26,
+        27,
+        28,
+        30,
+        31
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "I",
+        "J",
+        "R",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "m-diagnostic-accompagnement",
+      "title": "M-Diagnostic et Accompagnement",
+      "projectIds": [
+        26,
+        28,
+        30
+      ],
+      "aidType": "étude",
+      "regions": null,
+      "sectors": [
+        "G",
+        "H",
+        "S"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "sobriete-hydrique",
+      "title": "Sobriété hydrique des entreprises",
+      "projectIds": [
+        20,
+        71,
+        72,
+        140
+      ],
+      "aidType": "financement",
+      "regions": null,
+      "sectors": [
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O",
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U"
+      ],
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
+      "title": "Gestion des déchets en Outre-mer et Corse",
+      "projectIds": [
+        3,
+        21,
+        23,
+        24,
+        666,
+        667,
+        1226,
+        1228,
+        1260
+      ],
+      "aidType": "financement",
+      "regions": [
+        "Corse",
+        "Guadeloupe",
+        "Guyane",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Nouvelle-Calédonie",
+        "Polynésie française",
+        "Saint-Barthélemy",
+        "Saint-Martin",
+        "Saint-Pierre-Et-Miquelon",
+        "Terres australes et antarctiques françaises",
+        "Wallis et Futuna"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
+      "title": "Étude sur la production d'électricité renouvelable en Outre-mer et Corse",
+      "projectIds": [
+        5,
+        6,
+        9,
+        11,
+        467
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Corse",
+        "Guadeloupe",
+        "Guyane",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Nouvelle-Calédonie",
+        "Polynésie française"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    },
+    {
+      "id": "etude-d-opportunite-multi-enrr",
+      "title": "Étude d'opportunité énergies renouvelables et de récupération",
+      "projectIds": [
+        6,
+        7,
+        8,
+        9,
+        12,
+        434
+      ],
+      "aidType": "étude",
+      "regions": [
+        "Auvergne-Rhône-Alpes",
+        "Bourgogne-Franche-Comté",
+        "Corse",
+        "Grand Est",
+        "Hauts-de-France",
+        "Île-de-France",
+        "La Réunion",
+        "Martinique",
+        "Mayotte",
+        "Normandie",
+        "Nouvelle-Aquitaine",
+        "Occitanie",
+        "Provence-Alpes-Côte d'Azur"
+      ],
+      "sectors": null,
+      "minEmployees": null,
+      "maxEmployees": null,
+      "excludeMicroentrepreneur": false
+    }
+  ]
+}
