@@ -83,19 +83,30 @@
                 class="fr-text--disabled"
                 >Aucun programme</span
               >
-              <span
-                v-for="p in row.programs.slice(0, 3)"
-                :key="p.id"
-                class="fr-tag fr-tag--sm fr-mr-1w fr-mb-1w"
-                :title="p.title"
-                >{{ p.title.length > 35 ? p.title.slice(0, 35) + '…' : p.title }}</span
-              >
-              <span
-                v-if="row.programs.length > 3"
-                class="fr-text--sm fr-text--mention"
-              >
-                +{{ row.programs.length - 3 }} autres
-              </span>
+              <template v-else>
+                <NuxtLink
+                  v-for="p in expanded.has(row.region) ? row.programs : row.programs.slice(0, 3)"
+                  :key="p.id"
+                  :to="`/aides-entreprise/${p.id}`"
+                  class="fr-tag fr-tag--sm fr-mr-1w fr-mb-1w"
+                  :title="p.title"
+                  >{{ p.title.length > 35 ? p.title.slice(0, 35) + '…' : p.title }}</NuxtLink
+                >
+                <button
+                  v-if="row.programs.length > 3 && !expanded.has(row.region)"
+                  class="fr-tag fr-tag--sm fr-mr-1w fr-mb-1w expand-btn"
+                  @click="expanded.add(row.region)"
+                >
+                  +{{ row.programs.length - 3 }} autres
+                </button>
+                <button
+                  v-else-if="row.programs.length > 3 && expanded.has(row.region)"
+                  class="fr-tag fr-tag--sm fr-mr-1w fr-mb-1w expand-btn"
+                  @click="expanded.delete(row.region)"
+                >
+                  Réduire
+                </button>
+              </template>
             </td>
           </tr>
         </tbody>
@@ -105,11 +116,14 @@
 </template>
 
 <script setup lang="ts">
+import { reactive } from 'vue'
 import { OVERSEAS_REGIONS, type RegionCoverage } from '@/composables/useCoverage'
 
 const props = defineProps<{
   regions: RegionCoverage[]
 }>()
+
+const expanded = reactive(new Set<string>())
 
 function isOverseas(region: string): boolean {
   return OVERSEAS_REGIONS.includes(region)
@@ -161,5 +175,14 @@ function exportCsv() {
 
 .coverage-row--none td:first-child {
   font-weight: 600;
+}
+
+.expand-btn {
+  cursor: pointer;
+  font-style: italic;
+  opacity: 0.75;
+}
+.expand-btn:hover {
+  opacity: 1;
 }
 </style>
