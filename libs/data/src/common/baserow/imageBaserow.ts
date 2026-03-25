@@ -113,7 +113,7 @@ export class ImageBaserow extends AbstractBaserow {
     try {
       fs.writeFileSync(filePath, webpBuffer)
     } catch {
-      return Result.err(new Error('Error while trying to create the the local ' + imageName))
+      return Result.err(new Error('Error while trying to create the local ' + imageName))
     }
     this._metadata[imageName] = image[0].uploaded_at
     this._processedImages.add(fileName)

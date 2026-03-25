@@ -99,7 +99,7 @@ Exemple, pour aligner un texte à gauche sur les écrans de taille moyenne et pl
 #### La taille de la ligne de texte
 La classe `.fr-line-height--[size]` permet de définir la hauteur de ligne du texte. Voici comment l'utiliser :
 
-Valuers possibles pour `[size]`(`./src/assets/scss/setting/_typography.scss`):
+Valeurs possibles pour `[size]`(`./src/assets/scss/setting/_typography.scss`):
 - `4v` : hauteur de ligne de 1rem
 - `5v` : hauteur de ligne de 1.25rem
 - `6v` : hauteur de ligne de 1.5rem
@@ -147,7 +147,7 @@ Exemple, pour appliquer un rayon de bordure au coin supérieur gauche d'un élé
 <div class="fr-radius-tl">...</div>
 ```
 
-2. Utilisation avec différentes tailles : avec la classe `.fr-radius-[corner]--[rounded]` afin de preciser la taille de rayon.
+2. Utilisation avec différentes tailles : avec la classe `.fr-radius-[corner]--[rounded]` afin de préciser la taille de rayon.
 
 Valeurs possibles pour `[rounded]` (`./src/assets/scss/setting/_radius.scss`):
 - `0` : rayon de 0rem
