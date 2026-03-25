@@ -41,6 +41,7 @@
       "certificats-economie-energie",
       "aide-investissement-librairie",
       "booster-transformation-rev-3",
+      "diagnostic-conso-elec",
       "easy-diag",
       "cap-decarbonation",
       "cheque-transition-tissu-economique",
@@ -995,6 +996,7 @@
       "hotellerie-independante-bfc",
       "aide-investissement-corse",
       "deter-decarboner-le-tertiaire",
+      "diagnostic-conso-elec",
       "easy-diag",
       "cheque-transition-tissu-economique"
     ],
@@ -1173,7 +1175,8 @@
       "mobilipro",
       "booster-transformation-rev-3",
       "programme-marguerite",
-      "diag-mobilite-idf"
+      "diag-mobilite-idf",
+      "conseil-mobilite-idf"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action mobilité",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action mobilité",
@@ -1261,7 +1264,8 @@
       "pret-ile-de-france",
       "impulsion-environnement",
       "certificats-economie-energie",
-      "diag-mobilite-idf"
+      "diag-mobilite-idf",
+      "conseil-mobilite-idf"
     ],
     "linkedProjects": [
       16
@@ -1330,7 +1334,8 @@
       "je-change-ma-voiture",
       "certificats-economie-energie",
       "cheque-transition-tissu-economique",
-      "diag-mobilite-idf"
+      "diag-mobilite-idf",
+      "conseil-mobilite-idf"
     ],
     "linkedProjects": [
       16
@@ -1917,6 +1922,7 @@
       "diagnostic-et-accompagnement-co2i",
       "accompagnement-rh",
       "plan-de-developpement-des-competences",
+      "concilier-enjeux-ecologiques-et-conditions-de-travail",
       "autodiagnostic-rse",
       "m-diagnostic-accompagnement",
       "eval-360-pays-de-la-loire",
@@ -2099,6 +2105,7 @@
       "defi-eco-2050",
       "accompagnement-rh",
       "plan-de-developpement-des-competences",
+      "concilier-enjeux-ecologiques-et-conditions-de-travail",
       "autodiagnostic-rse",
       "m-diagnostic-accompagnement"
     ],
@@ -2181,7 +2188,8 @@
       "pret-energie-aura",
       "pret-ile-de-france",
       "credit-impot-recherche",
-      "credit-impot-innovation"
+      "credit-impot-innovation",
+      "concilier-enjeux-ecologiques-et-conditions-de-travail"
     ],
     "linkedProjects": [],
     "priority": {
@@ -2254,6 +2262,7 @@
       "diagnostic-rh",
       "accompagnement-rh",
       "plan-de-developpement-des-competences",
+      "concilier-enjeux-ecologiques-et-conditions-de-travail",
       "autodiagnostic-rse",
       "m-diagnostic-accompagnement",
       "eval-360-pays-de-la-loire"
@@ -2353,11 +2362,13 @@
       "cap-transition-ecologique",
       "prit-hdf",
       "camping-independant-bfc",
+      "diagnostic-conso-elec",
       "indicateur-climat",
       "diag-performance",
       "easy-diag",
       "diagnostic-et-accompagnement-co2i",
       "accompagnement-rh",
+      "concilier-enjeux-ecologiques-et-conditions-de-travail",
       "autodiagnostic-rse",
       "eval-360-pays-de-la-loire"
     ],
@@ -3763,7 +3774,8 @@
       "pass-transition-bzh",
       "certificats-economie-energie",
       "programme-marguerite",
-      "diag-mobilite-idf"
+      "diag-mobilite-idf",
+      "conseil-mobilite-idf"
     ],
     "linkedProjects": [
       16
@@ -3857,6 +3869,7 @@
       "mission-strategie-environnement",
       "pret-economies-d-energie-pee",
       "certificats-economie-energie",
+      "diagnostic-conso-elec",
       "demi-bac",
       "ibac-pme",
       "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse"
@@ -4558,7 +4571,8 @@
       "parm-vnf",
       "booster-transformation-rev-3",
       "diagnostic-et-accompagnement-co2i",
-      "diag-mobilite-idf"
+      "diag-mobilite-idf",
+      "conseil-mobilite-idf"
     ],
     "linkedProjects": [],
     "priority": {
