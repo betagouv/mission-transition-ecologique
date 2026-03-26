@@ -12,9 +12,9 @@
       <TeeAboutCompanies />
       <TeeAboutTheyTalkAboutUs />
     </div>
-    <!-- <div class="fr-container-fluid fr-container-md">
+    <div class="fr-container-fluid fr-container-md">
       <TeeAboutTestimonies class="fr-bg--blue--lightness" />
-    </div> -->
+    </div>
     <div class="fr-container">
       <TeeCtaCard
         title="<img src='/images/logos/mission-transition-ecologique-logo-texte.svg' alt='Transition écologique des entreprises'/>"
