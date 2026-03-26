@@ -18,6 +18,12 @@
       data-type="siret"
       data-source="tee"
     />
+    <Script
+      id="transition-ecologique-entreprise"
+      :src="Iframe.getScript()"
+      data-type="siret-profile"
+      data-source="tee"
+    />
     <div class="fr-mb-2v"></div>
   </div>
 </template>
