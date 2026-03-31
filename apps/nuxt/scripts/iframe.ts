@@ -32,11 +32,16 @@ function buildIframeUrl({ scriptUrl, type, id, parentUrl, source }: IframeParams
     params.set('utm_source', source)
   }
 
+  if (type === 'siret-profile') {
+    params.set('step', '2')
+  }
+
   switch (type) {
     case 'projet':
       return id ? `${iframeBaseUrl}/${type}/${id}?${params}` : `${iframeBaseUrl}?${params}`
     case 'siret':
-      return `${iframeBaseUrl}/${type}?${params}`
+    case 'siret-profile':
+      return `${iframeBaseUrl}/siret?${params}`
     default:
       return `${iframeBaseUrl}?${params}`
   }

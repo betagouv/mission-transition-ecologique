@@ -12,13 +12,12 @@
 
 ---
 
-## CSS - SCSS
+## Documentation
 
-La documentation des styles est disponible dans le fichier [`./style.md`](./style.md).
-
-### Icônes DSFR
-
-La documentation sur l'ajout de nouvelles icônes DSFR est disponible dans le fichier [`./style.md`](./style.md#icônes).
+| Sujet | Fichier |
+|---|---|
+| CSS / SCSS / Icônes DSFR | [`./docs/style.md`](./docs/style.md) |
+| Système d'iframe (widget embarquable) | [`./docs/iframe.md`](./docs/iframe.md) |
 
 ## Environment variables
 

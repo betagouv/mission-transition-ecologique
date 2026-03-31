@@ -6,7 +6,7 @@
     <TeeCta
       v-if="mainStep === 1"
       button-label="Je teste mon éligibilité"
-      @on-click-button="mainStep = 2"
+      @on-click-button="navigateTo({ query: { ...route.query, step: '2' } })"
     />
     <div
       v-else
@@ -51,22 +51,21 @@ definePageMeta({
   layout: 'iframe'
 })
 
-if (import.meta.client) {
-  const params = new URLSearchParams(window.location.search)
-  const parentUrl = params.get('parent_url')
-  const source = params.get('utm_source')
-  Analytics.sendEvent('generic_iframe_siret_view', {
-    referrer_url: parentUrl,
-    source
-  })
-}
-
 const registeredData = CompanyData.dataRef
 const company = ref<CompanyDataType[CompanyDataStorageKey.Company]>(registeredData.value[CompanyDataStorageKey.Company])
 const companySize = ref<CompanyDataType[CompanyDataStorageKey.Size]>(registeredData.value[CompanyDataStorageKey.Size])
 const manualRegistration = ref<boolean>(!!(company.value && !('siret' in company.value)))
+const route = useRoute()
+const mainStep = computed<number>(() => {
+  return route.query.step === '2' ? 2 : 1
+})
 
-const mainStep = ref<number>(1)
+if (import.meta.client) {
+  Analytics.sendEvent('generic_iframe_siret_view', {
+    referrer_url: route.query.parent_url as string,
+    source: route.query.utm_source as string
+  })
+}
 
 const registerStep = computed<number>(() => {
   if (company.value || manualRegistration.value) {
