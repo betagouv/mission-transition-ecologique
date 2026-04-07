@@ -1,7 +1,21 @@
 import { computed, type Ref } from 'vue'
-import { coverage } from '@tee/data/static'
+import { coverage, jsonPrograms } from '@tee/data/static'
 import { StructureSize, SizeToWorkforce } from '@tee/common'
 import type { CoverageProgram, CoverageProject } from '@tee/data/src/coverage/types'
+
+/** Operator lookup by program id, built from the full programs dataset */
+const operatorByProgramId = new Map<string, string>(
+  jsonPrograms.map((p) => [p.id as string, ((p as Record<string, unknown>)['opérateur de contact'] as string) ?? ''])
+)
+
+export function getOperator(programId: string): string {
+  return operatorByProgramId.get(programId) ?? ''
+}
+
+/** Unique sorted list of operators across all coverage programs */
+export const ALL_OPERATORS: string[] = [
+  ...new Set(coverage.programs.map((p) => getOperator(p.id)).filter(Boolean))
+].sort((a, b) => a.localeCompare(b, 'fr'))
 
 export const METRO_REGIONS = [
   'Auvergne-Rhône-Alpes',
@@ -75,6 +89,11 @@ function matchesProject(program: CoverageProgram, projectId: number | null): boo
   return program.projectIds.includes(projectId)
 }
 
+function matchesOperator(program: CoverageProgram, operator: string | null): boolean {
+  if (!operator) return true
+  return getOperator(program.id) === operator
+}
+
 function matchesRegion(program: CoverageProgram, region: string): boolean {
   return program.regions === null || program.regions.includes(region)
 }
@@ -92,9 +111,20 @@ function computeLevel(programs: CoverageProgram[], missingAidTypes: StandardAidT
   return 'covered'
 }
 
-export function useCoverage(projectId: Ref<number | null>, sector: Ref<string | null>, size: Ref<StructureSize | null>) {
+export function useCoverage(
+  projectId: Ref<number | null>,
+  sector: Ref<string | null>,
+  size: Ref<StructureSize | null>,
+  operator: Ref<string | null>
+) {
   const filteredPrograms = computed(() =>
-    coverage.programs.filter((p) => matchesProject(p, projectId.value) && matchesSector(p, sector.value) && matchesSize(p, size.value))
+    coverage.programs.filter(
+      (p) =>
+        matchesProject(p, projectId.value) &&
+        matchesSector(p, sector.value) &&
+        matchesSize(p, size.value) &&
+        matchesOperator(p, operator.value)
+    )
   )
 
   const coverageByRegion = computed<RegionCoverage[]>(() =>
@@ -147,13 +177,17 @@ export interface ProjectMiss {
   totalPrograms: number
 }
 
-export function useMainMisses(sector: Ref<string | null>, size: Ref<StructureSize | null>) {
+export function useMainMisses(sector: Ref<string | null>, size: Ref<StructureSize | null>, operator: Ref<string | null>) {
   const misses = computed<ProjectMiss[]>(() => {
     const result: ProjectMiss[] = []
 
     for (const project of coverage.projects) {
       const programs = coverage.programs.filter(
-        (p) => p.projectIds.includes(project.id) && matchesSector(p, sector.value) && matchesSize(p, size.value)
+        (p) =>
+          p.projectIds.includes(project.id) &&
+          matchesSector(p, sector.value) &&
+          matchesSize(p, size.value) &&
+          matchesOperator(p, operator.value)
       )
 
       const regionCoverages = METRO_REGIONS.map((region) => {

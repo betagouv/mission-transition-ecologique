@@ -38,3 +38,8 @@ export { default as nafMapping } from './nafMapping.json'
 import { default as coverageJson } from './coverage.json'
 import type { CoverageData } from '../src/coverage/types'
 export const coverage = coverageJson as unknown as CoverageData
+
+// #####> LEADS ######
+import { default as leadsJson } from './leads.json'
+import type { LeadsData } from '../src/leads/types'
+export const leads = leadsJson as unknown as LeadsData

@@ -1,12 +1,25 @@
 <template>
   <div class="fr-container fr-mt-4w fr-mb-8w">
-    <div class="fr-mb-4w">
+    <div class="fr-mb-3w">
       <h1 class="fr-h2">Diagnostic de couverture des aides</h1>
       <p class="fr-text--lead fr-mb-0">
         Identifiez les zones géographiques et profils d'entreprises insuffisamment couverts par les programmes d'aides à la transition
         écologique. Filtrez par taille d'entreprise et secteur d'activité pour visualiser les lacunes.
       </p>
     </div>
+
+    <!-- Shared sticky filter bar -->
+    <CoverageDemoFilters
+      :project-id="activeTab === 0 ? projectId : null"
+      :sector="sector"
+      :size="size"
+      :operator="operator"
+      :hide-project="activeTab !== 0"
+      @update:project-id="projectId = $event"
+      @update:sector="sector = $event"
+      @update:size="size = $event"
+      @update:operator="operator = $event"
+    />
 
     <div class="fr-tabs">
       <ul
@@ -48,15 +61,6 @@
         :class="{ 'fr-tabs__panel--selected': activeTab === 0 }"
         aria-labelledby="tab-par-projet"
       >
-        <CoverageDemoFilters
-          :project-id="projectId"
-          :sector="sector"
-          :size="size"
-          @update:project-id="projectId = $event"
-          @update:sector="sector = $event"
-          @update:size="size = $event"
-        />
-
         <!-- Stats summary -->
         <div class="fr-grid-row fr-grid-row--gutters fr-mb-4w">
           <div class="fr-col-6 fr-col-md-3">
@@ -121,19 +125,6 @@
         :class="{ 'fr-tabs__panel--selected': activeTab === 1 }"
         aria-labelledby="tab-lacunes"
       >
-        <div class="fr-grid-row fr-grid-row--gutters fr-mb-4w">
-          <div class="fr-col-12 fr-col-md-4">
-            <CoverageDemoFilters
-              :project-id="null"
-              :sector="sector"
-              :size="size"
-              :hide-project="true"
-              @update:sector="sector = $event"
-              @update:size="size = $event"
-            />
-          </div>
-        </div>
-
         <CoverageDemoMainMisses :misses="misses" />
       </div>
     </div>
@@ -154,12 +145,13 @@ const activeTab = ref(0)
 const projectId = ref<number | null>(null)
 const sector = ref<string | null>(null)
 const size = ref<StructureSize | null>(null)
+const operator = ref<string | null>(null)
 
-// Tab 1 — filtered by project + sector + size
-const { sortedRegions, coverageByRegion, stats } = useCoverage(projectId, sector, size)
+// Tab 1 — filtered by project + sector + size + operator
+const { sortedRegions, coverageByRegion, stats } = useCoverage(projectId, sector, size, operator)
 
-// Tab 2 — sector + size only, across all projects
-const { misses } = useMainMisses(sector, size)
+// Tab 2 — sector + size + operator only, across all projects
+const { misses } = useMainMisses(sector, size, operator)
 </script>
 
 <style scoped>
