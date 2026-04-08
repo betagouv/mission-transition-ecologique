@@ -43,3 +43,8 @@ export const coverage = coverageJson as unknown as CoverageData
 import { default as leadsJson } from './leads.json'
 import type { LeadsData } from '../src/leads/types'
 export const leads = leadsJson as unknown as LeadsData
+
+// #####> SECTOR STATS ######
+import { default as sectorStatsJson } from './sector_stats.json'
+import type { SectorStatsData } from '../src/sector-stats/types'
+export const sectorStats = sectorStatsJson as unknown as SectorStatsData
