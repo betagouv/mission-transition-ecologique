@@ -15,7 +15,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "nx run-many -t serve --outputStyle=dynamic-legacy",
+    "dev": "export NODE_OPTIONS=--max-old-space-size=12288 && nx run-many -t serve --outputStyle=dynamic-legacy",
     "dev:start": "PORT=4242 npm run start:dev",
     "dev:build:start": "npm run build && npm run dev:start",
     "build": "export NODE_OPTIONS=--max-old-space-size=6144 && nx run-many -t build",
