@@ -33,7 +33,7 @@ jobs:
       env:
         VITE_DATA_TEST: true
         THIRD_PARTY_API_ENABLED: false
-      run: nx run @tee/nuxt-e2e:e2e
+      run: npx nx run @tee/nuxt-e2e:e2e
     - uses: actions/upload-artifact@v4
       if: always()
       with:
