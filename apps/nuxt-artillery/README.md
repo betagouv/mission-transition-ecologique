@@ -1,93 +1,124 @@
 # Artillery Load Testing with Playwright
 
-Ce projet contient des tests de charge pour l'application TEE (Transition Écologique des Entreprises) utilisant Artillery et Playwright avec TypeScript.
+Tests de charge et de navigation pour l'application TEE (Transition Écologique des Entreprises), basés sur Artillery et Playwright (TypeScript).
 
-## Description
+## Fichiers de configuration
 
-Les tests permettent de parcourir l'ensemble des pages suivantes :
-- Accueil
-- Liste des programmes d'aide
-- Liste des projets
-- Pages individuelles de programmes d'aide
-- Pages individuelles de projets
+| Fichier | Type | Description |
+|---|---|---|
+| `artillery-page.yml` | Navigation Playwright | Parcours complet de toutes les pages (accueil, listes, détails aides et projets) — 1 utilisateur |
+| `artillery-load-test.yml` | Charge HTTP | Requêtes HTTP simples sur les pages clés |
+| `artillery-realistic-1h.yml` | Navigation Playwright | Simulation réaliste d'1 heure de trafic (~100 utilisateurs, comportements variés) |
 
-## Configuration
+---
 
-Le projet utilise deux fichiers de configuration Artillery :
+## Commandes
 
-1. `artillery-page.yml` - Pour les tests de navigation avec Playwright. Parcours, la page d'accueil et l'ensemble des pages dispositifs et projets.
-2. `artillery-load-test.yml` - Pour les tests de charge HTTP
-
-## Exécution des tests
-
-Depuis la racine du projet, utilisez les commandes suivantes :
+Depuis la racine du projet :
 
 ```bash
-# Tests de navigation avec Playwright
-# Environnement de développement
-npm run artillery:page:dev
+# --- Tests de navigation (artillery-page.yml) ---
+npm run artillery:page:dev        # développement local
+npm run artillery:page:staging    # staging
+npm run artillery:page:prod       # production
 
-# Environnement de staging
-npm run artillery:page:staging
-
-# Environnement de production
-npm run artillery:page:prod
-
-# Tests de charge HTTP
-# Environnement de développement
+# --- Tests de charge HTTP (artillery-load-test.yml) ---
 npm run artillery:load:dev
-
-# Environnement de staging
 npm run artillery:load:staging
-
-# Environnement de production
 npm run artillery:load:prod
+
+# --- Simulation réaliste 1h (artillery-realistic-1h.yml) ---
+npm run artillery:realistic:dev
+npm run artillery:realistic:staging
+npm run artillery:realistic:prod
 ```
 
-Ou directement avec Artillery (depuis le répertoire apps/nuxt-artillery) :
+Ou directement depuis `apps/nuxt-artillery/` :
 
 ```bash
-# Tests de navigation avec Playwright
-# Développement
-npx artillery run -e development artillery-page.yml
-
-# Production
-npx artillery run -e production artillery-page.yml
-
-# Staging
-npx artillery run -e staging artillery-page.yml
-
-# Tests de charge HTTP
-# Développement
-npx artillery run -e development artillery-load-test.yml
-
-# Production
-npx artillery run -e production artillery-load-test.yml
-
-# Staging
-npx artillery run -e staging artillery-load-test.yml
+npx artillery run -e development  artillery-page.yml
+npx artillery run -e staging      artillery-realistic-1h.yml
+npx artillery run -e production   artillery-realistic-1h.yml
 ```
 
-## Structure des tests
+---
 
-Les tests sont organisés selon une architecture orientée objet (OOP) en TypeScript :
+## Test réaliste 1h (`artillery-realistic-1h.yml`)
 
-1. **Tests de navigation (artillery-page.yml)** : Utilise Playwright pour naviguer dans le navigateur et interagir avec les pages
-2. **Tests de charge HTTP (artillery-load-test.yml)** : Effectue des requêtes HTTP simples sur les différentes pages
+### Profil de charge
 
-### Architecture des classes
+~100 utilisateurs virtuels sur 60 minutes, répartis en 3 phases :
 
-Le script principal `src/browse-pages.ts` utilise les classes suivantes :
+| Phase | Durée | Utilisateurs | Débit |
+|---|---|---|---|
+| Warm up | 15 min | 15 | ~1/min |
+| Peak usage | 30 min | 60 | ~2/min |
+| Wind down | 15 min | 25 | ~1.7/min |
 
-- `BasePage` : Classe abstraite de base pour toutes les pages
-- `Homepage` : Gère la navigation sur la page d'accueil
-- `Programs` : Gère la navigation sur la page des programmes d'aide et les pages individuelles
-- `Projects` : Gère la navigation sur la page des projets et les pages individuelles
+### Scénarios (pondération 50/50)
 
-Chaque classe est responsable de sa propre logique de navigation et d'interaction.
+**`browseStandard`** — parcours classique :
+1. Accueil → pause 3–7 s
+2. Liste des aides → pause 4–9 s → visite 2 à 4 aides aléatoires (5–15 s de lecture chacune)
+3. Liste des projets → pause 3–7 s → visite 1 à 3 projets aléatoires (4–10 s de lecture chacun)
+
+**`browseWithSiret`** — utilisateur arrivant via un lien partagé :
+1. Atterrissage direct sur `/aides-entreprise/[slug]?siret=XXX&effectif=YYY` → lecture 8–20 s
+2. Liste des aides → pause → visite 1 à 3 aides aléatoires
+3. Liste des projets → pause → visite 1 à 2 projets aléatoires
+
+### Profils SIRET
+
+50 profils réels d'entreprises iséroises (source : `recherche-entreprises.api.gouv.fr`), couvrant l'ensemble des tranches d'effectif :
+
+| Catégorie | Employés | Profils |
+|---|---|---|
+| MICRO | 0–9 | 15 |
+| TPE | 10–19 | 13 |
+| PE | 20–249 | 11 |
+| ME | 250–499 | 6 |
+| ETI | 500–4999 | 3 |
+| GE | 5000+ | 2 |
+
+---
+
+## Architecture du code
+
+### Classes de pages (`src/pages/`)
+
+```
+BasePage (abstraite)
+├── Homepage   — page d'accueil
+├── Programs   — liste des aides + pages individuelles
+└── Projects   — liste des projets + pages individuelles
+```
+
+**`BasePage`** expose les options suivantes via son constructeur :
+
+| Paramètre | Type | Défaut | Rôle |
+|---|---|---|---|
+| `page` | `Page` | — | instance Playwright |
+| `step` | `Step` | — | reporter Artillery |
+| `withRefresh` | `boolean` | `false` | recharge la page avant chaque navigation |
+| `maxPages` | `number` | `undefined` | limite le nombre de pages visitées (shuffle aléatoire) ; `undefined` = toutes |
+| `thinkTime` | `{ min, max }` | `undefined` | pause en ms entre chaque page ; `undefined` = aucune |
+
+### Processors (`src/`)
+
+| Fichier | Fonctions exportées | Utilisé par |
+|---|---|---|
+| `browse-pages.ts` | `browsePages` | `artillery-page.yml` — toutes les pages, sans pause |
+| `realistic-browse.ts` | `browseStandard`, `browseWithSiret` | `artillery-realistic-1h.yml` — navigation partielle + pauses |
+
+#### Helpers dans `realistic-browse.ts`
+
+- **`createPages(page, step, maxPrograms, maxProjects)`** — instancie Homepage, Programs et Projects avec `withRefresh: true` et la configuration de think time
+- **`navigateThenVisit(navigate, visit, page, scanWait)`** — navigue vers une section, attend que l'utilisateur parcoure la liste, puis visite les pages
+
+---
 
 ## Références
 
 - [Documentation Artillery](https://www.artillery.io/docs)
-- [Documentation Playwright avec Artillery](https://www.artillery.io/docs/reference/engines/playwright)
-- [Documentation TypeScript](https://www.typescriptlang.org/docs/)
+- [Artillery + Playwright](https://www.artillery.io/docs/reference/engines/playwright)
+
