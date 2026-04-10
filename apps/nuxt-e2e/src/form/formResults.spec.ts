@@ -5,20 +5,6 @@ import { timeOut } from '../config'
 tests.forEach((singleTest) => {
   test(`Test id ${singleTest.id} - Verify form ${singleTest.url}`, async ({ page, goto }) => {
     try {
-      page.on('response', async (response) => {
-        if (response.url().includes('/api/opportunities')) {
-          try {
-            await page.locator('[teste2e-selector="callback-contact-form"]').isVisible({ timeout: timeOut })
-            if (response.status() === 200) {
-              await expect(page.locator('[teste2e-selector="success-callback-contact-form"]')).toBeVisible({ timeout: timeOut })
-            } else {
-              await expect(page.locator('[teste2e-selector="error-callback-contact-form"]')).toBeVisible({ timeout: timeOut })
-            }
-          } catch (e: unknown) {
-            throw new Error(`Error handling API response: ${(e as Error).message} - ${(e as Error).stack}`)
-          }
-        }
-      })
       await goto(singleTest.url, { waitUntil: 'hydration' })
 
       await page.evaluate((singleTest) => {
@@ -97,7 +83,18 @@ tests.forEach((singleTest) => {
       await expect(submitButton).toHaveCount(1, { timeout: timeOut })
       if (singleTest.valid) {
         await expect(submitButton).toBeEnabled({ timeout: timeOut })
-        await submitButton.click({ force: true, timeout: timeOut })
+
+        const [response] = await Promise.all([
+          page.waitForResponse((resp) => resp.url().includes('/api/opportunities'), { timeout: timeOut }),
+          submitButton.click({ force: true, timeout: timeOut })
+        ])
+
+        await page.locator('[teste2e-selector="callback-contact-form"]').waitFor({ state: 'visible', timeout: timeOut })
+        if (response.status() === 200) {
+          await expect(page.locator('[teste2e-selector="success-callback-contact-form"]')).toBeVisible({ timeout: timeOut })
+        } else {
+          await expect(page.locator('[teste2e-selector="error-callback-contact-form"]')).toBeVisible({ timeout: timeOut })
+        }
       } else {
         await expect(submitButton).toBeDisabled({ timeout: timeOut })
       }

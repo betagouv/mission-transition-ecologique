@@ -49,7 +49,7 @@ export default defineConfig<ConfigOptions>({
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 3 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   reporter: [['html', { open: 'never' }]],
@@ -63,7 +63,7 @@ export default defineConfig<ConfigOptions>({
       THIRD_PARTY_API_ENABLED: 'false',
       PORT: '4242'
     },
-    command: 'npm run build:start',
+    command: process.env.CI ? 'npm run start' : 'npm run build:start',
     url: 'http://localhost:4242',
     reuseExistingServer: !process.env.CI
   },

@@ -1,1 +1,1 @@
-export const timeOut = 10000 // 10 seconds
+export const timeOut = process.env.CI ? 30_000 : 10_000

@@ -1,5 +1,5 @@
 <template>
-  <div teste2e-select="callback-contact-form">
+  <div teste2e-selector="callback-contact-form">
     <!-- MESSAGE IF ERROR-->
     <TeeError
       v-if="!hasValidResponse"
