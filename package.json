@@ -57,8 +57,7 @@
     "artillery:load:prod": "nx run @tee/nuxt-artillery:test:load:prod"
   },
   "engines": {
-    "node": "22.x",
-    "npm": ">=10.0 <12"
+    "node": "22.x"
   },
   "dependencies": {
     "@getbrevo/brevo": "3.0.1",
