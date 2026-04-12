@@ -1,6 +1,5 @@
 import { H3Event } from 'h3'
 import crypto from 'node:crypto'
-import Config from '~/config'
 
 export class CacheKeyBuilder {
   static MAX_AGE = 60 * 60 * 1 // 1 hours
@@ -22,6 +21,7 @@ export class CacheKeyBuilder {
   }
 
   private static _getTestPrefix = (): string => {
-    return Config.isTestData ? 'test:' : ''
+    const config = useRuntimeConfig()
+    return config.isTestData ? 'test:' : ''
   }
 }

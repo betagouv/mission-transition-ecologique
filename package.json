@@ -43,7 +43,7 @@
     "type:check": "nx run-many -t type-check --verbose --parallel=false",
     "ci": "nx run-many -t ci --verbose --parallel=false",
     "sass:watch": "nx run @tee/nuxt:sass-watch",
-    "e2e": "VITE_DATA_TEST=true && THIRD_PARTY_API_ENABLED=false && npm run build && nx run @tee/nuxt-e2e:e2e",
+    "e2e": "NUXT_IS_TEST_DATA=true && THIRD_PARTY_API_ENABLED=false && npm run build && nx run @tee/nuxt-e2e:e2e",
     "e2e:ui": "npm run e2e -- --ui",
     "e2e:dev": "nx run @tee/nuxt-e2e:e2e",
     "e2e:ui:dev": "npm run e2e:dev -- --ui",
