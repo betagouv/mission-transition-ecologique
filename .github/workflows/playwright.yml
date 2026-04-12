@@ -11,8 +11,10 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         node-version: [ '22.x' ]
+        project: ['chromium', 'firefox', 'Mobile Chrome']
 
     steps:
     - uses: actions/checkout@v4
@@ -33,10 +35,10 @@ jobs:
       env:
         VITE_DATA_TEST: true
         THIRD_PARTY_API_ENABLED: false
-      run: npx nx run @tee/nuxt-e2e:e2e
+      run: npx nx run @tee/nuxt-e2e:e2e -- --project="${{ matrix.project }}"
     - uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: playwright-report
+        name: playwright-report-${{ matrix.project }}
         path: playwright-report/
         retention-days: 30
