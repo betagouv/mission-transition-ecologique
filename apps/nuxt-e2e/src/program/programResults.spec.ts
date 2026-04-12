@@ -8,33 +8,15 @@ import { timeOut } from '../config'
 tests.forEach((singleTest) => {
   test(`Test id ${singleTest.id} - Verify programs number and order for query ${singleTest.url}`, async ({ page, goto }) => {
     await goto(singleTest.url, { waitUntil: 'hydration' })
-    try {
-      await page.waitForResponse((response) => response.url().includes('/api/programs') && response.status() === 200, {
-        timeout: timeOut
-      })
-      await page.locator('.fr-card--program .fr-card__title a').waitFor({ state: 'visible', timeout: timeOut })
-    } catch (error) {
-      // this is an expected error what can happen
-      // - if the number of results is 0
-      // - in some mobile data browser
-    }
-    const elementsLocal = await page.$$eval('.fr-card--program .fr-card__title a', (els) => els.map((el) => el.innerHTML.trim()))
 
-    // logs to analyse the error and easily reset the test case if needed (volontary filter changes)
-    // console.log(
-    //   'elements trouvés non attendu',
-    //   elementsLocal.filter((el) => !singleTest.values.includes(el))
-    // )
-    // console.log(
-    //   'elements non trouvés attendus',
-    //   singleTest.values.filter((el) => !elementsLocal.includes(el))
-    // )
-    // console.warn(singleTest.values)
-    // console.warn(elementsLocal)
+    const expectedCount = singleTest.count ?? singleTest.values.length
+    const cardsLocator = page.locator('.fr-card--program .fr-card__title a')
 
-    expect(elementsLocal.length).toBe(singleTest.count ?? singleTest.values.length)
+    // auto-retrying assertion: waits until the expected number of elements appear
+    await expect(cardsLocator).toHaveCount(expectedCount, { timeout: timeOut })
 
     if (!singleTest.count || singleTest.count < 100) {
+      const elementsLocal = await cardsLocator.evaluateAll((els) => els.map((el) => el.innerHTML.trim()))
       for (let i = 0; i < elementsLocal.length; i++) {
         expect(elementsLocal[i]).toBe(singleTest.values[i])
       }

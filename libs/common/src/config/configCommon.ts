@@ -34,6 +34,10 @@ export default abstract class ConfigCommon {
     return this._sentryDsn
   }
 
+  static get isTestData() {
+    return this.getEnvValue('VITE_DATA_TEST', 'false') === 'true'
+  }
+
   public static get SERVER_ENVIRONMENT(): Environment {
     if (!this.isValidServerEnvironment(this._serverEnvironment)) {
       throw new Error('SERVER_ENVIRONMENT is not valid')

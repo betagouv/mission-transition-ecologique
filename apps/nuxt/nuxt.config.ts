@@ -204,6 +204,7 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     }
   },
   runtimeConfig: {
+    isTestData: Config.isTestData,
     public: {
       environment: Config.SERVER_ENVIRONMENT,
       sentry: {
