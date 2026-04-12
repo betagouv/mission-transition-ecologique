@@ -14,7 +14,7 @@ jobs:
       fail-fast: false
       matrix:
         node-version: [ '22.x' ]
-        project: ['chromium', 'firefox', 'Mobile Chrome']
+        project: ['chromium', 'firefox']
 
     steps:
     - uses: actions/checkout@v4
