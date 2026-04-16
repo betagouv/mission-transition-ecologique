@@ -27210,7 +27210,7 @@
   {
     "titre": "Accompagnement écoproduction",
     "promesse": "Engagez la transition économique de votre entreprise vers un modèle d’économie circulaire",
-    "description": "L’accompagnement Écoproduction vous aide à repenser votre modèle économique en intégrant les principes de l’économie circulaire, pour gagner en résilience, réduire vos impacts et identifier de nouvelles opportunités. Cet accompagnement vous permet de : \n\n- Faire le point sur votre fonctionnement actuel (achats d’énergie, usages, consommation d’eau, gestion des déchets, etc.)\n\n- Comprendre les limites du modèle linéaire et identifier les leviers concrets d’un passage vers un modèle plus circulaire : flux de matière, organisation, bâtiment, produits, gouvernance…\n\n- Co-construire un plan d’action adapté à votre activité, avec une vision court, moyen et long terme, et un guide pas à pas\n\n- Être accompagné sur plusieurs mois pour structurer et mettre en œuvre votre démarche de transition économique",
+    "description": "L’accompagnement Écoproduction vous aide à repenser votre modèle économique en intégrant les principes de l’économie circulaire, pour gagner en résilience, réduire vos impacts et identifier de nouvelles opportunités. Cet accompagnement vous permet de :\n\n- **Faire le point** sur votre fonctionnement actuel (achats d’énergie, usages, consommation d’eau, gestion des déchets, etc.)\n\n- Comprendre les limites du modèle linéaire et **identifier les leviers concrets d’un passage vers un modèle plus circulaire** : flux de matière, organisation, bâtiment, produits, gouvernance…\n\n- Co-construire un plan d’action adapté à votre activité, avec une vision court, moyen et long terme, et un guide pas à pas\n\n- Être accompagné sur plusieurs mois pour structurer et mettre en œuvre votre démarche de transition économique",
     "illustration": "images/TEE_eolienne.webp",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "contact question": "formulaire",
@@ -51058,7 +51058,7 @@
     "type": "tee"
   },
   {
-    "titre": "Concilier enjeux écologiques et conditions de travail en TPE-PME",
+    "titre": "Concilier travail et enjeux écologiques",
     "promesse": "Articulez l’amélioration des conditions de travail avec des enjeux de transition écologique",
     "description": "Faites-vous accompagner pour intégrer les enjeux écologiques dans les projets d’investissement, de réorganisation, de gestion des compétences ou de prévention des risques.\\\n Selon le degré de maturité de votre entreprise, il s'agira de :\n\n- **Sensibilisation** : conférences, retours d’expériences ou ateliers pour partager des repères sur le lien écologie-travail et ouvrir le dialogue professionnel/social.\n\n- **Formation** : analyse du travail réel dans les enjeux écologiques des projets de transformation dans l’entreprise.\n\n- **Études ou diagnostics thématiques** au sujet des effets de la transition écologique sur le travail et ses conditions de réalisation, suivies de recommandations.",
     "description longue": "L'accompagnement articule les trois volets d’actions suivants :\n\n- Volet « actions primaires » : anticiper et agir sur l’organisation du travail (charge, répartition des activités, rythmes, objectifs, coopérations, compétences, sens du travail) pour que les projets écologiques soient conduits en prenant en compte le travail réel.\n\n- Volet « actions secondaires » : aider les collectifs à faire face aux risques liés aux crises écologiques (événements climatiques extrêmes, tensions sur les ressources, crises sanitaires) et renforcer la résilience des organisations.\n\n- Volet « actions tertiaires » : développer les écogestes sans les isoler, en les reliant aux évolutions de l’organisation et à un accompagnement managérial.",
@@ -54045,7 +54045,7 @@
   {
     "titre": "Conseil mobilité",
     "promesse": "Bénéficiez des aides à l’acquisition de véhicules propres",
-    "description": "Vous prévoyez d’acheter un véhicule propre ? Avant d’engager des frais, demandez conseil à un expert de la CMA Île-de-France pour vous aiguiller et vous aider à déterminer :\n\n- La motorisation adaptée à vos besoins (hydrogène, hybride, électrique, …).\n- Le type de changement (neuf, occasion, rétrofit).\n- Les aides correspondantes sur votre territoire.",
+    "description": "Vous prévoyez d’acheter un véhicule propre ? Avant d’engager des frais, demandez conseil à un expert de la CMA Île-de-France pour vous aiguiller et vous aider à déterminer :\n\n- **La motorisation adaptée** à vos besoins (hydrogène, hybride, électrique, …).\n- **Le type de changement** (neuf, occasion, rétrofit).\n- **Les aides correspondantes** sur votre territoire.",
     "illustration": "images/TEE_eolienne.webp",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "autres opérateurs": [
