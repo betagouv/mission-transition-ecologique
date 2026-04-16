@@ -38799,6 +38799,7 @@
     "promesse": "Financez vos investissements pour la transition écologique de votre entreprise",
     "description": "L'Agence de Développement Économique de la Corse propose l'aide 'Impresa Sì', dédiée aux projets d'investissement des PME. Cette aide soutient les dépenses visant à réduire l'empreinte carbone de votre entreprise, en favorisant une production plus respectueuse de l'environnement : réduction des déchets, gestion de l'énergie, traitement des eaux, éco-construction, acquisition d'équipements professionnels basse consommation et travaux d'aménagement pour la mise aux normes environnementales.",
     "description longue": "Ce dispositif peut financer :\n- les frais généraux et achats consommés ou incorporés,\n- les prestations externes (études, propriété industrielle…),\n- les investissements matériels et immatériels affectés au programme,\n- les frais de formation pour l’acquisition d’une compétence ou d’un brevet permettant la pratique de l’activité,\n- les dépenses visant à réduire l’empreinte carbone et destinés à une production respectueuse de l’environnement (réduction des déchets, maîtrise de l’énergie, traitement des eaux, éco-construction…),\n- les acquisitions d’équipements et matériels professionnels performants répondant à des normes environnementales, dans un but d’amélioration de la qualité des produits et des services & travaux d’aménagement au titre des mises aux normes environnementales.",
+    "fin de validité": "31/12/2025",
     "illustration": "images/TEE_eolienne.webp",
     "opérateur de contact": "Agence de Développement Economique de Corse",
     "contact question": "mailto:contact@adec.corsica",
@@ -38868,6 +38869,9 @@
         "allowedRegion": [
           "Corse"
         ]
+      },
+      "validity": {
+        "end": "31/12/2025"
       },
       "priorityObjectives": [
         "waste",
@@ -38973,6 +38977,7 @@
         ]
       },
       "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
         "toutes ces conditions": [
           "a un effectif éligible",
           "entreprise . est dans une zone géographique éligible"
