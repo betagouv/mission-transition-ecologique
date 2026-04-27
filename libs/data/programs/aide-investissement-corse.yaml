@@ -28,6 +28,7 @@ description longue: >-
   répondant à des normes environnementales, dans un but d’amélioration de la
   qualité des produits et des services & travaux d’aménagement au titre des
   mises aux normes environnementales.
+fin de validité: 31/12/2025
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Agence de Développement Economique de Corse
 contact question: mailto:contact@adec.corsica
@@ -70,6 +71,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - entreprise . est dans une zone géographique éligible
