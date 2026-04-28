@@ -16,6 +16,12 @@
     "color": "red"
   },
   {
+    "operator": "Agence de l'Eau Adour-Garonne",
+    "filterCategories": [
+      "Agence de l'eau"
+    ]
+  },
+  {
     "operator": "Agence de l'Eau Loire-Bretagne",
     "filterCategories": [
       "Agence de l'eau"

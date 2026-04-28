@@ -1,0 +1,106 @@
+titre: Gestion intégrée des eaux pluviales
+promesse: Mettez en place une stratégie globale de gestion des eaux pluviales
+description: >-
+  Faites-vous accompagner pour mener un investissement ou une étude préalable
+  visant à améliorer la dépollution des sols et la gestion des eaux pluviales.
+  Il peut s'agit par exemple d'un projet :
+
+
+  - De **désimperméabilisation des sols**.
+
+  - D'**intégration des eaux pluviales**, dans le but de limiter le
+  ruissellement et les rejets directs de polluants\
+    par temps de pluie.
+description longue: >-
+  Les projets devront notamment :
+
+
+  - Être portés par une structure créée depuis plus de 2 ans (sauf s’il y a
+  continuité d’activité).
+
+  - Pour les études préalables aux travaux, prendre en compte l’impact du
+  changement climatique.
+
+  - Mettre en jeu des surfaces supérieures ou égales à 700 m2 de bâtiments ou
+  zones artisanales déjà existantes et utiliser majoritairement des solutions
+  fondées sur la nature sur plus de 50 % des surfaces ou des volumes concernés.\
+    \
+    Ne sont pas éligibles aux aides de l’Agence les projets concernant :
+  - Des travaux de renouvellement à l’identique.
+
+  - Des travaux de rénovation urbaine (GIEP, désimperméabilisation) portés par
+  des promoteurs immobiliers privés.
+
+  - Des études réglementaires.
+illustration: images/TEE_eolienne.webp
+opérateur de contact: Agence de l'Eau
+autres opérateurs:
+  - Agence de l'Eau Adour-Garonne
+contact question: https://eau-grandsudouest.com/contact
+url: >-
+  https://eau-grandsudouest.com/aides-financieres/activites-industrielles-artisanat
+nature de l'aide: financement
+montant du financement: 60 à 80 % de l'étude ou de l'investissement
+objectifs:
+  - description: Consultez la documentation pour vérifier l'éligibilité de votre projet.
+    liens:
+      - lien: >-
+          https://eau-grandsudouest.com/sites/default/files/2025-11/fiche-thematique_industries_giep_hd_bureau.pdf
+        texte: Conditions éligibilité et financement
+  - description: Créez un compte sur l'appli Rivage pour déposer votre demande d'aide.
+    liens:
+      - lien: https://rivage.eau-adour-garonne.fr/appli/
+        texte: Appli Rivages
+  - description: >-
+      Connectez-vous et sélectionnez la thématique "Lutte contre les pressions
+      des activités économiques hors agriculture (réduction des pollutions,
+      économies d’eau et eaux pluviales)" et sélectionnez l'un des dispositifs
+      Rivage correspondant à votre projet.
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+  - description: >-
+      Si votre demande est acceptée, recevez un contrat de financement précisant
+      le montant d’aide maximum, les conditions et les modalités de versement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Landes, Nouvelle-Aquitaine, Occitanie
+  secteur d'activité:
+    - Activités industrielles et artisanales
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est M
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Landes
+      - région = Nouvelle-Aquitaine
+      - région = Occitanie

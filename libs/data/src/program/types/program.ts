@@ -87,6 +87,7 @@ export type Dispositif = {
   "opérateur de contact":
     | "ADEME"
     | "Agence de Services et de Paiement"
+    | "Agence de l'Eau Adour-Garonne"
     | "Agence de l'Eau Loire-Bretagne"
     | "Agence de l'Eau Rhône-Méditerranée-Corse"
     | "Agence de l'Eau"
@@ -275,6 +276,7 @@ export type Dispositif = {
 export type Operators =
   | "ADEME"
   | "Agence de Services et de Paiement"
+  | "Agence de l'Eau Adour-Garonne"
   | "Agence de l'Eau Loire-Bretagne"
   | "Agence de l'Eau Rhône-Méditerranée-Corse"
   | "Agence de l'Eau"
