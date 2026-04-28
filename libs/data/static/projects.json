@@ -5195,10 +5195,7 @@
     ],
     "mainTheme": "water",
     "programs": [
-      "etude-geothermie-de-surface-et-d-aerothermie",
-      "etude-hydroelectricite",
-      "fond-vert-territoires-d-industrie",
-      "investissement-boucle-d-eau-geothermique"
+      "diag-eco-flux"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [],
@@ -5262,6 +5259,85 @@
       "S",
       "T",
       "U"
+    ],
+    "faqs": []
+  },
+  {
+    "id": 1656,
+    "slug": "preservation-du-milieu-aquatique",
+    "title": "Préservation du milieu aquatique",
+    "nameTag": "🐟 preservation aquatique",
+    "shortDescription": "Renaturer les milieux aquatiques est un moyen efficace de protéger la biodiversité.",
+    "image": "/images/projet/preservation-du-milieu-aquatique.webp",
+    "longDescription": "La préservation du milieu aquatique consiste à **restaurer, gérer et préserver les cours d’eau, les milieux humides et marins**, afin de les rendre **fonctionnels** et **résilients** face au changement climatique.\n\nCela consiste par exemple à :\n\n- Retrouver la fonctionnalité d’un milieu aquatique et la restaurer (reméandrage, reprofilage de berge, plantation, arasement des seuils...) .\n- Faire l’acquisition de milieux humides en vue de leur restauration et de leur renaturation.\n- Mettre en place des travaux littoraux.\n- Remettre en eau des milieux asséchés (suppression des drains, déboisement, réhumidification...).\n- Investir dans des infrastructures agroécologiques.",
+    "moreDescription": "- [**Les pressions et les risques dans les milieux aquatiques**](https://www.eaufrance.fr/les-pressions-et-les-risques-dans-les-milieux-aquatiques), par Eaufrance.",
+    "themes": [
+      "water"
+    ],
+    "mainTheme": "water",
+    "programs": [
+      "soutien-hebergement-touristique"
+    ],
+    "descriptionLinkedProjects": "",
+    "linkedProjects": [
+      1657
+    ],
+    "priority": {
+      "default": 412
+    },
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I"
+    ],
+    "faqs": []
+  },
+  {
+    "id": 1657,
+    "slug": "biodiversite-des-cours-d-eau",
+    "title": "Restauration de la biodiversité des cours d'eau",
+    "nameTag": "🐟 biodiversite riviere",
+    "shortDescription": "Le dynamisme des cours d'eau est la condition première de la préservation de son écosystème.",
+    "image": "/images/projet/biodiversite-des-cours-d-eau.webp",
+    "longDescription": "Au cours de leur vie, les espèces animales et végétales opèrent des déplacements pour se reproduire, se nourrir et s’adapter au climat.\n\nLa **trame verte et bleue** est un outil pour protéger la biodiversité, notamment aquatique. Prenant en compte la circulation et les réseaux d’échange terrestres (trame verte) et aquatiques (trame bleue), elle vise à protéger la biodiversité en reliant les milieux naturels aux cours d’eau.\n\nAinsi, la restauration de la trame verte et bleue passe par :\n\n- L’**effacement ou l’arasement des seuils** et des ouvrages transversaux (barrages…) qui empêchent le libre écoulement d’un cours d’eau, le transit sédimentaire, et la circulation piscicole.\n- Les **actions pour préserver les espèces aquatiques** (poissons migrateurs, et autres espèces prioritaires).\n- La **restauration des habitats** dans et à proximité des cours d’eau.",
+    "moreDescription": "- [**La trame verte et bleue**](https://www.ecologie.gouv.fr/politiques-publiques/trame-verte-bleue), définitions et enjeux, par le Ministère de la Transition Écologique.\n- [**Des rivières dynamiques, réservoirs de biodiversité**](https://www.eaufrance.fr/des-rivieres-dynamiques-reservoirs-de-biodiversite), une fiche thématique par Eaufrance.",
+    "themes": [
+      "water",
+      "biodiversite"
+    ],
+    "mainTheme": "water",
+    "programs": [
+      "b-a-ba-du-climat-et-biodiversite",
+      "entreprises-engagees-nature",
+      "mooc-biodiversite-entreprise",
+      "diag-impact-biodiversite",
+      "diag-biodiversite"
+    ],
+    "descriptionLinkedProjects": "",
+    "linkedProjects": [
+      1656
+    ],
+    "priority": {
+      "default": 327
+    },
+    "highlightPriority": null,
+    "sectors": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I"
     ],
     "faqs": []
   }
