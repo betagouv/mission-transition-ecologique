@@ -17,7 +17,7 @@ description: >-
   - Effectuez un retour d’expérience avec l’ensemble des participants
   (avancements, réussites, difficultés et pistes d’action).
 début de validité: 01/01/2025
-fin de validité: 31/03/2026
+fin de validité: 10/09/2026
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: ANACT
 contact question: mailto:m.perrocheau@anact.fr
@@ -32,13 +32,13 @@ objectifs:
       - lien: https://www.anact.fr/accelerateur-des-possibles
         texte: L'accélérateur des possibles
   - description: >-
-      Candidatez à l'appel à projets avant fin mars 2026 en contactant la
-      chargée de mission de l'Aract Pays de la Loire (écrire à
+      Candidatez à l'appel à projets **avant le 10 septembre 2026** en
+      contactant la chargée de mission de l'Aract Pays de la Loire (écrire à
       [m.perrocheau@anact.fr](mailto:m.perrocheau@anact.fr)).
+  - description: Si votre projet est retenu, vous recevez les détails du programme.
   - description: >-
-      Début avril, vous saurez si votre projet est retenu. S'il l'est, vous
-      recevez les détails du programme.
-  - description: Les 9 et 10 juin 2026, suivez le programme "Accélérateur des possibles".
+      Les 3 et 4 novembre 2026, suivez le programme "Accélérateur des
+      possibles".
 conditions d'éligibilité:
   taille de l'entreprise:
     - TPE, PME, entrepreneurs salariés

@@ -1,20 +1,20 @@
-titre: Diagnostic Conso Elec
+titre: Diagnostic Conso Énergie
 promesse: Réduisez votre facture et votre consommation d'électricité
 description: >-
-  Réalisez une **analyse de votre consommation d’électricité** pour identifier
-  les gaspillages et **optimiser vos contrats de fourniture**.
+  Réalisez une **analyse de votre consommation de gaz et d’électricité** pour
+  identifier les gaspillages et **optimiser vos contrats de fourniture**.
 
 
-  Votre expert CMA collecte vos données de consommation sur le serveur d’ENEDIS.
-  Suite à son analyse, il vous remet un rapport et un plan d'actions
-  prioritaires au cours d'une restitution.
+  Votre expert CMA collecte vos données de consommation sur les serveurs
+  d’ENEDIS et GRDF. Suite à son analyse, il vous remet un rapport et un plan
+  d'actions prioritaires au cours d'une restitution.
 description longue: >-
-  L'étude consiste à analyser votre courbe de charge d’électricité (puissances
-  électriques appelées mesurées toutes les 10 minutes sur un historique de 2
-  ans).
+  L'étude consiste à analyser vos consommations quotidiennes de gaz et votre
+  courbe de charge d’électricité (puissances électriques appelées mesurées
+  toutes les 10 minutes sur un historique de 2 ans).
 
 
-  Cela permet de : 
+  Cela permet de :
 
 
   - Quantifier le talon de consommation de l’entreprise (période de fermeture).
@@ -22,12 +22,12 @@ description longue: >-
   - Analyser la consommation heure par heure sur une semaine type (hiver et
   été).
 
-  - Déceler une consommation anormale.
+  - Déceler une consommation anormale par rapport à l'activité.
 
   - Optimiser les contrats de fourniture (puissance souscrite, option heures
   creuses…).
 
-  - De réduire la consommation et la facture d’électricité.
+  - De réduire les consommations et les factures de gaz et d’électricité.
 début de validité: 01/09/2024
 fin de validité: 30/06/2028
 illustration: images/TEE_ampoule.webp
