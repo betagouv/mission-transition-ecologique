@@ -1467,7 +1467,8 @@
       "booster-transformation-rev-3",
       "diagnostic-et-accompagnement-co2i",
       "ressourc-eau",
-      "sobriete-hydrique"
+      "sobriete-hydrique",
+      "economies-recyclage-eau-activites-industrielles-artisanat"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action eau",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action eau",
@@ -2490,7 +2491,7 @@
     "titleLongDescription": "🤝 Qu’est-ce qu'un plan d'adaptation climat ?",
     "longDescription": "Le plan d’adaptation au dérèglement climatique est un accompagnement destiné à évaluer la **vulnérabilité de votre entreprise face aux aléas climatiques** déjà à l’œuvre : canicules, sécheresses, inondations, tempêtes, tensions sur les ressources…\n\nCet accompagnement vous aide à **bâtir une stratégie de résilience** adaptée à vos activités, à votre territoire et à vos contraintes opérationnelles. Ainsi, vous :\n\n- **Identifiez les risques**.\n- **Prévenez les ruptures d’activité**.\n- **Sécurisez les conditions de travail**.\n- **Anticipez les coûts économiques et sociaux** liés aux perturbations climatiques.\n\nDans un contexte où les événements extrêmes se multiplient, adapter son entreprise n’est plus une option mais une nécessité.\n\n**L’adaptation vise à limiter les effets du changement climatique déjà en cours. Elle est complémentaire des actions d’atténuation**, qui visent à en réduire les causes (notamment les émissions de gaz à effet de serre). Ces deux démarches doivent être pensées ensemble pour une stratégie climatique cohérente et durable.",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur le plan d'adaptation climat ?",
-    "moreDescription": "- [**Stratégie d'adaptation au changement climatique pour les entreprises**](https://agirpourlatransition.ademe.fr/entreprises/conseils/transverse/strategie/adaptation-climatique), les conseils de l'ADEME pour agir.\n- [**Adaptation des entreprises au changement climatique : Agir maintenant !**](https://www.cci-paris-idf.fr/sites/default/files/2025-03/CCI_Adaptation-au-changement-climatique_fev-2025.pdf) Une étude des CCI de France.\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.\n- [**Canicule et santé au travail : prévenir les risques, protéger les équipes**](https://www.anact.fr/canicule-travail-prevention-risques)**,** tour d'horizon et conseils pratiques de l'ANACT",
+    "moreDescription": "- [**Stratégie d'adaptation au changement climatique pour les entreprises**](https://agirpourlatransition.ademe.fr/entreprises/conseils/transverse/strategie/adaptation-climatique), les conseils de l'ADEME pour agir.\n- [**Adaptation des entreprises au changement climatique : Agir maintenant !**](https://www.cci-paris-idf.fr/sites/default/files/2025-03/CCI_Adaptation-au-changement-climatique_fev-2025.pdf) Une étude des CCI de France.\n- [**Changement climatique, il y a urgence à s'adapter**](https://archives.qqf.fr/infographie/90/changement-climatique-il-y-a-urgence-a-s-adapter) : une infographie *\"Qu'est-ce qu'on fait ?!\"* proposée par l'ADEME.\n- [**Ils l'ont fait :**](https://librairie.ademe.fr/changement-climatique-et-energie/6728-en-entreprise-comment-s-engager-dans-un-parcours-d-adaptation-au-changement-climatique-.html) une sélection de 30 témoignages d'entreprises françaises qui se sont lancées.\n- [**Canicule et santé au travail : prévenir les risques, protéger les équipes**](https://www.anact.fr/canicule-travail-prevention-risques)**,** tour d'horizon et conseils pratiques de l'ANACT\n- [**Adaptation au changement climatique : 5 étapes pour préparer mon entreprise**](https://www.medef.com/uploads/media/node/0020/08/17281-livret-adaptation-au-changement-climatique-medef-02-2026-a5.pdf), un guide du MEDEF",
     "themes": [
       "environmental"
     ],
@@ -3716,7 +3717,8 @@
       "pret-energie-aura",
       "pret-ile-de-france",
       "perf-crise-energetique-cvl",
-      "cheque-transition-tissu-economique"
+      "cheque-transition-tissu-economique",
+      "gestion-eaux-pluviales"
     ],
     "linkedProjects": [
       33
@@ -5195,7 +5197,8 @@
     ],
     "mainTheme": "water",
     "programs": [
-      "diag-eco-flux"
+      "diag-eco-flux",
+      "economies-recyclage-eau-activites-industrielles-artisanat"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [],
@@ -5229,7 +5232,9 @@
     "mainTheme": "water",
     "programs": [
       "cedre-premier-pas",
-      "sud-pret-climat"
+      "sud-pret-climat",
+      "reduire-les-pollutions",
+      "gestion-eaux-pluviales"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [],
@@ -5276,7 +5281,8 @@
     ],
     "mainTheme": "water",
     "programs": [
-      "soutien-hebergement-touristique"
+      "soutien-hebergement-touristique",
+      "reduire-les-pollutions"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [
@@ -5318,7 +5324,8 @@
       "entreprises-engagees-nature",
       "mooc-biodiversite-entreprise",
       "diag-impact-biodiversite",
-      "diag-biodiversite"
+      "diag-biodiversite",
+      "reduire-les-pollutions"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [
