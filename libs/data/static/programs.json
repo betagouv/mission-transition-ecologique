@@ -54271,5 +54271,642 @@
     },
     "id": "conseil-mobilite-idf",
     "type": "tee"
+  },
+  {
+    "titre": "Réduction des pollutions de l'eau",
+    "promesse": "Contribuez à réduire les pollutions industrielles des milieux aquatiques",
+    "description": "Faites-vous accompagner pour réduire les macro et les micropollutions issues des activités industrielles et artisanale. Ce dispositif finance, par exemple les études et les investissements concernant :\n\n- Les **aménagements internes et la réutilisation des eaux** qui visent à réduire ou supprimer les pollutions à la source.\n- Le **traitement des effluents**.\n- La construction d’**ouvrages de sécurité et de bassins de confinement**, afin de limiter les pollutions accidentelles et les rejets pluviaux.\n- Le **développement de partenariats**.",
+    "description longue": "Les projets devront notamment :\n\n- S’inscrire dans un programme global de dépollution comprenant une réflexion en termes d’économie d’eau à l’échelle de l’établissement en identifiant les actions réalisables et les réductions déjà effectives en intégrant la trajectoire prospective d’adaptation au changement climatique.\n- Être portés par une structure créée depuis plus de 2 ans (sauf s’il y a continuité d’activité).\n- Aboutir à une réduction de la pression du rejet sur la masse d’eau et vérifier que le rejet projeté est compatible avec l’objectif d’état de la masse d’eau réceptrice ou avec les usages sensibles.\n- Pour les établissements générant des pollutions ponctuelles (rejet au milieu naturel), s’inscrire dans un projet individuel visant à respecter ou à aller au-delà de la réglementation ou s’intégrer dans une opération collective partenariale.\n- Pour les opérations concernant le traitement des micro-polluants, les études pilotes et leurs résultats permettant d’évaluer les filières de traitement, doivent être validés par un tiers expert indépendant et les traitements doivent être issus d’études pilotes.\n\nNe sont pas éligibles aux aides de l’Agence les projets concernant :\n\n- Des pollutions nouvelles (exemple : création d’une entreprise).\n- Des travaux de renouvellement à l’identique des sites et sols pollués (site orphelin, fermé ou en post-exploitation).\n- Des activités de prestation de service (transport et/ou traitement d’effluents de tiers).\n- Des études réglementaires.",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Agence de l'Eau",
+    "autres opérateurs": [
+      "Agence de l'Eau Adour-Garonne"
+    ],
+    "contact question": "https://eau-grandsudouest.com/contact",
+    "url": "https://eau-grandsudouest.com/aides-financieres/activites-industrielles-artisanat",
+    "nature de l'aide": "financement",
+    "montant du financement": "30 à 80% de l'étude ou de l'investissement, selon projet",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
+        "liens": [
+          {
+            "lien": "https://eau-grandsudouest.com/sites/default/files/2025-11/fiche-thematique_industries_reduction-des-pollutions_hd_bureau.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte sur l'appli Rivage pour déposer votre demande d'aide.",
+        "liens": [
+          {
+            "lien": "https://rivage.eau-adour-garonne.fr/appli/",
+            "texte": "Appli Rivages"
+          }
+        ]
+      },
+      {
+        "description": "Connectez-vous et sélectionnez la thématique \"Lutte contre les pressions des activités économiques hors agriculture (réduction des pollutions, économies d’eau et eaux pluviales)\" et sélectionnez l'un des dispositifs Rivage correspondant à votre projet."
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !"
+      },
+      {
+        "description": "Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Landes, Nouvelle-Aquitaine, Occitanie"
+      ],
+      "secteur d'activité": [
+        "Activités industrielles et artisanales"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "M"
+        ],
+        "allowedRegion": [
+          "Landes",
+          "Nouvelle-Aquitaine",
+          "Occitanie"
+        ]
+      },
+      "priorityObjectives": [
+        "water",
+        "environmental"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est M"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Landes",
+          "région = Nouvelle-Aquitaine",
+          "région = Occitanie"
+        ]
+      }
+    },
+    "id": "reduire-les-pollutions",
+    "type": "tee"
+  },
+  {
+    "titre": "Gestion intégrée des eaux pluviales",
+    "promesse": "Mettez en place une stratégie globale de gestion des eaux pluviales",
+    "description": "Faites-vous accompagner pour mener un investissement ou une étude préalable visant à améliorer la dépollution des sols et la gestion des eaux pluviales. Il peut s'agit par exemple d'un projet :\n\n- De **désimperméabilisation des sols**.\n- D'**intégration des eaux pluviales**, dans le but de limiter le ruissellement et les rejets directs de polluants\\\n  par temps de pluie.",
+    "description longue": "Les projets devront notamment :\n\n- Être portés par une structure créée depuis plus de 2 ans (sauf s’il y a continuité d’activité).\n- Pour les études préalables aux travaux, prendre en compte l’impact du changement climatique.\n- Mettre en jeu des surfaces supérieures ou égales à 700 m2 de bâtiments ou zones artisanales déjà existantes et utiliser majoritairement des solutions fondées sur la nature sur plus de 50 % des surfaces ou des volumes concernés.\\\n  \\\n  Ne sont pas éligibles aux aides de l’Agence les projets concernant :\n- Des travaux de renouvellement à l’identique.\n- Des travaux de rénovation urbaine (GIEP, désimperméabilisation) portés par des promoteurs immobiliers privés.\n- Des études réglementaires.",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Agence de l'Eau",
+    "autres opérateurs": [
+      "Agence de l'Eau Adour-Garonne"
+    ],
+    "contact question": "https://eau-grandsudouest.com/contact",
+    "url": "https://eau-grandsudouest.com/aides-financieres/activites-industrielles-artisanat",
+    "nature de l'aide": "financement",
+    "montant du financement": "60 à 80 % de l'étude ou de l'investissement",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
+        "liens": [
+          {
+            "lien": "https://eau-grandsudouest.com/sites/default/files/2025-11/fiche-thematique_industries_giep_hd_bureau.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte sur l'appli Rivage pour déposer votre demande d'aide.",
+        "liens": [
+          {
+            "lien": "https://rivage.eau-adour-garonne.fr/appli/",
+            "texte": "Appli Rivages"
+          }
+        ]
+      },
+      {
+        "description": "Connectez-vous et sélectionnez la thématique \"Lutte contre les pressions des activités économiques hors agriculture (réduction des pollutions, économies d’eau et eaux pluviales)\" et sélectionnez l'un des dispositifs Rivage correspondant à votre projet."
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !"
+      },
+      {
+        "description": "Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Landes, Nouvelle-Aquitaine, Occitanie"
+      ],
+      "secteur d'activité": [
+        "Activités industrielles et artisanales"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "M"
+        ],
+        "allowedRegion": [
+          "Landes",
+          "Nouvelle-Aquitaine",
+          "Occitanie"
+        ]
+      },
+      "priorityObjectives": [
+        "water",
+        "environmental"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est M"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Landes",
+          "région = Nouvelle-Aquitaine",
+          "région = Occitanie"
+        ]
+      }
+    },
+    "id": "gestion-eaux-pluviales",
+    "type": "tee"
+  },
+  {
+    "titre": "Économiser et recycler l'eau dans l'industrie et l'artisanat",
+    "promesse": "Réduisez la consommation d'eau induite par votre activité",
+    "description": "Bénéficiez d'un accompagnement pour mener un investissement ou une étude préalable visant à réduire la consommation d'eau. En effet, le secteur Adour-Garonne est un l'un des plus impacté par le déficit hydrique. \\\nCe dispositif accompagne notamment :\n\n- Les **démarches prospectives** avant travaux.\n- Les **mise en circuit fermé** du réseau d'eau.\n- Les travaux de collecte et de **recyclage des eaux pluviales**.\n- Les travaux d’**économies d’eau** dans l'industrie et l'artisanat.\n- Les travaux de **transfert de prélèvements** vers des **ressources moins sensibles**.",
+    "description longue": "Les projets devront permettre une économie de prélèvement d’eau d’au moins 10 % du volume total annuel moyen prélevé dès lors que celui-ci est supérieur à 5 000 m3 ou une économie supérieure à 500 000 m3.\n\nOpérations non éligibles :\n\n- Les opérations d’entretien ou liées à du renouvellement d’équipements à l’identique.\n- Les études nécessaires à la constitution des dossiers réglementaires.\n- Les projets portés par une structure créée depuis moins de 2 ans (sauf s’il y a continuité d’activité).",
+    "illustration": "images/TEE_ampoule.webp",
+    "opérateur de contact": "Agence de l'Eau",
+    "autres opérateurs": [
+      "Agence de l'Eau Adour-Garonne"
+    ],
+    "contact question": "https://eau-grandsudouest.com/contact",
+    "url": "https://eau-grandsudouest.com/aides-financieres/activites-industrielles-artisanat",
+    "nature de l'aide": "financement",
+    "montant du financement": "30 à 80% de l'étude ou de l'investissement, selon projet",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation pour vérifier l'éligibilité de votre projet.",
+        "liens": [
+          {
+            "lien": "https://eau-grandsudouest.com/sites/default/files/2025-11/fiche-thematique_industries_eco-d-eau_hd_bureau.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte sur l'appli Rivage pour déposer votre demande d'aide.",
+        "liens": [
+          {
+            "lien": "https://rivage.eau-adour-garonne.fr/appli/",
+            "texte": "Appli Rivages"
+          }
+        ]
+      },
+      {
+        "description": "Connectez-vous et sélectionnez la thématique \"Lutte contre les pressions des activités économiques hors agriculture (réduction des pollutions, économies d’eau et eaux pluviales)\" et sélectionnez l'un des dispositifs Rivage correspondant à votre projet."
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !"
+      },
+      {
+        "description": "Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Landes, Nouvelle-Aquitaine, Occitanie"
+      ],
+      "secteur d'activité": [
+        "Activités industrielles et artisanales"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "M"
+        ],
+        "allowedRegion": [
+          "Landes",
+          "Nouvelle-Aquitaine",
+          "Occitanie"
+        ]
+      },
+      "priorityObjectives": [
+        "water"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est M"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Landes",
+          "région = Nouvelle-Aquitaine",
+          "région = Occitanie"
+        ]
+      }
+    },
+    "id": "economies-recyclage-eau-activites-industrielles-artisanat",
+    "type": "tee"
   }
 ]
