@@ -1927,7 +1927,8 @@
       "autodiagnostic-rse",
       "m-diagnostic-accompagnement",
       "eval-360-pays-de-la-loire",
-      "diag-mobilite-idf"
+      "diag-mobilite-idf",
+      "ameliorer-la-connaissance-des-milieux"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
@@ -2108,7 +2109,8 @@
       "plan-de-developpement-des-competences",
       "concilier-enjeux-ecologiques-et-conditions-de-travail",
       "autodiagnostic-rse",
-      "m-diagnostic-accompagnement"
+      "m-diagnostic-accompagnement",
+      "ameliorer-la-connaissance-des-milieux"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une formation environnement",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre formation environnement",
@@ -3358,7 +3360,10 @@
       "aide-tourisme-guadeloupe",
       "diag-impact-biodiversite",
       "diag-biodiversite",
-      "easy-diag"
+      "easy-diag",
+      "lutter-contre-les-micropolluants",
+      "ameliorer-la-connaissance-des-milieux",
+      "proteger-biodiversite-et-restaurer-trame-verte-et-bleue"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4012,7 +4017,8 @@
       "pret-vert-ademe",
       "aide-financement-occitanie",
       "certification-agriculture-biologique",
-      "e-trans"
+      "e-trans",
+      "restaurer-preserver-les-milieux-aquatiques"
     ],
     "linkedProjects": [],
     "priority": {
@@ -5234,7 +5240,9 @@
       "cedre-premier-pas",
       "sud-pret-climat",
       "reduire-les-pollutions",
-      "gestion-eaux-pluviales"
+      "gestion-eaux-pluviales",
+      "lutter-contre-les-micropolluants",
+      "ameliorer-la-connaissance-des-milieux"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [],
@@ -5282,7 +5290,11 @@
     "mainTheme": "water",
     "programs": [
       "soutien-hebergement-touristique",
-      "reduire-les-pollutions"
+      "reduire-les-pollutions",
+      "lutter-contre-les-micropolluants",
+      "ameliorer-la-connaissance-des-milieux",
+      "restaurer-preserver-les-milieux-aquatiques",
+      "proteger-biodiversite-et-restaurer-trame-verte-et-bleue"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [
@@ -5325,7 +5337,11 @@
       "mooc-biodiversite-entreprise",
       "diag-impact-biodiversite",
       "diag-biodiversite",
-      "reduire-les-pollutions"
+      "reduire-les-pollutions",
+      "lutter-contre-les-micropolluants",
+      "ameliorer-la-connaissance-des-milieux",
+      "restaurer-preserver-les-milieux-aquatiques",
+      "proteger-biodiversite-et-restaurer-trame-verte-et-bleue"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [
