@@ -288,7 +288,8 @@
       "aide-tpe-transition-na",
       "aide-investissement-corse",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
-      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
+      "ormat"
     ],
     "linkedProjects": [
       21
@@ -1559,7 +1560,8 @@
       "easy-diag",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
       "diagnostic-et-accompagnement-co2i",
-      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
+      "ormat"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action déchets",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action déchets",
@@ -1705,7 +1707,8 @@
       "camping-independant-na",
       "aide-tpe-transition-na",
       "aide-investissement-corse",
-      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
+      "ormat"
     ],
     "linkedProjects": [
       21
@@ -4094,7 +4097,8 @@
       "fond-vert-territoires-d-industrie",
       "programme-synergies-durables",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
-      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
+      "ormat"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4725,7 +4729,7 @@
     "shortDescription": "Un four électrique est plus durable et plus économe en énergie qu'un four au gaz.",
     "image": "/images/projet/fours-industriels-electriques.webp",
     "longDescription": "Remplacer votre four industriel au gaz naturel par un four 100% électrique présente de nombreux intérêts :\n\n- la **durabilité** : les fours électriques sont moins coûteux à installer, à entretenir et nécessitent moins de réparation que les fours utilisant des combustibles fossiles ;\n- les **économies d'énergie** : les fours électriques consomment moins d'énergie que les fours au gaz naturel pour produire la même quantité de chaleur, ils contribuent à réduire considérablement la consommation de ressources ;\n- la précision et le **contrôle de la température** : les appareils électriques produisent une température constante, uniforme et contrôlée ;\n- la **décarbonation** de vos activités : n'utilisant pas de combustible fossile, les fours électriques n'émettent ni gaz à effet de serre ni polluants atmosphériques.",
-    "moreDescription": "- [**L'énergie : un poste clé dans l'industrie**](https://librairie.ademe.fr/batiment/1846-energie-un-poste-cle-dans-l-industrie-l--9791029709159.html#), un guide de l'ADEME.\n- [**Guide de la transition écologique à destination du secteur industriel**](https://www.opco2i.fr/wp-content/uploads/2025/03/opco2i-guide-transition-ecologique.pdf), par l'Opco 2i.",
+    "moreDescription": "- [**L'énergie : un poste clé dans l'industrie**](https://librairie.ademe.fr/batiment/1846-energie-un-poste-cle-dans-l-industrie-l--9791029709159.html#), un guide de l'ADEME.\n- [**Guide de la transition écologique à destination du secteur industriel**](https://www.opco2i.fr/wp-content/uploads/2025/03/opco2i-guide-transition-ecologique.pdf), par l'Opco 2i.\n- [**Des gestes simples pour un four à sole plus économe**](https://unm.fr/wp-content/uploads/2026/01/Guide-pour-un-four-a-sole_sircom_2026.pdf), un guide d'optimisation des fours de boulangerie.",
     "themes": [
       "energy"
     ],
@@ -4816,7 +4820,8 @@
       "demi-bac",
       "ibac-pme",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
-      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
+      "ormat"
     ],
     "linkedProjects": [
       36
@@ -4890,7 +4895,8 @@
       "charte-zero-dechet-plastique",
       "aide-tpe-transition-na",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
-      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse"
+      "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
+      "ormat"
     ],
     "linkedProjects": [
       21
@@ -4934,7 +4940,8 @@
       "accelerateur-economie-circulaire",
       "aide-tpe-transition-na",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
-      "ecoprodduire"
+      "ecoprodduire",
+      "ormat"
     ],
     "linkedProjects": [
       36
