@@ -40211,7 +40211,7 @@
         "description": "Créez un compte ADEME pour pouvoir déposer votre dossier en ligne",
         "liens": [
           {
-            "lien": "https://agir.ademe.fr/aides-financieres/aap/corimer-navires-bas-carbone",
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
             "texte": "Créer mon compte ADEME"
           }
         ]
@@ -41770,7 +41770,7 @@
   {
     "titre": "Decarb Flash 2025-2027",
     "promesse": "Financez la décarbonation de votre industrie",
-    "description": "Financez la décarbonations de vos activités industrielles grâce à cet appel à projet, en agissant sur :\n\n- La baisse de la consommation énergétique dans les procédés de production ;\n- L’électrification des équipements industriels ;\n- L’isolation thermique de vos bâtiments.",
+    "description": "Financez la décarbonation de vos activités industrielles grâce à cet appel à projet, en agissant sur :\n\n- La baisse de la consommation énergétique dans les procédés de production ;\n- L’électrification des équipements industriels ;\n- L’isolation thermique de vos bâtiments.",
     "description longue": "Les projets éligibles sont les suivants : \n- Récupération de chaleur fatale industrielle (sans PAC en réhausse de température)\n- Récupération de chaleur fatale industrielle avec PAC en réhausse de température\n- Installation de purgeurs vapeur sur les circuits vapeur\n- Installation de lignes de retours condensats sur les circuits vapeur\n- Installation de lignes de retours sur les circuits des NEP\n- Isolation thermique des équipements\n- Isolation thermique des tuyauteries et réseaux de fluides caloporteur ou frigoporteur\n- Système de mise sous vide permettant de réduire la consommation d'énergie\n- Ajout de thermocompression sur l'évaporation\n- Ajout d'effets supplémentaires sur les évaporateurs\n- Ajout d'une préconcentration par séparation membranaire ou ultrafiltration ou osmose inverse\n- Fours industriels électriques\n- Chaudière industrielle électrique\n- Systèmes de chauffage électrique de fluides (hors chaudière)\n- Systèmes de séchage électrique de pâtes ou solides\n- Systèmes de distillation électrique (y compris raffinage)\n- Isolation de combles perdus\n- Isolation des rampants de toiture et plafonds de combles\n- Isolation des toitures-terrasses\n- Isolation des murs par l'intérieur\n- Isolation des murs par l'extérieur\n- Isolation des planchers\n- Solaire photovoltaïque en autoconsommation en Corse et en Outre-mer\n- Solaire photovoltaïque autonome pour les activités économiques non raccordées au réseau électrique en Corse et en Outre-mer",
     "début de validité": "10/04/2025",
     "fin de validité": "15/02/2027",
@@ -55855,6 +55855,297 @@
       }
     },
     "id": "proteger-biodiversite-et-restaurer-trame-verte-et-bleue",
+    "type": "tee"
+  },
+  {
+    "titre": "ORMAT Objectif Recyclage Matières",
+    "promesse": "Financez vos projets qui favorisent le recyclage et la sobriété en matières premières",
+    "description": "Faites vous accompagner pour vos études ou vos investissements qui favorisent **la sobriété en matières premières, la résilience et la décarbonation de l’industrie par le recyclage.** Ce dispositif accompagne notamment :\n\n- Le surtri et la préparation de déchets en vue de leur recyclage.\n- La production de matières premières de recyclage (MPR) et leur incorporation dans les produits.\n- La réaffectation, le remanufacturing et le reconditionnement de batterie.",
+    "description longue": "Critères techniques et économiques pour mesurer l’impact positif des projets :\\\n• Approvisionnement identifié ou sécurisé ; pour préparation/surtri et production de MPR, les déchets approvisionnés sont détournés de l’enfouissement et/ou incinération CSR.\\\n• Débouché identifié ou sécurisé.\\\n• Proximité des approvisionnements et des débouchés.\\\n• Recyclabilité et/ou durabilité des produits où seront incorporés les MPR.\\\n• Intensité de coût et d’aide par tonne de matière recyclée ou par teq CO2 évitée.\\\n• Performance (notamment environnementale) et fiabilité de la technologie.\\\n• Incitativité de l’aide – autres aides notamment.\\\n• Qualité de la MPR.\\\n• Positionnement du projet par rapport aux filières de Responsabilité Elargie du Producteur (REPs) et à la réglementation.\\\n• Prise en compte des enjeux propres à un site industriel en transition : HSE/ sécurité industrielle, impact sur la biodiversité, adaptation au changement climatique.",
+    "début de validité": "24/04/2026",
+    "fin de validité": "31/12/2026",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000978",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/fonds-economie-circulaire-ormat-2026-objectif-recyclage-matieres#collectDocuments",
+    "nature de l'aide": "financement",
+    "montant du financement": "40 à 80% selon la nature du projet",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
+        "liens": [
+          {
+            "lien": "https://file:///Users/betagouv/Downloads/ORMAT%20-%20Conditions%20d'%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf",
+            "texte": "Conditions d'éligibilité"
+          }
+        ]
+      },
+      {
+        "description": "Rassemblez l’ensemble des documents nécessaires au dépôt de votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/fonds-economie-circulaire-ormat-2026-objectif-recyclage-matieres",
+            "texte": "Consulter la liste des documents"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier en ligne",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, étude de faisabilité, etc. À ce stade, votre investissement ne doit pas avoir été réalisé !",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/fonds-economie-circulaire-ormat-2026-objectif-recyclage-matieres",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez votre étude ou vos investissements."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Corse, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d’activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française"
+        ]
+      },
+      "validity": {
+        "start": "24/04/2026",
+        "end": "31/12/2026"
+      },
+      "priorityObjectives": [
+        "waste"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la gestion des déchets"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Auvergne-Rhône-Alpes",
+          "région = Bourgogne-Franche-Comté",
+          "région = Bretagne",
+          "région = Centre-Val de Loire",
+          "région = Corse",
+          "région = Grand Est",
+          "région = Guadeloupe",
+          "région = Guyane",
+          "région = Hauts-de-France",
+          "région = Île-de-France",
+          "région = La Réunion",
+          "région = Martinique",
+          "région = Mayotte",
+          "région = Normandie",
+          "région = Nouvelle-Aquitaine",
+          "région = Nouvelle-Calédonie",
+          "région = Occitanie",
+          "région = Pays de la Loire",
+          "région = Polynésie française"
+        ]
+      }
+    },
+    "id": "ormat",
     "type": "tee"
   }
 ]

@@ -62,8 +62,7 @@ objectifs:
         texte: Contactez par mail
   - description: Créez un compte ADEME pour pouvoir déposer votre dossier en ligne
     liens:
-      - lien: >-
-          https://agir.ademe.fr/aides-financieres/aap/corimer-navires-bas-carbone
+      - lien: https://agirpourlatransition.ademe.fr/inscription
         texte: Créer mon compte ADEME
   - description: Déposez votre dossier en ligne
     liens:
