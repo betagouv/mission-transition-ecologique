@@ -230,7 +230,7 @@
     "description": "L’ADEME soutient financièrement les entreprises qui souhaitent questionner leur modèle économique pour identifier un nouveau modèle compatible avec une trajectoire bas carbone. \nVous serez accompagné avec la méthode ACT Pas à Pas (Assessing Low Carbon Transition), une méthode structurante, progressive et sur le long terme qui aide les entreprises à réduire significativement leurs émissions de gaz à effet de serre.",
     "description longue": "L'étude ACT Pas à Pas se déroule en 12 à 18 mois selon les entreprises. Les grandes étapes de l'étude sont les suivantes :  \n\n• Analyser la maturité initiale de l'entreprise sur des bases carbone.\n\n• Exposer les enjeux et  réaliser une analyse stratégique de l’entreprise dans un contexte de transition bas carbone.\n\n• Déterminer une vision d’entreprise et concevoir la feuille de route du plan de transition à court, moyen et long terme. \n\n• Elaborer des objectifs de performance carbone et définir une stratégie.\n\n • Mettre en oeuvre des actions de décarbonation.",
     "début de validité": "13/11/2023",
-    "fin de validité": "30/06/2026",
+    "fin de validité": "30/06/2027",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "ADEME",
     "nature de l'aide": "étude",
@@ -1787,7 +1787,7 @@
       },
       "validity": {
         "start": "01/01/2023",
-        "end": "01/05/2026"
+        "end": "01/05/2027"
       },
       "priorityObjectives": [
         "energy"
@@ -3567,7 +3567,7 @@
     "promesse": "Anticipez l’impact des changements climatiques pour votre entreprise et sécurisez votre activité",
     "description": "Bénéficiez d'un accompagnement d'un expert CCI pour vous aider à évaluer la vulnérabilité climatique de votre entreprise, prévenir les impacts du dérèglement climatique et vous aider à limiter les coûts imprévus de canicule, inondation, sécheresse, etc.",
     "début de validité": "01/10/2023",
-    "fin de validité": "01/08/2026",
+    "fin de validité": "01/08/2027",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "CCI",
     "autres opérateurs": [
@@ -3760,7 +3760,7 @@
       },
       "validity": {
         "start": "01/10/2023",
-        "end": "01/08/2026"
+        "end": "01/08/2027"
       },
       "priorityObjectives": [
         "environmental"
@@ -10727,7 +10727,7 @@
     "promesse": "Découvrez le potentiel du photovoltaïque pour votre entreprise avec une étude d’opportunité",
     "description": "Disposez de tous les éléments indispensables à la prise de décision avant l’installation de panneaux photovoltaïques : montant de l’investissement et aides financières, économies réalisées par la vente de l’électricité et/ou par l’auto-consommation, points de vigilance, temps de retour sur investissement et rentabilité.",
     "début de validité": "01/10/2023",
-    "fin de validité": "01/06/2026",
+    "fin de validité": "01/06/2027",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "CCI",
     "autres opérateurs": [
@@ -10919,7 +10919,7 @@
       },
       "validity": {
         "start": "01/10/2023",
-        "end": "01/06/2026"
+        "end": "01/06/2027"
       },
       "priorityObjectives": [
         "building",
@@ -21934,7 +21934,7 @@
     "description": "Le programme PACTE Industrie vise à former et accompagner les industriels dans leur transition énergétique. L'accompagnement peut permettre de réaliser des études d’opportunités du mix énergétique, l'élaboration d'une stratégie de décarbonation et d'une Trajectoire d’Investissements Bas Carbone ou encore de la construction d'un plan de financement.",
     "description longue": "Plusieurs types d'accompagnement sont proposés :\n\n• étude des leviers de décarbonation à l’échelle du site industriel : efficacité énergétique, récupération de chaleur fatale, énergies renouvelables, ou encore électrification et hydrogène.\n\n• élaboration d'une stratégie de décarbonation ambitieuse et le plan de transition associé (ACT pas à pas), à l’échelle du groupe.\n\n• élaboration d'une Trajectoire d’Investissements Bas Carbone (TIBC) à l’échelle du groupe pour obtenir un chiffrage des gains d’émissions de gaz à effet de serre associés.\n\n• évaluation de l’ambition d’une stratégie de décarbonation et son alignement au regard des objectifs de l’Accord de Paris (ACT évaluation).\n\n• accompagnement pour les projets d’investissement bas carbone pour construire leurs plans de financement. ",
     "début de validité": "01/06/2023",
-    "fin de validité": "30/06/2026",
+    "fin de validité": "30/06/2027",
     "illustration": "images/TEE_ampoule.webp",
     "opérateur de contact": "ADEME",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2023/pacte-industrie-parcours-accompagnement-competences-transition-energetique-0",
@@ -22129,7 +22129,7 @@
       },
       "validity": {
         "start": "01/06/2023",
-        "end": "30/06/2026"
+        "end": "30/06/2027"
       },
       "priorityObjectives": [
         "energy"
