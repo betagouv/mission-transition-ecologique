@@ -54,7 +54,10 @@
     "artillery:page:prod": "nx run @tee/nuxt-artillery:test:pages:prod",
     "artillery:load:dev": "nx run @tee/nuxt-artillery:test:load:dev",
     "artillery:load:staging": "nx run @tee/nuxt-artillery:test:load:staging",
-    "artillery:load:prod": "nx run @tee/nuxt-artillery:test:load:prod"
+    "artillery:load:prod": "nx run @tee/nuxt-artillery:test:load:prod",
+    "artillery:realistic:dev": "nx run @tee/nuxt-artillery:test:realistic:dev",
+    "artillery:realistic:staging": "nx run @tee/nuxt-artillery:test:realistic:staging",
+    "artillery:realistic:prod": "nx run @tee/nuxt-artillery:test:realistic:prod"
   },
   "engines": {
     "node": "22.x"
