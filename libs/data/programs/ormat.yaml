@@ -97,6 +97,9 @@ conditions d'éligibilité:
     - Tous secteurs d’activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - "Ce dispositif n’est pas ouvert pour les projets situés sur le territoire en\_Provence-Alpes-Côte d’Azur (PACA)."
+    - "Pour les installations situées en PACA, vous pouvez transmettre les éléments techniques et financiers à la Région via\_[planregionaldechets@maregionsud.fr](mailto:planregionaldechets@maregionsud.fr). Une étude de votre demande d’aide sera réalisée par les services régionaux."
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
