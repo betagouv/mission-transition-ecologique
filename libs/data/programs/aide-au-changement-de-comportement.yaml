@@ -1,0 +1,140 @@
+titre: Aide au changement de comportement
+promesse: >-
+  Contribuez à faire évoluer les mentalités et les comportements en faveur de la
+  transition écologique
+description: "Bénéficiez d'un financement pour des projets de sensibilisation, d’animation ou de communication\_d’envergure et structurants pour le territoire,\_en faveur de la transition écologique. \n\nIl peut s'agir, par exemple, de : \n\n- **Formation/sensibilisation**\_: analyse des besoins, conception de modules de formation, animation de sessions.\n- **Communication**\_: réalisation d’outils, diffusion d’informations, création de sites internet, organisation d’événements.\n- **Animation**\_: mobilisation d’une cible, dissémination de solutions, structuration d’une filière, financement de postes relais."
+description longue: >-
+  Opérations non éligibles : \
+
+  • Financement de personnel titulaire de la fonction publique de l'État, des
+  collectivités territoriales et hospitalières.\
+
+  • Financement de personnel dans les communes et EPCI à fiscalité propre.\
+
+  • Actions portées par les entreprises pour leur compte.\
+
+  • Actions déjà démarrées.\
+
+  • Financement de certains profils (Conseillers en Énergie Partagés,
+  conseillers France Rénov).
+début de validité: 01/01/2026
+fin de validité: 31/12/2026
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: ADEME
+contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000866
+url: >-
+  https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-changement-de-comportement
+nature de l'aide: financement
+montant du financement: Jusqu'à 50% des dépenses éligibles
+objectifs:
+  - description: >-
+      Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre
+      projet ou contactez un conseiller.
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/sites/default/files/Aides%20au%20changement%20de%20comportement%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026%20.pdf
+        texte: Conditions éligibilité et financement
+  - description: Créez un compte ADEME pour pouvoir déposer votre dossier.
+    liens:
+      - lien: https://agirpourlatransition.ademe.fr/inscription
+        texte: Créer mon compte ADEME
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: >-
+          https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-changement-de-comportement
+        texte: Déposer mon dossier
+  - description: >-
+      L'ADEME étudie votre demande d'aide. Si votre demande est acceptée,
+      recevez un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - >-
+      Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Corse, Grand Est,
+      Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion,
+      Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie,
+      Occitanie, Pays de la Loire, Polynésie française, Provence-Alpes-Côte
+      d'Azur, Saint-Barthélemy, Saint-Martin, Saint-Pierre-Et-Miquelon
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Bourgogne-Franche-Comté
+      - région = Bretagne
+      - région = Centre-Val de Loire
+      - région = Corse
+      - région = Grand Est
+      - région = Guadeloupe
+      - région = Guyane
+      - région = Hauts-de-France
+      - région = Île-de-France
+      - région = La Réunion
+      - région = Martinique
+      - région = Mayotte
+      - région = Normandie
+      - région = Nouvelle-Aquitaine
+      - région = Nouvelle-Calédonie
+      - région = Occitanie
+      - région = Pays de la Loire
+      - région = Polynésie française
+      - région = Provence-Alpes-Côte d'Azur
+      - région = Saint-Barthélemy
+      - région = Saint-Martin
+      - région = Saint-Pierre-Et-Miquelon

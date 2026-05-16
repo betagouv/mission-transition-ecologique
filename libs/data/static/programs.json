@@ -42941,6 +42941,7 @@
     "promesse": "Bénéficiez d'un accompagnement pour développer le transport par modes massifiés comme le ferroviaire, le fluvial et le maritime",
     "description": "Le programme **REMOVE** propose un accompagnement technique et une expertise aux entreprises à travers deux dispositifs complémentaires :\n\n- **LOG-te** qui vise à réduire la consommation d’énergie des flottes de transport massifié (trains, bateaux) ainsi que des engins de manutention associés.\n\n- **REMO** qui accompagne les entreprises dans la mise en œuvre de solutions de **report modal** afin de générer des bénéfices énergétiques et environnementaux.",
     "description longue": "- Le dispositif REMO, à destination des chargeurs, commissionnaires et transporteurs, vous aide et vous accompagne dans la réflexion et la mise en œuvre de vos projets de report modal :\\\n  Aide à l’identification des flux éligibles,\\\n  Accompagnement méthodologique de sa réflexion à sa réalisation par des bureaux d’études,\n- Le dispositif LOG-te s’adresse aux entreprises des secteurs ferroviaire, fluvial et cabotage maritime :\\\n  Atteinte des objectifs de gains énergétiques sur le matériel utilisé (engins de manutention, locomotives, péniches, etc.),\\\n  À partir d’un catalogue d’actions élaboré par l’ADEME,\\\n  Accompagnement par des bureaux d’études.",
+    "fin de validité": "30/06/2026",
     "illustration": "images/TEE_eolienne.webp",
     "opérateur de contact": "ADEME",
     "contact question": "mailto:aap.remove@ademe.fr",
@@ -43015,6 +43016,9 @@
           "S"
         ],
         "excludeMicroentrepreneur": true
+      },
+      "validity": {
+        "end": "30/06/2026"
       },
       "priorityObjectives": [
         "mobility"
@@ -43117,6 +43121,7 @@
         ]
       },
       "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
         "toutes ces conditions": [
           "a une categorie legale eligible"
         ]
@@ -56150,6 +56155,307 @@
       }
     },
     "id": "ormat",
+    "type": "tee"
+  },
+  {
+    "titre": "Aide au changement de comportement",
+    "promesse": "Contribuez à faire évoluer les mentalités et les comportements en faveur de la transition écologique",
+    "description": "Bénéficiez d'un financement pour des projets de sensibilisation, d’animation ou de communication d’envergure et structurants pour le territoire, en faveur de la transition écologique. \n\nIl peut s'agir, par exemple, de : \n\n- **Formation/sensibilisation** : analyse des besoins, conception de modules de formation, animation de sessions.\n- **Communication** : réalisation d’outils, diffusion d’informations, création de sites internet, organisation d’événements.\n- **Animation** : mobilisation d’une cible, dissémination de solutions, structuration d’une filière, financement de postes relais.",
+    "description longue": "Opérations non éligibles : \\\n• Financement de personnel titulaire de la fonction publique de l'État, des collectivités territoriales et hospitalières.\\\n• Financement de personnel dans les communes et EPCI à fiscalité propre.\\\n• Actions portées par les entreprises pour leur compte.\\\n• Actions déjà démarrées.\\\n• Financement de certains profils (Conseillers en Énergie Partagés, conseillers France Rénov).",
+    "début de validité": "01/01/2026",
+    "fin de validité": "31/12/2026",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000866",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-changement-de-comportement",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 50% des dépenses éligibles",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Aides%20au%20changement%20de%20comportement%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026%20.pdf",
+            "texte": "Conditions éligibilité et financement"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-changement-de-comportement",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Corse, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française, Provence-Alpes-Côte d'Azur, Saint-Barthélemy, Saint-Martin, Saint-Pierre-Et-Miquelon"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d’activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Bourgogne-Franche-Comté",
+          "Bretagne",
+          "Centre-Val de Loire",
+          "Corse",
+          "Grand Est",
+          "Guadeloupe",
+          "Guyane",
+          "Hauts-de-France",
+          "Île-de-France",
+          "La Réunion",
+          "Martinique",
+          "Mayotte",
+          "Normandie",
+          "Nouvelle-Aquitaine",
+          "Nouvelle-Calédonie",
+          "Occitanie",
+          "Pays de la Loire",
+          "Polynésie française",
+          "Provence-Alpes-Côte d'Azur",
+          "Saint-Barthélemy",
+          "Saint-Martin",
+          "Saint-Pierre-Et-Miquelon"
+        ]
+      },
+      "validity": {
+        "start": "01/01/2026",
+        "end": "31/12/2026"
+      },
+      "priorityObjectives": [
+        "building",
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "rh",
+        "environmental",
+        "eco-design",
+        "biodiversite"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est la mobilité durable",
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est former ou recruter",
+          "questionnaire . objectif prioritaire . est mon impact environnemental",
+          "questionnaire . objectif prioritaire . est l'écoconception",
+          "questionnaire . objectif prioritaire . est préserver la biodiversité"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Bourgogne-Franche-Comté",
+          "région = Bretagne",
+          "région = Centre-Val de Loire",
+          "région = Corse",
+          "région = Grand Est",
+          "région = Guadeloupe",
+          "région = Guyane",
+          "région = Hauts-de-France",
+          "région = Île-de-France",
+          "région = La Réunion",
+          "région = Martinique",
+          "région = Mayotte",
+          "région = Normandie",
+          "région = Nouvelle-Aquitaine",
+          "région = Nouvelle-Calédonie",
+          "région = Occitanie",
+          "région = Pays de la Loire",
+          "région = Polynésie française",
+          "région = Provence-Alpes-Côte d'Azur",
+          "région = Saint-Barthélemy",
+          "région = Saint-Martin",
+          "région = Saint-Pierre-Et-Miquelon"
+        ]
+      }
+    },
+    "id": "aide-au-changement-de-comportement",
     "type": "tee"
   }
 ]
