@@ -146,7 +146,8 @@ export type Dispositif = {
     | "Opco Mobilités"
     | "Opco Santé"
     | "Opco Uniformation"
-    | "ANACT";
+    | "ANACT"
+    | "CNAMS";
   /**
    * Le contact en cas de question, peut être un lien vers le formulaire, un mail ou une url.
    */
@@ -335,4 +336,5 @@ export type Operators =
   | "Opco Mobilités"
   | "Opco Santé"
   | "Opco Uniformation"
-  | "ANACT";
+  | "ANACT"
+  | "CNAMS";

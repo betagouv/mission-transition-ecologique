@@ -1,0 +1,94 @@
+titre: Action Entreprises et Environnement
+promesse: >-
+  Réduisez votre consommation d’eau et les risques de pollution de votre
+  activité
+description: >-
+  La CNAMS et les agences de l’eau Seine-Normandie et Rhin-Meuse accompagnent
+  les artisans dans leur gestion de la ressource en eau.
+
+
+  Bénéficiez d’un diagnostic personnalisé sur la situation de votre entreprise
+  et d’un accompagnement tout au long de votre projet (recherche de
+  prestataires, dimensionnement d’équipement et montage de votre dossier de
+  demande d’aides).
+description longue: |-
+  La CNAMS et les agences de l’Eau peuvent vous assister concernant 5\
+  thématiques distinctes :
+
+  - Les travaux d’épurations.
+  - La gestion alternative des eaux pluviales.
+  - Les économies d’eau.
+  - Les technologies propres.
+  - La prévention des pollutions accidentelles.
+fin de validité: 31/12/2030
+illustration: images/TEE_ampoule.webp
+opérateur de contact: CNAMS
+contact question: mailto:hse@cnams-ge.fr
+url: https://www.cnams-ge.fr/environnement
+nature de l'aide: étude
+coût de l'accompagnement: Gratuite
+durée de l'accompagnement: Durée variable
+objectifs:
+  - description: Vérifiez l'éligibilité de votre projet en consultant la documentation.
+    liens:
+      - lien: >-
+          https://www.cnams-ge.fr/sites/default/files/images/environnement/depenses_eligibles_a_des_aides_des_agences_de_l_eau_version_en_ligne.pdf
+        texte: Conditions d'éligibilité
+  - description: >-
+      Contactez le CNAMS pour manifester votre intérêt et soumettre votre
+      demande d'aide.
+  - description: Si votre demande est acceptée, bénéficiez de l'accompagnement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 50 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Grand Est
+  secteur d'activité:
+    - Tous secteurs de l'artisanat à l'exception du bâtiment.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - 'Pour être éligible, l''entreprise doit :'
+    - Être située dans le 08, 10, 51, 52, 55 ou sud de l'Aisne.
+    - Ne pas avoir signé de devis en lien avec le projet.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Grand Est

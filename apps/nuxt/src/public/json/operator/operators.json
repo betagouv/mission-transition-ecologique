@@ -453,5 +453,11 @@
     ],
     "imagePath": "/images/logos/operateur/anact.webp",
     "color": "green"
+  },
+  {
+    "operator": "CNAMS",
+    "filterCategories": [
+      "Organismes professionnels"
+    ]
   }
 ]
