@@ -53,6 +53,27 @@
         "cwd": "apps/nuxt-artillery",
         "command": "artillery run -e production artillery-load-test.yml"
       }
+    },
+    "test:realistic:dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e development artillery-realistic-1h.yml"
+      }
+    },
+    "test:realistic:staging": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e staging artillery-realistic-1h.yml"
+      }
+    },
+    "test:realistic:prod": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt-artillery",
+        "command": "artillery run -e production artillery-realistic-1h.yml"
+      }
     }
   }
 }

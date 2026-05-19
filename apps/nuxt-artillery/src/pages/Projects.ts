@@ -17,13 +17,17 @@ export class Projects extends BasePage {
 
   async visitProjectPages(): Promise<void> {
     await this.step('Visit project page', async () => {
-      const projectLinks = await this.getProjectLinks()
+      const allLinks = await this.getProjectLinks()
+      const filtered = allLinks.filter((l): l is string => l !== null)
+      // Shuffle only when maxPages is set; otherwise preserve original order
+      const linksToVisit = this.maxPages !== undefined ? this.shuffle(filtered).slice(0, this.maxPages) : filtered
 
-      for (const projectLink of projectLinks) {
+      for (const projectLink of linksToVisit) {
         await this.refreshPage()
-        await this.page.goto(`${projectLink}`)
+        await this.page.goto(projectLink)
         this.log(`Visited project page: ${projectLink}`)
         await this.waitForLoad()
+        await this.pause()
       }
     })
   }
