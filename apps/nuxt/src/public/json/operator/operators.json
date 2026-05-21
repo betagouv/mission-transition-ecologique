@@ -353,6 +353,12 @@
     "color": "green"
   },
   {
+    "operator": "Convention des Entreprises pour le Climat",
+    "filterCategories": [
+      "Organismes professionnels"
+    ]
+  },
+  {
     "operator": "Centre National du Livre",
     "filterCategories": [
       "Opérateurs nationaux"

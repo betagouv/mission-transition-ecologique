@@ -51,10 +51,7 @@ objectifs:
       - lien: https://dirigeant.banque-france.fr/#/
         texte: Espace Dirigeant
   - description: Obtenez une évaluation personnalisée à l'aide de l'indicateur climat.
-  - description: >-
-      Si vous avez des questions, écrivez à [climat.XX@banque-france.fr
-      ](mailto:climat.XX@banque-france.fr)(remplacez XX par le numéro de votre
-      département).
+  - description: "Si vous avez des questions, écrivez à\_[climat.XX@banque-france.fr\_](mailto:climat.XX@banque-france.fr)(remplacez XX par le numéro de votre département)."
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles
@@ -62,7 +59,7 @@ conditions d'éligibilité:
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
-    - "- L’Indicateur Climat concerne les entreprises des secteurs de la production d'électricité, des transports, de la détention de parcs immobiliers, de la production de ciment et de la construction de bâtiments.\n- D’ici 2027, il adressera les entreprises des secteurs suivants\_: acier, aluminium, chimie, pétrole et gaz, construction de véhicules, agriculture."
+    - "- L'Indicateur Climat concerne les entreprises des secteurs de la production d'électricité, des transports, de la détention de parcs immobiliers, de la production de ciment, de la construction de bâtiments, de l’aluminium, de l’acier et de la pétrochimie.\n\n- D’ici 2027, il couvrira les entreprises des secteurs suivants\_: pétrole et gaz, construction de véhicules, agriculture."
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:
