@@ -44755,7 +44755,7 @@
         "description": "Obtenez une évaluation personnalisée à l'aide de l'indicateur climat."
       },
       {
-        "description": "Si vous avez des questions, écrivez à [climat.XX@banque-france.fr ](mailto:climat.XX@banque-france.fr)(remplacez XX par le numéro de votre département)."
+        "description": "Si vous avez des questions, écrivez à [climat.XX@banque-france.fr ](mailto:climat.XX@banque-france.fr)(remplacez XX par le numéro de votre département)."
       }
     ],
     "conditions d'éligibilité": {
@@ -44767,7 +44767,7 @@
         "France et territoires d'outre-mer"
       ],
       "secteur d'activité": [
-        "- L’Indicateur Climat concerne les entreprises des secteurs de la production d'électricité, des transports, de la détention de parcs immobiliers, de la production de ciment et de la construction de bâtiments.\n- D’ici 2027, il adressera les entreprises des secteurs suivants : acier, aluminium, chimie, pétrole et gaz, construction de véhicules, agriculture."
+        "- L'Indicateur Climat concerne les entreprises des secteurs de la production d'électricité, des transports, de la détention de parcs immobiliers, de la production de ciment, de la construction de bâtiments, de l’aluminium, de l’acier et de la pétrochimie.\n\n- D’ici 2027, il couvrira les entreprises des secteurs suivants : pétrole et gaz, construction de véhicules, agriculture."
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
@@ -56085,6 +56085,249 @@
       }
     },
     "id": "proteger-biodiversite-et-restaurer-trame-verte-et-bleue",
+    "type": "tee"
+  },
+  {
+    "titre": "CEC Impact",
+    "promesse": "Inscrivez votre stratégie d'entreprise dans les limites planétaires",
+    "description": "Engagez-vous dans un parcours CEC et dessinez la feuille de route de la transition écologique de votre entreprise à l'horizon 2030. \\\nFaire un parcours CEC signifie :\n\n- **Prendre conscience des transformations** environnementales et sociales.\n- **Se prépare**r et préparer son organisation à ces changements en **adaptant son modèle d’affaires et sa stratégie d’entreprise**.\n- **Construire sa feuille de route** à visée régénérative entre dirigeants d'entreprises.",
+    "description longue": "Un parcours CEC est un accompagnement stratégique et collectif qui aide les dirigeants à comprendre les défis économiques, environnementaux et sociaux qui redessinent déjà leurs marchés. Il embarque des binômes de direction – un dirigeant et un “Planet Champion” – pour travailler avec d’autres dirigeants d’un même territoire, des experts de premier plan, des coachs et des facilitateurs. Ensemble, ils vont repenser leur modèle d’affaires à 10–15 ans.",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "Convention des Entreprises pour le Climat",
+    "contact question": "https://forms.monday.com/forms/3da64d3fb07da74aa4f161f1785608ac?r=use1",
+    "url": "https://cec-impact.org/",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "Variable",
+    "durée de l'accompagnement": "12 jours d'accompagnement",
+    "objectifs": [
+      {
+        "description": "Consultez le catalogue du CEC pour trouver le parcours correspondant à votre territoire et à votre secteur d’activité.",
+        "liens": [
+          {
+            "lien": "https://cec-impact.org/nos-parcours/",
+            "texte": "Catalogue des parcours"
+          }
+        ]
+      },
+      {
+        "description": "Cliquez sur le parcours qui vous intéresse et remplissez le formulaire de candidature de votre entreprise."
+      },
+      {
+        "description": "Vous êtes recontacté par un membre de la CEC pour échanger sur votre situation et finaliser l'inscription au parcours CEC."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Centre-Val de Loire, Grand Est, Hauts-de-France, Île-de-France"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Auvergne-Rhône-Alpes",
+          "Bourgogne-Franche-Comté",
+          "Centre-Val de Loire",
+          "Grand Est",
+          "Hauts-de-France",
+          "Île-de-France"
+        ]
+      },
+      "priorityObjectives": [
+        "building",
+        "mobility",
+        "waste",
+        "water",
+        "energy",
+        "rh",
+        "environmental",
+        "eco-design",
+        "biodiversite"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est la mobilité durable",
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est former ou recruter",
+          "questionnaire . objectif prioritaire . est mon impact environnemental",
+          "questionnaire . objectif prioritaire . est l'écoconception",
+          "questionnaire . objectif prioritaire . est préserver la biodiversité"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Auvergne-Rhône-Alpes",
+          "région = Bourgogne-Franche-Comté",
+          "région = Centre-Val de Loire",
+          "région = Grand Est",
+          "région = Hauts-de-France",
+          "région = Île-de-France"
+        ]
+      }
+    },
+    "id": "cec-impact",
     "type": "tee"
   },
   {
