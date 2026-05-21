@@ -9,7 +9,7 @@ const options: Options | SentryNuxtServerOptions = {
   // Set tracesSampleRate to 1.0 to capture 100%
   // of transactions for performance monitoring.
   // We recommend adjusting this value in production
-  tracesSampleRate: 0.5
+  tracesSampleRate: 0.01
 }
 
 if (Config.SENTRY_DSN) {
