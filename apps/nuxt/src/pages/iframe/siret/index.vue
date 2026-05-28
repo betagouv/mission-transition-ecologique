@@ -6,7 +6,7 @@
     <TeeCta
       v-if="mainStep === 1"
       button-label="Je teste mon éligibilité"
-      title='Testez votre éligibilité <span class="fr-display-lg--block">aux <span class="fr-text--green-agir">aides publiques</span> pour la transition écologique</span>'
+      title='Testez votre éligibilité aux <span class="fr-text--green-agir">aides publiques</span> pour la transition écologique</span>'
       @on-click-button="navigateTo({ query: { ...route.query, step: '2' } })"
     />
     <div
