@@ -1,0 +1,124 @@
+titre: Pass tranformation écologique
+promesse: Bénéficiez d'un soutien pour vos travaux d’amélioration écologique
+description: >-
+  La région Occitanie soutient financièrement vos travaux d’amélioration
+  écologique qui concernent :\
+
+  • La **production de chaleur ou de froid** renouvelable (géothermie, solaire
+  thermique, biomasse, PAC).\
+
+  • La **gestion de l’eau et des déchets** (réutilisation de l'eau de pluie et
+  des eaux usées, compacteur, broyeur de végétaux, système de tri et de
+  recyclage...).\
+
+  • La **sobriété énergétique** (isolation thermique, management de l'énergie,
+  étanchéité des réseaux...).\
+
+  • L'**impact sur l'environnement** (végétalisation, des-imperméabilisation des
+  sols, transports collectifs électrique gratuits pour les touristes...).
+description longue: >-
+  - Un seul Pass Transformation Écologique peut être délivré tous les 3 ans pour
+  chaque entreprise.
+
+  - Assiette éligible minimale de 10 000 €, dépenses dans les 12 mois :
+  investissement en matériel neuf et/ou d’occasion garantis 6 mois minimum d’un
+  montant unitaire de 1000€ minimum, AMO dans la limite de 50% des
+  investissements.
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: Région Occitanie
+autres opérateurs:
+  - ADEME
+contact question: mailto:secretariat_deet@laregion.fr
+url: https://hubentreprendre.laregion.fr/financement/pass-transformation-ecologique
+nature de l'aide: financement
+montant du financement: 50% des dépenses éligibles dans la limite de 10 000 €
+objectifs:
+  - description: >-
+      Consultez la documentation pour vérifier l’éligibilité de votre projet et
+      les pièces justificatives à fournir.
+    liens:
+      - lien: >-
+          https://api.hubentreprendre.laregion.fr/fichiers-dispositifs/fdc1bf26-51c4-4ca3-9210-57b7b66f2186
+        texte: Conditions éligibilité
+  - description: >-
+      Créez un compte via le Hub Entreprendre Occitanie pour pouvoir déposer
+      votre dossier.
+    liens:
+      - lien: >-
+          https://auth.mon-entreprise.laregion.fr/auth/realms/gdi-entreprise/protocol/openid-connect/auth?client_id=gdi-entreprise&redirect_uri=https%3A%2F%2Fmon-entreprise.laregion.fr%2F%3Fservice%3Dhubentreprendre%26redirect_uri%3Dhttps%3A%2F%2Fhubentreprendre.laregion.fr&state=4793fe8c-efc4-417f-bcca-fe85da8d2310&response_mode=fragment&response_type=code&scope=openid&nonce=3ecad457-8b13-41bd-9d7a-e9a64936aede
+        texte: Créer mon compte
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: https://hubentreprendre.laregion.fr/
+        texte: Déposer mon dossier
+  - description: >-
+      Votre demande d'aide est examinée. Si votre demande est acceptée, recevez
+      un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Entre 1 et 19 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Occitanie
+  secteur d'activité:
+    - |-
+      Sont concernés, les secteurs :\
+      • Industriel.\
+      • De services aux entreprises (BtoB).\
+      • Artisanal.\
+      • Touristique.\
+      • Relevant du secteur agro-alimentaire.
+  nombre d'années d'activité:
+    - Au moins 1 an d'activité
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif >= 1
+      - effectif <= 19
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Occitanie

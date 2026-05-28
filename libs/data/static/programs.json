@@ -487,6 +487,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-reemploi-des-emballages?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 80% du coût de l'étude ou 60% de l'investissement",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -566,6 +567,7 @@
           "R",
           "S"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bourgogne-Franche-Comté",
@@ -14927,7 +14929,7 @@
   {
     "titre": "Investissement \"Contrat Chaleur Renouvelable\"",
     "promesse": "Financez un groupe de projets d'énergies renouvelables thermiques sur votre territoire",
-    "description": "Vous avez plusieurs projets ayant recours à de la chaleur d'origine renouvelable et de récupération (ENR&R) pour votre territoire ? L’ADEME peut vous accompagner financièrement dans leur réalisation.",
+    "description": "Vous avez plusieurs projets ayant recours à de la chaleur d'origine renouvelable et de récupération (ENR&R) pour votre territoire (bois, géothermie, solaire thermique) ? L’ADEME peut vous accompagner financièrement dans leur réalisation.",
     "description longue": "Le contrat territorial, porte sur un minimum de 10 installations (quelle que soit la technologie utilisée et leur taille). Chaque contrat territorial doit faire appel à plusieurs EnR thermiques différentes avec un minimum de 20% d’installations EnR&R autres que le bois-énergie.",
     "début de validité": "01/01/2023",
     "fin de validité": "31/12/2026",
@@ -14942,7 +14944,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Contrat%20Chaleur%20Renouvelable%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202025.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Conditions%20d%27Eligibilit%C3%A9%20et%20de%20Financement%20Contrat%20Chaleur%20Renouvelable%20-%202026.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -56924,6 +56926,255 @@
       }
     },
     "id": "aide-au-changement-de-comportement",
+    "type": "tee"
+  },
+  {
+    "titre": "Pass tranformation écologique",
+    "promesse": "Bénéficiez d'un soutien pour vos travaux d’amélioration écologique",
+    "description": "La région Occitanie soutient financièrement vos travaux d’amélioration écologique qui concernent :\\\n• La **production de chaleur ou de froid** renouvelable (géothermie, solaire thermique, biomasse, PAC).\\\n• La **gestion de l’eau et des déchets** (réutilisation de l'eau de pluie et des eaux usées, compacteur, broyeur de végétaux, système de tri et de recyclage...).\\\n• La **sobriété énergétique** (isolation thermique, management de l'énergie, étanchéité des réseaux...).\\\n• L'**impact sur l'environnement** (végétalisation, des-imperméabilisation des sols, transports collectifs électrique gratuits pour les touristes...).",
+    "description longue": "- Un seul Pass Transformation Écologique peut être délivré tous les 3 ans pour chaque entreprise.\n- Assiette éligible minimale de 10 000 €, dépenses dans les 12 mois : investissement en matériel neuf et/ou d’occasion garantis 6 mois minimum d’un montant unitaire de 1000€ minimum, AMO dans la limite de 50% des investissements.",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "Région Occitanie",
+    "autres opérateurs": [
+      "ADEME"
+    ],
+    "contact question": "mailto:secretariat_deet@laregion.fr",
+    "url": "https://hubentreprendre.laregion.fr/financement/pass-transformation-ecologique",
+    "nature de l'aide": "financement",
+    "montant du financement": "50% des dépenses éligibles dans la limite de 10 000 €",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation pour vérifier l’éligibilité de votre projet et les pièces justificatives à fournir.",
+        "liens": [
+          {
+            "lien": "https://api.hubentreprendre.laregion.fr/fichiers-dispositifs/fdc1bf26-51c4-4ca3-9210-57b7b66f2186",
+            "texte": "Conditions éligibilité"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte via le Hub Entreprendre Occitanie pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://auth.mon-entreprise.laregion.fr/auth/realms/gdi-entreprise/protocol/openid-connect/auth?client_id=gdi-entreprise&redirect_uri=https%3A%2F%2Fmon-entreprise.laregion.fr%2F%3Fservice%3Dhubentreprendre%26redirect_uri%3Dhttps%3A%2F%2Fhubentreprendre.laregion.fr&state=4793fe8c-efc4-417f-bcca-fe85da8d2310&response_mode=fragment&response_type=code&scope=openid&nonce=3ecad457-8b13-41bd-9d7a-e9a64936aede",
+            "texte": "Créer mon compte"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://hubentreprendre.laregion.fr/",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "Votre demande d'aide est examinée. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Entre 1 et 19 salariés",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Occitanie"
+      ],
+      "secteur d'activité": [
+        "Sont concernés, les secteurs :\\\n• Industriel.\\\n• De services aux entreprises (BtoB).\\\n• Artisanal.\\\n• Touristique.\\\n• Relevant du secteur agro-alimentaire."
+      ],
+      "nombre d'années d'activité": [
+        "Au moins 1 an d'activité"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "minEmployees": "1",
+        "maxEmployees": "19",
+        "allowedRegion": [
+          "Occitanie"
+        ]
+      },
+      "priorityObjectives": [
+        "building",
+        "waste",
+        "water",
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "a un effectif éligible",
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . a un effectif éligible": {
+        "toutes ces conditions": [
+          "effectif >= 1",
+          "effectif <= 19"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Occitanie"
+        ]
+      }
+    },
+    "id": "pass-transformation-ecologique-occitanie",
     "type": "tee"
   }
 ]
