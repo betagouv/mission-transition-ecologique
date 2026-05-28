@@ -63,7 +63,8 @@ const parseEstablishment = (establishmentDocument: EstablishmentDocument): Estab
       cityLabel: rawEstablishment.adresseEtablissement.libelleCommuneEtablissement,
       cityCode: rawEstablishment.adresseEtablissement.codeCommuneEtablissement
     },
-    workforceRange: rawEstablishment.trancheEffectifsEtablissement
+    workforceRange: rawEstablishment.trancheEffectifsEtablissement,
+    etatAdministratif: rawEstablishment.uniteLegale.etatAdministratifUniteLegale
   }
 
   return result

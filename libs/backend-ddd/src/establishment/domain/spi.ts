@@ -11,6 +11,10 @@ export type CityToRegionMappingType = {
   getRegion: (zipCode: string) => Maybe<string>
 }
 
+export type AdministrationClassifierType = {
+  isAdministration: (legalCategory: string, siren: string, etatAdministratif?: string) => boolean
+}
+
 export type NafRepository = {
   getLabel: (nafCode: string) => Maybe<string>
   getSectionCode: (nafCode: string) => Maybe<string>

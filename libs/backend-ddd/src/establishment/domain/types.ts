@@ -22,6 +22,9 @@ export interface EstablishmentDetails {
     cityCode: string
   }
   workforceRange: string
+  // 'A' for active, 'C' for ceased (used to determine administration status)
+  etatAdministratif?: string
+  isAdministration?: boolean
 }
 
 export interface GeographicDetails {

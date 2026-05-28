@@ -17,6 +17,15 @@ export interface RechercheEntrepriseEstablishment {
   section_activite_principale: string // NafSectionCode
   date_creation: string
   tranche_effectif_salarie: string
+
+  complements: RechercheEntrepriseComplements
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any
+}
+
+export interface RechercheEntrepriseComplements {
+  est_administration: boolean
+
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [key: string]: any
 }

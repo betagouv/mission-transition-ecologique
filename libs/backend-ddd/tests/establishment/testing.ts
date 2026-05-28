@@ -1,5 +1,5 @@
 import { Maybe, Result } from 'true-myth'
-import { NafRepository, type EstablishmentRepository } from '../../src/establishment/domain/spi'
+import { AdministrationClassifierType, NafRepository, type EstablishmentRepository } from '../../src/establishment/domain/spi'
 import { type CityToRegionMapping } from '../../src/establishment/infrastructure/json/cityToRegionMapping'
 
 const testEstablishment = {
@@ -39,4 +39,12 @@ export const nothingNafRepository: NafRepository = {
   getLabel: () => Maybe.nothing<string>(),
   getSectionCode: () => Maybe.nothing<string>(),
   searchNAF: () => Result.ok([])
+}
+
+export const falseAdministrationClassifier: AdministrationClassifierType = {
+  isAdministration: () => false
+}
+
+export const trueAdministrationClassifier: AdministrationClassifierType = {
+  isAdministration: () => true
 }

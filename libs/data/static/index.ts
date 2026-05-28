@@ -35,3 +35,12 @@ export { redirects }
 // #####> OTHERS DATA ######
 export { default as communes } from './communes.json'
 export { default as nafMapping } from './nafMapping.json'
+
+// #####> ADMINISTRATION (annuaire-entreprises reference lists) ######
+// Drop-in replace these JSON files to update, sourced from search-infra/helpers/labels
+// https://github.com/annuaire-entreprises-data-gouv-fr/search-infra/blob/main/helpers/labels/administration_natures_juridiques.json
+// https://github.com/annuaire-entreprises-data-gouv-fr/search-infra/blob/main/helpers/labels/administration_whitelist.json
+// https://github.com/annuaire-entreprises-data-gouv-fr/search-infra/blob/main/helpers/labels/administration_blacklist.json
+export { default as administrationNaturesJuridiques } from './administration_natures_juridiques.json'
+export { default as administrationWhitelist } from './administration_whitelist.json'
+export { default as administrationBlacklist } from './administration_blacklist.json'

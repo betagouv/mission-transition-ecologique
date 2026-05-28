@@ -12,6 +12,7 @@ export interface EstablishmentFront {
   denomination?: string | undefined
   secteur: string
   creationDate?: string
+  isAdministration?: boolean
 }
 
 export interface EstablishmentSearch {
