@@ -13668,7 +13668,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "end": "31/12/2026"

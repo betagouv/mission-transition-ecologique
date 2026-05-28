@@ -132,6 +132,10 @@
       "description": "Précise s'il s'agit d'un dispositif en autonomie ou s'il y aura des interactions avec l'opérateur.",
       "type": "string"
     },
+    "ouvert aux administrations publiques": {
+      "description": "Précise si le dispositif est également ouvert aux administrations publiques (collectivités, établissements publics, services de l'État, etc.).",
+      "type": "string"
+    },
     "coût de l'accompagnement": {
       "description": "Uniquement pour les accompagnements. Ce champ est utile et requis uniquement si l'aide est de nature \"accompagnement\". Elle précise le coût reste à charge de l'utilisateur pour bénéficier de l'accompagnement. Il s'agit d'un champ texte, à des fins d'affichage.",
       "type": "string"

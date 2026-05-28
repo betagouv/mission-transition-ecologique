@@ -38,5 +38,6 @@ export interface QuestionnaireData {
   denomination?: string
   secteur?: string
   creationDate?: string
+  isAdministration?: boolean
   onlyEligible?: boolean
 }

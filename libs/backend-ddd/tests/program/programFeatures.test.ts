@@ -14,6 +14,8 @@ import {
   programWithMultipleObjectives,
   programWithNafRestriction,
   programWithRegionRestriction,
+  programOpenToPublicAdministration,
+  programClosedToPublicAdministration,
   validProgram
 } from './fixtures/programFixtures'
 import { makeProgramFeatures } from './testing'
@@ -232,6 +234,77 @@ describe('ProgramFeatures', () => {
         codeNAF1: 'C',
         structure_size: StructureSize.TPE,
         legalCategory: LegalCategory.EI
+      }
+
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
+
+      expectToBeOk(result)
+      expect(result.value).toHaveLength(1)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
+    })
+  })
+
+  describe('getFilteredByInternal - Public administration gating (scoped to NAF section Q)', () => {
+    test('should filter out programs not open to administrations when establishment is a NAF-Q administration', () => {
+      const programFeatures = makeProgramFeatures([programClosedToPublicAdministration])
+
+      const questionnaireData: QuestionnaireData = {
+        region: 'Île-de-France',
+        codeNAF1: 'Q',
+        structure_size: StructureSize.ME,
+        isAdministration: true,
+        onlyEligible: false // Include NotEligible in results
+      }
+
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
+
+      expectToBeOk(result)
+      expect(result.value).toHaveLength(1)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.NotEligible)
+    })
+
+    test('should keep programs open to administrations when establishment is a NAF-Q administration', () => {
+      const programFeatures = makeProgramFeatures([programOpenToPublicAdministration])
+
+      const questionnaireData: QuestionnaireData = {
+        region: 'Île-de-France',
+        codeNAF1: 'Q',
+        structure_size: StructureSize.ME,
+        isAdministration: true
+      }
+
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
+
+      expectToBeOk(result)
+      expect(result.value).toHaveLength(1)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
+    })
+
+    test('should not affect non-administration establishments for programs not open to administrations', () => {
+      const programFeatures = makeProgramFeatures([programClosedToPublicAdministration])
+
+      const questionnaireData: QuestionnaireData = {
+        region: 'Île-de-France',
+        codeNAF1: 'Q',
+        structure_size: StructureSize.ME,
+        isAdministration: false
+      }
+
+      const result = programFeatures.getFilteredByInternal(questionnaireData)
+
+      expectToBeOk(result)
+      expect(result.value).toHaveLength(1)
+      expect(result.value[0].eligibility).toBe(ProgramEligibilityStatus.PartiallyEligible)
+    })
+
+    test('should not gate administrations outside the NAF section Q (temporary scope)', () => {
+      const programFeatures = makeProgramFeatures([programClosedToPublicAdministration])
+
+      const questionnaireData: QuestionnaireData = {
+        region: 'Île-de-France',
+        codeNAF1: 'C',
+        structure_size: StructureSize.ME,
+        isAdministration: true
       }
 
       const result = programFeatures.getFilteredByInternal(questionnaireData)

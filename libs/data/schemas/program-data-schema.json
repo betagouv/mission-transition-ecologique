@@ -156,6 +156,10 @@
       "description": "Précise s'il s'agit d'un dispositif en autonomie ou s'il y aura des interactions avec l'opérateur.",
       "type": "string"
     },
+    "ouvert aux administrations publiques": {
+      "description": "Précise si le dispositif est également ouvert aux administrations publiques (collectivités, établissements publics, services de l'État, etc.).",
+      "type": "string"
+    },
     "coût de l'accompagnement": {
       "description": "Le coût reste à charge correspond au montant que devra payer l'entreprise pour bénéficier d'un accompagnement, après déduction de la subvention.\n\n Formulation :\n- 10 mots max\n- selon le format \"x € HT après subvention de x%\"\n- écriture des chiffres en unités numériques\n- ne pas utiliser d'abréviations (ex : utiliser jour et non l'abréviation \"j.\")",
       "examples": ["4 000 € HT après subvention de 60%"],

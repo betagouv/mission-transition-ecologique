@@ -14,6 +14,7 @@ export interface DataProgram extends BaserowSectors, BaserowMetaData {
   'Contact Question': string
   'Opérateur de contact': Operator[]
   'Dispositif activable en autonomie': boolean
+  'Est ouvert aux administrations publiques': boolean
   'URL externe': string
   "Montant de l'aide ou coût": string
   "Durée de l'aide": string

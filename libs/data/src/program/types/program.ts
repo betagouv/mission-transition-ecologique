@@ -166,6 +166,10 @@ export type Dispositif = {
    */
   "activable en autonomie"?: string;
   /**
+   * Précise si le dispositif est également ouvert aux administrations publiques (collectivités, établissements publics, services de l'État, etc.).
+   */
+  "ouvert aux administrations publiques"?: string;
+  /**
    * Uniquement pour les accompagnements. Ce champ est utile et requis uniquement si l'aide est de nature "accompagnement". Elle précise le coût reste à charge de l'utilisateur pour bénéficier de l'accompagnement. Il s'agit d'un champ texte, à des fins d'affichage.
    */
   "coût de l'accompagnement"?: string;

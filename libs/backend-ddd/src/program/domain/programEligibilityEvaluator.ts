@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import { LegalCategory, QuestionnaireChecker, QuestionnaireData, SizeToWorkforce, StructureSize, ThemeId } from '@tee/common'
+import { LegalCategory, NAF1, QuestionnaireChecker, QuestionnaireData, SizeToWorkforce, StructureSize, ThemeId } from '@tee/common'
 import { EligibilityData, ProgramEligibility, ProgramEligibilityStatus, ProgramType, ProgramTypeWithEligibility } from '@tee/data'
 import { EligibilityEvaluator } from './spi'
 
@@ -65,6 +65,12 @@ export class ProgramEligibilityEvaluator implements EligibilityEvaluator {
     const companyConditions = eligibility.company
     if (!companyConditions) {
       return true
+    }
+
+    // public administration: an administration is only eligible for programs explicitly open to them.
+    // Temporarily scoped to the NAF section Q (santé humaine et action sociale) only.
+    if (data.isAdministration && data.codeNAF1 === NAF1.Q && !companyConditions.openToPublicAdministration) {
+      return false
     }
 
     // employees

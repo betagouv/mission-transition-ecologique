@@ -35,9 +35,11 @@ export const questionnaireDataSchema = z.object({
   denomination: z.string().optional(),
   secteur: z.string().optional(),
   creationDate: z.string().optional(),
+  isAdministration: z.boolean().optional(),
   onlyEligible: z.boolean().optional()
 })
 
 export const serverQuestionnaireDataSchema = questionnaireDataSchema
   .setKey('onlyEligible', stringBoolean.optional())
   .setKey('is_questionnaire', stringBoolean.optional())
+  .setKey('isAdministration', stringBoolean.optional())
