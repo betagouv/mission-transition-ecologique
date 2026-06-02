@@ -45,7 +45,8 @@
       "easy-diag",
       "cap-decarbonation",
       "cheque-transition-tissu-economique",
-      "diag-accompagnement-tee-rh"
+      "diag-accompagnement-tee-rh",
+      "cec-impact"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action économies d'énergie",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action économies d'énergie",
@@ -1470,7 +1471,8 @@
       "ressourc-eau",
       "sobriete-hydrique",
       "action-entreprises-environnement",
-      "economies-recyclage-eau-activites-industrielles-artisanat"
+      "economies-recyclage-eau-activites-industrielles-artisanat",
+      "cec-impact"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action eau",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action eau",
@@ -1562,6 +1564,7 @@
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
       "diagnostic-et-accompagnement-co2i",
       "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
+      "cec-impact",
       "ormat"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action déchets",
@@ -1933,6 +1936,7 @@
       "eval-360-pays-de-la-loire",
       "diag-mobilite-idf",
       "ameliorer-la-connaissance-des-milieux",
+      "cec-impact",
       "aide-au-changement-de-comportement"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
@@ -2275,6 +2279,7 @@
       "autodiagnostic-rse",
       "m-diagnostic-accompagnement",
       "eval-360-pays-de-la-loire",
+      "cec-impact",
       "aide-au-changement-de-comportement"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
@@ -2454,7 +2459,8 @@
       "demi-bac",
       "ibac-pme",
       "diagnostic-et-accompagnement-co2i",
-      "eval-360-pays-de-la-loire"
+      "eval-360-pays-de-la-loire",
+      "cec-impact"
     ],
     "linkedProjects": [
       1
@@ -2528,7 +2534,8 @@
       "outils-pour-adaptation",
       "indicateur-climat",
       "performa-adaptation",
-      "diagnostic-et-accompagnement-co2i"
+      "diagnostic-et-accompagnement-co2i",
+      "cec-impact"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'adaptation climat",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'adaptation climat",
@@ -2707,7 +2714,8 @@
       "fasep",
       "booster-transformation-rev-3",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
-      "ecoprodduire"
+      "ecoprodduire",
+      "cec-impact"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une démarche d'écoconception",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité d'une démarche d'écoconception",
