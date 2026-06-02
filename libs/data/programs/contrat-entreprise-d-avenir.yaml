@@ -1,0 +1,154 @@
+titre: Contrat entreprise d'avenir
+promesse: >-
+  Faites-vous accompagner dans vos projets de transformation environnementale et
+  générateurs d'emplois
+description: >-
+  Vous souhaitez engager votre entreprise vers une **démarche de transformation
+  environnementale et sociale**, et à ce titre, créer de **nouveaux emplois** ou
+  **relocaliser une production sous-traitée**. La région Occitanie apporte son
+  aide financière aux projets de :
+
+
+  - Adaptation au changement climatique avec la mise en place de nouveaux
+  process de\
+    production ou de services plus sobres en consommation de ressources (eau, énergie, matières premières d’extraction ou agricoles…) et générant moins d’émissions polluantes et de déchets.
+  - Transition vers des systèmes de productions énergétiques durables (hors
+  photovoltaïque).
+
+  - Préservation des ressources par le choix des matériaux, par la réduction,\
+    l’élimination ou le réemploi des emballages, la réduction des besoins et ressources liées à l’entretien et à la maintenance.
+  - Augmentation de la durabilité et réemploi des produits (fiabilité,
+  démontabilité, réparabilité, séparabilité et facilitation du tri en fin de
+  vie).
+
+  - Démarches d’économie circulaire et transition agroécologique.
+
+  - Amélioration des conditions de travail (exosquelette, réduction de la
+  pénibilité...)
+
+  - Démarche globale de mesure et de pilotage des impacts de l’entreprise
+  (sociaux,\
+    environnementaux, territoriaux…).
+description longue: >-
+  Les projets feront l’objet d’une analyse globale qui appréciera notamment les
+  aspects suivants :\
+
+  • Impact du projet sur le niveau de transformation de l’entreprise.\
+
+  • Impact économique du projet sur le bassin d’emploi concerné (emplois directs
+  et indirects, sous-traitance locale, fiscalité, etc.).\
+
+  • Impact du projet sur la filière.\
+
+  • Incitativité de l’aide régionale au regard de la situation financière de
+  l’entreprise (fonds\
+
+  propres, CAF…) et de sa politique de partage de la valeur (dividendes, niveau
+  de rémunération des actionnaires versus niveau d’aide sollicité).\
+
+  • Diagnostic Impact Score de l’entreprise et impact du projet sur son
+  évolution (emploi des séniors, égalité femme/homme, tutorat, etc.).\
+
+  • Engagement social de l’entreprise vis-à-vis de la jeunesse : politique
+  d’accueil de stagiaires de 3ème, stage en alternance, tutorat, etc.\
+
+  • Pour l’immobilier : prise en compte dans le projet de la limitation de
+  l’artificialisation des sols, la gestion de l’eau et/ou l’implantation dans
+  des friches industrielles.
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: Région Occitanie
+autres opérateurs:
+  - ADEME
+contact question: mailto:contact-hub@laregion.fr
+url: https://hubentreprendre.laregion.fr/financement/contrat-entreprise-davenir
+nature de l'aide: financement
+montant du financement: dans un maximum de 200 000 € (subvention) ou 300 000 € (avance remboursable)
+objectifs:
+  - description: >-
+      Consultez la documentation pour vérifier l’éligibilité de votre projet et
+      les pièces justificatives à fournir.
+    liens:
+      - lien: >-
+          https://api.hubentreprendre.laregion.fr/fichiers-dispositifs/b3a6db7c-f029-4e66-bd6a-7f9ccd9f27a0
+        texte: Conditions éligibilité
+  - description: >-
+      Créez un compte via le Hub Entreprendre Occitanie pour pouvoir déposer
+      votre dossier.
+    liens:
+      - lien: >-
+          https://auth.mon-entreprise.laregion.fr/auth/realms/gdi-entreprise/protocol/openid-connect/auth?client_id=gdi-entreprise&redirect_uri=https%3A%2F%2Fmon-entreprise.laregion.fr%2F%3Fservice%3Dhubentreprendre%26redirect_uri%3Dhttps%3A%2F%2Fhubentreprendre.laregion.fr&state=4793fe8c-efc4-417f-bcca-fe85da8d2310&response_mode=fragment&response_type=code&scope=openid&nonce=3ecad457-8b13-41bd-9d7a-e9a64936aede
+        texte: Créer mon compte
+  - description: >-
+      Déposez votre dossier : informations administratives, description du
+      projet, détails techniques et financiers, etc. À ce stade, votre projet ne
+      doit pas avoir commencé !
+    liens:
+      - lien: https://hubentreprendre.laregion.fr/
+        texte: Déposer mon dossier
+  - description: >-
+      Votre demande d'aide est examinée. Si votre demande est acceptée, recevez
+      un contrat de financement précisant le montant d’aide maximum, les
+      conditions et les modalités de versement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Jusqu'à 500 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Occitanie
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+  autres critères d'éligibilité:
+    - >-
+      L’entreprise ne pourra solliciter que 2 Contrats Entreprise d’Avenir sur
+      une période de 5 ans à l’issue de la dernière date d’attribution.
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 499
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Occitanie
