@@ -1,0 +1,3432 @@
+[
+  {
+    "date": "2026-04-06",
+    "siret": "24066305100952",
+    "denomination": "",
+    "naf_section": "null",
+    "naf_code": "00.00Z",
+    "region": "Occitanie",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T11:05:17.456000+00:00",
+    "last_seen": "2026-04-06T11:07:13.974000+00:00",
+    "time_spent_minutes": 1,
+    "themes": [
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Eclairage LED",
+        "slug": "eclairage-led",
+        "path": "/projets-entreprise/eclairage-led",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T11:05:17.456000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T11:05:17.542000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T11:06:05.214000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T11:06:32.227000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T11:06:44.464000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T11:07:13.974000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "74157436095029",
+    "denomination": "MENUISERIE ARTISANALE EST",
+    "naf_section": "F",
+    "naf_code": "43.21A",
+    "region": "Occitanie",
+    "workforce_min": 1,
+    "workforce_max": 1,
+    "first_seen": "2026-04-06T17:21:45.375000+00:00",
+    "last_seen": "2026-04-06T17:33:50.992000+00:00",
+    "time_spent_minutes": 12,
+    "themes": [
+      "mobilite",
+      "batiment",
+      "dechets",
+      "eau",
+      "energie",
+      "rh",
+      "analyses",
+      "ecoconception",
+      "biodiversite"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Acquisition d'un engin plus propre",
+        "slug": "engins-propres",
+        "path": "/projets-entreprise/engins-propres",
+        "themes": [
+          "mobilite"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Acquisition d'un petit utilitaire propre",
+        "slug": "utilitaire-camion-propre",
+        "path": "/projets-entreprise/utilitaire-camion-propre",
+        "themes": [
+          "mobilite"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Acquisition d'une voiture propre",
+        "slug": "voiture-propre",
+        "path": "/projets-entreprise/voiture-propre",
+        "themes": [
+          "mobilite"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Plan d'action mobilité",
+        "slug": "plan-mobilite",
+        "path": "/projets-entreprise/plan-mobilite",
+        "themes": [
+          "mobilite"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Déplacements à vélo",
+        "slug": "velo",
+        "path": "/projets-entreprise/velo",
+        "themes": [
+          "mobilite"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Prêt Action Climat",
+        "slug": "pret-action-climat",
+        "path": "/projets-entreprise/velo/pret-action-climat",
+        "themes": [
+          "batiment",
+          "mobilite",
+          "dechets",
+          "eau",
+          "energie",
+          "rh",
+          "analyses",
+          "ecoconception"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Achat d'un véhicule intermédiaire",
+        "slug": "vehicules-intermediaires",
+        "path": "/projets-entreprise/vehicules-intermediaires",
+        "themes": [
+          "mobilite"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Programme Marguerite",
+        "slug": "programme-marguerite",
+        "path": "/projets-entreprise/utilitaire-camion-propre/programme-marguerite",
+        "themes": [
+          "mobilite"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Plantation de haies",
+        "slug": "haie-bocagere",
+        "path": "/projets-entreprise/haie-bocagere",
+        "themes": [
+          "biodiversite",
+          "eau"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Engins moins polluants",
+        "slug": "engins-moins-polluants",
+        "path": "/projets-entreprise/engins-propres/engins-moins-polluants",
+        "themes": [
+          "mobilite"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Je change ma voiture",
+        "slug": "je-change-ma-voiture",
+        "path": "/projets-entreprise/voiture-propre/je-change-ma-voiture",
+        "themes": [
+          "mobilite"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T17:21:45.375000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T17:22:02.307000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T17:22:20+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Acquisition d'un engin plus propre"
+      },
+      {
+        "datetime": "2026-04-06T17:22:20.036000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/engins-propres"
+      },
+      {
+        "datetime": "2026-04-06T17:22:47.882000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T17:23:11.555000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T17:23:31.182000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Acquisition d'un petit utilitaire propre"
+      },
+      {
+        "datetime": "2026-04-06T17:23:31.213000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/utilitaire-camion-propre"
+      },
+      {
+        "datetime": "2026-04-06T17:24:20.797000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T17:25:12.894000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Acquisition d'une voiture propre"
+      },
+      {
+        "datetime": "2026-04-06T17:25:12.929000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/voiture-propre"
+      },
+      {
+        "datetime": "2026-04-06T17:25:41.049000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T17:25:52.611000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d'action mobilité"
+      },
+      {
+        "datetime": "2026-04-06T17:25:52.651000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-mobilite"
+      },
+      {
+        "datetime": "2026-04-06T17:26:06.795000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T17:27:55.777000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Acquisition d'un engin plus propre"
+      },
+      {
+        "datetime": "2026-04-06T17:27:55.805000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/engins-propres"
+      },
+      {
+        "datetime": "2026-04-06T17:28:17.703000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T17:28:23.368000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Déplacements à vélo"
+      },
+      {
+        "datetime": "2026-04-06T17:28:23.392000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/velo"
+      },
+      {
+        "datetime": "2026-04-06T17:28:43.547000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/velo/pret-action-climat"
+      },
+      {
+        "datetime": "2026-04-06T17:28:43.563000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Prêt Action Climat"
+      },
+      {
+        "datetime": "2026-04-06T17:29:03.355000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Déplacements à vélo"
+      },
+      {
+        "datetime": "2026-04-06T17:29:03.370000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/velo"
+      },
+      {
+        "datetime": "2026-04-06T17:29:09.325000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T17:29:13.626000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Achat d'un véhicule intermédiaire"
+      },
+      {
+        "datetime": "2026-04-06T17:29:13.653000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/vehicules-intermediaires"
+      },
+      {
+        "datetime": "2026-04-06T17:29:21.166000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T17:29:25.083000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Acquisition d'un petit utilitaire propre"
+      },
+      {
+        "datetime": "2026-04-06T17:29:25.101000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/utilitaire-camion-propre"
+      },
+      {
+        "datetime": "2026-04-06T17:29:45.111000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/utilitaire-camion-propre/programme-marguerite"
+      },
+      {
+        "datetime": "2026-04-06T17:29:45.126000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Programme Marguerite"
+      },
+      {
+        "datetime": "2026-04-06T17:30:25.324000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Acquisition d'un petit utilitaire propre"
+      },
+      {
+        "datetime": "2026-04-06T17:30:25.340000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/utilitaire-camion-propre"
+      },
+      {
+        "datetime": "2026-04-06T17:30:29.103000+00:00",
+        "event": "external_link_clicked_v2",
+        "label": "Lien externe cliqué → utilitaire-camion-propre (https://verdirmaflotte.fr/)"
+      },
+      {
+        "datetime": "2026-04-06T17:31:47.133000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T17:32:15.551000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plantation de haies"
+      },
+      {
+        "datetime": "2026-04-06T17:32:15.591000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/haie-bocagere"
+      },
+      {
+        "datetime": "2026-04-06T17:32:21.381000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T17:32:48.524000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Acquisition d'un engin plus propre"
+      },
+      {
+        "datetime": "2026-04-06T17:32:48.552000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/engins-propres"
+      },
+      {
+        "datetime": "2026-04-06T17:33:03.349000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/engins-propres/engins-moins-polluants"
+      },
+      {
+        "datetime": "2026-04-06T17:33:03.361000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Engins moins polluants"
+      },
+      {
+        "datetime": "2026-04-06T17:33:27.385000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Acquisition d'un engin plus propre"
+      },
+      {
+        "datetime": "2026-04-06T17:33:27.402000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/engins-propres"
+      },
+      {
+        "datetime": "2026-04-06T17:33:28.860000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T17:33:36.095000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Acquisition d'une voiture propre"
+      },
+      {
+        "datetime": "2026-04-06T17:33:36.123000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/voiture-propre"
+      },
+      {
+        "datetime": "2026-04-06T17:33:50.974000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/voiture-propre/je-change-ma-voiture"
+      },
+      {
+        "datetime": "2026-04-06T17:33:50.992000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Je change ma voiture"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "84476740751009",
+    "denomination": "",
+    "naf_section": "A",
+    "naf_code": "01.43Z",
+    "region": "Île-de-France",
+    "workforce_min": 3,
+    "workforce_max": 5,
+    "first_seen": "2026-04-06T18:36:03.966000+00:00",
+    "last_seen": "2026-04-06T18:41:49.577000+00:00",
+    "time_spent_minutes": 5,
+    "themes": [
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Eclairage LED",
+        "slug": "eclairage-led",
+        "path": "/projets-entreprise/eclairage-led",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T18:36:03.966000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T18:36:04.060000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T18:36:34.270000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T18:41:49.577000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "18832985168514",
+    "denomination": "FILS & ASSOCIES INTERNATIONAUX",
+    "naf_section": "N",
+    "naf_code": "82.19Z",
+    "region": "Bourgogne-Franche-Comté",
+    "workforce_min": 3,
+    "workforce_max": 5,
+    "first_seen": "2026-04-06T12:05:36.058000+00:00",
+    "last_seen": "2026-04-06T12:07:53.155000+00:00",
+    "time_spent_minutes": 2,
+    "themes": [
+      "mobilite",
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Borne de recharge",
+        "slug": "borne-recharge-ve",
+        "path": "/projets-entreprise/borne-recharge-ve",
+        "themes": [
+          "mobilite"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Certificats d'économies d'énergie (CEE)",
+        "slug": "certificats-economie-energie",
+        "path": "/projets-entreprise/borne-recharge-ve/certificats-economie-energie",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T12:05:36.058000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/borne-recharge-ve"
+      },
+      {
+        "datetime": "2026-04-06T12:05:36.086000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Borne de recharge"
+      },
+      {
+        "datetime": "2026-04-06T12:06:09.622000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/borne-recharge-ve/certificats-economie-energie"
+      },
+      {
+        "datetime": "2026-04-06T12:06:09.637000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Certificats d'économies d'énergie (CEE)"
+      },
+      {
+        "datetime": "2026-04-06T12:07:44.343000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T12:07:53.155000+00:00",
+        "event": "external_link_clicked_v2",
+        "label": "Lien externe cliqué → certificats-economie-energie (https://www.ecologie.gouv.fr/politiques-publiques/operations-standardisees-deconomies-denergie)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "79030105658094",
+    "denomination": "CAMPING PYRENEES LOISIRS",
+    "naf_section": "S",
+    "naf_code": "94.99Z",
+    "region": "Pays de la Loire",
+    "workforce_min": 50,
+    "workforce_max": 99,
+    "first_seen": "2026-04-06T09:37:15.120000+00:00",
+    "last_seen": "2026-04-06T09:54:09.402000+00:00",
+    "time_spent_minutes": 16,
+    "themes": [
+      "energie",
+      "biodiversite"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Plan d’action économies d’énergie",
+        "slug": "plan-action-eco-energie",
+        "path": "/projets-entreprise/plan-action-eco-energie",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Plan d'action biodiversité",
+        "slug": "biodiversite",
+        "path": "/projets-entreprise/biodiversite",
+        "themes": [
+          "biodiversite"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T09:37:15.120000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T09:38:33.597000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T09:51:50.388000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie"
+      },
+      {
+        "datetime": "2026-04-06T09:51:50.453000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action économies d’énergie"
+      },
+      {
+        "datetime": "2026-04-06T09:51:59.902000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T09:54:09.367000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d'action biodiversité"
+      },
+      {
+        "datetime": "2026-04-06T09:54:09.402000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/biodiversite"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "49437734967825",
+    "denomination": "IMMO HOLDING FRANCHE-COMTE",
+    "naf_section": "Q",
+    "naf_code": "86.10Z",
+    "region": "Normandie",
+    "workforce_min": 1,
+    "workforce_max": 1,
+    "first_seen": "2026-04-06T14:06:32.541000+00:00",
+    "last_seen": "2026-04-06T14:07:52.232000+00:00",
+    "time_spent_minutes": 1,
+    "themes": [
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "program",
+        "title": "Certificats d'économies d'énergie (CEE)",
+        "slug": "certificats-economie-energie",
+        "path": "/aides-entreprise/certificats-economie-energie",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T14:06:32.541000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /aides-entreprise/certificats-economie-energie"
+      },
+      {
+        "datetime": "2026-04-06T14:06:32.567000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Certificats d'économies d'énergie (CEE)"
+      },
+      {
+        "datetime": "2026-04-06T14:07:42.020000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T14:07:52.232000+00:00",
+        "event": "external_link_clicked_v2",
+        "label": "Lien externe cliqué → certificats-economie-energie (https://www.ecologie.gouv.fr/politiques-publiques/operations-standardisees-deconomies-denergie)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "10948443158055",
+    "denomination": "",
+    "naf_section": "A",
+    "naf_code": "01.11Z",
+    "region": "Nouvelle-Aquitaine",
+    "workforce_min": 1,
+    "workforce_max": 2,
+    "first_seen": "2026-04-06T03:35:49.145000+00:00",
+    "last_seen": "2026-04-06T03:39:54.031000+00:00",
+    "time_spent_minutes": 4,
+    "themes": [
+      "mobilite"
+    ],
+    "content_visited": [
+      {
+        "type": "program",
+        "title": "Engins agricoles électriques",
+        "slug": "e-trans",
+        "path": "/aides-entreprise/e-trans",
+        "themes": [
+          "mobilite"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T03:35:49.145000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /aides-entreprise/e-trans"
+      },
+      {
+        "datetime": "2026-04-06T03:35:49.301000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Engins agricoles électriques"
+      },
+      {
+        "datetime": "2026-04-06T03:38:15.702000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /aides-entreprise/e-trans"
+      },
+      {
+        "datetime": "2026-04-06T03:38:15.849000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Engins agricoles électriques"
+      },
+      {
+        "datetime": "2026-04-06T03:39:42.678000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /aides-entreprise/e-trans"
+      },
+      {
+        "datetime": "2026-04-06T03:39:42.826000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Engins agricoles électriques"
+      },
+      {
+        "datetime": "2026-04-06T03:39:54.031000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "48416320448583",
+    "denomination": "TRANSPORT VERT PAYS LOIRE",
+    "naf_section": "A",
+    "naf_code": "01.11Z",
+    "region": "Nouvelle-Aquitaine",
+    "workforce_min": 3,
+    "workforce_max": 5,
+    "first_seen": "2026-04-06T16:50:59.127000+00:00",
+    "last_seen": "2026-04-06T16:58:03.251000+00:00",
+    "time_spent_minutes": 7,
+    "themes": [
+      "energie",
+      "mobilite",
+      "batiment",
+      "biodiversite"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Plan d’action économies d’énergie",
+        "slug": "plan-action-eco-energie",
+        "path": "/projets-entreprise/plan-action-eco-energie",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Acquisition d'une voiture propre",
+        "slug": "voiture-propre",
+        "path": "/projets-entreprise/voiture-propre",
+        "themes": [
+          "mobilite"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Acquisition d'un petit utilitaire propre",
+        "slug": "utilitaire-camion-propre",
+        "path": "/projets-entreprise/utilitaire-camion-propre",
+        "themes": [
+          "mobilite"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Serres agricoles",
+        "slug": "serres-agricoles",
+        "path": "/projets-entreprise/serres-agricoles",
+        "themes": [
+          "energie",
+          "batiment"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Revêtements perméables",
+        "slug": "revetements-permeables",
+        "path": "/projets-entreprise/revetements-permeables",
+        "themes": [
+          "batiment",
+          "biodiversite"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Acquisition d'une machine agricole plus propre",
+        "slug": "machines-agricoles-propres",
+        "path": "/projets-entreprise/machines-agricoles-propres",
+        "themes": [
+          "mobilite"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T16:50:59.127000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T16:51:14.994000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T16:51:26.798000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T16:51:48.666000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action économies d’énergie"
+      },
+      {
+        "datetime": "2026-04-06T16:51:48.703000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie"
+      },
+      {
+        "datetime": "2026-04-06T16:52:09.429000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T16:52:39.758000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Acquisition d'une voiture propre"
+      },
+      {
+        "datetime": "2026-04-06T16:52:39.785000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/voiture-propre"
+      },
+      {
+        "datetime": "2026-04-06T16:52:52.254000+00:00",
+        "event": "external_link_clicked_v2",
+        "label": "Lien externe cliqué → voiture-propre (https://bigmedia.bpifrance.fr/nos-dossiers/flotte-automobile-pourquoi-et-comment-accelerer-son-verdissement)"
+      },
+      {
+        "datetime": "2026-04-06T16:53:57.030000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T16:54:23.521000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Acquisition d'un petit utilitaire propre"
+      },
+      {
+        "datetime": "2026-04-06T16:54:23.539000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/utilitaire-camion-propre"
+      },
+      {
+        "datetime": "2026-04-06T16:54:57.106000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T16:55:37.604000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T16:55:42.729000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T16:55:56.088000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T16:55:57.485000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T16:56:32.411000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T16:56:41.588000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Serres agricoles"
+      },
+      {
+        "datetime": "2026-04-06T16:56:41.613000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/serres-agricoles"
+      },
+      {
+        "datetime": "2026-04-06T16:56:50.424000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T16:57:09.991000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Revêtements perméables"
+      },
+      {
+        "datetime": "2026-04-06T16:57:10.006000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/revetements-permeables"
+      },
+      {
+        "datetime": "2026-04-06T16:57:12.026000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T16:58:03.232000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Acquisition d'une machine agricole plus propre"
+      },
+      {
+        "datetime": "2026-04-06T16:58:03.251000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/machines-agricoles-propres"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "26607149761330",
+    "denomination": "",
+    "naf_section": "G",
+    "naf_code": "45.20A",
+    "region": "Occitanie",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T19:19:21.010000+00:00",
+    "last_seen": "2026-04-06T19:24:55.815000+00:00",
+    "time_spent_minutes": 5,
+    "themes": [
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Eclairage LED",
+        "slug": "eclairage-led",
+        "path": "/projets-entreprise/eclairage-led",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T19:19:21.010000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T19:19:21.126000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T19:19:39.522000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T19:20:43.312000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T19:20:43.445000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T19:20:47.159000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T19:24:55.815000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "37984387533215",
+    "denomination": "REPARATION EQUIPEMENT LYON",
+    "naf_section": "C",
+    "naf_code": "33.20B",
+    "region": "Pays de la Loire",
+    "workforce_min": 50,
+    "workforce_max": 99,
+    "first_seen": "2026-04-06T15:43:23.062000+00:00",
+    "last_seen": "2026-04-06T15:44:42.886000+00:00",
+    "time_spent_minutes": 1,
+    "themes": [
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "program",
+        "title": "Certificats d'économies d'énergie (CEE)",
+        "slug": "certificats-economie-energie",
+        "path": "/aides-entreprise/certificats-economie-energie",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T15:43:23.062000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /aides-entreprise/certificats-economie-energie"
+      },
+      {
+        "datetime": "2026-04-06T15:43:23.091000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Certificats d'économies d'énergie (CEE)"
+      },
+      {
+        "datetime": "2026-04-06T15:44:32.446000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T15:44:42.886000+00:00",
+        "event": "external_link_clicked_v2",
+        "label": "Lien externe cliqué → certificats-economie-energie (https://www.ecologie.gouv.fr/politiques-publiques/operations-standardisees-deconomies-denergie)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "20036172467190",
+    "denomination": "LAVAGE PROPRE MEDITERRANEE",
+    "naf_section": "G",
+    "naf_code": "46.16Z",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T17:17:00.807000+00:00",
+    "last_seen": "2026-04-06T18:36:09.132000+00:00",
+    "time_spent_minutes": 79,
+    "themes": [
+      "analyses",
+      "rh",
+      "ecoconception",
+      "biodiversite"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Diagnostic à 360° sur la transition écologique",
+        "slug": "diag-360",
+        "path": "/projets-entreprise/diag-360",
+        "themes": [
+          "analyses"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Politique d'achats responsables",
+        "slug": "achats-responsables",
+        "path": "/projets-entreprise/achats-responsables",
+        "themes": [
+          "rh",
+          "ecoconception"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Sensibilisation des équipes",
+        "slug": "sensibilisation-equipes",
+        "path": "/projets-entreprise/sensibilisation-equipes",
+        "themes": [
+          "rh"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Diag biodiversité",
+        "slug": "diag-biodiversite",
+        "path": "/projets-entreprise/sensibilisation-equipes/diag-biodiversite",
+        "themes": [
+          "biodiversite"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T17:17:00.807000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T17:18:12.796000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T17:19:00.005000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Diagnostic à 360° sur la transition écologique"
+      },
+      {
+        "datetime": "2026-04-06T17:19:00.038000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/diag-360"
+      },
+      {
+        "datetime": "2026-04-06T17:19:12.989000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T17:19:18.047000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Politique d'achats responsables"
+      },
+      {
+        "datetime": "2026-04-06T17:19:18.077000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/achats-responsables"
+      },
+      {
+        "datetime": "2026-04-06T17:20:11.353000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T17:20:15.098000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Sensibilisation des équipes"
+      },
+      {
+        "datetime": "2026-04-06T17:20:15.146000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/sensibilisation-equipes"
+      },
+      {
+        "datetime": "2026-04-06T18:36:09.077000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/sensibilisation-equipes/diag-biodiversite"
+      },
+      {
+        "datetime": "2026-04-06T18:36:09.132000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Diag biodiversité"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "21013486869682",
+    "denomination": "",
+    "naf_section": "G",
+    "naf_code": "47.71Z",
+    "region": "Île-de-France",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T08:25:55.717000+00:00",
+    "last_seen": "2026-04-06T08:27:50.019000+00:00",
+    "time_spent_minutes": 1,
+    "themes": [],
+    "content_visited": [],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T08:25:55.717000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T08:27:07.853000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T08:27:42.811000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /questionnaire"
+      },
+      {
+        "datetime": "2026-04-06T08:27:50.019000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "32066217513851",
+    "denomination": "",
+    "naf_section": "F",
+    "naf_code": "43.32A",
+    "region": "Pays de la Loire",
+    "workforce_min": 10,
+    "workforce_max": 19,
+    "first_seen": "2026-04-06T09:59:44.918000+00:00",
+    "last_seen": "2026-04-06T10:03:49.428000+00:00",
+    "time_spent_minutes": 4,
+    "themes": [
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Eclairage LED",
+        "slug": "eclairage-led",
+        "path": "/projets-entreprise/eclairage-led",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T09:59:44.918000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T09:59:44.946000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T09:59:56.833000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T10:00:39.477000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T10:03:49.428000+00:00",
+        "event": "send_project_form_catalog",
+        "label": "Formulaire envoyé (catalogue projet)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "53164139623285",
+    "denomination": "DOMAINE MILLE FLEURS",
+    "naf_section": "I",
+    "naf_code": "55.10Z",
+    "region": "Nouvelle-Aquitaine",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T06:17:14.654000+00:00",
+    "last_seen": "2026-04-06T06:31:48.305000+00:00",
+    "time_spent_minutes": 14,
+    "themes": [
+      "energie",
+      "batiment",
+      "analyses",
+      "mobilite",
+      "dechets",
+      "eau",
+      "rh",
+      "ecoconception"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Plan d’action économies d’énergie",
+        "slug": "plan-action-eco-energie",
+        "path": "/projets-entreprise/plan-action-eco-energie",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Certificats d'économies d'énergie (CEE)",
+        "slug": "certificats-economie-energie",
+        "path": "/projets-entreprise/plan-action-eco-energie/certificats-economie-energie",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Isolation thermique",
+        "slug": "isolation-thermique",
+        "path": "/projets-entreprise/isolation-thermique",
+        "themes": [
+          "batiment",
+          "energie"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Électroménager basse consommation",
+        "slug": "electromenager-basse-consommation",
+        "path": "/projets-entreprise/electromenager-basse-consommation",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Management de l’énergie",
+        "slug": "management-energie",
+        "path": "/projets-entreprise/management-energie",
+        "themes": [
+          "energie",
+          "analyses"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Borne de recharge",
+        "slug": "borne-recharge-ve",
+        "path": "/projets-entreprise/borne-recharge-ve",
+        "themes": [
+          "mobilite"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Aide au financement en Occitanie",
+        "slug": "aide-financement-occitanie",
+        "path": "/projets-entreprise/borne-recharge-ve/aide-financement-occitanie",
+        "themes": [
+          "batiment",
+          "mobilite",
+          "dechets",
+          "eau",
+          "energie",
+          "rh",
+          "analyses",
+          "ecoconception"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Eclairage LED",
+        "slug": "eclairage-led",
+        "path": "/projets-entreprise/eclairage-led",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T06:17:14.654000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T06:18:32.127000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T06:18:45.860000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action économies d’énergie"
+      },
+      {
+        "datetime": "2026-04-06T06:18:45.893000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie"
+      },
+      {
+        "datetime": "2026-04-06T06:19:20.076000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie/certificats-economie-energie"
+      },
+      {
+        "datetime": "2026-04-06T06:19:20.086000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Certificats d'économies d'énergie (CEE)"
+      },
+      {
+        "datetime": "2026-04-06T06:19:39.534000+00:00",
+        "event": "external_link_clicked_v2",
+        "label": "Lien externe cliqué → certificats-economie-energie (https://www.ecologie.gouv.fr/politiques-publiques/operations-standardisees-deconomies-denergie)"
+      },
+      {
+        "datetime": "2026-04-06T06:22:28.325000+00:00",
+        "event": "send_program_form_catalog",
+        "label": "Formulaire envoyé (catalogue programme)"
+      },
+      {
+        "datetime": "2026-04-06T06:22:57.727000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/isolation-thermique"
+      },
+      {
+        "datetime": "2026-04-06T06:22:57.758000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Isolation thermique"
+      },
+      {
+        "datetime": "2026-04-06T06:25:56.818000+00:00",
+        "event": "send_project_form_catalog",
+        "label": "Formulaire envoyé (catalogue projet)"
+      },
+      {
+        "datetime": "2026-04-06T06:26:08.574000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/electromenager-basse-consommation"
+      },
+      {
+        "datetime": "2026-04-06T06:26:08.606000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Électroménager basse consommation"
+      },
+      {
+        "datetime": "2026-04-06T06:30:18.531000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/management-energie"
+      },
+      {
+        "datetime": "2026-04-06T06:30:18.563000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Management de l’énergie"
+      },
+      {
+        "datetime": "2026-04-06T06:30:43.617000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/borne-recharge-ve"
+      },
+      {
+        "datetime": "2026-04-06T06:30:43.647000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Borne de recharge"
+      },
+      {
+        "datetime": "2026-04-06T06:31:02.704000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/borne-recharge-ve/aide-financement-occitanie"
+      },
+      {
+        "datetime": "2026-04-06T06:31:02.714000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Aide au financement en Occitanie"
+      },
+      {
+        "datetime": "2026-04-06T06:31:42.876000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T06:31:42.907000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T06:31:48.293000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led/aide-financement-occitanie"
+      },
+      {
+        "datetime": "2026-04-06T06:31:48.305000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Aide au financement en Occitanie"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "35603874064120",
+    "denomination": "",
+    "naf_section": "C",
+    "naf_code": "10.39B",
+    "region": "Occitanie",
+    "workforce_min": 20,
+    "workforce_max": 49,
+    "first_seen": "2026-04-06T16:37:53.071000+00:00",
+    "last_seen": "2026-04-06T16:39:56.097000+00:00",
+    "time_spent_minutes": 2,
+    "themes": [
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Eclairage LED",
+        "slug": "eclairage-led",
+        "path": "/projets-entreprise/eclairage-led",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T16:37:53.071000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T16:37:53.857000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T16:38:09.949000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T16:39:56.097000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "95441473133052",
+    "denomination": "",
+    "naf_section": "G",
+    "naf_code": "46.69B",
+    "region": "Nouvelle-Aquitaine",
+    "workforce_min": 100,
+    "workforce_max": 199,
+    "first_seen": "2026-04-06T10:26:42.137000+00:00",
+    "last_seen": "2026-04-06T10:27:51.308000+00:00",
+    "time_spent_minutes": 1,
+    "themes": [
+      "mobilite"
+    ],
+    "content_visited": [
+      {
+        "type": "program",
+        "title": "Flotte de vélos à disposition",
+        "slug": "flotte-de-velos-a-disposition",
+        "path": "/aides-entreprise/flotte-de-velos-a-disposition",
+        "themes": [
+          "mobilite"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T10:26:42.137000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /aides-entreprise/flotte-de-velos-a-disposition"
+      },
+      {
+        "datetime": "2026-04-06T10:26:42.239000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Flotte de vélos à disposition"
+      },
+      {
+        "datetime": "2026-04-06T10:27:51.308000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "68700226398479",
+    "denomination": "CONSEIL VISION OUEST EUROPE",
+    "naf_section": "M",
+    "naf_code": "70.22Z",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "workforce_min": 3,
+    "workforce_max": 5,
+    "first_seen": "2026-04-06T06:35:28.471000+00:00",
+    "last_seen": "2026-04-06T06:36:36.245000+00:00",
+    "time_spent_minutes": 1,
+    "themes": [
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "program",
+        "title": "Certificats d'économies d'énergie (CEE)",
+        "slug": "certificats-economie-energie",
+        "path": "/aides-entreprise/certificats-economie-energie",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T06:35:28.471000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /aides-entreprise/certificats-economie-energie"
+      },
+      {
+        "datetime": "2026-04-06T06:35:28.501000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Certificats d'économies d'énergie (CEE)"
+      },
+      {
+        "datetime": "2026-04-06T06:36:28.805000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T06:36:36.245000+00:00",
+        "event": "external_link_clicked_v2",
+        "label": "Lien externe cliqué → certificats-economie-energie (https://www.ecologie.gouv.fr/politiques-publiques/operations-standardisees-deconomies-denergie)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "18360062934621",
+    "denomination": "UNIVERS BOIS PALETTE",
+    "naf_section": "G",
+    "naf_code": "45.20A",
+    "region": "Grand Est",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T10:52:42.844000+00:00",
+    "last_seen": "2026-04-06T10:54:59.766000+00:00",
+    "time_spent_minutes": 2,
+    "themes": [
+      "energie",
+      "batiment",
+      "mobilite",
+      "dechets",
+      "eau",
+      "rh",
+      "analyses",
+      "ecoconception"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Eclairage LED",
+        "slug": "eclairage-led",
+        "path": "/projets-entreprise/eclairage-led",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Plan d’action économies d’énergie",
+        "slug": "plan-action-eco-energie",
+        "path": "/projets-entreprise/plan-action-eco-energie",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Aide au financement en Occitanie",
+        "slug": "aide-financement-occitanie",
+        "path": "/projets-entreprise/eclairage-led/aide-financement-occitanie",
+        "themes": [
+          "batiment",
+          "mobilite",
+          "dechets",
+          "eau",
+          "energie",
+          "rh",
+          "analyses",
+          "ecoconception"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T10:52:42.844000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T10:52:42.908000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T10:52:54.256000+00:00",
+        "event": "external_link_clicked_v2",
+        "label": "Lien externe cliqué → eclairage-led (https://librairie.ademe.fr/ged/207/renover-eclairage-tertaire-011133.pdf)"
+      },
+      {
+        "datetime": "2026-04-06T10:53:26.747000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T10:53:49.374000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T10:54:52.709000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action économies d’énergie"
+      },
+      {
+        "datetime": "2026-04-06T10:54:52.768000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie"
+      },
+      {
+        "datetime": "2026-04-06T10:54:57.207000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T10:54:57.222000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T10:54:59.749000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led/aide-financement-occitanie"
+      },
+      {
+        "datetime": "2026-04-06T10:54:59.766000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Aide au financement en Occitanie"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "63782177850286",
+    "denomination": "",
+    "naf_section": "S",
+    "naf_code": "95.22Z",
+    "region": "Hauts-de-France",
+    "workforce_min": 1,
+    "workforce_max": 1,
+    "first_seen": "2026-04-06T14:07:46.808000+00:00",
+    "last_seen": "2026-04-06T14:24:25.840000+00:00",
+    "time_spent_minutes": 16,
+    "themes": [
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Eclairage LED",
+        "slug": "eclairage-led",
+        "path": "/projets-entreprise/eclairage-led",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T14:07:46.808000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T14:07:46.851000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T14:19:01.656000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /aides-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T14:22:23.157000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T14:22:23.191000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T14:23:15.208000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T14:23:15.245000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T14:23:28.088000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T14:24:25.840000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "97683454260343",
+    "denomination": "GENPLASTIQUE NORMANDIE",
+    "naf_section": "F",
+    "naf_code": "43.99C",
+    "region": "Grand Est",
+    "workforce_min": 6,
+    "workforce_max": 9,
+    "first_seen": "2026-04-06T19:47:16.199000+00:00",
+    "last_seen": "2026-04-06T19:51:42.042000+00:00",
+    "time_spent_minutes": 4,
+    "themes": [
+      "energie",
+      "analyses",
+      "mobilite"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Plan d’action économies d’énergie",
+        "slug": "plan-action-eco-energie",
+        "path": "/projets-entreprise/plan-action-eco-energie",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Certificats d'économies d'énergie (CEE)",
+        "slug": "certificats-economie-energie",
+        "path": "/projets-entreprise/plan-action-eco-energie/certificats-economie-energie",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Cap décarbonation",
+        "slug": "cap-decarbonation",
+        "path": "/projets-entreprise/plan-action-eco-energie/cap-decarbonation",
+        "themes": [
+          "energie",
+          "analyses"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Acquisition d'un engin plus propre",
+        "slug": "engins-propres",
+        "path": "/projets-entreprise/engins-propres",
+        "themes": [
+          "mobilite"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Amélioration de la qualité de l’air",
+        "slug": "amelioration-qualite-de-l-air",
+        "path": "/projets-entreprise/engins-propres/amelioration-qualite-de-l-air",
+        "themes": [
+          "analyses"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T19:47:16.199000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T19:47:51.280000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T19:48:38.715000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action économies d’énergie"
+      },
+      {
+        "datetime": "2026-04-06T19:48:38.790000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie"
+      },
+      {
+        "datetime": "2026-04-06T19:49:14.017000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie/certificats-economie-energie"
+      },
+      {
+        "datetime": "2026-04-06T19:49:14.043000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Certificats d'économies d'énergie (CEE)"
+      },
+      {
+        "datetime": "2026-04-06T19:49:32.264000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action économies d’énergie"
+      },
+      {
+        "datetime": "2026-04-06T19:49:32.300000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie"
+      },
+      {
+        "datetime": "2026-04-06T19:49:39.496000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie/cap-decarbonation"
+      },
+      {
+        "datetime": "2026-04-06T19:49:39.520000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Cap décarbonation"
+      },
+      {
+        "datetime": "2026-04-06T19:50:04.478000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action économies d’énergie"
+      },
+      {
+        "datetime": "2026-04-06T19:50:04.512000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie"
+      },
+      {
+        "datetime": "2026-04-06T19:50:07.284000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T19:50:19.094000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T19:50:30.309000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Acquisition d'un engin plus propre"
+      },
+      {
+        "datetime": "2026-04-06T19:50:30.358000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/engins-propres"
+      },
+      {
+        "datetime": "2026-04-06T19:50:51.916000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/engins-propres/amelioration-qualite-de-l-air"
+      },
+      {
+        "datetime": "2026-04-06T19:50:51.934000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Amélioration de la qualité de l’air"
+      },
+      {
+        "datetime": "2026-04-06T19:51:42.042000+00:00",
+        "event": "external_link_clicked_v2",
+        "label": "Lien externe cliqué → amelioration-qualite-de-l-air (https://agirpourlatransition.ademe.fr/sites/default/files/Qualit%C3%A9%20air%20-%20Territoires%20en%20PPA%20ou%20d%C3%A9passements%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "69335866180909",
+    "denomination": "SERVICES TECHNIQUES MIDI",
+    "naf_section": "I",
+    "naf_code": "56.10A",
+    "region": "Nouvelle-Aquitaine",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T21:33:21.857000+00:00",
+    "last_seen": "2026-04-06T21:43:59.437000+00:00",
+    "time_spent_minutes": 10,
+    "themes": [
+      "energie",
+      "eau"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Sensibilisation aux éco-gestes",
+        "slug": "sensibilisation-eco-gestes",
+        "path": "/projets-entreprise/sensibilisation-eco-gestes",
+        "themes": [
+          "energie",
+          "eau"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Plan d’action économies d’énergie",
+        "slug": "plan-action-eco-energie",
+        "path": "/projets-entreprise/plan-action-eco-energie",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Panneaux solaires",
+        "slug": "panneaux-solaires",
+        "path": "/projets-entreprise/panneaux-solaires",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Certificats d'économies d'énergie (CEE)",
+        "slug": "certificats-economie-energie",
+        "path": "/projets-entreprise/panneaux-solaires/certificats-economie-energie",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T21:33:21.857000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T21:33:41.992000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T21:33:56.650000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T21:34:05.906000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Sensibilisation aux éco-gestes"
+      },
+      {
+        "datetime": "2026-04-06T21:34:05.929000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/sensibilisation-eco-gestes"
+      },
+      {
+        "datetime": "2026-04-06T21:34:20.312000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T21:34:27.384000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action économies d’énergie"
+      },
+      {
+        "datetime": "2026-04-06T21:34:27.404000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie"
+      },
+      {
+        "datetime": "2026-04-06T21:34:59.032000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T21:38:17.444000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Panneaux solaires"
+      },
+      {
+        "datetime": "2026-04-06T21:38:17.478000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/panneaux-solaires"
+      },
+      {
+        "datetime": "2026-04-06T21:38:36.350000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/panneaux-solaires/certificats-economie-energie"
+      },
+      {
+        "datetime": "2026-04-06T21:38:36.363000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Certificats d'économies d'énergie (CEE)"
+      },
+      {
+        "datetime": "2026-04-06T21:43:59.437000+00:00",
+        "event": "send_program_form_catalog",
+        "label": "Formulaire envoyé (catalogue programme)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "92535187658455",
+    "denomination": "PERIGORD HOTEL",
+    "naf_section": "C",
+    "naf_code": "16.24Z",
+    "region": "Bourgogne-Franche-Comté",
+    "workforce_min": 1,
+    "workforce_max": 2,
+    "first_seen": "2026-04-06T04:03:45.705000+00:00",
+    "last_seen": "2026-04-06T04:06:55.763000+00:00",
+    "time_spent_minutes": 3,
+    "themes": [
+      "batiment"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Matériaux de réemploi",
+        "slug": "materiaux-de-reemploi",
+        "path": "/projets-entreprise/materiaux-de-reemploi",
+        "themes": [
+          "batiment"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T04:03:45.705000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T04:06:05.012000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T04:06:49.233000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T04:06:55.743000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Matériaux de réemploi"
+      },
+      {
+        "datetime": "2026-04-06T04:06:55.763000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/materiaux-de-reemploi"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "89189150426297",
+    "denomination": "PALETTE RECYCLEE RHONE",
+    "naf_section": "I",
+    "naf_code": "55.30Z",
+    "region": "Centre-Val de Loire",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T05:27:12.352000+00:00",
+    "last_seen": "2026-04-06T05:30:22.209000+00:00",
+    "time_spent_minutes": 3,
+    "themes": [
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Panneaux solaires",
+        "slug": "panneaux-solaires",
+        "path": "/projets-entreprise/panneaux-solaires",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Certificats d'économies d'énergie (CEE)",
+        "slug": "certificats-economie-energie",
+        "path": "/projets-entreprise/panneaux-solaires/certificats-economie-energie",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Soutien au photovoltaïque en Grand Est",
+        "slug": "soutien-pv-grand-est",
+        "path": "/projets-entreprise/panneaux-solaires/soutien-pv-grand-est",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T05:27:12.352000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/panneaux-solaires"
+      },
+      {
+        "datetime": "2026-04-06T05:27:12.398000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Panneaux solaires"
+      },
+      {
+        "datetime": "2026-04-06T05:27:26.243000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/panneaux-solaires"
+      },
+      {
+        "datetime": "2026-04-06T05:28:05.656000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T05:28:30.278000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/panneaux-solaires/certificats-economie-energie"
+      },
+      {
+        "datetime": "2026-04-06T05:28:30.311000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Certificats d'économies d'énergie (CEE)"
+      },
+      {
+        "datetime": "2026-04-06T05:28:57.900000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Panneaux solaires"
+      },
+      {
+        "datetime": "2026-04-06T05:28:57.917000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/panneaux-solaires"
+      },
+      {
+        "datetime": "2026-04-06T05:28:59.888000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/panneaux-solaires/soutien-pv-grand-est"
+      },
+      {
+        "datetime": "2026-04-06T05:28:59.907000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Soutien au photovoltaïque en Grand Est"
+      },
+      {
+        "datetime": "2026-04-06T05:29:02.331000+00:00",
+        "event": "external_link_clicked_v2",
+        "label": "Lien externe cliqué → soutien-pv-grand-est (https://www.grandest.fr/vos-aides-regionales/soutien-au-photovoltaique/)"
+      },
+      {
+        "datetime": "2026-04-06T05:29:44.957000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Panneaux solaires"
+      },
+      {
+        "datetime": "2026-04-06T05:29:44.977000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/panneaux-solaires"
+      },
+      {
+        "datetime": "2026-04-06T05:29:53.658000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/panneaux-solaires/certificats-economie-energie"
+      },
+      {
+        "datetime": "2026-04-06T05:29:53.679000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Certificats d'économies d'énergie (CEE)"
+      },
+      {
+        "datetime": "2026-04-06T05:29:56.065000+00:00",
+        "event": "external_link_clicked_v2",
+        "label": "Lien externe cliqué → certificats-economie-energie (https://www.ecologie.gouv.fr/politiques-publiques/operations-standardisees-deconomies-denergie)"
+      },
+      {
+        "datetime": "2026-04-06T05:30:22.209000+00:00",
+        "event": "external_link_clicked_v2",
+        "label": "Lien externe cliqué → certificats-economie-energie (https://www.service-public.fr/particuliers/vosdroits/R39412)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "93967754139711",
+    "denomination": "COMMERCE LOCAL BOURGOGNE",
+    "naf_section": "K",
+    "naf_code": "66.30Z",
+    "region": "Pays de la Loire",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T09:04:15.080000+00:00",
+    "last_seen": "2026-04-06T09:12:30.922000+00:00",
+    "time_spent_minutes": 8,
+    "themes": [
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Eclairage LED",
+        "slug": "eclairage-led",
+        "path": "/projets-entreprise/eclairage-led",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Plan d’action économies d’énergie",
+        "slug": "plan-action-eco-energie",
+        "path": "/projets-entreprise/plan-action-eco-energie",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T09:04:15.080000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T09:04:15.141000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T09:09:00.780000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T09:09:00.878000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T09:09:47.016000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T09:10:16.671000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action économies d’énergie"
+      },
+      {
+        "datetime": "2026-04-06T09:10:16.767000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie"
+      },
+      {
+        "datetime": "2026-04-06T09:12:30.922000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /aides-entreprise"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "40004175572627",
+    "denomination": "",
+    "naf_section": "G",
+    "naf_code": "46.73A",
+    "region": "Auvergne-Rhône-Alpes",
+    "workforce_min": 1,
+    "workforce_max": 1,
+    "first_seen": "2026-04-06T16:31:40.688000+00:00",
+    "last_seen": "2026-04-06T16:31:55.478000+00:00",
+    "time_spent_minutes": 1,
+    "themes": [
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Eclairage LED",
+        "slug": "eclairage-led",
+        "path": "/projets-entreprise/eclairage-led",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T16:31:40.688000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T16:31:40.791000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T16:31:43.748000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T16:31:55.478000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "48406125227968",
+    "denomination": "",
+    "naf_section": "C",
+    "naf_code": "32.40Z",
+    "region": "Hauts-de-France",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T10:46:18.460000+00:00",
+    "last_seen": "2026-04-06T10:49:06.964000+00:00",
+    "time_spent_minutes": 2,
+    "themes": [
+      "analyses"
+    ],
+    "content_visited": [
+      {
+        "type": "program",
+        "title": "Eco-Défis des artisans et des commerçants",
+        "slug": "eco-defis-des-artisans-et-des-commercants",
+        "path": "/aides-entreprise/eco-defis-des-artisans-et-des-commercants",
+        "themes": [
+          "analyses"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T10:46:18.460000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /aides-entreprise/eco-defis-des-artisans-et-des-commercants"
+      },
+      {
+        "datetime": "2026-04-06T10:46:18.500000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eco-Défis des artisans et des commerçants"
+      },
+      {
+        "datetime": "2026-04-06T10:48:57.242000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T10:49:06.964000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /aides-entreprise"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "72900760016314",
+    "denomination": "AERO THERMIQUE PROVENCE",
+    "naf_section": "S",
+    "naf_code": "96.01B",
+    "region": "Grand Est",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T07:56:50.454000+00:00",
+    "last_seen": "2026-04-06T10:07:47.424000+00:00",
+    "time_spent_minutes": 130,
+    "themes": [
+      "analyses",
+      "energie",
+      "dechets",
+      "eau",
+      "rh",
+      "ecoconception",
+      "batiment",
+      "mobilite"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Diagnostic à 360° sur la transition écologique",
+        "slug": "diag-360",
+        "path": "/projets-entreprise/diag-360",
+        "themes": [
+          "analyses"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Plan d’action économies d’énergie",
+        "slug": "plan-action-eco-energie",
+        "path": "/projets-entreprise/plan-action-eco-energie",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Plan d’action déchets & pertes matière",
+        "slug": "plan-action-dechets",
+        "path": "/projets-entreprise/plan-action-dechets",
+        "themes": [
+          "dechets"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Plan d’action eau",
+        "slug": "plan-action-eau",
+        "path": "/projets-entreprise/plan-action-eau",
+        "themes": [
+          "eau"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Sobriété hydrique des entreprises",
+        "slug": "sobriete-hydrique",
+        "path": "/projets-entreprise/plan-action-eau/sobriete-hydrique",
+        "themes": [
+          "eau"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Politique d'achats responsables",
+        "slug": "achats-responsables",
+        "path": "/projets-entreprise/achats-responsables",
+        "themes": [
+          "rh",
+          "ecoconception"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Audit énergétique",
+        "slug": "audit-energetique",
+        "path": "/projets-entreprise/audit-energetique",
+        "themes": [
+          "energie",
+          "batiment"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Ouvrants et ombrages",
+        "slug": "ouvrants-ombrages",
+        "path": "/projets-entreprise/ouvrants-ombrages",
+        "themes": [
+          "batiment"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Maîtrise des besoins de chauffage",
+        "slug": "maitrise-besoins-chauffage",
+        "path": "/projets-entreprise/maitrise-besoins-chauffage",
+        "themes": [
+          "energie",
+          "batiment"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "TPE gagnantes sur tous les coûts",
+        "slug": "tpe-gagnantes-sur-tous-les-couts",
+        "path": "/projets-entreprise/maitrise-besoins-chauffage/tpe-gagnantes-sur-tous-les-couts",
+        "themes": [
+          "dechets",
+          "eau",
+          "energie"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Acquisition d'une voiture propre",
+        "slug": "voiture-propre",
+        "path": "/projets-entreprise/voiture-propre",
+        "themes": [
+          "mobilite"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T07:56:50.454000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T07:56:52.142000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T07:57:22.515000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T07:57:25.730000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T07:57:53.623000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T07:58:02.609000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Diagnostic à 360° sur la transition écologique"
+      },
+      {
+        "datetime": "2026-04-06T07:58:02.692000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/diag-360"
+      },
+      {
+        "datetime": "2026-04-06T07:58:16.177000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T07:58:22.058000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action économies d’énergie"
+      },
+      {
+        "datetime": "2026-04-06T07:58:22.220000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie"
+      },
+      {
+        "datetime": "2026-04-06T07:58:43.998000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T07:58:50.916000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action déchets & pertes matière"
+      },
+      {
+        "datetime": "2026-04-06T07:58:51.029000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-dechets"
+      },
+      {
+        "datetime": "2026-04-06T07:59:05.385000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T07:59:10.552000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action eau"
+      },
+      {
+        "datetime": "2026-04-06T07:59:10.641000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eau"
+      },
+      {
+        "datetime": "2026-04-06T07:59:24.788000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eau/sobriete-hydrique"
+      },
+      {
+        "datetime": "2026-04-06T07:59:24.839000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Sobriété hydrique des entreprises"
+      },
+      {
+        "datetime": "2026-04-06T07:59:31.918000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action eau"
+      },
+      {
+        "datetime": "2026-04-06T07:59:31.984000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eau"
+      },
+      {
+        "datetime": "2026-04-06T07:59:34.448000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T07:59:41.173000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Politique d'achats responsables"
+      },
+      {
+        "datetime": "2026-04-06T07:59:41.233000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/achats-responsables"
+      },
+      {
+        "datetime": "2026-04-06T07:59:46.622000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T07:59:57.260000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Audit énergétique"
+      },
+      {
+        "datetime": "2026-04-06T07:59:57.336000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/audit-energetique"
+      },
+      {
+        "datetime": "2026-04-06T08:00:14.953000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise"
+      },
+      {
+        "datetime": "2026-04-06T08:00:18.955000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T08:00:31.373000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action économies d’énergie"
+      },
+      {
+        "datetime": "2026-04-06T08:00:31.459000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie"
+      },
+      {
+        "datetime": "2026-04-06T08:00:41.046000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T10:03:42.468000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T10:04:36.061000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T10:05:19.308000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Ouvrants et ombrages"
+      },
+      {
+        "datetime": "2026-04-06T10:05:19.336000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/ouvrants-ombrages"
+      },
+      {
+        "datetime": "2026-04-06T10:05:30.277000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T10:05:39.354000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Maîtrise des besoins de chauffage"
+      },
+      {
+        "datetime": "2026-04-06T10:05:39.373000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/maitrise-besoins-chauffage"
+      },
+      {
+        "datetime": "2026-04-06T10:06:45.672000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/maitrise-besoins-chauffage/tpe-gagnantes-sur-tous-les-couts"
+      },
+      {
+        "datetime": "2026-04-06T10:06:45.683000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → TPE gagnantes sur tous les coûts"
+      },
+      {
+        "datetime": "2026-04-06T10:07:00.197000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Maîtrise des besoins de chauffage"
+      },
+      {
+        "datetime": "2026-04-06T10:07:00.212000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/maitrise-besoins-chauffage"
+      },
+      {
+        "datetime": "2026-04-06T10:07:16.838000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T10:07:38.847000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Acquisition d'une voiture propre"
+      },
+      {
+        "datetime": "2026-04-06T10:07:38.869000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/voiture-propre"
+      },
+      {
+        "datetime": "2026-04-06T10:07:47.424000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "19653943320210",
+    "denomination": "",
+    "naf_section": "F",
+    "naf_code": "43.29B",
+    "region": "Auvergne-Rhône-Alpes",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T07:37:31.320000+00:00",
+    "last_seen": "2026-04-06T07:38:15.107000+00:00",
+    "time_spent_minutes": 1,
+    "themes": [
+      "batiment",
+      "mobilite",
+      "dechets",
+      "eau",
+      "energie",
+      "rh",
+      "analyses",
+      "ecoconception"
+    ],
+    "content_visited": [
+      {
+        "type": "program",
+        "title": "Prêt Vert",
+        "slug": "pret-vert",
+        "path": "/aides-entreprise/pret-vert",
+        "themes": [
+          "batiment",
+          "mobilite",
+          "dechets",
+          "eau",
+          "energie",
+          "rh",
+          "analyses",
+          "ecoconception"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T07:37:31.320000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /aides-entreprise/pret-vert"
+      },
+      {
+        "datetime": "2026-04-06T07:37:31.376000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Prêt Vert"
+      },
+      {
+        "datetime": "2026-04-06T07:38:15.107000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "24557288939687",
+    "denomination": "AGRI BIO CENTRE",
+    "naf_section": "J",
+    "naf_code": "62.02A",
+    "region": "Bourgogne-Franche-Comté",
+    "workforce_min": 1,
+    "workforce_max": 1,
+    "first_seen": "2026-04-06T14:18:46.538000+00:00",
+    "last_seen": "2026-04-06T14:19:28.025000+00:00",
+    "time_spent_minutes": 1,
+    "themes": [
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "program",
+        "title": "Certificats d'économies d'énergie (CEE)",
+        "slug": "certificats-economie-energie",
+        "path": "/aides-entreprise/certificats-economie-energie",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T14:18:46.538000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /aides-entreprise/certificats-economie-energie"
+      },
+      {
+        "datetime": "2026-04-06T14:18:46.588000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Certificats d'économies d'énergie (CEE)"
+      },
+      {
+        "datetime": "2026-04-06T14:19:16.901000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T14:19:28.025000+00:00",
+        "event": "external_link_clicked_v2",
+        "label": "Lien externe cliqué → certificats-economie-energie (https://www.ecologie.gouv.fr/politiques-publiques/operations-standardisees-deconomies-denergie)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "34007793187602",
+    "denomination": "",
+    "naf_section": "A",
+    "naf_code": "01.11Z",
+    "region": "Provence-Alpes-Côte d'Azur",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T19:16:16.554000+00:00",
+    "last_seen": "2026-04-06T19:17:26.462000+00:00",
+    "time_spent_minutes": 1,
+    "themes": [
+      "energie"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Eclairage LED",
+        "slug": "eclairage-led",
+        "path": "/projets-entreprise/eclairage-led",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T19:16:16.554000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T19:16:16.585000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Eclairage LED"
+      },
+      {
+        "datetime": "2026-04-06T19:16:22.523000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/eclairage-led"
+      },
+      {
+        "datetime": "2026-04-06T19:17:26.462000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "46765596140366",
+    "denomination": "BATIVERT SOLUTIONS",
+    "naf_section": "C",
+    "naf_code": "22.22Z",
+    "region": "Auvergne-Rhône-Alpes",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T17:18:09.411000+00:00",
+    "last_seen": "2026-04-06T17:20:36.535000+00:00",
+    "time_spent_minutes": 2,
+    "themes": [
+      "energie",
+      "batiment",
+      "mobilite",
+      "dechets",
+      "eau",
+      "rh",
+      "analyses",
+      "ecoconception"
+    ],
+    "content_visited": [
+      {
+        "type": "program",
+        "title": "Certificats d'économies d'énergie (CEE)",
+        "slug": "certificats-economie-energie",
+        "path": "/aides-entreprise/certificats-economie-energie",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Pompe à chaleur",
+        "slug": "pac",
+        "path": "/projets-entreprise/pac",
+        "themes": [
+          "energie",
+          "batiment"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Investissement \"Géothermie de surface et d'aérothermie\"",
+        "slug": "investissement-geothermie-de-surface-et-d-aerothermie",
+        "path": "/projets-entreprise/pac/investissement-geothermie-de-surface-et-d-aerothermie",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Prêt Vert",
+        "slug": "pret-vert",
+        "path": "/projets-entreprise/pac/pret-vert",
+        "themes": [
+          "batiment",
+          "mobilite",
+          "dechets",
+          "eau",
+          "energie",
+          "rh",
+          "analyses",
+          "ecoconception"
+        ]
+      },
+      {
+        "type": "program",
+        "title": "Étude \"Géothermie de surface et d'aérothermie\"",
+        "slug": "etude-geothermie-de-surface-et-d-aerothermie",
+        "path": "/projets-entreprise/pac/etude-geothermie-de-surface-et-d-aerothermie",
+        "themes": [
+          "energie"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T17:18:09.411000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /aides-entreprise/certificats-economie-energie"
+      },
+      {
+        "datetime": "2026-04-06T17:18:09.436000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Certificats d'économies d'énergie (CEE)"
+      },
+      {
+        "datetime": "2026-04-06T17:18:33.135000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/pac"
+      },
+      {
+        "datetime": "2026-04-06T17:18:33.157000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Pompe à chaleur"
+      },
+      {
+        "datetime": "2026-04-06T17:19:19.982000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/pac/investissement-geothermie-de-surface-et-d-aerothermie"
+      },
+      {
+        "datetime": "2026-04-06T17:19:20+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Investissement \"Géothermie de surface et d'aérothermie\""
+      },
+      {
+        "datetime": "2026-04-06T17:19:21.736000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Pompe à chaleur"
+      },
+      {
+        "datetime": "2026-04-06T17:19:21.743000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/pac"
+      },
+      {
+        "datetime": "2026-04-06T17:19:31.382000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/pac/pret-vert"
+      },
+      {
+        "datetime": "2026-04-06T17:19:31.403000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Prêt Vert"
+      },
+      {
+        "datetime": "2026-04-06T17:19:52.701000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Pompe à chaleur"
+      },
+      {
+        "datetime": "2026-04-06T17:19:52.707000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/pac"
+      },
+      {
+        "datetime": "2026-04-06T17:20:03.595000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/pac"
+      },
+      {
+        "datetime": "2026-04-06T17:20:27.403000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T17:20:36.524000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/pac/etude-geothermie-de-surface-et-d-aerothermie"
+      },
+      {
+        "datetime": "2026-04-06T17:20:36.535000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Étude \"Géothermie de surface et d'aérothermie\""
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "70116133832476",
+    "denomination": "",
+    "naf_section": "S",
+    "naf_code": "96.01B",
+    "region": "Auvergne-Rhône-Alpes",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T07:51:08.940000+00:00",
+    "last_seen": "2026-04-06T07:56:32.996000+00:00",
+    "time_spent_minutes": 5,
+    "themes": [],
+    "content_visited": [],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T07:51:08.940000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T07:56:32.996000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-06",
+    "siret": "43644952950028",
+    "denomination": "MAINTENANCE EQUIPEMENTS COTIERS",
+    "naf_section": "S",
+    "naf_code": "96.01B",
+    "region": "Bretagne",
+    "workforce_min": null,
+    "workforce_max": null,
+    "first_seen": "2026-04-06T13:01:12.799000+00:00",
+    "last_seen": "2026-04-06T13:02:44.823000+00:00",
+    "time_spent_minutes": 1,
+    "themes": [
+      "analyses",
+      "energie",
+      "eau"
+    ],
+    "content_visited": [
+      {
+        "type": "project",
+        "title": "Diagnostic à 360° sur la transition écologique",
+        "slug": "diag-360",
+        "path": "/projets-entreprise/diag-360",
+        "themes": [
+          "analyses"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Plan d’action économies d’énergie",
+        "slug": "plan-action-eco-energie",
+        "path": "/projets-entreprise/plan-action-eco-energie",
+        "themes": [
+          "energie"
+        ]
+      },
+      {
+        "type": "project",
+        "title": "Plan d’action eau",
+        "slug": "plan-action-eau",
+        "path": "/projets-entreprise/plan-action-eau",
+        "themes": [
+          "eau"
+        ]
+      }
+    ],
+    "contact": {
+      "phone": "01 23 45 67 89",
+      "email": "contact@placeholder.fr"
+    },
+    "actions": [
+      {
+        "datetime": "2026-04-06T13:01:12.799000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T13:01:37.546000+00:00",
+        "event": "register_siret_modal",
+        "label": "SIRET saisi (modal)"
+      },
+      {
+        "datetime": "2026-04-06T13:01:43.796000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Diagnostic à 360° sur la transition écologique"
+      },
+      {
+        "datetime": "2026-04-06T13:01:43.820000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/diag-360"
+      },
+      {
+        "datetime": "2026-04-06T13:01:50.961000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T13:01:55.426000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action économies d’énergie"
+      },
+      {
+        "datetime": "2026-04-06T13:01:55.458000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eco-energie"
+      },
+      {
+        "datetime": "2026-04-06T13:02:18.357000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      },
+      {
+        "datetime": "2026-04-06T13:02:30.604000+00:00",
+        "event": "detail_page_view",
+        "label": "Détail consulté → Plan d’action eau"
+      },
+      {
+        "datetime": "2026-04-06T13:02:30.638000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /projets-entreprise/plan-action-eau"
+      },
+      {
+        "datetime": "2026-04-06T13:02:44.823000+00:00",
+        "event": "$pageview",
+        "label": "Page visitée → /"
+      }
+    ]
+  }
+]

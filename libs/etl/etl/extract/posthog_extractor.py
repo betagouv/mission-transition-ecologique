@@ -76,6 +76,19 @@ class PosthogExtractor:
     def get_detail_page_view_events(self, start_date, end_date):
         return self.get_events(["detail_page_view"], start_date, end_date)
 
+    def get_events_by_person_ids(self, person_ids):
+        if not person_ids:
+            return {"results": []}
+        id_list = ", ".join([f"'{pid}'" for pid in person_ids])
+        hogql_query = f"""
+            SELECT uuid, event, properties, timestamp, distinct_id, $session_id, person_id
+            FROM events
+            WHERE person_id IN ({id_list})
+            ORDER BY person_id, timestamp
+            LIMIT 10000
+        """
+        return self.execute_hogql_query(hogql_query)
+
     def get_unique_visitors_detail_page_view_by_date_range(self, start_date, end_date):
         hogql_query = f"""
             SELECT
