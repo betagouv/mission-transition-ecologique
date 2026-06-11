@@ -1,44 +1,34 @@
-titre: Pass tranformation écologique
-promesse: Bénéficiez d'un soutien pour vos travaux d’amélioration écologique
+titre: Contrat Innovation
+promesse: Faites-vous accompagner pour votre projets d'innovation
 description: >-
-  La région Occitanie soutient financièrement vos travaux d’amélioration
-  écologique qui concernent :\
+  La région Occitanie accompagne les phases de développement des projets R&D au
+  service des transformations écologiques et sociales. Ces projets doivent
+  répondre à l'un des critères suivant :
 
-  • La **production de chaleur ou de froid** renouvelable (géothermie, solaire
-  thermique, biomasse, PAC).\
 
-  • La **gestion de l’eau et des déchets** (réutilisation de l'eau de pluie et
-  des eaux usées, compacteur, broyeur de végétaux, système de tri et de
-  recyclage...).\
-
-  • La **sobriété énergétique** (isolation thermique, management de l'énergie,
-  étanchéité des réseaux...).\
-
-  • L'**impact sur l'environnement** (végétalisation, des-imperméabilisation des
-  sols, transports collectifs électrique gratuits pour les touristes...).
-description longue: >-
-  - Un seul Pass Transformation Écologique peut être délivré tous les 3 ans pour
-  chaque entreprise.
-
-  - Assiette éligible minimale de 10 000 €, dépenses dans les 12 mois :
-  investissement en matériel neuf et/ou d’occasion garantis 6 mois minimum d’un
-  montant unitaire de 1000€ minimum, AMO dans la limite de 50% des
-  investissements.
-illustration: images/TEE_ampoule.webp
+  - Mener une **démarche d’innovation intégrant des enjeux d’économie
+  circulaire,\
+    d’éco-conception, d’adaptation au changement climatique, de protection de la\
+    biodiversité**, de low-tech, etc. dans leurs produits, process et services.
+  - Élaborer des **réponses innovantes aux besoins sociaux et environnementaux
+  en\
+    associant les acteurs concernés**, dans les domaines tels que l’énergie,\
+    l’environnement, la santé, l’alimentation, la mobilité, l’habitat, les filières locales, etc
+illustration: images/TEE_eolienne.webp
 opérateur de contact: Région Occitanie
 autres opérateurs:
   - ADEME
-contact question: mailto:secretariat_deet@laregion.fr
-url: https://hubentreprendre.laregion.fr/financement/pass-transformation-ecologique
+contact question: mailto:pda_sfi@laregion.fr
+url: https://hubentreprendre.laregion.fr/financement/contrat-innovation
 nature de l'aide: financement
-montant du financement: 50% des dépenses éligibles dans la limite de 10 000 €
+montant du financement: 40 000 à 500 000 € selon projet et taille de l'entreprise
 objectifs:
   - description: >-
       Consultez la documentation pour vérifier l’éligibilité de votre projet et
       les pièces justificatives à fournir.
     liens:
       - lien: >-
-          https://api.hubentreprendre.laregion.fr/fichiers-dispositifs/fdc1bf26-51c4-4ca3-9210-57b7b66f2186
+          https://api.hubentreprendre.laregion.fr/fichiers-dispositifs/da3c6f0e-fd72-433c-b033-df9b7e9d6b07
         texte: Conditions éligibilité
   - description: >-
       Créez un compte via le Hub Entreprendre Occitanie pour pouvoir déposer
@@ -60,32 +50,21 @@ objectifs:
       conditions et les modalités de versement.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Entre 1 et 19 salariés
+    - Toutes tailles
     - Éligible aux micro-entreprises
   secteur géographique:
     - Occitanie
   secteur d'activité:
-    - |-
-      Sont concernés, les secteurs :\
-      • Industriel.\
-      • De services aux entreprises (BtoB).\
-      • Artisanal.\
-      • Touristique.\
-      • Relevant du secteur agro-alimentaire.
+    - Tous secteurs d'activité
   nombre d'années d'activité:
-    - Au moins 1 an d'activité
+    - Éligible à toutes les entreprises
   autres critères d'éligibilité:
     - >-
-      Sont exclues les entreprises ayant comme activités principales les
-      services financiers, les professions libérales, les banques, les
-      assurances, les services aux particuliers, les sociétés de commerce et de
-      détail (BtoC), les CUMA, les exploitations agricoles et toutes entreprises
-      non éligible au regard du règlement De Minimis en vigueur.
-    - >-
-      Les associations sont éligibles si elles ont un agrément d’Entreprise
-      d’Insertion (EI) ou d’Entreprise Adaptée (EA) ou si le compte de résultat
-      fait apparaître au moins 50% de recettes issues de la vente de biens ou
-      services
+      L'entreprise doit avoir son siège ou un établissement sur le territoire
+      Occitanie exerçant une activité de R&D. L’entreprise bénéficiaire devra
+      réaliser le projet de R&D en Occitanie avec des équipes domiciliées sur le
+      territoire régional (nonobstant le télétravail qui devra être réalisé en
+      région).
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -94,12 +73,7 @@ publicodes:
       - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
-      - a un effectif éligible
       - entreprise . est dans une zone géographique éligible
-  entreprise . a un effectif éligible:
-    toutes ces conditions:
-      - effectif >= 1
-      - effectif <= 19
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
@@ -125,12 +99,11 @@ publicodes:
       - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-      - questionnaire . objectif prioritaire . est rénover mon bâtiment
-      - questionnaire . objectif prioritaire . est la gestion des déchets
-      - >-
-        questionnaire . objectif prioritaire . est diminuer ma consommation
-        d'eau
+      - questionnaire . objectif prioritaire . est la mobilité durable
       - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
       - région = Occitanie

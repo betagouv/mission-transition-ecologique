@@ -487,7 +487,6 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-reemploi-des-emballages?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 80% du coût de l'étude ou 60% de l'investissement",
-    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -56933,7 +56932,7 @@
     "promesse": "Bénéficiez d'un soutien pour vos travaux d’amélioration écologique",
     "description": "La région Occitanie soutient financièrement vos travaux d’amélioration écologique qui concernent :\\\n• La **production de chaleur ou de froid** renouvelable (géothermie, solaire thermique, biomasse, PAC).\\\n• La **gestion de l’eau et des déchets** (réutilisation de l'eau de pluie et des eaux usées, compacteur, broyeur de végétaux, système de tri et de recyclage...).\\\n• La **sobriété énergétique** (isolation thermique, management de l'énergie, étanchéité des réseaux...).\\\n• L'**impact sur l'environnement** (végétalisation, des-imperméabilisation des sols, transports collectifs électrique gratuits pour les touristes...).",
     "description longue": "- Un seul Pass Transformation Écologique peut être délivré tous les 3 ans pour chaque entreprise.\n- Assiette éligible minimale de 10 000 €, dépenses dans les 12 mois : investissement en matériel neuf et/ou d’occasion garantis 6 mois minimum d’un montant unitaire de 1000€ minimum, AMO dans la limite de 50% des investissements.",
-    "illustration": "images/TEE_energie_verte.webp",
+    "illustration": "images/TEE_ampoule.webp",
     "opérateur de contact": "Région Occitanie",
     "autres opérateurs": [
       "ADEME"
@@ -56987,6 +56986,10 @@
       ],
       "nombre d'années d'activité": [
         "Au moins 1 an d'activité"
+      ],
+      "autres critères d'éligibilité": [
+        "Sont exclues les entreprises ayant comme activités principales les services financiers, les professions libérales, les banques, les assurances, les services aux particuliers, les sociétés de commerce et de détail (BtoC), les CUMA, les exploitations agricoles et toutes entreprises non éligible au regard du règlement De Minimis en vigueur.",
+        "Les associations sont éligibles si elles ont un agrément d’Entreprise d’Insertion (EI) ou d’Entreprise Adaptée (EA) ou si le compte de résultat fait apparaître au moins 50% de recettes issues de la vente de biens ou services"
       ]
     },
     "eligibilityData": {
@@ -57175,6 +57178,504 @@
       }
     },
     "id": "pass-transformation-ecologique-occitanie",
+    "type": "tee"
+  },
+  {
+    "titre": "Contrat Innovation",
+    "promesse": "Faites-vous accompagner pour votre projets d'innovation",
+    "description": "La région Occitanie accompagne les phases de développement des projets R&D au service des transformations écologiques et sociales. Ces projets doivent répondre à l'un des critères suivant :\n\n- Mener une **démarche d’innovation intégrant des enjeux d’économie circulaire,\\\n  d’éco-conception, d’adaptation au changement climatique, de protection de la\\\n  biodiversité**, de low-tech, etc. dans leurs produits, process et services.\n- Élaborer des **réponses innovantes aux besoins sociaux et environnementaux en\\\n  associant les acteurs concernés**, dans les domaines tels que l’énergie,\\\n  l’environnement, la santé, l’alimentation, la mobilité, l’habitat, les filières locales, etc",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Région Occitanie",
+    "autres opérateurs": [
+      "ADEME"
+    ],
+    "contact question": "mailto:pda_sfi@laregion.fr",
+    "url": "https://hubentreprendre.laregion.fr/financement/contrat-innovation",
+    "nature de l'aide": "financement",
+    "montant du financement": "40 000 à 500 000 € selon projet et taille de l'entreprise",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation pour vérifier l’éligibilité de votre projet et les pièces justificatives à fournir.",
+        "liens": [
+          {
+            "lien": "https://api.hubentreprendre.laregion.fr/fichiers-dispositifs/da3c6f0e-fd72-433c-b033-df9b7e9d6b07",
+            "texte": "Conditions éligibilité"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte via le Hub Entreprendre Occitanie pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://auth.mon-entreprise.laregion.fr/auth/realms/gdi-entreprise/protocol/openid-connect/auth?client_id=gdi-entreprise&redirect_uri=https%3A%2F%2Fmon-entreprise.laregion.fr%2F%3Fservice%3Dhubentreprendre%26redirect_uri%3Dhttps%3A%2F%2Fhubentreprendre.laregion.fr&state=4793fe8c-efc4-417f-bcca-fe85da8d2310&response_mode=fragment&response_type=code&scope=openid&nonce=3ecad457-8b13-41bd-9d7a-e9a64936aede",
+            "texte": "Créer mon compte"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://hubentreprendre.laregion.fr/",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "Votre demande d'aide est examinée. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Occitanie"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "L'entreprise doit avoir son siège ou un établissement sur le territoire Occitanie exerçant une activité de R&D. L’entreprise bénéficiaire devra réaliser le projet de R&D en Occitanie avec des équipes domiciliées sur le territoire régional (nonobstant le télétravail qui devra être réalisé en région)."
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Occitanie"
+        ]
+      },
+      "priorityObjectives": [
+        "mobility",
+        "energy",
+        "rh",
+        "eco-design",
+        "biodiversite"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la mobilité durable",
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est former ou recruter",
+          "questionnaire . objectif prioritaire . est l'écoconception",
+          "questionnaire . objectif prioritaire . est préserver la biodiversité"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Occitanie"
+        ]
+      }
+    },
+    "id": "contrat-innovation-occitanie",
+    "type": "tee"
+  },
+  {
+    "titre": "Contrat entreprise d'avenir",
+    "promesse": "Faites-vous accompagner dans vos projets de transformation environnementale et générateurs d'emplois",
+    "description": "Vous souhaitez engager votre entreprise vers une **démarche de transformation environnementale et sociale**, et à ce titre, créer de **nouveaux emplois** ou **relocaliser une production sous-traitée**. La région Occitanie apporte son aide financière aux projets de :\n\n- Adaptation au changement climatique avec la mise en place de nouveaux process de\\\n  production ou de services plus sobres en consommation de ressources (eau, énergie, matières premières d’extraction ou agricoles…) et générant moins d’émissions polluantes et de déchets.\n- Transition vers des systèmes de productions énergétiques durables (hors photovoltaïque).\n- Préservation des ressources par le choix des matériaux, par la réduction,\\\n  l’élimination ou le réemploi des emballages, la réduction des besoins et ressources liées à l’entretien et à la maintenance.\n- Augmentation de la durabilité et réemploi des produits (fiabilité, démontabilité, réparabilité, séparabilité et facilitation du tri en fin de vie).\n- Démarches d’économie circulaire et transition agroécologique.\n- Amélioration des conditions de travail (exosquelette, réduction de la pénibilité...)\n- Démarche globale de mesure et de pilotage des impacts de l’entreprise (sociaux,\\\n  environnementaux, territoriaux…).",
+    "description longue": "Les projets feront l’objet d’une analyse globale qui appréciera notamment les aspects suivants :\\\n• Impact du projet sur le niveau de transformation de l’entreprise.\\\n• Impact économique du projet sur le bassin d’emploi concerné (emplois directs et indirects, sous-traitance locale, fiscalité, etc.).\\\n• Impact du projet sur la filière.\\\n• Incitativité de l’aide régionale au regard de la situation financière de l’entreprise (fonds\\\npropres, CAF…) et de sa politique de partage de la valeur (dividendes, niveau de rémunération des actionnaires versus niveau d’aide sollicité).\\\n• Diagnostic Impact Score de l’entreprise et impact du projet sur son évolution (emploi des séniors, égalité femme/homme, tutorat, etc.).\\\n• Engagement social de l’entreprise vis-à-vis de la jeunesse : politique d’accueil de stagiaires de 3ème, stage en alternance, tutorat, etc.\\\n• Pour l’immobilier : prise en compte dans le projet de la limitation de l’artificialisation des sols, la gestion de l’eau et/ou l’implantation dans des friches industrielles.",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "Région Occitanie",
+    "autres opérateurs": [
+      "ADEME"
+    ],
+    "contact question": "mailto:contact-hub@laregion.fr",
+    "url": "https://hubentreprendre.laregion.fr/financement/contrat-entreprise-davenir",
+    "nature de l'aide": "financement",
+    "montant du financement": "dans un maximum de 200 000 € (subvention) ou 300 000 € (avance remboursable)",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation pour vérifier l’éligibilité de votre projet et les pièces justificatives à fournir.",
+        "liens": [
+          {
+            "lien": "https://api.hubentreprendre.laregion.fr/fichiers-dispositifs/b3a6db7c-f029-4e66-bd6a-7f9ccd9f27a0",
+            "texte": "Conditions éligibilité"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte via le Hub Entreprendre Occitanie pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://auth.mon-entreprise.laregion.fr/auth/realms/gdi-entreprise/protocol/openid-connect/auth?client_id=gdi-entreprise&redirect_uri=https%3A%2F%2Fmon-entreprise.laregion.fr%2F%3Fservice%3Dhubentreprendre%26redirect_uri%3Dhttps%3A%2F%2Fhubentreprendre.laregion.fr&state=4793fe8c-efc4-417f-bcca-fe85da8d2310&response_mode=fragment&response_type=code&scope=openid&nonce=3ecad457-8b13-41bd-9d7a-e9a64936aede",
+            "texte": "Créer mon compte"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre dossier : informations administratives, description du projet, détails techniques et financiers, etc. À ce stade, votre projet ne doit pas avoir commencé !",
+        "liens": [
+          {
+            "lien": "https://hubentreprendre.laregion.fr/",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "Votre demande d'aide est examinée. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Jusqu'à 500 salariés",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Occitanie"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "L’entreprise ne pourra solliciter que 2 Contrats Entreprise d’Avenir sur une période de 5 ans à l’issue de la dernière date d’attribution."
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "maxEmployees": "499",
+        "allowedRegion": [
+          "Occitanie"
+        ]
+      },
+      "priorityObjectives": [
+        "waste",
+        "water",
+        "energy",
+        "rh",
+        "environmental",
+        "eco-design"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "a un effectif éligible",
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . a un effectif éligible": {
+        "toutes ces conditions": [
+          "effectif <= 499"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est la gestion des déchets",
+          "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau",
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est former ou recruter",
+          "questionnaire . objectif prioritaire . est mon impact environnemental",
+          "questionnaire . objectif prioritaire . est l'écoconception"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Occitanie"
+        ]
+      }
+    },
+    "id": "contrat-entreprise-d-avenir",
     "type": "tee"
   }
 ]
