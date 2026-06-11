@@ -9,6 +9,7 @@ url: https://www.ecologie.gouv.fr/politiques-publiques/coup-pouce-chauffage
 nature de l'aide: financement
 montant du financement: Variable selon le bâtiment et le type d'équipement
 activable en autonomie: oui
+ouvert aux administrations publiques: oui
 objectifs:
   - description: >-
       Faites le test “Votre bâtiment est-il raccordable à un réseau de chaleur
