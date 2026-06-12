@@ -1,5 +1,5 @@
 import { Result } from 'true-myth'
-import type { CityToRegionMappingType, EstablishmentRepository, NafRepository } from './spi'
+import type { AdministrationClassifierType, CityToRegionMappingType, EstablishmentRepository, NafRepository } from './spi'
 import { Establishment, EstablishmentDetails, SearchResult, Siret } from './types'
 import { EstablishmentFront, EstablishmentSearch, LegalCategory, SiretValidator, StructureSize } from '@tee/common'
 
@@ -7,11 +7,18 @@ export default class EstablishmentFeatures {
   private readonly _establishmentRepository: EstablishmentRepository
   private readonly _cityToRegionMapping: CityToRegionMappingType
   private readonly _nafRepository: NafRepository
+  private readonly _administrationClassifier: AdministrationClassifierType
 
-  constructor(establishmentRepository: EstablishmentRepository, cityToRegionMapping: CityToRegionMappingType, nafSearch: NafRepository) {
+  constructor(
+    establishmentRepository: EstablishmentRepository,
+    cityToRegionMapping: CityToRegionMappingType,
+    nafSearch: NafRepository,
+    administrationClassifier: AdministrationClassifierType
+  ) {
     this._establishmentRepository = establishmentRepository
     this._cityToRegionMapping = cityToRegionMapping
     this._nafRepository = nafSearch
+    this._administrationClassifier = administrationClassifier
   }
 
   public async search(query: string, resultCount: number): Promise<Result<EstablishmentSearch, Error>> {
@@ -35,6 +42,7 @@ export default class EstablishmentFeatures {
 
     let establishment = this._addRegionToEstablishment(establishmentResult.value)
     establishment = this._addSectorDetailsToEstablishment(establishment)
+    establishment = this._addAdministrationToEstablishment(establishment)
 
     return Result.ok(establishment)
   }
@@ -65,6 +73,21 @@ export default class EstablishmentFeatures {
     return { ...establishment, region: maybeRegion.value }
   }
 
+  private _addAdministrationToEstablishment(establishment: Establishment): Establishment {
+    // Keep the value already provided by the search API (richer: includes whitelist)
+    if (establishment.isAdministration !== undefined) {
+      return establishment
+    }
+    return {
+      ...establishment,
+      isAdministration: this._administrationClassifier.isAdministration(
+        establishment.legalCategory,
+        establishment.siren,
+        establishment.etatAdministratif
+      )
+    }
+  }
+
   private _addSectorDetailsToEstablishment(establishment: Establishment): Establishment {
     const code = establishment.nafCode
     const maybeLabel = this._nafRepository.getLabel(code)
@@ -93,7 +116,8 @@ export default class EstablishmentFeatures {
       legalCategory: establishment.legalCategory,
       structure_size: this._computeBestStructureSizeGuess(establishment),
       secteur: establishment.nafLabel || '',
-      creationDate: establishment.creationDate
+      creationDate: establishment.creationDate,
+      isAdministration: establishment.isAdministration
     }
 
     return result
@@ -110,6 +134,7 @@ export default class EstablishmentFeatures {
     const transformedEstablishments = result.establishments.map((establishmentDetails) => {
       let establishment = this._addRegionToEstablishment(establishmentDetails)
       establishment = this._addSectorDetailsToEstablishment(establishment)
+      establishment = this._addAdministrationToEstablishment(establishment)
       return this._convertEstablishmentToFront(establishment)
     })
     return { resultCount: result.resultCount, establishments: transformedEstablishments }

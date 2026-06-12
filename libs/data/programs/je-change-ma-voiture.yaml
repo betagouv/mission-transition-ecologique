@@ -12,6 +12,7 @@ url: https://jechangemavoiture.gouv.fr/jcmv/aide-achat.html?content=aides-locale
 nature de l'aide: financement
 montant du financement: Selon votre localisation
 activable en autonomie: oui
+ouvert aux administrations publiques: oui
 objectifs:
   - description: Rendez-vous sur le service public numérique "Je change ma voiture"
     liens:

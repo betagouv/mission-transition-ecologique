@@ -40,6 +40,7 @@ export interface EligibilityData {
     minEmployees?: number
     maxEmployees?: number
     excludeMicroentrepreneur?: boolean
+    openToPublicAdministration?: boolean
     allowedNafSections: string[]
     allowedRegion?: string[]
   }

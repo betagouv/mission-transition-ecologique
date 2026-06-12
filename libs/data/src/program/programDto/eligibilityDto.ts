@@ -18,6 +18,7 @@ export class EligibilityDto {
     this._setPeriodValidity()
     this._setEmployees()
     this._setLegalCategory()
+    this._setPublicAdministration()
     this._setSector()
     this._setGeographicArea()
     this._setObjectives()
@@ -46,6 +47,12 @@ export class EligibilityDto {
   private _setLegalCategory() {
     if (this._program.microEntrepreneur.toLowerCase() != 'oui') {
       this._eligibilityData.company.excludeMicroentrepreneur = true
+    }
+  }
+
+  private _setPublicAdministration() {
+    if (this._program['Est ouvert aux administrations publiques']) {
+      this._eligibilityData.company.openToPublicAdministration = true
     }
   }
 

@@ -65,6 +65,9 @@ export class ProgramDto {
     if (this.rawProgram['Dispositif activable en autonomie']) {
       this.programData['activable en autonomie'] = 'oui'
     }
+    if (this.rawProgram['Est ouvert aux administrations publiques']) {
+      this.programData['ouvert aux administrations publiques'] = 'oui'
+    }
     await setObjectives(this)
     await setEligibilityTexts(this)
     this.programData['eligibilityData'] = new EligibilityDto(this.rawProgram, this.logger).setEligibility()

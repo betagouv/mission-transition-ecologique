@@ -1,6 +1,12 @@
 import EstablishmentFeatures from '../domain/establishmentFeatures'
 import { getEstablishment } from '../infrastructure/api/sirene/sirene'
-import { CityToRegionMappingType, EstablishmentRepository, NafRepository as NafRepositoryType } from '../domain/spi'
+import {
+  AdministrationClassifierType,
+  CityToRegionMappingType,
+  EstablishmentRepository,
+  NafRepository as NafRepositoryType
+} from '../domain/spi'
+import { AdministrationClassifier } from '../infrastructure/json/administrationClassifier'
 import type { Establishment, Siret } from '../domain/types'
 import { Result } from 'true-myth'
 import { CityToRegionMapping } from '../infrastructure/json/cityToRegionMapping'
@@ -15,7 +21,8 @@ export default class EstablishmentService {
     this.establishmentFeatures = new EstablishmentFeatures(
       this._getEstablishmentRepository(),
       this._getCityToRegionMapping(),
-      this._getNafRepository()
+      this._getNafRepository(),
+      this._getAdministrationClassifier()
     )
   }
 
@@ -46,5 +53,9 @@ export default class EstablishmentService {
 
   private _getNafRepository(): NafRepositoryType {
     return new NafRepository()
+  }
+
+  private _getAdministrationClassifier(): AdministrationClassifierType {
+    return new AdministrationClassifier()
   }
 }

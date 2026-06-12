@@ -12,10 +12,10 @@
                 >
                   {{ overline }}
                 </p>
-                <h1 class="fr-mb-6v fr-text--blue-900">
-                  Découvrez vos aides éligibles
-                  <span class="fr-display-lg--block">parmi <span class="fr-text--green-agir">tous les financeurs publics</span></span>
-                </h1>
+                <h1
+                  class="fr-mb-6v fr-text--blue-900"
+                  v-html="title"
+                ></h1>
               </div>
               <div class="fr-col-12 fr-col-lg-10">
                 <h2 class="fr-text--lg fr-text--regular fr-text--blue-900">
@@ -44,11 +44,14 @@
 interface Props {
   overline?: string
   buttonLabel?: string
+  title?: string
 }
 
 withDefaults(defineProps<Props>(), {
   buttonLabel: 'Je trouve les aides <span class="fr-display--block fr-display-sm--inline">pour mon projet</span>',
-  overline: undefined
+  overline: undefined,
+  title:
+    'Découvrez vos aides éligibles <span class="fr-display-lg--block">parmi <span class="fr-text--green-agir">tous les financeurs publics</span></span>'
 })
 
 defineEmits<{

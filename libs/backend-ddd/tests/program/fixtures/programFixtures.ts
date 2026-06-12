@@ -307,6 +307,59 @@ export const programWithMultipleObjectives: ProgramType = {
   }
 }
 
+export const programOpenToPublicAdministration: ProgramType = {
+  id: 'program-open-to-public-administration',
+  titre: 'Programme ouvert aux administrations',
+  promesse: 'Ouvert aux administrations publiques',
+  description: 'Programme accessible aux administrations',
+  illustration: 'images/test.png',
+  objectifs: [],
+  'opérateur de contact': 'ADEME',
+  "nature de l'aide": ProgramAidType.fund,
+  "coût de l'accompagnement": '3000 €',
+  "conditions d'éligibilité": {
+    "taille de l'entreprise": ['Toutes tailles', 'Éligible aux micro-entreprises'],
+    'secteur géographique': ['France'],
+    "secteur d'activité": ['Tous secteurs'],
+    "nombre d'années d'activité": ['Aucune restriction']
+  },
+  publicodes: {
+    'entreprise . est ciblée': {}
+  },
+  eligibilityData: {
+    company: {
+      allowedNafSections: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U'],
+      openToPublicAdministration: true
+    }
+  }
+}
+
+export const programClosedToPublicAdministration: ProgramType = {
+  id: 'program-closed-to-public-administration',
+  titre: 'Programme entreprises',
+  promesse: 'Réservé aux entreprises',
+  description: 'Programme non ouvert aux administrations',
+  illustration: 'images/test.png',
+  objectifs: [],
+  'opérateur de contact': 'ADEME',
+  "nature de l'aide": ProgramAidType.fund,
+  "coût de l'accompagnement": '3000 €',
+  "conditions d'éligibilité": {
+    "taille de l'entreprise": ['Toutes tailles', 'Éligible aux micro-entreprises'],
+    'secteur géographique': ['France'],
+    "secteur d'activité": ['Tous secteurs'],
+    "nombre d'années d'activité": ['Aucune restriction']
+  },
+  publicodes: {
+    'entreprise . est ciblée': {}
+  },
+  eligibilityData: {
+    company: {
+      allowedNafSections: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U']
+    }
+  }
+}
+
 export const allFixturePrograms: ProgramType[] = [
   validProgram,
   programWithDateValidity,

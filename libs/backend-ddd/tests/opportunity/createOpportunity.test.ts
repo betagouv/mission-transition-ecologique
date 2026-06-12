@@ -1,7 +1,12 @@
 import { NAF1 } from '@tee/common'
 import { Maybe, Result } from 'true-myth'
 import EstablishmentFeatures from '../../src/establishment/domain/establishmentFeatures'
-import { CityToRegionMappingType, EstablishmentRepository, NafRepository } from '../../src/establishment/domain/spi'
+import {
+  AdministrationClassifierType,
+  CityToRegionMappingType,
+  EstablishmentRepository,
+  NafRepository
+} from '../../src/establishment/domain/spi'
 import { MailerManager } from '../../src/opportunity/domain/spi'
 import OpportunityFeatures from '../../src/opportunity/domain/opportunityFeatures'
 import OpportunityHubFeatures from '../../src/opportunityHub/domain/opportunityHubFeatures'
@@ -113,13 +118,18 @@ const nafRepositoryMock: NafRepository = {
   searchNAF: () => Result.ok([{ codeNAF: '62.01Z', secteur: 'Programmation informatique', codeNAF1: NAF1.J }])
 }
 
+const administrationClassifierMock: AdministrationClassifierType = {
+  isAdministration: () => false
+}
+
 const programFeaturesMock: ProgramFeatures = new ProgramFeatures(dummyProgramRepository)
 const projectFeaturesMock: ProjectFeatures = new ProjectFeatures(dummyProjectRepository, dummyProjectEligibility, dummyProjectSorter)
 const opportunityHubFeaturesMock: OpportunityHubFeatures = new OpportunityHubFeatures([new PlaceDesEntreprisesMock()])
 const establishmentFeaturesMock: EstablishmentFeatures = new EstablishmentFeatures(
   dummyEstablishmentRepository,
   cityToRegionMappingMock,
-  nafRepositoryMock
+  nafRepositoryMock,
+  administrationClassifierMock
 )
 
 const makeCreateOpportunity = (

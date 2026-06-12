@@ -254,6 +254,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/pacte-entreprises-accompagnements-actr-pas-pas-et-actr-evaluation-des-structures-non-industrielles",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 30 000 €",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Choisissez le prestataire qui va vous accompagner pour mener l'étude méthodologie ACT.",
@@ -321,7 +322,8 @@
           "T",
           "U"
         ],
-        "excludeMicroentrepreneur": true
+        "excludeMicroentrepreneur": true,
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "13/11/2023",
@@ -487,6 +489,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-reemploi-des-emballages?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 80% du coût de l'étude ou 60% de l'investissement",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -566,6 +569,7 @@
           "R",
           "S"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bourgogne-Franche-Comté",
@@ -1849,6 +1853,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/pacte-entreprises-booster-entreprises-reduire-votre-facture-energetique-et-gagner-en-valeur-verte",
     "nature de l'aide": "financement",
     "montant du financement": "Selon le projet",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -1919,7 +1924,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "01/01/2023",
@@ -2500,6 +2506,7 @@
     "nature de l'aide": "financement",
     "montant du financement": "Variable selon le bâtiment et le type d'équipement",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Faites le test “Votre bâtiment est-il raccordable à un réseau de chaleur ?”. Si un réseau de chaleur passe à proximité de votre adresse, vous avez le droit à une prime pour le raccordement de vos locaux à ce réseau.",
@@ -2575,7 +2582,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "priorityObjectives": [
         "building",
@@ -6173,6 +6181,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/soutien-leconomie-de-la-fonctionnalite-et-de-la-cooperation?cible=79",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -6253,6 +6262,7 @@
           "T",
           "U"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Bourgogne-Franche-Comté",
           "Bretagne",
@@ -7359,6 +7369,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-daide-la-decision-pour-les-projets-de-geothermie-de-surface-daerothermie-ou-de-thalassothermie",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -7435,7 +7446,8 @@
           "I",
           "L",
           "Q"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "01/01/2023",
@@ -8324,6 +8336,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-decoconception-des-produits-et-des-services",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -8404,6 +8417,7 @@
           "S",
           "T"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bourgogne-Franche-Comté",
@@ -9106,6 +9120,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/amelioration-qualite-lair-territoires-ppa-depassements-recents?cible=79&region=35",
     "nature de l'aide": "financement",
     "montant du financement": "Variable selon projet",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet.",
@@ -9187,6 +9202,7 @@
           "T",
           "U"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Île-de-France",
@@ -10049,6 +10065,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/audit-et-rehabilitation-dinstallations-solaires-thermiques-collectives",
     "nature de l'aide": "étude",
     "montant du financement": "Selon la surface et l'ancienneté de l’installation solaire, dans un maximum de 30 000€ HT",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -10117,6 +10134,7 @@
           "Q",
           "S"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bretagne",
@@ -10298,6 +10316,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-sur-les-reseaux-de-chaleur-ou-de-froid-alimentes-par-des-enr-etou-enrr",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -10367,7 +10386,8 @@
           "D",
           "E",
           "Q"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "01/01/2023",
@@ -10512,6 +10532,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-de-faisabilite-dinstallation-solaire-thermique",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -10599,6 +10620,7 @@
           "T",
           "U"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bourgogne-Franche-Comté",
@@ -10806,6 +10828,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-daide-la-decision-pour-les-projets-de-geothermie-profonde",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 70% du coût de l'étude, dans un maximum de 100 000 €",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -10882,7 +10905,8 @@
           "I",
           "L",
           "Q"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "01/01/2023",
@@ -12169,6 +12193,7 @@
     "nature de l'aide": "formation",
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "3h",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Prenez connaissance du programme de la formation.",
@@ -12231,7 +12256,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "end": "31/12/2026"
@@ -12386,6 +12412,7 @@
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "7h",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Avant de démarrer la formation, testez vos connaissances avec 5 questions sur le changement climatique, ses enjeux et les moyens d’agir.",
@@ -12451,7 +12478,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "priorityObjectives": [
         "rh",
@@ -14027,6 +14055,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-et-de-froid-partir-de-boucle-deau-temperee-geothermique",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -14104,7 +14133,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "01/01/2023",
@@ -14497,6 +14527,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/realisation-dinstallations-de-production-de-chaleur-biomassebois?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Selon projet",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -14578,7 +14609,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "01/01/2023",
@@ -14937,6 +14969,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/contrat-chaleur-renouvelable",
     "nature de l'aide": "financement",
     "montant du financement": "Selon le type d'investissement",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -15015,7 +15048,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "01/01/2023",
@@ -15680,6 +15714,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/investissements-decoconception-pour-ameliorer-la-performance-environnementale?cible=79",
     "nature de l'aide": "financement",
     "montant du financement": "Entre 15 % à 60 % selon le projet, dans un maximum de 300 000 €",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -15756,6 +15791,7 @@
           "S",
           "T"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Bourgogne-Franche-Comté",
           "Bretagne",
@@ -15958,6 +15994,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-et-de-froid-renouvelable-partir-de-geothermie-de-surface-daerothermie-ou-de-thalassothermie",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -16035,7 +16072,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "01/01/2023",
@@ -16197,6 +16235,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-production-de-chaleur-partir-de-geothermie-profonde",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -16274,7 +16313,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "01/01/2023",
@@ -16436,6 +16476,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/gestion-des-biodechets-des-acteurs-economiques",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 60 % maximum",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -16503,6 +16544,7 @@
           "N",
           "Q"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bourgogne-Franche-Comté",
@@ -17139,6 +17181,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installation-de-pompes-chaleur-solaire-pour-la-production-deau-chaude",
     "nature de l'aide": "financement",
     "montant du financement": "Aide forfaitaire de 25 à 38 €/MWh",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -17216,7 +17259,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "01/01/2023",
@@ -18393,6 +18437,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/extension-et-creation-de-reseaux-de-chaleur-ou-de-froid",
     "nature de l'aide": "financement",
     "montant du financement": "Aide calculée au cas par cas",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -18453,7 +18498,8 @@
           "D",
           "E",
           "Q"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "01/01/2023",
@@ -18598,6 +18644,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installation-de-production-deau-chaude-solaire-thermique",
     "nature de l'aide": "financement",
     "montant du financement": "Forfaitaire en fonction de la zone géographique et de la surface de l’installation",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -18674,7 +18721,8 @@
           "R",
           "S",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "01/01/2023",
@@ -19071,6 +19119,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installations-de-systemes-solaires-combines",
     "nature de l'aide": "financement",
     "montant du financement": "Selon la chaleur produite",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -19145,7 +19194,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "01/01/2023",
@@ -23633,6 +23683,7 @@
     "url": "https://www.service-public.fr/particuliers/vosdroits/F36875",
     "nature de l'aide": "financement",
     "montant du financement": "jusqu'à 9 000 €",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Faites transformer le moteur thermique de votre véhicule en moteur électrique à batterie ou à pile à combustible. Votre voiture doit avoir plus de 5 ans."
@@ -23683,7 +23734,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "priorityObjectives": [
         "mobility"
@@ -25291,6 +25343,7 @@
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "10min",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Obtenez votre empreinte carbone et empreinte eau, grâce au calculateur \"Nos Gestes Climat\".",
@@ -25356,7 +25409,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "priorityObjectives": [
         "environmental"
@@ -28544,6 +28598,7 @@
     "url": "https://www.maregionsud.fr/vos-aides/detail/cedre-premiers-pas",
     "nature de l'aide": "étude",
     "montant du financement": "Subvention de 3 000 € sur la base d'une facture d'un montant minimum de 3 750 € HT",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Prenez contact avec un conseiller afin de vérifier l'éligibilité de votre projet.",
@@ -28626,6 +28681,7 @@
           "S",
           "U"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Provence-Alpes-Côte d'Azur"
         ]
@@ -28794,6 +28850,7 @@
     "url": "https://www.maregionsud.fr/vos-aides/detail/cedre-investissement",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 70% des dépenses éligibles, dans un maximum de 100 000 €",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation pour vérifier l’éligibilité de votre projet ou contactez un conseiller..",
@@ -28871,6 +28928,7 @@
           "U"
         ],
         "maxEmployees": "249",
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Provence-Alpes-Côte d'Azur"
         ]
@@ -29707,6 +29765,7 @@
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 70% maximum des dépenses éligibles retenues, dans un maximum de 40 000 €",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Déposez votre demande de subvention tout au long de l’année sur le portail Région dédié. À ce stade, votre projet ne doit pas avoir commencé !",
@@ -29760,6 +29819,7 @@
           "R",
           "S"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Provence-Alpes-Côte d'Azur"
         ]
@@ -29915,6 +29975,7 @@
     "url": "https://www.maregionsud.fr/vos-aides/detail/plan-solaire-dispositif-pare-pour-le-solaire",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 40% des dépenses éligibles, dans un maximum de 200 000 € HT par site",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Prenez contact avec un conseiller afin de vérifier l'éligibilité de votre projet."
@@ -29979,6 +30040,7 @@
           "T",
           "U"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Provence-Alpes-Côte d'Azur"
         ]
@@ -30141,6 +30203,7 @@
     "nature de l'aide": "financement",
     "montant du financement": "15 à 25 % de l’assiette éligible du projet, dans un maximum de 100 000 €",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Faites le dépôt de la demande par voie dématérialisée sur le site de la Région Sud. Choisissez la \"subvention pour investissement\".",
@@ -30213,6 +30276,7 @@
           "U"
         ],
         "excludeMicroentrepreneur": true,
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Provence-Alpes-Côte d'Azur"
         ]
@@ -30619,6 +30683,7 @@
     "url": "https://www.maregionsud.fr/vos-aides/detail/infrastructures-de-recharges-intelligentes-pour-vehicules-electriques",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 20 000 € HT par borne ou 100 000 € HT par projet",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Prenez contact avec un conseiller afin de vérifier l'éligibilité de votre projet."
@@ -30659,6 +30724,7 @@
           "R",
           "S"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Provence-Alpes-Côte d'Azur"
         ]
@@ -30806,6 +30872,7 @@
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "2 à 3 ans",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Découvrez le programme \"Entreprises engagées pour la nature\" sur le site de l'OFB et téléchargez la Charte d’engagement au programme.",
@@ -30880,7 +30947,8 @@
           "R",
           "S",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "15/09/2019"
@@ -31036,6 +31104,7 @@
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "Plusieurs années",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Prenez connaissance et signez la charte « zéro déchet plastique » pour engager votre entreprise dans cette démarche.",
@@ -31120,6 +31189,7 @@
           "T",
           "U"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Provence-Alpes-Côte d'Azur"
         ]
@@ -31281,6 +31351,7 @@
     "url": "https://www.arbe-regionsud.org/203-demarche-mecenaturel.html",
     "nature de l'aide": "avantage fiscal",
     "montant de l'avantage fiscal": "Réduction de 60 % du montant du don",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Parcourez la documentation du dispositif Mécénaturel, et prenez contact avec un conseiller pour vous accompagner dans votre démarche de mécénat environnemental.",
@@ -31341,6 +31412,7 @@
           "T",
           "U"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Provence-Alpes-Côte d'Azur"
         ]
@@ -32070,6 +32142,7 @@
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "De 6h à 9h",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Créez votre compte sur la plateforme MOOC de l'association LPO.",
@@ -32132,7 +32205,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "priorityObjectives": [
         "rh",
@@ -32742,6 +32816,7 @@
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 50% du coût, dans un maximum de 350 000 € HT",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Prenez connaissance des conditions et des règles liées à cette subvention",
@@ -32818,6 +32893,7 @@
           "U"
         ],
         "maxEmployees": "4999",
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Bourgogne-Franche-Comté"
         ]
@@ -32986,6 +33062,7 @@
     "url": "https://www.grandest.fr/vos-aides-regionales/soutien-au-photovoltaique/",
     "nature de l'aide": "financement",
     "montant du financement": "Variable selon projet",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de la Région Grand Est pour vérifier l’éligibilité de votre projet.",
@@ -33062,6 +33139,7 @@
           "T",
           "U"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Grand Est"
         ]
@@ -33709,6 +33787,7 @@
     "url": "https://www.bretagne.bzh/aides/fiches/pass-transitions/",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 50 % des dépenses éligibles, dans un maximum de 50 000 €",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation du Pass Transition ou contactez un conseiller pour vérifier l'éligibilité de votre projet.",
@@ -33772,6 +33851,7 @@
           "S"
         ],
         "maxEmployees": "49",
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Bretagne"
         ]
@@ -34196,6 +34276,7 @@
     "montant du prêt": "De 10 000 € à 500 000 €",
     "durée du prêt": "De 5 à 7 ans (dont 2 ans maximum de différé)",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Vérifiez l’éligibilité de votre projet et les modalités du prêt.",
@@ -34307,6 +34388,7 @@
         ],
         "maxEmployees": "249",
         "excludeMicroentrepreneur": true,
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Île-de-France"
         ]
@@ -34494,6 +34576,7 @@
     "url": "https://www.centre-valdeloire.fr/le-guide-des-aides-de-la-region-centre-val-de-loire/cap-te-transition-ecologique",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 50% de l'étude et jusqu'à 30% de l'investissement jusqu'à 200 000 € HT",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Prenez contact par mail avec un conseiller de la Région Centre-Val de Loire en expliquant votre besoin d'accompagnement.",
@@ -34552,6 +34635,7 @@
         ],
         "maxEmployees": "249",
         "excludeMicroentrepreneur": true,
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Centre-Val de Loire"
         ]
@@ -35324,6 +35408,7 @@
     "url": "https://www.normandie.fr/impulsion-environnement",
     "nature de l'aide": "financement",
     "montant du financement": "Variable selon le projet",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez le règlement du dispositif \"Impulsion environnement\" pour vérifier l'éligibilité de votre projet.",
@@ -35385,6 +35470,7 @@
           "R",
           "S"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Normandie"
         ]
@@ -37086,6 +37172,7 @@
     "coût de l'accompagnement": "Gratuite",
     "durée de l'accompagnement": "10 minutes",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Visitez le site Impact CO2 et découvrez la collection de simulateurs, contenus et infographies thématiques. Sélectionnez l'outil qui vous intéresse.",
@@ -37151,7 +37238,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "end": "31/12/2099"
@@ -38807,6 +38895,7 @@
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 30% des dépenses éligibles, dans un maximum de 200 000 €",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Prenez contact avec un conseiller de l'Agence de Développement Economique de la Corse afin de vous accompagner dans votre démarche et obtenir les documents à compléter pour déposer votre demande.",
@@ -38866,6 +38955,7 @@
           "U"
         ],
         "maxEmployees": "249",
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Corse"
         ]
@@ -39941,6 +40031,7 @@
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuite",
     "durée de l'accompagnement": "1 à 2 jours répartis sur 3 mois",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Exprimez votre intérêt en contactant un conseiller par mail.",
@@ -40002,6 +40093,7 @@
           "T",
           "U"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Grand Est",
@@ -40419,6 +40511,7 @@
     "nature de l'aide": "financement",
     "montant du financement": "Selon votre localisation",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Rendez-vous sur le service public numérique \"Je change ma voiture\"",
@@ -40487,7 +40580,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "priorityObjectives": [
         "mobility"
@@ -40634,6 +40728,7 @@
     "coût de l'accompagnement": "Selon vos projets",
     "durée de l'accompagnement": "3 jours, répartis sur trois ans",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez le site Mobili’Pro pour mieux connaître le dispositif.",
@@ -40718,7 +40813,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "priorityObjectives": [
         "mobility"
@@ -41384,6 +41480,7 @@
     "nature de l'aide": "financement",
     "montant du financement": "En fonction du projet",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Identifiez une opération éligible correspondant à votre activité, en consultant les fiches par secteur disponibles sur le site du ministère de la Transition écologique.",
@@ -41451,7 +41548,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "priorityObjectives": [
         "energy"
@@ -42227,6 +42325,7 @@
     "url": "https://www.tresor.economie.gouv.fr/services-aux-entreprises/le-fasep",
     "nature de l'aide": "financement",
     "montant du financement": "de 100 000 à 800 000 €, selon projet",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Contactez un conseiller de la DG Trésor en charge de l'instruction des projets.",
@@ -42307,7 +42406,8 @@
           "U"
         ],
         "maxEmployees": "499",
-        "excludeMicroentrepreneur": true
+        "excludeMicroentrepreneur": true,
+        "openToPublicAdministration": true
       },
       "priorityObjectives": [
         "energy",
@@ -42702,6 +42802,7 @@
     "url": "https://guide-aides.hautsdefrance.fr/dispositif1045",
     "nature de l'aide": "étude",
     "montant du financement": "50% du coût de l'accompagnement, jusqu'à 10 000 € HT.",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Choisissez le prestataire rev3 qui vous accompagnera. ",
@@ -42782,6 +42883,7 @@
           "U"
         ],
         "maxEmployees": "250",
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Hauts-de-France"
         ]
@@ -42950,6 +43052,7 @@
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "REMO : 15 mois - LOG-te : 3 ans",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Exprimez votre intérêt en créant un compte sur la plateforme REMOVE",
@@ -43015,7 +43118,8 @@
           "R",
           "S"
         ],
-        "excludeMicroentrepreneur": true
+        "excludeMicroentrepreneur": true,
+        "openToPublicAdministration": true
       },
       "validity": {
         "end": "30/06/2026"
@@ -44288,6 +44392,7 @@
     "contact question": "https://cloud.contact.ademe.fr/act-fr",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu’à 80% du coût de l’évaluation, dans un maximum de 3 000 € HT",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Choisissez le prestataire qui va vous accompagner pour mener l'étude méthodologie ACT.",
@@ -44352,7 +44457,8 @@
           "T",
           "U"
         ],
-        "excludeMicroentrepreneur": true
+        "excludeMicroentrepreneur": true,
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "13/11/2023",
@@ -48648,6 +48754,7 @@
     "url": "https://www.grandest.fr/vos-aides-regionales/cheque-transition-tissu-economique/",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 50% du coût, dans une limite de 10 000 € (sauf véhicule propre limité à 5 000 €)",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Vérifiez la liste des dépenses éligibles.",
@@ -48726,6 +48833,7 @@
           "U"
         ],
         "maxEmployees": "19",
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Grand Est"
         ]
@@ -50264,6 +50372,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 80% selon le projet, dans la limite de 300 000 €",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -50339,6 +50448,7 @@
           "T",
           "U"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Corse",
           "Guadeloupe",
@@ -51081,6 +51191,7 @@
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Variable",
     "durée de l'accompagnement": "Variable",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Contactez un conseiller via le formulaire dédié pour exprimer votre intérêt.",
@@ -51138,6 +51249,7 @@
           "T",
           "U"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Grand Est"
         ]
@@ -52364,6 +52476,7 @@
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 50% du coût de l'étude ou de l'investissement",
     "activable en autonomie": "oui",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -52437,7 +52550,8 @@
           "S",
           "T",
           "U"
-        ]
+        ],
+        "openToPublicAdministration": true
       },
       "validity": {
         "start": "01/01/2025",
@@ -52598,6 +52712,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
     "nature de l'aide": "financement",
     "montant du financement": "Jusqu'à 80% selon le projet, dans la limite de 100 000 €",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -52673,6 +52788,7 @@
           "T",
           "U"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Corse",
           "Guadeloupe",
@@ -52868,6 +52984,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu'à 80% du coût de l'étude, dans la limite de 50 000 €",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -52946,6 +53063,7 @@
           "T",
           "U"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Corse",
           "Guadeloupe",
@@ -53130,6 +53248,7 @@
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etude-dopportunite-multi-enrr",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu’à 70 % du coût de l'étude pour une petite entreprise",
+    "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -53205,6 +53324,7 @@
           "T",
           "U"
         ],
+        "openToPublicAdministration": true,
         "allowedRegion": [
           "Auvergne-Rhône-Alpes",
           "Bourgogne-Franche-Comté",
@@ -56337,7 +56457,7 @@
     "description longue": "Critères techniques et économiques pour mesurer l’impact positif des projets :\\\n• Approvisionnement identifié ou sécurisé ; pour préparation/surtri et production de MPR, les déchets approvisionnés sont détournés de l’enfouissement et/ou incinération CSR.\\\n• Débouché identifié ou sécurisé.\\\n• Proximité des approvisionnements et des débouchés.\\\n• Recyclabilité et/ou durabilité des produits où seront incorporés les MPR.\\\n• Intensité de coût et d’aide par tonne de matière recyclée ou par teq CO2 évitée.\\\n• Performance (notamment environnementale) et fiabilité de la technologie.\\\n• Incitativité de l’aide – autres aides notamment.\\\n• Qualité de la MPR.\\\n• Positionnement du projet par rapport aux filières de Responsabilité Elargie du Producteur (REPs) et à la réglementation.\\\n• Prise en compte des enjeux propres à un site industriel en transition : HSE/ sécurité industrielle, impact sur la biodiversité, adaptation au changement climatique.",
     "début de validité": "24/04/2026",
     "fin de validité": "31/12/2026",
-    "illustration": "images/TEE_eolienne.webp",
+    "illustration": "images/TEE_ampoule.webp",
     "opérateur de contact": "ADEME",
     "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000978",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/fonds-economie-circulaire-ormat-2026-objectif-recyclage-matieres#collectDocuments",
@@ -56622,13 +56742,13 @@
         ]
       }
     },
-    "id": "ormat",
+    "id": "fonds-economie-circulaire-ormat",
     "type": "tee"
   },
   {
     "titre": "Aide au changement de comportement",
     "promesse": "Contribuez à faire évoluer les mentalités et les comportements en faveur de la transition écologique",
-    "description": "Bénéficiez d'un financement pour des projets de sensibilisation, d’animation ou de communication d’envergure et structurants pour le territoire, en faveur de la transition écologique. \n\nIl peut s'agir, par exemple, de : \n\n- **Formation/sensibilisation** : analyse des besoins, conception de modules de formation, animation de sessions.\n- **Communication** : réalisation d’outils, diffusion d’informations, création de sites internet, organisation d’événements.\n- **Animation** : mobilisation d’une cible, dissémination de solutions, structuration d’une filière, financement de postes relais.",
+    "description": "Bénéficiez d'un financement pour des projets de sensibilisation, d’animation ou de communication d’envergure et structurants pour le territoire, en faveur de la transition écologique.\n\nIl peut s'agir, par exemple, de :\n\n- **Formation/sensibilisation** : analyse des besoins, conception de modules de formation, animation de sessions.\n- **Communication** : réalisation d’outils, diffusion d’informations, création de sites internet, organisation d’événements.\n- **Animation** : mobilisation d’une cible, dissémination de solutions, structuration d’une filière, financement de postes relais.",
     "description longue": "Opérations non éligibles : \\\n• Financement de personnel titulaire de la fonction publique de l'État, des collectivités territoriales et hospitalières.\\\n• Financement de personnel dans les communes et EPCI à fiscalité propre.\\\n• Actions portées par les entreprises pour leur compte.\\\n• Actions déjà démarrées.\\\n• Financement de certains profils (Conseillers en Énergie Partagés, conseillers France Rénov).",
     "début de validité": "01/01/2026",
     "fin de validité": "31/12/2026",
@@ -57221,7 +57341,7 @@
         ]
       },
       {
-        "description": "Votre demande d'aide est examinée. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+        "description": "Votre demande d'aide est examinée. Si elle est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
       }
     ],
     "conditions d'éligibilité": {
@@ -57466,7 +57586,7 @@
         ]
       },
       {
-        "description": "Votre demande d'aide est examinée. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+        "description": "Votre demande d'aide est examinée. Si elle est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
       }
     ],
     "conditions d'éligibilité": {
