@@ -23,7 +23,7 @@ description longue: |-
 fin de validité: 31/12/2030
 illustration: images/TEE_ampoule.webp
 opérateur de contact: CNAMS
-contact question: mailto:hse@cnams-ge.fr
+contact question: https://www.cnams-ge.fr/nous-contacter.html
 url: https://www.cnams-ge.fr/environnement
 nature de l'aide: étude
 coût de l'accompagnement: Gratuite
@@ -35,9 +35,12 @@ objectifs:
           https://www.cnams-ge.fr/sites/default/files/images/environnement/depenses_eligibles_a_des_aides_des_agences_de_l_eau_version_en_ligne.pdf
         texte: Conditions d'éligibilité
   - description: >-
-      Contactez le CNAMS pour manifester votre intérêt et soumettre votre
-      demande d'aide.
-  - description: Si votre demande est acceptée, bénéficiez de l'accompagnement.
+      Contactez un chef de projet environnement de la CNAMS (à l'adresse
+      [hse@cnams-ge.fr](mailto:hse@cnams-ge.fr)) pour manifester votre intérêt
+      et soumettre votre demande d'aide.
+  - description: >-
+      Si votre demande est acceptée, bénéficiez d'un accompagnement
+      personnalisé.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 50 salariés
@@ -77,7 +80,6 @@ publicodes:
       - code NAF niveau 1 . est L
       - code NAF niveau 1 . est M
       - code NAF niveau 1 . est N
-      - code NAF niveau 1 . est O
       - code NAF niveau 1 . est P
       - code NAF niveau 1 . est Q
       - code NAF niveau 1 . est R

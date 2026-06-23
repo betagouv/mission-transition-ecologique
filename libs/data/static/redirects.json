@@ -19,7 +19,8 @@
     "visite-energie-cma": "visite-energie",
     "cheque-vert-grand-est": "cheque-transition-tissu-economique",
     "ormat-2024": "fonds-economie-circulaire-ormat",
-    "ormat": "fonds-economie-circulaire-ormat"
+    "ormat": "fonds-economie-circulaire-ormat",
+    "contrat-3S-occitanie": "contrat-3s-occitanie"
   },
   "project_rowid_to_url_mapping": {
     "1": "bilan-ges",
@@ -395,6 +396,6 @@
     "3565": "pass-transformation-ecologique-occitanie",
     "3598": "contrat-innovation-occitanie",
     "3631": "contrat-entreprise-d-avenir",
-    "3632": "contrat-3S-occitanie"
+    "3632": "contrat-3s-occitanie"
   }
 }
