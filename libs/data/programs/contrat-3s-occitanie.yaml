@@ -1,35 +1,48 @@
-titre: Contrat Innovation
-promesse: Faites-vous accompagner pour votre projets d'innovation
+titre: Contrat 3S - Stratégique Structurant Souverain
+promesse: >-
+  Bénéficiez d'un accompagnement pour vos projets d'innovation et de
+  transformation sociale et environnementale
 description: >-
-  La région Occitanie accompagne les phases de développement des projets R&D au
-  service des transformations écologiques et sociales. Ces projets doivent
-  répondre à l'un des critères suivant :
+  Vous souhaitez développer un projet générateur d’emplois et présentant un
+  fort\
+
+  impact en réponse aux enjeux environnementaux ? La Région Occitanie vous
+  accompagne sur les **volets d'innovation et de transformation**, notamment sur
+  :
 
 
-  - Mener une **démarche d’innovation intégrant des enjeux d’économie
-  circulaire,\
-    d’éco-conception, d’adaptation au changement climatique, de protection de la\
-    biodiversité**, de low-tech, etc. dans leurs produits, process et services.
-  - Élaborer des **réponses innovantes aux besoins sociaux et environnementaux
-  en\
-    associant les acteurs concernés**, dans les domaines tels que l’énergie,\
-    l’environnement, la santé, l’alimentation, la mobilité, l’habitat, les filières locales, etc
+  - La mise en place de nouveaux **process de production** ou de services plus
+  **sobres en consommation de ressources** (eau, énergie, matières premières
+  d’extraction ou agricoles…) et générant moins d’émissions polluantes et de
+  déchets.
+
+  - L'augmentation de la **durabilité et réemploi des produits** (fiabilité,
+  démontabilité, réparabilité, séparabilité et facilitation du tri en fin de
+  vie).
+
+  - La **préservation des ressources** par le **choix des matériaux**, par la
+  réduction,\
+    l’élimination ou le réemploi des emballages, la réduction des besoins et ressources liées à l’entretien et à la maintenance.
+  - La **transition agroécologique**.
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Région Occitanie
 autres opérateurs:
   - ADEME
-contact question: mailto:pda_sfi@laregion.fr
-url: https://hubentreprendre.laregion.fr/financement/contrat-innovation
+contact question: mailto:contact-hub@laregion.fr
+url: https://hubentreprendre.laregion.fr/financement/contrat-3s-volet-innovation
 nature de l'aide: financement
-montant du financement: 40 000 à 500 000 € selon projet et taille de l'entreprise
+montant du financement: Selon projet
 objectifs:
   - description: >-
       Consultez la documentation pour vérifier l’éligibilité de votre projet et
       les pièces justificatives à fournir.
     liens:
       - lien: >-
-          https://api.hubentreprendre.laregion.fr/fichiers-dispositifs/da3c6f0e-fd72-433c-b033-df9b7e9d6b07
-        texte: Conditions éligibilité
+          https://api.hubentreprendre.laregion.fr/fichiers-dispositifs/f4af8eee-e490-42a0-83d9-b252ef7a53df
+        texte: Conditions éligibilité pour le volet innovation
+      - lien: >-
+          https://api.hubentreprendre.laregion.fr/fichiers-dispositifs/4735e9e9-a289-45e7-95d1-21da7d5c3a3f
+        texte: Conditions éligibilité pour le volet transformation
   - description: >-
       Créez un compte via le Hub Entreprendre Occitanie pour pouvoir déposer
       votre dossier.
@@ -60,11 +73,9 @@ conditions d'éligibilité:
     - Éligible à toutes les entreprises
   autres critères d'éligibilité:
     - >-
-      L'entreprise doit avoir son siège ou un établissement sur le territoire
-      Occitanie exerçant une activité de R&D. L’entreprise bénéficiaire devra
-      réaliser le projet de R&D en Occitanie avec des équipes domiciliées sur le
-      territoire régional (nonobstant le télétravail qui devra être réalisé en
-      région).
+      Entreprises des secteurs : industrie, artisanat, tourisme, service aux
+      entreprises (BtoB), commerce de gros de produits fabriqués en Occitanie
+      (BtoB).
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -76,7 +87,6 @@ publicodes:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
-      - code NAF niveau 1 . est A
       - code NAF niveau 1 . est B
       - code NAF niveau 1 . est C
       - code NAF niveau 1 . est D
@@ -90,19 +100,18 @@ publicodes:
       - code NAF niveau 1 . est L
       - code NAF niveau 1 . est M
       - code NAF niveau 1 . est N
-      - code NAF niveau 1 . est P
-      - code NAF niveau 1 . est Q
-      - code NAF niveau 1 . est R
       - code NAF niveau 1 . est S
       - code NAF niveau 1 . est T
       - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
       - questionnaire . objectif prioritaire . est ma performance énergétique
       - questionnaire . objectif prioritaire . est former ou recruter
       - questionnaire . objectif prioritaire . est l'écoconception
-      - questionnaire . objectif prioritaire . est préserver la biodiversité
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
       - région = Occitanie
