@@ -47,8 +47,8 @@ objectifs:
       Pour toute demande de pris en charge d'une formation, contactez le service
       entreprises de votre région.
     liens:
-      - lien: https://- <https://www.opcoep.fr/nous-contacter>
-        texte: Service entreprises
+      - lien: <https://www.opcoep.fr/nous-contacter>
+        texte: Service entreprises\
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

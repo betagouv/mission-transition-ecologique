@@ -40692,7 +40692,7 @@
         "description": "Consultez le site Mobili’Pro pour mieux connaître le dispositif.",
         "liens": [
           {
-            "lien": "https://%3Chttps://www.mobilipro.fr/ressources%3E",
+            "lien": "https://www.mobilipro.fr/ressources%3E",
             "texte": "Mobili'Pro"
           }
         ]
@@ -44805,7 +44805,7 @@
         "description": "Obtenez une évaluation personnalisée à l'aide de l'indicateur climat."
       },
       {
-        "description": "Si vous avez des questions, écrivez à [climat.XX@banque-france.fr ](mailto:climat.XX@banque-france.fr)(remplacez XX par le numéro de votre département)."
+        "description": "Si vous avez des questions, écrivez à climatXX@banque-france.fr (remplacez XX par le numéro de votre département)."
       }
     ],
     "conditions d'éligibilité": {
@@ -46407,7 +46407,7 @@
         "description": "Rendez-vous sur le catalogue de formations d'Ocapiat et trouvez la formation et la session qui vous convient.",
         "liens": [
           {
-            "lien": "https://- <https://www.ocapiat.fr/wp-content/uploads/Book-national-TRANSITION-ECOLOGIQUE_2024.pdf>",
+            "lien": "<https://www.ocapiat.fr/wp-content/uploads/Book-national-TRANSITION-ECOLOGIQUE_2024.pdf>",
             "texte": "Catalogue de formations\\"
           }
         ]
@@ -46786,8 +46786,8 @@
         "description": "Pour toute demande de pris en charge d'une formation, contactez le service entreprises de votre région.",
         "liens": [
           {
-            "lien": "https://- <https://www.opcoep.fr/nous-contacter>",
-            "texte": "Service entreprises"
+            "lien": "<https://www.opcoep.fr/nous-contacter>",
+            "texte": "Service entreprises\\"
           }
         ]
       }
@@ -47316,8 +47316,8 @@
         "description": "Créez un compte sur le site de l'Opco Mobilités et inscrivez-vous à la session de votre choix.",
         "liens": [
           {
-            "lien": "https://- <https://sso.opcomobilites.fr/sign-up?redirect=https://mcampus.opcomobilites.fr/>",
-            "texte": "Créer mon compte"
+            "lien": "<https://sso.opcomobilites.fr/sign-up?redirect=https://mcampus.opcomobilites.fr/>",
+            "texte": "Créer mon compte\\"
           }
         ]
       },
