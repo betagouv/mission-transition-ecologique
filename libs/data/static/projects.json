@@ -46,7 +46,8 @@
       "cap-decarbonation",
       "cheque-transition-tissu-economique",
       "diag-accompagnement-tee-rh",
-      "cec-impact"
+      "cec-impact",
+      "contrat-3s-occitanie"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action économies d'énergie",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action économies d'énergie",
@@ -290,8 +291,9 @@
       "aide-investissement-corse",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
       "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
-      "ormat",
-      "contrat-entreprise-d-avenir"
+      "fonds-economie-circulaire-ormat",
+      "contrat-entreprise-d-avenir",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [
       21
@@ -1480,7 +1482,8 @@
       "action-entreprises-environnement",
       "economies-recyclage-eau-activites-industrielles-artisanat",
       "cec-impact",
-      "pass-transformation-ecologique-occitanie"
+      "pass-transformation-ecologique-occitanie",
+      "contrat-3s-occitanie"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action eau",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action eau",
@@ -1573,8 +1576,9 @@
       "diagnostic-et-accompagnement-co2i",
       "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
       "cec-impact",
-      "ormat",
-      "pass-transformation-ecologique-occitanie"
+      "fonds-economie-circulaire-ormat",
+      "pass-transformation-ecologique-occitanie",
+      "contrat-3s-occitanie"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action déchets",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action déchets",
@@ -1721,8 +1725,9 @@
       "aide-tpe-transition-na",
       "aide-investissement-corse",
       "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
-      "ormat",
-      "pass-transformation-ecologique-occitanie"
+      "fonds-economie-circulaire-ormat",
+      "pass-transformation-ecologique-occitanie",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [
       21
@@ -1798,7 +1803,8 @@
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
       "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
       "pass-transformation-ecologique-occitanie",
-      "contrat-entreprise-d-avenir"
+      "contrat-entreprise-d-avenir",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [
       21
@@ -2040,7 +2046,8 @@
       "diag-accompagnement-tee-rh",
       "autodiagnostic-rse",
       "contrat-innovation-occitanie",
-      "contrat-entreprise-d-avenir"
+      "contrat-entreprise-d-avenir",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [
       30
@@ -2296,7 +2303,8 @@
       "eval-360-pays-de-la-loire",
       "cec-impact",
       "aide-au-changement-de-comportement",
-      "contrat-entreprise-d-avenir"
+      "contrat-entreprise-d-avenir",
+      "contrat-3s-occitanie"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
@@ -2476,7 +2484,8 @@
       "ibac-pme",
       "diagnostic-et-accompagnement-co2i",
       "eval-360-pays-de-la-loire",
-      "cec-impact"
+      "cec-impact",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [
       1
@@ -2551,7 +2560,8 @@
       "indicateur-climat",
       "performa-adaptation",
       "diagnostic-et-accompagnement-co2i",
-      "cec-impact"
+      "cec-impact",
+      "contrat-3s-occitanie"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'adaptation climat",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'adaptation climat",
@@ -2733,7 +2743,8 @@
       "ecoprodduire",
       "cec-impact",
       "contrat-innovation-occitanie",
-      "contrat-entreprise-d-avenir"
+      "contrat-entreprise-d-avenir",
+      "contrat-3s-occitanie"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une démarche d'écoconception",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité d'une démarche d'écoconception",
@@ -3405,7 +3416,8 @@
       "lutter-contre-les-micropolluants",
       "ameliorer-la-connaissance-des-milieux",
       "proteger-biodiversite-et-restaurer-trame-verte-et-bleue",
-      "contrat-innovation-occitanie"
+      "contrat-innovation-occitanie",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [],
     "priority": {
@@ -3926,7 +3938,8 @@
       "demi-bac",
       "ibac-pme",
       "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
-      "pass-transformation-ecologique-occitanie"
+      "pass-transformation-ecologique-occitanie",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [
       4
@@ -4065,7 +4078,8 @@
       "aide-financement-occitanie",
       "certification-agriculture-biologique",
       "e-trans",
-      "restaurer-preserver-les-milieux-aquatiques"
+      "restaurer-preserver-les-milieux-aquatiques",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4107,7 +4121,8 @@
       "aide-tpe-transition-na",
       "aide-investissement-corse",
       "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
-      "pass-transformation-ecologique-occitanie"
+      "pass-transformation-ecologique-occitanie",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [
       21
@@ -4143,7 +4158,8 @@
       "programme-synergies-durables",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
       "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
-      "ormat"
+      "fonds-economie-circulaire-ormat",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4456,7 +4472,8 @@
       "diag-ecoconception",
       "diagnostic-eco-conception-ile-de-france",
       "programme-synergies-durables",
-      "ecoprodduire"
+      "ecoprodduire",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4817,7 +4834,8 @@
       "decarb-flash-2025-2027",
       "demi-bac",
       "ibac-pme",
-      "contrat-entreprise-d-avenir"
+      "contrat-entreprise-d-avenir",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [],
     "priority": {
@@ -4867,8 +4885,9 @@
       "ibac-pme",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
       "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
-      "ormat",
-      "contrat-entreprise-d-avenir"
+      "fonds-economie-circulaire-ormat",
+      "contrat-entreprise-d-avenir",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [
       36
@@ -4944,7 +4963,8 @@
       "aide-tpe-transition-na",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
       "etudes-et-investissements-structurants-pour-la-gestion-des-dechets-en-outre-mer-et-corse",
-      "ormat"
+      "fonds-economie-circulaire-ormat",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [
       21
@@ -4989,8 +5009,9 @@
       "aide-tpe-transition-na",
       "emergence-et-consolidation-dune-economie-circulaire-en-outre-mer-et-corse",
       "ecoprodduire",
-      "ormat",
-      "contrat-entreprise-d-avenir"
+      "fonds-economie-circulaire-ormat",
+      "contrat-entreprise-d-avenir",
+      "contrat-3s-occitanie"
     ],
     "linkedProjects": [
       36
@@ -5201,7 +5222,8 @@
       "decarb-flash-2025-2027",
       "demi-bac",
       "ibac-pme",
-      "contrat-entreprise-d-avenir"
+      "contrat-entreprise-d-avenir",
+      "contrat-3s-occitanie"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [],
@@ -5264,7 +5286,8 @@
     "programs": [
       "diag-eco-flux",
       "economies-recyclage-eau-activites-industrielles-artisanat",
-      "contrat-entreprise-d-avenir"
+      "contrat-entreprise-d-avenir",
+      "contrat-3s-occitanie"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [],
