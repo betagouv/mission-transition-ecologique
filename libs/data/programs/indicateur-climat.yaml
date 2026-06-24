@@ -51,7 +51,7 @@ objectifs:
       - lien: https://dirigeant.banque-france.fr/#/
         texte: Espace Dirigeant
   - description: Obtenez une évaluation personnalisée à l'aide de l'indicateur climat.
-  - description: "Si vous avez des questions, écrivez à\_[climat.XX@banque-france.fr\_](mailto:climat.XX@banque-france.fr)(remplacez XX par le numéro de votre département)."
+  - description: "Si vous avez des questions, écrivez à\_climatXX@banque-france.fr (remplacez XX par le numéro de votre département)."
 conditions d'éligibilité:
   taille de l'entreprise:
     - Toutes tailles

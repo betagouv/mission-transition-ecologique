@@ -33,9 +33,8 @@ objectifs:
       session de votre choix.
     liens:
       - lien: >-
-          https://-
           <https://sso.opcomobilites.fr/sign-up?redirect=https://mcampus.opcomobilites.fr/>
-        texte: Créer mon compte
+        texte: Créer mon compte\
   - description: >-
       Pour toute demande de pris en charge d'une formation, contactez votre
       délégation régionale.
