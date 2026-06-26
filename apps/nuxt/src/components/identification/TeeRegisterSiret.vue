@@ -87,8 +87,11 @@ import CompanySearch from '@/tools/companySearch'
 
 interface Props {
   title?: string
+  example?: string
 }
-defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  example: 'Fromagerie Sanzot Angers'
+})
 
 const defaultSearchValue = {
   establishments: [],
@@ -96,7 +99,7 @@ const defaultSearchValue = {
 }
 
 const queryValue = ref<string | undefined>()
-const hint = `ex : "Fromagerie Sanzot Angers" ou N° SIRET "130 025 265 00013"`
+const hint = computed(() => `ex : "${props.example}" ou N° SIRET "130 025 265 00013"`)
 
 const isLoading = ref<boolean>(false)
 const requestResponses = ref<EstablishmentSearch>(defaultSearchValue)

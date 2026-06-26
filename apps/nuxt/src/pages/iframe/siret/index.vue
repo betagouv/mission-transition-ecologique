@@ -24,6 +24,7 @@
       <div class="fr-col-sm-10 fr-col-md-9 fr-col-lg-8 fr-col-xl-7 fr-col-12">
         <TeeRegisterSiret
           v-if="registerStep === 1"
+          :example="siretExample"
           @select-establishment="updateEstablishment"
           @manual-register="setManualRegister"
         />
@@ -60,6 +61,12 @@ const route = useRoute()
 const mainStep = computed<number>(() => {
   return route.query.step === '2' ? 2 : 1
 })
+
+// Allow integrators to display a tailored company example through the iframe utm_source
+const siretExampleBySource: Record<string, string> = {
+  anap: 'Centre Hospitalier de Narbonne'
+}
+const siretExample = computed<string | undefined>(() => siretExampleBySource[route.query.utm_source as string])
 
 if (import.meta.client) {
   Analytics.sendEvent('generic_iframe_siret_view', {
