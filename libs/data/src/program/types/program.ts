@@ -148,6 +148,7 @@ export type Dispositif = {
     | "Opco Santé"
     | "Opco Uniformation"
     | "ANACT"
+    | "Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse"
     | "CNAMS";
   /**
    * Le contact en cas de question, peut être un lien vers le formulaire, un mail ou une url.
@@ -343,4 +344,5 @@ export type Operators =
   | "Opco Santé"
   | "Opco Uniformation"
   | "ANACT"
+  | "Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse"
   | "CNAMS";

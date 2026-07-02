@@ -57940,5 +57940,1104 @@
     },
     "id": "contrat-3s-occitanie",
     "type": "tee"
+  },
+  {
+    "titre": "Étude énergétique bâtiment tertiaire - Corse",
+    "promesse": "Évaluez la faisabilité de la rénovation de votre bâtiment tertiaire",
+    "description": "Bénéficiez d'une analyse complète et réglementaire de votre bâtiment tertiaire afin d'identifier :\n\n- Les travaux adaptés à vos besoins.\n- Les gains énergétiques que vous pourriez faire.\n- Les aides mobilisables pour vous épauler dans ces travaux.",
+    "description longue": "Cette étude, réalisée par un BET labélisé RGE, dresse un diagnostic précis de la performance énergétique du bâtiment et identifie les travaux les plus pertinents pour réduire les consommations. Elle modélise les gains potentiels, les coûts associés et les priorités d’intervention. L’analyse inclut une estimation personnalisée des aides financières mobilisables pour orienter vers un plan de rénovation optimal et réaliste.\n\nAfin d'obtenir un rendu d'aide à la décision optimale et d'être éligible à un accompagnement maximal lors de la phase travaux, l'étude doit respecter le cahier des charges transmis par l'AUE.\\\nLe taux d'accompagnement maximal est fixé à 70% pour les petites entreprises, 60% pour les moyennes entreprises et 50% pour les grandes entreprises au sens de la réglementation européenne sur les aides d'État",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse",
+    "contact question": "https://www.aue.corsica/Contact_a649.html",
+    "url": "https://www.aue.corsica/Le-guide-des-primes_a206.html",
+    "nature de l'aide": "étude",
+    "montant du financement": "Jusqu'à 70% du coût de la prestation",
+    "objectifs": [
+      {
+        "description": "Contactez l'AUE pour évaluer votre éligibilité et la pertinence de votre projet."
+      },
+      {
+        "description": "Remplissez la demande de subvention et joignez les éventuels documents associés (cahier des charges).",
+        "liens": [
+          {
+            "lien": "https://www.aue.corsica/attachment/2718338/",
+            "texte": "Demande de subvention"
+          }
+        ]
+      },
+      {
+        "description": "Obtenez un devis conforme au cahier des charges de l'AUE de la part d'une entreprise agréée."
+      },
+      {
+        "description": "Adressez la demande de subvention accompagnée des pièces complémentaires requises à l'AUE, par mail ou voie postale. Le dossier est alors instruit et présenté en instance délibérative de l'agence."
+      },
+      {
+        "description": "Si votre demande est acceptée, réalisez l'étude et envoyez les preuves de réalisation conformes aux attentes de l'AUE. La subvention est alors versée sur facture acquittée."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Corse"
+      ],
+      "secteur d'activité": [
+        "Bâtiments à usage tertiaire"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Corse"
+        ]
+      },
+      "priorityObjectives": [
+        "building",
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Corse"
+        ]
+      }
+    },
+    "id": "etude-energetique-batiment-tertiaire",
+    "type": "tee"
+  },
+  {
+    "titre": "Aide rénovation bâtiment tertiaire - Corse",
+    "promesse": "Faites vous accompagner dans la rénovation énergétique de votre bâtiment tertiaire",
+    "description": "Vous avez un projet de rénovation énergétique de votre bâtiment à usage tertiaire ? \\\nPour le réaliser, bénéficiez d'une **aide financière** et d'un **appui d'expertise technique** de l'Agence d’Aménagement durable, d’Urbanisme et d’Énergie de la Corse.",
+    "description longue": "L’aide soutient les acteurs publics et privés dans la rénovation de leurs bâtiments tertiaires en finançant une partie des travaux. Elle inclut un accompagnement technique pour identifier les solutions les plus efficaces, optimiser les investissements et garantir la qualité de réalisation. Elle permet de réduire durablement les consommations et d’améliorer la performance environnementale des bâtiments. Cet audit doit être conforme au cahier des charges de l'AUE et le programme de travaux doit être conforme à ce dernier.\n\nLe taux d'accompagnement maximal est fixé à 70% pour les petites entreprises, 60% pour les moyennes entreprises et 50% pour les grandes entreprises au sens de la réglementation européenne sur les aides d'État",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse",
+    "contact question": "https://www.aue.corsica/Contact_a649.html",
+    "url": "https://www.aue.corsica/Le-guide-des-primes_a206.html",
+    "nature de l'aide": "financement",
+    "montant du financement": "Jusqu'à 40% de l'assiette de travaux énergétiques",
+    "objectifs": [
+      {
+        "description": "Contactez l'AUE pour évaluer votre éligibilité et la pertinence de votre projet."
+      },
+      {
+        "description": "Remplissez la demande de subvention et joignez les éventuels documents associés (cahier des charges).",
+        "liens": [
+          {
+            "lien": "https://www.aue.corsica/attachment/2718338/",
+            "texte": "Demande de subvention"
+          }
+        ]
+      },
+      {
+        "description": "Obtenez un devis conforme au cahier des charges de l'AUE de la part d'une entreprise agréée."
+      },
+      {
+        "description": "Adressez la demande de subvention accompagnée des pièces complémentaires requises à l'AUE, par mail ou voie postale. Le dossier est alors instruit et présenté en instance délibérative de l'agence."
+      },
+      {
+        "description": "Si votre demande est acceptée, réalisez les travaux et envoyez les preuves de réalisation conformes aux attentes de l'AUE. La subvention est alors versée sur facture acquittée."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Corse"
+      ],
+      "secteur d'activité": [
+        "Bâtiments à usage tertiaire"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Corse"
+        ]
+      },
+      "priorityObjectives": [
+        "building",
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Corse"
+        ]
+      }
+    },
+    "id": "aide-renovation-batiment-tertiaire",
+    "type": "tee"
+  },
+  {
+    "titre": "Étude d'opportunité d'installation solaire thermique collective - Corse",
+    "promesse": "Bénéficiez d'une expertise pour évaluer la faisabilité de votre projet solaire",
+    "description": "Vous avez un projet solaire thermique collectif ? Bénéficiez d'un accompagnement technico-économique personnalisé afin de **dimensionner l'installation** et d'**optimiser les aides** à sa réalisation.",
+    "description longue": "Cette étude, réalisée par un BET agréé, identifie le potentiel solaire d’un bâtiment ou d’un ensemble de bâtiments, dimensionne une installation adaptée aux besoins et évalue sa rentabilité. Elle permet de confirmer l’opportunité du projet et d’identifier les conditions techniques et économiques de réussite. L’étude inclut également un volet financier détaillant les aides mobilisables pour faciliter la prise de décision.\n\nLe taux d'accompagnement maximal est fixé à 70% pour les petites entreprises, 60% pour les moyennes entreprises et 50% pour les grandes entreprises au sens de la réglementation européenne sur les aides d'État",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse",
+    "contact question": "https://www.aue.corsica/Contact_a649.html",
+    "url": "https://www.aue.corsica/Le-guide-des-primes_a206.html",
+    "nature de l'aide": "étude",
+    "montant du financement": "Jusqu'à 70% du coût de la prestation",
+    "objectifs": [
+      {
+        "description": "Contactez l'AUE pour évaluer votre éligibilité et la pertinence de votre projet."
+      },
+      {
+        "description": "Remplissez la demande de subvention et joignez les éventuels documents associés (cahier des charges).",
+        "liens": [
+          {
+            "lien": "https://www.aue.corsica/attachment/2718338/",
+            "texte": "Demande de subvention"
+          }
+        ]
+      },
+      {
+        "description": "Obtenez un devis conforme au cahier des charges de l'AUE de la part d'une entreprise agréée."
+      },
+      {
+        "description": "Adressez la demande de subvention accompagnée des pièces complémentaires requises à l'AUE, par mail ou voie postale. Le dossier est alors instruit et présenté en instance délibérative de l'agence."
+      },
+      {
+        "description": "Si votre demande est acceptée, réalisez l'étude et envoyez les preuves de réalisation conformes aux attentes de l'AUE. La subvention est alors versée sur facture acquittée."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Corse"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "Cette étude ne concerne que les projets supérieurs à 25 m² de capteurs. L'étude doit être conforme au cahier des charges transmis par l'AUE."
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Corse"
+        ]
+      },
+      "priorityObjectives": [
+        "building",
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Corse"
+        ]
+      }
+    },
+    "id": "etude-opportunite-installation-solaire-thermique-collective",
+    "type": "tee"
+  },
+  {
+    "titre": "Étude d'opportunité d'installation biomasse collective - Corse",
+    "promesse": "Bénéficiez d'une expertise pour évaluer la faisabilité de votre projet d'installation biomasse",
+    "description": "Vous avez un projet d'équipement biomasse ? Bénéficiez d'un accompagnement technico-économique personnalisé afin de **dimensionner l'installation** et d'**optimiser les aides** à sa réalisation.",
+    "description longue": "L’étude analyse les besoins énergétiques, les ressources locales et les solutions techniques envisageables pour une installation biomasse collective. Elle détermine la puissance optimale, les coûts, les économies générées et les conditions de rentabilité. Elle intègre un volet d’analyse des aides mobilisables afin de sécuriser la décision d’investissement.\n\nLe taux d'accompagnement maximal est fixé à 70% pour les petites entreprises, 60% pour les moyennes entreprises et 50% pour les grandes entreprises au sens de la réglementation européenne sur les aides d'État",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse",
+    "contact question": "https://www.aue.corsica/Contact_a649.html",
+    "url": "https://www.aue.corsica/Le-guide-des-primes_a206.html",
+    "nature de l'aide": "étude",
+    "montant du financement": "Jusqu'à 70% du coût de la prestation",
+    "objectifs": [
+      {
+        "description": "Contactez l'AUE pour évaluer votre éligibilité et la pertinence de votre projet."
+      },
+      {
+        "description": "Remplissez la demande de subvention et joignez les éventuels documents associés (cahier des charges).",
+        "liens": [
+          {
+            "lien": "https://www.aue.corsica/attachment/2718338/",
+            "texte": "Demande de subvention"
+          }
+        ]
+      },
+      {
+        "description": "Obtenez un devis conforme au cahier des charges de l'AUE de la part d'une entreprise agréée."
+      },
+      {
+        "description": "Adressez la demande de subvention accompagnée des pièces complémentaires requises à l'AUE, par mail ou voie postale. Le dossier est alors instruit et présenté en instance délibérative de l'agence."
+      },
+      {
+        "description": "Si votre demande est acceptée, réalisez l'étude et envoyez les preuves de réalisation conformes aux attentes de l'AUE. La subvention est alors versée sur facture acquittée."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Corse"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Corse"
+        ]
+      },
+      "priorityObjectives": [
+        "building",
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Corse"
+        ]
+      }
+    },
+    "id": "etude-opportunite-installation-biomasse-collective",
+    "type": "tee"
+  },
+  {
+    "titre": "Étude de faisabilité de rénovation de l'éclairage extérieur - Corse",
+    "promesse": "Évaluez la pertinence de la rénovation de votre éclairage extérieur",
+    "description": "Vous souhaitez rénovez votre éclairage extérieur ? Bénéficiez d'une expertise technique pour évaluer la pertinence de votre projet. Ainsi vous : \n\n- Adoptez un éclairage performant.\n- Diminuez votre facture énergétique.\n- Mobilisez les aides adaptées à la rénovation.",
+    "description longue": "Le taux d'accompagnement maximal est fixé à 70% pour les petites entreprises, 60% pour les moyennes entreprises et 50% pour les grandes entreprises au sens de la réglementation européenne sur les aides d'État",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse",
+    "contact question": "https://www.aue.corsica/Contact_a649.html",
+    "url": "https://www.aue.corsica/Le-guide-des-primes_a206.html",
+    "nature de l'aide": "étude",
+    "montant du financement": "Jusqu'à 70% du coût de la prestation",
+    "objectifs": [
+      {
+        "description": "Contactez l'AUE pour évaluer votre éligibilité et la pertinence de votre projet."
+      },
+      {
+        "description": "Remplissez la demande de subvention et joignez les éventuels documents associés (cahier des charges).",
+        "liens": [
+          {
+            "lien": "https://www.aue.corsica/attachment/2718338/",
+            "texte": "Demande de subvention"
+          }
+        ]
+      },
+      {
+        "description": "Obtenez un devis conforme au cahier des charges de l'AUE de la part d'une entreprise agréée."
+      },
+      {
+        "description": "Adressez la demande de subvention accompagnée des pièces complémentaires requises à l'AUE, par mail ou voie postale. Le dossier est alors instruit et présenté en instance délibérative de l'agence."
+      },
+      {
+        "description": "Si votre demande est acceptée, réalisez l'étude et envoyez les preuves de réalisation conformes aux attentes de l'AUE. La subvention est alors versée sur facture acquittée."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Corse"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "allowedRegion": [
+          "Corse"
+        ]
+      },
+      "priorityObjectives": [
+        "building",
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est rénover mon bâtiment",
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Corse"
+        ]
+      }
+    },
+    "id": "etude-faisabilite-renovation-eclairage-exterieur",
+    "type": "tee"
   }
 ]
