@@ -1,0 +1,98 @@
+titre: Étude énergétique bâtiment tertiaire - Corse
+promesse: Évaluez la faisabilité de la rénovation de votre bâtiment tertiaire
+description: >-
+  Bénéficiez d'une analyse complète et réglementaire de votre bâtiment tertiaire
+  afin d'identifier :
+
+
+  - Les travaux adaptés à vos besoins.
+
+  - Les gains énergétiques que vous pourriez faire.
+
+  - Les aides mobilisables pour vous épauler dans ces travaux.
+description longue: >-
+  Cette étude, réalisée par un BET labélisé RGE, dresse un diagnostic précis de
+  la performance énergétique du bâtiment et identifie les travaux les plus
+  pertinents pour réduire les consommations. Elle modélise les gains potentiels,
+  les coûts associés et les priorités d’intervention. L’analyse inclut une
+  estimation personnalisée des aides financières mobilisables pour orienter vers
+  un plan de rénovation optimal et réaliste.
+
+
+  Afin d'obtenir un rendu d'aide à la décision optimale et d'être éligible à un
+  accompagnement maximal lors de la phase travaux, l'étude doit respecter le
+  cahier des charges transmis par l'AUE.\
+
+  Le taux d'accompagnement maximal est fixé à 70% pour les petites entreprises,
+  60% pour les moyennes entreprises et 50% pour les grandes entreprises au sens
+  de la réglementation européenne sur les aides d'État
+illustration: images/TEE_eolienne.webp
+opérateur de contact: Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse
+contact question: https://www.aue.corsica/Contact_a649.html
+url: https://www.aue.corsica/Le-guide-des-primes_a206.html
+nature de l'aide: étude
+montant du financement: Jusqu'à 70% du coût de la prestation
+objectifs:
+  - description: >-
+      Contactez l'AUE pour évaluer votre éligibilité et la pertinence de votre
+      projet.
+  - description: >-
+      Remplissez la demande de subvention et joignez les éventuels documents
+      associés (cahier des charges).
+    liens:
+      - lien: https://www.aue.corsica/attachment/2718338/
+        texte: Demande de subvention
+  - description: >-
+      Obtenez un devis conforme au cahier des charges de l'AUE de la part d'une
+      entreprise agréée.
+  - description: >-
+      Adressez la demande de subvention accompagnée des pièces complémentaires
+      requises à l'AUE, par mail ou voie postale. Le dossier est alors instruit
+      et présenté en instance délibérative de l'agence.
+  - description: >-
+      Si votre demande est acceptée, réalisez l'étude et envoyez les preuves de
+      réalisation conformes aux attentes de l'AUE. La subvention est alors
+      versée sur facture acquittée.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Corse
+  secteur d'activité:
+    - Bâtiments à usage tertiaire
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Corse

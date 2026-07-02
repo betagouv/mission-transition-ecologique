@@ -461,6 +461,10 @@
     "color": "green"
   },
   {
+    "operator": "Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse",
+    "filterCategories": []
+  },
+  {
     "operator": "CNAMS",
     "filterCategories": [
       "Organismes professionnels"

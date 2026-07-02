@@ -1,0 +1,94 @@
+titre: Aide rénovation bâtiment tertiaire - Corse
+promesse: >-
+  Faites vous accompagner dans la rénovation énergétique de votre bâtiment
+  tertiaire
+description: >-
+  Vous avez un projet de rénovation énergétique de votre bâtiment à usage
+  tertiaire ? \
+
+  Pour le réaliser, bénéficiez d'une **aide financière** et d'un **appui
+  d'expertise technique** de l'Agence d’Aménagement durable, d’Urbanisme et
+  d’Énergie de la Corse.
+description longue: >-
+  L’aide soutient les acteurs publics et privés dans la rénovation de leurs
+  bâtiments tertiaires en finançant une partie des travaux. Elle inclut un
+  accompagnement technique pour identifier les solutions les plus efficaces,
+  optimiser les investissements et garantir la qualité de réalisation. Elle
+  permet de réduire durablement les consommations et d’améliorer la performance
+  environnementale des bâtiments. Cet audit doit être conforme au cahier des
+  charges de l'AUE et le programme de travaux doit être conforme à ce dernier.
+
+
+  Le taux d'accompagnement maximal est fixé à 70% pour les petites entreprises,
+  60% pour les moyennes entreprises et 50% pour les grandes entreprises au sens
+  de la réglementation européenne sur les aides d'État
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse
+contact question: https://www.aue.corsica/Contact_a649.html
+url: https://www.aue.corsica/Le-guide-des-primes_a206.html
+nature de l'aide: financement
+montant du financement: Jusqu'à 40% de l'assiette de travaux énergétiques
+objectifs:
+  - description: >-
+      Contactez l'AUE pour évaluer votre éligibilité et la pertinence de votre
+      projet.
+  - description: >-
+      Remplissez la demande de subvention et joignez les éventuels documents
+      associés (cahier des charges).
+    liens:
+      - lien: https://www.aue.corsica/attachment/2718338/
+        texte: Demande de subvention
+  - description: >-
+      Obtenez un devis conforme au cahier des charges de l'AUE de la part d'une
+      entreprise agréée.
+  - description: >-
+      Adressez la demande de subvention accompagnée des pièces complémentaires
+      requises à l'AUE, par mail ou voie postale. Le dossier est alors instruit
+      et présenté en instance délibérative de l'agence.
+  - description: >-
+      Si votre demande est acceptée, réalisez les travaux et envoyez les preuves
+      de réalisation conformes aux attentes de l'AUE. La subvention est alors
+      versée sur facture acquittée.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Corse
+  secteur d'activité:
+    - Bâtiments à usage tertiaire
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Corse

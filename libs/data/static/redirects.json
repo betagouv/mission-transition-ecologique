@@ -383,6 +383,7 @@
     "3137": "etude-opportunite-pv-idf",
     "3138": "diag-mobilite-idf",
     "3235": "conseil-mobilite-idf",
+    "3268": "etude-energetique-batiment-tertiaire",
     "3334": "reduire-les-pollutions",
     "3335": "gestion-eaux-pluviales",
     "3367": "economies-recyclage-eau-activites-industrielles-artisanat",
@@ -396,6 +397,10 @@
     "3565": "pass-transformation-ecologique-occitanie",
     "3598": "contrat-innovation-occitanie",
     "3631": "contrat-entreprise-d-avenir",
-    "3632": "contrat-3s-occitanie"
+    "3632": "contrat-3s-occitanie",
+    "3665": "aide-renovation-batiment-tertiaire",
+    "3666": "etude-opportunite-installation-solaire-thermique-collective",
+    "3667": "etude-opportunite-installation-biomasse-collective",
+    "3668": "etude-faisabilite-renovation-eclairage-exterieur"
   }
 }
