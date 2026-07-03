@@ -47,7 +47,9 @@
       "cheque-transition-tissu-economique",
       "diag-accompagnement-tee-rh",
       "cec-impact",
-      "contrat-3s-occitanie"
+      "contrat-3s-occitanie",
+      "etude-energetique-batiment-tertiaire",
+      "aide-renovation-batiment-tertiaire"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action économies d'énergie",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action économies d'énergie",
@@ -144,7 +146,8 @@
       "camping-independant-na",
       "hotellerie-independante-bfc",
       "aide-tourisme-guadeloupe",
-      "cheque-transition-tissu-economique"
+      "cheque-transition-tissu-economique",
+      "etude-faisabilite-renovation-eclairage-exterieur"
     ],
     "linkedProjects": [
       4
@@ -221,7 +224,8 @@
       "decarb-flash-2025-2027",
       "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
       "etude-opportunite-pv-bfc",
-      "etude-opportunite-pv-idf"
+      "etude-opportunite-pv-idf",
+      "etude-opportunite-installation-solaire-thermique-collective"
     ],
     "linkedProjects": [
       4
@@ -363,7 +367,8 @@
       "etude-d-opportunite-multi-enrr",
       "etude-opportunite-pv-bfc",
       "etude-opportunite-pv-idf",
-      "pass-transformation-ecologique-occitanie"
+      "pass-transformation-ecologique-occitanie",
+      "etude-opportunite-installation-solaire-thermique-collective"
     ],
     "linkedProjects": [
       4
@@ -618,7 +623,8 @@
       "deter-decarboner-le-tertiaire",
       "cheque-transition-tissu-economique",
       "etude-d-opportunite-multi-enrr",
-      "pass-transformation-ecologique-occitanie"
+      "pass-transformation-ecologique-occitanie",
+      "etude-opportunite-installation-biomasse-collective"
     ],
     "linkedProjects": [
       4
@@ -1008,7 +1014,12 @@
       "diagnostic-conso-elec",
       "easy-diag",
       "cheque-transition-tissu-economique",
-      "pass-transformation-ecologique-occitanie"
+      "pass-transformation-ecologique-occitanie",
+      "etude-energetique-batiment-tertiaire",
+      "aide-renovation-batiment-tertiaire",
+      "etude-opportunite-installation-solaire-thermique-collective",
+      "etude-opportunite-installation-biomasse-collective",
+      "etude-faisabilite-renovation-eclairage-exterieur"
     ],
     "linkedProjects": [
       4
@@ -1095,7 +1106,9 @@
       "aide-investissement-librairie",
       "booster-transformation-rev-3",
       "cheque-transition-tissu-economique",
-      "pass-transformation-ecologique-occitanie"
+      "pass-transformation-ecologique-occitanie",
+      "etude-energetique-batiment-tertiaire",
+      "aide-renovation-batiment-tertiaire"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir l'isolation thermique de votre bâtiment",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de l'isolation thermique de votre bâtiment",
@@ -3486,7 +3499,10 @@
       "prit-hdf",
       "aide-tourisme-guadeloupe",
       "deter-decarboner-le-tertiaire",
-      "cheque-transition-tissu-economique"
+      "cheque-transition-tissu-economique",
+      "etude-energetique-batiment-tertiaire",
+      "aide-renovation-batiment-tertiaire",
+      "etude-opportunite-installation-biomasse-collective"
     ],
     "linkedProjects": [
       4,
