@@ -1,33 +1,27 @@
-titre: Aide à la rénovation d'un bâtiment tertiaire - Corse
-promesse: >-
-  Faites vous accompagner dans la rénovation énergétique de votre bâtiment
-  tertiaire
+titre: Aide à l'installation d'une chauderie biomasse collective - Corse
+promesse: Bénéficiez d'un accompagnement pour l'installation d'une chauderie biomasse
 description: >-
-  Vous avez un projet de rénovation énergétique de votre bâtiment à usage
-  tertiaire ? \
+  Vous avez un projet d'installation de **chauderie biomasse** dans votre
+  entreprise, pour le **chauffage** et/ou l'**eau chaude sanitaire** ? \
 
-  Pour le réaliser, bénéficiez d'une **aide financière** et d'un **appui
-  d'expertise technique** de l'Agence d’Aménagement durable, d’Urbanisme et
-  d’Énergie de la Corse.
+  Ce dispositif vous soutient financièrement et vous apporte une **expertise
+  technico-économique** de bout en bout.
 description longue: >-
-  L’aide soutient les acteurs publics et privés dans la rénovation de leurs
-  bâtiments tertiaires en finançant une partie des travaux. Elle inclut un
-  accompagnement technique pour identifier les solutions les plus efficaces,
-  optimiser les investissements et garantir la qualité de réalisation. Elle
-  permet de réduire durablement les consommations et d’améliorer la performance
-  environnementale des bâtiments. Cet audit doit être conforme au cahier des
-  charges de l'AUE et le programme de travaux doit être conforme à ce dernier.
-
-
-  Le taux d'accompagnement maximal est fixé à 70% pour les petites entreprises,
-  60% pour les moyennes entreprises et 50% pour les grandes entreprises au sens
-  de la réglementation européenne sur les aides d'État
+  L’aide finance une part des coûts d’installation d’une chaufferie biomasse
+  collective, tout en offrant un accompagnement technique pour définir les
+  besoins, choisir les équipements adéquats et sécuriser la réalisation. Elle
+  permet de déployer une solution performante, durable et adaptée aux ressources
+  locales. Le soutien financier est très important, faisant de cette solution
+  l'une des plus appropriées dans le grand tertiaire, notamment dans le cas
+  d'une substitution de chaudière à énergie fossile.
+fin de validité: 31/12/2028
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse
 contact question: https://www.aue.corsica/Contact_a649.html
-url: https://www.aue.corsica/Le-guide-des-primes_a206.html
+url: >-
+  https://www.aue.corsica/Collectivites-entreprises-passez-au-Bois-Energie-_a790.html
 nature de l'aide: financement
-montant du financement: Jusqu'à 40% de l'assiette de travaux énergétiques
+montant du financement: Jusqu'à 70% d'aide sur le surcoût par rapport à une solution de référence
 objectifs:
   - description: >-
       Contactez l'AUE pour évaluer votre éligibilité et la pertinence de votre
@@ -56,7 +50,7 @@ conditions d'éligibilité:
   secteur géographique:
     - Corse
   secteur d'activité:
-    - Bâtiments à usage tertiaire
+    - Tous secteurs d'activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:
@@ -66,10 +60,17 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
       - code NAF niveau 1 . est G
       - code NAF niveau 1 . est H
       - code NAF niveau 1 . est I

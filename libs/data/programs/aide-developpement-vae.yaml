@@ -1,33 +1,23 @@
-titre: Aide à la rénovation d'un bâtiment tertiaire - Corse
+titre: Aide au développement de flottes de Vélo à assistance électrique - Corse
 promesse: >-
-  Faites vous accompagner dans la rénovation énergétique de votre bâtiment
-  tertiaire
+  Accélérez la mobilité douce au sein de votre entreprise en mettant à
+  disposition une flotte de VAE
 description: >-
-  Vous avez un projet de rénovation énergétique de votre bâtiment à usage
-  tertiaire ? \
-
-  Pour le réaliser, bénéficiez d'une **aide financière** et d'un **appui
-  d'expertise technique** de l'Agence d’Aménagement durable, d’Urbanisme et
-  d’Énergie de la Corse.
-description longue: >-
-  L’aide soutient les acteurs publics et privés dans la rénovation de leurs
-  bâtiments tertiaires en finançant une partie des travaux. Elle inclut un
-  accompagnement technique pour identifier les solutions les plus efficaces,
-  optimiser les investissements et garantir la qualité de réalisation. Elle
-  permet de réduire durablement les consommations et d’améliorer la performance
-  environnementale des bâtiments. Cet audit doit être conforme au cahier des
-  charges de l'AUE et le programme de travaux doit être conforme à ce dernier.
+  Vous souhaitez mettre **à disposition de vos clients ou de vos salariés** une
+  **flotte de vélos à assistance électrique** (VAE) et/ou installer une
+  **station de recharge** des VAE sur votre site ?
 
 
-  Le taux d'accompagnement maximal est fixé à 70% pour les petites entreprises,
-  60% pour les moyennes entreprises et 50% pour les grandes entreprises au sens
-  de la réglementation européenne sur les aides d'État
-illustration: images/TEE_energie_verte.webp
+  Bénéficiez d'un accompagnement sur mesure sur les plans financiers et
+  techniques.
+description longue: "- **De 1 à 3 VAE** achetés\_**:** **aide de\_25%**\_plafonnée à **500 €**/VAE.\n- **À partir de 4 VAE\_(ou plus)** achetés :\_**aide de\_25%**\_plafonnée à **1 000€**/VAE.\n- **Stations de recharge\_: aide de 50%**\_plafonnée à **4000€**/point de charge\_et bonifiée à\_**60%**\_en cas de station rechargée en énergie renouvelable.\n\nAvant d'acheter votre flotte de VAE ou de mettre en place votre station de recharge, adressez votre demande\_de soutien financier à l'AUE."
+illustration: images/TEE_eolienne.webp
 opérateur de contact: Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse
 contact question: https://www.aue.corsica/Contact_a649.html
-url: https://www.aue.corsica/Le-guide-des-primes_a206.html
+url: >-
+  https://www.aue.corsica/Aide-a-l-achat-des-Velos-a-Assistance-Electrique_a856.html
 nature de l'aide: financement
-montant du financement: Jusqu'à 40% de l'assiette de travaux énergétiques
+montant du financement: 500 €/vélo, puis 1000 €/vélo au-delà de 4 VAE
 objectifs:
   - description: >-
       Contactez l'AUE pour évaluer votre éligibilité et la pertinence de votre
@@ -56,7 +46,7 @@ conditions d'éligibilité:
   secteur géographique:
     - Corse
   secteur d'activité:
-    - Bâtiments à usage tertiaire
+    - Tous secteurs d'activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:
@@ -70,6 +60,12 @@ publicodes:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
       - code NAF niveau 1 . est G
       - code NAF niveau 1 . est H
       - code NAF niveau 1 . est I
@@ -87,8 +83,7 @@ publicodes:
       - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
-      - questionnaire . objectif prioritaire . est rénover mon bâtiment
-      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est la mobilité durable
   entreprise . est dans une zone géographique éligible:
     une de ces conditions:
       - région = Corse

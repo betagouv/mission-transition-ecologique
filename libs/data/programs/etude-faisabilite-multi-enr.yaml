@@ -1,22 +1,22 @@
-titre: Aide à la rénovation d'un bâtiment tertiaire - Corse
-promesse: >-
-  Faites vous accompagner dans la rénovation énergétique de votre bâtiment
-  tertiaire
+titre: Étude de faisabilité énergies renouvelables - Corse
+promesse: Identifiez les énergies renouvelables les plus adaptées à votre site
 description: >-
-  Vous avez un projet de rénovation énergétique de votre bâtiment à usage
-  tertiaire ? \
+  Vous avez un projet qui repose sur la mise en place d'énergie renouvelables
+  (solaire, biomasse, géothermie, etc.)? \
 
-  Pour le réaliser, bénéficiez d'une **aide financière** et d'un **appui
-  d'expertise technique** de l'Agence d’Aménagement durable, d’Urbanisme et
-  d’Énergie de la Corse.
+  Faites-vous accompagner dans l'analyse de ce projet , évaluez les **différents
+  scénarios technico‑économiques** et identifiez les **aides financières**
+  utiles à votre projet.
 description longue: >-
-  L’aide soutient les acteurs publics et privés dans la rénovation de leurs
-  bâtiments tertiaires en finançant une partie des travaux. Elle inclut un
-  accompagnement technique pour identifier les solutions les plus efficaces,
-  optimiser les investissements et garantir la qualité de réalisation. Elle
-  permet de réduire durablement les consommations et d’améliorer la performance
-  environnementale des bâtiments. Cet audit doit être conforme au cahier des
-  charges de l'AUE et le programme de travaux doit être conforme à ce dernier.
+  L’étude évalue les différents gisements d’énergies renouvelables disponibles
+  sur un site et compare plusieurs solutions selon leur performance, faisabilité
+  et rentabilité.
+
+
+  Elle propose des scénarios d’investissement hiérarchisés, accompagnés d’une
+  analyse détaillée des impacts énergétiques. Les aides mobilisables sont
+  intégrées afin de guider la décision vers le choix le plus performant et
+  durable.
 
 
   Le taux d'accompagnement maximal est fixé à 70% pour les petites entreprises,
@@ -26,8 +26,8 @@ illustration: images/TEE_energie_verte.webp
 opérateur de contact: Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse
 contact question: https://www.aue.corsica/Contact_a649.html
 url: https://www.aue.corsica/Le-guide-des-primes_a206.html
-nature de l'aide: financement
-montant du financement: Jusqu'à 40% de l'assiette de travaux énergétiques
+nature de l'aide: étude
+montant du financement: Jusqu'à 70% du coût de la prestation
 objectifs:
   - description: >-
       Contactez l'AUE pour évaluer votre éligibilité et la pertinence de votre
@@ -46,8 +46,8 @@ objectifs:
       requises à l'AUE, par mail ou voie postale. Le dossier est alors instruit
       et présenté en instance délibérative de l'agence.
   - description: >-
-      Si votre demande est acceptée, réalisez les travaux et envoyez les preuves
-      de réalisation conformes aux attentes de l'AUE. La subvention est alors
+      Si votre demande est acceptée, réalisez l'étude et envoyez les preuves de
+      réalisation conformes aux attentes de l'AUE. La subvention est alors
       versée sur facture acquittée.
 conditions d'éligibilité:
   taille de l'entreprise:
@@ -56,7 +56,7 @@ conditions d'éligibilité:
   secteur géographique:
     - Corse
   secteur d'activité:
-    - Bâtiments à usage tertiaire
+    - Tous secteurs d'activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:
@@ -70,6 +70,12 @@ publicodes:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
       - code NAF niveau 1 . est G
       - code NAF niveau 1 . est H
       - code NAF niveau 1 . est I

@@ -64,6 +64,12 @@
     ]
   },
   {
+    "operator": "CCI Occitanie",
+    "filterCategories": [
+      "CCI"
+    ]
+  },
+  {
     "operator": "CCI ou CMA",
     "filterCategories": [
       "CCI",
@@ -193,6 +199,12 @@
     ],
     "imagePath": "/images/logos/operateur/cned.webp",
     "color": "purple"
+  },
+  {
+    "operator": "CMA Occitanie",
+    "filterCategories": [
+      "CMA"
+    ]
   },
   {
     "operator": "Voies Navigables de France",
