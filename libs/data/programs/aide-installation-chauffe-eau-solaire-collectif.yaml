@@ -1,33 +1,23 @@
-titre: Aide à la rénovation d'un bâtiment tertiaire - Corse
+titre: Aide à l'installation d'un chauffe-eau solaire collectif - Corse
 promesse: >-
-  Faites vous accompagner dans la rénovation énergétique de votre bâtiment
-  tertiaire
+  Bénéficiez d'un accompagnement financier et technique dans votre projet
+  solaire thermique
 description: >-
-  Vous avez un projet de rénovation énergétique de votre bâtiment à usage
-  tertiaire ? \
+  Vous avez des besoins conséquents en **eau chaude sanitaire (ou
+  climatisation)** et vous souhaitez installer un système de production d'eau
+  chaude solaire ? \
 
-  Pour le réaliser, bénéficiez d'une **aide financière** et d'un **appui
-  d'expertise technique** de l'Agence d’Aménagement durable, d’Urbanisme et
-  d’Énergie de la Corse.
-description longue: >-
-  L’aide soutient les acteurs publics et privés dans la rénovation de leurs
-  bâtiments tertiaires en finançant une partie des travaux. Elle inclut un
-  accompagnement technique pour identifier les solutions les plus efficaces,
-  optimiser les investissements et garantir la qualité de réalisation. Elle
-  permet de réduire durablement les consommations et d’améliorer la performance
-  environnementale des bâtiments. Cet audit doit être conforme au cahier des
-  charges de l'AUE et le programme de travaux doit être conforme à ce dernier.
-
-
-  Le taux d'accompagnement maximal est fixé à 70% pour les petites entreprises,
-  60% pour les moyennes entreprises et 50% pour les grandes entreprises au sens
-  de la réglementation européenne sur les aides d'État
-illustration: images/TEE_energie_verte.webp
+  Cet appel à projets vous offre un **soutien financier et technique** de bout
+  en bout, et vous permet de r**entabiliser votre installation en moins de 5
+  ans**.
+description longue: "L’appel à projets s’adresse particulièrement aux secteurs suivants : \n\n- **Le secteur touristique**\_: Hôtels, restaurants et campings, et autres hébergements touristiques.\n- **Le secteur de la santé**\_: Hôpitaux, cliniques et maisons de retraite, EPHAD.\n- **Le secteur du logement social**\_: Patrimoine des bailleurs sociaux.\n- **Le secteur public**\_: Patrimoine des collectivités."
+fin de validité: 31/12/2028
+illustration: images/TEE_ampoule.webp
 opérateur de contact: Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse
 contact question: https://www.aue.corsica/Contact_a649.html
-url: https://www.aue.corsica/Le-guide-des-primes_a206.html
+url: https://www.aue.corsica/Appel-a-projets-Solaire-Thermique-Collectif_a183.html
 nature de l'aide: financement
-montant du financement: Jusqu'à 40% de l'assiette de travaux énergétiques
+montant du financement: Jusqu'à 80% des dépenses
 objectifs:
   - description: >-
       Contactez l'AUE pour évaluer votre éligibilité et la pertinence de votre
@@ -56,7 +46,7 @@ conditions d'éligibilité:
   secteur géographique:
     - Corse
   secteur d'activité:
-    - Bâtiments à usage tertiaire
+    - Tous secteurs d'activité
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
 publicodes:
@@ -66,10 +56,17 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
       - code NAF niveau 1 . est G
       - code NAF niveau 1 . est H
       - code NAF niveau 1 . est I

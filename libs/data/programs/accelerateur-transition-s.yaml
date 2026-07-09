@@ -1,0 +1,85 @@
+titre: Accélérateur Transition.S
+promesse: >-
+  Bénéficiez d'un accompagnement tout au long de votre parcours de transition
+  écologique
+description: "Vous êtez une TPE et PME en Occitanie souhaitant amorcer ou accélérer votre développement en intégrant les nouvelles attentes de transition économique, écologique et sociétale.\n\nLe parcours Transition.S s'organise en 4 étapes :\n\n- **Réalisation d’un diagnostic** pour faire le point sur les pratiques de l’entreprise\_(engagement RSE, réduction de l’impact environnemental, sobriété hydrique, bilan carbone, etc).\n- **Co-construction d’un plan d’action** sur mesure qui définit les axes de progrès, les priorités, le calendrier de réalisation.\n- **Construction d’un plan de financement**.\n- **Suivi de la mise en œuvre du plan** deux RDV formels **à 6 et 12 mois**."
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: Région Occitanie
+autres opérateurs:
+  - CCI Occitanie
+  - CMA Occitanie
+contact question: formulaire
+url: https://www.laregion.fr/Accelerateur-Transition-S-TPE-PME-CCI-CMA-Occitanie
+nature de l'aide: étude
+coût de l'accompagnement: Reste à charge de 650 € HT
+durée de l'accompagnement: 4 à 8 jours
+objectifs:
+  - description: >-
+      Contactez votre CCI ou votre CMA via le formulaire ci-dessous pour leur
+      manifester votre intérêt pour le parcours Transition.S.
+    liens:
+      - lien: >-
+          https://www.occitanie.cci.fr/sites/g/files/mwbcuj1211/files/2025-04/Plaquette%20Transition.S%20v5.pdf
+        texte: Présentation du parcours
+  - description: >-
+      Un conseiller vous recontacte pour évaluer la maturité et la pertinence de
+      votre projet.
+  - description: Si votre demande est acceptée, démarrez le parcours Transition.S.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 50 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Occitanie
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif >= 6
+      - effectif <= 49
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Occitanie

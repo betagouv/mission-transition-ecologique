@@ -401,6 +401,12 @@
     "3665": "aide-renovation-batiment-tertiaire",
     "3666": "etude-opportunite-installation-solaire-thermique-collective",
     "3667": "etude-opportunite-installation-biomasse-collective",
-    "3668": "etude-faisabilite-renovation-eclairage-exterieur"
+    "3668": "etude-faisabilite-renovation-eclairage-exterieur",
+    "3669": "etude-faisabilite-multi-enr",
+    "3670": "aide-renovation-eclairage-exterieur",
+    "3671": "aide-installation-chauffe-eau-solaire-collectif",
+    "3672": "aide-installation-chauderie-biomasse-collective",
+    "3673": "aide-developpement-vae",
+    "3674": "accelerateur-transition-s"
   }
 }
