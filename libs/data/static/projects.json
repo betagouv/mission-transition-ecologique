@@ -49,7 +49,11 @@
       "cec-impact",
       "contrat-3s-occitanie",
       "etude-energetique-batiment-tertiaire",
-      "aide-renovation-batiment-tertiaire"
+      "aide-renovation-batiment-tertiaire",
+      "etude-faisabilite-multi-enr",
+      "aide-installation-chauffe-eau-solaire-collectif",
+      "aide-installation-chauderie-biomasse-collective",
+      "accelerateur-transition-s"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action économies d'énergie",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action économies d'énergie",
@@ -147,7 +151,8 @@
       "hotellerie-independante-bfc",
       "aide-tourisme-guadeloupe",
       "cheque-transition-tissu-economique",
-      "etude-faisabilite-renovation-eclairage-exterieur"
+      "etude-faisabilite-renovation-eclairage-exterieur",
+      "aide-renovation-eclairage-exterieur"
     ],
     "linkedProjects": [
       4
@@ -225,7 +230,9 @@
       "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
       "etude-opportunite-pv-bfc",
       "etude-opportunite-pv-idf",
-      "etude-opportunite-installation-solaire-thermique-collective"
+      "etude-opportunite-installation-solaire-thermique-collective",
+      "etude-faisabilite-multi-enr",
+      "aide-installation-chauffe-eau-solaire-collectif"
     ],
     "linkedProjects": [
       4
@@ -368,7 +375,9 @@
       "etude-opportunite-pv-bfc",
       "etude-opportunite-pv-idf",
       "pass-transformation-ecologique-occitanie",
-      "etude-opportunite-installation-solaire-thermique-collective"
+      "etude-opportunite-installation-solaire-thermique-collective",
+      "etude-faisabilite-multi-enr",
+      "aide-installation-chauffe-eau-solaire-collectif"
     ],
     "linkedProjects": [
       4
@@ -443,7 +452,8 @@
       "decarb-flash-2025-2027",
       "deter-decarboner-le-tertiaire",
       "cheque-transition-tissu-economique",
-      "etude-d-opportunite-multi-enrr"
+      "etude-d-opportunite-multi-enrr",
+      "etude-faisabilite-multi-enr"
     ],
     "linkedProjects": [
       4
@@ -624,7 +634,9 @@
       "cheque-transition-tissu-economique",
       "etude-d-opportunite-multi-enrr",
       "pass-transformation-ecologique-occitanie",
-      "etude-opportunite-installation-biomasse-collective"
+      "etude-opportunite-installation-biomasse-collective",
+      "etude-faisabilite-multi-enr",
+      "aide-installation-chauderie-biomasse-collective"
     ],
     "linkedProjects": [
       4
@@ -696,7 +708,8 @@
       "decarb-flash-2025-2027",
       "cheque-transition-tissu-economique",
       "etudes-de-faisabilite-de-projet-de-production-delectricite-renouvelable-en-outre-mer-et-corse",
-      "etude-d-opportunite-multi-enrr"
+      "etude-d-opportunite-multi-enrr",
+      "etude-faisabilite-multi-enr"
     ],
     "linkedProjects": [
       4
@@ -773,7 +786,8 @@
       "decarb-flash-2025-2027",
       "deter-decarboner-le-tertiaire",
       "cheque-transition-tissu-economique",
-      "pass-transformation-ecologique-occitanie"
+      "pass-transformation-ecologique-occitanie",
+      "etude-faisabilite-multi-enr"
     ],
     "linkedProjects": [
       4,
@@ -900,7 +914,8 @@
       "certificats-economie-energie",
       "cheque-transition-tissu-economique",
       "etude-d-opportunite-multi-enrr",
-      "pass-transformation-ecologique-occitanie"
+      "pass-transformation-ecologique-occitanie",
+      "etude-faisabilite-multi-enr"
     ],
     "linkedProjects": [
       4
@@ -1019,7 +1034,9 @@
       "aide-renovation-batiment-tertiaire",
       "etude-opportunite-installation-solaire-thermique-collective",
       "etude-opportunite-installation-biomasse-collective",
-      "etude-faisabilite-renovation-eclairage-exterieur"
+      "etude-faisabilite-renovation-eclairage-exterieur",
+      "aide-renovation-eclairage-exterieur",
+      "aide-installation-chauffe-eau-solaire-collectif"
     ],
     "linkedProjects": [
       4
@@ -1200,7 +1217,8 @@
       "booster-transformation-rev-3",
       "programme-marguerite",
       "diag-mobilite-idf",
-      "conseil-mobilite-idf"
+      "conseil-mobilite-idf",
+      "aide-developpement-vae"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action mobilité",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action mobilité",
@@ -1422,7 +1440,8 @@
       "soutien-hebergement-touristique",
       "camping-independant-na",
       "prit-hdf",
-      "je-change-ma-voiture"
+      "je-change-ma-voiture",
+      "aide-developpement-vae"
     ],
     "linkedProjects": [
       16
@@ -1591,7 +1610,8 @@
       "cec-impact",
       "fonds-economie-circulaire-ormat",
       "pass-transformation-ecologique-occitanie",
-      "contrat-3s-occitanie"
+      "contrat-3s-occitanie",
+      "accelerateur-transition-s"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action déchets",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action déchets",
@@ -1673,7 +1693,8 @@
       "pret-ile-de-france",
       "aide-investissement-corse",
       "diag-performance",
-      "ecoprodduire"
+      "ecoprodduire",
+      "accelerateur-transition-s"
     ],
     "linkedProjects": [
       36
@@ -1968,7 +1989,8 @@
       "diag-mobilite-idf",
       "ameliorer-la-connaissance-des-milieux",
       "cec-impact",
-      "aide-au-changement-de-comportement"
+      "aide-au-changement-de-comportement",
+      "accelerateur-transition-s"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre campagne de sensibilisation des équipes",
@@ -2154,7 +2176,8 @@
       "autodiagnostic-rse",
       "m-diagnostic-accompagnement",
       "ameliorer-la-connaissance-des-milieux",
-      "aide-au-changement-de-comportement"
+      "aide-au-changement-de-comportement",
+      "accelerateur-transition-s"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une formation environnement",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre formation environnement",
@@ -2317,7 +2340,8 @@
       "cec-impact",
       "aide-au-changement-de-comportement",
       "contrat-entreprise-d-avenir",
-      "contrat-3s-occitanie"
+      "contrat-3s-occitanie",
+      "accelerateur-transition-s"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre stratégie RSE.",
@@ -2422,7 +2446,8 @@
       "accompagnement-rh",
       "concilier-enjeux-ecologiques-et-conditions-de-travail",
       "autodiagnostic-rse",
-      "eval-360-pays-de-la-loire"
+      "eval-360-pays-de-la-loire",
+      "accelerateur-transition-s"
     ],
     "linkedProjects": [],
     "priority": {
@@ -2498,7 +2523,8 @@
       "diagnostic-et-accompagnement-co2i",
       "eval-360-pays-de-la-loire",
       "cec-impact",
-      "contrat-3s-occitanie"
+      "contrat-3s-occitanie",
+      "accelerateur-transition-s"
     ],
     "linkedProjects": [
       1
@@ -2574,7 +2600,8 @@
       "performa-adaptation",
       "diagnostic-et-accompagnement-co2i",
       "cec-impact",
-      "contrat-3s-occitanie"
+      "contrat-3s-occitanie",
+      "accelerateur-transition-s"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'adaptation climat",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'adaptation climat",
@@ -2757,7 +2784,8 @@
       "cec-impact",
       "contrat-innovation-occitanie",
       "contrat-entreprise-d-avenir",
-      "contrat-3s-occitanie"
+      "contrat-3s-occitanie",
+      "accelerateur-transition-s"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une démarche d'écoconception",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité d'une démarche d'écoconception",
@@ -3355,7 +3383,8 @@
       "pret-ile-de-france",
       "soutien-hebergement-touristique",
       "prit-hdf",
-      "diag-mobilite-idf"
+      "diag-mobilite-idf",
+      "aide-developpement-vae"
     ],
     "linkedProjects": [
       16
@@ -3430,7 +3459,8 @@
       "ameliorer-la-connaissance-des-milieux",
       "proteger-biodiversite-et-restaurer-trame-verte-et-bleue",
       "contrat-innovation-occitanie",
-      "contrat-3s-occitanie"
+      "contrat-3s-occitanie",
+      "accelerateur-transition-s"
     ],
     "linkedProjects": [],
     "priority": {
@@ -3502,7 +3532,8 @@
       "cheque-transition-tissu-economique",
       "etude-energetique-batiment-tertiaire",
       "aide-renovation-batiment-tertiaire",
-      "etude-opportunite-installation-biomasse-collective"
+      "etude-opportunite-installation-biomasse-collective",
+      "aide-installation-chauderie-biomasse-collective"
     ],
     "linkedProjects": [
       4,
@@ -3562,7 +3593,8 @@
       "impulsion-environnement",
       "prit-hdf",
       "advenir",
-      "certificats-economie-energie"
+      "certificats-economie-energie",
+      "aide-developpement-vae"
     ],
     "linkedProjects": [
       16
@@ -4276,7 +4308,8 @@
       "certificats-economie-energie",
       "parm-vnf",
       "programme-marguerite",
-      "diag-mobilite-idf"
+      "diag-mobilite-idf",
+      "aide-developpement-vae"
     ],
     "linkedProjects": [
       16
