@@ -1,0 +1,94 @@
+titre: PROREFEI formation dédiée aux référents énergie dans l'industrie
+promesse: Formez-vous à l'efficacité énergétique dans l'industrie
+description: >-
+  Le parcours PROREFEI propose deux parcours distincts, à destination des
+  salariés de l'industrie :
+
+
+  - Un **parcours de formation en trois modules** comprenant un **MOOC**, un
+  **stage de 2 jours** et du **coaching en situation de travail**.
+
+  - Une **formation** sur l'un des thèmes suivants : **Achats d'énergie,
+  Énergies renouvelables** ou **Plan de mesurage**. 
+
+
+  À l'issue de ces formations, vous : 
+
+
+  - Maîtrisez les notions de base de l’efficacité énergétique en industrie.
+
+  - Êtes familier des unités énergétiques.
+
+  - Savez analyser une facture électrique.
+
+  - Comprenez et identifiez les différents systèmes énergétiques de votre
+  entreprise.
+
+  - Êtes en mesure de caractériser les principaux paramètres électriques de
+  votre profil utilisateur
+description longue: >-
+  Dans le cadre de la formation en trois modules, un test de positionnement est
+  réalisé au début du MOOC et permet d'orienter la personne entre 2 parcours
+  équivalents (un technique, l'autre moins technique = profil management). À la
+  fin du parcours, il est possible de choisir de réaliser en plus le parcours de
+  l'autre profil. Si vous souhaitez réaliser les modules 2 et 3 de la formation
+  PROREFEI, il est nécessaire d'avoir obtenu au moins 70% de bonnes réponses au
+  quiz final.\
+
+  \
+
+  Si vous réalisez le parcours en trois modules entièrement, vous pouvez
+  peut-être bénéficier d'une prise en charge PACTE Industrie à hauteur de 70%
+  des coûts pédagogiques.
+illustration: images/TEE_energie_verte.webp
+opérateur de contact: ADEME
+contact question: https://www.prorefei.org/contact
+url: >-
+  https://academie.ademe.fr/formations/energies/economies-d-energie/prorefei-la-formation-dediee-au-referents-energie-en-industrie-mooc-pacte-industrie/s5269#programme
+nature de l'aide: formation
+coût de l'accompagnement: Jusqu'à 70% des coûts pédagogiques
+durée de l'accompagnement: Variable, en fonction des modules choisis
+objectifs:
+  - description: Consultez le parcours et les formations qui vous intéressent
+    liens:
+      - lien: >-
+          https://www.prorefei.org/le-deroule-du-parcours/les-modules-de-la-formation-pour-les-industriels
+        texte: Déroulé du parcours
+  - description: >-
+      Si vous choisissez la formation en trois modules, inscrivez-vous d'abord
+      au stage (étape 2).
+    liens:
+      - lien: https://www.prorefei.org/je-minscris
+        texte: M'inscrire au stage ou à une formation
+  - description: >-
+      Contactez l’organisme de formation qui propose la session choisie, afin
+      qu'il réponde à vos questions et vous accompagne dans vos démarches
+      administratives.
+  - description: Suivez les modules ou la formation thématique.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - >-
+      Formation à destination des salariés des entreprises des filières
+      industrielles.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique

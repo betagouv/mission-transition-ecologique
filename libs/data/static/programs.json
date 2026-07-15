@@ -60407,5 +60407,394 @@
     },
     "id": "accelerateur-transition-s",
     "type": "tee"
+  },
+  {
+    "titre": "PROREFEI formation dédiée aux référents énergie dans l'industrie",
+    "promesse": "Formez-vous à l'efficacité énergétique dans l'industrie",
+    "description": "Le parcours PROREFEI propose deux parcours distincts, à destination des salariés de l'industrie :\n\n- Un **parcours de formation en trois modules** comprenant un **MOOC**, un **stage de 2 jours** et du **coaching en situation de travail**.\n- Une **formation** sur l'un des thèmes suivants : **Achats d'énergie, Énergies renouvelables** ou **Plan de mesurage**. \n\nÀ l'issue de ces formations, vous : \n\n- Maîtrisez les notions de base de l’efficacité énergétique en industrie.\n- Êtes familier des unités énergétiques.\n- Savez analyser une facture électrique.\n- Comprenez et identifiez les différents systèmes énergétiques de votre entreprise.\n- Êtes en mesure de caractériser les principaux paramètres électriques de votre profil utilisateur",
+    "description longue": "Dans le cadre de la formation en trois modules, un test de positionnement est réalisé au début du MOOC et permet d'orienter la personne entre 2 parcours équivalents (un technique, l'autre moins technique = profil management). À la fin du parcours, il est possible de choisir de réaliser en plus le parcours de l'autre profil. Si vous souhaitez réaliser les modules 2 et 3 de la formation PROREFEI, il est nécessaire d'avoir obtenu au moins 70% de bonnes réponses au quiz final.\\\n\\\nSi vous réalisez le parcours en trois modules entièrement, vous pouvez peut-être bénéficier d'une prise en charge PACTE Industrie à hauteur de 70% des coûts pédagogiques.",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://www.prorefei.org/contact",
+    "url": "https://academie.ademe.fr/formations/energies/economies-d-energie/prorefei-la-formation-dediee-au-referents-energie-en-industrie-mooc-pacte-industrie/s5269#programme",
+    "nature de l'aide": "formation",
+    "coût de l'accompagnement": "Jusqu'à 70% des coûts pédagogiques",
+    "durée de l'accompagnement": "Variable, en fonction des modules choisis",
+    "objectifs": [
+      {
+        "description": "Consultez le parcours et les formations qui vous intéressent",
+        "liens": [
+          {
+            "lien": "https://www.prorefei.org/le-deroule-du-parcours/les-modules-de-la-formation-pour-les-industriels",
+            "texte": "Déroulé du parcours"
+          }
+        ]
+      },
+      {
+        "description": "Si vous choisissez la formation en trois modules, inscrivez-vous d'abord au stage (étape 2).",
+        "liens": [
+          {
+            "lien": "https://www.prorefei.org/je-minscris",
+            "texte": "M'inscrire au stage ou à une formation"
+          }
+        ]
+      },
+      {
+        "description": "Contactez l’organisme de formation qui propose la session choisie, afin qu'il réponde à vos questions et vous accompagne dans vos démarches administratives."
+      },
+      {
+        "description": "Suivez les modules ou la formation thématique."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Formation à destination des salariés des entreprises des filières industrielles."
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      },
+      "priorityObjectives": [
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      }
+    },
+    "id": "prorefei-formation-referents-energie-industrie",
+    "type": "tee"
+  },
+  {
+    "titre": "Compétitivité énergétique des entreprises",
+    "promesse": "Mettez en place un programme visant à réduire votre dépendance aux énergies fossiles",
+    "description": "Cet appel à projets vous accompagne financièrement pour mener une étude ou un investissement visant à :\n\n- Mesurer et **connaître la consommation d’énergie** de votre entreprise.\n- **Réduire vos besoins** d’énergie (performance énergétique, récupération de chaleur perdue…).\n- **Substituer votre consommation d’énergie fossile par des énergies renouvelables** (électrification, méthanisation, hydrogène vert…).",
+    "description longue": "Sont exclues de l'appel à projets : \n\n• Les actions relevant de l’efficacité énergétique dans le transport.\\\n• Les actions relevant de l’efficacité énergétique des bâtiments.\\\n• L'installation de panneaux solaires photovoltaïques en autoconsommation.\\\n• Tout projet relevant d’une mise en conformité réglementaire.",
+    "fin de validité": "31/12/2026",
+    "illustration": "images/TEE_eolienne.webp",
+    "opérateur de contact": "ADEME",
+    "autres opérateurs": [
+      "Région Nouvelle-Aquitaine"
+    ],
+    "contact question": "formulaire",
+    "url": "https://librairie.ademe.fr/energies/5508-nouvelle-aquitaine-synthese-des-dispositifs-de-decarbonation-de-l-industrie-2025.html",
+    "nature de l'aide": "financement",
+    "montant du financement": "Variable selon projet",
+    "objectifs": [
+      {
+        "description": "Consultez le règlement de l'appel à projets pour voir si vos investissements ou votre étude sont éligibles à un financement.",
+        "liens": [
+          {
+            "lien": "https://les-aides.nouvelle-aquitaine.fr/system/files/specific_pj_files/AAP_Competitivite_energetique_2025_VF.pdf",
+            "texte": "Règlement de l'appel à projets"
+          }
+        ]
+      },
+      {
+        "description": "Complétez la fiche de demande préalable et envoyez-là au chargé de mission du département concerné.",
+        "liens": [
+          {
+            "lien": "https://les-aides.nouvelle-aquitaine.fr/system/files/specific_pj_files/2025_Fiche_demande_prealable_FC_CEE_VF.pdf",
+            "texte": "Fiche de demande préalable"
+          },
+          {
+            "lien": "https://les-aides.nouvelle-aquitaine.fr/system/files/specific_pj_files/AAP_Competitivite_energetique_2025_VF.pdf",
+            "texte": "Contacts des chargés de mission par département (en dernière page)"
+          }
+        ]
+      },
+      {
+        "description": "Votre projet est examiné. Si votre candidature est retenue, recevez un calendrier et un plan de financement."
+      },
+      {
+        "description": "Réalisez votre étude ou vos investissements."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Toutes tailles",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "Nouvelle-Aquitaine"
+      ],
+      "secteur d'activité": [
+        "L’appel à projets est ouvert prioritairement aux TPE, PME et ETI, entreprises de\\\nproduction en région Nouvelle-Aquitaine."
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H"
+        ],
+        "allowedRegion": [
+          "Nouvelle-Aquitaine"
+        ]
+      },
+      "validity": {
+        "end": "31/12/2026"
+      },
+      "priorityObjectives": [
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
+        "toutes ces conditions": [
+          "entreprise . est dans une zone géographique éligible"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      },
+      "entreprise . est dans une zone géographique éligible": {
+        "une de ces conditions": [
+          "région = Nouvelle-Aquitaine"
+        ]
+      }
+    },
+    "id": "competitivite-energetique-des-entreprises-na",
+    "type": "tee"
   }
 ]
