@@ -68,7 +68,7 @@ conditions d'éligibilité:
     - Toutes tailles
     - Éligible aux micro-entreprises
   secteur géographique:
-    - Bouches-du-Rhône, Corse
+    - Bouches-du-Rhône, Corse, Provence-Alpes-Côte d'Azur
   secteur d'activité:
     - >-
       Acteurs économiques (industries, sociétés, entreprises, coopératives…) non
@@ -86,7 +86,8 @@ publicodes:
       toutes ces conditions:
         - dispositif . début de validité <= date du jour
         - date du jour <= dispositif . fin de validité
-    valeur: oui
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est B
@@ -114,3 +115,8 @@ publicodes:
       - >-
         questionnaire . objectif prioritaire . est diminuer ma consommation
         d'eau
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Bouches-du-Rhône
+      - région = Corse
+      - région = Provence-Alpes-Côte d'Azur
