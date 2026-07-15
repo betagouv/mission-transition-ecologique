@@ -60589,6 +60589,184 @@
     "type": "tee"
   },
   {
+    "titre": "Autodiagnostic Eau - Salons de coiffure",
+    "promesse": "Economisez l'eau dans votre salon de coiffure",
+    "description": "Détection de fuites d'eau, matériel adapté au bac à shampooing et au lavage du linge, sensibilisation de vos équipes... la CMA Auvergne-Rhône-Alpes vous accompagne pour réaliser des économies d'eau et réduire vos factures au sein de votre salon de coiffure. \n\nUn autodiagnostic gratuit vous permet en 5 minutes :\n\n- D'identifier vos postes les plus consommateurs en eau.\n- D'élaborer une liste d'actions vous permettant de réaliser jusqu'à 30% d'économie d'eau.\n- De comprendre comment impliquer vos équipes à travers une série d'éco-gestes.",
+    "illustration": "images/TEE_ampoule.webp",
+    "opérateur de contact": "CCI ou CMA",
+    "autres opérateurs": [
+      "CMA Auvergne-Rhône-Alpes"
+    ],
+    "contact question": "https://autodiagnostic-eau.cma-auvergnerhonealpes.fr/contact-cma/",
+    "url": "https://autodiagnostic-eau.cma-auvergnerhonealpes.fr/signup/?next=/",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "gratuit",
+    "durée de l'accompagnement": "15 minutes",
+    "objectifs": [
+      {
+        "description": "Inscrivez-vous sur la plateforme CMA AURA pour démarrer le diagnostic. ",
+        "liens": [
+          {
+            "lien": "https://autodiagnostic-eau.cma-auvergnerhonealpes.fr/signup/?next=/",
+            "texte": "M'inscrire"
+          }
+        ]
+      },
+      {
+        "description": "Effectuez le diagnostic en 5 minutes chrono, en répondant à des questions simples concernant les pratiques et les équipements du salon."
+      },
+      {
+        "description": "Recevez un plan d'actions personnalisé et des conseils pratiques à mettre en place au sein de votre salon de coiffure."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "toute taille",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Salons de coiffure",
+        "9602A | 960211 | 960212 | 960214 | 960220"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "Q",
+          "S",
+          "T"
+        ]
+      },
+      "validity": {
+        "end": "/"
+      },
+      "priorityObjectives": [
+        "water"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": "date du jour <= dispositif . fin de validité",
+        "valeur": "oui"
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est diminuer ma consommation d'eau"
+        ]
+      }
+    },
+    "id": "autodiag-eau-salons-de-coiffure",
+    "type": "tee"
+  },
+  {
     "titre": "Compétitivité énergétique des entreprises",
     "promesse": "Mettez en place un programme visant à réduire votre dépendance aux énergies fossiles",
     "description": "Cet appel à projets vous accompagne financièrement pour mener une étude ou un investissement visant à :\n\n- Mesurer et **connaître la consommation d’énergie** de votre entreprise.\n- **Réduire vos besoins** d’énergie (performance énergétique, récupération de chaleur perdue…).\n- **Substituer votre consommation d’énergie fossile par des énergies renouvelables** (électrification, méthanisation, hydrogène vert…).",
