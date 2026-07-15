@@ -1,0 +1,94 @@
+titre: Compétitivité énergétique des entreprises
+promesse: >-
+  Mettez en place un programme visant à réduire votre dépendance aux énergies
+  fossiles
+description: >-
+  Cet appel à projets vous accompagne financièrement pour mener une étude ou un
+  investissement visant à :
+
+
+  - Mesurer et **connaître la consommation d’énergie** de votre entreprise.
+
+  - **Réduire vos besoins** d’énergie (performance énergétique, récupération de
+  chaleur perdue…).
+
+  - **Substituer votre consommation d’énergie fossile par des énergies
+  renouvelables** (électrification, méthanisation, hydrogène vert…).
+description longue: |-
+  Sont exclues de l'appel à projets : 
+
+  • Les actions relevant de l’efficacité énergétique dans le transport.\
+  • Les actions relevant de l’efficacité énergétique des bâtiments.\
+  • L'installation de panneaux solaires photovoltaïques en autoconsommation.\
+  • Tout projet relevant d’une mise en conformité réglementaire.
+fin de validité: 31/12/2026
+illustration: images/TEE_eolienne.webp
+opérateur de contact: ADEME
+autres opérateurs:
+  - Région Nouvelle-Aquitaine
+contact question: formulaire
+url: >-
+  https://librairie.ademe.fr/energies/5508-nouvelle-aquitaine-synthese-des-dispositifs-de-decarbonation-de-l-industrie-2025.html
+nature de l'aide: financement
+montant du financement: Variable selon projet
+objectifs:
+  - description: >-
+      Consultez le règlement de l'appel à projets pour voir si vos
+      investissements ou votre étude sont éligibles à un financement.
+    liens:
+      - lien: >-
+          https://les-aides.nouvelle-aquitaine.fr/system/files/specific_pj_files/AAP_Competitivite_energetique_2025_VF.pdf
+        texte: Règlement de l'appel à projets
+  - description: >-
+      Complétez la fiche de demande préalable et envoyez-là au chargé de mission
+      du département concerné.
+    liens:
+      - lien: >-
+          https://les-aides.nouvelle-aquitaine.fr/system/files/specific_pj_files/2025_Fiche_demande_prealable_FC_CEE_VF.pdf
+        texte: Fiche de demande préalable
+      - lien: >-
+          https://les-aides.nouvelle-aquitaine.fr/system/files/specific_pj_files/AAP_Competitivite_energetique_2025_VF.pdf
+        texte: Contacts des chargés de mission par département (en dernière page)
+  - description: >-
+      Votre projet est examiné. Si votre candidature est retenue, recevez un
+      calendrier et un plan de financement.
+  - description: Réalisez votre étude ou vos investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Nouvelle-Aquitaine
+  secteur d'activité:
+    - >-
+      L’appel à projets est ouvert prioritairement aux TPE, PME et ETI,
+      entreprises de\
+
+      production en région Nouvelle-Aquitaine.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - entreprise . est dans une zone géographique éligible
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Nouvelle-Aquitaine
