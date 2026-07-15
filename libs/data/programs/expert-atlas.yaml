@@ -23,8 +23,13 @@ nature de l'aide: étude
 coût de l'accompagnement: Variable
 durée de l'accompagnement: 6 jours de prestation
 objectifs:
-  - description: Créez un compte sur le site d'Atlas
+  - description: >-
+      Consultez le périmètre de l'accompagnement et créez un compte sur le site
+      d'Atlas
     liens:
+      - lien: >-
+          https://www.opco-atlas.fr/entreprise/accompagnement-ressources-humaines.html
+        texte: Accompagnement Expert Atlas
       - lien: https://myatlas.opco-atlas.fr/creer-mon-compte
         texte: Créer mon compte
   - description: >-

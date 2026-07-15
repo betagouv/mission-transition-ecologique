@@ -1,0 +1,109 @@
+titre: Travail et climat
+promesse: >-
+  Adaptez les activités de montagne, viticulture et zones d'eau avec les acteurs
+  du territoire
+description: >-
+  Cet appel à projets, déployé dans les régions Auvergne-Rhône-Alpes, Occitanie
+  et Provence-Alpes-Côte-d'Azur, vise à **soutenir les projets d'adaptation,
+  d'atténuation et de redirection des effets du dérèglement climatique** sur
+  l'activité de travail, au sein des **territoires viticoles, de montagne et
+  d'eau**.
+description longue: >-
+  Les projets devront s'inscrire dans une dynamique de dialogue territorial
+  associant des parties prenantes — acteurs économiques, partenaires sociaux,
+  acteurs publics, etc. — afin de renforcer les coopérations, de créer des
+  espaces d’échange dédiés aux enjeux écologiques et économiques locaux, et de
+  tenir compte des spécificités et réalités propres à chaque territoire.
+début de validité: 09/06/2026
+fin de validité: 02/10/2026
+illustration: images/TEE_ampoule.webp
+opérateur de contact: ANACT
+contact question: >-
+  https://www.anact.fr/fact/appel-projets-travail-climat-aura-occitanie-paca#paragraph-202821
+url: https://www.anact.fr/fact/appel-projets-travail-climat-aura-occitanie-paca
+nature de l'aide: financement
+montant du financement: Jusqu'à 80% du coût du projet
+objectifs:
+  - description: >-
+      Découvrez le cadre de l'appel à projets et vérifiez l'éligibilité et la
+      conformité de votre projet.
+    liens:
+      - lien: >-
+          https://www.anact.fr/fact/appel-projets-travail-climat-aura-occitanie-paca
+        texte: Détail de l'appel à projets
+      - lien: >-
+          https://www.anact.fr/sites/default/files/2026-03/logigramme-fact-e%CC%81ligibilite%CC%81_1.pdf
+        texte: Conditions d'éligibilité
+  - description: >-
+      Vérifiez la typologie de votre projet et si vous êtes plutôt éligible sur
+      une action collective ou individuelle. 
+    liens:
+      - lien: >-
+          https://www.anact.fr/sites/default/files/2026-03/logigramme-fact-choix-action_2.pdf
+        texte: Faire le test action collective ou individuelle
+  - description: >-
+      Inscrivez-vous sur la plateforme de l'ANACT et déposez votre candidature
+      **avant le 2 octobre 2026.**
+    liens:
+      - lien: >-
+          https://demarche.numerique.gouv.fr/commencer/fact-appel-a-projets-territorial-travail-climat
+        texte: Dépôt de candidature
+  - description: Si votre projet est retenu, vous recevez les détails du programme.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 300 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Auvergne-Rhône-Alpes, Occitanie, Provence-Alpes-Côte d'Azur
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 299
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est former ou recruter
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Auvergne-Rhône-Alpes
+      - région = Occitanie
+      - région = Provence-Alpes-Côte d'Azur
