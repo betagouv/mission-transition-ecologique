@@ -1519,7 +1519,8 @@
       "economies-recyclage-eau-activites-industrielles-artisanat",
       "cec-impact",
       "pass-transformation-ecologique-occitanie",
-      "contrat-3s-occitanie"
+      "contrat-3s-occitanie",
+      "autodiag-eau-salons-de-coiffure"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action eau",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action eau",
@@ -1994,6 +1995,7 @@
       "ameliorer-la-connaissance-des-milieux",
       "cec-impact",
       "aide-au-changement-de-comportement",
+      "travail-et-climat",
       "accelerateur-transition-s"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une campagne de sensibilisation des équipes",
@@ -2264,7 +2266,8 @@
       "credit-impot-recherche",
       "credit-impot-innovation",
       "concilier-enjeux-ecologiques-et-conditions-de-travail",
-      "contrat-innovation-occitanie"
+      "contrat-innovation-occitanie",
+      "travail-et-climat"
     ],
     "linkedProjects": [],
     "priority": {
@@ -2345,6 +2348,7 @@
       "aide-au-changement-de-comportement",
       "contrat-entreprise-d-avenir",
       "contrat-3s-occitanie",
+      "travail-et-climat",
       "accelerateur-transition-s"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir une stratégie RSE",
@@ -2605,6 +2609,7 @@
       "diagnostic-et-accompagnement-co2i",
       "cec-impact",
       "contrat-3s-occitanie",
+      "travail-et-climat",
       "accelerateur-transition-s"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'adaptation climat",
@@ -2960,7 +2965,8 @@
       "ressourc-eau",
       "sobriete-hydrique",
       "action-entreprises-environnement",
-      "pass-transformation-ecologique-occitanie"
+      "pass-transformation-ecologique-occitanie",
+      "autodiag-eau-salons-de-coiffure"
     ],
     "linkedProjects": [
       20
@@ -3753,7 +3759,8 @@
       "outils-pour-adaptation",
       "easy-diag",
       "veille-artisanat",
-      "aide-au-changement-de-comportement"
+      "aide-au-changement-de-comportement",
+      "autodiag-eau-salons-de-coiffure"
     ],
     "linkedProjects": [
       26
@@ -5351,7 +5358,8 @@
       "diag-eco-flux",
       "economies-recyclage-eau-activites-industrielles-artisanat",
       "contrat-entreprise-d-avenir",
-      "contrat-3s-occitanie"
+      "contrat-3s-occitanie",
+      "autodiag-eau-salons-de-coiffure"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [],
@@ -5441,7 +5449,8 @@
       "lutter-contre-les-micropolluants",
       "ameliorer-la-connaissance-des-milieux",
       "restaurer-preserver-les-milieux-aquatiques",
-      "proteger-biodiversite-et-restaurer-trame-verte-et-bleue"
+      "proteger-biodiversite-et-restaurer-trame-verte-et-bleue",
+      "travail-et-climat"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [
@@ -5488,7 +5497,8 @@
       "lutter-contre-les-micropolluants",
       "ameliorer-la-connaissance-des-milieux",
       "restaurer-preserver-les-milieux-aquatiques",
-      "proteger-biodiversite-et-restaurer-trame-verte-et-bleue"
+      "proteger-biodiversite-et-restaurer-trame-verte-et-bleue",
+      "travail-et-climat"
     ],
     "descriptionLinkedProjects": "",
     "linkedProjects": [
