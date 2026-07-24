@@ -60869,7 +60869,7 @@
     "promesse": "Economisez l'eau dans votre salon de coiffure",
     "description": "Détection de fuites d'eau, matériel adapté au bac à shampooing et au lavage du linge, sensibilisation de vos équipes... la CMA Auvergne-Rhône-Alpes vous accompagne pour réaliser des économies d'eau et réduire vos factures au sein de votre salon de coiffure. \n\nUn autodiagnostic gratuit vous permet en 5 minutes :\n\n- D'identifier vos postes les plus consommateurs en eau.\n- D'élaborer une liste d'actions vous permettant de réaliser jusqu'à 30% d'économie d'eau.\n- De comprendre comment impliquer vos équipes à travers une série d'éco-gestes.",
     "illustration": "images/TEE_ampoule.webp",
-    "opérateur de contact": "CCI ou CMA",
+    "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
     "autres opérateurs": [
       "CMA Auvergne-Rhône-Alpes"
     ],
@@ -61100,6 +61100,10 @@
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
+      ],
+      "autres critères d'éligibilité": [
+        "En ce qui concerne les études : seules les études de plus de 2000 € pourront être aidées. Elles doivent être réalisées par des prestataires détenant un référencement attestant de leur capacité à réaliser la mission (pour les audits énergétiques : qualification OPQIBI 17.17 ou référencement équivalent).",
+        "En ce qui concerne les investissements, deux conditions d’éligibilité sont exigées : le projet devra s’inscrire dans le cadre d’une réflexion globale d’efficacité énergétique et le site devra produire un rapport d’audit énergétique de moins de 2 ans. Le projet global devra permettre une économie d’énergie du site industriel d’au moins 10 %, grâce à la réduction des besoins et/ou la substitution de consommations d’énergie fossile par des ENR."
       ]
     },
     "eligibilityData": {
