@@ -17,9 +17,9 @@ jobs:
         node-version: ['22.x']
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -33,36 +33,48 @@ jobs:
           BASEROW_TOKEN: '${{secrets.BASEROW_TOKEN}}'
         run: npm run generate:projects
 
-      - name: Read Log File
-        id: read-log
+      # Build the PR body in a file outside the workspace so it is NOT committed
+      # to the PR, and truncate the log to stay under GitHub's 65536-char body limit.
+      - name: Build PR body
         run: |
-          echo "log_content<<EOF" >> $GITHUB_ENV
-          cat libs/data/projectGeneration.log >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          log_file=libs/data/projectGeneration.log
+          body_file="${{ runner.temp }}/pr-body.md"
+          {
+            echo "Cette pull request a été créée automatiquement pour mettre à jour les projets."
+            echo ""
+            echo "### :warning: Merci de bien vérifier les changements avant de merge. :warning:"
+            echo ""
+            echo "Essayer de limiter le rennomage de slug. Chaque slug rennomé \"casse\" des liens que peuvent avoir conservés les utilisateurs."
+            echo ""
+            echo "### Liste de points problématiques automatiquement détectés:"
+            echo ""
+            echo ":fire: :fire: :fire: :fire: critique"
+            echo ":fire: :fire:  important"
+            echo ":fire: mineur"
+            echo ":warning:  info"
+            echo ""
+            head -c 55000 "$log_file"
+            if [ "$(wc -c < "$log_file")" -gt 55000 ]; then
+              printf '\n\n> :scissors: **Log tronqué.** Log complet dans l'"'"'artefact `projectGeneration-log` de [ce run](%s/%s/actions/runs/%s).\n' "${{ github.server_url }}" "${{ github.repository }}" "${{ github.run_id }}"
+            fi
+          } > "$body_file"
+
+      - name: Upload full validation log
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: projectGeneration-log
+          path: libs/data/projectGeneration.log
+          retention-days: 90
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           base: main
           branch: chore/update_projects
           commit-message: 'chore: update projects'
           title: 'chore: update projects'
-          body: |
-            Cette pull request a été crée automatiquement pour mettre à jour les projets.
-
-            ### :warning: Merci de bien vérifier les changements avant de merge. :warning:
-
-            Essayer de limiter le rennomage de slug. Chaque slug rennomé "casse" des liens que peuvent avoir conservés les utilisateurs.
-
-            ### Liste de points problématiques automatiquement détectés:
-
-            :fire: :fire: :fire: :fire: critique
-            :fire: :fire:  important
-            :fire: mineur
-            :warning:  info
-
-            ${{ env.log_content }}
-
+          body-path: ${{ runner.temp }}/pr-body.md
           draft: false
 
   update-programs:
@@ -72,9 +84,9 @@ jobs:
         node-version: ['22.x']
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -88,35 +100,48 @@ jobs:
           BASEROW_TOKEN: '${{secrets.BASEROW_TOKEN}}'
         run: npm run generate:programs
 
-      - name: Read Log File
-        id: read-log
+      # Build the PR body in a file outside the workspace so it is NOT committed
+      # to the PR, and truncate the log to stay under GitHub's 65536-char body limit.
+      - name: Build PR body
         run: |
-          echo "log_content<<EOF" >> $GITHUB_ENV
-          cat libs/data/programYaml.log >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          log_file=libs/data/programYaml.log
+          body_file="${{ runner.temp }}/pr-body.md"
+          {
+            echo "Cette pull request a été créée automatiquement pour mettre à jour les dispositifs."
+            echo ""
+            echo "### :warning: Merci de bien vérifier les changements avant de merge. :warning:"
+            echo ""
+            echo "Attention en particulier aux changements de slugs qui vont créer de nouveaux dispositifs au lieu de réécrire un dispositif existant."
+            echo ""
+            echo "### Liste de points problématiques automatiquement détectés:"
+            echo ""
+            echo ":fire: :fire: :fire: :fire: critique"
+            echo ":fire: :fire:  important"
+            echo ":fire: mineur"
+            echo ":warning:  info"
+            echo ""
+            head -c 55000 "$log_file"
+            if [ "$(wc -c < "$log_file")" -gt 55000 ]; then
+              printf '\n\n> :scissors: **Log tronqué.** Log complet dans l'"'"'artefact `programYaml-log` de [ce run](%s/%s/actions/runs/%s).\n' "${{ github.server_url }}" "${{ github.repository }}" "${{ github.run_id }}"
+            fi
+          } > "$body_file"
+
+      - name: Upload full validation log
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: programYaml-log
+          path: libs/data/programYaml.log
+          retention-days: 90
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           base: main
           branch: chore/update_programs
           commit-message: 'chore: update programs'
           title: 'chore: update programs'
-          body: |
-            Cette pull request a été crée automatiquement pour mettre à jour les dispositifs.
-
-            ### :warning: Merci de bien vérifier les changements avant de merge. :warning:
-
-            Attention en particulier aux changements de slugs qui vont créer de nouveaux dispositifs au lieu de reéécrire un dispositif existant.
-
-            ### Liste de points problématiques automatiquement détectés:
-
-            :fire: :fire: :fire: :fire: critique
-            :fire: :fire:  important
-            :fire: mineur
-            :warning:  info
-
-            ${{ env.log_content }}
+          body-path: ${{ runner.temp }}/pr-body.md
           draft: false
 
   update-testimonies:
@@ -126,9 +151,9 @@ jobs:
         node-version: ['22.x']
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -141,7 +166,7 @@ jobs:
         run: npm run generate:testimonies
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           base: main
           branch: chore/update_testimonies
@@ -161,9 +186,9 @@ jobs:
         node-version: ['22.x']
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -177,33 +202,46 @@ jobs:
           BASEROW_TOKEN: '${{secrets.BASEROW_TOKEN}}'
         run: npm run generate:faq
 
-      - name: Read Log File
-        id: read-log
+      # Build the PR body in a file outside the workspace so it is NOT committed
+      # to the PR, and truncate the log to stay under GitHub's 65536-char body limit.
+      - name: Build PR body
         run: |
-          echo "log_content<<EOF" >> $GITHUB_ENV
-          cat libs/data/generateFaqJson.log >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          log_file=libs/data/generateFaqJson.log
+          body_file="${{ runner.temp }}/pr-body.md"
+          {
+            echo "Cette pull request a été créée automatiquement pour mettre à jour les FAQ."
+            echo ""
+            echo "### :warning: Merci de bien vérifier les changements avant de merge. :warning:"
+            echo ""
+            echo "### Liste de points problématiques automatiquement détectés:"
+            echo ""
+            echo ":fire: :fire: :fire: :fire: critique"
+            echo ":fire: :fire:  important"
+            echo ":fire: mineur"
+            echo ":warning:  info"
+            echo ""
+            head -c 55000 "$log_file"
+            if [ "$(wc -c < "$log_file")" -gt 55000 ]; then
+              printf '\n\n> :scissors: **Log tronqué.** Log complet dans l'"'"'artefact `generateFaqJson-log` de [ce run](%s/%s/actions/runs/%s).\n' "${{ github.server_url }}" "${{ github.repository }}" "${{ github.run_id }}"
+            fi
+          } > "$body_file"
+
+      - name: Upload full validation log
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: generateFaqJson-log
+          path: libs/data/generateFaqJson.log
+          retention-days: 90
 
       - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v6
+        uses: peter-evans/create-pull-request@v8
         with:
           base: main
           branch: chore/update_faq
           commit-message: 'chore: update FAQ'
           title: 'chore: update FAQ'
-          body: |
-            Cette pull request a été crée automatiquement pour mettre à jour les FAQ.
-
-            ### :warning: Merci de bien vérifier les changements avant de merge. :warning:
-
-            ### Liste de points problématiques automatiquement détectés:
-
-            :fire: :fire: :fire: :fire: critique
-            :fire: :fire:  important
-            :fire: mineur
-            :warning:  info
-
-            ${{ env.log_content }}
+          body-path: ${{ runner.temp }}/pr-body.md
           draft: false
 
   send-programs-mails:
@@ -213,9 +251,9 @@ jobs:
         node-version: ['22.x']
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
@@ -226,6 +264,6 @@ jobs:
         env:
           BASEROW_TOKEN: '${{secrets.BASEROW_TOKEN}}'
           BREVO_API_TOKEN: '${{secrets.BREVO_API_TOKEN}}'
-          BREVO_SENDER_ID	: '${{secrets.BREVO_SENDER_ID}}'
+          BREVO_SENDER_ID: '${{secrets.BREVO_SENDER_ID}}'
 
         run: npm run send:program:mails
