@@ -5,6 +5,8 @@ import { tracks as allTracks } from '@/tools/questionnaire'
 import { type Track, TrackComponent, type TrackOptionsUnion, type Translations } from '@/types'
 import { TrackId } from '@/types'
 import TrackSiret from '@/tools/questionnaire/track/TrackSiret'
+import TrackCity from '@/tools/questionnaire/track/trackCity'
+import TrackActivity from '@/tools/questionnaire/track/trackActivity'
 import { acceptHMRUpdate, defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
@@ -66,6 +68,10 @@ export const useTrackStore = defineStore('track', () => {
     let selectedOption: TrackOptionsUnion | undefined = undefined
     if (track.id === TrackId.Siret && !Array.isArray(value)) {
       selectedOption = await TrackSiret.getOptionBySiret(track, value)
+    } else if (track.id === TrackId.StructureCity && !Array.isArray(value)) {
+      selectedOption = await TrackCity.getOptionByValue(track, value)
+    } else if (track.id === TrackId.Sectors && !Array.isArray(value)) {
+      selectedOption = await TrackActivity.getOptionByCodeNAF(track, value)
     } else {
       if (Array.isArray(value)) {
         selectedOptions = value

@@ -21,6 +21,7 @@ import {
 import { CompanyDataType } from '@/tools/companyData/types/companyDataType'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { CompanyDataValidator } from '@/tools/companyData/companyDataSchemaValidator'
+import TrackCity from '@/tools/questionnaire/track/trackCity'
 
 export class CompanyData {
   static saveDataToStorage(data: CompanyDataType) {
@@ -168,7 +169,7 @@ export class CompanyData {
     }
   }
 
-  static updateSearchParamFromStorage() {
+  static updateSearchParamFromStorage(withProfileDetails = false) {
     useNavigationStore().updateSearchParam({
       name: TrackId.Siret,
       value: (this.company as EstablishmentFront)?.siret
@@ -178,10 +179,14 @@ export class CompanyData {
       name: TrackId.StructureWorkforce,
       value: this.size
     })
+
+    if (withProfileDetails) {
+      this._updateProfileDetailsSearchParams()
+    }
   }
 
-  static updateRouteFromStorage() {
-    this.updateSearchParamFromStorage()
+  static updateRouteFromStorage(withProfileDetails = false) {
+    this.updateSearchParamFromStorage(withProfileDetails)
     useNavigationStore().replaceBrowserHistory()
   }
 
@@ -221,11 +226,13 @@ export class CompanyData {
 
     if (trackId === TrackId.StructureCity) {
       const localisationData = (selectedOptions[0]?.questionnaireData as CompanyLocalisationType) || {}
-      CompanyDataStorage.setCompany({
-        ...this.company,
-        ...localisationData,
-        denomination: `Entreprise : ${this.company?.secteur}`
-      } as CompanyDataType[CompanyDataStorageKey.Company])
+      const company = { ...this.company, ...localisationData } as CompanyDataRegisterType
+      // A siret based company keeps the denomination given by the establishment search
+      CompanyDataStorage.setCompany(
+        (this.hasSiret()
+          ? this._patchCompanyData(company)
+          : { ...company, denomination: `Entreprise : ${company?.secteur}` }) as CompanyDataType[CompanyDataStorageKey.Company]
+      )
     }
   }
 
@@ -244,6 +251,22 @@ export class CompanyData {
 
   static toString() {
     return CompanyData.hasCompanyData() ? JSON.stringify(CompanyData.company) : null
+  }
+
+  /**
+   * Localisation and activity may be filled by hand (typically from the iframe, when the establishment
+   * search returns no city). They must travel through the url to be restored in another browsing context.
+   */
+  private static _updateProfileDetailsSearchParams() {
+    useNavigationStore().updateSearchParam({
+      name: TrackId.Sectors,
+      value: this.company?.codeNAF
+    })
+
+    useNavigationStore().updateSearchParam({
+      name: TrackId.StructureCity,
+      value: TrackCity.toSearchParamValue(this.company)
+    })
   }
 
   static _patchCompanyData(company: CompanyDataRegisterType, profileData?: RegisterDetails) {
