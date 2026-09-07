@@ -104,7 +104,8 @@ const setManualRegister = () => {
 }
 
 const openNewTab = () => {
-  CompanyData.updateRouteFromStorage()
+  // The app is opened in a new tab: the company data must be fully carried by the url
+  CompanyData.updateRouteFromStorage(true)
   const url = new Navigation().getAbsoluteUrlByRouteName(RouteName.CatalogProjects, {}, useNavigationStore().query)
   window.open(url, '_blank')
 }

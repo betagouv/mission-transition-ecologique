@@ -16,7 +16,7 @@ export default defineNuxtRouteMiddleware((to) => {
 })
 
 function isAllowedParam(key: string, value: any): boolean {
-  const allowedKeys = ['theme', TrackId.Siret, TrackId.StructureWorkforce]
+  const allowedKeys = ['theme', TrackId.Siret, TrackId.StructureWorkforce, TrackId.Sectors, TrackId.StructureCity]
 
   if (allowedKeys.includes(key)) {
     return true
