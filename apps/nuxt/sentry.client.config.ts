@@ -1,13 +1,13 @@
 import * as Sentry from '@sentry/nuxt'
 import type { SentryNuxtClientOptions } from '@sentry/nuxt/build/types/common/types'
 import Config from './src/config'
-import type { Options } from '@sentry/types'
 
 const config = useRuntimeConfig()
 
-const options: Options | SentryNuxtClientOptions = {
+const options: SentryNuxtClientOptions = {
   integrations: [
-    Sentry.browserTracingIntegration()
+    Sentry.browserTracingIntegration(),
+    Sentry.httpContextIntegration()
     // Sentry.piniaIntegration(usePinia())
   ],
   normalizeDepth: 10,
@@ -17,7 +17,7 @@ const options: Options | SentryNuxtClientOptions = {
   // Set tracesSampleRate to 1.0 to capture 100%
   // of transactions for performance monitoring.
   // We recommend adjusting this value in production
-  tracesSampleRate: 0.5,
+  tracesSampleRate: 0.2,
 
   // Set `tracePropagationTargets` to control for which URLs distributed tracing should be enabled
   tracePropagationTargets: ['/^localhost/', /^https:\/\/mission-transition-ecologique\.beta\.gouv\.fr\/api/, /^\/api\//],
