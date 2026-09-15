@@ -81,7 +81,7 @@
     "axios": "1.13.6",
     "chart.js": "4.5.1",
     "dotenv": "16.6.1",
-    "markdown-it": "14.1.1",
+    "markdown-it": "14.2.0",
     "node-fetch": "3.3.2",
     "nuxt": "3.21.1",
     "nuxt-security": "2.2.0",
