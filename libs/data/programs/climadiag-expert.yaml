@@ -7,33 +7,31 @@ description: >-
   Anticipez les effets du changement climatique sur votre activité avec
   l’accompagnement d’un expert CCI. Grâce à un **diagnostic réalisé sur site**,
   évaluez la vulnérabilité de votre entreprise et **définissez un plan
-  d’adaptation concre**t.\
+  d’adaptation concre**t.  
 
   L’accompagnement vous permet de :
 
 
   - Hiérarchiser les risques climatiques (canicule, inondation, sécheresse…)
 
-
   - Analyser les impacts sur vos clients, fournisseurs et concurrents
-
 
   - Concevoir un plan d’actions adapté à votre réalité opérationnelle
 
-
-  - Identifier des solutions de financement pour engager les premières actions
+  - Identifier des solutions de financement pour engager les premières actions,
+  et bénéficier d'un suivi
 metaDescription: >-
   Anticipez les effets du changement climatique : diagnostic, plan d'adaptation
   et aides financières pour sécuriser votre entreprise.
 début de validité: 01/10/2023
-fin de validité: 01/08/2026
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Chambre de Commerce et de l'Industrie
 autres opérateurs:
   - ADEME
   - Agence de l'Eau
 contact question: formulaire
-url: https://www.grandest.cci.fr/produit/climadiag-expert
+url: >-
+  https://www.cci.fr/ressources/developpement-durable/strategies-dadaptation-aux-risques-climatiques
 nature de l'aide: étude
 coût de l'accompagnement: Gratuit
 durée de l'accompagnement: 5 à 10 jours selon la taille de l'entreprise
@@ -64,10 +62,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si:
-      toutes ces conditions:
-        - dispositif . début de validité <= date du jour
-        - date du jour <= dispositif . fin de validité
+    applicable si: dispositif . début de validité <= date du jour
     toutes ces conditions:
       - a une categorie legale eligible
   entreprise . a une categorie legale eligible:

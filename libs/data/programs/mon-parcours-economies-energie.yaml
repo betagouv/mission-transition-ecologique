@@ -1,0 +1,98 @@
+titre: Mon parcours économies d'énergie
+promesse: >-
+  Bénéficiez d'un accompagnement personnalisé pour réduire vos factures
+  énergétiques
+description: >-
+  Le programme Mon parcours économie d'énergie vous accompagne dans la maîtrise
+  de votre consommation d'énergie en entreprise à l'aide de deux dispositifs :
+  un **accompagnement personnalisé** avec un conseiller et un **carnet de bord
+  énergie** numérique. Ainsi, vous : 
+
+
+  - Limitez vos coûts énergétiques.
+
+
+  * Maîtrisez vos consommations. 
+
+  * Anticipez les évolutions réglementaires.
+description longue: >-
+  Vous n'activez que les étapes utiles à votre situation. Vous pouvez, par
+  exemple : 
+
+
+  - Rencontrer un conseiller dédié. 
+
+  - Réaliser un diagnostic. 
+
+  - Organiser un plan d'action. 
+
+  - Évaluer vos économies d'énergie grâce au Carnet de bord Énergie.
+illustration: images/TEE_ampoule.webp
+opérateur de contact: ADEME
+autres opérateurs:
+  - Banque Publique d'Investissement France
+contact question: formulaire
+url: https://parcours-economies-energie.ademe.fr/
+nature de l'aide: étude
+coût de l'accompagnement: Gratuit
+durée de l'accompagnement: Variable
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Contactez un conseiller au 09 70 19 32 32 (appel non surtaxé) afin de
+      poser vos questions et d'initier le parcours.
+  - description: Bénéficiez d'un accompagnement personnalisé.
+  - description: >-
+      Visualisez votre consommation d'énergie par équipement en ouvrant un
+      Carnet de bord Énergie.
+    liens:
+      - lien: https://parcours-economies-energie.ademe.fr/auth
+        texte: Ouvrir mon Carnet de bord Énergie
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Effectif inférieur à 249 employés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a un effectif éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 249
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique
