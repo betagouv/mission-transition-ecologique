@@ -29,7 +29,7 @@ export class RechercheEntreprise {
     }
   }
 
-  private _convertToSearchResult(rechercheEntrepriseSearch: RechercheEntrepriseSearch): SearchResult {
+  protected _convertToSearchResult(rechercheEntrepriseSearch: RechercheEntrepriseSearch): SearchResult {
     if (!rechercheEntrepriseSearch.results) {
       return {
         establishments: [],

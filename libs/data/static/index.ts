@@ -36,6 +36,9 @@ export { redirects }
 export { default as communes } from './communes.json'
 export { default as nafMapping } from './nafMapping.json'
 
+// Raw "recherche-entreprises" API results keyed by SIRET, served instead of the real API with test data
+export { default as establishmentsTests } from './establishments_tests.json'
+
 // #####> ADMINISTRATION (annuaire-entreprises reference lists) ######
 // Drop-in replace these JSON files to update, sourced from search-infra/helpers/labels
 // https://github.com/annuaire-entreprises-data-gouv-fr/search-infra/blob/main/helpers/labels/administration_natures_juridiques.json

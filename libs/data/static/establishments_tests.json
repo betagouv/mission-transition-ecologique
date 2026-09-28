@@ -1,0 +1,97 @@
+{
+  "83014132100042": {
+    "siren": "830141321",
+    "nom_complet": "MULTI",
+    "nom_raison_sociale": "MULTI",
+    "activite_principale": "62.09Z",
+    "section_activite_principale": "J",
+    "nature_juridique": "5710",
+    "date_creation": "2017-06-01",
+    "tranche_effectif_salarie": "03",
+    "siege": {
+      "siret": "83014132100042",
+      "code_postal": "75012",
+      "commune": "75112",
+      "libelle_commune": "PARIS"
+    },
+    "complements": {
+      "est_administration": false
+    }
+  },
+  "78893947800020": {
+    "siren": "788939478",
+    "nom_complet": "YOHANN VALENTIN",
+    "nom_raison_sociale": null,
+    "activite_principale": "62.01Z",
+    "section_activite_principale": "J",
+    "nature_juridique": "1000",
+    "date_creation": "2012-10-22",
+    "tranche_effectif_salarie": "NN",
+    "siege": {
+      "siret": "78893947800038",
+      "code_postal": "38710",
+      "commune": "38226",
+      "libelle_commune": "MENS"
+    },
+    "complements": {
+      "est_administration": false
+    }
+  },
+  "82141193100016": {
+    "siren": "821411931",
+    "nom_complet": "CAPS",
+    "nom_raison_sociale": "CAPS",
+    "activite_principale": "71.12B",
+    "section_activite_principale": "M",
+    "nature_juridique": "5710",
+    "date_creation": "2016-07-01",
+    "tranche_effectif_salarie": "01",
+    "siege": {
+      "siret": "82141193100016",
+      "code_postal": "83720",
+      "commune": "83141",
+      "libelle_commune": "TRANS-EN-PROVENCE"
+    },
+    "complements": {
+      "est_administration": false
+    }
+  },
+  "21490007800012": {
+    "siren": "214900078",
+    "nom_complet": "COMMUNE D'ANGERS",
+    "nom_raison_sociale": "COMMUNE D'ANGERS",
+    "activite_principale": "84.11Z",
+    "section_activite_principale": "O",
+    "nature_juridique": "7210",
+    "date_creation": "1971-10-20",
+    "tranche_effectif_salarie": "51",
+    "siege": {
+      "siret": "21490007800012",
+      "code_postal": "49000",
+      "commune": "49007",
+      "libelle_commune": "ANGERS"
+    },
+    "complements": {
+      "est_administration": true
+    }
+  },
+  "26120014100016": {
+    "siren": "261200141",
+    "nom_complet": "CENTRE HOSPITALIER",
+    "nom_raison_sociale": "CENTRE HOSPITALIER",
+    "activite_principale": "86.10Z",
+    "section_activite_principale": "Q",
+    "nature_juridique": "7364",
+    "date_creation": "1982-01-01",
+    "tranche_effectif_salarie": "41",
+    "siege": {
+      "siret": "26120014100016",
+      "code_postal": "12100",
+      "commune": "12145",
+      "libelle_commune": "MILLAU"
+    },
+    "complements": {
+      "est_administration": true
+    }
+  }
+}

@@ -12,6 +12,8 @@ import { Result } from 'true-myth'
 import { CityToRegionMapping } from '../infrastructure/json/cityToRegionMapping'
 import { NafRepository } from '../infrastructure/json/nafRepository'
 import { RechercheEntreprise } from '../infrastructure/api/recherche-entreprise/recherche-entreprise'
+import { RechercheEntrepriseTest } from '../infrastructure/api/recherche-entreprise/rechercheEntrepriseTest'
+import Config from '../../config'
 import { CompanyActivityType, EstablishmentSearch } from '@tee/common'
 
 export default class EstablishmentService {
@@ -43,7 +45,7 @@ export default class EstablishmentService {
   }
 
   private _getEstablishmentRepository(): EstablishmentRepository {
-    const rechercheEntreprise = new RechercheEntreprise()
+    const rechercheEntreprise = Config.isTestData ? new RechercheEntrepriseTest() : new RechercheEntreprise()
     return { get: getEstablishment, search: rechercheEntreprise.searchEstablishment }
   }
 
