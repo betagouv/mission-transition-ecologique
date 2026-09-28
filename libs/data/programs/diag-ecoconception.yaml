@@ -8,37 +8,32 @@ description: >-
 
   - **Sensibiliser vos équipes** et former un référent en écoconception
 
-
   - Réaliser une **évaluation environnementale** (analyse du cycle de vie)
-
 
   - Identifier et chiffrer des l**eviers d’amélioration** sans transférer de
   pollution
 
-
   - Mettre en place un **plan d’action** technico-économique pour
   l’éco-conception
-
-
-  - Préparer et accompagner votre démarche vers l’**obtention de l’Ecolabel
-  européen**
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - ADEME
-contact question: formulaire
+contact question: >-
+  https://diag.bpifrance.fr/contactez-nous?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026
 url: https://diag.bpifrance.fr/diag-eco-conception
 nature de l'aide: étude
 coût de l'accompagnement: >-
   5 400 € à 7 200 € HT après subvention de 70% à 60% selon la taille de
   l'entreprise
-durée de l'accompagnement: 18 jours de prestation répartis sur 6 à 8 mois
+durée de l'accompagnement: 18 jours de prestation répartis sur 10 mois
 objectifs:
   - description: >-
       Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le
       site de Bpifrance
     liens:
-      - lien: https://diag.bpifrance.fr/contactez-nous
+      - lien: >-
+          https://diag.bpifrance.fr/diag-eco-conception?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026
         texte: Formulaire de contact
   - description: >-
       Échangez avec un conseiller pour vérifier votre éligibilité et préparer
@@ -52,8 +47,8 @@ objectifs:
       bpifrance.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Moins de 250 salariés
-    - Non éligible aux micro-entreprises
+    - PME au sens de la règlementation européenne
+    - Éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
@@ -71,13 +66,9 @@ publicodes:
   entreprise . est éligible:
     toutes ces conditions:
       - a un effectif éligible
-      - a une categorie legale eligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
       - effectif <= 249
-  entreprise . a une categorie legale eligible:
-    toutes ces conditions:
-      - microentrepreneur = non
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

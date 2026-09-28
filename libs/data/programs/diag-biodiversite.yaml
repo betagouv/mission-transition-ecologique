@@ -1,4 +1,4 @@
-titre: Diag biodiversité
+titre: Diag Biodiversité
 promesse: Intégrez la biodiversité dans votre stratégie d’entreprise
 description: >-
   Bpifrance vous aide à intégrer les enjeux de la biodiversité dans votre
@@ -28,18 +28,20 @@ illustration: images/TEE_eolienne.webp
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - Office français de la biodiversité
-contact question: formulaire
+contact question: >-
+  https://diag.bpifrance.fr/contactez-nous?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026
 url: https://diag.bpifrance.fr/diag-biodiversite
 nature de l'aide: étude
 coût de l'accompagnement: >-
   entre 5 000€ et 7 000€ HT, après prise en charge de 30% à 50% selon votre
   taille d'entreprise
-durée de l'accompagnement: 10 jours de prestation, répartis sur 3 à 6 mois
+durée de l'accompagnement: 10 jours de prestation, répartis sur 10 mois
 activable en autonomie: oui
 objectifs:
   - description: Réalisez votre demande de souscription via le site Bpifrance.
     liens:
-      - lien: https://diag.bpifrance.fr/diag-biodiversite
+      - lien: >-
+          https://diag.bpifrance.fr/diag-biodiversite?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026
         texte: Souscription au diagnostic
   - description: >-
       Bpifrance examine votre demande et vous répond sous 20 jours. Si elle est
@@ -54,7 +56,7 @@ objectifs:
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 500 salariés
-    - Non éligible aux micro-entreprises
+    - Éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
@@ -70,13 +72,9 @@ publicodes:
   entreprise . est éligible:
     toutes ces conditions:
       - a un effectif éligible
-      - a une categorie legale eligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
       - effectif <= 499
-  entreprise . a une categorie legale eligible:
-    toutes ces conditions:
-      - microentrepreneur = non
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

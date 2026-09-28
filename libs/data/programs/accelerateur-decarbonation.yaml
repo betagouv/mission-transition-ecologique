@@ -3,34 +3,42 @@ metaTitre: Décarbonation en entreprise - Stratégie bas carbone avec Bpifrance
 promesse: Définissez une stratégie bas carbone
 description: >-
   Profitez d’un accompagnement pour structurer une trajectoire de décarbonation
-  ambitieuse, en lien avec vos enjeux de développement. Pendant 24 mois, vous
-  bénéficiez :
+  ambitieuse, en lien avec vos enjeux de développement. Pendant 18 mois, 20
+  entreprises créatrices de valeur seront accompagnées pour : 
 
 
-  - de 8 séminaires thématiques animés avec Mines ParisTech
+  - Comprendre et structurer leur **stratégie bas carbone.**
 
-  - de 29 jours de conseil personnalisé par Bpifrance
+  - Prioriser leurs **leviers de réduction** d’émissions.
 
-  - une communauté de dirigeants engagés et à un réseau de 3 000 entreprises.
+  - Piloter leur **trajectoire carbone**.
+
+  - Impliquer leurs **équipes et parties prenantes**.
+
+  - Intégrer la **décarbonation** dans leur **modèle de performance globale**.
 metaDescription: >-
   Bénéficiez de l’Accélérateur Décarbonation : un programme Bpifrance pour
   structurer votre stratégie bas carbone avec des experts référencés.
-début de validité: 06/02/2023
-fin de validité: 31/12/2025
-aide temporairement indisponible: oui
+description longue: |-
+  Avec l'Accélérateur Décarbonation, vous bénéficiez : 
+
+  - De 38 jours d'accompagnement par des experts habilités. 
+  - De 10 jours de formation avec une grande école. 
+  - De l'intégration dans un collectif d'entrepreneurs de la filière.
+début de validité: 30/09/2026
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Banque Publique d'Investissement France
-contact question: mailto:kim.tworke@bpifrance.fr
+contact question: mailto:clemence.gamblin@bpifrance.fr
 url: >-
-  https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-3e-promotion-de-laccelerateur-decarbonation 
+  https://evenements.bpifrance.fr/e/ami-accelerateur-decarbonation-5#:~:text=Rejoignez%20la%205%E1%B5%89%20promotion%20de%20l'Acc%C3%A9l%C3%A9rateur%20D%C3%A9carbonation&text=Ce%20programme%20vise%20%C3%A0%20soutenir,%C3%A0%20travers%20un%20accompagnement%20structur%C3%A9.
 nature de l'aide: étude
 coût de l'accompagnement: 29 000 € HT
-durée de l'accompagnement: 39 jours de conseil et 8 jours de formation
+durée de l'accompagnement: 38 jours de conseil et 10 jours de formation
 objectifs:
   - description: Complétez le formulaire de candidature en ligne sur le site de Bpifrance.
     liens:
       - lien: >-
-          https://evenements.bpifrance.fr/ami-accelerateur-decarbonation-3/registration/register
+          https://evenements.bpifrance.fr/e/ami-accelerateur-decarbonation-5/registration/register
         texte: Inscription
   - description: >-
       Échangez avec un chargé d'affaires Bpifrance pour vérifier l’adéquation
@@ -50,7 +58,7 @@ conditions d'éligibilité:
     - >-
       Réaliser un chiffre d’affaires supérieur à 10 M€ et inférieur à 5
       milliards d'euros
-    - Avoir réalisé un bilan carbone datant de moins de 2 ans
+    - Avoir réalisé un bilan carbone Scope 1, 2, 3, datant de moins de 2 ans
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -58,10 +66,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si:
-      toutes ces conditions:
-        - dispositif . début de validité <= date du jour
-        - date du jour <= dispositif . fin de validité
+    applicable si: dispositif . début de validité <= date du jour
     toutes ces conditions:
       - a un effectif éligible
       - a une categorie legale eligible

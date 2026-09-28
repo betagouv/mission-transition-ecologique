@@ -34,17 +34,19 @@ illustration: images/TEE_eolienne.webp
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - ADEME
-contact question: formulaire
+contact question: >-
+  https://diag.bpifrance.fr/contactez-nous?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026
 url: https://diag.bpifrance.fr/diag-adaptation
 nature de l'aide: étude
 coût de l'accompagnement: 3 000 € HT après subvention de 50%
-durée de l'accompagnement: 7 jours de prestation répartis sur 3 à 6 mois
+durée de l'accompagnement: 7 jours de prestation répartis sur 10 mois
 objectifs:
   - description: >-
       Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le
       site de Bpifrance
     liens:
-      - lien: https://diag.bpifrance.fr/contactez-nous
+      - lien: >-
+          https://diag.bpifrance.fr/diag-adaptation?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026
         texte: Formulaire de contact
   - description: >-
       Un conseiller vous rappelle pour vérifier votre éligibilité et répondre à
@@ -60,7 +62,7 @@ objectifs:
   - description: Lancez le diagnostic avec le bureau d'études.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Moins de 500 salariés
+    - Moins de 500 salariés par site
     - Éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
