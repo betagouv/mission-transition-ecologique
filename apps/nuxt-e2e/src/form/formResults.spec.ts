@@ -72,7 +72,12 @@ tests.forEach((singleTest) => {
             await page.locator(selector).selectOption({ label: value.value as string })
           } else if (value.type === 'checkbox' && value.value) {
             const checkbox = page.locator(`${selector} input[type="checkbox"]`)
-            await checkbox.check({ force: true, timeout: timeOut })
+            // The DSFR input is visually hidden under its label (which holds a link): a forced click at its
+            // coordinates may land on another element, so the click event is dispatched on the input itself
+            if (!(await checkbox.isChecked({ timeout: timeOut }))) {
+              await checkbox.dispatchEvent('click')
+            }
+            await expect(checkbox).toBeChecked({ timeout: timeOut })
           }
         } catch (e) {
           throw new Error(`Error processing field ${fieldKey}: ${(e as Error).message}`)
@@ -86,7 +91,8 @@ tests.forEach((singleTest) => {
 
         const [response] = await Promise.all([
           page.waitForResponse((resp) => resp.url().includes('/api/opportunities'), { timeout: timeOut }),
-          submitButton.click({ force: true, timeout: timeOut })
+          // Dispatched for the same reason as the checkbox: a forced click fails when the layout still shifts
+          submitButton.dispatchEvent('click')
         ])
 
         await page.locator('[teste2e-selector="callback-contact-form"]').waitFor({ state: 'visible', timeout: timeOut })
