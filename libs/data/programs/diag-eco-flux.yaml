@@ -28,17 +28,19 @@ illustration: images/TEE_energie_verte.webp
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - ADEME
-contact question: formulaire
+contact question: >-
+  https://diag.bpifrance.fr/contactez-nous?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026
 url: https://diag.bpifrance.fr/diag-eco-flux
 nature de l'aide: étude
 coût de l'accompagnement: 3 000 € HT après subvention de 50%
-durée de l'accompagnement: 6 à 8 jours de prestation répartis sur 15 à 18 mois
+durée de l'accompagnement: 7 jours de prestation répartis sur 10 mois
 objectifs:
   - description: >-
       Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le
       site de Bpifrance
     liens:
-      - lien: https://diag.bpifrance.fr/contactez-nous
+      - lien: >-
+          https://diag.bpifrance.fr/diag-eco-flux?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026
         texte: Formulaire de contact
   - description: >-
       Un conseiller vous rappelle pour répondre à vos questions et vous guider
@@ -51,7 +53,7 @@ objectifs:
       sélectionné par Bpifrance.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Entre 20 et 250 salariés
+    - Entre 20 et 250 salariés par site
     - Non éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer

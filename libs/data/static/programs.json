@@ -3,24 +3,23 @@
     "titre": "Accélérateur décarbonation",
     "metaTitre": "Décarbonation en entreprise - Stratégie bas carbone avec Bpifrance",
     "promesse": "Définissez une stratégie bas carbone",
-    "description": "Profitez d’un accompagnement pour structurer une trajectoire de décarbonation ambitieuse, en lien avec vos enjeux de développement. Pendant 24 mois, vous bénéficiez :\n\n- de 8 séminaires thématiques animés avec Mines ParisTech\n- de 29 jours de conseil personnalisé par Bpifrance\n- une communauté de dirigeants engagés et à un réseau de 3 000 entreprises.",
+    "description": "Profitez d’un accompagnement pour structurer une trajectoire de décarbonation ambitieuse, en lien avec vos enjeux de développement. Pendant 18 mois, 20 entreprises créatrices de valeur seront accompagnées pour : \n\n- Comprendre et structurer leur **stratégie bas carbone.**\n- Prioriser leurs **leviers de réduction** d’émissions.\n- Piloter leur **trajectoire carbone**.\n- Impliquer leurs **équipes et parties prenantes**.\n- Intégrer la **décarbonation** dans leur **modèle de performance globale**.",
     "metaDescription": "Bénéficiez de l’Accélérateur Décarbonation : un programme Bpifrance pour structurer votre stratégie bas carbone avec des experts référencés.",
-    "début de validité": "06/02/2023",
-    "fin de validité": "31/12/2025",
-    "aide temporairement indisponible": "oui",
+    "description longue": "Avec l'Accélérateur Décarbonation, vous bénéficiez : \n\n- De 38 jours d'accompagnement par des experts habilités. \n- De 10 jours de formation avec une grande école. \n- De l'intégration dans un collectif d'entrepreneurs de la filière.",
+    "début de validité": "30/09/2026",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "Banque Publique d'Investissement France",
-    "contact question": "mailto:kim.tworke@bpifrance.fr",
-    "url": "https://www.bpifrance.fr/nos-appels-a-projets-concours/candidatez-a-la-3e-promotion-de-laccelerateur-decarbonation ",
+    "contact question": "mailto:clemence.gamblin@bpifrance.fr",
+    "url": "https://evenements.bpifrance.fr/e/ami-accelerateur-decarbonation-5#:~:text=Rejoignez%20la%205%E1%B5%89%20promotion%20de%20l'Acc%C3%A9l%C3%A9rateur%20D%C3%A9carbonation&text=Ce%20programme%20vise%20%C3%A0%20soutenir,%C3%A0%20travers%20un%20accompagnement%20structur%C3%A9.",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "29 000 € HT",
-    "durée de l'accompagnement": "39 jours de conseil et 8 jours de formation",
+    "durée de l'accompagnement": "38 jours de conseil et 10 jours de formation",
     "objectifs": [
       {
         "description": "Complétez le formulaire de candidature en ligne sur le site de Bpifrance.",
         "liens": [
           {
-            "lien": "https://evenements.bpifrance.fr/ami-accelerateur-decarbonation-3/registration/register",
+            "lien": "https://evenements.bpifrance.fr/e/ami-accelerateur-decarbonation-5/registration/register",
             "texte": "Inscription"
           }
         ]
@@ -48,7 +47,7 @@
       ],
       "autres critères d'éligibilité": [
         "Réaliser un chiffre d’affaires supérieur à 10 M€ et inférieur à 5 milliards d'euros",
-        "Avoir réalisé un bilan carbone datant de moins de 2 ans"
+        "Avoir réalisé un bilan carbone Scope 1, 2, 3, datant de moins de 2 ans"
       ]
     },
     "eligibilityData": {
@@ -79,8 +78,7 @@
         "excludeMicroentrepreneur": true
       },
       "validity": {
-        "start": "06/02/2023",
-        "end": "31/12/2025"
+        "start": "30/09/2026"
       },
       "priorityObjectives": [
         "environmental"
@@ -183,12 +181,7 @@
         ]
       },
       "entreprise . est éligible": {
-        "applicable si": {
-          "toutes ces conditions": [
-            "dispositif . début de validité <= date du jour",
-            "date du jour <= dispositif . fin de validité"
-          ]
-        },
+        "applicable si": "dispositif . début de validité <= date du jour",
         "toutes ces conditions": [
           "a un effectif éligible",
           "a une categorie legale eligible"
@@ -2069,10 +2062,9 @@
     "titre": "ClimaDiag expert",
     "metaTitre": "ClimaDiag Expert – Diagnostic climat et plan d’adaptation",
     "promesse": "Anticipez l’impact des changements climatiques pour votre entreprise et sécurisez votre activité",
-    "description": "Anticipez les effets du changement climatique sur votre activité avec l’accompagnement d’un expert CCI. Grâce à un **diagnostic réalisé sur site**, évaluez la vulnérabilité de votre entreprise et **définissez un plan d’adaptation concre**t.\\\nL’accompagnement vous permet de :\n\n- Hiérarchiser les risques climatiques (canicule, inondation, sécheresse…)\n\n- Analyser les impacts sur vos clients, fournisseurs et concurrents\n\n- Concevoir un plan d’actions adapté à votre réalité opérationnelle\n\n- Identifier des solutions de financement pour engager les premières actions",
+    "description": "Anticipez les effets du changement climatique sur votre activité avec l’accompagnement d’un expert CCI. Grâce à un **diagnostic réalisé sur site**, évaluez la vulnérabilité de votre entreprise et **définissez un plan d’adaptation concre**t.  \nL’accompagnement vous permet de :\n\n- Hiérarchiser les risques climatiques (canicule, inondation, sécheresse…)\n- Analyser les impacts sur vos clients, fournisseurs et concurrents\n- Concevoir un plan d’actions adapté à votre réalité opérationnelle\n- Identifier des solutions de financement pour engager les premières actions, et bénéficier d'un suivi",
     "metaDescription": "Anticipez les effets du changement climatique : diagnostic, plan d'adaptation et aides financières pour sécuriser votre entreprise.",
     "début de validité": "01/10/2023",
-    "fin de validité": "01/08/2026",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "autres opérateurs": [
@@ -2080,7 +2072,7 @@
       "Agence de l'Eau"
     ],
     "contact question": "formulaire",
-    "url": "https://www.grandest.cci.fr/produit/climadiag-expert",
+    "url": "https://www.cci.fr/ressources/developpement-durable/strategies-dadaptation-aux-risques-climatiques",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "5 à 10 jours selon la taille de l'entreprise",
@@ -2131,8 +2123,7 @@
         "excludeMicroentrepreneur": true
       },
       "validity": {
-        "start": "01/10/2023",
-        "end": "01/08/2026"
+        "start": "01/10/2023"
       },
       "priorityObjectives": [
         "environmental"
@@ -2235,12 +2226,7 @@
         ]
       },
       "entreprise . est éligible": {
-        "applicable si": {
-          "toutes ces conditions": [
-            "dispositif . début de validité <= date du jour",
-            "date du jour <= dispositif . fin de validité"
-          ]
-        },
+        "applicable si": "dispositif . début de validité <= date du jour",
         "toutes ces conditions": [
           "a une categorie legale eligible"
         ]
@@ -2713,23 +2699,23 @@
     "titre": "Diag Décarbon'Action",
     "promesse": "Réalisez un bilan de gaz à effet de serre et réduisez l’empreinte carbone de votre entreprise",
     "description": "En 12 jours, le Diag Décarbon'Action vous permet :\\\n– de **mesurer vos émissions de gaz à effet de serre**, directes et indirectes, selon une méthode reconnue ;\\\n– d’identifier vos **principaux postes d’émissions**, en lien avec votre activité ;\\\n– d’élaborer un **plan d’actions concret pour réduire votre empreinte carbone**, adapté à votre entreprise.",
-    "description longue": "Les experts mandatés sont :\n\n- **certifiés « Bilan Carbone® » ou équivalent**, selon les méthodes conformes à la réglementation ;\n- **habilités par l’ADEME, Bpifrance et l’Association Bilan Carbone**, garantissant un accompagnement fiable et de qualité.",
+    "description longue": "Les experts mandatés sont :\n\n- **certifiés « Bilan Carbone® » ou équivalent**, selon les méthodes conformes à la réglementation ;\n- **habilités par l’ADEME, Bpifrance et l’Association pour la Transition Bas Carbone**, garantissant un accompagnement fiable et de qualité.",
     "illustration": "images/TEE_eolienne.webp",
     "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
       "ADEME"
     ],
-    "contact question": "formulaire",
+    "contact question": "https://diag.bpifrance.fr/contactez-nous?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026",
     "url": "https://diag.bpifrance.fr/diag-decarbon-action",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "6 000 € HT après subvention de 40%",
-    "durée de l'accompagnement": "12 jours de prestation répartis sur 6 à 8 mois",
+    "durée de l'accompagnement": "12 jours de prestation répartis sur 10 mois",
     "objectifs": [
       {
         "description": "Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le site de Bpifrance",
         "liens": [
           {
-            "lien": "https://diag.bpifrance.fr/contactez-nous",
+            "lien": "https://diag.bpifrance.fr/diag-decarbon-action?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026",
             "texte": "Formulaire de contact"
           }
         ]
@@ -2753,7 +2739,7 @@
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
         "Moins de 500 salariés",
-        "Non éligible aux micro-entreprises"
+        "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
         "France et territoires d'outre-mer"
@@ -2783,8 +2769,7 @@
           "Q",
           "R"
         ],
-        "maxEmployees": "499",
-        "excludeMicroentrepreneur": true
+        "maxEmployees": "499"
       },
       "priorityObjectives": [
         "energy"
@@ -2888,18 +2873,12 @@
       },
       "entreprise . est éligible": {
         "toutes ces conditions": [
-          "a un effectif éligible",
-          "a une categorie legale eligible"
+          "a un effectif éligible"
         ]
       },
       "entreprise . a un effectif éligible": {
         "toutes ces conditions": [
           "effectif <= 499"
-        ]
-      },
-      "entreprise . a une categorie legale eligible": {
-        "toutes ces conditions": [
-          "microentrepreneur = non"
         ]
       },
       "entreprise . est dans un secteur d'activité ciblé": {
@@ -2936,17 +2915,17 @@
     "autres opérateurs": [
       "ADEME"
     ],
-    "contact question": "formulaire",
+    "contact question": "https://diag.bpifrance.fr/contactez-nous?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026",
     "url": "https://diag.bpifrance.fr/diag-adaptation",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "3 000 € HT après subvention de 50%",
-    "durée de l'accompagnement": "7 jours de prestation répartis sur 3 à 6 mois",
+    "durée de l'accompagnement": "7 jours de prestation répartis sur 10 mois",
     "objectifs": [
       {
         "description": "Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le site de Bpifrance",
         "liens": [
           {
-            "lien": "https://diag.bpifrance.fr/contactez-nous",
+            "lien": "https://diag.bpifrance.fr/diag-adaptation?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026",
             "texte": "Formulaire de contact"
           }
         ]
@@ -2966,7 +2945,7 @@
     ],
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
-        "Moins de 500 salariés",
+        "Moins de 500 salariés par site",
         "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
@@ -3151,23 +3130,23 @@
   {
     "titre": "Diag Ecoconception",
     "promesse": "Évaluez la performance environnementale de vos produits, procédés et services",
-    "description": "Bénéficiez de l'accompagnement d’un expert écoconception référencé par Bpifrance pour améliorer la performance environnementale de vos produits, services et procédés. Vous serez soutenu pour :\n\n- **Sensibiliser vos équipes** et former un référent en écoconception\n\n- Réaliser une **évaluation environnementale** (analyse du cycle de vie)\n\n- Identifier et chiffrer des l**eviers d’amélioration** sans transférer de pollution\n\n- Mettre en place un **plan d’action** technico-économique pour l’éco-conception\n\n- Préparer et accompagner votre démarche vers l’**obtention de l’Ecolabel européen**",
+    "description": "Bénéficiez de l'accompagnement d’un expert écoconception référencé par Bpifrance pour améliorer la performance environnementale de vos produits, services et procédés. Vous serez soutenu pour :\n\n- **Sensibiliser vos équipes** et former un référent en écoconception\n- Réaliser une **évaluation environnementale** (analyse du cycle de vie)\n- Identifier et chiffrer des l**eviers d’amélioration** sans transférer de pollution\n- Mettre en place un **plan d’action** technico-économique pour l’éco-conception",
     "illustration": "images/TEE_eolienne.webp",
     "opérateur de contact": "Banque Publique d'Investissement France",
     "autres opérateurs": [
       "ADEME"
     ],
-    "contact question": "formulaire",
+    "contact question": "https://diag.bpifrance.fr/contactez-nous?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026",
     "url": "https://diag.bpifrance.fr/diag-eco-conception",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "5 400 € à 7 200 € HT après subvention de 70% à 60% selon la taille de l'entreprise",
-    "durée de l'accompagnement": "18 jours de prestation répartis sur 6 à 8 mois",
+    "durée de l'accompagnement": "18 jours de prestation répartis sur 10 mois",
     "objectifs": [
       {
         "description": "Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le site de Bpifrance",
         "liens": [
           {
-            "lien": "https://diag.bpifrance.fr/contactez-nous",
+            "lien": "https://diag.bpifrance.fr/diag-eco-conception?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026",
             "texte": "Formulaire de contact"
           }
         ]
@@ -3187,8 +3166,8 @@
     ],
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
-        "Moins de 250 salariés",
-        "Non éligible aux micro-entreprises"
+        "PME au sens de la règlementation européenne",
+        "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
         "France et territoires d'outre-mer"
@@ -3224,8 +3203,7 @@
           "R",
           "S"
         ],
-        "maxEmployees": "249",
-        "excludeMicroentrepreneur": true
+        "maxEmployees": "249"
       },
       "priorityObjectives": [
         "eco-design"
@@ -3329,18 +3307,12 @@
       },
       "entreprise . est éligible": {
         "toutes ces conditions": [
-          "a un effectif éligible",
-          "a une categorie legale eligible"
+          "a un effectif éligible"
         ]
       },
       "entreprise . a un effectif éligible": {
         "toutes ces conditions": [
           "effectif <= 249"
-        ]
-      },
-      "entreprise . a une categorie legale eligible": {
-        "toutes ces conditions": [
-          "microentrepreneur = non"
         ]
       },
       "entreprise . est dans un secteur d'activité ciblé": {
@@ -3407,6 +3379,7 @@
       "ADEME"
     ],
     "contact question": "formulaire",
+    "url": "https://www.cci.fr/ressources/developpement-durable/strategies-dadaptation-aux-risques-climatiques",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
     "durée de l'accompagnement": "3 jours",
@@ -3623,6 +3596,7 @@
     "illustration": "images/TEE_eolienne.webp",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "contact question": "formulaire",
+    "url": "https://www.var.cci.fr/produit/diagnostic-gestion-des-dechets",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit selon les territoires ou reste à charge maximum de 1500 € HT",
     "durée de l'accompagnement": "3 jours dont 0,5 avec l'entreprise",
@@ -4263,6 +4237,7 @@
     "illustration": "images/TEE_ampoule.webp",
     "opérateur de contact": "Chambre de Commerce et de l'Industrie",
     "contact question": "formulaire",
+    "url": "https://www.cci.fr/ressources/developpement-durable/transition-ecologique",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit (sauf en PACA à partir de 650€ HT)",
     "durée de l'accompagnement": "1 jour dont 1/2 journée avec l'entreprise",
@@ -12816,17 +12791,17 @@
     "autres opérateurs": [
       "ADEME"
     ],
-    "contact question": "formulaire",
+    "contact question": "https://diag.bpifrance.fr/contactez-nous?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026",
     "url": "https://diag.bpifrance.fr/diag-eco-flux",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "3 000 € HT après subvention de 50%",
-    "durée de l'accompagnement": "6 à 8 jours de prestation répartis sur 15 à 18 mois",
+    "durée de l'accompagnement": "7 jours de prestation répartis sur 10 mois",
     "objectifs": [
       {
         "description": "Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le site de Bpifrance",
         "liens": [
           {
-            "lien": "https://diag.bpifrance.fr/contactez-nous",
+            "lien": "https://diag.bpifrance.fr/diag-eco-flux?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026",
             "texte": "Formulaire de contact"
           }
         ]
@@ -12843,7 +12818,7 @@
     ],
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
-        "Entre 20 et 250 salariés",
+        "Entre 20 et 250 salariés par site",
         "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
@@ -19554,7 +19529,7 @@
     "autres opérateurs": [
       "ADEME"
     ],
-    "contact question": "formulaire",
+    "contact question": "https://diag.bpifrance.fr/contactez-nous?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026",
     "url": "https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/diag-perfimmo",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "entre 3 000 € HT et 17 000 € HT (subventionné par l'ADEME à hauteur de 50% du montant HT, dans la limite de 8 500 € par site)",
@@ -19564,7 +19539,7 @@
         "description": "Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le site de Bpifrance",
         "liens": [
           {
-            "lien": "https://diag.bpifrance.fr/contactez-nous",
+            "lien": "https://diag.bpifrance.fr/diag-perf-immo?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026",
             "texte": "Formulaire de contact"
           }
         ]
@@ -25743,7 +25718,7 @@
     "url": "https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-vert",
     "nature de l'aide": "prêt",
     "montant du prêt": "De 50 000 € à 5 000 000 €",
-    "durée du prêt": "de 2 à 10 ans, avec un différé d’amortissement en capital de 2 ans maximum",
+    "durée du prêt": "De 2 à 10 ans, avec un différé d’amortissement en capital de 2 ans maximum",
     "objectifs": [
       {
         "description": "Exprimez votre intérêt pour ce prêt à Bpifrance grâce au formulaire ci-dessous."
@@ -31723,6 +31698,7 @@
     "illustration": "images/TEE_eolienne.webp",
     "opérateur de contact": "Région Sud (PACA)",
     "contact question": "formulaire",
+    "url": "https://www.maregionsud.fr/vos-aides/detail/soutien-a-lhebergement-touristique",
     "nature de l'aide": "étude",
     "montant du financement": "Audit gratuit, frais de participation au label à la charge de l'entreprise",
     "activable en autonomie": "oui",
@@ -41181,7 +41157,7 @@
     "type": "tee"
   },
   {
-    "titre": "Diag biodiversité",
+    "titre": "Diag Biodiversité",
     "promesse": "Intégrez la biodiversité dans votre stratégie d’entreprise",
     "description": "Bpifrance vous aide à intégrer les enjeux de la biodiversité dans votre stratégie d’entreprise. Un expert agréé et sélectionné par Bpifrance et l'OFB vous accompagne pour :\n\n- Sensibiliser vos équipes à l’importance de la biodiversité et aux enjeux environnementaux.\n\n- Diagnostiquer votre impact sur les écosystèmes et vos dépendances aux services écosystémiques.\n\n- Identifier les risques et opportunités liés à la biodiversité pour votre activité.\n\n- Construire un plan d’action concret pour réduire vos impacts et préserver la biodiversité.\n\nÀ l’issue de cet accompagnement, vous recevrez un rapport complet et un plan d’action opérationnel pour intégrer la biodiversité dans vos pratiques.",
     "illustration": "images/TEE_eolienne.webp",
@@ -41189,18 +41165,18 @@
     "autres opérateurs": [
       "Office français de la biodiversité"
     ],
-    "contact question": "formulaire",
+    "contact question": "https://diag.bpifrance.fr/contactez-nous?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026",
     "url": "https://diag.bpifrance.fr/diag-biodiversite",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "entre 5 000€ et 7 000€ HT, après prise en charge de 30% à 50% selon votre taille d'entreprise",
-    "durée de l'accompagnement": "10 jours de prestation, répartis sur 3 à 6 mois",
+    "durée de l'accompagnement": "10 jours de prestation, répartis sur 10 mois",
     "activable en autonomie": "oui",
     "objectifs": [
       {
         "description": "Réalisez votre demande de souscription via le site Bpifrance.",
         "liens": [
           {
-            "lien": "https://diag.bpifrance.fr/diag-biodiversite",
+            "lien": "https://diag.bpifrance.fr/diag-biodiversite?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026",
             "texte": "Souscription au diagnostic"
           }
         ]
@@ -41218,7 +41194,7 @@
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
         "Moins de 500 salariés",
-        "Non éligible aux micro-entreprises"
+        "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
         "France et territoires d'outre-mer"
@@ -41253,8 +41229,7 @@
           "T",
           "U"
         ],
-        "maxEmployees": "499",
-        "excludeMicroentrepreneur": true
+        "maxEmployees": "499"
       },
       "priorityObjectives": [
         "biodiversite"
@@ -41358,18 +41333,12 @@
       },
       "entreprise . est éligible": {
         "toutes ces conditions": [
-          "a un effectif éligible",
-          "a une categorie legale eligible"
+          "a un effectif éligible"
         ]
       },
       "entreprise . a un effectif éligible": {
         "toutes ces conditions": [
           "effectif <= 499"
-        ]
-      },
-      "entreprise . a une categorie legale eligible": {
-        "toutes ces conditions": [
-          "microentrepreneur = non"
         ]
       },
       "entreprise . est dans un secteur d'activité ciblé": {
@@ -41834,7 +41803,7 @@
     "montant du financement": "Selon la nature du projet",
     "objectifs": [
       {
-        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet.",
         "liens": [
           {
             "lien": "https://agir.ademe.fr/sites/default/files/DECARB%20FLASH%202025-2027%20-%20Cahier%20des%20charges%20-%202025.pdf",
@@ -44334,6 +44303,7 @@
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "ADEME",
     "contact question": "https://cloud.contact.ademe.fr/act-fr",
+    "url": "https://actinitiative.org/fr/assess-your-strategy/",
     "nature de l'aide": "étude",
     "montant du financement": "Jusqu’à 80% du coût de l’évaluation, dans un maximum de 3 000 € HT",
     "ouvert aux administrations publiques": "oui",
@@ -48700,7 +48670,7 @@
         "description": "Vérifiez la liste des dépenses éligibles.",
         "liens": [
           {
-            "lien": "https://file:///Users/betagouv/Downloads/reglement-cheque-transition-du-tissu-economique.pdf",
+            "lien": "https://www.grandest.fr/wp-content/uploads/2025/10/reglement-cheque-transition-du-tissu-economique.pdf",
             "texte": "Dépenses éligibles au Chèque Transition"
           }
         ]
@@ -52944,7 +52914,7 @@
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://file:///Users/betagouv/Downloads/%C3%89tude%20de%20Faisabilit%C3%A9%20EnR%20%C3%A9lectrique%20-%20Conditions%20d'%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026-1.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/%C3%89tude%20de%20Faisabilit%C3%A9%20EnR%20%C3%A9lectrique%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -56402,7 +56372,7 @@
         "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet .",
         "liens": [
           {
-            "lien": "https://file:///Users/betagouv/Downloads/ORMAT%20-%20Conditions%20d'%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/ORMAT%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf",
             "texte": "Conditions d'éligibilité"
           }
         ]
@@ -61253,6 +61223,453 @@
       }
     },
     "id": "competitivite-energetique-des-entreprises-na",
+    "type": "tee"
+  },
+  {
+    "titre": "Prêt Flash Électrique",
+    "promesse": "Financez votre votre projet d’électrification grâce au Prêt Flash Électrique",
+    "description": "Remplacez vos équipements fonctionnant au gaz et au fioul (four, matériel de cuisson, matériel de séchage) par des équipements électriques, raccordez votre local, ou faites l'acquisition d'outils électriques grâce à un prêt avantageux. Ainsi, vous :\n\n- **Réalisez des économies** d'énergie.\n- **Pilotez vos consommations** énergétiques. \n- **Gagnez en confort** en réduisant la chaleur émise l'été par vos appareils.",
+    "description longue": "Prêt de durée modulable, de 3, 5 ou 7 ans.\n\nTaux fixe à partir de 4,95%.\n\nRéponse en 48h et décaissement en 7 jours. \n\nDifféré de remboursement de 24 mois maximum.",
+    "illustration": "images/TEE_ampoule.webp",
+    "opérateur de contact": "Banque Publique d'Investissement France",
+    "contact question": "https://aide.flash.bpifrance.fr/kb/fr",
+    "url": "https://flash.bpifrance.fr/electrique",
+    "nature de l'aide": "prêt",
+    "montant du prêt": "De 10 000 à 100 000 €",
+    "durée du prêt": "De 5 à 7 ans pour rembourser votre prêt",
+    "objectifs": [
+      {
+        "description": "Créez un compte sur le site de Bpifrance.",
+        "liens": [
+          {
+            "lien": "https://moncompte.bpifrance.fr/register",
+            "texte": "Créer mon compte"
+          }
+        ]
+      },
+      {
+        "description": "Exprimez votre intérêt à Bpifrance en remplissant le formulaire de demande de prêt.",
+        "liens": [
+          {
+            "lien": "https://moncompte.bpifrance.fr/redirect?goto=https%3A%2F%2Fmoncompte.bpifrance.fr%3A443%2Fam%2Foauth2%2Frealms%2Froot%2Frealms%2Fmcb%2Fauthorize%3Fresponse_type%3Dcode%26client_id%3Dflash-pret-spa%26state%3DV1hDQS5NcXNhc25-WUNJWHpqdHZyT0ROV0lEdmpad2l3RGJrdWJYTHlydVFv%3B%25252Faction-climat%25252Ffrance%25252Fmes-demandes%25253FofferVariant%25253Delectrique%26redirect_uri%3Dhttps%3A%2F%2Fflash.bpifrance.fr%2Fpret%2Fsso%2Fcode%26scope%3Dopenid%2520profile%2520email%26code_challenge%3D0j1PMM3MNhhcLnKChAiwtv5gTl_gYgderHHzXFRJ7DY%26code_challenge_method%3DS256%26nonce%3DV1hDQS5NcXNhc25-WUNJWHpqdHZyT0ROV0lEdmpad2l3RGJrdWJYTHlydVFv%26acr%3Dlogin%26acr_sig%3DSbXh2JZCsmRxIlU0s6rv_Hr-wnBustn_KirywHbkqag&realm=/mcb&service=LoginSDK",
+            "texte": "Formulaire de demande de prêt"
+          }
+        ]
+      },
+      {
+        "description": "Un chargé d'affaires Bpifrance vous propose un rendez-vous pour vous expliquer les modalités de financement."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Moins de 50 salariés",
+        "Non éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d’activité"
+      ],
+      "nombre d'années d'activité": [
+        "Au moins 3 ans d’activité"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "maxEmployees": "49",
+        "excludeMicroentrepreneur": true
+      },
+      "priorityObjectives": [
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "a un effectif éligible",
+          "a une categorie legale eligible"
+        ]
+      },
+      "entreprise . a un effectif éligible": {
+        "toutes ces conditions": [
+          "effectif <= 49"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      }
+    },
+    "id": "pret-flash-electrique",
+    "type": "tee"
+  },
+  {
+    "titre": "Mon parcours économies d'énergie",
+    "promesse": "Bénéficiez d'un accompagnement personnalisé pour réduire vos factures énergétiques",
+    "description": "Le programme Mon parcours économie d'énergie vous accompagne dans la maîtrise de votre consommation d'énergie en entreprise à l'aide de deux dispositifs : un **accompagnement personnalisé** avec un conseiller et un **carnet de bord énergie** numérique. Ainsi, vous : \n\n- Limitez vos coûts énergétiques.\n\n* Maîtrisez vos consommations. \n* Anticipez les évolutions réglementaires.",
+    "description longue": "Vous n'activez que les étapes utiles à votre situation. Vous pouvez, par exemple : \n\n- Rencontrer un conseiller dédié. \n- Réaliser un diagnostic. \n- Organiser un plan d'action. \n- Évaluer vos économies d'énergie grâce au Carnet de bord Énergie.",
+    "illustration": "images/TEE_ampoule.webp",
+    "opérateur de contact": "ADEME",
+    "autres opérateurs": [
+      "Banque Publique d'Investissement France"
+    ],
+    "contact question": "formulaire",
+    "url": "https://parcours-economies-energie.ademe.fr/",
+    "nature de l'aide": "étude",
+    "coût de l'accompagnement": "Gratuit",
+    "durée de l'accompagnement": "Variable",
+    "activable en autonomie": "oui",
+    "objectifs": [
+      {
+        "description": "Contactez un conseiller au 09 70 19 32 32 (appel non surtaxé) afin de poser vos questions et d'initier le parcours."
+      },
+      {
+        "description": "Bénéficiez d'un accompagnement personnalisé."
+      },
+      {
+        "description": "Visualisez votre consommation d'énergie par équipement en ouvrant un Carnet de bord Énergie.",
+        "liens": [
+          {
+            "lien": "https://parcours-economies-energie.ademe.fr/auth",
+            "texte": "Ouvrir mon Carnet de bord Énergie"
+          }
+        ]
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Effectif inférieur à 249 employés",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Tous secteurs d'activité"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T",
+          "U"
+        ],
+        "maxEmployees": "249"
+      },
+      "priorityObjectives": [
+        "energy"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "toutes ces conditions": [
+          "a un effectif éligible"
+        ]
+      },
+      "entreprise . a un effectif éligible": {
+        "toutes ces conditions": [
+          "effectif <= 249"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I",
+          "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
+          "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
+          "code NAF niveau 1 . est Q",
+          "code NAF niveau 1 . est R",
+          "code NAF niveau 1 . est S",
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique"
+        ]
+      }
+    },
+    "id": "mon-parcours-economies-energie",
     "type": "tee"
   }
 ]

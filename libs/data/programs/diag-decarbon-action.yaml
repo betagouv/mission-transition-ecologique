@@ -20,23 +20,25 @@ description longue: >-
   - **certifiés « Bilan Carbone® » ou équivalent**, selon les méthodes conformes
   à la réglementation ;
 
-  - **habilités par l’ADEME, Bpifrance et l’Association Bilan Carbone**,
-  garantissant un accompagnement fiable et de qualité.
+  - **habilités par l’ADEME, Bpifrance et l’Association pour la Transition Bas
+  Carbone**, garantissant un accompagnement fiable et de qualité.
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Banque Publique d'Investissement France
 autres opérateurs:
   - ADEME
-contact question: formulaire
+contact question: >-
+  https://diag.bpifrance.fr/contactez-nous?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026
 url: https://diag.bpifrance.fr/diag-decarbon-action
 nature de l'aide: étude
 coût de l'accompagnement: "6 000 €\_HT après subvention de 40%"
-durée de l'accompagnement: 12 jours de prestation répartis sur 6 à 8 mois
+durée de l'accompagnement: 12 jours de prestation répartis sur 10 mois
 objectifs:
   - description: >-
       Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le
       site de Bpifrance
     liens:
-      - lien: https://diag.bpifrance.fr/contactez-nous
+      - lien: >-
+          https://diag.bpifrance.fr/diag-decarbon-action?utm_source=mission_transition&utm_medium=referral&utm_campaign=ADEME_2026
         texte: Formulaire de contact
   - description: >-
       Un conseiller vous rappelle pour répondre à vos questions et vous guider
@@ -55,7 +57,7 @@ objectifs:
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 500 salariés
-    - Non éligible aux micro-entreprises
+    - Éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
   secteur d'activité:
@@ -75,13 +77,9 @@ publicodes:
   entreprise . est éligible:
     toutes ces conditions:
       - a un effectif éligible
-      - a une categorie legale eligible
   entreprise . a un effectif éligible:
     toutes ces conditions:
       - effectif <= 499
-  entreprise . a une categorie legale eligible:
-    toutes ces conditions:
-      - microentrepreneur = non
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est B
