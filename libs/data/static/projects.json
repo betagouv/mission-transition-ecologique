@@ -54,7 +54,9 @@
       "aide-installation-chauffe-eau-solaire-collectif",
       "aide-installation-chauderie-biomasse-collective",
       "accelerateur-transition-s",
-      "competitivite-energetique-des-entreprises-na"
+      "competitivite-energetique-des-entreprises-na",
+      "pret-flash-electrique",
+      "mon-parcours-economies-energie"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action économies d'énergie",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action économies d'énergie",
@@ -1040,7 +1042,8 @@
       "aide-renovation-eclairage-exterieur",
       "aide-installation-chauffe-eau-solaire-collectif",
       "prorefei-formation-referents-energie-industrie",
-      "competitivite-energetique-des-entreprises-na"
+      "competitivite-energetique-des-entreprises-na",
+      "mon-parcours-economies-energie"
     ],
     "linkedProjects": [
       4
@@ -2455,7 +2458,8 @@
       "concilier-enjeux-ecologiques-et-conditions-de-travail",
       "autodiagnostic-rse",
       "eval-360-pays-de-la-loire",
-      "accelerateur-transition-s"
+      "accelerateur-transition-s",
+      "mon-parcours-economies-energie"
     ],
     "linkedProjects": [],
     "priority": {
@@ -3080,7 +3084,8 @@
       "prit-hdf",
       "aide-tourisme-guadeloupe",
       "certificats-economie-energie",
-      "cheque-transition-tissu-economique"
+      "cheque-transition-tissu-economique",
+      "pret-flash-electrique"
     ],
     "linkedProjects": [
       4
@@ -3167,7 +3172,8 @@
       "hotellerie-independante-na",
       "camping-independant-na",
       "prit-hdf",
-      "cheque-transition-tissu-economique"
+      "cheque-transition-tissu-economique",
+      "pret-flash-electrique"
     ],
     "linkedProjects": [
       4
@@ -3543,7 +3549,8 @@
       "etude-energetique-batiment-tertiaire",
       "aide-renovation-batiment-tertiaire",
       "etude-opportunite-installation-biomasse-collective",
-      "aide-installation-chauderie-biomasse-collective"
+      "aide-installation-chauderie-biomasse-collective",
+      "mon-parcours-economies-energie"
     ],
     "linkedProjects": [
       4,
@@ -4000,7 +4007,8 @@
       "pass-transformation-ecologique-occitanie",
       "contrat-3s-occitanie",
       "prorefei-formation-referents-energie-industrie",
-      "competitivite-energetique-des-entreprises-na"
+      "competitivite-energetique-des-entreprises-na",
+      "mon-parcours-economies-energie"
     ],
     "linkedProjects": [
       4
@@ -4862,7 +4870,8 @@
       "pret-economies-d-energie-pee",
       "decarb-flash-2025-2027",
       "prorefei-formation-referents-energie-industrie",
-      "competitivite-energetique-des-entreprises-na"
+      "competitivite-energetique-des-entreprises-na",
+      "pret-flash-electrique"
     ],
     "linkedProjects": [
       4
