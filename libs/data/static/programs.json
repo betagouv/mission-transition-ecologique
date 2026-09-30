@@ -21733,7 +21733,7 @@
     "contact question": "formulaire",
     "url": "https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-action-climat",
     "nature de l'aide": "prêt",
-    "montant du prêt": "De 10 000 € à 75 000 €",
+    "montant du prêt": "De 10 000 € à 100 000 €",
     "durée du prêt": "modulable de 3, à 5 ou 7 ans dont une période de différé d'amortissement du capital à, respectivement, 9 mois, 1 an et 2 ans",
     "objectifs": [
       {
@@ -21752,7 +21752,7 @@
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
         "Moins de 50 salariés",
-        "Éligible aux micro-entreprises"
+        "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
         "France et territoires d'outre-mer"
@@ -21788,7 +21788,8 @@
           "T",
           "U"
         ],
-        "maxEmployees": "49"
+        "maxEmployees": "49",
+        "excludeMicroentrepreneur": true
       },
       "priorityObjectives": [
         "building",
@@ -21899,12 +21900,18 @@
       },
       "entreprise . est éligible": {
         "toutes ces conditions": [
-          "a un effectif éligible"
+          "a un effectif éligible",
+          "a une categorie legale eligible"
         ]
       },
       "entreprise . a un effectif éligible": {
         "toutes ces conditions": [
           "effectif <= 49"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
         ]
       },
       "entreprise . est dans un secteur d'activité ciblé": {
@@ -36866,6 +36873,7 @@
     "description longue": "Modalités :\n- 13 jours de mission de conseil exécutée par un consultant externe habilité par Bpifrance pour travailler en profondeur vos sujets RSE et d’économie circulaire,\n- 5 journées de formation,\n- Un accès aux réseaux Bpifrance et un réel esprit de promotion,\n- Un accompagnement premium de la part de Bpifrance et des partenaires de la filière.\n\nAutres partenaires :\n- La Fédération des IND.E.S (Industriels Engagés et Solidaires)\n- Les FFI (Forces Françaises de l'Industrie)",
     "début de validité": "25/11/2025",
     "fin de validité": "25/11/2026",
+    "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_ampoule.webp",
     "opérateur de contact": "Banque Publique d'Investissement France",
     "contact question": "formulaire",
