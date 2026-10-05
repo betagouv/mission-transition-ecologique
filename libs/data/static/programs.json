@@ -21733,7 +21733,7 @@
     "contact question": "formulaire",
     "url": "https://www.bpifrance.fr/catalogue-offres/transition-ecologique-et-energetique/pret-action-climat",
     "nature de l'aide": "prêt",
-    "montant du prêt": "De 10 000 € à 75 000 €",
+    "montant du prêt": "De 10 000 € à 100 000 €",
     "durée du prêt": "modulable de 3, à 5 ou 7 ans dont une période de différé d'amortissement du capital à, respectivement, 9 mois, 1 an et 2 ans",
     "objectifs": [
       {
@@ -21752,7 +21752,7 @@
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
         "Moins de 50 salariés",
-        "Éligible aux micro-entreprises"
+        "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
         "France et territoires d'outre-mer"
@@ -21788,7 +21788,8 @@
           "T",
           "U"
         ],
-        "maxEmployees": "49"
+        "maxEmployees": "49",
+        "excludeMicroentrepreneur": true
       },
       "priorityObjectives": [
         "building",
@@ -21899,12 +21900,18 @@
       },
       "entreprise . est éligible": {
         "toutes ces conditions": [
-          "a un effectif éligible"
+          "a un effectif éligible",
+          "a une categorie legale eligible"
         ]
       },
       "entreprise . a un effectif éligible": {
         "toutes ces conditions": [
           "effectif <= 49"
+        ]
+      },
+      "entreprise . a une categorie legale eligible": {
+        "toutes ces conditions": [
+          "microentrepreneur = non"
         ]
       },
       "entreprise . est dans un secteur d'activité ciblé": {
@@ -36866,6 +36873,7 @@
     "description longue": "Modalités :\n- 13 jours de mission de conseil exécutée par un consultant externe habilité par Bpifrance pour travailler en profondeur vos sujets RSE et d’économie circulaire,\n- 5 journées de formation,\n- Un accès aux réseaux Bpifrance et un réel esprit de promotion,\n- Un accompagnement premium de la part de Bpifrance et des partenaires de la filière.\n\nAutres partenaires :\n- La Fédération des IND.E.S (Industriels Engagés et Solidaires)\n- Les FFI (Forces Françaises de l'Industrie)",
     "début de validité": "25/11/2025",
     "fin de validité": "25/11/2026",
+    "aide temporairement indisponible": "oui",
     "illustration": "images/TEE_ampoule.webp",
     "opérateur de contact": "Banque Publique d'Investissement France",
     "contact question": "formulaire",
@@ -61451,6 +61459,228 @@
       }
     },
     "id": "pret-flash-electrique",
+    "type": "tee"
+  },
+  {
+    "titre": "Decarb Flash Artisan",
+    "promesse": "Financez l'électrification de votre entreprise artisanale",
+    "description": "Financez l'électrification de votre entreprise artisanale, et notamment le remplacement de vos équipements fonctionnant à l'énergie fossile par des équipements électriques.",
+    "description longue": "Les actions éligibles sont les suivantes et devront respecter les montants d’investissement minimaux et maximaux présentés dans le cahier des charges :\n\n- Fours à pain électriques.\n- Cabines de peinture électrique.\n- Cuisson électrique.\n- Matériel de lavage, séchage et repassage électrique.\n- Fours électriques pour les métiers d’art et la fabrication artisanale.\n\n&nbsp;",
+    "début de validité": "30/09/2026",
+    "fin de validité": "15/06/2027",
+    "illustration": "images/TEE_energie_verte.webp",
+    "opérateur de contact": "ADEME",
+    "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000999",
+    "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/aap/decarb-flash-artisan",
+    "nature de l'aide": "financement",
+    "montant du financement": "Aide de 20% à 50% selon le projet et la taille de l'entreprise",
+    "objectifs": [
+      {
+        "description": "Consultez la documentation de l’ADEME ou contactez un conseiller pour vérifier l’éligibilité de votre projet.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Decarb%20Flash%20Artisan%20-%20Annexes%20actions%20et%20codes%20NAF%20%C3%A9ligibles%20-%202026.pdf",
+            "texte": "Actions et codes NAF éligibles"
+          },
+          {
+            "lien": "https://file:///Users/betagouv/Downloads/Decarb%20Flash%20Artisan%20-%20Cahier%20des%20charges%20-%202026%20.pdf",
+            "texte": "Cahier des charges"
+          }
+        ]
+      },
+      {
+        "description": "Créez un compte ADEME pour pouvoir déposer votre dossier.",
+        "liens": [
+          {
+            "lien": "https://agirpourlatransition.ademe.fr/inscription",
+            "texte": "Créer mon compte ADEME"
+          }
+        ]
+      },
+      {
+        "description": "Déposez votre demande d'aide : informations administratives, description du projet, détails techniques et financiers, étude de faisabilité, etc. À ce stade, votre investissement ne doit pas avoir été réalisé !",
+        "liens": [
+          {
+            "lien": "https://moncompte.ademe.fr/auth/realms/master/protocol/openid-connect/auth?client_id=prod-opale&redirect_uri=https%3A%2F%2Fvosaides.ademe.fr%2Flogin&state=2dbb8456-2628-471e-92c4-3822b2a09b86&response_mode=fragment&response_type=code&scope=openid&nonce=79a4f38c-70d5-4388-8ee9-b4c7651e4dcb&code_challenge=gZRmwgdwo6p68Oo6Nb0L_-CeoM0yqM6rt0FdW2rtzfA&code_challenge_method=S256",
+            "texte": "Déposer mon dossier"
+          }
+        ]
+      },
+      {
+        "description": "L'ADEME étudie votre demande d'aide. Si votre demande est acceptée, recevez un contrat de financement précisant le montant d’aide maximum, les conditions et les modalités de versement."
+      },
+      {
+        "description": "Réalisez vos investissements."
+      }
+    ],
+    "conditions d'éligibilité": {
+      "taille de l'entreprise": [
+        "Effectif inférieur à 249 employés",
+        "Éligible aux micro-entreprises"
+      ],
+      "secteur géographique": [
+        "France et territoires d'outre-mer"
+      ],
+      "secteur d'activité": [
+        "Entreprises artisanales"
+      ],
+      "nombre d'années d'activité": [
+        "Éligible à toutes les entreprises"
+      ]
+    },
+    "eligibilityData": {
+      "company": {
+        "allowedNafSections": [
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "maxEmployees": "249"
+      },
+      "validity": {
+        "start": "30/09/2026",
+        "end": "15/06/2027"
+      },
+      "priorityObjectives": [
+        "energy",
+        "environmental"
+      ]
+    },
+    "publicodes": {
+      "entreprise": null,
+      "entreprise . effectif": null,
+      "entreprise . microentrepreneur": null,
+      "entreprise . secteur d'activité": {
+        "avec": {
+          "est industrie": null,
+          "est tertiaire": null,
+          "est agriculture": null,
+          "est tourisme": null,
+          "est artisanat": null,
+          "est autre secteur": null
+        }
+      },
+      "entreprise . code NAF": null,
+      "entreprise . code NAF niveau 1": {
+        "avec": {
+          "est A": null,
+          "est B": null,
+          "est C": null,
+          "est D": null,
+          "est E": null,
+          "est F": null,
+          "est G": null,
+          "est H": null,
+          "est I": null,
+          "est J": null,
+          "est K": null,
+          "est L": null,
+          "est M": null,
+          "est N": null,
+          "est O": null,
+          "est P": null,
+          "est Q": null,
+          "est R": null,
+          "est S": null,
+          "est T": null,
+          "est U": null
+        }
+      },
+      "entreprise . est propriétaire de ses locaux": null,
+      "région": null,
+      "Auvergne-Rhône-Alpes": "\"Auvergne-Rhône-Alpes\"",
+      "Bourgogne-Franche-Comté": "\"Bourgogne-Franche-Comté\"",
+      "Bretagne": "\"Bretagne\"",
+      "Centre-Val de Loire": "\"Centre-Val de Loire\"",
+      "Corse": "\"Corse\"",
+      "Grand Est": "\"Grand Est\"",
+      "Hauts-de-France": "\"Hauts-de-France\"",
+      "Normandie": "\"Normandie\"",
+      "Nouvelle-Aquitaine": "\"Nouvelle-Aquitaine\"",
+      "Occitanie": "\"Occitanie\"",
+      "Provence-Alpes-Côte d'Azur": "\"Provence-Alpes-Côte d'Azur\"",
+      "Pays de la Loire": "\"Pays de la Loire\"",
+      "Île-de-France": "\"Île-de-France\"",
+      "Guadeloupe": "\"Guadeloupe\"",
+      "Guyane": "\"Guyane\"",
+      "La Réunion": "\"La Réunion\"",
+      "Martinique": "\"Martinique\"",
+      "Mayotte": "\"Mayotte\"",
+      "Ile de Clipperton": "\"Ile de Clipperton\"",
+      "Nouvelle-Calédonie": "\"Nouvelle-Calédonie\"",
+      "Polynésie française": "\"Polynésie française\"",
+      "Saint-Barthélemy": "\"Saint-Barthélemy\"",
+      "Saint-Martin": "\"Saint-Martin\"",
+      "Saint-Pierre-Et-Miquelon": "\"Saint-Pierre-Et-Miquelon\"",
+      "Terres australes et antarctiques françaises": "\"Terres australes et antarctiques françaises\"",
+      "Wallis et Futuna": "\"Wallis et Futuna\"",
+      "questionnaire": null,
+      "questionnaire . objectif prioritaire": {
+        "avec": {
+          "est mon impact environnemental": null,
+          "est ma performance énergétique": null,
+          "est diminuer ma consommation d'eau": null,
+          "est rénover mon bâtiment": null,
+          "est la mobilité durable": null,
+          "est la gestion des déchets": null,
+          "est l'écoconception": null,
+          "est former ou recruter": null,
+          "est préserver la biodiversité": null
+        }
+      },
+      "dispositif": {
+        "avec": {
+          "début de validité": null,
+          "fin de validité": null
+        }
+      },
+      "date du jour": null,
+      "entreprise . est ciblée": {
+        "toutes ces conditions": [
+          "est éligible",
+          "est dans un secteur d'activité ciblé",
+          "a un objectif ciblé"
+        ]
+      },
+      "entreprise . est éligible": {
+        "applicable si": {
+          "toutes ces conditions": [
+            "dispositif . début de validité <= date du jour",
+            "date du jour <= dispositif . fin de validité"
+          ]
+        },
+        "toutes ces conditions": [
+          "a un effectif éligible"
+        ]
+      },
+      "entreprise . a un effectif éligible": {
+        "toutes ces conditions": [
+          "effectif <= 249"
+        ]
+      },
+      "entreprise . est dans un secteur d'activité ciblé": {
+        "une de ces conditions": [
+          "code NAF niveau 1 . est C",
+          "code NAF niveau 1 . est D",
+          "code NAF niveau 1 . est E",
+          "code NAF niveau 1 . est F",
+          "code NAF niveau 1 . est G",
+          "code NAF niveau 1 . est H",
+          "code NAF niveau 1 . est I"
+        ]
+      },
+      "entreprise . a un objectif ciblé": {
+        "une de ces conditions": [
+          "questionnaire . objectif prioritaire . est ma performance énergétique",
+          "questionnaire . objectif prioritaire . est mon impact environnemental"
+        ]
+      }
+    },
+    "id": "decarb-flash-artisan",
     "type": "tee"
   },
   {
