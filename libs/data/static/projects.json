@@ -56,6 +56,7 @@
       "accelerateur-transition-s",
       "competitivite-energetique-des-entreprises-na",
       "pret-flash-electrique",
+      "decarb-flash-artisan",
       "mon-parcours-economies-energie"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action économies d'énergie",
@@ -500,7 +501,7 @@
     "titleLongDescription": "🤝 Qu’est-ce qu'un bilan de gaz à effet de serre ?",
     "longDescription": "Un bilan des émissions de gaz à effet de serre (ou bilan GES, ou BEGES), consiste à mesurer, sur une année complète, **l’ensemble des** **émissions directes et indirectes** de gaz à effet de serre produites par les activités d’une entreprise.\n\nLa grande majorité des bilans GES réalisés en France utilisent la méthode Bilan Carbone®, élaborée par l’ADEME.\n\nLes bilans des émissions de gaz à effet de serre mesurent tour à tour :\n\n- Les émissions directes produites par les équipements de l’entreprise.\n- Les émissions indirectes résultant de la production d'énergie et de chaleur consommée ou achetée par l'entreprise.\n- Les émissions indirectes en dehors du périmètre de contrôle de l’entreprise (achats, transport des marchandises, déchets produits…).\n\nSi la loi oblige certaines entreprises à réaliser leur Bilan GES, toutes les entreprises peuvent le faire, même lorsqu’elles n’y sont pas contraintes. À la clé, de nombreux avantages :\n\n- Le respect des **enjeux RSE**.\n- La réalisation d’importantes **économies d’énergie**.\n- L’anticipation des **contraintes réglementaires**.\n- La consolidation de votre marque employeur et de l’**image de marque** de votre entreprise.",
     "titleMoreDescription": "📚 Comment me documenter au mieux sur le bilan de gaz à effet de serre ?",
-    "moreDescription": "- [**Guide** : tout comprendre, le changement climatique](https://librairie.ademe.fr/changement-climatique/7745-tout-comprendre-le-changement-climatique-9791029724589.html) Comment limiter la hausse des températures et limiter le changement climatique ?\n- [**La neutralité carbone**](https://librairie.ademe.fr/industrie-et-production-durable/4524-avis-de-l-ademe-la-neutralite-carbone.html) Des clés pour s’approprier ce sujet et adopter des gestes responsables\n- [**Réglementation bilan GES,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) Un portail pour connaitre les obligations de votre entreprise.\n- [**L'annuaire des prestataires Bilan Carbone®**](https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/)**,** par l'Association pour la transition Bas Carbone (ABC)\n- [**Bilans GES ADEME,**](https://bilans-ges.ademe.fr/) la plateforme nationale pour la publication des bilans d'émission de gaz à effet.",
+    "moreDescription": "- [**Guide** : tout comprendre, le changement climatique](https://librairie.ademe.fr/changement-climatique/7745-tout-comprendre-le-changement-climatique-9791029724589.html) Comment limiter la hausse des températures et limiter le changement climatique ?\n- [**Réglementation bilan GES,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) Un portail pour connaitre les obligations de votre entreprise.\n- **[L'annuaire des prestataires Bilan Carbone®](https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/),** par l'Association pour la transition Bas Carbone (ABC)\n- [**Bilans GES ADEME,**](https://bilans-ges.ademe.fr/) la plateforme nationale pour la publication des bilans d'émission de gaz à effet.\n- [**Guide national de déclinaison volontaire de la SNBC 3**](https://www.ecologie.gouv.fr/strategie-nationale-bas-carbone/guide-national-declinaison-volontaire-snbc-3) auprès des organisations, un outil pour rendre votre plan de transition cohérent.",
     "themes": [
       "environmental"
     ],
@@ -2505,7 +2506,7 @@
     "shortDescription": "Construire la feuille de route de son entreprise pour réduire ses émissions de gaz à effet de serre à long terme.",
     "image": "/images/projet/plan-transition-bas-carbone.webp",
     "longDescription": "Le plan de transition d'une entreprise présente l’ensemble des actions et des moyens envisagés pour réduire ses émissions de gaz à effet de serre et les objectifs à atteindre pour atteindre la neutralité carbone.\n\nAvant de définir ce plan de transition, il est nécessaire de quantifier votre impact via un bilan de gaz à effet de serre (GES). Vous pourrez ensuite définir une trajectoire de réduction réaliste et atteignable pour réduire durablement vos principaux postes émetteurs de GES.\n\nUne stratégie bas carbone efficace doit s'aligner sur la trajectoire cible de la SNBC, Stratégie Nationale Bas Carbone (SNBC), qui est la feuille de route de la France pour lutter contre le changement climatique. Cette stratégie s’appuie sur un scénario d’atteinte de la neutralité carbone à l’horizon 2050 (c’est-à-dire, un équilibre entre l’émission des gaz à effet de serre et leur absorption).\n\nCette objectif de **neutralité carbone** n'est atteignable que si les entreprises se mettent en mouvement !",
-    "moreDescription": "- [**Portail RSE,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) un site qui vous permet de connaitre vos obligations pour la réalisation du bilan GES et du plan de transition.\n- [**Guide pour la construction, la mise en oeuvre et le suivi d'un plan de transition**](https://bilans-ges.ademe.fr/api/medias/d69d82c9-f060-468f-94c8-bc7391bd1b7e/download)**.**\n- [**La Stratégie Nationale Bas Carbone**](https://bigmedia.bpifrance.fr/nos-dossiers/strategie-nationale-bas-carbone-snbc-definition-objectifs-et-application-en-entreprise) : définition, objectifs et application en entreprise.\n- [**L'Association pour la transition Bas Carbone**](https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/) : un annuaire des prestataires pour réaliser un bilan carbone.",
+    "moreDescription": "- [**Portail RSE,**](https://portail-rse.beta.gouv.fr/reglementations/bilan-ges) un site qui vous permet de connaitre vos obligations pour la réalisation du bilan GES et du plan de transition.\n- **[Guide pour la construction, la mise en œuvre et le suivi d'un plan de transition](https://bilans-ges.ademe.fr/api/medias/d69d82c9-f060-468f-94c8-bc7391bd1b7e/download).**\n- [**La Stratégie Nationale Bas Carbone**](https://www.ecologie.gouv.fr/strategie-nationale-bas-carbone) : définition, objectifs et application en entreprise.\n- [**L'Association pour la transition Bas Carbone**](https://abc-transitionbascarbone.fr/les-acteurs/annuaire-des-prestataires/) : un annuaire des prestataires pour réaliser un bilan carbone.\n- [**Guide national de déclinaison volontaire de la SNBC 3**](https://www.ecologie.gouv.fr/strategie-nationale-bas-carbone/guide-national-declinaison-volontaire-snbc-3) auprès des organisations, un outil pour rendre votre plan de transition cohérent.",
     "themes": [
       "environmental"
     ],
@@ -3085,7 +3086,8 @@
       "aide-tourisme-guadeloupe",
       "certificats-economie-energie",
       "cheque-transition-tissu-economique",
-      "pret-flash-electrique"
+      "pret-flash-electrique",
+      "decarb-flash-artisan"
     ],
     "linkedProjects": [
       4
@@ -3173,7 +3175,8 @@
       "camping-independant-na",
       "prit-hdf",
       "cheque-transition-tissu-economique",
-      "pret-flash-electrique"
+      "pret-flash-electrique",
+      "decarb-flash-artisan"
     ],
     "linkedProjects": [
       4
