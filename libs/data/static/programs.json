@@ -960,7 +960,7 @@
     "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000852",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/pacte-entreprises-audit-energetique-volontaire-en-industrie",
     "nature de l'aide": "étude",
-    "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 100 000 €",
+    "montant du financement": "Jusqu'à 80% du coût de l'étude, dans un maximum de 10 000 €",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -1839,14 +1839,14 @@
     "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000863",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/pacte-entreprises-booster-entreprises-reduire-votre-facture-energetique-et-gagner-en-valeur-verte",
     "nature de l'aide": "financement",
-    "montant du financement": "Selon le projet",
+    "montant du financement": "Jusqu'à 80% dans une limite de 100 000€ HT",
     "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
         "liens": [
           {
-            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Booster%20Entreprises%20%C3%A9co%20%C3%A9nergie%20tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf",
+            "lien": "https://agirpourlatransition.ademe.fr/sites/default/files/Booster%20Entreprises%20-%20%C3%89co-%C3%89nergie%20tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026%20-%20v9.pdf",
             "texte": "Conditions éligibilité et financement"
           }
         ]
@@ -1875,7 +1875,7 @@
     ],
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
-        "Toutes tailles",
+        "TPE, PME et ETI",
         "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
@@ -12795,7 +12795,7 @@
     "url": "https://diag.bpifrance.fr/diag-eco-flux",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "3 000 € HT après subvention de 50%",
-    "durée de l'accompagnement": "7 jours de prestation répartis sur 10 mois",
+    "durée de l'accompagnement": "7 jours de prestation répartis sur 6 à 8 mois",
     "objectifs": [
       {
         "description": "Exprimez votre intérêt pour ce Diag en remplissant le formulaire sur le site de Bpifrance",
@@ -19556,7 +19556,7 @@
     ],
     "conditions d'éligibilité": {
       "taille de l'entreprise": [
-        "Toutes tailles",
+        "PME jusqu'à 250 salariés",
         "Non éligible aux micro-entreprises"
       ],
       "secteur géographique": [
@@ -19596,6 +19596,7 @@
           "T",
           "U"
         ],
+        "maxEmployees": "249",
         "excludeMicroentrepreneur": true
       },
       "priorityObjectives": [
@@ -19700,7 +19701,13 @@
       },
       "entreprise . est éligible": {
         "toutes ces conditions": [
+          "a un effectif éligible",
           "a une categorie legale eligible"
+        ]
+      },
+      "entreprise . a un effectif éligible": {
+        "toutes ces conditions": [
+          "effectif <= 249"
         ]
       },
       "entreprise . a une categorie legale eligible": {
@@ -24044,11 +24051,11 @@
     "titre": "TPE gagnantes sur tous les coûts",
     "metaTitre": "TPE gagnantes sur tous les coûts - Plus d'économies moins d'impact",
     "promesse": "Réalisez des économies durables en réduisant vos déchets et vos pertes en énergie, matière et eau.",
-    "description": "Profitez d’un **accompagnement personnalisé** pour mieux maîtriser vos consommations d’énergie, d’eau, de matières premières et vos déchets, avec un **retour sur investissement rapide**.\n\n- Faites réaliser un **état des lieux** par un expert de la Chambre de Métiers et de l’Artisanat : identification de vos flux, calcul des pertes et de leurs coûts, comparaison aux moyennes du secteur.\n\n- Recevez un **plan d’action simple, concret et rentable** (moins de 12 mois), avec un chiffrage des économies potentielles (2 000 à 5 000 € par an en moyenne).\n\n- Mettez en œuvre ce plan et bénéficiez d’un **accompagnement d’un an** pour suivre vos progrès.\n\n- **Évaluez les résultats** et mesurez l’impact financier des actions menées.",
+    "description": "Profitez d’un **accompagnement personnalisé** pour mieux maîtriser vos consommations d’énergie, d’eau, de matières premières et vos déchets, avec un **retour sur investissement rapide**.\n\n- Faites réaliser un **état des lieux** par un conseiller énergie du réseau Mon parcours économies d'énergie : identification de vos flux, calcul des pertes et de leurs coûts, comparaison aux moyennes du secteur.\n- Recevez un **plan d’action simple, concret et rentable** (moins de 12 mois), avec un chiffrage des économies potentielles (2 000 à 5 000 € par an en moyenne).\n- Mettez en œuvre ce plan et bénéficiez d’un **accompagnement d’un an** pour suivre vos progrès.\n- **Évaluez les résultats** et mesurez l’impact financier des actions menées.",
     "metaDescription": "Réduisez vos pertes (énergie, eau, matières premières, déchets) et économisez jusqu’à 5 000 € par an grâce à un plan d’action et un accompagnement sur mesure.",
     "illustration": "images/TEE_energie_verte.webp",
     "opérateur de contact": "Chambre des Métiers et de l'Artisanat",
-    "contact question": "formulaire",
+    "contact question": "https://parcours-economies-energie.ademe.fr/",
     "url": "https://www.artisanat.fr/magazine/series-podcasts/tpe-pme-gagnantes-sur-tous-couts",
     "nature de l'aide": "étude",
     "coût de l'accompagnement": "Gratuit",
@@ -24069,7 +24076,7 @@
         "description": "Définissez avec l’expert le périmètre de l'accompagnement, la méthode et le calendrier."
       },
       {
-        "description": "Lancez le diagnostic avec l'expert proposé par votre CMA."
+        "description": "Lancez le diagnostic avec l'expert proposé par le réseau Mon parcours économies d'énergie."
       }
     ],
     "conditions d'éligibilité": {
@@ -24078,22 +24085,20 @@
         "Éligible aux micro-entreprises"
       ],
       "secteur géographique": [
-        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française, Provence-Alpes-Côte d'Azur, Saint-Barthélemy, Saint-Martin, Saint-Pierre-Et-Miquelon"
+        "Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine, Nouvelle-Calédonie, Occitanie, Pays de la Loire, Provence-Alpes-Côte d'Azur, Saint-Pierre-Et-Miquelon"
       ],
       "secteur d'activité": [
-        "Artisan"
+        "Secteur d'activité industrie et tertiaire"
       ],
       "nombre d'années d'activité": [
         "Éligible à toutes les entreprises"
-      ],
-      "autres critères d'éligibilité": [
-        "Être un artisan"
       ]
     },
     "eligibilityData": {
       "company": {
         "allowedNafSections": [
           "A",
+          "B",
           "C",
           "D",
           "E",
@@ -24102,11 +24107,17 @@
           "H",
           "I",
           "J",
+          "K",
+          "L",
           "M",
+          "N",
+          "O",
+          "P",
           "Q",
           "R",
           "S",
-          "T"
+          "T",
+          "U"
         ],
         "maxEmployees": "19",
         "allowedRegion": [
@@ -24127,10 +24138,7 @@
           "Nouvelle-Calédonie",
           "Occitanie",
           "Pays de la Loire",
-          "Polynésie française",
           "Provence-Alpes-Côte d'Azur",
-          "Saint-Barthélemy",
-          "Saint-Martin",
           "Saint-Pierre-Et-Miquelon"
         ]
       },
@@ -24250,6 +24258,7 @@
       "entreprise . est dans un secteur d'activité ciblé": {
         "une de ces conditions": [
           "code NAF niveau 1 . est A",
+          "code NAF niveau 1 . est B",
           "code NAF niveau 1 . est C",
           "code NAF niveau 1 . est D",
           "code NAF niveau 1 . est E",
@@ -24258,11 +24267,17 @@
           "code NAF niveau 1 . est H",
           "code NAF niveau 1 . est I",
           "code NAF niveau 1 . est J",
+          "code NAF niveau 1 . est K",
+          "code NAF niveau 1 . est L",
           "code NAF niveau 1 . est M",
+          "code NAF niveau 1 . est N",
+          "code NAF niveau 1 . est O",
+          "code NAF niveau 1 . est P",
           "code NAF niveau 1 . est Q",
           "code NAF niveau 1 . est R",
           "code NAF niveau 1 . est S",
-          "code NAF niveau 1 . est T"
+          "code NAF niveau 1 . est T",
+          "code NAF niveau 1 . est U"
         ]
       },
       "entreprise . a un objectif ciblé": {
@@ -24291,10 +24306,7 @@
           "région = Nouvelle-Calédonie",
           "région = Occitanie",
           "région = Pays de la Loire",
-          "région = Polynésie française",
           "région = Provence-Alpes-Côte d'Azur",
-          "région = Saint-Barthélemy",
-          "région = Saint-Martin",
           "région = Saint-Pierre-Et-Miquelon"
         ]
       }
