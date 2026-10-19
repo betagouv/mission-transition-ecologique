@@ -30,5 +30,5 @@ export type OpportunityObjectDetails = ProgramType | ProjectType | CustomProject
 
 export interface CustomProject {
   title: string
-  theme: ThemeId
+  theme?: ThemeId
 }

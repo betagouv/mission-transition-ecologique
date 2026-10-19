@@ -7,7 +7,7 @@ import { OpportunityId, OpportunityWithContactId, OpportunityWithOperatorContact
 import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFeatures'
 import ProgramFeatures from '../../program/domain/programFeatures'
 import { Operators, ProgramType } from '@tee/data'
-import { ContactDetails, Opportunity, OpportunityType, SiretValidator, ThemeId } from '@tee/common'
+import { ContactDetails, Opportunity, OpportunityType, SiretValidator } from '@tee/common'
 import Monitor from '../../common/domain/monitoring/monitor'
 import { ensureError } from '../../common/domain/error/errors'
 
@@ -87,7 +87,7 @@ export default class OpportunityFeatures {
         return Result.ok(
           new OpportunityAssociatedData(OpportunityType.CustomProject, {
             title: opportunity.titleMessage || 'Untitled',
-            theme: opportunity.theme as ThemeId
+            theme: opportunity.theme
           })
         )
       default:

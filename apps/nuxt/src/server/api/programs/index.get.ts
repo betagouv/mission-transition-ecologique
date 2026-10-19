@@ -262,7 +262,11 @@ defineRouteMeta({
                     deprecated: true
                   },
                   otherData: { type: 'string', description: 'Informations complémentaires.' },
-                  theme: { type: 'string', description: 'Thématique de la demande.' }
+                  theme: {
+                    type: 'string',
+                    enum: ['energy', 'environmental', 'mobility', 'building', 'water', 'waste', 'eco-design', 'rh', 'biodiversite'],
+                    description: 'Identifiant de la thématique de la demande. Une valeur inconnue est ignorée, sans rejeter la demande.'
+                  }
                 }
               },
               optIn: {
