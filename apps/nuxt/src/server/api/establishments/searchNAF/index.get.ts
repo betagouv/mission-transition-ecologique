@@ -7,6 +7,47 @@ const nafSearchQuerySchema = z.object({
   searchTerm: z.string().optional().default('')
 })
 
+defineRouteMeta({
+  openAPI: {
+    tags: ['Entreprises'],
+    summary: 'Rechercher une activité (code NAF)',
+    description: "Recherche des activités dans la nomenclature NAF à partir d'un code ou d'un libellé.",
+    parameters: [
+      {
+        name: 'searchTerm',
+        in: 'query',
+        required: false,
+        description: 'Code ou libellé recherché.',
+        schema: { type: 'string', default: '' }
+      }
+    ],
+    responses: {
+      200: {
+        description: 'Activités trouvées.',
+        content: {
+          'application/json': {
+            schema: {
+              type: 'array',
+              items: {
+                type: 'object',
+                properties: {
+                  codeNAF: { type: 'string' },
+                  codeNAF1: { type: 'string', description: 'Section NAF (lettre).' },
+                  secteur: { type: 'string' }
+                }
+              }
+            }
+          }
+        }
+      },
+      500: {
+        description: 'Erreur lors de la recherche.',
+        content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
+      }
+    }
+  }
+})
+
 export default defineEventHandler(async (event: H3Event) => {
   const searchTerm = await getValidatedQuery(event, nafSearchQuerySchema.parse)
 

@@ -7,6 +7,27 @@ const geoSearchTermSchema = z.object({
   searchTerm: z.string()
 })
 
+defineRouteMeta({
+  openAPI: {
+    tags: ['Géographie'],
+    summary: 'Rechercher une commune',
+    description: "Recherche des communes à partir d'un nom ou d'un code postal.",
+    parameters: [
+      { name: 'searchTerm', in: 'path', required: true, description: 'Nom ou code postal recherché.', schema: { type: 'string' } }
+    ],
+    responses: {
+      200: {
+        description: 'Communes trouvées.',
+        content: { 'application/json': { schema: { type: 'array', items: { type: 'object' } } } }
+      },
+      500: {
+        description: 'Erreur lors de la recherche.',
+        content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
+      }
+    }
+  }
+})
+
 export default defineEventHandler(async (event) => {
   const routeParams = await getValidatedRouterParams(event, geoSearchTermSchema.parse)
 
