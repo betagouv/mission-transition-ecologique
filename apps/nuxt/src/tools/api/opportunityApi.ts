@@ -15,7 +15,6 @@ import {
 } from '@/types'
 import RequestApi from '@/tools/api/requestApi'
 import Opportunity from '@/tools/opportunity'
-import { Theme } from '@/tools/theme'
 import Navigation from '@/tools/navigation'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 
@@ -70,7 +69,7 @@ export default class OpportunityApi extends RequestApi {
       lastName: this._opportunityForm.surname.value,
       email: this._opportunityForm.email.value,
       phoneNumber: this._opportunityForm.tel.value,
-      theme: this._getThemeId(),
+      theme: this._opportunityForm.theme.value as ThemeId | undefined,
       companySiret: this._opportunityForm.siret.value,
       companyName: this._getFromUsedTrack(TrackId.Siret, 'denomination'),
       companySector: TrackStructure.getSector(),
@@ -84,11 +83,6 @@ export default class OpportunityApi extends RequestApi {
       opportunity,
       optIn: this._opportunityForm.cgu.value
     }
-  }
-
-  private _getThemeId(): ThemeId | undefined {
-    // The theme select works with tag labels: convert the selected label to its theme id
-    return Theme.themes.find((theme) => theme.tagLabel === this._opportunityForm.theme.value)?.id
   }
 
   private _getId(): string {
