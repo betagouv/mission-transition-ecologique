@@ -7,6 +7,26 @@ const projectSlugSchema = z.object({
   slug: z.string()
 })
 
+defineRouteMeta({
+  openAPI: {
+    tags: ['Projets'],
+    summary: "Détail d'un projet",
+    description: 'Renvoie un projet de transition écologique à partir de son slug.',
+    parameters: [{ name: 'slug', in: 'path', required: true, description: 'Slug du projet.', schema: { type: 'string' } }],
+    responses: {
+      200: {
+        description: 'Projet demandé.',
+        content: { 'application/json': { schema: { type: 'object' } } }
+      },
+      301: { description: 'Le slug a changé : redirection vers le nouveau slug, en conservant la query.' },
+      404: {
+        description: 'Projet introuvable.',
+        content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
+      }
+    }
+  }
+})
+
 export default defineEventHandler(async (event) => {
   const routeParams = await getValidatedRouterParams(event, projectSlugSchema.parse)
 

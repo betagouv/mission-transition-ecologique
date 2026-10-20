@@ -123,6 +123,17 @@ export default <DefineNuxtConfig>defineNuxtConfig({
     experimental: {
       openAPI: true
     },
+    openAPI: {
+      meta: {
+        title: 'API Transition écologique des entreprises',
+        description:
+          "API du service Transition écologique des entreprises : dispositifs d'aide, projets de transition écologique, " +
+          "recherche d'entreprises et dépôt de demandes de contact.",
+        version: '1.0.0'
+      },
+      // API documentation (/_scalar, /_swagger, /_openapi.json) is only exposed in production builds on preprod
+      production: Config.isPreprod() ? 'runtime' : false
+    },
     // prerender: {
     //   crawlLinks: true,
     //   failOnError: false,

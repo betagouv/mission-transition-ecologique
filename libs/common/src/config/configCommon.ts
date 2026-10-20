@@ -18,6 +18,10 @@ export default abstract class ConfigCommon {
     return this.SERVER_ENVIRONMENT === Environment.Prod
   }
 
+  public static isPreprod(): boolean {
+    return this.SERVER_ENVIRONMENT === Environment.Preprod
+  }
+
   public static get IS_REVIEW_APP(): boolean {
     return this.getEnvValue('IS_REVIEW_APP', 'false') === 'true'
   }

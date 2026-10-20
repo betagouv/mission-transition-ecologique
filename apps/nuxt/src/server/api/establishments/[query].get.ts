@@ -10,6 +10,49 @@ const queriesSchema = z.object({
   count: z.coerce.number().optional().default(3)
 })
 
+defineRouteMeta({
+  openAPI: {
+    tags: ['Entreprises'],
+    summary: 'Rechercher une entreprise',
+    description: "Recherche des établissements par SIRET ou par nom, via l'API Recherche d'entreprises.",
+    parameters: [
+      { name: 'query', in: 'path', required: true, description: "SIRET ou nom de l'entreprise recherchée.", schema: { type: 'string' } },
+      {
+        name: 'count',
+        in: 'query',
+        required: false,
+        description: "Nombre maximum d'établissements renvoyés.",
+        schema: { type: 'integer', default: 3 }
+      }
+    ],
+    responses: {
+      200: {
+        description: 'Établissements trouvés.',
+        content: {
+          'application/json': {
+            schema: {
+              type: 'object',
+              properties: {
+                establishments: { type: 'array', items: { type: 'object' } },
+                resultCount: { type: 'integer', description: 'Nombre total de résultats.' }
+              }
+            }
+          }
+        }
+      },
+      400: { $ref: '#/components/responses/BadRequest' },
+      404: {
+        description: 'Aucun établissement trouvé.',
+        content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
+      },
+      500: {
+        description: "Erreur lors de l'appel à l'API Recherche d'entreprises.",
+        content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
+      }
+    }
+  }
+})
+
 export default defineEventHandler(async (event) => {
   const routeParams = await getValidatedRouterParams(event, routeParamsSchema.parse)
   const queries = await getValidatedQuery(event, queriesSchema.parse)
