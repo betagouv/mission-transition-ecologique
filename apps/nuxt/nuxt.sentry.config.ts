@@ -6,7 +6,8 @@ export class NuxtSentryConfig {
   static getConfig() {
     const options: SentryOptions = {}
     if (Config.isProduction()) {
-      // const sentryData = this.getSentryData()
+      // Source maps are uploaded to the Sentry instance of the DSN (self-hosted), not to sentry.io
+      const sentryData = this.getSentryData()
       const token = process.env.SENTRY_AUTH_TOKEN
 
       if (token) {
@@ -14,6 +15,7 @@ export class NuxtSentryConfig {
           ...options,
           telemetry: false,
           authToken: token,
+          sentryUrl: sentryData?.domain,
           org: 'betagouv',
           project: 'tee-frontend-vue',
           unstable_sentryBundlerPluginOptions: {
