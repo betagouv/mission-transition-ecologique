@@ -232,7 +232,11 @@ defineRouteMeta({
                   },
                   id: { type: 'string', description: 'Identifiant du dispositif ou slug du projet concerné.' },
                   linkToPage: { type: 'string', description: 'URL de la page depuis laquelle la demande est envoyée.' },
-                  titleMessage: { type: 'string', description: 'Titre de la demande.' },
+                  titleMessage: {
+                    type: 'string',
+                    description:
+                      'Nom du projet libre. Utilisé uniquement pour le type customProject (nom de la demande, email de confirmation, transmission aux partenaires) ; ignoré pour les autres types.'
+                  },
                   linkToCatalog: { type: 'string', description: 'URL du catalogue de résultats.' },
                   message: { type: 'string', description: "Message de l'entreprise." },
                   priorityObjectives: {
