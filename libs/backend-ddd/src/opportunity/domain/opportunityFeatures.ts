@@ -9,6 +9,7 @@ import ProgramFeatures from '../../program/domain/programFeatures'
 import { Operators, ProgramType } from '@tee/data'
 import { ContactDetails, Opportunity, OpportunityType, SiretValidator, ThemeId } from '@tee/common'
 import Monitor from '../../common/domain/monitoring/monitor'
+import { ensureError } from '../../common/domain/error/errors'
 
 export default class OpportunityFeatures {
   constructor(
@@ -50,11 +51,15 @@ export default class OpportunityFeatures {
 
     void (async () => {
       if (!(await this._hasReachedTransmissionLimit(opportunityWithContactId, opportunityAssociatedData.value))) {
-        void this._transmitOpportunityToHubs(opportunityResult.value, opportunityWithOperatorAndContact, opportunityAssociatedData.value)
+        await this._transmitOpportunityToHubs(opportunityResult.value, opportunityWithOperatorAndContact, opportunityAssociatedData.value)
       } else {
-        void this._sendReturnReceipt(opportunityWithContactId, opportunityAssociatedData.value)
+        await this._sendReturnReceipt(opportunityWithContactId, opportunityAssociatedData.value)
       }
-    })()
+    })().catch((error: unknown) => {
+      Monitor.exception(ensureError(error), this._transmissionMonitoringData(opportunityResult.value, opportunityWithOperatorAndContact), {
+        opportunity_transmission: 'failed'
+      })
+    })
 
     return opportunityResult
   }
@@ -97,6 +102,15 @@ export default class OpportunityFeatures {
   ) {
     const opportunityHubResult = await this._opportunityHubFeatures.transmitOpportunity(opportunity, opportunityData)
 
+    if (opportunityHubResult !== false && opportunityHubResult.isErr) {
+      Monitor.error(
+        'Opportunity transmission to hub failed',
+        { ...this._transmissionMonitoringData(opportunityId, opportunity), error: opportunityHubResult.error.message },
+        { opportunity_transmission: 'failed' }
+      )
+      return
+    }
+
     if (opportunityHubResult !== false && opportunityHubResult.isOk) {
       const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, opportunityHubResult.value)
       if (opportunityUpdateErr.isJust) {
@@ -105,6 +119,14 @@ export default class OpportunityFeatures {
           idCe: opportunityHubResult.value
         })
       }
+    }
+  }
+
+  // Keeps the whole opportunity (personal data included) as a backup to transmit it again manually
+  private _transmissionMonitoringData(opportunityId: OpportunityId, opportunity: OpportunityWithContactId): { [key: string]: unknown } {
+    return {
+      brevoDealId: opportunityId.id,
+      opportunity
     }
   }
 

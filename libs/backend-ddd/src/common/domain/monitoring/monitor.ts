@@ -5,9 +5,10 @@ export default class Monitor {
   private static _debug: boolean = Config.DEBUG
   private static _message?: string
 
-  static error(message: string, data?: { [key: string]: unknown }) {
+  static error(message: string, data?: { [key: string]: unknown }, tags?: { [key: string]: string }) {
     Sentry.captureMessage(message, (scope) =>
       scope
+        .setTags(tags ?? {})
         .addBreadcrumb({
           type: 'error',
           category: 'error',
@@ -23,9 +24,9 @@ export default class Monitor {
     return this
   }
 
-  static exception(error: Error, data?: { [key: string]: unknown }) {
+  static exception(error: Error, data?: { [key: string]: unknown }, tags?: { [key: string]: string }) {
     Sentry.captureException(error, (scope) =>
-      scope.addBreadcrumb({
+      scope.setTags(tags ?? {}).addBreadcrumb({
         type: 'error',
         category: 'error',
         level: 'error',
