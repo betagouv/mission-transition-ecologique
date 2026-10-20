@@ -23,6 +23,7 @@ import type { ContactRepository, OpportunityRepository } from '../../src/opportu
 import { ProgramRepository } from '../../src/program/domain/spi'
 import { ProgramType, ProjectType } from '@tee/data'
 import { ContactId, OpportunityDetailsShort, OpportunityId, SearchResult } from '../../src/index'
+import Monitor from '../../src/common/domain/monitoring/monitor'
 
 let addContactCalled: boolean
 let addOpportunityCalled: boolean
@@ -212,5 +213,63 @@ EXPECT createOpportunity to return an error (wrapped in Result) and emailReceipt
     expectToBeErr(result)
     expect(result.error).toBeInstanceOf(OpportunityError)
     expect(emailReceiptSent).toBe(false)
+  })
+})
+
+describe(`
+  WHEN creating a new opportunity
+   AND the transmission to the opportunity hub fails
+EXPECT the failure to be reported to monitoring with the Brevo deal id and the opportunity as a backup`, () => {
+  class PlaceDesEntreprisesMockWithError extends PlaceDesEntreprisesMock {
+    public override transmitOpportunity = async (): Promise<Result<number, Error>> => {
+      return Result.err(new Error('PDE API error 422: {"errors":"invalid"}'))
+    }
+  }
+
+  class PlaceDesEntreprisesMockThrowing extends PlaceDesEntreprisesMock {
+    public override transmitOpportunity = async (): Promise<Result<number, Error>> => {
+      throw new Error('unexpected failure')
+    }
+  }
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  test('a transmission error is reported with the opportunity_transmission tag', async () => {
+    const monitorError = vi.spyOn(Monitor, 'error').mockReturnValue(Monitor)
+    const createOpportunity = makeCreateOpportunity(
+      dummyContactRepository,
+      dummyOpportunityRepository,
+      new OpportunityHubFeatures([new PlaceDesEntreprisesMockWithError()])
+    )
+
+    const result = await createOpportunity(fakeOpportunity(), true)
+    expectToBeOk(result)
+
+    await vi.waitFor(() => expect(monitorError).toHaveBeenCalled())
+    const [message, data, tags] = monitorError.mock.calls[0]
+    expect(message).toBe('Opportunity transmission to hub failed')
+    expect(data).toMatchObject({ brevoDealId: '1', error: 'PDE API error 422: {"errors":"invalid"}' })
+    expect(data).toMatchObject({ opportunity: { email: fakeOpportunity().email } })
+    expect(tags).toEqual({ opportunity_transmission: 'failed' })
+  })
+
+  test('an unexpected exception during the transmission is reported', async () => {
+    const monitorException = vi.spyOn(Monitor, 'exception').mockReturnValue(Monitor)
+    const createOpportunity = makeCreateOpportunity(
+      dummyContactRepository,
+      dummyOpportunityRepository,
+      new OpportunityHubFeatures([new PlaceDesEntreprisesMockThrowing()])
+    )
+
+    const result = await createOpportunity(fakeOpportunity(), true)
+    expectToBeOk(result)
+
+    await vi.waitFor(() => expect(monitorException).toHaveBeenCalled())
+    const [error, data, tags] = monitorException.mock.calls[0]
+    expect(error.message).toBe('unexpected failure')
+    expect(data).toMatchObject({ brevoDealId: '1' })
+    expect(tags).toEqual({ opportunity_transmission: 'failed' })
   })
 })

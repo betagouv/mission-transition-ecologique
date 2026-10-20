@@ -1,13 +1,12 @@
 import { Result } from 'true-myth'
-import axios, { AxiosInstance, RawAxiosRequestHeaders } from 'axios'
+import axios, { AxiosError, AxiosInstance, RawAxiosRequestHeaders } from 'axios'
 import AxiosHeaders from '../../../../common/infrastructure/api/axiosHeaders'
-import { ensureError, handleException } from '../../../../common/domain/error/errors'
+import { ensureError } from '../../../../common/domain/error/errors'
 import Config from '../../../../config'
 import { SolicitationResponseData, Subject, subjectToIdMapping, CreateSolicitationApiBody } from './types'
 import OpportunityHubAbstract from '../opportunityHubAbstract'
 import { Operators } from '@tee/data'
 import { Opportunity, ThemeId } from '@tee/common'
-import Monitor from '../../../../common/domain/monitoring/monitor'
 import { OpportunityAssociatedData } from '../../../../opportunity/domain/opportunityAssociatedData'
 
 export class PlaceDesEntreprises extends OpportunityHubAbstract {
@@ -72,25 +71,37 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
       })
       const status = response.status
       if (status != 200) {
-        Monitor.error('Error creating an opportunity at CE during CE API Call', { CeReponse: response, payload: payload })
-
-        return Result.err(new Error('PDE Api Error ' + status))
+        return Result.err(new Error('PDE API error ' + status + ': ' + this._stringifyResponseData(response.data)))
       }
       const solicitationId = response.data?.data?.solicitation_id
       if (typeof solicitationId === 'number') {
         return Result.ok(solicitationId)
-      } else {
-        Monitor.warning('Unable to retrieve the Id from CE while transmitting the opportunity using the API', {
-          CeReponse: response,
-          payload: payload
-        })
-
-        return Result.err(new Error('Invalid response format: missing solicitation_id'))
       }
-    } catch (exception: unknown) {
-      Monitor.exception(ensureError(exception))
 
-      return Result.err(handleException(exception))
+      return Result.err(new Error('PDE API invalid response, missing solicitation_id: ' + this._stringifyResponseData(response.data)))
+    } catch (exception: unknown) {
+      return Result.err(this._describeException(exception))
+    }
+  }
+
+  // Errors are reported by the caller, which adds the opportunity: keep the API status and response here
+  private _describeException(exception: unknown): Error {
+    const error = ensureError(exception)
+    if (!(error instanceof AxiosError)) {
+      return error
+    }
+    if (!error.response) {
+      return new Error('PDE API unreachable (' + (error.code ?? 'unknown') + '): ' + error.message)
+    }
+
+    return new Error('PDE API error ' + error.response.status + ': ' + this._stringifyResponseData(error.response.data))
+  }
+
+  private _stringifyResponseData(data: unknown): string {
+    try {
+      return (JSON.stringify(data) ?? '').slice(0, 500)
+    } catch {
+      return '[unserializable response]'
     }
   }
 
