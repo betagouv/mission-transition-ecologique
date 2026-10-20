@@ -42,6 +42,7 @@ defineRouteMeta({
         description: 'Liste des projets.',
         content: { 'application/json': { schema: { type: 'array', items: { type: 'object' } } } }
       },
+      400: { $ref: '#/components/responses/BadRequest' },
       500: {
         description: 'Erreur lors du filtrage des projets ou de la récupération des dispositifs.',
         content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }

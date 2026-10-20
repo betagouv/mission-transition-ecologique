@@ -48,6 +48,7 @@ defineRouteMeta({
           }
         }
       },
+      400: { $ref: '#/components/responses/BadRequest' },
       500: {
         description: 'Erreur lors de la récupération des statistiques.',
         content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
@@ -57,9 +58,10 @@ defineRouteMeta({
 })
 
 export default defineEventHandler(async (event) => {
-  try {
-    const statsQuery = await getValidatedQuery(event, statQueryParamsSchema.parse)
+  // Validated outside the try block so that invalid query parameters result in a 400 instead of a 500
+  const statsQuery = await getValidatedQuery(event, statQueryParamsSchema.parse)
 
+  try {
     return await new StatisticsService().getNorthStarStats(statsQuery)
   } catch (error: any) {
     Monitor.error('Error in /api/stats', { error })

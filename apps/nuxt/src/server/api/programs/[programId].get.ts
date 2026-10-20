@@ -48,6 +48,7 @@ defineRouteMeta({
         content: { 'application/json': { schema: { type: 'object' } } }
       },
       301: { description: "L'identifiant a changé : redirection vers le nouvel identifiant, en conservant la query." },
+      400: { $ref: '#/components/responses/BadRequest' },
       404: {
         description: 'Dispositif introuvable.',
         content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }

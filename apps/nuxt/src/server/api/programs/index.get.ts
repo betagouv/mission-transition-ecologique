@@ -33,8 +33,9 @@ defineRouteMeta({
             name: 'codeNAF1',
             in: 'query',
             required: false,
-            description: "Section NAF de l'activité (lettre de A à U). Utilisée pour filtrer les dispositifs et projets selon le secteur.",
-            schema: { type: 'string', pattern: '^[A-U]$' }
+            description:
+              "Section NAF de l'activité (lettre majuscule de A à U). Utilisée pour filtrer les dispositifs et projets selon le secteur : une autre valeur n'est pas rejetée mais ne correspond à aucun secteur.",
+            schema: { type: 'string' }
           },
           codeNaf: {
             name: 'codeNaf',
@@ -189,6 +190,12 @@ defineRouteMeta({
             schema: { type: 'string', enum: ['true', 'false'] }
           }
         },
+        responses: {
+          BadRequest: {
+            description: 'Paramètre de requête ou de chemin invalide (valeur hors des valeurs autorisées, type incorrect).',
+            content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
+          }
+        },
         schemas: {
           Error: {
             type: 'object',
@@ -256,7 +263,7 @@ defineRouteMeta({
               },
               optIn: {
                 type: 'boolean',
-                description: "Consentement au traitement des données de contact. La demande est refusée s'il vaut `false`."
+                description: "Consentement au traitement des données de contact. La demande est refusée (erreur 422) s'il vaut `false`."
               }
             }
           }
@@ -299,6 +306,7 @@ defineRouteMeta({
         description: 'Liste des dispositifs.',
         content: { 'application/json': { schema: { type: 'array', items: { type: 'object' } } } }
       },
+      400: { $ref: '#/components/responses/BadRequest' },
       500: {
         description: 'Erreur lors du filtrage des dispositifs.',
         content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }

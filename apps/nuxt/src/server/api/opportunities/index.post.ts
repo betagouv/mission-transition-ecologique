@@ -1,6 +1,6 @@
 import { opportunityBodySchema } from '@tee/common'
 import { defineEventHandler } from 'h3'
-import { Monitor, OpportunityService, ServiceNotFoundError } from '@tee/backend-ddd'
+import { Monitor, OpportunityService, OptInRequiredError, ServiceNotFoundError } from '@tee/backend-ddd'
 
 defineRouteMeta({
   openAPI: {
@@ -23,7 +23,7 @@ defineRouteMeta({
         content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
       },
       422: {
-        description: 'Body invalide.',
+        description: 'Body invalide, ou consentement `optIn` absent.',
         content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
       },
       500: {
@@ -49,6 +49,13 @@ export default defineEventHandler(async (event) => {
 
   if (opportunityResult.isErr) {
     Monitor.error('Error in createOpportunity', { query: opportunityBody.data, error: opportunityResult.error })
+    if (opportunityResult.error instanceof OptInRequiredError) {
+      throw createError({
+        statusCode: 422,
+        statusMessage: opportunityResult.error.message
+      })
+    }
+
     if (opportunityResult.error instanceof ServiceNotFoundError) {
       throw createError({
         statusCode: 404,

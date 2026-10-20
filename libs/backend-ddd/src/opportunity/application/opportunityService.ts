@@ -9,6 +9,7 @@ import { ProgramService } from '../../program'
 import { ProjectService } from '../../project'
 import { OpportunityId } from '../domain/types'
 import OpportunityFeatures from '../domain/opportunityFeatures'
+import OptInRequiredError from '../domain/optInRequiredError'
 import { Result } from 'true-myth'
 import { brevoRepository } from '../infrastructure/api/brevo/brevoDeal'
 import { addBrevoContact } from '../infrastructure/api/brevo/brevoContact'
@@ -35,7 +36,7 @@ export default class OpportunityService {
 
   public async createOpportunity(opportunity: Opportunity, optIn: boolean): Promise<Result<OpportunityId, Error>> {
     if (!optIn) {
-      return Result.err(new Error('opt-in is required for storing contact data'))
+      return Result.err(new OptInRequiredError('opt-in is required for storing contact data'))
     }
     return await this._opportunityFeatures.createOpportunity(opportunity, optIn)
   }

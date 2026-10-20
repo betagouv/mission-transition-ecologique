@@ -40,6 +40,7 @@ defineRouteMeta({
           }
         }
       },
+      400: { $ref: '#/components/responses/BadRequest' },
       404: {
         description: 'Aucun établissement trouvé.',
         content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }

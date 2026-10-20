@@ -1,10 +1,12 @@
+import { getRequestURL } from 'h3'
+
 const openApiRoute = '/_openapi.json'
 const hiddenApiPaths = ['/api/health', '/api/__sitemap__/', '/api/stats/update_posthog_data']
 
 // Only expose business API routes in the OpenAPI documentation (Nuxt internals and technical routes are hidden)
 export default defineNitroPlugin((nitroApp) => {
   nitroApp.hooks.hook('beforeResponse', (event, response) => {
-    if (event.path !== openApiRoute) {
+    if (getRequestURL(event).pathname !== openApiRoute) {
       return
     }
 
