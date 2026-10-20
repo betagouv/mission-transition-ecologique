@@ -69,7 +69,7 @@ export default class OpportunityApi extends RequestApi {
       lastName: this._opportunityForm.surname.value,
       email: this._opportunityForm.email.value,
       phoneNumber: this._opportunityForm.tel.value,
-      theme: this._opportunityForm.theme.value as ThemeId,
+      theme: this._opportunityForm.theme.value as ThemeId | undefined,
       companySiret: this._opportunityForm.siret.value,
       companyName: this._getFromUsedTrack(TrackId.Siret, 'denomination'),
       companySector: TrackStructure.getSector(),

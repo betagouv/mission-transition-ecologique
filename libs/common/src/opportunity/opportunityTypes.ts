@@ -1,4 +1,5 @@
 import { PublicodeObjective, StructureSize } from '../questionnaire/types/types'
+import { ThemeId } from '../theme/types'
 
 export type Opportunity = ContactDetails & OpportunityDetails
 
@@ -24,7 +25,7 @@ export interface OpportunityDetailsBase {
   message: string
   priorityObjectives?: PublicodeObjective[]
   otherData?: string
-  theme?: string
+  theme?: ThemeId
 }
 export enum OpportunityType {
   Program = 'program',
