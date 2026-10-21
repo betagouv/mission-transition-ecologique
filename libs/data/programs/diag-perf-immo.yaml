@@ -66,7 +66,7 @@ objectifs:
       Bpifrance.
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Toutes tailles
+    - PME jusqu'à 250 salariés
     - Non éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
@@ -88,7 +88,11 @@ publicodes:
       - a un objectif ciblé
   entreprise . est éligible:
     toutes ces conditions:
+      - a un effectif éligible
       - a une categorie legale eligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 249
   entreprise . a une categorie legale eligible:
     toutes ces conditions:
       - microentrepreneur = non

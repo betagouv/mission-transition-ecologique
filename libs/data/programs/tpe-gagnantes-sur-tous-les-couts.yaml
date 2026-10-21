@@ -3,34 +3,14 @@ metaTitre: TPE gagnantes sur tous les coûts - Plus d'économies moins d'impact
 promesse: >-
   Réalisez des économies durables en réduisant vos déchets et vos pertes en
   énergie, matière et eau.
-description: >-
-  Profitez d’un **accompagnement personnalisé** pour mieux maîtriser vos
-  consommations d’énergie, d’eau, de matières premières et vos déchets, avec un
-  **retour sur investissement rapide**.
-
-
-  - Faites réaliser un **état des lieux** par un expert de la Chambre de Métiers
-  et de l’Artisanat : identification de vos flux, calcul des pertes et de leurs
-  coûts, comparaison aux moyennes du secteur.
-
-
-  - Recevez un **plan d’action simple, concret et rentable** (moins de 12 mois),
-  avec un chiffrage des économies potentielles (2 000 à 5 000 € par an en
-  moyenne).
-
-
-  - Mettez en œuvre ce plan et bénéficiez d’un **accompagnement d’un an** pour
-  suivre vos progrès.
-
-
-  - **Évaluez les résultats** et mesurez l’impact financier des actions menées.
+description: "Profitez d’un **accompagnement personnalisé** pour mieux maîtriser vos consommations d’énergie, d’eau, de matières premières et vos déchets, avec un **retour sur investissement rapide**.\n\n- Faites réaliser un **état des lieux** par un conseiller énergie du réseau Mon parcours économies d'énergie\_: identification de vos flux, calcul des pertes et de leurs coûts, comparaison aux moyennes du secteur.\n- Recevez un **plan d’action simple, concret et rentable** (moins de 12 mois), avec un chiffrage des économies potentielles (2 000 à 5 000 € par an en moyenne).\n- Mettez en œuvre ce plan et bénéficiez d’un **accompagnement d’un an** pour suivre vos progrès.\n- **Évaluez les résultats** et mesurez l’impact financier des actions menées."
 metaDescription: >-
   Réduisez vos pertes (énergie, eau, matières premières, déchets) et économisez
   jusqu’à 5 000 € par an grâce à un plan d’action et un accompagnement sur
   mesure.
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Chambre des Métiers et de l'Artisanat
-contact question: formulaire
+contact question: https://parcours-economies-energie.ademe.fr/
 url: >-
   https://www.artisanat.fr/magazine/series-podcasts/tpe-pme-gagnantes-sur-tous-couts
 nature de l'aide: étude
@@ -48,7 +28,9 @@ objectifs:
   - description: >-
       Définissez avec l’expert le périmètre de l'accompagnement, la méthode et
       le calendrier.
-  - description: Lancez le diagnostic avec l'expert proposé par votre CMA.
+  - description: >-
+      Lancez le diagnostic avec l'expert proposé par le réseau Mon parcours
+      économies d'énergie.
 conditions d'éligibilité:
   taille de l'entreprise:
     - Moins de 20 salariés
@@ -58,15 +40,12 @@ conditions d'éligibilité:
       Auvergne-Rhône-Alpes, Bourgogne-Franche-Comté, Bretagne, Centre-Val de
       Loire, Grand Est, Guadeloupe, Guyane, Hauts-de-France, Île-de-France, La
       Réunion, Martinique, Mayotte, Normandie, Nouvelle-Aquitaine,
-      Nouvelle-Calédonie, Occitanie, Pays de la Loire, Polynésie française,
-      Provence-Alpes-Côte d'Azur, Saint-Barthélemy, Saint-Martin,
-      Saint-Pierre-Et-Miquelon
+      Nouvelle-Calédonie, Occitanie, Pays de la Loire, Provence-Alpes-Côte
+      d'Azur, Saint-Pierre-Et-Miquelon
   secteur d'activité:
-    - Artisan
+    - Secteur d'activité industrie et tertiaire
   nombre d'années d'activité:
     - Éligible à toutes les entreprises
-  autres critères d'éligibilité:
-    - Être un artisan
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
@@ -83,6 +62,7 @@ publicodes:
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
       - code NAF niveau 1 . est C
       - code NAF niveau 1 . est D
       - code NAF niveau 1 . est E
@@ -91,11 +71,17 @@ publicodes:
       - code NAF niveau 1 . est H
       - code NAF niveau 1 . est I
       - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
       - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
       - code NAF niveau 1 . est Q
       - code NAF niveau 1 . est R
       - code NAF niveau 1 . est S
       - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
   entreprise . a un objectif ciblé:
     une de ces conditions:
       - questionnaire . objectif prioritaire . est la gestion des déchets
@@ -122,8 +108,5 @@ publicodes:
       - région = Nouvelle-Calédonie
       - région = Occitanie
       - région = Pays de la Loire
-      - région = Polynésie française
       - région = Provence-Alpes-Côte d'Azur
-      - région = Saint-Barthélemy
-      - région = Saint-Martin
       - région = Saint-Pierre-Et-Miquelon
