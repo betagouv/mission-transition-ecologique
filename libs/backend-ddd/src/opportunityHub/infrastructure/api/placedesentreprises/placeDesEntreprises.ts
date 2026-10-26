@@ -67,7 +67,8 @@ export class PlaceDesEntreprises extends OpportunityHubAbstract {
         method: 'POST',
         url: `/solicitations`,
         data: payload,
-        timeout: 3000
+        // The transmission runs after the API response, a longer timeout does not delay the user
+        timeout: 10000
       })
       const status = response.status
       if (status != 200) {
