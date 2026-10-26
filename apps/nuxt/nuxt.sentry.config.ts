@@ -17,8 +17,10 @@ export class NuxtSentryConfig {
           authToken: token,
           sentryUrl: sentryData?.domain,
           org: 'betagouv',
-          project: 'tee-frontend-vue',
           unstable_sentryBundlerPluginOptions: {
+            // The module uses the same options for client (Vite) and server (Nitro) bundles:
+            // server errors are reported to tee-backend-express, client errors to tee-frontend-vue
+            project: ['tee-frontend-vue', 'tee-backend-express'],
             errorHandler: (error: Error) => {
               console.warn(error)
             }
