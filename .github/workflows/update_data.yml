@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   update-projects:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         node-version: ['22.x']
@@ -78,7 +78,7 @@ jobs:
           draft: false
 
   update-programs:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         node-version: ['22.x']
@@ -145,7 +145,7 @@ jobs:
           draft: false
 
   update-testimonies:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         node-version: ['22.x']
@@ -180,7 +180,7 @@ jobs:
           draft: false
 
   update-faq:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         node-version: ['22.x']
@@ -245,7 +245,7 @@ jobs:
           draft: false
 
   send-programs-mails:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     strategy:
       matrix:
         node-version: ['22.x']
