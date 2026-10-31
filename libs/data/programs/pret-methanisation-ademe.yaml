@@ -1,0 +1,98 @@
+titre: Prêt Méthanisation Ademe
+promesse: >-
+  Financez votre unité de méthanisation à cogénération ou à injection dans le
+  réseau de gaz
+description: >-
+  Le Prêt Méthanisation ADEME finance la construction d’unités de méthanisation
+  à cogénération ou destinées à l’injection dans le réseau de gaz.
+  L’approvisionnement du méthaniseur ne doit pas intégrer de déchets issus du
+  tri mécano-biologique.
+
+
+  Le prêt finance :
+
+
+  - Les actifs corporels à faible valeur.
+
+  - Les actifs immatériels.
+
+  - L’augmentation du besoin en fonds de roulement.
+description longue: >-
+  - Taux fixe selon le barème en vigueur.
+
+  - Frais de dossier : 0,40% du montant du prêt.
+
+  - Aucune garantie sur les actifs de l’entreprise, ni sur le patrimoine du
+  dirigeant.
+
+  - Seule une retenue de garantie de 5 % du montant du prêt est prélevée. Elle
+  est restituée après complet remboursement du prêt, augmentée des intérêts
+  qu’elle a produits.
+
+  - Assurance décès/perte totale et irréversible d’autonomie sur la tête du
+  dirigeant.
+illustration: images/TEE_ampoule.webp
+opérateur de contact: Banque Publique d'Investissement France
+autres opérateurs:
+  - ADEME
+contact question: https://contacts.bpifrance.fr/contactez-bpifrance-formulaire-de-contact/
+url: https://www.bpifrance.fr/catalogue-offres/pret-methanisation-ademe-0
+nature de l'aide: prêt
+montant du prêt: de 100 000 € à 1 000 000 €
+durée du prêt: De 3 à 12 ans pour rembourser votre prêt
+objectifs:
+  - description: Créez un compte sur le site de Bpifrance.
+    liens:
+      - lien: https://moncompte.bpifrance.fr/register
+        texte: Créer mon compte
+  - description: >-
+      Exprimez votre intérêt à Bpifrance en remplissant le formulaire de
+      contact.
+    liens:
+      - lien: >-
+          https://contacts.bpifrance.fr/contactez-bpifrance-formulaire-de-contact/
+        texte: Formulaire de contact
+  - description: >-
+      Un chargé d'affaires Bpifrance vous propose un rendez-vous pour vous
+      expliquer les modalités de financement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - Tous secteurs d’activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est ma performance énergétique

@@ -474,7 +474,9 @@
   },
   {
     "operator": "Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse",
-    "filterCategories": []
+    "filterCategories": [
+      "Opérateurs territoriaux"
+    ]
   },
   {
     "operator": "CNAMS",
