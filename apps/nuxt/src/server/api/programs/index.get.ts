@@ -213,12 +213,37 @@ defineRouteMeta({
             properties: {
               opportunity: {
                 type: 'object',
-                required: ['firstName', 'lastName', 'email', 'phoneNumber', 'companySiret', 'type', 'id', 'linkToPage', 'message'],
+                required: [
+                  'firstName',
+                  'lastName',
+                  'email',
+                  'phoneNumber',
+                  'companySiret',
+                  'type',
+                  'id',
+                  'linkToPage',
+                  'linkToCatalog',
+                  'message'
+                ],
                 properties: {
-                  firstName: { type: 'string', description: 'Prénom du contact.' },
-                  lastName: { type: 'string', description: 'Nom du contact.' },
-                  email: { type: 'string', description: 'Email du contact.' },
-                  phoneNumber: { type: 'string', description: 'Téléphone du contact.' },
+                  firstName: {
+                    type: 'string',
+                    maxLength: 100,
+                    description:
+                      'Prénom du contact : lettres (accents compris), espaces, tirets, apostrophes et points uniquement. Les liens sont refusés.'
+                  },
+                  lastName: {
+                    type: 'string',
+                    maxLength: 100,
+                    description:
+                      'Nom du contact : lettres (accents compris), espaces, tirets, apostrophes et points uniquement. Les liens sont refusés.'
+                  },
+                  email: { type: 'string', format: 'email', maxLength: 254, description: 'Email du contact.' },
+                  phoneNumber: {
+                    type: 'string',
+                    maxLength: 30,
+                    description: 'Téléphone du contact : au moins 10 chiffres, espaces et préfixe international `+` acceptés.'
+                  },
                   companySiret: { type: 'string', description: "SIRET de l'entreprise." },
                   companyName: { type: ['string', 'null'], description: "Raison sociale de l'entreprise." },
                   companySector: { type: 'string', description: "Secteur d'activité de l'entreprise." },
@@ -232,15 +257,25 @@ defineRouteMeta({
                     enum: ['program', 'project', 'customProject'],
                     description: 'Objet de la demande : un dispositif, un projet du catalogue ou un projet libre.'
                   },
-                  id: { type: 'string', description: 'Identifiant du dispositif ou slug du projet concerné.' },
-                  linkToPage: { type: 'string', description: 'URL de la page depuis laquelle la demande est envoyée.' },
+                  id: { type: 'string', maxLength: 200, description: 'Identifiant du dispositif ou slug du projet concerné.' },
+                  linkToPage: {
+                    type: 'string',
+                    format: 'uri',
+                    description: 'URL absolue (http ou https) de la page depuis laquelle la demande est envoyée, sur le domaine du site.'
+                  },
                   titleMessage: {
                     type: 'string',
+                    maxLength: 200,
                     description:
-                      'Nom du projet libre. Utilisé uniquement pour le type customProject (nom de la demande, email de confirmation, transmission aux partenaires) ; ignoré pour les autres types.'
+                      'Nom du projet libre. Utilisé uniquement pour le type customProject (nom de la demande, email de confirmation, transmission aux partenaires) ; ignoré pour les autres types. Les liens (URL, nom de domaine) sont refusés.'
                   },
-                  linkToCatalog: { type: 'string', description: 'URL du catalogue de résultats.' },
-                  message: { type: 'string', description: "Message de l'entreprise." },
+                  linkToCatalog: {
+                    type: 'string',
+                    format: 'uri',
+                    description:
+                      "URL absolue (http ou https) de la fiche du dispositif ou du projet, sur le domaine du site. Transmise aux Conseillers-Entreprises comme URL de la page d'origine."
+                  },
+                  message: { type: 'string', maxLength: 2500, description: "Message de l'entreprise." },
                   priorityObjectives: {
                     type: 'array',
                     items: {

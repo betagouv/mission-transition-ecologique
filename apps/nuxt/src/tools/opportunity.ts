@@ -1,5 +1,14 @@
 import { Image } from '@/tools/image'
-import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType, EstablishmentFront } from '@tee/common'
+import {
+  PhoneValidator,
+  EmailValidator,
+  SiretValidator,
+  LinkDetector,
+  NameValidator,
+  OpportunityType,
+  EstablishmentFront,
+  OpportunityFieldMaxLength
+} from '@tee/common'
 import { FieldType, RouteName, ProjectType, FormDataType, ThemeType, ThemeId, ProgramTypeForFront } from '@/types'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import { CalloutType } from '@/types/elementsPropsTypes'
@@ -23,14 +32,35 @@ export default class Opportunity {
         isValid: true,
         type: FieldType.Select
       },
-      name: { required: true, colSize: 6, type: FieldType.Text, value: undefined, label: 'Prénom', isValid: undefined },
-      surname: { required: true, colSize: 6, type: FieldType.Text, value: undefined, label: 'Nom', isValid: undefined },
+      name: {
+        required: true,
+        colSize: 6,
+        type: FieldType.Text,
+        value: undefined,
+        label: 'Prénom',
+        maxLength: OpportunityFieldMaxLength.firstName,
+        isValid: undefined,
+        validation: NameValidator.validate,
+        errorMessage: 'Seuls les lettres, espaces, tirets, apostrophes et points sont acceptés.'
+      },
+      surname: {
+        required: true,
+        colSize: 6,
+        type: FieldType.Text,
+        value: undefined,
+        label: 'Nom',
+        maxLength: OpportunityFieldMaxLength.lastName,
+        isValid: undefined,
+        validation: NameValidator.validate,
+        errorMessage: 'Seuls les lettres, espaces, tirets, apostrophes et points sont acceptés.'
+      },
       email: {
         required: true,
         type: FieldType.Email,
         isValid: undefined,
         value: undefined,
         label: 'Email',
+        maxLength: OpportunityFieldMaxLength.email,
         hint: 'Format attendu : nom@domaine.fr',
         validation: EmailValidator.validate,
         errorMessage: "L'adresse email n'est pas valide."
@@ -41,6 +71,7 @@ export default class Opportunity {
         type: FieldType.Tel,
         value: undefined,
         label: 'Téléphone',
+        maxLength: OpportunityFieldMaxLength.phoneNumber,
         hint: 'Format attendu : 01 22 33 44 55',
         validation: PhoneValidator.validate,
         errorMessage: "Le numéro de téléphone n'est pas valide."
@@ -51,6 +82,7 @@ export default class Opportunity {
         isValid: undefined,
         value: CompanyData.company ? (CompanyData.company as EstablishmentFront).siret : '',
         label: 'SIRET de votre entreprise',
+        maxLength: OpportunityFieldMaxLength.companySiret,
         hint: 'Format attendu : 14 chiffres',
         validation: SiretValidator.validate,
         errorMessage: "Le numéro SIRET n'est pas valide."
@@ -60,8 +92,10 @@ export default class Opportunity {
         type: FieldType.Textarea,
         isValid: undefined,
         label: 'Quel est votre besoin ?',
+        maxLength: OpportunityFieldMaxLength.message,
         value: '',
         hint: undefined,
+        bottomHint: `${OpportunityFieldMaxLength.message.toLocaleString('fr-FR')} caractères maximum`,
         wrapperClass: 'fr-m-0',
         rows: 10,
         callOut: {
@@ -93,8 +127,12 @@ export default class Opportunity {
         required: true,
         value: project.title,
         label: 'Quel est votre projet?',
+        maxLength: OpportunityFieldMaxLength.titleMessage,
         isValid: true,
-        type: FieldType.Text
+        type: FieldType.Text,
+        validation: (value: string | undefined) =>
+          (value?.length ?? 0) <= OpportunityFieldMaxLength.titleMessage && LinkDetector.validateWithoutLink(value),
+        errorMessage: `Ce champ ne doit pas contenir de lien ni dépasser ${OpportunityFieldMaxLength.titleMessage} caractères.`
       },
       ...baseFields
     }
@@ -109,8 +147,12 @@ export default class Opportunity {
         required: true,
         value: undefined,
         label: 'Quel est le nom de votre projet?',
+        maxLength: OpportunityFieldMaxLength.titleMessage,
         isValid: undefined,
-        type: FieldType.Text
+        type: FieldType.Text,
+        validation: (value: string | undefined) =>
+          (value?.length ?? 0) <= OpportunityFieldMaxLength.titleMessage && LinkDetector.validateWithoutLink(value),
+        errorMessage: `Ce champ ne doit pas contenir de lien ni dépasser ${OpportunityFieldMaxLength.titleMessage} caractères.`
       },
       ...baseFields
     }
