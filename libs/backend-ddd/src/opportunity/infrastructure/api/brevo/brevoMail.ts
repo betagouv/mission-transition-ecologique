@@ -3,15 +3,16 @@ import { Maybe } from 'true-myth'
 import { OpportunityAssociatedData } from '../../../domain/opportunityAssociatedData'
 import Config from '../../../../config'
 import { MailerManager } from '../../../domain/spi'
-import { ProgramType, ProgramNameFormatter, ProjectType } from '@tee/data'
+import { ProgramType, ProgramNameFormatter } from '@tee/data'
 import { Opportunity } from '@tee/common'
 import Monitor from '../../../../common/domain/monitoring/monitor'
 import { ensureError } from '../../../../common/domain/error/errors'
-import { CustomProject } from '../../../domain/types'
 
 export default class BrevoMail {
   private readonly _programTemplateReceipt = 11
   private readonly _projectTemplateReceipt = 12
+  // The custom project title is typed by the user: it is never echoed in the email sent to the given address (phishing)
+  static readonly customProjectName = 'Projet sur mesure'
   private _api = new TransactionalEmailsApi()
 
   constructor() {
@@ -39,7 +40,10 @@ export default class BrevoMail {
       email.params = this._paramsProgram(opportunity, associatedData.data)
     } else if (associatedData.isProject() || associatedData.isCustomProject()) {
       email.templateId = this._projectTemplateReceipt
-      email.params = this._paramsProject(opportunity, associatedData.data)
+      email.params = this._paramsProject(
+        opportunity,
+        associatedData.isCustomProject() ? BrevoMail.customProjectName : associatedData.data.title
+      )
     } else {
       throw new Error(`Unsupported Opportunity Type in brevo mail receipt`)
     }
@@ -67,9 +71,9 @@ export default class BrevoMail {
     }
   }
 
-  private _paramsProject(opportunity: Opportunity, data: ProjectType | CustomProject) {
+  private _paramsProject(opportunity: Opportunity, projectName: string) {
     return {
-      projectName: data.title,
+      projectName: projectName,
       needs: opportunity.message,
       firstname: opportunity.firstName,
       lastname: opportunity.lastName,
