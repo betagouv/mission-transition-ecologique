@@ -1,7 +1,20 @@
 export class LinkValidator {
-  // A scheme, a "www." prefix, an IPv4 address or a domain name ("phishing.example", "bit.ly/x")
-  private static readonly _linkPattern =
-    /(\b[a-z][a-z\d+.-]*:\/\/|\bwww\.|\b\d{1,3}(\.\d{1,3}){3}\b|[\p{L}\d-]{2,}\.\p{L}{2,24}(?![\p{L}\d-]))/iu
+  // Detected links:
+  // - any scheme followed by "//" ("https://", "file://", "smb://")
+  // - schemes usable without "//" ("search-ms:", "ms-msdt:", "javascript:", "file:C:\")
+  // - Windows UNC paths ("\\server\share"), clickable in Outlook
+  // - "www." prefixes, IPv4 addresses and domain names, including unicode dots ("phishing。example")
+  private static readonly _linkPattern = new RegExp(
+    [
+      String.raw`\b[a-z][a-z\d+.-]*:\/\/`,
+      String.raw`\b(?:file|smb|nfs|javascript|vbscript|data|shell|search|search-ms|ms-[a-z\d-]+):`,
+      String.raw`\\\\[^\s\\]+`,
+      String.raw`\bwww[.\u3002\uFF0E\uFF61]`,
+      String.raw`\b\d{1,3}(?:[.\u3002\uFF0E\uFF61]\d{1,3}){3}\b`,
+      String.raw`[\p{L}\d-]{2,}[.\u3002\uFF0E\uFF61]\p{L}{2,24}(?![\p{L}\d-])`
+    ].join('|'),
+    'iu'
+  )
 
   static readonly containsLink = (text: string | undefined): boolean => {
     if (text === undefined) {

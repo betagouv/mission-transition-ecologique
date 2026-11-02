@@ -8,19 +8,36 @@ describe('LinkValidator', () => {
     'bit.ly/abc',
     'www.example',
     '192.168.0.1',
-    'ftp://files.example'
+    'ftp://files.example',
+    String.raw`\\serveur\partage\facture.exe`,
+    String.raw`\\serveur`,
+    'search-ms:query=facture&crumb=location:\\\\1.2.3.4',
+    'ms-msdt:/id PCWDiagnostic',
+    'ms-settings:privacy',
+    'javascript:alert(1)',
+    String.raw`file:C:\Windows\system32`,
+    'phishing\u3002example',
+    'www\uFF0Eexample'
   ])('detects a link in %s', (text) => {
     expect(LinkValidator.containsLink(text)).toBe(true)
     expect(LinkValidator.validateWithoutLink(text)).toBe(false)
   })
 
-  test.each(['Jean-Pierre', "O'Neil", 'St. Martin', 'M.Dupont', 'Rénovation du bâtiment B2', 'Projet 2.0', 'ex. isolation'])(
-    'accepts %s',
-    (text) => {
-      expect(LinkValidator.containsLink(text)).toBe(false)
-      expect(LinkValidator.validateWithoutLink(text)).toBe(true)
-    }
-  )
+  test.each([
+    'Jean-Pierre',
+    "O'Neil",
+    'St. Martin',
+    'M.Dupont',
+    'Rénovation du bâtiment B2',
+    'Projet 2.0',
+    'ex. isolation',
+    'Objet : isolation',
+    'Data center',
+    'Recherche : partenaires'
+  ])('accepts %s', (text) => {
+    expect(LinkValidator.containsLink(text)).toBe(false)
+    expect(LinkValidator.validateWithoutLink(text)).toBe(true)
+  })
 
   test.each([[undefined], [''], ['   ']])('rejects an empty value %s', (text) => {
     expect(LinkValidator.validateWithoutLink(text)).toBe(false)
