@@ -33,7 +33,7 @@ contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP0
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/pacte-entreprises-booster-entreprises-reduire-votre-facture-energetique-et-gagner-en-valeur-verte
 nature de l'aide: financement
-montant du financement: Selon le projet
+montant du financement: Jusqu'à 80% dans une limite de 100 000€ HT
 ouvert aux administrations publiques: oui
 objectifs:
   - description: >-
@@ -41,7 +41,7 @@ objectifs:
       projet ou contactez un conseiller.
     liens:
       - lien: >-
-          https://agirpourlatransition.ademe.fr/sites/default/files/Booster%20Entreprises%20%C3%A9co%20%C3%A9nergie%20tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026.pdf
+          https://agirpourlatransition.ademe.fr/sites/default/files/Booster%20Entreprises%20-%20%C3%89co-%C3%89nergie%20tertiaire%20-%20Conditions%20d%27%C3%A9ligibilit%C3%A9%20et%20de%20financement%20-%202026%20-%20v9.pdf
         texte: Conditions éligibilité et financement
   - description: >-
       Choisissez des prestataires qualifiés pour l’audit énergétique,
@@ -62,7 +62,7 @@ objectifs:
         texte: Déposer mon dossier
 conditions d'éligibilité:
   taille de l'entreprise:
-    - Toutes tailles
+    - TPE, PME et ETI
     - Éligible aux micro-entreprises
   secteur géographique:
     - France et territoires d'outre-mer
