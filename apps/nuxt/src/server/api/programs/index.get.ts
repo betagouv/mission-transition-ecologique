@@ -213,7 +213,18 @@ defineRouteMeta({
             properties: {
               opportunity: {
                 type: 'object',
-                required: ['firstName', 'lastName', 'email', 'phoneNumber', 'companySiret', 'type', 'id', 'linkToPage', 'message'],
+                required: [
+                  'firstName',
+                  'lastName',
+                  'email',
+                  'phoneNumber',
+                  'companySiret',
+                  'type',
+                  'id',
+                  'linkToPage',
+                  'linkToCatalog',
+                  'message'
+                ],
                 properties: {
                   firstName: {
                     type: 'string',
@@ -261,7 +272,8 @@ defineRouteMeta({
                   linkToCatalog: {
                     type: 'string',
                     format: 'uri',
-                    description: 'URL absolue (http ou https) du catalogue de résultats, sur le domaine du site.'
+                    description:
+                      "URL absolue (http ou https) de la fiche du dispositif ou du projet, sur le domaine du site. Transmise aux Conseillers-Entreprises comme URL de la page d'origine."
                   },
                   message: { type: 'string', maxLength: 10000, description: "Message de l'entreprise." },
                   priorityObjectives: {

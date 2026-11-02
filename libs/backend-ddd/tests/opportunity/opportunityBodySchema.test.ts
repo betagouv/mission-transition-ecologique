@@ -75,6 +75,10 @@ describe('opportunityBodySchema anti-phishing validation', () => {
     expect(parse({ [field]: value }).success).toBe(false)
   })
 
+  test.each([[''], [undefined]])('rejects a missing catalog link (%s)', (linkToCatalog) => {
+    expect(parse({ linkToCatalog }).success).toBe(false)
+  })
+
   test('accepts a message containing a link', () => {
     expect(parse({ message: 'Notre site : https://www.entreprise.fr' }).success).toBe(true)
   })
