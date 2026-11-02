@@ -1,6 +1,6 @@
-import { LinkValidator } from '@tee/common'
+import { LinkDetector } from '@tee/common'
 
-describe('LinkValidator', () => {
+describe('LinkDetector', () => {
   test.each([
     'Régularisez votre dossier : https://phishing.example',
     'http://example.com',
@@ -17,10 +17,14 @@ describe('LinkValidator', () => {
     'javascript:alert(1)',
     String.raw`file:C:\Windows\system32`,
     'phishing\u3002example',
-    'www\uFF0Eexample'
+    'www\uFF0Eexample',
+    'data:text/html,<script>',
+    'phishing\u200B.example',
+    'phishing\u00AD.example',
+    'phishin\u0301g.example'
   ])('detects a link in %s', (text) => {
-    expect(LinkValidator.containsLink(text)).toBe(true)
-    expect(LinkValidator.validateWithoutLink(text)).toBe(false)
+    expect(LinkDetector.containsLink(text)).toBe(true)
+    expect(LinkDetector.validateWithoutLink(text)).toBe(false)
   })
 
   test.each([
@@ -33,14 +37,15 @@ describe('LinkValidator', () => {
     'ex. isolation',
     'Objet : isolation',
     'Data center',
-    'Recherche : partenaires'
+    'Recherche : partenaires',
+    'Big data: analyse'
   ])('accepts %s', (text) => {
-    expect(LinkValidator.containsLink(text)).toBe(false)
-    expect(LinkValidator.validateWithoutLink(text)).toBe(true)
+    expect(LinkDetector.containsLink(text)).toBe(false)
+    expect(LinkDetector.validateWithoutLink(text)).toBe(true)
   })
 
   test.each([[undefined], [''], ['   ']])('rejects an empty value %s', (text) => {
-    expect(LinkValidator.validateWithoutLink(text)).toBe(false)
+    expect(LinkDetector.validateWithoutLink(text)).toBe(false)
   })
 
   test.each([
@@ -50,7 +55,7 @@ describe('LinkValidator', () => {
     ['javascript:alert(1)', false],
     ['not an url', false]
   ])('isHttpUrl(%s) is %s', (value, expected) => {
-    expect(LinkValidator.isHttpUrl(value)).toBe(expected)
+    expect(LinkDetector.isHttpUrl(value)).toBe(expected)
   })
 
   test.each([
@@ -61,6 +66,19 @@ describe('LinkValidator', () => {
     ['https://mission-transition-ecologique.beta.gouv.fr.phishing.example', false],
     ['/', false]
   ])('hasAllowedHost(%s) is %s', (value, expected) => {
-    expect(LinkValidator.hasAllowedHost(value, ['mission-transition-ecologique.beta.gouv.fr', 'localhost:4242'])).toBe(expected)
+    expect(LinkDetector.hasAllowedHost(value, ['mission-transition-ecologique.beta.gouv.fr', 'localhost:4242'])).toBe(expected)
+  })
+
+  test.each([['a'], ['a.'], ['a1-'], ['https:']])('scans a long text quickly (%s repeated)', (pattern) => {
+    const text = pattern.repeat(LinkDetector.maxTextLength / pattern.length)
+    const start = performance.now()
+
+    LinkDetector.containsLink(text)
+
+    expect(performance.now() - start).toBeLessThan(50)
+  })
+
+  test('treats a text longer than the limit as containing a link', () => {
+    expect(LinkDetector.containsLink('a'.repeat(LinkDetector.maxTextLength + 1))).toBe(true)
   })
 })

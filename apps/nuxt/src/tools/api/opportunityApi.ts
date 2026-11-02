@@ -102,7 +102,7 @@ export default class OpportunityApi extends RequestApi {
     return ''
   }
 
-  private _generateCatalogLink(): string | undefined {
+  private _generateCatalogLink(): string {
     if (this._opportunityType == OpportunityType.Program) {
       return (
         new Navigation().getAbsoluteUrlByRouteName(RouteName.CatalogProgramDetail, {
@@ -120,7 +120,8 @@ export default class OpportunityApi extends RequestApi {
     if (this._opportunityType == OpportunityType.CustomProject) {
       return 'https://mission-transition-ecologique.beta.gouv.fr/custom'
     }
-    return undefined
+    // Unknown type: the API rejects an empty catalog link
+    return ''
   }
 
   private _getTitleMessage(): string {

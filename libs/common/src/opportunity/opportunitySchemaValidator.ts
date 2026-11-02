@@ -3,7 +3,7 @@ import { ThemeId } from '../theme/types'
 import { OpportunityType } from './opportunityTypes'
 import { z } from 'zod'
 import { PhoneValidator } from '../establishment/validator/phoneValidator'
-import { LinkValidator } from '../validator/linkValidator'
+import { LinkDetector } from '../validator/linkDetector'
 import { NameValidator } from '../validator/nameValidator'
 
 const opportunityTypeSchema = z.nativeEnum(OpportunityType)
@@ -12,6 +12,11 @@ const structureSizeSchema = z.nativeEnum(StructureSize)
 // An unknown theme must not reject the opportunity: it falls back to undefined (default subject for the hubs)
 const themeIdSchema = z.nativeEnum(ThemeId).optional().catch(undefined)
 
+// With zod 3, a refinement still runs when a previous check such as max() failed:
+// each refinement checks the length itself before running a regex (ReDoS)
+const maxPhoneLength = 30
+const maxUrlLength = 2000
+
 // Fields echoed in the acknowledgement email sent to the given address must not carry links (phishing)
 const textWithoutLinkSchema = (maxLength: number) =>
   z
@@ -19,18 +24,26 @@ const textWithoutLinkSchema = (maxLength: number) =>
     .trim()
     .min(1)
     .max(maxLength)
-    .refine((value) => !LinkValidator.containsLink(value), { message: 'Links are not allowed' })
+    .refine((value) => value.length <= maxLength && !LinkDetector.containsLink(value), { message: 'Links are not allowed' })
 const nameSchema = z
   .string()
   .trim()
   .refine(NameValidator.validate, { message: 'Only letters, spaces, hyphens, apostrophes and dots are allowed' })
-const httpUrlSchema = z.string().max(2000).refine(LinkValidator.isHttpUrl, { message: 'Must be an absolute http(s) URL' })
+  .transform(NameValidator.normalize)
+const phoneSchema = z
+  .string()
+  .max(maxPhoneLength)
+  .refine((value) => value.length <= maxPhoneLength && PhoneValidator.validate(value), { message: 'Invalid phone number' })
+const httpUrlSchema = z
+  .string()
+  .max(maxUrlLength)
+  .refine((value) => value.length <= maxUrlLength && LinkDetector.isHttpUrl(value), { message: 'Must be an absolute http(s) URL' })
 
 export const contactDetailsSchema = z.object({
   firstName: nameSchema,
   lastName: nameSchema,
   email: z.string().trim().max(254).email(),
-  phoneNumber: z.string().max(30).refine(PhoneValidator.validate, { message: 'Invalid phone number' }),
+  phoneNumber: phoneSchema,
   companySiret: z.string().max(20),
   companyName: z.string().optional().nullable(),
   companySector: z.string().optional(),
