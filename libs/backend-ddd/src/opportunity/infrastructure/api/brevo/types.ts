@@ -59,8 +59,17 @@ export interface DealAttributes {
 }
 
 export interface DealUpdateAttributes {
-  envoy: boolean
-  idce: string
+  transmission_status: BrevoDealTransmissionStatus
+  // Former "Envoyé ?" boolean attribute, still filled during the migration to "transmission_status"
+  envoy?: true
+  idce?: string
+}
+
+// Option keys (not labels, rejected by the API) of the "transmission_status" single-select deal attribute in Brevo
+export enum BrevoDealTransmissionStatus {
+  Sent = 'envoye',
+  Limited = 'limite',
+  Failed = 'erreur'
 }
 
 export enum BrevoCompanySize {

@@ -6,13 +6,21 @@ import { OpportunityAssociatedData } from '../../../domain/opportunityAssociated
 import { OpportunityRepository } from '../../../domain/spi'
 import {
   OpportunityDetailsShort,
+  OpportunityHubTransmissionStatus,
   OpportunityId,
   OpportunityUpdateAttributes,
   OpportunityWithOperatorContact,
   OpportunityWithOperatorContactAndContactId
 } from '../../../domain/types'
 import BrevoAPI from './brevoAPI'
-import { BrevoDealItem, BrevoDealResponse, BrevoPostDealPayload, DealAttributes, DealUpdateAttributes } from './types'
+import {
+  BrevoDealItem,
+  BrevoDealResponse,
+  BrevoDealTransmissionStatus,
+  BrevoPostDealPayload,
+  DealAttributes,
+  DealUpdateAttributes
+} from './types'
 
 // "Opportunities" are called "Deals" in Brevo
 
@@ -105,10 +113,17 @@ const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorConta
   }
 }
 
+const brevoTransmissionStatuses: { [key in OpportunityHubTransmissionStatus]: BrevoDealTransmissionStatus } = {
+  [OpportunityHubTransmissionStatus.Sent]: BrevoDealTransmissionStatus.Sent,
+  [OpportunityHubTransmissionStatus.Limited]: BrevoDealTransmissionStatus.Limited,
+  [OpportunityHubTransmissionStatus.Failed]: BrevoDealTransmissionStatus.Failed
+}
+
 const convertDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdateAttributes): DealUpdateAttributes => {
   return {
-    envoy: domainUpdateAttributes.sentToOpportunityHub,
-    idce: domainUpdateAttributes.idCe.toString()
+    transmission_status: brevoTransmissionStatuses[domainUpdateAttributes.transmissionStatus],
+    ...(domainUpdateAttributes.transmissionStatus === OpportunityHubTransmissionStatus.Sent && { envoy: true }),
+    ...(domainUpdateAttributes.idCe !== undefined && { idce: domainUpdateAttributes.idCe.toString() })
   }
 }
 

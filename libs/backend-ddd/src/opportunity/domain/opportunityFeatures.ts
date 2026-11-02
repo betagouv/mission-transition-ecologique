@@ -1,9 +1,15 @@
-import { Maybe, Result } from 'true-myth'
+import { Result } from 'true-myth'
 import EstablishmentFeatures from '../../establishment/domain/establishmentFeatures'
 import ProjectFeatures from '../../project/domain/projectFeatures'
 import { OpportunityAssociatedData } from './opportunityAssociatedData'
 import type { ContactRepository, MailerManager, OpportunityRepository } from './spi'
-import { OpportunityId, OpportunityWithContactId, OpportunityWithOperatorContactAndContactId } from './types'
+import {
+  OpportunityHubTransmissionStatus,
+  OpportunityId,
+  OpportunityUpdateAttributes,
+  OpportunityWithContactId,
+  OpportunityWithOperatorContactAndContactId
+} from './types'
 import OpportunityHubFeatures from '../../opportunityHub/domain/opportunityHubFeatures'
 import ProgramFeatures from '../../program/domain/programFeatures'
 import { Operators, ProgramType } from '@tee/data'
@@ -53,6 +59,7 @@ export default class OpportunityFeatures {
       if (!(await this._hasReachedTransmissionLimit(opportunityWithContactId, opportunityAssociatedData.value))) {
         await this._transmitOpportunityToHubs(opportunityResult.value, opportunityWithOperatorAndContact, opportunityAssociatedData.value)
       } else {
+        await this._updateTransmissionStatus(opportunityResult.value, { transmissionStatus: OpportunityHubTransmissionStatus.Limited })
         await this._sendReturnReceipt(opportunityWithContactId, opportunityAssociatedData.value)
       }
     })().catch((error: unknown) => {
@@ -108,17 +115,15 @@ export default class OpportunityFeatures {
         { ...this._transmissionMonitoringData(opportunityId, opportunity), error: opportunityHubResult.error.message },
         { opportunity_transmission: 'failed' }
       )
+      await this._updateTransmissionStatus(opportunityId, { transmissionStatus: OpportunityHubTransmissionStatus.Failed })
       return
     }
 
     if (opportunityHubResult !== false && opportunityHubResult.isOk) {
-      const opportunityUpdateErr = await this._updateOpportunitySentToHub(opportunityId, opportunityHubResult.value)
-      if (opportunityUpdateErr.isJust) {
-        Monitor.warning('Opportunity status not updated after a transmission to a Hub', {
-          error: opportunityUpdateErr.value,
-          idCe: opportunityHubResult.value
-        })
-      }
+      await this._updateTransmissionStatus(opportunityId, {
+        transmissionStatus: OpportunityHubTransmissionStatus.Sent,
+        idCe: opportunityHubResult.value
+      })
     }
   }
 
@@ -130,8 +135,15 @@ export default class OpportunityFeatures {
     }
   }
 
-  private async _updateOpportunitySentToHub(opportunityId: OpportunityId, idCe: number): Promise<Maybe<Error | null>> {
-    return await this._opportunityRepository.update(opportunityId, { sentToOpportunityHub: true, idCe })
+  private async _updateTransmissionStatus(opportunityId: OpportunityId, attributes: OpportunityUpdateAttributes): Promise<void> {
+    const opportunityUpdateErr = await this._opportunityRepository.update(opportunityId, attributes)
+    if (opportunityUpdateErr.isJust) {
+      Monitor.warning('Opportunity transmission status not updated', {
+        error: opportunityUpdateErr.value,
+        brevoDealId: opportunityId.id,
+        ...attributes
+      })
+    }
   }
 
   private _addContactOperatorToOpportunity(opportunity: OpportunityWithContactId): OpportunityWithOperatorContactAndContactId {

@@ -13,9 +13,15 @@ export type OpportunityDetailsShort = Omit<OpportunityDetails, 'linkToPage' | 'l
   programContactOperator?: Operators
 }
 
+export enum OpportunityHubTransmissionStatus {
+  Sent = 'sent',
+  Limited = 'limited',
+  Failed = 'failed'
+}
+
 export interface OpportunityUpdateAttributes {
-  sentToOpportunityHub: boolean
-  idCe: number
+  transmissionStatus: OpportunityHubTransmissionStatus
+  idCe?: number
 }
 
 export interface ContactId {
