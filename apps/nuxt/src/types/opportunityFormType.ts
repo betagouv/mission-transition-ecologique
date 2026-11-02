@@ -32,6 +32,8 @@ export type DefaultFieldFormType = {
   wrapperClass?: string
   rows?: number
   colSize?: number
+  // Native maxlength of the input, same limit as the API schema
+  maxLength?: number
   callOut?: InputCalloutType
 }
 

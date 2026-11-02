@@ -16,6 +16,7 @@
       :is-textarea="!!field.rows"
       :wrapper-class="field.wrapperClass"
       :hint="field.hint"
+      :maxlength="field.maxLength"
     >
       <template
         v-if="field.callOut"
