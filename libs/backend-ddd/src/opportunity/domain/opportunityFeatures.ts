@@ -107,7 +107,14 @@ export default class OpportunityFeatures {
     opportunity: OpportunityWithContactId,
     opportunityData: OpportunityAssociatedData
   ) {
-    const opportunityHubResult = await this._opportunityHubFeatures.transmitOpportunity(opportunity, opportunityData)
+    let opportunityHubResult
+    try {
+      opportunityHubResult = await this._opportunityHubFeatures.transmitOpportunity(opportunity, opportunityData)
+    } catch (error: unknown) {
+      // The exception is reported by the caller, the opportunity must not stay without a transmission status
+      await this._updateTransmissionStatus(opportunityId, { transmissionStatus: OpportunityHubTransmissionStatus.Failed })
+      throw error
+    }
 
     if (opportunityHubResult !== false && opportunityHubResult.isErr) {
       Monitor.error(

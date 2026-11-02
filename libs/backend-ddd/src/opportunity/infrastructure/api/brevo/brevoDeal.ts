@@ -119,12 +119,13 @@ const brevoTransmissionStatuses: { [key in OpportunityHubTransmissionStatus]: Br
   [OpportunityHubTransmissionStatus.Failed]: BrevoDealTransmissionStatus.Failed
 }
 
-const convertDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdateAttributes): DealUpdateAttributes => {
-  return {
-    transmission_status: brevoTransmissionStatuses[domainUpdateAttributes.transmissionStatus],
-    ...(domainUpdateAttributes.transmissionStatus === OpportunityHubTransmissionStatus.Sent && { envoy: true }),
-    ...(domainUpdateAttributes.idCe !== undefined && { idce: domainUpdateAttributes.idCe.toString() })
+export const convertDomainToBrevoDealUpdate = (domainUpdateAttributes: OpportunityUpdateAttributes): DealUpdateAttributes => {
+  const transmission_status = brevoTransmissionStatuses[domainUpdateAttributes.transmissionStatus]
+  if (domainUpdateAttributes.transmissionStatus === OpportunityHubTransmissionStatus.Sent) {
+    return { transmission_status, envoy: true, idce: domainUpdateAttributes.idCe.toString() }
   }
+
+  return { transmission_status }
 }
 
 const replaceNewlinesWithSpaces = (text: string): string => {

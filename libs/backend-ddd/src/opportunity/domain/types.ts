@@ -19,10 +19,9 @@ export enum OpportunityHubTransmissionStatus {
   Failed = 'failed'
 }
 
-export interface OpportunityUpdateAttributes {
-  transmissionStatus: OpportunityHubTransmissionStatus
-  idCe?: number
-}
+export type OpportunityUpdateAttributes =
+  | { transmissionStatus: OpportunityHubTransmissionStatus.Sent; idCe: number }
+  | { transmissionStatus: OpportunityHubTransmissionStatus.Limited | OpportunityHubTransmissionStatus.Failed }
 
 export interface ContactId {
   id: number

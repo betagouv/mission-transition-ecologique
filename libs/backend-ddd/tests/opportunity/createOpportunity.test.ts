@@ -256,11 +256,12 @@ EXPECT the failure to be reported to monitoring with the Brevo deal id and the o
     expect(tags).toEqual({ opportunity_transmission: 'failed' })
   })
 
-  test('an unexpected exception during the transmission is reported', async () => {
+  test('an unexpected exception during the transmission is reported and the opportunity marked as failed', async () => {
     const monitorException = vi.spyOn(Monitor, 'exception').mockReturnValue(Monitor)
+    const update = vi.fn(dummyUpdateOpportunity)
     const createOpportunity = makeCreateOpportunity(
       dummyContactRepository,
-      dummyOpportunityRepository,
+      { ...dummyOpportunityRepository, update },
       new OpportunityHubFeatures([new PlaceDesEntreprisesMockThrowing()])
     )
 
@@ -272,6 +273,7 @@ EXPECT the failure to be reported to monitoring with the Brevo deal id and the o
     expect(error.message).toBe('unexpected failure')
     expect(data).toMatchObject({ brevoDealId: '1' })
     expect(tags).toEqual({ opportunity_transmission: 'failed' })
+    expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Failed })
   })
 })
 
