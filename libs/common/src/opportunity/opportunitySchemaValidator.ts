@@ -41,7 +41,8 @@ export const opportunityDetailsBaseSchema = z.object({
   type: opportunityTypeSchema,
   linkToPage: httpUrlSchema,
   titleMessage: textWithoutLinkSchema(200).optional(),
-  linkToCatalog: httpUrlSchema.optional(),
+  // Required: sent as origin_url to Place des Entreprises, which rejects the solicitation without it
+  linkToCatalog: httpUrlSchema,
   message: z.string().max(10000),
   priorityObjectives: z.array(publicodeObjectiveSchema).optional(),
   otherData: z.string().optional(),

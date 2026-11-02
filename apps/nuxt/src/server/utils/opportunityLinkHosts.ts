@@ -18,7 +18,8 @@ export class OpportunityLinkHosts {
   }
 
   private static _allowedHosts(event: H3Event): string[] {
-    const hosts = [this._productionHost, getRequestURL(event, { xForwardedHost: true }).host]
+    // The Host header is used for routing by Cloudflare and Scalingo, unlike X-Forwarded-Host which any client can set
+    const hosts = [this._productionHost, getRequestURL(event).host]
     const siteUrl = useRuntimeConfig(event).public.siteUrl as string | undefined
     if (siteUrl && LinkValidator.isHttpUrl(siteUrl)) {
       hosts.push(new URL(siteUrl).host)
