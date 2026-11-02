@@ -1,5 +1,13 @@
 import { Image } from '@/tools/image'
-import { PhoneValidator, EmailValidator, SiretValidator, LinkValidator, OpportunityType, EstablishmentFront } from '@tee/common'
+import {
+  PhoneValidator,
+  EmailValidator,
+  SiretValidator,
+  LinkValidator,
+  NameValidator,
+  OpportunityType,
+  EstablishmentFront
+} from '@tee/common'
 import { FieldType, RouteName, ProjectType, FormDataType, ThemeType, ThemeId, ProgramTypeForFront } from '@/types'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import { CalloutType } from '@/types/elementsPropsTypes'
@@ -30,8 +38,8 @@ export default class Opportunity {
         value: undefined,
         label: 'Prénom',
         isValid: undefined,
-        validation: LinkValidator.validateWithoutLink,
-        errorMessage: 'Ce champ ne doit pas contenir de lien.'
+        validation: NameValidator.validate,
+        errorMessage: 'Seuls les lettres, espaces, tirets, apostrophes et points sont acceptés.'
       },
       surname: {
         required: true,
@@ -40,8 +48,8 @@ export default class Opportunity {
         value: undefined,
         label: 'Nom',
         isValid: undefined,
-        validation: LinkValidator.validateWithoutLink,
-        errorMessage: 'Ce champ ne doit pas contenir de lien.'
+        validation: NameValidator.validate,
+        errorMessage: 'Seuls les lettres, espaces, tirets, apostrophes et points sont acceptés.'
       },
       email: {
         required: true,

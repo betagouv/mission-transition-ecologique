@@ -4,6 +4,7 @@ import { OpportunityType } from './opportunityTypes'
 import { z } from 'zod'
 import { PhoneValidator } from '../establishment/validator/phoneValidator'
 import { LinkValidator } from '../validator/linkValidator'
+import { NameValidator } from '../validator/nameValidator'
 
 const opportunityTypeSchema = z.nativeEnum(OpportunityType)
 const publicodeObjectiveSchema = z.nativeEnum(PublicodeObjective)
@@ -19,11 +20,15 @@ const textWithoutLinkSchema = (maxLength: number) =>
     .min(1)
     .max(maxLength)
     .refine((value) => !LinkValidator.containsLink(value), { message: 'Links are not allowed' })
+const nameSchema = z
+  .string()
+  .trim()
+  .refine(NameValidator.validate, { message: 'Only letters, spaces, hyphens, apostrophes and dots are allowed' })
 const httpUrlSchema = z.string().max(2000).refine(LinkValidator.isHttpUrl, { message: 'Must be an absolute http(s) URL' })
 
 export const contactDetailsSchema = z.object({
-  firstName: textWithoutLinkSchema(100),
-  lastName: textWithoutLinkSchema(100),
+  firstName: nameSchema,
+  lastName: nameSchema,
   email: z.string().trim().max(254).email(),
   phoneNumber: z.string().max(30).refine(PhoneValidator.validate, { message: 'Invalid phone number' }),
   companySiret: z.string().max(20),
