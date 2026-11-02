@@ -1,7 +1,8 @@
 import { LinkDetector } from './linkDetector'
+import { OpportunityFieldMaxLength } from '../opportunity/opportunityFieldMaxLength'
 
 export class NameValidator {
-  static readonly maxLength = 100
+  static readonly maxLength = Math.max(OpportunityFieldMaxLength.firstName, OpportunityFieldMaxLength.lastName)
 
   // Letters (accents included), spaces, apostrophes, dots and hyphens, including the typographic hyphens
   // and en dash (U+2010 to U+2013) that come from copy-paste
