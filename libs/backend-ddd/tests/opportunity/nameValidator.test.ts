@@ -4,6 +4,8 @@ describe('NameValidator', () => {
   test.each([
     'Jean',
     'Jean-Pierre',
+    'Jean\u00A0Pierre',
+    'Jean\tPierre',
     'Dupont - Martin',
     'Jean\u2010Pierre',
     'Jean\u2011Pierre',
@@ -36,5 +38,9 @@ describe('NameValidator', () => {
     'a'.repeat(101)
   ])('rejects %s', (name) => {
     expect(NameValidator.validate(name)).toBe(false)
+  })
+
+  test('normalizes unicode spaces', () => {
+    expect(NameValidator.normalize(' Jean\u00A0 Pierre ')).toBe('Jean Pierre')
   })
 })

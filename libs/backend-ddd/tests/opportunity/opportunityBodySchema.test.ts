@@ -79,6 +79,20 @@ describe('opportunityBodySchema anti-phishing validation', () => {
     expect(parse({ linkToCatalog }).success).toBe(false)
   })
 
+  test.each([['titleMessage'], ['firstName'], ['lastName'], ['phoneNumber'], ['linkToPage'], ['linkToCatalog']])(
+    'rejects a very long %s quickly (ReDoS)',
+    (field) => {
+      const start = performance.now()
+
+      expect(parse({ [field]: 'a'.repeat(200000) }).success).toBe(false)
+      expect(performance.now() - start).toBeLessThan(200)
+    }
+  )
+
+  test('stores the name with simple spaces', () => {
+    expect(parse({ firstName: 'Jean\u00A0Pierre' }).data?.opportunity.firstName).toBe('Jean Pierre')
+  })
+
   test('accepts a message containing a link', () => {
     expect(parse({ message: 'Notre site : https://www.entreprise.fr' }).success).toBe(true)
   })

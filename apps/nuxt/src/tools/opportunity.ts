@@ -3,7 +3,7 @@ import {
   PhoneValidator,
   EmailValidator,
   SiretValidator,
-  LinkValidator,
+  LinkDetector,
   NameValidator,
   OpportunityType,
   EstablishmentFront
@@ -17,6 +17,9 @@ import { CompanyData } from '@/tools/companyData'
 import { useFiltersStore } from '@/stores/filters'
 
 export default class Opportunity {
+  // Same limit as titleMessage in the API schema
+  static readonly maxProjectTitleLength = 200
+
   static getBaseOpportunityFormFields(): FormDataType {
     const selectedThemeId = useFiltersStore().hasThemeTypeSelected() ? useFiltersStore().getThemeTypeSelected() : TrackStructure.getTheme()
     const selectedTheme = Theme.getById(selectedThemeId as ThemeId)
@@ -121,8 +124,9 @@ export default class Opportunity {
         label: 'Quel est votre projet?',
         isValid: true,
         type: FieldType.Text,
-        validation: LinkValidator.validateWithoutLink,
-        errorMessage: 'Ce champ ne doit pas contenir de lien.'
+        validation: (value: string | undefined) =>
+          (value?.length ?? 0) <= Opportunity.maxProjectTitleLength && LinkDetector.validateWithoutLink(value),
+        errorMessage: `Ce champ ne doit pas contenir de lien ni dépasser ${Opportunity.maxProjectTitleLength} caractères.`
       },
       ...baseFields
     }
@@ -139,8 +143,9 @@ export default class Opportunity {
         label: 'Quel est le nom de votre projet?',
         isValid: undefined,
         type: FieldType.Text,
-        validation: LinkValidator.validateWithoutLink,
-        errorMessage: 'Ce champ ne doit pas contenir de lien.'
+        validation: (value: string | undefined) =>
+          (value?.length ?? 0) <= Opportunity.maxProjectTitleLength && LinkDetector.validateWithoutLink(value),
+        errorMessage: `Ce champ ne doit pas contenir de lien ni dépasser ${Opportunity.maxProjectTitleLength} caractères.`
       },
       ...baseFields
     }
