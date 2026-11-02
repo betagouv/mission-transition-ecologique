@@ -1,6 +1,7 @@
 import { opportunityBodySchema } from '@tee/common'
 import { defineEventHandler } from 'h3'
 import { Monitor, OpportunityService, OptInRequiredError, ServiceNotFoundError } from '@tee/backend-ddd'
+import { OpportunityLinkHosts } from '~/server/utils/opportunityLinkHosts'
 
 defineRouteMeta({
   openAPI: {
@@ -23,7 +24,8 @@ defineRouteMeta({
         content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
       },
       422: {
-        description: 'Body invalide, ou consentement `optIn` absent.',
+        description:
+          'Body invalide (champ manquant, format incorrect, lien interdit, URL hors du domaine du site), ou consentement `optIn` absent.',
         content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
       },
       500: {
@@ -42,6 +44,15 @@ export default defineEventHandler(async (event) => {
     throw createError({
       statusCode: 422,
       statusMessage: opportunityBody.error.message
+    })
+  }
+
+  const invalidLinks = OpportunityLinkHosts.invalidLinks(event, opportunityBody.data.opportunity)
+  if (invalidLinks.length > 0) {
+    Monitor.warning('Opportunity rejected: link outside of the allowed hosts', { invalidLinks, query: opportunityBody.data })
+    throw createError({
+      statusCode: 422,
+      statusMessage: `Links must point to the site domain: ${invalidLinks.join(', ')}`
     })
   }
 

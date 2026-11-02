@@ -1,5 +1,5 @@
 import { Image } from '@/tools/image'
-import { PhoneValidator, EmailValidator, SiretValidator, OpportunityType, EstablishmentFront } from '@tee/common'
+import { PhoneValidator, EmailValidator, SiretValidator, LinkValidator, OpportunityType, EstablishmentFront } from '@tee/common'
 import { FieldType, RouteName, ProjectType, FormDataType, ThemeType, ThemeId, ProgramTypeForFront } from '@/types'
 import TrackStructure from '@/tools/questionnaire/track/trackStructure'
 import { CalloutType } from '@/types/elementsPropsTypes'
@@ -23,8 +23,26 @@ export default class Opportunity {
         isValid: true,
         type: FieldType.Select
       },
-      name: { required: true, colSize: 6, type: FieldType.Text, value: undefined, label: 'Prénom', isValid: undefined },
-      surname: { required: true, colSize: 6, type: FieldType.Text, value: undefined, label: 'Nom', isValid: undefined },
+      name: {
+        required: true,
+        colSize: 6,
+        type: FieldType.Text,
+        value: undefined,
+        label: 'Prénom',
+        isValid: undefined,
+        validation: LinkValidator.validateWithoutLink,
+        errorMessage: 'Ce champ ne doit pas contenir de lien.'
+      },
+      surname: {
+        required: true,
+        colSize: 6,
+        type: FieldType.Text,
+        value: undefined,
+        label: 'Nom',
+        isValid: undefined,
+        validation: LinkValidator.validateWithoutLink,
+        errorMessage: 'Ce champ ne doit pas contenir de lien.'
+      },
       email: {
         required: true,
         type: FieldType.Email,
@@ -94,7 +112,9 @@ export default class Opportunity {
         value: project.title,
         label: 'Quel est votre projet?',
         isValid: true,
-        type: FieldType.Text
+        type: FieldType.Text,
+        validation: LinkValidator.validateWithoutLink,
+        errorMessage: 'Ce champ ne doit pas contenir de lien.'
       },
       ...baseFields
     }
@@ -110,7 +130,9 @@ export default class Opportunity {
         value: undefined,
         label: 'Quel est le nom de votre projet?',
         isValid: undefined,
-        type: FieldType.Text
+        type: FieldType.Text,
+        validation: LinkValidator.validateWithoutLink,
+        errorMessage: 'Ce champ ne doit pas contenir de lien.'
       },
       ...baseFields
     }
