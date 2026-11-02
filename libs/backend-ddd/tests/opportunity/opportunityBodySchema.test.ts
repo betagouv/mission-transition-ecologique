@@ -1,4 +1,4 @@
-import { opportunityBodySchema, ThemeId } from '@tee/common'
+import { opportunityBodySchema, OpportunityFieldMaxLength, ThemeId } from '@tee/common'
 import { fakeOpportunity } from './opportunity.fixtures'
 
 const parseWithTheme = (theme: unknown) => {
@@ -70,7 +70,7 @@ describe('opportunityBodySchema anti-phishing validation', () => {
     ['email', 'not-an-email'],
     ['linkToPage', '/'],
     ['linkToCatalog', 'javascript:alert(1)'],
-    ['message', 'a'.repeat(10001)]
+    ['message', 'a'.repeat(OpportunityFieldMaxLength.message + 1)]
   ])('rejects %s = %s', (field, value) => {
     expect(parse({ [field]: value }).success).toBe(false)
   })
@@ -91,6 +91,10 @@ describe('opportunityBodySchema anti-phishing validation', () => {
 
   test('stores the name with simple spaces', () => {
     expect(parse({ firstName: 'Jean\u00A0Pierre' }).data?.opportunity.firstName).toBe('Jean Pierre')
+  })
+
+  test('accepts a message at the maximum length', () => {
+    expect(parse({ message: 'a'.repeat(OpportunityFieldMaxLength.message) }).success).toBe(true)
   })
 
   test('accepts a message containing a link', () => {
