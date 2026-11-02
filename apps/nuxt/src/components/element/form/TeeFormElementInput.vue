@@ -42,6 +42,12 @@
         </TeeCallout>
       </template>
     </DsfrInput>
+    <p
+      v-if="field.bottomHint"
+      class="fr-hint-text fr-mt-1v fr-mb-0"
+    >
+      {{ field.bottomHint }}
+    </p>
   </DsfrInputGroup>
 </template>
 <script lang="ts" setup>

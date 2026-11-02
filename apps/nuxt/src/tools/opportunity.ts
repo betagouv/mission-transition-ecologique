@@ -94,7 +94,8 @@ export default class Opportunity {
         label: 'Quel est votre besoin ?',
         maxLength: OpportunityFieldMaxLength.message,
         value: '',
-        hint: `${OpportunityFieldMaxLength.message.toLocaleString('fr-FR')} caractères maximum`,
+        hint: undefined,
+        bottomHint: `${OpportunityFieldMaxLength.message.toLocaleString('fr-FR')} caractères maximum`,
         wrapperClass: 'fr-m-0',
         rows: 10,
         callOut: {

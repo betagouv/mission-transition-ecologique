@@ -34,6 +34,8 @@ export type DefaultFieldFormType = {
   colSize?: number
   // Native maxlength of the input, same limit as the API schema
   maxLength?: number
+  // Displayed under the field, unlike hint which is displayed under the label
+  bottomHint?: string
   callOut?: InputCalloutType
 }
 
