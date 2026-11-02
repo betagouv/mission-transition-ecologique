@@ -218,12 +218,14 @@ defineRouteMeta({
                   firstName: {
                     type: 'string',
                     maxLength: 100,
-                    description: 'Prénom du contact. Les liens (URL, nom de domaine) sont refusés.'
+                    description:
+                      'Prénom du contact : lettres (accents compris), espaces, tirets, apostrophes et points uniquement. Les liens sont refusés.'
                   },
                   lastName: {
                     type: 'string',
                     maxLength: 100,
-                    description: 'Nom du contact. Les liens (URL, nom de domaine) sont refusés.'
+                    description:
+                      'Nom du contact : lettres (accents compris), espaces, tirets, apostrophes et points uniquement. Les liens sont refusés.'
                   },
                   email: { type: 'string', format: 'email', maxLength: 254, description: 'Email du contact.' },
                   phoneNumber: {
