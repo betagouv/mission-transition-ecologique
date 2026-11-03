@@ -83,7 +83,7 @@
     "dotenv": "16.6.1",
     "markdown-it": "14.1.1",
     "node-fetch": "3.3.2",
-    "nuxt": "3.21.1",
+    "nuxt": "3.21.6",
     "nuxt-security": "2.2.0",
     "nuxt-site-config": "3.2.20",
     "pinia": "2.3.1",
