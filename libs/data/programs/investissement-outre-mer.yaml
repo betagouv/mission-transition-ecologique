@@ -1,0 +1,107 @@
+titre: Subvention Investissement Outre-mer
+promesse: >-
+  Financez les investissements visant à réduire votre consommation énergétique
+  ou votre impact environnemental
+description: >-
+  Vous souhaitez réaliser des investissements qui vous permettent de :
+
+
+  - **Diminuer l'impact** de votre entreprise sur l'environnement. 
+
+  - **Diminuer la consommation énergétique** de votre entreprise.
+
+
+  Bénéficiez d'une subvention pour les dépenses d’investissement répondant
+  prioritairement aux principaux objectifs de la Trajectoire Outre-mer 5.0 :
+  **Zéro Déchet**, **Zéro Carbone**, **Zéro Vulnérabilité**, **Zéro Polluant
+  agricole**, y compris **Zéro Exclusion.**
+illustration: images/TEE_ampoule.webp
+opérateur de contact: Banque Publique d'Investissement France
+contact question: https://www.bpifrance.fr/contactez-nous
+url: https://www.bpifrance.fr/catalogue-offres/subvention-investissement-outre-mer
+nature de l'aide: financement
+montant du financement: Jusqu’à 70% du coût de l'investissement, de 20 000€ à 100 000€
+objectifs:
+  - description: Créez un compte sur le site de Bpifrance.
+    liens:
+      - lien: https://app.bel.bpifrance.fr/create-account
+        texte: Créer mon compte
+  - description: >-
+      Exprimez votre intérêt pour cette aide en remplissant le formulaire de
+      demande de financement et suivez les instructions.
+    liens:
+      - lien: https://mon.bpifrance.fr/mon-espace/#/formulaire/siom
+        texte: Formulaire de demande de financement
+      - lien: https://www.bpifrance.fr/download/media-file/42467
+        texte: Instructions pour déposer la demande
+  - description: >-
+      Un conseiller vous rappelle pour répondre à vos questions et vous guider
+      dans la constitution de votre demande.
+  - description: >-
+      Si vous êtes éligible, bénéficiez de la subvention et réalisez les
+      investissements.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 250 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Guadeloupe, Guyane, La Réunion, Martinique, Mayotte
+  secteur d'activité:
+    - Tous secteurs d'activité
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 250
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est A
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est H
+      - code NAF niveau 1 . est I
+      - code NAF niveau 1 . est J
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Guadeloupe
+      - région = Guyane
+      - région = La Réunion
+      - région = Martinique
+      - région = Mayotte

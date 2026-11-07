@@ -305,6 +305,7 @@
     "739": "aide-investissement-corse",
     "760": "aide-tourisme-guadeloupe",
     "764": "navires-propres",
+    "793": "investissement-outre-mer",
     "826": "diag-adaptation",
     "859": "advenir",
     "863": "cyclologistique",
@@ -415,6 +416,7 @@
     "3683": "pret-flash-electrique",
     "3685": "decarb-flash-artisan",
     "3686": "mon-parcours-economies-energie",
-    "3689": "pret-methanisation-ademe"
+    "3689": "pret-methanisation-ademe",
+    "3690": "aide-acquisition-vehicules-electriques-destinee-aux-taxis"
   }
 }
