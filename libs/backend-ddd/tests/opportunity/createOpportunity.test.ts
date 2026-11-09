@@ -23,6 +23,7 @@ import type { ContactRepository, OpportunityRepository } from '../../src/opportu
 import { ProgramRepository } from '../../src/program/domain/spi'
 import { ProgramType, ProjectType } from '@tee/data'
 import { ContactId, OpportunityDetailsShort, OpportunityId, SearchResult } from '../../src/index'
+import { OpportunityHubTransmissionStatus } from '../../src/opportunity/domain/types'
 import Monitor from '../../src/common/domain/monitoring/monitor'
 
 let addContactCalled: boolean
@@ -255,11 +256,12 @@ EXPECT the failure to be reported to monitoring with the Brevo deal id and the o
     expect(tags).toEqual({ opportunity_transmission: 'failed' })
   })
 
-  test('an unexpected exception during the transmission is reported', async () => {
+  test('an unexpected exception during the transmission is reported and the opportunity marked as failed', async () => {
     const monitorException = vi.spyOn(Monitor, 'exception').mockReturnValue(Monitor)
+    const update = vi.fn(dummyUpdateOpportunity)
     const createOpportunity = makeCreateOpportunity(
       dummyContactRepository,
-      dummyOpportunityRepository,
+      { ...dummyOpportunityRepository, update },
       new OpportunityHubFeatures([new PlaceDesEntreprisesMockThrowing()])
     )
 
@@ -271,5 +273,59 @@ EXPECT the failure to be reported to monitoring with the Brevo deal id and the o
     expect(error.message).toBe('unexpected failure')
     expect(data).toMatchObject({ brevoDealId: '1' })
     expect(tags).toEqual({ opportunity_transmission: 'failed' })
+    expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Failed })
+  })
+})
+
+describe(`
+  WHEN creating a new opportunity
+EXPECT the hub transmission status to be stored on the opportunity`, () => {
+  class PlaceDesEntreprisesMockWithError extends PlaceDesEntreprisesMock {
+    public override transmitOpportunity = async (): Promise<Result<number, Error>> => {
+      return Result.err(new Error('PDE API error 422'))
+    }
+  }
+
+  const spyOnUpdate = (repository: OpportunityRepository) => {
+    const update = vi.fn(dummyUpdateOpportunity)
+    return { update, repository: { ...repository, update } }
+  }
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  test('a transmitted opportunity is marked as sent with the PDE id', async () => {
+    const { update, repository } = spyOnUpdate(dummyOpportunityRepository)
+    const result = await makeCreateOpportunity(dummyContactRepository, repository)(fakeOpportunity(), true)
+    expectToBeOk(result)
+
+    await vi.waitFor(() => expect(update).toHaveBeenCalled())
+    expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Sent, idCe: -1 })
+  })
+
+  test('an opportunity blocked by the daily transmission limit is marked as limited', async () => {
+    const { update, repository } = spyOnUpdate(dummyOpportunityRepositoryWithLimitReached)
+    const result = await makeCreateOpportunity(dummyContactRepository, repository)(fakeOpportunity(), true)
+    expectToBeOk(result)
+
+    await vi.waitFor(() => expect(update).toHaveBeenCalled())
+    expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Limited })
+    await vi.waitFor(() => expect(emailReceiptSent).toBe(true))
+  })
+
+  test('an opportunity rejected by the hub is marked as failed', async () => {
+    vi.spyOn(Monitor, 'error').mockReturnValue(Monitor)
+    const { update, repository } = spyOnUpdate(dummyOpportunityRepository)
+    const createOpportunity = makeCreateOpportunity(
+      dummyContactRepository,
+      repository,
+      new OpportunityHubFeatures([new PlaceDesEntreprisesMockWithError()])
+    )
+    const result = await createOpportunity(fakeOpportunity(), true)
+    expectToBeOk(result)
+
+    await vi.waitFor(() => expect(update).toHaveBeenCalled())
+    expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Failed })
   })
 })
