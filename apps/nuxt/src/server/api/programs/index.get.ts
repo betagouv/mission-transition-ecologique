@@ -241,7 +241,7 @@ defineRouteMeta({
                   email: { type: 'string', format: 'email', maxLength: 254, description: 'Email du contact.' },
                   phoneNumber: {
                     type: 'string',
-                    maxLength: 30,
+                    maxLength: 20,
                     description: 'Téléphone du contact : au moins 10 chiffres, espaces et préfixe international `+` acceptés.'
                   },
                   companySiret: { type: 'string', description: "SIRET de l'entreprise." },

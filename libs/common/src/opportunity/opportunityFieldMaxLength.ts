@@ -3,7 +3,7 @@ export const OpportunityFieldMaxLength = {
   firstName: 100,
   lastName: 100,
   email: 254,
-  phoneNumber: 30,
+  phoneNumber: 20,
   companySiret: 20,
   id: 200,
   titleMessage: 200,
