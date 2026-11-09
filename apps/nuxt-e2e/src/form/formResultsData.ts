@@ -14,6 +14,8 @@ import { FormResultDataType } from '../resultDataType'
 ----- cas de formulaire fail:
 - 9: questionnaire > projet > aide cgu pas sélectionné
 - 10: questionnaire > projet mail invalide
+- 11: catalogue > aide avec un lien dans le prénom (phishing)
+- 12: catalogue > projet custom avec un nom de domaine dans le titre (phishing)
 
 */
 export const tests: FormResultDataType[] = [
@@ -165,6 +167,36 @@ export const tests: FormResultDataType[] = [
       tel: { value: '0123456789', type: 'tel' },
       needs: { value: '', type: 'textarea' },
       email: { value: 'test@', type: 'email' },
+      siret: { value: '83014132100042', type: 'text' },
+      cgu: { value: true, type: 'checkbox' }
+    }
+  },
+  {
+    id: 11,
+    valid: false,
+    type: 'program',
+    url: 'aides-entreprise/baisse-les-watts?siret=83014132100042&effectif=TPE',
+    values: {
+      name: { value: 'Régularisez sur https://evil.example', type: 'text' },
+      surname: { value: 'test', type: 'text' },
+      tel: { value: '0123456789', type: 'tel' },
+      email: { value: 'test@test.fr', type: 'email' },
+      siret: { value: '83014132100042', type: 'text' },
+      cgu: { value: true, type: 'checkbox' }
+    }
+  },
+  {
+    id: 12,
+    valid: false,
+    type: 'customProject',
+    url: 'projets-entreprise',
+    values: {
+      projectTitle: { value: 'Dossier à régulariser sur evil-site.com', type: 'text' },
+      theme: { value: '🏢 rénovation', type: 'select' },
+      name: { value: 'test', type: 'text' },
+      surname: { value: 'test', type: 'text' },
+      tel: { value: '0123456789', type: 'tel' },
+      email: { value: 'test@test.fr', type: 'email' },
       siret: { value: '83014132100042', type: 'text' },
       cgu: { value: true, type: 'checkbox' }
     }

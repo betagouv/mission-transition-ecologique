@@ -35,6 +35,11 @@ describe('NameValidator', () => {
     'search-ms:query',
     'jean@phishing.example',
     'Jean <b>',
+    '<script>alert(1)</script>',
+    '<img src=x onerror=alert(1)>',
+    '"><svg onload=alert(1)>',
+    'javascript:alert(1)',
+    '&lt;script&gt;alert(1)&lt;/script&gt;',
     'a'.repeat(101)
   ])('rejects %s', (name) => {
     expect(NameValidator.validate(name)).toBe(false)

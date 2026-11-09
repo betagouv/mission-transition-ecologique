@@ -105,3 +105,26 @@ describe('opportunityBodySchema anti-phishing validation', () => {
     expect(parse({ phoneNumber: '+33 6 05 04 03 02' }).success).toBe(true)
   })
 })
+
+describe('opportunityBodySchema XSS validation', () => {
+  const xssPayloads = [
+    '<script>alert(1)</script>',
+    '<img src=x onerror=alert(1)>',
+    '"><svg onload=alert(1)>',
+    'javascript:alert(1)',
+    '&lt;script&gt;alert(1)&lt;/script&gt;'
+  ]
+
+  test.each(['firstName', 'lastName', 'email', 'phoneNumber'].flatMap((field) => xssPayloads.map((payload) => [field, payload])))(
+    'rejects %s = %s',
+    (field, payload) => {
+      const result = opportunityBodySchema.safeParse({
+        opportunity: { ...fakeOpportunity(), [field]: payload },
+        optIn: true
+      })
+
+      expect(result.success).toBe(false)
+      expect(result.error?.issues.map((issue) => issue.path.at(-1))).toContain(field)
+    }
+  )
+})
