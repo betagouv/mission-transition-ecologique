@@ -5,6 +5,7 @@ import { z } from 'zod'
 import { PhoneValidator } from '../establishment/validator/phoneValidator'
 import { LinkDetector } from '../validator/linkDetector'
 import { NameValidator } from '../validator/nameValidator'
+import { HtmlTagDetector } from '../validator/htmlTagDetector'
 import { OpportunityFieldMaxLength as MaxLength } from './opportunityFieldMaxLength'
 
 const opportunityTypeSchema = z.nativeEnum(OpportunityType)
@@ -15,14 +16,15 @@ const themeIdSchema = z.nativeEnum(ThemeId).optional().catch(undefined)
 
 // With zod 3, a refinement still runs when a previous check such as max() failed:
 // each refinement checks the length itself before running a regex (ReDoS)
-// Fields echoed in the acknowledgement email sent to the given address must not carry links (phishing)
-const textWithoutLinkSchema = (maxLength: number) =>
+// Short texts typed by the user must not carry links (phishing) nor HTML tags (XSS in the tools displaying them)
+const plainTextSchema = (maxLength: number) =>
   z
     .string()
     .trim()
     .min(1)
     .max(maxLength)
     .refine((value) => value.length <= maxLength && !LinkDetector.containsLink(value), { message: 'Links are not allowed' })
+    .refine((value) => !HtmlTagDetector.containsHtmlTag(value), { message: 'HTML tags are not allowed' })
 const nameSchema = z
   .string()
   .trim()
@@ -51,7 +53,7 @@ export const contactDetailsSchema = z.object({
 export const opportunityDetailsBaseSchema = z.object({
   type: opportunityTypeSchema,
   linkToPage: httpUrlSchema,
-  titleMessage: textWithoutLinkSchema(MaxLength.titleMessage).optional(),
+  titleMessage: plainTextSchema(MaxLength.titleMessage).optional(),
   // Required: sent as origin_url to Place des Entreprises, which rejects the solicitation without it
   linkToCatalog: httpUrlSchema,
   message: z.string().max(MaxLength.message),

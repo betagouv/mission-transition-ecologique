@@ -4,6 +4,7 @@ import {
   EmailValidator,
   SiretValidator,
   LinkDetector,
+  HtmlTagDetector,
   NameValidator,
   OpportunityType,
   EstablishmentFront,
@@ -131,8 +132,10 @@ export default class Opportunity {
         isValid: true,
         type: FieldType.Text,
         validation: (value: string | undefined) =>
-          (value?.length ?? 0) <= OpportunityFieldMaxLength.titleMessage && LinkDetector.validateWithoutLink(value),
-        errorMessage: `Ce champ ne doit pas contenir de lien ni dépasser ${OpportunityFieldMaxLength.titleMessage} caractères.`
+          (value?.length ?? 0) <= OpportunityFieldMaxLength.titleMessage &&
+          LinkDetector.validateWithoutLink(value) &&
+          !HtmlTagDetector.containsHtmlTag(value),
+        errorMessage: `Ce champ ne doit contenir ni lien ni balise HTML, ni dépasser ${OpportunityFieldMaxLength.titleMessage} caractères.`
       },
       ...baseFields
     }
@@ -151,8 +154,10 @@ export default class Opportunity {
         isValid: undefined,
         type: FieldType.Text,
         validation: (value: string | undefined) =>
-          (value?.length ?? 0) <= OpportunityFieldMaxLength.titleMessage && LinkDetector.validateWithoutLink(value),
-        errorMessage: `Ce champ ne doit pas contenir de lien ni dépasser ${OpportunityFieldMaxLength.titleMessage} caractères.`
+          (value?.length ?? 0) <= OpportunityFieldMaxLength.titleMessage &&
+          LinkDetector.validateWithoutLink(value) &&
+          !HtmlTagDetector.containsHtmlTag(value),
+        errorMessage: `Ce champ ne doit contenir ni lien ni balise HTML, ni dépasser ${OpportunityFieldMaxLength.titleMessage} caractères.`
       },
       ...baseFields
     }

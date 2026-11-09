@@ -115,16 +115,28 @@ describe('opportunityBodySchema XSS validation', () => {
     '&lt;script&gt;alert(1)&lt;/script&gt;'
   ]
 
-  test.each(['firstName', 'lastName', 'email', 'phoneNumber'].flatMap((field) => xssPayloads.map((payload) => [field, payload])))(
-    'rejects %s = %s',
-    (field, payload) => {
-      const result = opportunityBodySchema.safeParse({
-        opportunity: { ...fakeOpportunity(), [field]: payload },
-        optIn: true
-      })
+  // The title stays free text: an HTML-encoded payload is plain text, only real tags are rejected
+  const xssCases = [
+    ...['firstName', 'lastName', 'email', 'phoneNumber'].flatMap((field) => xssPayloads.map((payload) => [field, payload])),
+    ...xssPayloads.filter((payload) => !payload.startsWith('&')).map((payload) => ['titleMessage', payload])
+  ]
 
-      expect(result.success).toBe(false)
-      expect(result.error?.issues.map((issue) => issue.path.at(-1))).toContain(field)
-    }
-  )
+  test.each(xssCases)('rejects %s = %s', (field, payload) => {
+    const result = opportunityBodySchema.safeParse({
+      opportunity: { ...fakeOpportunity(), [field]: payload },
+      optIn: true
+    })
+
+    expect(result.success).toBe(false)
+    expect(result.error?.issues.map((issue) => issue.path.at(-1))).toContain(field)
+  })
+
+  test('accepts a title with a lower-than sign that is not a tag', () => {
+    const result = opportunityBodySchema.safeParse({
+      opportunity: { ...fakeOpportunity(), titleMessage: 'Entreprise < 50 salariés' },
+      optIn: true
+    })
+
+    expect(result.success).toBe(true)
+  })
 })

@@ -267,7 +267,7 @@ defineRouteMeta({
                     type: 'string',
                     maxLength: 200,
                     description:
-                      'Nom du projet libre. Utilisé uniquement pour le type customProject (nom de la demande, email de confirmation, transmission aux partenaires) ; ignoré pour les autres types. Les liens (URL, nom de domaine) sont refusés.'
+                      'Nom du projet libre. Utilisé uniquement pour le type customProject (nom de la demande, email de confirmation, transmission aux partenaires) ; ignoré pour les autres types. Les liens (URL, nom de domaine) et les balises HTML sont refusés.'
                   },
                   linkToCatalog: {
                     type: 'string',
