@@ -1,0 +1,56 @@
+titre: Acquisition d'un taxi électrique
+promesse: Louez ou achetez un véhicule électrique pour votre activité de taxi
+description: >-
+  Bénéficiez d'une aide à la location ou à l'achat d'un véhicule électrique pour
+  votre activité de taxi. Si vous optez pour un véhicule fabriqué en Europe,
+  l'enveloppe est plus importante.
+description longue: "Le véhicule électrique doit\_:\n\n- Atteindre un seuil minimal en matière de score environnemental.\n- Être d’une masse inférieure à 2\_400 Kg.\n- Afficher un prix d’acquisition inférieur ou égal à 65\_000 euros hors options."
+début de validité: 01/09/2026
+fin de validité: 31/12/2026
+illustration: images/TEE_ampoule.webp
+opérateur de contact: Ministère de la Transition Écologique
+contact question: formulaire
+url: https://www.electrifions-la-france.gouv.fr/je-roule-lelectrique#professionnel
+nature de l'aide: financement
+montant du financement: De 3 500 à 5 500 €, selon le véhicule.
+activable en autonomie: oui
+objectifs:
+  - description: >-
+      Faites l'acquisition d'un véhicule électrique pour votre activité de taxi,
+      en vous aidant du simulateur d'aide. 
+    liens:
+      - lien: >-
+          https://www.electrifions-la-france.gouv.fr/simulateur-daide-au-choix-dun-vehicule-electrique
+        texte: Simulateur d'aide
+  - description: 'Munissez-vous des éléments suivants : '
+  - description: >-
+      Si vous êtes éligible, l'aide est déduite directement par votre
+      concessionnaire ou par l'organisme de location.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Toutes tailles
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - France et territoires d'outre-mer
+  secteur d'activité:
+    - L'aide est réservée aux taxis (personnes physiques et personnes morales).
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est H
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est la mobilité durable
