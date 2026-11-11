@@ -1226,7 +1226,8 @@
       "programme-marguerite",
       "diag-mobilite-idf",
       "conseil-mobilite-idf",
-      "aide-developpement-vae"
+      "aide-developpement-vae",
+      "aide-acquisition-vehicules-electriques-destinee-aux-taxis"
     ],
     "titleLinkedProjects": "🔍 Les prérequis pour réussir un plan d'action mobilité",
     "descriptionLinkedProjects": "Réalisez ce prérequis pour assurer la pertinence et l'efficacité de votre plan d'action mobilité",
@@ -1315,7 +1316,8 @@
       "impulsion-environnement",
       "certificats-economie-energie",
       "diag-mobilite-idf",
-      "conseil-mobilite-idf"
+      "conseil-mobilite-idf",
+      "aide-acquisition-vehicules-electriques-destinee-aux-taxis"
     ],
     "linkedProjects": [
       16
@@ -1385,7 +1387,8 @@
       "certificats-economie-energie",
       "cheque-transition-tissu-economique",
       "diag-mobilite-idf",
-      "conseil-mobilite-idf"
+      "conseil-mobilite-idf",
+      "aide-acquisition-vehicules-electriques-destinee-aux-taxis"
     ],
     "linkedProjects": [
       16
@@ -3961,10 +3964,12 @@
       "etude-methanisation",
       "etude-methanisation-paca",
       "investissement-methanisation",
+      "pret-methanisation-ademe",
       "aide-tpe-transition-na",
       "certificats-economie-energie",
       "investissement-methanisation-paca",
-      "etude-d-opportunite-multi-enrr"
+      "etude-d-opportunite-multi-enrr",
+      "pret-methanisation-ademe"
     ],
     "linkedProjects": [
       4,
@@ -4333,7 +4338,8 @@
       "parm-vnf",
       "programme-marguerite",
       "diag-mobilite-idf",
-      "aide-developpement-vae"
+      "aide-developpement-vae",
+      "aide-acquisition-vehicules-electriques-destinee-aux-taxis"
     ],
     "linkedProjects": [
       16
