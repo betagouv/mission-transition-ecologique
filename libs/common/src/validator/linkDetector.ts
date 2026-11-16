@@ -37,10 +37,16 @@ export class LinkDetector {
     return text !== undefined && text.trim() !== '' && !this.containsLink(text)
   }
 
+  // The URL parser silently drops or encodes spaces and line breaks, and accepts credentials before the host
+  // (https://evil.example@allowed.host): such values are refused, as the raw string is forwarded, not the parsed URL
   static readonly isHttpUrl = (value: string): boolean => {
+    if (/[\s\p{Cc}]/u.test(value)) {
+      return false
+    }
+
     const url = this._parse(value)
 
-    return url !== undefined && ['http:', 'https:'].includes(url.protocol)
+    return url !== undefined && ['http:', 'https:'].includes(url.protocol) && url.username === '' && url.password === ''
   }
 
   static readonly hasAllowedHost = (value: string, allowedHosts: string[]): boolean => {

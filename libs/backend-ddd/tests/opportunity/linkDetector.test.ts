@@ -53,7 +53,12 @@ describe('LinkDetector', () => {
     ['http://localhost:4242/projets-entreprise', true],
     ['/', false],
     ['javascript:alert(1)', false],
-    ['not an url', false]
+    ['not an url', false],
+    ['https://mission-transition-ecologique.beta.gouv.fr/ Régularisez sur https://evil.example', false],
+    ['https://evil.example\n@mission-transition-ecologique.beta.gouv.fr/', false],
+    ['https://evil.example@mission-transition-ecologique.beta.gouv.fr/', false],
+    ['https://user:password@mission-transition-ecologique.beta.gouv.fr/', false],
+    ['https://mission-transition-ecologique.beta.gouv.fr/aides\t', false]
   ])('isHttpUrl(%s) is %s', (value, expected) => {
     expect(LinkDetector.isHttpUrl(value)).toBe(expected)
   })
