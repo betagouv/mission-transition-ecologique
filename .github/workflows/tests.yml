@@ -100,3 +100,5 @@ jobs:
       - run: npm clean-install --foreground-scripts
 
       - run: npx nx run @tee/backend-ddd:test
+
+      - run: npx nx run @tee/nuxt:test

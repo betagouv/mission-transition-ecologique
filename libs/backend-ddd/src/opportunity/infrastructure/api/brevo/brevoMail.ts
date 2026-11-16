@@ -3,15 +3,16 @@ import { Maybe } from 'true-myth'
 import { OpportunityAssociatedData } from '../../../domain/opportunityAssociatedData'
 import Config from '../../../../config'
 import { MailerManager } from '../../../domain/spi'
-import { ProgramType, ProgramNameFormatter, ProjectType } from '@tee/data'
+import { ProgramType, ProgramNameFormatter } from '@tee/data'
 import { Opportunity } from '@tee/common'
 import Monitor from '../../../../common/domain/monitoring/monitor'
 import { ensureError } from '../../../../common/domain/error/errors'
-import { CustomProject } from '../../../domain/types'
 
 export default class BrevoMail {
   private readonly _programTemplateReceipt = 11
   private readonly _projectTemplateReceipt = 12
+  // The custom project title is typed by the user: it is never echoed in the email sent to the given address (phishing)
+  static readonly customProjectName = 'Projet sur mesure'
   private _api = new TransactionalEmailsApi()
 
   constructor() {
@@ -36,51 +37,43 @@ export default class BrevoMail {
 
     if (associatedData.isProgram()) {
       email.templateId = this._programTemplateReceipt
-      email.params = this._paramsProgram(opportunity, associatedData.data)
+      email.params = this._paramsProgram(associatedData.data)
     } else if (associatedData.isProject() || associatedData.isCustomProject()) {
       email.templateId = this._projectTemplateReceipt
-      email.params = this._paramsProject(opportunity, associatedData.data)
+      email.params = this._paramsProject(associatedData.isCustomProject() ? BrevoMail.customProjectName : associatedData.data.title)
     } else {
       throw new Error(`Unsupported Opportunity Type in brevo mail receipt`)
     }
     email.sender = { id: Config.BREVO_SENDER_ID }
-    email.to = [{ email: opportunity.email, name: this._getFullName(opportunity) }]
+    // The recipient name is not set: it would echo the first and last names typed by the user in the "To" header
+    email.to = [{ email: opportunity.email }]
 
     this._setHeaders(email)
 
     return email
   }
 
-  private _paramsProgram(opportunity: Opportunity, program: ProgramType) {
+  // Only our own data is sent to the templates: nothing typed by the user can be echoed in the email,
+  // even if a template is changed later (phishing)
+  private _paramsProgram(program: ProgramType) {
     return {
       programName: program.titre,
       prefixedProgramName: ProgramNameFormatter.getPrefixedProgramName(program),
-      programLink: opportunity.linkToPage,
       programPromise: program.promesse,
       operatorName: program['opérateur de contact'],
-      needs: opportunity.message,
-      firstname: opportunity.firstName,
-      lastname: opportunity.lastName,
-      phone: opportunity.phoneNumber,
-      siret: opportunity.companySiret,
-      date: new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'numeric', day: 'numeric' })
+      date: this._date()
     }
   }
 
-  private _paramsProject(opportunity: Opportunity, data: ProjectType | CustomProject) {
+  private _paramsProject(projectName: string) {
     return {
-      projectName: data.title,
-      needs: opportunity.message,
-      firstname: opportunity.firstName,
-      lastname: opportunity.lastName,
-      phone: opportunity.phoneNumber,
-      siret: opportunity.companySiret,
-      date: new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'numeric', day: 'numeric' })
+      projectName: projectName,
+      date: this._date()
     }
   }
 
-  private _getFullName(opportunity: Opportunity) {
-    return `${opportunity.firstName} ${opportunity.lastName}`
+  private _date() {
+    return new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'numeric', day: 'numeric' })
   }
 
   private _setHeaders(email: SendSmtpEmail) {

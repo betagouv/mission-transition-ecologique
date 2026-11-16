@@ -20,6 +20,13 @@
         "sass-lint"
       ]
     },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/nuxt",
+        "command": "nuxi prepare && vitest run"
+      }
+    },
     "type-check": {
       "executor": "nx:run-commands",
       "options": {

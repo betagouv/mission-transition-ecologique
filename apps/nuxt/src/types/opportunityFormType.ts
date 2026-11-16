@@ -3,8 +3,8 @@ import { RouteName } from '@/types/routeType'
 
 export type FormDataType = ProjectFormDataType | BaseFormDataType
 export interface BaseFormDataType {
-  name: StringFieldInputType
-  surname: StringFieldInputType
+  name: ValidatedStringFieldInputType
+  surname: ValidatedStringFieldInputType
   tel: ValidatedStringFieldInputType
   email: ValidatedStringFieldInputType
   siret: ValidatedStringFieldInputType
@@ -14,7 +14,7 @@ export interface BaseFormDataType {
 }
 
 export interface ProjectFormDataType extends BaseFormDataType {
-  projectTitle: StringFieldInputType
+  projectTitle: ValidatedStringFieldInputType
 }
 
 export type DefaultFieldFormType = {
@@ -32,6 +32,10 @@ export type DefaultFieldFormType = {
   wrapperClass?: string
   rows?: number
   colSize?: number
+  // Native maxlength of the input, same limit as the API schema
+  maxLength?: number
+  // Displayed under the field, unlike hint which is displayed under the label
+  bottomHint?: string
   callOut?: InputCalloutType
 }
 
