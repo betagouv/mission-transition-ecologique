@@ -2,6 +2,7 @@ import { PublicodeObjective, StructureSize } from '../questionnaire'
 import { ThemeId } from '../theme/types'
 import { OpportunityType } from './opportunityTypes'
 import { z } from 'zod'
+import { EmailValidator } from '../establishment/validator/emailValidator'
 import { PhoneValidator } from '../establishment/validator/phoneValidator'
 import { LinkDetector } from '../validator/linkDetector'
 import { NameValidator } from '../validator/nameValidator'
@@ -42,11 +43,11 @@ const httpUrlSchema = z
 export const contactDetailsSchema = z.object({
   firstName: nameSchema,
   lastName: nameSchema,
-  email: z.string().trim().max(MaxLength.email).email(),
+  email: EmailValidator.schema,
   phoneNumber: phoneSchema,
   companySiret: z.string().max(MaxLength.companySiret),
-  companyName: z.string().optional().nullable(),
-  companySector: z.string().optional(),
+  companyName: z.string().max(MaxLength.companyName).optional().nullable(),
+  companySector: z.string().max(MaxLength.companySector).optional(),
   companySize: structureSizeSchema.optional()
 })
 
@@ -57,7 +58,7 @@ export const opportunityDetailsBaseSchema = z.object({
   linkToCatalog: httpUrlSchema,
   message: z.string().max(MaxLength.message),
   priorityObjectives: z.array(publicodeObjectiveSchema).optional(),
-  otherData: z.string().optional(),
+  otherData: z.string().max(MaxLength.otherData).optional(),
   theme: themeIdSchema
 })
 

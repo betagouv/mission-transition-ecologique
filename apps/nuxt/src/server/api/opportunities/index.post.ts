@@ -1,5 +1,5 @@
 import { opportunityBodySchema } from '@tee/common'
-import { defineEventHandler, getRequestHeader } from 'h3'
+import { defineEventHandler, getRequestHeader, readRawBody } from 'h3'
 import { Monitor, OpportunityService, OptInRequiredError, ServiceNotFoundError } from '@tee/backend-ddd'
 import { JsonContentType } from '~/server/utils/jsonContentType'
 import { OpportunityLinkHosts } from '~/server/utils/opportunityLinkHosts'
@@ -45,7 +45,9 @@ defineRouteMeta({
   }
 })
 
-// A legitimate request weighs a few kilobytes: larger bodies are rejected before being parsed
+// A legitimate request weighs a few kilobytes: larger bodies are rejected before being validated.
+// The size is measured on the body itself, as a chunked request has no Content-Length header.
+// The xssValidator middleware of nuxt-security has already read the body at this point.
 const maxBodySize = 100_000
 
 export default defineEventHandler(async (event) => {
@@ -57,7 +59,8 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  if (Number(getRequestHeader(event, 'content-length') ?? 0) > maxBodySize) {
+  const rawBody = await readRawBody(event, false)
+  if (rawBody !== undefined && rawBody.length > maxBodySize) {
     throw createError({
       statusCode: 413,
       statusMessage: 'Request body too large'
@@ -67,7 +70,8 @@ export default defineEventHandler(async (event) => {
   const opportunityBody = await readValidatedBody(event, opportunityBodySchema.safeParse)
 
   if (opportunityBody.error) {
-    Monitor.error('Error in opportunity validation', { error: opportunityBody.error })
+    // Warning: rejections are expected (bots, phishing attempts) and must not flood the error alerts
+    Monitor.warning('Error in opportunity validation', { error: opportunityBody.error })
     throw createError({
       statusCode: 422,
       statusMessage: opportunityBody.error.message

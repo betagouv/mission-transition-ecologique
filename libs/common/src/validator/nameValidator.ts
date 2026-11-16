@@ -14,6 +14,8 @@ export class NameValidator {
   }
 
   static readonly validate = (name: string | undefined): boolean => {
+    // Cheap guard before normalizing: the raw name may hold extra spaces that the normalization removes,
+    // so it is allowed twice the final length; the exact length is checked after normalization
     if (name === undefined || name.length > this.maxLength * 2) {
       return false
     }

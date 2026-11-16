@@ -112,6 +112,26 @@ describe('opportunityBodySchema anti-phishing validation', () => {
   test('accepts a phone number with spaces and international prefix', () => {
     expect(parse({ phoneNumber: '+33 6 05 04 03 02' }).success).toBe(true)
   })
+
+  test.each([['prenom+tag@domaine.fr'], ['jean.dupont@orange.fr'], ["o'brien@exemple.fr"]])('accepts the email %s', (email) => {
+    expect(parse({ email }).success).toBe(true)
+  })
+
+  test.each([['jean..dupont@orange.fr'], ['.jean@exemple.fr'], ['jean.@exemple.fr'], ['jean@exemple..fr'], ['jean@-exemple.fr']])(
+    'rejects the email %s',
+    (email) => {
+      expect(parse({ email }).success).toBe(false)
+    }
+  )
+
+  test.each([
+    ['companyName', OpportunityFieldMaxLength.companyName],
+    ['companySector', OpportunityFieldMaxLength.companySector],
+    ['otherData', OpportunityFieldMaxLength.otherData]
+  ])('bounds the length of %s', (field, maxLength) => {
+    expect(parse({ [field]: 'a'.repeat(maxLength) }).success).toBe(true)
+    expect(parse({ [field]: 'a'.repeat(maxLength + 1) }).success).toBe(false)
+  })
 })
 
 describe('opportunityBodySchema XSS validation', () => {
