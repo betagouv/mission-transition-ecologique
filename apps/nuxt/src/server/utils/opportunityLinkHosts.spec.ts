@@ -15,7 +15,7 @@ const eventWithHeaders = (headers: Record<string, string>) => {
   return createEvent(req, new ServerResponse(req))
 }
 
-const opportunity = (linkToPage: string, linkToCatalog: string | undefined): Opportunity => ({
+const opportunity = (linkToCatalog: string | undefined): Opportunity => ({
   type: OpportunityType.Program,
   id: 'accelerateur-decarbonation',
   firstName: 'Jean',
@@ -24,8 +24,8 @@ const opportunity = (linkToPage: string, linkToCatalog: string | undefined): Opp
   phoneNumber: '0605040302',
   companySiret: '83014132100034',
   message: 'Bonjour',
-  linkToPage,
-  linkToCatalog
+  // Cast: the API still receives a missing catalog link from clients that do not follow the schema
+  linkToCatalog: linkToCatalog as string
 })
 
 describe('OpportunityLinkHosts', () => {
@@ -53,20 +53,21 @@ describe('OpportunityLinkHosts', () => {
     expect(OpportunityLinkHosts.allowedHosts(reviewAppHost, siteUrl)).toEqual([OpportunityLinkHosts.productionHost, reviewAppHost])
   })
 
-  it('accepts links on the allowed hosts', () => {
-    const allowedHosts = OpportunityLinkHosts.allowedHosts(reviewAppHost, undefined)
-    const links = opportunity(`https://${reviewAppHost}/aides-entreprise/x`, `https://${OpportunityLinkHosts.productionHost}/custom`)
+  it.each([[`https://${reviewAppHost}/aides-entreprise/x`], [`https://${OpportunityLinkHosts.productionHost}/custom`]])(
+    'accepts a catalog link on an allowed host (%s)',
+    (linkToCatalog) => {
+      const allowedHosts = OpportunityLinkHosts.allowedHosts(reviewAppHost, undefined)
 
-    expect(OpportunityLinkHosts.invalidLinks(links, allowedHosts)).toEqual([])
-  })
+      expect(OpportunityLinkHosts.invalidLinks(opportunity(linkToCatalog), allowedHosts)).toEqual([])
+    }
+  )
 
-  it.each([
-    ['https://phishing.example/x', `https://${reviewAppHost}/x`, ['linkToPage']],
-    [`https://${reviewAppHost}/x`, 'https://tee-preprod-pr9999.osc-fr1.scalingo.io/x', ['linkToCatalog']],
-    [`https://${reviewAppHost}/x`, undefined, ['linkToCatalog']]
-  ])('names the invalid links (%s, %s)', (linkToPage, linkToCatalog, expected) => {
-    const allowedHosts = OpportunityLinkHosts.allowedHosts(reviewAppHost, undefined)
+  it.each([['https://phishing.example/x'], ['https://tee-preprod-pr9999.osc-fr1.scalingo.io/x'], [undefined]])(
+    'rejects the catalog link %s',
+    (linkToCatalog) => {
+      const allowedHosts = OpportunityLinkHosts.allowedHosts(reviewAppHost, undefined)
 
-    expect(OpportunityLinkHosts.invalidLinks(opportunity(linkToPage, linkToCatalog), allowedHosts)).toEqual(expected)
-  })
+      expect(OpportunityLinkHosts.invalidLinks(opportunity(linkToCatalog), allowedHosts)).toEqual(['linkToCatalog'])
+    }
+  )
 })

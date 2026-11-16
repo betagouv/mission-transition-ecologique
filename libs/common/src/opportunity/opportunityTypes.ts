@@ -19,7 +19,6 @@ export interface OpportunityDetails extends OpportunityDetailsBase {
 
 export interface OpportunityDetailsBase {
   type: OpportunityType
-  linkToPage: string
   titleMessage?: string
   linkToCatalog: string
   message: string

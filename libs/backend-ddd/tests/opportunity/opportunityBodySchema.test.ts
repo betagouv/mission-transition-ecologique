@@ -51,13 +51,13 @@ describe('opportunityBodySchema anti-phishing validation', () => {
       firstName: 'Support',
       lastName: 'Officiel',
       phoneNumber: '0000000000',
-      linkToPage: '/',
+      linkToCatalog: '/',
       message: 'Merci de confirmer vos identifiants sous 24h : https://phishing.example'
     })
 
     expect(result.success).toBe(false)
     const fields = result.error?.issues.map((issue) => issue.path.at(-1))
-    expect(fields).toEqual(expect.arrayContaining(['titleMessage', 'linkToPage']))
+    expect(fields).toEqual(expect.arrayContaining(['titleMessage', 'linkToCatalog']))
   })
 
   test.each([
@@ -68,7 +68,7 @@ describe('opportunityBodySchema anti-phishing validation', () => {
     ['phoneNumber', 'https://phishing.example'],
     ['phoneNumber', '06'],
     ['email', 'not-an-email'],
-    ['linkToPage', '/'],
+    ['linkToCatalog', '/'],
     ['linkToCatalog', 'javascript:alert(1)'],
     ['message', 'a'.repeat(OpportunityFieldMaxLength.message + 1)]
   ])('rejects %s = %s', (field, value) => {
@@ -79,7 +79,15 @@ describe('opportunityBodySchema anti-phishing validation', () => {
     expect(parse({ linkToCatalog }).success).toBe(false)
   })
 
-  test.each([['titleMessage'], ['firstName'], ['lastName'], ['phoneNumber'], ['linkToPage'], ['linkToCatalog']])(
+  // linkToPage is no longer used: clients that still send it must not be rejected
+  test.each([['/'], ['https://agirpourlatransition.ademe.fr/x'], [undefined]])('ignores linkToPage (%s)', (linkToPage) => {
+    const result = parse({ linkToPage })
+
+    expect(result.success).toBe(true)
+    expect(result.data?.opportunity).not.toHaveProperty('linkToPage')
+  })
+
+  test.each([['titleMessage'], ['firstName'], ['lastName'], ['phoneNumber'], ['linkToCatalog']])(
     'rejects a very long %s quickly (ReDoS)',
     (field) => {
       const start = performance.now()

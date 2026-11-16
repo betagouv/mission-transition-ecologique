@@ -52,7 +52,6 @@ export const contactDetailsSchema = z.object({
 
 export const opportunityDetailsBaseSchema = z.object({
   type: opportunityTypeSchema,
-  linkToPage: httpUrlSchema,
   titleMessage: plainTextSchema(MaxLength.titleMessage).optional(),
   // Required: sent as origin_url to Place des Entreprises, which rejects the solicitation without it
   linkToCatalog: httpUrlSchema,

@@ -76,7 +76,6 @@ export default class OpportunityApi extends RequestApi {
       companySize: TrackStructure.getSize() ?? undefined,
       message: this._opportunityForm.needs.value,
       otherData: this._getAllValuesFromUsedTrack(),
-      linkToPage: this._generateLinkToPage(),
       linkToCatalog: this._generateCatalogLink()
     }
     return {
@@ -90,16 +89,6 @@ export default class OpportunityApi extends RequestApi {
       return this._opportunityForm.projectTitle.value as string
     }
     return this._id?.toString() as string
-  }
-
-  private _generateLinkToPage(): string {
-    const router = useRouter()
-    if (router) {
-      const { fullPath } = router.currentRoute.value
-      return new URL(fullPath, window.location.origin).href
-    }
-
-    return ''
   }
 
   private _generateCatalogLink(): string {

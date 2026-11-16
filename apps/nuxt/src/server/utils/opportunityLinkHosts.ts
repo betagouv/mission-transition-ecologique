@@ -19,14 +19,13 @@ export class OpportunityLinkHosts {
     return hosts
   }
 
+  // linkToCatalog is the only link we use: it is sent to Place des Entreprises and read by the advisors
   static invalidLinks(opportunity: Opportunity, allowedHosts: string[]): string[] {
-    const links: Record<string, string | undefined> = {
-      linkToPage: opportunity.linkToPage,
-      linkToCatalog: opportunity.linkToCatalog
+    const link: string | undefined = opportunity.linkToCatalog
+    if (link === undefined || !LinkDetector.hasAllowedHost(link, allowedHosts)) {
+      return ['linkToCatalog']
     }
 
-    return Object.entries(links)
-      .filter(([, link]) => link === undefined || !LinkDetector.hasAllowedHost(link, allowedHosts))
-      .map(([field]) => field)
+    return []
   }
 }

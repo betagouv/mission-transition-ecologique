@@ -213,18 +213,7 @@ defineRouteMeta({
             properties: {
               opportunity: {
                 type: 'object',
-                required: [
-                  'firstName',
-                  'lastName',
-                  'email',
-                  'phoneNumber',
-                  'companySiret',
-                  'type',
-                  'id',
-                  'linkToPage',
-                  'linkToCatalog',
-                  'message'
-                ],
+                required: ['firstName', 'lastName', 'email', 'phoneNumber', 'companySiret', 'type', 'id', 'linkToCatalog', 'message'],
                 properties: {
                   firstName: {
                     type: 'string',
@@ -258,11 +247,6 @@ defineRouteMeta({
                     description: 'Objet de la demande : un dispositif, un projet du catalogue ou un projet libre.'
                   },
                   id: { type: 'string', maxLength: 200, description: 'Identifiant du dispositif ou slug du projet concerné.' },
-                  linkToPage: {
-                    type: 'string',
-                    format: 'uri',
-                    description: 'URL absolue (http ou https) de la page depuis laquelle la demande est envoyée, sur le domaine du site.'
-                  },
                   titleMessage: {
                     type: 'string',
                     maxLength: 200,
