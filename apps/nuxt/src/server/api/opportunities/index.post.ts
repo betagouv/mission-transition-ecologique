@@ -1,6 +1,7 @@
 import { opportunityBodySchema } from '@tee/common'
 import { defineEventHandler, getRequestHeader } from 'h3'
 import { Monitor, OpportunityService, OptInRequiredError, ServiceNotFoundError } from '@tee/backend-ddd'
+import { JsonContentType } from '~/server/utils/jsonContentType'
 import { OpportunityLinkHosts } from '~/server/utils/opportunityLinkHosts'
 
 defineRouteMeta({
@@ -27,6 +28,10 @@ defineRouteMeta({
         description: 'Body de plus de 100 Ko.',
         content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
       },
+      415: {
+        description: 'En-tête `Content-Type` absent ou différent de `application/json`.',
+        content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
+      },
       422: {
         description:
           'Body invalide (champ manquant, format incorrect, lien interdit, URL hors du domaine du site), ou consentement `optIn` absent.',
@@ -44,6 +49,14 @@ defineRouteMeta({
 const maxBodySize = 100_000
 
 export default defineEventHandler(async (event) => {
+  // Without this check, a third-party site could make its visitors' browsers send requests (text/plain skips the CORS preflight)
+  if (!JsonContentType.isJson(getRequestHeader(event, 'content-type'))) {
+    throw createError({
+      statusCode: 415,
+      statusMessage: `Content-Type must be ${JsonContentType.mediaType}`
+    })
+  }
+
   if (Number(getRequestHeader(event, 'content-length') ?? 0) > maxBodySize) {
     throw createError({
       statusCode: 413,
