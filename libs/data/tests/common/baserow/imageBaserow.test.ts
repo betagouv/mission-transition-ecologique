@@ -46,6 +46,8 @@ describe('ImageBaserow', () => {
 
   beforeEach(() => {
     vi.restoreAllMocks()
+    // Vitest 4: restoreAllMocks only restores spies, so clear the calls recorded on vi.fn() mocks
+    vi.clearAllMocks()
     // reset sharp chain mocks
     mockMetadata.mockReset()
     mockResize.mockReset()

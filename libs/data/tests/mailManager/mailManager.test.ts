@@ -6,10 +6,13 @@ vi.mock('../../src/common/brevo/brevoMail', async () => {
 })
 vi.mock('../../src/common/baserow/programBaserow', () => {
   return {
-    ProgramBaserow: vi.fn().mockImplementation(() => ({
-      getPrograms: vi.fn(),
-      patchProgram: vi.fn()
-    }))
+    // Vitest 4: a mock called with `new` needs a `function` implementation, not an arrow function
+    ProgramBaserow: vi.fn().mockImplementation(function () {
+      return {
+        getPrograms: vi.fn(),
+        patchProgram: vi.fn()
+      }
+    })
   }
 })
 import { MailManager } from '../../src/program/services/mailManager'
@@ -40,7 +43,7 @@ describe('MailManager', () => {
 
       const patchProgramSpy = vi.fn().mockResolvedValue(undefined)
 
-      ;(ProgramBaserow as any).mockImplementation(() => {
+      ;(ProgramBaserow as any).mockImplementation(function () {
         return {
           getPrograms: vi.fn().mockResolvedValue([program]),
           patchProgram: patchProgramSpy
