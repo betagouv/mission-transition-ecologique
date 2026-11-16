@@ -41,33 +41,41 @@ describe('OpportunityLinkHosts', () => {
     expect(OpportunityLinkHosts.requestHost(event)).toBe(reviewAppHost)
   })
 
-  it('allows the production host, the request host and the site url host', () => {
+  it('allows the production host, the partner hosts, the request host and the site url host', () => {
     expect(OpportunityLinkHosts.allowedHosts(reviewAppHost, 'https://preprod.example.fr')).toEqual([
       OpportunityLinkHosts.productionHost,
+      ...OpportunityLinkHosts.partnerHosts,
       reviewAppHost,
       'preprod.example.fr'
     ])
   })
 
   it.each([[undefined], [''], ['not an url']])('ignores an invalid site url (%s)', (siteUrl) => {
-    expect(OpportunityLinkHosts.allowedHosts(reviewAppHost, siteUrl)).toEqual([OpportunityLinkHosts.productionHost, reviewAppHost])
+    expect(OpportunityLinkHosts.allowedHosts(reviewAppHost, siteUrl)).toEqual([
+      OpportunityLinkHosts.productionHost,
+      ...OpportunityLinkHosts.partnerHosts,
+      reviewAppHost
+    ])
   })
 
-  it.each([[`https://${reviewAppHost}/aides-entreprise/x`], [`https://${OpportunityLinkHosts.productionHost}/custom`]])(
-    'accepts a catalog link on an allowed host (%s)',
-    (linkToCatalog) => {
-      const allowedHosts = OpportunityLinkHosts.allowedHosts(reviewAppHost, undefined)
+  it.each([
+    [`https://${reviewAppHost}/aides-entreprise/x`],
+    [`https://${OpportunityLinkHosts.productionHost}/custom`],
+    ['https://rec-agir.direct.horsprod.ademe-scw.fr/entreprises/aides-financieres/catalogue/x']
+  ])('accepts a catalog link on an allowed host (%s)', (linkToCatalog) => {
+    const allowedHosts = OpportunityLinkHosts.allowedHosts(reviewAppHost, undefined)
 
-      expect(OpportunityLinkHosts.invalidLinks(opportunity(linkToCatalog), allowedHosts)).toEqual([])
-    }
-  )
+    expect(OpportunityLinkHosts.invalidLinks(opportunity(linkToCatalog), allowedHosts)).toEqual([])
+  })
 
-  it.each([['https://phishing.example/x'], ['https://tee-preprod-pr9999.osc-fr1.scalingo.io/x'], [undefined]])(
-    'rejects the catalog link %s',
-    (linkToCatalog) => {
-      const allowedHosts = OpportunityLinkHosts.allowedHosts(reviewAppHost, undefined)
+  it.each([
+    ['https://phishing.example/x'],
+    ['https://tee-preprod-pr9999.osc-fr1.scalingo.io/x'],
+    ['https://rec-agir.direct.horsprod.ademe-scw.fr.phishing.example/x'],
+    [undefined]
+  ])('rejects the catalog link %s', (linkToCatalog) => {
+    const allowedHosts = OpportunityLinkHosts.allowedHosts(reviewAppHost, undefined)
 
-      expect(OpportunityLinkHosts.invalidLinks(opportunity(linkToCatalog), allowedHosts)).toEqual(['linkToCatalog'])
-    }
-  )
+    expect(OpportunityLinkHosts.invalidLinks(opportunity(linkToCatalog), allowedHosts)).toEqual(['linkToCatalog'])
+  })
 })

@@ -5,13 +5,16 @@ export class OpportunityLinkHosts {
   // The custom project form always links to the production catalog
   static readonly productionHost = 'mission-transition-ecologique.beta.gouv.fr'
 
+  // Partner sites allowed to send their own pages as catalog link (AGIR test environment)
+  static readonly partnerHosts = ['rec-agir.direct.horsprod.ademe-scw.fr']
+
   // The Host header is used for routing by Cloudflare and Scalingo, unlike X-Forwarded-Host which any client can set
   static requestHost(event: H3Event): string {
     return getRequestURL(event).host
   }
 
   static allowedHosts(requestHost: string, siteUrl: string | undefined): string[] {
-    const hosts = [this.productionHost, requestHost]
+    const hosts = [this.productionHost, ...this.partnerHosts, requestHost]
     if (siteUrl && LinkDetector.isHttpUrl(siteUrl)) {
       hosts.push(new URL(siteUrl).host)
     }

@@ -257,7 +257,7 @@ defineRouteMeta({
                     type: 'string',
                     format: 'uri',
                     description:
-                      "URL absolue (http ou https) de la fiche du dispositif ou du projet, sur le domaine du site. Transmise aux Conseillers-Entreprises comme URL de la page d'origine."
+                      "URL absolue (http ou https) de la fiche du dispositif ou du projet, sur le domaine du site ou d'un partenaire autorisé. Transmise aux Conseillers-Entreprises comme URL de la page d'origine."
                   },
                   message: { type: 'string', maxLength: 2500, description: "Message de l'entreprise." },
                   priorityObjectives: {
