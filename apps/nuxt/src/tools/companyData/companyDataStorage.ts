@@ -1,7 +1,7 @@
 import { CompanyDataStorageKey, CompanyDataType } from '@/types'
 import { LocalStorageHandler } from '@/tools/storage/localStorageHandler'
 import { StructureSize } from '@tee/common'
-import { ref, Ref } from 'vue'
+import { computed, ComputedRef, ref, Ref } from 'vue'
 
 export class CompanyDataStorage {
   private static readonly _storageHandler = new LocalStorageHandler()

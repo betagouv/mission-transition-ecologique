@@ -22,6 +22,7 @@ import { CompanyDataType } from '@/tools/companyData/types/companyDataType'
 import { useUsedTrackStore } from '@/stores/usedTrack'
 import { CompanyDataValidator } from '@/tools/companyData/companyDataSchemaValidator'
 import TrackCity from '@/tools/questionnaire/track/trackCity'
+import { computed } from 'vue'
 
 export class CompanyData {
   static saveDataToStorage(data: CompanyDataType) {

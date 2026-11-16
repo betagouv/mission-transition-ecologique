@@ -26,8 +26,6 @@ export default defineConfig({
     globals: true,
     environment: 'jsdom',
     include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    // Relies on Nuxt auto-imports (computed), which need the Nuxt test environment: to fix before running it again
-    exclude: ['src/tools/companyData/companyDataStorage.spec.ts'],
     reporters: ['default'],
     coverage: {
       reportsDirectory: '../../coverage/apps/nuxt',
