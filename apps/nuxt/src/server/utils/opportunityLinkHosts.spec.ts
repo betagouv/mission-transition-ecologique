@@ -61,7 +61,8 @@ describe('OpportunityLinkHosts', () => {
   it.each([
     [`https://${reviewAppHost}/aides-entreprise/x`],
     [`https://${OpportunityLinkHosts.productionHost}/custom`],
-    ['https://rec-agir.direct.horsprod.ademe-scw.fr/entreprises/aides-financieres/catalogue/x']
+    ['https://rec-agir.direct.horsprod.ademe-scw.fr/entreprises/aides-financieres/catalogue/x'],
+    ['https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/x']
   ])('accepts a catalog link on an allowed host (%s)', (linkToCatalog) => {
     const allowedHosts = OpportunityLinkHosts.allowedHosts(reviewAppHost, undefined)
 
@@ -72,6 +73,8 @@ describe('OpportunityLinkHosts', () => {
     ['https://phishing.example/x'],
     ['https://tee-preprod-pr9999.osc-fr1.scalingo.io/x'],
     ['https://rec-agir.direct.horsprod.ademe-scw.fr.phishing.example/x'],
+    ['https://agirpourlatransition.ademe.fr.phishing.example/x'],
+    ['https://phishing-agirpourlatransition.ademe.fr/x'],
     [undefined]
   ])('rejects the catalog link %s', (linkToCatalog) => {
     const allowedHosts = OpportunityLinkHosts.allowedHosts(reviewAppHost, undefined)
