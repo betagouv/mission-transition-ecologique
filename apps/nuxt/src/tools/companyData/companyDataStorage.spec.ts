@@ -1,9 +1,14 @@
-import { describe, expect, it } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
+import { createPinia, setActivePinia } from 'pinia'
 import { CompanyDataValidator } from './companyDataSchemaValidator'
 import { CompanyDataRegisterType } from '@/tools/companyData/types/companyDataType'
 import { CompanyData } from '@/tools/companyData/companyData'
 
 describe('CompanyDataStorage - isDataFull', () => {
+  beforeEach(() => {
+    setActivePinia(createPinia())
+  })
+
   it('should return false if company data is missing', () => {
     const result = CompanyData.isDataFullComputed().value
     expect(result).toBe(false)
