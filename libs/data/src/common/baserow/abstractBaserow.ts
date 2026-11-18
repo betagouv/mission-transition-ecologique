@@ -47,7 +47,7 @@ export abstract class AbstractBaserow {
       let results = response.data.results
       let next = response.data.next
       while (next) {
-        const response = await this._axios.get(next, {
+        const response = await this._axios.get(this._forceHttps(next), {
           params: filters ? filters.get() : {}
         })
         await this._delay(100)
@@ -70,6 +70,13 @@ export abstract class AbstractBaserow {
       console.error('Error fetching a specific row of data from baserow :', error)
       return null
     }
+  }
+
+  // Baserow returns "next" pagination links over http://. Following the 301 to https://
+  // is a cross-origin redirect, so axios (>= 1.21) strips the Authorization header and
+  // the request fails with a 401. Requesting https:// directly avoids the redirect.
+  private _forceHttps(url: string): string {
+    return url.replace(/^http:\/\//, 'https://')
   }
 
   protected async _delay(ms: number): Promise<void> {
