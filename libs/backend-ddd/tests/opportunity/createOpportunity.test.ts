@@ -329,3 +329,21 @@ EXPECT the hub transmission status to be stored on the opportunity`, () => {
     expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Failed })
   })
 })
+
+describe(`
+   WHEN creating a new opportunity
+EXPECT the partner of the API key to be sent to the opportunity repository only when there is one`, () => {
+  test.each([['agir'], [undefined]])('partner %s', async (partner) => {
+    const create = vi.fn(dummyAddOpportunity)
+    const createOpportunity = makeCreateOpportunity(dummyContactRepository, { ...dummyOpportunityRepository, create })
+
+    expectToBeOk(await createOpportunity(fakeOpportunity(), true, partner))
+
+    const createdOpportunity = (create.mock.calls[0] as unknown[] | undefined)?.[0] as object
+    if (partner) {
+      expect(createdOpportunity).toHaveProperty('partner', partner)
+    } else {
+      expect(createdOpportunity).not.toHaveProperty('partner')
+    }
+  })
+})

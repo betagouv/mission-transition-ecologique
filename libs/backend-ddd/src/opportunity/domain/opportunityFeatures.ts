@@ -28,7 +28,7 @@ export default class OpportunityFeatures {
     private readonly _establishmentFeatures: EstablishmentFeatures
   ) {}
 
-  createOpportunity = async (opportunity: Opportunity, optIn: true): Promise<Result<OpportunityId, Error>> => {
+  createOpportunity = async (opportunity: Opportunity, optIn: true, partner?: string): Promise<Result<OpportunityId, Error>> => {
     const maybeFullOpportunity = await this._verifyAndAddEstablishmentData(opportunity)
     if (maybeFullOpportunity.isErr) {
       return Result.err(maybeFullOpportunity.error)
@@ -41,7 +41,10 @@ export default class OpportunityFeatures {
     }
 
     const opportunityWithContactId = this._addContactIdToOpportunity(opportunity, contactIdResult.value.id)
-    const opportunityWithOperatorAndContact = this._addContactOperatorToOpportunity(opportunityWithContactId)
+    const opportunityWithOperatorAndContact = {
+      ...this._addContactOperatorToOpportunity(opportunityWithContactId),
+      ...(partner && { partner })
+    }
 
     const opportunityAssociatedData = this._createOpportunityAssociatedData(opportunityWithOperatorAndContact)
     if (opportunityAssociatedData.isErr) {

@@ -56,6 +56,8 @@ export interface DealAttributes {
   objectifs_renseigns?: string
   oprateur_de_contact?: Operators
   autres_donnes?: string
+  // "partenaire" text deal attribute: partner who sent the opportunity through the API, empty for the TEE site
+  partenaire?: string
 }
 
 export interface DealUpdateAttributes {

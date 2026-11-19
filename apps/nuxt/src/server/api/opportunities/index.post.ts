@@ -135,7 +135,11 @@ export default defineEventHandler(async (event) => {
     }
   }
 
-  const opportunityResult = await new OpportunityService().createOpportunity(opportunityBody.data.opportunity, opportunityBody.data.optIn)
+  const opportunityResult = await new OpportunityService().createOpportunity(
+    opportunityBody.data.opportunity,
+    opportunityBody.data.optIn,
+    apiKeyCheck.partner
+  )
 
   if (opportunityResult.isErr) {
     Monitor.error('Error in createOpportunity', { query: opportunityBody.data, error: opportunityResult.error }, monitorTags)
