@@ -64,6 +64,7 @@ export default defineConfig<ConfigOptions>({
     env: {
       VITE_DATA_TEST: 'true',
       THIRD_PARTY_API_ENABLED: 'false',
+      OPPORTUNITY_API_KEYS: 'e2e-partner:e2e-api-key',
       PORT: '4242'
     },
     command: process.env.CI ? 'npm run start' : 'npm run build:start',

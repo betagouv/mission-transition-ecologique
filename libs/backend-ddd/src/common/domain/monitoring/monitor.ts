@@ -40,9 +40,10 @@ export default class Monitor {
     return this
   }
 
-  static warning(message: string, data?: { [key: string]: unknown }) {
+  static warning(message: string, data?: { [key: string]: unknown }, tags?: { [key: string]: string }) {
     Sentry.captureMessage(message, (scope) =>
       scope
+        .setTags(tags ?? {})
         .addBreadcrumb({
           type: 'warning',
           category: 'warning',
