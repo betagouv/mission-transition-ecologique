@@ -1,4 +1,4 @@
-import { NAF1 } from '@tee/common'
+import { NAF1, Opportunity, OpportunityType } from '@tee/common'
 import { Maybe, Result } from 'true-myth'
 import EstablishmentFeatures from '../../src/establishment/domain/establishmentFeatures'
 import {
@@ -299,7 +299,7 @@ EXPECT the failure to be reported to monitoring with the Brevo deal id and the o
     expect(error.message).toBe('unexpected failure')
     expect(data).toMatchObject({ brevoDealId: '1' })
     expect(tags).toEqual({ opportunity_transmission: 'failed' })
-    expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Failed })
+    expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Failed }, {})
   })
 })
 
@@ -327,7 +327,7 @@ EXPECT the hub transmission status to be stored on the opportunity`, () => {
     expectToBeOk(result)
 
     await vi.waitFor(() => expect(update).toHaveBeenCalled())
-    expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Sent, idCe: -1 })
+    expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Sent, idCe: -1 }, {})
   })
 
   test('an opportunity blocked by the daily transmission limit is marked as limited', async () => {
@@ -336,7 +336,7 @@ EXPECT the hub transmission status to be stored on the opportunity`, () => {
     expectToBeOk(result)
 
     await vi.waitFor(() => expect(update).toHaveBeenCalled())
-    expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Limited })
+    expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Limited }, {})
     await vi.waitFor(() => expect(emailReceiptSent).toBe(true))
   })
 
@@ -352,18 +352,27 @@ EXPECT the hub transmission status to be stored on the opportunity`, () => {
     expectToBeOk(result)
 
     await vi.waitFor(() => expect(update).toHaveBeenCalled())
-    expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Failed })
+    expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Failed }, {})
   })
 })
 
 describe(`
    WHEN creating a new opportunity with the partner of an API key
 EXPECT the partner to be carried by the associated data down to the Brevo deal, and only there`, () => {
-  test.each([['agir'], [undefined]])('partner %s', async (partner) => {
+  const opportunityOfType = (type: OpportunityType): Opportunity => ({ ...fakeOpportunity(), type, titleMessage: 'Mon projet' })
+
+  test.each([
+    [OpportunityType.Program, 'agir'],
+    [OpportunityType.Project, 'agir'],
+    [OpportunityType.CustomProject, 'agir'],
+    [OpportunityType.Program, undefined],
+    [OpportunityType.Project, undefined],
+    [OpportunityType.CustomProject, undefined]
+  ])('type %s, partner %s', async (type, partner) => {
     const create = vi.fn(dummyAddOpportunity)
     const createOpportunity = makeCreateOpportunity(dummyContactRepository, { ...dummyOpportunityRepository, create })
 
-    expectToBeOk(await createOpportunity(fakeOpportunity(), true, partner))
+    expectToBeOk(await createOpportunity(opportunityOfType(type), true, partner))
 
     const [createdOpportunity, associatedData] = create.mock.calls[0] as unknown as [
       OpportunityWithOperatorContactAndContactId,
@@ -372,5 +381,33 @@ EXPECT the partner to be carried by the associated data down to the Brevo deal, 
     expect(associatedData.partner).toBe(partner)
     expect(createdOpportunity).not.toHaveProperty('partner')
     expect(convertDomainToBrevoDeal(createdOpportunity, associatedData).partenaire).toBe(partner)
+  })
+})
+
+describe(`
+   WHEN creating an opportunity of a partner
+ EXPECT the partner tags to be given to the repositories, which add them to the errors they report`, () => {
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  test.each([
+    ['agir', { partner: 'agir' }],
+    [undefined, {}]
+  ])('partner %s', async (partner, monitorTags) => {
+    const createOrUpdate = vi.fn(dummyAddContact)
+    const update = vi.fn(dummyUpdateOpportunity)
+    const getDailyOpportunitiesByContactId = vi.fn(dummyDailyOpportunitiesWithLimitReached)
+    const createOpportunity = makeCreateOpportunity(
+      { createOrUpdate },
+      { ...dummyOpportunityRepository, update, getDailyOpportunitiesByContactId }
+    )
+
+    expectToBeOk(await createOpportunity(fakeOpportunity(), true, partner))
+
+    expect(createOrUpdate).toHaveBeenCalledWith(expect.anything(), true, monitorTags)
+    await vi.waitFor(() => expect(update).toHaveBeenCalled())
+    expect(getDailyOpportunitiesByContactId).toHaveBeenCalledWith(1, monitorTags)
+    expect(update).toHaveBeenCalledWith({ id: '1' }, { transmissionStatus: OpportunityHubTransmissionStatus.Limited }, monitorTags)
   })
 })

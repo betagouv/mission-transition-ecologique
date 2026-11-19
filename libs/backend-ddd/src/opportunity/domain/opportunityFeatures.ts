@@ -2,10 +2,12 @@ import { Result } from 'true-myth'
 import EstablishmentFeatures from '../../establishment/domain/establishmentFeatures'
 import ProjectFeatures from '../../project/domain/projectFeatures'
 import { OpportunityAssociatedData } from './opportunityAssociatedData'
+import { PartnerMonitorTags } from './partnerMonitorTags'
 import type { ContactRepository, MailerManager, OpportunityRepository } from './spi'
 import {
   OpportunityHubTransmissionStatus,
   OpportunityId,
+  OpportunityObjectDetails,
   OpportunityUpdateAttributes,
   OpportunityWithContactId,
   OpportunityWithOperatorContactAndContactId
@@ -34,9 +36,11 @@ export default class OpportunityFeatures {
       return Result.err(maybeFullOpportunity.error)
     }
     opportunity = maybeFullOpportunity.value
-    const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
+    // Tags of the steps before the associated data exists, which then carries them (monitorTags())
+    const monitorTags = PartnerMonitorTags.of(partner)
+    const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn, monitorTags)
     if (contactIdResult.isErr) {
-      Monitor.error('Error during contact creation', { error: contactIdResult.error }, partner ? { partner } : undefined)
+      Monitor.error('Error during contact creation', { error: contactIdResult.error }, monitorTags)
       return Result.err(contactIdResult.error)
     }
 
@@ -48,7 +52,7 @@ export default class OpportunityFeatures {
       Monitor.error(
         'Error during the creation of the Opportunity Associated Object',
         { error: opportunityAssociatedData.error },
-        partner ? { partner } : undefined
+        monitorTags
       )
       return Result.err(opportunityAssociatedData.error)
     }
@@ -82,37 +86,38 @@ export default class OpportunityFeatures {
 
   private _createOpportunityAssociatedData(
     opportunity: OpportunityWithOperatorContactAndContactId,
-    partner?: string
+    partner: string | undefined
   ): Result<OpportunityAssociatedData, Error> {
+    // Single construction: the partner is carried whatever the opportunity type
+    return this._getOpportunityObjectDetails(opportunity).map(
+      (details) => new OpportunityAssociatedData(opportunity.type, details, partner)
+    )
+  }
+
+  private _getOpportunityObjectDetails(opportunity: OpportunityWithOperatorContactAndContactId): Result<OpportunityObjectDetails, Error> {
     switch (opportunity.type) {
       case OpportunityType.Program: {
         const associatedProgram = this._getProgramById(opportunity.id)
         if (!associatedProgram) {
           return Result.err(new Error('Program with id ' + opportunity.id + 'not found'))
         }
-        return Result.ok(new OpportunityAssociatedData(OpportunityType.Program, associatedProgram, partner))
+        return Result.ok(associatedProgram)
       }
       case OpportunityType.Project: {
         const associatedProject = this._projectFeatures.getById(+opportunity.id)
         if (!associatedProject) {
           return Result.err(new Error('Project with id ' + opportunity.id + 'not found'))
         }
-        return Result.ok(new OpportunityAssociatedData(OpportunityType.Project, associatedProject, partner))
+        return Result.ok(associatedProject)
       }
       case OpportunityType.CustomProject:
         opportunity.id = opportunity.titleMessage || 'Projet sans Titre'
-        return Result.ok(
-          new OpportunityAssociatedData(
-            OpportunityType.CustomProject,
-            {
-              title: opportunity.titleMessage || 'Untitled',
-              theme: opportunity.theme
-            },
-            partner
-          )
-        )
+        return Result.ok({
+          title: opportunity.titleMessage || 'Untitled',
+          theme: opportunity.theme
+        })
       default:
-        return Result.err(new Error('Opportunity type not handled in _createOpportunityAssociatedData'))
+        return Result.err(new Error('Opportunity type not handled in _getOpportunityObjectDetails'))
     }
   }
 
@@ -162,7 +167,7 @@ export default class OpportunityFeatures {
     attributes: OpportunityUpdateAttributes,
     opportunityData: OpportunityAssociatedData
   ): Promise<void> {
-    const opportunityUpdateErr = await this._opportunityRepository.update(opportunityId, attributes)
+    const opportunityUpdateErr = await this._opportunityRepository.update(opportunityId, attributes, opportunityData.monitorTags())
     if (opportunityUpdateErr.isJust) {
       Monitor.warning(
         'Opportunity transmission status not updated',
@@ -218,7 +223,10 @@ export default class OpportunityFeatures {
       return false
     }
 
-    const previousDailyOpportunities = await this._opportunityRepository.getDailyOpportunitiesByContactId(opportunity.contactId)
+    const previousDailyOpportunities = await this._opportunityRepository.getDailyOpportunitiesByContactId(
+      opportunity.contactId,
+      opportunityData.monitorTags()
+    )
     if (previousDailyOpportunities.isErr) {
       return false
     }

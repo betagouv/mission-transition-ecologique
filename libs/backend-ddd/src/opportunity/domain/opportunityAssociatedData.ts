@@ -1,6 +1,7 @@
 import { OpportunityType, ThemeId } from '@tee/common'
 import { ProgramType, ProjectType } from '@tee/data'
 import { CustomProject, OpportunityObjectDetails } from './types'
+import { PartnerMonitorTags } from './partnerMonitorTags'
 
 export class OpportunityAssociatedData {
   constructor(
@@ -13,7 +14,7 @@ export class OpportunityAssociatedData {
 
   // Sentry tags of the whole opportunity workflow, to filter the errors of a partner (never the API key)
   public monitorTags(): { [key: string]: string } {
-    return this.partner ? { partner: this.partner } : {}
+    return PartnerMonitorTags.of(this.partner)
   }
 
   public isProgram(): this is { data: ProgramType } {

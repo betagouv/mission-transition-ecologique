@@ -1,6 +1,6 @@
 import { opportunityBodySchema } from '@tee/common'
 import { defineEventHandler, getRequestHeader, readRawBody, setResponseHeader } from 'h3'
-import { Monitor, OpportunityService, OptInRequiredError, ServiceNotFoundError } from '@tee/backend-ddd'
+import { Monitor, OpportunityService, OptInRequiredError, PartnerMonitorTags, ServiceNotFoundError } from '@tee/backend-ddd'
 import { JsonContentType } from '~/server/utils/jsonContentType'
 import { OpportunityApiKey, OpportunityApiKeyStatus } from '~/server/utils/opportunityApiKey'
 import { OpportunityLinkHosts } from '~/server/utils/opportunityLinkHosts'
@@ -184,7 +184,7 @@ export default defineEventHandler(async (event) => {
   }
 
   // Name of the partner calling with a valid key, to know who made the call (never the key itself)
-  const monitorTags = apiKeyCheck.partner ? { partner: apiKeyCheck.partner } : undefined
+  const monitorTags = PartnerMonitorTags.of(apiKeyCheck.partner)
 
   // Without this check, a third-party site could make its visitors' browsers send requests (text/plain skips the CORS preflight)
   if (!JsonContentType.isJson(getRequestHeader(event, 'content-type'))) {

@@ -9,15 +9,24 @@ import Monitor from '../../../../common/domain/monitoring/monitor'
 
 const DEBUG_BREVO_LIST_ID = '4'
 
-export const addBrevoContact: ContactRepository['createOrUpdate'] = async (contact: ContactDetails, optIn: true) => {
+export const addBrevoContact: ContactRepository['createOrUpdate'] = async (
+  contact: ContactDetails,
+  optIn: true,
+  monitorTags: { [key: string]: string }
+) => {
   const defaultListId = DEBUG_BREVO_LIST_ID
   const rawlistIds: string = process.env['BREVO_LIST_IDS'] || defaultListId
   const listIds = parseListIds(rawlistIds)
 
-  return requestCreateContact(listIds, contact, optIn)
+  return requestCreateContact(listIds, contact, optIn, monitorTags)
 }
 
-const requestCreateContact = async (listIds: number[], contact: ContactDetails, optIn: true): Promise<Result<ContactId, Error>> => {
+const requestCreateContact = async (
+  listIds: number[],
+  contact: ContactDetails,
+  optIn: true,
+  monitorTags: { [key: string]: string }
+): Promise<Result<ContactId, Error>> => {
   const requestPayload: BrevoPostContactPayload = {
     email: contact.email,
     updateEnabled: true,
@@ -27,7 +36,7 @@ const requestCreateContact = async (listIds: number[], contact: ContactDetails, 
   const responseResult = await new BrevoAPI().PostContact(requestPayload)
 
   if (responseResult.isErr) {
-    Monitor.error('Error in Brevo CreateContact api call', { payload: requestPayload, error: responseResult.error })
+    Monitor.error('Error in Brevo CreateContact api call', { payload: requestPayload, error: responseResult.error }, monitorTags)
     return Result.err(responseResult.error)
   }
 
@@ -37,16 +46,16 @@ const requestCreateContact = async (listIds: number[], contact: ContactDetails, 
   if (response.status == axios.HttpStatusCode.Created) {
     contactId = Result.ok(response.data as ContactId)
   } else {
-    contactId = await retrieveExistingContactId(contact.email)
+    contactId = await retrieveExistingContactId(contact.email, monitorTags)
   }
 
   return contactId
 }
 
-const retrieveExistingContactId = async (email: string): Promise<Result<ContactId, Error>> => {
+const retrieveExistingContactId = async (email: string, monitorTags: { [key: string]: string }): Promise<Result<ContactId, Error>> => {
   const responseResult = await new BrevoAPI().GetContact(email)
   if (responseResult.isErr) {
-    Monitor.error('Error in Brevo GetContact api call', { payload: email, error: responseResult.error })
+    Monitor.error('Error in Brevo GetContact api call', { payload: email, error: responseResult.error }, monitorTags)
 
     return Result.err(responseResult.error)
   }

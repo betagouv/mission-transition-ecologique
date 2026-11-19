@@ -4,6 +4,7 @@ import { ProgramType, ProjectType } from '@tee/data'
 import BrevoMail from '../../../../../src/opportunity/infrastructure/api/brevo/brevoMail'
 import { OpportunityAssociatedData } from '../../../../../src/opportunity/domain/opportunityAssociatedData'
 import { fakeOpportunity } from '../../../opportunity.fixtures'
+import Monitor from '../../../../../src/common/domain/monitoring/monitor'
 
 const sentEmail = async (associatedData: OpportunityAssociatedData): Promise<SendSmtpEmail> => {
   vi.stubEnv('BREVO_API_TOKEN', 'fake-token')
@@ -60,5 +61,29 @@ describe('BrevoMail return receipt', () => {
     const email = await sentEmail(new OpportunityAssociatedData(OpportunityType.Project, { title: 'Rénover mon bâtiment' } as ProjectType))
 
     expect(email.to).toEqual([{ email: fakeOpportunity().email }])
+  })
+})
+
+describe('BrevoMail return receipt error', () => {
+  afterEach(() => {
+    vi.unstubAllEnvs()
+    vi.restoreAllMocks()
+  })
+
+  test('reports the sending error with the partner tags', async () => {
+    vi.stubEnv('BREVO_API_TOKEN', 'fake-token')
+    vi.stubEnv('BREVO_SENDER_ID', '1')
+    const monitorException = vi.spyOn(Monitor, 'exception').mockReturnValue(Monitor)
+    const brevoMail = new BrevoMail()
+    ;(brevoMail as unknown as { _api: { sendTransacEmail: () => Promise<never> } })._api.sendTransacEmail = () =>
+      Promise.reject(new Error('brevo down'))
+
+    const error = await brevoMail.sendReturnReceipt(
+      fakeOpportunity(),
+      new OpportunityAssociatedData(OpportunityType.Program, fakeProgram, 'agir')
+    )
+
+    expect(error?.isJust).toBe(true)
+    expect(monitorException).toHaveBeenCalledWith(expect.any(Error), expect.anything(), { partner: 'agir' })
   })
 })

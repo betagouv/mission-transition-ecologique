@@ -72,20 +72,25 @@ const requestCreateDeal = async (
 
 const updateBrevoDeal: OpportunityRepository['update'] = async (
   dealId: OpportunityId,
-  updateAttributes: OpportunityUpdateAttributes
+  updateAttributes: OpportunityUpdateAttributes,
+  monitorTags: { [key: string]: string }
 ): Promise<Maybe<Error | null>> => {
   const brevoDeal = convertDomainToBrevoDealUpdate(updateAttributes)
 
-  return requestUpdateDeal(dealId, brevoDeal)
+  return requestUpdateDeal(dealId, brevoDeal, monitorTags)
 }
 
-const requestUpdateDeal = async (dealId: OpportunityId, attributes: DealUpdateAttributes): Promise<Maybe<Error>> => {
+const requestUpdateDeal = async (
+  dealId: OpportunityId,
+  attributes: DealUpdateAttributes,
+  monitorTags: { [key: string]: string }
+): Promise<Maybe<Error>> => {
   const responseResult = await new BrevoAPI().PatchDeal(dealId.id, {
     attributes: attributes
   })
 
   if (responseResult.isErr) {
-    Monitor.error('Error in Brevo PatchDeal api call', { dealID: dealId.id, attributes, error: responseResult.error })
+    Monitor.error('Error in Brevo PatchDeal api call', { dealID: dealId.id, attributes, error: responseResult.error }, monitorTags)
   }
 
   return Maybe.of(responseResult.isErr ? responseResult.error : null)
@@ -175,7 +180,10 @@ const getBrevoCreationDates = async (): Promise<Result<Date[], Error>> => {
   }
 }
 
-const getDailyOpportunitiesByContactId = async (contactId: number): Promise<Result<OpportunityDetailsShort[], Error>> => {
+const getDailyOpportunitiesByContactId = async (
+  contactId: number,
+  monitorTags: { [key: string]: string }
+): Promise<Result<OpportunityDetailsShort[], Error>> => {
   const startDate = new Date()
   startDate.setHours(0, 0, 0, 0)
 
@@ -193,7 +201,7 @@ const getDailyOpportunitiesByContactId = async (contactId: number): Promise<Resu
     }
     return Result.ok(selectedDeals)
   } else {
-    Monitor.error('Error in brevo GetDeal api call', { error: response.error })
+    Monitor.error('Error in brevo GetDeal api call', { error: response.error }, monitorTags)
     return Result.err(response.error)
   }
 }

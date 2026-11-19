@@ -20,7 +20,8 @@ export interface OpportunityApiKeyCheck {
 
 // Server-to-server calls of partners (AGIR) authenticate with "Authorization: Bearer <key>".
 // Valid keys are read from OPPORTUNITY_API_KEYS, named by partner: "agir:xxxxxx,other-partner:yyyyyy".
-// The name is sent to Brevo, so it must stay stable: during a key rotation, both keys share it ("agir:old,agir:new").
+// The name is sent to Brevo, so it must stay stable. It is lowercased, so that Brevo receives a single value per partner
+// whatever the case used in the variable.
 export class OpportunityApiKey {
   static readonly envName = 'OPPORTUNITY_API_KEYS'
 
@@ -39,7 +40,7 @@ export class OpportunityApiKey {
         return []
       }
 
-      const partner = entry.slice(0, separatorIndex).trim()
+      const partner = entry.slice(0, separatorIndex).trim().toLowerCase()
       const key = entry.slice(separatorIndex + 1).trim()
 
       return partner !== '' && key !== '' ? [{ partner, key }] : []

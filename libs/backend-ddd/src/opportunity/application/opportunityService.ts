@@ -34,7 +34,13 @@ export default class OpportunityService {
     )
   }
 
-  public async createOpportunity(opportunity: Opportunity, optIn: boolean, partner?: string): Promise<Result<OpportunityId, Error>> {
+  // partner: name of the partner whose API key authenticated the request, undefined for the TEE site.
+  // Required parameter, so that a caller cannot forget to pass it.
+  public async createOpportunity(
+    opportunity: Opportunity,
+    optIn: boolean,
+    partner: string | undefined
+  ): Promise<Result<OpportunityId, Error>> {
     if (!optIn) {
       return Result.err(new OptInRequiredError('opt-in is required for storing contact data'))
     }

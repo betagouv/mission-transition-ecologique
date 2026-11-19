@@ -13,6 +13,7 @@ vi.mock('@tee/backend-ddd', () => ({
     createOpportunity = createOpportunity
   },
   OptInRequiredError: class extends Error {},
+  PartnerMonitorTags: { of: (partner: string | undefined) => (partner ? { partner } : {}) },
   ServiceNotFoundError: class extends Error {}
 }))
 
