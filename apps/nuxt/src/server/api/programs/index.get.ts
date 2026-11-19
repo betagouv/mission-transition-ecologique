@@ -259,7 +259,7 @@ defineRouteMeta({
                     format: 'uri',
                     maxLength: 2000,
                     description:
-                      "URL absolue (http ou https) de la fiche du dispositif ou du projet, sur le domaine du site ou d'un partenaire autorisé, sans espace ni identifiant avant le domaine. Transmise aux Conseillers-Entreprises comme URL de la page d'origine."
+                      "URL absolue (http ou https) de la fiche du dispositif ou du projet, sur le domaine du site ou d'un partenaire autorisé, sans espace ni identifiant avant le domaine. Transmise aux Conseillers-Entreprises comme URL de la page d'origine. Une clé d'API valide (en-tête `Authorization: Bearer <clé>`) dispense du contrôle des domaines autorisés sur `linkToPage` et `linkToCatalog`."
                   },
                   message: { type: 'string', maxLength: 2500, description: "Message de l'entreprise." },
                   priorityObjectives: {

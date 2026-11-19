@@ -1,5 +1,5 @@
 import { opportunityBodySchema } from '@tee/common'
-import { defineEventHandler, getRequestHeader, readRawBody } from 'h3'
+import { defineEventHandler, getRequestHeader, readRawBody, setResponseHeader } from 'h3'
 import { Monitor, OpportunityService, OptInRequiredError, ServiceNotFoundError } from '@tee/backend-ddd'
 import { JsonContentType } from '~/server/utils/jsonContentType'
 import { OpportunityApiKey, OpportunityApiKeyStatus } from '~/server/utils/opportunityApiKey'
@@ -57,7 +57,8 @@ defineRouteMeta({
       },
       422: {
         description:
-          'Body invalide (champ manquant, format incorrect, lien interdit, URL hors du domaine du site), ou consentement `optIn` absent.',
+          'Body invalide (champ manquant, format incorrect, lien interdit, URL hors du domaine du site), ou consentement `optIn` absent. ' +
+          "Une clé d'API valide dispense du contrôle des domaines autorisés sur `linkToPage` et `linkToCatalog`.",
         content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
       },
       500: {
@@ -74,10 +75,15 @@ defineRouteMeta({
 const maxBodySize = 100_000
 
 export default defineEventHandler(async (event) => {
-  // Checked first: a wrong key must not go through the other validations. The key is never logged.
+  // Checked first: a wrong key must not go through the other validations.
+  // The key is not part of the logged data, and the Authorization header is removed from Sentry events (sentry.server.config.ts).
   const apiKeyStatus = OpportunityApiKey.status(getRequestHeader(event, 'authorization'))
   if (apiKeyStatus === OpportunityApiKeyStatus.Invalid) {
+    // Warning without any detail on the key, like the other rejections: they must not flood the error alerts
     Monitor.warning('Opportunity rejected: invalid API key')
+    // RFC 9110: a 401 response tells which authentication scheme is expected.
+    // Set on the response, as the Nuxt error handler ignores the headers of createError.
+    setResponseHeader(event, 'WWW-Authenticate', 'Bearer')
     throw createError({
       statusCode: 401,
       statusMessage: 'Invalid API key'

@@ -73,6 +73,7 @@ test.describe('POST /api/opportunities', () => {
     })
 
     expect(response.status()).toBe(401)
+    expect(response.headers()['www-authenticate']).toBe('Bearer')
   })
 
   test('rejects a malformed Authorization header (401)', async ({ request }) => {
