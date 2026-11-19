@@ -5,11 +5,7 @@ export type OpportunityWithContactId = Opportunity & {
   contactId: number
 }
 
-export type OpportunityWithOperatorContact = Opportunity & {
-  programContactOperator?: Operators
-  // Name of the partner whose API key authenticated the request (e.g. AGIR), never read from the request body
-  partner?: string
-}
+export type OpportunityWithOperatorContact = Opportunity & { programContactOperator?: Operators }
 
 export type OpportunityWithOperatorContactAndContactId = OpportunityWithContactId & OpportunityWithOperatorContact
 

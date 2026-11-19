@@ -23,7 +23,9 @@ import type { ContactRepository, OpportunityRepository } from '../../src/opportu
 import { ProgramRepository } from '../../src/program/domain/spi'
 import { ProgramType, ProjectType } from '@tee/data'
 import { ContactId, OpportunityDetailsShort, OpportunityId, SearchResult } from '../../src/index'
-import { OpportunityHubTransmissionStatus } from '../../src/opportunity/domain/types'
+import { OpportunityHubTransmissionStatus, OpportunityWithOperatorContactAndContactId } from '../../src/opportunity/domain/types'
+import { OpportunityAssociatedData } from '../../src/opportunity/domain/opportunityAssociatedData'
+import { convertDomainToBrevoDeal } from '../../src/opportunity/infrastructure/api/brevo/brevoDeal'
 import Monitor from '../../src/common/domain/monitoring/monitor'
 
 let addContactCalled: boolean
@@ -256,6 +258,30 @@ EXPECT the failure to be reported to monitoring with the Brevo deal id and the o
     expect(tags).toEqual({ opportunity_transmission: 'failed' })
   })
 
+  test('a transmission error of a partner opportunity is tagged with the partner', async () => {
+    const monitorError = vi.spyOn(Monitor, 'error').mockReturnValue(Monitor)
+    const createOpportunity = makeCreateOpportunity(
+      dummyContactRepository,
+      dummyOpportunityRepository,
+      new OpportunityHubFeatures([new PlaceDesEntreprisesMockWithError()])
+    )
+
+    expectToBeOk(await createOpportunity(fakeOpportunity(), true, 'agir'))
+
+    await vi.waitFor(() => expect(monitorError).toHaveBeenCalled())
+    expect(monitorError.mock.calls[0][2]).toEqual({ opportunity_transmission: 'failed', partner: 'agir' })
+  })
+
+  test('an opportunity creation error of a partner opportunity is tagged with the partner', async () => {
+    const monitorError = vi.spyOn(Monitor, 'error').mockReturnValue(Monitor)
+    const create = () => Promise.resolve(Result.err(new Error('brevo error')))
+    const createOpportunity = makeCreateOpportunity(dummyContactRepository, { ...dummyOpportunityRepository, create })
+
+    expectToBeErr(await createOpportunity(fakeOpportunity(), true, 'agir'))
+
+    expect(monitorError).toHaveBeenCalledWith('Error during Opportunity Creation', expect.anything(), { partner: 'agir' })
+  })
+
   test('an unexpected exception during the transmission is reported and the opportunity marked as failed', async () => {
     const monitorException = vi.spyOn(Monitor, 'exception').mockReturnValue(Monitor)
     const update = vi.fn(dummyUpdateOpportunity)
@@ -331,19 +357,20 @@ EXPECT the hub transmission status to be stored on the opportunity`, () => {
 })
 
 describe(`
-   WHEN creating a new opportunity
-EXPECT the partner of the API key to be sent to the opportunity repository only when there is one`, () => {
+   WHEN creating a new opportunity with the partner of an API key
+EXPECT the partner to be carried by the associated data down to the Brevo deal, and only there`, () => {
   test.each([['agir'], [undefined]])('partner %s', async (partner) => {
     const create = vi.fn(dummyAddOpportunity)
     const createOpportunity = makeCreateOpportunity(dummyContactRepository, { ...dummyOpportunityRepository, create })
 
     expectToBeOk(await createOpportunity(fakeOpportunity(), true, partner))
 
-    const createdOpportunity = (create.mock.calls[0] as unknown[] | undefined)?.[0] as object
-    if (partner) {
-      expect(createdOpportunity).toHaveProperty('partner', partner)
-    } else {
-      expect(createdOpportunity).not.toHaveProperty('partner')
-    }
+    const [createdOpportunity, associatedData] = create.mock.calls[0] as unknown as [
+      OpportunityWithOperatorContactAndContactId,
+      OpportunityAssociatedData
+    ]
+    expect(associatedData.partner).toBe(partner)
+    expect(createdOpportunity).not.toHaveProperty('partner')
+    expect(convertDomainToBrevoDeal(createdOpportunity, associatedData).partenaire).toBe(partner)
   })
 })

@@ -36,25 +36,26 @@ export default class OpportunityFeatures {
     opportunity = maybeFullOpportunity.value
     const contactIdResult = await this._contactRepository.createOrUpdate(opportunity as ContactDetails, optIn)
     if (contactIdResult.isErr) {
-      Monitor.error('Error during contact creation', { error: contactIdResult.error })
+      Monitor.error('Error during contact creation', { error: contactIdResult.error }, partner ? { partner } : undefined)
       return Result.err(contactIdResult.error)
     }
 
     const opportunityWithContactId = this._addContactIdToOpportunity(opportunity, contactIdResult.value.id)
-    const opportunityWithOperatorAndContact = {
-      ...this._addContactOperatorToOpportunity(opportunityWithContactId),
-      ...(partner && { partner })
-    }
+    const opportunityWithOperatorAndContact = this._addContactOperatorToOpportunity(opportunityWithContactId)
 
-    const opportunityAssociatedData = this._createOpportunityAssociatedData(opportunityWithOperatorAndContact)
+    const opportunityAssociatedData = this._createOpportunityAssociatedData(opportunityWithOperatorAndContact, partner)
     if (opportunityAssociatedData.isErr) {
-      Monitor.error('Error during the creation of the Opportunity Associated Object', { error: opportunityAssociatedData.error })
+      Monitor.error(
+        'Error during the creation of the Opportunity Associated Object',
+        { error: opportunityAssociatedData.error },
+        partner ? { partner } : undefined
+      )
       return Result.err(opportunityAssociatedData.error)
     }
 
     const opportunityResult = await this._opportunityRepository.create(opportunityWithOperatorAndContact, opportunityAssociatedData.value)
     if (opportunityResult.isErr) {
-      Monitor.error('Error during Opportunity Creation', { error: opportunityResult.error })
+      Monitor.error('Error during Opportunity Creation', { error: opportunityResult.error }, opportunityAssociatedData.value.monitorTags())
       return opportunityResult
     }
 
@@ -62,12 +63,17 @@ export default class OpportunityFeatures {
       if (!(await this._hasReachedTransmissionLimit(opportunityWithContactId, opportunityAssociatedData.value))) {
         await this._transmitOpportunityToHubs(opportunityResult.value, opportunityWithOperatorAndContact, opportunityAssociatedData.value)
       } else {
-        await this._updateTransmissionStatus(opportunityResult.value, { transmissionStatus: OpportunityHubTransmissionStatus.Limited })
+        await this._updateTransmissionStatus(
+          opportunityResult.value,
+          { transmissionStatus: OpportunityHubTransmissionStatus.Limited },
+          opportunityAssociatedData.value
+        )
         await this._sendReturnReceipt(opportunityWithContactId, opportunityAssociatedData.value)
       }
     })().catch((error: unknown) => {
       Monitor.exception(ensureError(error), this._transmissionMonitoringData(opportunityResult.value, opportunityWithOperatorAndContact), {
-        opportunity_transmission: 'failed'
+        opportunity_transmission: 'failed',
+        ...opportunityAssociatedData.value.monitorTags()
       })
     })
 
@@ -75,7 +81,8 @@ export default class OpportunityFeatures {
   }
 
   private _createOpportunityAssociatedData(
-    opportunity: OpportunityWithOperatorContactAndContactId
+    opportunity: OpportunityWithOperatorContactAndContactId,
+    partner?: string
   ): Result<OpportunityAssociatedData, Error> {
     switch (opportunity.type) {
       case OpportunityType.Program: {
@@ -83,22 +90,26 @@ export default class OpportunityFeatures {
         if (!associatedProgram) {
           return Result.err(new Error('Program with id ' + opportunity.id + 'not found'))
         }
-        return Result.ok(new OpportunityAssociatedData(OpportunityType.Program, associatedProgram))
+        return Result.ok(new OpportunityAssociatedData(OpportunityType.Program, associatedProgram, partner))
       }
       case OpportunityType.Project: {
         const associatedProject = this._projectFeatures.getById(+opportunity.id)
         if (!associatedProject) {
           return Result.err(new Error('Project with id ' + opportunity.id + 'not found'))
         }
-        return Result.ok(new OpportunityAssociatedData(OpportunityType.Project, associatedProject))
+        return Result.ok(new OpportunityAssociatedData(OpportunityType.Project, associatedProject, partner))
       }
       case OpportunityType.CustomProject:
         opportunity.id = opportunity.titleMessage || 'Projet sans Titre'
         return Result.ok(
-          new OpportunityAssociatedData(OpportunityType.CustomProject, {
-            title: opportunity.titleMessage || 'Untitled',
-            theme: opportunity.theme
-          })
+          new OpportunityAssociatedData(
+            OpportunityType.CustomProject,
+            {
+              title: opportunity.titleMessage || 'Untitled',
+              theme: opportunity.theme
+            },
+            partner
+          )
         )
       default:
         return Result.err(new Error('Opportunity type not handled in _createOpportunityAssociatedData'))
@@ -115,7 +126,7 @@ export default class OpportunityFeatures {
       opportunityHubResult = await this._opportunityHubFeatures.transmitOpportunity(opportunity, opportunityData)
     } catch (error: unknown) {
       // The exception is reported by the caller, the opportunity must not stay without a transmission status
-      await this._updateTransmissionStatus(opportunityId, { transmissionStatus: OpportunityHubTransmissionStatus.Failed })
+      await this._updateTransmissionStatus(opportunityId, { transmissionStatus: OpportunityHubTransmissionStatus.Failed }, opportunityData)
       throw error
     }
 
@@ -123,17 +134,18 @@ export default class OpportunityFeatures {
       Monitor.error(
         'Opportunity transmission to hub failed',
         { ...this._transmissionMonitoringData(opportunityId, opportunity), error: opportunityHubResult.error.message },
-        { opportunity_transmission: 'failed' }
+        { opportunity_transmission: 'failed', ...opportunityData.monitorTags() }
       )
-      await this._updateTransmissionStatus(opportunityId, { transmissionStatus: OpportunityHubTransmissionStatus.Failed })
+      await this._updateTransmissionStatus(opportunityId, { transmissionStatus: OpportunityHubTransmissionStatus.Failed }, opportunityData)
       return
     }
 
     if (opportunityHubResult !== false && opportunityHubResult.isOk) {
-      await this._updateTransmissionStatus(opportunityId, {
-        transmissionStatus: OpportunityHubTransmissionStatus.Sent,
-        idCe: opportunityHubResult.value
-      })
+      await this._updateTransmissionStatus(
+        opportunityId,
+        { transmissionStatus: OpportunityHubTransmissionStatus.Sent, idCe: opportunityHubResult.value },
+        opportunityData
+      )
     }
   }
 
@@ -145,14 +157,22 @@ export default class OpportunityFeatures {
     }
   }
 
-  private async _updateTransmissionStatus(opportunityId: OpportunityId, attributes: OpportunityUpdateAttributes): Promise<void> {
+  private async _updateTransmissionStatus(
+    opportunityId: OpportunityId,
+    attributes: OpportunityUpdateAttributes,
+    opportunityData: OpportunityAssociatedData
+  ): Promise<void> {
     const opportunityUpdateErr = await this._opportunityRepository.update(opportunityId, attributes)
     if (opportunityUpdateErr.isJust) {
-      Monitor.warning('Opportunity transmission status not updated', {
-        error: opportunityUpdateErr.value,
-        brevoDealId: opportunityId.id,
-        ...attributes
-      })
+      Monitor.warning(
+        'Opportunity transmission status not updated',
+        {
+          error: opportunityUpdateErr.value,
+          brevoDealId: opportunityId.id,
+          ...attributes
+        },
+        opportunityData.monitorTags()
+      )
     }
   }
 
@@ -186,7 +206,7 @@ export default class OpportunityFeatures {
   private async _sendReturnReceipt(opportunity: OpportunityWithContactId, opportunityData: OpportunityAssociatedData) {
     const hasError = await this._mailRepository.sendReturnReceipt(opportunity, opportunityData)
     if (hasError) {
-      Monitor.warning('Error while sending a return receipt', { error: hasError })
+      Monitor.warning('Error while sending a return receipt', { error: hasError }, opportunityData.monitorTags())
     }
   }
 
