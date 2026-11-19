@@ -102,13 +102,14 @@ const associateBrevoDealToContact = async (dealId: OpportunityId, contactId: num
   }
 }
 
-const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorContact): DealAttributes => {
+export const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorContact): DealAttributes => {
   return {
     // Brevo does not handle newlines in attributes
     message: replaceNewlinesWithSpaces(domainAttributes.message),
     ...(domainAttributes.priorityObjectives && { objectifs_renseigns: domainAttributes.priorityObjectives.join(', ') }),
     ...(domainAttributes.programContactOperator && { oprateur_de_contact: domainAttributes.programContactOperator }),
     ...(domainAttributes.otherData && { autres_donnes: domainAttributes.otherData }),
+    ...(domainAttributes.partner && { partenaire: domainAttributes.partner }),
     type: domainAttributes.type
   }
 }

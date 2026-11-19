@@ -34,11 +34,11 @@ export default class OpportunityService {
     )
   }
 
-  public async createOpportunity(opportunity: Opportunity, optIn: boolean): Promise<Result<OpportunityId, Error>> {
+  public async createOpportunity(opportunity: Opportunity, optIn: boolean, partner?: string): Promise<Result<OpportunityId, Error>> {
     if (!optIn) {
       return Result.err(new OptInRequiredError('opt-in is required for storing contact data'))
     }
-    return await this._opportunityFeatures.createOpportunity(opportunity, optIn)
+    return await this._opportunityFeatures.createOpportunity(opportunity, optIn, partner)
   }
 
   private _getContactRepository(): ContactRepository {
