@@ -28,17 +28,18 @@ const addBrevoDeal: OpportunityRepository['create'] = async (
   domainOpportunity: OpportunityWithOperatorContactAndContactId,
   opportunityAssociatedObject: OpportunityAssociatedData
 ): Promise<Result<OpportunityId, Error>> => {
-  const brevoDeal = convertDomainToBrevoDeal(domainOpportunity)
+  const brevoDeal = convertDomainToBrevoDeal(domainOpportunity, opportunityAssociatedObject)
 
   let name = domainOpportunity.id
   if (opportunityAssociatedObject.isProject()) {
     name = opportunityAssociatedObject.data.slug
   }
 
-  const dealId = await requestCreateDeal(name, brevoDeal)
+  const monitorTags = opportunityAssociatedObject.monitorTags()
+  const dealId = await requestCreateDeal(name, brevoDeal, monitorTags)
 
   if (!dealId.isErr) {
-    const maybeError = await associateBrevoDealToContact(dealId.value, domainOpportunity.contactId)
+    const maybeError = await associateBrevoDealToContact(dealId.value, domainOpportunity.contactId, monitorTags)
     if (maybeError.isJust) {
       return Result.err(new Error('Something went wrong while attaching contact to opportunity', { cause: maybeError.value }))
     }
@@ -47,7 +48,11 @@ const addBrevoDeal: OpportunityRepository['create'] = async (
   return dealId
 }
 
-const requestCreateDeal = async (name: string, attributes: DealAttributes): Promise<Result<OpportunityId, Error>> => {
+const requestCreateDeal = async (
+  name: string,
+  attributes: DealAttributes,
+  monitorTags: { [key: string]: string }
+): Promise<Result<OpportunityId, Error>> => {
   const payload: BrevoPostDealPayload = {
     name: name,
     attributes: attributes
@@ -57,7 +62,7 @@ const requestCreateDeal = async (name: string, attributes: DealAttributes): Prom
   }
   const responseResult = await new BrevoAPI().PostDeal(payload)
   if (responseResult.isErr) {
-    Monitor.error('Error in Brevo PostDeal api call', { payload: payload, error: responseResult.error })
+    Monitor.error('Error in Brevo PostDeal api call', { payload: payload, error: responseResult.error }, monitorTags)
 
     return Result.err(responseResult.error)
   }
@@ -86,7 +91,11 @@ const requestUpdateDeal = async (dealId: OpportunityId, attributes: DealUpdateAt
   return Maybe.of(responseResult.isErr ? responseResult.error : null)
 }
 
-const associateBrevoDealToContact = async (dealId: OpportunityId, contactId: number): Promise<Maybe<Error>> => {
+const associateBrevoDealToContact = async (
+  dealId: OpportunityId,
+  contactId: number,
+  monitorTags: { [key: string]: string }
+): Promise<Maybe<Error>> => {
   const dealIdStr = dealId.id
 
   // associate brevo deal to contact
@@ -95,21 +104,29 @@ const associateBrevoDealToContact = async (dealId: OpportunityId, contactId: num
   })
 
   if (responsePatch.isErr) {
-    Monitor.error('Error in Brevo LinkDeal (to contact) api call', { dealId: dealIdStr, contactId, error: responsePatch.error })
+    Monitor.error(
+      'Error in Brevo LinkDeal (to contact) api call',
+      { dealId: dealIdStr, contactId, error: responsePatch.error },
+      monitorTags
+    )
     return Maybe.of(responsePatch.error)
   } else {
     return Maybe.nothing()
   }
 }
 
-export const convertDomainToBrevoDeal = (domainAttributes: OpportunityWithOperatorContact): DealAttributes => {
+export const convertDomainToBrevoDeal = (
+  domainAttributes: OpportunityWithOperatorContact,
+  opportunityAssociatedObject: OpportunityAssociatedData
+): DealAttributes => {
   return {
     // Brevo does not handle newlines in attributes
     message: replaceNewlinesWithSpaces(domainAttributes.message),
     ...(domainAttributes.priorityObjectives && { objectifs_renseigns: domainAttributes.priorityObjectives.join(', ') }),
     ...(domainAttributes.programContactOperator && { oprateur_de_contact: domainAttributes.programContactOperator }),
     ...(domainAttributes.otherData && { autres_donnes: domainAttributes.otherData }),
-    ...(domainAttributes.partner && { partenaire: domainAttributes.partner }),
+    // Read from the associated data, set by the server: a "partner" field of the request body never reaches Brevo
+    ...(opportunityAssociatedObject.partner && { partenaire: opportunityAssociatedObject.partner }),
     type: domainAttributes.type
   }
 }

@@ -19,10 +19,10 @@ describe('OpportunityApiKey', () => {
       expect(OpportunityApiKey.partnerKeys('agir:key:with:colons')).toEqual([{ partner: 'agir', key: 'key:with:colons' }])
     })
 
-    it('keeps several keys of the same partner for a rotation', () => {
-      expect(OpportunityApiKey.partnerKeys('agir:old-key,agir-2027:new-key')).toEqual([
+    it('keeps several keys under the same partner name for a rotation', () => {
+      expect(OpportunityApiKey.partnerKeys('agir:old-key,agir:new-key')).toEqual([
         { partner: 'agir', key: 'old-key' },
-        { partner: 'agir-2027', key: 'new-key' }
+        { partner: 'agir', key: 'new-key' }
       ])
     })
 

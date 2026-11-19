@@ -20,7 +20,7 @@ export interface OpportunityApiKeyCheck {
 
 // Server-to-server calls of partners (AGIR) authenticate with "Authorization: Bearer <key>".
 // Valid keys are read from OPPORTUNITY_API_KEYS, named by partner: "agir:xxxxxx,other-partner:yyyyyy".
-// A partner may have several keys during a rotation ("agir-2027:zzzzzz" next to the old one).
+// The name is sent to Brevo, so it must stay stable: during a key rotation, both keys share it ("agir:old,agir:new").
 export class OpportunityApiKey {
   static readonly envName = 'OPPORTUNITY_API_KEYS'
 

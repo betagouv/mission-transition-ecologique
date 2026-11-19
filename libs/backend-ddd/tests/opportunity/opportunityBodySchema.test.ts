@@ -168,3 +168,14 @@ describe('opportunityBodySchema XSS validation', () => {
     expect(result.success).toBe(true)
   })
 })
+
+describe('opportunityBodySchema partner', () => {
+  // The partner comes from the API key only: a "partner" field sent by the client is stripped
+  test('ignores a partner sent in the body', () => {
+    const result = opportunityBodySchema.safeParse({ opportunity: { ...fakeOpportunity(), partner: 'agir' }, optIn: true, partner: 'agir' })
+
+    expect(result.success).toBe(true)
+    expect(result.data?.opportunity).not.toHaveProperty('partner')
+    expect(result.data).not.toHaveProperty('partner')
+  })
+})
