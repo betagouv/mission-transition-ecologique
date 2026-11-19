@@ -65,4 +65,42 @@ test.describe('POST /api/opportunities', () => {
     expect(response.status()).toBe(422)
     expect(JSON.stringify(await response.json())).toContain('opt-in')
   })
+
+  test('rejects an invalid API key before any other check (401)', async ({ request }) => {
+    const response = await request.post(url, {
+      headers: { Authorization: 'Bearer wrong-key', 'Content-Type': 'text/plain' },
+      data: JSON.stringify({ opportunity: opportunity(), optIn: true })
+    })
+
+    expect(response.status()).toBe(401)
+  })
+
+  test('rejects a malformed Authorization header (401)', async ({ request }) => {
+    const response = await request.post(url, {
+      headers: { Authorization: 'e2e-api-key' },
+      data: { opportunity: opportunity(), optIn: true }
+    })
+
+    expect(response.status()).toBe(401)
+  })
+
+  // The key is set in the webServer env of playwright.config.ts
+  test('accepts a catalog link of any host with a valid API key, then requires the opt-in (422)', async ({ request }) => {
+    const response = await request.post(url, {
+      headers: { Authorization: 'Bearer e2e-api-key' },
+      data: { opportunity: opportunity({ linkToCatalog: 'https://partner.example/catalogue/x' }), optIn: false }
+    })
+
+    expect(response.status()).toBe(422)
+    expect(JSON.stringify(await response.json())).toContain('opt-in')
+  })
+
+  test('keeps the body validation with a valid API key (422)', async ({ request }) => {
+    const response = await request.post(url, {
+      headers: { Authorization: 'Bearer e2e-api-key' },
+      data: { opportunity: opportunity({ firstName: 'https://phishing.example' }), optIn: true }
+    })
+
+    expect(response.status()).toBe(422)
+  })
 })

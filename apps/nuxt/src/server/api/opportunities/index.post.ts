@@ -2,15 +2,34 @@ import { opportunityBodySchema } from '@tee/common'
 import { defineEventHandler, getRequestHeader, readRawBody } from 'h3'
 import { Monitor, OpportunityService, OptInRequiredError, ServiceNotFoundError } from '@tee/backend-ddd'
 import { JsonContentType } from '~/server/utils/jsonContentType'
+import { OpportunityApiKey, OpportunityApiKeyStatus } from '~/server/utils/opportunityApiKey'
 import { OpportunityLinkHosts } from '~/server/utils/opportunityLinkHosts'
 
 defineRouteMeta({
   openAPI: {
+    $global: {
+      components: {
+        securitySchemes: {
+          partnerApiKey: {
+            type: 'http',
+            scheme: 'bearer',
+            description:
+              "Clé d'API remise aux partenaires qui appellent l'API depuis leur serveur. " +
+              'Elle dispense du contrôle de domaine sur `linkToCatalog`.'
+          }
+        }
+      }
+    },
     tags: ['Opportunités'],
     summary: 'Déposer une demande de contact',
     description:
-      "Enregistre la demande de contact d'une entreprise sur un dispositif ou un projet, puis la transmet aux opérateurs concernés.",
+      "Enregistre la demande de contact d'une entreprise sur un dispositif ou un projet, puis la transmet aux opérateurs concernés.\n\n" +
+      "Les partenaires qui appellent depuis leur serveur s'authentifient avec l'en-tête `Authorization: Bearer <clé>`. " +
+      'Une clé valide dispense du contrôle de domaine sur `linkToCatalog` ; toutes les autres validations restent appliquées. ' +
+      'Sans en-tête `Authorization`, la demande est traitée comme un appel du site.',
     parameters: [],
+    // Empty requirement first: the key is optional, the site calls the route without it
+    security: [{}, { partnerApiKey: [] }],
     requestBody: {
       required: true,
       content: { 'application/json': { schema: { $ref: '#/components/schemas/OpportunityBody' } } }
@@ -19,6 +38,10 @@ defineRouteMeta({
       200: {
         description: 'Identifiant de la demande créée.',
         content: { 'application/json': { schema: { type: 'object' } } }
+      },
+      401: {
+        description: "En-tête `Authorization` présent mais clé d'API invalide ou mal formée.",
+        content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
       },
       404: {
         description: 'Demande non créée : aucun service ne peut la prendre en charge.',
@@ -51,6 +74,16 @@ defineRouteMeta({
 const maxBodySize = 100_000
 
 export default defineEventHandler(async (event) => {
+  // Checked first: a wrong key must not go through the other validations. The key is never logged.
+  const apiKeyStatus = OpportunityApiKey.status(getRequestHeader(event, 'authorization'))
+  if (apiKeyStatus === OpportunityApiKeyStatus.Invalid) {
+    Monitor.warning('Opportunity rejected: invalid API key')
+    throw createError({
+      statusCode: 401,
+      statusMessage: 'Invalid API key'
+    })
+  }
+
   // Without this check, a third-party site could make its visitors' browsers send requests (text/plain skips the CORS preflight)
   if (!JsonContentType.isJson(getRequestHeader(event, 'content-type'))) {
     throw createError({
@@ -78,16 +111,19 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const requestHost = OpportunityLinkHosts.requestHost(event)
-  const allowedHosts = OpportunityLinkHosts.allowedHosts(requestHost, useRuntimeConfig(event).public.siteUrl as string | undefined)
-  const invalidLinks = OpportunityLinkHosts.invalidLinks(opportunityBody.data.opportunity, allowedHosts)
-  if (invalidLinks.length > 0) {
-    // No personal data: only what is needed to understand the rejection
-    Monitor.warning('Opportunity rejected: link outside of the allowed hosts', { invalidLinks, allowedHosts })
-    throw createError({
-      statusCode: 422,
-      statusMessage: `Links must point to the site domain: ${invalidLinks.join(', ')}`
-    })
+  // Partners calling with a valid key send links to their own domains
+  if (apiKeyStatus !== OpportunityApiKeyStatus.Valid) {
+    const requestHost = OpportunityLinkHosts.requestHost(event)
+    const allowedHosts = OpportunityLinkHosts.allowedHosts(requestHost, useRuntimeConfig(event).public.siteUrl as string | undefined)
+    const invalidLinks = OpportunityLinkHosts.invalidLinks(opportunityBody.data.opportunity, allowedHosts)
+    if (invalidLinks.length > 0) {
+      // No personal data: only what is needed to understand the rejection
+      Monitor.warning('Opportunity rejected: link outside of the allowed hosts', { invalidLinks, allowedHosts })
+      throw createError({
+        statusCode: 422,
+        statusMessage: `Links must point to the site domain: ${invalidLinks.join(', ')}`
+      })
+    }
   }
 
   const opportunityResult = await new OpportunityService().createOpportunity(opportunityBody.data.opportunity, opportunityBody.data.optIn)
