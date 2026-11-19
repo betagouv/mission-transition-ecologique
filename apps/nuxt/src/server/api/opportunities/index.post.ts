@@ -77,8 +77,8 @@ const maxBodySize = 100_000
 export default defineEventHandler(async (event) => {
   // Checked first: a wrong key must not go through the other validations.
   // The key is not part of the logged data, and the Authorization header is removed from Sentry events (sentry.server.config.ts).
-  const apiKeyStatus = OpportunityApiKey.status(getRequestHeader(event, 'authorization'))
-  if (apiKeyStatus === OpportunityApiKeyStatus.Invalid) {
+  const apiKeyCheck = OpportunityApiKey.check(getRequestHeader(event, 'authorization'))
+  if (apiKeyCheck.status === OpportunityApiKeyStatus.Invalid) {
     // Warning without any detail on the key, like the other rejections: they must not flood the error alerts
     Monitor.warning('Opportunity rejected: invalid API key')
     // RFC 9110: a 401 response tells which authentication scheme is expected.
@@ -89,6 +89,9 @@ export default defineEventHandler(async (event) => {
       statusMessage: 'Invalid API key'
     })
   }
+
+  // Name of the partner calling with a valid key, to know who made the call (never the key itself)
+  const monitorTags = apiKeyCheck.partner ? { partner: apiKeyCheck.partner } : undefined
 
   // Without this check, a third-party site could make its visitors' browsers send requests (text/plain skips the CORS preflight)
   if (!JsonContentType.isJson(getRequestHeader(event, 'content-type'))) {
@@ -110,7 +113,7 @@ export default defineEventHandler(async (event) => {
 
   if (opportunityBody.error) {
     // Warning: rejections are expected (bots, phishing attempts) and must not flood the error alerts
-    Monitor.warning('Error in opportunity validation', { error: opportunityBody.error })
+    Monitor.warning('Error in opportunity validation', { error: opportunityBody.error }, monitorTags)
     throw createError({
       statusCode: 422,
       statusMessage: opportunityBody.error.message
@@ -118,7 +121,7 @@ export default defineEventHandler(async (event) => {
   }
 
   // Partners calling with a valid key send links to their own domains
-  if (apiKeyStatus !== OpportunityApiKeyStatus.Valid) {
+  if (apiKeyCheck.status !== OpportunityApiKeyStatus.Valid) {
     const requestHost = OpportunityLinkHosts.requestHost(event)
     const allowedHosts = OpportunityLinkHosts.allowedHosts(requestHost, useRuntimeConfig(event).public.siteUrl as string | undefined)
     const invalidLinks = OpportunityLinkHosts.invalidLinks(opportunityBody.data.opportunity, allowedHosts)
@@ -135,7 +138,7 @@ export default defineEventHandler(async (event) => {
   const opportunityResult = await new OpportunityService().createOpportunity(opportunityBody.data.opportunity, opportunityBody.data.optIn)
 
   if (opportunityResult.isErr) {
-    Monitor.error('Error in createOpportunity', { query: opportunityBody.data, error: opportunityResult.error })
+    Monitor.error('Error in createOpportunity', { query: opportunityBody.data, error: opportunityResult.error }, monitorTags)
     if (opportunityResult.error instanceof OptInRequiredError) {
       throw createError({
         statusCode: 422,

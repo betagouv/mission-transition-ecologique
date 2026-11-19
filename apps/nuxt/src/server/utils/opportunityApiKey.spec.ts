@@ -3,42 +3,72 @@ import { describe, expect, it } from 'vitest'
 import { OpportunityApiKey, OpportunityApiKeyStatus } from './opportunityApiKey'
 
 describe('OpportunityApiKey', () => {
-  describe('validKeys', () => {
+  describe('partnerKeys', () => {
     it.each([[undefined], [''], [' , ']])('returns no key for %j', (rawKeys) => {
-      expect(OpportunityApiKey.validKeys(rawKeys)).toEqual([])
+      expect(OpportunityApiKey.partnerKeys(rawKeys)).toEqual([])
     })
 
-    it('splits and trims the comma separated keys', () => {
-      expect(OpportunityApiKey.validKeys(' key-preprod , key-prod,')).toEqual(['key-preprod', 'key-prod'])
+    it('reads the keys named by partner, trimmed', () => {
+      expect(OpportunityApiKey.partnerKeys(' agir : key-agir , other-partner:key-other,')).toEqual([
+        { partner: 'agir', key: 'key-agir' },
+        { partner: 'other-partner', key: 'key-other' }
+      ])
+    })
+
+    it('splits on the first colon only', () => {
+      expect(OpportunityApiKey.partnerKeys('agir:key:with:colons')).toEqual([{ partner: 'agir', key: 'key:with:colons' }])
+    })
+
+    it('keeps several keys of the same partner for a rotation', () => {
+      expect(OpportunityApiKey.partnerKeys('agir:old-key,agir-2027:new-key')).toEqual([
+        { partner: 'agir', key: 'old-key' },
+        { partner: 'agir-2027', key: 'new-key' }
+      ])
+    })
+
+    it('ignores the entries without a name, with an empty name or with an empty key', () => {
+      expect(OpportunityApiKey.partnerKeys('anonymous-key,:key-without-name,agir:, agir : ,valid:key')).toEqual([
+        { partner: 'valid', key: 'key' }
+      ])
     })
   })
 
-  describe('status', () => {
-    const validKeys = ['key-preprod', 'key-prod']
+  describe('check', () => {
+    const partnerKeys = [
+      { partner: 'agir', key: 'key-agir' },
+      { partner: 'other', key: 'key-other' }
+    ]
 
     it('is missing without Authorization header', () => {
-      expect(OpportunityApiKey.status(undefined, validKeys)).toBe(OpportunityApiKeyStatus.Missing)
+      expect(OpportunityApiKey.check(undefined, partnerKeys)).toEqual({ status: OpportunityApiKeyStatus.Missing })
     })
 
-    it.each([['Bearer key-preprod'], ['Bearer key-prod'], ['bearer key-prod'], ['Bearer   key-prod  ']])('accepts %j', (authorization) => {
-      expect(OpportunityApiKey.status(authorization, validKeys)).toBe(OpportunityApiKeyStatus.Valid)
+    it.each([
+      ['Bearer key-agir', 'agir'],
+      ['Bearer key-other', 'other'],
+      ['bearer key-other', 'other'],
+      ['Bearer   key-agir  ', 'agir']
+    ])('accepts %j and returns the partner %s', (authorization, partner) => {
+      expect(OpportunityApiKey.check(authorization, partnerKeys)).toEqual({ status: OpportunityApiKeyStatus.Valid, partner })
     })
 
     it.each([
       [''],
       ['Bearer'],
       ['Bearer '],
-      ['key-prod'],
-      ['Basic key-prod'],
-      ['Bearer key-pro'],
-      ['Bearer key-prod2'],
-      ['Bearer key prod']
-    ])('rejects %j', (authorization) => {
-      expect(OpportunityApiKey.status(authorization, validKeys)).toBe(OpportunityApiKeyStatus.Invalid)
+      ['key-agir'],
+      ['Basic key-agir'],
+      ['Bearer key-agi'],
+      ['Bearer key-agir2'],
+      ['Bearer key agir'],
+      ['Bearer agir:key-agir'],
+      ['Bearer agir']
+    ])('rejects %j without partner', (authorization) => {
+      expect(OpportunityApiKey.check(authorization, partnerKeys)).toEqual({ status: OpportunityApiKeyStatus.Invalid })
     })
 
     it('rejects any key when no key is configured', () => {
-      expect(OpportunityApiKey.status('Bearer key-prod', [])).toBe(OpportunityApiKeyStatus.Invalid)
+      expect(OpportunityApiKey.check('Bearer key-agir', [])).toEqual({ status: OpportunityApiKeyStatus.Invalid })
     })
   })
 })
