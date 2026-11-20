@@ -22,6 +22,7 @@ description: >-
 
   À l’issue de cette formation de 3h, vous repartirez avec une vision claire et
   des outils opérationnels pour mettre votre entreprise en mouvement.
+début de validité: 01/01/2020
 fin de validité: 31/12/2026
 illustration: images/TEE_eolienne.webp
 opérateur de contact: ADEME
@@ -65,7 +66,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:

@@ -1,9 +1,12 @@
 titre: Investissement "PAC solaire"
-promesse: Financez votre installation de pompe à chaleur solaire
+promesse: >-
+  Financez une installation de pompe à chaleur solaire pour produire votre eau
+  chaude
 description: >-
   Vous disposez d’une **étude de faisabilité** pour un projet d'**installation
-  de pompe à chaleur solaire** et vous souhaitez investir pour le mettre en
-  œuvre ? Cette aide est destinée à subventionner l'achat de ces équipements.
+  de pompe à chaleur solaire pour la production d'eau chaude** et vous souhaitez
+  investir pour le mettre en œuvre ? Cette aide est destinée à subventionner
+  l'achat de ces équipements.
 description longue: >-
   Les installations éligibles sont les opérations de production d'eau chaude
   sanitaire à destination des secteurs Tertiaire, Industrie et Agriculture. 
@@ -39,7 +42,7 @@ contact question: https://fondschaleur.ademe.fr/contact/
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/installation-de-pompes-chaleur-solaire-pour-la-production-deau-chaude
 nature de l'aide: financement
-montant du financement: Aide forfaitaire de 25 à 38 €/MWh
+montant du financement: Aide calculée en fonction du projet
 ouvert aux administrations publiques: oui
 objectifs:
   - description: >-

@@ -23,6 +23,7 @@ description: >-
 
   - **Participez au concours Crisalide** et tentez de remporter le Trophée
   Eco-Activités pour bénéficier d’un coup de projecteur sur votre innovation.
+fin de validité: 31/12/2099
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Chambre de Commerce et de l'Industrie
 contact question: mailto:contact@crisalide-ecoactivites.fr
@@ -60,6 +61,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

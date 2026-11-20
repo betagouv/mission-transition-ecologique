@@ -5,6 +5,7 @@ description: >-
   vos bâtiments ? Un accompagnement personnalisé vous aide à **identifier les
   travaux prioritaires** (isolation, ventilation, éclairage, chauffage, etc.) et
   à **repérer les aides financières mobilisables.**
+début de validité: 01/01/2020
 fin de validité: 01/01/2025
 illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
@@ -54,7 +55,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
   entreprise . a un effectif éligible:

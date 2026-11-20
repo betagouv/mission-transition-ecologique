@@ -11,6 +11,7 @@ description: >-
   en bout, et vous permet de r**entabiliser votre installation en moins de 5
   ans**.
 description longue: "L’appel à projets s’adresse particulièrement aux secteurs suivants : \n\n- **Le secteur touristique**\_: Hôtels, restaurants et campings, et autres hébergements touristiques.\n- **Le secteur de la santé**\_: Hôpitaux, cliniques et maisons de retraite, EPHAD.\n- **Le secteur du logement social**\_: Patrimoine des bailleurs sociaux.\n- **Le secteur public**\_: Patrimoine des collectivités."
+début de validité: 01/01/2020
 fin de validité: 31/12/2028
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse
@@ -56,7 +57,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

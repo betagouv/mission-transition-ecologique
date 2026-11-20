@@ -49,6 +49,8 @@ description longue: >-
 
   - Croître votre activité si vous êtes un offreur de solution de transition
   écologique.
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Région Île-de-France
 autres opérateurs:
@@ -134,6 +136,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - a une categorie legale eligible

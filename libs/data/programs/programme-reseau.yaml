@@ -28,6 +28,7 @@ description longue: >-
   - Des conseils, fiches de bonnes pratiques ;
 
   - Un suivi de votre plan d’action.
+début de validité: 01/01/2020
 fin de validité: 30/04/2026
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Chambre de Commerce et de l'Industrie
@@ -101,7 +102,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

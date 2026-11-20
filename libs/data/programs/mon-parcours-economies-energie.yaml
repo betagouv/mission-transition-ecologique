@@ -27,6 +27,8 @@ description longue: >-
   - Organiser un plan d'action. 
 
   - Évaluer vos économies d'énergie grâce au Carnet de bord Énergie.
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 autres opérateurs:
@@ -65,6 +67,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
   entreprise . a un effectif éligible:

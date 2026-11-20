@@ -10,6 +10,8 @@ description: >-
   constituent des leviers essentiels pour engager votre entreprise dans la
   transition énergétique, réduire immédiatement vos dépenses énergétiques et
   garantir votre rentabilité sur le long terme.
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Région Centre-Val de Loire
 contact question: >-
@@ -52,6 +54,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

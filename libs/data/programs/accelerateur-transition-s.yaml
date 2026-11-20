@@ -3,6 +3,8 @@ promesse: >-
   Bénéficiez d'un accompagnement tout au long de votre parcours de transition
   écologique
 description: "Vous êtez une TPE et PME en Occitanie souhaitant amorcer ou accélérer votre développement en intégrant les nouvelles attentes de transition économique, écologique et sociétale.\n\nLe parcours Transition.S s'organise en 4 étapes :\n\n- **Réalisation d’un diagnostic** pour faire le point sur les pratiques de l’entreprise\_(engagement RSE, réduction de l’impact environnemental, sobriété hydrique, bilan carbone, etc).\n- **Co-construction d’un plan d’action** sur mesure qui définit les axes de progrès, les priorités, le calendrier de réalisation.\n- **Construction d’un plan de financement**.\n- **Suivi de la mise en œuvre du plan** deux RDV formels **à 6 et 12 mois**."
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Région Occitanie
 autres opérateurs:
@@ -42,6 +44,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - entreprise . est dans une zone géographique éligible

@@ -14,6 +14,8 @@ description: >-
   en\
     associant les acteurs concernés**, dans les domaines tels que l’énergie,\
     l’environnement, la santé, l’alimentation, la mobilité, l’habitat, les filières locales, etc
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Région Occitanie
 autres opérateurs:
@@ -72,6 +74,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

@@ -5,6 +5,8 @@ description: >-
   à assistance électrique (VAE) ? "Je change ma voiture" vous permet de trouver
   rapidement le véhicule propre le plus adapté à vos besoins ainsi que les aides
   disponibles dans votre région pour le financer.
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Ministère de la Transition Écologique
 contact question: formulaire
@@ -47,8 +49,15 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

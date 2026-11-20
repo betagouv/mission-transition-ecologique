@@ -15,6 +15,8 @@ description: >-
   prioritairement aux principaux objectifs de la Trajectoire Outre-mer 5.0 :
   **Zéro Déchet**, **Zéro Carbone**, **Zéro Vulnérabilité**, **Zéro Polluant
   agricole**, y compris **Zéro Exclusion.**
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Banque Publique d'Investissement France
 contact question: https://www.bpifrance.fr/contactez-nous
@@ -57,6 +59,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - entreprise . est dans une zone géographique éligible

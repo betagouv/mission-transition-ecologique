@@ -17,6 +17,8 @@ description longue: >-
   Tous les fournisseurs d'électricité, de gaz ou GPL, de fioul domestique, de
   chaleur et de froid peuvent proposer une aide CEE pour la réalisation de
   travaux d'économies d'énergie.
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Ministère de la Transition Écologique
 contact question: formulaire
@@ -64,8 +66,15 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est B

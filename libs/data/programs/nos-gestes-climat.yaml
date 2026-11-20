@@ -6,6 +6,8 @@ description: >-
   Sensibilisez et fédérez vos collaborateurs et vos partenaires autour des
   enjeux climatiques en calculant leur empreinte carbone et leur empreinte eau,
   individuel, en seulement 10 minutes.
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 contact question: https://nosgestesclimat.fr/contact
@@ -48,8 +50,15 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

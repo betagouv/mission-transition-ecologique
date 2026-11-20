@@ -44,6 +44,7 @@ description longue: >-
   d’études agréés.
 
   Ces dépenses peuvent être internes ou liées à de la sous-traitance.
+début de validité: 01/01/2020
 fin de validité: 31/12/2027
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: DDFIP
@@ -112,7 +113,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
   entreprise . a un effectif éligible:

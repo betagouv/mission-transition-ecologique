@@ -22,6 +22,7 @@ description: >-
 
   - Suivi pour vous accompagner dans la mise en place et le pilotage des
   actions.
+fin de validité: 31/12/2099
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: CCI ou CMA
 contact question: formulaire
@@ -67,6 +68,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - a une categorie legale eligible

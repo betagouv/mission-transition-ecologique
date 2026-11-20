@@ -30,6 +30,7 @@ description longue: >-
   la réutilisation ou le réemploi),
 
   - produire des énergies nouvelles.
+début de validité: 01/01/2020
 fin de validité: 16/06/2024
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Banque Publique d'Investissement France
@@ -83,7 +84,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - a une categorie legale eligible

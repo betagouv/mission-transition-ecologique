@@ -54,6 +54,7 @@ description longue: >-
 
   - Acquisition de systèmes de transport collectif électrique gratuits pour les
   touristes
+début de validité: 01/01/2020
 fin de validité: 31/12/2025
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Région Occitanie
@@ -113,7 +114,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - a une categorie legale eligible

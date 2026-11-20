@@ -14,6 +14,7 @@ description longue: >-
   locales. Le soutien financier est très important, faisant de cette solution
   l'une des plus appropriées dans le grand tertiaire, notamment dans le cas
   d'une substitution de chaudière à énergie fossile.
+début de validité: 01/01/2020
 fin de validité: 31/12/2028
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse
@@ -60,7 +61,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

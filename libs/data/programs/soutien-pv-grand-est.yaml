@@ -8,6 +8,7 @@ description: >-
   La Région Grand-Est apporte une aide aux études de structure photovoltaïque,
   aux études de faisabilité ou agrivoltaïque. Cette subvention peut également
   participer au financement de votre installation de panneaux photovoltaïques.
+fin de validité: 31/12/2099
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Région Grand Est
 contact question: https://www.grandest.fr/aides/faq-guide-teleservices/
@@ -64,6 +65,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

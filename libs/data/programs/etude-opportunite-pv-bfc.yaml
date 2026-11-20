@@ -15,6 +15,8 @@ description: >-
 
   - Des **contraintes techniques**.
 description longue: "Lors d'une visite sur site, le conseiller en transition énergétique et écologique étudie et vous remet un rapport de visite sur les points suivants :\n\n- Contrats et factures d’énergie actuels de votre entreprise.\n- Définition de votre\_profil de consommation d'électricité.\n- Étude d'implantation des panneaux avec identification des éventuelles contraintes techniques et/ou architecturales.\n- Simulation de votre production d'électricité.\n- Étude de rentabilité économique avec les options les plus pertinentes pour votre situation\_(autoconsommation, revente totale ou du surplus)."
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Chambre des Métiers et de l'Artisanat
 autres opérateurs:
@@ -54,6 +56,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

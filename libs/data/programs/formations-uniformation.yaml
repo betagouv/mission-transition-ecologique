@@ -18,6 +18,7 @@ description: >-
   - Maîtriser les enjeux de la RE2020.
 
   - Etc.
+début de validité: 01/01/2020
 fin de validité: 31/12/2026
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Opco Uniformation
@@ -58,7 +59,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
