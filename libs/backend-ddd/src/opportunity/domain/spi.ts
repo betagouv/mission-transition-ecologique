@@ -9,8 +9,11 @@ import {
 } from './types'
 import { ContactDetails, Opportunity } from '@tee/common'
 
+// monitorTags: Sentry tags of the opportunity workflow (partner), added to the errors reported by the repositories
+type MonitorTags = { [key: string]: string }
+
 export type ContactRepository = {
-  createOrUpdate: (contact: ContactDetails, optIn: true) => Promise<Result<ContactId, Error>>
+  createOrUpdate: (contact: ContactDetails, optIn: true, monitorTags: MonitorTags) => Promise<Result<ContactId, Error>>
 }
 
 export type OpportunityRepository = {
@@ -18,9 +21,9 @@ export type OpportunityRepository = {
     opportunity: OpportunityWithOperatorContactAndContactId,
     opportunityAssociatedObject: OpportunityAssociatedData
   ) => Promise<Result<OpportunityId, Error>>
-  update: (dealId: OpportunityId, attributes: OpportunityUpdateAttributes) => Promise<Maybe<Error | null>>
+  update: (dealId: OpportunityId, attributes: OpportunityUpdateAttributes, monitorTags: MonitorTags) => Promise<Maybe<Error | null>>
   readDates: () => Promise<Result<Date[], Error>>
-  getDailyOpportunitiesByContactId: (contactId: number) => Promise<Result<OpportunityDetailsShort[], Error>>
+  getDailyOpportunitiesByContactId: (contactId: number, monitorTags: MonitorTags) => Promise<Result<OpportunityDetailsShort[], Error>>
 }
 
 export type MailerManager = {

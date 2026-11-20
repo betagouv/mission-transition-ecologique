@@ -27,7 +27,7 @@ export default class BrevoMail {
       await this._api.sendTransacEmail(this._email(opportunity, associatedData))
     } catch (err: unknown) {
       const error = ensureError(err)
-      Monitor.exception(error, { email: this._email(opportunity, associatedData) })
+      Monitor.exception(error, { email: this._email(opportunity, associatedData) }, associatedData.monitorTags())
       return Maybe.just(error)
     }
   }

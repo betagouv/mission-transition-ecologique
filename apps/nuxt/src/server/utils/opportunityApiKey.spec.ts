@@ -19,10 +19,10 @@ describe('OpportunityApiKey', () => {
       expect(OpportunityApiKey.partnerKeys('agir:key:with:colons')).toEqual([{ partner: 'agir', key: 'key:with:colons' }])
     })
 
-    it('keeps several keys of the same partner for a rotation', () => {
-      expect(OpportunityApiKey.partnerKeys('agir:old-key,agir-2027:new-key')).toEqual([
-        { partner: 'agir', key: 'old-key' },
-        { partner: 'agir-2027', key: 'new-key' }
+    it('lowercases the partner name, so that Brevo receives a single value per partner', () => {
+      expect(OpportunityApiKey.partnerKeys('Agir:key-agir,Other-Partner:key-other')).toEqual([
+        { partner: 'agir', key: 'key-agir' },
+        { partner: 'other-partner', key: 'key-other' }
       ])
     })
 

@@ -1,6 +1,6 @@
 import { opportunityBodySchema } from '@tee/common'
 import { defineEventHandler, getRequestHeader, readRawBody, setResponseHeader } from 'h3'
-import { Monitor, OpportunityService, OptInRequiredError, ServiceNotFoundError } from '@tee/backend-ddd'
+import { Monitor, OpportunityService, OptInRequiredError, PartnerMonitorTags, ServiceNotFoundError } from '@tee/backend-ddd'
 import { JsonContentType } from '~/server/utils/jsonContentType'
 import { OpportunityApiKey, OpportunityApiKeyStatus } from '~/server/utils/opportunityApiKey'
 import { OpportunityLinkHosts } from '~/server/utils/opportunityLinkHosts'
@@ -72,7 +72,7 @@ defineRouteMeta({
                     format: 'uri',
                     maxLength: 2000,
                     description:
-                      "URL absolue (http ou https) de la fiche du dispositif ou du projet, sur le domaine du site ou d'un partenaire autorisé, sans espace ni identifiant avant le domaine. Transmise aux Conseillers-Entreprises comme URL de la page d'origine. Une clé d'API valide (en-tête `Authorization: Bearer <clé>`) dispense du contrôle des domaines autorisés sur `linkToPage` et `linkToCatalog`."
+                      "URL absolue (http ou https) de la fiche du dispositif ou du projet, sur le domaine du site ou d'un partenaire autorisé, sans espace ni identifiant avant le domaine. Transmise aux Conseillers-Entreprises comme URL de la page d'origine. Une clé d'API valide (en-tête `Authorization: Bearer <clé>`) dispense du contrôle des domaines autorisés sur `linkToCatalog`."
                   },
                   message: { type: 'string', maxLength: 2500, description: "Message de l'entreprise." },
                   priorityObjectives: {
@@ -151,7 +151,7 @@ defineRouteMeta({
       422: {
         description:
           'Body invalide (champ manquant, format incorrect, lien interdit, URL hors du domaine du site), ou consentement `optIn` absent. ' +
-          "Une clé d'API valide dispense du contrôle des domaines autorisés sur `linkToPage` et `linkToCatalog`.",
+          "Une clé d'API valide dispense du contrôle des domaines autorisés sur `linkToCatalog`.",
         content: { 'application/json': { schema: { $ref: '#/components/schemas/Error' } } }
       },
       500: {
@@ -184,7 +184,7 @@ export default defineEventHandler(async (event) => {
   }
 
   // Name of the partner calling with a valid key, to know who made the call (never the key itself)
-  const monitorTags = apiKeyCheck.partner ? { partner: apiKeyCheck.partner } : undefined
+  const monitorTags = PartnerMonitorTags.of(apiKeyCheck.partner)
 
   // Without this check, a third-party site could make its visitors' browsers send requests (text/plain skips the CORS preflight)
   if (!JsonContentType.isJson(getRequestHeader(event, 'content-type'))) {
