@@ -39,6 +39,8 @@ description longue: >-
   mesure de justifier d'un diagnostic déjà réalisé, d'un plan d’action détaillé
   et argumenté, ou d’avoir bénéficié du suivi et de l’accompagnement de
   l’Accélérateur des transitions Ecologique et sociales régional.
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Région Centre-Val de Loire
 contact question: >-
@@ -86,6 +88,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - a une categorie legale eligible

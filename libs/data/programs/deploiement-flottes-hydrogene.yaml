@@ -35,6 +35,7 @@ description longue: >-
   véhicules leur permettant d’être considérés comme des véhicules propres ou des
   véhicules à émission nulle, les coûts de l’investissement dans la mise à
   niveau.
+début de validité: 01/01/2020
 fin de validité: 31/12/2026
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Région Bourgogne-Franche-Comté
@@ -90,7 +91,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - entreprise . est dans une zone géographique éligible

@@ -10,6 +10,7 @@ description: >-
   Ces travaux de rénovation énergétique peuvent non seulement réduire vos coûts
   d'exploitation mais aussi améliorer l'expérience client et renforcer
   l'attractivité écoresponsable de votre établissement.
+début de validité: 01/01/2020
 fin de validité: 01/09/2025
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Région Auvergne-Rhône-Alpes
@@ -67,7 +68,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

@@ -24,6 +24,7 @@ description longue: >-
   - Équipements de manutention, sur une infrastructure ou une superstructure de
   chargement/déchargement : subvention jusqu'à 50% des investissements, dans la
   limite de 500 000 €.
+début de validité: 01/01/2020
 fin de validité: 31/12/2027
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Voies Navigables de France
@@ -62,7 +63,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a une categorie legale eligible
   entreprise . a une categorie legale eligible:

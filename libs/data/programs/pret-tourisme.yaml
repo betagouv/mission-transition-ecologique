@@ -23,6 +23,7 @@ description longue: >-
   - des opérations de transmission (y compris croissance externe) par achat de
   titres ou de fonds de commerce permettant d’être au moins majoritaire à
   l’issue de l’opération
+début de validité: 01/01/2020
 fin de validité: 07/11/2024
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Banque Publique d'Investissement France
@@ -61,7 +62,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - a une categorie legale eligible

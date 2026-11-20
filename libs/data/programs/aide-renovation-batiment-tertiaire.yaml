@@ -22,6 +22,8 @@ description longue: >-
   Le taux d'accompagnement maximal est fixé à 70% pour les petites entreprises,
   60% pour les moyennes entreprises et 50% pour les grandes entreprises au sens
   de la réglementation européenne sur les aides d'État
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse
 contact question: https://www.aue.corsica/Contact_a649.html
@@ -66,6 +68,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

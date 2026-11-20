@@ -22,6 +22,8 @@ description: >-
 
   C’est un point de départ efficace pour bâtir une culture d’entreprise alignée
   avec la transition écologique.
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Chambre de Commerce et de l'Industrie
 contact question: formulaire
@@ -58,6 +60,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - entreprise . est dans une zone géographique éligible

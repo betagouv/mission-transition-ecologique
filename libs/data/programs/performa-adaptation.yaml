@@ -12,6 +12,7 @@ description: >-
   - **Construire un plan d’actions prioritaires** pour réduire la vulnérabilité
   et renforcer la résilience de votre entreprise aux évolutions climatiques.
 début de validité: 05/12/2025
+fin de validité: 31/12/2099
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Chambre des Métiers et de l'Artisanat
 autres opérateurs:
@@ -47,7 +48,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: dispositif . début de validité <= date du jour
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:

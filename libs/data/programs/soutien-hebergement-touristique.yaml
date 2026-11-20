@@ -37,6 +37,7 @@ description longue: >-
   l’attractivité de l’établissement et son chiffre d’affaires (équipements de
   bien-être et de mise en forme, espaces aquatiques et aqualudiques, équipements
   numériques, etc.)
+fin de validité: 31/12/2099
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Région Sud (PACA)
 contact question: https://www.maregionsud.fr/vos-aides/detail/soutien-a-lhebergement-touristique
@@ -89,6 +90,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

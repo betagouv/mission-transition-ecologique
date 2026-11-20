@@ -5,6 +5,8 @@ description: >-
   prêt est destiné à **accompagner les projets de transition écologique et
   énergétique** portés par des TPE et PME de moins de 50 salariés. Il est adossé
   à la garantie verte mise en place avec l’Etat.
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Banque Publique d'Investissement France
 contact question: formulaire
@@ -44,6 +46,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - a une categorie legale eligible

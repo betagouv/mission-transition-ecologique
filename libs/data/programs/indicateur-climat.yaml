@@ -34,6 +34,8 @@ description longue: >-
 
   - D’une analyse d’experts menée par le Réseau de la Banque de France, présent
   sur tout le territoire et au service des entreprises.
+début de validité: 01/01/2020
+fin de validité: 31/12/2099
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Banque de France
 contact question: https://www.banque-france.fr/fr/nous-contacter
@@ -65,8 +67,15 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est B
