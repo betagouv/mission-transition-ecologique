@@ -16,6 +16,8 @@ import { ContactBaserow } from './contactBaserow'
 import { Contact } from '../types'
 import { Operator } from '../../operators/types/domain'
 import { OperatorBaserow } from './operatorBaserow'
+import { AdemeThemeBaserow } from './ademeThemeBaserow'
+import { AdemeTheme } from '../../ademeTheme/types/domain'
 
 export class ProgramBaserow extends AbstractBaserow {
   private readonly _geographicCoverageTableId = ConfigBaserow.GEOGRAPHIC_COVERAGE_ID
@@ -23,11 +25,13 @@ export class ProgramBaserow extends AbstractBaserow {
   private readonly _conditionalValuesTableId = ConfigBaserow.CONDITIONAL_VALUES_ID
   private _operators: Operator[] = []
   private _geographicAreas: GeographicCoverage[] = []
+  private _ademeThemes: AdemeTheme[] = []
 
   constructor() {
     super()
     this._operators = []
     this._geographicAreas = []
+    this._ademeThemes = []
   }
 
   async getPrograms(useLocalRawData: boolean): Promise<DataProgram[]> {
@@ -48,6 +52,7 @@ export class ProgramBaserow extends AbstractBaserow {
 
     this._operators = await new OperatorBaserow().getAll()
     this._geographicAreas = await this._getTableData<GeographicAreas>(this._geographicAreasTableId)
+    this._ademeThemes = await new AdemeThemeBaserow().getAll()
 
     const dataPrograms = baserowPrograms.map((baserowProgram) =>
       this._convertToDataProgram(baserowProgram, geographicCoverages, themes, contactValues)
@@ -81,6 +86,7 @@ export class ProgramBaserow extends AbstractBaserow {
       'Couverture géographique': geographicCoverage,
       'Zones géographiques': programGeographicAreas,
       'Thèmes Ciblés': programThemes,
+      'Thème ADEME': programAdemeThemes,
       'redirection-vers': redirectProgram,
       'Référent Interne': internalContactLinks,
       ...nonModifiedFields
@@ -92,6 +98,7 @@ export class ProgramBaserow extends AbstractBaserow {
     const domainGeographicCoverage = this._replaceLinkObjectByTableData<GeographicCoverage>(geographicCoverage, geographicCoverages)
     const domainProgramGeographicAreas = this._replaceLinkObjectByTableData<GeographicAreas>(programGeographicAreas, this._geographicAreas)
     const domainProgramThemes = this._replaceLinkObjectByTableData<Theme>(programThemes, themes)
+    const domainProgramAdemeThemes = this._replaceLinkObjectByTableData<AdemeTheme>(programAdemeThemes, this._ademeThemes)
     const redirectsIds = redirectProgram.map((linkedObj) => linkedObj.id)
     const internalContacts = this._replaceLinkObjectByTableData<Contact>(internalContactLinks, contacts)
 
@@ -104,6 +111,7 @@ export class ProgramBaserow extends AbstractBaserow {
       'Zones géographiques': domainProgramGeographicAreas,
       'Couverture géographique': domainGeographicCoverage[0],
       'Thèmes Ciblés': domainProgramThemes,
+      'Thème ADEME': domainProgramAdemeThemes,
       'redirection-vers': redirectsIds,
       ...(internalContacts.length > 0 && { internalContact: internalContacts[0] })
     }

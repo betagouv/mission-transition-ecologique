@@ -1,6 +1,7 @@
 import { ProgramType } from './shared'
 import { BaserowSectors, BaserowMetaData } from '../../common/baserow/types'
 import { Theme } from '../../theme/types/domain'
+import { AdemeTheme } from '../../ademeTheme/types/domain'
 import { Contact } from '../../common/types'
 import { Operator } from '../../operators/types/domain'
 
@@ -34,6 +35,7 @@ export interface DataProgram extends BaserowSectors, BaserowMetaData {
   'Zones géographiques': GeographicAreas[]
   'Eligibilité Spécifique': string
   'Thèmes Ciblés': Theme[]
+  'Thème ADEME': AdemeTheme[]
   étape1: string
   étape2: string
   étape3: string

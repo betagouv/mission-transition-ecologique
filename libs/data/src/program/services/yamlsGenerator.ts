@@ -10,8 +10,9 @@ export class YamlGenerator {
 
   async export(programs: ProgramStaticBaseType[]): Promise<void> {
     for (const program of programs) {
+      // ademeThemes is only exported to programs.json
       // eslint-disable-next-line unused-imports/no-unused-vars
-      const { id, eligibilityData, type, ...yamlData } = program
+      const { id, eligibilityData, type, ademeThemes, ...yamlData } = program
 
       const yamlString = yaml.dump(yamlData)
       const filePath = path.join(this._outputDir, `${id}.yaml`)

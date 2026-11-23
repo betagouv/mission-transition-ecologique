@@ -1,0 +1,512 @@
+[
+  {
+    "code": "01",
+    "parentCode": null,
+    "label": "Air"
+  },
+  {
+    "code": "01_03",
+    "parentCode": "01",
+    "label": "Connaissance et métrologie des émissions"
+  },
+  {
+    "code": "01_07",
+    "parentCode": "01",
+    "label": "Impacts environnementaux et sanitaires de l'air"
+  },
+  {
+    "code": "01_11",
+    "parentCode": "01",
+    "label": "Qualité air extérieur"
+  },
+  {
+    "code": "01_12",
+    "parentCode": "01",
+    "label": "Qualité air intérieur"
+  },
+  {
+    "code": "02",
+    "parentCode": null,
+    "label": "Bâtiment"
+  },
+  {
+    "code": "02_04",
+    "parentCode": "02",
+    "label": "Eclairage intérieur"
+  },
+  {
+    "code": "02_07",
+    "parentCode": "02",
+    "label": "Impacts environnementaux et sanitaires du bâtiment"
+  },
+  {
+    "code": "02_08",
+    "parentCode": "02",
+    "label": "Isolation thermique"
+  },
+  {
+    "code": "02_12",
+    "parentCode": "02",
+    "label": "Précarité énergétique"
+  },
+  {
+    "code": "02_14",
+    "parentCode": "02",
+    "label": "Qualification professionnelle, RGE"
+  },
+  {
+    "code": "02_15",
+    "parentCode": "02",
+    "label": "Rénovation"
+  },
+  {
+    "code": "02_17",
+    "parentCode": "02",
+    "label": "Systèmes et performance énergétique"
+  },
+  {
+    "code": "02_18",
+    "parentCode": "02",
+    "label": "Bruit dans les bâtiments"
+  },
+  {
+    "code": "02_19",
+    "parentCode": "02",
+    "label": "Ventilation"
+  },
+  {
+    "code": "02_20",
+    "parentCode": "02",
+    "label": "Confort d'été - climatisation"
+  },
+  {
+    "code": "02_21",
+    "parentCode": "02",
+    "label": "Chauffage"
+  },
+  {
+    "code": "03",
+    "parentCode": null,
+    "label": "Changement climatique"
+  },
+  {
+    "code": "03_01",
+    "parentCode": "03",
+    "label": "Adaptation au changement climatique"
+  },
+  {
+    "code": "03_05",
+    "parentCode": "03",
+    "label": "Atténuation du changement climatique"
+  },
+  {
+    "code": "03_07",
+    "parentCode": "03",
+    "label": "Impacts du changement climatique"
+  },
+  {
+    "code": "03_09",
+    "parentCode": "03",
+    "label": "Démarches territoriales climat air énergie"
+  },
+  {
+    "code": "05",
+    "parentCode": null,
+    "label": "Economie circulaire et déchets"
+  },
+  {
+    "code": "05_03",
+    "parentCode": "05",
+    "label": "Collecte des déchets"
+  },
+  {
+    "code": "05_06",
+    "parentCode": "05",
+    "label": "Impacts environnementaux et sanitaires"
+  },
+  {
+    "code": "05_08",
+    "parentCode": "05",
+    "label": "Traitement valorisation des déchets"
+  },
+  {
+    "code": "05_09",
+    "parentCode": "05",
+    "label": "Prévention, Réduction des déchets"
+  },
+  {
+    "code": "05_11",
+    "parentCode": "05",
+    "label": "Filières à Responsabilité Elargie du Producteur (REP)"
+  },
+  {
+    "code": "05_14",
+    "parentCode": "05",
+    "label": "Réemploi, réutilisation"
+  },
+  {
+    "code": "05_15",
+    "parentCode": "05",
+    "label": "Biodéchets"
+  },
+  {
+    "code": "05_16",
+    "parentCode": "05",
+    "label": "Déchets d'Activité Economique (DAE)"
+  },
+  {
+    "code": "05_17",
+    "parentCode": "05",
+    "label": "Déchets dangereux"
+  },
+  {
+    "code": "05_18",
+    "parentCode": "05",
+    "label": "Déchets Ménagers et Assimilés (DMA)"
+  },
+  {
+    "code": "05_19",
+    "parentCode": "05",
+    "label": "Durée de vie des produits"
+  },
+  {
+    "code": "05_20",
+    "parentCode": "05",
+    "label": "Economie de la fonctionnalité"
+  },
+  {
+    "code": "05_21",
+    "parentCode": "05",
+    "label": "Recyclage"
+  },
+  {
+    "code": "05_22",
+    "parentCode": "05",
+    "label": "Achats responsables"
+  },
+  {
+    "code": "05_23",
+    "parentCode": "05",
+    "label": "Consommation responsable"
+  },
+  {
+    "code": "08",
+    "parentCode": null,
+    "label": "Energies"
+  },
+  {
+    "code": "08_01",
+    "parentCode": "08",
+    "label": "Autres énergies, dont fossiles"
+  },
+  {
+    "code": "08_04",
+    "parentCode": "08",
+    "label": "Fonds chaleur"
+  },
+  {
+    "code": "08_06",
+    "parentCode": "08",
+    "label": "Impacts environnementaux"
+  },
+  {
+    "code": "08_07",
+    "parentCode": "08",
+    "label": "Economies d'énergie"
+  },
+  {
+    "code": "08_09",
+    "parentCode": "08",
+    "label": "Réseaux de chaleur"
+  },
+  {
+    "code": "08_10",
+    "parentCode": "08",
+    "label": "Réseaux électriques"
+  },
+  {
+    "code": "08_12",
+    "parentCode": "08",
+    "label": "Mix énergétique"
+  },
+  {
+    "code": "08_14",
+    "parentCode": "08",
+    "label": "Stockage de l'énergie"
+  },
+  {
+    "code": "08_15",
+    "parentCode": "08",
+    "label": "Territoires ultra marin"
+  },
+  {
+    "code": "08_16",
+    "parentCode": "08",
+    "label": "Approvisonnement et transport de l'énergie"
+  },
+  {
+    "code": "08_17",
+    "parentCode": "08",
+    "label": "Biomasse énergie"
+  },
+  {
+    "code": "08_18",
+    "parentCode": "08",
+    "label": "Electricité renouvelable"
+  },
+  {
+    "code": "08_19",
+    "parentCode": "08",
+    "label": "Chaleur renouvelable"
+  },
+  {
+    "code": "08_20",
+    "parentCode": "08",
+    "label": "Froid renouvelable"
+  },
+  {
+    "code": "08_21",
+    "parentCode": "08",
+    "label": "Géothermie"
+  },
+  {
+    "code": "08_22",
+    "parentCode": "08",
+    "label": "Hydrogène"
+  },
+  {
+    "code": "11",
+    "parentCode": null,
+    "label": "Mobilité et Transports"
+  },
+  {
+    "code": "11_02",
+    "parentCode": "11",
+    "label": "Transports de personnes"
+  },
+  {
+    "code": "11_05",
+    "parentCode": "11",
+    "label": "Impacts environnementaux et sanitaires"
+  },
+  {
+    "code": "11_09",
+    "parentCode": "11",
+    "label": "Technologies des transports"
+  },
+  {
+    "code": "11_10",
+    "parentCode": "11",
+    "label": "Transports de marchandises"
+  },
+  {
+    "code": "11_11",
+    "parentCode": "11",
+    "label": "Bruit des transports"
+  },
+  {
+    "code": "11_12",
+    "parentCode": "11",
+    "label": "Tourisme durable"
+  },
+  {
+    "code": "11_13",
+    "parentCode": "11",
+    "label": "Mobilité active"
+  },
+  {
+    "code": "11_14",
+    "parentCode": "11",
+    "label": "Services de mobilité"
+  },
+  {
+    "code": "15",
+    "parentCode": null,
+    "label": "Urbanisme, territoires et sols"
+  },
+  {
+    "code": "15_08",
+    "parentCode": "15",
+    "label": "Reconversion des friches"
+  },
+  {
+    "code": "15_11",
+    "parentCode": "15",
+    "label": "Urbanisme et économie circulaire"
+  },
+  {
+    "code": "15_12",
+    "parentCode": "15",
+    "label": "Urbanisme et mobilités"
+  },
+  {
+    "code": "15_13",
+    "parentCode": "15",
+    "label": "Aménagement de l'espace public"
+  },
+  {
+    "code": "15_14",
+    "parentCode": "15",
+    "label": "Caractérisation et transfert de polluants"
+  },
+  {
+    "code": "15_15",
+    "parentCode": "15",
+    "label": "Evaluation des risques"
+  },
+  {
+    "code": "15_16",
+    "parentCode": "15",
+    "label": "Planification urbaine"
+  },
+  {
+    "code": "15_17",
+    "parentCode": "15",
+    "label": "Rafraîchissement urbain et nature en ville"
+  },
+  {
+    "code": "15_19",
+    "parentCode": "15",
+    "label": "Traitement des sols et des eaux souterraines"
+  },
+  {
+    "code": "15_20",
+    "parentCode": "15",
+    "label": "Zéro Artificialisation Nette (ZAN)"
+  },
+  {
+    "code": "16",
+    "parentCode": null,
+    "label": "Agriculture, alimentation, forêt, bioéconomie"
+  },
+  {
+    "code": "16_01",
+    "parentCode": "16",
+    "label": "Alimentation durable"
+  },
+  {
+    "code": "16_02",
+    "parentCode": "16",
+    "label": "Evaluation - Suivi des ressources biomasse"
+  },
+  {
+    "code": "16_03",
+    "parentCode": "16",
+    "label": "Filière bois"
+  },
+  {
+    "code": "16_04",
+    "parentCode": "16",
+    "label": "Gestion forestière"
+  },
+  {
+    "code": "16_05",
+    "parentCode": "16",
+    "label": "Pratiques et systèmes agricoles"
+  },
+  {
+    "code": "16_06",
+    "parentCode": "16",
+    "label": "Produits biosourcés"
+  },
+  {
+    "code": "16_07",
+    "parentCode": "16",
+    "label": "Puits de carbone"
+  },
+  {
+    "code": "16_08",
+    "parentCode": "16",
+    "label": "Qualité et préservation des sols"
+  },
+  {
+    "code": "18",
+    "parentCode": null,
+    "label": "Industrie et production durable"
+  },
+  {
+    "code": "18_01",
+    "parentCode": "18",
+    "label": "Captage et stockage de carbone"
+  },
+  {
+    "code": "18_02",
+    "parentCode": "18",
+    "label": "Décarbonation de l'industrie"
+  },
+  {
+    "code": "18_03",
+    "parentCode": "18",
+    "label": "Ecoconception"
+  },
+  {
+    "code": "18_04",
+    "parentCode": "18",
+    "label": "Ecologie Industrielle et territoriale"
+  },
+  {
+    "code": "18_05",
+    "parentCode": "18",
+    "label": "Management environnemental"
+  },
+  {
+    "code": "18_06",
+    "parentCode": "18",
+    "label": "Matières premières"
+  },
+  {
+    "code": "19",
+    "parentCode": null,
+    "label": "Société et politiques publiques"
+  },
+  {
+    "code": "19_01",
+    "parentCode": "19",
+    "label": "Politiques publiques, Gouvernance"
+  },
+  {
+    "code": "19_02",
+    "parentCode": "19",
+    "label": "Biodiversité"
+  },
+  {
+    "code": "19_03",
+    "parentCode": "19",
+    "label": "Eau"
+  },
+  {
+    "code": "19_04",
+    "parentCode": "19",
+    "label": "Economie et emplois"
+  },
+  {
+    "code": "19_05",
+    "parentCode": "19",
+    "label": "Santé"
+  },
+  {
+    "code": "19_06",
+    "parentCode": "19",
+    "label": "Sobriété énergies et ressources"
+  },
+  {
+    "code": "19_07",
+    "parentCode": "19",
+    "label": "Sociologie, changement de comportement"
+  },
+  {
+    "code": "19_08",
+    "parentCode": "19",
+    "label": "Transition juste"
+  },
+  {
+    "code": "19_09",
+    "parentCode": "19",
+    "label": "Brochure institutionnelle"
+  },
+  {
+    "code": "19_10",
+    "parentCode": "19",
+    "label": "Rapport d'activité"
+  }
+]

@@ -89,6 +89,7 @@ export interface Program
       | 'Couverture géographique'
       | 'Zones géographiques'
       | 'Thèmes Ciblés'
+      | 'Thème ADEME'
       | 'redirection-vers'
       | 'contact'
     >,
@@ -102,6 +103,7 @@ export interface Program
   'Couverture géographique': LinkObject[]
   'Zones géographiques': LinkObject[]
   'Thèmes Ciblés': LinkObject[]
+  'Thème ADEME': LinkObject[]
   'redirection-vers': LinkObject[]
   'Référent Interne': LinkObject[]
 }
@@ -230,6 +232,14 @@ export type FaqProjectsStructured = {
 export interface BaserowContact extends Id {
   'Prénom NOM': string
   Courriel: string
+}
+
+export interface BaserowAdemeTheme extends Id {
+  // Full path of the theme, e.g. "Société et politiques publiques > Eau"
+  THEME_ADEME: string
+  CODE: string
+  CODE_PERE: string
+  LIBELLE: string
 }
 
 export interface BaserowFilter {

@@ -9,6 +9,7 @@ import { validateExternalUrlLink } from './linksValidator'
 import { setOperators } from './operatorsDto'
 import { setObjectives } from './objectiveDto'
 import { setEligibilityTexts } from './eligibilityTextDto'
+import { setAdemeThemes } from './ademeThemeDto'
 import { ConditionalDataGenerator } from './conditionalDataDto'
 import { LinkValidator } from '../../common/validators/linkValidator'
 import { z } from 'zod'
@@ -70,6 +71,7 @@ export class ProgramDto {
     }
     await setObjectives(this)
     await setEligibilityTexts(this)
+    setAdemeThemes(this)
     this.programData['eligibilityData'] = new EligibilityDto(this.rawProgram, this.logger).setEligibility()
     this.programData['publicodes'] = new PublicodesGenerator().generatePublicodes(this.programData['eligibilityData'] as EligibilityData)
     new ConditionalDataGenerator(this.rawProgram, this.logger).generate(this.programData)

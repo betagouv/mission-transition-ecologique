@@ -269,6 +269,14 @@
         "tee",
         "ext-ademe"
       ]
+    },
+    "ademeThemes": {
+      "description": "Codes des thématiques ADEME du dispositif. Les libellés et la hiérarchie sont dans le référentiel static/ademe_themes.json",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^\\d{2}(_\\d{2})?$"
+      }
     }
   },
   "oneOf": [
