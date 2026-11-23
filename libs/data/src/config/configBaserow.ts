@@ -15,6 +15,7 @@ export default class ConfigBaserow extends ConfigCommon {
   private static _TABLE_ID_FAQ = 669314
   private static _TABLE_ID_FAQ_SECTION = 669315
   private static _TABLE_ID_PROGRAM_ADEME = 805404
+  private static _TABLE_ID_ADEME_THEME = 1299749
 
   public static get TOKEN() {
     return this.getEnvValue('BASEROW_TOKEN')
@@ -74,5 +75,9 @@ export default class ConfigBaserow extends ConfigCommon {
 
   public static get PROGRAM_ADEME_ID() {
     return parseInt(this.getEnvValue('BASEROW_TABLE_ID_PROGRAM_ADEME', this._TABLE_ID_PROGRAM_ADEME.toString()))
+  }
+
+  public static get ADEME_THEME_ID() {
+    return parseInt(this.getEnvValue('BASEROW_TABLE_ID_ADEME_THEME', this._TABLE_ID_ADEME_THEME.toString()))
   }
 }

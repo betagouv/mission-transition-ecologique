@@ -75,7 +75,7 @@ export enum ProgramTypes {
 
 export type ProgramJsonBaseType = ProgramStaticBaseType & Record<string, unknown> // Record string unknown to allow appending the interface
 
-export type ProgramYamlType = Omit<ProgramStaticBaseType, 'id' | 'eligibilityData' | 'type'>
+export type ProgramYamlType = Omit<ProgramStaticBaseType, 'id' | 'eligibilityData' | 'type' | 'ademeThemes'>
 
 export type AbstractProgramType = Partial<ProgramStaticBaseType> & Required<Pick<ProgramStaticBaseType, 'id' | 'type'>>
 

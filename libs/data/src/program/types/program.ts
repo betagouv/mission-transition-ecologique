@@ -261,6 +261,10 @@ export type Dispositif = {
    * Type du programme : programme interne TEE ou programme externe (ADEME)
    */
   type?: "tee" | "ext-ademe";
+  /**
+   * Codes des thématiques ADEME du dispositif. Les libellés et la hiérarchie sont dans le référentiel static/ademe_themes.json
+   */
+  ademeThemes?: string[];
 } & (
   | {
       "nature de l'aide"?: "formation";

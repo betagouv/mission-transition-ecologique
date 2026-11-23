@@ -30,6 +30,7 @@ export function makeMockProgram(overrides: Partial<DataProgram> = {}): DataProgr
     'Zones géographiques': [],
     'Eligibilité Spécifique': '',
     'Thèmes Ciblés': [],
+    'Thème ADEME': [],
     étape1: '',
     étape2: '',
     étape3: '',
