@@ -20,6 +20,7 @@ description longue: |-
   - Les économies d’eau.
   - Les technologies propres.
   - La prévention des pollutions accidentelles.
+début de validité: 01/01/2020
 fin de validité: 31/12/2030
 illustration: images/TEE_ampoule.webp
 opérateur de contact: CNAMS
@@ -62,7 +63,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

@@ -1,5 +1,7 @@
 titre: Booster Entreprises
-promesse: Bénéficiez d'un accompagnement pour la rénovation énergétique de vos bâtiments
+promesse: >-
+  Financez votre ingéniérie de projet pour réduire les consommations d'énergie
+  de votre bâtiment tertiaire
 description: >-
   Vous avez des bâtiments tertiaires et souhaitez réduire vos consommations
   d’énergie ? L’ADEME peut financer l’**ingénierie des travaux**, qu’il s’agisse
@@ -33,7 +35,7 @@ contact question: https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP0
 url: >-
   https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/pacte-entreprises-booster-entreprises-reduire-votre-facture-energetique-et-gagner-en-valeur-verte
 nature de l'aide: financement
-montant du financement: Jusqu'à 80% dans une limite de 100 000€ HT
+montant du financement: Aide calculée en fonction du projet
 ouvert aux administrations publiques: oui
 objectifs:
   - description: >-

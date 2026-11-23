@@ -1,6 +1,8 @@
 titre: Autodiagnostic Eau - Salons de coiffure
 promesse: Economisez l'eau dans votre salon de coiffure
 description: "Détection de fuites d'eau, matériel adapté au bac à shampooing et au lavage du linge, sensibilisation de vos équipes... la CMA Auvergne-Rhône-Alpes\_vous accompagne pour réaliser des économies d'eau et réduire vos factures au sein de votre salon de coiffure. \n\nUn autodiagnostic gratuit vous permet en 5 minutes :\n\n- D'identifier vos postes les plus consommateurs en eau.\n- D'élaborer une liste d'actions vous permettant de réaliser jusqu'à 30% d'économie d'eau.\n- De comprendre comment impliquer vos équipes à travers une série d'éco-gestes."
+début de validité: 01/01/2020
+fin de validité: 31/12/2050
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Chambre des Métiers et de l'Artisanat
 autres opérateurs:
@@ -39,7 +41,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:

@@ -26,6 +26,8 @@ description longue: >-
   - Investissements matériels relatifs à l’exploitation de l’activité, du site,
   ou de l’équipement concerné (sont exclus notamment les travaux de gros œuvre
   et les acquisitions foncières).
+début de validité: 01/01/2020
+fin de validité: 31/12/2050
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Région Hauts-de-France
 contact question: formulaire
@@ -69,6 +71,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

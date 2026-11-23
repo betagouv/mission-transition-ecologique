@@ -22,6 +22,7 @@ description longue: >-
 
   - de 40% pour ceux dont le poids total autorisé en charge est &gt; à 16
   tonnes.
+fin de validité: 31/12/2050
 illustration: images/TEE_ampoule.webp
 opérateur de contact: DDFIP
 contact question: https://www.impots.gouv.fr/contacts
@@ -60,8 +61,12 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

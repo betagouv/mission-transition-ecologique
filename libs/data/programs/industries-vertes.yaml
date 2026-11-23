@@ -28,6 +28,7 @@ description longue: >-
   production en aval de la chaîne de production de ces quatre filières : les
   batteries, l’éolien, les panneaux solaires, les pompes à chaleur.
 début de validité: 14/03/2024
+fin de validité: 31/12/2050
 illustration: images/TEE_ampoule.webp
 opérateur de contact: DDFIP
 contact question: https://www.impots.gouv.fr/contacts
@@ -83,7 +84,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: dispositif . début de validité <= date du jour
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:

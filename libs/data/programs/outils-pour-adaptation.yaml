@@ -15,6 +15,7 @@ description: >-
   - Évaluer les actions ;
 
   - Découvrir des exemples vertueux d'actions d'adaptation.
+début de validité: 01/01/2020
 fin de validité: 29/07/2025
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: ADEME
@@ -57,7 +58,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:

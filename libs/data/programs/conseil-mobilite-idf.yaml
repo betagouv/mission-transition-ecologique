@@ -1,6 +1,8 @@
 titre: Conseil mobilité
 promesse: Bénéficiez des aides à l’acquisition de véhicules propres
 description: "Vous prévoyez d’acheter un véhicule propre\_? Avant d’engager des frais, demandez conseil à un expert de la CMA Île-de-France pour vous aiguiller et vous aider à déterminer\_:\n\n- **La motorisation adaptée** à vos besoins (hydrogène, hybride, électrique, …).\n- **Le type de changement** (neuf, occasion, rétrofit).\n- **Les aides correspondantes** sur votre territoire."
+début de validité: 01/01/2020
+fin de validité: 31/12/2050
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Chambre des Métiers et de l'Artisanat
 autres opérateurs:
@@ -38,6 +40,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - entreprise . est dans une zone géographique éligible

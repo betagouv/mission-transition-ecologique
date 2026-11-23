@@ -20,6 +20,8 @@ description longue: |-
 
   - Moins de 50 salariés : prise en charge des coûts pédagogiques à 100 %.
   - 50 salariés et plus : prise en charge des coûts pédagogiques à 50 %.
+début de validité: 01/01/2020
+fin de validité: 31/12/2050
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Opco EP
 contact question: formulaire
@@ -64,8 +66,15 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est G

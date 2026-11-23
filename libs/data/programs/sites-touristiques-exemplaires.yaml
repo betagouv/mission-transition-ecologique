@@ -100,6 +100,8 @@ description longue: >-
   signalétique, etc.) ;
 
   - les études préalables à ces investissements.
+début de validité: 01/01/2020
+fin de validité: 31/12/2050
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Région Sud (PACA)
 contact question: mailto:relationentrepriseusager@maregionsud.fr
@@ -140,6 +142,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a une categorie legale eligible
       - entreprise . est dans une zone géographique éligible

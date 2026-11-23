@@ -54,6 +54,8 @@ description longue: >-
   - 10 fois moins puissant grâce à un véhicule léger et efficient mais également
   avec des vitesses maxi adaptées aux besoins et aux territoires entre 25 et 80
   km/h.
+début de validité: 01/01/2020
+fin de validité: 31/12/2050
 illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
 contact question: https://xd.ademe.fr/autres-questions
@@ -87,8 +89,15 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est C

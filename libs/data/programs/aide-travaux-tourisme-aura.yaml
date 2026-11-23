@@ -11,6 +11,8 @@ description: >-
   l’installation d’un chauffage performant ou le recours aux énergies
   renouvelables. Ces travaux vous permettent de réduire vos charges mais aussi
   de renforcer l’attractivité et la durabilité de votre établissement.
+début de validité: 01/01/2020
+fin de validité: 31/12/2050
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Région Auvergne-Rhône-Alpes
 contact question: mailto:pda.hebergement@auvergnerhonealpes.fr
@@ -76,6 +78,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

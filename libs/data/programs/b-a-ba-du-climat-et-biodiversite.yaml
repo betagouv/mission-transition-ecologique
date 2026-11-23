@@ -10,6 +10,8 @@ description: >-
   Proposée par le Cned - Centre national d'enseignement à distance, il est le
   fruit d’une collaboration entre experts scientifiques reconnus et experts de
   la pédagogie numérique.
+début de validité: 01/01/2020
+fin de validité: 31/12/2050
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Centre national d'enseignement à distance
 contact question: https://climat.cned.fr/contact/
@@ -49,8 +51,15 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

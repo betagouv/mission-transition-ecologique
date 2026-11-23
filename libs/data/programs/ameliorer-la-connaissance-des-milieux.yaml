@@ -8,6 +8,8 @@ description: >-
   Ce dispositif finance des études, des inventaires de zones humides, des suivis
   des milieux, de l’accompagnement technique, des formations, de la
   sensibilisation et des actions de communication.
+début de validité: 01/01/2020
+fin de validité: 31/12/2050
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Agence de l'Eau
 autres opérateurs:
@@ -55,6 +57,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

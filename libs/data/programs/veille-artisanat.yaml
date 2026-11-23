@@ -31,6 +31,7 @@ description longue: >-
   - Alertes ciblées : notifications quotidienne, hebdomadaires, mensuelles.
 
   - Newsletter mensuelle : récapitulatif des informations clés.
+fin de validité: 31/12/2050
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Chambre des Métiers et de l'Artisanat
 contact question: formulaire
@@ -64,8 +65,12 @@ conditions d'éligibilité:
 publicodes:
   entreprise . est ciblée:
     toutes ces conditions:
+      - est éligible
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
       - code NAF niveau 1 . est A

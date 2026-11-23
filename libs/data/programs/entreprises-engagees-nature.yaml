@@ -11,6 +11,7 @@ description: >-
   d'une mise en lumière par l'Office français de la biodiversité lors de salons
   dédiés au monde de l'entreprise et de la biodiversité.
 début de validité: 15/09/2019
+fin de validité: 31/12/2050
 illustration: images/TEE_ampoule.webp
 opérateur de contact: Office français de la biodiversité
 contact question: mailto:entreprisesengagees@ofb.gouv.fr
@@ -70,7 +71,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: dispositif . début de validité <= date du jour
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:
