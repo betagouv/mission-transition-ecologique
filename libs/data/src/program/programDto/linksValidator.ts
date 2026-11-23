@@ -3,30 +3,29 @@ import { LinkValidator } from '../../common/validators/linkValidator'
 import { ProgramDto } from './programDto'
 
 export async function validateExternalUrlLink(generator: ProgramDto): Promise<boolean> {
-  if (generator.rawProgram['URL externe'] == '') {
+  const link = generator.rawProgram['URL externe']
+  if (link == '') {
     return false
   }
-  if (!(await LinkValidator.isValidLink(generator.rawProgram['URL externe']))) {
-    generator.logger.log(
-      LogLevel.Minor,
-      'Problème de validation du lien du champ URL externe',
-      generator.rawProgram['Id fiche dispositif'],
-      generator.rawProgram.id,
-      `[Lien cassé](${generator.rawProgram['URL externe']})`
-    )
-    return true // we add the link even if he is detected faulty.
-  }
+  // we add the link even if it is detected faulty.
+  await validateProgramLink(link, LogLevel.Minor, 'URL externe', generator)
   return true
 }
 
 export async function validateObjectiveLink(link: string, step: number, generator: ProgramDto) {
-  if (!(await LinkValidator.isValidLink(link))) {
-    generator.logger.log(
-      LogLevel.Major,
-      "Problème de validation d'un lien du champ étape " + step,
-      generator.rawProgram['Id fiche dispositif'],
-      generator.rawProgram.id,
-      `[Lien cassé](${link})`
-    )
-  }
+  await validateProgramLink(link, LogLevel.Major, 'étape ' + step, generator)
+}
+
+export async function validateProgramLink(link: string, brokenLevel: LogLevel, field: string, generator: ProgramDto) {
+  const status = await LinkValidator.checkLink(link)
+  LinkValidator.logLinkStatus(
+    { link: LinkValidator.forceHttps(link), status },
+    {
+      logger: generator.logger,
+      brokenLevel,
+      field,
+      id: generator.rawProgram['Id fiche dispositif'],
+      rowId: generator.rawProgram.id
+    }
+  )
 }

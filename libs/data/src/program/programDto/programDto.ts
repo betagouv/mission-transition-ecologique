@@ -5,7 +5,7 @@ import { LogLevel } from '../../common/logger/types'
 import { SlugValidator } from '../../common/validators/slugValidator'
 import { DataProgram, DataProgramType, Status, YamlImage } from '../types/domain'
 import { EligibilityData, ProgramAidType, ProgramTypes } from '../types/shared'
-import { validateExternalUrlLink } from './linksValidator'
+import { validateExternalUrlLink, validateProgramLink } from './linksValidator'
 import { setOperators } from './operatorsDto'
 import { setObjectives } from './objectiveDto'
 import { setEligibilityTexts } from './eligibilityTextDto'
@@ -124,15 +124,7 @@ export class ProgramDto {
     }
     if (isUrl) {
       this.programData['contact question'] = LinkValidator.forceHttps(rawData)
-      if (!(await LinkValidator.isValidLink(rawData))) {
-        this.logger.log(
-          LogLevel.Major,
-          `Lien invalide lors de la vérification automatique dans le champ "Contact Question". A vérifier manuellement avant mise en prod.`,
-          this.rawProgram['Id fiche dispositif'],
-          this.rawProgram.id,
-          `[Lien cassé](${rawData})`
-        )
-      }
+      await validateProgramLink(rawData, LogLevel.Major, '"Contact Question"', this)
       return
     }
     if (isEmail) {

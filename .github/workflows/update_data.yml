@@ -2,6 +2,11 @@ name: Update Data
 
 on:
   workflow_dispatch:
+    inputs:
+      refresh_link_cache:
+        description: 'Revérifier tous les liens, sans utiliser le cache des liens valides'
+        type: boolean
+        default: false
   schedule:
     - cron: '12 3 * * *' # daily 3:12AM run
 
@@ -28,10 +33,28 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      # Valid links are cached between runs (see LinkValidatorCache), outside the workspace so it is NOT committed
+      - name: Restore link validation cache
+        uses: actions/cache/restore@v6
+        with:
+          path: ${{ runner.temp }}/link-validator-cache.json
+          key: link-validator-projects-${{ github.run_id }}
+          restore-keys: link-validator-projects-
+
       - name: Generate projects
         env:
           BASEROW_TOKEN: '${{secrets.BASEROW_TOKEN}}'
+          LINK_VALIDATOR_CACHE_FILE: ${{ runner.temp }}/link-validator-cache.json
+          LINK_VALIDATOR_CACHE_TTL_DAYS: ${{ inputs.refresh_link_cache && '0' || '3' }}
         run: npm run generate:projects
+
+      - name: Save link validation cache
+        if: always()
+        continue-on-error: true
+        uses: actions/cache/save@v6
+        with:
+          path: ${{ runner.temp }}/link-validator-cache.json
+          key: link-validator-projects-${{ github.run_id }}-${{ github.run_attempt }}
 
       # Build the PR body in a file outside the workspace so it is NOT committed
       # to the PR, and truncate the log to stay under GitHub's 65536-char body limit.
@@ -95,10 +118,28 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      # Valid links are cached between runs (see LinkValidatorCache), outside the workspace so it is NOT committed
+      - name: Restore link validation cache
+        uses: actions/cache/restore@v6
+        with:
+          path: ${{ runner.temp }}/link-validator-cache.json
+          key: link-validator-programs-${{ github.run_id }}
+          restore-keys: link-validator-programs-
+
       - name: Generate programs
         env:
           BASEROW_TOKEN: '${{secrets.BASEROW_TOKEN}}'
+          LINK_VALIDATOR_CACHE_FILE: ${{ runner.temp }}/link-validator-cache.json
+          LINK_VALIDATOR_CACHE_TTL_DAYS: ${{ inputs.refresh_link_cache && '0' || '3' }}
         run: npm run generate:programs
+
+      - name: Save link validation cache
+        if: always()
+        continue-on-error: true
+        uses: actions/cache/save@v6
+        with:
+          path: ${{ runner.temp }}/link-validator-cache.json
+          key: link-validator-programs-${{ github.run_id }}-${{ github.run_attempt }}
 
       # Build the PR body in a file outside the workspace so it is NOT committed
       # to the PR, and truncate the log to stay under GitHub's 65536-char body limit.
@@ -197,10 +238,28 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      # Valid links are cached between runs (see LinkValidatorCache), outside the workspace so it is NOT committed
+      - name: Restore link validation cache
+        uses: actions/cache/restore@v6
+        with:
+          path: ${{ runner.temp }}/link-validator-cache.json
+          key: link-validator-faq-${{ github.run_id }}
+          restore-keys: link-validator-faq-
+
       - name: Generate FAQ
         env:
           BASEROW_TOKEN: '${{secrets.BASEROW_TOKEN}}'
+          LINK_VALIDATOR_CACHE_FILE: ${{ runner.temp }}/link-validator-cache.json
+          LINK_VALIDATOR_CACHE_TTL_DAYS: ${{ inputs.refresh_link_cache && '0' || '3' }}
         run: npm run generate:faq
+
+      - name: Save link validation cache
+        if: always()
+        continue-on-error: true
+        uses: actions/cache/save@v6
+        with:
+          path: ${{ runner.temp }}/link-validator-cache.json
+          key: link-validator-faq-${{ github.run_id }}-${{ github.run_attempt }}
 
       # Build the PR body in a file outside the workspace so it is NOT committed
       # to the PR, and truncate the log to stay under GitHub's 65536-char body limit.
