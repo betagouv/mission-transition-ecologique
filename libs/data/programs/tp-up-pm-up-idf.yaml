@@ -1,0 +1,134 @@
+titre: TP'up et PM'up
+promesse: >-
+  Financez vos investissements, conseils ou recrutement en faveur de la
+  transition écologique
+description: >-
+  La Région Île de France accompagne financièrement les TPE et les PME dans leur
+  transition écologique et énergétique, ainsi que dans les projets créateurs
+  d'emplois, à travers deux dispositifs : TP'up et PM'up.
+description longue: "Sont éligibles les projets de filières et d'activités stratégiques régionales et de l'économie sociale et solidaire, avec des enjeux de souveraineté, d'industrialisation et de décarbonation.\n\n\n\nLes dépenses éligibles sont :\_\n\n- Les investissements matériels /immatériels.\n- Les prestations de conseil.\n- Le développement international.\n- Un recrutement sur une fonction «\_Transition écologique et énergétique\_»."
+fin de validité: 31/12/2050
+illustration: images/TEE_ampoule.webp
+opérateur de contact: Région Île-de-France
+contact question: mailto:aides.economiques@iledefrance.fr
+url: https://www.iledefrance.fr/aides-et-appels-a-projets/tpup
+nature de l'aide: financement
+montant du financement: Jusqu'à 55 000 € pour les TPE et 250 000 € pour les PME.
+objectifs:
+  - description: >-
+      Vérifier l'éligibilité de votre projet en consultant le Guide du candidat
+      TP'up ou PM'up.
+    liens:
+      - lien: >-
+          https://mesdemarches.iledefrance.fr/document-collect/cridfprd/root/public?objectId=23f5745f-70c5-4510-a22c-8ff9a7836b74;1.0
+        texte: Guide du candidat TP'up
+  - description: >-
+      Si vous le souhaitez, inscrivez-vous à une session de webinaire (le
+      vendredi 27 novembre 2026 à 9h30 ou le vendredi 8 janvier 2027 à 9h30)
+      pour en savoir plus. 
+    liens:
+      - lien: >-
+          https://regioniledefrancecrm.my.site.com/MonCompteRegion/s/campaignregisterunkown?CampaignId=701Sm00000Tk9imIAB
+        texte: M'inscrire à une session de webinaire TP'up
+      - lien: >-
+          https://regioniledefrancecrm.my.site.com/MonCompteRegion/s/campaignregisterunkown?CampaignId=701Sm00000ZylbCIAR
+        texte: M'inscrire à une session de webinaire PM'up
+  - description: >-
+      Créez un compte sur mesdemarches.iledefrance.fr pour pouvoir déposer votre
+      dossier. 
+    liens:
+      - lien: >-
+          https://mesdemarches.iledefrance.fr/account-management/cridfprd-demandeurs/ux/#/account-creation?redirectTo=https:%2F%2Fmesdemarches.iledefrance.fr%2Faides%2F%23%2Fcridfprd%2Fconnecte%2Ftiers-selection&jwtKey=jwt-cridfprd-portail-depot-demande-aides&footer=https:%2F%2Fmesdemarches.iledefrance.fr%2Faides%2F%23%2Fcridfprd%2Faccessibilite,Accessibilit%C3%A9%20:%20partiellement%20conforme,_self;https:%2F%2Fmesdemarches.iledefrance.fr%2Faides%2F%23%2Fcridfprd%2Fmentions-legales,Mentions%20l%C3%A9gales%20et%20RGPD,_self
+        texte: Créer mon compte
+  - description: >-
+      Déposez votre dossier de candidature. S'il est retenu, recevez les
+      informations concernant le calendrier et les modalités de financement.
+conditions d'éligibilité:
+  taille de l'entreprise:
+    - Moins de 250 salariés
+    - Éligible aux micro-entreprises
+  secteur géographique:
+    - Île-de-France
+  secteur d'activité:
+    - >-
+      - Secteurs non éligibles à cette aide :
+
+
+      * Activités de négoce.
+
+      * Activités de conseil aux entreprises et aux particuliers.
+
+      * Professions réglementées ou assimilées (professions libérales,
+      professions organisées en ordre...).
+
+      * Activités financières, assurances et immobilier.
+
+      * Activités de café, hôtel et restaurant.
+
+      * Organismes et établissements de formation.
+
+      * Transport routier de marchandises.
+
+      * Activités de logistiques.
+
+      * Entreprises de conseil, maintenance et formation dans les services du
+      numérique.
+
+      * Services à la personne.
+
+      * Secteur de la communication et du multimédia (agences/plateformes de
+      webmarketing, de relation client, publicité, presse, télévision, radio,
+      réseaux sociaux et influenceurs...).
+
+      * Secteur primaire agricole, pêche et aquaculture et forêt.
+  nombre d'années d'activité:
+    - Éligible à toutes les entreprises
+publicodes:
+  entreprise . est ciblée:
+    toutes ces conditions:
+      - est éligible
+      - est dans un secteur d'activité ciblé
+      - a un objectif ciblé
+  entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
+    toutes ces conditions:
+      - a un effectif éligible
+      - entreprise . est dans une zone géographique éligible
+  entreprise . a un effectif éligible:
+    toutes ces conditions:
+      - effectif <= 249
+  entreprise . est dans un secteur d'activité ciblé:
+    une de ces conditions:
+      - code NAF niveau 1 . est B
+      - code NAF niveau 1 . est C
+      - code NAF niveau 1 . est D
+      - code NAF niveau 1 . est E
+      - code NAF niveau 1 . est F
+      - code NAF niveau 1 . est G
+      - code NAF niveau 1 . est K
+      - code NAF niveau 1 . est L
+      - code NAF niveau 1 . est M
+      - code NAF niveau 1 . est N
+      - code NAF niveau 1 . est O
+      - code NAF niveau 1 . est P
+      - code NAF niveau 1 . est Q
+      - code NAF niveau 1 . est R
+      - code NAF niveau 1 . est S
+      - code NAF niveau 1 . est T
+      - code NAF niveau 1 . est U
+  entreprise . a un objectif ciblé:
+    une de ces conditions:
+      - questionnaire . objectif prioritaire . est rénover mon bâtiment
+      - questionnaire . objectif prioritaire . est la mobilité durable
+      - questionnaire . objectif prioritaire . est la gestion des déchets
+      - >-
+        questionnaire . objectif prioritaire . est diminuer ma consommation
+        d'eau
+      - questionnaire . objectif prioritaire . est ma performance énergétique
+      - questionnaire . objectif prioritaire . est former ou recruter
+      - questionnaire . objectif prioritaire . est mon impact environnemental
+      - questionnaire . objectif prioritaire . est l'écoconception
+      - questionnaire . objectif prioritaire . est préserver la biodiversité
+  entreprise . est dans une zone géographique éligible:
+    une de ces conditions:
+      - région = Île-de-France

@@ -11,6 +11,8 @@ description: >-
   Bénéficiez d'un accompagnement sur mesure sur les plans financiers et
   techniques.
 description longue: "- **De 1 à 3 VAE** achetés\_**:** **aide de\_25%**\_plafonnée à **500 €**/VAE.\n- **À partir de 4 VAE\_(ou plus)** achetés :\_**aide de\_25%**\_plafonnée à **1 000€**/VAE.\n- **Stations de recharge\_: aide de 50%**\_plafonnée à **4000€**/point de charge\_et bonifiée à\_**60%**\_en cas de station rechargée en énergie renouvelable.\n\nAvant d'acheter votre flotte de VAE ou de mettre en place votre station de recharge, adressez votre demande\_de soutien financier à l'AUE."
+début de validité: 01/01/2020
+fin de validité: 31/12/2050
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Agence d’Aménagement durable, d’Urbanisme et d’Energie de la Corse
 contact question: https://www.aue.corsica/Contact_a649.html
@@ -56,6 +58,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

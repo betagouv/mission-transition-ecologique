@@ -3,6 +3,7 @@ promesse: >-
   Renforcez votre argumentaire pour donner plus d'impact à votre projet
   d'efficacité énergétique.
 description: "Suivez une formation en ligne pour apprendre à défendre votre projet d’économie d’énergie et de décarbonation.\n\nApprenez, à travers une formation en e-learning à :\n\n- Structurer\_un pitch convaincant sur votre projet ;\n\n- Perfectionner\_vos compétences en communication verbale et non verbale ;\n\n- Anticiper et répondre aux objections ;\n\n- Recevoir et intégrer des feedbacks constructifs."
+début de validité: 01/01/2020
 fin de validité: 31/12/2025
 illustration: images/TEE_ampoule.webp
 opérateur de contact: ADEME
@@ -45,7 +46,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: date du jour <= dispositif . fin de validité
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     valeur: oui
   entreprise . est dans un secteur d'activité ciblé:
     une de ces conditions:

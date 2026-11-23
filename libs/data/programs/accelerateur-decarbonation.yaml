@@ -26,6 +26,7 @@ description longue: |-
   - De 10 jours de formation avec une grande école. 
   - De l'intégration dans un collectif d'entrepreneurs de la filière.
 début de validité: 30/09/2026
+fin de validité: 31/12/2050
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Banque Publique d'Investissement France
 contact question: mailto:clemence.gamblin@bpifrance.fr
@@ -66,7 +67,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
-    applicable si: dispositif . début de validité <= date du jour
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - a une categorie legale eligible

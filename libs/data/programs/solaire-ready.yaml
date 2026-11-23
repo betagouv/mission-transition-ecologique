@@ -38,6 +38,7 @@ description longue: >-
   objet l’installation ultérieure d’équipements photovoltaïques. De plus, les
   projets où le maître d’ouvrage s’engage à porter lui-même le financement de la
   future installation photovoltaïque seront priorisés.
+fin de validité: 31/12/2050
 illustration: images/TEE_eolienne.webp
 opérateur de contact: Région Sud (PACA)
 contact question: mailto:relationentrepriseusager@maregionsud.fr
@@ -88,6 +89,7 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si: date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - entreprise . est dans une zone géographique éligible
   entreprise . est dans un secteur d'activité ciblé:

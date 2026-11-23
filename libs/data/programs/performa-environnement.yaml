@@ -24,6 +24,8 @@ description: >-
 
   - Appui dans l’**identification des aides disponibles** (investissements,
   études, formations) et accompagnement au montage des demandes de financement.
+début de validité: 01/01/2020
+fin de validité: 31/12/2050
 illustration: images/TEE_energie_verte.webp
 opérateur de contact: Chambre des Métiers et de l'Artisanat
 contact question: formulaire
@@ -70,6 +72,10 @@ publicodes:
       - est dans un secteur d'activité ciblé
       - a un objectif ciblé
   entreprise . est éligible:
+    applicable si:
+      toutes ces conditions:
+        - dispositif . début de validité <= date du jour
+        - date du jour <= dispositif . fin de validité
     toutes ces conditions:
       - a un effectif éligible
       - entreprise . est dans une zone géographique éligible
