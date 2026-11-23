@@ -96,8 +96,9 @@ export class Logger implements LoggerInterface {
     markdownContent += '| --- | --- | --- | --- |\n'
     rows.forEach(({ url, logs: urlLogs, criticality }) => {
       const status = (urlLogs[0].link as LoggedLink).status
-      const linkCell = status === LinkStatus.Malformed ? `\`${url}\`` : `[${this._shortLabel(url, true)}](${url})`
-      markdownContent += `| ${LogLevelDisplay[criticality]} | ${this._escapeCell(linkCell)} | ${Logger._linkProblemLabels[status]} | ${this._renderUsages(urlLogs)} |\n`
+      const linkCell =
+        status === LinkStatus.Malformed ? `\`${this._encodeUrl(url)}\`` : this._markdownLink(this._shortLabel(url, true), url)
+      markdownContent += `| ${LogLevelDisplay[criticality]} | ${linkCell} | ${Logger._linkProblemLabels[status]} | ${this._renderUsages(urlLogs)} |\n`
     })
 
     return markdownContent
@@ -124,7 +125,7 @@ export class Logger implements LoggerInterface {
     hosts.forEach((host) => {
       const urls = (urlsByHost.get(host) as string[]).sort()
       urls.forEach((url) => {
-        markdownContent += `| ${host} | ${this._escapeCell(`[${this._shortLabel(url, false)}](${url})`)} | ${this._renderUsages(logsByUrl.get(url) as LogEvent[])} |\n`
+        markdownContent += `| ${host} | ${this._markdownLink(this._shortLabel(url, false), url)} | ${this._renderUsages(logsByUrl.get(url) as LogEvent[])} |\n`
       })
     })
     markdownContent += '\n</details>\n'
@@ -138,9 +139,9 @@ export class Logger implements LoggerInterface {
     return [...logsByRow.values()]
       .map((rowLogs) => {
         const baserowLink = this._buildBaserowLink(rowLogs[0])
-        const name = this._escapeCell(rowLogs[0].name)
+        const name = rowLogs[0].name
         const fields = [...new Set(rowLogs.map((log) => (log.link as LoggedLink).field))].join(', ')
-        return `${baserowLink ? `[${name}](${baserowLink})` : name} : ${this._escapeCell(fields)}`
+        return `${baserowLink ? this._markdownLink(name, baserowLink) : this._escapeText(name)} : ${this._escapeText(fields)}`
       })
       .join('<br>')
   }
@@ -170,8 +171,16 @@ export class Logger implements LoggerInterface {
     if (label.length > maxLength) {
       label = `${label.slice(0, 30)}…${label.slice(-(maxLength - 31))}`
     }
-    // brackets would break the markdown link text
-    return label.replace(/[[\]]/g, '\\$&')
+    return label
+  }
+
+  private _markdownLink(label: string, url: string): string {
+    return `[${this._escapeText(label)}](${this._encodeUrl(url)})`
+  }
+
+  // pipes would split the table cell, an encoded pipe keeps the url valid
+  private _encodeUrl(url: string): string {
+    return url.replace(/\|/g, '%7C').replace(/\r?\n/g, '')
   }
 
   private _hostname(url: string): string {
@@ -182,8 +191,12 @@ export class Logger implements LoggerInterface {
     }
   }
 
-  private _escapeCell(value: string): string {
-    return value.replace(/\|/g, '\\|').replace(/\r?\n/g, ' ')
+  /**
+   * Text inside a table cell or a link text: pipes would split the cell, brackets would break the link,
+   * backslashes are escaped too so they cannot cancel the other escapes.
+   */
+  private _escapeText(value: string): string {
+    return value.replace(/[\\|[\]]/g, '\\$&').replace(/\r?\n/g, ' ')
   }
 
   private _sortLogs(): LogEvent[] {

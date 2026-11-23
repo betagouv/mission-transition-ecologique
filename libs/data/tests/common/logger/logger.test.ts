@@ -37,7 +37,7 @@ describe('Logger.write', () => {
     logger.logLink(LogLevel.Minor, { url, status: LinkStatus.Broken, field: 'URL externe' }, 'dispositif-b', 2)
 
     const content = writtenContent(logger)
-    const rows = content.split('\n').filter((line) => line.includes(url))
+    const rows = content.split('\n').filter((line) => line.includes('dispositif-'))
 
     expect(content).toContain('#### Liens cassés ou mal formés (1)')
     expect(rows).toHaveLength(1)
@@ -110,5 +110,20 @@ describe('Logger.write', () => {
     )
 
     expect(writtenContent(logger)).toContain('Question a \\| b ?')
+  })
+
+  it('escapes backslashes so they cannot cancel the pipe or bracket escaping', () => {
+    const logger = new Logger(LoggerType.Faq)
+    logger.logLink(
+      LogLevel.Major,
+      { url: 'https://www.example.fr/a%5C%5D', status: LinkStatus.Broken, field: 'Réponse' },
+      'Question a \\| b ?',
+      3
+    )
+
+    const content = writtenContent(logger)
+
+    expect(content).toContain('[Question a \\\\\\| b ?](')
+    expect(content).toContain('[www.example.fr/a\\\\\\]](https://www.example.fr/a%5C%5D)')
   })
 })
