@@ -63,6 +63,9 @@ const mockBrowser = (response: FakeResponse | Error) => {
   return browser
 }
 
+// Error thrown by undici (fetch) when the domain does not resolve
+const dnsError = () => Object.assign(new TypeError('fetch failed'), { cause: { code: 'ENOTFOUND' } })
+
 // The validator keeps a static cache: each test uses its own host
 let counter = 0
 const uniqueLink = (host = 'example') => `https://${host}-${++counter}.fr/page`
@@ -106,10 +109,30 @@ describe('LinkValidator.checkLink', () => {
     expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Broken)
   })
 
-  it('returns Broken on persistent network errors when playwright is disabled', async () => {
+  it('returns Unreachable on persistent network errors when playwright is disabled', async () => {
     const error = new Error('socket hang up')
     mockResponses(error, error, error)
-    expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Broken)
+    expect(await LinkValidator.check(uniqueLink())).toMatchObject({ status: LinkStatus.Unreachable, reason: 'erreur réseau' })
+  })
+
+  it('returns Broken without the browser when the domain does not exist', async () => {
+    mockResponses(dnsError(), dnsError(), Object.assign(new Error('getaddrinfo ENOTFOUND'), { code: 'ENOTFOUND' }))
+    expect(await LinkValidator.check(uniqueLink())).toMatchObject({ status: LinkStatus.Broken, reason: 'domaine introuvable' })
+  })
+
+  it('gives the HTTP status as reason', async () => {
+    mockResponses({ status: 500 }, { status: 500 }, { status: 502 })
+    expect(await LinkValidator.check(uniqueLink())).toMatchObject({ status: LinkStatus.Broken, reason: 'HTTP 500 / 502' })
+
+    mockResponses({ status: 500 }, { status: 410 }, { status: 200 })
+    expect(await LinkValidator.check(uniqueLink())).toMatchObject({ status: LinkStatus.Broken, reason: 'HTTP 410' })
+  })
+
+  it('keeps the reason of a link checked again during the run', async () => {
+    const link = uniqueLink()
+    mockResponses({ status: 500 }, { status: 500 }, { status: 500 })
+    await LinkValidator.check(link)
+    expect(await LinkValidator.check(link)).toMatchObject({ status: LinkStatus.Broken, reason: 'HTTP 500' })
   })
 
   it('returns Broken on a 401', async () => {
@@ -194,6 +217,14 @@ describe('LinkValidator playwright browser', () => {
   it('returns Forbidden when the browser also gets a 403 without challenge', async () => {
     mockResponses({ status: 403 }, { status: 403 }, { status: 403 })
     mockBrowser({ status: 403 })
+    expect(await LinkValidator.check(uniqueLink())).toMatchObject({ status: LinkStatus.Forbidden, reason: 'HTTP 403 dans le navigateur' })
+    await vi.advanceTimersByTimeAsync(5000)
+  })
+
+  it('returns Forbidden when the browser gets a 403 after network errors', async () => {
+    const error = new Error('socket hang up')
+    mockResponses(error, error, error)
+    mockBrowser({ status: 403 })
     expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Forbidden)
     await vi.advanceTimersByTimeAsync(5000)
   })
@@ -233,11 +264,22 @@ describe('LinkValidator playwright browser', () => {
     await vi.advanceTimersByTimeAsync(5000)
   })
 
-  it('returns Broken when the browser fails to navigate after network errors', async () => {
+  it('returns Unreachable when the browser fails to navigate after network errors', async () => {
+    const timeout = Object.assign(new Error('The operation was aborted due to timeout'), { name: 'TimeoutError' })
+    mockResponses(timeout, timeout, Object.assign(new Error('socket hang up'), { code: 'ECONNRESET' }))
+    mockBrowser(new Error('page.goto: Timeout 20000ms exceeded.'))
+    expect(await LinkValidator.check(uniqueLink())).toMatchObject({
+      status: LinkStatus.Unreachable,
+      reason: 'délai dépassé / connexion coupée ; navigateur : délai dépassé'
+    })
+    await vi.advanceTimersByTimeAsync(5000)
+  })
+
+  it('returns Broken when the browser does not find the domain after network errors', async () => {
     const error = new Error('socket hang up')
     mockResponses(error, error, error)
-    mockBrowser(new Error('net::ERR_NAME_NOT_RESOLVED'))
-    expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Broken)
+    mockBrowser(new Error('page.goto: net::ERR_NAME_NOT_RESOLVED at https://example.fr'))
+    expect(await LinkValidator.check(uniqueLink())).toMatchObject({ status: LinkStatus.Broken, reason: 'domaine introuvable' })
     await vi.advanceTimersByTimeAsync(5000)
   })
 
@@ -304,9 +346,26 @@ describe('LinkValidator.logLinkStatus', () => {
     [LinkStatus.Broken, LogLevel.Major],
     [LinkStatus.Malformed, LogLevel.Critic],
     [LinkStatus.Unverifiable, LogLevel.Info],
-    [LinkStatus.Forbidden, LogLevel.Info]
+    [LinkStatus.Forbidden, LogLevel.Info],
+    [LinkStatus.Unreachable, LogLevel.Info]
   ])('logs a %s link with level %s', (status, level) => {
     LinkValidator.logLinkStatus({ link: 'https://site.fr', status }, context)
     expect(logger.logLink).toHaveBeenCalledWith(level, { url: 'https://site.fr', status, field: 'étape 1' }, 'mon-dispositif', 42)
+  })
+})
+
+describe('LinkValidator.logLinkStatus reason', () => {
+  it('passes the reason to the logger', () => {
+    const logger = { log: vi.fn(), logLink: vi.fn(), write: vi.fn() }
+    LinkValidator.logLinkStatus(
+      { link: 'https://site.fr', status: LinkStatus.Broken, reason: 'HTTP 500' },
+      { logger, brokenLevel: LogLevel.Major, field: 'étape 1', id: 'mon-dispositif', rowId: 42 }
+    )
+    expect(logger.logLink).toHaveBeenCalledWith(
+      LogLevel.Major,
+      { url: 'https://site.fr', status: LinkStatus.Broken, field: 'étape 1', reason: 'HTTP 500' },
+      'mon-dispositif',
+      42
+    )
   })
 })

@@ -5,6 +5,7 @@ import { LoggerInterface, LogLevel } from '../logger/types'
 import { MarkedUrl } from '../tool/markedUrl'
 import { LinkStatus } from './linkStatus'
 import { LinkValidatorCache } from './linkValidatorCache'
+import { NetworkError, networkErrorLabel, toNetworkError } from './networkError'
 
 // Valid     : 2xx/3xx confirmed, link is reachable
 // Invalid   : 404/410, link is definitively broken
@@ -22,12 +23,18 @@ enum ValidationResult {
 interface ValidationOutcome {
   result: ValidationResult
   status?: number
+  // set when the request failed without any HTTP response
+  error?: NetworkError
 }
 
 export interface LinkCheck {
   link: string
   status: LinkStatus
+  // why the link is not valid, shown in the report (e.g. "HTTP 500", "délai dépassé")
+  reason?: string
 }
+
+type LinkResult = Omit<LinkCheck, 'link'>
 
 export interface LinkLogContext {
   logger: LoggerInterface
@@ -41,6 +48,8 @@ export interface LinkLogContext {
 export class LinkValidator {
   private static _cache = LinkValidatorCache.fromEnv()
   private static _protectedHosts = new Set<string>()
+  // Reasons of the non valid links checked during this run, the cache only keeps the status
+  private static _reasons = new Map<string, string>()
 
   // Shared playwright browser, launched on first use and closed after a short idle delay
   private static _browser: Promise<Browser> | undefined
@@ -72,23 +81,24 @@ export class LinkValidator {
    * - Malformed    → critical, the link can never work
    * - Unverifiable → info, to be checked manually
    * - Forbidden    → info, to be checked manually
+   * - Unreachable  → info, to be checked manually
    */
   public static logLinkStatus(check: LinkCheck, context: LinkLogContext): void {
     if (check.status === LinkStatus.Valid) {
       return
     }
     const { logger, brokenLevel, field, id, rowId } = context
-    logger.logLink(this._logLevel(check.status, brokenLevel), { url: check.link, status: check.status, field }, id, rowId)
+    const link = { url: check.link, status: check.status, field, ...(check.reason ? { reason: check.reason } : {}) }
+    logger.logLink(this._logLevel(check.status, brokenLevel), link, id, rowId)
   }
 
   public static async findInvalidLinks(inputText: string): Promise<LinkCheck[]> {
     const foundLinks = this.foundLinks(inputText)
     const invalidLinks: LinkCheck[] = []
     for (const rawLink of foundLinks) {
-      const link = this.forceHttps(rawLink)
-      const status = await LinkValidator.checkLink(link)
-      if (status !== LinkStatus.Valid) {
-        invalidLinks.push({ link, status })
+      const check = await LinkValidator.check(rawLink)
+      if (check.status !== LinkStatus.Valid) {
+        invalidLinks.push(check)
       }
     }
 
@@ -100,16 +110,23 @@ export class LinkValidator {
   }
 
   public static async checkLink(rawLink: string): Promise<LinkStatus> {
+    return (await this.check(rawLink)).status
+  }
+
+  public static async check(rawLink: string): Promise<LinkCheck> {
     const link = this.forceHttps(rawLink)
 
     const cached = this._cache.get(link)
     if (cached !== undefined) {
-      return cached
+      return this._withReason({ link, status: cached }, this._reasons.get(link))
     }
 
-    const status = await this._checkLink(link)
+    const { status, reason } = await this._checkLink(link)
     this._cache.set(link, status)
-    return status
+    if (reason) {
+      this._reasons.set(link, reason)
+    }
+    return this._withReason({ link, status }, reason)
   }
 
   /**
@@ -133,36 +150,40 @@ export class LinkValidator {
     if (status === LinkStatus.Malformed) {
       return LogLevel.Critic
     }
-    if (status === LinkStatus.Unverifiable || status === LinkStatus.Forbidden) {
+    if (status === LinkStatus.Unverifiable || status === LinkStatus.Forbidden || status === LinkStatus.Unreachable) {
       return LogLevel.Info
     }
     return brokenLevel
+  }
+
+  private static _withReason(check: LinkCheck, reason: string | undefined): LinkCheck {
+    return reason ? { ...check, reason } : check
   }
 
   /**
    * Checks a link with HEAD, GET (fetch) then GET (axios), and with a real browser when the GET requests are not conclusive:
    * - 403/429 on a GET request: likely bot-blocking, since all pages are expected to be public
    * - network error or timeout on every GET request: some firewalls drop bot connections instead of answering 403
-   * Any other HTTP error on the GET requests (5xx, 401, other 4xx) means a visitor would most likely fail too.
+   * Any other HTTP error on the GET requests (5xx, 401, other 4xx), or an unknown domain, means a visitor would most likely fail too.
    * HEAD is only trusted for a success or a challenge: some servers answer it badly (403, 405, 5xx) while GET works.
    */
-  private static async _checkLink(link: string): Promise<LinkStatus> {
+  private static async _checkLink(link: string): Promise<LinkResult> {
     if (this.isMalformed(link)) {
-      return LinkStatus.Malformed
+      return { status: LinkStatus.Malformed }
     }
 
     // A Cloudflare challenge usually covers the whole domain: the other links of the host are not requested again during the run
     const host = new URL(link).hostname
     if (this._protectedHosts.has(host)) {
-      return LinkStatus.Unverifiable
+      return { status: LinkStatus.Unverifiable }
     }
 
     const headOutcome = await this._headValidation(link)
     if (headOutcome.result === ValidationResult.Valid) {
-      return LinkStatus.Valid
+      return { status: LinkStatus.Valid }
     }
     if (headOutcome.result === ValidationResult.Protected) {
-      return LinkStatus.Unverifiable
+      return { status: LinkStatus.Unverifiable }
     }
 
     const getOutcomes: ValidationOutcome[] = []
@@ -171,12 +192,12 @@ export class LinkValidator {
       const outcome = await validation()
       switch (outcome.result) {
         case ValidationResult.Valid:
-          return LinkStatus.Valid
+          return { status: LinkStatus.Valid }
         case ValidationResult.Invalid:
-          return LinkStatus.Broken
+          return { status: LinkStatus.Broken, reason: `HTTP ${outcome.status}` }
         case ValidationResult.Protected:
           this._protectedHosts.add(host)
-          return LinkStatus.Unverifiable
+          return { status: LinkStatus.Unverifiable }
       }
       getOutcomes.push(outcome)
     }
@@ -184,10 +205,13 @@ export class LinkValidator {
     const isBotBlocked = getOutcomes.some((outcome) => this._isBotBlockingStatus(outcome.status))
     const isNetworkFailure = getOutcomes.every((outcome) => outcome.status === undefined)
     if (!isBotBlocked && !isNetworkFailure) {
-      return LinkStatus.Broken
+      return { status: LinkStatus.Broken, reason: this._httpReason(getOutcomes) }
+    }
+    if (isNetworkFailure && getOutcomes.some((outcome) => outcome.error === NetworkError.DomainNotFound)) {
+      return { status: LinkStatus.Broken, reason: networkErrorLabel(NetworkError.DomainNotFound) }
     }
 
-    return this._browserCheck(link, host, isBotBlocked)
+    return this._browserCheck(link, host, isBotBlocked, this._networkReason(getOutcomes))
   }
 
   /**
@@ -198,34 +222,56 @@ export class LinkValidator {
    * - 403 without challenge → Forbidden: either a really deleted file, or a firewall that also blocks headless browsers
    *   or datacenter IPs (frequent from the CI), a bot cannot tell
    * - any other HTTP error (401, 5xx…) → Broken
-   * - navigation error → Broken after network errors only, Unverifiable after a 403/429
-   * - browser disabled or unavailable → Unverifiable after a 403/429, Broken after network errors only
+   * - unknown domain → Broken
+   * - other navigation error → Unverifiable after a 403/429, Unreachable after network errors only
+   * - browser disabled or unavailable → same as a navigation error
+   * Without a browser, a persistent 403 therefore stays Unverifiable (collapsed section) instead of Forbidden:
+   * only a browser can tell that a real visitor gets the 403 too.
    */
-  private static async _browserCheck(link: string, host: string, isBotBlocked: boolean): Promise<LinkStatus> {
-    const fallback = isBotBlocked ? LinkStatus.Unverifiable : LinkStatus.Broken
+  private static async _browserCheck(link: string, host: string, isBotBlocked: boolean, networkReason: string): Promise<LinkResult> {
+    const fallback = (browserReason?: string): LinkResult =>
+      isBotBlocked
+        ? { status: LinkStatus.Unverifiable }
+        : { status: LinkStatus.Unreachable, reason: browserReason ? `${networkReason} ; navigateur : ${browserReason}` : networkReason }
     if (!this._isEnablePlaywright()) {
-      return fallback
+      return fallback()
     }
 
     const outcome = await this._playwrightValidation(link)
     switch (outcome.result) {
       case ValidationResult.Valid:
-        return LinkStatus.Valid
+        return { status: LinkStatus.Valid }
       case ValidationResult.Invalid:
-        return LinkStatus.Broken
+        return { status: LinkStatus.Broken, reason: `HTTP ${outcome.status} dans le navigateur` }
       case ValidationResult.Protected:
         this._protectedHosts.add(host)
-        return LinkStatus.Unverifiable
+        return { status: LinkStatus.Unverifiable }
       case ValidationResult.BrowserUnavailable:
-        return fallback
+        return fallback()
+    }
+    if (outcome.error === NetworkError.DomainNotFound) {
+      return { status: LinkStatus.Broken, reason: networkErrorLabel(NetworkError.DomainNotFound) }
     }
     if (outcome.status === undefined) {
-      return fallback
+      return fallback(networkErrorLabel(outcome.error ?? NetworkError.Other))
     }
     if (outcome.status === 429) {
-      return LinkStatus.Unverifiable
+      return { status: LinkStatus.Unverifiable }
     }
-    return outcome.status === 403 ? LinkStatus.Forbidden : LinkStatus.Broken
+    const reason = `HTTP ${outcome.status} dans le navigateur`
+    return { status: outcome.status === 403 ? LinkStatus.Forbidden : LinkStatus.Broken, reason }
+  }
+
+  // "HTTP 500", or "HTTP 500 / 502" when the GET requests disagree
+  private static _httpReason(outcomes: ValidationOutcome[]): string {
+    const statuses = [...new Set(outcomes.map((outcome) => outcome.status).filter((status) => status !== undefined))]
+    return `HTTP ${statuses.join(' / ')}`
+  }
+
+  // "délai dépassé", or "délai dépassé / connexion coupée" when the GET requests disagree
+  private static _networkReason(outcomes: ValidationOutcome[]): string {
+    const errors = [...new Set(outcomes.map((outcome) => outcome.error ?? NetworkError.Other))]
+    return errors.map((error) => networkErrorLabel(error)).join(' / ')
   }
 
   private static _pause(): Promise<void> {
@@ -294,8 +340,8 @@ export class LinkValidator {
         headers: this._browserLikeHeaders()
       })
       return this._classifyResponse(response.status, response.headers.get('cf-mitigated'))
-    } catch {
-      return { result: ValidationResult.Uncertain }
+    } catch (error) {
+      return { result: ValidationResult.Uncertain, error: toNetworkError(error) }
     }
   }
 
@@ -315,8 +361,8 @@ export class LinkValidator {
         validateStatus: () => true
       })
       return this._classifyResponse(response.status, response.headers['cf-mitigated'] as string | undefined)
-    } catch {
-      return { result: ValidationResult.Uncertain }
+    } catch (error) {
+      return { result: ValidationResult.Uncertain, error: toNetworkError(error) }
     }
   }
 
@@ -348,7 +394,7 @@ export class LinkValidator {
       if (error instanceof Error && error.message.includes('Download is starting')) {
         return { result: ValidationResult.Valid }
       }
-      return { result: ValidationResult.Uncertain }
+      return { result: ValidationResult.Uncertain, error: toNetworkError(error) }
     } finally {
       await context?.close().catch(() => undefined)
       this._activePlaywrightChecks--
