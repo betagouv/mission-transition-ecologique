@@ -7,7 +7,7 @@ export enum NetworkError {
   Timeout = 'timeout',
   Refused = 'refused',
   Reset = 'reset',
-  Unreachable = 'unreachable',
+  HostUnreachable = 'hostUnreachable',
   Certificate = 'certificate',
   Other = 'other'
 }
@@ -31,17 +31,23 @@ const _codes: Record<string, NetworkError> = {
   'net::ERR_CONNECTION_RESET': NetworkError.Reset,
   'net::ERR_CONNECTION_CLOSED': NetworkError.Reset,
   'net::ERR_EMPTY_RESPONSE': NetworkError.Reset,
-  EHOSTUNREACH: NetworkError.Unreachable,
-  ENETUNREACH: NetworkError.Unreachable,
-  'net::ERR_ADDRESS_UNREACHABLE': NetworkError.Unreachable,
-  CERT_HAS_EXPIRED: NetworkError.Certificate,
-  DEPTH_ZERO_SELF_SIGNED_CERT: NetworkError.Certificate,
-  SELF_SIGNED_CERT_IN_CHAIN: NetworkError.Certificate,
-  UNABLE_TO_VERIFY_LEAF_SIGNATURE: NetworkError.Certificate,
-  ERR_TLS_CERT_ALTNAME_INVALID: NetworkError.Certificate,
-  'net::ERR_CERT_DATE_INVALID': NetworkError.Certificate,
-  'net::ERR_CERT_AUTHORITY_INVALID': NetworkError.Certificate,
-  'net::ERR_CERT_COMMON_NAME_INVALID': NetworkError.Certificate
+  EHOSTUNREACH: NetworkError.HostUnreachable,
+  ENETUNREACH: NetworkError.HostUnreachable,
+  'net::ERR_ADDRESS_UNREACHABLE': NetworkError.HostUnreachable
+}
+
+// Certificate errors are recognized by pattern, their list is long:
+// Node (CERT_HAS_EXPIRED, DEPTH_ZERO_SELF_SIGNED_CERT, UNABLE_TO_GET_ISSUER_CERT_LOCALLY, ERR_TLS_CERT_ALTNAME_INVALID…)
+// and Chromium (net::ERR_CERT_DATE_INVALID, net::ERR_CERT_REVOKED…)
+function _isCertificateCode(code: string): boolean {
+  return code.startsWith('net::ERR_CERT_') || (!code.startsWith('net::') && (code.includes('CERT') || code.startsWith('UNABLE_TO_')))
+}
+
+function _fromCode(code: unknown): NetworkError | undefined {
+  if (typeof code !== 'string') {
+    return undefined
+  }
+  return _codes[code] ?? (_isCertificateCode(code) ? NetworkError.Certificate : undefined)
 }
 
 const _labels: Record<NetworkError, string> = {
@@ -49,7 +55,7 @@ const _labels: Record<NetworkError, string> = {
   [NetworkError.Timeout]: 'délai dépassé',
   [NetworkError.Refused]: 'connexion refusée',
   [NetworkError.Reset]: 'connexion coupée',
-  [NetworkError.Unreachable]: 'hôte inaccessible',
+  [NetworkError.HostUnreachable]: 'hôte inaccessible',
   [NetworkError.Certificate]: 'certificat TLS invalide',
   [NetworkError.Other]: 'erreur réseau'
 }
@@ -65,12 +71,12 @@ export function toNetworkError(error: unknown): NetworkError {
   // undici (fetch) puts the system error in cause, axios on the error itself
   const cause = (error as { cause?: { code?: unknown } }).cause
   for (const code of [cause?.code, (error as { code?: unknown }).code]) {
-    if (typeof code === 'string' && _codes[code]) {
-      return _codes[code]
+    const networkError = _fromCode(code)
+    if (networkError) {
+      return networkError
     }
   }
-  const chromiumCode = error.message.match(/net::ERR_[A-Z0-9_]+/)?.[0]
-  return (chromiumCode && _codes[chromiumCode]) || NetworkError.Other
+  return _fromCode(error.message.match(/net::ERR_[A-Z0-9_]+/)?.[0]) ?? NetworkError.Other
 }
 
 export function networkErrorLabel(error: NetworkError): string {

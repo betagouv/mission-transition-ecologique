@@ -6,13 +6,25 @@ describe('toNetworkError', () => {
     ['axios dns error', Object.assign(new Error('getaddrinfo ENOTFOUND'), { code: 'ENOTFOUND' }), NetworkError.DomainNotFound],
     ['temporary dns failure', Object.assign(new Error('getaddrinfo EAI_AGAIN'), { code: 'EAI_AGAIN' }), NetworkError.Timeout],
     ['chromium connection timeout', new Error('page.goto: net::ERR_CONNECTION_TIMED_OUT at https://a.fr'), NetworkError.Timeout],
-    ['host unreachable', Object.assign(new TypeError('fetch failed'), { cause: { code: 'EHOSTUNREACH' } }), NetworkError.Unreachable],
+    ['host unreachable', Object.assign(new TypeError('fetch failed'), { cause: { code: 'EHOSTUNREACH' } }), NetworkError.HostUnreachable],
     [
       'expired certificate',
       Object.assign(new TypeError('fetch failed'), { cause: { code: 'CERT_HAS_EXPIRED' } }),
       NetworkError.Certificate
     ],
     ['chromium certificate', new Error('page.goto: net::ERR_CERT_DATE_INVALID at https://a.fr'), NetworkError.Certificate],
+    ['chromium revoked certificate', new Error('page.goto: net::ERR_CERT_REVOKED at https://a.fr'), NetworkError.Certificate],
+    [
+      'missing issuer',
+      Object.assign(new Error('unable to get local issuer'), { code: 'UNABLE_TO_GET_ISSUER_CERT_LOCALLY' }),
+      NetworkError.Certificate
+    ],
+    [
+      'certificate not yet valid',
+      Object.assign(new TypeError('fetch failed'), { cause: { code: 'CERT_NOT_YET_VALID' } }),
+      NetworkError.Certificate
+    ],
+    ['chromium ssl error', new Error('page.goto: net::ERR_SSL_PROTOCOL_ERROR at https://a.fr'), NetworkError.Other],
     ['chromium code with digits', new Error('page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://a.fr'), NetworkError.Other],
     ['fetch abort timeout', Object.assign(new Error('aborted'), { name: 'TimeoutError' }), NetworkError.Timeout],
     ['axios timeout', Object.assign(new Error('timeout of 10000ms exceeded'), { code: 'ECONNABORTED' }), NetworkError.Timeout],
