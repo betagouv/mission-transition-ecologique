@@ -7118,7 +7118,7 @@
     "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000872",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/etudes-et-travaux-de-depollution-dune-friche-fonds-vert",
     "nature de l'aide": "étude",
-    "montant du financement": "Variable selon projet",
+    "montant du financement": "Aide calculée en fonction du projet",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet .",
@@ -8067,7 +8067,7 @@
   },
   {
     "titre": "Étude \"Méthanisation\"",
-    "promesse": "Étudiez votre projet de construction d'une installation de méthanisation",
+    "promesse": "Réalisez un étude pour votre projet d'installation de méthanisation",
     "description": "Vous avez un projet de méthanisation pour valoriser des déchets ou matières organiques en énergie renouvelable ? L’ADEME peut financer une **étude préalable** pour en évaluer la faisabilité.\n\nCette étude permet de :\\\n– **analyser les gisements disponibles, les technologies adaptées et les options de valorisation du biogaz**,\\\n– **évaluer les contraintes économiques, réglementaires et liées au site**.\n\nC’est une étape essentielle pour sécuriser votre projet, affiner sa conception et bâtir un dossier solide en vue de sa réalisation.",
     "description longue": "La méthanisation est un processus naturel biologique de dégradation de la matière organique grâce à l'action de micro-organismes. Chargées dans un digesteur, chauffées et brassées en l’absence d’oxygène pendant plusieurs jours, ces matières produisent une énergie renouvelable, le biogaz et un fertilisant, le digestat.\\\nLe biogaz produit peut ensuite être valorisé et vendu sous différentes formes (chaleur, électricité, injection dans le réseau de gaz naturel, carburant pour véhicules).\n\nL'ADEME soutient le financement aux :\n\n- Études de diagnostic et d’accompagnement de projets (dont études de faisabilité) : unités de méthanisation à la ferme, centralisées, en industries agro-alimentaires, biodéchets des collectivités ou station d’épuration urbaines (STEU).\n- Accompagnement au montage projet après étude de faisabilité :\n- Études de raccordement au réseau public de gaz (pour les projets d’injection, voir plus bas en détail, certaines études seulement sont éligibles).\n- Etudes d’Assistance à Maîtrise d’Ouvrage avant construction de l’installation.\n- Etudes pour la concertation locale/ communication/information\n- Etudes agronomiques\n- Appui au montage juridique des projets collectifs\n- Appui au montage du plan de financement.",
     "début de validité": "01/01/2023",
@@ -9352,7 +9352,7 @@
     "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000871",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/2025/amelioration-qualite-lair-territoires-ppa-depassements-recents?cible=79&region=35",
     "nature de l'aide": "financement",
-    "montant du financement": "Variable selon projet",
+    "montant du financement": "Aide calculée en fonction du projet",
     "ouvert aux administrations publiques": "oui",
     "objectifs": [
       {
@@ -17910,7 +17910,7 @@
   },
   {
     "titre": "Investissement pour l'approvisionnement de chaufferies bois",
-    "promesse": "Financez votre installation pour approvisionner des chaudières bois",
+    "promesse": "Financez vos projets d'équipements permettant la préparation et le stockage des combustibles de chaufferies bois",
     "description": "Vous avez un projet d'investissement dans des équipements permettant la préparation et le stockage des combustibles de chaufferies bois ? L’ADEME soutient financièrement votre investissement.",
     "description longue": "L’ADEME peut soutenir :\n- la création ou l’aménagement de plateformes d’approvisionnement ;\n- les équipements assurant la production d’un combustible de qualité \n- La création ou l’aménagement de hangar bois bûche de plus de 500m2\n- Les équipements assurant le séchage artificiel du bois bûche.\n\nPour être éligible, vous devez avoir réalisé au préalable un diagnostic du territoire. Pour les investissements relatifs à la création ou l’aménagement de plateformes, le\nnombre et la surface des plateformes de stockage ainsi qu’une estimation de la\nquantité de bois transitant par les équipements.",
     "début de validité": "01/01/2023",
@@ -17920,7 +17920,7 @@
     "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000877",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/equipements-pour-lapprovisionnement-de-chaufferies-bois-du-fonds-chaleur-etou-plan-de-relance-etou-france-2030",
     "nature de l'aide": "financement",
-    "montant du financement": "Entre 20 à 55% selon investissement",
+    "montant du financement": "Aide calculée en fonction du projet",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
@@ -53393,15 +53393,6 @@
     "montant du financement": "Variable",
     "objectifs": [
       {
-        "description": "Réalisez un diagnostic pour vous vérifier que l'Accompagnement RH est adapté à vos attentes et vos besoins.",
-        "liens": [
-          {
-            "lien": "https://www.opco-sante.fr/employeur/notre-offres-de-services/on-parle-ecologie/",
-            "texte": "Réaliser le diagnostic"
-          }
-        ]
-      },
-      {
         "description": "Contactez votre conseiller Opco Santé pour pour exprimer votre intérêt pour l'accompagnement.",
         "liens": [
           {
@@ -59601,7 +59592,7 @@
   },
   {
     "titre": "Aide au changement de comportement",
-    "promesse": "Contribuez à faire évoluer les mentalités et les comportements en faveur de la transition écologique",
+    "promesse": "Financez vos projets d'animation, sensibilisation et communication pour la transition écologique",
     "description": "Bénéficiez d'un financement pour des projets de sensibilisation, d’animation ou de communication d’envergure et structurants pour le territoire, en faveur de la transition écologique.\n\nIl peut s'agir, par exemple, de :\n\n- **Formation/sensibilisation** : analyse des besoins, conception de modules de formation, animation de sessions.\n- **Communication** : réalisation d’outils, diffusion d’informations, création de sites internet, organisation d’événements.\n- **Animation** : mobilisation d’une cible, dissémination de solutions, structuration d’une filière, financement de postes relais.",
     "description longue": "Opérations non éligibles : \\\n• Financement de personnel titulaire de la fonction publique de l'État, des collectivités territoriales et hospitalières.\\\n• Financement de personnel dans les communes et EPCI à fiscalité propre.\\\n• Actions portées par les entreprises pour leur compte.\\\n• Actions déjà démarrées.\\\n• Financement de certains profils (Conseillers en Énergie Partagés, conseillers France Rénov).",
     "début de validité": "01/01/2026",
@@ -59611,7 +59602,7 @@
     "contact question": "https://agirpourlatransition.ademe.fr/form/contact?id_dsp=DSP000866",
     "url": "https://agirpourlatransition.ademe.fr/entreprises/aides-financieres/catalogue/2026/aides-au-changement-de-comportement",
     "nature de l'aide": "financement",
-    "montant du financement": "Jusqu'à 50% des dépenses éligibles",
+    "montant du financement": "Aide calculée en fonction du projet",
     "objectifs": [
       {
         "description": "Consultez la documentation de l’ADEME pour vérifier l’éligibilité de votre projet ou contactez un conseiller.",
