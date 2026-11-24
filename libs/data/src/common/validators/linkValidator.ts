@@ -71,6 +71,7 @@ export class LinkValidator {
    * - Broken       → the caller's level
    * - Malformed    → critical, the link can never work
    * - Unverifiable → info, to be checked manually
+   * - Forbidden    → info, to be checked manually
    */
   public static logLinkStatus(check: LinkCheck, context: LinkLogContext): void {
     if (check.status === LinkStatus.Valid) {
@@ -132,7 +133,7 @@ export class LinkValidator {
     if (status === LinkStatus.Malformed) {
       return LogLevel.Critic
     }
-    if (status === LinkStatus.Unverifiable) {
+    if (status === LinkStatus.Unverifiable || status === LinkStatus.Forbidden) {
       return LogLevel.Info
     }
     return brokenLevel
@@ -194,7 +195,9 @@ export class LinkValidator {
    * - success → Valid
    * - challenge → Unverifiable, for every link of the host
    * - 429 → Unverifiable (rate limited)
-   * - any other HTTP error, 403 included → Broken: a real browser is not expected to be blocked without a challenge
+   * - 403 without challenge → Forbidden: either a really deleted file, or a firewall that also blocks headless browsers
+   *   or datacenter IPs (frequent from the CI), a bot cannot tell
+   * - any other HTTP error (401, 5xx…) → Broken
    * - navigation error → Broken after network errors only, Unverifiable after a 403/429
    * - browser disabled or unavailable → Unverifiable after a 403/429, Broken after network errors only
    */
@@ -219,7 +222,10 @@ export class LinkValidator {
     if (outcome.status === undefined) {
       return fallback
     }
-    return outcome.status === 429 ? LinkStatus.Unverifiable : LinkStatus.Broken
+    if (outcome.status === 429) {
+      return LinkStatus.Unverifiable
+    }
+    return outcome.status === 403 ? LinkStatus.Forbidden : LinkStatus.Broken
   }
 
   private static _pause(): Promise<void> {

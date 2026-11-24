@@ -18,7 +18,8 @@ export class Logger implements LoggerInterface {
     [LinkStatus.Valid]: 'Lien valide',
     [LinkStatus.Broken]: 'Lien cassé',
     [LinkStatus.Malformed]: 'Lien mal formé (chemin local ou protocole non web)',
-    [LinkStatus.Unverifiable]: 'Non vérifiable automatiquement (protection anti-robot)'
+    [LinkStatus.Unverifiable]: 'Non vérifiable automatiquement (protection anti-robot)',
+    [LinkStatus.Forbidden]: 'Accès refusé (403), même dans un navigateur'
   }
 
   constructor(
@@ -53,13 +54,16 @@ export class Logger implements LoggerInterface {
   write(fileName: string) {
     const sortedLogs = this._sortLogs()
     const generalLogs = sortedLogs.filter((log) => !log.link)
-    const linkLogs = sortedLogs.filter((log) => log.link && log.link.status !== LinkStatus.Unverifiable)
+    const linkLogs = sortedLogs.filter((log) => log.link?.status === LinkStatus.Broken || log.link?.status === LinkStatus.Malformed)
+    const forbiddenLogs = sortedLogs.filter((log) => log.link?.status === LinkStatus.Forbidden)
     const unverifiableLogs = sortedLogs.filter((log) => log.link?.status === LinkStatus.Unverifiable)
 
     // Most important sections first: the PR body may be truncated at the end
     const markdownContent =
-      this._renderGeneralLogs(generalLogs) + this._renderLinkLogs(linkLogs) + this._renderUnverifiableLogs(unverifiableLogs) ||
-      'Aucun point problématique détecté.\n'
+      this._renderGeneralLogs(generalLogs) +
+        this._renderLinkLogs(linkLogs) +
+        this._renderForbiddenLogs(forbiddenLogs) +
+        this._renderUnverifiableLogs(unverifiableLogs) || 'Aucun point problématique détecté.\n'
 
     fs.writeFileSync(fileName, markdownContent, 'utf8')
   }
@@ -100,6 +104,27 @@ export class Logger implements LoggerInterface {
       const linkCell =
         status === LinkStatus.Malformed ? `\`${this._encodeUrl(url)}\`` : this._markdownLink(this._shortLabel(url, true), url)
       markdownContent += `| ${LogLevelDisplay[criticality]} | ${linkCell} | ${Logger._linkProblemLabels[status]} | ${this._renderUsages(urlLogs)} |\n`
+    })
+
+    return markdownContent
+  }
+
+  /**
+   * Links refused with a 403 even in a real browser, visible since some are really deleted files.
+   */
+  private _renderForbiddenLogs(logs: LogEvent[]): string {
+    const logsByUrl = this._groupBy(logs, (log) => (log.link as LoggedLink).url)
+    if (logsByUrl.size === 0) {
+      return ''
+    }
+
+    let markdownContent = `\n#### ${LogLevelDisplay[LogLevel.Info]} Accès refusé (403) même dans un navigateur, à vérifier manuellement (${logsByUrl.size})\n\n`
+    markdownContent +=
+      'Fichier ou page supprimé, ou pare-feu qui bloque les robots ou les serveurs de la CI : le lien peut fonctionner pour un visiteur.\n\n'
+    markdownContent += '| Lien | Utilisé dans |\n'
+    markdownContent += '| --- | --- |\n'
+    ;[...logsByUrl.keys()].sort().forEach((url) => {
+      markdownContent += `| ${this._markdownLink(this._shortLabel(url, true), url)} | ${this._renderUsages(logsByUrl.get(url) as LogEvent[])} |\n`
     })
 
     return markdownContent

@@ -157,4 +157,24 @@ describe('Logger.write', () => {
 
     expect(writtenContent(logger)).toContain('Une \\<b\\>question\\</b\\> \\*\\_\\`')
   })
+
+  it('lists links refused even in a browser in a visible section, after the broken ones and before the collapsed one', () => {
+    const logger = new Logger(LoggerType.Program)
+    logger.logLink(LogLevel.Info, { url: 'https://protege.fr/a', status: LinkStatus.Unverifiable, field: 'étape 1' }, 'dispositif-a', 1)
+    logger.logLink(LogLevel.Info, { url: 'https://refuse.fr/b', status: LinkStatus.Forbidden, field: 'étape 2' }, 'dispositif-a', 1)
+    logger.logLink(LogLevel.Info, { url: 'https://refuse.fr/b', status: LinkStatus.Forbidden, field: 'URL externe' }, 'dispositif-b', 2)
+    logger.logLink(LogLevel.Major, { url: 'https://www.example.fr/404', status: LinkStatus.Broken, field: 'étape 1' }, 'dispositif-a', 1)
+
+    const content = writtenContent(logger)
+    const forbiddenTitle = content.indexOf('#### :warning: Accès refusé (403) même dans un navigateur, à vérifier manuellement (1)')
+    const rows = content.split('\n').filter((line) => line.includes('refuse.fr/b'))
+
+    expect(content).toContain('#### Liens cassés ou mal formés (1)')
+    expect(forbiddenTitle).toBeGreaterThan(content.indexOf('Liens cassés'))
+    expect(forbiddenTitle).toBeLessThan(content.indexOf('<details>'))
+    expect(rows).toHaveLength(1)
+    expect(rows[0]).toContain('[refuse.fr/b](https://refuse.fr/b)')
+    expect(rows[0]).toContain(' : étape 2<br>')
+    expect(rows[0]).toContain(' : URL externe')
+  })
 })

@@ -191,7 +191,14 @@ describe('LinkValidator playwright browser', () => {
     await vi.advanceTimersByTimeAsync(5000)
   })
 
-  it.each([401, 403, 500])('returns Broken when the browser also gets a %s without challenge', async (status) => {
+  it('returns Forbidden when the browser also gets a 403 without challenge', async () => {
+    mockResponses({ status: 403 }, { status: 403 }, { status: 403 })
+    mockBrowser({ status: 403 })
+    expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Forbidden)
+    await vi.advanceTimersByTimeAsync(5000)
+  })
+
+  it.each([401, 500])('returns Broken when the browser also gets a %s', async (status) => {
     mockResponses({ status: 403 }, { status: 403 }, { status: 403 })
     mockBrowser({ status })
     expect(await LinkValidator.checkLink(uniqueLink())).toBe(LinkStatus.Broken)
@@ -296,7 +303,8 @@ describe('LinkValidator.logLinkStatus', () => {
   it.each([
     [LinkStatus.Broken, LogLevel.Major],
     [LinkStatus.Malformed, LogLevel.Critic],
-    [LinkStatus.Unverifiable, LogLevel.Info]
+    [LinkStatus.Unverifiable, LogLevel.Info],
+    [LinkStatus.Forbidden, LogLevel.Info]
   ])('logs a %s link with level %s', (status, level) => {
     LinkValidator.logLinkStatus({ link: 'https://site.fr', status }, context)
     expect(logger.logLink).toHaveBeenCalledWith(level, { url: 'https://site.fr', status, field: 'étape 1' }, 'mon-dispositif', 42)
